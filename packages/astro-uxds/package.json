@@ -1,0 +1,19 @@
+{
+	"name": "astro-website",
+	"version": "0.0.1",
+	"description": "Generates the public facing Astro UX Guidelines.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@11ty/eleventy": "^0.9.0",
+		"clean-css": "^4.2.1",
+		"markdown-it-attrs": "^3.0.1",
+		"markdown-it-container": "^2.0.0",
+		"markdown-it-div": "^1.1.0"
+	}
+}
