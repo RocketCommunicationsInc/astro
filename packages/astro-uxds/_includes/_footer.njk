@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="/css/footer.css">
+<footer class="site-footer">
+
+	<div class="site-footer__publisher">
+		<dl class="site-footer__provided-by">
+			<dt>Provided by:</dt>
+			<dd>
+				<ul>
+					<li>Air Force Space Command</li>
+					<li>SMC</li>
+					<li>RN</li>
+					<li>EGS</li>
+				</ul>
+				<dd>
+					<ul>
+						<li>Air Force Space Command</li>
+						<li>SMC</li>
+						<li>SY</li>
+						<li>SATOPS</li>
+					</ul>
+
+					<dt>Designed &amp; Stewarded by:</dt>
+					<dd>
+						<a href="https://www.rocketcom.com">Rocket Communications</a>
+					</dd>
+					<dd class="site-footer__rocket-logo"><img src="/img/site/rocket.svg"></dd>
+
+				</dl>
+
+				<div class="site-footer__meta">
+					<div class="meta-version">Version {{ pkg.version }}</div>
+					<div>Updated <time class="meta-updated-on" datetime="{{ page.date.toISOString() }}">{{ page.date.toDateString() }}</time>
+					</div>
+					<a href="/support">Contact Support</a>
+				</div>
+			</div>
+		</div>
+
+	</footer>

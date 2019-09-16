@@ -25,7 +25,7 @@ module.exports = function(eleventyConfig) {
   // You can return your Config object (optional).
   return {
     dir: {
-      input: 'test',
+      input: '_content',
       data: '../_data',
       includes: '../_includes',
     },

@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="/css/navigation.css">
+<nav class="site-nav">
+	<ul class="parents">
+		{% for navItem in navigation -%}
+			<li>
+				{{navItem.label}}
+				{% if navItem.items.length %}
+					<ul class="children">
+						{% for subNavItem in navItem.items -%}
+							<li class={{ "selected" if subNavItem.url === page.url.substr(0,page.url.length-1) }}>
+								<a href="{{subNavItem.url}}">{{subNavItem.label}}</a>
+							</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+</nav>
