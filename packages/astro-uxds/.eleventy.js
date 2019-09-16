@@ -5,7 +5,6 @@ module.exports = function(eleventyConfig) {
   const cleanCSS = require('clean-css');
 
   // markdown options
-
   const options = {
     html: true,
     breaks: true,

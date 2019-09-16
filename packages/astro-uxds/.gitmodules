@@ -1,0 +1,3 @@
+[submodule "content"]
+	path = content
+	url = https://bitbucket.org/rocketcom/astro-guidelines.git/
