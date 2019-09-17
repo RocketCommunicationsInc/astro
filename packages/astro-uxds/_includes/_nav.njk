@@ -1,5 +1,13 @@
 <link rel="stylesheet" href="/css/navigation.css">
 <nav class="site-nav">
+
+	<div class="site-nav__masthead">
+		<img class="sit-nav__masthead-logo" src="/img/astro-logo.svg"/>
+		<form>
+			<input type="search">
+		</form>
+	</div>
+
 	<ul class="parents">
 		{% for navItem in navigation -%}
 			<li>

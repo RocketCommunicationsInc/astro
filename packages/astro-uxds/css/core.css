@@ -1,0 +1,30 @@
+@import "./variables.css";
+
+
+*,
+:after,
+:before {
+    box-sizing: inherit
+}
+
+
+html, body {
+	font-family: var(--font, "Helvetica Neue", Helvetica, Arial, sans-serif);
+	color: var(--fontColor,#000);
+	background-color: #fff;
+}
+
+.container {
+	display: flex;
+}
+
+.content {
+	padding: 5rem 1rem 1rem 5rem;
+	flex-grow: 1;
+}
+
+.content main {
+	max-width: 45rem;
+}
+
+

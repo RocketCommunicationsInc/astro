@@ -1,0 +1,32 @@
+main {
+
+}
+
+main p {
+	margin: 0 0 1rem 0;
+	line-height: 1.5;
+}
+
+main ul {
+	list-style: disc;
+	padding-left: 1.25rem;
+	margin-left: 0.75rem;
+	margin-top: 0.75rem;
+}
+
+main li {
+	margin-bottom: 0.75rem;
+	line-height: 1.5;
+}
+
+
+.note {
+	background-color: rgb(252, 241, 191);
+	padding: 1rem;
+	margin: 1rem 0;
+	line-height: 1;
+}
+
+.note p:last-child {
+	margin-bottom: 0;
+}

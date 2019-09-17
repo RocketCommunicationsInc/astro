@@ -1,0 +1,21 @@
+
+.site-nav {
+	position: -webkit-sticky;
+	position: sticky;
+	flex-grow: 0;
+	flex-shrink: 0;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 250px;
+	
+	background-color: lightgrey;
+}
+
+.site-nav li {
+	padding: 0.5rem;
+}
+
+.selected {
+	font-weight: bold;
+}

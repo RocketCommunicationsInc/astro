@@ -5,8 +5,8 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "rm -rf test && git clone https://bitbucket.org/rocketcom/astro-guidelines.git _content && eleventy",
-		"serve": "rm -rf test && git clone https://bitbucket.org/rocketcom/astro-guidelines.git _content && eleventy --serve"
+		"build": "rm -rf _content && git clone https://bitbucket.org/rocketcom/astro-guidelines.git _content && eleventy",
+		"serve": "rm -rf _content && git clone https://bitbucket.org/rocketcom/astro-guidelines.git _content && eleventy --serve"
 	},
 	"keywords": [],
 	"author": "",
@@ -14,6 +14,8 @@
 	"devDependencies": {
 		"@11ty/eleventy": "^0.9.0",
 		"clean-css": "^4.2.1",
+		"gulp": "^4.0.2",
+		"gulp-imagemin": "^6.1.0",
 		"markdown-it-attrs": "^3.0.1",
 		"markdown-it-container": "^2.0.0",
 		"markdown-it-div": "^1.1.0"

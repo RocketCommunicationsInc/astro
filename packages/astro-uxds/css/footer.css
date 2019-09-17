@@ -1,0 +1,44 @@
+.site-footer {
+	display: flex;
+	flex-direction: column;
+	
+	font-size: var(--fontSizeSM, 0.85rem);
+
+	border-top: 1px solid var(--ruleColor, rgba(0,0,0,0.5));
+	padding-top: 0.5rem;
+	margin-right: 5rem;
+	margin-top: 1.5rem;
+	
+	line-height: 1.25;
+}
+
+
+.site-footer__publisher {
+	display: flex;
+	justify-content: space-between;
+}
+
+.site-footer ul {
+	display: flex;	
+}
+
+.site-footer li:not(:last-of-type)::after {
+	content: '|';
+	margin: 0 0.25rem;
+}
+
+.site-footer dt {
+	font-weight: bold;
+}
+
+.site-footer dt:not(:first-of-type) {
+	margin-top: 1rem;
+}
+
+.site-footer__rocket-logo {
+	margin-top: 1.25rem;
+}
+
+.site-footer__meta {
+	text-align: right;
+}

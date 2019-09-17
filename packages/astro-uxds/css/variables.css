@@ -1,0 +1,8 @@
+:root {
+	--primaryColor: red;
+	--secondaryColor: green;
+
+	--font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	--fontColor: #000;
+	--fontSizeSM: 0.85rem;
+}
