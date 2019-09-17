@@ -1,8 +1,13 @@
 :root {
-	--primaryColor: red;
-	--secondaryColor: green;
+	--primary-color: #ffa301;
+	--secondary-color: #e47836;
 
 	--font: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	--fontColor: #000;
-	--fontSizeSM: 0.85rem;
+	--font-color: #000;
+	--font-size-sm: 0.85rem;
+
+	--nav-background-color: #000;
+	--nav-font-color: #fff;
+	
+	--nav-selected-font-color: var(--primary-color);
 }

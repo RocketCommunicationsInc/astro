@@ -9,13 +9,31 @@
 	height: 100vh;
 	width: 250px;
 	
-	background-color: lightgrey;
+	background: black url(/img/nav-bg.jpg) 0 0 no-repeat;
+}
+
+.site-nav__masthead {
+	display: flex;
+	flex-direction: column;
+
+	justify-content: center;
+	align-items: center;
+}
+
+.site-nav__masthead-logo {
+	margin-top: 2.5rem;
+	width: 45%;
 }
 
 .site-nav li {
 	padding: 0.5rem;
 }
 
-.selected {
-	font-weight: bold;
+.site-nav a {
+	text-decoration: none;
+}
+
+.selected a{
+	color: var(--nav-selected-font-color);
+	font-weight: 500;
 }

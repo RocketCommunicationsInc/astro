@@ -1,32 +1,30 @@
-{% block document %}
-	<!doctype html>
-	<html lang="en">
-		<head>
-			<meta charset="utf-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
 
-			<title>{{ title }}</title>
+		<title>{{ title }}</title>
 
-			<!-- 
+		<!-- 
 		TODO: Investigate why this is failing
 		should preload critical css via http2, but it‘s not loading and throwing an error in chrome
 		<link rel="preload" href="/css/variables.css" as="style"> 
 		//-->
-			<link rel="stylesheet" href="/css/reset.css">
-			<link rel="stylesheet" href="/css/variables.css">
-			<link rel="stylesheet" href="/css/core.css">
-			<link rel="stylesheet" href="/css/typography.css">
-			<link rel="stylesheet" href="/css/navigation.css">
+		<link rel="stylesheet" href="/css/reset.css">
+		<link rel="stylesheet" href="/css/variables.css">
+		<link rel="stylesheet" href="/css/core.css">
+		<link rel="stylesheet" href="/css/typography.css">
+		<link rel="stylesheet" href="/css/navigation.css">
 
-		</head>
-		<body>
-		{% endblock %}
-
+	</head>
+	<body>
 		<div class="container">
 			{% include "_nav.njk" %}
 
 			<div class="content">
+
 				<main>
 					{% block content %}
 						<h1>Default Content</h1>
