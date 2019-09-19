@@ -24,3 +24,6 @@ Thumbs.db
 *.sublime-workspace
 *.komodoproject
 .vscode/
+
+# Local Netlify folder
+.netlify
