@@ -1,6 +1,6 @@
 :root {
-	--primary-color: #ffa301;
-	--secondary-color: #e47836;
+	--primary-color: #e47836;
+	--secondary-color: #ffa301;
 
 	--font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	--font-color: #000;
@@ -8,6 +8,7 @@
 
 	--nav-background-color: #000;
 	--nav-font-color: #fff;
-	
 	--nav-selected-font-color: var(--primary-color);
+
+	--home-container-width: 75em;
 }

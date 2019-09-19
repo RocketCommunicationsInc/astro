@@ -17,7 +17,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setLibrary('md', markdownLib);
 
   // Manuall move static content
-  eleventyConfig.addPassthroughCopy('img');
+  eleventyConfig.addPassthroughCopy({'img': 'img/_site'});
   eleventyConfig.addPassthroughCopy('js');
   eleventyConfig.addPassthroughCopy('css');
   eleventyConfig.addPassthroughCopy('fonts');
