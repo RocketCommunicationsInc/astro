@@ -9,7 +9,7 @@
 	height: 100vh;
 	width: 250px;
 	
-	background: black url(/img/nav-bg.jpg) 0 0 no-repeat;
+	background: black url(/img/_site/nav-bg.jpg) 0 0 no-repeat;
 }
 
 .site-nav__masthead {
