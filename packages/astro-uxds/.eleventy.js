@@ -13,11 +13,13 @@ module.exports = function(eleventyConfig) {
 
   const markdownLib = markdownIt(options)
     .use(markdownItContainer, 'note')
+    .use(markdownItContainer, 'caution')
     .use(markdownItAttrs);
   eleventyConfig.setLibrary('md', markdownLib);
 
   // Manuall move static content
-  eleventyConfig.addPassthroughCopy({'img': 'img/_site'});
+  eleventyConfig.addPassthroughCopy({ img: 'img/_site' });
+  eleventyConfig.addPassthroughCopy({ '_content/img': 'img' });
   eleventyConfig.addPassthroughCopy('js');
   eleventyConfig.addPassthroughCopy('css');
   eleventyConfig.addPassthroughCopy('fonts');

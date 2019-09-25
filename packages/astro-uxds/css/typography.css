@@ -36,3 +36,26 @@ a:hover {
 	color: var(--primary-color);
 }
 
+
+/* for code blocks */
+pre {
+	color: #fff;
+	background-color: #182635;
+	padding: 1rem;
+	border-radius: 5px;
+
+	
+}
+
+code {
+	font-family: monospace;
+	font-size: 1.3rem;
+}
+
+p code {
+	color: #fff;
+	background-color: #182635;
+	padding: 0 0.25rem;
+	line-height: 0;
+	
+}

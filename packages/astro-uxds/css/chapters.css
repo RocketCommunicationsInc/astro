@@ -30,3 +30,14 @@ main li {
 .note p:last-child {
 	margin-bottom: 0;
 }
+
+.caution {
+	background-color: pink;
+	padding: 1rem;
+	margin: 1rem 0;
+	line-height: 1;
+}
+
+.caution p:last-child {
+	margin-bottom: 0;
+}
