@@ -1,28 +1,46 @@
+{% macro navItem(data) %}
+	<li style="color: #fff;">{{ data.label }}
+		{% if data.items.length %}
+			<ul>
+				{% for navData in data.items %}
+					{{ navItem(navData) }}
+				{% endfor %}
+		</ul>
+	{% endif %}
+</li>
+{% endmacro %}
+
 <link rel="stylesheet" href="/css/navigation.css">
-<nav class="site-nav">
+<nav class="navigation">
 
-	<div class="site-nav__masthead">
-		<img class="site-nav__masthead-logo" src="/img/_site/astro-logo--small.svg"/>
-		<form>
-			<input type="search">
-		</form>
-	</div>
+<div class="navigation__masthead">
+	<img class="navigation__masthead-logo" src="/img/_site/astro-logo--small.svg"/>
+	<form>
+		<input type="search">
+	</form>
+</div>
 
-	<ul class="parents">
-		{% for navItem in navigation -%}
-			<li class="parent">
-				{{navItem.label}}
+<ul class="parents" role="tree">
+	{% for navData in navigation -%}
+		{{ navItem(navData) }}
+	{% endfor %}
+
+	{# <li class="nav-item parent" role="treeitem">
+
 				{% if navItem.items.length %}
-					<ul class="children">
+					<a href="#">{{navItem.label}}</a>
+					<ul class="children" role="group">
 						{% for subNavItem in navItem.items -%}
-							<li class="link {{ "selected" if subNavItem.url === page.url.substr(0,page.url.length-1) }}">
+							<li role="treeitem" class="nav-item {{ "selected" if subNavItem.url === page.url.substr(0,page.url.length-1) }}">
 								<a href="{{subNavItem.url}}">{{subNavItem.label}}</a>
 							</li>
 						{% endfor %}
 					</ul>
+				{% else %}
+					<a href="{{navItem.url}}">{{navItem.label}}</a>
 				{% endif %}
-			</li>
-		{% endfor %}
-	</ul>
+			</li> #}
+
+</ul>
 
 </nav>
