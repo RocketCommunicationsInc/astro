@@ -1,0 +1,18 @@
+
+
+.demo-container {
+	overflow: hidden;
+	width: 100%;
+	padding: 1rem;
+
+	border-radius: 5px;
+	background-color: #1a2634;
+}
+
+.demo-container iframe {
+	width: 100%;
+}
+
+.demo-container a {
+	color: #fff;
+}

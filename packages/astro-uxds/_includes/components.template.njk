@@ -1,7 +1,26 @@
 {% extends "base.template.njk" %}
 
 {% block content %}
+
 	<link rel="stylesheet" href="/css/chapters.css">
 	<link rel="stylesheet" href="/css/components.css">
+	<link rel="stylesheet" href="/css/sample.css">
+
+	{% if test.demo %}
+
+		<div class="demo-container">
+			<iframe scrolling="no" src="{{ test.demo }}" style="width: 100%; height: 210px; overflow: hidden;"></iframe>
+
+			<div class="sample--instructions">
+				{% if test.storybook %}
+					<a href="{{test.storybook}}">Storybook</a>
+				{% endif %}
+				{% if test.git %}
+					<a href="{{test.git}}">Git</a>
+				{% endif %}
+			</div>
+		</div>
+	{% endif %}
+
 	{{ content | safe }}
 {% endblock %}
