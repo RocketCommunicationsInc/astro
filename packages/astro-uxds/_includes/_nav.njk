@@ -1,31 +1,55 @@
-{% macro navItem(data) %}
-	<li style="color: #fff;">{{ data.label }}
-		{% if data.items.length %}
+{% macro navItem(data, level) %}
+
+	{% if data.items.length %}
+		<li 
+		class="tree__tree-item"
+		role="treeitem"
+		aria-level="{{ level }}"
+		data-section="{{ data.url.split('/')[level] }}"
+		aria-expanded="{{ "true" if data.url.split('/')[level] ===  page.url.split('/')[level] else "false" }}"
+		>
+
+			<a href="#">{{ data.label }}</a>
 			<ul>
 				{% for navData in data.items %}
-					{{ navItem(navData) }}
+					{{ navItem(navData, level + 1) }}
 				{% endfor %}
 		</ul>
-	{% endif %}
-</li>
+	</li>
+{% else %}
+	<li
+		class="tree__tree-item"
+		role="none"
+		aria-level="{{ level }}"
+		aria-selected="{{ "true" if data.url === page.url.substr(0,page.url.length-1) else "false" }}">
+		<a role="treeitem" href="{{ data.url }}">{{ data.label }}</a>
+	</li>
+{% endif %}
+
 {% endmacro %}
 
+<link rel="stylesheet" href="/css/sidebar.css">
 <link rel="stylesheet" href="/css/navigation.css">
-<nav class="navigation">
+<script src="/js/navigation.js"></script>
 
-<div class="navigation__masthead">
-	<img class="navigation__masthead-logo" src="/img/_site/astro-logo--small.svg"/>
+<div class="sidebar">
+<div class="masthead">
+	<img class="masthead-logo" src="/img/_site/astro-logo--small.svg"/>
 	<form>
 		<input type="search">
 	</form>
 </div>
 
-<ul class="parents" role="tree">
-	{% for navData in navigation -%}
-		{{ navItem(navData) }}
-	{% endfor %}
+<nav id="navigation" class="navigation">
+	<ul class="parents" role="tree">
+		{% for navData in navigation -%}
+			{{ navItem(navData, 1) }}
+		{% endfor %}
+	</ul>
+</nav>
+</div>
 
-	{# <li class="nav-item parent" role="treeitem">
+{# <li class="nav-item parent" role="treeitem">
 
 				{% if navItem.items.length %}
 					<a href="#">{{navItem.label}}</a>
@@ -40,7 +64,3 @@
 					<a href="{{navItem.url}}">{{navItem.label}}</a>
 				{% endif %}
 			</li> #}
-
-</ul>
-
-</nav>
