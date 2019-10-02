@@ -1,5 +1,5 @@
+<!-- Recursive rendering of child tree items //-->
 {% macro navItem(data, level) %}
-
 	{% if data.items.length %}
 		<li 
 		class="tree__tree-item"
@@ -8,7 +8,6 @@
 		data-section="{{ data.url.split('/')[level] }}"
 		aria-expanded="{{ "true" if data.url.split('/')[level] ===  page.url.split('/')[level] else "false" }}"
 		>
-
 			<a href="#">{{ data.label }}</a>
 			<ul>
 				{% for navData in data.items %}

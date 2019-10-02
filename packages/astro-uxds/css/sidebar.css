@@ -1,9 +1,10 @@
 
 .sidebar {
+	display: flex;
+	flex-direction: column;
+
 	position: -webkit-sticky;
 	position: sticky;
-	flex-grow: 0;
-	flex-shrink: 0;
 	top: 0;
 	left: 0;
 	height: 100vh;

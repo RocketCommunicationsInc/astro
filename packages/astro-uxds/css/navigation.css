@@ -1,10 +1,14 @@
 .navigation {
 	color: #fff;
+	overflow-y: auto;
+
+	outline: 1px solid orange;
 }
 
 
-.navigation ul {
+.navigation > ul {
 	margin-left: 1rem;
+	
 }
 
 .tree__tree-item {
