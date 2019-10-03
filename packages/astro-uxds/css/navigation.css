@@ -4,14 +4,34 @@
 	overflow-y: auto;
 
 	scrollbar-color: var(--nav-scrollbar-thumb-color) var(--nav-scrollbar-track-color);
-  scrollbar-width: thin; 
+	scrollbar-width: thin; 
+	
+	padding-bottom: 2rem;
 }
 
 .navigation:hover {
-	scrollbar-color: white transparent;
+	scrollbar-color: var(--secondary-color) transparent;
+}
+
+.navigation::-webkit-scrollbar {
+	width: 1rem;
+	background-color: transparent;
+}
+.navigation::-webkit-scrollbar-track {
+	background-color: var(--nav-scrollbar-track-color);
+}
+.navigation::-webkit-scrollbar-thumb {
+background-color: var(--nav-scrollbar-thumb-color);
+	border-radius: 0.5rem;
+	border: 0.3125rem solid transparent;
+	background-clip: padding-box;
 }
 
 
+.navigation:hover::-webkit-scrollbar-thumb {
+	background-color: var(--secondary-color);
+		
+	}
 
 .navigation a {
 	color: #fff;
@@ -25,7 +45,11 @@
 
 .navigation ul {
 	margin-top: 0.5rem;
-	padding-left: 1rem;
+	padding-left: 1.5rem;
+}
+
+.navigation > ul {
+	padding-right: 1.5rem;
 }
 
 .tree__tree-item {
@@ -60,4 +84,16 @@
 .tree__tree-item[aria-expanded="true"] > ul {
 	height: auto;
 	display: block;
+}
+
+.section-start {
+	margin-top: 0.5rem;
+	padding-top: 1.25rem;
+	border-top: 1px solid rgba(255,255,255,0.25);
+}
+
+.section-end {
+	margin-bottom: 0.5rem;
+	padding-bottom: 1.25rem;
+	border-bottom: 1px solid rgba(255,255,255,0.25);
 }

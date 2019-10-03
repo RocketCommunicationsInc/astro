@@ -2,7 +2,7 @@
 {% macro navItem(data, level) %}
 	{% if data.items.length %}
 		<li 
-		class="tree__tree-item"
+		class="tree__tree-item {{ data.class }}"
 		role="treeitem"
 		aria-level="{{ level }}"
 		data-section="{{ data.url.split('/')[level] }}"
@@ -17,7 +17,7 @@
 	</li>
 {% else %}
 	<li
-		class="tree__tree-item"
+		class="tree__tree-item  {{ data.class }}"
 		role="none"
 		aria-level="{{ level }}"
 		aria-selected="{{ "true" if data.url === page.url.substr(0,page.url.length-1) else "false" }}">
