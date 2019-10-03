@@ -11,4 +11,13 @@
 	--nav-selected-font-color: var(--primary-color);
 
 	--home-container-width: 75em;
+
+	--scrollbar-thumb-color: #333333;
+	--scrollbar-track-color: #999999;
+
+	--nav-scrollbar-thumb-color: rgba(255,255,255,0.25);
+	--nav-scrollbar-track-color: transparent;
+
+	--nav-hover-scrollbar-thumb-color: rgba(255,255,255,0.5);
+	--nav-hover-scrollbar-track-color: transparent;
 }

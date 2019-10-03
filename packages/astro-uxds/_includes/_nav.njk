@@ -34,9 +34,16 @@
 <div class="sidebar">
 <div class="masthead">
 	<img class="masthead-logo" src="/img/_site/astro-logo--small.svg"/>
-	<form>
-		<input type="search">
-	</form>
+
+	<div class="masthead__toolbar">
+		<label class="search" for="search">
+			<form id="rtd-search-form">
+				<input type="search" name="q" class="search__input" placeholder="Search …">
+			</form>
+		</label>
+		<button class="print-button" onclick="javascript:window.print()">Print</button>
+	</div>
+
 </div>
 
 <nav id="navigation" class="navigation">
@@ -47,19 +54,3 @@
 	</ul>
 </nav>
 </div>
-
-{# <li class="nav-item parent" role="treeitem">
-
-				{% if navItem.items.length %}
-					<a href="#">{{navItem.label}}</a>
-					<ul class="children" role="group">
-						{% for subNavItem in navItem.items -%}
-							<li role="treeitem" class="nav-item {{ "selected" if subNavItem.url === page.url.substr(0,page.url.length-1) }}">
-								<a href="{{subNavItem.url}}">{{subNavItem.label}}</a>
-							</li>
-						{% endfor %}
-					</ul>
-				{% else %}
-					<a href="{{navItem.url}}">{{navItem.label}}</a>
-				{% endif %}
-			</li> #}

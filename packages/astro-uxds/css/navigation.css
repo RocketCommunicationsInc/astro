@@ -1,38 +1,55 @@
 .navigation {
+	position: relative;
 	color: #fff;
 	overflow-y: auto;
 
-	outline: 1px solid orange;
+	scrollbar-color: var(--nav-scrollbar-thumb-color) var(--nav-scrollbar-track-color);
+  scrollbar-width: thin; 
+}
+
+.navigation:hover {
+	scrollbar-color: white transparent;
 }
 
 
-.navigation > ul {
-	margin-left: 1rem;
-	
+
+.navigation a {
+	color: #fff;
+	opacity: 0.8;
+}
+
+.navigation a:hover {
+	text-decoration: none;
+	opacity: 1;
+}
+
+.navigation ul {
+	margin-top: 0.5rem;
+	padding-left: 1rem;
 }
 
 .tree__tree-item {
 	position: relative;
-    color: rgba(255, 255, 255, .75);
-    display: block;
-    font-weight: 400;
-    padding: 0.85em 0;
-    height: 100%;
-    -webkit-transition: background-color 0.5s, border 0.4s;
-    transition: background-color 0.5s, border 0.4s;
-    -webkit-font-smoothing: antialiased;
+	color: rgba(255, 255, 255, .75);
+	display: block;
+	font-weight: 400;
+	padding: 0.85em 0;
+	height: 100%;
+	-webkit-transition: background-color 0.5s, border 0.4s;
+	transition: background-color 0.5s, border 0.4s;
+	-webkit-font-smoothing: antialiased;
 }
 
-.tree__tree-item[aria-selected="true"] {
+
+.tree__tree-item[aria-selected="true"] a,
+.tree__tree-item[aria-expanded="true"][aria-level="1"] > a {
 	font-weight: bold;
+	opacity: 1;
 }
 
-.tree__tree-item[aria-expanded="false"] {
-	border: 1px solid red;
-}
-
-.tree__tree-item[aria-expanded="true"] {
-	border: 1px solid green;
+.tree__tree-item[aria-selected="true"][aria-level="1"] a,
+.tree__tree-item[aria-expanded="true"][aria-level="1"] > a {
+	color: var(--secondary-color);
 }
 
 .tree__tree-item[aria-expanded="false"] > ul {
@@ -44,56 +61,3 @@
 	height: auto;
 	display: block;
 }
-
-
-/* 
-
-
-
-.parents {
-	overflow-x: hidden;
-	overflow-y: auto;
-
-	flex-shrink: 1;
-	flex-grow: 1;
-	
-	height: 100%;
-	padding-left: 1rem;
-	padding-bottom: 2rem;
-}
-
-.children {
-	margin-left: 1rem;
-	height: 0;
-	overflow: hidden;
-}
-
-[selected] .children {
-	height: auto;
-	overflow: show;
-}
-
-.nav-item {
-	position: relative;
-	color: rgba(255, 255, 255, .75);
-	display: block;
-	font-weight: 400;
-	padding: 0.85em 0;
-	
-}
-
-.nav-item a {
-	color: rgba(255, 255, 255, .75);
-	-webkit-transition: color .5s, border .4s;
-	transition: color .5s, border .4s;
-	text-decoration: none;
-}
-
-.nav-item a:hover {
-	color: #fff;
-}
-
-.selected a{
-	color: var(--nav-selected-font-color);
-	font-weight: 500;
-} */
