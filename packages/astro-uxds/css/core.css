@@ -28,3 +28,29 @@ html, body {
 }
 
 
+table {
+	width: 100%;
+	margin-bottom: 1rem;
+}
+
+thead tr {
+	border-bottom: 2px solid darkgray;
+}
+
+th {
+	text-align: left;
+}
+
+th, td {
+	padding: 0.35rem 0.25rem;
+}
+
+tr:not(:last-of-type) {
+	border-bottom: 1px solid grey;
+}
+
+@media screen and (min-width 1000px) {
+	table {
+		max-width: 120%;
+	}
+}

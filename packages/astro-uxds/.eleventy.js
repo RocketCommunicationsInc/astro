@@ -1,7 +1,7 @@
 module.exports = function(eleventyConfig) {
   const markdownIt = require('markdown-it');
   const markdownItContainer = require('markdown-it-container');
-  const markdownItAttrs = require('markdown-it-attrs');
+  const implicitFigures = require('markdown-it-implicit-figures');
   const cleanCSS = require('clean-css');
 
   // markdown options
@@ -12,9 +12,11 @@ module.exports = function(eleventyConfig) {
   };
 
   const markdownLib = markdownIt(options)
+    .use(implicitFigures, {
+      figcaption: true,
+    })
     .use(markdownItContainer, 'note')
-    .use(markdownItContainer, 'caution')
-    .use(markdownItAttrs);
+    .use(markdownItContainer, 'caution');
   eleventyConfig.setLibrary('md', markdownLib);
 
   // Manuall move static content
