@@ -2,9 +2,13 @@ main {
 
 }
 
+main img {
+	max-width: 100%;
+}
+
 main p {
 	margin: 0 0 1rem 0;
-	line-height: 1.5;
+	line-height: 1.375;
 }
 
 main ul {
@@ -19,7 +23,7 @@ main li {
 	line-height: 1.5;
 }
 
-
+/* Notes/Tips/Cautions */
 .note {
 	background-color: rgb(252, 241, 191);
 	padding: 1rem;
@@ -40,4 +44,16 @@ main li {
 
 .caution p:last-child {
 	margin-bottom: 0;
+}
+
+
+/* figures */
+figure {
+	/* outline: 1px solid red; */
+	margin: 1.5rem 0;
+}
+
+figcaption {
+	padding: 0.5rem 0 0.5rem;
+	font-size: 0.9rem;
 }
