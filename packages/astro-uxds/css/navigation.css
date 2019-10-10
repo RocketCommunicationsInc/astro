@@ -7,11 +7,17 @@
 	scrollbar-width: thin; 
 	
 	padding-bottom: 2rem;
+
+	transition: scrollbar-color 0.1367s ease-in;
+	transition-delay: 0s;
 }
 
 .navigation:hover {
 	scrollbar-color: var(--secondary-color) transparent;
+	transition-delay: 0.1667s;
 }
+
+
 
 .navigation::-webkit-scrollbar {
 	width: 1rem;
@@ -21,7 +27,7 @@
 	background-color: var(--nav-scrollbar-track-color);
 }
 .navigation::-webkit-scrollbar-thumb {
-background-color: var(--nav-scrollbar-thumb-color);
+	background-color: var(--nav-scrollbar-thumb-color);
 	border-radius: 0.5rem;
 	border: 0.3125rem solid transparent;
 	background-clip: padding-box;
@@ -30,8 +36,7 @@ background-color: var(--nav-scrollbar-thumb-color);
 
 .navigation:hover::-webkit-scrollbar-thumb {
 	background-color: var(--secondary-color);
-		
-	}
+}
 
 .navigation a {
 	color: #fff;

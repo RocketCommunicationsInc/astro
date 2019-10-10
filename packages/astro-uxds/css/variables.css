@@ -2,8 +2,14 @@
 	--primary-color: #e47836;
 	--secondary-color: #ffa301;
 
-	--font: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	--font-color: #000;
+	--background-color: #fff;
+
+	--content-max-text-width: 56.25em;
+	--content-max-width: 1200px;
+
+	--font: Helvetica, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	--font-color: rgb(73,73,73);
+	--font-size: 1rem;
 	--font-size-sm: 0.85rem;
 
 	--nav-background-color: #000;
@@ -20,4 +26,9 @@
 
 	--nav-hover-scrollbar-thumb-color: rgba(255,255,255,0.5);
 	--nav-hover-scrollbar-track-color: transparent;
+
+	--content-padding-horizontal: 1rem;
+	--content-padding-vertical: 2rem;
+
+	--rule-color: #ddd;
 }

@@ -1,27 +1,32 @@
 main {
-
+	padding: var(--content-padding-horizontal, 1rem) var(--content-padding-vertical, 2rem);
+	color: var(--font-color, rgb(73,73,73));
 }
 
 main img {
-	max-width: 100%;
+	/* max-width: 100%; */
 }
 
-main p {
-	margin: 0 0 1rem 0;
-	line-height: 1.375;
+/* main :not(figure):not(img):not(table) {
+	max-width: var(--content-max-text-width, 40em);
+} */
+
+main {
+	max-width: var(--content-max-text-width, 40em);
 }
 
 main ul {
 	list-style: disc;
-	padding-left: 1.25rem;
-	margin-left: 0.75rem;
-	margin-top: 0.75rem;
+	margin: 0 0 0 1.5em;
+	padding: 0.7em 0 0;
 }
 
 main li {
-	margin-bottom: 0.75rem;
-	line-height: 1.5;
+	line-height: 1.2;
+	margin: 0 0 0.85em -0.1rem;
 }
+
+
 
 /* Notes/Tips/Cautions */
 .note {
@@ -49,11 +54,26 @@ main li {
 
 /* figures */
 figure {
-	/* outline: 1px solid red; */
+	
+	outline: 1px solid red;
 	margin: 1.5rem 0;
+}
+
+figure img {
+	width: 100%;
 }
 
 figcaption {
 	padding: 0.5rem 0 0.5rem;
 	font-size: 0.9rem;
+}
+
+
+.dos-and-donts {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.dos-and-donts figure {
+	width: auto;
 }

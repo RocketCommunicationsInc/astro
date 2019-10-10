@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="/css/components.css">
 	<link rel="stylesheet" href="/css/sample.css">
 
+	<h1>{{ title }}</h1>
 	{% if test.demo %}
 
 		<div class="demo-container">
@@ -22,5 +23,5 @@
 		</div>
 	{% endif %}
 
-	{{ content | safe }}
+	{{ content | safe | removeHeader }}
 {% endblock %}
