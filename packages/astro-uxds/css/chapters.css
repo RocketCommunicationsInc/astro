@@ -104,6 +104,27 @@ figcaption {
 
 
 
+/* Special for color section */
+
+.color tr:not(:last-of-type) {
+	border-bottom: 1px solid #ccc;
+}
+
+.color td {
+	vertical-align: middle;
+}
+
+.color table code {
+	font-size: 1.2rem;
+}
+
+.color td img {
+	height: 2rem;
+	width: 2rem;
+	margin: 0;
+	padding: 0;
+}
+
 
 
 
