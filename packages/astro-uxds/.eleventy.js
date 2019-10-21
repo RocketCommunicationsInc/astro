@@ -17,7 +17,9 @@ module.exports = function(eleventyConfig) {
     })
     .use(markdownItContainer, 'note')
     .use(markdownItContainer, 'caution')
-    .use(markdownItContainer, 'dos-and-donts');
+    .use(markdownItContainer, 'col')
+    .use(markdownItContainer, 'two-col')
+    .use(markdownItContainer, 'three-col');
   eleventyConfig.setLibrary('md', markdownLib);
 
   /* Removes the h1 element from components to enabled inserting live sample */
@@ -29,7 +31,7 @@ module.exports = function(eleventyConfig) {
   // Manuall move static content
   eleventyConfig.addPassthroughCopy({ img: 'img/_site' });
   eleventyConfig.addPassthroughCopy({ '_content/img': 'img' });
-  eleventyConfig.addPassthroughCopy({ '_content/components/button/img': 'components/img' });
+  eleventyConfig.addPassthroughCopy({ '_content/**/*/img/*': 'components/img' });
   eleventyConfig.addPassthroughCopy('js');
   eleventyConfig.addPassthroughCopy('css');
   eleventyConfig.addPassthroughCopy('fonts');
