@@ -1,3 +1,4 @@
 [submodule "_content"]
 	path = _content
 	url = https://bitbucket.org/rocketcom/astro-guidelines.git/
+	branch = $(CONTENT_BRANCH)
