@@ -6,7 +6,11 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "rm -rf _content && git clone https://bitbucket.org/rocketcom/astro-guidelines.git _content  && eleventy",
-		"serve": "rm -rf _content && git clone https://bitbucket.org/rocketcom/astro-guidelines.git _content  && eleventy --serve"
+		"serve": "rm -rf _content && git clone https://bitbucket.org/rocketcom/astro-guidelines.git _content  && eleventy --serve",
+		"build:errata": "rm -rf _content && git clone https://bitbucket.org/rocketcom/astro-guidelines.git -b errata _content  && eleventy",
+		"serve:errata": "rm -rf _content && git clone https://bitbucket.org/rocketcom/astro-guidelines.git -b errata _content  && eleventy --serve",
+		"build:draft": "rm -rf _content && git clone https://bitbucket.org/rocketcom/astro-guidelines.git -b draft _content  && eleventy",
+		"serve:draft": "rm -rf _content && git clone https://bitbucket.org/rocketcom/astro-guidelines.git -b draft _content  && eleventy --serve"
 	},
 	"keywords": [],
 	"author": "",
