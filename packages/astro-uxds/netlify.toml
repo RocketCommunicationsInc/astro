@@ -1,3 +1,5 @@
 [[redirects]]
 	from = "/ui-components/*"
-	to = "/components/*"
+	to = "/components/:splat"
+	status = 300
+	force = true
