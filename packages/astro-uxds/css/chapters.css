@@ -96,7 +96,7 @@ main li {
   margin: 1rem 0;
   line-height: 1;
   border-radius: 5px;
-  background-position: left 1rem top 1.25rem;
+  background-position: left 1rem top 1rem;
   background-size: 2rem 2rem;
   background-repeat: no-repeat;
 }
