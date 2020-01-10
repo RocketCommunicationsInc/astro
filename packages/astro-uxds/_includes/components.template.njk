@@ -38,5 +38,5 @@
 		</div>
 	{% endif %}
 
-	{{ content | safe | removeHeader }}
+	{{ content | safe | removeHeader | figureIt | doDont }}
 {% endblock %}

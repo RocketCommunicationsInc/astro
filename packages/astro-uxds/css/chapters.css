@@ -165,3 +165,17 @@ figcaption {
 .three-col {
   grid-template-columns: repeat(3, [col-start] 1fr);
 }
+
+.do,
+.dont {
+  margin-top: 0.5rem;
+  border-top: 5px solid;
+}
+
+.do {
+  border-top-color: #2fb312;
+}
+
+.dont {
+  border-top-color: #fe3701;
+}
