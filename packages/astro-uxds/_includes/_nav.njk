@@ -13,9 +13,9 @@
 				{% for navData in data.items %}
 					{{ navItem(navData, level + 1) }}
 				{% endfor %}
-		</ul>
-	</li>
-{% else %}
+			</ul>
+		</li>
+	{% else %}
 	<li
 		class="tree__tree-item  {{ data.class }}"
 		role="none"
@@ -31,26 +31,38 @@
 <link rel="stylesheet" href="/css/navigation.css">
 <script src="/js/navigation.js"></script>
 
+<div class="mobile-nav">
+    <div id="open-menu" class="menu-container">
+        <div class="mobile-menu"></div>
+    </div>
+    <a href="/">
+        <div class="mobile-logo"></div>
+    </a>
+</div>
 <div class="sidebar">
-<div class="masthead">
-	<img class="masthead-logo" src="/img/_site/astro-logo--small.svg"/>
+	<div class="masthead">
+		<div id="close-menu2" class="close-menu">
+			<div class="mobile-menu close"></div>
+		</div>
+		<img class="masthead-logo" src="/img/_site/astro-logo--small.svg"/>
 
-	<div class="masthead__toolbar">
-		<label class="search" for="search">
-			<form id="rtd-search-form">
-				<input type="search" name="q" class="search__input" placeholder="Search …">
-			</form>
-		</label>
-		<button class="print-button" onclick="javascript:window.print()">Print</button>
+		<div class="masthead__toolbar">
+			<label class="search" for="search">
+				<form id="rtd-search-form">
+					<input type="search" name="q" class="search__input" placeholder="Search …">
+				</form>
+			</label>
+			<button class="print-button" onclick="javascript:window.print()">Print</button>
+		</div>
+
 	</div>
 
+	<nav id="navigation" class="navigation">
+		<ul class="parents" role="tree">
+			{% for navData in navigation -%}
+				{{ navItem(navData, 1) }}
+			{% endfor %}
+		</ul>
+	</nav>
 </div>
-
-<nav id="navigation" class="navigation">
-	<ul class="parents" role="tree">
-		{% for navData in navigation -%}
-			{{ navItem(navData, 1) }}
-		{% endfor %}
-	</ul>
-</nav>
-</div>
+<div class="menu-overlay"></div>

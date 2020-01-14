@@ -10,7 +10,10 @@
 		"build:errata": "rm -rf _content && git clone https://bitbucket.org/rocketcom/astro-guidelines.git -b errata _content  && eleventy",
 		"serve:errata": "rm -rf _content && git clone https://bitbucket.org/rocketcom/astro-guidelines.git -b errata _content  && eleventy --serve",
 		"build:draft": "rm -rf _content && git clone https://bitbucket.org/rocketcom/astro-guidelines.git -b draft _content  && eleventy",
-		"serve:draft": "rm -rf _content && git clone https://bitbucket.org/rocketcom/astro-guidelines.git -b draft _content  && eleventy --serve"
+		"serve:draft": "rm -rf _content && git clone https://bitbucket.org/rocketcom/astro-guidelines.git -b draft _content  && eleventy --serve",
+		"build-scss": "node-sass --include-path scss ./**/*.scss ./css",
+		"watch-scss": "nodemon -e scss -x \"npm run scss\"",
+		"scss": "node-sass -rw scss -o css"
 	},
 	"keywords": [],
 	"author": "",
@@ -25,5 +28,8 @@
 		"markdown-it-div": "^1.1.0",
 		"markdown-it-implicit-figures": "^0.9.0"
 	},
-	"dependencies": {}
+	"dependencies": {
+		"node-sass": "^4.13.0",
+		"nodemon": "^2.0.2"
+	}
 }

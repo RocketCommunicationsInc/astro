@@ -1,0 +1,104 @@
+.navigation {
+	position: relative;
+	color: #fff;
+	overflow-y: auto;
+
+	scrollbar-color: var(--nav-scrollbar-thumb-color) var(--nav-scrollbar-track-color);
+	scrollbar-width: thin; 
+	
+	padding-bottom: 2rem;
+
+	transition: scrollbar-color 0.1367s ease-in;
+	transition-delay: 0s;
+}
+
+.navigation:hover {
+	scrollbar-color: var(--secondary-color) transparent;
+	transition-delay: 0.1667s;
+}
+
+
+
+.navigation::-webkit-scrollbar {
+	width: 1rem;
+	background-color: transparent;
+}
+.navigation::-webkit-scrollbar-track {
+	background-color: var(--nav-scrollbar-track-color);
+}
+.navigation::-webkit-scrollbar-thumb {
+	background-color: var(--nav-scrollbar-thumb-color);
+	border-radius: 0.5rem;
+	border: 0.3125rem solid transparent;
+	background-clip: padding-box;
+}
+
+
+.navigation:hover::-webkit-scrollbar-thumb {
+	background-color: var(--secondary-color);
+}
+
+.navigation a {
+	color: #fff;
+	opacity: 0.8;
+}
+
+.navigation a:hover {
+	text-decoration: none;
+	opacity: 1;
+}
+
+.navigation ul {
+	margin-top: 0.5rem;
+	padding-left: 1.5rem;
+}
+
+.navigation > ul {
+	padding-right: 1.5rem;
+}
+
+.tree__tree-item {
+	position: relative;
+	color: rgba(255, 255, 255, .75);
+	display: block;
+	font-weight: 400;
+	padding: 0.85em 0;
+	height: 100%;
+	-webkit-transition: background-color 0.5s, border 0.4s;
+	transition: background-color 0.5s, border 0.4s;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+.tree__tree-item[aria-selected="true"] a,
+.tree__tree-item[aria-expanded="true"][aria-level="1"] > a {
+	font-weight: bold;
+	opacity: 1;
+}
+
+.tree__tree-item[aria-selected="true"][aria-level="1"] a,
+.tree__tree-item[aria-expanded="true"][aria-level="1"] > a {
+	color: var(--secondary-color);
+}
+
+.tree__tree-item[aria-expanded="false"] > ul {
+	height: 0;
+	display: none;
+}
+
+.tree__tree-item[aria-expanded="true"] > ul {
+	height: auto;
+	display: block;
+}
+
+.section-start {
+	margin-top: 0.5rem;
+	padding-top: 1.25rem;
+	border-top: 1px solid rgba(255,255,255,0.25);
+}
+
+.section-end {
+	margin-bottom: 0.5rem;
+	padding-bottom: 1.25rem;
+	border-bottom: 1px solid rgba(255,255,255,0.25);
+}

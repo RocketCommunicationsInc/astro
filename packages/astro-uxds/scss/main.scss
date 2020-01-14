@@ -1,0 +1,9 @@
+@import './00-presets/_index';
+
+.container .content {
+
+  @media #{$tablet}{
+    max-width:100%;
+    background:red;
+  }
+}
