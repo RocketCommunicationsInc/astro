@@ -1,0 +1,9 @@
+{% extends "base.template.njk" %}
+
+{% block content %}
+	<link rel="stylesheet" href="/css/chapters.css">
+	{{ content | safe }}
+		<form id="rtd-search-form" class="search-page-form" method="get" action="/search">
+			<input type="search" name="q" class="search__input" placeholder="Search">
+		</form>
+{% endblock %}

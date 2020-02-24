@@ -30,6 +30,7 @@
 <link rel="stylesheet" href="/css/sidebar.css">
 <link rel="stylesheet" href="/css/navigation.css">
 <script src="/js/navigation.js"></script>
+<script src="/js/search.js"></script>
 
 <div class="mobile-nav">
     <div id="open-menu" class="menu-container">
@@ -48,7 +49,7 @@
 
 		<div class="masthead__toolbar">
 			<label class="search" for="search">
-				<form id="rtd-search-form">
+				<form id="rtd-search-form" method="get" action="/search">
 					<input type="search" name="q" class="search__input" placeholder="Search …">
 				</form>
 			</label>

@@ -70,7 +70,7 @@
 }
 
 .home__container {
-  max-width: 75em;
+
   margin: auto;
 
   p {
@@ -219,12 +219,16 @@
   margin: 2.1rem auto;
   height: 100%;
 
-  li {
+  .row {
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+  }
+  .row-element {
     text-align: center;
     width: 32%;
     background: rgba(29, 31, 41, 0.7);
     padding: 1rem 1.5rem 1.5rem;
-    margin: 0 1rem;
     border: solid 1px rgba(181, 124, 33, 0.5);
     border-bottom: solid 6px var(--secondary-color);
     font-size: 1.1rem;
@@ -234,15 +238,17 @@
   h2 {
     font-size: 1.35rem;
     font-weight: 700;
-    margin-bottom: 0.9rem;
+    margin: 0 auto 0.9rem;
   }
 
   @media #{$tablet}{
-    flex-direction: column;
-    h2 {
-      margin:1rem auto;
+    .row {
+      flex-direction: column;
     }
-    li {
+    h2 {
+      margin:0 auto 1rem;
+    }
+    .row-element {
       width:100%;
       margin:1rem auto;
     }
@@ -307,6 +313,10 @@
     .mc-field-group {
       min-width: 20rem;
       padding: 0 1rem;
+
+      > input {
+        border:solid 2px transparent;
+      }
     }
   }
 
@@ -327,7 +337,9 @@
         font-size: 18px;
       }
     }
-
+    #mc-embedded-subscribe-form div.mce_inline_error{
+      position:absolute;
+    }
     #mce-success-response, #mce-error-response {
       color: #fff;
     }
@@ -342,6 +354,7 @@
     }
   }
 }
+
 /* .home__email-signup #mc-embedded-subscribe.primary:hover {
 	color: #FFFFFF;
 	background-color: var(--secondary-color);
