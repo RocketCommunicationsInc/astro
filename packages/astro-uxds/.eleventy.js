@@ -41,7 +41,7 @@ module.exports = function(eleventyConfig) {
 
     const els = value.val
       .split("\n")
-      .map(el => (el.includes("figure") ? el.replace("figure", `figure id="figure-${(figcount += 1)}"`) : el));
+      .map(el => (el.includes("<figure") ? el.replace("<figure", `<figure id="figure-${(figcount += 1)}"`) : el));
 
     value.val = els.join("\n");
     return value;
