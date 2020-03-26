@@ -8,6 +8,12 @@
 
 Astro can be run locally for use in secure locations or for development purposes. You will need [NodeJS](https://nodejs.org/en/) to run Astro locally and [Git](https://help.github.com/articles/set-up-git/) if you plan on contributing to Astro.
 
+The live Astro site is available at https://www.astrouxds.com
+
+A draft version of the next version is availablte at https://draft.astrouxds.com (Note: authorized user access only)
+
+A developer version of the next version is availablte at https://dev.astrouxds.com (Note: authorized user access only)
+
 ### Clone the Astro Repository
 
 Clone the Astro repository to your local working environment. Note the following instructions assume Command Line Interface, if you use a Git client such as GitHub Desktop or BeanStalk follow their procedures for cloning.

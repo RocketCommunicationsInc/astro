@@ -43,7 +43,7 @@
   -webkit-transition: background-color 0.5s, border 0.4s;
   transition: background-color 0.5s, border 0.4s;
   -webkit-font-smoothing: antialiased;
-  color: "rgba(255, 255, 255, 0.75)"; }
+  color: "rgba(0,0,0, 0.75)"; }
   .tree__tree-item[aria-selected="true"] a, .tree__tree-item[aria-expanded="true"][aria-level="1"] > a {
     font-weight: bold;
     opacity: 1; }

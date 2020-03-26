@@ -6,7 +6,7 @@ layout: interior.template.njk
 title: GRM Schedule
 ---
 
-## GRM Schedule
+# GRM Schedule
 
 [Launch GRM Schedule Sample App](https://grm-schedule.astrouxds.com/) | [Design Materials and Source Code](#contentBottom)
 
@@ -22,7 +22,7 @@ There are three main areas in the Schedule app: the Global Status Bar, the Conta
 
 ## Global Status Bar
 
-As outlined on the [About GRM Designs](/grm-service-ux-design/about-the-grm-designs) page, each of the apps in the GRM Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/ui-components/global-status-bar), an Astro component featured in all three apps. Though the status bar contents vary somewhat between apps in order to best support each app’s individual workflows, all contain a [Clock](/ui-components/clock), [Monitoring Icons](/ui-components/icons-and-symbols), and an app switching menu that allows operators to transition quickly from one GRM task flow to another.
+As outlined on the [About GRM Designs](/grm-service-ux-design/about-the-grm-designs) page, each of the apps in the GRM Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar), an Astro component featured in all three apps. Though the status bar contents vary somewhat between apps in order to best support each app’s individual workflows, all contain a [Clock](/components/clock), [Monitoring Icons](/components/icons-and-symbols), and an app switching menu that allows operators to transition quickly from one GRM task flow to another.
 
 ![GRM Schedule Global Status Bar Details](/img/service-specific-ux-design/grm-schedule-global-status-bar-details.png)
 
@@ -61,9 +61,9 @@ The List view shares many of the elements of the Timeline view including the tim
 
 ## Manage Contacts Pane
 
-Operators can view additional detail on a contact by clicking on it in the timeline or row in the list view. This detail is presented in a [Modeless Pane](https://astrouxds.com/design-guidelines/modeless-panes) that draws in from the right side of the window so operators aren’t taken away from the main app view. The data in the pane is presented in read-only form initially, but a Modify Contact button swaps the read-only view for an editable one, allowing operators to change the contact’s settings. Similarly, to schedule a new contact, operators can click on the Add Contact button which opens the pane to specify settings.
+Operators can view additional detail on a contact by clicking on it in the timeline or row in the list view. This detail is presented in a [Modeless Pane](/design-guidelines/modeless-panes) that draws in from the right side of the window so operators aren’t taken away from the main app view. The data in the pane is presented in read-only form initially, but a Modify Contact button swaps the read-only view for an editable one, allowing operators to change the contact’s settings. Similarly, to schedule a new contact, operators can click on the Add Contact button which opens the pane to specify settings.
 
-The image below shows the Contact pane for this Add Contact task flow. To see the view contact and modify contact variants of the pane, and more design and task flow details, download the [GRM Design Specification or Wireframes](https://astrouxds.com/grm-service-ux-design/grm-schedule#contentBottom). You can also interact with these elements in the [GRM Schedule Sample App](https://grm-schedule.astrouxds.com/).
+The image below shows the Contact pane for this Add Contact task flow. To see the view contact and modify contact variants of the pane, and more design and task flow details, download the [GRM Design Specification or Wireframes](/grm-service-ux-design/grm-schedule#contentBottom). You can also interact with these elements in the [GRM Schedule Sample App](https://grm-schedule.astrouxds.com/).
 
 :::two-col
 ![GRM Schedule Manage Contacts Pane](/img/service-specific-ux-design/grm-schedule-manage-contacts-details.png)

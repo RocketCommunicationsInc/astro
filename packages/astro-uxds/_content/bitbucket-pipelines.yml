@@ -1,0 +1,33 @@
+# This is a sample build configuration for JavaScript.
+# Check our guides at https://confluence.atlassian.com/x/14UWN for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: node:10.15.3
+
+pipelines:
+  branches:
+    master:
+      - step:
+          name: Publish to Netlify
+          deployment: production
+          caches:
+            - node
+          script:
+            - curl -X POST -d {} https://api.netlify.com/build_hooks/5d83f26c3f1b5ebaef23ecfc
+    errata:
+      - step:
+          name: Publish Errata Preview to Netlify
+          deployment: errata
+          caches:
+            - node
+          script:
+            - curl -X POST -d {} https://api.netlify.com/build_hooks/5de57d9d55de0ca881ab64da
+    draft:
+      - step:
+          name: Publish Draft Preview to Netlify
+          deployment: draft
+          caches:
+            - node
+          script:
+            - curl -X POST -d {} https://api.netlify.com/build_hooks/5de59371191417070b7bb458

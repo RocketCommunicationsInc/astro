@@ -7,6 +7,3 @@ title: 'Search'
 ---
 
 # Search
-
-
-## Search Results

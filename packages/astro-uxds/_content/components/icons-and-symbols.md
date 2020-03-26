@@ -35,7 +35,7 @@ These icons represent objects, equipment, and concepts that are being administer
 
 ### Percentage Monitoring Icons
 
-Percentage Monitoring Icons depict a value between 0 and 100 as an arc and a numeric display. Ranges within the arc may be mapped to the standard [Astro Status Colors](/design-guidelines/status-system). In this example the range containing 80% is mapped to Serious.
+Percentage Monitoring Icons depict a value between 0 and 100 as an arc and a numeric display. Ranges within the arc may be mapped to the standard [Astro Status Colors](/patterns/status-system). In this example the range containing 80% is mapped to Serious.
 
 ![Anatomy of the monitoring progress icon](/img/components/percentage-monitoring-graphic-cms.png "Anatomy of the monitoring progress icon")
 
@@ -69,7 +69,7 @@ Status Symbols are not to be altered as they are appended to icons for ADA 508 a
 
 ### Status Symbols
 
-[Status Symbols](/components/status-symbol) include a shape and color that represent a particular state of an object, tool, concept, or action. An icon that indicates a state will be accompanied with a corresponding Status Color and Status Symbol. For more information see [Status System](/design-guidelines/status-system).
+[Status Symbols](/components/status-symbol) include a shape and color that represent a particular state of an object, tool, concept, or action. An icon that indicates a state will be accompanied with a corresponding Status Color and Status Symbol. For more information see [Status System](/patterns/status-system).
 
 ![All Astro status symbol icons](/img/components/icons-status-symbols-1.png "All Astro status symbol icons")
 
@@ -87,7 +87,7 @@ A unique single purpose state indicator to identify whether an object or compone
 
 Events that require some user attention, but no immediate response, may be indicated by changes to a Notification Symbol.
 
-This Notification Symbol shows that five events related to a Satellite have occurred. You may hyperlink indicators to reveal a deeper view of relevant [Notification](/design-guidelines/notifications) information. You may also link to the general Log.
+This Notification Symbol shows that five events related to a Satellite have occurred. You may hyperlink indicators to reveal a deeper view of relevant [Notification](/patterns/notifications) information. You may also link to the general Log.
 
 ![Anatomy of the notification count symbol.](/img/components/notification-symbols.png "Anatomy of the notification count symbol.")
 

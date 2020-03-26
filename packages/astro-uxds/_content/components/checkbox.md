@@ -24,19 +24,17 @@ A Checkbox describes a state or value that can be either “On or Off.” Checkb
 
 ## Appearance and Behavior
 
-A checkbox can be configured for required input. [See Form and Input Validation](./validation/).
+A checkbox can be configured for required input. [See Form and Input Validation](/patterns/forms-and-validation).
 
 ::: note
-Don’t use a Checkbox to initiate an action. Instead, use an [Action Button](../button) or a [Toggle Button](./toggle)
+Don’t use a Checkbox to initiate an action. Instead, use an [Action Button](/components/button) or a [Toggle Button](/components/toggle)
 :::
 
 ## Examples
 
 ::: two-col
 ![Do: Neatly arrange and group multiple Checkboxes whenever possible.](/img/components/checkbox-do-1.png "Do: Neatly arrange and group multiple Checkboxes whenever possible.")
-Do: Neatly arrange and group multiple Checkboxes whenever possible.
 
 ![Don’t: Poorly placed and misaligned Checkboxes make it difficult for users to differentiate one state from another.](/img/components/checkbox-do-1.png "Don’t: Poorly placed and misaligned Checkboxes make it difficult for users to differentiate one state from another.")
-Don’t: Poorly placed and misaligned Checkboxes make it difficult for users to differentiate one state from another.
 
 :::

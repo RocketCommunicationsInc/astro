@@ -6,7 +6,7 @@ layout: interior.template.njk
 title: TT&C Monitor
 ---
 
-## TT&C Monitor
+# TT&C Monitor
 
 [Launch TT&C Monitor Sample App](https://ttc-monitor.astrouxds.com/) | [Design Materials and Source Code](/ttc-service-ux-design/ttc-monitor#contentBottom)
 
@@ -22,7 +22,7 @@ There are four main areas in the Monitor app: the Global Status Bar, Alerts pane
 
 ## Global Status Bar
 
-As outlined on the [About TT&C Designs](/ttc-service-ux-design/about-the-ttc-designs) page, each of the apps in the TT&C Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/ui-components/global-status-bar), an Astro component featured in all three apps. Though the status bar contents vary somewhat between apps in order to best support each app’s individual workflows, all contain a [Clock](/ui-components/clock), [Monitoring Icons](/ui-components/icons-and-symbols), and an app switching menu that allows operators to transition quickly from one TT&C task flow to another.
+As outlined on the [About TT&C Designs](/ttc-service-ux-design/about-the-ttc-designs) page, each of the apps in the TT&C Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar), an Astro component featured in all three apps. Though the status bar contents vary somewhat between apps in order to best support each app’s individual workflows, all contain a [Clock](/components/clock), [Monitoring Icons](/components/icons-and-symbols), and an app switching menu that allows operators to transition quickly from one TT&C task flow to another.
 
 ![TT&C Monitor App Details](/img/service-specific-ux-design/ttc-monitor-global-status-bar-details.png)
 
@@ -100,6 +100,6 @@ Below are design and development resources to get you started on an app that sup
 
 | Resources                                                                                                                                        | Description                                                                                                                                               |
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [TT&C Design Specifications (pdf)](http://com.rocketcom.astrouxds.s3.amazonaws.com/attachments/cjtsy7te707614iqnq3czazo4-ttc-specifications.pdf) | The TT&C Design Specification contains information on use cases, task flows, UX research and wireframes for key features of the TT&C App Suite.           |
-| [TT&C Design Wireframes (pdf)](http://com.rocketcom.astrouxds.s3.amazonaws.com/attachments/cjtsy72c3075p4iqntmk534ua-ttc-wireframes.pdf)         | The TT&C Design Wireframes document contains the complete set of wireframes (mid-fidelity renderings) of the screens designed for the TT&C App Suite.     |
-| [App Source Code (Git Repository)](https://bitbucket.org/rocketcom/ttc-monitor/src/master/)                                                      | The source code Git repository and other useful documentation for the TT&C Monitor App is hosted at bitbucket.org so that you can check it out in detail. |
+| [TT&C Design Specifications (pdf)](/downloads/ttc-specifications.pdf) | The TT&C Design Specification contains information on use cases, task flows, UX research and wireframes for key features of the TT&C App Suite.           |
+| [TT&C Design Wireframes (pdf)](/downloads/ttc-wireframes.pdf)         | The TT&C Design Wireframes document contains the complete set of wireframes (mid-fidelity renderings) of the screens designed for the TT&C App Suite.     |
+| [App Source Code (Git Repository)](https://bitbucket.org/rocketcom/tt-c-monitor/src/master/)                                                      | The source code Git repository and other useful documentation for the TT&C Monitor App is hosted at bitbucket.org so that you can check it out in detail. |

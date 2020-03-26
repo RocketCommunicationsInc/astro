@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="325" height="150" viewBox="0 0 325 150">
+  <defs>
+    <path id="@1xval-group-checkbox-a" d="M16,0 C17.1045695,-2.02906125e-16 18,0.8954305 18,2 L18,16 C18,17.1045695 17.1045695,18 16,18 L2,18 C0.8954305,18 1.3527075e-16,17.1045695 0,16 L0,2 C-1.3527075e-16,0.8954305 0.8954305,2.02906125e-16 2,0 L16,0 Z M16,1 L2,1 C1.44771525,1 1,1.44771525 1,2 L1,2 L1,16 C1,16.5522847 1.44771525,17 2,17 L2,17 L16,17 C16.5522847,17 17,16.5522847 17,16 L17,16 L17,2 C17,1.44771525 16.5522847,1 16,1 L16,1 Z"/>
+    <rect id="@1xval-group-checkbox-c" width="16" height="16" rx="1"/>
+    <path id="@1xval-group-checkbox-e" d="M9.20911077,0.233978839 C9.63218544,0.588980634 9.6873694,1.21973623 9.33236761,1.64281089 L4.19006673,7.77116644 C4.162184,7.80439578 4.13260016,7.83535564 4.10154946,7.86402551 C4.09064368,7.88166039 4.07771978,7.89807255 4.06420106,7.91418355 C3.70919926,8.33725821 3.07844367,8.39244217 2.655369,8.03744038 L0.357235673,6.10907755 C-0.0658389908,5.75407576 -0.121022955,5.12332016 0.233978839,4.7002455 C0.588980634,4.27717083 1.21973623,4.22198687 1.64281089,4.57698866 L3.177,5.865 L7.80027872,0.357235673 C8.15528052,-0.0658389908 8.78603611,-0.121022955 9.20911077,0.233978839 Z"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <rect width="325" height="150" fill="#192634"/>
+    <rect width="129" height="100" x="27" y="28" fill="#005A8F" fill-opacity=".2" stroke="#2C5373" rx="3"/>
+    <text fill="#A9B2BC" font-family="OpenSans-Regular, Open Sans" font-size="14">
+      <tspan x="36" y="19">Group Label</tspan>
+    </text>
+    <polygon fill="#A9B2BC" fill-rule="nonzero" points="119.208 9.402 118.998 11.331 120.941 10.789 121.068 11.678 119.208 11.829 120.419 13.421 119.579 13.88 118.72 12.112 117.938 13.88 117.079 13.421 118.261 11.829 116.42 11.678 116.562 10.789 118.471 11.331 118.261 9.402"/>
+    <text fill="#FFF" font-family="OpenSans-Regular, Open Sans" font-size="16">
+      <tspan x="64" y="57">Alpha</tspan>
+    </text>
+    <text fill="#FFF" font-family="OpenSans-Regular, Open Sans" font-size="16">
+      <tspan x="64" y="85">Bravo</tspan>
+    </text>
+    <rect width="129" height="100" x="171" y="28" fill="#005A8F" fill-opacity=".2" stroke="#FF3030" rx="3"/>
+    <text fill="#FFF" font-family="OpenSans-Regular, Open Sans" font-size="12">
+      <tspan x="180" y="140">Selection required</tspan>
+    </text>
+    <text fill="#A9B2BC" font-family="OpenSans-Regular, Open Sans" font-size="14">
+      <tspan x="180" y="19">Group Label</tspan>
+    </text>
+    <polygon fill="#A9B2BC" fill-rule="nonzero" points="263.208 9.402 262.998 11.331 264.941 10.789 265.068 11.678 263.208 11.829 264.419 13.421 263.579 13.88 262.72 12.112 261.938 13.88 261.079 13.421 262.261 11.829 260.42 11.678 260.562 10.789 262.471 11.331 262.261 9.402"/>
+    <text fill="#FFF" font-family="OpenSans-Regular, Open Sans" font-size="16">
+      <tspan x="208" y="57">Alpha</tspan>
+    </text>
+    <text fill="#FFF" font-family="OpenSans-Regular, Open Sans" font-size="16">
+      <tspan x="208" y="85">Bravo</tspan>
+    </text>
+    <text fill="#FFF" font-family="OpenSans-Regular, Open Sans" font-size="16">
+      <tspan x="64" y="113">Charlie</tspan>
+    </text>
+    <text fill="#FFF" font-family="OpenSans-Regular, Open Sans" font-size="16">
+      <tspan x="208" y="113">Charlie</tspan>
+    </text>
+    <rect width="17" height="17" x="37.5" y="42.5" stroke="#79C0FF" rx="2"/>
+    <rect width="17" height="17" x="37.5" y="99.5" stroke="#79C0FF" rx="2"/>
+    <g transform="translate(37 69)">
+      <g transform="translate(0 2)">
+        <mask id="@1xval-group-checkbox-b" fill="#fff">
+          <use xlink:href="#@1xval-group-checkbox-a"/>
+        </mask>
+        <use fill="#000" xlink:href="#@1xval-group-checkbox-a"/>
+        <g fill="#FFF" mask="url(#@1xval-group-checkbox-b)">
+          <rect width="18" height="18"/>
+        </g>
+      </g>
+      <g transform="translate(1 3)">
+        <mask id="@1xval-group-checkbox-d" fill="#fff">
+          <use xlink:href="#@1xval-group-checkbox-c"/>
+        </mask>
+        <use fill="#D8D8D8" xlink:href="#@1xval-group-checkbox-c"/>
+        <g mask="url(#@1xval-group-checkbox-d)">
+          <rect width="16" height="16" fill="#4DACFF"/>
+          <polygon fill="#000" points="0 0 16 0 16 16 0 16" opacity=".2"/>
+        </g>
+      </g>
+      <g transform="translate(4 7)">
+        <mask id="@1xval-group-checkbox-f" fill="#fff">
+          <use xlink:href="#@1xval-group-checkbox-e"/>
+        </mask>
+        <use fill="#000" xlink:href="#@1xval-group-checkbox-e"/>
+        <g fill="#FFF" mask="url(#@1xval-group-checkbox-f)">
+          <rect width="10" height="10" transform="translate(0 -1)"/>
+        </g>
+      </g>
+    </g>
+    <rect width="17" height="17" x="181.5" y="42.5" stroke="#79C0FF" rx="2"/>
+    <rect width="17" height="17" x="181.5" y="99.5" stroke="#79C0FF" rx="2"/>
+    <rect width="17" height="17" x="181.5" y="72.5" stroke="#79C0FF" rx="2"/>
+    <path fill="#FF3030" fill-rule="nonzero" d="M277,6 C281.418278,6 285,9.581722 285,14 C285,18.418278 281.418278,22 277,22 C272.581722,22 269,18.418278 269,14 C269,9.581722 272.581722,6 277,6 Z M277,8 C273.686292,8 271,10.6862915 271,14 C271,17.3137085 273.686292,20 277,20 C280.313708,20 283,17.3137085 283,14 C283,10.6862915 280.313708,8 277,8 Z M277,17 C277.552285,17 278,17.4477153 278,18 C278,18.5522847 277.552285,19 277,19 C276.447715,19 276,18.5522847 276,18 C276,17.4477153 276.447715,17 277,17 Z M277,10 C277.552285,10 278,10.4477153 278,11 L278,15 C278,15.5522847 277.552285,16 277,16 C276.447715,16 276,15.5522847 276,15 L276,11 C276,10.4477153 276.447715,10 277,10 Z"/>
+  </g>
+</svg>

@@ -6,3 +6,4 @@ exports.default = () =>
     .src(['./img/*', './_content/img/*'])
     .pipe(imagemin())
     .pipe(gulp.dest('_site/img'));
+

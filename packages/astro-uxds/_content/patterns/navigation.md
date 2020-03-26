@@ -20,7 +20,7 @@ For a small, flat collection of like objects, consider Master-Detail navigation.
 
 ## Tab Navigation
 
-Application objects that easily fall into a small number of distinct categories, or that represent a step-wise workflow, are a candidate for [Tab Navigation](../components/tabs). Examples include:
+Application objects that easily fall into a small number of distinct categories, or that represent a step-wise workflow, are a candidate for [Tab Navigation](/components/tabs). Examples include:
 
 - Scheduled, In-progress, Done
 - Untested, Succeeded, Failed
@@ -34,7 +34,7 @@ The contents of each tab may be similar objects with a different view, or unique
 
 ## Tree Navigation
 
-Tree Navigation resembles Master-Detail, but uses a hierarchal tree rather than a flat list to drive selection. The guidelines you’re reading right now use [Tree Navigation](../components/tree).
+Tree Navigation resembles Master-Detail, but uses a hierarchal tree rather than a flat list to drive selection. The guidelines you’re reading right now use [Tree Navigation](/components/tree).
 
 Use Tree Navigation only with a set of objects that fall into a natural single hierarchy, such as sections, chapters, and paragraphs.
 
@@ -46,13 +46,13 @@ Avoid mixing unrelated object types in a single tree. Although this usage is com
 
 ## Table Navigation
 
-Applications with large uniform data sets can be structured with [Table Navigation](../components/table). Table Navigation begins with a full screen tabular view of the application data. The table’s searching, sorting, and filtering capabilities allow the user to find objects of interest before drilling down to additional detail pages.
+Applications with large uniform data sets can be structured with [Table Navigation](/components/table). Table Navigation begins with a full screen tabular view of the application data. The table’s searching, sorting, and filtering capabilities allow the user to find objects of interest before drilling down to additional detail pages.
 
 ![Table navigation sample app layout](/img/design-guidelines/table-nav.png)
 
 ## Timeline Navigation
 
-Applications that are principally organized around events on a realtime schedule can make use of [Timeline Navigation](../components/timeline). A timeline atop the page allows the user to select events that are shown in detail in the main area the page.
+Applications that are principally organized around events on a realtime schedule can make use of [Timeline Navigation](/components/timeline). A timeline atop the page allows the user to select events that are shown in detail in the main area the page.
 
 ![Timeline navigation sample app layout](/img/design-guidelines/timeline-nav.png)
 

@@ -21,8 +21,10 @@
 
 		<script src="/js/theme-switcher.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.5/fuse.min.js"></script>
 		<script src="/js/mobile.js"></script>
 		<script src="/js/site.js"></script>
+		<script src="/js/search.js"></script>
 
 	</head>
 	<body class="{{ class }}">
@@ -35,6 +37,8 @@
 					{% block content %}
 						<h1>Default Content</h1>
 					{% endblock %}
+
+					{% include "_edit.njk" %}
 				</main>
 
 				{% include "_footer.njk" %}

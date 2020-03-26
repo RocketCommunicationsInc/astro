@@ -1,5 +1,65 @@
 [[redirects]]
-	from = "/ui-components/*"
+	from = "/components/*"
 	to = "/components/:splat"
+	status = 300
+	force = true
+
+[[redirects]]
+	from = "/style-guide/*"
+	to = "/desigm-guidelines/:splat"
+	status = 300
+	force = true
+
+[[redirects]]
+	from = "/design-guidelines/status-system"
+	to = "/patterns/status-system"
+	status = 300
+	force = true
+
+[[redirects]]
+	from = "/design-guidelines/notifications"
+	to = "/patterns/notifications"
+	status = 300
+	force = true
+
+[[redirects]]
+	from = "/design-guidelines/panes"
+	to = "/patterns/panes"
+	status = 300
+	force = true
+	
+[[redirects]]
+	from = "/components/validation"
+	to = "/patterns/forms-and-validation"
+	status = 300
+	force = true
+
+[[redirects]]
+	from = "/components/validation"
+	to = "/patterns/forms-and-validation"
+	status = 300
+	force = true
+
+[[redirects]]
+	from = "/tt-c-service-ux-design/about-the-tt-c-designs"
+	to = "/ttc-service-ux-design/about-the-ttc-designs"
+	status = 300
+	force = true
+
+[[redirects]]
+	from = "/tt-c-service-ux-design/tt-c-monitor"
+	to = "/ttc-service-ux-design/ttc-monitor"
+	status = 300
+	force = true
+	
+[[redirects]]
+	from = "/tt-c-service-ux-design/tt-c-command"
+	to = "/ttc-service-ux-design/ttc-command"
+	status = 300
+	force = true
+
+[[redirects]]
+	from = "/tt-c-service-ux-design/tt-c-investigate"
+	to = "/ttc-service-ux-design/ttc-investigate"
 	status = 300
 	force = true

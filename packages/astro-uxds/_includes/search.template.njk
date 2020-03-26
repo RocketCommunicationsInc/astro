@@ -2,8 +2,16 @@
 
 {% block content %}
 	<link rel="stylesheet" href="/css/chapters.css">
+	<link rel="stylesheet" href="/css/search.css">
 	{{ content | safe }}
-		<form id="rtd-search-form" class="search-page-form" method="get" action="/search">
-			<input type="search" name="q" class="search__input" placeholder="Search">
-		</form>
+	<form id="pg-search-form" class="new-search-form">
+		<input type="search" name="q" id='search-site' class="search__input" placeholder="Search">
+	</form>
+	<h2>Search Results</h2>
+
+	<div id="results-container">
+		<dl id="results"></dl>
+	</div>
+	
+		
 {% endblock %}

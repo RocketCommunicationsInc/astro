@@ -2,7 +2,7 @@
 tags: resources
 path: /patterns/data-visualization
 date: Last Modified
-layout: interior.template.njk
+layout: components.template.njk
 title: Data Visualization
 ---
 
@@ -134,7 +134,7 @@ Scatter charts plot points on a graph. When the user hovers over the points, too
 
 ## Visualization Anatomy
 
-The following images reference the general components and features for designing a visualization. Astro provides a variety of front-end components to support your design in the [UI Components](https://astrouxds.com/ui-components/readme) section.
+The following images reference the general components and features for designing a visualization. Astro provides a variety of front-end components to support your design in the [UI Components](/components/readme) section.
 
 ### Filter Select
 
@@ -181,7 +181,7 @@ Status colors are reserved for their respected statuses. Do not apply them to Vi
 
 ## Themed Visualization References
 
-Astro provides guidance, components and code for creating a light and dark themed User Interface. Use cases and additional information on selecting the appropriate UI can be found in the [Theme guidelines](./theme). The following references demonstrate both.
+Astro provides guidance, components and code for creating a light and dark themed User Interface. Use cases and additional information on selecting the appropriate UI can be found in the [Theme guidelines](/design-guidelines/theme). The following references demonstrate both.
 
 ![Sample stacked bar chart](/img/design-guidelines/stacked-bar.png)
 ![Sample donut chart](/img/design-guidelines/donut.png)
@@ -209,13 +209,15 @@ A data visualization is useless if not designed to communicate clearly with the 
 ## Examples
 
 :::two-col
-![Do: Allow axes labels enough padding. It’s important that the axes be legible and have adequate space. This will reduce eye strain and errors.](/img/design-guidelines/data-viz-do-1.png 'Do: Allow axes labels enough padding. It’s important that the axes be legible and have adequate space. This will reduce eye strain and errors.')
 
-![Don't: Use visual representations that don’t accurately represent the data set, like pie charts in 3D.](/img/design-guidelines/data-viz-dont-1.png 'Don’t: Use visual representations that don’t accurately represent the data set, like pie charts in 3D.')
+![Do: Allow axes labels enough padding. It’s important that the axes be legible and have adequate space. This will reduce eye strain and errors.](/img/design-guidelines/data-viz-do-1.png "Do: Allow axes labels enough padding. It’s important that the axes be legible and have adequate space. This will reduce eye strain and errors.")
 
-![Do: Use fill color and text that meets or exceeds WCAG 2.0 contrast requirements. Use a Contrast Checker to check contrast levels.](/img/design-guidelines/data-viz-do-2.png 'Do: Use fill color and text that meets or exceeds WCAG 2.0 contrast requirements. Use a Contrast Checker to check contrast levels.')
+![Don't: Use visual representations that don’t accurately represent the data set, like pie charts in 3D.](/img/design-guidelines/data-viz-dont-1.png "Don’t: Use visual representations that don’t accurately represent the data set, like pie charts in 3D.")
 
-![Don’t: Use more than 8 categories. Beyond that, mapping colors to categories will become burdensome and reduce their usefulness.](/img/design-guidelines/data-viz-dont-2.png 'Don’t: Use more than 8 categories. Beyond that, mapping colors to categories will become burdensome and reduce their usefulness.')
+![Do: Use fill color and text that meets or exceeds WCAG 2.0 contrast requirements. Use a Contrast Checker to check contrast levels.](/img/design-guidelines/data-viz-do-2.png "Do: Use fill color and text that meets or exceeds WCAG 2.0 contrast requirements. Use a Contrast Checker to check contrast levels.")
+
+![Don’t: Use more than 8 categories. Beyond that, mapping colors to categories will become burdensome and reduce their usefulness.](/img/design-guidelines/data-viz-dont-2.png "Don’t: Use more than 8 categories. Beyond that, mapping colors to categories will become burdensome and reduce their usefulness.")
+
 :::
 
 There are many dedicated visualization tools such as [Tableau](https://www.tableau.com/), [QlikView](https://www.qlik.com/us), [HighCharts](https://www.highcharts.com/) and [d3.js](https://d3js.org/). Nothing can replace a modeling and statistic tool with good visualization capability. It helps tremendously in doing any exploratory data analysis as well as feature engineering. Always review the product licensing options before use.

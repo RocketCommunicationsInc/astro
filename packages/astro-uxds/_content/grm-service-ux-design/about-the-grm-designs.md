@@ -6,7 +6,7 @@ layout: interior.template.njk
 title: About the GRM Designs
 ---
 
-## Ground Resource Management (GRM)
+# Ground Resource Management (GRM)
 
 Directing and maintaining satellites orbiting in space requires coordinating personnel, processes and equipment on the ground. This is the role of Ground Resource Management (GRM) systems. Key aspects of GRM services include the following:
 

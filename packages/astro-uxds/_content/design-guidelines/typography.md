@@ -14,11 +14,11 @@ Astro uses the open source typeface [Open Sans](https://fonts.google.com/specime
 
 Astro supports three levels of headline text (h1, h2, h3). CSS properties are automatically applied to HTML elements.
 
-| Sample | Weight | Markup | REM   | PX  | Class |
+| Heading | Weight | Markup | REM   | PX  | Class |
 | ------ | ------ | ------ | ----- | --- | ----- |
-| H1     | Light  | `<h1>` | 2.375 | 38  | `.h1` |
-| H2     | Light  | `<h2>` | 1.75  | 28  | `.h2` |
-| H#     | Light  | `<h3>` | 1.375 | 22  | `.h3` |
+| Heading Level 1     | Light  | `<h1>` | 2.375 | 38  | `.h1` |
+| Heading Level 2     | Light  | `<h2>` | 1.75  | 28  | `.h2` |
+| Heading Level 3     | Light  | `<h3>` | 1.375 | 22  | `.h3` |
 
 ::: note
 In addition to semantic headings, Astro supports overriding a header element's presentation via .h1, .h2 .h3 CSS classes which will apply the visual appearance of the corresponding header element.
@@ -28,20 +28,20 @@ In addition to semantic headings, Astro supports overriding a header element's p
 
 The default font size in Astro is 1rem/16px. Astro supports four additional font sizes for body copy.
 
-| Sample        | Weight | REM   | PX  | Class |
+| Size        | Weight | REM   | PX  | Class |
 | ------------- | ------ | ----- | --- | ----- |
-| Lorem ipsum … | Normal | 1.125 | 18  | `.xl` |
-| Lorem ipsum … | Normal | 1     | 16  | --    |
-| Lorem ipsum … | Normal | 0.875 | 14  | `.md` |
-| Lorem ipsum … | Normal | 0.75  | 12  | `.sm` |
-| Lorem ipsum … | Normal | 0.65  | 10  | `.xs` |
+| Extra large | Normal | 1.125 | 18  | `.xl` |
+| Normal/large | Normal | 1     | 16  | --    |
+| Medium | Normal | 0.875 | 14  | `.md` |
+| Small | Normal | 0.75  | 12  | `.sm` |
+| Extra small | Normal | 0.65  | 10  | `.xs` |
 
 ## Inline Text Styles
 
 | Sample              | Class            |
 | ------------------- | ---------------- |
 | Link Color          | --               |
-| Low Contrast\*      | `.low-contrast`` |
+| Low Contrast\*      | `.low-contrast` |
 | Inverted Text Style | `.inverted`      |
 
 \* The low contrast text option will fail WCAG readability compliance

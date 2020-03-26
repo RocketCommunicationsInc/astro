@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="325" height="150" viewBox="0 0 325 150">
+  <defs>
+    <rect id="@1xval-numeric-range-a" width="203" height="3" rx="1.5"/>
+    <circle id="@1xval-numeric-range-c" cx="10" cy="10" r="10"/>
+    <circle id="@1xval-numeric-range-e" cx="10" cy="10" r="9"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <rect width="325" height="150" fill="#192634"/>
+    <g transform="translate(41 40)">
+      <g transform="translate(7)">
+        <g transform="translate(10 56)">
+          <mask id="@1xval-numeric-range-b" fill="#fff">
+            <use xlink:href="#@1xval-numeric-range-a"/>
+          </mask>
+          <use fill="#CCC" xlink:href="#@1xval-numeric-range-a"/>
+          <g mask="url(#@1xval-numeric-range-b)">
+            <rect width="203" height="3" fill="#CCC"/>
+            <polygon fill="#000" points="0 0 203 0 203 3 0 3" opacity=".2"/>
+          </g>
+        </g>
+      </g>
+      <g transform="translate(107.347 47.5)">
+        <mask id="@1xval-numeric-range-d" fill="#fff">
+          <use xlink:href="#@1xval-numeric-range-c"/>
+        </mask>
+        <g mask="url(#@1xval-numeric-range-d)">
+          <rect width="20" height="20" fill="#4DACFF"/>
+          <rect width="20" height="20" fill="#FFF" opacity=".8"/>
+        </g>
+        <mask id="@1xval-numeric-range-f" fill="#fff">
+          <use xlink:href="#@1xval-numeric-range-e"/>
+        </mask>
+        <g mask="url(#@1xval-numeric-range-f)">
+          <g transform="translate(1 1)">
+            <rect width="18" height="18" fill="#005A8F"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <text fill="#FFF" font-family="OpenSans-Regular, Open Sans" font-size="12">
+      <tspan x="70" y="121">Optimal range value # - #</tspan>
+    </text>
+    <rect width="39" height="33" x="200.5" y="42.5" fill="#FFF" stroke="#FF3030" rx="3"/>
+    <text fill="#0A0909" font-family="OpenSans-Regular, Open Sans" font-size="16" opacity=".4">
+      <tspan x="224" y="66">#</tspan>
+    </text>
+    <text fill="#FFF" font-family="OpenSans-Regular, Open Sans" font-size="16">
+      <tspan x="266" y="101">#</tspan>
+    </text>
+    <text fill="#FFF" font-family="OpenSans-Regular, Open Sans" font-size="16">
+      <tspan x="42" y="101">#</tspan>
+    </text>
+    <text fill="#A9B2BC" font-family="OpenSans-Regular, Open Sans" font-size="14">
+      <tspan x="70" y="63">Range Label</tspan>
+    </text>
+    <polygon fill="#A9B2BC" fill-rule="nonzero" points="152.208 53.402 151.998 55.331 153.941 54.789 154.068 55.678 152.208 55.829 153.419 57.421 152.579 57.88 151.72 56.112 150.938 57.88 150.079 57.421 151.261 55.829 149.42 55.678 149.562 54.789 151.471 55.331 151.261 53.402"/>
+    <path fill="#4DACFF" d="M58.5,96 L147,96 L147,96 L147,99 L58.5,99 C57.6715729,99 57,98.3284271 57,97.5 C57,96.6715729 57.6715729,96 58.5,96 Z"/>
+    <path fill="#FF3030" fill-rule="nonzero" d="M258,53 C262.418278,53 266,56.581722 266,61 C266,65.418278 262.418278,69 258,69 C253.581722,69 250,65.418278 250,61 C250,56.581722 253.581722,53 258,53 Z M258,55 C254.686292,55 252,57.6862915 252,61 C252,64.3137085 254.686292,67 258,67 C261.313708,67 264,64.3137085 264,61 C264,57.6862915 261.313708,55 258,55 Z M258,64 C258.552285,64 259,64.4477153 259,65 C259,65.5522847 258.552285,66 258,66 C257.447715,66 257,65.5522847 257,65 C257,64.4477153 257.447715,64 258,64 Z M258,57 C258.552285,57 259,57.4477153 259,58 L259,62 C259,62.5522847 258.552285,63 258,63 C257.447715,63 257,62.5522847 257,62 L257,58 C257,57.4477153 257.447715,57 258,57 Z"/>
+  </g>
+</svg>

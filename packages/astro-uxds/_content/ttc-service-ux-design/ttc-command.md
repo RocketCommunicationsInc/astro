@@ -6,7 +6,7 @@ layout: interior.template.njk
 title: TT&C Comand
 ---
 
-## TT&C Comand
+# TT&C Comand
 
 [Launch TT&C Comand Sample App](https://ttc-command.astrouxds.com/) | [Design Materials and Source Code](#contentBottom)
 
@@ -23,7 +23,7 @@ There are four main areas in the Command app: the Global Status Bar, Alerts pane
 
 ## Global Status Bar
 
-As outlined on the [About TT&C Designs](/ttc-service-ux-design/about-the-ttc-designs) page, each of the apps in the TT&C Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/ui-components/global-status-bar), an Astro component featured in all three apps. Though the status bar contents vary somewhat between apps in order to best support each app’s individual workflows, all contain a [Clock](/ui-components/clock), [Monitoring Icons](/ui-components/icons-and-symbols), and an app switching menu that allows operators to transition quickly from one TT&C task flow to another.
+As outlined on the [About TT&C Designs](/ttc-service-ux-design/about-the-ttc-designs) page, each of the apps in the TT&C Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar), an Astro component featured in all three apps. Though the status bar contents vary somewhat between apps in order to best support each app’s individual workflows, all contain a [Clock](/components/clock), [Monitoring Icons](/components/icons-and-symbols), and an app switching menu that allows operators to transition quickly from one TT&C task flow to another.
 
 ![TT&C Comand Global Status Bar Details](/img/service-specific-ux-design/ttc-command-global-status-bar-details.png)
 
@@ -85,6 +85,6 @@ Below are design and development resources to get you started on an app that sup
 
 | Resources                                                                                                                                        | Description                                                                                                                                               |
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [TT&C Design Specifications (pdf)](http://com.rocketcom.astrouxds.s3.amazonaws.com/attachments/cjx3r384i2gbihmqnxcwrq25d-ttc-specifications.pdf) | The TT&C Design Specification contains information on use cases, task flows, UX research and wireframes for key features of the TT&C App Suite.           |
-| [TT&C Design Wireframes (pdf)](http://com.rocketcom.astrouxds.s3.amazonaws.com/attachments/cjtsx349t073s4iqnxbejjwg6-ttc-wireframes.pdf)         | The TT&C Design Wireframes document contains the complete set of wireframes (mid-fidelity renderings) of the screens designed for the TT&C App Suite.     |
+| [TT&C Design Specifications (pdf)](/downloads/ttc-specifications.pdf) | The TT&C Design Specification contains information on use cases, task flows, UX research and wireframes for key features of the TT&C App Suite.           |
+| [TT&C Design Wireframes (pdf)](/downloads/ttc-wireframes.pdf)         | The TT&C Design Wireframes document contains the complete set of wireframes (mid-fidelity renderings) of the screens designed for the TT&C App Suite.     |
 | [App Source Code (Git Repository)](https://bitbucket.org/rocketcom/tt-c-command/src/master/)                                                     | The source code Git repository and other useful documentation for the TT&C Command App is hosted at bitbucket.org so that you can check it out in detail. |

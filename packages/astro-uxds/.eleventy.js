@@ -70,6 +70,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "_content/img": "img" });
   eleventyConfig.addPassthroughCopy({ "_content/img": "img" });
   eleventyConfig.addPassthroughCopy({ "_content/**/*/img/*": "components/img" });
+  eleventyConfig.addPassthroughCopy({ "_content/_downloads/*": "downloads" });
   eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("fonts");

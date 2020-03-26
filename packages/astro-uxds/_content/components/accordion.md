@@ -41,6 +41,6 @@ If a child item of the current selection is selected, that entire branch remains
 ![If a different branch is selected, for example, by clicking on a different top level item, the current branch automatically closes and the new branch opens.](/img/components/accordion-4.png "If a different branch is selected, for example, by clicking on a different top level item, the current branch automatically closes and the new branch opens.")
 If a different branch is selected, for example, by clicking on a different top level item, the current branch automatically closes and the new branch opens.
 
-![If a child item of the current selection is selected, that entire branch remains displayed.](/img/components/accordion-do-5.png "If a child item of the current selection is selected, that entire branch remains displayed.")
+![If a child item of the current selection is selected, that entire branch remains displayed.](/img/components/accordion-5.png "If a child item of the current selection is selected, that entire branch remains displayed.")
 If a child item of the current selection is selected, that entire branch remains displayed.
-:::
+

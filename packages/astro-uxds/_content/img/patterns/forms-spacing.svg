@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="711" height="265" viewBox="0 0 711 265">
+  <defs>
+    <rect id="@1xform-spacing-a" width="225" height="30" rx="3"/>
+    <polygon id="@1xform-spacing-c" points="5 3 10 8 0 8"/>
+    <rect id="@1xform-spacing-e" width="225" height="30" rx="3"/>
+    <polygon id="@1xform-spacing-g" points="5 3 10 8 0 8"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <rect width="710" height="264" x=".5" y=".5" fill="#1F3347" stroke="#475F75"/>
+    <g transform="translate(1 1)">
+      <rect width="709" height="40" fill="#182736"/>
+      <text fill="#FFF" font-family="OpenSans-Regular, Open Sans" font-size="22" transform="translate(15.085 7)">
+        <tspan x="0" y="24">Time Span</tspan>
+      </text>
+    </g>
+    <text fill="#FFF" font-family="OpenSans-Bold, Open Sans" font-size="16" font-weight="bold">
+      <tspan x="15" y="79">Time Span</tspan>
+    </text>
+    <g transform="translate(305 90)">
+      <g transform="translate(0 21)">
+        <rect width="200" height="30" fill="#FFF" rx="3"/>
+        <text fill="#000" font-family="OpenSans-Regular, Open Sans" font-size="16" opacity=".4">
+          <tspan x="7.96" y="21">2019 158 26:51:58</tspan>
+        </text>
+      </g>
+      <text fill="#A9B2BC" font-family="OpenSans-Regular, Open Sans" font-size="14">
+        <tspan x="8" y="15">Observation Start Time</tspan>
+      </text>
+    </g>
+    <rect width="199" height="31" x="305.5" y="110.5" stroke="#FF3030" rx="3"/>
+    <g transform="translate(305 161)">
+      <g transform="translate(0 21)">
+        <rect width="200" height="30" fill="#FFF" rx="3"/>
+        <text fill="#000" font-family="OpenSans-Regular, Open Sans" font-size="16" opacity=".4">
+          <tspan x="7.96" y="21">2019 158 20:51:58</tspan>
+        </text>
+      </g>
+      <text fill="#A9B2BC" font-family="OpenSans-Regular, Open Sans" font-size="14">
+        <tspan x="8" y="15">Observation Stop Time</tspan>
+      </text>
+    </g>
+    <g transform="translate(16 90)">
+      <text fill="#A9B2BC" font-family="OpenSans-Regular, Open Sans" font-size="14">
+        <tspan x="10" y="15">Observations From</tspan>
+      </text>
+      <g transform="translate(0 21)">
+        <mask id="@1xform-spacing-b" fill="#fff">
+          <use xlink:href="#@1xform-spacing-a"/>
+        </mask>
+        <use fill="#D8D8D8" xlink:href="#@1xform-spacing-a"/>
+        <g mask="url(#@1xform-spacing-b)">
+          <rect width="225" height="30" fill="#005A8F"/>
+          <text fill="#FFF" font-family="OpenSans-Regular, Open Sans" font-size="16" transform="translate(10)">
+            <tspan x="0" y="20.211">Stop Time - LUPI</tspan>
+          </text>
+          <g transform="rotate(180 108.5 11)">
+            <mask id="@1xform-spacing-d" fill="#fff">
+              <use xlink:href="#@1xform-spacing-c"/>
+            </mask>
+            <g fill="#FFF" mask="url(#@1xform-spacing-d)">
+              <rect width="10" height="10"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g transform="translate(16 162)">
+      <text fill="#A9B2BC" font-family="OpenSans-Regular, Open Sans" font-size="14">
+        <tspan x="10" y="15">Observations Until</tspan>
+      </text>
+      <g transform="translate(0 21)">
+        <mask id="@1xform-spacing-f" fill="#fff">
+          <use xlink:href="#@1xform-spacing-e"/>
+        </mask>
+        <use fill="#D8D8D8" xlink:href="#@1xform-spacing-e"/>
+        <g mask="url(#@1xform-spacing-f)">
+          <rect width="225" height="30" fill="#005A8F"/>
+          <text fill="#FFF" font-family="OpenSans-Regular, Open Sans" font-size="16" transform="translate(10)">
+            <tspan x="0" y="20.211">Last Observation in File</tspan>
+          </text>
+          <g transform="rotate(180 108.5 11)">
+            <mask id="@1xform-spacing-h" fill="#fff">
+              <use xlink:href="#@1xform-spacing-g"/>
+            </mask>
+            <g fill="#FFF" mask="url(#@1xform-spacing-h)">
+              <rect width="10" height="10"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <rect width="1" height="6" x="62" y="105" fill="#EE6723" fill-opacity=".7"/>
+    <rect width="1" height="16" x="62" y="81" fill="#EE6723" fill-opacity=".7"/>
+    <rect width="1" height="26" x="62" y="141" fill="#EE6723" fill-opacity=".7"/>
+    <rect width="1" height="26" x="510" y="128" fill="#EE6723" fill-opacity=".7"/>
+    <rect width="10" height="1" x="505" y="127" fill="#EE6723" fill-opacity=".7"/>
+    <rect width="1" height="26" x="62" y="41" fill="#EE6723" fill-opacity=".7"/>
+    <g transform="translate(193 79)">
+      <rect width="39" height="19" x=".5" y=".5" fill="#000" stroke="#F2660B" rx="2"/>
+      <text fill="#FFF" font-family="OpenSans-Bold, Open Sans" font-size="12" font-weight="bold">
+        <tspan x="6" y="14">16px</tspan>
+      </text>
+    </g>
+    <g transform="translate(193 144)">
+      <rect width="39" height="19" x=".5" y=".5" fill="#000" stroke="#F2660B" rx="2"/>
+      <text fill="#FFF" font-family="OpenSans-Bold, Open Sans" font-size="12" font-weight="bold">
+        <tspan x="6" y="14">26px</tspan>
+      </text>
+    </g>
+    <rect width="131" height="1" x="63" y="89" fill="#EE6723"/>
+    <rect width="131" height="1" x="63" y="154" fill="#EE6723"/>
+    <rect width="64" height="1" x="241" y="198" fill="#EE6723"/>
+    <g transform="translate(254 188)">
+      <rect width="39" height="19" x=".5" y=".5" fill="#000" stroke="#F2660B" rx="2"/>
+      <text fill="#FFF" font-family="OpenSans-Bold, Open Sans" font-size="12" font-weight="bold">
+        <tspan x="6" y="14">64px</tspan>
+      </text>
+    </g>
+    <g transform="translate(193 44)">
+      <rect width="39" height="19" x=".5" y=".5" fill="#000" stroke="#F2660B" rx="2"/>
+      <text fill="#FFF" font-family="OpenSans-Bold, Open Sans" font-size="12" font-weight="bold">
+        <tspan x="6" y="14">26px</tspan>
+      </text>
+    </g>
+    <rect width="131" height="1" x="63" y="54" fill="#EE6723"/>
+    <g transform="translate(244 98)">
+      <rect width="31" height="19" x=".5" y=".5" fill="#000" stroke="#F2660B" rx="2"/>
+      <text fill="#FFF" font-family="OpenSans-Bold, Open Sans" font-size="12" font-weight="bold">
+        <tspan x="6" y="14">6px</tspan>
+      </text>
+    </g>
+    <g transform="translate(489 151)">
+      <rect width="39" height="19" x=".5" y=".5" fill="#000" stroke="#F2660B" rx="2"/>
+      <text fill="#FFF" font-family="OpenSans-Bold, Open Sans" font-size="12" font-weight="bold">
+        <tspan x="6" y="14">10px</tspan>
+      </text>
+    </g>
+    <rect width="1" height="26" x="7" y="200" fill="#EE6723" fill-opacity=".7"/>
+    <rect width="16" height="1" y="199" fill="#EE6723" fill-opacity=".7"/>
+    <g transform="translate(3 216)">
+      <rect width="39" height="19" x=".5" y=".5" fill="#000" stroke="#F2660B" rx="2"/>
+      <text fill="#FFF" font-family="OpenSans-Bold, Open Sans" font-size="12" font-weight="bold">
+        <tspan x="6" y="14">10px</tspan>
+      </text>
+    </g>
+    <rect width="181" height="1" x="63" y="108" fill="#EE6723"/>
+    <path fill="#FF3030" fill-rule="nonzero" d="M523,119 C527.418278,119 531,122.581722 531,127 C531,131.418278 527.418278,135 523,135 C518.581722,135 515,131.418278 515,127 C515,122.581722 518.581722,119 523,119 Z M523,121 C519.686292,121 517,123.686292 517,127 C517,130.313708 519.686292,133 523,133 C526.313708,133 529,130.313708 529,127 C529,123.686292 526.313708,121 523,121 Z M523,130 C523.552285,130 524,130.447715 524,131 C524,131.552285 523.552285,132 523,132 C522.447715,132 522,131.552285 522,131 C522,130.447715 522.447715,130 523,130 Z M523,123 C523.552285,123 524,123.447715 524,124 L524,128 C524,128.552285 523.552285,129 523,129 C522.447715,129 522,128.552285 522,128 L522,124 C522,123.447715 522.447715,123 523,123 Z"/>
+    <text fill="#FFF" font-family="OpenSans-Regular, Open Sans" font-size="12">
+      <tspan x="315" y="155">Value out of range</tspan>
+    </text>
+  </g>
+</svg>

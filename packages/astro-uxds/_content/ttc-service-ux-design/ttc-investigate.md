@@ -6,9 +6,9 @@ layout: interior.template.njk
 title: TT&C Investigate
 ---
 
-## TT&C Investigate
+# TT&C Investigate
 
-[Launch TT&C Investigate Sample App](https://ttc-equipment.astrouxds.com/) | [Design Materials and Source Code](#contentBottom)
+[Launch TT&C Investigate Sample App](https://ttc-investigate.astrouxds.com) | [Design Materials and Source Code](#contentBottom)
 
 The Investigate app displays system schematics and status data for a selected satellite. This allows operators to gather additional detail on alerts, view the relationships of components in the equipment hierarchy and select particular values to add to the Watcher panel in the Monitor and Command apps.
 
@@ -22,7 +22,7 @@ There are four main areas in the Investigate app: the Global Status Bar, Subsyst
 
 ## Global Status Bar
 
-As outlined on the [About TT&C Designs](/ttc-service-ux-design/about-the-ttc-designs) page, each of the apps in the TT&C Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/ui-components/global-status-bar), an Astro component featured in all three apps. Though the status bar contents vary somewhat between apps in order to best support each app’s individual workflows, all contain a [Clock](/ui-components/clock), [Monitoring Icons](/ui-components/icons-and-symbols), and an app switching menu that allows operators to transition quickly from one TT&C task flow to another.
+As outlined on the [About TT&C Designs](/ttc-service-ux-design/about-the-ttc-designs) page, each of the apps in the TT&C Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar), an Astro component featured in all three apps. Though the status bar contents vary somewhat between apps in order to best support each app’s individual workflows, all contain a [Clock](/components/clock), [Monitoring Icons](/components/icons-and-symbols), and an app switching menu that allows operators to transition quickly from one TT&C task flow to another.
 
 ![TT&C Dashboard Global Status Bar Details](/img/service-specific-ux-design/ttc-investigate-global-status-bar-details.png)
 
@@ -42,12 +42,6 @@ The Subsystem Tree Menu shows a hierarchical list of the satellite subsystems. S
 2. **Status Symbols** - status symbols indicate current subsystem status and severity.
 
 :::
-
-## Inoperable Equipment Page
-
-The default view of the Investigate app is the Inoperable Equipment page, which contains a grid of equipment in a critical or serious alert state, organized by category and color coded by severity. This allows operators to quickly identify assets that need attention. From this view, operators can click on a piece of equipment to be taken to its details page for more information and to take action.
-
-![TT&C Investigate Inoperable Equipment Page](/img/service-specific-ux-design/ttc-investigate-inop-details.png)
 
 1. **Equipment Categories** - inoperable equipment is organized into categories along with a total for the category.
 2. **Equipment Status** - inoperable equipment is displayed with status coding indicating the severity of the problem.
@@ -83,6 +77,6 @@ Below are design and development resources to get you started on an app that sup
 
 | Resources                                                                                                                                        | Description                                                                                                                                                   |
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [TT&C Design Specifications (pdf)](http://com.rocketcom.astrouxds.s3.amazonaws.com/attachments/cjx3r384i2gbihmqnxcwrq25d-ttc-specifications.pdf) | The TT&C Design Specification contains information on use cases, task flows, UX research and wireframes for key features of the TT&C App Suite.               |
-| [TT&C Design Wireframes (pdf)](http://com.rocketcom.astrouxds.s3.amazonaws.com/attachments/cjtsx349t073s4iqnxbejjwg6-ttc-wireframes.pdf)         | The TT&C Design Wireframes document contains the complete set of wireframes (mid-fidelity renderings) of the screens designed for the TT&C App Suite.         |
+| [TT&C Design Specifications (pdf)](/downloads/ttc-specifications.pdf) | The TT&C Design Specification contains information on use cases, task flows, UX research and wireframes for key features of the TT&C App Suite.               |
+| [TT&C Design Wireframes (pdf)](/downloads/ttc-wireframes.pdf)         | The TT&C Design Wireframes document contains the complete set of wireframes (mid-fidelity renderings) of the screens designed for the TT&C App Suite.         |
 | [App Source Code (Git Repository)](https://bitbucket.org/rocketcom/tt-c-investigate/src/master/)                                                 | The source code Git repository and other useful documentation for the TT&C Investigate App is hosted at bitbucket.org so that you can check it out in detail. |
