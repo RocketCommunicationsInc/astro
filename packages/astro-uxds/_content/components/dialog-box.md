@@ -17,7 +17,7 @@ A Dialog Box interrupts app processing to prompt a user to confirm an action or 
 
 ## Rules of Thumb
 
-- Use a Dialog Box to: - Ask users to confirm irreversible, destructive or expensive actions. - [Notify](/design-guidelines/notifications) the user of an urgent event.
+- Use a Dialog Box to: - Ask users to confirm irreversible, destructive or expensive actions. - [Notify](/patterns/notifications) the user of an urgent event.
 - Use buttons within a Dialog Box to confirm or cancel actions. Avoid using links or other components.
 - Use clearly titled action buttons to exit a Dialog Box. Don’t use a “close box.”
 - Title buttons by choosing a verb that describes its action.

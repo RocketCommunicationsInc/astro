@@ -24,7 +24,7 @@ Input Fields allow users to enter text or numeric data.
 
 An Input field is enabled if it is eligible for interaction, and focused if it is the current target for keystrokes.
 
-An input field can be configured for required input, limited data ranges or specific data formats. See [Form and Input Validation](/components/validation).
+An input field can be configured for required input, limited data ranges or specific data formats. See [Form and Input Validation](/patterns/forms-and-validation).
 
 Input Fields have a smaller variant which may be beneficial in layouts where space is at a premium
 

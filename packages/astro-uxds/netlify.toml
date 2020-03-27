@@ -1,12 +1,18 @@
 [[redirects]]
-	from = "/components/*"
+	from = "/ui-components/*"
+	to = "/components/:splat"
+	status = 300
+	force = true
+
+[[redirects]]
+	from = "/library/*"
 	to = "/components/:splat"
 	status = 300
 	force = true
 
 [[redirects]]
 	from = "/style-guide/*"
-	to = "/desigm-guidelines/:splat"
+	to = "/design-guidelines/:splat"
 	status = 300
 	force = true
 

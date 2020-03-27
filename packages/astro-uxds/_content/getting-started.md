@@ -42,7 +42,7 @@ Before reading any further, we recommend you take a look at a live [Astro sample
 
 ### Astro 4.2
 
-- New [Data Visualization Guidelines](/design-guidelines/data-visualization)
+- New [Data Visualization Guidelines](/patterns/data-visualization)
 - Astro [Sketch Library](https://bitbucket.org/rocketcom/astro-design-resources/src/master/Sketch/Astro%204%20Wireframe%20Library.sketch) and [Sticker Sheet](https://bitbucket.org/rocketcom/astro-design-resources/src/master/Sketch/Astro%204%20Wireframe%20Sticker%20Sheet.sketch)
 - Astro Boilerplate starter application - [LitElement](https://bitbucket.org/rocketcom/astro-boilerplate/src/master/) - [Angular](https://bitbucket.org/rocketcom/astro-boilerplate-angular/src/master/)
 
@@ -57,7 +57,7 @@ Before reading any further, we recommend you take a look at a live [Astro sample
 - Downloadable Design Specifications and Wireframes
 - Astro Sample Apps with downloadable source code
 - For GRM UX Design and sample apps, see [About the GRM Designs](/grm-service-ux-design/about-the-grm-designs)
-- For TT&C UX Design and sample apps, see [About the TT&C Designs](/tt-c-service-ux-design/about-the-ttc-designs)
+- For TT&C UX Design and sample apps, see [About the TT&C Designs](/ttc-service-ux-design/about-the-ttc-designs)
 - Expanded [Downloads](/downloads) section with direct links to downloadable assets
 
 ### Astro 3.1
@@ -69,12 +69,12 @@ Before reading any further, we recommend you take a look at a live [Astro sample
 
 - Astro 3.0 Design Language
 - Almost every element in the library has been revisited improving legibility, accessibility and aesthetics
-- [Light user interface theme](/style-guide/theme) - Astro now supports a light version of all components for use in brightly lit operational environments
+- [Light user interface theme](/design-guidelines/theme) - Astro now supports a light version of all components for use in brightly lit operational environments
 - Polymer 3.0 support
 - The elements in the web component library have been updated to support the latest release of Polymer
-- Standardized [color palettes](/style-guide/color) with RGB, Hex and CSS Custom Property values
-- Updated and expanded [typography guidelines](/style-guide/typography)
-- [Grid](/style-guide/grid) spec recommendation
+- Standardized [color palettes](/design-guidelines/color) with RGB, Hex and CSS Custom Property values
+- Updated and expanded [typography guidelines](/design-guidelines/typography)
+- [Grid](/design-guidelines/grid) spec recommendation
 - Updated [status colors](/library/status-symbol) and guidelines to ensure compatibility with WCAG 2.0, MIL Standard 2525D and 1472G
 - Updated [sample application](https://sample-app.astrouxds.com/) supporting light and dark themes
 - A new [component sample](https://astro-components.netlify.com/) sandbox to see all Astro components in a single area

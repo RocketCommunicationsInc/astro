@@ -50,7 +50,7 @@ title: Glossary
 ### N
 
 - [Navigational Tabs](/components/tabs) - Divide major areas of content and to indicate a work process.
-- [Notification System](/design-guidelines/notifications) - A system which generates, prioritizes and displays event notifications for significant occurrences within an application and its associated systems and hardware.
+- [Notification System](/patterns/notifications) - A system which generates, prioritizes and displays event notifications for significant occurrences within an application and its associated systems and hardware.
 
 ### P
 
@@ -72,7 +72,7 @@ title: Glossary
 
 ### T
 
-- [Tables](/components/table) - A UX design mechanism comprised of rows and columns used for displaying content.
+- [Tables](/patterns/table) - A UX design mechanism comprised of rows and columns used for displaying content.
 - [Timeline](/components/timeline) - Displays event information within a specified time period.
 - Title Bar - A component that displays the name for a table or window.
 - [Toggle](/components/toggle) - A switch which describes a state or value. It allows users to change a setting between two states such as “On and Off.
@@ -80,7 +80,7 @@ title: Glossary
 
 ### V
 
-- [Validation](/components/validation) - Ensures that data is properly entered into an Input Field or Form. It alerts users to data errors, required input and prompts them to make corrections.
+- [Validation](/patterns/forms-and-validation) - Ensures that data is properly entered into an Input Field or Form. It alerts users to data errors, required input and prompts them to make corrections.
 
 ### W
 

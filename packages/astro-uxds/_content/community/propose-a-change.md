@@ -7,9 +7,9 @@ title: "Propose a Change"
 
 # Propose a Change
 
-The Astro User Experience Design System is hosted on [GitHub](https://github.com/) as an open source project and uses [Markdown](https://github.com/) for content. This enables any user of Astro to proposes changes in a safe, trackable and relatively easy manner.
+The Astro User Experience Design System is hosted on [GitHub](https://github.com) as an open source project and uses [Markdown](https://guides.github.com/features/mastering-markdown/) for content. This enables any user of Astro to proposes changes in a safe, trackable and relatively easy manner.
 
-You will need a [free GitHub account](https://github.com/) to propose changes to Astro.
+You will need a free GitHub account to propose changes to Astro.
 
 If you are new to Git and Git fork workflows the easiest way to edit Astro content is through GitHub’s online interface. If you are comfortable with Git and forking repositories skip to Step 5 below to see information about creating a pull request.
 

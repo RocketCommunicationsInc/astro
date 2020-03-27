@@ -57,7 +57,7 @@ The TT&C App Suite comprises three integrated apps: Monitor, Command & Investiga
 :::col
 The TT&C Monitor app allows operators to monitor status, alerts, health and function of an individual satellite and satellite constellations.
 
-- [Overview of TT&C Monitor](/tt-c-service-ux-design/tt-c-monitor)
+- [Overview of TT&C Monitor](/ttc-service-ux-design/ttc-monitor)
 - [Launch TT&C Monitor Sample App](https://ttc-monitor.astrouxds.com/)
 - [App Source Code (Git Repository)](https://bitbucket.org/rocketcom/tt-c-monitor/src/master/)
   :::

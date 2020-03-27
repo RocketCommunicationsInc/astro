@@ -27,9 +27,9 @@ title: Downloads
 
 - GRM Design Specifications ([pdf](/downloads/grm-specifications.pdf))
 - GRM Wireframes ([pdf](/downloads/grm-wireframes.pdf))
-- GRM Dashboard App Source Code ([Git Repository](/downloads/grm-sample-apps-dashboard/src/master/))
-- GRM Equipment Manager App Source Code ([Git Repository](/downloads/grm-sample-apps-equipment/src/master/))
-- GRM Schedule App Source Code ([Git Repository](/downloads/grm-sample-apps-schedule/src/master/))
+- GRM Dashboard App Source Code ([Git Repository](https://bitbucket.org/rocketcom/grm-sample-apps-dashboard/src/master/))
+- GRM Equipment Manager App Source Code ([Git Repository](https://bitbucket.org/rocketcom/grm-sample-apps-equipment/src/master/))
+- GRM Schedule App Source Code ([Git Repository](https://bitbucket.org/rocketcom/grm-sample-apps-schedule/src/master/))
 
 ## TT&C Service UX Design
 

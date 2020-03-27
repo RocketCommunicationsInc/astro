@@ -18,7 +18,7 @@ Another aspect of the design aimed at reducing cognitive load is to give operato
 
 ![TT&C Comand App](/img/service-specific-ux-design/ttc-command-app.png)
 
-There are four main areas in the Command app: the Global Status Bar, Alerts panel, Pass Plan panel and System Health panel. The key elements are described below, but you can find much more design and task flow detail in the [TT&C Design Specification and Wireframes](/tt-c-service-ux-design/tt-c-command#contentBottom) documents. You can also launch the [TT&C Command Sample App](https://ttc-command.astrouxds.com/) to explore the design interactively.
+There are four main areas in the Command app: the Global Status Bar, Alerts panel, Pass Plan panel and System Health panel. The key elements are described below, but you can find much more design and task flow detail in the [TT&C Design Specification and Wireframes](/ttc-service-ux-design/ttc-command#contentBottom) documents. You can also launch the [TT&C Command Sample App](https://ttc-command.astrouxds.com/) to explore the design interactively.
 ![TT&C Comand App Details](/img/service-specific-ux-design/ttc-command-app-details.png)
 
 ## Global Status Bar
@@ -33,7 +33,7 @@ As outlined on the [About TT&C Designs](/ttc-service-ux-design/about-the-ttc-des
 
 ## Alerts
 
-The Alerts panel provides operators with a roll-up of spacecraft specific alerts, as well as communications, software, and its assigned ground station. Operators can filter the alerts by Severity and Category, allowing them to quickly identify the most severe issues or focus in on particular areas of the system. This allows operators to efficiently track their workflow and keeps the Alerts pane more sparsely populated, so they’ll be more likely to notice when new alerts come in. Operators can also drill in to see additional information on any of the alerts and launch an instance of the [TT&C Investigate App](/tt-c-service-ux-design/tt-c-investigate) to explore the issue further.
+The Alerts panel provides operators with a roll-up of spacecraft specific alerts, as well as communications, software, and its assigned ground station. Operators can filter the alerts by Severity and Category, allowing them to quickly identify the most severe issues or focus in on particular areas of the system. This allows operators to efficiently track their workflow and keeps the Alerts pane more sparsely populated, so they’ll be more likely to notice when new alerts come in. Operators can also drill in to see additional information on any of the alerts and launch an instance of the [TT&C Investigate App](/ttc-service-ux-design/ttc-investigate) to explore the issue further.
 
 :::two-col
 ![TT&C Comand Alerts Detail](/img/service-specific-ux-design/ttc-monitor-alerts-details.png)

@@ -46,7 +46,7 @@ The Alerts panel provides operators with a roll-up of alerts across the ground s
 
 ## Constellation
 
-The Constellation panel shows the contacts for the satellites in the constellation. The operator has the option to either view these in a Timeline view, which shows past, current and future contacts along a scalable time range, or in a List view, which provides additional detail on each pass. In both views, the user can click a contact to open a [Modeless Pane](/design-guidelines/modeless-panes) containing its Contact Details or the associated Pass Plan.
+The Constellation panel shows the contacts for the satellites in the constellation. The operator has the option to either view these in a Timeline view, which shows past, current and future contacts along a scalable time range, or in a List view, which provides additional detail on each pass. In both views, the user can click a contact to open a [Modeless Pane](/patterns/modeless-panes) containing its Contact Details or the associated Pass Plan.
 
 ### Timeline View
 
