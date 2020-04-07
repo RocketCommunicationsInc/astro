@@ -48,7 +48,7 @@ Before reading any further, we recommend you take a look at a live [Astro sample
 
 ### Astro 4.1
 
-- Updated UI Components from EGS [Monitoring Icon](/components/icons-and-symbols), [Tree](/components/tree), [Pop Up Menu](/components/pop-up), and [Table](/components/table)
+- Updated UI Components from EGS [Monitoring Icon](/components/icons-and-symbols), [Tree](/components/tree), [Pop Up Menu](/components/pop-up), and [Table](/patterns/table)
 - New [Storybook Component Sandbox](https://astro-components.netlify.com/)
 
 ### Astro 4.0
@@ -75,7 +75,7 @@ Before reading any further, we recommend you take a look at a live [Astro sample
 - Standardized [color palettes](/design-guidelines/color) with RGB, Hex and CSS Custom Property values
 - Updated and expanded [typography guidelines](/design-guidelines/typography)
 - [Grid](/design-guidelines/grid) spec recommendation
-- Updated [status colors](/library/status-symbol) and guidelines to ensure compatibility with WCAG 2.0, MIL Standard 2525D and 1472G
+- Updated [status colors](/components/status-symbol) and guidelines to ensure compatibility with WCAG 2.0, MIL Standard 2525D and 1472G
 - Updated [sample application](https://sample-app.astrouxds.com/) supporting light and dark themes
 - A new [component sample](https://astro-components.netlify.com/) sandbox to see all Astro components in a single area
 - Expanded standard [CSS library](https://bitbucket.org/rocketcom/astro-styles/src/master/) to include some library element previously only availble in the Web Component Library

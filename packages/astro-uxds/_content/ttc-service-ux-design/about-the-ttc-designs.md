@@ -44,8 +44,8 @@ Based on this initial research and follow-up design iterations with operators an
 :::col
 The TT&C App Suite comprises three integrated apps: Monitor, Command & Investigate.
 
-- [TT&C Design Specifications (pdf)](http://com.rocketcom.astrouxds.s3.amazonaws.com/attachments/cjtsuut4g06uf4iqnzr4bbtpu-tt-c-specifications.pdf)
-- [TT&C Wireframes (pdf)](http://com.rocketcom.astrouxds.s3.amazonaws.com/attachments/cjtsuumzf06uc4iqnahidda1l-tt-c-wireframes.pdf)
+- [TT&C Design Specifications (pdf)](/downloads/ttc-specifications.pdf)
+- [TT&C Wireframes (pdf)](/downloads/ttc-wireframes.pdf)
   :::
 
 ### TT&C Monitor

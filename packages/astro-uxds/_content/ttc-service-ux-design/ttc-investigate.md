@@ -16,7 +16,7 @@ UX research revealed that existing systems often require operators to drill-in t
 
 ![TT&C Investigate App](/img/service-specific-ux-design/ttc-investigate-app.png)
 
-There are four main areas in the Investigate app: the Global Status Bar, Subsystem Tree Menu, Subsystem Assembly Layout and Mnemonic Data Table. The key elements are described below, but you can find much more design and task flow detail in the [TT&C Design Specification and Wireframes](/tt-c-service-ux-design/tt-c-investigate#contentBottom) documents. You can also launch the [TT&C Investigate Sample App](https://ttc-investigate.astrouxds.com/) to explore the design interactively.
+There are four main areas in the Investigate app: the Global Status Bar, Subsystem Tree Menu, Subsystem Assembly Layout and Mnemonic Data Table. The key elements are described below, but you can find much more design and task flow detail in the [TT&C Design Specification and Wireframes](/ttc-service-ux-design/ttc-investigate#contentBottom) documents. You can also launch the [TT&C Investigate Sample App](https://ttc-investigate.astrouxds.com/) to explore the design interactively.
 
 ![TT&C Investigate App Details](/img/service-specific-ux-design/ttc-investigate-app-details.png)
 
