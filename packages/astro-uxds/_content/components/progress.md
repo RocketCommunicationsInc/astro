@@ -3,7 +3,7 @@ tags: components
 path: /components/progress
 date: Last Modified
 layout: components.template.njk
-title: Component Template
+title: Progress
 demo: https://rocketcom.bitbucket.io/html-demos/progress.html
 storybook: components-progress
 git: rux-progress
@@ -11,9 +11,9 @@ height: 160px
 theme: true
 ---
 
-# Component Template
+# Progress
 
-An Progress indicator signals that an application is busy performing an operation.
+A Progress indicator signals that an application is busy performing an operation.
 
 ::: note
 When operations take five seconds or longer to complete, add a progress feedback element to your design.
