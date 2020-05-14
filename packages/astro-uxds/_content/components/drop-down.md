@@ -15,13 +15,11 @@ theme: true
 
 When activated, Drop Down Menus allow users to select a value from a list of values. Once a value is selected, the Drop Down displays the selected value.
 
-Content
-
 ## Rules of Thumb
 
 - Drop Downs should display a list of multiple values.
-- Drop Downs may default to a state that instructs users what to do. For example: “Select Modem” or, a default choice like “Modem X.”
-- When user knows what they’re looking for in advance, consider using a text field with client-side auto-complete functionality instead.
+- Drop Downs may default to a state that instructs users what to do. For example: “Select Modem” or a default choice like “Modem X.”
+- When the user knows what they’re looking for in advance, consider using a text field with client-side auto-complete functionality instead.
 
 ## Examples
 
