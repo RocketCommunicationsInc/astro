@@ -1,0 +1,103 @@
+/*
+**
+** 	ASTRO TABS
+** 	==========================================================================
+**	1.4 Notes
+**	- Added rux_ and BEM compatible classes to all satcom_ NOTE: satcom_ will be removed in a future version
+**  - Removed prefixed transitions
+**  - Removed prefixed gradients
+**  - Updated colors for WCAG compliance
+**  - Swapped condensed font for standard
+**  2.0 Ideas
+**  - Replace use a radio-button based structure for tabs? (http://alistapart.com/article/radio-controlled-web-design)
+*/
+
+/* 	REQUIRED CLASSES */
+
+.rux-tabs,
+.satcom-tabs {
+  font-size: 1.5rem;
+
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 5.625rem;
+
+  user-select: none;
+}
+
+.rux-tabs--small {
+  height: 3.125rem;
+  font-size: 1rem;
+}
+
+.rux-tabs ul,
+.satcom-tabs ul {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+
+  display: flex;
+  list-style: none;
+}
+
+.rux-tabs li,
+.satcom-tabs li {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  /* outline: 1px solid green; */
+}
+
+/* .rux-tabs li:not(:last-child),
+.satcom-tabs li:not(:last-child) {
+   border-right: 1px solid var(--tabBorderColor, rgb(20, 32, 44)); 
+} */
+
+.rux-tabs li::before,
+.satcom-tabs li::before {
+  display: none !important;
+}
+
+.rux-tabs a,
+.satcom-tabs a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 3px 2rem 0;
+
+  text-decoration: none;
+  color: var(--tabTextColor, rgb(77, 172, 255));
+
+  /* background-color: var(--tabBackgroundColor, rgb(30, 47, 66)); */
+  /* overflow: auto; */
+}
+
+.rux-tabs a[disabled] {
+  opacity: var(--disabledOpacity, 0.4);
+  cursor: var(--disabledCursor, not-allowed);
+}
+
+.rux-tabs .selected a,
+.satcom-tabs .selected a {
+  color: var(--tabSelectedTextColor, rgb(255, 255, 255));
+  box-shadow: inset 0 -5px 0 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
+}
+
+.rux-tabs--small .selected a,
+.rux-tabs--small .selected a:hover {
+  color: var(--tabSelectedTextColor, rgb(255, 255, 255));
+  box-shadow: inset 0 -3px 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
+}
+
+.rux-tabs .selected a:hover,
+.satcom-tabs .selected a:hover {
+  color: var(--tabSelectedTextColor, rgb(255, 255, 255));
+  box-shadow: inset 0 -5px 0 0 var(--tabSelectedBorderColor, rgb(77, 172, 255));
+}
+
+.rux-tabs a:hover:not([disabled]),
+.satcom-tabs a:hover:not([disabled]) {
+  color: var(--tabHoverTextColor, rgb(255, 255, 255));
+}

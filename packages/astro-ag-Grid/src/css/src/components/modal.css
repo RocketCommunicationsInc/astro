@@ -1,0 +1,68 @@
+.rux-modal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: var(--modalBackgroundColor, rgb(0, 0, 0));
+
+  width: 28rem;
+  height: 13.5rem;
+  border: 2px solid var(--modalBorderColor, rgb(0, 90, 143));
+
+  border-radius: 4px;
+  margin: auto;
+  padding: 0;
+
+  user-select: none;
+
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.rux-modal__titlebar {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 2rem;
+
+  background-color: var(--modalBorderColor, rgb(0, 90, 143));
+  user-select: none;
+  cursor: move;
+}
+
+.rux-modal__titlebar h1 {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  line-height: 1.2;
+
+  color: rgb(255, 255, 255) !important;
+}
+
+.rux-modal__content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 1rem;
+  color: var(--fontColor, rgb(255, 255, 255));
+}
+
+.rux-button-group {
+  margin-left: auto;
+  align-self: flex-end;
+}
+
+.rux-modal__message {
+  margin: 0.5rem 1.875rem 2.5rem 1.875rem;
+}
+
+.rux-modal .rux-button {
+  box-shadow: none !important;
+}

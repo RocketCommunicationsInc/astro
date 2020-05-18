@@ -1,0 +1,257 @@
+/*
+**
+** 	ASTRO INPUT TEXT FIELDS
+** 	==========================================================================
+**	1.4 Notes
+**	- Added rux_ and BEM compatible classes to all satcom_ NOTE: satcom_ will be removed in a future version
+**	- Removed prefixed linear gradients
+**  - Updated text entry field to WCAG
+*/
+
+/*
+**
+** 	INPUT TEXT
+** 	==========================================================================
+*/
+
+/* 	REQUIRED CLASSES */
+
+:root {
+  --padding: 0.5rem;
+  --paddingLeft: 0.5rem;
+  --paddingRight: 0.5rem;
+  --paddingTop: 0.25rem;
+  --paddingBottom: 0.25rem;
+}
+
+.rux-form-field {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  font-family: var(--fontFamilty, "Open Sans", sans-serif);
+  font-size: var(--fontSize, 1rem);
+  color: var(--fontColor, rgb(255, 255, 255));
+}
+
+.rux-form-field input:required + label::after {
+  content: "*";
+  margin-left: 0.25rem;
+}
+
+.rux-form-field__label {
+  display: flex;
+  order: 1;
+  margin: 0 0 0.15rem 0;
+  width: 100%;
+  align-content: center;
+  align-items: center;
+
+  color: var(--fontColor, rgb(255, 255, 255));
+  user-select: none;
+}
+
+.rux-form-field input {
+  box-sizing: border-box;
+  order: 2;
+
+  height: 2.25rem;
+  width: 100%;
+  padding: 0.5rem;
+
+  border: 1px solid var(--inputBorderColor, transparent);
+  border-radius: 3px;
+
+  font-size: var(--fontSize, 1rem);
+  color: var(--inputTextColor, rgb(0, 0, 0));
+}
+
+.rux-form-field textarea {
+  box-sizing: border-box;
+  -webkit-order: 2;
+  order: 2;
+
+  min-height: 4.25rem;
+  width: 100%;
+  padding: 0.5rem;
+
+  border: 1px solid transparent;
+
+  border: 1px solid var(--inputBorderColor, transparent);
+  border-radius: 3px;
+
+  font-family: "Open Sans", sans-serif;
+
+  font-family: var(--fontFamily, "Open Sans", sans-serif);
+  font-size: 1rem;
+  font-size: var(--fontSize, 1rem);
+  color: rgb(0, 0, 0);
+  color: var(--inputTextColor, rgb(0, 0, 0));
+}
+
+.rux-form-field input[type="number"]::-webkit-inner-spin-button,
+.rux-form-field input[type="number"]::-webkit-outer-spin-button,
+.rux-form-field input[type="date"]::-webkit-inner-spin-button,
+.rux-form-field input[type="date"]::-webkit-outer-spin-button,
+.rux-form-field input[type="date"]::-webkit-calendar-picker-indicator {
+  -webkit-appearance: none;
+  display: none;
+}
+
+/* VALIDATION */
+
+.rux-form-field input:invalid {
+  border: 1px solid var(--inputInvalidBorderColor);
+
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FF3030%22%20fill-rule%3D%22evenodd%22%20d%3D%22M64.031%205c8.461%200%2068.88%20107.243%2063.648%20114.184-5.232%206.942-120.805%205.477-127.212%200C-5.941%20113.708%2055.57%205%2064.03%205zm3.45%2075.894l1.822-34.893H56.946l1.82%2034.893h8.715zM56.803%2093.108c0%201.929.547%203.423%201.643%204.483%201.095%201.06%202.642%201.589%204.642%201.589%201.953%200%203.477-.542%204.572-1.625%201.095-1.084%201.643-2.566%201.643-4.447%200-1.952-.542-3.452-1.625-4.5-1.084-1.047-2.613-1.571-4.59-1.571-2.047%200-3.607.512-4.678%201.536-1.072%201.023-1.607%202.535-1.607%204.535z%22%2F%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: 1.125rem;
+  background-position: center right 0.5rem;
+}
+
+/* FOCUS RULES */
+.rux-form-field input:focus,
+.rux-form-field input:invalid:focus {
+  /* outline: none; */
+}
+
+.rux-form-field input:not([type="search"]):focus,
+.rux-form-field input:not([type="search"]):invalid:focus {
+  border: 1px solid var(--inputFocusBorderColor);
+  /* border-left: 4px solid var(--inputFocusBorderColor); */
+  /* padding-left: calc(0.5rem - 3px); */
+}
+
+.rux-form-field input::selection {
+  background-color: var(--colorSecondaryLighten3);
+}
+/* 
+.rux-form-field input:invalid + label::before {
+  content: "";
+  display: block;
+  height: 1rem;
+  width: 1.25rem;
+  margin-right: 0.25rem;
+  
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FF3030%22%20fill-rule%3D%22evenodd%22%20d%3D%22M64.031%205c8.461%200%2068.88%20107.243%2063.648%20114.184-5.232%206.942-120.805%205.477-127.212%200C-5.941%20113.708%2055.57%205%2064.03%205zm3.45%2075.894l1.822-34.893H56.946l1.82%2034.893h8.715zM56.803%2093.108c0%201.929.547%203.423%201.643%204.483%201.095%201.06%202.642%201.589%204.642%201.589%201.953%200%203.477-.542%204.572-1.625%201.095-1.084%201.643-2.566%201.643-4.447%200-1.952-.542-3.452-1.625-4.5-1.084-1.047-2.613-1.571-4.59-1.571-2.047%200-3.607.512-4.678%201.536-1.072%201.023-1.607%202.535-1.607%204.535z%22%2F%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  background-position: center center;
+} */
+
+.rux-form-field__validation-message {
+  display: none;
+  position: absolute;
+  max-width: 16rem;
+  background-color: var(--colorCritical);
+  width: 100%;
+  padding: 0.25rem;
+  right: 0;
+  font-size: var(--fontSizeMD);
+}
+
+.rux-form-field input:invalid .rux-form-field__validation-message {
+  display: block;
+}
+
+/* .rux-form-field
+  input:not([type="search"]):not([type="checkbox"]):not([type="radio"]):optional
+  + label::after {
+  display: block;
+  content: "(optional)";
+  font-size: 0.875rem;
+  margin: 0.1rem auto 0 0.25rem;
+
+  opacity: 0.4;
+} */
+
+.rux-form-field input:disabled {
+  opacity: var(--disabledOpacity, 0.4);
+  cursor: var(--disabledCursor, not-allowed);
+}
+
+.rux-form-field--large,
+.rux-form-field--large label,
+.rux-form-field--large input,
+.rux-form-field--large textarea {
+  font-size: var(--fontSizeXL, 1.125rem);
+}
+
+.rux-form-field--small,
+.rux-form-field--small label,
+.rux-form-field--small input,
+.rux-form-field--small textarea {
+  font-size: var(--fontSizeMD, 0.875rem);
+}
+
+.rux-form-field--large input,
+.rux-form-field--large textarea {
+  padding: 0.5rem;
+}
+
+.rux-form-field--large input {
+  height: 2.5rem;
+}
+
+.rux-form-field--small input,
+.rux-form-field--small textarea {
+  padding: 0.3rem;
+}
+
+.rux-form-field--small input {
+  height: 1.625rem;
+}
+
+.rux-form-field--large input:invalid {
+  background-size: 1.375rem;
+  background-position: center right 0.5rem;
+  padding: 0.5rem 1.875rem 0.5rem 0.5rem;
+}
+
+.rux-form-field input:focus .rux-form-field input:invalid:focus {
+  box-shadow: inset 0 0 3px var(--colorGray);
+  border-color: var(--inputFocusBorderColor);
+  outline: none;
+  color: black;
+}
+
+.rux-form-field input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: textfield;
+}
+
+/* SEARCH VARIANT */
+.rux-form-field input[type="search"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 0.5rem 0.5rem 0.5rem 1.75rem;
+
+  background: no-repeat center left 0.3rem/1.1em
+    url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 13 13'%3E%3Cg fill='%230973C1' fill-rule='evenodd'%3E%3Cpath d='M9 8c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-1a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-4.707.293l1.414 1.414-4 4-1.414-1.414'/%3E%3Cpath d='M6.33 5.67l1 1-3.66 3.66-1-1'/%3E%3C/g%3E%3C/svg%3E")
+    var(--inputBackgroundColor, rgb(255, 255, 255));
+}
+
+.rux-form-field--large input[type="search"] {
+  padding: 0.5rem 0 0.5rem 2rem;
+}
+
+.rux-form-field--small input[type="search"] {
+  padding: 0.3rem 0 0.3rem 1.5rem;
+}
+
+.rux-form-field input[type="search"]::-webkit-search-cancel-button {
+  position: relative;
+
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22rgb(0%2C%2090%2C%20143)%22%20fill-rule%3D%22evenodd%22%20d%3D%22M69.028%2064l22.628%2022.627-5.029%205.029L64%2069.028%2041.373%2091.656l-5.029-5.029L58.972%2064%2036.344%2041.373l5.029-5.029L64%2058.972l22.627-22.628%205.029%205.029L69.028%2064z%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.rux-form-field input[type="search"]::-ms-clear {
+  position: relative;
+  right: 0.25rem;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+}

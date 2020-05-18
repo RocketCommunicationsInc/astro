@@ -1,0 +1,19 @@
+.rux-icon {
+  margin: 0 auto;
+
+  width: 2.8rem;
+  height: 2.8rem;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  fill: var(--colorSecondary, rgb(77, 172, 255));
+}
+
+i.rux-icon {
+  display: block;
+  width: 2.8rem;
+  height: 2.8rem;
+
+  color: var(--colorSecondary, rgb(77, 172, 255));
+}

@@ -1,0 +1,47 @@
+/*
+**
+** 	TABLE
+** 	==========================================================================
+*/
+
+/* 	REQUIRED CLASSES */
+.rux-table,
+.satcom-table {
+  border-collapse: separate;
+  border-spacing: 5px;
+
+  color: #fff;
+}
+
+.rux-table th,
+.satcom-table th {
+  font-stretch: condensed;
+  font-weight: 300;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.rux-table td,
+.rux-table th,
+.satcom-table td,
+.satcom-table th {
+  padding: 0.5em 1em 1em 0.75em;
+
+  border-top: 1px solid rgba(216, 216, 216, 0.1);
+  background-color: rgba(216, 216, 216, 0.1);
+}
+
+.rux-table__column-head th,
+.satcom-table-column-head th {
+  padding-bottom: 0.5em;
+}
+
+.rux-table tfoot,
+.satcom-table tfoot {
+  font-size: 0.7rem;
+}
+
+.rux-table .selected,
+.satcom-table .selected {
+  background: #36557a;
+}

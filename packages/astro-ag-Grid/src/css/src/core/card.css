@@ -1,0 +1,24 @@
+.rux-card {
+  background-color: var(--cardBackgroundColor, rgb(30, 47, 66));
+  padding: 1px;
+  overflow: hidden;
+}
+
+.rux-card__header {
+  color: var(--cardHeaderTextColor, rgb(255, 255, 255));
+  background-color: var(--cardHeaderBackgroundColor, rgb(20, 32, 44));
+  margin: 0;
+  padding: 0.325rem 0.625rem;
+  display: flex;
+  align-items: center;
+}
+
+.rux-card__header h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.rux-card__content {
+  padding: 0.625rem;
+}

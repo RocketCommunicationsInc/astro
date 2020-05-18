@@ -1,0 +1,118 @@
+/*
+**
+** 	ASTRO STATUS INDICATOR
+** 	==========================================================================
+**  4.1 Notes
+**  Removed satcom prefix
+**  Replaced SVGs with a single PNG and used sprite pattern to improve performance
+**  Removed ::before psuedo element in favor of simpler background on the div
+**  Removed undocumented and unused small status variant
+**  General clean up
+**  3.0 Notes
+**  Removed margin on status symbols
+**	1.4 Notes
+**	- Added rux_ and BEM compatible classes to all satcom_ NOTE: satcom_ will be removed in a future version
+**  - Embeded SVG graphics
+*/
+
+.rux-status-indicator,
+.rux-status {
+  display: block;
+
+  height: 1rem;
+  width: 1rem;
+
+  margin: 0.125rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: 1rem;
+
+  background-image: var(--statusSymbols, url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAMAAABzRoe3AAAAgVBMVEUAAAD/tQv/swL/OTn/PDzftl9W8QBW8AAtzP8v0P9Z9gD/tAP/uQb/tAItzf8tzf+eqK2ep60uzP9X8QCfqK4uzf8uzf9X8QAuzP9X8ACeqK4vzP9Y8QAuzv9Y8gCeqq4wz/8xzv9A1f9Y8QD/tAP86DpW8AD/swL/ODgtzP+ep63tgXPUAAAAJXRSTlMAGNfAQAv98/IdG8Io52zz8+DZ2dC9trabm4F+a05OQjAaDG6dAJcYcwAAAfdJREFUWMPtmNlygkAQRScyrBp3QTZFNBj8/w9MCGI3dBOHMg9jyvOmVFnn1HUSULx4LibjN/HMTN7Po2cu+PY/cwUfPYg2XhKsbHsVJJ5gcaf+cjZb+lN3qJjxyWIw/lAwNMALreKKFTIJh215Y3sYFiD5AEn9oWBowM4uEPau65A6JcJJ/2ACg/pDwdCAo1W0sI6ixbTsMH18Akn9oWBgwK7xh4LWBmlJSB+dwCD+pEA5wLMLgo3OwcGpvzhxludZfH1Bz4EZrefzdWSqTSCJPylQDggLhhA+oD6/G7d+5W7qk9yV3C8uPyz2KhMYxJ8UKAd4Fhdg3SZwa3/4wLrA7fhfbuwVJpDEnxQoByQFS9I6wQ7ydR16js0FBCzMuxMY1J8WqAYEfEDQXPcr3RjbxNU7vsBEF0R0dwJJ/LkCxYAVH7Bqri8r3QzbZNU7S4FZ44B1/ymgA4zPfZwUA2w+wG6uzyrdHMvk1TszgZnjgLmgyL4T8Dbq8R+bWgUIgw4ABby/Vl8hIckAUMD7a3WIYQIYgC0Af73+jOIJpKAF1F+vf2QwAQxAC7C/ZrcSeAIpegvAX7ObOZgABiAF2F+322mYAAagBeCv2wMNTEAGIAWVv3aPlDABDMAW1P7aPdQjDBiALaj89ftZBSGl+LXgZIoXL/4VXyptNwzuHR/QAAAAAElFTkSuQmCC"));
+}
+
+
+
+
+
+/* Specific Status Iconography */
+.rux-status--off,
+.rux-status-indicator.rux-status--off,
+.rux-status--off .rux-advanced-status__icon {
+  background-position-x: -5rem;
+}
+
+
+.rux-status--standby,
+.rux-status-indicator.rux-status--standby,
+.rux-status--standby .rux-advanced-status__icon {
+  background-position-x: -4rem;
+}
+
+.rux-status--normal,
+.rux-status-indicator.rux-status--normal,
+.rux-status-indicator.rux-status--ok,
+.rux-status--normal .rux-advanced-status__icon,
+.rux-status--ok .rux-advanced-status__icon {
+  background-position-x: -3rem;
+}
+
+.rux-status--caution,
+.rux-status-indicator.rux-status--caution,
+.rux-status--caution .rux-advanced-status__icon {
+  background-position-x: -2rem;
+}
+
+.rux-status--serious,
+.rux-status-indicator.rux-status--serious,
+.rux-status-indicator.rux-status--error,
+.rux-status--serious .rux-advanced-status__icon,
+.rux-status--error .rux-advanced-status__icon {
+  background-position-x: -1rem;
+}
+
+.rux-status--critical,
+.rux-status-indicator.rux-status--critical,
+.rux-status-indicator.rux-status--alert,
+.rux-status--critical .rux-advanced-status__icon,
+.rux-status--alert .rux-advanced-status__icon,
+.rux-status--emergency .rux-advanced-status__icon {
+  background-position-x: 0;
+}
+
+/* Specific Color */
+.rux-status--off svg,
+.rux-icon.rux-status--off {
+  fill: var(--colorOff, rgb(198, 204, 209));
+  color: var(--colorOff, rgb(198, 204, 209));
+}
+.rux-status--standby svg,
+.rux-icon.rux-status--standby {
+  fill: var(--colorStandby, rgb(77, 172, 255));
+  color: var(--colorStandby, rgb(77, 172, 255));
+}
+.rux-icon.rux-status--normal,
+.rux-icon.rux-status--ok,
+.rux-status--normal svg,
+.rux-status--ok svg {
+  fill: var(--colorNormal, rgb(91, 255, 0));
+  color: var(--colorNormal, rgb(91, 255, 0));
+}
+.rux-status--caution svg,
+.rux-icon.rux-status--caution {
+  fill: var(--colorCaution, rgb(248, 231, 29));
+  color: var(--colorCaution, rgb(248, 231, 29));
+}
+.rux-status--serious svg,
+.rux-status--error svg,
+.rux-icon.rux-status--serious,
+.rux-icon.rux-status--error {
+  fill: var(--colorSerious, rgb(255, 176, 0));
+  color: var(--colorSerious, rgb(255, 176, 0));
+}
+.rux-status--critical svg,
+.rux-status--emergency svg,
+.rux-icon.rux-status--critical,
+.rux-icon.rux-status--emergency {
+  fill: var(--colorCritical, rgb(255, 48, 48));
+  color: var(--colorCritical, rgb(255, 48, 48));
+}

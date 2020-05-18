@@ -1,0 +1,79 @@
+/*
+**
+** 	ASTRO PUSHBUTTONS
+** 	==========================================================================
+**  3.0 Notes
+**	- Updated with css custom properties for light/dark theme
+**  2.1 Notes
+**	- Moved Pushbuttons to its own style
+**	1.4 Notes
+**	- Added rux_ and BEM compatible classes to all satcom_ NOTE: satcom_ will be removed in a future version
+**	- Removed prefixed linear gradients
+**	- Removed prefixed transition
+**  - Fixed added colon to checked pseudo class (e.g., checked became :checked)
+**  - Alignment issue fixed on toggle button label
+**  - Updated to WCAG colors
+**  - Updated transition speed
+*/
+
+.rux-pushbutton,
+.satcom-pushbutton {
+  display: inline-block;
+
+  height: 1.3125rem;
+
+  /* width: auto; */
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.rux-pushbutton__input,
+.satcom-pushbutton-input {
+  display: none;
+}
+
+.rux-pushbutton__button,
+.satcom-pushbutton-button {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  height: 1.375rem;
+  font-size: 0.75rem !important;
+  font-weight: 600;
+
+  margin: 0;
+  padding: 0 0.625rem;
+
+  color: var(--pushbuttonTextColor, rgb(255, 255, 255));
+
+  background-color: var(--pushbuttonBackgroundColor, rgb(0, 90, 143));
+  border-radius: var(--defaultBorderRadius, 3px);
+  border: 1px solid var(--pushbuttonBorderColor, rgb(30, 47, 66));
+}
+
+.rux-pushbutton__button label,
+.satcom-pushbutton-button label {
+  color: var(--pushbuttonTextColor, rgb(255, 255, 255));
+}
+
+.rux-pushbutton__input:checked + .rux-pushbutton__button,
+.satcom-pushbutton-input:checked + .satcom-pushbutton-button {
+  display: flex;
+  color: var(--pushbuttonSelectedTextColor, rgb(91, 255, 0));
+  background-color: var(--pushbuttonSelectedBackgroundColor, rgb(0, 0, 0));
+  border-color: var(--pushbuttonSelectedBorderColor, rgb(0, 0, 0));
+
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.13);
+}
+
+.rux-pushbutton__input:not(:checked) + .rux-pushbutton__button .on,
+.satcom-pushbutton-input:not(:checked) + .satcom-pushbutton-button .on {
+  display: none;
+}
+
+.rux-pushbutton__input:disabled + .rux-pushbutton__button,
+.satcom-pushbutton-input:disabled + .satcom-pushbutton-button {
+  opacity: var(--disabledOpacity, 0.4);
+  cursor: var(--disabledCursor, not-allowed);
+}

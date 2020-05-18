@@ -1,0 +1,48 @@
+/*
+**
+** 	ASTRO DROP DOWN
+** 	==========================================================================
+**	2.0.1 Notes
+*/
+
+.rux-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  border: 1px solid var(--selectBorderColor, rgb(0, 90, 143));
+  border-radius: var(--buttonBorderRadius, 3px);
+
+  color: var(--selectTextColor, rgb(255, 255, 255));
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  height: 2rem;
+  padding: 0 1.2rem 0 0.625rem;
+
+  background-color: var(--selectBackgroundColor, rgb(0, 90, 143));
+  background-image: var(
+    --selectCaret,
+    url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%220%200%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2049.3%20%2851167%29%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3ECaret%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22path-1%22%20points%3D%225%200%2010%205%200%205%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cmask%20id%3D%22mask-2%22%20fill%3D%22white%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3C%2Fmask%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20id%3D%22Caret%22%20fill%3D%22%23FFFFFF%22%20transform%3D%22translate%285.000000%2C%202.500000%29%20scale%281%2C%20-1%29%20translate%28-5.000000%2C%20-2.500000%29%20%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E")
+  );
+  background-position: center right 0.625rem;
+  background-repeat: no-repeat;
+}
+
+.rux-select .rux-select optgroup,
+.rux-select option {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+}
+
+.rux-select:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.rux-select::-ms-expand {
+  display: none;
+}
+
+.rux-select:focus::-ms-value {
+  background: transparent;
+}

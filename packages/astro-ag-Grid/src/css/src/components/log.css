@@ -1,0 +1,117 @@
+.rux-log {
+  display: block;
+  font-size: 0.875rem;
+  background-color: var(--logBackgroundColor, rgb(30, 47, 66));
+}
+
+.rux-log-header {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: space-between;
+
+  padding: 0.5rem;
+  background-color: var(--logHeaderBackgroundColor, rgb(20, 32, 44));
+}
+
+.rux-log-header-title {
+  margin: 0 0 1rem 0;
+  display: none;
+
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.rux-log__header-labels {
+  display: flex;
+  width: 100%;
+  color: var(--logHeaderTextColor, rgb(255, 255, 255));
+}
+
+.rux-log__header-labels,
+.rux-log__events {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.rux-log__header-labels,
+.rux-log__log-event {
+  display: flex;
+  align-content: flex-start;
+}
+
+.rux-log__events {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.log-event__timestamp {
+  flex-shrink: 0;
+
+  text-align: right;
+  width: 5rem;
+}
+
+.rux-log__log-event {
+  display: flex;
+  flex-shrink: 0;
+  align-items: flex-start;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--logBorderColor, rgb(40, 63, 88));
+}
+
+.rux-log__log-event:last-child {
+  border-bottom: none;
+}
+
+.rux-log__header-labels li:not(:first-child),
+.rux-log__log-event > * {
+  margin: 0 0.5rem;
+}
+
+.rux-log__header-labels li:first-child {
+  margin: 0 0.5rem 0 0;
+}
+
+.rux-log__log-event .log-event__timestamp {
+  font-family: var(--fontFamilyMono, "Roboto Mono", monospace);
+}
+
+.log-event__status {
+  flex-grow: 0;
+  flex-shrink: 0;
+  text-align: center;
+  width: 1rem;
+  overflow: hidden;
+}
+
+.log-event__message {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.log-header__message {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ol li:nth-child(even) {
+  background-color: #283f58;
+} */
+
+.rux-log__filter-enabled {
+  position: sticky;
+  top: 0;
+  left: 0;
+
+  align-content: center;
+
+  color: var(--logFilterTextColor, rgb(0, 0, 0));
+  background-color: var(--logFilterBackgroundColor, rgb(192, 240, 255));
+  padding: 0.5rem;
+}
+
+.rux-log__filter-enabled .rux-icon {
+  margin-right: 0.5rem;
+}

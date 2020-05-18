@@ -1,0 +1,418 @@
+.light-theme {
+  /* 
+    
+    Global Colors 
+    ==========================================================================
+
+  */
+  --backgroundColor: var(--colorQuaternaryLighten3, rgb(243, 245, 248));
+  --fontColor: var(--colorBlack, rgb(0, 0, 0));
+  --fontLowContrastColor: var(--colorGray, rgb(204, 204, 204));
+  --fontInvertedColor: var(--colorWhite, rgb(255, 255, 255));
+  --fontInvertedBackgroundColor: var(--colorBlack, rgb(0, 0, 0));
+
+  --fontLinkColor: var(--colorSecondaryDarken1, rgb(62, 138, 204));
+  --fontLinkHoverColor: var(--colorSecondary, rgb(77, 172, 255));
+
+  --wcagCompliance: rgba(0, 0, 0, 0.5);
+  --criticalBorder: #7f1c1c;
+
+  --colorCritical: var(--statusLightCritical, rgb(255, 42, 4));
+  --colorSerious: var(--statusLightSerious, rgb(255, 175, 61));
+  --colorCaution: var(--statusLightCaution, rgb(250, 216, 0));
+  --colorNormal: var(--statusLightNormal, rgb(0, 226, 0));
+  --colorStandby: var(--statusLightStandby, rgb(100, 217, 255));
+  --colorOff: var(--statusLightOff, rgb(142, 154, 163));
+  /* 
+    
+    Button Colors 
+    ==========================================================================
+    For standard and outline buttons
+    
+  */
+
+  /* Button */
+  --buttonTextColor: var(--colorWhite, rgb(255, 255, 255));
+  --buttonBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
+  --buttonBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+  --buttonBoxShadow: 0 2px 4px rgba(0, 0, 0, 0.14),
+    0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
+
+  /* Button Hover State */
+  --buttonHoverTextColor: var(--colorWhite, rgb(255, 255, 255));
+  --buttonHoverBackgroundColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
+  --buttonHoverBorderColor: var(--colorSecondaryDarken1, rgb(58, 129, 191));
+  --buttonHoverBoxShadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
+
+  /* Button Active State */
+  --buttonActiveControlTextColor: var(--colorWhite, rgb(255, 255, 255));
+  --buttonActiveBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
+  --buttonActiveBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+
+  /* Default Button State */
+  --buttonDefaultBorderColor: var(--colorWhite, rgb(255, 255, 255));
+
+  /* Outline Button Variant */
+  --buttonOutlineTextColor: var(--colorPrimary, rgb(0, 90, 143));
+  --buttonOutlineBackgroundColor: transparent;
+  --buttonOutlineBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+
+  /* Outline Button Variant Hover State */
+  --buttonOutlineHoverTextColor: var(--colorPrimary, rgb(0, 90, 143));
+  --buttonOutlineHoverBackgroundColor: rgba(0, 90, 143, 0.05);
+  --buttonOutlineHoverBorderColor: var(
+    --colorSecondaryDarken1,
+    rgb(58, 129, 191)
+  );
+
+  /* 
+    
+    Control Colors 
+    ==========================================================================
+    For checkboxes, radio buttons etc …
+
+  */
+  --controlTextColor: var(--colorWhite, rgb(255, 255, 255));
+  --controlLabelColor: var(--colorBlack, rgb(0, 0, 0));
+  --controlBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
+  --controlBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+  --controlAccentColor: var(--colorSecondary, rgb(77, 172, 255));
+
+  --controlSelectedTextColor: var(--colorBlack, rgb(0, 0, 0));
+  --controlSelectedBackgroundColor: var(
+    --colorSecondaryDarken1,
+    rgb(58, 129, 191)
+  );
+  --controlSelectedBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+
+  --controlHoverOutlineBackgroundColor: none;
+  --controlSelectedOutlineBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+  --controlSelectedOutlineBackgroundColor: var(
+    --colorSecondaryDarken1,
+    rgb(58, 129, 191)
+  );
+
+  /* 
+    
+    Progress Bar Colors 
+    ==========================================================================
+
+  */
+  --progressDeterminateBarBackgroundColor: var(
+    --colorSecondary,
+    rgb(77, 172, 255)
+  );
+  --progressDeterminateTrackBackgroundColor: var(
+    --colorWhite,
+    rgb(255, 255, 255)
+  );
+  --progressDeterminateTrackBorderColor: var(
+    --colorQuaternary,
+    rgb(207, 214, 227)
+  );
+
+  --progressIndeterminate: url("data:image/svg+xml,%3Csvg width='66' height='66' xmlns='http://www.w3.org/2000/svg'%3E %3Cdefs%3E %3ClinearGradient x1='70.883%25' y1='4.637%25' x2='50%25' y2='100%25' id='a'%3E %3Cstop stop-color='%235CB3FF' offset='0%25'/%3E %3Cstop stop-color='%23F6F7F8' stop-opacity='0' offset='100%25'/%3E %3C/linearGradient%3E %3C/defs%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M33 65.5C15.05 65.5.5 50.95.5 33S15.05.5 33 .5 65.5 15.05 65.5 33 50.95 65.5 33 65.5zm0-7c14.083 0 25.5-11.417 25.5-25.5S47.083 7.5 33 7.5 7.5 18.917 7.5 33 18.917 58.5 33 58.5z' stroke='%23D7DDE2' fill='%23FFF'/%3E %3Cpath d='M51.908 8.236l-2.358 3.245A26.894 26.894 0 0 0 32 5C17.088 5 5 17.088 5 32s12.088 27 27 27c1.129 0 2.242-.07 3.334-.204l4.435 3.222C37.286 62.66 34.683 63 32 63 14.88 63 1 49.12 1 32 1 14.88 14.88 1 32 1c7.579 0 14.522 2.72 19.908 7.236z' fill='url(%23a)' transform='translate(1 1)'/%3E %3Cpath d='M48.564 13c1.92 0 3.557-.64 4.075-2.367.112-.375.361-.67.361-1.08C53 7.248 51.572 5 49.234 5S45 6.867 45 9.17c0 2.304 1.225 3.83 3.564 3.83z' stroke='%234DACFF' fill='%2352AEFF'/%3E %3C/g%3E %3C/svg%3E ");
+  /* 
+    
+    Slider Colors 
+    ==========================================================================
+
+  */
+  --sliderThumbBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
+  --sliderThumbBorderColor: var(--colorWhite, rgb(255, 255, 255));
+
+  --sliderTrackBorderColor: var(--colorQuaternary, rgb(207, 214, 227));
+  --sliderTrackBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+
+  --sliderSelectedTrackBackgroundColor: var(
+    --colorSecondary,
+    rgb(77, 172, 255)
+  );
+
+  /* 
+    
+    Segmented Button Colors 
+    ==========================================================================
+
+  */
+  --segmentedButtonBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+  --segmentedButtonBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --segmentedButtonTextColor: var(--colorPrimary, rgb(0, 90, 143));
+
+  --segmentedButtonHoverBackgroundColor: rgb(0, 90, 143, 0.05);
+  --segmentedButtonHoverTextColor: var(--colorPrimary, rgb(0, 90, 143));
+
+  --segmentedButtonSelectedBackgroundColor: var(
+    --colorSecondaryDarken1,
+    rgb(58, 129, 191)
+  );
+
+  --segmentedButtonSelectedBoxShadow: inset 0 3px 4px rgba(0, 0, 0, 0.1),
+    inset 0 1px 5px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.067s ease-out;
+
+  --segmentedButtonSelectedTextColor: var(--colorWhite, rgb(255, 255, 255));
+
+  /* 
+    
+    Drop Down/Select Colors 
+    ==========================================================================
+    
+  */
+  --selectBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --selectBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+  --selectTextColor: var(--colorPrimary, rgb(0, 90, 143));
+  --selectCaret: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%220%200%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2049.3%20%2851167%29%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3ECaret%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22path-1%22%20points%3D%225%200%2010%205%200%205%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cmask%20id%3D%22mask-2%22%20fill%3D%22white%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3C%2Fmask%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20id%3D%22Caret%22%20fill%3D%22%23FFFFFF%22%20transform%3D%22translate%285.000000%2C%202.500000%29%20scale%281%2C%20-1%29%20translate%28-5.000000%2C%20-2.500000%29%20%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+
+  /* 
+    
+    Toggle Colors 
+    ==========================================================================
+
+  */
+
+  --toggleButtonBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --toggleButtonBoxShadow: 0 0 3px rgba(0, 0, 0, 0.25),
+    1px 0 2px rgba(0, 0, 0, 0.3);
+
+  --toggleBaseBackgroundColor: linear-gradient(
+    to right,
+    var(--colorNormal) 50%,
+    var(--colorPrimaryLighten4) 50.1%
+  );
+  --toggleBaseBorderColor: var(--colorPrimaryLighten1, rgb(0, 90, 143));
+  --toggleBaseTextColor: var(--colorPrimary, rgb(255, 255, 255));
+
+  --toggleBaseSelectedTextColor: #007300;
+  --toggleButtonSelectedBoxShadow: 0 0 3px rgba(0, 0, 0, 0.3),
+    -1px 0 2px rgba(0, 0, 0, 0.3);
+
+  /* Alt Toggle */
+  --toggleThumbBorderColor: var(--colorGrayDarken2, rgb(122, 122, 122));
+  --toggleThumbBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+
+  --toggleSelectedThumbBorderColor: var(
+    --colorStandbyDarken2,
+    rgb(27, 122, 153)
+  );
+  --toggleSelectedThumbBackgroundColor: var(--colorStandby, rgb(100, 217, 255));
+
+  --toggleTrackBorderColor: var(--colorGrayDarken2, rgb(122, 122, 122));
+  --toggleTrackBackgroundColor: var(--colorGray, rgb(204, 204, 204));
+
+  --toggleSelectedTrackBorderColor: var(
+    --colorStandbyDarken2,
+    rgb(27, 122, 153)
+  );
+  --toggleSelectedTrackBackgroundColor: var(--colorStandby, rgb(100, 217, 255));
+
+  --toggleDisabledThumbBorderColor: var(--colorGrayDarken1, rgb(122, 122, 122));
+  --toggleDisabledThumbBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --toggleDisabledSelectedThumbBorderColor: var(
+    --colorPrimaryLighten3,
+    rgb(153, 189, 210)
+  );
+
+  /* 
+    
+    Pushbutton Colors 
+    ==========================================================================
+
+  */
+
+  --pushbuttonBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --pushbuttonBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+  --pushbuttonTextColor: var(--colorPrimary, rgb(0, 90, 143));
+
+  --pushbuttonSelectedBackgroundColor: var(--colorNormal, rgb(91, 255, 0));
+  --pushbuttonSelectedBorderColor: #3dc100;
+  /* var(--colorNormal, rgb(91, 255, 0)); */
+  --pushbuttonSelectedTextColor: #007300;
+  /* var(--colorWhite, rgb(255, 255, 255)); */
+
+  /* 
+    
+    Clock Colors 
+    ==========================================================================
+
+  */
+
+  --clockTextColor: var(--colorBlack, rgb(0, 0, 0));
+  --clockBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --clockBorderColor: var(--colorQuaternary, rgb(39, 86, 128));
+
+  /* 
+    
+    Modal Colors 
+    ==========================================================================
+
+  */
+
+  --modalTextColor: var(--colorBlack, rgb(0, 0, 0));
+  --modalBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --modalBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+  /* 
+    
+    Log Colors 
+    ==========================================================================
+
+  */
+  --logTextColor: var(--colorBlack);
+  --logBackgroundColor: var(--colorWhite);
+  --logBorderColor: var(--colorQuaternaryLighten2);
+
+  --logHeaderTextColor: var(--colorBlack);
+  --logHeaderBackgroundColor: var(--colorQuaternary);
+
+  --logFilterBackgroundColor: var(--colorStandbyLighten3);
+  --logFilterTextColor: var(--colorStandbyDarken2);
+
+  /* 
+    
+    Tree Colors 
+    ==========================================================================
+
+  */
+  --treeTextColor: var(--colorBlack, rgb(0, 0, 0));
+  --treeBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --treeBorderColor: var(--colorQuaternary, 207, 214, 227);
+  --treeItemBorderColor: var(--colorQuaternary, 207, 214, 227);
+  --treeAccentColor: var(--colorSecondary, rgb(77, 172, 255));
+
+  --treeHoverBackgroundColor: var(--colorSecondaryLighten4, rgb(219, 238, 255));
+  --treeHoverAccentColor: var(--colorSecondaryLighten3, rgb(184, 222, 255));
+
+  --treeSelectedBackgroundColor: var(
+    --colorSecondaryLighten3,
+    rgb(184, 222, 255)
+  );
+  --treeSelectedAccentColor: var(--colorSecondaryLighten1, rgb(113, 189, 255));
+  --treeSelectedTextColor: var(--colorBlack, rgb(0, 0, 0));
+
+  --treeChildrenBackgroundColor: var(
+    --colorQuaternaryLighten3,
+    rgb(236, 239, 244)
+  );
+
+  /* 
+    
+    Tab Colors 
+    ==========================================================================
+
+  */
+  --tabTextColor: var(--colorPrimary, rgb(0, 90, 143));
+  --tabBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --tabBorderColor: var(--colorQuaternaryLighten1, rgb(219, 224, 234));
+
+  --tabHoverTextColor: var(--colorSecondary, rgb(77, 172, 255));
+
+  --tabSelectedTextColor: var(--colorBlack, rgb(0, 0, 0));
+  --tabSelectedBorderColor: var(--colorSecondary, rgb(77, 172, 255));
+
+  /* 
+    
+    Card Colors 
+    ==========================================================================
+
+  */
+  --cardBackgroundColor: var(--colorQuaternaryLighten2);
+
+  --cardHeaderBackgroundColor: var(--colorQuaternaryLighten1);
+  --cardHeaderTextColor: var(--colorWhite, #fff);
+
+  /* 
+    
+    Input/Text Field Colors 
+    ==========================================================================
+    
+  */
+
+  --inputBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --inputBorderColor: var(--colorQuaternaryDarken1, rgb(255, 255, 255));
+  --inputTextColor: var(--colorBlack, rgb(14, 11, 11));
+
+  --inputFocusBorderColor: var(--colorSecondary);
+  --inputFocusBoxShadow: none;
+
+  --inputInvalidBorderColor: var(--colorCritical, rgb(255, 48, 48));
+
+  /* 
+    
+    Status
+    ==========================================================================
+
+  */
+
+  
+
+  --statusSymbols: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAMAAABzRoe3AAAA81BMVEUAAABaPhVcDwE7CQA6gJIAAAAATQAkTlsATgBcPxYrHAciGgkAAABcPxU0coUARgAxNTgnU2IoV2YzNjoAUgAtYXEzODovZngAUQAAUAAwNDg0dIk2d4sAOgAjKCgAGAAADQA+hJVZPBRcPxb62AAA4gD/rz1VSQBk2f//KgQiSldXDgEATQCOmqNXOxQwNDdoRhiGWx+tHAJiEAFZw+b1KAMAywDlnTb5qjv7rDzpnzdMpcNJn7xFlrGMmKGEj5g4eY82d4xxe4IyboIwaHskT15GTFEA2gAArAAAnAAAfgAAfABg0vddyu5cZGpg0fbOjTE6oyFAAAAAJHRSTlMA7cc4Kgj9+vbBJB4GypVn9vPu5t/Y18O8n4B/ckY6FRMdmtlkVn4PAAACq0lEQVRYw+2YaVPaUBSGqWbTWsK+b9pC6ek1lypGW1T2RUDb//9rmpsm3Nyc1DQfOhMc3k/cyUzmfeY5BxISh+xXzi7eJ/Y5ZyfGu30msPobQQSf/5KEmKZeymlarqQ3g28vJfMZVc3kk1LUYkdfA3OE+/duv3GCaACtskKcKOVWQP0i7FKMiHAcDHAc0L9zxwgQwKeAiAB1jZD1ylwuzdWaEK3u71BTAUaD/nbbH4wA1FpUBVdffLliAnD/DieIBKArZGO2nZgboujiLZIA437XSX8MkIyo4PpG7H9zzQTg/pwgEkBdIU9tT56IIjioATx0PXkAqEVWgAXg/pwgEkBLY/1FAq3lmX+V9RcJVLwHcqWQShUqcpgCLgD35wRRAMpk0/ZlQ8r8BkUY27XvZ/P57N7+OIaiv2QjS+1kG2EKuADcHxOEAzQVYvoBTKI0dwIA2Pw/T8HO9JntAYDk60/pYjIcThaUNkIUcAG4PyYIB9DJuo2yJjrf4FHXyhTSVUmqpmHKTiPfHstZ+vJ4aeXxhWblYAVYAO6PCcIBSmSFAVak5F7Pw4DND6TP2ek8DWyKBpAXClbogvVnBAtaCVaABeD+mCAcIMcmCM9Qzr2esSdoBtU/xyrM7BnKCAULdHLpZEILr2wBEnBhGL86OHc94+M/AmhkiQGWRHOvq7C1Gs/doZdgbh23oAr9UnToAgxp6pUvIrQB8gej9wP1/24ZOP2fAD+jAHAFXAAmwP1jNUK2Ai4AE+D+sVpiRwEXgAhQ/3h9jboKuABMIPaP1w8ZV8AFIAKhf8weJXYKBAGIgPeP2cMcVyAIwARu/7g9TnMFggBM4PSP2wuNR4EgABPc2v1j90rpUSAIwAQG6x+7l3qvAkEAJmD94/e3ileBIAATnJwmDjnkTeU3PTFjExFNx+YAAAAASUVORK5CYII=");
+  /* 
+   
+    
+    Scrollbar Colors -- Light
+    ==========================================================================
+    
+  */
+
+  --scrollBarThumbBackgroundColor: var(--colorQuaternaryDarken1, #9ba0aa);
+  --scrollBarThumbBackgroundHoverColor: var(--colorQuaternaryDarken2, #676a71);
+  --scrollBarTrackBackgroundColor: transparent;
+  --scrollBarTrackCornerBackgroundColor: var(
+    --colorQuaternaryLighten4,
+    #f2f4f7
+  );
+
+  /* 
+    
+    Timeline Colors -- Dark
+    ==========================================================================
+      
+  */
+
+  --timelineHeaderBackgroundColor: var(--colorQuaternary, rgb(16, 25, 35));
+  --timelineHeaderTextColor: var(--fontColor, rgb(0, 0, 0));
+
+  --timelineRulerBackgroundColor: var(--colorQuaternary, rgb(16, 25, 35));
+  --timelineRulerTextColor: var(--fontColor, rgb(0, 0, 0));
+
+  --timelineTrackLabelBackgroundColor: var(
+    --colorQuaternaryLighten2,
+    rgb(40, 63, 88)
+  );
+  --timelineTrackBackgroundColor: var(
+    --colorQuaternaryLighten2,
+    rgb(40, 63, 88)
+  );
+
+  --timelineRegionBackgroundColor: var(--colorPrimaryLighten4, rgb(24, 38, 53));
+  --timelineRegionTextColor: var(--fontColor, rgb(255, 255, 255));
+  --timelineRegionBorderColor: var(--colorPrimaryLighten3);
+
+  --timelineRegionSelectedBorderColor: var(
+    --colorSecondaryDarken3,
+    rgb(77, 172, 255)
+  );
+  --timelineRegionSelectedBackgroundColor: var(
+    --colorSecondaryDarken1,
+    rgb(62, 138, 204)
+  );
+  --timelineRegionSelectedTextColor: var(--fontColor, rgb(255, 255, 255));
+
+  /* 
+    
+    ACCORDION COLORS
+    ==========================================================================
+      
+  */
+  --accordionBorderColor: rgb(207, 214, 227);
+  --accordionContentBackground: rgb(226, 230, 238);
+  --accordionClosedLabelBackground: rgb(255, 255, 255);
+  --accordionOpenLabelBackground: rgb(245, 247, 249);
+  --accordionHoverLabelBackground: rgb(236, 239, 244);
+  --accordionColor: rgb(0, 0, 0);
+}
+
+li.light-theme {
+  display: none;
+}
