@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~ag-grid-community/dist/styles/ag-grid.css';
+@import '~ag-grid-community/dist/styles/ag-theme-alpine.css';
+
+/* Used this to test custom css
+@import '~ag-grid-community/dist/styles/ag-theme-alpine-astro.css'; */
+
+.container {
+  max-width: 101rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
