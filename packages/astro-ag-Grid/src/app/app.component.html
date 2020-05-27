@@ -6,14 +6,13 @@
   </div>
 
 
-
   <div class="container">
-<ag-grid-angular
-style='height: 500px;'
-class='ag-theme-alpine'
-[rowData] = 'rowData'
-[columnDefs] = 'columnDefs'
-rowSelection='multiple'
-></ag-grid-angular>
-</div>
+    <ag-grid-angular
+      style='height: calc( 100vh - 110px - 2rem);'
+      class='ag-theme-astro dark-theme'
+      [rowData] = 'rowData'
+      [columnDefs] = 'columnDefs'
+      rowSelection='multiple'
+    ></ag-grid-angular>
+  </div>
 

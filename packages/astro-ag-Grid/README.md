@@ -3,6 +3,9 @@ Demo application for testing custom Astro CSS styling.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
 
+## Install
+Run `npm i` to install packages. You will also need to globally install the Angular CLI: `npm install -g @angular/cli`
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

@@ -3,7 +3,7 @@
     0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);--buttonActiveBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));--buttonActiveBorderColor: var(--colorPrimary, rgb(0, 90, 143));--buttonOutlineBackgroundColor: transparent;--buttonOutlineBorderColor: var(--colorPrimary, rgb(0, 90, 143));--buttonOutlineHoverBorderColor: var(
     --colorSecondaryDarken1,
     rgb(58, 129, 191)
-  );--controlBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));--controlSelectedBackgroundColor: var(
+  );--controlBackgroundColor: var(--colorSecondaryDarken1, rgb(62, 138, 204));--controlSelectedBackgroundColor: var(
     --colorSecondaryDarken1,
     rgb(58, 129, 191)
   );--progressDeterminateBarBackgroundColor: var(

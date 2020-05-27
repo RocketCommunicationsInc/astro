@@ -75,7 +75,7 @@
   */
   --controlTextColor: var(--colorWhite, rgb(255, 255, 255));
   --controlLabelColor: var(--colorBlack, rgb(0, 0, 0));
-  --controlBackgroundColor: var(--colorPrimary, rgb(0, 90, 143));
+  --controlBackgroundColor: var(--colorSecondaryDarken1, rgb(62, 138, 204));
   --controlBorderColor: var(--colorPrimary, rgb(0, 90, 143));
   --controlAccentColor: var(--colorSecondary, rgb(77, 172, 255));
 
@@ -411,6 +411,29 @@
   --accordionOpenLabelBackground: rgb(245, 247, 249);
   --accordionHoverLabelBackground: rgb(236, 239, 244);
   --accordionColor: rgb(0, 0, 0);
+
+
+  /* 
+    
+    TABLE COLORS
+    ==========================================================================
+      
+  */
+  --tableHeaderBackgroundColor: var(--colorQuaternary, rgb(207, 214, 227));
+  --tableHeaderTextColor: var(--colorBlack, rgb(0, 0, 0));
+  --tableHeaderBorderColor: rgb(184, 193, 210);
+  --tableHeaderAccentColor: var(--colorQuaternaryLighten2, rgb(226, 230, 238));
+  --tableHeaderBoxShadow:  0 0.25rem .5rem rgba(0, 0, 0, 0.2);
+
+  --tableRowBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
+  --tableRowSelectedBackgroundColor: var(--colorSecondaryLighten3, rgb(184, 222, 255));
+  --tableRowHoverBackgroundColor: var(--colorQuaternaryLighten2, rgb(226, 230, 238));
+  --tableRowTextColor: var(--fontColor, rgb(0, 0, 0));
+  --tableRowBorderColor: rgb(184, 193, 210);
+  
+  --tableControlsBackgroundColor: var(--colorQuaternaryLighten2, rgb(226, 230, 238));
+  --tableCellSelectedBorderColor: var(--colorQuaternary, rgb(207, 214, 227));
+
 }
 
 li.light-theme {

@@ -384,6 +384,28 @@
   --accordionOpenLabelBackground: rgb(40, 63, 88);
   --accordionHoverLabelBackground: rgb(46, 103, 153);
   --accordionColor: rgb(255, 255, 255);
+
+
+  /* 
+    
+    TABLE COLORS
+    ==========================================================================
+      
+  */
+  --tableHeaderBackgroundColor: var(--colorTertiaryDarken1,  rgb(32, 50, 70));
+  --tableHeaderTextColor: var(--colorTertiaryLighten3, rgb(169, 178, 188));
+  --tableHeaderBorderColor: var(--colorSecondaryDarken4, rgb(15, 34, 51));
+  --tableHeaderAccentColor:  var(--colorTertiary, rgb(40, 63, 88));
+  --tableHeaderBoxShadow:  0 0.25rem .5rem rgba(0, 0, 0, 0.5);
+  
+  --tableRowBackgroundColor: var(--colorTertiary, rgb(40, 63, 88));
+  --tableRowSelectedBackgroundColor: var(--colorPrimaryDarken1, rgb(0, 72, 114));
+  --tableRowHoverBackgroundColor: var(--colorTertiaryDarken1,  rgb(32, 50, 70));
+  --tableRowTextColor: var(--fontColor, rgb(255, 255, 255));
+  --tableRowBorderColor: var(--colorSecondaryDarken4, rgb(15, 34, 51));
+  
+  --tableControlsBackgroundColor: var(--colorTertiaryDarken2, rgb(24, 38, 53));
+  --tableCellSelectedBorderColor: var(--colorSecondaryDarken2, rgb(46, 103, 153));
 }
 
 li.dark-theme {
