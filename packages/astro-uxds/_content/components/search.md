@@ -34,3 +34,4 @@ Search has two states:
 
 ![Within the focused state, the magnifying glass symbol is more prominent. The “Clear” button becomes enabled.](/img/components/search-focus.png "Within the focused state, the magnifying glass symbol is more prominent. The “Clear” button becomes enabled.")
 :::
+

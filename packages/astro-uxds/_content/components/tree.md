@@ -15,7 +15,9 @@ theme: true
 
 Trees present a hierarchical set of related items, and allow users to explore and select items within that hierarchy.
 
-!!! note Accordions are closely related to Trees, but are specialized to automatically display only a single branch. A Tree is managed by the users, opening and closing branches as necessary.
+::: note
+Accordions are closely related to Trees, but are specialized to automatically display only a single branch. A Tree is managed by the users, opening and closing branches as necessary.
+:::
 
 ## Anatomy
 

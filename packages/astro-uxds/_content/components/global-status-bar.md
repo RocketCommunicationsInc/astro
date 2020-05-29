@@ -28,7 +28,7 @@ The Global Status Bar is a full width view across the top of an application — 
 
 ![More Complex Global Status Bar - App Name, Status Icons and Emergency Off.](/img/components/global-status-very.png "More Complex Global Status Bar - App Name, Status Icons and Emergency Off.")
 
-![Most Complex Global Status Bar - App Name, Navigation, Monitoring Icons and Emergency Off.](/img/components/global-status-complex.png "Most Complex Global Status Bar - App Name, Navigation, Monitoring Icons and Emergency Off.")
+#5.1.1[Most Complex Global Status Bar - App Name, Navigation, Monitoring Icons and Emergency Off.](/img/components/global-status-complex.png "Most Complex Global Status Bar - App Name, Navigation, Monitoring Icons and Emergency Off.")
 
 ::: note
 When using the alternate light theme in Astro, the Global Status Bar and all of the elements it contains still use the default dark theme styling.
@@ -47,3 +47,4 @@ When using the alternate light theme in Astro, the Global Status Bar and all of 
 ![Don’t: Use the Global Status Bar for controls or indications that come and go with different app modes. Reserve it for truly global elements.](/img/components/global-status-dont-2.png "Don’t: Use the Global Status Bar for controls or indications that come and go with different app modes. Reserve it for truly global elements.")
 
 :::
+

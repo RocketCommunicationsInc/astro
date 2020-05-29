@@ -1,3 +1,4 @@
+@charset "UTF-8";
 main {
   padding: var(--content-padding-horizontal, 1rem) var(--content-padding-vertical, 1rem);
   color: var(--font-color, #494949);
@@ -15,16 +16,16 @@ main {
 /* main :not(figure):not(img):not(table) {
 	max-width: var(--content-max-text-width, 40em);
 } */
-body:not(.compliance) main ol {
+ main ol:not(.compliance-list) {
   /* list-style: decimal; */
   counter-reset: item;
   list-style: none;
   padding-left: 2.25rem; }
 
-body:not(.compliance) ol > li {
+main ol:not(.compliance-list) > li {
   counter-increment: astro-counter;
   position: relative; }
-  body:not(.compliance) ol > li:before {
+main ol:not(.compliance-list) > li:before {
     content: counter(astro-counter);
     color: #fff;
     font-weight: bold;
@@ -39,27 +40,6 @@ body:not(.compliance) ol > li {
     border-radius: 50%;
     text-align: center; }
 
-.compliance ol {
-  list-style-type: none;
-  counter-reset: item;
-  margin: 0;
-  padding: 0; }
-  .compliance ol > li {
-    display: table;
-    counter-increment: item;
-    margin-bottom: 0.6em; }
-  .compliance ol p {
-    margin: 0; }
-  .compliance ol > li:before {
-    font-weight: bold;
-    content: counters(item, ".") ". ";
-    display: table-cell;
-    padding-right: 0.6em; }
-
-.compliance li ol > li {
-  margin: 0; }
-  .compliance li ol > li:before {
-    content: counters(item, ".") " "; }
 
 main li {
   line-height: 1.4;

@@ -1,0 +1,81 @@
+{% extends "base.template.njk" %}
+{% block content %}
+	<link rel="stylesheet" href="/css/compliance.css">
+	{{ content | safe }}
+  <p>Version {{ compliance.version }}</p>
+
+  <!-- Recursive rendering of compliance rules //-->
+{% macro complianceMacro(data, prefix) %}
+
+	{% if data.rulesets.length %}
+
+		<li class="section">
+			<span class="numeral">
+        {{ data.numeral }}.0
+      </span> 
+      <span class="ruleset-name">
+        {{ data.name }}
+      </span>
+		</li>
+
+    <ol class="rulesets">
+      {% for rulesets in data.rulesets|sort(false,false,'numeral') %}
+        {{ complianceMacro(rulesets, data.numeral) }}
+      {% endfor %}
+    </ol>
+
+	{% else %}
+    <li class="ruleset">
+
+      <span class="numeral">
+        {% if prefix != null %}{{ prefix }}.{% endif %}{{ data.numeral }}.0
+      </span> 
+
+      <span class="rules-name">
+        {% if data.link %}
+          <a href="{{ data.link }}">{{ data.name }}</a>
+        {% else %}
+          {{ data.name }}
+        {% endif %}
+      </span>
+    </li>
+
+    <ol class="rules">
+      {% for rule in data.rules|sort(false,false,'numeral') %}
+        <li class="rule">
+
+          <span class="numeral">
+            {% if prefix != null %}{{ prefix }}.{% endif %}{{ data.numeral }}.{{ rule.numeral }}
+          </span>
+
+          <span class="rule-text" data-status="{{ rule.status }}">
+              {{ rule.rule | markdownify | safe }}
+          </span>  
+        </li>
+
+        {% if rule.figure %}
+          <li class="rule">
+          <span class="numeral"></span>
+            <img class="rule-figure" src="{{ rule.figure }}" alt="{{ rule.rule | markdownify | striptags }}"/>
+          </li>
+        {% endif %}
+
+      {% endfor %}
+      </ol>
+
+  {% endif %}
+{% endmacro %}
+
+
+
+<ol class="compliance">
+{% set sortedRules = compliance.contents|sort(false,false,'numeral') %}
+  {% for complianceRules in sortedRules %}
+    {{ complianceMacro(complianceRules, null) }}
+  {% endfor %}
+</ol>
+
+
+
+
+{% endblock %}

@@ -10,9 +10,6 @@ Astro can be run locally for use in secure locations or for development purposes
 
 The live Astro site is available at https://www.astrouxds.com
 
-A draft version of the next version is availablte at https://draft.astrouxds.com (Note: authorized user access only)
-
-A developer version of the next version is availablte at https://dev.astrouxds.com (Note: authorized user access only)
 
 ### Clone the Astro Repository
 
@@ -36,7 +33,7 @@ npm install
 Build and preview Astro on a local server. By default Astro will be create a server running on port 8080 and can be accessed via http://localhost:8080 check your build process to confirm the server location.
 
 ```
-npm run start
+npm run serve
 ```
 
 ### Build Astro

@@ -148,3 +148,4 @@ A common use for non-status colors as in identifying civilian assets or tagging.
 | ![Tag4 Darken Step 2](/img/swatches/tag-4__shade-40.svg) | -2   | `#833209` | `131, 50, 9`    | `--colorTag4shade-40` |
 | ![Tag4 Darken Step 3](/img/swatches/tag-4__shade-60.svg) | -3   | `#572108` | `87, 33, 8`     | `--colorTag4shade-60` |
 | ![Tag4 Darken Step 4](/img/swatches/tag-4__shade-80.svg) | -4   | `#2b1105` | `43, 17, 5`     | `--colorTag4shade-80` |
+

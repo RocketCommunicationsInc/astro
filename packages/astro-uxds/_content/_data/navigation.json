@@ -49,10 +49,13 @@
 				"label": "Grid",
 				"url": "/design-guidelines/grid"
 			},
-			
 			{
 				"label": "Glossary",
 				"url": "/design-guidelines/glossary"
+			},
+			{
+				"label": "Compliance",
+				"url": "/design-guidelines/compliance"
 			}
 		]
 	},
@@ -88,10 +91,10 @@
 				"label": "Table",
 				"url": "/patterns/table"
 			},
-            {
-                "label": "Forms and Validation",
-                "url": "/patterns/forms-and-validation"
-            }
+			{
+					"label": "Forms and Validation",
+					"url": "/patterns/forms-and-validation"
+			}
 		]
 	},
 	{

@@ -1,10 +1,13 @@
 module.exports = function(eleventyConfig) {
   const markdownIt = require("markdown-it");
   const markdownItContainer = require("markdown-it-container");
-  const implicitFigures = require("markdown-it-implicit-figures");
   const markdownItAnchor = require("markdown-it-anchor");
+  const implicitFigures = require("markdown-it-implicit-figures");
+  const markdownItFigure = require('./js/markdown-figure-it.js');
   const cleanCSS = require("clean-css");
   const fs = require("fs");
+
+  // console.log(markdownIt.escapeHtml);
 
   fs.copyFile("404.md", "_content/404.md", err => {
     if (err) throw err;
@@ -23,12 +26,17 @@ module.exports = function(eleventyConfig) {
     .use(implicitFigures, {
       figcaption: true
     })
+    .use(markdownItFigure, {})
     .use(markdownItContainer, "note")
     .use(markdownItContainer, "caution")
     .use(markdownItContainer, "col")
     .use(markdownItContainer, "two-col")
-    .use(markdownItContainer, "three-col");
+    .use(markdownItContainer, "three-col")
+
   eleventyConfig.setLibrary("md", markdownLib);
+
+  eleventyConfig.addNunjucksFilter("markdownify", markdownString => markdownLib.renderInline(markdownString));
+
 
   /* Removes the h1 element from components to enabled inserting live sample */
   eleventyConfig.addNunjucksFilter("removeHeader", function(value) {
@@ -37,17 +45,7 @@ module.exports = function(eleventyConfig) {
     return value;
   });
 
-  /* Adds an id to all figure elements */
-  eleventyConfig.addNunjucksFilter("figureIt", function(value) {
-    let figcount = 1;
 
-    const els = value.val
-      .split("\n")
-      .map(el => (el.includes("<figure") ? el.replace("<figure", `<figure id="figure-${(figcount += 1)}"`) : el));
-
-    value.val = els.join("\n");
-    return value;
-  });
 
   /* Adds an do/dont styling to all do/dont images */
   eleventyConfig.addNunjucksFilter("doDont", function(value) {
@@ -72,7 +70,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "_content/img": "img" });
   eleventyConfig.addPassthroughCopy({ "_content/img": "img" });
   eleventyConfig.addPassthroughCopy({ "_content/**/*/img/*": "components/img" });
-  eleventyConfig.addPassthroughCopy({ "_content/_downloads/*": "downloads" });
   eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("fonts");
@@ -91,6 +88,24 @@ module.exports = function(eleventyConfig) {
       }
     }
   });
+
+  function savePasswordHeaders() {
+    var passwordHeaderFileContent = `
+/*
+      Basic-Auth: ${process.env.COMPLIANCE_LOGIN}:${process.env.COMPLIANCE_PASSWORD}
+`;
+  var headersPath = "_site/_headers";
+  fs.writeFile(headersPath, passwordHeaderFileContent, (err) => {
+      if (err) throw err;
+      console.log("Passwords set for this environment!");
+   });
+
+  }
+  // only make password headers on netlify's compliance context
+  if (process.env.NETLIFY && process.env.BRANCH === "compliance-dev") {
+    savePasswordHeaders();
+  }
+  console.log(process.env.NETLIFY, process.env.BRANCH, process.env.CONTEXT);
 
   // You can return your Config object (optional).
   return {

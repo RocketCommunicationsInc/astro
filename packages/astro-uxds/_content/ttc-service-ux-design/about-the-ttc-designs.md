@@ -44,8 +44,8 @@ Based on this initial research and follow-up design iterations with operators an
 :::col
 The TT&C App Suite comprises three integrated apps: Monitor, Command & Investigate.
 
-- [TT&C Design Specifications (pdf)](/downloads/ttc-specifications.pdf)
-- [TT&C Wireframes (pdf)](/downloads/ttc-wireframes.pdf)
+- [TT&C Design Specifications (pdf)](https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/ttc-specifications.pdf)
+- [TT&C Wireframes (pdf)](https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/ttc-wireframes.pdf)
   :::
 
 ### TT&C Monitor
@@ -71,7 +71,7 @@ The TT&C Monitor app allows operators to monitor status, alerts, health and func
 :::col
 The TT&C Command app allows operators to send and receive streams of data to and from a spacecraft using a set of commands, often referred to as a pass plan.
 
-- [Overview of TT&C Command](/tt-c-service-ux-design/tt-c-command)
+- [Overview of TT&C Command](/ttc-service-ux-design/ttc-command)
 - [Launch TT&C Command Sample App](https://ttc-command.astrouxds.com/)
 - [App Source Code (Git Repository)](https://bitbucket.org/rocketcom/tt-c-command/src/master/)
 
@@ -86,7 +86,7 @@ The TT&C Command app allows operators to send and receive streams of data to and
 :::col
 The TT&C Investigate app allows operators to investigate spacecraft alerts and anomalies and analyze subsystem mnemonics, measurements, limits, etc …
 
-- [Overview of TT&C Investigate](/tt-c-service-ux-design/tt-c-investigate)
+- [Overview of TT&C Investigate](/ttc-service-ux-design/ttc-investigate)
 - [Launch TT&C Investigate Sample App](https://ttc-investigate.astrouxds.com/)
 - [App Source Code (Git Repository)](https://bitbucket.org/rocketcom/tt-c-investigate/src/master/)
   :::

@@ -21,6 +21,10 @@ Before reading any further, we recommend you take a look at a live [Astro sample
 
 ## What's New
 
+### Astro 4.5
+
+- [EGS Design Compliance](/design-guidelines/compliance)
+
 ### Astro 4.4
 
 - [Updated Forms and Validation](/patterns/forms-and-validation/)
