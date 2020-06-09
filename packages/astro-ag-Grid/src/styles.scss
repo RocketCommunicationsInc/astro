@@ -34,23 +34,23 @@ $ag-theme-astro-default-params: (
   disabled-foreground-color: ag-derived(foreground-color, $opacity: var(--disabledOpacity, 0.4)),
 
   // Background color of the grid
-  background-color: var(--tableRowBackgroundColor, rgb(40, 63, 88)),
+  background-color: var(--tableRowBackgroundColor, var(--colorTertiaryDarken1,  rgb(32, 50, 70))),
 
   // Background color for all headers, including the grid header, panels etc
-  header-background-color: var(--tableHeaderBackgroundColor, var(--colorTertiaryDarken1,  rgb(32, 50, 70))),
+  header-background-color: var(--tableHeaderBackgroundColor, var(--colorTertiaryDarken2, rgb(24, 38, 53))),
 
   // Background color for second level headings within UI components
-  subheader-background-color: var(--tableHeaderBackgroundColor, var(--colorTertiaryDarken1,  rgb(32, 50, 70))),
+  subheader-background-color: var(--tableHeaderBackgroundColor, var(--colorTertiaryDarken2, rgb(24, 38, 53))),
 
   // Background color for toolbars directly under subheadings (as used in the chart settings menu)
-  subheader-toolbar-background-color: var(--tableHeaderBackgroundColor, var(--colorTertiaryDarken1,  rgb(32, 50, 70))),
+  subheader-toolbar-background-color: var(--tableHeaderBackgroundColor,var(--colorTertiaryDarken2, rgb(24, 38, 53))),
 
   // Background for areas of the interface that contain UI controls, like tool panels and the chart settings menu
   control-panel-background-color: var(--tableControlsBackgroundColor,  var(--colorTertiaryDarken2, rgb(24, 38, 53))),
 
 
   // Background color of selected rows in the grid and in dropdown menus
-  selected-row-background-color: var(--tableRowSelectedBackgroundColor, var(--colorPrimaryDarken1, rgb(0, 72, 114))),
+  selected-row-background-color: var(--tableRowSelectedBackgroundColor, var(--colorTertiary, rgb(40, 63, 88))),
 
   // Background color applied to every other row or null to use background-color for all rows
   odd-row-background-color: null,
@@ -59,7 +59,7 @@ $ag-theme-astro-default-params: (
   // modal-overlay-background-color: ag-derived(background-color, $opacity: 0.66),
 
   // Background color when hovering over rows in the grid and in dropdown menus, or null for no rollover effect (note - if you want a rollover on one but not the other, set to null and use CSS to achieve the rollover)
-   row-hover-color: var(--tableRowHoverBackgroundColor, var(--colorTertiaryDarken1,  rgb(32, 50, 70))),
+   row-hover-color: var(--tableRowHoverBackgroundColor, var(--colorTertiaryDarken2, rgb(24, 38, 53))),
 
   // color to draw around selected cell ranges
    range-selection-border-color: var(--tableCellSelectedBorderColor, var(--colorSecondaryDarken2, rgb(46, 103, 153))),
@@ -125,16 +125,16 @@ $ag-theme-astro-default-params: (
   // Draw borders around sidebar tabs so that the active tab appears connected to the current tool panel
   // borders-side-button: ag-derived(borders),
 
-  border-radius: 0px,
+  border-radius: 1px,
 
   // color for border around major UI components like the grid itself, headers, footers and tool panels
-  border-color: var(--tableHeaderBorderColor, var(--colorSecondaryDarken4, rgb(15, 34, 51))),
+  border-color: var(--tableBorderColor,  var(--colorTertiaryLighten1, rgb(83, 101, 121))),
 
   // color for borders used to separate elements within a major UI component
-  // secondary-border-color: ag-derived(border-color),
+  secondary-border-color: var(--tableRowBorderColor, var(--colorTertiaryDarken2,  rgb(83, 101, 121))),
 
   // color of the border between grid rows, or null to display no border
-  row-border-color:  var(--tableRowBorderColor, var(--colorSecondaryDarken4, rgb(15, 34, 51))),
+  row-border-color:  var(--tableRowBorderColor, var(--colorTertiaryDarken2,  rgb(83, 101, 121))),
 
   // Default border for cells. This can be used to specify the border-style and border-color properties e.g. `dashed red` but the border-width is fixed at 1px.
   // cell-horizontal-border: solid transparent,
@@ -149,7 +149,7 @@ $ag-theme-astro-default-params: (
   header-column-resize-handle: true,
   header-column-resize-handle-height: 50%,
   header-column-resize-handle-width: 1px,
-  header-column-resize-handle-color: var(--tableHeaderBorderColor, var(--colorSecondaryDarken4, rgb(15, 34, 51))),
+  header-column-resize-handle-color: var(--tableBorderColor, var(--colorTertiaryDarken1, rgb(32, 50, 70))),
 
   //
   // INPUTS
@@ -268,7 +268,8 @@ $ag-theme-astro-params: map-merge($ag-theme-alpine-dark-default-params,$ag-theme
   .ag-header {
     box-shadow: var(--tableHeaderBoxShadow, 0 0.25rem .5rem rgba(0, 0, 0, 0.5));
     z-index: 1;
-  }
+    border-bottom-width: 0;
+  }  
   .ag-header-cell {
     border-top: var(--tableHeaderAccentColor, var(--colorTertiary, rgb(40, 63, 88))) 1px solid;
   }
@@ -277,8 +278,8 @@ $ag-theme-astro-params: map-merge($ag-theme-alpine-dark-default-params,$ag-theme
     box-shadow: 0 0 0 2px  transparent;
   }
   .ag-checkbox-input-wrapper.ag-checked::after {
-    background: var(--colorPrimaryLighten4);
-    box-shadow: 0 0 0 2px var(--controlBorderColor);
-    color: var(--controlBackgroundColor);
+    background: var(--colorPrimaryLighten4, rgb(204, 222, 233));
+    box-shadow: 0 0 0 2px var(--controlBorderColor, var(--colorPrimary, rgb(0, 90, 143)));
+    color: var(--controlBackgroundColor, var(--colorPrimary, rgb(0, 90, 143)));
   }
 }

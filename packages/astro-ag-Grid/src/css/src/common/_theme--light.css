@@ -419,17 +419,19 @@
     ==========================================================================
       
   */
+  --tableBorderColor: var(--colorQuaternary, rgb(207, 214, 227));
+
+
   --tableHeaderBackgroundColor: var(--colorQuaternary, rgb(207, 214, 227));
-  --tableHeaderTextColor: var(--colorBlack, rgb(0, 0, 0));
-  --tableHeaderBorderColor: rgb(184, 193, 210);
+  --tableHeaderTextColor: var(--colorQuaternaryDarken4, rgb(41, 43, 45));
+  --tableHeaderBoxShadow:  0 0.1rem .45rem rgba(0, 0, 0, 0.2);
   --tableHeaderAccentColor: var(--colorQuaternaryLighten2, rgb(226, 230, 238));
-  --tableHeaderBoxShadow:  0 0.25rem .5rem rgba(0, 0, 0, 0.2);
 
   --tableRowBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
-  --tableRowSelectedBackgroundColor: var(--colorSecondaryLighten3, rgb(184, 222, 255));
-  --tableRowHoverBackgroundColor: var(--colorQuaternaryLighten2, rgb(226, 230, 238));
-  --tableRowTextColor: var(--fontColor, rgb(0, 0, 0));
-  --tableRowBorderColor: rgb(184, 193, 210);
+  --tableRowSelectedBackgroundColor:  var(--colorQuaternaryLighten3, rgb(236, 239, 244));
+  --tableRowHoverBackgroundColor: var(--colorQuaternary, rgb(207, 214, 227));
+  --tableRowTextColor: var(--colorQuaternaryDarken4, rgb(41, 43, 45));
+  --tableRowBorderColor: var(--colorQuaternary, rgb(207, 214, 227));
   
   --tableControlsBackgroundColor: var(--colorQuaternaryLighten2, rgb(226, 230, 238));
   --tableCellSelectedBorderColor: var(--colorQuaternary, rgb(207, 214, 227));
