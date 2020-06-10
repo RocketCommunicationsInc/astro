@@ -424,7 +424,7 @@
 
   --tableHeaderBackgroundColor: var(--colorQuaternary, rgb(207, 214, 227));
   --tableHeaderTextColor: var(--colorQuaternaryDarken4, rgb(41, 43, 45));
-  --tableHeaderBoxShadow:  0 0.1rem .45rem rgba(0, 0, 0, 0.2);
+  --tableHeaderBoxShadow:  0 0.1rem 0.45rem rgba(0, 0, 0, 0.2);
   --tableHeaderAccentColor: var(--colorQuaternaryLighten2, rgb(226, 230, 238));
 
   --tableRowBackgroundColor: var(--colorWhite, rgb(255, 255, 255));
