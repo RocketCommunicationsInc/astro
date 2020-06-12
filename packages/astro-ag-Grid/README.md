@@ -45,7 +45,7 @@ You will need all three to theme an AG-Grid for Astro.
 
 1. Copy the `src/css` and `src/fonts` folders to your AG-Grid project. 
 
-2. Import the `astro-theme.scss` file in your main `styles.scss` file:
+2. Import the `astro-theme.scss` file in your main `src/styles.scss` file:
  ```scss
  // see line 9 of styles.scss
  @import 'css/astro-theme.scss';
