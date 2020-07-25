@@ -32,8 +32,8 @@ $ag-theme-astro-default-params: (
   header-background-color: var(--tableHeaderBackgroundColor, var(--colorTertiaryDarken2, rgb(24, 38, 53))),
 
   // Background color for second level headings within UI components
-  subheader-background-color: var(--tableHeaderBackgroundColor, var(--colorTertiaryDarken2, rgb(24, 38, 53))),
-
+  subheader-background-color: var(--tableControlsBackgroundColor,  var(--colorTertiaryDarken2, rgb(24, 38, 53))),
+  
   // Background color for toolbars directly under subheadings (as used in the chart settings menu)
   subheader-toolbar-background-color: var(--tableHeaderBackgroundColor,var(--colorTertiaryDarken2, rgb(24, 38, 53))),
 
@@ -58,7 +58,7 @@ $ag-theme-astro-default-params: (
 
   // Background color of selected cell ranges. By default, setting this to a semi-transparent color (opacity of 0.1 to 0.5 works well) will generate appropriate values for the range-selection-background-color-{1..4} colors used when multiple ranges overlap.
   // NOTE: if setting this value to a CSS variable, and your app supports overlapping range selections, also set range-selection-background-color-{1..4}.
-  // range-selection-background-color: ag-derived(range-selection-border-color, $opacity: 0.2),
+  range-selection-background-color: var(--tableRowSelectedBackgroundColor, var(--colorTertiary, rgb(40, 63, 88))),
 
   // These 4 parameters are used for fine-grained control over the background color used when 1, 2, 3 or 4 ranges overlap.
   // range-selection-background-color-1: ag-derived(range-selection-background-color),
@@ -94,7 +94,7 @@ $ag-theme-astro-default-params: (
   // value-change-delta-down-color: #e53935,
 
   // color for the "chip" that represents a column that has been dragged onto a drop zone
-  // chip-background-color: null,
+  chip-background-color: var(--tableRowSelectedBackgroundColor, rgb(40, 63, 88)),
 
   // By default, color variables can be overridden at runtime by CSS variables, e.g.
   // background-color can be overridden with the CSS var --ag-background-color. Pass true
@@ -106,7 +106,7 @@ $ag-theme-astro-default-params: (
   //
 
   // Draw borders around most UI elements
-  // borders: true,
+  borders: true,
 
   // Draw the few borders that are critical to UX, e.g. between headers and rows.
   // borders-critical: ag-derived(borders),
@@ -120,13 +120,13 @@ $ag-theme-astro-default-params: (
   border-radius: 1px,
 
   // color for border around major UI components like the grid itself, headers, footers and tool panels
-  border-color: var(--tableBorderColor,  var(--colorTertiaryLighten1, rgb(83, 101, 121))),
+  border-color: var(--tableBorderColor, rgb(83, 101, 121)),
 
   // color for borders used to separate elements within a major UI component
-  secondary-border-color: var(--tableRowBorderColor, var(--colorTertiaryDarken2,  rgb(83, 101, 121))),
+  secondary-border-color: var(--tableRowBorderColor rgb(83, 101, 121)),
 
   // color of the border between grid rows, or null to display no border
-  row-border-color:  var(--tableRowBorderColor, var(--colorTertiaryDarken2,  rgb(83, 101, 121))),
+  row-border-color:  var(--tableRowBorderColor, rgb(83, 101, 121)),
 
   // Default border for cells. This can be used to specify the border-style and border-color properties e.g. `dashed red` but the border-width is fixed at 1px.
   // cell-horizontal-border: solid transparent,
@@ -150,31 +150,30 @@ $ag-theme-astro-default-params: (
   // Suppress styling of checkbox/radio/range input elements. If you want to style these yourself, set this to true. If you only want to disable styling for some kinds of input, you can set this to true and e.g. @include ag-native-inputs((checkbox: false)) which will emit styles for all kinds of input except checkboxes.
   // suppress-native-widget-styling: false,
 
-  // input-border-color: var(--inputBorderColor, transparent),
-  // input-disabled-border-color: ag-derived(input-border-color, $opacity: 0.3),
-  // input-disabled-background-color: null,
+  input-border-color: var(--tableFilterBorderColor, rgb(83, 101, 121)),
+  input-disabled-border-color: var(--tableFilterDisabledBorderColor,  rgb(40, 63, 88)),
+  input-disabled-background-color:  var(--tableFilterDisabledBackgroundColor,  rgb(32, 50, 70)),
 
   checkbox-background-color: null,
-  checkbox-border-radius: 2px,
+  checkbox-border-radius: 1.5px,
   // the following are used by the icons in the ag-grid icon-font-family
   checkbox-checked-color: var(--controlBackgroundColor, var(--colorPrimary, rgb(0, 90, 143))),
   checkbox-unchecked-color: var(--controlBorderColor, var(--colorSecondaryLighten1, rgb(77, 172, 255))),
   // checkbox-indeterminate-color: ag-derived(checkbox-unchecked-color),
 
 
-  // toggle-button-off-border-color: ag-derived(checkbox-unchecked-color),
-  // toggle-button-off-background-color: ag-derived(checkbox-unchecked-color),
-  // toggle-button-on-border-color: ag-derived(checkbox-checked-color),
-  // toggle-button-on-background-color: ag-derived(checkbox-checked-color),
-  // toggle-button-switch-background-color: ag-derived(background-color),
-  // toggle-button-switch-border-color: ag-derived(toggle-button-off-border-color),
-  // toggle-button-border-width: 1px,
-  // toggle-button-height: ag-derived(icon-size),
-  // toggle-button-width: ag-derived(toggle-button-height, $times: 2),
+  toggle-button-off-border-color: var(--toggleTrackBorderColor, rgb(122, 122, 122)),
+  toggle-button-off-background-color: var(--toggleTrackBackgroundColor, rgb(204, 204, 204)),
+  toggle-button-on-border-color: var(--toggleSelectedTrackBorderColor, rgb(27, 122, 153)),
+  toggle-button-on-background-color: var(--toggleSelectedTrackBackgroundColor, rgb(77, 172, 255)),
+  toggle-button-switch-background-color: var(--toggleThumbBackgroundColor, rgb(255, 255, 255)),
+  toggle-button-switch-border-color: var(--toggleThumbBorderColor, rgb(255, 255, 255)),
+  toggle-button-border-width: 1px,
+  toggle-button-height: ag-derived(icon-size),
+  toggle-button-width: ag-derived(toggle-button-height, $times: 2),
 
-  input-focus-box-shadow: var(--inputFocusBoxShadow, inset 0 0 0 1px white,
-    inset 0 0 0 2px var(--colorPrimary)),
-  input-focus-border-color: var(--inputFocusBorderColor, var(--colorSecondary)),
+  // input-focus-box-shadow: var(--inputFocusBoxShadow, inset 0 0 0 1px white),
+  // input-focus-border-color: var(--inputFocusBorderColor, var(--colorSecondary)),
 
   // CHART SETTINGS
 
@@ -192,7 +191,7 @@ $ag-theme-astro-default-params: (
    grid-size: 6px,
 
   // The size of square icons and icon-buttons
-  // icon-size: 12px,
+  icon-size: 16px,
 
   // These 4 variables set the padding around and spacing between widgets in "widget containers" which are parts of the UI that contain many related widgets, like the set filter menu, charts settings tabs etc.
   // widget-container-horizontal-padding: ag-derived(grid-size, $times: 1.5),
@@ -216,10 +215,10 @@ $ag-theme-astro-default-params: (
   // list-item-height: ag-derived(grid-size, $times: 5),
 
   // How much to indent child columns in the column tool panel relative to their parent
-  // column-select-indent-size: ag-derived(grid-size, $plus: icon-size),
+  column-select-indent-size: ag-derived(grid-size, $plus: icon-size),
 
   // How much to indent child rows in the grid relative to their parent row
-  // row-group-indent-size: ag-derived(cell-widget-spacing, $plus: icon-size),
+  row-group-indent-size: ag-derived(cell-widget-spacing, $plus: icon-size),
 
   // How much to indent child columns in the filters tool panel relative to their parent
   // filter-tool-panel-group-indent: 16px,
@@ -242,7 +241,9 @@ $ag-theme-astro-default-params: (
   // card-radius: ag-derived(border-radius),
 
   // the default card shadow applies to simple cards like column drag indicators and text editors
-  // card-shadow: none,
+  card-shadow: ( 0 8px 10px 1px rgba(0, 0, 0, 0.14), 
+                 0 3px 14px 3px rgba(0, 0, 0, 0.12), 
+                 0 4px 5px 0 rgba(0, 0, 0, 0.2) ),
 
   // override the shadow for popups - cards that contain complex UI, like menus and charts
   // popup-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3)
@@ -266,12 +267,29 @@ $ag-theme-astro-params: map-merge($ag-theme-alpine-dark-default-params,$ag-theme
     border-top: var(--tableHeaderAccentColor, var(--colorTertiary, rgb(40, 63, 88))) 1px solid;
   }
   .ag-checkbox-input-wrapper::after {
-    border-radius: 1.75px;
-    box-shadow: 0 0 0 2px  transparent;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px  transparent;
   }
+  .ag-checkbox-input-wrapper:not(.ag-checked):not(.ag-indeterminate) {
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--controlBorderColor, rgb(122, 193, 255));
+  }
+  .ag-checkbox-input-wrapper:not(.ag-checked):not(.ag-indeterminate)::after {
+    content: "";
+  }
+  .ag-theme-astro .ag-checkbox-input-wrapper:active, 
+  .ag-theme-astro .ag-checkbox-input-wrapper:focus-within {
+    box-shadow: inset 0 0 0 2px var(--colorPrimary, rgb(0, 90, 143));
+  }
+
   .ag-checkbox-input-wrapper.ag-checked::after {
     background: var(--colorPrimaryLighten4, rgb(204, 222, 233));
-    box-shadow: 0 0 0 2px var(--controlBorderColor, var(--colorPrimary, rgb(0, 90, 143)));
+    box-shadow: 0 0 0 1px var(--controlBorderColor, var(--colorPrimary, rgb(0, 90, 143)));
     color: var(--controlBackgroundColor, var(--colorPrimary, rgb(0, 90, 143)));
+  }
+  .ag-ltr .ag-column-select-column-drag-handle:not(:last-child),
+  .ag-ltr .ag-column-select-column-group-drag-handle:not(:last-child), {
+    margin-right: 6px, // match drag handle spacing between labels in checkbox lists and draggable chips
   }
 }

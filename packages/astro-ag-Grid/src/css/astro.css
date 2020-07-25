@@ -257,7 +257,7 @@
   */
   --backgroundColor: var(--colorQuaternaryLighten3, rgb(243, 245, 248));
   --fontColor: var(--colorBlack, rgb(0, 0, 0));
-  --fontLowContrastColor: var(--colorGray, rgb(204, 204, 204));
+  --fontLowContrastColor: var(--colorQuaternaryDarken1, rgb(166, 171, 182));
   --fontInvertedColor: var(--colorWhite, rgb(255, 255, 255));
   --fontInvertedBackgroundColor: var(--colorBlack, rgb(0, 0, 0));
 
@@ -689,8 +689,8 @@
     ==========================================================================
       
   */
-  --tableBorderColor: var(--colorQuaternary, rgb(207, 214, 227));
 
+  --tableBorderColor: var(--colorQuaternary, rgb(207, 214, 227));
 
   --tableHeaderBackgroundColor: var(--colorQuaternary, rgb(207, 214, 227));
   --tableHeaderTextColor: var(--colorQuaternaryDarken4, rgb(41, 43, 45));
@@ -705,7 +705,9 @@
   
   --tableControlsBackgroundColor: var(--colorQuaternaryLighten2, rgb(226, 230, 238));
   --tableCellSelectedBorderColor: var(--colorQuaternary, rgb(207, 214, 227));
-
+  --tableFilterBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+  --tableFilterDisabledBorderColor: var(--colorTertiaryLighten3, rgb(40, 63, 88));
+  --tableFilterDisabledBackgroundColor: var(--colorQuaternaryLighten2, rgb(226, 230, 238));
 }
 
 li.light-theme {
@@ -1147,6 +1149,9 @@ li.light-theme {
   
   --tableControlsBackgroundColor: var(--colorTertiaryDarken2, rgb(24, 38, 53));
   --tableCellSelectedBorderColor: var(--colorSecondaryDarken2, rgb(46, 103, 153));
+  --tableFilterBorderColor: var(--colorTertiaryLighten1, rgb(83, 101, 121));
+  --tableFilterDisabledBorderColor: var(--colorTertiary, rgb(40, 63, 88));
+  --tableFilterDisabledBackgroundColor: var(--colorTertiaryDarken1,  rgb(32, 50, 70));
 }
 
 li.dark-theme {
@@ -2147,6 +2152,91 @@ label {
   background-color: red;
 }
 
+/*
+**
+** 	TABLE
+** 	==========================================================================
+*/
+
+
+
+.rux-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0px;
+  color: rgb(255, 255, 255);
+  color: var(--tableRowTextColor, rgb(255, 255, 255));
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(83, 101, 121);
+  border-color: var(--tableBorderColor, rgb(83, 101, 121));
+  background: rgb(32, 50, 70);
+  background: var(--tableRowBackgroundColor, rgb(32, 50, 70));
+  text-align: left;
+  overflow: scroll;
+}
+.rux-table__column-head th,
+.rux-table th {
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: rgb(40, 63, 88);
+  border-top-color: var(--tableHeaderAccentColor,rgb(40, 63, 88));
+  background: rgb(24, 38, 53);
+  background: var(--tableHeaderBackgroundColor, rgb(24, 38, 53));
+  color: rgb(169, 178, 188);
+  color: var(--tableHeaderTextColor, rgb(169, 178, 188));
+  font-weight: 600;
+  height:  2.625rem;
+  padding: 0.625rem 1rem;
+  white-space: nowrap;
+}
+
+.rux-table__column-head {
+  box-shadow: 0 0.25rem .5rem rgba(0, 0, 0, 0.45);
+  box-shadow: var(--tableHeaderBoxShadow, 0 0.25rem .5rem rgba(0, 0, 0, 0.45));
+  border-top-color: rgb(83, 101, 121);
+  border-top-color: var(--tableBorderColor, rgb(83, 101, 121));
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+
+.rux-table tr[data-selected],
+.rux-table tr.selected {
+  background: rgb(40, 63, 88);
+  background: var(--tableRowSelectedBackgroundColor, rgb(40, 63, 88));
+}
+
+.rux-table tr:hover {
+  background: rgb(24, 38, 53);
+  background: var(--tableRowHoverBackgroundColor, rgb(24, 38, 53));
+}
+
+.rux-table td {
+  border-color: rgb(83, 101, 121);
+  border-color: var(--tableRowBorderColor, rgb(83, 101, 121));
+  border-width: 1px 0;
+  border-style: solid;
+  padding: 0.625rem 1rem;
+  white-space: nowrap;
+
+}
+
+.rux-table__column-head th:first-child,
+.rux-table th:first-child,
+.rux-table td:first-child {
+  padding-left: 1.875rem;
+
+}
+.rux-table__column-head th:last-child,
+.rux-table th:last-child,
+.rux-table td:last-child {
+  padding-right: 1.875rem;
+
+}
+
+.rux-table tr:last-child td {
+
+}
 .rux-advanced-status {
   position: relative;
   margin: 0 0.75rem;
