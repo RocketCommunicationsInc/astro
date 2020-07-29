@@ -1,7 +1,7 @@
 .demo-container {
   overflow: hidden;
   width: 100%;
-  padding: 0;
+  padding: 1rem;
 
   border-radius: 5px;
   background-color: var(--demo-container-background-color, #1a2634);
@@ -10,7 +10,7 @@
 .demo-container iframe {
   box-sizing: border-box;
   width: 100%;
-  padding: 0 1rem;
+  padding: 0rem;
 }
 
 .demo-container a {
