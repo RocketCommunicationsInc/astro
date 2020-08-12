@@ -4,8 +4,8 @@ path: /components/dialog-box
 date: Last Modified
 layout: components.template.njk
 title: Dialog Box
-demo: https://rocketcom.bitbucket.io/html-demos/modal.html
-storybook: components-story--dialog-box
+demo: https://astro-components.netlify.app/iframe.html?id=components-dialog-box--dialog-box
+storybook: components-dialog-box--dialog-box
 git: rux-modal
 height: 240px
 theme: true

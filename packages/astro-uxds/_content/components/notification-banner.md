@@ -5,8 +5,8 @@ date: Last Modified
 layout: components.template.njk
 title: Notification Banner
 demo: https://rocketcom.bitbucket.io/html-demos/notification.html
-storybook: components-notification--notification
-git: rux-banner
+storybook: components-notification--all-notification-banners
+git: rux-notification
 height: 440px
 theme: true
 ---

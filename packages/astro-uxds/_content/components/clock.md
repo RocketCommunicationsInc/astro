@@ -4,10 +4,10 @@ path: /components/clock
 date: Last Modified
 layout: components.template.njk
 title: Clock
-demo: https://rocketcom.bitbucket.io/packages/rux-clock/demo/rux-clock.html
+demo: https://astro-components.netlify.app/iframe.html?id=components-clock--clock-with-aos-los
 storybook: components-clock--clock
 git: rux-clock
-height: 190px
+height: 210px
 theme: true
 ---
 

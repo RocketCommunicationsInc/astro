@@ -4,7 +4,7 @@ path: /components/segmented-button
 date: Last Modified
 layout: components.template.njk
 title: Segmented Button
-demo: https://rocketcom.bitbucket.io/html-demos/segmented-button.html
+demo: https://astro-components.netlify.app/iframe.html?id=components-segmented-button--segmented-button&viewMode=story
 storybook: components-segmented-button--segmented-button
 git: rux-segmented-button
 height: 50px

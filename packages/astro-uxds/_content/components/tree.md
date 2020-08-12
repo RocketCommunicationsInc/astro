@@ -4,10 +4,10 @@ path: /components/tree
 date: Last Modified
 layout: components.template.njk
 title: Tree
-demo: https://rocketcom.bitbucket.io/packages/rux-tree/demo/rux-tree.html
+demo: https://astro-components.netlify.app/iframe.html?id=components-tree--tree&viewMode=story
 storybook: components-tree--tree
 git: rux-tree
-height: 280px
+height: 480px
 theme: true
 ---
 

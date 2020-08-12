@@ -5,6 +5,7 @@ date: Last Modified
 layout: components.template.njk
 title: Spectrum Analyzer
 demo: https://rocketcom.bitbucket.io/packages/rux-spectrum-analyzer/demo/rux-spectrum-analyzer.html
+git: 
 height: 380px
 ---
 

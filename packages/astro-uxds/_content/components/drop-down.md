@@ -4,10 +4,10 @@ path: /components/drop-down
 date: Last Modified
 layout: components.template.njk
 title: Drop Down
-demo: https://astro-components.netlify.com/iframe.html?id=components-form-elements--select-menu
+demo: https://astro-components.netlify.app/iframe.html?id=components-form-elements--select-menu
 storybook: components-form-elements--select-menu
-git: rux-modal
-height: 130px
+git: 
+height: 150px
 theme: true
 ---
 

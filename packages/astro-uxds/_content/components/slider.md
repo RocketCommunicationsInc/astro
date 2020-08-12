@@ -4,7 +4,7 @@ path: /components/slider
 date: Last Modified
 layout: components.template.njk
 title: Slider
-demo: https://rocketcom.bitbucket.io/html-demos/slider.html
+demo: https://astro-components.netlify.app/iframe.html?id=components-slider--slider&viewMode=story
 storybook: components-slider--slider
 git: rux-slider
 height: 170px

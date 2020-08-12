@@ -6,6 +6,7 @@ layout: components.template.njk
 title: Input Field
 demo: https://rocketcom.bitbucket.io/html-demos/input.html
 storybook: components-form-elements--input-fields
+git:
 height: 310px
 theme: true
 ---

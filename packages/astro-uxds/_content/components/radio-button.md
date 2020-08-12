@@ -4,10 +4,10 @@ path: /components/radio-button
 date: Last Modified
 layout: components.template.njk
 title: Radio Button
-demo: https://rocketcom.bitbucket.io/html-demos/radio-button.html
+demo:  https://astro-components.netlify.app/iframe.html?id=components-form-elements--radio-buttons
 storybook: components-form-elements--radio-buttons
-git: rux-radio-button
-height: 150px
+git: 
+height: 250px
 theme: true
 ---
 

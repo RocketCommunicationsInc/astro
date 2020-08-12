@@ -5,8 +5,7 @@ date: Last Modified
 layout: components.template.njk
 title: Search
 demo: https://rocketcom.bitbucket.io/html-demos/search.html
-storybook: components-story--search
-git: search
+git: 
 height: 50px
 theme: true
 ---
