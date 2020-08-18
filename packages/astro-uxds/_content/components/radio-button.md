@@ -20,7 +20,7 @@ Radio Buttons allow users to mutually select an option from a predefined set of 
 - Use Radio Buttons for mutually exclusive choices. If user can make more than one choice use Checkboxes.
 - Radio Buttons appear in groups of two or more.
 - One option should always be selected.
-- Use Radio Buttons when two to six choices are available. If displaying more than six items, consider using a Drop Down Menu.
+- Use Radio Buttons when two to six choices are available. If displaying more than six items, consider using a Select Menu.
 - Don’t use a Radio Button to initiate an action.
 - Lay out lists of Radio Buttons vertically with one choice per line.
 - Accurately label a group of Radio Buttons to describe the choices.
@@ -28,12 +28,12 @@ Radio Buttons allow users to mutually select an option from a predefined set of 
 - If you use more than one word in a text label, be sure to use title-style capitalization.
 
 ::: note
-If a user is required to make a choice between items without a default, consider a Drop Down Menu.
+If a user is required to make a choice between items without a default, consider a Select Menu.
 :::
 
 :::two-col
 ![Do: Use Radio Buttons when asking users to select a mutually exclusive option from a predefined set of options. When one selection is made, a previous selection becomes deselected.](/img/components/radio-buttons-do-1.png "Do: Use Radio Buttons when asking users to select a mutually exclusive option from a predefined set of options. When one selection is made, a previous selection becomes deselected.")
 
-![Don’t: Use Radio Buttons to display more than six items. Instead, use a Drop Down Menu.](/img/components/radio-buttons-dont-1.png "Don’t: Use Radio Buttons to display more than six items. Instead, use a Drop Down Menu.")
+![Don’t: Use Radio Buttons to display more than six items. Instead, use a Select Menu.](/img/components/radio-buttons-dont-1.png "Don’t: Use Radio Buttons to display more than six items. Instead, use a Select Menu.")
 
 :::

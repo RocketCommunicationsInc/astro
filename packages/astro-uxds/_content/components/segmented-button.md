@@ -31,7 +31,7 @@ Segmented Buttons allow users to select one item at a time from two to four opti
 
 ![Do: Use Segmented Buttons to switch a view’s display mode.](/img/components/segmented-button-do-2.png "Do: Use Segmented Buttons to switch a view’s display mode.")
 
-![Don’t: Use Segmented Buttons for user input in a form, use Radio Buttons or Drop Downs instead.](/img/components/segmented-button-dont-2.png "Don’t: Use Segmented Buttons for user input in a form, use Radio Buttons or Drop Downs instead.")
+![Don’t: Use Segmented Buttons for user input in a form, use Radio Buttons or Select Menus instead.](/img/components/segmented-button-dont-2.png "Don’t: Use Segmented Buttons for user input in a form, use Radio Buttons or Select Menus instead.")
 
 :::
 

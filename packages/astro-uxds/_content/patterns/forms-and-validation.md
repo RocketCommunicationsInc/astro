@@ -8,7 +8,7 @@ title: Forms and Validation
 
 ## Forms
 
-Forms are used to collect, validate, and submit user input. They usually contains form elements including [Checkbox](/components/checkbox), [Dialog Box](/components/dialog-box), [Drop Down](/components/drop-down), [Input Field](/components/input-field), [Radio Button](/components/radio-button) and [Toggle](/components/toggle).
+Forms are used to collect, validate, and submit user input. They usually contains form elements including [Checkbox](/components/checkbox), [Dialog Box](/components/dialog-box), [Select Menu](/components/select), [Input Field](/components/input-field), [Radio Button](/components/radio-button) and [Toggle](/components/toggle).
 
 ## Form Layout
 Forms should be designed in columns as this improves scanability. When possible, a form should be one column. Information can be presented in multiple columns if they are grouped together.
@@ -40,7 +40,7 @@ Labels should follow the vertical format of the form. Place labels above their r
 
 Validation ensures that data is properly entered into an Input Field or Form. It alerts users to data errors, required input and prompts them to make corrections.
 
-Input Fields, Checkboxes and Drop Down Menus can be configured to require user input and to enforce specific data formats. Once configured, these elements can provide validation as users move through a group of controls, such as a form, within a Dialog Box or Pane. Validation is then employed a second time when “Apply” or “OK” is selected.
+Input Fields, Checkboxes and Select Menus can be configured to require user input and to enforce specific data formats. Once configured, these elements can provide validation as users move through a group of controls, such as a form, within a Dialog Box or Pane. Validation is then employed a second time when “Apply” or “OK” is selected.
 
 Individual elements outside of a Dialog Box or Pane can also be configured for validation.
 
@@ -88,6 +88,6 @@ Configuration options for validation of Input Fields:
 
 ![Checkboxes can be configured to require input, where at least one item in a group must be selected.](/img/patterns/val-group-checkbox.png 'Checkboxes can be configured to require input, where at least one item in a group must be selected.')
 
-![Drop Down Menus can be configured to require input, where at least one item in the menu must be selected.](/img/patterns/val-dropdown-input.png 'Drop Down Menus can be configured to require input, where at least one item in the menu must be selected.')
+![Select Menus can be configured to require input, where at least one item in the menu must be selected.](/img/patterns/val-select-menu-input.png 'Select Menus can be configured to require input, where at least one item in the menu must be selected.')
 
 :::

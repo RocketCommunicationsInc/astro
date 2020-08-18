@@ -29,7 +29,7 @@ title: Glossary
 
 - Default Action - The action that users would most likely want to execute in the window with focus.
 - [Dialog Box](/components/dialog-box) - A Dialog Box interrupts app processing to prompt a user to confirm an action or acknowledge a piece of information. It displays information along with a set of buttons allowing users to accept or cancel the actions presented within the Dialog Box.
-- [Drop Down Menu](/components/drop-down) - A UI control that allows users to select a value from a list of values.
+- [Select Menu](/components/select) - A UI control that allows users to select a value from a list of values.
 
 ### G
 

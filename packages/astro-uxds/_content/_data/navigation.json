@@ -130,10 +130,6 @@
 				"url": "/components/dialog-box"
 			},
 			{
-				"label": "Drop Down",
-				"url": "/components/drop-down"
-			},
-			{
 				"label": "Global Status Bar",
 				"url": "/components/global-status-bar"
 			},
@@ -180,6 +176,10 @@
 			{
 				"label": "Segmented Button",
 				"url": "/components/segmented-button"
+			},
+			{
+				"label": "Select Menu",
+				"url": "/components/select"
 			},
 			{
 				"label": "Slider",
@@ -241,7 +241,6 @@
 	{
 		"label": "TT&C Service UX Design",
 		"url": "/ttc-service-ux-design",
-		"class": "section-end",
 		"items": [
 			{
 				"label": "About the TT&C Designs",
@@ -258,6 +257,25 @@
 			{
 				"label": "TT&C Investigate",
 				"url": "/ttc-service-ux-design/ttc-investigate"
+			}
+		]
+	},
+	{
+		"label": "FD Service UX Design",
+		"url": "/fd-service-ux-design/about-the-fd-designs",
+		"class": "section-end"
+	},
+	{
+		"label": "Community",
+		"url": "/community",
+		"items": [
+			{
+				"label": "Propose a Change",
+				"url": "/community/propose-a-change"
+			},
+			{
+				"label": "Content Policy",
+				"url": "/community/content-policy"
 			}
 		]
 	},

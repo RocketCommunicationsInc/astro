@@ -35,7 +35,7 @@ The Alerts panel provides operators with a roll-up of issues across the ground s
 ![GRM Dashboard Alerts Details](/img/service-specific-ux-design/grm-dashboard-alert-details.png)
 
 1. **Active Alert Hero Number** - Shows number of active alerts at a glance.
-2. **Filter Drop-downs** - filters alert list by severity and category.
+2. **Filter Select menus** - filters alert list by severity and category.
 3. **Expandable List Items** - expands to show alert details and call-to-action (if applicable).
 4. **Investigate** - sends operators to a page with full alert details and actions for resolving the alert.
 5. **Acknowledge/Dismiss** - acknowledges or dismisses alerts.

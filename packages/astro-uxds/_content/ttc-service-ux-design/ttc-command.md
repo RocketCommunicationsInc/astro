@@ -39,7 +39,7 @@ The Alerts panel provides operators with a roll-up of spacecraft specific alerts
 ![TT&C Comand Alerts Detail](/img/service-specific-ux-design/ttc-monitor-alerts-details.png)
 
 1. **Active Alert Hero Number** - Shows number of active alerts at a glance.
-2. **Filter Drop-downs** - filters alert list by severity and category.
+2. **Filter Select menus** - filters alert list by severity and category.
 3. **Expandable List Items** - expands to show alert details and call-to-action (if applicable).
 4. **Investigate** - launches an instance of the TT&C Investigate App.
 5. **Acknowledge/Dismiss** - acknowledges or dismisses alerts.
@@ -54,7 +54,7 @@ The Pass Plan panel is where operators will track or initiate execution of the c
 
 1. **Mode** - allows operators with the necessary permissions to set the plan to run in Manual, Semi-Auto, or Automated mode.
 2. **Pass Indicator** - allows operators to determine if they are in pre-pass, pass or post-pass in relation to the AOS/LOS for the contact.
-3. **Pass Plan** - an interactive checklist of instructions an operator is expected to complete during a pass. This includes, but is not limited to: Checkboxes, drop down selectors and play and pause controls.
+3. **Pass Plan** - an interactive checklist of instructions an operator is expected to complete during a pass. This includes, but is not limited to: Checkboxes, Select menus and play and pause controls.
 4. **Mnemonic Snapshot** - allows operators to inspect a mnemonic called out for verification in the pass plan.
 5. **Command Line** - allows operators to enter commands needed to maintain the overall health of the pass, for anomaly resolution and/or other operational needs.
    :::

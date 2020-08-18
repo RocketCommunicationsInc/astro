@@ -138,7 +138,7 @@ The following images reference the general components and features for designing
 
 ### Filter Select
 
-Filters are used to narrow what is displayed in the table. They may be presented in the header as Drop Down menus, as a Segmented Button (e.g.View Select), or as an Input Field.
+Filters are used to narrow what is displayed in the table. They may be presented in the header as Select menus, as a Segmented Button (e.g.View Select), or as an Input Field.
 
 ![Example of filtering a chart view](/img/design-guidelines/data-viz-anatomy.png)
 

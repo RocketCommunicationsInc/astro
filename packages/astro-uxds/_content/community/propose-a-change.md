@@ -5,7 +5,7 @@ layout: interior.template.njk
 title: "Propose a Change"
 ---
 
-# Propose a Change
+# How to Propose a Change
 
 The Astro User Experience Design System is hosted on [GitHub](https://github.com) as an open source project and uses [Markdown](https://guides.github.com/features/mastering-markdown/) for content. This enables any user of Astro to proposes changes in a safe, trackable and relatively easy manner.
 

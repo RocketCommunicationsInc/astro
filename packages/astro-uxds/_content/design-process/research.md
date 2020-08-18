@@ -49,13 +49,6 @@ As you conduct your research, complete each of these tasks to develop a comprehe
 - Interview project stakeholders.
 - Interview project technical leads.
 
-### Key Research Deliverables
-
-- [User Interview Questions]( https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/user-interview-questions-template.zip) \[ZIP\]
-- [Sample User Personas]( https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/personas.zip) \[ZIP\]
-- [Personas Worksheet]( https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/personas-worksheet.zip) \[ZIP\]
-- [User Testing Questions Template]( https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/user-testing-questions-template.zip) \[ZIP\]
-- [User Profile Worksheet]( https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/user-profile-worksheet.zip) \[ZIP\]
 
 ## User Requirements
 
@@ -90,4 +83,4 @@ Whenever possible, observe users in the process of doing their job on site. Take
 
 - User Personas capture the user’s goals, motivations and limitations.
 - Using the information gathered from user interviews and observation, create a profile that conveys a common understanding of the users for each role, including their primary motivations.
-- [Review examples of User Personas]( https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/personas.zip) \[ZIP\].
+

@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "contents": [
     {
       "name": "General",
@@ -210,9 +210,9 @@
           ]
         },
         {
-          "name": "Drop Down",
+          "name": "Select",
           "numeral": 4,
-          "link": "/components/drop-down/",
+          "link": "/components/select/",
           "rules": [
             {
               "numeral": 1,
@@ -226,7 +226,7 @@
             },
             {
               "numeral": 3,
-              "rule": "Drop Downs shall not exceed 25 menu items. For longer lists, use a [Table](/patterns/table) instead.",
+              "rule": "Select menus shall not exceed 25 menu items. For longer lists, use a [Table](/patterns/table) instead.",
               "status": "current"
             }
           ]

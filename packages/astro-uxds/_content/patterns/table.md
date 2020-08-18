@@ -20,11 +20,11 @@ A table can be configured with a tall header with large hero numbers (if the cou
 
 ## Filters
 
-Filters, to narrow what is displayed in the table, may be presented in the header as Drop Down menus, as a Segmented Button, or as an Input Field. If it is critical that the user knows that not all data is displayed, a warning may be shown when filters are applied.
+Filters, to narrow what is displayed in the table, may be presented in the header as Select menus, as a Segmented Button, or as an Input Field. If it is critical that the user knows that not all data is displayed, a warning may be shown when filters are applied.
 
 While filters are often related to the data types displayed in columns, it is not recommended that filters be activated directly from the column headers or displayed there. Filters selected through a combination UI elements in the header can be more expressive and focused by combining and highlighting key data types.
 
-![Table with filters as Drop Down menus and wildcar Input Field.](/img/components/table-filters-cms.png "Table with filters as Drop Down menus and wildcar Input Field.")
+![Table with filters as Select menus and wildcar Input Field.](/img/components/table-filters-cms.png "Table with filters as Select menus and wildcar Input Field.")
 
 ![Table with filters as Segmented Buttons and wildcard Input Field.](/img/components/table-segmented-button-cms.png "Table with filters as Segmented Buttons and wildcard Input Field.")
 
