@@ -9,13 +9,15 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"sass": "node-sass -rw scss -o css",
-		"searchIndex": "node ./_includes/search_config/search-generator.js",
-		"dev": "eleventy --serve && npm run sass",
-		"preserve": "npm run searchIndex",
-		"serve": "eleventy --serve",
-		"prebuild": "npm run searchIndex",
-		"build": "eleventy"
+		"start": "run-p -l start:*",
+		"start:search": "node ./_includes/search_config/search-generator.js",
+		"start:scss": "node-sass -rw scss -o css",
+		"start:eleventy": "eleventy --serve",
+		"build": "run-s -l build:*",
+		"build:clean": "rimraf _site",
+		"build:search": "node ./_includes/search_config/search-generator.js",
+		"build:scss": "node-sass -r scss -o css",
+		"build:eleventy": "eleventy"
 	},
 	"keywords": [],
 	"author": "",
@@ -32,11 +34,12 @@
 		"markdown-it-div": "^1.1.0",
 		"markdown-it-implicit-figures": "^0.9.0",
 		"markdown-json": "^1.4.1",
-		"marked": "^0.8.0"
+		"node-sass": "^4.14.1",
+		"npm-run-all": "^4.1.5",
+		"rimraf": "^3.0.2"
 	},
 	"dependencies": {
 		"fuse.js": "^3.4.6",
-		"node-sass": "^4.13.1",
 		"nodemon": "^2.0.2"
 	}
 }
