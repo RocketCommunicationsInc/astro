@@ -4,7 +4,7 @@ path: /components/progress
 date: Last Modified
 layout: components.template.njk
 title: Progress
-demo: https://rocketcom.bitbucket.io/html-demos/progress.html
+demo: https://astro-components.netlify.app/iframe.html?id=components-progress--determinate-progress&viewMode=story
 storybook: components-progress
 git: rux-progress
 height: 160px

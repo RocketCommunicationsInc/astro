@@ -4,7 +4,7 @@ path: /components/pop-up
 date: Last Modified
 layout: components.template.njk
 title: Pop Up
-demo: https://rocketcom.bitbucket.io/html-demos/pop-up.html
+demo: https://astro-components.netlify.app/iframe.html?id=components-pop-up-menu--pop-up-menu&viewMode=story
 storybook: components-pop-up-menu--pop-up-menu
 git: rux-pop-up-menu
 height: 450px

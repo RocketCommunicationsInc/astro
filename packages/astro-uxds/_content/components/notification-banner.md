@@ -4,7 +4,7 @@ path: /components/notification-banner
 date: Last Modified
 layout: components.template.njk
 title: Notification Banner
-demo: https://rocketcom.bitbucket.io/html-demos/notification.html
+demo: https://astro-components.netlify.app/iframe.html?id=components-notification--all-notification-banners&viewMode=story
 storybook: components-notification--all-notification-banners
 git: rux-notification
 height: 440px

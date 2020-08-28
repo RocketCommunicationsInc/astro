@@ -21,6 +21,14 @@ Before reading any further, we recommend you take a look at a live [Astro sample
 
 ## What's New
 
+### Astro 5.0
+- [Astro 5 XD Dark Library](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Adobe%20XD/Astro%205%20Dark%20Library.xd)
+- [Astro 5 XD Wireframe Library](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Adobe%20XD/Astro%205%20Wireframe%20Library.xd)
+- [Astro 5 Sketch Dark Library](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Sketch/Astro%20Dark%20Library.sketch)
+- [Astro 5 Sketch Dark Stickersheet](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Sketch/Astro%20Dark%20Stickersheet.sketch)
+- [Astro 5 Sketch Wireframe Library](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Sketch/Astro%20Wireframe%20Library.sketch)
+- [Astro 5 Sketch Stickersheet](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Sketch/Astro%20Wireframe%20Stickersheet.sketch)
+
 ### Astro 4.5
 
 - [EGS Design Compliance](/design-guidelines/compliance)
