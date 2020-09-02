@@ -1,9 +1,3 @@
-$(function() {
-    // Start with your project-level client-side javascript here.
-    // JQuery and lodash (_) are both included with Apostrophe, so no need to
-    // worry about including them on your own.
-  });
-  
   /*
    **
    **
@@ -52,15 +46,7 @@ $(function() {
    **
    **
    **
-   */
-  function getCurrentLoc() {
-    // console.log('current locations',location.pathname);
-    // var x = document.querySelectorAll('a', location.pathname)[0];
-    // console.log(x);
-    // x.classList.add('selected');
-    // console.log(x);
-  }
-  
+   */  
   function playVideo(e) {
     document.getElementById('video').src += '&autoplay=1';
     document.getElementsByClassName('video-overlay')[0].style.display = 'none';
@@ -90,9 +76,6 @@ $(function() {
         }
       };
     }
-  
-    //
-    getCurrentLoc();
   
     // get all the navitems in the main mav
     [].forEach.call(document.getElementsByClassName('nav-item'), function(element) {
