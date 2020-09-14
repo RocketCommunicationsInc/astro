@@ -16,7 +16,7 @@ theme: true
 A Slider allows users to choose from a range of continuous and discrete values. The Slider displays the range of possible values and the Slider’s indicator displays the current value.
 
 ::: note
-To achieve the split color element in the slider a small amount of JavaScript is needed. Refer to slider documentation in the Git repository for more information
+To achieve the split color element in the slider, a small amount of JavaScript is needed. Refer to slider documentation in the Git repository for more information.
 :::
 
 ## Rules of Thumb
@@ -29,7 +29,7 @@ To achieve the split color element in the slider a small amount of JavaScript is
 - To give users immediate feedback on selection such as screen contrast.
 
 ::: note
-Sliders may be used in conjunction with an input field allowing the user to set a slider value via keyboard entry
+Sliders may be used in conjunction with an input field allowing the user to set a slider value via keyboard entry.
 :::
 
 ## Examples
