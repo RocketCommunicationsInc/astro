@@ -77,14 +77,25 @@ The System Health panel allows operators to track the strength of the communicat
 
 Below is an animated walkthrough of a representative task flow using the TT&C Monitor app. In this flow, an operator runs through the steps in the pre-defined pass plan and adds a command at the end.
 
-![Task Flow Example](/img/service-specific-ux-design/gif-placeholder.png)
+<div markdown="1">
+	<figure markdown="1" >
+		<a href="#demo" class="demo" name="close">
+			<span class="icon-play"></span>
+			<img src="/img/service-specific-ux-design/ttc-command-execute-pass-plan-placeholder.png"
+			alt="TTC Command Execute Pass Plan demo" />
+		</a>
+	</figure>
+	<a href="#close" class="lightbox" id="demo">
+		<img src="/img/service-specific-ux-design/ttc-command-execute-pass-plan.gif" alt="TTC Command Execute pass plan" />
+	</a>
+</div>
 
 ## Design Materials and Source Code
 
 Below are design and development resources to get you started on an app that supports TT&C services. Note that there are some discrepancies between the design documents and the [TT&C Command Sample App](https://ttc-command.astrouxds.com/) due to design improvements that were introduced late in the app development cycle.
 
-| Resources                                                                                                                                        | Description                                                                                                                                               |
-| ------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Resources                                                                                                                        | Description                                                                                                                                               |
+| -------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [TT&C Design Specifications (pdf)]( https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/ttc-specifications.pdf) | The TT&C Design Specification contains information on use cases, task flows, UX research and wireframes for key features of the TT&C App Suite.           |
 | [TT&C Design Wireframes (pdf)]( https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/ttc-wireframes.pdf)         | The TT&C Design Wireframes document contains the complete set of wireframes (mid-fidelity renderings) of the screens designed for the TT&C App Suite.     |
-| [App Source Code (Git Repository)](https://bitbucket.org/rocketcom/tt-c-command/src/master/)                                                     | The source code Git repository and other useful documentation for the TT&C Command App is hosted at bitbucket.org so that you can check it out in detail. |
+| [App Source Code (Git Repository)](https://bitbucket.org/rocketcom/tt-c-command/src/master/)                                     | The source code Git repository and other useful documentation for the TT&C Command App is hosted at bitbucket.org so that you can check it out in detail. |
