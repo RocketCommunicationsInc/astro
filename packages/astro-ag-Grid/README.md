@@ -71,7 +71,3 @@ If your build process requires a different directory structure:
 1. Ensure `astro.css` (or variant) has access to the fonts, which are currently expected to be available relative to the `astro.css` file at `../fonts/`.
 
 2. Ensure that the `astro-theme.scss` file has access to the astro.css (or variant) file, which is currently expecte to be a sibling. If you change the location of `src/css/astro.css`, make sure to update line 6 of `astro-theme.scss` to the new path.
-
-
-### This is a pre-release!
-Ensure that somewhere in your project, you are loading one (not all) of the included Astro CSS files, depending on your project needs. The CSS custom properties that supply the table colors and other variables to the AG-Grid theme have **not been released in the rest of Astro 4** yet, so take care not to use other Astro CSS downloads, either now or in future Astro releases, until the `--table`-prefixed variables have been added. Our intent is that Astro 5 will include these new properties. You can review these variables at the very end of the included CSS files.
