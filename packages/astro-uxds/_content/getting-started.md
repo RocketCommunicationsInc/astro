@@ -21,14 +21,6 @@ Before reading any further, we recommend you take a look at a live [Astro sample
 
 ## What's New
 
-### Astro 5.0
-- [Astro 5 XD Dark Library](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Adobe%20XD/Astro%205%20Dark%20Library.xd)
-- [Astro 5 XD Wireframe Library](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Adobe%20XD/Astro%205%20Wireframe%20Library.xd)
-- [Astro 5 Sketch Dark Library](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Sketch/Astro%20Dark%20Library.sketch)
-- [Astro 5 Sketch Dark Stickersheet](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Sketch/Astro%20Dark%20Stickersheet.sketch)
-- [Astro 5 Sketch Wireframe Library](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Sketch/Astro%20Wireframe%20Library.sketch)
-- [Astro 5 Sketch Stickersheet](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Sketch/Astro%20Wireframe%20Stickersheet.sketch)
-
 ### Astro 4.5
 
 - [EGS Design Compliance](/design-guidelines/compliance)
@@ -43,14 +35,14 @@ Before reading any further, we recommend you take a look at a live [Astro sample
 ### Astro 4.3
 
 - ~~New EGS Compliance~~ (Under Review)
-- [New Astro Sketch Dark Library](https://bitbucket.org/rocketcom/astro-design-resources/src/master/Sketch/)
-- [New Astro Sketch Dark Sticker Sheet](https://bitbucket.org/rocketcom/astro-design-resources/src/master/Sketch/)
-- [New Astro XD Wireframe Library](https://bitbucket.org/rocketcom/astro-design-resources/src/master/Adobe%20XD)
-- [New Astro XD Dark Library](https://bitbucket.org/rocketcom/astro-design-resources/src/)
+- [New Astro Sketch Dark Library](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Sketch/Astro%20Dark%20Library.sketch)
+- [New Astro Sketch Dark Sticker Sheet](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Sketch/Astro%20Dark%20Stickersheet.sketch)
+- [New Astro XD Wireframe Library](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Adobe%20XD/Astro%205%20Wireframe%20Library.xd)
+- [New Astro XD Dark Library](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Adobe%20XD/Astro%205%20Dark%20Library.xd)
 - [New React Astro Boilerplate "starter app"](https://github.com/RocketCommunicationsInc/astro-boilerplate-react)
 - [New Vue Astro Boilerplate "starter app"](https://github.com/RocketCommunicationsInc/astro-boilerplate-vue)
-- [Updated Astro Sketch Wireframe Library](https://bitbucket.org/rocketcom/astro-design-resources/src/master/Sketch)
-- [Updated Astro Sketch Wireframe Sticker Sheet](https://bitbucket.org/rocketcom/astro-design-resources/src/master/Sketch)
+- [Updated Astro Sketch Wireframe Library](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Sketch/Astro%20Wireframe%20Library.sketch)
+- [Updated Astro Sketch Wireframe Sticker Sheet](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Sketch/Astro%20Wireframe%20Stickersheet.sketch)
 
 ### Astro 4.2
 
