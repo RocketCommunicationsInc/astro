@@ -4,8 +4,22 @@
 		"url": "/"
 	},
 	{
-		"label": "Getting Started",
-		"url": "/getting-started"
+		"label": "Getting Started with Astro",
+		"url": "/getting-started",
+		"items": [
+			{
+				"label" : "README",
+				"url" : "/getting-started/readme"
+			},
+			{
+				"label" : "Designers",
+				"url": "/getting-started/designers"
+			},
+			{
+				"label" : "Developers",
+				"url": "/getting-started/developers"
+			}
+		]
 	},
 	{
 		"label": "Design Process",
@@ -120,6 +134,10 @@
 			{
 				"label": "Checkbox",
 				"url": "/components/checkbox"
+			},
+			{
+				"label": "Classification Markings",
+				"url": "/components/classification-markings"
 			},
 			{
 				"label": "Clock",

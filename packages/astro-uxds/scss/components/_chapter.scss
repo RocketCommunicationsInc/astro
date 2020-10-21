@@ -134,7 +134,7 @@ figcaption {
 
 /* Special for color section */
 
-.color {
+.color, .marking {
   tr:not(:last-of-type) {
     border-bottom: 1px solid #ccc;
   }

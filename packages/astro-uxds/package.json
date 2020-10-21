@@ -16,7 +16,7 @@
 		"build": "run-s -l build:*",
 		"build:clean": "rimraf _site",
 		"build:search": "node ./_includes/search_config/search-generator.js",
-		"build:scss": "node-sass -r scss -o css",
+		"build:scss": "node-sass -r scss -o css --output-style compressed",
 		"build:eleventy": "eleventy"
 	},
 	"keywords": [],

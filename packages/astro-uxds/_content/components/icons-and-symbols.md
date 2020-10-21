@@ -89,7 +89,7 @@ Events that require some user attention, but no immediate response, may be indic
 
 This Notification Symbol shows that five events related to a Satellite have occurred. You may hyperlink indicators to reveal a deeper view of relevant [Notification](/patterns/notifications) information. You may also link to the general Log.
 
-![Anatomy of the notification count symbol.](/img/components/notification-symbols.png "Anatomy of the notification count symbol.")
+![Anatomy of the notification count symbol.](/img/components/notifications-symbol.png "Anatomy of the notification count symbol.")
 
 ### Labeling
 
