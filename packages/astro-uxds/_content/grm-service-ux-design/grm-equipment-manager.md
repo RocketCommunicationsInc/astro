@@ -7,7 +7,9 @@ title: GRM Equipment Manager
 ---
 
 # GRM Equipment Manager
-
+:::note
+The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 5 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, *not* visual design guidance.
+:::
 [Launch GRM Equipment Manager Sample App](https://grm-equipment.astrouxds.com/) | [Design Materials and Source Code](#contentBottom)
 
 A core requirement of GRM is to ensure that the equipment on the ground responsible for communicating with satellites is operational and available. This equipment includes hardware such as antennas, processors and software systems that all must interact with one another during a satellite contact. These resources are often shared amongst multiple operations, so if a piece of equipment is not available, it can affect multiple missions. As such, it is critical for operators to quickly identify equipment in need of attention and schedule maintenance to get it back up and running as quickly as possible.

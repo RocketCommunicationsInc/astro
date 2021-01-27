@@ -18,7 +18,7 @@ Modeless Panes are revealed inline by shifting existing content downward or to t
 
 The simplest type of Modeless Pane displays static content and has a single Close button.
 
-![Modeless Pane example.](/img/design-guidelines/modeless-panes-1.png)
+![Modeless Pane example.](/img/patterns/modeless-panes-1.png)
 
 Modeless Panes with **actionable content**, such as controls for setting new values, have a pair of action buttons with a specific interaction.
 
@@ -26,17 +26,17 @@ In this example, the command to Set Power on Radio 1 causes the content below to
 
 Until commitable changes have been made, the button pair are entitled **Cancel** (enabled) and **Apply** (disabled)
 
-![Modeless Pane example.](/img/design-guidelines/modeless-panes-2.png)
+![Modeless Pane example.](/img/patterns/modeless-panes-2.png)
 
 After committable changes have been made, the button pair become Cancel (enabled) and Apply (enabled)
 
-![Modeless Pane example.](/img/design-guidelines/modeless-panes-3.png)
+![Modeless Pane example.](/img/patterns/modeless-panes-3.png)
 
 Note that the design of this interaction, and the very nature of the web, means that the user can simply leave this pane by navigating elsewhere or closing the browser window. This design expects the users affirmative command to Apply before new values take effect.
 
 **Never place two “Close” buttons on the same Pane.** Users may think they have different purposes. Always follow the distinct button layout described above.
 
-![Modeless Pane Don't Example.](/img/design-guidelines/modeless-panes-dont-2.png)
+![Modeless Pane Don't Example.](/img/patterns/modeless-panes-dont-2.png)
 ::: note
 Developer Note: Modeless Panes aren’t a specific programming construct. They may be implemented in a variety of ways. Astro doesn’t provide a standard implementation, so it’s important to follow the spirit and best practices of these guidelines as closely as possible.
 :::

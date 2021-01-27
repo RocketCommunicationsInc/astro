@@ -8,7 +8,7 @@ title: Typography
 
 # Typography
 
-Astro uses the open source typeface [Open Sans](https://fonts.google.com/specimen/Open+Sans) with bold, regular and light font variants for all heading, body copy and most interface elements. Astro also uses the open source typeface [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono) for elements requiring a monospaced typeface. As with all Astro elements, sizing is rendered in rem units. For those working with systems that don’t support [rem](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Values_and_units#Length_and_size), the corollary size is provided in points.
+Astro uses the open source typefaces [Roboto](https://fonts.google.com/specimen/Roboto?query=roboto&sidebar.open=true&selection.family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700) and [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono?sidebar.open=true&selection.family=Roboto+Mono:wght@300;400;500;600;700) for elements requiring a monospaced typeface. As with all Astro elements, sizing is rendered in rem units. For those working with systems that don’t support [rem](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Values_and_units#Length_and_size), the corollary size is provided in points.
 
 ## Headings
 

@@ -7,11 +7,22 @@
 	<link rel="stylesheet" href="/css/sample.css">
 
 	<h1>{{ title }}</h1>
+	
 	{% if demo %}
 
 		<div class="demo-container">
 
-			<iframe id="live-sample" class="live-sample" scrolling="no" src="{{ demo }}" style="width: 100%; height: {{height}}; overflow: hidden;"></iframe>
+
+			{% if legacyDemo %}
+				<iframe id="live-sample" class="live-sample" scrolling="no" src="{{ demo }}" style="width: 100%; height: {{height}}; overflow: hidden;"></iframe>
+			{% else %}
+
+				{% if meta.branch and meta.branch === 'draft' %}
+					<iframe id="live-sample" class="live-sample" scrolling="no" src="https://next--astro-components.netlify.app/iframe.html?id={{ demo }}&viewMode=story" style="width: 100%; height: {{height}}; overflow: hidden;"></iframe>
+				{% else %}
+					<iframe id="live-sample" class="live-sample" scrolling="no" src="https://astro-components.netlify.app/iframe.html?id={{ demo }}&viewMode=story" style="width: 100%; height: {{height}}; overflow: hidden;"></iframe>
+				{% endif %}
+			{% endif %}
 
 			<div class="demo-container__sample-links">
 				{% if storybook %}
@@ -19,8 +30,13 @@
 						Storybook
 					</a>
 				{% endif %}
+
 				{% if git %}
 					<a class="sample-links__github" href="https://github.com/RocketCommunicationsInc/astro-components/tree/master/src/components/{{git}}">Github</a>
+				{% endif %}
+				
+				{% if css %}
+					<a class="sample-links__github" href="https://github.com/RocketCommunicationsInc/astro-components/blob/master/src/css/documentation//{{css}}">Github</a>
 				{% endif %}
 			</div>
 		</div>

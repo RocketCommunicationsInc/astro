@@ -18,6 +18,6 @@ We've created an example for you that combines visual design, navigation, asset 
 Please note that the sample app and web components are **NOT PRODUCTION READY CODE**. These are being provided as examples of how the UX works and a starting point for your development.
 :::
 
-![Astro Sample App screenshot.](/img/design-guidelines/astro-app.png)
+![Astro Sample App screenshot.](/img/patterns/astro-app.png)
 
 [Go to the Astro App](https://sample-app.astrouxds.com/)

@@ -7,7 +7,9 @@ title: TT&C Monitor
 ---
 
 # TT&C Monitor
-
+:::note
+The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 5 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, *not* visual design guidance.
+:::
 [Launch TT&C Monitor Sample App](https://ttc-monitor.astrouxds.com/) | [Design Materials and Source Code](/ttc-service-ux-design/ttc-monitor#contentBottom)
 
 For operators of a TT&C service, maintaining situational awareness is of critical importance, and the TT&C Monitor app is designed to support this requirement. During the UX research effort, operators expressed a desire for a quick and efficient way to view overall status of their constellation and all of their systems, something lacking in their current systems. To deliver on this, the design team worked with domain experts and the operators to identify the most important data and then display it in a clear, logical manner in the app.

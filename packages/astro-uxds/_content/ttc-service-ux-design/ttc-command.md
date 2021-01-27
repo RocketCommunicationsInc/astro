@@ -7,7 +7,9 @@ title: TT&C Command
 ---
 
 # TT&C Command
-
+:::note
+The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 5 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, *not* visual design guidance.
+:::
 [Launch TT&C Command Sample App](https://ttc-command.astrouxds.com/) | [Design Materials and Source Code](#contentBottom)
 
 The TT&C Command app is designed to be used for sending and receiving communications with a satellite during a contact. It contains status and command data for only a single satellite - one currently in a pass. Operators can open multiple command windows if they are managing several passes simultaneously.

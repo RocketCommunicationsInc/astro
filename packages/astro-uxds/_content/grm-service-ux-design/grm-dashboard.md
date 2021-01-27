@@ -7,7 +7,9 @@ title: GRM Dashboard
 ---
 
 # GRM Dashboard
-
+:::note
+The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 5 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, *not* visual design guidance.
+:::
 [Launch GRM Dashboard Sample App](https://grm-dashboard.astrouxds.com/) | [Design Materials and Source Code](/grm-service-ux-design/grm-dashboard#contentBottom)
 
 Given the large number of satellite contacts and equipment assets that operators are responsible for, maintaining situational awareness poses a significant challenge. Operators must be able to quickly identify equipment issues and resolve them so that there are no missed opportunities to communicate with satellites. The GRM Dashboard app was designed with this goal in mind. As the operators’ primary GRM app, it would constantly occupy one of their large displays.

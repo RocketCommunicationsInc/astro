@@ -11,7 +11,7 @@ The Astro UXDS Web Component and CSS libraries provide a starting point to build
   
   
 ### Astro Components  
-In an effort to provide as close to native a development experience as possible, we’ve provided a set of [litElement-powered](https://lit-element.polymer-project.org/guide) [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) distributed in individual packages on [npm.org](https://www.npmjs.com/org/astrouxds). You can also see the full source code here and instructions for importing the components in a typical NodeJS project [here](https://github.com/RocketCommunicationsInc/astro-components#using-npm).  
+In an effort to provide as close to native a development experience as possible, we’ve provided a set of [litElement-powered](https://lit-element.polymer-project.org/guide) [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) distributed in individual packages on [npm.org](https://www.npmjs.com/org/astrouxds). You can also see the full source code here and instructions for importing the components in a typical NodeJS project [here](https://github.com/RocketCommunicationsInc/astro-components/blob/master/README.md).  
   
   
 ### Astro CSS, Icons and Fonts  
@@ -19,7 +19,7 @@ We recognize that not all space application development projects are tooled for 
   
   
 ### Astro Storybook and Sample Apps  
-You can review the latest versions of the web components at the [Astro Storybook](https://astro-components.netlify.app/?path=/story/astro-uxds-welcome--start-here). The Astro development team uses Storybook as an environment for building and demonstrating the capabilities of each component. If your team often works offline, you may want to [download and run the Storybook](https://github.com/RocketCommunicationsInc/astro-components/tree/master/static) on your local network to see how the examples work.  
+You can review the latest versions of the web components at the [Astro Storybook](https://astro-components.netlify.app/?path=/story/astro-uxds-welcome--start-here). The Astro development team uses Storybook as an environment for building and demonstrating the capabilities of each component. If your team often works offline, you may want to [download and run the Storybook](https://github.com/RocketCommunicationsInc/astro-components) on your local network to see how the examples work.  
   
 For online examples of full Astro app experiences, check out these EGS Service-Specific sample experiences:  
   

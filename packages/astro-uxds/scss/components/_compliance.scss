@@ -5,6 +5,7 @@ main {
   max-width: var(--content-max-text-width, 40em); }
   main img {
     max-width: 100%; }
+    
   main ul {
     list-style: disc;
     margin: 0 0 0 1.5em;
@@ -66,6 +67,9 @@ aside footer {
   display: table;
   margin: 0 0 1em 1em;
   list-style-type: none;
+}
+.compliance img {
+  max-width: 50%;
 }
 
 /* .compliance li ol {

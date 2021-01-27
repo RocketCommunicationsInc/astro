@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0",
+  "version": "2.0.0",
   "contents": [
     {
       "name": "General",
@@ -38,11 +38,11 @@
           "numeral": 2,
           "link": "/design-guidelines/typography/",
           "rules": [
-            {
-              "numeral": 1,
-              "rule": "The Open Sans font shall be used for content and components.",
-              "status": "new"
-            },
+			{
+			  "numeral": 1,
+              "rule": "The Roboto font shall be used for content and components.",
+              "status": "new"	
+			},
             {
               "numeral": 2,
               "rule": "The Roboto Mono font shall be used when monospace digits are required.",
@@ -70,7 +70,7 @@
             {
               "numeral": 1,
               "rule": "Elements indicating state or status shall use only the specified [Status Symbols](/patterns/status-system/).",
-              "figure": "/img/design-guidelines/status-system-fundamentals.png",
+              "figure": "/img/patterns/status-system-fundamentals.png",
               "status": "new"
             },
             {
@@ -248,7 +248,7 @@
             },
             {
               "numeral": 3,
-              "rule": "Optional Global Status Bar elements shall be arranged left to right in this order: navigation [Tabs](/components/tabs), [Clock](/components/clock), [Monitoring Icons](/components/icons-and-symbols/#monitoring-icons), [Action Icons](/components/icons-and-symbols/#action-icons), off Button.",
+              "rule": "Optional Global Status Bar elements shall be arranged left to right in this order: navigation [Tabs](/components/tabs), [Clock](/components/clock), [Monitoring Icons](/components/icons-and-symbols/#monitoring-icons), [Action Icons](/components/icons-and-symbols/#action-icons), Emergency Shut Off Button.",
               "figure": "/img/components/global-status-complex.png",
               "status": "current"
             },
@@ -277,7 +277,7 @@
             {
               "numeral": 3,
               "rule": "Percentage Monitoring Icons shall depict a value between 0 and 100 as both an arc and numeric display.",
-              "figure": "/img/components/percentage-monitoring-graphic-cms.png",
+              "figure": "/img/components/percentage-monitoring-graphic.png",
               "status": "current"
             },
             {
@@ -316,7 +316,7 @@
             {
               "numeral": 3,
               "rule": "Input Field labels shall be aligned to the top left of the field.",
-              "figure": "https://compliance--astrouxds.netlify.app/img/components/input-fields-do.png",
+              "figure": "/img/components/input-fields-do-1.png",
               "status": "current"
             },
             {
@@ -443,13 +443,13 @@
             {
               "numeral": 1,
               "rule": "A determinate Progress indicator shall indicate an operation that has a well-defined duration.",
-              "figure": "/img/components/determinate-progress-do.png",
+              "figure": "/img/components/determinate-progress-do-1.png",
               "status": "current"
             },
             {
               "numeral": 2,
               "rule": "An indeterminate Progress indicator shall indicate an operation that has unknown duration.",
-              "figure": "/img/components/indeterminate-progress-do.png",
+              "figure": "/img/components/indeterminate-progress-do-1.png",
               "status": "current"
             },
             {

@@ -4,7 +4,7 @@ path: /components/toggle
 date: Last Modified
 layout: components.template.njk
 title: Toggle
-demo: https://astro-components.netlify.app/iframe.html?id=components-toggle--toggle&viewMode=story
+demo: components-toggle--toggle
 storybook: components-toggle--toggle
 git: rux-toggle
 height: 150px

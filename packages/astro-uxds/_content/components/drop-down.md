@@ -4,7 +4,7 @@ path: /components/drop-down
 date: Last Modified
 layout: components.template.njk
 title: Drop Down
-demo: https://astro-components.netlify.app/iframe.html?id=components-form-elements--select-menu
+demo: components-form-elements--select-menu
 storybook: components-form-elements--select-menu
 git: 
 height: 150px

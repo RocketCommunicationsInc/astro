@@ -81,3 +81,19 @@
 	to = "/getting-started/readme"
 	status = 301
 	force = true
+
+
+[[plugins]]
+	package = "netlify-plugin-checklinks"
+
+	[plugins.inputs]
+		entryPoints = [
+    	"*.html",
+  	]
+
+  	recursive = true
+  	pretty = true
+  	skipPatterns = ["#"]
+  	todoPatterns = ["#"]
+  	checkExternal = false
+  	followSourceMaps = false

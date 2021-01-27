@@ -36,7 +36,7 @@ There are a large number of charting visualizations. The following subset is rel
 
 #### Pie Chart
 
-![Pie Chart](/img/design-guidelines/data-viz-pie.png)
+![Pie Chart](/img/patterns/data-viz-pie.png)
 Conveys part-to-whole data. Pie charts are very common, but research has shown that it may be difficult to accurately compare the size of the segments without supporting data points.
 :::
 
@@ -44,7 +44,7 @@ Conveys part-to-whole data. Pie charts are very common, but research has shown t
 
 #### Donut Chart
 
-![Donut Chart](/img/design-guidelines/data-viz-donut.png)
+![Donut Chart](/img/patterns/data-viz-donut.png)
 Similar to a pie chart – but the center can be useful for additional information about the data (e.g. total). Example: [GRM Sample app](https://grm-dashboard.astrouxds.com/) - equipment tab
 
 :::
@@ -53,7 +53,7 @@ Similar to a pie chart – but the center can be useful for additional informati
 
 #### Bar Chart
 
-![Bar/Column Chart](/img/design-guidelines/data-viz-bar-column.png)
+![Bar/Column Chart](/img/patterns/data-viz-bar-column.png)
 Standard bar charts display the ranks of values more easily when sorted in order.
 
 :::
@@ -62,7 +62,7 @@ Standard bar charts display the ranks of values more easily when sorted in order
 
 #### Stack Bar Chart
 
-![Stack Bar Chart](/img/design-guidelines/data-viz-stacked-bar.png)
+![Stack Bar Chart](/img/patterns/data-viz-stacked-bar.png)
 The standard way to show a statistical distribution - keep the gaps between columns small to highlight the ‘shape’ of the data. Example: GRM Sample app - contacts tab
 
 :::
@@ -71,7 +71,7 @@ The standard way to show a statistical distribution - keep the gaps between colu
 
 #### Heat Map
 
-![Heat Map](/img/design-guidelines/data-viz-heat-map.png)
+![Heat Map](/img/patterns/data-viz-heat-map.png)
 Heat maps enable you to do exploratory data analysis with two dimensions on the axes and the third dimension shown by intensity of color.
 
 :::
@@ -80,7 +80,7 @@ Heat maps enable you to do exploratory data analysis with two dimensions on the 
 
 #### Area Chart
 
-![Area Chart](/img/design-guidelines/data-viz-area.png)
+![Area Chart](/img/patterns/data-viz-area.png)
 This chart type excels at showing changes to total, but seeing change in components can be difficult.
 
 :::
@@ -89,7 +89,7 @@ This chart type excels at showing changes to total, but seeing change in compone
 
 #### Fill Guage
 
-![Fill Guage](/img/design-guidelines/data-viz-fill-gauge.png)
+![Fill Guage](/img/patterns/data-viz-fill-gauge.png)
 A circular shape that represents a percentage value of a whole. May also be depicted as a dial.
 
 :::
@@ -98,7 +98,7 @@ A circular shape that represents a percentage value of a whole. May also be depi
 
 #### Bubble Chart
 
-![Bubble Chart](/img/design-guidelines/data-viz-bubble.png)
+![Bubble Chart](/img/patterns/data-viz-bubble.png)
 Bubble charts are used to visualize a data set with two to four dimensions. The first two dimensions are visualized as coordinates, the third as color and the fourth as size.
 
 :::
@@ -107,7 +107,7 @@ Bubble charts are used to visualize a data set with two to four dimensions. The 
 
 #### Histogram
 
-![Histogram](/img/design-guidelines/data-viz-histogram.png)
+![Histogram](/img/patterns/data-viz-histogram.png)
 Conveys an accurate representation of the distribution of numerical data. It is an estimate of the probability distribution of a continuous variable (e.g. Spectrum analyzer).
 
 :::
@@ -116,7 +116,7 @@ Conveys an accurate representation of the distribution of numerical data. It is 
 
 #### Gantt Chart
 
-![Gantt Chart](/img/design-guidelines/data-viz-gantt.png)
+![Gantt Chart](/img/patterns/data-viz-gantt.png)
 A chart that depicts how a set of resources are used over time. Gantt charts illustrate the start, end, and duration of tasks (e.g. timeline or schedule). Example: [TT&C Sample app](https://ttc-monitor.astrouxds.com/) - timeline view
 
 :::
@@ -125,7 +125,7 @@ A chart that depicts how a set of resources are used over time. Gantt charts ill
 
 #### Scatter Chart
 
-![Scatter Chart](/img/design-guidelines/data-viz-scatter-plot.png)
+![Scatter Chart](/img/patterns/data-viz-scatter-plot.png)
 Scatter charts plot points on a graph. When the user hovers over the points, tooltips are displayed with more information.
 
 :::
@@ -140,13 +140,13 @@ The following images reference the general components and features for designing
 
 Filters are used to narrow what is displayed in the table. They may be presented in the header as Select menus, as a Segmented Button (e.g.View Select), or as an Input Field.
 
-![Example of filtering a chart view](/img/design-guidelines/data-viz-anatomy.png)
+![Example of filtering a chart view](/img/patterns/data-viz-anatomy.png)
 
 ### Legend
 
 When the data appearing in a chart contains multiple data series, it becomes more readable if they are shown in a legend. This helps in identifying each data series/data point in the chart.
 
-![Example of legend treatment in a chart view](/img/design-guidelines/data-viz-legend.png)
+![Example of legend treatment in a chart view](/img/patterns/data-viz-legend.png)
 
 ::: note
 Legends should be arranged as per the order of appearance of the data plot (Eg: if ‘Usage’ data is plotted first, the corresponding legend comes first).
@@ -162,10 +162,10 @@ Legends should be arranged as per the order of appearance of the data plot (Eg: 
 
 The following sample color set are provided for the specified number of data points. Astro dictates 8 or less colors per data set to reduce cognitive load. The mixed accessible palette was designed to meet a colorblind accessibility requirement. The vast majority of colorblind users are able to detect contrast variance as demonstrated in the following simulations.
 
-![Mixed accessible color palette](/img/design-guidelines/accessibility-mixed.png)
-![Deuternopia accessible color palette](/img/design-guidelines/accessibility-deuternopia.png)
-![Protanopia accessible color palette](/img/design-guidelines/accessibility-protanopia.png)
-![Tritanopia accessible color palette](/img/design-guidelines/accessibility-tritanopia.png)
+![Mixed accessible color palette](/img/patterns/mixed-accessible.png)
+![Deuternopia accessible color palette](/img/patterns/deuternopia.png)
+![Protanopia accessible color palette](/img/patterns/protanopia.png)
+![Tritanopia accessible color palette](/img/patterns/tritanopia.png)
 
 #### Gradual Visualization Palettes
 
@@ -175,32 +175,32 @@ The following sample color sets were created from the non-status color palette:
 Status colors are reserved for their respected statuses. Do not apply them to Visualizations unless they reflect the defined status, e.g. Critical.
 :::
 
-![Blue Green color palette](/img/design-guidelines/data-set-palette-blue-green.png)
-![Blue Violet accessible color palette](/img/design-guidelines/data-set-palette-blue-violet.png)
-![Tawny accessible color palette](/img/design-guidelines/data-set-palette-tawny.png)
+![Blue Green color palette](/img/patterns/data-set-palette-blue-green.png)
+![Blue Violet accessible color palette](/img/patterns/data-set-palette-blue-violet.png)
+![Tawny accessible color palette](/img/patterns/data-set-palette-tawny.png)
 
 ## Themed Visualization References
 
 Astro provides guidance, components and code for creating a light and dark themed User Interface. Use cases and additional information on selecting the appropriate UI can be found in the [Theme guidelines](/design-guidelines/theme). The following references demonstrate both.
 
-![Sample stacked bar chart](/img/design-guidelines/stacked-bar.png)
-![Sample donut chart](/img/design-guidelines/donut.png)
-![Sample line chart](/img/design-guidelines/line.png)
+![Sample stacked bar chart](/img/patterns/stacked-bar.png)
+![Sample donut chart](/img/patterns/donut.png)
+![Sample line chart](/img/patterns/line.png)
 
 ::: note
 Line charts and similar visualizations may require higher contrast than a filled graphic, e.g. Donut chart. Higher contrast colors are provided in the Astro Color Guidelines.
 :::
 
-![Sample histogram chart](/img/design-guidelines/histogram.png)
+![Sample histogram chart](/img/patterns/histogram.png)
 
 ::: note
 Dark-themed UIs help reduce eye strain and support visual clarity within the interface. This is ideal in a lights-out environment.
 :::
 
-![Sample stacked bar chart using the light theme](/img/design-guidelines/stacked-bar-lui.png)
-![Sample donut chart using the light theme](/img/design-guidelines/donut-lui.png)
-![Sample line chart using the light theme](/img/design-guidelines/line-lui.png)
-![Sample histogram chart using the light theme](/img/design-guidelines/histogram-lui.png)
+![Sample stacked bar chart using the light theme](/img/patterns/stacked-bar-lui.png)
+![Sample donut chart using the light theme](/img/patterns/donut-lui.png)
+![Sample line chart using the light theme](/img/patterns/line-lui.png)
+![Sample histogram chart using the light theme](/img/patterns/histogram-lui.png)
 
 ## Choose the Right Visualization
 
@@ -210,13 +210,13 @@ A data visualization is useless if not designed to communicate clearly with the 
 
 :::two-col
 
-![Do: Allow axes labels enough padding. It’s important that the axes be legible and have adequate space. This will reduce eye strain and errors.](/img/design-guidelines/data-viz-do-1.png "Do: Allow axes labels enough padding. It’s important that the axes be legible and have adequate space. This will reduce eye strain and errors.")
+![Do: Allow axes labels enough padding. It’s important that the axes be legible and have adequate space. This will reduce eye strain and errors.](/img/patterns/data-viz-do-1.png "Do: Allow axes labels enough padding. It’s important that the axes be legible and have adequate space. This will reduce eye strain and errors.")
 
-![Don't: Use visual representations that don’t accurately represent the data set, like pie charts in 3D.](/img/design-guidelines/data-viz-dont-1.png "Don’t: Use visual representations that don’t accurately represent the data set, like pie charts in 3D.")
+![Don't: Use visual representations that don’t accurately represent the data set, like pie charts in 3D.](/img/patterns/data-viz-dont-1.png "Don’t: Use visual representations that don’t accurately represent the data set, like pie charts in 3D.")
 
-![Do: Use fill color and text that meets or exceeds WCAG 2.0 contrast requirements. Use a Contrast Checker to check contrast levels.](/img/design-guidelines/data-viz-do-2.png "Do: Use fill color and text that meets or exceeds WCAG 2.0 contrast requirements. Use a Contrast Checker to check contrast levels.")
+![Do: Use fill color and text that meets or exceeds WCAG 2.0 contrast requirements. Use a Contrast Checker to check contrast levels.](/img/patterns/data-viz-do-2.png "Do: Use fill color and text that meets or exceeds WCAG 2.0 contrast requirements. Use a Contrast Checker to check contrast levels.")
 
-![Don’t: Use more than 8 categories. Beyond that, mapping colors to categories will become burdensome and reduce their usefulness.](/img/design-guidelines/data-viz-dont-2.png "Don’t: Use more than 8 categories. Beyond that, mapping colors to categories will become burdensome and reduce their usefulness.")
+![Don’t: Use more than 8 categories. Beyond that, mapping colors to categories will become burdensome and reduce their usefulness.](/img/patterns/data-viz-dont-2.png "Don’t: Use more than 8 categories. Beyond that, mapping colors to categories will become burdensome and reduce their usefulness.")
 
 :::
 

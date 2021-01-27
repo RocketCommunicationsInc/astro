@@ -130,10 +130,10 @@ A common use for non-status colors as in identifying civilian assets or tagging.
 | ![Tag3 Lighten Step 2](/img/swatches/tag-3__tint-40.svg) | +2   | `#c76ada` | `199, 106, 218` | `--colorTag3Lighten2` |
 | ![Tag3 Lighten Step 1](/img/swatches/tag-3__tint-20.svg) | +1   | `#b534ce` | `181, 52, 206`  | `--colorTag3Lighten1` |
 | ![Tag3 Base Color](/img/swatches/tag-3.svg)              | Base | `#a200c1` | `162, 0, 193`   | `--colorTag3`         |
-| ![Tag3 Darken Step 1](/img/swatches/tag-3__shade-20.svg) | -1   | `#81009a` | `129, 0, 154`   | `--colorTag3shade-20` |
-| ![Tag3 Darken Step 2](/img/swatches/tag-3__shade-40.svg) | -2   | `#610074` | `97, 0, 116`    | `--colorTag3shade-40` |
-| ![Tag3 Darken Step 3](/img/swatches/tag-3__shade-60.svg) | -3   | `#41004d` | `65, 0, 77`     | `--colorTag3shade-60` |
-| ![Tag3 Darken Step 4](/img/swatches/tag-3__shade-80.svg) | -4   | `#200227` | `32, 2, 39`     | `--colorTag3shade-80` |
+| ![Tag3 Darken Step 1](/img/swatches/tag-3__shade-20.svg) | -1   | `#81009a` | `129, 0, 154`   | `--colorTag3Darken1` |
+| ![Tag3 Darken Step 2](/img/swatches/tag-3__shade-40.svg) | -2   | `#610074` | `97, 0, 116`    | `--colorTag3Darken2` |
+| ![Tag3 Darken Step 3](/img/swatches/tag-3__shade-60.svg) | -3   | `#41004d` | `65, 0, 77`     | `--colorTag3Darken3` |
+| ![Tag3 Darken Step 4](/img/swatches/tag-3__shade-80.svg) | -4   | `#200227` | `32, 2, 39`     | `--colorTag3Darken4` |
 
 ## Tag 4
 
@@ -144,8 +144,8 @@ A common use for non-status colors as in identifying civilian assets or tagging.
 | ![Tag4 Lighten Step 2](/img/swatches/tag-4__tint-40.svg) | +2   | `#ea9875` | `234, 152, 117` | `--colorTag4Lighten2` |
 | ![Tag4 Lighten Step 1](/img/swatches/tag-4__tint-20.svg) | +1   | `#e27545` | `226, 117, 69`  | `--colorTag4Lighten1` |
 | ![Tag4 Base Color](/img/swatches/tag-4.svg)              | Base | `#da5309` | `218, 83, 9`    | `--colorTag4`         |
-| ![Tag4 Darken Step 1](/img/swatches/tag-4__shade-20.svg) | -1   | `#af420a` | `175, 66, 10`   | `--colorTag4shade-20` |
-| ![Tag4 Darken Step 2](/img/swatches/tag-4__shade-40.svg) | -2   | `#833209` | `131, 50, 9`    | `--colorTag4shade-40` |
-| ![Tag4 Darken Step 3](/img/swatches/tag-4__shade-60.svg) | -3   | `#572108` | `87, 33, 8`     | `--colorTag4shade-60` |
-| ![Tag4 Darken Step 4](/img/swatches/tag-4__shade-80.svg) | -4   | `#2b1105` | `43, 17, 5`     | `--colorTag4shade-80` |
+| ![Tag4 Darken Step 1](/img/swatches/tag-4__shade-20.svg) | -1   | `#af420a` | `175, 66, 10`   | `--colorTag4Darken1` |
+| ![Tag4 Darken Step 2](/img/swatches/tag-4__shade-40.svg) | -2   | `#833209` | `131, 50, 9`    | `--colorTag4Darken2` |
+| ![Tag4 Darken Step 3](/img/swatches/tag-4__shade-60.svg) | -3   | `#572108` | `87, 33, 8`     | `--colorTag4Darken3` |
+| ![Tag4 Darken Step 4](/img/swatches/tag-4__shade-80.svg) | -4   | `#2b1105` | `43, 17, 5`     | `--colorTag4Darken4` |
 

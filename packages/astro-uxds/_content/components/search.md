@@ -4,7 +4,7 @@ path: /components/search
 date: Last Modified
 layout: components.template.njk
 title: Search
-demo: https://rocketcom.bitbucket.io/html-demos/search.html
+legacyDemo: https://rocketcom.bitbucket.io/html-demos/search.html
 git: 
 height: 50px
 theme: true

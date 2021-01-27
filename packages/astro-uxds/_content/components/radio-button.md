@@ -4,7 +4,7 @@ path: /components/radio-button
 date: Last Modified
 layout: components.template.njk
 title: Radio Button
-demo:  https://astro-components.netlify.app/iframe.html?id=components-form-elements--radio-buttons
+demo:  components-form-elements--radio-buttons
 storybook: components-form-elements--radio-buttons
 git: 
 height: 250px

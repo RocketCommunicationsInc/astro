@@ -4,7 +4,7 @@ path: /components/notification-banner
 date: Last Modified
 layout: components.template.njk
 title: Notification Banner
-demo: https://astro-components.netlify.app/iframe.html?id=components-notification--all-notification-banners&viewMode=story
+demo: components-notification--all-notification-banners
 storybook: components-notification--all-notification-banners
 git: rux-notification
 height: 440px
@@ -14,6 +14,7 @@ theme: true
 # Notification Banner
 
 ## Appearance and Behavior
+
 
 Events that deserve user attention, but don’t require a response, may be displayed in a Notification Banner. The Banner displays within the user’s field-of-view, but doesn’t block other interaction.
 

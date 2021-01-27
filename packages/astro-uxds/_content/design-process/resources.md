@@ -11,7 +11,6 @@ title: Design Resources
 ## Web Design
 
 - [Stackoverflow.com](https://stackoverflow.com) – Questions and problem solving
-- [CodePen.io](https://codepen.io) - Working examples of Web code and the ability to experiment “live”
 - [SmashingMagazine.com](https://www.smashingmagazine.com) - HTML, CSS, JS, UX/UI, typography and design
 - [Alistapart.com](https://www.alistapart.com) - Web design, development, standards and best practices
 - [w3.org](https://w3.org) - Authoritative source for HTML standards

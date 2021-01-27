@@ -7,7 +7,9 @@ title: TT&C Investigate
 ---
 
 # TT&C Investigate
-
+:::note
+The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 5 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, *not* visual design guidance.
+:::
 [Launch TT&C Investigate Sample App](https://ttc-investigate.astrouxds.com) | [Design Materials and Source Code](#contentBottom)
 
 The Investigate app displays system schematics and status data for a selected satellite. This allows operators to gather additional detail on alerts, view the relationships of components in the equipment hierarchy and select particular values to add to the Watcher panel in the Monitor and Command apps.

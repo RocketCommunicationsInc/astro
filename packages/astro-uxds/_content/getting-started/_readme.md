@@ -45,15 +45,15 @@ Astro is tested & supported in major 'evergreen' web browsers (the latest browse
 
 ### Versioning
 
-Current version: Astro 4.5
+Current version: {{ meta.version }}
 
-Last updated: Wed Jul 08 2020
+Last updated: {{ page.date }}
 
 ### Astro Licensing
 
 Astro is provided as an open-source tool under the **Astro Space UX Design System Interim License Agreement**:
 
-> Copyright © 2020 Rocket Communications, Inc.
+> Copyright © {{ meta.copyright }} Rocket Communications, Inc.
 > 
 > The Astro Space UX Design System, which includes user workflows, interfaces, visual components, system functionality, sample code, style guides, best practices guidelines, sample applications, and related sample software, all of which is publicly available at www.astroUXDS.com (collectively referred to herein as the “Software”), is developed and maintained by Rocket Communications, Inc. (“Rocket”) through a contract with the United States government.
 > 

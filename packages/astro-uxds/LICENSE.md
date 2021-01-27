@@ -1,4 +1,4 @@
-Copyright © 2020 Rocket Communications, Inc.
+Copyright © 2021 Rocket Communications, Inc.
 
 The Astro Space UX Design System, which includes user workflows, interfaces, visual components, system functionality, sample code, style guides, best practices guidelines, sample applications, and related sample software, all of which is publicaly available at www.astroUXDS.com (collectively referred to herein as the “Software”), is developed and maintained by Rocket Communications, Inc. (“Rocket”) through a contract with the United States government.
 

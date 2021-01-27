@@ -84,8 +84,6 @@ Configuration options for validation of Input Fields:
 
 ![Time - input must be a valid time. Text that cannot be recognized as a valid time is indicated with a warning icon and optional instructional text.](/img/patterns/val-time.png 'Time - input must be a valid time. Text that cannot be recognized as a valid time is indicated with a warning icon and optional instructional text.')
 
-![Date - input must be a valid date. Text that cannot be recognized as a valid date is indicated with a warning icon and optional instructional text.](/img/patterns/val-date.png 'Date - input must be a valid date. Text that cannot be recognized as a valid date is indicated with a warning icon and optional instructional text.')
-
 ![Checkboxes can be configured to require input, where at least one item in a group must be selected.](/img/patterns/val-group-checkbox.png 'Checkboxes can be configured to require input, where at least one item in a group must be selected.')
 
 ![Select Menus can be configured to require input, where at least one item in the menu must be selected.](/img/patterns/val-select-menu-input.png 'Select Menus can be configured to require input, where at least one item in the menu must be selected.')

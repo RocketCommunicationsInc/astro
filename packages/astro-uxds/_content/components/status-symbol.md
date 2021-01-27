@@ -4,7 +4,7 @@ path: /components/status-symbol
 date: Last Modified
 layout: components.template.njk
 title: Status Symbol
-demo: https://astro-components.netlify.com/iframe.html?id=components-status--status
+demo: components-status--status
 storybook: components-status--status
 git: rux-status
 height: 80px

@@ -16,7 +16,7 @@ It’s best to start with a consideration of the primary objects your applicatio
 
 For a small, flat collection of like objects, consider Master-Detail navigation. Master-Detail is implemented with a list on the left and a detail panel on the right. The Master list shows key information for each item, the detail panel shows in-depth information and options.
 
-![Master-detail sample app layout](/img/design-guidelines/master-detail-nav.png)
+![Master-detail sample app layout](/img/patterns/master-detail-nav.png)
 
 ## Tab Navigation
 
@@ -30,7 +30,7 @@ Tab Navigation works best when the user can accomplish fundamental tasks within 
 
 The contents of each tab may be similar objects with a different view, or unique objects or presentations.
 
-![Tab Navigation sample app layout](/img/design-guidelines/tab-nav.png)
+![Tab Navigation sample app layout](/img/patterns/tab-nav.png)
 
 ## Tree Navigation
 
@@ -42,22 +42,22 @@ Use Tree Navigation only with a set of objects that fall into a natural single h
 Avoid mixing unrelated object types in a single tree. Although this usage is commonly seen in desktop productivity applications, it often leads users on a frustrating hunt for objects or features.
 :::
 
-![Tree sample app layout](/img/design-guidelines/tree-nav.png)
+![Tree sample app layout](/img/patterns/tree-nav.png)
 
 ## Table Navigation
 
 Applications with large uniform data sets can be structured with [Table Navigation](/patterns/table). Table Navigation begins with a full screen tabular view of the application data. The table’s searching, sorting, and filtering capabilities allow the user to find objects of interest before drilling down to additional detail pages.
 
-![Table navigation sample app layout](/img/design-guidelines/table-nav.png)
+![Table navigation sample app layout](/img/patterns/table-nav.png)
 
 ## Timeline Navigation
 
 Applications that are principally organized around events on a realtime schedule can make use of [Timeline Navigation](/components/timeline). A timeline atop the page allows the user to select events that are shown in detail in the main area the page.
 
-![Timeline navigation sample app layout](/img/design-guidelines/timeline-nav.png)
+![Timeline navigation sample app layout](/img/patterns/timeline-nav.png)
 
 ## Combining Navigation
 
 Navigation types are often combined within complex applications. For example, an application can have Tab main navigation, with Master-Detail sub-navigation.
 
-![Combined navigation sample app layout](/img/design-guidelines/combined-nav.png)
+![Combined navigation sample app layout](/img/patterns/combined-nav.png)

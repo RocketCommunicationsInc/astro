@@ -7,7 +7,9 @@ title: About the TT&C Designs
 ---
 
 # About the TT&C Designs
-
+:::note
+The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 5 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, *not* visual design guidance.
+:::
 ## Telemetry, Tracking & Command (TT&C)
 
 The purpose of a Telemetry, Tracking, and Command (TT&C) system is to support missions requiring communication between satellites and ground systems. Key aspects of this include tracking the satellites, monitoring and maintaining their state of health (SOH) via telemetry data, and transmitting commands to them to achieve mission objectives. An analysis of existing systems and task flows reveals three main components to supporting TT&C services:

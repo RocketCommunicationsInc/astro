@@ -27,14 +27,8 @@ To download the Design starter kit, navigate to Astro Design Resources [Git Repo
 Download files from Astro Sketch Libraries:
 
 [Astro Dark Library](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Sketch/Astro%20Dark%20Library.sketch)
-[Astro Dark Sticker Sheet](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Sketch/Astro%20Dark%20Stickersheet.sketch)
-Astro Light Library (Coming soon…)
-Astro Light Sticker Sheet (Coming soon…)
+[Astro Light Library](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Sketch/Astro%20Dark%20Library.sketch)
 [Astro Wireframe Library](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Sketch/Astro%20Wireframe%20Library.sketch)
-[Astro Wireframe Sticker Sheet](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Sketch/Astro%20Wireframe%20Stickersheet.sketch)
-
-
-
 
 ### How to use Astro Sketch libraries
 
@@ -62,48 +56,18 @@ When an update is available, the new file can be loaded into Sketch by replacing
 
 [View Tutorials for updating library components](https://www.sketch.com/docs/libraries/#updating-library-components)
 
-### Adobe XD Installation and Use
-::: note
-Adobe XD libraries are provided for convenience but are not fully supported for creating comps and wireframes, and may cause difficulties for users who are required to work offline.
-:::
-
-**Download Files for Astro XD Libraries:**
-
-[Astro 5 Wireframe Library](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Adobe%20XD/Astro%205%20Wireframe%20Library.xd)
-[Astro 5 Dark Library](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Adobe%20XD/Astro%205%20Dark%20Library.xd)
-Astro Light Library (Coming soon…)
-
-[Learn more about using Adobe XD ](https://helpx.adobe.com/xd/tutorials.html)
-[View video tutorials to get started with Adobe XD](https://www.youtube.com/playlist?list=PLHjwuoik-ep1zZ_xheCvRL8KluMJMjYsV)
-
-### How to Use the Astro XD Library Files
-
-Adobe XD files make use of an asset library to create shareable symbols that you can use to create and build wireframes and high fidelity comps.
-
-[View tutorial for managing assets and components](https://helpx.adobe.com/xd/help/work-with-assets-and-libraries-xd.html)
-[View video tutorial for managing assets in Adobe XD](https://www.youtube.com/watch?v=wzEL4mhXiJM&feature=youtu.be)
-
-### Updating/Syncing Libraries 
-
-At this time, Adobe XD does not allow linking, or re-linking, to local linked assets (except for when converting a Sketch library to Adobe XD). Users have 2 options: import/relink assets from the cloud or that are shared with you (through Adobe CC), or convert Sketch libraries. For those who need to work with their files offline, this may require some prohibitive workarounds, or require the user to work directly with the XD library file downloaded from Astro with periodic, manual updates. To assist in getting this functionality, consider voting on the Adobe XD feature request to [Link assets from local documents](https://adobexd.uservoice.com/forums/353007-adobe-xd-feature-requests/suggestions/37698904-link-assets-from-local-documents) and [Relinking assets functionality](https://adobexd.uservoice.com/forums/353007-adobe-xd-feature-requests/suggestions/37718911-relinking-assets-functionality).
-
-[View video tutorial for working with linked assets](https://www.youtube.com/watch?v=0y27B0ZChhY&feature=youtu.be)
-[View tutorial for working with shared assets](https://helpx.adobe.com/xd/help/work-with-assets-and-libraries-xd.html#share-assets)
-
 ### Importing Sketch Files into Adobe XD 
 
 Sketch files can be imported into Adobe XD. Symbols created in a Sketch file will be imported into the assets library.
 
 [View tutorial for importing Sketch files to Adobe XD](https://www.youtube.com/watch?v=T7BdBmqVUuM&feature=youtu.be)
-
 ### Using Sketch Files in Figma
 ::: note
 Figma is not currently supported, but Figma does provide some workarounds for users who wish to import Sketch files.
 :::
 
-[Import files from Sketch](https://help.figma.com/hc/en-us/articles/360040514273-Import-files-from-Sketch)
+[Import files from Sketch](https://help.figma.com/hc/en-us/articles/360040514273-Import-files-from-Sketch/)
 [What to expect when moving from Sketch to Figma](https://www.figma.com/best-practices/what-to-expect-when-moving-from-sketch-to-figma/)
-
 
 ### Astro & EGS Design Compliance
 
@@ -132,7 +96,6 @@ Each page on astrouxds.com has a support button at the bottom of the page for te
 
 **Web Design**
 [Stackoverflow](https://stackoverflow.com/) – Questions and problem solving
-[CodePen](https://codepen.io/) - Working examples of Web code and the ability to experiment “live”
 [SmashingMagazine](https://www.smashingmagazine.com/) - HTML, CSS, JS, UX/UI, typography and design
 [Alistapart](https://alistapart.com/) - Web design, development, standards, and best practices
 [Abookapart](https://abookapart.com/) - Books for web design, development, standards, and best practices
