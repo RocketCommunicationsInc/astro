@@ -40,15 +40,15 @@ The UX research conducted on GRM services drove the design of three sample apps 
 
 The UX research on TT&C services also resulted in the design of a three-app suite. The TT&C App Suite is designed to support ground-to-satellite communication, including sending commands, monitoring constellations and maintaining the health of spacecraft. The [TT&C Monitor][ttc-monitor] app allows the operator to monitor status, alerts, health and function of an individual satellite and satellite constellations. The [TT&C Command][ttc-command] app allows the operator to send and receive streams of data to and from a spacecraft using a set of commands. The [TT&C Investigate][ttc-investigate] app allows the operator to investigate spacecraft alerts and anomalies and analyze subsystem mnemonics, measurements, limits, etc. You can get an overview of the design work on the [About the TT&C Designs][ttc-designs] page or use one of the links below to get more information about a particular app.
 
-![TT&C Monitor App](/img/service-specific-ux-design/ttc-command-app.png)
+![](/img/service-specific-ux-design/ttc-monitor-app.png)
 
-[][ttc-monitor]
-
-![TT&C Command App](/img/service-specific-ux-design/ttc-command-app.png)
-
-[][ttc-command]
+[TT&C Monitor App][ttc-monitor]
 
 ![](/img/service-specific-ux-design/ttc-command-app.png)
+
+[TT&C Command App][ttc-command]
+
+![](/img/service-specific-ux-design/ttc-investigate-app.png)
 
 [TT&C Investigate][ttc-investigate]
 

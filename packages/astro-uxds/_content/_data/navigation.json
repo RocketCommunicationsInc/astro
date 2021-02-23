@@ -184,6 +184,10 @@
 				"url": "/components/progress"
 			},
 			{
+				"label": "Push Button",
+				"url": "/components/push-button"
+			},
+			{
 				"label": "Radio Button",
 				"url": "/components/radio-button"
 			},

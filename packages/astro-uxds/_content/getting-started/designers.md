@@ -27,7 +27,7 @@ To download the Design starter kit, navigate to Astro Design Resources [Git Repo
 Download files from Astro Sketch Libraries:
 
 [Astro Dark Library](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Sketch/Astro%20Dark%20Library.sketch)
-[Astro Light Library](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Sketch/Astro%20Dark%20Library.sketch)
+[Astro Light Library](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Sketch/Astro%20Light%20Library.sketch)
 [Astro Wireframe Library](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Sketch/Astro%20Wireframe%20Library.sketch)
 
 ### How to use Astro Sketch libraries

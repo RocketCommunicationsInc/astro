@@ -11,12 +11,11 @@ title: Downloads
 ## Astro Design System
 
 - Astro Component Source Code ([Git Repository](https://github.com/RocketCommunicationsInc/astro-components))
-- Astro Sketch Dark Library ([Git Repository](https://github.com/RocketCommunicationsInc/astro-design-resources/tree/master/Sketch))
-- Astro Sketch Dark Sticker Sheet ([Git Repository](https://github.com/RocketCommunicationsInc/astro-design-resources/tree/master/Sketch))
-- Astro Sketch Wireframe Library ([Git Repository](https://github.com/RocketCommunicationsInc/astro-design-resources/tree/master/Sketch))
-- Astro Sketch Wireframe Sticker Sheet ([Git Repository](https://github.com/RocketCommunicationsInc/astro-design-resources/tree/master/Sketch))
-- Astro Adobe XD Wireframe Library ([Git Repository](https://github.com/RocketCommunicationsInc/astro-design-resources/tree/master/Adobe%20XD))
-- Astro Adobe XD Dark Library ([Git Repository](https://github.com/RocketCommunicationsInc/astro-design-resources/tree/master/Adobe%20XD))
+- Astro Sketch Dark Library ([Git Repository](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Sketch/Astro%20Dark%20Library.sketch))
+- Astro Sketch Light Library ([Git Repository](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Sketch/Astro%20Light%20Library.sketch))
+- Astro Sketch Wireframe Library ([Git Repository](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/master/Sketch/Astro%20Wireframe%20Library.sketch))
+- Astro Adobe XD Wireframe Library ([Git Repository](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/863e6cf9e815d185073070ef9bec5aeecd12d9af/Adobe%20XD/Astro%205%20Wireframe%20Library.xd))
+- Astro Adobe XD Dark Library ([Git Repository](https://github.com/RocketCommunicationsInc/astro-design-resources/raw/863e6cf9e815d185073070ef9bec5aeecd12d9af/Adobe%20XD/Astro%205%20Dark%20Library.xd))
 - Astro Icons ([Sketch](https://bitbucket.org/rocketcom/astro-styles/raw/f4a08616984c85d833e3abdca450dc253398aa1c/icons/src/Astro%20Icons.sketch) | [Adobe XD](https://bitbucket.org/rocketcom/astro-styles/raw/f4a08616984c85d833e3abdca450dc253398aa1c/icons/src/Astro%20Icons.xd))
 - Astro Boilerplate ([Git Repository](https://github.com/RocketCommunicationsInc/astro-boilerplate))
 - Astro Angular Boilerplate ([Git Repository](https://github.com/RocketCommunicationsInc/astro-boilerplate-angular))
