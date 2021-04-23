@@ -6,56 +6,59 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface RuxButton {
+        "disabled": boolean;
+        "icon": string;
+        "iconOnly": boolean;
+        "outline": boolean;
+        "size"?: 'small' | 'large';
+    }
+    interface RuxGlobalStatusBar {
+        "appname": string;
+        "version": string;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLRuxButtonElement extends Components.RuxButton, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLRuxButtonElement: {
+        prototype: HTMLRuxButtonElement;
+        new (): HTMLRuxButtonElement;
+    };
+    interface HTMLRuxGlobalStatusBarElement extends Components.RuxGlobalStatusBar, HTMLStencilElement {
+    }
+    var HTMLRuxGlobalStatusBarElement: {
+        prototype: HTMLRuxGlobalStatusBarElement;
+        new (): HTMLRuxGlobalStatusBarElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "rux-button": HTMLRuxButtonElement;
+        "rux-global-status-bar": HTMLRuxGlobalStatusBarElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface RuxButton {
+        "disabled"?: boolean;
+        "icon"?: string;
+        "iconOnly"?: boolean;
+        "outline"?: boolean;
+        "size"?: 'small' | 'large';
+    }
+    interface RuxGlobalStatusBar {
+        "appname"?: string;
+        "version"?: string;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "rux-button": RuxButton;
+        "rux-global-status-bar": RuxGlobalStatusBar;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "rux-button": LocalJSX.RuxButton & JSXBase.HTMLAttributes<HTMLRuxButtonElement>;
+            "rux-global-status-bar": LocalJSX.RuxGlobalStatusBar & JSXBase.HTMLAttributes<HTMLRuxGlobalStatusBarElement>;
         }
     }
 }
