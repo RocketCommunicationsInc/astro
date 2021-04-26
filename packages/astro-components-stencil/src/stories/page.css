@@ -1,3 +1,21 @@
+body {
+  font-family: var(--fontFamily);
+  color: var(--defaultText);
+  background-color: var(--backgroundColor);
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--fontLinkColor);
+}
+
+.container {
+  width: 40%;
+  margin: 50px auto 0 auto;
+  text-align: center;
+}
+
 section {
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
