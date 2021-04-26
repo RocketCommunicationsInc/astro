@@ -1,7 +1,7 @@
 import { html, render } from 'lit-html';
 import { boolean, select, date, withKnobs } from '@storybook/addon-knobs';
 //@ts-ignore
-import readme from './readme.md';
+import readme from '../../src/components/rux-clock/readme.md';
 
 export default {
   title: 'Components|Clock',
