@@ -2,7 +2,7 @@ import { Prop, Component, Host, h } from '@stencil/core';
 
 @Component({
   tag: 'rux-global-status-bar',
-  styleUrl: 'rux-global-status-bar.css',
+  styleUrl: 'rux-global-status-bar.scss',
   shadow: true,
 })
 export class RuxGlobalStatusBar {

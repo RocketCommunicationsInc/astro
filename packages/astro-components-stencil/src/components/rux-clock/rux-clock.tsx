@@ -5,7 +5,7 @@ import { format, utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz';
 
 @Component({
   tag: 'rux-clock',
-  styleUrl: 'rux-clock.css',
+  styleUrl: 'rux-clock.scss',
   shadow: true,
 })
 export class RuxClock {
