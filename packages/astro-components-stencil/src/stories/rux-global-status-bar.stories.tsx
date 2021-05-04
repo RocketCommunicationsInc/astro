@@ -1,13 +1,8 @@
 import { html, render } from 'lit-html';
 import { text, withKnobs } from '@storybook/addon-knobs';
-// import { RuxGlobalStatusBar } from '../src/components/rux-global-status-bar/rux-global-status-bar.js';
-// import { RuxClock } from '../src/components/rux-clock/rux-clock.js';
-// import { RuxButton } from '../src/components/rux-button/rux-button.js';
-// import { RuxTabs } from '../src/components/rux-tabs/rux-tabs.js';
-// import Readme from '../src/components/rux-global-status-bar/README.md';
 
 //@ts-ignore
-import readme from './readme.md';
+import readme from '../../src/components/rux-global-status-bar/readme.md';
 
 export default {
   title: 'Components/Global Status Bar',

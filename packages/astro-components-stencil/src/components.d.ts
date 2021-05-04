@@ -13,6 +13,16 @@ export namespace Components {
         "outline": boolean;
         "size"?: 'small' | 'large';
     }
+    interface RuxClock {
+        "aos": number;
+        "dayOfYear": number;
+        "hideDate": boolean;
+        "hideTimezone": boolean;
+        "los": string;
+        "small": boolean;
+        "time": string;
+        "timezone": string;
+    }
     interface RuxGlobalStatusBar {
         "appname": string;
         "version": string;
@@ -25,6 +35,12 @@ declare global {
         prototype: HTMLRuxButtonElement;
         new (): HTMLRuxButtonElement;
     };
+    interface HTMLRuxClockElement extends Components.RuxClock, HTMLStencilElement {
+    }
+    var HTMLRuxClockElement: {
+        prototype: HTMLRuxClockElement;
+        new (): HTMLRuxClockElement;
+    };
     interface HTMLRuxGlobalStatusBarElement extends Components.RuxGlobalStatusBar, HTMLStencilElement {
     }
     var HTMLRuxGlobalStatusBarElement: {
@@ -33,6 +49,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "rux-button": HTMLRuxButtonElement;
+        "rux-clock": HTMLRuxClockElement;
         "rux-global-status-bar": HTMLRuxGlobalStatusBarElement;
     }
 }
@@ -44,12 +61,23 @@ declare namespace LocalJSX {
         "outline"?: boolean;
         "size"?: 'small' | 'large';
     }
+    interface RuxClock {
+        "aos"?: number;
+        "dayOfYear"?: number;
+        "hideDate"?: boolean;
+        "hideTimezone"?: boolean;
+        "los"?: string;
+        "small"?: boolean;
+        "time"?: string;
+        "timezone"?: string;
+    }
     interface RuxGlobalStatusBar {
         "appname"?: string;
         "version"?: string;
     }
     interface IntrinsicElements {
         "rux-button": RuxButton;
+        "rux-clock": RuxClock;
         "rux-global-status-bar": RuxGlobalStatusBar;
     }
 }
@@ -58,6 +86,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "rux-button": LocalJSX.RuxButton & JSXBase.HTMLAttributes<HTMLRuxButtonElement>;
+            "rux-clock": LocalJSX.RuxClock & JSXBase.HTMLAttributes<HTMLRuxClockElement>;
             "rux-global-status-bar": LocalJSX.RuxGlobalStatusBar & JSXBase.HTMLAttributes<HTMLRuxGlobalStatusBarElement>;
         }
     }

@@ -20,15 +20,18 @@
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 -s ./dist",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@stencil/core": "^2.0.1"
+    "@stencil/core": "^2.0.1",
+    "date-fns": "^2.21.1",
+    "date-fns-tz": "^1.1.4"
   },
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.13.16",
+    "@stencil/sass": "^1.4.1",
     "@storybook/addon-actions": "^6.2.9",
     "@storybook/addon-essentials": "^6.2.9",
     "@storybook/addon-knobs": "^6.2.9",
