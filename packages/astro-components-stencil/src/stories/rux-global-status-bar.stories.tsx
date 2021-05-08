@@ -7,6 +7,11 @@ import readme from '../../src/components/rux-global-status-bar/readme.md';
 export default {
   title: 'Components/Global Status Bar',
   decorators: [withKnobs],
+  parameters: {
+    readme: {
+      sidebar: readme,
+    },
+  },
 };
 
 export const GlobalStatusBar = () => {
@@ -15,10 +20,7 @@ export const GlobalStatusBar = () => {
 
   return html`
     <div style="display: flex; justify-content: center;">
-      <rux-global-status-bar
-        .appname="${appnameKnob}"
-        .version="${versionKnob}"
-      ></rux-global-status-bar>
+      <rux-global-status-bar .appname="${appnameKnob}" .version="${versionKnob}"></rux-global-status-bar>
     </div>
   `;
 };
@@ -80,19 +82,13 @@ export const GlobalStatusBarWithTabs = () => {
       </rux-global-status-bar>
       <rux-tab-panels aria-labelledby="tab-set-id-1">
         <rux-tab-panel aria-labelledby="tab-id-1-1">
-          <pre
-            style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; margin: 0;"
-          ><<span>!-- Tab 1 HTML content --</span>></pre>
+          <pre style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; margin: 0;"><<span>!-- Tab 1 HTML content --</span>></pre>
         </rux-tab-panel>
         <rux-tab-panel aria-labelledby="tab-id-1-2">
-          <pre
-            style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; margin: 0;"
-          ><<span>!-- Tab 2 HTML content --</span>></pre>
+          <pre style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; margin: 0;"><<span>!-- Tab 2 HTML content --</span>></pre>
         </rux-tab-panel>
         <rux-tab-panel aria-labelledby="tab-id-1-3">
-          <pre
-            style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; margin: 0;"
-          ><<span>!-- Tab 3 HTML content --</span>></pre>
+          <pre style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; margin: 0;"><<span>!-- Tab 3 HTML content --</span>></pre>
         </rux-tab-panel>
       </rux-tab-panels>
     </div>
