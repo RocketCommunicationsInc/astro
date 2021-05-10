@@ -6,20 +6,6 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
-    }
     interface RuxButton {
         "disabled": boolean;
         "icon": string;
@@ -43,12 +29,6 @@ export namespace Components {
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
     interface HTMLRuxButtonElement extends Components.RuxButton, HTMLStencilElement {
     }
     var HTMLRuxButtonElement: {
@@ -68,27 +48,12 @@ declare global {
         new (): HTMLRuxGlobalStatusBarElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
         "rux-button": HTMLRuxButtonElement;
         "rux-clock": HTMLRuxClockElement;
         "rux-global-status-bar": HTMLRuxGlobalStatusBarElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
     interface RuxButton {
         "disabled"?: boolean;
         "icon"?: string;
@@ -111,7 +76,6 @@ declare namespace LocalJSX {
         "version"?: string;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
         "rux-button": RuxButton;
         "rux-clock": RuxClock;
         "rux-global-status-bar": RuxGlobalStatusBar;
@@ -121,7 +85,6 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "rux-button": LocalJSX.RuxButton & JSXBase.HTMLAttributes<HTMLRuxButtonElement>;
             "rux-clock": LocalJSX.RuxClock & JSXBase.HTMLAttributes<HTMLRuxClockElement>;
             "rux-global-status-bar": LocalJSX.RuxGlobalStatusBar & JSXBase.HTMLAttributes<HTMLRuxGlobalStatusBarElement>;
