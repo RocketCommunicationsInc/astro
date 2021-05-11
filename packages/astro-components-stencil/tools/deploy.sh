@@ -5,6 +5,8 @@ echo Running deployment script ...
 
 npm version patch
 
-git add -A
-git commit -m "Update package version to ${node -p "require('./package.json').version"}"
+version = node -p "require('./package.json').version"
+echo  "Update package version to ${version}"
+# git add -A
+# git commit -m
 
