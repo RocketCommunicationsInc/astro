@@ -1,0 +1,39 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": ["google"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    }
+  },
+  "plugins": ["@typescript-eslint", "html"],
+  "globals": {
+    "customElements": true,
+    "HTMLImports": true,
+    "Polymer": true,
+    "ShadyDOM": true,
+    "ShadyCSS": true
+  },
+  "rules": {
+    "require-jsdoc": 0,
+    "no-unused-vars": ["error", { "vars": "local" }],
+    "no-console": 1,
+    "max-len": [
+      1,
+      120,
+      2,
+      {
+        "ignoreUrls": true,
+        "ignoreStrings": true
+      }
+    ]
+  }
+}
