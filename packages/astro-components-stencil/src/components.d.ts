@@ -27,6 +27,9 @@ export namespace Components {
         "appname": string;
         "version": string;
     }
+    interface RuxStatus {
+        "status": string;
+    }
 }
 declare global {
     interface HTMLRuxButtonElement extends Components.RuxButton, HTMLStencilElement {
@@ -47,10 +50,17 @@ declare global {
         prototype: HTMLRuxGlobalStatusBarElement;
         new (): HTMLRuxGlobalStatusBarElement;
     };
+    interface HTMLRuxStatusElement extends Components.RuxStatus, HTMLStencilElement {
+    }
+    var HTMLRuxStatusElement: {
+        prototype: HTMLRuxStatusElement;
+        new (): HTMLRuxStatusElement;
+    };
     interface HTMLElementTagNameMap {
         "rux-button": HTMLRuxButtonElement;
         "rux-clock": HTMLRuxClockElement;
         "rux-global-status-bar": HTMLRuxGlobalStatusBarElement;
+        "rux-status": HTMLRuxStatusElement;
     }
 }
 declare namespace LocalJSX {
@@ -75,10 +85,14 @@ declare namespace LocalJSX {
         "appname"?: string;
         "version"?: string;
     }
+    interface RuxStatus {
+        "status"?: string;
+    }
     interface IntrinsicElements {
         "rux-button": RuxButton;
         "rux-clock": RuxClock;
         "rux-global-status-bar": RuxGlobalStatusBar;
+        "rux-status": RuxStatus;
     }
 }
 export { LocalJSX as JSX };
@@ -88,6 +102,7 @@ declare module "@stencil/core" {
             "rux-button": LocalJSX.RuxButton & JSXBase.HTMLAttributes<HTMLRuxButtonElement>;
             "rux-clock": LocalJSX.RuxClock & JSXBase.HTMLAttributes<HTMLRuxClockElement>;
             "rux-global-status-bar": LocalJSX.RuxGlobalStatusBar & JSXBase.HTMLAttributes<HTMLRuxGlobalStatusBarElement>;
+            "rux-status": LocalJSX.RuxStatus & JSXBase.HTMLAttributes<HTMLRuxStatusElement>;
         }
     }
 }
