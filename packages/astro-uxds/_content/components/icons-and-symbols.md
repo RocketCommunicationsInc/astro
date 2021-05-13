@@ -47,7 +47,7 @@ Action Icons initiate actions or state changes to objects or processes.
 
 ### Utility Icons
 
-Utility Icons represent access to tools used to modify the settings for a component, object or globally. Utility Icons are also accompanied by a descriptive name.
+Utility Icons represent access to tools used to modify the settings for a component, object, or globally. Utility Icons are also accompanied by a descriptive name.
 
 ![Examples of Astro Utility Icons](/img/components/icons-utility.png "Examples of Astro Utility Icons")
 
@@ -61,7 +61,7 @@ A Component Icon is a pictorial representation of an action associated with a sc
 
 ## Astro Symbol Classes
 
-Astro Symbols are associated with something being monitored and whose state is being communicated to the user. A user may make a setting change based on an items status, but the Status Symbol will only change if the status of the thing being monitored changes.
+Astro Symbols are associated with something being monitored and whose state is being communicated to the user. A user may make a setting change based on an item's status, but the Status Symbol will only change if the status of the thing being monitored changes.
 
 ::: caution
 Status Symbols are not to be altered as they are appended to icons for ADA 508 and WCAG 2.0 compliance.
@@ -95,7 +95,7 @@ This Notification Symbol shows that five events related to a Satellite have occu
 
 An Icon may also include a Label and Sub-Label.
 
-![Anatomy of icon label and sublable.](/img/components/icons-labeling.png "Anatomy of icon label and sublable.")
+![Anatomy of icon label and sub-label.](/img/components/icons-labeling.png "Anatomy of icon label and sub-label.")
 
 An Icon Label provides the name of the item being represented. An Icon Label should not change.
 
@@ -109,11 +109,11 @@ An Icon Sub-Label provides additional information to the user and may be dynamic
 
 ![Do: Allow ample space between Icons and Symbols.](/img/components/icons-do-2.png "Do: Allow ample space between Icons and Symbols.")
 
-![Do:  In a horizontal layout, align horizontally based on the center of each Icon when height and width may vary.](/img/components/icons-do-3.png "Do:  In a horizontal layout, align horizontally based on the center of each Icon when height and width may vary.")
+![Do: In a horizontal layout, align horizontally based on the center of each Icon when height and width may vary.](/img/components/icons-do-3.png "Do: In a horizontal layout, align horizontally based on the center of each Icon when height and width may vary.")
 
 ![Do: Use Icons and Symbols consistently across applications.](/img/components/icons-do-4.png "Do: Use Icons and Symbols consistently across applications.")
 
-![Do:  Use standard Health and Status indication colors and Symbols.](/img/components/icons-do-5.png "Do:  Use standard Health and Status indication colors and Symbols.")
+![Do: Use standard Health and Status indication colors and Symbols.](/img/components/icons-do-5.png "Do: Use standard Health and Status indication colors and Symbols.")
 
 ![Do: In a vertical layout, align vertically based on the center of each Icon when height and width vary.](/img/components/icons-do-6.png "Do: In a vertical layout, align vertically based on the center of each Icon when height and width vary.")
 

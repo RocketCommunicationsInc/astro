@@ -14,7 +14,7 @@ The images depicted on this page use the color palette and fonts from Astro 4. A
 
 The purpose of a Telemetry, Tracking, and Command (TT&C) system is to support missions requiring communication between satellites and ground systems. Key aspects of this include tracking the satellites, monitoring and maintaining their state of health (SOH) via telemetry data, and transmitting commands to them to achieve mission objectives. An analysis of existing systems and task flows reveals three main components to supporting TT&C services:
 
-- **Monitor Constellation** - monitor the status, health and function of a satellite constellation and the systems it relies on.
+- **Monitor Constellation** - monitor the status, health, and function of a satellite constellation and the systems it relies on.
 - **Command Satellites** - send and receive streams of data to and from a spacecraft, done using a set of commands arranged into a pass plan.
 - **Investigate Anomalies** - investigate spacecraft alerts and anomalies, as well as analyze subsystem mnemonics, measurements, value limits, etc.
 
@@ -25,11 +25,11 @@ The animated graphic below depicts a much simplified version of a TT&C task flow
 		<a href="#demo" class="demo" name="close">
 			<span class="icon-play"></span>
 			<img src="/img/service-specific-ux-design/ttc-phases-placeholder.png" markdown="1"
-			alt="TTC Phases" />
+			alt="TT&C Phases" />
 		</a>
 	</figure>
 	<a href="#close" class="lightbox" id="demo">
-		<img src="/img/service-specific-ux-design/ttc-phases.gif" alt="TTC Phases" />
+		<img src="/img/service-specific-ux-design/ttc-phases.gif" alt="TT&C Phases" />
 	</a>
 </div>
 
@@ -55,7 +55,7 @@ Based on this initial research and follow-up design iterations with operators an
 ![TT&C Application Suite](/img/service-specific-ux-design/ttc-suite-apps.png)
 
 :::col
-The TT&C App Suite comprises three integrated apps: Monitor, Command & Investigate.
+The TT&C App Suite comprises three integrated apps: Monitor, Command, & Investigate.
 
 - [TT&C Design Specifications (pdf)](https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/ttc-specifications.pdf)
 - [TT&C Wireframes (pdf)](https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/ttc-wireframes.pdf)
@@ -68,7 +68,7 @@ The TT&C App Suite comprises three integrated apps: Monitor, Command & Investiga
 ![TT&C Monitor App](/img/service-specific-ux-design/ttc-monitor-app.png)
 
 :::col
-The TT&C Monitor app allows operators to monitor status, alerts, health and function of an individual satellite and satellite constellations.
+The TT&C Monitor app allows operators to monitor status, alerts, health, and function of an individual satellite and satellite constellations.
 
 - [Overview of TT&C Monitor](/ttc-service-ux-design/ttc-monitor)
 - [Launch TT&C Monitor Sample App](https://ttc-monitor.astrouxds.com/)
@@ -97,7 +97,7 @@ The TT&C Command app allows operators to send and receive streams of data to and
 ![TT&C Schedule App](/img/service-specific-ux-design/ttc-investigate-app.png)
 
 :::col
-The TT&C Investigate app allows operators to investigate spacecraft alerts and anomalies and analyze subsystem mnemonics, measurements, limits, etc …
+The TT&C Investigate app allows operators to investigate spacecraft alerts and anomalies and analyze subsystem mnemonics, measurements, limits, etc.
 
 - [Overview of TT&C Investigate](/ttc-service-ux-design/ttc-investigate)
 - [Launch TT&C Investigate Sample App](https://ttc-investigate.astrouxds.com/)

@@ -200,6 +200,10 @@
 				"url": "/components/segmented-button"
 			},
 			{
+				"label": "Sign In",
+				"url": "/components/sign-in"
+			},
+			{
 				"label": "Select Menu",
 				"url": "/components/select"
 			},
@@ -216,16 +220,16 @@
 				"url": "/components/status-symbol"
 			},
 			{
+				"label": "Switch",
+				"url": "/components/switch"
+			},
+			{
 				"label": "Tabs",
 				"url": "/components/tabs"
 			},
 			{
 				"label": "Timeline",
 				"url": "/components/timeline"
-			},
-			{
-				"label": "Toggle",
-				"url": "/components/toggle"
 			},
 			{
 				"label": "Tree",

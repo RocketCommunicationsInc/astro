@@ -21,6 +21,7 @@ An Accordion is a device which presents a hierarchical set of items in which onl
 ## Rules of Thumb
 
 * Give titles to Accordions if content is not obvious to users.
+* Titles should use sentence case capitalization.
   ::: note
   Accordions are not commonly used for direct action or data manipulation. Use Accordions for navigation within a master-detail navigational pattern.
   :::
@@ -33,7 +34,7 @@ Clicking on an item in an Accordion selects and expands that item. If there are 
 
 :::two-col
 
-![Chapter 1 is selected, and its children are displayed.](/img/components/accordion-2.png "Do: Item 1 is selected, and its children are displayed.")
+![Chapter 1 is selected and its children are displayed.](/img/components/accordion-2.png "Do: Item 1 is selected and its children are displayed.")
 
 
 

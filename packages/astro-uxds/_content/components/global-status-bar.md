@@ -17,7 +17,7 @@ The Global Status Bar is a full width view across the top of an application — 
 ## Rules of Thumb
 
 - Make Monitoring Icons interactive to reveal in-depth information.
-- Make sure that Monitoring Icons use color coding, iconography and labels consistent with the standard design.
+- Make sure that Monitoring Icons use color coding, iconography, and labels consistent with the standard design.
 - Include the name of the application.
 
 ## Appearance and Behavior
@@ -40,7 +40,7 @@ When using the alternate light theme in Astro, the Global Status Bar and all of 
 
 ![Do: Correctly and consistently utilize the standard elements that comprise the Global Status Bar.](/img/components/global-status-do-1.png "Do: Correctly and consistently utilize the standard elements that comprise the Global Status Bar.")
 
-![Don’t: Use icons, labels and colors incorrectly.](/img/components/global-status-dont-1.png "Don’t: Use icons, labels and colors incorrectly.")
+![Don’t: Use icons, labels and colors incorrectly.](/img/components/global-status-dont-1.png "Don’t: Use icons, labels, and colors incorrectly.")
 
 ![Do: Left justify the application name and Top Level Nav (when utilized). Right justify Icons and Emergency Shut Off (when utilized).](/img/components/global-status-do-2.png "Do: Left justify the application name and Top Level Nav (when utilized). Right justify Icons and Emergency Shut Off (when utilized).")
 

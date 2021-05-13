@@ -8,7 +8,7 @@ title: Research
 
 # Research
 
-Research is essential to a project’s success. It reveals, clarifies and establishes the foundation on which the application resides. Overlooked needs and requirements in this critical phase greatly diminish the quality and overall usability of the design. Take time to thoroughly understand the app’s UX requirements by learning more about:
+Research is essential to a project’s success. It reveals, clarifies, and establishes the foundation on which the application resides. Overlooked needs and requirements in this critical phase greatly diminish the quality and overall usability of the design. Take time to thoroughly understand the app’s UX requirements by learning more about:
 
 ## The User
 
@@ -36,13 +36,13 @@ Research is essential to a project’s success. It reveals, clarifies and establ
 
 ## Research Tasks and Deliverables
 
-As you conduct your research, complete each of these tasks to develop a comprehensive, 360-degree view of the needs, goals and requirements for the UX Design
+As you conduct your research, complete each of these tasks to develop a comprehensive, 360-degree view of the needs, goals, and requirements for the UX Design.
 
 ### Key Research Tasks
 
 - Develop a concise Mission Statement.
 - Define the objectives and expectations for the application.
-- Continue to refer back to this statement throughout application development to avoid feature - drift and to stay on goal.
+- Continue to refer back to this statement throughout application development to avoid feature-drift and to stay on goal.
 - Review all project and application materials.
 - Interview and observe users.
 - Interview subject matter experts (SME’s).
@@ -52,7 +52,7 @@ As you conduct your research, complete each of these tasks to develop a comprehe
 
 ## User Requirements
 
-UX Design begins with extracting and documenting user requirements. Understanding the needs, wants and expectations of users creates the best user experience possible. Great apps go beyond meeting user requirements; they may solve problems that the user didn’t even know they had.
+UX Design begins with extracting and documenting user requirements. Understanding the needs, wants, and expectations of users creates the best user experience possible. Great apps go beyond meeting user requirements; they may solve problems that the user didn’t even know they had.
 
 ## Identify Required Features and Content
 
@@ -64,7 +64,7 @@ UX Design begins with extracting and documenting user requirements. Understandin
 
 ## Interview Users
 
-As early as possible, interview users for a general understanding of their goals and requirements. Get to know their needs, wants, limitations and preferences. Watch for patterns to emerge in the gathered data and observe unique variables. Typical users include:
+As early as possible, interview users for a general understanding of their goals and requirements. Get to know their needs, wants, limitations, and preferences. Watch for patterns to emerge in the gathered data and observe unique variables. Typical users include:
 
 - Administrator
 - Crew Chief
@@ -77,10 +77,9 @@ As early as possible, interview users for a general understanding of their goals
 
 ## Visit Users On Site
 
-Whenever possible, observe users in the process of doing their job on site. Take into consideration how the app fits into the physical environment in which it is used. Ask the user what they’re doing, and observe what they’re doing — this will often uncover findings that aren’t revealed during an interview.
+Whenever possible, observe users in the process of doing their job on site. Take into consideration how the app fits into the physical environment in which it is used. Ask the user what they’re doing and observe what they’re doing — this will often uncover findings that aren’t revealed during an interview.
 
 ## Develop User Personas
 
-- User Personas capture the user’s goals, motivations and limitations.
+- User Personas capture the user’s goals, motivations, and limitations.
 - Using the information gathered from user interviews and observation, create a profile that conveys a common understanding of the users for each role, including their primary motivations.
-

@@ -32,5 +32,7 @@ title: Design Resources
 - Powerpoint
 - Keynote
 - Axure
-- Invision
+- InVision
 - Sketch
+- Figma
+- Adobe XD

@@ -14,11 +14,11 @@ The images depicted on this page use the color palette and fonts from Astro 4. A
 
 For operators of a TT&C service, maintaining situational awareness is of critical importance, and the TT&C Monitor app is designed to support this requirement. During the UX research effort, operators expressed a desire for a quick and efficient way to view overall status of their constellation and all of their systems, something lacking in their current systems. To deliver on this, the design team worked with domain experts and the operators to identify the most important data and then display it in a clear, logical manner in the app.
 
-As operators’ primary TT&C app, the Monitor app would constantly occupy one of their large displays. The main usage would be in between contacts, when operators would use it to keep an eye on system and constellation health, prepare for upcoming contacts and view system trends.
+As operators’ primary TT&C app, the Monitor app would constantly occupy one of their large displays. The main usage would be in between contacts, when operators would use it to keep an eye on system and constellation health, prepare for upcoming contacts, and view system trends.
 
 ![TT&C Monitor App](/img/service-specific-ux-design/ttc-monitor-app.png)
 
-There are four main areas in the Monitor app: the Global Status Bar, Alerts panel, Constellation panel and Watcher panel. The key elements are described below, but you can find much more design and task flow detail in the [TT&C Design Specification and Wireframes](/ttc-service-ux-design/ttc-monitor#contentBottom) documents. You can also launch the [TT&C Monitor Sample App](https://ttc-monitor.astrouxds.com/) to explore the design interactively.
+There are four main areas in the Monitor app: the Global Status Bar, Alerts panel, Constellation panel, and Watcher panel. The key elements are described below, but you can find much more design and task flow detail in the [TT&C Design Specification and Wireframes](/ttc-service-ux-design/ttc-monitor#contentBottom) documents. You can also launch the [TT&C Monitor Sample App](https://ttc-monitor.astrouxds.com/) to explore the design interactively.
 
 ![TT&C Monitor App Details](/img/service-specific-ux-design/ttc-monitor-app-details.png)
 
@@ -39,7 +39,7 @@ The Alerts panel provides operators with a roll-up of alerts across the ground s
 :::two-col
 ![TT&C Monitor Alerts Details](/img/service-specific-ux-design/ttc-monitor-alerts-details.png)
 
-1. **Active Alert Hero Number** - Shows number of active alerts at a glance.
+1. **Active Alert Hero Number** - shows number of active alerts at a glance.
 2. **Filter Select menus** - filters alert list by severity and category.
 3. **Expandable List Items** - expands to show alert details and call-to-action (if applicable).
 4. **Investigate** - launches an instance of the TT&C Investigate App.
@@ -48,7 +48,7 @@ The Alerts panel provides operators with a roll-up of alerts across the ground s
 
 ## Constellation
 
-The Constellation panel shows the contacts for the satellites in the constellation. The operator has the option to either view these in a Timeline view, which shows past, current and future contacts along a scalable time range, or in a List view, which provides additional detail on each pass. In both views, the user can click a contact to open a [Modeless Pane](/patterns/modeless-panes) containing its Contact Details or the associated Pass Plan.
+The Constellation panel shows the contacts for the satellites in the constellation. The operator has the option to either view these in a Timeline view, which shows past, current, and future contacts along a scalable time range, or in a List view, which provides additional detail on each pass. In both views, the user can click a contact to open a [Modeless Pane](/patterns/modeless-panes) containing its Contact Details or the associated Pass Plan.
 
 ### Timeline View
 
@@ -70,7 +70,7 @@ The Constellation panel shows the contacts for the satellites in the constellati
 
 ## Contact Details and Pass Plan Pane
 
-The Contact Details Modeless Pane opens on the right side of the browser window. It allows operators to view contact details for a spacecraft — including information such as next pass time, AOS/LOS, state of contact as well as ground station details like name, azimuth and elevation. Operators can also toggle the view to display the Pass Plan for the spacecraft’s current/upcoming pass, which includes details like AOS commands, steps, and run lengths.
+The Contact Details Modeless Pane opens on the right side of the browser window. It allows operators to view contact details for a spacecraft — including information such as next pass time, AOS/LOS, and state of contact as well as ground station details like name, azimuth, and elevation. Operators can also toggle the view to display the Pass Plan for the spacecraft’s current/upcoming pass, which includes details like AOS commands, steps, and run lengths.
 
 ![TT&C Contact Details Pane](/img/service-specific-ux-design/ttc-monitor-contact-details.png)
 
@@ -85,7 +85,7 @@ The Watcher functionality allows the operator to flag and watch specific telemet
 
 1. Collapsible Item List - items in the watcher are categorized by spacecraft and can be collapsed or expanded to show the subsequent list of mnemonics being monitored.
 2. Mnemonics - hovering over a mnemonic value shows the longhand version of its name. This interaction is indicated by the dashed underline. Clicking a mnemonic/watcher item changes the graph on the right to reflect how the values have trended over time.
-3. Editable Threshold Value - threshold can be edited by clicking on the field, setting the desired value and saving changes by clicking the checkmark icon.
+3. Editable Threshold Value - threshold can be edited by clicking on the field, setting the desired value, and saving changes by clicking the checkmark icon.
 4. Action Menu - allows operators to remove items from the watchlist and/or investigate them in the TT&C Investigate application.
 5. Graph - shows mnemonic value trends over time.
 6. Data Values - hovering over a point in the trend line displays the associated value.
@@ -99,11 +99,11 @@ Below is an animated walkthrough of a representative task flow using the TT&C Mo
 		<a href="#demo" class="demo" name="close">
 			<span class="icon-play"></span>
 			<img src="/img/service-specific-ux-design/ttc-monitor-prep-for-pass-placeholder.png" 
-			alt="TTC Monitor Prep for Pass demo" />
+			alt="TT&C Monitor Prep for Pass demo" />
 		</a>
 	</figure>
 	<a href="#close" class="lightbox" id="demo">
-		<img src="/img/service-specific-ux-design/ttc-monitor-prep-for-pass.gif" alt="TTC Monitor Prep for pass" />
+		<img src="/img/service-specific-ux-design/ttc-monitor-prep-for-pass.gif" alt="TT&C Monitor Prep for pass" />
 	</a>
 </div>
 

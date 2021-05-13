@@ -4,8 +4,14 @@ path: /patterns/sample-app
 date: Last Modified
 layout: interior.template.njk
 title: Sample App
+status: deprecated
 ---
 
+::: note
+
+The content on this page and associated sample application have been deprecated.
+
+:::
 # Sample App
 
 ## Putting It Together

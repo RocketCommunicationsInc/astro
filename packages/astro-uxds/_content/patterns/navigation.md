@@ -10,17 +10,17 @@ title: Navigation
 
 An application is fundamentally shaped by its navigation. Navigation defines how the user moves through the application and establishes their mental model of the object hierarchy.
 
-It’s best to start with a consideration of the primary objects your application will display. How are those objects divided or grouped? Is there a hierarchy of objects or a flat organization? Are there a small number primary objects or many?
+It’s best to start with a consideration of the primary objects your application will display. How are those objects divided or grouped? Is there a hierarchy of objects or a flat organization? Are there a small number of primary objects or many?
 
 ## Master-Detail Navigation
 
-For a small, flat collection of like objects, consider Master-Detail navigation. Master-Detail is implemented with a list on the left and a detail panel on the right. The Master list shows key information for each item, the detail panel shows in-depth information and options.
+For a small, flat collection of like objects, consider Master-Detail navigation. Master-Detail is implemented with a list on the left and a detail panel on the right. The Master list shows key information for each item. The detail panel shows in-depth information and options.
 
 ![Master-detail sample app layout](/img/patterns/master-detail-nav.png)
 
 ## Tab Navigation
 
-Application objects that easily fall into a small number of distinct categories, or that represent a step-wise workflow, are a candidate for [Tab Navigation](/components/tabs). Examples include:
+Application objects that easily fall into a small number of distinct categories or that represent a step-wise workflow, are a candidate for [Tab Navigation](/components/tabs). Examples include:
 
 - Scheduled, In-progress, Done
 - Untested, Succeeded, Failed
@@ -28,7 +28,7 @@ Application objects that easily fall into a small number of distinct categories,
 
 Tab Navigation works best when the user can accomplish fundamental tasks within a tab before moving onto another.
 
-The contents of each tab may be similar objects with a different view, or unique objects or presentations.
+The contents of each tab may be similar objects with a different view or unique objects or presentations.
 
 ![Tab Navigation sample app layout](/img/patterns/tab-nav.png)
 
@@ -58,6 +58,6 @@ Applications that are principally organized around events on a realtime schedule
 
 ## Combining Navigation
 
-Navigation types are often combined within complex applications. For example, an application can have Tab main navigation, with Master-Detail sub-navigation.
+Navigation types are often combined within complex applications. For example, an application can have Tab main navigation with Master-Detail sub-navigation.
 
 ![Combined navigation sample app layout](/img/patterns/combined-nav.png)

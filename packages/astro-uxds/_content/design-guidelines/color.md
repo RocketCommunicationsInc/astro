@@ -83,14 +83,14 @@ The quaternary color palette is typically used in light-themed Astro application
 
 ## Status Colors
 
-Status colors have been selected to adhere to[ MIL Standard 2525D](https://www.jcs.mil/Portals/36/Documents/Doctrine/Other_Pubs/ms_2525d.pdf), [MIL Standard 1472G](http://everyspec.com/MIL-STD/MIL-STD-1400-1499/MIL-STD-1472G_39997/) and WCAG 2.0. Deviation from the primary color for each status is non-compliant. See the [status page](/patterns/status-system) for additional information about status color usage.
+Status colors have been selected to adhere to[ MIL Standard 2525D](https://www.jcs.mil/Portals/36/Documents/Doctrine/Other_Pubs/ms_2525d.pdf), [MIL Standard 1472G](http://everyspec.com/MIL-STD/MIL-STD-1400-1499/MIL-STD-1472G_39997/), and WCAG 2.0. Deviation from the primary color for each status is non-compliant. See the [status page](/patterns/status-system) for additional information about status color usage.
 
 ## Non-Status Colors
 
-Non-Status colors are designated for user interface elements that require distinct colors, but colors that do not conflict with status.
+Non-Status colors are designated for user interface elements that require colors that are distinct but that do not conflict with status.
 
 ::: note
-A common use for non-status colors as in identifying civilian assets or tagging.
+A common use for non-status colors is in identifying civilian assets or tagging.
 :::
 
 ## Tag 1

@@ -1,12 +1,14 @@
 ---
 tags: components
-path: /components/component-template
+path: /components/template
 date: Last Modified
 layout: components.template.njk
-title: Component Template
-demo: https://rocketcom.bitbucket.io/html-demos/component-template.html
-storybook: components-story--component-template
-git: component-template/
+title: Template
+demo: components-buttons--all-button-variants
+storybook: components-buttons--standard-button
+git: rux-button
+height: 260px
+theme: true
 ---
 
 # Component Template

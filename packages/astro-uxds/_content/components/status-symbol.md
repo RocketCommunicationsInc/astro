@@ -34,12 +34,12 @@ Place your cursor over any status symbol above to see an example.
 
 ## Related Pages
 
-- For a detailed description of how Status Symbols are used within Monitoring Icons, see Icons and Symbols.
-- To learn more about the usage of status colors, see Status System.
+- For a detailed description of how Status Symbols are used within Monitoring Icons, see [Icons and Symbols](/components/icons-and-symbols).
+- To learn more about the usage of status colors, see [Status System](/patterns/status-system).
 
 ## Status Colors
 
-Status colors are provided for both light and dark theme versions of Astro in Hex, RGB and CSS Custom Property values.
+Status colors are provided for both light and dark theme versions of Astro in Hex, RGB, and CSS Custom Property values.
 
 ### Dark Theme Status Colors
 

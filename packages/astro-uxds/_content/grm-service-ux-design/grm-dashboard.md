@@ -16,7 +16,7 @@ Given the large number of satellite contacts and equipment assets that operators
 
 ![GRM Dashboard App](/img/service-specific-ux-design/grm-dashboard-app.png)
 
-There are three main areas of the GRM Dashboard app: the Global Status Bar, the Alerts pane and a tabbed content area that displays either the Contacts page or the Equipment page. The key elements are described below, but you can find much more design and task flow detail in the GRM Design Specifications and Wireframes documents. You can also launch the GRM Dashboard Sample App to explore the design interactively.
+There are three main areas of the GRM Dashboard app: the Global Status Bar, the Alerts pane, and a tabbed content area that displays either the Contacts page or the Equipment page. The key elements are described below, but you can find much more design and task flow detail in the GRM Design Specifications and Wireframes documents. You can also launch the GRM Dashboard Sample App to explore the design interactively.
 
 ![GRM Dashboard App Details](/img/service-specific-ux-design/grm-dashboard-app-details.png)
 
@@ -32,7 +32,7 @@ As outlined on the [About GRM Designs](/grm-service-ux-design/about-the-grm-desi
 
 ## Alerts
 
-The Alerts panel provides operators with a roll-up of issues across the ground system, satellite vehicles and satellite subsystems. Operators can filter the alerts by Severity and Category, allowing them to quickly identify the most critical issues or focus in on particular areas of the global system. This allows operators to efficiently track their workflow and keeps the Alerts panel more sparsely populated, so they’ll be more likely to notice when new alerts come in.
+The Alerts panel provides operators with a roll-up of issues across the ground system, satellite vehicles, and satellite subsystems. Operators can filter the alerts by Severity and Category, allowing them to quickly identify the most critical issues or focus in on particular areas of the global system. This allows operators to efficiently track their workflow and keeps the Alerts panel more sparsely populated, so they’ll be more likely to notice when new alerts come in.
 :::two-col
 ![GRM Dashboard Alerts Details](/img/service-specific-ux-design/grm-dashboard-alert-details.png)
 
@@ -45,7 +45,7 @@ The Alerts panel provides operators with a roll-up of issues across the ground s
 
 ## Contacts
 
-The Contacts tab allows operators to view all contacts configured in the GRM app. Contacts can be filtered by status to allow operators to quickly identify those that failed or are currently executing. The contacts are displayed in the table along with important information such as Ground Station, Equipment String and AOS/LOS times, but can also be expanded to present additional detail. The Contacts Summary at the bottom provides operators with a view of contact counts over time, color coded by status.
+The Contacts tab allows operators to view all contacts configured in the GRM app. Contacts can be filtered by status to allow operators to quickly identify those that failed or are currently executing. The contacts are displayed in the table along with important information such as Ground Station, Equipment String, and AOS/LOS times, but can also be expanded to present additional detail. The Contacts Summary at the bottom provides operators with a view of contact counts over time, color coded by status.
 
 ![GRM Dashboard Contacts Details](/img/service-specific-ux-design/grm-dashboard-contact-details.png)
 
@@ -67,7 +67,7 @@ The Equipment tab provides operators with a usage summary of the major equipment
 
 ## Alert Details
 
-If operators choose to drill into an alert via the Investigate button in the Alerts panel, an Alert Details page is displayed in the main content area. The content of the page changes somewhat depending on whether the alert pertains to a contact or a piece of equipment, but each variant allows operators to view additional detail on the alert, dismiss or acknowledge it, or take some action to remedy it. The image below shows an example of the Alert Details page for a contact-related alert; you can find information on the equipment variant along with relevant task flows in the [GRM Design Specifications](/grm-service-ux-design/grm-dashboard#contentBottom) and Wireframes documents.
+If operators choose to drill into an alert via the Investigate button in the Alerts panel, an Alert Details page is displayed in the main content area. The content of the page changes somewhat depending on whether the alert pertains to a contact or a piece of equipment, but each variant allows operators to view additional detail on the alert, dismiss, acknowledge it, or take some action to remedy it. The image below shows an example of the Alert Details page for a contact-related alert; you can find information on the equipment variant along with relevant task flows in the [GRM Design Specifications](/grm-service-ux-design/grm-dashboard#contentBottom) and Wireframes documents.
 
 ![GRM Dashboard Alert Details](/img/service-specific-ux-design/grm-dashboard-contact-alert-details.png)
 

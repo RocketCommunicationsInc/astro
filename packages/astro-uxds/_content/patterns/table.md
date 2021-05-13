@@ -48,7 +48,3 @@ We maintain a [separate repo for the ag-Grid Astro theme](https://github.com/Roc
 * [Documentation](https://github.com/RocketCommunicationsInc/astro-ag-Grid/#astro-ag-grid-theme)
 * [Astro Theme SASS files](https://github.com/RocketCommunicationsInc/astro-ag-Grid/tree/master/src/css)
 * Working [example](https://astro-ag-grid-example.netlify.app/) of a complex table using the Astro theme
-
-
-
-

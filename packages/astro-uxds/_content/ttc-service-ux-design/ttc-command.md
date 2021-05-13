@@ -20,7 +20,7 @@ Another aspect of the design aimed at reducing cognitive load is to give operato
 
 ![TT&C Command App](/img/service-specific-ux-design/ttc-command-app.png)
 
-There are four main areas in the Command app: the Global Status Bar, Alerts panel, Pass Plan panel and System Health panel. The key elements are described below, but you can find much more design and task flow detail in the [TT&C Design Specification and Wireframes](/ttc-service-ux-design/ttc-command#contentBottom) documents. You can also launch the [TT&C Command Sample App](https://ttc-command.astrouxds.com/) to explore the design interactively.
+There are four main areas in the Command app: the Global Status Bar, Alerts panel, Pass Plan panel, and System Health panel. The key elements are described below, but you can find much more design and task flow detail in the [TT&C Design Specification and Wireframes](/ttc-service-ux-design/ttc-command#contentBottom) documents. You can also launch the [TT&C Command Sample App](https://ttc-command.astrouxds.com/) to explore the design interactively.
 ![TT&C Command App Details](/img/service-specific-ux-design/ttc-command-app-details.png)
 
 ## Global Status Bar
@@ -35,12 +35,12 @@ As outlined on the [About TT&C Designs](/ttc-service-ux-design/about-the-ttc-des
 
 ## Alerts
 
-The Alerts panel provides operators with a roll-up of spacecraft specific alerts, as well as communications, software, and its assigned ground station. Operators can filter the alerts by Severity and Category, allowing them to quickly identify the most severe issues or focus in on particular areas of the system. This allows operators to efficiently track their workflow and keeps the Alerts pane more sparsely populated, so they’ll be more likely to notice when new alerts come in. Operators can also drill in to see additional information on any of the alerts and launch an instance of the [TT&C Investigate App](/ttc-service-ux-design/ttc-investigate) to explore the issue further.
+The Alerts panel provides operators with a roll-up of spacecraft specific alerts, as well as communications, software, and its assigned ground station. Operators can filter the alerts by Severity and Category, allowing them to quickly identify the most severe issues or focus in on particular areas of the system. This allows operators to efficiently track their workflow and keeps the Alerts pane more sparsely populated, so they will be more likely to notice when new alerts come in. Operators can also drill in to see additional information on any of the alerts and launch an instance of the [TT&C Investigate App](/ttc-service-ux-design/ttc-investigate) to explore the issue further.
 
 :::two-col
 ![TT&C Command Alerts Detail](/img/service-specific-ux-design/ttc-monitor-alerts-details.png)
 
-1. **Active Alert Hero Number** - Shows number of active alerts at a glance.
+1. **Active Alert Hero Number** - shows number of active alerts at a glance.
 2. **Filter Select menus** - filters alert list by severity and category.
 3. **Expandable List Items** - expands to show alert details and call-to-action (if applicable).
 4. **Investigate** - launches an instance of the TT&C Investigate App.
@@ -49,7 +49,7 @@ The Alerts panel provides operators with a roll-up of spacecraft specific alerts
 
 ## Pass Plan
 
-The Pass Plan panel is where operators will track or initiate execution of the commands sent to the satellite. Depending on whether the current plan is running in Manual, Semi-Auto or Automated mode, operators will either explicitly initiate commands in this pane, simply monitor the progress as the system initiates the commands, or something in between. If it becomes necessary to insert a command in the plan, operators could use the Add to queue functionality at the bottom of the pane to search and specify the command to be inserted.
+The Pass Plan panel is where operators will track or initiate execution of the commands sent to the satellite. Depending on whether the current plan is running in Manual, Semi-Auto, or Automated mode, operators will either explicitly initiate commands in this pane, simply monitor the progress as the system initiates the commands, or something in between. If it becomes necessary to insert a command in the plan, operators could use the Add to queue functionality at the bottom of the pane to search and specify the command to be inserted.
 
 :::two-col
 ![TT&C Command Pass Plan Detail](/img/service-specific-ux-design/ttc-command-pass-plan-details.png)
@@ -58,7 +58,7 @@ The Pass Plan panel is where operators will track or initiate execution of the c
 2. **Pass Indicator** - allows operators to determine if they are in pre-pass, pass or post-pass in relation to the AOS/LOS for the contact.
 3. **Pass Plan** - an interactive checklist of instructions an operator is expected to complete during a pass. This includes, but is not limited to: Checkboxes, Select menus and play and pause controls.
 4. **Mnemonic Snapshot** - allows operators to inspect a mnemonic called out for verification in the pass plan.
-5. **Command Line** - allows operators to enter commands needed to maintain the overall health of the pass, for anomaly resolution and/or other operational needs.
+5. **Command Line** - allows operators to enter commands needed to maintain the overall health of the pass, for anomaly resolution, and/or other operational needs.
    :::
 
 ## System Health
@@ -84,11 +84,11 @@ Below is an animated walkthrough of a representative task flow using the TT&C Mo
 		<a href="#demo" class="demo" name="close">
 			<span class="icon-play"></span>
 			<img src="/img/service-specific-ux-design/ttc-command-execute-pass-plan-placeholder.png"
-			alt="TTC Command Execute Pass Plan demo" />
+			alt="TT&C Command Execute Pass Plan demo" />
 		</a>
 	</figure>
 	<a href="#close" class="lightbox" id="demo">
-		<img src="/img/service-specific-ux-design/ttc-command-execute-pass-plan.gif" alt="TTC Command Execute pass plan" />
+		<img src="/img/service-specific-ux-design/ttc-command-execute-pass-plan.gif" alt="TT&C Command Execute pass plan" />
 	</a>
 </div>
 

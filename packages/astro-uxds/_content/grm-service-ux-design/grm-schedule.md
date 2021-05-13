@@ -14,11 +14,11 @@ The images depicted on this page use the color palette and fonts from Astro 4. A
 
 Ground Resource Management (GRM) operations require ensuring that all the necessary equipment is available during the time windows when a target satellite is in range. Complicating this task is the fact that there are multiple simultaneous satellite contacts to manage, pieces of equipment that are shared amongst operational groups, and shifting priorities that can require a well-orchestrated schedule to be modified in-flight. Operators need to be able to monitor these impacts to the schedule and make the necessary modifications quickly to ensure that satellite operations can continue.
 
-The GRM Schedule app is designed to allow operators to view and interact with the full schedule of contacts via a Timeline or List View. In addition, it allows the operator to manage the contacts in a single view, including the ability to add, view details, filter, modify and delete contacts.
+The GRM Schedule app is designed to allow operators to view and interact with the full schedule of contacts via a Timeline or List View. In addition, it allows the operator to manage the contacts in a single view, including the ability to add, view details, filter, modify, and delete contacts.
 
 ![GRM Schedule App](/img/service-specific-ux-design/grm-schedule-app.png)
 
-There are three main areas in the Schedule app: the Global Status Bar, the Contacts panel and the Manage Contacts Pane. The key elements are described below, but you can find much more design and task flow detail in the GRM Design Specification and Wireframes documents. You can also launch the GRM Schedule Sample App to explore the design interactively.
+There are three main areas in the Schedule app: the Global Status Bar, the Contacts panel, and the Manage Contacts Pane. The key elements are described below, but you can find much more design and task flow detail in the GRM Design Specification and Wireframes documents. You can also launch the GRM Schedule Sample App to explore the design interactively.
 
 ![GRM Schedule App Details](/img/service-specific-ux-design/grm-schedule-app-details.png)
 
@@ -51,7 +51,7 @@ In the Timeline view, contacts are plotted by ground station and antenna on the 
 
 ### List View
 
-The List view shares many of the elements of the Timeline view including the time range display, data aggregates and view toggle controls. The main difference is that contacts are displayed in a tabular layout, which allows operators to see settings for contacts without having to click on them in the timeline. As such, it enables comparison of settings across contacts to show, for example, which ones share a particular element in an equipment string.
+The List view shares many of the elements of the Timeline view including the time range display, data aggregates, and view toggle controls. The main difference is that contacts are displayed in a tabular layout, which allows operators to see settings for contacts without having to click on them in the timeline. As such, it enables comparison of settings across contacts to show, for example, which ones share a particular element in an equipment string.
 
 ![GRM Schedule List View](/img/service-specific-ux-design/grm-schedule-list-details.png)
 

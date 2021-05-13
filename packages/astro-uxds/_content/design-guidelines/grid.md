@@ -16,7 +16,7 @@ The Astro Grid is a standard 12 [column](https://developer.mozilla.org/en-US/doc
 
 ![Sample grid 20px gutter.](/img/design-guidelines/grid-lg-20px-gutter.png 'Sample grid 20px gutter.')
 
-![Sample grid 10px gutter.](/img/design-guidelines/grid-lg-20px-gutter.png 'Sample grid 10px gutter.')
+![Sample grid 10px gutter.](/img/design-guidelines/grid-compact-10px-gutter.png 'Sample grid 10px gutter.')
 
 ## Breakpoints
 

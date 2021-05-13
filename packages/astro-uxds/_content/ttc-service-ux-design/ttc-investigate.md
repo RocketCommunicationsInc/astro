@@ -12,13 +12,13 @@ The images depicted on this page use the color palette and fonts from Astro 4. A
 :::
 [Launch TT&C Investigate Sample App](https://ttc-investigate.astrouxds.com) | [Design Materials and Source Code](#contentBottom)
 
-The Investigate app displays system schematics and status data for a selected satellite. This allows operators to gather additional detail on alerts, view the relationships of components in the equipment hierarchy and select particular values to add to the Watcher panel in the Monitor and Command apps.
+The Investigate app displays system schematics and status data for a selected satellite. This allows operators to gather additional detail on alerts, view the relationships of components in the equipment hierarchy, and select particular values to add to the Watcher panel in the Monitor and Command apps.
 
 UX research revealed that existing systems often require operators to drill-in through the hierarchy of systems and subsystems in a manner that opens a new window each time. This forces operators to spend time and effort managing windows in order to find data they need. To overcome this problem, the design of the Investigate app allows operators to select an item of interest from a tree structure on the left side of the window and then drill-in to more detail using panes to the right, keeping everything in a single window.
 
 ![TT&C Investigate App](/img/service-specific-ux-design/ttc-investigate-app.png)
 
-There are four main areas in the Investigate app: the Global Status Bar, Subsystem Tree Menu, Subsystem Assembly Layout and Mnemonic Data Table. The key elements are described below, but you can find much more design and task flow detail in the [TT&C Design Specification and Wireframes](/ttc-service-ux-design/ttc-investigate#contentBottom) documents. You can also launch the [TT&C Investigate Sample App](https://ttc-investigate.astrouxds.com/) to explore the design interactively.
+There are four main areas in the Investigate app: the Global Status Bar, Subsystem Tree Menu, Subsystem Assembly Layout, and Mnemonic Data Table. The key elements are described below, but you can find much more design and task flow detail in the [TT&C Design Specification and Wireframes](/ttc-service-ux-design/ttc-investigate#contentBottom) documents. You can also launch the [TT&C Investigate Sample App](https://ttc-investigate.astrouxds.com/) to explore the design interactively.
 
 ![TT&C Investigate App Details](/img/service-specific-ux-design/ttc-investigate-app-details.png)
 
@@ -76,11 +76,11 @@ Below is an animated walkthrough of a representative task flow using the TT&C In
 		<a href="#demo" class="demo" name="close">
 			<span class="icon-play"></span>
 			<img src="/img/service-specific-ux-design/ttc-investigate-add-watcher-placeholder.png" 
-			alt="TTC Investigate Add Watcher demo" />
+			alt="TT&C Investigate Add Watcher demo" />
 		</a>
 	</figure>
 	<a href="#close" class="lightbox" id="demo">
-		<img src="/img/service-specific-ux-design/ttc-investigate-add-watcher.gif" alt="TTC Investigate Add Watcher" />
+		<img src="/img/service-specific-ux-design/ttc-investigate-add-watcher.gif" alt="TT&C Investigate Add Watcher" />
 	</a>
 </div>
 

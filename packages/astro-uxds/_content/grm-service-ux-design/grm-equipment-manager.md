@@ -18,7 +18,7 @@ The GRM Equipment Manager app is designed to support this capability by consolid
 
 ![GRM Equipment Manager App](/img/service-specific-ux-design/grm-equipment-manager-app.png)
 
-There are three main areas of the GRM Equipment Manager app: the Global Status Bar, the Equipment Navigation Tree and a tabbed content area that can display either the Inoperable Equipment page or the Equipment Details page. The key elements are described below, but you can find much more design and task flow detail in the GRM Design Specification and Wireframes documents. You can also launch the GRM Equipment Manager Sample App to explore the design interactively.
+There are three main areas of the GRM Equipment Manager app: the Global Status Bar, the Equipment Navigation Tree, and a tabbed content area that can display either the Inoperable Equipment page or the Equipment Details page. The key elements are described below, but you can find much more design and task flow detail in the GRM Design Specification and Wireframes documents. You can also launch the GRM Equipment Manager Sample App to explore the design interactively.
 
 ![GRM Equipment Manager App Details](/img/service-specific-ux-design/grm-equipment-manager-app-details.png)
 
@@ -43,7 +43,7 @@ Along the left side of the GRM Equipment Manager app is a [navigation tree](/com
 
 ## Inoperable Equipment Page
 
-The default view of the Equipment Manager app is the Inoperable Equipment page, which contains a grid of equipment in a critical or serious alert state, organized by category and color coded by severity. This allows operators to quickly identify assets that need attention. From this view, operators can click on a piece of equipment to be taken to its details page for more information and to take action.
+The default view of the Equipment Manager app is the Inoperable Equipment page, which contains a grid of equipment in a critical or serious alert state, organized by category, and color coded by severity. This allows operators to quickly identify assets that need attention. From this view, operators can click on a piece of equipment to be taken to its details page for more information and to take action.
 
 ![GRM Equipment Manager Inoperable Equipment Page](/img/service-specific-ux-design/grm-equipment-manager-inop-details.png)
 

@@ -39,7 +39,7 @@ Be sure the current page is easily distinguishable from other pages referenced b
 
 :::two-col
 
-![Optionally, links for “Show All” and “Number of Results” may be displayed below page numbers. Links are centered below the Pagination on the same baseline.](/img/components/pagination-4.png)
+![Optionally, links for “Show all” and “Number of results” may be displayed below page numbers. Links are centered below the Pagination on the same baseline.](/img/components/pagination-4.png)
 
 ![When there are no Search results, suggest that the user amend the Search.](/img/components/pagination-5.png)
 :::

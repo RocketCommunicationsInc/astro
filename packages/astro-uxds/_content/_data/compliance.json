@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0",
+  "version": "3.0.0",
   "contents": [
     {
       "name": "General",
@@ -7,7 +7,7 @@
       "rules": [
         {
           "numeral": 1,
-          "rule": "All designs should follow the guidance marked as “Rules of Thumb”, “Do's” and “Don'ts” as described on individual component pages.",
+          "rule": "ASTRO UXDS provides developers with guidance to develop user interfaces. User interfaces must compy with the guidance in this section to be EGS Design Compliant. Developers are encouraged to conform to guidance in other sections identified as “Rules of Thumb”, “Do's” and “Don'ts” as described on individual component pages.",
           "status": "new"
         }
       ]
@@ -52,6 +52,11 @@
               "numeral": 3,
               "rule": "Text shall conform to the specified typography for [Heading](/design-guidelines/typography/#headings), [Body](/design-guidelines/typography/#body-text), and [Inline Text](/design-guidelines/typography/#inline-text-styles).",
               "status": "new"
+            },
+            {
+              "numeral": 4,
+              "rule": "Text within Astro components will use sentence case capitalization unless otherwise stated.",
+              "status": "new"
             }
           ]
         }
@@ -89,7 +94,72 @@
               "numeral": 1,
               "rule": "Data visualizations shall have no more than 8 colors per data set.",
               "status": "new"
+            },
+            {
+              "numeral": 2,
+              "rule": "Data visualizations shall use sentence case capitalization for titles, labels, and legends.",
+              "status": "new"
             }
+          ]
+        },
+        {
+          "name": "Tables",
+          "numeral": 3,
+          "link": "/patterns/table/",
+          "rules": [
+            {
+              "numeral": 1,
+              "rule": "Table titles, legends, and column labels shall use sentence case capitalization.",
+              "status": "new"
+            }
+          ]
+        },
+        {
+          "name": "Forms and Validation",
+          "numeral": 4,
+          "link": "/patterns/forms-and-validation/",
+          "rules": [
+            {
+              "numeral": 1,
+              "rule": "Form controls shall not use placeholder text in place of help text.",
+              "status": "new"
+            },
+            {
+              "numeral": 2,
+              "rule": "Help Text shall be left-aligned under the relevant form element, regardless of location of the form element’s label. The only exception is for Radio Button and Checkbox list item Help Text which shall be left-aligned to the item’s text and not its icon.",
+              "status": "new"
+            },
+            {
+              "numeral": 3,
+
+              "rule": "Required fields shall be marked with an asterisk to the right of the label when the majority of a form is optional.",
+              "status": "new"
+            },
+            {
+              "numeral": 4,
+              "rule": "Optional fields shall be marked with an asterisk to the right of the label when the majority of a form is required.",
+              "status": "new"
+            },
+            {
+              "numeral": 5,
+              "rule": "Help Text shall use sentence case capitalization.",
+              "status": "new"
+            },
+            {
+              "numeral": 6,
+              "rule": "Validation Text shall use sentence case capitalization.",
+              "status": "new"
+            },
+            {
+              "numeral": 7,
+              "rule": "Inline Validation Text shall be left-aligned under the relevant form element or group, regardless of location of the form element’s label.",
+              "status": "new"
+            },
+            {
+              "numeral": 8,
+              "rule": "Inline Validation Text shall replace Help Text when Help Text is present under a form element and an error state is triggered.",
+              "status": "new"
+            }            
           ]
         }
       ]
@@ -142,6 +212,16 @@
               "numeral": 8,
               "rule": "Outline Button style shall indicate the less preferred option in grouped Buttons.",
               "status": "current"
+            },
+            {
+              "numeral": 9,
+              "rule": "Primary Buttons indicating preferred user actions shall be placed to the right of buttons used for secondary user actions when in Button groups.",
+              "status": "current"
+            },
+            {
+              "numeral": 10,
+              "rule": "Button text shall use sentence case capitalization.",
+              "status": "new"
             }
           ]
         },
@@ -173,7 +253,17 @@
             {
               "numeral": 5,
               "rule": "Checkbox labels shall use sentence case capitalization.",
-              "status": "current"
+              "status": "new"
+            },
+            {
+              "numeral": 6,
+              "rule": "Checkbox list item Help Text shall be left-aligned to the item’s text and not its icon.",
+              "status": "new"
+            },
+            {
+              "numeral": 7,
+              "rule": "Inline Validation Text shall be left-aligned under the relevant checkbox list, regardless of location of the label.",
+              "status": "new"
             }
           ]
         },
@@ -206,6 +296,11 @@
               "numeral": 5,
               "rule": "Dialog Box text shall be clear, brief, and actionable.",
               "status": "new"
+            },
+            {
+              "numeral": 6,
+              "rule": "Dialog title and button labels shall use sentence case capitalization.",
+              "status": "new"
             }
           ]
         },
@@ -216,8 +311,8 @@
           "rules": [
             {
               "numeral": 1,
-              "rule": "Menu items shall use title case capitalization.",
-              "status": "current"
+              "rule": "Menu items shall use sentence case capitalization.",
+              "status": "new"
             },
             {
               "numeral": 2,
@@ -228,6 +323,16 @@
               "numeral": 3,
               "rule": "Select menus shall not exceed 25 menu items. For longer lists, use a [Table](/patterns/table) instead.",
               "status": "current"
+            },
+            {
+              "numeral": 4,
+              "rule": "Help Text shall be left-aligned under the relevant Select Menu, regardless of location of the label.",
+              "status": "new"
+            },
+            {
+              "numeral": 5,
+              "rule": "Inline Validation Text shall be left-aligned under the relevant Select Menu, regardless of location of the label.",
+              "status": "new"
             }
           ]
         },
@@ -295,6 +400,11 @@
               "rule": "Grouped icons shall be equally sized.",
               "figure": "/img/components/icons-do-1.png",
               "status": "current"
+            },
+            {
+              "numeral": 7,
+              "rule": "Icon labels shall use sentence case capitalization.",
+              "status": "new"
             }
           ]
         },
@@ -315,24 +425,34 @@
             },
             {
               "numeral": 3,
-              "rule": "Input Field labels shall be aligned to the top left of the field.",
+              "rule": "Input Field labels shall be aligned to the top left, or to the left, of the field.",
               "figure": "/img/components/input-fields-do-1.png",
               "status": "current"
             },
             {
               "numeral": 4,
-              "rule": "Input Field shall have a corresponding label.",
+              "rule": "Input Fields shall have a corresponding label.",
               "status": "current"
             },
             {
               "numeral": 5,
-              "rule": "Input Field labels shall use title case capitalization.",
+              "rule": "Input Fields shall use sentence case capitalization.",
               "status": "current"
             },
             {
               "numeral": 6,
               "rule": "Input Field labels shall not use placeholder text in place of labels.",
               "status": "current"
+            },
+            {
+              "numeral": 7,
+              "rule": "Automatically formatted Input Fields shall use consistent, recognizable formatting.",
+              "status": "new"
+            },
+            {
+              "numeral": 4,
+              "rule": "Help Text shall be left-aligned under the relevant Input Field, regardless of location of the label.",
+              "status": "new"
             }
           ]
         },
@@ -377,6 +497,11 @@
               "numeral": 3,
               "rule": "When Log is scrolled to view older events, incoming events shall not change the scrolling position.",
               "status": "current"
+            },
+            {
+              "numeral": 4,
+              "rule": "Log component text shall use sentence case capitalization.",
+              "status": "new"
             }
           ]
         },
@@ -415,8 +540,8 @@
           "rules": [
             {
               "numeral": 1,
-              "rule": "Menu items shall use title case capitalization.",
-              "status": "current"
+              "rule": "Menu items shall use sentence case capitalization.",
+              "status": "new"
             },
             {
               "numeral": 2,
@@ -454,7 +579,7 @@
             },
             {
               "numeral": 3,
-              "rule": "A Progress indicator shall be displayed when a operation takes longer than five seconds to complete.",
+              "rule": "A Progress indicator shall be displayed when a operation takes longer than one second to complete.",
               "status": "current"
             }
           ]
@@ -476,7 +601,7 @@
             },
             {
               "numeral": 3,
-              "rule": "A Radio Button group shall not exceed 6 items. For longer lists, use a Drop Down Menu.",
+              "rule": "A Radio Button group shall not exceed 6 items. For longer lists, use a Select Menu.",
               "status": "current"
             },
             {
@@ -486,7 +611,7 @@
             },
             {
               "numeral": 5,
-              "rule": "Radio Button labels shall use title case capitalization.",
+              "rule": "Radio Button labels shall use sentence case capitalization.",
               "status": "current"
             },
             {
@@ -494,7 +619,17 @@
               "rule": "Radio Buttons shall have a corresponding label.",
               "figure": "/img/components/radio-buttons-do-1.png",
               "status": "current"
-            }
+            },
+            {
+              "numeral": 7,
+              "rule": "A Radio Button shall not initiate an immediate state change.",
+              "status": "current"
+            },
+            {
+              "numeral": 8,
+              "rule": "Radio Button list item Help Text shall be left-aligned to the item’s text and not its icon.",
+              "status": "new"
+            }             
           ]
         },
         {
@@ -512,7 +647,22 @@
               "rule": "When a Search Field has keyboard focus, the clear button shall be enabled.",
               "figure": "/img/components/search-focus.png",
               "status": "current"
-            }
+            },
+            {
+              "numeral": 3,
+              "rule": "Search text shall use sentence case capitalization.",
+              "status": "new"
+            },
+            {
+              "numeral": 4,
+              "rule": "Help Text shall be left-aligned under the relevant Search field, regardless of location of the label.",
+              "status": "new"
+            },
+            {
+              "numeral": 5,
+              "rule": "Inline Validation Text shall be left-aligned under the relevant Search field, regardless of location of the label.",
+              "status": "new"
+            }    
           ]
         },
         {
@@ -534,7 +684,17 @@
               "numeral": 3,
               "rule": "Segmented Buttons shall be limited to two to four choices.",
               "status": "current"
-            }
+            },
+            {
+              "numeral": 4,
+              "rule": "Segmented Buttons shall use sentence case capitalization.",
+              "status": "new"
+            },
+            {
+              "numeral": 5,
+              "rule": "Help Text shall be left-aligned under the relevant Segmented Button, regardless of location of the label.",
+              "status": "new"
+            }            
           ]
         },
         {
@@ -551,6 +711,11 @@
               "numeral": 2,
               "rule": "Status Symbols shall be displayed with the [specified colors](/components/status-symbol/#status-colors).",
               "status": "current"
+            },
+            {
+              "numeral": 3,
+              "rule": "Switch labels shall use sentence case capitalization.",
+              "status": "new"
             }
           ]
         },
@@ -566,8 +731,8 @@
             },
             {
               "numeral": 2,
-              "rule": "Tabs shall use title case capitalization.",
-              "status": "current"
+              "rule": "Tabs shall use sentence case capitalization.",
+              "status": "new"
             },
             {
               "numeral": 3,
@@ -582,24 +747,168 @@
           ]
         },
         {
-          "name": "Toggle",
+          "name": "Switch",
           "numeral": 18,
-          "link": "/components/toggle/",
+          "link": "/components/switch/",
           "rules": [
             {
               "numeral": 1,
-              "rule": "Toggle shall be used when the action takes immediate effect, without further user confirmation.",
+              "rule": "Switch shall be used when the action takes immediate effect, without further user confirmation.",
               "status": "current"
             },
             {
               "numeral": 2,
-              "rule": "Toggles shall have a corresponding label.",
+              "rule": "Switches shall have a corresponding label.",
               "status": "current"
             },
             {
               "numeral": 3,
-              "rule": "Toggles labels shall use title case capitalization.",
-              "status": "current"
+              "rule": "Switch labels shall use sentence case capitalization.",
+              "status": "new"
+            },
+            {
+              "numeral": 4,
+              "rule": "Help Text shall be left-aligned under the relevant Switch, regardless of location of the label.",
+              "status": "new"
+            }            
+          ]
+        },
+        {
+          "name": "Accordion",
+          "numeral": 19,
+          "link": "/components/accordion/",
+          "rules": [
+            {
+              "numeral": 1,
+              "rule": "Accordion titles shall use sentence case capitalization.",
+              "status": "new"
+            }
+          ]
+        },
+        {
+          "name": "Classification & Control Markings",
+          "numeral": 20,
+          "link": "/components/classification-markings/",
+          "rules": [
+            {
+              "numeral": 1,
+              "rule": "Classification and control markings shall follow all applicable laws and government standards.",
+              "status": "new"
+            },
+            {
+              "numeral": 2,
+              "rule": "If classified or controlled information is present on a screen, the screen shall include a fixed Overall Marking banner at the top.",
+              "status": "new"
+            },
+            {
+              "numeral": 3,
+              "rule": "Only government-approved control or classification text shall be included in Overall Marking banners and Portion Markings.",
+              "status": "new"
+            },
+            {
+              "numeral": 4,
+              "rule": "Only Astro's defined background and text colors shall be used for classification and control markings.",
+              "status": "new"
+            },
+            {
+              "numeral": 5,
+              "rule": "No other UI elements shall occlude the Overall Marking banner.",
+              "status": "new"
+            },
+            {
+              "numeral": 6,
+              "rule": "Marking text shall follow the standard marking structure with bold, centered text in all capital letters.",
+              "status": "new"
+            },
+            {
+              "numeral": 7,
+              "rule": "Portion Markings shall be placed at the top or top-left of the classified or controlled portion.",
+              "status": "new"
+            },
+            {
+              "numeral": 8,
+              "rule": "Text in the Overall Marking banner shall be as specific as possible to the highest level of classified information contained in that system or view.",
+              "status": "new"
+            },
+            {
+              "numeral": 9,
+              "rule": "The classification level itself (excepting CUI) in Overall Marking banners must be spelled out completely.",
+              "status": "new"
+            }
+          ]
+        },
+        {
+          "name": "Slider",
+          "numeral": 21,
+          "link": "/components/slider/",
+          "rules": [
+            {
+              "numeral": 1,
+              "rule": "Slider labels shall use sentence case capitalization.",
+              "status": "new"
+            },
+            {
+              "numeral": 2,
+              "rule": "Slider labels shall be aligned to the top left of the Slider's track or vertically centered with the track to the left of the Slider.",
+              "status": "updated"
+            },
+            {
+              "numeral": 3,
+              "rule": "Sliders shall have a visual indicator of the currently selected value.",
+              "status": "new"
+            },
+            {
+              "numeral": 4,
+              "rule": "Sliders shall have a corresponding label.",
+              "status": "new"
+            }
+          ]
+        },
+        {
+          "name": "Clock",
+          "numeral": 22,
+          "link": "/components/clock/",
+          "rules": [
+            {
+              "numeral": 1,
+              "rule": "Clock labels shall use sentence case capitalization.",
+              "status": "new"
+            }
+          ]
+        },
+        {
+          "name": "Notification Banner",
+          "numeral": 23,
+          "link": "/components/notification-banner/",
+          "rules": [
+            {
+              "numeral": 1,
+              "rule": "Notification Banner titles shall use sentence case capitalization.",
+              "status": "new"
+            }
+          ]
+        },
+        {
+          "name": "Timeline",
+          "numeral": 24,
+          "link": "/components/timeline/",
+          "rules": [
+            {
+              "numeral": 1,
+              "rule": "Timeline header and track titles shall use sentence case capitalization.",
+              "status": "new"
+            }
+          ]
+        },
+        {
+          "name": "Tree",
+          "numeral": 25,
+          "link": "/components/tree/",
+          "rules": [
+            {
+              "numeral": 1,
+              "rule": "Tree labels shall use sentence case capitalization.",
+              "status": "new"
             }
           ]
         }

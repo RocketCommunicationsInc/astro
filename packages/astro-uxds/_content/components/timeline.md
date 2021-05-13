@@ -35,7 +35,7 @@ The Ruler spans the bottom of the Tracks and shows increments of time in the sta
 
 ### Scroll Bar
 
-The Scroll Bar moves the Timeline forward and backward in the viewport. Even when scrolling, the Playhead stays at the current time of day. The Scroll Bar's appearance and interaction are managed by the OS and browser, and will look different on each system.
+The Scroll Bar moves the Timeline forward and backward in the viewport. Even when scrolling, the Playhead stays at the current time of day. The Scroll Bar's appearance and interaction are managed by the OS and browser and will look different on each system.
 
 ### Time Region
 

@@ -8,7 +8,7 @@ title: Data Visualization
 
 # Data Visualization
 
-The Data Visualization section covers best practices, principles and references tailored to Astro. A core objective of a Data Visualization is to make complex information accessible and easy to digest. Therefore, the interface presenting the data should be clean and straightforward in order to minimize users’ cognitive load and time spent searching.
+The Data Visualization section covers best practices, principles, and references tailored to Astro. A core objective of a Data Visualization is to make complex information accessible and easy to digest. Therefore, the interface presenting the data should be clean and straightforward in order to minimize users’ cognitive load and time spent searching.
 
 Visualizing data taps into pattern recognition ability and significantly accelerates the understanding of the data. You can look at a chart of data presented and understand it quickly by seeing the patterns and trends. This is a significantly faster way to comprehend information compared to reading numbers, comprehending the math, and then imagining in your mind how the numbers relate to each other.
 
@@ -63,7 +63,7 @@ Standard bar charts display the ranks of values more easily when sorted in order
 #### Stack Bar Chart
 
 ![Stack Bar Chart](/img/patterns/data-viz-stacked-bar.png)
-The standard way to show a statistical distribution - keep the gaps between columns small to highlight the ‘shape’ of the data. Example: GRM Sample app - contacts tab
+The standard way to show a statistical distribution - keep the gaps between columns small to highlight the ‘shape’ of the data. Example: [GRM Sample app](https://grm-dashboard.astrouxds.com/) - contacts tab
 
 :::
 
@@ -99,7 +99,7 @@ A circular shape that represents a percentage value of a whole. May also be depi
 #### Bubble Chart
 
 ![Bubble Chart](/img/patterns/data-viz-bubble.png)
-Bubble charts are used to visualize a data set with two to four dimensions. The first two dimensions are visualized as coordinates, the third as color and the fourth as size.
+Bubble charts are used to visualize a data set with two to four dimensions. The first two dimensions are visualized as coordinates, the third as color, and the fourth as size.
 
 :::
 
@@ -138,7 +138,7 @@ The following images reference the general components and features for designing
 
 ### Filter Select
 
-Filters are used to narrow what is displayed in the table. They may be presented in the header as Select menus, as a Segmented Button (e.g.View Select), or as an Input Field.
+Filters are used to narrow what is displayed in the table. They may be presented in the header as Select menus, as a Segmented Button (e.g. View Select), or as an Input Field.
 
 ![Example of filtering a chart view](/img/patterns/data-viz-anatomy.png)
 
@@ -149,12 +149,12 @@ When the data appearing in a chart contains multiple data series, it becomes mor
 ![Example of legend treatment in a chart view](/img/patterns/data-viz-legend.png)
 
 ::: note
-Legends should be arranged as per the order of appearance of the data plot (Eg: if ‘Usage’ data is plotted first, the corresponding legend comes first).
+Legends should be arranged as per the order of appearance of the data plot (e.g.: if ‘Usage’ data is plotted first, the corresponding legend comes first).
 :::
 
 ### Accessibility
 
-**Type**: Astro guidelines dictate a minimum type size of 14pt for axes and data points to maximize legibility. Open Sans, a sans-serif typeface, is required for optimum legibility. See [Typography](/design-guidelines/typography) for additional information.
+**Type**: Astro guidelines dictate a minimum type size of 14pt for axes and data points to maximize legibility. Roboto or Roboto Mono, sans-serif typefaces, are required for optimum legibility. See [Typography](/design-guidelines/typography) for additional information.
 
 **Color and Contrast**: Use colors that have sufficient contrast for the appropriate theme. If necessary, complement the use of color with a pattern or texture to convey different types of information. The non-status palette provided in the [Color](/design-guidelines/color) guidelines is applicable to both themes and is contrast compliant.
 
@@ -188,7 +188,7 @@ Astro provides guidance, components and code for creating a light and dark theme
 ![Sample line chart](/img/patterns/line.png)
 
 ::: note
-Line charts and similar visualizations may require higher contrast than a filled graphic, e.g. Donut chart. Higher contrast colors are provided in the Astro Color Guidelines.
+Line charts and similar visualizations may require higher contrast than a filled graphic, e.g. Donut chart. Higher contrast colors are provided in the [Astro Color Guidelines](/design-guidelines/color).
 :::
 
 ![Sample histogram chart](/img/patterns/histogram.png)

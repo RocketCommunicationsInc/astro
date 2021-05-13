@@ -39,7 +39,7 @@ For use outside of main navigation, a more compact tab component can be used.
 
 - Use only one row of Tabs.
 - Tab labels should not be more than two words and should accurately reflect what the user can expect to see.
-- Use title-style capitalization for labels.
+- Use sentence case capitalization for labels.
 
 ## Examples
 

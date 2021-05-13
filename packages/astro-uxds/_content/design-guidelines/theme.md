@@ -8,7 +8,7 @@ title: Theme
 
 # Theme
 
-Astro supports a brand new light theme along with the original and default dark theme.
+Astro supports a light theme along with the original, default dark theme.
 
 ![Example of a light theme Astro application.](/img/design-guidelines/theme-lightui.png "Example of a light theme Astro application.")
 
@@ -36,7 +36,7 @@ It is important to determine the users’ environment and select the appropriate
 
 ## Mixed Use
 
-Individual sections or components can override their inherited theme on a case-by-case basis, enabling the render an element with a light theme in an predominantly dark-themed interface and vice versa. Examples:
+Individual sections or components can override their inherited theme on a case-by-case basis, enabling the render of an element with a light theme in an predominantly dark-themed interface and vice versa. Examples:
 
 - Dark-themed elements in the global status bar
 - Light-themed modal window in a dark themed app
@@ -45,7 +45,7 @@ Individual sections or components can override their inherited theme on a case-b
 
 ## Future Considerations
 
-While not enabled by default at this time, light and dark themes can be swapped at runtime. For situations where lighting conditions can vary considerably, consider enabling runtime theme switching. A user-definable toggle in the application settings, an ambient light sensor or respecting OS level dark/light theme settings are all viable options.
+While not enabled by default at this time, light and dark themes can be swapped at runtime. For situations where lighting conditions can vary considerably, consider enabling runtime theme switching. A user-definable switch in the application settings, an ambient light sensor, or respecting OS level dark/light theme settings are all viable options.
 
 ## Implementation
 

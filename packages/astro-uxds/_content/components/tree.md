@@ -13,7 +13,7 @@ theme: true
 
 # Tree
 
-Trees present a hierarchical set of related items, and allow users to explore and select items within that hierarchy.
+Trees present a hierarchical set of related items and allow users to explore and select items within that hierarchy.
 
 ::: note
 Accordions are closely related to Trees, but are specialized to automatically display only a single branch. A Tree is managed by the users, opening and closing branches as necessary.
@@ -40,7 +40,7 @@ Items in the Tree that have children display a turn-down arrow. Items without ch
 
 The Tree may optionally show a [Status Symbol](/components/status-symbol) alongside each item.
 
-![Astro Tree Component with no status symbols.](/img/components/tree-with-status.png "Astro Tree Component with status symbols.")
+![Astro Tree Component with status symbols.](/img/components/tree-with-status.png "Astro Tree Component with status symbols.")
 :::
 
 ### Behavior

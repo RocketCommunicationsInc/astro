@@ -12,11 +12,11 @@ The images depicted on this page use the color palette and fonts from Astro 4. A
 :::
 The goal of the Service Specific UX Design effort is to promote the development of consistent, robust applications to support Enterprise Ground Services (EGS) by applying UX design process and the Astro Space UX Design System to create, document and implement baseline designs as interactive sample apps. The work described here focused on two key EGS services, [Ground Resource Management (GRM)][grm-designs] and [Telemetry, Tracking & Command (TT&C)][ttc-designs] and followed the process below:
 
-- Conducted [UX research](/design-process/research) with users and stakeholders to identify key task flows, constraints and current pain points in existing systems.
+- Conducted [UX research](/design-process/research) with users and stakeholders to identify key task flows, constraints, and current pain points in existing systems.
 - Used the findings from this research and the Astro Space UX Design System to [design](/design-process/ui-design) solutions to support GRM and TT&C Services.
 - In partnership with users and stakeholders, iteratively evaluated and improved on the designs to ensure they support the key task flows in an efficient and usable manner.
 - Implemented the resulting designs as interactive sample applications using the [Astro UI Components](/components/readme).
-- Provided the detailed design specifications, wireframes, sample applications and source code as [downloadable resources](/downloads) to teams looking to develop applications supporting GRM and TT&C Services.
+- Provided the detailed design specifications, wireframes, sample applications, and source code as [downloadable resources](/downloads) to teams looking to develop applications supporting GRM and TT&C Services.
 
 This effort included many hours of interviews with users and stakeholders, detailed analysis of task flows and requirements, and iterative evaluation and improvement to the designs based on user feedback. All of this was done with the intent that the sample app designs be used as a reference for developing GRM and TT&C apps, thus fostering a consistent, successful user experience across systems that support this functionality.
 

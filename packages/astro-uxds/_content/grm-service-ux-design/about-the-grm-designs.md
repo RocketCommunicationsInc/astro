@@ -11,7 +11,7 @@ title: About the GRM Designs
 The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 5 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, *not* visual design guidance.
 :::
 
-Directing and maintaining satellites orbiting in space requires coordinating personnel, processes and equipment on the ground. This is the role of Ground Resource Management (GRM) systems. Key aspects of GRM services include the following:
+Directing and maintaining satellites orbiting in space requires coordinating personnel, processes, and equipment on the ground. This is the role of Ground Resource Management (GRM) systems. Key aspects of GRM services include the following:
 
 - Monitor System - maintaining awareness of the status of critical components of the ground system, including equipment and scheduled contacts.
 - Manage Contacts - coordinate ground systems to ensure satellite contacts have all the equipment needed to achieve mission objectives.
@@ -22,7 +22,7 @@ Directing and maintaining satellites orbiting in space requires coordinating per
 UX research conducted in collaboration with users and domain experts on existing GRM workflows and systems found that:
 
 - The operators performing GRM tasks range from entry-level to advanced in terms of skill and engineering knowledge and typically work in a control center environment using a dedicated computer system with 2 or 3 large displays.
-- There isn’t an integrated software solution to manage the core components of GRM - instead the end-to-end workflow requires various pieces of software, phone calls, emails and paperwork.
+- There isn’t an integrated software solution to manage the core components of GRM - instead the end-to-end workflow requires various pieces of software, phone calls, emails, and paperwork.
 - Current GRM solutions lack a centralized place for operators to view the most important information at-a-glance.
 - In current GRM solutions, when critical information is presented alongside less critical information, such as an event log, it is often not clearly distinguished, making it difficult to quickly identify high priority items.
 - Existing GRM solutions are not consistently designed or structured between systems, thus complicating training requirements and hindering transfer of learning.
@@ -41,7 +41,7 @@ Based on this initial research and follow-up design iterations with operators an
 ![GRM Application Suite](/img/service-specific-ux-design/grm-suite-apps.png)
 :::col
 
-The GRM App Suite comprises three integrated sample apps: Dashboard, Equipment Manager and Schedule.
+The GRM App Suite comprises three integrated sample apps: Dashboard, Equipment Manager, and Schedule.
 
 - [GRM Design Specifications (pdf)](http://com.rocketcom.astrouxds.s3.amazonaws.com/attachments/cjx3r384i2gbihmqnxcwrq25d-grm-specifications.pdf)
 - [GRM Wireframes (pdf)](http://com.rocketcom.astrouxds.s3.amazonaws.com/attachments/cjtsx349t073s4iqnxbejjwg6-grm-wireframes.pdf)
