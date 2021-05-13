@@ -1,6 +1,6 @@
 {
   "name": "astro-web-components",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "Astro Web Components",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
@@ -37,6 +37,8 @@
     "@storybook/addon-essentials": "^6.2.9",
     "@storybook/addon-knobs": "^6.2.9",
     "@storybook/addon-links": "^6.2.9",
+    "@storybook/addons": "^6.2.9",
+    "@storybook/theming": "^6.2.9",
     "@storybook/web-components": "^6.2.9",
     "@typescript-eslint/eslint-plugin": "^4.22.1",
     "@typescript-eslint/parser": "^4.22.1",
