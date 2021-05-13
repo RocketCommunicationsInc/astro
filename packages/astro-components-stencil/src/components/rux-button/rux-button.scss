@@ -1,0 +1,164 @@
+/*
+**
+** 	ASTRO BUTTON
+** 	==========================================================================
+**  3.0 Notes
+**  - Removed Master Off Button Style
+**  - Replaced various properties with css custom properties to support
+**  - Removed .satcom class definition
+**  - Removed narrow/short definitions
+**	1.4 Notes
+**	- Added rux_ and BEM compatible classes to all satcom_ NOTE: satcom_ will be removed in a future version
+**	- Disabled user selection of text on all buttons
+**	- Removed redundant background hover from 'disabled' state by using :not() on the :hover state
+** 	- Removed redundant background hover from 'master off' by using :not() on the :hover state // deprecate after 1.4
+**  - Fixed Firefox alignment issue where text was misaligned vertically
+**  - Renamed half-height to short and half-width to narrow (Note: rux_ only, satcom_ retains old syntax)
+**  - Removed user-select and placed it in astro.css to apply to all input types
+**  - Embedded master off icon and removed the additional states required to handle icons and gradient backgrounds
+*/
+
+/* Global Button Styles */
+.rux-button {
+    display: flex;
+    position: relative;
+
+    margin: 0;
+    padding: 0 1rem;
+
+    height: 2.125rem;
+    min-width: 2.25rem;
+    /* max-width: 10.125rem; */
+
+    border-radius: var(--buttonBorderRadius);
+
+    color: var(--buttonTextColor);
+    font-family: var(--fontFamily);
+    font-size: 1rem;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    justify-content: center;
+    align-items: center;
+
+    user-select: none;
+
+    &:disabled {
+        opacity: var(--disabledOpacity);
+        cursor: var(--disabledCursor);
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    // Press/Active States
+    &:active:not([hover]):not([disabled]) {
+        border-color: var(--buttonActiveBorderColor) !important;
+        background-color: var(--buttonActiveBackgroundColor) !important;
+    }
+
+    &:hover:not([active]):not([disabled]):not(.rux-button--outline) {
+        border-color: var(--buttonHoverBorderColor);
+        background-color: var(--buttonHoverBackgroundColor);
+    }
+
+    // .rux-button-group
+    &-group {
+        display: flex;
+
+        .rux-button:not(:last-child) {
+            margin-right: 0.625rem;
+        }
+    }
+
+    &:not(.rux-button--outline) {
+        border: 1px solid var(--buttonBorderColor);
+        background-color: var(--buttonBackgroundColor);
+    }
+
+    // elements
+
+    // .rux-button__icon
+    &__icon {
+        height: 1.5rem;
+        width: 1.5rem;
+
+        margin-right: 0.625rem;
+        margin-left: -0.625rem;
+
+        .rux-icon {
+            height: auto;
+            width: 100%;
+            fill: var(--buttonTextColor);
+            color: var(--buttonTextColor);
+        }
+    }
+
+    // variants
+    // .rux-button--outline
+    &--outline {
+        color: var(--buttonOutlineTextColor);
+        background-color: var(--buttonOutlineBackgroundColor);
+        border: 1px solid var(--buttonOutlineBorderColor);
+        &:active:not([hover]):not([disabled]) {
+            border-color: var(--buttonOutlineBorderColor) !important;
+            background-color: var(--buttonOutlineBackgroundColor) !important;
+        }
+
+        &:hover:not([disabled]) {
+            color: var(--buttonOutlineTextColor);
+            background-color: var(--buttonOutlineHoverBackgroundColor);
+            border-color: var(--buttonOutlineHoverBorderColor);
+        }
+    }
+
+    &--icon-only {
+        .rux-button__icon {
+            margin-left: -0.625rem;
+            margin-right: -0.625rem;
+        }
+    }
+
+    &--small {
+        font-size: var(--smallLabelFontSize);
+        height: 1.625rem;
+        padding: 0 1rem;
+        line-height: 1;
+        .rux-button__icon {
+            height: 0.875rem;
+            width: 0.875rem;
+        }
+    }
+
+    &--large {
+        font-size: var(--largeLabelFontSize);
+        height: 2.875rem;
+        min-width: 3rem;
+        padding: 0 1rem;
+        .rux-button__icon {
+            height: 1.75rem;
+            width: 1.75rem;
+            margin-left: -0.8rem;
+            /* margin: -0.65rem 0.25rem -0.3rem calc((1.5rem - 0.625rem) * -1); */
+        }
+    }
+
+    &--critical,
+    &--critical:active:not([hover]):not([disabled]):not(.rux-button--outline) {
+        background-color: var(--colorCriticalDarken1) !important;
+        border-color: var(--colorCriticalDarken1) !important;
+
+        &:hover:not([active]):not([disabled]) {
+            background-color: var(--colorCritical);
+            border-color: var(--colorCritical);
+        }
+    }
+}
+
+.rux-button--large.rux-button--icon-only .rux-button__icon {
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
