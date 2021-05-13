@@ -7,7 +7,7 @@ npm run build
 # npm version patch
 
 version=$(node -p "require('./package.json').version")
-message="Update package version to ${version}"
+message="Components build. Update package version to ${version}"
 
 echo ${message}
 
