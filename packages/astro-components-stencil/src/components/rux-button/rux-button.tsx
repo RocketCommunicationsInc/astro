@@ -18,7 +18,6 @@ export class RuxButton {
         return (
             <button
                 type={type}
-                aria-disabled={disabled ? 'true' : null}
                 class={{
                     'rux-button': true,
                     'rux-button--outline': outline,
@@ -26,6 +25,7 @@ export class RuxButton {
                     'rux-button--large': size === 'large',
                     'rux-button--icon-only': iconOnly,
                 }}
+                aria-disabled={disabled ? 'true' : null}
                 disabled={disabled}
             >
                 <slot></slot>
