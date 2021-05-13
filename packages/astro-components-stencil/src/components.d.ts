@@ -12,6 +12,7 @@ export namespace Components {
         "iconOnly": boolean;
         "outline": boolean;
         "size"?: 'small' | 'large';
+        "type": string;
     }
     interface RuxClock {
         "aos": number;
@@ -70,6 +71,7 @@ declare namespace LocalJSX {
         "iconOnly"?: boolean;
         "outline"?: boolean;
         "size"?: 'small' | 'large';
+        "type"?: string;
     }
     interface RuxClock {
         "aos"?: number;
