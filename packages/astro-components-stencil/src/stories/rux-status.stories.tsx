@@ -1,6 +1,4 @@
 import { html, render } from 'lit-html';
-// import { RuxStatus } from "../components/rux-status/rux-status"
-
 //@ts-ignore
 import Readme from '../components/rux-status/readme.md';
 
