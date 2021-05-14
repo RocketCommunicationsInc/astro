@@ -27,7 +27,6 @@ export class RuxStatus {
             <Host
                 status={this.status}
             />
-            // <div>heyoooo</div>
         )
     }
 }
