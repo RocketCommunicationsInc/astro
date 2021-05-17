@@ -1,17 +1,20 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, Watch } from '@stencil/core';
 
 @Component({
   tag: 'rux-monitoring-icon',
-  styleUrl: 'rux-monitoring-icon.css',
+  styleUrls: {
+    default: 'rux-monitoring-icon.dark.scss',
+    light: 'rux-monitoring-icon.light.scss'
+  },
   shadow: true,
 })
 export class RuxMonitoringIcon {
-  @Prop({reflect: true}) status: string;
-  @Prop() label: string;
-  @Prop() sublabel: string;
-  @Prop() icon: string;
-  @Prop() notifications: number;
-  @Prop() library: string;
+  @Prop({reflect: true}) status: string = 'normal';
+  @Prop() label: string = '';
+  @Prop() sublabel: string = '';
+  @Prop() icon: string = '';
+  @Prop() notifications: number = 0;
+  @Prop() library: string = undefined;
 
   _collapseNotification(value: number) {
     const n = Math.floor(value);
@@ -40,6 +43,20 @@ export class RuxMonitoringIcon {
 
     return _shorthand;
   }
+
+  @Watch('status')
+  validateStatus(newValue: string) {
+      const statusTypes = {
+          off: true,
+          standby: true,
+          normal: true,
+          caution: true,
+          serious: true,
+          critical: true,
+      }
+      if (!statusTypes[newValue]) { throw new Error('valid status required') }
+  }
+
 
   render() {
     return (
