@@ -183,4 +183,3 @@ export class RuxClassificationMarking extends LitElement {
         `
     }
 }
-customElements.define('rux-classification-marking', RuxClassificationMarking)

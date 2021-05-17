@@ -1,3 +1,59 @@
 :host {
-  display: block;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    min-height: 26px;
+    box-sizing: border-box;
+    font-size: var(--fontSize);
+    font-weight: bold;
+    font-family: var(--fontFamily);
+    text-transform: uppercase;
+    transition: top 0.5s ease;
+    overflow-wrap: anywhere;
+    color: var(--classificationTextColorLight);
+    background-color: var(--classificationUnclassifiedBackgroundColor);
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    width: 100%;
+}
+
+:host([tag]) {
+    position: relative;
+    align-items: center;
+    top: auto;
+    left: auto;
+    min-height: auto;
+    width: fit-content;
+    line-height: 1;
+    padding: 0.25rem 0.9375rem;
+    border-radius: 3px;
+    font-size: var(--fontSizeMD);
+}
+:host([classification='${this.marking('topsecretsci').style}']),
+:host([classification='topsecretsci']) {
+    background-color: var(--classificationTopSecretSCIBackgroundColor);
+    color: var(--classificationTextColorDark);
+}
+
+:host([classification='${this.marking('top-secret').style}']) {
+    background-color: var(--classificationTopSecretBackgroundColor);
+    color: var(--classificationTextColorDark);
+}
+:host([classification='${this.marking('secret').style}']),
+:host([classification='Secret']) {
+    background-color: var(--classificationSecretBackgroundColor);
+}
+:host([classification='${this.marking('confidential').style}']) {
+    background-color: var(--classificationConfidentialBackgroundColor);
+}
+:host([classification='${this.marking('controlled').style}']) {
+    background-color: var(--classificationControlledBackgroundColor);
+}
+:host([classification='${this.marking('unclassified').style}']) {
+    background-color: var(--classificationUnclassifiedBackgroundColor);
 }
