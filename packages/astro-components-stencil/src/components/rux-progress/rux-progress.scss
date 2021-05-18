@@ -34,26 +34,25 @@
     border-radius: 3px;
     font-size: var(--fontSizeMD);
 }
-:host([classification='${this.marking('topsecretsci').style}']),
+
 :host([classification='topsecretsci']) {
     background-color: var(--classificationTopSecretSCIBackgroundColor);
     color: var(--classificationTextColorDark);
 }
 
-:host([classification='${this.marking('top-secret').style}']) {
+:host([classification='topsecret']) {
     background-color: var(--classificationTopSecretBackgroundColor);
     color: var(--classificationTextColorDark);
 }
-:host([classification='${this.marking('secret').style}']),
-:host([classification='Secret']) {
+:host([classification='secret']) {
     background-color: var(--classificationSecretBackgroundColor);
 }
-:host([classification='${this.marking('confidential').style}']) {
+:host([classification='confidential']) {
     background-color: var(--classificationConfidentialBackgroundColor);
 }
-:host([classification='${this.marking('controlled').style}']) {
+:host([classification='controlled']) {
     background-color: var(--classificationControlledBackgroundColor);
 }
-:host([classification='${this.marking('unclassified').style}']) {
+:host([classification='unclassified']) {
     background-color: var(--classificationUnclassifiedBackgroundColor);
 }
