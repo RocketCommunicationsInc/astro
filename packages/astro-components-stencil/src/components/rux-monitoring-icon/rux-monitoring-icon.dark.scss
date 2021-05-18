@@ -1,0 +1,17 @@
+// I removed theme-based variable names
+@use "rux-monitoring-icon.common.scss" with (
+    $status-critical: rgb(255, 56, 56),
+    $status-serious: rgb(255, 179, 0),
+    $status-caution: rgb(252, 232, 58),
+    $status-normal: rgb(86, 240, 0),
+    $status-standby: rgb(45, 204, 255),
+    $status-off: rgb(158, 167, 173),
+    $font-color: #FFFFFF,
+);
+
+$status-critical: rgb(255, 56, 56);
+$status-serious: rgb(255, 179, 0);
+$status-caution: rgb(252, 232, 58);
+$status-normal: rgb(86, 240, 0);
+$status-standby: rgb(45, 204, 255);
+$status-off: rgb(158, 167, 173);

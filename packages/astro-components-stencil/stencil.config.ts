@@ -4,6 +4,8 @@ import { sass } from '@stencil/sass';
 export const config: Config = {
   namespace: 'astro-web-components',
   globalStyle: 'src/global/global.scss',
+  // For theme integration
+  globalScript: 'src/global/global.ts',
   outputTargets: [
     {
       type: 'dist',

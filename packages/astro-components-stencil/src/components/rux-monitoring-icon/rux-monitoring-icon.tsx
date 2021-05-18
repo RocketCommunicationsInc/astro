@@ -3,7 +3,7 @@ import { Component, Host, h, Prop, Watch } from '@stencil/core';
 @Component({
   tag: 'rux-monitoring-icon',
   styleUrls: {
-    default: 'rux-monitoring-icon.dark.scss',
+    dark: 'rux-monitoring-icon.dark.scss',
     light: 'rux-monitoring-icon.light.scss'
   },
   shadow: true,
