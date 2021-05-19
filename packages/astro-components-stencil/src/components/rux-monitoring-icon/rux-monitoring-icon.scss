@@ -1,13 +1,3 @@
-// Initializing with the default dark colors.
-// Theme-specific colors get updated with the @use with format
-$status-critical: rgb(255, 56, 56) !default;
-$status-serious: rgb(255, 179, 0) !default;
-$status-caution: rgb(252, 232, 58) !default;
-$status-normal: rgb(86, 240, 0) !default;
-$status-standby: rgb(45, 204, 255) !default;
-$status-off: rgb(158, 167, 173) !default;
-$font-color: #ffffff !default;
-
 :host {
     display: inline-block;
     padding: 0;
@@ -83,7 +73,7 @@ rux-status {
 }
 
 .rux-advanced-status__label {
-    color: $font-color;
+    color: var(--fontColor);
     font-size: 0.875rem;
     text-align: center;
     text-overflow: ellipsis;
@@ -99,33 +89,33 @@ rux-status {
 
 .rux-advanced-status__sublabel {
     font-size: 0.65em;
-    color: $font-color;
+    color: var(--fontColor);
     opacity: 0.6;
     display: block;
 }
 
 :host([status='off']) {
-    fill: $status-off;
+    fill: var(--colorOff);
 }
 
 :host([status='standby']) {
-    fill: $status-standby;
+    fill: var(--colorStandby);
 }
 
 :host([status='normal']) {
-    fill: $status-normal;
+    fill: var(--colorNormal);
 }
 
 :host([status='caution']) {
-    fill: $status-caution;
+    fill: var(--colorCaution);
 }
 
 :host([status='serious']) {
-    fill: $status-serious;
+    fill: var(--colorSerious);
 }
 
 :host([status='critical']) {
-    fill: $status-critical;
+    fill: var(--colorCritical);
 }
 
 // .rux-advanced-status {
