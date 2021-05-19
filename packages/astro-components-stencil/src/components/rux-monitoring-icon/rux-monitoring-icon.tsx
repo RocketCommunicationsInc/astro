@@ -60,22 +60,22 @@ export class RuxMonitoringIcon {
     )
   }
 
-//   get badgeTemplate() {
-//     return html`
-//       <div class="rux-advanced-status__badge" ?hidden="${!this.notifications}">
-//         ${collapseNumber(this.notifications)}
-//       </div>
-//     `;
-//   }
+  badgeTemplate() {
+    return (
+      <div class="rux-advanced-status__badge" aria-hidden="${!this.notifications}">
+        ${this._collapseNotification(this.notifications)}
+      </div>
+    )
+  }
 
-//   get labelTemplate() {
-//     return html`
-//       <div class="rux-advanced-status__label">
-//         ${this.label}
-//         <span class="rux-advanced-status__sublabel" ?hidden="${!this.sublabel}">${this.sublabel}</span>
-//       </div>
-//     `;
-//   }
+  labelTemplate() {
+    return (
+      <div class="rux-advanced-status__label">
+        ${this.label}
+        <span class="rux-advanced-status__sublabel" aria-hidden="${!this.sublabel}">${this.sublabel}</span>
+      </div>
+    );
+  }
 
 
   render() {
