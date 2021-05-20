@@ -4,12 +4,10 @@
 
 `npm install`
 
-## Storybook
+## Project build commands
 
-`npm run build` - First build Stencil library
-`npm run storybook` - Start the storybook server
-`npm start` - Start the Stencil dev server
-`npm run astro` - Start both Stencil and Storybook servers in parallel from single terminal window
+`npm run astro` - Starts both Stencil and Storybook for development
+`npm run build-astro-prod` - Builds Storybook static site for production in /storybook-static folder
 
 ## RuxIcon
 
@@ -19,11 +17,12 @@ In order to ship the RuxIcon component with all SVG assets included, we create i
 
 `npm run generate:icons`
 
-This command takes each .svg file in `src/icons` and creates Stencil components from them. 
+This command takes each .svg file in `src/icons` and creates Stencil components from them.
 
 ### Adding a new Icon or updating an existing Icon
 
 The `src/icons` folder is the single source of truth for Astro icons. To add a new icon, simply add the SVG file to the directory and run `npm run build`. To update an icon, the process is the same--simply copy the new SVG to the `src/icons` folder and run the build step again.
+
 ## Generating New Components
 
 `stencil generate`
