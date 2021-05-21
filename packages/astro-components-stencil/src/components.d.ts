@@ -144,6 +144,11 @@ export namespace Components {
         "icon": string;
         "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
+    interface RuxIconAddComment {
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
+    }
     interface RuxIconAddLocation {
         "color": string;
         "icon": string;
@@ -444,6 +449,11 @@ export namespace Components {
         "icon": string;
         "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
+    interface RuxIconAttachFile {
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
+    }
     interface RuxIconAttachMoney {
         "color": string;
         "icon": string;
@@ -655,6 +665,11 @@ export namespace Components {
         "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBorderAll {
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
+    }
+    interface RuxIconBorderBottom {
         "color": string;
         "icon": string;
         "size": 'extra-small' | 'small' | 'normal' | 'large';
@@ -2034,6 +2049,11 @@ export namespace Components {
         "icon": string;
         "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
+    interface RuxIconFormatSize {
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
+    }
     interface RuxIconFormatStrikethrough {
         "color": string;
         "icon": string;
@@ -2384,6 +2404,11 @@ export namespace Components {
         "icon": string;
         "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
+    interface RuxIconInsertComment {
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
+    }
     interface RuxIconInsertDriveFile {
         "color": string;
         "icon": string;
@@ -2395,6 +2420,11 @@ export namespace Components {
         "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconInsertInvitation {
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
+    }
+    interface RuxIconInsertLink {
         "color": string;
         "icon": string;
         "size": 'extra-small' | 'small' | 'normal' | 'large';
@@ -4184,6 +4214,11 @@ export namespace Components {
         "icon": string;
         "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
+    interface RuxIconShortText {
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
+    }
     interface RuxIconShowChart {
         "color": string;
         "icon": string;
@@ -5435,6 +5470,12 @@ declare global {
         prototype: HTMLRuxIconAddCircleOutlineElement;
         new (): HTMLRuxIconAddCircleOutlineElement;
     };
+    interface HTMLRuxIconAddCommentElement extends Components.RuxIconAddComment, HTMLStencilElement {
+    }
+    var HTMLRuxIconAddCommentElement: {
+        prototype: HTMLRuxIconAddCommentElement;
+        new (): HTMLRuxIconAddCommentElement;
+    };
     interface HTMLRuxIconAddLocationElement extends Components.RuxIconAddLocation, HTMLStencilElement {
     }
     var HTMLRuxIconAddLocationElement: {
@@ -5795,6 +5836,12 @@ declare global {
         prototype: HTMLRuxIconAssistantPhotoElement;
         new (): HTMLRuxIconAssistantPhotoElement;
     };
+    interface HTMLRuxIconAttachFileElement extends Components.RuxIconAttachFile, HTMLStencilElement {
+    }
+    var HTMLRuxIconAttachFileElement: {
+        prototype: HTMLRuxIconAttachFileElement;
+        new (): HTMLRuxIconAttachFileElement;
+    };
     interface HTMLRuxIconAttachMoneyElement extends Components.RuxIconAttachMoney, HTMLStencilElement {
     }
     var HTMLRuxIconAttachMoneyElement: {
@@ -6052,6 +6099,12 @@ declare global {
     var HTMLRuxIconBorderAllElement: {
         prototype: HTMLRuxIconBorderAllElement;
         new (): HTMLRuxIconBorderAllElement;
+    };
+    interface HTMLRuxIconBorderBottomElement extends Components.RuxIconBorderBottom, HTMLStencilElement {
+    }
+    var HTMLRuxIconBorderBottomElement: {
+        prototype: HTMLRuxIconBorderBottomElement;
+        new (): HTMLRuxIconBorderBottomElement;
     };
     interface HTMLRuxIconBorderClearElement extends Components.RuxIconBorderClear, HTMLStencilElement {
     }
@@ -7703,6 +7756,12 @@ declare global {
         prototype: HTMLRuxIconFormatShapesElement;
         new (): HTMLRuxIconFormatShapesElement;
     };
+    interface HTMLRuxIconFormatSizeElement extends Components.RuxIconFormatSize, HTMLStencilElement {
+    }
+    var HTMLRuxIconFormatSizeElement: {
+        prototype: HTMLRuxIconFormatSizeElement;
+        new (): HTMLRuxIconFormatSizeElement;
+    };
     interface HTMLRuxIconFormatStrikethroughElement extends Components.RuxIconFormatStrikethrough, HTMLStencilElement {
     }
     var HTMLRuxIconFormatStrikethroughElement: {
@@ -8123,6 +8182,12 @@ declare global {
         prototype: HTMLRuxIconInsertChartOutlinedElement;
         new (): HTMLRuxIconInsertChartOutlinedElement;
     };
+    interface HTMLRuxIconInsertCommentElement extends Components.RuxIconInsertComment, HTMLStencilElement {
+    }
+    var HTMLRuxIconInsertCommentElement: {
+        prototype: HTMLRuxIconInsertCommentElement;
+        new (): HTMLRuxIconInsertCommentElement;
+    };
     interface HTMLRuxIconInsertDriveFileElement extends Components.RuxIconInsertDriveFile, HTMLStencilElement {
     }
     var HTMLRuxIconInsertDriveFileElement: {
@@ -8140,6 +8205,12 @@ declare global {
     var HTMLRuxIconInsertInvitationElement: {
         prototype: HTMLRuxIconInsertInvitationElement;
         new (): HTMLRuxIconInsertInvitationElement;
+    };
+    interface HTMLRuxIconInsertLinkElement extends Components.RuxIconInsertLink, HTMLStencilElement {
+    }
+    var HTMLRuxIconInsertLinkElement: {
+        prototype: HTMLRuxIconInsertLinkElement;
+        new (): HTMLRuxIconInsertLinkElement;
     };
     interface HTMLRuxIconInsertPhotoElement extends Components.RuxIconInsertPhoto, HTMLStencilElement {
     }
@@ -10283,6 +10354,12 @@ declare global {
         prototype: HTMLRuxIconShoppingCartElement;
         new (): HTMLRuxIconShoppingCartElement;
     };
+    interface HTMLRuxIconShortTextElement extends Components.RuxIconShortText, HTMLStencilElement {
+    }
+    var HTMLRuxIconShortTextElement: {
+        prototype: HTMLRuxIconShortTextElement;
+        new (): HTMLRuxIconShortTextElement;
+    };
     interface HTMLRuxIconShowChartElement extends Components.RuxIconShowChart, HTMLStencilElement {
     }
     var HTMLRuxIconShowChartElement: {
@@ -11624,6 +11701,7 @@ declare global {
         "rux-icon-add-box": HTMLRuxIconAddBoxElement;
         "rux-icon-add-circle": HTMLRuxIconAddCircleElement;
         "rux-icon-add-circle-outline": HTMLRuxIconAddCircleOutlineElement;
+        "rux-icon-add-comment": HTMLRuxIconAddCommentElement;
         "rux-icon-add-location": HTMLRuxIconAddLocationElement;
         "rux-icon-add-photo-alternate": HTMLRuxIconAddPhotoAlternateElement;
         "rux-icon-add-shopping-cart": HTMLRuxIconAddShoppingCartElement;
@@ -11684,6 +11762,7 @@ declare global {
         "rux-icon-assignment-turned-in": HTMLRuxIconAssignmentTurnedInElement;
         "rux-icon-assistant": HTMLRuxIconAssistantElement;
         "rux-icon-assistant-photo": HTMLRuxIconAssistantPhotoElement;
+        "rux-icon-attach-file": HTMLRuxIconAttachFileElement;
         "rux-icon-attach-money": HTMLRuxIconAttachMoneyElement;
         "rux-icon-attachment": HTMLRuxIconAttachmentElement;
         "rux-icon-audiotrack": HTMLRuxIconAudiotrackElement;
@@ -11727,6 +11806,7 @@ declare global {
         "rux-icon-bookmark-border": HTMLRuxIconBookmarkBorderElement;
         "rux-icon-bookmarks": HTMLRuxIconBookmarksElement;
         "rux-icon-border-all": HTMLRuxIconBorderAllElement;
+        "rux-icon-border-bottom": HTMLRuxIconBorderBottomElement;
         "rux-icon-border-clear": HTMLRuxIconBorderClearElement;
         "rux-icon-border-color": HTMLRuxIconBorderColorElement;
         "rux-icon-border-horizontal": HTMLRuxIconBorderHorizontalElement;
@@ -12002,6 +12082,7 @@ declare global {
         "rux-icon-format-paint": HTMLRuxIconFormatPaintElement;
         "rux-icon-format-quote": HTMLRuxIconFormatQuoteElement;
         "rux-icon-format-shapes": HTMLRuxIconFormatShapesElement;
+        "rux-icon-format-size": HTMLRuxIconFormatSizeElement;
         "rux-icon-format-strikethrough": HTMLRuxIconFormatStrikethroughElement;
         "rux-icon-format-textdirection-l-to-r": HTMLRuxIconFormatTextdirectionLToRElement;
         "rux-icon-format-textdirection-r-to-l": HTMLRuxIconFormatTextdirectionRToLElement;
@@ -12072,9 +12153,11 @@ declare global {
         "rux-icon-input": HTMLRuxIconInputElement;
         "rux-icon-insert-chart": HTMLRuxIconInsertChartElement;
         "rux-icon-insert-chart-outlined": HTMLRuxIconInsertChartOutlinedElement;
+        "rux-icon-insert-comment": HTMLRuxIconInsertCommentElement;
         "rux-icon-insert-drive-file": HTMLRuxIconInsertDriveFileElement;
         "rux-icon-insert-emoticon": HTMLRuxIconInsertEmoticonElement;
         "rux-icon-insert-invitation": HTMLRuxIconInsertInvitationElement;
+        "rux-icon-insert-link": HTMLRuxIconInsertLinkElement;
         "rux-icon-insert-photo": HTMLRuxIconInsertPhotoElement;
         "rux-icon-invert-colors": HTMLRuxIconInvertColorsElement;
         "rux-icon-invert-colors-off": HTMLRuxIconInvertColorsOffElement;
@@ -12432,6 +12515,7 @@ declare global {
         "rux-icon-shop-two": HTMLRuxIconShopTwoElement;
         "rux-icon-shopping-basket": HTMLRuxIconShoppingBasketElement;
         "rux-icon-shopping-cart": HTMLRuxIconShoppingCartElement;
+        "rux-icon-short-text": HTMLRuxIconShortTextElement;
         "rux-icon-show-chart": HTMLRuxIconShowChartElement;
         "rux-icon-shuffle": HTMLRuxIconShuffleElement;
         "rux-icon-shutter-speed": HTMLRuxIconShutterSpeedElement;
@@ -12792,6 +12876,11 @@ declare namespace LocalJSX {
         "icon"?: string;
         "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
+    interface RuxIconAddComment {
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
+    }
     interface RuxIconAddLocation {
         "color"?: string;
         "icon"?: string;
@@ -13092,6 +13181,11 @@ declare namespace LocalJSX {
         "icon"?: string;
         "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
+    interface RuxIconAttachFile {
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
+    }
     interface RuxIconAttachMoney {
         "color"?: string;
         "icon"?: string;
@@ -13303,6 +13397,11 @@ declare namespace LocalJSX {
         "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBorderAll {
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
+    }
+    interface RuxIconBorderBottom {
         "color"?: string;
         "icon"?: string;
         "size"?: 'extra-small' | 'small' | 'normal' | 'large';
@@ -14682,6 +14781,11 @@ declare namespace LocalJSX {
         "icon"?: string;
         "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
+    interface RuxIconFormatSize {
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
+    }
     interface RuxIconFormatStrikethrough {
         "color"?: string;
         "icon"?: string;
@@ -15032,6 +15136,11 @@ declare namespace LocalJSX {
         "icon"?: string;
         "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
+    interface RuxIconInsertComment {
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
+    }
     interface RuxIconInsertDriveFile {
         "color"?: string;
         "icon"?: string;
@@ -15043,6 +15152,11 @@ declare namespace LocalJSX {
         "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconInsertInvitation {
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
+    }
+    interface RuxIconInsertLink {
         "color"?: string;
         "icon"?: string;
         "size"?: 'extra-small' | 'small' | 'normal' | 'large';
@@ -16832,6 +16946,11 @@ declare namespace LocalJSX {
         "icon"?: string;
         "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
+    interface RuxIconShortText {
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
+    }
     interface RuxIconShowChart {
         "color"?: string;
         "icon"?: string;
@@ -17952,6 +18071,7 @@ declare namespace LocalJSX {
         "rux-icon-add-box": RuxIconAddBox;
         "rux-icon-add-circle": RuxIconAddCircle;
         "rux-icon-add-circle-outline": RuxIconAddCircleOutline;
+        "rux-icon-add-comment": RuxIconAddComment;
         "rux-icon-add-location": RuxIconAddLocation;
         "rux-icon-add-photo-alternate": RuxIconAddPhotoAlternate;
         "rux-icon-add-shopping-cart": RuxIconAddShoppingCart;
@@ -18012,6 +18132,7 @@ declare namespace LocalJSX {
         "rux-icon-assignment-turned-in": RuxIconAssignmentTurnedIn;
         "rux-icon-assistant": RuxIconAssistant;
         "rux-icon-assistant-photo": RuxIconAssistantPhoto;
+        "rux-icon-attach-file": RuxIconAttachFile;
         "rux-icon-attach-money": RuxIconAttachMoney;
         "rux-icon-attachment": RuxIconAttachment;
         "rux-icon-audiotrack": RuxIconAudiotrack;
@@ -18055,6 +18176,7 @@ declare namespace LocalJSX {
         "rux-icon-bookmark-border": RuxIconBookmarkBorder;
         "rux-icon-bookmarks": RuxIconBookmarks;
         "rux-icon-border-all": RuxIconBorderAll;
+        "rux-icon-border-bottom": RuxIconBorderBottom;
         "rux-icon-border-clear": RuxIconBorderClear;
         "rux-icon-border-color": RuxIconBorderColor;
         "rux-icon-border-horizontal": RuxIconBorderHorizontal;
@@ -18330,6 +18452,7 @@ declare namespace LocalJSX {
         "rux-icon-format-paint": RuxIconFormatPaint;
         "rux-icon-format-quote": RuxIconFormatQuote;
         "rux-icon-format-shapes": RuxIconFormatShapes;
+        "rux-icon-format-size": RuxIconFormatSize;
         "rux-icon-format-strikethrough": RuxIconFormatStrikethrough;
         "rux-icon-format-textdirection-l-to-r": RuxIconFormatTextdirectionLToR;
         "rux-icon-format-textdirection-r-to-l": RuxIconFormatTextdirectionRToL;
@@ -18400,9 +18523,11 @@ declare namespace LocalJSX {
         "rux-icon-input": RuxIconInput;
         "rux-icon-insert-chart": RuxIconInsertChart;
         "rux-icon-insert-chart-outlined": RuxIconInsertChartOutlined;
+        "rux-icon-insert-comment": RuxIconInsertComment;
         "rux-icon-insert-drive-file": RuxIconInsertDriveFile;
         "rux-icon-insert-emoticon": RuxIconInsertEmoticon;
         "rux-icon-insert-invitation": RuxIconInsertInvitation;
+        "rux-icon-insert-link": RuxIconInsertLink;
         "rux-icon-insert-photo": RuxIconInsertPhoto;
         "rux-icon-invert-colors": RuxIconInvertColors;
         "rux-icon-invert-colors-off": RuxIconInvertColorsOff;
@@ -18760,6 +18885,7 @@ declare namespace LocalJSX {
         "rux-icon-shop-two": RuxIconShopTwo;
         "rux-icon-shopping-basket": RuxIconShoppingBasket;
         "rux-icon-shopping-cart": RuxIconShoppingCart;
+        "rux-icon-short-text": RuxIconShortText;
         "rux-icon-show-chart": RuxIconShowChart;
         "rux-icon-shuffle": RuxIconShuffle;
         "rux-icon-shutter-speed": RuxIconShutterSpeed;
@@ -19011,6 +19137,7 @@ declare module "@stencil/core" {
             "rux-icon-add-box": LocalJSX.RuxIconAddBox & JSXBase.HTMLAttributes<HTMLRuxIconAddBoxElement>;
             "rux-icon-add-circle": LocalJSX.RuxIconAddCircle & JSXBase.HTMLAttributes<HTMLRuxIconAddCircleElement>;
             "rux-icon-add-circle-outline": LocalJSX.RuxIconAddCircleOutline & JSXBase.HTMLAttributes<HTMLRuxIconAddCircleOutlineElement>;
+            "rux-icon-add-comment": LocalJSX.RuxIconAddComment & JSXBase.HTMLAttributes<HTMLRuxIconAddCommentElement>;
             "rux-icon-add-location": LocalJSX.RuxIconAddLocation & JSXBase.HTMLAttributes<HTMLRuxIconAddLocationElement>;
             "rux-icon-add-photo-alternate": LocalJSX.RuxIconAddPhotoAlternate & JSXBase.HTMLAttributes<HTMLRuxIconAddPhotoAlternateElement>;
             "rux-icon-add-shopping-cart": LocalJSX.RuxIconAddShoppingCart & JSXBase.HTMLAttributes<HTMLRuxIconAddShoppingCartElement>;
@@ -19071,6 +19198,7 @@ declare module "@stencil/core" {
             "rux-icon-assignment-turned-in": LocalJSX.RuxIconAssignmentTurnedIn & JSXBase.HTMLAttributes<HTMLRuxIconAssignmentTurnedInElement>;
             "rux-icon-assistant": LocalJSX.RuxIconAssistant & JSXBase.HTMLAttributes<HTMLRuxIconAssistantElement>;
             "rux-icon-assistant-photo": LocalJSX.RuxIconAssistantPhoto & JSXBase.HTMLAttributes<HTMLRuxIconAssistantPhotoElement>;
+            "rux-icon-attach-file": LocalJSX.RuxIconAttachFile & JSXBase.HTMLAttributes<HTMLRuxIconAttachFileElement>;
             "rux-icon-attach-money": LocalJSX.RuxIconAttachMoney & JSXBase.HTMLAttributes<HTMLRuxIconAttachMoneyElement>;
             "rux-icon-attachment": LocalJSX.RuxIconAttachment & JSXBase.HTMLAttributes<HTMLRuxIconAttachmentElement>;
             "rux-icon-audiotrack": LocalJSX.RuxIconAudiotrack & JSXBase.HTMLAttributes<HTMLRuxIconAudiotrackElement>;
@@ -19114,6 +19242,7 @@ declare module "@stencil/core" {
             "rux-icon-bookmark-border": LocalJSX.RuxIconBookmarkBorder & JSXBase.HTMLAttributes<HTMLRuxIconBookmarkBorderElement>;
             "rux-icon-bookmarks": LocalJSX.RuxIconBookmarks & JSXBase.HTMLAttributes<HTMLRuxIconBookmarksElement>;
             "rux-icon-border-all": LocalJSX.RuxIconBorderAll & JSXBase.HTMLAttributes<HTMLRuxIconBorderAllElement>;
+            "rux-icon-border-bottom": LocalJSX.RuxIconBorderBottom & JSXBase.HTMLAttributes<HTMLRuxIconBorderBottomElement>;
             "rux-icon-border-clear": LocalJSX.RuxIconBorderClear & JSXBase.HTMLAttributes<HTMLRuxIconBorderClearElement>;
             "rux-icon-border-color": LocalJSX.RuxIconBorderColor & JSXBase.HTMLAttributes<HTMLRuxIconBorderColorElement>;
             "rux-icon-border-horizontal": LocalJSX.RuxIconBorderHorizontal & JSXBase.HTMLAttributes<HTMLRuxIconBorderHorizontalElement>;
@@ -19389,6 +19518,7 @@ declare module "@stencil/core" {
             "rux-icon-format-paint": LocalJSX.RuxIconFormatPaint & JSXBase.HTMLAttributes<HTMLRuxIconFormatPaintElement>;
             "rux-icon-format-quote": LocalJSX.RuxIconFormatQuote & JSXBase.HTMLAttributes<HTMLRuxIconFormatQuoteElement>;
             "rux-icon-format-shapes": LocalJSX.RuxIconFormatShapes & JSXBase.HTMLAttributes<HTMLRuxIconFormatShapesElement>;
+            "rux-icon-format-size": LocalJSX.RuxIconFormatSize & JSXBase.HTMLAttributes<HTMLRuxIconFormatSizeElement>;
             "rux-icon-format-strikethrough": LocalJSX.RuxIconFormatStrikethrough & JSXBase.HTMLAttributes<HTMLRuxIconFormatStrikethroughElement>;
             "rux-icon-format-textdirection-l-to-r": LocalJSX.RuxIconFormatTextdirectionLToR & JSXBase.HTMLAttributes<HTMLRuxIconFormatTextdirectionLToRElement>;
             "rux-icon-format-textdirection-r-to-l": LocalJSX.RuxIconFormatTextdirectionRToL & JSXBase.HTMLAttributes<HTMLRuxIconFormatTextdirectionRToLElement>;
@@ -19459,9 +19589,11 @@ declare module "@stencil/core" {
             "rux-icon-input": LocalJSX.RuxIconInput & JSXBase.HTMLAttributes<HTMLRuxIconInputElement>;
             "rux-icon-insert-chart": LocalJSX.RuxIconInsertChart & JSXBase.HTMLAttributes<HTMLRuxIconInsertChartElement>;
             "rux-icon-insert-chart-outlined": LocalJSX.RuxIconInsertChartOutlined & JSXBase.HTMLAttributes<HTMLRuxIconInsertChartOutlinedElement>;
+            "rux-icon-insert-comment": LocalJSX.RuxIconInsertComment & JSXBase.HTMLAttributes<HTMLRuxIconInsertCommentElement>;
             "rux-icon-insert-drive-file": LocalJSX.RuxIconInsertDriveFile & JSXBase.HTMLAttributes<HTMLRuxIconInsertDriveFileElement>;
             "rux-icon-insert-emoticon": LocalJSX.RuxIconInsertEmoticon & JSXBase.HTMLAttributes<HTMLRuxIconInsertEmoticonElement>;
             "rux-icon-insert-invitation": LocalJSX.RuxIconInsertInvitation & JSXBase.HTMLAttributes<HTMLRuxIconInsertInvitationElement>;
+            "rux-icon-insert-link": LocalJSX.RuxIconInsertLink & JSXBase.HTMLAttributes<HTMLRuxIconInsertLinkElement>;
             "rux-icon-insert-photo": LocalJSX.RuxIconInsertPhoto & JSXBase.HTMLAttributes<HTMLRuxIconInsertPhotoElement>;
             "rux-icon-invert-colors": LocalJSX.RuxIconInvertColors & JSXBase.HTMLAttributes<HTMLRuxIconInvertColorsElement>;
             "rux-icon-invert-colors-off": LocalJSX.RuxIconInvertColorsOff & JSXBase.HTMLAttributes<HTMLRuxIconInvertColorsOffElement>;
@@ -19819,6 +19951,7 @@ declare module "@stencil/core" {
             "rux-icon-shop-two": LocalJSX.RuxIconShopTwo & JSXBase.HTMLAttributes<HTMLRuxIconShopTwoElement>;
             "rux-icon-shopping-basket": LocalJSX.RuxIconShoppingBasket & JSXBase.HTMLAttributes<HTMLRuxIconShoppingBasketElement>;
             "rux-icon-shopping-cart": LocalJSX.RuxIconShoppingCart & JSXBase.HTMLAttributes<HTMLRuxIconShoppingCartElement>;
+            "rux-icon-short-text": LocalJSX.RuxIconShortText & JSXBase.HTMLAttributes<HTMLRuxIconShortTextElement>;
             "rux-icon-show-chart": LocalJSX.RuxIconShowChart & JSXBase.HTMLAttributes<HTMLRuxIconShowChartElement>;
             "rux-icon-shuffle": LocalJSX.RuxIconShuffle & JSXBase.HTMLAttributes<HTMLRuxIconShuffleElement>;
             "rux-icon-shutter-speed": LocalJSX.RuxIconShutterSpeed & JSXBase.HTMLAttributes<HTMLRuxIconShutterSpeedElement>;
