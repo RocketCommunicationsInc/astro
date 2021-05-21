@@ -28,5245 +28,5246 @@ export namespace Components {
         "version": string;
     }
     interface RuxIcon {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "label": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
         "viewBox": string;
     }
     interface RuxIcon360 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIcon3dRotation {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIcon4k {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAcUnit {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAccessAlarms {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAccessTime {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAccessibility {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAccessibilityNew {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAccessible {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAccessibleForward {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAccountBalance {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAccountBalanceWallet {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAccountBox {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAccountCircle {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAdb {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAdd {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAddAPhoto {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAddAlarm {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAddAlert {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAddBox {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAddCircle {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAddCircleOutline {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAddLocation {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAddPhotoAlternate {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAddShoppingCart {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAddToHomeScreen {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAddToPhotos {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAddToQueue {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAdjust {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAirlineSeatFlat {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAirlineSeatFlatAngled {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAirlineSeatIndividualSuite {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAirlineSeatLegroomExtra {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAirlineSeatLegroomNormal {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAirlineSeatLegroomReduced {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAirlineSeatReclineExtra {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAirlineSeatReclineNormal {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAirplanemodeActive {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAirplanemodeInactive {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAirplay {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAirportShuttle {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAlarm {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAlarmAdd {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAlarmOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAlarmOn {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAlbum {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAllInbox {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAllInclusive {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAllOut {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAlternateEmail {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAltitude {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAndroid {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAnnouncement {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAntenna {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAntennaOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAntennaReceive {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAntennaTransmit {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconApps {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArchive {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArrowBack {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArrowBackIos {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArrowDownward {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArrowDropDown {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArrowDropDownCircle {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArrowDropUp {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArrowForward {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArrowForwardIos {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArrowLeft {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArrowRight {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArrowRightAlt {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArrowUpward {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArtTrack {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAspectRatio {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAssessment {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAssignment {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAssignmentFind {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAssignmentLate {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAssignmentReturn {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAssignmentReturned {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAssignmentTurnedIn {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAssistant {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAssistantPhoto {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAttachMoney {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAttachment {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAudiotrack {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAutorenew {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAvTimer {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBackspace {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBackup {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBallot {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBarChart {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBattery20 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBattery30 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBattery50 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBattery60 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBattery80 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBattery90 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBatteryAlert {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBatteryCharging20 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBatteryCharging30 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBatteryCharging50 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBatteryCharging60 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBatteryCharging80 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBatteryCharging90 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBatteryChargingFull {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBatteryFull {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBatteryStd {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBatteryUnknown {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBeachAccess {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBeenhere {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBlock {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBluetooth {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBluetoothAudio {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBluetoothConnected {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBluetoothDisabled {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBluetoothSearching {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBlurCircular {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBlurLinear {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBlurOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBlurOn {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBook {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBookmark {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBookmarkBorder {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBookmarks {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBorderAll {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBorderClear {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBorderColor {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBorderHorizontal {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBorderInner {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBorderLeft {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBorderOuter {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBorderRight {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBorderStyle {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBorderTop {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBorderVertical {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrandingWatermark {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrightness1 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrightness2 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrightness3 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrightness4 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrightness5 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrightness6 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrightness7 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrightnessAuto {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrightnessHigh {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrightnessLow {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrightnessMedium {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrokenImage {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrush {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBubbleChart {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBugReport {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBuild {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBurstMode {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBusiness {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBusinessCenter {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCached {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCake {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCalendarToday {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCalendarViewDay {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCall {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCallEnd {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCallMade {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCallMerge {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCallMissed {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCallMissedOutgoing {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCallReceived {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCallSplit {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCallToAction {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCamera {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCameraAlt {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCameraEnhance {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCameraFront {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCameraRear {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCameraRoll {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCancel {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCancelPresentation {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCardGiftcard {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCardMembership {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCardTravel {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCasino {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCast {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCastConnected {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCastForEducation {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCategory {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCellWifi {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCenterFocusStrong {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCenterFocusWeak {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconChangeHistory {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconChat {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconChatBubble {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconChatBubbleOutline {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCheck {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCheckBox {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCheckBoxOutlineBlank {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCheckCircle {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCheckCircleOutline {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconChevronLeft {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconChevronRight {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconChildCare {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconChildFriendly {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconChromeReaderMode {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconClass {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconClear {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconClearAll {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconClose {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconClosedCaption {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCloud {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCloudCircle {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCloudDone {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCloudDownload {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCloudOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCloudQueue {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCloudUpload {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCode {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCollections {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCollectionsBookmark {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconColorLens {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconColorize {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconComment {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCommute {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCompare {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCompareArrows {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCompassCalibration {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconComputer {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconConfirmationNumber {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconContactMail {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconContactPhone {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconContactSupport {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconContacts {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconControlCamera {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconControlPoint {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconControlPointDuplicate {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCopyright {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCreate {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCreateNewFolder {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCreditCard {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCrop {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCrop169 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCrop32 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCrop54 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCrop75 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCropDin {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCropFree {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCropLandscape {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCropOriginal {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCropPortrait {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCropRotate {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCropSquare {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDashboard {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDataUsage {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDateRange {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDehaze {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDelete {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDeleteForever {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDeleteOutline {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDeleteSweep {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDepartureBoard {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDescription {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDesktopAccessDisabled {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDesktopMac {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDesktopWindows {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDetails {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDeveloperBoard {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDeveloperMode {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDeviceHub {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDeviceUnknown {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDevices {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDevicesOther {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDialerSip {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDialpad {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDirections {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDirectionsBike {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDirectionsBoat {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDirectionsBus {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDirectionsCar {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDirectionsRailway {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDirectionsRun {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDirectionsSubway {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDirectionsTransit {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDirectionsWalk {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDiscFull {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDns {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDock {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDomain {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDomainDisabled {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDone {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDoneAll {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDoneOutline {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDonutLarge {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDonutSmall {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDrafts {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDragHandle {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDragIndicator {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDriveEta {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDuo {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDvr {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEdit {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEditAttributes {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEditLocation {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEject {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEmail {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEnhancedEncryption {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEqualizer {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEquipment {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconError {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconErrorOutline {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEuroSymbol {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEvStation {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEvent {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEventAvailable {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEventBusy {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEventNote {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconExitToApp {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconExpandLess {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconExpandMore {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconExplicit {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconExplore {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconExploreOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconExposure {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconExposureNeg1 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconExposureNeg2 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconExposurePlus1 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconExposurePlus2 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconExposureZero {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconExtension {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFace {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFastForward {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFastRewind {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFastfood {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFavorite {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFavoriteBorder {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFeaturedPlayList {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFeaturedVideo {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFeedback {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFiberDvr {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFiberManualRecord {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFiberNew {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFiberPin {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFiberSmartRecord {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFileCopy {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilter {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilter1 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilter2 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilter3 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilter4 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilter5 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilter6 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilter7 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilter8 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilter9 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilter9Plus {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilterBAndW {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilterCenterFocus {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilterDrama {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilterFrames {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilterHdr {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilterList {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilterNone {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilterTiltShift {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilterVintage {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFindInPage {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFindReplace {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFingerprint {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFirstPage {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFitnessCenter {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFlag {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFlare {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFlashAuto {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFlashOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFlashOn {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFlight {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFlightLand {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFlightTakeoff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFlip {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFlipToBack {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFlipToFront {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFolder {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFolderOpen {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFolderShared {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFolderSpecial {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFontDownload {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatAlignCenter {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatAlignJustify {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatAlignLeft {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatAlignRight {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatBold {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatClear {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatColorFill {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatColorReset {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatColorText {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatIndentDecrease {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatIndentIncrease {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatItalic {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatLineSpacing {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatListBulleted {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatListNumbered {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatListNumberedRtl {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatPaint {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatQuote {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatShapes {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatStrikethrough {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatTextdirectionLToR {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatTextdirectionRToL {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatUnderlined {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconForum {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconForward {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconForward10 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconForward30 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconForward5 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFreeBreakfast {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFullscreen {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFullscreenExit {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFunctions {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGTranslate {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGamepad {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGames {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGavel {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGesture {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGetApp {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGif {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGolfCourse {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGpsFixed {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGpsNotFixed {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGpsOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGrade {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGradient {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGrain {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGraphicEq {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGridOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGridOn {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGroup {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGroupAdd {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGroupWork {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHd {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHdrOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHdrOn {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHdrStrong {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHdrWeak {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHeadset {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHeadsetMic {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHealing {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHearing {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHelp {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHelpOutline {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHighQuality {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHighlight {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHighlightOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHistory {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHome {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHorizontalSplit {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHotTub {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHotel {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHourglassEmpty {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHourglassFull {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHowToReg {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHowToVote {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHttp {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHttps {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconImage {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconImageAspectRatio {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconImageSearch {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconImportContacts {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconImportExport {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconImportantDevices {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconInbox {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconIndeterminateCheckBox {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconInfo {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconInput {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconInsertChart {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconInsertChartOutlined {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconInsertDriveFile {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconInsertEmoticon {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconInsertInvitation {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconInsertPhoto {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconInvertColors {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconInvertColorsOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconIso {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconKeyboard {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconKeyboardArrowDown {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconKeyboardArrowLeft {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconKeyboardArrowRight {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconKeyboardArrowUp {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconKeyboardBackspace {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconKeyboardCapslock {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconKeyboardHide {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconKeyboardReturn {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconKeyboardTab {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconKeyboardVoice {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconKitchen {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLabel {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLabelImportant {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLabelOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLandscape {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLanguage {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLaptop {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLaptopChromebook {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLaptopMac {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLaptopWindows {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLastPage {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLaunch {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLayers {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLayersClear {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLeakAdd {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLeakRemove {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLens {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLibraryAdd {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLibraryBooks {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLibraryMusic {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLineStyle {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLineWeight {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLinearScale {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLink {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLinkOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLinkedCamera {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconList {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconListAlt {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLiveHelp {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLiveTv {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalActivity {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalAirport {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalAtm {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalBar {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalCafe {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalConvenienceStore {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalDining {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalDrink {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalGasStation {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalGroceryStore {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalHospital {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalHotel {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalLaundryService {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalLibrary {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalMall {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalMovies {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalOffer {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalParking {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalPharmacy {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalPhone {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalPlay {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalPostOffice {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalPrintshop {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalSee {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalShipping {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalTaxi {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocationCity {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocationDisabled {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocationOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocationOn {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocationSearching {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLock {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLockOpen {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLooks {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLooks1 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLooks2 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLooks3 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLooks4 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLooks5 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLooks6 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLoop {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLoupe {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLowPriority {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLoyalty {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMail {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMailOutline {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMap {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMarkunread {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMarkunreadMailbox {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMaximize {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMeetingRoom {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMemory {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMenu {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMergeType {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMessage {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMic {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMicNone {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMicOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMinimize {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMissedVideoCall {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMission {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMms {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMobileFriendly {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMobileOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMobileScreenShare {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconModeComment {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMonetizationOn {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMoney {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMoneyOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMonochromePhotos {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMood {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMoodBad {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMore {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMoreHoriz {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMoreVert {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMotorcycle {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMouse {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMoveToInbox {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMovie {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMovieCreation {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMovieFilter {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMultilineChart {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMusicNote {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMusicOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMusicVideo {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMyLocation {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNature {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNaturePeople {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNavigateBefore {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNavigateNext {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNavigation {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNearMe {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNetcom {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNetworkCell {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNetworkCheck {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNetworkLocked {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNetworkWifi {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNewReleases {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNextWeek {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNfc {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNoEncryption {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNoMeetingRoom {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNoSim {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNotInterested {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNotListedLocation {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNote {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNoteAdd {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNotes {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNotificationImportant {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNotifications {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNotificationsActive {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNotificationsNone {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNotificationsOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNotificationsPaused {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconOfflineBolt {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconOfflinePin {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconOndemandVideo {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconOpacity {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconOpenInBrowser {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconOpenInNew {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconOpenWith {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconOutlinedFlag {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPages {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPageview {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPalette {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPanTool {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPanorama {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPanoramaFishEye {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPanoramaHorizontal {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPanoramaVertical {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPanoramaWideAngle {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPartyMode {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPause {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPauseCircleFilled {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPauseCircleOutline {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPausePresentation {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPayload {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPayment {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPeopleOutline {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPermCameraMic {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPermContactCalendar {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPermDataSetting {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPermDeviceInformation {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPermIdentity {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPermMedia {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPermPhoneMsg {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPermScanWifi {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPerson {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPersonAdd {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPersonAddDisabled {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPersonOutline {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPersonPin {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPersonPinCircle {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPersonalVideo {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPets {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhone {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhoneAndroid {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhoneBluetoothSpeaker {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhoneCallback {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhoneForwarded {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhoneInTalk {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhoneIphone {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhoneLocked {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhoneMissed {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhonePaused {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhonelink {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhonelinkErase {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhonelinkLock {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhonelinkOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhonelinkRing {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhonelinkSetup {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhoto {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhotoAlbum {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhotoCamera {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhotoFilter {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhotoLibrary {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhotoSizeSelectActual {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhotoSizeSelectLarge {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhotoSizeSelectSmall {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPictureAsPdf {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPictureInPicture {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPictureInPictureAlt {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPieChart {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPinDrop {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPlace {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPlayArrow {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPlayCircleFilled {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPlayCircleFilledWhite {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPlayCircleOutline {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPlayForWork {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPlaylistAdd {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPlaylistAddCheck {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPlaylistPlay {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPlusOne {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPoll {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPool {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPortableWifiOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPortrait {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPower {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPowerInput {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPowerOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPowerSettingsNew {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPregnantWoman {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPresentToAll {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPrint {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPrintDisabled {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPriorityHigh {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconProcessor {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconProcessorAlt {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPropulsionPower {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPublic {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPublish {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconQueryBuilder {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconQuestionAnswer {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconQueue {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconQueueMusic {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconQueuePlayNext {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRadio {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRadioButtonChecked {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRadioButtonUnchecked {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRateReview {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconReceipt {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRecentActors {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRecordVoiceOver {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRedeem {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRedo {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRefresh {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRemove {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRemoveCircle {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRemoveCircleOutline {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRemoveFromQueue {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRemoveRedEye {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRemoveShoppingCart {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconReorder {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRepeat {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRepeatOne {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconReplay {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconReplay10 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconReplay30 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconReplay5 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconReply {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconReplyAll {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconReport {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconReportOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconReportProblem {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRestaurant {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRestaurantMenu {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRestore {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRestoreFromTrash {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRestorePage {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRingVolume {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRoom {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRoomService {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRotate90DegreesCc {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRotateLeft {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRotateRight {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRoundedCorner {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRouter {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRowing {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRssFeed {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRvHookup {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSatellite {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSatelliteOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSatelliteReceive {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSatelliteTransmit {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSave {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSaveAlt {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconScanner {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconScatterPlot {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSchedule {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSchool {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconScore {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconScreenLockLandscape {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconScreenLockPortrait {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconScreenLockRotation {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconScreenRotation {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconScreenShare {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSdCard {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSdStorage {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSearch {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSeat {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSecurity {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSelectAll {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSend {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSentimentDissatisfied {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSentimentSatisfied {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSentimentSatisfiedAlt {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSentimentVeryDissatisfied {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSentimentVerySatisfied {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettings {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsApplications {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsBackupRestore {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsBluetooth {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsBrightness {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsCell {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsEthernet {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsInputAntenna {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsInputComponent {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsInputComposite {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsInputHdmi {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsInputSvideo {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsOverscan {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsPhone {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsPower {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsRemote {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsSystemDaydream {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsVoice {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconShare {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconShop {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconShopTwo {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconShoppingBasket {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconShoppingCart {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconShowChart {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconShuffle {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconShutterSpeed {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellular0Bar {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellular1Bar {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellular2Bar {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellular3Bar {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellular4Bar {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellularAlt {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellularConnectedNoInternet0Bar {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellularConnectedNoInternet1Bar {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellularConnectedNoInternet2Bar {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellularConnectedNoInternet3Bar {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellularConnectedNoInternet4Bar {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellularNoSim {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellularNull {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellularOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalWifi0Bar {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalWifi1Bar {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalWifi1BarLock {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalWifi2Bar {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalWifi2BarLock {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalWifi3Bar {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalWifi3BarLock {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalWifi4Bar {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalWifi4BarLock {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalWifiOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSimCard {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSkipNext {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSkipPrevious {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSlideshow {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSlowMotionVideo {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSmartphone {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSmokeFree {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSmokingRooms {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSms {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSmsFailed {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSnooze {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSolar {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSort {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSortByAlpha {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSpa {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSpaceBar {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSpeaker {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSpeakerGroup {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSpeakerNotes {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSpeakerNotesOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSpeakerPhone {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSpellcheck {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStar {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStarBorder {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStarHalf {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStarRate {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStars {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStayCurrentLandscape {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStayCurrentPortrait {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStayPrimaryLandscape {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStayPrimaryPortrait {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStop {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStopScreenShare {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStorage {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStore {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStoreMallDirectory {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStraighten {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStreetview {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStrikethroughS {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStyle {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSubdirectoryArrowLeft {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSubdirectoryArrowRight {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSubject {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSubscriptions {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSubtitles {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSubway {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSupervisedUserCircle {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSupervisorAccount {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSurroundSound {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSwapCalls {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSwapHoriz {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSwapHorizontalCircle {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSwapVert {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSwapVerticalCircle {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSwitchCamera {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSwitchVideo {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSync {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSyncDisabled {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSyncProblem {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSystemUpdate {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTab {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTabUnselected {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTableChart {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTablet {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTabletAndroid {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTabletMac {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTagFaces {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTapAndPlay {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTerrain {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTextFields {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTextFormat {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTextRotateUp {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTextRotateVertical {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTextRotationNone {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTextsms {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTexture {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTheaters {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconThermal {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconThumbDown {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconThumbDownAlt {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconThumbUp {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconThumbUpAlt {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconThumbsUpDown {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTimeToLeave {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTimelapse {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTimeline {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTimer {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTimer10 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTimer3 {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTimerOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTitle {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconToc {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconToday {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconToggleOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconToggleOn {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconToll {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTonality {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTouchApp {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconToys {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTrackChanges {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTraffic {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTrain {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTram {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTransferWithinAStation {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTransform {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTransitEnterexit {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTranslate {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTrendingDown {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTrendingFlat {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTrendingUp {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTripOrigin {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTune {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTurnedIn {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTurnedInNot {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTv {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTvOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconUnarchive {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconUndo {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconUnfoldLess {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconUnfoldMore {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconUnsubscribe {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconUpdate {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconUsb {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVerifiedUser {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVerticalAlignBottom {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVerticalAlignCenter {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVerticalAlignTop {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVerticalSplit {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVibration {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVideoCall {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVideoLabel {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVideoLibrary {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVideocam {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVideocamOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVideogameAsset {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconViewAgenda {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconViewArray {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconViewCarousel {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconViewColumn {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconViewComfy {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconViewCompact {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconViewDay {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconViewHeadline {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconViewList {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconViewModule {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconViewQuilt {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconViewStream {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconViewWeek {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVignette {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVisibility {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVisibilityOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVoiceChat {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVoiceOverOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVoicemail {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVolumeDown {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVolumeMute {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVolumeOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVolumeUp {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVpnKey {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVpnLock {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWallpaper {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWarning {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWatch {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWatchLater {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWaves {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWbAuto {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWbCloudy {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWbIncandescent {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWbIridescent {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWbSunny {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWc {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWeb {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWebAsset {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWeekend {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWhatshot {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWhereToVote {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWidgets {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWifi {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWifiLock {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWifiOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWifiTethering {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWork {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWorkOff {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWorkOutline {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWrapText {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconYoutubeSearchedFor {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconZoomIn {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconZoomInMap {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconZoomOut {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconZoomOutMap {
-        "color": 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name": string;
-        "size": 'extra small' | 'small' | 'base' | 'large';
+        "color": string;
+        "icon": string;
+        "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxStatus {
         "status": string;
@@ -12663,5245 +12664,5246 @@ declare namespace LocalJSX {
         "version"?: string;
     }
     interface RuxIcon {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "label"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
         "viewBox"?: string;
     }
     interface RuxIcon360 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIcon3dRotation {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIcon4k {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAcUnit {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAccessAlarms {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAccessTime {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAccessibility {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAccessibilityNew {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAccessible {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAccessibleForward {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAccountBalance {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAccountBalanceWallet {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAccountBox {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAccountCircle {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAdb {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAdd {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAddAPhoto {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAddAlarm {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAddAlert {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAddBox {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAddCircle {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAddCircleOutline {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAddLocation {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAddPhotoAlternate {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAddShoppingCart {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAddToHomeScreen {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAddToPhotos {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAddToQueue {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAdjust {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAirlineSeatFlat {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAirlineSeatFlatAngled {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAirlineSeatIndividualSuite {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAirlineSeatLegroomExtra {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAirlineSeatLegroomNormal {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAirlineSeatLegroomReduced {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAirlineSeatReclineExtra {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAirlineSeatReclineNormal {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAirplanemodeActive {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAirplanemodeInactive {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAirplay {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAirportShuttle {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAlarm {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAlarmAdd {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAlarmOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAlarmOn {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAlbum {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAllInbox {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAllInclusive {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAllOut {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAlternateEmail {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAltitude {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAndroid {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAnnouncement {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAntenna {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAntennaOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAntennaReceive {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAntennaTransmit {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconApps {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArchive {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArrowBack {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArrowBackIos {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArrowDownward {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArrowDropDown {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArrowDropDownCircle {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArrowDropUp {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArrowForward {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArrowForwardIos {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArrowLeft {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArrowRight {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArrowRightAlt {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArrowUpward {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconArtTrack {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAspectRatio {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAssessment {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAssignment {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAssignmentFind {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAssignmentLate {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAssignmentReturn {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAssignmentReturned {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAssignmentTurnedIn {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAssistant {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAssistantPhoto {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAttachMoney {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAttachment {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAudiotrack {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAutorenew {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconAvTimer {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBackspace {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBackup {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBallot {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBarChart {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBattery20 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBattery30 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBattery50 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBattery60 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBattery80 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBattery90 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBatteryAlert {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBatteryCharging20 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBatteryCharging30 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBatteryCharging50 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBatteryCharging60 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBatteryCharging80 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBatteryCharging90 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBatteryChargingFull {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBatteryFull {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBatteryStd {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBatteryUnknown {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBeachAccess {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBeenhere {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBlock {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBluetooth {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBluetoothAudio {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBluetoothConnected {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBluetoothDisabled {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBluetoothSearching {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBlurCircular {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBlurLinear {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBlurOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBlurOn {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBook {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBookmark {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBookmarkBorder {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBookmarks {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBorderAll {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBorderClear {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBorderColor {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBorderHorizontal {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBorderInner {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBorderLeft {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBorderOuter {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBorderRight {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBorderStyle {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBorderTop {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBorderVertical {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrandingWatermark {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrightness1 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrightness2 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrightness3 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrightness4 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrightness5 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrightness6 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrightness7 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrightnessAuto {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrightnessHigh {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrightnessLow {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrightnessMedium {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrokenImage {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBrush {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBubbleChart {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBugReport {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBuild {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBurstMode {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBusiness {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconBusinessCenter {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCached {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCake {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCalendarToday {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCalendarViewDay {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCall {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCallEnd {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCallMade {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCallMerge {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCallMissed {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCallMissedOutgoing {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCallReceived {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCallSplit {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCallToAction {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCamera {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCameraAlt {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCameraEnhance {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCameraFront {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCameraRear {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCameraRoll {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCancel {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCancelPresentation {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCardGiftcard {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCardMembership {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCardTravel {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCasino {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCast {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCastConnected {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCastForEducation {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCategory {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCellWifi {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCenterFocusStrong {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCenterFocusWeak {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconChangeHistory {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconChat {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconChatBubble {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconChatBubbleOutline {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCheck {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCheckBox {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCheckBoxOutlineBlank {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCheckCircle {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCheckCircleOutline {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconChevronLeft {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconChevronRight {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconChildCare {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconChildFriendly {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconChromeReaderMode {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconClass {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconClear {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconClearAll {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconClose {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconClosedCaption {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCloud {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCloudCircle {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCloudDone {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCloudDownload {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCloudOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCloudQueue {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCloudUpload {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCode {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCollections {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCollectionsBookmark {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconColorLens {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconColorize {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconComment {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCommute {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCompare {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCompareArrows {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCompassCalibration {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconComputer {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconConfirmationNumber {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconContactMail {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconContactPhone {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconContactSupport {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconContacts {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconControlCamera {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconControlPoint {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconControlPointDuplicate {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCopyright {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCreate {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCreateNewFolder {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCreditCard {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCrop {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCrop169 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCrop32 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCrop54 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCrop75 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCropDin {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCropFree {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCropLandscape {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCropOriginal {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCropPortrait {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCropRotate {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconCropSquare {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDashboard {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDataUsage {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDateRange {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDehaze {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDelete {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDeleteForever {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDeleteOutline {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDeleteSweep {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDepartureBoard {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDescription {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDesktopAccessDisabled {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDesktopMac {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDesktopWindows {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDetails {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDeveloperBoard {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDeveloperMode {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDeviceHub {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDeviceUnknown {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDevices {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDevicesOther {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDialerSip {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDialpad {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDirections {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDirectionsBike {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDirectionsBoat {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDirectionsBus {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDirectionsCar {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDirectionsRailway {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDirectionsRun {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDirectionsSubway {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDirectionsTransit {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDirectionsWalk {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDiscFull {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDns {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDock {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDomain {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDomainDisabled {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDone {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDoneAll {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDoneOutline {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDonutLarge {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDonutSmall {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDrafts {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDragHandle {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDragIndicator {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDriveEta {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDuo {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconDvr {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEdit {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEditAttributes {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEditLocation {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEject {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEmail {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEnhancedEncryption {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEqualizer {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEquipment {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconError {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconErrorOutline {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEuroSymbol {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEvStation {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEvent {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEventAvailable {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEventBusy {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconEventNote {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconExitToApp {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconExpandLess {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconExpandMore {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconExplicit {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconExplore {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconExploreOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconExposure {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconExposureNeg1 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconExposureNeg2 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconExposurePlus1 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconExposurePlus2 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconExposureZero {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconExtension {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFace {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFastForward {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFastRewind {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFastfood {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFavorite {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFavoriteBorder {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFeaturedPlayList {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFeaturedVideo {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFeedback {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFiberDvr {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFiberManualRecord {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFiberNew {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFiberPin {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFiberSmartRecord {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFileCopy {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilter {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilter1 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilter2 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilter3 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilter4 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilter5 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilter6 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilter7 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilter8 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilter9 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilter9Plus {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilterBAndW {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilterCenterFocus {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilterDrama {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilterFrames {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilterHdr {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilterList {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilterNone {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilterTiltShift {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFilterVintage {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFindInPage {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFindReplace {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFingerprint {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFirstPage {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFitnessCenter {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFlag {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFlare {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFlashAuto {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFlashOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFlashOn {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFlight {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFlightLand {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFlightTakeoff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFlip {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFlipToBack {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFlipToFront {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFolder {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFolderOpen {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFolderShared {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFolderSpecial {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFontDownload {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatAlignCenter {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatAlignJustify {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatAlignLeft {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatAlignRight {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatBold {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatClear {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatColorFill {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatColorReset {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatColorText {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatIndentDecrease {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatIndentIncrease {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatItalic {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatLineSpacing {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatListBulleted {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatListNumbered {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatListNumberedRtl {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatPaint {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatQuote {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatShapes {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatStrikethrough {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatTextdirectionLToR {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatTextdirectionRToL {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFormatUnderlined {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconForum {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconForward {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconForward10 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconForward30 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconForward5 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFreeBreakfast {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFullscreen {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFullscreenExit {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconFunctions {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGTranslate {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGamepad {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGames {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGavel {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGesture {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGetApp {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGif {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGolfCourse {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGpsFixed {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGpsNotFixed {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGpsOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGrade {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGradient {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGrain {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGraphicEq {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGridOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGridOn {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGroup {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGroupAdd {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconGroupWork {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHd {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHdrOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHdrOn {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHdrStrong {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHdrWeak {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHeadset {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHeadsetMic {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHealing {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHearing {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHelp {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHelpOutline {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHighQuality {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHighlight {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHighlightOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHistory {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHome {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHorizontalSplit {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHotTub {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHotel {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHourglassEmpty {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHourglassFull {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHowToReg {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHowToVote {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHttp {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconHttps {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconImage {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconImageAspectRatio {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconImageSearch {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconImportContacts {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconImportExport {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconImportantDevices {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconInbox {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconIndeterminateCheckBox {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconInfo {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconInput {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconInsertChart {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconInsertChartOutlined {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconInsertDriveFile {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconInsertEmoticon {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconInsertInvitation {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconInsertPhoto {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconInvertColors {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconInvertColorsOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconIso {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconKeyboard {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconKeyboardArrowDown {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconKeyboardArrowLeft {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconKeyboardArrowRight {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconKeyboardArrowUp {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconKeyboardBackspace {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconKeyboardCapslock {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconKeyboardHide {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconKeyboardReturn {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconKeyboardTab {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconKeyboardVoice {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconKitchen {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLabel {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLabelImportant {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLabelOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLandscape {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLanguage {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLaptop {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLaptopChromebook {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLaptopMac {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLaptopWindows {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLastPage {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLaunch {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLayers {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLayersClear {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLeakAdd {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLeakRemove {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLens {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLibraryAdd {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLibraryBooks {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLibraryMusic {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLineStyle {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLineWeight {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLinearScale {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLink {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLinkOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLinkedCamera {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconList {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconListAlt {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLiveHelp {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLiveTv {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalActivity {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalAirport {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalAtm {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalBar {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalCafe {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalConvenienceStore {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalDining {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalDrink {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalGasStation {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalGroceryStore {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalHospital {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalHotel {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalLaundryService {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalLibrary {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalMall {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalMovies {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalOffer {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalParking {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalPharmacy {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalPhone {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalPlay {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalPostOffice {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalPrintshop {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalSee {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalShipping {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocalTaxi {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocationCity {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocationDisabled {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocationOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocationOn {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLocationSearching {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLock {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLockOpen {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLooks {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLooks1 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLooks2 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLooks3 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLooks4 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLooks5 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLooks6 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLoop {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLoupe {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLowPriority {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconLoyalty {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMail {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMailOutline {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMap {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMarkunread {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMarkunreadMailbox {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMaximize {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMeetingRoom {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMemory {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMenu {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMergeType {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMessage {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMic {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMicNone {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMicOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMinimize {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMissedVideoCall {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMission {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMms {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMobileFriendly {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMobileOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMobileScreenShare {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconModeComment {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMonetizationOn {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMoney {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMoneyOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMonochromePhotos {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMood {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMoodBad {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMore {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMoreHoriz {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMoreVert {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMotorcycle {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMouse {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMoveToInbox {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMovie {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMovieCreation {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMovieFilter {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMultilineChart {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMusicNote {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMusicOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMusicVideo {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconMyLocation {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNature {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNaturePeople {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNavigateBefore {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNavigateNext {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNavigation {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNearMe {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNetcom {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNetworkCell {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNetworkCheck {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNetworkLocked {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNetworkWifi {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNewReleases {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNextWeek {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNfc {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNoEncryption {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNoMeetingRoom {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNoSim {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNotInterested {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNotListedLocation {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNote {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNoteAdd {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNotes {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNotificationImportant {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNotifications {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNotificationsActive {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNotificationsNone {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNotificationsOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconNotificationsPaused {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconOfflineBolt {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconOfflinePin {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconOndemandVideo {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconOpacity {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconOpenInBrowser {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconOpenInNew {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconOpenWith {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconOutlinedFlag {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPages {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPageview {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPalette {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPanTool {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPanorama {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPanoramaFishEye {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPanoramaHorizontal {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPanoramaVertical {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPanoramaWideAngle {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPartyMode {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPause {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPauseCircleFilled {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPauseCircleOutline {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPausePresentation {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPayload {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPayment {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPeopleOutline {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPermCameraMic {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPermContactCalendar {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPermDataSetting {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPermDeviceInformation {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPermIdentity {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPermMedia {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPermPhoneMsg {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPermScanWifi {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPerson {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPersonAdd {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPersonAddDisabled {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPersonOutline {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPersonPin {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPersonPinCircle {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPersonalVideo {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPets {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhone {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhoneAndroid {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhoneBluetoothSpeaker {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhoneCallback {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhoneForwarded {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhoneInTalk {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhoneIphone {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhoneLocked {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhoneMissed {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhonePaused {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhonelink {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhonelinkErase {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhonelinkLock {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhonelinkOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhonelinkRing {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhonelinkSetup {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhoto {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhotoAlbum {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhotoCamera {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhotoFilter {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhotoLibrary {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhotoSizeSelectActual {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhotoSizeSelectLarge {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPhotoSizeSelectSmall {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPictureAsPdf {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPictureInPicture {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPictureInPictureAlt {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPieChart {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPinDrop {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPlace {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPlayArrow {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPlayCircleFilled {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPlayCircleFilledWhite {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPlayCircleOutline {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPlayForWork {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPlaylistAdd {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPlaylistAddCheck {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPlaylistPlay {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPlusOne {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPoll {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPool {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPortableWifiOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPortrait {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPower {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPowerInput {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPowerOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPowerSettingsNew {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPregnantWoman {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPresentToAll {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPrint {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPrintDisabled {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPriorityHigh {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconProcessor {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconProcessorAlt {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPropulsionPower {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPublic {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconPublish {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconQueryBuilder {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconQuestionAnswer {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconQueue {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconQueueMusic {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconQueuePlayNext {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRadio {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRadioButtonChecked {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRadioButtonUnchecked {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRateReview {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconReceipt {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRecentActors {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRecordVoiceOver {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRedeem {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRedo {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRefresh {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRemove {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRemoveCircle {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRemoveCircleOutline {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRemoveFromQueue {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRemoveRedEye {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRemoveShoppingCart {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconReorder {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRepeat {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRepeatOne {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconReplay {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconReplay10 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconReplay30 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconReplay5 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconReply {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconReplyAll {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconReport {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconReportOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconReportProblem {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRestaurant {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRestaurantMenu {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRestore {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRestoreFromTrash {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRestorePage {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRingVolume {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRoom {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRoomService {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRotate90DegreesCc {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRotateLeft {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRotateRight {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRoundedCorner {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRouter {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRowing {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRssFeed {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconRvHookup {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSatellite {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSatelliteOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSatelliteReceive {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSatelliteTransmit {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSave {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSaveAlt {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconScanner {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconScatterPlot {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSchedule {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSchool {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconScore {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconScreenLockLandscape {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconScreenLockPortrait {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconScreenLockRotation {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconScreenRotation {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconScreenShare {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSdCard {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSdStorage {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSearch {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSeat {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSecurity {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSelectAll {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSend {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSentimentDissatisfied {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSentimentSatisfied {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSentimentSatisfiedAlt {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSentimentVeryDissatisfied {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSentimentVerySatisfied {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettings {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsApplications {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsBackupRestore {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsBluetooth {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsBrightness {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsCell {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsEthernet {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsInputAntenna {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsInputComponent {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsInputComposite {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsInputHdmi {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsInputSvideo {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsOverscan {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsPhone {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsPower {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsRemote {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsSystemDaydream {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSettingsVoice {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconShare {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconShop {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconShopTwo {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconShoppingBasket {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconShoppingCart {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconShowChart {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconShuffle {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconShutterSpeed {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellular0Bar {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellular1Bar {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellular2Bar {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellular3Bar {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellular4Bar {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellularAlt {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellularConnectedNoInternet0Bar {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellularConnectedNoInternet1Bar {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellularConnectedNoInternet2Bar {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellularConnectedNoInternet3Bar {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellularConnectedNoInternet4Bar {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellularNoSim {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellularNull {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalCellularOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalWifi0Bar {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalWifi1Bar {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalWifi1BarLock {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalWifi2Bar {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalWifi2BarLock {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalWifi3Bar {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalWifi3BarLock {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalWifi4Bar {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalWifi4BarLock {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSignalWifiOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSimCard {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSkipNext {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSkipPrevious {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSlideshow {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSlowMotionVideo {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSmartphone {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSmokeFree {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSmokingRooms {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSms {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSmsFailed {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSnooze {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSolar {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSort {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSortByAlpha {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSpa {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSpaceBar {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSpeaker {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSpeakerGroup {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSpeakerNotes {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSpeakerNotesOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSpeakerPhone {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSpellcheck {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStar {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStarBorder {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStarHalf {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStarRate {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStars {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStayCurrentLandscape {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStayCurrentPortrait {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStayPrimaryLandscape {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStayPrimaryPortrait {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStop {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStopScreenShare {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStorage {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStore {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStoreMallDirectory {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStraighten {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStreetview {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStrikethroughS {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconStyle {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSubdirectoryArrowLeft {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSubdirectoryArrowRight {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSubject {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSubscriptions {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSubtitles {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSubway {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSupervisedUserCircle {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSupervisorAccount {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSurroundSound {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSwapCalls {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSwapHoriz {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSwapHorizontalCircle {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSwapVert {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSwapVerticalCircle {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSwitchCamera {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSwitchVideo {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSync {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSyncDisabled {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSyncProblem {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconSystemUpdate {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTab {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTabUnselected {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTableChart {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTablet {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTabletAndroid {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTabletMac {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTagFaces {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTapAndPlay {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTerrain {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTextFields {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTextFormat {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTextRotateUp {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTextRotateVertical {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTextRotationNone {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTextsms {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTexture {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTheaters {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconThermal {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconThumbDown {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconThumbDownAlt {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconThumbUp {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconThumbUpAlt {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconThumbsUpDown {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTimeToLeave {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTimelapse {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTimeline {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTimer {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTimer10 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTimer3 {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTimerOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTitle {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconToc {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconToday {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconToggleOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconToggleOn {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconToll {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTonality {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTouchApp {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconToys {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTrackChanges {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTraffic {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTrain {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTram {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTransferWithinAStation {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTransform {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTransitEnterexit {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTranslate {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTrendingDown {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTrendingFlat {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTrendingUp {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTripOrigin {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTune {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTurnedIn {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTurnedInNot {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTv {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconTvOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconUnarchive {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconUndo {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconUnfoldLess {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconUnfoldMore {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconUnsubscribe {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconUpdate {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconUsb {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVerifiedUser {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVerticalAlignBottom {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVerticalAlignCenter {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVerticalAlignTop {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVerticalSplit {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVibration {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVideoCall {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVideoLabel {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVideoLibrary {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVideocam {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVideocamOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVideogameAsset {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconViewAgenda {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconViewArray {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconViewCarousel {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconViewColumn {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconViewComfy {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconViewCompact {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconViewDay {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconViewHeadline {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconViewList {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconViewModule {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconViewQuilt {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconViewStream {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconViewWeek {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVignette {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVisibility {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVisibilityOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVoiceChat {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVoiceOverOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVoicemail {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVolumeDown {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVolumeMute {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVolumeOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVolumeUp {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVpnKey {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconVpnLock {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWallpaper {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWarning {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWatch {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWatchLater {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWaves {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWbAuto {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWbCloudy {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWbIncandescent {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWbIridescent {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWbSunny {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWc {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWeb {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWebAsset {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWeekend {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWhatshot {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWhereToVote {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWidgets {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWifi {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWifiLock {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWifiOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWifiTethering {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWork {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWorkOff {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWorkOutline {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconWrapText {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconYoutubeSearchedFor {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconZoomIn {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconZoomInMap {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconZoomOut {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxIconZoomOutMap {
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'white';
-        "name"?: string;
-        "size"?: 'extra small' | 'small' | 'base' | 'large';
+        "color"?: string;
+        "icon"?: string;
+        "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxStatus {
         "status"?: string;

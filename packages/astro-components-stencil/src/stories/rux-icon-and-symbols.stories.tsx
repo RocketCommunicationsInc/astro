@@ -1,5 +1,5 @@
 import { html, render } from 'lit-html';
-import { text, number, select, withKnobs } from '@storybook/addon-knobs';
+import { text, number, select, color, withKnobs } from '@storybook/addon-knobs';
 // import { RuxIcon } from '../src/components/rux-icon/rux-icon.js';
 // import { RuxStatus } from '../src/components/rux-status/rux-status.js';
 // import { RuxMonitoringIcon } from '../src/components/rux-monitoring-icon/rux-monitoring-icon.js';
@@ -15,23 +15,15 @@ export default {
 };
 
 export const AllIcons = () => {
-  const colors = {
-    Primary: 'primary',
-    Secondary: 'secondary',
-    Tertiary: 'tertiary',
-    Quaternary: 'quaternary',
-    White: 'white',
-  };
-
   const sizes = {
     'Extra Small': 'extra-small',
     'Small': 'small',
-    'Normal': 'base',
+    'Normal': 'normal',
     'Large': 'large',
   };
 
-  const colorKnob = select('Color', colors, 'primary');
-  const sizeKnob = select('Size', sizes, 'base');
+  const colorKnob = color('Color', '#4dacff');
+  const sizeKnob = select('Size', sizes, 'normal');
 
 
   const capitalize = (s) => {
@@ -46,9 +38,9 @@ export const AllIcons = () => {
               <ul class="icon__list">
                 ${ruxIconsJson['solid'][section].map(icon => {
                   return html`
-                  <li class="icon__list-item" title="${icon.name}">
-                  <rux-icon name="${icon.name}" color="${colorKnob}" size="${sizeKnob}"></rux-icon>
-                    <div class="icon__name">${icon.name}</div>
+                  <li class="icon__list-item" title="${icon.icon}">
+                  <rux-icon icon="${icon.icon}" color="${colorKnob}" size="${sizeKnob}"></rux-icon>
+                    <div class="icon__name">${icon.icon}</div>
                   </li>`
                 })}
               </ul>
