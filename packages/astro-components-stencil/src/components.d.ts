@@ -5269,6 +5269,11 @@ export namespace Components {
         "icon": string;
         "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
+    interface RuxProgress {
+        "hideLabel": boolean;
+        "max": number;
+        "value": number;
+    }
     interface RuxStatus {
         "status": string;
     }
@@ -11580,6 +11585,12 @@ declare global {
         prototype: HTMLRuxIconZoomOutMapElement;
         new (): HTMLRuxIconZoomOutMapElement;
     };
+    interface HTMLRuxProgressElement extends Components.RuxProgress, HTMLStencilElement {
+    }
+    var HTMLRuxProgressElement: {
+        prototype: HTMLRuxProgressElement;
+        new (): HTMLRuxProgressElement;
+    };
     interface HTMLRuxStatusElement extends Components.RuxStatus, HTMLStencilElement {
     }
     var HTMLRuxStatusElement: {
@@ -12638,6 +12649,7 @@ declare global {
         "rux-icon-zoom-in-map": HTMLRuxIconZoomInMapElement;
         "rux-icon-zoom-out": HTMLRuxIconZoomOutElement;
         "rux-icon-zoom-out-map": HTMLRuxIconZoomOutMapElement;
+        "rux-progress": HTMLRuxProgressElement;
         "rux-status": HTMLRuxStatusElement;
     }
 }
@@ -17905,6 +17917,11 @@ declare namespace LocalJSX {
         "icon"?: string;
         "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
+    interface RuxProgress {
+        "hideLabel"?: boolean;
+        "max"?: number;
+        "value"?: number;
+    }
     interface RuxStatus {
         "status"?: string;
     }
@@ -18960,6 +18977,7 @@ declare namespace LocalJSX {
         "rux-icon-zoom-in-map": RuxIconZoomInMap;
         "rux-icon-zoom-out": RuxIconZoomOut;
         "rux-icon-zoom-out-map": RuxIconZoomOutMap;
+        "rux-progress": RuxProgress;
         "rux-status": RuxStatus;
     }
 }
@@ -20018,6 +20036,7 @@ declare module "@stencil/core" {
             "rux-icon-zoom-in-map": LocalJSX.RuxIconZoomInMap & JSXBase.HTMLAttributes<HTMLRuxIconZoomInMapElement>;
             "rux-icon-zoom-out": LocalJSX.RuxIconZoomOut & JSXBase.HTMLAttributes<HTMLRuxIconZoomOutElement>;
             "rux-icon-zoom-out-map": LocalJSX.RuxIconZoomOutMap & JSXBase.HTMLAttributes<HTMLRuxIconZoomOutMapElement>;
+            "rux-progress": LocalJSX.RuxProgress & JSXBase.HTMLAttributes<HTMLRuxProgressElement>;
             "rux-status": LocalJSX.RuxStatus & JSXBase.HTMLAttributes<HTMLRuxStatusElement>;
         }
     }
