@@ -54,20 +54,32 @@ Pass properties as attributes of the Astro Classification custom element:
 
 ```
 
-#### Marking Type Declaration
+#### Marking Classification Declaration
 
-By default classification markings rendered in banner format. Applying the `tag` property attribute sets the marking type. The `tag` attribute property defines the classification marking as a tag.
+By default classification property is set to "unclassified".
+
+```javascript
+<rux-classification-marking classification="unclassified"></rux-classification-marking>
+```
 
 Recognized classification property options are
 
--   top-secret-sci
--   top-secret
--   secret
--   classified
--   controlled
--   unclassified
+-   "top-secret-sci"
+-   "top-secret"
+-   "secret"
+-   "classified"
+-   "controlled"
+-   "unclassified"
 
-Use of a classification property that is not one the recognized options results in an error
+Use of a classification property that is not one the recognized options results in a component with the display text set as:
+
+```javascript
+<rux-classification-marking classification="unclassified" [tag]>Select a Classification Marking</rux-classification-marking>
+```
+
+#### Marking Type Declaration
+
+By default classification markings rendered in banner format. Applying the `tag` property attribute sets the marking type. The `tag` attribute property defines the classification marking as a tag.
 
 ##### Banner Marking Type
 
@@ -94,3 +106,9 @@ Applying the `label` property attribute to the classification custom element add
     label="//custom/label"
 ></rux-classification-marking>
 ```
+
+## Revision History
+
+#### **Verison # TBD**
+
+-   standardized classification property options to approved list
