@@ -58,8 +58,7 @@ export class RuxClock {
 
     this.updateTime();
 
-    // @ts-ignore
-    this._timer = setInterval(() => {
+    this._timer = window.setInterval(() => {
       this.updateTime();
     }, 1000);
   }
@@ -73,7 +72,7 @@ export class RuxClock {
     this.dayOfYear = getDayOfYear(zonedTimeToUtc(new Date(), this._timezone));
   }
 
-  private convertTimezone(timezone) {
+  private convertTimezone(timezone: string) {
     this._timezone = this.militaryTimezones[timezone.toUpperCase()];
     this.tzFormat = 'O';
     if (!this._timezone) {
