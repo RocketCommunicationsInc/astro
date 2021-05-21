@@ -1,0 +1,40 @@
+:host {
+    --iconDefaultSize: 2.7rem;
+    --iconColor: var(--iconDefaultColor);
+    fill: var(--iconColor);
+
+    display: inline-flex;
+}
+
+svg,
+svg > svg {
+    height: 100%;
+    width: auto;
+}
+.icon {
+    display: inline-flex;
+    margin: 0 auto;
+}
+
+.rux-button--outline rux-icon {
+}
+
+.rux-icon--extra-small {
+    height: 1rem;
+    width: 1rem;
+}
+
+.rux-icon--small {
+    height: 2rem;
+    width: 2rem;
+}
+
+.rux-icon--large {
+    height: 4rem;
+    width: 4rem;
+}
+
+.rux-icon--normal {
+    height: 3rem;
+    width: 3rem;
+}
