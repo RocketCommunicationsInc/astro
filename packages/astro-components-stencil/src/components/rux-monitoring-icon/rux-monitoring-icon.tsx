@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Watch } from '@stencil/core';
+import { Component, h, Prop, Watch } from '@stencil/core';
 
 @Component({
   tag: 'rux-monitoring-icon',
@@ -95,64 +95,3 @@ export class RuxMonitoringIcon {
       </div>
     );
   }
-
-}
-
-
-// export class RuxMonitoringIcon extends LitElement {
-
-//   constructor() {
-//     super();
-
-//     this.status = 'normal';
-//     this.library = undefined;
-//     this.label = '';
-//     this.sublabel = '';sd
-//     this.icon = '';
-//     this.notifications = 0;
-//   }
-
-//   render() {
-//     return html`
-//       <div
-//         id="rux-advanced-status__icon"
-//         class="rux-advanced-status"
-//         title="${this.notifications} ${this.label} ${this.sublabel}"
-//       >
-//         <div class="rux-advanced-status__icon-group">
-//           <rux-status status="${this.status}"></rux-status>
-
-//           ${this.iconTemplate} ${this.badgeTemplate}
-//         </div>
-
-//         ${this.labelTemplate}
-//       </div>
-//     `;
-//   }
-
-//   get iconTemplate() {
-//     return html`
-//       <rux-icon icon="${this.icon}" library="${ifDefined(this.library)}" class="rux-status--${this.status}"></rux-icon>
-//     `;
-//   }
-
-//   get badgeTemplate() {
-//     return html`
-//       <div class="rux-advanced-status__badge" ?hidden="${!this.notifications}">
-//         ${collapseNumber(this.notifications)}
-//       </div>
-//     `;
-//   }
-
-//   get labelTemplate() {
-//     return html`
-//       <div class="rux-advanced-status__label">
-//         ${this.label}
-//         <span class="rux-advanced-status__sublabel" ?hidden="${!this.sublabel}">${this.sublabel}</span>
-//       </div>
-//     `;
-//   }
-
-//   }
-// }
-

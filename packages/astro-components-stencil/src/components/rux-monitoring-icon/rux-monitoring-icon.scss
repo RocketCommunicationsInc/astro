@@ -95,27 +95,39 @@ rux-status {
 }
 
 :host([status='off']) {
-    fill: var(--colorOff);
+    rux-icon {
+        fill: var(--colorOff);
+    }
 }
 
 :host([status='standby']) {
-    fill: var(--colorStandby);
+    rux-icon {
+        fill: var(--colorStandby);
+    }
 }
 
 :host([status='normal']) {
-    fill: var(--colorNormal);
+    rux-icon {
+        fill: var(--colorNormal);
+    }
 }
 
 :host([status='caution']) {
-    fill: var(--colorCaution);
+    rux-icon {
+        fill: var(--colorCaution);
+    }
 }
 
 :host([status='serious']) {
-    fill: var(--colorSerious);
+    rux-icon {
+        fill: var(--colorSerious);
+    }
 }
 
 :host([status='critical']) {
-    fill: var(--colorCritical);
+    rux-icon {
+        fill: var(--colorCritical);
+    }
 }
 
 // .rux-advanced-status {
