@@ -95,3 +95,4 @@ export class RuxMonitoringIcon {
       </div>
     );
   }
+}
