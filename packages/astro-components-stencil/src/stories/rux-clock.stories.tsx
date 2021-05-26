@@ -1,10 +1,9 @@
 import { html, render } from 'lit-html';
 import { boolean, select, date, withKnobs } from '@storybook/addon-knobs';
-//@ts-ignore
 import readme from '../../src/components/rux-clock/readme.md';
 
 export default {
-  title: 'Components|Clock',
+  title: 'Components/Clock',
   decorators: [withKnobs],
 };
 
@@ -35,8 +34,8 @@ export const Clock = () => {
     <div style="padding: 10%; display: flex; justify-content: center;">
       <rux-clock
         .timezone="${timezoneKnob}"
-        ?hideTimezone="${hideTimezoneKnob}"
-        ?hideDate="${hideDateKnob}"
+        ?hide-timezone="${hideTimezoneKnob}"
+        ?hide-date="${hideDateKnob}"
         ?small="${smallKnob}"
       ></rux-clock>
     </div>
@@ -82,8 +81,8 @@ export const ClockWithAosLos = () => {
         .timezone="${timezoneKnob}"
         aos="${aosKnob}"
         los="${losAsISO}"
-        ?hideTimezone="${hideTimezoneKnob}"
-        ?hideDate="${hideDateKnob}"
+        ?hide-timezone="${hideTimezoneKnob}"
+        ?hide-date="${hideDateKnob}"
         ?small="${smallKnob}"
       ></rux-clock>
     </div>

@@ -1,11 +1,27 @@
 :host {
+  /**
+    * @prop --clockTextColor: the color of the clock text
+    */
+  --clockTextColor: var(--defaultText);
+
+  /**
+    * @prop --clockBackgroundColor: the background color for the clock
+    */
+  --clockBackgroundColor: var(--backgroundColor);
+  /**
+    * @prop --clockBorderColor: the border color for the clock
+    */
+	--clockBorderColor: var(--surfaceElements);
+
+  /**
+    * @prop --clockLabelColor: the label color for the clock
+    */
+	--clockLabelColor: var(--defaultText);
+
   display: flex;
   margin: 0 1rem;
-
   color: var(--clockTextColor);
-
   font-size: 1.15rem;
-
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -57,7 +73,7 @@
 }
 
 .rux-clock__segment--secondary .rux-clock__segment__value {
-  font-weight: 100;
+  font-weight: 400;
 }
 
 .rux-clock__aos {
