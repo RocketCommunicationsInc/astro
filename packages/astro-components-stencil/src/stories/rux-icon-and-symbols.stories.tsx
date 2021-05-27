@@ -4,8 +4,8 @@ import { text, number, select, color, withKnobs } from '@storybook/addon-knobs';
 // import { RuxStatus } from '../src/components/rux-status/rux-status.js';
 // import { RuxMonitoringIcon } from '../src/components/rux-monitoring-icon/rux-monitoring-icon.js';
 // import { RuxMonitoringProgressIcon } from '../src/components/rux-monitoring-icon/rux-monitoring-progress-icon.js';
-import Readme from '../../src/components/rux-icon/readme.md';
-// import ReadmeMonitoring from '../src/components/rux-monitoring-icon/README.md';
+import Readme from '../components/rux-icon/readme.md';
+import ReadmeMonitoring from '../components/rux-monitoring-icon/readme.md';
 import ruxIconsJson from './rux-icons.json';
 
 
@@ -209,8 +209,8 @@ export const MonitoringIcons = () => {
     <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
       <rux-monitoring-icon
         library="/icons/custom.svg"
-        icon="custom"
-        label="Custom icon"
+        icon="widgets"
+        label="Widgets icon"
         sublabel="${sublabel}"
         status="${status}"
         notifications="${notifications}"
@@ -219,17 +219,17 @@ export const MonitoringIcons = () => {
   `;
 };
 
-// MonitoringIcons.story = {
-//   parameters: {
-//     exports: {
-//       render,
-//       html,
-//     },
-//     readme: {
-//       sidebar: ReadmeMonitoring,
-//     },
-//   },
-// };
+MonitoringIcons.story = {
+  parameters: {
+    exports: {
+      render,
+      html,
+    },
+    readme: {
+      sidebar: ReadmeMonitoring,
+    },
+  },
+};
 
 export const ProgressIcon = () => {
   const groupId = 'Options';

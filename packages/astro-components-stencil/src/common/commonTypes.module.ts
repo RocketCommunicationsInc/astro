@@ -1,3 +1,11 @@
+export type Status =
+    | 'off'
+    | 'standby'
+    | 'normal'
+    | 'caution'
+    | 'serious'
+    | 'critical';
+    
 export type Classification =
     | "controlled"
     | "confidential"

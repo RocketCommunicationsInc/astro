@@ -113,6 +113,7 @@ In Astro 4.0, these groups have been flattened, and each icon is now imported di
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property  | Attribute  | Description | Type                                              | Default       |
@@ -123,6 +124,27 @@ In Astro 4.0, these groups have been flattened, and each icon is now imported di
 | `size`    | `size`     |             | `"extra-small" \| "large" \| "normal" \| "small"` | `'normal'`    |
 | `viewBox` | `view-box` |             | `string`                                          | `'0 0 24 24'` |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+## CSS Custom Properties
+
+| Name          | Description                   |
+| ------------- | ----------------------------- |
+| `--iconColor` | the default color of the icon |
+
+
+## Dependencies
+
+### Used by
+
+ - [rux-monitoring-icon](../rux-monitoring-icon)
+
+### Graph
+```mermaid
+graph TD;
+  rux-monitoring-icon --> rux-icon
+  style rux-icon fill:#f9f,stroke:#333,stroke-width:4px
+```
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

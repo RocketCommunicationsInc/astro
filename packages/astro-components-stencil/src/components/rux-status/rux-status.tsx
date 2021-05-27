@@ -1,4 +1,5 @@
 import { Prop, Component, Host, h, Watch } from '@stencil/core';
+import {Status} from '../../common/commonTypes.module'
 
 @Component({
     tag: 'rux-status',
@@ -7,7 +8,7 @@ import { Prop, Component, Host, h, Watch } from '@stencil/core';
 })
 
 export class RuxStatus {
-    @Prop({reflect: true}) status: string;
+    @Prop({reflect: true}) status: Status;
 
     @Watch('status')
     validateStatus(newValue: string) {
