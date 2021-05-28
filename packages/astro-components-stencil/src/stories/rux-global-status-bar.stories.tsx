@@ -42,9 +42,8 @@ export const GlobalStatusBarWithSlotContent = () => {
   return html`
     <div style="display: flex; justify-content: center;">
       <rux-global-status-bar class="dark-theme" .appname="${appnameKnob}" .version="${versionKnob}">
-        <rx-clock></rx-clock>
-        <div><!--Any HTML here --></div>
-        <rux-button>Master off</rux-button>
+        <rux-clock></rux-clock>
+        <rux-button slot="right-side" >Master off</rux-button>
       </rux-global-status-bar>
     </div>
   `;

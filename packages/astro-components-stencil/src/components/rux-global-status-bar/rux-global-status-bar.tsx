@@ -12,11 +12,13 @@ export class RuxGlobalStatusBar {
   render() {
     return (
       <Host>
-      <header>
+        <header>
+        <slot name="left-side"></slot>
         <div class="app-meta" hidden={!this.appname}>
           <h1>{this.appname}<span class="app-version">{this.version}</span></h1>
         </div>
         <slot></slot>
+        <slot name="right-side"></slot>
       </header>
       </Host>
     );
