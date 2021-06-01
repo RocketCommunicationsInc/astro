@@ -1,66 +1,70 @@
 :host {
-  display: block;
-  position: sticky;
+    display: block;
+    position: sticky;
 
-  top: 0;
-  left: 0;
+    top: 0;
+    left: 0;
 
-  height: 110px;
-  width: 100%;
+    height: 110px;
+    width: 100%;
 
-  padding: 0 1.875rem;
+    padding: 0 1.875rem;
 
-  box-sizing: border-box;
-  background-color: var(--globalAppHeader);
+    box-sizing: border-box;
+    background-color: var(--globalAppHeader);
 
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
-  contain: content; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
+    contain: content; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
 }
 
 header {
-  display: flex;
+    display: flex;
 
-  height: 100%;
-  width: 100%;
+    height: 100%;
+    width: 100%;
 
-  /* padding: 0 2.5rem; */
+    /* padding: 0 2.5rem; */
 
-  align-items: center;
-  justify-content: space-between;
+    align-items: center;
+    justify-content: space-between;
 
-  box-sizing: border-box;
-}
-
-/*
-    The hidden attribute on an element gets ignored when
-    a display property is added to the element to be hidden.
-    Explicitly setting the display property is a work around
-    as would be a wrapper div
-  */
-.app-meta[hidden] {
-  display: none !important;
+    box-sizing: border-box;
 }
 
 .app-meta {
-  display: block;
-  padding: 0;
-  margin: 0;
-  color: var(--inputBackground);
+    display: block;
+    padding: 0;
+    // pulls app-meta content to justify left
+    margin: 0 auto 0 10px;
+    color: var(--inputBackground);
 }
 
 .app-meta h1 {
-  font-size: 2rem;
-  font-weight: 300;
+    height: 40px;
+    letter-spacing: 0.25px;
+}
+
+.app-name {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-left: 13px;
+}
+
+.app-domain {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 .app-version {
-  font-size: 1.1875rem;
-  font-weight: 300;
-  /* color: rgba(255, 255, 255, 0.298039); */
+    font-size: 1.1875rem;
+    font-weight: 300;
+    /* color: rgba(255, 255, 255, 0.298039); */
 
-  margin-left: 0.5em;
+    margin-left: 0.5em;
 }
