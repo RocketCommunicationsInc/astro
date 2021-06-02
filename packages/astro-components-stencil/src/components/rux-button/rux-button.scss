@@ -1,0 +1,276 @@
+:host {
+    /* Button */
+    /**
+     * @prop --buttonTextColor: Button text color
+     */
+    --buttonTextColor: var(--primaryElementText);
+
+    /**
+     * @prop --buttonBackgroundColor: Button background color
+     */
+    --buttonBackgroundColor: var(--primary);
+
+    /**
+     * @prop --buttonBorderColor: Button border color
+     */
+    --buttonBorderColor: transparent;
+
+    /* Button Hover State */
+    /**
+     * @prop --buttonHoverTextColor: Button hover text color
+     */
+    --buttonHoverTextColor: var(--primaryElementText);
+    /**
+     * @prop --buttonHoverBackgroundColor: Button hover background color
+     */
+    --buttonHoverBackgroundColor: var(--primaryLight);
+    /**
+     * @prop --buttonHoverBorderColor: Button hover border color
+     */
+    --buttonHoverBorderColor: transparent;
+
+    /* Button Active State */
+    /**
+     * @prop --buttonActiveControlTextColor: Button active text color
+     */
+    --buttonActiveControlTextColor: var(--defaultText);
+    /**
+     * @prop --buttonActiveBackgroundColor: Button active background color
+     */
+    --buttonActiveBackgroundColor: var(--primary);
+    /**
+     * @prop --buttonActiveBorderColor: Button active border color
+     */
+    --buttonActiveBorderColor: var(--primary);
+
+    /* Outline Button Variant */
+    /**
+     * @prop --buttonOutlineTextColor: Button outline text color
+     */
+    --buttonOutlineTextColor: var(--primary);
+    /**
+     * @prop --buttonOutlineBackgroundColor: Button outline background color
+     */
+    --buttonOutlineBackgroundColor: transparent;
+    /**
+     * @prop --buttonOutlineBorderColor: Button outline border color
+     */
+    --buttonOutlineBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+
+    /* Outline Button Variant Hover State */
+    /**
+     * @prop --buttonOutlineHoverTextColor: Button outline hover text color
+     */
+    --buttonOutlineHoverTextColor: var(--primaryLight);
+    /**
+     * @prop --buttonOutlineHoverBackgroundColor:  Button outline hover background color
+     */
+    --buttonOutlineHoverBackgroundColor: transparent;
+    /**
+     * @prop --buttonOutlineHoverBorderColor:  Button outline hover border color
+     */
+    --buttonOutlineHoverBorderColor: var(--primaryLight);
+}
+
+.rux-button {
+    display: flex;
+    position: relative;
+
+    margin: 0;
+    padding: 0 1rem;
+
+    height: 2.125rem;
+    min-width: 2.25rem;
+    /* max-width: 10.125rem; */
+
+    border-radius: var(--buttonBorderRadius);
+
+    color: var(--buttonTextColor);
+    font-family: var(--fontFamily);
+    font-size: 1rem;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    justify-content: center;
+    align-items: center;
+
+    user-select: none;
+
+    ::slotted(rux-icon),
+    rux-icon {
+        height: 1.5rem;
+        width: 1.5rem;
+        margin-right: 0.625rem;
+        margin-left: -0.625rem;
+    }
+
+    &:disabled {
+        opacity: var(--disabledOpacity);
+        cursor: var(--disabledCursor);
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover:not([disabled]) {
+        cursor: pointer;
+    }
+
+    // Press/Active States
+    &:active:not([hover]):not([disabled]) {
+        border-color: var(--buttonActiveBorderColor) !important;
+        background-color: var(--buttonActiveBackgroundColor) !important;
+    }
+
+    &:hover:not([active]):not([disabled]):not(.rux-button--outline) {
+        border-color: var(--buttonHoverBorderColor);
+        background-color: var(--buttonHoverBackgroundColor);
+    }
+
+    // .rux-button-group
+    &-group {
+        display: flex;
+        .rux-button:not(:last-child) {
+            margin-right: 0.625rem;
+        }
+    }
+
+    &:not(.rux-button--outline) {
+        border: 1px solid var(--buttonBorderColor);
+        background-color: var(--buttonBackgroundColor);
+    }
+
+    // elements
+
+    // .rux-button__icon
+    &__icon {
+        height: 1.5rem;
+        width: 1.5rem;
+
+        margin-right: 0.625rem;
+        margin-left: -0.625rem;
+
+        .rux-icon {
+            height: auto;
+            width: 100%;
+            fill: var(--buttonTextColor);
+            color: var(--buttonTextColor);
+        }
+    }
+
+    // variants
+    // .rux-button--outline
+    &--outline {
+        color: var(--buttonOutlineTextColor);
+        background-color: var(--buttonOutlineBackgroundColor);
+        border: 1px solid var(--buttonOutlineBorderColor);
+        &:active:not([hover]):not([disabled]) {
+            border-color: var(--buttonOutlineBorderColor) !important;
+            background-color: var(--buttonOutlineBackgroundColor) !important;
+        }
+
+        &:hover:not([disabled]) {
+            color: var(--buttonOutlineTextColor);
+            background-color: var(--buttonOutlineHoverBackgroundColor);
+            border-color: var(--buttonOutlineHoverBorderColor);
+        }
+    }
+
+    &--small {
+        font-size: var(--smallLabelFontSize);
+        height: 1.625rem;
+        padding: 0 1rem;
+        line-height: 1;
+
+        &.rux-button {
+            &__icon {
+                height: 0.875rem;
+                width: 0.875rem;
+            }
+
+            &--icon-only {
+                min-width: 1.625rem;
+                padding: 0 0.75rem;
+            }
+        }
+    }
+
+    &--large {
+        font-size: var(--largeLabelFontSize);
+        height: 2.875rem;
+        min-width: 3rem;
+        padding: 0 1rem;
+        .rux-button__icon {
+            height: 1.75rem;
+            width: 1.75rem;
+            margin-left: -0.8rem;
+            /* margin: -0.65rem 0.25rem -0.3rem calc((1.5rem - 0.625rem) * -1); */
+        }
+    }
+
+    &--critical,
+    &--critical:active:not([hover]):not([disabled]):not(.rux-button--outline) {
+        background-color: var(--colorCriticalDarken1) !important;
+        border-color: var(--colorCriticalDarken1) !important;
+
+        &:hover:not([active]):not([disabled]) {
+            background-color: var(--colorCritical);
+            border-color: var(--colorCritical);
+        }
+    }
+
+    &--icon-only {
+        font-size: 0px;
+        .rux-button__icon {
+            margin-left: -0.625rem;
+            margin-right: -0.625rem;
+        }
+    }
+}
+
+.rux-button--large.rux-button--icon-only .rux-button__icon {
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+.rux-button--icon-only ::slotted(rux-icon),
+.rux-button--icon-only rux-icon {
+    margin-left: -0.625rem;
+    margin-right: -0.625rem;
+}
+
+.rux-button--large.rux-button--icon-only ::slotted(rux-icon),
+.rux-button--large.rux-button--icon-only rux-icon {
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+.rux-button--small ::slotted(rux-icon),
+.rux-button--small rux-icon {
+    height: 0.875rem;
+    width: 0.875rem;
+}
+
+.rux-button--large ::slotted(rux-icon),
+.rux-button--large rux-icon {
+    height: 1.75rem;
+    width: 1.75rem;
+    margin-left: -0.8rem;
+}
+
+.rux-button rux-icon {
+    fill: var(--buttonTextColor);
+}
+.rux-button--outline rux-icon,
+.rux-button--outline rux-icon svg > use {
+    fill: var(--buttonOutlineTextColor);
+}
+.rux-button ::slotted(rux-icon) {
+    fill: var(--buttonTextColor);
+}
+.rux-button--outline ::slotted(rux-icon) {
+    fill: var(--buttonOutlineTextColor);
+}

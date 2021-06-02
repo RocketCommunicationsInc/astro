@@ -4,8 +4,16 @@
     */
     --iconColor: var(--iconDefaultColor);
 
+    /**
+        * @prop --iconDefaultSize: the default color of the icon
+    */
+    --iconDefaultSize: 3rem;
+
     fill: var(--iconColor);
     display: inline-flex;
+    height: var(--iconDefaultSize);
+    width: var(--iconDefaultSize);
+    fill: var(--iconColor);
 }
 
 svg,
@@ -15,7 +23,6 @@ svg > svg {
 }
 .icon {
     display: inline-flex;
-    margin: 0 auto;
 }
 
 .rux-button--outline rux-icon {
@@ -37,6 +44,6 @@ svg > svg {
 }
 
 .rux-icon--normal {
-    height: 2.7rem;
-    width: 2.7rem;
+    // height: 3rem;
+    // width: 3rem;
 }

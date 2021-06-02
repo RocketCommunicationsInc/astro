@@ -8,27 +8,27 @@ export default {
 };
 
 export const Clock = () => {
-  const timezones = {
-    Guam: 'Pacific/Guam',
-    Hawaii: 'Pacific/Honolulu',
-    Alaska: 'America/Anchorage',
-    Pacific: 'America/Los_Angeles',
-    Mountain: 'America/Denver',
-    Central: 'america/chicago', // testing case-insensitive string match
-    Eastern: 'America/New_York',
-    Tokyo: 'Asia/Tokyo',
-    Sydney: 'Australia/Sydney',
-    UTC: 'UTC',
-    Z: 'Z',
-    z: 'z',
-    a: 'a',
-    B: 'B',
-  };
+    const timezones = {
+        Guam: 'Pacific/Guam',
+        Hawaii: 'Pacific/Honolulu',
+        Alaska: 'America/Anchorage',
+        Pacific: 'America/Los_Angeles',
+        Mountain: 'America/Denver',
+        Central: 'america/chicago', // testing case-insensitive string match
+        Eastern: 'America/New_York',
+        Tokyo: 'Asia/Tokyo',
+        Sydney: 'Australia/Sydney',
+        UTC: 'UTC',
+        Z: 'Z',
+        z: 'z',
+        a: 'a',
+        B: 'B',
+    }
 
-  const timezoneKnob = select('Timezone', timezones, 'UTC');
-  const hideTimezoneKnob = boolean('Hide Timezone', false);
-  const hideDateKnob = boolean('Hide DOY', false);
-  const smallKnob = boolean('Small Version', false);
+    const timezoneKnob = select('Timezone', timezones, 'UTC')
+    const hideTimezoneKnob = boolean('Hide Timezone', false)
+    const hideDateKnob = boolean('Hide DOY', false)
+    const smallKnob = boolean('Small Version', false)
 
   return html`
     <div style="padding: 10%; display: flex; justify-content: center;">
@@ -42,32 +42,30 @@ export const Clock = () => {
   `;
 };
 
-Clock.story = {
-  parameters: {
+Clock.parameters = {
     exports: {
-      render,
-      html,
+        render,
+        html,
     },
     readme: {
-      sidebar: readme,
+        sidebar: readme,
     },
-  },
-};
+}
 
 export const ClockWithAosLos = () => {
-  const timezones = {
-    Guam: 'Pacific/Guam',
-    Hawaii: 'Pacific/Honolulu',
-    Alaska: 'America/Anchorage',
-    Pacific: 'America/Los_Angeles',
-    Mountain: 'America/Denver',
-    Central: 'america/chicago', // testing case-insensitive string match
-    Eastern: 'America/New_York',
-    UTC: 'UTC',
-    Z: 'Z',
-    z: 'z',
-  };
-
+    const timezones = {
+        Guam: 'Pacific/Guam',
+        Hawaii: 'Pacific/Honolulu',
+        Alaska: 'America/Anchorage',
+        Pacific: 'America/Los_Angeles',
+        Mountain: 'America/Denver',
+        Central: 'america/chicago', // testing case-insensitive string match
+        Eastern: 'America/New_York',
+        UTC: 'UTC',
+        Z: 'Z',
+        z: 'z',
+    }
+    
   const timezoneKnob = select('Timezone', timezones, 'UTC');
   const aosKnob = date('AOS', new Date());
   const losKnob = date('LOS', new Date());
@@ -89,16 +87,14 @@ export const ClockWithAosLos = () => {
   `;
 };
 
-ClockWithAosLos.story = {
-  name: 'Clock with AOS/LOS',
+ClockWithAosLos.storyName = 'Clock with AOS/LOS'
 
-  parameters: {
+ClockWithAosLos.parameters = {
     exports: {
-      render,
-      html,
+        render,
+        html,
     },
     readme: {
-      sidebar: readme,
+        sidebar: readme,
     },
-  },
-};
+}

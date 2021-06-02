@@ -1,0 +1,21 @@
+.rux-button-group {
+    display: flex;
+    align-items: center;
+
+    rux-button:not(:last-child),
+    ::slotted(rux-button:not(:last-child)) {
+        margin-right: 0.625rem;
+    }
+
+    &--left {
+        justify-content: flex-start;
+    }
+
+    &--right {
+        justify-content: flex-end;
+    }
+
+    &--center {
+        justify-content: center;
+    }
+}

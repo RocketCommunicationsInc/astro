@@ -1,35 +1,62 @@
-import { Prop, Component, Host, h } from '@stencil/core';
+import { Prop, Component, h } from '@stencil/core'
 
 @Component({
-  tag: 'rux-button',
-  styleUrl: 'rux-button.css',
-  shadow: true,
+    tag: 'rux-button',
+    styleUrl: 'rux-button.scss',
+    shadow: true,
 })
-
 export class RuxButton {
-  @Prop() icon: string = '';
-  @Prop() iconOnly: boolean = false;
-  @Prop() outline: boolean = false;
-  @Prop({ reflect: true }) disabled = false;
-  @Prop({ reflect: true }) size?: 'small' | 'large';
+    /*
+      For a [button styleguid, see the Button section in Astro UXDS Guidelines](https://astrouxds.com/components/button)
+    */
+    /*
+      Displays an Astro icon matching this string. For a [full list of available icons,
+      see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols)
+    */
+    @Prop({ reflect: true }) icon: string = ''
+    /*
+      Hides slotted text from the button by setting rux-button--icon-only class
+    */
+    @Prop({ reflect: true }) iconOnly: boolean = false
+    /*
+      Changes button style from solid to outline by setting rux-button--outline class
+    */
+    @Prop() outline: boolean = false
+    /*
+      Toggles disabled attribute on the button
+    */
+    @Prop({ reflect: true }) disabled = false
+    /*
+      Changes size of a button from standard to small or large by setting sizing classes
+      rux-button--small
+      rux-button--large
+    */
+    @Prop({ reflect: true }) size?: 'small' | 'large'
 
-  render() {
-    const { size, iconOnly, outline, disabled } = this;
-    return (
-      <Host
-        aria-disabled={disabled ? 'true' : null }
-        class={{
-          'rux-button': true,
-          'rux-button--outline': outline,
-          'rux-button--small' : size === 'small',
-          'rux-button--large' : size === 'large',
-          'rux-button--icon-only' : iconOnly
-        }}
-        disabled={disabled}
-      >
-        <slot></slot>
-      </Host>
-    );
-  }
+    render() {
+        const { size, iconOnly, outline, disabled, icon } = this
+        return (
+            <button
+                type="button"
+                class={{
+                    'rux-button': true,
+                    'rux-button--outline': outline,
+                    'rux-button--small': size === 'small',
+                    'rux-button--large': size === 'large',
+                    'rux-button--icon-only': iconOnly,
+                }}
+                aria-disabled={disabled ? 'true' : null}
+                disabled={disabled}
+            >
+                {icon ? (
+                    <rux-icon
+                        icon={icon}
+                        color={outline ? 'primary' : 'dark'}
+                    ></rux-icon>
+                ) : null}
 
+                <slot></slot>
+            </button>
+        )
+    }
 }

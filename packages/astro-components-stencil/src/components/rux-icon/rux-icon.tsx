@@ -6,7 +6,7 @@ import { Component, Host, Prop, h, Watch } from '@stencil/core';
     shadow: true,
 })
 export class RuxIcon {
-    svg: string;
+    svg: string
 
     @Prop({reflect: true}) size: 'extra-small' | 'small' | 'normal' | 'large' = 'normal'
     @Prop() icon: string;
