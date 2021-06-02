@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, Watch } from '@stencil/core';
 
 @Component({
   tag: 'rux-progress',
@@ -12,6 +12,20 @@ export class RuxProgress {
 
 getProgressAsString(){
   return this.max === 100 ? `${this.value}%` : `${this.value}/${this.max}`
+}
+checkValueNotOverMax(max:number, value:number){
+   if(max < value){
+     max = value;
+     this.max = max;
+     console.warn("The given max for <rux-progress> was less than the given value. Max has been changed to equal value in the meantime. Please be sure max and value are correct on the <rux-progress> component.")
+   }
+}
+connectedCallback(){
+  this.checkValueNotOverMax(this.max, this.value);
+}
+@Watch('value')
+watchHandler(){
+  this.checkValueNotOverMax(this.max, this.value);
 }
   render() {
     return (

@@ -51,18 +51,22 @@ DeterminateProgress.story = {
     export const DeterminateProgressMax = () => {
       const maxValueLabel = 'Max';
       const maxValueDefaultValue = 10;
-    
+      const maxLimit = number(maxValueLabel, maxValueDefaultValue);
       const progressLabel = 'Progress';
       const progressDefaultValue = 1;
       const progressOptions = {
         range: true,
         min: 1,
-        max: maxValueDefaultValue,
-        step: 1,
+        max: maxLimit,
+        step: 1
       };
+      
+      let progress = number(progressLabel, progressDefaultValue, progressOptions);
+      //* max should never be less than progress value
+      if(progressOptions.max < progress){
+        progress = maxLimit;
+      }
     
-      const progress = number(progressLabel, progressDefaultValue, progressOptions);
-      const maxLimit = number(maxValueLabel, maxValueDefaultValue);
       const hideLabel = boolean('Hide Label', true);
       return html`
         <div style="margin: 3rem auto;  padding: 2rem; text-align: center;">
