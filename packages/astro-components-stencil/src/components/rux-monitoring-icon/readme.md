@@ -105,30 +105,30 @@ Pass properties as attributes of the Astro Monitoring Progress Icon custom eleme
 
 ## Properties
 
-| Property        | Attribute       | Description | Type                                                                     | Default     |
-| --------------- | --------------- | ----------- | ------------------------------------------------------------------------ | ----------- |
-| `icon`          | `icon`          |             | `string`                                                                 | `undefined` |
-| `label`         | `label`         |             | `string`                                                                 | `undefined` |
-| `notifications` | `notifications` |             | `number`                                                                 | `0`         |
-| `status`        | `status`        |             | `"caution" \| "critical" \| "normal" \| "off" \| "serious" \| "standby"` | `'normal'`  |
-| `sublabel`      | `sublabel`      |             | `string`                                                                 | `undefined` |
+| Property             | Attribute       | Description                                                                                                                                                                                                                                                                             | Type                                                                     | Default     |
+| -------------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ----------- |
+| `icon` _(required)_  | `icon`          | Displays an Astro icon matching this string. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols)                                                                                                | `string`                                                                 | `undefined` |
+| `label` _(required)_ | `label`         | Displays a label below the icon                                                                                                                                                                                                                                                         | `string`                                                                 | `undefined` |
+| `notifications`      | `notifications` | If provided and greater than `0`, displays an outlined number badge at the bottom right of the icon. Numbers above `9999` are abbreviated to `'10K'` or `'100K'` for numbers in the thousands, `'1.5M'` for millions, `'1.5B'` for billions, and uses `'∞'` for one trillion or higher. | `number`                                                                 | `0`         |
+| `status`             | `status`        | Styles the icon according to the Astro Status colors. Valid options are the Astro statuses `critical`, `serious`, `caution`, `normal`, `standby`, and `off`.                                                                                                                            | `"caution" \| "critical" \| "normal" \| "off" \| "serious" \| "standby"` | `'normal'`  |
+| `sublabel`           | `sublabel`      | Displays a smaller label underneath the icon label                                                                                                                                                                                                                                      | `string`                                                                 | `undefined` |
 
 
 ## Dependencies
 
 ### Depends on
 
-- [rux-icon](../rux-icon)
 - [rux-status](../rux-status)
+- [rux-icon](../rux-icon)
 
 ### Graph
 ```mermaid
 graph TD;
-  rux-monitoring-icon --> rux-icon
   rux-monitoring-icon --> rux-status
+  rux-monitoring-icon --> rux-icon
   style rux-monitoring-icon fill:#f9f,stroke:#333,stroke-width:4px
-````
+```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

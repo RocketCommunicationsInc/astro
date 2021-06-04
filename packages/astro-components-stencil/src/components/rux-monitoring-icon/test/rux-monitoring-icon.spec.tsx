@@ -36,17 +36,8 @@ describe('rux-monitoring-icon', () => {
     `)
     })
 
-    it('collapses notifications correctly', async () => {
-        const monitorIcon = new RuxMonitoringIcon()
-        expect(monitorIcon._collapseNotification(198)).toBe('198')
-        expect(monitorIcon._collapseNotification(102894)).toBe('102K')
-        expect(monitorIcon._collapseNotification(25684103)).toBe('25.7M')
-        expect(monitorIcon._collapseNotification(3038953951)).toBe('3.0B')
-        expect(monitorIcon._collapseNotification(20923509825234)).toBe('∞')
-    })
-
-    it('errors with invalid status', async () => {
-        const monitorIcon = new RuxMonitoringIcon()
+  it('errors with invalid status', async () => {
+    const monitorIcon = new RuxMonitoringIcon()
 
         expect(() => {
             monitorIcon.validateStatus('')

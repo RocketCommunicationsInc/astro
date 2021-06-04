@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Classification, Status } from "./common/commonTypes.module";
+import { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
 export namespace Components {
     interface RuxButton {
         "disabled": boolean;
@@ -5339,11 +5340,56 @@ export namespace Components {
         "size": 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxMonitoringIcon {
+        /**
+          * Displays an Astro icon matching this string. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols)
+         */
         "icon": string;
+        /**
+          * Displays a label below the icon
+         */
         "label": string;
+        /**
+          * If provided and greater than `0`, displays an outlined number badge at the bottom right of the icon. Numbers above `9999` are abbreviated to `'10K'` or `'100K'` for numbers in the thousands, `'1.5M'` for millions, `'1.5B'` for billions, and uses `'∞'` for one trillion or higher.
+         */
         "notifications": number;
+        /**
+          * Styles the icon according to the Astro Status colors. Valid options are the Astro statuses `critical`, `serious`, `caution`, `normal`, `standby`, and `off`.
+         */
         "status": Status;
+        /**
+          * Displays a smaller label underneath the icon label
+         */
         "sublabel": string;
+    }
+    interface RuxMonitoringProgressIcon {
+        /**
+          * Displays a label below the icon
+         */
+        "label": string;
+        /**
+          * Sets the maximum value for the progress range. When progress is this number, it reads 100%. When it is halfway between min and max, it will read 50%
+         */
+        "max"?: number;
+        /**
+          * Sets the minimum value for the progress range. When progress is this number, it reads 0%. When it is halfway between min and max, it will read 50%
+         */
+        "min"?: number;
+        /**
+          * If provided and greater than `0`, displays an outlined number badge at the bottom right of the icon. Numbers above `9999` are abbreviated to `'10K'` or `'100K'` for numbers in the thousands, `'1.5M'` for millions, `'1.5B'` for billions, and `'∞'` for one trillion or higher.
+         */
+        "notifications"?: number;
+        /**
+          * Displays this value as a percentage of where it lies between min and max in the center of the donut graph and styles a proportional segment of the graph. Progress can be positive or negative (the later useful for countdowns). The progress value must exist within the thresholds specified in the range property below.
+         */
+        "progress": number;
+        /**
+          * Items in this Array define thresholds for changing the status style of the progress icon. For each item in the Array, the icon will be styled with the given status while the progress value is less than or equal to the Array item’s threshold and greater than the next smallest item‘s threshold. Both progress and the Array items’ threshold values can be positive or negative. If no min is specified, the component assumes the Array's first status threshold begins at 0.
+         */
+        "range"?: Array<RangeItem>;
+        /**
+          * Displays a smaller label underneath the icon label
+         */
+        "sublabel"?: string;
     }
     interface RuxProgress {
         "hideLabel": boolean;
@@ -11721,6 +11767,12 @@ declare global {
         prototype: HTMLRuxMonitoringIconElement;
         new (): HTMLRuxMonitoringIconElement;
     };
+    interface HTMLRuxMonitoringProgressIconElement extends Components.RuxMonitoringProgressIcon, HTMLStencilElement {
+    }
+    var HTMLRuxMonitoringProgressIconElement: {
+        prototype: HTMLRuxMonitoringProgressIconElement;
+        new (): HTMLRuxMonitoringProgressIconElement;
+    };
     interface HTMLRuxProgressElement extends Components.RuxProgress, HTMLStencilElement {
     }
     var HTMLRuxProgressElement: {
@@ -12795,6 +12847,7 @@ declare global {
         "rux-icon-zoom-out": HTMLRuxIconZoomOutElement;
         "rux-icon-zoom-out-map": HTMLRuxIconZoomOutMapElement;
         "rux-monitoring-icon": HTMLRuxMonitoringIconElement;
+        "rux-monitoring-progress-icon": HTMLRuxMonitoringProgressIconElement;
         "rux-progress": HTMLRuxProgressElement;
         "rux-status": HTMLRuxStatusElement;
     }
@@ -18132,10 +18185,55 @@ declare namespace LocalJSX {
         "size"?: 'extra-small' | 'small' | 'normal' | 'large';
     }
     interface RuxMonitoringIcon {
-        "icon"?: string;
-        "label"?: string;
+        /**
+          * Displays an Astro icon matching this string. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols)
+         */
+        "icon": string;
+        /**
+          * Displays a label below the icon
+         */
+        "label": string;
+        /**
+          * If provided and greater than `0`, displays an outlined number badge at the bottom right of the icon. Numbers above `9999` are abbreviated to `'10K'` or `'100K'` for numbers in the thousands, `'1.5M'` for millions, `'1.5B'` for billions, and uses `'∞'` for one trillion or higher.
+         */
         "notifications"?: number;
+        /**
+          * Styles the icon according to the Astro Status colors. Valid options are the Astro statuses `critical`, `serious`, `caution`, `normal`, `standby`, and `off`.
+         */
         "status"?: Status;
+        /**
+          * Displays a smaller label underneath the icon label
+         */
+        "sublabel"?: string;
+    }
+    interface RuxMonitoringProgressIcon {
+        /**
+          * Displays a label below the icon
+         */
+        "label": string;
+        /**
+          * Sets the maximum value for the progress range. When progress is this number, it reads 100%. When it is halfway between min and max, it will read 50%
+         */
+        "max"?: number;
+        /**
+          * Sets the minimum value for the progress range. When progress is this number, it reads 0%. When it is halfway between min and max, it will read 50%
+         */
+        "min"?: number;
+        /**
+          * If provided and greater than `0`, displays an outlined number badge at the bottom right of the icon. Numbers above `9999` are abbreviated to `'10K'` or `'100K'` for numbers in the thousands, `'1.5M'` for millions, `'1.5B'` for billions, and `'∞'` for one trillion or higher.
+         */
+        "notifications"?: number;
+        /**
+          * Displays this value as a percentage of where it lies between min and max in the center of the donut graph and styles a proportional segment of the graph. Progress can be positive or negative (the later useful for countdowns). The progress value must exist within the thresholds specified in the range property below.
+         */
+        "progress": number;
+        /**
+          * Items in this Array define thresholds for changing the status style of the progress icon. For each item in the Array, the icon will be styled with the given status while the progress value is less than or equal to the Array item’s threshold and greater than the next smallest item‘s threshold. Both progress and the Array items’ threshold values can be positive or negative. If no min is specified, the component assumes the Array's first status threshold begins at 0.
+         */
+        "range"?: Array<RangeItem>;
+        /**
+          * Displays a smaller label underneath the icon label
+         */
         "sublabel"?: string;
     }
     interface RuxProgress {
@@ -19208,6 +19306,7 @@ declare namespace LocalJSX {
         "rux-icon-zoom-out": RuxIconZoomOut;
         "rux-icon-zoom-out-map": RuxIconZoomOutMap;
         "rux-monitoring-icon": RuxMonitoringIcon;
+        "rux-monitoring-progress-icon": RuxMonitoringProgressIcon;
         "rux-progress": RuxProgress;
         "rux-status": RuxStatus;
     }
@@ -20277,6 +20376,7 @@ declare module "@stencil/core" {
             "rux-icon-zoom-out": LocalJSX.RuxIconZoomOut & JSXBase.HTMLAttributes<HTMLRuxIconZoomOutElement>;
             "rux-icon-zoom-out-map": LocalJSX.RuxIconZoomOutMap & JSXBase.HTMLAttributes<HTMLRuxIconZoomOutMapElement>;
             "rux-monitoring-icon": LocalJSX.RuxMonitoringIcon & JSXBase.HTMLAttributes<HTMLRuxMonitoringIconElement>;
+            "rux-monitoring-progress-icon": LocalJSX.RuxMonitoringProgressIcon & JSXBase.HTMLAttributes<HTMLRuxMonitoringProgressIconElement>;
             "rux-progress": LocalJSX.RuxProgress & JSXBase.HTMLAttributes<HTMLRuxProgressElement>;
             "rux-status": LocalJSX.RuxStatus & JSXBase.HTMLAttributes<HTMLRuxStatusElement>;
         }
