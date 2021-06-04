@@ -6,17 +6,17 @@
 	*/
 
     /* Astro 5 Simplified Colors */
-    --backgroundColor: #101923;
-    --defaultText: #ffffff;
-    --secondaryText: #d4d8dd;
-    --globalAppHeader: #172635;
-    --surfaceElements: #1b2d3e;
-    --primary: #4dacff;
-    --primaryLight: #92cbff;
-    --primaryLightHover: #92cbff4d; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
-    --primaryDark: #3a87cf;
-    --primaryElementText: #080c11;
-    --inputBackground: #ffffff;
+    --backgroundColor: var(--colorTertiaryDarken3, #101923);
+    --defaultText: var(--colorWhite, #FFFFFF);
+    --secondaryText: var(--colorTertiaryLighten4, #d4d8dd);
+    --globalAppHeader: var(--colorTertiaryDarken2, #172635);
+    --surfaceElements: #1b2d3e; /* TODO: this is an unofficial Astro color, but a required KM color */
+    --primary: var(--colorSecondary, #4dacff);
+    --primaryLight: var(--colorSecondaryLighten2, #92cbff);
+    --primaryLightHover: #92cbff4D; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
+    --primaryDark: var(--colorSecondaryLighten2, #3a87cf);
+    --primaryElementText: var(--colorTertiaryDarken4, #080c11);
+    --inputBackground: var(--colorWhite, #FFFFFF);
 
     /* styles */
     --fontColor: var(--defaultText);
