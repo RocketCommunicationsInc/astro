@@ -66,7 +66,7 @@ export class RuxMonitoringProgressIcon {
   @Watch('progress')
   checkProgress(newValue: number, oldValue: number) {
     if (newValue !== oldValue) {
-      this._updateProgress()
+      this.updateProgress()
     }
   }
 
@@ -105,7 +105,7 @@ export class RuxMonitoringProgressIcon {
       }
       this.range = this.range.sort((a, b) => (a.threshold >= b.threshold ? 1 : -1));
 
-      this._updateProgress();
+      this.updateProgress();
     }
   }
 
@@ -113,7 +113,7 @@ export class RuxMonitoringProgressIcon {
     return this._status
   }
 
-  private _updateProgress() {
+  updateProgress() {
     this._status = this.range.find((range) => this.progress <= range.threshold).status || this.range[0].status;
     this._graphProgress = this._circumference - ((this.progress - this.min) / (this.max - this.min)) * this._circumference;
   }
