@@ -33,7 +33,7 @@ describe('rux-global-status-bar', () => {
         <mock:shadow-root>
           <header>
             <slot name="left-side">
-              <rux-icon icon="apps" size="small"></rux-icon>
+              <rux-icon icon="apps" size="small" style="width: 32px"></rux-icon>
             </slot>
             <slot name="app-meta">
               <div class="app-meta">
@@ -69,7 +69,7 @@ describe('rux-global-status-bar', () => {
         <mock:shadow-root>
           <header>
             <slot name="left-side">
-              <rux-icon icon="apps" size="small"></rux-icon>
+              <rux-icon icon="apps" size="small" style="width: 32px"></rux-icon>
             </slot>
             <slot name="app-meta">
               <div class="app-meta">
