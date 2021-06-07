@@ -90,7 +90,7 @@ $theme: (
     --colorPrimaryDarken4: rgb(0, 18, 29);
 
     --colorSecondaryLighten1: rgb(113, 189, 255);
-    --colorSecondaryLighten2: rgb(146,203,255);
+    --colorSecondaryLighten2: rgb(146, 203, 255);
     --colorSecondaryLighten3: rgb(184, 222, 255);
     --colorSecondaryLighten4: rgb(219, 238, 255);
     --colorSecondaryDarken1: rgb(62, 138, 204);
@@ -465,21 +465,6 @@ $theme: (
     --treeChildrenBackgroundColor: var(--surfaceElements);
 
     --treeExpandedBorderColor: var(--backgroundColor);
-
-    /*
-
-    Tab Colors
-    ==========================================================================
-
-  */
-    --tabTextColor: var(--primary);
-    --tabBackgroundColor: transparent;
-    --tabBorderColor: transparent;
-
-    --tabHoverTextColor: var(--defaultText);
-
-    --tabSelectedTextColor: var(--defaultText);
-    --tabSelectedBorderColor: var(--primary);
 
     /*
 
