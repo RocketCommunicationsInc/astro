@@ -8,14 +8,14 @@ describe('rux-global-status-bar', () => {
       html: `<rux-global-status-bar></rux-global-status-bar>`,
     });
     expect(page.root).toEqualHtml(`
-      <rux-global-status-bar>
+      <rux-global-status-bar menu-icon="apps">
         <mock:shadow-root>
           <header>
             <slot name="left-side"></slot>
-            <div class="app-meta" hidden>
-              <h1><span class="app-version"></span></h1>
+            <slot name="app-meta"></slot>
+            <div class="slotted-content">
+              <slot></slot>
             </div>
-            <slot></slot>
             <slot name="right-side"></slot>
           </header>
         </mock:shadow-root>
@@ -23,13 +23,13 @@ describe('rux-global-status-bar', () => {
     `);
   });
 
-  it('renders with app meta', async () => {
+  it('renders with icon and app meta', async () => {
     const page = await newSpecPage({
       components: [RuxGlobalStatusBar],
-      html: `<rux-global-status-bar app-domain="GRM" app-name="Test App Name" app-version="test v1.0"></rux-global-status-bar>`,
+      html: `<rux-global-status-bar include-icon include-app-meta app-domain="GRM" app-name="Test App Name" app-version="test v1.0"></rux-global-status-bar>`,
     });
     expect(page.root).toEqualHtml(`
-      <rux-global-status-bar app-domain="GRM" app-name="Test App Name" app-version="test v1.0" menu-icon="apps">
+      <rux-global-status-bar include-icon include-app-meta app-domain="GRM" app-name="Test App Name" app-version="test v1.0" menu-icon="apps">
         <mock:shadow-root>
           <header>
             <slot name="left-side">
@@ -44,10 +44,12 @@ describe('rux-global-status-bar', () => {
                   </h1>
                 </div>
                 <div class="temp-app-state">App state</div>
-                <div class="temp-user-name">User Name</div>
+                <div class="temp-user-name">Username</div>
               </div>
             </slot>
-            <slot></slot>
+            <div class="slotted-content">
+              <slot></slot>
+            </div>
             <slot name="right-side"></slot>
           </header>
         </mock:shadow-root>
@@ -55,17 +57,17 @@ describe('rux-global-status-bar', () => {
     `);
   });
 
-  it('renders with app meta and slotted content', async () => {
+  it('renders with icon, app meta and slotted content', async () => {
     const page = await newSpecPage({
       components: [RuxGlobalStatusBar],
-      html: `<rux-global-status-bar app-domain="GRM" app-name="Test App Name" app-version="test v1.0">
+      html: `<rux-global-status-bar include-icon include-app-meta app-domain="GRM" app-name="Test App Name" app-version="test v1.0">
                 <div>Tab links<div>
                 <button slot="right-side">Master on/off</button>
             </rux-global-status-bar>`,
     });
     page.waitForChanges()
     expect(page.root).toEqualHtml(`
-      <rux-global-status-bar app-domain="GRM" app-name="Test App Name" app-version="test v1.0" menu-icon="apps">
+      <rux-global-status-bar include-icon include-app-meta app-domain="GRM" app-name="Test App Name" app-version="test v1.0" menu-icon="apps">
         <mock:shadow-root>
           <header>
             <slot name="left-side">
@@ -80,10 +82,12 @@ describe('rux-global-status-bar', () => {
                   </h1>
                 </div>
                 <div class="temp-app-state">App state</div>
-                <div class="temp-user-name">User Name</div>
+                <div class="temp-user-name">Username</div>
               </div>
             </slot>
-            <slot></slot>
+            <div class="slotted-content">
+              <slot></slot>
+            </div>
             <slot name="right-side"></slot>
           </header>
         </mock:shadow-root>
