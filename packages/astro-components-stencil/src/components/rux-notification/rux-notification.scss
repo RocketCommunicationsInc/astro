@@ -1,3 +1,43 @@
 :host {
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    align-items: center;
+    align-content: center;
+    top: -4.375rem;
+    left: 0;
+    height: 4.375rem;
+    width: 100%;
+    position: absolute;
+    padding: 0 1.25rem;
+    background-color: var(--colorStandbyLighten1);
+    transition: top 0.5s ease;
+    box-sizing: border-box;
+    font-size: var(--fontSizeXL);
+    color: var(--notificationTextColor);
+}
+:host([open]) {
+    top: 0;
+}
+:host,
+:host([status='standby']) {
+    background-color: var(--colorStandbyLighten1);
+    stroke: var(--colorStandbyDarken1);
+    fill: var(--colorStandbyDarken1);
+}
+:host([status='normal']) {
+    background-color: var(--colorNormalLighten2);
+    stroke: var(--colorNormalDarken1);
+    fill: var(--colorNormalDarken1);
+}
+:host([status='caution']) {
+    background-color: var(--colorCautionLighten1);
+    stroke: var(--colorCautionDarken1);
+    fill: var(--colorCautionDarken1);
+}
+:host([status='critical']) {
+    background-color: var(--colorCriticalLighten1);
+    stroke: var(--colorCriticalDarken1);
+    fill: var(--colorCriticalDarken1);
 }
