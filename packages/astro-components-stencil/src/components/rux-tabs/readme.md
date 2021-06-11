@@ -63,7 +63,7 @@ The Astro UXDS Tabs pattern is configured using properties passed into the custo
 </rux-tab-panels>
 ```
 
-The `small` property may passed as a simple attribute on the Astro UXDS Tabs container element:
+The `small` property may be passed as a simple attribute on the Astro UXDS Tabs container element:
 
 ```xml
 <rux-tabs small id="tab-set-id-1">

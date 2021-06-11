@@ -5392,6 +5392,24 @@ export namespace Components {
          */
         "sublabel"?: string;
     }
+    interface RuxNotification {
+        /**
+          * If provided, the banner will automatically close after this amount of time. Accepts value either in milliseconds or seconds (which will be converted to milliseconds internally), between `2000` and `10000`, or `2` and `10`, respectively. Any number provided outside of the `2000`-`10000` range will be ignored in favor of the default 2000ms delay. <br>If `closeAfter` is not passed or if it is given an undefined or `null` value, the banner will stay open until the user closes it.
+         */
+        "closeAfter": number;
+        /**
+          * Message for the notification banner.
+         */
+        "message": string;
+        /**
+          * Set to true to display the Banner and begin countdown to close (if a close-after Number value is provided).
+         */
+        "open": boolean;
+        /**
+          * Displays an icon from the [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/) in the log entry's row. Possible values include 'off', 'standby', 'normal', 'caution', 'serious', and 'critical'.
+         */
+        "status": Status;
+    }
     interface RuxProgress {
         "hideLabel": boolean;
         "max": number;
@@ -11812,6 +11830,12 @@ declare global {
         prototype: HTMLRuxMonitoringProgressIconElement;
         new (): HTMLRuxMonitoringProgressIconElement;
     };
+    interface HTMLRuxNotificationElement extends Components.RuxNotification, HTMLStencilElement {
+    }
+    var HTMLRuxNotificationElement: {
+        prototype: HTMLRuxNotificationElement;
+        new (): HTMLRuxNotificationElement;
+    };
     interface HTMLRuxProgressElement extends Components.RuxProgress, HTMLStencilElement {
     }
     var HTMLRuxProgressElement: {
@@ -12917,6 +12941,7 @@ declare global {
         "rux-icon-zoom-out-map": HTMLRuxIconZoomOutMapElement;
         "rux-monitoring-icon": HTMLRuxMonitoringIconElement;
         "rux-monitoring-progress-icon": HTMLRuxMonitoringProgressIconElement;
+        "rux-notification": HTMLRuxNotificationElement;
         "rux-progress": HTMLRuxProgressElement;
         "rux-status": HTMLRuxStatusElement;
         "rux-switch": HTMLRuxSwitchElement;
@@ -18310,6 +18335,24 @@ declare namespace LocalJSX {
          */
         "sublabel"?: string;
     }
+    interface RuxNotification {
+        /**
+          * If provided, the banner will automatically close after this amount of time. Accepts value either in milliseconds or seconds (which will be converted to milliseconds internally), between `2000` and `10000`, or `2` and `10`, respectively. Any number provided outside of the `2000`-`10000` range will be ignored in favor of the default 2000ms delay. <br>If `closeAfter` is not passed or if it is given an undefined or `null` value, the banner will stay open until the user closes it.
+         */
+        "closeAfter"?: number;
+        /**
+          * Message for the notification banner.
+         */
+        "message"?: string;
+        /**
+          * Set to true to display the Banner and begin countdown to close (if a close-after Number value is provided).
+         */
+        "open"?: boolean;
+        /**
+          * Displays an icon from the [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/) in the log entry's row. Possible values include 'off', 'standby', 'normal', 'caution', 'serious', and 'critical'.
+         */
+        "status"?: Status;
+    }
     interface RuxProgress {
         "hideLabel"?: boolean;
         "max"?: number;
@@ -19424,6 +19467,7 @@ declare namespace LocalJSX {
         "rux-icon-zoom-out-map": RuxIconZoomOutMap;
         "rux-monitoring-icon": RuxMonitoringIcon;
         "rux-monitoring-progress-icon": RuxMonitoringProgressIcon;
+        "rux-notification": RuxNotification;
         "rux-progress": RuxProgress;
         "rux-status": RuxStatus;
         "rux-switch": RuxSwitch;
@@ -20499,6 +20543,7 @@ declare module "@stencil/core" {
             "rux-icon-zoom-out-map": LocalJSX.RuxIconZoomOutMap & JSXBase.HTMLAttributes<HTMLRuxIconZoomOutMapElement>;
             "rux-monitoring-icon": LocalJSX.RuxMonitoringIcon & JSXBase.HTMLAttributes<HTMLRuxMonitoringIconElement>;
             "rux-monitoring-progress-icon": LocalJSX.RuxMonitoringProgressIcon & JSXBase.HTMLAttributes<HTMLRuxMonitoringProgressIconElement>;
+            "rux-notification": LocalJSX.RuxNotification & JSXBase.HTMLAttributes<HTMLRuxNotificationElement>;
             "rux-progress": LocalJSX.RuxProgress & JSXBase.HTMLAttributes<HTMLRuxProgressElement>;
             "rux-status": LocalJSX.RuxStatus & JSXBase.HTMLAttributes<HTMLRuxStatusElement>;
             "rux-switch": LocalJSX.RuxSwitch & JSXBase.HTMLAttributes<HTMLRuxSwitchElement>;

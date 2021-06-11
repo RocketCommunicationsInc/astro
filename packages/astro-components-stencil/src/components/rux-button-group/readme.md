@@ -36,6 +36,14 @@ Read the [Rux-Buttons Readme](/?path=/info/components-buttons--standard-button) 
 
 <!-- Auto Generated Below -->
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+## Properties
+
+| Property | Attribute | Description | Type                            | Default  |
+| -------- | --------- | ----------- | ------------------------------- | -------- |
+| `align`  | `align`   |             | `"center" \| "left" \| "right"` | `'left'` |
+
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*
