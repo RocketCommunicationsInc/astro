@@ -60,8 +60,34 @@ export namespace Components {
         "timezone": string;
     }
     interface RuxGlobalStatusBar {
-        "appname": string;
-        "version": string;
+        /**
+          * Sets the domain of the application to be displayed in the app-meta element
+         */
+        "appDomain"?: string;
+        /**
+          * Sets the name of the application to be displayed in the app-meta element
+         */
+        "appName"?: string;
+        /**
+          * Sets the version of the application to be displayed in the app-meta element
+         */
+        "appVersion"?: string;
+        /**
+          * Declares whether the app-state component will be shown in the app-meta slot
+         */
+        "includeAppState"?: boolean;
+        /**
+          * Declares whether a rux-icon will be shown in the left-side slot
+         */
+        "includeIcon"?: boolean;
+        /**
+          * Declares whether the username component will be shown in the app-meta slot
+         */
+        "includeUsername"?: boolean;
+        /**
+          * Sets the icon to be displayed in the default rux-icon component
+         */
+        "menuIcon"?: string;
     }
     interface RuxIcon {
         "color": string;
@@ -13003,8 +13029,34 @@ declare namespace LocalJSX {
         "timezone"?: string;
     }
     interface RuxGlobalStatusBar {
-        "appname"?: string;
-        "version"?: string;
+        /**
+          * Sets the domain of the application to be displayed in the app-meta element
+         */
+        "appDomain"?: string;
+        /**
+          * Sets the name of the application to be displayed in the app-meta element
+         */
+        "appName"?: string;
+        /**
+          * Sets the version of the application to be displayed in the app-meta element
+         */
+        "appVersion"?: string;
+        /**
+          * Declares whether the app-state component will be shown in the app-meta slot
+         */
+        "includeAppState"?: boolean;
+        /**
+          * Declares whether a rux-icon will be shown in the left-side slot
+         */
+        "includeIcon"?: boolean;
+        /**
+          * Declares whether the username component will be shown in the app-meta slot
+         */
+        "includeUsername"?: boolean;
+        /**
+          * Sets the icon to be displayed in the default rux-icon component
+         */
+        "menuIcon"?: string;
     }
     interface RuxIcon {
         "color"?: string;
