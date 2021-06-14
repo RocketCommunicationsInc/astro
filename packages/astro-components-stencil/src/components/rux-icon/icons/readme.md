@@ -1,9 +1,6 @@
 # rux-icon-zoom-out-map
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -13,7 +10,6 @@
 | `icon`   | `icon`    |             | `string`                                          | `undefined` |
 | `size`   | `size`    |             | `"extra-small" \| "large" \| "normal" \| "small"` | `undefined` |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

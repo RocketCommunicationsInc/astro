@@ -1,11 +1,11 @@
-import { newSpecPage } from '@stencil/core/testing';
-import { RuxMonitoringProgressIcon } from '../rux-monitoring-progress-icon';
+import { newSpecPage } from '@stencil/core/testing'
+import { RuxMonitoringProgressIcon } from '../rux-monitoring-progress-icon'
 
 describe('rux-monitoring-progress-icon', () => {
-  it('renders', async () => {
-    const page = await newSpecPage({
-      components: [RuxMonitoringProgressIcon],
-      html: `
+    it('renders', async () => {
+        const page = await newSpecPage({
+            components: [RuxMonitoringProgressIcon],
+            html: `
       <rux-monitoring-progress-icon
         progress=70
         max="100"
@@ -13,8 +13,8 @@ describe('rux-monitoring-progress-icon', () => {
         sublabel="sublabel"
         notifications="345678"
       ></rux-monitoring-progress-icon>`,
-    });
-    expect(page.root).toEqualHtml(`
+        })
+        expect(page.root).toEqualHtml(`
       <rux-monitoring-progress-icon label="Label" max="100" notifications="345678" progress="70" sublabel="sublabel">
         <mock:shadow-root>
           <div class="rux-advanced-status" id="rux-advanced-status__icon" title="345678 Label sublabel">
@@ -42,43 +42,49 @@ describe('rux-monitoring-progress-icon', () => {
           </div>
         </mock:shadow-root>
       </rux-monitoring-progress-icon>
-    `);
-  });
+    `)
+    })
 
-  it('applies custom range arrays properly', () => {
-    const progressIcon = new RuxMonitoringProgressIcon()
-    progressIcon.min = 100
-    progressIcon.max = 1100
-    progressIcon.progress = 675
-    progressIcon.range = [
-      {
-        threshold: 300,
-        status: 'standby'
-      },
-      {
-        threshold: 775,
-        status: 'normal'
-      },
-      {
-        threshold: 1100,
-        status: 'serious'
-      },
-    ]
-    progressIcon.updateProgress()
-    expect(progressIcon.status).toBe('normal')
-    expect(Math.ceil(((progressIcon.progress - progressIcon.min) / (progressIcon.max - progressIcon.min)) * 100)).toBe(58)
+    it('applies custom range arrays properly', () => {
+        const progressIcon = new RuxMonitoringProgressIcon()
+        progressIcon.min = 100
+        progressIcon.max = 1100
+        progressIcon.progress = 675
+        progressIcon.range = [
+            {
+                threshold: 300,
+                status: 'standby',
+            },
+            {
+                threshold: 775,
+                status: 'normal',
+            },
+            {
+                threshold: 1100,
+                status: 'serious',
+            },
+        ]
+        progressIcon.updateProgress()
+        expect(progressIcon.status).toBe('normal')
+        expect(
+            Math.ceil(
+                ((progressIcon.progress - progressIcon.min) /
+                    (progressIcon.max - progressIcon.min)) *
+                    100
+            )
+        ).toBe(58)
 
-    progressIcon.progress = 1100
-    progressIcon.updateProgress()
-    expect(progressIcon.status).toBe('serious')
-  })
+        progressIcon.progress = 1100
+        progressIcon.updateProgress()
+        expect(progressIcon.status).toBe('serious')
+    })
 
-  it('works with empty range array', () => {
-    const progressIcon = new RuxMonitoringProgressIcon()
+    it('works with empty range array', () => {
+        const progressIcon = new RuxMonitoringProgressIcon()
 
-    progressIcon.progress = 50
-    progressIcon.range = []
-    progressIcon.componentWillLoad()
-    expect(progressIcon.status).toBe('caution')
-  })
-});
+        progressIcon.progress = 50
+        progressIcon.range = []
+        progressIcon.componentWillLoad()
+        expect(progressIcon.status).toBe('caution')
+    })
+})

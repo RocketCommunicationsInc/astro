@@ -36,8 +36,8 @@ describe('rux-monitoring-icon', () => {
     `)
     })
 
-  it('errors with invalid status', async () => {
-    const monitorIcon = new RuxMonitoringIcon()
+    it('errors with invalid status', async () => {
+        const monitorIcon = new RuxMonitoringIcon()
 
         expect(() => {
             monitorIcon.validateStatus('')

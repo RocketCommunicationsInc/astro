@@ -4,7 +4,7 @@ A Switch toggles between two mutually exclusive states such as "On" or "Off." Un
 
 ## Guidelines
 
-- [Astro UXDS: Switch](http://www.astrouxds.com/ui-components/switch)
+-   [Astro UXDS: Switch](http://www.astrouxds.com/ui-components/switch)
 
 ## Web Components Usage
 
@@ -33,10 +33,11 @@ Or, [download the Astro UXDS Components as a .zip](https://bitbucket.org/rocketc
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxSwitch } from "@astro-components/rux-switch/rux-switch.js";
+import { RuxSwitch } from '@astro-components/rux-switch/rux-switch.js'
 ```
 
 ### 3. Render the Astro Switch Web Component
+
 Pass properties as attributes of the Astro Switch custom element:
 
 ```xml
@@ -45,10 +46,10 @@ Pass properties as attributes of the Astro Switch custom element:
 
 ### Properties
 
-| Property | Type | Default | Required | Description |
-| --- | --- | --- | --- | --- |
-| `disabled` | Boolean | `false` | No | Disables the button via HTML `disabled` attribute. Button takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored. |
-| `checked`  | Boolean | `false` | No | Checks the button via HTML `checked` attribute. Button takes on a distinct "enabled" or "selected" visual state.                                                                            |
+| Property   | Type    | Default | Required | Description                                                                                                                                                                                 |
+| ---------- | ------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `disabled` | Boolean | `false` | No       | Disables the button via HTML `disabled` attribute. Button takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored. |
+| `checked`  | Boolean | `false` | No       | Checks the button via HTML `checked` attribute. Button takes on a distinct "enabled" or "selected" visual state.                                                                            |
 
 ---
 
@@ -63,6 +64,7 @@ Latest release is available in [Astro UXDS Styles repo](https://bitbucket.org/ro
 ```
 
 ### 2. Markup the component using HTML and the Astro CSS classes
+
 Astro CSS classes follow the [BEM-style](http://getbem.com/introduction/) naming convention.
 
 Configure the component using native HTML attributes.
@@ -76,7 +78,6 @@ Configure the component using native HTML attributes.
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property   | Attribute  | Description                                                                                                                                                                                 | Type      | Default     |
@@ -85,13 +86,11 @@ Configure the component using native HTML attributes.
 | `disabled` | `disabled` | Disables the button via HTML `disabled` attribute. Button takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored. | `boolean` | `false`     |
 | `name`     | `name`     | The name of the form input element                                                                                                                                                          | `string`  | `undefined` |
 
-
 ## Events
 
 | Event        | Description                                  | Type                             |
 | ------------ | -------------------------------------------- | -------------------------------- |
 | `rux-change` | Emitted when the value property has changed. | `CustomEvent<SwitchChangeEvent>` |
-
 
 ## CSS Custom Properties
 
@@ -104,7 +103,6 @@ Configure the component using native HTML attributes.
 | `--switchOffColor`         | the Switch off color          |
 | `--switchOnColor`          | the Switch on color           |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

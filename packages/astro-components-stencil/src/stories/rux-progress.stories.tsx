@@ -1,8 +1,8 @@
-import { html, render } from 'lit-html';
-import { boolean, withKnobs, number } from '@storybook/addon-knobs';
+import { html, render } from 'lit-html'
+import { boolean, withKnobs, number } from '@storybook/addon-knobs'
 
 //@ts-ignore
-import readme from '../../src/components/rux-progress/readme.md';
+import readme from '../../src/components/rux-progress/readme.md'
 
 export default {
     title: 'Components/Progress',
@@ -12,108 +12,106 @@ export default {
             sidebar: readme,
         },
     },
-};
+}
 
 export const DeterminateProgress = () => {
-   
-    const progressLabel = 'Progress';
-    const progressDefaultValue = 50;
+    const progressLabel = 'Progress'
+    const progressDefaultValue = 50
     const progressOptions = {
         range: true,
         min: 1,
         max: 100,
         step: 1,
-    };
+    }
 
-    const progress = number(progressLabel, progressDefaultValue, progressOptions);
-    const hideLabel = boolean('Hide Label', false);
-
+    const progress = number(
+        progressLabel,
+        progressDefaultValue,
+        progressOptions
+    )
+    const hideLabel = boolean('Hide Label', false)
 
     return html`
-    <div style="margin: 3rem auto;  padding: 2rem; text-align: center;">
-        <rux-progress value="${progress}" ?hide-label="${hideLabel}"></rux-progress>    
-    </div>    
-    `;
-};
+        <div style="margin: 3rem auto;  padding: 2rem; text-align: center;">
+            <rux-progress
+                value="${progress}"
+                ?hide-label="${hideLabel}"
+            ></rux-progress>
+        </div>
+    `
+}
 
 DeterminateProgress.story = {
-      parameters: {
+    parameters: {
         exports: {
-          render,
-          html,
+            render,
+            html,
         },
         readme: {
-          sidebar: readme,
+            sidebar: readme,
         },
-      },
-    };
-    
-    export const DeterminateProgressMax = () => {
-      const maxValueLabel = 'Max';
-      const maxValueDefaultValue = 10;
-      const maxLimit = number(maxValueLabel, maxValueDefaultValue);
-      const progressLabel = 'Progress';
-      const progressDefaultValue = 1;
-      const progressOptions = {
+    },
+}
+
+export const DeterminateProgressMax = () => {
+    const maxValueLabel = 'Max'
+    const maxValueDefaultValue = 10
+    const maxLimit = number(maxValueLabel, maxValueDefaultValue)
+    const progressLabel = 'Progress'
+    const progressDefaultValue = 1
+    const progressOptions = {
         range: true,
         min: 1,
         max: maxLimit,
-        step: 1
-      };
-      
-      let progress = number(progressLabel, progressDefaultValue, progressOptions);
-      //* max should never be less than progress value
-      if(progressOptions.max < progress){
-        progress = maxLimit;
-      }
-    
-      const hideLabel = boolean('Hide Label', true);
-      return html`
+        step: 1,
+    }
+
+    let progress = number(progressLabel, progressDefaultValue, progressOptions)
+    //* max should never be less than progress value
+    if (progressOptions.max < progress) {
+        progress = maxLimit
+    }
+
+    const hideLabel = boolean('Hide Label', true)
+    return html`
         <div style="margin: 3rem auto;  padding: 2rem; text-align: center;">
-          <rux-progress value="${progress}" max="${maxLimit}" ?hide-label="${hideLabel}"></rux-progress>
+            <rux-progress
+                value="${progress}"
+                max="${maxLimit}"
+                ?hide-label="${hideLabel}"
+            ></rux-progress>
         </div>
-      `;
-    };
+    `
+}
 
 DeterminateProgressMax.story = {
-  name: 'Determinate Progress (Max)',
+    name: 'Determinate Progress (Max)',
 
-  parameters: {
-    exports: {
-      render,
-      html,
+    parameters: {
+        exports: {
+            render,
+            html,
+        },
+        readme: {
+            sidebar: readme,
+        },
     },
-    readme: {
-      sidebar: readme,
-    },
-  },
-};
+}
 
 export const IndeterminateProgress = () => html`
     <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
-      <rux-progress></rux-progress>
+        <rux-progress></rux-progress>
     </div>
-  `;
+`
 
 IndeterminateProgress.story = {
-  parameters: {
-    exports: {
-      render,
-      html,
+    parameters: {
+        exports: {
+            render,
+            html,
+        },
+        readme: {
+            sidebar: readme,
+        },
     },
-    readme: {
-      sidebar: readme,
-    },
-  },
-};
-
-
-
-
-
-
-
-
-
-
-
+}

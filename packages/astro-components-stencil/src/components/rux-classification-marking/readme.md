@@ -95,7 +95,6 @@ Applying the `label` property attribute to the classification custom element add
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property         | Attribute        | Description                                                          | Type                                                                                               | Default          |
@@ -104,7 +103,6 @@ Applying the `label` property attribute to the classification custom element add
 | `label`          | `label`          | Allows additional text labels to be added to the a marking           | `string`                                                                                           | `undefined`      |
 | `tag`            | `tag`            | Declares the marking as a `tag` rather than the default banner style | `boolean`                                                                                          | `false`          |
 
-
 ## CSS Custom Properties
 
 | Name                             | Description                                           |
@@ -112,7 +110,6 @@ Applying the `label` property attribute to the classification custom element add
 | `--classificationTextColorDark`  | the color of dark text in the classification marking  |
 | `--classificationTextColorLight` | the color of light text in the classification marking |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

@@ -7,14 +7,14 @@
 
     /* Astro 5 Simplified Color Palette */
     --backgroundColor: var(--colorQuaternaryLighten3, #eaeef4);
-    --defaultText: var(--colorQuaternaryDarken4 ,#292A2D);
-    --secondaryText: var(--colorQuaternaryDarken3, #51555B);
+    --defaultText: var(--colorQuaternaryDarken4, #292a2d);
+    --secondaryText: var(--colorQuaternaryDarken3, #51555b);
     --globalAppHeader: var(--colorTertiaryDarken2, #172635);
     --surfaceElements: var(--colorWhite, #ffffff);
-    --primary: var(--colorPrimary, #005A8F);
-    --primaryLight: var(--colorPrimaryLighten1, #2F7AA7);
+    --primary: var(--colorPrimary, #005a8f);
+    --primaryLight: var(--colorPrimaryLighten1, #2f7aa7);
     --primaryDark: var(--colorPrimaryDarken1, #004872);
-    --primaryDarkHover: #0048724D; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
+    --primaryDarkHover: #0048724d; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
     --primaryElementText: var(--colorWhite, #ffffff);
     --inputBackground: var(--colorWhite, #ffffff);
 

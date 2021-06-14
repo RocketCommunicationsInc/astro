@@ -1,3 +1,3 @@
 export interface SwitchChangeEvent {
-  checked: boolean
+    checked: boolean
 }

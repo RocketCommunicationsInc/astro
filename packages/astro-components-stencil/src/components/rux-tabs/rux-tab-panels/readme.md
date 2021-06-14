@@ -2,14 +2,12 @@
 
 <!-- Auto Generated Below -->
 
-
 ## Events
 
 | Event            | Description | Type                                     |
 | ---------------- | ----------- | ---------------------------------------- |
 | `registerPanels` |             | `CustomEvent<HTMLRuxTabPanelsElement[]>` |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_
