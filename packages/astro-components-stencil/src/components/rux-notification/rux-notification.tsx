@@ -60,9 +60,7 @@ export class RuxNotification {
             (this.closeAfter && this.closeAfter > 10000) ||
             (this.closeAfter && this.closeAfter < 2000)
         ) {
-            //? This sets the maximum amount of time a banner could be live for to 10 seconds. Would we ever want more?
             // if this number is larger than 10s or smaller than 2s, enforce minimum 2s delay
-            //? I'm thinking a 2 second defualt is kinda fast and that a 3 would be better. Thoughts?
             this.closeAfter = 2000
         }
 
