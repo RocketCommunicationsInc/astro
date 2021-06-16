@@ -2,11 +2,15 @@ import { newSpecPage } from '@stencil/core/testing'
 import { RuxClock } from '../rux-clock'
 import { militaryTimezones } from '../military-timezones'
 
+/**
+ * NOTE: Timezone is set to UTC via npm test scripts.
+ * This is due to lack of ability to configure Jest / Stencil limitation
+ */
 const RealDate = Date.now
 
 beforeAll(() => {
-    //Swap Date.now() with global mock
-    global.Date.now = jest.fn(() => new Date('1988-04-22 01:02:03').getTime())
+    //Swap Date.now() with global mock - 1988-04-22 01:02:03
+    global.Date.now = jest.fn(() => 577688523000)
 })
 
 afterAll(() => {
@@ -62,7 +66,7 @@ describe('rux-clock', () => {
             <mock:shadow-root>
               <div class="rux-clock__segment rux-clock__day-of-the-year">
                 <div class="rux-clock__segment__value" aria-labelledby="rux-clock__day-of-year-label">
-                  112
+                  113
                 </div>
                 <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label">
                   Date
@@ -112,7 +116,7 @@ describe('rux-clock', () => {
         const losTime = page.root.shadowRoot.querySelector(
             '#rux-clock__time--los'
         ).innerHTML
-        expect(losTime).toBe('12:12:12')
+        expect(losTime).toBe('08:12:12')
     })
 
     it('shows aos', async () => {
