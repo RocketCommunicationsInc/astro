@@ -85,6 +85,7 @@ Indeterminate progress
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property    | Attribute    | Description | Type      | Default |
@@ -93,6 +94,7 @@ Indeterminate progress
 | `max`       | `max`        |             | `number`  | `100`   |
 | `value`     | `value`      |             | `number`  | `0`     |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

@@ -17,6 +17,7 @@
     --primaryDarkHover: #0048724d; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
     --primaryElementText: var(--colorWhite, #ffffff);
     --inputBackground: var(--colorWhite, #ffffff);
+    --inputDark: #080c11;
 
     /* styles */
     --fontColor: var(--defaultText);
@@ -76,7 +77,7 @@
     For checkboxes, radio buttons etc …
 
   */
-    --controlTextColor: var(--primary);
+    --controlTextColor: var(--primaryElementText);
     --controlLabelColor: var(--defaultText);
     --controlBackgroundColor: var(--primary);
     --controlBorderColor: var(--primary);
@@ -166,61 +167,27 @@
     ==========================================================================
 
   */
-    --selectBackgroundColor: var(--primary);
-    --selectBorderColor: var(--primary);
-    --selectTextColor: var(--primaryElementText);
-    --selectOptBackground: var(--inputBackground);
     --selectHoverOptBackgroundColor: var(--primaryDark);
-    --selectCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
-
-    --selectActiveBorderColor: var(--primary);
+    --selectCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23080c11%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
 
     /*
 
-    Toggle Colors
+    Switch Colors
     ==========================================================================
 
   */
-
-    --toggleButtonBackgroundColor: var(--primary);
-    --toggleButtonBoxShadow: 0 0 3px rgba(0, 0, 0, 0.25),
-        1px 0 2px rgba(0, 0, 0, 0.3);
-
-    --toggleBaseBackgroundColor: linear-gradient(
-        to right,
-        var(--colorNormal) 50%,
-        var(--colorPrimaryLighten4) 50.1%
-    );
-    --toggleBaseBorderColor: var(--primary);
-    --toggleBaseTextColor: var(--primary);
-
-    --toggleBaseSelectedTextColor: #007300;
-    --toggleButtonSelectedBoxShadow: 0 0 3px rgba(0, 0, 0, 0.3),
-        -1px 0 2px rgba(0, 0, 0, 0.3);
-
-    /* Default Toggle */
-    --toggleThumbBorderColor: var(--secondaryText);
-    --toggleThumbBackgroundColor: var(--inputBackground);
-    --toggleTrackBorderColor: var(--secondaryText);
-    --toggleTrackBackgroundColor: var(--backgroundColor);
-
-    /* Selected State */
-    --toggleSelectedThumbBorderColor: var(--primary);
-    --toggleSelectedThumbBackgroundColor: var(--primary);
-    --toggleSelectedTrackBorderColor: var(--primary);
-    --toggleSelectedTrackBackgroundColor: var(--primaryLight);
-
-    --toggleDisabledThumbBorderColor: var(--secondaryText);
-    --toggleDisabledThumbBackgroundColor: var(--inputBackground);
-    --toggleDisabledSelectedThumbBorderColor: var(--primary);
-
+    --switchOffColor: var(--secondaryText);
+    --switchOnColor: var(--primary);
+    --switchHoverOnColor: var(--primaryDark);
+    --switchHoverOffColor: var(--primaryDark);
+    --switchDisabledOnColor: var(--primary);
+    --switchDisabledOffColor: var(--secondaryText);
     /*
 
-    Pushbutton Colors
+    Push Button Colors
     ==========================================================================
 
   */
-
     --pushbuttonBackgroundColor: none;
     --pushbuttonBorderColor: var(--primary);
     --pushbuttonTextColor: var(--primary);
@@ -346,6 +313,8 @@
 
     --inputBackgroundColor: var(--inputBackground);
     --inputBorderColor: var(--primaryLight);
+    --inputBorderColorAlt: var(--inputDark);
+    --inputBorderColorDisabled: #292a2d;
     --inputTextColor: var(--defaultText);
 
     --inputFocusBorderColor: var(--primary);

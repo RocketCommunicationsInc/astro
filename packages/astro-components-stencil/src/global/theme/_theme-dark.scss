@@ -6,6 +6,7 @@
 	*/
 
     /* Astro 5 Simplified Colors */
+
     --backgroundColor: var(--colorTertiaryDarken3, #101923);
     --defaultText: var(--colorWhite, #ffffff);
     --secondaryText: var(--colorTertiaryLighten4, #d4d8dd);
@@ -14,9 +15,11 @@
     --primary: var(--colorSecondary, #4dacff);
     --primaryLight: var(--colorSecondaryLighten2, #92cbff);
     --primaryLightHover: #92cbff4d; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
-    --primaryDark: var(--colorSecondaryLighten2, #3a87cf);
+    --primaryDark: var(--colorSecondaryDarken1, #3a87cf);
+    --primaryDarkHover: #6b8ca5;
     --primaryElementText: var(--colorTertiaryDarken4, #080c11);
     --inputBackground: var(--colorWhite, #ffffff);
+    --inputDark: var(--colorTertiaryDarken4, #080c11);
 
     /* styles */
     --fontColor: var(--defaultText);
@@ -78,7 +81,7 @@
     For checkboxes, radio buttons etc …
 
   */
-    --controlTextColor: var(--primary);
+    --controlTextColor: var(--primaryElementText);
     --controlLabelColor: var(--defaultText);
     --controlBackgroundColor: var(--primary);
     --controlBorderColor: var(--primary);
@@ -151,44 +154,19 @@
     ==========================================================================
 
   */
-    --selectBackgroundColor: var(--primary);
-    --selectBorderColor: var(--primary);
-    --selectTextColor: var(--primaryElementText);
-    --selectOptBackground: var(--inputBackground);
     --selectHoverOptBackgroundColor: var(--primaryLight);
-    --selectCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23080c11%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
-
-    --selectActiveBorderColor: var(--primary);
-
     /*
 
-    Toggle Colors
+    Switch Colors
     ==========================================================================
 
   */
-
-    --toggleButtonBackgroundColor: var(--primary);
-    --toggleBaseBackgroundColor: var(--primary);
-    --toggleBaseBorderColor: var(--primary);
-    --toggleBaseTextColor: var(--primaryElementText);
-    --toggleBaseSelectedTextColor: var(--colorNormal);
-
-    /* Default Toggle */
-    --toggleThumbBorderColor: var(--secondaryText);
-    --toggleThumbBackgroundColor: var(--inputBackground);
-    --toggleTrackBorderColor: var(--secondaryText);
-    --toggleTrackBackgroundColor: var(--backgroundColor);
-
-    /* Selected State */
-    --toggleSelectedThumbBorderColor: var(--primaryDark);
-    --toggleSelectedTrackBackgroundColor: var(--primary);
-    --toggleSelectedTrackBorderColor: var(--primaryDark);
-
-    /* Disabled State */
-    --toggleDisabledThumbBorderColor: var(--secondaryText);
-    --toggleDisabledThumbBackgroundColor: var(--inputBackground);
-    --toggleDisabledSelectedThumbBorderColor: var(--primary);
-
+    --switchOffColor: var(--secondaryText);
+    --switchOnColor: var(--primary);
+    --switchHoverOnColor: var(--primaryLight);
+    --switchHoverOffColor: var(--primaryLight);
+    --switchDisabledOnColor: var(--primary);
+    --switchDisabledOffColor: var(--secondaryText);
     /*
 
     Popup Menu Colors
@@ -339,6 +317,8 @@
 
     --inputBackgroundColor: var(--inputBackground);
     --inputBorderColor: var(--surfaceElements);
+    --inputBorderColorAlt: var(--inputDark);
+    --inputBorderColorDisabled: #292a2d;
     --inputTextColor: var(--primaryElementText);
 
     /* Input Focus */
