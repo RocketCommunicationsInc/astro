@@ -1,5 +1,5 @@
 {
-  "version": "3.0.0",
+  "version": "3.1.0",
   "contents": [
     {
       "name": "General",
@@ -38,11 +38,11 @@
           "numeral": 2,
           "link": "/design-guidelines/typography/",
           "rules": [
-			{
-			  "numeral": 1,
+            {
+              "numeral": 1,
               "rule": "The Roboto font shall be used for content and components.",
-              "status": "new"	
-			},
+              "status": "new"
+            },
             {
               "numeral": 2,
               "rule": "The Roboto Mono font shall be used when monospace digits are required.",
@@ -62,7 +62,6 @@
         }
       ]
     },
-
     {
       "name": "Patterns",
       "numeral": 3,
@@ -908,6 +907,38 @@
             {
               "numeral": 1,
               "rule": "Tree labels shall use sentence case capitalization.",
+              "status": "new"
+            }
+          ]
+        },
+        {
+          "name": "Application State",
+          "numeral": 26,
+          "link": "/components/application-state/",
+          "rules": [
+            {
+              "numeral": 1,
+              "rule": "Application State shall be visible at all times when present.",
+              "status": "new"
+            },
+            {
+              "numeral": 2,
+              "rule": "Application State shall only use the default background color or a color from the [Astro Tag palettes.](https://astrouxds.com/design-guidelines/color/)",
+              "status": "new"
+            },
+            {
+              "numeral": 3,
+              "rule": "Application State text shall meet WCAG AA color compliance for contrast against the component’s background color.",
+              "status": "new"
+            },
+            {
+              "numeral": 4,
+              "rule": "Application State text shall use sentence casing.",
+              "status": "new"
+            },
+            {
+              "numeral": 5,
+              "rule": "Application State text shall not wrap within the component.",
               "status": "new"
             }
           ]

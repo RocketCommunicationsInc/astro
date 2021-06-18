@@ -52,11 +52,11 @@ Applications used on government workstations with access to classified networks 
 
 ### Overall Marking Text
 
-Text in the overall marking banner should be as specific as possible to the highest level of classified information contained in that system or view. The banner message should follow the standard marking structure (placeholder text example: CLASSIFICATION//SCI//SAP//AEA//FGI//CUI//DISSEM) with bold, centered text in all capital letters. The classification level itself (excepting CUI) must be spelled out completely (example: UNCLASSIFIED instead of just U), but later caveats or control markings in the classification text can be abbreviated in their traditional formats or spelled out completely (example: SP-EXPT or SP-EXPORT CONTROLLED). Only classification and/or control information in the standard format should be present in this banner.
+Text in the overall marking banner should be as specific as possible to the highest level of classified information contained in that system or view. The banner message should follow the standard marking structure (placeholder text example: CLASSIFICATION//SCI//SAP//AEA//FGI//CUI//DISSEM) with bold, centered text in all capital letters. The classification level itself (excepting CUI) must be spelled out completely (example: UNCLASSIFIED instead of just U), but later caveats or control markings in the classification text can be abbreviated in their traditional formats or spelled out completely (example: SP-EXPT or SP-EXPORT CONTROLLED). CUI level marking banners can use CUI or the word CONTROLLED as the classification text. Only classification and/or control information in the standard format should be present in this banner. Supplemental administrative markings such as Draft should not be commingled into the overall marking banner.
 
 ### Overall Marking Placement
 
-Always place the overall marking banner at the top of the application in a fixed position so that it cannot scroll out of view. Since the banner message can be quite long, we recommend that the banner span the full width of the application. This mimics physical classification markings, which span the full width of the top of a document page.
+Place an overall marking banner at the top and bottom of the application in a fixed position so that they cannot scroll out of view. Since the banner message can be quite long, we recommend that the banner span the full width of the application. This mimics physical classification markings, which span the full width of the document page. Note that a top banner is mandatory, but it is best practice to include an identical overall marking banner at the bottom of the viewport as well.
 
 ### Overall Marking Colors
 

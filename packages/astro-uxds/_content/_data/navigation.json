@@ -1,4 +1,4 @@
-[ 
+[
 	{
 		"label": "Home",
 		"url": "/"
@@ -8,15 +8,15 @@
 		"url": "/getting-started",
 		"items": [
 			{
-				"label" : "README",
-				"url" : "/getting-started/readme"
+				"label": "README",
+				"url": "/getting-started/readme"
 			},
 			{
-				"label" : "Designers",
+				"label": "Designers",
 				"url": "/getting-started/designers"
 			},
 			{
-				"label" : "Developers",
+				"label": "Developers",
 				"url": "/getting-started/developers"
 			}
 		]
@@ -73,7 +73,7 @@
 			}
 		]
 	},
-		{
+	{
 		"label": "Patterns",
 		"url": "/patterns",
 		"items": [
@@ -106,8 +106,8 @@
 				"url": "/patterns/table"
 			},
 			{
-					"label": "Forms and Validation",
-					"url": "/patterns/forms-and-validation"
+				"label": "Forms and Validation",
+				"url": "/patterns/forms-and-validation"
 			}
 		]
 	},
@@ -126,6 +126,10 @@
 			{
 				"label": "Accordion",
 				"url": "/components/accordion"
+			},
+			{
+				"label": "Application State",
+				"url": "/components/application-state"
 			},
 			{
 				"label": "Button",
