@@ -52,7 +52,6 @@ Define AOS and LOS with valid [Unix Time Stamp](http://pubs.opengroup.org/online
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property       | Attribute       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Type      | Default     |
@@ -64,7 +63,6 @@ Define AOS and LOS with valid [Unix Time Stamp](http://pubs.opengroup.org/online
 | `small`        | `small`         | Applies a smaller clock style.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | `boolean` | `undefined` |
 | `timezone`     | `timezone`      | Accepts the [IANA timezone string format](https://www.iana.org/time-zones) such as `'America/Los_Angeles'` or any single-character designation for a [military timezones](https://en.wikipedia.org/wiki/List_of_military_time_zones) (`'A'` through `'Z'`, excluding `'J'`), both case-insensitive. If no value for timezone is provided, the clock will use `'UTC'`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details. | `string`  | `'UTC'`     |
 
-
 ## CSS Custom Properties
 
 | Name                     | Description                        |
@@ -74,7 +72,6 @@ Define AOS and LOS with valid [Unix Time Stamp](http://pubs.opengroup.org/online
 | `--clockLabelColor`      | the label color for the clock      |
 | `--clockTextColor`       | the color of the clock text        |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

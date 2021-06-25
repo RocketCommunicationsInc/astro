@@ -95,7 +95,6 @@ A sample of a `range` Array. This sample is also the default value for `range`. 
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property                | Attribute       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Type          | Default     |
@@ -108,20 +107,20 @@ A sample of a `range` Array. This sample is also the default value for `range`. 
 | `range`                 | --              | Items in this Array define thresholds for changing the status style of the progress icon. For each item in the Array, the icon will be styled with the given status while the progress value is less than or equal to the Array item’s threshold and greater than the next smallest item‘s threshold. Both progress and the Array items’ threshold values can be positive or negative. If no min is specified, the component assumes the Array's first status threshold begins at 0. | `RangeItem[]` | `undefined` |
 | `sublabel`              | `sublabel`      | Displays a smaller label underneath the icon label                                                                                                                                                                                                                                                                                                                                                                                                                                   | `string`      | `undefined` |
 
-
 ## Dependencies
 
 ### Depends on
 
-- [rux-status](../rux-status)
+-   [rux-status](../rux-status)
 
 ### Graph
+
 ```mermaid
 graph TD;
   rux-monitoring-progress-icon --> rux-status
   style rux-monitoring-progress-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

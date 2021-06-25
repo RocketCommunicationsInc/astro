@@ -1,4 +1,4 @@
-# rux-tabs-panel
+# rux-table-header-row
 
 <!-- Auto Generated Below -->
 

@@ -282,7 +282,6 @@ $theme: (
     --controlHoverBorderColor: var(--primaryLight);
     --controlSelectedOutlineBorderColor: var(--primary);
 
-
     /*
 
     Slider Colors
@@ -577,34 +576,4 @@ $theme: (
     --accordionOpenLabelBackground: rgb(40, 63, 88);
     --accordionHoverLabelBackground: rgb(46, 103, 153);
     --accordionColor: rgb(255, 255, 255);
-
-    /*
-
-    TABLE COLORS
-    ==========================================================================
-
-  */
-
-    --tableBorderColor: var(--backgroundColor);
-
-    --tableHeaderBackgroundColor: var(--globalAppHeader);
-    --tableHeaderBorderColor: var(--surfaceElements);
-    --tableHeaderTextColor: var(--defaultText);
-    --tableHeaderBoxShadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.45);
-    --tableHeaderAccentColor: var(--primary);
-
-    --tableRowBackgroundColor: var(--surfaceElements);
-    --tableRowTextColor: var(--defaultText);
-    --tableRowBorderColor: var(--backgroundColor);
-
-    --tableRowHoverBackgroundColor: var(--primaryLightHover);
-    --tableRowHoverTextColor: var(--defaultText);
-
-    --tableRowSelectedBackgroundColor: var(--backgroundColor);
-    --tableRowSelectedBorderColor: var(--primary);
-
-    --tableControlsBackgroundColor: var(--primary);
-    --tableFilterBorderColor: var(--primary);
-    --tableFilterDisabledBorderColor: var(--backgroundColor);
-    --tableFilterDisabledBackgroundColor: var(--surfaceElements);
 }

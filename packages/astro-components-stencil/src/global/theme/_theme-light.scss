@@ -404,36 +404,6 @@
     --accordionOpenLabelBackground: rgb(245, 247, 249);
     --accordionHoverLabelBackground: rgb(236, 239, 244);
     --accordionColor: rgb(0, 0, 0);
-
-    /*
-
-    TABLE COLORS
-    ==========================================================================
-
-  */
-
-    --tableBorderColor: var(--backgroundColor);
-
-    --tableHeaderBackgroundColor: var(--globalAppHeader);
-    --tableHeaderBorderColor: var(--surfaceElements);
-    --tableHeaderTextColor: var(--primaryElementText);
-    --tableHeaderBoxShadow: 0 0.1rem 0.45rem rgba(0, 0, 0, 0.2);
-    --tableHeaderAccentColor: var(--primary);
-
-    --tableRowBackgroundColor: var(--surfaceElements);
-    --tableRowBorderColor: var(--backgroundColor);
-    --tableRowTextColor: var(--defaultText);
-
-    --tableRowHoverBackgroundColor: var(--primaryDarkHover);
-    --tableRowHoverTextColor: var(--defaultText);
-
-    --tableRowSelectedBackgroundColor: var(--backgroundColor);
-    --tableRowSelectedBorderColor: var(--primary);
-
-    --tableControlsBackgroundColor: var(--primary);
-    --tableFilterBorderColor: var(--primary);
-    --tableFilterDisabledBorderColor: var(--backgroundColor);
-    --tableFilterDisabledBackgroundColor: var(--surfaceElements);
 }
 
 li.light-theme {

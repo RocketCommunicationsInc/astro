@@ -1,0 +1,7 @@
+:host {
+    display: table-header-group;
+    box-shadow: var(--tableHeaderBoxShadow);
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: var(--tableHeaderBorderColor);
+}

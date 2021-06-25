@@ -1,4 +1,4 @@
-# rux-tabs-panel
+# rux-table-body
 
 <!-- Auto Generated Below -->
 

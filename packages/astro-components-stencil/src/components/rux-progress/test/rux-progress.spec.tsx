@@ -57,6 +57,5 @@ describe('rux-progress', () => {
           </mock:shadow-root>
         </rux-progress>
       `)
-
     })
 })

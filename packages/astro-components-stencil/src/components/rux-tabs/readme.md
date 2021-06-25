@@ -100,7 +100,6 @@ Astro UXDS Tab (child) properties are passed as simple attributes on the individ
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property  | Attribute | Description                                                                                              | Type                       | Default |
@@ -108,17 +107,12 @@ Astro UXDS Tab (child) properties are passed as simple attributes on the individ
 | `_panels` | --        | Holds all `<rux-tab-panel>` components based on the event emitted from the `<rux-tab-panels>` component. | `HTMLRuxTabPanelElement[]` | `[]`    |
 | `_tabs`   | --        | Holds all `<rux-tab>` components that are children of `<rux-tabs>`.                                      | `HTMLRuxTabElement[]`      | `[]`    |
 
-
 ## CSS Custom Properties
 
 | Name               | Description      |
 | ------------------ | ---------------- |
 | `--tabBorderColor` | Tab border color |
 
+---
 
-
-
-
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

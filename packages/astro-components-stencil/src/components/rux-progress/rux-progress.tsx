@@ -6,7 +6,6 @@ import { Component, Host, h, Prop, Watch } from '@stencil/core'
     shadow: true,
 })
 export class RuxProgress {
-
     /**
      * Current progress value between 0 and 100 (or the max, if defined below).
      */
@@ -21,10 +20,12 @@ export class RuxProgress {
     @Prop({ mutable: true }) hideLabel: boolean = false
 
     getProgressAsString() {
-        if(this.value === null){
+        if (this.value === null) {
             return '0%'
         } else {
-           return this.max === 100 ? `${this.value}%` : `${this.value}/${this.max}`
+            return this.max === 100
+                ? `${this.value}%`
+                : `${this.value}/${this.max}`
         }
     }
     checkValueNotOverMax(max: number, value: number) {
