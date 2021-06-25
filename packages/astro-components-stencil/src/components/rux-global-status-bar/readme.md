@@ -119,7 +119,7 @@ There is one unnamed slot in the Global Status Bar. This slot is intended for an
 | `includeAppState` | `include-app-state` | Declares whether the app-state component will be shown in the app-meta slot | `boolean` | `false`     |
 | `includeIcon`     | `include-icon`      | Declares whether a rux-icon will be shown in the left-side slot             | `boolean` | `false`     |
 | `includeUsername` | `include-username`  | Declares whether the username component will be shown in the app-meta slot  | `boolean` | `false`     |
-| `menuIcon`        | `menu-icon`         | Sets the icon to be displayed in the default rux-icon component             | `string`  | `"apps"`    |
+| `menuIcon`        | `menu-icon`         | Sets the icon to be displayed in the default rux-icon component             | `string`  | `'apps'`    |
 
 
 ## Dependencies

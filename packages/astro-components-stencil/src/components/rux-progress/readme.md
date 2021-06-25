@@ -80,7 +80,7 @@ Indeterminate progress
 
 | Attribute | Type   | Default | Requried | Description                                                                                                                                                                                |
 | --------- | ------ | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `value`   | Number | 0       | Yes      | Current progress value between 1 and 100 (or the max, if defined below). Note: if this paramater isn’t present or if it is set to 0 the progress bar will display its indeterminate state. |
+| `value`   | Number | null       | Yes      | Current progress value between 0 and 100 (or the max, if defined below).  |
 | `max`     | Number | 100     | No       | For progress bars where progress bars have a maximum value greater or less than 100                                                                                                        |
 
 <!-- Auto Generated Below -->
@@ -88,11 +88,24 @@ Indeterminate progress
 
 ## Properties
 
-| Property    | Attribute    | Description | Type      | Default |
-| ----------- | ------------ | ----------- | --------- | ------- |
-| `hideLabel` | `hide-label` |             | `boolean` | `false` |
-| `max`       | `max`        |             | `number`  | `100`   |
-| `value`     | `value`      |             | `number`  | `0`     |
+| Property    | Attribute    | Description                                                                                                                                      | Type      | Default |
+| ----------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------- | ------- |
+| `hideLabel` | `hide-label` | Displays text output of progress as a percentage. Note: when using a max value other than 100 output is displated as value/max (e.g., 1450/2000) | `boolean` | `false` |
+| `max`       | `max`        | For progress bars where progress bars have a maximum value greater or less than 100                                                              | `number`  | `100`   |
+| `value`     | `value`      | Current progress value between 0 and 100 (or the max, if defined below).                                                                         | `number`  | `null`  |
+
+
+## CSS Custom Properties
+
+| Name                                        | Description                                    |
+| ------------------------------------------- | ---------------------------------------------- |
+| `--progressDeterminateBarBackgroundColor`   | Bar background color of determinate progress   |
+| `--progressDeterminateTrackBackgroundColor` | Track background color of determinate progress |
+| `--progressDeterminateTrackBorderColor`     | Track border color of determinate progress.    |
+| `--progressHeight`                          | The height of rux-progress                     |
+| `--progressPadding`                         | The padding of rux-progress                    |
+| `--progressRadius`                          | The border radius of rux-progress bar          |
+| `--progressWidth`                           | The width of rux-progress                      |
 
 
 ----------------------------------------------

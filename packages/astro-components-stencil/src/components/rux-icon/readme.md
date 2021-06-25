@@ -146,6 +146,7 @@ In Astro 4.0, these groups have been flattened, and each icon is now imported di
 ```mermaid
 graph TD;
   rux-button --> rux-icon
+  rux-global-status-bar --> rux-icon
   rux-monitoring-icon --> rux-icon
   rux-notification --> rux-icon
   style rux-icon fill:#f9f,stroke:#333,stroke-width:4px
