@@ -42,7 +42,6 @@ const rowData = agRowData.slice(0).map((item) => {
     item.control = true
     return item
 })
-rowData[4].selected = true
 
 export default {
     title: 'Components/Table',
@@ -163,79 +162,19 @@ export const HTMLControlsTable = () => {
                 </rux-table-body>
             </rux-table>
         </div>
+        <script>
+            const inputs = document.querySelectorAll('input')
+            for (const input of inputs) {
+                input.addEventListener('input', function (event) {
+                    const parent = event.target.closest('rux-table-row')
+                    parent.selected = event.target.checked
+                })
+            }
+        </script>
     `
 }
 
 HTMLControlsTable.story = {
-    parameters: {
-        exports: {
-            render,
-            html,
-        },
-        readme: {
-            sidebar: TableReadme,
-        },
-    },
-}
-
-export const HTMLTableWithSelect = () => {
-    return html`
-        <div style="display: flex; padding: 2vh; justify-content: center;">
-            <rux-table>
-                <rux-table-header>
-                    <rux-table-header-row>
-                        ${columnData.map(
-                            (column) =>
-                                html`
-                                    <rux-table-header-cell
-                                        >${column.headerName}</rux-table-header-cell
-                                    >
-                                `
-                        )}
-                    </rux-table-header-row>
-                </rux-table-header>
-                <rux-table-body>
-                    ${rowData.map(
-                        (row, index) => html`
-                            <rux-table-row>
-                                <rux-table-cell>
-                                    <input type="checkbox" id="row-${index}" />
-                                </rux-table-cell>
-                                <rux-table-cell
-                                    >${row.currentTag}</rux-table-cell
-                                >
-                                <rux-table-cell
-                                    >${row.originalTag}</rux-table-cell
-                                >
-                                <rux-table-cell>${row.sensor}</rux-table-cell>
-                                <rux-table-cell>${row.astat}</rux-table-cell>
-                                <rux-table-cell>${row.obsTime}</rux-table-cell>
-                                <rux-table-cell>${row.obType}</rux-table-cell>
-                                <rux-table-cell>${row.azRtAsc}</rux-table-cell>
-                                <rux-table-cell>${row.elDec}</rux-table-cell>
-                                <rux-table-cell>${row.range}</rux-table-cell>
-                                <rux-table-cell
-                                    >${row.rangeRate}</rux-table-cell
-                                >
-                            </rux-table-row>
-                        `
-                    )}
-                </rux-table-body>
-            </rux-table>
-            <script>
-                const inputs = document.querySelectorAll('input')
-                for (const input of inputs) {
-                    input.addEventListener('input', function (event) {
-                        const parent = event.target.closest('rux-table-row')
-                        parent.selected = event.target.checked
-                    })
-                }
-            </script>
-        </div>
-    `
-}
-
-HTMLTableWithSelect.story = {
     parameters: {
         exports: {
             render,
