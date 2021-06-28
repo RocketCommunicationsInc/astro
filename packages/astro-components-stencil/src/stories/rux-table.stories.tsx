@@ -179,20 +179,6 @@ HTMLControlsTable.story = {
 }
 
 export const HTMLTableWithSelect = () => {
-    function checkBox(id) {
-        const checkInput = html`
-            <span class="rux-checkbox">
-                <input
-                    type="checkbox"
-                    name="checkbox${id}"
-                    id="checkbox${id}"
-                />
-                <label for="checkbox${id}"></label>
-            </span>
-        `
-        return checkInput
-    }
-
     return html`
         <div style="display: flex; padding: 2vh; justify-content: center;">
             <rux-table>
