@@ -43,9 +43,9 @@ export class RuxModal {
         composed: true,
         bubbles: true,
     })
-    modalCloseEvent: EventEmitter<boolean>
+    modalCloseEvent!: EventEmitter<boolean>
 
-    @Element() private element: HTMLElement
+    @Element() private element!: HTMLElement
 
     @Listen('keydown')
     handleKeyDown(ev: KeyboardEvent) {
@@ -78,9 +78,9 @@ export class RuxModal {
     }
 
     private _getDefaultButton(): HTMLElement | null {
-        const buttonSet: NodeListOf<HTMLElement> = this.element.shadowRoot.querySelectorAll(
+        const buttonSet = this.element?.shadowRoot?.querySelectorAll(
             'rux-button:not([hidden])'
-        )
+        ) as NodeListOf<HTMLElement>
 
         if (buttonSet.length > 0) {
             const defaultButton = buttonSet[buttonSet.length - 1]
@@ -151,7 +151,9 @@ export class RuxModal {
         const erroredFields: string[] = []
         const isBlank = (prop: any) => typeof prop === 'undefined'
         requiredProps.forEach((key: string) =>
-            isBlank(this[key]) ? erroredFields.push(this.kebabize(key)) : null
+            isBlank(this[key as keyof RuxModal])
+                ? erroredFields.push(this.kebabize(key))
+                : null
         )
 
         if (erroredFields.length) {

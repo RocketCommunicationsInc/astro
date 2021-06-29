@@ -36,7 +36,8 @@ export class RuxLog {
 
     get filteredData(): LogRow[] {
         if (this.filter) {
-            return this.data.filter((row) => row.message.includes(this.filter))
+            const filter = this.filter
+            return this.data.filter((row) => row.message.includes(filter))
         } else {
             return this.data
         }
