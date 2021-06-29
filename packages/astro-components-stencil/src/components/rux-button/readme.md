@@ -13,8 +13,8 @@ Buttons allow users to trigger actions.
 Pass properties as attributes of the Astro Button custom element:
 
 ```xml
-<rux-button size="large" disabled outline>
-  Large disabled outline button
+<rux-button size="large" disabled secondary>
+  Large disabled secondary button
 </rux-button>
 ```
 
@@ -56,8 +56,8 @@ Configure the component using native HTML attributes or [BEM-style](http://getbe
 ```xml
 <button class="rux-button">Submit</button>
 
-<button class="rux-button rux-button--large rux-button--outline" disabled>
-  Large disabled outline button
+<button class="rux-button rux-button--large rux-button--secondary" disabled>
+  Large disabled secondary button
 </button>
 ```
 
@@ -94,9 +94,9 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 ##### **4.0**
 
 -   Swapped kebab-cased `icon-only` attribute for standard camelCase `iconOnly`
--   Deprecated `type` attribute in favor of separate `size`, `iconOnly`, and `outline` attributes. `default` type is No longer supported.
+-   Deprecated `type` attribute in favor of separate `size`, `iconOnly`, and `secondary` attributes. `default` type is No longer supported.
 -   Fixed the width of the small icon-only button and ensured icon-only buttons show No text, even if text is provided
--   Fixed outline button icon color
+-   Fixed secondary button icon color
 -   Re-enabled missing focus styles on buttons.
 -   Removed undocumented critical button style.
 -   Replaced [Polymer 3](https://www.polymer-project.org) implementation with [LitElement](https://lit-element.polymer-project.org/) for improved speed and interoperability with JS Frameworks as well as simpler template declaration now available in vanilla JavaScript.
@@ -123,33 +123,33 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 
 ## Properties
 
-| Property   | Attribute   | Description                                                                                                                                                                                                                                                                                                 | Type                              | Default     |
-| ---------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- | ----------- |
-| `disabled` | `disabled`  | Toggles disabled attribute on the button                                                                                                                                                                                                                                                                    | `boolean`                         | `false`     |
-| `icon`     | `icon`      | For a [button styleguid, see the Button section in Astro UXDS Guidelines](https://astrouxds.com/components/button) Displays an Astro icon matching this string. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols) | `string`                          | `''`        |
-| `iconOnly` | `icon-only` | Hides slotted text from the button by setting rux-button--icon-only class                                                                                                                                                                                                                                   | `boolean`                         | `false`     |
-| `outline`  | `outline`   | Changes button style from solid to outline by setting rux-button--outline class                                                                                                                                                                                                                             | `boolean`                         | `false`     |
-| `size`     | `size`      | Changes size of a button from standard to small or large by setting sizing classes rux-button--small rux-button--large                                                                                                                                                                                      | `"large" \| "small" \| undefined` | `undefined` |
+| Property    | Attribute   | Description | Type                 | Default     |
+| ----------- | ----------- | ----------- | -------------------- | ----------- |
+| `disabled`  | `disabled`  |             | `boolean`            | `false`     |
+| `icon`      | `icon`      |             | `string`             | `''`        |
+| `iconOnly`  | `icon-only` |             | `boolean`            | `false`     |
+| `secondary` | `secondary` |             | `boolean`            | `false`     |
+| `size`      | `size`      |             | `"large" \| "small"` | `undefined` |
 
 ## CSS Custom Properties
 
-| Name                                  | Description                           |
-| ------------------------------------- | ------------------------------------- |
-| `--buttonActiveBackgroundColor`       | Button active background color        |
-| `--buttonActiveBorderColor`           | Button active border color            |
-| `--buttonActiveControlTextColor`      | Button active text color              |
-| `--buttonBackgroundColor`             | Button background color               |
-| `--buttonBorderColor`                 | Button border color                   |
-| `--buttonHoverBackgroundColor`        | Button hover background color         |
-| `--buttonHoverBorderColor`            | Button hover border color             |
-| `--buttonHoverTextColor`              | Button hover text color               |
-| `--buttonOutlineBackgroundColor`      | Button outline background color       |
-| `--buttonOutlineBorderColor`          | Button outline border color           |
-| `--buttonOutlineHoverBackgroundColor` | Button outline hover background color |
-| `--buttonOutlineHoverBorderColor`     | Button outline hover border color     |
-| `--buttonOutlineHoverTextColor`       | Button outline hover text color       |
-| `--buttonOutlineTextColor`            | Button outline text color             |
-| `--buttonTextColor`                   | Button text color                     |
+| Name                                    | Description                             |
+| --------------------------------------- | --------------------------------------- |
+| `--buttonActiveBackgroundColor`         | Button active background color          |
+| `--buttonActiveBorderColor`             | Button active border color              |
+| `--buttonActiveControlTextColor`        | Button active text color                |
+| `--buttonBackgroundColor`               | Button background color                 |
+| `--buttonBorderColor`                   | Button border color                     |
+| `--buttonHoverBackgroundColor`          | Button hover background color           |
+| `--buttonHoverBorderColor`              | Button hover border color               |
+| `--buttonHoverTextColor`                | Button hover text color                 |
+| `--buttonSecondaryBackgroundColor`      | Button secondary background color       |
+| `--buttonSecondaryBorderColor`          | Button secondary border color           |
+| `--buttonSecondaryHoverBackgroundColor` | Button secondary hover background color |
+| `--buttonSecondaryHoverBorderColor`     | Button secondary hover border color     |
+| `--buttonSecondaryHoverTextColor`       | Button secondary hover text color       |
+| `--buttonSecondaryTextColor`            | Button secondary text color             |
+| `--buttonTextColor`                     | Button text color                       |
 
 ## Dependencies
 

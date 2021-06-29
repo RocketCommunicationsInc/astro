@@ -17,7 +17,7 @@ export default {
 export const StandardButton = () => {
     const size = select('Size', sizeOptions, '')
     const disabled = boolean('Disabled', false)
-    const outline = boolean('Outline', false)
+    const secondary = boolean('Secondary', false)
     const withIcon = boolean('With icon', false)
     const iconOnly = boolean('Icon only', false)
 
@@ -26,7 +26,7 @@ export const StandardButton = () => {
             <rux-button
                 ?disabled="${disabled}"
                 ?icon-only="${iconOnly}"
-                ?outline="${outline}"
+                ?secondary="${secondary}"
                 .size="${size}"
                 .icon="${withIcon ? 'settings' : null}"
                 >Button</rux-button
@@ -48,20 +48,20 @@ StandardButton.parameters = {
 export const slottedIconButton = () => {
     const size = select('Size', sizeOptions, 'small')
     const disabled = boolean('Disabled', false)
-    const outline = boolean('Outline', false)
+    const secondary = boolean('Secondary', false)
     const iconOnly = boolean('Icon only', false)
 
     return html`
         <div style="padding: 10%; display: flex; justify-content: center;">
             <rux-button
                 ?disabled="${disabled}"
-                ?outline="${outline}"
+                ?secondary="${secondary}"
                 ?icon-only="${iconOnly}"
                 .size="${size}"
             >
                 <rux-icon
                     icon="palette"
-                    color="${outline ? 'primary' : 'dark'}"
+                    color="${secondary ? 'primary' : 'dark'}"
                 ></rux-icon>
                 Slotted icon button
             </rux-button>
@@ -111,7 +111,7 @@ export const GroupedButtons = () => {
         <div style="padding: 10%; display: flex; justify-content: center;">
             <div class="example-container">
                 <rux-button-group .align="${align}">
-                    <rux-button outline>Cancel</rux-button>
+                    <rux-button secondary>Cancel</rux-button>
                     <rux-button>Continue</rux-button>
                 </rux-button-group>
             </div>
@@ -175,16 +175,16 @@ export const AllButtonVariants = () => html`
                 >
             </li>
             <li>
-                <rux-button size="small" icon-only outline icon="settings"
-                    >Small outline icon-only button</rux-button
+                <rux-button size="small" icon-only secondary icon="settings"
+                    >Small secondary icon-only button</rux-button
                 >
-                <rux-button size="small" outline
-                    >Small outline button</rux-button
+                <rux-button size="small" secondary
+                    >Small secondary button</rux-button
                 >
             </li>
             <li>
-                <rux-button size="small" outline icon="settings"
-                    >Small outline button with icon</rux-button
+                <rux-button size="small" secondary icon="settings"
+                    >Small secondary button with icon</rux-button
                 >
             </li>
             <li>
@@ -192,17 +192,17 @@ export const AllButtonVariants = () => html`
                     size="small"
                     icon-only
                     disabled
-                    outline
+                    secondary
                     icon="settings"
-                    >Small disabled outline icon-only button</rux-button
+                    >Small disabled secondary icon-only button</rux-button
                 >
-                <rux-button size="small" outline disabled
-                    >Small disabled outline button</rux-button
+                <rux-button size="small" secondary disabled
+                    >Small disabled secondary button</rux-button
                 >
             </li>
             <li>
-                <rux-button size="small" outline disabled icon="settings"
-                    >Small disabled outline button with icon</rux-button
+                <rux-button size="small" secondary disabled icon="settings"
+                    >Small disabled secondary button with icon</rux-button
                 >
             </li>
         </ul>
@@ -230,27 +230,27 @@ export const AllButtonVariants = () => html`
                 >
             </li>
             <li>
-                <rux-button icon-only outline icon="settings"
-                    >Standard outline icon-only button</rux-button
+                <rux-button icon-only secondary icon="settings"
+                    >Standard secondary icon-only button</rux-button
                 >
-                <rux-button outline>Standard outline button</rux-button>
+                <rux-button secondary>Standard secondary button</rux-button>
             </li>
             <li>
-                <rux-button outline icon="settings"
-                    >Standard outline button with icon</rux-button
-                >
-            </li>
-            <li>
-                <rux-button icon-only disabled outline icon="settings"
-                    >Standard disabled outline icon-only button</rux-button
-                >
-                <rux-button outline disabled
-                    >Standard disabled outline button</rux-button
+                <rux-button secondary icon="settings"
+                    >Standard secondary button with icon</rux-button
                 >
             </li>
             <li>
-                <rux-button outline disabled icon="settings"
-                    >Standard disabled outline button with icon</rux-button
+                <rux-button icon-only disabled secondary icon="settings"
+                    >Standard disabled secondary icon-only button</rux-button
+                >
+                <rux-button secondary disabled
+                    >Standard disabled secondary button</rux-button
+                >
+            </li>
+            <li>
+                <rux-button secondary disabled icon="settings"
+                    >Standard disabled secondary button with icon</rux-button
                 >
             </li>
         </ul>
@@ -280,16 +280,16 @@ export const AllButtonVariants = () => html`
                 >
             </li>
             <li>
-                <rux-button size="large" icon-only outline icon="settings"
-                    >Large outline icon-only button</rux-button
+                <rux-button size="large" icon-only secondary icon="settings"
+                    >Large secondary icon-only button</rux-button
                 >
-                <rux-button size="large" outline
-                    >Large outline button</rux-button
+                <rux-button size="large" secondary
+                    >Large secondary button</rux-button
                 >
             </li>
             <li>
-                <rux-button size="large" outline icon="settings"
-                    >Large outline button with icon</rux-button
+                <rux-button size="large" secondary icon="settings"
+                    >Large secondary button with icon</rux-button
                 >
             </li>
             <li>
@@ -297,17 +297,17 @@ export const AllButtonVariants = () => html`
                     size="large"
                     icon-only
                     disabled
-                    outline
+                    secondary
                     icon="settings"
-                    >Large disabled outline icon-only button</rux-button
+                    >Large disabled secondary icon-only button</rux-button
                 >
-                <rux-button size="large" outline disabled
-                    >Large disabled outline button</rux-button
+                <rux-button size="large" secondary disabled
+                    >Large disabled secondary button</rux-button
                 >
             </li>
             <li>
-                <rux-button size="large" outline disabled icon="settings"
-                    >Large disabled outline button with icon</rux-button
+                <rux-button size="large" secondary disabled icon="settings"
+                    >Large disabled secondary button with icon</rux-button
                 >
             </li>
         </ul>

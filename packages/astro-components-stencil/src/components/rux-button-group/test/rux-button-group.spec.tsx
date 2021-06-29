@@ -16,7 +16,7 @@ describe('rux-button-group', () => {
         const page = await newSpecPage({
             components: [RuxButtonGroup, RuxButton],
             html: `<rux-button-group>
-              <rux-button icon="" outline>Button</rux-button>
+              <rux-button icon="" secondary>Button</rux-button>
               <rux-button icon="">Button</rux-button>
             </rux-button-group>`,
         })
@@ -28,9 +28,9 @@ describe('rux-button-group', () => {
                 <slot></slot>
               </div>
             </mock:shadow-root>
-              <rux-button icon="" outline="">
+              <rux-button icon="" secondary="">
                   <mock:shadow-root>
-                  <button class="rux-button rux-button--outline" type="button">
+                  <button class="rux-button rux-button--secondary" type="button">
                     <slot></slot>
                   </button>
                 </mock:shadow-root>

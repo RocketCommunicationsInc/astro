@@ -9,7 +9,7 @@ describe('rux-button', () => {
         expect(button).toEqual({
             icon: '',
             iconOnly: false,
-            outline: false,
+            secondary: false,
             disabled: false,
         })
     })
@@ -35,7 +35,7 @@ describe('rux-button', () => {
     it('sets attributes', async () => {
         const page = await newSpecPage({
             components: [RuxButton],
-            html: `<rux-button type="submit" outline disabled>Button</rux-button>`,
+            html: `<rux-button type="submit" secondary disabled>Button</rux-button>`,
         })
 
         /*
@@ -45,9 +45,9 @@ describe('rux-button', () => {
           NOTE: Button type is not being reflected at this time. Default button type is "button"
         */
         expect(page.root).toEqualHtml(`
-          <rux-button icon="" type="submit" outline disabled>
+          <rux-button icon="" type="submit" secondary disabled>
             <mock:shadow-root>
-              <button type="button" class="rux-button rux-button--outline" disabled aria-disabled="true">
+              <button type="button" class="rux-button rux-button--secondary" disabled aria-disabled="true">
                 <slot></slot>
               </button>
             </mock:shadow-root>

@@ -45,7 +45,7 @@
 
     Button Colors
     ==========================================================================
-    For standard and outline buttons
+    For standard and secondary buttons
 
   */
 
@@ -64,15 +64,15 @@
     --buttonActiveBackgroundColor: var(--primary);
     --buttonActiveBorderColor: var(--primary);
 
-    /* Outline Button Variant */
-    --buttonOutlineTextColor: var(--primary);
-    --buttonOutlineBackgroundColor: transparent;
-    --buttonOutlineBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+    /* Secondary Button Variant */
+    --buttonSecondaryTextColor: var(--primary);
+    --buttonSecondaryBackgroundColor: transparent;
+    --buttonSecondaryBorderColor: var(--colorPrimary, rgb(0, 90, 143));
 
-    /* Outline Button Variant Hover State */
-    --buttonOutlineHoverTextColor: var(--primaryLight);
-    --buttonOutlineHoverBackgroundColor: transparent;
-    --buttonOutlineHoverBorderColor: var(--primaryLight);
+    /* Secondary Button Variant Hover State */
+    --buttonSecondaryHoverTextColor: var(--primaryLight);
+    --buttonSecondaryHoverBackgroundColor: transparent;
+    --buttonSecondaryHoverBorderColor: var(--primaryLight);
 
     /*
 

@@ -122,7 +122,7 @@ export class RuxModal {
                         <div class="rux-modal__message">{modalMessage}</div>
                         <rux-button-group align="right">
                             <rux-button
-                                outline={confirmText.length > 0}
+                                secondary={confirmText.length > 0}
                                 onClick={_handleModalChoice.bind(this)}
                                 data-value="false"
                                 hidden={!denyText}

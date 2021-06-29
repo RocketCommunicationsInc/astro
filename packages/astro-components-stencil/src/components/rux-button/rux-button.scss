@@ -45,31 +45,31 @@
 
     /* Outline Button Variant */
     /**
-     * @prop --buttonOutlineTextColor: Button outline text color
+     * @prop --buttonSecondaryTextColor: Button secondary text color
      */
-    --buttonOutlineTextColor: var(--primary);
+    --buttonSecondaryTextColor: var(--primary);
     /**
-     * @prop --buttonOutlineBackgroundColor: Button outline background color
+     * @prop --buttonSecondaryBackgroundColor: Button secondary background color
      */
-    --buttonOutlineBackgroundColor: transparent;
+    --buttonSecondaryBackgroundColor: transparent;
     /**
-     * @prop --buttonOutlineBorderColor: Button outline border color
+     * @prop --buttonSecondaryBorderColor: Button secondary border color
      */
-    --buttonOutlineBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+    --buttonSecondaryBorderColor: var(--colorPrimary, rgb(0, 90, 143));
 
-    /* Outline Button Variant Hover State */
+    /* secondary Button Variant Hover State */
     /**
-     * @prop --buttonOutlineHoverTextColor: Button outline hover text color
+     * @prop --buttonSecondaryHoverTextColor: Button secondary hover text color
      */
-    --buttonOutlineHoverTextColor: var(--primaryLight);
+    --buttonSecondaryHoverTextColor: var(--primaryLight);
     /**
-     * @prop --buttonOutlineHoverBackgroundColor:  Button outline hover background color
+     * @prop --buttonSecondaryHoverBackgroundColor:  Button secondary hover background color
      */
-    --buttonOutlineHoverBackgroundColor: transparent;
+    --buttonSecondaryHoverBackgroundColor: transparent;
     /**
-     * @prop --buttonOutlineHoverBorderColor:  Button outline hover border color
+     * @prop --buttonSecondaryHoverBorderColor:  Button secondary hover border color
      */
-    --buttonOutlineHoverBorderColor: var(--primaryLight);
+    --buttonSecondaryHoverBorderColor: var(--primaryLight);
 }
 
 .rux-button {
@@ -125,7 +125,7 @@
         background-color: var(--buttonActiveBackgroundColor) !important;
     }
 
-    &:hover:not([active]):not([disabled]):not(.rux-button--outline) {
+    &:hover:not([active]):not([disabled]):not(.rux-button--secondary) {
         border-color: var(--buttonHoverBorderColor);
         background-color: var(--buttonHoverBackgroundColor);
     }
@@ -138,7 +138,7 @@
         }
     }
 
-    &:not(.rux-button--outline) {
+    &:not(.rux-button--secondary) {
         border: 1px solid var(--buttonBorderColor);
         background-color: var(--buttonBackgroundColor);
     }
@@ -162,20 +162,20 @@
     }
 
     // variants
-    // .rux-button--outline
-    &--outline {
-        color: var(--buttonOutlineTextColor);
-        background-color: var(--buttonOutlineBackgroundColor);
-        border: 1px solid var(--buttonOutlineBorderColor);
+    // .rux-button--secondary
+    &--secondary {
+        color: var(--buttonSecondaryTextColor);
+        background-color: var(--buttonSecondaryBackgroundColor);
+        border: 1px solid var(--buttonSecondaryBorderColor);
         &:active:not([hover]):not([disabled]) {
-            border-color: var(--buttonOutlineBorderColor) !important;
-            background-color: var(--buttonOutlineBackgroundColor) !important;
+            border-color: var(--buttonSecondaryBorderColor) !important;
+            background-color: var(--buttonSecondaryBackgroundColor) !important;
         }
 
         &:hover:not([disabled]) {
-            color: var(--buttonOutlineTextColor);
-            background-color: var(--buttonOutlineHoverBackgroundColor);
-            border-color: var(--buttonOutlineHoverBorderColor);
+            color: var(--buttonSecondaryTextColor);
+            background-color: var(--buttonSecondaryHoverBackgroundColor);
+            border-color: var(--buttonSecondaryHoverBorderColor);
         }
     }
 
@@ -212,7 +212,7 @@
     }
 
     &--critical,
-    &--critical:active:not([hover]):not([disabled]):not(.rux-button--outline) {
+    &--critical:active:not([hover]):not([disabled]):not(.rux-button--secondary) {
         background-color: var(--colorCriticalDarken1) !important;
         border-color: var(--colorCriticalDarken1) !important;
 
@@ -264,13 +264,13 @@
 .rux-button rux-icon {
     fill: var(--buttonTextColor);
 }
-.rux-button--outline rux-icon,
-.rux-button--outline rux-icon svg > use {
-    fill: var(--buttonOutlineTextColor);
+.rux-button--secondary rux-icon,
+.rux-button--secondary rux-icon svg > use {
+    fill: var(--buttonSecondaryTextColor);
 }
 .rux-button ::slotted(rux-icon) {
     fill: var(--buttonTextColor);
 }
-.rux-button--outline ::slotted(rux-icon) {
-    fill: var(--buttonOutlineTextColor);
+.rux-button--secondary ::slotted(rux-icon) {
+    fill: var(--buttonSecondaryTextColor);
 }
