@@ -1,6 +1,6 @@
 {
-    "name": "astro-web-components",
-    "version": "0.0.6",
+    "name": "@astrouxds/astro-web-components",
+    "version": "0.0.7",
     "description": "Astro Web Components",
     "main": "dist/index.cjs.js",
     "module": "dist/custom-elements/index.js",
@@ -41,6 +41,7 @@
     "devDependencies": {
         "@babel/core": "~7.13.16",
         "@stencil/sass": "~1.4.1",
+        "@storybook/addon-a11y": "~6.3.0",
         "@storybook/addon-actions": "~6.2.9",
         "@storybook/addon-essentials": "~6.2.9",
         "@storybook/addon-knobs": "~6.2.9",

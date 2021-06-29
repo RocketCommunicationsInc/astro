@@ -5,6 +5,9 @@ import { addReadme } from 'storybook-readme/html'
 addDecorator(addReadme)
 
 export const parameters = {
+    viewport: {
+        disable: true,
+    },
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
         matchers: {
@@ -12,9 +15,17 @@ export const parameters = {
             date: /Date$/,
         },
     },
-    backgrounds: { disable: true },
+    backgrounds: {
+        grid: {
+            disable: true,
+        },
+        disable: true,
+    },
     a11y: {
         element: '#root',
+    },
+    docs: {
+        theme: themes.dark,
     },
     themes: {
         default: 'Dark Theme',

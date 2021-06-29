@@ -115,6 +115,4 @@ Astro UXDS Tab (child) properties are passed as simple attributes on the individ
 
 ---
 
----
-
 _Built with [StencilJS](https://stenciljs.com/)_
