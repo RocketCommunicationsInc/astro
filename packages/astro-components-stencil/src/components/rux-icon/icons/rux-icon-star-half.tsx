@@ -13,9 +13,14 @@ import svgIcon from '../../../icons/star-half.svg'
     shadow: false,
 })
 export class RuxIconStarHalf {
-    @Prop() color: string
-    @Prop() icon: string
-    @Prop() size: 'extra-small' | 'small' | 'normal' | 'large'
+    /**
+     * The fill color for the icon
+     */
+    @Prop() color?: string
+    /**
+     * The size of the icon
+     */
+    @Prop() size: 'extra-small' | 'small' | 'normal' | 'large' = 'normal'
 
     render() {
         const style = {

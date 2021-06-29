@@ -1,5 +1,5 @@
 import { Component, h, Prop, Watch } from '@stencil/core'
-import { Status } from '../../common/commonTypes.module'
+import { Status, StatusTypes } from '../../common/commonTypes.module'
 import MonitoringBadge from '../../common/functional-components/MonitoringBadge/MonitoringBadge'
 import MonitoringLabel from '../../common/functional-components/MonitoringLabel'
 
@@ -23,7 +23,7 @@ export class RuxMonitoringIcon {
     /**
      * Displays a smaller label underneath the icon label
      */
-    @Prop() sublabel: string
+    @Prop() sublabel?: string
 
     /**
      * Displays an Astro icon matching this string. For a [full list of available icons,
@@ -47,7 +47,7 @@ export class RuxMonitoringIcon {
             caution: true,
             serious: true,
             critical: true,
-        }
+        } as StatusTypes
         if (!statusTypes[newValue]) {
             throw new Error('valid status required')
         }

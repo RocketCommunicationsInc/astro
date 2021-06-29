@@ -6,17 +6,28 @@ import { Component, Host, Prop, h, Watch } from '@stencil/core'
     shadow: true,
 })
 export class RuxIcon {
-    svg: string
+    svg: string = ''
 
+    /**
+     * The size of the icon
+     */
     @Prop({ reflect: true }) size:
         | 'extra-small'
         | 'small'
         | 'normal'
         | 'large' = 'normal'
-    @Prop() icon: string
-    @Prop() viewBox: string = '0 0 24 24'
-    @Prop() color: string
-    @Prop() label: string
+    /**
+     * The icon name
+     */
+    @Prop() icon!: string
+    /**
+     * The icon color
+     */
+    @Prop() color?: string
+    /**
+     * The icon label
+     */
+    @Prop() label?: string
 
     @Watch('label')
     labelRequired(newValue: string) {
@@ -35,7 +46,6 @@ export class RuxIcon {
                     color={this.color}
                     size={this.size}
                     title={this.label}
-                    viewBox={this.viewBox}
                 ></SVG>
             </Host>
         )

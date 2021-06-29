@@ -123,13 +123,13 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 
 ## Properties
 
-| Property   | Attribute   | Description | Type                 | Default     |
-| ---------- | ----------- | ----------- | -------------------- | ----------- |
-| `disabled` | `disabled`  |             | `boolean`            | `false`     |
-| `icon`     | `icon`      |             | `string`             | `''`        |
-| `iconOnly` | `icon-only` |             | `boolean`            | `false`     |
-| `outline`  | `outline`   |             | `boolean`            | `false`     |
-| `size`     | `size`      |             | `"large" \| "small"` | `undefined` |
+| Property   | Attribute   | Description                                                                                                                                                                                                                                                                                                 | Type                              | Default     |
+| ---------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- | ----------- |
+| `disabled` | `disabled`  | Toggles disabled attribute on the button                                                                                                                                                                                                                                                                    | `boolean`                         | `false`     |
+| `icon`     | `icon`      | For a [button styleguid, see the Button section in Astro UXDS Guidelines](https://astrouxds.com/components/button) Displays an Astro icon matching this string. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols) | `string`                          | `''`        |
+| `iconOnly` | `icon-only` | Hides slotted text from the button by setting rux-button--icon-only class                                                                                                                                                                                                                                   | `boolean`                         | `false`     |
+| `outline`  | `outline`   | Changes button style from solid to outline by setting rux-button--outline class                                                                                                                                                                                                                             | `boolean`                         | `false`     |
+| `size`     | `size`      | Changes size of a button from standard to small or large by setting sizing classes rux-button--small rux-button--large                                                                                                                                                                                      | `"large" \| "small" \| undefined` | `undefined` |
 
 ## CSS Custom Properties
 

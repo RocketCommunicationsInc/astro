@@ -13,9 +13,14 @@ import svgIcon from '../../../icons/signal-wifi-1-bar.svg'
     shadow: false,
 })
 export class RuxIconSignalWifi1Bar {
-    @Prop() color: string
-    @Prop() icon: string
-    @Prop() size: 'extra-small' | 'small' | 'normal' | 'large'
+    /**
+     * The fill color for the icon
+     */
+    @Prop() color?: string
+    /**
+     * The size of the icon
+     */
+    @Prop() size: 'extra-small' | 'small' | 'normal' | 'large' = 'normal'
 
     render() {
         const style = {

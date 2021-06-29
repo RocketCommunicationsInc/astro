@@ -29,7 +29,7 @@ export const collapseNotifications = (value: number) => {
 }
 
 interface MonitoringBadgeProps {
-    notifications: number
+    notifications?: number
 }
 
 const MonitoringBadge: FunctionalComponent<MonitoringBadgeProps> = ({
@@ -40,7 +40,7 @@ const MonitoringBadge: FunctionalComponent<MonitoringBadgeProps> = ({
             !notifications ? 'rux-advanced-status__hidden' : ''
         }`}
     >
-        {collapseNotifications(notifications)}
+        {notifications && collapseNotifications(notifications)}
     </div>
 )
 

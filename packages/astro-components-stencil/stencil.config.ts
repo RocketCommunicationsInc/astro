@@ -1,7 +1,6 @@
 import { Config } from '@stencil/core'
 import { sass } from '@stencil/sass'
 import { svgOptimizerPlugin } from './src/utils/rollup-svg'
-import { inlineSvg } from 'stencil-inline-svg'
 
 export const config: Config = {
     namespace: 'astro-web-components',
@@ -16,6 +15,7 @@ export const config: Config = {
         },
         {
             type: 'docs-readme',
+            strict: true,
         },
         {
             type: 'www',

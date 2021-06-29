@@ -6,7 +6,7 @@ import { Component, Host, h, Element } from '@stencil/core'
     shadow: true,
 })
 export class RuxTabPanel {
-    @Element() el: HTMLElement
+    @Element() el!: HTMLElement
 
     connectedCallback() {
         this.el.setAttribute('role', 'tabpanel')

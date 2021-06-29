@@ -80,11 +80,11 @@ Configure the component using native HTML attributes.
 
 ## Properties
 
-| Property   | Attribute  | Description                                                                                                                                                                                 | Type      | Default     |
-| ---------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
-| `checked`  | `checked`  | Checks the button via HTML `checked` attribute. Button takes on a distinct "enabled" or "selected" visual state.                                                                            | `boolean` | `false`     |
-| `disabled` | `disabled` | Disables the button via HTML `disabled` attribute. Button takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored. | `boolean` | `false`     |
-| `name`     | `name`     | The name of the form input element                                                                                                                                                          | `string`  | `undefined` |
+| Property   | Attribute  | Description                                                                                                                                                                                 | Type                   | Default     |
+| ---------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- | ----------- |
+| `checked`  | `checked`  | Checks the button via HTML `checked` attribute. Button takes on a distinct "enabled" or "selected" visual state.                                                                            | `boolean \| undefined` | `false`     |
+| `disabled` | `disabled` | Disables the button via HTML `disabled` attribute. Button takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored. | `boolean \| undefined` | `false`     |
+| `name`     | `name`     | The name of the form input element                                                                                                                                                          | `string \| undefined`  | `undefined` |
 
 ## Events
 

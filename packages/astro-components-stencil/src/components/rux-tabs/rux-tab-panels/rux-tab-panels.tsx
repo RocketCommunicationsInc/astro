@@ -6,27 +6,34 @@ import { Component, Host, h, Element, Event, EventEmitter } from '@stencil/core'
     shadow: true,
 })
 export class RuxTabPanels {
-    @Element() el: HTMLElement
+    @Element() el!: HTMLElement
 
     connectedCallback() {
         this.el.setAttribute('style', 'position: relative; width: 100%;')
     }
 
     _getSlottedChildren() {
-        const slot = this.el.shadowRoot.querySelector('slot')
-        const childNodes = slot.assignedNodes({ flatten: true })
-        const children = Array.prototype.filter.call(
-            childNodes,
-            (node) => node.nodeType == Node.ELEMENT_NODE
-        )
-        return children
+        const slot = this.el?.shadowRoot?.querySelector('slot')
+        if (slot) {
+            const childNodes = slot.assignedNodes({ flatten: true })
+            const children = Array.prototype.filter.call(
+                childNodes,
+                (node) => node.nodeType == Node.ELEMENT_NODE
+            )
+            return children
+        } else {
+            return []
+        }
     }
 
     componentDidLoad() {
         this._registerTabPanels(this._getSlottedChildren())
     }
 
-    @Event() registerPanels: EventEmitter<HTMLRuxTabPanelsElement[]>
+    /**
+     * Emits a list of the Tab Panels that have been passed in
+     */
+    @Event() registerPanels!: EventEmitter<HTMLRuxTabPanelsElement[]>
     _registerTabPanels(children: HTMLRuxTabPanelsElement[]) {
         this.registerPanels.emit(children)
     }

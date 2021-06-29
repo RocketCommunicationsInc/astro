@@ -13,9 +13,14 @@ import svgIcon from '../../../icons/branding-watermark.svg'
     shadow: false,
 })
 export class RuxIconBrandingWatermark {
-    @Prop() color: string
-    @Prop() icon: string
-    @Prop() size: 'extra-small' | 'small' | 'normal' | 'large'
+    /**
+     * The fill color for the icon
+     */
+    @Prop() color?: string
+    /**
+     * The size of the icon
+     */
+    @Prop() size: 'extra-small' | 'small' | 'normal' | 'large' = 'normal'
 
     render() {
         const style = {

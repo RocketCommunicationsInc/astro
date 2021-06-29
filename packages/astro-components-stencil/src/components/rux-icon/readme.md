@@ -115,13 +115,12 @@ In Astro 4.0, these groups have been flattened, and each icon is now imported di
 
 ## Properties
 
-| Property  | Attribute  | Description | Type                                              | Default       |
-| --------- | ---------- | ----------- | ------------------------------------------------- | ------------- |
-| `color`   | `color`    |             | `string`                                          | `undefined`   |
-| `icon`    | `icon`     |             | `string`                                          | `undefined`   |
-| `label`   | `label`    |             | `string`                                          | `undefined`   |
-| `size`    | `size`     |             | `"extra-small" \| "large" \| "normal" \| "small"` | `'normal'`    |
-| `viewBox` | `view-box` |             | `string`                                          | `'0 0 24 24'` |
+| Property            | Attribute | Description          | Type                                              | Default     |
+| ------------------- | --------- | -------------------- | ------------------------------------------------- | ----------- |
+| `color`             | `color`   | The icon color       | `string \| undefined`                             | `undefined` |
+| `icon` _(required)_ | `icon`    | The icon name        | `string`                                          | `undefined` |
+| `label`             | `label`   | The icon label       | `string \| undefined`                             | `undefined` |
+| `size`              | `size`    | The size of the icon | `"extra-small" \| "large" \| "normal" \| "small"` | `'normal'`  |
 
 ## CSS Custom Properties
 

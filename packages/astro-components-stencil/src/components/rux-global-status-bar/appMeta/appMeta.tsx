@@ -1,9 +1,9 @@
 import { FunctionalComponent, h } from '@stencil/core'
 
 interface AppMetaProps {
-    domain: string
-    name: string
-    version: string
+    domain?: string
+    name?: string
+    version?: string
 }
 
 export const AppMeta: FunctionalComponent<AppMetaProps> = (

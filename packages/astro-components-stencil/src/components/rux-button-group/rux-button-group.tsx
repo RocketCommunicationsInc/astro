@@ -6,6 +6,9 @@ import { Prop, Component, h } from '@stencil/core'
     shadow: true,
 })
 export class RuxButtonGroup {
+    /**
+     * The alignment of buttons within the group
+     */
     @Prop() align: 'left' | 'center' | 'right' = 'left'
 
     render() {

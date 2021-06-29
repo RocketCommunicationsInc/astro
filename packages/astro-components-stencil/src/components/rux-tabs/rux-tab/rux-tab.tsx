@@ -15,18 +15,18 @@ export class RuxTab {
      */
     @Prop({ reflect: true, mutable: true }) disabled: boolean = false
 
-    @Element() el: HTMLElement
+    @Element() el!: HTMLElement
 
     connectedCallback() {
         this.el.setAttribute('role', 'tab')
         this.el.addEventListener('click', this.clickHandler)
 
-        if (this.el.parentElement.getAttributeNode('small')) {
+        if (this.el?.parentElement?.getAttributeNode('small')) {
             this.el.setAttribute('small', '')
         }
     }
 
-    clickHandler(e) {
+    clickHandler(e: MouseEvent) {
         if (this.disabled) {
             e.stopImmediatePropagation()
         }
@@ -34,7 +34,7 @@ export class RuxTab {
 
     render() {
         return (
-            <Host onClick={(e) => this.clickHandler(e)}>
+            <Host onClick={(e: MouseEvent) => this.clickHandler(e)}>
                 <slot></slot>
             </Host>
         )

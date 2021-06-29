@@ -15,24 +15,24 @@ export class RuxTabs {
      */
     @Prop({ mutable: true }) _tabs: Array<HTMLRuxTabElement> = []
 
-    @Element() ruxTabsEl: HTMLElement
+    @Element() el!: HTMLElement
 
     @Listen('registerPanels', { target: 'window' })
-    handleListen(e) {
+    handleListen(e: CustomEvent) {
         this._registerPanels(e)
     }
 
     connectedCallback() {
-        this.ruxTabsEl.addEventListener('click', (e) => this._onClick(e))
+        this.el.addEventListener('click', (e) => this._onClick(e))
         this._addTabs()
     }
 
     _addTabs() {
-        this._tabs = Array.from(this.ruxTabsEl.querySelectorAll('rux-tab'))
+        this._tabs = Array.from(this.el.querySelectorAll('rux-tab'))
     }
 
-    _registerPanels(e) {
-        e.detail.forEach((panel) => {
+    _registerPanels(e: CustomEvent) {
+        e.detail.forEach((panel: HTMLRuxTabPanelElement) => {
             this._panels.push(panel)
         })
         // Default to first tab if none are selected
@@ -41,12 +41,13 @@ export class RuxTabs {
         this._setTab(selectedTab)
     }
 
-    _onClick(e) {
+    _onClick(e: MouseEvent) {
+        const tab = e.target as HTMLRuxTabElement
         if (
-            e.target.getAttribute('role') === 'tab' &&
-            e.target.getAttribute('disabled') === null
+            tab.getAttribute('role') === 'tab' &&
+            tab.getAttribute('disabled') === null
         ) {
-            this._setTab(e.target)
+            this._setTab(tab)
         }
     }
 
@@ -57,7 +58,7 @@ export class RuxTabs {
         this._panels.forEach((panel) => panel.classList.add('hidden'))
     }
 
-    _setTab(selectedTab) {
+    _setTab(selectedTab: HTMLRuxTabElement) {
         this._reset()
 
         // find the panel whose aria-labeldby attribute matches the tab’s id

@@ -41,7 +41,7 @@ describe('rux-progress', () => {
     it('has correct default values for max and value if none are given', async () => {
         const progress = new RuxProgress()
         expect(progress.max).toBe(100)
-        expect(progress.value).toBe(null)
+        expect(progress.value).toBe(undefined)
     })
     it('renders a progress bar of 0/100 if value provided is 0', async () => {
         const page = await newSpecPage({

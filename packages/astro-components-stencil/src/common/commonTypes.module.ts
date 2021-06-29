@@ -13,3 +13,7 @@ export type Classification =
     | 'top-secret'
     | 'top-secret-sci'
     | 'unclassified'
+
+export type StatusTypes = {
+    [id: string]: boolean
+}

@@ -1,8 +1,8 @@
 import { FunctionalComponent, h } from '@stencil/core'
 
 interface MonitoringLabelProps {
-    label: string
-    sublabel: string
+    label?: string
+    sublabel?: string
 }
 
 const MonitoringLabel: FunctionalComponent<MonitoringLabelProps> = ({

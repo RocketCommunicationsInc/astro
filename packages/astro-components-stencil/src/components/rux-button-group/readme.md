@@ -38,9 +38,9 @@ Read the [Rux-Buttons Readme](/?path=/info/components-buttons--standard-button) 
 
 ## Properties
 
-| Property | Attribute | Description | Type                            | Default  |
-| -------- | --------- | ----------- | ------------------------------- | -------- |
-| `align`  | `align`   |             | `"center" \| "left" \| "right"` | `'left'` |
+| Property | Attribute | Description                               | Type                            | Default  |
+| -------- | --------- | ----------------------------------------- | ------------------------------- | -------- |
+| `align`  | `align`   | The alignment of buttons within the group | `"center" \| "left" \| "right"` | `'left'` |
 
 ---
 
