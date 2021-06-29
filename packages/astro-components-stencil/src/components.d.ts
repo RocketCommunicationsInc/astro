@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal'
 import { Classification, Status } from './common/commonTypes.module'
+import { LogRow } from './components/rux-log/rux-log.model'
 import { RangeItem } from './components/rux-monitoring-progress-icon/rux-monitoring-progress-icon'
 import { SwitchChangeEvent } from './components/rux-switch/rux-switch.model'
 export namespace Components {
@@ -5411,6 +5412,20 @@ export namespace Components {
         color: string
         icon: string
         size: 'extra-small' | 'small' | 'normal' | 'large'
+    }
+    interface RuxLog {
+        /**
+         * An array of objects to display as log
+         */
+        data: LogRow[]
+        /**
+         * A string to filter the array to return only the children whose `message` property contains a case-insensitive substring match.
+         */
+        filter?: string
+        /**
+         * Accepts [IANA timezone string format](https://www.iana.org/time-zones) such as `America/Los_Angeles`. Default timezone is `UTC`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.
+         */
+        timezone: string
     }
     interface RuxModal {
         /**
@@ -12998,6 +13013,11 @@ declare global {
         prototype: HTMLRuxIconZoomOutMapElement
         new (): HTMLRuxIconZoomOutMapElement
     }
+    interface HTMLRuxLogElement extends Components.RuxLog, HTMLStencilElement {}
+    var HTMLRuxLogElement: {
+        prototype: HTMLRuxLogElement
+        new (): HTMLRuxLogElement
+    }
     interface HTMLRuxModalElement
         extends Components.RuxModal,
             HTMLStencilElement {}
@@ -14184,6 +14204,7 @@ declare global {
         'rux-icon-zoom-in-map': HTMLRuxIconZoomInMapElement
         'rux-icon-zoom-out': HTMLRuxIconZoomOutElement
         'rux-icon-zoom-out-map': HTMLRuxIconZoomOutMapElement
+        'rux-log': HTMLRuxLogElement
         'rux-modal': HTMLRuxModalElement
         'rux-monitoring-icon': HTMLRuxMonitoringIconElement
         'rux-monitoring-progress-icon': HTMLRuxMonitoringProgressIconElement
@@ -19608,6 +19629,20 @@ declare namespace LocalJSX {
         icon?: string
         size?: 'extra-small' | 'small' | 'normal' | 'large'
     }
+    interface RuxLog {
+        /**
+         * An array of objects to display as log
+         */
+        data?: LogRow[]
+        /**
+         * A string to filter the array to return only the children whose `message` property contains a case-insensitive substring match.
+         */
+        filter?: string
+        /**
+         * Accepts [IANA timezone string format](https://www.iana.org/time-zones) such as `America/Los_Angeles`. Default timezone is `UTC`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.
+         */
+        timezone?: string
+    }
     interface RuxModal {
         /**
          * Text for confirmation button
@@ -20839,6 +20874,7 @@ declare namespace LocalJSX {
         'rux-icon-zoom-in-map': RuxIconZoomInMap
         'rux-icon-zoom-out': RuxIconZoomOut
         'rux-icon-zoom-out-map': RuxIconZoomOutMap
+        'rux-log': RuxLog
         'rux-modal': RuxModal
         'rux-monitoring-icon': RuxMonitoringIcon
         'rux-monitoring-progress-icon': RuxMonitoringProgressIcon
@@ -22985,6 +23021,8 @@ declare module '@stencil/core' {
                 JSXBase.HTMLAttributes<HTMLRuxIconZoomOutElement>
             'rux-icon-zoom-out-map': LocalJSX.RuxIconZoomOutMap &
                 JSXBase.HTMLAttributes<HTMLRuxIconZoomOutMapElement>
+            'rux-log': LocalJSX.RuxLog &
+                JSXBase.HTMLAttributes<HTMLRuxLogElement>
             'rux-modal': LocalJSX.RuxModal &
                 JSXBase.HTMLAttributes<HTMLRuxModalElement>
             'rux-monitoring-icon': LocalJSX.RuxMonitoringIcon &
