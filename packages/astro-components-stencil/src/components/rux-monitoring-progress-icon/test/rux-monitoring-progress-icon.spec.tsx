@@ -87,4 +87,16 @@ describe('rux-monitoring-progress-icon', () => {
         progressIcon.componentWillLoad()
         expect(progressIcon.status).toBe('caution')
     })
+    it('changes progress value to equal max if passed in progress is greater', () => {
+        const progressIcon = new RuxMonitoringProgressIcon()
+        progressIcon.progress = 101
+        progressIcon.componentWillLoad()
+        expect(progressIcon.progress).toEqual(progressIcon.max)
+    })
+    it('changes progress value to equal min if passed in progress is less', () => {
+        const progressIcon = new RuxMonitoringProgressIcon()
+        progressIcon.progress = -10
+        progressIcon.componentWillLoad()
+        expect(progressIcon.progress).toEqual(progressIcon.min)
+    })
 })
