@@ -8,11 +8,11 @@ describe('rux-pop-up-menu', () => {
     const element = await page.find('rux-pop-up-menu');
     expect(element).toHaveClass('hydrated');
   })
-  it('opens menu when clicking on target element', async () => {
+  it('opens menu when clicking on trigger element', async () => {
     const page = await newE2EPage()
     await page.setContent(
       `<button aria-controls="pop-up-menu">C Button</button>
-      <rux-pop-up-menu id="pop-up-menu" open>
+      <rux-pop-up-menu id="pop-up-menu">
         <rux-menu-item>Item 1</rux-menu-item>
         <rux-menu-item-divider></rux-menu-item-divider>
         <rux-menu-item value="2"
@@ -31,4 +31,5 @@ describe('rux-pop-up-menu', () => {
     // Test opening menu
     expect(menu).toHaveAttribute('open')
   })
+  it('works with a custom trigger element')
 });
