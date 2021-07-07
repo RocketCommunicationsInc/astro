@@ -1,0 +1,190 @@
+:host {
+    /**
+    * @prop --treeAccentColor: tree accent color
+    */
+    --treeAccentColor: var(--primary);
+    /**
+    * @prop --treeHoverBackgroundColor: tree hover background color
+    */
+    --treeHoverBackgroundColor: var(--primaryLight);
+    /**
+    * @prop --treeHoverTextColor: tree hover text color
+    */
+    --treeHoverTextColor: var(--primaryElementText);
+    /**
+    * @prop --treeSelectedBorderColor: tree selected border color
+    */
+    --treeSelectedBorderColor: var(--primaryDark);
+    /**
+    * @prop --treeSelectedAccentColor: tree selected accent color
+    */
+    --treeSelectedAccentColor: var(--primary);
+    /**
+    * @prop --treeExpandedBorderColor: tree expanded border color
+    */
+    --treeExpandedBorderColor: var(--backgroundColor);
+
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    font-size: 1rem;
+    color: var(--treeTextColor);
+    user-select: none;
+    width: 100%;
+    display: block;
+}
+
+:host([aria-expanded='true'][aria-level='1']:not([aria-selected='true'])) {
+    .parent:after {
+        border-bottom: solid 1px var(--treeExpandedBorderColor);
+    }
+}
+
+:host([aria-selected='true']) {
+    .parent {
+        &:after {
+            content: '';
+            height: 30px;
+            width: 100%;
+            left: 0px;
+            z-index: 0;
+            position: absolute;
+            transition: background-color 0.0967s ease-in 0s;
+            border-top: 1px solid var(--treeSelectedBorderColor);
+            border-bottom: 1px solid var(--treeSelectedBorderColor);
+            box-shadow: inset 0.25rem 0 0 var(--treeSelectedAccentColor) !important;
+        }
+    }
+}
+
+:host([aria-level='1']) {
+    .parent {
+        font-weight: bold;
+        padding-left: 0.5rem;
+        &:after {
+            content: '';
+            height: 31px;
+            width: 100%;
+            left: 0px;
+            z-index: 0;
+            position: absolute;
+            transition: background-color 0.0967s ease-in 0s;
+        }
+    }
+}
+
+:host([aria-level='1']) {
+    .tree-node:not(.tree-node--has-children) {
+        .parent {
+            padding-left: 2rem;
+        }
+    }
+}
+
+:host([aria-level='2']) {
+    .tree-node:not(.tree-node--has-children) {
+        .parent {
+            padding-left: 3.5rem;
+        }
+    }
+}
+
+:host([aria-level='3']) {
+    .tree-node:not(.tree-node--has-children) {
+        .parent {
+            padding-left: 5rem;
+        }
+    }
+    .parent {
+        padding-left: 3.5rem;
+    }
+}
+
+:host([aria-level='4']) {
+    .tree-node:not(.tree-node--has-children) {
+        .parent {
+            padding-left: 6.5rem;
+        }
+    }
+    .parent {
+        padding-left: 5rem;
+    }
+}
+
+.parent {
+    height: 2rem;
+    padding: 0 0.5rem 0 2rem;
+    display: flex;
+    align-items: center;
+    &:hover {
+        color: var(--treeHoverTextColor);
+        background: var(--treeHoverBackgroundColor);
+    }
+}
+
+.children {
+    display: none;
+}
+
+.tree-node--expanded {
+    > .children {
+        display: block !important;
+    }
+    .arrow {
+        transform: rotate(90deg);
+    }
+}
+
+.arrow {
+    position: relative;
+    cursor: pointer;
+    width: 0.35rem;
+    margin-right: 1rem;
+    margin-left: 0.15rem;
+    background-color: transparent;
+    transition: transform 0.167s ease-in-out 0s;
+    z-index: 11;
+    &::before {
+        content: '';
+        display: block;
+        height: 1.5rem;
+        width: 1.5rem;
+        top: -0.15rem;
+        left: -0.65rem;
+        position: absolute;
+    }
+    &::after {
+        content: '';
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-width: 0.35rem 0px 0.35rem 0.35rem;
+        border-color: transparent transparent transparent var(--treeAccentColor);
+        display: inline-block;
+    }
+}
+
+::slotted(rux-status) {
+    margin: 0 0.625rem;
+}
+
+::slotted(rux-tree-node) {
+    position: relative;
+    &::before {
+        content: '';
+        order: 1;
+        position: absolute;
+        top: 0;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        margin-right: 1rem;
+        margin-left: 0.15rem;
+        left: -40px;
+        background-color: transparent;
+        transition: transform 0.167s ease-in-out 0s;
+        z-index: 11;
+    }
+}

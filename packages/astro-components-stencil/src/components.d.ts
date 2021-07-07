@@ -10891,6 +10891,27 @@ export namespace Components {
          */
         _tabs: Array<HTMLRuxTabElement>
     }
+    interface RuxTree {}
+    interface RuxTreeNode {
+        /**
+         * Sets the expanded state
+         */
+        expanded: boolean
+        /**
+         * Sets the selected state
+         */
+        selected: boolean
+        /**
+         * Sets the expanded state
+         * @param value
+         */
+        setExpanded: (value: boolean) => Promise<void>
+        /**
+         * Sets the selected state
+         * @param value
+         */
+        setSelected: (value: boolean) => Promise<void>
+    }
 }
 declare global {
     interface HTMLRuxButtonElement
@@ -18456,6 +18477,20 @@ declare global {
         prototype: HTMLRuxTabsElement
         new (): HTMLRuxTabsElement
     }
+    interface HTMLRuxTreeElement
+        extends Components.RuxTree,
+            HTMLStencilElement {}
+    var HTMLRuxTreeElement: {
+        prototype: HTMLRuxTreeElement
+        new (): HTMLRuxTreeElement
+    }
+    interface HTMLRuxTreeNodeElement
+        extends Components.RuxTreeNode,
+            HTMLStencilElement {}
+    var HTMLRuxTreeNodeElement: {
+        prototype: HTMLRuxTreeNodeElement
+        new (): HTMLRuxTreeNodeElement
+    }
     interface HTMLElementTagNameMap {
         'rux-button': HTMLRuxButtonElement
         'rux-button-group': HTMLRuxButtonGroupElement
@@ -19538,6 +19573,8 @@ declare global {
         'rux-table-header-row': HTMLRuxTableHeaderRowElement
         'rux-table-row': HTMLRuxTableRowElement
         'rux-tabs': HTMLRuxTabsElement
+        'rux-tree': HTMLRuxTreeElement
+        'rux-tree-node': HTMLRuxTreeNodeElement
     }
 }
 declare namespace LocalJSX {
@@ -30440,6 +30477,21 @@ declare namespace LocalJSX {
          */
         _tabs?: Array<HTMLRuxTabElement>
     }
+    interface RuxTree {}
+    interface RuxTreeNode {
+        /**
+         * Sets the expanded state
+         */
+        expanded?: boolean
+        /**
+         * Emit when user selects a tree node
+         */
+        'onRux-tree-node-selected'?: (event: CustomEvent<string>) => void
+        /**
+         * Sets the selected state
+         */
+        selected?: boolean
+    }
     interface IntrinsicElements {
         'rux-button': RuxButton
         'rux-button-group': RuxButtonGroup
@@ -31522,6 +31574,8 @@ declare namespace LocalJSX {
         'rux-table-header-row': RuxTableHeaderRow
         'rux-table-row': RuxTableRow
         'rux-tabs': RuxTabs
+        'rux-tree': RuxTree
+        'rux-tree-node': RuxTreeNode
     }
 }
 export { LocalJSX as JSX }
@@ -33690,6 +33744,10 @@ declare module '@stencil/core' {
                 JSXBase.HTMLAttributes<HTMLRuxTableRowElement>
             'rux-tabs': LocalJSX.RuxTabs &
                 JSXBase.HTMLAttributes<HTMLRuxTabsElement>
+            'rux-tree': LocalJSX.RuxTree &
+                JSXBase.HTMLAttributes<HTMLRuxTreeElement>
+            'rux-tree-node': LocalJSX.RuxTreeNode &
+                JSXBase.HTMLAttributes<HTMLRuxTreeNodeElement>
         }
     }
 }
