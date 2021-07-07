@@ -10,31 +10,50 @@ export class RuxGlobalStatusBar {
     /**
      * Declares whether a rux-icon will be shown in the left-side slot
      */
-    @Prop() includeIcon?: boolean = false
+    @Prop({
+        attribute: 'include-icon',
+    })
+    includeIcon: boolean = false
     /**
      * Declares whether the app-state component will be shown in the app-meta slot
      */
-    @Prop() includeAppState?: boolean = false
+    @Prop({
+        attribute: 'include-app-state',
+    })
+    includeAppState: boolean = false
     /**
      * Declares whether the username component will be shown in the app-meta slot
      */
-    @Prop() includeUsername?: boolean = false
+    @Prop({
+        attribute: 'include-username',
+    })
+    includeUsername: boolean = false
     /**
      * Sets the domain of the application to be displayed in the app-meta element
      */
-    @Prop() appDomain?: string
+    @Prop({
+        attribute: 'app-domain',
+    })
+    appDomain?: string
     /**
      * Sets the name of the application to be displayed in the app-meta element
      */
-    @Prop() appName?: string
+    @Prop({
+        attribute: 'app-name',
+    })
+    appName?: string
     /**
      * Sets the version of the application to be displayed in the app-meta element
      */
-    @Prop() appVersion?: string
+    @Prop({
+        attribute: 'app-version',
+    })
+    appVersion?: string
     /**
      * Sets the icon to be displayed in the default rux-icon component
      */
-    @Prop({ mutable: true, reflect: true }) menuIcon?: string = 'apps'
+    @Prop({ attribute: 'menu-icon', mutable: true, reflect: true })
+    menuIcon?: string = 'apps'
 
     render() {
         return (

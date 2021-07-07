@@ -25,7 +25,8 @@
         "generate": "stencil generate",
         "generate:icons": "node src/utils/generate-icons.js",
         "storybook": "start-storybook -p 6006 -s ./dist",
-        "build-storybook": "build-storybook -c .storybook -s ./dist",
+        "storybook-next": "start-storybook -p 6006 -s ./dist -c .storybook-next",
+        "build-storybook": "build-storybook -c .storybook-next -s ./dist",
         "astro": "npm-run-all --parallel start storybook",
         "build-astro-prod": "npm-run-all build build-storybook",
         "prettier": "prettier --write --loglevel warn .",
@@ -39,6 +40,7 @@
     },
     "license": "MIT",
     "devDependencies": {
+        "@astrouxds/storybook-addon-docs-stencil": "~1.0.5",
         "@babel/core": "~7.13.16",
         "@stencil/sass": "~1.4.1",
         "@storybook/addon-a11y": "~6.3.0",

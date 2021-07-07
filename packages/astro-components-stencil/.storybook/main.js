@@ -1,8 +1,8 @@
 module.exports = {
     stories: [
         '../src/stories/welcome/StartHere.stories.mdx', // Set as first default page
-        '../src/**/*.stories.mdx',
-        '../src/**/*.stories.@(js|jsx|ts|tsx)',
+        '../src/stories/*.stories.mdx',
+        '../src/stories/*.stories.@(js|jsx|ts|tsx)',
     ],
     addons: [
         '@storybook/addon-links',

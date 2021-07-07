@@ -17,6 +17,11 @@ let id = 0
     styleUrl: 'rux-tree-node.scss',
     shadow: true,
 })
+
+/**
+ * @slot - The parent node content
+ * @slot node - Renders a child node within the current node
+ */
 export class RuxTreeNode {
     componentId = `node-${++id}`
     @Element() el!: HTMLElement

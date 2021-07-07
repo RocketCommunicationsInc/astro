@@ -1,0 +1,119 @@
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { html, render } from 'lit-html'
+
+<Meta
+    title="Components/Clock"
+    component="rux-clock"
+    argTypes={extractArgTypes('rux-clock')}
+/>
+
+# Clock
+
+Clock shows the current date and time, and optional AOS and LOS timers. It will typically be positioned on the Global Status Bar.
+
+## Guidelines
+
+-   [Astro UXDS: Clock](https://www.astrouxds.com/ui-components/clock)
+
+export const Default = (args) => {
+    return html`
+        <div style="padding: 10%; display: flex; justify-content: center;">
+            <rux-clock
+                .aos="${args.aos}"
+                .los="${args.los}"
+                .timezone="${args.timezone}"
+                ?hide-timezone="${args.hideTimezone}"
+                ?hide-date="${args.hideDate}"
+                ?small="${args.small}"
+            ></rux-clock>
+        </div>
+    `
+}
+
+<Canvas>
+    <Story
+        parameters={{
+            docs: { source: { code: '<rux-clock></rux-clock>' } },
+        }}
+        name="Default"
+    >
+        {Default.bind()}
+    </Story>
+</Canvas>
+
+## API
+
+<ArgsTable of="rux-clock" />
+
+## Variants
+
+### With AOS/LOS Timestamps
+
+export const ClockWithAosLos = (args) => {
+    return html`
+        <div style="padding: 10%; display: flex; justify-content: center;">
+            <rux-clock
+                .timezone="${args.timezone}"
+                .aos="${args.aos}"
+                .los="${args.los}"
+                ?hide-timezone="${args.hideTimezone}"
+                ?hide-date="${args.hideDate}"
+                ?small="${args.small}"
+            ></rux-clock>
+        </div>
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+          aos: new Date().getTime(),
+          los: new Date().toISOString()
+        }}
+        name="With AOS/LOS"
+    >
+        {ClockWithAosLos.bind()}
+    </Story>
+</Canvas>
+
+## Military Timezones
+
+Clock's timezone parameter can accept any military timezone.
+
+|Time zone name|Prop Letter|Offset|
+|--- |--- |--- |
+|Alpha Time Zone|A|+1|
+|Bravo Time Zone|B|+2|
+|Charlie Time Zone|C|+3|
+|Delta Time Zone|D|+4|
+|Echo Time Zone|E|+5|
+|Foxtrot Time Zone|F|+6|
+|Golf Time Zone|G|+7|
+|Hotel Time Zone|H|+8|
+|India Time Zone|I|+9|
+|Kilo Time Zone|K|+10|
+|Lima Time Zone|L|+11|
+|Mike Time Zone|M|+12|
+|November Time Zone|N|−1|
+|Oscar Time Zone|O|−2|
+|Papa Time Zone|P|−3|
+|Quebec Time Zone|Q|−4|
+|Romeo Time Zone|R|−5|
+|Sierra Time Zone|S|−6|
+|Tango Time Zone|T|−7|
+|Uniform Time Zone|U|−8|
+|Victor Time Zone|V|−9|
+|Whiskey Time Zone|W|−10|
+|X-ray Time Zone|X|−11|
+|Yankee Time Zone|Y|−12|
+|Zulu Time Zone|Z|0|
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxClock } from '@astrouxds/astro-web-components/dist/components/rux-clock'
+customElements.define('rux-clock', RuxClock)
+```

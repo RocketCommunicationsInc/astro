@@ -33,17 +33,23 @@ export class RuxClock {
     /**
      * Hides the timezone in the main 24-hour clock. Timezone does not display on AOS/LOS.
      */
-    @Prop() hideTimezone?: boolean
+    @Prop({
+        attribute: 'hide-timezone',
+    })
+    hideTimezone: boolean = false
 
     /**
      * Hides the day of the year.
      */
-    @Prop() hideDate?: boolean
+    @Prop({
+        attribute: 'hide-date',
+    })
+    hideDate: boolean = false
 
     /**
      * Applies a smaller clock style.
      */
-    @Prop() small?: boolean
+    @Prop() small: boolean = false
 
     @Watch('timezone')
     timezoneChanged() {

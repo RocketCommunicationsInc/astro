@@ -14,6 +14,10 @@ export const config: Config = {
             type: 'dist-custom-elements-bundle',
         },
         {
+            type: 'docs-json',
+            file: './docs.json',
+        },
+        {
             type: 'dist-custom-elements',
         },
         {

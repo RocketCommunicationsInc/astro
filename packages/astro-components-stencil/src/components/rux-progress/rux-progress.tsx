@@ -17,7 +17,7 @@ export class RuxProgress {
     /**
      * Displays text output of progress as a percentage. Note: when using a max value other than 100 output is displated as value/max (e.g., 1450/2000)
      */
-    @Prop({ mutable: true }) hideLabel: boolean = false
+    @Prop({ attribute: 'hide-label', mutable: true }) hideLabel: boolean = false
 
     getProgressAsString() {
         if (this.value === undefined) {
