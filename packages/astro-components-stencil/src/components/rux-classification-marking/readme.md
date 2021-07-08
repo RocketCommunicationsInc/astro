@@ -95,13 +95,15 @@ Applying the `label` property attribute to the classification custom element add
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property         | Attribute        | Description                                                          | Type                                                                                               | Default          |
 | ---------------- | ---------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ---------------- |
 | `classification` | `classification` | Defines which classification marking will be displayed.              | `"confidential" \| "controlled" \| "secret" \| "top-secret" \| "top-secret-sci" \| "unclassified"` | `'unclassified'` |
-| `label`          | `label`          | Allows additional text labels to be added to the a marking           | `string`                                                                                           | `undefined`      |
+| `label`          | `label`          | Allows additional text labels to be added to the a marking           | `string \| undefined`                                                                              | `undefined`      |
 | `tag`            | `tag`            | Declares the marking as a `tag` rather than the default banner style | `boolean`                                                                                          | `false`          |
+
 
 ## CSS Custom Properties
 
@@ -110,6 +112,7 @@ Applying the `label` property attribute to the classification custom element add
 | `--classificationTextColorDark`  | the color of dark text in the classification marking  |
 | `--classificationTextColorLight` | the color of light text in the classification marking |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

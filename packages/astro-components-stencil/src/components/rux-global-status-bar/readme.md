@@ -108,32 +108,33 @@ There is one unnamed slot in the Global Status Bar. This slot is intended for an
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
-| Property          | Attribute           | Description                                                                 | Type      | Default     |
-| ----------------- | ------------------- | --------------------------------------------------------------------------- | --------- | ----------- |
-| `appDomain`       | `app-domain`        | Sets the domain of the application to be displayed in the app-meta element  | `string`  | `undefined` |
-| `appName`         | `app-name`          | Sets the name of the application to be displayed in the app-meta element    | `string`  | `undefined` |
-| `appVersion`      | `app-version`       | Sets the version of the application to be displayed in the app-meta element | `string`  | `undefined` |
-| `includeAppState` | `include-app-state` | Declares whether the app-state component will be shown in the app-meta slot | `boolean` | `false`     |
-| `includeIcon`     | `include-icon`      | Declares whether a rux-icon will be shown in the left-side slot             | `boolean` | `false`     |
-| `includeUsername` | `include-username`  | Declares whether the username component will be shown in the app-meta slot  | `boolean` | `false`     |
-| `menuIcon`        | `menu-icon`         | Sets the icon to be displayed in the default rux-icon component             | `string`  | `"apps"`    |
+| Property          | Attribute           | Description                                                                 | Type                   | Default     |
+| ----------------- | ------------------- | --------------------------------------------------------------------------- | ---------------------- | ----------- |
+| `appDomain`       | `app-domain`        | Sets the domain of the application to be displayed in the app-meta element  | `string \| undefined`  | `undefined` |
+| `appName`         | `app-name`          | Sets the name of the application to be displayed in the app-meta element    | `string \| undefined`  | `undefined` |
+| `appVersion`      | `app-version`       | Sets the version of the application to be displayed in the app-meta element | `string \| undefined`  | `undefined` |
+| `includeAppState` | `include-app-state` | Declares whether the app-state component will be shown in the app-meta slot | `boolean \| undefined` | `false`     |
+| `includeIcon`     | `include-icon`      | Declares whether a rux-icon will be shown in the left-side slot             | `boolean \| undefined` | `false`     |
+| `includeUsername` | `include-username`  | Declares whether the username component will be shown in the app-meta slot  | `boolean \| undefined` | `false`     |
+| `menuIcon`        | `menu-icon`         | Sets the icon to be displayed in the default rux-icon component             | `string \| undefined`  | `'apps'`    |
+
 
 ## Dependencies
 
 ### Depends on
 
--   [rux-icon](../rux-icon)
+- [rux-icon](../rux-icon)
 
 ### Graph
-
 ```mermaid
 graph TD;
   rux-global-status-bar --> rux-icon
   style rux-global-status-bar fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

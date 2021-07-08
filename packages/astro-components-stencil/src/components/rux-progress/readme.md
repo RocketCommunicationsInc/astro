@@ -85,13 +85,15 @@ Indeterminate progress
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
-| Property    | Attribute    | Description                                                                                                                                      | Type      | Default |
-| ----------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------- | ------- |
-| `hideLabel` | `hide-label` | Displays text output of progress as a percentage. Note: when using a max value other than 100 output is displated as value/max (e.g., 1450/2000) | `boolean` | `false` |
-| `max`       | `max`        | For progress bars where progress bars have a maximum value greater or less than 100                                                              | `number`  | `100`   |
-| `value`     | `value`      | Current progress value between 0 and 100 (or the max, if defined below).                                                                         | `number`  | `null`  |
+| Property    | Attribute    | Description                                                                                                                                      | Type                  | Default     |
+| ----------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------- | ----------- |
+| `hideLabel` | `hide-label` | Displays text output of progress as a percentage. Note: when using a max value other than 100 output is displated as value/max (e.g., 1450/2000) | `boolean`             | `false`     |
+| `max`       | `max`        | For progress bars where progress bars have a maximum value greater or less than 100                                                              | `number`              | `100`       |
+| `value`     | `value`      | Current progress value between 0 and 100 (or the max, if defined below).                                                                         | `number \| undefined` | `undefined` |
+
 
 ## CSS Custom Properties
 
@@ -105,6 +107,7 @@ Indeterminate progress
 | `--progressRadius`                          | The border radius of rux-progress bar          |
 | `--progressWidth`                           | The width of rux-progress                      |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

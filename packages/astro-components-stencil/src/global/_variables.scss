@@ -348,24 +348,6 @@ $theme: (
 
     /*
 
-    Popup Menu Colors
-    ==========================================================================
-
-  */
-    --popupMenuBackgroundColor: var(--inputBackground);
-    --popupMenuBorderColor: var(--primary);
-    --popupMenuTextColor: var(--primaryElementText);
-
-    --popupCaretBackgroundColor: var(--primary);
-
-    --popupMenuItemBackgroundColor: var(--primary);
-    --popupMenuItemHoverBackgroundColor: var(--primaryLight);
-    --popupMenuItemHoverTextColor: var(--primaryElementText);
-
-    --popupMenuItemSeperatorBorderColor: var(--primaryElementText);
-
-    /*
-
     Pushbutton Colors
     ==========================================================================
 
@@ -377,6 +359,7 @@ $theme: (
     --pushbuttonSelectedBackgroundColor: var(--colorNormal);
     --pushbuttonSelectedBorderColor: var(--colorNormal);
     --pushbuttonSelectedTextColor: var(--primaryElementText);
+
     /*
     Modal Colors
     ==========================================================================

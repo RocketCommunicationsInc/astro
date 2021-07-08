@@ -36,12 +36,27 @@ Read the [Rux-Buttons Readme](/?path=/info/components-buttons--standard-button) 
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property | Attribute | Description                               | Type                            | Default  |
 | -------- | --------- | ----------------------------------------- | ------------------------------- | -------- |
 | `align`  | `align`   | The alignment of buttons within the group | `"center" \| "left" \| "right"` | `'left'` |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+## Dependencies
+
+### Used by
+
+ - [rux-modal](../rux-modal)
+
+### Graph
+```mermaid
+graph TD;
+  rux-modal --> rux-button-group
+  style rux-button-group fill:#f9f,stroke:#333,stroke-width:4px
+```
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

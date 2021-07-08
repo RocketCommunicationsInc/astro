@@ -121,15 +121,17 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
-| Property    | Attribute   | Description | Type                 | Default     |
-| ----------- | ----------- | ----------- | -------------------- | ----------- |
-| `disabled`  | `disabled`  |             | `boolean`            | `false`     |
-| `icon`      | `icon`      |             | `string`             | `''`        |
-| `iconOnly`  | `icon-only` |             | `boolean`            | `false`     |
-| `secondary` | `secondary` |             | `boolean`            | `false`     |
-| `size`      | `size`      |             | `"large" \| "small"` | `undefined` |
+| Property    | Attribute   | Description                                                                                                                                                                                                                                                                                                 | Type                              | Default     |
+| ----------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- | ----------- |
+| `disabled`  | `disabled`  |                                                                                                                                                                                                                                                                                                             | `boolean`                         | `false`     |
+| `icon`      | `icon`      | For a [button styleguid, see the Button section in Astro UXDS Guidelines](https://astrouxds.com/components/button) Displays an Astro icon matching this string. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols) | `string`                          | `''`        |
+| `iconOnly`  | `icon-only` | Hides slotted text from the button by setting rux-button--icon-only class                                                                                                                                                                                                                                   | `boolean`                         | `false`     |
+| `secondary` | `secondary` |                                                                                                                                                                                                                                                                                                             | `boolean`                         | `false`     |
+| `size`      | `size`      | Changes size of a button from standard to small or large by setting sizing classes rux-button--small rux-button--large                                                                                                                                                                                      | `"large" \| "small" \| undefined` | `undefined` |
+
 
 ## CSS Custom Properties
 
@@ -151,20 +153,25 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 | `--buttonSecondaryTextColor`            | Button secondary text color             |
 | `--buttonTextColor`                     | Button text color                       |
 
+
 ## Dependencies
+
+### Used by
+
+ - [rux-modal](../rux-modal)
 
 ### Depends on
 
--   [rux-icon](../rux-icon)
+- [rux-icon](../rux-icon)
 
 ### Graph
-
 ```mermaid
 graph TD;
   rux-button --> rux-icon
+  rux-modal --> rux-button
   style rux-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

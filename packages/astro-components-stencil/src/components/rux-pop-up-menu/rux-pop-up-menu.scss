@@ -1,0 +1,139 @@
+:host {
+    display: block;
+
+    /**
+      * @prop --menuBackgroundColor: Pop Up Menu Backround Color
+    */
+    --menuBackgroundColor: var(--inputBackground);
+
+    /**
+      * @prop --menuBorderColor: Pop Up Menu Border Color
+    */
+    --menuBorderColor: var(--primary);
+
+    /**
+      * @prop --menuTextColor: Pop Up Menu Text Color
+    */
+    --menuTextColor: var(--primaryElementText);
+
+    /**
+      * @prop --menuBorderColor: Pop Up Menu Caret Background Color
+    */
+    --popupCaretBackgroundColor: var(--primary);
+
+    /**
+      * @prop --menuItemBackgroundColor: Pop Up Menu Item Background Color
+    */
+    --menuItemBackgroundColor: var(--primary);
+
+    /**
+      * @prop --menuItemHoverBackgroundColor: Pop Up Menu Item Hover Background Color
+    */
+    --menuItemHoverBackgroundColor: var(--primaryLight);
+
+    /**
+      * @prop --menuItemHoverTextColor: Pop Up Menu Item Hover Text Color
+    */
+    --menuItemHoverTextColor: var(--primaryElementText);
+
+    /**
+      * @prop --caretLeft: Position of Caret
+    */
+    --caretLeft: 2px;
+
+    /**
+      * @prop --caretSize: Size of Caret
+    */
+    --caretSize: 1.875rem;
+
+    /**
+      * @prop --transitionSpeed: Transition Time of Pop Up Animation
+    */
+    --transitionSpeed: 0.1667s;
+
+    opacity: 0;
+    font-size: 1rem;
+
+    margin: 0;
+    padding: 0;
+
+    position: absolute;
+    pointer-events: none;
+
+    color: var(--colorBlack, rgb(0, 0, 0));
+
+    background-color: var(--menuBorderColor);
+    border: 1px solid var(--menuBorderColor);
+    border-top-width: 4px;
+    z-index: 10000;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    border-radius: 3px;
+
+    top: -9999rem;
+    left: -9999rem;
+
+    transition: opacity 0.1667s ease-out;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+:host([open]) {
+    pointer-events: auto;
+    opacity: 1;
+    transition: opacity 0.1667s ease-in;
+}
+
+:host::after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 1;
+
+    border: 8px solid transparent;
+    border-bottom: 11px solid var(--popupCaretBackgroundColor);
+
+    left: var(--caretLeft, 2px);
+    top: -1.4375rem;
+}
+
+ul {
+    position: relative;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    background-color: var(--menuBackgroundColor);
+
+    z-index: 2;
+    border-radius: 2px;
+}
+
+li:last-of-type {
+    border: none;
+    border-radius: 0 0 2px 2px;
+}
+
+li:first-of-type {
+    border: none;
+    border-radius: 2px 2px 0 0;
+}
+
+li:not([role='seperator']):hover {
+    background-color: var(--menuItemHoverBackgroundColor);
+    color: var(--menuItemHoverTextColor);
+}
+
+:host(.from-top) {
+    border-top-width: 1px;
+    border-bottom-width: 4px;
+}
+
+:host(.from-top)::after {
+    top: unset;
+    bottom: -23px;
+    transform: rotate(180deg);
+}
