@@ -60,6 +60,10 @@
     margin: var(--progressPadding);
     max-width: var(--progressWidth);
     background: var(--progressDeterminateBarBackgroundColor);
+    transition: width 0.3s ease;
+    -moz-transition: width 0.3s ease;
+    -webkit-transition: width 0.3s ease;
+    -o-transition: width 0.3s ease;
 }
 .rux-progress[value]::-ms-fill {
     border-radius: var(--progressRadius);
