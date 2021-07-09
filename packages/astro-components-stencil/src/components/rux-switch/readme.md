@@ -97,14 +97,12 @@ Configure the component using native HTML attributes.
 
 ## CSS Custom Properties
 
-| Name                       | Description                   |
-| -------------------------- | ----------------------------- |
-| `--switchDisabledOffColor` | the Switch disabled off color |
-| `--switchDisabledOnColor`  | the Switch disabled on color  |
-| `--switchHoverOffColor`    | the Switch hover off color    |
-| `--switchHoverOnColor`     | the Switch hover on color     |
-| `--switchOffColor`         | the Switch off color          |
-| `--switchOnColor`          | the Switch on color           |
+| Name                      | Description                 |
+| ------------------------- | --------------------------- |
+| `--switchBackgroundColor` | the Switch off color        |
+| `--switchHoverOffColor`   | the Switch hover off color  |
+| `--switchHoverOnColor`    | the Switch hover on color   |
+| `--switchOffBorderColor`  | the Switch off border color |
 
 
 ----------------------------------------------
