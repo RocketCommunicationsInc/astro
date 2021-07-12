@@ -1,10 +1,11 @@
 import { html, render } from 'lit-html'
 import { withKnobs } from '@storybook/addon-knobs'
 import Readme from '../components/rux-tree/readme.md'
+import { withActions } from '@storybook/addon-actions'
 
 export default {
     title: 'Components/Tree',
-    decorators: [withKnobs],
+    decorators: [withActions('rux-tree-node-selected'), withKnobs],
 }
 
 export const Tree = () => {

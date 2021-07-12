@@ -11,7 +11,7 @@ export class RuxButton {
      * Displays an Astro icon matching this string. For a [full list of available icons,
      * see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols)
      */
-    @Prop({ reflect: true }) icon?: string
+    @Prop({ reflect: true }) icon?: string | null = null
 
     /**
      * Hides slotted text from the button by setting rux-button--icon-only class

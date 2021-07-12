@@ -6,7 +6,7 @@ import readme from '../components/rux-modal/readme.md'
 
 export default {
     title: 'Components/Dialog Box',
-    decorators: [withActions('modalClosed', { depth: 100 }), withKnobs],
+    decorators: [withActions('rux-modal-closed', { depth: 100 }), withKnobs],
 }
 
 export const DialogBox = () => {

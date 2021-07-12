@@ -7,7 +7,7 @@ describe('rux-button', () => {
 
         expect(button).toBeTruthy()
         expect(button).toEqual({
-            icon: '',
+            icon: null,
             iconOnly: false,
             secondary: false,
             disabled: false,
@@ -21,7 +21,7 @@ describe('rux-button', () => {
         })
 
         expect(page.root).toEqualHtml(`
-          <rux-button icon="">
+          <rux-button>
             <mock:shadow-root>
               <button type="button" class="rux-button">
                 <slot></slot>
@@ -45,7 +45,7 @@ describe('rux-button', () => {
           NOTE: Button type is not being reflected at this time. Default button type is "button"
         */
         expect(page.root).toEqualHtml(`
-          <rux-button icon="" type="submit" secondary disabled>
+          <rux-button type="submit" secondary disabled>
             <mock:shadow-root>
               <button type="button" class="rux-button rux-button--secondary" disabled aria-disabled="true">
                 <slot></slot>

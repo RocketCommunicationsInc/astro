@@ -19,7 +19,7 @@ export namespace Components {
         /**
           * For a [button styleguid, see the Button section in Astro UXDS Guidelines](https://astrouxds.com/components/button) Displays an Astro icon matching this string. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols)
          */
-        "icon"?: string;
+        "icon"?: string | null;
         /**
           * Hides slotted text from the button by setting rux-button--icon-only class
          */
@@ -18604,7 +18604,7 @@ declare namespace LocalJSX {
         /**
           * For a [button styleguid, see the Button section in Astro UXDS Guidelines](https://astrouxds.com/components/button) Displays an Astro icon matching this string. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols)
          */
-        "icon"?: string;
+        "icon"?: string | null;
         /**
           * Hides slotted text from the button by setting rux-button--icon-only class
          */
@@ -29331,7 +29331,7 @@ declare namespace LocalJSX {
         /**
           * Emitted when item is clicked. Ex `{value : 10}`
          */
-        "onMenuItemClicked"?: (event: CustomEvent<object>) => void;
+        "onRux-menu-item-selected"?: (event: CustomEvent<object>) => void;
         /**
           * Specifies the relationship of the target object to the link object. The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).
          */
@@ -29367,7 +29367,7 @@ declare namespace LocalJSX {
         /**
           * Event that is fired when modal closes
          */
-        "onModalClosed"?: (event: CustomEvent<boolean>) => void;
+        "onRux-modal-closed"?: (event: CustomEvent<boolean>) => void;
         /**
           * Shows and hides modal
          */
@@ -29451,19 +29451,19 @@ declare namespace LocalJSX {
         /**
           * Emitted when the menu is closed.
          */
-        "onMenuDidClose"?: (event: CustomEvent<void>) => void;
+        "onRux-menu-did-close"?: (event: CustomEvent<void>) => void;
         /**
           * Emitted when the menu is open.
          */
-        "onMenuDidOpen"?: (event: CustomEvent<void>) => void;
+        "onRux-menu-did-open"?: (event: CustomEvent<void>) => void;
         /**
           * Emitted when the menu is about to close
          */
-        "onMenuWillClose"?: (event: CustomEvent<void>) => void;
+        "onRux-menu-will-close"?: (event: CustomEvent<void>) => void;
         /**
           * Emitted when the menu is about to open.
          */
-        "onMenuWillOpen"?: (event: CustomEvent<void>) => void;
+        "onRux-menu-will-open"?: (event: CustomEvent<void>) => void;
         /**
           * Boolean which controls when to show the menu
          */
@@ -29541,7 +29541,7 @@ declare namespace LocalJSX {
         /**
           * Emits a list of the Tab Panels that have been passed in
          */
-        "onRegisterPanels"?: (event: CustomEvent<HTMLRuxTabPanelsElement[]>) => void;
+        "onRux-register-panels"?: (event: CustomEvent<HTMLRuxTabPanelsElement[]>) => void;
     }
     interface RuxTable {
     }
