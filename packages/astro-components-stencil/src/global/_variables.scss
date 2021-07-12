@@ -512,4 +512,23 @@ $theme: (
     --accordionOpenLabelBackground: rgb(40, 63, 88);
     --accordionHoverLabelBackground: rgb(46, 103, 153);
     --accordionColor: rgb(255, 255, 255);
+
+    /*
+
+    SEGMENTED BUTTON COLORS
+    ==========================================================================
+
+  */
+    --segmentedButtonBackgroundColor: var(--backgroundColor);
+    --segmentedButtonTextColor: var(--primary);
+    --segmentedButtonBorderColor: var(--primary);
+    --segmentedButtonHoverBackgroundColor: var(--backgroundColor);
+    --segmentedButtonHoverTextColor: var(--primary);
+    --segmentedButtonHoverBorderColor: var(--primaryLight);
+    --segmentedButtonSelectedBackgroundColor: #1c3f5e;
+    --segmentedButtonSelectedTextColor: var(--defaultText);
+    --segmentedButtonSelectedBorderColor: var(--primary);
+    --segmentedButtonSelectedHoverBackgroundColor: #1c3f5e;
+    --segmentedButtonSelectedHoverTextColor: var(--defaultText);
+    --segmentedButtonSelectedHoverBorderColor: var(--primary);
 }

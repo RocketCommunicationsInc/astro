@@ -98,9 +98,9 @@ export class RuxSegmentedButton {
 
     render() {
         return (
-            <ul class="rux-segmented-buttons">
+            <ul class="rux-segmented-button">
                 {this.data.map((item) => (
-                    <li class="rux-segmented-button">
+                    <li class="rux-segmented-button__segment">
                         <input
                             type="radio"
                             name="rux-group"

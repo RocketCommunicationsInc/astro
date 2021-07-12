@@ -1,46 +1,53 @@
 :host {
     display: block;
-    /**
-      * @prop --segmentedButtonBorderColor: Segmented button border color
-      */
-    --segmentedButtonBorderColor: var(--primary);
-
-    /**
-      * @prop --segmentedButtonBackgroundColor: Segmented button background color
-      */
-    --segmentedButtonBackgroundColor: none;
-
-    /**
-      * @prop --segmentedButtonTextColor: Segmented button text color
-      */
-    --segmentedButtonTextColor: var(--primary);
-
-    /**
-      * @prop --segmentedButtonHoverBackgroundColor: Segmented button hover background color
-      */
-    --segmentedButtonHoverBackgroundColor: var(--primaryLight);
-
-    /**
-      * @prop --segmentedButtonHoverTextColor: Segmented button hover text color
-      */
-    --segmentedButtonHoverTextColor: var(--primaryElementText);
-
-    /**
-      * @prop --segmentedButtonHoverBorderColor: Segmented button hover border color
-      */
-    --segmentedButtonHoverBorderColor: var(--primaryLight);
-
-    /**
-      * @prop --segmentedButtonSelectedBackgroundColor: Segmented button selected background color
-      */
-    --segmentedButtonSelectedBackgroundColor: var(--primary);
-
-    /**
-      * @prop --segmentedButtonSelectedTextColor: Segmented button selected text color
-      */
-    --segmentedButtonSelectedTextColor: var(--primaryElementText);
-
     box-sizing: border-box;
+    /**
+    * @prop --segmentedButtonBackgroundColor: Segmented button background color
+    */
+
+    /**
+    * @prop --segmentedButtonTextColor: Segmented button text color
+    */
+
+    /**
+    * @prop --segmentedButtonBorderColor: Segmented button border color
+    */
+
+    /**
+    * @prop --segmentedButtonHoverBackgroundColor: Segmented button hover background color
+    */
+
+    /**
+    * @prop --segmentedButtonHoverTextColor: Segmented button hover text color
+    */
+
+    /**
+    * @prop --segmentedButtonHoverBorderColor: Segmented button hover border color
+    */
+
+    /**
+    * @prop --segmentedButtonSelectedBackgroundColor: Segmented button selected background color
+    */
+
+    /**
+    * @prop --segmentedButtonSelectedTextColor: Segmented button selected text color
+    */
+
+    /**
+    * @prop --segmentedButtonSelectedBorderColor: Segmented button selected border color
+    */
+
+    /**
+    * @prop --segmentedButtonSelectedHoverBackgroundColor: Segmented button selected hover background color
+    */
+
+    /**
+    * @prop --segmentedButtonSelectedHoverTextColor: Segmented button selected hover text color
+    */
+
+    /**
+    * @prop --segmentedButtonSelectedHoverBorderColor: Segmented button selected hover border color
+    */
 }
 
 *,
@@ -49,7 +56,7 @@
     box-sizing: inherit;
 }
 
-.rux-segmented-buttons {
+.rux-segmented-button {
     display: inline-flex;
 
     height: 1.6875rem;
@@ -64,14 +71,14 @@
     background-color: var(--segmentedButtonBackgroundColor);
 }
 
-.rux-segmented-button {
+.rux-segmented-button__segment {
     height: 1.6875rem;
     width: auto;
     margin: 0;
     padding: 0;
 }
 
-.rux-segmented-button label {
+.rux-segmented-button__segment label {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,6 +92,7 @@
     border: 1px solid var(--segmentedButtonBorderColor);
 
     color: var(--segmentedButtonTextColor);
+    background-color: var(--segmentedButtonBackgroundColor);
 
     font-size: 1rem;
 
@@ -94,35 +102,36 @@
     user-select: none;
 }
 
-.rux-segmented-button input {
+.rux-segmented-button__segment input {
     display: none !important;
 }
 
-.rux-segmented-button label:hover {
+.rux-segmented-button__segment label:hover {
     background-color: var(--segmentedButtonHoverBackgroundColor);
     border-color: var(--segmentedButtonHoverBorderColor);
     color: var(--segmentedButtonHoverTextColor);
     outline: none;
 }
 
-.rux-segmented-button input:checked + label {
+.rux-segmented-button__segment input:checked + label {
     background-color: var(--segmentedButtonSelectedBackgroundColor);
     color: var(--segmentedButtonSelectedTextColor);
-    box-shadow: var(--segmentedButtonSelectedBoxShadow);
 }
 
-.rux-segmented-button input:checked:hover + label {
-    border-color: var(--segmentedButtonSelectedBackgroundColor);
+.rux-segmented-button__segment input:checked:hover + label {
+    background-color: var(--segmentedButtonSelectedHoverBackgroundColor);
+    color: var(--segmentedButtonSelectedHoverTextColor);
+    border-color: var(--segmentedButtonSelectedHoverBorderColor);
 }
 
-.rux-segmented-button:nth-child(2):not(:last-child) label {
+.rux-segmented-button__segment:nth-child(2):not(:last-child) label {
     border-right: none;
     border-left: none;
 }
-.rux-segmented-button:first-child label {
+.rux-segmented-button__segment:first-child label {
     border-radius: var(--controlBorderRadius) 0 0 var(--controlBorderRadius);
 }
-.rux-segmented-button:last-child label {
+.rux-segmented-button__segment:last-child label {
     border-radius: 0 var(--controlBorderRadius) var(--controlBorderRadius) 0;
 }
 
@@ -132,10 +141,10 @@
   some style definitions.
 */
 
-.rux-segmented-buttons.style-scope {
+.rux-segmented-button.style-scope {
     border-radius: 3px 6px 6px 3px !important;
 }
-.rux-segmented-button.style-scope {
+.rux-segmented-button__segment.style-scope {
     border-radius: 0;
     height: auto;
     border: none;

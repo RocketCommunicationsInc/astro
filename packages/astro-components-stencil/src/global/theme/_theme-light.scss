@@ -133,19 +133,25 @@
     Segmented Button Colors
     ==========================================================================
 
-  */
-    --segmentedButtonBorderColor: var(--primary);
-    --segmentedButtonBackgroundColor: none;
+    /* Segmented Unselected */
+    --segmentedButtonBackgroundColor: var(--backgroundColor);
     --segmentedButtonTextColor: var(--primary);
+    --segmentedButtonBorderColor: var(--primary);
 
     /* Segmented Hover */
-    --segmentedButtonHoverBackgroundColor: var(--primaryDark);
-    --segmentedButtonHoverTextColor: var(--primaryElementText);
+    --segmentedButtonHoverBackgroundColor: var(--backgroundColor);
+    --segmentedButtonHoverTextColor: var(--primary);
     --segmentedButtonHoverBorderColor: var(--primaryDark);
 
     /* Segmented Select */
-    --segmentedButtonSelectedBackgroundColor: var(--primary);
-    --segmentedButtonSelectedTextColor: var(--primaryElementText);
+    --segmentedButtonSelectedBackgroundColor: #cee9fc;
+    --segmentedButtonSelectedTextColor: var(--defaultText);
+    --segmentedButtonSelectedHoverBorderColor: var(--primary);
+
+    /* Segmented Selected & Hover */
+    --segmentedButtonSelectedHoverBackgroundColor: #cee9fc;
+    --segmentedButtonSelectedHoverTextColor: var(--defaultText);
+    --segmentedButtonSelectedHoverBorderColor: var(--primary);
 
     /*
 
