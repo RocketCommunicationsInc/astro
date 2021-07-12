@@ -1,0 +1,62 @@
+:host {
+    /* Tabs */
+    /**
+    *   @prop --tabTextColor: Tab text color
+    */
+    --tabTextColor: var(--primary);
+    /**
+    *   @prop --tabBackgroundColor: Tab background color
+    */
+    --tabBackgroundColor: transparent;
+    /**
+    *   @prop --tabBorderColor: Tab border color
+    */
+    --tabBorderColor: transparent;
+    /**
+    *   @prop --tabHoverTextColor: Tab hover text color
+    */
+    --tabHoverTextColor: var(--defaultText);
+    /**
+    *   @prop --tabSelectedTextColor: Tab selected text color
+    */
+    --tabSelectedTextColor: var(--defaultText);
+    /**
+    *   @prop --tabSelectedBorderColor: Tab selected border color
+    */
+    --tabSelectedBorderColor: var(--primary);
+
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+    margin: 0;
+    min-width: 5rem;
+    text-decoration: none;
+    color: var(--tabTextColor);
+    border-bottom: 5px solid var(--tabBorderColor);
+}
+:host span {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+:host([small]) {
+    min-width: 2rem;
+    border-bottom: 3px solid var(--tabBorderColor);
+}
+:host([small][selected]) {
+    border-bottom: solid 3px var(--tabSelectedBorderColor);
+}
+:host([selected]) {
+    color: var(--tabSelectedTextColor);
+    border-bottom: 5px solid var(--tabSelectedBorderColor);
+}
+:host(:hover) {
+    color: var(--tabHoverTextColor);
+}
+:host([disabled]) {
+    color: var(--tabTextColor);
+    opacity: var(--disabledOpacity);
+    cursor: var(--disabledCursor);
+}

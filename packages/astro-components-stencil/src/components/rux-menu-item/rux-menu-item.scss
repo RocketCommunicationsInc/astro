@@ -1,0 +1,74 @@
+:host {
+    /**
+      * @prop --menuTextColor: Menu Text Color
+    */
+
+    /**
+      * @prop --menuItemBackgroundColor: Menu Item Background Color
+    */
+
+    /**
+      * @prop --menuItemHoverBackgroundColor: Menu Item Hover Background Color
+    */
+
+    /**
+      * @prop --menuItemHoverTextColor: Menu Item Hover Text Color
+    */
+
+    /**
+      * @prop --disabledCursor: Cursor for Disabled Items
+    */
+
+    /**
+      * @prop --disabledOpacity: Opacity for Disabled Items
+    */
+
+    display: block;
+
+    li {
+        padding: 0.15rem 0.75rem;
+        font-size: 1rem;
+        overflow: hidden;
+
+        min-width: 15em;
+        max-width: 20em;
+
+        background-color: --menuItemBackgroundColor;
+
+        &:hover {
+            background-color: var(--menuItemHoverBackgroundColor);
+            color: var(--menuItemHoverTextColor);
+        }
+
+        a,
+        div {
+            text-overflow: ellipsis;
+            text-decoration: none;
+            color: var(--menuTextColor);
+            word-wrap: none;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        a {
+            display: block;
+            padding: 0px;
+            width: 100%;
+        }
+    }
+}
+
+:host([disabled]) {
+    cursor: var(--disabledCursor);
+
+    li {
+        &:hover {
+            background-color: transparent;
+        }
+
+        a,
+        div {
+            opacity: var(--disabledOpacity);
+        }
+    }
+}

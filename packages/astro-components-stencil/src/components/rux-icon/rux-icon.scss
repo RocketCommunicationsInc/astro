@@ -1,9 +1,18 @@
 :host {
-    --iconDefaultSize: 2.7rem;
+    /**
+        * @prop --iconColor: the default color of the icon
+    */
     --iconColor: var(--iconDefaultColor);
-    fill: var(--iconColor);
 
+    /**
+        * @prop --iconDefaultSize: the default size of the icon
+    */
+    --iconDefaultSize: 3rem;
+
+    fill: var(--iconColor);
     display: inline-flex;
+    height: var(--iconDefaultSize);
+    width: var(--iconDefaultSize);
 }
 
 svg,
@@ -13,10 +22,9 @@ svg > svg {
 }
 .icon {
     display: inline-flex;
-    margin: 0 auto;
 }
 
-.rux-button--outline rux-icon {
+.rux-button--secondary rux-icon {
 }
 
 .rux-icon--extra-small {
@@ -35,6 +43,6 @@ svg > svg {
 }
 
 .rux-icon--normal {
-    height: 3rem;
-    width: 3rem;
+    // height: 3rem;
+    // width: 3rem;
 }

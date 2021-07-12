@@ -1,0 +1,404 @@
+.light-theme {
+    /*
+
+    Global Colors
+    ==========================================================================
+	*/
+
+    /* Astro 5 Simplified Color Palette */
+    --backgroundColor: var(--colorQuaternaryLighten3, #eaeef4);
+    --defaultText: var(--colorQuaternaryDarken4, #292a2d);
+    --secondaryText: var(--colorQuaternaryDarken3, #51555b);
+    --globalAppHeader: var(--colorTertiaryDarken2, #172635);
+    --surfaceElements: var(--colorWhite, #ffffff);
+    --primary: var(--colorPrimary, #005a8f);
+    --primaryLight: var(--colorPrimaryLighten1, #2f7aa7);
+    --primaryLighter: var(--colorPrimaryLighten2, #92cbff);
+    --primaryDark: var(--colorPrimaryDarken1, #004872);
+    --primaryDarkHover: #0048724d; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
+    --primaryElementText: var(--colorWhite, #ffffff);
+    --inputBackground: var(--colorWhite, #ffffff);
+    --inputDark: #080c11;
+
+    /* styles */
+    --fontColor: var(--defaultText);
+    --fontLowContrastColor: var(--secondaryText);
+    --fontInvertedColor: var(--primary);
+    --fontInvertedBackgroundColor: var(--backgroundColor);
+
+    --lightBorderColor: rgb(100, 156, 189);
+    --lightBackgroundColor: rgb(234, 238, 244);
+
+    --fontLinkColor: var(--primary);
+    --fontLinkHoverColor: var(--primaryDark);
+
+    --wcagCompliance: rgba(0, 0, 0, 0.5);
+    --criticalBorder: #7f1c1c;
+
+    --colorCritical: var(--statusLightCritical, rgb(255, 42, 4));
+    --colorSerious: var(--statusLightSerious, rgb(255, 175, 61));
+    --colorCaution: var(--statusLightCaution, rgb(250, 216, 0));
+    --colorNormal: var(--statusLightNormal, rgb(0, 226, 0));
+    --colorStandby: var(--statusLightStandby, rgb(100, 217, 255));
+    --colorOff: var(--statusLightOff, rgb(142, 154, 163));
+    /*
+
+    Button Colors
+    ==========================================================================
+    For standard and secondary buttons
+
+  */
+
+    /* Button */
+    --buttonTextColor: var(--primaryElementText);
+    --buttonBackgroundColor: var(--primary);
+    --buttonBorderColor: var(--primary);
+
+    /* Button Hover State */
+    --buttonHoverTextColor: var(--primaryElementText);
+    --buttonHoverBackgroundColor: var(--primaryDark);
+    --buttonHoverBorderColor: var(--primaryDark);
+
+    /* Button Active State */
+    --buttonActiveControlTextColor: var(--defaultText);
+    --buttonActiveBackgroundColor: var(--primary);
+    --buttonActiveBorderColor: var(--primary);
+
+    /* Secondary Button Variant */
+    --buttonSecondaryTextColor: var(--colorPrimary, rgb(0, 90, 143));
+    --buttonSecondaryBackgroundColor: transparent;
+    --buttonSecondaryBorderColor: var(--colorPrimary, rgb(0, 90, 143));
+
+    /* Secondary Button Variant Hover State */
+    --buttonSecondaryHoverTextColor: var(--primaryDark);
+    --buttonSecondaryHoverBackgroundColor: transparent;
+    --buttonSecondaryHoverBorderColor: var(--primaryDark);
+
+    /*
+
+    Control Colors
+    ==========================================================================
+    For checkboxes, radio buttons etc …
+
+  */
+    --controlTextColor: var(--primaryElementText);
+    --controlLabelColor: var(--defaultText);
+    --controlBackgroundColor: var(--primary);
+    --controlBorderColor: var(--primary);
+    --controlAccentColor: var(--primary);
+
+    --controlSelectedTextColor: var(--defaultText);
+    --controlSelectedBackgroundColor: transparent;
+    --controlSelectedBorderColor: var(--primary);
+
+    --controlHoverOutlineBackgroundColor: none;
+    --controlHoverBorderColor: var(--primaryDark);
+    --controlSelectedOutlineBorderColor: var(--primary);
+    --controlSelectedOutlineBackgroundColor: none;
+
+    /*
+
+    Progress Bar Colors
+    ==========================================================================
+
+  */
+    --progressDeterminateBarBackgroundColor: var(--primary);
+    --progressDeterminateTrackBackgroundColor: var(--inputBackground);
+    --progressDeterminateTrackBorderColor: var(--primaryDark);
+
+    --progressIndeterminate: url("data:image/svg+xml,%3Csvg width='66' height='66' xmlns='http://www.w3.org/2000/svg'%3E %3Cdefs%3E %3ClinearGradient x1='70.883%25' y1='4.637%25' x2='50%25' y2='100%25' id='a'%3E %3Cstop stop-color='%235CB3FF' offset='0%25'/%3E %3Cstop stop-color='%23F6F7F8' stop-opacity='0' offset='100%25'/%3E %3C/linearGradient%3E %3C/defs%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M33 65.5C15.05 65.5.5 50.95.5 33S15.05.5 33 .5 65.5 15.05 65.5 33 50.95 65.5 33 65.5zm0-7c14.083 0 25.5-11.417 25.5-25.5S47.083 7.5 33 7.5 7.5 18.917 7.5 33 18.917 58.5 33 58.5z' stroke='%23D7DDE2' fill='%23FFF'/%3E %3Cpath d='M51.908 8.236l-2.358 3.245A26.894 26.894 0 0 0 32 5C17.088 5 5 17.088 5 32s12.088 27 27 27c1.129 0 2.242-.07 3.334-.204l4.435 3.222C37.286 62.66 34.683 63 32 63 14.88 63 1 49.12 1 32 1 14.88 14.88 1 32 1c7.579 0 14.522 2.72 19.908 7.236z' fill='url(%23a)' transform='translate(1 1)'/%3E %3Cpath d='M48.564 13c1.92 0 3.557-.64 4.075-2.367.112-.375.361-.67.361-1.08C53 7.248 51.572 5 49.234 5S45 6.867 45 9.17c0 2.304 1.225 3.83 3.564 3.83z' stroke='%234DACFF' fill='%2352AEFF'/%3E %3C/g%3E %3C/svg%3E ");
+
+    /*
+
+    Slider Colors
+    ==========================================================================
+
+  */
+    --sliderThumbBackgroundColor: var(--primaryDark);
+    --sliderThumbBorderColor: var(--inputBackground);
+    --sliderHoverThumbBackgroundColor: var(--primaryDark);
+    --sliderHoverThumbBorderColor: var(--inputBackground);
+
+    --sliderTrackBorderColor: var(--secondaryText);
+    --sliderTrackBackgroundColor: var(--inputBackground);
+
+    --sliderSelectedThumbBorderColor: var(--primaryLight);
+    --sliderSelectedTrackBackgroundColor: var(--primary);
+
+    --sliderThumbBorderSize: 1px;
+    --sliderTrackBorderSize: 0.25px;
+
+    /*
+
+    Segmented Button Colors
+    ==========================================================================
+
+    /* Segmented Unselected */
+    --segmentedButtonBackgroundColor: var(--backgroundColor);
+    --segmentedButtonTextColor: var(--primary);
+    --segmentedButtonBorderColor: var(--primary);
+
+    /* Segmented Hover */
+    --segmentedButtonHoverBackgroundColor: var(--backgroundColor);
+    --segmentedButtonHoverTextColor: var(--primary);
+    --segmentedButtonHoverBorderColor: var(--primaryDark);
+
+    /* Segmented Select */
+    --segmentedButtonSelectedBackgroundColor: #cee9fc;
+    --segmentedButtonSelectedTextColor: var(--defaultText);
+    --segmentedButtonSelectedHoverBorderColor: var(--primary);
+
+    /* Segmented Selected & Hover */
+    --segmentedButtonSelectedHoverBackgroundColor: #cee9fc;
+    --segmentedButtonSelectedHoverTextColor: var(--defaultText);
+    --segmentedButtonSelectedHoverBorderColor: var(--primary);
+
+    /*
+
+    Drop Down/Select Colors
+    ==========================================================================
+
+  */
+    --selectHoverOptBackgroundColor: var(--primaryDark);
+    --selectCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23080c11%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
+
+    /*
+
+    Switch Colors
+    ==========================================================================
+
+  */
+    --switchBackgroundColor: var(--backgroundColor);
+    --switchBorderColor: var(--colorPrimary);
+    --switchOffBorderColor: var(--primaryLighter);
+    --switchOnColor: var(--primary);
+    --switchHoverOnColor: var(--primary);
+    --switchButtonHoverOffColor: var(--primaryDark);
+
+    /*
+
+    Push Button Colors
+    ==========================================================================
+
+  */
+    --pushbuttonBackgroundColor: none;
+    --pushbuttonBorderColor: var(--primary);
+    --pushbuttonTextColor: var(--primary);
+
+    --pushbuttonSelectedBackgroundColor: var(--colorNormal);
+    --pushbuttonSelectedBorderColor: var(--colorNormal);
+    --pushbuttonSelectedTextColor: var(--defaultText);
+
+    /*
+
+    Clock Colors
+    ==========================================================================
+
+  */
+
+    --clockTextColor: var(--primaryElementText);
+    --clockBackgroundColor: #101923;
+    --clockBorderColor: #1b2d3e;
+    --clockLabelColor: var(--primaryElementText);
+
+    /*
+
+    Modal Colors
+    ==========================================================================
+
+  */
+    --modalTitleColor: var(--primaryElementText);
+    --modalTextColor: var(--defaultText);
+    --modalBackgroundColor: var(--surfaceElements);
+    --modalBorderColor: var(--primary);
+    /*
+
+    Log Colors
+    ==========================================================================
+
+  */
+    --logTextColor: var(--defaultText);
+    --logBackgroundColor: var(--surfaceElements);
+    --logBorderColor: var(--secondaryText);
+
+    --logHeaderTextColor: var(--defaultText);
+    --logHeaderBackgroundColor: var(--backgroundColor);
+
+    --logFilterBackgroundColor: var(--primaryLight);
+    --logFilterTextColor: var(--primaryElementText);
+
+    /*
+
+    Tree Colors
+    ==========================================================================
+
+  */
+    --treeTextColor: var(--defaultText);
+    --treeBackgroundColor: var(--surfaceElements);
+    --treeBorderColor: var(--primaryDark);
+    --treeItemBorderColor: var(--primaryDark);
+    --treeAccentColor: var(--primary);
+
+    /* Hover */
+    --treeHoverBackgroundColor: var(--primaryDark);
+    --treeHoverTextColor: var(--primaryElementText);
+    --treeHoverAccentColor: var(--primary);
+
+    /* Selected */
+    --treeSelectedBackgroundColor: var(--surfaceElements);
+    --treeSelectedBorderColor: var(--primaryDark);
+    --treeSelectedTextColor: var(--defaultText);
+    --treeSelectedAccentColor: var(--primary);
+
+    --treeChildrenBackgroundColor: var(--surfaceElements);
+
+    --treeExpandedBorderColor: var(--backgroundColor);
+
+    /*
+
+    Tab Colors
+    ==========================================================================
+
+  */
+    --tabTextColor: var(--primary);
+    --tabBackgroundColor: transparent;
+    --tabBorderColor: transparent;
+
+    --tabHoverTextColor: var(--defaultText);
+
+    --tabSelectedTextColor: var(--defaultText);
+    --tabSelectedBorderColor: var(--primary);
+
+    /*
+
+    Notification Colors
+    ==========================================================================
+
+	*/
+    --notificationTextColor: var(--defaultText);
+
+    /*
+
+    Classification Colors
+    ==========================================================================
+
+	*/
+    --classificationTextColorLight: var(--primaryElementText);
+    --classificationTextColorDark: var(--defaultText);
+
+    /*
+
+    Card Colors
+    ==========================================================================
+
+  */
+    --cardBackgroundColor: var(--colorQuaternaryLighten2);
+
+    --cardHeaderBackgroundColor: var(--colorQuaternaryLighten1);
+    --cardHeaderTextColor: var(--colorWhite, #fff);
+
+    /*
+
+    Input/Text Field Colors
+    ==========================================================================
+
+  */
+
+    --inputBackgroundColor: var(--inputBackground);
+    --inputBorderColor: var(--primaryLight);
+    --inputBorderColorAlt: var(--inputDark);
+    --inputBorderColorDisabled: #292a2d;
+    --inputTextColor: var(--defaultText);
+
+    --inputFocusBorderColor: var(--primary);
+    --inputFocusTextColor: var(--defaultText);
+
+    --inputInvalidBorderColor: var(--colorCritical);
+
+    --inputSearchIcon: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.37 26.457a15.282 15.282 0 000-21.918c-6.176-6.052-16.187-6.052-22.361 0a15.274 15.274 0 00-1.541 20.166c-.367.147-.713.37-1.014.665L.926 34.709a3.056 3.056 0 000 4.383 3.208 3.208 0 004.472 0l9.528-9.339c.352-.345.604-.753.756-1.186 6.137 3.831 14.347 3.124 19.687-2.11zM24.193 4.043c6.454 0 11.686 5.129 11.686 11.455 0 6.326-5.232 11.455-11.686 11.455-6.455 0-11.687-5.129-11.687-11.455 0-6.326 5.232-11.455 11.687-11.455z' fill='%233a87cf' fill-rule='evenodd'/%3E%3C/svg%3E");
+    --inputSearchCancel: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='%23004872' fill-rule='evenodd' d='M69.028 64l22.628 22.627-5.029 5.029L64 69.028 41.373 91.656l-5.029-5.029L58.972 64 36.344 41.373l5.029-5.029L64 58.972l22.627-22.628 5.029 5.029L69.028 64z'/%3E%3C/svg%3E");
+
+    /*
+
+    Icon Default Colors
+    ==========================================================================
+
+	*/
+
+    --iconDefaultColor: var(--primary);
+
+    /*
+
+    Status Symbols
+    ==========================================================================
+
+  */
+
+    --statusSymbols: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAMAAABzRoe3AAAA81BMVEUAAABaPhVcDwE7CQA6gJIAAAAATQAkTlsATgBcPxYrHAciGgkAAABcPxU0coUARgAxNTgnU2IoV2YzNjoAUgAtYXEzODovZngAUQAAUAAwNDg0dIk2d4sAOgAjKCgAGAAADQA+hJVZPBRcPxb62AAA4gD/rz1VSQBk2f//KgQiSldXDgEATQCOmqNXOxQwNDdoRhiGWx+tHAJiEAFZw+b1KAMAywDlnTb5qjv7rDzpnzdMpcNJn7xFlrGMmKGEj5g4eY82d4xxe4IyboIwaHskT15GTFEA2gAArAAAnAAAfgAAfABg0vddyu5cZGpg0fbOjTE6oyFAAAAAJHRSTlMA7cc4Kgj9+vbBJB4GypVn9vPu5t/Y18O8n4B/ckY6FRMdmtlkVn4PAAACq0lEQVRYw+2YaVPaUBSGqWbTWsK+b9pC6ek1lypGW1T2RUDb//9rmpsm3Nyc1DQfOhMc3k/cyUzmfeY5BxISh+xXzi7eJ/Y5ZyfGu30msPobQQSf/5KEmKZeymlarqQ3g28vJfMZVc3kk1LUYkdfA3OE+/duv3GCaACtskKcKOVWQP0i7FKMiHAcDHAc0L9zxwgQwKeAiAB1jZD1ylwuzdWaEK3u71BTAUaD/nbbH4wA1FpUBVdffLliAnD/DieIBKArZGO2nZgboujiLZIA437XSX8MkIyo4PpG7H9zzQTg/pwgEkBdIU9tT56IIjioATx0PXkAqEVWgAXg/pwgEkBLY/1FAq3lmX+V9RcJVLwHcqWQShUqcpgCLgD35wRRAMpk0/ZlQ8r8BkUY27XvZ/P57N7+OIaiv2QjS+1kG2EKuADcHxOEAzQVYvoBTKI0dwIA2Pw/T8HO9JntAYDk60/pYjIcThaUNkIUcAG4PyYIB9DJuo2yJjrf4FHXyhTSVUmqpmHKTiPfHstZ+vJ4aeXxhWblYAVYAO6PCcIBSmSFAVak5F7Pw4DND6TP2ek8DWyKBpAXClbogvVnBAtaCVaABeD+mCAcIMcmCM9Qzr2esSdoBtU/xyrM7BnKCAULdHLpZEILr2wBEnBhGL86OHc94+M/AmhkiQGWRHOvq7C1Gs/doZdgbh23oAr9UnToAgxp6pUvIrQB8gej9wP1/24ZOP2fAD+jAHAFXAAmwP1jNUK2Ai4AE+D+sVpiRwEXgAhQ/3h9jboKuABMIPaP1w8ZV8AFIAKhf8weJXYKBAGIgPeP2cMcVyAIwARu/7g9TnMFggBM4PSP2wuNR4EgABPc2v1j90rpUSAIwAQG6x+7l3qvAkEAJmD94/e3ileBIAATnJwmDjnkTeU3PTFjExFNx+YAAAAASUVORK5CYII=');
+    /*
+
+
+    Scrollbar Colors -- Light
+    ==========================================================================
+
+  */
+
+    --scrollBarThumbBackgroundColor: var(--colorQuaternaryDarken1, #9ba0aa);
+    --scrollBarThumbBackgroundHoverColor: var(
+        --colorQuaternaryDarken2,
+        #676a71
+    );
+    --scrollBarTrackBackgroundColor: transparent;
+    --scrollBarTrackCornerBackgroundColor: var(
+        --colorQuaternaryLighten4,
+        #f2f4f7
+    );
+
+    /*
+
+    Timeline Colors -- Dark
+    ==========================================================================
+
+  */
+
+    --timelineHeaderBackgroundColor: var(--surfaceElements);
+    --timelineHeaderTextColor: var(--defaultText);
+
+    --timelineRulerBackgroundColor: var(--surfaceElements);
+    --timelineRulerTextColor: var(--defaultText);
+
+    --timelineTrackLabelBackgroundColor: var(--surfaceElements);
+    --timelineTrackBackgroundColor: var(--surfaceElements);
+
+    --timelineRegionBackgroundColor: var(--backgroundColor);
+    --timelineRegionTextColor: var(--defaultText);
+    --timelineRegionBorderColor: var(--primary);
+
+    --timelineRegionSelectedBorderColor: var(--defaultText);
+    --timelineRegionSelectedBackgroundColor: var(--primaryDark);
+    --timelineRegionSelectedTextColor: var(--primaryElementText);
+
+    --timelineRegionStatusColorNormal: var(--colorNormal);
+    --timelineRegionStatusColorCritical: var(--colorCritical);
+    --timelineRegionStatusColorSerious: var(--colorSerious);
+    --timelineRegionStatusColorCaution: var(--colorCautiom);
+    --timelineRegionStatusColorStandby: var(--colorStandby);
+    --timelineRegionStatusColorOff: var(--colorOff);
+
+    /*
+
+    ACCORDION COLORS
+    ==========================================================================
+
+  */
+    --accordionBorderColor: rgb(207, 214, 227);
+    --accordionContentBackground: rgb(226, 230, 238);
+    --accordionClosedLabelBackground: rgb(255, 255, 255);
+    --accordionOpenLabelBackground: rgb(245, 247, 249);
+    --accordionHoverLabelBackground: rgb(236, 239, 244);
+    --accordionColor: rgb(0, 0, 0);
+}
+
+li.light-theme {
+    display: none;
+}

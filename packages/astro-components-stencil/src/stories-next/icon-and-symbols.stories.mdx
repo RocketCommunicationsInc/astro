@@ -1,0 +1,153 @@
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { html, render } from 'lit-html'
+const args = extractArgTypes('rux-icon')
+import ruxIconsJson from './rux-icons.json'
+
+<Meta
+    title="Components/Icons"
+    component="rux-icon"
+    argTypes={args}
+/>
+
+
+# Icon
+
+Display icons used in the Astro Design System
+
+## Guidelines
+
+-   [Astro UXDS: Icons and Symbols](https://astrouxds.com/ui-components/icons-and-symbols)
+
+export const Default = (args) => {
+  return html`
+    <rux-icon
+      icon="${args.icon}"
+      .color="${args.color}"
+      .size="${args.size}"
+      .label="${args.label}"
+    ></rux-icon>
+  `
+}
+
+<Canvas>
+    <Story
+        args={{
+          icon: "satellite-transmit",
+          size: "normal"
+        }}
+        parameters={{
+            docs: { source: { code: '<rux-icon size="normal" icon="satellite-transmit"></rux-icon>' } },
+        }}
+        name="Default"
+    >
+        {Default.bind()}
+    </Story>
+</Canvas>
+
+## API
+
+<ArgsTable of="rux-icon"/>
+
+## All Icons
+
+export const AllIcons = (args) => {
+  const capitalize = (s) => {
+    if (typeof s !== "string") return "";
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  };
+  const displaySection = (section) => {
+    return html`
+      <div class="icon__section">
+        <h3>${capitalize(section)}</h3>
+        <ul class="icon__list">
+          ${ruxIconsJson["solid"][section].map((icon) => {
+            return html`
+              <li class="icon__list-item" title="${icon.icon}">
+                <rux-icon
+                  icon="${icon.icon}"
+                  color="${args.color}"
+                  size="${args.size}"
+                ></rux-icon>
+                <div class="icon__name">${icon.icon}</div>
+              </li>
+            `;
+          })}
+        </ul>
+      </div>
+    `;
+  };
+  return html`
+    <style>
+      .icon__wrapper {
+        margin: 3rem 4rem;
+        text-align: center;
+      }
+      .icon__list {
+        list-style: none;
+        margin: 1rem -1rem;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+      .icon__list-item {
+        padding: 1rem;
+      }
+      .icon__list-item .rux-icon {
+        width: ${args.size};
+        height: ${args.size};
+        background-color: ${args.color};
+      }
+      .icon__section {
+        margin: 1rem 0 2rem;
+      }
+      .icon__section h3 {
+        text-align: left;
+        position: relative;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+      .icon__section h3:after {
+        content: "";
+        position: absolute;
+        left: 0px;
+        bottom: -1rem;
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: #fff;
+      }
+      .icon__name {
+        display: block;
+        margin-top: 0.5rem;
+        font-size: 0.75rem;
+        width: 5rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: calc(${args.size} + 1rem);
+      }
+    </style>
+    <div class="icon__wrapper">
+      ${displaySection("astro")}
+      ${Object.keys(ruxIconsJson["solid"]).map((section) =>
+        section !== "astro" ? displaySection(section) : null
+      )}
+    </div>
+  `;
+}
+
+<Canvas>
+    <Story
+        args={{
+          size: 'normal',
+        }}
+        name="All Icons"
+    >
+        {AllIcons.bind()}
+    </Story>
+</Canvas>
+
+### Cherry Picking
+Coming Soon

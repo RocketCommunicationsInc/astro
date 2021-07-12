@@ -1,32 +1,169 @@
-# Astro Web Components
 
-## Installation
+# Installation
 
-`npm install`
+## Quick Start
 
-## Project build commands
+To get up and running quickly, Astro web components are available via a CDN. Add the following to your `<head>`
 
-`npm run astro` - Starts both Stencil and Storybook for development
-`npm run build-astro-prod` - Builds Storybook static site for production in /storybook-static folder
+```html
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&family=Roboto:wght@200;300;400;500;600;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://unpkg.com/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css"/>
+<script type="module" src="https://unpkg.com/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.esm.js"></script>
+```
 
-## RuxIcon
+Astro components are now available anywhere in your app.
 
-In order to ship the RuxIcon component with all SVG assets included, we create individual Icon components for every Astro icon. Due to the number of icons, it is not efficient to create these manually. Instead, we utilize Stencil's build process to automatically create Icon components for each available SVG icon. Then we automatically convert those assets to Base64 and inject them into their respective components. This is all done in relatively few lines of code. A `rux-icon` wrapper component is available to make to it easier to call these individual components.
+```html
+<body>
+    <rux-button>Hello World</rux-button>
+</body>
+```
 
-### Generating Icons
+### Integrations
 
-`npm run generate:icons`
+1. Install
+   `npm i @astrouxds/astro-web-components`
 
-This command takes each .svg file in `src/icons` and creates Stencil components from them.
+2. Import Astro's Fonts
 
-### Adding a new Icon or updating an existing Icon
+```html
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&family=Roboto:wght@200;300;400;500;600;800&display=swap" rel="stylesheet"/>
+```
 
-The `src/icons` folder is the single source of truth for Astro icons. To add a new icon, simply add the SVG file to the directory and run `npm run build`. To update an icon, the process is the same--simply copy the new SVG to the `src/icons` folder and run the build step again.
+[Roboto](https://fonts.google.com/specimen/Roboto) is used for the font.
+We recommend using Google's CDN; however, you can also pull down and serve your own copy of the font.
 
-## Generating New Components
+3. Bootstrap Your Application
 
-`stencil generate`
+#### Static HTML (w/ ESM Modules)
 
-Once your component has been created, rename the css file to .scss and update the path in your component.tsx file.
+```html
+// Import Astro's base styles
+<link rel="stylesheet" href="/node_modules/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css"/>
+<script type="module">
+    import { defineCustomElements } from '/node_modules/astro-web-components/loader'
+    defineCustomElements()
+</script>
+```
 
-`npm run build`
+#### Generic Framework
+
+```js
+// Import Astro's base styles
+import 'astro-web-components/dist/astro-web-components/astro-web-components.css'
+import {
+    applyPolyfills,
+    defineCustomElements,
+} from 'astro-web-components/loader'
+
+applyPolyfills().then(() => {
+    defineCustomElements()
+})
+```
+
+#### Vue
+
+```js
+import Vue from 'vue'
+import App from './App.vue'
+
+// Import Astro's base styles
+import '@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css'
+import {
+    applyPolyfills,
+    defineCustomElements,
+} from '@astrouxds/astro-web-components/loader'
+
+Vue.config.productionTip = false
+
+// Tell Vue to ignore all components defined in the astro-web-components package
+Vue.config.ignoredElements = [/rux-\w*/]
+
+// Bind the custom elements to the window object
+applyPolyfills().then(() => {
+    defineCustomElements()
+})
+
+new Vue({
+    render: (h) => h(App),
+}).$mount('#app')
+```
+
+#### Angular
+
+1. Include `CUSTOM_ELEMENTS_SCHEMA` in any module that uses an Astro component.
+
+```js
+import { BrowserModule } from '@angular/platform-browser'
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core'
+import { FormsModule } from '@angular/forms'
+
+import { AppComponent } from './app.component'
+
+@NgModule({
+    declarations: [AppComponent],
+    imports: [BrowserModule, FormsModule],
+    bootstrap: [AppComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+})
+export class AppModule {}
+```
+
+2. Define your Custom Elements in main.ts
+
+```js
+import { enableProdMode } from '@angular/core'
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
+
+import { AppModule } from './app/app.module'
+import { environment } from './environments/environment'
+
+// Note: loader import location set using "esmLoaderPath" within the output target config
+import { defineCustomElements } from '@astrouxds/astro-web-components/loader'
+
+if (environment.production) {
+    enableProdMode()
+}
+
+platformBrowserDynamic()
+    .bootstrapModule(AppModule)
+    .catch((err) => console.log(err))
+defineCustomElements()
+```
+
+#### React
+
+```js
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import App from './App'
+import registerServiceWorker from './registerServiceWorker'
+
+import {
+    applyPolyfills,
+    defineCustomElements,
+} from '@astrouxds/astro-web-components/loader'
+
+ReactDOM.render(<App />, document.getElementById('root'))
+registerServiceWorker()
+
+applyPolyfills().then(() => {
+    defineCustomElements()
+})
+```
+
+### Tree Shaking + Bundlers
+
+Astro ships with a convenient lazy-loader, but if you'd rather more control over your build process and are using an existing bundler
+that supports tree shaking, you can also cherry-pick only the components you actually use. For example:
+
+```js
+import { RuxClock } from '@astrouxds/astro-web-components/dist/components/rux-clock.js'
+customElements.define('rux-clock', RuxClock)
+```
+
+NOTE: You will need to manually call `customElements.define` for every component you wish to use and their dependencies.
+Refer to each component's documentation to see their dependencies at a glance.

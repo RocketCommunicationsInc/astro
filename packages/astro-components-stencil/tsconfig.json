@@ -1,20 +1,21 @@
 {
-  "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "allowUnreachableCode": false,
-    "declaration": false,
-    "experimentalDecorators": true,
-    "lib": ["dom", "es2017"],
-    "moduleResolution": "node",
-    "module": "esnext",
-    "target": "es2017",
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "jsx": "react",
-    "jsxFactory": "h",
-    "typeRoots": ["node_modules/@types"],
-    "resolveJsonModule": true,
-  },
-  "include": ["src", "src/**/*.ts"],
-  "exclude": ["node_modules"]
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "allowUnreachableCode": false,
+        "declaration": false,
+        "experimentalDecorators": true,
+        "lib": ["dom", "es2017"],
+        "moduleResolution": "node",
+        "module": "esnext",
+        "target": "es2017",
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "jsx": "react",
+        "jsxFactory": "h",
+        "strict": true,
+        "typeRoots": ["node_modules/@types"],
+        "resolveJsonModule": true
+    },
+    "include": ["src", "src/**/*.ts"],
+    "exclude": ["node_modules", "src/stories"]
 }

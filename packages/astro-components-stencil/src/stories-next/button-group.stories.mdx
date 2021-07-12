@@ -1,0 +1,78 @@
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { html, render } from 'lit-html'
+
+<Meta
+    title="Components/Button Group"
+    component="rux-button-group"
+    subcomponents={{ 'Rux Button': 'rux-button' }}
+    argTypes={extractArgTypes('rux-button-group')}
+/>
+
+# Button Group
+
+Common button groupings follow these conventions:
+
+-   Cancel buttons are always presented to the left of actions such as “Submit.”
+-   Always group together “Ok/Cancel” buttons. Do not justify them apart, but keep a reasonable margin between the buttons.
+-   Buttons within the same group should maintain their inherent size. Do not stretch one button to match another’s width.
+
+## Guidelines
+
+-   [Astro UXDS: Buttons](http://www.astrouxds.com/ui-components/buttons)
+
+export const Default = (args) => {
+    return html`
+        <style>
+            .light-theme {
+                --exampleContainerBackgroundColor: var(--primaryElementText);
+                --exampleContainerBorderColor: var(--colorQuaternaryLighten1);
+            }
+            .dark-theme {
+                --exampleContainerBackgroundColor: var(--colorTertiaryDarken1);
+                --exampleContainerBorderColor: var(--colorTertiary);
+            }
+            .example-container {
+                min-width: 20rem;
+                background: var(--exampleContainerBackgroundColor);
+                border: 1px solid var(--exampleContainerBorderColor);
+                padding: 0.625rem;
+                display: block;
+            }
+        </style>
+        <div style="padding: 10%; display: flex; justify-content: center;">
+            <div class="example-container">
+                <rux-button-group .align="${args.align ? args.align : 'right'}">
+                    <rux-button outline>Cancel</rux-button>
+                    <rux-button>Continue</rux-button>
+                </rux-button-group>
+            </div>
+        </div>
+    `
+}
+
+<Canvas>
+    <Story
+      args={{align: 'right'}}
+      name="Button Group"
+    >
+      {Default.bind()}
+    </Story>
+</Canvas>
+
+## API
+
+<ArgsTable of="rux-button-group" />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import RuxButtonGroup from '@astrouxds/astro-web-components/dist/components/rux-button-group.js'
+import RuxButton from '@astrouxds/astro-web-components/dist/components/rux-button.js'
+import RuxIcon from '@astrouxds/astro-web-components/dist/components/rux-icon.js'
+customElements.define('rux-button', RuxButton)
+customElements.define('rux-icon', RuxIcon)
+customElements.define('rux-button-group', RuxButtonGroup)
+```

@@ -1,0 +1,15 @@
+:host {
+    /**
+      * @prop --menuItemDividerBorderColor: Menu Item Divider Border Color
+    */
+    --menuItemDividerBorderColor: var(--primaryElementText);
+
+    display: block;
+
+    li {
+        pointer-events: none;
+        height: 6px;
+        border-top: 1px dashed var(--menuItemDividerBorderColor);
+        margin: 6px 0.5rem 0 0.5rem;
+    }
+}

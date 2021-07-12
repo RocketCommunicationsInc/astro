@@ -1,0 +1,29 @@
+:host {
+    display: block;
+    overflow: hidden;
+}
+
+.rux-log__header-event-cell {
+    width: 80%;
+}
+
+.header-event-container {
+    display: flex;
+    align-items: center;
+}
+
+.rux-log__filter {
+    margin-left: auto;
+}
+
+rux-table-header-cell {
+    width: 1%;
+}
+
+.rux-log__notification {
+    width: 2000%;
+    align-content: center;
+    color: var(--logFilterTextColor);
+    background-color: var(--logFilterBackgroundColor);
+    padding: 0.5rem;
+}

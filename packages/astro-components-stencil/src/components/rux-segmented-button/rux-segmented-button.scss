@@ -1,0 +1,153 @@
+:host {
+    display: block;
+    box-sizing: border-box;
+    /**
+    * @prop --segmentedButtonBackgroundColor: Segmented button background color
+    */
+
+    /**
+    * @prop --segmentedButtonTextColor: Segmented button text color
+    */
+
+    /**
+    * @prop --segmentedButtonBorderColor: Segmented button border color
+    */
+
+    /**
+    * @prop --segmentedButtonHoverBackgroundColor: Segmented button hover background color
+    */
+
+    /**
+    * @prop --segmentedButtonHoverTextColor: Segmented button hover text color
+    */
+
+    /**
+    * @prop --segmentedButtonHoverBorderColor: Segmented button hover border color
+    */
+
+    /**
+    * @prop --segmentedButtonSelectedBackgroundColor: Segmented button selected background color
+    */
+
+    /**
+    * @prop --segmentedButtonSelectedTextColor: Segmented button selected text color
+    */
+
+    /**
+    * @prop --segmentedButtonSelectedBorderColor: Segmented button selected border color
+    */
+
+    /**
+    * @prop --segmentedButtonSelectedHoverBackgroundColor: Segmented button selected hover background color
+    */
+
+    /**
+    * @prop --segmentedButtonSelectedHoverTextColor: Segmented button selected hover text color
+    */
+
+    /**
+    * @prop --segmentedButtonSelectedHoverBorderColor: Segmented button selected hover border color
+    */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.rux-segmented-button {
+    display: inline-flex;
+
+    height: 1.6875rem;
+    overflow: hidden;
+
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    border-radius: var(--controlBorderRadius);
+    background-color: var(--segmentedButtonBackgroundColor);
+}
+
+.rux-segmented-button__segment {
+    height: 1.6875rem;
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.rux-segmented-button__segment label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: auto;
+    height: 1.5625rem;
+
+    margin: 0;
+    padding: 0 0.75rem;
+
+    border: 1px solid var(--segmentedButtonBorderColor);
+
+    color: var(--segmentedButtonTextColor);
+    background-color: var(--segmentedButtonBackgroundColor);
+
+    font-size: 1rem;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.rux-segmented-button__segment input {
+    display: none !important;
+}
+
+.rux-segmented-button__segment label:hover {
+    background-color: var(--segmentedButtonHoverBackgroundColor);
+    border-color: var(--segmentedButtonHoverBorderColor);
+    color: var(--segmentedButtonHoverTextColor);
+    outline: none;
+}
+
+.rux-segmented-button__segment input:checked + label {
+    background-color: var(--segmentedButtonSelectedBackgroundColor);
+    color: var(--segmentedButtonSelectedTextColor);
+}
+
+.rux-segmented-button__segment input:checked:hover + label {
+    background-color: var(--segmentedButtonSelectedHoverBackgroundColor);
+    color: var(--segmentedButtonSelectedHoverTextColor);
+    border-color: var(--segmentedButtonSelectedHoverBorderColor);
+}
+
+.rux-segmented-button__segment:nth-child(2):not(:last-child) label {
+    border-right: none;
+    border-left: none;
+}
+.rux-segmented-button__segment:first-child label {
+    border-radius: var(--controlBorderRadius) 0 0 var(--controlBorderRadius);
+}
+.rux-segmented-button__segment:last-child label {
+    border-radius: 0 var(--controlBorderRadius) var(--controlBorderRadius) 0;
+}
+
+/*
+  OVERRIDE FOR IE
+  Otherwise all segments get rounded corners. Need to override and re-enable
+  some style definitions.
+*/
+
+.rux-segmented-button.style-scope {
+    border-radius: 3px 6px 6px 3px !important;
+}
+.rux-segmented-button__segment.style-scope {
+    border-radius: 0;
+    height: auto;
+    border: none;
+    border-right: 1px solid var(--segmentedButtonBorderColor);
+}
+/* END OVERRDIDE FOR IE EDGE */

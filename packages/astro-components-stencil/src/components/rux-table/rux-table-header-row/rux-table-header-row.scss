@@ -1,0 +1,11 @@
+:host {
+    display: table-row;
+    background-color: var(--logHeaderBackgroundColor);
+}
+
+::slotted(rux-table-header-cell:first-child) {
+    padding-left: 1.875rem;
+}
+::slotted(rux-table-header-cell:last-child) {
+    padding-right: 1.875rem;
+}

@@ -1,0 +1,23 @@
+:host {
+    display: table-row;
+}
+
+:host(.is-selected) {
+    background: var(--tableRowSelectedBackgroundColor);
+    ::slotted(rux-table-cell) {
+        border-color: var(--tableRowSelectedBorderColor);
+    }
+}
+
+:host(:hover:not(.is-selected)) {
+    background: var(--tableRowHoverBackgroundColor);
+    color: var(--tableRowHoverTextColor);
+}
+
+::slotted(rux-table-cell:first-child) {
+    padding-left: 1.875rem;
+}
+
+::slotted(rux-table-cell:last-child) {
+    padding-right: 1.875rem;
+}
