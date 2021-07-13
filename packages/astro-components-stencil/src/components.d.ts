@@ -35,9 +35,9 @@ export namespace Components {
     }
     interface RuxButtonGroup {
         /**
-          * The alignment of buttons within the group
+          * The horizontal alignment of buttons within the group
          */
-        "align": 'left' | 'center' | 'right';
+        "hAlign": 'left' | 'center' | 'right';
     }
     interface RuxClassificationMarking {
         /**
@@ -18620,9 +18620,9 @@ declare namespace LocalJSX {
     }
     interface RuxButtonGroup {
         /**
-          * The alignment of buttons within the group
+          * The horizontal alignment of buttons within the group
          */
-        "align"?: 'left' | 'center' | 'right';
+        "hAlign"?: 'left' | 'center' | 'right';
     }
     interface RuxClassificationMarking {
         /**
