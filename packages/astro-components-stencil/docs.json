@@ -1,5 +1,5 @@
 {
-    "timestamp": "2021-07-09T18:39:25",
+    "timestamp": "2021-07-12T18:46:42",
     "compiler": {
         "name": "@stencil/core",
         "version": "2.5.2",
@@ -75051,6 +75051,26 @@
                     "docs": "Segmented button selected background color"
                 },
                 {
+                    "name": "--segmentedButtonSelectedBorderColor",
+                    "annotation": "prop",
+                    "docs": "Segmented button selected border color"
+                },
+                {
+                    "name": "--segmentedButtonSelectedHoverBackgroundColor",
+                    "annotation": "prop",
+                    "docs": "Segmented button selected hover background color"
+                },
+                {
+                    "name": "--segmentedButtonSelectedHoverBorderColor",
+                    "annotation": "prop",
+                    "docs": "Segmented button selected hover border color"
+                },
+                {
+                    "name": "--segmentedButtonSelectedHoverTextColor",
+                    "annotation": "prop",
+                    "docs": "Segmented button selected hover text color"
+                },
+                {
                     "name": "--segmentedButtonSelectedTextColor",
                     "annotation": "prop",
                     "docs": "Segmented button selected text color"
@@ -75213,14 +75233,9 @@
             "listeners": [],
             "styles": [
                 {
-                    "name": "--switchDisabledOffColor",
+                    "name": "--switchBackgroundColor",
                     "annotation": "prop",
-                    "docs": "the Switch disabled off color"
-                },
-                {
-                    "name": "--switchDisabledOnColor",
-                    "annotation": "prop",
-                    "docs": "the Switch disabled on color"
+                    "docs": "the Switch off color"
                 },
                 {
                     "name": "--switchHoverOffColor",
@@ -75233,14 +75248,9 @@
                     "docs": "the Switch hover on color"
                 },
                 {
-                    "name": "--switchOffColor",
+                    "name": "--switchOffBorderColor",
                     "annotation": "prop",
-                    "docs": "the Switch off color"
-                },
-                {
-                    "name": "--switchOnColor",
-                    "annotation": "prop",
-                    "docs": "the Switch on color"
+                    "docs": "the Switch off border color"
                 }
             ],
             "slots": [],
@@ -75645,35 +75655,22 @@
             "usage": {},
             "props": [
                 {
-                    "name": "_panels",
-                    "type": "HTMLRuxTabPanelElement[]",
-                    "mutable": true,
+                    "name": "small",
+                    "type": "boolean | undefined",
+                    "mutable": false,
+                    "attr": "small",
                     "reflectToAttr": false,
-                    "docs": "Holds all `<rux-tab-panel>` components based on the event emitted from the `<rux-tab-panels>` component.",
+                    "docs": "If passed or set to true, displays the tabs in a smaller style, suitable for limited-space uses.",
                     "docsTags": [],
-                    "default": "[]",
                     "values": [
                         {
-                            "type": "HTMLRuxTabPanelElement[]"
-                        }
-                    ],
-                    "optional": false,
-                    "required": false
-                },
-                {
-                    "name": "_tabs",
-                    "type": "HTMLRuxTabElement[]",
-                    "mutable": true,
-                    "reflectToAttr": false,
-                    "docs": "Holds all `<rux-tab>` components that are children of `<rux-tabs>`.",
-                    "docsTags": [],
-                    "default": "[]",
-                    "values": [
+                            "type": "boolean"
+                        },
                         {
-                            "type": "HTMLRuxTabElement[]"
+                            "type": "undefined"
                         }
                     ],
-                    "optional": false,
+                    "optional": true,
                     "required": false
                 }
             ],
@@ -75681,7 +75678,7 @@
             "events": [],
             "listeners": [
                 {
-                    "event": "registerPanels",
+                    "event": "rux-register-panels",
                     "target": "window",
                     "capture": false,
                     "passive": false

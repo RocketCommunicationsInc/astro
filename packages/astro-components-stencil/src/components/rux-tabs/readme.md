@@ -103,10 +103,9 @@ Astro UXDS Tab (child) properties are passed as simple attributes on the individ
 
 ## Properties
 
-| Property  | Attribute | Description                                                                                              | Type                       | Default |
-| --------- | --------- | -------------------------------------------------------------------------------------------------------- | -------------------------- | ------- |
-| `_panels` | --        | Holds all `<rux-tab-panel>` components based on the event emitted from the `<rux-tab-panels>` component. | `HTMLRuxTabPanelElement[]` | `[]`    |
-| `_tabs`   | --        | Holds all `<rux-tab>` components that are children of `<rux-tabs>`.                                      | `HTMLRuxTabElement[]`      | `[]`    |
+| Property | Attribute | Description                                                                                      | Type                   | Default     |
+| -------- | --------- | ------------------------------------------------------------------------------------------------ | ---------------------- | ----------- |
+| `small`  | `small`   | If passed or set to true, displays the tabs in a smaller style, suitable for limited-space uses. | `boolean \| undefined` | `undefined` |
 
 
 ## CSS Custom Properties

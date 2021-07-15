@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Element, Listen } from '@stencil/core'
+import { Component, Host, h, State, Prop, Element, Listen } from '@stencil/core'
 
 @Component({
     tag: 'rux-tabs',
@@ -6,18 +6,22 @@ import { Component, Host, h, Prop, Element, Listen } from '@stencil/core'
     shadow: true,
 })
 export class RuxTabs {
+    @Element() el!: HTMLElement
     /**
      *  Holds all `<rux-tab-panel>` components based on the event emitted from the `<rux-tab-panels>` component.
      */
-    @Prop({ mutable: true }) _panels: Array<HTMLRuxTabPanelElement> = []
+    @State() _panels: Array<HTMLRuxTabPanelElement> = []
     /**
      *  Holds all `<rux-tab>` components that are children of `<rux-tabs>`.
      */
-    @Prop({ mutable: true }) _tabs: Array<HTMLRuxTabElement> = []
+    @State() _tabs: Array<HTMLRuxTabElement> = []
 
-    @Element() el!: HTMLElement
+    /**
+     * If passed or set to true, displays the tabs in a smaller style, suitable for limited-space uses.
+     */
+    @Prop() small?: boolean
 
-    @Listen('registerPanels', { target: 'window' })
+    @Listen('rux-register-panels', { target: 'window' })
     handleListen(e: CustomEvent) {
         this._registerPanels(e)
     }
