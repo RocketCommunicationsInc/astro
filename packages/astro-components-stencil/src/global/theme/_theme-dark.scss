@@ -11,7 +11,10 @@
     --defaultText: var(--colorWhite, #ffffff);
     --secondaryText: var(--colorTertiaryLighten4, #d4d8dd);
     --globalAppHeader: var(--colorTertiaryDarken2, #172635);
-    --surfaceElements: #1b2d3e; /* TODO: this is an unofficial Astro color, but a required KM color */
+    --surfaceElements: var(
+        --colorSnowflakesDarkSurface,
+        #1b2d3e
+    ); /* TODO: this is an unofficial Astro color, but a required KM color */
     --primary: var(--colorSecondary, #4dacff);
     --primaryLight: var(--colorSecondaryLighten2, #92cbff);
     --primaryLightHover: #92cbff4d; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
@@ -145,12 +148,16 @@
     --segmentedButtonHoverBorderColor: var(--primaryLight);
 
     /* Segmented Selected */
-    --segmentedButtonSelectedBackgroundColor: #1c3f5e;
+    --segmentedButtonSelectedBackgroundColor: var(
+        --colorSnowflakesDarkSelected
+    );
     --segmentedButtonSelectedTextColor: var(--defaultText);
     --segmentedButtonSelectedBorderColor: var(--primary);
 
     /* Segmented Selected & Hover */
-    --segmentedButtonSelectedHoverBackgroundColor: #1c3f5e;
+    --segmentedButtonSelectedHoverBackgroundColor: var(
+        --colorSnowflakesDarkSelected
+    );
     --segmentedButtonSelectedHoverTextColor: var(--defaultText);
     --segmentedButtonSelectedHoverBorderColor: var(--primary);
 
@@ -176,21 +183,22 @@
     --switchButtonHoverOffColor: var(--primaryLight);
     /*
 
-    Popup Menu Colors
+    Popup Menu Colors & Menu Item/Divider
     ==========================================================================
 
   */
-    --popupMenuBackgroundColor: var(--inputBackground);
-    --popupMenuBorderColor: var(--primary);
-    --popupMenuTextColor: var(--primaryElementText);
+    --popupMenuBackgroundColor: var(--backgroundColor);
+    --popupMenuBorderColor: var(--primaryDarker);
+    --popupMenuTextColor: var(--primary);
 
-    --popupCaretBackgroundColor: var(--primary);
+    --popupCaretBackgroundColor: var(--primaryDarker);
 
-    --popupMenuItemBackgroundColor: var(--primary);
-    --popupMenuItemHoverBackgroundColor: var(--primaryLight);
-    --popupMenuItemHoverTextColor: var(--primaryElementText);
+    --menuItemBackgroundColor: var(--backgroundColor);
+    --menuItemHoverBackgroundColor: rgba(28, 63, 94, 0.3);
+    --menuTextColor: var(--primary);
+    --menuItemHoverTextColor: var(--primary);
 
-    --popupMenuItemSeperatorBorderColor: var(--primaryElementText);
+    --menuItemDividerBorderColor: var(--primary);
 
     /*
 

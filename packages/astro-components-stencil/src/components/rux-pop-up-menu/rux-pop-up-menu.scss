@@ -2,39 +2,20 @@
     display: block;
 
     /**
-      * @prop --menuBackgroundColor: Pop Up Menu Backround Color
+      * @prop --popupMenuBackgroundColor: Pop Up Menu Backround Color
     */
-    --menuBackgroundColor: var(--inputBackground);
 
     /**
-      * @prop --menuBorderColor: Pop Up Menu Border Color
+      * @prop --popupMenuBorderColor: Pop Up Menu Border Color
     */
-    --menuBorderColor: var(--primary);
 
     /**
-      * @prop --menuTextColor: Pop Up Menu Text Color
+      * @prop --popupMenuTextColor: Pop Up Menu Text Color
     */
-    --menuTextColor: var(--primaryElementText);
 
     /**
-      * @prop --menuBorderColor: Pop Up Menu Caret Background Color
+      * @prop --popupCaretBackgroundColor: Pop Up Menu Caret Background Color
     */
-    --popupCaretBackgroundColor: var(--primary);
-
-    /**
-      * @prop --menuItemBackgroundColor: Pop Up Menu Item Background Color
-    */
-    --menuItemBackgroundColor: var(--primary);
-
-    /**
-      * @prop --menuItemHoverBackgroundColor: Pop Up Menu Item Hover Background Color
-    */
-    --menuItemHoverBackgroundColor: var(--primaryLight);
-
-    /**
-      * @prop --menuItemHoverTextColor: Pop Up Menu Item Hover Text Color
-    */
-    --menuItemHoverTextColor: var(--primaryElementText);
 
     /**
       * @prop --caretLeft: Position of Caret
@@ -60,10 +41,10 @@
     position: absolute;
     pointer-events: none;
 
-    color: var(--colorBlack, rgb(0, 0, 0));
+    color: var(--popupMenuTextColor);
 
-    background-color: var(--menuBorderColor);
-    border: 1px solid var(--menuBorderColor);
+    background-color: var(--popupMenuBorderColor);
+    border: 1px solid var(--popupMenuBorderColor);
     border-top-width: 4px;
     z-index: 10000;
 
@@ -106,7 +87,7 @@ ul {
     padding: 0;
     margin: 0;
 
-    background-color: var(--menuBackgroundColor);
+    background-color: var(--popupMenuBackgroundColor);
 
     z-index: 2;
     border-radius: 2px;
@@ -120,11 +101,6 @@ li:last-of-type {
 li:first-of-type {
     border: none;
     border-radius: 2px 2px 0 0;
-}
-
-li:not([role='seperator']):hover {
-    background-color: var(--menuItemHoverBackgroundColor);
-    color: var(--menuItemHoverTextColor);
 }
 
 :host(.from-top) {

@@ -74808,32 +74808,22 @@
                     "docs": "Size of Caret"
                 },
                 {
-                    "name": "--menuBackgroundColor",
+                    "name": "--popupCaretBackgroundColor",
+                    "annotation": "prop",
+                    "docs": "Pop Up Menu Caret Background Color"
+                },
+                {
+                    "name": "--popupMenuBackgroundColor",
                     "annotation": "prop",
                     "docs": "Pop Up Menu Backround Color"
                 },
                 {
-                    "name": "--menuBorderColor",
+                    "name": "--popupMenuBorderColor",
                     "annotation": "prop",
                     "docs": "Pop Up Menu Border Color"
                 },
                 {
-                    "name": "--menuItemBackgroundColor",
-                    "annotation": "prop",
-                    "docs": "Pop Up Menu Item Background Color"
-                },
-                {
-                    "name": "--menuItemHoverBackgroundColor",
-                    "annotation": "prop",
-                    "docs": "Pop Up Menu Item Hover Background Color"
-                },
-                {
-                    "name": "--menuItemHoverTextColor",
-                    "annotation": "prop",
-                    "docs": "Pop Up Menu Item Hover Text Color"
-                },
-                {
-                    "name": "--menuTextColor",
+                    "name": "--popupMenuTextColor",
                     "annotation": "prop",
                     "docs": "Pop Up Menu Text Color"
                 },
