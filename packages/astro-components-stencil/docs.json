@@ -1,5 +1,5 @@
 {
-    "timestamp": "2021-07-12T18:46:42",
+    "timestamp": "2021-07-19T15:28:16",
     "compiler": {
         "name": "@stencil/core",
         "version": "2.5.2",
@@ -207,18 +207,18 @@
             "filePath": "./src/components/rux-button-group/rux-button-group.tsx",
             "encapsulation": "shadow",
             "tag": "rux-button-group",
-            "readme": "# Grouped Buttons\n\nCommon button groupings follow these conventions:\n\n-   Cancel buttons are always presented to the left of actions such as “Submit.”\n\n-   Buttons within the same group should maintain their inherent size. Do not stretch one button to match another’s width.\n\n## Web Component Usage\n\n### 1. Render the Astro Button Group Web Component\n\n```xml\n<rux-button-group>\n  <rux-button>Button 1</rux-button>\n  <rux-button>Button 2</rux-button>\n</rux-button-group>\n```\n\nBy default button group aligns buttons to the left. Alternatively an `align` property may be passed to change alignment to `\"center\"` or `\"right\"`.\n\n```xml\n<rux-button-group align=\"right\">\n  <rux-button>Button 1</rux-button>\n  <rux-button>Button 2</rux-button>\n</rux-button-group>\n```\n\n## Properties\n\n| Property | Attribute | Description | Type                           | Default |\n| -------- | --------- | ----------- | ------------------------------ | ------- |\n| `align`  | `align`   |             | `\"N/A\" \\| \"right\" \\| \"center\"` | `N/A`   |\n\nRead the [Rux-Buttons Readme](/?path=/info/components-buttons--standard-button) for more information.\n",
+            "readme": "# Grouped Buttons\n\nCommon button groupings follow these conventions:\n\n-   Cancel buttons are always presented to the left of actions such as “Submit.”\n\n-   Buttons within the same group should maintain their inherent size. Do not stretch one button to match another’s width.\n\n## Web Component Usage\n\n### 1. Render the Astro Button Group Web Component\n\n```xml\n<rux-button-group>\n  <rux-button>Button 1</rux-button>\n  <rux-button>Button 2</rux-button>\n</rux-button-group>\n```\n\nBy default button group aligns buttons to the left. Alternatively an `h-align` property may be passed to change alignment to `\"center\"` or `\"right\"`.\n\n```xml\n<rux-button-group h-align=\"right\">\n  <rux-button>Button 1</rux-button>\n  <rux-button>Button 2</rux-button>\n</rux-button-group>\n```\n",
             "docs": "Common button groupings follow these conventions:\n\n-   Cancel buttons are always presented to the left of actions such as “Submit.”\n\n-   Buttons within the same group should maintain their inherent size. Do not stretch one button to match another’s width.",
             "docsTags": [],
             "usage": {},
             "props": [
                 {
-                    "name": "align",
+                    "name": "hAlign",
                     "type": "\"center\" | \"left\" | \"right\"",
                     "mutable": false,
-                    "attr": "align",
+                    "attr": "h-align",
                     "reflectToAttr": false,
-                    "docs": "The alignment of buttons within the group",
+                    "docs": "The horizontal alignment of buttons within the group",
                     "docsTags": [],
                     "default": "'left'",
                     "values": [
@@ -75698,6 +75698,280 @@
             "dependencyGraph": {}
         },
         {
+            "filePath": "./src/components/rux-textarea/rux-textarea.tsx",
+            "encapsulation": "shadow",
+            "tag": "rux-textarea",
+            "readme": "# rux-textarea\n\n\n",
+            "docs": "",
+            "docsTags": [],
+            "usage": {},
+            "props": [
+                {
+                    "name": "disabled",
+                    "type": "boolean",
+                    "mutable": false,
+                    "attr": "disabled",
+                    "reflectToAttr": true,
+                    "docs": "Disables the button via HTML disabled attribute. Button takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.",
+                    "docsTags": [],
+                    "default": "false",
+                    "values": [
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "errorText",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "error-text",
+                    "reflectToAttr": false,
+                    "docs": "The validation error text",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "helpText",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "help-text",
+                    "reflectToAttr": false,
+                    "docs": "The help or explanation text",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "invalid",
+                    "type": "boolean",
+                    "mutable": false,
+                    "attr": "invalid",
+                    "reflectToAttr": false,
+                    "docs": "Marks the input as invalid",
+                    "docsTags": [],
+                    "default": "false",
+                    "values": [
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "label",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "label",
+                    "reflectToAttr": false,
+                    "docs": "The input label text",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "maxLength",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "max-length",
+                    "reflectToAttr": false,
+                    "docs": "The input maxLength attribute",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "minLength",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "min-length",
+                    "reflectToAttr": false,
+                    "docs": "The input minLength attribute",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "mutable": false,
+                    "attr": "name",
+                    "reflectToAttr": false,
+                    "docs": "The input name",
+                    "docsTags": [],
+                    "default": "''",
+                    "values": [
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "placeholder",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "placeholder",
+                    "reflectToAttr": false,
+                    "docs": "The input placeholder text",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "required",
+                    "type": "boolean",
+                    "mutable": false,
+                    "attr": "required",
+                    "reflectToAttr": false,
+                    "docs": "Sets the input as disabled",
+                    "docsTags": [],
+                    "default": "false",
+                    "values": [
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "rows",
+                    "type": "number | undefined",
+                    "mutable": false,
+                    "attr": "rows",
+                    "reflectToAttr": false,
+                    "docs": "The input rows attribute",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "small",
+                    "type": "boolean",
+                    "mutable": false,
+                    "attr": "small",
+                    "reflectToAttr": false,
+                    "docs": "Styles the input element and label smaller for space-limited situations.",
+                    "docsTags": [],
+                    "default": "false",
+                    "values": [
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "mutable": true,
+                    "attr": "value",
+                    "reflectToAttr": true,
+                    "docs": "The input value",
+                    "docsTags": [],
+                    "default": "''",
+                    "values": [
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                }
+            ],
+            "methods": [],
+            "events": [
+                {
+                    "event": "rux-change",
+                    "detail": "any",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)",
+                    "docsTags": []
+                },
+                {
+                    "event": "rux-input",
+                    "detail": "any",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)",
+                    "docsTags": []
+                }
+            ],
+            "listeners": [],
+            "styles": [],
+            "slots": [],
+            "parts": [],
+            "dependents": [],
+            "dependencies": [],
+            "dependencyGraph": {}
+        },
+        {
             "filePath": "./src/components/rux-tree/rux-tree.tsx",
             "encapsulation": "shadow",
             "tag": "rux-tree",
@@ -75821,7 +76095,13 @@
                     "docsTags": []
                 }
             ],
-            "listeners": [],
+            "listeners": [
+                {
+                    "event": "keydown",
+                    "capture": false,
+                    "passive": false
+                }
+            ],
             "styles": [
                 {
                     "name": "--treeAccentColor",
