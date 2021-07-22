@@ -28,6 +28,7 @@ A Pop-Up Menu provides users with a quick way to access common actions for a hig
 
 export const Default = (args) => {
     return html`
+            <rux-icon icon="apps" aria-controls="popup-menu-1"></rux-icon>
              <rux-pop-up-menu id="popup-menu-1" .open="${args.open}">
                 <rux-menu-item>Item 1</rux-menu-item>
                 <rux-menu-item-divider></rux-menu-item-divider>
