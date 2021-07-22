@@ -20,6 +20,11 @@ export class RuxProgress {
     @Prop({ attribute: 'hide-label', mutable: true }) hideLabel: boolean = false
 
     getProgressAsString() {
+        // If max = '', just return the value.
+        if (!this.max) {
+            return this.value
+        }
+
         if (this.value === undefined) {
             return '0%'
         } else {
@@ -29,7 +34,7 @@ export class RuxProgress {
         }
     }
     checkValueNotOverMax(max: number, value: number) {
-        if (max < value) {
+        if (max && max < value) {
             max = value
             this.max = max
             console.warn(
