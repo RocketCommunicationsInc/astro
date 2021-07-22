@@ -88,7 +88,7 @@ export const GroupedButtons = () => {
         Center: 'center',
     }
 
-    const align = select('Align', alignOptions, '')
+    const align = select('Align', alignOptions, 'right')
 
     return html`
         <style>
