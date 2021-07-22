@@ -1,0 +1,263 @@
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { html, render } from 'lit-html'
+
+<Meta
+    title="Components/Input Field"
+    component="rux-input-field"
+    argTypes={extractArgTypes('rux-input-field')}
+     parameters={{
+       actions: {
+        handles: ['rux-input rux-input-field', 'rux-change rux-input-field'],
+      },
+    }}
+/>
+
+# Input
+
+Input Fields allow users to enter freeform text. Variations on this field often provide specific data entry formats such as masked data (e.g. passwords or phone numbers), date and time, and numeric data entry.
+
+## Guidelines
+
+-   [Astro UXDS: Input Field](https://www.astrouxds.com/components/input-field/)
+
+
+export const Default = (args) => {
+  console.log('args', args);
+    return html`
+      <rux-input-field
+        .label="${args.label}"
+        .disabled="${args.disabled}"
+        .errorText="${args.errorText}"
+        .invalid="${args.invalid}"
+        .helpText="${args.helpText}"
+        .min="${args.min}"
+        .max="${args.max}"
+        .name="${args.name}"
+        .placeholder="${args.placeholder}"
+        ?required="${args.required}"
+        ?small="${args.small}"
+        .value="${args.value}"
+        .step="${args.step}"
+        type=${args.type}
+      ></rux-input-field>
+    `
+}
+
+<Canvas>
+    <Story
+      name="Default"
+      args={{
+        type: 'text',
+        label: 'Input label',
+      }}
+    >
+      {Default.bind()}
+    </Story>
+</Canvas>
+
+
+
+
+## API
+
+<ArgsTable of="rux-input-field" />
+
+## Variants
+
+### Disabled
+
+export const Disabled = (args) => {
+    return html`
+      <rux-input-field
+        .label="${args.label}"
+        .disabled="${args.disabled}"
+        .error-text="${args.errorText}"
+        .invalid="${args.invalid}"
+        .help-text="${args.helpText}"
+        .min="${args.min}"
+        .max="${args.max}"
+        .name="${args.name}"
+        .placeholder="${args.placeholder}"
+        ?required="${args.required}"
+        ?small="${args.small}"
+        .value="${args.value}"
+        .step="${args.step}"
+        type=${args.type}
+      ></rux-input-field>
+      ${args.helpText}
+    `
+}
+
+<Canvas>
+    <Story
+      name="Disabled"
+      args={{
+        label: 'Disabled input',
+        disabled: true,
+        type: 'text'
+      }}
+    >
+      {Disabled.bind()}
+    </Story>
+</Canvas>
+
+### Small
+
+export const Small = (args) => {
+    return html`
+      <rux-input-field
+        .label="${args.label}"
+        .disabled="${args.disabled}"
+        .errorText="${args.errorText}"
+        .invalid="${args.invalid}"
+        .helpText="${args.helpText}"
+        .min="${args.min}"
+        .max="${args.max}"
+        .name="${args.name}"
+        .placeholder="${args.placeholder}"
+        ?required="${args.required}"
+        ?small="${args.small}"
+        .value="${args.value}"
+        type=${args.type}
+        .step="${args.step}"
+      ></rux-input-field>
+    `
+}
+
+<Canvas>
+    <Story
+      name="Small"
+      args={{
+        label: 'Small Label',
+        small: true,
+        type: 'text'
+      }}
+    >
+      {Small.bind()}
+    </Story>
+</Canvas>
+
+### Help Text
+
+export const HelpText = (args) => {
+    return html`
+      <rux-input-field
+        .label="${args.label}"
+        .disabled="${args.disabled}"
+        .errorText="${args.errorText}"
+        .invalid="${args.invalid}"
+        .helpText="${args.helpText}"
+        .min="${args.min}"
+        .max="${args.max}"
+        .name="${args.name}"
+        .placeholder="${args.placeholder}"
+        ?required="${args.required}"
+        ?small="${args.small}"
+        .value="${args.value}"
+        type=${args.type}
+        .step="${args.step}"
+      ></rux-input-field>
+    `
+}
+
+<Canvas>
+    <Story
+      name="Help Text"
+      args={{
+        label: 'Help text',
+        helpText: 'Help text',
+        type: 'text'
+      }}
+    >
+      {HelpText.bind()}
+    </Story>
+</Canvas>
+
+
+### Invalid w/ Error Text
+
+export const Invalid = (args) => {
+    return html`
+      <rux-input-field
+        .label="${args.label}"
+        .disabled="${args.disabled}"
+        .errorText="${args.errorText}"
+        .invalid="${args.invalid}"
+        .helpText="${args.helpText}"
+        .min="${args.min}"
+        .max="${args.max}"
+        .name="${args.name}"
+        .placeholder="${args.placeholder}"
+        ?required="${args.required}"
+        ?small="${args.small}"
+        .value="${args.value}"
+        type=${args.type}
+        .step="${args.step}"
+      ></rux-input-field>
+    `
+}
+
+<Canvas>
+    <Story
+      name="Invalid"
+      args={{
+        invalid: true,
+        errorText: 'Field is required',
+        label: 'Input Field',
+        type: 'text'
+      }}
+    >
+      {Invalid.bind()}
+    </Story>
+</Canvas>
+
+### Types
+
+The following `<input>` types are available:
+
+* Text inputs (type="text")
+* Password inputs (type="password")
+* URL inputs (type="url")
+* Email inputs (type="email")
+* Telephone inputs (type="tel")
+* Search inputs (type="search")
+* Number-only inputs (type="number")
+
+export const Types = (args) => {
+    return html`
+    <style>
+    .grid {
+      display: grid;
+      	grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 2rem;
+    }
+    </style>
+    <div class="grid">
+      <rux-input-field label="Text Input" type="text" placeholder="Text input"></rux-input-field>
+      <rux-input-field label="Number Input" type="number" placeholder="1"></rux-input-field>
+      <rux-input-field label="Phone Input" type="tel" placeholder="(999) 999-9999"></rux-input-field>
+      <rux-input-field label="Password Input" type="password" placeholder="Reindeer Flotilla"></rux-input-field>
+      <rux-input-field label="Web address" type="url" placeholder="http://example.com"></rux-input-field>
+      <rux-input-field label="Email" type="email" placeholder="user@example.com"></rux-input-field>
+      <rux-input-field label="Search" type="search" placeholder="Enter search term"></rux-input-field>
+    </div>
+    `
+}
+
+<Canvas>
+    <Story
+      name="Types"
+    >
+      {Types.bind()}
+    </Story>
+</Canvas>
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import RuxInputField from '@astrouxds/astro-web-components/dist/components/rux-input-field.js'
+customElements.define('rux-input-field', RuxInputField)
+```

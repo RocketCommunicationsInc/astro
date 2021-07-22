@@ -1,5 +1,5 @@
 {
-    "timestamp": "2021-07-19T15:28:16",
+    "timestamp": "2021-07-22T13:13:39",
     "compiler": {
         "name": "@stencil/core",
         "version": "2.5.2",
@@ -73782,6 +73782,365 @@
             "dependencyGraph": {}
         },
         {
+            "filePath": "./src/components/rux-input-field/rux-input-field.tsx",
+            "encapsulation": "shadow",
+            "tag": "rux-input-field",
+            "readme": "# rux-input\n\n\n",
+            "docs": "",
+            "docsTags": [],
+            "usage": {},
+            "props": [
+                {
+                    "name": "disabled",
+                    "type": "boolean",
+                    "mutable": false,
+                    "attr": "disabled",
+                    "reflectToAttr": true,
+                    "docs": "Disables the button via HTML disabled attribute. Button takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.",
+                    "docsTags": [],
+                    "default": "false",
+                    "values": [
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "errorText",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "error-text",
+                    "reflectToAttr": false,
+                    "docs": "The validation error text",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "helpText",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "help-text",
+                    "reflectToAttr": false,
+                    "docs": "The help or explanation text",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "invalid",
+                    "type": "boolean",
+                    "mutable": false,
+                    "attr": "invalid",
+                    "reflectToAttr": false,
+                    "docs": "Marks the input as invalid",
+                    "docsTags": [],
+                    "default": "false",
+                    "values": [
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "label",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "label",
+                    "reflectToAttr": false,
+                    "docs": "The input label text",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "max",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "max",
+                    "reflectToAttr": false,
+                    "docs": "The input max attribute",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "min",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "min",
+                    "reflectToAttr": false,
+                    "docs": "The input min attribute",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "mutable": false,
+                    "attr": "name",
+                    "reflectToAttr": false,
+                    "docs": "The input name",
+                    "docsTags": [],
+                    "default": "''",
+                    "values": [
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "placeholder",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "placeholder",
+                    "reflectToAttr": false,
+                    "docs": "The input placeholder text",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "required",
+                    "type": "boolean",
+                    "mutable": false,
+                    "attr": "required",
+                    "reflectToAttr": false,
+                    "docs": "Sets the input as disabled",
+                    "docsTags": [],
+                    "default": "false",
+                    "values": [
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "small",
+                    "type": "boolean",
+                    "mutable": false,
+                    "attr": "small",
+                    "reflectToAttr": false,
+                    "docs": "Styles the input element and label smaller for space-limited situations.",
+                    "docsTags": [],
+                    "default": "false",
+                    "values": [
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "step",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "step",
+                    "reflectToAttr": false,
+                    "docs": "The input step attribute",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "type",
+                    "type": "\"email\" | \"number\" | \"password\" | \"search\" | \"tel\" | \"text\" | \"url\"",
+                    "mutable": false,
+                    "attr": "type",
+                    "reflectToAttr": false,
+                    "docs": "The input type",
+                    "docsTags": [],
+                    "default": "'text'",
+                    "values": [
+                        {
+                            "value": "email",
+                            "type": "string"
+                        },
+                        {
+                            "value": "number",
+                            "type": "string"
+                        },
+                        {
+                            "value": "password",
+                            "type": "string"
+                        },
+                        {
+                            "value": "search",
+                            "type": "string"
+                        },
+                        {
+                            "value": "tel",
+                            "type": "string"
+                        },
+                        {
+                            "value": "text",
+                            "type": "string"
+                        },
+                        {
+                            "value": "url",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "mutable": true,
+                    "attr": "value",
+                    "reflectToAttr": true,
+                    "docs": "The input value",
+                    "docsTags": [],
+                    "default": "''",
+                    "values": [
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                }
+            ],
+            "methods": [],
+            "events": [
+                {
+                    "event": "rux-change",
+                    "detail": "any",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)",
+                    "docsTags": []
+                },
+                {
+                    "event": "rux-input",
+                    "detail": "any",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)",
+                    "docsTags": []
+                }
+            ],
+            "listeners": [],
+            "styles": [
+                {
+                    "name": "--inputBackgroundColor",
+                    "annotation": "prop",
+                    "docs": "the input background color"
+                },
+                {
+                    "name": "--inputBorderColor",
+                    "annotation": "prop",
+                    "docs": "the input border color"
+                },
+                {
+                    "name": "--inputFocusBorderColor",
+                    "annotation": "prop",
+                    "docs": "the input focus border color"
+                },
+                {
+                    "name": "--inputFocusTextColor",
+                    "annotation": "prop",
+                    "docs": "the input focus text color"
+                },
+                {
+                    "name": "--inputInvalidBorderColor",
+                    "annotation": "prop",
+                    "docs": "the input invalid border color"
+                },
+                {
+                    "name": "--inputSearchCancel",
+                    "annotation": "prop",
+                    "docs": "the input search cancel"
+                },
+                {
+                    "name": "--inputSearchIcon",
+                    "annotation": "prop",
+                    "docs": "the input search icon"
+                },
+                {
+                    "name": "--inputTextColor",
+                    "annotation": "prop",
+                    "docs": "the input text color"
+                }
+            ],
+            "slots": [],
+            "parts": [],
+            "dependents": ["rux-log"],
+            "dependencies": [],
+            "dependencyGraph": {
+                "rux-log": ["rux-input-field"]
+            }
+        },
+        {
             "filePath": "./src/components/rux-log/rux-log.tsx",
             "encapsulation": "shadow",
             "tag": "rux-log",
@@ -73898,6 +74257,7 @@
                 "rux-table-header",
                 "rux-table-header-row",
                 "rux-table-header-cell",
+                "rux-input-field",
                 "rux-table-body",
                 "rux-table-row",
                 "rux-table-cell",
@@ -73910,6 +74270,7 @@
                     "rux-table-header",
                     "rux-table-header-row",
                     "rux-table-header-cell",
+                    "rux-input-field",
                     "rux-table-body",
                     "rux-table-row",
                     "rux-table-cell",
