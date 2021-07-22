@@ -369,23 +369,14 @@
 
   */
 
-    --scrollBarThumbBackgroundColor: var(
-        --colorSecondaryDarken2,
-        rgb(46, 103, 153)
-    );
+    --scrollBarThumbBackgroundColor: var(--primaryDarker);
     --scrollBarThumbBackgroundHoverColor: var(
         --colorSecondaryDarken1,
         rgb(58, 129, 191)
     );
-    --scrollBarTrackBackgroundColor: var(
-        --colorTertiaryDarken1,
-        rgb(32, 50, 70)
-    );
-    --scrollBarTrackCornerBackgroundColor: var(
-        --colorTertiaryDarken1,
-        rgb(32, 50, 70)
-    );
-
+    --scrollBarTrackBackgroundColor: var(--surfaceElements);
+    --scrollBarVerticalBoxShadow: inset 3px 3px 3px 0px rgba(0, 0, 0, 0.5);
+    --scrollBarHorizontalBoxShadow: inset 1px 3px 3px 0px rgba(0, 0, 0, 0.5);
     /*
 
     Timeline Colors -- Dark

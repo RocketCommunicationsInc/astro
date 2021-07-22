@@ -1,6 +1,6 @@
 import { html, render } from 'lit-html'
 
-import readme from '../../src/components/rux-input-field/readme.md'
+// import readme from '../../src/components/rux-input-field/readme.md'
 
 export default {
     title: 'Components/Form Elements',
@@ -185,8 +185,8 @@ InputFields.story = {
             render,
             html,
         },
-        readme: {
-            sidebar: readme,
-        },
+        // readme: {
+        //     sidebar: readme,
+        // },
     },
 }
