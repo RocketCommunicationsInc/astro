@@ -1,4 +1,13 @@
-import { Prop, Component, Host, h, State, Listen } from '@stencil/core'
+import {
+    Prop,
+    Component,
+    Host,
+    h,
+    Event,
+    EventEmitter,
+    Watch,
+} from '@stencil/core'
+import { PushButtonChangeEvent } from './rux-push-button.model'
 
 @Component({
     tag: 'rux-push-button',
@@ -7,27 +16,37 @@ import { Prop, Component, Host, h, State, Listen } from '@stencil/core'
 })
 export class RuxPushButton {
     @Prop() disabled: boolean = false
-    @Prop() checkedLabel: string = 'Enabled'
-    @Prop() uncheckedLabel: string = 'Disabled'
     @Prop({ reflect: true, mutable: true }) checked: boolean = false
+    @Prop() label: string = ''
 
-    @State() label: string = this.uncheckedLabel
+    /**
+     * Emitted when the checked property has changed.
+     */
+    @Event({ eventName: 'rux-change' })
+    ruxChange!: EventEmitter<PushButtonChangeEvent>
 
-    @Listen('click')
-    handleClick(e: Event) {
-        e.preventDefault()
+    handleClick(event: MouseEvent) {
+        event.preventDefault()
         this.checked = !this.checked
-        if (this.checked) {
-            this.label = this.checkedLabel
-        } else {
-            this.label = this.uncheckedLabel
-        }
+        console.log(this.checked)
+    }
+
+    @Watch('checked')
+    checkedChanged(checked: boolean) {
+        this.ruxChange.emit({
+            checked: checked,
+        })
     }
 
     render() {
         const { disabled, checked, label } = this
         return (
-            <Host>
+            <Host
+                onClick={this.handleClick}
+                aria-checked={`${checked}`}
+                aria-hidden={disabled ? 'true' : null}
+                role="switch"
+            >
                 <input
                     class="rux-push-button__input"
                     id="ruxSwitch"

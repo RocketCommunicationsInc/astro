@@ -10,15 +10,13 @@ export default {
 export const PushButton = () => {
     const disabled = boolean('Disabled', false)
     const checked = boolean('Checked', false)
-    const checkedLabel = text('Checked Label', '')
-    const uncheckedLabel = text('Unchecked Label', '')
+    const label = text('Label', 'Push Button')
     return html`
         <div style="padding: 10%; display: flex; justify-content: center;">
             <rux-push-button
                 ?disabled="${disabled}"
                 ?checked="${checked}"
-                checkedLabel="${checkedLabel}"
-                uncheckedLabel="${uncheckedLabel}"
+                label="${label}"
             ></rux-push-button>
         </div>
     `
