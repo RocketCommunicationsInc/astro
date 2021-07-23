@@ -7,6 +7,7 @@
 ## Project build commands
 
 `npm run astro` - Starts both Stencil and Storybook for development
+
 `npm run build-astro-prod` - Builds Storybook static site for production in /storybook-static folder
 
 ## RuxIcon
