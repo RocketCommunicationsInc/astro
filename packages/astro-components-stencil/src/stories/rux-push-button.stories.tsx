@@ -1,5 +1,5 @@
 import { html, render } from 'lit-html'
-import { boolean, select, withKnobs } from '@storybook/addon-knobs'
+import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import Readme from '../components/rux-push-button/readme.md'
 
 export default {
@@ -10,11 +10,16 @@ export default {
 export const PushButton = () => {
     const disabled = boolean('Disabled', false)
     const checked = boolean('Checked', false)
+    const checkedLabel = text('Checked Label', '')
+    const uncheckedLabel = text('Unchecked Label', '')
     return html`
         <div style="padding: 10%; display: flex; justify-content: center;">
-            <rux-push-button ?disabled="${disabled}" ?checked="${checked}"
-                >Push button label</rux-push-button
-            >
+            <rux-push-button
+                ?disabled="${disabled}"
+                ?checked="${checked}"
+                checkedLabel="${checkedLabel}"
+                uncheckedLabel="${uncheckedLabel}"
+            ></rux-push-button>
         </div>
     `
 }
