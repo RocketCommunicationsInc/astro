@@ -124,7 +124,7 @@ export class RuxTextarea {
                         value={this.value}
                         class={{
                             'rux-textarea': true,
-                            'rux-textrea--disabled': this.disabled,
+                            'rux-textarea--disabled': this.disabled,
                             'rux-textarea--invalid': this.invalid,
                         }}
                         id={this.inputId}

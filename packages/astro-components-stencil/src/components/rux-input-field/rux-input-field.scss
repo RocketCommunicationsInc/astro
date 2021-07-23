@@ -15,6 +15,9 @@
     * @prop --inputFocusTextColor: the input focus text color
     */
     /**
+    * @prop --inputSelectionBackgroundColor: the background color of highlighted text
+    */
+    /**
     * @prop --inputInvalidBorderColor: the input invalid border color
     */
     /**
@@ -41,10 +44,10 @@
         width: 100%;
         padding: 0 0.625rem;
         border: 1px solid var(--inputBorderColor);
-        border-radius: 4px;
-        font-size: 1rem;
+        border-radius: 3px;
         font-size: var(--fontSize, 1rem);
         color: var(--inputTextColor);
+        background-color: var(--inputBackgroundColor);
         &--invalid {
             border: 1px solid var(--inputInvalidBorderColor);
         }
@@ -61,6 +64,29 @@
             background: var(--inputBackgroundColor) var(--inputSearchIcon) 10px/0.975rem
                 no-repeat;
         }
+    }
+
+    .rux-input {
+        &:focus {
+            border-color: var(--inputFocusBorderColor);
+            outline: none;
+            color: var(--inputFocusTextColor);
+        }
+        &::placeholder {
+            font-size: 1rem;
+            font-weight: normal;
+            font-family: var(--fontFamily);
+            color: var(--defaultText);
+            opacity: 0.6;
+        }
+    }
+
+    .rux-input-label {
+        margin-bottom: 0.375rem;
+    }
+
+    ::selection {
+        background-color: var(--inputSelectionBackgroundColor);
     }
 
     .rux-form-field--small {

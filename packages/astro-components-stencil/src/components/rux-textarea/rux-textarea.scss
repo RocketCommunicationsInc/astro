@@ -12,6 +12,7 @@
         font-family: var(--fontFamily);
         font-size: var(--fontSize, 1rem);
         color: var(--inputTextColor);
+        background-color: var(--inputBackgroundColor);
         &--invalid {
             border: 1px solid var(--inputInvalidBorderColor);
         }
@@ -30,6 +31,29 @@
         font-family: var(--fontFamily);
         font-size: var(--fontSize);
         color: var(--fontColor);
+    }
+
+    .rux-textarea {
+        &:focus {
+            border-color: var(--inputFocusBorderColor);
+            outline: none;
+            color: var(--inputFocusTextColor);
+        }
+        &::placeholder {
+            font-size: 1rem;
+            font-weight: normal;
+            font-family: var(--fontFamily);
+            color: var(--defaultText);
+            opacity: 0.6;
+        }
+    }
+
+    .rux-textarea-label {
+        margin-bottom: 0.375rem;
+    }
+
+    ::selection {
+        background-color: var(--inputSelectionBackgroundColor);
     }
 
     .rux-textarea-field--small {
