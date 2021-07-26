@@ -2,6 +2,7 @@ dist/
 www/
 loader/
 storybook-static/
+docs.json
 
 *~
 *.sw[mnpcod]
