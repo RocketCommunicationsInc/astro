@@ -15,8 +15,21 @@ import { PushButtonChangeEvent } from './rux-push-button.model'
     shadow: true,
 })
 export class RuxPushButton {
+    /**
+     * Disables the push button via HTML `disabled` attribute.
+     * Button takes on a distinct disabled visual state.
+     * Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored.
+     */
     @Prop() disabled: boolean = false
+    /**
+     * Checks the push button via HTML `checked` attribute.
+     * Push button takes on a distinct "enabled" or "selected" visual state.
+     */
     @Prop({ reflect: true, mutable: true }) checked: boolean = false
+    /**
+     * The label of the push button.
+     * Can be overridden by placing content in the default slot of the rusx-push-button component.
+     */
     @Prop() label: string = ''
 
     /**
