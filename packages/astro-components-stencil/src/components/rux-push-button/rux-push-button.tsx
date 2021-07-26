@@ -40,8 +40,8 @@ export class RuxPushButton {
 
     handleClick(event: MouseEvent) {
         event.preventDefault()
+        if (this.disabled) return
         this.checked = !this.checked
-        console.log(this.checked)
     }
 
     @Watch('checked')
