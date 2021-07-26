@@ -45,16 +45,6 @@ Provide a label for the Push Button inside the component node using the componen
 ```xml
 <rux-push-button checked>Push button label</rux-push-button>
 ```
-
-### Properties
-
-| Property   | Type    | Default | Required | Description                                                                                                                                                                                 |
-| ---------- | ------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `disabled` | Boolean | `false` | No       | Disables the button via HTML `disabled` attribute. Button takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored. |
-| `checked`  | Boolean | `false` | No       | Checks the button via HTML `checked` attribute. Button takes on a distinct "enabled" or "selected" visual state.                                                                            |
-
----
-
 ## Basic HTML Usage
 
 ### 1. Include the Astro UXDS CSS file
@@ -113,3 +103,38 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 - Alignment issue fixed on toggle button label
 - Updated to WCAG colors
 - Updated transition speed
+
+<!-- Auto Generated Below -->
+
+
+## Properties
+
+| Property   | Attribute  | Description                                                                                                                                                                                               | Type      | Default |
+| ---------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------- |
+| `checked`  | `checked`  | Checks the push button via HTML `checked` attribute. Push button takes on a distinct "enabled" or "selected" visual state.                                                                                | `boolean` | `false` |
+| `disabled` | `disabled` | Disables the push button via HTML `disabled` attribute. Button takes on a distinct disabled visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored. | `boolean` | `false` |
+| `label`    | `label`    | The label of the push button. Can be overridden by placing content in the default slot of the rusx-push-button component.                                                                                 | `string`  | `''`    |
+
+
+## Events
+
+| Event        | Description                                    | Type                                 |
+| ------------ | ---------------------------------------------- | ------------------------------------ |
+| `rux-change` | Emitted when the checked property has changed. | `CustomEvent<PushButtonChangeEvent>` |
+
+
+## CSS Custom Properties
+
+| Name                                 | Description                                   |
+| ------------------------------------ | --------------------------------------------- |
+| `--pushbuttonBackgroundColor`        | the Push Button background color              |
+| `--pushbuttonBorderColor`            | the Push Button border color                  |
+| `--pushbuttonSelectdBackgroundColor` | the Push Button background color when checked |
+| `--pushbuttonSelectedBorderColor`    | the Push Button border color when checked     |
+| `--pushbuttonSelectedTextColor`      | the Push Button text color when checked       |
+| `--pushbuttonTextColor`              | the Push Button text color                    |
+
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

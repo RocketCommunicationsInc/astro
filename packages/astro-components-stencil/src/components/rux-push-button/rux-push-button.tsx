@@ -30,7 +30,7 @@ export class RuxPushButton {
      * The label of the push button.
      * Can be overridden by placing content in the default slot of the rusx-push-button component.
      */
-    @Prop() label: string = ''
+    @Prop() label: string = 'Push Button'
 
     /**
      * Emitted when the checked property has changed.

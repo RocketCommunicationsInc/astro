@@ -18,13 +18,13 @@ Pushbuttons are a variant of the toggle button which incorporate label and actio
 
 export const PushButton = (args) => {
     return html`
-      <div style="padding: 10%; display: flex; justify-content: center;">
-          <rux-push-button
-              .disabled=${args.disabled}
-              .checked=${args.checked}
-              .label=${args.label}
-          >Push Button</rux-push-button>
-      </div>
+        <div style="padding: 10%; display: flex; justify-content: center;">
+            <rux-push-button
+                .disabled=${args.disabled}
+                .checked=${args.checked}
+                .label=${args.label}
+            ></rux-push-button>
+        </div>
     `
 }
 

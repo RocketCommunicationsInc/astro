@@ -1,10 +1,15 @@
 import { html, render } from 'lit-html'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
-import Readme from '../components/rux-push-button/readme.md'
+import readme from '../components/rux-push-button/readme.md'
 
 export default {
     title: 'Components/Push Button',
     decorators: [withKnobs],
+    parameters: {
+        readme: {
+            sidebar: readme,
+        },
+    },
 }
 
 export const PushButton = () => {
@@ -29,7 +34,7 @@ PushButton.story = {
             html,
         },
         readme: {
-            sidebar: Readme,
+            sidebar: readme,
         },
     },
 }
@@ -78,7 +83,7 @@ AllPushButtonVariants.story = {
             html,
         },
         readme: {
-            sidebar: `_Readme content copied from [Rux-Buttons](/?path=/info/components-buttons--standard-button) below for your convenience._\n\n${Readme}`,
+            sidebar: `_Readme content copied from [Rux-Buttons](/?path=/info/components-buttons--standard-button) below for your convenience._\n\n${readme}`,
         },
     },
 }
