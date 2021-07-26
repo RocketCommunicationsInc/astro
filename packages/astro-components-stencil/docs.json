@@ -1,5 +1,5 @@
 {
-    "timestamp": "2021-07-22T13:13:39",
+    "timestamp": "2021-07-26T18:28:43",
     "compiler": {
         "name": "@stencil/core",
         "version": "2.5.2",
@@ -74127,6 +74127,11 @@
                     "docs": "the input search icon"
                 },
                 {
+                    "name": "--inputSelectionBackgroundColor",
+                    "annotation": "prop",
+                    "docs": "the background color of highlighted text"
+                },
+                {
                     "name": "--inputTextColor",
                     "annotation": "prop",
                     "docs": "the input text color"
@@ -74591,6 +74596,11 @@
             "listeners": [
                 {
                     "event": "keydown",
+                    "capture": false,
+                    "passive": false
+                },
+                {
+                    "event": "click",
                     "capture": false,
                     "passive": false
                 }

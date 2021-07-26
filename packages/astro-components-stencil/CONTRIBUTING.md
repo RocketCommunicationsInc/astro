@@ -31,3 +31,21 @@ The `src/icons` folder is the single source of truth for Astro icons. To add a n
 Once your component has been created, rename the css file to .scss and update the path in your component.tsx file.
 
 `npm run build`
+
+## Testing
+
+### E2E Tests
+
+[Cypress.io](https://cypress.io/) is used for E2E testing. E2E tests located in `src/component/tests/*.e2e.js`
+
+#### Writing Test
+
+Use the helper method `cy.visitStory()` to load your component's story. You only need to pass in the storybook id. For example: `http://localhost:6060/iframe.html?id=components-button--default-story&args=&viewMode=story` -> `cy.visitStory('components-button--default-story')`
+
+#### Running All Tests
+
+`npm run cy.test` - Spins up a Storybook server and runs Cypress against that.
+
+#### Running All Tests w/ Watch
+
+`npm run cy.test.watch` - Spins up stencil's dev server, a storybook server, and opens Cypress.
