@@ -88,14 +88,19 @@
     --controlTextColor: var(--primaryElementText);
     --controlLabelColor: var(--defaultText);
     --controlBackgroundColor: var(--primary);
-    --controlBorderColor: var(--primary);
+    --controlOutlineBackgroundColor: var(--backgroundColor);
+    --controlBorderColor: var(--colorSecondaryDarken2);
     --controlAccentColor: var(--primary);
 
     --controlSelectedTextColor: var(--defaultText);
     --controlSelectedBackgroundColor: var(--primaryDark);
-    --controlSelectedBorderColor: var(--primary);
+    --controlSelectedBorderColor: var(--colorSecondaryDarken2);
     --controlHoverBorderColor: var(--primaryLight);
+
     --controlSelectedOutlineBorderColor: var(--primary);
+
+    --controlHoverOutlineBackgroundColor: var(--backgroundColor);
+    --controlSelectedOutlineBackgroundColor: var(--backgroundColor);
 
     /*
 
@@ -137,6 +142,7 @@
     Segmented Button Colors
     ==========================================================================
 
+  */
     /* Segmented Unselected */
     --segmentedButtonBackgroundColor: var(--backgroundColor);
     --segmentedButtonTextColor: var(--primary);
@@ -175,7 +181,7 @@
 
   */
     --switchBackgroundColor: var(--backgroundColor);
-    --switchOffBorderColor: var(--colorSecondaryDarken2);
+    --switchOffBorderColor: var(--primaryDarker);
     --switchOnColor: var(--primary);
     --switchHoverOnColor: var(--primary);
     --switchHoverOffColor: var(--primary);
@@ -183,7 +189,7 @@
     --switchButtonHoverOffColor: var(--primaryLight);
     /*
 
-    Popup Menu Colors & Menu Item/Divider
+    Popup Menu Colors
     ==========================================================================
 
   */
@@ -193,12 +199,12 @@
 
     --popupCaretBackgroundColor: var(--primaryDarker);
 
-    --menuItemBackgroundColor: var(--backgroundColor);
-    --menuItemHoverBackgroundColor: rgba(28, 63, 94, 0.3);
-    --menuTextColor: var(--primary);
-    --menuItemHoverTextColor: var(--primary);
+    --popupMenuItemBackgroundColor: var(--backgroundColor);
+    //equates to --colorSnowflakesDarkSelected with alpha of 0.3
+    --popupMenuItemHoverBackgroundColor: rgba(28, 63, 94, 0.3);
+    --popupMenuItemHoverTextColor: var(--primaryLight);
 
-    --menuItemDividerBorderColor: var(--primary);
+    --popupMenuItemSeparatorBorderColor: var(--primaryDarker);
 
     /*
 
@@ -226,8 +232,22 @@
     --clockLabelColor: var(--defaultText);
 
     /*
+
+    Modal Colors
+    ==========================================================================
+
+  */
+    --modalTitleColor: var(--primaryElementText);
+    --modalTextColor: var(--defaultText);
+    --modalBackgroundColor: var(--surfaceElements);
+    --modalBorderColor: var(--primary);
+    /*
+
+  /*
+
     Log Colors
     ==========================================================================
+
   */
     --logTextColor: var(--defaultText);
     --logBackgroundColor: var(--surfaceElements);
@@ -316,22 +336,21 @@
 
   */
 
-    --inputBackgroundColor: var(--backgroundColor);
-    --inputBorderColor: var(--primaryDarker);
-    --inputBorderColorAlt: var(--inputDark);
+    --inputBackgroundColor: var(--colorTertiaryDarken3);
+    --inputBorderColor: var(--colorSecondaryDarken2);
+    --inputBorderColorAlt: var(--colorTertiaryDarken4);
     --inputTextColor: var(--defaultText);
 
     /* Input Focus */
-    --inputFocusBorderColor: var(--primaryLight);
+    --inputFocusBorderColor: var(--colorSecondaryLighten2);
     --inputFocusTextColor: var(--defaultText);
-
-    --inputSelectionBackgroundColor: var(--colorSnowflakesDarkSelected);
 
     --inputInvalidBorderColor: var(--colorCritical);
 
     --inputSearchIcon: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.37 26.457a15.282 15.282 0 000-21.918c-6.176-6.052-16.187-6.052-22.361 0a15.274 15.274 0 00-1.541 20.166c-.367.147-.713.37-1.014.665L.926 34.709a3.056 3.056 0 000 4.383 3.208 3.208 0 004.472 0l9.528-9.339c.352-.345.604-.753.756-1.186 6.137 3.831 14.347 3.124 19.687-2.11zM24.193 4.043c6.454 0 11.686 5.129 11.686 11.455 0 6.326-5.232 11.455-11.686 11.455-6.455 0-11.687-5.129-11.687-11.455 0-6.326 5.232-11.455 11.687-11.455z' fill='%234dacff' fill-rule='evenodd'/%3E%3C/svg%3E");
     --inputSearchCancel: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='%234dacff' fill-rule='evenodd' d='M69.028 64l22.628 22.627-5.029 5.029L64 69.028 41.373 91.656l-5.029-5.029L58.972 64 36.344 41.373l5.029-5.029L64 58.972l22.627-22.628 5.029 5.029L69.028 64z'/%3E%3C/svg%3E");
 
+    --inputSelectionBackgroundColor: var(--colorSecondaryLighten3);
     /*
 
     Icon Default Colors
@@ -356,14 +375,23 @@
 
   */
 
-    --scrollBarThumbBackgroundColor: var(--primaryDarker);
+    --scrollBarThumbBackgroundColor: var(
+        --colorSecondaryDarken2,
+        rgb(46, 103, 153)
+    );
     --scrollBarThumbBackgroundHoverColor: var(
         --colorSecondaryDarken1,
         rgb(58, 129, 191)
     );
-    --scrollBarTrackBackgroundColor: var(--surfaceElements);
-    --scrollBarVerticalBoxShadow: inset 3px 3px 3px 0px rgba(0, 0, 0, 0.5);
-    --scrollBarHorizontalBoxShadow: inset 1px 3px 3px 0px rgba(0, 0, 0, 0.5);
+    --scrollBarTrackBackgroundColor: var(
+        --colorTertiaryDarken1,
+        rgb(32, 50, 70)
+    );
+    --scrollBarTrackCornerBackgroundColor: var(
+        --colorTertiaryDarken1,
+        rgb(32, 50, 70)
+    );
+
     /*
 
     Timeline Colors -- Dark
@@ -407,6 +435,36 @@
     --accordionOpenLabelBackground: rgb(40, 63, 88);
     --accordionHoverLabelBackground: rgb(46, 103, 153);
     --accordionColor: rgb(255, 255, 255);
+
+    /*
+
+    TABLE COLORS
+    ==========================================================================
+
+  */
+
+    --tableBorderColor: var(--backgroundColor);
+
+    --tableHeaderBackgroundColor: var(--globalAppHeader);
+    --tableHeaderBorderColor: var(--surfaceElements);
+    --tableHeaderTextColor: var(--defaultText);
+    --tableHeaderBoxShadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.45);
+    --tableHeaderAccentColor: var(--primary);
+
+    --tableRowBackgroundColor: var(--surfaceElements);
+    --tableRowTextColor: var(--defaultText);
+    --tableRowBorderColor: var(--backgroundColor);
+
+    --tableRowHoverBackgroundColor: var(--primaryLightHover);
+    --tableRowHoverTextColor: var(--defaultText);
+
+    --tableRowSelectedBackgroundColor: var(--backgroundColor);
+    --tableRowSelectedBorderColor: var(--primary);
+
+    --tableControlsBackgroundColor: var(--primary);
+    --tableFilterBorderColor: var(--primary);
+    --tableFilterDisabledBorderColor: var(--backgroundColor);
+    --tableFilterDisabledBackgroundColor: var(--surfaceElements);
 }
 
 li.dark-theme {

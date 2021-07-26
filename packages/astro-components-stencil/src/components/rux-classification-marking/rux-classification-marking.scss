@@ -2,11 +2,10 @@
     /**
      * @prop --classificationTextColorLight: the color of light text in the classification marking
      */
-    --classificationTextColorLight: var(--defaultText);
+
     /**
      * @prop --classificationTextColorDark: the color of dark text in the classification marking
      */
-    --classificationTextColorDark: var(--primaryElementText);
 }
 
 :host div {
