@@ -35,7 +35,7 @@
             padding: 0 0.625rem;
             color: var(--pushbuttonTextColor);
             background-color: var(--pushbuttonBackgroundColor);
-            border-radius: 2px;
+            border-radius: var(--defaultBorderRadius);
             border: 1px solid var(--pushbuttonBorderColor);
         }
 

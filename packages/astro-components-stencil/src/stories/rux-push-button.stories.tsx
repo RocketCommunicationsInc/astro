@@ -16,7 +16,7 @@ export default {
 export const PushButton = () => {
     const disabled = boolean('Disabled', false)
     const checked = boolean('Checked', false)
-    const label = text('Label', 'Push Button')
+    const label = text('Label', 'Push button label')
     return html`
         <div style="padding: 10%; display: flex; justify-content: center;">
             <rux-push-button
