@@ -1,10 +1,11 @@
 import { html, render } from 'lit-html'
-import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, text, withKnobs } from '@storybook/addon-knobs'
+import { withActions } from '@storybook/addon-actions'
 import readme from '../components/rux-push-button/readme.md'
 
 export default {
     title: 'Components/Push Button',
-    decorators: [withKnobs],
+    decorators: [withActions('rux-change'), withKnobs],
     parameters: {
         readme: {
             sidebar: readme,
