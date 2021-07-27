@@ -1,17 +1,11 @@
 :host {
     display: block;
     /** @prop --pushbuttonBackgroundColor: the Push Button background color */
-    --pushbuttonBackgroundColor: none;
     /** @prop --pushbuttonBorderColor: the Push Button border color */
-    --pushbuttonBorderColor: var(--primary);
     /** @prop --pushbuttonTextColor: the Push Button text color */
-    --pushbuttonTextColor: var(--primary);
     /** @prop --pushbuttonSelectdBackgroundColor: the Push Button background color when checked */
-    --pushbuttonSelectedBackgroundColor: var(--colorNormal);
     /** @prop --pushbuttonSelectedBorderColor: the Push Button border color when checked */
-    --pushbuttonSelectedBorderColor: var(--colorNormal);
     /** @prop --pushbuttonSelectedTextColor: the Push Button text color when checked */
-    --pushbuttonSelectedTextColor: var(--primaryElementText);
 
     font-size: 16px;
     height: 1.3125rem;
@@ -41,7 +35,7 @@
             padding: 0 0.625rem;
             color: var(--pushbuttonTextColor);
             background-color: var(--pushbuttonBackgroundColor);
-            border-radius: var(--defaultBorderRadius);
+            border-radius: 2px;
             border: 1px solid var(--pushbuttonBorderColor);
         }
 
