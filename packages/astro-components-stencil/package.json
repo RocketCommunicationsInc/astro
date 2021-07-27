@@ -17,7 +17,7 @@
     "scripts": {
         "build": "stencil build --docs",
         "start": "stencil build --dev --watch --serve",
-        "test": "TZ=UTC stencil test --spec",
+        "test": "npm run test.spec",
         "cy.open": "cypress open",
         "cy.run": "cypress run",
         "cy.start-storybook": "start-storybook -p 6060 -s ./dist -c .storybook-next",
@@ -36,7 +36,8 @@
         "build-astro-prod": "npm run build && npm run build-storybook",
         "prettier": "prettier --write --loglevel warn .",
         "pretty-quick": "pretty-quick --staged",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "prepack": "npm run build"
     },
     "dependencies": {
         "@stencil/core": "~2.5.2",
