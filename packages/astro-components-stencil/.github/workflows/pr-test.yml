@@ -1,0 +1,20 @@
+name: Unit Test
+on:
+    push:
+        branches: [main, next]
+    pull_request:
+        branches: [main, next]
+    workflow_dispatch:
+
+jobs:
+    lint-commits:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2.3.1
+              with:
+                  fetch-depth: 0
+            - uses: actions/setup-node@v2.3.0
+            - name: Install Dependencies
+              run: npm ci
+            - name: Run CommitLint
+              run: npx commitlint --from HEAD~${{ github.event.pull_request.commits }}
