@@ -181,18 +181,20 @@
     ==========================================================================
 
   */
-    --selectMenuBorderRadius: 3px;
+    --selectMenuBorderFocusColor: var(--primaryDark);
+    --selectMenuBackgroundColor: linear-gradient(
+        to left,
+        var(--colorSnowflakesLightSelected) 2rem,
+        var(--backgroundColor) 2rem
+    );
+    --selectMenuLabelColor: var(--defaultText);
     //snowflakesLightSelected at 0.3 opacity
+    --selectMenuOptGroupTextColor: rgba(41, 42, 45, 0.6);
     --selectMenuOptHoverBackgroundColor: rgba(206, 233, 252, 0.3);
-    --selectMenuOptSelectedBackgroundColor: var(--lightSelected);
     --selectMenuOptTextHoverColor: var(--primaryDark);
+    --selectMenuOptSelectedBackgroundColor: var(--lightSelected);
     --selectMenuOptSelectedTextColor: var(--defaultText);
     --selectMenuBorderColor: var(--primaryLighter);
-    --selectMenuCaretBackgroundColor: linear-gradient(
-        var(--lightSelected),
-        var(--lightSelected)
-    );
-    --selectMenuBackgroundColor: var(--backgroundColor);
     --selectMenuTextColor: var(--primary);
     --selectMenuBorderHoverColor: var(--primaryDark);
     --selectMenuInvalidBorder: var(--statusDarkCritical);

@@ -19,7 +19,7 @@
     --primaryLight: var(--colorSecondaryLighten2, #92cbff);
     --primaryLightHover: #92cbff4d; /* TODO: this is a temporary fix, the use of opacity from Sketch is new and not accounted for in CSS */
     --primaryDark: var(--colorSecondaryDarken1, #3a87cf);
-    --primaryDarker: var(--colorSecondaryDarken2, #2e6799);
+    --primaryDarker: var(--colorSecondaryDarken2, #2b659b);
     --primaryDarkHover: #6b8ca5;
     --primaryElementText: var(--colorTertiaryDarken4, #080c11);
     --inputBackground: var(--colorWhite, #ffffff);
@@ -173,7 +173,26 @@
     ==========================================================================
 
   */
-    --selectHoverOptBackgroundColor: var(--primaryLight);
+    --selectMenuBorderColor: var(--primaryDarker);
+    --selectMenuBorderHoverColor: var(--primaryLight);
+    --selectMenuBorderFocusColor: var(--primaryLight);
+    --selectMenuInvalidBorder: var(--criticalBorder);
+    --selectMenuBackgroundColor: linear-gradient(
+        to left,
+        var(--colorSnowflakesDarkSelected) 2rem,
+        var(--backgroundColor) 2rem
+    );
+    --selectMenuTextColor: var(--primary);
+    --selectMenuTextHoverColor: var(--primary);
+    --selectMenuOptTextHoverColor: var(--primaryLight);
+    --selectMenuOptHoverBackgroundColor: rgba(28, 63, 94, 0.3);
+    --selectMenuOptGroupTextColor: rgba(255, 255, 255, 0.6);
+    --selectMenuOptSelectedBackgroundColor: var(--colorSnowflakesDarkSelected);
+    --selectMenuOptSelectedTextColor: var(--defaultText);
+    --selectMenuLabelColor: var(--defaultText);
+    --selectMenuInactiveCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%234dacff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
+    --selectMenuActiveCaret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20style%3D%22transform%3A%20rotate%28180deg%29%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%234dacff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E');
+
     /*
 
     Switch Colors
