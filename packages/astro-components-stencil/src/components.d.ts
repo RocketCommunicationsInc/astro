@@ -8,6 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Classification, Status } from "./common/commonTypes.module";
 import { LogRow } from "./components/rux-log/rux-log.model";
 import { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
+import { PushButtonChangeEvent } from "./components/rux-push-button/rux-push-button.model";
 import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
 import { SwitchChangeEvent } from "./components/rux-switch/rux-switch.model";
 export namespace Components {
@@ -10958,6 +10959,20 @@ export namespace Components {
          */
         "value"?: number;
     }
+    interface RuxPushButton {
+        /**
+          * Checks the push button via HTML `checked` attribute. Push button takes on a distinct "enabled" or "selected" visual state.
+         */
+        "checked": boolean;
+        /**
+          * Disables the push button via HTML `disabled` attribute. Button takes on a distinct disabled visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored.
+         */
+        "disabled": boolean;
+        /**
+          * The label of the push button. Can be overridden by placing content in the default slot of the rusx-push-button component.
+         */
+        "label": string;
+    }
     interface RuxSegmentedButton {
         /**
           * Items in this Array are the individual button segments.
@@ -17530,6 +17545,12 @@ declare global {
         prototype: HTMLRuxProgressElement;
         new (): HTMLRuxProgressElement;
     };
+    interface HTMLRuxPushButtonElement extends Components.RuxPushButton, HTMLStencilElement {
+    }
+    var HTMLRuxPushButtonElement: {
+        prototype: HTMLRuxPushButtonElement;
+        new (): HTMLRuxPushButtonElement;
+    };
     interface HTMLRuxSegmentedButtonElement extends Components.RuxSegmentedButton, HTMLStencilElement {
     }
     var HTMLRuxSegmentedButtonElement: {
@@ -18704,6 +18725,7 @@ declare global {
         "rux-notification": HTMLRuxNotificationElement;
         "rux-pop-up-menu": HTMLRuxPopUpMenuElement;
         "rux-progress": HTMLRuxProgressElement;
+        "rux-push-button": HTMLRuxPushButtonElement;
         "rux-segmented-button": HTMLRuxSegmentedButtonElement;
         "rux-status": HTMLRuxStatusElement;
         "rux-switch": HTMLRuxSwitchElement;
@@ -29687,6 +29709,24 @@ declare namespace LocalJSX {
          */
         "value"?: number;
     }
+    interface RuxPushButton {
+        /**
+          * Checks the push button via HTML `checked` attribute. Push button takes on a distinct "enabled" or "selected" visual state.
+         */
+        "checked"?: boolean;
+        /**
+          * Disables the push button via HTML `disabled` attribute. Button takes on a distinct disabled visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored.
+         */
+        "disabled"?: boolean;
+        /**
+          * The label of the push button. Can be overridden by placing content in the default slot of the rusx-push-button component.
+         */
+        "label"?: string;
+        /**
+          * Emitted when the checked property has changed.
+         */
+        "onRux-change"?: (event: CustomEvent<PushButtonChangeEvent>) => void;
+    }
     interface RuxSegmentedButton {
         /**
           * Items in this Array are the individual button segments.
@@ -30917,6 +30957,7 @@ declare namespace LocalJSX {
         "rux-notification": RuxNotification;
         "rux-pop-up-menu": RuxPopUpMenu;
         "rux-progress": RuxProgress;
+        "rux-push-button": RuxPushButton;
         "rux-segmented-button": RuxSegmentedButton;
         "rux-status": RuxStatus;
         "rux-switch": RuxSwitch;
@@ -32011,6 +32052,7 @@ declare module "@stencil/core" {
             "rux-notification": LocalJSX.RuxNotification & JSXBase.HTMLAttributes<HTMLRuxNotificationElement>;
             "rux-pop-up-menu": LocalJSX.RuxPopUpMenu & JSXBase.HTMLAttributes<HTMLRuxPopUpMenuElement>;
             "rux-progress": LocalJSX.RuxProgress & JSXBase.HTMLAttributes<HTMLRuxProgressElement>;
+            "rux-push-button": LocalJSX.RuxPushButton & JSXBase.HTMLAttributes<HTMLRuxPushButtonElement>;
             "rux-segmented-button": LocalJSX.RuxSegmentedButton & JSXBase.HTMLAttributes<HTMLRuxSegmentedButtonElement>;
             "rux-status": LocalJSX.RuxStatus & JSXBase.HTMLAttributes<HTMLRuxStatusElement>;
             "rux-switch": LocalJSX.RuxSwitch & JSXBase.HTMLAttributes<HTMLRuxSwitchElement>;
