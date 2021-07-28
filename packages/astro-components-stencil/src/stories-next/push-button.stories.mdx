@@ -6,6 +6,13 @@ import { html, render } from 'lit-html'
     title="Components/Push Button"
     component="rux-push-button"
     argTypes={extractArgTypes('rux-push-button')}
+    parameters={{
+        actions: {
+            handles: [
+            'rux-change rux-push-button',
+            ],
+        },
+    }}
 />
 
 # Push Button
