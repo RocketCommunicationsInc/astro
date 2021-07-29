@@ -13,7 +13,71 @@ $theme: (
     'inputBackground': #ffffff,
 );
 
+$primary: (
+    '100': #cbdee9,
+    '200': #98bdd3,
+    '300': #649cbd,
+    '400': #2f7aa7,
+    '500': #005a8f,
+    '600': #004872,
+    '700': #003655,
+    '800': #002439,
+    '900': #00121c,
+);
+
+$secondary: (
+    '100': #daeeff,
+    '200': #b7dcff,
+    '300': #92cbff,
+    '400': #6ebaff,
+    '500': #4dacff,
+    '600': #3a87cf,
+    '700': #2b659b,
+    '800': #1d4367,
+    '900': #0e2234,
+);
+
+$tertiary: (
+    '100': #d4d8dd,
+    '200': #a9b2bc,
+    '300': #7e8c9b,
+    '400': #52667a,
+    '500': #274059,
+    '600': #1f3347,
+    '700': #172635,
+    '800': #101923,
+    '900': #080c11,
+);
+
+$quaternary: (
+    '100': #f5f6f9,
+    '200': #eaeef4,
+    '300': #e1e6ef,
+    '400': #d7dee9,
+    '500': #ced6e4,
+    '600': #a4abb6,
+    '700': #7b8089,
+    '800': #51555b,
+    '900': #292a2d,
+);
+
 :root {
+    @each $class, $color in $primary {
+        --colorPrimary#{$class}: #{$color};
+    }
+
+    @each $class, $color in $secondary {
+        --colorSecondary#{$class}: #{$color};
+    }
+
+    @each $class, $color in $tertiary {
+        --colorTertiary#{$class}: #{$color};
+    }
+
+    @each $class, $color in $quaternary {
+        --colorQuaternary#{$class}: #{$color};
+    }
+
     --disabledControlOpacity: 0.4;
     --disabledControlCursor: not-allowed;
 

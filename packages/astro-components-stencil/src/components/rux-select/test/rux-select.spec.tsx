@@ -1,11 +1,11 @@
-import { newSpecPage } from '@stencil/core/testing';
-import { RuxSelect } from '../rux-select';
+import { newSpecPage } from '@stencil/core/testing'
+import { RuxSelect } from '../rux-select'
 
 describe('rux-select', () => {
-  it('renders', async () => {
-    const page = await newSpecPage({
-      components: [RuxSelect],
-      html: `
+    it('renders', async () => {
+        const page = await newSpecPage({
+            components: [RuxSelect],
+            html: `
         <rux-select label="Select an Option">
           <option value="" selected>Select an Option</option>
           <optgroup label="Group one">
@@ -22,8 +22,8 @@ describe('rux-select', () => {
           </optgroup>
         </rux-select>
       `,
-    });
-    expect(page.root).toEqualHtml(`
+        })
+        expect(page.root).toEqualHtml(`
      <rux-select label="Select an Option">
        <label>
          Select an Option
@@ -62,6 +62,6 @@ describe('rux-select', () => {
          </optgroup>
        </select>
       </rux-select>
-    `);
-  });
-});
+    `)
+    })
+})

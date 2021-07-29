@@ -252,6 +252,233 @@
             }
         },
         {
+            "filePath": "./src/components/rux-checkbox/rux-checkbox.tsx",
+            "encapsulation": "shadow",
+            "tag": "rux-checkbox",
+            "readme": "# Checkbox\n\nA Checkbox describes a state or value that can be either \"True or False.” Checkboxes are not mutually exclusive. More than one Checkbox may be checked at the same time.\n\n\n## Guidelines\n\n- [Astro UXDS: Checkboxes](https://www.astrouxds.com/ui-components/checkbox)\n- [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)\n\n## Basic HTML Usage\n\n### 1. Instalation \nDownload the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components) source to your project.\n\nVia CLI:\n\n```sh\ngit clone https://github.com/RocketCommunicationsInc/astro-components.git\n```\n\n### 2. Markup the component using HTML and the Astro CSS classes\n```xml\n<rux-checkbox\n    name=\"checkboxGroup\"\n    id=\"checkbox4c\"\n    indeterminate\n    checked\n    disabled\n>\n    Label Text\n</rux-checkbox>\n```\n",
+            "docs": "A Checkbox describes a state or value that can be either \"True or False.” Checkboxes are not mutually exclusive. More than one Checkbox may be checked at the same time.",
+            "docsTags": [],
+            "usage": {},
+            "props": [
+                {
+                    "name": "checked",
+                    "type": "boolean",
+                    "mutable": true,
+                    "attr": "checked",
+                    "reflectToAttr": true,
+                    "docs": "Toggles checked state of a checkbox",
+                    "docsTags": [],
+                    "default": "false",
+                    "values": [
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "disabled",
+                    "type": "boolean",
+                    "mutable": false,
+                    "attr": "disabled",
+                    "reflectToAttr": true,
+                    "docs": "Disables the checkbox via HTML disabled attribute. Checkbox takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.",
+                    "docsTags": [],
+                    "default": "false",
+                    "values": [
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "errorText",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "error-text",
+                    "reflectToAttr": false,
+                    "docs": "The validation error text",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "helpText",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "help-text",
+                    "reflectToAttr": false,
+                    "docs": "The help or explanation text",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "indeterminate",
+                    "type": "boolean",
+                    "mutable": false,
+                    "attr": "indeterminate",
+                    "reflectToAttr": true,
+                    "docs": "Toggles indeterminate state of a checkbox",
+                    "docsTags": [],
+                    "default": "false",
+                    "values": [
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "invalid",
+                    "type": "boolean",
+                    "mutable": false,
+                    "attr": "invalid",
+                    "reflectToAttr": false,
+                    "docs": "Sets the input as invalid",
+                    "docsTags": [],
+                    "default": "false",
+                    "values": [
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "mutable": false,
+                    "attr": "name",
+                    "reflectToAttr": false,
+                    "docs": "The checkbox name",
+                    "docsTags": [],
+                    "default": "''",
+                    "values": [
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "required",
+                    "type": "boolean",
+                    "mutable": false,
+                    "attr": "required",
+                    "reflectToAttr": false,
+                    "docs": "Sets the input as required",
+                    "docsTags": [],
+                    "default": "false",
+                    "values": [
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "mutable": true,
+                    "attr": "value",
+                    "reflectToAttr": true,
+                    "docs": "The checkbox value",
+                    "docsTags": [],
+                    "default": "''",
+                    "values": [
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                }
+            ],
+            "methods": [],
+            "events": [
+                {
+                    "event": "rux-change",
+                    "detail": "any",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)",
+                    "docsTags": []
+                },
+                {
+                    "event": "rux-input",
+                    "detail": "any",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)",
+                    "docsTags": []
+                }
+            ],
+            "listeners": [],
+            "styles": [
+                {
+                    "name": "--controlBorderColor",
+                    "annotation": "prop",
+                    "docs": "Checkbox border color"
+                },
+                {
+                    "name": "--controlHoverBorderColor",
+                    "annotation": "prop",
+                    "docs": "Checkbox border color on hover"
+                },
+                {
+                    "name": "--controlLabelColor",
+                    "annotation": "prop",
+                    "docs": "Label text color"
+                },
+                {
+                    "name": "--controlOutlineBackgroundColor",
+                    "annotation": "prop",
+                    "docs": "Checkbox background color"
+                },
+                {
+                    "name": "--controlSelectedOutlineBorderColor",
+                    "annotation": "prop",
+                    "docs": "Selected checkbox border color"
+                },
+                {
+                    "name": "--controlTextColor",
+                    "annotation": "prop",
+                    "docs": "Selected checkbox icon color"
+                }
+            ],
+            "slots": [],
+            "parts": [],
+            "dependents": [],
+            "dependencies": [],
+            "dependencyGraph": {}
+        },
+        {
             "filePath": "./src/components/rux-classification-marking/rux-classification-marking.tsx",
             "encapsulation": "shadow",
             "tag": "rux-classification-marking",
