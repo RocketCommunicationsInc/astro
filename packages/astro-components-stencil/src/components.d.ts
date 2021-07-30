@@ -11085,6 +11085,28 @@ export namespace Components {
          */
         "required": boolean;
     }
+    interface RuxSlider {
+        /**
+          * Determines if the slider is disabled.
+         */
+        "disabled"?: boolean;
+        /**
+          * Max value of slider.
+         */
+        "max"?: number;
+        /**
+          * Min value of the slider.
+         */
+        "min"?: number;
+        /**
+          * Step amount of slider value.
+         */
+        "step"?: number;
+        /**
+          * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/<input type="range">](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
+         */
+        "value"?: number;
+    }
     interface RuxStatus {
         /**
           * Sets the status symbol, valid options are critical, serious, caution, normal, standby and off
@@ -17677,6 +17699,12 @@ declare global {
         prototype: HTMLRuxSelectElement;
         new (): HTMLRuxSelectElement;
     };
+    interface HTMLRuxSliderElement extends Components.RuxSlider, HTMLStencilElement {
+    }
+    var HTMLRuxSliderElement: {
+        prototype: HTMLRuxSliderElement;
+        new (): HTMLRuxSliderElement;
+    };
     interface HTMLRuxStatusElement extends Components.RuxStatus, HTMLStencilElement {
     }
     var HTMLRuxStatusElement: {
@@ -18850,6 +18878,7 @@ declare global {
         "rux-radio": HTMLRuxRadioElement;
         "rux-segmented-button": HTMLRuxSegmentedButtonElement;
         "rux-select": HTMLRuxSelectElement;
+        "rux-slider": HTMLRuxSliderElement;
         "rux-status": HTMLRuxStatusElement;
         "rux-switch": HTMLRuxSwitchElement;
         "rux-tab": HTMLRuxTabElement;
@@ -29986,6 +30015,32 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
     }
+    interface RuxSlider {
+        /**
+          * Determines if the slider is disabled.
+         */
+        "disabled"?: boolean;
+        /**
+          * Max value of slider.
+         */
+        "max"?: number;
+        /**
+          * Min value of the slider.
+         */
+        "min"?: number;
+        /**
+          * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
+         */
+        "onRux-input"?: (event: CustomEvent<any>) => void;
+        /**
+          * Step amount of slider value.
+         */
+        "step"?: number;
+        /**
+          * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/<input type="range">](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
+         */
+        "value"?: number;
+    }
     interface RuxStatus {
         /**
           * Sets the status symbol, valid options are critical, serious, caution, normal, standby and off
@@ -31207,6 +31262,7 @@ declare namespace LocalJSX {
         "rux-radio": RuxRadio;
         "rux-segmented-button": RuxSegmentedButton;
         "rux-select": RuxSelect;
+        "rux-slider": RuxSlider;
         "rux-status": RuxStatus;
         "rux-switch": RuxSwitch;
         "rux-tab": RuxTab;
@@ -32305,6 +32361,7 @@ declare module "@stencil/core" {
             "rux-radio": LocalJSX.RuxRadio & JSXBase.HTMLAttributes<HTMLRuxRadioElement>;
             "rux-segmented-button": LocalJSX.RuxSegmentedButton & JSXBase.HTMLAttributes<HTMLRuxSegmentedButtonElement>;
             "rux-select": LocalJSX.RuxSelect & JSXBase.HTMLAttributes<HTMLRuxSelectElement>;
+            "rux-slider": LocalJSX.RuxSlider & JSXBase.HTMLAttributes<HTMLRuxSliderElement>;
             "rux-status": LocalJSX.RuxStatus & JSXBase.HTMLAttributes<HTMLRuxStatusElement>;
             "rux-switch": LocalJSX.RuxSwitch & JSXBase.HTMLAttributes<HTMLRuxSwitchElement>;
             "rux-tab": LocalJSX.RuxTab & JSXBase.HTMLAttributes<HTMLRuxTabElement>;
