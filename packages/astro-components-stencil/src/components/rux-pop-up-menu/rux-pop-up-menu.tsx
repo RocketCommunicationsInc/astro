@@ -8,6 +8,7 @@ import {
     Event,
     Method,
     Watch,
+    State,
 } from '@stencil/core'
 
 /**
@@ -21,6 +22,9 @@ import {
 })
 export class RuxPopUpMenu {
     @Element() el!: HTMLRuxPopUpMenuElement
+
+    @State() anchorBounds?: DOMRect
+    @State() menuBounds?: DOMRect
 
     /**
      * Optional element to trigger opening and closing of the menu.
@@ -67,6 +71,10 @@ export class RuxPopUpMenu {
      */
     @Event({ eventName: 'rux-menu-did-close' })
     ruxMenuDidClose!: EventEmitter<void>
+
+    componentDidRender() {
+        this._setMenuPosition()
+    }
 
     connectedCallback() {
         this._handleClick = this._handleClick.bind(this)
@@ -152,12 +160,15 @@ export class RuxPopUpMenu {
         if (!this.anchorEl) {
             this.anchorEl = this.triggerEl
         }
+        this.anchorBounds = this.anchorEl.getBoundingClientRect()
+        this.menuBounds = this.el.getBoundingClientRect()
     }
 
     private _setMenuPosition() {
-        if (this.anchorEl) {
-            const menuBounds = this.el.getBoundingClientRect()
-            const anchorBounds = this.anchorEl.getBoundingClientRect()
+        if (this.anchorEl && this.anchorBounds && this.menuBounds) {
+            let { anchorBounds, menuBounds } = this
+            anchorBounds = this.anchorEl.getBoundingClientRect()
+            menuBounds = this.el.getBoundingClientRect()
             const caret = parseInt(getComputedStyle(this.el, ':after').height)
             let top: number
             let left: number
@@ -214,19 +225,24 @@ export class RuxPopUpMenu {
     }
 
     private _show() {
-        this.ruxMenuWillOpen.emit()
-        this._setMenuPosition()
-        this.open = true
+        if (this.anchorEl) {
+            this.ruxMenuWillOpen.emit()
+            this.open = true
 
-        const debounce = setTimeout(() => {
-            window.addEventListener('resize', () => this._setMenuPosition())
-            window.addEventListener('mousedown', this._handleOutsideClick)
-            clearTimeout(debounce)
-        }, 10)
+            const debounce = setTimeout(() => {
+                window.addEventListener('resize', () => this._setMenuPosition())
+                window.addEventListener('mousedown', this._handleOutsideClick)
+                clearTimeout(debounce)
+            }, 10)
 
-        this.triggerEl?.removeEventListener('mousedown', this._handleClick)
+            this.triggerEl?.removeEventListener('mousedown', this._handleClick)
 
-        this.ruxMenuDidOpen.emit()
+            this.ruxMenuDidOpen.emit()
+        } else {
+            console.error(
+                'Unable to open pop up menu properly without an anchor element'
+            )
+        }
     }
 
     private _hide() {
