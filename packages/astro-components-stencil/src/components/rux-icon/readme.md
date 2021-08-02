@@ -116,20 +116,19 @@ In Astro 4.0, these groups have been flattened, and each icon is now imported di
 
 ## Properties
 
-| Property            | Attribute | Description          | Type                                              | Default     |
-| ------------------- | --------- | -------------------- | ------------------------------------------------- | ----------- |
-| `color`             | `color`   | The icon color       | `string \| undefined`                             | `undefined` |
-| `icon` _(required)_ | `icon`    | The icon name        | `string`                                          | `undefined` |
-| `label`             | `label`   | The icon label       | `string \| undefined`                             | `undefined` |
-| `size`              | `size`    | The size of the icon | `"extra-small" \| "large" \| "normal" \| "small"` | `'normal'`  |
+| Property            | Attribute | Description                                                                                                                    | Type                  | Default     |
+| ------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------ | --------------------- | ----------- |
+| `color`             | `color`   | The icon color                                                                                                                 | `string \| undefined` | `undefined` |
+| `icon` _(required)_ | `icon`    | The icon name                                                                                                                  | `string`              | `undefined` |
+| `label`             | `label`   | The icon SVG's title attribute. Used for accessibility. If none is provided, the icon name will be used.                       | `string \| undefined` | `undefined` |
+| `size`              | `size`    | The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em') | `string`              | `'auto'`    |
 
 
 ## CSS Custom Properties
 
-| Name                | Description                   |
-| ------------------- | ----------------------------- |
-| `--iconColor`       | the default color of the icon |
-| `--iconDefaultSize` | the default size of the icon  |
+| Name          | Description                   |
+| ------------- | ----------------------------- |
+| `--iconColor` | the default color of the icon |
 
 
 ## Dependencies

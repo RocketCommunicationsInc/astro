@@ -8,19 +8,11 @@ describe('rux-icon', () => {
             html: `<rux-icon icon="360"></rux-icon>`,
         })
         expect(page.root).toEqualHtml(`
-      <rux-icon icon="360" size="normal">
+      <rux-icon icon="360" size="auto">
         <mock:shadow-root>
-          <rux-icon-360 class="icon" size="normal"></rux-icon-360>
+          <rux-icon-360 class="icon" size="auto" title="360"></rux-icon-360>
         </mock:shadow-root>
       </rux-icon>
     `)
-    })
-
-    it('errors without a label', async () => {
-        const icon = new RuxIcon()
-
-        expect(() => {
-            icon.labelRequired('')
-        }).toThrowError('label is required')
     })
 })

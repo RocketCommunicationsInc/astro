@@ -1,4 +1,4 @@
-import { Component, Host, Prop, h, Watch } from '@stencil/core'
+import { Component, Host, Prop, h } from '@stencil/core'
 
 @Component({
     tag: 'rux-icon',
@@ -9,13 +9,15 @@ export class RuxIcon {
     svg: string = ''
 
     /**
-     * The size of the icon
+     * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
      */
     @Prop({ reflect: true }) size:
         | 'extra-small'
         | 'small'
         | 'normal'
-        | 'large' = 'normal'
+        | 'large'
+        | 'auto'
+        | string = 'auto'
     /**
      * The icon name
      */
@@ -25,14 +27,15 @@ export class RuxIcon {
      */
     @Prop() color?: string
     /**
-     * The icon label
+     * The icon SVG's title attribute. Used for accessibility. If none is provided, the icon name will be used.
      */
     @Prop() label?: string
 
-    @Watch('label')
-    labelRequired(newValue: string) {
-        if (!newValue) {
-            throw new Error('label is required')
+    get iconLabel() {
+        if (this.label) {
+            return this.label
+        } else {
+            return this.icon
         }
     }
 
@@ -45,7 +48,7 @@ export class RuxIcon {
                     class="icon"
                     color={this.color}
                     size={this.size}
-                    title={this.label}
+                    title={this.iconLabel}
                 ></SVG>
             </Host>
         )

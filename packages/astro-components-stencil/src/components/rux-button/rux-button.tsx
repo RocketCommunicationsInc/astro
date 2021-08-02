@@ -54,6 +54,7 @@ export class RuxButton {
             >
                 {icon ? (
                     <rux-icon
+                        size="extra-small"
                         icon={icon}
                         color={secondary ? 'primary' : 'dark'}
                     ></rux-icon>
