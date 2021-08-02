@@ -8,9 +8,12 @@ describe('rux-slider', () => {
             html: `<rux-slider></rux-slider>`,
         })
         expect(page.root).toEqualHtml(`
-      <rux-slider>
+      <rux-slider style="--valuePercent: 50%;">
         <mock:shadow-root>
-          <slot></slot>
+        <div class="rux-slider">
+           <input aria-disabled="false" aria-label="slider" class="rux-range" max="100" min="0" step="1" type="range" value="50">
+         </div>
+         <slot></slot>
         </mock:shadow-root>
       </rux-slider>
     `)
