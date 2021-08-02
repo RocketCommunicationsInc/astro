@@ -1,5 +1,5 @@
 {
-    "timestamp": "2021-08-02T13:14:22",
+    "timestamp": "2021-08-02T16:17:51",
     "compiler": {
         "name": "@stencil/core",
         "version": "2.5.2",
@@ -61935,6 +61935,205 @@
                     "name": "--pushbuttonTextColor",
                     "annotation": "prop",
                     "docs": "the Push Button text color"
+                }
+            ],
+            "slots": [],
+            "parts": [],
+            "dependents": [],
+            "dependencies": [],
+            "dependencyGraph": {}
+        },
+        {
+            "filePath": "./src/components/rux-radio/rux-radio.tsx",
+            "encapsulation": "shadow",
+            "tag": "rux-radio",
+            "readme": "# RadioButtons\n\nRadio Buttons allow users to mutually select an option from a predefined set of options. When one selection is made, the previous selection becomes deselected. One option should always be selected.\n\n## Guidelines\n\n-   [Astro UXDS: Radio Buttons](https://www.astrouxds.com/ui-components/radio-button)\n-   [Astro UXDS: Toggles](http://www.astrouxds.com/ui-components/toggle)\n-   [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)\n\n## Basic HTML Usage\n\n### 1. Markup for the component\n\n\n```xml\n  <rux-radio\n    name=\"radio1\"\n    id=\"ruxId`\"\n    disabled\n    checked\n  ></rux-radio>\n```\n",
+            "docs": "Radio Buttons allow users to mutually select an option from a predefined set of options. When one selection is made, the previous selection becomes deselected. One option should always be selected.",
+            "docsTags": [],
+            "usage": {},
+            "props": [
+                {
+                    "name": "checked",
+                    "type": "boolean",
+                    "mutable": true,
+                    "attr": "checked",
+                    "reflectToAttr": true,
+                    "docs": "Toggles checked state of a radio",
+                    "docsTags": [],
+                    "default": "false",
+                    "values": [
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "disabled",
+                    "type": "boolean",
+                    "mutable": false,
+                    "attr": "disabled",
+                    "reflectToAttr": true,
+                    "docs": "Disables the radio via HTML disabled attribute. Radio takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.",
+                    "docsTags": [],
+                    "default": "false",
+                    "values": [
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "errorText",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "error-text",
+                    "reflectToAttr": false,
+                    "docs": "The validation error text",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "helpText",
+                    "type": "string | undefined",
+                    "mutable": false,
+                    "attr": "help-text",
+                    "reflectToAttr": false,
+                    "docs": "The help or explanation text",
+                    "docsTags": [],
+                    "values": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "undefined"
+                        }
+                    ],
+                    "optional": true,
+                    "required": false
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "mutable": false,
+                    "attr": "name",
+                    "reflectToAttr": false,
+                    "docs": "The radio name",
+                    "docsTags": [],
+                    "default": "''",
+                    "values": [
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "required",
+                    "type": "boolean",
+                    "mutable": false,
+                    "attr": "required",
+                    "reflectToAttr": false,
+                    "docs": "Sets the radio as required",
+                    "docsTags": [],
+                    "default": "false",
+                    "values": [
+                        {
+                            "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "mutable": true,
+                    "attr": "value",
+                    "reflectToAttr": true,
+                    "docs": "The radio value",
+                    "docsTags": [],
+                    "default": "''",
+                    "values": [
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "required": false
+                }
+            ],
+            "methods": [],
+            "events": [
+                {
+                    "event": "rux-change",
+                    "detail": "any",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)",
+                    "docsTags": []
+                },
+                {
+                    "event": "rux-input",
+                    "detail": "any",
+                    "bubbles": true,
+                    "cancelable": true,
+                    "composed": true,
+                    "docs": "Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)",
+                    "docsTags": []
+                }
+            ],
+            "listeners": [
+                {
+                    "event": "click",
+                    "capture": false,
+                    "passive": false
+                }
+            ],
+            "styles": [
+                {
+                    "name": "--controlBorderColor",
+                    "annotation": "prop",
+                    "docs": "Checkbox border color"
+                },
+                {
+                    "name": "--controlHoverBorderColor",
+                    "annotation": "prop",
+                    "docs": "Checkbox border color on hover"
+                },
+                {
+                    "name": "--controlLabelColor",
+                    "annotation": "prop",
+                    "docs": "Label text color"
+                },
+                {
+                    "name": "--controlOutlineBackgroundColor",
+                    "annotation": "prop",
+                    "docs": "Checkbox background color"
+                },
+                {
+                    "name": "--controlSelectedOutlineBorderColor",
+                    "annotation": "prop",
+                    "docs": "Selected checkbox border color"
+                },
+                {
+                    "name": "--controlTextColor",
+                    "annotation": "prop",
+                    "docs": "Selected checkbox icon color"
                 }
             ],
             "slots": [],
