@@ -1,12 +1,19 @@
 import { withActions } from '@storybook/addon-actions'
 import { html, render } from 'lit-html'
-import RuxCheckboxReadme from '../components/rux-checkbox/readme.md'
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
 
 
 <Meta
-    title="Components/Form Elements"
+    title="Components/Checkbox"
     component="rux-checkbox"
     argTypes={extractArgTypes('rux-checkbox')}
+    parameters={{
+       actions: {
+        handles: [
+          'rux-change rux-input'
+        ],
+      },
+    }}
 />
 
 # Checkbox
@@ -19,8 +26,8 @@ A Checkbox describes a state or value that can be either "True or False.” Chec
 - [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)
 
 
-export const Checkboxes = () => {
-    return htmlreturn html` <style>
+export const Default = () => {
+    return html` <style>
             section {
                 display: flex;
                 justify-content: center;
@@ -90,7 +97,16 @@ export const Checkboxes = () => {
 }
 
 <Canvas>
-    <Story name="Checkboxes">
-        {Checkboxes.bind()}
+    <Story name="Default">
+        {Default.bind()}
     </Story>
 </Canvas>
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import RuxCheckbox from '@astrouxds/astro-web-components/dist/components/rux-checkbox.js'
+customElements.define('rux-checkbox', RuxCheckbox)
+```
