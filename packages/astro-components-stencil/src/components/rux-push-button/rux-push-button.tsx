@@ -20,7 +20,7 @@ export class RuxPushButton {
      * Button takes on a distinct disabled visual state.
      * Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored.
      */
-    @Prop() disabled: boolean = false
+    @Prop({ reflect: true }) disabled: boolean = false
     /**
      * Checks the push button via HTML `checked` attribute.
      * Push button takes on a distinct "enabled" or "selected" visual state.
@@ -40,7 +40,6 @@ export class RuxPushButton {
 
     handleClick(event: MouseEvent) {
         event.preventDefault()
-        if (this.disabled) return
         this.checked = !this.checked
     }
 
@@ -64,6 +63,7 @@ export class RuxPushButton {
                     type="checkbox"
                     disabled={disabled}
                     checked={checked}
+                    onClick={(e) => this.handleClick(e)}
                 />
                 <label
                     class="rux-push-button__button"
