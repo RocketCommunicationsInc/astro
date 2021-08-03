@@ -133,6 +133,11 @@ platformBrowserDynamic()
 defineCustomElements()
 ```
 
+3. Setting dynamic data in for loop
+```xml
+<rux-classification-marking *ngFor="let type of types" [attr.classification]="type"></rux-classification-marking>
+  ```
+
 #### React
 
 ```js
