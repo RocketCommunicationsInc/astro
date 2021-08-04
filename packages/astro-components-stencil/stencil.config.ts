@@ -26,7 +26,12 @@ export const config: Config = {
         },
         {
             type: 'www',
-            serviceWorker: null, // disable service workers
+            serviceWorker: null, // disable service workers,
+            copy: [
+                {
+                    src: 'tests/pages',
+                },
+            ],
         },
     ],
     plugins: [sass(), svgOptimizerPlugin()],

@@ -36,11 +36,23 @@ Once your component has been created, rename the css file to .scss and update th
 
 ### E2E Tests
 
-[Cypress.io](https://cypress.io/) is used for E2E testing. E2E tests located in `src/component/tests/*.e2e.js`
+[Cypress.io](https://cypress.io/) is used for E2E testing. Single component E2E tests located in `src/component/tests/*.e2e.js`. Multi component tests are located in `src/tests/*.e2e.js`.
 
-#### Writing Test
+#### Writing an E2E Test
+
+-   For component-specific tests, it's recommended to make use of our Storybook as the basis for your E2E test. Storybook already provides isolated examples for each component.
+-   For more complex tests that may use multiple components, you may utilize our dev server to create your own isolated sandbox.
+
+##### Storybook Tests
 
 Use the helper method `cy.visitStory()` to load your component's story. You only need to pass in the storybook id. For example: `http://localhost:6060/iframe.html?id=components-button--default-story&args=&viewMode=story` -> `cy.visitStory('components-button--default-story')`
+
+##### Dev Server Tests
+
+-   Create your sandbox .html page under `/src/tests/pages`
+    -   Your page will be accessible via `localhost:3333/tests/pages/*.html` in the browser and in your Cypress test.
+-   Create your Cypress test file under `/src/tests/*.e2e.js`
+-   Bootstrap your Cypress test with `cy.visit('localhost:4444/tests/pages/*.html')`
 
 #### Running All Tests
 
