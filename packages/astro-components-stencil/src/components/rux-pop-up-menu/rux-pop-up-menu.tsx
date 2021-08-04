@@ -47,6 +47,10 @@ export class RuxPopUpMenu {
      * Boolean which controls when to show the menu
      */
     @Prop({ reflect: true, mutable: true }) open: boolean = false
+    @Watch('open')
+    openMenu() {
+        this._toggleOpenClose()
+    }
 
     /**
      * Emitted when the menu is about to open.
@@ -73,7 +77,7 @@ export class RuxPopUpMenu {
     ruxMenuDidClose!: EventEmitter<void>
 
     componentDidRender() {
-        this._setMenuPosition()
+        if (this.open) this._setMenuPosition()
     }
 
     connectedCallback() {
@@ -82,9 +86,7 @@ export class RuxPopUpMenu {
 
         this._bindElements()
 
-        if (this.open) {
-            this._show()
-        }
+        this._toggleOpenClose()
     }
 
     disconnectedCallback() {
@@ -98,7 +100,7 @@ export class RuxPopUpMenu {
      */
     @Method()
     async isOpen(): Promise<boolean> {
-        return Promise.resolve(this.open)
+        return this.open
     }
 
     /**
@@ -107,11 +109,10 @@ export class RuxPopUpMenu {
     @Method()
     async show(): Promise<boolean> {
         if (this.open) {
-            return Promise.resolve(false)
+            return false
         }
-
-        this._show()
-        return Promise.resolve(true)
+        this.open = true
+        return true
     }
 
     /**
@@ -120,11 +121,10 @@ export class RuxPopUpMenu {
     @Method()
     async close(): Promise<boolean> {
         if (!this.open) {
-            return Promise.resolve(false)
+            return false
         }
-
-        this._hide()
-        return Promise.resolve(true)
+        this.open = false
+        return true
     }
 
     /**
@@ -132,16 +132,16 @@ export class RuxPopUpMenu {
      */
     @Method()
     async toggle(): Promise<boolean> {
+        this.open = !this.open
         if (this.open) {
-            this._hide()
-            return Promise.resolve(false)
+            return true
         } else {
-            this._show()
-            return Promise.resolve(true)
+            return false
         }
     }
 
     private _bindElements() {
+        // find and set triggerEl from aria-controls if not given
         if (!this.triggerEl) {
             const triggerEl: HTMLElement | null = document.querySelector(
                 `[aria-controls="${this.el.id}"]`
@@ -150,17 +150,18 @@ export class RuxPopUpMenu {
             if (triggerEl) {
                 this.triggerEl = triggerEl
                 this.triggerEl.addEventListener('mousedown', this._handleClick)
-            } else {
-                this.triggerEl = this.el
             }
         } else {
             this.triggerEl.addEventListener('mousedown', this._handleClick)
         }
 
-        if (!this.anchorEl) {
+        // If a trigger element exists but no anchor, assign trigger to anchor
+        if (!this.anchorEl && this.triggerEl) {
             this.anchorEl = this.triggerEl
+            this.anchorBounds = this.anchorEl.getBoundingClientRect()
+        } else if (this.anchorEl) {
+            this.anchorBounds = this.anchorEl.getBoundingClientRect()
         }
-        this.anchorBounds = this.anchorEl.getBoundingClientRect()
         this.menuBounds = this.el.getBoundingClientRect()
     }
 
@@ -214,20 +215,26 @@ export class RuxPopUpMenu {
 
     private _handleClick(e: Event) {
         e.preventDefault()
-        this._show()
+        this.open = true
     }
 
     private _handleOutsideClick(e: MouseEvent) {
-        const target = e.composedPath().includes(this.el)
-        if (!target) {
-            this._hide()
+        const menuClick = e.composedPath().includes(this.el)
+        if (!menuClick) {
+            this.open = false
         }
     }
 
-    private _show() {
-        if (this.anchorEl) {
+    private _toggleOpenClose() {
+        if (this.open) {
+            if (!this.anchorEl) {
+                this.open = false
+                console.error(
+                    'Unable to open pop up menu without an anchor element. See documentation'
+                )
+                return
+            }
             this.ruxMenuWillOpen.emit()
-            this.open = true
 
             const debounce = setTimeout(() => {
                 window.addEventListener('resize', () => this._setMenuPosition())
@@ -239,21 +246,14 @@ export class RuxPopUpMenu {
 
             this.ruxMenuDidOpen.emit()
         } else {
-            console.error(
-                'Unable to open pop up menu properly without an anchor element'
-            )
+            this.ruxMenuWillClose.emit()
+
+            window.removeEventListener('mousedown', this._handleOutsideClick)
+            window.removeEventListener('resize', this._setMenuPosition)
+
+            this.triggerEl?.addEventListener('mousedown', this._handleClick)
+            this.ruxMenuDidClose.emit()
         }
-    }
-
-    private _hide() {
-        this.ruxMenuWillClose.emit()
-        this.open = false
-
-        window.removeEventListener('mousedown', this._handleOutsideClick)
-        window.removeEventListener('resize', this._setMenuPosition)
-
-        this.triggerEl?.addEventListener('mousedown', this._handleClick)
-        this.ruxMenuDidClose.emit()
     }
 
     render() {
