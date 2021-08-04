@@ -1,2 +1,3 @@
-# astro-in-react
-React wrapper for our Stencil components. Currently in test
+# EXAMPLE REPO
+
+## Not for use. This is a test Repo.
