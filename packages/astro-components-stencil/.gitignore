@@ -3,6 +3,7 @@ www/
 loader/
 storybook-static/
 docs.json
+cypress/fixtures
 
 *~
 *.sw[mnpcod]

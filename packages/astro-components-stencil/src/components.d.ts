@@ -62,10 +62,6 @@ export namespace Components {
          */
         "indeterminate": boolean;
         /**
-          * Sets the input as invalid
-         */
-        "invalid": boolean;
-        /**
           * The checkbox name
          */
         "name": string;
@@ -24215,10 +24211,6 @@ declare namespace LocalJSX {
           * Toggles indeterminate state of a checkbox
          */
         "indeterminate"?: boolean;
-        /**
-          * Sets the input as invalid
-         */
-        "invalid"?: boolean;
         /**
           * The checkbox name
          */
