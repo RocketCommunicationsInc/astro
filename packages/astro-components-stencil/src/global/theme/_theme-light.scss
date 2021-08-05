@@ -120,10 +120,10 @@
 
     --popupMenuItemBackgroundColor: var(--backgroundColor);
     //equates to --colorSnowflakesLightSelected with alpha of 0.3
-    --popupMenuItemHoverBackgroundColor: rgba(206, 233, 252, 0.3);
-    --popupMenuItemHoverTextColor: var(--primaryDark);
+    --menuItemHoverBackgroundColor: rgba(206, 233, 252, 0.3);
+    --menuItemHoverTextColor: var(--primaryDark);
 
-    --popupMenuItemSeparatorBorderColor: var(--primaryLighter);
+    --menuItemDividerBorderColor: var(--primaryLighter);
 
     /*
 
