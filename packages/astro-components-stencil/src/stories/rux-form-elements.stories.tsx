@@ -51,7 +51,7 @@ export const InputFields = () => html`
           <rux-input-field placeholder="Text input" label="Text input" help-text="Help text"></rux-input-field>
         </li>
         <li>
-          <rux-input-field value=" " label="Is Required" required></rux-input-field>
+          <rux-input-field value=" " label="Is required" required></rux-input-field>
         </li>
         <li>
           <rux-input-field label="Invalid" error-text="Error text" invalid="true"></rux-input-field>
@@ -147,7 +147,7 @@ export const InputFields = () => html`
           <rux-input-field label="Smaller number input" type="number" placeholder="Number Input" small></rux-input-field>
         </li>
         <li class="rux-form-field rux-form-field--small">
-          <rux-input-field label="Smaller Is Required" required small></rux-input-field>
+          <rux-input-field label="Smaller is required" required small></rux-input-field>
         </li>
         <li class="rux-form-field rux-form-field--small">
           <rux-input-field label="Smaller invalid" invalid error-text="Error text" small></rux-input-field>
