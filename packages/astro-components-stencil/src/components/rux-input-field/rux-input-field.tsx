@@ -148,7 +148,7 @@ export class RuxInputField {
                     ></input>
                 </div>
 
-                {this.helpText && (
+                {this.helpText && !this.errorText && (
                     <div class="rux-help-text">{this.helpText}</div>
                 )}
 
