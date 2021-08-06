@@ -7,6 +7,7 @@ import {
     Element,
     Listen,
     Watch,
+    Host,
 } from '@stencil/core'
 
 @Component({
@@ -45,8 +46,9 @@ export class RuxModal {
     })
     ruxModalClosed!: EventEmitter<boolean>
 
-    @Element() private element!: HTMLElement
+    @Element() private element!: HTMLRuxModalElement
 
+    // confirm dialog if Enter key is pressed
     @Listen('keydown')
     handleKeyDown(ev: KeyboardEvent) {
         if (ev.key === 'Enter') {
@@ -57,13 +59,23 @@ export class RuxModal {
         }
     }
 
+    // close modal if click happens outside of dialog
+    @Listen('click')
+    handleClick(ev: MouseEvent) {
+        const el: HTMLElement = ev.composedPath()[0] as HTMLElement
+        if (el.tagName.toLowerCase() === 'rux-modal') {
+            this.ruxModalClosed.emit(false)
+            this.open = false
+        }
+    }
+
     @Watch('open')
     validateName(isOpen: boolean) {
         if (isOpen) {
-            const button = this._getDefaultButton()
-            if (button) {
-                button.focus()
-            }
+            setTimeout(() => {
+                const button = this._getDefaultButton()
+                button && button.focus()
+            })
         }
     }
 
@@ -92,14 +104,17 @@ export class RuxModal {
 
     connectedCallback() {
         this.validate('rux-modal', ['open', 'modalMessage', 'modalTitle'])
+        setTimeout(() => {
+            const button = this._getDefaultButton()
+            button && button.focus()
+        })
     }
 
-    componentDidRender() {
-        const button = this._getDefaultButton()
-        if (button) {
-            button.setAttribute('tabindex', '0')
-            setTimeout(() => button.focus())
-        }
+    componentDidLoad() {
+        setTimeout(() => {
+            const button = this._getDefaultButton()
+            button && button.focus()
+        })
     }
 
     render() {
@@ -113,35 +128,41 @@ export class RuxModal {
         } = this
 
         return (
-            <div class="rux-modal-container">
-                <dialog class="rux-modal" role="dialog" open={open}>
-                    <header class="rux-modal__titlebar">
-                        <h1>{modalTitle}</h1>
-                    </header>
-                    <div class="rux-modal__content">
-                        <div class="rux-modal__message">{modalMessage}</div>
-                        <rux-button-group align="right">
-                            <rux-button
-                                secondary={confirmText.length > 0}
-                                onClick={_handleModalChoice.bind(this)}
-                                data-value="false"
-                                hidden={!denyText}
-                                tabindex="-1"
-                            >
-                                {denyText}
-                            </rux-button>
-                            <rux-button
-                                onClick={_handleModalChoice.bind(this)}
-                                data-value="true"
-                                hidden={!confirmText}
-                                tabindex="0"
-                            >
-                                {confirmText}
-                            </rux-button>
-                        </rux-button-group>
+            open && (
+                <Host>
+                    <div class="rux-modal__wrapper">
+                        <dialog class="rux-modal__dialog" role="dialog">
+                            <header class="rux-modal__titlebar">
+                                <h1>{modalTitle}</h1>
+                            </header>
+                            <div class="rux-modal__content">
+                                <div class="rux-modal__message">
+                                    {modalMessage}
+                                </div>
+                                <rux-button-group h-align="right">
+                                    <rux-button
+                                        secondary={confirmText.length > 0}
+                                        onClick={_handleModalChoice.bind(this)}
+                                        data-value="false"
+                                        hidden={!denyText}
+                                        tabindex="-1"
+                                    >
+                                        {denyText}
+                                    </rux-button>
+                                    <rux-button
+                                        onClick={_handleModalChoice.bind(this)}
+                                        data-value="true"
+                                        hidden={!confirmText}
+                                        tabindex="0"
+                                    >
+                                        {confirmText}
+                                    </rux-button>
+                                </rux-button-group>
+                            </div>
+                        </dialog>
                     </div>
-                </dialog>
-            </div>
+                </Host>
+            )
         )
     }
 

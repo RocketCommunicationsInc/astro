@@ -1,0 +1,22 @@
+name: Unit Test
+on:
+    push:
+        branches: [main, next]
+    pull_request:
+        branches: [main, next]
+    workflow_dispatch:
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Install modules
+              run: npm ci
+
+            - name: Setup Node.js environment
+              uses: actions/setup-node@v2.3.0
+
+            - name: Run Jest Tests
+              run: npm run test

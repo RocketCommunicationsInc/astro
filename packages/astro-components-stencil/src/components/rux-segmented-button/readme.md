@@ -60,16 +60,20 @@ document.addEventListener('change', (e) =>
 
 ## CSS Custom Properties
 
-| Name                                       | Description                                |
-| ------------------------------------------ | ------------------------------------------ |
-| `--segmentedButtonBackgroundColor`         | Segmented button background color          |
-| `--segmentedButtonBorderColor`             | Segmented button border color              |
-| `--segmentedButtonHoverBackgroundColor`    | Segmented button hover background color    |
-| `--segmentedButtonHoverBorderColor`        | Segmented button hover border color        |
-| `--segmentedButtonHoverTextColor`          | Segmented button hover text color          |
-| `--segmentedButtonSelectedBackgroundColor` | Segmented button selected background color |
-| `--segmentedButtonSelectedTextColor`       | Segmented button selected text color       |
-| `--segmentedButtonTextColor`               | Segmented button text color                |
+| Name                                            | Description                                      |
+| ----------------------------------------------- | ------------------------------------------------ |
+| `--segmentedButtonBackgroundColor`              | Segmented button background color                |
+| `--segmentedButtonBorderColor`                  | Segmented button border color                    |
+| `--segmentedButtonHoverBackgroundColor`         | Segmented button hover background color          |
+| `--segmentedButtonHoverBorderColor`             | Segmented button hover border color              |
+| `--segmentedButtonHoverTextColor`               | Segmented button hover text color                |
+| `--segmentedButtonSelectedBackgroundColor`      | Segmented button selected background color       |
+| `--segmentedButtonSelectedBorderColor`          | Segmented button selected border color           |
+| `--segmentedButtonSelectedHoverBackgroundColor` | Segmented button selected hover background color |
+| `--segmentedButtonSelectedHoverBorderColor`     | Segmented button selected hover border color     |
+| `--segmentedButtonSelectedHoverTextColor`       | Segmented button selected hover text color       |
+| `--segmentedButtonSelectedTextColor`            | Segmented button selected text color             |
+| `--segmentedButtonTextColor`                    | Segmented button text color                      |
 
 
 ----------------------------------------------

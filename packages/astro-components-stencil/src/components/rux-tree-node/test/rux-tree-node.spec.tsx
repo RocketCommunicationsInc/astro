@@ -8,9 +8,9 @@ describe('rux-tree-node', () => {
             html: `<rux-tree-node></rux-tree-node>`,
         })
         expect(page.root).toEqualHtml(`
-              <rux-tree-node aria-expanded="false" aria-selected="false" id="node-1" role="treeitem">
+              <rux-tree-node aria-expanded="false" aria-selected="false" role="treeitem">
                 <mock:shadow-root>
-                  <div class="tree-node">
+                  <div class="tree-node" id="node-1">
                     <div class="parent" tabindex="0">
                       <slot></slot>
                     </div>
@@ -35,11 +35,10 @@ describe('rux-tree-node', () => {
           <rux-tree-node
             aria-expanded="false"
             aria-selected="false"
-            id="node-2"
             role="treeitem"
           >
             <mock:shadow-root>
-              <div class="tree-node tree-node--has-children">
+              <div id="node-2" class="tree-node tree-node--has-children">
                 <div class="parent" tabindex="0">
                   <i class="arrow"></i>
                   <slot></slot>
@@ -53,12 +52,11 @@ describe('rux-tree-node', () => {
             <rux-tree-node
               aria-expanded="false"
               aria-selected="false"
-              id="node-3"
               role="treeitem"
               slot="node"
             >
               <mock:shadow-root>
-                <div class="tree-node">
+                <div id="node-3" class="tree-node">
                   <div class="parent" tabindex="0">
                     <slot></slot>
                   </div>

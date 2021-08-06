@@ -58,4 +58,22 @@ describe('rux-progress', () => {
         </rux-progress>
       `)
     })
+
+    it('only renders the value if max is set to ""', async () => {
+        const page = await newSpecPage({
+            components: [RuxProgress],
+            html: `<rux-progress value="20" max="100"></rux-progress>`,
+        })
+        await page?.root?.setAttribute('max', '')
+        await page.waitForChanges()
+        expect(page.root).toEqualHtml(`
+      <rux-progress max="" value="20">
+        <mock:shadow-root>
+        <progress class="rux-progress" value="20" max="NaN"></progress>
+        <output class="rux-progress__value">20</output>
+          <slot></slot>
+        </mock:shadow-root>
+      </rux-progress>
+    `)
+    })
 })

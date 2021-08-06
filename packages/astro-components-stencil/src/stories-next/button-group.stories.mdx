@@ -42,7 +42,7 @@ export const Default = (args) => {
         </style>
         <div style="padding: 10%; display: flex; justify-content: center;">
             <div class="example-container">
-                <rux-button-group .align="${args.align ? args.align : 'right'}">
+                <rux-button-group .hAlign="${args.hAlign ? args.hAlign : 'right'}">
                     <rux-button outline>Cancel</rux-button>
                     <rux-button>Continue</rux-button>
                 </rux-button-group>
@@ -53,7 +53,7 @@ export const Default = (args) => {
 
 <Canvas>
     <Story
-      args={{align: 'right'}}
+      args={{hAlign: 'right'}}
       name="Button Group"
     >
       {Default.bind()}

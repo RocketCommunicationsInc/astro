@@ -7,19 +7,22 @@ import { Prop, Component, h } from '@stencil/core'
 })
 export class RuxButtonGroup {
     /**
-     * The alignment of buttons within the group
+     * The horizontal alignment of buttons within the group
      */
-    @Prop() align: 'left' | 'center' | 'right' = 'left'
+    @Prop({
+        attribute: 'h-align',
+    })
+    hAlign: 'left' | 'center' | 'right' = 'left'
 
     render() {
-        const { align } = this
+        const { hAlign } = this
         return (
             <div
                 class={{
                     'rux-button-group': true,
-                    'rux-button-group--left': align === 'left',
-                    'rux-button-group--right': align === 'right',
-                    'rux-button-group--center': align === 'center',
+                    'rux-button-group--left': hAlign === 'left',
+                    'rux-button-group--right': hAlign === 'right',
+                    'rux-button-group--center': hAlign === 'center',
                 }}
             >
                 <slot></slot>

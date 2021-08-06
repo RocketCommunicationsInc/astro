@@ -50,9 +50,13 @@ export class RuxTree {
     handleNodeSelected(e: CustomEvent<string>) {
         const allNodes = document.querySelectorAll('rux-tree-node')
         if (allNodes) {
-            const previousSelectedNode = Array.from(allNodes).find(
-                (node) => node.selected && node.id !== e.detail
-            )
+            const previousSelectedNode = Array.from(allNodes).find((node) => {
+                return (
+                    node.selected &&
+                    node.shadowRoot?.querySelector('.tree-node')?.id !==
+                        e.detail
+                )
+            })
 
             if (previousSelectedNode) {
                 previousSelectedNode.selected = false

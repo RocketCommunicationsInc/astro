@@ -21,7 +21,7 @@ export const AllIcons = () => {
         Large: 'large',
     }
 
-    const colorKnob = color('Color', '#4dacff')
+    const colorKnob = color('Color', 'var(--primary)')
     const sizeKnob = select('Size', sizes, 'normal')
 
     const capitalize = (s) => {

@@ -1,0 +1,5 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "Running Tests"
+npm run test -- --changedSince=next --passWithNoTests

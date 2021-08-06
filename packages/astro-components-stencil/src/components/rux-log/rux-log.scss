@@ -1,6 +1,13 @@
+/**
+  * @prop() logHeaderBackgroundColor: the log header background
+  */
+
 :host {
     display: block;
     overflow: hidden;
+}
+rux-table {
+    --tableHeaderBackgroundColor: var(--logHeaderBackgroundColor);
 }
 
 .rux-log__header-event-cell {

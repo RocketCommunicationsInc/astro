@@ -8,7 +8,7 @@ describe('rux-button-group', () => {
 
         expect(buttonGroup).toBeTruthy()
         expect(buttonGroup).toEqual({
-            align: 'left',
+            hAlign: 'left',
         })
     })
 
@@ -51,11 +51,11 @@ describe('rux-button-group', () => {
     it('aligns', async () => {
         const page = await newSpecPage({
             components: [RuxButtonGroup],
-            html: `<rux-button-group align="right"></rux-button-group>`,
+            html: `<rux-button-group h-align="right"></rux-button-group>`,
         })
 
         expect(page.root).toEqualHtml(`
-          <rux-button-group align="right">
+          <rux-button-group h-align="right">
             <mock:shadow-root>
               <div class="rux-button-group rux-button-group--right">
                 <slot></slot>

@@ -6,6 +6,7 @@ import {
     Element,
     Component,
     Host,
+    Listen,
     Method,
     Watch,
     h,
@@ -24,7 +25,7 @@ let id = 0
  */
 export class RuxTreeNode {
     componentId = `node-${++id}`
-    @Element() el!: HTMLElement
+    @Element() el!: HTMLRuxTreeNodeElement
     @State() children: Array<HTMLRuxTreeNodeElement> = []
 
     /**
@@ -50,6 +51,36 @@ export class RuxTreeNode {
     @Watch('selected')
     handleSelectedChange(newValue: boolean) {
         this.setSelected(newValue)
+    }
+
+    @Listen('keydown')
+    handleKeyDown(ev: KeyboardEvent) {
+        if (ev.target !== ev.currentTarget) {
+            return true
+        }
+
+        switch (ev.key) {
+            case 'ArrowUp':
+                ev.preventDefault()
+                this._focusNext(-1)
+                break
+            case 'ArrowRight':
+                ev.preventDefault()
+                this._expandNextNode()
+                break
+            case 'ArrowDown':
+                ev.preventDefault()
+                this._focusNext(1)
+                break
+            case 'ArrowLeft':
+                ev.preventDefault()
+                this._collapseParent()
+                break
+            case 'Enter':
+                ev.preventDefault()
+                this.setSelected(true)
+                break
+        }
     }
 
     connectedCallback() {
@@ -80,6 +111,9 @@ export class RuxTreeNode {
     @Method()
     async setSelected(value: boolean) {
         this.selected = value
+        if (value) {
+            this.ruxTreeNodeSelected.emit(this.componentId)
+        }
     }
 
     handleSlotChange() {
@@ -111,7 +145,68 @@ export class RuxTreeNode {
     _handleTreeNodeClick(e: MouseEvent) {
         e.stopPropagation()
         this.setSelected(!this.selected)
-        this.ruxTreeNodeSelected.emit(this.componentId)
+    }
+
+    _expandNextNode() {
+        if (!this.expanded && this._hasChildren) {
+            this.setExpanded(true)
+        }
+    }
+
+    _focusItem(el: HTMLRuxTreeNodeElement) {
+        const parent = el?.shadowRoot?.querySelector('.parent') as HTMLElement
+        if (parent) {
+            parent.focus()
+        }
+    }
+
+    _collapseParent() {
+        if (this.expanded) {
+            this.setExpanded(false)
+        } else if (this.el.parentElement) {
+            const parentTreeItemNode:
+                | Element
+                | null
+                | undefined = this.el.parentElement!.closest(
+                "[role='treeitem']"
+            )
+
+            if (parentTreeItemNode) {
+                this._focusItem(parentTreeItemNode as HTMLRuxTreeNodeElement)
+            }
+        }
+    }
+
+    _focusNext(direction: number) {
+        const visibleNodes = this._getVisibleNodes()
+        const currentIndex: number = visibleNodes.indexOf(this.el)
+        if (currentIndex !== -1) {
+            let nextElement: HTMLRuxTreeNodeElement | undefined =
+                visibleNodes[currentIndex + direction]
+            if (nextElement !== undefined) {
+                // Skips any disabled nodes
+                while (nextElement.hasAttribute('disabled')) {
+                    const offset: number = direction >= 0 ? 1 : -1
+                    nextElement =
+                        visibleNodes[currentIndex + direction + offset]
+                    if (!nextElement) {
+                        break
+                    }
+                }
+            }
+
+            if (nextElement) {
+                this._focusItem(nextElement as HTMLRuxTreeNodeElement)
+            }
+        }
+    }
+
+    _getVisibleNodes() {
+        const rootTree = this.el.closest("[role='tree']") as HTMLRuxTreeElement
+        const nodes = Array.from(rootTree.querySelectorAll('rux-tree-node'))
+        return nodes.filter(
+            (node: HTMLRuxTreeNodeElement) => node.offsetParent !== null
+        )
     }
 
     render() {
@@ -122,12 +217,12 @@ export class RuxTreeNode {
                 role="treeitem"
                 aria-expanded={this.expanded ? 'true' : 'false'}
                 aria-selected={this.selected ? 'true' : 'false'}
-                id={this.componentId}
                 onClick={(event: MouseEvent) =>
                     this._handleTreeNodeClick(event)
                 }
             >
                 <div
+                    id={this.componentId}
                     class={{
                         'tree-node': true,
                         'tree-node--expanded': this.expanded,

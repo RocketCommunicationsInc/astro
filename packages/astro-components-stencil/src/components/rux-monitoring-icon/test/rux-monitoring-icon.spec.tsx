@@ -18,7 +18,9 @@ describe('rux-monitoring-icon', () => {
         <mock:shadow-root>
          <div class="rux-advanced-status" id="rux-advanced-status__icon" title="10210 Altitude for satellite X 100000m">
            <div class="rux-advanced-status__icon-group">
+           <div class="rux-advanced-status__status">
              <rux-status status="standby"></rux-status>
+             </div>
              <rux-icon class="rux-status--standby" icon="altitude"></rux-icon>
              <div class="rux-advanced-status__badge">
                10K

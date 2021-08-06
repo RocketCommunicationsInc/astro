@@ -110,7 +110,7 @@ export const GroupedButtons = () => {
         </style>
         <div style="padding: 10%; display: flex; justify-content: center;">
             <div class="example-container">
-                <rux-button-group .align="${align}">
+                <rux-button-group h-align="${align}">
                     <rux-button secondary>Cancel</rux-button>
                     <rux-button>Continue</rux-button>
                 </rux-button-group>

@@ -1,0 +1,112 @@
+import { withActions } from '@storybook/addon-actions'
+import { html, render } from 'lit-html'
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+
+
+<Meta
+    title="Components/Checkbox"
+    component="rux-checkbox"
+    argTypes={extractArgTypes('rux-checkbox')}
+    parameters={{
+       actions: {
+        handles: [
+          'rux-change rux-input'
+        ],
+      },
+    }}
+/>
+
+# Checkbox
+
+A Checkbox describes a state or value that can be either "True or False.” Checkboxes are not mutually exclusive. More than one Checkbox may be checked at the same time.
+
+## Guidelines
+
+- [Astro UXDS: Checkboxes](https://www.astrouxds.com/ui-components/checkbox)
+- [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)
+
+
+export const Default = () => {
+    return html` <style>
+            section {
+                display: flex;
+                justify-content: center;
+                padding: 10vh 5vw 0;
+            }
+            section ul {
+                margin-right: 1rem;
+                margin-bottom: 0;
+                list-style: none;
+            }
+        </style>
+        <section>
+            <ul>
+                <li>
+                    <rux-checkbox id="checked" name="checkedOne" checked>
+                        Checked
+                    </rux-checkbox>
+                </li>
+                <li>
+                    <rux-checkbox id="unchecked" name="uncheckedOne">
+                        Unchecked
+                    </rux-checkbox>
+                </li>
+                <li>
+                    <rux-checkbox
+                        id="disabled"
+                        name="disabled"
+                        checked
+                        disabled
+                    >
+                        Disabled
+                    </rux-checkbox>
+                </li>
+                <li>
+                    <rux-checkbox
+                        name="indeterminate"
+                        id="checkbox4c"
+                        checked
+                        indeterminate
+                    >
+                        Indeterminate
+                    </rux-checkbox>
+                </li>
+                <!-- <li>
+                    <rux-checkbox
+                        name="checkboxGroup"
+                        id="checkbox4c"
+                        checked
+                        help-text="This is an example help text"
+                    >
+                        With Help Text
+                    </rux-checkbox>
+                </li>
+                <li>
+                    <rux-checkbox
+                        name="checkboxGroup"
+                        id="checkbox4c"
+                        checked
+                        required
+                        error-text="This is an example error text"
+                    >
+                        With Error Text
+                    </rux-checkbox>
+                </li> -->
+            </ul>
+        </section>`
+}
+
+<Canvas>
+    <Story name="Default">
+        {Default.bind()}
+    </Story>
+</Canvas>
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import RuxCheckbox from '@astrouxds/astro-web-components/dist/components/rux-checkbox.js'
+customElements.define('rux-checkbox', RuxCheckbox)
+```

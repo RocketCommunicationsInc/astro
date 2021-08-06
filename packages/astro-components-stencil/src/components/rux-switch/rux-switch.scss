@@ -1,13 +1,21 @@
 :host {
     display: block;
-    /** @prop --switchBackgroundColor: the Switch off color */
-    --switchBackgroundColor: var(--backgroundColor);
-    /** @prop --switchHoverOnColor: the Switch hover on color */
-    --switchHoverOnColor: var(--primary);
-    /** @prop --switchHoverOffColor: the Switch hover off color */
-    --switchHoverOffColor: var(--primary);
-    /** @prop --switchOffBorderColor: the Switch off border color*/
-    --switchOffBorderColor: rgb(43, 101, 155);
+    /**
+      * @prop --switchBackgroundColor: the Switch off color
+      */
+
+    /**
+      * @prop --switchHoverOnColor: the Switch hover on color
+      */
+
+    /**
+      * @prop --switchHoverOffColor: the Switch hover off color
+      */
+
+    /**
+      * @prop --switchOffBorderColor: the Switch off border color
+      */
+    padding-left: 1%;
 }
 
 .rux-switch {

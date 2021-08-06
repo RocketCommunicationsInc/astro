@@ -2,21 +2,17 @@
     /**
     * @prop --clockTextColor: the color of the clock text
     */
-    --clockTextColor: var(--defaultText);
 
     /**
     * @prop --clockBackgroundColor: the background color for the clock
     */
-    --clockBackgroundColor: var(--backgroundColor);
     /**
     * @prop --clockBorderColor: the border color for the clock
     */
-    --clockBorderColor: var(--surfaceElements);
 
     /**
     * @prop --clockLabelColor: the label color for the clock
     */
-    --clockLabelColor: var(--defaultText);
 
     display: flex;
     margin: 0 1rem;

@@ -18,6 +18,7 @@ export const Switch = () => {
                 .disabled=${disabled}
                 .checked=${checked}
                 id="01"
+                style="padding-left: 0%;"
             ></rux-switch>
         </div>
     `

@@ -117,13 +117,13 @@ export const Default = (args) => {
 
 The small property may be passed as a simple attribute on the Astro UXDS Tabs container element:
 
-export const Small = () => {
+export const Small = (args) => {
 return html`
     <div style="display: flex; flex-flow: column;">
         <div
             style="border: rgba(255,255,255, .25) dashed 1px; margin: 1vw 1vw 0; padding: 2px;"
         >
-            <rux-tabs small id="tab-set-id-2">
+            <rux-tabs ?small="${args.small}" id="tab-set-id-2">
                 <rux-tab id="tab-id-2-1">Tab 1</rux-tab>
                 <rux-tab id="tab-id-2-2">Tab 2</rux-tab>
                 <rux-tab id="tab-id-2-3" disabled>Tab 3 (disabled) </rux-tab>
@@ -151,7 +151,12 @@ return html`
 }
 
 <Canvas>
-    <Story name="Small">
+    <Story
+      name="Small"
+      args={{
+        small: true
+      }}
+    >
       {Small.bind()}
     </Story>
 </Canvas>

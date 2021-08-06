@@ -3,73 +3,63 @@
     /**
      * @prop --buttonTextColor: Button text color
      */
-    --buttonTextColor: var(--primaryElementText);
 
     /**
      * @prop --buttonBackgroundColor: Button background color
      */
-    --buttonBackgroundColor: var(--primary);
 
     /**
      * @prop --buttonBorderColor: Button border color
      */
-    --buttonBorderColor: transparent;
 
     /* Button Hover State */
     /**
      * @prop --buttonHoverTextColor: Button hover text color
      */
-    --buttonHoverTextColor: var(--primaryElementText);
+
     /**
      * @prop --buttonHoverBackgroundColor: Button hover background color
      */
-    --buttonHoverBackgroundColor: var(--primaryLight);
     /**
      * @prop --buttonHoverBorderColor: Button hover border color
      */
-    --buttonHoverBorderColor: transparent;
 
     /* Button Active State */
     /**
      * @prop --buttonActiveControlTextColor: Button active text color
      */
-    --buttonActiveControlTextColor: var(--defaultText);
+
     /**
      * @prop --buttonActiveBackgroundColor: Button active background color
      */
-    --buttonActiveBackgroundColor: var(--primary);
+
     /**
      * @prop --buttonActiveBorderColor: Button active border color
      */
-    --buttonActiveBorderColor: var(--primary);
 
-    /* Outline Button Variant */
     /**
      * @prop --buttonSecondaryTextColor: Button secondary text color
      */
-    --buttonSecondaryTextColor: var(--primary);
+
     /**
      * @prop --buttonSecondaryBackgroundColor: Button secondary background color
      */
-    --buttonSecondaryBackgroundColor: transparent;
+
     /**
      * @prop --buttonSecondaryBorderColor: Button secondary border color
      */
-    --buttonSecondaryBorderColor: var(--colorPrimary, rgb(0, 90, 143));
 
-    /* secondary Button Variant Hover State */
     /**
      * @prop --buttonSecondaryHoverTextColor: Button secondary hover text color
      */
-    --buttonSecondaryHoverTextColor: var(--primaryLight);
+
     /**
      * @prop --buttonSecondaryHoverBackgroundColor:  Button secondary hover background color
      */
-    --buttonSecondaryHoverBackgroundColor: transparent;
+
     /**
      * @prop --buttonSecondaryHoverBorderColor:  Button secondary hover border color
      */
-    --buttonSecondaryHoverBorderColor: var(--primaryLight);
 }
 
 .rux-button {
@@ -81,7 +71,6 @@
 
     height: 2.125rem;
     min-width: 2.25rem;
-    /* max-width: 10.125rem; */
 
     border-radius: var(--buttonBorderRadius);
 
@@ -100,10 +89,9 @@
 
     ::slotted(rux-icon),
     rux-icon {
-        height: 1.5rem;
-        width: 1.5rem;
+        height: 1rem;
+        width: 1rem;
         margin-right: 0.625rem;
-        margin-left: -0.625rem;
     }
 
     &:disabled {
@@ -180,10 +168,13 @@
     }
 
     &--small {
-        font-size: var(--smallLabelFontSize);
         height: 1.625rem;
         padding: 0 1rem;
         line-height: 1;
+        .rux-button--icon-only {
+            width: 3rem;
+            height: 1.625rem;
+        }
 
         &.rux-button {
             &__icon {
@@ -199,15 +190,16 @@
     }
 
     &--large {
-        font-size: var(--largeLabelFontSize);
         height: 2.875rem;
         min-width: 3rem;
         padding: 0 1rem;
+        .rux-button--icon-only {
+            width: 3rem;
+            height: 2.875rem;
+        }
         .rux-button__icon {
-            height: 1.75rem;
-            width: 1.75rem;
-            margin-left: -0.8rem;
-            /* margin: -0.65rem 0.25rem -0.3rem calc((1.5rem - 0.625rem) * -1); */
+            height: 1rem;
+            width: 1rem;
         }
     }
 
@@ -224,6 +216,8 @@
 
     &--icon-only {
         font-size: 0px;
+        width: 3rem;
+        hieght: 2.125rem;
         .rux-button__icon {
             margin-left: -0.625rem;
             margin-right: -0.625rem;
@@ -250,15 +244,14 @@
 
 .rux-button--small ::slotted(rux-icon),
 .rux-button--small rux-icon {
-    height: 0.875rem;
-    width: 0.875rem;
+    height: 1rem;
+    width: 1rem;
 }
 
 .rux-button--large ::slotted(rux-icon),
 .rux-button--large rux-icon {
-    height: 1.75rem;
-    width: 1.75rem;
-    margin-left: -0.8rem;
+    height: 1rem;
+    width: 1rem;
 }
 
 .rux-button rux-icon {
