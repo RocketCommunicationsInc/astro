@@ -6,6 +6,7 @@ import {
     EventEmitter,
     Element,
     Listen,
+    Watch,
 } from '@stencil/core'
 
 let id = 0
@@ -84,9 +85,27 @@ export class RuxRadio {
         }
     }
 
+    @Watch('checked')
+    handleWatch() {
+        this.checkMultipleChecks()
+    }
+
+    checkMultipleChecks() {
+        const radioSiblings = document.querySelectorAll(
+            `rux-radio[name='${this.el.getAttribute('name')}']`
+        )
+        if (this.checked) {
+            radioSiblings.forEach((sib) => {
+                if (sib.getAttribute('value') != this.value) {
+                    sib.removeAttribute('checked')
+                }
+            })
+        }
+    }
     componentWillLoad() {
         this.onChange = this.onChange.bind(this)
         this.onInput = this.onInput.bind(this)
+        this.checkMultipleChecks()
     }
 
     private onChange(e: Event): void {
