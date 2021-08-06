@@ -1,8 +1,8 @@
 describe('Checkbox', () => {
     beforeEach(() => {
-        cy.visitStory('components-form-elements--checkboxes')
+        cy.visitStory('components-radio--default-story')
     })
-    it('renders', async () => {
-        cy.get('rux-checkbox').should('have.class', 'hydrated')
+    it('renders', () => {
+        cy.get('rux-radio').should('have.class', 'hydrated')
     })
 })

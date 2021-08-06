@@ -1,8 +1,8 @@
 describe('Checkbox', () => {
     beforeEach(() => {
-        cy.visitStory('components-form-elements--checkboxes')
+        cy.visitStory('components-checkbox--default-story')
     })
-    it('renders', async () => {
+    it('renders', () => {
         cy.get('rux-checkbox').should('have.class', 'hydrated')
     })
 })

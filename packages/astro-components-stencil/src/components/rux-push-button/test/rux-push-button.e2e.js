@@ -1,8 +1,8 @@
 describe('Push Button', () => {
     beforeEach(() => {
-        cy.visitStory('components-push-button--push-button-story')
+        cy.visitStory('components-push-button--push-button')
     })
-    it('renders', async () => {
+    it('renders', () => {
         cy.get('rux-push-button').should('have.class', 'hydrated')
     })
 })

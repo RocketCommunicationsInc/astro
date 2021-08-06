@@ -2,7 +2,7 @@ describe('Button', () => {
     beforeEach(() => {
         cy.visitStory('components-button--default-story')
     })
-    it('renders', async () => {
+    it('renders', () => {
         cy.get('rux-button').should('have.class', 'hydrated')
     })
 })

@@ -2,7 +2,7 @@ describe('Notification', () => {
     beforeEach(() => {
         cy.visitStory('components-notification--default-story')
     })
-    it('renders', async () => {
+    it('renders', () => {
         cy.get('rux-notification').should('have.class', 'hydrated')
     })
 

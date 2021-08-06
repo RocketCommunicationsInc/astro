@@ -4,7 +4,7 @@ describe('Monitoring Progress Icon', () => {
             'components-monitoring-progress-icon--monitoring-progress-icon'
         )
     })
-    it('renders', async () => {
+    it('renders', () => {
         cy.get('rux-monitoring-progress-icon').should('have.class', 'hydrated')
     })
 })
