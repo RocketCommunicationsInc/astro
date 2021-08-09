@@ -301,7 +301,11 @@ If you're already utilizing a build system that supports tree shaking and want t
 
 ```js
 import { RuxButton } from 'astro-web-components/dist/components/rux-button'
-import { RuxIcon } from 'astro-web-components/dist/components/rux-icon'
 customElements.define('rux-button', RuxButton)
-customElements.define('rux-icon', RuxIcon)
+
+// If using an icon
+// import { RuxIcon } from 'astro-web-components/dist/components/rux-icon'
+// Import the specific icon being used
+// customElements.define('rux-icon', RuxIcon)
+// customElements.define('rux-icon-*', RuxIcon*)
 ```
