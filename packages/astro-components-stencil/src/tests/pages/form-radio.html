@@ -21,54 +21,97 @@
 
     <body class="dark-theme">
         <div style="padding: 10%; display: flex; justify-content: center">
-            <form id="form">
-                <rux-radio
-                    id="ruxRadioGreen"
-                    name="ruxColor"
-                    value="green"
-                ></rux-radio>
-                <rux-radio
-                    id="ruxRadioBlue"
-                    name="ruxColor"
-                    value="blue"
-                ></rux-radio>
-                <rux-radio
-                    id="ruxRadioRed"
-                    name="ruxColor"
-                    value="red"
-                ></rux-radio>
+            <div style="width: 60%">
+                <form id="form">
+                    <rux-radio
+                        id="ruxRadioGreen"
+                        name="ruxColor"
+                        value="green"
+                    ></rux-radio>
+                    <rux-radio
+                        disabled
+                        id="ruxRadioPurpleDisabled"
+                        name="ruxColor"
+                        value="purple"
+                    ></rux-radio>
+                    <rux-radio
+                        id="ruxRadioBlue"
+                        name="ruxColor"
+                        value="blue"
+                    ></rux-radio>
+                    <rux-radio
+                        id="ruxRadioRed"
+                        name="ruxColor"
+                        value="red"
+                    ></rux-radio>
 
-                <input
-                    id="nativeRadioGreen"
-                    type="radio"
-                    name="nativeColor"
-                    value="green"
-                />
-                <input
-                    id="nativeRadioBlue"
-                    type="radio"
-                    name="nativeColor"
-                    value="blue"
-                />
-                <input
-                    id="nativeRadioRed"
-                    type="radio"
-                    name="nativeColor"
-                    value="red"
-                />
+                    <input
+                        id="nativeRadioGreen"
+                        type="radio"
+                        name="nativeColor"
+                        value="green"
+                    />
 
-                <button type="submit">submit</button>
-            </form>
-            <ul id="log"></ul>
+                    <input
+                        id="nativeRadioBlue"
+                        type="radio"
+                        name="nativeColor"
+                        value="blue"
+                    />
+                    <input
+                        id="nativeRadioRed"
+                        type="radio"
+                        name="nativeColor"
+                        value="red"
+                    />
+
+                    <button type="submit">submit</button>
+                </form>
+
+                <form id="form-no-value">
+                    <rux-radio id="ruxRadioGreen2" name="ruxColor"></rux-radio>
+                    <rux-radio id="ruxRadioBlue2" name="ruxColor"></rux-radio>
+                    <rux-radio id="ruxRadioRed2" name="ruxColor"></rux-radio>
+
+                    <input
+                        id="nativeRadioGreen2"
+                        type="radio"
+                        name="nativeColor"
+                    />
+                    <input
+                        id="nativeRadioBlue2"
+                        type="radio"
+                        name="nativeColor"
+                    />
+                    <input
+                        id="nativeRadioRed2"
+                        type="radio"
+                        name="nativeColor"
+                    />
+
+                    <button type="submit">submit</button>
+                </form>
+            </div>
+            <div style="width: 30%">
+                <ul id="log"></ul>
+            </div>
             <script>
                 const log = document.getElementById('log')
-                const form = document.getElementById('form')
-                form.addEventListener('submit', (e) => {
-                    event.preventDefault()
-                    // trigger formdata event
-                    new FormData(form)
-                })
-                form.addEventListener('formdata', (e) => {
+
+                const forms = document.querySelectorAll('form')
+
+                for (const form of forms) {
+                    form.addEventListener('submit', (e) => {
+                        event.preventDefault()
+                        // trigger formdata event
+                        new FormData(form)
+                    })
+
+                    form.addEventListener('formdata', logFormData)
+                }
+
+                function logFormData(e) {
+                    const status = document.getElementById('status')
                     log.innerHTML = ''
                     // Get the form data from the event object
                     let data = e.formData
@@ -78,7 +121,7 @@
                         item.innerHTML = `<strong>${value[0]}:</strong>${value[1]}`
                         log.appendChild(item)
                     }
-                })
+                }
             </script>
         </div>
     </body>

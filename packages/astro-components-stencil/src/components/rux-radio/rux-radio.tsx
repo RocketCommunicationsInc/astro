@@ -8,6 +8,7 @@ import {
     Listen,
     Watch,
 } from '@stencil/core'
+import { renderHiddenInput } from '../../utils/utils'
 
 let id = 0
 
@@ -134,6 +135,15 @@ export class RuxRadio {
             onInput,
         } = this
 
+        if (this.checked) {
+            renderHiddenInput(
+                true,
+                this.el,
+                this.name,
+                this.value ? this.value : 'on',
+                this.disabled
+            )
+        }
         return (
             <div class="rux-form-field">
                 <div
