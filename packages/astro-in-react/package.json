@@ -33,7 +33,7 @@
     "typescript": "^3.3.4000"
   },
   "dependencies": {
-    "@astrouxds/astro-web-components": "^0.0.9"
+    "@astrouxds/astro-web-components": "0.0.10"
   },
   "peerDependencies": {
     "react": "^16.7.0",
