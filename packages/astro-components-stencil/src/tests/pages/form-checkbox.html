@@ -21,34 +21,65 @@
 
     <body class="dark-theme">
         <div style="padding: 10%; display: flex; justify-content: center">
-            <form id="form">
-                <rux-checkbox
-                    id="ruxCheckbox"
-                    name="ruxCheckbox"
-                    value="foo"
-                    label="Checkbox"
-                >
-                    Checkbox
-                </rux-checkbox>
+            <div style="width: 60%">
+                <form id="form" style="width: 100%">
+                    <rux-checkbox
+                        id="ruxCheckbox"
+                        name="ruxCheckbox"
+                        value="foo"
+                    >
+                        Checkbox
+                    </rux-checkbox>
 
-                <input
-                    id="nativeCheckbox"
-                    type="checkbox"
-                    value="foo"
-                    name="nativeCheckbox"
-                />
-                <button type="submit">submit</button>
-            </form>
-            <ul id="log"></ul>
+                    <rux-checkbox
+                        id="ruxCheckboxDisabled"
+                        name="ruxCheckboxDisabled"
+                        disabled
+                    >
+                        Disabled
+                    </rux-checkbox>
+
+                    <input
+                        id="nativeCheckbox"
+                        type="checkbox"
+                        name="nativeCheckbox"
+                        value="foo"
+                    />
+                    <button id="submit" type="submit">submit</button>
+                </form>
+
+                <form id="form-no-value" style="margin-top: 1rem; width: 100%">
+                    <rux-checkbox id="ruxCheckbox2" name="ruxCheckbox">
+                        Checkbox
+                    </rux-checkbox>
+
+                    <input
+                        id="nativeCheckbox2"
+                        type="checkbox"
+                        name="nativeCheckbox"
+                    />
+                    <button type="submit">submit</button>
+                </form>
+            </div>
+            <div style="width: 30%">
+                <ul id="log"></ul>
+            </div>
             <script>
                 const log = document.getElementById('log')
-                const form = document.getElementById('form')
-                form.addEventListener('submit', (e) => {
-                    event.preventDefault()
-                    // trigger formdata event
-                    new FormData(form)
-                })
-                form.addEventListener('formdata', (e) => {
+                const forms = document.querySelectorAll('form')
+
+                for (const form of forms) {
+                    form.addEventListener('submit', (e) => {
+                        event.preventDefault()
+                        // trigger formdata event
+                        new FormData(form)
+                    })
+
+                    form.addEventListener('formdata', logFormData)
+                }
+
+                function logFormData(e) {
+                    const status = document.getElementById('status')
                     log.innerHTML = ''
                     // Get the form data from the event object
                     let data = e.formData
@@ -58,7 +89,7 @@
                         item.innerHTML = `<strong>${value[0]}:</strong>${value[1]}`
                         log.appendChild(item)
                     }
-                })
+                }
             </script>
         </div>
     </body>
