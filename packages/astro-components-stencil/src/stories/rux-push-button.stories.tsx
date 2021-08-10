@@ -61,17 +61,25 @@ export const AllPushButtonVariants = () => html`
         style="padding: 8vh 2vw; display: flex; flex-flow: row wrap; justify-content: space-evenly;"
     >
         <ul class="button-list">
-            <li><rux-push-button>Push button</rux-push-button></li>
+            <li><rux-push-button label="Push button"></rux-push-button></li>
             <li>
-                <rux-push-button checked>Push button checked</rux-push-button>
+                <rux-push-button
+                    checked
+                    label="Push button checked"
+                ></rux-push-button>
             </li>
             <li>
-                <rux-push-button disabled>Push button disabled</rux-push-button>
+                <rux-push-button
+                    disabled
+                    label="Push button disabled"
+                ></rux-push-button>
             </li>
             <li>
-                <rux-push-button checked disabled
-                    >Push button disabled checked</rux-push-button
-                >
+                <rux-push-button
+                    checked
+                    disabled
+                    label="Push button checked disabled"
+                ></rux-push-button>
             </li>
         </ul>
     </div>

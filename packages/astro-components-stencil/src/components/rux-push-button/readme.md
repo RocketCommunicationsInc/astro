@@ -113,14 +113,16 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 | ---------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | --------------- |
 | `checked`  | `checked`  | Checks the push button via HTML `checked` attribute. Push button takes on a distinct "enabled" or "selected" visual state.                                                                                | `boolean` | `false`         |
 | `disabled` | `disabled` | Disables the push button via HTML `disabled` attribute. Button takes on a distinct disabled visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored. | `boolean` | `false`         |
-| `label`    | `label`    | The label of the push button. Can be overridden by placing content in the default slot of the rusx-push-button component.                                                                                 | `string`  | `'Push Button'` |
+| `label`    | `label`    | The label of the push button.                                                                                                                                                                             | `string`  | `'Push Button'` |
+| `name`     | `name`     | The name of the push button.                                                                                                                                                                              | `string`  | `''`            |
+| `value`    | `value`    | The value of the push button.                                                                                                                                                                             | `string`  | `''`            |
 
 
 ## Events
 
-| Event        | Description                                    | Type                                 |
-| ------------ | ---------------------------------------------- | ------------------------------------ |
-| `rux-change` | Emitted when the checked property has changed. | `CustomEvent<PushButtonChangeEvent>` |
+| Event        | Description                                                                                                                                                                    | Type               |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------ |
+| `rux-change` | Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) | `CustomEvent<any>` |
 
 
 ## CSS Custom Properties
