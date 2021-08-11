@@ -15,6 +15,7 @@ describe('rux-textarea', () => {
           <textarea aria-invalid="false" class="rux-textarea" id="input-1" value=""></textarea>
         </div>
         </mock:shadow-root>
+        <input class="aux-input" type="hidden" value="">
       </rux-textarea>
     `)
     })

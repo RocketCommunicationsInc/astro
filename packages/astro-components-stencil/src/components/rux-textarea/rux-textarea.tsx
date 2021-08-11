@@ -1,4 +1,13 @@
-import { Component, Host, h, Event, EventEmitter, Prop } from '@stencil/core'
+import {
+    Component,
+    Host,
+    h,
+    Event,
+    EventEmitter,
+    Prop,
+    Element,
+} from '@stencil/core'
+import { renderHiddenInput } from '../../utils/utils'
 
 let id = 0
 
@@ -84,6 +93,8 @@ export class RuxTextarea {
      */
     @Event({ eventName: 'rux-input' }) ruxInput!: EventEmitter
 
+    @Element() el!: HTMLRuxTextareaElement
+
     connectedCallback() {
         this.onChange = this.onChange.bind(this)
         this.onInput = this.onInput.bind(this)
@@ -102,6 +113,7 @@ export class RuxTextarea {
     }
 
     render() {
+        renderHiddenInput(true, this.el, this.name, this.value, this.disabled)
         return (
             <Host>
                 <div
