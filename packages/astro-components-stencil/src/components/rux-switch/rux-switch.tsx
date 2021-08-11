@@ -1,13 +1,7 @@
-import {
-    Component,
-    Event,
-    Watch,
-    EventEmitter,
-    Prop,
-    Host,
-    h,
-} from '@stencil/core'
-import { SwitchChangeEvent } from './rux-switch.model'
+import { Component, Event, EventEmitter, Prop, h, Element } from '@stencil/core'
+import { renderHiddenInput } from '../../utils/utils'
+
+let id = 0
 
 @Component({
     tag: 'rux-switch',
@@ -15,66 +9,134 @@ import { SwitchChangeEvent } from './rux-switch.model'
     shadow: true,
 })
 export class RuxSwitch {
-    private inputId = `rux-switch-${id++}`
+    switchId = `rux-switch-${++id}`
+    @Element() el!: HTMLRuxSwitchElement
+
     /**
-     * The name of the form input element
+     * The help or explanation text
      */
-    @Prop() name?: string
+    @Prop({ attribute: 'help-text' }) helpText?: string
+
     /**
-     * Disables the button via HTML `disabled` attribute.
-     * Button takes on a distinct visual state.
-     * Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored.
+     * The validation error text
+     */
+    @Prop({ attribute: 'error-text' }) errorText?: string
+
+    /**
+     * The switch name
+     */
+    @Prop() name = ''
+
+    /**
+     * The switch value
+     */
+    @Prop({ reflect: true, mutable: true }) value: string = ''
+
+    /**
+     * Toggles checked state of a switch
+     */
+    @Prop({ reflect: true, mutable: true }) checked: boolean = false
+
+    /**
+     * Disables the switch via HTML disabled attribute. Switch takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
      */
     @Prop({ reflect: true }) disabled: boolean = false
 
     /**
-     * Checks the button via HTML `checked` attribute. Button takes on a distinct "enabled" or "selected" visual state.
+     * Sets the switch as required
      */
-    @Prop({ mutable: true }) checked: boolean = false
+    @Prop() required: boolean = false
 
     /**
-     * Emitted when the value property has changed.
+     * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
      */
-    @Event({ eventName: 'rux-change' })
-    ruxChange!: EventEmitter<SwitchChangeEvent>
+    @Event({ eventName: 'rux-change' }) ruxChange!: EventEmitter
 
-    @Watch('checked')
-    checkedChanged(checked: boolean) {
-        this.ruxChange.emit({
-            checked: checked,
-        })
+    /**
+     * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
+     */
+    @Event({ eventName: 'rux-input' }) ruxInput!: EventEmitter
+
+    componentWillLoad() {
+        this.onChange = this.onChange.bind(this)
+        this.onInput = this.onInput.bind(this)
     }
 
-    handleClick(event: MouseEvent) {
-        event.preventDefault()
-        this.checked = !this.checked
+    private onChange(e: Event): void {
+        const target = e.target as HTMLInputElement
+        this.checked = target.checked
+        this.ruxChange.emit(this.checked)
+    }
+
+    private onInput(e: Event) {
+        const target = e.target as HTMLInputElement
+        this.value = target.value
+        this.ruxInput.emit()
     }
 
     render() {
-        const { inputId, name, disabled, checked } = this
+        const {
+            switchId,
+            checked,
+            disabled,
+            errorText,
+            helpText,
+            name,
+            required,
+            value,
+        } = this
+
+        renderHiddenInput(
+            true,
+            this.el,
+            this.name,
+            this.value ? this.value : 'on',
+            this.disabled,
+            this.checked
+        )
+
         return (
-            <Host
+            <div
+                class="rux-form-field"
                 aria-checked={`${checked}`}
                 aria-hidden={disabled ? 'true' : null}
                 role="switch"
             >
-                <div class="rux-switch">
+                <div
+                    class={{
+                        'rux-switch': true,
+                        'rux-switch--has-error': required,
+                        'rux-switch--has-text':
+                            errorText !== undefined || helpText !== undefined,
+                    }}
+                >
                     <input
-                        aria-checked={`${checked}`}
-                        id={inputId}
-                        class="rux-switch__input"
-                        type="checkbox"
-                        name={name}
                         role="switch"
+                        type="checkbox"
+                        class="rux-switch__input"
+                        name={name}
+                        id={switchId}
                         disabled={disabled}
+                        required={required}
                         checked={checked}
-                        onClick={(e) => this.handleClick(e)}
+                        value={value}
+                        aria-checked={`${checked}`}
+                        onChange={this.onChange}
+                        onInput={this.onInput}
                     />
-                    <label class="rux-switch__button" htmlFor={inputId}></label>
+                    <label
+                        class="rux-switch__button"
+                        htmlFor={switchId}
+                    ></label>
                 </div>
-            </Host>
+                {this.helpText && !this.errorText && (
+                    <div class="rux-help-text">{helpText}</div>
+                )}
+
+                {this.errorText && (
+                    <div class="rux-error-text">{errorText}</div>
+                )}
+            </div>
         )
     }
 }
-
-let id = 0

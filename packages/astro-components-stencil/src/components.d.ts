@@ -9,7 +9,6 @@ import { Classification, Status } from "./common/commonTypes.module";
 import { LogRow } from "./components/rux-log/rux-log.model";
 import { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
 import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
-import { SwitchChangeEvent } from "./components/rux-switch/rux-switch.model";
 export namespace Components {
     interface RuxButton {
         /**
@@ -16386,17 +16385,33 @@ export namespace Components {
     }
     interface RuxSwitch {
         /**
-          * Checks the button via HTML `checked` attribute. Button takes on a distinct "enabled" or "selected" visual state.
+          * Toggles checked state of a switch
          */
         "checked": boolean;
         /**
-          * Disables the button via HTML `disabled` attribute. Button takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored.
+          * Disables the switch via HTML disabled attribute. Switch takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
          */
         "disabled": boolean;
         /**
-          * The name of the form input element
+          * The validation error text
          */
-        "name"?: string;
+        "errorText"?: string;
+        /**
+          * The help or explanation text
+         */
+        "helpText"?: string;
+        /**
+          * The switch name
+         */
+        "name": string;
+        /**
+          * Sets the switch as required
+         */
+        "required": boolean;
+        /**
+          * The switch value
+         */
+        "value": string;
     }
     interface RuxTab {
         /**
@@ -40592,21 +40607,41 @@ declare namespace LocalJSX {
     }
     interface RuxSwitch {
         /**
-          * Checks the button via HTML `checked` attribute. Button takes on a distinct "enabled" or "selected" visual state.
+          * Toggles checked state of a switch
          */
         "checked"?: boolean;
         /**
-          * Disables the button via HTML `disabled` attribute. Button takes on a distinct visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored.
+          * Disables the switch via HTML disabled attribute. Switch takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
          */
         "disabled"?: boolean;
         /**
-          * The name of the form input element
+          * The validation error text
+         */
+        "errorText"?: string;
+        /**
+          * The help or explanation text
+         */
+        "helpText"?: string;
+        /**
+          * The switch name
          */
         "name"?: string;
         /**
-          * Emitted when the value property has changed.
+          * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */
-        "onRux-change"?: (event: CustomEvent<SwitchChangeEvent>) => void;
+        "onRux-change"?: (event: CustomEvent<any>) => void;
+        /**
+          * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
+         */
+        "onRux-input"?: (event: CustomEvent<any>) => void;
+        /**
+          * Sets the switch as required
+         */
+        "required"?: boolean;
+        /**
+          * The switch value
+         */
+        "value"?: string;
     }
     interface RuxTab {
         /**
