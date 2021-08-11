@@ -1,4 +1,4 @@
-describe('Checkbox', () => {
+describe('Radio', () => {
     beforeEach(() => {
         cy.visitStory('components-radio--default-story')
     })

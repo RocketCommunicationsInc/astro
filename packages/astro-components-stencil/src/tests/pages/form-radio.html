@@ -23,28 +23,30 @@
         <div style="padding: 10%; display: flex; justify-content: center">
             <div style="width: 60%">
                 <form id="form">
-                    <rux-radio
-                        id="ruxRadioGreen"
-                        name="ruxColor"
-                        value="green"
-                    ></rux-radio>
-                    <rux-radio
-                        disabled
-                        id="ruxRadioPurpleDisabled"
-                        name="ruxColor"
-                        value="purple"
-                    ></rux-radio>
-                    <rux-radio
-                        id="ruxRadioBlue"
-                        name="ruxColor"
-                        value="blue"
-                    ></rux-radio>
-                    <rux-radio
-                        id="ruxRadioRed"
-                        name="ruxColor"
-                        value="red"
-                    ></rux-radio>
-
+                    <rux-radio-group name="ruxColor">
+                        <rux-radio
+                            id="ruxRadioGreen"
+                            name="ruxColor"
+                            value="green"
+                        ></rux-radio>
+                        <rux-radio
+                            disabled
+                            id="ruxRadioPurpleDisabled"
+                            name="ruxColor"
+                            checked
+                            value="purple"
+                        ></rux-radio>
+                        <rux-radio
+                            id="ruxRadioBlue"
+                            name="ruxColor"
+                            value="blue"
+                        ></rux-radio>
+                        <rux-radio
+                            id="ruxRadioRed"
+                            name="ruxColor"
+                            value="red"
+                        ></rux-radio>
+                    </rux-radio-group>
                     <input
                         id="nativeRadioGreen"
                         type="radio"
@@ -68,25 +70,44 @@
                     <button type="submit">submit</button>
                 </form>
 
-                <form id="form-no-value">
-                    <rux-radio id="ruxRadioGreen2" name="ruxColor"></rux-radio>
-                    <rux-radio id="ruxRadioBlue2" name="ruxColor"></rux-radio>
-                    <rux-radio id="ruxRadioRed2" name="ruxColor"></rux-radio>
-
+                <form id="form-checked-disabled">
+                    <rux-radio-group value="red" name="ruxColor">
+                        <rux-radio
+                            id="ruxRadioGreen2"
+                            name="ruxColor2"
+                            value="green"
+                        ></rux-radio>
+                        <rux-radio
+                            id="ruxRadioBlue2"
+                            name="ruxColor2"
+                            value="blue"
+                        ></rux-radio>
+                        <rux-radio
+                            id="ruxRadioRed2"
+                            name="ruxColor2"
+                            disabled
+                            value="red"
+                        ></rux-radio>
+                    </rux-radio-group>
                     <input
                         id="nativeRadioGreen2"
                         type="radio"
                         name="nativeColor"
+                        value="green"
                     />
                     <input
                         id="nativeRadioBlue2"
                         type="radio"
                         name="nativeColor"
+                        value="blue"
                     />
                     <input
                         id="nativeRadioRed2"
                         type="radio"
                         name="nativeColor"
+                        checked
+                        disabled
+                        value="red"
                     />
 
                     <button type="submit">submit</button>

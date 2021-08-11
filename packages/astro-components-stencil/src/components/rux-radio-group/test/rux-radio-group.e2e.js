@@ -1,4 +1,11 @@
-describe('Radio with Form', () => {
+describe('Radio Group', () => {
+    it('renders', () => {
+        cy.visitStory('components-radio-group--default-story')
+        cy.get('rux-radio-group').should('have.class', 'hydrated')
+    })
+})
+
+describe('Radio Group with Form', () => {
     beforeEach(() => {
         cy.visit('localhost:4444/tests/pages/form-radio.html')
     })
@@ -11,17 +18,6 @@ describe('Radio with Form', () => {
 
         cy.get('#log').contains('ruxColor:blue')
         cy.get('#log').contains('nativeColor:blue')
-    })
-
-    it('submits a value of "on" if no value is provided', () => {
-        cy.get('#ruxRadioBlue2').shadow().find('input').click({ force: true })
-        cy.get('#nativeRadioBlue2').click()
-        cy.get('#form-no-value').submit()
-        //Assert only two values were submitted.
-        cy.get('#log').children().its('length').should('eq', 2)
-
-        cy.get('#log').contains('ruxColor:on')
-        cy.get('#log').contains('nativeColor:on')
     })
 
     it('does not allow input if disabled', () => {
@@ -45,6 +41,23 @@ describe('Radio with Form', () => {
             })
 
         cy.get('#form').submit()
-        cy.get('#log').should('not.contain', 'ruxRadioPurpleDisabled')
+        cy.get('#log').should('not.contain', 'ruxColor:purple')
+    })
+
+    it('does not submit value if disabled', () => {
+        cy.get('#ruxRadioRed2').shadow().find('input').should('be.disabled')
+        cy.get('#ruxRadioRed2')
+            .shadow()
+            .find('input')
+            .should('not.be', 'checked')
+        cy.get('#ruxRadioRed2')
+            .shadow()
+            .find('input')
+            .then(($input) => {
+                $input.checked = false
+            })
+
+        cy.get('#form-checked-disabled').submit()
+        cy.get('#log').should('not.contain', 'ruxColor:red')
     })
 })
