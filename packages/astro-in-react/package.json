@@ -1,7 +1,7 @@
 {
   "name": "astro-in-react",
   "sideEffects": false,
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "Testing a React specific wrapper for astro-web-components",
   "repository": {
     "type": "git",
