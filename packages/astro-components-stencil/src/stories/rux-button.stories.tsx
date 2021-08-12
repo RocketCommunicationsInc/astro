@@ -96,7 +96,7 @@ export const GroupedButtons = () => {
                 --exampleContainerBackgroundColor: var(--primaryElementText);
                 --exampleContainerBorderColor: var(--colorQuaternaryLighten1);
             }
-            .dark-theme {
+            :root {
                 --exampleContainerBackgroundColor: var(--colorTertiaryDarken1);
                 --exampleContainerBorderColor: var(--colorTertiary);
             }
