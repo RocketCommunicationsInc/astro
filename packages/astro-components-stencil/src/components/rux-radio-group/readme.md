@@ -19,9 +19,9 @@
 
 ## Events
 
-| Event        | Description | Type               |
-| ------------ | ----------- | ------------------ |
-| `rux-change` |             | `CustomEvent<any>` |
+| Event        | Description                                                                                                                                     | Type               |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| `rux-change` | Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) | `CustomEvent<any>` |
 
 
 ## CSS Custom Properties

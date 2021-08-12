@@ -31,6 +31,10 @@ export namespace Components {
           * Changes size of a button from standard to small or large by setting sizing classes rux-button--small rux-button--large
          */
         "size"?: 'small' | 'medium' | 'large';
+        /**
+          * The button type. Use 'submit' to submit native form data.
+         */
+        "type": 'submit' | 'button';
     }
     interface RuxButtonGroup {
         /**
@@ -24226,6 +24230,10 @@ declare namespace LocalJSX {
           * Changes size of a button from standard to small or large by setting sizing classes rux-button--small rux-button--large
          */
         "size"?: 'small' | 'medium' | 'large';
+        /**
+          * The button type. Use 'submit' to submit native form data.
+         */
+        "type"?: 'submit' | 'button';
     }
     interface RuxButtonGroup {
         /**
@@ -40551,6 +40559,9 @@ declare namespace LocalJSX {
           * The name of the radio group - submitted with form data. Must match the name of the radios in the group.
          */
         "name"?: string;
+        /**
+          * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
+         */
         "onRux-change"?: (event: CustomEvent<any>) => void;
         /**
           * The value of the current selected radio in the group. Changing this will also mark that radio as checked in the UI.
