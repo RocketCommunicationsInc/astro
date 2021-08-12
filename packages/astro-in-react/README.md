@@ -42,4 +42,4 @@ This repo only has access to a limited number of Astro components translated to 
   We currently plan to ship two versions of this repo, one that includes tree-shaking at the cost of more imports, and this one that uses less imports at the cost of tree-shaking.
 - CSS custom properties for our react-wrapped components are undefined out of the box, thus the necessity for the CSS import.
 
-#### Currently using @astrouxds/astro-web-components version 0.0.10
+#### Currently using @astrouxds/astro-web-components version 0.0.11
