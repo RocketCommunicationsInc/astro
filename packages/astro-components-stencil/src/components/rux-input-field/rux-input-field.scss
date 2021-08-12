@@ -95,6 +95,9 @@
 
     .rux-input-label {
         margin-bottom: 0.375rem;
+        &__asterisk {
+            margin-left: 4px;
+        }
     }
 
     ::selection {

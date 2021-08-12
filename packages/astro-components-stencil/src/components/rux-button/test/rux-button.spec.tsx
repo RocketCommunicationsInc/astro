@@ -7,10 +7,11 @@ describe('rux-button', () => {
 
         expect(button).toBeTruthy()
         expect(button).toEqual({
-            icon: null,
             iconOnly: false,
+            handleClick: expect.any(Function),
             secondary: false,
             disabled: false,
+            type: 'button',
         })
     })
 
@@ -38,12 +39,6 @@ describe('rux-button', () => {
             html: `<rux-button type="submit" secondary disabled>Button</rux-button>`,
         })
 
-        /*
-          TODO: test other button types in the form. If successfull extend button component to accept
-          type param.
-
-          NOTE: Button type is not being reflected at this time. Default button type is "button"
-        */
         expect(page.root).toEqualHtml(`
           <rux-button type="submit" secondary disabled>
             <mock:shadow-root>

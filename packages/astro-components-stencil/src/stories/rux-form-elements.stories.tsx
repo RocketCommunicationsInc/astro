@@ -39,7 +39,7 @@ export const InputFields = () => html`
           <rux-input-field placeholder="Text input" label="Text input"></rux-input-field>
         </li>
         <li>
-          <rux-input-field placeholder="Number Input" label="Number input" type="number></rux-input-field>
+          <rux-input-field placeholder="Number input" label="Number input" type="number></rux-input-field>
         </li>
         <li>
           <rux-input-field placeholder="Text input" label="Text input"></rux-input-field>
@@ -51,10 +51,10 @@ export const InputFields = () => html`
           <rux-input-field placeholder="Text input" label="Text input" help-text="Help text"></rux-input-field>
         </li>
         <li>
-          <rux-input-field value=" " label="Is Required" required></rux-input-field>
+          <rux-input-field value=" " label="Is required" required></rux-input-field>
         </li>
         <li>
-          <rux-input-field label="Invalid" error-text="Error text" invalid="true"></rux-input-field>
+          <rux-input-field label="Invalid *" error-text="Error text" invalid="true"></rux-input-field>
         </li>
         <li class="rux-form-field">
           <rux-input-field label="Disabled" disabled></rux-input-field>
@@ -63,7 +63,7 @@ export const InputFields = () => html`
           <rux-input-field label="Password" type="password" placeholder="********"></rux-input-field>
         </li>
         <li class="rux-form-field">
-          <rux-input-field label="Invalid password" error-text="Error text" type="password" invalid></rux-input-field>
+          <rux-input-field label="Invalid password *" error-text="Error text" type="password" invalid></rux-input-field>
         </li>
         <li>
           <rux-input-field label="Web address" type="url" placeholder="https://domain.com"></rux-input-field>
@@ -84,7 +84,7 @@ export const InputFields = () => html`
           <rux-input-field label="Number input" type="number" min="0" max="10" placeholder="Enter a number between 0 and 10"></rux-input-field>
         </li>
         <li class="rux-form-field">
-          <rux-input-field label="Invalid number" type="number" min="0" max="10" invalid error-text="Error text" placeholder="Enter a number between 0 and 10"></rux-input-field>
+          <rux-input-field label="Invalid number *" type="number" min="0" max="10" invalid error-text="Error text" placeholder="Enter a number between 0 and 10"></rux-input-field>
         </li>
         <li class="text-area-field">
           <rux-textarea label="Textarea" placeholder="Multiline text is ok"></rux-textarea>
@@ -144,13 +144,13 @@ export const InputFields = () => html`
           <rux-input-field label="Smaller text input" placeholder="Text input" small></rux-input-field>
         </li>
         <li class="rux-form-field rux-form-field--small">
-          <rux-input-field label="Smaller number input" type="number" placeholder="Number Input" small></rux-input-field>
+          <rux-input-field label="Smaller number input" type="number" placeholder="Number input" small></rux-input-field>
         </li>
         <li class="rux-form-field rux-form-field--small">
-          <rux-input-field label="Smaller Is Required" required small></rux-input-field>
+          <rux-input-field label="Smaller is required" required small></rux-input-field>
         </li>
         <li class="rux-form-field rux-form-field--small">
-          <rux-input-field label="Smaller invalid" invalid error-text="Error text" small></rux-input-field>
+          <rux-input-field label="Smaller invalid *" invalid error-text="Error text" small></rux-input-field>
         </li>
         <li class="rux-form-field rux-form-field--small">
           <rux-input-field label="Smaller disabled" disabled small></rux-input-field>

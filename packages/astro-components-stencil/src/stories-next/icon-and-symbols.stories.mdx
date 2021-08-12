@@ -150,4 +150,13 @@ export const AllIcons = (args) => {
 </Canvas>
 
 ### Cherry Picking
-Coming Soon
+
+When cherry picking icons, you'll need to register both RuxIcon and any individual icons you wish to use.
+For example, if you wanted to use `rux-icon-close` you would import the following:
+
+```js
+import { RuxIcon } from '@astrouxds/astro-web-components/dist/components/rux-icon'
+import { RuxIconClose } from '@astrouxds/astro-web-components/dist/components/rux-icon-close'
+customElements.define('rux-icon', RuxIcon)
+customElements.define('rux-icon-close', RuxIconClose)
+```

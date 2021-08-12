@@ -2,7 +2,7 @@ describe('Tree', () => {
     beforeEach(() => {
         cy.visitStory('components-tree--default-story')
     })
-    it('renders', async () => {
+    it('renders', () => {
         cy.get('rux-tree').should('have.class', 'hydrated')
     })
 

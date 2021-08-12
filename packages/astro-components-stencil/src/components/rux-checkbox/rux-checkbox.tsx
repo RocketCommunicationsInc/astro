@@ -1,4 +1,5 @@
 import { Component, h, Prop, Event, EventEmitter, Element } from '@stencil/core'
+import { renderHiddenInput } from '../../utils/utils'
 
 let id = 0
 
@@ -104,6 +105,15 @@ export class RuxCheckbox {
             required,
             value,
         } = this
+
+        renderHiddenInput(
+            true,
+            this.el,
+            this.name,
+            this.value ? this.value : 'on',
+            this.disabled,
+            this.checked
+        )
 
         return (
             <div class="rux-form-field">

@@ -23,110 +23,176 @@
     display: flex;
     height: 22px;
     width: 42px;
+
+    // Default Styling
+    &__button {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        // Track
+        &:before {
+            position: relative;
+
+            display: flex;
+            content: '';
+
+            border-radius: 4.7px;
+            border: 1px solid;
+            border-color: var(--switchOffBorderColor);
+            background-color: var(--switchBackgroundColor);
+
+            height: 10px;
+            width: 30px;
+            z-index: 2;
+            transition: 0.1s background-color linear;
+        }
+
+        // Button
+        &:after {
+            position: absolute;
+            content: '';
+            top: 1px;
+            left: -4px;
+            z-index: 3;
+            height: 18px;
+            width: 18px;
+            border-radius: 50%;
+            border: 1px solid var(--switchHoverOffColor);
+            background-color: var(--switchBackgroundColor);
+
+            transition: 0.1s left linear, 0.1s border-color linear;
+        }
+    }
+
+    &__input {
+        display: none;
+
+        // Active Styling
+        &:checked {
+            + .rux-switch__button {
+                &::before {
+                    border-color: var(--switchOnColor);
+                    background-color: var(--switchOnColor);
+                }
+                &::after {
+                    left: 16px;
+                    background-color: var(--switchBackgroundColor);
+                    border-color: var(--switchHoverOffColor);
+                }
+            }
+        }
+
+        // Disabled
+        &:disabled {
+            + .rux-switch__button {
+                cursor: var(--disabledCursor);
+                opacity: var(--disabledOpacity);
+            }
+        }
+    }
+
+    &--has-error {
+        .rux-switch {
+            &__input {
+                + .rux-switch__button {
+                    &::before,
+                    &:after {
+                        border-color: var(--colorCritical);
+                    }
+                    &:before {
+                        background-color: var(--colorCritical);
+                    }
+                }
+            }
+
+            &:hover {
+                .rux-switch__input {
+                    + .rux-switch__button {
+                        &::before,
+                        &:after {
+                            border-color: var(--colorCritical);
+                        }
+                        &:before {
+                            background-color: var(--colorCritical);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // :before -> Track, :after -> Button
+    &:hover {
+        .rux-switch__input {
+            &:not(:disabled),
+            &:checked:not(:disabled) {
+                + .rux-switch__button {
+                    &::before {
+                        border-color: var(--switchHoverOffColor);
+                    }
+                    &:after {
+                        border-color: var(--switchButtonHoverOffColor);
+                    }
+                }
+            }
+
+            &:not(:disabled) {
+                + .rux-switch__button {
+                    &::before {
+                        background-color: var(--switchBackgroundColor);
+                    }
+                }
+            }
+
+            &:checked:not(:disabled) {
+                + .rux-switch__button {
+                    &:before {
+                        background-color: var(--switchHoverOnColor);
+                    }
+                }
+            }
+        }
+    }
 }
 
-.rux-switch__input {
-    display: none;
-}
-
-.rux-switch__button {
+.rux-form-field {
     display: flex;
-    align-items: center;
-    cursor: pointer;
+    flex-direction: column;
+
+    font-family: var(--fontFamily);
+    font-size: var(--fontSize);
+    color: var(--fontColor);
 }
 
-/* Track */
-.rux-switch__button::before {
-    position: relative;
-
-    display: flex;
-    content: '';
-
-    border-radius: 4.7px;
-    border: 1px solid;
-    border-color: var(--switchOffBorderColor);
-    background-color: var(--switchBackgroundColor);
-
-    height: 10px;
-    width: 30px;
-    z-index: 2;
-    transition: 0.1s background-color linear;
+.rux-help-text {
+    margin-top: 0.625rem;
+    color: var(--secondaryText);
+    font-size: 0.875rem;
+    font-size: var(--fontSizeMD);
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    font-family: var(--fontFamily);
+    font-weight: normal;
+    letter-spacing: 0.5px;
 }
 
-/* Track Active */
-.rux-switch__input:checked + .rux-switch__button::before {
-    border-color: var(--switchOnColor);
-    background-color: var(--switchOnColor);
-}
-
-/* Track Hover Unchecked */
-.rux-switch:hover
-    .rux-switch__input:not(:disabled)
-    + .rux-switch__button:before {
-    border-color: var(--switchHoverOffColor);
-    background-color: var(--switchBackgroundColor);
-}
-
-/* Track Hover Checked */
-.rux-switch:hover
-    .rux-switch__input:checked:not(:disabled)
-    + .rux-switch__button:before {
-    border-color: var(--switchHoverOnColor);
-    background-color: var(--switchHoverOnColor);
-}
-
-/* Button */
-.rux-switch__button::after {
-    position: absolute;
-    content: '';
-    top: 1px;
-    left: -4px;
-    z-index: 3;
-    height: 18px;
-    width: 18px;
-    border-radius: 50%;
-    border: 1px solid var(--switchHoverOffColor);
-    background-color: var(--switchBackgroundColor);
-
-    transition: 0.1s left linear, 0.1s border-color linear;
-}
-
-/* Button Active */
-.rux-switch__input:checked + .rux-switch__button::after {
-    // left: 50%;
-    left: 16px;
-    background-color: var(--switchBackgroundColor);
-    border-color: var(--switchHoverOffColor);
-}
-
-/* Button Hover Unchecked */
-.rux-switch:hover
-    .rux-switch__input:not(:disabled)
-    + .rux-switch__button:after {
-    border-color: var(--switchButtonHoverOffColor);
-}
-
-/* Button Hover Checked */
-.rux-switch:hover
-    .rux-switch__input:checked:not(:disabled)
-    + .rux-switch__button:after {
-    border-color: var(--switchButtonHoverOffColor);
-}
-
-/* Disabled */
-.rux-switch__input:disabled + .rux-switch__button::after {
-    cursor: var(--disabledCursor);
-}
-
-.rux-switch__input:checked:disabled + .rux-switch__button::after {
-    cursor: var(--disabledCursor);
-}
-
-.rux-switch__input:disabled + .rux-switch__button::before {
-    cursor: var(--disabledCursor);
-}
-
-.rux-switch__input:disabled + .rux-switch__button {
-    opacity: var(--disabledOpacity);
-    cursor: var(--disabledCursor);
+.rux-error-text {
+    padding-left: 1.625rem;
+    background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FF3030%22%20fill-rule%3D%22evenodd%22%20d%3D%22M64.031%205c8.461%200%2068.88%20107.243%2063.648%20114.184-5.232%206.942-120.805%205.477-127.212%200C-5.941%20113.708%2055.57%205%2064.03%205zm3.45%2075.894l1.822-34.893H56.946l1.82%2034.893h8.715zM56.803%2093.108c0%201.929.547%203.423%201.643%204.483%201.095%201.06%202.642%201.589%204.642%201.589%201.953%200%203.477-.542%204.572-1.625%201.095-1.084%201.643-2.566%201.643-4.447%200-1.952-.542-3.452-1.625-4.5-1.084-1.047-2.613-1.571-4.59-1.571-2.047%200-3.607.512-4.678%201.536-1.072%201.023-1.607%202.535-1.607%204.535z%22%2F%3E%0A%3C%2Fsvg%3E);
+    background-repeat: no-repeat;
+    background-size: 1rem;
+    background-position: center left 0rem;
+    text-align: left;
+    width: fit-content;
+    -webkit-order: 3;
+    order: 3;
+    margin-top: 0.625rem;
+    color: var(--colorCritical);
+    font-size: 0.875rem;
+    font-size: var(--fontSizeMD);
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    font-family: var(--fontFamily);
+    font-weight: bold;
 }

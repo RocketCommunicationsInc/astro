@@ -6,6 +6,13 @@ import { html, render } from 'lit-html'
     title="Components/Select Menu"
     component="rux-select"
     argTypes={extractArgTypes('rux-select')}
+    parameters={{
+        actions: {
+            handles: [
+            'rux-change rux-select',
+            ],
+        },
+    }}
 />
 
 # Select Menu
@@ -30,16 +37,16 @@ export const SelectMenu = (args) => {
             >
                 <option value="" selected>Select an option</option>
                 <optgroup label="Group one">
-                    <option>Option 1.1</option>
-                    <option>Option 1.2</option>
-                    <option>Option 1.3</option>
-                    <option>Option 1.4</option>
+                    <option value="1.1">Option 1.1</option>
+                    <option value="1.2">Option 1.2</option>
+                    <option value="1.3">Option 1.3</option>
+                    <option value="1.4">Option 1.4</option>
                 </optgroup>
                 <optgroup label="Group two">
-                    <option>Option 2.1</option>
-                    <option>Option 2.2</option>
-                    <option>Option 2.3</option>
-                    <option>Option 2.4</option>
+                    <option value="2.1">Option 2.1</option>
+                    <option value="2.2">Option 2.2</option>
+                    <option value="2.3">Option 2.3</option>
+                    <option value="2.4">Option 2.4</option>
                 </optgroup>
             </rux-select>
         </div>

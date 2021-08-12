@@ -1,7 +1,6 @@
-import { withActions } from '@storybook/addon-actions'
-import { html, render } from 'lit-html'
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { html, render } from 'lit-html'
 
 <Meta
     title="Components/Checkbox"
@@ -10,7 +9,8 @@ import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
     parameters={{
        actions: {
         handles: [
-          'rux-change rux-input'
+          'rux-change rux-checkbox',
+          'rux-input rux-checkbox'
         ],
       },
     }}
@@ -26,79 +26,179 @@ A Checkbox describes a state or value that can be either "True or False.” Chec
 - [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)
 
 
-export const Default = () => {
-    return html` <style>
-            section {
-                display: flex;
-                justify-content: center;
-                padding: 10vh 5vw 0;
-            }
-            section ul {
-                margin-right: 1rem;
-                margin-bottom: 0;
-                list-style: none;
-            }
-        </style>
-        <section>
-            <ul>
-                <li>
-                    <rux-checkbox id="checked" name="checkedOne" checked>
-                        Checked
-                    </rux-checkbox>
-                </li>
-                <li>
-                    <rux-checkbox id="unchecked" name="uncheckedOne">
-                        Unchecked
-                    </rux-checkbox>
-                </li>
-                <li>
-                    <rux-checkbox
-                        id="disabled"
-                        name="disabled"
-                        checked
-                        disabled
-                    >
-                        Disabled
-                    </rux-checkbox>
-                </li>
-                <li>
-                    <rux-checkbox
-                        name="indeterminate"
-                        id="checkbox4c"
-                        checked
-                        indeterminate
-                    >
-                        Indeterminate
-                    </rux-checkbox>
-                </li>
-                <!-- <li>
-                    <rux-checkbox
-                        name="checkboxGroup"
-                        id="checkbox4c"
-                        checked
-                        help-text="This is an example help text"
-                    >
-                        With Help Text
-                    </rux-checkbox>
-                </li>
-                <li>
-                    <rux-checkbox
-                        name="checkboxGroup"
-                        id="checkbox4c"
-                        checked
-                        required
-                        error-text="This is an example error text"
-                    >
-                        With Error Text
-                    </rux-checkbox>
-                </li> -->
-            </ul>
-        </section>`
+export const Default = (args) => {
+    return html`
+        <rux-checkbox
+          ?disabled="${args.disabled}"
+          ?checked="${args.checked}"
+          ?indeterminate="${args.indeterminate}"
+          .errorText="${args.errorText}"
+          .helpText="${args.helpText}"
+          name="${args.name}"
+          ?required="${args.required}"
+          .value="${args.value}"
+        >
+          Checkbox Label
+        </rux-checkbox>
+    `
 }
 
 <Canvas>
-    <Story name="Default">
-        {Default.bind()}
+    <Story
+      name="Default"
+      args={{
+        name: "checkbox"
+      }}
+    >
+      {Default.bind()}
+    </Story>
+</Canvas>
+
+## API
+
+<ArgsTable of="rux-checkbox" />
+
+## Variants
+
+### Checked
+
+export const Checked = (args) => {
+  return html`
+         <rux-checkbox
+          ?disabled="${args.disabled}"
+          ?checked="${args.checked}"
+          ?indeterminate="${args.indeterminate}"
+          .errorText="${args.errorText}"
+          .helpText="${args.helpText}"
+          name="${args.name}"
+          ?required="${args.required}"
+          .value="${args.value}"
+        >
+          Checkbox Label
+        </rux-checkbox>
+  `
+}
+
+<Canvas>
+    <Story
+      args={{checked: true}}
+      name="Checked"
+    >
+        {Checked.bind()}
+    </Story>
+</Canvas>
+
+### Disabled
+
+export const Disabled = (args) => {
+  return html`
+         <rux-checkbox
+          ?disabled="${args.disabled}"
+          ?checked="${args.checked}"
+          ?indeterminate="${args.indeterminate}"
+          .errorText="${args.errorText}"
+          .helpText="${args.helpText}"
+          name="${args.name}"
+          ?required="${args.required}"
+          .value="${args.value}"
+        >
+          Checkbox Label
+        </rux-checkbox>
+  `
+}
+
+<Canvas>
+    <Story
+      args={{disabled: true}}
+      name="Disabled"
+    >
+        {Disabled.bind()}
+    </Story>
+</Canvas>
+
+### Indeterminate
+
+An Indeterminate state (a dash symbol rather than checked) may display when a checkbox is used as a parent of a group of checkboxes where at least one child is selected and at least one is not.
+
+export const Indeterminate = (args) => {
+  return html`
+         <rux-checkbox
+          ?disabled="${args.disabled}"
+          ?checked="${args.checked}"
+          ?indeterminate="${args.indeterminate}"
+          .errorText="${args.errorText}"
+          .helpText="${args.helpText}"
+          name="${args.name}"
+          ?required="${args.required}"
+          .value="${args.value}"
+        >
+          Checkbox Label
+        </rux-checkbox>
+  `
+}
+
+<Canvas>
+    <Story
+      args={{indeterminate: true, checked: true}}
+      name="Indeterminate"
+    >
+        {Indeterminate.bind()}
+    </Story>
+</Canvas>
+
+### With Error Text
+
+export const WithErrorText = (args) => {
+  return html`
+         <rux-checkbox
+          ?disabled="${args.disabled}"
+          ?checked="${args.checked}"
+          ?indeterminate="${args.indeterminate}"
+          .errorText="${args.errorText}"
+          .helpText="${args.helpText}"
+          name="${args.name}"
+          ?required="${args.required}"
+          .value="${args.value}"
+        >
+          Checkbox Label
+        </rux-checkbox>
+  `
+}
+
+<Canvas>
+    <Story
+      args={{errorText: 'Error text'}}
+      name="With Error Text"
+    >
+        {WithErrorText.bind()}
+    </Story>
+</Canvas>
+
+### With Help Text
+
+export const WithHelpText = (args) => {
+  return html`
+         <rux-checkbox
+          ?disabled="${args.disabled}"
+          ?checked="${args.checked}"
+          ?indeterminate="${args.indeterminate}"
+          .errorText="${args.errorText}"
+          .helpText="${args.helpText}"
+          name="${args.name}"
+          ?required="${args.required}"
+          .value="${args.value}"
+        >
+          Checkbox Label
+        </rux-checkbox>
+  `
+}
+
+<Canvas>
+    <Story
+      args={{helpText: 'Help text'}}
+      name="With Help Text"
+    >
+        {WithHelpText.bind()}
     </Story>
 </Canvas>
 
@@ -109,4 +209,6 @@ If you're already utilizing a build system that supports tree shaking and want t
 ```js
 import RuxCheckbox from '@astrouxds/astro-web-components/dist/components/rux-checkbox.js'
 customElements.define('rux-checkbox', RuxCheckbox)
+
 ```
+

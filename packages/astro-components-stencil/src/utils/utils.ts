@@ -21,26 +21,34 @@ export const hasShadowDom = (el: HTMLElement) => {
 * @param name The name of the input
 * @param value The value of the input
 * @param disabled If true, the input is disabled
+* @param checked Optional. If true, the input is checked
 */
 export const renderHiddenInput = (
     always: boolean,
     container: HTMLElement,
     name: string,
     value: string | undefined | null,
-    disabled: boolean
+    disabled: boolean,
+    checked?: boolean
 ) => {
+    let input = container.querySelector(
+        'input.aux-input'
+    ) as HTMLInputElement | null
     if (always || hasShadowDom(container)) {
-        let input = container.querySelector(
-            'input.aux-input'
-        ) as HTMLInputElement | null
-        if (!input) {
-            input = container.ownerDocument!.createElement('input')
-            input.type = 'hidden'
-            input.classList.add('aux-input')
-            container.appendChild(input)
+        if (checked || checked == undefined) {
+            if (!input) {
+                input = container.ownerDocument!.createElement('input')
+                input.type = 'hidden'
+                input.classList.add('aux-input')
+                container.appendChild(input)
+            }
+            input.disabled = disabled
+            input.name = name
+            input.value = value || ''
+        } else {
+            if (input) {
+                input.remove()
+            }
         }
-        input.disabled = disabled
-        input.name = name
-        input.value = value || ''
     }
 }
