@@ -16,6 +16,10 @@ export const RuxButtonGroup = /*@__PURE__*/ createReactComponent<
   JSX.RuxButtonGroup,
   HTMLRuxButtonGroupElement
 >("rux-button-group");
+export const RuxCheckbox = /*@__PURE__*/ createReactComponent<
+  JSX.RuxCheckbox,
+  HTMLRuxCheckboxElement
+>("rux-checkbox");
 export const RuxClassificationMarking = /*@__PURE__*/ createReactComponent<
   JSX.RuxClassificationMarking,
   HTMLRuxClassificationMarkingElement
@@ -4266,10 +4270,22 @@ export const RuxIconZoomOutMap = /*@__PURE__*/ createReactComponent<
   JSX.RuxIconZoomOutMap,
   HTMLRuxIconZoomOutMapElement
 >("rux-icon-zoom-out-map");
+export const RuxInputField = /*@__PURE__*/ createReactComponent<
+  JSX.RuxInputField,
+  HTMLRuxInputFieldElement
+>("rux-input-field");
 export const RuxLog = /*@__PURE__*/ createReactComponent<
   JSX.RuxLog,
   HTMLRuxLogElement
 >("rux-log");
+export const RuxMenuItem = /*@__PURE__*/ createReactComponent<
+  JSX.RuxMenuItem,
+  HTMLRuxMenuItemElement
+>("rux-menu-item");
+export const RuxMenuItemDivider = /*@__PURE__*/ createReactComponent<
+  JSX.RuxMenuItemDivider,
+  HTMLRuxMenuItemDividerElement
+>("rux-menu-item-divider");
 export const RuxModal = /*@__PURE__*/ createReactComponent<
   JSX.RuxModal,
   HTMLRuxModalElement
@@ -4286,14 +4302,35 @@ export const RuxNotification = /*@__PURE__*/ createReactComponent<
   JSX.RuxNotification,
   HTMLRuxNotificationElement
 >("rux-notification");
+export const RuxPopUpMenu = /*@__PURE__*/ createReactComponent<
+  JSX.RuxPopUpMenu,
+  HTMLRuxPopUpMenuElement
+>("rux-pop-up-menu");
 export const RuxProgress = /*@__PURE__*/ createReactComponent<
   JSX.RuxProgress,
   HTMLRuxProgressElement
 >("rux-progress");
+export const RuxPushButton = /*@__PURE__*/ createReactComponent<
+  JSX.RuxPushButton,
+  HTMLRuxPushButtonElement
+>("rux-push-button");
+export const RuxRadio = /*@__PURE__*/ createReactComponent<
+  JSX.RuxRadio,
+  HTMLRuxRadioElement
+>("rux-radio");
+// export const RuxRadioGroup = /*@__PURE__*/createReactComponent<JSX.RuxRadioGroup, HTMLRuxRadioGroupElement>('rux-radio-group');
 export const RuxSegmentedButton = /*@__PURE__*/ createReactComponent<
   JSX.RuxSegmentedButton,
   HTMLRuxSegmentedButtonElement
 >("rux-segmented-button");
+export const RuxSelect = /*@__PURE__*/ createReactComponent<
+  JSX.RuxSelect,
+  HTMLRuxSelectElement
+>("rux-select");
+export const RuxSlider = /*@__PURE__*/ createReactComponent<
+  JSX.RuxSlider,
+  HTMLRuxSliderElement
+>("rux-slider");
 export const RuxStatus = /*@__PURE__*/ createReactComponent<
   JSX.RuxStatus,
   HTMLRuxStatusElement
@@ -4346,6 +4383,10 @@ export const RuxTabs = /*@__PURE__*/ createReactComponent<
   JSX.RuxTabs,
   HTMLRuxTabsElement
 >("rux-tabs");
+export const RuxTextarea = /*@__PURE__*/ createReactComponent<
+  JSX.RuxTextarea,
+  HTMLRuxTextareaElement
+>("rux-textarea");
 export const RuxTree = /*@__PURE__*/ createReactComponent<
   JSX.RuxTree,
   HTMLRuxTreeElement
