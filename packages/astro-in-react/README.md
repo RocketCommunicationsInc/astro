@@ -4,7 +4,7 @@
 
 ## Import and Usage
 
-First, import the css into either your index.js or app.js, or any CSS file you would like.
+First, import the css into either your index.js, app.js, or any CSS file you would like.
 
 `import '@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css'`
 
