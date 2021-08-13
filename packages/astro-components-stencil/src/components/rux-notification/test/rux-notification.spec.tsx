@@ -1,6 +1,8 @@
 import { newSpecPage } from '@stencil/core/testing'
 import { RuxNotification } from '../rux-notification'
 
+jest.useFakeTimers()
+
 describe('rux-notification', () => {
     it('renders', async () => {
         const page = await newSpecPage({

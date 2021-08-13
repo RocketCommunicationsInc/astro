@@ -6,9 +6,9 @@
 
 ## Project build commands
 
-`npm run astro` - Starts both Stencil and Storybook for development
+`npm run start` - Starts both Stencil and Storybook for development
 
-`npm run build-astro-prod` - Builds Storybook static site for production in /storybook-static folder
+`npm run build` - Builds Storybook static site for production in /storybook-static folder
 
 ## RuxIcon
 
@@ -56,8 +56,8 @@ Use the helper method `cy.visitStory()` to load your component's story. You only
 
 #### Running All Tests
 
-`npm run cy.test` - Spins up a Storybook server and runs Cypress against that.
+`npm run test` - Spins up a Storybook server and runs Cypress against that.
 
 #### Running All Tests w/ Watch
 
-`npm run cy.test.watch` - Spins up stencil's dev server, a storybook server, and opens Cypress.
+`npm run test.e2e.watch` - Spins up stencil's dev server, a storybook server, and opens Cypress.

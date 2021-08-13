@@ -1,15 +1,16 @@
 describe('Text Area with Form', () => {
     beforeEach(() => {
-        cy.visit('localhost:4444/tests/pages/form-textarea.html')
+        cy.visitForm('textarea')
     })
     it('submits the correct value when using a form', () => {
-        cy.get('#form').submit()
+        cy.get('#textarea1').click()
+        cy.get('#formButton').click()
         cy.get('#log').contains('test1:TextArea Test 1')
         cy.get('#log').contains('native:Native Text Area')
     })
     it('submits correct value after typing into it', () => {
         cy.get('#noval').shadow().find('textarea').type('Eyes Up')
-        cy.get('#form').submit()
+        cy.get('#formButton').click()
         cy.get('#log').contains('noval:Eyes Up')
     })
     //Native textarea does not submit a value if disabled

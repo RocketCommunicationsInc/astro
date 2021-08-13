@@ -1,6 +1,6 @@
 describe('Select with Form', () => {
     beforeEach(() => {
-        cy.visit('localhost:4444/tests/pages/form-select.html')
+        cy.visitForm('select')
     })
     it('should submit the correct value when selecting an option', () => {
         cy.get('#ruxSelect')

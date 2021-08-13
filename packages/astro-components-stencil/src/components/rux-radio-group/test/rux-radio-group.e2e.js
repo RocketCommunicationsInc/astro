@@ -7,7 +7,7 @@ describe('Radio Group', () => {
 
 describe('Radio Group with Form', () => {
     beforeEach(() => {
-        cy.visit('localhost:4444/tests/pages/form-radio.html')
+        cy.visitForm('radio')
     })
     it('submits the correct value when using a form', () => {
         cy.get('#ruxRadioBlue').shadow().find('input').click({ force: true })
