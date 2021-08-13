@@ -41,5 +41,15 @@ This repo only has access to a limited number of Astro components translated to 
 - This version bundles all components (no tree-shaking) in order to avoid having to use `defineCustomElements` each time you want to use an astro component. Because of this, the bundle size is larger.
   We currently plan to ship two versions of this repo, one that includes tree-shaking at the cost of more imports, and this one that uses less imports at the cost of tree-shaking.
 - CSS custom properties for our react-wrapped components are undefined out of the box, thus the necessity for the CSS import.
+- Using event listeners currently uses onRux prefix, followed by a dash and the name. ie, onRux-change. Not ideal, we are looking into changing it.
+- For using checkbox, push button, or switch onRux-change events, you need to check for the checked prop:
+  ```
+          <RuxSwitch
+        value="switch"
+        onRux-change={(e: React.ChangeEvent<HTMLRuxSwitchElement>) =>
+          setSwitchVal(e.target.checked ? e.target.value : "")
+        }
+      />
+  ```
 
 #### Currently using @astrouxds/astro-web-components version 0.0.11
