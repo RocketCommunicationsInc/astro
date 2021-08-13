@@ -1,4 +1,5 @@
 import { create } from '@storybook/theming'
+import Logo from './logo.svg'
 
 let light = create({
     base: 'normal',
@@ -14,7 +15,7 @@ let light = create({
 
     // Typography
     fontBase:
-        '"Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;y',
+        '"Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;',
     fontCode: '"Roboto Mono", monospace',
 
     // Text colors
@@ -70,7 +71,7 @@ let dark = create({
 
     brandTitle: 'AstroUXDS',
     brandUrl: 'https://astrouxds.com',
-    brandImage: '/img/astro-logo-small-dark.svg',
+    brandImage: Logo,
 })
 
 export default { light, dark }

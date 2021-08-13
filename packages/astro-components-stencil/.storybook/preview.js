@@ -1,19 +1,24 @@
 import themes from './theme'
 import { addDecorator } from '@storybook/web-components'
 import { addReadme } from 'storybook-readme/html'
+import {
+    extractArgTypes,
+    extractComponentDescription,
+    setStencilDocJson,
+} from '@astrouxds/storybook-addon-docs-stencil'
 
+import docJson from '../docs.json'
+if (docJson) setStencilDocJson(docJson)
 addDecorator(addReadme)
 
 export const parameters = {
     viewport: {
         disable: true,
     },
-    actions: { argTypesRegex: '^on[A-Z].*' },
-    controls: {
-        matchers: {
-            color: /(background|color)$/i,
-            date: /Date$/,
-        },
+    docs: {
+        extractArgTypes,
+        extractComponentDescription,
+        theme: themes.dark,
     },
     backgrounds: {
         grid: {
@@ -21,11 +26,17 @@ export const parameters = {
         },
         disable: true,
     },
+    actions: { argTypesRegex: '^on[A-Z].*' },
+    controls: {
+        hideNoControlsWarning: true,
+        matchers: {
+            color: /(background|color)$/i,
+            date: /Date$/,
+        },
+    },
+    backgrounds: { disable: true },
     a11y: {
         element: '#root',
-    },
-    docs: {
-        theme: themes.dark,
     },
     themes: {
         default: 'Dark Theme',

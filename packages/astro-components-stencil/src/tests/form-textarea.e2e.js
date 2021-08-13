@@ -10,7 +10,7 @@ describe('Text Area with Form', () => {
     })
     it('submits correct value after typing into it', () => {
         cy.get('#noval').shadow().find('textarea').type('Eyes Up')
-        cy.get('#formButton').click()
+        cy.get('#formButton').click({ force: true })
         cy.get('#log').contains('noval:Eyes Up')
     })
     //Native textarea does not submit a value if disabled
