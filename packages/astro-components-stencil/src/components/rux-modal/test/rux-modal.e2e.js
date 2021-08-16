@@ -5,7 +5,8 @@ describe('Modal', () => {
     it('renders', () => {
         cy.get('rux-modal').should('have.class', 'hydrated')
     })
-    it('should close and open the dialog', () => {
+
+    it('should close and open the modal', () => {
         cy.get('rux-modal').then(($modal) => {
             $modal[0].setAttribute('open', false)
         })
@@ -52,7 +53,7 @@ describe('Modal', () => {
             .contains('Test Deny Text')
     })
 
-    it('close the modal when deny clicked', () => {
+    it('should close the modal when deny clicked', () => {
         cy.get('rux-modal').shadow().find('[data-value="false"]').click()
         cy.get('rux-modal')
             .shadow()
@@ -60,8 +61,28 @@ describe('Modal', () => {
             .should('not.exist')
     })
 
-    it('close the modal when confirm clicked', () => {
+    it('should close the modal when confirm clicked', () => {
         cy.get('rux-modal').shadow().find('[data-value="true"]').click()
+        cy.get('rux-modal')
+            .shadow()
+            .find('.rux-modal__wrapper')
+            .should('not.exist')
+    })
+
+    it('should close when enter key pressed', () => {
+        cy.get('rux-modal').shadow().find('dialog').click()
+        cy.get('body').type('{enter}')
+        cy.get('rux-modal')
+            .shadow()
+            .find('.rux-modal__wrapper')
+            .should('not.exist')
+    })
+
+    it('should close the modal when click occurs outside modal', () => {
+        cy.get('rux-modal')
+            .shadow()
+            .find('.rux-modal__wrapper')
+            .click('topLeft')
         cy.get('rux-modal')
             .shadow()
             .find('.rux-modal__wrapper')
