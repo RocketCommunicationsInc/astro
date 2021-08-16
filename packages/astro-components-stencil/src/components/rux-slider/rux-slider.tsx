@@ -8,6 +8,7 @@ import {
     EventEmitter,
     Watch,
 } from '@stencil/core'
+import { renderHiddenInput } from '../../utils/utils'
 
 @Component({
     tag: 'rux-slider',
@@ -15,29 +16,32 @@ import {
     shadow: true,
 })
 export class RuxSlider {
+    @Element() el!: HTMLRuxSliderElement
     /**
      * Min value of the slider.
      */
-    @Prop() min?: number = 0
+    @Prop() min: number = 0
     /**
      * Max value of slider.
      */
-    @Prop() max?: number = 100
+    @Prop() max: number = 100
     /**
-     *
      * Step amount of slider value.
      */
-    @Prop() step?: number = 1
+    @Prop() step: number = 1
     /**
      * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/<input type="range">](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
      */
-    @Prop({ mutable: true }) value?: number =
+    @Prop({ mutable: true }) value: number =
         (this.max! - this.min!) / 2 + this.min!
     /**
-     *
      * Determines if the slider is disabled.
      */
-    @Prop({ reflect: true }) disabled?: boolean = false
+    @Prop({ reflect: true }) disabled: boolean = false
+    /**
+     * Name of the Input Field for Form Submission
+     */
+    @Prop() name: string = ''
     /**
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
      */
@@ -51,7 +55,6 @@ export class RuxSlider {
     connectedCallback() {
         this.onInput = this.onInput.bind(this)
     }
-    @Element() el!: HTMLInputElement
 
     @Watch('value')
     @Watch('min')
@@ -111,7 +114,10 @@ export class RuxSlider {
     }
 
     render() {
-        const { min, max, value, step, disabled, onInput } = this
+        const { el, min, max, value, step, disabled, name, onInput } = this
+
+        renderHiddenInput(true, el, name, JSON.stringify(this.value), disabled)
+
         return (
             <Host>
                 <div class="rux-slider">

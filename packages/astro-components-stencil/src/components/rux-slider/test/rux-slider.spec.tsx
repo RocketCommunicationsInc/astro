@@ -15,6 +15,7 @@ describe('rux-slider', () => {
          </div>
          <slot></slot>
         </mock:shadow-root>
+        <input class="aux-input" type="hidden" value="50">
       </rux-slider>
     `)
     })
