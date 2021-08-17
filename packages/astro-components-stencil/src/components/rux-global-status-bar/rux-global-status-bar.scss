@@ -68,7 +68,7 @@ slot[name='left-side'] > .shifted-up,
     margin-bottom: 0px;
     margin-top: 0px;
     height: 32px;
-    font-size: 2rem;
+    font-size: 2.125rem; //34px
 }
 
 .app-domain {
@@ -99,7 +99,6 @@ slot[name='left-side'] > .shifted-up,
     border-radius: 2px;
     font-size: 14px;
     padding: 2px 6px;
-    letter-spacing: 0.5px;
     text-align: center;
     height: 22px;
     margin-right: 6px;
@@ -112,7 +111,6 @@ slot[name='left-side'] > .shifted-up,
     font-size: 14px;
     padding: 2px 0px;
     height: 22px;
-    letter-spacing: 0.5px;
 }
 
 .slotted-content {
