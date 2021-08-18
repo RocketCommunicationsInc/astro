@@ -21,7 +21,8 @@
     }
 
     input {
-        display: none !important;
+        appearance: none;
+        -webkit-appearance: none;
     }
 
     .rux-push-button {
@@ -31,7 +32,7 @@
             align-items: center;
             height: 1.375rem;
             font-size: 1rem !important;
-            margin: 0;
+            margin: -27px 0 0 0;
             padding: 0 0.625rem;
             color: var(--pushbuttonTextColor);
             background-color: var(--pushbuttonBackgroundColor);

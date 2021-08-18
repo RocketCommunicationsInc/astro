@@ -36,9 +36,13 @@ export class RuxRadio {
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
      */
     @Event({ eventName: 'rux-change' }) ruxChange!: EventEmitter
+    /**
+     * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
+     */
+    @Event({ eventName: 'rux-blur' }) ruxBlur!: EventEmitter
 
     connectedCallback() {
-        this.onChange = this.onChange.bind(this)
+        this._onChange = this._onChange.bind(this)
         this.radioGroup = this.el.closest('rux-radio-group')
         this.syncFromGroup = this.syncFromGroup.bind(this)
         if (this.radioGroup) {
@@ -65,14 +69,26 @@ export class RuxRadio {
         }
     }
 
-    private onChange(e: Event): void {
+    private _onChange(e: Event): void {
         const target = e.target as HTMLInputElement
         this.checked = target.checked
         this.ruxChange.emit(this.checked)
     }
 
+    private _onBlur = () => {
+        this.ruxBlur.emit()
+    }
+
     render() {
-        const { radioId, checked, disabled, name, value } = this
+        const {
+            radioId,
+            checked,
+            disabled,
+            name,
+            value,
+            _onChange,
+            _onBlur,
+        } = this
 
         return (
             <div class="rux-form-field">
@@ -84,7 +100,8 @@ export class RuxRadio {
                         disabled={disabled}
                         checked={checked}
                         value={value}
-                        onChange={this.onChange}
+                        onChange={_onChange}
+                        onBlur={() => _onBlur()}
                     />
                     <label htmlFor={radioId}>
                         <slot></slot>

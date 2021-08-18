@@ -46,6 +46,10 @@ export class RuxSlider {
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
      */
     @Event({ eventName: 'rux-input' }) ruxInput!: EventEmitter
+    /**
+     * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
+     */
+    @Event({ eventName: 'rux-blur' }) ruxBlur!: EventEmitter
 
     componentWillLoad() {
         this._updateValue()
@@ -53,7 +57,8 @@ export class RuxSlider {
     }
 
     connectedCallback() {
-        this.onInput = this.onInput.bind(this)
+        this._onInput = this._onInput.bind(this)
+        this._onBlur = this._onBlur.bind(this)
     }
 
     @Watch('value')
@@ -100,11 +105,16 @@ export class RuxSlider {
         const dif = ((this.value! - this.min!) / (this.max! - this.min!)) * 100
         this.el.style.setProperty('--valuePercent', `${dif}%`)
     }
-    onInput(e: Event) {
+
+    private _onInput(e: Event) {
         const target = e.target as HTMLInputElement
         this.value = parseInt(target.value)
         this._setValuePercent()
         this.ruxInput.emit()
+    }
+
+    private _onBlur = () => {
+        this.ruxBlur.emit()
     }
     //Safari needs 0px top for the thumb to look normal.
     _getBrowser(ua: string) {
@@ -114,7 +124,17 @@ export class RuxSlider {
     }
 
     render() {
-        const { el, min, max, value, step, disabled, name, onInput } = this
+        const {
+            el,
+            min,
+            max,
+            value,
+            step,
+            disabled,
+            name,
+            _onInput,
+            _onBlur,
+        } = this
 
         renderHiddenInput(true, el, name, JSON.stringify(this.value), disabled)
 
@@ -122,7 +142,7 @@ export class RuxSlider {
             <Host>
                 <div class="rux-slider">
                     <input
-                        onInput={onInput}
+                        onInput={_onInput}
                         type="range"
                         class="rux-range"
                         min={min}
@@ -132,6 +152,7 @@ export class RuxSlider {
                         disabled={disabled}
                         aria-label="slider"
                         aria-disabled={disabled ? 'true' : 'false'}
+                        onBlur={() => _onBlur()}
                     ></input>
                 </div>
                 <slot></slot>

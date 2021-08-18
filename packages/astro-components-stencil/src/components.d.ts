@@ -24271,6 +24271,10 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
+          * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
+         */
+        "onRux-blur"?: (event: CustomEvent<any>) => void;
+        /**
           * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */
         "onRux-change"?: (event: CustomEvent<any>) => void;
@@ -40270,6 +40274,10 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
+          * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
+         */
+        "onRux-blur"?: (event: CustomEvent<any>) => void;
+        /**
           * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */
         "onRux-change"?: (event: CustomEvent<any>) => void;
@@ -40512,6 +40520,10 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
+          * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
+         */
+        "onRux-blur"?: (event: CustomEvent<any>) => void;
+        /**
           * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
          */
         "onRux-change"?: (event: CustomEvent<any>) => void;
@@ -40533,6 +40545,10 @@ declare namespace LocalJSX {
           * The radio name
          */
         "name"?: string;
+        /**
+          * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
+         */
+        "onRux-blur"?: (event: CustomEvent<any>) => void;
         /**
           * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */
@@ -40612,6 +40628,10 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
+          * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
+         */
+        "onRux-blur"?: (event: CustomEvent<any>) => void;
+        /**
           * Event Emitted when the Value of the Select is Changed
          */
         "onRux-change"?: (event: CustomEvent<void>) => void;
@@ -40637,6 +40657,10 @@ declare namespace LocalJSX {
           * Name of the Input Field for Form Submission
          */
         "name"?: string;
+        /**
+          * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
+         */
+        "onRux-blur"?: (event: CustomEvent<any>) => void;
         /**
           * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */
@@ -40677,6 +40701,10 @@ declare namespace LocalJSX {
           * The switch name
          */
         "name"?: string;
+        /**
+          * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
+         */
+        "onRux-blur"?: (event: CustomEvent<any>) => void;
         /**
           * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */
@@ -40769,6 +40797,10 @@ declare namespace LocalJSX {
           * The input name
          */
         "name"?: string;
+        /**
+          * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
+         */
+        "onRux-blur"?: (event: CustomEvent<any>) => void;
         /**
           * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */

@@ -106,21 +106,30 @@ export class RuxInputField {
      */
     @Event({ eventName: 'rux-input' }) ruxInput!: EventEmitter
 
+    /**
+     * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
+     */
+    @Event({ eventName: 'rux-blur' }) ruxBlur!: EventEmitter
+
     connectedCallback() {
-        this.onChange = this.onChange.bind(this)
-        this.onInput = this.onInput.bind(this)
+        this._onChange = this._onChange.bind(this)
+        this._onInput = this._onInput.bind(this)
     }
 
-    onChange(e: Event) {
+    private _onChange(e: Event) {
         const target = e.target as HTMLInputElement
         this.value = target.value
         this.ruxChange.emit()
     }
 
-    onInput(e: Event) {
+    private _onInput(e: Event) {
         const target = e.target as HTMLInputElement
         this.value = target.value
         this.ruxInput.emit()
+    }
+
+    private _onBlur = () => {
+        this.ruxBlur.emit()
     }
 
     render() {
@@ -135,8 +144,9 @@ export class RuxInputField {
             max,
             min,
             name,
-            onChange,
-            onInput,
+            _onChange,
+            _onInput,
+            _onBlur,
             placeholder,
             required,
             small,
@@ -177,9 +187,10 @@ export class RuxInputField {
                             'rux-input--invalid': invalid,
                             'rux-input--search': type === 'search',
                         }}
-                        id={inputId}
-                        onChange={onChange}
-                        onInput={onInput}
+                        id={this.inputId}
+                        onChange={_onChange}
+                        onInput={_onInput}
+                        onBlur={() => _onBlur()}
                     ></input>
                 </div>
 
