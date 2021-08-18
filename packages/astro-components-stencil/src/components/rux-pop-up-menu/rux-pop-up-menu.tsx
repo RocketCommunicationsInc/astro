@@ -9,6 +9,7 @@ import {
     Method,
     Watch,
     State,
+    Listen,
 } from '@stencil/core'
 
 /**
@@ -133,11 +134,12 @@ export class RuxPopUpMenu {
     @Method()
     async toggle(): Promise<boolean> {
         this.open = !this.open
-        if (this.open) {
-            return true
-        } else {
-            return false
-        }
+        return this.open
+    }
+
+    @Listen('rux-menu-item-selected')
+    handleListen() {
+        this.open = false
     }
 
     private _bindElements() {

@@ -6,6 +6,7 @@ import {
     Prop,
     EventEmitter,
     Event,
+    Listen,
 } from '@stencil/core'
 
 /**
@@ -60,35 +61,34 @@ export class RuxMenuItem {
     /**
      * Emitted when item is clicked. Ex `{value : 10}`
      */
-    @Event({ eventName: 'rux-menu-item-selected' })
+    @Event({
+        eventName: 'rux-menu-item-selected',
+        bubbles: true,
+        composed: true,
+    })
     ruxMenuItemSelected!: EventEmitter<object>
+
+    @Listen('click')
+    handleClick() {
+        if (!this.disabled) {
+            this.itemOnClick()
+        }
+    }
+
     private itemOnClick = () => {
         const emittedValue = this.value ? this.value : this.el.textContent
         this.ruxMenuItemSelected.emit({ value: emittedValue })
     }
 
-    private isClickable(): boolean {
-        return !this.disabled
-    }
-
     render() {
-        const { disabled, href, rel, download, target, itemOnClick } = this
-        const clickable = this.isClickable()
+        const { disabled, href, rel, download, target } = this
         const TagType = href ? 'a' : 'div'
         const attributes =
             TagType === 'a' ? { download, href, rel, target } : {}
-        // Only sets onClick if the item is clickable for screen readers
-        const clickFunc = clickable
-            ? {
-                  onClick: () => {
-                      itemOnClick()
-                  },
-              }
-            : {}
 
         return (
             <Host aria-disabled={disabled ? 'true' : null}>
-                <li {...clickFunc}>
+                <li>
                     <TagType {...attributes}>
                         <slot name="start"></slot>
                         <slot></slot>
