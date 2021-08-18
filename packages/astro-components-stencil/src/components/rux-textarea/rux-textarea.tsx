@@ -17,7 +17,7 @@ let id = 0
     shadow: true,
 })
 export class RuxTextarea {
-    inputId = `input-${++id}`
+    inputId = `rux-textarea-${++id}`
 
     /**
      * The input label text

@@ -1,12 +1,15 @@
 describe('Text Area with Form', () => {
     beforeEach(() => {
-        cy.visit('localhost:4444/tests/pages/form-textarea.html')
+        cy.visitForm('textarea')
+        cy.get('#form').click()
     })
     it('submits the correct value when using a form', () => {
-        cy.get('#form').submit()
+        cy.get('#textarea1').shadow().find('textarea').type('TextArea Test 1')
+        cy.get('#formSumbitBtn').click()
         cy.get('#log').contains('test1:TextArea Test 1')
         cy.get('#log').contains('native:Native Text Area')
     })
+
     it('submits correct value after typing into it', () => {
         cy.get('#noval').shadow().find('textarea').type('Eyes Up')
         cy.get('#form').submit()
@@ -17,18 +20,21 @@ describe('Text Area with Form', () => {
         cy.get('#form').submit()
         cy.get('#log').should('not.contain', 'Disabled')
     })
+
     it('renders error text correctly', () => {
         cy.get('#errorText')
             .shadow()
             .find('.rux-error-text')
             .should('contain.text', 'ERROR')
     })
+
     it('renders help text correctly', () => {
         cy.get('#helpText')
             .shadow()
             .find('.rux-help-text')
             .should('contain.text', 'HELP')
     })
+
     it('renders error text over help text if both are passed in', () => {
         cy.get('#bothText')
             .shadow()

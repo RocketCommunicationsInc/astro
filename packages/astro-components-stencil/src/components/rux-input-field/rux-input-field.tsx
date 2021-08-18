@@ -1,4 +1,13 @@
-import { Prop, Component, Event, EventEmitter, Host, h } from '@stencil/core'
+import {
+    Prop,
+    Component,
+    Event,
+    EventEmitter,
+    Host,
+    h,
+    Element,
+} from '@stencil/core'
+import { renderHiddenInput } from '../../utils/utils'
 
 let id = 0
 
@@ -8,7 +17,8 @@ let id = 0
     shadow: true,
 })
 export class RuxInputField {
-    inputId = `input-${++id}`
+    @Element() el!: HTMLRuxCheckboxElement
+    inputId = `rux-input-${++id}`
 
     /**
      * The input label text
@@ -114,50 +124,70 @@ export class RuxInputField {
     }
 
     render() {
+        const {
+            disabled,
+            el,
+            errorText,
+            helpText,
+            inputId,
+            invalid,
+            label,
+            max,
+            min,
+            name,
+            onChange,
+            onInput,
+            placeholder,
+            required,
+            small,
+            step,
+            type,
+            value,
+        } = this
+
+        renderHiddenInput(true, el, name, value, disabled)
         return (
             <Host>
                 <div
                     class={{
                         'rux-form-field': true,
-                        'rux-form-field--small': this.small,
+                        'rux-form-field--small': small,
                     }}
                 >
-                    <label class="rux-input-label" htmlFor={this.inputId}>
-                        {this.label}
+                    <label class="rux-input-label" htmlFor={inputId}>
+                        {label}
                         {this.required && (
-                            <span class="rux-input-label__asterisk">*</span>
+                            <span class="rux-input-label__asterisk">&#42;</span>
                         )}
                     </label>
                     <input
-                        name={this.name}
-                        disabled={this.disabled}
-                        type={this.type}
-                        aria-invalid={this.invalid ? 'true' : 'false'}
-                        placeholder={this.placeholder}
-                        required={this.required}
-                        step={this.step}
-                        min={this.min}
-                        max={this.max}
-                        value={this.value}
+                        name={name}
+                        disabled={disabled}
+                        type={type}
+                        aria-invalid={invalid ? 'true' : 'false'}
+                        placeholder={placeholder}
+                        required={required}
+                        step={step}
+                        min={min}
+                        max={max}
+                        value={value}
                         class={{
                             'rux-input': true,
-                            'rux-input--disabled': this.disabled,
-                            'rux-input--invalid': this.invalid,
-                            'rux-input--search': this.type === 'search',
+                            'rux-input--disabled': disabled,
+                            'rux-input--invalid': invalid,
+                            'rux-input--search': type === 'search',
                         }}
-                        id={this.inputId}
-                        onChange={this.onChange}
-                        onInput={this.onInput}
+                        id={inputId}
+                        onChange={onChange}
+                        onInput={onInput}
                     ></input>
                 </div>
 
-                {this.helpText && !this.errorText && (
-                    <div class="rux-help-text">{this.helpText}</div>
+                {helpText && !errorText && (
+                    <div class="rux-help-text">{helpText}</div>
                 )}
 
-                {this.errorText && (
-                    <div class="rux-error-text">{this.errorText}</div>
-                )}
+                {errorText && <div class="rux-error-text">{errorText}</div>}
             </Host>
         )
     }

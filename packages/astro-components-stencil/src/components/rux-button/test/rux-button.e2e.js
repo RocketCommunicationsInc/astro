@@ -9,7 +9,7 @@ describe('Button', () => {
 
 describe('Button with Form', () => {
     beforeEach(() => {
-        cy.visit('localhost:4444/tests/pages/form-button.html')
+        cy.visitForm('button')
     })
     it('submits the correct select value when using a form', () => {
         cy.get('rux-button').shadow().find('button').click({ force: true })

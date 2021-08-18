@@ -25,5 +25,11 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('visitStory', (component) => {
-    cy.visit(`iframe.html?id=${component}&args=&viewMode=story`)
+    cy.visit(
+        `storybook-static/iframe.html?id=${component}&args=&viewMode=story`
+    )
+})
+
+Cypress.Commands.add('visitForm', (component) => {
+    cy.visit(`src/tests/pages/form-${component}.html`)
 })

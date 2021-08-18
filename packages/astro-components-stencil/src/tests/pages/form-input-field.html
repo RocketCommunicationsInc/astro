@@ -13,24 +13,66 @@
             href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
             rel="stylesheet"
         />
-        <script type="module" src="/build/astro-web-components.esm.js"></script>
-        <script nomodule src="/build/astro-web-components.js"></script>
-
-        <link rel="stylesheet" href="/build/astro-web-components.css" />
+        <script
+            type="module"
+            src="/dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/dist/esm/astro-web-components.js"></script>
+        <style>
+            #form > div:not(:last-child) {
+                margin-bottom: 15px;
+            }
+        </style>
+        <link
+            rel="stylesheet"
+            href="/dist/astro-web-components/astro-web-components.css"
+        />
     </head>
 
     <body class="dark-theme">
         <div style="padding: 10%; display: flex; justify-content: center">
             <form id="form">
-                <rux-input-field
-                    label="Input Field"
-                    id="ruxInput"
-                    name="ruxInput"
-                >
-                </rux-input-field>
-                <input type="text" id="nativeInput" name="nativeInput" />
+                <div>
+                    <rux-input-field
+                        label="Input Field"
+                        id="ruxInput"
+                        name="ruxInput"
+                    >
+                    </rux-input-field>
+                    <input type="text" id="nativeInput" name="nativeInput" />
+                </div>
 
-                <button type="submit">submit</button>
+                <div>
+                    <rux-input-field
+                        label="Disabled with value"
+                        id="ruxInput2"
+                        name="ruxInput2"
+                        value="Hello World"
+                        disabled
+                    >
+                    </rux-input-field>
+                    <input
+                        type="text"
+                        id="nativeInput2"
+                        name="nativeInput2"
+                        value="Hello World"
+                        disabled
+                    />
+                </div>
+
+                <div>
+                    <rux-input-field
+                        label="Required"
+                        id="ruxInput3"
+                        name="ruxInput3"
+                        required
+                        help-text="Test Help Text"
+                    >
+                    </rux-input-field>
+                    <input type="text" id="nativeInput3" name="nativeInput3" />
+                </div>
+
+                <button id="formSubmitBtn" type="submit">submit</button>
             </form>
             <ul id="log"></ul>
             <script>

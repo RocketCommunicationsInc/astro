@@ -4,6 +4,7 @@ loader/
 storybook-static/
 docs.json
 cypress/fixtures
+coverage/
 
 *~
 *.sw[mnpcod]

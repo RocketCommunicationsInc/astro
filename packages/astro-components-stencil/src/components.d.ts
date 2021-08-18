@@ -16377,23 +16377,27 @@ export namespace Components {
         /**
           * Determines if the slider is disabled.
          */
-        "disabled"?: boolean;
+        "disabled": boolean;
         /**
           * Max value of slider.
          */
-        "max"?: number;
+        "max": number;
         /**
           * Min value of the slider.
          */
-        "min"?: number;
+        "min": number;
+        /**
+          * Name of the Input Field for Form Submission
+         */
+        "name": string;
         /**
           * Step amount of slider value.
          */
-        "step"?: number;
+        "step": number;
         /**
           * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/<input type="range">](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
          */
-        "value"?: number;
+        "value": number;
     }
     interface RuxStatus {
         /**
@@ -40629,6 +40633,10 @@ declare namespace LocalJSX {
           * Min value of the slider.
          */
         "min"?: number;
+        /**
+          * Name of the Input Field for Form Submission
+         */
+        "name"?: string;
         /**
           * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */

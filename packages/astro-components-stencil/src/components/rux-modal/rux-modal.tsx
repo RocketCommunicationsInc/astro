@@ -46,10 +46,10 @@ export class RuxModal {
     })
     ruxModalClosed!: EventEmitter<boolean>
 
-    @Element() private element!: HTMLRuxModalElement
+    @Element() element!: HTMLRuxModalElement
 
     // confirm dialog if Enter key is pressed
-    @Listen('keydown')
+    @Listen('keydown', { target: 'window' })
     handleKeyDown(ev: KeyboardEvent) {
         if (ev.key === 'Enter') {
             const button = this._getDefaultButton()
@@ -60,10 +60,11 @@ export class RuxModal {
     }
 
     // close modal if click happens outside of dialog
-    @Listen('click')
+    @Listen('click', { target: 'window' })
     handleClick(ev: MouseEvent) {
-        const el: HTMLElement = ev.composedPath()[0] as HTMLElement
-        if (el.tagName.toLowerCase() === 'rux-modal') {
+        const wrapper = this._getWrapper()
+
+        if (ev.composedPath()[0] === wrapper) {
             this.ruxModalClosed.emit(false)
             this.open = false
         }
@@ -99,6 +100,17 @@ export class RuxModal {
             return defaultButton
         }
 
+        return null
+    }
+
+    private _getWrapper(): HTMLElement | null {
+        const wrapper = this.element?.shadowRoot?.querySelector(
+            '.rux-modal__wrapper'
+        ) as HTMLElement
+
+        if (wrapper) {
+            return wrapper
+        }
         return null
     }
 
