@@ -30,7 +30,7 @@ export class RuxSlider {
      */
     @Prop() step: number = 1
     /**
-     * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/<input type="range">](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
+     * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
      */
     @Prop({ mutable: true }) value: number =
         (this.max! - this.min!) / 2 + this.min!
@@ -46,6 +46,10 @@ export class RuxSlider {
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
      */
     @Event({ eventName: 'rux-input' }) ruxInput!: EventEmitter
+    /**
+     * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
+     */
+    @Event({ eventName: 'rux-blur' }) ruxBlur!: EventEmitter
 
     componentWillLoad() {
         this._updateValue()
@@ -53,7 +57,8 @@ export class RuxSlider {
     }
 
     connectedCallback() {
-        this.onInput = this.onInput.bind(this)
+        this._onInput = this._onInput.bind(this)
+        this._onBlur = this._onBlur.bind(this)
     }
 
     @Watch('value')
@@ -63,7 +68,21 @@ export class RuxSlider {
         this._updateValue()
     }
 
-    _updateValue() {
+    @Watch('step')
+    handleStep() {
+        //? Value needs to be a multiple of step, otherwise slider begins to look wrong
+        this.value = this._closestMultiple(this.value, this.step)
+    }
+
+    //Returns the closest multiple of two given numbers.
+    private _closestMultiple(n: number, x: number) {
+        if (x > n) return x
+        n = n + x / 2
+        n = n - (n % x)
+        return n
+    }
+
+    private _updateValue() {
         // If min is not a number, change it to 0
         if (!this.min && this.min != 0) {
             this.min = 0
@@ -96,25 +115,40 @@ export class RuxSlider {
         this._setValuePercent()
     }
     //Sets the --valuePercent CSS var
-    _setValuePercent() {
+    private _setValuePercent() {
         const dif = ((this.value! - this.min!) / (this.max! - this.min!)) * 100
         this.el.style.setProperty('--valuePercent', `${dif}%`)
     }
-    onInput(e: Event) {
+
+    private _onInput(e: Event) {
         const target = e.target as HTMLInputElement
         this.value = parseInt(target.value)
         this._setValuePercent()
         this.ruxInput.emit()
     }
+
+    private _onBlur = () => {
+        this.ruxBlur.emit()
+    }
     //Safari needs 0px top for the thumb to look normal.
-    _getBrowser(ua: string) {
+    private _getBrowser(ua: string) {
         if (ua.indexOf('safari') > -1 && ua.indexOf('chrome') == -1) {
             this.el.style.setProperty('--top', '0px')
         }
     }
 
     render() {
-        const { el, min, max, value, step, disabled, name, onInput } = this
+        const {
+            el,
+            min,
+            max,
+            value,
+            step,
+            disabled,
+            name,
+            _onInput,
+            _onBlur,
+        } = this
 
         renderHiddenInput(true, el, name, JSON.stringify(this.value), disabled)
 
@@ -122,7 +156,7 @@ export class RuxSlider {
             <Host>
                 <div class="rux-slider">
                     <input
-                        onInput={onInput}
+                        onInput={_onInput}
                         type="range"
                         class="rux-range"
                         min={min}
@@ -132,6 +166,7 @@ export class RuxSlider {
                         disabled={disabled}
                         aria-label="slider"
                         aria-disabled={disabled ? 'true' : 'false'}
+                        onBlur={() => _onBlur()}
                     ></input>
                 </div>
                 <slot></slot>

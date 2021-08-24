@@ -60,20 +60,21 @@ Pass properties via attributes similar to the native [HTML Input Range](https://
 
 ## Properties
 
-| Property   | Attribute  | Description                                                                                                                                                                                                      | Type      | Default                                   |
-| ---------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------- |
-| `disabled` | `disabled` | Determines if the slider is disabled.                                                                                                                                                                            | `boolean` | `false`                                   |
-| `max`      | `max`      | Max value of slider.                                                                                                                                                                                             | `number`  | `100`                                     |
-| `min`      | `min`      | Min value of the slider.                                                                                                                                                                                         | `number`  | `0`                                       |
-| `name`     | `name`     | Name of the Input Field for Form Submission                                                                                                                                                                      | `string`  | `''`                                      |
-| `step`     | `step`     | Step amount of slider value.                                                                                                                                                                                     | `number`  | `1`                                       |
-| `value`    | `value`    | Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/<input type="range">](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) | `number`  | `(this.max! - this.min!) / 2 + this.min!` |
+| Property   | Attribute  | Description                                                                                                                                                                                                   | Type      | Default                                   |
+| ---------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------- |
+| `disabled` | `disabled` | Determines if the slider is disabled.                                                                                                                                                                         | `boolean` | `false`                                   |
+| `max`      | `max`      | Max value of slider.                                                                                                                                                                                          | `number`  | `100`                                     |
+| `min`      | `min`      | Min value of the slider.                                                                                                                                                                                      | `number`  | `0`                                       |
+| `name`     | `name`     | Name of the Input Field for Form Submission                                                                                                                                                                   | `string`  | `''`                                      |
+| `step`     | `step`     | Step amount of slider value.                                                                                                                                                                                  | `number`  | `1`                                       |
+| `value`    | `value`    | Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) | `number`  | `(this.max! - this.min!) / 2 + this.min!` |
 
 
 ## Events
 
 | Event       | Description                                                                                                                                     | Type               |
 | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| `rux-blur`  | Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)            | `CustomEvent<any>` |
 | `rux-input` | Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) | `CustomEvent<any>` |
 
 

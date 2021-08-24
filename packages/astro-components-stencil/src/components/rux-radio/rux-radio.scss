@@ -44,12 +44,12 @@
 .rux-radio {
     display: flex;
     position: relative;
-    // margin: 0 0 1rem 0;
+
     line-height: 1.2;
 
     input[type='radio'] {
         -webkit-appearance: none;
-        display: none;
+        appearance: none;
 
         + label {
             position: relative;
@@ -57,7 +57,7 @@
 
             align-items: center;
             justify-content: flex-start;
-
+            margin-left: -8px;
             color: var(--controlLabelColor);
             letter-spacing: 0.5px;
             cursor: pointer;

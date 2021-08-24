@@ -66,7 +66,9 @@
     }
 
     &__input {
-        display: none;
+        appearance: none;
+        -webkit-appearance: none;
+        margin: 0;
 
         // Active Styling
         &:checked {

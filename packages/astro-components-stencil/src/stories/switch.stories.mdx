@@ -6,6 +6,11 @@ import { html, render } from 'lit-html'
     title="Components/Switch"
     component="rux-switch"
     argTypes={extractArgTypes('rux-switch')}
+    parameters={{
+        actions: {
+            handles: ['rux-input rux-switch', 'rux-change rux-switch', 'rux-blur rux-switch'],
+        },
+    }}
 />
 
 # Switch
