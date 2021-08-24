@@ -49,6 +49,57 @@ export const Default = (args) => {
 
 <ArgsTable of="rux-icon"/>
 
+## Usage
+
+### Customizing the Color
+
+#### Via the Color Property
+
+The `color` property accepts any valid color (hex, rgba, name, etc):
+
+```
+<rux-icon icon="settings" color="#FFF"></rux-icon>
+<rux-icon icon="settings" color="rgb(255, 255, 255)"></rux-icon>
+<rux-icon icon="settings" color="white"></rux-icon>
+```
+
+#### Via CSS
+
+You can also use the CSS `fill` property:
+
+```
+  <rux-icon icon="settings" style="fill: #FFF;"></rux-icon>
+```
+
+**NOTE:** If you are using CSS to style the color, make sure to omit the `color` property on the component as this has a higher specificity and will override your CSS style.
+
+### Customizing the Size
+
+#### Via the Size Property
+
+The `size` property includes several pre-defined sizes for ease of use:
+```
+<rux-icon icon="settings" size="extra-small"></rux-icon>
+<rux-icon icon="settings" size="small"></rux-icon>
+<rux-icon icon="settings" size="normal"></rux-icon>
+<rux-icon icon="settings" size="large"></rux-icon>
+```
+
+It also accepts any custom size attribute. For example:
+```
+<rux-icon icon="settings" size="1rem"></rux-icon>
+<rux-icon icon="settings" size="20px"></rux-icon>
+```
+
+#### Via CSS
+
+You can also manually set the `width` and `height` using CSS.
+```
+<rux-icon icon="settings" width="1rem" height="1rem"></rux-icon>
+```
+
+**NOTE:** Styling via CSS will override the component's `size` property if set.
+
 ## All Icons
 
 export const AllIcons = (args) => {
