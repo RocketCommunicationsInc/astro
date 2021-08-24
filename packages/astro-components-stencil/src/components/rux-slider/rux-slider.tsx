@@ -30,7 +30,7 @@ export class RuxSlider {
      */
     @Prop() step: number = 1
     /**
-     * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/<input type="range">](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
+     * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
      */
     @Prop({ mutable: true }) value: number =
         (this.max! - this.min!) / 2 + this.min!
@@ -68,7 +68,21 @@ export class RuxSlider {
         this._updateValue()
     }
 
-    _updateValue() {
+    @Watch('step')
+    handleStep() {
+        //? Value needs to be a multiple of step, otherwise slider begins to look wrong
+        this.value = this._closestMultiple(this.value, this.step)
+    }
+
+    //Returns the closest multiple of two given numbers.
+    private _closestMultiple(n: number, x: number) {
+        if (x > n) return x
+        n = n + x / 2
+        n = n - (n % x)
+        return n
+    }
+
+    private _updateValue() {
         // If min is not a number, change it to 0
         if (!this.min && this.min != 0) {
             this.min = 0
@@ -101,7 +115,7 @@ export class RuxSlider {
         this._setValuePercent()
     }
     //Sets the --valuePercent CSS var
-    _setValuePercent() {
+    private _setValuePercent() {
         const dif = ((this.value! - this.min!) / (this.max! - this.min!)) * 100
         this.el.style.setProperty('--valuePercent', `${dif}%`)
     }
@@ -117,7 +131,7 @@ export class RuxSlider {
         this.ruxBlur.emit()
     }
     //Safari needs 0px top for the thumb to look normal.
-    _getBrowser(ua: string) {
+    private _getBrowser(ua: string) {
         if (ua.indexOf('safari') > -1 && ua.indexOf('chrome') == -1) {
             this.el.style.setProperty('--top', '0px')
         }
