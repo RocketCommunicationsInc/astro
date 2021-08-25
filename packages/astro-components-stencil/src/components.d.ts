@@ -180,7 +180,7 @@ export namespace Components {
          */
         "includeAppState": boolean;
         /**
-          * Declares whether a rux-icon will be shown in the left-side slot
+          * Declares whether the menu-icon will be shown in the left-side slot
          */
         "includeIcon": boolean;
         /**
@@ -190,7 +190,7 @@ export namespace Components {
         /**
           * Sets the icon to be displayed in the default rux-icon component
          */
-        "menuIcon"?: string;
+        "menuIcon": string;
     }
     interface RuxIcon {
         /**
@@ -24395,7 +24395,7 @@ declare namespace LocalJSX {
          */
         "includeAppState"?: boolean;
         /**
-          * Declares whether a rux-icon will be shown in the left-side slot
+          * Declares whether the menu-icon will be shown in the left-side slot
          */
         "includeIcon"?: boolean;
         /**

@@ -1,6 +1,12 @@
 import { Prop, Component, Host, h } from '@stencil/core'
 import { AppMeta } from './appMeta/appMeta'
 
+/**
+ * @slot (default) - Used for any additional center content (RuxClock, RuxTabs, etc.)
+ * @slot left-side - Used to prepend a RuxIcon or similar element
+ * @slot app-meta - Used to display the Application's metadata (Domain, Name, State, Version, etc.)
+ * @slot right-side - Used to append optional content
+ */
 @Component({
     tag: 'rux-global-status-bar',
     styleUrl: 'rux-global-status-bar.scss',
@@ -8,7 +14,7 @@ import { AppMeta } from './appMeta/appMeta'
 })
 export class RuxGlobalStatusBar {
     /**
-     * Declares whether a rux-icon will be shown in the left-side slot
+     * Declares whether the menu-icon will be shown in the left-side slot
      */
     @Prop({
         attribute: 'include-icon',
@@ -53,7 +59,7 @@ export class RuxGlobalStatusBar {
      * Sets the icon to be displayed in the default rux-icon component
      */
     @Prop({ attribute: 'menu-icon', mutable: true, reflect: true })
-    menuIcon?: string = 'apps'
+    menuIcon: string = 'apps'
 
     render() {
         return (

@@ -117,9 +117,19 @@ There is one unnamed slot in the Global Status Bar. This slot is intended for an
 | `appName`         | `app-name`          | Sets the name of the application to be displayed in the app-meta element    | `string \| undefined` | `undefined` |
 | `appVersion`      | `app-version`       | Sets the version of the application to be displayed in the app-meta element | `string \| undefined` | `undefined` |
 | `includeAppState` | `include-app-state` | Declares whether the app-state component will be shown in the app-meta slot | `boolean`             | `false`     |
-| `includeIcon`     | `include-icon`      | Declares whether a rux-icon will be shown in the left-side slot             | `boolean`             | `false`     |
+| `includeIcon`     | `include-icon`      | Declares whether the menu-icon will be shown in the left-side slot          | `boolean`             | `false`     |
 | `includeUsername` | `include-username`  | Declares whether the username component will be shown in the app-meta slot  | `boolean`             | `false`     |
-| `menuIcon`        | `menu-icon`         | Sets the icon to be displayed in the default rux-icon component             | `string \| undefined` | `'apps'`    |
+| `menuIcon`        | `menu-icon`         | Sets the icon to be displayed in the default rux-icon component             | `string`              | `'apps'`    |
+
+
+## Slots
+
+| Slot           | Description                                                                     |
+| -------------- | ------------------------------------------------------------------------------- |
+| `"(default)"`  | Used for any additional center content (RuxClock, RuxTabs, etc.)                |
+| `"app-meta"`   | Used to display the Application's metadata (Domain, Name, State, Version, etc.) |
+| `"left-side"`  | Used to prepend a RuxIcon or similar element                                    |
+| `"right-side"` | Used to append optional content                                                 |
 
 
 ## Dependencies
