@@ -7,7 +7,7 @@ import { LogRow } from './rux-log.model'
  * @slot table-header - the log's table header
  * @slot table-header-row - the log's table header row
  * @slot table-body - the log's table body
- * @part log--notification - the filter notification
+ * @part log-notification - the filter notification
  *
  */
 @Component({
@@ -77,7 +77,7 @@ export class RuxLog {
                         {this.filter && (
                             <div
                                 class="rux-log__notification"
-                                part="log--notification"
+                                part="log-notification"
                             >
                                 A filter with <b>{this.filter}</b> is enabled.{' '}
                                 {this.data.length - this.filteredData.length} of{' '}

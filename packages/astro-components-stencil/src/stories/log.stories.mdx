@@ -19,7 +19,7 @@ A Log is a tabular representation of application events and may include username
 
 ## Usage
 
-Log is a simple collection of other Astro components: Table, Status, Input, and a custom Notification bar. For an off-the-shelf solution, you can pass in a data array in the following format.
+Log is a simple collection of other Astro components: [Table](?path=/docs/components-table--default-story), [Status](?path=/docs/components-status--default-story), [Input Field](?path=/docs/components-input-field--default-story), and a custom [Notification](?path=/docs/components-notification--default-story) bar. For an off-the-shelf solution, you can pass in a data array in the following format.
 
 export const Log = (args) => {
     return html`
@@ -94,6 +94,18 @@ export const Log = (args) => {
 ## API
 
 <ArgsTable of="rux-log" />
+
+### Example LogRow[] Data
+
+```
+[
+  {
+    timestamp: new Date(),
+    status: 'off',
+    message: 'Antenna DGS 1 went offline.',
+  }
+]
+```
 
 ## Cherry Picking
 
