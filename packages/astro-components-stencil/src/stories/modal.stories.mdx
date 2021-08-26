@@ -6,6 +6,13 @@ import { html, render } from 'lit-html'
     title="Components/Modal"
     component="rux-modal"
     argTypes={extractArgTypes('rux-modal')}
+    parameters={{
+       actions: {
+        handles: [
+          'rux-modal-closed rux-modal',
+        ],
+      },
+    }}
 />
 
 # Modal
