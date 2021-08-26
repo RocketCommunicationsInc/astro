@@ -1,7 +1,12 @@
+# Astro Web Components
 
-# Installation
+> ⚠️ This repo is currently in alpha and under active development. Expect APIs to change ⚠️
 
-## Quick Start
+**Documentation:** https://astro-stencil.netlify.app/
+
+## Installation
+
+### Quick Start
 
 To get up and running quickly, Astro web components are available via a CDN. Add the following to your `<head>`
 
@@ -20,10 +25,9 @@ Astro components are now available anywhere in your app.
 </body>
 ```
 
-### Integrations
+#### Integrations
 
-1. Install
-   `npm i @astrouxds/astro-web-components`
+1. Install `npm i @astrouxds/astro-web-components`
 
 2. Import Astro's Fonts
 
@@ -37,7 +41,7 @@ We recommend using Google's CDN; however, you can also pull down and serve your 
 
 3. Bootstrap Your Application
 
-#### Static HTML (w/ ESM Modules)
+##### Static HTML (w/ ESM Modules)
 
 ```html
 // Import Astro's base styles
@@ -48,7 +52,7 @@ We recommend using Google's CDN; however, you can also pull down and serve your 
 </script>
 ```
 
-#### Generic Framework
+##### Generic Framework
 
 ```js
 // Import Astro's base styles
@@ -63,7 +67,7 @@ applyPolyfills().then(() => {
 })
 ```
 
-#### Vue
+##### Vue
 
 ```js
 import Vue from 'vue'
@@ -91,7 +95,7 @@ new Vue({
 }).$mount('#app')
 ```
 
-#### Angular
+##### Angular
 
 1. Include `CUSTOM_ELEMENTS_SCHEMA` in any module that uses an Astro component.
 
@@ -138,7 +142,7 @@ defineCustomElements()
 <rux-classification-marking *ngFor="let type of types" [attr.classification]="type"></rux-classification-marking>
   ```
 
-#### React
+##### React
 
 ```js
 import React from 'react'
