@@ -1,17 +1,11 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import { html, render } from 'lit-html'
-const args = extractArgTypes('rux-global-status-bar')
-args.includeIcon.defaultValue = true
-args.appDomain.defaultValue = 'Astro'
-args.appName.defaultValue = 'Dashboard'
-args.appVersion.defaultValue = '4.0 alpha'
-args.menuIcon.defaultValue = 'apps'
 
 <Meta
     title="Components/Global Status Bar"
     component="rux-global-status-bar"
-    argTypes={args}
+    argTypes = {extractArgTypes('rux-global-status-bar')}
 />
 
 # Global Status Bar
@@ -27,8 +21,9 @@ export const Default = (args) => {
         <div style="display: flex; justify-content: center;">
             <rux-global-status-bar
                 .includeIcon="${args.includeIcon}"
-                .includeAppState="${args.includeAppState}"
-                .includeUsername="${args.includeUsername}"
+                .appState="${args.appState}"
+                .appStateColor="${args.appStateColor}"
+                .username="${args.username}"
                 .appDomain="${args.appDomain}"
                 .appName="${args.appName}"
                 .appVersion="${args.appVersion}"
@@ -40,7 +35,14 @@ export const Default = (args) => {
 }
 
 <Canvas>
-    <Story name="Default">
+    <Story name="Default"
+        args={{
+            appDomain: 'Astro',
+            appName: 'Dashboard',
+            appVersion: '4.0 Alpha',
+            menuIcon: 'apps',
+            includeIcon: true,
+        }}>
         {Default.bind()}
     </Story>
 </Canvas>
@@ -58,8 +60,9 @@ export const GlobalStatusBarWithAppState = (args) => {
         <div style="display: flex; justify-content: center;">
             <rux-global-status-bar
                 .includeIcon="${args.includeIcon}"
-                .includeAppState="${args.includeAppState}"
-                .includeUsername="${args.includeUsername}"
+                .appState="${args.appState}"
+                .appStateColor="${args.appStateColor}"
+                .username="${args.username}"
                 .appDomain="${args.appDomain}"
                 .appName="${args.appName}"
                 .appVersion="${args.appVersion}"
@@ -73,8 +76,9 @@ export const GlobalStatusBarWithAppState = (args) => {
 <Canvas>
     <Story
       args={{
-        includeAppState: true,
-        includeUsername: true,
+        appState: 'Production',
+        appStateColor: 'tag1',
+        username: 'Joan Smith',
         appDomain: 'Astro',
         appName: 'Dashboard',
         appVersion: '4.0 Alpha',
@@ -93,8 +97,9 @@ export const GlobalStatusBarWithSlotContent = (args) => {
         <div style="display: flex; justify-content: center;">
             <rux-global-status-bar
                 .includeIcon="${args.includeIcon}"
-                .includeAppState="${args.includeAppState}"
-                .includeUsername="${args.includeUsername}"
+                .appState="${args.appState}"
+                .appStateColor="${args.appStateColor}"
+                .username="${args.username}"
                 .appDomain="${args.appDomain}"
                 .appName="${args.appName}"
                 .appVersion="${args.appVersion}"
@@ -110,8 +115,9 @@ export const GlobalStatusBarWithSlotContent = (args) => {
 <Canvas>
     <Story
       args={{
-        includeAppState: true,
-        includeUsername: true,
+        appState: 'Production',
+        appStateColor: 'tag1',
+        username: 'Joan Smith',
         appDomain: 'Astro',
         appName: 'Dashboard',
         appVersion: '4.0 Alpha',
@@ -130,8 +136,9 @@ export const GlobalStatusBarWithTabs = (args) => {
     return html`
             <rux-global-status-bar
                 .includeIcon="${args.includeIcon}"
-                .includeAppState="${args.includeAppState}"
-                .includeUsername="${args.includeUsername}"
+                .appState="${args.appState}"
+                .appStateColor="${args.appStateColor}"
+                .username="${args.username}"
                 .appDomain="${args.appDomain}"
                 .appName="${args.appName}"
                 .appVersion="${args.appVersion}"
@@ -173,8 +180,9 @@ export const GlobalStatusBarWithTabs = (args) => {
 <Canvas>
     <Story
       args={{
-        includeAppState: true,
-        includeUsername: true,
+        appState: 'Production',
+        appStateColor: 'tag1',
+        username: 'Joan Smith',
         appDomain: 'Astro',
         appName: 'Dashboard',
         appVersion: '4.0 Alpha',
