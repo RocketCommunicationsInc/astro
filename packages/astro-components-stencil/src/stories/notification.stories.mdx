@@ -39,7 +39,7 @@ export const Default = (args) => {
 }
 
 <Canvas>
-    <Story name="Default">
+    <Story name="Default" height="100px">
       {Default.bind()}
     </Story>
 </Canvas>
@@ -47,7 +47,7 @@ export const Default = (args) => {
 
 ## Usage
 
-The Astro UXDS Notification Banner hides from view using absolute positioning in CSS to slide up and outside of the parent element's content area. To ensure the notification hides properly, make sure the Notification Banner's parent element has both position: relative and overflow: hidden applied.
+The Astro UXDS Notification Banner hides from view using absolute positioning in CSS to slide up and outside of the parent element's content area. To ensure the notification hides properly, make sure the Notification Banner's parent element has both `position: relative` and `overflow: hidden` applied.
 
 ## API
 
@@ -78,6 +78,7 @@ export const NotificationAutoClose = (args) => {
         closeAfter: 2000
       }}
       name="Auto Close"
+      height="100px"
     >
         {NotificationAutoClose.bind()}
     </Story>
