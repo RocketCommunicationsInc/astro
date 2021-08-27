@@ -1,4 +1,4 @@
-import { Prop, Element, Component, h } from '@stencil/core'
+import { Prop, Element, Component, h, Host } from '@stencil/core'
 import { hasShadowDom } from '../../utils/utils'
 
 @Component({
@@ -71,29 +71,31 @@ export class RuxButton {
     render() {
         const { size, iconOnly, secondary, disabled, icon } = this
         return (
-            <button
-                type="button"
-                onClick={this.handleClick}
-                class={{
-                    'rux-button': true,
-                    'rux-button--secondary': secondary,
-                    'rux-button--small': size === 'small',
-                    'rux-button--large': size === 'large',
-                    'rux-button--icon-only': iconOnly,
-                }}
-                aria-disabled={disabled ? 'true' : null}
-                disabled={disabled}
-            >
-                {icon ? (
-                    <rux-icon
-                        size="extra-small"
-                        icon={icon}
-                        color={secondary ? 'primary' : 'dark'}
-                    ></rux-icon>
-                ) : null}
+            <Host>
+                <button
+                    type="button"
+                    onClick={this.handleClick}
+                    class={{
+                        'rux-button': true,
+                        'rux-button--secondary': secondary,
+                        'rux-button--small': size === 'small',
+                        'rux-button--large': size === 'large',
+                        'rux-button--icon-only': iconOnly,
+                    }}
+                    aria-disabled={disabled ? 'true' : null}
+                    disabled={disabled}
+                >
+                    {icon ? (
+                        <rux-icon
+                            size="extra-small"
+                            icon={icon}
+                            color={secondary ? 'primary' : 'dark'}
+                        ></rux-icon>
+                    ) : null}
 
-                <slot></slot>
-            </button>
+                    <slot></slot>
+                </button>
+            </Host>
         )
     }
 }

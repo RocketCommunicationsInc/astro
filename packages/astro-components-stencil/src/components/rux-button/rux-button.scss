@@ -61,7 +61,9 @@
      * @prop --buttonSecondaryHoverBorderColor:  Button secondary hover border color
      */
 }
-
+:host([disabled]) {
+    pointer-events: none;
+}
 .rux-button {
     display: flex;
     position: relative;
@@ -97,6 +99,7 @@
     &:disabled {
         opacity: var(--disabledOpacity);
         cursor: var(--disabledCursor);
+        pointer-events: none;
     }
 
     &:focus {
