@@ -97,9 +97,9 @@ For more advanced customization, RuxLog exposes the entire table element and eac
 
 ## Shadow Parts
 
-| Part                  | Description             |
-| --------------------- | ----------------------- |
-| `"log--notification"` | the filter notification |
+| Part                 | Description             |
+| -------------------- | ----------------------- |
+| `"log-notification"` | the filter notification |
 
 
 ## Dependencies
