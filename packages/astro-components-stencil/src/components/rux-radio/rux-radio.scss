@@ -7,29 +7,32 @@
 
     box-sizing: border-box;
     /**
-    * @prop --controlLabelColor: Label text color
-    */
+  * @prop --controlLabelColor: Label text color
+  */
     --controlLabelColor: var(--defaultText);
     /**
-    * @prop --controlOutlineBackgroundColor: Checkbox background color
-    */
+  * @prop --controlOutlineBackgroundColor: Radio background color
+  */
     --controlOutlineBackgroundColor: var(--backgroundColor);
     /**
-    * @prop --controlBorderColor: Checkbox border color
-    */
+  * @prop --controlBorderColor: Radio border color
+  */
     --controlBorderColor: var(--colorSecondaryDarken2);
     /**
-    * @prop --controlHoverBorderColor: Checkbox border color on hover
-    */
+  * @prop --controlHoverBorderColor: Radio border color on hover
+  */
     --controlHoverBorderColor: var(--primaryLight);
     /**
-    * @prop --controlTextColor: Selected checkbox icon color
-    */
+  * @prop --controlTextColor: Selected radio icon color
+  */
     --controlTextColor: var(--colorSecondary500);
     /**
-    * @prop --controlSelectedOutlineBorderColor: Selected checkbox border color
-    */
+  * @prop --controlSelectedOutlineBorderColor: Selected radio border color
+  */
     --controlSelectedOutlineBorderColor: var(--primary);
+
+    /** @prop --controlSelectedOutlineBackgroundColor: Selected radio outline background color */
+    /** @prop --controlSelectedBorderColor: Selected radio border color */
 }
 
 .rux-form-field {
