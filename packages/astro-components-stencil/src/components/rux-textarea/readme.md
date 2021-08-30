@@ -33,6 +33,24 @@
 | `rux-input`  | Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) | `CustomEvent<any>` |
 
 
+## CSS Custom Properties
+
+| Name                              | Description                                |
+| --------------------------------- | ------------------------------------------ |
+| `--defaultText`                   | Default text color                         |
+| `--fontFamily`                    | Font family for textarea                   |
+| `--fontSize`                      | Font size                                  |
+| `--fontSizeMD`                    | Medium font size                           |
+| `--inputBackgroundColor`          | Background color                           |
+| `--inputBorderColor`              | Border color of the textarea.              |
+| `--inputFocusBorderColor`         | Border color while in a focused state      |
+| `--inputFocusTextColor`           | Text color while in a focused state        |
+| `--inputInvalidBorderColor`       | Border color while in an invalid state     |
+| `--inputSelectionBackgroundColor` | Background color while in a selected state |
+| `--inputTextColor`                | Text color                                 |
+| `--secondaryText`                 | Secondary text color                       |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

@@ -1,4 +1,40 @@
 :host {
+    /**
+     * @prop --inputBorderColor: Border color of the textarea.
+    */
+    /**
+     * @prop --fontFamily: Font family for textarea
+    */
+    /**
+     * @prop --inputTextColor: Text color
+    */
+    /**
+     * @prop --fontSize: Font size
+    */
+    /**
+     * @prop --inputBackgroundColor: Background color
+    */
+    /**
+     * @prop --inputInvalidBorderColor: Border color while in an invalid state
+    */
+    /**
+     * @prop --inputFocusBorderColor: Border color while in a focused state
+    */
+    /**
+     * @prop --inputFocusTextColor: Text color while in a focused state
+    */
+    /**
+     * @prop --inputSelectionBackgroundColor: Background color while in a selected state
+    */
+    /**
+     * @prop --defaultText: Default text color
+    */
+    /**
+     * @prop --fontSizeMD: Medium font size
+    */
+    /**
+     * @prop --secondaryText: Secondary text color
+    */
     display: block;
     .rux-textarea {
         box-sizing: border-box;
