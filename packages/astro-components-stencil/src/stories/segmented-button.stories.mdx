@@ -6,6 +6,11 @@ import { html, render } from 'lit-html'
     title="Components/Segmented Button"
     component="rux-segmented-button"
     argTypes={extractArgTypes('rux-segmented-button')}
+    parameters={{
+      actions: {
+        handles: ['rux-change rux-segmented-button'],
+      },
+    }}
 />
 
 # Segmented Button
@@ -56,9 +61,9 @@ export const SegmentedButton = (args) => {
 
 ## Usage
 
-Pass an Array of segments via the `data` attribute on the Segmented Button custom element. Segment items in the `data` Array must be objects with a `label` string. The first item in the Array will be auto-selected unless another segment item has a `selected` property with a truthy value
+Pass an array of segments via the `data` attribute on the Segmented Button custom element. Segment items in the `data` array must be objects with a `label` string. The first item in the array will be auto-selected unless another segment item has a `selected` property with a truthy value
 
-### Data Object
+### SegmentedButton Data Object
 ```json
 [
   { label: "First segment" },
