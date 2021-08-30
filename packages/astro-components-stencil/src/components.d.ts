@@ -60,7 +60,7 @@ export namespace Components {
          */
         "helpText"?: string;
         /**
-          * Toggles indeterminate state of a checkbox
+          * Toggles indeterminate state of a checkbox. The indeterminate property does not exist in HTML, but can be set in JS. [HTML Checkbox & Indeterminate State](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#indeterminate)
          */
         "indeterminate": boolean;
         /**
@@ -24267,7 +24267,7 @@ declare namespace LocalJSX {
          */
         "helpText"?: string;
         /**
-          * Toggles indeterminate state of a checkbox
+          * Toggles indeterminate state of a checkbox. The indeterminate property does not exist in HTML, but can be set in JS. [HTML Checkbox & Indeterminate State](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#indeterminate)
          */
         "indeterminate"?: boolean;
         /**

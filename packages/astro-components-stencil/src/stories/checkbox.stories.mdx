@@ -203,6 +203,34 @@ export const WithHelpText = (args) => {
     </Story>
 </Canvas>
 
+### Required
+
+export const Required = (args) => {
+  return html`
+         <rux-checkbox
+          ?disabled="${args.disabled}"
+          ?checked="${args.checked}"
+          ?indeterminate="${args.indeterminate}"
+          .errorText="${args.errorText}"
+          .helpText="${args.helpText}"
+          name="${args.name}"
+          ?required="${args.required}"
+          .value="${args.value}"
+        >
+          Checkbox Label
+        </rux-checkbox>
+  `
+}
+
+<Canvas>
+    <Story
+      args={{required: true}}
+      name="Required"
+    >
+        {Required.bind()}
+    </Story>
+</Canvas>
+
 ## Cherry Picking
 
 If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
