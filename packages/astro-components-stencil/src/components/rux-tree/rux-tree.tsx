@@ -1,5 +1,8 @@
 import { Element, Component, Host, h } from '@stencil/core'
 
+/**
+ * @slot (default) - the nodes of the tree.
+ */
 @Component({
     tag: 'rux-tree',
     styleUrl: 'rux-tree.scss',

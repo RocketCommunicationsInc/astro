@@ -5,8 +5,13 @@ import { html, render } from 'lit-html'
 <Meta
     title="Components/Tree"
     component="rux-tree"
-    subcomponents={{ 'Tree Node': 'rux-tree-node' }}
+    subcomponents={{ 'RuxTreeNode': 'rux-tree-node' }}
     argTypes={extractArgTypes('rux-tree')}
+    parameters={{
+      actions: {
+        handles: ['rux-tree-node-selected rux-tree-node'],
+      }
+    }}
 />
 
 # Tree
@@ -170,6 +175,8 @@ TreeNode has two slots:
 
 1. Default - The parent content
 2. Node - Any child nodes
+
+Tree currently only supports **up to 4 levels** of nesting.
 
 ```html
 <rux-tree-node>
