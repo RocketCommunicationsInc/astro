@@ -97,6 +97,21 @@
             }
         }
 
+        &:indeterminate + label::after {
+            position: absolute;
+            display: flex;
+            content: '';
+
+            top: 5px;
+            width: 10px !important;
+            height: 5px !important;
+            transform: rotate(0deg) !important;
+            border-right: 0px !important;
+            border-top: 0px !important;
+            border-bottom: 2px solid var(--controlTextColor) !important;
+            left: 4px !important;
+        }
+
         &:disabled {
             + label {
                 cursor: var(--disabledCursor);
@@ -111,16 +126,6 @@
                 border-color: var(--controlHoverBorderColor);
             }
         }
-    }
-
-    input[indeterminate]:checked + label::after {
-        width: 10px !important;
-        height: 5px !important;
-        transform: rotate(0deg) !important;
-        border-right: 0px !important;
-        border-top: 0px !important;
-        border-bottom: 2px solid var(--controlTextColor) !important;
-        left: 4px !important;
     }
 
     &--has-error {

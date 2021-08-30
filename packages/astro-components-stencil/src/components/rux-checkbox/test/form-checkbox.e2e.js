@@ -56,4 +56,21 @@ describe('Checkbox with Form', () => {
         cy.get('#form').submit()
         cy.get('#log').should('not.contain', 'ruxCheckbox')
     })
+
+    it('does not submit any value if indeterminate', () => {
+        cy.get('#ruxCheckbox')
+            .invoke('prop', 'checked', 'true')
+            .should('have.attr', 'checked', 'checked')
+            .invoke('prop', 'indeterminate', 'true')
+            .should('not.have.attr', 'checked')
+        cy.get('#log').should('not.contain', 'ruxCheckbox')
+    })
+
+    it('should be checked when clicking an indeterminate checkbox', () => {
+        cy.get('#ruxCheckbox').invoke('prop', 'indeterminate', 'true')
+        cy.get('#ruxCheckbox').shadow().find('input').click({ force: true })
+        cy.get('#ruxCheckbox')
+            .should('have.attr', 'checked', 'checked')
+            .should('not.have.attr', 'indeterminate')
+    })
 })

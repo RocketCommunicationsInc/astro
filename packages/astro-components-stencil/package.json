@@ -26,7 +26,7 @@
         "start.storybook": "start-storybook -p 6006 -s ./dist",
         "start": "concurrently npm:start.stencil npm:start.storybook",
         "test.e2e.run": "concurrently --success=first \"http-server -p 4444 .\" \"cypress run\"",
-        "test.e2e.watch": "concurrently --sucess=first \"http-server -p 4444 .\" \"cypress open\"",
+        "test.e2e.watch": "concurrently --success=first \"http-server -p 4444 .\" \"cypress open\"",
         "test.e2e": "npm run build && npm run test.e2e.run",
         "test.unit.watch": "TZ=UTC stencil test --spec --watchAll",
         "test.unit": "TZ=UTC stencil test --spec --coverage",
