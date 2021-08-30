@@ -29,9 +29,51 @@ export const Default = (args) => {
     </Story>
 </Canvas>
 
+
+
 ## API
 
 <ArgsTable of="rux-tab" />
+
+## Variants
+
+### Disabled
+export const Disabled = (args) => {
+  return html`
+    <rux-tab id="tab1" .disabled=${args.disabled} .selected=${args.selected}>Tab 1</rux-tab>
+  `
+}
+
+<Canvas>
+    <Story
+      name="Disabled"
+      args={{
+        disabled: true
+      }}
+    >
+    {Disabled.bind()}
+    </Story>
+</Canvas>
+
+
+
+### Selected
+export const Selected = (args) => {
+  return html`
+    <rux-tab id="tab1" .disabled=${args.disabled} .selected=${args.selected}>Tab 1</rux-tab>
+  `
+}
+
+<Canvas>
+    <Story
+      name="Selected"
+      args={{
+        selected: true
+      }}
+    >
+    {Selected.bind()}
+    </Story>
+</Canvas>
 
 ## Cherry Picking
 

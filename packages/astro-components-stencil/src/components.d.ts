@@ -40768,6 +40768,10 @@ declare namespace LocalJSX {
     }
     interface RuxTabs {
         /**
+          * Fires whenever a new tab is selected, and emits the selected tab.
+         */
+        "onRux-selected"?: (event: CustomEvent<any>) => void;
+        /**
           * If passed or set to true, displays the tabs in a smaller style, suitable for limited-space uses.
          */
         "small"?: boolean;

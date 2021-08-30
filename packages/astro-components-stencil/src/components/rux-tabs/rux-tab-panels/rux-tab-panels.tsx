@@ -1,5 +1,8 @@
 import { Component, Host, h, Element, Event, EventEmitter } from '@stencil/core'
 
+/**
+ * @slot (default) - Used for instances of rux-tab-panel
+ */
 @Component({
     tag: 'rux-tab-panels',
     styleUrl: '.././rux-tab-panel/rux-tab-panel.scss',
