@@ -144,7 +144,7 @@ export class RuxTreeNode {
 
     _handleTreeNodeClick(e: MouseEvent) {
         e.stopPropagation()
-        this.setSelected(!this.selected)
+        this.selected = !this.selected
     }
 
     _expandNextNode() {

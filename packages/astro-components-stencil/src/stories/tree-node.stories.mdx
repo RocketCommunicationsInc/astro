@@ -5,8 +5,12 @@ import { html, render } from 'lit-html'
 <Meta
     title="Components/Tree Node"
     component="rux-tree-node"
-    //subcomponents={{ 'Rux Button': 'rux-button' }} If component has any sub components, include them here
     argTypes={extractArgTypes('rux-tree-node')}
+    parameters={{
+      actions: {
+        handles: ['rux-tree-node-selected rux-tree-node'],
+      },
+    }}
 />
 
 # Tree Node
