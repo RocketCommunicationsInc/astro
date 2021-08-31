@@ -16349,7 +16349,7 @@ export namespace Components {
     }
     interface RuxSelect {
         /**
-          * Disables the item
+          * Disables the select menu via HTML disabled attribute. Select menu takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
          */
         "disabled": boolean;
         /**
@@ -40612,7 +40612,7 @@ declare namespace LocalJSX {
     }
     interface RuxSelect {
         /**
-          * Disables the item
+          * Disables the select menu via HTML disabled attribute. Select menu takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
          */
         "disabled"?: boolean;
         /**

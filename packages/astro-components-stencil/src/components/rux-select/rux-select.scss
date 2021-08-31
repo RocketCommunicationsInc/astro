@@ -81,6 +81,9 @@ label {
     &:disabled {
         opacity: 0.4;
         cursor: not-allowed;
+        &:hover {
+            border: 1px solid var(--selectMenuBorderColor);
+        }
     }
 
     &.rux-select-invalid {
