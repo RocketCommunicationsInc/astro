@@ -1,5 +1,6 @@
 import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
+import { reactOutputTarget } from '@stencil/react-output-target';
 
 export const config: Config = {
   namespace: 'astro-web-components',
@@ -19,6 +20,11 @@ export const config: Config = {
       type: 'www',
       serviceWorker: null, // disable service workers
     },
+    reactOutputTarget({
+      componentCorePackage: '@astrouxds/astro-web-components',
+      proxiesFile: '../astro-in-react/src/components.tsx',
+      includeDefineCustomElements: true,
+  }),
   ],
   plugins: [sass()]
 };
