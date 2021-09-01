@@ -8,6 +8,10 @@
     display: inline-flex;
 }
 
+:host([hidden]) {
+    display: none;
+}
+
 svg,
 svg > svg {
     height: 100%;

@@ -4,6 +4,8 @@
     *:after {
         box-sizing: inherit;
     }
+
+    display: inline-block;
     /**
     * @prop --controlLabelColor: Label text color
     */
@@ -22,6 +24,10 @@
     /**
     * @prop --controlSelectedOutlineBorderColor: Selected checkbox border color
     */
+}
+
+:host([hidden]) {
+    display: none;
 }
 
 .rux-form-field {

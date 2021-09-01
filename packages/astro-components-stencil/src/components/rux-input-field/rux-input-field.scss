@@ -150,3 +150,7 @@
         font-weight: bold;
     }
 }
+
+:host([hidden]) {
+    display: none;
+}

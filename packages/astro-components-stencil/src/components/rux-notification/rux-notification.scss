@@ -25,6 +25,11 @@
         justify-content: flex-end;
     }
 }
+
+:host([hidden]) {
+    display: none;
+}
+
 :host([open]) {
     top: 0;
 }

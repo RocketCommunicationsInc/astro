@@ -4,6 +4,7 @@
     *:after {
         box-sizing: inherit;
     }
+    display: inline-block;
 
     box-sizing: border-box;
     /**
@@ -143,4 +144,8 @@
             }
         }
     }
+}
+
+:host([hidden]) {
+    display: none;
 }

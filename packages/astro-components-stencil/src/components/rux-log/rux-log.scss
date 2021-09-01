@@ -6,6 +6,11 @@
     display: block;
     overflow: hidden;
 }
+
+:host([hidden]) {
+    display: none;
+}
+
 rux-table {
     --tableHeaderBackgroundColor: var(--logHeaderBackgroundColor);
 }

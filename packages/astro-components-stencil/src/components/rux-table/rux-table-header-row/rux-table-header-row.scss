@@ -3,6 +3,10 @@
     background-color: var(--logHeaderBackgroundColor);
 }
 
+:host([hidden]) {
+    display: none;
+}
+
 ::slotted(rux-table-header-cell:first-child) {
     padding-left: 1.875rem;
 }

@@ -36,6 +36,10 @@
     display: block;
 }
 
+:host([hidden]) {
+    display: none;
+}
+
 :host([aria-expanded='true'][aria-level='1']:not([aria-selected='true'])) {
     .parent:after {
         border-bottom: solid 1px var(--treeExpandedBorderColor);

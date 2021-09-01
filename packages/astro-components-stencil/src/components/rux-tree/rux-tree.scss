@@ -23,3 +23,7 @@
     user-select: none;
     width: 100%;
 }
+
+:host([hidden]) {
+    display: none;
+}

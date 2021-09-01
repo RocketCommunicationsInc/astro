@@ -49,9 +49,11 @@
     flex-flow: column;
     cursor: pointer;
 }
-*[hidden] {
-    display: none !important;
+
+:host([hidden]) {
+    display: none;
 }
+
 .rux-slider {
     display: flex;
     height: 20px;

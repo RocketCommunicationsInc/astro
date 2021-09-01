@@ -6,3 +6,7 @@
     padding: 0.625rem 1rem;
     white-space: nowrap;
 }
+
+:host([hidden]) {
+    display: none;
+}

@@ -59,6 +59,10 @@
     }
 }
 
+:host([hidden]) {
+    display: none;
+}
+
 :host([disabled]) {
     cursor: var(--disabledCursor);
 

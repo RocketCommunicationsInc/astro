@@ -24,6 +24,10 @@
     user-select: none;
 }
 
+:host([hidden]) {
+    display: none;
+}
+
 .rux-clock__segment {
     display: flex;
     flex-direction: column;

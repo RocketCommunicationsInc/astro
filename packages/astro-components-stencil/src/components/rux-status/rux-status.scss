@@ -15,8 +15,8 @@
     );
 }
 
-*[hidden] {
-    display: none !important;
+:host([hidden]) {
+    display: none;
 }
 
 *,

@@ -36,6 +36,11 @@
     color: var(--tabTextColor);
     border-bottom: 5px solid var(--tabBorderColor);
 }
+
+:host([hidden]) {
+    display: none;
+}
+
 :host span {
     overflow: hidden;
     white-space: nowrap;

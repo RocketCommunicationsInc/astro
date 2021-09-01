@@ -1,3 +1,11 @@
+:host {
+    display: inline;
+}
+
+:host([hidden]) {
+    display: none;
+}
+
 .rux-button-group {
     display: flex;
     align-items: center;

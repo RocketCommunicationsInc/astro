@@ -18,6 +18,10 @@
     padding-left: 1%;
 }
 
+:host([hidden]) {
+    display: none;
+}
+
 .rux-switch {
     position: relative;
     display: flex;

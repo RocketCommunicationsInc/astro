@@ -5,3 +5,7 @@
     border-top-style: solid;
     border-top-color: var(--tableHeaderBorderColor);
 }
+
+:host([hidden]) {
+    display: none;
+}

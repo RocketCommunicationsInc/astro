@@ -21,6 +21,10 @@
     contain: layout; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
 }
 
+:host([hidden]) {
+    display: none;
+}
+
 header {
     overflow: hidden;
     display: flex;

@@ -13,3 +13,7 @@
         margin: 6px 0.5rem 0 0.5rem;
     }
 }
+
+:host([hidden]) {
+    display: none;
+}

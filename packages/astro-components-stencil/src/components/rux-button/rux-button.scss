@@ -60,7 +60,14 @@
     /**
      * @prop --buttonSecondaryHoverBorderColor:  Button secondary hover border color
      */
+
+    display: inline-block;
 }
+
+:host([hidden]) {
+    display: none;
+}
+
 :host([disabled]) {
     pointer-events: none;
 }

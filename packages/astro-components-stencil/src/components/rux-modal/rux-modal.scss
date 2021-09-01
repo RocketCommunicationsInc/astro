@@ -16,6 +16,8 @@
     /**
       * @prop --modalBorderColor: Modal border color
       */
+
+    display: contents;
 }
 
 *,
@@ -24,8 +26,8 @@
     box-sizing: inherit;
 }
 
-*[hidden] {
-    display: none !important;
+:host([hidden]) {
+    display: none;
 }
 
 rux-button-group {

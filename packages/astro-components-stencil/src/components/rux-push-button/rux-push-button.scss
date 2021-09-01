@@ -53,3 +53,7 @@
         }
     }
 }
+
+:host([hidden]) {
+    display: none;
+}

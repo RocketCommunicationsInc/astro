@@ -80,3 +80,7 @@
       */
     --tableFilterDisabledBackgroundColor: var(--surfaceElements);
 }
+
+:host([hidden]) {
+    display: none;
+}

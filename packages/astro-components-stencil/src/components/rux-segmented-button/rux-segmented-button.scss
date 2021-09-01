@@ -50,6 +50,10 @@
     */
 }
 
+:host([hidden]) {
+    display: none;
+}
+
 *,
 *::before,
 *::after {
