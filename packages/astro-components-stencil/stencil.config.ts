@@ -22,7 +22,7 @@ export const config: Config = {
     },
     reactOutputTarget({
       componentCorePackage: '@astrouxds/astro-web-components',
-      proxiesFile: '../astro-in-react/src/components.tsx',
+      proxiesFile: '../react/src/components.tsx',
       includeDefineCustomElements: true,
   }),
   ],
