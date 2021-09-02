@@ -1,18 +1,18 @@
 :host {
     /**
-      * @prop --menuTextColor: Menu Text Color
+      * @prop --popupMenuTextColor: Menu Text Color
     */
 
     /**
-      * @prop --menuItemBackgroundColor: Menu Item Background Color
+      * @prop --popupMenuItemBackgroundColor: Menu Item Background Color
     */
 
     /**
-      * @prop --menuItemHoverBackgroundColor: Menu Item Hover Background Color
+      * @prop --popupMenuItemHoverBackgroundColor: Menu Item Hover Background Color
     */
 
     /**
-      * @prop --menuItemHoverTextColor: Menu Item Hover Text Color
+      * @prop --popupMenuItemHoverTextColor: Menu Item Hover Text Color
     */
 
     /**
@@ -34,21 +34,25 @@
         min-width: 15em;
         max-width: 20em;
 
-        background-color: --menuItemBackgroundColor;
+        background-color: var(--popupMenuItemBackgroundColor);
+        color: var(--popupMenuTextColor);
 
         &:hover {
-            background-color: var(--menuItemHoverBackgroundColor);
-            color: var(--menuItemHoverTextColor);
+            background-color: var(--popupMenuItemHoverBackgroundColor);
+            color: var(--popupMenuItemHoverTextColor);
         }
 
         a,
         div {
             text-overflow: ellipsis;
             text-decoration: none;
-            color: var(--menuTextColor);
+            color: var(--popupMenuTextColor);
             word-wrap: none;
             white-space: nowrap;
             overflow: hidden;
+            &:hover {
+                color: var(--popupMenuItemHoverTextColor);
+            }
         }
 
         a {

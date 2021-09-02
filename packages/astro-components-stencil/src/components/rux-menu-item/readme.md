@@ -83,14 +83,14 @@ Pass properties as slotted components in the Astro Pop Up Menu or Astro Select M
 
 ## CSS Custom Properties
 
-| Name                             | Description                      |
-| -------------------------------- | -------------------------------- |
-| `--disabledCursor`               | Cursor for Disabled Items        |
-| `--disabledOpacity`              | Opacity for Disabled Items       |
-| `--menuItemBackgroundColor`      | Menu Item Background Color       |
-| `--menuItemHoverBackgroundColor` | Menu Item Hover Background Color |
-| `--menuItemHoverTextColor`       | Menu Item Hover Text Color       |
-| `--menuTextColor`                | Menu Text Color                  |
+| Name                                  | Description                      |
+| ------------------------------------- | -------------------------------- |
+| `--disabledCursor`                    | Cursor for Disabled Items        |
+| `--disabledOpacity`                   | Opacity for Disabled Items       |
+| `--popupMenuItemBackgroundColor`      | Menu Item Background Color       |
+| `--popupMenuItemHoverBackgroundColor` | Menu Item Hover Background Color |
+| `--popupMenuItemHoverTextColor`       | Menu Item Hover Text Color       |
+| `--popupMenuTextColor`                | Menu Text Color                  |
 
 
 ----------------------------------------------

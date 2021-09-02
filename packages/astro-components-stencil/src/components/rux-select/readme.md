@@ -49,15 +49,15 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 
 ## Properties
 
-| Property   | Attribute  | Description                                            | Type                  | Default     |
-| ---------- | ---------- | ------------------------------------------------------ | --------------------- | ----------- |
-| `disabled` | `disabled` | Disables the item                                      | `boolean`             | `false`     |
-| `inputId`  | `input-id` | Id for the Select Input                                | `string \| undefined` | `undefined` |
-| `invalid`  | `invalid`  | Sets the Select as Invalid for Custom Validation Usage | `boolean`             | `false`     |
-| `label`    | `label`    | Sets the Label for the Select                          | `string \| undefined` | `undefined` |
-| `labelId`  | `label-id` | Id for the Label                                       | `string \| undefined` | `undefined` |
-| `name`     | `name`     | Sets the Name of the Input Element                     | `string \| undefined` | `undefined` |
-| `required` | `required` | Sets the field as required                             | `boolean`             | `false`     |
+| Property   | Attribute  | Description                                                                                                                                                                                       | Type                  | Default     |
+| ---------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | ----------- |
+| `disabled` | `disabled` | Disables the select menu via HTML disabled attribute. Select menu takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored. | `boolean`             | `false`     |
+| `inputId`  | `input-id` | Id for the Select Input                                                                                                                                                                           | `string \| undefined` | `undefined` |
+| `invalid`  | `invalid`  | Sets the Select as Invalid for Custom Validation Usage                                                                                                                                            | `boolean`             | `false`     |
+| `label`    | `label`    | Sets the Label for the Select                                                                                                                                                                     | `string \| undefined` | `undefined` |
+| `labelId`  | `label-id` | Id for the Label                                                                                                                                                                                  | `string \| undefined` | `undefined` |
+| `name`     | `name`     | Sets the Name of the Input Element                                                                                                                                                                | `string \| undefined` | `undefined` |
+| `required` | `required` | Sets the field as required                                                                                                                                                                        | `boolean`             | `false`     |
 
 
 ## Events

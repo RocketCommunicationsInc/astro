@@ -47,6 +47,13 @@ TreeNode has two slots:
 <!-- Auto Generated Below -->
 
 
+## Slots
+
+| Slot          | Description            |
+| ------------- | ---------------------- |
+| `"(default)"` | the nodes of the tree. |
+
+
 ## CSS Custom Properties
 
 | Name                    | Description           |
