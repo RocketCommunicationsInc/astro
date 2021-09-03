@@ -87,7 +87,7 @@ const MyComp = () => {
     return (
         <div>
             <RuxInputField 
-                onRux-change={() => handleChange()}
+                onRux-input={() => console.log('Heard ruxInput!')}
             />
         </div>
     )
@@ -96,6 +96,9 @@ const MyComp = () => {
 It is **highly** encouraged to listen to these custom events rather than default React events such as onChange. Because some 
 React events are different from their native JS counterparts, some bugs can arise from using default React 
 events. 
+
+Because Astro components were built using [Stencil](https://stenciljs.com/), the custom events were named following the JavaScript convention. React handles onChange differently than JavaScript, therefore the `onRux-input` event
+is the equivalent of React's onChange. [React onChange event docs.](https://reactjs.org/docs/dom-elements.html#onchange)
 
 ## Methods
 
@@ -136,7 +139,7 @@ import React, { createRef } from "react";
 import { RuxButton, RuxTree, RuxTreeNode } from "@astrouxds/react";
 
 class Tree extends React.Component {
-  private treeRef = createRef();
+  treeRef = createRef();
 
   render() {
     return (
