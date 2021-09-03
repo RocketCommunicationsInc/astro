@@ -58,6 +58,7 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 | `labelId`  | `label-id` | Id for the Label                                                                                                                                                                                  | `string \| undefined` | `undefined` |
 | `name`     | `name`     | Sets the Name of the Input Element                                                                                                                                                                | `string \| undefined` | `undefined` |
 | `required` | `required` | Sets the field as required                                                                                                                                                                        | `boolean`             | `false`     |
+| `value`    | `value`    | The value of the selected option                                                                                                                                                                  | `string \| undefined` | `undefined` |
 
 
 ## Events

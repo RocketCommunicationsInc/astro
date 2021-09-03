@@ -16376,6 +16376,10 @@ export namespace Components {
           * Sets the field as required
          */
         "required": boolean;
+        /**
+          * The value of the selected option
+         */
+        "value"?: string;
     }
     interface RuxSlider {
         /**
@@ -40647,6 +40651,10 @@ declare namespace LocalJSX {
           * Sets the field as required
          */
         "required"?: boolean;
+        /**
+          * The value of the selected option
+         */
+        "value"?: string;
     }
     interface RuxSlider {
         /**
