@@ -22,10 +22,7 @@ export class RuxIcon {
      * The icon name
      */
     @Prop() icon!: string
-    /**
-     * The icon color
-     */
-    @Prop() color?: string
+
     /**
      * The icon SVG's title attribute. Used for accessibility. If none is provided, the icon name will be used.
      */
@@ -44,12 +41,7 @@ export class RuxIcon {
 
         return (
             <Host>
-                <SVG
-                    class="icon"
-                    color={this.color}
-                    size={this.size}
-                    title={this.iconLabel}
-                ></SVG>
+                <SVG class="icon" size={this.size} title={this.iconLabel}></SVG>
             </Host>
         )
     }

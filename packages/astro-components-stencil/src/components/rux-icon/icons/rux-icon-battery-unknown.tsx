@@ -14,11 +14,6 @@ import svgIcon from '../../../icons/battery-unknown.svg'
 })
 export class RuxIconBatteryUnknown {
     /**
-     * The fill color for the icon
-     */
-    @Prop() color?: string
-
-    /**
      * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
      */
 
@@ -46,7 +41,6 @@ export class RuxIconBatteryUnknown {
     }
     render() {
         const style = {
-            fill: this.color,
             height: this.iconSize,
             width: this.iconSize,
         }

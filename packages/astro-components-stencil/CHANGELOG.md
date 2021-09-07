@@ -8,3 +8,7 @@
 
 -   Removed `include-app-state` property in favor of `app-state`
 -   Removed `include-username` property in favor of `username`
+
+#### Icon
+
+-   Removed `color` property in favor of css styling via `currentColor`

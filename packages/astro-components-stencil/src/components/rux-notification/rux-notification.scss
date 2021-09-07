@@ -38,7 +38,7 @@
     background-color: var(--colorStandbyLighten1);
     rux-icon {
         stroke: var(--colorStandbyDarken1);
-        fill: var(--colorStandbyDarken1);
+        color: var(--colorStandbyDarken1);
     }
 }
 
@@ -46,20 +46,20 @@
     background-color: var(--colorNormalLighten2);
     rux-icon {
         stroke: var(--colorNormalDarken1);
-        fill: var(--colorNormalDarken1);
+        color: var(--colorNormalDarken1);
     }
 }
 :host([status='caution']) {
     background-color: var(--colorCautionLighten1);
     rux-icon {
         stroke: var(--colorCautionDarken1);
-        fill: var(--colorCautionDarken1);
+        color: var(--colorCautionDarken1);
     }
 }
 :host([status='critical']) {
     background-color: var(--colorCriticalLighten1);
     rux-icon {
         stroke: var(--colorCriticalDarken1);
-        fill: var(--colorCriticalDarken1);
+        color: var(--colorCriticalDarken1);
     }
 }

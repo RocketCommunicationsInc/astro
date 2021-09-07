@@ -28,5 +28,9 @@ $RECYCLE.BIN/
 Thumbs.db
 UserInterfaceState.xcuserstate
 .env
+icons-config.json
 
 
+
+#figma-export-icons
+icons-config.json

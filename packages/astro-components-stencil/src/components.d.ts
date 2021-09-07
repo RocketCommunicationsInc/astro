@@ -198,10 +198,6 @@ export namespace Components {
     }
     interface RuxIcon {
         /**
-          * The icon color
-         */
-        "color"?: string;
-        /**
           * The icon name
          */
         "icon": string;
@@ -221,10 +217,6 @@ export namespace Components {
     }
     interface RuxIcon360 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -235,10 +227,6 @@ export namespace Components {
         | string;
     }
     interface RuxIcon3dRotation {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -251,10 +239,6 @@ export namespace Components {
     }
     interface RuxIcon4k {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -265,10 +249,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAcUnit {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -281,10 +261,6 @@ export namespace Components {
     }
     interface RuxIconAccessAlarms {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -295,10 +271,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAccessTime {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -311,10 +283,6 @@ export namespace Components {
     }
     interface RuxIconAccessibility {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -325,10 +293,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAccessibilityNew {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -341,10 +305,6 @@ export namespace Components {
     }
     interface RuxIconAccessible {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -355,10 +315,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAccessibleForward {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -371,10 +327,6 @@ export namespace Components {
     }
     interface RuxIconAccountBalance {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -385,10 +337,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAccountBalanceWallet {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -401,10 +349,6 @@ export namespace Components {
     }
     interface RuxIconAccountBox {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -415,10 +359,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAccountCircle {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -431,10 +371,6 @@ export namespace Components {
     }
     interface RuxIconAdb {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -445,10 +381,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAdd {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -461,10 +393,6 @@ export namespace Components {
     }
     interface RuxIconAddAPhoto {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -475,10 +403,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAddAlarm {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -491,10 +415,6 @@ export namespace Components {
     }
     interface RuxIconAddAlert {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -505,10 +425,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAddBox {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -521,10 +437,6 @@ export namespace Components {
     }
     interface RuxIconAddCircle {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -535,10 +447,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAddCircleOutline {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -551,10 +459,6 @@ export namespace Components {
     }
     interface RuxIconAddComment {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -565,10 +469,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAddLocation {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -581,10 +481,6 @@ export namespace Components {
     }
     interface RuxIconAddPhotoAlternate {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -595,10 +491,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAddShoppingCart {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -611,10 +503,6 @@ export namespace Components {
     }
     interface RuxIconAddToHomeScreen {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -625,10 +513,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAddToPhotos {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -641,10 +525,6 @@ export namespace Components {
     }
     interface RuxIconAddToQueue {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -655,10 +535,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAdjust {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -671,10 +547,6 @@ export namespace Components {
     }
     interface RuxIconAirlineSeatFlat {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -685,10 +557,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAirlineSeatFlatAngled {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -701,10 +569,6 @@ export namespace Components {
     }
     interface RuxIconAirlineSeatIndividualSuite {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -715,10 +579,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAirlineSeatLegroomExtra {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -731,10 +591,6 @@ export namespace Components {
     }
     interface RuxIconAirlineSeatLegroomNormal {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -745,10 +601,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAirlineSeatLegroomReduced {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -761,10 +613,6 @@ export namespace Components {
     }
     interface RuxIconAirlineSeatReclineExtra {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -775,10 +623,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAirlineSeatReclineNormal {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -791,10 +635,6 @@ export namespace Components {
     }
     interface RuxIconAirplanemodeActive {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -805,10 +645,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAirplanemodeInactive {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -821,10 +657,6 @@ export namespace Components {
     }
     interface RuxIconAirplay {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -835,10 +667,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAirportShuttle {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -851,10 +679,6 @@ export namespace Components {
     }
     interface RuxIconAlarm {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -865,10 +689,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAlarmAdd {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -881,10 +701,6 @@ export namespace Components {
     }
     interface RuxIconAlarmOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -895,10 +711,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAlarmOn {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -911,10 +723,6 @@ export namespace Components {
     }
     interface RuxIconAlbum {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -925,10 +733,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAllInbox {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -941,10 +745,6 @@ export namespace Components {
     }
     interface RuxIconAllInclusive {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -955,10 +755,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAllOut {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -971,10 +767,6 @@ export namespace Components {
     }
     interface RuxIconAlternateEmail {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -985,10 +777,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAltitude {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1001,10 +789,6 @@ export namespace Components {
     }
     interface RuxIconAndroid {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1015,10 +799,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAnnouncement {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1031,10 +811,6 @@ export namespace Components {
     }
     interface RuxIconAntenna {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1045,10 +821,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAntennaOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1061,10 +833,6 @@ export namespace Components {
     }
     interface RuxIconAntennaReceive {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1075,10 +843,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAntennaTransmit {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1091,10 +855,6 @@ export namespace Components {
     }
     interface RuxIconApps {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1105,10 +865,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconArchive {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1121,10 +877,6 @@ export namespace Components {
     }
     interface RuxIconArrowBack {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1135,10 +887,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconArrowBackIos {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1151,10 +899,6 @@ export namespace Components {
     }
     interface RuxIconArrowDownward {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1165,10 +909,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconArrowDropDown {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1181,10 +921,6 @@ export namespace Components {
     }
     interface RuxIconArrowDropDownCircle {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1195,10 +931,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconArrowDropUp {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1211,10 +943,6 @@ export namespace Components {
     }
     interface RuxIconArrowForward {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1225,10 +953,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconArrowForwardIos {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1241,10 +965,6 @@ export namespace Components {
     }
     interface RuxIconArrowLeft {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1255,10 +975,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconArrowRight {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1271,10 +987,6 @@ export namespace Components {
     }
     interface RuxIconArrowRightAlt {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1285,10 +997,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconArrowUpward {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1301,10 +1009,6 @@ export namespace Components {
     }
     interface RuxIconArtTrack {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1315,10 +1019,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAspectRatio {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1331,10 +1031,6 @@ export namespace Components {
     }
     interface RuxIconAssessment {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1345,10 +1041,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAssignment {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1361,10 +1053,6 @@ export namespace Components {
     }
     interface RuxIconAssignmentFind {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1375,10 +1063,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAssignmentLate {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1391,10 +1075,6 @@ export namespace Components {
     }
     interface RuxIconAssignmentReturn {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1405,10 +1085,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAssignmentReturned {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1421,10 +1097,6 @@ export namespace Components {
     }
     interface RuxIconAssignmentTurnedIn {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1435,10 +1107,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAssistant {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1451,9 +1119,16 @@ export namespace Components {
     }
     interface RuxIconAssistantPhoto {
         /**
-          * The fill color for the icon
+          * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "color"?: string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
+    }
+    interface RuxIconAtm {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1466,10 +1141,6 @@ export namespace Components {
     }
     interface RuxIconAttachFile {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1480,10 +1151,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAttachMoney {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1496,10 +1163,6 @@ export namespace Components {
     }
     interface RuxIconAttachment {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1510,10 +1173,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAudiotrack {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1526,10 +1185,6 @@ export namespace Components {
     }
     interface RuxIconAutorenew {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1540,10 +1195,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconAvTimer {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1556,10 +1207,6 @@ export namespace Components {
     }
     interface RuxIconBackspace {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1570,10 +1217,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBackup {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1586,10 +1229,6 @@ export namespace Components {
     }
     interface RuxIconBallot {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1600,10 +1239,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBarChart {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1616,10 +1251,6 @@ export namespace Components {
     }
     interface RuxIconBattery20 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1630,10 +1261,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBattery30 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1646,10 +1273,6 @@ export namespace Components {
     }
     interface RuxIconBattery50 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1660,10 +1283,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBattery60 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1676,10 +1295,6 @@ export namespace Components {
     }
     interface RuxIconBattery80 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1690,10 +1305,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBattery90 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1706,10 +1317,6 @@ export namespace Components {
     }
     interface RuxIconBatteryAlert {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1720,10 +1327,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBatteryCharging20 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1736,10 +1339,6 @@ export namespace Components {
     }
     interface RuxIconBatteryCharging30 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1750,10 +1349,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBatteryCharging50 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1766,10 +1361,6 @@ export namespace Components {
     }
     interface RuxIconBatteryCharging60 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1780,10 +1371,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBatteryCharging80 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1796,10 +1383,6 @@ export namespace Components {
     }
     interface RuxIconBatteryCharging90 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1810,10 +1393,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBatteryChargingFull {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1826,10 +1405,6 @@ export namespace Components {
     }
     interface RuxIconBatteryFull {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1840,10 +1415,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBatteryStd {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1856,10 +1427,6 @@ export namespace Components {
     }
     interface RuxIconBatteryUnknown {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1870,10 +1437,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBeachAccess {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1886,10 +1449,6 @@ export namespace Components {
     }
     interface RuxIconBeenhere {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1900,10 +1459,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBlock {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1916,10 +1471,6 @@ export namespace Components {
     }
     interface RuxIconBluetooth {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1930,10 +1481,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBluetoothAudio {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1946,10 +1493,6 @@ export namespace Components {
     }
     interface RuxIconBluetoothConnected {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1960,10 +1503,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBluetoothDisabled {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -1976,10 +1515,6 @@ export namespace Components {
     }
     interface RuxIconBluetoothSearching {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -1990,10 +1525,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBlurCircular {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2006,10 +1537,6 @@ export namespace Components {
     }
     interface RuxIconBlurLinear {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2020,10 +1547,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBlurOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2036,10 +1559,6 @@ export namespace Components {
     }
     interface RuxIconBlurOn {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2050,10 +1569,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBook {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2066,10 +1581,6 @@ export namespace Components {
     }
     interface RuxIconBookmark {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2080,10 +1591,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBookmarkBorder {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2096,10 +1603,6 @@ export namespace Components {
     }
     interface RuxIconBookmarks {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2110,10 +1613,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBorderAll {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2126,10 +1625,6 @@ export namespace Components {
     }
     interface RuxIconBorderBottom {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2140,10 +1635,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBorderClear {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2156,10 +1647,6 @@ export namespace Components {
     }
     interface RuxIconBorderColor {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2170,10 +1657,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBorderHorizontal {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2186,10 +1669,6 @@ export namespace Components {
     }
     interface RuxIconBorderInner {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2200,10 +1679,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBorderLeft {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2216,10 +1691,6 @@ export namespace Components {
     }
     interface RuxIconBorderOuter {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2230,10 +1701,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBorderRight {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2246,10 +1713,6 @@ export namespace Components {
     }
     interface RuxIconBorderStyle {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2260,10 +1723,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBorderTop {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2276,10 +1735,6 @@ export namespace Components {
     }
     interface RuxIconBorderVertical {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2290,10 +1745,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBrandingWatermark {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2306,10 +1757,6 @@ export namespace Components {
     }
     interface RuxIconBrightness1 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2320,10 +1767,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBrightness2 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2336,10 +1779,6 @@ export namespace Components {
     }
     interface RuxIconBrightness3 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2350,10 +1789,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBrightness4 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2366,10 +1801,6 @@ export namespace Components {
     }
     interface RuxIconBrightness5 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2380,10 +1811,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBrightness6 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2396,10 +1823,6 @@ export namespace Components {
     }
     interface RuxIconBrightness7 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2410,10 +1833,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBrightnessAuto {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2426,10 +1845,6 @@ export namespace Components {
     }
     interface RuxIconBrightnessHigh {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2440,10 +1855,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBrightnessLow {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2456,10 +1867,6 @@ export namespace Components {
     }
     interface RuxIconBrightnessMedium {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2470,10 +1877,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBrokenImage {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2486,10 +1889,6 @@ export namespace Components {
     }
     interface RuxIconBrush {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2500,10 +1899,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBubbleChart {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2516,10 +1911,6 @@ export namespace Components {
     }
     interface RuxIconBugReport {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2530,10 +1921,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBuild {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2546,10 +1933,6 @@ export namespace Components {
     }
     interface RuxIconBurstMode {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2560,10 +1943,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconBusiness {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2576,10 +1955,6 @@ export namespace Components {
     }
     interface RuxIconBusinessCenter {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2590,10 +1965,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCached {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2606,10 +1977,6 @@ export namespace Components {
     }
     interface RuxIconCake {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2620,10 +1987,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCalendarToday {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2636,10 +1999,6 @@ export namespace Components {
     }
     interface RuxIconCalendarViewDay {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2650,10 +2009,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCall {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2666,10 +2021,6 @@ export namespace Components {
     }
     interface RuxIconCallEnd {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2680,10 +2031,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCallMade {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2696,10 +2043,6 @@ export namespace Components {
     }
     interface RuxIconCallMerge {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2710,10 +2053,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCallMissed {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2726,10 +2065,6 @@ export namespace Components {
     }
     interface RuxIconCallMissedOutgoing {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2740,10 +2075,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCallReceived {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2756,10 +2087,6 @@ export namespace Components {
     }
     interface RuxIconCallSplit {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2770,10 +2097,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCallToAction {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2786,10 +2109,6 @@ export namespace Components {
     }
     interface RuxIconCamera {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2800,10 +2119,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCameraAlt {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2816,10 +2131,6 @@ export namespace Components {
     }
     interface RuxIconCameraEnhance {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2830,10 +2141,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCameraFront {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2846,10 +2153,6 @@ export namespace Components {
     }
     interface RuxIconCameraRear {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2860,10 +2163,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCameraRoll {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2876,10 +2175,6 @@ export namespace Components {
     }
     interface RuxIconCancel {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2890,10 +2185,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCancelPresentation {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2906,10 +2197,6 @@ export namespace Components {
     }
     interface RuxIconCardGiftcard {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2920,10 +2207,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCardMembership {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2936,10 +2219,6 @@ export namespace Components {
     }
     interface RuxIconCardTravel {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2950,10 +2229,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCasino {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2966,10 +2241,6 @@ export namespace Components {
     }
     interface RuxIconCast {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -2980,10 +2251,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCastConnected {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -2996,10 +2263,6 @@ export namespace Components {
     }
     interface RuxIconCastForEducation {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3010,10 +2273,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCategory {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3026,10 +2285,6 @@ export namespace Components {
     }
     interface RuxIconCellWifi {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3040,10 +2295,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCenterFocusStrong {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3056,10 +2307,6 @@ export namespace Components {
     }
     interface RuxIconCenterFocusWeak {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3070,10 +2317,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconChangeHistory {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3086,10 +2329,6 @@ export namespace Components {
     }
     interface RuxIconChat {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3100,10 +2339,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconChatBubble {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3116,10 +2351,6 @@ export namespace Components {
     }
     interface RuxIconChatBubbleOutline {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3130,10 +2361,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCheck {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3146,10 +2373,6 @@ export namespace Components {
     }
     interface RuxIconCheckBox {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3160,10 +2383,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCheckBoxOutlineBlank {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3176,10 +2395,6 @@ export namespace Components {
     }
     interface RuxIconCheckCircle {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3190,10 +2405,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCheckCircleOutline {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3206,10 +2417,6 @@ export namespace Components {
     }
     interface RuxIconChevronLeft {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3220,10 +2427,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconChevronRight {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3236,10 +2439,6 @@ export namespace Components {
     }
     interface RuxIconChildCare {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3250,10 +2449,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconChildFriendly {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3266,10 +2461,6 @@ export namespace Components {
     }
     interface RuxIconChromeReaderMode {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3280,10 +2471,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconClass {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3296,10 +2483,6 @@ export namespace Components {
     }
     interface RuxIconClear {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3310,10 +2493,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconClearAll {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3326,10 +2505,6 @@ export namespace Components {
     }
     interface RuxIconClose {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3340,10 +2515,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconClosedCaption {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3356,10 +2527,6 @@ export namespace Components {
     }
     interface RuxIconCloud {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3370,10 +2537,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCloudCircle {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3386,10 +2549,6 @@ export namespace Components {
     }
     interface RuxIconCloudDone {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3400,10 +2559,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCloudDownload {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3416,10 +2571,6 @@ export namespace Components {
     }
     interface RuxIconCloudOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3430,10 +2581,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCloudQueue {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3446,10 +2593,6 @@ export namespace Components {
     }
     interface RuxIconCloudUpload {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3460,10 +2603,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCode {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3476,10 +2615,6 @@ export namespace Components {
     }
     interface RuxIconCollections {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3490,10 +2625,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCollectionsBookmark {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3506,10 +2637,6 @@ export namespace Components {
     }
     interface RuxIconColorLens {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3520,10 +2647,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconColorize {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3536,10 +2659,6 @@ export namespace Components {
     }
     interface RuxIconComment {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3550,10 +2669,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCommute {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3566,10 +2681,6 @@ export namespace Components {
     }
     interface RuxIconCompare {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3580,10 +2691,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCompareArrows {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3596,10 +2703,6 @@ export namespace Components {
     }
     interface RuxIconCompassCalibration {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3610,10 +2713,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconComputer {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3626,10 +2725,6 @@ export namespace Components {
     }
     interface RuxIconConfirmationNumber {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3640,10 +2735,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconContactMail {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3656,10 +2747,6 @@ export namespace Components {
     }
     interface RuxIconContactPhone {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3670,10 +2757,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconContactSupport {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3686,10 +2769,6 @@ export namespace Components {
     }
     interface RuxIconContacts {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3700,10 +2779,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconControlCamera {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3716,10 +2791,6 @@ export namespace Components {
     }
     interface RuxIconControlPoint {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3730,10 +2801,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconControlPointDuplicate {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3746,10 +2813,6 @@ export namespace Components {
     }
     interface RuxIconCopyright {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3760,10 +2823,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCreate {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3776,10 +2835,6 @@ export namespace Components {
     }
     interface RuxIconCreateNewFolder {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3790,10 +2845,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCreditCard {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3806,10 +2857,6 @@ export namespace Components {
     }
     interface RuxIconCrop {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3820,10 +2867,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCrop169 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3836,10 +2879,6 @@ export namespace Components {
     }
     interface RuxIconCrop32 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3850,10 +2889,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCrop54 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3866,10 +2901,6 @@ export namespace Components {
     }
     interface RuxIconCrop75 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3880,10 +2911,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCropDin {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3896,10 +2923,6 @@ export namespace Components {
     }
     interface RuxIconCropFree {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3910,10 +2933,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCropLandscape {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3926,10 +2945,6 @@ export namespace Components {
     }
     interface RuxIconCropOriginal {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3940,10 +2955,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCropPortrait {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3956,10 +2967,6 @@ export namespace Components {
     }
     interface RuxIconCropRotate {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -3970,10 +2977,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconCropSquare {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -3986,10 +2989,6 @@ export namespace Components {
     }
     interface RuxIconDashboard {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4000,10 +2999,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconDataUsage {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4016,10 +3011,6 @@ export namespace Components {
     }
     interface RuxIconDateRange {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4030,10 +3021,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconDehaze {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4046,10 +3033,6 @@ export namespace Components {
     }
     interface RuxIconDelete {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4060,10 +3043,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconDeleteForever {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4076,10 +3055,6 @@ export namespace Components {
     }
     interface RuxIconDeleteOutline {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4090,10 +3065,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconDeleteSweep {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4106,10 +3077,6 @@ export namespace Components {
     }
     interface RuxIconDepartureBoard {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4120,10 +3087,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconDescription {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4136,10 +3099,6 @@ export namespace Components {
     }
     interface RuxIconDesktopAccessDisabled {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4150,10 +3109,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconDesktopMac {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4166,10 +3121,6 @@ export namespace Components {
     }
     interface RuxIconDesktopWindows {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4180,10 +3131,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconDetails {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4196,10 +3143,6 @@ export namespace Components {
     }
     interface RuxIconDeveloperBoard {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4210,10 +3153,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconDeveloperMode {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4226,10 +3165,6 @@ export namespace Components {
     }
     interface RuxIconDeviceHub {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4240,10 +3175,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconDeviceUnknown {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4256,10 +3187,6 @@ export namespace Components {
     }
     interface RuxIconDevices {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4270,10 +3197,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconDevicesOther {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4286,10 +3209,6 @@ export namespace Components {
     }
     interface RuxIconDialerSip {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4300,10 +3219,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconDialpad {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4316,10 +3231,6 @@ export namespace Components {
     }
     interface RuxIconDirections {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4330,10 +3241,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconDirectionsBike {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4346,10 +3253,6 @@ export namespace Components {
     }
     interface RuxIconDirectionsBoat {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4360,10 +3263,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconDirectionsBus {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4376,10 +3275,6 @@ export namespace Components {
     }
     interface RuxIconDirectionsCar {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4390,10 +3285,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconDirectionsRailway {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4406,10 +3297,6 @@ export namespace Components {
     }
     interface RuxIconDirectionsRun {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4420,10 +3307,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconDirectionsSubway {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4436,10 +3319,6 @@ export namespace Components {
     }
     interface RuxIconDirectionsTransit {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4450,10 +3329,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconDirectionsWalk {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4466,10 +3341,6 @@ export namespace Components {
     }
     interface RuxIconDiscFull {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4480,10 +3351,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconDns {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4496,10 +3363,6 @@ export namespace Components {
     }
     interface RuxIconDock {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4510,10 +3373,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconDomain {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4526,10 +3385,6 @@ export namespace Components {
     }
     interface RuxIconDomainDisabled {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4540,10 +3395,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconDone {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4556,10 +3407,6 @@ export namespace Components {
     }
     interface RuxIconDoneAll {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4570,10 +3417,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconDoneOutline {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4586,10 +3429,6 @@ export namespace Components {
     }
     interface RuxIconDonutLarge {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4600,10 +3439,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconDonutSmall {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4616,10 +3451,6 @@ export namespace Components {
     }
     interface RuxIconDrafts {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4630,10 +3461,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconDragHandle {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4646,10 +3473,6 @@ export namespace Components {
     }
     interface RuxIconDragIndicator {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4660,10 +3483,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconDriveEta {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4676,10 +3495,6 @@ export namespace Components {
     }
     interface RuxIconDuo {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4690,10 +3505,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconDvr {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4706,10 +3517,6 @@ export namespace Components {
     }
     interface RuxIconEdit {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4720,10 +3527,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconEditAttributes {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4736,10 +3539,6 @@ export namespace Components {
     }
     interface RuxIconEditLocation {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4750,10 +3549,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconEject {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4766,10 +3561,6 @@ export namespace Components {
     }
     interface RuxIconEmail {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4780,10 +3571,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconEnhancedEncryption {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4796,10 +3583,6 @@ export namespace Components {
     }
     interface RuxIconEqualizer {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4810,10 +3593,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconEquipment {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4826,10 +3605,6 @@ export namespace Components {
     }
     interface RuxIconError {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4840,10 +3615,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconErrorOutline {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4856,10 +3627,6 @@ export namespace Components {
     }
     interface RuxIconEuroSymbol {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4870,10 +3637,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconEvStation {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4886,10 +3649,6 @@ export namespace Components {
     }
     interface RuxIconEvent {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4900,10 +3659,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconEventAvailable {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4916,10 +3671,6 @@ export namespace Components {
     }
     interface RuxIconEventBusy {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4930,10 +3681,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconEventNote {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4946,10 +3693,6 @@ export namespace Components {
     }
     interface RuxIconExitToApp {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4960,10 +3703,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconExpandLess {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -4976,10 +3715,6 @@ export namespace Components {
     }
     interface RuxIconExpandMore {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -4990,10 +3725,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconExplicit {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5006,10 +3737,6 @@ export namespace Components {
     }
     interface RuxIconExplore {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5020,10 +3747,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconExploreOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5036,10 +3759,6 @@ export namespace Components {
     }
     interface RuxIconExposure {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5050,10 +3769,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconExposureNeg1 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5066,10 +3781,6 @@ export namespace Components {
     }
     interface RuxIconExposureNeg2 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5080,10 +3791,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconExposurePlus1 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5096,10 +3803,6 @@ export namespace Components {
     }
     interface RuxIconExposurePlus2 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5110,10 +3813,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconExposureZero {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5126,10 +3825,6 @@ export namespace Components {
     }
     interface RuxIconExtension {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5140,10 +3835,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFace {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5156,10 +3847,6 @@ export namespace Components {
     }
     interface RuxIconFastForward {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5170,10 +3857,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFastRewind {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5186,10 +3869,6 @@ export namespace Components {
     }
     interface RuxIconFastfood {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5200,10 +3879,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFavorite {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5216,10 +3891,6 @@ export namespace Components {
     }
     interface RuxIconFavoriteBorder {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5230,10 +3901,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFeaturedPlayList {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5246,10 +3913,6 @@ export namespace Components {
     }
     interface RuxIconFeaturedVideo {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5260,10 +3923,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFeedback {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5276,10 +3935,6 @@ export namespace Components {
     }
     interface RuxIconFiberDvr {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5290,10 +3945,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFiberManualRecord {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5306,10 +3957,6 @@ export namespace Components {
     }
     interface RuxIconFiberNew {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5320,10 +3967,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFiberPin {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5336,10 +3979,6 @@ export namespace Components {
     }
     interface RuxIconFiberSmartRecord {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5350,10 +3989,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFileCopy {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5366,10 +4001,6 @@ export namespace Components {
     }
     interface RuxIconFilter {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5380,10 +4011,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFilter1 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5396,10 +4023,6 @@ export namespace Components {
     }
     interface RuxIconFilter2 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5410,10 +4033,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFilter3 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5426,10 +4045,6 @@ export namespace Components {
     }
     interface RuxIconFilter4 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5440,10 +4055,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFilter5 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5456,10 +4067,6 @@ export namespace Components {
     }
     interface RuxIconFilter6 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5470,10 +4077,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFilter7 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5486,10 +4089,6 @@ export namespace Components {
     }
     interface RuxIconFilter8 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5500,10 +4099,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFilter9 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5516,10 +4111,6 @@ export namespace Components {
     }
     interface RuxIconFilter9Plus {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5530,10 +4121,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFilterBAndW {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5546,10 +4133,6 @@ export namespace Components {
     }
     interface RuxIconFilterCenterFocus {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5560,10 +4143,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFilterDrama {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5576,10 +4155,6 @@ export namespace Components {
     }
     interface RuxIconFilterFrames {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5590,10 +4165,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFilterHdr {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5606,10 +4177,6 @@ export namespace Components {
     }
     interface RuxIconFilterList {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5620,10 +4187,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFilterNone {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5636,10 +4199,6 @@ export namespace Components {
     }
     interface RuxIconFilterTiltShift {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5650,10 +4209,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFilterVintage {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5666,10 +4221,6 @@ export namespace Components {
     }
     interface RuxIconFindInPage {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5680,10 +4231,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFindReplace {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5696,10 +4243,6 @@ export namespace Components {
     }
     interface RuxIconFingerprint {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5710,10 +4253,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFirstPage {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5726,10 +4265,6 @@ export namespace Components {
     }
     interface RuxIconFitnessCenter {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5740,10 +4275,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFlag {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5756,10 +4287,6 @@ export namespace Components {
     }
     interface RuxIconFlare {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5770,10 +4297,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFlashAuto {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5786,10 +4309,6 @@ export namespace Components {
     }
     interface RuxIconFlashOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5800,10 +4319,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFlashOn {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5816,10 +4331,6 @@ export namespace Components {
     }
     interface RuxIconFlight {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5830,10 +4341,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFlightLand {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5846,10 +4353,6 @@ export namespace Components {
     }
     interface RuxIconFlightTakeoff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5860,10 +4363,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFlip {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5876,10 +4375,6 @@ export namespace Components {
     }
     interface RuxIconFlipToBack {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5890,10 +4385,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFlipToFront {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5906,10 +4397,6 @@ export namespace Components {
     }
     interface RuxIconFolder {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5920,10 +4407,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFolderOpen {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5936,10 +4419,6 @@ export namespace Components {
     }
     interface RuxIconFolderShared {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5950,10 +4429,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFolderSpecial {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5966,10 +4441,6 @@ export namespace Components {
     }
     interface RuxIconFontDownload {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -5980,10 +4451,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFormatAlignCenter {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -5996,10 +4463,6 @@ export namespace Components {
     }
     interface RuxIconFormatAlignJustify {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6010,10 +4473,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFormatAlignLeft {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6026,10 +4485,6 @@ export namespace Components {
     }
     interface RuxIconFormatAlignRight {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6040,10 +4495,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFormatBold {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6056,10 +4507,6 @@ export namespace Components {
     }
     interface RuxIconFormatClear {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6070,10 +4517,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFormatColorFill {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6086,10 +4529,6 @@ export namespace Components {
     }
     interface RuxIconFormatColorReset {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6100,10 +4539,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFormatColorText {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6116,10 +4551,6 @@ export namespace Components {
     }
     interface RuxIconFormatIndentDecrease {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6130,10 +4561,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFormatIndentIncrease {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6146,10 +4573,6 @@ export namespace Components {
     }
     interface RuxIconFormatItalic {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6160,10 +4583,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFormatLineSpacing {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6176,10 +4595,6 @@ export namespace Components {
     }
     interface RuxIconFormatListBulleted {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6190,10 +4605,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFormatListNumbered {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6206,10 +4617,6 @@ export namespace Components {
     }
     interface RuxIconFormatListNumberedRtl {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6220,10 +4627,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFormatPaint {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6236,10 +4639,6 @@ export namespace Components {
     }
     interface RuxIconFormatQuote {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6250,10 +4649,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFormatShapes {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6266,10 +4661,6 @@ export namespace Components {
     }
     interface RuxIconFormatSize {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6280,10 +4671,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFormatStrikethrough {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6296,10 +4683,6 @@ export namespace Components {
     }
     interface RuxIconFormatTextdirectionLToR {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6310,10 +4693,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFormatTextdirectionRToL {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6326,10 +4705,6 @@ export namespace Components {
     }
     interface RuxIconFormatUnderlined {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6340,10 +4715,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconForum {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6356,10 +4727,6 @@ export namespace Components {
     }
     interface RuxIconForward {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6370,10 +4737,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconForward10 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6386,10 +4749,6 @@ export namespace Components {
     }
     interface RuxIconForward30 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6400,10 +4759,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconForward5 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6416,10 +4771,6 @@ export namespace Components {
     }
     interface RuxIconFreeBreakfast {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6430,10 +4781,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFullscreen {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6446,10 +4793,6 @@ export namespace Components {
     }
     interface RuxIconFullscreenExit {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6460,10 +4803,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconFunctions {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6476,10 +4815,6 @@ export namespace Components {
     }
     interface RuxIconGTranslate {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6490,10 +4825,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconGamepad {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6506,10 +4837,6 @@ export namespace Components {
     }
     interface RuxIconGames {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6520,10 +4847,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconGavel {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6536,10 +4859,6 @@ export namespace Components {
     }
     interface RuxIconGesture {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6550,10 +4869,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconGetApp {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6566,10 +4881,6 @@ export namespace Components {
     }
     interface RuxIconGif {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6580,10 +4891,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconGolfCourse {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6596,10 +4903,6 @@ export namespace Components {
     }
     interface RuxIconGpsFixed {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6610,10 +4913,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconGpsNotFixed {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6626,10 +4925,6 @@ export namespace Components {
     }
     interface RuxIconGpsOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6640,10 +4935,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconGrade {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6656,10 +4947,6 @@ export namespace Components {
     }
     interface RuxIconGradient {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6670,10 +4957,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconGrain {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6686,10 +4969,6 @@ export namespace Components {
     }
     interface RuxIconGraphicEq {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6700,10 +4979,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconGridOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6716,10 +4991,6 @@ export namespace Components {
     }
     interface RuxIconGridOn {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6730,10 +5001,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconGroup {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6746,10 +5013,6 @@ export namespace Components {
     }
     interface RuxIconGroupAdd {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6760,10 +5023,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconGroupWork {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6776,10 +5035,6 @@ export namespace Components {
     }
     interface RuxIconHd {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6790,10 +5045,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconHdrOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6806,10 +5057,6 @@ export namespace Components {
     }
     interface RuxIconHdrOn {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6820,10 +5067,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconHdrStrong {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6836,10 +5079,6 @@ export namespace Components {
     }
     interface RuxIconHdrWeak {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6850,10 +5089,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconHeadset {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6866,10 +5101,6 @@ export namespace Components {
     }
     interface RuxIconHeadsetMic {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6880,10 +5111,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconHealing {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6896,10 +5123,6 @@ export namespace Components {
     }
     interface RuxIconHearing {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6910,10 +5133,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconHelp {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6926,10 +5145,6 @@ export namespace Components {
     }
     interface RuxIconHelpOutline {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6940,10 +5155,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconHighQuality {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6956,10 +5167,6 @@ export namespace Components {
     }
     interface RuxIconHighlight {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -6970,10 +5177,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconHighlightOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -6986,10 +5189,6 @@ export namespace Components {
     }
     interface RuxIconHistory {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7000,10 +5199,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconHome {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7016,10 +5211,6 @@ export namespace Components {
     }
     interface RuxIconHorizontalSplit {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7030,10 +5221,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconHotTub {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7046,10 +5233,6 @@ export namespace Components {
     }
     interface RuxIconHotel {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7060,10 +5243,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconHourglassEmpty {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7076,10 +5255,6 @@ export namespace Components {
     }
     interface RuxIconHourglassFull {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7090,10 +5265,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconHowToReg {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7106,10 +5277,6 @@ export namespace Components {
     }
     interface RuxIconHowToVote {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7120,10 +5287,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconHttp {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7136,10 +5299,6 @@ export namespace Components {
     }
     interface RuxIconHttps {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7150,10 +5309,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconImage {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7166,10 +5321,6 @@ export namespace Components {
     }
     interface RuxIconImageAspectRatio {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7180,10 +5331,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconImageSearch {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7196,10 +5343,6 @@ export namespace Components {
     }
     interface RuxIconImportContacts {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7210,10 +5353,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconImportExport {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7226,10 +5365,6 @@ export namespace Components {
     }
     interface RuxIconImportantDevices {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7240,10 +5375,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconInbox {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7256,10 +5387,6 @@ export namespace Components {
     }
     interface RuxIconIndeterminateCheckBox {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7270,10 +5397,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconInfo {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7286,10 +5409,6 @@ export namespace Components {
     }
     interface RuxIconInput {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7300,10 +5419,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconInsertChart {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7316,10 +5431,6 @@ export namespace Components {
     }
     interface RuxIconInsertChartOutlined {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7330,10 +5441,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconInsertComment {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7346,10 +5453,6 @@ export namespace Components {
     }
     interface RuxIconInsertDriveFile {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7360,10 +5463,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconInsertEmoticon {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7376,10 +5475,6 @@ export namespace Components {
     }
     interface RuxIconInsertInvitation {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7390,10 +5485,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconInsertLink {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7406,10 +5497,6 @@ export namespace Components {
     }
     interface RuxIconInsertPhoto {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7420,10 +5507,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconInvertColors {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7436,10 +5519,6 @@ export namespace Components {
     }
     interface RuxIconInvertColorsOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7450,10 +5529,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconIso {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7466,10 +5541,6 @@ export namespace Components {
     }
     interface RuxIconKeyboard {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7480,10 +5551,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconKeyboardArrowDown {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7496,10 +5563,6 @@ export namespace Components {
     }
     interface RuxIconKeyboardArrowLeft {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7510,10 +5573,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconKeyboardArrowRight {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7526,10 +5585,6 @@ export namespace Components {
     }
     interface RuxIconKeyboardArrowUp {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7540,10 +5595,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconKeyboardBackspace {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7556,10 +5607,6 @@ export namespace Components {
     }
     interface RuxIconKeyboardCapslock {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7570,10 +5617,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconKeyboardHide {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7586,10 +5629,6 @@ export namespace Components {
     }
     interface RuxIconKeyboardReturn {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7600,10 +5639,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconKeyboardTab {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7616,10 +5651,6 @@ export namespace Components {
     }
     interface RuxIconKeyboardVoice {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7630,10 +5661,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconKitchen {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7646,10 +5673,6 @@ export namespace Components {
     }
     interface RuxIconLabel {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7660,10 +5683,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLabelImportant {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7676,10 +5695,6 @@ export namespace Components {
     }
     interface RuxIconLabelOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7690,10 +5705,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLandscape {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7706,10 +5717,6 @@ export namespace Components {
     }
     interface RuxIconLanguage {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7720,10 +5727,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLaptop {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7736,10 +5739,6 @@ export namespace Components {
     }
     interface RuxIconLaptopChromebook {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7750,10 +5749,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLaptopMac {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7766,10 +5761,6 @@ export namespace Components {
     }
     interface RuxIconLaptopWindows {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7780,10 +5771,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLastPage {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7796,10 +5783,6 @@ export namespace Components {
     }
     interface RuxIconLaunch {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7810,10 +5793,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLayers {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7826,10 +5805,6 @@ export namespace Components {
     }
     interface RuxIconLayersClear {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7840,10 +5815,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLeakAdd {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7856,10 +5827,6 @@ export namespace Components {
     }
     interface RuxIconLeakRemove {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7870,10 +5837,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLens {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7886,10 +5849,6 @@ export namespace Components {
     }
     interface RuxIconLibraryAdd {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7900,10 +5859,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLibraryBooks {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7916,10 +5871,6 @@ export namespace Components {
     }
     interface RuxIconLibraryMusic {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7930,10 +5881,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLineStyle {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7946,10 +5893,6 @@ export namespace Components {
     }
     interface RuxIconLineWeight {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7960,10 +5903,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLinearScale {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -7976,10 +5915,6 @@ export namespace Components {
     }
     interface RuxIconLink {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -7990,10 +5925,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLinkOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8006,10 +5937,6 @@ export namespace Components {
     }
     interface RuxIconLinkedCamera {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8020,10 +5947,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconList {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8036,10 +5959,6 @@ export namespace Components {
     }
     interface RuxIconListAlt {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8050,10 +5969,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLiveHelp {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8066,10 +5981,6 @@ export namespace Components {
     }
     interface RuxIconLiveTv {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8080,10 +5991,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLocalActivity {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8096,10 +6003,6 @@ export namespace Components {
     }
     interface RuxIconLocalAirport {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8110,10 +6013,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLocalAtm {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8126,10 +6025,6 @@ export namespace Components {
     }
     interface RuxIconLocalBar {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8141,9 +6036,16 @@ export namespace Components {
     }
     interface RuxIconLocalCafe {
         /**
-          * The fill color for the icon
+          * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "color"?: string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
+    }
+    interface RuxIconLocalCarWash {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8156,10 +6058,6 @@ export namespace Components {
     }
     interface RuxIconLocalConvenienceStore {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8170,10 +6068,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLocalDining {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8186,9 +6080,16 @@ export namespace Components {
     }
     interface RuxIconLocalDrink {
         /**
-          * The fill color for the icon
+          * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "color"?: string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
+    }
+    interface RuxIconLocalFlorist {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8201,10 +6102,6 @@ export namespace Components {
     }
     interface RuxIconLocalGasStation {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8215,10 +6112,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLocalGroceryStore {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8231,10 +6124,6 @@ export namespace Components {
     }
     interface RuxIconLocalHospital {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8245,10 +6134,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLocalHotel {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8261,10 +6146,6 @@ export namespace Components {
     }
     interface RuxIconLocalLaundryService {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8275,10 +6156,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLocalLibrary {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8291,10 +6168,6 @@ export namespace Components {
     }
     interface RuxIconLocalMall {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8305,10 +6178,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLocalMovies {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8321,10 +6190,6 @@ export namespace Components {
     }
     interface RuxIconLocalOffer {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8335,10 +6200,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLocalParking {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8351,10 +6212,6 @@ export namespace Components {
     }
     interface RuxIconLocalPharmacy {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8366,9 +6223,16 @@ export namespace Components {
     }
     interface RuxIconLocalPhone {
         /**
-          * The fill color for the icon
+          * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "color"?: string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
+    }
+    interface RuxIconLocalPizza {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8381,10 +6245,6 @@ export namespace Components {
     }
     interface RuxIconLocalPlay {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8395,10 +6255,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLocalPostOffice {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8411,10 +6267,6 @@ export namespace Components {
     }
     interface RuxIconLocalPrintshop {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8425,10 +6277,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLocalSee {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8441,10 +6289,6 @@ export namespace Components {
     }
     interface RuxIconLocalShipping {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8455,10 +6299,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLocalTaxi {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8471,10 +6311,6 @@ export namespace Components {
     }
     interface RuxIconLocationCity {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8485,10 +6321,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLocationDisabled {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8501,10 +6333,6 @@ export namespace Components {
     }
     interface RuxIconLocationOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8515,10 +6343,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLocationOn {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8531,10 +6355,6 @@ export namespace Components {
     }
     interface RuxIconLocationSearching {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8545,10 +6365,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLock {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8561,10 +6377,6 @@ export namespace Components {
     }
     interface RuxIconLockOpen {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8575,10 +6387,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLooks {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8591,10 +6399,6 @@ export namespace Components {
     }
     interface RuxIconLooks1 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8605,10 +6409,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLooks2 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8621,10 +6421,6 @@ export namespace Components {
     }
     interface RuxIconLooks3 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8635,10 +6431,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLooks4 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8651,10 +6443,6 @@ export namespace Components {
     }
     interface RuxIconLooks5 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8665,10 +6453,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLooks6 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8681,10 +6465,6 @@ export namespace Components {
     }
     interface RuxIconLoop {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8695,10 +6475,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLoupe {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8711,10 +6487,6 @@ export namespace Components {
     }
     interface RuxIconLowPriority {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8725,10 +6497,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconLoyalty {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8741,10 +6509,6 @@ export namespace Components {
     }
     interface RuxIconMail {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8755,10 +6519,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconMailOutline {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8771,10 +6531,6 @@ export namespace Components {
     }
     interface RuxIconMap {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8785,10 +6541,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconMarkunread {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8801,10 +6553,6 @@ export namespace Components {
     }
     interface RuxIconMarkunreadMailbox {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8815,10 +6563,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconMaximize {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8831,10 +6575,6 @@ export namespace Components {
     }
     interface RuxIconMeetingRoom {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8845,10 +6585,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconMemory {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8861,10 +6597,6 @@ export namespace Components {
     }
     interface RuxIconMenu {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8875,10 +6607,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconMergeType {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8891,10 +6619,6 @@ export namespace Components {
     }
     interface RuxIconMessage {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8905,10 +6629,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconMic {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8921,10 +6641,6 @@ export namespace Components {
     }
     interface RuxIconMicNone {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8935,10 +6651,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconMicOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8951,10 +6663,6 @@ export namespace Components {
     }
     interface RuxIconMinimize {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8965,10 +6673,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconMissedVideoCall {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -8981,10 +6685,6 @@ export namespace Components {
     }
     interface RuxIconMission {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -8995,10 +6695,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconMms {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9011,10 +6707,6 @@ export namespace Components {
     }
     interface RuxIconMobileFriendly {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9025,10 +6717,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconMobileOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9041,10 +6729,6 @@ export namespace Components {
     }
     interface RuxIconMobileScreenShare {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9055,10 +6739,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconModeComment {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9071,10 +6751,6 @@ export namespace Components {
     }
     interface RuxIconMonetizationOn {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9085,10 +6761,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconMoney {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9101,10 +6773,6 @@ export namespace Components {
     }
     interface RuxIconMoneyOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9115,10 +6783,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconMonochromePhotos {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9131,10 +6795,6 @@ export namespace Components {
     }
     interface RuxIconMood {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9145,10 +6805,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconMoodBad {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9161,10 +6817,6 @@ export namespace Components {
     }
     interface RuxIconMore {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9175,10 +6827,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconMoreHoriz {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9191,10 +6839,6 @@ export namespace Components {
     }
     interface RuxIconMoreVert {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9205,10 +6849,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconMotorcycle {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9221,10 +6861,6 @@ export namespace Components {
     }
     interface RuxIconMouse {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9235,10 +6871,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconMoveToInbox {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9251,10 +6883,6 @@ export namespace Components {
     }
     interface RuxIconMovie {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9265,10 +6893,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconMovieCreation {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9281,10 +6905,6 @@ export namespace Components {
     }
     interface RuxIconMovieFilter {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9295,10 +6915,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconMultilineChart {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9311,10 +6927,6 @@ export namespace Components {
     }
     interface RuxIconMusicNote {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9325,10 +6937,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconMusicOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9341,10 +6949,6 @@ export namespace Components {
     }
     interface RuxIconMusicVideo {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9355,10 +6959,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconMyLocation {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9371,10 +6971,6 @@ export namespace Components {
     }
     interface RuxIconNature {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9385,10 +6981,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconNaturePeople {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9401,10 +6993,6 @@ export namespace Components {
     }
     interface RuxIconNavigateBefore {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9415,10 +7003,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconNavigateNext {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9431,10 +7015,6 @@ export namespace Components {
     }
     interface RuxIconNavigation {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9445,10 +7025,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconNearMe {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9461,10 +7037,6 @@ export namespace Components {
     }
     interface RuxIconNetcom {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9475,10 +7047,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconNetworkCell {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9491,10 +7059,6 @@ export namespace Components {
     }
     interface RuxIconNetworkCheck {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9505,10 +7069,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconNetworkLocked {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9521,10 +7081,6 @@ export namespace Components {
     }
     interface RuxIconNetworkWifi {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9535,10 +7091,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconNewReleases {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9551,10 +7103,6 @@ export namespace Components {
     }
     interface RuxIconNextWeek {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9565,10 +7113,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconNfc {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9581,10 +7125,6 @@ export namespace Components {
     }
     interface RuxIconNoEncryption {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9595,10 +7135,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconNoMeetingRoom {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9611,10 +7147,6 @@ export namespace Components {
     }
     interface RuxIconNoSim {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9625,10 +7157,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconNotInterested {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9641,10 +7169,6 @@ export namespace Components {
     }
     interface RuxIconNotListedLocation {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9655,10 +7179,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconNote {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9671,10 +7191,6 @@ export namespace Components {
     }
     interface RuxIconNoteAdd {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9685,10 +7201,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconNotes {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9701,10 +7213,6 @@ export namespace Components {
     }
     interface RuxIconNotificationImportant {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9715,10 +7223,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconNotifications {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9731,10 +7235,6 @@ export namespace Components {
     }
     interface RuxIconNotificationsActive {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9745,10 +7245,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconNotificationsNone {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9761,10 +7257,6 @@ export namespace Components {
     }
     interface RuxIconNotificationsOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9775,10 +7267,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconNotificationsPaused {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9791,10 +7279,6 @@ export namespace Components {
     }
     interface RuxIconOfflineBolt {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9805,10 +7289,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconOfflinePin {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9821,10 +7301,6 @@ export namespace Components {
     }
     interface RuxIconOndemandVideo {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9835,10 +7311,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconOpacity {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9851,10 +7323,6 @@ export namespace Components {
     }
     interface RuxIconOpenInBrowser {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9865,10 +7333,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconOpenInNew {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9881,10 +7345,6 @@ export namespace Components {
     }
     interface RuxIconOpenWith {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9895,10 +7355,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconOutlinedFlag {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9911,10 +7367,6 @@ export namespace Components {
     }
     interface RuxIconPages {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9925,10 +7377,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPageview {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9941,10 +7389,6 @@ export namespace Components {
     }
     interface RuxIconPalette {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9955,10 +7399,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPanTool {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -9971,10 +7411,6 @@ export namespace Components {
     }
     interface RuxIconPanorama {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -9985,10 +7421,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPanoramaFishEye {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10001,10 +7433,6 @@ export namespace Components {
     }
     interface RuxIconPanoramaHorizontal {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10015,10 +7443,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPanoramaVertical {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10031,10 +7455,6 @@ export namespace Components {
     }
     interface RuxIconPanoramaWideAngle {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10045,10 +7465,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPartyMode {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10061,10 +7477,6 @@ export namespace Components {
     }
     interface RuxIconPause {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10075,10 +7487,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPauseCircleFilled {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10091,10 +7499,6 @@ export namespace Components {
     }
     interface RuxIconPauseCircleOutline {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10105,10 +7509,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPausePresentation {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10121,10 +7521,6 @@ export namespace Components {
     }
     interface RuxIconPayload {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10135,10 +7531,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPayment {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10151,10 +7543,6 @@ export namespace Components {
     }
     interface RuxIconPeopleOutline {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10165,10 +7553,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPermCameraMic {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10181,10 +7565,6 @@ export namespace Components {
     }
     interface RuxIconPermContactCalendar {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10195,10 +7575,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPermDataSetting {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10211,10 +7587,6 @@ export namespace Components {
     }
     interface RuxIconPermDeviceInformation {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10225,10 +7597,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPermIdentity {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10241,10 +7609,6 @@ export namespace Components {
     }
     interface RuxIconPermMedia {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10255,10 +7619,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPermPhoneMsg {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10271,10 +7631,6 @@ export namespace Components {
     }
     interface RuxIconPermScanWifi {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10285,10 +7641,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPerson {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10301,10 +7653,6 @@ export namespace Components {
     }
     interface RuxIconPersonAdd {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10315,10 +7663,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPersonAddDisabled {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10331,10 +7675,6 @@ export namespace Components {
     }
     interface RuxIconPersonOutline {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10345,10 +7685,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPersonPin {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10361,10 +7697,6 @@ export namespace Components {
     }
     interface RuxIconPersonPinCircle {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10375,10 +7707,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPersonalVideo {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10391,10 +7719,6 @@ export namespace Components {
     }
     interface RuxIconPets {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10405,10 +7729,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPhone {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10421,10 +7741,6 @@ export namespace Components {
     }
     interface RuxIconPhoneAndroid {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10435,10 +7751,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPhoneBluetoothSpeaker {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10451,10 +7763,6 @@ export namespace Components {
     }
     interface RuxIconPhoneCallback {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10465,10 +7773,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPhoneForwarded {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10481,10 +7785,6 @@ export namespace Components {
     }
     interface RuxIconPhoneInTalk {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10495,10 +7795,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPhoneIphone {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10511,10 +7807,6 @@ export namespace Components {
     }
     interface RuxIconPhoneLocked {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10525,10 +7817,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPhoneMissed {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10541,10 +7829,6 @@ export namespace Components {
     }
     interface RuxIconPhonePaused {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10555,10 +7839,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPhonelink {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10571,10 +7851,6 @@ export namespace Components {
     }
     interface RuxIconPhonelinkErase {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10585,10 +7861,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPhonelinkLock {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10601,10 +7873,6 @@ export namespace Components {
     }
     interface RuxIconPhonelinkOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10615,10 +7883,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPhonelinkRing {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10631,10 +7895,6 @@ export namespace Components {
     }
     interface RuxIconPhonelinkSetup {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10645,10 +7905,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPhoto {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10661,10 +7917,6 @@ export namespace Components {
     }
     interface RuxIconPhotoAlbum {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10675,10 +7927,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPhotoCamera {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10691,10 +7939,6 @@ export namespace Components {
     }
     interface RuxIconPhotoFilter {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10705,10 +7949,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPhotoLibrary {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10721,10 +7961,6 @@ export namespace Components {
     }
     interface RuxIconPhotoSizeSelectActual {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10735,10 +7971,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPhotoSizeSelectLarge {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10751,10 +7983,6 @@ export namespace Components {
     }
     interface RuxIconPhotoSizeSelectSmall {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10765,10 +7993,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPictureAsPdf {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10781,10 +8005,6 @@ export namespace Components {
     }
     interface RuxIconPictureInPicture {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10795,10 +8015,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPictureInPictureAlt {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10811,10 +8027,6 @@ export namespace Components {
     }
     interface RuxIconPieChart {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10825,10 +8037,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPinDrop {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10841,10 +8049,6 @@ export namespace Components {
     }
     interface RuxIconPlace {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10855,10 +8059,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPlayArrow {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10871,10 +8071,6 @@ export namespace Components {
     }
     interface RuxIconPlayCircleFilled {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10885,10 +8081,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPlayCircleFilledWhite {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10901,10 +8093,6 @@ export namespace Components {
     }
     interface RuxIconPlayCircleOutline {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10915,10 +8103,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPlayForWork {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10931,10 +8115,6 @@ export namespace Components {
     }
     interface RuxIconPlaylistAdd {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10945,10 +8125,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPlaylistAddCheck {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10961,10 +8137,6 @@ export namespace Components {
     }
     interface RuxIconPlaylistPlay {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -10975,10 +8147,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPlusOne {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -10991,9 +8159,16 @@ export namespace Components {
     }
     interface RuxIconPoll {
         /**
-          * The fill color for the icon
+          * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "color"?: string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
+    }
+    interface RuxIconPolymer {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11006,10 +8181,6 @@ export namespace Components {
     }
     interface RuxIconPool {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11020,10 +8191,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPortableWifiOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11036,10 +8203,6 @@ export namespace Components {
     }
     interface RuxIconPortrait {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11050,10 +8213,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPower {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11066,10 +8225,6 @@ export namespace Components {
     }
     interface RuxIconPowerInput {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11080,10 +8235,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPowerOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11096,10 +8247,6 @@ export namespace Components {
     }
     interface RuxIconPowerSettingsNew {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11110,10 +8257,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPregnantWoman {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11126,10 +8269,6 @@ export namespace Components {
     }
     interface RuxIconPresentToAll {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11140,10 +8279,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPrint {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11156,10 +8291,6 @@ export namespace Components {
     }
     interface RuxIconPrintDisabled {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11170,10 +8301,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPriorityHigh {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11186,10 +8313,6 @@ export namespace Components {
     }
     interface RuxIconProcessor {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11200,10 +8323,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconProcessorAlt {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11216,10 +8335,6 @@ export namespace Components {
     }
     interface RuxIconPropulsionPower {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11230,10 +8345,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconPublic {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11246,10 +8357,6 @@ export namespace Components {
     }
     interface RuxIconPublish {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11260,10 +8367,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconQueryBuilder {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11276,10 +8379,6 @@ export namespace Components {
     }
     interface RuxIconQuestionAnswer {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11290,10 +8389,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconQueue {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11306,10 +8401,6 @@ export namespace Components {
     }
     interface RuxIconQueueMusic {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11320,10 +8411,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconQueuePlayNext {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11336,10 +8423,6 @@ export namespace Components {
     }
     interface RuxIconRadio {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11350,10 +8433,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconRadioButtonChecked {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11366,10 +8445,6 @@ export namespace Components {
     }
     interface RuxIconRadioButtonUnchecked {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11380,10 +8455,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconRateReview {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11396,10 +8467,6 @@ export namespace Components {
     }
     interface RuxIconReceipt {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11410,10 +8477,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconRecentActors {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11426,10 +8489,6 @@ export namespace Components {
     }
     interface RuxIconRecordVoiceOver {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11440,10 +8499,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconRedeem {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11456,10 +8511,6 @@ export namespace Components {
     }
     interface RuxIconRedo {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11470,10 +8521,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconRefresh {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11486,10 +8533,6 @@ export namespace Components {
     }
     interface RuxIconRemove {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11500,10 +8543,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconRemoveCircle {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11516,10 +8555,6 @@ export namespace Components {
     }
     interface RuxIconRemoveCircleOutline {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11530,10 +8565,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconRemoveFromQueue {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11546,10 +8577,6 @@ export namespace Components {
     }
     interface RuxIconRemoveRedEye {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11560,10 +8587,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconRemoveShoppingCart {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11576,10 +8599,6 @@ export namespace Components {
     }
     interface RuxIconReorder {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11590,10 +8609,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconRepeat {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11606,10 +8621,6 @@ export namespace Components {
     }
     interface RuxIconRepeatOne {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11620,10 +8631,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconReplay {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11636,10 +8643,6 @@ export namespace Components {
     }
     interface RuxIconReplay10 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11650,10 +8653,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconReplay30 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11666,10 +8665,6 @@ export namespace Components {
     }
     interface RuxIconReplay5 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11680,10 +8675,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconReply {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11696,10 +8687,6 @@ export namespace Components {
     }
     interface RuxIconReplyAll {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11710,10 +8697,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconReport {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11726,10 +8709,6 @@ export namespace Components {
     }
     interface RuxIconReportOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11740,10 +8719,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconReportProblem {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11756,10 +8731,6 @@ export namespace Components {
     }
     interface RuxIconRestaurant {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11770,10 +8741,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconRestaurantMenu {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11786,10 +8753,6 @@ export namespace Components {
     }
     interface RuxIconRestore {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11800,10 +8763,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconRestoreFromTrash {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11816,10 +8775,6 @@ export namespace Components {
     }
     interface RuxIconRestorePage {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11830,10 +8785,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconRingVolume {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11846,10 +8797,6 @@ export namespace Components {
     }
     interface RuxIconRoom {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11860,10 +8807,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconRoomService {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11876,10 +8819,6 @@ export namespace Components {
     }
     interface RuxIconRotate90DegreesCc {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11890,10 +8829,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconRotateLeft {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11906,10 +8841,6 @@ export namespace Components {
     }
     interface RuxIconRotateRight {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11920,10 +8851,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconRoundedCorner {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11936,10 +8863,6 @@ export namespace Components {
     }
     interface RuxIconRouter {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11950,10 +8873,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconRowing {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11966,10 +8885,6 @@ export namespace Components {
     }
     interface RuxIconRssFeed {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -11980,10 +8895,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconRvHookup {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -11996,10 +8907,6 @@ export namespace Components {
     }
     interface RuxIconSatellite {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12010,10 +8917,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSatelliteOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12026,10 +8929,6 @@ export namespace Components {
     }
     interface RuxIconSatelliteReceive {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12040,10 +8939,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSatelliteTransmit {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12056,10 +8951,6 @@ export namespace Components {
     }
     interface RuxIconSave {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12070,10 +8961,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSaveAlt {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12086,10 +8973,6 @@ export namespace Components {
     }
     interface RuxIconScanner {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12100,10 +8983,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconScatterPlot {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12116,10 +8995,6 @@ export namespace Components {
     }
     interface RuxIconSchedule {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12130,10 +9005,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSchool {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12146,10 +9017,6 @@ export namespace Components {
     }
     interface RuxIconScore {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12160,10 +9027,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconScreenLockLandscape {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12176,10 +9039,6 @@ export namespace Components {
     }
     interface RuxIconScreenLockPortrait {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12190,10 +9049,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconScreenLockRotation {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12206,10 +9061,6 @@ export namespace Components {
     }
     interface RuxIconScreenRotation {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12220,10 +9071,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconScreenShare {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12236,10 +9083,6 @@ export namespace Components {
     }
     interface RuxIconSdCard {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12250,10 +9093,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSdStorage {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12266,10 +9105,6 @@ export namespace Components {
     }
     interface RuxIconSearch {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12280,10 +9115,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSeat {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12296,10 +9127,6 @@ export namespace Components {
     }
     interface RuxIconSecurity {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12310,10 +9137,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSelectAll {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12326,10 +9149,6 @@ export namespace Components {
     }
     interface RuxIconSend {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12340,10 +9159,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSentimentDissatisfied {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12356,10 +9171,6 @@ export namespace Components {
     }
     interface RuxIconSentimentSatisfied {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12370,10 +9181,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSentimentSatisfiedAlt {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12386,10 +9193,6 @@ export namespace Components {
     }
     interface RuxIconSentimentVeryDissatisfied {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12400,10 +9203,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSentimentVerySatisfied {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12416,10 +9215,6 @@ export namespace Components {
     }
     interface RuxIconSettings {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12430,10 +9225,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSettingsApplications {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12446,10 +9237,6 @@ export namespace Components {
     }
     interface RuxIconSettingsBackupRestore {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12460,10 +9247,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSettingsBluetooth {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12476,10 +9259,6 @@ export namespace Components {
     }
     interface RuxIconSettingsBrightness {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12490,10 +9269,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSettingsCell {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12506,10 +9281,6 @@ export namespace Components {
     }
     interface RuxIconSettingsEthernet {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12520,10 +9291,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSettingsInputAntenna {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12536,10 +9303,6 @@ export namespace Components {
     }
     interface RuxIconSettingsInputComponent {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12550,10 +9313,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSettingsInputComposite {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12566,10 +9325,6 @@ export namespace Components {
     }
     interface RuxIconSettingsInputHdmi {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12580,10 +9335,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSettingsInputSvideo {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12596,10 +9347,6 @@ export namespace Components {
     }
     interface RuxIconSettingsOverscan {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12610,10 +9357,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSettingsPhone {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12626,10 +9369,6 @@ export namespace Components {
     }
     interface RuxIconSettingsPower {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12640,10 +9379,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSettingsRemote {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12656,10 +9391,6 @@ export namespace Components {
     }
     interface RuxIconSettingsSystemDaydream {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12670,10 +9401,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSettingsVoice {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12686,10 +9413,6 @@ export namespace Components {
     }
     interface RuxIconShare {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12700,10 +9423,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconShop {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12716,10 +9435,6 @@ export namespace Components {
     }
     interface RuxIconShopTwo {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12730,10 +9445,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconShoppingBasket {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12746,10 +9457,6 @@ export namespace Components {
     }
     interface RuxIconShoppingCart {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12760,10 +9467,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconShortText {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12776,10 +9479,6 @@ export namespace Components {
     }
     interface RuxIconShowChart {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12790,10 +9489,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconShuffle {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12806,10 +9501,6 @@ export namespace Components {
     }
     interface RuxIconShutterSpeed {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12820,10 +9511,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSignalCellular0Bar {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12836,10 +9523,6 @@ export namespace Components {
     }
     interface RuxIconSignalCellular1Bar {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12850,10 +9533,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSignalCellular2Bar {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12866,10 +9545,6 @@ export namespace Components {
     }
     interface RuxIconSignalCellular3Bar {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12880,10 +9555,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSignalCellular4Bar {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12896,10 +9567,6 @@ export namespace Components {
     }
     interface RuxIconSignalCellularAlt {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12910,10 +9577,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSignalCellularConnectedNoInternet0Bar {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12926,10 +9589,6 @@ export namespace Components {
     }
     interface RuxIconSignalCellularConnectedNoInternet1Bar {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12940,10 +9599,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSignalCellularConnectedNoInternet2Bar {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12956,10 +9611,6 @@ export namespace Components {
     }
     interface RuxIconSignalCellularConnectedNoInternet3Bar {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -12970,10 +9621,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSignalCellularConnectedNoInternet4Bar {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12986,10 +9633,6 @@ export namespace Components {
     }
     interface RuxIconSignalCellularNoSim {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13000,10 +9643,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSignalCellularNull {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13016,10 +9655,6 @@ export namespace Components {
     }
     interface RuxIconSignalCellularOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13030,10 +9665,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSignalWifi0Bar {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13046,10 +9677,6 @@ export namespace Components {
     }
     interface RuxIconSignalWifi1Bar {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13060,10 +9687,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSignalWifi1BarLock {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13076,10 +9699,6 @@ export namespace Components {
     }
     interface RuxIconSignalWifi2Bar {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13090,10 +9709,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSignalWifi2BarLock {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13106,10 +9721,6 @@ export namespace Components {
     }
     interface RuxIconSignalWifi3Bar {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13120,10 +9731,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSignalWifi3BarLock {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13136,10 +9743,6 @@ export namespace Components {
     }
     interface RuxIconSignalWifi4Bar {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13150,10 +9753,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSignalWifi4BarLock {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13166,10 +9765,6 @@ export namespace Components {
     }
     interface RuxIconSignalWifiOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13180,10 +9775,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSimCard {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13196,10 +9787,6 @@ export namespace Components {
     }
     interface RuxIconSkipNext {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13210,10 +9797,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSkipPrevious {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13226,10 +9809,6 @@ export namespace Components {
     }
     interface RuxIconSlideshow {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13240,10 +9819,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSlowMotionVideo {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13256,10 +9831,6 @@ export namespace Components {
     }
     interface RuxIconSmartphone {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13270,10 +9841,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSmokeFree {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13286,10 +9853,6 @@ export namespace Components {
     }
     interface RuxIconSmokingRooms {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13300,10 +9863,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSms {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13316,10 +9875,6 @@ export namespace Components {
     }
     interface RuxIconSmsFailed {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13330,10 +9885,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSnooze {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13346,10 +9897,6 @@ export namespace Components {
     }
     interface RuxIconSolar {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13360,10 +9907,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSort {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13376,10 +9919,6 @@ export namespace Components {
     }
     interface RuxIconSortByAlpha {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13390,10 +9929,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSpa {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13406,10 +9941,6 @@ export namespace Components {
     }
     interface RuxIconSpaceBar {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13420,10 +9951,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSpeaker {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13436,10 +9963,6 @@ export namespace Components {
     }
     interface RuxIconSpeakerGroup {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13450,10 +9973,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSpeakerNotes {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13466,10 +9985,6 @@ export namespace Components {
     }
     interface RuxIconSpeakerNotesOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13480,10 +9995,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSpeakerPhone {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13496,10 +10007,6 @@ export namespace Components {
     }
     interface RuxIconSpellcheck {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13510,10 +10017,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconStar {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13526,10 +10029,6 @@ export namespace Components {
     }
     interface RuxIconStarBorder {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13540,10 +10039,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconStarHalf {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13556,10 +10051,6 @@ export namespace Components {
     }
     interface RuxIconStarRate {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13570,10 +10061,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconStars {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13586,10 +10073,6 @@ export namespace Components {
     }
     interface RuxIconStayCurrentLandscape {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13600,10 +10083,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconStayCurrentPortrait {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13616,10 +10095,6 @@ export namespace Components {
     }
     interface RuxIconStayPrimaryLandscape {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13630,10 +10105,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconStayPrimaryPortrait {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13646,10 +10117,6 @@ export namespace Components {
     }
     interface RuxIconStop {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13660,10 +10127,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconStopScreenShare {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13676,10 +10139,6 @@ export namespace Components {
     }
     interface RuxIconStorage {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13690,10 +10149,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconStore {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13706,10 +10161,6 @@ export namespace Components {
     }
     interface RuxIconStoreMallDirectory {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13720,10 +10171,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconStraighten {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13736,10 +10183,6 @@ export namespace Components {
     }
     interface RuxIconStreetview {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13750,10 +10193,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconStrikethroughS {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13766,10 +10205,6 @@ export namespace Components {
     }
     interface RuxIconStyle {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13780,10 +10215,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSubdirectoryArrowLeft {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13796,10 +10227,6 @@ export namespace Components {
     }
     interface RuxIconSubdirectoryArrowRight {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13810,10 +10237,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSubject {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13826,10 +10249,6 @@ export namespace Components {
     }
     interface RuxIconSubscriptions {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13840,10 +10259,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSubtitles {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13856,10 +10271,6 @@ export namespace Components {
     }
     interface RuxIconSubway {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13870,10 +10281,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSupervisedUserCircle {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13886,10 +10293,6 @@ export namespace Components {
     }
     interface RuxIconSupervisorAccount {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13900,10 +10303,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSurroundSound {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13916,10 +10315,6 @@ export namespace Components {
     }
     interface RuxIconSwapCalls {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13930,10 +10325,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSwapHoriz {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13946,10 +10337,6 @@ export namespace Components {
     }
     interface RuxIconSwapHorizontalCircle {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13960,10 +10347,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSwapVert {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -13976,10 +10359,6 @@ export namespace Components {
     }
     interface RuxIconSwapVerticalCircle {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -13990,10 +10369,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSwitchCamera {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14006,10 +10381,6 @@ export namespace Components {
     }
     interface RuxIconSwitchVideo {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14020,10 +10391,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSync {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14036,10 +10403,6 @@ export namespace Components {
     }
     interface RuxIconSyncDisabled {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14050,10 +10413,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconSyncProblem {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14066,10 +10425,6 @@ export namespace Components {
     }
     interface RuxIconSystemUpdate {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14080,10 +10435,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconTab {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14096,10 +10447,6 @@ export namespace Components {
     }
     interface RuxIconTabUnselected {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14110,10 +10457,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconTableChart {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14126,10 +10469,6 @@ export namespace Components {
     }
     interface RuxIconTablet {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14140,10 +10479,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconTabletAndroid {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14156,10 +10491,6 @@ export namespace Components {
     }
     interface RuxIconTabletMac {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14170,10 +10501,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconTagFaces {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14186,10 +10513,6 @@ export namespace Components {
     }
     interface RuxIconTapAndPlay {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14200,10 +10523,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconTerrain {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14216,10 +10535,6 @@ export namespace Components {
     }
     interface RuxIconTextFields {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14230,10 +10545,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconTextFormat {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14246,10 +10557,6 @@ export namespace Components {
     }
     interface RuxIconTextRotateUp {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14260,10 +10567,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconTextRotateVertical {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14276,10 +10579,6 @@ export namespace Components {
     }
     interface RuxIconTextRotationNone {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14290,10 +10589,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconTextsms {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14306,10 +10601,6 @@ export namespace Components {
     }
     interface RuxIconTexture {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14320,10 +10611,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconTheaters {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14336,10 +10623,6 @@ export namespace Components {
     }
     interface RuxIconThermal {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14350,10 +10633,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconThumbDown {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14366,10 +10645,6 @@ export namespace Components {
     }
     interface RuxIconThumbDownAlt {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14380,10 +10655,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconThumbUp {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14396,10 +10667,6 @@ export namespace Components {
     }
     interface RuxIconThumbUpAlt {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14410,10 +10677,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconThumbsUpDown {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14426,10 +10689,6 @@ export namespace Components {
     }
     interface RuxIconTimeToLeave {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14440,10 +10699,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconTimelapse {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14456,10 +10711,6 @@ export namespace Components {
     }
     interface RuxIconTimeline {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14470,10 +10721,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconTimer {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14486,10 +10733,6 @@ export namespace Components {
     }
     interface RuxIconTimer10 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14500,10 +10743,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconTimer3 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14516,10 +10755,6 @@ export namespace Components {
     }
     interface RuxIconTimerOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14530,10 +10765,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconTitle {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14546,10 +10777,6 @@ export namespace Components {
     }
     interface RuxIconToc {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14560,10 +10787,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconToday {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14576,10 +10799,6 @@ export namespace Components {
     }
     interface RuxIconToggleOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14590,10 +10809,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconToggleOn {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14606,10 +10821,6 @@ export namespace Components {
     }
     interface RuxIconToll {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14620,10 +10831,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconTonality {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14636,10 +10843,6 @@ export namespace Components {
     }
     interface RuxIconTouchApp {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14650,10 +10853,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconToys {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14666,10 +10865,6 @@ export namespace Components {
     }
     interface RuxIconTrackChanges {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14680,10 +10875,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconTraffic {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14696,10 +10887,6 @@ export namespace Components {
     }
     interface RuxIconTrain {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14710,10 +10897,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconTram {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14726,10 +10909,6 @@ export namespace Components {
     }
     interface RuxIconTransferWithinAStation {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14740,10 +10919,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconTransform {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14756,10 +10931,6 @@ export namespace Components {
     }
     interface RuxIconTransitEnterexit {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14770,10 +10941,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconTranslate {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14786,10 +10953,6 @@ export namespace Components {
     }
     interface RuxIconTrendingDown {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14800,10 +10963,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconTrendingFlat {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14816,10 +10975,6 @@ export namespace Components {
     }
     interface RuxIconTrendingUp {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14830,10 +10985,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconTripOrigin {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14846,10 +10997,6 @@ export namespace Components {
     }
     interface RuxIconTune {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14860,10 +11007,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconTurnedIn {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14876,10 +11019,6 @@ export namespace Components {
     }
     interface RuxIconTurnedInNot {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14890,10 +11029,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconTv {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14906,10 +11041,6 @@ export namespace Components {
     }
     interface RuxIconTvOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14920,10 +11051,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconUnarchive {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14936,10 +11063,6 @@ export namespace Components {
     }
     interface RuxIconUndo {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14950,10 +11073,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconUnfoldLess {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14966,10 +11085,6 @@ export namespace Components {
     }
     interface RuxIconUnfoldMore {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -14980,10 +11095,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconUnsubscribe {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -14996,10 +11107,6 @@ export namespace Components {
     }
     interface RuxIconUpdate {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15010,10 +11117,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconUsb {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15026,10 +11129,6 @@ export namespace Components {
     }
     interface RuxIconVerifiedUser {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15040,10 +11139,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconVerticalAlignBottom {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15056,10 +11151,6 @@ export namespace Components {
     }
     interface RuxIconVerticalAlignCenter {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15070,10 +11161,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconVerticalAlignTop {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15086,10 +11173,6 @@ export namespace Components {
     }
     interface RuxIconVerticalSplit {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15100,10 +11183,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconVibration {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15116,10 +11195,6 @@ export namespace Components {
     }
     interface RuxIconVideoCall {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15130,10 +11205,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconVideoLabel {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15146,10 +11217,6 @@ export namespace Components {
     }
     interface RuxIconVideoLibrary {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15160,10 +11227,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconVideocam {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15176,10 +11239,6 @@ export namespace Components {
     }
     interface RuxIconVideocamOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15190,10 +11249,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconVideogameAsset {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15206,10 +11261,6 @@ export namespace Components {
     }
     interface RuxIconViewAgenda {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15220,10 +11271,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconViewArray {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15236,10 +11283,6 @@ export namespace Components {
     }
     interface RuxIconViewCarousel {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15250,10 +11293,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconViewColumn {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15266,10 +11305,6 @@ export namespace Components {
     }
     interface RuxIconViewComfy {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15280,10 +11315,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconViewCompact {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15296,10 +11327,6 @@ export namespace Components {
     }
     interface RuxIconViewDay {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15310,10 +11337,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconViewHeadline {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15326,10 +11349,6 @@ export namespace Components {
     }
     interface RuxIconViewList {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15340,10 +11359,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconViewModule {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15356,10 +11371,6 @@ export namespace Components {
     }
     interface RuxIconViewQuilt {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15370,10 +11381,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconViewStream {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15386,10 +11393,6 @@ export namespace Components {
     }
     interface RuxIconViewWeek {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15400,10 +11403,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconVignette {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15416,10 +11415,6 @@ export namespace Components {
     }
     interface RuxIconVisibility {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15430,10 +11425,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconVisibilityOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15446,10 +11437,6 @@ export namespace Components {
     }
     interface RuxIconVoiceChat {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15460,10 +11447,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconVoiceOverOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15476,10 +11459,6 @@ export namespace Components {
     }
     interface RuxIconVoicemail {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15490,10 +11469,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconVolumeDown {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15506,10 +11481,6 @@ export namespace Components {
     }
     interface RuxIconVolumeMute {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15520,10 +11491,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconVolumeOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15536,10 +11503,6 @@ export namespace Components {
     }
     interface RuxIconVolumeUp {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15550,10 +11513,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconVpnKey {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15566,10 +11525,6 @@ export namespace Components {
     }
     interface RuxIconVpnLock {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15580,10 +11535,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconWallpaper {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15596,10 +11547,6 @@ export namespace Components {
     }
     interface RuxIconWarning {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15610,10 +11557,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconWatch {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15626,10 +11569,6 @@ export namespace Components {
     }
     interface RuxIconWatchLater {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15640,10 +11579,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconWaves {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15656,10 +11591,6 @@ export namespace Components {
     }
     interface RuxIconWbAuto {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15670,10 +11601,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconWbCloudy {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15686,10 +11613,6 @@ export namespace Components {
     }
     interface RuxIconWbIncandescent {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15700,10 +11623,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconWbIridescent {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15716,10 +11635,6 @@ export namespace Components {
     }
     interface RuxIconWbSunny {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15730,10 +11645,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconWc {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15746,10 +11657,6 @@ export namespace Components {
     }
     interface RuxIconWeb {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15760,10 +11667,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconWebAsset {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15776,10 +11679,6 @@ export namespace Components {
     }
     interface RuxIconWeekend {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15790,10 +11689,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconWhatshot {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15806,10 +11701,6 @@ export namespace Components {
     }
     interface RuxIconWhereToVote {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15820,10 +11711,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconWidgets {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15836,10 +11723,6 @@ export namespace Components {
     }
     interface RuxIconWifi {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15850,10 +11733,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconWifiLock {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15866,10 +11745,6 @@ export namespace Components {
     }
     interface RuxIconWifiOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15880,10 +11755,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconWifiTethering {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15896,10 +11767,6 @@ export namespace Components {
     }
     interface RuxIconWork {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15910,10 +11777,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconWorkOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15926,10 +11789,6 @@ export namespace Components {
     }
     interface RuxIconWorkOutline {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15940,10 +11799,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconWrapText {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15956,10 +11811,6 @@ export namespace Components {
     }
     interface RuxIconYoutubeSearchedFor {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -15970,10 +11821,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconZoomIn {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15986,10 +11833,6 @@ export namespace Components {
     }
     interface RuxIconZoomInMap {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -16001,10 +11844,6 @@ export namespace Components {
     }
     interface RuxIconZoomOut {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -16015,10 +11854,6 @@ export namespace Components {
         | string;
     }
     interface RuxIconZoomOutMap {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -17104,6 +12939,12 @@ declare global {
     var HTMLRuxIconAssistantPhotoElement: {
         prototype: HTMLRuxIconAssistantPhotoElement;
         new (): HTMLRuxIconAssistantPhotoElement;
+    };
+    interface HTMLRuxIconAtmElement extends Components.RuxIconAtm, HTMLStencilElement {
+    }
+    var HTMLRuxIconAtmElement: {
+        prototype: HTMLRuxIconAtmElement;
+        new (): HTMLRuxIconAtmElement;
     };
     interface HTMLRuxIconAttachFileElement extends Components.RuxIconAttachFile, HTMLStencilElement {
     }
@@ -19781,6 +15622,12 @@ declare global {
         prototype: HTMLRuxIconLocalCafeElement;
         new (): HTMLRuxIconLocalCafeElement;
     };
+    interface HTMLRuxIconLocalCarWashElement extends Components.RuxIconLocalCarWash, HTMLStencilElement {
+    }
+    var HTMLRuxIconLocalCarWashElement: {
+        prototype: HTMLRuxIconLocalCarWashElement;
+        new (): HTMLRuxIconLocalCarWashElement;
+    };
     interface HTMLRuxIconLocalConvenienceStoreElement extends Components.RuxIconLocalConvenienceStore, HTMLStencilElement {
     }
     var HTMLRuxIconLocalConvenienceStoreElement: {
@@ -19798,6 +15645,12 @@ declare global {
     var HTMLRuxIconLocalDrinkElement: {
         prototype: HTMLRuxIconLocalDrinkElement;
         new (): HTMLRuxIconLocalDrinkElement;
+    };
+    interface HTMLRuxIconLocalFloristElement extends Components.RuxIconLocalFlorist, HTMLStencilElement {
+    }
+    var HTMLRuxIconLocalFloristElement: {
+        prototype: HTMLRuxIconLocalFloristElement;
+        new (): HTMLRuxIconLocalFloristElement;
     };
     interface HTMLRuxIconLocalGasStationElement extends Components.RuxIconLocalGasStation, HTMLStencilElement {
     }
@@ -19870,6 +15723,12 @@ declare global {
     var HTMLRuxIconLocalPhoneElement: {
         prototype: HTMLRuxIconLocalPhoneElement;
         new (): HTMLRuxIconLocalPhoneElement;
+    };
+    interface HTMLRuxIconLocalPizzaElement extends Components.RuxIconLocalPizza, HTMLStencilElement {
+    }
+    var HTMLRuxIconLocalPizzaElement: {
+        prototype: HTMLRuxIconLocalPizzaElement;
+        new (): HTMLRuxIconLocalPizzaElement;
     };
     interface HTMLRuxIconLocalPlayElement extends Components.RuxIconLocalPlay, HTMLStencilElement {
     }
@@ -20920,6 +16779,12 @@ declare global {
     var HTMLRuxIconPollElement: {
         prototype: HTMLRuxIconPollElement;
         new (): HTMLRuxIconPollElement;
+    };
+    interface HTMLRuxIconPolymerElement extends Components.RuxIconPolymer, HTMLStencilElement {
+    }
+    var HTMLRuxIconPolymerElement: {
+        prototype: HTMLRuxIconPolymerElement;
+        new (): HTMLRuxIconPolymerElement;
     };
     interface HTMLRuxIconPoolElement extends Components.RuxIconPool, HTMLStencilElement {
     }
@@ -23215,6 +19080,7 @@ declare global {
         "rux-icon-assignment-turned-in": HTMLRuxIconAssignmentTurnedInElement;
         "rux-icon-assistant": HTMLRuxIconAssistantElement;
         "rux-icon-assistant-photo": HTMLRuxIconAssistantPhotoElement;
+        "rux-icon-atm": HTMLRuxIconAtmElement;
         "rux-icon-attach-file": HTMLRuxIconAttachFileElement;
         "rux-icon-attach-money": HTMLRuxIconAttachMoneyElement;
         "rux-icon-attachment": HTMLRuxIconAttachmentElement;
@@ -23661,9 +19527,11 @@ declare global {
         "rux-icon-local-atm": HTMLRuxIconLocalAtmElement;
         "rux-icon-local-bar": HTMLRuxIconLocalBarElement;
         "rux-icon-local-cafe": HTMLRuxIconLocalCafeElement;
+        "rux-icon-local-car-wash": HTMLRuxIconLocalCarWashElement;
         "rux-icon-local-convenience-store": HTMLRuxIconLocalConvenienceStoreElement;
         "rux-icon-local-dining": HTMLRuxIconLocalDiningElement;
         "rux-icon-local-drink": HTMLRuxIconLocalDrinkElement;
+        "rux-icon-local-florist": HTMLRuxIconLocalFloristElement;
         "rux-icon-local-gas-station": HTMLRuxIconLocalGasStationElement;
         "rux-icon-local-grocery-store": HTMLRuxIconLocalGroceryStoreElement;
         "rux-icon-local-hospital": HTMLRuxIconLocalHospitalElement;
@@ -23676,6 +19544,7 @@ declare global {
         "rux-icon-local-parking": HTMLRuxIconLocalParkingElement;
         "rux-icon-local-pharmacy": HTMLRuxIconLocalPharmacyElement;
         "rux-icon-local-phone": HTMLRuxIconLocalPhoneElement;
+        "rux-icon-local-pizza": HTMLRuxIconLocalPizzaElement;
         "rux-icon-local-play": HTMLRuxIconLocalPlayElement;
         "rux-icon-local-post-office": HTMLRuxIconLocalPostOfficeElement;
         "rux-icon-local-printshop": HTMLRuxIconLocalPrintshopElement;
@@ -23851,6 +19720,7 @@ declare global {
         "rux-icon-playlist-play": HTMLRuxIconPlaylistPlayElement;
         "rux-icon-plus-one": HTMLRuxIconPlusOneElement;
         "rux-icon-poll": HTMLRuxIconPollElement;
+        "rux-icon-polymer": HTMLRuxIconPolymerElement;
         "rux-icon-pool": HTMLRuxIconPoolElement;
         "rux-icon-portable-wifi-off": HTMLRuxIconPortableWifiOffElement;
         "rux-icon-portrait": HTMLRuxIconPortraitElement;
@@ -24421,10 +20291,6 @@ declare namespace LocalJSX {
     }
     interface RuxIcon {
         /**
-          * The icon color
-         */
-        "color"?: string;
-        /**
           * The icon name
          */
         "icon": string;
@@ -24444,10 +20310,6 @@ declare namespace LocalJSX {
     }
     interface RuxIcon360 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -24458,10 +20320,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIcon3dRotation {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -24474,10 +20332,6 @@ declare namespace LocalJSX {
     }
     interface RuxIcon4k {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -24488,10 +20342,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAcUnit {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -24504,10 +20354,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAccessAlarms {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -24518,10 +20364,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAccessTime {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -24534,10 +20376,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAccessibility {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -24548,10 +20386,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAccessibilityNew {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -24564,10 +20398,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAccessible {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -24578,10 +20408,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAccessibleForward {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -24594,10 +20420,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAccountBalance {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -24608,10 +20430,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAccountBalanceWallet {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -24624,10 +20442,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAccountBox {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -24638,10 +20452,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAccountCircle {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -24654,10 +20464,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAdb {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -24668,10 +20474,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAdd {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -24684,10 +20486,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAddAPhoto {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -24698,10 +20496,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAddAlarm {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -24714,10 +20508,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAddAlert {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -24728,10 +20518,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAddBox {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -24744,10 +20530,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAddCircle {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -24758,10 +20540,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAddCircleOutline {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -24774,10 +20552,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAddComment {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -24788,10 +20562,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAddLocation {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -24804,10 +20574,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAddPhotoAlternate {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -24818,10 +20584,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAddShoppingCart {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -24834,10 +20596,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAddToHomeScreen {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -24848,10 +20606,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAddToPhotos {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -24864,10 +20618,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAddToQueue {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -24878,10 +20628,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAdjust {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -24894,10 +20640,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAirlineSeatFlat {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -24908,10 +20650,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAirlineSeatFlatAngled {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -24924,10 +20662,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAirlineSeatIndividualSuite {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -24938,10 +20672,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAirlineSeatLegroomExtra {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -24954,10 +20684,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAirlineSeatLegroomNormal {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -24968,10 +20694,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAirlineSeatLegroomReduced {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -24984,10 +20706,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAirlineSeatReclineExtra {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -24998,10 +20716,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAirlineSeatReclineNormal {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25014,10 +20728,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAirplanemodeActive {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25028,10 +20738,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAirplanemodeInactive {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25044,10 +20750,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAirplay {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25058,10 +20760,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAirportShuttle {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25074,10 +20772,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAlarm {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25088,10 +20782,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAlarmAdd {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25104,10 +20794,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAlarmOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25118,10 +20804,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAlarmOn {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25134,10 +20816,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAlbum {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25148,10 +20826,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAllInbox {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25164,10 +20838,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAllInclusive {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25178,10 +20848,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAllOut {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25194,10 +20860,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAlternateEmail {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25208,10 +20870,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAltitude {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25224,10 +20882,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAndroid {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25238,10 +20892,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAnnouncement {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25254,10 +20904,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAntenna {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25268,10 +20914,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAntennaOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25284,10 +20926,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAntennaReceive {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25298,10 +20936,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAntennaTransmit {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25314,10 +20948,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconApps {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25328,10 +20958,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconArchive {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25344,10 +20970,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconArrowBack {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25358,10 +20980,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconArrowBackIos {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25374,10 +20992,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconArrowDownward {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25388,10 +21002,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconArrowDropDown {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25404,10 +21014,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconArrowDropDownCircle {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25418,10 +21024,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconArrowDropUp {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25434,10 +21036,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconArrowForward {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25448,10 +21046,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconArrowForwardIos {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25464,10 +21058,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconArrowLeft {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25478,10 +21068,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconArrowRight {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25494,10 +21080,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconArrowRightAlt {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25508,10 +21090,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconArrowUpward {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25524,10 +21102,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconArtTrack {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25538,10 +21112,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAspectRatio {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25554,10 +21124,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAssessment {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25568,10 +21134,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAssignment {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25584,10 +21146,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAssignmentFind {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25598,10 +21156,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAssignmentLate {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25614,10 +21168,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAssignmentReturn {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25628,10 +21178,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAssignmentReturned {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25644,10 +21190,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAssignmentTurnedIn {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25658,10 +21200,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAssistant {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25674,9 +21212,16 @@ declare namespace LocalJSX {
     }
     interface RuxIconAssistantPhoto {
         /**
-          * The fill color for the icon
+          * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "color"?: string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
+    }
+    interface RuxIconAtm {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25689,10 +21234,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAttachFile {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25703,10 +21244,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAttachMoney {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25719,10 +21256,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAttachment {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25733,10 +21266,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAudiotrack {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25749,10 +21278,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconAutorenew {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25763,10 +21288,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconAvTimer {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25779,10 +21300,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBackspace {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25793,10 +21310,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBackup {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25809,10 +21322,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBallot {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25823,10 +21332,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBarChart {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25839,10 +21344,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBattery20 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25853,10 +21354,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBattery30 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25869,10 +21366,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBattery50 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25883,10 +21376,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBattery60 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25899,10 +21388,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBattery80 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25913,10 +21398,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBattery90 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25929,10 +21410,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBatteryAlert {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25943,10 +21420,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBatteryCharging20 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25959,10 +21432,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBatteryCharging30 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -25973,10 +21442,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBatteryCharging50 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -25989,10 +21454,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBatteryCharging60 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26003,10 +21464,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBatteryCharging80 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26019,10 +21476,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBatteryCharging90 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26033,10 +21486,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBatteryChargingFull {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26049,10 +21498,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBatteryFull {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26063,10 +21508,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBatteryStd {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26079,10 +21520,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBatteryUnknown {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26093,10 +21530,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBeachAccess {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26109,10 +21542,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBeenhere {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26123,10 +21552,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBlock {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26139,10 +21564,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBluetooth {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26153,10 +21574,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBluetoothAudio {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26169,10 +21586,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBluetoothConnected {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26183,10 +21596,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBluetoothDisabled {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26199,10 +21608,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBluetoothSearching {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26213,10 +21618,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBlurCircular {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26229,10 +21630,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBlurLinear {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26243,10 +21640,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBlurOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26259,10 +21652,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBlurOn {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26273,10 +21662,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBook {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26289,10 +21674,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBookmark {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26303,10 +21684,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBookmarkBorder {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26319,10 +21696,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBookmarks {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26333,10 +21706,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBorderAll {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26349,10 +21718,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBorderBottom {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26363,10 +21728,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBorderClear {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26379,10 +21740,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBorderColor {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26393,10 +21750,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBorderHorizontal {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26409,10 +21762,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBorderInner {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26423,10 +21772,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBorderLeft {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26439,10 +21784,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBorderOuter {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26453,10 +21794,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBorderRight {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26469,10 +21806,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBorderStyle {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26483,10 +21816,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBorderTop {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26499,10 +21828,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBorderVertical {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26513,10 +21838,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBrandingWatermark {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26529,10 +21850,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBrightness1 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26543,10 +21860,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBrightness2 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26559,10 +21872,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBrightness3 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26573,10 +21882,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBrightness4 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26589,10 +21894,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBrightness5 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26603,10 +21904,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBrightness6 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26619,10 +21916,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBrightness7 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26633,10 +21926,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBrightnessAuto {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26649,10 +21938,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBrightnessHigh {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26663,10 +21948,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBrightnessLow {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26679,10 +21960,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBrightnessMedium {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26693,10 +21970,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBrokenImage {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26709,10 +21982,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBrush {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26723,10 +21992,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBubbleChart {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26739,10 +22004,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBugReport {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26753,10 +22014,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBuild {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26769,10 +22026,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBurstMode {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26783,10 +22036,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconBusiness {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26799,10 +22048,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconBusinessCenter {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26813,10 +22058,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCached {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26829,10 +22070,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCake {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26843,10 +22080,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCalendarToday {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26859,10 +22092,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCalendarViewDay {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26873,10 +22102,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCall {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26889,10 +22114,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCallEnd {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26903,10 +22124,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCallMade {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26919,10 +22136,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCallMerge {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26933,10 +22146,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCallMissed {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26949,10 +22158,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCallMissedOutgoing {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26963,10 +22168,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCallReceived {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -26979,10 +22180,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCallSplit {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -26993,10 +22190,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCallToAction {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27009,10 +22202,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCamera {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27023,10 +22212,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCameraAlt {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27039,10 +22224,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCameraEnhance {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27053,10 +22234,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCameraFront {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27069,10 +22246,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCameraRear {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27083,10 +22256,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCameraRoll {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27099,10 +22268,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCancel {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27113,10 +22278,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCancelPresentation {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27129,10 +22290,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCardGiftcard {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27143,10 +22300,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCardMembership {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27159,10 +22312,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCardTravel {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27173,10 +22322,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCasino {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27189,10 +22334,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCast {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27203,10 +22344,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCastConnected {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27219,10 +22356,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCastForEducation {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27233,10 +22366,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCategory {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27249,10 +22378,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCellWifi {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27263,10 +22388,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCenterFocusStrong {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27279,10 +22400,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCenterFocusWeak {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27293,10 +22410,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconChangeHistory {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27309,10 +22422,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconChat {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27323,10 +22432,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconChatBubble {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27339,10 +22444,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconChatBubbleOutline {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27353,10 +22454,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCheck {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27369,10 +22466,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCheckBox {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27383,10 +22476,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCheckBoxOutlineBlank {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27399,10 +22488,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCheckCircle {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27413,10 +22498,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCheckCircleOutline {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27429,10 +22510,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconChevronLeft {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27443,10 +22520,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconChevronRight {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27459,10 +22532,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconChildCare {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27473,10 +22542,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconChildFriendly {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27489,10 +22554,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconChromeReaderMode {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27503,10 +22564,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconClass {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27519,10 +22576,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconClear {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27533,10 +22586,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconClearAll {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27549,10 +22598,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconClose {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27563,10 +22608,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconClosedCaption {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27579,10 +22620,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCloud {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27593,10 +22630,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCloudCircle {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27609,10 +22642,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCloudDone {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27623,10 +22652,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCloudDownload {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27639,10 +22664,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCloudOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27653,10 +22674,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCloudQueue {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27669,10 +22686,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCloudUpload {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27683,10 +22696,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCode {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27699,10 +22708,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCollections {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27713,10 +22718,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCollectionsBookmark {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27729,10 +22730,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconColorLens {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27743,10 +22740,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconColorize {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27759,10 +22752,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconComment {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27773,10 +22762,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCommute {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27789,10 +22774,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCompare {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27803,10 +22784,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCompareArrows {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27819,10 +22796,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCompassCalibration {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27833,10 +22806,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconComputer {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27849,10 +22818,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconConfirmationNumber {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27863,10 +22828,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconContactMail {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27879,10 +22840,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconContactPhone {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27893,10 +22850,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconContactSupport {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27909,10 +22862,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconContacts {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27923,10 +22872,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconControlCamera {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27939,10 +22884,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconControlPoint {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27953,10 +22894,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconControlPointDuplicate {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27969,10 +22906,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCopyright {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -27983,10 +22916,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCreate {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -27999,10 +22928,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCreateNewFolder {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28013,10 +22938,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCreditCard {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28029,10 +22950,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCrop {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28043,10 +22960,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCrop169 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28059,10 +22972,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCrop32 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28073,10 +22982,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCrop54 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28089,10 +22994,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCrop75 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28103,10 +23004,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCropDin {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28119,10 +23016,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCropFree {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28133,10 +23026,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCropLandscape {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28149,10 +23038,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCropOriginal {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28163,10 +23048,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCropPortrait {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28179,10 +23060,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconCropRotate {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28193,10 +23070,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconCropSquare {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28209,10 +23082,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconDashboard {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28223,10 +23092,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconDataUsage {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28239,10 +23104,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconDateRange {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28253,10 +23114,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconDehaze {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28269,10 +23126,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconDelete {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28283,10 +23136,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconDeleteForever {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28299,10 +23148,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconDeleteOutline {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28313,10 +23158,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconDeleteSweep {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28329,10 +23170,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconDepartureBoard {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28343,10 +23180,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconDescription {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28359,10 +23192,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconDesktopAccessDisabled {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28373,10 +23202,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconDesktopMac {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28389,10 +23214,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconDesktopWindows {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28403,10 +23224,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconDetails {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28419,10 +23236,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconDeveloperBoard {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28433,10 +23246,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconDeveloperMode {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28449,10 +23258,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconDeviceHub {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28463,10 +23268,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconDeviceUnknown {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28479,10 +23280,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconDevices {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28493,10 +23290,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconDevicesOther {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28509,10 +23302,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconDialerSip {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28523,10 +23312,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconDialpad {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28539,10 +23324,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconDirections {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28553,10 +23334,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconDirectionsBike {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28569,10 +23346,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconDirectionsBoat {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28583,10 +23356,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconDirectionsBus {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28599,10 +23368,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconDirectionsCar {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28613,10 +23378,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconDirectionsRailway {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28629,10 +23390,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconDirectionsRun {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28643,10 +23400,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconDirectionsSubway {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28659,10 +23412,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconDirectionsTransit {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28673,10 +23422,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconDirectionsWalk {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28689,10 +23434,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconDiscFull {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28703,10 +23444,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconDns {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28719,10 +23456,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconDock {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28733,10 +23466,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconDomain {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28749,10 +23478,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconDomainDisabled {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28763,10 +23488,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconDone {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28779,10 +23500,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconDoneAll {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28793,10 +23510,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconDoneOutline {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28809,10 +23522,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconDonutLarge {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28823,10 +23532,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconDonutSmall {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28839,10 +23544,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconDrafts {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28853,10 +23554,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconDragHandle {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28869,10 +23566,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconDragIndicator {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28883,10 +23576,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconDriveEta {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28899,10 +23588,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconDuo {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28913,10 +23598,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconDvr {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28929,10 +23610,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconEdit {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28943,10 +23620,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconEditAttributes {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28959,10 +23632,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconEditLocation {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -28973,10 +23642,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconEject {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -28989,10 +23654,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconEmail {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29003,10 +23664,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconEnhancedEncryption {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29019,10 +23676,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconEqualizer {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29033,10 +23686,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconEquipment {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29049,10 +23698,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconError {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29063,10 +23708,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconErrorOutline {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29079,10 +23720,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconEuroSymbol {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29093,10 +23730,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconEvStation {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29109,10 +23742,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconEvent {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29123,10 +23752,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconEventAvailable {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29139,10 +23764,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconEventBusy {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29153,10 +23774,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconEventNote {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29169,10 +23786,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconExitToApp {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29183,10 +23796,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconExpandLess {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29199,10 +23808,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconExpandMore {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29213,10 +23818,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconExplicit {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29229,10 +23830,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconExplore {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29243,10 +23840,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconExploreOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29259,10 +23852,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconExposure {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29273,10 +23862,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconExposureNeg1 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29289,10 +23874,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconExposureNeg2 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29303,10 +23884,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconExposurePlus1 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29319,10 +23896,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconExposurePlus2 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29333,10 +23906,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconExposureZero {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29349,10 +23918,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconExtension {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29363,10 +23928,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFace {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29379,10 +23940,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFastForward {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29393,10 +23950,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFastRewind {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29409,10 +23962,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFastfood {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29423,10 +23972,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFavorite {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29439,10 +23984,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFavoriteBorder {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29453,10 +23994,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFeaturedPlayList {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29469,10 +24006,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFeaturedVideo {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29483,10 +24016,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFeedback {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29499,10 +24028,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFiberDvr {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29513,10 +24038,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFiberManualRecord {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29529,10 +24050,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFiberNew {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29543,10 +24060,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFiberPin {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29559,10 +24072,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFiberSmartRecord {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29573,10 +24082,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFileCopy {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29589,10 +24094,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFilter {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29603,10 +24104,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFilter1 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29619,10 +24116,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFilter2 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29633,10 +24126,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFilter3 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29649,10 +24138,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFilter4 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29663,10 +24148,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFilter5 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29679,10 +24160,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFilter6 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29693,10 +24170,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFilter7 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29709,10 +24182,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFilter8 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29723,10 +24192,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFilter9 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29739,10 +24204,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFilter9Plus {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29753,10 +24214,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFilterBAndW {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29769,10 +24226,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFilterCenterFocus {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29783,10 +24236,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFilterDrama {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29799,10 +24248,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFilterFrames {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29813,10 +24258,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFilterHdr {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29829,10 +24270,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFilterList {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29843,10 +24280,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFilterNone {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29859,10 +24292,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFilterTiltShift {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29873,10 +24302,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFilterVintage {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29889,10 +24314,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFindInPage {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29903,10 +24324,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFindReplace {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29919,10 +24336,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFingerprint {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29933,10 +24346,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFirstPage {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29949,10 +24358,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFitnessCenter {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29963,10 +24368,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFlag {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -29979,10 +24380,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFlare {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -29993,10 +24390,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFlashAuto {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30009,10 +24402,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFlashOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30023,10 +24412,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFlashOn {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30039,10 +24424,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFlight {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30053,10 +24434,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFlightLand {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30069,10 +24446,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFlightTakeoff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30083,10 +24456,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFlip {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30099,10 +24468,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFlipToBack {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30113,10 +24478,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFlipToFront {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30129,10 +24490,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFolder {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30143,10 +24500,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFolderOpen {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30159,10 +24512,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFolderShared {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30173,10 +24522,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFolderSpecial {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30189,10 +24534,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFontDownload {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30203,10 +24544,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFormatAlignCenter {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30219,10 +24556,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFormatAlignJustify {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30233,10 +24566,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFormatAlignLeft {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30249,10 +24578,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFormatAlignRight {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30263,10 +24588,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFormatBold {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30279,10 +24600,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFormatClear {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30293,10 +24610,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFormatColorFill {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30309,10 +24622,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFormatColorReset {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30323,10 +24632,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFormatColorText {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30339,10 +24644,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFormatIndentDecrease {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30353,10 +24654,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFormatIndentIncrease {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30369,10 +24666,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFormatItalic {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30383,10 +24676,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFormatLineSpacing {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30399,10 +24688,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFormatListBulleted {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30413,10 +24698,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFormatListNumbered {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30429,10 +24710,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFormatListNumberedRtl {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30443,10 +24720,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFormatPaint {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30459,10 +24732,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFormatQuote {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30473,10 +24742,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFormatShapes {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30489,10 +24754,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFormatSize {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30503,10 +24764,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFormatStrikethrough {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30519,10 +24776,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFormatTextdirectionLToR {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30533,10 +24786,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFormatTextdirectionRToL {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30549,10 +24798,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFormatUnderlined {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30563,10 +24808,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconForum {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30579,10 +24820,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconForward {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30593,10 +24830,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconForward10 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30609,10 +24842,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconForward30 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30623,10 +24852,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconForward5 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30639,10 +24864,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFreeBreakfast {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30653,10 +24874,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFullscreen {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30669,10 +24886,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconFullscreenExit {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30683,10 +24896,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconFunctions {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30699,10 +24908,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconGTranslate {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30713,10 +24918,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconGamepad {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30729,10 +24930,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconGames {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30743,10 +24940,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconGavel {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30759,10 +24952,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconGesture {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30773,10 +24962,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconGetApp {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30789,10 +24974,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconGif {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30803,10 +24984,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconGolfCourse {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30819,10 +24996,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconGpsFixed {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30833,10 +25006,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconGpsNotFixed {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30849,10 +25018,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconGpsOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30863,10 +25028,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconGrade {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30879,10 +25040,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconGradient {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30893,10 +25050,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconGrain {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30909,10 +25062,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconGraphicEq {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30923,10 +25072,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconGridOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30939,10 +25084,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconGridOn {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30953,10 +25094,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconGroup {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30969,10 +25106,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconGroupAdd {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -30983,10 +25116,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconGroupWork {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -30999,10 +25128,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconHd {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31013,10 +25138,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconHdrOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31029,10 +25150,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconHdrOn {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31043,10 +25160,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconHdrStrong {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31059,10 +25172,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconHdrWeak {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31073,10 +25182,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconHeadset {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31089,10 +25194,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconHeadsetMic {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31103,10 +25204,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconHealing {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31119,10 +25216,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconHearing {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31133,10 +25226,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconHelp {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31149,10 +25238,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconHelpOutline {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31163,10 +25248,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconHighQuality {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31179,10 +25260,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconHighlight {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31193,10 +25270,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconHighlightOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31209,10 +25282,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconHistory {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31223,10 +25292,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconHome {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31239,10 +25304,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconHorizontalSplit {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31253,10 +25314,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconHotTub {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31269,10 +25326,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconHotel {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31283,10 +25336,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconHourglassEmpty {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31299,10 +25348,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconHourglassFull {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31313,10 +25358,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconHowToReg {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31329,10 +25370,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconHowToVote {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31343,10 +25380,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconHttp {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31359,10 +25392,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconHttps {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31373,10 +25402,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconImage {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31389,10 +25414,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconImageAspectRatio {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31403,10 +25424,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconImageSearch {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31419,10 +25436,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconImportContacts {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31433,10 +25446,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconImportExport {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31449,10 +25458,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconImportantDevices {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31463,10 +25468,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconInbox {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31479,10 +25480,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconIndeterminateCheckBox {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31493,10 +25490,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconInfo {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31509,10 +25502,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconInput {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31523,10 +25512,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconInsertChart {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31539,10 +25524,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconInsertChartOutlined {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31553,10 +25534,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconInsertComment {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31569,10 +25546,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconInsertDriveFile {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31583,10 +25556,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconInsertEmoticon {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31599,10 +25568,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconInsertInvitation {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31613,10 +25578,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconInsertLink {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31629,10 +25590,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconInsertPhoto {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31643,10 +25600,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconInvertColors {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31659,10 +25612,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconInvertColorsOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31673,10 +25622,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconIso {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31689,10 +25634,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconKeyboard {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31703,10 +25644,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconKeyboardArrowDown {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31719,10 +25656,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconKeyboardArrowLeft {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31733,10 +25666,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconKeyboardArrowRight {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31749,10 +25678,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconKeyboardArrowUp {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31763,10 +25688,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconKeyboardBackspace {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31779,10 +25700,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconKeyboardCapslock {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31793,10 +25710,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconKeyboardHide {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31809,10 +25722,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconKeyboardReturn {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31823,10 +25732,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconKeyboardTab {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31839,10 +25744,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconKeyboardVoice {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31853,10 +25754,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconKitchen {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31869,10 +25766,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLabel {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31883,10 +25776,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLabelImportant {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31899,10 +25788,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLabelOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31913,10 +25798,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLandscape {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31929,10 +25810,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLanguage {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31943,10 +25820,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLaptop {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31959,10 +25832,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLaptopChromebook {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -31973,10 +25842,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLaptopMac {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -31989,10 +25854,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLaptopWindows {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32003,10 +25864,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLastPage {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32019,10 +25876,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLaunch {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32033,10 +25886,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLayers {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32049,10 +25898,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLayersClear {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32063,10 +25908,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLeakAdd {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32079,10 +25920,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLeakRemove {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32093,10 +25930,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLens {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32109,10 +25942,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLibraryAdd {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32123,10 +25952,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLibraryBooks {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32139,10 +25964,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLibraryMusic {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32153,10 +25974,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLineStyle {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32169,10 +25986,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLineWeight {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32183,10 +25996,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLinearScale {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32199,10 +26008,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLink {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32213,10 +26018,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLinkOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32229,10 +26030,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLinkedCamera {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32243,10 +26040,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconList {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32259,10 +26052,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconListAlt {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32273,10 +26062,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLiveHelp {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32289,10 +26074,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLiveTv {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32303,10 +26084,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLocalActivity {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32319,10 +26096,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLocalAirport {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32333,10 +26106,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLocalAtm {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32349,10 +26118,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLocalBar {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32364,9 +26129,16 @@ declare namespace LocalJSX {
     }
     interface RuxIconLocalCafe {
         /**
-          * The fill color for the icon
+          * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "color"?: string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
+    }
+    interface RuxIconLocalCarWash {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32379,10 +26151,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLocalConvenienceStore {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32393,10 +26161,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLocalDining {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32409,9 +26173,16 @@ declare namespace LocalJSX {
     }
     interface RuxIconLocalDrink {
         /**
-          * The fill color for the icon
+          * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "color"?: string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
+    }
+    interface RuxIconLocalFlorist {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32424,10 +26195,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLocalGasStation {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32438,10 +26205,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLocalGroceryStore {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32454,10 +26217,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLocalHospital {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32468,10 +26227,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLocalHotel {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32484,10 +26239,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLocalLaundryService {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32498,10 +26249,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLocalLibrary {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32514,10 +26261,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLocalMall {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32528,10 +26271,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLocalMovies {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32544,10 +26283,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLocalOffer {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32558,10 +26293,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLocalParking {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32574,10 +26305,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLocalPharmacy {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32589,9 +26316,16 @@ declare namespace LocalJSX {
     }
     interface RuxIconLocalPhone {
         /**
-          * The fill color for the icon
+          * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "color"?: string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
+    }
+    interface RuxIconLocalPizza {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32604,10 +26338,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLocalPlay {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32618,10 +26348,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLocalPostOffice {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32634,10 +26360,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLocalPrintshop {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32648,10 +26370,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLocalSee {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32664,10 +26382,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLocalShipping {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32678,10 +26392,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLocalTaxi {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32694,10 +26404,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLocationCity {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32708,10 +26414,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLocationDisabled {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32724,10 +26426,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLocationOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32738,10 +26436,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLocationOn {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32754,10 +26448,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLocationSearching {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32768,10 +26458,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLock {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32784,10 +26470,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLockOpen {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32798,10 +26480,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLooks {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32814,10 +26492,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLooks1 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32828,10 +26502,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLooks2 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32844,10 +26514,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLooks3 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32858,10 +26524,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLooks4 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32874,10 +26536,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLooks5 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32888,10 +26546,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLooks6 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32904,10 +26558,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLoop {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32918,10 +26568,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLoupe {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32934,10 +26580,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconLowPriority {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32948,10 +26590,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconLoyalty {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32964,10 +26602,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconMail {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -32978,10 +26612,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconMailOutline {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -32994,10 +26624,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconMap {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33008,10 +26634,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconMarkunread {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33024,10 +26646,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconMarkunreadMailbox {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33038,10 +26656,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconMaximize {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33054,10 +26668,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconMeetingRoom {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33068,10 +26678,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconMemory {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33084,10 +26690,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconMenu {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33098,10 +26700,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconMergeType {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33114,10 +26712,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconMessage {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33128,10 +26722,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconMic {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33144,10 +26734,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconMicNone {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33158,10 +26744,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconMicOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33174,10 +26756,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconMinimize {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33188,10 +26766,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconMissedVideoCall {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33204,10 +26778,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconMission {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33218,10 +26788,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconMms {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33234,10 +26800,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconMobileFriendly {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33248,10 +26810,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconMobileOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33264,10 +26822,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconMobileScreenShare {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33278,10 +26832,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconModeComment {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33294,10 +26844,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconMonetizationOn {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33308,10 +26854,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconMoney {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33324,10 +26866,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconMoneyOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33338,10 +26876,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconMonochromePhotos {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33354,10 +26888,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconMood {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33368,10 +26898,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconMoodBad {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33384,10 +26910,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconMore {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33398,10 +26920,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconMoreHoriz {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33414,10 +26932,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconMoreVert {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33428,10 +26942,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconMotorcycle {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33444,10 +26954,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconMouse {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33458,10 +26964,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconMoveToInbox {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33474,10 +26976,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconMovie {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33488,10 +26986,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconMovieCreation {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33504,10 +26998,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconMovieFilter {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33518,10 +27008,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconMultilineChart {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33534,10 +27020,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconMusicNote {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33548,10 +27030,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconMusicOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33564,10 +27042,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconMusicVideo {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33578,10 +27052,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconMyLocation {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33594,10 +27064,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconNature {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33608,10 +27074,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconNaturePeople {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33624,10 +27086,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconNavigateBefore {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33638,10 +27096,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconNavigateNext {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33654,10 +27108,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconNavigation {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33668,10 +27118,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconNearMe {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33684,10 +27130,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconNetcom {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33698,10 +27140,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconNetworkCell {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33714,10 +27152,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconNetworkCheck {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33728,10 +27162,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconNetworkLocked {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33744,10 +27174,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconNetworkWifi {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33758,10 +27184,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconNewReleases {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33774,10 +27196,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconNextWeek {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33788,10 +27206,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconNfc {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33804,10 +27218,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconNoEncryption {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33818,10 +27228,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconNoMeetingRoom {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33834,10 +27240,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconNoSim {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33848,10 +27250,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconNotInterested {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33864,10 +27262,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconNotListedLocation {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33878,10 +27272,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconNote {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33894,10 +27284,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconNoteAdd {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33908,10 +27294,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconNotes {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33924,10 +27306,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconNotificationImportant {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33938,10 +27316,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconNotifications {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33954,10 +27328,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconNotificationsActive {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33968,10 +27338,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconNotificationsNone {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33984,10 +27350,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconNotificationsOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -33998,10 +27360,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconNotificationsPaused {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34014,10 +27372,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconOfflineBolt {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34028,10 +27382,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconOfflinePin {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34044,10 +27394,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconOndemandVideo {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34058,10 +27404,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconOpacity {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34074,10 +27416,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconOpenInBrowser {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34088,10 +27426,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconOpenInNew {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34104,10 +27438,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconOpenWith {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34118,10 +27448,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconOutlinedFlag {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34134,10 +27460,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPages {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34148,10 +27470,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPageview {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34164,10 +27482,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPalette {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34178,10 +27492,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPanTool {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34194,10 +27504,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPanorama {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34208,10 +27514,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPanoramaFishEye {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34224,10 +27526,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPanoramaHorizontal {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34238,10 +27536,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPanoramaVertical {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34254,10 +27548,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPanoramaWideAngle {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34268,10 +27558,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPartyMode {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34284,10 +27570,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPause {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34298,10 +27580,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPauseCircleFilled {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34314,10 +27592,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPauseCircleOutline {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34328,10 +27602,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPausePresentation {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34344,10 +27614,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPayload {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34358,10 +27624,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPayment {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34374,10 +27636,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPeopleOutline {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34388,10 +27646,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPermCameraMic {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34404,10 +27658,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPermContactCalendar {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34418,10 +27668,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPermDataSetting {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34434,10 +27680,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPermDeviceInformation {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34448,10 +27690,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPermIdentity {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34464,10 +27702,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPermMedia {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34478,10 +27712,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPermPhoneMsg {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34494,10 +27724,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPermScanWifi {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34508,10 +27734,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPerson {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34524,10 +27746,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPersonAdd {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34538,10 +27756,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPersonAddDisabled {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34554,10 +27768,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPersonOutline {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34568,10 +27778,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPersonPin {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34584,10 +27790,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPersonPinCircle {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34598,10 +27800,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPersonalVideo {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34614,10 +27812,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPets {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34628,10 +27822,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPhone {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34644,10 +27834,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPhoneAndroid {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34658,10 +27844,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPhoneBluetoothSpeaker {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34674,10 +27856,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPhoneCallback {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34688,10 +27866,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPhoneForwarded {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34704,10 +27878,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPhoneInTalk {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34718,10 +27888,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPhoneIphone {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34734,10 +27900,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPhoneLocked {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34748,10 +27910,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPhoneMissed {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34764,10 +27922,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPhonePaused {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34778,10 +27932,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPhonelink {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34794,10 +27944,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPhonelinkErase {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34808,10 +27954,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPhonelinkLock {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34824,10 +27966,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPhonelinkOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34838,10 +27976,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPhonelinkRing {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34854,10 +27988,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPhonelinkSetup {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34868,10 +27998,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPhoto {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34884,10 +28010,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPhotoAlbum {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34898,10 +28020,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPhotoCamera {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34914,10 +28032,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPhotoFilter {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34928,10 +28042,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPhotoLibrary {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34944,10 +28054,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPhotoSizeSelectActual {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34958,10 +28064,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPhotoSizeSelectLarge {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -34974,10 +28076,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPhotoSizeSelectSmall {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -34988,10 +28086,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPictureAsPdf {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35004,10 +28098,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPictureInPicture {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35018,10 +28108,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPictureInPictureAlt {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35034,10 +28120,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPieChart {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35048,10 +28130,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPinDrop {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35064,10 +28142,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPlace {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35078,10 +28152,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPlayArrow {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35094,10 +28164,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPlayCircleFilled {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35108,10 +28174,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPlayCircleFilledWhite {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35124,10 +28186,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPlayCircleOutline {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35138,10 +28196,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPlayForWork {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35154,10 +28208,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPlaylistAdd {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35168,10 +28218,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPlaylistAddCheck {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35184,10 +28230,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPlaylistPlay {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35198,10 +28240,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPlusOne {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35214,9 +28252,16 @@ declare namespace LocalJSX {
     }
     interface RuxIconPoll {
         /**
-          * The fill color for the icon
+          * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "color"?: string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
+    }
+    interface RuxIconPolymer {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35229,10 +28274,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPool {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35243,10 +28284,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPortableWifiOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35259,10 +28296,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPortrait {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35273,10 +28306,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPower {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35289,10 +28318,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPowerInput {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35303,10 +28328,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPowerOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35319,10 +28340,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPowerSettingsNew {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35333,10 +28350,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPregnantWoman {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35349,10 +28362,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPresentToAll {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35363,10 +28372,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPrint {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35379,10 +28384,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPrintDisabled {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35393,10 +28394,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPriorityHigh {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35409,10 +28406,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconProcessor {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35423,10 +28416,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconProcessorAlt {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35439,10 +28428,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPropulsionPower {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35453,10 +28438,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconPublic {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35469,10 +28450,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconPublish {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35483,10 +28460,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconQueryBuilder {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35499,10 +28472,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconQuestionAnswer {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35513,10 +28482,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconQueue {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35529,10 +28494,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconQueueMusic {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35543,10 +28504,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconQueuePlayNext {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35559,10 +28516,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconRadio {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35573,10 +28526,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconRadioButtonChecked {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35589,10 +28538,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconRadioButtonUnchecked {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35603,10 +28548,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconRateReview {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35619,10 +28560,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconReceipt {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35633,10 +28570,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconRecentActors {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35649,10 +28582,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconRecordVoiceOver {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35663,10 +28592,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconRedeem {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35679,10 +28604,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconRedo {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35693,10 +28614,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconRefresh {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35709,10 +28626,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconRemove {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35723,10 +28636,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconRemoveCircle {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35739,10 +28648,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconRemoveCircleOutline {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35753,10 +28658,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconRemoveFromQueue {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35769,10 +28670,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconRemoveRedEye {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35783,10 +28680,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconRemoveShoppingCart {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35799,10 +28692,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconReorder {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35813,10 +28702,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconRepeat {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35829,10 +28714,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconRepeatOne {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35843,10 +28724,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconReplay {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35859,10 +28736,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconReplay10 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35873,10 +28746,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconReplay30 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35889,10 +28758,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconReplay5 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35903,10 +28768,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconReply {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35919,10 +28780,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconReplyAll {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35933,10 +28790,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconReport {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35949,10 +28802,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconReportOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35963,10 +28812,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconReportProblem {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -35979,10 +28824,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconRestaurant {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -35993,10 +28834,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconRestaurantMenu {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36009,10 +28846,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconRestore {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36023,10 +28856,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconRestoreFromTrash {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36039,10 +28868,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconRestorePage {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36053,10 +28878,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconRingVolume {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36069,10 +28890,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconRoom {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36083,10 +28900,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconRoomService {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36099,10 +28912,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconRotate90DegreesCc {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36113,10 +28922,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconRotateLeft {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36129,10 +28934,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconRotateRight {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36143,10 +28944,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconRoundedCorner {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36159,10 +28956,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconRouter {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36173,10 +28966,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconRowing {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36189,10 +28978,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconRssFeed {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36203,10 +28988,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconRvHookup {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36219,10 +29000,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSatellite {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36233,10 +29010,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSatelliteOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36249,10 +29022,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSatelliteReceive {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36263,10 +29032,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSatelliteTransmit {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36279,10 +29044,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSave {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36293,10 +29054,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSaveAlt {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36309,10 +29066,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconScanner {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36323,10 +29076,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconScatterPlot {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36339,10 +29088,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSchedule {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36353,10 +29098,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSchool {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36369,10 +29110,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconScore {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36383,10 +29120,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconScreenLockLandscape {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36399,10 +29132,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconScreenLockPortrait {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36413,10 +29142,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconScreenLockRotation {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36429,10 +29154,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconScreenRotation {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36443,10 +29164,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconScreenShare {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36459,10 +29176,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSdCard {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36473,10 +29186,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSdStorage {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36489,10 +29198,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSearch {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36503,10 +29208,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSeat {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36519,10 +29220,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSecurity {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36533,10 +29230,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSelectAll {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36549,10 +29242,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSend {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36563,10 +29252,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSentimentDissatisfied {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36579,10 +29264,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSentimentSatisfied {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36593,10 +29274,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSentimentSatisfiedAlt {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36609,10 +29286,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSentimentVeryDissatisfied {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36623,10 +29296,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSentimentVerySatisfied {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36639,10 +29308,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSettings {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36653,10 +29318,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSettingsApplications {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36669,10 +29330,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSettingsBackupRestore {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36683,10 +29340,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSettingsBluetooth {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36699,10 +29352,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSettingsBrightness {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36713,10 +29362,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSettingsCell {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36729,10 +29374,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSettingsEthernet {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36743,10 +29384,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSettingsInputAntenna {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36759,10 +29396,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSettingsInputComponent {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36773,10 +29406,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSettingsInputComposite {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36789,10 +29418,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSettingsInputHdmi {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36803,10 +29428,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSettingsInputSvideo {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36819,10 +29440,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSettingsOverscan {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36833,10 +29450,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSettingsPhone {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36849,10 +29462,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSettingsPower {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36863,10 +29472,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSettingsRemote {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36879,10 +29484,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSettingsSystemDaydream {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36893,10 +29494,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSettingsVoice {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36909,10 +29506,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconShare {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36923,10 +29516,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconShop {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36939,10 +29528,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconShopTwo {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36953,10 +29538,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconShoppingBasket {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36969,10 +29550,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconShoppingCart {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -36983,10 +29560,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconShortText {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -36999,10 +29572,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconShowChart {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37013,10 +29582,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconShuffle {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37029,10 +29594,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconShutterSpeed {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37043,10 +29604,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSignalCellular0Bar {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37059,10 +29616,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSignalCellular1Bar {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37073,10 +29626,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSignalCellular2Bar {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37089,10 +29638,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSignalCellular3Bar {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37103,10 +29648,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSignalCellular4Bar {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37119,10 +29660,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSignalCellularAlt {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37133,10 +29670,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSignalCellularConnectedNoInternet0Bar {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37149,10 +29682,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSignalCellularConnectedNoInternet1Bar {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37163,10 +29692,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSignalCellularConnectedNoInternet2Bar {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37179,10 +29704,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSignalCellularConnectedNoInternet3Bar {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37193,10 +29714,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSignalCellularConnectedNoInternet4Bar {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37209,10 +29726,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSignalCellularNoSim {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37223,10 +29736,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSignalCellularNull {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37239,10 +29748,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSignalCellularOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37253,10 +29758,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSignalWifi0Bar {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37269,10 +29770,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSignalWifi1Bar {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37283,10 +29780,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSignalWifi1BarLock {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37299,10 +29792,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSignalWifi2Bar {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37313,10 +29802,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSignalWifi2BarLock {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37329,10 +29814,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSignalWifi3Bar {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37343,10 +29824,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSignalWifi3BarLock {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37359,10 +29836,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSignalWifi4Bar {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37373,10 +29846,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSignalWifi4BarLock {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37389,10 +29858,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSignalWifiOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37403,10 +29868,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSimCard {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37419,10 +29880,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSkipNext {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37433,10 +29890,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSkipPrevious {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37449,10 +29902,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSlideshow {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37463,10 +29912,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSlowMotionVideo {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37479,10 +29924,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSmartphone {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37493,10 +29934,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSmokeFree {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37509,10 +29946,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSmokingRooms {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37523,10 +29956,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSms {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37539,10 +29968,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSmsFailed {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37553,10 +29978,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSnooze {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37569,10 +29990,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSolar {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37583,10 +30000,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSort {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37599,10 +30012,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSortByAlpha {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37613,10 +30022,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSpa {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37629,10 +30034,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSpaceBar {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37643,10 +30044,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSpeaker {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37659,10 +30056,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSpeakerGroup {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37673,10 +30066,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSpeakerNotes {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37689,10 +30078,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSpeakerNotesOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37703,10 +30088,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSpeakerPhone {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37719,10 +30100,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSpellcheck {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37733,10 +30110,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconStar {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37749,10 +30122,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconStarBorder {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37763,10 +30132,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconStarHalf {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37779,10 +30144,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconStarRate {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37793,10 +30154,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconStars {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37809,10 +30166,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconStayCurrentLandscape {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37823,10 +30176,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconStayCurrentPortrait {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37839,10 +30188,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconStayPrimaryLandscape {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37853,10 +30198,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconStayPrimaryPortrait {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37869,10 +30210,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconStop {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37883,10 +30220,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconStopScreenShare {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37899,10 +30232,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconStorage {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37913,10 +30242,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconStore {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37929,10 +30254,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconStoreMallDirectory {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37943,10 +30264,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconStraighten {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37959,10 +30276,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconStreetview {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -37973,10 +30286,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconStrikethroughS {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -37989,10 +30298,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconStyle {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38003,10 +30308,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSubdirectoryArrowLeft {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38019,10 +30320,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSubdirectoryArrowRight {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38033,10 +30330,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSubject {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38049,10 +30342,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSubscriptions {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38063,10 +30352,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSubtitles {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38079,10 +30364,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSubway {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38093,10 +30374,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSupervisedUserCircle {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38109,10 +30386,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSupervisorAccount {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38123,10 +30396,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSurroundSound {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38139,10 +30408,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSwapCalls {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38153,10 +30418,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSwapHoriz {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38169,10 +30430,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSwapHorizontalCircle {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38183,10 +30440,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSwapVert {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38199,10 +30452,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSwapVerticalCircle {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38213,10 +30462,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSwitchCamera {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38229,10 +30474,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSwitchVideo {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38243,10 +30484,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSync {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38259,10 +30496,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSyncDisabled {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38273,10 +30506,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSyncProblem {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38289,10 +30518,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconSystemUpdate {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38303,10 +30528,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconTab {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38319,10 +30540,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconTabUnselected {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38333,10 +30550,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconTableChart {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38349,10 +30562,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconTablet {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38363,10 +30572,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconTabletAndroid {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38379,10 +30584,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconTabletMac {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38393,10 +30594,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconTagFaces {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38409,10 +30606,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconTapAndPlay {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38423,10 +30616,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconTerrain {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38439,10 +30628,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconTextFields {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38453,10 +30638,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconTextFormat {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38469,10 +30650,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconTextRotateUp {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38483,10 +30660,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconTextRotateVertical {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38499,10 +30672,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconTextRotationNone {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38513,10 +30682,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconTextsms {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38529,10 +30694,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconTexture {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38543,10 +30704,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconTheaters {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38559,10 +30716,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconThermal {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38573,10 +30726,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconThumbDown {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38589,10 +30738,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconThumbDownAlt {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38603,10 +30748,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconThumbUp {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38619,10 +30760,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconThumbUpAlt {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38633,10 +30770,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconThumbsUpDown {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38649,10 +30782,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconTimeToLeave {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38663,10 +30792,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconTimelapse {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38679,10 +30804,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconTimeline {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38693,10 +30814,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconTimer {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38709,10 +30826,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconTimer10 {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38723,10 +30836,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconTimer3 {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38739,10 +30848,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconTimerOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38753,10 +30858,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconTitle {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38769,10 +30870,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconToc {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38783,10 +30880,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconToday {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38799,10 +30892,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconToggleOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38813,10 +30902,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconToggleOn {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38829,10 +30914,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconToll {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38843,10 +30924,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconTonality {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38859,10 +30936,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconTouchApp {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38873,10 +30946,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconToys {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38889,10 +30958,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconTrackChanges {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38903,10 +30968,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconTraffic {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38919,10 +30980,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconTrain {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38933,10 +30990,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconTram {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38949,10 +31002,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconTransferWithinAStation {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38963,10 +31012,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconTransform {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -38979,10 +31024,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconTransitEnterexit {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -38993,10 +31034,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconTranslate {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39009,10 +31046,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconTrendingDown {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39023,10 +31056,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconTrendingFlat {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39039,10 +31068,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconTrendingUp {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39053,10 +31078,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconTripOrigin {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39069,10 +31090,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconTune {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39083,10 +31100,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconTurnedIn {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39099,10 +31112,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconTurnedInNot {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39113,10 +31122,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconTv {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39129,10 +31134,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconTvOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39143,10 +31144,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconUnarchive {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39159,10 +31156,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconUndo {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39173,10 +31166,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconUnfoldLess {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39189,10 +31178,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconUnfoldMore {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39203,10 +31188,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconUnsubscribe {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39219,10 +31200,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconUpdate {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39233,10 +31210,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconUsb {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39249,10 +31222,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconVerifiedUser {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39263,10 +31232,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconVerticalAlignBottom {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39279,10 +31244,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconVerticalAlignCenter {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39293,10 +31254,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconVerticalAlignTop {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39309,10 +31266,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconVerticalSplit {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39323,10 +31276,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconVibration {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39339,10 +31288,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconVideoCall {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39353,10 +31298,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconVideoLabel {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39369,10 +31310,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconVideoLibrary {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39383,10 +31320,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconVideocam {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39399,10 +31332,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconVideocamOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39413,10 +31342,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconVideogameAsset {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39429,10 +31354,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconViewAgenda {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39443,10 +31364,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconViewArray {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39459,10 +31376,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconViewCarousel {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39473,10 +31386,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconViewColumn {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39489,10 +31398,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconViewComfy {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39503,10 +31408,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconViewCompact {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39519,10 +31420,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconViewDay {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39533,10 +31430,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconViewHeadline {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39549,10 +31442,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconViewList {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39563,10 +31452,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconViewModule {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39579,10 +31464,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconViewQuilt {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39593,10 +31474,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconViewStream {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39609,10 +31486,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconViewWeek {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39623,10 +31496,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconVignette {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39639,10 +31508,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconVisibility {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39653,10 +31518,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconVisibilityOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39669,10 +31530,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconVoiceChat {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39683,10 +31540,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconVoiceOverOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39699,10 +31552,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconVoicemail {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39713,10 +31562,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconVolumeDown {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39729,10 +31574,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconVolumeMute {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39743,10 +31584,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconVolumeOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39759,10 +31596,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconVolumeUp {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39773,10 +31606,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconVpnKey {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39789,10 +31618,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconVpnLock {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39803,10 +31628,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconWallpaper {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39819,10 +31640,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconWarning {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39833,10 +31650,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconWatch {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39849,10 +31662,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconWatchLater {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39863,10 +31672,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconWaves {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39879,10 +31684,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconWbAuto {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39893,10 +31694,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconWbCloudy {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39909,10 +31706,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconWbIncandescent {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39923,10 +31716,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconWbIridescent {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39939,10 +31728,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconWbSunny {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39953,10 +31738,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconWc {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39969,10 +31750,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconWeb {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -39983,10 +31760,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconWebAsset {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -39999,10 +31772,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconWeekend {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -40013,10 +31782,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconWhatshot {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -40029,10 +31794,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconWhereToVote {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -40043,10 +31804,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconWidgets {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -40059,10 +31816,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconWifi {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -40073,10 +31826,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconWifiLock {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -40089,10 +31838,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconWifiOff {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -40103,10 +31848,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconWifiTethering {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -40119,10 +31860,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconWork {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -40133,10 +31870,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconWorkOff {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -40149,10 +31882,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconWorkOutline {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -40163,10 +31892,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconWrapText {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -40179,10 +31904,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconYoutubeSearchedFor {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -40193,10 +31914,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconZoomIn {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -40209,10 +31926,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconZoomInMap {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -40224,10 +31937,6 @@ declare namespace LocalJSX {
     }
     interface RuxIconZoomOut {
         /**
-          * The fill color for the icon
-         */
-        "color"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size"?: | 'extra-small'
@@ -40238,10 +31947,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconZoomOutMap {
-        /**
-          * The fill color for the icon
-         */
-        "color"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -40958,6 +32663,7 @@ declare namespace LocalJSX {
         "rux-icon-assignment-turned-in": RuxIconAssignmentTurnedIn;
         "rux-icon-assistant": RuxIconAssistant;
         "rux-icon-assistant-photo": RuxIconAssistantPhoto;
+        "rux-icon-atm": RuxIconAtm;
         "rux-icon-attach-file": RuxIconAttachFile;
         "rux-icon-attach-money": RuxIconAttachMoney;
         "rux-icon-attachment": RuxIconAttachment;
@@ -41404,9 +33110,11 @@ declare namespace LocalJSX {
         "rux-icon-local-atm": RuxIconLocalAtm;
         "rux-icon-local-bar": RuxIconLocalBar;
         "rux-icon-local-cafe": RuxIconLocalCafe;
+        "rux-icon-local-car-wash": RuxIconLocalCarWash;
         "rux-icon-local-convenience-store": RuxIconLocalConvenienceStore;
         "rux-icon-local-dining": RuxIconLocalDining;
         "rux-icon-local-drink": RuxIconLocalDrink;
+        "rux-icon-local-florist": RuxIconLocalFlorist;
         "rux-icon-local-gas-station": RuxIconLocalGasStation;
         "rux-icon-local-grocery-store": RuxIconLocalGroceryStore;
         "rux-icon-local-hospital": RuxIconLocalHospital;
@@ -41419,6 +33127,7 @@ declare namespace LocalJSX {
         "rux-icon-local-parking": RuxIconLocalParking;
         "rux-icon-local-pharmacy": RuxIconLocalPharmacy;
         "rux-icon-local-phone": RuxIconLocalPhone;
+        "rux-icon-local-pizza": RuxIconLocalPizza;
         "rux-icon-local-play": RuxIconLocalPlay;
         "rux-icon-local-post-office": RuxIconLocalPostOffice;
         "rux-icon-local-printshop": RuxIconLocalPrintshop;
@@ -41594,6 +33303,7 @@ declare namespace LocalJSX {
         "rux-icon-playlist-play": RuxIconPlaylistPlay;
         "rux-icon-plus-one": RuxIconPlusOne;
         "rux-icon-poll": RuxIconPoll;
+        "rux-icon-polymer": RuxIconPolymer;
         "rux-icon-pool": RuxIconPool;
         "rux-icon-portable-wifi-off": RuxIconPortableWifiOff;
         "rux-icon-portrait": RuxIconPortrait;
@@ -42058,6 +33768,7 @@ declare module "@stencil/core" {
             "rux-icon-assignment-turned-in": LocalJSX.RuxIconAssignmentTurnedIn & JSXBase.HTMLAttributes<HTMLRuxIconAssignmentTurnedInElement>;
             "rux-icon-assistant": LocalJSX.RuxIconAssistant & JSXBase.HTMLAttributes<HTMLRuxIconAssistantElement>;
             "rux-icon-assistant-photo": LocalJSX.RuxIconAssistantPhoto & JSXBase.HTMLAttributes<HTMLRuxIconAssistantPhotoElement>;
+            "rux-icon-atm": LocalJSX.RuxIconAtm & JSXBase.HTMLAttributes<HTMLRuxIconAtmElement>;
             "rux-icon-attach-file": LocalJSX.RuxIconAttachFile & JSXBase.HTMLAttributes<HTMLRuxIconAttachFileElement>;
             "rux-icon-attach-money": LocalJSX.RuxIconAttachMoney & JSXBase.HTMLAttributes<HTMLRuxIconAttachMoneyElement>;
             "rux-icon-attachment": LocalJSX.RuxIconAttachment & JSXBase.HTMLAttributes<HTMLRuxIconAttachmentElement>;
@@ -42504,9 +34215,11 @@ declare module "@stencil/core" {
             "rux-icon-local-atm": LocalJSX.RuxIconLocalAtm & JSXBase.HTMLAttributes<HTMLRuxIconLocalAtmElement>;
             "rux-icon-local-bar": LocalJSX.RuxIconLocalBar & JSXBase.HTMLAttributes<HTMLRuxIconLocalBarElement>;
             "rux-icon-local-cafe": LocalJSX.RuxIconLocalCafe & JSXBase.HTMLAttributes<HTMLRuxIconLocalCafeElement>;
+            "rux-icon-local-car-wash": LocalJSX.RuxIconLocalCarWash & JSXBase.HTMLAttributes<HTMLRuxIconLocalCarWashElement>;
             "rux-icon-local-convenience-store": LocalJSX.RuxIconLocalConvenienceStore & JSXBase.HTMLAttributes<HTMLRuxIconLocalConvenienceStoreElement>;
             "rux-icon-local-dining": LocalJSX.RuxIconLocalDining & JSXBase.HTMLAttributes<HTMLRuxIconLocalDiningElement>;
             "rux-icon-local-drink": LocalJSX.RuxIconLocalDrink & JSXBase.HTMLAttributes<HTMLRuxIconLocalDrinkElement>;
+            "rux-icon-local-florist": LocalJSX.RuxIconLocalFlorist & JSXBase.HTMLAttributes<HTMLRuxIconLocalFloristElement>;
             "rux-icon-local-gas-station": LocalJSX.RuxIconLocalGasStation & JSXBase.HTMLAttributes<HTMLRuxIconLocalGasStationElement>;
             "rux-icon-local-grocery-store": LocalJSX.RuxIconLocalGroceryStore & JSXBase.HTMLAttributes<HTMLRuxIconLocalGroceryStoreElement>;
             "rux-icon-local-hospital": LocalJSX.RuxIconLocalHospital & JSXBase.HTMLAttributes<HTMLRuxIconLocalHospitalElement>;
@@ -42519,6 +34232,7 @@ declare module "@stencil/core" {
             "rux-icon-local-parking": LocalJSX.RuxIconLocalParking & JSXBase.HTMLAttributes<HTMLRuxIconLocalParkingElement>;
             "rux-icon-local-pharmacy": LocalJSX.RuxIconLocalPharmacy & JSXBase.HTMLAttributes<HTMLRuxIconLocalPharmacyElement>;
             "rux-icon-local-phone": LocalJSX.RuxIconLocalPhone & JSXBase.HTMLAttributes<HTMLRuxIconLocalPhoneElement>;
+            "rux-icon-local-pizza": LocalJSX.RuxIconLocalPizza & JSXBase.HTMLAttributes<HTMLRuxIconLocalPizzaElement>;
             "rux-icon-local-play": LocalJSX.RuxIconLocalPlay & JSXBase.HTMLAttributes<HTMLRuxIconLocalPlayElement>;
             "rux-icon-local-post-office": LocalJSX.RuxIconLocalPostOffice & JSXBase.HTMLAttributes<HTMLRuxIconLocalPostOfficeElement>;
             "rux-icon-local-printshop": LocalJSX.RuxIconLocalPrintshop & JSXBase.HTMLAttributes<HTMLRuxIconLocalPrintshopElement>;
@@ -42694,6 +34408,7 @@ declare module "@stencil/core" {
             "rux-icon-playlist-play": LocalJSX.RuxIconPlaylistPlay & JSXBase.HTMLAttributes<HTMLRuxIconPlaylistPlayElement>;
             "rux-icon-plus-one": LocalJSX.RuxIconPlusOne & JSXBase.HTMLAttributes<HTMLRuxIconPlusOneElement>;
             "rux-icon-poll": LocalJSX.RuxIconPoll & JSXBase.HTMLAttributes<HTMLRuxIconPollElement>;
+            "rux-icon-polymer": LocalJSX.RuxIconPolymer & JSXBase.HTMLAttributes<HTMLRuxIconPolymerElement>;
             "rux-icon-pool": LocalJSX.RuxIconPool & JSXBase.HTMLAttributes<HTMLRuxIconPoolElement>;
             "rux-icon-portable-wifi-off": LocalJSX.RuxIconPortableWifiOff & JSXBase.HTMLAttributes<HTMLRuxIconPortableWifiOffElement>;
             "rux-icon-portrait": LocalJSX.RuxIconPortrait & JSXBase.HTMLAttributes<HTMLRuxIconPortraitElement>;

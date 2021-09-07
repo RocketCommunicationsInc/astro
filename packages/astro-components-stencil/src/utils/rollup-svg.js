@@ -28,7 +28,24 @@ exports.svgOptimizerPlugin = () => {
                 return null
             }
 
-            const result = optimize(svgBase64, { path: fileName })
+            const result = optimize(svgBase64, {
+                path: fileName,
+                plugins: [
+                    'removeDimensions',
+                    {
+                        name: 'convertColors',
+                        params: {
+                            currentColor: true,
+                        },
+                    },
+                    {
+                        name: 'removeAttrs',
+                        params: {
+                            attr: 'path:fill',
+                        },
+                    },
+                ],
+            })
             return {
                 id: fileName,
                 code: `export default '${result.data}'`,

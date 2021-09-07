@@ -14,11 +14,6 @@ import svgIcon from '../../../icons/cloud-done.svg'
 })
 export class RuxIconCloudDone {
     /**
-     * The fill color for the icon
-     */
-    @Prop() color?: string
-
-    /**
      * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
      */
 
@@ -46,7 +41,6 @@ export class RuxIconCloudDone {
     }
     render() {
         const style = {
-            fill: this.color,
             height: this.iconSize,
             width: this.iconSize,
         }
