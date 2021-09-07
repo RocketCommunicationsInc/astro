@@ -2,7 +2,7 @@ import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import { html, render } from 'lit-html'
 const args = extractArgTypes('rux-icon')
-import ruxIconsJson from './rux-icons.json'
+import ruxIconsJson from './icons.json'
 
 <Meta
     title="Components/Icons"
@@ -23,7 +23,6 @@ export const Default = (args) => {
   return html`
     <rux-icon
       icon="${args.icon}"
-      .color="${args.color}"
       .size="${args.size}"
       .label="${args.label}"
     ></rux-icon>
@@ -53,25 +52,14 @@ export const Default = (args) => {
 
 ### Customizing the Color
 
-#### Via the Color Property
-
-The `color` property accepts any valid color (hex, rgba, name, etc):
-
-```
-<rux-icon icon="settings" color="#FFF"></rux-icon>
-<rux-icon icon="settings" color="rgb(255, 255, 255)"></rux-icon>
-<rux-icon icon="settings" color="white"></rux-icon>
-```
-
 #### Via CSS
 
-You can also use the CSS `fill` property:
+Under the hood, all Icons have their fill property set to [currentColor](https://css-tricks.com/cascading-svg-fill-color/)
+so you can style them using the CSS `color` property:
 
 ```
-  <rux-icon icon="settings" style="fill: #FFF;"></rux-icon>
+  <rux-icon icon="settings" style="color: #FFF;"></rux-icon>
 ```
-
-**NOTE:** If you are using CSS to style the color, make sure to omit the `color` property on the component as this has a higher specificity and will override your CSS style.
 
 ### Customizing the Size
 
@@ -103,87 +91,73 @@ You can also manually set the `width` and `height` using CSS.
 ## All Icons
 
 export const AllIcons = (args) => {
-  const capitalize = (s) => {
-    if (typeof s !== "string") return "";
-    return s.charAt(0).toUpperCase() + s.slice(1);
-  };
   const displaySection = (section) => {
     return html`
       <div class="icon__section">
-        <h3>${capitalize(section)}</h3>
-        <ul class="icon__list">
-          ${ruxIconsJson["solid"][section].map((icon) => {
-            return html`
-              <li class="icon__list-item" title="${icon.icon}">
-                <rux-icon
-                  icon="${icon.icon}"
-                  color="${args.color}"
-                  size="${args.size}"
-                ></rux-icon>
-                <div class="icon__name">${icon.icon}</div>
-              </li>
-            `;
-          })}
-        </ul>
+        <div class="icon-group__header">
+        ${section}
+        <span class="icon-style">Solid</span>
+        </div>
+      ${Object.keys(ruxIconsJson[section]).map(category => {
+        return html`
+          <div>
+            <div class="icon-list">
+            ${Object.values(ruxIconsJson[section][category]).map(icon => {
+                const idx = icon.lastIndexOf('/')
+                const name = icon.substring(idx + 1).replace(/\//g, '-').replace(/ /g,'-').replace(/.svg/g, '').toLowerCase()
+              return html`
+              <div class="icon">
+                <rux-icon size="normal" icon="${name}"></rux-icon>
+                <div class="icon-label">${name}</div>
+              </div>
+              `
+            })}
+            </div>
+          <div>
+        `
+      })}
       </div>
     `;
   };
   return html`
     <style>
-      .icon__wrapper {
-        margin: 3rem 4rem;
-        text-align: center;
-      }
-      .icon__list {
-        list-style: none;
-        margin: 1rem -1rem;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-      }
-      .icon__list-item {
-        padding: 1rem;
-      }
-      .icon__list-item .rux-icon {
-        width: ${args.size};
-        height: ${args.size};
-        background-color: ${args.color};
-      }
-      .icon__section {
-        margin: 1rem 0 2rem;
-      }
-      .icon__section h3 {
-        text-align: left;
-        position: relative;
-        font-size: 1.5rem;
-        font-weight: 600;
-      }
-      .icon__section h3:after {
-        content: "";
-        position: absolute;
-        left: 0px;
-        bottom: -1rem;
-        display: block;
-        width: 100%;
-        height: 1px;
-        background-color: #fff;
-      }
-      .icon__name {
-        display: block;
-        margin-top: 0.5rem;
-        font-size: 0.75rem;
-        width: 5rem;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        width: calc(${args.size} + 1rem);
-      }
+    .icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .icon-label {
+      margin-top: 1rem;
+      font-size: 0.75rem;
+    }
+    .icon-style {
+      font-size: 1.5rem;
+      margin-left: auto;
+    }
+    .icon-group__header {
+      display: flex;
+      align-items: center;
+      font-size: 3rem;
+      font-weight: 400;
+      text-align: left;
+      text-transform: capitalize;
+      margin-bottom: 1rem;
+    }
+    .icon-list {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      grid-auto-rows: minmax(70px, auto);
+      grid-gap: 1rem;
+      padding-bottom: 60px;
+    }
+    .icon__wrapper {
+      padding: 1rem;
+    }
     </style>
     <div class="icon__wrapper">
-      ${displaySection("astro")}
-      ${Object.keys(ruxIconsJson["solid"]).map((section) =>
-        section !== "astro" ? displaySection(section) : null
+      ${displaySection('Astro')}
+      ${Object.keys(ruxIconsJson).map((section) =>
+        section !== "Astro" ? displaySection(section) : null
       )}
     </div>
   `;
