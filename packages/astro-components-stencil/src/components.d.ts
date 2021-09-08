@@ -219,6331 +219,11606 @@ export namespace Components {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIcon3dRotation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIcon4k {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAcUnit {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAccessAlarms {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAccessTime {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAccessibility {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAccessibilityNew {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAccessible {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAccessibleForward {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAccountBalance {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAccountBalanceWallet {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAccountBox {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAccountCircle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAdb {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAdd {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAddAPhoto {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAddAlarm {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAddAlert {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAddBox {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAddCircle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAddCircleOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAddComment {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAddLocation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAddPhotoAlternate {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAddShoppingCart {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAddToHomeScreen {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAddToPhotos {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAddToQueue {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAdjust {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAirlineSeatFlat {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAirlineSeatFlatAngled {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAirlineSeatIndividualSuite {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAirlineSeatLegroomExtra {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAirlineSeatLegroomNormal {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAirlineSeatLegroomReduced {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAirlineSeatReclineExtra {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAirlineSeatReclineNormal {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAirplanemodeActive {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAirplanemodeInactive {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAirplay {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAirportShuttle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAlarm {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAlarmAdd {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAlarmOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAlarmOn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAlbum {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAllInbox {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAllInclusive {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAllOut {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAlternateEmail {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAltitude {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAndroid {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAnnouncement {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAntenna {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAntennaOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAntennaReceive {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAntennaTransmit {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconApps {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArchive {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArrowBack {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArrowBackIos {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArrowDownward {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArrowDropDown {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArrowDropDownCircle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArrowDropUp {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArrowForward {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArrowForwardIos {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArrowLeft {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArrowRight {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArrowRightAlt {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArrowUpward {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArtTrack {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAspectRatio {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAssessment {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAssignment {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAssignmentFind {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAssignmentLate {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAssignmentReturn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAssignmentReturned {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAssignmentTurnedIn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAssistant {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAssistantPhoto {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAttachFile {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAttachMoney {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAttachment {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAudiotrack {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAutorenew {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAvTimer {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBackspace {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBackup {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBallot {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBarChart {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBattery20 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBattery30 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBattery50 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBattery60 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBattery80 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBattery90 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBatteryAlert {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBatteryCharging20 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBatteryCharging30 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBatteryCharging50 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBatteryCharging60 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBatteryCharging80 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBatteryCharging90 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBatteryChargingFull {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBatteryFull {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBatteryStd {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBatteryUnknown {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBeachAccess {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBeenhere {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBlock {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBluetooth {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBluetoothAudio {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBluetoothConnected {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBluetoothDisabled {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBluetoothSearching {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBlurCircular {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBlurLinear {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBlurOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBlurOn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBook {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBookmark {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBookmarkBorder {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBookmarks {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBorderAll {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBorderBottom {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBorderClear {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBorderColor {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBorderHorizontal {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBorderInner {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBorderLeft {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBorderOuter {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBorderRight {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBorderStyle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBorderTop {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBorderVertical {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrandingWatermark {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrightness1 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrightness2 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrightness3 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrightness4 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrightness5 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrightness6 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrightness7 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrightnessAuto {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrightnessHigh {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrightnessLow {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrightnessMedium {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrokenImage {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrush {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBubbleChart {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBugReport {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBuild {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBurstMode {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBusiness {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBusinessCenter {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCached {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCake {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCalendarToday {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCalendarViewDay {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCall {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCallEnd {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCallMade {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCallMerge {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCallMissed {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCallMissedOutgoing {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCallReceived {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCallSplit {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCallToAction {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCamera {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCameraAlt {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCameraEnhance {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCameraFront {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCameraRear {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCameraRoll {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCancel {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCancelPresentation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCardGiftcard {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCardMembership {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCardTravel {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCasino {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCast {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCastConnected {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCastForEducation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCategory {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCellWifi {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCenterFocusStrong {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCenterFocusWeak {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconChangeHistory {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconChat {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconChatBubble {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconChatBubbleOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCheck {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCheckBox {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCheckBoxOutlineBlank {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCheckCircle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCheckCircleOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconChevronLeft {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconChevronRight {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconChildCare {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconChildFriendly {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconChromeReaderMode {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconClass {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconClear {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconClearAll {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconClose {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconClosedCaption {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCloud {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCloudCircle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCloudDone {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCloudDownload {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCloudOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCloudQueue {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCloudUpload {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCode {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCollections {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCollectionsBookmark {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconColorLens {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconColorize {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconComment {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCommute {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCompare {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCompareArrows {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCompassCalibration {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconComputer {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconConfirmationNumber {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconContactMail {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconContactPhone {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconContactSupport {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconContacts {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconControlCamera {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconControlPoint {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconControlPointDuplicate {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCopyright {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCreate {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCreateNewFolder {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCreditCard {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCrop {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCrop169 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCrop32 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCrop54 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCrop75 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCropDin {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCropFree {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCropLandscape {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCropOriginal {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCropPortrait {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCropRotate {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCropSquare {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDashboard {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDataUsage {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDateRange {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDehaze {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDelete {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDeleteForever {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDeleteOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDeleteSweep {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDepartureBoard {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDescription {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDesktopAccessDisabled {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDesktopMac {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDesktopWindows {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDetails {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDeveloperBoard {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDeveloperMode {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDeviceHub {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDeviceUnknown {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDevices {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDevicesOther {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDialerSip {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDialpad {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDirections {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDirectionsBike {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDirectionsBoat {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDirectionsBus {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDirectionsCar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDirectionsRailway {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDirectionsRun {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDirectionsSubway {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDirectionsTransit {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDirectionsWalk {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDiscFull {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDns {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDock {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDomain {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDomainDisabled {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDone {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDoneAll {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDoneOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDonutLarge {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDonutSmall {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDrafts {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDragHandle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDragIndicator {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDriveEta {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDuo {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDvr {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEdit {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEditAttributes {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEditLocation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEject {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEmail {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEnhancedEncryption {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEqualizer {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEquipment {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconError {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconErrorOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEuroSymbol {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEvStation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEvent {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEventAvailable {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEventBusy {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEventNote {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconExitToApp {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconExpandLess {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconExpandMore {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconExplicit {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconExplore {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconExploreOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconExposure {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconExposureNeg1 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconExposureNeg2 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconExposurePlus1 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconExposurePlus2 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconExposureZero {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconExtension {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFace {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFastForward {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFastRewind {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFastfood {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFavorite {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFavoriteBorder {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFeaturedPlayList {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFeaturedVideo {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFeedback {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFiberDvr {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFiberManualRecord {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFiberNew {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFiberPin {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFiberSmartRecord {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFileCopy {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilter {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilter1 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilter2 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilter3 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilter4 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilter5 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilter6 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilter7 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilter8 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilter9 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilter9Plus {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilterBAndW {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilterCenterFocus {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilterDrama {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilterFrames {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilterHdr {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilterList {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilterNone {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilterTiltShift {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilterVintage {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFindInPage {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFindReplace {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFingerprint {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFirstPage {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFitnessCenter {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFlag {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFlare {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFlashAuto {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFlashOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFlashOn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFlight {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFlightLand {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFlightTakeoff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFlip {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFlipToBack {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFlipToFront {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFolder {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFolderOpen {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFolderShared {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFolderSpecial {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFontDownload {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatAlignCenter {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatAlignJustify {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatAlignLeft {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatAlignRight {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatBold {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatClear {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatColorFill {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatColorReset {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatColorText {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatIndentDecrease {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatIndentIncrease {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatItalic {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatLineSpacing {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatListBulleted {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatListNumbered {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatListNumberedRtl {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatPaint {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatQuote {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatShapes {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatSize {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatStrikethrough {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatTextdirectionLToR {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatTextdirectionRToL {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatUnderlined {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconForum {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconForward {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconForward10 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconForward30 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconForward5 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFreeBreakfast {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFullscreen {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFullscreenExit {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFunctions {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGTranslate {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGamepad {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGames {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGavel {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGesture {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGetApp {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGif {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGolfCourse {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGpsFixed {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGpsNotFixed {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGpsOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGrade {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGradient {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGrain {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGraphicEq {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGridOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGridOn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGroup {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGroupAdd {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGroupWork {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHd {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHdrOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHdrOn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHdrStrong {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHdrWeak {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHeadset {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHeadsetMic {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHealing {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHearing {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHelp {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHelpOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHighQuality {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHighlight {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHighlightOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHistory {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHome {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHorizontalSplit {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHotTub {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHotel {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHourglassEmpty {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHourglassFull {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHowToReg {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHowToVote {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHttp {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHttps {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconImage {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconImageAspectRatio {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconImageSearch {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconImportContacts {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconImportExport {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconImportantDevices {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconInbox {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconIndeterminateCheckBox {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconInfo {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconInput {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconInsertChart {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconInsertChartOutlined {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconInsertComment {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconInsertDriveFile {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconInsertEmoticon {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconInsertInvitation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconInsertLink {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconInsertPhoto {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconInvertColors {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconInvertColorsOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconIso {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconKeyboard {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconKeyboardArrowDown {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconKeyboardArrowLeft {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconKeyboardArrowRight {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconKeyboardArrowUp {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconKeyboardBackspace {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconKeyboardCapslock {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconKeyboardHide {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconKeyboardReturn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconKeyboardTab {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconKeyboardVoice {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconKitchen {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLabel {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLabelImportant {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLabelOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLandscape {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLanguage {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLaptop {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLaptopChromebook {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLaptopMac {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLaptopWindows {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLastPage {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLaunch {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLayers {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLayersClear {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLeakAdd {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLeakRemove {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLens {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLibraryAdd {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLibraryBooks {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLibraryMusic {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLineStyle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLineWeight {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLinearScale {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLink {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLinkOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLinkedCamera {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconList {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconListAlt {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLiveHelp {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLiveTv {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalActivity {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalAirport {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalAtm {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalBar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalCafe {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalCarWash {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalConvenienceStore {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalDining {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalDrink {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalGasStation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalGroceryStore {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalHospital {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalHotel {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalLaundryService {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalLibrary {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalMall {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalMovies {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalOffer {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalParking {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalPharmacy {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalPhone {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalPlay {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalPostOffice {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalPrintshop {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalSee {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalShipping {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalTaxi {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocationCity {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocationDisabled {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocationOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocationOn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocationSearching {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLock {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLockOpen {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLooks {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLooks1 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLooks2 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLooks3 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLooks4 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLooks5 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLooks6 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLoop {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLoupe {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLowPriority {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLoyalty {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMail {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMailOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMap {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMarkunread {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMarkunreadMailbox {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMaximize {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMeetingRoom {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMemory {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMenu {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMergeType {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMessage {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMic {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMicNone {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMicOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMinimize {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMissedVideoCall {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMission {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMms {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMobileFriendly {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMobileOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMobileScreenShare {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconModeComment {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMonetizationOn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMoney {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMoneyOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMonochromePhotos {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMood {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMoodBad {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMore {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMoreHoriz {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMoreVert {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMotorcycle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMouse {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMoveToInbox {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMovie {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMovieCreation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMovieFilter {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMultilineChart {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMusicNote {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMusicOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMusicVideo {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMyLocation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNature {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNaturePeople {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNavigateBefore {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNavigateNext {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNavigation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNearMe {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNetcom {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNetworkCell {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNetworkCheck {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNetworkLocked {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNetworkWifi {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNewReleases {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNextWeek {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNfc {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNoEncryption {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNoMeetingRoom {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNoSim {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNotInterested {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNotListedLocation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNote {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNoteAdd {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNotes {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNotificationImportant {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNotifications {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNotificationsActive {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNotificationsNone {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNotificationsOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNotificationsPaused {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconOfflineBolt {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconOfflinePin {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconOndemandVideo {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconOpacity {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconOpenInBrowser {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconOpenInNew {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconOpenWith {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconOutlinedFlag {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPages {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPageview {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPalette {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPanTool {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPanorama {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPanoramaFishEye {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPanoramaHorizontal {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPanoramaVertical {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPanoramaWideAngle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPartyMode {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPause {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPauseCircleFilled {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPauseCircleOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPausePresentation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPayload {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPayment {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPeopleOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPermCameraMic {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPermContactCalendar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPermDataSetting {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPermDeviceInformation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPermIdentity {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPermMedia {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPermPhoneMsg {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPermScanWifi {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPerson {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPersonAdd {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPersonAddDisabled {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPersonOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPersonPin {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPersonPinCircle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPersonalVideo {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPets {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhone {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhoneAndroid {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhoneBluetoothSpeaker {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhoneCallback {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhoneForwarded {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhoneInTalk {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhoneIphone {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhoneLocked {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhoneMissed {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhonePaused {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhonelink {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhonelinkErase {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhonelinkLock {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhonelinkOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhonelinkRing {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhonelinkSetup {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhoto {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhotoAlbum {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhotoCamera {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhotoFilter {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhotoLibrary {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhotoSizeSelectActual {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhotoSizeSelectLarge {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhotoSizeSelectSmall {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPictureAsPdf {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPictureInPicture {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPictureInPictureAlt {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPieChart {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPinDrop {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPlace {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPlayArrow {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPlayCircleFilled {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPlayCircleFilledWhite {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPlayCircleOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPlayForWork {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPlaylistAdd {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPlaylistAddCheck {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPlaylistPlay {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPlusOne {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPoll {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPool {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPortableWifiOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPortrait {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPower {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPowerInput {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPowerOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPowerSettingsNew {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPregnantWoman {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPresentToAll {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPrint {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPrintDisabled {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPriorityHigh {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconProcessor {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconProcessorAlt {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPropulsionPower {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPublic {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPublish {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconQueryBuilder {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconQuestionAnswer {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconQueue {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconQueueMusic {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconQueuePlayNext {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRadio {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRadioButtonChecked {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRadioButtonUnchecked {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRateReview {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconReceipt {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRecentActors {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRecordVoiceOver {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRedeem {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRedo {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRefresh {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRemove {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRemoveCircle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRemoveCircleOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRemoveFromQueue {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRemoveRedEye {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRemoveShoppingCart {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconReorder {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRepeat {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRepeatOne {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconReplay {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconReplay10 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconReplay30 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconReplay5 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconReply {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconReplyAll {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconReport {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconReportOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconReportProblem {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRestaurant {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRestaurantMenu {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRestore {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRestoreFromTrash {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRestorePage {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRingVolume {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRoom {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRoomService {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRotate90DegreesCc {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRotateLeft {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRotateRight {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRoundedCorner {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRouter {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRowing {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRssFeed {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRvHookup {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSatellite {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSatelliteOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSatelliteReceive {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSatelliteTransmit {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSave {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSaveAlt {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconScanner {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconScatterPlot {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSchedule {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSchool {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconScore {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconScreenLockLandscape {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconScreenLockPortrait {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconScreenLockRotation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconScreenRotation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconScreenShare {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSdCard {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSdStorage {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSearch {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSeat {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSecurity {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSelectAll {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSend {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSentimentDissatisfied {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSentimentSatisfied {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSentimentSatisfiedAlt {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSentimentVeryDissatisfied {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSentimentVerySatisfied {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettings {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsApplications {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsBackupRestore {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsBluetooth {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsBrightness {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsCell {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsEthernet {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsInputAntenna {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsInputComponent {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsInputComposite {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsInputHdmi {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsInputSvideo {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsOverscan {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsPhone {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsPower {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsRemote {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsSystemDaydream {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsVoice {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconShare {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconShop {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconShopTwo {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconShoppingBasket {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconShoppingCart {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconShortText {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconShowChart {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconShuffle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconShutterSpeed {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellular0Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellular1Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellular2Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellular3Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellular4Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellularAlt {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellularConnectedNoInternet0Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellularConnectedNoInternet1Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellularConnectedNoInternet2Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellularConnectedNoInternet3Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellularConnectedNoInternet4Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellularNoSim {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellularNull {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellularOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalWifi0Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalWifi1Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalWifi1BarLock {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalWifi2Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalWifi2BarLock {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalWifi3Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalWifi3BarLock {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalWifi4Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalWifi4BarLock {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalWifiOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSimCard {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSkipNext {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSkipPrevious {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSlideshow {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSlowMotionVideo {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSmartphone {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSmokeFree {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSmokingRooms {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSms {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSmsFailed {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSnooze {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSolar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSort {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSortByAlpha {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSpa {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSpaceBar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSpeaker {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSpeakerGroup {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSpeakerNotes {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSpeakerNotesOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSpeakerPhone {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSpellcheck {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStarBorder {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStarHalf {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStarRate {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStars {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStayCurrentLandscape {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStayCurrentPortrait {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStayPrimaryLandscape {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStayPrimaryPortrait {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStop {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStopScreenShare {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStorage {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStore {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStoreMallDirectory {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStraighten {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStreetview {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStrikethroughS {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStyle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSubdirectoryArrowLeft {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSubdirectoryArrowRight {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSubject {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSubscriptions {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSubtitles {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSubway {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSupervisedUserCircle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSupervisorAccount {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSurroundSound {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSwapCalls {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSwapHoriz {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSwapHorizontalCircle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSwapVert {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSwapVerticalCircle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSwitchCamera {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSwitchVideo {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSync {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSyncDisabled {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSyncProblem {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSystemUpdate {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTab {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTabUnselected {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTableChart {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTablet {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTabletAndroid {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTabletMac {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTagFaces {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTapAndPlay {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTerrain {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTextFields {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTextFormat {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTextRotateUp {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTextRotateVertical {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTextRotationNone {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTextsms {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTexture {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTheaters {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconThermal {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconThumbDown {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconThumbDownAlt {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconThumbUp {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconThumbUpAlt {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconThumbsUpDown {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTimeToLeave {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTimelapse {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTimeline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTimer {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTimer10 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTimer3 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTimerOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTitle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconToc {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconToday {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconToggleOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconToggleOn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconToll {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTonality {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTouchApp {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconToys {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTrackChanges {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTraffic {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTrain {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTram {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTransferWithinAStation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTransform {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTransitEnterexit {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTranslate {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTrendingDown {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTrendingFlat {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTrendingUp {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTripOrigin {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTune {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTurnedIn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTurnedInNot {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTv {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTvOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconUnarchive {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconUndo {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconUnfoldLess {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconUnfoldMore {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconUnsubscribe {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconUpdate {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconUsb {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVerifiedUser {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVerticalAlignBottom {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVerticalAlignCenter {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVerticalAlignTop {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVerticalSplit {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVibration {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVideoCall {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVideoLabel {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVideoLibrary {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVideocam {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVideocamOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVideogameAsset {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconViewAgenda {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconViewArray {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconViewCarousel {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconViewColumn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconViewComfy {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconViewCompact {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconViewDay {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconViewHeadline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconViewList {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconViewModule {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconViewQuilt {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconViewStream {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconViewWeek {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVignette {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVisibility {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVisibilityOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVoiceChat {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVoiceOverOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVoicemail {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVolumeDown {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVolumeMute {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVolumeOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVolumeUp {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVpnKey {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVpnLock {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWallpaper {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWarning {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWatch {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWatchLater {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWaves {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWbAuto {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWbCloudy {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWbIncandescent {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWbIridescent {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWbSunny {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWc {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWeb {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWebAsset {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWeekend {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWhatshot {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWhereToVote {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWidgets {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWifi {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWifiLock {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWifiOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWifiTethering {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWork {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWorkOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWorkOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWrapText {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconYoutubeSearchedFor {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconZoomIn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconZoomInMap {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconZoomOut {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconZoomOutMap {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size": 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxInputField {
         /**
@@ -14965,6331 +20240,11606 @@ declare namespace LocalJSX {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIcon3dRotation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIcon4k {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAcUnit {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAccessAlarms {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAccessTime {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAccessibility {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAccessibilityNew {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAccessible {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAccessibleForward {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAccountBalance {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAccountBalanceWallet {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAccountBox {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAccountCircle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAdb {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAdd {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAddAPhoto {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAddAlarm {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAddAlert {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAddBox {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAddCircle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAddCircleOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAddComment {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAddLocation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAddPhotoAlternate {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAddShoppingCart {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAddToHomeScreen {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAddToPhotos {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAddToQueue {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAdjust {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAirlineSeatFlat {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAirlineSeatFlatAngled {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAirlineSeatIndividualSuite {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAirlineSeatLegroomExtra {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAirlineSeatLegroomNormal {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAirlineSeatLegroomReduced {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAirlineSeatReclineExtra {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAirlineSeatReclineNormal {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAirplanemodeActive {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAirplanemodeInactive {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAirplay {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAirportShuttle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAlarm {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAlarmAdd {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAlarmOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAlarmOn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAlbum {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAllInbox {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAllInclusive {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAllOut {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAlternateEmail {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAltitude {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAndroid {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAnnouncement {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAntenna {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAntennaOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAntennaReceive {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAntennaTransmit {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconApps {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArchive {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArrowBack {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArrowBackIos {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArrowDownward {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArrowDropDown {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArrowDropDownCircle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArrowDropUp {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArrowForward {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArrowForwardIos {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArrowLeft {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArrowRight {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArrowRightAlt {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArrowUpward {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconArtTrack {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAspectRatio {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAssessment {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAssignment {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAssignmentFind {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAssignmentLate {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAssignmentReturn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAssignmentReturned {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAssignmentTurnedIn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAssistant {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAssistantPhoto {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAttachFile {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAttachMoney {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAttachment {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAudiotrack {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAutorenew {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconAvTimer {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBackspace {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBackup {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBallot {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBarChart {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBattery20 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBattery30 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBattery50 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBattery60 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBattery80 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBattery90 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBatteryAlert {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBatteryCharging20 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBatteryCharging30 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBatteryCharging50 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBatteryCharging60 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBatteryCharging80 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBatteryCharging90 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBatteryChargingFull {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBatteryFull {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBatteryStd {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBatteryUnknown {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBeachAccess {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBeenhere {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBlock {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBluetooth {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBluetoothAudio {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBluetoothConnected {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBluetoothDisabled {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBluetoothSearching {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBlurCircular {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBlurLinear {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBlurOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBlurOn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBook {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBookmark {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBookmarkBorder {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBookmarks {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBorderAll {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBorderBottom {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBorderClear {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBorderColor {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBorderHorizontal {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBorderInner {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBorderLeft {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBorderOuter {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBorderRight {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBorderStyle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBorderTop {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBorderVertical {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrandingWatermark {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrightness1 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrightness2 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrightness3 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrightness4 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrightness5 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrightness6 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrightness7 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrightnessAuto {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrightnessHigh {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrightnessLow {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrightnessMedium {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrokenImage {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBrush {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBubbleChart {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBugReport {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBuild {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBurstMode {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBusiness {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconBusinessCenter {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCached {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCake {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCalendarToday {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCalendarViewDay {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCall {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCallEnd {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCallMade {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCallMerge {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCallMissed {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCallMissedOutgoing {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCallReceived {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCallSplit {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCallToAction {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCamera {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCameraAlt {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCameraEnhance {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCameraFront {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCameraRear {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCameraRoll {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCancel {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCancelPresentation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCardGiftcard {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCardMembership {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCardTravel {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCasino {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCast {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCastConnected {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCastForEducation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCategory {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCellWifi {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCenterFocusStrong {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCenterFocusWeak {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconChangeHistory {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconChat {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconChatBubble {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconChatBubbleOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCheck {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCheckBox {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCheckBoxOutlineBlank {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCheckCircle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCheckCircleOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconChevronLeft {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconChevronRight {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconChildCare {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconChildFriendly {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconChromeReaderMode {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconClass {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconClear {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconClearAll {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconClose {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconClosedCaption {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCloud {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCloudCircle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCloudDone {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCloudDownload {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCloudOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCloudQueue {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCloudUpload {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCode {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCollections {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCollectionsBookmark {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconColorLens {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconColorize {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconComment {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCommute {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCompare {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCompareArrows {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCompassCalibration {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconComputer {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconConfirmationNumber {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconContactMail {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconContactPhone {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconContactSupport {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconContacts {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconControlCamera {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconControlPoint {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconControlPointDuplicate {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCopyright {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCreate {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCreateNewFolder {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCreditCard {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCrop {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCrop169 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCrop32 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCrop54 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCrop75 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCropDin {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCropFree {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCropLandscape {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCropOriginal {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCropPortrait {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCropRotate {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconCropSquare {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDashboard {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDataUsage {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDateRange {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDehaze {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDelete {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDeleteForever {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDeleteOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDeleteSweep {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDepartureBoard {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDescription {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDesktopAccessDisabled {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDesktopMac {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDesktopWindows {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDetails {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDeveloperBoard {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDeveloperMode {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDeviceHub {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDeviceUnknown {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDevices {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDevicesOther {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDialerSip {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDialpad {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDirections {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDirectionsBike {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDirectionsBoat {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDirectionsBus {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDirectionsCar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDirectionsRailway {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDirectionsRun {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDirectionsSubway {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDirectionsTransit {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDirectionsWalk {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDiscFull {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDns {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDock {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDomain {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDomainDisabled {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDone {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDoneAll {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDoneOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDonutLarge {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDonutSmall {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDrafts {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDragHandle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDragIndicator {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDriveEta {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDuo {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconDvr {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEdit {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEditAttributes {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEditLocation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEject {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEmail {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEnhancedEncryption {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEqualizer {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEquipment {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconError {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconErrorOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEuroSymbol {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEvStation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEvent {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEventAvailable {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEventBusy {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconEventNote {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconExitToApp {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconExpandLess {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconExpandMore {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconExplicit {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconExplore {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconExploreOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconExposure {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconExposureNeg1 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconExposureNeg2 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconExposurePlus1 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconExposurePlus2 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconExposureZero {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconExtension {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFace {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFastForward {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFastRewind {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFastfood {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFavorite {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFavoriteBorder {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFeaturedPlayList {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFeaturedVideo {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFeedback {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFiberDvr {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFiberManualRecord {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFiberNew {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFiberPin {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFiberSmartRecord {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFileCopy {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilter {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilter1 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilter2 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilter3 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilter4 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilter5 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilter6 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilter7 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilter8 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilter9 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilter9Plus {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilterBAndW {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilterCenterFocus {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilterDrama {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilterFrames {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilterHdr {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilterList {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilterNone {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilterTiltShift {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFilterVintage {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFindInPage {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFindReplace {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFingerprint {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFirstPage {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFitnessCenter {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFlag {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFlare {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFlashAuto {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFlashOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFlashOn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFlight {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFlightLand {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFlightTakeoff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFlip {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFlipToBack {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFlipToFront {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFolder {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFolderOpen {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFolderShared {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFolderSpecial {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFontDownload {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatAlignCenter {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatAlignJustify {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatAlignLeft {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatAlignRight {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatBold {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatClear {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatColorFill {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatColorReset {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatColorText {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatIndentDecrease {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatIndentIncrease {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatItalic {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatLineSpacing {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatListBulleted {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatListNumbered {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatListNumberedRtl {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatPaint {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatQuote {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatShapes {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatSize {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatStrikethrough {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatTextdirectionLToR {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatTextdirectionRToL {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFormatUnderlined {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconForum {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconForward {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconForward10 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconForward30 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconForward5 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFreeBreakfast {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFullscreen {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFullscreenExit {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconFunctions {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGTranslate {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGamepad {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGames {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGavel {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGesture {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGetApp {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGif {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGolfCourse {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGpsFixed {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGpsNotFixed {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGpsOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGrade {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGradient {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGrain {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGraphicEq {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGridOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGridOn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGroup {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGroupAdd {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconGroupWork {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHd {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHdrOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHdrOn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHdrStrong {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHdrWeak {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHeadset {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHeadsetMic {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHealing {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHearing {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHelp {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHelpOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHighQuality {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHighlight {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHighlightOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHistory {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHome {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHorizontalSplit {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHotTub {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHotel {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHourglassEmpty {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHourglassFull {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHowToReg {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHowToVote {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHttp {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconHttps {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconImage {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconImageAspectRatio {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconImageSearch {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconImportContacts {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconImportExport {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconImportantDevices {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconInbox {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconIndeterminateCheckBox {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconInfo {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconInput {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconInsertChart {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconInsertChartOutlined {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconInsertComment {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconInsertDriveFile {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconInsertEmoticon {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconInsertInvitation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconInsertLink {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconInsertPhoto {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconInvertColors {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconInvertColorsOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconIso {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconKeyboard {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconKeyboardArrowDown {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconKeyboardArrowLeft {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconKeyboardArrowRight {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconKeyboardArrowUp {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconKeyboardBackspace {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconKeyboardCapslock {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconKeyboardHide {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconKeyboardReturn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconKeyboardTab {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconKeyboardVoice {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconKitchen {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLabel {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLabelImportant {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLabelOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLandscape {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLanguage {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLaptop {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLaptopChromebook {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLaptopMac {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLaptopWindows {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLastPage {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLaunch {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLayers {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLayersClear {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLeakAdd {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLeakRemove {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLens {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLibraryAdd {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLibraryBooks {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLibraryMusic {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLineStyle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLineWeight {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLinearScale {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLink {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLinkOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLinkedCamera {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconList {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconListAlt {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLiveHelp {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLiveTv {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalActivity {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalAirport {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalAtm {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalBar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalCafe {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalCarWash {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalConvenienceStore {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalDining {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalDrink {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalGasStation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalGroceryStore {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalHospital {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalHotel {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalLaundryService {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalLibrary {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalMall {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalMovies {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalOffer {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalParking {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalPharmacy {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalPhone {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalPlay {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalPostOffice {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalPrintshop {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalSee {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalShipping {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocalTaxi {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocationCity {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocationDisabled {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocationOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocationOn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLocationSearching {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLock {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLockOpen {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLooks {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLooks1 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLooks2 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLooks3 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLooks4 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLooks5 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLooks6 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLoop {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLoupe {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLowPriority {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconLoyalty {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMail {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMailOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMap {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMarkunread {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMarkunreadMailbox {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMaximize {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMeetingRoom {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMemory {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMenu {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMergeType {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMessage {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMic {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMicNone {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMicOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMinimize {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMissedVideoCall {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMission {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMms {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMobileFriendly {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMobileOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMobileScreenShare {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconModeComment {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMonetizationOn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMoney {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMoneyOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMonochromePhotos {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMood {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMoodBad {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMore {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMoreHoriz {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMoreVert {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMotorcycle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMouse {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMoveToInbox {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMovie {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMovieCreation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMovieFilter {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMultilineChart {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMusicNote {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMusicOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMusicVideo {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconMyLocation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNature {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNaturePeople {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNavigateBefore {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNavigateNext {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNavigation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNearMe {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNetcom {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNetworkCell {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNetworkCheck {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNetworkLocked {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNetworkWifi {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNewReleases {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNextWeek {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNfc {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNoEncryption {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNoMeetingRoom {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNoSim {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNotInterested {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNotListedLocation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNote {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNoteAdd {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNotes {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNotificationImportant {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNotifications {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNotificationsActive {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNotificationsNone {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNotificationsOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconNotificationsPaused {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconOfflineBolt {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconOfflinePin {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconOndemandVideo {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconOpacity {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconOpenInBrowser {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconOpenInNew {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconOpenWith {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconOutlinedFlag {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPages {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPageview {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPalette {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPanTool {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPanorama {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPanoramaFishEye {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPanoramaHorizontal {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPanoramaVertical {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPanoramaWideAngle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPartyMode {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPause {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPauseCircleFilled {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPauseCircleOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPausePresentation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPayload {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPayment {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPeopleOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPermCameraMic {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPermContactCalendar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPermDataSetting {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPermDeviceInformation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPermIdentity {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPermMedia {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPermPhoneMsg {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPermScanWifi {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPerson {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPersonAdd {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPersonAddDisabled {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPersonOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPersonPin {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPersonPinCircle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPersonalVideo {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPets {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhone {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhoneAndroid {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhoneBluetoothSpeaker {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhoneCallback {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhoneForwarded {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhoneInTalk {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhoneIphone {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhoneLocked {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhoneMissed {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhonePaused {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhonelink {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhonelinkErase {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhonelinkLock {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhonelinkOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhonelinkRing {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhonelinkSetup {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhoto {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhotoAlbum {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhotoCamera {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhotoFilter {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhotoLibrary {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhotoSizeSelectActual {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhotoSizeSelectLarge {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPhotoSizeSelectSmall {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPictureAsPdf {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPictureInPicture {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPictureInPictureAlt {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPieChart {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPinDrop {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPlace {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPlayArrow {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPlayCircleFilled {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPlayCircleFilledWhite {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPlayCircleOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPlayForWork {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPlaylistAdd {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPlaylistAddCheck {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPlaylistPlay {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPlusOne {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPoll {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPool {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPortableWifiOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPortrait {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPower {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPowerInput {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPowerOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPowerSettingsNew {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPregnantWoman {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPresentToAll {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPrint {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPrintDisabled {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPriorityHigh {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconProcessor {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconProcessorAlt {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPropulsionPower {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPublic {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconPublish {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconQueryBuilder {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconQuestionAnswer {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconQueue {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconQueueMusic {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconQueuePlayNext {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRadio {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRadioButtonChecked {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRadioButtonUnchecked {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRateReview {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconReceipt {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRecentActors {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRecordVoiceOver {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRedeem {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRedo {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRefresh {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRemove {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRemoveCircle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRemoveCircleOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRemoveFromQueue {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRemoveRedEye {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRemoveShoppingCart {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconReorder {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRepeat {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRepeatOne {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconReplay {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconReplay10 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconReplay30 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconReplay5 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconReply {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconReplyAll {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconReport {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconReportOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconReportProblem {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRestaurant {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRestaurantMenu {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRestore {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRestoreFromTrash {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRestorePage {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRingVolume {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRoom {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRoomService {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRotate90DegreesCc {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRotateLeft {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRotateRight {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRoundedCorner {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRouter {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRowing {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRssFeed {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconRvHookup {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSatellite {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSatelliteOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSatelliteReceive {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSatelliteTransmit {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSave {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSaveAlt {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconScanner {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconScatterPlot {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSchedule {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSchool {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconScore {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconScreenLockLandscape {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconScreenLockPortrait {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconScreenLockRotation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconScreenRotation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconScreenShare {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSdCard {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSdStorage {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSearch {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSeat {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSecurity {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSelectAll {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSend {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSentimentDissatisfied {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSentimentSatisfied {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSentimentSatisfiedAlt {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSentimentVeryDissatisfied {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSentimentVerySatisfied {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettings {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsApplications {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsBackupRestore {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsBluetooth {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsBrightness {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsCell {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsEthernet {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsInputAntenna {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsInputComponent {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsInputComposite {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsInputHdmi {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsInputSvideo {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsOverscan {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsPhone {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsPower {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsRemote {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsSystemDaydream {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSettingsVoice {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconShare {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconShop {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconShopTwo {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconShoppingBasket {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconShoppingCart {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconShortText {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconShowChart {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconShuffle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconShutterSpeed {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellular0Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellular1Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellular2Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellular3Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellular4Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellularAlt {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellularConnectedNoInternet0Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellularConnectedNoInternet1Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellularConnectedNoInternet2Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellularConnectedNoInternet3Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellularConnectedNoInternet4Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellularNoSim {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellularNull {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalCellularOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalWifi0Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalWifi1Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalWifi1BarLock {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalWifi2Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalWifi2BarLock {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalWifi3Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalWifi3BarLock {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalWifi4Bar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalWifi4BarLock {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSignalWifiOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSimCard {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSkipNext {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSkipPrevious {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSlideshow {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSlowMotionVideo {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSmartphone {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSmokeFree {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSmokingRooms {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSms {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSmsFailed {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSnooze {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSolar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSort {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSortByAlpha {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSpa {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSpaceBar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSpeaker {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSpeakerGroup {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSpeakerNotes {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSpeakerNotesOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSpeakerPhone {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSpellcheck {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStar {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStarBorder {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStarHalf {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStarRate {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStars {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStayCurrentLandscape {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStayCurrentPortrait {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStayPrimaryLandscape {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStayPrimaryPortrait {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStop {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStopScreenShare {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStorage {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStore {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStoreMallDirectory {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStraighten {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStreetview {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStrikethroughS {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconStyle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSubdirectoryArrowLeft {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSubdirectoryArrowRight {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSubject {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSubscriptions {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSubtitles {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSubway {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSupervisedUserCircle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSupervisorAccount {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSurroundSound {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSwapCalls {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSwapHoriz {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSwapHorizontalCircle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSwapVert {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSwapVerticalCircle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSwitchCamera {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSwitchVideo {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSync {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSyncDisabled {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSyncProblem {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconSystemUpdate {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTab {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTabUnselected {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTableChart {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTablet {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTabletAndroid {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTabletMac {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTagFaces {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTapAndPlay {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTerrain {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTextFields {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTextFormat {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTextRotateUp {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTextRotateVertical {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTextRotationNone {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTextsms {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTexture {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTheaters {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconThermal {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconThumbDown {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconThumbDownAlt {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconThumbUp {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconThumbUpAlt {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconThumbsUpDown {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTimeToLeave {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTimelapse {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTimeline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTimer {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTimer10 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTimer3 {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTimerOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTitle {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconToc {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconToday {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconToggleOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconToggleOn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconToll {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTonality {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTouchApp {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconToys {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTrackChanges {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTraffic {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTrain {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTram {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTransferWithinAStation {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTransform {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTransitEnterexit {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTranslate {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTrendingDown {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTrendingFlat {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTrendingUp {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTripOrigin {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTune {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTurnedIn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTurnedInNot {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTv {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconTvOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconUnarchive {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconUndo {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconUnfoldLess {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconUnfoldMore {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconUnsubscribe {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconUpdate {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconUsb {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVerifiedUser {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVerticalAlignBottom {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVerticalAlignCenter {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVerticalAlignTop {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVerticalSplit {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVibration {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVideoCall {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVideoLabel {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVideoLibrary {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVideocam {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVideocamOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVideogameAsset {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconViewAgenda {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconViewArray {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconViewCarousel {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconViewColumn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconViewComfy {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconViewCompact {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconViewDay {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconViewHeadline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconViewList {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconViewModule {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconViewQuilt {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconViewStream {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconViewWeek {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVignette {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVisibility {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVisibilityOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVoiceChat {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVoiceOverOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVoicemail {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVolumeDown {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVolumeMute {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVolumeOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVolumeUp {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVpnKey {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconVpnLock {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWallpaper {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWarning {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWatch {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWatchLater {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWaves {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWbAuto {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWbCloudy {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWbIncandescent {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWbIridescent {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWbSunny {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWc {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWeb {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWebAsset {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWeekend {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWhatshot {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWhereToVote {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWidgets {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWifi {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWifiLock {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWifiOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWifiTethering {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWork {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWorkOff {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWorkOutline {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconWrapText {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconYoutubeSearchedFor {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconZoomIn {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconZoomInMap {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconZoomOut {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxIconZoomOutMap {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
-        "size"?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string;
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
     }
     interface RuxInputField {
         /**
