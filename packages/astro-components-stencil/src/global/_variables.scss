@@ -574,21 +574,15 @@ $quaternary: (
     --treeTextColor: var(--defaultText);
     --treeBackgroundColor: var(--surfaceElements);
     --treeBorderColor: var(--primaryDark);
-    --treeItemBorderColor: var(--primaryDark);
     --treeAccentColor: var(--primary);
 
     /* Hover*/
     --treeHoverBackgroundColor: var(--primaryLight);
     --treeHoverTextColor: var(--primaryElementText);
-    --treeHoverAccentColor: var(--primary);
 
     /* Selected */
-    --treeSelectedBackgroundColor: var(--surfaceElements);
     --treeSelectedBorderColor: var(--primaryDark);
-    --treeSelectedTextColor: var(--defaultText);
     --treeSelectedAccentColor: var(--primary);
-
-    --treeChildrenBackgroundColor: var(--surfaceElements);
 
     --treeExpandedBorderColor: var(--backgroundColor);
 
