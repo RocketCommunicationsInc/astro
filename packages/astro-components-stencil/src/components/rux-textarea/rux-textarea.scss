@@ -3,13 +3,7 @@
      * @prop --inputBorderColor: Border color of the textarea.
     */
     /**
-     * @prop --fontFamily: Font family for textarea
-    */
-    /**
      * @prop --inputTextColor: Text color
-    */
-    /**
-     * @prop --fontSize: Font size
     */
     /**
      * @prop --inputBackgroundColor: Background color
@@ -25,12 +19,6 @@
     */
     /**
      * @prop --inputSelectionBackgroundColor: Background color while in a selected state
-    */
-    /**
-     * @prop --defaultText: Default text color
-    */
-    /**
-     * @prop --fontSizeMD: Medium font size
     */
     /**
      * @prop --secondaryText: Secondary text color
@@ -58,18 +46,6 @@
             cursor: not-allowed;
             cursor: var(--disabledCursor);
         }
-    }
-
-    .rux-textarea-field {
-        display: flex;
-        flex-direction: column;
-
-        font-family: var(--fontFamily);
-        font-size: var(--fontSize);
-        color: var(--fontColor);
-    }
-
-    .rux-textarea {
         &:focus {
             border-color: var(--inputFocusBorderColor);
             outline: none;
@@ -91,9 +67,18 @@
             font-size: 1rem;
             font-weight: normal;
             font-family: var(--fontFamily);
-            color: var(--defaultText);
+            color: var(--inputTextColor);
             opacity: 0.6;
         }
+    }
+
+    .rux-textarea-field {
+        display: flex;
+        flex-direction: column;
+
+        font-family: var(--fontFamily);
+        font-size: var(--fontSize);
+        color: var(--fontColor);
     }
 
     .rux-textarea-label {
