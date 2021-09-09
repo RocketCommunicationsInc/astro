@@ -18,15 +18,18 @@ export const Default = (args) => {
         <div style="padding: 10%; display: flex; justify-content: center;">
           <rux-datetime
             date=${args.date}
-            .year="${args.year}"
-            .month="${args.month}"
-            .day="${args.day}"
-            .hour="${args.hour}"
-            .minute="${args.minute}"
-            .second="${args.second}"
-            .time-zone="${args.timeZone}"
+            .day=${args.day}
+            .era=${args.era}
+            .hour=${args.hour}
             .hour12=${args.hour12}
-            .time-zone-name="${args.timeZoneName}"
+            .locale=${args.locale}
+            .minute=${args.minute}
+            .month=${args.month}
+            .second=${args.second}
+            .timeZone=${args.timeZone}
+            .timeZoneName=${args.timeZoneName}
+            .weekday=${args.weekday}
+            .year=${args.year}
           ></rux-datetime>
         </div>
     `
