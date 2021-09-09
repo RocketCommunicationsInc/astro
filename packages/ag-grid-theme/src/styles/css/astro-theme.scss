@@ -1,7 +1,7 @@
 // ag-grid.scss defines structural styles and should be imported first
-@import "../../../node_modules/ag-grid-community/src/styles/ag-grid.scss";
-@import "../../../node_modules/ag-grid-community/src/styles/ag-theme-alpine-dark/sass/ag-theme-alpine-dark-mixin.scss";
-@import "../../../node_modules/ag-grid-community/src/styles/ag-theme-alpine-dark/sass/_ag-theme-alpine-dark-default-params.scss";
+@import "~ag-grid-community/src/styles/ag-grid.scss";
+@import "~ag-grid-community/src/styles/ag-theme-alpine-dark/sass/ag-theme-alpine-dark-mixin.scss";
+@import "~ag-grid-community/src/styles/ag-theme-alpine-dark/sass/_ag-theme-alpine-dark-default-params.scss";
 
 @import "css/astro.css"; // match this to one of the static astro css files ( astro.css, astro.min.css, astro.core.css, astro.core.min.css)
 
