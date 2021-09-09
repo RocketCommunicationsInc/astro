@@ -1,4 +1,12 @@
-import { Component, Event, EventEmitter, Prop, h, Element } from '@stencil/core'
+import {
+    Component,
+    Event,
+    EventEmitter,
+    Prop,
+    h,
+    Element,
+    Host,
+} from '@stencil/core'
 import { renderHiddenInput } from '../../utils/utils'
 
 let id = 0
@@ -105,7 +113,7 @@ export class RuxSwitch {
         )
 
         return (
-            <div
+            <Host
                 class="rux-form-field"
                 aria-checked={`${checked}`}
                 aria-hidden={disabled ? 'true' : null}
@@ -146,7 +154,7 @@ export class RuxSwitch {
                 {this.errorText && (
                     <div class="rux-error-text">{errorText}</div>
                 )}
-            </div>
+            </Host>
         )
     }
 }

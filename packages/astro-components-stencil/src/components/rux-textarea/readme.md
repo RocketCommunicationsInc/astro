@@ -37,10 +37,6 @@
 
 | Name                              | Description                                |
 | --------------------------------- | ------------------------------------------ |
-| `--defaultText`                   | Default text color                         |
-| `--fontFamily`                    | Font family for textarea                   |
-| `--fontSize`                      | Font size                                  |
-| `--fontSizeMD`                    | Medium font size                           |
 | `--inputBackgroundColor`          | Background color                           |
 | `--inputBorderColor`              | Border color of the textarea.              |
 | `--inputFocusBorderColor`         | Border color while in a focused state      |
