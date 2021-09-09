@@ -1,9 +1,7 @@
-:host,
-.rux-tabs {
+:host {
     /**
     *   @prop --tabBorderColor: Tab border color
     */
-    --tabBorderColor: transparent;
     box-sizing: border-box;
     display: flex;
     justify-content: flex-start;
@@ -20,14 +18,10 @@
     user-select: none;
     contain: content; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
 }
-
 :host([hidden]) {
     display: none;
 }
 
-.rux-tabs .rux-tab {
-    border-bottom: 5px solid var(--tabBorderColor);
-}
 :host([small]) {
     min-height: 3.125rem;
     font-size: 1rem;
