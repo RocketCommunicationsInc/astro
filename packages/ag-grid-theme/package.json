@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/RocketCommunicationsInc/ag-grid-theme#readme",
   "devDependencies": {
+    "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^6.2.0",
     "mini-css-extract-plugin": "^2.2.2",
     "sass": "^1.39.0",
