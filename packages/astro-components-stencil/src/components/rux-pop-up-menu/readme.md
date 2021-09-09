@@ -164,15 +164,14 @@ Type: `Promise<boolean>`
 
 ## CSS Custom Properties
 
-| Name                          | Description                         |
-| ----------------------------- | ----------------------------------- |
-| `--caretLeft`                 | Position of Caret                   |
-| `--caretSize`                 | Size of Caret                       |
-| `--popupCaretBackgroundColor` | Pop Up Menu Caret Background Color  |
-| `--popupMenuBackgroundColor`  | Pop Up Menu Backround Color         |
-| `--popupMenuBorderColor`      | Pop Up Menu Border Color            |
-| `--popupMenuTextColor`        | Pop Up Menu Text Color              |
-| `--transitionSpeed`           | Transition Time of Pop Up Animation |
+| Name                                  | Description                         |
+| ------------------------------------- | ----------------------------------- |
+| `--popup-menu-background-color`       | Pop Up Menu Backround Color         |
+| `--popup-menu-border-color`           | Pop Up Menu Border Color            |
+| `--popup-menu-caret-background-color` | Pop Up Menu Caret Background Color  |
+| `--popup-menu-caret-left`             | Position of Caret                   |
+| `--popup-menu-caret-size`             | Size of Caret                       |
+| `--popup-menu-transition-speed`       | Transition Time of Pop Up Animation |
 
 
 ----------------------------------------------

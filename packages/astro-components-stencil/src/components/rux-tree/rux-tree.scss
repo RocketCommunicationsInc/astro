@@ -1,25 +1,25 @@
 :host {
     /**
-      * @prop --treeTextColor: tree text color
+      * @prop --tree-text-color: tree text color
       */
-    --treeTextColor: var(--defaultText);
+    --tree-text-color: var(--default-text);
     /**
-      * @prop --treeBackgroundColor: tree background color
+      * @prop --tree-background-color: tree background color
       */
-    --treeBackgroundColor: var(--surfaceElements);
+    --tree-background-color: var(--surface);
     /**
-    * @prop --treeBorderColor: tree color
+    * @prop --tree-border-color: tree color
     */
-    --treeBorderColor: var(--primaryDark);
+    --tree-border-color: var(--primary-alt);
 
     display: block;
     position: relative;
     box-sizing: border-box;
     padding: 0px;
     font-size: 1rem;
-    color: var(--treeTextColor);
-    border: solid 1px var(--treeBorderColor);
-    background-color: var(--treeBackgroundColor);
+    color: var(--tree-text-color);
+    border: solid 1px var(--tree-border-color);
+    background-color: var(--tree-background-color);
     user-select: none;
     width: 100%;
 }

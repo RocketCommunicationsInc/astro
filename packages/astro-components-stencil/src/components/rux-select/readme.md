@@ -71,23 +71,23 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 
 ## CSS Custom Properties
 
-| Name                                     | Description                                   |
-| ---------------------------------------- | --------------------------------------------- |
-| `--selecMenutInactiveCaret`              | Caret Shown When the Select Menu is Closed    |
-| `--selectMenuActiveCaret`                | Caret Shown When the Select Menu is Open      |
-| `--selectMenuBackgroundColor`            | Background Color of the Select Input          |
-| `--selectMenuBorderColor`                | Border Color of the Select Input              |
-| `--selectMenuBorderFocusColor`           | Border Focus Color of the Select Input        |
-| `--selectMenuBorderHoverColor`           | Border Hover Color of the Select Input        |
-| `--selectMenuBorderRadius`               | Border radius for Select Menu                 |
-| `--selectMenuInvalidBorder`              | Border Color of the Invalid Select Input      |
-| `--selectMenuLabelColor`                 | Text Color of the Label                       |
-| `--selectMenuOptGroupTextColor`          | Text Color of Select Menu Option Group        |
-| `--selectMenuOptHoverBackgroundColor`    | Background Hover Color of Select Menu Options |
-| `--selectMenuOptSelectedBackgroundColor` | Background Color of the Selected Option       |
-| `--selectMenuOptSelectedTextColor`       | Text Color of the Selected Option             |
-| `--selectMenuOptTextHoverColor`          | Text Hover Color of the Select Menu Options   |
-| `--selectMenuTextColor`                  | Text Color of the Select Input                |
+| Name                                             | Description                                   |
+| ------------------------------------------------ | --------------------------------------------- |
+| `--select-menu-active-caret`                     | Caret Shown When the Select Menu is Open      |
+| `--select-menu-background-color`                 | Background Color of the Select Input          |
+| `--select-menu-border-color`                     | Border Color of the Select Input              |
+| `--select-menu-border-focus-color`               | Border Focus Color of the Select Input        |
+| `--select-menu-border-hover-color`               | Border Hover Color of the Select Input        |
+| `--select-menu-border-radius`                    | Border radius for Select Menu                 |
+| `--select-menu-inactive-caret`                   | Caret Shown When the Select Menu is Closed    |
+| `--select-menu-invalid-border-color`             | Border Color of the Invalid Select Input      |
+| `--select-menu-label-color`                      | Text Color of the Label                       |
+| `--select-menu-option-group-text-color`          | Text Color of Select Menu Option Group        |
+| `--select-menu-option-hover-background-color`    | Background Hover Color of Select Menu Options |
+| `--select-menu-option-selected-background-color` | Background Color of the Selected Option       |
+| `--select-menu-option-selected-text-color`       | Text Color of the Selected Option             |
+| `--select-menu-option-text-hover-color`          | Text Hover Color of the Select Menu Options   |
+| `--select-menu-text-color`                       | Text Color of the Select Input                |
 
 
 ----------------------------------------------

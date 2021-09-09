@@ -3,82 +3,62 @@
     width: 100%;
     border-collapse: separate;
     border-spacing: 0px;
-    color: var(--tableRowTextColor);
+    color: var(--table-row-text-color);
     border-style: solid;
     border-width: 1px;
-    border-color: var(--tableBorderColor);
-    background: var(--tableRowBackgroundColor);
+    border-color: var(--table-border-color);
+    background: var(--table-row-background-color);
     text-align: left;
     overflow: scroll;
 
     /**
-     * @prop --tableBorderColor: Table background color
+     * @prop --table-border-color: Table background color
      */
-    --tableBorderColor: var(--backgroundColor);
+    --table-border-color: var(--background);
     /**
-      * @prop --tableHeaderBackgroundColor: Table header background color
+      * @prop --table-header-background-color: Table header background color
       */
-    --tableHeaderBackgroundColor: var(--globalAppHeader);
+    --table-header-background-color: var(--global-status-bar);
     /**
-      * @prop --tableHeaderBorderColor: Table header border color
+      * @prop --table-header-border-color: Table header border color
       */
-    --tableHeaderBorderColor: var(--surfaceElements);
+    --table-header-border-color: var(--surface);
     /**
-      * @prop --tableHeaderTextColor: Table header text color
+      * @prop --table-header-text-color: Table header text color
       */
-    --tableHeaderTextColor: var(--defaultText);
+    --table-header-text-color: var(--default-text);
     /**
-      * @prop --tableHeaderBoxShadow: Table header box shadow
+      * @prop --table-header-box-shadow: Table header box shadow
       */
-    --tableHeaderBoxShadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.45);
+    --table-header-box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.45);
     /**
-      * @prop --tableHeaderAccentColor: Table header accent color
+      * @prop --table-row-background-color: Table row background color
       */
-    --tableHeaderAccentColor: var(--primary);
+    --table-row-background-color: var(--surface);
     /**
-      * @prop --tableRowBackgroundColor: Table row background color
+      * @prop --table-row-text-color: Table row text color
       */
-    --tableRowBackgroundColor: var(--surfaceElements);
+    --table-row-text-color: var(--default-text);
     /**
-      * @prop --tableRowTextColor: Table row text color
+      * @prop --table-row-border-color: Table row border color
       */
-    --tableRowTextColor: var(--defaultText);
+    --table-row-border-color: var(--background);
     /**
-      * @prop --tableRowBorderColor: Table row border color
+      * @prop --table-row-hover-background-color: Table row hover background color
       */
-    --tableRowBorderColor: var(--backgroundColor);
+    --table-row-hover-background-color: var(--table-hover);
     /**
-      * @prop --tableRowHoverBackgroundColor: Table row hover background color
+      * @prop --table-row-hover-text-color: Table row hover text color
       */
-    --tableRowHoverBackgroundColor: var(--primaryLightHover);
+    --table-row-hover-text-color: var(--default-text);
     /**
-      * @prop --tableRowHoverTextColor: Table row hover text color
+      * @prop --table-row-selected-background-color: Table row selected background color
       */
-    --tableRowHoverTextColor: var(--defaultText);
+    --table-row-selected-background-color: var(--background);
     /**
-      * @prop --tableRowSelectedBackgroundColor: Table row selected background color
+      * @prop --table-row-selected-border-color: Table row selected border color
       */
-    --tableRowSelectedBackgroundColor: var(--backgroundColor);
-    /**
-      * @prop --tableRowSelectedBorderColor: Table row selected border color
-      */
-    --tableRowSelectedBorderColor: var(--primary);
-    /**
-      * @prop --tableControlsBackgroundColor: Table controls background color
-      */
-    --tableControlsBackgroundColor: var(--primary);
-    /**
-      * @prop --tableFilterBorderColor: Table filter border color
-      */
-    --tableFilterBorderColor: var(--primary);
-    /**
-      * @prop --tableFilterDisabledBorderColor: Table filter disabled border color
-      */
-    --tableFilterDisabledBorderColor: var(--backgroundColor);
-    /**
-      * @prop --tableFilterDisabledBackgroundColor: Table filter disabled background color
-      */
-    --tableFilterDisabledBackgroundColor: var(--surfaceElements);
+    --table-row-selected-border-color: var(--primary);
 }
 
 :host([hidden]) {

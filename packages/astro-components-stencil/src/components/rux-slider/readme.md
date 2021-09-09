@@ -80,20 +80,21 @@ Pass properties via attributes similar to the native [HTML Input Range](https://
 
 ## CSS Custom Properties
 
-| Name                                   | Description                                                 |
-| -------------------------------------- | ----------------------------------------------------------- |
-| `--sliderHoverThumbBackgroundColor`    | Background color of the slider's thumb in a hover state.    |
-| `--sliderHoverThumbBorderColor`        | Border color of the slider's thumb in a hover state.        |
-| `--sliderSelectedThumbBackgroundColor` | Background color of the slider's thumb in a selected state. |
-| `--sliderSelectedThumbBorderColor`     | Border color of the slider's thumb in a selected state.     |
-| `--sliderThumbBackgroundColor`         | Background color of the slider's thumb.                     |
-| `--sliderThumbBorderColor`             | Border color of the slider's thumb.                         |
-| `--sliderThumbBorderSize`              | Size of slider's thumb border.                              |
-| `--sliderThumbSize`                    | Size of the slider's thumb, both width and height.          |
-| `--sliderTrackBackgroundColor`         | Background color of the slider's track.                     |
-| `--sliderTrackCursor`                  | The type of cursor for the slider's track.                  |
-| `--top`                                | Determines the top value of the slider thumb.               |
-| `--valuePercent`                       | The current value of the slider in a percent.               |
+| Name                                       | Description                                                 |
+| ------------------------------------------ | ----------------------------------------------------------- |
+| `--slider-hover-thumb-background-color`    | Background color of the slider's thumb in a hover state.    |
+| `--slider-hover-thumb-border-color`        | Border color of the slider's thumb in a hover state.        |
+| `--slider-selected-thumb-border-color`     | Border color of the slider's thumb in a selected state.     |
+| `--slider-selected-track-background-color` | Background color of the slider's thumb in a selected state. |
+| `--slider-thumb-background-color`          | Background color of the slider's thumb.                     |
+| `--slider-thumb-border-color`              | Border color of the slider's thumb.                         |
+| `--slider-thumb-border-size`               | Size of slider's thumb border.                              |
+| `--slider-thumb-size`                      | Size of the slider's thumb, both width and height.          |
+| `--slider-top`                             | Determines the top value of the slider thumb.               |
+| `--slider-track-background-color`          | Background color of the slider's track.                     |
+| `--slider-track-before-thumb-height`       | the slider track before thumb height                        |
+| `--slider-track-height`                    | the slider track height                                     |
+| `--slider-value-percent`                   | The current value of the slider in a percent.               |
 
 
 ----------------------------------------------

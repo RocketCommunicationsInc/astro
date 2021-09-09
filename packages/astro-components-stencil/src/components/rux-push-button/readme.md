@@ -128,14 +128,14 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 
 ## CSS Custom Properties
 
-| Name                                  | Description                                   |
-| ------------------------------------- | --------------------------------------------- |
-| `--pushbuttonBackgroundColor`         | the Push Button background color              |
-| `--pushbuttonBorderColor`             | the Push Button border color                  |
-| `--pushbuttonSelectedBackgroundColor` | the Push Button background color when checked |
-| `--pushbuttonSelectedBorderColor`     | the Push Button border color when checked     |
-| `--pushbuttonSelectedTextColor`       | the Push Button text color when checked       |
-| `--pushbuttonTextColor`               | the Push Button text color                    |
+| Name                                     | Description                                   |
+| ---------------------------------------- | --------------------------------------------- |
+| `--pushbutton-background-color`          | the Push Button background color              |
+| `--pushbutton-border-color`              | the Push Button border color                  |
+| `--pushbutton-selected-background-color` | the Push Button background color when checked |
+| `--pushbutton-selected-border-color`     | the Push Button border color when checked     |
+| `--pushbutton-selected-text-color`       | the Push Button text color when checked       |
+| `--pushbutton-text-color`                | the Push Button text color                    |
 
 
 ----------------------------------------------

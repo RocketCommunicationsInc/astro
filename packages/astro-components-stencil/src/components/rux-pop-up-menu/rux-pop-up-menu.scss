@@ -2,35 +2,35 @@
     display: block;
 
     /**
-      * @prop --popupMenuBackgroundColor: Pop Up Menu Backround Color
+      * @prop --popup-menu-background-color: Pop Up Menu Backround Color
     */
 
-    /**
-      * @prop --popupMenuBorderColor: Pop Up Menu Border Color
-    */
+    --popup-menu-background-color: var(--background);
 
     /**
-      * @prop --popupMenuTextColor: Pop Up Menu Text Color
+      * @prop --popup-menu-border-color: Pop Up Menu Border Color
     */
+    --popup-menu-border-color: var(--color-border-menu);
 
     /**
-      * @prop --popupCaretBackgroundColor: Pop Up Menu Caret Background Color
+      * @prop --popup-menu-caret-background-color: Pop Up Menu Caret Background Color
     */
+    --popup-menu-caret-background-color: var(--color-border-menu);
 
     /**
-      * @prop --caretLeft: Position of Caret
+      * @prop --popup-menu-caret-left: Position of Caret
     */
-    --caretLeft: 2px;
+    --popup-menu-caret-left: 2px;
 
     /**
-      * @prop --caretSize: Size of Caret
+      * @prop --popup-menu-caret-size: Size of Caret
     */
-    --caretSize: 1.875rem;
+    --popup-menu-caret-size: 1.875rem;
 
     /**
-      * @prop --transitionSpeed: Transition Time of Pop Up Animation
+      * @prop --popup-menu-transition-speed: Transition Time of Pop Up Animation
     */
-    --transitionSpeed: 0.1667s;
+    --popup-menu-transition-speed: 0.1667s;
 
     opacity: 0;
     font-size: 1rem;
@@ -41,10 +41,10 @@
     position: absolute;
     pointer-events: none;
 
-    color: var(--popupMenuTextColor);
+    color: var(--primary);
 
-    background-color: var(--popupMenuBorderColor);
-    border: 1px solid var(--popupMenuBorderColor);
+    background-color: var(--popup-menu-border-color);
+    border: 1px solid var(--popup-menu-border-color);
     border-top-width: 4px;
     z-index: 10000;
 
@@ -79,9 +79,9 @@
     z-index: 1;
 
     border: 8px solid transparent;
-    border-bottom: 11px solid var(--popupCaretBackgroundColor);
+    border-bottom: 11px solid var(--popup-menu-caret-background-color);
 
-    left: var(--caretLeft, 2px);
+    left: var(--popup-menu-caret-left, 2px);
     top: -1.4375rem;
 }
 
@@ -90,7 +90,7 @@ ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    background-color: var(--popupMenuBackgroundColor);
+    background-color: var(--popup-menu-background-color);
 
     z-index: 2;
     border-radius: 2px;

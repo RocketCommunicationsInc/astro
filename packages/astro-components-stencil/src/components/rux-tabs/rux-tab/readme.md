@@ -139,14 +139,13 @@ Astro UXDS Tab (child) properties are passed as simple attributes on the individ
 
 ## CSS Custom Properties
 
-| Name                       | Description               |
-| -------------------------- | ------------------------- |
-| `--tabBackgroundColor`     | Tab background color      |
-| `--tabBorderColor`         | Tab border color          |
-| `--tabHoverTextColor`      | Tab hover text color      |
-| `--tabSelectedBorderColor` | Tab selected border color |
-| `--tabSelectedTextColor`   | Tab selected text color   |
-| `--tabTextColor`           | Tab text color            |
+| Name                          | Description               |
+| ----------------------------- | ------------------------- |
+| `--tab-border-color`          | Tab border color          |
+| `--tab-hover-text-color`      | Tab hover text color      |
+| `--tab-selected-border-color` | Tab selected border color |
+| `--tab-selected-text-color`   | Tab selected text color   |
+| `--tab-text-color`            | Tab text color            |
 
 
 ----------------------------------------------

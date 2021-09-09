@@ -97,16 +97,17 @@ Indeterminate progress
 
 ## CSS Custom Properties
 
-| Name                                        | Description                                    |
-| ------------------------------------------- | ---------------------------------------------- |
-| `--progressDeterminateBarBackgroundColor`   | Bar background color of determinate progress   |
-| `--progressDeterminateTrackBackgroundColor` | Track background color of determinate progress |
-| `--progressDeterminateTrackBorderColor`     | Track border color of determinate progress.    |
-| `--progressHeight`                          | The height of rux-progress                     |
-| `--progressIndeterminate`                   | The indeterminate progress svg                 |
-| `--progressPadding`                         | The padding of rux-progress                    |
-| `--progressRadius`                          | The border radius of rux-progress bar          |
-| `--progressWidth`                           | The width of rux-progress                      |
+| Name                                            | Description                                    |
+| ----------------------------------------------- | ---------------------------------------------- |
+| `--progress-determinate-bar-background-color`   | Bar background color of determinate progress   |
+| `--progress-determinate-track-background-color` | Track background color of determinate progress |
+| `--progress-determinate-track-border-color`     | Track border color of determinate progress.    |
+| `--progress-height`                             | The height of rux-progress                     |
+| `--progress-indeterminate`                      | The indeterminate progress svg                 |
+| `--progress-label-color`                        | The progress label color                       |
+| `--progress-padding`                            | The padding of rux-progress                    |
+| `--progress-radius`                             | The border radius of rux-progress bar          |
+| `--progress-width`                              | The width of rux-progress                      |
 
 
 ----------------------------------------------

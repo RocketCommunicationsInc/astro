@@ -4,6 +4,12 @@
 
 ### Breaking Changes
 
+### CSS Custom Props
+
+> MAJOR CHANGE
+
+CSS Custom Properties have been significantly rewritten. Some properties have been renamed or removed entirely. In addition, we have switched to dash-case for naming. Consult each individual component's documentation for more information.
+
 #### Global Status Bar
 
 -   Removed `include-app-state` property in favor of `app-state`

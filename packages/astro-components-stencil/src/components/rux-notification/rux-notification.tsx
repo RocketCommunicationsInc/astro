@@ -74,7 +74,7 @@ export class RuxNotification {
                     label="Close notification"
                     onClick={() => this._onClick()}
                     icon="close"
-                    size="small"
+                    size="36px"
                 ></rux-icon>
             </Host>
         )

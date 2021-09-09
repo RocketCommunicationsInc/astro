@@ -6,24 +6,21 @@
     }
 
     display: inline-block;
-    /**
-    * @prop --controlLabelColor: Label text color
-    */
-    /**
-    * @prop --controlOutlineBackgroundColor: Checkbox background color
-    */
-    /**
-    * @prop --controlBorderColor: Checkbox border color
-    */
-    /**
-    * @prop --controlHoverBorderColor: Checkbox border color on hover
-    */
-    /**
-    * @prop --controlTextColor: Selected checkbox icon color
-    */
-    /**
-    * @prop --controlSelectedOutlineBorderColor: Selected checkbox border color
-    */
+
+    /** @prop --checkbox-label-color: Label text color*/
+    --checkbox-label-color: var(--default-text);
+
+    /** @prop --checkbox-background-color: Checkbox background color*/
+    --checkbox-background-color: var(--background);
+
+    /** @prop --checkbox-border-color: Checkbox border color*/
+    --checkbox-border-color: var(--active);
+
+    /** @prop --checkbox-checked-color: Checkmark color when checked*/
+    --checkbox-checked-color: var(--primary);
+
+    /** @prop --checkbox-hover-border-color: Hover border color*/
+    --checkbox-hover-border-color: var(--hover);
 }
 
 :host([hidden]) {
@@ -34,9 +31,9 @@
     display: flex;
     flex-direction: column;
 
-    font-family: var(--fontFamily);
-    font-size: var(--fontSize);
-    color: var(--fontColor);
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    color: var(--default-text);
 }
 
 .rux-checkbox {
@@ -56,7 +53,7 @@
             align-items: center;
             justify-content: flex-start;
 
-            color: var(--controlLabelColor);
+            color: var(--checkbox-label-color);
             letter-spacing: 0.5px;
             cursor: pointer;
             margin-left: -7px;
@@ -70,14 +67,13 @@
 
                 align-self: start;
 
-                height: var(--controlOptionSize);
-                width: var(--controlOptionSize);
+                height: 1.125rem;
+                width: 1.125rem;
 
                 margin: 0 0.625rem 0 0;
 
-                background-color: var(--controlOutlineBackgroundColor);
-                border: 1px solid var(--controlBorderColor);
-                border-radius: 2px;
+                background-color: var(--checkbox-background-color);
+                border: 1px solid var(--checkbox-border-color);
             }
         }
 
@@ -93,12 +89,12 @@
                     height: 6px;
                     width: 12px;
                     left: 3px;
-                    border-right: 2px solid var(--controlTextColor);
-                    border-top: 2px solid var(--controlTextColor);
+                    border-right: 2px solid var(--checkbox-checked-color);
+                    border-top: 2px solid var(--checkbox-checked-color);
                     transform: rotate(125deg);
                 }
                 &::before {
-                    border-color: var(--controlBorderColor);
+                    border-color: var(--checkbox-border-color);
                 }
             }
         }
@@ -114,14 +110,14 @@
             transform: rotate(0deg) !important;
             border-right: 0px !important;
             border-top: 0px !important;
-            border-bottom: 2px solid var(--controlTextColor) !important;
+            border-bottom: 2px solid var(--checkbox-checked-color) !important;
             left: 4px !important;
         }
 
         &:disabled {
             + label {
-                cursor: var(--disabledCursor);
-                opacity: var(--disabledOpacity);
+                cursor: not-allowed;
+                opacity: var(--disabled-opacity);
             }
         }
     }
@@ -129,7 +125,7 @@
     input[type='checkbox']:not(:disabled):hover {
         + label {
             &::before {
-                border-color: var(--controlHoverBorderColor);
+                border-color: var(--checkbox-hover-border-color);
             }
         }
     }
@@ -139,10 +135,10 @@
         input[type='checkbox']:checked {
             + label {
                 &:after {
-                    border-color: var(--colorCritical);
+                    border-color: var(--color-critical);
                 }
                 &::before {
-                    border-color: var(--colorCritical);
+                    border-color: var(--color-critical);
                 }
             }
         }
@@ -160,12 +156,9 @@
 
 .rux-help-text {
     margin-top: 0.625rem;
-    color: var(--secondaryText);
-    font-size: 0.875rem;
-    font-size: var(--fontSizeMD);
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-        Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    font-family: var(--fontFamily);
+    color: var(--secondary-text);
+    font-size: var(--font-size-md);
+    font-family: var(--font-family);
     font-weight: normal;
     letter-spacing: 0.5px;
 }
@@ -181,11 +174,8 @@
     -webkit-order: 3;
     order: 3;
     margin-top: 0.625rem;
-    color: var(--colorCritical);
-    font-size: 0.875rem;
-    font-size: var(--fontSizeMD);
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-        Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    font-family: var(--fontFamily);
+    color: var(--color-critical);
+    font-size: var(--font-size-md);
+    font-family: var(--font-family);
     font-weight: bold;
 }

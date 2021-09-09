@@ -67,14 +67,13 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
 
 ## CSS Custom Properties
 
-| Name                                  | Description                    |
-| ------------------------------------- | ------------------------------ |
-| `--controlBorderColor`                | Checkbox border color          |
-| `--controlHoverBorderColor`           | Checkbox border color on hover |
-| `--controlLabelColor`                 | Label text color               |
-| `--controlOutlineBackgroundColor`     | Checkbox background color      |
-| `--controlSelectedOutlineBorderColor` | Selected checkbox border color |
-| `--controlTextColor`                  | Selected checkbox icon color   |
+| Name                            | Description                  |
+| ------------------------------- | ---------------------------- |
+| `--checkbox-background-color`   | Checkbox background color    |
+| `--checkbox-border-color`       | Checkbox border color        |
+| `--checkbox-checked-color`      | Checkmark color when checked |
+| `--checkbox-hover-border-color` | Hover border color           |
+| `--checkbox-label-color`        | Label text color             |
 
 
 ----------------------------------------------

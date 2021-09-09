@@ -1,11 +1,22 @@
 :host {
     display: block;
-    /** @prop --pushbuttonBackgroundColor: the Push Button background color */
-    /** @prop --pushbuttonBorderColor: the Push Button border color */
-    /** @prop --pushbuttonTextColor: the Push Button text color */
-    /** @prop --pushbuttonSelectedBackgroundColor: the Push Button background color when checked */
-    /** @prop --pushbuttonSelectedBorderColor: the Push Button border color when checked */
-    /** @prop --pushbuttonSelectedTextColor: the Push Button text color when checked */
+    /** @prop --pushbutton-background-color: the Push Button background color */
+    --pushbutton-background-color: none;
+
+    /** @prop --pushbutton-border-color: the Push Button border color */
+    --pushbutton-border-color: var(--primary);
+
+    /** @prop --pushbutton-text-color: the Push Button text color */
+    --pushbutton-text-color: var(--primary);
+
+    /** @prop --pushbutton-selected-background-color: the Push Button background color when checked */
+    --pushbutton-selected-background-color: var(--color-normal);
+
+    /** @prop --pushbutton-selected-border-color: the Push Button border color when checked */
+    --pushbutton-selected-border-color: var(--color-normal);
+
+    /** @prop --pushbutton-selected-text-color: the Push Button text color when checked */
+    --pushbutton-selected-text-color: var(--color-tertiary-900);
 
     font-size: 16px;
     height: 1.3125rem;
@@ -16,7 +27,7 @@
     -ms-user-select: none;
     user-select: none;
     &[disabled] {
-        opacity: var(--disabledOpacity);
+        opacity: var(--disabled-opacity);
         cursor: not-allowed;
     }
 
@@ -34,21 +45,21 @@
             font-size: 1rem !important;
             margin: -27px 0 0 0;
             padding: 0 0.625rem;
-            color: var(--pushbuttonTextColor);
-            background-color: var(--pushbuttonBackgroundColor);
-            border-radius: var(--defaultBorderRadius);
-            border: 1px solid var(--pushbuttonBorderColor);
+            color: var(--pushbutton-text-color);
+            background-color: var(--pushbutton-background-color);
+            border-radius: var(--border-radius-button);
+            border: 1px solid var(--pushbutton-border-color);
         }
 
         &__input:checked + .rux-push-button__button {
             display: flex;
-            color: var(--pushbuttonSelectedTextColor);
-            background-color: var(--pushbuttonSelectedBackgroundColor);
-            border-color: var(--pushbuttonSelectedBorderColor);
+            color: var(--pushbutton-selected-text-color);
+            background-color: var(--pushbutton-selected-background-color);
+            border-color: var(--pushbutton-selected-border-color);
         }
 
         &__input:disabled + .rux-push-button__button {
-            opacity: var(--disabledOpacity);
+            opacity: var(--disabled-opacity);
             cursor: not-allowed;
         }
     }

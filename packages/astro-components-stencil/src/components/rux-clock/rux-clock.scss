@@ -1,22 +1,27 @@
 :host {
     /**
-    * @prop --clockTextColor: the color of the clock text
+    * @prop --clock-text-color: the color of the clock text
     */
+    --clock-text-color: var(--color-basics-white);
 
     /**
-    * @prop --clockBackgroundColor: the background color for the clock
+    * @prop --clock-background-color: the background color for the clock
     */
-    /**
-    * @prop --clockBorderColor: the border color for the clock
-    */
+    --clock-background-color: var(--color-tertiary-800);
 
     /**
-    * @prop --clockLabelColor: the label color for the clock
+    * @prop --clock-border-color: the border color for the clock
     */
+    --clock-border-color: var(--color-snowflakes-dark-surface);
+
+    /**
+    * @prop --clock-label-color: the label color for the clock
+    */
+    --clock-label-color: var(--color-basics-white);
 
     display: flex;
     margin: 0 1rem;
-    color: var(--clockTextColor);
+    color: var(--clock-text-color);
     font-size: 1.15rem;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -37,12 +42,12 @@
 .rux-clock__segment__value {
     display: flex;
     align-items: center;
-    font-family: var(--fontFamilyMono);
+    font-family: var(--font-family-mono);
     font-weight: 700;
 
-    border: 1px solid var(--clockBorderColor);
+    border: 1px solid var(--clock-border-color);
 
-    background-color: var(--clockBackgroundColor);
+    background-color: var(--clock-background-color);
     margin-bottom: 0.25rem;
 
     white-space: nowrap;
@@ -65,7 +70,7 @@
 
 .rux-clock__segment__label {
     font-size: 0.875rem;
-    color: var(--clockLabelColor);
+    color: var(--clock-label-color);
 }
 
 .rux-clock__day-of-the-year .rux-clock__segment__value {

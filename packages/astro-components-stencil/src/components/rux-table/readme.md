@@ -28,25 +28,20 @@
 
 ## CSS Custom Properties
 
-| Name                                   | Description                            |
-| -------------------------------------- | -------------------------------------- |
-| `--tableBorderColor`                   | Table background color                 |
-| `--tableControlsBackgroundColor`       | Table controls background color        |
-| `--tableFilterBorderColor`             | Table filter border color              |
-| `--tableFilterDisabledBackgroundColor` | Table filter disabled background color |
-| `--tableFilterDisabledBorderColor`     | Table filter disabled border color     |
-| `--tableHeaderAccentColor`             | Table header accent color              |
-| `--tableHeaderBackgroundColor`         | Table header background color          |
-| `--tableHeaderBorderColor`             | Table header border color              |
-| `--tableHeaderBoxShadow`               | Table header box shadow                |
-| `--tableHeaderTextColor`               | Table header text color                |
-| `--tableRowBackgroundColor`            | Table row background color             |
-| `--tableRowBorderColor`                | Table row border color                 |
-| `--tableRowHoverBackgroundColor`       | Table row hover background color       |
-| `--tableRowHoverTextColor`             | Table row hover text color             |
-| `--tableRowSelectedBackgroundColor`    | Table row selected background color    |
-| `--tableRowSelectedBorderColor`        | Table row selected border color        |
-| `--tableRowTextColor`                  | Table row text color                   |
+| Name                                    | Description                         |
+| --------------------------------------- | ----------------------------------- |
+| `--table-border-color`                  | Table background color              |
+| `--table-header-background-color`       | Table header background color       |
+| `--table-header-border-color`           | Table header border color           |
+| `--table-header-box-shadow`             | Table header box shadow             |
+| `--table-header-text-color`             | Table header text color             |
+| `--table-row-background-color`          | Table row background color          |
+| `--table-row-border-color`              | Table row border color              |
+| `--table-row-hover-background-color`    | Table row hover background color    |
+| `--table-row-hover-text-color`          | Table row hover text color          |
+| `--table-row-selected-background-color` | Table row selected background color |
+| `--table-row-selected-border-color`     | Table row selected border color     |
+| `--table-row-text-color`                | Table row text color                |
 
 
 ## Dependencies

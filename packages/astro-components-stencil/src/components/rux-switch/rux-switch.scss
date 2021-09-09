@@ -1,20 +1,31 @@
 :host {
     display: block;
-    /**
-      * @prop --switchBackgroundColor: the Switch off color
-      */
+
+    /** @prop --switch-hover-off-color: the Switch hover off color */
+    --switch-hover-off-color: var(--hover);
 
     /**
-      * @prop --switchHoverOnColor: the Switch hover on color
+      * @prop --switch-background-color: the Switch off color
       */
 
-    /**
-      * @prop --switchHoverOffColor: the Switch hover off color
-      */
+    --switch-background-color: var(--background);
 
     /**
-      * @prop --switchOffBorderColor: the Switch off border color
+      * @prop --switch-hover-on-color: the Switch hover on color
       */
+    --switch-hover-on-color: var(--primary);
+
+    /**
+      * @prop --switch-hover-off-color: the Switch hover off color
+      */
+
+    --switch-hover-off-color: var(--primary);
+
+    /** @prop --switch-on-color: the Switch on color */
+    --switch-on-color: var(--primary);
+
+    /** @prop --switch-off-border-color: the Switch off border color*/
+    --switch-off-border-color: var(--active);
     padding-left: 1%;
 }
 .rux-switch {
@@ -38,8 +49,8 @@
 
             border-radius: 4.7px;
             border: 1px solid;
-            border-color: var(--switchOffBorderColor);
-            background-color: var(--switchBackgroundColor);
+            border-color: var(--switch-off-border-color);
+            background-color: var(--switch-background-color);
 
             height: 10px;
             width: 30px;
@@ -57,8 +68,8 @@
             height: 18px;
             width: 18px;
             border-radius: 50%;
-            border: 1px solid var(--switchHoverOffColor);
-            background-color: var(--switchBackgroundColor);
+            border: 1px solid var(--switch-hover-off-color);
+            background-color: var(--switch-background-color);
 
             transition: 0.1s left linear, 0.1s border-color linear;
         }
@@ -73,13 +84,13 @@
         &:checked {
             + .rux-switch__button {
                 &::before {
-                    border-color: var(--switchOnColor);
-                    background-color: var(--switchOnColor);
+                    border-color: var(--switch-on-color);
+                    background-color: var(--switch-on-color);
                 }
                 &::after {
                     left: 16px;
-                    background-color: var(--switchBackgroundColor);
-                    border-color: var(--switchHoverOffColor);
+                    background-color: var(--switch-background-color);
+                    border-color: var(--switch-hover-off-color);
                 }
             }
         }
@@ -87,8 +98,8 @@
         // Disabled
         &:disabled {
             + .rux-switch__button {
-                cursor: var(--disabledCursor);
-                opacity: var(--disabledOpacity);
+                cursor: not-allowed;
+                opacity: var(--disabled-opacity);
             }
         }
     }
@@ -99,10 +110,10 @@
                 + .rux-switch__button {
                     &::before,
                     &:after {
-                        border-color: var(--colorCritical);
+                        border-color: var(--color-critical);
                     }
                     &:before {
-                        background-color: var(--colorCritical);
+                        background-color: var(--color-critical);
                     }
                 }
             }
@@ -112,10 +123,10 @@
                     + .rux-switch__button {
                         &::before,
                         &:after {
-                            border-color: var(--colorCritical);
+                            border-color: var(--color-critical);
                         }
                         &:before {
-                            background-color: var(--colorCritical);
+                            background-color: var(--color-critical);
                         }
                     }
                 }
@@ -130,10 +141,10 @@
             &:checked:not(:disabled) {
                 + .rux-switch__button {
                     &::before {
-                        border-color: var(--switchHoverOffColor);
+                        border-color: var(--switch-hover-off-color);
                     }
                     &:after {
-                        border-color: var(--switchButtonHoverOffColor);
+                        border-color: var(--switch-hover-off-color);
                     }
                 }
             }
@@ -141,7 +152,7 @@
             &:not(:disabled) {
                 + .rux-switch__button {
                     &::before {
-                        background-color: var(--switchBackgroundColor);
+                        background-color: var(--switch-background-color);
                     }
                 }
             }
@@ -149,7 +160,7 @@
             &:checked:not(:disabled) {
                 + .rux-switch__button {
                     &:before {
-                        background-color: var(--switchHoverOnColor);
+                        background-color: var(--switch-hover-on-color);
                     }
                 }
             }
@@ -161,19 +172,16 @@
     display: flex;
     flex-direction: column;
 
-    font-family: var(--fontFamily);
-    font-size: var(--fontSize);
-    color: var(--fontColor);
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    color: var(--default-text);
 }
 
 .rux-help-text {
     margin-top: 0.625rem;
-    color: var(--secondaryText);
-    font-size: 0.875rem;
-    font-size: var(--fontSizeMD);
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-        Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    font-family: var(--fontFamily);
+    color: var(--secondary-text);
+    font-size: var(--font-size-md);
+    font-family: var(--font-family);
     font-weight: normal;
     letter-spacing: 0.5px;
 }
@@ -189,12 +197,9 @@
     -webkit-order: 3;
     order: 3;
     margin-top: 0.625rem;
-    color: var(--colorCritical);
-    font-size: 0.875rem;
-    font-size: var(--fontSizeMD);
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-        Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    font-family: var(--fontFamily);
+    color: var(--color-critical);
+    font-size: var(--font-size-md);
+    font-family: var(--font-family);
     font-weight: bold;
 }
 :host([hidden]) {

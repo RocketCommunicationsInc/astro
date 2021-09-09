@@ -35,16 +35,14 @@
 
 ## CSS Custom Properties
 
-| Name                              | Description                                |
-| --------------------------------- | ------------------------------------------ |
-| `--inputBackgroundColor`          | Background color                           |
-| `--inputBorderColor`              | Border color of the textarea.              |
-| `--inputFocusBorderColor`         | Border color while in a focused state      |
-| `--inputFocusTextColor`           | Text color while in a focused state        |
-| `--inputInvalidBorderColor`       | Border color while in an invalid state     |
-| `--inputSelectionBackgroundColor` | Background color while in a selected state |
-| `--inputTextColor`                | Text color                                 |
-| `--secondaryText`                 | Secondary text color                       |
+| Name                                    | Description                                |
+| --------------------------------------- | ------------------------------------------ |
+| `--textarea-background-color`           | Background color                           |
+| `--textarea-border-color`               | Border color of the textarea.              |
+| `--textarea-focus-border-color`         | Border color while in a focused state      |
+| `--textarea-invalid-border-color`       | Border color while in an invalid state     |
+| `--textarea-selection-background-color` | Background color while in a selected state |
+| `--textarea-text-color`                 | Text color                                 |
 
 
 ----------------------------------------------

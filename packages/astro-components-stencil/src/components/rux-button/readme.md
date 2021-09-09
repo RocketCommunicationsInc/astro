@@ -136,23 +136,20 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 
 ## CSS Custom Properties
 
-| Name                                    | Description                             |
-| --------------------------------------- | --------------------------------------- |
-| `--buttonActiveBackgroundColor`         | Button active background color          |
-| `--buttonActiveBorderColor`             | Button active border color              |
-| `--buttonActiveControlTextColor`        | Button active text color                |
-| `--buttonBackgroundColor`               | Button background color                 |
-| `--buttonBorderColor`                   | Button border color                     |
-| `--buttonHoverBackgroundColor`          | Button hover background color           |
-| `--buttonHoverBorderColor`              | Button hover border color               |
-| `--buttonHoverTextColor`                | Button hover text color                 |
-| `--buttonSecondaryBackgroundColor`      | Button secondary background color       |
-| `--buttonSecondaryBorderColor`          | Button secondary border color           |
-| `--buttonSecondaryHoverBackgroundColor` | Button secondary hover background color |
-| `--buttonSecondaryHoverBorderColor`     | Button secondary hover border color     |
-| `--buttonSecondaryHoverTextColor`       | Button secondary hover text color       |
-| `--buttonSecondaryTextColor`            | Button secondary text color             |
-| `--buttonTextColor`                     | Button text color                       |
+| Name                                        | Description                             |
+| ------------------------------------------- | --------------------------------------- |
+| `--button-active-background-color`          | Button active background color          |
+| `--button-active-border-color`              | Button active border color              |
+| `--button-background-color`                 | Button background color                 |
+| `--button-border-color`                     | Button border color                     |
+| `--button-hover-background-color`           | Button hover background color           |
+| `--button-hover-border-color`               | Button hover border color               |
+| `--button-secondary-background-color`       | Button secondary background color       |
+| `--button-secondary-border-color`           | Button secondary border color           |
+| `--button-secondary-hover-background-color` | Button secondary hover background color |
+| `--button-secondary-hover-border-color`     | Button secondary hover border color     |
+| `--button-secondary-text-color`             | Button secondary text color             |
+| `--button-text-color`                       | Button text color                       |
 
 
 ## Dependencies

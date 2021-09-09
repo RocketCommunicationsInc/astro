@@ -24,13 +24,13 @@ body {
     margin: 0;
     padding: 0;
 
-    font-family: var(--fontFamily);
+    font-family: var(--font-family);
     font-size: 1rem;
-    color: var(--fontColor, rgb(255, 255, 255));
+    color: var(--default-text, rgb(255, 255, 255));
 
-    background-color: var(--backgroundColor);
-    scrollbar-color: var(--scrollBarThumbBackgroundColor)
-        var(--scrollBarTrackCornerBackgroundColor);
+    background-color: var(--background);
+    scrollbar-color: var(--color-scrollbar-background-thumb)
+        var(--color-scrollbar-corner-background);
 }
 
 label {
@@ -50,7 +50,10 @@ label {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--scrollBarThumbBackgroundColor, rgb(43, 101, 155));
+    background-color: var(
+        --color-scrollbar-background-thumb,
+        rgb(43, 101, 155)
+    );
     border-radius: 8px;
     border: 3px solid transparent;
     background-clip: padding-box;
@@ -68,14 +71,14 @@ label {
 ::-webkit-scrollbar-thumb:active,
 ::-webkit-scrollbar-thumb:hover {
     background-color: var(
-        --scrollBarThumbBackgroundHoverColor,
+        --color-scrollbar-background-thumb-hover,
         rgb(58, 129, 191)
     );
 }
 
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-corner {
-    background-color: var(--scrollBarTrackBackgroundColor, rgb(27, 45, 62));
+    background-color: var(--color-scrollbar-background-track, rgb(27, 45, 62));
 }
 
 ::-webkit-scrollbar-track:vertical {
