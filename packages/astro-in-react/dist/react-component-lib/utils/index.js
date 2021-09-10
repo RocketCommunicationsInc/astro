@@ -1,14 +1,20 @@
 import React from 'react';
-// The comma in the type is to trick typescript because it things a single generic in a tsx file is jsx
-export const mergeRefs = (...refs) => (value) => refs.forEach((ref) => {
+export const setRef = (ref, value) => {
     if (typeof ref === 'function') {
         ref(value);
     }
     else if (ref != null) {
-        // This is typed as readonly so we need to allow for override
+        // Cast as a MutableRef so we can assign current
         ref.current = value;
     }
-});
+};
+export const mergeRefs = (...refs) => {
+    return (value) => {
+        refs.forEach(ref => {
+            setRef(ref, value);
+        });
+    };
+};
 export const createForwardRef = (ReactComponent, displayName) => {
     const forwardRef = (props, ref) => {
         return React.createElement(ReactComponent, Object.assign({}, props, { forwardedRef: ref }));
