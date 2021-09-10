@@ -55,6 +55,83 @@ const MyComp = () => {
     )
 }
 ```
+## Updating Complex Data
+
+### Updating Arrays
+
+For arrays, the standard mutable array operations such as `push()` and `unshift()` won't trigger a component update.
+Instead, non-mutable array operators should be used as they return a copy of a new array. These include `map()` and `filter()`,
+and the ES6 spread operator syntax.
+
+For example, to push a new item to an array, create a new array with the existing values and the new value at the end:
+
+```js
+// our original array
+this.items = ['ionic', 'stencil', 'webcomponents'];
+// update the array
+this.items = [
+  ...this.items,
+  'awesomeness'
+]
+```
+
+The `...this.items` syntax is a relatively new feature of JavaScript that "expands" the given object in place.
+Read more about the Spread operator [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax).
+
+### Updating Objects
+
+The spread operator should also be used to update objects. As with arrays, mutating an object will not trigger a view update,
+but returning a new copy of the object will. Below is an example:
+
+```js
+// our original object
+this.myCoolObject = {first: '1', second: '2'}
+// update our object
+this.myCoolObject = { ...myCoolObject, third: '3' }
+```
+Below is an example of updating an array of objects using Astro components in TypeScript and React. 
+
+```jsx
+import React, { useState } from 'react'
+import { RuxSegmentedButton, RuxInputField, RuxButton } from '@astrouxds/react'
+
+const SegmentedButton = () => {
+  const [dataArr, setDataArr] = useState([
+    {
+      selected: true,
+      label: "One",
+    },
+    {
+      label: "Two",
+    },
+    {
+      label: "Three",
+    },
+  ])
+  const [inputVal, setInputVal] = useState("")
+
+  const handleSubmit = (str: string) => {
+    let strObj = { label: str };
+    //spread in old state, add in new state
+    setDataArr(() => [...dataArr, strObj]);
+  }
+  return(
+    <div>
+      <RuxSegmentedButton data={dataArr} />
+      <RuxInputField
+          onRux-change={(e: CustomEvent<HTMLRuxInputFieldElement>) => {
+            const target = e.target as HTMLInputElement;
+            setInputVal(target.value);
+          }}
+          
+      />
+      <RuxButton onClick={() => handleSubmit(inputVal)}>Submit</RuxButton>
+    </div>
+  )
+}
+
+```
+This will take the input from RuxInputField and add to the dataArr, thus adding to RuxSegmentedButton and trigerring a re-render.
 
 ## Using Slots
 
@@ -88,10 +165,31 @@ const MyComp = () => {
         <div>
             <RuxInputField 
                 onRux-input={() => console.log('Heard ruxInput!')}
+                onRux-change={() => console.log('Heard ruxChange!')}
             />
         </div>
     )
 }
+```
+
+In TypeScript, accessing the events target value requires some type assertion.
+
+```jsx
+const MyComp = () => {
+  return (
+    <div>
+      <RuxInputField
+          onRux-change={(e: CustomEvent<HTMLRuxInputFieldElement>) => 
+            {
+              const target = e.target as HTMLInputElement;
+              console.log(`Here is e.target.value: ${target.value}`)
+            }
+          }
+      />
+    </div>
+  )
+}
+
 ```
 It is **highly** encouraged to listen to these custom events rather than default React events such as onChange. Because some 
 React events are different from their native JS counterparts, some bugs can arise from using default React 
@@ -208,6 +306,32 @@ class MyComp extends React.Component {
 }
 
 ```
+
+#### TypeScript
+If you're using TypeScript, make sure you are passing the correct types as props. 
+
+```jsx
+import React, { useState } from 'react'
+import { RuxInputField } from '@astrouxds/react'
+
+const MyComp = () => {
+
+    const [myInput, setMyInput] = useState("")
+
+    return (
+        <div>
+            <RuxInputField 
+                onRux-input={(e: CustomEvent<HTMLRuxInputFieldElement>) => {
+                    const target = e.target as HTMLInputElement
+                    setMyInput(target.value)
+                  }}
+                small={true}
+            />
+        </div>
+    )
+}
+```
+
 React also has syntactic sugar for two way data binding, which can be found [here](https://reactjs.org/docs/two-way-binding-helpers.html).
 
 
