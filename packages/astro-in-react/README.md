@@ -1,6 +1,6 @@
 # Installation
 
-`npm i astro-in-react`
+`npm i @astrouxds/astro-in-react`
 
 ## Import and Usage
 
