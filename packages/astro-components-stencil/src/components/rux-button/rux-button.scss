@@ -95,11 +95,12 @@
 
     user-select: none;
 
-    ::slotted(rux-icon),
-    rux-icon {
+    rux-icon,
+    ::slotted(rux-icon) {
         height: 1rem;
         width: 1rem;
         margin-right: 0.625rem;
+        color: var(--button-text-color);
     }
 
     &:disabled {
@@ -116,65 +117,37 @@
         cursor: pointer;
     }
 
-    // Press/Active States
-    &:active:not([hover]):not([disabled]) {
-        border-color: var(--button-active-border-color) !important;
-        background-color: var(--button-active-background-color) !important;
-    }
-
-    &:hover:not([active]):not([disabled]):not(.rux-button--secondary) {
-        border-color: var(--button-hover-border-color);
-        background-color: var(--button-hover-background-color);
-    }
-
-    // .rux-button-group
-    &-group {
-        display: flex;
-        .rux-button:not(:last-child) {
-            margin-right: 0.625rem;
-        }
-    }
-
-    &:not(.rux-button--secondary) {
+    &--default {
         border: 1px solid var(--button-border-color);
         background-color: var(--button-background-color);
-    }
-
-    // elements
-
-    // .rux-button__icon
-    &__icon {
-        height: 1.5rem;
-        width: 1.5rem;
-
-        margin-right: 0.625rem;
-        margin-left: -0.625rem;
-
-        .rux-icon {
-            height: auto;
-            width: 100%;
-            fill: var(--button-text-color);
-            color: var(--button-text-color);
+        &:hover:not([disabled]) {
+            border-color: var(--button-hover-border-color);
+            background-color: var(--button-hover-background-color);
+        }
+        &:active:not([disabled]) {
+            border-color: var(--button-active-border-color);
+            background-color: var(--button-active-background-color);
         }
     }
 
-    // variants
-    // .rux-button--secondary
     &--secondary {
         color: var(--button-secondary-text-color);
         background-color: var(--button-secondary-background-color);
         border: 1px solid var(--button-secondary-border-color);
-        &:active:not([hover]):not([disabled]) {
-            border-color: var(--button-secondary-border-color) !important;
-            background-color: var(
-                --button-secondary-background-color
-            ) !important;
-        }
 
         &:hover:not([disabled]) {
             color: var(--button-secondary-text-color);
             background-color: var(--button-secondary-hover-background-color);
             border-color: var(--button-secondary-hover-border-color);
+        }
+
+        &:active:not([disabled]) {
+            border-color: var(--button-secondary-border-color);
+            background-color: var(--button-secondary-background-color);
+        }
+        rux-icon,
+        ::slotted(rux-icon) {
+            color: var(--button-secondary-text-color);
         }
     }
 
@@ -182,88 +155,22 @@
         height: 1.625rem;
         padding: 0 1rem;
         line-height: 1;
-        .rux-button--icon-only {
-            width: 3rem;
-            height: 1.625rem;
-        }
-
-        &.rux-button {
-            &__icon {
-                height: 0.875rem;
-                width: 0.875rem;
-            }
-
-            &--icon-only {
-                min-width: 1.625rem;
-                padding: 0 0.75rem;
-            }
-        }
     }
 
     &--large {
         height: 2.875rem;
         min-width: 3rem;
         padding: 0 1rem;
-        .rux-button--icon-only {
-            width: 3rem;
-            height: 2.875rem;
-        }
-        .rux-button__icon {
-            height: 1rem;
-            width: 1rem;
-        }
     }
 
     &--icon-only {
         font-size: 0px;
         width: 3rem;
-        hieght: 2.125rem;
-        .rux-button__icon {
-            margin-left: -0.625rem;
-            margin-right: -0.625rem;
-        }
     }
-}
-
-.rux-button--large.rux-button--icon-only .rux-button__icon {
-    margin-left: -1rem;
-    margin-right: -1rem;
 }
 
 .rux-button--icon-only ::slotted(rux-icon),
 .rux-button--icon-only rux-icon {
     margin-left: -0.625rem;
     margin-right: -0.625rem;
-}
-
-.rux-button--large.rux-button--icon-only ::slotted(rux-icon),
-.rux-button--large.rux-button--icon-only rux-icon {
-    margin-left: -1rem;
-    margin-right: -1rem;
-}
-
-.rux-button--small ::slotted(rux-icon),
-.rux-button--small rux-icon {
-    height: 1rem;
-    width: 1rem;
-}
-
-.rux-button--large ::slotted(rux-icon),
-.rux-button--large rux-icon {
-    height: 1rem;
-    width: 1rem;
-}
-
-.rux-button rux-icon {
-    color: var(--button-text-color);
-}
-.rux-button--secondary rux-icon,
-.rux-button--secondary rux-icon svg > use {
-    color: var(--button-secondary-text-color);
-}
-.rux-button ::slotted(rux-icon) {
-    color: var(--button-text-color);
-}
-.rux-button--secondary ::slotted(rux-icon) {
-    color: var(--button-secondary-text-color);
 }
