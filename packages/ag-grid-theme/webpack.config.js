@@ -4,17 +4,17 @@ const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.js",
+  entry: "./src/grid.js",
   output: {
-    filename: "main.js",
+    filename: "grid.js",
     path: path.resolve(__dirname, "dist"),
   },
   plugins: [
     new CopyPlugin({
       patterns: [
-        { from: "src/fonts", to: "fonts" },
-        { from: "src/icons", to: "icons" },
-        { from: "src/images", to: "images" },
+        { from: "src/fonts", to: "assets/fonts" },
+        { from: "src/icons", to: "assets/icons" },
+        { from: "src/images", to: "assets/images" },
       ],
     }),
     new MiniCssExtractPlugin({
