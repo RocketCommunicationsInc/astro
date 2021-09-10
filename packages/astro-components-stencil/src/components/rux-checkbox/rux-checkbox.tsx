@@ -152,6 +152,7 @@ export class RuxCheckbox {
                 <div
                     class={{
                         'rux-checkbox': true,
+                        'rux-checkbox--indeterminate': indeterminate,
                         'rux-checkbox--has-error': required,
                         'rux-checkbox--has-text':
                             errorText !== undefined || helpText !== undefined,
