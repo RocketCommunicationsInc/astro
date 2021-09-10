@@ -1,0 +1,5 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../../../node_modules/ag-grid-community/src/styles/ag-grid.scss";
+@import "../../../node_modules/ag-grid-community/src/styles/ag-theme-alpine-dark/sass/ag-theme-alpine-dark-mixin.scss";
+@import "../../../node_modules/ag-grid-community/src/styles/ag-theme-alpine-dark/sass/_ag-theme-alpine-dark-default-params.scss";
+@import "./astro-theme.scss";

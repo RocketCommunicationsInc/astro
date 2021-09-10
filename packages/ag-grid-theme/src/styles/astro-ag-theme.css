@@ -1,11 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-@import "ag-grid-community/dist/styles/ag-grid.css";
 /**
  ****************************
  * Generic Styles
  ****************************
 */
-@import "css/astro.css";
 ag-grid, ag-grid-angular, ag-grid-ng2, ag-grid-polymer, ag-grid-aurelia {
   display: block;
 }
@@ -5071,4 +5069,4 @@ ag-grid, ag-grid-angular, ag-grid-ng2, ag-grid-polymer, ag-grid-aurelia {
   margin-right: 6px;
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=astro-ag-theme.css.map */
