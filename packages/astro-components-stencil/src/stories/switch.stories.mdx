@@ -27,6 +27,8 @@ export const Switch = (args) => {
             <rux-switch
                 .disabled=${args.disabled}
                 .checked=${args.checked}
+                .errorText=${args.errorText}
+                .helpText=${args.helpText}
                 id="01"
             ></rux-switch>
         </div>
@@ -36,7 +38,7 @@ export const Switch = (args) => {
 <Canvas>
     <Story
         parameters={{
-            docs: { source: { code: '<rux-button>Button</rux-button>' } },
+            docs: { source: { code: '<rux-switch></rux-switch>' } },
         }}
         name="Switch"
     >
@@ -47,6 +49,98 @@ export const Switch = (args) => {
 ## API
 
 <ArgsTable of="rux-switch" />
+
+## Variants
+
+### Disabled
+
+export const Disabled = (args) => {
+        return html`
+        <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
+            <rux-switch
+                .disabled=${args.disabled}
+                .checked=${args.checked}
+                .errorText=${args.errorText}
+                .helpText=${args.helpText}
+                id="01"
+            ></rux-switch>
+        </div>
+    `
+}
+
+<Canvas>
+    <Story
+    name="Disabled"
+    args={{
+        disabled: true
+    }}
+         parameters={{
+            docs: { source: { code: '<rux-switch disabled></rux-switch>' } },
+        }}
+    >
+        {Disabled.bind()}
+    </Story>
+</Canvas>
+
+### Help Text
+
+export const HelpText = (args) => {
+    return html`
+        <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
+            <rux-switch
+                .disabled=${args.disabled}
+                .checked=${args.checked}
+                .errorText=${args.errorText}
+                .helpText=${args.helpText}
+                id="01"
+            ></rux-switch>
+        </div>
+    `
+}
+
+<Canvas>
+    <Story
+    name="HelpText"
+    args={{
+        helpText: "Help Text"
+    }}
+         parameters={{
+            docs: { source: { code: '<rux-switch help-text="Help Text"></rux-switch>' } },
+        }}
+    >
+        {HelpText.bind()}
+    </Story>
+</Canvas>
+
+### Error Text
+
+export const ErrorText = (args) => {
+    return html`
+        <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
+            <rux-switch
+                .disabled=${args.disabled}
+                .checked=${args.checked}
+                .errorText=${args.errorText}
+                .helpText=${args.helpText}
+                id="01"
+            ></rux-switch>
+        </div>
+    `
+}
+
+<Canvas>
+    <Story
+    name="ErrorText"
+    args={{
+        errorText: "Error"
+    }}
+         parameters={{
+            docs: { source: { code: '<rux-switch error-text="Error"></rux-switch>' } },
+        }}
+    >
+        {ErrorText.bind()}
+    </Story>
+</Canvas>
 
 ## Cherry Picking
 

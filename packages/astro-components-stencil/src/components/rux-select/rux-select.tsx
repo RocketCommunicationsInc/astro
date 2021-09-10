@@ -1,4 +1,13 @@
-import { Component, Host, h, Prop, Event, EventEmitter } from '@stencil/core'
+import {
+    Component,
+    Element,
+    Host,
+    h,
+    Prop,
+    Event,
+    EventEmitter,
+    Watch,
+} from '@stencil/core'
 
 @Component({
     tag: 'rux-select',
@@ -6,8 +15,9 @@ import { Component, Host, h, Prop, Event, EventEmitter } from '@stencil/core'
     scoped: true,
 })
 export class RuxSelect {
+    @Element() el!: HTMLRuxSelectElement
     /**
-     * Disables the item
+     * Disables the select menu via HTML disabled attribute. Select menu takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
      */
     @Prop({ reflect: true }) disabled: boolean = false
 
@@ -24,8 +34,7 @@ export class RuxSelect {
     /**
      * Id for the Select Input
      */
-    @Prop({ attribute: 'input-id' })
-    inputId?: string
+    @Prop({ attribute: 'input-id' }) inputId?: string
 
     /**
      * Id for the Label
@@ -43,6 +52,11 @@ export class RuxSelect {
     @Prop({ reflect: true }) name?: string
 
     /**
+     * The value of the selected option
+     */
+    @Prop({ mutable: true, reflect: true }) value?: string
+
+    /**
      * Event Emitted when the Value of the Select is Changed
      */
     @Event({ eventName: 'rux-change' })
@@ -53,8 +67,39 @@ export class RuxSelect {
      */
     @Event({ eventName: 'rux-blur' }) ruxBlur!: EventEmitter
 
+    @Watch('value')
+    onValueChange() {
+        this._syncOptionsFromValue()
+    }
+
+    connectedCallback() {
+        this._handleSlotChange = this._handleSlotChange.bind(this)
+    }
+    componentWillLoad() {
+        if (this.value) {
+            this._handleSlotChange()
+        }
+    }
+
     private _onBlur = () => {
         this.ruxBlur.emit()
+    }
+
+    private _handleSlotChange() {
+        this._syncOptionsFromValue()
+    }
+
+    private _syncOptionsFromValue() {
+        const options = [...Array.from(this.el.querySelectorAll('option'))]
+        options.map((option) => {
+            option.selected = option.value === this.value
+        })
+    }
+
+    private _onChange(e: Event) {
+        const target = e.target as HTMLOptionElement
+        this.value = target.value
+        this.ruxSelectChanged.emit()
     }
 
     render() {
@@ -83,10 +128,10 @@ export class RuxSelect {
                     disabled={disabled}
                     required={required}
                     name={name}
-                    onChange={() => this.ruxSelectChanged.emit()}
+                    onChange={(e) => this._onChange(e)}
                     onBlur={() => this._onBlur()}
                 >
-                    <slot></slot>
+                    <slot onSlotchange={this._handleSlotChange}></slot>
                 </select>
             </Host>
         )

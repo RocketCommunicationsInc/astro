@@ -211,7 +211,10 @@ export class RuxPopUpMenu {
             this.el.style.left = `${left}px`
             this.el.style.top = `${top}px`
 
-            this.el.style.setProperty('--caretLeft', `${caretLeft}px`)
+            this.el.style.setProperty(
+                '--popup-menu-caret-left',
+                `${caretLeft}px`
+            )
         }
     }
 

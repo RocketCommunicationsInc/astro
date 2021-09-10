@@ -1,29 +1,24 @@
 :host {
-    /* Tabs */
     /**
-    *   @prop --tabTextColor: Tab text color
+    *   @prop --tab-text-color: Tab text color
     */
-    --tabTextColor: var(--primary);
+    --tab-text-color: var(--primary);
     /**
-    *   @prop --tabBackgroundColor: Tab background color
+    *   @prop --tab-border-color: Tab border color
     */
-    --tabBackgroundColor: transparent;
+    --tab-border-color: transparent;
     /**
-    *   @prop --tabBorderColor: Tab border color
+    *   @prop --tab-hover-text-color: Tab hover text color
     */
-    --tabBorderColor: transparent;
+    --tab-hover-text-color: var(--default-text);
     /**
-    *   @prop --tabHoverTextColor: Tab hover text color
+    *   @prop --tab-selected-text-color: Tab selected text color
     */
-    --tabHoverTextColor: var(--defaultText);
+    --tab-selected-text-color: var(--default-text);
     /**
-    *   @prop --tabSelectedTextColor: Tab selected text color
+    *   @prop --tab-selected-border-color: Tab selected border color
     */
-    --tabSelectedTextColor: var(--defaultText);
-    /**
-    *   @prop --tabSelectedBorderColor: Tab selected border color
-    */
-    --tabSelectedBorderColor: var(--primary);
+    --tab-selected-border-color: var(--primary);
 
     box-sizing: border-box;
     display: flex;
@@ -33,9 +28,14 @@
     margin: 0;
     min-width: 5rem;
     text-decoration: none;
-    color: var(--tabTextColor);
-    border-bottom: 5px solid var(--tabBorderColor);
+    color: var(--tab-text-color);
+    border-bottom: 5px solid var(--tab-border-color);
 }
+
+:host([hidden]) {
+    display: none;
+}
+
 :host span {
     overflow: hidden;
     white-space: nowrap;
@@ -43,20 +43,20 @@
 }
 :host([small]) {
     min-width: 2rem;
-    border-bottom: 3px solid var(--tabBorderColor);
+    border-bottom: 3px solid var(--tab-border-color);
 }
 :host([small][selected]) {
-    border-bottom: solid 3px var(--tabSelectedBorderColor);
+    border-bottom: solid 3px var(--tab-selected-border-color);
 }
 :host([selected]) {
-    color: var(--tabSelectedTextColor);
-    border-bottom: 5px solid var(--tabSelectedBorderColor);
+    color: var(--tab-selected-text-color);
+    border-bottom: 5px solid var(--tab-selected-border-color);
 }
 :host(:hover) {
-    color: var(--tabHoverTextColor);
+    color: var(--tab-hover-text-color);
 }
 :host([disabled]) {
-    color: var(--tabTextColor);
-    opacity: var(--disabledOpacity);
-    cursor: var(--disabledCursor);
+    color: var(--tab-text-color);
+    opacity: var(--disabled-opacity);
+    cursor: not-allowed;
 }

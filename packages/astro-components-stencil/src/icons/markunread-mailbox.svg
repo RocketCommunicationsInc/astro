@@ -1,3 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g xmlns="http://www.w3.org/2000/svg" id="markunread-mailbox" fill-rule="nonzero">
-            <path d="M20 6H10v5c0 .55-.45 1-1 1s-1-.45-1-1V4h5c.55 0 1-.45 1-1V1c0-.55-.45-1-1-1H7c-.55 0-1 .45-1 1v5H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/>
-        </g></svg>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 6H10V11C10 11.55 9.55 12 9 12C8.45 12 8 11.55 8 11V4H13C13.55 4 14 3.55 14 3V1C14 0.45 13.55 0 13 0H7C6.45 0 6 0.45 6 1V6H4C2.9 6 2 6.9 2 8V20C2 21.1 2.9 22 4 22H20C21.1 22 22 21.1 22 20V8C22 6.9 21.1 6 20 6Z" fill="black"/>
+</svg>

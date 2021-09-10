@@ -45,14 +45,13 @@ Radio Buttons allow users to mutually select an option from a predefined set of 
 
 ## CSS Custom Properties
 
-| Name                                  | Description                    |
-| ------------------------------------- | ------------------------------ |
-| `--controlBorderColor`                | Checkbox border color          |
-| `--controlHoverBorderColor`           | Checkbox border color on hover |
-| `--controlLabelColor`                 | Label text color               |
-| `--controlOutlineBackgroundColor`     | Checkbox background color      |
-| `--controlSelectedOutlineBorderColor` | Selected checkbox border color |
-| `--controlTextColor`                  | Selected checkbox icon color   |
+| Name                         | Description                 |
+| ---------------------------- | --------------------------- |
+| `--radio-background-color`   | the radio background color  |
+| `--radio-border-color`       | Selected radio border color |
+| `--radio-hover-border-color` | Radio border color on hover |
+| `--radio-label-color`        | label text color            |
+| `--radio-selected-color`     | the radio selected color    |
 
 
 ----------------------------------------------

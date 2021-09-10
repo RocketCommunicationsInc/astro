@@ -25,6 +25,7 @@ export const Default = (args) => {
                 .max="${args.max}"
                 .min="${args.min}"
                 label="${args.label}"
+                .range="${args.range}"
                 .sublabel="${args.sublabel}"
                 .notifications="${args.notifications}"
             ></rux-monitoring-progress-icon>
@@ -36,7 +37,33 @@ export const Default = (args) => {
     <Story
         args={{
           progress: 50,
-          label: 'Progress'
+          label: 'Progress',
+          range: [
+            {
+                threshold: 17,
+                status: 'off',
+            },
+            {
+                threshold: 33,
+                status: 'standby',
+            },
+            {
+                threshold: 49,
+                status: 'normal',
+            },
+            {
+                threshold: 65,
+                status: 'caution',
+            },
+            {
+                threshold: 81,
+                status: 'serious',
+            },
+            {
+                threshold: 100,
+                status: 'critical',
+            }
+          ]
         }}
         name="Monitoring Progress Icon"
     >
@@ -48,6 +75,15 @@ export const Default = (args) => {
 
 <ArgsTable of="rux-monitoring-progress-icon" />
 
+### Example RangeItem[]
+```
+[
+  {
+      threshold: 17,
+      status: 'off',
+  }
+]
+```
 ## Cherry Picking
 
 If you're already utilizing a build system that supports tree shaking and want to only import this individual component:

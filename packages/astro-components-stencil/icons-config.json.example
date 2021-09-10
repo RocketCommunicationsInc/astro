@@ -1,0 +1,8 @@
+{
+  "figmaPersonalToken": "YOUR FIGMA TOKEN GOES HERE",
+  "fileId": "FIGMA FILE ID GOES HERE",
+  "page": "Icons",
+  "frame": "-1",
+  "iconsPath": "src/icons",
+  "metaPath": "src/stories"
+}

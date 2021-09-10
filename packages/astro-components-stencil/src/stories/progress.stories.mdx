@@ -43,6 +43,12 @@ export const Default = (args) => {
 
 <ArgsTable of="rux-progress" />
 
+## Usage
+
+### Label
+
+If `max` is 100, the label is displayed as a percentage.
+If `max` is not 100, the label is displayed as value/max (1450/2000)
 
 ## Variants
 
@@ -69,6 +75,32 @@ export const DeterminateProgressMax = (args) => {
         name="Determinate Progress Max"
     >
         {DeterminateProgressMax.bind()}
+    </Story>
+</Canvas>
+
+### Determinate Progress with Custom Max
+
+export const DeterminateProgressCustomMax = (args) => {
+    return html`
+        <div style="margin: 3rem auto;  padding: 2rem; text-align: center;">
+            <rux-progress
+                value="${args.value}"
+                .max=${args.max}
+                ?hide-label="${args.hideLabel}"
+            ></rux-progress>
+        </div>
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+          value: 1123,
+          max: 2400
+        }}
+        name="Determinate Progress with Custom Max"
+    >
+        {DeterminateProgressCustomMax.bind()}
     </Story>
 </Canvas>
 

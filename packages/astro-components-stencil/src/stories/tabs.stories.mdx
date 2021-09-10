@@ -10,6 +10,11 @@ import { html, render } from 'lit-html'
       'RuxTabPanels': 'rux-tab-panels'
       }}
     argTypes={extractArgTypes('rux-tabs')}
+    parameters={{
+        actions: {
+            handles: ['rux-selected rux-tabs']
+        }
+    }}
 />
 
 # Tabs

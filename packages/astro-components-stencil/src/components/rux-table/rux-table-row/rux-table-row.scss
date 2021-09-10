@@ -2,16 +2,20 @@
     display: table-row;
 }
 
+:host([hidden]) {
+    display: none;
+}
+
 :host(.is-selected) {
-    background: var(--tableRowSelectedBackgroundColor);
+    background: var(--table-row-selected-background-color);
     ::slotted(rux-table-cell) {
-        border-color: var(--tableRowSelectedBorderColor);
+        border-color: var(--table-row-selected-border-color);
     }
 }
 
 :host(:hover:not(.is-selected)) {
-    background: var(--tableRowHoverBackgroundColor);
-    color: var(--tableRowHoverTextColor);
+    background: var(--table-row-hover-background-color);
+    color: var(--table-row-hover-text-color);
 }
 
 ::slotted(rux-table-cell:first-child) {

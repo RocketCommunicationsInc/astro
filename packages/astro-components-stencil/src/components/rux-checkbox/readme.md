@@ -37,16 +37,16 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
 
 ## Properties
 
-| Property        | Attribute       | Description                                                                                                                                                                                 | Type                  | Default     |
-| --------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | ----------- |
-| `checked`       | `checked`       | Toggles checked state of a checkbox                                                                                                                                                         | `boolean`             | `false`     |
-| `disabled`      | `disabled`      | Disables the checkbox via HTML disabled attribute. Checkbox takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored. | `boolean`             | `false`     |
-| `errorText`     | `error-text`    | The validation error text                                                                                                                                                                   | `string \| undefined` | `undefined` |
-| `helpText`      | `help-text`     | The help or explanation text                                                                                                                                                                | `string \| undefined` | `undefined` |
-| `indeterminate` | `indeterminate` | Toggles indeterminate state of a checkbox                                                                                                                                                   | `boolean`             | `false`     |
-| `name`          | `name`          | The checkbox name                                                                                                                                                                           | `string`              | `''`        |
-| `required`      | `required`      | Sets the input as required                                                                                                                                                                  | `boolean`             | `false`     |
-| `value`         | `value`         | The checkbox value                                                                                                                                                                          | `string`              | `''`        |
+| Property        | Attribute       | Description                                                                                                                                                                                                                                       | Type                  | Default     |
+| --------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | ----------- |
+| `checked`       | `checked`       | Toggles checked state of a checkbox                                                                                                                                                                                                               | `boolean`             | `false`     |
+| `disabled`      | `disabled`      | Disables the checkbox via HTML disabled attribute. Checkbox takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.                                                       | `boolean`             | `false`     |
+| `errorText`     | `error-text`    | The validation error text                                                                                                                                                                                                                         | `string \| undefined` | `undefined` |
+| `helpText`      | `help-text`     | The help or explanation text                                                                                                                                                                                                                      | `string \| undefined` | `undefined` |
+| `indeterminate` | `indeterminate` | Toggles indeterminate state of a checkbox. The indeterminate property does not exist in HTML, but can be set in JS. [HTML Checkbox & Indeterminate State](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#indeterminate) | `boolean`             | `false`     |
+| `name`          | `name`          | The checkbox name                                                                                                                                                                                                                                 | `string`              | `''`        |
+| `required`      | `required`      | Sets the input as required                                                                                                                                                                                                                        | `boolean`             | `false`     |
+| `value`         | `value`         | The checkbox value                                                                                                                                                                                                                                | `string`              | `''`        |
 
 
 ## Events
@@ -58,16 +58,22 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
 | `rux-input`  | Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) | `CustomEvent<any>` |
 
 
+## Slots
+
+| Slot          | Description                |
+| ------------- | -------------------------- |
+| `"(default)"` | the label of the checkbox. |
+
+
 ## CSS Custom Properties
 
-| Name                                  | Description                    |
-| ------------------------------------- | ------------------------------ |
-| `--controlBorderColor`                | Checkbox border color          |
-| `--controlHoverBorderColor`           | Checkbox border color on hover |
-| `--controlLabelColor`                 | Label text color               |
-| `--controlOutlineBackgroundColor`     | Checkbox background color      |
-| `--controlSelectedOutlineBorderColor` | Selected checkbox border color |
-| `--controlTextColor`                  | Selected checkbox icon color   |
+| Name                            | Description                  |
+| ------------------------------- | ---------------------------- |
+| `--checkbox-background-color`   | Checkbox background color    |
+| `--checkbox-border-color`       | Checkbox border color        |
+| `--checkbox-checked-color`      | Checkmark color when checked |
+| `--checkbox-hover-border-color` | Hover border color           |
+| `--checkbox-label-color`        | Label text color             |
 
 
 ----------------------------------------------

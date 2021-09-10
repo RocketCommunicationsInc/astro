@@ -6,6 +6,10 @@ import { html, render } from 'lit-html'
     title="Components/Pop Up Menu"
     component="rux-pop-up-menu"
     argTypes={extractArgTypes('rux-pop-up-menu')}
+    subcomponents={{
+      'RuxMenuItem': 'rux-menu-item',
+      'RuxMenuItemDivider': 'rux-menu-item-divider'
+    }}
     parameters={{
        actions: {
         handles: [
@@ -49,6 +53,7 @@ export const Default = (args) => {
 
 <Canvas>
     <Story
+    height="400px"
       args={{
         open: true
         }}
@@ -61,6 +66,10 @@ export const Default = (args) => {
 ## API
 
 <ArgsTable of="rux-pop-up-menu" />
+
+## Usage
+
+Make use of [Menu Item](?path=/docs/components-pop-up-menu-menu-item--default-story) and [Menu Item Divider](?path=/docs/components-pop-up-menu-menu-item-divider--default-story) to compose your own Pop Up Menus.
 
 ## Variants
 
@@ -81,7 +90,7 @@ export const WithAnchors = (args) => {
                 height: 100%;
                 width: 100%;
             }
-            button {
+            .button {
                 display: inline-block;
                 position: absolute;
             }
@@ -285,6 +294,7 @@ export const WithAnchors = (args) => {
 <Canvas>
     <Story
       name="With Anchors"
+      height="900px"
     >
       {WithAnchors.bind()}
     </Story>

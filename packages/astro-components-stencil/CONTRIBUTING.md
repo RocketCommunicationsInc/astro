@@ -14,9 +14,19 @@
 
 In order to ship the RuxIcon component with all SVG assets included, we create individual Icon components for every Astro icon. Due to the number of icons, it is not efficient to create these manually. Instead, we utilize Stencil's build process to automatically create Icon components for each available SVG icon. Then we automatically convert those assets to Base64 and inject them into their respective components. This is all done in relatively few lines of code. A `rux-icon` wrapper component is available to make to it easier to call these individual components.
 
+### Fetching Icons From Figma
+
+Create a new `icons-config.json` file. Enter your Figma Personal Access Token and Figma File Id.
+
+`mv icons-config.json.example icons-config.json`
+
+Pull the latest icons from Figma
+
+`npm run icons.fetch`
+
 ### Generating Icons
 
-`npm run generate:icons`
+`npm run icons.generate`
 
 This command takes each .svg file in `src/icons` and creates Stencil components from them.
 

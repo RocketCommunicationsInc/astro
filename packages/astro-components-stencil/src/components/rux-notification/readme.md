@@ -78,6 +78,13 @@ The Astro UXDS Notification Banner hides from view using absolute positioning in
 | `status`     | `status`      | The background color. Possible values include 'standby', 'normal', 'caution', and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).                                                                                                                                                                                                                                                                                                                     | `"caution" \| "critical" \| "normal" \| "standby"` | `'standby'` |
 
 
+## CSS Custom Properties
+
+| Name                        | Description                 |
+| --------------------------- | --------------------------- |
+| `--notification-text-color` | The notification text color |
+
+
 ## Dependencies
 
 ### Depends on

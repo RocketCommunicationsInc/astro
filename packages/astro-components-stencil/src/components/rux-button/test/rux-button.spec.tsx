@@ -24,7 +24,7 @@ describe('rux-button', () => {
         expect(page.root).toEqualHtml(`
           <rux-button>
             <mock:shadow-root>
-              <button type="button" class="rux-button">
+              <button type="button" class="rux-button rux-button--default">
                 <slot></slot>
               </button>
             </mock:shadow-root>

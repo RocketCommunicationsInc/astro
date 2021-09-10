@@ -1,13 +1,23 @@
-/**
-  * @prop() logHeaderBackgroundColor: the log header background
-  */
-
 :host {
+    /** @prop() --log-header-background-color: the log header background color*/
+    --log-header-background-color: var(--global-status-bar);
+
+    /** @prop() --log-filter-background-color: the log filter background color*/
+    --log-filter-background-color: var(--primary-alt);
+
+    /** @prop() --log-filter-text-color: the log filter text color*/
+    --log-filter-text-color: var(--inverse-text);
+
     display: block;
     overflow: hidden;
 }
+
+:host([hidden]) {
+    display: none;
+}
+
 rux-table {
-    --tableHeaderBackgroundColor: var(--logHeaderBackgroundColor);
+    --table-header-background-color: var(--log-header-background-color);
 }
 
 .rux-log__header-event-cell {
@@ -30,7 +40,7 @@ rux-table-header-cell {
 .rux-log__notification {
     width: 2000%;
     align-content: center;
-    color: var(--logFilterTextColor);
-    background-color: var(--logFilterBackgroundColor);
+    color: var(--log-filter-text-color);
+    background-color: var(--log-filter-background-color);
     padding: 0.5rem;
 }

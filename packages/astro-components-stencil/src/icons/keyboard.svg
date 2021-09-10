@@ -1,3 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g xmlns="http://www.w3.org/2000/svg" id="keyboard" fill-rule="nonzero">
-            <path d="M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 2H5v-2h2v2zm0-3H5V8h2v2zm8 7H9c-.55 0-1-.45-1-1s.45-1 1-1h6c.55 0 1 .45 1 1s-.45 1-1 1zm1-4h-2v-2h2v2zm0-3h-2V8h2v2zm3 3h-2v-2h2v2zm0-3h-2V8h2v2z"/>
-        </g></svg>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4 5H20C21.1 5 22 5.9 22 7V17C22 18.1 21.1 19 20 19H4C2.9 19 2 18.1 2 17L2.01 7C2.01 5.9 2.9 5 4 5ZM13 8H11V10H13V8ZM11 11H13V13H11V11ZM10 8H8V10H10V8ZM8 11H10V13H8V11ZM5 13H7V11H5V13ZM7 10H5V8H7V10ZM9 17H15C15.55 17 16 16.55 16 16C16 15.45 15.55 15 15 15H9C8.45 15 8 15.45 8 16C8 16.55 8.45 17 9 17ZM16 13H14V11H16V13ZM14 10H16V8H14V10ZM19 13H17V11H19V13ZM17 10H19V8H17V10Z" fill="black"/>
+</svg>

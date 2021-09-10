@@ -1,31 +1,32 @@
 :host {
     /**
-  * @prop --inputBackgroundColor: the input background color
+  * @prop --input-background-color: the input background color
   */
+    --input-background-color: var(--background);
     /**
-    * @prop --inputBorderColor: the input border color
+    * @prop --input-border-color: the input border color
     */
+    --input-border-color: var(--active);
+
     /**
-    * @prop --inputTextColor: the input text color
+    * @prop --input-text-color: the input text color
     */
+    --input-text-color: var(--default-text);
     /**
-    * @prop --inputFocusBorderColor: the input focus border color
+    * @prop --input-focus-border-color: the input focus border color
     */
+
+    --input-focus-border-color: var(--hover);
+
     /**
-    * @prop --inputFocusTextColor: the input focus text color
+    * @prop --input-selection-background-color: the background color of highlighted text
     */
+    --input-selection-background-color: var(--color-secondary-300);
+
     /**
-    * @prop --inputSelectionBackgroundColor: the background color of highlighted text
+    * @prop --input-invalid-border-color: the input invalid border color
     */
-    /**
-    * @prop --inputInvalidBorderColor: the input invalid border color
-    */
-    /**
-    * @prop --inputSearchIcon: the input search icon
-    */
-    /**
-    * @prop --inputSearchCancel: the input search cancel
-    */
+    --input-invalid-border-color: var(--color-critical);
 
     display: block;
 
@@ -33,9 +34,9 @@
         display: flex;
         flex-direction: column;
 
-        font-family: var(--fontFamily);
-        font-size: var(--fontSize);
-        color: var(--fontColor);
+        font-family: var(--font-family);
+        font-size: var(--font-size);
+        color: var(--default-text);
     }
     .rux-input {
         box-sizing: border-box;
@@ -43,52 +44,51 @@
         height: 2.125rem;
         width: 100%;
         padding: 0 0.625rem;
-        border: 1px solid var(--inputBorderColor);
+        border: 1px solid var(--input-border-color);
         border-radius: 3px;
-        font-size: var(--fontSize, 1rem);
-        color: var(--inputTextColor);
-        background-color: var(--inputBackgroundColor);
+        font-size: var(--font-size, 1rem);
+        color: var(--input-text-color);
+        background-color: var(--input-background-color);
         &--invalid {
-            border: 1px solid var(--inputInvalidBorderColor);
+            border: 1px solid var(--input-invalid-border-color);
         }
         &--disabled {
             opacity: 0.4;
-            opacity: var(--disabledOpacity);
+            opacity: var(--disabled-opacity);
             cursor: not-allowed;
-            cursor: var(--disabledCursor);
+            cursor: not-allowed;
         }
         &--search {
             -webkit-appearance: none;
             -moz-appearance: none;
             padding: 0.5rem 0.5rem 0.5rem 2rem;
-            background: var(--inputBackgroundColor) var(--inputSearchIcon) 10px/0.975rem
-                no-repeat;
+            background: var(--input-background-color)
+                url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.37 26.457a15.282 15.282 0 000-21.918c-6.176-6.052-16.187-6.052-22.361 0a15.274 15.274 0 00-1.541 20.166c-.367.147-.713.37-1.014.665L.926 34.709a3.056 3.056 0 000 4.383 3.208 3.208 0 004.472 0l9.528-9.339c.352-.345.604-.753.756-1.186 6.137 3.831 14.347 3.124 19.687-2.11zM24.193 4.043c6.454 0 11.686 5.129 11.686 11.455 0 6.326-5.232 11.455-11.686 11.455-6.455 0-11.687-5.129-11.687-11.455 0-6.326 5.232-11.455 11.687-11.455z' fill='%234dacff' fill-rule='evenodd'/%3E%3C/svg%3E")
+                10px/0.975rem no-repeat;
         }
     }
 
     .rux-input {
         &:focus {
-            border-color: var(--inputFocusBorderColor);
+            border-color: var(--input-focus-border-color);
             outline: none;
-            color: var(--inputFocusTextColor);
         }
         &:hover {
-            border-color: var(--inputFocusBorderColor);
+            border-color: var(--input-focus-border-color);
             outline: none;
-            color: var(--inputFocusTextColor);
         }
         &--disabled:hover {
-            border: 1px solid var(--inputBorderColor);
-            color: var(--inputTextColor);
+            border: 1px solid var(--input-border-color);
+            color: var(--input-text-color);
         }
         &--invalid:hover {
-            border: 1px solid var(--inputInvalidBorderColor);
+            border: 1px solid var(--input-invalid-border-color);
         }
         &::placeholder {
             font-size: 1rem;
             font-weight: normal;
-            font-family: var(--fontFamily);
-            color: var(--defaultText);
+            font-family: var(--font-family);
+            color: var(--default-text);
             opacity: 0.6;
         }
     }
@@ -101,17 +101,17 @@
     }
 
     ::selection {
-        background-color: var(--inputSelectionBackgroundColor);
+        background-color: var(--input-selection-background-color);
     }
 
     .rux-form-field--small {
         .rux-input-label {
-            font-size: var(--fontSizeMD);
+            font-size: var(--font-size-md);
         }
         .rux-input {
             height: 1.625rem;
             padding: 0.3rem;
-            font-size: var(--fontSizeMD);
+            font-size: var(--font-size-md);
         }
 
         .rux-input--search {
@@ -120,12 +120,9 @@
     }
     .rux-help-text {
         margin-top: 0.625rem;
-        color: var(--secondaryText);
-        font-size: 0.875rem;
-        font-size: var(--fontSizeMD);
-        font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-            Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-        font-family: var(--fontFamily);
+        color: var(--secondary-text);
+        font-size: var(--font-size-md);
+        font-family: var(--font-family);
         font-weight: normal;
         letter-spacing: 0.5px;
     }
@@ -141,12 +138,13 @@
         -webkit-order: 3;
         order: 3;
         margin-top: 0.625rem;
-        color: var(--colorCritical);
-        font-size: 0.875rem;
-        font-size: var(--fontSizeMD);
-        font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-            Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-        font-family: var(--fontFamily);
+        color: var(--color-critical);
+        font-size: var(--font-size-md);
+        font-family: var(--font-family);
         font-weight: bold;
     }
+}
+
+:host([hidden]) {
+    display: none;
 }

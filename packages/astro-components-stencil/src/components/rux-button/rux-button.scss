@@ -1,67 +1,75 @@
 :host {
-    /* Button */
     /**
-     * @prop --buttonTextColor: Button text color
+     * @prop --button-text-color: Button text color
      */
+    --button-text-color: var(--inverse-text);
 
     /**
-     * @prop --buttonBackgroundColor: Button background color
+     * @prop --button-background-color: Button background color
      */
+    --button-background-color: var(--primary);
 
     /**
-     * @prop --buttonBorderColor: Button border color
+     * @prop --button-border-color: Button border color
      */
-
-    /* Button Hover State */
-    /**
-     * @prop --buttonHoverTextColor: Button hover text color
-     */
+    --button-border-color: transparent;
 
     /**
-     * @prop --buttonHoverBackgroundColor: Button hover background color
+     * @prop --button-hover-background-color: Button hover background color
      */
-    /**
-     * @prop --buttonHoverBorderColor: Button hover border color
-     */
-
-    /* Button Active State */
-    /**
-     * @prop --buttonActiveControlTextColor: Button active text color
-     */
+    --button-hover-background-color: var(--hover);
 
     /**
-     * @prop --buttonActiveBackgroundColor: Button active background color
+     * @prop --button-hover-border-color: Button hover border color
      */
+    --button-hover-border-color: transparent;
 
     /**
-     * @prop --buttonActiveBorderColor: Button active border color
+     * @prop --button-active-background-color: Button active background color
      */
+    --button-active-background-color: var(--primary);
 
     /**
-     * @prop --buttonSecondaryTextColor: Button secondary text color
+     * @prop --button-active-border-color: Button active border color
      */
+    --button-active-border-color: var(--primary);
 
     /**
-     * @prop --buttonSecondaryBackgroundColor: Button secondary background color
+     * @prop --button-secondary-text-color: Button secondary text color
      */
 
-    /**
-     * @prop --buttonSecondaryBorderColor: Button secondary border color
-     */
+    --button-secondary-text-color: var(--primary);
 
     /**
-     * @prop --buttonSecondaryHoverTextColor: Button secondary hover text color
+     * @prop --button-secondary-background-color: Button secondary background color
      */
+    --button-secondary-background-color: transparent;
 
     /**
-     * @prop --buttonSecondaryHoverBackgroundColor:  Button secondary hover background color
+     * @prop --button-secondary-border-color: Button secondary border color
      */
+    --button-secondary-border-color: var(--primary, rgb(0, 90, 143));
 
     /**
-     * @prop --buttonSecondaryHoverBorderColor:  Button secondary hover border color
+     * @prop --button-secondary-hover-background-color:  Button secondary hover background color
      */
+    --button-secondary-hover-background-color: transparent;
+
+    /**
+     * @prop --button-secondary-hover-border-color:  Button secondary hover border color
+     */
+    --button-secondary-hover-border-color: var(--hover);
+
+    display: inline-block;
 }
 
+:host([hidden]) {
+    display: none;
+}
+
+:host([disabled]) {
+    pointer-events: none;
+}
 .rux-button {
     display: flex;
     position: relative;
@@ -72,10 +80,10 @@
     height: 2.125rem;
     min-width: 2.25rem;
 
-    border-radius: var(--buttonBorderRadius);
+    border-radius: var(--border-radius-button);
 
-    color: var(--buttonTextColor);
-    font-family: var(--fontFamily);
+    color: var(--button-text-color);
+    font-family: var(--font-family);
     font-size: 1rem;
 
     white-space: nowrap;
@@ -87,16 +95,18 @@
 
     user-select: none;
 
-    ::slotted(rux-icon),
-    rux-icon {
+    rux-icon,
+    ::slotted(rux-icon) {
         height: 1rem;
         width: 1rem;
         margin-right: 0.625rem;
+        color: var(--button-text-color);
     }
 
     &:disabled {
-        opacity: var(--disabledOpacity);
-        cursor: var(--disabledCursor);
+        opacity: var(--disabled-opacity);
+        cursor: not-allowed;
+        pointer-events: none;
     }
 
     &:focus {
@@ -107,63 +117,37 @@
         cursor: pointer;
     }
 
-    // Press/Active States
-    &:active:not([hover]):not([disabled]) {
-        border-color: var(--buttonActiveBorderColor) !important;
-        background-color: var(--buttonActiveBackgroundColor) !important;
-    }
-
-    &:hover:not([active]):not([disabled]):not(.rux-button--secondary) {
-        border-color: var(--buttonHoverBorderColor);
-        background-color: var(--buttonHoverBackgroundColor);
-    }
-
-    // .rux-button-group
-    &-group {
-        display: flex;
-        .rux-button:not(:last-child) {
-            margin-right: 0.625rem;
+    &--default {
+        border: 1px solid var(--button-border-color);
+        background-color: var(--button-background-color);
+        &:hover:not([disabled]) {
+            border-color: var(--button-hover-border-color);
+            background-color: var(--button-hover-background-color);
+        }
+        &:active:not([disabled]) {
+            border-color: var(--button-active-border-color);
+            background-color: var(--button-active-background-color);
         }
     }
 
-    &:not(.rux-button--secondary) {
-        border: 1px solid var(--buttonBorderColor);
-        background-color: var(--buttonBackgroundColor);
-    }
-
-    // elements
-
-    // .rux-button__icon
-    &__icon {
-        height: 1.5rem;
-        width: 1.5rem;
-
-        margin-right: 0.625rem;
-        margin-left: -0.625rem;
-
-        .rux-icon {
-            height: auto;
-            width: 100%;
-            fill: var(--buttonTextColor);
-            color: var(--buttonTextColor);
-        }
-    }
-
-    // variants
-    // .rux-button--secondary
     &--secondary {
-        color: var(--buttonSecondaryTextColor);
-        background-color: var(--buttonSecondaryBackgroundColor);
-        border: 1px solid var(--buttonSecondaryBorderColor);
-        &:active:not([hover]):not([disabled]) {
-            border-color: var(--buttonSecondaryBorderColor) !important;
-            background-color: var(--buttonSecondaryBackgroundColor) !important;
-        }
+        color: var(--button-secondary-text-color);
+        background-color: var(--button-secondary-background-color);
+        border: 1px solid var(--button-secondary-border-color);
 
         &:hover:not([disabled]) {
-            color: var(--buttonSecondaryTextColor);
-            background-color: var(--buttonSecondaryHoverBackgroundColor);
-            border-color: var(--buttonSecondaryHoverBorderColor);
+            color: var(--button-secondary-text-color);
+            background-color: var(--button-secondary-hover-background-color);
+            border-color: var(--button-secondary-hover-border-color);
+        }
+
+        &:active:not([disabled]) {
+            border-color: var(--button-secondary-border-color);
+            background-color: var(--button-secondary-background-color);
+        }
+        rux-icon,
+        ::slotted(rux-icon) {
+            color: var(--button-secondary-text-color);
         }
     }
 
@@ -171,99 +155,22 @@
         height: 1.625rem;
         padding: 0 1rem;
         line-height: 1;
-        .rux-button--icon-only {
-            width: 3rem;
-            height: 1.625rem;
-        }
-
-        &.rux-button {
-            &__icon {
-                height: 0.875rem;
-                width: 0.875rem;
-            }
-
-            &--icon-only {
-                min-width: 1.625rem;
-                padding: 0 0.75rem;
-            }
-        }
     }
 
     &--large {
         height: 2.875rem;
         min-width: 3rem;
         padding: 0 1rem;
-        .rux-button--icon-only {
-            width: 3rem;
-            height: 2.875rem;
-        }
-        .rux-button__icon {
-            height: 1rem;
-            width: 1rem;
-        }
-    }
-
-    &--critical,
-    &--critical:active:not([hover]):not([disabled]):not(.rux-button--secondary) {
-        background-color: var(--colorCriticalDarken1) !important;
-        border-color: var(--colorCriticalDarken1) !important;
-
-        &:hover:not([active]):not([disabled]) {
-            background-color: var(--colorCritical);
-            border-color: var(--colorCritical);
-        }
     }
 
     &--icon-only {
         font-size: 0px;
         width: 3rem;
-        hieght: 2.125rem;
-        .rux-button__icon {
-            margin-left: -0.625rem;
-            margin-right: -0.625rem;
-        }
     }
-}
-
-.rux-button--large.rux-button--icon-only .rux-button__icon {
-    margin-left: -1rem;
-    margin-right: -1rem;
 }
 
 .rux-button--icon-only ::slotted(rux-icon),
 .rux-button--icon-only rux-icon {
     margin-left: -0.625rem;
     margin-right: -0.625rem;
-}
-
-.rux-button--large.rux-button--icon-only ::slotted(rux-icon),
-.rux-button--large.rux-button--icon-only rux-icon {
-    margin-left: -1rem;
-    margin-right: -1rem;
-}
-
-.rux-button--small ::slotted(rux-icon),
-.rux-button--small rux-icon {
-    height: 1rem;
-    width: 1rem;
-}
-
-.rux-button--large ::slotted(rux-icon),
-.rux-button--large rux-icon {
-    height: 1rem;
-    width: 1rem;
-}
-
-.rux-button rux-icon {
-    fill: var(--buttonTextColor);
-}
-.rux-button--secondary rux-icon,
-.rux-button--secondary rux-icon svg > use {
-    fill: var(--buttonSecondaryTextColor);
-}
-.rux-button ::slotted(rux-icon) {
-    fill: var(--buttonTextColor);
-}
-.rux-button--secondary ::slotted(rux-icon) {
-    fill: var(--buttonSecondaryTextColor);
 }

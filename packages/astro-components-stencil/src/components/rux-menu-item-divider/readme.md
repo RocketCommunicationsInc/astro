@@ -57,9 +57,9 @@ Pass properties as slotted components in the Astro Pop Up Menu or Astro Select M
 
 ## CSS Custom Properties
 
-| Name                           | Description                    |
-| ------------------------------ | ------------------------------ |
-| `--menuItemDividerBorderColor` | Menu Item Divider Border Color |
+| Name                               | Description                    |
+| ---------------------------------- | ------------------------------ |
+| `--menu-item-divider-border-color` | Menu Item Divider Border Color |
 
 
 ----------------------------------------------

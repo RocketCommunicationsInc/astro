@@ -36,6 +36,13 @@ By default button group aligns buttons to the left. Alternatively an `h-align` p
 | `hAlign` | `h-align` | The horizontal alignment of buttons within the group | `"center" \| "left" \| "right"` | `'left'` |
 
 
+## Slots
+
+| Slot          | Description                                             |
+| ------------- | ------------------------------------------------------- |
+| `"(default)"` | Two or more RuxButton components to render in the group |
+
+
 ## Dependencies
 
 ### Used by

@@ -1,6 +1,7 @@
 :host {
     display: block;
     position: sticky;
+    z-index: 50;
 
     top: 0;
     left: 0;
@@ -11,17 +12,22 @@
     padding: 0 1.875rem;
 
     box-sizing: border-box;
-    background-color: var(--globalAppHeader);
+    background-color: var(--global-status-bar);
 
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
 
-    contain: content; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
+    contain: layout; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
+}
+
+:host([hidden]) {
+    display: none;
 }
 
 header {
+    overflow: hidden;
     display: flex;
     height: 100%;
     width: 100%;
@@ -51,7 +57,7 @@ slot[name='left-side'] > .shifted-up,
     flex-wrap: wrap;
     padding: 0;
     margin: 0px auto 0px 0px;
-    color: var(--inputBackground);
+    color: var(--color-basics-white);
     white-space: nowrap;
 }
 
@@ -94,8 +100,8 @@ slot[name='left-side'] > .shifted-up,
 // all temp classes and their subsequent styling will be replaced with internal component styles.
 .app-state {
     box-sizing: border-box;
-    color: var(--colorWhite);
-    background-color: var(--colorTertiaryDarken4);
+    color: var(--color-basics-white);
+    background-color: var(--color-basics-black);
     border-radius: 2px;
     font-size: 14px;
     padding: 2px 6px;

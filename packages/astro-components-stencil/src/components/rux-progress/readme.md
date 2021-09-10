@@ -88,24 +88,26 @@ Indeterminate progress
 
 ## Properties
 
-| Property    | Attribute    | Description                                                                                                                                      | Type                  | Default     |
-| ----------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------- | ----------- |
-| `hideLabel` | `hide-label` | Displays text output of progress as a percentage. Note: when using a max value other than 100 output is displated as value/max (e.g., 1450/2000) | `boolean`             | `false`     |
-| `max`       | `max`        | For progress bars where progress bars have a maximum value greater or less than 100                                                              | `number`              | `100`       |
-| `value`     | `value`      | Current progress value between 0 and 100 (or the max, if defined below).                                                                         | `number \| undefined` | `undefined` |
+| Property    | Attribute    | Description                                                                         | Type                  | Default     |
+| ----------- | ------------ | ----------------------------------------------------------------------------------- | --------------------- | ----------- |
+| `hideLabel` | `hide-label` | Hides the progress label                                                            | `boolean`             | `false`     |
+| `max`       | `max`        | For progress bars where progress bars have a maximum value greater or less than 100 | `number`              | `100`       |
+| `value`     | `value`      | Current progress value between 0 and 100 (or the max, if defined below).            | `number \| undefined` | `undefined` |
 
 
 ## CSS Custom Properties
 
-| Name                                        | Description                                    |
-| ------------------------------------------- | ---------------------------------------------- |
-| `--progressDeterminateBarBackgroundColor`   | Bar background color of determinate progress   |
-| `--progressDeterminateTrackBackgroundColor` | Track background color of determinate progress |
-| `--progressDeterminateTrackBorderColor`     | Track border color of determinate progress.    |
-| `--progressHeight`                          | The height of rux-progress                     |
-| `--progressPadding`                         | The padding of rux-progress                    |
-| `--progressRadius`                          | The border radius of rux-progress bar          |
-| `--progressWidth`                           | The width of rux-progress                      |
+| Name                                            | Description                                    |
+| ----------------------------------------------- | ---------------------------------------------- |
+| `--progress-determinate-bar-background-color`   | Bar background color of determinate progress   |
+| `--progress-determinate-track-background-color` | Track background color of determinate progress |
+| `--progress-determinate-track-border-color`     | Track border color of determinate progress.    |
+| `--progress-height`                             | The height of rux-progress                     |
+| `--progress-indeterminate`                      | The indeterminate progress svg                 |
+| `--progress-label-color`                        | The progress label color                       |
+| `--progress-padding`                            | The padding of rux-progress                    |
+| `--progress-radius`                             | The border radius of rux-progress bar          |
+| `--progress-width`                              | The width of rux-progress                      |
 
 
 ----------------------------------------------

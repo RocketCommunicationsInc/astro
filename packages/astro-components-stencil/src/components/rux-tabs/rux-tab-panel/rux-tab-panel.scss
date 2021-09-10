@@ -4,6 +4,11 @@
     visibility: visible;
     z-index: 1;
 }
+
+:host([hidden]) {
+    display: none;
+}
+
 :host(.hidden) {
     display: none;
     position: absolute;

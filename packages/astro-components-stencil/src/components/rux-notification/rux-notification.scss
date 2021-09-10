@@ -1,4 +1,8 @@
 :host {
+    /**
+  * @prop --notification-text-color: The notification text color
+  */
+    --notification-text-color: var(--color-tertiary-900);
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
@@ -11,46 +15,37 @@
     width: 100%;
     position: absolute;
     padding: 0 1.25rem;
-    background-color: var(--colorStandbyLighten1);
+    background-color: var(--color-status-standby-400);
     transition: top 0.5s ease;
     box-sizing: border-box;
-    font-size: var(--fontSizeXL);
-    color: var(--notificationTextColor);
+    font-size: var(--font-size-xl);
+    color: var(--notification-text-color);
     rux-icon {
         align-items: center;
         justify-content: flex-end;
-    }
-}
-:host([open]) {
-    top: 0;
-}
-:host,
-:host([status='standby']) {
-    background-color: var(--colorStandbyLighten1);
-    rux-icon {
-        stroke: var(--colorStandbyDarken1);
-        fill: var(--colorStandbyDarken1);
+        color: var(--banner-clear);
     }
 }
 
+:host([hidden]) {
+    display: none;
+}
+
+:host([open]) {
+    top: 0;
+}
+
+:host,
+:host([status='standby']) {
+    background-color: var(--color-status-standby-400);
+}
+
 :host([status='normal']) {
-    background-color: var(--colorNormalLighten2);
-    rux-icon {
-        stroke: var(--colorNormalDarken1);
-        fill: var(--colorNormalDarken1);
-    }
+    background-color: var(--color-status-normal-400);
 }
 :host([status='caution']) {
-    background-color: var(--colorCautionLighten1);
-    rux-icon {
-        stroke: var(--colorCautionDarken1);
-        fill: var(--colorCautionDarken1);
-    }
+    background-color: var(--color-status-caution-400);
 }
 :host([status='critical']) {
-    background-color: var(--colorCriticalLighten1);
-    rux-icon {
-        stroke: var(--colorCriticalDarken1);
-        fill: var(--colorCriticalDarken1);
-    }
+    background-color: var(--color-status-critical-400);
 }

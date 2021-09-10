@@ -14,11 +14,6 @@ import svgIcon from '../../../icons/signal-wifi-4-bar-lock.svg'
 })
 export class RuxIconSignalWifi4BarLock {
     /**
-     * The fill color for the icon
-     */
-    @Prop() color?: string
-
-    /**
      * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
      */
 
@@ -46,7 +41,6 @@ export class RuxIconSignalWifi4BarLock {
     }
     render() {
         const style = {
-            fill: this.color,
             height: this.iconSize,
             width: this.iconSize,
         }

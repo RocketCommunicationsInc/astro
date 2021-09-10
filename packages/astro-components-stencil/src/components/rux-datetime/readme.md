@@ -32,6 +32,7 @@ RuxDatetime is a utility component that provides a convenient wrapper around the
 | -------------- | ---------------- | -------------------------------- | ---------------------------------------------------------------------- | ------------ |
 | `date`         | `date`           | The date time to be formatted    | `Date \| string`                                                       | `new Date()` |
 | `day`          | `day`            | Format options for day           | `"2-digit" \| "numeric" \| undefined`                                  | `undefined`  |
+| `era`          | `era`            | Format options for era           | `"long" \| "narrow" \| "short" \| undefined`                           | `undefined`  |
 | `hour`         | `hour`           | Format options for hour          | `"2-digit" \| "numeric" \| undefined`                                  | `undefined`  |
 | `hour12`       | `hour-12`        | Display date in 12 hour time.    | `boolean`                                                              | `false`      |
 | `locale`       | `locale`         | The locale                       | `string`                                                               | `'default'`  |
@@ -40,6 +41,7 @@ RuxDatetime is a utility component that provides a convenient wrapper around the
 | `second`       | `second`         | Format options for second        | `"2-digit" \| "numeric" \| undefined`                                  | `undefined`  |
 | `timeZone`     | `time-zone`      | Format options for Timezone      | `string \| undefined`                                                  | `undefined`  |
 | `timeZoneName` | `time-zone-name` | Format options for Timezone name | `"long" \| "short" \| undefined`                                       | `undefined`  |
+| `weekday`      | `weekday`        | Format options for weekday       | `"long" \| "narrow" \| "short" \| undefined`                           | `undefined`  |
 | `year`         | `year`           | Format options for year          | `"2-digit" \| "numeric" \| undefined`                                  | `undefined`  |
 
 

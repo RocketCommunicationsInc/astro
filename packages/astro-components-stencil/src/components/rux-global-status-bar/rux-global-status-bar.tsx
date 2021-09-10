@@ -1,6 +1,12 @@
 import { Prop, Component, Host, h } from '@stencil/core'
 import { AppMeta } from './appMeta/appMeta'
 
+/**
+ * @slot (default) - Used for any additional center content (RuxClock, RuxTabs, etc.)
+ * @slot left-side - Used to prepend a RuxIcon or similar element
+ * @slot app-meta - Used to display the Application's metadata (Domain, Name, State, Version, etc.)
+ * @slot right-side - Used to append optional content
+ */
 @Component({
     tag: 'rux-global-status-bar',
     styleUrl: 'rux-global-status-bar.scss',
@@ -8,26 +14,33 @@ import { AppMeta } from './appMeta/appMeta'
 })
 export class RuxGlobalStatusBar {
     /**
-     * Declares whether a rux-icon will be shown in the left-side slot
+     * Declares whether the menu-icon will be shown in the left-side slot
      */
     @Prop({
         attribute: 'include-icon',
     })
     includeIcon: boolean = false
     /**
-     * Declares whether the app-state component will be shown in the app-meta slot
+     * Declares what text will render and whether the app-state component will be shown in the app-meta slot
      */
     @Prop({
-        attribute: 'include-app-state',
+        attribute: 'app-state',
     })
-    includeAppState: boolean = false
+    appState?: string = ''
     /**
-     * Declares whether the username component will be shown in the app-meta slot
+     * Declares the color of the the app-state component background
      */
     @Prop({
-        attribute: 'include-username',
+        attribute: 'app-state-color',
     })
-    includeUsername: boolean = false
+    appStateColor?: 'tag1' | 'tag2' | 'tag3' | 'tag4' = 'tag1'
+    /**
+     * Declares what text will render and whether the username component will be shown in the app-meta slot
+     */
+    @Prop({
+        attribute: 'username',
+    })
+    username?: string = ''
     /**
      * Sets the domain of the application to be displayed in the app-meta element
      */
@@ -53,9 +66,16 @@ export class RuxGlobalStatusBar {
      * Sets the icon to be displayed in the default rux-icon component
      */
     @Prop({ attribute: 'menu-icon', mutable: true, reflect: true })
-    menuIcon?: string = 'apps'
+    menuIcon: string = 'apps'
 
     render() {
+        const TagColor = {
+            tag1: 'var(--color-tag-1-600)',
+            tag2: 'var(--color-tag-2-600)',
+            tag3: 'var(--color-tag-3-600)',
+            tag4: 'var(--color-tag-4-600)',
+        }
+
         return (
             <Host>
                 <header>
@@ -65,7 +85,7 @@ export class RuxGlobalStatusBar {
                                 icon={`${this.menuIcon}`}
                                 size="small"
                                 class={
-                                    this.includeAppState || this.includeUsername
+                                    this.appState || this.username
                                         ? 'shifted-up'
                                         : ''
                                 }
@@ -83,11 +103,24 @@ export class RuxGlobalStatusBar {
                                 version={this.appVersion}
                             >
                                 <div class="app-state-wrapper">
-                                    {this.includeAppState && (
-                                        <div class="app-state">App state</div>
+                                    {this.appState && (
+                                        <div
+                                            class="app-state"
+                                            style={{
+                                                backgroundColor: `${
+                                                    TagColor[
+                                                        this.appStateColor!
+                                                    ]
+                                                }`,
+                                            }}
+                                        >
+                                            {this.appState}
+                                        </div>
                                     )}
-                                    {this.includeUsername && (
-                                        <div class="username">Username</div>
+                                    {this.username && (
+                                        <div class="username">
+                                            {this.username}
+                                        </div>
                                     )}
                                 </div>
                             </AppMeta>

@@ -114,10 +114,10 @@ export class RuxSlider {
 
         this._setValuePercent()
     }
-    //Sets the --valuePercent CSS var
+    //Sets the --slider-value-percent CSS var
     private _setValuePercent() {
         const dif = ((this.value! - this.min!) / (this.max! - this.min!)) * 100
-        this.el.style.setProperty('--valuePercent', `${dif}%`)
+        this.el.style.setProperty('--slider-value-percent', `${dif}%`)
     }
 
     private _onInput(e: Event) {
@@ -133,7 +133,7 @@ export class RuxSlider {
     //Safari needs 0px top for the thumb to look normal.
     private _getBrowser(ua: string) {
         if (ua.indexOf('safari') > -1 && ua.indexOf('chrome') == -1) {
-            this.el.style.setProperty('--top', '0px')
+            this.el.style.setProperty('--slider-top', '0px')
         }
     }
 

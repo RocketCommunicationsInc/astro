@@ -1,15 +1,28 @@
-import { Component, h, Prop, Event, EventEmitter, Element } from '@stencil/core'
+import {
+    Component,
+    h,
+    Prop,
+    Event,
+    EventEmitter,
+    Element,
+    Watch,
+} from '@stencil/core'
 import { renderHiddenInput } from '../../utils/utils'
 
 let id = 0
 
+/**
+ * @slot (default) - the label of the checkbox.
+ */
 @Component({
     tag: 'rux-checkbox',
     styleUrl: 'rux-checkbox.scss',
     shadow: true,
 })
 export class RuxCheckbox {
-    checkboxId = `rux-checkbox-${++id}`
+    private checkboxId = `rux-checkbox-${++id}`
+    private _inputEl?: HTMLInputElement
+
     @Element() el!: HTMLRuxCheckboxElement
 
     /**
@@ -35,11 +48,23 @@ export class RuxCheckbox {
      * Toggles checked state of a checkbox
      */
     @Prop({ reflect: true, mutable: true }) checked: boolean = false
+    @Watch('checked')
+    updateChecked() {
+        if (this._inputEl) {
+            this._inputEl.checked = this.checked
+        }
+    }
 
     /**
-     * Toggles indeterminate state of a checkbox
+     * Toggles indeterminate state of a checkbox. The indeterminate property does not exist in HTML, but can be set in JS. [HTML Checkbox & Indeterminate State](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#indeterminate)
      */
-    @Prop({ reflect: true }) indeterminate: boolean = false
+    @Prop({ reflect: true, mutable: true }) indeterminate: boolean = false
+    @Watch('indeterminate')
+    updateIndeterminate() {
+        if (this._inputEl) {
+            this._inputEl.indeterminate = this.indeterminate
+        }
+    }
 
     /**
      * Disables the checkbox via HTML disabled attribute. Checkbox takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
@@ -67,29 +92,25 @@ export class RuxCheckbox {
 
     constructor() {}
 
-    componentWillLoad() {
-        this._onChange = this._onChange.bind(this)
+    connectedCallback() {
+        this._onClick = this._onClick.bind(this)
         this._onInput = this._onInput.bind(this)
     }
 
     componentDidLoad() {
-        const input = this.el.shadowRoot?.querySelector(
-            'input'
-        ) as HTMLInputElement
-
-        if (input && this.indeterminate) {
+        if (this._inputEl && this.indeterminate) {
             // indeterminate property does not exist in HTML but is accessible via js
-            input.setAttribute(
-                'indeterminate',
-                this.indeterminate ? 'indeterminate' : ''
-            )
+            this._inputEl.indeterminate = true
         }
     }
 
-    private _onChange(e: Event): void {
+    private _onClick(e: Event): void {
         const target = e.target as HTMLInputElement
+        if (this.indeterminate) {
+            this.indeterminate = false
+        }
         this.checked = target.checked
-        this.ruxChange.emit(this.checked)
+        this.ruxChange.emit()
     }
 
     private _onInput(e: Event) {
@@ -112,22 +133,26 @@ export class RuxCheckbox {
             name,
             required,
             value,
+            indeterminate,
         } = this
 
-        renderHiddenInput(
-            true,
-            this.el,
-            this.name,
-            this.value ? this.value : 'on',
-            this.disabled,
-            this.checked
-        )
+        if (!this.indeterminate) {
+            renderHiddenInput(
+                true,
+                this.el,
+                this.name,
+                this.value ? this.value : 'on',
+                this.disabled,
+                this.checked
+            )
+        }
 
         return (
             <div class="rux-form-field">
                 <div
                     class={{
                         'rux-checkbox': true,
+                        'rux-checkbox--indeterminate': indeterminate,
                         'rux-checkbox--has-error': required,
                         'rux-checkbox--has-text':
                             errorText !== undefined || helpText !== undefined,
@@ -140,10 +165,13 @@ export class RuxCheckbox {
                         disabled={disabled}
                         required={required}
                         checked={checked}
+                        //Allows storybook's indetermiante control to take effect.
+                        indeterminate={indeterminate}
                         value={value}
-                        onChange={this._onChange}
+                        onChange={this._onClick}
                         onInput={this._onInput}
                         onBlur={() => this._onBlur()}
+                        ref={(el) => (this._inputEl = el)}
                     />
                     <label htmlFor={checkboxId}>
                         <slot></slot>

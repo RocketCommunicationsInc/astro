@@ -1,53 +1,50 @@
 :host {
     display: block;
     box-sizing: border-box;
-    /**
-    * @prop --segmentedButtonBackgroundColor: Segmented button background color
-    */
 
-    /**
-    * @prop --segmentedButtonTextColor: Segmented button text color
-    */
+    /** @prop --segmented-button-background-color: Segmented button background color */
+    --segmented-button-background-color: var(--background);
 
-    /**
-    * @prop --segmentedButtonBorderColor: Segmented button border color
-    */
+    /** @prop --segmented-button-text-color: Segmented button text color*/
+    --segmented-button-text-color: var(--primary);
 
-    /**
-    * @prop --segmentedButtonHoverBackgroundColor: Segmented button hover background color
-    */
+    /** @prop --segmented-button-border-color: Segmented button border color*/
+    --segmented-button-border-color: var(--primary);
 
-    /**
-    * @prop --segmentedButtonHoverTextColor: Segmented button hover text color
-    */
+    /** @prop --segmented-button-hover-background-color: Segmented button hover background color*/
+    --segmented-button-hover-background-color: var(--background);
 
-    /**
-    * @prop --segmentedButtonHoverBorderColor: Segmented button hover border color
-    */
+    /** @prop --segmented-button-hover-text-color: Segmented button hover text color*/
+    --segmented-button-hover-text-color: var(--primary);
 
-    /**
-    * @prop --segmentedButtonSelectedBackgroundColor: Segmented button selected background color
-    */
+    /** @prop --segmented-button-hover-border-color: Segmented button hover border color*/
+    --segmented-button-hover-border-color: var(--hover);
 
-    /**
-    * @prop --segmentedButtonSelectedTextColor: Segmented button selected text color
-    */
+    /** @prop --segmented-button-selected-background-color: Segmented button selected background color*/
+    --segmented-button-selected-background-color: var(
+        --color-segmented-button-selected
+    );
 
-    /**
-    * @prop --segmentedButtonSelectedBorderColor: Segmented button selected border color
-    */
+    /** @prop --segmented-button-selected-text-color: Segmented button selected text color*/
+    --segmented-button-selected-text-color: var(--default-text);
 
-    /**
-    * @prop --segmentedButtonSelectedHoverBackgroundColor: Segmented button selected hover background color
-    */
+    /** @prop --segmented-button-selected-hover-background-color: Segmented button selected hover background color*/
+    --segmented-button-selected-hover-background-color: var(
+        --color-segmented-button-selected
+    );
 
-    /**
-    * @prop --segmentedButtonSelectedHoverTextColor: Segmented button selected hover text color
-    */
+    /** @prop --segmented-button-selected-hover-text-color: Segmented button selected hover text color*/
+    --segmented-button-selected-hover-text-color: var(--default-text);
 
-    /**
-    * @prop --segmentedButtonSelectedHoverBorderColor: Segmented button selected hover border color
-    */
+    /** @prop --segmented-button-selected-hover-border-color: Segmented button selected hover border color*/
+    --segmented-button-selected-hover-border-color: var(--primary);
+
+    /** @prop --segmented-button-border-radius: Segmented button border radius */
+    --segmented-button-border-radius: 3px;
+}
+
+:host([hidden]) {
+    display: none;
 }
 
 *,
@@ -67,8 +64,8 @@
 
     list-style: none;
 
-    border-radius: var(--controlBorderRadius);
-    background-color: var(--segmentedButtonBackgroundColor);
+    border-radius: var(--segmented-button-border-radius);
+    background-color: var(--segmented-button-background-color);
 }
 
 .rux-segmented-button__segment {
@@ -89,10 +86,10 @@
     margin: 0;
     padding: 0 0.75rem;
 
-    border: 1px solid var(--segmentedButtonBorderColor);
+    border: 1px solid var(--segmented-button-border-color);
 
-    color: var(--segmentedButtonTextColor);
-    background-color: var(--segmentedButtonBackgroundColor);
+    color: var(--segmented-button-text-color);
+    background-color: var(--segmented-button-background-color);
 
     font-size: 1rem;
 
@@ -107,21 +104,21 @@
 }
 
 .rux-segmented-button__segment label:hover {
-    background-color: var(--segmentedButtonHoverBackgroundColor);
-    border-color: var(--segmentedButtonHoverBorderColor);
-    color: var(--segmentedButtonHoverTextColor);
+    background-color: var(--segmented-button-hover-background-color);
+    border-color: var(--segmented-button-hover-border-color);
+    color: var(--segmented-button-hover-text-color);
     outline: none;
 }
 
 .rux-segmented-button__segment input:checked + label {
-    background-color: var(--segmentedButtonSelectedBackgroundColor);
-    color: var(--segmentedButtonSelectedTextColor);
+    background-color: var(--segmented-button-selected-background-color);
+    color: var(--segmented-button-selected-text-color);
 }
 
 .rux-segmented-button__segment input:checked:hover + label {
-    background-color: var(--segmentedButtonSelectedHoverBackgroundColor);
-    color: var(--segmentedButtonSelectedHoverTextColor);
-    border-color: var(--segmentedButtonSelectedHoverBorderColor);
+    background-color: var(--segmented-button-selected-hover-background-color);
+    color: var(--segmented-button-selected-hover-text-color);
+    border-color: var(--segmented-button-selected-hover-border-color);
 }
 
 .rux-segmented-button__segment:nth-child(2):not(:last-child) label {
@@ -129,10 +126,12 @@
     border-left: none;
 }
 .rux-segmented-button__segment:first-child label {
-    border-radius: var(--controlBorderRadius) 0 0 var(--controlBorderRadius);
+    border-radius: var(--segmented-button-border-radius) 0 0
+        var(--segmented-button-border-radius);
 }
 .rux-segmented-button__segment:last-child label {
-    border-radius: 0 var(--controlBorderRadius) var(--controlBorderRadius) 0;
+    border-radius: 0 var(--segmented-button-border-radius)
+        var(--segmented-button-border-radius) 0;
 }
 
 /*
@@ -148,6 +147,6 @@
     border-radius: 0;
     height: auto;
     border: none;
-    border-right: 1px solid var(--segmentedButtonBorderColor);
+    border-right: 1px solid var(--segmented-button-border-color);
 }
 /* END OVERRDIDE FOR IE EDGE */

@@ -111,14 +111,24 @@
         color: #ccd5e0;
     }
 
+    .css-a5p7dx {
+        color: white;
+    }
+    .css-a5p7dx:focus {
+        color: black;
+    }
+
     .storybook-readme-story .markdown-body table thead tr {
         background-color: #141f2c;
     }
 
     /* scrollbars */
     body {
-        scrollbar-color: var(--scrollBarThumbBackgroundColor, rgb(43, 101, 155))
-            var(--scrollBarTrackBackgroundColor, rgb(27, 45, 62));
+        scrollbar-color: var(
+                --color-scrollbar-background-thumb,
+                rgb(43, 101, 155)
+            )
+            var(--color-scrollbar-background-track, rgb(27, 45, 62));
     }
 
     ::-webkit-scrollbar {
@@ -129,7 +139,7 @@
 
     ::-webkit-scrollbar-thumb {
         background-color: var(
-            --scrollBarThumbBackgroundColor,
+            --color-scrollbar-background-thumb,
             rgb(43, 101, 155)
         );
         border-radius: 8px;
@@ -149,14 +159,17 @@
     ::-webkit-scrollbar-thumb:active,
     ::-webkit-scrollbar-thumb:hover {
         background-color: var(
-            --scrollBarThumbBackgroundHoverColor,
+            --color-scrollbar-background-thumb-hover,
             rgb(58, 129, 191)
         );
     }
 
     ::-webkit-scrollbar-track,
     ::-webkit-scrollbar-corner {
-        background-color: var(--scrollBarTrackBackgroundColor, rgb(27, 45, 62));
+        background-color: var(
+            --color-scrollbar-background-track,
+            rgb(27, 45, 62)
+        );
     }
 
     ::-webkit-scrollbar-track:vertical {

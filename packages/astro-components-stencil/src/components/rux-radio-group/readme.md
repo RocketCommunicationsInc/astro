@@ -26,9 +26,9 @@
 
 ## CSS Custom Properties
 
-| Name                      | Description                  |
-| ------------------------- | ---------------------------- |
-| `--radioGroupBorderColor` | the radio group border color |
+| Name                        | Description                  |
+| --------------------------- | ---------------------------- |
+| `--radiogroup-border-color` | the radio group border color |
 
 
 ----------------------------------------------

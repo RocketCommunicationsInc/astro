@@ -14,6 +14,14 @@ export class RuxDatetime {
      */
     @Prop() locale: string = 'default'
     /**
+     * Format options for weekday
+     */
+    @Prop() weekday?: 'narrow' | 'short' | 'long'
+    /**
+     * Format options for era
+     */
+    @Prop() era?: 'narrow' | 'short' | 'long'
+    /**
      * Format options for year
      */
     @Prop() year?: 'numeric' | '2-digit'
@@ -54,28 +62,32 @@ export class RuxDatetime {
         const date = new Date(this.date)
 
         const {
-            locale,
-            year,
-            month,
             day,
+            era,
             hour,
-            minute,
-            second,
-            timeZoneName,
-            timeZone,
             hour12,
+            locale,
+            minute,
+            month,
+            second,
+            timeZone,
+            timeZoneName,
+            weekday,
+            year,
         } = this
 
         return new Intl.DateTimeFormat(locale, {
-            year,
-            month,
             day,
+            era,
             hour,
-            minute,
-            second,
-            timeZoneName,
-            timeZone,
             hour12,
+            minute,
+            month,
+            second,
+            timeZone,
+            timeZoneName,
+            weekday,
+            year,
         }).format(date)
     }
 }

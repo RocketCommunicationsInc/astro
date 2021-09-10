@@ -1,14 +1,21 @@
 :host {
     /**
-      * @prop --menuItemDividerBorderColor: Menu Item Divider Border Color
+      * @prop --menu-item-divider-border-color: Menu Item Divider Border Color
     */
+
+    --menu-item-divider-border-color: var(--color-border-menu);
 
     display: block;
 
     li {
+        list-style: none;
         pointer-events: none;
         height: 6px;
-        border-top: 1px dashed var(--menuItemDividerBorderColor);
+        border-top: 1px dashed var(--menu-item-divider-border-color);
         margin: 6px 0.5rem 0 0.5rem;
     }
+}
+
+:host([hidden]) {
+    display: none;
 }

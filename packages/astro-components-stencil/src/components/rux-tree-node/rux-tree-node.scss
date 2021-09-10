@@ -1,28 +1,28 @@
 :host {
     /**
-    * @prop --treeAccentColor: tree accent color
+    * @prop --tree-accent-color: tree accent color
     */
-    --treeAccentColor: var(--primary);
+    --tree-accent-color: var(--primary);
     /**
-    * @prop --treeHoverBackgroundColor: tree hover background color
+    * @prop --tree-hover-background-color: tree hover background color
     */
-    --treeHoverBackgroundColor: var(--primaryLight);
+    --tree-hover-background-color: var(--hover);
     /**
-    * @prop --treeHoverTextColor: tree hover text color
+    * @prop --tree-hover-text-color: tree hover text color
     */
-    --treeHoverTextColor: var(--primaryElementText);
+    --tree-hover-text-color: var(--inverse-text);
     /**
-    * @prop --treeSelectedBorderColor: tree selected border color
+    * @prop --tree-selected-border-color: tree selected border color
     */
-    --treeSelectedBorderColor: var(--primaryDark);
+    --tree-selected-border-color: var(--primary-alt);
     /**
-    * @prop --treeSelectedAccentColor: tree selected accent color
+    * @prop --tree-selected-accent-color: tree selected accent color
     */
-    --treeSelectedAccentColor: var(--primary);
+    --tree-selected-accent-color: var(--primary);
     /**
-    * @prop --treeExpandedBorderColor: tree expanded border color
+    * @prop --tree-expanded-border-color: tree expanded border color
     */
-    --treeExpandedBorderColor: var(--backgroundColor);
+    --tree-expanded-border-color: var(--background);
 
     position: relative;
     box-sizing: border-box;
@@ -30,15 +30,19 @@
     padding: 0px;
     margin: 0px;
     font-size: 1rem;
-    color: var(--treeTextColor);
+    color: var(--tree-text-color);
     user-select: none;
     width: 100%;
     display: block;
 }
 
+:host([hidden]) {
+    display: none;
+}
+
 :host([aria-expanded='true'][aria-level='1']:not([aria-selected='true'])) {
     .parent:after {
-        border-bottom: solid 1px var(--treeExpandedBorderColor);
+        border-bottom: solid 1px var(--tree-expanded-border-color);
     }
 }
 
@@ -52,9 +56,9 @@
             z-index: 0;
             position: absolute;
             transition: background-color 0.0967s ease-in 0s;
-            border-top: 1px solid var(--treeSelectedBorderColor);
-            border-bottom: 1px solid var(--treeSelectedBorderColor);
-            box-shadow: inset 0.25rem 0 0 var(--treeSelectedAccentColor) !important;
+            border-top: 1px solid var(--tree-selected-border-color);
+            border-bottom: 1px solid var(--tree-selected-border-color);
+            box-shadow: inset 0.25rem 0 0 var(--tree-selected-accent-color) !important;
         }
     }
 }
@@ -119,8 +123,8 @@
     display: flex;
     align-items: center;
     &:hover {
-        color: var(--treeHoverTextColor);
-        background: var(--treeHoverBackgroundColor);
+        color: var(--tree-hover-text-color);
+        background: var(--tree-hover-background-color);
     }
 }
 
@@ -161,7 +165,8 @@
         height: 0px;
         border-style: solid;
         border-width: 0.35rem 0px 0.35rem 0.35rem;
-        border-color: transparent transparent transparent var(--treeAccentColor);
+        border-color: transparent transparent transparent
+            var(--tree-accent-color);
         display: inline-block;
     }
 }

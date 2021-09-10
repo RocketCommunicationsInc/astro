@@ -3,8 +3,8 @@
     padding: 0;
 }
 
-*[hidden] {
-    display: none !important;
+:host([hidden]) {
+    display: none;
 }
 
 *,
@@ -64,7 +64,7 @@ rux-icon {
     border-radius: 3px;
     padding: 0.65rem 0.25rem;
 
-    color: #fff;
+    color: var(--color-basics-white);
     font-size: 0.775rem;
     text-align: center;
     overflow: hidden;
@@ -75,7 +75,7 @@ rux-icon {
 }
 
 .rux-advanced-status__label {
-    color: var(--fontColor);
+    color: var(--default-text);
     font-size: 0.875rem;
     text-align: center;
     text-overflow: ellipsis;
@@ -91,7 +91,7 @@ rux-icon {
 
 .rux-advanced-status__sublabel {
     font-size: 0.65em;
-    color: var(--fontColor);
+    color: var(--default-text);
     opacity: 0.6;
     display: block;
 }
@@ -102,36 +102,36 @@ rux-icon {
 
 :host([status='off']) {
     rux-icon {
-        fill: var(--colorOff);
+        color: var(--color-off);
     }
 }
 
 :host([status='standby']) {
     rux-icon {
-        fill: var(--colorStandby);
+        color: var(--color-standby);
     }
 }
 
 :host([status='normal']) {
     rux-icon {
-        fill: var(--colorNormal);
+        color: var(--color-normal);
     }
 }
 
 :host([status='caution']) {
     rux-icon {
-        fill: var(--colorCaution);
+        color: var(--color-caution);
     }
 }
 
 :host([status='serious']) {
     rux-icon {
-        fill: var(--colorSerious);
+        color: var(--color-serious);
     }
 }
 
 :host([status='critical']) {
     rux-icon {
-        fill: var(--colorCritical);
+        color: var(--color-critical);
     }
 }

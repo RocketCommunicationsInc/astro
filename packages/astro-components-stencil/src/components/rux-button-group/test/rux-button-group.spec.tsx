@@ -38,7 +38,7 @@ describe('rux-button-group', () => {
               </rux-button>
               <rux-button icon="">
                 <mock:shadow-root>
-                  <button class="rux-button" type="button">
+                  <button class="rux-button rux-button--default" type="button">
                     <slot></slot>
                   </button>
                 </mock:shadow-root>

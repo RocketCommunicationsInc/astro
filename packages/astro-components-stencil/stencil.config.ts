@@ -35,4 +35,5 @@ export const config: Config = {
         },
     ],
     plugins: [sass(), svgOptimizerPlugin()],
+    enableCache: true,
 }

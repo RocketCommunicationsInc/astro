@@ -3,8 +3,8 @@
     padding: 0;
 }
 
-*[hidden] {
-    display: none !important;
+:host([hidden]) {
+    display: none;
 }
 
 *,
@@ -76,7 +76,7 @@ rux-status {
 }
 
 .rux-advanced-status__label {
-    color: var(--fontColor);
+    color: var(--default-text);
     font-size: 0.875rem;
     text-align: center;
     text-overflow: ellipsis;
@@ -92,7 +92,7 @@ rux-status {
 
 .rux-advanced-status__sublabel {
     font-size: 0.65em;
-    color: var(--fontColor);
+    color: var(--default-text);
     opacity: 0.6;
     display: block;
 }
@@ -107,33 +107,33 @@ svg {
     height: 3rem;
 }
 svg.rux-status--off {
-    stroke: var(--colorOff, rgb(158, 167, 173));
-    fill: var(--colorOff, rgb(158, 167, 173));
+    stroke: var(--color-off, rgb(158, 167, 173));
+    fill: var(--color-off, rgb(158, 167, 173));
 }
 
 svg.rux-status--standby {
-    stroke: var(--colorStandby, rgb(45, 204, 255));
-    fill: var(--colorStandby, rgb(45, 204, 255));
+    stroke: var(--color-standby, rgb(45, 204, 255));
+    fill: var(--color-standby, rgb(45, 204, 255));
 }
 
 svg.rux-status--normal {
-    stroke: var(--colorNormal, rgb(86, 240, 0));
-    fill: var(--colorNormal, rgb(86, 240, 0));
+    stroke: var(--color-normal, rgb(86, 240, 0));
+    fill: var(--color-normal, rgb(86, 240, 0));
 }
 
 svg.rux-status--caution {
-    stroke: var(--colorCaution, rgb(252, 232, 58));
-    fill: var(--colorCaution, rgb(252, 232, 58));
+    stroke: var(--color-caution, rgb(252, 232, 58));
+    fill: var(--color-caution, rgb(252, 232, 58));
 }
 
 svg.rux-status--serious {
-    stroke: var(--colorSerious, rgb(255, 179, 0));
-    fill: var(--colorSerious, rgb(255, 179, 0));
+    stroke: var(--color-serious, rgb(255, 179, 0));
+    fill: var(--color-serious, rgb(255, 179, 0));
 }
 
 svg.rux-status--critical {
-    stroke: var(--colorCritical, rgb(255, 56, 56));
-    fill: var(--colorCritical, rgb(255, 56, 56));
+    stroke: var(--color-critical, rgb(255, 56, 56));
+    fill: var(--color-critical, rgb(255, 56, 56));
 }
 
 [data-progress] svg {
@@ -142,7 +142,7 @@ svg.rux-status--critical {
 }
 
 .rux-advanced-status__progress {
-    font-family: var(--fontFamilyMono, 'monospace');
+    font-family: var(--font-family-mono, 'monospace');
     margin-top: -0.125rem;
     margin-left: -0.125rem;
     font-size: 0.8rem;

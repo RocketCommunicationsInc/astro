@@ -1,6 +1,13 @@
 :host {
+    /** @prop() --table-header-background-color: the table header background color*/
+    --table-header-background-color: var(--global-status-bar);
+
     display: table-row;
-    background-color: var(--logHeaderBackgroundColor);
+    background-color: var(--table-header-background-color);
+}
+
+:host([hidden]) {
+    display: none;
 }
 
 ::slotted(rux-table-header-cell:first-child) {

@@ -46,14 +46,12 @@ describe('rux-switch', () => {
             html: `<rux-switch></rux-switch>`,
         })
         expect(page.root).toEqualHtml(`
-        <rux-switch value="">
+        <rux-switch aria-checked="false" class="rux-form-field" role="switch" value="">
           <mock:shadow-root>
-            <div class="rux-form-field" aria-checked="false" role="switch">
               <div class="rux-switch">
                 <input aria-checked="false" class="rux-switch__input" id="rux-switch-3" role="switch" type="checkbox" value="">
                 <label class="rux-switch__button" htmlfor="rux-switch-3"></label>
               </div>
-            </div>
           </mock:shadow-root>
         </rux-switch>
     `)

@@ -4,41 +4,33 @@
     *:after {
         box-sizing: inherit;
     }
+    display: inline-block;
 
     box-sizing: border-box;
-    /**
-    * @prop --controlLabelColor: Label text color
-    */
-    --controlLabelColor: var(--defaultText);
-    /**
-    * @prop --controlOutlineBackgroundColor: Checkbox background color
-    */
-    --controlOutlineBackgroundColor: var(--backgroundColor);
-    /**
-    * @prop --controlBorderColor: Checkbox border color
-    */
-    --controlBorderColor: var(--colorSecondaryDarken2);
-    /**
-    * @prop --controlHoverBorderColor: Checkbox border color on hover
-    */
-    --controlHoverBorderColor: var(--primaryLight);
-    /**
-    * @prop --controlTextColor: Selected checkbox icon color
-    */
-    --controlTextColor: var(--colorSecondary500);
-    /**
-    * @prop --controlSelectedOutlineBorderColor: Selected checkbox border color
-    */
-    --controlSelectedOutlineBorderColor: var(--primary);
+
+    /** @prop --radio-hover-border-color: Radio border color on hover*/
+    --radio-hover-border-color: var(--hover);
+
+    /** @prop --radio-border-color: Selected radio border color */
+    --radio-border-color: var(--active);
+
+    /** @prop --radio-label-color: label text color*/
+    --radio-label-color: var(--default-text);
+
+    /** @prop --radio-background-color: the radio background color*/
+    --radio-background-color: var(--background);
+
+    /** @prop --radio-selected-color: the radio selected color*/
+    --radio-selected-color: var(--primary);
 }
 
 .rux-form-field {
     display: flex;
     flex-direction: column;
 
-    font-family: var(--fontFamily);
-    font-size: var(--fontSize);
-    color: var(--fontColor);
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    color: var(--default-text);
 }
 
 .rux-radio {
@@ -58,7 +50,7 @@
             align-items: center;
             justify-content: flex-start;
             margin-left: -8px;
-            color: var(--controlLabelColor);
+            color: var(--radio-label-color);
             letter-spacing: 0.5px;
             cursor: pointer;
 
@@ -71,12 +63,12 @@
 
                 align-self: start;
 
-                height: var(--controlOptionSize);
-                width: var(--controlOptionSize);
+                height: 1.125rem;
+                width: 1.125rem;
                 margin: 0 0.625rem 0 0;
-                border: 1px solid var(--controlSelectedBorderColor);
+                border: 1px solid var(--radio-border-color);
                 border-radius: 100%;
-                background-color: var(--controlOutlineBackgroundColor);
+                background-color: var(--radio-background-color);
             }
 
             &:after {
@@ -90,10 +82,8 @@
         &:checked {
             + label {
                 &::before {
-                    background-color: var(
-                        --controlSelectedOutlineBackgroundColor
-                    );
-                    border-color: var(--controlSelectedBorderColor);
+                    background-color: var(--radio-background-color);
+                    border-color: var(--radio-border-color);
                 }
 
                 &::after {
@@ -114,8 +104,8 @@
 
         &:disabled {
             + label {
-                cursor: var(--disabledCursor);
-                opacity: var(--disabledOpacity);
+                cursor: not-allowed;
+                opacity: var(--disabled-opacity);
             }
         }
 
@@ -124,7 +114,7 @@
             &:checked:hover {
                 + label {
                     &::before {
-                        border-color: var(--controlHoverBorderColor);
+                        border-color: var(--radio-hover-border-color);
                     }
                 }
             }
@@ -134,10 +124,14 @@
             &:checked:hover {
                 + label {
                     &::after {
-                        background-color: var(--controlBackgroundColor);
+                        background-color: var(--radio-selected-color);
                     }
                 }
             }
         }
     }
+}
+
+:host([hidden]) {
+    display: none;
 }

@@ -1,3 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g xmlns="http://www.w3.org/2000/svg" id="rounded-corner" fill-rule="nonzero">
-            <path d="M19 19h2v2h-2v-2zm0-2h2v-2h-2v2zM3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm0-4h2V3H3v2zm4 0h2V3H7v2zm8 16h2v-2h-2v2zm-4 0h2v-2h-2v2zm4 0h2v-2h-2v2zm-8 0h2v-2H7v2zm-4 0h2v-2H3v2zM21 8c0-2.76-2.24-5-5-5h-5v2h5c1.65 0 3 1.35 3 3v5h2V8z"/>
-        </g></svg>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5 5H3V3H5V5ZM3 9H5V7H3V9ZM3 13H5V11H3V13ZM21 17H19V15H21V17ZM21 19H19V21H21V19ZM5 17H3V15H5V17ZM7 5H9V3H7V5ZM13 21H11V19H13V21ZM15 19V21H17V19H15ZM9 21H7V19H9V21ZM3 21H5V19H3V21ZM16 3C18.76 3 21 5.24 21 8V13H19V8C19 6.35 17.65 5 16 5H11V3H16Z" fill="black"/>
+</svg>

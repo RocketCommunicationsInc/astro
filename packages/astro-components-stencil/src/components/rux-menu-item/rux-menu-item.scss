@@ -1,31 +1,28 @@
 :host {
     /**
-      * @prop --menuTextColor: Menu Text Color
+      * @prop --popup-menu-text-color: Menu Text Color
     */
+    --popup-menu-text-color: var(--primary);
 
     /**
-      * @prop --menuItemBackgroundColor: Menu Item Background Color
+      * @prop --popup-menu-item-background-color: Menu Item Background Color
     */
+    --popup-menu-item-background-color: var(--background);
 
     /**
-      * @prop --menuItemHoverBackgroundColor: Menu Item Hover Background Color
+      * @prop --popup-menu-item-hover-background-color: Menu Item Hover Background Color
     */
+    --popup-menu-item-hover-background-color: var(--color-menu-item-hover);
 
     /**
-      * @prop --menuItemHoverTextColor: Menu Item Hover Text Color
+      * @prop --popup-menu-item-hover-background-color: Menu Item Hover Text Color
     */
-
-    /**
-      * @prop --disabledCursor: Cursor for Disabled Items
-    */
-
-    /**
-      * @prop --disabledOpacity: Opacity for Disabled Items
-    */
+    --popup-menu-item-hover-background-color: var(--hover);
 
     display: block;
 
     li {
+        list-style: none;
         padding: 0.15rem 0.75rem;
         font-size: 1rem;
         overflow: hidden;
@@ -33,21 +30,25 @@
         min-width: 15em;
         max-width: 20em;
 
-        background-color: --menuItemBackgroundColor;
+        background-color: var(--popup-menu-item-background-color);
+        color: var(--popup-menu-text-color);
 
         &:hover {
-            background-color: var(--menuItemHoverBackgroundColor);
-            color: var(--menuItemHoverTextColor);
+            background-color: var(--popup-menu-item-hover-background-color);
+            color: var(--popup-menu-item-hover-background-color);
         }
 
         a,
         div {
             text-overflow: ellipsis;
             text-decoration: none;
-            color: var(--menuTextColor);
+            color: var(--popup-menu-text-color);
             word-wrap: none;
             white-space: nowrap;
             overflow: hidden;
+            &:hover {
+                color: var(--popup-menu-item-hover-background-color);
+            }
         }
 
         a {
@@ -58,8 +59,12 @@
     }
 }
 
+:host([hidden]) {
+    display: none;
+}
+
 :host([disabled]) {
-    cursor: var(--disabledCursor);
+    cursor: not-allowed;
 
     li {
         &:hover {
@@ -68,7 +73,7 @@
 
         a,
         div {
-            opacity: var(--disabledOpacity);
+            opacity: var(--disabled-opacity);
         }
     }
 }

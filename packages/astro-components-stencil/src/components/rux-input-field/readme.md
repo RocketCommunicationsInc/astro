@@ -36,17 +36,14 @@
 
 ## CSS Custom Properties
 
-| Name                              | Description                              |
-| --------------------------------- | ---------------------------------------- |
-| `--inputBackgroundColor`          | the input background color               |
-| `--inputBorderColor`              | the input border color                   |
-| `--inputFocusBorderColor`         | the input focus border color             |
-| `--inputFocusTextColor`           | the input focus text color               |
-| `--inputInvalidBorderColor`       | the input invalid border color           |
-| `--inputSearchCancel`             | the input search cancel                  |
-| `--inputSearchIcon`               | the input search icon                    |
-| `--inputSelectionBackgroundColor` | the background color of highlighted text |
-| `--inputTextColor`                | the input text color                     |
+| Name                                 | Description                              |
+| ------------------------------------ | ---------------------------------------- |
+| `--input-background-color`           | the input background color               |
+| `--input-border-color`               | the input border color                   |
+| `--input-focus-border-color`         | the input focus border color             |
+| `--input-invalid-border-color`       | the input invalid border color           |
+| `--input-selection-background-color` | the background color of highlighted text |
+| `--input-text-color`                 | the input text color                     |
 
 
 ## Dependencies

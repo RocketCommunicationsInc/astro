@@ -1,11 +1,16 @@
 :host {
     /**
-     * @prop --classificationTextColorLight: the color of light text in the classification marking
+     * @prop --color-classification-text-light: the color of light text in the classification marking
      */
 
     /**
-     * @prop --classificationTextColorDark: the color of dark text in the classification marking
+     * @prop --color-classification-text-dark: the color of dark text in the classification marking
      */
+    display: block;
+}
+
+:host([hidden]) {
+    display: none;
 }
 
 :host div {
@@ -16,14 +21,14 @@
     align-content: center;
     min-height: 26px;
     box-sizing: border-box;
-    font-size: var(--fontSize);
+    font-size: var(--font-size);
     font-weight: bold;
-    font-family: var(--fontFamily);
+    font-family: var(--font-family);
     text-transform: uppercase;
     transition: top 0.5s ease;
     overflow-wrap: anywhere;
-    color: var(--classificationTextColorLight);
-    background-color: var(--classificationUnclassifiedBackgroundColor);
+    color: var(--color-classification-text-light);
+    background-color: var(--color-classification-unclassified);
     position: absolute;
     top: 0;
     left: 0;
@@ -42,7 +47,7 @@
     line-height: 1;
     padding: 0.25rem 0.9375rem;
     border-radius: 3px;
-    font-size: var(--fontSizeMD);
+    font-size: var(--font-size-md);
     flex-grow: 0;
 }
 
@@ -51,23 +56,23 @@
 }
 
 :host([classification='top-secret-sci']) div {
-    background-color: var(--classificationTopSecretSCIBackgroundColor);
-    color: var(--classificationTextColorDark);
+    background-color: var(--color-classification-top-secret-sci);
+    color: var(--color-classification-text-dark);
 }
 
 :host([classification='top-secret']) div {
-    background-color: var(--classificationTopSecretBackgroundColor);
-    color: var(--classificationTextColorDark);
+    background-color: var(--color-classification-top-secret);
+    color: var(--color-classification-text-dark);
 }
 :host([classification='secret']) div {
-    background-color: var(--classificationSecretBackgroundColor);
+    background-color: var(--color-classification-secret);
 }
 :host([classification='confidential']) div {
-    background-color: var(--classificationConfidentialBackgroundColor);
+    background-color: var(--color-classification-confidential);
 }
 :host([classification='controlled']) div {
-    background-color: var(--classificationControlledBackgroundColor);
+    background-color: var(--color-classification-cui);
 }
 :host([classification='unclassified']) div {
-    background-color: var(--classificationUnclassifiedBackgroundColor);
+    background-color: var(--color-classification-unclassified);
 }

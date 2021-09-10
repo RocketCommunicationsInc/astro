@@ -71,12 +71,11 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 
 ## CSS Custom Properties
 
-| Name                     | Description            |
-| ------------------------ | ---------------------- |
-| `--modalBackgroundColor` | Modal background color |
-| `--modalBorderColor`     | Modal border color     |
-| `--modalTextColor`       | Modal text color       |
-| `--modalTitleColor`      | Modal title color      |
+| Name                       | Description            |
+| -------------------------- | ---------------------- |
+| `--modal-background-color` | Modal background color |
+| `--modal-border-color`     | Modal border color     |
+| `--modal-title-color`      | Modal title color      |
 
 
 ## Dependencies
