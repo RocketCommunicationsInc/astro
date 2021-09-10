@@ -8,9 +8,6 @@
 
 .rux-button-group {
     display: flex;
-    align-items: center;
-
-    rux-button:not(:last-child),
     ::slotted(rux-button:not(:last-child)) {
         margin-right: 0.625rem;
     }
