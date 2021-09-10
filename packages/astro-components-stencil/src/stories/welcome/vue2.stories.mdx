@@ -125,6 +125,44 @@ export default {
 };
 </script>
 ```
+
+## Updating Complex Data
+
+### Updating Arrays
+
+For arrays, the standard mutable array operations such as `push()` and `unshift()` won't trigger a component update.
+Instead, non-mutable array operators should be used as they return a copy of a new array. These include `map()` and `filter()`,
+and the ES6 spread operator syntax.
+
+For example, to push a new item to an array, create a new array with the existing values and the new value at the end:
+
+```js
+// our original array
+this.items = ['ionic', 'stencil', 'webcomponents'];
+
+// update the array
+this.items = [
+  ...this.items,
+  'awesomeness'
+]
+```
+
+The `...this.items` syntax is a relatively new feature of JavaScript that "expands" the given object in place.
+Read more about the Spread operator [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax).
+
+### Updating Objects
+
+The spread operator should also be used to update objects. As with arrays, mutating an object will not trigger a view update,
+but returning a new copy of the object will. Below is an example:
+
+```js
+// our original object
+this.myCoolObject = {first: '1', second: '2'}
+
+// update our object
+this.myCoolObject = { ...myCoolObject, third: '3' }
+```
+
 ## Using Slots
 
 Slots give you full control over the contents of a component. Some components may have multiple slots.
