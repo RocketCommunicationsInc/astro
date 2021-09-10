@@ -1,7 +1,7 @@
 {
   "name": "astro-in-react",
   "sideEffects": false,
-  "version": "0.0.28",
+  "version": "0.0.3",
   "description": "Testing a React specific wrapper for astro-web-components",
   "repository": {
     "type": "git",
@@ -23,8 +23,8 @@
   "devDependencies": {
     "@types/jest": "23.3.9",
     "@types/node": "^15.12.2",
-    "@types/react": "16.7.6",
-    "@types/react-dom": "16.0.9",
+    "@types/react": "^16.14.15",
+    "@types/react-dom": "^16.7.0",
     "jest": "^23.0.0",
     "jest-dom": "^3.0.2",
     "np": "^3.1.0",

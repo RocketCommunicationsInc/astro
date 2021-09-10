@@ -31,7 +31,7 @@ export const createReactComponent = (tagName, ReactComponentContext, manipulateP
             let propsToPass = Object.keys(cProps).reduce((acc, name) => {
                 if (name.indexOf('on') === 0 && name[2] === name[2].toUpperCase()) {
                     const eventName = name.substring(2).toLowerCase();
-                    if (typeof document !== 'undefined' && isCoveredByReact(eventName, document)) {
+                    if (typeof document !== 'undefined' && isCoveredByReact(eventName)) {
                         acc[name] = cProps[name];
                     }
                 }
@@ -43,7 +43,7 @@ export const createReactComponent = (tagName, ReactComponentContext, manipulateP
             if (manipulatePropsFunction) {
                 propsToPass = manipulatePropsFunction(this.props, propsToPass);
             }
-            let newProps = Object.assign(Object.assign({}, propsToPass), { ref: mergeRefs(forwardedRef, this.setComponentElRef), style });
+            const newProps = Object.assign(Object.assign({}, propsToPass), { ref: mergeRefs(forwardedRef, this.setComponentElRef), style });
             return React.createElement(tagName, newProps, children);
         }
         static get displayName() {
