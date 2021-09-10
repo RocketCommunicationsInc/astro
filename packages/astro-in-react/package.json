@@ -1,5 +1,5 @@
 {
-  "name": "@astrouxds/astro-in-react",
+  "name": "@astrouxds/react",
   "sideEffects": false,
   "version": "0.0.4",
   "description": "Astro Web Components React Wrapper",
