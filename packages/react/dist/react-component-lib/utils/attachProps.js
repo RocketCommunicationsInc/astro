@@ -19,7 +19,7 @@ export const attachProps = (node, newProps, oldProps = {}) => {
             if (name.indexOf('on') === 0 && name[2] === name[2].toUpperCase()) {
                 const eventName = name.substring(2);
                 const eventNameLc = eventName[0].toLowerCase() + eventName.substring(1);
-                if (typeof document !== 'undefined' && !isCoveredByReact(eventNameLc, document)) {
+                if (!isCoveredByReact(eventNameLc)) {
                     syncEvent(node, eventNameLc, newProps[name]);
                 }
             }
@@ -28,9 +28,6 @@ export const attachProps = (node, newProps, oldProps = {}) => {
                 const propType = typeof newProps[name];
                 if (propType === 'string') {
                     node.setAttribute(camelToDashCase(name), newProps[name]);
-                }
-                else {
-                    node[name] = newProps[name];
                 }
             }
         });
@@ -64,15 +61,20 @@ export const getClassName = (classList, newProps, oldProps) => {
  * Checks if an event is supported in the current execution environment.
  * @license Modernizr 3.0.0pre (Custom Build) | MIT
  */
-export const isCoveredByReact = (eventNameSuffix, doc) => {
-    const eventName = 'on' + eventNameSuffix;
-    let isSupported = eventName in doc;
-    if (!isSupported) {
-        const element = doc.createElement('div');
-        element.setAttribute(eventName, 'return;');
-        isSupported = typeof element[eventName] === 'function';
+export const isCoveredByReact = (eventNameSuffix) => {
+    if (typeof document === 'undefined') {
+        return true;
     }
-    return isSupported;
+    else {
+        const eventName = 'on' + eventNameSuffix;
+        let isSupported = eventName in document;
+        if (!isSupported) {
+            const element = document.createElement('div');
+            element.setAttribute(eventName, 'return;');
+            isSupported = typeof element[eventName] === 'function';
+        }
+        return isSupported;
+    }
 };
 export const syncEvent = (node, eventName, newEventHandler) => {
     const eventStore = node.__events || (node.__events = {});

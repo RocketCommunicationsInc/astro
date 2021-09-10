@@ -1,5 +1,6 @@
-import { OverlayEventDetail } from './interfaces';
 import React from 'react';
+import { OverlayEventDetail } from './interfaces';
+import { StencilReactForwardedRef } from './utils';
 interface OverlayElement extends HTMLElement {
     present: () => Promise<void>;
     dismiss: (data?: any, role?: string | undefined) => Promise<boolean>;
@@ -15,6 +16,6 @@ export interface ReactOverlayProps {
 export declare const createOverlayComponent: <OverlayComponent extends object, OverlayType extends OverlayElement>(displayName: string, controller: {
     create: (options: any) => Promise<OverlayType>;
 }) => React.ForwardRefExoticComponent<React.PropsWithoutRef<OverlayComponent & ReactOverlayProps & {
-    forwardedRef?: React.RefObject<OverlayType>;
+    forwardedRef?: StencilReactForwardedRef<OverlayType>;
 }> & React.RefAttributes<OverlayType>>;
 export {};

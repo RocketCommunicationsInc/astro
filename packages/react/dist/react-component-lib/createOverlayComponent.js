@@ -20,16 +20,19 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { attachProps } from './utils';
+import { attachProps, setRef } from './utils';
 export const createOverlayComponent = (displayName, controller) => {
     const didDismissEventName = `on${displayName}DidDismiss`;
     const didPresentEventName = `on${displayName}DidPresent`;
     const willDismissEventName = `on${displayName}WillDismiss`;
     const willPresentEventName = `on${displayName}WillPresent`;
+    let isDismissing = false;
     class Overlay extends React.Component {
         constructor(props) {
             super(props);
-            this.el = document.createElement('div');
+            if (typeof document !== 'undefined') {
+                this.el = document.createElement('div');
+            }
             this.handleDismiss = this.handleDismiss.bind(this);
         }
         static get displayName() {
@@ -49,9 +52,14 @@ export const createOverlayComponent = (displayName, controller) => {
             if (this.props.onDidDismiss) {
                 this.props.onDidDismiss(event);
             }
-            if (this.props.forwardedRef) {
-                this.props.forwardedRef.current = undefined;
+            setRef(this.props.forwardedRef, null);
+        }
+        shouldComponentUpdate(nextProps) {
+            // Check if the overlay component is about to dismiss
+            if (this.overlay && nextProps.isOpen !== this.props.isOpen && nextProps.isOpen === false) {
+                isDismissing = true;
             }
+            return true;
         }
         componentDidUpdate(prevProps) {
             return __awaiter(this, void 0, void 0, function* () {
@@ -63,6 +71,13 @@ export const createOverlayComponent = (displayName, controller) => {
                 }
                 if (this.overlay && prevProps.isOpen !== this.props.isOpen && this.props.isOpen === false) {
                     yield this.overlay.dismiss();
+                    isDismissing = false;
+                    /**
+                     * Now that the overlay is dismissed
+                     * we need to render again so that any
+                     * inner components will be unmounted
+                     */
+                    this.forceUpdate();
                 }
             });
         }
@@ -71,15 +86,18 @@ export const createOverlayComponent = (displayName, controller) => {
                 const _a = this.props, { children, isOpen, onDidDismiss, onDidPresent, onWillDismiss, onWillPresent } = _a, cProps = __rest(_a, ["children", "isOpen", "onDidDismiss", "onDidPresent", "onWillDismiss", "onWillPresent"]);
                 const elementProps = Object.assign(Object.assign({}, cProps), { ref: this.props.forwardedRef, [didDismissEventName]: this.handleDismiss, [didPresentEventName]: (e) => this.props.onDidPresent && this.props.onDidPresent(e), [willDismissEventName]: (e) => this.props.onWillDismiss && this.props.onWillDismiss(e), [willPresentEventName]: (e) => this.props.onWillPresent && this.props.onWillPresent(e) });
                 this.overlay = yield controller.create(Object.assign(Object.assign({}, elementProps), { component: this.el, componentProps: {} }));
-                if (this.props.forwardedRef) {
-                    this.props.forwardedRef.current = this.overlay;
-                }
+                setRef(this.props.forwardedRef, this.overlay);
                 attachProps(this.overlay, elementProps, prevProps);
                 yield this.overlay.present();
             });
         }
         render() {
-            return ReactDOM.createPortal(this.props.isOpen ? this.props.children : null, this.el);
+            /**
+             * Continue to render the component even when
+             * overlay is dismissing otherwise component
+             * will be hidden before animation is done.
+             */
+            return ReactDOM.createPortal(this.props.isOpen || isDismissing ? this.props.children : null, this.el);
         }
     }
     return React.forwardRef((props, ref) => {
