@@ -7,15 +7,14 @@ title: Input Field
 demo: components-form-elements--input-fields
 storybook: components-form-elements--input-fields
 git:
-height: 310px
+height: 400px
+scrolling: yes
 theme: true
 ---
 
 # Input Field
 
-
 Input Fields allow users to enter freeform text. Variations on this field often provide specific data entry formats such as masked data (e.g. passwords or phone numbers), date and time, and numeric data entry.
-
 
 ## Rules of Thumb
 
@@ -32,13 +31,14 @@ Input Fields allow users to enter freeform text. Variations on this field often 
 - When appropriate, use input masking to automatically format a user's entry. E.g., when entering a phone number, apply a consistent, recognizable format like (XXX) XXX-XXXX or another similar format.
 
 ## Appearance and Behavior
+
 An Input Field consists of a descriptive, concise label paired with an entry field. Optionally, inputs may include help text, left-aligned beneath the input, to assist the user in understanding what kind of content is accepted by the input. Inputs displayed in a form may also be paired with a visual indicator of a required, or optional state. Disabled inputs are displayed with a different opacity and cannot be interacted with by the user.
 
 Standard states for Input Fields include Active (the default, interactive state for a text input), Hover (the user has paused over an active or focussed input), Focus (the field is selected and ready for data entry), Disabled (the field is not interactive, and its content is not sent when the form is submitted), and Read-only.
 
 An Input Field is enabled if it is eligible for interaction and focused if it is the current target for keystrokes.
 
-An Input Field can be configured for required input, limited data ranges, or specific data formats. To learn more about adding Help Text or Validation to Input Fields, see the [Forms and Validation](/patterns/forms-and-validation) guidance. 
+An Input Field can be configured for required input, limited data ranges, or specific data formats. To learn more about adding Help Text or Validation to Input Fields, see the [Forms and Validation](/patterns/forms-and-validation) guidance.
 
 Input Fields have a smaller variant which may be beneficial in layouts where space is at a premium.
 

@@ -9,6 +9,7 @@ storybook: components-form-elements--select-menu
 git:
 css: select-menu-README.md
 height: 130px
+scrolling: yes
 theme: true
 ---
 
@@ -33,7 +34,6 @@ When activated, Select Menus allow users to select a value from a list. Once a v
 The Select component consists of an input field containing a downward facing caret icon. Clicking on the caret expands a list of items (below, or above if there is no room below due to the position of the component on screen) related to the input field. Once an item in the list is selected, the selection is populated in the input field.
 
 To learn more about adding Help Text or Validation to Select Menus, see the [Forms and Validation](/patterns/forms-and-validation) guidance.
-
 
 ## Examples
 

@@ -19,15 +19,16 @@ All classification and control markings on this page are for illustration purpos
 :::
 
 ### Official Requirements
+
 This page lists general guidance and components for marking practices. For the most up-to-date policies, use the following resource links which should bxe considered the prime authorities for CNSI (Classified National Security Information) and CUI (Controlled Unclassified Information). In addition to these requirements, each government agency may have their own rules to use with those listed below.
 
-
 ### Classified National Security Information
+
 - [ISOO Training Aids](https://www.archives.gov/isoo/training/training-aids): Latest standards for CNSI from the ISOO (Information Security Oversight Office)
 - [ISOO Blog](https://isoo-overview.blogs.archives.gov/): Latest updates for ISOO topics including CNSI and CUI
 
-
 ### Controlled Unclassified Information
+
 - [CUI Registry](https://www.archives.gov/cui): Latest standards for CUI from the NARA
 - [CUI Blog](https://isoo.blogs.archives.gov/): Latest updates for CUI including previews of upcoming policy changes
 
@@ -37,14 +38,14 @@ The guidance on this page is focused on the use of, and rules for, classificatio
 
 ### Banner Examples
 
-| |State                                                    | Hex Value   | RGB Value | Custom Property Name | Font Color  |
-| ---| -------------------------------------------------------- | ----------- | -------------- | ------------------------------ | -------------- |
-| ![Marking Unclassified Swatch](/img/swatches/marking__unclassified.svg)| Unclassified                                       | `#007a33`   | `0, 122, 51`   | `--classificationUnclassified` | `white` |
-| ![Marking Top Secret//SCI Swatch](/img/swatches/marking__top-secret-sci.svg)| Top Secret//SCI                                          | `#fce83a`   | `252, 232, 58` | `--classificationTopSecretSCI` | `black` |
-|![Marking Top Secret Swatch](/img/swatches/marking__top-secret.svg) | Top Secret                                               | `#ff8c00`   | `255, 140, 0`  | `--classificationTopSecret`    | `black` |
-|![Marking Secret Swatch](/img/swatches/marking__secret.svg) | Secret                                                   | `#c8102e`   | `200, 16, 46`  | `--classificationSecret`       | `white` |
-| ![Marking Controlled Swatch](/img/swatches/marking__controlled.svg)| Controlled (CUI)                                         | `#502b85`   | `80, 43, 133`  | `--classificationControlled`   | `white` |
-|![Marking Confidential Swatch](/img/swatches/marking__confidential.svg) | Confidential                                             | `#0033a0`   | `0, 51, 160`   | `--classificationConfidential` | `white` |
+|                                                                              | State            | Hex Value | RGB Value      | Custom Property Name           | Font Color |
+| ---------------------------------------------------------------------------- | ---------------- | --------- | -------------- | ------------------------------ | ---------- |
+| ![Marking Unclassified Swatch](/img/swatches/marking__unclassified.svg)      | Unclassified     | `#007a33` | `0, 122, 51`   | `--classificationUnclassified` | `white`    |
+| ![Marking Top Secret//SCI Swatch](/img/swatches/marking__top-secret-sci.svg) | Top Secret//SCI  | `#fce83a` | `252, 232, 58` | `--classificationTopSecretSCI` | `black`    |
+| ![Marking Top Secret Swatch](/img/swatches/marking__top-secret.svg)          | Top Secret       | `#ff8c00` | `255, 140, 0`  | `--classificationTopSecret`    | `black`    |
+| ![Marking Secret Swatch](/img/swatches/marking__secret.svg)                  | Secret           | `#c8102e` | `200, 16, 46`  | `--classificationSecret`       | `white`    |
+| ![Marking Controlled Swatch](/img/swatches/marking__controlled.svg)          | Controlled (CUI) | `#502b85` | `80, 43, 133`  | `--classificationControlled`   | `white`    |
+| ![Marking Confidential Swatch](/img/swatches/marking__confidential.svg)      | Confidential     | `#0033a0` | `0, 51, 160`   | `--classificationConfidential` | `white`    |
 
 ### Overall Marking Background Information
 
@@ -78,7 +79,6 @@ Astro banner component colors match what government users are familiar with in p
 
 ![Don't: Deviate from the defined background colors](/img/components/overall-marking-dont-3.png "Don't: Deviate from the defined background colors")
 
-
 :::
 
 ## Portion Marking
@@ -98,13 +98,15 @@ Current policies require portion marking throughout a document, but, in practice
 There are few exceptions to portion marking requirements, but the ISOO does acknowledge that different types of documents such as “dynamic documents,” a category that many applications or databases fall under, may have difficulty with these requirements. If a document is not portion marked fully and the classification/control level is higher than CUI, the responsible agency for the application may need to obtain a waiver from the ISOO and will need to indicate on the document that it cannot be used as a derivative source document.
 
 ### Portion Marking Text
+
 Portion markings should be bold, all capital letters and abbreviated within parentheses like (CUI//SP-EXPT) or within a tag as seen in the components pictured above. They can also be spelled out in full, if needed, however this method should be avoided for longer text strings. Note that control markings such as SCI, SAP, AEA, CUI, or dissemination are also required in portion markings if they are relevant to that portion.
 
-
 ### Portion Marking Placement
+
 Portion markings should be placed at the top or top-left of the classified or controlled portion. Astro recommends using the tag version of portion marking if the markings are at a higher section or card level. For more in-line text portions or portions lower in the visual hierarchy of the User Interface, use the text-only version.
 
 ### Portion Marking Colors
+
 The colors used in the tag components are the same as those in the overall banner markings for easy recognition.
 
 ## Examples
@@ -123,7 +125,6 @@ The colors used in the tag components are the same as those in the overall banne
 
 ![Don't: Clutter the interface with colored tags on every line](/img/components/portion-marking-dont-3.png "Don't: Clutter the interface with colored tags on every line")
 
-
 :::
 
 ## Authority Block
@@ -132,25 +133,27 @@ The colors used in the tag components are the same as those in the overall banne
 
 Whenever classified or controlled information is present, use an Authority Block, to trace the source of the designation and any necessary clarifications about declassification dates or classification reasons. The authority block is typically in the bottom left of a document page, but can be placed elsewhere according to layout needs. Similarly, if necessary in the layout, the authority information for electronic material may appear as a single line of text instead of the typical three-line approach. Note that there is a slightly different structure for CUI, originally classified documents, and documents with a classification derived from another document. Authority blocks are most often displayed as lines of text and do not currently require a component to satisfy this marking requirement. To learn more about this element, go to our [Additional Resources](#additional-resources).
 
-| **Do**                     |
-|------------------------ |
-| Show the source of classified or controlled information on a page with relevant contact information.|
+| **Do**                                                                                                           |
+| ---------------------------------------------------------------------------------------------------------------- |
+| Show the source of classified or controlled information on a page with relevant contact information.             |
 | Clarify if the classified information is originally classified or derivatively classified from another document. |
 
 ## Additional Resources
 
 ### Classified National Security Information
+
 - [ISOO Training Aids](https://www.archives.gov/isoo/training/training-aids): Latest standards for CNSI from the ISOO
-	- [32 CFR Parts 2001 and 2003 - Classified National Security Information; Final Rule (28 June 2010)](https://www.archives.gov/files/isoo/policy-documents/isoo-implementing-directive.pdf)
-	- [Marking Classified National Security Information, Rev. 4 (January 2018)](https://www.archives.gov/files/isoo/notices/marking-booklet-revision.pdf)
+  - [32 CFR Parts 2001 and 2003 - Classified National Security Information; Final Rule (28 June 2010)](https://www.archives.gov/files/isoo/policy-documents/isoo-implementing-directive.pdf)
+  - [Marking Classified National Security Information, Rev. 4 (January 2018)](https://www.archives.gov/files/isoo/notices/marking-booklet-revision.pdf)
 - [ISOO Marking FAQs](https://www.archives.gov/isoo/faqs#50x-and-75x-requirements)
 - [ISOO Blog: Latest updates for ISOO topics including CNSI and CUI](https://isoo-overview.blogs.archives.gov/)
 - [CDSE: Information Security](https://www.cdse.edu/catalog/information-security.html)
 - [At Ease Computing, Inc. Online Store - U.S. Government Security Labels (SF)](http://www.at-ease-inc.com/sflabel.php)
 
 ### Controlled Unclassified Information
+
 - [CUI Registry](https://www.archives.gov/cui): Latest standards for CUI from the NARA
-	- [32 CFR Part 2002 - Controlled Unclassified Information (CUI) (7-1-2018)](https://www.govinfo.gov/content/pkg/CFR-2018-title32-vol6/pdf/CFR-2018-title32-vol6-part2002.pdf)
-	- [CUI Marking Handbook V1.1 (6 December 2016)](https://www.archives.gov/files/cui/documents/20161206-cui-marking-handbook-v1-1-20190524.pdf)
-	- [CUI Coversheet and Labels: SF 901, 902, 903](https://isoo.blogs.archives.gov/2019/02/12/coversheets/)
+  - [32 CFR Part 2002 - Controlled Unclassified Information (CUI) (7-1-2018)](https://www.govinfo.gov/content/pkg/CFR-2018-title32-vol6/pdf/CFR-2018-title32-vol6-part2002.pdf)
+  - [CUI Marking Handbook V1.1 (6 December 2016)](https://www.archives.gov/files/cui/documents/20161206-cui-marking-handbook-v1-1-20190524.pdf)
+  - [CUI Coversheet and Labels: SF 901, 902, 903](https://isoo.blogs.archives.gov/2019/02/12/coversheets/)
 - [CUI Blog](https://isoo.blogs.archives.gov/): Latest updates for CUI including previews of upcoming policy changes

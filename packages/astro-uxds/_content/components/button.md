@@ -8,6 +8,7 @@ demo: components-buttons--all-button-variants
 storybook: components-buttons--standard-button
 git: rux-button
 height: 260px
+scrolling: yes
 theme: true
 ---
 

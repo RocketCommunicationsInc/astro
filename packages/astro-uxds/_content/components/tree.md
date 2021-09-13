@@ -8,6 +8,7 @@ demo: components-tree--tree
 storybook: components-tree--tree
 git: rux-tree
 height: 480px
+scrolling: yes
 theme: true
 ---
 
