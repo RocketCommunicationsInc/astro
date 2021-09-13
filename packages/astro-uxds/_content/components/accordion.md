@@ -8,7 +8,7 @@ theme: false
 demo: components--accordion
 height: 210px
 storybook: components--accordion
-scrolling: yes
+scrolling: true
 git: rux-accordion
 ---
 
