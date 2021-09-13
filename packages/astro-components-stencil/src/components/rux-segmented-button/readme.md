@@ -64,7 +64,7 @@ document.addEventListener('change', (e) =>
 | ---------------------------------------------------- | ------------------------------------------------ |
 | `--segmented-button-background-color`                | Segmented button background color                |
 | `--segmented-button-border-color`                    | Segmented button border color                    |
-| `--segmented-button-border-radius`                   |                                                  |
+| `--segmented-button-border-radius`                   | Segmented button border radius                   |
 | `--segmented-button-hover-background-color`          | Segmented button hover background color          |
 | `--segmented-button-hover-border-color`              | Segmented button hover border color              |
 | `--segmented-button-hover-text-color`                | Segmented button hover text color                |
