@@ -17,16 +17,20 @@ Astro’s designs are based on user-centered research into the functions and cap
 A foundation of user-centered design and industry best practices provide designers and developers with tools and knowledge to build applications that create meaningful connections with end-users.
 
 Learn more about the software design process with Astro:
--   Base application design on a solid foundation of [Research](/design-process/research)
--   Learn to provide a successful, effective user experience through [UI Design](/design-process/ui-design)
--   Create applications with a mature, established [Visual Design](/design-process/visual-design)
--   Follow established [EGS Compliance Guidance](/design-guidelines/compliance/) required for EGS applications
+
+- Base application design on a solid foundation of [Research](/design-process/research)
+- Learn to provide a successful, effective user experience through [UI Design](/design-process/ui-design)
+- Create applications with a mature, established [Visual Design](/design-process/visual-design)
+- Follow established [EGS Compliance Guidance](/design-guidelines/compliance/) required for EGS applications
 
 **Design Assets**
+:::note
+Sketch is being deprecated in favor of Figma. [Astro UXDS Figma Page](https://www.figma.com/community/file/1014254163928270411)
+:::
+
 Astro UX design assets include files for creating Astro application wireframes and high-fidelity mockups in Sketch and Adobe XD.
 
 Learn more about designing with Astro design assets with Astro's guide to getting started [For Designers](/getting-started/designers).
-
 
 **Development Assets**
 Astro includes standard HTML and CSS sample code as a starting point for development. Astro's UI Components are provided as Web Components, a platform-neutral technology.
@@ -39,9 +43,9 @@ Learn more about designing with Astro development assets, and why the Astro team
 
 Astro is tested & supported in major 'evergreen' web browsers (the latest browser version from each vendor -1). Please submit an issue for problems with the browsers listed below. Mobile browsers are not yet fully supported in Astro.
 
-|       | Chrome | Firefox | Edge | Safari | Chrome (Android) | Safari (iOS) |
-|:-------|:--------:|:---------:|:------:|:--------:|:--------:|:--------:|
-| Astro |    &#x2715;    |    &#x2715;     | &#x2715;      |   &#x2715;     | unsupported | unsupported
+|       |  Chrome  | Firefox  |   Edge   |  Safari  | Chrome (Android) | Safari (iOS) |
+| :---- | :------: | :------: | :------: | :------: | :--------------: | :----------: |
+| Astro | &#x2715; | &#x2715; | &#x2715; | &#x2715; |   unsupported    | unsupported  |
 
 ### Versioning
 
@@ -53,7 +57,7 @@ Last updated: {{ page.date }}
 
 Astro is provided as an open-source tool under the **Astro Space UX Design System Interim License Agreement**:
 
-::: caution 
+::: caution
 
 When implementing Astro Space UX Design System users should consult with their organization's IT/Security departments and adapt these patterns to suit the needs of their organization’s best practices and security requirements.
 
@@ -70,7 +74,6 @@ When implementing Astro Space UX Design System users should consult with their o
 > THE SOFTWARE IS PROVIDED "AS IS" WITHOUT ANY WARRANTY OF ANY KIND, EITHER EXPRESSED, IMPLIED, OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, ANY WARRANTY THAT THE SOFTWARE WILL CONFORM TO SPECIFICATIONS, ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR FREEDOM FROM INFRINGEMENT, ANY WARRANTY THAT THE SOFTWARE WILL BE ERROR-FREE, OR ANY WARRANTY THAT DOCUMENTATION, IF PROVIDED, WILL CONFORM TO THE SOFTWARE. THIS AGREEMENT DOES NOT, IN ANY MANNER, CONSTITUTE AN ENDORSEMENT BY THE UNITED STATES GOVERNMENT OR ANY OF ITS CONTRACTORS OF ANY RESULTS, RESULTING DESIGNS, HARDWARE, SOFTWARE PRODUCTS, OR ANY OTHER APPLICATIONS RESULTING FROM USE OF THE SOFTWARE. FURTHER, THE UNITED STATES GOVERNMENT AND ITS CONTRACTORS DISCLAIM ALL WARRANTIES AND LIABILITIES REGARDING THIRD-PARTY SOFTWARE, IF PRESENT, IN THE SOFTWARE, AND DISTRIBUTE IT "AS IS."
 >
 > RECIPIENT AGREES TO WAIVE ANY AND ALL CLAIMS AGAINST THE UNITED STATES GOVERNMENT, ITS CONTRACTORS AND SUBCONTRACTORS, AS WELL AS ANY PRIOR RECIPIENT. IF RECIPIENT'S USE OF THE SOFTWARE RESULTS IN ANY LIABILITIES, DEMANDS, DAMAGES, EXPENSES OR LOSSES ARISING FROM SUCH USE, INCLUDING ANY DAMAGES FROM PRODUCTS BASED ON, OR RESULTING FROM, RECIPIENT'S USE OF THE SOFTWARE, RECIPIENT SHALL INDEMNIFY AND HOLD HARMLESS THE UNITED STATES GOVERNMENT, ITS CONTRACTORS AND SUBCONTRACTORS, AS WELL AS ANY PRIOR RECIPIENT, TO THE EXTENT PERMITTED BY LAW. RECIPIENT'S SOLE REMEDY FOR ANY SUCH MATTER SHALL BE THE IMMEDIATE, UNILATERAL TERMINATION OF THIS AGREEMENT.
-
 
 ### Offline access
 

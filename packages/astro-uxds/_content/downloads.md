@@ -10,7 +10,12 @@ title: Downloads
 
 ## Astro Design System
 
+:::note
+All Sketch files are being deprecated in favor of Figma.
+:::
+
 - Astro Component Source Code ([Git Repository](https://github.com/RocketCommunicationsInc/astro-components))
+- Astro UXDS Figma Page ([Figma](https://www.figma.com/community/file/1014254163928270411))
 - Astro Sketch Dark Library ([Git Repository](https://github.com/RocketCommunicationsInc/astro-design-resources/tree/master/Sketch))
 - Astro Sketch Wireframe Library ([Git Repository](https://github.com/RocketCommunicationsInc/astro-design-resources/tree/master/Sketch))
 - Astro Icons ([Sketch](https://bitbucket.org/rocketcom/astro-styles/raw/f4a08616984c85d833e3abdca450dc253398aa1c/icons/src/Astro%20Icons.sketch) | [Adobe XD](https://bitbucket.org/rocketcom/astro-styles/raw/f4a08616984c85d833e3abdca450dc253398aa1c/icons/src/Astro%20Icons.xd))
