@@ -63,7 +63,6 @@ export class RuxModal {
     @Listen('click', { target: 'window' })
     handleClick(ev: MouseEvent) {
         const wrapper = this._getWrapper()
-
         if (ev.composedPath()[0] === wrapper) {
             this.ruxModalClosed.emit(false)
             this.open = false
@@ -79,8 +78,6 @@ export class RuxModal {
             })
         }
     }
-
-    constructor() {}
 
     private _handleModalChoice(e: MouseEvent) {
         // convert string value to boolean
@@ -142,7 +139,7 @@ export class RuxModal {
         return (
             open && (
                 <Host>
-                    <div class="rux-modal__wrapper">
+                    <div part="wrapper" class="rux-modal__wrapper">
                         <dialog class="rux-modal__dialog" role="dialog">
                             <header class="rux-modal__titlebar">
                                 <h1>{modalTitle}</h1>

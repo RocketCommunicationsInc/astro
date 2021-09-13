@@ -20,6 +20,7 @@
     .sbdocs.sbdocs-wrapper {
         background: var(--background);
     }
+
     .sbdocs.sbdocs-h1 {
         font-size: 2.125rem;
         font-weight: 400;
@@ -29,6 +30,7 @@
         margin-inline-start: 0px;
         margin-inline-end: 0px;
     }
+
     .sbdocs.sbdocs-p {
         margin: 0 0 1rem 0;
         font-size: 17px;
@@ -36,22 +38,39 @@
         font-weight: 300;
         line-height: 1.6;
     }
+
     .sbdocs.sbdocs-li {
         font-size: 17px;
         color: var(--default-text);
         font-weight: 300;
         line-height: 1.6;
     }
+
     .sbdocs.sbdocs-content .docblock-argstable-body a {
         color: var(--primary);
         text-decoration: none;
     }
+
     .sbdocs.sbdocs-a {
         color: var(--primary);
         text-decoration: none;
     }
+
     .sbdocs code {
         color: var(--default-text);
+    }
+
+    .sbdocs #story--components-modal--modal {
+        display: block;
+        min-height: 500px;
+    }
+
+    .sbdocs #story--components-modal--modal rux-modal::part(wrapper) {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
     }
 </style>
 
