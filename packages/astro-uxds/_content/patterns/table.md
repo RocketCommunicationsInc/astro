@@ -24,7 +24,7 @@ Filters, to narrow what is displayed in the table, may be presented in the heade
 
 While filters are often related to the data types displayed in columns, it is not recommended that filters be activated directly from the column headers or displayed there. Filters selected through a combination UI elements in the header can be more expressive and focused by combining and highlighting key data types.
 
-![Table with filters as Select menus and wildcar Input Field.](/img/patterns/table-filters.png "Table with filters as Select menus and wildcar Input Field.")
+![Table with filters as Select menus and wildcard Input Field.](/img/patterns/table-filters.png "Table with filters as Select menus and wildcard Input Field.")
 
 ![Table with filters as Segmented Buttons and wildcard Input Field.](/img/patterns/table-segmented-button.png "Table with filters as Segmented Buttons and wildcard Input Field.")
 
@@ -33,6 +33,7 @@ While filters are often related to the data types displayed in columns, it is no
 Sorting is accomplished by clicking in a column header. The sort order (ascending or descending) is indicated by an arrow. A second click in the currently sorted column changes the sort order.
 
 ## Selection and Action
+
 Tables use a familiar Selection/Action model. Selection is accomplished by clicking in a row. Multiple selection can be enabled by adding a selection column of Checkboxes. Action Buttons may appear in an inline detail area or in a footer.
 
 ![Table with inline action.](/img/patterns/table-inline-action.png "Table with inline action.")
@@ -45,6 +46,6 @@ For more complex tables, we recommend using either the community or enterprise t
 
 We maintain a [separate repo for the ag-Grid Astro theme](https://github.com/RocketCommunicationsInc/astro-ag-Grid). Please visit the following links to get started:
 
-* [Documentation](https://github.com/RocketCommunicationsInc/astro-ag-Grid/#astro-ag-grid-theme)
-* [Astro Theme SASS files](https://github.com/RocketCommunicationsInc/astro-ag-Grid/tree/master/src/css)
-* Working [example](https://astro-ag-grid-example.netlify.app/) of a complex table using the Astro theme
+- [Documentation](https://github.com/RocketCommunicationsInc/astro-ag-Grid/#astro-ag-grid-theme)
+- [Astro Theme SASS files](https://github.com/RocketCommunicationsInc/astro-ag-Grid/tree/master/src/css)
+- Working [example](https://astro-ag-grid-example.netlify.app/) of a complex table using the Astro theme
