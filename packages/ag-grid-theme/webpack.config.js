@@ -3,10 +3,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  mode: "development",
-  entry: "./src/grid.js",
+  mode: "production",
+  entry: "./src/index.js",
   output: {
-    filename: "grid.js",
+    filename: "index.js",
     path: path.resolve(__dirname, "dist"),
   },
   plugins: [
