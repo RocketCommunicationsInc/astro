@@ -4,6 +4,7 @@
  * Generic Styles
  ****************************
 */
+@import "~@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css";
 ag-grid, ag-grid-angular, ag-grid-ng2, ag-grid-polymer, ag-grid-aurelia {
   display: block;
 }
