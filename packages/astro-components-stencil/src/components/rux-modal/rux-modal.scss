@@ -1,19 +1,23 @@
+@use "../../global/mixins";
+
 :host {
-    box-sizing: border-box;
+    /**
+    * @part wrapper - css part hook to style modal wrapper
+    */
 
     /**
-      * @prop --modal-title-color: Modal title color
-      */
+    * @prop --modal-title-color: Modal title color
+    */
     --modal-title-color: var(--inverse-text);
 
     /**
-      * @prop --modal-background-color: Modal background color
-      */
+    * @prop --modal-background-color: Modal background color
+    */
     --modal-background-color: var(--surface);
 
     /**
-      * @prop --modal-border-color: Modal border color
-      */
+    * @prop --modal-border-color: Modal border color
+    */
     --modal-border-color: var(--primary);
 
     display: contents;
@@ -24,6 +28,10 @@
 *:after {
     box-sizing: inherit;
 }
+
+//  this styling is only used in storybook up for presentational purposes
+//  default flex position takes up the entire body element en spills overlay
+//  on top of the docs page
 
 :host([hidden]) {
     display: none;
@@ -48,8 +56,8 @@ rux-button-group {
         align-items: center;
         z-index: 1100;
         background-color: rgba(0, 0, 0, 0.5);
+        @include mixins.animation(fadeIn, 0.5s);
     }
-
     &__dialog {
         position: relative;
         display: flex;
@@ -99,12 +107,20 @@ rux-button-group {
     &__message {
         margin: 0.5rem 1.875rem 2.5rem 1.875rem;
     }
+    .rux-button {
+        box-shadow: none !important;
+    }
 }
 
 rux-icon {
     margin-right: 0.75rem;
 }
 
-.rux-modal .rux-button {
-    box-shadow: none !important;
+@include mixins.keyframes(fadeIn) {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

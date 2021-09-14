@@ -6,6 +6,7 @@
     /**
      * @prop --color-classification-text-dark: the color of dark text in the classification marking
      */
+
     display: block;
 }
 
@@ -13,22 +14,23 @@
     display: none;
 }
 
-:host div {
+.rux-classification {
+    font-size: var(--font-size);
+    font-weight: bold;
+    font-family: var(--font-family);
+    color: var(--color-classification-text-light);
+    background-color: var(--color-classification-unclassified);
+    text-transform: uppercase;
+}
+
+.rux-classification--banner {
     z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
-    align-content: center;
     min-height: 26px;
-    box-sizing: border-box;
-    font-size: var(--font-size);
-    font-weight: bold;
-    font-family: var(--font-family);
-    text-transform: uppercase;
-    transition: top 0.5s ease;
+    transition: top 10.5s ease;
     overflow-wrap: anywhere;
-    color: var(--color-classification-text-light);
-    background-color: var(--color-classification-unclassified);
     position: absolute;
     top: 0;
     left: 0;
@@ -37,42 +39,32 @@
     width: 100%;
 }
 
-:host([tag]) div {
-    position: relative;
-    align-items: center;
-    top: auto;
-    left: auto;
-    min-height: auto;
+.rux-classification--tag {
     width: fit-content;
     line-height: 1;
     padding: 0.25rem 0.9375rem;
     border-radius: 3px;
     font-size: var(--font-size-md);
-    flex-grow: 0;
 }
 
-:host([tag]) {
-    padding: 0.25rem 0.9375rem;
-}
-
-:host([classification='top-secret-sci']) div {
+:host([classification='top-secret-sci']) .rux-classification {
     background-color: var(--color-classification-top-secret-sci);
     color: var(--color-classification-text-dark);
 }
 
-:host([classification='top-secret']) div {
+:host([classification='top-secret']) .rux-classification {
     background-color: var(--color-classification-top-secret);
     color: var(--color-classification-text-dark);
 }
-:host([classification='secret']) div {
+:host([classification='secret']) .rux-classification {
     background-color: var(--color-classification-secret);
 }
-:host([classification='confidential']) div {
+:host([classification='confidential']) .rux-classification {
     background-color: var(--color-classification-confidential);
 }
-:host([classification='controlled']) div {
+:host([classification='controlled']) .rux-classification {
     background-color: var(--color-classification-cui);
 }
-:host([classification='unclassified']) div {
+:host([classification='unclassified']) .rux-classification {
     background-color: var(--color-classification-unclassified);
 }

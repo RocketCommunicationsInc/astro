@@ -56,41 +56,42 @@
     border-radius: var(--progress-radius);
     height: 1.25rem;
     width: 100%;
+    &::-webkit-progress-bar {
+        background-color: transparent;
+    }
+    &::-webkit-progress-value {
+        border-radius: var(--progress-radius);
+        height: var(--progress-height);
+        margin: var(--progress-padding);
+        max-width: var(--progress-width);
+        background: var(--progress-determinate-bar-background-color);
+        transition: width 0.3s ease;
+        -moz-transition: width 0.3s ease;
+        -webkit-transition: width 0.3s ease;
+        -o-transition: width 0.3s ease;
+    }
+    &::-ms-fill {
+        border-radius: var(--progress-radius);
+        border: none;
+        height: var(--progress-height);
+        margin: 0.125rem;
+        max-width: calc(100% - 0.375rem);
+        background-color: var(--progress-determinate-bar-background-color);
+    }
+    &::-moz-progress-bar {
+        border-radius: var(--progress-radius);
+        margin: 0.125rem 0.125rem 0 0.125rem;
+        height: var(--progress-height);
+        max-width: var(--progress-width);
+        background: var(--progress-determinate-bar-background-color);
+    }
 }
 .rux-progress__value {
     margin-left: 0.5rem;
     text-align: right;
     color: var(--progress-label-color);
 }
-.rux-progress[value]::-webkit-progress-bar {
-    background-color: transparent;
-}
-.rux-progress[value]::-webkit-progress-value {
-    border-radius: var(--progress-radius);
-    height: var(--progress-height);
-    margin: var(--progress-padding);
-    max-width: var(--progress-width);
-    background: var(--progress-determinate-bar-background-color);
-    transition: width 0.3s ease;
-    -moz-transition: width 0.3s ease;
-    -webkit-transition: width 0.3s ease;
-    -o-transition: width 0.3s ease;
-}
-.rux-progress[value]::-ms-fill {
-    border-radius: var(--progress-radius);
-    border: none;
-    height: var(--progress-height);
-    margin: 0.125rem;
-    max-width: calc(100% - 0.375rem);
-    background-color: var(--progress-determinate-bar-background-color);
-}
-.rux-progress[value]::-moz-progress-bar {
-    border-radius: var(--progress-radius);
-    margin: 0.125rem 0.125rem 0 0.125rem;
-    height: var(--progress-height);
-    max-width: var(--progress-width);
-    background: var(--progress-determinate-bar-background-color);
-}
+
 /* Indeterminate */
 .rux-progress:indeterminate {
     -webkit-appearance: none;
@@ -110,18 +111,20 @@
     animation-duration: 1.367s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    &::-ms-fill {
+        animation-name: none;
+    }
+    &::-moz-progress-bar {
+        background-color: transparent;
+    }
+
+    /* Removes the default animation from IE */
+    &::-webkit-progress-value,
+    &::-webkit-progress-bar {
+        background-color: transparent;
+    }
 }
-/* Removes the default animation from IE */
-.rux-progress:indeterminate::-ms-fill {
-    animation-name: none;
-}
-.rux-progress:indeterminate::-moz-progress-bar {
-    background-color: transparent;
-}
-.rux-progress:indeterminate::-webkit-progress-value,
-.rux-progress:indeterminate::-webkit-progress-bar {
-    background-color: transparent;
-}
+
 @keyframes spin {
     from {
         transform: rotate(0deg);

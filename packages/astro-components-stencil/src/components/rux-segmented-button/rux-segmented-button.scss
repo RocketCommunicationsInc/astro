@@ -55,15 +55,11 @@
 
 .rux-segmented-button {
     display: inline-flex;
-
     height: 1.6875rem;
     overflow: hidden;
-
     padding: 0;
     margin: 0;
-
     list-style: none;
-
     border-radius: var(--segmented-button-border-radius);
     background-color: var(--segmented-button-background-color);
 }
@@ -73,80 +69,55 @@
     width: auto;
     margin: 0;
     padding: 0;
+
+    label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        height: 1.5625rem;
+        margin: 0;
+        padding: 0 0.75rem;
+        border: 1px solid var(--segmented-button-border-color);
+        color: var(--segmented-button-text-color);
+        background-color: var(--segmented-button-background-color);
+        font-size: 1rem;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        &:hover {
+            background-color: var(--segmented-button-hover-background-color);
+            border-color: var(--segmented-button-hover-border-color);
+            color: var(--segmented-button-hover-text-color);
+            outline: none;
+        }
+    }
+
+    input {
+        display: none !important;
+        &:checked + label {
+            background-color: var(--segmented-button-selected-background-color);
+            color: var(--segmented-button-selected-text-color);
+        }
+        &:checked:hover + label {
+            background-color: var(
+                --segmented-button-selected-hover-background-color
+            );
+            color: var(--segmented-button-selected-hover-text-color);
+            border-color: var(--segmented-button-selected-hover-border-color);
+        }
+    }
+    &:nth-child(2):not(:last-child) label {
+        border-right: none;
+        border-left: none;
+    }
+    &:first-child label {
+        border-radius: var(--segmented-button-border-radius) 0 0
+            var(--segmented-button-border-radius);
+    }
+    &:last-child label {
+        border-radius: 0 var(--segmented-button-border-radius)
+            var(--segmented-button-border-radius) 0;
+    }
 }
-
-.rux-segmented-button__segment label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: auto;
-    height: 1.5625rem;
-
-    margin: 0;
-    padding: 0 0.75rem;
-
-    border: 1px solid var(--segmented-button-border-color);
-
-    color: var(--segmented-button-text-color);
-    background-color: var(--segmented-button-background-color);
-
-    font-size: 1rem;
-
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.rux-segmented-button__segment input {
-    display: none !important;
-}
-
-.rux-segmented-button__segment label:hover {
-    background-color: var(--segmented-button-hover-background-color);
-    border-color: var(--segmented-button-hover-border-color);
-    color: var(--segmented-button-hover-text-color);
-    outline: none;
-}
-
-.rux-segmented-button__segment input:checked + label {
-    background-color: var(--segmented-button-selected-background-color);
-    color: var(--segmented-button-selected-text-color);
-}
-
-.rux-segmented-button__segment input:checked:hover + label {
-    background-color: var(--segmented-button-selected-hover-background-color);
-    color: var(--segmented-button-selected-hover-text-color);
-    border-color: var(--segmented-button-selected-hover-border-color);
-}
-
-.rux-segmented-button__segment:nth-child(2):not(:last-child) label {
-    border-right: none;
-    border-left: none;
-}
-.rux-segmented-button__segment:first-child label {
-    border-radius: var(--segmented-button-border-radius) 0 0
-        var(--segmented-button-border-radius);
-}
-.rux-segmented-button__segment:last-child label {
-    border-radius: 0 var(--segmented-button-border-radius)
-        var(--segmented-button-border-radius) 0;
-}
-
-/*
-  OVERRIDE FOR IE
-  Otherwise all segments get rounded corners. Need to override and re-enable
-  some style definitions.
-*/
-
-.rux-segmented-button.style-scope {
-    border-radius: 3px 6px 6px 3px !important;
-}
-.rux-segmented-button__segment.style-scope {
-    border-radius: 0;
-    height: auto;
-    border: none;
-    border-right: 1px solid var(--segmented-button-border-color);
-}
-/* END OVERRDIDE FOR IE EDGE */

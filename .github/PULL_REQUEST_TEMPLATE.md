@@ -18,11 +18,11 @@
 
 ## Types of changes
 
--   [ ] Bug fix
--   [ ] New feature
--   [ ] Breaking change
+- [ ] Bug fix
+- [ ] New feature
+- [ ] Breaking change
 
 ## Checklist
 
--   [ ] This PR adds or removes a Storybook story.
--   [ ] I have added tests to cover my changes.
+- [ ] This PR adds or removes a Storybook story.
+- [ ] I have added tests to cover my changes.
