@@ -1,0 +1,147 @@
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { html, render } from 'lit-html'
+const args = extractArgTypes('rux-notification')
+args.open.defaultValue = true
+args.message.defaultValue =
+    'This is a notification banner. It won’t disappear until the user dismisses it.'
+args.status.defaultValue = 'standby'
+
+<Meta
+    title="Components/Notification"
+    component="rux-notification"
+    argTypes={args}
+/>
+
+# Notification
+
+Events that deserve user attention, but don’t require a response, may be displayed in a Notification Banner. The Banner displays within the user’s field-of-view, but doesn’t block other interaction.
+
+If the user is currently working in a specific screen area, the Banner may be presented in that area. If the Notification is more general, or doesn’t relate to a specific area of the screen, it may be presented in the center of the screen just below the Global Status Bar.
+
+If another Notification Banner is waiting, it appears when the current Banner is dismissed. Banners don’t stack or group.
+
+## Guidelines
+
+-   [Astro UXDS: Notification Banner](https://www.astrouxds.com/ui-components/notification-banner)
+
+export const Default = (args) => {
+    return html`
+        <div style="display: flex; flex-flow: column; justify-content: center;">
+            <rux-notification
+                ?open="${args.open}"
+                .closeAfter="${args.closeAfter}"
+                status="${args.status}"
+                message="${args.message}"
+            >
+            </rux-notification>
+        </div>
+    `
+}
+
+<Canvas>
+    <Story name="Default" height="100px">
+        {Default.bind()}
+    </Story>
+</Canvas>
+
+## Usage
+
+The Astro UXDS Notification Banner hides from view using absolute positioning in CSS to slide up and outside of the parent element's content area. To ensure the notification hides properly, make sure the Notification Banner's parent element has both `position: relative` and `overflow: hidden` applied.
+
+## API
+
+<ArgsTable of="rux-notification" />
+
+## Variants
+
+### Auto Close
+
+export const NotificationAutoClose = (args) => {
+    return html`
+        <div style="display: flex; flex-flow: column; justify-content: center;">
+            <rux-notification
+                open="${args.open}"
+                .closeAfter="${args.closeAfter}"
+                status="${args.status}"
+                message="This is a notification banner. It will disappear in 2000 ms."
+            >
+            </rux-notification>
+        </div>
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+            open: true,
+            closeAfter: 2000,
+        }}
+        name="Auto Close"
+        height="100px"
+    >
+        {NotificationAutoClose.bind()}
+    </Story>
+</Canvas>
+
+### All Variants
+
+export const AllVariants = () => html`
+    <div
+        style="display: flex; flex-flow: column; justify-content: center; margin:20px;"
+    >
+        <div
+            style="display: flex; position: relative; height: 68px; margin-bottom: 20px; overflow: hidden;"
+        >
+            <rux-notification
+                open
+                status="standby"
+                message="Standby notification banner"
+            ></rux-notification>
+        </div>
+        <div
+            style="display: flex; position: relative; height: 68px; margin-bottom: 20px; overflow: hidden;"
+        >
+            <rux-notification
+                open
+                status="normal"
+                message="Normal notification banner"
+            ></rux-notification>
+        </div>
+        <div
+            style="display: flex; position: relative; height: 68px; margin-bottom: 20px; overflow: hidden;"
+        >
+            <rux-notification
+                open
+                status="caution"
+                message="Caution notification banner"
+            ></rux-notification>
+        </div>
+        <div
+            style="display: flex; position: relative; height: 68px; margin-bottom: 20px; overflow: hidden;"
+        >
+            <rux-notification
+                open
+                status="critical"
+                message="Critical notification banner"
+            ></rux-notification>
+        </div>
+    </div>
+`
+
+<Canvas>
+    <Story name="All Variants">{AllVariants.bind()}</Story>
+</Canvas>
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxNotification } from '@astrouxds/astro-web-components/dist/components/rux-notification'
+import { RuxIcon } from '@astrouxds/astro-web-components/dist/components/rux-icon'
+import { RuxIconClose } from '@astrouxds/astro-web-components/dist/components/rux-icon-close'
+customElements.define('rux-notification', RuxNotification)
+customElements.define('rux-icon', RuxIcon)
+customElements.define('rux-icon-close', RuxIconClose)
+```

@@ -2,4 +2,4 @@
 . "$(dirname "$0")/_/husky.sh"
 
 echo "Running Tests"
-npx lerna run test.unit -- --changedSince=next --passWithNoTests
+npx lerna run test.unit -- --changedSince=main --passWithNoTests
