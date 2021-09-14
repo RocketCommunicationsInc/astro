@@ -9,7 +9,6 @@ describe('Select', () => {
 
     it('syncs value to select element', () => {
         cy.get('rux-select').invoke('prop', 'value', '1.1')
-
         cy.get('select').should('have.value', '1.1')
     })
 

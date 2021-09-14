@@ -28,6 +28,21 @@
     <body class="dark-theme">
         <div style="padding: 10%; display: flex; justify-content: center">
             <div style="width: 60%">
+                <form id="form-default">
+                    <rux-radio-group name="ruxColor">
+                        <rux-radio
+                            id="ruxRadioDefaultOne"
+                            name="ruxColorDefault"
+                            value="green"
+                        ></rux-radio>
+                        <rux-radio
+                            id="ruxRadioDefaultTwo"
+                            name="ruxColorDefault"
+                            value="purple"
+                        ></rux-radio>
+                    </rux-radio-group>
+                    <button type="submit">submit</button>
+                </form>
                 <form id="form">
                     <rux-radio-group name="ruxColor">
                         <rux-radio

@@ -62,6 +62,16 @@ export class RuxRadioGroup {
         this.handleClick = this.handleClick.bind(this)
     }
 
+    componentWillLoad() {
+        const radios = Array.from(
+            this.el.querySelectorAll('rux-radio')
+        ) as HTMLRuxRadioElement[]
+
+        if (radios.length > 1 && !this.value) {
+            this.value = radios[0].getAttribute('value')
+        }
+    }
+
     handleClick(e: MouseEvent) {
         const selectedRadio =
             e.target && (e.target as HTMLElement).closest('rux-radio')
