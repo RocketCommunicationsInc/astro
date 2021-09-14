@@ -53,7 +53,13 @@ export class RuxClassificationMarking {
     render() {
         return (
             <Host>
-                <div>
+                <div
+                    class={{
+                        'rux-classification': true,
+                        'rux-classification--tag': this.type === 'tag',
+                        'rux-classification--banner': this.type === 'banner',
+                    }}
+                >
                     {this._getDisplayData()}
                     {this.label}
                 </div>
