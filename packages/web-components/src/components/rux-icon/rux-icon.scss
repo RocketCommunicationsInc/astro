@@ -1,0 +1,20 @@
+:host {
+    /** @prop --icon-default-color: the default color of the icon */
+    --icon-default-color: var(--primary);
+
+    display: inline-flex;
+    color: var(--icon-default-color);
+}
+
+:host([hidden]) {
+    display: none;
+}
+
+svg,
+svg > svg {
+    height: 100%;
+    width: auto;
+}
+.icon {
+    display: inline-flex;
+}

@@ -1,0 +1,29 @@
+:host {
+    /**
+      * @prop --tree-text-color: tree text color
+      */
+    --tree-text-color: var(--default-text);
+    /**
+      * @prop --tree-background-color: tree background color
+      */
+    --tree-background-color: var(--surface);
+    /**
+    * @prop --tree-border-color: tree color
+    */
+    --tree-border-color: var(--primary-alt);
+
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0px;
+    font-size: 1rem;
+    color: var(--tree-text-color);
+    border: solid 1px var(--tree-border-color);
+    background-color: var(--tree-background-color);
+    user-select: none;
+    width: 100%;
+}
+
+:host([hidden]) {
+    display: none;
+}

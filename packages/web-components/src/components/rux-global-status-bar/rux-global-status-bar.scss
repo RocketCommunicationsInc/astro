@@ -1,0 +1,126 @@
+:host {
+    display: block;
+    position: sticky;
+    z-index: 50;
+
+    top: 0;
+    left: 0;
+
+    height: 100px;
+    width: 100%;
+
+    padding: 0 1.875rem;
+
+    box-sizing: border-box;
+    background-color: var(--global-status-bar);
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    contain: layout; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
+}
+
+:host([hidden]) {
+    display: none;
+}
+
+header {
+    overflow: hidden;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+slot[name='left-side'] > *,
+::slotted(*[slot='left-side']) {
+    margin-right: 10px;
+}
+
+slot[name='left-side'] > rux-icon,
+::slotted(rux-icon[slot='left-side']) {
+    height: 34px;
+}
+
+slot[name='left-side'] > .shifted-up,
+::slotted(.shifted-up[slot='left-side']) {
+    height: 54px;
+}
+
+.app-meta,
+::slotted(*[slot='app-meta']) {
+    display: inline-flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0px auto 0px 0px;
+    color: var(--color-basics-white);
+    white-space: nowrap;
+}
+
+.app-info-wrapper {
+    flex-basis: 100%;
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 6px;
+    min-width: 170px;
+}
+
+.app-meta h1 {
+    letter-spacing: 0.25px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    height: 32px;
+    font-size: 2.125rem; //34px
+}
+
+.app-domain {
+    font-weight: 700;
+    margin-right: 13px;
+}
+
+.app-name {
+    font-weight: 400;
+    margin-right: 0.3em;
+}
+
+.app-version {
+    display: inline-block;
+    font-size: 1.1875rem;
+    font-weight: 300;
+}
+
+.app-state-wrapper {
+    display: flex;
+}
+
+// all temp classes and their subsequent styling will be replaced with internal component styles.
+.app-state {
+    box-sizing: border-box;
+    color: var(--color-basics-white);
+    background-color: var(--color-basics-black);
+    border-radius: 2px;
+    font-size: 14px;
+    padding: 2px 6px;
+    text-align: center;
+    height: 22px;
+    margin-right: 6px;
+    white-space: nowrap;
+}
+
+.username {
+    box-sizing: border-box;
+    flex-basis: 50%;
+    font-size: 14px;
+    padding: 2px 0px;
+    height: 22px;
+}
+
+.slotted-content {
+    display: inline-flex;
+    justify-content: center;
+    flex-basis: 100%;
+}

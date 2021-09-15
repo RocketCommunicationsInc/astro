@@ -1,0 +1,176 @@
+:host {
+    /**
+     * @prop --button-text-color: Button text color
+     */
+    --button-text-color: var(--inverse-text);
+
+    /**
+     * @prop --button-background-color: Button background color
+     */
+    --button-background-color: var(--primary);
+
+    /**
+     * @prop --button-border-color: Button border color
+     */
+    --button-border-color: transparent;
+
+    /**
+     * @prop --button-hover-background-color: Button hover background color
+     */
+    --button-hover-background-color: var(--hover);
+
+    /**
+     * @prop --button-hover-border-color: Button hover border color
+     */
+    --button-hover-border-color: transparent;
+
+    /**
+     * @prop --button-active-background-color: Button active background color
+     */
+    --button-active-background-color: var(--primary);
+
+    /**
+     * @prop --button-active-border-color: Button active border color
+     */
+    --button-active-border-color: var(--primary);
+
+    /**
+     * @prop --button-secondary-text-color: Button secondary text color
+     */
+
+    --button-secondary-text-color: var(--primary);
+
+    /**
+     * @prop --button-secondary-background-color: Button secondary background color
+     */
+    --button-secondary-background-color: transparent;
+
+    /**
+     * @prop --button-secondary-border-color: Button secondary border color
+     */
+    --button-secondary-border-color: var(--primary, rgb(0, 90, 143));
+
+    /**
+     * @prop --button-secondary-hover-background-color:  Button secondary hover background color
+     */
+    --button-secondary-hover-background-color: transparent;
+
+    /**
+     * @prop --button-secondary-hover-border-color:  Button secondary hover border color
+     */
+    --button-secondary-hover-border-color: var(--hover);
+
+    display: inline-block;
+}
+
+:host([hidden]) {
+    display: none;
+}
+
+:host([disabled]) {
+    pointer-events: none;
+}
+.rux-button {
+    display: flex;
+    position: relative;
+
+    margin: 0;
+    padding: 0 1rem;
+
+    height: 2.125rem;
+    min-width: 2.25rem;
+
+    border-radius: var(--border-radius-button);
+
+    color: var(--button-text-color);
+    font-family: var(--font-family);
+    font-size: 1rem;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    justify-content: center;
+    align-items: center;
+
+    user-select: none;
+
+    rux-icon,
+    ::slotted(rux-icon) {
+        height: 1rem;
+        width: 1rem;
+        margin-right: 0.625rem;
+        color: var(--button-text-color);
+    }
+
+    &:disabled {
+        opacity: var(--disabled-opacity);
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover:not([disabled]) {
+        cursor: pointer;
+    }
+
+    &--default {
+        border: 1px solid var(--button-border-color);
+        background-color: var(--button-background-color);
+        &:hover:not([disabled]) {
+            border-color: var(--button-hover-border-color);
+            background-color: var(--button-hover-background-color);
+        }
+        &:active:not([disabled]) {
+            border-color: var(--button-active-border-color);
+            background-color: var(--button-active-background-color);
+        }
+    }
+
+    &--secondary {
+        color: var(--button-secondary-text-color);
+        background-color: var(--button-secondary-background-color);
+        border: 1px solid var(--button-secondary-border-color);
+
+        &:hover:not([disabled]) {
+            color: var(--button-secondary-text-color);
+            background-color: var(--button-secondary-hover-background-color);
+            border-color: var(--button-secondary-hover-border-color);
+        }
+
+        &:active:not([disabled]) {
+            border-color: var(--button-secondary-border-color);
+            background-color: var(--button-secondary-background-color);
+        }
+        rux-icon,
+        ::slotted(rux-icon) {
+            color: var(--button-secondary-text-color);
+        }
+    }
+
+    &--small {
+        height: 1.625rem;
+        padding: 0 1rem;
+        line-height: 1;
+    }
+
+    &--large {
+        height: 2.875rem;
+        min-width: 3rem;
+        padding: 0 1rem;
+    }
+
+    &--icon-only {
+        font-size: 0px;
+        width: 3rem;
+    }
+}
+
+.rux-button--icon-only ::slotted(rux-icon),
+.rux-button--icon-only rux-icon {
+    margin-left: -0.625rem;
+    margin-right: -0.625rem;
+}

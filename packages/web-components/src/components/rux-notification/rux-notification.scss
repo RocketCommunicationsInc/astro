@@ -1,0 +1,51 @@
+:host {
+    /**
+  * @prop --notification-text-color: The notification text color
+  */
+    --notification-text-color: var(--color-tertiary-900);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    align-items: center;
+    align-content: center;
+    top: -4.375rem;
+    left: 0;
+    height: 4.375rem;
+    width: 100%;
+    position: absolute;
+    padding: 0 1.25rem;
+    background-color: var(--color-status-standby-400);
+    transition: top 0.5s ease;
+    box-sizing: border-box;
+    font-size: var(--font-size-xl);
+    color: var(--notification-text-color);
+    rux-icon {
+        align-items: center;
+        justify-content: flex-end;
+        color: var(--banner-clear);
+    }
+}
+
+:host([hidden]) {
+    display: none;
+}
+
+:host([open]) {
+    top: 0;
+}
+
+:host,
+:host([status='standby']) {
+    background-color: var(--color-status-standby-400);
+}
+
+:host([status='normal']) {
+    background-color: var(--color-status-normal-400);
+}
+:host([status='caution']) {
+    background-color: var(--color-status-caution-400);
+}
+:host([status='critical']) {
+    background-color: var(--color-status-critical-400);
+}

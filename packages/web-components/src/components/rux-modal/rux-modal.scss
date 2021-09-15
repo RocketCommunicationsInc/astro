@@ -1,0 +1,126 @@
+@use "../../global/mixins";
+
+:host {
+    /**
+    * @part wrapper - css part hook to style modal wrapper
+    */
+
+    /**
+    * @prop --modal-title-color: Modal title color
+    */
+    --modal-title-color: var(--inverse-text);
+
+    /**
+    * @prop --modal-background-color: Modal background color
+    */
+    --modal-background-color: var(--surface);
+
+    /**
+    * @prop --modal-border-color: Modal border color
+    */
+    --modal-border-color: var(--primary);
+
+    display: contents;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+//  this styling is only used in storybook up for presentational purposes
+//  default flex position takes up the entire body element en spills overlay
+//  on top of the docs page
+
+:host([hidden]) {
+    display: none;
+}
+
+rux-button-group {
+    margin-top: auto;
+    margin-left: auto;
+    align-self: flex-end;
+}
+
+.rux-modal {
+    &__wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1100;
+        background-color: rgba(0, 0, 0, 0.5);
+        @include mixins.animation(fadeIn, 0.5s);
+    }
+    &__dialog {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: var(--modal-background-color);
+        width: 28rem;
+        height: 13.5rem;
+        border: 2px solid var(--modal-border-color);
+        border-radius: 4px;
+        margin: auto;
+        padding: 0;
+        user-select: none;
+        box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+            0 3px 14px 3px rgba(0, 0, 0, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    &__titlebar {
+        display: flex;
+        flex-grow: 0;
+        flex-shrink: 0;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 2rem;
+        background-color: var(--modal-border-color);
+        user-select: none;
+        cursor: move;
+        h1 {
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.2;
+            padding: 0;
+            margin: 0;
+            color: var(--modal-title-color);
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 1rem;
+        color: var(--default-text);
+    }
+
+    &__message {
+        margin: 0.5rem 1.875rem 2.5rem 1.875rem;
+    }
+    .rux-button {
+        box-shadow: none !important;
+    }
+}
+
+rux-icon {
+    margin-right: 0.75rem;
+}
+
+@include mixins.keyframes(fadeIn) {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

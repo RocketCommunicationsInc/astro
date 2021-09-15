@@ -1,0 +1,123 @@
+:host {
+    display: block;
+    box-sizing: border-box;
+
+    /** @prop --segmented-button-background-color: Segmented button background color */
+    --segmented-button-background-color: var(--background);
+
+    /** @prop --segmented-button-text-color: Segmented button text color*/
+    --segmented-button-text-color: var(--primary);
+
+    /** @prop --segmented-button-border-color: Segmented button border color*/
+    --segmented-button-border-color: var(--primary);
+
+    /** @prop --segmented-button-hover-background-color: Segmented button hover background color*/
+    --segmented-button-hover-background-color: var(--background);
+
+    /** @prop --segmented-button-hover-text-color: Segmented button hover text color*/
+    --segmented-button-hover-text-color: var(--primary);
+
+    /** @prop --segmented-button-hover-border-color: Segmented button hover border color*/
+    --segmented-button-hover-border-color: var(--hover);
+
+    /** @prop --segmented-button-selected-background-color: Segmented button selected background color*/
+    --segmented-button-selected-background-color: var(
+        --color-segmented-button-selected
+    );
+
+    /** @prop --segmented-button-selected-text-color: Segmented button selected text color*/
+    --segmented-button-selected-text-color: var(--default-text);
+
+    /** @prop --segmented-button-selected-hover-background-color: Segmented button selected hover background color*/
+    --segmented-button-selected-hover-background-color: var(
+        --color-segmented-button-selected
+    );
+
+    /** @prop --segmented-button-selected-hover-text-color: Segmented button selected hover text color*/
+    --segmented-button-selected-hover-text-color: var(--default-text);
+
+    /** @prop --segmented-button-selected-hover-border-color: Segmented button selected hover border color*/
+    --segmented-button-selected-hover-border-color: var(--primary);
+
+    /** @prop --segmented-button-border-radius: Segmented button border radius */
+    --segmented-button-border-radius: 3px;
+}
+
+:host([hidden]) {
+    display: none;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.rux-segmented-button {
+    display: inline-flex;
+    height: 1.6875rem;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border-radius: var(--segmented-button-border-radius);
+    background-color: var(--segmented-button-background-color);
+}
+
+.rux-segmented-button__segment {
+    height: 1.6875rem;
+    width: auto;
+    margin: 0;
+    padding: 0;
+
+    label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        height: 1.5625rem;
+        margin: 0;
+        padding: 0 0.75rem;
+        border: 1px solid var(--segmented-button-border-color);
+        color: var(--segmented-button-text-color);
+        background-color: var(--segmented-button-background-color);
+        font-size: 1rem;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        &:hover {
+            background-color: var(--segmented-button-hover-background-color);
+            border-color: var(--segmented-button-hover-border-color);
+            color: var(--segmented-button-hover-text-color);
+            outline: none;
+        }
+    }
+
+    input {
+        display: none !important;
+        &:checked + label {
+            background-color: var(--segmented-button-selected-background-color);
+            color: var(--segmented-button-selected-text-color);
+        }
+        &:checked:hover + label {
+            background-color: var(
+                --segmented-button-selected-hover-background-color
+            );
+            color: var(--segmented-button-selected-hover-text-color);
+            border-color: var(--segmented-button-selected-hover-border-color);
+        }
+    }
+    &:nth-child(2):not(:last-child) label {
+        border-right: none;
+        border-left: none;
+    }
+    &:first-child label {
+        border-radius: var(--segmented-button-border-radius) 0 0
+            var(--segmented-button-border-radius);
+    }
+    &:last-child label {
+        border-radius: 0 var(--segmented-button-border-radius)
+            var(--segmented-button-border-radius) 0;
+    }
+}

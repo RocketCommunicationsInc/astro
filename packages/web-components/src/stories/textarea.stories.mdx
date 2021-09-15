@@ -1,0 +1,290 @@
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { html, render } from 'lit-html'
+
+<Meta
+    title="Components/Textarea"
+    component="rux-textarea"
+    argTypes={extractArgTypes('rux-textarea')}
+    parameters={{
+        actions: {
+            handles: [
+                'rux-input rux-textarea',
+                'rux-change rux-textarea',
+                'rux-blur rux-textarea',
+            ],
+        },
+    }}
+/>
+
+# Textarea
+
+## Guidelines
+
+-   [Astro UXDS: Input Field](https://www.astrouxds.com/components/input-field/)
+
+export const Default = (args) => {
+    return html`
+        <rux-textarea
+            .label="${args.label}"
+            .disabled="${args.disabled}"
+            .errorText="${args.errorText}"
+            .invalid="${args.invalid}"
+            .helpText="${args.helpText}"
+            .min-length="${args.minLength}"
+            .maxLength="${args.maxLength}"
+            .rows="${args.rows}"
+            .name="${args.name}"
+            .placeholder="${args.placeholder}"
+            ?required="${args.required}"
+            ?small="${args.small}"
+            .value="${args.value}"
+        ></rux-textarea>
+    `
+}
+
+<Canvas>
+    <Story
+        name="Default"
+        args={{
+            label: 'Textarea label',
+        }}
+        parameters={{
+            docs: {
+                source: {
+                    code:
+                        '<rux-textarea label="Textarea label"></rux-textarea>',
+                },
+            },
+        }}
+    >
+        {Default.bind()}
+    </Story>
+</Canvas>
+
+## API
+
+<ArgsTable of="rux-textarea" />
+
+## Variants
+
+### Disabled
+
+export const Disabled = (args) => {
+    return html`
+        <rux-textarea
+            .label="${args.label}"
+            .disabled="${args.disabled}"
+            .errorText="${args.errorText}"
+            .invalid="${args.invalid}"
+            .helpText="${args.helpText}"
+            .minLength="${args.minLength}"
+            .maxLength="${args.maxLength}"
+            .rows="${args.rows}"
+            .name="${args.name}"
+            .placeholder="${args.placeholder}"
+            ?required="${args.required}"
+            ?small="${args.small}"
+            .value="${args.value}"
+        ></rux-textarea>
+    `
+}
+
+<Canvas>
+    <Story
+        name="Disabled"
+        args={{
+            label: 'Disabled textarea',
+            disabled: true,
+        }}
+        parameters={{
+            docs: {
+                source: {
+                    code:
+                        '<rux-textarea label="Disabled textarea" disabled></rux-textarea>',
+                },
+            },
+        }}
+    >
+        {Disabled.bind()}
+    </Story>
+</Canvas>
+
+### Small
+
+export const Small = (args) => {
+    return html`
+        <rux-textarea
+            .label="${args.label}"
+            .disabled="${args.disabled}"
+            .errorText="${args.errorText}"
+            .invalid="${args.invalid}"
+            .helpText="${args.helpText}"
+            .minLength="${args.minLength}"
+            .maxLength="${args.maxLength}"
+            .rows="${args.rows}"
+            .name="${args.name}"
+            .placeholder="${args.placeholder}"
+            ?required="${args.required}"
+            ?small="${args.small}"
+            .value="${args.value}"
+        ></rux-textarea>
+    `
+}
+
+<Canvas>
+    <Story
+        name="Small"
+        args={{
+            label: 'Small Textarea',
+            small: true,
+        }}
+        parameters={{
+            docs: {
+                source: {
+                    code:
+                        '<rux-textarea label="Small Textarea" small></rux-textarea>',
+                },
+            },
+        }}
+    >
+        {Small.bind()}
+    </Story>
+</Canvas>
+
+### Help Text
+
+export const HelpText = (args) => {
+    return html`
+        <rux-textarea
+            .label="${args.label}"
+            .disabled="${args.disabled}"
+            .errorText="${args.errorText}"
+            .invalid="${args.invalid}"
+            .helpText="${args.helpText}"
+            .minLength="${args.minLength}"
+            .maxLength="${args.maxLength}"
+            .rows="${args.rows}"
+            .name="${args.name}"
+            .placeholder="${args.placeholder}"
+            ?required="${args.required}"
+            ?small="${args.small}"
+            .value="${args.value}"
+        ></rux-textarea>
+    `
+}
+
+<Canvas>
+    <Story
+        name="Help Text"
+        args={{
+            label: 'Help text',
+            helpText: 'Help text',
+            type: 'text',
+        }}
+        parameters={{
+            docs: {
+                source: {
+                    code:
+                        '<rux-textarea label="Help text" help-text="Help text"></rux-textarea>',
+                },
+            },
+        }}
+    >
+        {HelpText.bind()}
+    </Story>
+</Canvas>
+
+### Invalid w/ Error Text
+
+export const Invalid = (args) => {
+    return html`
+        <rux-textarea
+            .label="${args.label}"
+            .disabled="${args.disabled}"
+            .errorText="${args.errorText}"
+            .invalid="${args.invalid}"
+            .helpText="${args.helpText}"
+            .minLength="${args.minLength}"
+            .maxLength="${args.maxLength}"
+            .rows="${args.rows}"
+            .name="${args.name}"
+            .placeholder="${args.placeholder}"
+            ?required="${args.required}"
+            ?small="${args.small}"
+            .value="${args.value}"
+        ></rux-textarea>
+    `
+}
+
+<Canvas>
+    <Story
+        name="Invalid"
+        args={{
+            invalid: true,
+            errorText: 'Field is required',
+            label: 'Textarea Field',
+        }}
+        parameters={{
+            docs: {
+                source: {
+                    code:
+                        '<rux-textarea label="Textarea Field" error-text="Field is required" invalid></rux-textarea>',
+                },
+            },
+        }}
+    >
+        {Invalid.bind()}
+    </Story>
+</Canvas>
+
+### Placeholder Text
+
+export const Placeholder = (args) => {
+    return html`
+        <rux-textarea
+            .label="${args.label}"
+            .disabled="${args.disabled}"
+            .errorText="${args.errorText}"
+            .invalid="${args.invalid}"
+            .helpText="${args.helpText}"
+            .minLength="${args.minLength}"
+            .maxLength="${args.maxLength}"
+            .rows="${args.rows}"
+            .name="${args.name}"
+            .placeholder="${args.placeholder}"
+            ?required="${args.required}"
+            ?small="${args.small}"
+            .value="${args.value}"
+        ></rux-textarea>
+    `
+}
+
+<Canvas>
+    <Story
+        name="Placeholder"
+        args={{
+            label: 'Placeholder Text',
+            placeholder: 'Placeholder',
+        }}
+        parameters={{
+            docs: {
+                source: {
+                    code:
+                        '<rux-textarea label="Placeholder Text" placeholder="Placeholder"></rux-textarea>',
+                },
+            },
+        }}
+    >
+        {Placeholder.bind()}
+    </Story>
+</Canvas>
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import RuxTextarea from '@astrouxds/astro-web-components/dist/components/rux-textarea.js'
+customElements.define('rux-textarea', RuxTextarea)
+```

@@ -1,0 +1,139 @@
+:host {
+    display: inline-block;
+    padding: 0;
+}
+
+:host([hidden]) {
+    display: none;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.rux-advanced-status {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    margin: 0;
+    line-height: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.rux-advanced-status__icon-group {
+    display: flex;
+    position: relative;
+    margin: 0 auto;
+    width: 4.5rem;
+}
+
+rux-status {
+    position: absolute;
+    top: -0.25rem;
+    left: -0.25rem;
+    margin: 0;
+}
+
+.rux-advanced-status__badge {
+    display: block;
+    z-index: 2;
+    order: 3;
+    position: absolute;
+    bottom: -0.75rem;
+    right: -0.4rem;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 3px;
+    padding: 0.65rem 0.25rem;
+    color: #fff;
+    font-size: 0.775rem;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-color: #000;
+}
+
+.rux-advanced-status__label {
+    color: var(--default-text);
+    font-size: 0.875rem;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.2;
+    overflow: hidden;
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 6.25rem;
+}
+
+.rux-advanced-status__sublabel {
+    font-size: 0.65em;
+    color: var(--default-text);
+    opacity: 0.6;
+    display: block;
+}
+
+.rux-advanced-status__hidden {
+    display: none;
+}
+
+svg {
+    margin: 0 auto;
+    width: 3rem;
+    height: 3rem;
+}
+svg.rux-status--off {
+    stroke: var(--color-off, rgb(158, 167, 173));
+    fill: var(--color-off, rgb(158, 167, 173));
+}
+
+svg.rux-status--standby {
+    stroke: var(--color-standby, rgb(45, 204, 255));
+    fill: var(--color-standby, rgb(45, 204, 255));
+}
+
+svg.rux-status--normal {
+    stroke: var(--color-normal, rgb(86, 240, 0));
+    fill: var(--color-normal, rgb(86, 240, 0));
+}
+
+svg.rux-status--caution {
+    stroke: var(--color-caution, rgb(252, 232, 58));
+    fill: var(--color-caution, rgb(252, 232, 58));
+}
+
+svg.rux-status--serious {
+    stroke: var(--color-serious, rgb(255, 179, 0));
+    fill: var(--color-serious, rgb(255, 179, 0));
+}
+
+svg.rux-status--critical {
+    stroke: var(--color-critical, rgb(255, 56, 56));
+    fill: var(--color-critical, rgb(255, 56, 56));
+}
+
+[data-progress] svg {
+    transition: stroke-dashoffset 0.367s, stroke 0.367s;
+    transform-origin: 50% 50%;
+}
+
+.rux-advanced-status__progress {
+    font-family: var(--font-family-mono, 'monospace');
+    margin-top: -0.125rem;
+    margin-left: -0.125rem;
+    font-size: 0.8rem;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    letter-spacing: -0.0625rem;
+    text-align: center;
+}

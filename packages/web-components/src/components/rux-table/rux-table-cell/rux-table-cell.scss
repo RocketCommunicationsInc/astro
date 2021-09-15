@@ -1,0 +1,12 @@
+:host {
+    display: table-cell;
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: var(--table-row-border-color);
+    padding: 0.625rem 1rem;
+    white-space: nowrap;
+}
+
+:host([hidden]) {
+    display: none;
+}
