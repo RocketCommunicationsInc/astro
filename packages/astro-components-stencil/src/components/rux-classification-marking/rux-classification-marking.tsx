@@ -16,7 +16,7 @@ export class RuxClassificationMarking {
     /**
      * Defines which classification marking will be displayed.
      */
-    @Prop() classification: Classification = 'unclassified'
+    @Prop({ reflect: true }) classification: Classification = 'unclassified'
     /**
      * Allows additional text labels to be added to the a marking
      */

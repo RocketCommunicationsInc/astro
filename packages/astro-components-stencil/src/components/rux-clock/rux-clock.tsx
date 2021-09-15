@@ -49,7 +49,7 @@ export class RuxClock {
     /**
      * Applies a smaller clock style.
      */
-    @Prop() small: boolean = false
+    @Prop({ reflect: true }) small: boolean = false
 
     @Watch('timezone')
     timezoneChanged() {

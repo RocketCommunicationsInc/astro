@@ -19,7 +19,7 @@ describe('rux-classification-marking', () => {
             html: `<rux-classification-marking></rux-classification-marking>`,
         })
         expect(page.root).toEqualHtml(`
-      <rux-classification-marking>
+      <rux-classification-marking classification="unclassified">
         <mock:shadow-root>
           <div class="rux-classification rux-classification--banner">
             unclassified
