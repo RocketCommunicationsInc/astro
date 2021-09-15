@@ -164,12 +164,16 @@ export class RuxInputField {
                         'rux-form-field--small': small,
                     }}
                 >
-                    <label class="rux-input-label" htmlFor={inputId}>
-                        {label}
-                        {this.required && (
-                            <span class="rux-input-label__asterisk">&#42;</span>
-                        )}
-                    </label>
+                    {label && (
+                        <label class="rux-input-label" htmlFor={inputId}>
+                            {label}
+                            {this.required && (
+                                <span class="rux-input-label__asterisk">
+                                    &#42;
+                                </span>
+                            )}
+                        </label>
+                    )}
                     <input
                         name={name}
                         disabled={disabled}
