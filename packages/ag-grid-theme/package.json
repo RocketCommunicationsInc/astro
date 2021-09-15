@@ -1,6 +1,6 @@
 {
   "name": "astro-ag-grid-theme-test",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "AG Grid theme using Astro UXDS styling",
   "main": "index.js",
   "files": [
@@ -9,7 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build.sass": "sass src/styles/scss/index.scss src/styles/astro-ag-theme.css",
-    "build": "npm run build.sass && webpack --config webpack.config.js"
+    "build": "npm run build.sass && webpack --config webpack.config.js",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
