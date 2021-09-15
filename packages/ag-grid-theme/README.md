@@ -6,21 +6,27 @@ The Astro AG-Grid theme follows the [Astro theming guidelines](https://www.astro
 
 There are three parts to the Astro AG-Grid theme:
 
-1. The CSS custom properties properties specific to Astro, which are imported from the `@astrouxds/astro-web-components` repositroy.
+1. The CSS custom properties properties specific to Astro, which you will need to import seperately from the `@astrouxds/astro-web-components` repositroy.
 2. The AG-Grid community alpine-dark theme that the Astro AG-Grid theme builds off of, which is imported from the `ag-grid-community` repository.
-3. The Astro AG-Grid theme itself, which is defined in `@astrouxds/ag-grid/dist/main.css` and consumes the impoorted custom above.
+3. The Astro AG-Grid theme itself, which is defined in `@astrouxds/ag-grid/dist/main.css` and consumes the impoorted custom properties above.
 
-The @astrouxds/ag-grid/dist/main.css file merges each of these sources so you will only need to import one
+The @astrouxds/ag-grid/dist/main.css file merges the alpine-dark and astro ag-grid theme sources so you will only need to import two files.
 
 ## Installation
 
-Run `npm install @astrouxds/ag-grid-theme` in terminal while in your project file.
+Import the Astro Web Components
+Run `npm install @astrouxds/astro-web-components`while your project directory
+
+Import the Astro AG-grid theme
+Run `npm install @astrouxds/ag-grid-theme` while in your project directory.
 
 ## Usage
 
-1. Place `@import "~@astrouxds/ag-grid-theme/dist/main.css"` where your entry point file, usually index.js or main.js.
+1. Place `@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css` where your entry point file, usually index.js or main.js.
 
-2. Apply the class "ag-theme-astro" to your `ag-grid` element:
+2. Place `@import "~@astrouxds/ag-grid-theme/dist/main.css"` just below the previous import
+
+3. Apply the class "ag-theme-astro" to your `ag-grid` element:
 
 ```html
 <ag-grid class="ag-theme-astro" ...></ag-grid>
