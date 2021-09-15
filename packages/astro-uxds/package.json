@@ -1,46 +1,45 @@
 {
-	"name": "astro-website",
-	"version": "4.4.4",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/RocketCommunicationsInc/astro-uxds"
-	},
-	"description": "Generates the public facing Astro UX Guidelines.",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "run-p -l start:*",
-		"start:clean": "rimraf _site",
-		"start:search": "node ./_includes/search_config/search-generator.js",
-		"start:scss": "node-sass -rw scss -o css",
-		"start:eleventy": "eleventy --serve",
-		"build": "run-s -l build:*",
-		"build:clean": "rimraf _site",
-		"build:search": "node ./_includes/search_config/search-generator.js",
-		"build:scss": "node-sass -r scss -o css --output-style compressed",
-		"build:eleventy": "eleventy"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "SEE LICENSE IN LICENSE.md",
-	"devDependencies": {
-		"@11ty/eleventy": "^0.10.0",
-		"clean-css": "^4.2.1",
-		"gulp": "^4.0.2",
-		"gulp-imagemin": "^6.2.0",
-		"gulp-rename": "^2.0.0",
-		"list-stream": "^2.0.0",
-		"markdown-it-anchor": "^5.2.5",
-		"markdown-it-container": "^2.0.0",
-		"markdown-it-div": "^1.1.0",
-		"markdown-it-implicit-figures": "^0.9.0",
-		"markdown-json": "^1.4.1",
-		"node-sass": "^4.14.1",
-		"npm-run-all": "^4.1.5",
-		"rimraf": "^3.0.2"
-	},
-	"dependencies": {
-		"fuse.js": "^3.4.6",
-		"nodemon": "^2.0.2"
-	}
+  "name": "astro-website",
+  "version": "4.4.4",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RocketCommunicationsInc/astro-uxds"
+  },
+  "description": "Generates the public facing Astro UX Guidelines.",
+  "main": "index.js",
+  "scripts": {
+    "start": "run-p -l start:*",
+    "start:clean": "rimraf _site",
+    "start:search": "node ./_includes/search_config/search-generator.js",
+    "start:scss": "node-sass -rw scss -o css",
+    "start:eleventy": "eleventy --serve",
+    "build": "run-s -l build:*",
+    "build:clean": "rimraf _site",
+    "build:search": "node ./_includes/search_config/search-generator.js",
+    "build:scss": "node-sass -r scss -o css --output-style compressed",
+    "build:eleventy": "eleventy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "clean-css": "^4.2.1",
+    "gulp": "^4.0.2",
+    "gulp-imagemin": "^6.2.0",
+    "gulp-rename": "^2.0.0",
+    "list-stream": "^2.0.0",
+    "markdown-it-anchor": "^5.2.5",
+    "markdown-it-container": "^2.0.0",
+    "markdown-it-div": "^1.1.0",
+    "markdown-it-implicit-figures": "^0.9.0",
+    "markdown-json": "^1.4.1",
+    "node-sass": "^4.14.1",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "fuse.js": "^3.4.6",
+    "nodemon": "^2.0.2"
+  }
 }
