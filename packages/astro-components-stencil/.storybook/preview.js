@@ -1,6 +1,5 @@
 import themes from './theme'
 import { addDecorator } from '@storybook/web-components'
-import { addReadme } from 'storybook-readme/html'
 import {
     extractArgTypes,
     extractComponentDescription,
@@ -9,7 +8,6 @@ import {
 
 import docJson from '../docs.json'
 if (docJson) setStencilDocJson(docJson)
-addDecorator(addReadme)
 
 export const parameters = {
     viewport: {
