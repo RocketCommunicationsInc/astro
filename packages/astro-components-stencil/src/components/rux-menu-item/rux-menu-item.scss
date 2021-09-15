@@ -17,7 +17,8 @@
     /**
       * @prop --popup-menu-item-hover-background-color: Menu Item Hover Text Color
     */
-    --popup-menu-item-hover-background-color: var(--hover);
+    // --popup-menu-item-hover-background-color: var(--hover);
+    --popup-menu-item-hover-text-color: var(--hover);
 
     display: block;
 
@@ -35,7 +36,7 @@
 
         &:hover {
             background-color: var(--popup-menu-item-hover-background-color);
-            color: var(--popup-menu-item-hover-background-color);
+            color: var(--popup-menu-item-hover-text-color);
         }
 
         a,
@@ -46,9 +47,6 @@
             word-wrap: none;
             white-space: nowrap;
             overflow: hidden;
-            &:hover {
-                color: var(--popup-menu-item-hover-background-color);
-            }
         }
 
         a {
