@@ -1,44 +1,24 @@
 $ag-theme-astro-default-params: (
   // alpine-active-color: var(--colorSecondaryDarken1,  rgb(58, 129, 191)),
   // color of text and icons in primary UI elements like menus
-  foreground-color: var(--tableRowTextColor, rgb(255, 255, 255)),
+  foreground-color: var(--default-text, #ffffff),
   // color of text in grid cells
-  data-color: var(--tableRowTextColor, rgb(255, 255, 255)),
+  data-color: var(--default-text, #ffffff),
   // color of text and icons in UI elements that need to be slightly less emphasised to avoid distracting attention from data
   secondary-foreground-color: var(--fontLowContrastColor, rgb(204, 204, 204)),
   // color of text and icons in the header
-  header-foreground-color:
-    var(
-      --tableHeaderTextColor,
-      var(--colorTertiaryLighten3, rgb(169, 178, 188))
-    ),
+  header-foreground-color: var(--default-text, #ffffff),
   // color of elements that can't be interacted with because they are in a disabled state
   disabled-foreground-color:
-    ag-derived(foreground-color, $opacity: var(--disabledOpacity, 0.4)),
+    ag-derived(foreground-color, $opacity: var(--disabled-opacity, 0.4)),
   // Background color of the grid
-  background-color:
-    var(
-      --tableRowBackgroundColor,
-      var(--colorTertiaryDarken1, rgb(32, 50, 70))
-    ),
+  background-color: var(--surface, #1b2d3e),
   // Background color for all headers, including the grid header, panels etc
-  header-background-color:
-    var(
-      --tableHeaderBackgroundColor,
-      var(--colorTertiaryDarken2, rgb(24, 38, 53))
-    ),
+  header-background-color: var(--global-status-bar, #172635),
   // Background color for second level headings within UI components
-  subheader-background-color:
-    var(
-      --tableControlsBackgroundColor,
-      var(--colorTertiaryDarken2, rgb(24, 38, 53))
-    ),
+  subheader-background-color: var(--primary, #4dacff),
   // Background color for toolbars directly under subheadings (as used in the chart settings menu)
-  subheader-toolbar-background-color:
-    var(
-      --tableHeaderBackgroundColor,
-      var(--colorTertiaryDarken2, rgb(24, 38, 53))
-    ),
+  subheader-toolbar-background-color: var(--global-status-bar, #172635),
   // Background for areas of the interface that contain UI controls, like tool panels and the chart settings menu
   control-panel-background-color:
     var(
@@ -46,21 +26,13 @@ $ag-theme-astro-default-params: (
       var(--colorTertiaryDarken2, rgb(24, 38, 53))
     ),
   // Background color of selected rows in the grid and in dropdown menus
-  selected-row-background-color:
-    var(
-      --tableRowSelectedBackgroundColor,
-      var(--colorTertiary, rgb(40, 63, 88))
-    ),
+  selected-row-background-color: var(--primary, #4dacff),
   // Background color applied to every other row or null to use background-color for all rows
   odd-row-background-color: null,
   // Background color of the overlay shown over the grid when it is covered by an overlay, e.g. a data loading indicator.
   // modal-overlay-background-color: ag-derived(background-color, $opacity: 0.66),
   // Background color when hovering over rows in the grid and in dropdown menus, or null for no rollover effect (note - if you want a rollover on one but not the other, set to null and use CSS to achieve the rollover)
-  row-hover-color:
-    var(
-      --tableRowHoverBackgroundColor,
-      var(--colorTertiaryDarken2, rgb(24, 38, 53))
-    ),
+  row-hover-color: var(--table-hover, #92cbff4d),
   // color to draw around selected cell ranges
   range-selection-border-color:
     var(
@@ -69,11 +41,7 @@ $ag-theme-astro-default-params: (
     ),
   // Background color of selected cell ranges. By default, setting this to a semi-transparent color (opacity of 0.1 to 0.5 works well) will generate appropriate values for the range-selection-background-color-{1..4} colors used when multiple ranges overlap.
   // NOTE: if setting this value to a CSS variable, and your app supports overlapping range selections, also set range-selection-background-color-{1..4}.
-  range-selection-background-color:
-    var(
-      --tableRowSelectedBackgroundColor,
-      var(--colorTertiary, rgb(40, 63, 88))
-    ),
+  range-selection-background-color: var(--background, #101923),
   // These 4 parameters are used for fine-grained control over the background color used when 1, 2, 3 or 4 ranges overlap.
   // range-selection-background-color-1: ag-derived(range-selection-background-color),
   // range-selection-background-color-2: ag-derived(range-selection-background-color, $self-overlay: 2),
@@ -99,10 +67,7 @@ $ag-theme-astro-default-params: (
   // value-change-delta-up-color: #43a047,
   // value-change-delta-down-color: #e53935,
   // color for the "chip" that represents a column that has been dragged onto a drop zone
-  chip-background-color: var(
-      --tableRowSelectedBackgroundColor,
-      rgb(40, 63, 88)
-    ),
+  chip-background-color: var(--background, #101923),
   // By default, color variables can be overridden at runtime by CSS variables, e.g.
   // background-color can be overridden with the CSS var --ag-background-color. Pass true
   // to disable this behaviour.
@@ -120,11 +85,11 @@ $ag-theme-astro-default-params: (
   // borders-side-button: ag-derived(borders),
   border-radius: 1px,
   // color for border around major UI components like the grid itself, headers, footers and tool panels
-  border-color: var(--tableBorderColor, rgb(83, 101, 121)),
+  border-color: var(--background, #101923),
   // color for borders used to separate elements within a major UI component
-  secondary-border-color: var(--tableRowBorderColor rgb(83, 101, 121)),
+  secondary-border-color: var(--background, #101923),
   // color of the border between grid rows, or null to display no border
-  row-border-color: var(--tableRowBorderColor, rgb(83, 101, 121)),
+  row-border-color: var(--background, #101923),
   // Default border for cells. This can be used to specify the border-style and border-color properties e.g. `dashed red` but the border-width is fixed at 1px.
   // cell-horizontal-border: solid transparent,
   // Separator between columns in the header. Displays between all header cells For best UX, use either this or header-column-resize-handle but not both
@@ -136,25 +101,20 @@ $ag-theme-astro-default-params: (
   header-column-resize-handle: true,
   header-column-resize-handle-height: 50%,
   header-column-resize-handle-width: 1px,
-  header-column-resize-handle-color:
-    var(--tableBorderColor, var(--colorTertiaryDarken1, rgb(32, 50, 70))),
+  header-column-resize-handle-color: var(--background, #101923),
   //
   // INPUTS
   //
   // Suppress styling of checkbox/radio/range input elements. If you want to style these yourself, set this to true. If you only want to disable styling for some kinds of input, you can set this to true and e.g. @include ag-native-inputs((checkbox: false)) which will emit styles for all kinds of input except checkboxes.
   // suppress-native-widget-styling: false,
-  input-border-color: var(--tableFilterBorderColor, rgb(83, 101, 121)),
-  input-disabled-border-color:
-    var(--tableFilterDisabledBorderColor, rgb(40, 63, 88)),
-  input-disabled-background-color:
-    var(--tableFilterDisabledBackgroundColor, rgb(32, 50, 70)),
+  input-border-color: var(--primary, #4dacff),
+  input-disabled-border-color: var(--background, #101923),
+  input-disabled-background-color: var(--surface, #1b2d3e),
   checkbox-background-color: null,
   checkbox-border-radius: 1.5px,
   // the following are used by the icons in the ag-grid icon-font-family
-  checkbox-checked-color:
-    var(--controlBackgroundColor, var(--colorPrimary, rgb(0, 90, 143))),
-  checkbox-unchecked-color:
-    var(--controlBorderColor, var(--colorSecondaryLighten1, rgb(77, 172, 255))),
+  checkbox-checked-color: var(--primary, #4dacff),
+  checkbox-unchecked-color: var(--primary, #4dacff),
   // checkbox-indeterminate-color: ag-derived(checkbox-unchecked-color),
   toggle-button-off-border-color:
     var(--toggleTrackBorderColor, rgb(122, 122, 122)),
@@ -250,11 +210,7 @@ $ag-theme-astro-params: map-merge(
     border-bottom-width: 0;
   }
   .ag-header-cell {
-    border-top: var(
-        --tableHeaderAccentColor,
-        var(--colorTertiary, rgb(40, 63, 88))
-      )
-      1px solid;
+    border-top: var(--primary, #4dacff) 1px solid;
   }
   .ag-checkbox-input-wrapper::after {
     border-radius: 2px;
@@ -263,21 +219,20 @@ $ag-theme-astro-params: map-merge(
   .ag-checkbox-input-wrapper:not(.ag-checked):not(.ag-indeterminate) {
     width: 16px;
     height: 16px;
-    border: 1px solid var(--controlBorderColor, rgb(122, 193, 255));
+    border: 1px solid var(--primary, #4dacff);
   }
   .ag-checkbox-input-wrapper:not(.ag-checked):not(.ag-indeterminate)::after {
     content: "";
   }
   .ag-theme-astro .ag-checkbox-input-wrapper:active,
   .ag-theme-astro .ag-checkbox-input-wrapper:focus-within {
-    box-shadow: inset 0 0 0 2px var(--colorPrimary, rgb(0, 90, 143));
+    box-shadow: inset 0 0 0 2px var(--primary, #4dacff);
   }
 
   .ag-checkbox-input-wrapper.ag-checked::after {
-    background: var(--colorPrimaryLighten4, rgb(204, 222, 233));
-    box-shadow: 0 0 0 1px
-      var(--controlBorderColor, var(--colorPrimary, rgb(0, 90, 143)));
-    color: var(--controlBackgroundColor, var(--colorPrimary, rgb(0, 90, 143)));
+    background: var(--color-primary-100, #cbdee9);
+    box-shadow: 0 0 0 1px var(--primary, #4dacff);
+    color: var(--primary, #4dacff);
   }
   .ag-ltr .ag-column-select-column-drag-handle:not(:last-child),
   .ag-ltr .ag-column-select-column-group-drag-handle:not(:last-child) {
