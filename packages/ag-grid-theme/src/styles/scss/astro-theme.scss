@@ -1,3 +1,16 @@
+:root {
+  --font-low-contrast-color: #cccccc;
+  --table-control-background-color: var(--color-tertiary-700, #172635);
+  --table-cell-selected-border-color: var(--color-secondary-700, #2b659b);
+  --toggle-track-border-color: #7a7a7a;
+  --toggle-track-background-color: #cccccc;
+  --toggle-selected-track-border-color: #1b7a99;
+  --toggle-selected-track-background-color: var(--gsb-primary, #4dacff);
+  --toggle-thumb-background-color: var(--default-text, #ffffff);
+  --toggle-thumb-border-color: var(--default-text, #ffffff);
+  --table-header-box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.45);
+}
+
 $ag-theme-astro-default-params: (
   // alpine-active-color: var(--colorSecondaryDarken1,  rgb(58, 129, 191)),
   // color of text and icons in primary UI elements like menus
@@ -5,7 +18,7 @@ $ag-theme-astro-default-params: (
   // color of text in grid cells
   data-color: var(--default-text, #ffffff),
   // color of text and icons in UI elements that need to be slightly less emphasised to avoid distracting attention from data
-  secondary-foreground-color: var(--fontLowContrastColor, rgb(204, 204, 204)),
+  secondary-foreground-color: var(--font-low-contrast-color, #cccccc),
   // color of text and icons in the header
   header-foreground-color: var(--default-text, #ffffff),
   // color of elements that can't be interacted with because they are in a disabled state
@@ -21,10 +34,7 @@ $ag-theme-astro-default-params: (
   subheader-toolbar-background-color: var(--global-status-bar, #172635),
   // Background for areas of the interface that contain UI controls, like tool panels and the chart settings menu
   control-panel-background-color:
-    var(
-      --tableControlsBackgroundColor,
-      var(--colorTertiaryDarken2, rgb(24, 38, 53))
-    ),
+    var(--table-controls-background-color, #172635),
   // Background color of selected rows in the grid and in dropdown menus
   selected-row-background-color: var(--primary, #4dacff),
   // Background color applied to every other row or null to use background-color for all rows
@@ -34,10 +44,9 @@ $ag-theme-astro-default-params: (
   // Background color when hovering over rows in the grid and in dropdown menus, or null for no rollover effect (note - if you want a rollover on one but not the other, set to null and use CSS to achieve the rollover)
   row-hover-color: var(--table-hover, #92cbff4d),
   // color to draw around selected cell ranges
-  range-selection-border-color:
-    var(
-      --tableCellSelectedBorderColor,
-      var(--colorSecondaryDarken2, rgb(46, 103, 153))
+  range-selection-border-color: var(
+      --table-cell-selected-border-color,
+      #2b659b
     ),
   // Background color of selected cell ranges. By default, setting this to a semi-transparent color (opacity of 0.1 to 0.5 works well) will generate appropriate values for the range-selection-background-color-{1..4} colors used when multiple ranges overlap.
   // NOTE: if setting this value to a CSS variable, and your app supports overlapping range selections, also set range-selection-background-color-{1..4}.
@@ -117,17 +126,17 @@ $ag-theme-astro-default-params: (
   checkbox-unchecked-color: var(--primary, #4dacff),
   // checkbox-indeterminate-color: ag-derived(checkbox-unchecked-color),
   toggle-button-off-border-color:
-    var(--toggleTrackBorderColor, rgb(122, 122, 122)),
+    var(--toggle-track-border-color, rgb(122, 122, 122)),
   toggle-button-off-background-color:
-    var(--toggleTrackBackgroundColor, rgb(204, 204, 204)),
+    var(--toggle-track-background-color, rgb(204, 204, 204)),
   toggle-button-on-border-color:
-    var(--toggleSelectedTrackBorderColor, rgb(27, 122, 153)),
+    var(--toggle-selected-track-border-color, rgb(27, 122, 153)),
   toggle-button-on-background-color:
-    var(--toggleSelectedTrackBackgroundColor, rgb(77, 172, 255)),
+    var(--toggle-selected-track-background-color, rgb(77, 172, 255)),
   toggle-button-switch-background-color:
-    var(--toggleThumbBackgroundColor, rgb(255, 255, 255)),
+    var(--toggle-thumb-background-color, rgb(255, 255, 255)),
   toggle-button-switch-border-color:
-    var(--toggleThumbBorderColor, rgb(255, 255, 255)),
+    var(--toggle-thumb-border-color, rgb(255, 255, 255)),
   toggle-button-border-width: 1px,
   toggle-button-height: ag-derived(icon-size),
   toggle-button-width: ag-derived(toggle-button-height, $times: 2),
@@ -169,8 +178,8 @@ $ag-theme-astro-default-params: (
   // Cause tabs to stretch across the full width of the tab panel header
   full-width-tabs: true,
   // Fonts
-  font-family: var(--fontFamily, ("Helvetica Neue", sans-serif)),
-  font-size: var(--fontSize, 16px),
+  font-family: var(--font-family, ("Helvetica Neue", sans-serif)),
+  font-size: var(--font-size, 16px),
   // The name of the font family you're using
   icon-font-family: $ag-theme-alpine-icon-font-family,
   // this var exported by ag-theme-base-font-vars.scss
@@ -203,8 +212,8 @@ $ag-theme-astro-params: map-merge(
 
   .ag-header {
     box-shadow: var(
-      --tableHeaderBoxShadow,
-      0 0.25rem 0.5rem rgba(0, 0, 0, 0.5)
+      --table-header-box-shadow,
+      0 0.25rem 0.5rem rgba(0, 0, 0, 0.45)
     );
     z-index: 1;
     border-bottom-width: 0;
