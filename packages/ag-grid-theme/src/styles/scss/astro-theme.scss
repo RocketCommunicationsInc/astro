@@ -36,7 +36,7 @@ $ag-theme-astro-default-params: (
   control-panel-background-color:
     var(--table-controls-background-color, #172635),
   // Background color of selected rows in the grid and in dropdown menus
-  selected-row-background-color: var(--background, #101923),
+  selected-row-background-color: var(--selected, #1c3f5e),
   // Background color applied to every other row or null to use background-color for all rows
   odd-row-background-color: null,
   // Background color of the overlay shown over the grid when it is covered by an overlay, e.g. a data loading indicator.
