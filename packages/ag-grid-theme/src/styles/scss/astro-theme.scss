@@ -20,7 +20,7 @@ $ag-theme-astro-default-params: (
   // color of text and icons in UI elements that need to be slightly less emphasised to avoid distracting attention from data
   secondary-foreground-color: var(--font-low-contrast-color, #cccccc),
   // color of text and icons in the header
-  header-foreground-color: var(--default-text, #ffffff),
+  header-foreground-color: var(--gsb-default-text, #ffffff),
   // color of elements that can't be interacted with because they are in a disabled state
   disabled-foreground-color:
     ag-derived(foreground-color, $opacity: var(--disabled-opacity, 0.4)),
