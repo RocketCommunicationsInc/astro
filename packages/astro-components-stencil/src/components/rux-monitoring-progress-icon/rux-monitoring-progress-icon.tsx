@@ -101,6 +101,13 @@ export class RuxMonitoringProgressIcon {
         }
     }
 
+    @Watch('range')
+    checkRange(newValue: Array<RangeItem>, oldValue: Array<RangeItem>) {
+        if (newValue !== oldValue) {
+            this.updateProgress()
+        }
+    }
+
     @State() _status: Status = 'off'
     @State() _graphProgress: number = 0
 
