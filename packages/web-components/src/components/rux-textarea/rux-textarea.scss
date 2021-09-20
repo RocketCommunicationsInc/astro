@@ -1,0 +1,134 @@
+:host {
+    /**
+     * @prop --textarea-border-color: Border color of the textarea.
+    */
+    --textarea-border-color: var(--active);
+    /**
+     * @prop --textarea-text-color: Text color
+    */
+    --textarea-text-color: var(--default-text);
+
+    /** @prop --textarea-background-color: Background color*/
+    --textarea-background-color: var(--background);
+
+    /** @prop --textarea-invalid-border-color: Border color while in an invalid state*/
+    --textarea-invalid-border-color: var(--color-critical);
+
+    /**
+     * @prop --textarea-focus-border-color: Border color while in a focused state
+    */
+    --textarea-focus-border-color: var(--hover);
+
+    /**
+     * @prop --textarea-selection-background-color: Background color while in a selected state
+    */
+    --textarea-selection-background-color: var(--color-secondary-300);
+
+    display: block;
+}
+
+:host([hidden]) {
+    display: none;
+}
+
+.rux-textarea {
+    box-sizing: border-box;
+    -webkit-order: 2;
+    order: 2;
+    min-height: 4.25rem;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--textarea-border-color);
+    border-radius: 3px;
+    font-family: var(--font-family);
+    font-size: var(--font-size, 1rem);
+    color: var(--textarea-text-color);
+    background-color: var(--textarea-background-color);
+    &--invalid {
+        border: 1px solid var(--textarea-invalid-border-color);
+    }
+    &--disabled {
+        opacity: 0.4;
+        opacity: var(--disabled-opacity);
+        cursor: not-allowed;
+        cursor: not-allowed;
+    }
+}
+
+.rux-textarea-field {
+    display: flex;
+    flex-direction: column;
+
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    color: var(--default-text);
+}
+
+.rux-textarea {
+    &:focus {
+        border-color: var(--textarea-focus-border-color);
+        outline: none;
+    }
+    &:hover {
+        border-color: var(--textarea-focus-border-color);
+        outline: none;
+    }
+    &--disabled:hover {
+        border: 1px solid var(--textarea-border-color);
+        color: var(--textarea-text-color);
+    }
+    &--invalid:hover {
+        border: 1px solid var(--textarea-invalid-border-color);
+    }
+    &::placeholder {
+        font-size: 1rem;
+        font-weight: normal;
+        font-family: var(--font-family);
+        color: var(--default-text);
+        opacity: 0.6;
+    }
+}
+
+.rux-textarea-label {
+    margin-bottom: 0.375rem;
+}
+
+::selection {
+    background-color: var(--textarea-selection-background-color);
+}
+
+.rux-textarea-field--small {
+    .rux-textarea-label {
+        font-size: var(--font-size-md);
+    }
+    .rux-textarea {
+        padding: 0.3rem;
+        font-size: var(--font-size-md);
+    }
+}
+
+.rux-help-text {
+    margin-top: 0.625rem;
+    color: var(--secondary-text);
+    font-size: var(--font-size-md);
+    font-family: var(--font-family);
+    font-weight: normal;
+    letter-spacing: 0.5px;
+}
+
+.rux-error-text {
+    padding-left: 1.625rem;
+    background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FF3030%22%20fill-rule%3D%22evenodd%22%20d%3D%22M64.031%205c8.461%200%2068.88%20107.243%2063.648%20114.184-5.232%206.942-120.805%205.477-127.212%200C-5.941%20113.708%2055.57%205%2064.03%205zm3.45%2075.894l1.822-34.893H56.946l1.82%2034.893h8.715zM56.803%2093.108c0%201.929.547%203.423%201.643%204.483%201.095%201.06%202.642%201.589%204.642%201.589%201.953%200%203.477-.542%204.572-1.625%201.095-1.084%201.643-2.566%201.643-4.447%200-1.952-.542-3.452-1.625-4.5-1.084-1.047-2.613-1.571-4.59-1.571-2.047%200-3.607.512-4.678%201.536-1.072%201.023-1.607%202.535-1.607%204.535z%22%2F%3E%0A%3C%2Fsvg%3E);
+    background-repeat: no-repeat;
+    background-size: 1rem;
+    background-position: center left 0rem;
+    text-align: left;
+    width: fit-content;
+    -webkit-order: 3;
+    order: 3;
+    margin-top: 0.625rem;
+    color: var(--color-critical);
+    font-size: var(--font-size-md);
+    font-family: var(--font-family);
+    font-weight: bold;
+}

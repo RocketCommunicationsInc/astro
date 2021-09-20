@@ -1,0 +1,137 @@
+:host {
+    display: inline-block;
+    padding: 0;
+}
+
+:host([hidden]) {
+    display: none;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.rux-advanced-status {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+
+    margin: 0;
+
+    line-height: 0;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.rux-advanced-status__icon-group {
+    display: flex;
+    position: relative;
+
+    margin: 0 auto;
+    width: 4.5rem;
+}
+
+rux-icon {
+    order: 2;
+    margin: 0 auto;
+    width: 2.7rem;
+    height: 2.7rem;
+}
+
+.rux-advanced-status__status {
+    position: absolute;
+    top: -0.4rem;
+    left: -0.4rem;
+    margin: 0;
+}
+
+.rux-advanced-status__badge {
+    display: block;
+    z-index: 2;
+    order: 3;
+
+    position: absolute;
+    bottom: -0.75rem;
+    right: -0.4rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 3px;
+    padding: 0.65rem 0.25rem;
+
+    color: var(--color-basics-white);
+    font-size: 0.775rem;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    background-color: #000;
+}
+
+.rux-advanced-status__label {
+    color: var(--default-text);
+    font-size: 0.875rem;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.2;
+    overflow: hidden;
+
+    margin-top: 1rem;
+
+    width: 100%;
+    max-width: 6.25rem;
+}
+
+.rux-advanced-status__sublabel {
+    font-size: 0.65em;
+    color: var(--default-text);
+    opacity: 0.6;
+    display: block;
+}
+
+.rux-advanced-status__hidden {
+    display: none;
+}
+
+:host([status='off']) {
+    rux-icon {
+        color: var(--color-off);
+    }
+}
+
+:host([status='standby']) {
+    rux-icon {
+        color: var(--color-standby);
+    }
+}
+
+:host([status='normal']) {
+    rux-icon {
+        color: var(--color-normal);
+    }
+}
+
+:host([status='caution']) {
+    rux-icon {
+        color: var(--color-caution);
+    }
+}
+
+:host([status='serious']) {
+    rux-icon {
+        color: var(--color-serious);
+    }
+}
+
+:host([status='critical']) {
+    rux-icon {
+        color: var(--color-critical);
+    }
+}

@@ -1,0 +1,14 @@
+describe('Select with Form', () => {
+    beforeEach(() => {
+        cy.visitForm('select')
+    })
+    it('submits the correct select value when using a form', () => {
+        cy.get('rux-select .rux-select').select('blue')
+        cy.get('#form').submit()
+        cy.get('#log').contains('bestThing:blue')
+    })
+
+    // it('does not allow input if disabled', () => {
+
+    // });
+})

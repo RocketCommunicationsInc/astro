@@ -1,0 +1,19 @@
+describe('Radio with Form', () => {
+    beforeEach(() => {
+        cy.visitForm('radio')
+    })
+    it('submits the correct value when using a form', () => {
+        cy.get('#ruxRadioBlue').click()
+        cy.get('#nativeRadioBlue').click()
+        cy.get('#form').submit()
+        //Assert only two values were submitted.
+        cy.get('#log').children().its('length').should('eq', 2)
+
+        cy.get('#log').contains('ruxColor:blue')
+        cy.get('#log').contains('nativeColor:blue')
+    })
+
+    // it('does not allow input if disabled', () => {
+
+    // });
+})

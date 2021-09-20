@@ -1,0 +1,56 @@
+name: Pull Request Actions
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  #lint:
+  #  name: Lint commit messages
+  #  runs-on: ubuntu-latest
+  #  steps:
+  #    - uses: actions/checkout@v2.3.1
+  #      with:
+  #        fetch-depth: 0
+  #    - uses: actions/setup-node@v2.3.0
+  #   - name: Install Dependencies
+  #     run: npm ci
+  #    - name: Run CommitLint
+  #      run: npx commitlint --from HEAD~${{ github.event.pull_request.commits }}
+  unit-test:
+    name: Unit and Integration Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          cache: "npm"
+          cache-dependency-path: "**/package-lock.json"
+      - name: Install modules
+        run: npm i
+      - name: Bootstrap packages
+        run: npx lerna bootstrap
+      - name: Run Unit and Integration Tests
+        run: npx lerna run test.unit
+  e2e-test:
+    name: End-to-End Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          cache: "npm"
+          cache-dependency-path: "**/package-lock.json"
+      - name: Install Modules
+        run: npm ci
+      - name: Boostrap packages
+        run: npx lerna bootstrap
+      - name: Build packages
+        run: npx lerna run build
+      - name: Run Cypress
+        uses: cypress-io/github-action@v2
+        with:
+          start: npx lerna run test.e2e.run --stream
+          working-directory: packages/web-components

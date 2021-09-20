@@ -1,0 +1,11 @@
+:host {
+    display: table-header-group;
+    box-shadow: var(--table-header-box-shadow);
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: var(--table-header-border-color);
+}
+
+:host([hidden]) {
+    display: none;
+}
