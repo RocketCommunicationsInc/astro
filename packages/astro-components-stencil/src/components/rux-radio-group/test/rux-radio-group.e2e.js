@@ -1,6 +1,6 @@
 describe('Radio Group', () => {
     it('renders', () => {
-        cy.visitStory('components-radio-group--default-story')
+        cy.visitStory('forms-radio-group--default-story')
         cy.get('rux-radio-group').should('have.class', 'hydrated')
     })
 })

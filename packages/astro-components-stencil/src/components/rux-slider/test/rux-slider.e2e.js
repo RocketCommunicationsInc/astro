@@ -2,7 +2,7 @@
 
 describe('rux-slider', () => {
     beforeEach(() => {
-        cy.visitStory('components-slider--default-story')
+        cy.visitStory('forms-slider--default-story')
     })
     it('renders', () => {
         cy.get('rux-slider').should('have.class', 'hydrated')

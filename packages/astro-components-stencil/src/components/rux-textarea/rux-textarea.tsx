@@ -46,7 +46,7 @@ export class RuxTextarea implements FormFieldInterface {
     @Prop({ attribute: 'error-text' }) errorText?: string
 
     /**
-     * Marks the textarea as invalid
+     * Presentational only. Renders the Textarea as invalid.
      */
     @Prop() invalid = false
 

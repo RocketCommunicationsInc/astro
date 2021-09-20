@@ -50,7 +50,7 @@ export class RuxSelect implements FormFieldInterface {
     @Prop({ attribute: 'label-id' }) labelId?: string
 
     /**
-     * Sets the Select as Invalid for Custom Validation Usage
+     * Presentational only. Renders the Select Menu as invalid.
      */
     @Prop({ reflect: true }) invalid: boolean = false
 

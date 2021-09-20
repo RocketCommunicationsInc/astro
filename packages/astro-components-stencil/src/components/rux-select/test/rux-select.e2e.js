@@ -1,6 +1,6 @@
 describe('Select', () => {
     beforeEach(() => {
-        cy.visitStory('components-select-menu--select-menu')
+        cy.visitStory('forms-select-menu--select-menu')
     })
 
     it('renders', () => {

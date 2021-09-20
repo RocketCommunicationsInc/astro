@@ -29,7 +29,6 @@ describe('rux-switch', () => {
             disabled: false,
             errorText: undefined,
             name: '',
-            required: false,
             value: '',
         })
     })

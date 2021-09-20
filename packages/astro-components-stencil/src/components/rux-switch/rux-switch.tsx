@@ -58,11 +58,6 @@ export class RuxSwitch implements FormFieldInterface {
     @Prop({ reflect: true }) disabled: boolean = false
 
     /**
-     * Sets the switch as required
-     */
-    @Prop() required: boolean = false
-
-    /**
      * The switch label. For HTML content, use the `label` slot instead.
      */
     @Prop() label?: string
@@ -136,7 +131,6 @@ export class RuxSwitch implements FormFieldInterface {
             errorText,
             helpText,
             name,
-            required,
             value,
         } = this
 
@@ -159,7 +153,6 @@ export class RuxSwitch implements FormFieldInterface {
                 <div
                     class={{
                         'rux-switch': true,
-                        'rux-switch--has-error': required,
                         'rux-switch--has-text':
                             errorText !== undefined || helpText !== undefined,
                     }}
@@ -171,7 +164,6 @@ export class RuxSwitch implements FormFieldInterface {
                         name={name}
                         id={switchId}
                         disabled={disabled}
-                        required={required}
                         checked={checked}
                         value={value}
                         aria-checked={`${checked}`}

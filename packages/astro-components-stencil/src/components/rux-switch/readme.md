@@ -89,7 +89,6 @@ Configure the component using native HTML attributes.
 | `helpText`  | `help-text`  | The help or explanation text                                                                                                                                                            | `string \| undefined` | `undefined` |
 | `label`     | `label`      | The switch label. For HTML content, use the `label` slot instead.                                                                                                                       | `string \| undefined` | `undefined` |
 | `name`      | `name`       | The switch name                                                                                                                                                                         | `string`              | `''`        |
-| `required`  | `required`   | Sets the switch as required                                                                                                                                                             | `boolean`             | `false`     |
 | `value`     | `value`      | The switch value                                                                                                                                                                        | `string`              | `''`        |
 
 

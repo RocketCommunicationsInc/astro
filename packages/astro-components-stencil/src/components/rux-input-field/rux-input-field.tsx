@@ -48,7 +48,7 @@ export class RuxInputField implements FormFieldInterface {
     @Prop({ attribute: 'error-text' }) errorText?: string
 
     /**
-     * Marks the input as invalid
+     * Presentational only. Renders the Input Field as invalid.
      */
     @Prop() invalid = false
 

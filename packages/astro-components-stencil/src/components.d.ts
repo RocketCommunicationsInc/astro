@@ -52,10 +52,6 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * The validation error text
-         */
-        "errorText"?: string;
-        /**
           * The help or explanation text
          */
         "helpText"?: string;
@@ -71,10 +67,6 @@ export namespace Components {
           * The checkbox name
          */
         "name": string;
-        /**
-          * Sets the input as required
-         */
-        "required": boolean;
         /**
           * The checkbox value
          */
@@ -11846,7 +11838,7 @@ export namespace Components {
          */
         "helpText"?: string;
         /**
-          * Marks the input as invalid
+          * Presentational only. Renders the Input Field as invalid.
          */
         "invalid": boolean;
         /**
@@ -12131,7 +12123,7 @@ export namespace Components {
          */
         "helpText"?: string;
         /**
-          * Marks the radio group as invalid
+          * Presentational only. Renders the Radio Group as invalid.
          */
         "invalid": boolean;
         /**
@@ -12167,7 +12159,7 @@ export namespace Components {
          */
         "inputId"?: string;
         /**
-          * Sets the Select as Invalid for Custom Validation Usage
+          * Presentational only. Renders the Select Menu as invalid.
          */
         "invalid": boolean;
         /**
@@ -12253,10 +12245,6 @@ export namespace Components {
          */
         "name": string;
         /**
-          * Sets the switch as required
-         */
-        "required": boolean;
-        /**
           * The switch value
          */
         "value": string;
@@ -12313,7 +12301,7 @@ export namespace Components {
          */
         "helpText"?: string;
         /**
-          * Marks the textarea as invalid
+          * Presentational only. Renders the Textarea as invalid.
          */
         "invalid": boolean;
         /**
@@ -20088,10 +20076,6 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * The validation error text
-         */
-        "errorText"?: string;
-        /**
           * The help or explanation text
          */
         "helpText"?: string;
@@ -20119,10 +20103,6 @@ declare namespace LocalJSX {
           * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
          */
         "onRux-input"?: (event: CustomEvent<any>) => void;
-        /**
-          * Sets the input as required
-         */
-        "required"?: boolean;
         /**
           * The checkbox value
          */
@@ -31894,7 +31874,7 @@ declare namespace LocalJSX {
          */
         "helpText"?: string;
         /**
-          * Marks the input as invalid
+          * Presentational only. Renders the Input Field as invalid.
          */
         "invalid"?: boolean;
         /**
@@ -32215,7 +32195,7 @@ declare namespace LocalJSX {
          */
         "helpText"?: string;
         /**
-          * Marks the radio group as invalid
+          * Presentational only. Renders the Radio Group as invalid.
          */
         "invalid"?: boolean;
         /**
@@ -32259,7 +32239,7 @@ declare namespace LocalJSX {
          */
         "inputId"?: string;
         /**
-          * Sets the Select as Invalid for Custom Validation Usage
+          * Presentational only. Renders the Select Menu as invalid.
          */
         "invalid"?: boolean;
         /**
@@ -32373,10 +32353,6 @@ declare namespace LocalJSX {
          */
         "onRux-input"?: (event: CustomEvent<any>) => void;
         /**
-          * Sets the switch as required
-         */
-        "required"?: boolean;
-        /**
           * The switch value
          */
         "value"?: string;
@@ -32441,7 +32417,7 @@ declare namespace LocalJSX {
          */
         "helpText"?: string;
         /**
-          * Marks the textarea as invalid
+          * Presentational only. Renders the Textarea as invalid.
          */
         "invalid"?: boolean;
         /**

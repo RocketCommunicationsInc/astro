@@ -30,7 +30,7 @@ export class RuxRadioGroup implements FormFieldInterface {
     @Prop() label?: string
 
     /**
-     * Marks the radio group as invalid
+     * Presentational only. Renders the Radio Group as invalid.
      */
     @Prop() invalid: boolean = false
 

@@ -11,7 +11,6 @@ describe('rux-checkbox', () => {
             errorText,
             indeterminate,
             name,
-            required,
             value,
         } = checkbox
 
@@ -23,7 +22,6 @@ describe('rux-checkbox', () => {
             errorText,
             indeterminate,
             name,
-            required,
             value,
         }).toEqual({
             checkboxId: 'rux-checkbox-1',
@@ -32,7 +30,6 @@ describe('rux-checkbox', () => {
             errorText: undefined,
             indeterminate: false,
             name: '',
-            required: false,
             value: '',
         })
     })
