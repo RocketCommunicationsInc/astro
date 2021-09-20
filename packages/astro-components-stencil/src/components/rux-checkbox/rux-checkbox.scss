@@ -23,6 +23,7 @@
     --checkbox-hover-border-color: var(--hover);
 }
 
+.hidden,
 :host([hidden]) {
     display: none;
 }

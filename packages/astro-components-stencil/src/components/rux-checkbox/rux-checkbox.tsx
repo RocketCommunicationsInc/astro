@@ -7,6 +7,7 @@ import {
     Element,
     Watch,
 } from '@stencil/core'
+import { FormFieldInterface } from '../../common/interfaces.module'
 import { renderHiddenInput } from '../../utils/utils'
 
 let id = 0
@@ -19,7 +20,7 @@ let id = 0
     styleUrl: 'rux-checkbox.scss',
     shadow: true,
 })
-export class RuxCheckbox {
+export class RuxCheckbox implements FormFieldInterface {
     private checkboxId = `rux-checkbox-${++id}`
     private _inputEl?: HTMLInputElement
 
@@ -43,6 +44,11 @@ export class RuxCheckbox {
      * The checkbox value
      */
     @Prop({ reflect: true, mutable: true }) value: string = ''
+
+    /**
+     * The checkbox label text. For HTML content, use the default slot instead.
+     */
+    @Prop() label?: string
 
     /**
      * Toggles checked state of a checkbox
@@ -174,7 +180,14 @@ export class RuxCheckbox {
                         ref={(el) => (this._inputEl = el)}
                     />
                     <label htmlFor={checkboxId}>
-                        <slot></slot>
+                        {this.label}
+                        <span
+                            class={{
+                                hidden: !!this.label,
+                            }}
+                        >
+                            <slot></slot>
+                        </span>
                     </label>
                 </div>
                 {this.helpText && !this.errorText && (

@@ -64,6 +64,10 @@ export namespace Components {
          */
         "indeterminate": boolean;
         /**
+          * The checkbox label text. For HTML content, use the default slot instead.
+         */
+        "label"?: string;
+        /**
           * The checkbox name
          */
         "name": string;
@@ -11846,7 +11850,7 @@ export namespace Components {
          */
         "invalid": boolean;
         /**
-          * The input label text
+          * The input label text. For HTML content, use the `label` slot instead.
          */
         "label"?: string;
         /**
@@ -12105,6 +12109,10 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * The radio label text. For HTML content, use the default slot instead.
+         */
+        "label"?: string;
+        /**
           * The radio name
          */
         "name": string;
@@ -12127,7 +12135,7 @@ export namespace Components {
          */
         "invalid": boolean;
         /**
-          * The label of the radio group
+          * The label of the radio group. For HTML content, use the `label` slot instead.
          */
         "label"?: string;
         /**
@@ -12163,7 +12171,7 @@ export namespace Components {
          */
         "invalid": boolean;
         /**
-          * Sets the Label for the Select
+          * The select label text. For HTML content, use the `label` slot instead.
          */
         "label"?: string;
         /**
@@ -12188,6 +12196,10 @@ export namespace Components {
           * Determines if the slider is disabled.
          */
         "disabled": boolean;
+        /**
+          * The slider label text. For HTML content, use the `label` slot instead.
+         */
+        "label"?: string;
         /**
           * Max value of slider.
          */
@@ -12232,6 +12244,10 @@ export namespace Components {
           * The help or explanation text
          */
         "helpText"?: string;
+        /**
+          * The switch label. For HTML content, use the `label` slot instead.
+         */
+        "label"?: string;
         /**
           * The switch name
          */
@@ -12293,15 +12309,15 @@ export namespace Components {
          */
         "errorText"?: string;
         /**
-          * The help or explanation text
+          * The  or explanation text
          */
         "helpText"?: string;
         /**
-          * Marks the input as invalid
+          * Marks the textarea as invalid
          */
         "invalid": boolean;
         /**
-          * The input label text
+          * The textarea label text. For HTML content, use the `label` slot instead.
          */
         "label"?: string;
         /**
@@ -12317,7 +12333,7 @@ export namespace Components {
          */
         "name": string;
         /**
-          * The input placeholder text
+          * The textarea placeholder text
          */
         "placeholder"?: string;
         /**
@@ -20083,6 +20099,10 @@ declare namespace LocalJSX {
           * Toggles indeterminate state of a checkbox. The indeterminate property does not exist in HTML, but can be set in JS. [HTML Checkbox & Indeterminate State](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#indeterminate)
          */
         "indeterminate"?: boolean;
+        /**
+          * The checkbox label text. For HTML content, use the default slot instead.
+         */
+        "label"?: string;
         /**
           * The checkbox name
          */
@@ -31878,7 +31898,7 @@ declare namespace LocalJSX {
          */
         "invalid"?: boolean;
         /**
-          * The input label text
+          * The input label text. For HTML content, use the `label` slot instead.
          */
         "label"?: string;
         /**
@@ -32165,6 +32185,10 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
+          * The radio label text. For HTML content, use the default slot instead.
+         */
+        "label"?: string;
+        /**
           * The radio name
          */
         "name"?: string;
@@ -32195,7 +32219,7 @@ declare namespace LocalJSX {
          */
         "invalid"?: boolean;
         /**
-          * The label of the radio group
+          * The label of the radio group. For HTML content, use the `label` slot instead.
          */
         "label"?: string;
         /**
@@ -32239,7 +32263,7 @@ declare namespace LocalJSX {
          */
         "invalid"?: boolean;
         /**
-          * Sets the Label for the Select
+          * The select label text. For HTML content, use the `label` slot instead.
          */
         "label"?: string;
         /**
@@ -32272,6 +32296,10 @@ declare namespace LocalJSX {
           * Determines if the slider is disabled.
          */
         "disabled"?: boolean;
+        /**
+          * The slider label text. For HTML content, use the `label` slot instead.
+         */
+        "label"?: string;
         /**
           * Max value of slider.
          */
@@ -32324,6 +32352,10 @@ declare namespace LocalJSX {
           * The help or explanation text
          */
         "helpText"?: string;
+        /**
+          * The switch label. For HTML content, use the `label` slot instead.
+         */
+        "label"?: string;
         /**
           * The switch name
          */
@@ -32405,15 +32437,15 @@ declare namespace LocalJSX {
          */
         "errorText"?: string;
         /**
-          * The help or explanation text
+          * The  or explanation text
          */
         "helpText"?: string;
         /**
-          * Marks the input as invalid
+          * Marks the textarea as invalid
          */
         "invalid"?: boolean;
         /**
-          * The input label text
+          * The textarea label text. For HTML content, use the `label` slot instead.
          */
         "label"?: string;
         /**
@@ -32441,7 +32473,7 @@ declare namespace LocalJSX {
          */
         "onRux-input"?: (event: CustomEvent<any>) => void;
         /**
-          * The input placeholder text
+          * The textarea placeholder text
          */
         "placeholder"?: string;
         /**

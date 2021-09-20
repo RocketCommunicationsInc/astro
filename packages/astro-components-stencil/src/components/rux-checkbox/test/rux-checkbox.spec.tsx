@@ -49,7 +49,9 @@ describe('rux-checkbox', () => {
             <div class="rux-checkbox">
                 <input id="rux-checkbox-2" type="checkbox" value="">
                 <label htmlfor="rux-checkbox-2">
+                  <span>
                   <slot></slot>
+                  </span>
                 </label>
             </div>
           </div>

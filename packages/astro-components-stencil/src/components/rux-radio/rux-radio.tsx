@@ -2,6 +2,10 @@ import { Component, h, Prop, Element, Event, EventEmitter } from '@stencil/core'
 
 let id = 0
 
+/**
+ * @slot (default) - The radio label
+ */
+
 @Component({
     tag: 'rux-radio',
     styleUrl: 'rux-radio.scss',
@@ -31,6 +35,11 @@ export class RuxRadio {
      * Disables the radio via HTML disabled attribute. Radio takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
      */
     @Prop({ reflect: true }) disabled: boolean = false
+
+    /**
+     * The radio label text. For HTML content, use the default slot instead.
+     */
+    @Prop() label?: string
 
     /**
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
@@ -81,6 +90,7 @@ export class RuxRadio {
 
     render() {
         const {
+            label,
             radioId,
             checked,
             disabled,
@@ -104,7 +114,7 @@ export class RuxRadio {
                         onBlur={() => _onBlur()}
                     />
                     <label htmlFor={radioId}>
-                        <slot></slot>
+                        <slot>{label}</slot>
                     </label>
                 </div>
             </div>

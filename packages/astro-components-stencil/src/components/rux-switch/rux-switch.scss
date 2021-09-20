@@ -168,6 +168,10 @@
     }
 }
 
+.rux-switch__label {
+    margin-left: 0.75rem;
+}
+
 .rux-form-field {
     display: flex;
     flex-direction: column;
@@ -202,6 +206,7 @@
     font-family: var(--font-family);
     font-weight: bold;
 }
+.hidden,
 :host([hidden]) {
     display: none;
 }

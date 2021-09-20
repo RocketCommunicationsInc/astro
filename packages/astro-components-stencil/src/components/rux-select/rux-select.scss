@@ -51,6 +51,7 @@
     --select-menu-border-color: var(--color-border-menu);
 }
 
+.hidden,
 :host([hidden]) {
     display: none;
 }

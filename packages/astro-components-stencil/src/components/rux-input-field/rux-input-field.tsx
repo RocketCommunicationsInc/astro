@@ -6,22 +6,30 @@ import {
     Host,
     h,
     Element,
+    State,
+    Watch,
 } from '@stencil/core'
-import { renderHiddenInput } from '../../utils/utils'
+import { FormFieldInterface } from '../../common/interfaces.module'
+import { hasSlot, renderHiddenInput } from '../../utils/utils'
 
 let id = 0
 
+/**
+ * @slot label - The input label
+ */
 @Component({
     tag: 'rux-input-field',
     styleUrl: 'rux-input-field.scss',
     shadow: true,
 })
-export class RuxInputField {
+export class RuxInputField implements FormFieldInterface {
     @Element() el!: HTMLRuxCheckboxElement
     inputId = `rux-input-${++id}`
 
+    @State() hasLabelSlot = false
+
     /**
-     * The input label text
+     * The input label text. For HTML content, use the `label` slot instead.
      */
     @Prop() label?: string
     /**
@@ -111,9 +119,30 @@ export class RuxInputField {
      */
     @Event({ eventName: 'rux-blur' }) ruxBlur!: EventEmitter
 
+    @Watch('label')
+    handleLabelChange() {
+        this._handleSlotChange()
+    }
+
     connectedCallback() {
         this._onChange = this._onChange.bind(this)
         this._onInput = this._onInput.bind(this)
+        this._handleSlotChange = this._handleSlotChange.bind(this)
+    }
+
+    disconnectedCallback() {
+        this.el!.shadowRoot!.removeEventListener(
+            'slotchange',
+            this._handleSlotChange
+        )
+    }
+
+    componentWillLoad() {
+        this._handleSlotChange()
+    }
+
+    get hasLabel() {
+        return this.label ? true : this.hasLabelSlot
     }
 
     private _onChange(e: Event) {
@@ -130,6 +159,10 @@ export class RuxInputField {
 
     private _onBlur = () => {
         this.ruxBlur.emit()
+    }
+
+    private _handleSlotChange() {
+        this.hasLabelSlot = hasSlot(this.el, 'label')
     }
 
     render() {
@@ -164,16 +197,31 @@ export class RuxInputField {
                         'rux-form-field--small': small,
                     }}
                 >
-                    {label && (
-                        <label class="rux-input-label" htmlFor={inputId}>
-                            {label}
-                            {this.required && (
-                                <span class="rux-input-label__asterisk">
-                                    &#42;
-                                </span>
-                            )}
-                        </label>
-                    )}
+                    <label
+                        class={{
+                            'rux-input-label': true,
+                        }}
+                        aria-hidden={this.hasLabel ? 'false' : 'true'}
+                        htmlFor={inputId}
+                    >
+                        <span
+                            class={{
+                                hidden: !this.hasLabel,
+                            }}
+                        >
+                            <slot
+                                name="label"
+                                onSlotchange={this._handleSlotChange}
+                            >
+                                {label}
+                                {this.required && (
+                                    <span class="rux-input-label__asterisk">
+                                        &#42;
+                                    </span>
+                                )}
+                            </slot>
+                        </span>
+                    </label>
                     <input
                         name={name}
                         disabled={disabled}

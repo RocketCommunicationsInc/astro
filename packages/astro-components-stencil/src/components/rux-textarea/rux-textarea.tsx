@@ -6,30 +6,37 @@ import {
     EventEmitter,
     Prop,
     Element,
+    Watch,
+    State,
 } from '@stencil/core'
-import { renderHiddenInput } from '../../utils/utils'
+import { FormFieldInterface } from '../../common/interfaces.module'
+import { hasSlot, renderHiddenInput } from '../../utils/utils'
 
 let id = 0
 
+/**
+ * @slot label - The textarea label
+ */
 @Component({
     tag: 'rux-textarea',
     styleUrl: 'rux-textarea.scss',
     shadow: true,
 })
-export class RuxTextarea {
+export class RuxTextarea implements FormFieldInterface {
     inputId = `rux-textarea-${++id}`
+    @State() hasLabelSlot = false
 
     /**
-     * The input label text
+     * The textarea label text. For HTML content, use the `label` slot instead.
      */
     @Prop() label?: string
     /**
-     * The input placeholder text
+     * The textarea placeholder text
      */
     @Prop() placeholder?: string
 
     /**
-     * The help or explanation text
+     * The  or explanation text
      */
     @Prop({ attribute: 'help-text' }) helpText?: string
 
@@ -39,7 +46,7 @@ export class RuxTextarea {
     @Prop({ attribute: 'error-text' }) errorText?: string
 
     /**
-     * Marks the input as invalid
+     * Marks the textarea as invalid
      */
     @Prop() invalid = false
 
@@ -99,9 +106,34 @@ export class RuxTextarea {
 
     @Element() el!: HTMLRuxTextareaElement
 
+    @Watch('label')
+    handleLabelChange() {
+        this._handleSlotChange()
+    }
+
     connectedCallback() {
         this._onChange = this._onChange.bind(this)
         this._onInput = this._onInput.bind(this)
+        this._handleSlotChange = this._handleSlotChange.bind(this)
+    }
+
+    disconnectedCallback() {
+        this.el!.shadowRoot!.removeEventListener(
+            'slotchange',
+            this._handleSlotChange
+        )
+    }
+
+    componentWillLoad() {
+        this._handleSlotChange()
+    }
+
+    get hasLabel() {
+        return this.label ? true : this.hasLabelSlot
+    }
+
+    private _handleSlotChange() {
+        this.hasLabelSlot = hasSlot(this.el, 'label')
     }
 
     private _onChange(e: Event) {
@@ -130,8 +162,21 @@ export class RuxTextarea {
                         'rux-textarea-field--small': this.small,
                     }}
                 >
-                    <label class="rux-textarea-label" htmlFor={this.inputId}>
-                        {this.label}
+                    <label
+                        class={{
+                            'rux-textarea-label': true,
+                        }}
+                        aria-hidden={this.hasLabel ? 'false' : 'true'}
+                        htmlFor={this.inputId}
+                    >
+                        <span class={{ hidden: !this.hasLabel }}>
+                            <slot
+                                onSlotchange={this._handleSlotChange}
+                                name="label"
+                            >
+                                {this.label}
+                            </slot>
+                        </span>
                     </label>
                     <textarea
                         name={this.name}

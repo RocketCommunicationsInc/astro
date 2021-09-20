@@ -5,6 +5,7 @@
     display: block;
 }
 
+.hidden,
 :host([hidden]) {
     display: none;
 }

@@ -27,6 +27,7 @@
     display: block;
 }
 
+.hidden,
 :host([hidden]) {
     display: none;
 }
@@ -90,7 +91,7 @@
 }
 
 .rux-textarea-label {
-    margin-bottom: 0.375rem;
+    margin-bottom: var(--spacing-input-label-top);
 }
 
 ::selection {

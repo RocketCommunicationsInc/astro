@@ -5,21 +5,27 @@ import {
     Event,
     EventEmitter,
     Component,
+    State,
     Host,
     h,
 } from '@stencil/core'
-import { renderHiddenInput } from '../../utils/utils'
+import { FormFieldInterface } from '../../common/interfaces.module'
+import { hasSlot, renderHiddenInput } from '../../utils/utils'
 
+/**
+ * @slot label - The radio group label
+ */
 @Component({
     tag: 'rux-radio-group',
     styleUrl: 'rux-radio-group.scss',
     shadow: true,
 })
-export class RuxRadioGroup {
-    @Element() el!: HTMLElement
+export class RuxRadioGroup implements FormFieldInterface {
+    @Element() el!: HTMLRuxRadioGroupElement
+    @State() hasLabelSlot = false
 
     /**
-     * The label of the radio group
+     * The label of the radio group. For HTML content, use the `label` slot instead.
      */
     @Prop() label?: string
 
@@ -58,8 +64,21 @@ export class RuxRadioGroup {
         this.ruxChange.emit(this.value)
     }
 
+    @Watch('label')
+    handleLabelChange() {
+        this._handleSlotChange()
+    }
+
     connectedCallback() {
         this.handleClick = this.handleClick.bind(this)
+        this._handleSlotChange = this._handleSlotChange.bind(this)
+    }
+
+    disconnectedCallback() {
+        this.el!.shadowRoot!.removeEventListener(
+            'slotchange',
+            this._handleSlotChange
+        )
     }
 
     componentWillLoad() {
@@ -70,6 +89,12 @@ export class RuxRadioGroup {
         if (radios.length > 1 && !this.value) {
             this.value = radios[0].getAttribute('value')
         }
+
+        this._handleSlotChange()
+    }
+
+    get hasLabel() {
+        return this.label ? true : this.hasLabelSlot
     }
 
     handleClick(e: MouseEvent) {
@@ -91,6 +116,10 @@ export class RuxRadioGroup {
         return radio && radio.disabled
     }
 
+    private _handleSlotChange() {
+        this.hasLabelSlot = hasSlot(this.el, 'label')
+    }
+
     render() {
         if (this.value) {
             renderHiddenInput(
@@ -103,7 +132,16 @@ export class RuxRadioGroup {
         }
         return (
             <Host onClick={this.handleClick}>
-                {this.label && <div class="rux-label">{this.label}</div>}
+                <div
+                    class={{
+                        'rux-label': true,
+                        hidden: !this.hasLabel,
+                    }}
+                >
+                    <slot onSlotchange={this._handleSlotChange} name="label">
+                        {this.label}
+                    </slot>
+                </div>
                 <div
                     class={{
                         'rux-radio-group': true,
