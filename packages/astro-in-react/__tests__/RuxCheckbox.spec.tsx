@@ -33,7 +33,7 @@ describe("RuxCheckbox", () => {
   });
   it("should get bools as props", () => {
     const { webcomponent: ruxCheckbox } =
-      includeWebComponent<HTMLRuxButtonElement>(
+      includeWebComponent<HTMLRuxCheckboxElement>(
         renderWithStrictMode(
           <RuxCheckbox disabled={true}>Disabled Button</RuxCheckbox>
         )
@@ -45,7 +45,7 @@ describe("createComponent - ref", () => {
   test("should pass ref on to web component instance", () => {
     const checkboxRef: React.RefObject<any> = React.createRef();
     const { webcomponent: ruxCheckbox } =
-      includeWebComponent<HTMLRuxButtonElement>(
+      includeWebComponent<HTMLRuxCheckboxElement>(
         renderWithStrictMode(
           <RuxCheckbox ref={checkboxRef}>Button Ref</RuxCheckbox>
         )
