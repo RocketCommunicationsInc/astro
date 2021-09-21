@@ -14,6 +14,9 @@ import { hasSlot, renderHiddenInput } from '../../utils/utils'
 
 /**
  * @slot label - The radio group label
+ * @part form-field - The form-field wrapper container
+ * @part label - The input label when `label` prop is set
+ * @part radiogroup - The container of radios
  */
 @Component({
     tag: 'rux-radio-group',
@@ -132,32 +135,39 @@ export class RuxRadioGroup implements FormFieldInterface {
         }
         return (
             <Host onClick={this.handleClick}>
-                <div
-                    class={{
-                        'rux-label': true,
-                        hidden: !this.hasLabel,
-                    }}
-                >
-                    <slot onSlotchange={this._handleSlotChange} name="label">
-                        {this.label}
-                    </slot>
-                </div>
-                <div
-                    class={{
-                        'rux-radio-group': true,
-                        'rux-radio-group--invalid': this.invalid,
-                    }}
-                    role="radiogroup"
-                >
-                    <slot></slot>
-                </div>
-                {this.helpText && !this.errorText && (
-                    <div class="rux-help-text">{this.helpText}</div>
-                )}
+                <div class="rux-form-field" part="form-field">
+                    <div
+                        class={{
+                            'rux-label': true,
+                            hidden: !this.hasLabel,
+                        }}
+                        part="label"
+                    >
+                        <slot
+                            onSlotchange={this._handleSlotChange}
+                            name="label"
+                        >
+                            {this.label}
+                        </slot>
+                    </div>
+                    <div
+                        class={{
+                            'rux-radio-group': true,
+                            'rux-radio-group--invalid': this.invalid,
+                        }}
+                        role="radiogroup"
+                        part="radiogroup"
+                    >
+                        <slot></slot>
+                    </div>
+                    {this.helpText && !this.errorText && (
+                        <div class="rux-help-text">{this.helpText}</div>
+                    )}
 
-                {this.errorText && (
-                    <div class="rux-error-text">{this.errorText}</div>
-                )}
+                    {this.errorText && (
+                        <div class="rux-error-text">{this.errorText}</div>
+                    )}
+                </div>
             </Host>
         )
     }

@@ -10,8 +10,8 @@ describe('rux-input', () => {
         expect(page.root).toEqualHtml(`
           <rux-input-field value="">
             <mock:shadow-root>
-            <div class="rux-form-field">
-              <label aria-hidden="true" class="rux-input-label" htmlfor="rux-input-1">
+            <div class="rux-form-field" part="form-field">
+              <label aria-hidden="true" class="rux-input-label" htmlfor="rux-input-1" part="label">
                 <span class="hidden">
                   <slot name="label"></slot>
                 </span>
@@ -32,8 +32,8 @@ describe('rux-input', () => {
         expect(page.root).toEqualHtml(`
         <rux-input-field label="hello" value="">
           <mock:shadow-root>
-          <div class="rux-form-field">
-            <label aria-hidden="false" class="rux-input-label" htmlfor="rux-input-2">
+          <div class="rux-form-field" part="form-field">
+            <label aria-hidden="false" class="rux-input-label" htmlfor="rux-input-2" part="label">
               <span>
                 <slot name="label">hello</slot>
               </span>
@@ -54,8 +54,8 @@ describe('rux-input', () => {
         expect(page.root).toEqualHtml(`
         <rux-input-field value="">
           <mock:shadow-root>
-          <div class="rux-form-field">
-            <label aria-hidden="false" class="rux-input-label" htmlfor="rux-input-3">
+          <div class="rux-form-field" part="form-field">
+            <label aria-hidden="false" class="rux-input-label" htmlfor="rux-input-3" part="label">
               <span>
                 <slot name="label"></slot>
               </span>

@@ -16,6 +16,8 @@ let id = 0
 
 /**
  * @slot label - The textarea label
+ * @part form-field - The form-field wrapper container
+ * @part label - The input label when `label` prop is set
  */
 @Component({
     tag: 'rux-textarea',
@@ -161,6 +163,7 @@ export class RuxTextarea implements FormFieldInterface {
                         'rux-textarea-field': true,
                         'rux-textarea-field--small': this.small,
                     }}
+                    part="form-field"
                 >
                     <label
                         class={{
@@ -168,6 +171,7 @@ export class RuxTextarea implements FormFieldInterface {
                         }}
                         aria-hidden={this.hasLabel ? 'false' : 'true'}
                         htmlFor={this.inputId}
+                        part="label"
                     >
                         <span class={{ hidden: !this.hasLabel }}>
                             <slot

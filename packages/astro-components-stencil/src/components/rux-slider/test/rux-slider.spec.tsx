@@ -10,8 +10,8 @@ describe('rux-slider', () => {
         expect(page.root).toEqualHtml(`
           <rux-slider style="--slider-value-percent: 50%;">
             <mock:shadow-root>
-              <div class="rux-form-field">
-                <label aria-hidden="true" class="rux-input-label" htmlfor="rux-slider-1">
+              <div class="rux-form-field" part="form-field">
+                <label aria-hidden="true" class="rux-input-label" htmlfor="rux-slider-1" part="label">
                   <span class="hidden">
                     <slot name="label"></slot>
                   </span>
@@ -34,8 +34,8 @@ describe('rux-slider', () => {
         expect(page.root).toEqualHtml(`
         <rux-slider label="hello" style="--slider-value-percent: 50%;">
           <mock:shadow-root>
-            <div class="rux-form-field">
-              <label aria-hidden="false" class="rux-input-label" htmlfor="rux-slider-2">
+            <div class="rux-form-field" part="form-field">
+              <label aria-hidden="false" class="rux-input-label" htmlfor="rux-slider-2" part="label">
                 <span>
                   <slot name="label">hello</slot>
                 </span>
@@ -58,8 +58,8 @@ describe('rux-slider', () => {
         expect(page.root).toEqualHtml(`
       <rux-slider style="--slider-value-percent: 50%;">
         <mock:shadow-root>
-          <div class="rux-form-field">
-            <label aria-hidden="false" class="rux-input-label" htmlfor="rux-slider-3">
+          <div class="rux-form-field" part="form-field">
+            <label aria-hidden="false" class="rux-input-label" htmlfor="rux-slider-3" part="label">
               <span>
                 <slot name="label"></slot>
               </span>

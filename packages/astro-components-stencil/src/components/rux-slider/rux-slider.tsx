@@ -16,6 +16,8 @@ let id = 0
 
 /**
  * @slot label - The slider label
+ * @part form-field - The form-field wrapper container
+ * @part label - The input label when `label` prop is set
  */
 @Component({
     tag: 'rux-slider',
@@ -192,11 +194,12 @@ export class RuxSlider implements FormFieldInterface {
 
         return (
             <Host>
-                <div class="rux-form-field">
+                <div class="rux-form-field" part="form-field">
                     <label
                         class="rux-input-label"
                         aria-hidden={this.hasLabel ? 'false' : 'true'}
                         htmlFor={sliderId}
+                        part="label"
                     >
                         <span class={{ hidden: !this.hasLabel }}>
                             <slot name="label">{label}</slot>
