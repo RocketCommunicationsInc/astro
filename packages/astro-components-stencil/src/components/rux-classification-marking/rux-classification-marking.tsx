@@ -29,8 +29,19 @@ export class RuxClassificationMarking {
     @State() isWrapper: boolean = hasSlot(this.el)
 
     @Listen('slotchange')
-    handleSlotChange() {
+    private _handleSlotChange() {
         this.isWrapper = hasSlot(this.el)
+    }
+
+    connectedCallback() {
+        this._handleSlotChange = this._handleSlotChange.bind(this)
+    }
+
+    disconnectedCallback() {
+        this.el!.shadowRoot!.removeEventListener(
+            'slotchange',
+            this._handleSlotChange
+        )
     }
 
     get type(): 'tag' | 'banner' {
