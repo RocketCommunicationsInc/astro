@@ -72,6 +72,24 @@ export namespace Components {
          */
         "value": string;
     }
+    interface RuxCheckboxGroup {
+        /**
+          * The validation error text
+         */
+        "errorText"?: string;
+        /**
+          * The help or explanation text
+         */
+        "helpText"?: string;
+        /**
+          * Presentational only. Renders the Checkbox Group as invalid.
+         */
+        "invalid": boolean;
+        /**
+          * The label of the checkbox group. For HTML content, use the `label` slot instead.
+         */
+        "label"?: string;
+    }
     interface RuxClassificationMarking {
         /**
           * Defines which classification marking will be displayed.
@@ -12383,6 +12401,12 @@ declare global {
         prototype: HTMLRuxCheckboxElement;
         new (): HTMLRuxCheckboxElement;
     };
+    interface HTMLRuxCheckboxGroupElement extends Components.RuxCheckboxGroup, HTMLStencilElement {
+    }
+    var HTMLRuxCheckboxGroupElement: {
+        prototype: HTMLRuxCheckboxGroupElement;
+        new (): HTMLRuxCheckboxGroupElement;
+    };
     interface HTMLRuxClassificationMarkingElement extends Components.RuxClassificationMarking, HTMLStencilElement {
     }
     var HTMLRuxClassificationMarkingElement: {
@@ -18939,6 +18963,7 @@ declare global {
         "rux-button": HTMLRuxButtonElement;
         "rux-button-group": HTMLRuxButtonGroupElement;
         "rux-checkbox": HTMLRuxCheckboxElement;
+        "rux-checkbox-group": HTMLRuxCheckboxGroupElement;
         "rux-classification-marking": HTMLRuxClassificationMarkingElement;
         "rux-clock": HTMLRuxClockElement;
         "rux-datetime": HTMLRuxDatetimeElement;
@@ -20107,6 +20132,24 @@ declare namespace LocalJSX {
           * The checkbox value
          */
         "value"?: string;
+    }
+    interface RuxCheckboxGroup {
+        /**
+          * The validation error text
+         */
+        "errorText"?: string;
+        /**
+          * The help or explanation text
+         */
+        "helpText"?: string;
+        /**
+          * Presentational only. Renders the Checkbox Group as invalid.
+         */
+        "invalid"?: boolean;
+        /**
+          * The label of the checkbox group. For HTML content, use the `label` slot instead.
+         */
+        "label"?: string;
     }
     interface RuxClassificationMarking {
         /**
@@ -32489,6 +32532,7 @@ declare namespace LocalJSX {
         "rux-button": RuxButton;
         "rux-button-group": RuxButtonGroup;
         "rux-checkbox": RuxCheckbox;
+        "rux-checkbox-group": RuxCheckboxGroup;
         "rux-classification-marking": RuxClassificationMarking;
         "rux-clock": RuxClock;
         "rux-datetime": RuxDatetime;
@@ -33590,6 +33634,7 @@ declare module "@stencil/core" {
             "rux-button": LocalJSX.RuxButton & JSXBase.HTMLAttributes<HTMLRuxButtonElement>;
             "rux-button-group": LocalJSX.RuxButtonGroup & JSXBase.HTMLAttributes<HTMLRuxButtonGroupElement>;
             "rux-checkbox": LocalJSX.RuxCheckbox & JSXBase.HTMLAttributes<HTMLRuxCheckboxElement>;
+            "rux-checkbox-group": LocalJSX.RuxCheckboxGroup & JSXBase.HTMLAttributes<HTMLRuxCheckboxGroupElement>;
             "rux-classification-marking": LocalJSX.RuxClassificationMarking & JSXBase.HTMLAttributes<HTMLRuxClassificationMarkingElement>;
             "rux-clock": LocalJSX.RuxClock & JSXBase.HTMLAttributes<HTMLRuxClockElement>;
             "rux-datetime": LocalJSX.RuxDatetime & JSXBase.HTMLAttributes<HTMLRuxDatetimeElement>;

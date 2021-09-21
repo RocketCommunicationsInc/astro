@@ -1,7 +1,6 @@
 :host {
-    /** @prop --radiogroup-border-color: the radio group border color*/
-    --radiogroup-border-color: var(--active);
-
+    /** @prop --checkboxgroup-border-color: the radio group border color*/
+    --checkboxgroup-border-color: var(--active);
     display: block;
 }
 
@@ -10,26 +9,28 @@
     display: none;
 }
 
-::slotted(rux-radio) {
+::slotted(rux-checkbox) {
     display: block;
     margin-bottom: 0.625rem; //10px
 }
 
-::slotted(rux-radio:last-of-type) {
+::slotted(rux-checkbox:last-of-type) {
     margin-bottom: 0;
-}
-
-.rux-radio-group {
-    padding: 1rem; // 16px
-    border: 1px solid var(--radiogroup-border-color, rgb(43, 101, 155));
-    border-radius: 3px;
-}
-.rux-radio-group--invalid {
-    border: 1px solid var(--color-critical);
 }
 
 .rux-label {
     margin-bottom: var(--spacing-input-label-top);
+}
+
+.rux-checkbox-group {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: 1px solid var(--checkboxgroup-border-color);
+    border-radius: 3px;
+    &--invalid {
+        border: 1px solid var(--color-critical);
+    }
 }
 
 .rux-help-text {

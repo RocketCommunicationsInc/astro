@@ -6,6 +6,7 @@ import { html, render } from 'lit-html'
     title="Forms/Checkbox"
     component="rux-checkbox"
     argTypes={extractArgTypes('rux-checkbox')}
+    subcomponents={{ 'RuxCheckboxGroup': 'rux-checkbox-group' }}
     parameters={{
        actions: {
         handles: [
@@ -20,6 +21,8 @@ import { html, render } from 'lit-html'
 # Checkbox
 
 A Checkbox describes a state or value that can be either "True or False.” Checkboxes are not mutually exclusive. More than one Checkbox may be checked at the same time.
+
+For displaying invalid state, consider using a [Checkbox Group](?path=/docs/forms-checkbox-group--default-story) component.
 
 ## Guidelines
 
