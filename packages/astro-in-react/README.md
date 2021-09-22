@@ -52,4 +52,4 @@ This repo will be updated frequently with the [Astro components in Stencil repo]
       />
   ```
 
-#### Currently using @astrouxds/astro-web-components version 0.0.14
+#### Currently using @astrouxds/astro-web-components version 0.0.15
