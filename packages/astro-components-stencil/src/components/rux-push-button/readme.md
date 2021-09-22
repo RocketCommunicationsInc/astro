@@ -109,13 +109,16 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 
 ## Properties
 
-| Property   | Attribute  | Description                                                                                                                                                                                               | Type      | Default         |
-| ---------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | --------------- |
-| `checked`  | `checked`  | Checks the push button via HTML `checked` attribute. Push button takes on a distinct "enabled" or "selected" visual state.                                                                                | `boolean` | `false`         |
-| `disabled` | `disabled` | Disables the push button via HTML `disabled` attribute. Button takes on a distinct disabled visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored. | `boolean` | `false`         |
-| `label`    | `label`    | The label of the push button.                                                                                                                                                                             | `string`  | `'Push Button'` |
-| `name`     | `name`     | The name of the push button.                                                                                                                                                                              | `string`  | `''`            |
-| `value`    | `value`    | The value of the push button.                                                                                                                                                                             | `string`  | `''`            |
+| Property   | Attribute   | Description                                                                                                                                                                                                                                                                                                   | Type                                          | Default         |
+| ---------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- | --------------- |
+| `checked`  | `checked`   | Checks the push button via HTML `checked` attribute. Push button takes on a distinct "enabled" or "selected" visual state.                                                                                                                                                                                    | `boolean`                                     | `false`         |
+| `disabled` | `disabled`  | Disables the push button via HTML `disabled` attribute. Button takes on a distinct disabled visual state. Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored.                                                                                                     | `boolean`                                     | `false`         |
+| `icon`     | `icon`      | For a [button style guide, see the Button section in Astro UXDS Guidelines](https://astrouxds.com/components/button) Displays an Astro icon matching this string. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols) | `string \| undefined`                         | `undefined`     |
+| `iconOnly` | `icon-only` | Hides slotted text from the button by setting rux-button--icon-only class                                                                                                                                                                                                                                     | `boolean`                                     | `false`         |
+| `label`    | `label`     | The label of the push button.                                                                                                                                                                                                                                                                                 | `string`                                      | `'Push Button'` |
+| `name`     | `name`      | The name of the push button.                                                                                                                                                                                                                                                                                  | `string`                                      | `''`            |
+| `size`     | `size`      | Changes size of a push button from standard to small or large by setting sizing classes rux-button--small rux-button--large                                                                                                                                                                                   | `"large" \| "medium" \| "small" \| undefined` | `undefined`     |
+| `value`    | `value`     | The value of the push button.                                                                                                                                                                                                                                                                                 | `string`                                      | `''`            |
 
 
 ## Events
@@ -137,6 +140,19 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 | `--pushbutton-selected-text-color`       | the Push Button text color when checked       |
 | `--pushbutton-text-color`                | the Push Button text color                    |
 
+
+## Dependencies
+
+### Depends on
+
+- [rux-icon](../rux-icon)
+
+### Graph
+```mermaid
+graph TD;
+  rux-push-button --> rux-icon
+  style rux-push-button fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

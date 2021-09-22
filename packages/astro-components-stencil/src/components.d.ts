@@ -12094,6 +12094,14 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * For a [button style guide, see the Button section in Astro UXDS Guidelines](https://astrouxds.com/components/button) Displays an Astro icon matching this string. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols)
+         */
+        "icon"?: string;
+        /**
+          * Hides slotted text from the button by setting rux-button--icon-only class
+         */
+        "iconOnly": boolean;
+        /**
           * The label of the push button.
          */
         "label": string;
@@ -12101,6 +12109,10 @@ export namespace Components {
           * The name of the push button.
          */
         "name": string;
+        /**
+          * Changes size of a push button from standard to small or large by setting sizing classes rux-button--small rux-button--large
+         */
+        "size"?: 'small' | 'medium' | 'large';
         /**
           * The value of the push button.
          */
@@ -32172,6 +32184,14 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
+          * For a [button style guide, see the Button section in Astro UXDS Guidelines](https://astrouxds.com/components/button) Displays an Astro icon matching this string. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols)
+         */
+        "icon"?: string;
+        /**
+          * Hides slotted text from the button by setting rux-button--icon-only class
+         */
+        "iconOnly"?: boolean;
+        /**
           * The label of the push button.
          */
         "label"?: string;
@@ -32187,6 +32207,10 @@ declare namespace LocalJSX {
           * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
          */
         "onRux-change"?: (event: CustomEvent<any>) => void;
+        /**
+          * Changes size of a push button from standard to small or large by setting sizing classes rux-button--small rux-button--large
+         */
+        "size"?: 'small' | 'medium' | 'large';
         /**
           * The value of the push button.
          */
