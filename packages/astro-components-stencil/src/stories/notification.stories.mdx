@@ -94,6 +94,15 @@ export const AllVariants = () => html`
         >
             <rux-notification
                 open
+                status="off"
+                message="Off notification banner"
+            ></rux-notification>
+        </div>
+        <div
+            style="display: flex; position: relative; height: 68px; margin-bottom: 20px; overflow: hidden;"
+        >
+            <rux-notification
+                open
                 status="standby"
                 message="Standby notification banner"
             ></rux-notification>
@@ -114,6 +123,15 @@ export const AllVariants = () => html`
                 open
                 status="caution"
                 message="Caution notification banner"
+            ></rux-notification>
+        </div>
+        <div
+            style="display: flex; position: relative; height: 68px; margin-bottom: 20px; overflow: hidden;"
+        >
+            <rux-notification
+                open
+                status="serious"
+                message="Serious notification banner"
             ></rux-notification>
         </div>
         <div

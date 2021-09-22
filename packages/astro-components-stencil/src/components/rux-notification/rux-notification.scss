@@ -36,6 +36,10 @@
 }
 
 :host,
+:host([status='off']) {
+    background-color: var(--color-status-off-400);
+}
+
 :host([status='standby']) {
     background-color: var(--color-status-standby-400);
 }
@@ -45,6 +49,10 @@
 }
 :host([status='caution']) {
     background-color: var(--color-status-caution-400);
+}
+
+:host([status='serious']) {
+    background-color: var(--color-status-serious-500);
 }
 :host([status='critical']) {
     background-color: var(--color-status-critical-400);

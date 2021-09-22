@@ -12036,12 +12036,9 @@ export namespace Components {
          */
         "open": boolean;
         /**
-          * The background color. Possible values include 'standby', 'normal', 'caution', and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).
+          * The background color. Possible values include 'off', 'standby', 'normal', 'caution', 'serious' and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).
          */
-        "status": | 'standby'
-        | 'normal'
-        | 'caution'
-        | 'critical';
+        "status": Status;
     }
     interface RuxPopUpMenu {
         /**
@@ -32117,12 +32114,9 @@ declare namespace LocalJSX {
          */
         "open"?: boolean;
         /**
-          * The background color. Possible values include 'standby', 'normal', 'caution', and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).
+          * The background color. Possible values include 'off', 'standby', 'normal', 'caution', 'serious' and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).
          */
-        "status"?: | 'standby'
-        | 'normal'
-        | 'caution'
-        | 'critical';
+        "status"?: Status;
     }
     interface RuxPopUpMenu {
         /**

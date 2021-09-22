@@ -1,4 +1,5 @@
 import { Component, Host, h, Prop, Watch } from '@stencil/core'
+import { Status } from '../../common/commonTypes.module'
 
 @Component({
     tag: 'rux-notification',
@@ -15,13 +16,9 @@ export class RuxNotification {
      */
     @Prop() message: string = ''
     /**
-     *  The background color. Possible values include 'standby', 'normal', 'caution', and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).
+     *  The background color. Possible values include 'off', 'standby', 'normal', 'caution', 'serious' and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).
      */
-    @Prop({ reflect: true }) status:
-        | 'standby'
-        | 'normal'
-        | 'caution'
-        | 'critical' = 'standby'
+    @Prop({ reflect: true }) status: Status = 'standby'
     /**
      *  If provided, the banner will automatically close after this amount of time. Accepts value either in milliseconds or seconds (which will be converted to milliseconds internally), between `2000` and `10000`, or `2` and `10`, respectively. Any number provided outside of the `2000`-`10000` range will be ignored in favor of the default 2000ms delay. <br>If `closeAfter` is not passed or if it is given an undefined or `null` value, the banner will stay open until the user closes it.
      */
