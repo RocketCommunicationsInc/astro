@@ -80,10 +80,6 @@ describe("createComponent - events", () => {
       )
     );
     const attatchedEvents = (webcomponent as any).__events;
-    expect(Object.keys(attatchedEvents)).toContain(
-      "rux-blur",
-      "rux-change",
-      "rux-input"
-    );
+    expect(Object.keys(attatchedEvents)).toContain("rux-blur");
   });
 });
