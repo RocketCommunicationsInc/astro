@@ -41,6 +41,14 @@
 | `"label"` | The input label |
 
 
+## Shadow Parts
+
+| Part           | Description                              |
+| -------------- | ---------------------------------------- |
+| `"form-field"` | The form-field wrapper container         |
+| `"label"`      | The input label when `label` prop is set |
+
+
 ## CSS Custom Properties
 
 | Name                                 | Description                              |

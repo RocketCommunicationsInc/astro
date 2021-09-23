@@ -9,6 +9,7 @@ import {
     Watch,
     State,
 } from '@stencil/core'
+import FormFieldMessage from '../../common/functional-components/FormFieldMessage/FormFieldMessage'
 import { FormFieldInterface } from '../../common/interfaces.module'
 import { hasSlot } from '../../utils/utils'
 
@@ -63,6 +64,16 @@ export class RuxSelect implements FormFieldInterface {
      * The value of the selected option
      */
     @Prop({ mutable: true, reflect: true }) value?: string
+
+    /**
+     * The help or explanation text
+     */
+    @Prop({ attribute: 'help-text' }) helpText?: string
+
+    /**
+     * The validation error text
+     */
+    @Prop({ attribute: 'error-text' }) errorText?: string
 
     /**
      * Event Emitted when the Value of the Select is Changed
@@ -166,6 +177,10 @@ export class RuxSelect implements FormFieldInterface {
                 >
                     <slot onSlotchange={this._handleSlotChange}></slot>
                 </select>
+                <FormFieldMessage
+                    errorText={this.errorText}
+                    helpText={this.helpText}
+                ></FormFieldMessage>
             </Host>
         )
     }

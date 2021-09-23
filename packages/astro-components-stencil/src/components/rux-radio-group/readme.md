@@ -31,6 +31,15 @@
 | `"label"` | The radio group label |
 
 
+## Shadow Parts
+
+| Part           | Description                              |
+| -------------- | ---------------------------------------- |
+| `"form-field"` | The form-field wrapper container         |
+| `"label"`      | The input label when `label` prop is set |
+| `"radiogroup"` | The container of radios                  |
+
+
 ## CSS Custom Properties
 
 | Name                        | Description                  |

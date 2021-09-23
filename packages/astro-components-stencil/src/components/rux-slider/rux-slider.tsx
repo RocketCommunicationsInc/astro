@@ -1,14 +1,15 @@
 import {
     Component,
-    Host,
     h,
     Prop,
     Element,
+    Host,
     Event,
     EventEmitter,
     Watch,
     State,
 } from '@stencil/core'
+import FormFieldMessage from '../../common/functional-components/FormFieldMessage/FormFieldMessage'
 import { FormFieldInterface } from '../../common/interfaces.module'
 import { hasSlot, renderHiddenInput } from '../../utils/utils'
 
@@ -58,6 +59,16 @@ export class RuxSlider implements FormFieldInterface {
      * The slider label text. For HTML content, use the `label` slot instead.
      */
     @Prop() label?: string
+
+    /**
+     * The help or explanation text
+     */
+    @Prop({ attribute: 'help-text' }) helpText?: string
+
+    /**
+     * The validation error text
+     */
+    @Prop({ attribute: 'error-text' }) errorText?: string
 
     /**
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
@@ -222,6 +233,10 @@ export class RuxSlider implements FormFieldInterface {
                         ></input>
                     </div>
                 </div>
+                <FormFieldMessage
+                    helpText={this.helpText}
+                    errorText={this.errorText}
+                ></FormFieldMessage>
             </Host>
         )
     }

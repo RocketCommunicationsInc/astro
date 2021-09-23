@@ -1,4 +1,5 @@
-import { Prop, Component, Host, h, State, Element } from '@stencil/core'
+import { Prop, Host, Component, h, State, Element } from '@stencil/core'
+import FormFieldMessage from '../../common/functional-components/FormFieldMessage/FormFieldMessage'
 import { hasSlot } from '../../utils/utils'
 
 /**
@@ -87,14 +88,11 @@ export class RuxCheckboxGroup {
                     >
                         <slot></slot>
                     </div>
-                    {this.helpText && !this.errorText && (
-                        <div class="rux-help-text">{this.helpText}</div>
-                    )}
-
-                    {this.errorText && (
-                        <div class="rux-error-text">{this.errorText}</div>
-                    )}
                 </div>
+                <FormFieldMessage
+                    errorText={this.errorText}
+                    helpText={this.helpText}
+                ></FormFieldMessage>
             </Host>
         )
     }

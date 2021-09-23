@@ -12182,6 +12182,14 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * The validation error text
+         */
+        "errorText"?: string;
+        /**
+          * The help or explanation text
+         */
+        "helpText"?: string;
+        /**
           * Id for the Select Input
          */
         "inputId"?: string;
@@ -12215,6 +12223,14 @@ export namespace Components {
           * Determines if the slider is disabled.
          */
         "disabled": boolean;
+        /**
+          * The validation error text
+         */
+        "errorText"?: string;
+        /**
+          * The help or explanation text
+         */
+        "helpText"?: string;
         /**
           * The slider label text. For HTML content, use the `label` slot instead.
          */
@@ -12255,14 +12271,6 @@ export namespace Components {
           * Disables the switch via HTML disabled attribute. Switch takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
          */
         "disabled": boolean;
-        /**
-          * The validation error text
-         */
-        "errorText"?: string;
-        /**
-          * The help or explanation text
-         */
-        "helpText"?: string;
         /**
           * The switch label. For HTML content, use the `label` slot instead.
          */
@@ -32296,6 +32304,14 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
+          * The validation error text
+         */
+        "errorText"?: string;
+        /**
+          * The help or explanation text
+         */
+        "helpText"?: string;
+        /**
           * Id for the Select Input
          */
         "inputId"?: string;
@@ -32337,6 +32353,14 @@ declare namespace LocalJSX {
           * Determines if the slider is disabled.
          */
         "disabled"?: boolean;
+        /**
+          * The validation error text
+         */
+        "errorText"?: string;
+        /**
+          * The help or explanation text
+         */
+        "helpText"?: string;
         /**
           * The slider label text. For HTML content, use the `label` slot instead.
          */
@@ -32385,14 +32409,6 @@ declare namespace LocalJSX {
           * Disables the switch via HTML disabled attribute. Switch takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
          */
         "disabled"?: boolean;
-        /**
-          * The validation error text
-         */
-        "errorText"?: string;
-        /**
-          * The help or explanation text
-         */
-        "helpText"?: string;
         /**
           * The switch label. For HTML content, use the `label` slot instead.
          */

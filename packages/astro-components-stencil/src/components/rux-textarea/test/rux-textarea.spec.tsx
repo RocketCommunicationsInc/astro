@@ -54,14 +54,14 @@ describe('rux-textarea', () => {
         expect(page.root).toEqualHtml(`
       <rux-textarea value="">
         <mock:shadow-root>
-          <div class="rux-textarea-field" part="form-field">
-            <label aria-hidden="false" class="rux-textarea-label" htmlfor="rux-textarea-3" part="label">
-              <span>
-                <slot name="label"></slot>
-              </span>
-            </label>
-            <textarea aria-invalid="false" class="rux-textarea" id="rux-textarea-3" value=""></textarea>
-        </div>
+            <div class="rux-textarea-field" part="form-field">
+              <label aria-hidden="false" class="rux-textarea-label" htmlfor="rux-textarea-3" part="label">
+                <span>
+                  <slot name="label"></slot>
+                </span>
+              </label>
+              <textarea aria-invalid="false" class="rux-textarea" id="rux-textarea-3" value=""></textarea>
+            </div>
         </mock:shadow-root>
         <div slot="label">hello</div>
         <input class="aux-input" type="hidden" value="">

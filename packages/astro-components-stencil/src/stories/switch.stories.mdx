@@ -27,8 +27,6 @@ export const Switch = (args) => {
             <rux-switch
                 .disabled=${args.disabled}
                 .checked=${args.checked}
-                .errorText=${args.errorText}
-                .helpText=${args.helpText}
                 id="01"
             ></rux-switch>
         </div>
@@ -60,8 +58,6 @@ export const Disabled = (args) => {
             <rux-switch
                 .disabled=${args.disabled}
                 .checked=${args.checked}
-                .errorText=${args.errorText}
-                .helpText=${args.helpText}
                 id="01"
             ></rux-switch>
         </div>
@@ -79,66 +75,6 @@ export const Disabled = (args) => {
         }}
     >
         {Disabled.bind()}
-    </Story>
-</Canvas>
-
-### Help Text
-
-export const HelpText = (args) => {
-    return html`
-        <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
-            <rux-switch
-                .disabled=${args.disabled}
-                .checked=${args.checked}
-                .errorText=${args.errorText}
-                .helpText=${args.helpText}
-                id="01"
-            ></rux-switch>
-        </div>
-    `
-}
-
-<Canvas>
-    <Story
-    name="HelpText"
-    args={{
-        helpText: "Help Text"
-    }}
-         parameters={{
-            docs: { source: { code: '<rux-switch help-text="Help Text"></rux-switch>' } },
-        }}
-    >
-        {HelpText.bind()}
-    </Story>
-</Canvas>
-
-### Error Text
-
-export const ErrorText = (args) => {
-    return html`
-        <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
-            <rux-switch
-                .disabled=${args.disabled}
-                .checked=${args.checked}
-                .errorText=${args.errorText}
-                .helpText=${args.helpText}
-                id="01"
-            ></rux-switch>
-        </div>
-    `
-}
-
-<Canvas>
-    <Story
-    name="ErrorText"
-    args={{
-        errorText: "Error"
-    }}
-         parameters={{
-            docs: { source: { code: '<rux-switch error-text="Error"></rux-switch>' } },
-        }}
-    >
-        {ErrorText.bind()}
     </Story>
 </Canvas>
 

@@ -4,24 +4,14 @@ import { RuxSwitch } from '../rux-switch'
 describe('rux-switch', () => {
     it('builds', async () => {
         const switchBtn = new RuxSwitch()
-        const {
-            switchId,
-            checked,
-            disabled,
-            errorText,
-            name,
-            required,
-            value,
-        } = switchBtn
+        const { switchId, checked, disabled, name, value } = switchBtn
 
         expect(switchBtn).toBeTruthy()
         expect({
             switchId,
             checked,
             disabled,
-            errorText,
             name,
-            required,
             value,
         }).toEqual({
             switchId: 'rux-switch-1',

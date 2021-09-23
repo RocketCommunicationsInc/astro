@@ -9,7 +9,6 @@ import {
     Watch,
     State,
 } from '@stencil/core'
-import { FormFieldInterface } from '../../common/interfaces.module'
 import { hasSlot, renderHiddenInput } from '../../utils/utils'
 
 let id = 0
@@ -22,20 +21,10 @@ let id = 0
     styleUrl: 'rux-switch.scss',
     shadow: true,
 })
-export class RuxSwitch implements FormFieldInterface {
+export class RuxSwitch {
     switchId = `rux-switch-${++id}`
     @Element() el!: HTMLRuxSwitchElement
     @State() hasLabelSlot = false
-
-    /**
-     * The help or explanation text
-     */
-    @Prop({ attribute: 'help-text' }) helpText?: string
-
-    /**
-     * The validation error text
-     */
-    @Prop({ attribute: 'error-text' }) errorText?: string
 
     /**
      * The switch name
@@ -124,15 +113,7 @@ export class RuxSwitch implements FormFieldInterface {
     }
 
     render() {
-        const {
-            switchId,
-            checked,
-            disabled,
-            errorText,
-            helpText,
-            name,
-            value,
-        } = this
+        const { switchId, checked, disabled, name, value } = this
 
         renderHiddenInput(
             true,
@@ -153,8 +134,6 @@ export class RuxSwitch implements FormFieldInterface {
                 <div
                     class={{
                         'rux-switch': true,
-                        'rux-switch--has-text':
-                            errorText !== undefined || helpText !== undefined,
                     }}
                 >
                     <input
@@ -187,13 +166,6 @@ export class RuxSwitch implements FormFieldInterface {
                         </span>
                     </label>
                 </div>
-                {this.helpText && !this.errorText && (
-                    <div class="rux-help-text">{helpText}</div>
-                )}
-
-                {this.errorText && (
-                    <div class="rux-error-text">{errorText}</div>
-                )}
             </Host>
         )
     }

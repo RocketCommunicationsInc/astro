@@ -9,6 +9,7 @@ import {
     Host,
     h,
 } from '@stencil/core'
+import FormFieldMessage from '../../common/functional-components/FormFieldMessage/FormFieldMessage'
 import { FormFieldInterface } from '../../common/interfaces.module'
 import { hasSlot, renderHiddenInput } from '../../utils/utils'
 
@@ -160,14 +161,11 @@ export class RuxRadioGroup implements FormFieldInterface {
                     >
                         <slot></slot>
                     </div>
-                    {this.helpText && !this.errorText && (
-                        <div class="rux-help-text">{this.helpText}</div>
-                    )}
-
-                    {this.errorText && (
-                        <div class="rux-error-text">{this.errorText}</div>
-                    )}
                 </div>
+                <FormFieldMessage
+                    errorText={this.errorText}
+                    helpText={this.helpText}
+                ></FormFieldMessage>
             </Host>
         )
     }
