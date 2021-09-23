@@ -1,7 +1,7 @@
 {
   "name": "@astrouxds/react",
   "sideEffects": false,
-  "version": "0.0.51",
+  "version": "0.0.6",
   "description": "Astro Web Components React Wrapper",
   "repository": {
     "type": "git",
