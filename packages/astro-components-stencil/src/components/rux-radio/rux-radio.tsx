@@ -42,10 +42,6 @@ export class RuxRadio {
     @Prop() label?: string
 
     /**
-     * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
-     */
-    @Event({ eventName: 'rux-change' }) ruxChange!: EventEmitter
-    /**
      * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
      */
     @Event({ eventName: 'rux-blur' }) ruxBlur!: EventEmitter
@@ -81,7 +77,6 @@ export class RuxRadio {
     private _onChange(e: Event): void {
         const target = e.target as HTMLInputElement
         this.checked = target.checked
-        this.ruxChange.emit(this.checked)
     }
 
     private _onBlur = () => {
