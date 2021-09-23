@@ -1,14 +1,14 @@
 import { newSpecPage } from '@stencil/core/testing'
-import { RuxInputField } from '../rux-input-field'
+import { RuxInput } from '../rux-input'
 
 describe('rux-input', () => {
     it('renders', async () => {
         const page = await newSpecPage({
-            components: [RuxInputField],
-            html: `<rux-input-field></rux-input-field>`,
+            components: [RuxInput],
+            html: `<rux-input></rux-input>`,
         })
         expect(page.root).toEqualHtml(`
-          <rux-input-field value="">
+          <rux-input value="">
             <mock:shadow-root>
             <div class="rux-form-field" part="form-field">
               <label aria-hidden="true" class="rux-input-label" htmlfor="rux-input-1" part="label">
@@ -20,17 +20,17 @@ describe('rux-input', () => {
             </div>
             </mock:shadow-root>
             <input class="aux-input" type="hidden" value="">
-          </rux-input-field>
+          </rux-input>
       `)
     })
 
     it('renders label prop', async () => {
         const page = await newSpecPage({
-            components: [RuxInputField],
-            html: `<rux-input-field label="hello"></rux-input-field>`,
+            components: [RuxInput],
+            html: `<rux-input label="hello"></rux-input>`,
         })
         expect(page.root).toEqualHtml(`
-        <rux-input-field label="hello" value="">
+        <rux-input label="hello" value="">
           <mock:shadow-root>
           <div class="rux-form-field" part="form-field">
             <label aria-hidden="false" class="rux-input-label" htmlfor="rux-input-2" part="label">
@@ -42,17 +42,17 @@ describe('rux-input', () => {
           </div>
           </mock:shadow-root>
           <input class="aux-input" type="hidden" value="">
-        </rux-input-field>
+        </rux-input>
       `)
     })
 
     it('renders label slot', async () => {
         const page = await newSpecPage({
-            components: [RuxInputField],
-            html: `<rux-input-field><div slot="label">hello</div></rux-input-field>`,
+            components: [RuxInput],
+            html: `<rux-input><div slot="label">hello</div></rux-input>`,
         })
         expect(page.root).toEqualHtml(`
-        <rux-input-field value="">
+        <rux-input value="">
           <mock:shadow-root>
           <div class="rux-form-field" part="form-field">
             <label aria-hidden="false" class="rux-input-label" htmlfor="rux-input-3" part="label">
@@ -65,7 +65,7 @@ describe('rux-input', () => {
           </mock:shadow-root>
           <div slot="label">hello</div>
           <input class="aux-input" type="hidden" value="">
-        </rux-input-field>
+        </rux-input>
       `)
     })
 })

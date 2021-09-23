@@ -45,7 +45,7 @@ describe('rux-log', () => {
                          <rux-table-header-cell class="rux-log__header-event-cell">
                            <div class="header-event-container">
                              Event
-                             <rux-input-field class="rux-log__filter" small="" type="search"></rux-input-field>
+                             <rux-input class="rux-log__filter" small="" type="search"></rux-input>
                            </div>
                          </rux-table-header-cell>
                        </rux-table-header-row>
@@ -134,7 +134,7 @@ describe('rux-log', () => {
             html: `<rux-log></rux-log>`,
         })
 
-        const input = page.root.shadowRoot.querySelector('rux-input-field')
+        const input = page.root.shadowRoot.querySelector('rux-input')
         input.value = 'USA'
         await page.waitForChanges()
         input.dispatchEvent(new Event('rux-input'))

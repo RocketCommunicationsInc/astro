@@ -1,9 +1,9 @@
 describe('Input Field', () => {
     beforeEach(() => {
-        cy.visitStory('forms-input-field--default-story')
+        cy.visitStory('forms-input--default-story')
     })
     it('renders', () => {
-        cy.get('rux-input-field').should('have.class', 'hydrated')
+        cy.get('rux-input').should('have.class', 'hydrated')
     })
 })
 

@@ -123,10 +123,10 @@ Slots give you full control over the contents of a component. Some components ma
 Astro Components emit their own custom events, prefixed with `rux`.
 
 ```js
-<rux-input-field></rux-input-field>
+<rux-input></rux-input>
 
 <script>
-  const element = document.querySelector('rux-input-field')
+  const element = document.querySelector('rux-input')
   element.addEventListener('rux-input', (event) => {
     console.log('heard input event!', event.target.value)
   })

@@ -67,7 +67,7 @@ Svelte has [excellent support for Web Components](https://custom-elements-everyw
 
 ### Setting Props
 
-Props are set the same way as any other Svelte component. Both primitive and complex data types can be passed through props. 
+Props are set the same way as any other Svelte component. Both primitive and complex data types can be passed through props.
 
 #### Basic Data
 ```html
@@ -138,7 +138,7 @@ Slots give you full control over the contents of a component. Some components ma
 
 ### Listening to Events
 
-Astro Components emit their own custom events, prefixed with `rux`. You will likely use these to sync state between your Svelte components and the Astro Web Components. Events can be listened to by using Svelte's `on:[event]` syntax. 
+Astro Components emit their own custom events, prefixed with `rux`. You will likely use these to sync state between your Svelte components and the Astro Web Components. Events can be listened to by using Svelte's `on:[event]` syntax.
 
 ```html
 <script>
@@ -184,18 +184,18 @@ Some components offer public methods that can be executed. These methods are asy
 
 ## Data Binding
 
-There is a limitation with Svelte and data binding on custom elements. Svelte's two-way binding syntax `bind:[prop]` is not supproted for custom element props. 
+There is a limitation with Svelte and data binding on custom elements. Svelte's two-way binding syntax `bind:[prop]` is not supproted for custom element props.
 
 The syntax in this example will **not** work as it will with native elements
 ```html
 <script>
   let name
-  
+
 </script>
 
 <div>
   <!-- The bind syntax below will throw and error -->
-  <rux-input-field bind:value={name} />
+  <rux-input bind:value={name} />
   <h1>Hello {name}!</h1>
 </div>
 ```
@@ -211,7 +211,7 @@ Data binding must be done manually by creating an event handler and listening to
 </script>
 
 <div>
-  <rux-input-field
+  <rux-input
     on:rux-input={handleInput}
   />
 

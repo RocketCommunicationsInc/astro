@@ -3,19 +3,19 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import { html, render } from 'lit-html'
 
 <Meta
-    title="Forms/Input Field"
-    component="rux-input-field"
-    argTypes={extractArgTypes('rux-input-field')}
+    title="Forms/Input"
+    component="rux-input"
+    argTypes={extractArgTypes('rux-input')}
      parameters={{
        actions: {
-        handles: ['rux-input rux-input-field', 'rux-change rux-input-field', 'rux-blur rux-input-field'],
+        handles: ['rux-input rux-input', 'rux-change rux-input', 'rux-blur rux-input'],
       },
     }}
 />
 
 # Input
 
-Input Fields allow users to enter freeform text. Variations on this field often provide specific data entry formats such as masked data (e.g. passwords or phone numbers), date and time, and numeric data entry.
+Input allow users to enter freeform text. Variations on this field often provide specific data entry formats such as masked data (e.g. passwords or phone numbers), date and time, and numeric data entry.
 
 ## Guidelines
 
@@ -25,7 +25,7 @@ Input Fields allow users to enter freeform text. Variations on this field often 
 export const Default = (args) => {
   console.log('args', args);
     return html`
-      <rux-input-field
+      <rux-input
         .label="${args.label}"
         .disabled="${args.disabled}"
         .errorText="${args.errorText}"
@@ -40,7 +40,7 @@ export const Default = (args) => {
         .value="${args.value}"
         .step="${args.step}"
         type=${args.type}
-      ></rux-input-field>
+      ></rux-input>
     `
 }
 
@@ -61,7 +61,7 @@ export const Default = (args) => {
 
 ## API
 
-<ArgsTable of="rux-input-field" />
+<ArgsTable of="rux-input" />
 
 ## Variants
 
@@ -69,7 +69,7 @@ export const Default = (args) => {
 
 export const Disabled = (args) => {
     return html`
-      <rux-input-field
+      <rux-input
         .label="${args.label}"
         .disabled="${args.disabled}"
         .error-text="${args.errorText}"
@@ -84,7 +84,7 @@ export const Disabled = (args) => {
         .value="${args.value}"
         .step="${args.step}"
         type=${args.type}
-      ></rux-input-field>
+      ></rux-input>
       ${args.helpText}
     `
 }
@@ -106,7 +106,7 @@ export const Disabled = (args) => {
 
 export const Small = (args) => {
     return html`
-      <rux-input-field
+      <rux-input
         .label="${args.label}"
         .disabled="${args.disabled}"
         .errorText="${args.errorText}"
@@ -121,7 +121,7 @@ export const Small = (args) => {
         .value="${args.value}"
         type=${args.type}
         .step="${args.step}"
-      ></rux-input-field>
+      ></rux-input>
     `
 }
 
@@ -142,7 +142,7 @@ export const Small = (args) => {
 
 export const HelpText = (args) => {
     return html`
-      <rux-input-field
+      <rux-input
         .label="${args.label}"
         .disabled="${args.disabled}"
         .errorText="${args.errorText}"
@@ -157,7 +157,7 @@ export const HelpText = (args) => {
         .value="${args.value}"
         type=${args.type}
         .step="${args.step}"
-      ></rux-input-field>
+      ></rux-input>
     `
 }
 
@@ -179,7 +179,7 @@ export const HelpText = (args) => {
 
 export const Invalid = (args) => {
     return html`
-      <rux-input-field
+      <rux-input
         .label="${args.label}"
         .disabled="${args.disabled}"
         .errorText="${args.errorText}"
@@ -194,7 +194,7 @@ export const Invalid = (args) => {
         .value="${args.value}"
         type=${args.type}
         .step="${args.step}"
-      ></rux-input-field>
+      ></rux-input>
     `
 }
 
@@ -234,13 +234,13 @@ export const Types = (args) => {
     }
     </style>
     <div class="grid">
-      <rux-input-field label="Text Input" type="text" placeholder="Text input"></rux-input-field>
-      <rux-input-field label="Number Input" type="number" placeholder="1"></rux-input-field>
-      <rux-input-field label="Phone Input" type="tel" placeholder="(999) 999-9999"></rux-input-field>
-      <rux-input-field label="Password Input" type="password" placeholder="Reindeer Flotilla"></rux-input-field>
-      <rux-input-field label="Web address" type="url" placeholder="http://example.com"></rux-input-field>
-      <rux-input-field label="Email" type="email" placeholder="user@example.com"></rux-input-field>
-      <rux-input-field label="Search" type="search" placeholder="Enter search term"></rux-input-field>
+      <rux-input label="Text Input" type="text" placeholder="Text input"></rux-input>
+      <rux-input label="Number Input" type="number" placeholder="1"></rux-input>
+      <rux-input label="Phone Input" type="tel" placeholder="(999) 999-9999"></rux-input>
+      <rux-input label="Password Input" type="password" placeholder="Reindeer Flotilla"></rux-input>
+      <rux-input label="Web address" type="url" placeholder="http://example.com"></rux-input>
+      <rux-input label="Email" type="email" placeholder="user@example.com"></rux-input>
+      <rux-input label="Search" type="search" placeholder="Enter search term"></rux-input>
     </div>
     `
 }
@@ -259,11 +259,11 @@ export const Types = (args) => {
 
 You can utilize the `form-field` and `label` Shadow Parts to have full control over label placement. For example:
 ```css
-rux-input-field::part(form-field) {
+rux-input::part(form-field) {
   flex-direction: row;
   align-items: center;
 }
-rux-input-field::part(label) {
+rux-input::part(label) {
   margin-right: var(--spacing-input-label-left);
 }
 ```
@@ -279,7 +279,7 @@ export const HorizontalLabel = (args) => {
         margin-right: var(--spacing-input-label-left);
       }
     </style>
-      <rux-input-field id="left-example" label="Label" type="text" placeholder="Text input"></rux-input-field>
+      <rux-input id="left-example" label="Label" type="text" placeholder="Text input"></rux-input>
     `
 }
 
@@ -296,6 +296,6 @@ export const HorizontalLabel = (args) => {
 If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
 
 ```js
-import RuxInputField from '@astrouxds/astro-web-components/dist/components/rux-input-field.js'
-customElements.define('rux-input-field', RuxInputField)
+import RuxInput from '@astrouxds/astro-web-components/dist/components/rux-input.js'
+customElements.define('rux-input', RuxInput)
 ```

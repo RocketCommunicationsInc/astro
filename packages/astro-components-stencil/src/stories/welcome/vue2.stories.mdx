@@ -188,7 +188,7 @@ Astro Components emit their own custom events, prefixed with `rux`. You will lik
 ```js
 <template>
   <div>
-    <rux-input-field @rux-input="handleInput"></rux-input-field>
+    <rux-input @rux-input="handleInput"></rux-input>
   </div>
 </template>
 
@@ -239,7 +239,7 @@ Since `v-model` is just syntactic sugar for `:value` and `@input`, you just need
 ```js
 <template>
   <div>
-    <rux-input-field :value="firstName" @rux-input="firstName = $event.target.value"></rux-input-field>
+    <rux-input :value="firstName" @rux-input="firstName = $event.target.value"></rux-input>
     {{firstName}}
   </div>
 </template>

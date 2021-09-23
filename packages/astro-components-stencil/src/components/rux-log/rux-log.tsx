@@ -59,14 +59,14 @@ export class RuxLog {
                                         <rux-table-header-cell class="rux-log__header-event-cell">
                                             <div class="header-event-container">
                                                 Event
-                                                <rux-input-field
+                                                <rux-input
                                                     small
                                                     class="rux-log__filter"
                                                     type="search"
                                                     onRux-input={(event) =>
                                                         this.setFilter(event)
                                                     }
-                                                ></rux-input-field>
+                                                ></rux-input>
                                             </div>
                                         </rux-table-header-cell>
                                     </rux-table-header-row>
