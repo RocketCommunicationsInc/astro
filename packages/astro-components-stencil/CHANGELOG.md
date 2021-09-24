@@ -1,6 +1,8 @@
 # Change Log
 
-## [0.0.16] (unreleased)
+## [0.0.18] (unreleased)
+
+## [0.0.17] 2021-09-24
 
 ### Switch
 
