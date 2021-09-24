@@ -5,9 +5,8 @@ import { createReactComponent } from './react-component-lib';
 
 import type { JSX } from '@astrouxds/astro-web-components';
 
-import { defineCustomElements } from '@astrouxds/astro-web-components/loader';
 
-defineCustomElements();
+
 export const RuxButton = /*@__PURE__*/createReactComponent<JSX.RuxButton, HTMLRuxButtonElement>('rux-button');
 export const RuxButtonGroup = /*@__PURE__*/createReactComponent<JSX.RuxButtonGroup, HTMLRuxButtonGroupElement>('rux-button-group');
 export const RuxCheckbox = /*@__PURE__*/createReactComponent<JSX.RuxCheckbox, HTMLRuxCheckboxElement>('rux-checkbox');
