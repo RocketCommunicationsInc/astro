@@ -2,8 +2,6 @@
 /* tslint:disable */
 /* auto-generated react proxies */
 import { createReactComponent } from './react-component-lib';
-import { defineCustomElements } from '@astrouxds/astro-web-components/loader';
-defineCustomElements();
 export const RuxButton = /*@__PURE__*/ createReactComponent('rux-button');
 export const RuxButtonGroup = /*@__PURE__*/ createReactComponent('rux-button-group');
 export const RuxCheckbox = /*@__PURE__*/ createReactComponent('rux-checkbox');
