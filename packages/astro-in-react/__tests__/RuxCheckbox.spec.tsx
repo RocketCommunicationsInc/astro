@@ -26,7 +26,7 @@ describe("RuxCheckbox", () => {
     const { webcomponent: ruxCheckbox } =
       includeWebComponent<HTMLRuxCheckboxElement>(
         renderWithStrictMode(
-          <RuxCheckbox helpText="Props as a string!">Large Button</RuxCheckbox>
+          <RuxCheckbox helpText="Props as a string!"></RuxCheckbox>
         )
       );
     expect(ruxCheckbox.helpText).toEqual("Props as a string!");
@@ -34,9 +34,7 @@ describe("RuxCheckbox", () => {
   it("should get bools as props", () => {
     const { webcomponent: ruxCheckbox } =
       includeWebComponent<HTMLRuxCheckboxElement>(
-        renderWithStrictMode(
-          <RuxCheckbox disabled={true}>Disabled Button</RuxCheckbox>
-        )
+        renderWithStrictMode(<RuxCheckbox disabled={true}></RuxCheckbox>)
       );
     expect(ruxCheckbox.disabled).toEqual(true);
   });
@@ -46,9 +44,7 @@ describe("createComponent - ref", () => {
     const checkboxRef: React.RefObject<any> = React.createRef();
     const { webcomponent: ruxCheckbox } =
       includeWebComponent<HTMLRuxCheckboxElement>(
-        renderWithStrictMode(
-          <RuxCheckbox ref={checkboxRef}>Button Ref</RuxCheckbox>
-        )
+        renderWithStrictMode(<RuxCheckbox ref={checkboxRef}></RuxCheckbox>)
       );
     expect(checkboxRef.current).toEqual(ruxCheckbox);
   });
