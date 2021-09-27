@@ -19,7 +19,7 @@ import { fireEvent } from "@testing-library/dom";
 describe("RuxSlider", () => {
   it("should be rendered by react", () => {
     const { container } = renderWithStrictMode(<RuxSlider></RuxSlider>);
-    const comp = container.getElementsByTagName("rux-Slider")[0];
+    const comp = container.getElementsByTagName("rux-slider")[0];
     expect(comp).toBeInTheDocument();
   });
   it("should get strings as props", () => {
