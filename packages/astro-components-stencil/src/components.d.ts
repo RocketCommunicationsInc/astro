@@ -28,7 +28,7 @@ export namespace Components {
          */
         "secondary": boolean;
         /**
-          * Changes size of a button from standard to small or large by setting sizing classes rux-button--small rux-button--large
+          * Changes size of a button from medium to small or large by setting sizing classes rux-button--small rux-button--large
          */
         "size"?: 'small' | 'medium' | 'large';
         /**
@@ -12110,7 +12110,7 @@ export namespace Components {
          */
         "name": string;
         /**
-          * Changes size of a push button from standard to small or large by setting sizing classes rux-button--small rux-button--large
+          * Changes size of a push button from medium to small or large by setting sizing classes rux-button--small rux-button--large
          */
         "size"?: 'small' | 'medium' | 'large';
         /**
@@ -20094,7 +20094,7 @@ declare namespace LocalJSX {
          */
         "secondary"?: boolean;
         /**
-          * Changes size of a button from standard to small or large by setting sizing classes rux-button--small rux-button--large
+          * Changes size of a button from medium to small or large by setting sizing classes rux-button--small rux-button--large
          */
         "size"?: 'small' | 'medium' | 'large';
         /**
@@ -32216,7 +32216,7 @@ declare namespace LocalJSX {
          */
         "onRux-change"?: (event: CustomEvent<any>) => void;
         /**
-          * Changes size of a push button from standard to small or large by setting sizing classes rux-button--small rux-button--large
+          * Changes size of a push button from medium to small or large by setting sizing classes rux-button--small rux-button--large
          */
         "size"?: 'small' | 'medium' | 'large';
         /**

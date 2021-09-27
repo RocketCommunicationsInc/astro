@@ -33,7 +33,7 @@ export class RuxButton {
     @Prop({ reflect: true }) disabled = false
 
     /**
-     * Changes size of a button from standard to small or large by setting sizing classes
+     * Changes size of a button from medium to small or large by setting sizing classes
      * rux-button--small
      * rux-button--large
      */

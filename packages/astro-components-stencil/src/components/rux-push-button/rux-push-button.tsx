@@ -55,7 +55,7 @@ export class RuxPushButton {
      */
     @Prop({ reflect: true, mutable: true }) value: string = ''
     /**
-     * Changes size of a push button from standard to small or large by setting sizing classes
+     * Changes size of a push button from medium to small or large by setting sizing classes
      * rux-button--small
      * rux-button--large
      */

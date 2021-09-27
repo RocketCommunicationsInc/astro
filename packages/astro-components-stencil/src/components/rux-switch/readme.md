@@ -81,15 +81,13 @@ Configure the component using native HTML attributes.
 
 ## Properties
 
-| Property    | Attribute    | Description                                                                                                                                                                             | Type                  | Default     |
-| ----------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | ----------- |
-| `checked`   | `checked`    | Toggles checked state of a switch                                                                                                                                                       | `boolean`             | `false`     |
-| `disabled`  | `disabled`   | Disables the switch via HTML disabled attribute. Switch takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored. | `boolean`             | `false`     |
-| `errorText` | `error-text` | The validation error text                                                                                                                                                               | `string \| undefined` | `undefined` |
-| `helpText`  | `help-text`  | The help or explanation text                                                                                                                                                            | `string \| undefined` | `undefined` |
-| `label`     | `label`      | The switch label. For HTML content, use the `label` slot instead.                                                                                                                       | `string \| undefined` | `undefined` |
-| `name`      | `name`       | The switch name                                                                                                                                                                         | `string`              | `''`        |
-| `value`     | `value`      | The switch value                                                                                                                                                                        | `string`              | `''`        |
+| Property   | Attribute  | Description                                                                                                                                                                             | Type                  | Default     |
+| ---------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | ----------- |
+| `checked`  | `checked`  | Toggles checked state of a switch                                                                                                                                                       | `boolean`             | `false`     |
+| `disabled` | `disabled` | Disables the switch via HTML disabled attribute. Switch takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored. | `boolean`             | `false`     |
+| `label`    | `label`    | The switch label. For HTML content, use the `label` slot instead.                                                                                                                       | `string \| undefined` | `undefined` |
+| `name`     | `name`     | The switch name                                                                                                                                                                         | `string`              | `''`        |
+| `value`    | `value`    | The switch value                                                                                                                                                                        | `string`              | `''`        |
 
 
 ## Events
