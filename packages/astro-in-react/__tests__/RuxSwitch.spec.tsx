@@ -19,7 +19,7 @@ import { fireEvent } from "@testing-library/dom";
 describe("RuxSwitch", () => {
   it("should be rendered by react", () => {
     const { container } = renderWithStrictMode(<RuxSwitch></RuxSwitch>);
-    const comp = container.getElementsByTagName("rux-Switch")[0];
+    const comp = container.getElementsByTagName("rux-switch")[0];
     expect(comp).toBeInTheDocument();
   });
   it("should get strings as props", () => {
