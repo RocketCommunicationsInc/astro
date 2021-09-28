@@ -108,11 +108,15 @@ export namespace Components {
         /**
           * When supplied with a valid [date string or value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#syntax) displays a timestamp labeled "AOS" next to the standard clock.
          */
-        "aos"?: number;
+        "aos"?: string;
         /**
           * Hides the day of the year.
          */
         "hideDate": boolean;
+        /**
+          * Hides all of the labels.
+         */
+        "hideLabels": boolean;
         /**
           * Hides the timezone in the main 24-hour clock. Timezone does not display on AOS/LOS.
          */
@@ -20186,11 +20190,15 @@ declare namespace LocalJSX {
         /**
           * When supplied with a valid [date string or value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#syntax) displays a timestamp labeled "AOS" next to the standard clock.
          */
-        "aos"?: number;
+        "aos"?: string;
         /**
           * Hides the day of the year.
          */
         "hideDate"?: boolean;
+        /**
+          * Hides all of the labels.
+         */
+        "hideLabels"?: boolean;
         /**
           * Hides the timezone in the main 24-hour clock. Timezone does not display on AOS/LOS.
          */

@@ -14,17 +14,27 @@ export class RuxClock {
     private _timezone: string = 'UTC'
     private dayOfYear!: number
     private tzFormat: string = 'z'
+    private convertedAos?: string
+    private convertedLos?: string
 
     @State() _time!: string
     /**
      * When supplied with a valid [date string or value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#syntax) displays a timestamp labeled "AOS" next to the standard clock.
      */
-    @Prop() aos?: number
+    @Prop() aos?: string
+    @Watch('aos')
+    updateAos(newValue: string) {
+        this.convertedAos = this._formatLosAos(newValue)
+    }
 
     /**
      * When supplied with a valid [date string or value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#syntax), displays a timestamp labeled "LOS" next to the standard clock.
      */
     @Prop() los?: string
+    @Watch('los')
+    updateLos(newValue: string) {
+        this.convertedLos = this._formatLosAos(newValue)
+    }
 
     /**
      * Accepts the [IANA timezone string format](https://www.iana.org/time-zones) such as `'America/Los_Angeles'` or any single-character designation for a [military timezones](https://en.wikipedia.org/wiki/List_of_military_time_zones) (`'A'` through `'Z'`, excluding `'J'`), both case-insensitive. If no value for timezone is provided, the clock will use `'UTC'`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.
@@ -45,6 +55,14 @@ export class RuxClock {
         attribute: 'hide-date',
     })
     hideDate: boolean = false
+
+    /**
+     * Hides all of the labels.
+     */
+    @Prop({
+        attribute: 'hide-labels',
+    })
+    hideLabels: boolean = false
 
     /**
      * Applies a smaller clock style.
@@ -72,6 +90,8 @@ export class RuxClock {
         this._timer = window.setInterval(() => {
             this._updateTime()
         }, 1000)
+        if (this.aos) this.convertedAos = this._formatLosAos(this.aos)
+        if (this.los) this.convertedLos = this._formatLosAos(this.los)
     }
 
     disconnectedCallback() {
@@ -93,6 +113,19 @@ export class RuxClock {
         )
     }
 
+    /**
+     * @param dateTime A date string in unix or ISO formats
+     * @returns A timezone local ISO formatted 24h time string
+     */
+
+    private _formatLosAos(dateTime: string | number): string {
+        // Check for unix timestamp
+        if (new Date(Number(dateTime)).getTime() > 0) {
+            dateTime = Number(dateTime)
+        }
+        return format(utcToZonedTime(dateTime, this._timezone), 'HH:mm:ss')
+    }
+
     convertTimezone(timezone: string) {
         const _militaryTimezones = militaryTimezones as MilitaryTimezone
         this._timezone = _militaryTimezones[timezone.toUpperCase()]
@@ -108,7 +141,7 @@ export class RuxClock {
     render() {
         return (
             <Host>
-                {!this.hideDate ? (
+                {!this.hideDate && (
                     <div class="rux-clock__segment rux-clock__day-of-the-year">
                         <div
                             class="rux-clock__segment__value"
@@ -116,15 +149,15 @@ export class RuxClock {
                         >
                             {this.dayOfYear}
                         </div>
-                        <div
-                            class="rux-clock__segment__label"
-                            id="rux-clock__day-of-year-label"
-                        >
-                            Date
-                        </div>
+                        {!this.hideLabels && (
+                            <div
+                                class="rux-clock__segment__label"
+                                id="rux-clock__day-of-year-label"
+                            >
+                                Date
+                            </div>
+                        )}
                     </div>
-                ) : (
-                    ''
                 )}
 
                 <div class="rux-clock__segment rux-clock__time">
@@ -134,58 +167,54 @@ export class RuxClock {
                     >
                         {this.time}
                     </div>
-                    <div
-                        class="rux-clock__segment__label"
-                        id="rux-clock__time-label"
-                    >
-                        Time
-                    </div>
+                    {!this.hideLabels && (
+                        <div
+                            class="rux-clock__segment__label"
+                            id="rux-clock__time-label"
+                        >
+                            Time
+                        </div>
+                    )}
                 </div>
 
-                {this.aos ? (
+                {this.aos && (
                     <div class="rux-clock__segment rux-clock__segment--secondary rux-clock__aos">
                         <div
                             class="rux-clock__segment__value"
                             aria-labelledby="rux-clock__time-label--aos"
                             id="rux-clock__time--aos"
                         >
-                            {format(
-                                utcToZonedTime(this.aos, this._timezone),
-                                'HH:mm:ss'
-                            )}
+                            {this.convertedAos}
                         </div>
-                        <div
-                            class="rux-clock__segment__label"
-                            id="rux-clock__time-label--aos"
-                        >
-                            AOS
-                        </div>
+                        {!this.hideLabels && (
+                            <div
+                                class="rux-clock__segment__label"
+                                id="rux-clock__time-label--aos"
+                            >
+                                AOS
+                            </div>
+                        )}
                     </div>
-                ) : (
-                    ''
                 )}
 
-                {this.los ? (
+                {this.los && (
                     <div class="rux-clock__segment rux-clock__segment--secondary rux-clock__los">
                         <div
                             class="rux-clock__segment__value"
                             aria-labelledby="rux-clock__time-label--los"
                             id="rux-clock__time--los"
                         >
-                            {format(
-                                utcToZonedTime(this.los, this._timezone),
-                                'HH:mm:ss'
-                            )}
+                            {this.convertedLos}
                         </div>
-                        <div
-                            class="rux-clock__segment__label"
-                            id="rux-clock__time-label--los"
-                        >
-                            LOS
-                        </div>
+                        {!this.hideLabels && (
+                            <div
+                                class="rux-clock__segment__label"
+                                id="rux-clock__time-label--los"
+                            >
+                                LOS
+                            </div>
+                        )}
                     </div>
-                ) : (
-                    ''
                 )}
             </Host>
         )
