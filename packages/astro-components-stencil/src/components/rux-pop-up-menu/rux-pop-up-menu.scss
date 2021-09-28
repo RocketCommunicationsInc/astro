@@ -10,12 +10,12 @@
     /**
       * @prop --popup-menu-border-color: Pop Up Menu Border Color
     */
-    --popup-menu-border-color: var(--color-border-menu);
+    --popup-menu-border-color: var(--active);
 
     /**
       * @prop --popup-menu-caret-background-color: Pop Up Menu Caret Background Color
     */
-    --popup-menu-caret-background-color: var(--color-border-menu);
+    --popup-menu-caret-background-color: var(--active);
 
     /**
       * @prop --popup-menu-caret-left: Position of Caret
