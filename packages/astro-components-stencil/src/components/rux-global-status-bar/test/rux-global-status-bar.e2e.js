@@ -1,6 +1,6 @@
 describe('Global Status Bar', () => {
     beforeEach(() => {
-        cy.visitStory('components-global-status-bar--default-story')
+        cy.visitComponent('rux-global-status-bar')
     })
     it('renders', () => {
         cy.get('rux-global-status-bar').should('have.class', 'hydrated')

@@ -13,57 +13,19 @@
             href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
             rel="stylesheet"
         />
-        <script
-            type="module"
-            src="/dist/astro-web-components/astro-web-components.esm.js"
-        ></script>
-        <script nomodule src="/dist/esm/astro-web-components.js"></script>
+        <script type="module" src="/build/astro-web-components.esm.js"></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
 
-        <link
-            rel="stylesheet"
-            href="/dist/astro-web-components/astro-web-components.css"
-        />
+        <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
     <body class="dark-theme">
         <div style="padding: 10%; display: flex; justify-content: center">
             <form id="form">
-                <rux-textarea
-                    id="textarea1"
-                    name="test1"
-                    value="TextArea Test 1"
-                ></rux-textarea>
-                <br />
-                <rux-textarea
-                    id="disTextArea"
-                    name="disTextArea"
-                    value="Disabled"
-                    disabled
-                ></rux-textarea>
-                <br />
-                <rux-textarea id="noval" name="noval"></rux-textarea>
-                <br />
-                <rux-textarea
-                    id="errorText"
-                    name="errorText"
-                    error-text="ERROR"
-                ></rux-textarea>
-                <br />
-                <rux-textarea id="helpText" name="helpText" help-text="HELP">
-                </rux-textarea>
-                <br />
-                <rux-textarea
-                    id="bothText"
-                    name="bothText"
-                    help-text="PLZ NO"
-                    error-text="PLZ YES"
-                ></rux-textarea>
-                <br />
-                <textarea id="nativeTextArea" name="native">
-Native Text Area</textarea
-                >
+                <rux-slider name="ruxSlider" id="ruxSlider"></rux-slider>
+                <input type="range" id="nativeSlider" name="nativeSlider" />
 
-                <button id="formSumbitBtn" type="submit">submit</button>
+                <button type="submit">submit</button>
             </form>
             <ul id="log"></ul>
             <script>

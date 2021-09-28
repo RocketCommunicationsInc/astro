@@ -1,6 +1,6 @@
 describe('Progress', () => {
     beforeEach(() => {
-        cy.visitStory('components-progress--default-story')
+        cy.visitComponent('rux-progress')
     })
     it('renders', () => {
         cy.get('rux-progress').should('have.class', 'hydrated')

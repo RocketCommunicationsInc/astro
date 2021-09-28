@@ -13,37 +13,27 @@
             href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
             rel="stylesheet"
         />
-        <script
-            type="module"
-            src="/dist/astro-web-components/astro-web-components.esm.js"
-        ></script>
-        <script nomodule src="/dist/esm/astro-web-components.js"></script>
+        <script type="module" src="/build/astro-web-components.esm.js"></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
 
-        <link
-            rel="stylesheet"
-            href="/dist/astro-web-components/astro-web-components.css"
-        />
+        <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
     <body class="dark-theme">
         <div style="padding: 10%; display: flex; justify-content: center">
             <div style="width: 60%">
                 <form id="form" style="width: 100%">
-                    <rux-checkbox
-                        id="ruxCheckbox"
-                        name="ruxCheckbox"
-                        value="foo"
-                    >
+                    <rux-switch id="ruxSwitch" name="ruxSwitch" value="foo">
                         Checkbox
-                    </rux-checkbox>
+                    </rux-switch>
 
-                    <rux-checkbox
-                        id="ruxCheckboxDisabled"
-                        name="ruxCheckboxDisabled"
+                    <rux-switch
+                        id="ruxSwitchDisabled"
+                        name="ruxSwitchDisabled"
                         disabled
                     >
                         Disabled
-                    </rux-checkbox>
+                    </rux-switch>
 
                     <input
                         id="nativeCheckbox"
@@ -55,9 +45,9 @@
                 </form>
 
                 <form id="form-no-value" style="margin-top: 1rem; width: 100%">
-                    <rux-checkbox id="ruxCheckbox2" name="ruxCheckbox">
+                    <rux-switch id="ruxSwitch2" name="ruxSwitch">
                         Checkbox
-                    </rux-checkbox>
+                    </rux-switch>
 
                     <input
                         id="nativeCheckbox2"

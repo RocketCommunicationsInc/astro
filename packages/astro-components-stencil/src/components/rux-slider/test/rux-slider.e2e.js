@@ -1,17 +1,10 @@
-// import { newE2EPage } from '@stencil/core/testing'
-
-describe('rux-slider', () => {
-    beforeEach(() => {
-        cy.visitStory('forms-slider--default-story')
-    })
-    it('renders', () => {
-        cy.get('rux-slider').should('have.class', 'hydrated')
-    })
-})
-
 describe('Slider with Form', () => {
     beforeEach(() => {
-        cy.visitForm('slider')
+        cy.visitComponent('rux-slider')
+    })
+
+    it('renders', () => {
+        cy.get('rux-slider').should('have.class', 'hydrated')
     })
     it('submits the correct value when using a form', () => {
         // Unable to get positioning to work with click to change the value of either input.

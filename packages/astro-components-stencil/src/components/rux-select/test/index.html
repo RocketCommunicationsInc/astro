@@ -13,24 +13,21 @@
             href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
             rel="stylesheet"
         />
-        <script
-            type="module"
-            src="/dist/astro-web-components/astro-web-components.esm.js"
-        ></script>
-        <script nomodule src="/dist/esm/astro-web-components.js"></script>
+        <script type="module" src="/build/astro-web-components.esm.js"></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
 
-        <link
-            rel="stylesheet"
-            href="/dist/astro-web-components/astro-web-components.css"
-        />
+        <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
     <body class="dark-theme">
         <div style="padding: 10%; display: flex; justify-content: center">
             <form id="form">
-                <rux-slider name="ruxSlider" id="ruxSlider"></rux-slider>
-                <input type="range" id="nativeSlider" name="nativeSlider" />
-
+                <rux-select id="ruxSelect" label="Best Thing?" name="bestThing">
+                    <option selected></option>
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                </rux-select>
                 <button type="submit">submit</button>
             </form>
             <ul id="log"></ul>

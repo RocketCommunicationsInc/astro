@@ -1,20 +1,15 @@
-describe('Input Field', () => {
-    beforeEach(() => {
-        cy.visitStory('forms-input--default-story')
-    })
-    it('renders', () => {
-        cy.get('rux-input').should('have.class', 'hydrated')
-    })
-})
-
 describe('Input Field with Form', () => {
     const testString = 'Hello World'
 
     beforeEach(() => {
-        cy.visitForm('input-field')
+        cy.visitComponent('rux-input')
         // makes sure form was clicked before submitting
         // submitting form directly via .submit() sometimes fails
         cy.get('#form').click()
+    })
+
+    it('renders', () => {
+        cy.get('rux-input').should('have.class', 'hydrated')
     })
 
     it('submits the correct value when using a form', () => {

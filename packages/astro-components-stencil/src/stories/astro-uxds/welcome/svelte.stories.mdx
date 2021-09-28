@@ -21,7 +21,7 @@ Astro Web Components make use of Stencil's automatic lazy loader which only load
 import App from "./App.svelte";
 
 // Import Astro's base styles
-import '@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css'
+import '@astrouxds/astro-web-components/build/astro-web-components.css'
 // Define the Astro Components
 import { defineCustomElements } from '@astrouxds/astro-web-components/dist/custom-elements';
 defineCustomElements();
@@ -41,7 +41,7 @@ If you need more control over your bundle size, you can also import and register
 // main.js
 import App from "./App.svelte";
 // Import Astro's base styles
-import '@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css'
+import '@astrouxds/astro-web-components/build/astro-web-components.css'
 // Import Button
 import { RuxButton } from '@astrouxds/astro-web-components/dist/components/rux-button'
 // Register Button

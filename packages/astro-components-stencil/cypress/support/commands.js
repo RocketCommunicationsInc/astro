@@ -24,12 +24,6 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('visitStory', (component) => {
-    cy.visit(
-        `storybook-static/iframe.html?id=${component}&args=&viewMode=story`
-    )
-})
-
-Cypress.Commands.add('visitForm', (component) => {
-    cy.visit(`src/tests/pages/form-${component}.html`)
+Cypress.Commands.add('visitComponent', (component) => {
+    cy.visit(`components/${component}/test`)
 })
