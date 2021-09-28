@@ -24,15 +24,13 @@ describe("RuxInput", () => {
   });
   it("should get strings as props", () => {
     const { webcomponent: ruxInput } = includeWebComponent<HTMLRuxInputElement>(
-      renderWithStrictMode(
-        <RuxInput helpText="Props as a string!">Large Button</RuxInput>
-      )
+      renderWithStrictMode(<RuxInput helpText="Props as a string!"></RuxInput>)
     );
     expect(ruxInput.helpText).toEqual("Props as a string!");
   });
   it("should get bools as props", () => {
     const { webcomponent: ruxInput } = includeWebComponent<HTMLRuxInputElement>(
-      renderWithStrictMode(<RuxInput disabled={true}>Disabled Button</RuxInput>)
+      renderWithStrictMode(<RuxInput disabled={true}></RuxInput>)
     );
     expect(ruxInput.disabled).toEqual(true);
   });
@@ -41,7 +39,7 @@ describe("createComponent - ref", () => {
   test("should pass ref on to web component instance", () => {
     const inputRef: React.RefObject<any> = React.createRef();
     const { webcomponent: ruxInput } = includeWebComponent<HTMLRuxInputElement>(
-      renderWithStrictMode(<RuxInput ref={inputRef}>Button Ref</RuxInput>)
+      renderWithStrictMode(<RuxInput ref={inputRef}></RuxInput>)
     );
     expect(inputRef.current).toEqual(ruxInput);
   });
