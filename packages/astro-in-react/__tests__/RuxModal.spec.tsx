@@ -15,7 +15,6 @@ import {
   includeWebComponent,
 } from "./common/commonFunctions";
 import { fireEvent } from "@testing-library/dom";
-// import { fireEvent } from "@testing-library/dom";
 
 describe("RuxModal", () => {
   it("should be rendered by react", () => {
