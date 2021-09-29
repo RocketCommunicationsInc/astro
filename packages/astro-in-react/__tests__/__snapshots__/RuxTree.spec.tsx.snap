@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RuxTree should be rendered by react 1`] = `
+<rux-tree>
+  <rux-tree-node>
+    Kid
+  </rux-tree-node>
+</rux-tree>
+`;
