@@ -16,7 +16,7 @@ import {
 } from "./common/commonFunctions";
 import { fireEvent } from "@testing-library/dom";
 
-describe("RuxTree", () => {
+describe("RuxTreeNode", () => {
   it("should be rendered by react", () => {
     const { container } = renderWithStrictMode(
       <RuxTreeNode>
