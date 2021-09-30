@@ -1,15 +1,10 @@
-describe('Checkbox', () => {
-    beforeEach(() => {
-        cy.visitStory('components-checkbox--default-story')
-    })
-    it('renders', () => {
-        cy.get('rux-checkbox').should('have.class', 'hydrated')
-    })
-})
-
 describe('Checkbox with Form', () => {
     beforeEach(() => {
-        cy.visitForm('checkbox')
+        cy.visitComponent('rux-checkbox')
+    })
+
+    it('renders', () => {
+        cy.get('rux-checkbox').should('have.class', 'hydrated')
     })
     it('submits the correct select value when using a form', () => {
         cy.get('#ruxCheckbox').shadow().find('input').click({ force: true })

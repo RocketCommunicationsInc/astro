@@ -10,7 +10,7 @@ describe('rux-notification', () => {
             html: `<rux-notification open message="hello there"></rux-notification>`,
         })
         expect(page.root).toEqualHtml(`
-         <rux-notification message="hello there" open="">
+         <rux-notification message="hello there" open="" status="standby">
            <mock:shadow-root>
              <div class="rux-notification__message">
                hello there

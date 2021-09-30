@@ -1,22 +1,11 @@
-const { el } = require('date-fns/locale')
-
-describe('Pop Up Menu', () => {
-    const menuRef = 'rux-pop-up-menu'
-
+describe('Pop Up Menu Item', () => {
     beforeEach(() => {
-        cy.visitStory('components-pop-up-menu--default-story')
+        cy.visitComponent('rux-pop-up-menu')
     })
 
     it('renders', () => {
         cy.get('rux-pop-up-menu').should('have.class', 'hydrated')
     })
-})
-
-describe('Pop Up Menu Item', () => {
-    beforeEach(() => {
-        cy.visitForm('pop-up-menu')
-    })
-
     it('should open and close popup by togglying open attribute', () => {
         cy.get('rux-button').shadow().find('button').click({ force: true })
 

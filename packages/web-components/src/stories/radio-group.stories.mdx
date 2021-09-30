@@ -3,7 +3,7 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import { html, render } from 'lit-html'
 
 <Meta
-    title="Components/Radio Group"
+    title="Forms/Radio Group"
     component="rux-radio-group"
     subcomponents={{ 'Rux Radio': 'rux-radio' }}
     argTypes={extractArgTypes('rux-radio-group')}
@@ -89,7 +89,7 @@ export const Invalid = (args) => {
     <Story
         args={{
             name: 'radios',
-            label: 'Radio Group',
+            label: 'Radio group',
             invalid: true,
         }}
         name="Invalid"
@@ -160,6 +160,46 @@ export const WithErrorText = (args) => {
     >
         {WithErrorText.bind()}
     </Story>
+</Canvas>
+
+## Customization
+
+### Horizontal Labels
+
+You can utilize the `form-field` and `label` Shadow Parts to have full control over label placement. For example:
+
+```css
+rux-radio-group::part(form-field) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+rux-radio-group::part(label) {
+    margin-right: var(--spacing-input-label-left);
+}
+```
+
+export const HorizontalLabel = (args) => {
+    return html`
+        <style>
+            #left-example::part(form-field) {
+                display: flex;
+                flex-direction: row;
+            }
+            #left-example::part(label) {
+                margin-right: var(--spacing-input-label-left);
+            }
+        </style>
+        <rux-radio-group id="left-example" label="Label">
+            <rux-radio value="1">one</rux-radio>
+            <rux-radio value="2">two</rux-radio>
+            <rux-radio value="3">three</rux-radio>
+        </rux-radio-group>
+    `
+}
+
+<Canvas>
+    <Story name="Horizontal Label">{HorizontalLabel.bind()}</Story>
 </Canvas>
 
 ## Cherry Picking

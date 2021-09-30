@@ -1,8 +1,0 @@
-{
-    "projectId": "astro-web-components",
-    "baseUrl": "http://localhost:3333",
-    "integrationFolder": "./src",
-    "testFiles": "**/*.e2e.js",
-    "video": false,
-    "screenshotOnRunFailure": false
-}

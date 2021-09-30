@@ -68,9 +68,9 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 
 ## Shadow Parts
 
-| Part        | Description |
-| ----------- | ----------- |
-| `"wrapper"` |             |
+| Part        | Description               |
+| ----------- | ------------------------- |
+| `"wrapper"` | the modal wrapper overlay |
 
 ## CSS Custom Properties
 

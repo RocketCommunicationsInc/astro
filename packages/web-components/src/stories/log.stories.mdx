@@ -113,10 +113,27 @@ export const Log = (args) => {
 If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
 
 ```js
-import RuxButtonGroup from '@astrouxds/astro-web-components/dist/components/rux-button-group.js'
-import RuxButton from '@astrouxds/astro-web-components/dist/components/rux-button.js'
-import RuxIcon from '@astrouxds/astro-web-components/dist/components/rux-icon.js'
-customElements.define('rux-button', RuxButton)
-customElements.define('rux-icon', RuxIcon)
-customElements.define('rux-button-group', RuxButtonGroup)
+import { RuxLog } from '@astrouxds/astro-web-components/dist/components/rux-log'
+import { RuxTable } from '@astrouxds/astro-web-components/dist/components/rux-table'
+import { RuxTableHeader } from '@astrouxds/astro-web-components/dist/components/rux-table-header'
+import { RuxTableHeaderRow } from '@astrouxds/astro-web-components/dist/components/rux-table-header-row'
+import { RuxTableHeaderCell } from '@astrouxds/astro-web-components/dist/components/rux-table-header-cell'
+import { RuxInput } from '@astrouxds/astro-web-components/dist/components/rux-input'
+import { RuxTableBody } from '@astrouxds/astro-web-components/dist/components/rux-table-body'
+import { RuxTableRow } from '@astrouxds/astro-web-components/dist/components/rux-table-row'
+import { RuxTableCell } from '@astrouxds/astro-web-components/dist/components/rux-table-cell'
+import { RuxDatetime } from '@astrouxds/astro-web-components/dist/components/rux-datetime'
+import { RuxStatus } from '@astrouxds/astro-web-components/dist/components/rux-status'
+
+customElements.define('rux-log', RuxLog)
+customElements.define('rux-table', RuxTable)
+customElements.define('rux-table-header', RuxTableHeader)
+customElements.define('rux-table-header-row', RuxTableHeaderRow)
+customElements.define('rux-table-header-cell', RuxTableHeaderCell)
+customElements.define('rux-input', RuxInput)
+customElements.define('rux-table-body', RuxTableBody)
+customElements.define('rux-table-row', RuxTableRow)
+customElements.define('rux-table-cell', RuxTableCell)
+customElements.define('rux-datetime', RuxDatetime)
+customElements.define('rux-status', RuxStatus)
 ```

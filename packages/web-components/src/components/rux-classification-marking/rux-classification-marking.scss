@@ -19,7 +19,7 @@
     font-weight: bold;
     font-family: var(--font-family);
     color: var(--color-classification-text-light);
-    background-color: var(--color-classification-unclassified);
+    background-color: var(--classification-unclassified);
     text-transform: uppercase;
 }
 
@@ -31,12 +31,19 @@
     min-height: 26px;
     transition: top 10.5s ease;
     overflow-wrap: anywhere;
-    position: absolute;
+    color: var(--color-classification-text-light);
+    background-color: var(--classification-unclassified);
+    position: sticky;
     top: 0;
     left: 0;
     flex-wrap: nowrap;
     flex-grow: 1;
     width: 100%;
+    &__footer {
+        bottom: 0;
+        top: inherit;
+        position: sticky;
+    }
 }
 
 .rux-classification--tag {
@@ -48,23 +55,23 @@
 }
 
 :host([classification='top-secret-sci']) .rux-classification {
-    background-color: var(--color-classification-top-secret-sci);
+    background-color: var(--classification-top-secret-sci);
     color: var(--color-classification-text-dark);
 }
 
 :host([classification='top-secret']) .rux-classification {
-    background-color: var(--color-classification-top-secret);
+    background-color: var(--classification-top-secret);
     color: var(--color-classification-text-dark);
 }
 :host([classification='secret']) .rux-classification {
-    background-color: var(--color-classification-secret);
+    background-color: var(--classification-secret);
 }
 :host([classification='confidential']) .rux-classification {
-    background-color: var(--color-classification-confidential);
+    background-color: var(--classification-confidential);
 }
 :host([classification='controlled']) .rux-classification {
-    background-color: var(--color-classification-cui);
+    background-color: var(--classification-cui);
 }
 :host([classification='unclassified']) .rux-classification {
-    background-color: var(--color-classification-unclassified);
+    background-color: var(--classification-unclassified);
 }

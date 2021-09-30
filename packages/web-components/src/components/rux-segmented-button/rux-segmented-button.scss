@@ -21,17 +21,13 @@
     --segmented-button-hover-border-color: var(--hover);
 
     /** @prop --segmented-button-selected-background-color: Segmented button selected background color*/
-    --segmented-button-selected-background-color: var(
-        --color-segmented-button-selected
-    );
+    --segmented-button-selected-background-color: var(--selected);
 
     /** @prop --segmented-button-selected-text-color: Segmented button selected text color*/
     --segmented-button-selected-text-color: var(--default-text);
 
     /** @prop --segmented-button-selected-hover-background-color: Segmented button selected hover background color*/
-    --segmented-button-selected-hover-background-color: var(
-        --color-segmented-button-selected
-    );
+    --segmented-button-selected-hover-background-color: var(--selected);
 
     /** @prop --segmented-button-selected-hover-text-color: Segmented button selected hover text color*/
     --segmented-button-selected-hover-text-color: var(--default-text);

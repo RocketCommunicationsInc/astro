@@ -10,6 +10,10 @@ import {
     Host,
 } from '@stencil/core'
 
+/**
+ * @part wrapper - the modal wrapper overlay
+ *
+ */
 @Component({
     tag: 'rux-modal',
     styleUrl: 'rux-modal.scss',

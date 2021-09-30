@@ -1,31 +1,31 @@
 .light-theme {
-    --color-border-menu: var(--color-primary-300, #92cbff);
-    --color-menu-item-hover: #cee9fc4d;
-    --color-segmented-button-selected: var(--color-snowflakes-light-selected);
     --background: #eaeef4;
     --global-status-bar: #172635;
     --surface: #ffffff;
     --default-text: #292a2d;
-    --secondary-text: #020202;
-    --placeholder-text: #292a2d99;
+    --secondary-text: #51555b;
+    --placeholder-text: rgba(41, 42, 45, 0.6);
     --inverse-text: #ffffff;
     --primary: #005a8f;
-    // --primary-alt: #2f7aa7;
-    // Figma has #2f7aa7, but this is used in progress and tree and the light value in sketch is #004872
-    --primary-alt: #004872;
+    --primary-alt: #2f7aa7;
     --active: #649cbd;
     --selected: #cee9fc;
     --hover: #004872;
-    --table-hover: #0048724d;
-    --list-hover: #cee9fc4d;
-    --scrollbar-shadow: #82818180;
-    --table-header-shadow: linear-gradient(90deg, #0000006b 0%, #27405900 100%);
-    --dialog-shadow-1: #00000024;
-    --dialog-shadow-2: #0000001f;
-    --dialog-shadow-3: #00000033;
-    --banner-clear: #080c114d;
+    --table-hover: rgba(0, 72, 114, 0.3);
+    --list-hover: rgba(206, 233, 252, 0.3);
+    --scrollbar-shadow: rgba(130, 129, 129, 0.5);
+    --dialog-shadow-1: rgba(0, 0, 0, 0.14);
+    --dialog-shadow-2: rgba(0, 0, 0, 0.12);
+    --dialog-shadow-3: rgba(0, 0, 0, 0.2);
+    --banner-clear: rgba(8, 12, 17, 0.3);
     --gsb-primary: #4dacff;
     --gsb-default-text: #ffffff;
+    --classification-unclassified: #007a33;
+    --classification-cui: #502b85;
+    --classification-confidential: #0033a0;
+    --classification-secret: #c8102e;
+    --classification-top-secret: #ff8c00;
+    --classification-top-secret-sci: #fce83a;
 
     --color-status-critical-500: #ff2a04;
     --color-status-caution-500: #fad800;

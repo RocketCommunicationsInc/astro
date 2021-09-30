@@ -1,3 +1,5 @@
+@use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
+
 :host {
     display: block;
 
@@ -48,9 +50,10 @@
     );
 
     /** @prop --select-menu-border-color: Border Color of the Select Input*/
-    --select-menu-border-color: var(--color-border-menu);
+    --select-menu-border-color: var(--active);
 }
 
+.hidden,
 :host([hidden]) {
     display: none;
 }

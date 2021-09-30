@@ -1,6 +1,6 @@
 describe('Modal', () => {
     beforeEach(() => {
-        cy.visitStory('components-modal--modal')
+        cy.visitComponent('rux-modal')
     })
     it('renders', () => {
         cy.get('rux-modal').should('have.class', 'hydrated')

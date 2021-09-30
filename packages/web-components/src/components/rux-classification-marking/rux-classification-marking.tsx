@@ -1,15 +1,22 @@
-import { Component, Host, Prop, h } from '@stencil/core'
+import { Component, Host, Prop, h, Element, Listen, State } from '@stencil/core'
 import { Classification } from '../../common/commonTypes.module'
+import { hasSlot } from '../../utils/utils'
+
+/**
+ * @part footer-banner - the footer banner
+ *
+ */
 @Component({
     tag: 'rux-classification-marking',
     styleUrl: 'rux-classification-marking.scss',
     shadow: true,
 })
 export class RuxClassificationMarking {
+    @Element() el!: HTMLRuxClassificationMarkingElement
     /**
      * Defines which classification marking will be displayed.
      */
-    @Prop() classification: Classification = 'unclassified'
+    @Prop({ reflect: true }) classification: Classification = 'unclassified'
     /**
      * Allows additional text labels to be added to the a marking
      */
@@ -19,11 +26,29 @@ export class RuxClassificationMarking {
      */
     @Prop({ reflect: true }) tag: boolean = false
 
+    @State() isWrapper: boolean = hasSlot(this.el)
+
+    @Listen('slotchange')
+    private _handleSlotChange() {
+        this.isWrapper = hasSlot(this.el)
+    }
+
+    connectedCallback() {
+        this._handleSlotChange = this._handleSlotChange.bind(this)
+    }
+
+    disconnectedCallback() {
+        this.el!.shadowRoot!.removeEventListener(
+            'slotchange',
+            this._handleSlotChange
+        )
+    }
+
     get type(): 'tag' | 'banner' {
         return this.tag ? 'tag' : 'banner'
     }
 
-    _getDisplayData() {
+    _getDisplayData(): string {
         const markings = {
             banner: {
                 controlled: 'cui',
@@ -51,18 +76,34 @@ export class RuxClassificationMarking {
     }
 
     render() {
+        const { isWrapper, label, tag, type } = this
         return (
             <Host>
                 <div
                     class={{
                         'rux-classification': true,
-                        'rux-classification--tag': this.type === 'tag',
-                        'rux-classification--banner': this.type === 'banner',
+                        'rux-classification--tag': type === 'tag',
+                        'rux-classification--banner': type === 'banner',
                     }}
                 >
                     {this._getDisplayData()}
-                    {this.label}
+                    {label}
                 </div>
+                <slot></slot>
+                {isWrapper && !tag && (
+                    <div
+                        class={{
+                            'rux-classification': true,
+                            'rux-classification--banner': type === 'banner',
+                            'rux-classification--banner__footer':
+                                isWrapper === true,
+                        }}
+                        part="footer-banner"
+                    >
+                        {this._getDisplayData()}
+                        {label}
+                    </div>
+                )}
             </Host>
         )
     }
