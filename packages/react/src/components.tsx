@@ -5,9 +5,6 @@ import { createReactComponent } from "./react-component-lib";
 
 import type { JSX } from "@astrouxds/astro-web-components";
 
-import { defineCustomElements } from "@astrouxds/astro-web-components/loader";
-
-defineCustomElements();
 export const RuxButton = /*@__PURE__*/ createReactComponent<
   JSX.RuxButton,
   HTMLRuxButtonElement
@@ -20,6 +17,10 @@ export const RuxCheckbox = /*@__PURE__*/ createReactComponent<
   JSX.RuxCheckbox,
   HTMLRuxCheckboxElement
 >("rux-checkbox");
+export const RuxCheckboxGroup = /*@__PURE__*/ createReactComponent<
+  JSX.RuxCheckboxGroup,
+  HTMLRuxCheckboxGroupElement
+>("rux-checkbox-group");
 export const RuxClassificationMarking = /*@__PURE__*/ createReactComponent<
   JSX.RuxClassificationMarking,
   HTMLRuxClassificationMarkingElement
@@ -168,36 +169,30 @@ export const RuxIconAirlineSeatFlatAngled = /*@__PURE__*/ createReactComponent<
   JSX.RuxIconAirlineSeatFlatAngled,
   HTMLRuxIconAirlineSeatFlatAngledElement
 >("rux-icon-airline-seat-flat-angled");
-export const RuxIconAirlineSeatIndividualSuite =
-  /*@__PURE__*/ createReactComponent<
-    JSX.RuxIconAirlineSeatIndividualSuite,
-    HTMLRuxIconAirlineSeatIndividualSuiteElement
-  >("rux-icon-airline-seat-individual-suite");
-export const RuxIconAirlineSeatLegroomExtra =
-  /*@__PURE__*/ createReactComponent<
-    JSX.RuxIconAirlineSeatLegroomExtra,
-    HTMLRuxIconAirlineSeatLegroomExtraElement
-  >("rux-icon-airline-seat-legroom-extra");
-export const RuxIconAirlineSeatLegroomNormal =
-  /*@__PURE__*/ createReactComponent<
-    JSX.RuxIconAirlineSeatLegroomNormal,
-    HTMLRuxIconAirlineSeatLegroomNormalElement
-  >("rux-icon-airline-seat-legroom-normal");
-export const RuxIconAirlineSeatLegroomReduced =
-  /*@__PURE__*/ createReactComponent<
-    JSX.RuxIconAirlineSeatLegroomReduced,
-    HTMLRuxIconAirlineSeatLegroomReducedElement
-  >("rux-icon-airline-seat-legroom-reduced");
-export const RuxIconAirlineSeatReclineExtra =
-  /*@__PURE__*/ createReactComponent<
-    JSX.RuxIconAirlineSeatReclineExtra,
-    HTMLRuxIconAirlineSeatReclineExtraElement
-  >("rux-icon-airline-seat-recline-extra");
-export const RuxIconAirlineSeatReclineNormal =
-  /*@__PURE__*/ createReactComponent<
-    JSX.RuxIconAirlineSeatReclineNormal,
-    HTMLRuxIconAirlineSeatReclineNormalElement
-  >("rux-icon-airline-seat-recline-normal");
+export const RuxIconAirlineSeatIndividualSuite = /*@__PURE__*/ createReactComponent<
+  JSX.RuxIconAirlineSeatIndividualSuite,
+  HTMLRuxIconAirlineSeatIndividualSuiteElement
+>("rux-icon-airline-seat-individual-suite");
+export const RuxIconAirlineSeatLegroomExtra = /*@__PURE__*/ createReactComponent<
+  JSX.RuxIconAirlineSeatLegroomExtra,
+  HTMLRuxIconAirlineSeatLegroomExtraElement
+>("rux-icon-airline-seat-legroom-extra");
+export const RuxIconAirlineSeatLegroomNormal = /*@__PURE__*/ createReactComponent<
+  JSX.RuxIconAirlineSeatLegroomNormal,
+  HTMLRuxIconAirlineSeatLegroomNormalElement
+>("rux-icon-airline-seat-legroom-normal");
+export const RuxIconAirlineSeatLegroomReduced = /*@__PURE__*/ createReactComponent<
+  JSX.RuxIconAirlineSeatLegroomReduced,
+  HTMLRuxIconAirlineSeatLegroomReducedElement
+>("rux-icon-airline-seat-legroom-reduced");
+export const RuxIconAirlineSeatReclineExtra = /*@__PURE__*/ createReactComponent<
+  JSX.RuxIconAirlineSeatReclineExtra,
+  HTMLRuxIconAirlineSeatReclineExtraElement
+>("rux-icon-airline-seat-recline-extra");
+export const RuxIconAirlineSeatReclineNormal = /*@__PURE__*/ createReactComponent<
+  JSX.RuxIconAirlineSeatReclineNormal,
+  HTMLRuxIconAirlineSeatReclineNormalElement
+>("rux-icon-airline-seat-recline-normal");
 export const RuxIconAirplanemodeActive = /*@__PURE__*/ createReactComponent<
   JSX.RuxIconAirplanemodeActive,
   HTMLRuxIconAirplanemodeActiveElement
@@ -1666,16 +1661,14 @@ export const RuxIconFormatStrikethrough = /*@__PURE__*/ createReactComponent<
   JSX.RuxIconFormatStrikethrough,
   HTMLRuxIconFormatStrikethroughElement
 >("rux-icon-format-strikethrough");
-export const RuxIconFormatTextdirectionLToR =
-  /*@__PURE__*/ createReactComponent<
-    JSX.RuxIconFormatTextdirectionLToR,
-    HTMLRuxIconFormatTextdirectionLToRElement
-  >("rux-icon-format-textdirection-l-to-r");
-export const RuxIconFormatTextdirectionRToL =
-  /*@__PURE__*/ createReactComponent<
-    JSX.RuxIconFormatTextdirectionRToL,
-    HTMLRuxIconFormatTextdirectionRToLElement
-  >("rux-icon-format-textdirection-r-to-l");
+export const RuxIconFormatTextdirectionLToR = /*@__PURE__*/ createReactComponent<
+  JSX.RuxIconFormatTextdirectionLToR,
+  HTMLRuxIconFormatTextdirectionLToRElement
+>("rux-icon-format-textdirection-l-to-r");
+export const RuxIconFormatTextdirectionRToL = /*@__PURE__*/ createReactComponent<
+  JSX.RuxIconFormatTextdirectionRToL,
+  HTMLRuxIconFormatTextdirectionRToLElement
+>("rux-icon-format-textdirection-r-to-l");
 export const RuxIconFormatUnderlined = /*@__PURE__*/ createReactComponent<
   JSX.RuxIconFormatUnderlined,
   HTMLRuxIconFormatUnderlinedElement
@@ -2164,6 +2157,10 @@ export const RuxIconLocalCafe = /*@__PURE__*/ createReactComponent<
   JSX.RuxIconLocalCafe,
   HTMLRuxIconLocalCafeElement
 >("rux-icon-local-cafe");
+export const RuxIconLocalCarWash = /*@__PURE__*/ createReactComponent<
+  JSX.RuxIconLocalCarWash,
+  HTMLRuxIconLocalCarWashElement
+>("rux-icon-local-car-wash");
 export const RuxIconLocalConvenienceStore = /*@__PURE__*/ createReactComponent<
   JSX.RuxIconLocalConvenienceStore,
   HTMLRuxIconLocalConvenienceStoreElement
@@ -3292,11 +3289,10 @@ export const RuxIconSentimentSatisfiedAlt = /*@__PURE__*/ createReactComponent<
   JSX.RuxIconSentimentSatisfiedAlt,
   HTMLRuxIconSentimentSatisfiedAltElement
 >("rux-icon-sentiment-satisfied-alt");
-export const RuxIconSentimentVeryDissatisfied =
-  /*@__PURE__*/ createReactComponent<
-    JSX.RuxIconSentimentVeryDissatisfied,
-    HTMLRuxIconSentimentVeryDissatisfiedElement
-  >("rux-icon-sentiment-very-dissatisfied");
+export const RuxIconSentimentVeryDissatisfied = /*@__PURE__*/ createReactComponent<
+  JSX.RuxIconSentimentVeryDissatisfied,
+  HTMLRuxIconSentimentVeryDissatisfiedElement
+>("rux-icon-sentiment-very-dissatisfied");
 export const RuxIconSentimentVerySatisfied = /*@__PURE__*/ createReactComponent<
   JSX.RuxIconSentimentVerySatisfied,
   HTMLRuxIconSentimentVerySatisfiedElement
@@ -3433,31 +3429,26 @@ export const RuxIconSignalCellularAlt = /*@__PURE__*/ createReactComponent<
   JSX.RuxIconSignalCellularAlt,
   HTMLRuxIconSignalCellularAltElement
 >("rux-icon-signal-cellular-alt");
-export const RuxIconSignalCellularConnectedNoInternet0Bar =
-  /*@__PURE__*/ createReactComponent<
-    JSX.RuxIconSignalCellularConnectedNoInternet0Bar,
-    HTMLRuxIconSignalCellularConnectedNoInternet0BarElement
-  >("rux-icon-signal-cellular-connected-no-internet-0-bar");
-export const RuxIconSignalCellularConnectedNoInternet1Bar =
-  /*@__PURE__*/ createReactComponent<
-    JSX.RuxIconSignalCellularConnectedNoInternet1Bar,
-    HTMLRuxIconSignalCellularConnectedNoInternet1BarElement
-  >("rux-icon-signal-cellular-connected-no-internet-1-bar");
-export const RuxIconSignalCellularConnectedNoInternet2Bar =
-  /*@__PURE__*/ createReactComponent<
-    JSX.RuxIconSignalCellularConnectedNoInternet2Bar,
-    HTMLRuxIconSignalCellularConnectedNoInternet2BarElement
-  >("rux-icon-signal-cellular-connected-no-internet-2-bar");
-export const RuxIconSignalCellularConnectedNoInternet3Bar =
-  /*@__PURE__*/ createReactComponent<
-    JSX.RuxIconSignalCellularConnectedNoInternet3Bar,
-    HTMLRuxIconSignalCellularConnectedNoInternet3BarElement
-  >("rux-icon-signal-cellular-connected-no-internet-3-bar");
-export const RuxIconSignalCellularConnectedNoInternet4Bar =
-  /*@__PURE__*/ createReactComponent<
-    JSX.RuxIconSignalCellularConnectedNoInternet4Bar,
-    HTMLRuxIconSignalCellularConnectedNoInternet4BarElement
-  >("rux-icon-signal-cellular-connected-no-internet-4-bar");
+export const RuxIconSignalCellularConnectedNoInternet0Bar = /*@__PURE__*/ createReactComponent<
+  JSX.RuxIconSignalCellularConnectedNoInternet0Bar,
+  HTMLRuxIconSignalCellularConnectedNoInternet0BarElement
+>("rux-icon-signal-cellular-connected-no-internet-0-bar");
+export const RuxIconSignalCellularConnectedNoInternet1Bar = /*@__PURE__*/ createReactComponent<
+  JSX.RuxIconSignalCellularConnectedNoInternet1Bar,
+  HTMLRuxIconSignalCellularConnectedNoInternet1BarElement
+>("rux-icon-signal-cellular-connected-no-internet-1-bar");
+export const RuxIconSignalCellularConnectedNoInternet2Bar = /*@__PURE__*/ createReactComponent<
+  JSX.RuxIconSignalCellularConnectedNoInternet2Bar,
+  HTMLRuxIconSignalCellularConnectedNoInternet2BarElement
+>("rux-icon-signal-cellular-connected-no-internet-2-bar");
+export const RuxIconSignalCellularConnectedNoInternet3Bar = /*@__PURE__*/ createReactComponent<
+  JSX.RuxIconSignalCellularConnectedNoInternet3Bar,
+  HTMLRuxIconSignalCellularConnectedNoInternet3BarElement
+>("rux-icon-signal-cellular-connected-no-internet-3-bar");
+export const RuxIconSignalCellularConnectedNoInternet4Bar = /*@__PURE__*/ createReactComponent<
+  JSX.RuxIconSignalCellularConnectedNoInternet4Bar,
+  HTMLRuxIconSignalCellularConnectedNoInternet4BarElement
+>("rux-icon-signal-cellular-connected-no-internet-4-bar");
 export const RuxIconSignalCellularNoSim = /*@__PURE__*/ createReactComponent<
   JSX.RuxIconSignalCellularNoSim,
   HTMLRuxIconSignalCellularNoSimElement
@@ -4270,10 +4261,10 @@ export const RuxIconZoomOutMap = /*@__PURE__*/ createReactComponent<
   JSX.RuxIconZoomOutMap,
   HTMLRuxIconZoomOutMapElement
 >("rux-icon-zoom-out-map");
-export const RuxInputField = /*@__PURE__*/ createReactComponent<
-  JSX.RuxInputField,
-  HTMLRuxInputFieldElement
->("rux-input-field");
+export const RuxInput = /*@__PURE__*/ createReactComponent<
+  JSX.RuxInput,
+  HTMLRuxInputElement
+>("rux-input");
 export const RuxLog = /*@__PURE__*/ createReactComponent<
   JSX.RuxLog,
   HTMLRuxLogElement
