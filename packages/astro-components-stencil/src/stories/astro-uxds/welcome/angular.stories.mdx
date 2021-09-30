@@ -4,7 +4,17 @@ import { Meta } from '@storybook/addon-docs/blocks'
 
 # Angular
 
-1. Include `CUSTOM_ELEMENTS_SCHEMA` in any module that uses an Astro component.
+## Installation
+
+### Via NPM
+
+`npm i @astrouxds/astro-web-components`
+
+
+## Integration of astro-web-components into an Angular application.
+
+
+### Include `CUSTOM_ELEMENTS_SCHEMA` in any module that uses an astro-web-component.
 
 ```js
 import { BrowserModule } from '@angular/platform-browser'
@@ -22,7 +32,8 @@ import { AppComponent } from './app.component'
 export class AppModule {}
 ```
 
-2. Define your Custom Elements in main.ts
+#### Lazy Loading
+Define your Custom Elements in `main.ts`
 
 ```js
 import { enableProdMode } from '@angular/core'
@@ -31,7 +42,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
 import { AppModule } from './app/app.module'
 import { environment } from './environments/environment'
 
-// Note: loader import location set using "esmLoaderPath" within the output target config
+// Import custom element function
 import { defineCustomElements } from '@astrouxds/astro-web-components/loader'
 
 if (environment.production) {
@@ -41,5 +52,140 @@ if (environment.production) {
 platformBrowserDynamic()
     .bootstrapModule(AppModule)
     .catch((err) => console.log(err))
+
+// Register cutom elements
 defineCustomElements()
+```
+
+#### Cherry Picking
+
+If you need more control over your bundle size, you can also import and register individual components.
+Cherry picking components will result in a much smaller overall bundle size; however, you will need to manually register any component dependencies.
+This will be listed for each component in their documentation.
+
+
+```js
+import { enableProdMode } from '@angular/core'
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
+
+import { AppModule } from './app/app.module'
+import { environment } from './environments/environment'
+
+// Import Button
+import { RuxButton } from '@astrouxds/astro-web-components/dist/components/rux-button'
+
+if (environment.production) {
+    enableProdMode()
+}
+
+platformBrowserDynamic()
+    .bootstrapModule(AppModule)
+    .catch((err) => console.log(err))
+
+// Register Button
+customElements.define('rux-button', RuxButton)
+```
+
+
+#### Add global components styling to `angular.json`.
+
+```json
+ "architect": {
+    "build": {
+      "builder": "@angular-devkit/build-angular:browser",
+      "options": {
+        "styles": [
+          "./node_modules/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css",
+        ],
+      },
+    },
+```
+
+## Setting Props
+
+### Basic Data
+
+For basic primitive types like `string`, `boolean`, `number`, set the attribute on the element:
+
+```html
+<rux-button size="large"></rux-button>
+```
+
+### Dynamic Data
+
+Alternatively props can be set dynamically via property binding. This option comes in useful in `*ngFor` loops when
+data is not instantly available.
+
+```js
+const buttons = [
+    { size: 'small', type: 'button', text: 'First'},
+    { size: 'medium', type: 'button', text: 'Second'},
+    { size: 'large', type: 'submit', text: 'Submit'},
+];
+```
+
+```html
+<div *ngFor="let button of buttons">
+    <rux-button [size]="button.size" [type]="button.type">{{ button.text }}</rux-button>
+</div>
+```
+
+## Using Slots
+
+Slots give you full control over the contents of a component. Some components may have multiple slots.
+
+> Web Component Concept:
+> Slotted content lives outside of the shadow DOM and as a result, you are free to style them however you want.
+
+```html
+  <rux-global-status-bar>
+    <rux-icon slot="left-side" icon="apps"></rux-icon>
+    <div slot="app-meta">
+      <h1>Hello World</h1>
+    </div>
+  </rux-global-status-bar>
+```
+
+## Listening To Events
+
+```html
+  <rux-input name="myInput" (rux-change)="onInputChange($event)">
+```
+
+In TypeScript, accessing the events target value requires some type assertion.
+
+```js
+
+onInputChange(e: CustomEvent<HTMLRuxInputFieldElement>){
+  const target = e.target as HTMLInputElement;
+  console.log(`Here is e.target.value: ${target.value}`)
+}
+```
+
+## Methods
+
+Some components offer public methods that can be executed. These methods are async and can be executed by setting a ViewChild decorator on the element.
+The Angular docs for setting and using `ViewChaild` decorator can be found [here](https://angular.io/api/core/ViewChild).
+
+```html
+      <rux-pop-up-menu #myPopUpMenu id="pop-up-menu">
+        <rux-menu-item value="1">Item 1</rux-menu-item>
+        <rux-menu-item-divider></rux-menu-item-divider>
+        <rux-menu-item value="2">Item 2</rux-menu-item>
+    </rux-pop-up-menu>
+```
+
+```js
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-example',
+  templateUrl: './example.component.html',
+})
+export class ExampleComponent {
+    @ViewChild('myPopUpMenu') myTestPopUpMenu: ElementRef<HTMLRuxPopUpMenuElement>;
+    async onAction() {
+        await this.myTestPopUpMenu.nativeElement.isOpen();
+    }
+}
 ```
