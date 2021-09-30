@@ -8,6 +8,34 @@ export const hasShadowDom = (el: HTMLElement) => {
     return !!el.shadowRoot && !!(el as any).attachShadow
 }
 
+export function hasSlot(el: HTMLElement, name?: string): boolean {
+    // Look for a named slot
+    if (name) {
+        return el.querySelector(`[slot="${name}"]`) !== null
+    }
+
+    // Look for a default slot
+    return [...el.childNodes].some((node) => {
+        //If node is text and not an empy string return true
+        if (
+            node.nodeType === node.TEXT_NODE &&
+            node?.textContent?.trim() !== ''
+        ) {
+            return true
+        }
+
+        //If node is an element with a slot attribute return true
+        if (node.nodeType === node.ELEMENT_NODE) {
+            const el = node as HTMLElement
+            if (!el.hasAttribute('slot')) {
+                return true
+            }
+        }
+
+        return false
+    })
+}
+
 /**
 * This method is used to add a hidden input to a host element that contains
 * a Shadow DOM. It does not add the input inside of the Shadow root which

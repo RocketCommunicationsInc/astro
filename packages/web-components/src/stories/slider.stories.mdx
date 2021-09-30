@@ -3,7 +3,7 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import { html, render } from 'lit-html'
 
 <Meta
-    title="Components/Slider"
+    title="Forms/Slider"
     component="rux-slider"
     argTypes={extractArgTypes('rux-slider')}
     parameters={{
@@ -30,6 +30,8 @@ export const Default = (args) => {
                 .step="${args.step}"
                 .value="${args.value}"
                 .disabled="${args.disabled}"
+                .helpText="${args.helpText}"
+                .errorText="${args.errorText}"
             ></rux-slider>
         </div>
     `
@@ -66,6 +68,8 @@ export const Disabled = (args) => {
                 .step="${args.step}"
                 .value="${args.value}"
                 .disabled="${args.disabled}"
+                .helpText="${args.helpText}"
+                .errorText="${args.errorText}"
             ></rux-slider>
         </div>
     `
@@ -83,6 +87,104 @@ export const Disabled = (args) => {
     >
         {Disabled.bind()}
     </Story>
+</Canvas>
+
+### With Help Text
+
+export const WithHelpText = (args) => {
+    return html`
+        <div style="padding: 5%">
+            <rux-slider
+                .max="${args.max}"
+                .min="${args.min}"
+                .step="${args.step}"
+                .value="${args.value}"
+                .disabled="${args.disabled}"
+                .helpText="${args.helpText}"
+                .errorText="${args.errorText}"
+            ></rux-slider>
+        </div>
+    `
+}
+
+<Canvas>
+    <Story
+        name="With Help Text"
+        args={{
+            max: 100,
+            min: 0,
+            value: 50,
+            helpText: 'Help text',
+        }}
+    >
+        {WithHelpText.bind()}
+    </Story>
+</Canvas>
+
+### With Error Text
+
+export const WithErrorText = (args) => {
+    return html`
+        <div style="padding: 5%">
+            <rux-slider
+                .max="${args.max}"
+                .min="${args.min}"
+                .step="${args.step}"
+                .value="${args.value}"
+                .disabled="${args.disabled}"
+                .helpText="${args.helpText}"
+                .errorText="${args.errorText}"
+            ></rux-slider>
+        </div>
+    `
+}
+
+<Canvas>
+    <Story
+        name="With Error Text"
+        args={{
+            max: 100,
+            min: 0,
+            value: 50,
+            errorText: 'Error text',
+        }}
+    >
+        {WithErrorText.bind()}
+    </Story>
+</Canvas>
+
+### Horizontal Labels
+
+You can utilize the `form-field` and `label` Shadow Parts to have full control over label placement. For example:
+
+```css
+rux-slider::part(form-field) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+rux-slider::part(label) {
+    margin-right: var(--spacing-input-label-left);
+}
+```
+
+export const HorizontalLabel = (args) => {
+    return html`
+        <style>
+            #left-example::part(form-field) {
+                display: flex;
+                flex-direction: row;
+            }
+            #left-example::part(label) {
+                margin-right: var(--spacing-input-label-left);
+            }
+        </style>
+        <rux-slider id="left-example" label="Label"></rux-slider>
+    `
+}
+
+<Canvas>
+    <Story name="Horizontal Label">{HorizontalLabel.bind()}</Story>
 </Canvas>
 
 ## Cherry Picking

@@ -1,3 +1,5 @@
+@use "../../global/variables" as variables;
+
 :host {
     display: block;
     position: sticky;
@@ -123,4 +125,9 @@ slot[name='left-side'] > .shifted-up,
     display: inline-flex;
     justify-content: center;
     flex-basis: 100%;
+}
+
+//Preserves dark theme defaults for slotted elements in GSB since content must always be rendered in dark theme.
+::slotted(*) {
+    @include variables.root-variables;
 }

@@ -52,5 +52,6 @@ jobs:
       - name: Run Cypress
         uses: cypress-io/github-action@v2
         with:
-          start: npx lerna run test.e2e.run --stream
+          start: npx lerna run ci.server, npx lerna run test.e2e.run
+          wait-on: "http://localhost:3333"
           working-directory: packages/web-components

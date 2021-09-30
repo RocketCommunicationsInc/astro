@@ -50,24 +50,24 @@ Once your component has been created, rename the css file to .scss and update th
 
 #### Writing an E2E Test
 
--   For component-specific tests, it's recommended to make use of our Storybook as the basis for your E2E test. Storybook already provides isolated examples for each component.
--   For more complex tests that may use multiple components, you may utilize our dev server to create your own isolated sandbox.
+Each component has it's own isolated example index.html that can be used in E2E tests or debugging. These example files can be viewed in the browser at `http://localhost:3333/components/{component-name}/test` when running Stencil's dev server.
 
-##### Storybook Tests
+When creating a new component, make sure to create an example index.html under the `/src/components/{your-component}/tests` folder. Next, create an E2E test file in the same directory. In your test file, you can make use of the Cypress helper `visitComponent`:
 
-Use the helper method `cy.visitStory()` to load your component's story. You only need to pass in the storybook id. For example: `http://localhost:6060/iframe.html?id=components-button--default-story&args=&viewMode=story` -> `cy.visitStory('components-button--default-story')`
-
-##### Dev Server Tests
-
--   Create your sandbox .html page under `/src/tests/pages`
-    -   Your page will be accessible via `localhost:3333/tests/pages/*.html` in the browser and in your Cypress test.
--   Create your Cypress test file under `/src/tests/*.e2e.js`
--   Bootstrap your Cypress test with `cy.visit('localhost:4444/tests/pages/*.html')`
+```js
+describe('My Test', () => {
+    beforeEach(() => {
+        cy.visitComponent('your-component')
+    })
+})
+```
 
 #### Running All Tests
 
-`npm run test` - Spins up a Storybook server and runs Cypress against that.
+`npm run test.e2e.run`
 
 #### Running All Tests w/ Watch
+
+> Make sure Stencil's dev server is running first - `npm run start.stencil`
 
 `npm run test.e2e.watch` - Spins up stencil's dev server, a storybook server, and opens Cypress.

@@ -1,22 +1,34 @@
 import {
     Component,
-    Host,
     h,
     Prop,
     Element,
+    Host,
     Event,
     EventEmitter,
     Watch,
+    State,
 } from '@stencil/core'
-import { renderHiddenInput } from '../../utils/utils'
+import FormFieldMessage from '../../common/functional-components/FormFieldMessage/FormFieldMessage'
+import { FormFieldInterface } from '../../common/interfaces.module'
+import { hasSlot, renderHiddenInput } from '../../utils/utils'
 
+let id = 0
+
+/**
+ * @slot label - The slider label
+ * @part form-field - The form-field wrapper container
+ * @part label - The input label when `label` prop is set
+ */
 @Component({
     tag: 'rux-slider',
     styleUrl: 'rux-slider.scss',
     shadow: true,
 })
-export class RuxSlider {
+export class RuxSlider implements FormFieldInterface {
     @Element() el!: HTMLRuxSliderElement
+    sliderId = `rux-slider-${++id}`
+    @State() hasLabelSlot = false
     /**
      * Min value of the slider.
      */
@@ -42,6 +54,22 @@ export class RuxSlider {
      * Name of the Input Field for Form Submission
      */
     @Prop() name: string = ''
+
+    /**
+     * The slider label text. For HTML content, use the `label` slot instead.
+     */
+    @Prop() label?: string
+
+    /**
+     * The help or explanation text
+     */
+    @Prop({ attribute: 'help-text' }) helpText?: string
+
+    /**
+     * The validation error text
+     */
+    @Prop({ attribute: 'error-text' }) errorText?: string
+
     /**
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
      */
@@ -54,11 +82,25 @@ export class RuxSlider {
     componentWillLoad() {
         this._updateValue()
         this._getBrowser(navigator.userAgent.toLowerCase())
+        this._handleSlotChange()
     }
 
     connectedCallback() {
         this._onInput = this._onInput.bind(this)
         this._onBlur = this._onBlur.bind(this)
+        this._handleSlotChange = this._handleSlotChange.bind(this)
+    }
+
+    disconnectedCallback() {
+        this.el!.shadowRoot!.removeEventListener(
+            'slotchange',
+            this._handleSlotChange
+        )
+    }
+
+    @Watch('label')
+    handleLabelChange() {
+        this._handleSlotChange()
     }
 
     @Watch('value')
@@ -74,6 +116,9 @@ export class RuxSlider {
         this.value = this._closestMultiple(this.value, this.step)
     }
 
+    get hasLabel() {
+        return this.label ? true : this.hasLabelSlot
+    }
     //Returns the closest multiple of two given numbers.
     private _closestMultiple(n: number, x: number) {
         if (x > n) return x
@@ -137,9 +182,15 @@ export class RuxSlider {
         }
     }
 
+    private _handleSlotChange() {
+        this.hasLabelSlot = hasSlot(this.el, 'label')
+    }
+
     render() {
         const {
             el,
+            sliderId,
+            label,
             min,
             max,
             value,
@@ -154,22 +205,38 @@ export class RuxSlider {
 
         return (
             <Host>
-                <div class="rux-slider">
-                    <input
-                        onInput={_onInput}
-                        type="range"
-                        class="rux-range"
-                        min={min}
-                        max={max}
-                        value={value}
-                        step={step}
-                        disabled={disabled}
-                        aria-label="slider"
-                        aria-disabled={disabled ? 'true' : 'false'}
-                        onBlur={() => _onBlur()}
-                    ></input>
+                <div class="rux-form-field" part="form-field">
+                    <label
+                        class="rux-input-label"
+                        aria-hidden={this.hasLabel ? 'false' : 'true'}
+                        htmlFor={sliderId}
+                        part="label"
+                    >
+                        <span class={{ hidden: !this.hasLabel }}>
+                            <slot name="label">{label}</slot>
+                        </span>
+                    </label>
+                    <div class="rux-slider">
+                        <input
+                            id={sliderId}
+                            onInput={_onInput}
+                            type="range"
+                            class="rux-range"
+                            min={min}
+                            max={max}
+                            value={value}
+                            step={step}
+                            disabled={disabled}
+                            aria-label="slider"
+                            aria-disabled={disabled ? 'true' : 'false'}
+                            onBlur={() => _onBlur()}
+                        ></input>
+                    </div>
                 </div>
-                <slot></slot>
+                <FormFieldMessage
+                    helpText={this.helpText}
+                    errorText={this.errorText}
+                ></FormFieldMessage>
             </Host>
         )
     }

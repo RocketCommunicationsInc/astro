@@ -106,7 +106,7 @@ For more advanced customization, RuxLog exposes the entire table element and eac
 -   [rux-table-header](../rux-table/rux-table-header)
 -   [rux-table-header-row](../rux-table/rux-table-header-row)
 -   [rux-table-header-cell](../rux-table/rux-table-header-cell)
--   [rux-input-field](../rux-input-field)
+-   [rux-input](../rux-input)
 -   [rux-table-body](../rux-table/rux-table-body)
 -   [rux-table-row](../rux-table/rux-table-row)
 -   [rux-table-cell](../rux-table/rux-table-cell)
@@ -121,7 +121,7 @@ graph TD;
   rux-log --> rux-table-header
   rux-log --> rux-table-header-row
   rux-log --> rux-table-header-cell
-  rux-log --> rux-input-field
+  rux-log --> rux-input
   rux-log --> rux-table-body
   rux-log --> rux-table-row
   rux-log --> rux-table-cell

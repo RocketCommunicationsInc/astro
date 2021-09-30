@@ -1,6 +1,42 @@
 # Change Log
 
-## [0.0.14] (unreleased)
+## [0.0.18] (unreleased)
+
+## [0.0.17] 2021-09-24
+
+### Switch
+
+-   `help-text` prop has been removed.
+-   `error-text` prop has been removed
+
+### Input Field
+
+-   Component has been renamed to `rux-input` for convenience
+
+### Radio
+
+-   `rux-change` event has been removed. Use the `rux-change` event on rux-radio-group instead.
+
+## [0.0.15] 2021-09-22
+
+### Breaking Changes
+
+#### Input Field
+
+-   Component has been renamed to `rux-input` for convenience.
+
+#### Checkbox
+
+-   `required` prop has been removed. Use Checkbox Group component instead to display invalid state.
+-   `errorText` prop has been removed. Use Checkbox Group component instead.
+
+### Switch
+
+-   `required` prop has been removed.
+-   `help-text` prop has been removed.
+-   `error-text` prop has been removed.
+
+## [0.0.14] 2021-09-10
 
 ### Breaking Changes
 

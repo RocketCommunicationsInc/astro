@@ -73,6 +73,111 @@ export const WithLabel = (args) => {
     </Story>
 </Canvas>
 
+### With Footer Banner
+
+When using the classification marking component as a wrapper with slotted children, setting the `footerBanner` property attribute to the classification custom element adds a duplicate of the classification banner to the bottom of parent element.
+
+export const WithFooterBanner = (args) => {
+    return html`
+        <div
+            style="display: flex; flex-flow: column; justify-content: center; margin-bottom:50px; position: relative;"
+        >
+            <rux-classification-marking classification="${args.classification}">
+                <h1>Document Title</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus vitae euismod lacus. Pellentesque sollicitudin
+                    quam tristique tristique eleifend. Nam nec nibh magna. Duis
+                    iaculis nisi nec quam lobortis, id feugiat risus maximus.
+                    Cras purus massa, vulputate id orci quis, semper iaculis
+                    risus. Nam turpis ante, molestie auctor semper et, auctor
+                    nec diam. Morbi vehicula enim ac enim ullamcorper
+                    scelerisque. Etiam lacinia metus quis ligula ullamcorper,
+                    sed suscipit orci sodales. venenatis. Donec a mi mattis,
+                    scelerisque nisl in, tincidunt ipsum. Donec venenatis dui
+                    sit amet neque auctor, vitae vulputate sem volutpat.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus vitae euismod lacus. Pellentesque sollicitudin
+                    quam tristique tristique eleifend. Nam nec nibh magna. Duis
+                    iaculis nisi nec quam lobortis, id feugiat risus maximus.
+                    Cras purus massa, vulputate id orci quis, semper iaculis
+                    risus. Nam turpis ante, molestie auctor semper et, auctor
+                    nec diam. Morbi vehicula enim ac enim ullamcorper
+                    scelerisque. Etiam lacinia metus quis ligula ullamcorper,
+                    sed suscipit orci sodales. venenatis. Donec a mi mattis,
+                    scelerisque nisl in, tincidunt ipsum. Donec venenatis dui
+                    sit amet neque auctor, vitae vulputate sem volutpat.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus vitae euismod lacus. Pellentesque sollicitudin
+                    quam tristique tristique eleifend. Nam nec nibh magna. Duis
+                    iaculis nisi nec quam lobortis, id feugiat risus maximus.
+                    Cras purus massa, vulputate id orci quis, semper iaculis
+                    risus. Nam turpis ante, molestie auctor semper et, auctor
+                    nec diam. Morbi vehicula enim ac enim ullamcorper
+                    scelerisque. Etiam lacinia metus quis ligula ullamcorper,
+                    sed suscipit orci sodales. venenatis. Donec a mi mattis,
+                    scelerisque nisl in, tincidunt ipsum. Donec venenatis dui
+                    sit amet neque auctor, vitae vulputate sem volutpat.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus vitae euismod lacus. Pellentesque sollicitudin
+                    quam tristique tristique eleifend. Nam nec nibh magna. Duis
+                    iaculis nisi nec quam lobortis, id feugiat risus maximus.
+                    Cras purus massa, vulputate id orci quis, semper iaculis
+                    risus. Nam turpis ante, molestie auctor semper et, auctor
+                    nec diam. Morbi vehicula enim ac enim ullamcorper
+                    scelerisque. Etiam lacinia metus quis ligula ullamcorper,
+                    sed suscipit orci sodales. venenatis. Donec a mi mattis,
+                    scelerisque nisl in, tincidunt ipsum. Donec venenatis dui
+                    sit amet neque auctor, vitae vulputate sem volutpat.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus vitae euismod lacus. Pellentesque sollicitudin
+                    quam tristique tristique eleifend. Nam nec nibh magna. Duis
+                    iaculis nisi nec quam lobortis, id feugiat risus maximus.
+                    Cras purus massa, vulputate id orci quis, semper iaculis
+                    risus. Nam turpis ante, molestie auctor semper et, auctor
+                    nec diam. Morbi vehicula enim ac enim ullamcorper
+                    scelerisque. Etiam lacinia metus quis ligula ullamcorper,
+                    sed suscipit orci sodales. venenatis. Donec a mi mattis,
+                    scelerisque nisl in, tincidunt ipsum. Donec venenatis dui
+                    sit amet neque auctor, vitae vulputate sem volutpat.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus vitae euismod lacus. Pellentesque sollicitudin
+                    quam tristique tristique eleifend. Nam nec nibh magna. Duis
+                    iaculis nisi nec quam lobortis, id feugiat risus maximus.
+                    Cras purus massa, vulputate id orci quis, semper iaculis
+                    risus. Nam turpis ante, molestie auctor semper et, auctor
+                    nec diam. Morbi vehicula enim ac enim ullamcorper
+                    scelerisque. Etiam lacinia metus quis ligula ullamcorper,
+                    sed suscipit orci sodales. venenatis. Donec a mi mattis,
+                    scelerisque nisl in, tincidunt ipsum. Donec venenatis dui
+                    sit amet neque auctor, vitae vulputate sem volutpat.
+                </p>
+            </rux-classification-marking>
+        </div>
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+            classification: 'secret',
+        }}
+        name="With Footer Banner"
+    >
+        {WithFooterBanner.bind()}
+    </Story>
+</Canvas>
+
 ### All Banner Variants
 
 export const AllBannerVariants = (args) => {
@@ -81,42 +186,42 @@ export const AllBannerVariants = (args) => {
             style="display: flex; flex-flow: column; justify-content: center; margin:20px;"
         >
             <div
-                style="display: flex; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
+                style="position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
             >
                 <rux-classification-marking
                     classification="top-secret-sci"
                 ></rux-classification-marking>
             </div>
             <div
-                style="display: flex; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
+                style="position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
             >
                 <rux-classification-marking
                     classification="top-secret"
                 ></rux-classification-marking>
             </div>
             <div
-                style="display: flex; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
+                style="position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
             >
                 <rux-classification-marking
                     classification="secret"
                 ></rux-classification-marking>
             </div>
             <div
-                style="display: flex; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
+                style="position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
             >
                 <rux-classification-marking
                     classification="confidential"
                 ></rux-classification-marking>
             </div>
             <div
-                style="display: flex; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
+                style="position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
             >
                 <rux-classification-marking
                     classification="controlled"
                 ></rux-classification-marking>
             </div>
             <div
-                style="display: flex; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
+                style="position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
             >
                 <rux-classification-marking
                     classification="unclassified"

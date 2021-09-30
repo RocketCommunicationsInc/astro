@@ -1,26 +1,33 @@
-:root {
+// Dark/Default Theme Variables Mixin
+// This a mixin to allow for variables to be included in the shadow dom of a component and overwrite global thmese when necessary.
+@mixin root-variables {
     --background: #101923;
     --global-status-bar: #172635;
     --surface: #1b2d3e;
     --default-text: #ffffff;
     --secondary-text: #d4d8dd;
-    --placeholder-text: #ffffff99;
+    --placeholder-text: rgba(255, 255, 255, 0.6);
     --inverse-text: #080c11;
     --primary: #4dacff;
     --primary-alt: #3a87cf;
     --active: #2b659b;
     --selected: #1c3f5e;
     --hover: #92cbff;
-    --table-hover: #92cbff4d;
-    --list-hover: #1c3f5e4d;
-    --scrollbar-shadow: #00000080;
-    --table-header-shadow: linear-gradient(90deg, #0000006b 0%, #27405900 100%);
-    --dialog-shadow-1: #00000040;
-    --dialog-shadow-2: #0000001f;
-    --dialog-shadow-3: #00000033;
-    --banner-clear: #080c114d;
+    --table-hover: rgba(146, 203, 255, 0.3);
+    --list-hover: rgba(28, 63, 94, 0.3);
+    --scrollbar-shadow: rgba(0, 0, 0, 0.5);
+    --dialog-shadow-1: rgba(0, 0, 0, 0.25);
+    --dialog-shadow-2: rgba(0, 0, 0, 0.12);
+    --dialog-shadow-3: rgba(0, 0, 0, 0.2);
+    --banner-clear: rgba(8, 12, 17, 0.3);
     --gsb-primary: #4dacff;
     --gsb-default-text: #ffffff;
+    --classification-unclassified: #007a33;
+    --classification-cui: #502b85;
+    --classification-confidential: #0033a0;
+    --classification-secret: #c8102e;
+    --classification-top-secret: #ff8c00;
+    --classification-top-secret-sci: #fce83a;
 
     --color-basics-white: #ffffff;
     --color-basics-black: #000000;
@@ -130,9 +137,9 @@
       ==========================================================================
     */
 
-    --color-border-menu: #2b659b;
-    --color-menu-item-hover: #1c3f5e4d;
-    --color-segmented-button-selected: var(--color-snowflakes-dark-selected);
+    // --color-border-menu: #2b659b;
+    // --color-menu-item-hover: #1c3f5e4d;
+    // --color-segmented-button-selected: var(--color-snowflakes-dark-selected);
 
     --disabled-opacity: 0.4;
     --border-radius-button: 3px;
@@ -165,4 +172,16 @@
     --color-scrollbar-background-thumb-hover: #3a81bf;
     --color-scrollbar-background-track: #203246;
     --color-scrollbar-corner-background: #203246;
+
+    /*
+      Dev only
+      ==========================================================================
+    */
+    --spacing-input-label-top: 0.375rem;
+    --spacing-input-label-left: 0.625rem; //10px;
+}
+
+// Sets default theme variables for component library
+:root {
+    @include root-variables;
 }

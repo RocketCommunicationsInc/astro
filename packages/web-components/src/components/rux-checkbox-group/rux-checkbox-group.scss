@@ -1,0 +1,36 @@
+@use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
+
+:host {
+    /** @prop --checkboxgroup-border-color: the radio group border color*/
+    --checkboxgroup-border-color: var(--active);
+    display: block;
+}
+
+.hidden,
+:host([hidden]) {
+    display: none;
+}
+
+::slotted(rux-checkbox) {
+    display: block;
+    margin-bottom: 0.625rem; //10px
+}
+
+::slotted(rux-checkbox:last-of-type) {
+    margin-bottom: 0;
+}
+
+.rux-label {
+    margin-bottom: var(--spacing-input-label-top);
+}
+
+.rux-checkbox-group {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: 1px solid var(--checkboxgroup-border-color);
+    border-radius: 3px;
+    &--invalid {
+        border: 1px solid var(--color-critical);
+    }
+}

@@ -17,6 +17,21 @@ import { renderHiddenInput } from '../../utils/utils'
 export class RuxPushButton {
     private pushButtonId = `rux-push-button-${id++}`
     /**
+     * For a [button style guide, see the Button section in Astro UXDS Guidelines](https://astrouxds.com/components/button)
+     * Displays an Astro icon matching this string. For a [full list of available icons,
+     * see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols)
+     */
+    @Prop({ reflect: true }) icon?: string
+    /**
+     * Hides slotted text from the button by setting rux-button--icon-only class
+     */
+    @Prop({
+        attribute: 'icon-only',
+        reflect: true,
+    })
+    iconOnly: boolean = false
+
+    /**
      * Disables the push button via HTML `disabled` attribute.
      * Button takes on a distinct disabled visual state.
      * Cursor uses the `not-allowed` system replacement and all keyboard and mouse events are ignored.
@@ -39,6 +54,12 @@ export class RuxPushButton {
      * The value of the push button.
      */
     @Prop({ reflect: true, mutable: true }) value: string = ''
+    /**
+     * Changes size of a push button from medium to small or large by setting sizing classes
+     * rux-button--small
+     * rux-button--large
+     */
+    @Prop({ reflect: true }) size?: 'small' | 'medium' | 'large'
     /**
      * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
      */
@@ -65,7 +86,17 @@ export class RuxPushButton {
     }
 
     render() {
-        const { disabled, checked, label, _onChange, value, _onBlur } = this
+        const {
+            disabled,
+            checked,
+            label,
+            size,
+            _onChange,
+            value,
+            _onBlur,
+            icon,
+            iconOnly,
+        } = this
 
         renderHiddenInput(
             true,
@@ -93,9 +124,18 @@ export class RuxPushButton {
                     value={value}
                 />
                 <label
-                    class="rux-push-button__button"
+                    class={{
+                        'rux-push-button__button': true,
+                        'rux-push-button__button--small': size === 'small',
+                        'rux-push-button__button--large': size === 'large',
+                        'rux-push-button__button--icon-only': iconOnly,
+                    }}
                     htmlFor={this.pushButtonId}
                 >
+                    {icon ? (
+                        <rux-icon size="extra-small" icon={icon}></rux-icon>
+                    ) : null}
+
                     {label}
                 </label>
                 <slot></slot>

@@ -1,0 +1,333 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Astro UXDS/Welcome/React" />
+
+# React Integration
+
+## Installation
+
+### Via NPM
+
+`npm i @astrouxds/react`
+
+#### Lazy Loading
+
+Astro Web Components make use of Stencil's automatic lazy loader which only loads components that are actually used on the page.
+
+First, import the @astrouxds/astro-web-components main CSS file into your `index.js` or `app.js` file.
+
+`import '@astrouxds/astro-web-components/build/astro-web-components.css'`
+
+Next, import any desired Astro component as you would any React component.
+
+`import { RuxButton } from '@astrouxds/react'`
+
+You can now use Astro components as regular React components.
+
+```jsx
+import React from 'react'
+import { RuxButton } from '@astrouxds/react'
+
+const MyComp = () => {
+    return (
+        <div>
+            <RuxButton>Rux Button</RuxButton>
+        </div>
+    )
+}
+```
+
+## Setting Props
+
+Props are set the same way as any other React component.
+
+```js
+const MyComp = () => {
+    return (
+        <div>
+            <RuxButton size="small">Rux Button</RuxButton>
+        </div>
+    )
+}
+```
+
+## Updating Complex Data
+
+### Updating Arrays
+
+For arrays, the standard mutable array operations such as `push()` and `unshift()` won't trigger a component update.
+Instead, non-mutable array operators should be used as they return a copy of a new array. These include `map()` and `filter()`,
+and the ES6 spread operator syntax.
+
+For example, to push a new item to an array, create a new array with the existing values and the new value at the end:
+
+```js
+// our original array
+this.items = ['ionic', 'stencil', 'webcomponents']
+// update the array
+this.items = [...this.items, 'awesomeness']
+```
+
+The `...this.items` syntax is a relatively new feature of JavaScript that "expands" the given object in place.
+Read more about the Spread operator [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax).
+
+### Updating Objects
+
+The spread operator should also be used to update objects. As with arrays, mutating an object will not trigger a view update,
+but returning a new copy of the object will. Below is an example:
+
+```js
+// our original object
+this.myCoolObject = { first: '1', second: '2' }
+// update our object
+this.myCoolObject = { ...myCoolObject, third: '3' }
+```
+
+Below is an example of updating an array of objects using Astro components in TypeScript and React.
+
+```jsx
+import React, { useState } from 'react'
+import { RuxSegmentedButton, RuxInput, RuxButton } from '@astrouxds/react'
+
+const SegmentedButton = () => {
+  const [dataArr, setDataArr] = useState([
+    {
+      selected: true,
+      label: "One",
+    },
+    {
+      label: "Two",
+    },
+    {
+      label: "Three",
+    },
+  ])
+  const [inputVal, setInputVal] = useState("")
+
+  const handleSubmit = (str: string) => {
+    let strObj = { label: str };
+    //spread in old state, add in new state
+    setDataArr(() => [...dataArr, strObj]);
+  }
+  return(
+    <div>
+      <RuxSegmentedButton data={dataArr} />
+      <RuxInput
+          onRux-change={(e: CustomEvent<HTMLRuxInputElement>) => {
+            const target = e.target as HTMLInputElement;
+            setInputVal(target.value);
+          }}
+
+      />
+      <RuxButton onClick={() => handleSubmit(inputVal)}>Submit</RuxButton>
+    </div>
+  )
+}
+
+```
+
+This will take the input from RuxInput and add to the dataArr, thus adding to RuxSegmentedButton and trigerring a re-render.
+
+## Using Slots
+
+Slots give you full control over the contents of a component. Some components may have multiple slots.
+
+> Web Component Concept:
+> Slotted content lives outside of the shadow DOM and as a result, you are free to style them however you want.
+
+```jsx
+const GlobalStatusBar = () => {
+    return (
+        <div>
+            <RuxGlobalStatusBar>
+                <RuxIcon slot="left-side" icon="apps" />
+                <div slot="app-meta">
+                    <h1>Hello World</h1>
+                </div>
+            </RuxGlobalStatusBar>
+        </div>
+    )
+}
+```
+
+## Listening To Events
+
+Astro Components emit their own custom events, prefixed with `onRux-`.
+
+```jsx
+const MyComp = () => {
+    return (
+        <div>
+            <RuxInput
+                onRux-input={() => console.log('Heard ruxInput!')}
+                onRux-change={() => console.log('Heard ruxChange!')}
+            />
+        </div>
+    )
+}
+```
+
+In TypeScript, accessing the events target value requires some type assertion.
+
+```jsx
+const MyComp = () => {
+  return (
+    <div>
+      <RuxInput
+          onRux-change={(e: CustomEvent<HTMLRuxInputElement>) =>
+            {
+              const target = e.target as HTMLInputElement;
+              console.log(`Here is e.target.value: ${target.value}`)
+            }
+          }
+      />
+    </div>
+  )
+}
+
+```
+
+It is **highly** encouraged to listen to these custom events rather than default React events such as onChange. Because some
+React events are different from their native JS counterparts, some bugs can arise from using default React
+events.
+
+Because Astro components were built using [Stencil](https://stenciljs.com/), the custom events were named following the JavaScript convention. React handles onChange differently than JavaScript, therefore the `onRux-input` event
+is the equivalent of React's onChange. [React onChange event docs.](https://reactjs.org/docs/dom-elements.html#onchange)
+
+## Methods
+
+Some components offer public methods that can be executed. These methods are async and can be executed by setting a ref on the element.
+The React docs for setting and using `ref` can be found [here](https://reactjs.org/docs/refs-and-the-dom.html).
+
+#### Functional Component
+
+```jsx
+import React, { useRef } from 'react'
+import { RuxTree, RuxTreeNode, RuxButton } from '@astrouxds/react'
+
+const FuncTree = () => {
+    const treeRef = useRef(null)
+    const setFirst = (node) => {
+        node.current.setSelected(true)
+    }
+    return (
+        <div>
+            <RuxTree>
+                <RuxTreeNode ref={treeRef}>Hello</RuxTreeNode>
+                <RuxTreeNode>World</RuxTreeNode>
+            </RuxTree>
+            <RuxButton onClick={() => setFirst(treeRef)}>
+                Set First Selected
+            </RuxButton>
+        </div>
+    )
+}
+
+export default FuncTree
+```
+
+#### Class Component
+
+```jsx
+import React, { createRef } from 'react'
+import { RuxButton, RuxTree, RuxTreeNode } from '@astrouxds/react'
+
+class Tree extends React.Component {
+    treeRef = createRef()
+
+    render() {
+        return (
+            <div>
+                <RuxTree>
+                    <RuxTreeNode ref={this.treeRef}>Hello</RuxTreeNode>
+                    <RuxTreeNode>World</RuxTreeNode>
+                </RuxTree>
+                <RuxButton
+                    onClick={() => this.treeRef.current.setSelected(true)}
+                >
+                    Set First Selected
+                </RuxButton>
+            </div>
+        )
+    }
+}
+
+export default Tree
+```
+
+## Data Binding
+
+Because `@astrouxds/react` components are React components, data binding happens the same way.
+
+#### Functional Component
+
+```jsx
+import React, { useState } from 'react'
+import { RuxInput } from '@astrouxds/react'
+
+const MyComp = () => {
+
+    const [myInput, setMyInput] = useState("")
+
+    return (
+        <div>
+            <RuxInput
+                onRux-input={(e) => setMyInput(e.target.value))}
+            />
+        </div>
+    )
+}
+```
+
+#### Class Component
+
+```jsx
+import React from 'react'
+import { RuxInput } from '@astrouxds/react'
+
+class MyComp extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = { myInput: '' }
+    }
+
+    handleInput(e) {
+        this.setState({ myInput: e.target.value })
+    }
+    render() {
+        return (
+            <div>
+                <RuxInput onRux-input={(e) => this.handleInput(e)} />
+            </div>
+        )
+    }
+}
+```
+
+#### TypeScript
+
+If you're using TypeScript, make sure you are passing the correct types as props.
+
+```jsx
+import React, { useState } from 'react'
+import { RuxInput } from '@astrouxds/react'
+
+const MyComp = () => {
+
+    const [myInput, setMyInput] = useState("")
+
+    return (
+        <div>
+            <RuxInput
+                onRux-input={(e: CustomEvent<HTMLRuxInputElement>) => {
+                    const target = e.target as HTMLInputElement
+                    setMyInput(target.value)
+                  }}
+                small={true}
+            />
+        </div>
+    )
+}
+```
+
+React also has syntactic sugar for two way data binding, which can be found [here](https://reactjs.org/docs/two-way-binding-helpers.html).

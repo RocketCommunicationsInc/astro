@@ -1,3 +1,5 @@
+@use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
+
 :host {
     /** @prop --slider-thumb-background-color: Background color of the slider's thumb. */
     --slider-thumb-background-color: var(--background);
@@ -44,8 +46,18 @@
     cursor: pointer;
 }
 
+.hidden,
 :host([hidden]) {
     display: none;
+}
+
+.rux-form-field {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        margin-bottom: var(--spacing-input-label-top);
+    }
 }
 
 .rux-slider {

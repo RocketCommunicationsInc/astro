@@ -5,26 +5,36 @@ import {
     Event,
     EventEmitter,
     Component,
+    State,
     Host,
     h,
 } from '@stencil/core'
-import { renderHiddenInput } from '../../utils/utils'
+import FormFieldMessage from '../../common/functional-components/FormFieldMessage/FormFieldMessage'
+import { FormFieldInterface } from '../../common/interfaces.module'
+import { hasSlot, renderHiddenInput } from '../../utils/utils'
 
+/**
+ * @slot label - The radio group label
+ * @part form-field - The form-field wrapper container
+ * @part label - The input label when `label` prop is set
+ * @part radiogroup - The container of radios
+ */
 @Component({
     tag: 'rux-radio-group',
     styleUrl: 'rux-radio-group.scss',
     shadow: true,
 })
-export class RuxRadioGroup {
-    @Element() el!: HTMLElement
+export class RuxRadioGroup implements FormFieldInterface {
+    @Element() el!: HTMLRuxRadioGroupElement
+    @State() hasLabelSlot = false
 
     /**
-     * The label of the radio group
+     * The label of the radio group. For HTML content, use the `label` slot instead.
      */
     @Prop() label?: string
 
     /**
-     * Marks the radio group as invalid
+     * Presentational only. Renders the Radio Group as invalid.
      */
     @Prop() invalid: boolean = false
 
@@ -58,8 +68,37 @@ export class RuxRadioGroup {
         this.ruxChange.emit(this.value)
     }
 
+    @Watch('label')
+    handleLabelChange() {
+        this._handleSlotChange()
+    }
+
     connectedCallback() {
         this.handleClick = this.handleClick.bind(this)
+        this._handleSlotChange = this._handleSlotChange.bind(this)
+    }
+
+    disconnectedCallback() {
+        this.el!.shadowRoot!.removeEventListener(
+            'slotchange',
+            this._handleSlotChange
+        )
+    }
+
+    componentWillLoad() {
+        const radios = Array.from(
+            this.el.querySelectorAll('rux-radio')
+        ) as HTMLRuxRadioElement[]
+
+        if (radios.length > 1 && !this.value) {
+            this.value = radios[0].getAttribute('value')
+        }
+
+        this._handleSlotChange()
+    }
+
+    get hasLabel() {
+        return this.label ? true : this.hasLabelSlot
     }
 
     handleClick(e: MouseEvent) {
@@ -81,6 +120,10 @@ export class RuxRadioGroup {
         return radio && radio.disabled
     }
 
+    private _handleSlotChange() {
+        this.hasLabelSlot = hasSlot(this.el, 'label')
+    }
+
     render() {
         if (this.value) {
             renderHiddenInput(
@@ -93,23 +136,36 @@ export class RuxRadioGroup {
         }
         return (
             <Host onClick={this.handleClick}>
-                {this.label && <div class="rux-label">{this.label}</div>}
-                <div
-                    class={{
-                        'rux-radio-group': true,
-                        'rux-radio-group--invalid': this.invalid,
-                    }}
-                    role="radiogroup"
-                >
-                    <slot></slot>
+                <div class="rux-form-field" part="form-field">
+                    <div
+                        class={{
+                            'rux-label': true,
+                            hidden: !this.hasLabel,
+                        }}
+                        part="label"
+                    >
+                        <slot
+                            onSlotchange={this._handleSlotChange}
+                            name="label"
+                        >
+                            {this.label}
+                        </slot>
+                    </div>
+                    <div
+                        class={{
+                            'rux-radio-group': true,
+                            'rux-radio-group--invalid': this.invalid,
+                        }}
+                        role="radiogroup"
+                        part="radiogroup"
+                    >
+                        <slot></slot>
+                    </div>
                 </div>
-                {this.helpText && !this.errorText && (
-                    <div class="rux-help-text">{this.helpText}</div>
-                )}
-
-                {this.errorText && (
-                    <div class="rux-error-text">{this.errorText}</div>
-                )}
+                <FormFieldMessage
+                    errorText={this.errorText}
+                    helpText={this.helpText}
+                ></FormFieldMessage>
             </Host>
         )
     }

@@ -48,16 +48,18 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 
 ## Properties
 
-| Property   | Attribute  | Description                                                                                                                                                                                       | Type                  | Default     |
-| ---------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | ----------- |
-| `disabled` | `disabled` | Disables the select menu via HTML disabled attribute. Select menu takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored. | `boolean`             | `false`     |
-| `inputId`  | `input-id` | Id for the Select Input                                                                                                                                                                           | `string \| undefined` | `undefined` |
-| `invalid`  | `invalid`  | Sets the Select as Invalid for Custom Validation Usage                                                                                                                                            | `boolean`             | `false`     |
-| `label`    | `label`    | Sets the Label for the Select                                                                                                                                                                     | `string \| undefined` | `undefined` |
-| `labelId`  | `label-id` | Id for the Label                                                                                                                                                                                  | `string \| undefined` | `undefined` |
-| `name`     | `name`     | Sets the Name of the Input Element                                                                                                                                                                | `string \| undefined` | `undefined` |
-| `required` | `required` | Sets the field as required                                                                                                                                                                        | `boolean`             | `false`     |
-| `value`    | `value`    | The value of the selected option                                                                                                                                                                  | `string \| undefined` | `undefined` |
+| Property    | Attribute    | Description                                                                                                                                                                                       | Type                  | Default     |
+| ----------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | ----------- |
+| `disabled`  | `disabled`   | Disables the select menu via HTML disabled attribute. Select menu takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored. | `boolean`             | `false`     |
+| `errorText` | `error-text` | The validation error text                                                                                                                                                                         | `string \| undefined` | `undefined` |
+| `helpText`  | `help-text`  | The help or explanation text                                                                                                                                                                      | `string \| undefined` | `undefined` |
+| `inputId`   | `input-id`   | Id for the Select Input                                                                                                                                                                           | `string \| undefined` | `undefined` |
+| `invalid`   | `invalid`    | Presentational only. Renders the Select Menu as invalid.                                                                                                                                          | `boolean`             | `false`     |
+| `label`     | `label`      | The select label text. For HTML content, use the `label` slot instead.                                                                                                                            | `string \| undefined` | `undefined` |
+| `labelId`   | `label-id`   | Id for the Label                                                                                                                                                                                  | `string \| undefined` | `undefined` |
+| `name`      | `name`       | Sets the Name of the Input Element                                                                                                                                                                | `string \| undefined` | `undefined` |
+| `required`  | `required`   | Sets the field as required                                                                                                                                                                        | `boolean`             | `false`     |
+| `value`     | `value`      | The value of the selected option                                                                                                                                                                  | `string \| undefined` | `undefined` |
 
 ## Events
 
@@ -65,6 +67,13 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------- |
 | `rux-blur`   | Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) | `CustomEvent<any>`  |
 | `rux-change` | Event Emitted when the Value of the Select is Changed                                                                                | `CustomEvent<void>` |
+
+## Slots
+
+| Slot          | Description        |
+| ------------- | ------------------ |
+| `"(default)"` | The select options |
+| `"label"`     | The select label   |
 
 ## CSS Custom Properties
 
