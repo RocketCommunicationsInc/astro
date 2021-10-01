@@ -70,10 +70,10 @@ Pass properties via attributes similar to the native [HTML Input Range](https://
 
 ## Events
 
-| Event       | Description                                                                                                                                     | Type               |
-| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
-| `rux-blur`  | Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)            | `CustomEvent<any>` |
-| `rux-input` | Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) | `CustomEvent<any>` |
+| Event      | Description                                                                                                                                     | Type               |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| `ruxblur`  | Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)            | `CustomEvent<any>` |
+| `ruxinput` | Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) | `CustomEvent<any>` |
 
 ## Slots
 
