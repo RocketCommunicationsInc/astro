@@ -40,7 +40,7 @@ export class RuxTreeNode {
     /**
      * Emit when user selects a tree node
      */
-    @Event({ eventName: 'rux-tree-node-selected' })
+    @Event({ eventName: 'ruxtreenodeselected' })
     ruxTreeNodeSelected!: EventEmitter<string>
 
     @Watch('expanded')

@@ -56,25 +56,25 @@ export class RuxPopUpMenu {
     /**
      * Emitted when the menu is about to open.
      */
-    @Event({ eventName: 'rux-menu-will-open' })
+    @Event({ eventName: 'ruxmenuwillopen' })
     ruxMenuWillOpen!: EventEmitter<void>
 
     /**
      * Emitted when the menu is about to close
      */
-    @Event({ eventName: 'rux-menu-will-close' })
+    @Event({ eventName: 'ruxmenuwillclose' })
     ruxMenuWillClose!: EventEmitter<void>
 
     /**
      * Emitted when the menu is open.
      */
-    @Event({ eventName: 'rux-menu-did-open' })
+    @Event({ eventName: 'ruxmenudidopen' })
     ruxMenuDidOpen!: EventEmitter<void>
 
     /**
      * Emitted when the menu is closed.
      */
-    @Event({ eventName: 'rux-menu-did-close' })
+    @Event({ eventName: 'ruxmenudidclose' })
     ruxMenuDidClose!: EventEmitter<void>
 
     componentDidRender() {
@@ -137,7 +137,7 @@ export class RuxPopUpMenu {
         return this.open
     }
 
-    @Listen('rux-menu-item-selected')
+    @Listen('ruxmenuitemselected')
     handleListen() {
         this.open = false
     }
