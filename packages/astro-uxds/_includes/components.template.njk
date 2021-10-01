@@ -1,0 +1,50 @@
+{% extends "base.template.njk" %}
+
+{% block content %}
+
+	<link rel="stylesheet" href="/css/chapters.css">
+	{# <link rel="stylesheet" href="/css/components.css"> #}
+	<link rel="stylesheet" href="/css/sample.css">
+
+	<h1>{{ title }}</h1>
+	
+	{% if demo %}
+		{% if scrolling !== 'yes' %}
+			{% set scrolling = 'no' %}
+		{% endif %}
+		<div class="demo-container">
+
+
+			{% if legacyDemo %}
+				<iframe id="live-sample" class="live-sample" scrolling="{{ scrolling }}" src="{{ demo }}" style="width: 100%; height: {{height}}; overflow: hidden;"></iframe>
+			{% else %}
+
+					{% if meta.branch and meta.branch === 'draft' %}
+						<iframe id="live-sample" class="live-sample" scrolling="{{ scrolling }}" src="https://next--astro-components.netlify.app/iframe.html?id={{ demo }}&viewMode=story" style="width: 100%; height: {{height}}; overflow: hidden;"></iframe>
+					{% else %}
+						<iframe id="live-sample" class="live-sample" scrolling="{{ scrolling }}" src="https://astro-components.netlify.app/iframe.html?id={{ demo }}&viewMode=story" style="width: 100%; height: {{height}}; overflow: hidden;"></iframe>
+					{% endif %}
+					
+			{% endif %}
+
+			<div class="demo-container__sample-links">
+				{% if storybook %}
+					<a class="sample-links__storybook" href="https://astro-components.netlify.com/?path=/story/{{storybook}}">
+						Storybook
+					</a>
+				{% endif %}
+
+				{% if git %}
+					<a class="sample-links__github" href="https://github.com/RocketCommunicationsInc/astro-components/tree/master/src/components/{{git}}">Github</a>
+				{% endif %}
+				
+				{% if css %}
+					<a class="sample-links__github" href="https://github.com/RocketCommunicationsInc/astro-components/blob/master/src/css/documentation//{{css}}">Github</a>
+				{% endif %}
+			</div>
+		</div>
+	{% endif %}
+
+	{{ content | safe | removeHeader | doDont }}
+	{% include "_compliance.njk" %}
+{% endblock %}

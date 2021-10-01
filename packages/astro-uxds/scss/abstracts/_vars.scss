@@ -1,0 +1,20 @@
+$link-color       :     #f5a623;
+//---------------------------------------- COLOR PALLETTE
+
+//TEXT COLORS
+$text-white       :     #ffffff;
+$text-black       :     'rgba(0,0,0, 0.75)';
+$txt-orange       : #e47836;;
+
+
+$bdr-grey         :    #a4abb6;
+
+
+//---------------------------------------- MEDIA QUERIES
+$desktop-xl : 			'only screen and (min-width:1280px)';
+$desktop-lg : 			'only screen and (min-width:968px) and (max-width:1279px)';
+$desktop-md		: 			'only screen and (min-width:768px)';
+$tablet 		: 			'only screen and (max-width:767px)';
+$phone 			: 			'only screen and (max-width:480px)';
+
+
