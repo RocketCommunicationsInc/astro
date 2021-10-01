@@ -56,6 +56,7 @@ rux-icon {
     z-index: 2;
     order: 3;
 
+    //! Probably here to move notifications to top right.
     position: absolute;
     bottom: -0.75rem;
     right: -0.4rem;
@@ -90,7 +91,7 @@ rux-icon {
 }
 
 .rux-advanced-status__sublabel {
-    font-size: 0.65em;
+    font-size: 0.75em;
     color: var(--default-text);
     opacity: 0.6;
     display: block;
