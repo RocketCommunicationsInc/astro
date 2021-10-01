@@ -1,22 +1,67 @@
-# stencil-ds-angular-template
+# Installation
 
-This is an example repo of building plugins.
+`npm i @astrouxds/angular`
 
-## Step 1.
+## Import and Usage
 
-- Update the `package.json` to have the correct package name for this repo.
-- Replace `component-library` under `dependencies` with your core stencil package name.
+First, import the css into your `angular.json`
 
-## Step 2.
+```json
+{
+  "architect": {
+    "build": {
+      "builder": "@angular-devkit/build-angular:browser",
+      "options": {
+        "assets": ["src/favicon.ico", "src/assets"],
+        "styles": [
+          "./node_modules/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css",
+          "styles.scss"
+        ],
+        "scripts": []
+      }
+    }
+  }
+}
+```
 
-- Build your core stencil package.
+Next, Import `AstroComponentsModule` into module where you would want to use the components.
 
-## Step 3.
+```js
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-- Update `src/component-library-module.ts`.
-  - You will need to import all of your components from `./directives/proxies`. Currently the file states `DemoComponent` as the only import. This will be replaced with the entire list.
-  - Then update the `DECLARATIONS` const array to also list out all of the component names. It also currently contains `DemoComponent` as the only item, but this will need to be replaced with the entire list.
+import { AppComponent } from "./app.component";
+import { AstroComonentsModule } from "@astrouxds/angular";
 
-## Step 4.
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, AstroComonentsModule],
+  providers: [],
+  bootstrap: [AppComponent],
+  schemas: [],
+})
+export class AppModule {}
+```
 
-- Run build on this package.
+You can now use astro-components as regular Angular components.
+
+```html
+<section>
+  <rux-input name="myInput"></rux-progress>
+</section>
+```
+
+## Astro Stencil Components Docs
+
+Docs for all components can be found at our [Astro Stencil Storybook.](https://astro-stencil.netlify.app/)
+
+### This repo is currently in devlopement.
+
+This repo will be updated frequently with the [Astro components in Stencil repo](https://github.com/RocketCommunicationsInc/astro-components-stencil).
+
+### Known Issues
+
+- This version bundles all components (no tree-shaking) in order to avoid having to use `defineCustomElements` each time you want to use an astro component. Because of this, the bundle size is larger.
+- CSS custom properties for our angular-wrapped components are undefined out of the box, thus the necessity for the CSS import.
+
+#### Currently using @astrouxds/astro-web-components version 0.0.16
