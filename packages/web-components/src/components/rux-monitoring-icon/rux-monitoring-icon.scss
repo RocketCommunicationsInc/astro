@@ -55,23 +55,18 @@ rux-icon {
     display: block;
     z-index: 2;
     order: 3;
-
-    //! Probably here to move notifications to top right.
     position: absolute;
-    bottom: -0.75rem;
-    right: -0.4rem;
-
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 3px;
-    padding: 0.65rem 0.25rem;
-
+    left: 3.438rem;
+    top: -0.625rem;
+    border: 1px solid #4dacff;
+    border-radius: 2px;
+    padding: 0.5rem 0.25rem;
     color: var(--color-basics-white);
-    font-size: 0.775rem;
+    font-size: 0.75rem;
     text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-
     background-color: #000;
 }
 
