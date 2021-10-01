@@ -12,12 +12,11 @@
     /**
       * @prop --popup-menu-item-hover-background-color: Menu Item Hover Background Color
     */
-    --popup-menu-item-hover-background-color: var(--color-menu-item-hover);
+    --popup-menu-item-hover-background-color: var(--list-hover);
 
     /**
       * @prop --popup-menu-item-hover-background-color: Menu Item Hover Text Color
     */
-    // --popup-menu-item-hover-background-color: var(--hover);
     --popup-menu-item-hover-text-color: var(--hover);
 
     display: block;
