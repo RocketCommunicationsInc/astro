@@ -27,6 +27,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    height: 3.938rem; //63px
 }
 
 :host([hidden]) {
@@ -44,12 +45,8 @@
     align-items: center;
     font-family: var(--font-family-mono);
     font-weight: 700;
-
     border: 1px solid var(--clock-border-color);
-
     background-color: var(--clock-background-color);
-    // margin-bottom: 0.25rem;
-
     white-space: nowrap;
     overflow-y: hidden;
     text-overflow: ellipsis;
@@ -85,8 +82,4 @@
 
 .rux-clock__aos {
     margin-left: 1em;
-}
-
-.rux-clock__los {
-    margin-left: 0.5em;
 }
