@@ -48,7 +48,7 @@
     border: 1px solid var(--clock-border-color);
 
     background-color: var(--clock-background-color);
-    margin-bottom: 0.25rem;
+    // margin-bottom: 0.25rem;
 
     white-space: nowrap;
     overflow-y: hidden;
@@ -71,10 +71,12 @@
 .rux-clock__segment__label {
     font-size: 0.875rem;
     color: var(--clock-label-color);
-}
-
-.rux-clock__day-of-the-year .rux-clock__segment__value {
-    border-right: none;
+    background: var(--clock-border-color);
+    border: 1px solid var(--clock-border-color);
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: fill-available;
+    text-align: center;
 }
 
 .rux-clock__segment--secondary .rux-clock__segment__value {
