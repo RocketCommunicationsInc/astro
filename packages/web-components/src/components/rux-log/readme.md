@@ -75,6 +75,7 @@ For more advanced customization, RuxLog exposes the entire table element and eac
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property   | Attribute  | Description                                                                                                                                                                                                                                                                                             | Type                  | Default     |
@@ -82,6 +83,7 @@ For more advanced customization, RuxLog exposes the entire table element and eac
 | `data`     | --         | An array of objects to display as log                                                                                                                                                                                                                                                                   | `LogRow[]`            | `[]`        |
 | `filter`   | `filter`   | A string to filter the array to return only the children whose `message` property contains a case-insensitive substring match.                                                                                                                                                                          | `string \| undefined` | `undefined` |
 | `timezone` | `timezone` | Accepts [IANA timezone string format](https://www.iana.org/time-zones) such as `America/Los_Angeles`. Default timezone is `UTC`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details. | `string`              | `'UTC'`     |
+
 
 ## Slots
 
@@ -92,29 +94,30 @@ For more advanced customization, RuxLog exposes the entire table element and eac
 | `"table-header"`     | the log's table header                               |
 | `"table-header-row"` | the log's table header row                           |
 
+
 ## Shadow Parts
 
 | Part                 | Description             |
 | -------------------- | ----------------------- |
 | `"log-notification"` | the filter notification |
 
+
 ## Dependencies
 
 ### Depends on
 
--   [rux-table](../rux-table)
--   [rux-table-header](../rux-table/rux-table-header)
--   [rux-table-header-row](../rux-table/rux-table-header-row)
--   [rux-table-header-cell](../rux-table/rux-table-header-cell)
--   [rux-input](../rux-input)
--   [rux-table-body](../rux-table/rux-table-body)
--   [rux-table-row](../rux-table/rux-table-row)
--   [rux-table-cell](../rux-table/rux-table-cell)
--   [rux-datetime](../rux-datetime)
--   [rux-status](../rux-status)
+- [rux-table](../rux-table)
+- [rux-table-header](../rux-table/rux-table-header)
+- [rux-table-header-row](../rux-table/rux-table-header-row)
+- [rux-table-header-cell](../rux-table/rux-table-header-cell)
+- [rux-input](../rux-input)
+- [rux-table-body](../rux-table/rux-table-body)
+- [rux-table-row](../rux-table/rux-table-row)
+- [rux-table-cell](../rux-table/rux-table-cell)
+- [rux-datetime](../rux-datetime)
+- [rux-status](../rux-status)
 
 ### Graph
-
 ```mermaid
 graph TD;
   rux-log --> rux-table
@@ -130,6 +133,6 @@ graph TD;
   style rux-log fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

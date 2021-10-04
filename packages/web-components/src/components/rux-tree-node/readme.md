@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property   | Attribute  | Description             | Type      | Default |
@@ -9,11 +10,13 @@
 | `expanded` | `expanded` | Sets the expanded state | `boolean` | `false` |
 | `selected` | `selected` | Sets the selected state | `boolean` | `false` |
 
+
 ## Events
 
 | Event                    | Description                        | Type                  |
 | ------------------------ | ---------------------------------- | --------------------- |
 | `rux-tree-node-selected` | Emit when user selects a tree node | `CustomEvent<string>` |
+
 
 ## Methods
 
@@ -25,6 +28,8 @@ Sets the expanded state
 
 Type: `Promise<void>`
 
+
+
 ### `setSelected(value: boolean) => Promise<void>`
 
 Sets the selected state
@@ -32,6 +37,9 @@ Sets the selected state
 #### Returns
 
 Type: `Promise<void>`
+
+
+
 
 ## CSS Custom Properties
 
@@ -44,6 +52,7 @@ Type: `Promise<void>`
 | `--tree-selected-accent-color`  | tree selected accent color  |
 | `--tree-selected-border-color`  | tree selected border color  |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

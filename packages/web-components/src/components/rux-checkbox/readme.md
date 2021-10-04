@@ -35,6 +35,7 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property        | Attribute       | Description                                                                                                                                                                                                                                       | Type                  | Default     |
@@ -47,6 +48,7 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
 | `name`          | `name`          | The checkbox name                                                                                                                                                                                                                                 | `string`              | `''`        |
 | `value`         | `value`         | The checkbox value                                                                                                                                                                                                                                | `string`              | `''`        |
 
+
 ## Events
 
 | Event        | Description                                                                                                                                                                    | Type               |
@@ -55,11 +57,13 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
 | `rux-change` | Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)                                | `CustomEvent<any>` |
 | `rux-input`  | Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) | `CustomEvent<any>` |
 
+
 ## Slots
 
 | Slot          | Description                |
 | ------------- | -------------------------- |
 | `"(default)"` | the label of the checkbox. |
+
 
 ## CSS Custom Properties
 
@@ -71,6 +75,7 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
 | `--checkbox-hover-border-color` | Hover border color           |
 | `--checkbox-label-color`        | Label text color             |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

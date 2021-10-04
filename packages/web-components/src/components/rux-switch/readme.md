@@ -78,6 +78,7 @@ Configure the component using native HTML attributes.
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property   | Attribute  | Description                                                                                                                                                                             | Type                  | Default     |
@@ -88,6 +89,7 @@ Configure the component using native HTML attributes.
 | `name`     | `name`     | The switch name                                                                                                                                                                         | `string`              | `''`        |
 | `value`    | `value`    | The switch value                                                                                                                                                                        | `string`              | `''`        |
 
+
 ## Events
 
 | Event        | Description                                                                                                                                                                    | Type               |
@@ -96,11 +98,13 @@ Configure the component using native HTML attributes.
 | `rux-change` | Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)                                | `CustomEvent<any>` |
 | `rux-input`  | Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) | `CustomEvent<any>` |
 
+
 ## Slots
 
 | Slot      | Description      |
 | --------- | ---------------- |
 | `"label"` | The switch label |
+
 
 ## CSS Custom Properties
 
@@ -112,6 +116,7 @@ Configure the component using native HTML attributes.
 | `--switch-off-border-color` | the Switch off border color |
 | `--switch-on-color`         | the Switch on color         |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*
