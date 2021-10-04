@@ -69,6 +69,9 @@ export class RuxClassificationMarking {
         }
 
         const text = markings[this.type][this.classification]
+        if (!text) {
+            return 'Select a Classification Marking'
+        }
         return text
     }
 
