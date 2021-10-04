@@ -18,7 +18,7 @@ export class RuxClassificationMarking {
      */
     @Prop({ reflect: true }) classification: Classification = 'unclassified'
     /**
-     * Allows additional text labels to be added to the a marking
+     * Allows additional text labels to be added to the marking
      */
     @Prop() label?: string
     /**
@@ -69,9 +69,6 @@ export class RuxClassificationMarking {
         }
 
         const text = markings[this.type][this.classification]
-        if (!text) {
-            return 'Select a Classification Marking'
-        }
         return text
     }
 

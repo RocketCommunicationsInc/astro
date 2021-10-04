@@ -96,7 +96,7 @@ export namespace Components {
          */
         classification: Classification
         /**
-         * Allows additional text labels to be added to the a marking
+         * Allows additional text labels to be added to the marking
          */
         label?: string
         /**
@@ -15981,7 +15981,7 @@ declare namespace LocalJSX {
          */
         classification?: Classification
         /**
-         * Allows additional text labels to be added to the a marking
+         * Allows additional text labels to be added to the marking
          */
         label?: string
         /**
