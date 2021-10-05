@@ -6615,7 +6615,6 @@ export namespace Components {
          * The input step attribute
          */
         step?: string
-        togglePassword?: boolean
         /**
          * The input type
          */
@@ -22545,7 +22544,6 @@ declare namespace LocalJSX {
          * The input step attribute
          */
         step?: string
-        togglePassword?: boolean
         /**
          * The input type
          */

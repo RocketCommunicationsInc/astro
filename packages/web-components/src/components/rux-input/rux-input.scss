@@ -35,10 +35,8 @@
     .rux-form-field {
         display: flex;
         flex-direction: column;
-
-        align-items: flex-end;
+        align-items: flex-start;
         justify-content: center;
-
         font-family: var(--font-family);
         font-size: var(--font-size);
         color: var(--default-text);
@@ -46,8 +44,9 @@
     .show-password {
         position: absolute;
         margin-right: 1.5rem;
-        margin-top: 0.25rem;
+        margin-top: 1.6rem;
         cursor: pointer;
+        align-self: flex-end;
     }
     .rux-input {
         box-sizing: border-box;

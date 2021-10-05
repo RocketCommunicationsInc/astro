@@ -19,6 +19,7 @@ let id = 0
  * @slot label - The input label
  * @part form-field - The form-field wrapper container
  * @part label - The input label when `label` prop is set
+ * @part icon - The icon displayed when toggle-password prop is set
  */
 @Component({
     tag: 'rux-input',
@@ -30,6 +31,8 @@ export class RuxInput implements FormFieldInterface {
     inputId = `rux-input-${++id}`
 
     @State() hasLabelSlot = false
+
+    @State() togglePassword = false
 
     @State() isPasswordVisible = false
 
@@ -111,8 +114,6 @@ export class RuxInput implements FormFieldInterface {
      */
     @Prop() step?: string
 
-    @Prop({ attribute: 'toggle-password' }) togglePassword?: boolean
-
     /**
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
      */
@@ -133,18 +134,13 @@ export class RuxInput implements FormFieldInterface {
         this._handleSlotChange()
     }
 
-    @Watch('togglePassword')
-    handleTogglePwChange() {
-        console.log('toggle password changed!')
-    }
-
     connectedCallback() {
         this._onChange = this._onChange.bind(this)
         this._onInput = this._onInput.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
-        // if (this.togglePassword) {
-        //     this.type = 'password'
-        // }
+        if (this.type === 'password') {
+            this.togglePassword = true
+        }
     }
 
     disconnectedCallback() {
@@ -153,9 +149,9 @@ export class RuxInput implements FormFieldInterface {
             this._handleSlotChange
         )
         //If being used as a pw field, don't want to submit as text field
-        // if (this.togglePassword) {
-        //     this.type = 'password'
-        // }
+        if (this.togglePassword) {
+            this.isPasswordVisible = false
+        }
     }
 
     componentWillLoad() {
@@ -189,10 +185,8 @@ export class RuxInput implements FormFieldInterface {
     private _handleTogglePassword() {
         this.isPasswordVisible = !this.isPasswordVisible
         if (this.isPasswordVisible) {
-            // this.type = 'text'
             this.iconName = 'visibility-off'
         } else {
-            // this.type = 'password'
             this.iconName = 'visibility'
         }
     }
@@ -259,9 +253,13 @@ export class RuxInput implements FormFieldInterface {
                     <input
                         name={name}
                         disabled={disabled}
+                        //if type isn't password, go with type. If type is password and
+                        //the password should be visibile, then go with text. Otherwise, type.
                         type={
-                            !this.isPasswordVisible && this.togglePassword
-                                ? 'password'
+                            !this.togglePassword
+                                ? type
+                                : this.togglePassword && this.isPasswordVisible
+                                ? 'text'
                                 : type
                         }
                         aria-invalid={invalid ? 'true' : 'false'}
@@ -284,6 +282,7 @@ export class RuxInput implements FormFieldInterface {
                     ></input>
                     {this.togglePassword && (
                         <rux-icon
+                            part="icon"
                             onClick={() => this._handleTogglePassword()}
                             class="show-password"
                             icon={this.iconName}
