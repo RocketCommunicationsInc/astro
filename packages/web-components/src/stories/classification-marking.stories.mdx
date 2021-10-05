@@ -23,13 +23,20 @@ export const Default = (args) => {
         <div
             style="display: flex; flex-flow: column; justify-content: center; margin-bottom:50px; position: relative;"
         >
-            <rux-classification-marking> </rux-classification-marking>
+            <rux-classification-marking
+                classification="${args.classification}"
+                .label="${args.label}"
+                ?tag="${args.tag}"
+            >
+            </rux-classification-marking>
         </div>
     `
 }
 
 <Canvas>
-    <Story name="Default">{Default.bind()}</Story>
+    <Story args={{ classification: 'unclassified' }} name="Default">
+        {Default.bind()}
+    </Story>
 </Canvas>
 
 ## API
