@@ -133,13 +133,18 @@ export class RuxInput implements FormFieldInterface {
         this._handleSlotChange()
     }
 
+    @Watch('togglePassword')
+    handleTogglePwChange() {
+        console.log('toggle password changed!')
+    }
+
     connectedCallback() {
         this._onChange = this._onChange.bind(this)
         this._onInput = this._onInput.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
-        if (this.togglePassword) {
-            this.type = 'password'
-        }
+        // if (this.togglePassword) {
+        //     this.type = 'password'
+        // }
     }
 
     disconnectedCallback() {
@@ -147,9 +152,10 @@ export class RuxInput implements FormFieldInterface {
             'slotchange',
             this._handleSlotChange
         )
-        if (this.togglePassword) {
-            this.type = 'password'
-        }
+        //If being used as a pw field, don't want to submit as text field
+        // if (this.togglePassword) {
+        //     this.type = 'password'
+        // }
     }
 
     componentWillLoad() {
@@ -183,10 +189,10 @@ export class RuxInput implements FormFieldInterface {
     private _handleTogglePassword() {
         this.isPasswordVisible = !this.isPasswordVisible
         if (this.isPasswordVisible) {
-            this.type = 'text'
+            // this.type = 'text'
             this.iconName = 'visibility-off'
         } else {
-            this.type = 'password'
+            // this.type = 'password'
             this.iconName = 'visibility'
         }
     }
@@ -253,7 +259,11 @@ export class RuxInput implements FormFieldInterface {
                     <input
                         name={name}
                         disabled={disabled}
-                        type={type}
+                        type={
+                            !this.isPasswordVisible && this.togglePassword
+                                ? 'password'
+                                : type
+                        }
                         aria-invalid={invalid ? 'true' : 'false'}
                         placeholder={placeholder}
                         required={required}
