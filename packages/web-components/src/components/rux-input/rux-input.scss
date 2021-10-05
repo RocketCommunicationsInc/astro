@@ -36,9 +36,16 @@
         display: flex;
         flex-direction: column;
 
+        align-items: flex-end;
+        justify-content: center;
+
         font-family: var(--font-family);
         font-size: var(--font-size);
         color: var(--default-text);
+    }
+    .show-password {
+        position: absolute;
+        left: 49%;
     }
     .rux-input {
         box-sizing: border-box;

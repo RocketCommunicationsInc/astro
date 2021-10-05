@@ -31,6 +31,10 @@ export class RuxInput implements FormFieldInterface {
 
     @State() hasLabelSlot = false
 
+    @State() isPasswordVisible = false
+
+    @State() iconName = 'visibility'
+
     /**
      * The input label text. For HTML content, use the `label` slot instead.
      */
@@ -107,6 +111,8 @@ export class RuxInput implements FormFieldInterface {
      */
     @Prop() step?: string
 
+    @Prop({ attribute: 'toggle-password' }) togglePassword?: boolean
+
     /**
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
      */
@@ -131,6 +137,9 @@ export class RuxInput implements FormFieldInterface {
         this._onChange = this._onChange.bind(this)
         this._onInput = this._onInput.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
+        if (this.togglePassword) {
+            this.type = 'password'
+        }
     }
 
     disconnectedCallback() {
@@ -138,6 +147,9 @@ export class RuxInput implements FormFieldInterface {
             'slotchange',
             this._handleSlotChange
         )
+        if (this.togglePassword) {
+            this.type = 'password'
+        }
     }
 
     componentWillLoad() {
@@ -166,6 +178,17 @@ export class RuxInput implements FormFieldInterface {
 
     private _handleSlotChange() {
         this.hasLabelSlot = hasSlot(this.el, 'label')
+    }
+
+    private _handleTogglePassword() {
+        this.isPasswordVisible = !this.isPasswordVisible
+        if (this.isPasswordVisible) {
+            this.type = 'text'
+            this.iconName = 'visibility-off'
+        } else {
+            this.type = 'password'
+            this.iconName = 'visibility'
+        }
     }
 
     render() {
@@ -249,6 +272,15 @@ export class RuxInput implements FormFieldInterface {
                         onInput={_onInput}
                         onBlur={() => _onBlur()}
                     ></input>
+                    {this.togglePassword && (
+                        <rux-icon
+                            onClick={() => this._handleTogglePassword()}
+                            class="show-password"
+                            icon={this.iconName}
+                        />
+                    )}
+
+                    <slot></slot>
                 </div>
                 <FormFieldMessage
                     errorText={errorText}
