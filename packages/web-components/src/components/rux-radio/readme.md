@@ -23,6 +23,7 @@ Radio Buttons allow users to mutually select an option from a predefined set of 
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property   | Attribute  | Description                                                                                                                                                                           | Type                  | Default     |
@@ -33,17 +34,20 @@ Radio Buttons allow users to mutually select an option from a predefined set of 
 | `name`     | `name`     | The radio name                                                                                                                                                                        | `string`              | `''`        |
 | `value`    | `value`    | The radio value                                                                                                                                                                       | `string`              | `''`        |
 
+
 ## Events
 
 | Event      | Description                                                                                                                          | Type               |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------ |
 | `rux-blur` | Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) | `CustomEvent<any>` |
 
+
 ## Slots
 
 | Slot          | Description     |
 | ------------- | --------------- |
 | `"(default)"` | The radio label |
+
 
 ## CSS Custom Properties
 
@@ -55,6 +59,7 @@ Radio Buttons allow users to mutually select an option from a predefined set of 
 | `--radio-label-color`        | label text color            |
 | `--radio-selected-color`     | the radio selected color    |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*
