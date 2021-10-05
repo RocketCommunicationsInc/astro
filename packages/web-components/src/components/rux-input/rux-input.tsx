@@ -134,6 +134,16 @@ export class RuxInput implements FormFieldInterface {
         this._handleSlotChange()
     }
 
+    //! Tried this to fix the type not changing correctly in SB. This never even fires.
+    // @Watch('type')
+    // handleTypeChange() {
+    //     console.log('TYPE CHANGE')
+
+    //     if (this.type === 'password') {
+    //         this.togglePassword = true
+    //     }
+    // }
+
     connectedCallback() {
         this._onChange = this._onChange.bind(this)
         this._onInput = this._onInput.bind(this)
@@ -297,3 +307,5 @@ export class RuxInput implements FormFieldInterface {
         )
     }
 }
+
+//! When setting the type in SB, it bypasses the check in connectedCallback.
