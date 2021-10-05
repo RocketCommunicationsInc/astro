@@ -289,8 +289,6 @@ export class RuxInput implements FormFieldInterface {
                             icon={this.iconName}
                         />
                     )}
-
-                    <slot></slot>
                 </div>
                 <FormFieldMessage
                     errorText={errorText}
