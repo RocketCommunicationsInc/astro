@@ -2,6 +2,10 @@
 
 ## [0.0.18] (unreleased)
 
+### Event names
+
+-   Gloably updated event names from camel case to lower case to be compatible with angular event name formats
+
 ## [0.0.17] 2021-09-24
 
 ### Switch
