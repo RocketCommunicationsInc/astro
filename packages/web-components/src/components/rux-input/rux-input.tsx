@@ -134,16 +134,17 @@ export class RuxInput implements FormFieldInterface {
         this._handleSlotChange()
     }
 
-    //! Tried this to fix the type not changing correctly in SB. This never even fires.
     @Watch('type')
     handleTypeChange() {
-        console.log('TYPE CHANGE')
+        this._setTogglePassword()
     }
 
     connectedCallback() {
         this._onChange = this._onChange.bind(this)
         this._onInput = this._onInput.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
+        this._handleType = this._handleType.bind(this)
+        this._handleTogglePassword = this._handleTogglePassword.bind(this)
     }
 
     disconnectedCallback() {
@@ -159,10 +160,7 @@ export class RuxInput implements FormFieldInterface {
 
     componentWillLoad() {
         this._handleSlotChange()
-        console.log('type is pw')
-        if (this.type === 'password') {
-            this.togglePassword = true
-        }
+        this._setTogglePassword()
     }
 
     get hasLabel() {
@@ -187,6 +185,12 @@ export class RuxInput implements FormFieldInterface {
 
     private _handleSlotChange() {
         this.hasLabelSlot = hasSlot(this.el, 'label')
+    }
+
+    private _setTogglePassword() {
+        if (this.type === 'password') {
+            this.togglePassword = true
+        }
     }
 
     private _handleTogglePassword() {
@@ -224,12 +228,17 @@ export class RuxInput implements FormFieldInterface {
             _onChange,
             _onInput,
             _onBlur,
+            _handleType,
+            _handleSlotChange,
+            _handleTogglePassword,
             placeholder,
             required,
             small,
             step,
             type,
             value,
+            hasLabel,
+            iconName,
         } = this
 
         renderHiddenInput(true, el, name, value, disabled)
@@ -247,20 +256,17 @@ export class RuxInput implements FormFieldInterface {
                             'rux-input-label': true,
                         }}
                         part="label"
-                        aria-hidden={this.hasLabel ? 'false' : 'true'}
+                        aria-hidden={hasLabel ? 'false' : 'true'}
                         htmlFor={inputId}
                     >
                         <span
                             class={{
-                                hidden: !this.hasLabel,
+                                hidden: !hasLabel,
                             }}
                         >
-                            <slot
-                                name="label"
-                                onSlotchange={this._handleSlotChange}
-                            >
+                            <slot name="label" onSlotchange={_handleSlotChange}>
                                 {label}
-                                {this.required && (
+                                {required && (
                                     <span class="rux-input-label__asterisk">
                                         &#42;
                                     </span>
@@ -271,7 +277,7 @@ export class RuxInput implements FormFieldInterface {
                     <input
                         name={name}
                         disabled={disabled}
-                        type={this._handleType()}
+                        type={_handleType()}
                         aria-invalid={invalid ? 'true' : 'false'}
                         placeholder={placeholder}
                         required={required}
@@ -293,12 +299,12 @@ export class RuxInput implements FormFieldInterface {
                     {this.togglePassword && (
                         <rux-icon
                             part="icon"
-                            onClick={() => this._handleTogglePassword()}
+                            onClick={() => _handleTogglePassword()}
                             class={{
                                 'show-password': true,
-                                'with-label': this.hasLabel,
+                                'with-label': hasLabel,
                             }}
-                            icon={this.iconName}
+                            icon={iconName}
                         />
                     )}
                 </div>
@@ -310,5 +316,3 @@ export class RuxInput implements FormFieldInterface {
         )
     }
 }
-
-//! When setting the type in SB, it bypasses the check in connectedCallback.
