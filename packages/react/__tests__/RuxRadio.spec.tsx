@@ -69,6 +69,6 @@ describe("createComponent - events", () => {
       )
     );
     const attatchedEvents = (webcomponent as any).__events;
-    expect(Object.keys(attatchedEvents)).toContain("rux-blur");
+    expect(Object.keys(attatchedEvents)).toContain("ruxblur");
   });
 });

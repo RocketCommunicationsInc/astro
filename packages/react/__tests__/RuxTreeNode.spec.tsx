@@ -86,6 +86,6 @@ describe("createComponent - events", () => {
       )
     );
     const attatchedEvents = (webcomponent as any).__events;
-    expect(Object.keys(attatchedEvents)).toContain("rux-tree-node-selected");
+    expect(Object.keys(attatchedEvents)).toContain("ruxtreenodeselected");
   });
 });

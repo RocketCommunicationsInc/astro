@@ -168,6 +168,6 @@ test("should add custom events", () => {
     )
   );
   const attatchedEvents = (webcomponent as any).__events;
-  expect(Object.keys(attatchedEvents)).toContain("rux-blur");
-  expect(Object.keys(attatchedEvents)).toContain("rux-change");
+  expect(Object.keys(attatchedEvents)).toContain("ruxblur");
+  expect(Object.keys(attatchedEvents)).toContain("ruxchange");
 });
