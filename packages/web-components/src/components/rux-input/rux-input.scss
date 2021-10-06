@@ -44,10 +44,14 @@
     .show-password {
         position: absolute;
         margin-right: 1.5rem;
-        margin-top: 1.6rem;
+        margin-top: 0.6rem;
         cursor: pointer;
         align-self: flex-end;
     }
+    .with-label {
+        margin-top: 1.6rem;
+    }
+
     .rux-input {
         box-sizing: border-box;
         order: 2;
