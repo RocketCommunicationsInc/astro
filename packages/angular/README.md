@@ -69,6 +69,8 @@ This repo will be updated frequently with the [Astro components in Stencil repo]
   }
 ```
 
+- Presently all components work with an exception of `rux-checkbox`, `rux-switch`, and `rux-input` which presently do not support native `ngModel` and `formControl` integration
+
 - This version bundles all components (no tree-shaking) in order to avoid having to use `defineCustomElements` each time you want to use an astro component. Because of this, the bundle size is larger.
 
 - CSS custom properties for our angular-wrapped components are undefined out of the box, thus the necessity for the CSS import.
