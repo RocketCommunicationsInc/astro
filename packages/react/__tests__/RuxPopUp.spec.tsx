@@ -153,10 +153,10 @@ describe("createComponent - events", () => {
           ref={popRef}
           triggerEl={icon}
           id="1"
-          onRux-menu-will-close={FakeWillClose}
-          onRux-menu-will-open={FakeWillOpen}
-          onRux-menu-did-open={FakeDidOpen}
-          onRux-menu-did-close={FakeDidClose}
+          onRuxmenuwillclose={FakeWillClose}
+          onRuxmenuwillopen={FakeWillOpen}
+          onRuxmenudidopen={FakeDidOpen}
+          onRuxmenudidclose={FakeDidClose}
         ></RuxPopUpMenu>
       )
     );

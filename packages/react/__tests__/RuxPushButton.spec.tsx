@@ -77,8 +77,8 @@ describe("createComponent - events", () => {
         <RuxPushButton
           checked={true}
           label="checked"
-          onRux-change={FakeChange}
-          onRux-blur={FakeBlur}
+          onRuxchange={FakeChange}
+          onRuxblur={FakeBlur}
         ></RuxPushButton>
       )
     );

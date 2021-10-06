@@ -63,9 +63,9 @@ describe("createComponent - events", () => {
       renderWithStrictMode(
         <RuxInput
           ref={inputRef}
-          onRux-blur={FakeBlur}
-          onRux-change={FakeChange}
-          onRux-input={FakeInput}
+          onRuxblur={FakeBlur}
+          onRuxchange={FakeChange}
+          onRuxinput={FakeInput}
         ></RuxInput>
       )
     );

@@ -95,7 +95,7 @@ describe("createComponent - events", () => {
           modalMessage="Test"
           modalTitle="Testing"
           open={true}
-          onRux-modal-closed={FakeClose}
+          onRuxmodalclosed={FakeClose}
         ></RuxModal>
       )
     );

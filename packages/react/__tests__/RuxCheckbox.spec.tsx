@@ -71,9 +71,9 @@ describe("createComponent - events", () => {
       renderWithStrictMode(
         <RuxCheckbox
           ref={checkboxRef}
-          onRux-blur={FakeBlur}
-          onRux-change={FakeChange}
-          onRux-input={FakeInput}
+          onRuxblur={FakeBlur}
+          onRuxchange={FakeChange}
+          onRuxinput={FakeInput}
         ></RuxCheckbox>
       )
     );

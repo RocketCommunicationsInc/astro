@@ -149,7 +149,7 @@ test("should add custom events", () => {
   const FakeChange = jest.fn();
   const { webcomponent } = includeWebComponent<HTMLRuxSelectElement>(
     renderWithStrictMode(
-      <RuxSelect onRux-blur={FakeBlur} onRux-change={FakeChange}>
+      <RuxSelect onRuxblur={FakeBlur} onRuxchange={FakeChange}>
         {" "}
         <option value="">Select an option</option>
         <optgroup label="Group one">

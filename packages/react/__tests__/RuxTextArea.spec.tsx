@@ -79,9 +79,9 @@ describe("createComponent - events", () => {
       renderWithStrictMode(
         <RuxTextarea
           ref={TextareaRef}
-          onRux-blur={FakeBlur}
-          onRux-change={FakeChange}
-          onRux-Textarea={FakeTextarea}
+          onRuxblur={FakeBlur}
+          onRuxchange={FakeChange}
+          onRuxTextarea={FakeTextarea}
         ></RuxTextarea>
       )
     );

@@ -85,7 +85,7 @@ describe("createComponent - events", () => {
     const FakeChange = jest.fn();
     const { webcomponent } = includeWebComponent<HTMLRuxSegmentedButtonElement>(
       renderWithStrictMode(
-        <RuxSegmentedButton onRux-change={FakeChange}></RuxSegmentedButton>
+        <RuxSegmentedButton onRuxchange={FakeChange}></RuxSegmentedButton>
       )
     );
     const attatchedEvents = (webcomponent as any).__events;

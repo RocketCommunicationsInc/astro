@@ -82,7 +82,7 @@ describe("createComponent - events", () => {
     const FakeNodeSelected = jest.fn();
     const { webcomponent } = includeWebComponent<HTMLRuxTreeElement>(
       renderWithStrictMode(
-        <RuxTreeNode onRux-tree-node-selected={FakeNodeSelected}></RuxTreeNode>
+        <RuxTreeNode onRuxtreenodeselected={FakeNodeSelected}></RuxTreeNode>
       )
     );
     const attatchedEvents = (webcomponent as any).__events;

@@ -56,7 +56,7 @@ describe("createComponent - events", () => {
     const FakeSelected = jest.fn();
     const { webcomponent } = includeWebComponent<HTMLRuxTabsElement>(
       renderWithStrictMode(
-        <RuxTabs id="tab-set-id-1" onRux-selected={FakeSelected}>
+        <RuxTabs id="tab-set-id-1" onRuxselected={FakeSelected}>
           <RuxTab id="tab-id-1">A single Tab!</RuxTab>
         </RuxTabs>
       )
