@@ -76,31 +76,22 @@ describe('rux-input', () => {
         expect(page.root).toEqualHtml(`
       <rux-input type="password" value>
       <mock:shadow-root>
-      <div class="rux-form-field" part="form-field">
-      <label aria-hidden="true" class="rux-input-label" htmlfor="rux-input-4" part="label">
-             <span class="hidden">
-               <slot name="label"></slot>
-              </span>
-            </label>
-        <input value="" type="password" aria-invalid="false" class="rux-input" id="rux-input-4">
-        </input>
-        <rux-icon part="icon" icon="visibility" class="show-password">
-        </rux-icon>
-      </div>
+        <div class="rux-form-field" part="form-field">
+        <label aria-hidden="true" class="rux-input-label" htmlfor="rux-input-4" part="label">
+              <span class="hidden">
+                <slot name="label"></slot>
+                </span>
+              </label>
+          <input value="" type="password" aria-invalid="false" class="rux-input" id="rux-input-4">
+          </input>
+          <div class="icon-container show-password">
+            <rux-icon part="icon" icon="visibility">
+            </rux-icon>
+          </div>
+        </div>
       </mock:shadow-root>
       <input class="aux-input" type="hidden" value="">
       </rux-icon>
       `)
     })
 })
-
-/*
-
-        <rux-input type="password" value class="hydrated">
-        <div class="rux-form-field" part="form-field">
-          <label class="rux-input-label" part="label" aria-hidden="true" for="rux-input-1"></label>
-          <input name type="password" aria-invalid="false" class="rux-input" id="rux-input-1">
-          </input>
-        </div>
-
-*/
