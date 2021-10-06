@@ -61,7 +61,16 @@ This repo will be updated frequently with the [Astro components in Stencil repo]
 
 ### Known Issues
 
+- Angular versions 9 and higher may through an error `ɵɵInjectorDeclaration`. To solve that issue you'll need to add the following to your `tsconfig.json` `compilerOptions`
+
+```json
+  "paths": {
+      "@angular/*": ["./node_modules/@angular/*"]
+  }
+```
+
 - This version bundles all components (no tree-shaking) in order to avoid having to use `defineCustomElements` each time you want to use an astro component. Because of this, the bundle size is larger.
+
 - CSS custom properties for our angular-wrapped components are undefined out of the box, thus the necessity for the CSS import.
 
 #### Currently using @astrouxds/astro-web-components version 0.0.16
