@@ -41,15 +41,21 @@
         font-size: var(--font-size);
         color: var(--default-text);
     }
-    .show-password {
-        position: absolute;
-        margin-right: 1.5rem;
-        margin-top: 0.6rem;
-        cursor: pointer;
+    .icon-container {
+        background-color: #101923;
         align-self: flex-end;
+        position: absolute;
+        width: 1.188rem;
+        height: 1.313rem;
+        padding-left: 0.5rem;
+    }
+    .show-password {
+        cursor: pointer;
+        margin-top: 0.6rem;
+        margin-right: 0.5rem;
     }
     .with-label {
-        margin-top: 1.6rem;
+        margin-top: 1.7rem;
     }
 
     .rux-input {

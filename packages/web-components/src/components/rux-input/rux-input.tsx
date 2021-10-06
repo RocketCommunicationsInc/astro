@@ -297,15 +297,19 @@ export class RuxInput implements FormFieldInterface {
                         onBlur={() => _onBlur()}
                     ></input>
                     {this.togglePassword && (
-                        <rux-icon
-                            part="icon"
-                            onClick={() => _handleTogglePassword()}
+                        <div
                             class={{
+                                'icon-container': true,
                                 'show-password': true,
                                 'with-label': hasLabel,
                             }}
-                            icon={iconName}
-                        />
+                        >
+                            <rux-icon
+                                part="icon"
+                                onClick={() => _handleTogglePassword()}
+                                icon={iconName}
+                            />
+                        </div>
                     )}
                 </div>
                 <FormFieldMessage
