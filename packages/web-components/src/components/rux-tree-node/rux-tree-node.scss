@@ -29,7 +29,10 @@
     width: 100%;
     padding: 0px;
     margin: 0px;
-    font-size: 1rem;
+    font-family: var(--font-b1-font-family);
+    font-size: var(--font-b1-font-size);
+    font-weight: var(--font-b1-font-weight);
+    letter-spacing: var(--font-b1-letter-spacing);
     color: var(--tree-text-color);
     user-select: none;
     width: 100%;

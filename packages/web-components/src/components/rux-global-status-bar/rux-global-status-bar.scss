@@ -76,23 +76,29 @@ slot[name='left-side'] > .shifted-up,
     margin-bottom: 0px;
     margin-top: 0px;
     height: 32px;
-    font-size: 2.125rem; //34px
+
+    font-family: var(--font-h1-font-family);
+    font-size: var(--font-h1-font-size);
+    font-weight: var(--font-h1-font-weight);
+    letter-spacing: var(--font-h1-letter-spacing);
 }
 
-.app-domain {
-    font-weight: 700;
+.app-meta h1.app-domain {
     margin-right: 13px;
+    font-family: var(--font-h1-bold-font-family);
+    font-size: var(--font-h1-bold-font-size);
+    font-weight: var(--font-h1-bold-font-weight);
+    letter-spacing: var(--font-h1-bold-letter-spacing);
 }
 
 .app-name {
-    font-weight: 400;
     margin-right: 0.3em;
 }
 
 .app-version {
     display: inline-block;
-    font-size: 1.1875rem;
-    font-weight: 300;
+    font-size: var(--font-h6-font-size);
+    font-weight: var(--font-h6-font-weight);
 }
 
 .app-state-wrapper {
@@ -105,7 +111,10 @@ slot[name='left-side'] > .shifted-up,
     color: var(--color-basics-white);
     background-color: var(--color-basics-black);
     border-radius: 2px;
-    font-size: 14px;
+    font-family: var(--font-b2-font-family);
+    font-size: var(--font-b2-font-size);
+    font-weight: var(--font-b2-font-weight);
+    letter-spacing: var(--font-b2-letter-spacing);
     padding: 2px 6px;
     text-align: center;
     height: 22px;
@@ -116,7 +125,10 @@ slot[name='left-side'] > .shifted-up,
 .username {
     box-sizing: border-box;
     flex-basis: 50%;
-    font-size: 14px;
+    font-family: var(--font-b2-font-family);
+    font-size: var(--font-b2-font-size);
+    font-weight: var(--font-b2-font-weight);
+    letter-spacing: var(--font-b2-letter-spacing);
     padding: 2px 0px;
     height: 22px;
 }
