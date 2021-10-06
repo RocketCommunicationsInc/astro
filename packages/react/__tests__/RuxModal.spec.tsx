@@ -95,11 +95,11 @@ describe("createComponent - events", () => {
           modalMessage="Test"
           modalTitle="Testing"
           open={true}
-          onRux-modal-closed={FakeClose}
+          onRuxmodalclosed={FakeClose}
         ></RuxModal>
       )
     );
     const attatchedEvents = (webcomponent as any).__events;
-    expect(Object.keys(attatchedEvents)).toContain("rux-modal-closed");
+    expect(Object.keys(attatchedEvents)).toContain("ruxmodalclosed");
   });
 });

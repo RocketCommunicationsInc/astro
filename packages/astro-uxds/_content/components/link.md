@@ -12,8 +12,8 @@ A Link (also known as a hyperlink) is a clickable text element. It may be used f
 
 ## Rules of Thumb
 
-- Choose text for Links that: 
-  - Tell the user what will happen when clicking the link. 
+- Choose text for Links that:
+  - Tell the user what will happen when clicking the link.
   - Hint at the deeper content the Link will reveal.
 - Keep the text for Links short. Short links are more visually scannable.
 
@@ -24,9 +24,8 @@ Avoid using "Click Here," or "Link."
 ## Examples
 
 :::two-col
-![Do: Use Astro defined color for links ](/img/components/links-do-1.png 'Do: Use Astro defined color for links ')
+![Do: Use Astro defined color for links ](/img/components/links-do-1.png "Do: Use Astro defined color for links ")
 
-![Don’t: use underlines on links](/img/components/links-dont-1.png 'Don’t: use underlines on links')
+![Don’t: use underlines on links](/img/components/links-dont-1.png "Don’t: use underlines on links")
 
 :::
-

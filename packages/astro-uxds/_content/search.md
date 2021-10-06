@@ -1,9 +1,9 @@
 ---
-tags: 'search'
+tags: "search"
 path: /search
 date: Last Modified
 layout: search.template.njk
-title: 'Search'
+title: "Search"
 ---
 
 # Search

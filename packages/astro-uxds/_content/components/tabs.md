@@ -49,5 +49,3 @@ For use outside of main navigation, a more compact tab component can be used.
 ![Don’t: Stack or improperly nest Tabs.](/img/components/nav-tabs-dont-1.png "Don’t: Stack or improperly nest Tabs.")
 
 :::
-
-

@@ -63,7 +63,7 @@ export class RuxLog {
                                                     small
                                                     class="rux-log__filter"
                                                     type="search"
-                                                    onRux-input={(event) =>
+                                                    onRuxinput={(event) =>
                                                         this.setFilter(event)
                                                     }
                                                 ></rux-input>
