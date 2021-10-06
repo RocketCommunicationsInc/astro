@@ -18,5 +18,17 @@
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
-    <body></body>
+    <body>
+        <rux-input id="input" type="text"></rux-input>
+        <rux-button id="btn">Click</rux-button>
+
+        <script>
+            let input = document.getElementById('input')
+            const btn = document.getElementById('btn')
+            btn.addEventListener('click', () => {
+                console.log('heard')
+                input.setAttribute('type', 'search')
+            })
+        </script>
+    </body>
 </html>
