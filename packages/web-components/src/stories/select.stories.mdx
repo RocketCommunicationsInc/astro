@@ -6,6 +6,10 @@ import { html, render } from 'lit-html'
     title="Forms/Select Menu"
     component="rux-select"
     argTypes={extractArgTypes('rux-select')}
+    subcomponents={{
+        RuxOptionGroup: 'rux-option-group',
+        RuxOption: 'rux-option',
+    }}
     parameters={{
         actions: {
             handles: ['rux-change rux-select', 'rux-blur rux-select'],
@@ -22,7 +26,7 @@ Select Menus allow users to select a value from a list of values.
 -   [Astro UXDS: Select Menu](https://astrouxds.com/components/select/)
 -   [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)
 
-export const SelectMenu = (args) => {
+export const Default = (args) => {
     return html`
         <div style="width: 200px; margin: 0 auto;">
             <rux-select
@@ -35,19 +39,15 @@ export const SelectMenu = (args) => {
                 .errorText="${args.errorText}"
                 .helpText="${args.helpText}"
             >
-                <option value="" selected>Select an option</option>
-                <optgroup label="Group one">
-                    <option value="1.1">Option 1.1</option>
-                    <option value="1.2">Option 1.2</option>
-                    <option value="1.3">Option 1.3</option>
-                    <option value="1.4">Option 1.4</option>
-                </optgroup>
-                <optgroup label="Group two">
-                    <option value="2.1">Option 2.1</option>
-                    <option value="2.2">Option 2.2</option>
-                    <option value="2.3">Option 2.3</option>
-                    <option value="2.4">Option 2.4</option>
-                </optgroup>
+                <rux-option
+                    value=""
+                    selected
+                    label="Select an option"
+                ></rux-option>
+                <rux-option value="1.1" label="Option 1.1"></rux-option>
+                <rux-option value="1.2" label="Option 1.2"></rux-option>
+                <rux-option value="1.3" label="Option 1.3"></rux-option>
+                <rux-option value="1.4" label="Option 1.4"></rux-option>
             </rux-select>
         </div>
     `
@@ -62,7 +62,7 @@ export const SelectMenu = (args) => {
         }}
         name="Select Menu"
     >
-        {SelectMenu.bind()}
+        {Default.bind()}
     </Story>
 </Canvas>
 
@@ -70,7 +70,70 @@ export const SelectMenu = (args) => {
 
 <ArgsTable of="rux-select" />
 
+## Usage
+
+> Select **requires** the use of the `<rux-option>` component instead of the native `<option>`. Make sure to set the label using the `label` property instead of a slot like you would with the native `<option>`
+
+### Selecting Options
+
+The `value` property will sync the currently selected option value property
+
+### Grouping
+
+For Grouping, make sure to use the Astro `<rux-option-group>` component instead of the native `<optgroup>`.
+
 ## Variants
+
+### With Option Groups
+
+export const WithOptionGroups = (args) => {
+    return html`
+        <div style="width: 200px; margin: 0 auto;">
+            <rux-select
+                ?disabled="${args.disabled}"
+                ?required="${args.required}"
+                ?invalid="${args.invalid}"
+                label="${args.label}"
+                input-id="${args.inputId}"
+                label-id="${args.labelId}"
+                .errorText="${args.errorText}"
+                .helpText="${args.helpText}"
+            >
+                <rux-option
+                    value=""
+                    label="Select an option"
+                    selected
+                ></rux-option>
+                <rux-option-group label="Group one">
+                    <rux-option value="1.1" label="Option 1.1"></rux-option>
+                    <rux-option value="1.2" label="Option 1.2"></rux-option>
+                    <rux-option value="1.3" label="Option 1.3"></rux-option>
+                    <rux-option value="1.4" label="Option 1.4"></rux-option>
+                </rux-option-group>
+                <rux-option-group label="Group two">
+                    <rux-option value="2.1" label="Option 2.1"></rux-option>
+                    <rux-option value="2.2" label="Option 2.2"></rux-option>
+                    <rux-option value="2.3" label="Option 2.3"></rux-option>
+                    <rux-option value="2.4" label="Option 2.4"></rux-option>
+                </rux-option-group>
+                <rux-option value="3.1" label="Option 3.1"></rux-option>
+            </rux-select>
+        </div>
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+            label: 'With option groups',
+            inputId: 1,
+            labelId: 1,
+        }}
+        name="With Option Groups"
+    >
+        {WithOptionGroups.bind()}
+    </Story>
+</Canvas>
 
 ### Disabled
 
@@ -87,19 +150,15 @@ export const Disabled = (args) => {
                 .errorText="${args.errorText}"
                 .helpText="${args.helpText}"
             >
-                <option value="" selected>Select an option</option>
-                <optgroup label="Group one">
-                    <option value="1.1">Option 1.1</option>
-                    <option value="1.2">Option 1.2</option>
-                    <option value="1.3">Option 1.3</option>
-                    <option value="1.4">Option 1.4</option>
-                </optgroup>
-                <optgroup label="Group two">
-                    <option value="2.1">Option 2.1</option>
-                    <option value="2.2">Option 2.2</option>
-                    <option value="2.3">Option 2.3</option>
-                    <option value="2.4">Option 2.4</option>
-                </optgroup>
+                <rux-option
+                    value=""
+                    selected
+                    label="Select an option"
+                ></rux-option>
+                <rux-option value="1.1" label="Option 1.1"></rux-option>
+                <rux-option value="1.2" label="Option 1.2"></rux-option>
+                <rux-option value="1.3" label="Option 1.3"></rux-option>
+                <rux-option value="1.4" label="Option 1.4"></rux-option>
             </rux-select>
         </div>
     `
@@ -132,19 +191,15 @@ export const Invalid = (args) => {
                 input-id="${args.inputId}"
                 label-id="${args.labelId}"
             >
-                <option value="" selected>Select an option</option>
-                <optgroup label="Group one">
-                    <option value="1.1">Option 1.1</option>
-                    <option value="1.2">Option 1.2</option>
-                    <option value="1.3">Option 1.3</option>
-                    <option value="1.4">Option 1.4</option>
-                </optgroup>
-                <optgroup label="Group two">
-                    <option value="2.1">Option 2.1</option>
-                    <option value="2.2">Option 2.2</option>
-                    <option value="2.3">Option 2.3</option>
-                    <option value="2.4">Option 2.4</option>
-                </optgroup>
+                <rux-option
+                    value=""
+                    selected
+                    label="Select an option"
+                ></rux-option>
+                <rux-option value="1.1" label="Option 1.1"></rux-option>
+                <rux-option value="1.2" label="Option 1.2"></rux-option>
+                <rux-option value="1.3" label="Option 1.3"></rux-option>
+                <rux-option value="1.4" label="Option 1.4"></rux-option>
             </rux-select>
         </div>
     `
@@ -177,19 +232,15 @@ export const WithHelpText = (args) => {
                 .errorText="${args.errorText}"
                 .helpText="${args.helpText}"
             >
-                <option value="" selected>Select an option</option>
-                <optgroup label="Group one">
-                    <option value="1.1">Option 1.1</option>
-                    <option value="1.2">Option 1.2</option>
-                    <option value="1.3">Option 1.3</option>
-                    <option value="1.4">Option 1.4</option>
-                </optgroup>
-                <optgroup label="Group two">
-                    <option value="2.1">Option 2.1</option>
-                    <option value="2.2">Option 2.2</option>
-                    <option value="2.3">Option 2.3</option>
-                    <option value="2.4">Option 2.4</option>
-                </optgroup>
+                <rux-option
+                    value=""
+                    selected
+                    label="Select an option"
+                ></rux-option>
+                <rux-option value="1.1" label="Option 1.1"></rux-option>
+                <rux-option value="1.2" label="Option 1.2"></rux-option>
+                <rux-option value="1.3" label="Option 1.3"></rux-option>
+                <rux-option value="1.4" label="Option 1.4"></rux-option>
             </rux-select>
         </div>
     `
@@ -222,19 +273,15 @@ export const WithErrorText = (args) => {
                 .errorText="${args.errorText}"
                 .helpText="${args.helpText}"
             >
-                <option value="" selected>Select an option</option>
-                <optgroup label="Group one">
-                    <option value="1.1">Option 1.1</option>
-                    <option value="1.2">Option 1.2</option>
-                    <option value="1.3">Option 1.3</option>
-                    <option value="1.4">Option 1.4</option>
-                </optgroup>
-                <optgroup label="Group two">
-                    <option value="2.1">Option 2.1</option>
-                    <option value="2.2">Option 2.2</option>
-                    <option value="2.3">Option 2.3</option>
-                    <option value="2.4">Option 2.4</option>
-                </optgroup>
+                <rux-option
+                    value=""
+                    selected
+                    label="Select an option"
+                ></rux-option>
+                <rux-option value="1.1" label="Option 1.1"></rux-option>
+                <rux-option value="1.2" label="Option 1.2"></rux-option>
+                <rux-option value="1.3" label="Option 1.3"></rux-option>
+                <rux-option value="1.4" label="Option 1.4"></rux-option>
             </rux-select>
         </div>
     `
@@ -260,5 +307,12 @@ If you're already utilizing a build system that supports tree shaking and want t
 
 ```js
 import { RuxSelect } from 'astro-web-components/dist/components/rux-select'
+import { RuxOption } from 'astro-web-components/dist/components/rux-option'
+
 customElements.define('rux-select', RuxSelect)
+customElements.define('rux-option', RuxOption)
+
+// Optional
+//import { RuxOptionGroup } from 'astro-web-components/dist/components/rux-option-group'
+//customElements.define('rux-option-group', RuxOptionGroup)
 ```

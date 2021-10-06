@@ -96,7 +96,7 @@ export namespace Components {
          */
         classification: Classification
         /**
-         * Allows additional text labels to be added to the a marking
+         * Allows additional text labels to be added to the marking
          */
         label?: string
         /**
@@ -6764,6 +6764,22 @@ export namespace Components {
          */
         status: Status
     }
+    interface RuxOption {
+        /**
+         * The option label
+         */
+        label: string
+        /**
+         * The option value
+         */
+        value: string
+    }
+    interface RuxOptionGroup {
+        /**
+         * The option group label
+         */
+        label?: string
+    }
     interface RuxPopUpMenu {
         /**
          * Element to anchor the menu to. If none is given the menu will anchor to the trigger element where aria-controls === menu id
@@ -6932,7 +6948,7 @@ export namespace Components {
         /**
          * Sets the Name of the Input Element
          */
-        name?: string
+        name: string
         /**
          * Sets the field as required
          */
@@ -14617,6 +14633,20 @@ declare global {
         prototype: HTMLRuxNotificationElement
         new (): HTMLRuxNotificationElement
     }
+    interface HTMLRuxOptionElement
+        extends Components.RuxOption,
+            HTMLStencilElement {}
+    var HTMLRuxOptionElement: {
+        prototype: HTMLRuxOptionElement
+        new (): HTMLRuxOptionElement
+    }
+    interface HTMLRuxOptionGroupElement
+        extends Components.RuxOptionGroup,
+            HTMLStencilElement {}
+    var HTMLRuxOptionGroupElement: {
+        prototype: HTMLRuxOptionGroupElement
+        new (): HTMLRuxOptionGroupElement
+    }
     interface HTMLRuxPopUpMenuElement
         extends Components.RuxPopUpMenu,
             HTMLStencilElement {}
@@ -15856,6 +15886,8 @@ declare global {
         'rux-monitoring-icon': HTMLRuxMonitoringIconElement
         'rux-monitoring-progress-icon': HTMLRuxMonitoringProgressIconElement
         'rux-notification': HTMLRuxNotificationElement
+        'rux-option': HTMLRuxOptionElement
+        'rux-option-group': HTMLRuxOptionGroupElement
         'rux-pop-up-menu': HTMLRuxPopUpMenuElement
         'rux-progress': HTMLRuxProgressElement
         'rux-push-button': HTMLRuxPushButtonElement
@@ -15943,15 +15975,15 @@ declare namespace LocalJSX {
         /**
          * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
          */
-        onRuxblur?: (event: CustomEvent<any>) => void
+        'onRux-blur'?: (event: CustomEvent<any>) => void
         /**
          * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */
-        onRuxchange?: (event: CustomEvent<any>) => void
+        'onRux-change'?: (event: CustomEvent<any>) => void
         /**
          * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
          */
-        onRuxinput?: (event: CustomEvent<any>) => void
+        'onRux-input'?: (event: CustomEvent<any>) => void
         /**
          * The checkbox value
          */
@@ -15981,7 +16013,7 @@ declare namespace LocalJSX {
          */
         classification?: Classification
         /**
-         * Allows additional text labels to be added to the a marking
+         * Allows additional text labels to be added to the marking
          */
         label?: string
         /**
@@ -22487,15 +22519,15 @@ declare namespace LocalJSX {
         /**
          * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
          */
-        onRuxblur?: (event: CustomEvent<any>) => void
+        'onRux-blur'?: (event: CustomEvent<any>) => void
         /**
          * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */
-        onRuxchange?: (event: CustomEvent<any>) => void
+        'onRux-change'?: (event: CustomEvent<any>) => void
         /**
          * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
          */
-        onRuxinput?: (event: CustomEvent<any>) => void
+        'onRux-input'?: (event: CustomEvent<any>) => void
         /**
          * The input placeholder text
          */
@@ -22558,7 +22590,7 @@ declare namespace LocalJSX {
         /**
          * Emitted when item is clicked. Ex `{value : 10}`
          */
-        onRuxmenuitemselected?: (event: CustomEvent<object>) => void
+        'onRux-menu-item-selected'?: (event: CustomEvent<object>) => void
         /**
          * Specifies the relationship of the target object to the link object. The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).
          */
@@ -22593,7 +22625,7 @@ declare namespace LocalJSX {
         /**
          * Event that is fired when modal closes
          */
-        onRuxmodalclosed?: (event: CustomEvent<boolean>) => void
+        'onRux-modal-closed'?: (event: CustomEvent<boolean>) => void
         /**
          * Shows and hides modal
          */
@@ -22669,6 +22701,24 @@ declare namespace LocalJSX {
          */
         status?: Status
     }
+    interface RuxOption {
+        /**
+         * The option label
+         */
+        label: string
+        'onRux-option-changed'?: (event: CustomEvent<void>) => void
+        /**
+         * The option value
+         */
+        value: string
+    }
+    interface RuxOptionGroup {
+        /**
+         * The option group label
+         */
+        label?: string
+        'onRux-option-group-changed'?: (event: CustomEvent<void>) => void
+    }
     interface RuxPopUpMenu {
         /**
          * Element to anchor the menu to. If none is given the menu will anchor to the trigger element where aria-controls === menu id
@@ -22677,19 +22727,19 @@ declare namespace LocalJSX {
         /**
          * Emitted when the menu is closed.
          */
-        onRuxmenudidclose?: (event: CustomEvent<void>) => void
+        'onRux-menu-did-close'?: (event: CustomEvent<void>) => void
         /**
          * Emitted when the menu is open.
          */
-        onRuxmenudidopen?: (event: CustomEvent<void>) => void
+        'onRux-menu-did-open'?: (event: CustomEvent<void>) => void
         /**
          * Emitted when the menu is about to close
          */
-        onRuxmenuwillclose?: (event: CustomEvent<void>) => void
+        'onRux-menu-will-close'?: (event: CustomEvent<void>) => void
         /**
          * Emitted when the menu is about to open.
          */
-        onRuxmenuwillopen?: (event: CustomEvent<void>) => void
+        'onRux-menu-will-open'?: (event: CustomEvent<void>) => void
         /**
          * Boolean which controls when to show the menu
          */
@@ -22741,11 +22791,11 @@ declare namespace LocalJSX {
         /**
          * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
          */
-        onRuxblur?: (event: CustomEvent<any>) => void
+        'onRux-blur'?: (event: CustomEvent<any>) => void
         /**
          * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
          */
-        onRuxchange?: (event: CustomEvent<any>) => void
+        'onRux-change'?: (event: CustomEvent<any>) => void
         /**
          * Changes size of a push button from medium to small or large by setting sizing classes rux-button--small rux-button--large
          */
@@ -22775,7 +22825,7 @@ declare namespace LocalJSX {
         /**
          * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
          */
-        onRuxblur?: (event: CustomEvent<any>) => void
+        'onRux-blur'?: (event: CustomEvent<any>) => void
         /**
          * The radio value
          */
@@ -22805,7 +22855,7 @@ declare namespace LocalJSX {
         /**
          * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */
-        onRuxchange?: (event: CustomEvent<any>) => void
+        'onRux-change'?: (event: CustomEvent<any>) => void
         /**
          * The value of the current selected radio in the group. Changing this will also mark that radio as checked in the UI.
          */
@@ -22819,7 +22869,7 @@ declare namespace LocalJSX {
         /**
          * Emitted when the value property has changed.
          */
-        onRuxchange?: (event: CustomEvent<any>) => void
+        'onRux-change'?: (event: CustomEvent<any>) => void
         /**
          * When passed in on load, this selects the first button segment with a matching label. When the selected segment changes, this property updates with the currently selected value, which reflects back to the component attribute. If no button segment label matches this string, then no segment is selected. This value takes priority over setting selected boolean property on the items in the data array.
          */
@@ -22861,11 +22911,11 @@ declare namespace LocalJSX {
         /**
          * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
          */
-        onRuxblur?: (event: CustomEvent<any>) => void
+        'onRux-blur'?: (event: CustomEvent<any>) => void
         /**
          * Event Emitted when the Value of the Select is Changed
          */
-        onRuxchange?: (event: CustomEvent<void>) => void
+        'onRux-change'?: (event: CustomEvent<void>) => void
         /**
          * Sets the field as required
          */
@@ -22907,11 +22957,11 @@ declare namespace LocalJSX {
         /**
          * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
          */
-        onRuxblur?: (event: CustomEvent<any>) => void
+        'onRux-blur'?: (event: CustomEvent<any>) => void
         /**
          * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */
-        onRuxinput?: (event: CustomEvent<any>) => void
+        'onRux-input'?: (event: CustomEvent<any>) => void
         /**
          * Step amount of slider value.
          */
@@ -22947,15 +22997,15 @@ declare namespace LocalJSX {
         /**
          * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
          */
-        onRuxblur?: (event: CustomEvent<any>) => void
+        'onRux-blur'?: (event: CustomEvent<any>) => void
         /**
          * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */
-        onRuxchange?: (event: CustomEvent<any>) => void
+        'onRux-change'?: (event: CustomEvent<any>) => void
         /**
          * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
          */
-        onRuxinput?: (event: CustomEvent<any>) => void
+        'onRux-input'?: (event: CustomEvent<any>) => void
         /**
          * The switch value
          */
@@ -22976,7 +23026,7 @@ declare namespace LocalJSX {
         /**
          * Emits a list of the Tab Panels that have been passed in
          */
-        onRuxregisterpanels?: (
+        'onRux-register-panels'?: (
             event: CustomEvent<HTMLRuxTabPanelsElement[]>
         ) => void
     }
@@ -22996,7 +23046,7 @@ declare namespace LocalJSX {
         /**
          * Fires whenever a new tab is selected, and emits the selected tab.
          */
-        onRuxselected?: (event: CustomEvent<any>) => void
+        'onRux-selected'?: (event: CustomEvent<any>) => void
         /**
          * If passed or set to true, displays the tabs in a smaller style, suitable for limited-space uses.
          */
@@ -23038,15 +23088,15 @@ declare namespace LocalJSX {
         /**
          * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
          */
-        onRuxblur?: (event: CustomEvent<any>) => void
+        'onRux-blur'?: (event: CustomEvent<any>) => void
         /**
          * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */
-        onRuxchange?: (event: CustomEvent<any>) => void
+        'onRux-change'?: (event: CustomEvent<any>) => void
         /**
          * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
          */
-        onRuxinput?: (event: CustomEvent<any>) => void
+        'onRux-input'?: (event: CustomEvent<any>) => void
         /**
          * The textarea placeholder text
          */
@@ -23077,7 +23127,7 @@ declare namespace LocalJSX {
         /**
          * Emit when user selects a tree node
          */
-        onRuxtreenodeselected?: (event: CustomEvent<string>) => void
+        'onRux-tree-node-selected'?: (event: CustomEvent<string>) => void
         /**
          * Sets the selected state
          */
@@ -24156,6 +24206,8 @@ declare namespace LocalJSX {
         'rux-monitoring-icon': RuxMonitoringIcon
         'rux-monitoring-progress-icon': RuxMonitoringProgressIcon
         'rux-notification': RuxNotification
+        'rux-option': RuxOption
+        'rux-option-group': RuxOptionGroup
         'rux-pop-up-menu': RuxPopUpMenu
         'rux-progress': RuxProgress
         'rux-push-button': RuxPushButton
@@ -26330,6 +26382,10 @@ declare module '@stencil/core' {
                 JSXBase.HTMLAttributes<HTMLRuxMonitoringProgressIconElement>
             'rux-notification': LocalJSX.RuxNotification &
                 JSXBase.HTMLAttributes<HTMLRuxNotificationElement>
+            'rux-option': LocalJSX.RuxOption &
+                JSXBase.HTMLAttributes<HTMLRuxOptionElement>
+            'rux-option-group': LocalJSX.RuxOptionGroup &
+                JSXBase.HTMLAttributes<HTMLRuxOptionGroupElement>
             'rux-pop-up-menu': LocalJSX.RuxPopUpMenu &
                 JSXBase.HTMLAttributes<HTMLRuxPopUpMenuElement>
             'rux-progress': LocalJSX.RuxProgress &
