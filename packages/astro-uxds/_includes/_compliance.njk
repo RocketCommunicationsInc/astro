@@ -1,0 +1,43 @@
+{% macro getComplianceRulesByURL(data, prefix) %}
+
+  {% if data.link == page.url | url %}
+
+  <link rel="stylesheet" href="/css/compliance.css">
+  <aside class="compliance">
+    <header>Compliance Requirements <span class="compliance-version">(v{{ compliance.version }})</span></header>
+    <ol class="compliance-list">
+
+    {% for rule in data.rules|sort(false,false,'numeral') %}
+
+      <li class="rule">
+        <span class="numeral">
+          {% if prefix != null %}{{ prefix }}.{% endif %}{{ data.numeral }}.{{ rule.numeral }}
+        </span>
+        <span 
+          class="rule-text" data-status="{{ rule.status }}">
+            {{ rule.rule  | markdownify | safe }}
+        </span>
+      </li>
+
+    {% endfor %}
+    </ol>
+    <footer>
+      <a href="/design-guidelines/compliance/">See all EGS Compliance Requirements</a>
+    </footer>
+  </aside>
+
+  {% elif data.rulesets.length %}
+
+    {% for rulesets in data.rulesets|sort(false,false,'numeral') %}
+      {{ getComplianceRulesByURL(rulesets, data.numeral) }}
+    {% endfor %}
+
+  {% endif %}
+
+{% endmacro %}
+
+
+{% set sortedRules = compliance.contents|sort(false,false,'numeral') %}
+{% for complianceRules in sortedRules %}
+  {{ getComplianceRulesByURL(complianceRules) }}
+{% endfor %}

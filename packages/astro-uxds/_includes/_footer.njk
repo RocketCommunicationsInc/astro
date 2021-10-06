@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="/css/footer.css">
+<footer class="site-footer">
+
+	<div class="site-footer__publisher">
+		<dl class="site-footer__provided-by">
+			<dt>Provided by:</dt>
+				<dd>
+				<ul>
+					<li>United States Space Force</li>
+					<li>SMC</li>
+					<li>ECX</li>
+					<li>EGS</li>
+				</ul>
+				</dd>
+				<dd>
+					<ul>
+						<li>United States Space Force</li>
+						<li>SMC</li>
+						<li>SY</li>
+						<li>SATOPS</li>
+					</ul>
+				</dd>
+		</dl>
+		<dl class="designed-by">
+			<a href="https://www.rocketcom.com">
+				<dt>Designed &amp; Stewarded by:</dt>
+				<dd class="site-footer__rocket-logo">
+					<img src="/img/_site/rocket-logo.svg">
+				</dd>
+			</a>
+		</dl>				
+	</div>
+	<div class="site-footer__meta">
+			<span class="meta-version">Version {{ meta.version }}</span>
+			<span class="separator"> | </span>
+			<time class="meta-updated-on" datetime="{{ page.date.toISOString() }}">Updated {{ page.date.toDateString() }}</time>
+			<span class="separator"> | </span>
+			<a href="/support">Contact Support</a>
+		</div>
+</div>
+
+
+</footer>
+
+	{# <script 
+    data-jsd-embedded 
+    data-key="6b1e2081-b6c2-4a91-a844-fe72d7d91248" 
+    data-base-url="https://jsd-widget.atlassian.com" 
+    src="https://jsd-widget.atlassian.com/assets/embed.js"></script> #}
+	<script src="/js/site.js"></script>
+	<script data-jsd-embedded data-key="6b1e2081-b6c2-4a91-a844-fe72d7d91248" data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
+	<script 
+		async 
+		src="https://www.googletagmanager.com/gtag/js?id=UA-114182957-1"></script>
+
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+		gtag('config', 'UA-114182957-1');
+	</script>

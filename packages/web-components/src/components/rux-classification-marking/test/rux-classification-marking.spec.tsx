@@ -130,7 +130,7 @@ describe('rux-classification-marking banners', () => {
         expect(page.root).toEqualHtml(`
       <rux-classification-marking classification="notapprovedoption">
         <mock:shadow-root>
-          <div class="rux-classification rux-classification--banner">Select a Classification Marking</div>
+          <div class="rux-classification rux-classification--banner"></div>
           <slot></slot>
         </mock:shadow-root>
       </rux-classification-marking>
@@ -237,7 +237,7 @@ describe('rux-classification-marking tags', () => {
         expect(page.root).toEqualHtml(`
       <rux-classification-marking classification="notapprovedoption" tag>
         <mock:shadow-root>
-          <div class="rux-classification rux-classification--tag">Select a Classification Marking</div>
+          <div class="rux-classification rux-classification--tag"></div>
           <slot></slot>
         </mock:shadow-root>
       </rux-classification-marking>

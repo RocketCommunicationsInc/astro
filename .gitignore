@@ -5,6 +5,9 @@ storybook-static/
 docs.json
 cypress/fixtures
 coverage/
+_site/
+build/
+_headers
 
 *~
 *.sw[mnpcod]
@@ -15,16 +18,20 @@ coverage/
 log.txt
 *.sublime-project
 *.sublime-workspace
+*.komodoproject
 
 .stencil/
 .idea/
 .vscode/
 .sass-cache/
 .versions/
+.npmrc
+.netlify
 node_modules/
 $RECYCLE.BIN/
 
 .DS_Store
+ehthumbs.db
 Thumbs.db
 UserInterfaceState.xcuserstate
 .env

@@ -4,8 +4,8 @@ Select Menus allow users to select a value from a list of values.
 
 ## Guidelines
 
--   [Astro UXDS: Select](https://www.astrouxds.com/ui-components/select)
--   [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)
+- [Astro UXDS: Select](https://www.astrouxds.com/ui-components/select)
+- [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)
 
 ## Web Components Usage
 
@@ -46,6 +46,7 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property    | Attribute    | Description                                                                                                                                                                                       | Type                  | Default     |
@@ -57,9 +58,10 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 | `invalid`   | `invalid`    | Presentational only. Renders the Select Menu as invalid.                                                                                                                                          | `boolean`             | `false`     |
 | `label`     | `label`      | The select label text. For HTML content, use the `label` slot instead.                                                                                                                            | `string \| undefined` | `undefined` |
 | `labelId`   | `label-id`   | Id for the Label                                                                                                                                                                                  | `string \| undefined` | `undefined` |
-| `name`      | `name`       | Sets the Name of the Input Element                                                                                                                                                                | `string \| undefined` | `undefined` |
+| `name`      | `name`       | Sets the Name of the Input Element                                                                                                                                                                | `string`              | `''`        |
 | `required`  | `required`   | Sets the field as required                                                                                                                                                                        | `boolean`             | `false`     |
 | `value`     | `value`      | The value of the selected option                                                                                                                                                                  | `string \| undefined` | `undefined` |
+
 
 ## Events
 
@@ -68,12 +70,14 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 | `rux-blur`   | Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) | `CustomEvent<any>`  |
 | `rux-change` | Event Emitted when the Value of the Select is Changed                                                                                | `CustomEvent<void>` |
 
+
 ## Slots
 
 | Slot          | Description        |
 | ------------- | ------------------ |
 | `"(default)"` | The select options |
 | `"label"`     | The select label   |
+
 
 ## CSS Custom Properties
 
@@ -95,6 +99,7 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 | `--select-menu-option-text-hover-color`          | Text Hover Color of the Select Menu Options   |
 | `--select-menu-text-color`                       | Text Color of the Select Input                |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Usage
 
 ### Simple
@@ -23,6 +24,8 @@
 </rux-table>
 ```
 
+
+
 ## CSS Custom Properties
 
 | Name                                    | Description                         |
@@ -40,20 +43,20 @@
 | `--table-row-selected-border-color`     | Table row selected border color     |
 | `--table-row-text-color`                | Table row text color                |
 
+
 ## Dependencies
 
 ### Used by
 
--   [rux-log](../rux-log)
+ - [rux-log](../rux-log)
 
 ### Graph
-
 ```mermaid
 graph TD;
   rux-log --> rux-table
   style rux-table fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

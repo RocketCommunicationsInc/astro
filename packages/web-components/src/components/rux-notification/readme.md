@@ -67,6 +67,7 @@ The Astro UXDS Notification Banner hides from view using absolute positioning in
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property     | Attribute     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Type                                                                     | Default     |
@@ -76,26 +77,27 @@ The Astro UXDS Notification Banner hides from view using absolute positioning in
 | `open`       | `open`        | Set to true to display the Banner and begin countdown to close (if a close-after Number value is provided).                                                                                                                                                                                                                                                                                                                                                                                      | `boolean`                                                                | `false`     |
 | `status`     | `status`      | The background color. Possible values include 'off', 'standby', 'normal', 'caution', 'serious' and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).                                                                                                                                                                                                                                                                                                    | `"caution" \| "critical" \| "normal" \| "off" \| "serious" \| "standby"` | `'standby'` |
 
+
 ## CSS Custom Properties
 
 | Name                        | Description                 |
 | --------------------------- | --------------------------- |
 | `--notification-text-color` | The notification text color |
 
+
 ## Dependencies
 
 ### Depends on
 
--   [rux-icon](../rux-icon)
+- [rux-icon](../rux-icon)
 
 ### Graph
-
 ```mermaid
 graph TD;
   rux-notification --> rux-icon
   style rux-notification fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

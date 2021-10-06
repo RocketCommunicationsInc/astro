@@ -1,0 +1,22 @@
+# ignore all files starting with . or ~
+
+.DS_Store
+.vscode/
+.npmrc
+
+# ignore components loaded via Bower & NPM
+node_modules/
+bower_components/
+
+# ignore OS generated files
+ehthumbs.db
+Thumbs.db
+
+# ignore Editor files
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+.vscode/
+
+# Local Netlify folder
+.netlify
