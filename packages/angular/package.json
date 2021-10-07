@@ -20,7 +20,7 @@
     "test": "echo 'angular no tests yet'",
     "tsc": "tsc -p .",
     "validate": "npm i && npm run lint && npm run test && npm run build",
-    "delete.dependencies": " rm -R node_modules && rm -R dist && rm -R build && rm package-lock.json",
+    "delete.dependencies": "rm -R __ivy_ngcc__ && rm -R node_modules && rm -R node_modules && rm -R dist && rm -R build && rm package-lock.json",
     "reboot": "npm run delete.dependencies && npm install && npm link @astrouxds/astro-web-components"
   },
   "module": "dist/fesm5.js",
