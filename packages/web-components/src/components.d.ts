@@ -11890,7 +11890,7 @@ export namespace Components {
         /**
           * Control the padding around the input field
          */
-        "size": string;
+        "size": 'small' | 'medium' | 'large';
         /**
           * The input step attribute
          */
@@ -32014,7 +32014,7 @@ declare namespace LocalJSX {
         /**
           * Control the padding around the input field
          */
-        "size"?: string;
+        "size"?: 'small' | 'medium' | 'large';
         /**
           * The input step attribute
          */
