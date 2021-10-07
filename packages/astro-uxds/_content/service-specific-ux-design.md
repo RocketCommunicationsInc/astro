@@ -7,8 +7,9 @@ title: Service Specific UX Design
 ---
 
 # Service Specific UX Design
+
 :::note
-The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 5 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, *not* visual design guidance.
+The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 5 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
 :::
 The goal of the Service Specific UX Design effort is to promote the development of consistent, robust applications to support Enterprise Ground Services (EGS) by applying UX design process and the Astro Space UX Design System to create, document and implement baseline designs as interactive sample apps. The work described here focused on two key EGS services, [Ground Resource Management (GRM)][grm-designs] and [Telemetry, Tracking & Command (TT&C)][ttc-designs] and followed the process below:
 
@@ -24,7 +25,7 @@ This effort included many hours of interviews with users and stakeholders, detai
 
 The UX research conducted on GRM services drove the design of three sample apps integrated into the GRM App Suite. The [GRM Dashboard][grm-dashboard] provides space situational awareness to the operator by consolidating and surfacing the most important information related to contacts and equipment. In addition to this primary usage, the GRM App Suite supports a comprehensive set of secondary tasks for managing contacts and equipment in the [GRM Schedule][grm-schedule] and [GRM Equipment Manager][grm-equipment] apps. You can get an overview of the design work on the [About the GRM Designs page][grm-designs] or use one of the links below to get more information about a particular app.
 
-![](/img/service-specific-ux-design/grm-dashboard-app.png "")
+![](/img/service-specific-ux-design/grm-dashboard-app.png)
 
 [GRM Dashboard][grm-dashboard]
 

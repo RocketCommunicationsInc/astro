@@ -54,7 +54,6 @@ Pass properties via attributes similar to the native [HTML Input Range](https://
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property    | Attribute    | Description                                                                                                                                                                                                   | Type                  | Default                                   |
@@ -69,14 +68,12 @@ Pass properties via attributes similar to the native [HTML Input Range](https://
 | `step`      | `step`       | Step amount of slider value.                                                                                                                                                                                  | `number`              | `1`                                       |
 | `value`     | `value`      | Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) | `number`              | `(this.max! - this.min!) / 2 + this.min!` |
 
-
 ## Events
 
-| Event       | Description                                                                                                                                     | Type               |
-| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
-| `rux-blur`  | Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)            | `CustomEvent<any>` |
-| `rux-input` | Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) | `CustomEvent<any>` |
-
+| Event      | Description                                                                                                                                     | Type               |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| `ruxblur`  | Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)            | `CustomEvent<any>` |
+| `ruxinput` | Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) | `CustomEvent<any>` |
 
 ## Slots
 
@@ -84,14 +81,12 @@ Pass properties via attributes similar to the native [HTML Input Range](https://
 | --------- | ---------------- |
 | `"label"` | The slider label |
 
-
 ## Shadow Parts
 
 | Part           | Description                              |
 | -------------- | ---------------------------------------- |
 | `"form-field"` | The form-field wrapper container         |
 | `"label"`      | The input label when `label` prop is set |
-
 
 ## CSS Custom Properties
 
@@ -111,7 +106,6 @@ Pass properties via attributes similar to the native [HTML Input Range](https://
 | `--slider-track-height`                    | the slider track height                                     |
 | `--slider-value-percent`                   | The current value of the slider in a percent.               |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

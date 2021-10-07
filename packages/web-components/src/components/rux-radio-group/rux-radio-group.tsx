@@ -61,7 +61,7 @@ export class RuxRadioGroup implements FormFieldInterface {
     /**
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
      */
-    @Event({ eventName: 'rux-change' }) ruxChange!: EventEmitter<any>
+    @Event({ eventName: 'ruxchange' }) ruxChange!: EventEmitter<any>
 
     @Watch('value')
     emitChange() {

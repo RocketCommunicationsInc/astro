@@ -2,6 +2,13 @@
 
 ## [0.0.18] (unreleased)
 
+### Event names
+
+-   Gloably updated event names from camel case to lower case to be compatible with angular event name formats
+-   Updated unit tests, e2e tests, and stories to use lowercase event names `rux{$eventName}`
+-   Updated documentation for frameworks to reflect event name change
+-   Updated react tests to use lowercase event names `onRux{$eventName}`
+
 ### Breaking Changes
 
 #### Select
@@ -21,6 +28,7 @@ should now become:
 ```
 <rux-option value="1" label="One"></rux-option>
 ```
+
 ## [0.0.17] 2021-09-24
 
 ### Switch

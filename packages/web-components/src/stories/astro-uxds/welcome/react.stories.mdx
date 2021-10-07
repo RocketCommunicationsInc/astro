@@ -113,7 +113,7 @@ const SegmentedButton = () => {
     <div>
       <RuxSegmentedButton data={dataArr} />
       <RuxInput
-          onRux-change={(e: CustomEvent<HTMLRuxInputElement>) => {
+          onRuxchange={(e: CustomEvent<HTMLRuxInputElement>) => {
             const target = e.target as HTMLInputElement;
             setInputVal(target.value);
           }}
@@ -152,15 +152,15 @@ const GlobalStatusBar = () => {
 
 ## Listening To Events
 
-Astro Components emit their own custom events, prefixed with `onRux-`.
+Astro Components emit their own custom events, prefixed with `onRux`.
 
 ```jsx
 const MyComp = () => {
     return (
         <div>
             <RuxInput
-                onRux-input={() => console.log('Heard ruxInput!')}
-                onRux-change={() => console.log('Heard ruxChange!')}
+                onRuxinput={() => console.log('Heard ruxinput!')}
+                onRuxchange={() => console.log('Heard ruxchange!')}
             />
         </div>
     )
@@ -174,7 +174,7 @@ const MyComp = () => {
   return (
     <div>
       <RuxInput
-          onRux-change={(e: CustomEvent<HTMLRuxInputElement>) =>
+          onRuxchange={(e: CustomEvent<HTMLRuxInputElement>) =>
             {
               const target = e.target as HTMLInputElement;
               console.log(`Here is e.target.value: ${target.value}`)
@@ -191,7 +191,7 @@ It is **highly** encouraged to listen to these custom events rather than default
 React events are different from their native JS counterparts, some bugs can arise from using default React
 events.
 
-Because Astro components were built using [Stencil](https://stenciljs.com/), the custom events were named following the JavaScript convention. React handles onChange differently than JavaScript, therefore the `onRux-input` event
+Because Astro components were built using [Stencil](https://stenciljs.com/), the custom events were named following the JavaScript convention. React handles onChange differently than JavaScript, therefore the `onRuxinput` event
 is the equivalent of React's onChange. [React onChange event docs.](https://reactjs.org/docs/dom-elements.html#onchange)
 
 ## Methods
@@ -272,7 +272,7 @@ const MyComp = () => {
     return (
         <div>
             <RuxInput
-                onRux-input={(e) => setMyInput(e.target.value))}
+                onRuxinput={(e) => setMyInput(e.target.value))}
             />
         </div>
     )
@@ -297,7 +297,7 @@ class MyComp extends React.Component {
     render() {
         return (
             <div>
-                <RuxInput onRux-input={(e) => this.handleInput(e)} />
+                <RuxInput onRuxinput={(e) => this.handleInput(e)} />
             </div>
         )
     }
@@ -319,7 +319,7 @@ const MyComp = () => {
     return (
         <div>
             <RuxInput
-                onRux-input={(e: CustomEvent<HTMLRuxInputElement>) => {
+                onRuxinput={(e: CustomEvent<HTMLRuxInputElement>) => {
                     const target = e.target as HTMLInputElement
                     setMyInput(target.value)
                   }}

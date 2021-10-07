@@ -44,7 +44,7 @@ export class RuxModal {
      * Event that is fired when modal closes
      */
     @Event({
-        eventName: 'rux-modal-closed',
+        eventName: 'ruxmodalclosed',
         composed: true,
         bubbles: true,
     })
@@ -146,7 +146,7 @@ export class RuxModal {
                     <div part="wrapper" class="rux-modal__wrapper">
                         <dialog class="rux-modal__dialog" role="dialog">
                             <header class="rux-modal__titlebar">
-                                <h1>{modalTitle}</h1>
+                                <div>{modalTitle}</div>
                             </header>
                             <div class="rux-modal__content">
                                 <div class="rux-modal__message">

@@ -6,9 +6,11 @@
     border-top-color: var(--table-header-border-color);
     background: var(--table-header-background-color);
     color: var(--table-header-text-color);
-    font-size: 1.125rem;
-    font-size: var(--font-size-xl);
-    font-weight: 400;
+
+    font-family: var(--font-h5-font-family);
+    font-size: var(--font-h5-font-size);
+    font-weight: var(--font-h5-font-weight);
+    letter-spacing: var(--font-h5-letter-spacing);
     padding: 0.625rem 1rem;
     white-space: nowrap;
 }

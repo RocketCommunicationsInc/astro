@@ -158,7 +158,7 @@
               "numeral": 8,
               "rule": "Inline Validation Text shall replace Help Text when Help Text is present under a form element and an error state is triggered.",
               "status": "new"
-            }            
+            }
           ]
         }
       ]
@@ -628,7 +628,7 @@
               "numeral": 8,
               "rule": "Radio Button list item Help Text shall be left-aligned to the item’s text and not its icon.",
               "status": "new"
-            }             
+            }
           ]
         },
         {
@@ -661,7 +661,7 @@
               "numeral": 5,
               "rule": "Inline Validation Text shall be left-aligned under the relevant Search field, regardless of location of the label.",
               "status": "new"
-            }    
+            }
           ]
         },
         {
@@ -693,7 +693,7 @@
               "numeral": 5,
               "rule": "Help Text shall be left-aligned under the relevant Segmented Button, regardless of location of the label.",
               "status": "new"
-            }            
+            }
           ]
         },
         {
@@ -769,7 +769,7 @@
               "numeral": 4,
               "rule": "Help Text shall be left-aligned under the relevant Switch, regardless of location of the label.",
               "status": "new"
-            }            
+            }
           ]
         },
         {

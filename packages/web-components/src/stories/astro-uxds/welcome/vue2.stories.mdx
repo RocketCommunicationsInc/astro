@@ -180,7 +180,7 @@ Astro Components emit their own custom events, prefixed with `rux`. You will lik
 ```js
 <template>
   <div>
-    <rux-input @rux-input="handleInput"></rux-input>
+    <rux-input @ruxinput="handleInput"></rux-input>
   </div>
 </template>
 
@@ -226,12 +226,12 @@ export default {
 ## Data Binding
 
 One current limitation with Web Components in Vue is that **v-model is not supported** because Astro Components emit their own custom events.
-Since `v-model` is just syntactic sugar for `:value` and `@input`, you just need to explicitly listen for `@rux-{event}`.
+Since `v-model` is just syntactic sugar for `:value` and `@input`, you just need to explicitly listen for `@rux{event}`.
 
 ```js
 <template>
   <div>
-    <rux-input :value="firstName" @rux-input="firstName = $event.target.value"></rux-input>
+    <rux-input :value="firstName" @ruxinput="firstName = $event.target.value"></rux-input>
     {{firstName}}
   </div>
 </template>

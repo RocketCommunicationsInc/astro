@@ -63,12 +63,12 @@ describe("createComponent - events", () => {
     const FakeBlur = jest.fn();
     const { webcomponent } = includeWebComponent<HTMLRuxRadioElement>(
       renderWithStrictMode(
-        <RuxRadio label="Props as a string!" onRux-blur={FakeBlur}>
+        <RuxRadio label="Props as a string!" onRuxblur={FakeBlur}>
           Label
         </RuxRadio>
       )
     );
     const attatchedEvents = (webcomponent as any).__events;
-    expect(Object.keys(attatchedEvents)).toContain("rux-blur");
+    expect(Object.keys(attatchedEvents)).toContain("ruxblur");
   });
 });

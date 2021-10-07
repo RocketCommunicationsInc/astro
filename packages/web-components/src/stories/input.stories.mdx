@@ -26,7 +26,6 @@ Input allow users to enter freeform text. Variations on this field often provide
 -   [Astro UXDS: Input Field](https://www.astrouxds.com/components/input-field/)
 
 export const Default = (args) => {
-    console.log('args', args)
     return html`
         <rux-input
             .label="${args.label}"
@@ -42,7 +41,7 @@ export const Default = (args) => {
             ?small="${args.small}"
             .value="${args.value}"
             .step="${args.step}"
-            type=${args.type}
+            .type=${args.type}
         ></rux-input>
     `
 }

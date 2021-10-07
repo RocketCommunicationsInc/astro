@@ -2,7 +2,6 @@
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property      | Attribute     | Description                                                                                                                                                                             | Type                                                                        | Default     |
@@ -22,7 +21,6 @@
 | `type`        | `type`        | The input type                                                                                                                                                                          | `"email" \| "number" \| "password" \| "search" \| "tel" \| "text" \| "url"` | `'text'`    |
 | `value`       | `value`       | The input value                                                                                                                                                                         | `string`                                                                    | `''`        |
 
-
 ## Events
 
 | Event        | Description                                                                                                                                                                    | Type               |
@@ -31,21 +29,19 @@
 | `rux-change` | Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)                                | `CustomEvent<any>` |
 | `rux-input`  | Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) | `CustomEvent<any>` |
 
-
 ## Slots
 
 | Slot      | Description     |
 | --------- | --------------- |
 | `"label"` | The input label |
 
-
 ## Shadow Parts
 
-| Part           | Description                              |
-| -------------- | ---------------------------------------- |
-| `"form-field"` | The form-field wrapper container         |
-| `"label"`      | The input label when `label` prop is set |
-
+| Part           | Description                                         |
+| -------------- | --------------------------------------------------- |
+| `"form-field"` | The form-field wrapper container                    |
+| `"icon"`       | The icon displayed when toggle-password prop is set |
+| `"label"`      | The input label when `label` prop is set            |
 
 ## CSS Custom Properties
 
@@ -58,20 +54,25 @@
 | `--input-selection-background-color` | the background color of highlighted text |
 | `--input-text-color`                 | the input text color                     |
 
-
 ## Dependencies
 
 ### Used by
 
- - [rux-log](../rux-log)
+-   [rux-log](../rux-log)
+
+### Depends on
+
+-   [rux-icon](../rux-icon)
 
 ### Graph
+
 ```mermaid
 graph TD;
+  rux-input --> rux-icon
   rux-log --> rux-input
   style rux-input fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

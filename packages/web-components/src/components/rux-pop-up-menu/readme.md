@@ -92,7 +92,6 @@ Extending Astro Pop Up Menu with custom content. Content passed without a slot n
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property    | Attribute | Description                                                                                                                                   | Type                       | Default     |
@@ -101,16 +100,14 @@ Extending Astro Pop Up Menu with custom content. Content passed without a slot n
 | `open`      | `open`    | Boolean which controls when to show the menu                                                                                                  | `boolean`                  | `false`     |
 | `triggerEl` | --        | Optional element to trigger opening and closing of the menu. If none is supplied the element where aria-controls === menu id will be assigned | `HTMLElement \| undefined` | `undefined` |
 
-
 ## Events
 
-| Event                 | Description                             | Type                |
-| --------------------- | --------------------------------------- | ------------------- |
-| `rux-menu-did-close`  | Emitted when the menu is closed.        | `CustomEvent<void>` |
-| `rux-menu-did-open`   | Emitted when the menu is open.          | `CustomEvent<void>` |
-| `rux-menu-will-close` | Emitted when the menu is about to close | `CustomEvent<void>` |
-| `rux-menu-will-open`  | Emitted when the menu is about to open. | `CustomEvent<void>` |
-
+| Event              | Description                             | Type                |
+| ------------------ | --------------------------------------- | ------------------- |
+| `ruxmenudidclose`  | Emitted when the menu is closed.        | `CustomEvent<void>` |
+| `ruxmenudidopen`   | Emitted when the menu is open.          | `CustomEvent<void>` |
+| `ruxmenuwillclose` | Emitted when the menu is about to close | `CustomEvent<void>` |
+| `ruxmenuwillopen`  | Emitted when the menu is about to open. | `CustomEvent<void>` |
 
 ## Methods
 
@@ -122,8 +119,6 @@ Closes the menu. If the menu is already closed it returns 'false'.
 
 Type: `Promise<boolean>`
 
-
-
 ### `isOpen() => Promise<boolean>`
 
 Returns 'true' if the menu is open, 'false' if it is not.
@@ -131,8 +126,6 @@ Returns 'true' if the menu is open, 'false' if it is not.
 #### Returns
 
 Type: `Promise<boolean>`
-
-
 
 ### `show() => Promise<boolean>`
 
@@ -142,8 +135,6 @@ Opens the menu. If the menu is already open it returns 'false'.
 
 Type: `Promise<boolean>`
 
-
-
 ### `toggle() => Promise<boolean>`
 
 Toggles the menu open or close. Will return 'true' on menu open and 'false' on menu close
@@ -152,15 +143,11 @@ Toggles the menu open or close. Will return 'true' on menu open and 'false' on m
 
 Type: `Promise<boolean>`
 
-
-
-
 ## Slots
 
 | Slot         | Description                                                                                        |
 | ------------ | -------------------------------------------------------------------------------------------------- |
 | `"menu-end"` | Area below the menu list to insert elements. For example, confirmation and/or cancel button group. |
-
 
 ## CSS Custom Properties
 
@@ -173,7 +160,6 @@ Type: `Promise<boolean>`
 | `--popup-menu-caret-size`             | Size of Caret                       |
 | `--popup-menu-transition-speed`       | Transition Time of Pop Up Animation |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

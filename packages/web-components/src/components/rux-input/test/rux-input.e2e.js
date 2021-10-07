@@ -18,7 +18,7 @@ describe('Input Field with Form', () => {
 
         cy.get('#formSubmitBtn').click()
 
-        cy.get('#log').children().its('length').should('eq', 4)
+        cy.get('#log').children().its('length').should('eq', 5)
 
         cy.get('#log').contains(`ruxInput:${testString}`)
         cy.get('#log').contains(`nativeInput:${testString}`)
@@ -38,7 +38,7 @@ describe('Input Field with Form', () => {
 
         cy.get('#formSubmitBtn').click()
 
-        cy.get('#log').children().its('length').should('eq', 4)
+        cy.get('#log').children().its('length').should('eq', 5)
 
         cy.get('#log').should('not.contain', `ruxInput2:${testString}`)
         cy.get('#log').should('not.contain', `nativeInput2:${testString}`)
@@ -79,5 +79,17 @@ describe('Input Field with Form', () => {
             .shadow()
             .find('.rux-help-text')
             .contains('Test Help Text')
+    })
+    it('adds rux-icon if type is password', () => {
+        cy.get('#ruxInput4').shadow().find('rux-icon').should('exist')
+    })
+    it('changes icon when icon is clicked', () => {
+        cy.get('#ruxInput4').shadow().find('rux-icon').click({ force: true })
+        cy.get('#ruxInput4')
+            .shadow()
+            .find('rux-icon')
+            .shadow()
+            .find('rux-icon-visibility-off')
+            .should('exist')
     })
 })

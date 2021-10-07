@@ -85,7 +85,6 @@ Indeterminate progress
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property    | Attribute    | Description                                                                         | Type                  | Default     |
@@ -93,7 +92,6 @@ Indeterminate progress
 | `hideLabel` | `hide-label` | Hides the progress label                                                            | `boolean`             | `false`     |
 | `max`       | `max`        | For progress bars where progress bars have a maximum value greater or less than 100 | `number`              | `100`       |
 | `value`     | `value`      | Current progress value between 0 and 100 (or the max, if defined below).            | `number \| undefined` | `undefined` |
-
 
 ## CSS Custom Properties
 
@@ -109,7 +107,6 @@ Indeterminate progress
 | `--progress-radius`                             | The border radius of rux-progress bar          |
 | `--progress-width`                              | The width of rux-progress                      |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

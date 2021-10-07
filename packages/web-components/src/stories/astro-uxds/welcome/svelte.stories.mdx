@@ -153,7 +153,7 @@ Astro Components emit their own custom events, prefixed with `rux`. You will lik
 </script>
 
 <div>
-    <rux-checkbox on:rux-change="{sayHello}"> Click to say hello </rux-checkbox>
+    <rux-checkbox on:ruxchange="{sayHello}"> Click to say hello </rux-checkbox>
 </div>
 ```
 
@@ -221,7 +221,7 @@ Data binding must be done manually by creating an event handler and listening to
 </script>
 
 <div>
-    <rux-input on:rux-input="{handleInput}" />
+    <rux-input on:ruxinput="{handleInput}" />
 
     <h1>Hello {name}!</h1>
 </div>

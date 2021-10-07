@@ -53,7 +53,6 @@ Pass properties as slotted components in the Astro Pop Up Menu or Astro Select M
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property   | Attribute  | Description                                                                                                                                                                                                                                                                               | Type                  | Default     |
@@ -65,20 +64,17 @@ Pass properties as slotted components in the Astro Pop Up Menu or Astro Select M
 | `target`   | `target`   | Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.                                                                                                                                       | `string \| undefined` | `undefined` |
 | `value`    | `value`    | Value returned when item is selected. If no value is given, the text content will be used.                                                                                                                                                                                                | `any`                 | `undefined` |
 
-
 ## Events
 
-| Event                    | Description                                     | Type                  |
-| ------------------------ | ----------------------------------------------- | --------------------- |
-| `rux-menu-item-selected` | Emitted when item is clicked. Ex `{value : 10}` | `CustomEvent<object>` |
-
+| Event                 | Description                                     | Type                  |
+| --------------------- | ----------------------------------------------- | --------------------- |
+| `ruxmenuitemselected` | Emitted when item is clicked. Ex `{value : 10}` | `CustomEvent<object>` |
 
 ## Slots
 
 | Slot      | Description                                   |
 | --------- | --------------------------------------------- |
 | `"start"` | before element text. Typically used for icons |
-
 
 ## CSS Custom Properties
 
@@ -88,7 +84,6 @@ Pass properties as slotted components in the Astro Pop Up Menu or Astro Select M
 | `--popup-menu-item-hover-background-color` | Menu Item Hover Background Color |
 | `--popup-menu-text-color`                  | Menu Text Color                  |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

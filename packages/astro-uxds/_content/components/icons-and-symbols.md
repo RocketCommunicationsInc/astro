@@ -118,5 +118,3 @@ An Icon Sub-Label provides additional information to the user and may be dynamic
 ![Do: In a vertical layout, align vertically based on the center of each Icon when height and width vary.](/img/components/icons-do-6.png "Do: In a vertical layout, align vertically based on the center of each Icon when height and width vary.")
 
 :::
-
-
