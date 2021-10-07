@@ -1100,6 +1100,8 @@ import {
   RuxTextarea,
   RuxTree,
   RuxTreeNode,
+  RuxOption,
+  RuxOptionGroup,
 } from "./directives/proxies";
 
 const DECLARATIONS = [
@@ -2203,6 +2205,8 @@ const DECLARATIONS = [
   RuxTextarea,
   RuxTree,
   RuxTreeNode,
+  RuxOption,
+  RuxOptionGroup,
 ];
 
 @NgModule({

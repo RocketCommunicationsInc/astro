@@ -1,22 +1,22 @@
-import { Directive, ElementRef } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Directive, ElementRef } from "@angular/core";
+import { NG_VALUE_ACCESSOR } from "@angular/forms";
 
-import { ValueAccessor } from './value-accessor';
+import { ValueAccessor } from "./value-accessor";
 
 @Directive({
   /* tslint:disable-next-line:directive-selector */
-  selector: 'rux-input, rux-textarea, rux-radio, rux-radio-group',
+  selector: "rux-input, rux-textarea, rux-radio, rux-radio-group",
   host: {
-    '(ruxInput)': 'handleChangeEvent($event.target.value)',
-    '(ruxChange)': 'handleChangeEvent($event.target.value)'
+    "(ruxinput)": "handleChangeEvent($event.target.value)",
+    "(ruxchange)": "handleChangeEvent($event.target.value)",
   },
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: TextValueAccessor,
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class TextValueAccessor extends ValueAccessor {
   constructor(el: ElementRef) {

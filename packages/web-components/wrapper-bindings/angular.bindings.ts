@@ -3,19 +3,19 @@ import { ValueAccessorConfig } from '@stencil/angular-output-target'
 export const angularValueAccessorBindings: ValueAccessorConfig[] = [
     {
         elementSelectors: ['rux-input', 'rux-textarea'],
-        event: 'ruxInput',
+        event: 'ruxinput',
         targetAttr: 'value',
         type: 'text',
     },
     {
         elementSelectors: ['rux-checkbox', 'rux-switch'],
-        event: 'ruxInput',
+        event: 'ruxchange',
         targetAttr: 'checked',
         type: 'boolean',
     },
     {
         elementSelectors: ['rux-radio', 'rux-radio-group'],
-        event: 'ruxChange',
+        event: 'ruxchange',
         targetAttr: 'value',
         type: 'text',
     },

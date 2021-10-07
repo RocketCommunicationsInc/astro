@@ -20051,6 +20051,42 @@ export class RuxNotification {
   }
 }
 
+export declare interface RuxOption extends Components.RuxOption {}
+@ProxyCmp({
+  inputs: ["label", "value"],
+})
+@Component({
+  selector: "rux-option",
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: "<ng-content></ng-content>",
+  inputs: ["label", "value"],
+})
+export class RuxOption {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+export declare interface RuxOptionGroup extends Components.RuxOptionGroup {}
+@ProxyCmp({
+  inputs: ["label"],
+})
+@Component({
+  selector: "rux-option-group",
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: "<ng-content></ng-content>",
+  inputs: ["label"],
+})
+export class RuxOptionGroup {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
 export declare interface RuxPopUpMenu extends Components.RuxPopUpMenu {}
 @ProxyCmp({
   inputs: ["anchorEl", "open", "triggerEl"],
