@@ -84,8 +84,10 @@ rux-button-group {
         color: var(--modal-title-color);
         user-select: none;
         cursor: move;
-        font-size: 24px;
-        font-weight: normal;
+        font-family: var(--font-h2-font-family);
+        font-size: var(--font-h2-font-size);
+        font-weight: var(--font-h2-font-weight);
+        letter-spacing: var(--font-h2-letter-spacing);
     }
 
     &__content {
