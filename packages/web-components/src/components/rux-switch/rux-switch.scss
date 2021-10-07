@@ -2,9 +2,6 @@
 :host {
     display: block;
 
-    /** @prop --switch-hover-off-color: the Switch hover off color */
-    --switch-hover-off-color: var(--hover);
-
     /**
       * @prop --switch-background-color: the Switch off color
       */
@@ -15,6 +12,12 @@
       * @prop --switch-hover-on-color: the Switch hover on color
       */
     --switch-hover-on-color: var(--primary);
+
+    /**
+      * @prop --switch-hover-off-color: the Switch hover off color
+      */
+
+    --switch-hover-off-color: var(--primary);
 
     /** @prop --switch-on-color: the Switch on color */
     --switch-on-color: var(--primary);
