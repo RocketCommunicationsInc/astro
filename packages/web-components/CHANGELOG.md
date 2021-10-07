@@ -2,6 +2,11 @@
 
 ## [0.0.18] (unreleased)
 
+### Input
+
+-   Inputs with `type="password"` with now support toggle show/hide by including the `visibility` and `visibility-off` rux-icons as clickable.
+-   Password inputs now swap types between `password` and `text` to show/hide the password.
+
 ### Event names
 
 -   Gloably updated event names from camel case to lower case to be compatible with angular event name formats
