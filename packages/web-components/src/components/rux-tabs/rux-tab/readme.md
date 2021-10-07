@@ -128,14 +128,12 @@ Astro UXDS Tab (child) properties are passed as simple attributes on the individ
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property   | Attribute  | Description                                                                                                    | Type      | Default |
 | ---------- | ---------- | -------------------------------------------------------------------------------------------------------------- | --------- | ------- |
 | `disabled` | `disabled` | If present, sets a disabled state on this tab item, indicating it cannot be selected by user action.           | `boolean` | `false` |
 | `selected` | `selected` | If present, overrides which tab is selected on load / mount. By default, the first <rux-tab> item is selected. | `boolean` | `false` |
-
 
 ## CSS Custom Properties
 
@@ -147,7 +145,6 @@ Astro UXDS Tab (child) properties are passed as simple attributes on the individ
 | `--tab-selected-text-color`   | Tab selected text color   |
 | `--tab-text-color`            | Tab text color            |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

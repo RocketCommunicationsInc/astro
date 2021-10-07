@@ -4,7 +4,6 @@ RuxDatetime is a utility component that provides a convenient wrapper around the
 
 <!-- Auto Generated Below -->
 
-
 ## Usage
 
 ### Simple
@@ -24,8 +23,6 @@ RuxDatetime is a utility component that provides a convenient wrapper around the
 </rux-datetime>
 ```
 
-
-
 ## Properties
 
 | Property       | Attribute        | Description                      | Type                                                                   | Default      |
@@ -44,20 +41,20 @@ RuxDatetime is a utility component that provides a convenient wrapper around the
 | `weekday`      | `weekday`        | Format options for weekday       | `"long" \| "narrow" \| "short" \| undefined`                           | `undefined`  |
 | `year`         | `year`           | Format options for year          | `"2-digit" \| "numeric" \| undefined`                                  | `undefined`  |
 
-
 ## Dependencies
 
 ### Used by
 
- - [rux-log](../rux-log)
+-   [rux-log](../rux-log)
 
 ### Graph
+
 ```mermaid
 graph TD;
   rux-log --> rux-datetime
   style rux-datetime fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

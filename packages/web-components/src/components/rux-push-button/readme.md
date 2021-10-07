@@ -107,7 +107,6 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property   | Attribute   | Description                                                                                                                                                                                                                                                                                                   | Type                                          | Default         |
@@ -121,14 +120,12 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 | `size`     | `size`      | Changes size of a push button from medium to small or large by setting sizing classes rux-button--small rux-button--large                                                                                                                                                                                     | `"large" \| "medium" \| "small" \| undefined` | `undefined`     |
 | `value`    | `value`     | The value of the push button.                                                                                                                                                                                                                                                                                 | `string`                                      | `''`            |
 
-
 ## Events
 
-| Event        | Description                                                                                                                                                                    | Type               |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------ |
-| `rux-blur`   | Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)                                           | `CustomEvent<any>` |
-| `rux-change` | Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) | `CustomEvent<any>` |
-
+| Event       | Description                                                                                                                                                                    | Type               |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------ |
+| `ruxblur`   | Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)                                           | `CustomEvent<any>` |
+| `ruxchange` | Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) | `CustomEvent<any>` |
 
 ## CSS Custom Properties
 
@@ -141,20 +138,20 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 | `--pushbutton-selected-text-color`       | the Push Button text color when checked       |
 | `--pushbutton-text-color`                | the Push Button text color                    |
 
-
 ## Dependencies
 
 ### Depends on
 
-- [rux-icon](../rux-icon)
+-   [rux-icon](../rux-icon)
 
 ### Graph
+
 ```mermaid
 graph TD;
   rux-push-button --> rux-icon
   style rux-push-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

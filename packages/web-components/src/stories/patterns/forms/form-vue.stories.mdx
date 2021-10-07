@@ -52,21 +52,21 @@ Your template might look like:
     <rux-checkbox
       value="comments"
       :checked="form.notifications.includes('comments')"
-      @rux-change="updateNotifications('comments', $event.target.checked)"
+      @ruxchange="updateNotifications('comments', $event.target.checked)"
     >
       Comments
     </rux-checkbox>
     <rux-checkbox
       value="offers"
       :checked="form.notifications.includes('offers')"
-      @rux-change="updateNotifications('offers', $event.target.checked)"
+      @ruxchange="updateNotifications('offers', $event.target.checked)"
     >
       Offers
     </rux-checkbox>
     <rux-checkbox
       value="events"
       :checked="form.notifications.includes('events')"
-      @rux-change="updateNotifications('events', $event.target.checked)"
+      @ruxchange="updateNotifications('events', $event.target.checked)"
     >
       Events
     </rux-checkbox>

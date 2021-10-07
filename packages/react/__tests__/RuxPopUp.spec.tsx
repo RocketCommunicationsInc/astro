@@ -153,17 +153,17 @@ describe("createComponent - events", () => {
           ref={popRef}
           triggerEl={icon}
           id="1"
-          onRux-menu-will-close={FakeWillClose}
-          onRux-menu-will-open={FakeWillOpen}
-          onRux-menu-did-open={FakeDidOpen}
-          onRux-menu-did-close={FakeDidClose}
+          onRuxmenuwillclose={FakeWillClose}
+          onRuxmenuwillopen={FakeWillOpen}
+          onRuxmenudidopen={FakeDidOpen}
+          onRuxmenudidclose={FakeDidClose}
         ></RuxPopUpMenu>
       )
     );
     const attatchedEvents = (webcomponent as any).__events;
-    expect(Object.keys(attatchedEvents)).toContain("rux-menu-did-close");
-    expect(Object.keys(attatchedEvents)).toContain("rux-menu-did-open");
-    expect(Object.keys(attatchedEvents)).toContain("rux-menu-will-close");
-    expect(Object.keys(attatchedEvents)).toContain("rux-menu-will-open");
+    expect(Object.keys(attatchedEvents)).toContain("ruxmenudidclose");
+    expect(Object.keys(attatchedEvents)).toContain("ruxmenudidopen");
+    expect(Object.keys(attatchedEvents)).toContain("ruxmenuwillclose");
+    expect(Object.keys(attatchedEvents)).toContain("ruxmenuwillopen");
   });
 });

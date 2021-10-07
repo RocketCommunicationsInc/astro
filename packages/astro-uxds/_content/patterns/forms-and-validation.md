@@ -132,7 +132,7 @@ Examples of configuration options for validation of Input Fields:
 
 ![Time - Input must be a valid time. Text that cannot be recognized as a valid time is indicated with a warning icon and instructional text.](/img/patterns/val-time.png "Time - Input must be a valid time. Text that cannot be recognized as a valid time is indicated with a warning icon and instructional text.")
 
-![Checkboxes can be configured to require input, where at least one item in a group must be selected.](/img/patterns/val-group-checkbox.png 'Checkboxes can be configured to require input, where at least one item in a group must be selected.')
+![Checkboxes can be configured to require input, where at least one item in a group must be selected.](/img/patterns/val-group-checkbox.png "Checkboxes can be configured to require input, where at least one item in a group must be selected.")
 
 ![Select Menus can be configured to require input, where at least one item in the menu must be selected.](/img/patterns/val-select-menu-input.png "Select Menus can be configured to require input, where at least one item in the menu must be selected.")
 

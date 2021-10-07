@@ -38,4 +38,3 @@ New events are added to the top of the Table. The Log has two subtly different m
 - The defined scrolling rules apply when a Search term is entered. If the Table is scrolled to the top, it should remain locked to the top. New events that match the Search term are added to the top.
 
 ![View of Search Text Applied Within Field](/img/components/log-search.png "View of Search Text Applied Within Field")
-

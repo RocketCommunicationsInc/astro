@@ -137,7 +137,7 @@ describe('rux-log', () => {
         const input = page.root.shadowRoot.querySelector('rux-input')
         input.value = 'USA'
         await page.waitForChanges()
-        input.dispatchEvent(new Event('rux-input'))
+        input.dispatchEvent(new Event('ruxinput'))
 
         await page.waitForChanges()
         expect(page.root.filter).toBe('USA')

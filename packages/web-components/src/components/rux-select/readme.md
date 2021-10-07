@@ -4,8 +4,8 @@ Select Menus allow users to select a value from a list of values.
 
 ## Guidelines
 
-- [Astro UXDS: Select](https://www.astrouxds.com/ui-components/select)
-- [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)
+-   [Astro UXDS: Select](https://www.astrouxds.com/ui-components/select)
+-   [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)
 
 ## Web Components Usage
 
@@ -46,7 +46,6 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property    | Attribute    | Description                                                                                                                                                                                       | Type                  | Default     |
@@ -62,14 +61,12 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 | `required`  | `required`   | Sets the field as required                                                                                                                                                                        | `boolean`             | `false`     |
 | `value`     | `value`      | The value of the selected option                                                                                                                                                                  | `string \| undefined` | `undefined` |
 
-
 ## Events
 
-| Event        | Description                                                                                                                          | Type                |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------- |
-| `rux-blur`   | Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) | `CustomEvent<any>`  |
-| `rux-change` | Event Emitted when the Value of the Select is Changed                                                                                | `CustomEvent<void>` |
-
+| Event       | Description                                                                                                                          | Type                |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------- |
+| `ruxblur`   | Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) | `CustomEvent<any>`  |
+| `ruxchange` | Event Emitted when the Value of the Select is Changed                                                                                | `CustomEvent<void>` |
 
 ## Slots
 
@@ -77,7 +74,6 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 | ------------- | ------------------ |
 | `"(default)"` | The select options |
 | `"label"`     | The select label   |
-
 
 ## CSS Custom Properties
 
@@ -99,7 +95,6 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 | `--select-menu-option-text-hover-color`          | Text Hover Color of the Select Menu Options   |
 | `--select-menu-text-color`                       | Text Color of the Select Input                |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_
