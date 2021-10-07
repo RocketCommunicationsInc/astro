@@ -1,11 +1,11 @@
 :host {
-    /** @prop() --log-header-background-color: the log header background color*/
+    /** @prop() --log-header-background-color: the log header background color */
     --log-header-background-color: var(--global-status-bar);
 
-    /** @prop() --log-filter-background-color: the log filter background color*/
+    /** @prop() --log-filter-background-color: the log filter background color */
     --log-filter-background-color: var(--primary-alt);
 
-    /** @prop() --log-filter-text-color: the log filter text color*/
+    /** @prop() --log-filter-text-color: the log filter text color */
     --log-filter-text-color: var(--inverse-text);
 
     display: block;

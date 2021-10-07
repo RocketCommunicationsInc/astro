@@ -3,18 +3,22 @@
     *  @prop --progress-padding: The padding of rux-progress
     */
     --progress-padding: 0.125rem 0 0 0.125rem;
+
     /**
     * @prop --progress-radius: The border radius of rux-progress bar
     */
     --progress-radius: 0.625rem;
+
     /**
     * @prop --progress-height: The height of rux-progress
     */
     --progress-height: 0.875rem;
+
     /**
     * @prop --progress-width: The width of rux-progress
     */
     --progress-width: calc(100% - 4px);
+
     /**
     * @prop --progress-determinate-bar-background-color: Bar background color of determinate progress
     */
@@ -42,7 +46,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.075rem 0px;
+    padding: 0.075rem 0;
 }
 
 :host([hidden]) {
