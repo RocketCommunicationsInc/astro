@@ -31,11 +31,11 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 
 import { AppComponent } from "./app.component";
-import { AstroComonentsModule } from "@astrouxds/angular";
+import { AstroComponentsModule } from "@astrouxds/angular";
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AstroComonentsModule],
+  imports: [BrowserModule, AstroComponentsModule],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [],
