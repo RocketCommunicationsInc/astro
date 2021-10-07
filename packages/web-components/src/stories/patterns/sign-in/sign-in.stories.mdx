@@ -1,0 +1,33 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Astro UXDS/Patterns/Sign In" />
+
+<style>
+    {`
+  .sbdocs .sbdocs-content {
+    max-width: 90%;
+  }
+  rux-tabs {
+    margin-bottom: 1rem;
+  }
+  .sandbox {
+    width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;
+  }
+`}
+</style>
+
+# Sign In Pattern
+
+## Example
+
+Basic HTML/JS example of a sign in page using Astro components.
+
+<iframe
+    src="https://codesandbox.io/embed/rux-sign-in-template-equzg?fontsize=14&hidenavigation=1&theme=dark"
+    class="sandbox"
+    title="rux-sign-in-template"
+    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+> NOTE: There is an upcoming CSS property for password inputs, input-secruity, that may be used by Astro in the future. More information is available [here](https://drafts.csswg.org/css-ui/#input-security).
