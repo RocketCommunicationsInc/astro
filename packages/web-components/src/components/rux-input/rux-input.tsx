@@ -1,3 +1,4 @@
+import { tsThisType } from '@babel/types'
 import {
     Prop,
     Host,
@@ -152,10 +153,6 @@ export class RuxInput implements FormFieldInterface {
             'slotchange',
             this._handleSlotChange
         )
-        //If being used as a pw field, don't want to submit as text field
-        if (this.togglePassword) {
-            this.isPasswordVisible = false
-        }
     }
 
     componentWillLoad() {
@@ -209,7 +206,6 @@ export class RuxInput implements FormFieldInterface {
             : this.togglePassword && this.isPasswordVisible
             ? (realType = 'text')
             : (realType = this.type)
-
         return realType
     }
 
@@ -292,6 +288,7 @@ export class RuxInput implements FormFieldInterface {
                             'rux-input--search': type === 'search',
                         }}
                         id={this.inputId}
+                        autoComplete={this.togglePassword ? 'off' : 'on'}
                         onChange={_onChange}
                         onInput={_onInput}
                         onBlur={() => _onBlur()}
