@@ -1,5 +1,5 @@
 ---
-tags: ['ttc', 'egs']
+tags: ["ttc", "egs"]
 path: /ttc-service-ux-design/ttc-command
 date: Last Modified
 layout: interior.template.njk
@@ -7,8 +7,9 @@ title: TT&C Command
 ---
 
 # TT&C Command
+
 :::note
-The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 5 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, *not* visual design guidance.
+The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 5 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
 :::
 [Launch TT&C Command Sample App](https://ttc-command.astrouxds.com/) | [Design Materials and Source Code](#contentBottom)
 
@@ -96,8 +97,8 @@ Below is an animated walkthrough of a representative task flow using the TT&C Mo
 
 Below are design and development resources to get you started on an app that supports TT&C services. Note that there are some discrepancies between the design documents and the [TT&C Command Sample App](https://ttc-command.astrouxds.com/) due to design improvements that were introduced late in the app development cycle.
 
-| Resources                                                                                                                        | Description                                                                                                                                               |
-| -------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [TT&C Design Specifications (pdf)]( https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/ttc-specifications.pdf) | The TT&C Design Specification contains information on use cases, task flows, UX research and wireframes for key features of the TT&C App Suite.           |
-| [TT&C Design Wireframes (pdf)]( https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/ttc-wireframes.pdf)         | The TT&C Design Wireframes document contains the complete set of wireframes (mid-fidelity renderings) of the screens designed for the TT&C App Suite.     |
-| [App Source Code (Git Repository)](https://bitbucket.org/rocketcom/tt-c-command/src/master/)                                     | The source code Git repository and other useful documentation for the TT&C Command App is hosted at bitbucket.org so that you can check it out in detail. |
+| Resources                                                                                                                       | Description                                                                                                                                               |
+| ------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [TT&C Design Specifications (pdf)](https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/ttc-specifications.pdf) | The TT&C Design Specification contains information on use cases, task flows, UX research and wireframes for key features of the TT&C App Suite.           |
+| [TT&C Design Wireframes (pdf)](https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/ttc-wireframes.pdf)         | The TT&C Design Wireframes document contains the complete set of wireframes (mid-fidelity renderings) of the screens designed for the TT&C App Suite.     |
+| [App Source Code (Git Repository)](https://bitbucket.org/rocketcom/tt-c-command/src/master/)                                    | The source code Git repository and other useful documentation for the TT&C Command App is hosted at bitbucket.org so that you can check it out in detail. |

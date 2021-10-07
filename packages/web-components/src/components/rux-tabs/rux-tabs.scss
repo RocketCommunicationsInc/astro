@@ -7,7 +7,10 @@
     box-sizing: border-box;
     display: flex;
     justify-content: flex-start;
-    font-size: 1.5rem;
+    font-family: var(--font-h2-font-family);
+    font-size: var(--font-h2-font-size);
+    letter-spacing: var(--font-h2-letter-spacing);
+    font-weight: var(--font-h2-font-weight);
     min-height: 5.625rem;
     height: 100%;
     width: auto;
@@ -25,6 +28,9 @@
 }
 
 :host([small]) {
+    font-family: var(--font-h5-font-family);
+    font-size: var(--font-h5-font-size);
+    letter-spacing: var(--font-h5-letter-spacing);
+    font-weight: var(--font-h5-font-weight);
     min-height: 3.125rem;
-    font-size: 1rem;
 }

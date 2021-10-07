@@ -66,4 +66,3 @@ Status colors are provided for both light and dark theme versions of Astro in He
 ::: note
 In light theme user interfaces all symbols indicating status must include a 1 pixel border set to black with an opacity of 50% to meet WCAG 2.0 Contrast Compliance.
 :::
-

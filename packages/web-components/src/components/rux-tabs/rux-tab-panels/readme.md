@@ -2,13 +2,11 @@
 
 <!-- Auto Generated Below -->
 
-
 ## Events
 
-| Event                 | Description                                             | Type                                     |
-| --------------------- | ------------------------------------------------------- | ---------------------------------------- |
-| `rux-register-panels` | Emits a list of the Tab Panels that have been passed in | `CustomEvent<HTMLRuxTabPanelsElement[]>` |
-
+| Event               | Description                                             | Type                                     |
+| ------------------- | ------------------------------------------------------- | ---------------------------------------- |
+| `ruxregisterpanels` | Emits a list of the Tab Panels that have been passed in | `CustomEvent<HTMLRuxTabPanelsElement[]>` |
 
 ## Slots
 
@@ -16,7 +14,6 @@
 | ------------- | ----------------------------------- |
 | `"(default)"` | Used for instances of rux-tab-panel |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

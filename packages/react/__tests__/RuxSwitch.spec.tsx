@@ -66,15 +66,15 @@ describe("createComponent - events", () => {
     const { webcomponent } = includeWebComponent<HTMLRuxSwitchElement>(
       renderWithStrictMode(
         <RuxSwitch
-          onRux-blur={FakeBlur}
-          onRux-input={FakeInput}
-          onRux-change={FakeChange}
+          onRuxblur={FakeBlur}
+          onRuxinput={FakeInput}
+          onRuxchange={FakeChange}
         ></RuxSwitch>
       )
     );
     const attatchedEvents = (webcomponent as any).__events;
-    expect(Object.keys(attatchedEvents)).toContain("rux-blur");
-    expect(Object.keys(attatchedEvents)).toContain("rux-input");
-    expect(Object.keys(attatchedEvents)).toContain("rux-change");
+    expect(Object.keys(attatchedEvents)).toContain("ruxblur");
+    expect(Object.keys(attatchedEvents)).toContain("ruxinput");
+    expect(Object.keys(attatchedEvents)).toContain("ruxchange");
   });
 });

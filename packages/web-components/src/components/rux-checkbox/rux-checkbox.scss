@@ -31,9 +31,10 @@
 .rux-form-field {
     display: flex;
     flex-direction: column;
-
-    font-family: var(--font-family);
-    font-size: var(--font-size);
+    font-family: var(--font-b1-font-family);
+    font-size: var(--font-b1-font-size);
+    letter-spacing: var(--font-b1-letter-spacing);
+    font-weight: var(--font-b1-font-weight);
     color: var(--default-text);
 }
 
@@ -139,10 +140,10 @@
 }
 
 .rux-help-text {
-    margin-top: 0.625rem;
-    color: var(--default-text);
-    font-size: var(--font-size-md);
-    font-family: var(--font-family);
-    font-weight: normal;
-    letter-spacing: 0.5px;
+  margin-top: 0.625rem;
+  color: var(--default-text);
+  font-size: var(--font-b2-font-size);
+  font-family: var(--font-b2-font-family);
+  font-weight: var(--font-b2-font-weight);
+  letter-spacing: var(--font-b2-letter-spacing);
 }

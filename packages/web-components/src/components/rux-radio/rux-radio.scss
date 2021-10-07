@@ -28,8 +28,10 @@
     display: flex;
     flex-direction: column;
 
-    font-family: var(--font-family);
-    font-size: var(--font-size);
+    font-family: var(--font-b1-font-family);
+    font-size: var(--font-b1-font-size);
+    letter-spacing: var(--font-b1-letter-spacing);
+    font-weight: var(--font-b1-font-weight);
     color: var(--default-text);
 }
 

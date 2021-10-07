@@ -16,7 +16,11 @@
     position: relative;
     box-sizing: border-box;
     padding: 0px;
-    font-size: 1rem;
+    font-family: var(--font-b1-font-family);
+    font-size: var(--font-b1-font-size);
+    font-weight: var(--font-b1-font-weight);
+    letter-spacing: var(--font-b1-letter-spacing);
+
     color: var(--tree-text-color);
     border: solid 1px var(--tree-border-color);
     background-color: var(--tree-background-color);

@@ -62,7 +62,10 @@ rux-icon {
     border-radius: 2px;
     padding: 0.5rem 0.25rem;
     color: var(--color-basics-white);
-    font-size: 0.75rem;
+    font-family: var(--font-b3-font-family);
+    font-size: var(--font-b3-font-size);
+    font-weight: var(--font-b3-font-weight);
+    letter-spacing: var(--font-b3-letter-spacing);
     text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -72,23 +75,26 @@ rux-icon {
 
 .rux-advanced-status__label {
     color: var(--default-text);
-    font-size: 0.875rem;
+    font-family: var(--font-b2-font-family);
+    font-size: var(--font-b2-font-size);
+    font-weight: var(--font-b2-font-weight);
+    letter-spacing: var(--font-b2-letter-spacing);
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
     line-height: 1.2;
     overflow: hidden;
-
     margin-top: 1rem;
-
     width: 100%;
     max-width: 6.25rem;
 }
 
 .rux-advanced-status__sublabel {
-    font-size: 0.75em;
-    color: var(--default-text);
-    opacity: 0.6;
+    font-family: var(--font-b3-font-family);
+    font-size: var(--font-b3-font-size);
+    font-weight: var(--font-b3-font-weight);
+    letter-spacing: var(--font-b3-letter-spacing);
+    color: var(--gsb-default-text);
     display: block;
 }
 

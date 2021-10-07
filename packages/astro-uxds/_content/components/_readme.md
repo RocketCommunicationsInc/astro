@@ -42,5 +42,5 @@ While the initial components were purposefully created to be framework-agnostic,
 - Eliminates future CSS class name changes
 - Code is generic; it follows a similar format to popular frameworks like Angular and React, without being prescriptive.
 - All the major JS frameworks were built to reflect the ideas of WebComponents and/or influenced the Web Component v1 specification; Web Components are an accepted and respected pattern in the JS community
-- Localized Web Component HTML and CSS minimizes or eliminates the need for complicated CSS naming structures e.g., ```.rux-button--small__light```
+- Localized Web Component HTML and CSS minimizes or eliminates the need for complicated CSS naming structures e.g., `.rux-button--small__light`
 - Web Components are a W3 standard, requiring no vendor lock-in or decisions about which frameworks to use. Chrome, Firefox, and Safari support Web Components v1 without the need for polyfills. Microsoft has committed to supporting the standard in a future version of Edge. Note: IE11+ supports Web Components via polyfills.

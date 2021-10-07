@@ -6,12 +6,13 @@ import { html, render } from 'lit-html'
     title="Forms/Select Menu"
     component="rux-select"
     argTypes={extractArgTypes('rux-select')}
-    subcomponents={{ 'RuxOptionGroup': 'rux-option-group', 'RuxOption': 'rux-option' }}
+    subcomponents={{
+        RuxOptionGroup: 'rux-option-group',
+        RuxOption: 'rux-option',
+    }}
     parameters={{
         actions: {
-            handles: [
-            'rux-change rux-select', 'rux-blur rux-select'
-            ],
+            handles: ['rux-change rux-select', 'rux-blur rux-select'],
         },
     }}
 />
@@ -38,7 +39,11 @@ export const Default = (args) => {
                 .errorText="${args.errorText}"
                 .helpText="${args.helpText}"
             >
-                <rux-option value="" selected label="Select an option"></rux-option>
+                <rux-option
+                    value=""
+                    selected
+                    label="Select an option"
+                ></rux-option>
                 <rux-option value="1.1" label="Option 1.1"></rux-option>
                 <rux-option value="1.2" label="Option 1.2"></rux-option>
                 <rux-option value="1.3" label="Option 1.3"></rux-option>
@@ -51,9 +56,9 @@ export const Default = (args) => {
 <Canvas>
     <Story
         args={{
-            label: "Select Menu",
+            label: 'Select Menu',
             inputId: 1,
-            labelId: 1
+            labelId: 1,
         }}
         name="Select Menu"
     >
@@ -62,6 +67,7 @@ export const Default = (args) => {
 </Canvas>
 
 ## API
+
 <ArgsTable of="rux-select" />
 
 ## Usage
@@ -69,14 +75,17 @@ export const Default = (args) => {
 > Select **requires** the use of the `<rux-option>` component instead of the native `<option>`. Make sure to set the label using the `label` property instead of a slot like you would with the native `<option>`
 
 ### Selecting Options
+
 The `value` property will sync the currently selected option value property
 
 ### Grouping
+
 For Grouping, make sure to use the Astro `<rux-option-group>` component instead of the native `<optgroup>`.
 
 ## Variants
 
 ### With Option Groups
+
 export const WithOptionGroups = (args) => {
     return html`
         <div style="width: 200px; margin: 0 auto;">
@@ -90,7 +99,11 @@ export const WithOptionGroups = (args) => {
                 .errorText="${args.errorText}"
                 .helpText="${args.helpText}"
             >
-                <rux-option value="" label="Select an option" selected></rux-option>
+                <rux-option
+                    value=""
+                    label="Select an option"
+                    selected
+                ></rux-option>
                 <rux-option-group label="Group one">
                     <rux-option value="1.1" label="Option 1.1"></rux-option>
                     <rux-option value="1.2" label="Option 1.2"></rux-option>
@@ -112,9 +125,9 @@ export const WithOptionGroups = (args) => {
 <Canvas>
     <Story
         args={{
-            label: "With option groups",
+            label: 'With option groups',
             inputId: 1,
-            labelId: 1
+            labelId: 1,
         }}
         name="With Option Groups"
     >
@@ -123,6 +136,7 @@ export const WithOptionGroups = (args) => {
 </Canvas>
 
 ### Disabled
+
 export const Disabled = (args) => {
     return html`
         <div style="width: 200px; margin: 0 auto;">
@@ -136,43 +150,11 @@ export const Disabled = (args) => {
                 .errorText="${args.errorText}"
                 .helpText="${args.helpText}"
             >
-                <rux-option value="" selected label="Select an option"></rux-option>
-                    <rux-option value="1.1" label="Option 1.1"></rux-option>
-                    <rux-option value="1.2" label="Option 1.2"></rux-option>
-                    <rux-option value="1.3" label="Option 1.3"></rux-option>
-                    <rux-option value="1.4" label="Option 1.4"></rux-option>
-            </rux-select>
-        </div>
-    `
-}
-
-<Canvas>
-    <Story
-        args={{
-            label: "Disabled Select Menu",
-            disabled: true,
-            inputId: 1,
-            labelId: 1
-        }}
-        name="Disabled"
-    >
-        {Disabled.bind()}
-    </Story>
-</Canvas>
-
-### Invalid
-export const Invalid = (args) => {
-    return html`
-        <div style="width: 200px; margin: 0 auto;">
-            <rux-select
-                ?disabled="${args.disabled}"
-                ?required="${args.required}"
-                ?invalid="${args.invalid}"
-                label="${args.label}"
-                input-id="${args.inputId}"
-                label-id="${args.labelId}"
-            >
-                <rux-option value="" selected label="Select an option"></rux-option>
+                <rux-option
+                    value=""
+                    selected
+                    label="Select an option"
+                ></rux-option>
                 <rux-option value="1.1" label="Option 1.1"></rux-option>
                 <rux-option value="1.2" label="Option 1.2"></rux-option>
                 <rux-option value="1.3" label="Option 1.3"></rux-option>
@@ -185,10 +167,51 @@ export const Invalid = (args) => {
 <Canvas>
     <Story
         args={{
-            label: "Invalid Select Menu",
+            label: 'Disabled Select Menu',
+            disabled: true,
+            inputId: 1,
+            labelId: 1,
+        }}
+        name="Disabled"
+    >
+        {Disabled.bind()}
+    </Story>
+</Canvas>
+
+### Invalid
+
+export const Invalid = (args) => {
+    return html`
+        <div style="width: 200px; margin: 0 auto;">
+            <rux-select
+                ?disabled="${args.disabled}"
+                ?required="${args.required}"
+                ?invalid="${args.invalid}"
+                label="${args.label}"
+                input-id="${args.inputId}"
+                label-id="${args.labelId}"
+            >
+                <rux-option
+                    value=""
+                    selected
+                    label="Select an option"
+                ></rux-option>
+                <rux-option value="1.1" label="Option 1.1"></rux-option>
+                <rux-option value="1.2" label="Option 1.2"></rux-option>
+                <rux-option value="1.3" label="Option 1.3"></rux-option>
+                <rux-option value="1.4" label="Option 1.4"></rux-option>
+            </rux-select>
+        </div>
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+            label: 'Invalid Select Menu',
             invalid: true,
             inputId: 1,
-            labelId: 1
+            labelId: 1,
         }}
         name="Invalid"
     >
@@ -209,7 +232,11 @@ export const WithHelpText = (args) => {
                 .errorText="${args.errorText}"
                 .helpText="${args.helpText}"
             >
-                <rux-option value="" selected label="Select an option"></rux-option>
+                <rux-option
+                    value=""
+                    selected
+                    label="Select an option"
+                ></rux-option>
                 <rux-option value="1.1" label="Option 1.1"></rux-option>
                 <rux-option value="1.2" label="Option 1.2"></rux-option>
                 <rux-option value="1.3" label="Option 1.3"></rux-option>
@@ -222,10 +249,10 @@ export const WithHelpText = (args) => {
 <Canvas>
     <Story
         args={{
-            label: "Select menu",
+            label: 'Select menu',
             inputId: 1,
             labelId: 1,
-            helpText: 'Help text'
+            helpText: 'Help text',
         }}
         name="With Help Text"
     >
@@ -246,7 +273,11 @@ export const WithErrorText = (args) => {
                 .errorText="${args.errorText}"
                 .helpText="${args.helpText}"
             >
-                <rux-option value="" selected label="Select an option"></rux-option>
+                <rux-option
+                    value=""
+                    selected
+                    label="Select an option"
+                ></rux-option>
                 <rux-option value="1.1" label="Option 1.1"></rux-option>
                 <rux-option value="1.2" label="Option 1.2"></rux-option>
                 <rux-option value="1.3" label="Option 1.3"></rux-option>
@@ -259,10 +290,10 @@ export const WithErrorText = (args) => {
 <Canvas>
     <Story
         args={{
-            label: "Select menu",
+            label: 'Select menu',
             inputId: 1,
             labelId: 1,
-            errorText: 'Error text'
+            errorText: 'Error text',
         }}
         name="With Error Text"
     >
@@ -284,5 +315,4 @@ customElements.define('rux-option', RuxOption)
 // Optional
 //import { RuxOptionGroup } from 'astro-web-components/dist/components/rux-option-group'
 //customElements.define('rux-option-group', RuxOptionGroup)
-
 ```

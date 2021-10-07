@@ -76,11 +76,11 @@ describe("createComponent - events", () => {
     const FakeInput = jest.fn();
     const { webcomponent } = includeWebComponent<HTMLRuxSliderElement>(
       renderWithStrictMode(
-        <RuxSlider onRux-blur={FakeBlur} onRux-input={FakeInput}></RuxSlider>
+        <RuxSlider onRuxblur={FakeBlur} onRuxinput={FakeInput}></RuxSlider>
       )
     );
     const attatchedEvents = (webcomponent as any).__events;
-    expect(Object.keys(attatchedEvents)).toContain("rux-blur");
-    expect(Object.keys(attatchedEvents)).toContain("rux-input");
+    expect(Object.keys(attatchedEvents)).toContain("ruxblur");
+    expect(Object.keys(attatchedEvents)).toContain("ruxinput");
   });
 });

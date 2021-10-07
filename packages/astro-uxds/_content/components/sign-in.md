@@ -16,7 +16,6 @@ theme: true
 The Sign in page is often the first interaction a user has with your product. This entry point experience is an important moment in establishing your product’s brand and experience and sets the tone for their overall experience with the product.
 “Signing in” provides an authentication method to validate a user’s unique identification and allow them access to protected areas of an application. A user provides their required identification and, if correct, they are provided access to the product.
 
-
 ::: caution
 When implementing validation and security measures Astro users should consult with their organization's IT/Security departments and adapt these patterns to suit the requirements of their organization’s best practices and security needs.
 :::
@@ -48,7 +47,6 @@ There are four established types of sign in workflows.
    SSO allows the user to authenticate to multiple systems using one identification and passcode method.
 4. Sign in with Multi-Factor Authentication (MFA)
    MFA requires the user to set up additional methods of identification, such as a PIN, or through a verification code sent to a user's mobile device.
-
 
 The Sign in can currently be configured to display _Sign in with Username or Email Plus Password_, _Sign in with SSO_ and validation.
 
@@ -91,7 +89,6 @@ The sign in UI elements can be added in 3 possible placement areas.
    - Draws user attention to the sign in process, without the need for a modal dialog to be placed over an essentially blank page
    - Ideal for initial entry points and when the user does not have access until after authentication
 
-
 ## Validation
 
 Effective error messaging is important for creating great experiences. Not being able to sign into an application is frustrating and blocks users from accomplishing their tasks.
@@ -105,7 +102,6 @@ Common client-side errors:
 - Invalid characters
 - Incorrect input format
 
-
 If there are server-side errors when the user submits the sign in form, the page should be reloaded, the password field cleared, and the user returned to the username input field. Use an inline notification to display field-specific errors (where they do not provide a security concern) and provide clear direction on how users should resolve the issue, and a validation summary for errors that are not field-specific (such as time-outs, a server being down, or lack of connection) or for errors that apply to multiple fields and could present a security concern when inline (e.g. when the username is not found, or the password is correct they are often grouped into one error, such as “Username or password is incorrect”.)
 
 Common server-side errors:
@@ -114,7 +110,6 @@ Common server-side errors:
 - Max # of sign in attempts reached
 - Account lock out
 - Database or system error
-
 
 ![Example of a full-page account lock out (access denied) screen](/img/components/signin-accessdenied-full.png "Example of a full-page account lock out (access denied) screen")
 

@@ -1,69 +1,69 @@
 // PAGE styles
-@page{
-  margin:.5cm;
-  margin-top:.5cm;
-  margin-bottom:.5cm;
+@page {
+  margin: 0.5cm;
+  margin-top: 0.5cm;
+  margin-bottom: 0.5cm;
 
-  &:left{
-    margin:.5cm;
+  &:left {
+    margin: 0.5cm;
   }
-  &:right{
-    margin:0.8cm;
+  &:right {
+    margin: 0.8cm;
   }
 }
 
-@media print{
+@media print {
   * {
     box-shadow: none !important;
-    background-color: none!important;
-    background:none!important;
+    background-color: none !important;
+    background: none !important;
   }
 
   body {
-    margin-top: .5cm;
-    // margin-bottom: 50mm; 
+    margin-top: 0.5cm;
+    // margin-bottom: 50mm;
     // margin-left: 0mm;
     // margin-right: 0mm;
   }
 
   .container {
-    .sidebar{
-      display:none!important;
+    .sidebar {
+      display: none !important;
       visibility: hidden;
     }
 
-    @at-root .site-footer,.home__email-signup{
-      display:none!important;
+    @at-root .site-footer,
+      .home__email-signup {
+      display: none !important;
       visibility: hidden;
     }
-
   }
-  .video-wrapper{
-    display:none!important;
+  .video-wrapper {
+    display: none !important;
     visibility: hidden;
   }
   img {
-    max-width:100%;
+    max-width: 100%;
   }
 
   //TYPE
   h1 {
     font-size: 21pt;
   }
-    
+
   h2 {
     font-size: 18pt;
     margin-top: 20px;
   }
 
-  h3{
-    font-size:16pt;
-    margin-top:20px;
+  h3 {
+    font-size: 16pt;
+    margin-top: 20px;
   }
 
-  .home__benefits{
-    .row-element{
-      box-shadow: none!important;
+  .home__benefits {
+    .row-element {
+      box-shadow: none !important;
     }
   }
 }

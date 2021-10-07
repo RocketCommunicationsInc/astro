@@ -49,7 +49,6 @@ As you conduct your research, complete each of these tasks to develop a comprehe
 - Interview project stakeholders.
 - Interview project technical leads.
 
-
 ## User Requirements
 
 UX Design begins with extracting and documenting user requirements. Understanding the needs, wants, and expectations of users creates the best user experience possible. Great apps go beyond meeting user requirements; they may solve problems that the user didn’t even know they had.

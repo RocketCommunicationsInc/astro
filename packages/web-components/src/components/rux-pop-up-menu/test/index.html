@@ -60,7 +60,7 @@
                 const menu = document.querySelectorAll('rux-menu-item')
 
                 menu.forEach((item) => {
-                    item.addEventListener('rux-menu-item-selected', (e) => {
+                    item.addEventListener('ruxmenuitemselected', (e) => {
                         item.innerHTML = `<strong>Value:</strong>${e.detail.value}`
                         log.appendChild(item)
                     })
