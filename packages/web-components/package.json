@@ -20,6 +20,7 @@
         "build": "npm run build.stencil && npm run build.storybook",
         "icons.fetch": "export-icons",
         "icons.generate": "node src/utils/generate-icons.js",
+        "lint.css": "stylelint \"src/components/**/*.scss\" --fix",
         "prepack": "npm run build",
         "prettier": "prettier --write --loglevel warn .",
         "start.stencil": "stencil build --dev --watch --serve",
@@ -72,6 +73,9 @@
         "pretty-quick": "~3.1.0",
         "puppeteer": "~5.5.0",
         "storybook-addon-themes": "~6.1.0",
+        "stylelint": "~13.13.1",
+        "stylelint-config-prettier": "~8.0.2",
+        "stylelint-config-standard": "~22.0.0",
         "svgo": "~2.3.0",
         "wait-on": "~6.0.0"
     }

@@ -5,6 +5,7 @@
   * @prop --input-background-color: the input background color
   */
     --input-background-color: var(--background);
+
     /**
     * @prop --input-border-color: the input border color
     */
@@ -14,6 +15,7 @@
     * @prop --input-text-color: the input text color
     */
     --input-text-color: var(--default-text);
+
     /**
     * @prop --input-focus-border-color: the input focus border color
     */
@@ -63,14 +65,12 @@
         order: 2;
         // height: 2.125rem;
         width: 100%;
-
         border: 1px solid var(--input-border-color);
         border-radius: 3px;
         font-family: var(--font-b1-font-family);
         font-size: var(--font-b1-font-size);
         font-weight: var(--font-b1-font-weight);
         letter-spacing: var(--font-b1-letter-spacing);
-
         color: var(--input-text-color);
         background-color: var(--input-background-color);
         &--invalid {
@@ -79,7 +79,6 @@
         &--disabled {
             opacity: 0.4;
             opacity: var(--disabled-opacity);
-            cursor: not-allowed;
             cursor: not-allowed;
         }
         &--search {
@@ -99,9 +98,7 @@
         &--large {
           padding: 0.813rem 0.5rem 0.875rem 0.5rem //13px 8px 14px 8px;
         }
-    }
 
-    .rux-input {
         &:focus {
             border-color: var(--input-focus-border-color);
             outline: none;
@@ -128,7 +125,6 @@
         font-size: var(--font-b1-font-size);
         font-weight: var(--font-b1-font-weight);
         letter-spacing: var(--font-b1-letter-spacing);
-
         margin-bottom: var(--spacing-input-label-top);
         &__asterisk {
             margin-left: 4px;

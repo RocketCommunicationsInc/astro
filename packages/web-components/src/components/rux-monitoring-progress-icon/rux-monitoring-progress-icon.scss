@@ -8,8 +8,8 @@
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -83,7 +83,6 @@ rux-status {
     font-size: var(--font-b3-font-size);
     font-weight: var(--font-b3-font-weight);
     letter-spacing: var(--font-b3-letter-spacing);
-
     color: var(--default-text);
     opacity: 0.6;
     display: block;

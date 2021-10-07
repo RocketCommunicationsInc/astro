@@ -5,15 +5,16 @@
      * @prop --textarea-border-color: Border color of the textarea.
     */
     --textarea-border-color: var(--active);
+
     /**
      * @prop --textarea-text-color: Text color
     */
     --textarea-text-color: var(--default-text);
 
-    /** @prop --textarea-background-color: Background color*/
+    /** @prop --textarea-background-color: Background color */
     --textarea-background-color: var(--background);
 
-    /** @prop --textarea-invalid-border-color: Border color while in an invalid state*/
+    /** @prop --textarea-invalid-border-color: Border color while in an invalid state */
     --textarea-invalid-border-color: var(--color-critical);
 
     /**
@@ -47,7 +48,6 @@
     font-size: var(--font-b1-font-size);
     letter-spacing: var(--font-b1-letter-spacing);
     font-weight: var(--font-b1-font-weight);
-
     color: var(--textarea-text-color);
     background-color: var(--textarea-background-color);
     &--invalid {
@@ -56,7 +56,6 @@
     &--disabled {
         opacity: 0.4;
         opacity: var(--disabled-opacity);
-        cursor: not-allowed;
         cursor: not-allowed;
     }
 

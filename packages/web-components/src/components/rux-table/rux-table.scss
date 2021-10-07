@@ -2,7 +2,7 @@
     display: table;
     width: 100%;
     border-collapse: separate;
-    border-spacing: 0px;
+    border-spacing: 0;
     color: var(--table-row-text-color);
     border-style: solid;
     border-width: 1px;
@@ -15,46 +15,57 @@
      * @prop --table-border-color: Table background color
      */
     --table-border-color: var(--background);
+
     /**
       * @prop --table-header-background-color: Table header background color
       */
     --table-header-background-color: var(--global-status-bar);
+
     /**
       * @prop --table-header-border-color: Table header border color
       */
     --table-header-border-color: var(--surface);
+
     /**
       * @prop --table-header-text-color: Table header text color
       */
     --table-header-text-color: var(--default-text);
+
     /**
       * @prop --table-header-box-shadow: Table header box shadow
       */
     --table-header-box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.45);
+
     /**
       * @prop --table-row-background-color: Table row background color
       */
     --table-row-background-color: var(--surface);
+
     /**
       * @prop --table-row-text-color: Table row text color
       */
     --table-row-text-color: var(--default-text);
+
     /**
       * @prop --table-row-border-color: Table row border color
       */
     --table-row-border-color: var(--background);
+
     /**
       * @prop --table-row-hover-background-color: Table row hover background color
       */
     --table-row-hover-background-color: var(--table-hover);
+
     /**
       * @prop --table-row-hover-text-color: Table row hover text color
       */
     --table-row-hover-text-color: var(--default-text);
+
     /**
       * @prop --table-row-selected-background-color: Table row selected background color
       */
     --table-row-selected-background-color: var(--background);
+
     /**
       * @prop --table-row-selected-border-color: Table row selected border color
       */
