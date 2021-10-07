@@ -1,3 +1,4 @@
+import { tsThisType } from '@babel/types'
 import {
     Prop,
     Host,
@@ -19,6 +20,7 @@ let id = 0
  * @slot label - The input label
  * @part form-field - The form-field wrapper container
  * @part label - The input label when `label` prop is set
+ * @part icon - The icon displayed when toggle-password prop is set
  */
 @Component({
     tag: 'rux-input',
@@ -30,6 +32,12 @@ export class RuxInput implements FormFieldInterface {
     inputId = `rux-input-${++id}`
 
     @State() hasLabelSlot = false
+
+    @State() togglePassword = false
+
+    @State() isPasswordVisible = false
+
+    @State() iconName = 'visibility'
 
     /**
      * The input label text. For HTML content, use the `label` slot instead.
@@ -127,10 +135,17 @@ export class RuxInput implements FormFieldInterface {
         this._handleSlotChange()
     }
 
+    @Watch('type')
+    handleTypeChange() {
+        this._setTogglePassword()
+    }
+
     connectedCallback() {
         this._onChange = this._onChange.bind(this)
         this._onInput = this._onInput.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
+        this._handleType = this._handleType.bind(this)
+        this._handleTogglePassword = this._handleTogglePassword.bind(this)
     }
 
     disconnectedCallback() {
@@ -142,6 +157,7 @@ export class RuxInput implements FormFieldInterface {
 
     componentWillLoad() {
         this._handleSlotChange()
+        this._setTogglePassword()
     }
 
     get hasLabel() {
@@ -168,6 +184,31 @@ export class RuxInput implements FormFieldInterface {
         this.hasLabelSlot = hasSlot(this.el, 'label')
     }
 
+    private _setTogglePassword() {
+        if (this.type === 'password') {
+            this.togglePassword = true
+        }
+    }
+
+    private _handleTogglePassword() {
+        this.isPasswordVisible = !this.isPasswordVisible
+        if (this.isPasswordVisible) {
+            this.iconName = 'visibility-off'
+        } else {
+            this.iconName = 'visibility'
+        }
+    }
+
+    private _handleType() {
+        let realType = ''
+        !this.togglePassword
+            ? (realType = this.type)
+            : this.togglePassword && this.isPasswordVisible
+            ? (realType = 'text')
+            : (realType = this.type)
+        return realType
+    }
+
     render() {
         const {
             disabled,
@@ -183,12 +224,17 @@ export class RuxInput implements FormFieldInterface {
             _onChange,
             _onInput,
             _onBlur,
+            _handleType,
+            _handleSlotChange,
+            _handleTogglePassword,
             placeholder,
             required,
             small,
             step,
             type,
             value,
+            hasLabel,
+            iconName,
         } = this
 
         renderHiddenInput(true, el, name, value, disabled)
@@ -206,20 +252,17 @@ export class RuxInput implements FormFieldInterface {
                             'rux-input-label': true,
                         }}
                         part="label"
-                        aria-hidden={this.hasLabel ? 'false' : 'true'}
+                        aria-hidden={hasLabel ? 'false' : 'true'}
                         htmlFor={inputId}
                     >
                         <span
                             class={{
-                                hidden: !this.hasLabel,
+                                hidden: !hasLabel,
                             }}
                         >
-                            <slot
-                                name="label"
-                                onSlotchange={this._handleSlotChange}
-                            >
+                            <slot name="label" onSlotchange={_handleSlotChange}>
                                 {label}
-                                {this.required && (
+                                {required && (
                                     <span class="rux-input-label__asterisk">
                                         &#42;
                                     </span>
@@ -230,7 +273,7 @@ export class RuxInput implements FormFieldInterface {
                     <input
                         name={name}
                         disabled={disabled}
-                        type={type}
+                        type={_handleType()}
                         aria-invalid={invalid ? 'true' : 'false'}
                         placeholder={placeholder}
                         required={required}
@@ -245,10 +288,26 @@ export class RuxInput implements FormFieldInterface {
                             'rux-input--search': type === 'search',
                         }}
                         id={this.inputId}
+                        autoComplete={this.togglePassword ? 'off' : 'on'}
                         onChange={_onChange}
                         onInput={_onInput}
                         onBlur={() => _onBlur()}
                     ></input>
+                    {this.togglePassword && (
+                        <div
+                            class={{
+                                'icon-container': true,
+                                'show-password': true,
+                                'with-label': hasLabel,
+                            }}
+                        >
+                            <rux-icon
+                                part="icon"
+                                onClick={() => _handleTogglePassword()}
+                                icon={iconName}
+                            />
+                        </div>
+                    )}
                 </div>
                 <FormFieldMessage
                     errorText={errorText}

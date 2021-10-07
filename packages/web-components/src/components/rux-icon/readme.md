@@ -133,6 +133,7 @@ In Astro 4.0, these groups have been flattened, and each icon is now imported di
 
 -   [rux-button](../rux-button)
 -   [rux-global-status-bar](../rux-global-status-bar)
+-   [rux-input](../rux-input)
 -   [rux-monitoring-icon](../rux-monitoring-icon)
 -   [rux-notification](../rux-notification)
 -   [rux-push-button](../rux-push-button)
@@ -143,6 +144,7 @@ In Astro 4.0, these groups have been flattened, and each icon is now imported di
 graph TD;
   rux-button --> rux-icon
   rux-global-status-bar --> rux-icon
+  rux-input --> rux-icon
   rux-monitoring-icon --> rux-icon
   rux-notification --> rux-icon
   rux-push-button --> rux-icon
