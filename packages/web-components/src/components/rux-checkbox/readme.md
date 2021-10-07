@@ -35,7 +35,6 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property        | Attribute       | Description                                                                                                                                                                                                                                       | Type                  | Default     |
@@ -48,22 +47,19 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
 | `name`          | `name`          | The checkbox name                                                                                                                                                                                                                                 | `string`              | `''`        |
 | `value`         | `value`         | The checkbox value                                                                                                                                                                                                                                | `string`              | `''`        |
 
-
 ## Events
 
-| Event        | Description                                                                                                                                                                    | Type               |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------ |
-| `rux-blur`   | Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)                                           | `CustomEvent<any>` |
-| `rux-change` | Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)                                | `CustomEvent<any>` |
-| `rux-input`  | Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) | `CustomEvent<any>` |
-
+| Event       | Description                                                                                                                                                                    | Type               |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------ |
+| `ruxblur`   | Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)                                           | `CustomEvent<any>` |
+| `ruxchange` | Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)                                | `CustomEvent<any>` |
+| `ruxinput`  | Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) | `CustomEvent<any>` |
 
 ## Slots
 
 | Slot          | Description                |
 | ------------- | -------------------------- |
 | `"(default)"` | the label of the checkbox. |
-
 
 ## CSS Custom Properties
 
@@ -75,7 +71,6 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
 | `--checkbox-hover-border-color` | Hover border color           |
 | `--checkbox-label-color`        | Label text color             |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

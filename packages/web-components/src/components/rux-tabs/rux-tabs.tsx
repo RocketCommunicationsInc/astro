@@ -34,7 +34,7 @@ export class RuxTabs {
      */
     @Prop() small?: boolean
 
-    @Listen('rux-register-panels', { target: 'window' })
+    @Listen('ruxregisterpanels', { target: 'window' })
     handleListen(e: CustomEvent) {
         this._registerPanels(e)
     }
@@ -42,9 +42,9 @@ export class RuxTabs {
     /**
      * Fires whenever a new tab is selected, and emits the selected tab.
      */
-    @Event({ eventName: 'rux-selected' }) ruxSelected!: EventEmitter
+    @Event({ eventName: 'ruxselected' }) ruxSelected!: EventEmitter
 
-    connectedCallback() {
+    componentWillLoad() {
         this._addTabs()
     }
 

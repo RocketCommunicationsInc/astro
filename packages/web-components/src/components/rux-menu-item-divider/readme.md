@@ -53,14 +53,12 @@ Pass properties as slotted components in the Astro Pop Up Menu or Astro Select M
 
 <!-- Auto Generated Below -->
 
-
 ## CSS Custom Properties
 
 | Name                               | Description                    |
 | ---------------------------------- | ------------------------------ |
 | `--menu-item-divider-border-color` | Menu Item Divider Border Color |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

@@ -6,24 +6,21 @@ document.addEventListener("DOMContentLoaded", () => {
     distance: 100,
     maxPatternLength: 32,
     minMatchCharLength: 1,
-    keys: [
-      "title",
-      "excerpt"
-    ]
+    keys: ["title", "excerpt"],
   };
-  const searchInput = document.getElementById('search-site');
-  const dataURI = '/search-index.json';
-  const queryString = location.search.replace('?q=', '').trim();
+  const searchInput = document.getElementById("search-site");
+  const dataURI = "/search-index.json";
+  const queryString = location.search.replace("?q=", "").trim();
 
   // Search on Page Load
-  if (queryString != '') {
+  if (queryString != "") {
     generateSearch(queryString);
   }
 
-  //form Search 
-  searchInput.addEventListener('keyup', function () {
+  //form Search
+  searchInput.addEventListener("keyup", function () {
     const searchValue = searchInput.value.trim();
-    if (searchValue != '') {
+    if (searchValue != "") {
       generateSearch(searchValue);
     }
   });
@@ -31,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //query search-index.json
   async function generateSearch(string) {
     fetch(dataURI)
-      .then(res => res.json())
+      .then((res) => res.json())
       .then((result) => {
         const { data } = result;
         const fuse = new Fuse(data, searchOptions);
@@ -39,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         generateResults(searchResult);
         // console.log(result.data);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }
@@ -47,21 +44,25 @@ document.addEventListener("DOMContentLoaded", () => {
   //generate results
   function generateResults(data) {
     if (data.length === 0) {
-      $('#results').empty().append(
+      $("#results").empty().append(
         `
         <div class="no-results">
           <h3>Sorry no matches</h3>
         </div>
-      `);
-    } else if (data.length > 0 || searchValue == '') {
-      $('#results').empty();
+      `
+      );
+    } else if (data.length > 0 || searchValue == "") {
+      $("#results").empty();
 
       for (i = 0; i < data.length; i++) {
-        const excerpt = data[i].excerpt.replace("::: note", "").replace(":::", "").replace(":::", "");
-        const stripTag = excerpt.replace(/(<([^>]+)>)/ig, "");
+        const excerpt = data[i].excerpt
+          .replace("::: note", "")
+          .replace(":::", "")
+          .replace(":::", "");
+        const stripTag = excerpt.replace(/(<([^>]+)>)/gi, "");
 
         if (stripTag.length > 50) {
-          $('#results').append(`
+          $("#results").append(`
             <div class="result-item">  
               <dt class="item-name">
                 <a href='${data[i].path}'>

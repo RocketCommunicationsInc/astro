@@ -47,7 +47,6 @@ Variations on the slider may include vertical implementations, using tick marks 
 
 To learn more about adding Help Text to Sliders, see the [Forms and Validation](/patterns/forms-and-validation) guidance.
 
-
 ## Examples
 
 :::two-col

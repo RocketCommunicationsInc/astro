@@ -5,7 +5,7 @@ date: Last Modified
 layout: components.template.njk
 title: Search
 legacyDemo: https://rocketcom.bitbucket.io/html-demos/search.html
-git: 
+git:
 height: 50px
 theme: true
 ---
@@ -34,5 +34,4 @@ Search has two states:
 ![Within the focused state, the magnifying glass symbol is more prominent. The “Clear” button becomes enabled.](/img/components/search-focus.png "Within the focused state, the magnifying glass symbol is more prominent. The “Clear” button becomes enabled.")
 :::
 
-To learn more about adding Help Text or Validation to Input Fields like Search, see the [Forms and Validation](/patterns/forms-and-validation) guidance. 
-
+To learn more about adding Help Text or Validation to Input Fields like Search, see the [Forms and Validation](/patterns/forms-and-validation) guidance.

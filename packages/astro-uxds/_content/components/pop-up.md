@@ -23,4 +23,3 @@ A Pop-Up Menu provides users with a quick way to access common actions for a hig
 - If you use more than one word in a menu item name, be sure to use sentence case capitalization.
 - Use an ellipsis (…) to indicate to users that further action is required to complete the command. The ellipsis character means that a Dialog Box or a separate window will open allowing users to make additional choices or supply additional information to complete the action.
 - Avoid combining actions and attributes in the same group. Users tend to view choosing an action differently from choosing an attribute.
-
