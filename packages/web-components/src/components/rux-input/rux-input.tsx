@@ -107,7 +107,7 @@ export class RuxInput implements FormFieldInterface {
     /**
      * Control the padding around the input field
      */
-    @Prop() size: string = 'medium'
+    @Prop() size: 'small' | 'medium' | 'large' = 'medium'
 
     /**
      * The input step attribute
@@ -282,6 +282,7 @@ export class RuxInput implements FormFieldInterface {
                             'rux-input--disabled': disabled,
                             'rux-input--invalid': invalid,
                             'rux-input--search': type === 'search',
+                            'rux-input--small': size === 'small',
                             'rux-input--medium': size === 'medium',
                             'rux-input--large': size === 'large',
                         }}
