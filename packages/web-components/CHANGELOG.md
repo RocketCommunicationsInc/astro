@@ -2,6 +2,12 @@
 
 ## [0.0.18] (unreleased)
 
+### Input
+* `small` property has been removed. Use `size=small` instead.
+
+### Textarea
+* `small` property has been removed. Use `rows` property instead to control the height of the element.
+
 ### Event names
 
 -   Gloably updated event names from camel case to lower case to be compatible with angular event name formats

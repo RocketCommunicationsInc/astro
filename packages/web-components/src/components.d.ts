@@ -11888,9 +11888,9 @@ export namespace Components {
          */
         "required": boolean;
         /**
-          * Styles the input element and label smaller for space-limited situations.
+          * Control the padding around the input field
          */
-        "small": boolean;
+        "size": 'small' | 'medium' | 'large';
         /**
           * The input step attribute
          */
@@ -32012,9 +32012,9 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
         /**
-          * Styles the input element and label smaller for space-limited situations.
+          * Control the padding around the input field
          */
-        "small"?: boolean;
+        "size"?: 'small' | 'medium' | 'large';
         /**
           * The input step attribute
          */

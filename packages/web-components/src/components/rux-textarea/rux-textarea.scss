@@ -97,13 +97,3 @@
 ::selection {
     background-color: var(--textarea-selection-background-color);
 }
-
-.rux-textarea-field--small {
-    .rux-textarea-label {
-        font-size: var(--font-size-md);
-    }
-    .rux-textarea {
-        padding: 0.3rem;
-        font-size: var(--font-size-md);
-    }
-}

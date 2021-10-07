@@ -160,11 +160,8 @@ export class RuxTextarea implements FormFieldInterface {
         return (
             <Host>
                 <div
-                    class={{
-                        'rux-textarea-field': true,
-                        'rux-textarea-field--small': this.small,
-                    }}
-                    part="form-field"
+                  class="rux-textarea-field"
+                  part="form-field"
                 >
                     <label
                         class={{
@@ -195,7 +192,7 @@ export class RuxTextarea implements FormFieldInterface {
                         class={{
                             'rux-textarea': true,
                             'rux-textarea--disabled': this.disabled,
-                            'rux-textarea--invalid': this.invalid,
+                            'rux-textarea--invalid': this.invalid
                         }}
                         id={this.inputId}
                         rows={this.rows}

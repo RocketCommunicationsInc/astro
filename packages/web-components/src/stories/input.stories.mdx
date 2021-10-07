@@ -38,7 +38,6 @@ export const Default = (args) => {
             .name="${args.name}"
             .placeholder="${args.placeholder}"
             ?required="${args.required}"
-            ?small="${args.small}"
             .value="${args.value}"
             .step="${args.step}"
             .type=${args.type}
@@ -79,7 +78,6 @@ export const Disabled = (args) => {
             .name="${args.name}"
             .placeholder="${args.placeholder}"
             ?required="${args.required}"
-            ?small="${args.small}"
             .value="${args.value}"
             .step="${args.step}"
             type=${args.type}
@@ -101,12 +99,12 @@ export const Disabled = (args) => {
     </Story>
 </Canvas>
 
-### Small
+### Sizes
 
-export const Small = (args) => {
+export const Sizes = (args) => {
     return html`
         <rux-input
-            .label="${args.label}"
+            label="Small input"
             .disabled="${args.disabled}"
             .errorText="${args.errorText}"
             .invalid="${args.invalid}"
@@ -116,7 +114,41 @@ export const Small = (args) => {
             .name="${args.name}"
             .placeholder="${args.placeholder}"
             ?required="${args.required}"
-            ?small="${args.small}"
+            size="small"
+            .value="${args.value}"
+            type=${args.type}
+            .step="${args.step}"
+        ></rux-input>
+        <br>
+            <rux-input
+            label="Medium input"
+            .disabled="${args.disabled}"
+            .errorText="${args.errorText}"
+            .invalid="${args.invalid}"
+            .helpText="${args.helpText}"
+            .min="${args.min}"
+            .max="${args.max}"
+            .name="${args.name}"
+            .placeholder="${args.placeholder}"
+            ?required="${args.required}"
+            size="medium"
+            .value="${args.value}"
+            type=${args.type}
+            .step="${args.step}"
+        ></rux-input>
+        <br>
+             <rux-input
+             label="Large input"
+            .disabled="${args.disabled}"
+            .errorText="${args.errorText}"
+            .invalid="${args.invalid}"
+            .helpText="${args.helpText}"
+            .min="${args.min}"
+            .max="${args.max}"
+            .name="${args.name}"
+            .placeholder="${args.placeholder}"
+            ?required="${args.required}"
+            size="large"
             .value="${args.value}"
             type=${args.type}
             .step="${args.step}"
@@ -126,14 +158,12 @@ export const Small = (args) => {
 
 <Canvas>
     <Story
-        name="Small"
+        name="Sizes"
         args={{
-            label: 'Small Label',
-            small: true,
             type: 'text',
         }}
     >
-        {Small.bind()}
+        {Sizes.bind()}
     </Story>
 </Canvas>
 
@@ -152,7 +182,6 @@ export const HelpText = (args) => {
             .name="${args.name}"
             .placeholder="${args.placeholder}"
             ?required="${args.required}"
-            ?small="${args.small}"
             .value="${args.value}"
             type=${args.type}
             .step="${args.step}"
@@ -188,7 +217,6 @@ export const Invalid = (args) => {
             .name="${args.name}"
             .placeholder="${args.placeholder}"
             ?required="${args.required}"
-            ?small="${args.small}"
             .value="${args.value}"
             type=${args.type}
             .step="${args.step}"
