@@ -14,8 +14,14 @@ export const angularValueAccessorBindings: ValueAccessorConfig[] = [
         type: 'boolean',
     },
     {
-        elementSelectors: ['rux-radio', 'rux-radio-group'],
+        elementSelectors: ['rux-radio-group'],
         event: 'ruxchange',
+        targetAttr: 'value',
+        type: 'text',
+    },
+    {
+        elementSelectors: ['rux-radio'],
+        event: 'ruxblur',
         targetAttr: 'value',
         type: 'text',
     },

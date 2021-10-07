@@ -5,10 +5,11 @@ import { ValueAccessor } from "./value-accessor";
 
 @Directive({
   /* tslint:disable-next-line:directive-selector */
-  selector: "rux-input, rux-textarea, rux-radio, rux-radio-group",
+  selector: "rux-input, rux-textarea, rux-radio-group, rux-radio",
   host: {
     "(ruxinput)": "handleChangeEvent($event.target.value)",
     "(ruxchange)": "handleChangeEvent($event.target.value)",
+    "(ruxblur)": "handleChangeEvent($event.target.value)",
   },
   providers: [
     {
