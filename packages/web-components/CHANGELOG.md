@@ -2,6 +2,9 @@
 
 ## [0.0.18] (unreleased)
 
+### Input
+* `small` property has been removed. Use `size=small` instead.
+
 ### Event names
 
 -   Gloably updated event names from camel case to lower case to be compatible with angular event name formats
