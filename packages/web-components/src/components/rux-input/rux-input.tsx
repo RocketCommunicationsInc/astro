@@ -1,4 +1,3 @@
-import { tsThisType } from '@babel/types'
 import {
     Prop,
     Host,
