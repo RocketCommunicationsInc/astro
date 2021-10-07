@@ -46,13 +46,11 @@ TreeNode has two slots:
 
 <!-- Auto Generated Below -->
 
-
 ## Slots
 
 | Slot          | Description            |
 | ------------- | ---------------------- |
 | `"(default)"` | the nodes of the tree. |
-
 
 ## CSS Custom Properties
 
@@ -62,7 +60,6 @@ TreeNode has two slots:
 | `--tree-border-color`     | tree color            |
 | `--tree-text-color`       | tree text color       |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

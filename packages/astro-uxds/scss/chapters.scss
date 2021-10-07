@@ -1,6 +1,7 @@
-@import './abstracts/vars';
+@import "./abstracts/vars";
 main {
-  padding: var(--content-padding-horizontal, 1rem) var(--content-padding-vertical, 1rem);
+  padding: var(--content-padding-horizontal, 1rem)
+    var(--content-padding-vertical, 1rem);
   color: var(--font-color, rgb(73, 73, 73));
 
   img {
@@ -15,8 +16,8 @@ main {
     padding: 0.7em 0 0;
   }
 
-  @media #{$tablet}{
-    padding:30px 20px;
+  @media #{$tablet} {
+    padding: 30px 20px;
   }
 }
 
@@ -39,7 +40,7 @@ main ol:not(.compliance-list) {
       color: #fff;
       font-weight: bold;
       position: absolute;
-      --size:1.5rem;
+      --size: 1.5rem;
       left: calc(-1 * var(--size) - 0.5rem);
       line-height: var(--size);
       width: var(--size);
@@ -59,7 +60,8 @@ main li {
 
 /* Notes/Tips/Cautions */
 
-.note, .caution {
+.note,
+.caution {
   padding: 1rem 1rem 1rem 4rem;
   margin: 1rem 0;
   line-height: 1;
@@ -69,7 +71,8 @@ main li {
   background-repeat: no-repeat;
 }
 
-.note p:last-of-type, .caution p:last-of-type {
+.note p:last-of-type,
+.caution p:last-of-type {
   margin-bottom: 0;
 }
 
@@ -98,7 +101,8 @@ figcaption {
 
 /* Special for color section */
 
-.color,.marking {
+.color,
+.marking {
   tr:not(:last-of-type) {
     border-bottom: 1px solid #ccc;
   }
@@ -119,7 +123,8 @@ figcaption {
   }
 }
 
-.two-col, .three-col {
+.two-col,
+.three-col {
   display: grid;
   grid-gap: 1rem;
 }
@@ -127,8 +132,8 @@ figcaption {
 .two-col {
   grid-template-columns: repeat(2, [col-start] 1fr);
 
-  @media #{$tablet}{
-    display:block;
+  @media #{$tablet} {
+    display: block;
   }
 }
 
@@ -136,7 +141,8 @@ figcaption {
   grid-template-columns: repeat(3, [col-start] 1fr);
 }
 
-.do, .dont {
+.do,
+.dont {
   margin-top: 0.5rem;
   border-top: 5px solid;
 }

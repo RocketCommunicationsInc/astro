@@ -31,8 +31,8 @@ Visual Design can be somewhat elusive to many developers. The Astro UX Guideline
 - Establishes and supports user expectations
 - Speeds learning
 - Reinforces task efficiency and accuracy
-- Examples: 
-  - Elements and controls look and behave the same 
+- Examples:
+  - Elements and controls look and behave the same
   - Status panels and key controls are in the same location
   - Iconography utilizes consistent metaphors for like functions and are styled the same
 
@@ -41,7 +41,7 @@ Visual Design can be somewhat elusive to many developers. The Astro UX Guideline
 - Reinforces workflows
 - Establishes relative importance and relationships
 - Established through size, placement, color and design style
-- Examples: 
+- Examples:
   - Layout reinforces workflow (typically top left to bottom right)
   - Status Indicators that must be monitored, are always large and prominent
   - Header type is larger and more prominent than content type

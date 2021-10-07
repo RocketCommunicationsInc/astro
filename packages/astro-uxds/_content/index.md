@@ -2,7 +2,7 @@
 path: /
 date: Last Modified
 layout: home.template.njk
-title: 'Astro: Space UX Design System'
+title: "Astro: Space UX Design System"
 ---
 
 # Astro: Space UX Design System

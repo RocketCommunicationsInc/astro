@@ -24,7 +24,7 @@ When operations take one second or longer to complete, add a progress feedback e
 - Use **Indeterminate Progress** mode to continually display unknown progress for an operation.
 - Use **Determinate Progress** mode when an operation has a well-defined duration or a predictable end.
 - Don’t provide inaccurate time or percentage estimates if the precise completion time for the operation is unknown.
-  
+
 ## Appearance and Behavior
 
 An indeterminate progress indicators is displayed as a continuously spinning circle with no strict percentage or timeframe labeled. This type of indicator is usually used when a process takees between 1 to 10 seeconds unless the duration is known.

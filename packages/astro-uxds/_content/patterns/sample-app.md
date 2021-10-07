@@ -12,6 +12,7 @@ status: deprecated
 The content on this page and associated sample application have been deprecated.
 
 :::
+
 # Sample App
 
 ## Putting It Together

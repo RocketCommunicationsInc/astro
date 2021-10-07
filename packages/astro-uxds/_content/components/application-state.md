@@ -30,28 +30,31 @@ The Application State component indicates the state the entire application is in
 ## Appearance and Behavior
 
 ### Background
+
 - The background rectangle for the component is 22 px/1.375 rem in height with 2 px/0.125 rem corner radii.
 
 - The background rectangle does not change height, but will change width with longer text content.
 
-- The default color for the background rectangle uses the ```--colorTertiaryDarken4``` variable, but can be changed to any of the Tag-approved colors in the Astro palette when more user attention to the component is required.
+- The default color for the background rectangle uses the `--colorTertiaryDarken4` variable, but can be changed to any of the Tag-approved colors in the Astro palette when more user attention to the component is required.
 
-::: caution 
+::: caution
 Only use Tag colors when necessary as overuse of colors may reduce efficacy of monitoring icon, classification marking, and notification banner component colors.
 :::
 
 ### Text
+
 - Text within the component uses the Medium body text size (14 px/0.875 rem) and sentence casing.
 
 - The default font color is the Dark Theme’s default body text color (#FFFFFF) for use with the default, dark background color.
 
-- When a lighter Tag background color is used, the font color changes to ```--colorTertiaryDarken4``` for better color contrast and legibility.
+- When a lighter Tag background color is used, the font color changes to `--colorTertiaryDarken4` for better color contrast and legibility.
 
 - Text does not wrap within the component in order to keep the height of the Global Status Bar consistent across application states which improves muscle memory and faster recognition time.
 
 - Padding to the left and right of the text is 6 px/0.375 rem within the background shape.
 
 ### Location
+
 - The App State component is placed around 6 px/0.375 rem below the application title text bottom in the [Global Status Bar](https://astrouxds.com/components/global-status-bar/).
 
 - The App State should be left-aligned to the application title text, not the menu.
@@ -83,4 +86,3 @@ Only use Tag colors when necessary as overuse of colors may reduce efficacy of m
 
 ![Don’t: Use non-default or non-tag colors for background colors.](/img/components/app-state-dont-5.png "Don’t: Use non-default or non-tag colors for background colors.")
 :::
-
