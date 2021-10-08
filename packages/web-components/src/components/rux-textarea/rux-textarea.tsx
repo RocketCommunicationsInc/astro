@@ -159,10 +159,7 @@ export class RuxTextarea implements FormFieldInterface {
         renderHiddenInput(true, this.el, this.name, this.value, this.disabled)
         return (
             <Host>
-                <div
-                  class="rux-textarea-field"
-                  part="form-field"
-                >
+                <div class="rux-textarea-field" part="form-field">
                     <label
                         class={{
                             'rux-textarea-label': true,
@@ -192,7 +189,7 @@ export class RuxTextarea implements FormFieldInterface {
                         class={{
                             'rux-textarea': true,
                             'rux-textarea--disabled': this.disabled,
-                            'rux-textarea--invalid': this.invalid
+                            'rux-textarea--invalid': this.invalid,
                         }}
                         id={this.inputId}
                         rows={this.rows}

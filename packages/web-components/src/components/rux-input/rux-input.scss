@@ -81,13 +81,13 @@
             cursor: not-allowed;
         }
         &--small {
-          padding: 0.25rem 0.5rem 0.188rem 0.5rem // 4px 8px 3px 8px;
+            padding: 0.25rem 0.5rem 0.188rem 0.5rem; // 4px 8px 3px 8px;
         }
         &--medium {
-          padding: 0.5rem 0.5rem 0.438rem 0.5rem // 8px 8px 7px 8px;
+            padding: 0.5rem 0.5rem 0.438rem 0.5rem; // 8px 8px 7px 8px;
         }
         &--large {
-          padding: 0.813rem 0.5rem 0.875rem 0.5rem //13px 8px 14px 8px;
+            padding: 0.813rem 0.5rem 0.875rem 0.5rem; //13px 8px 14px 8px;
         }
         &--search {
             -webkit-appearance: none;

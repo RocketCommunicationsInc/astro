@@ -3,10 +3,15 @@
 ## [0.0.18] (unreleased)
 
 ### Input
-* `small` property has been removed. Use `size=small` instead.
+
+-   Inputs with `type="password"` now support toggle show/hide by including the `visibility` and `visibility-off` rux-icons as clickable.
+-   Password inputs now swap types between `password` and `text` to show/hide the password.
+
+*   `small` property has been removed. Use `size=small` instead.
 
 ### Textarea
-* `small` property has been removed. Use `rows` property instead to control the height of the element.
+
+-   `small` property has been removed. Use `rows` property instead to control the height of the element.
 
 ### Event names
 
