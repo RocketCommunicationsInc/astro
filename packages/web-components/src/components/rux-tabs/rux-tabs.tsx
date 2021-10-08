@@ -44,7 +44,7 @@ export class RuxTabs {
      */
     @Event({ eventName: 'ruxselected' }) ruxSelected!: EventEmitter
 
-    componentWillLoad() {
+    connectedCallback() {
         this._addTabs()
     }
 
