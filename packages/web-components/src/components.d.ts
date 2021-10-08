@@ -11968,7 +11968,7 @@ export namespace Components {
         /**
           * Modal header title
          */
-        "modalTitle": string;
+        "modalTitle"?: string;
         /**
           * Shows and hides modal
          */
@@ -32096,7 +32096,7 @@ declare namespace LocalJSX {
         /**
           * Modal header title
          */
-        "modalTitle": string;
+        "modalTitle"?: string;
         /**
           * Event that is fired when modal closes
          */
@@ -32104,7 +32104,7 @@ declare namespace LocalJSX {
         /**
           * Shows and hides modal
          */
-        "open": boolean;
+        "open"?: boolean;
     }
     interface RuxMonitoringIcon {
         /**
