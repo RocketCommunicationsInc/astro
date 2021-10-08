@@ -4,7 +4,7 @@
 
 ### Input
 
--   Inputs with `type="password"` with now support toggle show/hide by including the `visibility` and `visibility-off` rux-icons as clickable.
+-   Inputs with `type="password"` now support toggle show/hide by including the `visibility` and `visibility-off` rux-icons as clickable.
 -   Password inputs now swap types between `password` and `text` to show/hide the password.
 
 *   `small` property has been removed. Use `size=small` instead.
