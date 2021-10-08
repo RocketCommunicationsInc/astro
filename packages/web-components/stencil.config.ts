@@ -12,6 +12,7 @@ export const config: Config = {
         angularOutputTarget({
             componentCorePackage: '@astrouxds/astro-web-components',
             directivesProxyFile: '../angular/src/directives/proxies.ts',
+            directivesArrayFile: '../angular/src/directives/proxies-list.ts',
             valueAccessorConfigs: angularValueAccessorBindings,
         }),
         // reactOutputTarget({
