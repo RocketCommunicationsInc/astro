@@ -40,6 +40,7 @@
     },
     "license": "MIT",
     "devDependencies": {
+        "@astrouxds/ag-grid-theme": "~0.0.2",
         "@astrouxds/astro-figma-export": "~1.0.1",
         "@astrouxds/storybook-addon-docs-stencil": "~1.0.7",
         "@babel/core": "~7.13.16",
@@ -57,6 +58,7 @@
         "@types/puppeteer": "~5.4.3",
         "@typescript-eslint/eslint-plugin": "~4.22.1",
         "@typescript-eslint/parser": "~4.22.1",
+        "ag-grid-community": "~26.1.0",
         "babel-loader": "~8.2.2",
         "concurrently": "~6.2.0",
         "cypress": "~8.0.0",
