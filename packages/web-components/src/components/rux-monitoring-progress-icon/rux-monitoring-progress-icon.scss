@@ -8,8 +8,8 @@
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -51,7 +51,10 @@ rux-status {
     border-radius: 3px;
     padding: 0.65rem 0.25rem;
     color: #fff;
-    font-size: 0.775rem;
+    font-family: var(--font-b3-font-family);
+    font-size: var(--font-b3-font-size);
+    font-weight: var(--font-b3-font-weight);
+    letter-spacing: var(--font-b3-letter-spacing);
     text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -61,7 +64,10 @@ rux-status {
 
 .rux-advanced-status__label {
     color: var(--default-text);
-    font-size: 0.875rem;
+    font-family: var(--font-b2-font-family);
+    font-size: var(--font-b2-font-size);
+    font-weight: var(--font-b2-font-weight);
+    letter-spacing: var(--font-b2-letter-spacing);
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -73,7 +79,10 @@ rux-status {
 }
 
 .rux-advanced-status__sublabel {
-    font-size: 0.65em;
+    font-family: var(--font-b3-font-family);
+    font-size: var(--font-b3-font-size);
+    font-weight: var(--font-b3-font-weight);
+    letter-spacing: var(--font-b3-letter-spacing);
     color: var(--default-text);
     opacity: 0.6;
     display: block;
@@ -124,16 +133,17 @@ svg.rux-status--critical {
 }
 
 .rux-advanced-status__progress {
-    font-family: var(--font-family-mono, 'monospace');
+    font-family: var(--font-m1-font-family);
+    font-size: var(--font-b3-font-size);
+    font-weight: var(--font-m1-font-weight);
+    letter-spacing: var(--font-m1-letter-spacing);
     margin-top: -0.125rem;
     margin-left: -0.125rem;
-    font-size: 0.8rem;
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
-    letter-spacing: -0.0625rem;
     text-align: center;
 }

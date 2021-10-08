@@ -12,7 +12,7 @@ describe('rux-modal', () => {
             confirmText,
             denyText,
         }).toEqual({
-            open: undefined,
+            open: false,
             modalMessage: undefined,
             modalTitle: undefined,
             confirmText: 'Confirm',

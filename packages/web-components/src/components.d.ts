@@ -11888,9 +11888,15 @@ export namespace Components {
          */
         "required": boolean;
         /**
+<<<<<<< HEAD
           * Styles the input element and label smaller for space-limited situations.
          */
         "small": boolean;
+=======
+          * Control the padding around the input field
+         */
+        "size": 'small' | 'medium' | 'large';
+>>>>>>> main
         /**
           * The input step attribute
          */
@@ -11968,7 +11974,11 @@ export namespace Components {
         /**
           * Modal header title
          */
+<<<<<<< HEAD
         "modalTitle": string;
+=======
+        "modalTitle"?: string;
+>>>>>>> main
         /**
           * Shows and hides modal
          */
@@ -32012,9 +32022,15 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
         /**
+<<<<<<< HEAD
           * Styles the input element and label smaller for space-limited situations.
          */
         "small"?: boolean;
+=======
+          * Control the padding around the input field
+         */
+        "size"?: 'small' | 'medium' | 'large';
+>>>>>>> main
         /**
           * The input step attribute
          */
@@ -32096,7 +32112,11 @@ declare namespace LocalJSX {
         /**
           * Modal header title
          */
+<<<<<<< HEAD
         "modalTitle": string;
+=======
+        "modalTitle"?: string;
+>>>>>>> main
         /**
           * Event that is fired when modal closes
          */
@@ -32104,7 +32124,11 @@ declare namespace LocalJSX {
         /**
           * Shows and hides modal
          */
+<<<<<<< HEAD
         "open": boolean;
+=======
+        "open"?: boolean;
+>>>>>>> main
     }
     interface RuxMonitoringIcon {
         /**

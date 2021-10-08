@@ -178,7 +178,7 @@ export class RuxClock {
                 </div>
 
                 {this.aos && (
-                    <div class="rux-clock__segment rux-clock__segment--secondary rux-clock__aos">
+                    <div class="rux-clock__segment rux-clock__aos">
                         <div
                             class="rux-clock__segment__value"
                             aria-labelledby="rux-clock__time-label--aos"
@@ -198,7 +198,7 @@ export class RuxClock {
                 )}
 
                 {this.los && (
-                    <div class="rux-clock__segment rux-clock__segment--secondary rux-clock__los">
+                    <div class="rux-clock__segment rux-clock__los">
                         <div
                             class="rux-clock__segment__value"
                             aria-labelledby="rux-clock__time-label--los"

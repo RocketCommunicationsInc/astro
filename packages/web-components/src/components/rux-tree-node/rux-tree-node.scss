@@ -3,22 +3,27 @@
     * @prop --tree-accent-color: tree accent color
     */
     --tree-accent-color: var(--primary);
+
     /**
     * @prop --tree-hover-background-color: tree hover background color
     */
     --tree-hover-background-color: var(--hover);
+
     /**
     * @prop --tree-hover-text-color: tree hover text color
     */
     --tree-hover-text-color: var(--inverse-text);
+
     /**
     * @prop --tree-selected-border-color: tree selected border color
     */
     --tree-selected-border-color: var(--primary-alt);
+
     /**
     * @prop --tree-selected-accent-color: tree selected accent color
     */
     --tree-selected-accent-color: var(--primary);
+
     /**
     * @prop --tree-expanded-border-color: tree expanded border color
     */
@@ -27,12 +32,14 @@
     position: relative;
     box-sizing: border-box;
     width: 100%;
-    padding: 0px;
-    margin: 0px;
-    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-b1-font-family);
+    font-size: var(--font-b1-font-size);
+    font-weight: var(--font-b1-font-weight);
+    letter-spacing: var(--font-b1-letter-spacing);
     color: var(--tree-text-color);
     user-select: none;
-    width: 100%;
     display: block;
 }
 
@@ -41,18 +48,18 @@
 }
 
 :host([aria-expanded='true'][aria-level='1']:not([aria-selected='true'])) {
-    .parent:after {
+    .parent::after {
         border-bottom: solid 1px var(--tree-expanded-border-color);
     }
 }
 
 :host([aria-selected='true']) {
     .parent {
-        &:after {
+        &::after {
             content: '';
             height: 30px;
             width: 100%;
-            left: 0px;
+            left: 0;
             z-index: 0;
             position: absolute;
             transition: background-color 0.0967s ease-in 0s;
@@ -67,19 +74,16 @@
     .parent {
         font-weight: bold;
         padding-left: 0.5rem;
-        &:after {
+        &::after {
             content: '';
             height: 31px;
             width: 100%;
-            left: 0px;
+            left: 0;
             z-index: 0;
             position: absolute;
             transition: background-color 0.0967s ease-in 0s;
         }
     }
-}
-
-:host([aria-level='1']) {
     .tree-node:not(.tree-node--has-children) {
         .parent {
             padding-left: 2rem;
@@ -161,10 +165,10 @@
     }
     &::after {
         content: '';
-        width: 0px;
-        height: 0px;
+        width: 0;
+        height: 0;
         border-style: solid;
-        border-width: 0.35rem 0px 0.35rem 0.35rem;
+        border-width: 0.35rem 0 0.35rem 0.35rem;
         border-color: transparent transparent transparent
             var(--tree-accent-color);
         display: inline-block;

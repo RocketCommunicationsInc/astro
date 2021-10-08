@@ -22,7 +22,6 @@
     display: flex;
     margin: 0 1rem;
     color: var(--clock-text-color);
-    font-size: 1.15rem;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -43,17 +42,15 @@
 .rux-clock__segment__value {
     display: flex;
     align-items: center;
-    font-family: var(--font-family-mono);
-    font-weight: 700;
+    font-family: var(--font-m1-font-family);
+    font-weight: var(--font-m1-font-weight);
+    font-size: var(--font-m1-font-size);
+    letter-spacing: var(--font-m1-letter-spacing);
     border: 1px solid var(--clock-border-color);
     background-color: var(--clock-background-color);
     white-space: nowrap;
     overflow-y: hidden;
     text-overflow: ellipsis;
-}
-
-.rux-clock__segment__value {
-    font-size: 1.75rem;
     height: 2.75rem;
     padding: 0 0.75rem;
 }
@@ -66,7 +63,10 @@
 }
 
 .rux-clock__segment__label {
-    font-size: 0.875rem;
+    font-family: var(--font-b2-font-family);
+    font-size: var(--font-b2-font-size);
+    font-weight: var(--font-b2-font-weight);
+    letter-spacing: var(--font-b2-letter-spacing);
     color: var(--clock-label-color);
     background: var(--clock-border-color);
     border: 1px solid var(--clock-border-color);
@@ -74,10 +74,6 @@
     width: -webkit-fill-available;
     width: fill-available;
     text-align: center;
-}
-
-.rux-clock__segment--secondary .rux-clock__segment__value {
-    font-weight: 400;
 }
 
 .rux-clock__aos {

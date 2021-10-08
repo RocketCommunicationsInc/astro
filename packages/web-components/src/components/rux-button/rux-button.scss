@@ -73,26 +73,21 @@
 .rux-button {
     display: flex;
     position: relative;
-
     margin: 0;
     padding: 0 1rem;
-
     height: 2.125rem;
     min-width: 2.25rem;
-
     border-radius: var(--border-radius-button);
-
     color: var(--button-text-color);
-    font-family: var(--font-family);
-    font-size: 1rem;
-
+    font-family: var(--font-b1-font-family);
+    font-size: var(--font-b1-font-size);
+    font-weight: var(--font-b1-font-weight);
+    letter-spacing: var(--font-b1-letter-spacing);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-
     justify-content: center;
     align-items: center;
-
     user-select: none;
 
     rux-icon,
@@ -164,7 +159,7 @@
     }
 
     &--icon-only {
-        font-size: 0px;
+        font-size: 0;
         width: 3rem;
     }
 }

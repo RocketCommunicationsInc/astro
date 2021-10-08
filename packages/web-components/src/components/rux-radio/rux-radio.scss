@@ -1,42 +1,42 @@
 :host {
     *,
-    *:before,
-    *:after {
+    *::before,
+    *::after {
         box-sizing: inherit;
     }
-    display: inline-block;
 
+    display: inline-block;
     box-sizing: border-box;
 
-    /** @prop --radio-hover-border-color: Radio border color on hover*/
+    /** @prop --radio-hover-border-color: Radio border color on hover */
     --radio-hover-border-color: var(--hover);
 
     /** @prop --radio-border-color: Selected radio border color */
     --radio-border-color: var(--active);
 
-    /** @prop --radio-label-color: label text color*/
+    /** @prop --radio-label-color: label text color */
     --radio-label-color: var(--default-text);
 
-    /** @prop --radio-background-color: the radio background color*/
+    /** @prop --radio-background-color: the radio background color */
     --radio-background-color: var(--background);
 
-    /** @prop --radio-selected-color: the radio selected color*/
+    /** @prop --radio-selected-color: the radio selected color */
     --radio-selected-color: var(--primary);
 }
 
 .rux-form-field {
     display: flex;
     flex-direction: column;
-
-    font-family: var(--font-family);
-    font-size: var(--font-size);
+    font-family: var(--font-b1-font-family);
+    font-size: var(--font-b1-font-size);
+    letter-spacing: var(--font-b1-letter-spacing);
+    font-weight: var(--font-b1-font-weight);
     color: var(--default-text);
 }
 
 .rux-radio {
     display: flex;
     position: relative;
-
     line-height: 1.2;
 
     input[type='radio'] {
@@ -46,7 +46,6 @@
         + label {
             position: relative;
             display: flex;
-
             align-items: center;
             justify-content: flex-start;
             margin-left: -8px;
@@ -54,15 +53,13 @@
             letter-spacing: 0.5px;
             cursor: pointer;
 
-            &:before {
+            &::before {
                 box-sizing: border-box;
                 display: flex;
                 flex-shrink: 0;
                 flex-grow: 0;
                 content: '';
-
                 align-self: start;
-
                 height: 1.125rem;
                 width: 1.125rem;
                 margin: 0 0.625rem 0 0;
@@ -71,7 +68,7 @@
                 background-color: var(--radio-background-color);
             }
 
-            &:after {
+            &::after {
                 position: absolute;
                 top: 5px;
                 display: flex;
@@ -95,6 +92,7 @@
                     height: 8px;
                     width: 8px;
                     border-radius: 100%;
+
                     /* box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9); */
 
                     background-color: var(--primary);
@@ -116,13 +114,6 @@
                     &::before {
                         border-color: var(--radio-hover-border-color);
                     }
-                }
-            }
-        }
-
-        &:not(:disabled) {
-            &:checked:hover {
-                + label {
                     &::after {
                         background-color: var(--radio-selected-color);
                     }
