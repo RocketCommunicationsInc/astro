@@ -233,16 +233,13 @@ export class RuxInput implements FormFieldInterface {
             value,
             hasLabel,
             iconName,
-            size
+            size,
         } = this
 
         renderHiddenInput(true, el, name, value, disabled)
         return (
             <Host>
-                <div
-                    class="rux-form-field"
-                    part="form-field"
-                >
+                <div class="rux-form-field" part="form-field">
                     <label
                         class={{
                             'rux-input-label': true,
