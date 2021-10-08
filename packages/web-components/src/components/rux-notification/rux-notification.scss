@@ -3,6 +3,7 @@
   * @prop --notification-text-color: The notification text color
   */
     --notification-text-color: var(--color-tertiary-900);
+
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
@@ -22,7 +23,6 @@
     font-size: var(--font-h5-font-size);
     font-weight: var(--font-h5-font-weight);
     letter-spacing: var(--font-h5-letter-spacing);
-
     color: var(--notification-text-color);
     rux-icon {
         align-items: center;

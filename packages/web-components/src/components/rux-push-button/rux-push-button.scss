@@ -1,6 +1,7 @@
 :host {
     cursor: pointer;
     display: block;
+
     /** @prop --pushbutton-background-color: the Push Button background color */
     --pushbutton-background-color: none;
 
@@ -71,10 +72,10 @@
             }
 
             &--icon-only {
-                font-size: 0px !important;
+                font-size: 0 !important;
 
                 rux-icon {
-                    margin-right: 0px;
+                    margin-right: 0;
                 }
             }
         }

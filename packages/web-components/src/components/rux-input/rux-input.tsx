@@ -105,9 +105,9 @@ export class RuxInput implements FormFieldInterface {
     @Prop() required: boolean = false
 
     /**
-     * Styles the input element and label smaller for space-limited situations.
+     * Control the padding around the input field
      */
-    @Prop() small: boolean = false
+    @Prop() size: 'small' | 'medium' | 'large' = 'medium'
 
     /**
      * The input step attribute
@@ -228,24 +228,18 @@ export class RuxInput implements FormFieldInterface {
             _handleTogglePassword,
             placeholder,
             required,
-            small,
             step,
             type,
             value,
             hasLabel,
             iconName,
+            size,
         } = this
 
         renderHiddenInput(true, el, name, value, disabled)
         return (
             <Host>
-                <div
-                    class={{
-                        'rux-form-field': true,
-                        'rux-form-field--small': small,
-                    }}
-                    part="form-field"
-                >
+                <div class="rux-form-field" part="form-field">
                     <label
                         class={{
                             'rux-input-label': true,
@@ -285,6 +279,9 @@ export class RuxInput implements FormFieldInterface {
                             'rux-input--disabled': disabled,
                             'rux-input--invalid': invalid,
                             'rux-input--search': type === 'search',
+                            'rux-input--small': size === 'small',
+                            'rux-input--medium': size === 'medium',
+                            'rux-input--large': size === 'large',
                         }}
                         id={this.inputId}
                         autoComplete={this.togglePassword ? 'off' : 'on'}

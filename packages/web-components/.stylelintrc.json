@@ -1,0 +1,19 @@
+{
+    "extends": ["stylelint-config-standard", "stylelint-config-prettier"],
+    "rules": {
+        "no-descending-specificity": null,
+        "at-rule-no-unknown": null,
+        "length-zero-no-unit": [
+            true,
+            {
+                "ignore": "custom-properties"
+            }
+        ],
+        "selector-type-no-unknown": [
+            true,
+            {
+                "ignore": ["custom-elements"]
+            }
+        ]
+    }
+}

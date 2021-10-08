@@ -8,8 +8,8 @@
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -18,11 +18,8 @@
     flex-direction: column;
     justify-content: flex-start;
     position: relative;
-
     margin: 0;
-
     line-height: 0;
-
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -32,7 +29,6 @@
 .rux-advanced-status__icon-group {
     display: flex;
     position: relative;
-
     margin: 0 auto;
     width: 4.5rem;
 }
