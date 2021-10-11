@@ -178,8 +178,8 @@ $ag-theme-astro-default-params: (
   // Cause tabs to stretch across the full width of the tab panel header
   full-width-tabs: true,
   // Fonts
-  font-family: var(--font-family, ("Helvetica Neue", sans-serif)),
-  font-size: var(--font-size, 16px),
+  font-family: var(--font-b1-font-family, ("Helvetica Neue", sans-serif)),
+  font-size: var(--font-b1-font-size, 16px),
   // The name of the font family you're using
   icon-font-family: $ag-theme-alpine-icon-font-family,
   // this var exported by ag-theme-base-font-vars.scss
