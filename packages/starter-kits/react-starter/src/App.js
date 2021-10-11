@@ -10,7 +10,7 @@ function App() {
         </div>
         <p>
           Welcome to Astro UXDS web components in React! Check out the README.md
-          for more infromation on getting started.
+          for more information on getting started.
         </p>
         <a
           className="App-link"
