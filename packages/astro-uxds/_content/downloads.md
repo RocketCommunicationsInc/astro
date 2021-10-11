@@ -14,7 +14,7 @@ title: Downloads
 All Sketch files are being deprecated in favor of Figma.
 :::
 
-- Astro Component Source Code ([Git Repository](https://github.com/RocketCommunicationsInc/astro-components))
+- Astro Component Source Code ([Git Repository](https://github.com/RocketCommunicationsInc/astro))
 - Astro UXDS Figma Page ([Figma](https://www.figma.com/community/file/1014254163928270411))
 - Astro Sketch Dark Library ([Git Repository](https://github.com/RocketCommunicationsInc/astro-design-resources/tree/master/Sketch))
 - Astro Sketch Wireframe Library ([Git Repository](https://github.com/RocketCommunicationsInc/astro-design-resources/tree/master/Sketch))
@@ -23,7 +23,7 @@ All Sketch files are being deprecated in favor of Figma.
 - Astro Angular Boilerplate ([Git Repository](https://github.com/RocketCommunicationsInc/astro-boilerplate-angular))
 - Astro React Boilerplate ([Git Repository](https://github.com/RocketCommunicationsInc/astro-boilerplate-react))
 - Astro Vue Boilerplate ([Git Repository](https://github.com/RocketCommunicationsInc/astro-boilerplate-vue))
-- Static copy of this site for reference in offline working environments ([gzip archive](https://github.com/RocketCommunicationsInc/astro-uxds/archive/refs/heads/master.zip))
+- Static copy of this site for reference in offline working environments ([gzip archive](https://github.com/RocketCommunicationsInc/astro/archive/refs/heads/main.zip))
 - \[DEPRECATED\] Astro Styles Source Code (Now included in the Component Repository)
 
 ## Astro for Material Design

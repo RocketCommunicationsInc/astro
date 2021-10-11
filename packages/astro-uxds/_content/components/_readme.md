@@ -15,9 +15,9 @@ There are two ways to use the Astro elements in your applications. You may simpl
 
 ## Getting Started with HTML & CSS
 
-[Additional Documentation/Git Repository](https://github.com/RocketCommunicationsInc/astro-components)
+[Additional Documentation/Git Repository](https://github.com/RocketCommunicationsInc/astro)
 
-Download the [Astro UI](https://github.com/RocketCommunicationsInc/astro-components/tree/master/static) Library and copy the ASTRO.css file and img directory to your project folder. In the head of all .html documents, add a link element with an href attribute to the relative location of astro.css or astro.min.css. Copy the /icons and /fonts directory to the root of your project. Note: astro.css and astro.min.css assume they are located in a sibling directory to /icons and /fonts.
+Download the [Astro UI](https://github.com/RocketCommunicationsInc/astro/tree/main/static) Library and copy the ASTRO.css file and img directory to your project folder. In the head of all .html documents, add a link element with an href attribute to the relative location of astro.css or astro.min.css. Copy the /icons and /fonts directory to the root of your project. Note: astro.css and astro.min.css assume they are located in a sibling directory to /icons and /fonts.
 
 Example:
 

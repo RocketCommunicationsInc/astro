@@ -57,7 +57,7 @@ Docs for all components can be found at our [Astro Stencil Storybook.](https://a
 
 ### This repo is currently in devlopement.
 
-This repo will be updated frequently with the [Astro components in Stencil repo](https://github.com/RocketCommunicationsInc/astro-components-stencil).
+This repo will be updated frequently with the [Astro package](https://github.com/RocketCommunicationsInc/astro/tree/main/packages/web-components).
 
 ### Known Issues
 

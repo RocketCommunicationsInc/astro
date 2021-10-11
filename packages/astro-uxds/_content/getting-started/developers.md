@@ -11,15 +11,15 @@ The Astro UXDS Web Component and CSS libraries provide a starting point to build
 
 ### Astro Components
 
-In an effort to provide as close to native a development experience as possible, we’ve provided a set of [litElement-powered](https://lit-element.polymer-project.org/guide) [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) distributed in individual packages on [npm.org](https://www.npmjs.com/org/astrouxds). You can also see the full source code here and instructions for importing the components in a typical NodeJS project [here](https://github.com/RocketCommunicationsInc/astro-components/blob/master/README.md).
+In an effort to provide as close to native a development experience as possible, we’ve provided a set of [litElement-powered](https://lit-element.polymer-project.org/guide) [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) distributed in individual packages on [npm.org](https://www.npmjs.com/org/astrouxds). You can also see the full source code here and instructions for importing the components in a typical NodeJS project [here](https://github.com/RocketCommunicationsInc/astro/blob/main/README.md).
 
 ### Astro CSS, Icons and Fonts
 
-We recognize that not all space application development projects are tooled for utilizing Web Components, so we also provide a CSS-only library containing name-spaced classes in addition to the icons and font files which are typically included within the components. You can [download today’s version](https://github.com/RocketCommunicationsInc/astro-components/tree/master/static) of these assets.
+We recognize that not all space application development projects are tooled for utilizing Web Components, so we also provide a CSS-only library containing name-spaced classes in addition to the icons and font files which are typically included within the components. You can [download today’s version](https://github.com/RocketCommunicationsInc/astro/tree/main/static) of these assets.
 
 ### Astro Storybook and Sample Apps
 
-You can review the latest versions of the web components at the [Astro Storybook](https://astro-components.netlify.app/?path=/story/astro-uxds-welcome--start-here). The Astro development team uses Storybook as an environment for building and demonstrating the capabilities of each component. If your team often works offline, you may want to [download and run the Storybook](https://github.com/RocketCommunicationsInc/astro-components) on your local network to see how the examples work.
+You can review the latest versions of the web components at the [Astro Storybook](https://astro-components.netlify.app/?path=/story/astro-uxds-welcome--start-here). The Astro development team uses Storybook as an environment for building and demonstrating the capabilities of each component. If your team often works offline, you may want to [download and run the Storybook](https://github.com/RocketCommunicationsInc/astro) on your local network to see how the examples work.
 
 For online examples of full Astro app experiences, check out these EGS Service-Specific sample experiences:
 
@@ -35,7 +35,7 @@ These examples use a previous release of Astro, and are not intended as boilerpl
 
 ### Getting Started
 
-You can import Astro UXDS Web Components to an existing application using npm and litElement. Detailed instructions for using Astro components are available in the project’s [README](https://github.com/RocketCommunicationsInc/astro-components/blob/master/README.md).
+You can import Astro UXDS Web Components to an existing application using npm and litElement. Detailed instructions for using Astro components are available in the project’s [README](https://github.com/RocketCommunicationsInc/astro/blob/main/README.md).
 
 If you’re considering a non-Web Component Astro implementation, directions for this process will be available soon.
 
@@ -58,8 +58,8 @@ The Astro team has worked with EGS to establish the EGS Compliance requirements 
 
 This website and its contents are provided as separate downloadable files for the convenience of developers and designers working in closed environments. Designer and Developer assets are provided as downloads on their respective ‘Getting Started’ sections:
 
-[Gzip Archive of astrouxds.com](https://github.com/RocketCommunicationsInc/astro-uxds/archive/draft.zip) | [Github](https://github.com/RocketCommunicationsInc/astro-uxds)  
-[Gzip Archive of the Astro Storybook](https://github.com/RocketCommunicationsInc/astro-components/archive/master.zip) | [Github](https://github.com/RocketCommunicationsInc/astro-components)
+[Gzip Archive of astrouxds.com](https://github.com/RocketCommunicationsInc/astro/archive/main.zip) | [Github](https://github.com/RocketCommunicationsInc/astro)  
+[Gzip Archive of the Astro Storybook](https://github.com/RocketCommunicationsInc/astro/archive/main.zip) | [Github](https://github.com/RocketCommunicationsInc/astro)
 
 ### Reporting Bugs
 

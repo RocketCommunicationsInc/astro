@@ -10,15 +10,15 @@ A Rux Modal interrupts the app experience to prompt a user to confirm an action 
 
 ### 1. Installation
 
-#### Download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components) source to your project.
+#### Download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro) source to your project.
 
 Via CLI:
 
 ```sh
-git clone https://github.com/RocketCommunicationsInc/astro-components.git
+git clone https://github.com/RocketCommunicationsInc/astro.git
 ```
 
-Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketCommunicationsInc/astro-components/archive/master.zip)
+Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketCommunicationsInc/astro/archive/master.zip)
 
 ### 2. Import the Astro Rux Modal Web Component
 

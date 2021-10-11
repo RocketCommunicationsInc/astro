@@ -11,12 +11,12 @@ A Checkbox describes a state or value that can be either "True or False.” Chec
 
 ### 1. Instalation
 
-Download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro-components) source to your project.
+Download the [Astro UXDS Component Library](https://github.com/RocketCommunicationsInc/astro) source to your project.
 
 Via CLI:
 
 ```sh
-git clone https://github.com/RocketCommunicationsInc/astro-components.git
+git clone https://github.com/RocketCommunicationsInc/astro.git
 ```
 
 ### 2. Markup the component using HTML and the Astro CSS classes

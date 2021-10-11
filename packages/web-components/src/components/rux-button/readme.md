@@ -41,7 +41,7 @@ In this situation, you do not need to specify a size for the icon component -- t
 
 ### 1. Include the Astro UXDS CSS file
 
-Latest release is available in the [static css directory](https://github.com/RocketCommunicationsInc/astro-components/tree/master/static/css).
+Latest release is available in the [static css directory](https://github.com/RocketCommunicationsInc/astro/tree/main/packages/web-components/static/css).
 
 ```xml
 <link rel="stylesheet" href="/your-project/path/astro.css" />

@@ -3,7 +3,7 @@
   "version": "4.4.4",
   "repository": {
     "type": "git",
-    "url": "https://github.com/RocketCommunicationsInc/astro-uxds"
+    "url": "https://github.com/RocketCommunicationsInc/astro"
   },
   "description": "Generates the public facing Astro UX Guidelines.",
   "main": "index.js",
