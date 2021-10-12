@@ -36,20 +36,20 @@
       <rux-input
         name="firstName"
         label="First Name"
-        on:rux-input={handleFirstNameInput}
+        on:ruxinput={handleFirstNameInput}
         invalid={Object.keys(errors).includes('firstName')}
         error-text={errors.firstName}
-        on:rux-blur={validate}
+        on:ruxblur={validate}
       >{values.firstName}</rux-input>
     </div>
     <div>
       <rux-input 
         name="lastName" 
         label="Last Name" 
-        on:rux-input={handleLastNameInput}
+        on:ruxinput={handleLastNameInput}
         invalid={Object.keys(errors).includes('lastName')}
         error-text={errors.lastName}
-        on:rux-blur={validate}
+        on:ruxblur={validate}
       >{values.lastName}</rux-input>
     </div>
     <div>
@@ -58,9 +58,9 @@
         type="email"
         label="Email"
         invalid={Object.keys(errors).includes('email')}
-        on:rux-input={handleEmailInput}
+        on:ruxinput={handleEmailInput}
         error-text={errors.email}
-        on:rux-blur={validate}
+        on:ruxblur={validate}
       >{values.email}</rux-input>
     </div>
     <div>
