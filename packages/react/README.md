@@ -30,11 +30,7 @@ export default MyComp;
 
 ## Astro Stencil Components Docs
 
-Docs for all components can be found at our [Astro Stencil Storybook.](https://astro-stencil.netlify.app/)
-
-### This repo is currently in beta
-
-This repo will be updated frequently with the [Astro components in Stencil repo](https://github.com/RocketCommunicationsInc/astro-components-stencil).
+Docs for all components can be found at our [Astro Stencil Storybook,](https://astro-stencil.netlify.app/) and in our [web-components package]('../packages/web-components/README.md)
 
 ### Known Issues
 
