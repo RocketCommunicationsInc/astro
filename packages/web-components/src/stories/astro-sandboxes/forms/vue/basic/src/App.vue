@@ -32,8 +32,8 @@
                     :value="form.country"
                     @ruxchange="form.country = $event.target.value"
                 >
-                    <option value="USA">United States</option>
-                    <option value="Canada">Canada</option>
+                    <rux-option value="USA">United States</rux-option>
+                    <rux-option value="Canada">Canada</rux-option>
                 </rux-select>
             </div>
 

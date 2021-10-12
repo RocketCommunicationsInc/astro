@@ -9,6 +9,7 @@ import {
     RuxRadioGroup,
     RuxSlider,
     RuxButton,
+    RuxOption,
 } from '@astrouxds/react'
 export default function App() {
     const [firstName, setFirstName] = useState('')
@@ -66,8 +67,10 @@ export default function App() {
                         label="Country/Region"
                         onRuxchange={(e) => setCountryRegion(e.target.value)}
                     >
-                        <option value="Canada">Canada</option>
-                        <option value="United States">United States</option>
+                        <RuxOption value="Canada">Canada</RuxOption>
+                        <RuxOption value="United States">
+                            United States
+                        </RuxOption>
                     </RuxSelect>
                 </div>
                 <div>

@@ -2,7 +2,7 @@ import './styles.css'
 import React from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import { RuxInput, RuxSelect, RuxButton } from '@astrouxds/react'
+import { RuxInput, RuxSelect, RuxButton, RuxOption } from '@astrouxds/react'
 
 export default function App() {
     const formik = useFormik({
@@ -109,11 +109,13 @@ export default function App() {
                         }
                         onRuxblur={formik.handleBlur}
                     >
-                        <option value="Select an Option">
+                        <RuxOption value="Select an Option">
                             Select an Option
-                        </option>
-                        <option value="Canada">Canada</option>
-                        <option value="United States">United States</option>
+                        </RuxOption>
+                        <RuxOption value="Canada">Canada</RuxOption>
+                        <RuxOption value="United States">
+                            United States
+                        </RuxOption>
                     </RuxSelect>
                 </div>
                 <div>
