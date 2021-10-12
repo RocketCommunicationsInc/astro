@@ -32,16 +32,13 @@ export default MyComp;
 
 Docs for all components can be found at our [Astro Stencil Storybook.](https://astro-stencil.netlify.app/)
 
-### This repo is currently in devlopement.
+### This repo is currently in beta
 
 This repo will be updated frequently with the [Astro components in Stencil repo](https://github.com/RocketCommunicationsInc/astro-components-stencil).
 
 ### Known Issues
 
-- This version bundles all components (no tree-shaking) in order to avoid having to use `defineCustomElements` each time you want to use an astro component. Because of this, the bundle size is larger.
-  We currently plan to ship two versions of this repo, one that includes tree-shaking at the cost of more imports, and this one that uses less imports at the cost of tree-shaking.
 - CSS custom properties for our react-wrapped components are undefined out of the box, thus the necessity for the CSS import.
-- Using event listeners currently uses onRux prefix, followed by a dash and the name. ie, onRuxchange. These will be updated to be camelCase in the future. ie, onRuxChange
 - For using checkbox, push button, or switch onRuxchange events, you need to check for the checked prop:
   ```
           <RuxSwitch
@@ -51,5 +48,3 @@ This repo will be updated frequently with the [Astro components in Stencil repo]
         }
       />
   ```
-
-#### Currently using @astrouxds/astro-web-components version 0.0.15
