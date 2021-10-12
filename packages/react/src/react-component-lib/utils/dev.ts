@@ -1,5 +1,5 @@
 export const isDevMode = () => {
-  return process && process.env && process.env.NODE_ENV === "development";
+  return process && process.env && process.env.NODE_ENV === 'development';
 };
 
 const warnings: { [key: string]: boolean } = {};

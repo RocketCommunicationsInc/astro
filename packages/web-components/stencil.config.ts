@@ -3,7 +3,7 @@ import { sass } from '@stencil/sass'
 import { svgOptimizerPlugin } from './src/utils/rollup-svg'
 import { angularValueAccessorBindings } from './wrapper-bindings/angular.bindings'
 import { angularOutputTarget } from '@stencil/angular-output-target'
-// import { reactOutputTarget } from '@stencil/react-output-target';
+import { reactOutputTarget } from '@stencil/react-output-target';
 
 export const config: Config = {
     namespace: 'astro-web-components',
@@ -15,12 +15,12 @@ export const config: Config = {
             directivesArrayFile: '../angular/src/directives/proxies-list.ts',
             valueAccessorConfigs: angularValueAccessorBindings,
         }),
-        // reactOutputTarget({
-        //   componentCorePackage: '@astrouxds/astro-web-components',
-        //   proxiesFile: '../astro-in-react/src/components.ts',
-        //   includePolyfills: true,
-        //   includeDefineCustomElements: true
-        // }),
+        reactOutputTarget({
+          componentCorePackage: '@astrouxds/astro-web-components',
+          proxiesFile: '../react/src/components.tsx',
+          includePolyfills: true,
+          includeDefineCustomElements: true
+        }),
         {
             type: 'dist',
             esmLoaderPath: '../loader',
