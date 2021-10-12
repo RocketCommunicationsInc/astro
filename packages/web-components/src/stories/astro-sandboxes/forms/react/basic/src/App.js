@@ -44,27 +44,27 @@ export default function App() {
                     <RuxInput
                         label="First Name"
                         value={firstName}
-                        onRux-input={(e) => setFirstName(e.target.value)}
+                        onRuxinput={(e) => setFirstName(e.target.value)}
                     />
                 </div>
                 <div>
                     <RuxInput
                         label="Last Name"
                         value={lastName}
-                        onRux-input={(e) => setLastName(e.target.value)}
+                        onRuxinput={(e) => setLastName(e.target.value)}
                     />
                 </div>
                 <div>
                     <RuxInput
                         label="Email"
                         value={email}
-                        onRux-input={(e) => setEmail(e.target.value)}
+                        onRuxinput={(e) => setEmail(e.target.value)}
                     />
                 </div>
                 <div>
                     <RuxSelect
                         label="Country/Region"
-                        onRux-change={(e) => setCountryRegion(e.target.value)}
+                        onRuxchange={(e) => setCountryRegion(e.target.value)}
                     >
                         <option value="Canada">Canada</option>
                         <option value="United States">United States</option>
@@ -74,19 +74,19 @@ export default function App() {
                     <RuxCheckboxGroup label="Things">
                         <RuxCheckbox
                             value="comments"
-                            onRux-change={(e) => handleThings(e)}
+                            onRuxchange={(e) => handleThings(e)}
                         >
                             Comments
                         </RuxCheckbox>
                         <RuxCheckbox
                             value="offers"
-                            onRux-change={(e) => handleThings(e)}
+                            onRuxchange={(e) => handleThings(e)}
                         >
                             Offers
                         </RuxCheckbox>
                         <RuxCheckbox
                             value="events"
-                            onRux-change={(e) => handleThings(e)}
+                            onRuxchange={(e) => handleThings(e)}
                         >
                             Events
                         </RuxCheckbox>
@@ -95,7 +95,7 @@ export default function App() {
                 <div>
                     <RuxRadioGroup
                         label="Options"
-                        onRux-change={(e) => setOptions(e.target.value)}
+                        onRuxchange={(e) => setOptions(e.target.value)}
                     >
                         <RuxRadio label="Everything" value="everything" />
                         <RuxRadio label="Same" value="same" />
@@ -106,7 +106,7 @@ export default function App() {
                     <RuxSlider
                         label="A Range"
                         value={range}
-                        onRux-input={(e) => setRange(e.target.value)}
+                        onRuxinput={(e) => setRange(e.target.value)}
                     />
                 </div>
                 <div>
