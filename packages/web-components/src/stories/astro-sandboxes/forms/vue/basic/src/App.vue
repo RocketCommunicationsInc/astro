@@ -4,7 +4,7 @@
             <div>
                 <rux-input
                     :value="form.firstName"
-                    @rux-input="form.firstName = $event.target.value"
+                    @ruxinput="form.firstName = $event.target.value"
                     label="First Name"
                 ></rux-input>
             </div>
@@ -12,7 +12,7 @@
             <div>
                 <rux-input
                     :value="form.lastName"
-                    @rux-input="form.lastName = $event.target.value"
+                    @ruxinput="form.lastName = $event.target.value"
                     label="Last Name"
                 ></rux-input>
             </div>
@@ -20,7 +20,7 @@
             <div>
                 <rux-input
                     :value="form.email"
-                    @rux-input="form.email = $event.target.value"
+                    @ruxinput="form.email = $event.target.value"
                     type="email"
                     label="Email"
                 ></rux-input>
@@ -30,7 +30,7 @@
                 <rux-select
                     label="Country / Region"
                     :value="form.country"
-                    @rux-change="form.country = $event.target.value"
+                    @ruxchange="form.country = $event.target.value"
                 >
                     <option value="USA">United States</option>
                     <option value="Canada">Canada</option>
@@ -42,7 +42,7 @@
                     <rux-checkbox
                         value="comments"
                         :checked="form.things.includes('comments')"
-                        @rux-change="
+                        @ruxchange="
                             updateThings('comments', $event.target.checked)
                         "
                     >
@@ -51,7 +51,7 @@
                     <rux-checkbox
                         value="offers"
                         :checked="form.things.includes('offers')"
-                        @rux-change="
+                        @ruxchange="
                             updateThings('offers', $event.target.checked)
                         "
                     >
@@ -60,7 +60,7 @@
                     <rux-checkbox
                         value="events"
                         :checked="form.things.includes('events')"
-                        @rux-change="
+                        @ruxchange="
                             updateThings('events', $event.target.checked)
                         "
                     >
@@ -72,7 +72,7 @@
             <div>
                 <rux-radio-group
                     :value="form.options"
-                    @rux-change="form.options = $event.target.value"
+                    @ruxchange="form.options = $event.target.value"
                     label="Options"
                 >
                     <rux-radio
@@ -93,7 +93,7 @@
             <div>
                 <rux-slider
                     :value="form.range"
-                    @rux-input="form.range = $event.target.value"
+                    @ruxinput="form.range = $event.target.value"
                     label="A Range"
                 >
                 </rux-slider>

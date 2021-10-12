@@ -3,7 +3,7 @@
         <div>
             <rux-input
                 :value="firstName"
-                @rux-input="firstName = $event.target.value"
+                @ruxinput="firstName = $event.target.value"
                 label="First Name"
                 required
                 :invalid="!!hasError('firstName')"
@@ -14,7 +14,7 @@
         <div>
             <rux-input
                 :value="lastName"
-                @rux-input="lastName = $event.target.value"
+                @ruxinput="lastName = $event.target.value"
                 required
                 :invalid="!!hasError('lastName')"
                 :error-text="hasError('lastName')"
@@ -25,7 +25,7 @@
         <div>
             <rux-input
                 :value="email"
-                @rux-input="email = $event.target.value"
+                @ruxinput="email = $event.target.value"
                 type="email"
                 required
                 label="Email"
