@@ -30,7 +30,7 @@
     "dist/"
   ],
   "dependencies": {
-    "@astrouxds/astro-web-components": "0.0.16",
+    "@astrouxds/astro-web-components": "0.0.18",
     "tslib": "^1.9.3"
   },
   "peerDependencies": {

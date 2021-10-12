@@ -9,12 +9,12 @@ export const config: Config = {
     namespace: 'astro-web-components',
     globalStyle: 'src/global/global.scss',
     outputTargets: [
-        // angularOutputTarget({
-        //     componentCorePackage: '@astrouxds/astro-web-components',
-        //     directivesProxyFile: '../angular/src/directives/proxies.ts',
-        //     directivesArrayFile: '../angular/src/directives/proxies-list.ts',
-        //     valueAccessorConfigs: angularValueAccessorBindings,
-        // }),
+        angularOutputTarget({
+            componentCorePackage: '@astrouxds/astro-web-components',
+            directivesProxyFile: '../angular/src/directives/proxies.ts',
+            directivesArrayFile: '../angular/src/directives/proxies-list.ts',
+            valueAccessorConfigs: angularValueAccessorBindings,
+        }),
         reactOutputTarget({
           componentCorePackage: '@astrouxds/astro-web-components',
           proxiesFile: '../react/src/components.tsx',
