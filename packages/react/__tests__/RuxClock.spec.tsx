@@ -34,13 +34,6 @@ describe("RuxClock", () => {
     );
     expect(ruxClock.hideDate).toEqual(true);
   });
-  it("should get numbers as props", () => {
-    let date = new Date().getTime();
-    const { webcomponent: ruxClock } = includeWebComponent<HTMLRuxClockElement>(
-      renderWithStrictMode(<RuxClock aos={date} />)
-    );
-    expect(ruxClock.aos).toEqual(date);
-  });
 });
 describe("createComponent - ref", () => {
   test("should pass ref on to web component instance", () => {
