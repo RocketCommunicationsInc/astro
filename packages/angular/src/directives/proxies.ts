@@ -20232,13 +20232,13 @@ export class RuxIconZoomOutMap {
 
 export declare interface RuxInput extends Components.RuxInput {}
 @ProxyCmp({
-  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'min', 'name', 'placeholder', 'required', 'small', 'step', 'type', 'value']
+  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'min', 'name', 'placeholder', 'required', 'size', 'step', 'type', 'value']
 })
 @Component({
   selector: 'rux-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'min', 'name', 'placeholder', 'required', 'small', 'step', 'type', 'value'],
+  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'min', 'name', 'placeholder', 'required', 'size', 'step', 'type', 'value'],
   outputs: ['ruxchange', 'ruxinput', 'ruxblur']
 })
 export class RuxInput {
