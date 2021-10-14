@@ -63,6 +63,7 @@
         "@typescript-eslint/parser": "~4.22.1",
         "babel-loader": "~8.2.2",
         "concurrently": "~6.2.0",
+        "core-js": "~3.18.3",
         "cypress": "~8.0.0",
         "cypress-real-events": "~1.5.1",
         "eslint": "~7.25.0",
