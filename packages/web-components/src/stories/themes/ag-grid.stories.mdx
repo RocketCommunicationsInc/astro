@@ -99,11 +99,11 @@ export const AGGrid = () => {
         columnDefs: agColumnData,
         rowData: agRowData,
     }
-    setTimeout(startAGGrid, 0)
     function startAGGrid() {
         const eGridDiv = document.querySelector('#myGrid')
         new Grid(eGridDiv, gridOptions)
     }
+    setTimeout(startAGGrid, 0)
     return html` <div style="padding: 2rem;">
         <div
             id="myGrid"
