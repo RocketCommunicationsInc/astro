@@ -1,6 +1,6 @@
 {
   "name": "create-astro-react-starter",
-  "version": "0.0.32",
+  "version": "0.0.33",
   "dependencies": {
     "@astrouxds/react": "0.0.8",
     "@testing-library/jest-dom": "^5.14.1",
