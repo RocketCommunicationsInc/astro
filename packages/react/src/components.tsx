@@ -5,6 +5,12 @@ import { createReactComponent } from "./react-component-lib";
 
 import type { JSX } from "@astrouxds/astro-web-components";
 
+import {
+  applyPolyfills,
+  defineCustomElements,
+} from "@astrouxds/astro-web-components/loader";
+
+applyPolyfills().then(() => defineCustomElements());
 export const RuxButton = /*@__PURE__*/ createReactComponent<
   JSX.RuxButton,
   HTMLRuxButtonElement
@@ -4293,6 +4299,14 @@ export const RuxNotification = /*@__PURE__*/ createReactComponent<
   JSX.RuxNotification,
   HTMLRuxNotificationElement
 >("rux-notification");
+export const RuxOption = /*@__PURE__*/ createReactComponent<
+  JSX.RuxOption,
+  HTMLRuxOptionElement
+>("rux-option");
+export const RuxOptionGroup = /*@__PURE__*/ createReactComponent<
+  JSX.RuxOptionGroup,
+  HTMLRuxOptionGroupElement
+>("rux-option-group");
 export const RuxPopUpMenu = /*@__PURE__*/ createReactComponent<
   JSX.RuxPopUpMenu,
   HTMLRuxPopUpMenuElement

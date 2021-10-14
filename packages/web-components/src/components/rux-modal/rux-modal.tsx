@@ -23,7 +23,7 @@ export class RuxModal {
     /**
      * Shows and hides modal
      */
-    @Prop({ reflect: true, mutable: true }) open!: boolean
+    @Prop({ reflect: true, mutable: true }) open: boolean = false
     /**
      * Modal body message
      */
@@ -31,7 +31,7 @@ export class RuxModal {
     /**
      * Modal header title
      */
-    @Prop() modalTitle!: string
+    @Prop() modalTitle?: string
     /**
      * Text for confirmation button
      */
@@ -44,7 +44,7 @@ export class RuxModal {
      * Event that is fired when modal closes
      */
     @Event({
-        eventName: 'rux-modal-closed',
+        eventName: 'ruxmodalclosed',
         composed: true,
         bubbles: true,
     })
@@ -145,9 +145,11 @@ export class RuxModal {
                 <Host>
                     <div part="wrapper" class="rux-modal__wrapper">
                         <dialog class="rux-modal__dialog" role="dialog">
-                            <header class="rux-modal__titlebar">
-                                <h1>{modalTitle}</h1>
-                            </header>
+                            {modalTitle && (
+                                <header class="rux-modal__titlebar">
+                                    <div>{modalTitle}</div>
+                                </header>
+                            )}
                             <div class="rux-modal__content">
                                 <div class="rux-modal__message">
                                     {modalMessage}

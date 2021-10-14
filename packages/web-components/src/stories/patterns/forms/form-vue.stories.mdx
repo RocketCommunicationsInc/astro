@@ -31,9 +31,9 @@ import { Meta } from '@storybook/addon-docs/blocks'
 Basic example form using all Astro form elements.
 
 <iframe
-    src="https://codesandbox.io/embed/astro-vue-basic-form-pattern-7w2t6?fontsize=14&hidenavigation=1&theme=dark"
-    title="Astro Vue Basic Form Pattern"
+    src="https://codesandbox.io/embed/github/RocketCommunicationsInc/astro/tree/main/packages/web-components/src/stories/astro-sandboxes/forms/vue/basic"
     class="sandbox"
+    title="Astro Vue Basic Form Pattern"
     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
@@ -52,21 +52,21 @@ Your template might look like:
     <rux-checkbox
       value="comments"
       :checked="form.notifications.includes('comments')"
-      @rux-change="updateNotifications('comments', $event.target.checked)"
+      @ruxchange="updateNotifications('comments', $event.target.checked)"
     >
       Comments
     </rux-checkbox>
     <rux-checkbox
       value="offers"
       :checked="form.notifications.includes('offers')"
-      @rux-change="updateNotifications('offers', $event.target.checked)"
+      @ruxchange="updateNotifications('offers', $event.target.checked)"
     >
       Offers
     </rux-checkbox>
     <rux-checkbox
       value="events"
       :checked="form.notifications.includes('events')"
-      @rux-change="updateNotifications('events', $event.target.checked)"
+      @ruxchange="updateNotifications('events', $event.target.checked)"
     >
       Events
     </rux-checkbox>
@@ -94,7 +94,7 @@ updateNotifications(value, checked) {
 An example using Vue 3 + [VeeValidate](vee-validate.logaretm.com/v4/) + [Yup](https://github.com/jquense/yup) for easy validation.
 
 <iframe
-    src="https://codesandbox.io/embed/astro-vue-form-pattern-with-veevalidate-us57t?fontsize=14&hidenavigation=1&theme=dark"
+    src="https://codesandbox.io/embed/github/RocketCommunicationsInc/astro/tree/main/packages/web-components/src/stories/astro-sandboxes/forms/vue/validation"
     class="sandbox"
     title="Astro Vue Form Pattern with VeeValidate"
     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"

@@ -1,9 +1,9 @@
 .sidebar {
-	position: -webkit-sticky;
+  position: -webkit-sticky;
   position: sticky;
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;  
+  flex-shrink: 0;
   top: 0;
   left: 0;
   height: 100vh;
@@ -14,9 +14,9 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  transition: all .3s;
-	
-	@media #{$tablet}{  
+  transition: all 0.3s;
+
+  @media #{$tablet} {
     position: fixed;
     top: 0;
     left: -300px;
@@ -24,48 +24,46 @@
     padding: 0;
     width: 300px;
     z-index: 100;
-    
-    &.is-hidden{
-      left:-300px;
-    }
-    &.is-visible{
-      display:block;
-      left:0;
-    }
-    
 
-	}
+    &.is-hidden {
+      left: -300px;
+    }
+    &.is-visible {
+      display: block;
+      left: 0;
+    }
+  }
 }
 
 .masthead {
-	text-align: center;
-	
-	//logo
-	&-logo{
-		width: 35%;
+  text-align: center;
+
+  //logo
+  &-logo {
+    width: 35%;
     margin: 2.2rem auto 1.25rem auto;
-    
-    @media #{$tablet}{
-      display:none;
+
+    @media #{$tablet} {
+      display: none;
     }
-	}
-
-	//toolbar
-	&__toolbar{
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin: 0 1.25rem 1rem 1.25rem;
-		color:red;
-  }
-  
-  &.is-visible{
-    left:0;
-    transition: all .3s;
   }
 
-  @media #{$tablet}{
-    padding-top:2em;
+  //toolbar
+  &__toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 1.25rem 1rem 1.25rem;
+    color: red;
+  }
+
+  &.is-visible {
+    left: 0;
+    transition: all 0.3s;
+  }
+
+  @media #{$tablet} {
+    padding-top: 2em;
   }
 }
 
@@ -87,7 +85,8 @@
   padding: 0.8125rem 0.875rem;
   text-indent: 1.75em;
   line-height: 1;
-  background: rgba(255, 255, 255, 0.15) url(/img/_site/search.svg) left 1em (center / 1rem) no-repeat;
+  background: rgba(255, 255, 255, 0.15) url(/img/_site/search.svg) left 1em
+    (center / 1rem) no-repeat;
   width: 100%;
   font-size: 0.875rem;
   color: white;
@@ -117,4 +116,3 @@
     opacity: 1;
   }
 }
-

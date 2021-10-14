@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Astro</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&family=Roboto:wght@200;300;400;500;600;800&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css"
+        />
+        <script
+            type="module"
+            src="https://unpkg.com/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <style>
+            form > div {
+                margin-bottom: 1rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="width: 60%; margin: auto">
+            <form style="padding: 1rem" method="POST" action="/">
+                <div>
+                    <rux-input name="firstName" label="First Name"></rux-input>
+                </div>
+                <div>
+                    <rux-input name="lastName" label="Last Name"></rux-input>
+                </div>
+                <div>
+                    <rux-input
+                        name="email"
+                        type="email"
+                        label="Email"
+                    ></rux-input>
+                </div>
+                <div>
+                    <rux-select name="country" label="Country / Region">
+                        <rux-option
+                            value="USA"
+                            label="United States"
+                        ></rux-option>
+                        <rux-option value="Canada" label="Canada"></rux-option>
+                    </rux-select>
+                </div>
+                <div>
+                    <rux-checkbox-group label="Things">
+                        <rux-checkbox name="things" value="comments">
+                            Comments
+                        </rux-checkbox>
+                        <rux-checkbox name="things" value="offers">
+                            Offers
+                        </rux-checkbox>
+                        <rux-checkbox name="things" value="events">
+                            Events
+                        </rux-checkbox>
+                    </rux-checkbox-group>
+                </div>
+                <div>
+                    <rux-radio-group label="Options">
+                        <rux-radio name="options" value="everything">
+                            Everything
+                        </rux-radio>
+                        <rux-radio name="options" value="same">
+                            Same
+                        </rux-radio>
+                        <rux-radio name="options" value="none">
+                            None
+                        </rux-radio>
+                    </rux-radio-group>
+                </div>
+                <div>
+                    <rux-slider name="range" label="A Range"> </rux-slider>
+                </div>
+                <div class="col-span-6 ml-auto">
+                    <rux-button type="submit">Submit</rux-button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

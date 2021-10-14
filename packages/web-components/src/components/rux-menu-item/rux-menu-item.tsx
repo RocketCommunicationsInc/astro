@@ -62,7 +62,7 @@ export class RuxMenuItem {
      * Emitted when item is clicked. Ex `{value : 10}`
      */
     @Event({
-        eventName: 'rux-menu-item-selected',
+        eventName: 'ruxmenuitemselected',
         bubbles: true,
         composed: true,
     })

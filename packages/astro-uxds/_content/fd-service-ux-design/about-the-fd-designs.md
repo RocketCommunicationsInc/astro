@@ -1,5 +1,5 @@
 ---
-tags: ['flight dynamics', 'egs']
+tags: ["flight dynamics", "egs"]
 path: /fd-service-ux-design/about-the-fd-designs
 date: Last Modified
 layout: interior.template.njk
@@ -14,7 +14,7 @@ While the Maneuvering and Reporting tools have not been researched, tested, and 
 :::
 
 The FDS system supports missions that require communication between satellites and ground systems in order to estimate the position of a satellite, as well as perform any maneuvers to keep the satellite in a nominal position. Some key features of FDS include Orbit Determinations (OD), generating products (Ephemerides, TLE’s, reports, etc.), and Maneuvering, such as station keeping, conjunction assessment, and COLA’s (burns).
- (pdf)
+(pdf)
 
 - [FD Design Specifications (pdf)](https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/fds-specifications.pdf)
 - [FD Wireframes (pdf)](https://s3-us-west-2.amazonaws.com/com.rocketcom.astrouxds/downloads/fds-wireframes.pdf)
@@ -131,8 +131,6 @@ The scenarios panel is where a task begins. Depending on common mission tasks, o
 
 ### Properties Pane
 
-
-
 :::two-col
 ![Properties Pane wireframe](/img/service-specific-ux-design/fds-properties-pane.png)
 :::col
@@ -159,7 +157,7 @@ The inputs pane houses the initial input files required in order to run an orbit
 4. **Epoch Fields** - Displays the reference epoch, range, and span for the selected input file.
 5. **Other inputs** - Missions may require different input files to determine their orbit. The remaining fields provide this flexibility. For instance, some user permissions may allow for replacing, or not including a Thrust Profile for maneuvers, or a Processed Track File in determining an orbit.
 6. **Determine Orbit Button** - The determine orbit button initializes an orbit determination.
-:::
+   :::
 
 #### Outputs
 
@@ -181,7 +179,7 @@ The data display is a multi-functional output view of an orbit determination.
 ![Data Display wireframe](/img/service-specific-ux-design/fds-log-utility.png)
 
 1. **Notification Banner** - The notification banner shows the status for the latest/last orbit determination that was initiated.
-2. **Deviation Count** - The deviation count shows the total number of deviations (violations of the standard deviation  found in the OD Results.
+2. **Deviation Count** - The deviation count shows the total number of deviations (violations of the standard deviation found in the OD Results.
 3. **Primary/Secondary Action Buttons** - Action buttons to be defined by mission. These could include actions such as “Create TLE, etc &hellip;”.
 4. **Table Segmented Button** - The table segmented button allows an operator to switch from viewing data in a tabular format to a visual data display.
 5. **Action Menu** - The action menu is reserved for non-primary actions an operator would execute such as export table, print, save, or table display settings.

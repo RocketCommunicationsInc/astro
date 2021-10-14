@@ -33,31 +33,22 @@
     --popup-menu-transition-speed: 0.1667s;
 
     opacity: 0;
-    font-size: 1rem;
-
     margin: 0;
     padding: 0;
-
     position: absolute;
     pointer-events: none;
-
     color: var(--primary);
-
     background-color: var(--popup-menu-border-color);
     border: 1px solid var(--popup-menu-border-color);
     border-top-width: 4px;
     z-index: 10000;
-
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-
     border-radius: 3px;
-
     top: -9999rem;
     left: -9999rem;
-
     transition: opacity 0.1667s ease-out;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
 }
@@ -77,10 +68,8 @@
     display: block;
     position: absolute;
     z-index: 1;
-
     border: 8px solid transparent;
     border-bottom: 11px solid var(--popup-menu-caret-background-color);
-
     left: var(--popup-menu-caret-left, 2px);
     top: -1.4375rem;
 }
@@ -91,7 +80,6 @@ ul {
     padding: 0;
     margin: 0;
     background-color: var(--popup-menu-background-color);
-
     z-index: 2;
     border-radius: 2px;
 }

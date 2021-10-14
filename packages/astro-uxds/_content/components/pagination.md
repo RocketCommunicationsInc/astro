@@ -5,7 +5,7 @@ date: Last Modified
 layout: components.template.njk
 title: Pagination
 legacyDemo: https://rocketcom.bitbucket.io/_html-samples/samples/pagination.html
-git: 
+git:
 height: 300px
 ---
 
@@ -43,5 +43,3 @@ Be sure the current page is easily distinguishable from other pages referenced b
 
 ![When there are no Search results, suggest that the user amend the Search.](/img/components/pagination-5.png)
 :::
-
-

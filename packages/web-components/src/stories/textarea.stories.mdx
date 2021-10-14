@@ -37,7 +37,6 @@ export const Default = (args) => {
             .name="${args.name}"
             .placeholder="${args.placeholder}"
             ?required="${args.required}"
-            ?small="${args.small}"
             .value="${args.value}"
         ></rux-textarea>
     `
@@ -76,7 +75,6 @@ export const Disabled = (args) => {
             .name="${args.name}"
             .placeholder="${args.placeholder}"
             ?required="${args.required}"
-            ?small="${args.small}"
             .value="${args.value}"
         ></rux-textarea>
     `
@@ -91,40 +89,6 @@ export const Disabled = (args) => {
         }}
     >
         {Disabled.bind()}
-    </Story>
-</Canvas>
-
-### Small
-
-export const Small = (args) => {
-    return html`
-        <rux-textarea
-            .label="${args.label}"
-            .disabled="${args.disabled}"
-            .errorText="${args.errorText}"
-            .invalid="${args.invalid}"
-            .helpText="${args.helpText}"
-            .minLength="${args.minLength}"
-            .maxLength="${args.maxLength}"
-            .rows="${args.rows}"
-            .name="${args.name}"
-            .placeholder="${args.placeholder}"
-            ?required="${args.required}"
-            ?small="${args.small}"
-            .value="${args.value}"
-        ></rux-textarea>
-    `
-}
-
-<Canvas>
-    <Story
-        name="Small"
-        args={{
-            label: 'Small Textarea',
-            small: true,
-        }}
-    >
-        {Small.bind()}
     </Story>
 </Canvas>
 
@@ -144,7 +108,6 @@ export const HelpText = (args) => {
             .name="${args.name}"
             .placeholder="${args.placeholder}"
             ?required="${args.required}"
-            ?small="${args.small}"
             .value="${args.value}"
         ></rux-textarea>
     `
@@ -179,7 +142,6 @@ export const Invalid = (args) => {
             .name="${args.name}"
             .placeholder="${args.placeholder}"
             ?required="${args.required}"
-            ?small="${args.small}"
             .value="${args.value}"
         ></rux-textarea>
     `
@@ -214,7 +176,6 @@ export const Placeholder = (args) => {
             .name="${args.name}"
             .placeholder="${args.placeholder}"
             ?required="${args.required}"
-            ?small="${args.small}"
             .value="${args.value}"
         ></rux-textarea>
     `

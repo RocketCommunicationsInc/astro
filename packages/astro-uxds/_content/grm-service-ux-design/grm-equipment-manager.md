@@ -1,5 +1,5 @@
 ---
-tags: ['grm', 'egs']
+tags: ["grm", "egs"]
 path: /grm-service-ux-design/grm-equipment-manager
 date: Last Modified
 layout: interior.template.njk
@@ -7,8 +7,9 @@ title: GRM Equipment Manager
 ---
 
 # GRM Equipment Manager
+
 :::note
-The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 5 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, *not* visual design guidance.
+The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 5 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
 :::
 [Launch GRM Equipment Manager Sample App](https://grm-equipment.astrouxds.com/) | [Design Materials and Source Code](#contentBottom)
 
@@ -103,7 +104,6 @@ Below is an animated walkthrough of a representative task flow using the GRM Equ
 		<img src="/img/service-specific-ux-design/grm-equipment-manager-sched-job.gif" alt="GRM equipment manager" />
 	</a>
 </div>
-
 
 ## Design Materials and Source Code
 

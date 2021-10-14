@@ -53,7 +53,7 @@ For grammar or typographic changes or **clarifications that do not change the in
 
 ### 4\. Deleted Content
 
-In rare situations, it is necessary to completely delete content from AstroUXDS. Such situations include **content published due to human or technical error** (such as publishing prior to receiving approval), **content that includes private, confidential, or secure information**, or information became redundant over time. Where the original content is superseded by content existing elsewhere on the site, AstroUXDS should refer users to the more useful content, consolidating information in one place. 
+In rare situations, it is necessary to completely delete content from AstroUXDS. Such situations include **content published due to human or technical error** (such as publishing prior to receiving approval), **content that includes private, confidential, or secure information**, or information became redundant over time. Where the original content is superseded by content existing elsewhere on the site, AstroUXDS should refer users to the more useful content, consolidating information in one place.
 
 As a record of all content ever published continues to exist indefinitely in git repo histories, if truly sensitive data such as application keys were accidentally published, it is not enough to just remove the content in a new commit. See [recommendations for removing sensitive data from a repository](https://help.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository) in such a situation.
 
@@ -78,7 +78,6 @@ Content which has been removed from one page in favor of superseding content on 
 **Footnotes**
 
 1\. <a name="footnote-1"></a>**Semantic Versioning** --- often shortened to “SemVer”, is the industry-standard methodology for categorizing the severity of changes so that developers can predict the scope of revisions among their dependencies. See the [SemVer FAQs](https://semver.org/#why-use-semantic-versioning) for more detail.
-
 
 2\. <a name="footnote-2"></a>**YAML front matter** --- the [AstroUXDS.com](http://AstroUXDS.com) website content management framework is 11ty, which uses Markdown files to define pages. Markdown files have YAML front matter, which are metadata variables for the page which 11ty uses to apply the correct page templates and other attributes when building the site.
 

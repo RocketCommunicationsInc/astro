@@ -2,9 +2,6 @@
 :host {
     display: block;
 
-    /** @prop --switch-hover-off-color: the Switch hover off color */
-    --switch-hover-off-color: var(--hover);
-
     /**
       * @prop --switch-background-color: the Switch off color
       */
@@ -25,8 +22,9 @@
     /** @prop --switch-on-color: the Switch on color */
     --switch-on-color: var(--primary);
 
-    /** @prop --switch-off-border-color: the Switch off border color*/
+    /** @prop --switch-off-border-color: the Switch off border color */
     --switch-off-border-color: var(--active);
+
     padding-left: 1%;
 }
 .rux-switch {
@@ -42,17 +40,14 @@
         cursor: pointer;
 
         // Track
-        &:before {
+        &::before {
             position: relative;
-
             display: flex;
             content: '';
-
             border-radius: 4.7px;
             border: 1px solid;
             border-color: var(--switch-off-border-color);
             background-color: var(--switch-background-color);
-
             height: 10px;
             width: 30px;
             z-index: 2;
@@ -60,7 +55,7 @@
         }
 
         // Button
-        &:after {
+        &::after {
             position: absolute;
             content: '';
             top: 1px;
@@ -71,7 +66,6 @@
             border-radius: 50%;
             border: 1px solid var(--switch-hover-off-color);
             background-color: var(--switch-background-color);
-
             transition: 0.1s left linear, 0.1s border-color linear;
         }
     }
@@ -114,7 +108,7 @@
                     &::before {
                         border-color: var(--switch-hover-off-color);
                     }
-                    &:after {
+                    &::after {
                         border-color: var(--switch-hover-off-color);
                     }
                 }
@@ -130,7 +124,7 @@
 
             &:checked:not(:disabled) {
                 + .rux-switch__button {
-                    &:before {
+                    &::before {
                         background-color: var(--switch-hover-on-color);
                     }
                 }
@@ -146,9 +140,6 @@
 .rux-form-field {
     display: flex;
     flex-direction: column;
-
-    font-family: var(--font-family);
-    font-size: var(--font-size);
     color: var(--default-text);
 }
 

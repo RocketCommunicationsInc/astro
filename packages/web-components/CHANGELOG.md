@@ -1,8 +1,20 @@
 # Change Log
 
-## [0.0.18] (unreleased)
+## [0.0.18] (2021-10-12)
 
 ### Breaking Changes
+
+#### Events
+
+-   Globally updated event names from camel case to lower case to be compatible with angular event name formats. You can do a find/replace for 'rux-{eventname}' -> 'rux{eventname}'
+
+#### Input
+
+-   `small` property has been removed. Use `size=small` instead.
+
+#### Textarea
+
+-   `small` property has been removed. Use `rows` property instead to control the height of the element.
 
 #### Select
 
@@ -21,6 +33,20 @@ should now become:
 ```
 <rux-option value="1" label="One"></rux-option>
 ```
+
+### Features
+
+#### Input
+
+-   Inputs with `type="password"` now support toggle show/hide by including the `visibility` and `visibility-off` rux-icons as clickable.
+-   Password inputs now swap types between `password` and `text` to show/hide the password.
+
+#### Event names
+
+-   Updated unit tests, e2e tests, and stories to use lowercase event names `rux{$eventName}`
+-   Updated documentation for frameworks to reflect event name change
+-   Updated react tests to use lowercase event names `onRux{$eventName}`
+
 ## [0.0.17] 2021-09-24
 
 ### Switch

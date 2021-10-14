@@ -60,10 +60,10 @@ export class RuxLog {
                                             <div class="header-event-container">
                                                 Event
                                                 <rux-input
-                                                    small
+                                                    size="small"
                                                     class="rux-log__filter"
                                                     type="search"
-                                                    onRux-input={(event) =>
+                                                    onRuxinput={(event) =>
                                                         this.setFilter(event)
                                                     }
                                                 ></rux-input>

@@ -69,10 +69,10 @@ describe("createComponent - events", () => {
     const FakeChange = jest.fn();
     const { webcomponent } = includeWebComponent<HTMLRuxRadioGroupElement>(
       renderWithStrictMode(
-        <RuxRadioGroup ref={radioRef} onRux-change={FakeChange}></RuxRadioGroup>
+        <RuxRadioGroup ref={radioRef} onRuxchange={FakeChange}></RuxRadioGroup>
       )
     );
     const attatchedEvents = (webcomponent as any).__events;
-    expect(Object.keys(attatchedEvents)).toContain("rux-change");
+    expect(Object.keys(attatchedEvents)).toContain("ruxchange");
   });
 });

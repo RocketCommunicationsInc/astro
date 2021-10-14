@@ -96,16 +96,16 @@ export class RuxTextarea implements FormFieldInterface {
     /**
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
      */
-    @Event({ eventName: 'rux-change' }) ruxChange!: EventEmitter
+    @Event({ eventName: 'ruxchange' }) ruxChange!: EventEmitter
 
     /**
      * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
      */
-    @Event({ eventName: 'rux-input' }) ruxInput!: EventEmitter
+    @Event({ eventName: 'ruxinput' }) ruxInput!: EventEmitter
     /**
      * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
      */
-    @Event({ eventName: 'rux-blur' }) ruxBlur!: EventEmitter
+    @Event({ eventName: 'ruxblur' }) ruxBlur!: EventEmitter
 
     @Element() el!: HTMLRuxTextareaElement
 
@@ -159,13 +159,7 @@ export class RuxTextarea implements FormFieldInterface {
         renderHiddenInput(true, this.el, this.name, this.value, this.disabled)
         return (
             <Host>
-                <div
-                    class={{
-                        'rux-textarea-field': true,
-                        'rux-textarea-field--small': this.small,
-                    }}
-                    part="form-field"
-                >
+                <div class="rux-textarea-field" part="form-field">
                     <label
                         class={{
                             'rux-textarea-label': true,

@@ -14,6 +14,7 @@ You will need a free GitHub account to propose changes to Astro.
 If you are new to Git and Git fork workflows the easiest way to edit Astro content is through GitHub’s online interface. If you are comfortable with Git and forking repositories skip to Step 5 below to see information about creating a pull request.
 
 ## Step 1 - Navigate to the page you want to edit
+
 At the bottom of each page on [AstroUXDS.com](https://astrouxds.com) you will find a link titled **Propose a change or fix to this page**. Follw the link to propose your change on GitHub. If you are not an authorized Astro contributor you will be asked to create a fork of the repository, this is a safe operation. You cannot break Astro proposing a change.
 
 ## Step 2 - Fork the Astro repository
@@ -56,7 +57,7 @@ Once you are content with your changes click **Create pull request**
 
 ## Step 6 - Preview your change
 
-Every pull request on AstroUXDS gets published to its own ephemeral URL for testing. You can view your changes live by clicking the *Details* link associated with the final check, deploy/netlify - Deploy preview ready! This URL is valid for as long as the pull request is open and will automatically delete itself after the pull request is closed or merged in to Astro.
+Every pull request on AstroUXDS gets published to its own ephemeral URL for testing. You can view your changes live by clicking the _Details_ link associated with the final check, deploy/netlify - Deploy preview ready! This URL is valid for as long as the pull request is open and will automatically delete itself after the pull request is closed or merged in to Astro.
 
 ![Don’t worry about the two red error messages, these are simply safeguards preventing changes being made public prior to necessary approval](/img/community/step-6.png)
 
@@ -68,4 +69,3 @@ The Astro team reviews pull requests weekly. Proposals may be
 - Scheduled for implementation in a future release if the scope of change requires sufficient effort
 - Returned with requests for further clarification or guidance on changes necessary for acceptance
 - Rejected if the proposal is not suitable for Astro at this time
-

@@ -4,7 +4,7 @@ path: /components/radio-button
 date: Last Modified
 layout: components.template.njk
 title: Radio Button
-demo:  components-form-elements--radio-buttons
+demo: components-form-elements--radio-buttons
 storybook: components-form-elements--radio-buttons
 git:
 height: 250px
@@ -29,9 +29,10 @@ Radio Buttons allow users to select a mutually exclusive option from a predefine
 - If you use more than one word in a text label, be sure to use sentence case capitalization.
 
 ## Appearance and Behavior
+
 A radio button consists of a small circle that is filled in upon selection. Text describing the represented choice for that line goes to the right of the selection icon. If the radio button choice is disabled, the selection state is still indicated by the fill of the selection icon, but the choice is not interactive and cannot be selected. The disabled state is shown with lowered opacity compared to the enabled state.
 
-Help Text for individual Radio Button list items left-aligns with the item’s text and not its icon for easier text scanning. To learn more about adding Help Text to Radio Buttons or Radio Button groups, see the [Forms and Validation](/patterns/forms-and-validation) guidance. 
+Help Text for individual Radio Button list items left-aligns with the item’s text and not its icon for easier text scanning. To learn more about adding Help Text to Radio Buttons or Radio Button groups, see the [Forms and Validation](/patterns/forms-and-validation) guidance.
 
 :::two-col
 ![Do: Use Radio Buttons when asking users to select a mutually exclusive option from a predefined set of options. When one selection is made, a previous selection becomes deselected.](/img/components/radio-buttons-do-1.png "Do: Use Radio Buttons when asking users to select a mutually exclusive option from a predefined set of options. When one selection is made, a previous selection becomes deselected.")

@@ -5,15 +5,16 @@
      * @prop --textarea-border-color: Border color of the textarea.
     */
     --textarea-border-color: var(--active);
+
     /**
      * @prop --textarea-text-color: Text color
     */
     --textarea-text-color: var(--default-text);
 
-    /** @prop --textarea-background-color: Background color*/
+    /** @prop --textarea-background-color: Background color */
     --textarea-background-color: var(--background);
 
-    /** @prop --textarea-invalid-border-color: Border color while in an invalid state*/
+    /** @prop --textarea-invalid-border-color: Border color while in an invalid state */
     --textarea-invalid-border-color: var(--color-critical);
 
     /**
@@ -43,8 +44,10 @@
     padding: 0.5rem;
     border: 1px solid var(--textarea-border-color);
     border-radius: 3px;
-    font-family: var(--font-family);
-    font-size: var(--font-size, 1rem);
+    font-family: var(--font-b1-font-family);
+    font-size: var(--font-b1-font-size);
+    letter-spacing: var(--font-b1-letter-spacing);
+    font-weight: var(--font-b1-font-weight);
     color: var(--textarea-text-color);
     background-color: var(--textarea-background-color);
     &--invalid {
@@ -54,20 +57,8 @@
         opacity: 0.4;
         opacity: var(--disabled-opacity);
         cursor: not-allowed;
-        cursor: not-allowed;
     }
-}
 
-.rux-textarea-field {
-    display: flex;
-    flex-direction: column;
-
-    font-family: var(--font-family);
-    font-size: var(--font-size);
-    color: var(--default-text);
-}
-
-.rux-textarea {
     &:focus {
         border-color: var(--textarea-focus-border-color);
         outline: none;
@@ -84,28 +75,25 @@
         border: 1px solid var(--textarea-invalid-border-color);
     }
     &::placeholder {
-        font-size: 1rem;
-        font-weight: normal;
-        font-family: var(--font-family);
         color: var(--default-text);
         opacity: 0.6;
     }
 }
 
+.rux-textarea-field {
+    display: flex;
+    flex-direction: column;
+    color: var(--default-text);
+}
+
 .rux-textarea-label {
+    font-family: var(--font-b1-font-family);
+    font-size: var(--font-b1-font-size);
+    font-weight: var(--font-b1-font-weight);
+    letter-spacing: var(--font-b1-letter-spacing);
     margin-bottom: var(--spacing-input-label-top);
 }
 
 ::selection {
     background-color: var(--textarea-selection-background-color);
-}
-
-.rux-textarea-field--small {
-    .rux-textarea-label {
-        font-size: var(--font-size-md);
-    }
-    .rux-textarea {
-        padding: 0.3rem;
-        font-size: var(--font-size-md);
-    }
 }

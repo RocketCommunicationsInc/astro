@@ -5,6 +5,7 @@
   * @prop --input-background-color: the input background color
   */
     --input-background-color: var(--background);
+
     /**
     * @prop --input-border-color: the input border color
     */
@@ -14,6 +15,7 @@
     * @prop --input-text-color: the input text color
     */
     --input-text-color: var(--default-text);
+
     /**
     * @prop --input-focus-border-color: the input focus border color
     */
@@ -35,20 +37,39 @@
     .rux-form-field {
         display: flex;
         flex-direction: column;
-
-        font-family: var(--font-family);
-        font-size: var(--font-size);
+        align-items: flex-start;
+        justify-content: center;
         color: var(--default-text);
     }
+    .icon-container {
+        background-color: #101923;
+        align-self: flex-end;
+        position: absolute;
+        width: 1.188rem;
+        height: 1.313rem;
+        padding-left: 0.5rem;
+    }
+    .show-password {
+        margin-top: 0.6rem;
+        margin-right: 0.5rem;
+    }
+    .with-label {
+        margin-top: 1.7rem;
+    }
+    rux-icon {
+        cursor: pointer;
+    }
+
     .rux-input {
         box-sizing: border-box;
         order: 2;
-        height: 2.125rem;
         width: 100%;
-        padding: 0 0.625rem;
         border: 1px solid var(--input-border-color);
         border-radius: 3px;
-        font-size: var(--font-size, 1rem);
+        font-family: var(--font-b1-font-family);
+        font-size: var(--font-b1-font-size);
+        font-weight: var(--font-b1-font-weight);
+        letter-spacing: var(--font-b1-letter-spacing);
         color: var(--input-text-color);
         background-color: var(--input-background-color);
         &--invalid {
@@ -58,19 +79,24 @@
             opacity: 0.4;
             opacity: var(--disabled-opacity);
             cursor: not-allowed;
-            cursor: not-allowed;
+        }
+        &--small {
+            padding: 0.25rem 0.5rem 0.188rem 0.5rem; // 4px 8px 3px 8px;
+        }
+        &--medium {
+            padding: 0.5rem 0.5rem 0.438rem 0.5rem; // 8px 8px 7px 8px;
+        }
+        &--large {
+            padding: 0.813rem 0.5rem 0.875rem 0.5rem; //13px 8px 14px 8px;
         }
         &--search {
             -webkit-appearance: none;
             -moz-appearance: none;
-            padding: 0.5rem 0.5rem 0.5rem 2rem;
+            padding-left: 2rem;
             background: var(--input-background-color)
                 url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.37 26.457a15.282 15.282 0 000-21.918c-6.176-6.052-16.187-6.052-22.361 0a15.274 15.274 0 00-1.541 20.166c-.367.147-.713.37-1.014.665L.926 34.709a3.056 3.056 0 000 4.383 3.208 3.208 0 004.472 0l9.528-9.339c.352-.345.604-.753.756-1.186 6.137 3.831 14.347 3.124 19.687-2.11zM24.193 4.043c6.454 0 11.686 5.129 11.686 11.455 0 6.326-5.232 11.455-11.686 11.455-6.455 0-11.687-5.129-11.687-11.455 0-6.326 5.232-11.455 11.687-11.455z' fill='%234dacff' fill-rule='evenodd'/%3E%3C/svg%3E")
                 10px/0.975rem no-repeat;
         }
-    }
-
-    .rux-input {
         &:focus {
             border-color: var(--input-focus-border-color);
             outline: none;
@@ -87,15 +113,16 @@
             border: 1px solid var(--input-invalid-border-color);
         }
         &::placeholder {
-            font-size: 1rem;
-            font-weight: normal;
-            font-family: var(--font-family);
             color: var(--default-text);
             opacity: 0.6;
         }
     }
 
     .rux-input-label {
+        font-family: var(--font-b1-font-family);
+        font-size: var(--font-b1-font-size);
+        font-weight: var(--font-b1-font-weight);
+        letter-spacing: var(--font-b1-letter-spacing);
         margin-bottom: var(--spacing-input-label-top);
         &__asterisk {
             margin-left: 4px;
@@ -104,21 +131,6 @@
 
     ::selection {
         background-color: var(--input-selection-background-color);
-    }
-
-    .rux-form-field--small {
-        .rux-input-label {
-            font-size: var(--font-size-md);
-        }
-        .rux-input {
-            height: 1.625rem;
-            padding: 0.3rem;
-            font-size: var(--font-size-md);
-        }
-
-        .rux-input--search {
-            padding: 0.3rem 0 0.3rem 2rem;
-        }
     }
 }
 

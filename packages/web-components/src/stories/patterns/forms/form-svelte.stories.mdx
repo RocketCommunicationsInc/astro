@@ -32,9 +32,9 @@ import { Meta } from '@storybook/addon-docs/blocks'
 Basic example form using all Astro form elements in a [Svelte](https://svelte.dev/) application.
 
 <iframe
-    src="https://codesandbox.io/s/astro-form-in-svelte-hn6m9?file=/Form.svelte"
-    title="Astro Svelte Basic Form Pattern"
+    src="https://codesandbox.io/embed/github/RocketCommunicationsInc/astro/tree/main/packages/web-components/src/stories/astro-sandboxes/forms/svelte/basic"
     class="sandbox"
+    title="Astro Svelte Basic Form Pattern"
     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
@@ -55,7 +55,7 @@ For data-binding, Svelte's two-way binding syntax bind:[prop] is not supproted f
 </script>
 
 <div>
-    <rux-input-field on:rux-input="{handleInput}" />
+    <rux-input-field on:ruxinput="{handleInput}" />
 
     <h1>Hello {name}!</h1>
 </div>
@@ -70,9 +70,9 @@ For data-binding, Svelte's two-way binding syntax bind:[prop] is not supproted f
 An example using [Svelte](https://svelte.dev/) + [Yup](https://github.com/jquense/yup) for easy validation.
 
 <iframe
-    src="https://codesandbox.io/s/astro-form-in-svelte-with-validation-7jk16?file=/Form.svelte"
+    src="https://codesandbox.io/embed/github/RocketCommunicationsInc/astro/tree/main/packages/web-components/src/stories/astro-sandboxes/forms/svelte/validation"
     class="sandbox"
-    title="Astro Vue Form Pattern with Yup"
+    title="Astro Svelte Form With Validation"
     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>

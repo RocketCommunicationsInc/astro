@@ -28,10 +28,18 @@
 function figureRenderer(md) {
   return function figureRender(tokens, idx) {
     const all = tokens[idx];
-    const id = all.figid ? ` id="figure-${md.utils.escapeHtml(all.figid)}"` : '';
-    const fig = all.fig ? `src="${md.utils.escapeHtml(all.fig)}"` : '';
-    const figalt = all.figalt ? `alt="${md.utils.escapeHtml(all.figalt)}"` : '';
-    const figcaption = all.figcaption ? `<figcaption>${all.figid ? 'Figure <span class="figure-id">' + all.figid + ': </span>' : ''}${md.utils.escapeHtml(all.figcaption)}</figcaption>` : '';
+    const id = all.figid
+      ? ` id="figure-${md.utils.escapeHtml(all.figid)}"`
+      : "";
+    const fig = all.fig ? `src="${md.utils.escapeHtml(all.fig)}"` : "";
+    const figalt = all.figalt ? `alt="${md.utils.escapeHtml(all.figalt)}"` : "";
+    const figcaption = all.figcaption
+      ? `<figcaption>${
+          all.figid
+            ? 'Figure <span class="figure-id">' + all.figid + ": </span>"
+            : ""
+        }${md.utils.escapeHtml(all.figcaption)}</figcaption>`
+      : "";
 
     const figure = `<figure${id}><img ${fig} ${figalt}/>${figcaption}</figure>`;
 
@@ -76,14 +84,18 @@ function figureRuler(md) {
 
     if (!valid) return false;
 
-    const match = FIGURE_REGEX.exec(state.src.slice(state.pos, state.src.length));
+    const match = FIGURE_REGEX.exec(
+      state.src.slice(state.pos, state.src.length)
+    );
 
     if (!match || match.length !== 5) return false;
 
     const figid = match[1] || false;
     const figcaption = match[2] || false;
     const fig = match[3] || false;
-    const figalt = match[4] ? match[4].substring(1, match[4].length - 1) : false;
+    const figalt = match[4]
+      ? match[4].substring(1, match[4].length - 1)
+      : false;
 
     const labelStart = state.pos + 2 + (figid.length || 0);
     const labelEnd = labelStart + (figcaption.length || 0);
@@ -95,22 +107,27 @@ function figureRuler(md) {
     if (!silent) {
       theState.pos = labelStart;
       theState.caption = theState.src.slice(labelStart, labelEnd);
-      const newState = new theState.md.inline.State(figcaption, theState.md, theState.env, []);
+      const newState = new theState.md.inline.State(
+        figcaption,
+        theState.md,
+        theState.env,
+        []
+      );
       newState.md.inline.tokenize(newState);
 
-      const token = theState.push('figure', '');
+      const token = theState.push("figure", "");
       token.figid = figid;
       token.figcaption = figcaption;
       token.fig = fig;
       token.figalt = figalt;
     }
 
-    theState.pos += theState.src.indexOf(')', theState.pos);
+    theState.pos += theState.src.indexOf(")", theState.pos);
     return true;
   };
 }
 
 module.exports = function figurePlugin(md) {
   md.renderer.rules.figure = figureRenderer(md);
-  md.inline.ruler.before('emphasis', 'figure', figureRuler(md));
+  md.inline.ruler.before("emphasis", "figure", figureRuler(md));
 };
