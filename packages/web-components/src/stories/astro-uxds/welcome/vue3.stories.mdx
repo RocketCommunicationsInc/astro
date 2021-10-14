@@ -18,20 +18,13 @@ Astro Web Components make use of Stencil's automatic lazy loader which only load
 
 ```js
 // main.js
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
-
-Vue.config.productionTip = false
-
-// Import Astro's base styles
-import '@astrouxds/astro-web-components/build/astro-web-components.css'
-
+import '@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css'
 import { defineCustomElements } from '@astrouxds/astro-web-components/dist/custom-elements'
-defineCustomElements()
 
-new Vue({
-    render: (h) => h(App),
-}).$mount('#app')
+defineCustomElements()
+createApp(App).mount('#app')
 ```
 
 #### Cherry Picking
@@ -42,13 +35,9 @@ This will be listed for each component in their documentation.
 
 ```js
 // main.js
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
-
-Vue.config.productionTip = false
-
-// Import Astro's base styles
-import '@astrouxds/astro-web-components/build/astro-web-components.css'
+import '@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css'
 
 // Import Button
 import { RuxButton } from '@astrouxds/astro-web-components/dist/components/rux-button'
@@ -56,9 +45,7 @@ import { RuxButton } from '@astrouxds/astro-web-components/dist/components/rux-b
 // Register Button
 customElements.define('rux-button', RuxButton)
 
-new Vue({
-    render: (h) => h(App),
-}).$mount('#app')
+createApp(App).mount('#app')
 ```
 
 Import [Roboto](https://fonts.google.com/specimen/Roboto) in your index.html. We recommend using Google's CDN for ease of use but you can also install it locally.
