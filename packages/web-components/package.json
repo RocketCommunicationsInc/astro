@@ -43,7 +43,6 @@
     },
     "license": "MIT",
     "devDependencies": {
-        "@astrouxds/ag-grid-theme": "~0.0.2",
         "@astrouxds/astro-figma-export": "~1.0.1",
         "@astrouxds/storybook-addon-docs-stencil": "~1.0.7",
         "@babel/core": "~7.13.16",
