@@ -18,7 +18,8 @@
         "@angular/platform-browser": "~12.2.0",
         "@angular/platform-browser-dynamic": "~12.2.0",
         "@angular/router": "~12.2.0",
-        "@astrouxds/angular": "^0.0.8",
+        "@astrouxds/angular": "^1.0.0-alpha.2",
+        "@astrouxds/astro-web-components": "^0.0.18",
         "rxjs": "~6.6.0",
         "tslib": "^2.3.0",
         "zone.js": "~0.11.4"
