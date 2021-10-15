@@ -3,6 +3,7 @@
 const process = require("process");
 const fs = require("fs");
 const http = require("https");
+const readline = require("readline");
 
 let inSrc = false;
 let inPublic = false;
@@ -44,8 +45,29 @@ function changeDir(dir) {
   console.log(`Now working in ${process.cwd()}`);
 }
 
-function init() {
-  console.log("***** Instializing Astro react starter kit *****");
+function getAppName(query) {
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
+
+  return new Promise((resolve) =>
+    rl.question(query, (ans) => {
+      rl.close();
+      resolve(ans);
+    })
+  );
+}
+
+async function init() {
+  let appName = process.argv[2];
+  if (!appName) {
+    appName = await getAppName("Please enter a root directory name: ");
+  }
+  console.log("***** Instializing Astro React starter kit *****");
+
+  changeDir(`./${appName}`);
+  console.log(`Root directory ${appName} created!`);
   writeFile("package.json");
   writeFile("README.md");
   writeFile(".gitignore");
@@ -78,6 +100,7 @@ function init() {
   console.log(`./public directory created in ${process.cwd()}`);
   console.log(`Finished!`);
   console.log(`Please run: `);
+  console.log(`cd ${appName}`);
   console.log(`npm install`);
   console.log(`npm start`);
   console.log(`Thanks for using AstroUXDS!`);
