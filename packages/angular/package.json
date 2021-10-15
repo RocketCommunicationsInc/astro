@@ -1,11 +1,11 @@
 {
   "name": "@astrouxds/angular",
-  "version": "1.0.0-alpha.2",
+  "version": "0.0.8",
   "description": "Astro Web Components Angular Wrapper",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/ionic.git"
+    "url": "https://github.com/RocketCommunicationsInc/astro/tree/main/packages/angular"
   },
   "scripts": {
     "build": "npm run build.ng",
