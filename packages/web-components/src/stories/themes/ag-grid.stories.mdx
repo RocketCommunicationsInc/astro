@@ -53,25 +53,22 @@ The Astro Dark variant is the default theme. The Light variant can be assigned b
 ```
 
 export const AGGrid = () => {
-    return html` <div style="padding: 2rem;">
-        <div
-            id="myGrid"
-            class="ag-theme-astro"
-            style="width: 100%; height: 2vh"
-        ></div>
-        <p>
-            To see an example of the Astro ag-Grid theme in action please visit
-            our
-            <a
-                href="https://codesandbox.io/s/relaxed-buck-b425x?file=/src/index.js"
-                target="_blank"
-                >codesandbox example</a
-            >
-        </p>
-    </div>`
+    return html`
+        <div style="padding: 2rem;">
+            <iframe
+                src="https://codesandbox.io/embed/github/RocketCommunicationsInc/astro/tree/main/packages/web-components/src/stories/astro-sandboxes/themes/ag-grid"
+                class="sandbox"
+                title="Astro AG-Grid Theme Example"
+                allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+                sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+            ></iframe>
+        </div>
+    `
 }
 
 ## Example
+
+Basic HTML/JS example of a ag-grid using Astro theming.
 
 <Canvas>
     <Story name="ag-Grid">{AGGrid.bind()}</Story>
