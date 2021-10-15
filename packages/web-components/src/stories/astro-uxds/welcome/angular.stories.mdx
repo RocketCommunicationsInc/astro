@@ -72,7 +72,7 @@ For basic primitive types like `string`, `boolean`, `number`, set the attribute 
 
 ### Dynamic Data
 
-Alternatively props can be set dynamically via property binding. This option comes in useful in `*ngFor` loops when
+Alternatively props can be set dynamically via property binding. This option is useful in `*ngFor` loops when
 data is not instantly available.
 
 ```js
@@ -110,7 +110,7 @@ Slots give you full control over the contents of a component. Some components ma
 ## Listening To Events
 
 ```html
-<rux-input name="myInput" (ruxchange)="onInputChange($event)"></rux-input>
+<rux-input name="myInput" (ruxinput)="onInputChange($event)"></rux-input>
 ```
 
 In TypeScript, accessing the events target value requires some type assertion.
