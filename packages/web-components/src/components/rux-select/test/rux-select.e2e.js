@@ -42,16 +42,18 @@ describe('Select with Form', () => {
     //     cy.get('#log').should('contain', 'bestThing:red')
     // })
 
-    it('should submit the correct value when selecting by arrow keys after focus', () => {
-        cy.get('#ruxSelect')
-            .shadow()
-            .find('select')
-            .realPress('Tab')
-            .realPress('ArrowDown', { delay: 200 })
-            .realType('b')
-        cy.get('#formSubmitBtn').click()
-        cy.get('#log').should('contain', 'bestThing:blue')
-    })
+    // #TODO this test causes tons of flake when run in CI/CD. Fix as part of ASTRO-2235
+
+    // it('should submit the correct value when selecting by arrow keys after focus', () => {
+    //     cy.get('#ruxSelect')
+    //         .shadow()
+    //         .find('select')
+    //         .realPress('Tab')
+    //         .realPress('ArrowDown', { delay: 200 })
+    //         .realType('b')
+    //     cy.get('#formSubmitBtn').click()
+    //     cy.get('#log').should('contain', 'bestThing:blue')
+    // })
 
     it('should default to the option with no value', () => {
         cy.get('#ruxSelect').shadow().find('select').should('have.value', '')
