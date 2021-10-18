@@ -1,7 +1,8 @@
 {
-  "name": "astro-vue",
+  "name": "astro-vue-2",
   "version": "0.1.0",
   "private": true,
+  "bin": "init.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
