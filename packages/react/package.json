@@ -42,10 +42,6 @@
     "@astrouxds/astro-web-components": "0.0.18",
     "ts-jest": "^27.0.5"
   },
-  "peerDependencies": {
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0"
-  },
   "jest": {
     "preset": "ts-jest",
     "setupFilesAfterEnv": [
