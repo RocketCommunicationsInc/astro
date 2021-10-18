@@ -50,15 +50,17 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
-| Property                    | Attribute       | Description                  | Type      | Default     |
-| --------------------------- | --------------- | ---------------------------- | --------- | ----------- |
-| `confirmText`               | `confirm-text`  | Text for confirmation button | `string`  | `'Confirm'` |
-| `denyText`                  | `deny-text`     | Text for close button        | `string`  | `'Cancel'`  |
-| `modalMessage` _(required)_ | `modal-message` | Modal body message           | `string`  | `undefined` |
-| `modalTitle` _(required)_   | `modal-title`   | Modal header title           | `string`  | `undefined` |
-| `open` _(required)_         | `open`          | Shows and hides modal        | `boolean` | `undefined` |
+| Property                    | Attribute       | Description                  | Type                  | Default     |
+| --------------------------- | --------------- | ---------------------------- | --------------------- | ----------- |
+| `confirmText`               | `confirm-text`  | Text for confirmation button | `string`              | `'Confirm'` |
+| `denyText`                  | `deny-text`     | Text for close button        | `string`              | `'Cancel'`  |
+| `modalMessage` _(required)_ | `modal-message` | Modal body message           | `string`              | `undefined` |
+| `modalTitle`                | `modal-title`   | Modal header title           | `string \| undefined` | `undefined` |
+| `open`                      | `open`          | Shows and hides modal        | `boolean`             | `false`     |
+
 
 ## Events
 
@@ -66,11 +68,13 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 | ---------------- | ------------------------------------- | ---------------------- |
 | `ruxmodalclosed` | Event that is fired when modal closes | `CustomEvent<boolean>` |
 
+
 ## Shadow Parts
 
 | Part        | Description               |
 | ----------- | ------------------------- |
 | `"wrapper"` | the modal wrapper overlay |
+
 
 ## CSS Custom Properties
 
@@ -80,15 +84,15 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 | `--modal-border-color`     | Modal border color     |
 | `--modal-title-color`      | Modal title color      |
 
+
 ## Dependencies
 
 ### Depends on
 
--   [rux-button-group](../rux-button-group)
--   [rux-button](../rux-button)
+- [rux-button-group](../rux-button-group)
+- [rux-button](../rux-button)
 
 ### Graph
-
 ```mermaid
 graph TD;
   rux-modal --> rux-button-group
@@ -97,6 +101,6 @@ graph TD;
   style rux-modal fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

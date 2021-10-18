@@ -4,99 +4,61 @@ import { Meta } from '@storybook/addon-docs/blocks'
 
 # Angular
 
+For your convienence, we offer a wrapper library for our Angular components. Out of the box, Angular already has [very good support for Custom Elements](https://custom-elements-everywhere.com/libraries/angular/results/results.html).
+Our wrapper library builds on top of that and adds:
+
+1. Support for ngModel
+2. Custom accessors for our form components so that you can use Angular's Reactive Forms and built validation.
+3. Better typescript intellisense and autocompletion.
+
 ## Installation
 
 ### Via NPM
 
-`npm i @astrouxds/astro-web-components`
+`npm i @astrouxds/angular`
 
-## Integration of astro-web-components into an Angular application.
+## Integration
 
-### Include `CUSTOM_ELEMENTS_SCHEMA` in any module that uses an astro-web-component.
+Import `CUSTOM_ELEMENTS_SCHEMA` and `AstroComponentsModule`
 
 ```js
+// app.module.ts
 import { BrowserModule } from '@angular/platform-browser'
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core'
-import { FormsModule } from '@angular/forms'
+import { AstroComponentsModule } from '@astrouxds/angular'
 
 import { AppComponent } from './app.component'
 
 @NgModule({
     declarations: [AppComponent],
-    imports: [BrowserModule, FormsModule],
+    imports: [BrowserModule, AstroComponentsModule],
     bootstrap: [AppComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}
 ```
 
-#### Lazy Loading
+> NOTE: When using the `@astrouxds/angular` package, components are lazy loaded only when they appear on the page.
+> It is not possible to cherry pick individual components at this time.
 
-Define your Custom Elements in `main.ts`
+Import Astro's CSS custom properties
 
-```js
-import { enableProdMode } from '@angular/core'
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
-
-import { AppModule } from './app/app.module'
-import { environment } from './environments/environment'
-
-// Import custom element function
-import { defineCustomElements } from '@astrouxds/astro-web-components/loader'
-
-if (environment.production) {
-    enableProdMode()
-}
-
-platformBrowserDynamic()
-    .bootstrapModule(AppModule)
-    .catch((err) => console.log(err))
-
-// Register cutom elements
-defineCustomElements()
+```css
+// styles.scss
+@import '@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css';
 ```
 
-#### Cherry Picking
+Import [Roboto](https://fonts.google.com/specimen/Roboto) in your index.html. We recommend using Google's CDN for ease of use but you can also install it locally.
 
-If you need more control over your bundle size, you can also import and register individual components.
-Cherry picking components will result in a much smaller overall bundle size; however, you will need to manually register any component dependencies.
-This will be listed for each component in their documentation.
-
-```js
-import { enableProdMode } from '@angular/core'
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
-
-import { AppModule } from './app/app.module'
-import { environment } from './environments/environment'
-
-// Import Button
-import { RuxButton } from '@astrouxds/astro-web-components/dist/components/rux-button'
-
-if (environment.production) {
-    enableProdMode()
-}
-
-platformBrowserDynamic()
-    .bootstrapModule(AppModule)
-    .catch((err) => console.log(err))
-
-// Register Button
-customElements.define('rux-button', RuxButton)
+```html
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&family=Roboto:wght@200;300;400;500;600;800&display=swap"
+    rel="stylesheet"
+/>
 ```
 
-#### Add global components styling to `angular.json`.
-
-```json
- "architect": {
-    "build": {
-      "builder": "@angular-devkit/build-angular:browser",
-      "options": {
-        "styles": [
-          "./node_modules/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css",
-        ],
-      },
-    },
-```
+Astro Components are now available anywhere in your app.
 
 ## Setting Props
 
@@ -110,7 +72,7 @@ For basic primitive types like `string`, `boolean`, `number`, set the attribute 
 
 ### Dynamic Data
 
-Alternatively props can be set dynamically via property binding. This option comes in useful in `*ngFor` loops when
+Alternatively props can be set dynamically via property binding. This option is useful in `*ngFor` loops when
 data is not instantly available.
 
 ```js
@@ -148,7 +110,7 @@ Slots give you full control over the contents of a component. Some components ma
 ## Listening To Events
 
 ```html
-<rux-input name="myInput" (ruxchange)="onInputChange($event)"></rux-input>
+<rux-input name="myInput" (ruxinput)="onInputChange($event)"></rux-input>
 ```
 
 In TypeScript, accessing the events target value requires some type assertion.

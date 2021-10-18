@@ -2,7 +2,7 @@ import './styles.css'
 import React from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import { RuxInput, RuxSelect, RuxButton } from '@astrouxds/react'
+import { RuxInput, RuxSelect, RuxButton, RuxOption } from '@astrouxds/react'
 
 export default function App() {
     const formik = useFormik({
@@ -41,7 +41,7 @@ export default function App() {
                         id="firstName"
                         name="firstName"
                         type="text"
-                        onRux-input={formik.handleChange}
+                        onRuxinput={formik.handleChange}
                         value={formik.values.firstName}
                         invalid={
                             formik.touched.firstName && formik.errors.firstName
@@ -51,7 +51,7 @@ export default function App() {
                                 ? formik.errors.firstName
                                 : ''
                         }
-                        onRux-blur={formik.handleBlur}
+                        onRuxblur={formik.handleBlur}
                     />
                 </div>
                 <div>
@@ -60,7 +60,7 @@ export default function App() {
                         id="lastName"
                         name="lastName"
                         type="text"
-                        onRux-input={formik.handleChange}
+                        onRuxinput={formik.handleChange}
                         value={formik.values.lastName}
                         invalid={
                             formik.touched.lastName && formik.errors.lastName
@@ -70,7 +70,7 @@ export default function App() {
                                 ? formik.errors.lastName
                                 : ''
                         }
-                        onRux-blur={formik.handleBlur}
+                        onRuxblur={formik.handleBlur}
                     />
                 </div>
                 <div>
@@ -79,7 +79,7 @@ export default function App() {
                         id="email"
                         name="email"
                         type="email"
-                        onRux-input={formik.handleChange}
+                        onRuxinput={formik.handleChange}
                         value={formik.values.email}
                         invalid={formik.touched.email && formik.errors.email}
                         error-text={
@@ -87,13 +87,13 @@ export default function App() {
                                 ? formik.errors.email
                                 : ''
                         }
-                        onRux-blur={formik.handleBlur}
+                        onRuxblur={formik.handleBlur}
                     />
                 </div>
                 <div>
                     <RuxSelect
                         label="Country/Region"
-                        onRux-change={formik.handleChange}
+                        onRuxchange={formik.handleChange}
                         value={formik.values.countryRegion}
                         id="countryRegion"
                         name="countryRegion"
@@ -107,13 +107,15 @@ export default function App() {
                                 ? formik.errors.countryRegion
                                 : ''
                         }
-                        onRux-blur={formik.handleBlur}
+                        onRuxblur={formik.handleBlur}
                     >
-                        <option value="Select an Option">
+                        <RuxOption value="Select an Option">
                             Select an Option
-                        </option>
-                        <option value="Canada">Canada</option>
-                        <option value="United States">United States</option>
+                        </RuxOption>
+                        <RuxOption value="Canada">Canada</RuxOption>
+                        <RuxOption value="United States">
+                            United States
+                        </RuxOption>
                     </RuxSelect>
                 </div>
                 <div>

@@ -73,7 +73,7 @@ describe("createComponent - events", () => {
   test("should add custom events", () => {
     const TextareaRef: React.RefObject<HTMLRuxTextareaElement> = React.createRef();
     const FakeBlur = jest.fn();
-    const FakeTextarea = jest.fn();
+    const FakeInput = jest.fn();
     const FakeChange = jest.fn();
     const { webcomponent } = includeWebComponent<HTMLRuxTextareaElement>(
       renderWithStrictMode(
@@ -81,13 +81,13 @@ describe("createComponent - events", () => {
           ref={TextareaRef}
           onRuxblur={FakeBlur}
           onRuxchange={FakeChange}
-          onRuxtextarea={FakeTextarea}
+          onRuxinput={FakeInput}
         ></RuxTextarea>
       )
     );
     const attatchedEvents = (webcomponent as any).__events;
     expect(Object.keys(attatchedEvents)).toContain("ruxblur");
     expect(Object.keys(attatchedEvents)).toContain("ruxchange");
-    expect(Object.keys(attatchedEvents)).toContain("ruxtextarea");
+    expect(Object.keys(attatchedEvents)).toContain("ruxinput");
   });
 });

@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className="App-logo">
+        <div>
           <RuxProgress />
         </div>
         <p>
