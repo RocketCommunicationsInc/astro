@@ -99,11 +99,13 @@ async function init() {
 
   console.log(`./public directory created in ${process.cwd()}`);
   console.log(`Finished!`);
+  console.log(`******************`);
   console.log(`Please run: `);
   console.log(`cd ${appName}`);
   console.log(`npm install`);
   console.log(`npm start`);
   console.log(`Thanks for using AstroUXDS!`);
+  console.log(`******************`);
 }
 
 init();
