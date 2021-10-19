@@ -1,5 +1,5 @@
 {
-  "name": "create-astro-react-starter",
+  "name": "@astrouxds/react-starter",
   "version": "0.2.0",
   "bin": "init.js",
   "dependencies": {
@@ -16,8 +16,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "create-astro-react-starter": "node init.js"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
