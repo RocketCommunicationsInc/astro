@@ -1,6 +1,8 @@
 name: Publish Actions
 on:
   workflow_dispatch:
+env:
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 jobs:
   publish:
     name: Publish All Packages
@@ -18,8 +20,6 @@ jobs:
         run: npx lerna bootstrap
       - name: Ensure access
         run: npm whoami
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Configure Git
         run: |
           git config --global user.name "${{ github.actor }}"
@@ -28,5 +28,3 @@ jobs:
         run: |
           npx lerna version --yes --conventional-commits --create-release github --message 'chore(release): publish'
           npx lerna publish from-package --yes
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
