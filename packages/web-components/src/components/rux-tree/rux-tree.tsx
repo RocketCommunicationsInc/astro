@@ -27,7 +27,7 @@ export class RuxTree {
 
         assignedElements.map((el) => {
             el.removeEventListener(
-                'rux-tree-node-selected',
+                'ruxtreenodeselected',
                 this.handleNodeSelected as EventListener
             )
         })
@@ -44,7 +44,7 @@ export class RuxTree {
         assignedElements.map((el) => {
             el.setAttribute('aria-level', '1')
             el.addEventListener(
-                'rux-tree-node-selected',
+                'ruxtreenodeselected',
                 this.handleNodeSelected as EventListener
             )
         })
