@@ -1,0 +1,30 @@
+name: Publish Actions
+on:
+  workflow_dispatch:
+jobs:
+  publish:
+    name: Publish All Packages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          cache: "npm"
+          cache-dependency-path: "**/package-lock.json"
+      - name: Install modules
+        run: npm i
+      - name: Bootstrap packages
+        run: npx lerna bootstrap
+      - name: Ensure access
+        run: npm whoami
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+      - name: Configure Git
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+      - name: Bump and Publish
+        run: |
+          npx lerna version --yes --conventional-commits --create-release github --message 'chore(release): publish'
+          npx lerna publish from-package --yes
