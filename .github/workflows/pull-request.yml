@@ -48,7 +48,7 @@ jobs:
       - name: Boostrap packages
         run: npx lerna bootstrap
       - name: Build packages
-        run: npx lerna run build
+        run: npx lerna run build --since
       - name: Run Cypress
         uses: cypress-io/github-action@v2
         with:
