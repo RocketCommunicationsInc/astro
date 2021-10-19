@@ -1,6 +1,7 @@
 {
-  "name": "angular-starter",
+  "name": "@astrouxds/angular-starter",
   "version": "0.0.0",
+  "bin": "init.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
