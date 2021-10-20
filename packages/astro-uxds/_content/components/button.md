@@ -4,8 +4,8 @@ path: /components/button
 date: Last Modified
 layout: components.template.njk
 title: Button
-demo: components-buttons--all-button-variants
-storybook: components-buttons--standard-button
+demo: components-button--all-variants
+storybook: components-button--default-story
 git: rux-button
 height: 260px
 scrolling: yes
