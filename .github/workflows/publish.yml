@@ -12,6 +12,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
+          node-version: "16"
           cache: "npm"
           cache-dependency-path: "**/package-lock.json"
       - name: Install modules
@@ -24,9 +25,7 @@ jobs:
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-      - name: Bump and Publish
-        run: |
-          npx lerna version --yes --conventional-commits --create-release github --message 'chore(release): publish'
-          npx lerna publish from-package --yes
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Bump
+        run: "npx lerna version --yes --conventional-commits --message 'chore(release): publish'"
+      - name: Publish
+        run: npx lerna publish from-package --yes
