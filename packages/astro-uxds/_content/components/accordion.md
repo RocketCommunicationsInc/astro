@@ -5,9 +5,7 @@ tags: components
 path: /components/accordion
 layout: components.template.njk
 theme: false
-demo: components--accordion
 height: 210px
-storybook: components--accordion
 scrolling: true
 git: rux-accordion
 ---
