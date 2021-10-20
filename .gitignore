@@ -25,7 +25,6 @@ log.txt
 .vscode/
 .sass-cache/
 .versions/
-.npmrc
 .netlify
 node_modules/
 $RECYCLE.BIN/
