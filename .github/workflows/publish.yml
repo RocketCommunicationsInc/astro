@@ -28,3 +28,5 @@ jobs:
         run: |
           npx lerna version --yes --conventional-commits --create-release github --message 'chore(release): publish'
           npx lerna publish from-package --yes
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
