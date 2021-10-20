@@ -4,7 +4,6 @@ module.exports = function (eleventyConfig) {
   const markdownItAnchor = require("markdown-it-anchor");
   const implicitFigures = require("markdown-it-implicit-figures");
   const markdownItFigure = require("./js/markdown-figure-it.js");
-  const cleanCSS = require("clean-css");
   const fs = require("fs");
 
   // console.log(markdownIt.escapeHtml);
