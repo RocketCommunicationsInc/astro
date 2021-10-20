@@ -1,6 +1,6 @@
 {
   "name": "@astrouxds/angular",
-  "version": "0.0.8",
+  "version": "1.0.0",
   "description": "Astro Web Components Angular Wrapper",
   "license": "MIT",
   "repository": {
@@ -28,7 +28,7 @@
     "dist/"
   ],
   "dependencies": {
-    "@astrouxds/astro-web-components": "^0.0.18",
+    "@astrouxds/astro-web-components": "^1.0.0",
     "tslib": "^1.9.3"
   },
   "peerDependencies": {

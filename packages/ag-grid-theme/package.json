@@ -1,6 +1,6 @@
 {
   "name": "@astrouxds/ag-grid-theme",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "AG Grid theme using Astro UXDS styling",
   "main": "index.js",
   "files": [
