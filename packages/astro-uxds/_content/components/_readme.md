@@ -9,25 +9,11 @@ title: Read Me
 
 # README
 
-ASTRO UX Guidelines include a CSS library of standard HTML elements for building Astro Applications. No specific JavaScript library is recommended for adding functionality to these components.
 
-There are two ways to use the Astro elements in your applications. You may simply download and refer to the compiled CSS and images in your app using the HTML and classes provided, or you may clone and serve the Astro Web Components library for development within a NodeJS project.
+## Getting Started with Astro Web Components
 
-## Getting Started with HTML & CSS
+[Additional Documentation/Storybook](https://astro-components.netlify.app/?path=/story/astro-uxds-welcome-start-here--page)
 
-[Additional Documentation/Git Repository](https://github.com/RocketCommunicationsInc/astro-components)
-
-Download the [Astro UI](https://github.com/RocketCommunicationsInc/astro-components/tree/master/static) Library and copy the ASTRO.css file and img directory to your project folder. In the head of all .html documents, add a link element with an href attribute to the relative location of astro.css or astro.min.css. Copy the /icons and /fonts directory to the root of your project. Note: astro.css and astro.min.css assume they are located in a sibling directory to /icons and /fonts.
-
-Example:
-
-```html
-<link rel="stylesheet" href="/your-project/path/astro.css" />
-```
-
-::: caution
-CAUTION!: astro.css is a simple CSS stylesheet, it can easily be broken or distorted if it is loaded out of order or if a reset stylesheet is used.
-:::
 
 ### Why Web Components?
 
