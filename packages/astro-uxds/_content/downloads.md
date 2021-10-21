@@ -10,20 +10,29 @@ title: Downloads
 
 ## Astro Design System
 
+- Astro Component Source Code ([Git Repository](https://github.com/RocketCommunicationsInc/astro-components))
+- Astro UXDS Figma Page ([Figma](https://www.figma.com/community/file/1014254163928270411))
+- Astro Icons ([SVG]() | [Figma]())
+- Astro React Wrapper ([Git Repository](https://github.com/RocketCommunicationsInc/astro/tree/main/packages/react))
+- Astro React Starter Kit ([Git Repository](https://github.com/RocketCommunicationsInc/astro/blob/main/packages/starter-kits/react-starter/README.md))
+- Astro Svelte Starter Kit ([Git Repository](https://github.com/RocketCommunicationsInc/astro/blob/main/packages/starter-kits/svelte-starter/README.md))
+- Astro Angular Starter Kit \[COMING SOON\]
+- Astro Vue Starter Kit \[COMING SOON\]
+
 :::note
 All Sketch files are being deprecated in favor of Figma.
 :::
 
-- Astro Component Source Code ([Git Repository](https://github.com/RocketCommunicationsInc/astro-components))
-- Astro UXDS Figma Page ([Figma](https://www.figma.com/community/file/1014254163928270411))
-- Astro Sketch Dark Library ([Git Repository](https://github.com/RocketCommunicationsInc/astro-design-resources/tree/master/Sketch))
-- Astro Sketch Wireframe Library ([Git Repository](https://github.com/RocketCommunicationsInc/astro-design-resources/tree/master/Sketch))
-- Astro Icons ([Sketch](https://bitbucket.org/rocketcom/astro-styles/raw/f4a08616984c85d833e3abdca450dc253398aa1c/icons/src/Astro%20Icons.sketch) | [Adobe XD](https://bitbucket.org/rocketcom/astro-styles/raw/f4a08616984c85d833e3abdca450dc253398aa1c/icons/src/Astro%20Icons.xd))
-- Astro Boilerplate ([Git Repository](https://github.com/RocketCommunicationsInc/astro-boilerplate))
-- Astro Angular Boilerplate ([Git Repository](https://github.com/RocketCommunicationsInc/astro-boilerplate-angular))
-- Astro React Boilerplate ([Git Repository](https://github.com/RocketCommunicationsInc/astro-boilerplate-react))
-- Astro Vue Boilerplate ([Git Repository](https://github.com/RocketCommunicationsInc/astro-boilerplate-vue))
-- Static copy of this site for reference in offline working environments ([gzip archive](https://github.com/RocketCommunicationsInc/astro-uxds/archive/refs/heads/master.zip))
+- \[DEPRECATED\] Astro Sketch Dark Library ([Git Repository](https://github.com/RocketCommunicationsInc/astro-design-resources/tree/master/Sketch))
+- \[DEPRECATED\] Astro Sketch Wireframe Library ([Git Repository](https://github.com/RocketCommunicationsInc/astro-design-resources/tree/master/Sketch))
+
+:::note
+Lit Element based components are being replaced with Stencil
+:::
+- \[DEPRECATED\] Astro Boilerplate ([Git Repository](https://github.com/RocketCommunicationsInc/astro-boilerplate))
+- \[DEPRECATED\] Astro Angular Boilerplate ([Git Repository](https://github.com/RocketCommunicationsInc/astro-boilerplate-angular))
+- \[DEPRECATED\] Astro React Wrapper ([Git Repository](https://github.com/RocketCommunicationsInc/astro-boilerplate-react))
+- \[DEPRECATED\] Astro Vue Boilerplate ([Git Repository](https://github.com/RocketCommunicationsInc/astro-boilerplate-vue))
 - \[DEPRECATED\] Astro Styles Source Code (Now included in the Component Repository)
 
 ## Astro for Material Design

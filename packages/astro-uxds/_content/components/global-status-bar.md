@@ -4,8 +4,8 @@ path: /components/global-status-bar
 date: Last Modified
 layout: components.template.njk
 title: Global Status Bar
-demo: components-global-status-bar--global-status-bar
-storybook: components-global-status-bar--global-status-bar
+demo: components-global-status-bar--default-story
+storybook: components-global-status-bar--default-story
 git: rux-global-status-bar
 height: 150px
 ---

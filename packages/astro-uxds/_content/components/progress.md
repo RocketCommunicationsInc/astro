@@ -7,7 +7,7 @@ title: Progress
 demo: components-progress--determinate-progress
 storybook: components-progress
 git: rux-progress
-height: 160px
+height: 180px
 theme: true
 ---
 

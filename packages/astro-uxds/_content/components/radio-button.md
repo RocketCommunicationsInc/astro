@@ -4,10 +4,10 @@ path: /components/radio-button
 date: Last Modified
 layout: components.template.njk
 title: Radio Button
-demo: components-form-elements--radio-buttons
-storybook: components-form-elements--radio-buttons
-git:
-height: 250px
+demo: forms-radio-group--default-story
+storybook: forms-radio-group--default-story
+git: rux-radio
+height: 180px
 theme: true
 ---
 
