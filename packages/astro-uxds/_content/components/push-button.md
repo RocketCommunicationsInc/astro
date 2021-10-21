@@ -4,10 +4,10 @@ path: /components/push-button
 date: Last Modified
 layout: components.template.njk
 title: Push Button
-demo: components-push-button--all-push-button-variants
-storybook: components-push-button--push-button
+demo: components-push-button--all-variants
+storybook: components-push-button--all-variants
 git: rux-push-button
-height: 200px
+height: 350px
 theme: true
 ---
 

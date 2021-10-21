@@ -4,10 +4,10 @@ path: /components/clock
 date: Last Modified
 layout: components.template.njk
 title: Clock
-demo: components-clock--clock
-storybook: components-clock--clock
+demo: components-clock--default-story
+storybook: components-clock--default-story
 git: rux-clock
-height: 210px
+height: 230px
 theme: true
 ---
 

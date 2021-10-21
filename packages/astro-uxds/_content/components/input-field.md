@@ -4,9 +4,9 @@ path: /components/input-field
 date: Last Modified
 layout: components.template.njk
 title: Input Field
-demo: components-form-elements--input-fields
-storybook: components-form-elements--input-fields
-git:
+demo: forms-input--types
+storybook: forms-input--types
+git: rux-input
 height: 400px
 scrolling: yes
 theme: true

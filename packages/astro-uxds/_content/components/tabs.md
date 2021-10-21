@@ -4,10 +4,10 @@ path: /components/tabs
 date: Last Modified
 layout: components.template.njk
 title: Tabs
-demo: components-tabs--tabs
-storybook: components-tabs--tabs
+demo: components-tabs--default-story
+storybook: components-tabs--default-story
 git: rux-tabs
-height: 210px
+height: 160px
 theme: true
 ---
 
