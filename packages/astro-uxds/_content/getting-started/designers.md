@@ -20,19 +20,22 @@ Before reading any further, we recommend you take a look at a live [Astro sample
 [Glossary](/design-guidelines/glossary/)
 [Compliance](/design-guidelines/compliance/)
 
-## Designer Starter Kit
 
-To download the Design starter kit, navigate to Astro Design Resources [Git Repository](https://github.com/RocketCommunicationsInc/astro-design-resources)
 
 ## Figma
 
-[Astro UXDS Figma Page](https://www.figma.com/community/file/1014254163928270411)
+[Astro UXDS Figma Library](https://www.figma.com/community/file/1014254163928270411)
+[Astro UXDS Icon Library](https://www.figma.com/community/file/1022883566772542677)
 
 ## Sketch
 
 :::note
 Sketch libraries are no longer under active development. We will be using Figma from now on.
 :::
+
+## Designer Starter Kit
+
+To download the Design starter kit, navigate to Astro Design Resources [Git Repository](https://github.com/RocketCommunicationsInc/astro-design-resources)
 
 ### Sketch Installation and Use
 
@@ -120,10 +123,11 @@ Each page on astrouxds.com has a support button at the bottom of the page for te
 
 ## Wireframing and Prototyping Tools
 
+- [Figma](https://www.figma.com/)
 - [Balsamiq](https://balsamiq.com/)
 - [Powerpoint](https://www.microsoft.com/en-us/microsoft-365/powerpoint)
 - [Keynote](https://www.apple.com/keynote/)
 - [Axure](https://www.axure.com/)
 - [Invision](https://www.invisionapp.com/)
 - [Sketch](https://www.sketch.com/)
-- [Figma](https://www.figma.com/)
+
