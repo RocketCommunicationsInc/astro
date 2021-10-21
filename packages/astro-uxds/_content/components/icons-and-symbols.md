@@ -4,9 +4,9 @@ path: /components/icons-and-symbols
 date: Last Modified
 layout: components.template.njk
 title: Icons and Symbols
-demo: components-icons-symbols--monitoring-icon-set
-storybook: components-icons-symbols--monitoring-icon-set
-git: rux-icon
+demo: components-monitoring-icon--all-variants
+storybook: components-monitoring-icon--all-variants
+git: rux-monitoring-icon
 height: 130
 theme: true
 ---

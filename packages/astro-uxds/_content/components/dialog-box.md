@@ -4,8 +4,8 @@ path: /components/dialog-box
 date: Last Modified
 layout: components.template.njk
 title: Dialog Box
-demo: components-dialog-box--dialog-box
-storybook: components-dialog-box--dialog-box
+demo: components-modal--modal
+storybook: components-modal--modal
 git: rux-modal
 height: 240px
 theme: true

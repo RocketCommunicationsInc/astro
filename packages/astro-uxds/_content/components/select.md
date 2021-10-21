@@ -4,10 +4,9 @@ path: /components/select
 date: Last Modified
 layout: components.template.njk
 title: Select Menu
-demo: components-form-elements--select-menu
-storybook: components-form-elements--select-menu
-git:
-css: select-menu-README.md
+demo: forms-select-menu--with-option-groups
+storybook: forms-select-menu--with-option-groups
+git: rux-select
 height: 130px
 scrolling: yes
 theme: true

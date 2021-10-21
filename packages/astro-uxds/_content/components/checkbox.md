@@ -4,10 +4,10 @@ path: /components/checkbox
 date: Last Modified
 layout: components.template.njk
 title: Checkbox
-demo: components-form-elements--checkboxes
-storybook: components-form-elements--checkboxes
-git:
-height: 250px
+demo: forms-checkbox-group--with-help-text
+storybook: forms-checkbox-group--default-story
+git: rux-checkbox
+height: 180px
 theme: true
 ---
 

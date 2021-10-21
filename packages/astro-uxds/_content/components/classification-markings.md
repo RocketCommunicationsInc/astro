@@ -5,8 +5,8 @@ date: Last Modified
 layout: components.template.njk
 class: marking
 title: Classification & Control Markings
-demo: components-classification-markings--classification-marking-banners
-storybook: components-classification-markings--classification-marking-banners
+demo: components-classification-markings--all-banner-variants
+storybook: components-classification-markings--all-banner-variants
 git: rux-classification-marking
 height: 360px
 theme: false
