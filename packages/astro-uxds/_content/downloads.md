@@ -22,7 +22,6 @@ title: Downloads
 :::note
 All Sketch files are being deprecated in favor of Figma.
 :::
-
 - \[DEPRECATED\] Astro Sketch Dark Library ([Git Repository](https://github.com/RocketCommunicationsInc/astro-design-resources/tree/master/Sketch))
 - \[DEPRECATED\] Astro Sketch Wireframe Library ([Git Repository](https://github.com/RocketCommunicationsInc/astro-design-resources/tree/master/Sketch))
 
