@@ -98,33 +98,33 @@ svg {
     height: 3rem;
 }
 svg.rux-status--off {
-    stroke: var(--color-off, rgb(158, 167, 173));
-    fill: var(--color-off, rgb(158, 167, 173));
+    stroke: var(--color-status-off-fill, rgb(158, 167, 173));
+    fill: var(--color-status-off-fill, rgb(158, 167, 173));
 }
 
 svg.rux-status--standby {
-    stroke: var(--color-standby, rgb(45, 204, 255));
-    fill: var(--color-standby, rgb(45, 204, 255));
+    stroke: var(--color-status-standby-fill, rgb(45, 204, 255));
+    fill: var(--color-status-standby-fill, rgb(45, 204, 255));
 }
 
 svg.rux-status--normal {
-    stroke: var(--color-normal, rgb(86, 240, 0));
-    fill: var(--color-normal, rgb(86, 240, 0));
+    stroke: var(--color-status-normal-fill, rgb(86, 240, 0));
+    fill: var(--color-status-normal-fill, rgb(86, 240, 0));
 }
 
 svg.rux-status--caution {
-    stroke: var(--color-caution, rgb(252, 232, 58));
-    fill: var(--color-caution, rgb(252, 232, 58));
+    stroke: var(--color-status-caution-fill, rgb(252, 232, 58));
+    fill: var(--color-status-caution-fill, rgb(252, 232, 58));
 }
 
 svg.rux-status--serious {
-    stroke: var(--color-serious, rgb(255, 179, 0));
-    fill: var(--color-serious, rgb(255, 179, 0));
+    stroke: var(--color-status-serious-fill, rgb(255, 179, 0));
+    fill: var(--color-status-serious-fill, rgb(255, 179, 0));
 }
 
 svg.rux-status--critical {
-    stroke: var(--color-critical, rgb(255, 56, 56));
-    fill: var(--color-critical, rgb(255, 56, 56));
+    stroke: var(--color-status-critical-fill, rgb(255, 56, 56));
+    fill: var(--color-status-critical-fill, rgb(255, 56, 56));
 }
 
 [data-progress] svg {

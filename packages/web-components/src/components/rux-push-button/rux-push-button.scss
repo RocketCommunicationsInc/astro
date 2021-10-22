@@ -12,10 +12,10 @@
     --pushbutton-text-color: var(--color-primary);
 
     /** @prop --pushbutton-selected-background-color: the Push Button background color when checked */
-    --pushbutton-selected-background-color: var(--color-normal);
+    --pushbutton-selected-background-color: var(--color-status-normal-fill);
 
     /** @prop --pushbutton-selected-border-color: the Push Button border color when checked */
-    --pushbutton-selected-border-color: var(--color-normal);
+    --pushbutton-selected-border-color: var(--color-status-normal-fill);
 
     /** @prop --pushbutton-selected-text-color: the Push Button text color when checked */
     --pushbutton-selected-text-color: var(--color-global-tertiary-900);
