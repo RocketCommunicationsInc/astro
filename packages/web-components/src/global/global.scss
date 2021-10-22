@@ -1,5 +1,7 @@
 @forward './theme/theme-light';
-@use 'tokens/color-dark';
+@use 'tokens/colors-global';
+@use 'tokens/colors-dark';
+@use 'tokens/colors-light';
 @use 'tokens/tokens';
 @use 'variables';
 @use 'mixins';

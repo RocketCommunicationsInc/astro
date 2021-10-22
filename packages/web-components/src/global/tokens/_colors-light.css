@@ -1,0 +1,63 @@
+/**
+ * Do not edit directly
+ * Generated on Thu, 21 Oct 2021 20:56:19 GMT
+ */
+
+.light-theme {
+    --color-status-border: rgba(0, 0, 0, 0);
+    --color-classification-top-secret-sci: var(
+        --color-global-classification-top-secret-sci
+    );
+    --color-classification-top-secret: var(
+        --color-global-classification-top-secret
+    );
+    --color-classification-secret: var(--color-global-classification-secret);
+    --color-classification-confidential: var(
+        --color-global-classification-confidential
+    );
+    --color-classification-cui: var(--color-global-classification-cui);
+    --color-classification-unclassified: var(
+        --color-global-classification-unclassified
+    );
+    --color-status-off-banner: var(--color-global-status-off-400);
+    --color-status-standby-under-border: var(--color-global-status-standby-500);
+    --color-status-standby-banner: var(--color-global-status-standby-400);
+    --color-status-normal-banner: var(--color-global-status-normal-400);
+    --color-status-caution-banner: var(--color-global-status-caution-400);
+    --color-status-critical-banner: var(--color-global-status-critical-400);
+    --color-status-off-border: var(--color-global-status-off-800);
+    --color-status-off-fill: var(--color-global-status-off-600);
+    --color-status-standby-fill: var(--color-global-status-standby-500);
+    --color-status-normal-fill: var(--color-global-status-normal-600);
+    --color-status-caution-fill: var(--color-global-status-caution-600);
+    --color-status-serious-fill: var(--color-global-status-serious-600);
+    --color-status-critical-fill: var(--color-global-status-critical-600);
+    --color-gsb-default-text: var(--color-global-basics-white);
+    --color-gsb-primary: var(--color-global-secondary-500);
+    --color-gsb-global-status-bar: var(--color-global-tertiary-700);
+    --color-banner-text-dark: var(--color-global-basics-black);
+    --color-banner-text-light: var(--color-global-basics-white);
+    --color-banner-clear: rgba(8, 12, 17, 0.3);
+    --color-dialog-shadow3: rgba(0, 0, 0, 0.2);
+    --color-dialog-shadow2: rgba(0, 0, 0, 0.12);
+    --color-dialog-shadow1: rgba(0, 0, 0, 0.14);
+    --color-table-header-shadow: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 42) 0%,
+        rgba(39, 64, 89, 0) 100%
+    );
+    --color-scrollbar-shadow: rgba(130, 129, 129, 0.5);
+    --color-list-hover: rgba(206, 233, 252, 0.3);
+    --color-table-hover: rgba(0, 72, 114, 0.3);
+    --color-hover: var(--color-global-primary-600);
+    --color-selected: var(--color-global-snowflakes-light-selected);
+    --color-active: var(--color-global-primary-300);
+    --color-primary-alt: var(--color-global-primary-400);
+    --color-primary: var(--color-global-primary-500);
+    --color-inverse-text: var(--color-global-basics-white);
+    --color-placeholder-text: rgba(41, 42, 45, 0.6);
+    --color-secondary-text: var(--color-global-quaternary-800);
+    --color-default-text: var(--color-global-quaternary-900);
+    --color-surface: var(--color-global-basics-white);
+    --color-background: var(--color-global-quaternary-200);
+}
