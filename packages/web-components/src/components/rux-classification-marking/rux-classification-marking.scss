@@ -19,7 +19,7 @@
     font-size: var(--font-b1-bold-font-size);
     font-weight: var(--font-b1-bold-font-weight);
     letter-spacing: var(--font-b1-bold-letter-spacing);
-    color: var(--color-classification-text-light);
+    color: var(--color-banner-text-light);
     background-color: var(--color-global-classification-unclassified);
     text-transform: uppercase;
 }
@@ -32,7 +32,7 @@
     min-height: 26px;
     transition: top 10.5s ease;
     overflow-wrap: anywhere;
-    color: var(--color-classification-text-light);
+    color: var(--color-banner-text-light);
     background-color: var(--color-global-classification-unclassified);
     position: sticky;
     top: 0;
@@ -60,12 +60,12 @@
 
 :host([classification='top-secret-sci']) .rux-classification {
     background-color: var(--color-global-classification-top-secret-sci);
-    color: var(--color-classification-text-dark);
+    color: var(--color-banner-text-dark);
 }
 
 :host([classification='top-secret']) .rux-classification {
     background-color: var(--color-global-classification-top-secret);
-    color: var(--color-classification-text-dark);
+    color: var(--color-banner-text-dark);
 }
 :host([classification='secret']) .rux-classification {
     background-color: var(--color-global-classification-secret);
