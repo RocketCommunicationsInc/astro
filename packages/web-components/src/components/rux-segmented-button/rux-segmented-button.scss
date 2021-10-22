@@ -3,37 +3,37 @@
     box-sizing: border-box;
 
     /** @prop --segmented-button-background-color: Segmented button background color */
-    --segmented-button-background-color: var(--background);
+    --segmented-button-background-color: var(--color-background);
 
     /** @prop --segmented-button-text-color: Segmented button text color */
-    --segmented-button-text-color: var(--primary);
+    --segmented-button-text-color: var(--color-primary);
 
     /** @prop --segmented-button-border-color: Segmented button border color */
-    --segmented-button-border-color: var(--primary);
+    --segmented-button-border-color: var(--color-primary);
 
     /** @prop --segmented-button-hover-background-color: Segmented button hover background color */
-    --segmented-button-hover-background-color: var(--background);
+    --segmented-button-hover-background-color: var(--color-background);
 
     /** @prop --segmented-button-hover-text-color: Segmented button hover text color */
-    --segmented-button-hover-text-color: var(--primary);
+    --segmented-button-hover-text-color: var(--color-primary);
 
     /** @prop --segmented-button-hover-border-color: Segmented button hover border color */
-    --segmented-button-hover-border-color: var(--hover);
+    --segmented-button-hover-border-color: var(--color-hover);
 
     /** @prop --segmented-button-selected-background-color: Segmented button selected background color */
-    --segmented-button-selected-background-color: var(--selected);
+    --segmented-button-selected-background-color: var(--color-selected);
 
     /** @prop --segmented-button-selected-text-color: Segmented button selected text color */
-    --segmented-button-selected-text-color: var(--default-text);
+    --segmented-button-selected-text-color: var(--color-default-text);
 
     /** @prop --segmented-button-selected-hover-background-color: Segmented button selected hover background color */
-    --segmented-button-selected-hover-background-color: var(--selected);
+    --segmented-button-selected-hover-background-color: var(--color-selected);
 
     /** @prop --segmented-button-selected-hover-text-color: Segmented button selected hover text color */
-    --segmented-button-selected-hover-text-color: var(--default-text);
+    --segmented-button-selected-hover-text-color: var(--color-default-text);
 
     /** @prop --segmented-button-selected-hover-border-color: Segmented button selected hover border color */
-    --segmented-button-selected-hover-border-color: var(--primary);
+    --segmented-button-selected-hover-border-color: var(--color-primary);
 
     /** @prop --segmented-button-border-radius: Segmented button border radius */
     --segmented-button-border-radius: 3px;

@@ -1,21 +1,21 @@
 // Dark/Default Theme Variables Mixin
 // This a mixin to allow for variables to be included in the shadow dom of a component and overwrite global thmese when necessary.
-@import './tokens/color-dark';
+@use './tokens/colors-dark' as variables;
 :root {
     // Sets default theme variables for component library
-    @include root-variables;
+    @include variables.root-variables;
     --disabled-opacity: 0.4;
     --border-radius-button: 3px;
 
-    --color-critical: var(--color-status-critical-500, rgb(255, 42, 4));
-    --color-serious: var(--color-status-serious-500, rgb(255, 175, 61));
-    --color-caution: var(--color-status-caution-500, rgb(250, 216, 0));
-    --color-normal: var(--color-status-normal-500, rgb(0, 226, 0));
-    --color-standby: var(--color-status-standby-500, rgb(45, 204, 255));
-    --color-off: var(--color-status-off-500, rgb(142, 154, 163));
+    --color-critical: var(--color-global-status-critical-500, rgb(255, 42, 4));
+    --color-serious: var(--color-global-status-serious-500, rgb(255, 175, 61));
+    --color-caution: var(--color-global-status-caution-500, rgb(250, 216, 0));
+    --color-normal: var(--color-global-status-normal-500, rgb(0, 226, 0));
+    --color-standby: var(--color-global-status-standby-500, rgb(45, 204, 255));
+    --color-off: var(--color-global-status-off-500, rgb(142, 154, 163));
 
-    --color-classification-text-light: var(--default-text);
-    --color-classification-text-dark: var(--inverse-text);
+    --color-classification-text-light: var(--color-default-text);
+    --color-classification-text-dark: var(--color-inverse-text);
 
     --status-symbols: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAMAAABzRoe3AAAAgVBMVEUAAAD/tQv/swL/OTn/PDzftl9W8QBW8AAtzP8v0P9Z9gD/tAP/uQb/tAItzf8tzf+eqK2ep60uzP9X8QCfqK4uzf8uzf9X8QAuzP9X8ACeqK4vzP9Y8QAuzv9Y8gCeqq4wz/8xzv9A1f9Y8QD/tAP86DpW8AD/swL/ODgtzP+ep63tgXPUAAAAJXRSTlMAGNfAQAv98/IdG8Io52zz8+DZ2dC9trabm4F+a05OQjAaDG6dAJcYcwAAAfdJREFUWMPtmNlygkAQRScyrBp3QTZFNBj8/w9MCGI3dBOHMg9jyvOmVFnn1HUSULx4LibjN/HMTN7Po2cu+PY/cwUfPYg2XhKsbHsVJJ5gcaf+cjZb+lN3qJjxyWIw/lAwNMALreKKFTIJh215Y3sYFiD5AEn9oWBowM4uEPau65A6JcJJ/2ACg/pDwdCAo1W0sI6ixbTsMH18Akn9oWBgwK7xh4LWBmlJSB+dwCD+pEA5wLMLgo3OwcGpvzhxludZfH1Bz4EZrefzdWSqTSCJPylQDggLhhA+oD6/G7d+5W7qk9yV3C8uPyz2KhMYxJ8UKAd4Fhdg3SZwa3/4wLrA7fhfbuwVJpDEnxQoByQFS9I6wQ7ydR16js0FBCzMuxMY1J8WqAYEfEDQXPcr3RjbxNU7vsBEF0R0dwJJ/LkCxYAVH7Bqri8r3QzbZNU7S4FZ44B1/ymgA4zPfZwUA2w+wG6uzyrdHMvk1TszgZnjgLmgyL4T8Dbq8R+bWgUIgw4ABby/Vl8hIckAUMD7a3WIYQIYgC0Af73+jOIJpKAF1F+vf2QwAQxAC7C/ZrcSeAIpegvAX7ObOZgABiAF2F+322mYAAagBeCv2wMNTEAGIAWVv3aPlDABDMAW1P7aPdQjDBiALaj89ftZBSGl+LXgZIoXL/4VXyptNwzuHR/QAAAAAElFTkSuQmCC');
 
@@ -25,9 +25,9 @@
     --color-scrollbar-corner-background: #203246;
 
     /*
-      Dev only
-      ==========================================================================
-    */
+    Dev only
+    ==========================================================================
+  */
     --spacing-input-label-top: 0.375rem;
     --spacing-input-label-left: 0.625rem; //10px;
 }

@@ -28,9 +28,9 @@ body {
     font-size: var(--font-b1-font-size);
     font-weight: var(--font-b1-font-weight);
     letter-spacing: var(--font-b1-letter-spacing);
-    color: var(--default-text, rgb(255, 255, 255));
+    color: var(--color-default-text, rgb(255, 255, 255));
 
-    background-color: var(--background);
+    background-color: var(--color-background);
     scrollbar-color: var(--color-scrollbar-background-thumb)
         var(--color-scrollbar-corner-background);
 }
