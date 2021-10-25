@@ -8,19 +8,19 @@
     display: inline-block;
 
     /** @prop --checkbox-label-color: Label text color */
-    --checkbox-label-color: var(--default-text);
+    --checkbox-label-color: var(--color-default-text);
 
     /** @prop --checkbox-background-color: Checkbox background color */
-    --checkbox-background-color: var(--background);
+    --checkbox-background-color: var(--color-background);
 
     /** @prop --checkbox-border-color: Checkbox border color */
-    --checkbox-border-color: var(--active);
+    --checkbox-border-color: var(--color-active);
 
     /** @prop --checkbox-checked-color: Checkmark color when checked */
-    --checkbox-checked-color: var(--primary);
+    --checkbox-checked-color: var(--color-primary);
 
     /** @prop --checkbox-hover-border-color: Hover border color */
-    --checkbox-hover-border-color: var(--hover);
+    --checkbox-hover-border-color: var(--color-hover);
 }
 
 .hidden,
@@ -35,7 +35,7 @@
     font-size: var(--font-b1-font-size);
     letter-spacing: var(--font-b1-letter-spacing);
     font-weight: var(--font-b1-font-weight);
-    color: var(--default-text);
+    color: var(--color-default-text);
 }
 
 .rux-checkbox {
@@ -134,7 +134,7 @@
 
 .rux-help-text {
     margin-top: 0.625rem;
-    color: var(--default-text);
+    color: var(--color-default-text);
     font-size: var(--font-b2-font-size);
     font-family: var(--font-b2-font-family);
     font-weight: var(--font-b2-font-weight);

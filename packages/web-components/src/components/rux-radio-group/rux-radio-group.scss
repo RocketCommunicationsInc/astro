@@ -2,7 +2,7 @@
 
 :host {
     /** @prop --radiogroup-border-color: the radio group border color */
-    --radiogroup-border-color: var(--active);
+    --radiogroup-border-color: var(--color-active);
 
     display: block;
 }
@@ -27,7 +27,7 @@
     border-radius: 3px;
 }
 .rux-radio-group--invalid {
-    border: 1px solid var(--color-critical);
+    border: 1px solid var(--color-status-critical-fill);
 }
 
 .rux-label {

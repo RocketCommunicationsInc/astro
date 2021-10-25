@@ -6,24 +6,24 @@
       * @prop --switch-background-color: the Switch off color
       */
 
-    --switch-background-color: var(--background);
+    --switch-background-color: var(--color-background);
 
     /**
       * @prop --switch-hover-on-color: the Switch hover on color
       */
-    --switch-hover-on-color: var(--primary);
+    --switch-hover-on-color: var(--color-primary);
 
     /**
       * @prop --switch-hover-off-color: the Switch hover off color
       */
 
-    --switch-hover-off-color: var(--primary);
+    --switch-hover-off-color: var(--color-primary);
 
     /** @prop --switch-on-color: the Switch on color */
-    --switch-on-color: var(--primary);
+    --switch-on-color: var(--color-primary);
 
     /** @prop --switch-off-border-color: the Switch off border color */
-    --switch-off-border-color: var(--active);
+    --switch-off-border-color: var(--color-active);
 
     padding-left: 1%;
 }
@@ -140,7 +140,7 @@
 .rux-form-field {
     display: flex;
     flex-direction: column;
-    color: var(--default-text);
+    color: var(--color-default-text);
 }
 
 .hidden,

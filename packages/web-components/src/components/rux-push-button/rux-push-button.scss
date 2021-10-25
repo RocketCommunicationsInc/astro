@@ -6,19 +6,19 @@
     --pushbutton-background-color: none;
 
     /** @prop --pushbutton-border-color: the Push Button border color */
-    --pushbutton-border-color: var(--primary);
+    --pushbutton-border-color: var(--color-primary);
 
     /** @prop --pushbutton-text-color: the Push Button text color */
-    --pushbutton-text-color: var(--primary);
+    --pushbutton-text-color: var(--color-primary);
 
     /** @prop --pushbutton-selected-background-color: the Push Button background color when checked */
-    --pushbutton-selected-background-color: var(--color-normal);
+    --pushbutton-selected-background-color: var(--color-status-normal-fill);
 
     /** @prop --pushbutton-selected-border-color: the Push Button border color when checked */
-    --pushbutton-selected-border-color: var(--color-normal);
+    --pushbutton-selected-border-color: var(--color-status-normal-fill);
 
     /** @prop --pushbutton-selected-text-color: the Push Button text color when checked */
-    --pushbutton-selected-text-color: var(--color-tertiary-900);
+    --pushbutton-selected-text-color: var(--color-global-tertiary-900);
 
     margin: 0 2px;
     -webkit-user-select: none;
