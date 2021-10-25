@@ -8,6 +8,7 @@
     "url": "https://github.com/RocketCommunicationsInc/astro/tree/main/packages/angular"
   },
   "scripts": {
+    "prepack": "npm run build",
     "build": "npm run build.ng",
     "build.fesm": "rollup --config ./scripts/rollup.config.js",
     "build.ng": "npm run build.es2015 && npm run build.es5",
