@@ -2,32 +2,32 @@
     /**
     * @prop --tree-accent-color: tree accent color
     */
-    --tree-accent-color: var(--primary);
+    --tree-accent-color: var(--color-primary);
 
     /**
     * @prop --tree-hover-background-color: tree hover background color
     */
-    --tree-hover-background-color: var(--hover);
+    --tree-hover-background-color: var(--color-hover);
 
     /**
     * @prop --tree-hover-text-color: tree hover text color
     */
-    --tree-hover-text-color: var(--inverse-text);
+    --tree-hover-text-color: var(--color-inverse-text);
 
     /**
     * @prop --tree-selected-border-color: tree selected border color
     */
-    --tree-selected-border-color: var(--primary-alt);
+    --tree-selected-border-color: var(--color-primary-alt);
 
     /**
     * @prop --tree-selected-accent-color: tree selected accent color
     */
-    --tree-selected-accent-color: var(--primary);
+    --tree-selected-accent-color: var(--color-primary);
 
     /**
     * @prop --tree-expanded-border-color: tree expanded border color
     */
-    --tree-expanded-border-color: var(--background);
+    --tree-expanded-border-color: var(--color-background);
 
     position: relative;
     box-sizing: border-box;

@@ -2,22 +2,22 @@
     /**
     * @prop --clock-text-color: the color of the clock text
     */
-    --clock-text-color: var(--color-basics-white);
+    --clock-text-color: var(--color-global-basics-white);
 
     /**
     * @prop --clock-background-color: the background color for the clock
     */
-    --clock-background-color: var(--color-tertiary-800);
+    --clock-background-color: var(--color-global-tertiary-800);
 
     /**
     * @prop --clock-border-color: the border color for the clock
     */
-    --clock-border-color: var(--color-snowflakes-dark-surface);
+    --clock-border-color: var(--color-global-snowflakes-dark-surface);
 
     /**
     * @prop --clock-label-color: the label color for the clock
     */
-    --clock-label-color: var(--color-basics-white);
+    --clock-label-color: var(--color-global-basics-white);
 
     display: flex;
     margin: 0 1rem;

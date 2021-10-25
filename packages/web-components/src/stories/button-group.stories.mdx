@@ -25,11 +25,13 @@ export const Default = (args) => {
     return html`
         <style>
             .light-theme {
-                --exampleContainerBackgroundColor: var(--inverse-text);
+                --exampleContainerBackgroundColor: var(--color-inverse-text);
                 --exampleContainerBorderColor: var(--colorQuaternaryLighten1);
             }
             .dark-theme {
-                --exampleContainerBackgroundColor: var(--color-tertiary-600);
+                --exampleContainerBackgroundColor: var(
+                    --color-global-tertiary-600
+                );
                 --exampleContainerBorderColor: #283f58;
             }
             .example-container {

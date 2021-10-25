@@ -43,7 +43,7 @@ describe('rux-global-status-bar', () => {
                   <span class="app-version">test v1.0</span>
                 </div>
                 <div class="app-state-wrapper">
-                  <div class="app-state"  style="background-color: var(--color-tag-1-600);" >App State</div>
+                  <div class="app-state"  style="background-color: var(--color-global-tag-tag1-600);" >App State</div>
                   <div class="username">Username</div>
                 </div>
               </div>
@@ -82,7 +82,7 @@ describe('rux-global-status-bar', () => {
                   <span class="app-version">test v1.0</span>
                 </div>
                 <div class="app-state-wrapper">
-                  <div class="app-state"  style="background-color: var(--color-tag-1-600);">App State</div>
+                  <div class="app-state"  style="background-color: var(--color-global-tag-tag1-600);">App State</div>
                   <div class="username">Username</div>
                 </div>
               </div>

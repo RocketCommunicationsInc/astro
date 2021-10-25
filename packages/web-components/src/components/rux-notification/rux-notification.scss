@@ -2,7 +2,7 @@
     /**
   * @prop --notification-text-color: The notification text color
   */
-    --notification-text-color: var(--color-tertiary-900);
+    --notification-text-color: var(--color-global-tertiary-900);
 
     display: flex;
     justify-content: space-between;
@@ -16,7 +16,7 @@
     width: 100%;
     position: absolute;
     padding: 0 1.25rem;
-    background-color: var(--color-status-standby-400);
+    background-color: var(--color-global-status-standby-400);
     transition: top 0.5s ease;
     box-sizing: border-box;
     font-family: var(--font-h5-font-family);
@@ -27,7 +27,7 @@
     rux-icon {
         align-items: center;
         justify-content: flex-end;
-        color: var(--banner-clear);
+        color: var(--color-banner-clear);
     }
 }
 
@@ -41,23 +41,23 @@
 
 :host,
 :host([status='off']) {
-    background-color: var(--color-status-off-400);
+    background-color: var(--color-global-status-off-400);
 }
 
 :host([status='standby']) {
-    background-color: var(--color-status-standby-400);
+    background-color: var(--color-global-status-standby-400);
 }
 
 :host([status='normal']) {
-    background-color: var(--color-status-normal-400);
+    background-color: var(--color-global-status-normal-400);
 }
 :host([status='caution']) {
-    background-color: var(--color-status-caution-400);
+    background-color: var(--color-global-status-caution-400);
 }
 
 :host([status='serious']) {
-    background-color: var(--color-status-serious-500);
+    background-color: var(--color-global-status-serious-500);
 }
 :host([status='critical']) {
-    background-color: var(--color-status-critical-400);
+    background-color: var(--color-global-status-critical-400);
 }

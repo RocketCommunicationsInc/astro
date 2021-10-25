@@ -2,25 +2,25 @@
 
 :host {
     /** @prop --slider-thumb-background-color: Background color of the slider's thumb. */
-    --slider-thumb-background-color: var(--background);
+    --slider-thumb-background-color: var(--color-background);
 
     /** @prop --slider-thumb-border-color: Border color of the slider's thumb. */
-    --slider-thumb-border-color: var(--primary);
+    --slider-thumb-border-color: var(--color-primary);
 
     /** @prop --slider-hover-thumb-background-color: Background color of the slider's thumb in a hover state. */
-    --slider-hover-thumb-background-color: var(--background);
+    --slider-hover-thumb-background-color: var(--color-background);
 
     /** @prop --slider-hover-thumb-border-color: Border color of the slider's thumb in a hover state. */
-    --slider-hover-thumb-border-color: var(--hover);
+    --slider-hover-thumb-border-color: var(--color-hover);
 
     /** @prop --slider-track-background-color: Background color of the slider's track. */
-    --slider-track-background-color: var(--primary);
+    --slider-track-background-color: var(--color-primary);
 
     /** @prop --slider-selected-track-background-color: Background color of the slider's thumb in a selected state. */
-    --slider-selected-track-background-color: var(--primary);
+    --slider-selected-track-background-color: var(--color-primary);
 
     /** @prop --slider-selected-thumb-border-color: Border color of the slider's thumb in a selected state. */
-    --slider-selected-thumb-border-color: var(--hover);
+    --slider-selected-thumb-border-color: var(--color-hover);
 
     /** @prop --slider-thumb-size: Size of the slider's thumb, both width and height. */
     --slider-thumb-size: 19px;
@@ -221,7 +221,7 @@ input[type='range']:focus {
 
 .rux-range:not(:disabled)::-webkit-slider-thumb:active {
     border-color: var(--slider-selected-thumb-border-color);
-    background-color: var(--background);
+    background-color: var(--color-background);
 }
 
 .rux-range:not(:disabled)::-webkit-slider-thumb:focus,
@@ -244,7 +244,7 @@ input[type='range']:focus {
 }
 .rux-range:not(:disabled)::-moz-range-thumb:active {
     border-color: var(--slider-selected-thumb-border-color);
-    background-color: var(--background);
+    background-color: var(--color-background);
 }
 .rux-range::-moz-range-thumb:hover {
     border-color: var(--slider-hover-thumb-border-color);
