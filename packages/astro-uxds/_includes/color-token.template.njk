@@ -1,0 +1,63 @@
+<!-- individual card for a COLOR token -->
+{% extends "base.template.njk" %}
+{% block content %}
+<div class="token-page">
+<h1 style="margin-bottom: 20px;">{{ title }}</h1>
+<table class="token-table">
+    <thead class="token-head">
+        <tr>
+            <td class="table-cell">Token Name</td>
+            <td class="table-cell">Token Value</td>
+            <td class="table-cell">Example</td>
+        </tr>
+    </thead>
+        <tbody>
+            {% set regExpL = r/light.*/g %}
+            {% set regExpD = r/dark.*/g %}
+            {% set regExpW = r/wireframe.*/g %}
+
+            
+
+            {% for key, value in color %}
+                {% if dark %}
+                    {% if regExpD.test(key) %}
+                        <tr class="token-color">
+                            <td class="table-cell">{{ key }}</td>
+                            <td class="table-cell" style="font-weight: bold">{{ value }}</td>
+                            <td class="table-cell table-cell-color">
+                                <div class="color-banner" style="background: {{ value }}; ">
+                                </div>
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% elif light %}
+                    {% if regExpL.test(key) %}
+                        <tr class="token-color">      
+                            <td class="table-cell">{{ key }}</td>
+                            <td class="table-cell" style="font-weight: bold">{{ value }}</td>
+                            <td class="table-cell table-cell-color">
+                                <div class="color-banner" style="background: {{ value }};">
+                                </div>
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% elif wireframe %}
+                    {% if regExpW.test(key) %}
+                            <tr class="token-color">      
+                            <td class="table-cell">{{ key }}</td>
+                            <td class="table-cell" style="font-weight: bold">{{ value }}</td>
+                            <td class="table-cell table-cell-color">
+                                <div class="color-banner" style="background: {{ value }};">
+                                </div>
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+
+

@@ -149,3 +149,26 @@
 .theme-toggle__input:checked + label .off {
   color: var(--demo-container-toggle-on-color, #fff);
 }
+
+.token-page {
+  padding: 20px;
+}
+.header-row {
+  border-bottom: 1px solid black;
+  margin: 20px;
+}
+.color-banner {
+  height: 20px;
+  padding: 1%;
+  border: 1px solid #d3d2d2;
+}
+.table-cell {
+  padding: 24px 12px;
+}
+.table-cell-color {
+  width: 27% !important;
+}
+.token-head {
+  font-weight: bolder;
+  font-size: 24px;
+}
