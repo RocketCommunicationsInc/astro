@@ -7,34 +7,34 @@
     --select-menu-border-radius: 3px;
 
     /** @prop --select-menu-border-hover-color: Border Hover Color of the Select Input */
-    --select-menu-border-hover-color: var(--hover);
+    --select-menu-border-hover-color: var(--color-hover);
 
     /** @prop --select-menu-border-focus-color: Border Focus Color of the Select Input */
-    --select-menu-border-focus-color: var(--hover);
+    --select-menu-border-focus-color: var(--color-hover);
 
     /** @prop --select-menu-invalid-border-color: Border Color of the Invalid Select Input */
-    --select-menu-invalid-border-color: var(--color-critical);
+    --select-menu-invalid-border-color: var(--color-status-critical-fill);
 
     /** @prop --select-menu-option-hover-background-color: Background Hover Color of Select Menu Options */
     --select-menu-option-hover-background-color: rgba(28, 63, 94, 0.3);
 
     /** @prop --select-menu-text-color: Text Color of the Select Input */
-    --select-menu-text-color: var(--primary);
+    --select-menu-text-color: var(--color-primary);
 
     /** @prop --select-menu-option-group-text-color: Text Color of Select Menu Option Group */
     --select-menu-option-group-text-color: rgba(255, 255, 255, 0.6);
 
     /** @prop --select-menu-option-text-hover-color: Text Hover Color of the Select Menu Options */
-    --select-menu-option-text-hover-color: var(--hover);
+    --select-menu-option-text-hover-color: var(--color-hover);
 
     /** @prop --select-menu-option-selected-background-color: Background Color of the Selected Option */
-    --select-menu-option-selected-background-color: var(--selected);
+    --select-menu-option-selected-background-color: var(--color-selected);
 
     /** @prop --select-menu-option-selected-text-color: Text Color of the Selected Option */
-    --select-menu-option-selected-text-color: var(--default-text);
+    --select-menu-option-selected-text-color: var(--color-default-text);
 
     /** @prop --select-menu-label-color: Text Color of the Label */
-    --select-menu-label-color: var(--default-text);
+    --select-menu-label-color: var(--color-default-text);
 
     /** @prop --select-menu-inactive-caret: Caret Shown When the Select Menu is Closed */
     --select-menu-inactive-caret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%234dacff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
@@ -45,12 +45,12 @@
     /** @prop --select-menu-background-color: Background Color of the Select Input */
     --select-menu-background-color: linear-gradient(
         to left,
-        var(--selected) 2rem,
-        var(--background) 2rem
+        var(--color-selected) 2rem,
+        var(--color-background) 2rem
     );
 
     /** @prop --select-menu-border-color: Border Color of the Select Input */
-    --select-menu-border-color: var(--active);
+    --select-menu-border-color: var(--color-active);
 }
 
 .hidden,

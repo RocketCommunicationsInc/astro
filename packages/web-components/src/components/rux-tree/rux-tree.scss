@@ -2,17 +2,17 @@
     /**
       * @prop --tree-text-color: tree text color
       */
-    --tree-text-color: var(--default-text);
+    --tree-text-color: var(--color-default-text);
 
     /**
       * @prop --tree-background-color: tree background color
       */
-    --tree-background-color: var(--surface);
+    --tree-background-color: var(--color-surface);
 
     /**
     * @prop --tree-border-color: tree color
     */
-    --tree-border-color: var(--primary-alt);
+    --tree-border-color: var(--color-primary-alt);
 
     display: block;
     position: relative;

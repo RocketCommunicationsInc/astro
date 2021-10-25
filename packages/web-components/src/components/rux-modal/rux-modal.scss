@@ -1,4 +1,4 @@
-@use "../../global/mixins";
+@use '../../global/mixins';
 
 :host {
     /**
@@ -8,17 +8,17 @@
     /**
     * @prop --modal-title-color: Modal title color
     */
-    --modal-title-color: var(--default-text);
+    --modal-title-color: var(--color-default-text);
 
     /**
     * @prop --modal-background-color: Modal background color
     */
-    --modal-background-color: var(--surface);
+    --modal-background-color: var(--color-surface);
 
     /**
     * @prop --modal-border-color: Modal border color
     */
-    --modal-border-color: var(--primary);
+    --modal-border-color: var(--color-primary);
 
     display: contents;
 }
@@ -95,7 +95,7 @@ rux-button-group {
         flex-direction: column;
         flex-grow: 1;
         padding: 1rem;
-        color: var(--default-text);
+        color: var(--color-default-text);
     }
 
     &__message {

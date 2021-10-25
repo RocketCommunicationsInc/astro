@@ -124,11 +124,8 @@
 
     /* scrollbars */
     body {
-        scrollbar-color: var(
-                --color-scrollbar-background-thumb,
-                rgb(43, 101, 155)
-            )
-            var(--color-scrollbar-background-track, rgb(27, 45, 62));
+        scrollbar-color: var(--color-active, rgb(43, 101, 155))
+            var(--color-surface, rgb(27, 45, 62));
     }
 
     ::-webkit-scrollbar {
@@ -138,10 +135,7 @@
     }
 
     ::-webkit-scrollbar-thumb {
-        background-color: var(
-            --color-scrollbar-background-thumb,
-            rgb(43, 101, 155)
-        );
+        background-color: var(--color-active, rgb(43, 101, 155));
         border-radius: 8px;
         border: 3px solid transparent;
         background-clip: padding-box;
@@ -158,18 +152,12 @@
 
     ::-webkit-scrollbar-thumb:active,
     ::-webkit-scrollbar-thumb:hover {
-        background-color: var(
-            --color-scrollbar-background-thumb-hover,
-            rgb(58, 129, 191)
-        );
+        background-color: var(--color-primary, rgb(58, 129, 191));
     }
 
     ::-webkit-scrollbar-track,
     ::-webkit-scrollbar-corner {
-        background-color: var(
-            --color-scrollbar-background-track,
-            rgb(27, 45, 62)
-        );
+        background-color: var(--color-surface);
     }
 
     ::-webkit-scrollbar-track:vertical {

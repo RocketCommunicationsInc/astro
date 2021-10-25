@@ -2,7 +2,7 @@
 
 :host {
     /** @prop --checkboxgroup-border-color: the radio group border color */
-    --checkboxgroup-border-color: var(--active);
+    --checkboxgroup-border-color: var(--color-active);
 
     display: block;
 }
@@ -32,6 +32,6 @@
     border: 1px solid var(--checkboxgroup-border-color);
     border-radius: 3px;
     &--invalid {
-        border: 1px solid var(--color-critical);
+        border: 1px solid var(--color-status-critical-fill);
     }
 }
