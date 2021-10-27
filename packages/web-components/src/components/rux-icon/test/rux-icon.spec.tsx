@@ -8,9 +8,9 @@ describe('rux-icon', () => {
             html: `<rux-icon icon="360"></rux-icon>`,
         })
         expect(page.root).toEqualHtml(`
-      <rux-icon icon="360" size="auto">
+      <rux-icon icon="360" size="normal">
         <mock:shadow-root>
-          <rux-icon-360 class="icon" size="auto" title="360"></rux-icon-360>
+          <rux-icon-360 class="icon" size="normal" title="360"></rux-icon-360>
         </mock:shadow-root>
       </rux-icon>
     `)
