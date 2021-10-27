@@ -17,7 +17,7 @@ export class RuxIcon {
         | 'normal'
         | 'large'
         | 'auto'
-        | string = 'auto'
+        | string = 'normal'
     /**
      * The icon name
      */

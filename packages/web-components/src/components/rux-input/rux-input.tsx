@@ -301,6 +301,7 @@ export class RuxInput implements FormFieldInterface {
                                 part="icon"
                                 onClick={() => _handleTogglePassword()}
                                 icon={iconName}
+                                size="extra-small"
                             />
                         </div>
                     )}
