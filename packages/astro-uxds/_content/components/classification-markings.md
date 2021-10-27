@@ -86,7 +86,7 @@ Astro banner component colors match what government users are familiar with in p
 
 ### Tag Examples
 
-![](/img/components/marking-tag-example.png)
+![Portion marking tag example](/img/components/marking-tag-example.png)
 
 ### Portion Marking Background Information
 
