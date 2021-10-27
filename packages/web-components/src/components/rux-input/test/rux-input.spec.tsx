@@ -85,7 +85,7 @@ describe('rux-input', () => {
           <input value="" type="password" autocomplete="off" aria-invalid="false" class="rux-input rux-input--medium" id="rux-input-4">
           </input>
           <div class="icon-container show-password">
-            <rux-icon part="icon" icon="visibility">
+            <rux-icon part="icon" icon="visibility" size="extra-small">
             </rux-icon>
           </div>
         </div>
