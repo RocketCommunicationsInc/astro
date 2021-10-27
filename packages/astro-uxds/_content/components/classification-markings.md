@@ -20,7 +20,7 @@ All classification and control markings on this page are for illustration purpos
 
 ### Official Requirements
 
-This page lists general guidance and components for marking practices. For the most up-to-date policies, use the following resource links which should bxe considered the prime authorities for CNSI (Classified National Security Information) and CUI (Controlled Unclassified Information). In addition to these requirements, each government agency may have their own rules to use with those listed below.
+This page lists general guidance and components for marking practices. For the most up-to-date policies, use the following resource links which should be considered the prime authorities for CNSI (Classified National Security Information) and CUI (Controlled Unclassified Information). In addition to these requirements, each government agency may have their own rules to use with those listed below.
 
 ### Classified National Security Information
 
@@ -41,11 +41,11 @@ The guidance on this page is focused on the use of, and rules for, classificatio
 |                                                                              | State            | Hex Value | RGB Value      | Custom Property Name           | Font Color |
 | ---------------------------------------------------------------------------- | ---------------- | --------- | -------------- | ------------------------------ | ---------- |
 | ![Marking Unclassified Swatch](/img/swatches/marking__unclassified.svg)      | Unclassified     | `#007a33` | `0, 122, 51`   | `--classificationUnclassified` | `white`    |
-| ![Marking Top Secret//SCI Swatch](/img/swatches/marking__top-secret-sci.svg) | Top Secret//SCI  | `#fce83a` | `252, 232, 58` | `--classificationTopSecretSCI` | `black`    |
-| ![Marking Top Secret Swatch](/img/swatches/marking__top-secret.svg)          | Top Secret       | `#ff8c00` | `255, 140, 0`  | `--classificationTopSecret`    | `black`    |
-| ![Marking Secret Swatch](/img/swatches/marking__secret.svg)                  | Secret           | `#c8102e` | `200, 16, 46`  | `--classificationSecret`       | `white`    |
 | ![Marking Controlled Swatch](/img/swatches/marking__controlled.svg)          | Controlled (CUI) | `#502b85` | `80, 43, 133`  | `--classificationControlled`   | `white`    |
 | ![Marking Confidential Swatch](/img/swatches/marking__confidential.svg)      | Confidential     | `#0033a0` | `0, 51, 160`   | `--classificationConfidential` | `white`    |
+| ![Marking Secret Swatch](/img/swatches/marking__secret.svg)                  | Secret           | `#c8102e` | `200, 16, 46`  | `--classificationSecret`       | `white`    |
+| ![Marking Top Secret Swatch](/img/swatches/marking__top-secret.svg)          | Top Secret       | `#ff8c00` | `255, 140, 0`  | `--classificationTopSecret`    | `black`    |
+| ![Marking Top Secret//SCI Swatch](/img/swatches/marking__top-secret-sci.svg) | Top Secret//SCI  | `#fce83a` | `252, 232, 58` | `--classificationTopSecretSCI` | `black`    |
 
 ### Overall Marking Background Information
 
@@ -61,7 +61,7 @@ Place an overall marking banner at the top and bottom of the application in a fi
 
 ### Overall Marking Colors
 
-Astro banner component colors match what government users are familiar with in physical labels, their workstations, and other applications. Adding a colored background is not officially required by the government, but is culturally expected and does help with recognizing classification levels at a quick glance. The background colors for the banner components are based on the traditional Pantone colors used in the relevant Standard Form labels for SF 706 through SF 712 with the new addition of the purple CUI color from SF-902. The text colors for the banners are either white or black (the two text colors used on the physical labels) depending on which best contrasts with the background color. There is, however, a risk that the classification colors could create confusion when compared with similar colors used for status purposes, so the visual footprint of the banner has been reduced in Astro to the smallest recommended height.
+Astro banner component colors match what government users are familiar with in physical labels, their workstations, and other applications. Adding a colored background is not officially required by the government, but is culturally expected and does help with recognizing classification levels at a quick glance. Similarly, there are no particular color values required by the ISOO for specific classification levels for digital markings. The background colors for the banner components are based on the traditional Pantone colors used in the relevant Standard Form labels for SF 706 through SF 712 with the new addition of the purple CUI color from SF-902. The text colors for the banners are either white or black (the two text colors used on the physical labels) depending on which best contrasts with the background color. There is, however, a risk that the classification colors could create confusion when compared with similar colors used for status purposes, so the visual footprint of the banner has been reduced in Astro to the smallest recommended height.
 
 ## Examples
 
@@ -85,7 +85,7 @@ Astro banner component colors match what government users are familiar with in p
 
 ### Tag Examples
 
-![](/img/components/marking-tag-example.png)
+![Portion marking tag example](/img/components/marking-tag-example.png)
 
 ### Portion Marking Background Information
 
@@ -119,7 +119,7 @@ The colors used in the tag components are the same as those in the overall banne
 
 ![Do: Place portion markings at the top-left of classified or controlled information ](/img/components/portion-marking-do-2.png "Do: Place portion markings at the top-left of classified or controlled information ")
 
-![](/img/components/blank.png)
+![Blank placeholder image](/img/components/blank.png)
 
 ![Do: Use colored tags for general section markings and text portion marking in portions lower in the visual hierarchy  ](/img/components/portion-marking-do-3.png "Do: Use colored tags for general section markings and text portion marking in portions lower in the visual hierarchy")
 
