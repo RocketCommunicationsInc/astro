@@ -112,15 +112,12 @@ export default function App() {
                         <RuxOption
                             value="Select an Option"
                             label="Select an Option"
-                        >
-                            Select an Option
-                        </RuxOption>
-                        <RuxOption value="Canada" label="Canada">
-                            Canada
-                        </RuxOption>
-                        <RuxOption value="United States" label="United States">
-                            United States
-                        </RuxOption>
+                        ></RuxOption>
+                        <RuxOption value="Canada" label="Canada"></RuxOption>
+                        <RuxOption
+                            value="United States"
+                            label="United States"
+                        ></RuxOption>
                     </RuxSelect>
                 </div>
                 <div>
