@@ -67,8 +67,10 @@ export default function App() {
                         label="Country/Region"
                         onRuxchange={(e) => setCountryRegion(e.target.value)}
                     >
-                        <RuxOption value="Canada">Canada</RuxOption>
-                        <RuxOption value="United States">
+                        <RuxOption value="Canada" label="Canada">
+                            Canada
+                        </RuxOption>
+                        <RuxOption value="United States" label="United States">
                             United States
                         </RuxOption>
                     </RuxSelect>

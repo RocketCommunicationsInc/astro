@@ -109,11 +109,16 @@ export default function App() {
                         }
                         onRuxblur={formik.handleBlur}
                     >
-                        <RuxOption value="Select an Option">
+                        <RuxOption
+                            value="Select an Option"
+                            label="Select an Option"
+                        >
                             Select an Option
                         </RuxOption>
-                        <RuxOption value="Canada">Canada</RuxOption>
-                        <RuxOption value="United States">
+                        <RuxOption value="Canada" label="Canada">
+                            Canada
+                        </RuxOption>
+                        <RuxOption value="United States" label="United States">
                             United States
                         </RuxOption>
                     </RuxSelect>
