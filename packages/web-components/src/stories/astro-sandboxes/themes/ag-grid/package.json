@@ -8,7 +8,7 @@
         "build": "parcel build index.html"
     },
     "dependencies": {
-        "@astrouxds/ag-grid-theme": "0.0.2",
+        "@astrouxds/ag-grid-theme": "6.0.1",
         "ag-grid-community": "26.1.0",
         "parcel-bundler": "^1.6.1"
     },
