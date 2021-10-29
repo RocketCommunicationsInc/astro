@@ -1,0 +1,22 @@
+{
+  "font-weight-regular": "regular",
+  "font-weight-bold": "bold",
+  "font-weight-medium": "medium",
+  "font-weight-light": "light",
+  "font-b1-font-weight": "regular",
+  "font-b1-bold-font-weight": "bold",
+  "font-b2-font-weight": "regular",
+  "font-b2-bold-font-weight": "bold",
+  "font-b3-font-weight": "regular",
+  "font-b3-bold-font-weight": "bold",
+  "font-h1-font-weight": "regular",
+  "font-h1-bold-font-weight": "bold",
+  "font-h2-font-weight": "regular",
+  "font-h3-font-weight": "medium",
+  "font-h4-font-weight": "light",
+  "font-h5-font-weight": "regular",
+  "font-h6-font-weight": "light",
+  "font-d1-font-weight": "light",
+  "font-d2-font-weight": "regular",
+  "font-m1-font-weight": "medium"
+}
