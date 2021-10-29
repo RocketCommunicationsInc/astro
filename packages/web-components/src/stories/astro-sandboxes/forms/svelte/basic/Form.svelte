@@ -11,7 +11,6 @@
       if (key === "things") {
         arr.push(value);
         data[key] = arr;
-        console.log(data[key]);
       } else {
         data[key] = value;
       }
