@@ -1,3 +1,4 @@
+/* eslint react/jsx-no-bind: 0 */ // --> OFF
 import { Prop, Component, Host, h } from '@stencil/core'
 import { LogRow } from './rux-log.model'
 
@@ -30,7 +31,7 @@ export class RuxLog {
      */
     @Prop({ mutable: true, reflect: true }) filter?: string
 
-    setFilter(e: Event) {
+    private _setFilter(e: Event) {
         this.filter = (e.target as HTMLInputElement).value
     }
 
@@ -64,7 +65,7 @@ export class RuxLog {
                                                     class="rux-log__filter"
                                                     type="search"
                                                     onRuxinput={(event) =>
-                                                        this.setFilter(event)
+                                                        this._setFilter(event)
                                                     }
                                                 ></rux-input>
                                             </div>

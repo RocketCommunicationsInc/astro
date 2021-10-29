@@ -15,7 +15,7 @@ import { SegmentedButton } from './rux-segmented-button.model'
     shadow: true,
 })
 export class RuxSegmentedButton {
-    @Element() el!: HTMLElement
+    @Element() el!: HTMLRuxSegmentedButtonElement
 
     /**
      * Items in this Array are the individual button segments.
@@ -49,12 +49,6 @@ export class RuxSegmentedButton {
         }
     }
 
-    _handleChange(e: Event) {
-        const el = e.target as HTMLInputElement
-        this._setSelected(el.value)
-        this.ruxChange.emit(el.value)
-    }
-
     connectedCallback() {
         this._handleChange = this._handleChange.bind(this)
         const initialSelection =
@@ -62,6 +56,12 @@ export class RuxSegmentedButton {
         if (initialSelection) {
             this._setSelected(initialSelection.label)
         }
+    }
+
+    private _handleChange(e: Event) {
+        const el = e.target as HTMLInputElement
+        this._setSelected(el.value)
+        this.ruxChange.emit(el.value)
     }
 
     private _setSelected(label: string) {

@@ -26,8 +26,8 @@ let id = 0
     shadow: true,
 })
 export class RuxSlider implements FormFieldInterface {
+    private sliderId = `rux-slider-${++id}`
     @Element() el!: HTMLRuxSliderElement
-    sliderId = `rux-slider-${++id}`
     @State() hasLabelSlot = false
     /**
      * Min value of the slider.
@@ -229,7 +229,7 @@ export class RuxSlider implements FormFieldInterface {
                             disabled={disabled}
                             aria-label="slider"
                             aria-disabled={disabled ? 'true' : 'false'}
-                            onBlur={() => _onBlur()}
+                            onBlur={_onBlur}
                         ></input>
                     </div>
                 </div>

@@ -48,7 +48,7 @@ export class RuxClassificationMarking {
         return this.tag ? 'tag' : 'banner'
     }
 
-    _getDisplayData(): string {
+    private _getDisplayData(): string {
         const markings = {
             banner: {
                 controlled: 'cui',

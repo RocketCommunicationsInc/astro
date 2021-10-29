@@ -39,7 +39,7 @@ export class RuxClock {
     /**
      * Accepts the [IANA timezone string format](https://www.iana.org/time-zones) such as `'America/Los_Angeles'` or any single-character designation for a [military timezones](https://en.wikipedia.org/wiki/List_of_military_time_zones) (`'A'` through `'Z'`, excluding `'J'`), both case-insensitive. If no value for timezone is provided, the clock will use `'UTC'`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.
      */
-    @Prop({ mutable: true }) timezone: string = 'UTC'
+    @Prop() timezone: string = 'UTC'
     /**
      * Hides the timezone in the main 24-hour clock. Timezone does not display on AOS/LOS.
      */
@@ -71,7 +71,7 @@ export class RuxClock {
 
     @Watch('timezone')
     timezoneChanged() {
-        this.convertTimezone(this.timezone)
+        this._convertTimezone(this.timezone)
         this._updateTime()
     }
 
@@ -85,7 +85,7 @@ export class RuxClock {
     }
 
     connectedCallback() {
-        this.convertTimezone(this.timezone)
+        this._convertTimezone(this.timezone)
 
         this._timer = window.setInterval(() => {
             this._updateTime()
@@ -98,7 +98,7 @@ export class RuxClock {
         clearTimeout(this._timer)
     }
 
-    formatTime(time: Date, timezone: string): string {
+    private _formatTime(time: Date, timezone: string): string {
         return format(
             utcToZonedTime(time, timezone),
             `HH:mm:ss ${this.hideTimezone ? '' : this.tzFormat}`,
@@ -107,7 +107,7 @@ export class RuxClock {
     }
 
     private _updateTime(): void {
-        this._time = this.formatTime(new Date(Date.now()), this._timezone)
+        this._time = this._formatTime(new Date(Date.now()), this._timezone)
         this.dayOfYear = getDayOfYear(
             zonedTimeToUtc(new Date(Date.now()), this._timezone)
         )
@@ -126,7 +126,7 @@ export class RuxClock {
         return format(utcToZonedTime(dateTime, this._timezone), 'HH:mm:ss')
     }
 
-    convertTimezone(timezone: string) {
+    private _convertTimezone(timezone: string) {
         const _militaryTimezones = militaryTimezones as MilitaryTimezone
         this._timezone = _militaryTimezones[timezone.toUpperCase()]
         this.tzFormat = 'O'

@@ -27,8 +27,9 @@ let id = 0
     shadow: true,
 })
 export class RuxInput implements FormFieldInterface {
+    private inputId = `rux-input-${++id}`
+
     @Element() el!: HTMLRuxInputElement
-    inputId = `rux-input-${++id}`
 
     @State() hasLabelSlot = false
 
@@ -287,7 +288,7 @@ export class RuxInput implements FormFieldInterface {
                         autoComplete={this.togglePassword ? 'off' : 'on'}
                         onChange={_onChange}
                         onInput={_onInput}
-                        onBlur={() => _onBlur()}
+                        onBlur={_onBlur}
                     ></input>
                     {this.togglePassword && (
                         <div
@@ -299,7 +300,7 @@ export class RuxInput implements FormFieldInterface {
                         >
                             <rux-icon
                                 part="icon"
-                                onClick={() => _handleTogglePassword()}
+                                onClick={_handleTogglePassword}
                                 icon={iconName}
                                 size="extra-small"
                             />

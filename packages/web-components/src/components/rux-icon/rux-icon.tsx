@@ -6,6 +6,7 @@ import { Component, Host, Prop, h } from '@stencil/core'
     shadow: true,
 })
 export class RuxIcon {
+    // eslint-disable-next-line
     svg: string = ''
 
     /**

@@ -26,7 +26,7 @@ let id = 0
     shadow: true,
 })
 export class RuxTextarea implements FormFieldInterface {
-    inputId = `rux-textarea-${++id}`
+    private inputId = `rux-textarea-${++id}`
     @State() hasLabelSlot = false
 
     /**
@@ -195,7 +195,7 @@ export class RuxTextarea implements FormFieldInterface {
                         rows={this.rows}
                         onChange={this._onChange}
                         onInput={this._onInput}
-                        onBlur={() => this._onBlur()}
+                        onBlur={this._onBlur}
                     ></textarea>
                 </div>
                 <FormFieldMessage
