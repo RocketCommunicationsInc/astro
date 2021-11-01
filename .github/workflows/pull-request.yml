@@ -69,6 +69,5 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "16"
-      - run: cd packages/react
+        working-directory: packages/react
       - run: npm run test
-      
