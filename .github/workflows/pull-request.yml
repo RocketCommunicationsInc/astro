@@ -69,7 +69,13 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "16"
-      - name: Install Modules
+      - name: Install Web Components Modules
+        working-directory: packages/web-components
+        run: npm ci
+      - name: Build Web Components
+        working-directory: packages/web-components
+        run: npm run build
+      - name: Install React Wrapper Modules 
         working-directory: packages/react
         run: npm ci
       - name: Symlink
@@ -78,3 +84,4 @@ jobs:
         working-directory: packages/react
         run: npm run test
 
+# build web-componets, link, test
