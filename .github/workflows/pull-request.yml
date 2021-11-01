@@ -72,6 +72,8 @@ jobs:
       - name: Install Modules
         working-directory: packages/react
         run: npm ci
+      - name: Symlink
+        run: lerna link
       - name: Run tests
         working-directory: packages/react
         run: npm run test
