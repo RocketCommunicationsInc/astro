@@ -74,7 +74,7 @@ jobs:
         run: npm ci
       - name: Build Web Components
         working-directory: packages/web-components
-        run: npm run build
+        run: npm run build.stencil
       - name: Install React Wrapper Modules 
         working-directory: packages/react
         run: npm ci
@@ -83,5 +83,3 @@ jobs:
       - name: Run tests
         working-directory: packages/react
         run: npm run test
-
-# build web-componets, link, test
