@@ -27,7 +27,7 @@ export class RuxModal {
     /**
      * Modal body message
      */
-    @Prop() modalMessage!: string
+    @Prop() modalMessage?: string
     /**
      * Modal header title
      */
@@ -116,7 +116,6 @@ export class RuxModal {
     }
 
     connectedCallback() {
-        this.validate('rux-modal', ['open', 'modalMessage', 'modalTitle'])
         setTimeout(() => {
             const button = this._getDefaultButton()
             button && button.focus()
@@ -179,38 +178,5 @@ export class RuxModal {
                 </Host>
             )
         )
-    }
-
-    // TODO find a way to share logic to put this validation into
-    // Stencil prevents using native extends class functionality
-    private validate(componentTag: string, requiredProps: string[]) {
-        const erroredFields: string[] = []
-        const isBlank = (prop: any) => typeof prop === 'undefined'
-        requiredProps.forEach((key: string) =>
-            isBlank(this[key as keyof RuxModal])
-                ? erroredFields.push(this.kebabize(key))
-                : null
-        )
-
-        if (erroredFields.length) {
-            throw new Error(
-                `[${componentTag}]: Following propert${
-                    erroredFields.length > 1 ? 'ies' : 'y'
-                } (${erroredFields.join(', ')}) ${
-                    erroredFields.length > 1 ? 'are' : 'is'
-                } required`
-            )
-        }
-    }
-
-    private kebabize = (str: string) => {
-        return str
-            .split('')
-            .map((letter: string, idx: number) => {
-                return letter.toUpperCase() === letter
-                    ? `${idx !== 0 ? '-' : ''}${letter.toLowerCase()}`
-                    : letter
-            })
-            .join('')
     }
 }
