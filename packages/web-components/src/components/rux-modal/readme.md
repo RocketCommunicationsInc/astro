@@ -53,13 +53,13 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 
 ## Properties
 
-| Property                    | Attribute       | Description                  | Type                  | Default     |
-| --------------------------- | --------------- | ---------------------------- | --------------------- | ----------- |
-| `confirmText`               | `confirm-text`  | Text for confirmation button | `string`              | `'Confirm'` |
-| `denyText`                  | `deny-text`     | Text for close button        | `string`              | `'Cancel'`  |
-| `modalMessage` _(required)_ | `modal-message` | Modal body message           | `string`              | `undefined` |
-| `modalTitle`                | `modal-title`   | Modal header title           | `string \| undefined` | `undefined` |
-| `open`                      | `open`          | Shows and hides modal        | `boolean`             | `false`     |
+| Property       | Attribute       | Description                  | Type                  | Default     |
+| -------------- | --------------- | ---------------------------- | --------------------- | ----------- |
+| `confirmText`  | `confirm-text`  | Text for confirmation button | `string`              | `'Confirm'` |
+| `denyText`     | `deny-text`     | Text for close button        | `string`              | `'Cancel'`  |
+| `modalMessage` | `modal-message` | Modal body message           | `string \| undefined` | `undefined` |
+| `modalTitle`   | `modal-title`   | Modal header title           | `string \| undefined` | `undefined` |
+| `open`         | `open`          | Shows and hides modal        | `boolean`             | `false`     |
 
 
 ## Events
