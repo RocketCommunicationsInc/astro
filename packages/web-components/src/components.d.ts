@@ -11964,7 +11964,7 @@ export namespace Components {
         /**
           * Modal body message
          */
-        "modalMessage": string;
+        "modalMessage"?: string;
         /**
           * Modal header title
          */
@@ -32092,7 +32092,7 @@ declare namespace LocalJSX {
         /**
           * Modal body message
          */
-        "modalMessage": string;
+        "modalMessage"?: string;
         /**
           * Modal header title
          */
