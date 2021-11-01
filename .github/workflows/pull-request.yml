@@ -61,21 +61,14 @@ jobs:
           start: npx lerna run ci.server, npx lerna run test.e2e.run
           wait-on: "http://localhost:3333"
           working-directory: packages/web-components
-    react-unit-test:
-      name: React Tests
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2
-        - name: Setup Node
-          uses: actions/setup-node@v2
-          with:
-            node-version: "16"
-            cache: "npm"
-            cache-dependency-path: "**/package-lock.json"
-            working-directory: packages/react
-        - name: Install modules
-          run: npm i
-        - name: Bootstrap packages
-          run: npx lerna bootstrap
-        - name: React Unit Tests
-          run: npx lerna run test
+  react-tests:
+    name: React Wrapper Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+      - run: cd packages/react
+      - run: npm run test
+      
