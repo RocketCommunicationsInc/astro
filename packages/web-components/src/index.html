@@ -19,41 +19,43 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
     <body>
-    <rux-button id='open-modal'>Focus?</rux-button>
+        <rux-button id="open-modal">Focus?</rux-button>
         <rux-modal>
             <h4 slot="header">Slot??</h4>
-           <form slot="message">
+            <form slot="content">
                 <rux-input placeholder="Yo waddup"></rux-input>
                 <rux-input placeholder="Yo waddup"></rux-input>
                 <rux-input placeholder="Yo waddup"></rux-input>
-           </form>
-           <div slot="footer">
-                <a href="#" style="margin-right: 10px;">Test link Here</a>
-                <rux-button size="large" id="noBtn">No</rux-button>
-                <rux-button size="large" id="yesBtn" autofocus>Yes</rux-button>
+            </form>
+            <div slot="footer">
+                <a href="#" style="margin-right: 10px">Test link Here</a>
 
-           </div>
+                <rux-button size="large" id="noBtn">No</rux-button>
+                <rux-button id="yesBtn">hi</rux-button>
+            </div>
         </rux-modal>
 
         <script>
-        let first = document.getElementById('first');
+            let modal = document.querySelector('rux-modal')
+                        let yesBtn = document.getElementById('yesBtn');
 
-        let modal = document.querySelector('rux-modal');
-            let openBtn = document.getElementById('open-modal');
+
+            let openBtn = document.getElementById('open-modal')
             openBtn.addEventListener('click', () => {
-                modal.open = true;
-            })
+                 modal.openAsync()
+                    .then(() => {
+                        let yesBtn = document.getElementById('yesBtn');
+                        yesBtn.focus()
+                        //setTimeout will still set the focus correctly, so at least 
+                        // we know that it's not a focus() problme.
+                        /*
+                        setTimeout(() => {
+                            yesBtn.focus()
+                        }, 1000)
 
-            let yesBtn = document.getElementById("yesBtn");
-            yesBtn.addEventListener('click', () => {
-                console.log('CLICK')
-                modal.open = false;
+                        */
+                    })        
             })
-            let noBtn = document.getElementById('noBtn');
-            noBtn.addEventListener('click', () => {
-                modal.open = false;
-            })
-
         </script>
     </body>
 </html>

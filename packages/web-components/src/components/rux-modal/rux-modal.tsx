@@ -6,7 +6,8 @@ import {
     EventEmitter,
     Element,
     Listen,
-    Watch,
+    Method,
+    // Watch,
     Host,
 } from '@stencil/core'
 
@@ -17,7 +18,7 @@ import {
 @Component({
     tag: 'rux-modal',
     styleUrl: 'rux-modal.scss',
-    shadow: true,
+    shadow: { delegatesFocus: true },
 })
 export class RuxModal {
     /**
@@ -53,15 +54,15 @@ export class RuxModal {
     @Element() element!: HTMLRuxModalElement
 
     // confirm dialog if Enter key is pressed
-    @Listen('keydown', { target: 'window' })
-    handleKeyDown(ev: KeyboardEvent) {
-        if (ev.key === 'Enter') {
-            const button = this._getDefaultButton()
-            if (button) {
-                button.click()
-            }
-        }
-    }
+    // @Listen('keydown', { target: 'window' })
+    // handleKeyDown(ev: KeyboardEvent) {
+    //     if (ev.key === 'Enter') {
+    //         const button = this._getDefaultButton()
+    //         if (button) {
+    //             button.click()
+    //         }
+    //     }
+    // }
 
     // close modal if click happens outside of dialog
     @Listen('click', { target: 'window' })
@@ -73,32 +74,32 @@ export class RuxModal {
         }
     }
 
-    @Watch('open')
-    validateName() {
-        if (this.open) {
-            setTimeout(() => {
-                //* Finds rux-buttons inside of rux-modal in order to set focus
-                const ruxButtons = this.element.querySelectorAll(
-                    'rux-button'
-                ) as NodeListOf<HTMLRuxButtonElement>
-                if (ruxButtons.length > 0) {
-                    let realBtns: HTMLButtonElement[] = []
-                    ruxButtons.forEach((btn) => {
-                        //* rux-button can't be focused, but it's shadow button can
-                        const realBtn = btn.shadowRoot?.querySelector('button')
-                        realBtns.push(realBtn!)
-                    })
-                    //? Focuses the last button that is rendered.
-                    realBtns[realBtns.length - 1].focus()
-                    console.log(document.activeElement, 'active')
+    // @Watch('open')
+    // validateName() {
+    //     if (this.open) {
+    //         setTimeout(() => {
+    //             //* Finds rux-buttons inside of rux-modal in order to set focus
+    //             const ruxButtons = this.element.querySelectorAll(
+    //                 'rux-button'
+    //             ) as NodeListOf<HTMLRuxButtonElement>
+    //             if (ruxButtons.length > 0) {
+    //                 let realBtns: HTMLButtonElement[] = []
+    //                 ruxButtons.forEach((btn) => {
+    //                     //* rux-button can't be focused, but it's shadow button can
+    //                     const realBtn = btn.shadowRoot?.querySelector('button')
+    //                     realBtns.push(realBtn!)
+    //                 })
+    //                 //? Focuses the last button that is rendered.
+    //                 realBtns[realBtns.length - 1].focus()
+    //                 console.log(document.activeElement, 'active')
 
-                    // const button = this._getDefaultButton()
-                    // console.log(button, 'btn')
-                    // button && button.focus()
-                }
-            }, 100)
-        }
-    }
+    //                 // const button = this._getDefaultButton()
+    //                 // console.log(button, 'btn')
+    //                 // button && button.focus()
+    //             }
+    //         }, 100)
+    //     }
+    // }
 
     // private _handleModalChoice(e: MouseEvent) {
     //     // convert string value to boolean
@@ -108,18 +109,31 @@ export class RuxModal {
     //     this.open = false
     // }
 
-    private _getDefaultButton(): HTMLElement | null {
-        const buttonSet = this.element?.querySelectorAll(
-            'rux-button:not([hidden])'
-        ) as NodeListOf<HTMLElement>
+    // private _getDefaultButton(): HTMLElement | null {
+    //     const buttonSet = this.element?.querySelectorAll(
+    //         'rux-button:not([hidden])'
+    //     ) as NodeListOf<HTMLElement>
 
-        if (buttonSet.length > 0) {
-            const defaultButton = buttonSet[buttonSet.length - 1]
+    //     if (buttonSet.length > 0) {
+    //         const defaultButton = buttonSet[buttonSet.length - 1]
 
-            return defaultButton
-        }
+    //         return defaultButton
+    //     }
 
-        return null
+    //     return null
+    // }
+    @Method()
+    async openAsync() {
+        console.log('getting called')
+        //tried this
+        // requestAnimationFrame(() => {
+        //     this.open = true
+        //     this.element.focus()
+        // })
+        //* Tried a async set focus method, no dice
+        // * tried commenting out animation, no dice.
+
+        this.open = true
     }
 
     private _getWrapper(): HTMLElement | null {
@@ -167,7 +181,7 @@ export class RuxModal {
                             </div>
                             <div class="rux-modal__content">
                                 <div class="rux-modal__message">
-                                    <slot name="message"></slot>
+                                    <slot name="content"></slot>
                                 </div>
                                 <div class="rux-modal__footer">
                                     <slot name="footer"></slot>

@@ -11973,6 +11973,7 @@ export namespace Components {
           * Shows and hides modal
          */
         "open": boolean;
+        "openAsync": () => Promise<void>;
     }
     interface RuxMonitoringIcon {
         /**
