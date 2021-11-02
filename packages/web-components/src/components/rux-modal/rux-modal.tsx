@@ -76,16 +76,28 @@ export class RuxModal {
     @Watch('open')
     validateName() {
         if (this.open) {
-            // let modal = document.querySelector('rux-modal')
-            // modal!.focus()
-            // console.log(document.activeElement, 'active before timeout')
             setTimeout(() => {
-                const button = this._getDefaultButton()
-                // console.log('Open changed, this btn should foucs: ', button)
-                button && button.focus()
-            }, 1000)
+                //* Finds rux-buttons inside of rux-modal in order to set focus
+                const ruxButtons = this.element.querySelectorAll(
+                    'rux-button'
+                ) as NodeListOf<HTMLRuxButtonElement>
+                if (ruxButtons.length > 0) {
+                    let realBtns: HTMLButtonElement[] = []
+                    ruxButtons.forEach((btn) => {
+                        //* rux-button can't be focused, but it's shadow button can
+                        const realBtn = btn.shadowRoot?.querySelector('button')
+                        realBtns.push(realBtn!)
+                    })
+                    //? Focuses the last button that is rendered.
+                    realBtns[realBtns.length - 1].focus()
+                    console.log(document.activeElement, 'active')
+
+                    // const button = this._getDefaultButton()
+                    // console.log(button, 'btn')
+                    // button && button.focus()
+                }
+            }, 100)
         }
-        // console.log(document.activeElement, 'active el')
     }
 
     // private _handleModalChoice(e: MouseEvent) {
@@ -121,19 +133,19 @@ export class RuxModal {
         return null
     }
 
-    connectedCallback() {
-        setTimeout(() => {
-            const button = this._getDefaultButton()
-            button && button.focus()
-        })
-    }
+    // connectedCallback() {
+    //     setTimeout(() => {
+    //         const button = this._getDefaultButton()
+    //         button && button.focus()
+    //     })
+    // }
 
-    componentDidLoad() {
-        setTimeout(() => {
-            const button = this._getDefaultButton()
-            button && button.focus()
-        })
-    }
+    // componentDidLoad() {
+    //     setTimeout(() => {
+    //         const button = this._getDefaultButton()
+    //         button && button.focus()
+    //     })
+    // }
 
     render() {
         // const {

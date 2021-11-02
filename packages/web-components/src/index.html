@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
     <body>
+    <rux-button id='open-modal'>Focus?</rux-button>
         <rux-modal>
             <h4 slot="header">Slot??</h4>
            <form slot="message">
@@ -29,20 +30,20 @@
            <div slot="footer">
                 <a href="#" style="margin-right: 10px;">Test link Here</a>
                 <rux-button size="large" id="noBtn">No</rux-button>
-                <rux-button size="large" id="yesBtn">Yes</rux-button>
+                <rux-button size="large" id="yesBtn" autofocus>Yes</rux-button>
 
            </div>
         </rux-modal>
 
         <script>
+        let first = document.getElementById('first');
+
         let modal = document.querySelector('rux-modal');
-           // let openBtn = document.getElementById('open-modal');
-           // openBtn.addEventListener('click', () => {
-           //     modal.open = true;
-            //)
-            setTimeout(() => {
+            let openBtn = document.getElementById('open-modal');
+            openBtn.addEventListener('click', () => {
                 modal.open = true;
-            }, 1000)
+            })
+
             let yesBtn = document.getElementById("yesBtn");
             yesBtn.addEventListener('click', () => {
                 console.log('CLICK')
