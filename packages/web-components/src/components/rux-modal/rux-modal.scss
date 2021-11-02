@@ -58,13 +58,14 @@ rux-button-group {
         @include mixins.animation(fadeIn, 0.5s);
     }
     &__dialog {
+        //TODO: Will need to mess with height for it to fit with slots. Change to min-height?
         position: relative;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         background-color: var(--modal-background-color);
         width: 28rem;
-        height: 13.5rem;
+        // height: 13.5rem;
         border: 0;
         margin: auto;
         padding: 0;
@@ -79,7 +80,7 @@ rux-button-group {
         flex-shrink: 0;
         align-items: center;
         width: 100%;
-        padding: 16px 20px;
+        padding: 0 20px;
         background-color: rgb(16, 25, 35, 0.4);
         color: var(--modal-title-color);
         user-select: none;
@@ -100,6 +101,10 @@ rux-button-group {
 
     &__message {
         margin: 0.5rem 1.875rem 2.5rem 1.875rem;
+    }
+    &__footer {
+        display: flex;
+        justify-content: space-evenly;
     }
     .rux-button {
         box-shadow: none !important;

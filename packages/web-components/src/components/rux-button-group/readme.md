@@ -43,19 +43,6 @@ By default button group aligns buttons to the left. Alternatively an `h-align` p
 | `"(default)"` | Two or more RuxButton components to render in the group |
 
 
-## Dependencies
-
-### Used by
-
- - [rux-modal](../rux-modal)
-
-### Graph
-```mermaid
-graph TD;
-  rux-modal --> rux-button-group
-  style rux-button-group fill:#f9f,stroke:#333,stroke-width:4px
-```
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

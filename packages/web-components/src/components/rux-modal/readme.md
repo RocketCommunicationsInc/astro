@@ -85,22 +85,6 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 | `--modal-title-color`      | Modal title color      |
 
 
-## Dependencies
-
-### Depends on
-
-- [rux-button-group](../rux-button-group)
-- [rux-button](../rux-button)
-
-### Graph
-```mermaid
-graph TD;
-  rux-modal --> rux-button-group
-  rux-modal --> rux-button
-  rux-button --> rux-icon
-  style rux-modal fill:#f9f,stroke:#333,stroke-width:4px
-```
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
