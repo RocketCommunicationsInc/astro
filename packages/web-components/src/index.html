@@ -18,5 +18,41 @@
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
-    <body></body>
+    <body>
+        <rux-modal>
+            <h4 slot="header">Slot??</h4>
+           <form slot="message">
+                <rux-input placeholder="Yo waddup"></rux-input>
+                <rux-input placeholder="Yo waddup"></rux-input>
+                <rux-input placeholder="Yo waddup"></rux-input>
+           </form>
+           <div slot="footer">
+                <a href="#" style="margin-right: 10px;">Test link Here</a>
+                <rux-button size="large" id="noBtn">No</rux-button>
+                <rux-button size="large" id="yesBtn">Yes</rux-button>
+
+           </div>
+        </rux-modal>
+
+        <script>
+        let modal = document.querySelector('rux-modal');
+           // let openBtn = document.getElementById('open-modal');
+           // openBtn.addEventListener('click', () => {
+           //     modal.open = true;
+            //)
+            setTimeout(() => {
+                modal.open = true;
+            }, 1000)
+            let yesBtn = document.getElementById("yesBtn");
+            yesBtn.addEventListener('click', () => {
+                console.log('CLICK')
+                modal.open = false;
+            })
+            let noBtn = document.getElementById('noBtn');
+            noBtn.addEventListener('click', () => {
+                modal.open = false;
+            })
+
+        </script>
+    </body>
 </html>

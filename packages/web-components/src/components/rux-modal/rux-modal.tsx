@@ -74,30 +74,36 @@ export class RuxModal {
     }
 
     @Watch('open')
-    validateName(isOpen: boolean) {
-        if (isOpen) {
+    validateName() {
+        if (this.open) {
+            // let modal = document.querySelector('rux-modal')
+            // modal!.focus()
+            // console.log(document.activeElement, 'active before timeout')
             setTimeout(() => {
                 const button = this._getDefaultButton()
+                // console.log('Open changed, this btn should foucs: ', button)
                 button && button.focus()
-            })
+            }, 1000)
         }
+        // console.log(document.activeElement, 'active el')
     }
 
-    private _handleModalChoice(e: MouseEvent) {
-        // convert string value to boolean
-        const target = e.currentTarget as HTMLElement
-        const choice = target.dataset.value === 'true'
-        this.ruxModalClosed.emit(choice)
-        this.open = false
-    }
+    // private _handleModalChoice(e: MouseEvent) {
+    //     // convert string value to boolean
+    //     const target = e.currentTarget as HTMLElement
+    //     const choice = target.dataset.value === 'true'
+    //     this.ruxModalClosed.emit(choice)
+    //     this.open = false
+    // }
 
     private _getDefaultButton(): HTMLElement | null {
-        const buttonSet = this.element?.shadowRoot?.querySelectorAll(
+        const buttonSet = this.element?.querySelectorAll(
             'rux-button:not([hidden])'
         ) as NodeListOf<HTMLElement>
 
         if (buttonSet.length > 0) {
             const defaultButton = buttonSet[buttonSet.length - 1]
+
             return defaultButton
         }
 
@@ -131,30 +137,49 @@ export class RuxModal {
     }
 
     render() {
-        const {
-            open,
-            modalMessage,
-            modalTitle,
-            confirmText,
-            denyText,
-            _handleModalChoice,
-        } = this
+        // const {
+        //     open,
+        //     modalMessage,
+        //     modalTitle,
+        //     confirmText,
+        //     denyText,
+        //     _handleModalChoice,
+        // } = this
 
         return (
-            open && (
+            this.open && (
                 <Host>
                     <div part="wrapper" class="rux-modal__wrapper">
                         <dialog class="rux-modal__dialog" role="dialog">
-                            {modalTitle && (
-                                <header class="rux-modal__titlebar">
-                                    <div>{modalTitle}</div>
-                                </header>
-                            )}
+                            <div class="rux-modal__titlebar">
+                                <slot name="header"></slot>
+                            </div>
                             <div class="rux-modal__content">
                                 <div class="rux-modal__message">
+                                    <slot name="message"></slot>
+                                </div>
+                                <div class="rux-modal__footer">
+                                    <slot name="footer"></slot>
+                                </div>
+                            </div>
+                        </dialog>
+                    </div>
+                </Host>
+            )
+        )
+    }
+}
+
+/*
+{modalTitle && (
+     <header class="rux-modal__titlebar">
+        <div>{modalTitle}</div>
+    </header>
+)}
+<div class="rux-modal__message">
                                     {modalMessage}
                                 </div>
-                                <rux-button-group h-align="right">
+<rux-button-group h-align="right">
                                     <rux-button
                                         secondary={confirmText.length > 0}
                                         onClick={_handleModalChoice}
@@ -173,11 +198,4 @@ export class RuxModal {
                                         {confirmText}
                                     </rux-button>
                                 </rux-button-group>
-                            </div>
-                        </dialog>
-                    </div>
-                </Host>
-            )
-        )
-    }
-}
+*/
