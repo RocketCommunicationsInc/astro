@@ -11954,26 +11954,9 @@ export namespace Components {
     }
     interface RuxModal {
         /**
-          * Text for confirmation button
-         */
-        "confirmText": string;
-        /**
-          * Text for close button
-         */
-        "denyText": string;
-        /**
-          * Modal body message
-         */
-        "modalMessage"?: string;
-        /**
-          * Modal header title
-         */
-        "modalTitle"?: string;
-        /**
           * Shows and hides modal
          */
         "open": boolean;
-        "openAsync": () => Promise<void>;
     }
     interface RuxMonitoringIcon {
         /**
@@ -32082,22 +32065,6 @@ declare namespace LocalJSX {
     interface RuxMenuItemDivider {
     }
     interface RuxModal {
-        /**
-          * Text for confirmation button
-         */
-        "confirmText"?: string;
-        /**
-          * Text for close button
-         */
-        "denyText"?: string;
-        /**
-          * Modal body message
-         */
-        "modalMessage"?: string;
-        /**
-          * Modal header title
-         */
-        "modalTitle"?: string;
         /**
           * Event that is fired when modal closes
          */
