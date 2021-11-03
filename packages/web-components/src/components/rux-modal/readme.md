@@ -53,9 +53,10 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 
 ## Properties
 
-| Property | Attribute | Description           | Type      | Default |
-| -------- | --------- | --------------------- | --------- | ------- |
-| `open`   | `open`    | Shows and hides modal | `boolean` | `false` |
+| Property     | Attribute     | Description                                 | Type      | Default |
+| ------------ | ------------- | ------------------------------------------- | --------- | ------- |
+| `clickClose` | `click-close` | Allows modal to close by clicking off of it | `boolean` | `false` |
+| `open`       | `open`        | Shows and hides modal                       | `boolean` | `false` |
 
 
 ## Events
