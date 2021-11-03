@@ -19,7 +19,7 @@ import { fireEvent } from "@testing-library/dom";
 describe("RuxModal", () => {
   it("should be rendered by react", () => {
     const { container } = renderWithStrictMode(
-      <RuxModal modalMessage="Test" open={true}></RuxModal>
+      <RuxModal open={true}></RuxModal>
     );
     const comp = container.getElementsByTagName("rux-modal")[0];
     expect(comp).toBeInTheDocument();
