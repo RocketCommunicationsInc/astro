@@ -11954,6 +11954,10 @@ export namespace Components {
     }
     interface RuxModal {
         /**
+          * Allows modal to close by clicking off of it
+         */
+        "clickClose": boolean;
+        /**
           * Shows and hides modal
          */
         "open": boolean;
@@ -32065,6 +32069,10 @@ declare namespace LocalJSX {
     interface RuxMenuItemDivider {
     }
     interface RuxModal {
+        /**
+          * Allows modal to close by clicking off of it
+         */
+        "clickClose"?: boolean;
         /**
           * Event that is fired when modal closes
          */
