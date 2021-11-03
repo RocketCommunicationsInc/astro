@@ -19,31 +19,15 @@ import { fireEvent } from "@testing-library/dom";
 describe("RuxModal", () => {
   it("should be rendered by react", () => {
     const { container } = renderWithStrictMode(
-      <RuxModal modalMessage="Test" modalTitle="Testing" open={true}></RuxModal>
+      <RuxModal modalMessage="Test" open={true}></RuxModal>
     );
     const comp = container.getElementsByTagName("rux-modal")[0];
     expect(comp).toBeInTheDocument();
-  });
-  //! The below tests are causing a console error: 'Following Properties (modal-message, modal-title)
-  //! are required'. They're there tho
-  it("should get strings as props", () => {
-    const { webcomponent: ruxModal } = includeWebComponent<HTMLRuxModalElement>(
-      renderWithStrictMode(
-        <RuxModal
-          modalMessage={"Test"}
-          modalTitle="Testing"
-          open={true}
-        ></RuxModal>
-      )
-    );
-    expect(ruxModal.modalMessage).toEqual("Test");
   });
   it("should get bools as props", () => {
     const { webcomponent: ruxModal } = includeWebComponent<HTMLRuxModalElement>(
       renderWithStrictMode(
         <RuxModal
-          modalMessage="Test"
-          modalTitle="Testing"
           open={true}
         ></RuxModal>
       )
@@ -58,8 +42,6 @@ describe("createComponent - ref", () => {
       renderWithStrictMode(
         <RuxModal
           ref={modalRef}
-          modalMessage="Test"
-          modalTitle="Testing"
           open={true}
         ></RuxModal>
       )
@@ -75,8 +57,6 @@ describe("createComponent - events", () => {
       renderWithStrictMode(
         <RuxModal
           ref={modalRef}
-          modalMessage="Test"
-          modalTitle="Testing"
           open={true}
           onClick={FakeClose}
         ></RuxModal>
@@ -92,8 +72,6 @@ describe("createComponent - events", () => {
       renderWithStrictMode(
         <RuxModal
           ref={modalRef}
-          modalMessage="Test"
-          modalTitle="Testing"
           open={true}
           onRuxmodalclosed={FakeClose}
         ></RuxModal>
