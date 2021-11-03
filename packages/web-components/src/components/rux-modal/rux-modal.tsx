@@ -6,14 +6,14 @@ import {
     EventEmitter,
     Element,
     Listen,
-    Method,
-    // Watch,
     Host,
 } from '@stencil/core'
 
 /**
  * @part wrapper - the modal wrapper overlay
- *
+ * @part header - the header of the modal
+ * @part content - the content of the modal
+ * @part footer - the footer of the modal
  */
 @Component({
     tag: 'rux-modal',
@@ -26,22 +26,6 @@ export class RuxModal {
      */
     @Prop({ reflect: true, mutable: true }) open: boolean = false
     /**
-     * Modal body message
-     */
-    @Prop() modalMessage?: string
-    /**
-     * Modal header title
-     */
-    @Prop() modalTitle?: string
-    /**
-     * Text for confirmation button
-     */
-    @Prop() confirmText: string = 'Confirm'
-    /**
-     * Text for close button
-     */
-    @Prop() denyText: string = 'Cancel'
-    /**
      * Event that is fired when modal closes
      */
     @Event({
@@ -53,17 +37,6 @@ export class RuxModal {
 
     @Element() element!: HTMLRuxModalElement
 
-    // confirm dialog if Enter key is pressed
-    // @Listen('keydown', { target: 'window' })
-    // handleKeyDown(ev: KeyboardEvent) {
-    //     if (ev.key === 'Enter') {
-    //         const button = this._getDefaultButton()
-    //         if (button) {
-    //             button.click()
-    //         }
-    //     }
-    // }
-
     // close modal if click happens outside of dialog
     @Listen('click', { target: 'window' })
     handleClick(ev: MouseEvent) {
@@ -72,68 +45,6 @@ export class RuxModal {
             this.ruxModalClosed.emit(false)
             this.open = false
         }
-    }
-
-    // @Watch('open')
-    // validateName() {
-    //     if (this.open) {
-    //         setTimeout(() => {
-    //             //* Finds rux-buttons inside of rux-modal in order to set focus
-    //             const ruxButtons = this.element.querySelectorAll(
-    //                 'rux-button'
-    //             ) as NodeListOf<HTMLRuxButtonElement>
-    //             if (ruxButtons.length > 0) {
-    //                 let realBtns: HTMLButtonElement[] = []
-    //                 ruxButtons.forEach((btn) => {
-    //                     //* rux-button can't be focused, but it's shadow button can
-    //                     const realBtn = btn.shadowRoot?.querySelector('button')
-    //                     realBtns.push(realBtn!)
-    //                 })
-    //                 //? Focuses the last button that is rendered.
-    //                 realBtns[realBtns.length - 1].focus()
-    //                 console.log(document.activeElement, 'active')
-
-    //                 // const button = this._getDefaultButton()
-    //                 // console.log(button, 'btn')
-    //                 // button && button.focus()
-    //             }
-    //         }, 100)
-    //     }
-    // }
-
-    // private _handleModalChoice(e: MouseEvent) {
-    //     // convert string value to boolean
-    //     const target = e.currentTarget as HTMLElement
-    //     const choice = target.dataset.value === 'true'
-    //     this.ruxModalClosed.emit(choice)
-    //     this.open = false
-    // }
-
-    // private _getDefaultButton(): HTMLElement | null {
-    //     const buttonSet = this.element?.querySelectorAll(
-    //         'rux-button:not([hidden])'
-    //     ) as NodeListOf<HTMLElement>
-
-    //     if (buttonSet.length > 0) {
-    //         const defaultButton = buttonSet[buttonSet.length - 1]
-
-    //         return defaultButton
-    //     }
-
-    //     return null
-    // }
-    @Method()
-    async openAsync() {
-        console.log('getting called')
-        //tried this
-        // requestAnimationFrame(() => {
-        //     this.open = true
-        //     this.element.focus()
-        // })
-        //* Tried a async set focus method, no dice
-        // * tried commenting out animation, no dice.
-
-        this.open = true
     }
 
     private _getWrapper(): HTMLElement | null {
@@ -163,30 +74,21 @@ export class RuxModal {
     // }
 
     render() {
-        // const {
-        //     open,
-        //     modalMessage,
-        //     modalTitle,
-        //     confirmText,
-        //     denyText,
-        //     _handleModalChoice,
-        // } = this
-
         return (
             this.open && (
                 <Host>
                     <div part="wrapper" class="rux-modal__wrapper">
                         <dialog class="rux-modal__dialog" role="dialog">
-                            <div class="rux-modal__titlebar">
+                            <header part="header" class="rux-modal__titlebar">
                                 <slot name="header"></slot>
-                            </div>
+                            </header>
                             <div class="rux-modal__content">
-                                <div class="rux-modal__message">
+                                <div part="content" class="rux-modal__message">
                                     <slot name="content"></slot>
                                 </div>
-                                <div class="rux-modal__footer">
+                                <footer part="footer" class="rux-modal__footer">
                                     <slot name="footer"></slot>
-                                </div>
+                                </footer>
                             </div>
                         </dialog>
                     </div>

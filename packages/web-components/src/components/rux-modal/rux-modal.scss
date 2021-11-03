@@ -37,12 +37,6 @@
     display: none;
 }
 
-rux-button-group {
-    margin-top: auto;
-    margin-left: auto;
-    align-self: flex-end;
-}
-
 .rux-modal {
     &__wrapper {
         position: fixed;
@@ -58,14 +52,12 @@ rux-button-group {
         @include mixins.animation(fadeIn, 0.5s);
     }
     &__dialog {
-        //TODO: Will need to mess with height for it to fit with slots. Change to min-height?
         position: relative;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         background-color: var(--modal-background-color);
         width: 28rem;
-        // height: 13.5rem;
         border: 0;
         margin: auto;
         padding: 0;
@@ -103,11 +95,7 @@ rux-button-group {
         margin: 0.5rem 1.875rem 2.5rem 1.875rem;
     }
     &__footer {
-        display: flex;
-        justify-content: space-evenly;
-    }
-    .rux-button {
-        box-shadow: none !important;
+        padding: 1rem, 0.5rem, 0, 0.5rem;
     }
 }
 
