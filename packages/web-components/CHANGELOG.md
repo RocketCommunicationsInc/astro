@@ -3,11 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.0.1] (2021-11-4)
+
+### Breaking Changes
+
+#### Modal
+
+-   Modal was reworked to explose slots for header, content and footer.
+
+-   Removed the following props:
+
+    -   modalTitle
+    -   modalMessage
+    -   confirmText
+    -   denyText
+
+-   Added a clickToClose prop, if true the modal will close on click off
+
+-   Added two named slots and one default:
+
+    -   header
+    -   default - used as content
+    -   footer
+
+-   Migration steps:
+    -   Remove references to the depcrated props above.
+    -   Use the new named slots to render custom elements in the given locations.
+    -   Any open/close or focus functionality (besides clickToClose) will need to be done manually (see updated docs).
+
 ## [4.4.5](https://github.com/nortonprojects/astro/compare/v1.0.0...v4.4.5) (2021-10-20)
 
 **Note:** Version bump only for package @astrouxds/astro-web-components
-
-# Change Log
 
 ## [0.0.18] (2021-10-12)
 
