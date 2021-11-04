@@ -11,9 +11,13 @@ import {
 
 /**
  * @part wrapper - the modal wrapper overlay
- * @part header - the header of the modal
- * @part (default) - the content of the modal
- * @part footer - the footer of the modal
+ * @part header - The header container of modal
+ * @part message - The message container of modal
+ * @part footer - The footer container of modal
+ *
+ * @slot header - the header of the modal
+ * @slot (default) - the content of the modal
+ * @slot footer - the footer of the modal
  */
 @Component({
     tag: 'rux-modal',
@@ -90,7 +94,7 @@ export class RuxModal {
                                 <slot name="header"></slot>
                             </header>
                             <div class="rux-modal__content">
-                                <div class="rux-modal__message">
+                                <div part="message" class="rux-modal__message">
                                     <slot></slot>
                                 </div>
                                 <footer part="footer" class="rux-modal__footer">
