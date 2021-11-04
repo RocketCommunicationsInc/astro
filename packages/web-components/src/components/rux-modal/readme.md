@@ -66,14 +66,23 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 | `ruxmodalclosed` | Event that is fired when modal closes | `CustomEvent<boolean>` |
 
 
+## Slots
+
+| Slot          | Description              |
+| ------------- | ------------------------ |
+| `"(default)"` | the content of the modal |
+| `"footer"`    | the footer of the modal  |
+| `"header"`    | the header of the modal  |
+
+
 ## Shadow Parts
 
-| Part          | Description               |
-| ------------- | ------------------------- |
-| `"(default)"` | the content of the modal  |
-| `"footer"`    | the footer of the modal   |
-| `"header"`    | the header of the modal   |
-| `"wrapper"`   | the modal wrapper overlay |
+| Part        | Description                    |
+| ----------- | ------------------------------ |
+| `"footer"`  | The footer container of modal  |
+| `"header"`  | The header container of modal  |
+| `"message"` | The message container of modal |
+| `"wrapper"` | the modal wrapper overlay      |
 
 
 ## CSS Custom Properties
