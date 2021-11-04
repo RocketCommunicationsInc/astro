@@ -84,18 +84,12 @@
     }
 
     &__content {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-        padding: 1rem;
+        padding: 0.625rem 1.25rem; //10px 20px
         color: var(--color-default-text);
     }
 
-    &__message {
-        padding: 10px 20px 0 20px;
-    }
     &__footer {
-        padding: 1rem 0.5rem 0 0.5rem;
+        padding: 1.25rem; //20px
     }
 }
 
