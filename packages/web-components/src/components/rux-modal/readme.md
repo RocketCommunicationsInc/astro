@@ -53,10 +53,10 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 
 ## Properties
 
-| Property     | Attribute     | Description                                 | Type      | Default |
-| ------------ | ------------- | ------------------------------------------- | --------- | ------- |
-| `clickClose` | `click-close` | Allows modal to close by clicking off of it | `boolean` | `false` |
-| `open`       | `open`        | Shows and hides modal                       | `boolean` | `false` |
+| Property       | Attribute        | Description                                 | Type      | Default |
+| -------------- | ---------------- | ------------------------------------------- | --------- | ------- |
+| `clickToClose` | `click-to-close` | Allows modal to close by clicking off of it | `boolean` | `false` |
+| `open`         | `open`           | Shows and hides modal                       | `boolean` | `false` |
 
 
 ## Events
@@ -68,12 +68,12 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 
 ## Shadow Parts
 
-| Part        | Description               |
-| ----------- | ------------------------- |
-| `"content"` | the content of the modal  |
-| `"footer"`  | the footer of the modal   |
-| `"header"`  | the header of the modal   |
-| `"wrapper"` | the modal wrapper overlay |
+| Part          | Description               |
+| ------------- | ------------------------- |
+| `"(default)"` | the content of the modal  |
+| `"footer"`    | the footer of the modal   |
+| `"header"`    | the header of the modal   |
+| `"wrapper"`   | the modal wrapper overlay |
 
 
 ## CSS Custom Properties

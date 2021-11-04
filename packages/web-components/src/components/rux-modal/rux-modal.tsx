@@ -76,7 +76,7 @@ export class RuxModal {
                             </header>
                             <div class="rux-modal__content">
                                 <div class="rux-modal__message">
-                                    <slot name="content"></slot>
+                                    <slot></slot>
                                 </div>
                                 <footer part="footer" class="rux-modal__footer">
                                     <slot name="footer"></slot>
