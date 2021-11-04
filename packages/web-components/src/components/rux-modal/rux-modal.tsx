@@ -10,10 +10,10 @@ import {
 } from '@stencil/core'
 
 /**
- * @part wrapper - the modal wrapper overlay
- * @part header - The header container of modal
- * @part content - The message container of modal
- * @part footer - The footer container of modal
+ * @part modal-wrapper - the modal wrapper overlay
+ * @part modal-header - The header container of modal
+ * @part modal-content - The message container of modal
+ * @part modal-footer - The footer container of modal
  *
  * @slot header - the header of the modal
  * @slot (default) - the content of the modal
@@ -88,15 +88,24 @@ export class RuxModal {
         return (
             this.open && (
                 <Host>
-                    <div part="wrapper" class="rux-modal__wrapper">
+                    <div part="modal-wrapper" class="rux-modal__wrapper">
                         <dialog class="rux-modal__dialog" role="dialog">
-                            <header part="header" class="rux-modal__titlebar">
+                            <header
+                                part="modal-header"
+                                class="rux-modal__titlebar"
+                            >
                                 <slot name="header"></slot>
                             </header>
-                            <div class="rux-modal__content" part="content">
+                            <div
+                                part="modal-content"
+                                class="rux-modal__content"
+                            >
                                 <slot></slot>
                             </div>
-                            <footer part="footer" class="rux-modal__footer">
+                            <footer
+                                part="modal-footer"
+                                class="rux-modal__footer"
+                            >
                                 <slot name="footer"></slot>
                             </footer>
                         </dialog>

@@ -72,16 +72,16 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 | ------------- | ------------------------ |
 | `"(default)"` | the content of the modal |
 | `"footer"`    | the footer of the modal  |
-| `"header"`    | the header of the modal  |
+| `"heade"`     | the header of the modal  |
 
 
 ## Shadow Parts
 
 | Part        | Description                    |
 | ----------- | ------------------------------ |
+| `"content"` | The message container of modal |
 | `"footer"`  | The footer container of modal  |
 | `"header"`  | The header container of modal  |
-| `"message"` | The message container of modal |
 | `"wrapper"` | the modal wrapper overlay      |
 
 
