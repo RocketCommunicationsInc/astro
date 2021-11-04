@@ -18,48 +18,5 @@
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
-    <body>
-        <rux-button id="open-modal">Open Modal</rux-button>
-        <rux-modal click-to-close >
-            <h4 slot="header">Modal</h4>
-            <form slot="content">
-                <rux-input id="input" placeholder="Modal Input" value=""></rux-input>
-            </form>
-            <div slot="footer" style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                    <a href="#" style="margin-right: 10px; text-decoration: none; color: var(--color-primary);">Test Link</a>
-                </div>
-                <div>
-                    <rux-button size="large" id="noBtn">Cancel</rux-button>
-                    <rux-button size="large" id="yesBtn">Confirm</rux-button>
-                </div>
-            </div>
-        </rux-modal>
-        <div style="height: 200px; width: 200px; background: black; margin: 50px; border-radius: 10%; display: flex; justify-content: center; align-items: center;">
-            <span id="text-holder" style="padding: 3%;"></span>
-        </div>
-
-        <script>
-            let modal = document.querySelector('rux-modal')
-            let yesBtn = document.getElementById('yesBtn');
-            let form = document.querySelector('form');
-            let span = document.getElementById('text-holder');
-            let input = document.getElementById('input');
-
-            let openBtn = document.getElementById('open-modal')
-            openBtn.addEventListener('click', () => {
-                    modal.open = true;
-                    setTimeout(() => {
-                        yesBtn.focus()
-                    }, 0)
-            })
-            yesBtn.addEventListener('click', () => {
-                span.innerText = input.value;
-                modal.open = false;
-            })
-            noBtn.addEventListener('click', () => {
-                modal.open = false;
-            })
-        </script>
-    </body>
+    <body></body>
 </html>
