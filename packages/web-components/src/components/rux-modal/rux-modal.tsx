@@ -12,7 +12,7 @@ import {
 /**
  * @part wrapper - the modal wrapper overlay
  * @part header - The header container of modal
- * @part message - The message container of modal
+ * @part content - The message container of modal
  * @part footer - The footer container of modal
  *
  * @slot header - the header of the modal
@@ -93,14 +93,12 @@ export class RuxModal {
                             <header part="header" class="rux-modal__titlebar">
                                 <slot name="header"></slot>
                             </header>
-                            <div class="rux-modal__content">
-                                <div part="message" class="rux-modal__message">
-                                    <slot></slot>
-                                </div>
-                                <footer part="footer" class="rux-modal__footer">
-                                    <slot name="footer"></slot>
-                                </footer>
+                            <div class="rux-modal__content" part="content">
+                                <slot></slot>
                             </div>
+                            <footer part="footer" class="rux-modal__footer">
+                                <slot name="footer"></slot>
+                            </footer>
                         </dialog>
                     </div>
                 </Host>
