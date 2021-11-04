@@ -84,15 +84,18 @@ export const Default = (args) => {
 
 ### Close on click away
 
-export const ClickClose = (args) => {
+export const ClickToClose = (args) => {
     return html`
         <div style="display: flex; flex-flow: column; justify-content: center;">
-            <rux-modal ?open="${args.open}" ?click-close="${args.clickClose}">
+            <rux-modal
+                ?open="${args.open}"
+                ?click-to-close="${args.clickToClose}"
+            >
                 <h4 slot="header">Click Off Close</h4>
                 <div slot="content">
                     <p>
-                        If click-close is true, clicking off of rux-modal will
-                        close it.
+                        If click-to-close is true, clicking off of rux-modal
+                        will close it.
                     </p>
                 </div>
                 <div
@@ -122,11 +125,11 @@ export const ClickClose = (args) => {
     <Story
         args={{
             open: true,
-            clickClose: true,
+            clickToClose: true,
         }}
         name="Click Close"
     >
-        {ClickClose.bind()}
+        {ClickToClose.bind()}
     </Story>
 </Canvas>
 

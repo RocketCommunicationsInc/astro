@@ -11956,7 +11956,7 @@ export namespace Components {
         /**
           * Allows modal to close by clicking off of it
          */
-        "clickClose": boolean;
+        "clickToClose": boolean;
         /**
           * Shows and hides modal
          */
@@ -32072,7 +32072,7 @@ declare namespace LocalJSX {
         /**
           * Allows modal to close by clicking off of it
          */
-        "clickClose"?: boolean;
+        "clickToClose"?: boolean;
         /**
           * Event that is fired when modal closes
          */

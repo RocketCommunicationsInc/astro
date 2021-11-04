@@ -28,7 +28,7 @@ export class RuxModal {
     /**
      * Allows modal to close by clicking off of it
      */
-    @Prop({}) clickClose: boolean = false
+    @Prop() clickToClose: boolean = false
 
     /**
      * Event that is fired when modal closes
@@ -45,7 +45,7 @@ export class RuxModal {
     // close modal if click happens outside of dialog
     @Listen('click', { target: 'window' })
     handleClick(ev: MouseEvent) {
-        if (this.clickClose) {
+        if (this.clickToClose) {
             const wrapper = this._getWrapper()
             if (ev.composedPath()[0] === wrapper) {
                 this.ruxModalClosed.emit(false)
