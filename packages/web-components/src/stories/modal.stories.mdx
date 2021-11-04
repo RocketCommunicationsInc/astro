@@ -39,7 +39,7 @@ export const Default = (args) => {
         <div style="display: flex; flex-flow: column; justify-content: center;">
             <rux-modal id="default-modal" ?open="${args.open}">
                 <h4 slot="header">Modal Title</h4>
-                <div slot="content">
+                <div>
                     <rux-input
                         placeholder="Modal Input"
                         label="Modal Content"
@@ -107,7 +107,7 @@ export const ClickToClose = (args) => {
                 ?click-to-close="${args.clickToClose}"
             >
                 <h4 slot="header">Click Off Close</h4>
-                <div slot="content">
+                <div>
                     <p>
                         If click-to-close is true, clicking off of rux-modal
                         will close it.
