@@ -14,16 +14,16 @@ describe('Modal', () => {
         })
         cy.get('rux-modal').shadow().find('.rux-modal__wrapper').should('exist')
     })
-    it('should not on off click if click-close if false', () => {
+    it('should not on off click if click-to-close if false', () => {
         cy.get('rux-modal')
             .shadow()
             .find('.rux-modal__wrapper')
             .click('topLeft')
         cy.get('rux-modal').shadow().find('.rux-modal__wrapper').should('exist')
     })
-    it('should close on off click if click-close is true', () => {
+    it('should close on off click if click-to-close is true', () => {
         cy.get('rux-modal').then(($modal) => {
-            $modal[0].setAttribute('click-close', true)
+            $modal[0].setAttribute('click-to-close', true)
         })
         cy.get('rux-modal')
             .shadow()
