@@ -14,7 +14,7 @@ export interface RangeItem {
     shadow: true,
 })
 export class RuxMonitoringProgressIcon {
-    _circumference = 56 * 2 * Math.PI
+    private _circumference = 56 * 2 * Math.PI
     private _defaultRangeList = [
         {
             threshold: 17,
@@ -94,7 +94,7 @@ export class RuxMonitoringProgressIcon {
     checkProgress(newValue: number, oldValue: number) {
         if (Number.isInteger(this.progress)) {
             if (newValue !== oldValue) {
-                this.updateProgress()
+                this._updateProgress()
             }
         } else {
             this.progress = 0
@@ -104,7 +104,7 @@ export class RuxMonitoringProgressIcon {
     @Watch('range')
     checkRange(newValue: Array<RangeItem>, oldValue: Array<RangeItem>) {
         if (newValue !== oldValue) {
-            this.updateProgress()
+            this._updateProgress()
         }
     }
 
@@ -120,7 +120,7 @@ export class RuxMonitoringProgressIcon {
                 a.threshold >= b.threshold ? 1 : -1
             )
 
-            this.updateProgress()
+            this._updateProgress()
         } else {
             this.progress = 0
         }
@@ -130,7 +130,7 @@ export class RuxMonitoringProgressIcon {
         return this._status
     }
 
-    updateProgress() {
+    private _updateProgress() {
         if (this.progress > this.max) {
             this.progress = this.max
         }

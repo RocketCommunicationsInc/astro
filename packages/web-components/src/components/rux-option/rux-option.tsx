@@ -46,7 +46,7 @@ export class RuxOption {
         this._handleSlotChange = this._handleSlotChange.bind(this)
     }
 
-    _handleSlotChange() {
+    private _handleSlotChange() {
         this.optionChanged.emit()
     }
 

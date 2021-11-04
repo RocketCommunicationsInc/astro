@@ -29,7 +29,7 @@ export class RuxOptionGroup {
         this._handleSlotChange = this._handleSlotChange.bind(this)
     }
 
-    _handleSlotChange() {
+    private _handleSlotChange() {
         this.groupChanged.emit()
     }
 

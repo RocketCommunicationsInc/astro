@@ -26,7 +26,7 @@ describe('rux-notification', () => {
         ruxNotif.message = 'Hey, Listen!'
         ruxNotif.status = 'critical'
         ruxNotif.closeAfter = 3000
-        ruxNotif.updated()
+        ruxNotif._updated()
         // expect(ruxNotif.open).toBe(false)
         setTimeout(() => expect(ruxNotif.open).toBe(false), 3001)
     })
@@ -53,7 +53,7 @@ describe('rux-notification', () => {
         ruxNotif.message = 'The Duality of RuxNotification'
         ruxNotif.status = 'caution'
         ruxNotif.closeAfter = 3000
-        ruxNotif.updated()
+        ruxNotif._updated()
         //!running updated should also do the timeout and close, if not that's your problem here
         // expect(ruxNotif.open).toBe(false)
         setTimeout(() => expect(ruxNotif.open).toBe(false), ruxNotif.closeAfter)
@@ -64,7 +64,7 @@ describe('rux-notification', () => {
         ruxNotif.message = 'The Duality of RuxNotification'
         ruxNotif.status = 'caution'
         ruxNotif.closeAfter = 3
-        ruxNotif.updated()
+        ruxNotif._updated()
         setTimeout(() => expect(ruxNotif.open).toBe(false), ruxNotif.closeAfter)
     })
     it('get _closeAfter returns 2000 if closeAfter is > 10s or < 2s', async () => {

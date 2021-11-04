@@ -9,12 +9,12 @@ import { Element, Component, Host, h } from '@stencil/core'
     shadow: true,
 })
 export class RuxTree {
-    slotContainer?: HTMLElement
-    @Element() el!: HTMLElement
+    private slotContainer?: HTMLElement
+    @Element() el!: HTMLRuxTreeElement
 
     connectedCallback() {
-        this.handleSlotChange = this.handleSlotChange.bind(this)
-        this.handleNodeSelected = this.handleNodeSelected.bind(this)
+        this._handleSlotChange = this._handleSlotChange.bind(this)
+        this._handleNodeSelected = this._handleNodeSelected.bind(this)
     }
 
     disconnectedCallback() {
@@ -28,12 +28,12 @@ export class RuxTree {
         assignedElements.map((el) => {
             el.removeEventListener(
                 'ruxtreenodeselected',
-                this.handleNodeSelected as EventListener
+                this._handleNodeSelected as EventListener
             )
         })
     }
 
-    handleSlotChange() {
+    private _handleSlotChange() {
         const slot = this.slotContainer?.querySelector(
             'slot'
         ) as HTMLSlotElement
@@ -45,25 +45,22 @@ export class RuxTree {
             el.setAttribute('aria-level', '1')
             el.addEventListener(
                 'ruxtreenodeselected',
-                this.handleNodeSelected as EventListener
+                this._handleNodeSelected as EventListener
             )
         })
     }
 
-    handleNodeSelected(e: CustomEvent<string>) {
+    private _handleNodeSelected(e: CustomEvent<string>) {
         const allNodes = document.querySelectorAll('rux-tree-node')
-        if (allNodes) {
-            const previousSelectedNode = Array.from(allNodes).find((node) => {
-                return (
-                    node.selected &&
-                    node.shadowRoot?.querySelector('.tree-node')?.id !==
-                        e.detail
-                )
-            })
+        const previousSelectedNode = Array.from(allNodes).find((node) => {
+            return (
+                node.selected &&
+                node.shadowRoot?.querySelector('.tree-node')?.id !== e.detail
+            )
+        })
 
-            if (previousSelectedNode) {
-                previousSelectedNode.selected = false
-            }
+        if (previousSelectedNode) {
+            previousSelectedNode.selected = false
         }
     }
 
@@ -71,7 +68,7 @@ export class RuxTree {
         return (
             <Host role="tree">
                 <div ref={(el) => (this.slotContainer = el)}>
-                    <slot onSlotchange={this.handleSlotChange}></slot>
+                    <slot onSlotchange={this._handleSlotChange}></slot>
                 </div>
             </Host>
         )

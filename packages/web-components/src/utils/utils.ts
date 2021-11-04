@@ -1,14 +1,8 @@
-export function format(first: string, middle: string, last: string): string {
-    return (
-        (first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : '')
-    )
-}
-
 export const hasShadowDom = (el: HTMLElement) => {
     return !!el.shadowRoot && !!(el as any).attachShadow
 }
 
-export function hasSlot(el: HTMLElement, name?: string): boolean {
+export function hasSlot(el: HTMLElement, name?: string | undefined): boolean {
     // Look for a named slot
     if (name) {
         return el.querySelector(`[slot="${name}"]`) !== null

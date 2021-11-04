@@ -36,8 +36,8 @@ describe('rux-clock', () => {
         const clock = new RuxClock()
         const time = new Date(Date.now())
         for (const timezone in militaryTimezones) {
-            clock.convertTimezone(timezone)
-            const militaryTime = clock.formatTime(
+            clock._convertTimezone(timezone)
+            const militaryTime = clock._formatTime(
                 time,
                 militaryTimezones[timezone]
             )
