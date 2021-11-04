@@ -23,6 +23,19 @@ A Modal interrupts the app experience to prompt a user to confirm an action or a
 
 export const Default = (args) => {
     return html`
+    <style>
+        .sbdocs #story--components-modal--default-story {
+        display: block;
+        min-height: 500px;
+    }
+        rux-modal::part(wrapper) {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
         <div style="display: flex; flex-flow: column; justify-content: center;">
             <rux-modal id="default-modal" ?open="${args.open}">
                 <h4 slot="header">Modal Title</h4>
@@ -75,6 +88,19 @@ export const Default = (args) => {
 
 export const ClickToClose = (args) => {
     return html`
+        <style>
+            .sbdocs #story--components-modal--click-to-close {
+                display: block;
+                min-height: 500px;
+            }
+            rux-modal::part(wrapper) {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+            }
+        </style>
         <div style="display: flex; flex-flow: column; justify-content: center;">
             <rux-modal
                 ?open="${args.open}"
@@ -116,7 +142,7 @@ export const ClickToClose = (args) => {
             open: true,
             clickToClose: true,
         }}
-        name="Click Close"
+        name="Click To Close"
     >
         {ClickToClose.bind()}
     </Story>
