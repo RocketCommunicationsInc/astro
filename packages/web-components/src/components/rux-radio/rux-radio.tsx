@@ -12,7 +12,7 @@ let id = 0
     shadow: true,
 })
 export class RuxRadio {
-    radioId = `rux-radio-${++id}`
+    private radioId = `rux-radio-${++id}`
     private radioGroup: HTMLRuxRadioGroupElement | null = null
 
     @Element() el!: HTMLRuxRadioElement
@@ -49,23 +49,26 @@ export class RuxRadio {
     connectedCallback() {
         this._onChange = this._onChange.bind(this)
         this.radioGroup = this.el.closest('rux-radio-group')
-        this.syncFromGroup = this.syncFromGroup.bind(this)
+        this._syncFromGroup = this._syncFromGroup.bind(this)
         if (this.radioGroup) {
-            this.syncFromGroup()
-            this.radioGroup.addEventListener('ruxchange', this.syncFromGroup)
+            this._syncFromGroup()
+            this.radioGroup.addEventListener('ruxchange', this._syncFromGroup)
         }
     }
 
     disconnectedCallback() {
         if (this.radioGroup) {
-            this.radioGroup.removeEventListener('ruxchange', this.syncFromGroup)
+            this.radioGroup.removeEventListener(
+                'ruxchange',
+                this._syncFromGroup
+            )
         }
     }
 
     /**
      * Sets checked property when the parent Radio Group value changes.
      */
-    syncFromGroup() {
+    private _syncFromGroup() {
         if (this.radioGroup && this.radioGroup.value) {
             this.checked = this.radioGroup.value === this.value
         }
@@ -103,7 +106,7 @@ export class RuxRadio {
                         checked={checked}
                         value={value}
                         onChange={_onChange}
-                        onBlur={() => _onBlur()}
+                        onBlur={_onBlur}
                     />
                     <label htmlFor={radioId}>
                         <slot>{label}</slot>

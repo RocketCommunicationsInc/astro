@@ -64,7 +64,7 @@ describe('rux-monitoring-progress-icon', () => {
                 status: 'serious',
             },
         ]
-        progressIcon.updateProgress()
+        progressIcon._updateProgress()
         expect(progressIcon.status).toBe('normal')
         expect(
             Math.ceil(
@@ -75,7 +75,7 @@ describe('rux-monitoring-progress-icon', () => {
         ).toBe(58)
 
         progressIcon.progress = 1100
-        progressIcon.updateProgress()
+        progressIcon._updateProgress()
         expect(progressIcon.status).toBe('serious')
     })
 

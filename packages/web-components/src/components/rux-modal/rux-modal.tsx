@@ -120,6 +120,7 @@ export class RuxModal {
             const button = this._getDefaultButton()
             button && button.focus()
         })
+        this._handleModalChoice = this._handleModalChoice.bind(this)
     }
 
     componentDidLoad() {
@@ -156,7 +157,7 @@ export class RuxModal {
                                 <rux-button-group h-align="right">
                                     <rux-button
                                         secondary={confirmText.length > 0}
-                                        onClick={_handleModalChoice.bind(this)}
+                                        onClick={_handleModalChoice}
                                         data-value="false"
                                         hidden={!denyText}
                                         tabindex="-1"
@@ -164,7 +165,7 @@ export class RuxModal {
                                         {denyText}
                                     </rux-button>
                                     <rux-button
-                                        onClick={_handleModalChoice.bind(this)}
+                                        onClick={_handleModalChoice}
                                         data-value="true"
                                         hidden={!confirmText}
                                         tabindex="0"

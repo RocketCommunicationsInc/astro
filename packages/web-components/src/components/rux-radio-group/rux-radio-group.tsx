@@ -74,7 +74,7 @@ export class RuxRadioGroup implements FormFieldInterface {
     }
 
     connectedCallback() {
-        this.handleClick = this.handleClick.bind(this)
+        this._handleClick = this._handleClick.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
     }
 
@@ -101,7 +101,7 @@ export class RuxRadioGroup implements FormFieldInterface {
         return this.label ? true : this.hasLabelSlot
     }
 
-    handleClick(e: MouseEvent) {
+    private _handleClick(e: MouseEvent) {
         const selectedRadio =
             e.target && (e.target as HTMLElement).closest('rux-radio')
         if (selectedRadio && !selectedRadio.disabled) {
@@ -113,7 +113,7 @@ export class RuxRadioGroup implements FormFieldInterface {
         }
     }
 
-    selectedRadioIsDisabled(): boolean {
+    private _selectedRadioIsDisabled(): boolean {
         const radio = this.el.querySelector(
             `rux-radio[value="${this.value}"]`
         ) as HTMLRuxRadioElement
@@ -131,11 +131,11 @@ export class RuxRadioGroup implements FormFieldInterface {
                 this.el,
                 this.name,
                 this.value,
-                this.selectedRadioIsDisabled()
+                this._selectedRadioIsDisabled()
             )
         }
         return (
-            <Host onClick={this.handleClick}>
+            <Host onClick={this._handleClick}>
                 <div class="rux-form-field" part="form-field">
                     <div
                         class={{

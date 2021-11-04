@@ -1,3 +1,4 @@
+/* eslint react/jsx-no-bind: 0 */ // --> OFF
 import {
     Component,
     Element,
@@ -24,10 +25,11 @@ import { hasSlot, renderHiddenInput } from '../../utils/utils'
     shadow: true,
 })
 export class RuxSelect implements FormFieldInterface {
+    private slotContainer?: HTMLElement
+    private selectEl!: HTMLSelectElement
+
     @Element() el!: HTMLRuxSelectElement
     @State() hasLabelSlot = false
-    slotContainer?: HTMLElement
-    selectEl!: HTMLSelectElement
 
     /**
      * Disables the select menu via HTML disabled attribute. Select menu takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
@@ -266,7 +268,7 @@ export class RuxSelect implements FormFieldInterface {
                     required={required}
                     name={name}
                     onChange={(e) => this._onChange(e)}
-                    onBlur={() => this._onBlur()}
+                    onBlur={this._onBlur}
                 ></select>
                 <div
                     aria-hidden="true"

@@ -28,13 +28,13 @@ export class RuxNotification {
 
     @Watch('open')
     watchHandler() {
-        this.updated()
+        this._updated()
     }
     connectedCallback() {
-        this.updated()
+        this._updated()
     }
 
-    updated() {
+    private _updated() {
         if (this._closeAfter && this.open) {
             this._timeoutRef = window.setTimeout(() => {
                 this.open = false
@@ -42,7 +42,7 @@ export class RuxNotification {
         }
     }
 
-    _onClick() {
+    private _onClick() {
         if (this._timeoutRef) {
             clearTimeout(this._timeoutRef)
         }
@@ -73,7 +73,7 @@ export class RuxNotification {
                 <rux-icon
                     role="button"
                     label="Close notification"
-                    onClick={() => this._onClick()}
+                    onClick={this._onClick}
                     icon="close"
                     size="36px"
                 ></rux-icon>

@@ -68,7 +68,7 @@ export class RuxMenuItem {
     })
     ruxMenuItemSelected!: EventEmitter<object>
 
-    @Listen('click')
+    @Listen('click', { passive: false })
     handleClick() {
         if (!this.disabled) {
             this.itemOnClick()

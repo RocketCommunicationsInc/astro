@@ -165,7 +165,7 @@ export class RuxCheckbox implements FormFieldInterface {
                             value={value}
                             onChange={this._onClick}
                             onInput={this._onInput}
-                            onBlur={() => this._onBlur()}
+                            onBlur={this._onBlur}
                             ref={(el) => (this._inputEl = el)}
                         />
                         <label htmlFor={checkboxId}>
