@@ -28,15 +28,9 @@ jobs:
 
       - name: Build
         run: npm run build
-  test-components:
-    needs: install-and-build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Test
+
+      - name: Test Components
         run: npm run test.web-components
-  test-react:
-    needs: install-and-build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Test
+
+      - name: Test React
         run: npm run test.react
