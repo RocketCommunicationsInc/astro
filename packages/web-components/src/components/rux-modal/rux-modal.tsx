@@ -7,6 +7,7 @@ import {
     Element,
     Listen,
     Host,
+    Watch,
 } from '@stencil/core'
 
 /**
@@ -44,7 +45,30 @@ export class RuxModal {
     })
     ruxModalClosed!: EventEmitter<boolean>
 
+    /**
+     * Event that is fired when modal opens
+     */
+    @Event({
+        eventName: 'ruxmodalopened',
+        composed: true,
+        bubbles: true,
+    })
+    ruxModalOpened!: EventEmitter<boolean>
+
     @Element() element!: HTMLRuxModalElement
+
+    @Watch('open')
+    handleOpenChange(newValue: boolean) {
+        // This will only toggle between true and false.
+        // If the new value is true, that means open. Emit open event
+        if (newValue) {
+            this.ruxModalOpened.emit(true)
+        } else if (!newValue) {
+            this.ruxModalClosed.emit(true)
+        } else {
+            console.log('Something has gone wrong, heres newValue: ', newValue)
+        }
+    }
 
     // close modal if click happens outside of dialog
     @Listen('click', { target: 'window' })
