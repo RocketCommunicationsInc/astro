@@ -5,6 +5,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [6.0.1] (2021-11-4)
 
+## Stencil
+
+-   Updated @stencil/core [2.5.2] -> [2.10.0]
+
 ### Breaking Changes
 
 #### Modal
@@ -19,6 +23,8 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
     -   denyText
 
 -   Added a clickToClose prop, if true the modal will close on click off
+
+-   Added `ruxmodalopened` event that emits when open changes to true
 
 -   Added two named slots and one default:
 

@@ -148,6 +148,58 @@ export const ClickToClose = (args) => {
     </Story>
 </Canvas>
 
+## Opening, Closing and Focusing
+
+Because the content of modal is now customiziable via slots, the actions of these slots will require some boilerplate to get working.
+
+### Opening and Closing
+
+The `open` prop of `rux-modal` is mutable and can be changed accordingly. Here is a basic example of doing so with buttons:
+
+```js
+<rux-modal id="modal" click-to-close>
+    <h4 slot="header">Modal Header</h4>
+    <p>Modal Content here!</p>
+    <div slot="footer">
+        <rux-button id="confirm">Confirm</rux-button>
+    </div>
+</rux-modal>
+<script>
+    const modal = document.getElementById('modal');
+    const confirm = document.getElementById('confirm')
+    confirm.addEventListener('click', () => {
+        modal.open = false;
+    })
+</script>
+```
+
+### Applying Focus
+
+Often times when a modal opens, you want to autofocus a specific element. Here's a quick way to do that
+using the previous example:
+
+```js
+<rux-modal id="modal" click-to-close>
+    <h4 slot="header">Modal Header</h4>
+    <p>Modal Content here!</p>
+    <div slot="footer">
+        <rux-button id="confirm">Confirm</rux-button>
+    </div>
+</rux-modal>
+<script>
+    const modal = document.getElementById('modal');
+    const confirm = document.getElementById('confirm')
+    modal.addEventListener('onruxmodalopened', () => {
+        setTimout(() => {
+            confirm.focus()
+        }, 0)
+    })
+    confirm.addEventListener('click', () => {
+        modal.open = false;
+    })
+</script>
+```
+
 ## Cherry Picking
 
 If you're already utilizing a build system that supports tree shaking and want to only import this individual component:

@@ -32078,6 +32078,10 @@ declare namespace LocalJSX {
          */
         "onRuxmodalclosed"?: (event: CustomEvent<boolean>) => void;
         /**
+          * Event that is fired when modal opens
+         */
+        "onRuxmodalopened"?: (event: CustomEvent<boolean>) => void;
+        /**
           * Shows and hides modal
          */
         "open"?: boolean;
