@@ -10,7 +10,7 @@ on:
 env:
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 jobs:
-  install-and-build:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -34,3 +34,6 @@ jobs:
 
       - name: Test React
         run: npm run test.react
+
+      - name: Commit Lint
+        run: npx commitlint --from HEAD~${{ github.event.pull_request.commits }}
