@@ -19971,6 +19971,8 @@ export declare interface RuxModal extends Components.RuxModal {}
 export class RuxModal {
   /** Event that is fired when modal closes */
   ruxmodalclosed!: EventEmitter<CustomEvent<boolean>>;
+  /** Event that is fired when modal opens */
+  ruxmodalopened!: EventEmitter<CustomEvent<boolean>>;
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
