@@ -5,7 +5,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [6.0.1] (2021-11-4)
 
-## Stencil
+### Stencil
 
 -   Updated @stencil/core [2.5.2] -> [2.10.0]
 
