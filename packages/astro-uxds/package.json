@@ -18,7 +18,8 @@
     "build:clean": "rimraf _site",
     "build:scss": "node-sass -r scss -o css --output-style compressed",
     "build:eleventy": "eleventy",
-    "build:search": "node ./_includes/search_config/search-generator.js"
+    "build:search": "node ./_includes/search_config/search-generator.js",
+    "fetch:images": "export-icons -p"
   },
   "keywords": [],
   "author": "",
@@ -37,6 +38,7 @@
     "rimraf": "^3.0.2"
   },
   "dependencies": {
+    "@astrouxds/astro-figma-export": "^1.0.1",
     "fuse.js": "^3.6.1",
     "nodemon": "^2.0.14"
   }
