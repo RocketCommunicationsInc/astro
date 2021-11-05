@@ -7,9 +7,20 @@
     "husky": "^7.0.2",
     "lerna": "^4.0.0",
     "prettier": "~2.2.1",
-    "pretty-quick": "~3.1.0"
+    "pretty-quick": "~3.1.0",
+    "wait-on": "^6.0.0"
   },
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "bootstrap": "lerna bootstrap",
+    "build": "npm run build.web-components && npm run build.react && npm run build.angular && npm run build.astro-uxds",
+    "build.react": "npm --prefix packages/react run build",
+    "build.web-components": "npm --prefix packages/web-components run build",
+    "build.astro-uxds": "npm --prefix packages/astro-uxds run build",
+    "build.angular": "npm --prefix packages/angular run build",
+    "test": "lerna link && npm run test.web-components && npm run test.react",
+    "test.web-components": "npm --prefix packages/web-components run ci.server & wait-on http://localhost:3333 && npm --prefix packages/web-components run test",
+    "test.react": "npm --prefix packages/react run test",
+    "test.angular": "npm --prefix packages/angular run test"
   }
 }
