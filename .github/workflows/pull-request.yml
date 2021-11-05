@@ -27,7 +27,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build
+        run: npm run build.tests
 
       - name: Test Components
         run: npm run test.web-components
