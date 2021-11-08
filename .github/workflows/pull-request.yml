@@ -22,8 +22,6 @@ jobs:
         uses: actions/setup-node@v2.3.0
         with:
           node-version: "16"
-          cache: "npm"
-          cache-dependency-path: "**/package-lock.json"
 
       - name: Install Modules
         run: npm ci
