@@ -19,10 +19,10 @@
     background-color: var(--color-global-status-standby-400);
     transition: top 0.5s ease;
     box-sizing: border-box;
-    font-family: var(--font-h5-font-family);
-    font-size: var(--font-h5-font-size);
-    font-weight: var(--font-h5-font-weight);
-    letter-spacing: var(--font-h5-letter-spacing);
+    font-family: var(--font-heading-5-font-family);
+    font-size: var(--font-heading-5-font-size);
+    font-weight: var(--font-heading-5-font-weight);
+    letter-spacing: var(--font-heading-5-letter-spacing);
     color: var(--notification-text-color);
     rux-icon {
         align-items: center;

@@ -44,10 +44,10 @@
     padding: 0.5rem;
     border: 1px solid var(--textarea-border-color);
     border-radius: 3px;
-    font-family: var(--font-b1-font-family);
-    font-size: var(--font-b1-font-size);
-    letter-spacing: var(--font-b1-letter-spacing);
-    font-weight: var(--font-b1-font-weight);
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    font-weight: var(--font-body-1-font-weight);
     color: var(--textarea-text-color);
     background-color: var(--textarea-background-color);
     &--invalid {
@@ -87,10 +87,10 @@
 }
 
 .rux-textarea-label {
-    font-family: var(--font-b1-font-family);
-    font-size: var(--font-b1-font-size);
-    font-weight: var(--font-b1-font-weight);
-    letter-spacing: var(--font-b1-letter-spacing);
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
     margin-bottom: var(--spacing-input-label-top);
 }
 

@@ -15,10 +15,10 @@
 }
 
 .rux-classification {
-    font-family: var(--font-b1-bold-font-family);
-    font-size: var(--font-b1-bold-font-size);
-    font-weight: var(--font-b1-bold-font-weight);
-    letter-spacing: var(--font-b1-bold-letter-spacing);
+    font-family: var(--font-body-1-bold-font-family);
+    font-size: var(--font-body-1-bold-font-size);
+    font-weight: var(--font-body-1-bold-font-weight);
+    letter-spacing: var(--font-body-1-bold-letter-spacing);
     color: var(--color-banner-text-light);
     background-color: var(--color-global-classification-unclassified);
     text-transform: uppercase;
@@ -52,10 +52,10 @@
     line-height: 1;
     padding: 0.25rem 0.9375rem;
     border-radius: 3px;
-    font-family: var(--font-b2-bold-font-family);
-    font-size: var(--font-b2-bold-font-size);
-    font-weight: var(--font-b2-bold-font-weight);
-    letter-spacing: var(--font-b2-bold-letter-spacing);
+    font-family: var(--font-body-2-bold-font-family);
+    font-size: var(--font-body-2-bold-font-size);
+    font-weight: var(--font-body-2-bold-font-weight);
+    letter-spacing: var(--font-body-2-bold-letter-spacing);
 }
 
 :host([classification='top-secret-sci']) .rux-classification {

@@ -1,9 +1,123 @@
 /**
  * Do not edit directly
- * Generated on Thu, 21 Oct 2021 20:56:19 GMT
+ * Generated on Tue, 09 Nov 2021 17:33:55 GMT
  */
 
 :root {
+    --font-monospace-1-paragraph-spacing: 0;
+    --font-monospace-1-letter-spacing: 0em;
+    --font-monospace-1-font-size: 1.75rem;
+    --font-monospace-1-line-height: AUTO;
+    --font-monospace-1-font-weight: 500;
+    --font-monospace-1-font-family: 'Roboto Mono', -apple-system,
+        BlinkMacSystemFont, 'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell,
+        'Helvetica Neue', sans-serif;
+    --font-display-2-paragraph-spacing: 0;
+    --font-display-2-letter-spacing: 0em;
+    --font-display-2-font-size: 3rem;
+    --font-display-2-line-height: AUTO;
+    --font-display-2-font-weight: 400;
+    --font-display-2-font-family: 'Roboto', -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    --font-display-1-paragraph-spacing: 0;
+    --font-display-1-letter-spacing: -0.005em;
+    --font-display-1-font-size: 3.75rem;
+    --font-display-1-line-height: AUTO;
+    --font-display-1-font-weight: 300;
+    --font-display-1-font-family: 'Roboto', -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    --font-heading-6-paragraph-spacing: 0;
+    --font-heading-6-letter-spacing: 0em;
+    --font-heading-6-font-size: 1.125rem;
+    --font-heading-6-line-height: AUTO;
+    --font-heading-6-font-weight: 300;
+    --font-heading-6-font-family: 'Roboto', -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    --font-heading-5-paragraph-spacing: 0;
+    --font-heading-5-letter-spacing: 0em;
+    --font-heading-5-font-size: 1.125rem;
+    --font-heading-5-line-height: AUTO;
+    --font-heading-5-font-weight: 400;
+    --font-heading-5-font-family: 'Roboto', -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    --font-heading-4-paragraph-spacing: 0;
+    --font-heading-4-letter-spacing: 0.0015em;
+    --font-heading-4-font-size: 1.25rem;
+    --font-heading-4-line-height: AUTO;
+    --font-heading-4-font-weight: 300;
+    --font-heading-4-font-family: 'Roboto', -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    --font-heading-3-paragraph-spacing: 0;
+    --font-heading-3-letter-spacing: 0.0015em;
+    --font-heading-3-font-size: 1.25rem;
+    --font-heading-3-line-height: AUTO;
+    --font-heading-3-font-weight: 500;
+    --font-heading-3-font-family: 'Roboto', -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    --font-heading-2-paragraph-spacing: 0;
+    --font-heading-2-letter-spacing: 0em;
+    --font-heading-2-font-size: 1.5rem;
+    --font-heading-2-line-height: AUTO;
+    --font-heading-2-font-weight: 400;
+    --font-heading-2-font-family: 'Roboto', -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    --font-heading-1-bold-paragraph-spacing: 0;
+    --font-heading-1-bold-letter-spacing: 0.0025em;
+    --font-heading-1-bold-font-size: 2.125rem;
+    --font-heading-1-bold-line-height: AUTO;
+    --font-heading-1-bold-font-weight: 700;
+    --font-heading-1-bold-font-family: 'Roboto', -apple-system,
+        BlinkMacSystemFont, 'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell,
+        'Helvetica Neue', sans-serif;
+    --font-heading-1-paragraph-spacing: 0;
+    --font-heading-1-letter-spacing: 0.0025em;
+    --font-heading-1-font-size: 2.125rem;
+    --font-heading-1-line-height: AUTO;
+    --font-heading-1-font-weight: 400;
+    --font-heading-1-font-family: 'Roboto', -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    --font-body-3-bold-paragraph-spacing: 0;
+    --font-body-3-bold-letter-spacing: 0.005em;
+    --font-body-3-bold-font-size: 0.75rem;
+    --font-body-3-bold-line-height: AUTO;
+    --font-body-3-bold-font-weight: 700;
+    --font-body-3-bold-font-family: 'Roboto', -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    --font-body-3-paragraph-spacing: 0;
+    --font-body-3-letter-spacing: 0.005em;
+    --font-body-3-font-size: 0.75rem;
+    --font-body-3-line-height: AUTO;
+    --font-body-3-font-weight: 400;
+    --font-body-3-font-family: 'Roboto', -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    --font-body-2-bold-paragraph-spacing: 0;
+    --font-body-2-bold-letter-spacing: 0.005em;
+    --font-body-2-bold-font-size: 0.875rem;
+    --font-body-2-bold-line-height: AUTO;
+    --font-body-2-bold-font-weight: 700;
+    --font-body-2-bold-font-family: 'Roboto', -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    --font-body-2-paragraph-spacing: 0;
+    --font-body-2-letter-spacing: 0.005em;
+    --font-body-2-font-size: 0.875rem;
+    --font-body-2-line-height: AUTO;
+    --font-body-2-font-weight: 400;
+    --font-body-2-font-family: 'Roboto', -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    --font-body-1-bold-paragraph-spacing: 0;
+    --font-body-1-bold-letter-spacing: 0.005em;
+    --font-body-1-bold-font-size: 1rem;
+    --font-body-1-bold-line-height: AUTO;
+    --font-body-1-bold-font-weight: 700;
+    --font-body-1-bold-font-family: 'Roboto', -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    --font-body-1-paragraph-spacing: 0;
+    --font-body-1-letter-spacing: 0.005em;
+    --font-body-1-font-size: 1rem;
+    --font-body-1-line-height: AUTO;
+    --font-body-1-font-weight: 400;
+    --font-body-1-font-family: 'Roboto', -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
     --paragraph-spacing-0: 0;
     --letter-spacing-sm: -0.005em;
     --letter-spacing-lg: 0.0015em;
@@ -28,100 +142,5 @@
     --font-family-mono: 'Roboto Mono', monospace;
     --font-family-sans: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
         Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    --font-m1-paragraph-spacing: var(--paragraph-spacing-0);
-    --font-m1-letter-spacing: var(--letter-spacing-base);
-    --font-m1-font-size: var(--font-size-3xl);
-    --font-m1-line-height: var(--line-heights-0);
-    --font-m1-font-weight: 500;
-    --font-m1-font-family: var(--font-family-mono);
-    --font-d2-paragraph-spacing: var(--paragraph-spacing-0);
-    --font-d2-letter-spacing: var(--letter-spacing-base);
-    --font-d2-font-size: var(--font-size-5xl);
-    --font-d2-line-height: var(--line-heights-0);
-    --font-d2-font-weight: 400;
-    --font-d2-font-family: var(--font-family-sans);
-    --font-d1-paragraph-spacing: var(--paragraph-spacing-0);
-    --font-d1-letter-spacing: var(--letter-spacing-sm);
-    --font-d1-font-size: var(--font-size-6xl);
-    --font-d1-line-height: var(--line-heights-0);
-    --font-d1-font-weight: 300;
-    --font-d1-font-family: var(--font-family-sans);
-    --font-h6-paragraph-spacing: var(--paragraph-spacing-0);
-    --font-h6-letter-spacing: var(--letter-spacing-base);
-    --font-h6-font-size: var(--font-size-lg);
-    --font-h6-line-height: var(--line-heights-0);
-    --font-h6-font-weight: 300;
-    --font-h6-font-family: var(--font-family-sans);
-    --font-h5-paragraph-spacing: var(--paragraph-spacing-0);
-    --font-h5-letter-spacing: var(--letter-spacing-base);
-    --font-h5-font-size: var(--font-size-lg);
-    --font-h5-line-height: var(--line-heights-0);
-    --font-h5-font-weight: 400;
-    --font-h5-font-family: var(--font-family-sans);
-    --font-h4-paragraph-spacing: var(--paragraph-spacing-0);
-    --font-h4-letter-spacing: var(--letter-spacing-lg);
-    --font-h4-font-size: var(--font-size-xl);
-    --font-h4-line-height: var(--line-heights-0);
-    --font-h4-font-weight: 300;
-    --font-h4-font-family: var(--font-family-sans);
-    --font-h3-paragraph-spacing: var(--paragraph-spacing-0);
-    --font-h3-letter-spacing: var(--letter-spacing-lg);
-    --font-h3-font-size: var(--font-size-xl);
-    --font-h3-line-height: var(--line-heights-0);
-    --font-h3-font-weight: 500;
-    --font-h3-font-family: var(--font-family-sans);
-    --font-h2-paragraph-spacing: var(--paragraph-spacing-0);
-    --font-h2-letter-spacing: var(--letter-spacing-base);
-    --font-h2-font-size: var(--font-size-2xl);
-    --font-h2-line-height: var(--line-heights-0);
-    --font-h2-font-weight: 400;
-    --font-h2-font-family: var(--font-family-sans);
-    --font-h1-bold-paragraph-spacing: var(--paragraph-spacing-0);
-    --font-h1-bold-letter-spacing: var(--letter-spacing-xl);
-    --font-h1-bold-font-size: var(--font-size-4xl);
-    --font-h1-bold-line-height: var(--line-heights-0);
-    --font-h1-bold-font-weight: 700;
-    --font-h1-bold-font-family: var(--font-family-sans);
-    --font-h1-paragraph-spacing: var(--paragraph-spacing-0);
-    --font-h1-letter-spacing: var(--letter-spacing-xl);
-    --font-h1-font-size: var(--font-size-4xl);
-    --font-h1-line-height: var(--line-heights-0);
-    --font-h1-font-weight: 400;
-    --font-h1-font-family: var(--font-family-sans);
-    --font-b3-bold-paragraph-spacing: var(--paragraph-spacing-0);
-    --font-b3-bold-letter-spacing: var(--letter-spacing-2xl);
-    --font-b3-bold-font-size: var(--font-size-xs);
-    --font-b3-bold-line-height: var(--line-heights-0);
-    --font-b3-bold-font-weight: 700;
-    --font-b3-bold-font-family: var(--font-family-sans);
-    --font-b3-paragraph-spacing: var(--paragraph-spacing-0);
-    --font-b3-letter-spacing: var(--letter-spacing-2xl);
-    --font-b3-font-size: var(--font-size-xs);
-    --font-b3-line-height: var(--line-heights-0);
-    --font-b3-font-weight: 400;
-    --font-b3-font-family: var(--font-family-sans);
-    --font-b2-bold-paragraph-spacing: var(--paragraph-spacing-0);
-    --font-b2-bold-letter-spacing: var(--letter-spacing-2xl);
-    --font-b2-bold-font-size: var(--font-size-sm);
-    --font-b2-bold-line-height: var(--line-heights-0);
-    --font-b2-bold-font-weight: 700;
-    --font-b2-bold-font-family: var(--font-family-sans);
-    --font-b2-paragraph-spacing: var(--paragraph-spacing-0);
-    --font-b2-letter-spacing: var(--letter-spacing-2xl);
-    --font-b2-font-size: var(--font-size-sm);
-    --font-b2-line-height: var(--line-heights-0);
-    --font-b2-font-weight: 400;
-    --font-b2-font-family: var(--font-family-sans);
-    --font-b1-bold-paragraph-spacing: var(--paragraph-spacing-0);
-    --font-b1-bold-letter-spacing: var(--letter-spacing-2xl);
-    --font-b1-bold-font-size: var(--font-size-base);
-    --font-b1-bold-line-height: var(--line-heights-0);
-    --font-b1-bold-font-weight: 700;
-    --font-b1-bold-font-family: var(--font-family-sans);
-    --font-b1-paragraph-spacing: var(--paragraph-spacing-0);
-    --font-b1-letter-spacing: var(--letter-spacing-2xl);
-    --font-b1-font-size: var(--font-size-base);
-    --font-b1-line-height: var(--line-heights-0);
-    --font-b1-font-weight: 400;
-    --font-b1-font-family: var(--font-family-sans);
+    --40: 40%;
 }
