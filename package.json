@@ -16,9 +16,10 @@
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "build.tests": "lerna run --scope @astrouxds/astro-web-components build.stencil && lerna run --scope @astrouxds/react build ",
-    "test": "npm run test.web-components & lerna run --ignore '{@astrouxds/astro-web-components,@astrouxds/angular}' test",
+    "test": "npm run test.web-components && lerna run --ignore '{@astrouxds/astro-web-components,@astrouxds/angular}' test",
     "start-server": "lerna run --scope @astrouxds/astro-web-components ci.server",
     "start-components-test": "lerna run --scope @astrouxds/astro-web-components test",
-    "test.web-components": "start-server-and-test start-server 3333 start-components-test"
+    "test.web-components": "start-server-and-test start-server 3333 start-components-test",
+    "test.react": "lerna run --scope @astrouxds/react test"
   }
 }
