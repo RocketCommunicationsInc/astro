@@ -17,7 +17,7 @@ import {
 
 describe("RuxButton", () => {
   it("should be rendered by React", () => {
-    const { container } = renderWithStrictMode(<RuxButto>Button!</RuxButto>);
+    const { container } = renderWithStrictMode(<RuxButton>Button!</RuxButton>);
     const comp = container.getElementsByTagName("rux-button")[0];
     expect(comp).toBeInTheDocument();
   });
