@@ -66,10 +66,10 @@
         width: 100%;
         border: 1px solid var(--input-border-color);
         border-radius: 3px;
-        font-family: var(--font-b1-font-family);
-        font-size: var(--font-b1-font-size);
-        font-weight: var(--font-b1-font-weight);
-        letter-spacing: var(--font-b1-letter-spacing);
+        font-family: var(--font-body-1-font-family);
+        font-size: var(--font-body-1-font-size);
+        font-weight: var(--font-body-1-font-weight);
+        letter-spacing: var(--font-body-1-letter-spacing);
         color: var(--input-text-color);
         background-color: var(--input-background-color);
         &--invalid {
@@ -119,10 +119,10 @@
     }
 
     .rux-input-label {
-        font-family: var(--font-b1-font-family);
-        font-size: var(--font-b1-font-size);
-        font-weight: var(--font-b1-font-weight);
-        letter-spacing: var(--font-b1-letter-spacing);
+        font-family: var(--font-body-1-font-family);
+        font-size: var(--font-body-1-font-size);
+        font-weight: var(--font-body-1-font-weight);
+        letter-spacing: var(--font-body-1-letter-spacing);
         margin-bottom: var(--spacing-input-label-top);
         &__asterisk {
             margin-left: 4px;

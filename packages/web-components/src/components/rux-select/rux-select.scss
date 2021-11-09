@@ -62,10 +62,10 @@ label {
     display: inline-block;
     margin-bottom: 10px;
     color: var(--select-menu-label-color);
-    font-family: var(--font-b1-font-family);
-    font-size: var(--font-b1-font-size);
-    font-weight: var(--font-b1-font-weight);
-    letter-spacing: var(--font-b1-letter-spacing);
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
 }
 
 .rux-select {
@@ -77,10 +77,10 @@ label {
     border: 1px solid var(--select-menu-border-color);
     border-radius: var(--select-menu-border-radius);
     color: var(--select-menu-text-color);
-    font-family: var(--font-b1-font-family);
-    font-size: var(--font-b1-font-size);
-    font-weight: var(--font-b1-font-weight);
-    letter-spacing: var(--font-b1-letter-spacing);
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
     padding: 0.438rem 3.125rem 0.438rem 0.5rem;
     background-image: var(--select-menu-inactive-caret),
         var(--select-menu-background-color);
