@@ -4,11 +4,12 @@ path: /components/sign-in
 date: Last Modified
 layout: components.template.njk
 title: Sign In
-demo: components-sign-in--sign-in
-storybook: components-sign-in--sign-in
+demo: astro-uxds-patterns-sign-in--page
+storybook: astro-uxds-patterns-sign-in--page
 git: rux-sign-in
 height: 400px
 theme: true
+scrolling: yes
 ---
 
 # Sign In
