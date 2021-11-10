@@ -22,11 +22,8 @@ jobs:
       - name: Build
         run: npm run build.tests
 
-      - name: Test Stencil
-        run: npm run test.web-components
-
-      - name: Test React
-        run: npm run test.react
+      - name: Test
+        run: npm run test
 
   commit-lint:
     runs-on: ubuntu-latest

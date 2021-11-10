@@ -17,7 +17,7 @@
     "scripts": {
         "build.stencil": "stencil build --docs",
         "build.storybook": "build-storybook -s ./dist",
-        "build": "npm run build.stencil && npm run build.storybook",
+        "build": "npm run build.stencil",
         "icons.fetch": "export-icons",
         "icons.generate": "node src/utils/generate-icons.js",
         "lint.js": "eslint src/**/*{.ts,.tsx}",
@@ -27,13 +27,14 @@
         "start.stencil": "stencil build --dev --watch --serve",
         "start.storybook": "start-storybook -p 6006 -s ./dist",
         "start": "concurrently npm:start.stencil npm:start.storybook",
+        "test": "start-server-and-test ci.server 3333 test.all",
         "test.e2e.run": "cypress run",
         "test.e2e.watch": "cypress open",
         "ci.server": "http-server www -p 3333 -c-1 --silent",
         "test.e2e": "npm run test.e2e.run",
         "test.unit.watch": "TZ=UTC stencil test --spec --watchAll",
         "test.unit": "TZ=UTC stencil test --spec --coverage",
-        "test": "concurrently npm:test.unit npm:test.e2e"
+        "test.all": "concurrently npm:test.unit npm:test.e2e"
     },
     "dependencies": {
         "@stencil/angular-output-target": "~0.2.0",
@@ -76,6 +77,7 @@
         "prettier": "~2.2.1",
         "pretty-quick": "~3.1.0",
         "puppeteer": "~5.5.0",
+        "start-server-and-test": "~1.14.0",
         "storybook-addon-themes": "~6.1.0",
         "stylelint": "~13.13.1",
         "stylelint-config-prettier": "~8.0.2",
