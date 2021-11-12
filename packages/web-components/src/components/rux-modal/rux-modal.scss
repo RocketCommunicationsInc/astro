@@ -80,7 +80,7 @@ rux-button-group {
         align-items: center;
         width: 100%;
         padding: 16px 20px;
-        background-color: rgb(16, 25, 35, 0.4);
+        background-color: var(--color-dialog-header);
         color: var(--modal-title-color);
         user-select: none;
         cursor: move;

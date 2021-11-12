@@ -1,9 +1,10 @@
 /**
  * Do not edit directly
- * Generated on Tue, 09 Nov 2021 18:39:44 GMT
+ * Generated on Fri, 12 Nov 2021 19:43:36 GMT
  */
 
 .light-theme {
+    --color-dialog-header: #f7f8fb;
     --color-classification-top-secret-sci: #fce83a;
     --color-classification-top-secret: #ff8c00;
     --color-classification-secret: #c8102e;
@@ -34,8 +35,8 @@
     --color-dialog-shadow2: rgba(0, 0, 0, 0.12);
     --color-dialog-shadow1: rgba(0, 0, 0, 0.14);
     --color-table-header-shadow: #000000;
-    --color-scrollbar-shadow: rgba(130, 129, 129, 0.5);
-    --color-list-hover: rgba(206, 233, 252, 0.3);
+    --color-scrollbar-shadow: rgba(0, 0, 0, 0.5);
+    --color-list-hover: #f0f8fe;
     --color-table-hover: rgba(0, 72, 114, 0.3);
     --color-hover: #004872;
     --color-selected: #cee9fc;
