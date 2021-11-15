@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Fri, 12 Nov 2021 19:43:36 GMT
+ * Generated on Mon, 15 Nov 2021 16:06:46 GMT
  */
 
 .light-theme {
@@ -36,7 +36,7 @@
     --color-dialog-shadow1: rgba(0, 0, 0, 0.14);
     --color-table-header-shadow: #000000;
     --color-scrollbar-shadow: rgba(0, 0, 0, 0.5);
-    --color-list-hover: #f0f8fe;
+    --color-list-hover: #e2edf6;
     --color-table-hover: rgba(0, 72, 114, 0.3);
     --color-hover: #004872;
     --color-selected: #cee9fc;

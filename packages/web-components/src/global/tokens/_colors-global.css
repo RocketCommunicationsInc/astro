@@ -1,15 +1,15 @@
 /**
  * Do not edit directly
- * Generated on Fri, 12 Nov 2021 19:43:36 GMT
+ * Generated on Mon, 15 Nov 2021 16:06:46 GMT
  */
 
 :root {
     --color-global-snowflakes-dialog-header-light: #f7f8fb;
     --color-global-snowflakes-dialog-header-dark: #172533;
-    --color-global-snowflakes-list-hover-light: #f0f8fe;
-    --color-global-snowflakes-list-hover-dark: #bbc5cf;
-    --color-global-snowflakes-table-hover-light: #b3c8d5;
-    --color-global-snowflakes-table-hover-dark: #deefff;
+    --color-global-snowflakes-list-hover-light: #e2edf6;
+    --color-global-snowflakes-list-hover-dark: #142435;
+    --color-global-snowflakes-table-hover-light: #a4bccd;
+    --color-global-snowflakes-table-hover-dark: #374e65;
     --color-global-snowflakes-light-selected: #cee9fc;
     --color-global-snowflakes-dark-selected: #1c3f5e;
     --color-global-snowflakes-dark-surface: #1b2d3e;
