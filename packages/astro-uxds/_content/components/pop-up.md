@@ -7,7 +7,7 @@ title: Pop Up
 demo: components-pop-up-menu--default-story
 storybook: components-pop-up-menu--default-story
 git: rux-pop-up-menu
-height: 200px
+height: 250px
 theme: true
 ---
 
