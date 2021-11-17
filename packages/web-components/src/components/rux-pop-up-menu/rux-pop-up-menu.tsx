@@ -81,7 +81,7 @@ export class RuxPopUpMenu {
         if (this.open) {
             setTimeout(() => {
                 this._setMenuPosition()
-            }, 50)
+            }, 100)
         }
     }
 
