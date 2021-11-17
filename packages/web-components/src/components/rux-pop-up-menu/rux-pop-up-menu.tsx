@@ -78,7 +78,11 @@ export class RuxPopUpMenu {
     ruxMenuDidClose!: EventEmitter<void>
 
     componentDidRender() {
-        if (this.open) this._setMenuPosition()
+        if (this.open) {
+            setTimeout(() => {
+                this._setMenuPosition()
+            }, 50)
+        }
     }
 
     connectedCallback() {
@@ -167,7 +171,7 @@ export class RuxPopUpMenu {
         this.menuBounds = this.el.getBoundingClientRect()
     }
 
-    private _setMenuPosition() {
+    private async _setMenuPosition() {
         if (this.anchorEl && this.anchorBounds && this.menuBounds) {
             let { anchorBounds, menuBounds } = this
             anchorBounds = this.anchorEl.getBoundingClientRect()
