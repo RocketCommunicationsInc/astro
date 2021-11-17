@@ -51,10 +51,10 @@ rux-status {
     border-radius: 3px;
     padding: 0.65rem 0.25rem;
     color: #fff;
-    font-family: var(--font-b3-font-family);
-    font-size: var(--font-b3-font-size);
-    font-weight: var(--font-b3-font-weight);
-    letter-spacing: var(--font-b3-letter-spacing);
+    font-family: var(--font-body-3-font-family);
+    font-size: var(--font-body-3-font-size);
+    font-weight: var(--font-body-3-font-weight);
+    letter-spacing: var(--font-body-3-letter-spacing);
     text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -64,10 +64,10 @@ rux-status {
 
 .rux-advanced-status__label {
     color: var(--color-default-text);
-    font-family: var(--font-b2-font-family);
-    font-size: var(--font-b2-font-size);
-    font-weight: var(--font-b2-font-weight);
-    letter-spacing: var(--font-b2-letter-spacing);
+    font-family: var(--font-body-2-font-family);
+    font-size: var(--font-body-2-font-size);
+    font-weight: var(--font-body-2-font-weight);
+    letter-spacing: var(--font-body-2-letter-spacing);
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -79,10 +79,10 @@ rux-status {
 }
 
 .rux-advanced-status__sublabel {
-    font-family: var(--font-b3-font-family);
-    font-size: var(--font-b3-font-size);
-    font-weight: var(--font-b3-font-weight);
-    letter-spacing: var(--font-b3-letter-spacing);
+    font-family: var(--font-body-3-font-family);
+    font-size: var(--font-body-3-font-size);
+    font-weight: var(--font-body-3-font-weight);
+    letter-spacing: var(--font-body-3-letter-spacing);
     color: var(--color-default-text);
     opacity: 0.6;
     display: block;
@@ -133,10 +133,10 @@ svg.rux-status--critical {
 }
 
 .rux-advanced-status__progress {
-    font-family: var(--font-m1-font-family);
-    font-size: var(--font-b3-font-size);
-    font-weight: var(--font-m1-font-weight);
-    letter-spacing: var(--font-m1-letter-spacing);
+    font-family: var(--font-monospace-1-font-family);
+    font-size: var(--font-body-3-font-size);
+    font-weight: var(--font-monospace-1-font-weight);
+    letter-spacing: var(--font-monospace-1-letter-spacing);
     margin-top: -0.125rem;
     margin-left: -0.125rem;
     position: absolute;

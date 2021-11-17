@@ -25,10 +25,10 @@
         list-style: none;
         padding: 0.15rem 0.75rem;
         overflow: hidden;
-        font-family: var(--font-b1-font-family);
-        font-size: var(--font-b1-font-size);
-        font-weight: var(--font-b1-font-weight);
-        letter-spacing: var(--font-b1-letter-spacing);
+        font-family: var(--font-body-1-font-family);
+        font-size: var(--font-body-1-font-size);
+        font-weight: var(--font-body-1-font-weight);
+        letter-spacing: var(--font-body-1-letter-spacing);
         background-color: var(--popup-menu-item-background-color);
         color: var(--popup-menu-text-color);
         &:hover {

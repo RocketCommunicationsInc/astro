@@ -15,14 +15,8 @@
     /** @prop --select-menu-invalid-border-color: Border Color of the Invalid Select Input */
     --select-menu-invalid-border-color: var(--color-status-critical-fill);
 
-    /** @prop --select-menu-option-hover-background-color: Background Hover Color of Select Menu Options */
-    --select-menu-option-hover-background-color: rgba(28, 63, 94, 0.3);
-
     /** @prop --select-menu-text-color: Text Color of the Select Input */
     --select-menu-text-color: var(--color-primary);
-
-    /** @prop --select-menu-option-group-text-color: Text Color of Select Menu Option Group */
-    --select-menu-option-group-text-color: rgba(255, 255, 255, 0.6);
 
     /** @prop --select-menu-option-text-hover-color: Text Hover Color of the Select Menu Options */
     --select-menu-option-text-hover-color: var(--color-hover);
@@ -62,10 +56,10 @@ label {
     display: inline-block;
     margin-bottom: 10px;
     color: var(--select-menu-label-color);
-    font-family: var(--font-b1-font-family);
-    font-size: var(--font-b1-font-size);
-    font-weight: var(--font-b1-font-weight);
-    letter-spacing: var(--font-b1-letter-spacing);
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
 }
 
 .rux-select {
@@ -77,10 +71,10 @@ label {
     border: 1px solid var(--select-menu-border-color);
     border-radius: var(--select-menu-border-radius);
     color: var(--select-menu-text-color);
-    font-family: var(--font-b1-font-family);
-    font-size: var(--font-b1-font-size);
-    font-weight: var(--font-b1-font-weight);
-    letter-spacing: var(--font-b1-letter-spacing);
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
     padding: 0.438rem 3.125rem 0.438rem 0.5rem;
     background-image: var(--select-menu-inactive-caret),
         var(--select-menu-background-color);
@@ -121,11 +115,6 @@ label {
 
     &:focus::-ms-value {
         background: transparent;
-    }
-
-    optgroup {
-        color: var(--select-menu-option-group-text-color);
-        background-color: var(--select-menu-background-color);
     }
 
     option {
