@@ -176,19 +176,21 @@ export class RuxModal {
                                     </rux-button-group>
                                 </div>
                             ) : (
-                                <div
-                                    part="modal-content"
-                                    class="rux-modal__content"
-                                >
-                                    <slot></slot>
+                                <div>
+                                    <div
+                                        part="modal-content"
+                                        class="rux-modal__content"
+                                    >
+                                        <slot></slot>
+                                    </div>
+                                    <footer
+                                        part="modal-footer"
+                                        class="rux-modal__footer"
+                                    >
+                                        <slot name="footer"></slot>
+                                    </footer>
                                 </div>
                             )}
-                            <footer
-                                part="modal-footer"
-                                class="rux-modal__footer"
-                            >
-                                <slot name="footer"></slot>
-                            </footer>
                         </dialog>
                     </div>
                 </Host>
