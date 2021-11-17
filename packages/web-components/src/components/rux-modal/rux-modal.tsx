@@ -34,6 +34,25 @@ export class RuxModal {
      * Allows modal to close by clicking off of it
      */
     @Prop() clickToClose: boolean = false
+    /**
+     * Modal body message
+     */
+    @Prop() modalMessage?: string
+    /**
+     * Modal header title
+     */
+    @Prop() modalTitle?: string
+    /**
+     * Text for confirmation button
+     */
+    @Prop() confirmText: string = 'Confirm'
+    /**
+     * Text for close button
+     */
+    @Prop() denyText: string = 'Cancel'
+    /**
+     * Event that is fired when modal closes
+     */
 
     /**
      * Event that is fired when modal closes
@@ -65,8 +84,6 @@ export class RuxModal {
             this.ruxModalOpened.emit(true)
         } else if (!newValue) {
             this.ruxModalClosed.emit(true)
-        } else {
-            console.log('Something has gone wrong, heres newValue: ', newValue)
         }
     }
 
@@ -82,6 +99,17 @@ export class RuxModal {
         }
     }
 
+    connectedCallback() {
+        this._handleModalChoice = this._handleModalChoice.bind(this)
+    }
+
+    private _handleModalChoice(e: MouseEvent) {
+        // convert string value to boolean
+        const target = e.currentTarget as HTMLElement
+        const choice = target.dataset.value === 'true'
+        this.ruxModalClosed.emit(choice)
+        this.open = false
+    }
     private _getWrapper(): HTMLElement | null {
         const wrapper = this.element?.shadowRoot?.querySelector(
             '.rux-modal__wrapper'
@@ -109,23 +137,67 @@ export class RuxModal {
     // }
 
     render() {
+        const {
+            open,
+            modalMessage,
+            modalTitle,
+            confirmText,
+            denyText,
+            _handleModalChoice,
+        } = this
         return (
-            this.open && (
+            open && (
                 <Host>
                     <div part="modal-wrapper" class="rux-modal__wrapper">
                         <dialog class="rux-modal__dialog" role="dialog">
-                            <header
-                                part="modal-header"
-                                class="rux-modal__titlebar"
-                            >
-                                <slot name="header"></slot>
-                            </header>
-                            <div
-                                part="modal-content"
-                                class="rux-modal__content"
-                            >
-                                <slot></slot>
-                            </div>
+                            {modalTitle ? (
+                                <header class="rux-modal__props-titlebar">
+                                    <div>{modalTitle}</div>
+                                </header>
+                            ) : (
+                                <header
+                                    part="modal-header"
+                                    class="rux-modal__titlebar"
+                                >
+                                    <slot name="header"></slot>
+                                </header>
+                            )}
+                            {modalMessage ? (
+                                <div class="rux-modal__props-content">
+                                    <div class="rux-modal__props-message">
+                                        {modalMessage}
+                                    </div>
+                                    <rux-button-group
+                                        class="props-button-group"
+                                        h-align="right"
+                                    >
+                                        <rux-button
+                                            secondary={confirmText.length > 0}
+                                            onClick={_handleModalChoice}
+                                            data-value="false"
+                                            hidden={!denyText}
+                                            tabindex="-1"
+                                        >
+                                            {denyText}
+                                        </rux-button>
+                                        <rux-button
+                                            onClick={_handleModalChoice}
+                                            data-value="true"
+                                            hidden={!confirmText}
+                                            tabindex="0"
+                                        >
+                                            {confirmText}
+                                        </rux-button>
+                                    </rux-button-group>
+                                </div>
+                            ) : (
+                                <div
+                                    part="modal-content"
+                                    class="rux-modal__content"
+                                >
+                                    <slot></slot>
+                                </div>
+                            )}
                             <footer
                                 part="modal-footer"
                                 class="rux-modal__footer"
