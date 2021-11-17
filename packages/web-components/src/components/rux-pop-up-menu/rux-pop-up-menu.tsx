@@ -171,7 +171,7 @@ export class RuxPopUpMenu {
         this.menuBounds = this.el.getBoundingClientRect()
     }
 
-    private async _setMenuPosition() {
+    private _setMenuPosition() {
         if (this.anchorEl && this.anchorBounds && this.menuBounds) {
             let { anchorBounds, menuBounds } = this
             anchorBounds = this.anchorEl.getBoundingClientRect()
