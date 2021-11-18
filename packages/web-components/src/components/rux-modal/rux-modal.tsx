@@ -82,6 +82,9 @@ export class RuxModal {
         // If the new value is true, that means open. Emit open event
         if (newValue) {
             this.ruxModalOpened.emit(true)
+            if (this.modalMessage) {
+                this._getDefaultButton()
+            }
         } else if (!newValue) {
             this.ruxModalClosed.emit(true)
         }
@@ -100,7 +103,19 @@ export class RuxModal {
     }
 
     connectedCallback() {
+        this._focusDefaultButton()
         this._handleModalChoice = this._handleModalChoice.bind(this)
+    }
+    componentDidLoad() {
+        this._focusDefaultButton()
+    }
+    private _focusDefaultButton() {
+        if (this.modalMessage) {
+            setTimeout(() => {
+                const button = this._getDefaultButton()
+                button && button.focus()
+            })
+        }
     }
 
     private _handleModalChoice(e: MouseEvent) {
@@ -110,6 +125,20 @@ export class RuxModal {
         this.ruxModalClosed.emit(choice)
         this.open = false
     }
+
+    private _getDefaultButton(): HTMLElement | null {
+        const buttonSet = this.element?.shadowRoot?.querySelectorAll(
+            'rux-button:not([hidden])'
+        ) as NodeListOf<HTMLElement>
+
+        if (buttonSet.length > 0) {
+            const defaultButton = buttonSet[buttonSet.length - 1]
+            return defaultButton
+        }
+
+        return null
+    }
+
     private _getWrapper(): HTMLElement | null {
         const wrapper = this.element?.shadowRoot?.querySelector(
             '.rux-modal__wrapper'
