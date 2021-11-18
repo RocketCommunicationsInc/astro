@@ -75,8 +75,7 @@
         border: 1px solid var(--textarea-invalid-border-color);
     }
     &::placeholder {
-        color: var(--color-default-text);
-        opacity: 0.6;
+        color: var(--color-placeholder-text);
     }
 }
 

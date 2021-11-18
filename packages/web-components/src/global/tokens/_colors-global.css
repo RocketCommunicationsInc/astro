@@ -1,9 +1,11 @@
 /**
  * Do not edit directly
- * Generated on Mon, 15 Nov 2021 16:06:46 GMT
+ * Generated on Tue, 16 Nov 2021 22:19:09 GMT
  */
 
 :root {
+    --color-global-snowflakes-placeholder-light: #76787d;
+    --color-global-snowflakes-placeholder-dark: #9fa3a7;
     --color-global-snowflakes-dialog-header-light: #f7f8fb;
     --color-global-snowflakes-dialog-header-dark: #172533;
     --color-global-snowflakes-list-hover-light: #e2edf6;
