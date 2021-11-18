@@ -15,16 +15,67 @@ import { html, render } from 'lit-html'
 
 # Modal
 
-A Modal interrupts the app experience to prompt a user to confirm an action or acknowledge a piece of information. The modal header, content and footer are exposed as slots, allowing control of what goes in them.
+A Modal interrupts the app experience to prompt a user to confirm an action or acknowledge a piece of information. `<rux-modal>` can be passed props for title and message, named slots, or a combination
+of both. In the case of any slot/prop overlap, props will be prioritized.
 
 ## Guidelines
 
 -   [Astro UXDS: Modal](https://astrouxds.com/ui-components/dialog-box)
 
-export const Default = (args) => {
+export const Modal = (args) => {
+    return html`
+            <style>
+            .sbdocs #story--components-modal--with-props {
+                display: block;
+                min-height: 500px;
+            }
+            rux-modal::part(modal-wrapper) {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+        <div style="display: flex; flex-flow: column; justify-content: center;">
+            <rux-modal
+                ?open="${args.open}"
+                modal-message="${args.modalMessage}"
+                modal-title="${args.modalTitle}"
+                confirm-text="${args.confirmText}"
+                deny-text="${args.denyText}"
+            ></rux-modal>
+        </div
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+            open: true,
+            modalMessage: 'Props message',
+            modalTitle: 'Props title',
+            confirmText: 'Release',
+            denyText: 'Cancel',
+        }}
+        name="With Props"
+    >
+        {Modal.bind()}
+    </Story>
+</Canvas>
+
+## API
+
+<ArgsTable of="rux-modal" />
+
+## Variants
+
+### With Slots
+
+export const WithSlots = (args) => {
     return html`
     <style>
-        .sbdocs #story--components-modal--default-story {
+        .sbdocs #story--components-modal--with-slots {
         display: block;
         min-height: 500px;
     }
@@ -38,11 +89,11 @@ export const Default = (args) => {
     </style>
         <div style="display: flex; flex-flow: column; justify-content: center;">
             <rux-modal id="default-modal" ?open="${args.open}">
-                <h4 slot="header">Modal Title</h4>
+                <h4 slot="header">Slot Title</h4>
                 <div>
                     <rux-input
                         placeholder="Modal Input"
-                        label="Modal Content"
+                        label="Slot Content"
                     ></rux-input>
                 </div>
                 <div
@@ -53,7 +104,7 @@ export const Default = (args) => {
                         <a
                             href="#"
                             style="margin-right: 10px; text-decoration: none; color: var(--color-primary);"
-                            >Modal Link</a
+                            >Slot Link</a
                         >
                     </div>
                     <div>
@@ -72,17 +123,11 @@ export const Default = (args) => {
         args={{
             open: true,
         }}
-        name="Default"
+        name="With Slots"
     >
-        {Default.bind()}
+        {WithSlots.bind()}
     </Story>
 </Canvas>
-
-## API
-
-<ArgsTable of="rux-modal" />
-
-## Variants
 
 ### Close on click away
 
@@ -150,7 +195,7 @@ export const ClickToClose = (args) => {
 
 ## Opening, Closing and Focusing
 
-Because the content of modal is now customiziable via slots, the actions of these slots will require some boilerplate to get working.
+These functions are handled by default if passing in props for `modal-message`. If slots are being used, a bit more boilerplate is required.
 
 ### Opening and Closing
 
@@ -175,7 +220,7 @@ The `open` prop of `rux-modal` is mutable and can be changed accordingly. Here i
 
 ### Applying Focus
 
-Often times when a modal opens, you want to autofocus a specific element. Here's a quick way to do that
+Often times when a modal opens, you want to autofocus a specific element. This is done by default by `rux-modal` if `modal-message` is passed in as props. If using slots, here's a quick way to do that
 using the previous example:
 
 ```js
