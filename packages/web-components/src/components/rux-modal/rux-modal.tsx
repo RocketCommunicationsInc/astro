@@ -85,7 +85,7 @@ export class RuxModal {
             if (this.modalMessage) {
                 this._getDefaultButton()
             }
-        } else if (!newValue) {
+        } else {
             this.ruxModalClosed.emit(true)
         }
     }
