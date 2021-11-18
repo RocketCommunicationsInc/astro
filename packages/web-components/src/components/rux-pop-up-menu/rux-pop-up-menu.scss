@@ -46,7 +46,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    border-radius: 3px;
+    border-radius: var(--radius-base);
     top: -9999rem;
     left: -9999rem;
     transition: opacity 0.1667s ease-out;
