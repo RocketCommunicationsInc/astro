@@ -46,7 +46,6 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property    | Attribute    | Description                                                                                                                                                                                       | Type                  | Default     |
@@ -62,14 +61,12 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 | `required`  | `required`   | Sets the field as required                                                                                                                                                                        | `boolean`             | `false`     |
 | `value`     | `value`      | The value of the selected option                                                                                                                                                                  | `string \| undefined` | `undefined` |
 
-
 ## Events
 
 | Event       | Description                                                                                                                          | Type                |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------- |
 | `ruxblur`   | Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) | `CustomEvent<any>`  |
 | `ruxchange` | Event Emitted when the Value of the Select is Changed                                                                                | `CustomEvent<void>` |
-
 
 ## Slots
 
@@ -78,28 +75,24 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 | `"(default)"` | The select options |
 | `"label"`     | The select label   |
 
-
 ## CSS Custom Properties
 
-| Name                                             | Description                                   |
-| ------------------------------------------------ | --------------------------------------------- |
-| `--select-menu-active-caret`                     | Caret Shown When the Select Menu is Open      |
-| `--select-menu-background-color`                 | Background Color of the Select Input          |
-| `--select-menu-border-color`                     | Border Color of the Select Input              |
-| `--select-menu-border-focus-color`               | Border Focus Color of the Select Input        |
-| `--select-menu-border-hover-color`               | Border Hover Color of the Select Input        |
-| `--select-menu-border-radius`                    | Border radius for Select Menu                 |
-| `--select-menu-inactive-caret`                   | Caret Shown When the Select Menu is Closed    |
-| `--select-menu-invalid-border-color`             | Border Color of the Invalid Select Input      |
-| `--select-menu-label-color`                      | Text Color of the Label                       |
-| `--select-menu-option-group-text-color`          | Text Color of Select Menu Option Group        |
-| `--select-menu-option-hover-background-color`    | Background Hover Color of Select Menu Options |
-| `--select-menu-option-selected-background-color` | Background Color of the Selected Option       |
-| `--select-menu-option-selected-text-color`       | Text Color of the Selected Option             |
-| `--select-menu-option-text-hover-color`          | Text Hover Color of the Select Menu Options   |
-| `--select-menu-text-color`                       | Text Color of the Select Input                |
+| Name                                             | Description                                 |
+| ------------------------------------------------ | ------------------------------------------- |
+| `--select-menu-active-caret`                     | Caret Shown When the Select Menu is Open    |
+| `--select-menu-background-color`                 | Background Color of the Select Input        |
+| `--select-menu-border-color`                     | Border Color of the Select Input            |
+| `--select-menu-border-focus-color`               | Border Focus Color of the Select Input      |
+| `--select-menu-border-hover-color`               | Border Hover Color of the Select Input      |
+| `--select-menu-border-radius`                    | Border radius for Select Menu               |
+| `--select-menu-inactive-caret`                   | Caret Shown When the Select Menu is Closed  |
+| `--select-menu-invalid-border-color`             | Border Color of the Invalid Select Input    |
+| `--select-menu-label-color`                      | Text Color of the Label                     |
+| `--select-menu-option-selected-background-color` | Background Color of the Selected Option     |
+| `--select-menu-option-selected-text-color`       | Text Color of the Selected Option           |
+| `--select-menu-option-text-hover-color`          | Text Hover Color of the Select Menu Options |
+| `--select-menu-text-color`                       | Text Color of the Select Input              |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_
