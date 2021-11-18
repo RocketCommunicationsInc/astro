@@ -44,7 +44,7 @@
             position: relative;
             display: flex;
             content: '';
-            border-radius: 4.7px;
+            border-radius: var(--switch-radius-track);
             border: 1px solid;
             border-color: var(--switch-off-border-color);
             background-color: var(--switch-background-color);
@@ -63,7 +63,7 @@
             z-index: 3;
             height: 18px;
             width: 18px;
-            border-radius: 50%;
+            border-radius: var(--radius-circle);
             border: 1px solid var(--switch-hover-off-color);
             background-color: var(--switch-background-color);
             transition: 0.1s left linear, 0.1s border-color linear;
