@@ -102,7 +102,7 @@ slot[name='left-side'] > .shifted-up,
     box-sizing: border-box;
     color: var(--color-global-basics-white);
     background-color: var(--color-global-basics-black);
-    border-radius: 2px;
+    border-radius: var(--app-state-radius);
     font-family: var(--font-body-2-font-family);
     font-size: var(--font-body-2-font-size);
     font-weight: var(--font-body-2-font-weight);
