@@ -78,7 +78,9 @@ export class RuxPopUpMenu {
     ruxMenuDidClose!: EventEmitter<void>
 
     componentDidRender() {
-        if (this.open) this._setMenuPosition()
+        if (this.open) {
+            this._setMenuPosition()
+        }
     }
 
     connectedCallback() {
