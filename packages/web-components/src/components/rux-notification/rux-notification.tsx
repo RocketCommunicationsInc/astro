@@ -1,3 +1,4 @@
+/* eslint react/jsx-no-bind: 0 */ // --> OFF
 import { Component, Host, h, Prop, Watch } from '@stencil/core'
 import { Status } from '../../common/commonTypes.module'
 
@@ -73,7 +74,7 @@ export class RuxNotification {
                 <rux-icon
                     role="button"
                     label="Close notification"
-                    onClick={this._onClick}
+                    onClick={() => this._onClick()}
                     icon="close"
                     size="36px"
                 ></rux-icon>
