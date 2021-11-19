@@ -17,7 +17,7 @@ import {
  * @part modal-footer - The footer container of modal
  *
  * @slot header - the header of the modal
- * @slot (default) - the content of the modal
+ * @slot message - the message of the modal
  * @slot footer - the footer of the modal
  */
 @Component({
@@ -193,7 +193,7 @@ export class RuxModal {
                                 part="modal-content"
                             >
                                 <div class="rux-modal__props-message">
-                                    <slot name="content">{modalMessage}</slot>
+                                    <slot name="message">{modalMessage}</slot>
                                 </div>
                             </div>
                             {hasFooterSlot ? (
