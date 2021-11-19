@@ -74,6 +74,8 @@ export class RuxModal {
     })
     ruxModalOpened!: EventEmitter<boolean>
 
+    hasFooterSlot: boolean = false
+
     @Element() element!: HTMLRuxModalElement
 
     @Watch('open')
@@ -105,6 +107,9 @@ export class RuxModal {
     connectedCallback() {
         this._focusDefaultButton()
         this._handleModalChoice = this._handleModalChoice.bind(this)
+    }
+    componentWillLoad() {
+        this.hasFooterSlot = !!this.element.querySelector('[slot="footer"]')
     }
     componentDidLoad() {
         this._focusDefaultButton()
@@ -172,6 +177,7 @@ export class RuxModal {
             modalTitle,
             confirmText,
             denyText,
+            hasFooterSlot,
             _handleModalChoice,
         } = this
         return (
@@ -179,19 +185,61 @@ export class RuxModal {
                 <Host>
                     <div part="modal-wrapper" class="rux-modal__wrapper">
                         <dialog class="rux-modal__dialog" role="dialog">
-                            {modalTitle ? (
-                                <header class="rux-modal__props-titlebar">
-                                    <div>{modalTitle}</div>
-                                </header>
-                            ) : (
-                                <header
-                                    part="modal-header"
-                                    class="rux-modal__titlebar"
+                            <header class="rux-modal__props-titlebar">
+                                <slot name="header">{modalTitle}</slot>
+                            </header>
+                            <div
+                                class="rux-modal__content"
+                                part="modal-content"
+                            >
+                                <div class="rux-modal__props-message">
+                                    <slot>{modalMessage}</slot>
+                                </div>
+                            </div>
+                            {hasFooterSlot ? (
+                                <footer
+                                    part="modal-footer"
+                                    class="rux-modal__footer"
                                 >
-                                    <slot name="header"></slot>
-                                </header>
+                                    <slot name="footer"></slot>
+                                </footer>
+                            ) : (
+                                <div class="rux-modal__props-content">
+                                    <rux-button-group
+                                        class="props-button-group"
+                                        h-align="right"
+                                    >
+                                        <rux-button
+                                            secondary={confirmText.length > 0}
+                                            onClick={_handleModalChoice}
+                                            data-value="false"
+                                            hidden={!denyText}
+                                            tabindex="-1"
+                                        >
+                                            {denyText}
+                                        </rux-button>
+                                        <rux-button
+                                            onClick={_handleModalChoice}
+                                            data-value="true"
+                                            hidden={!confirmText}
+                                            tabindex="0"
+                                        >
+                                            {confirmText}
+                                        </rux-button>
+                                    </rux-button-group>
+                                </div>
                             )}
-                            {modalMessage ? (
+                        </dialog>
+                    </div>
+                </Host>
+            )
+        )
+    }
+}
+
+/*
+
+{modalMessage ? (
                                 <div class="rux-modal__props-content">
                                     <div class="rux-modal__props-message">
                                         {modalMessage}
