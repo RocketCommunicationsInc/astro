@@ -9,6 +9,7 @@ import {
     Host,
     Watch,
 } from '@stencil/core'
+import { hasSlot } from '../../utils/utils'
 
 /**
  * @part modal-wrapper - the modal wrapper overlay
@@ -74,8 +75,6 @@ export class RuxModal {
     })
     ruxModalOpened!: EventEmitter<boolean>
 
-    hasFooterSlot: boolean = false
-
     @Element() element!: HTMLRuxModalElement
 
     @Watch('open')
@@ -108,9 +107,7 @@ export class RuxModal {
         this._focusDefaultButton()
         this._handleModalChoice = this._handleModalChoice.bind(this)
     }
-    componentWillLoad() {
-        this.hasFooterSlot = !!this.element.querySelector('[slot="footer"]')
-    }
+
     componentDidLoad() {
         this._focusDefaultButton()
     }
@@ -177,7 +174,7 @@ export class RuxModal {
             modalTitle,
             confirmText,
             denyText,
-            hasFooterSlot,
+            element,
             _handleModalChoice,
         } = this
         return (
@@ -196,7 +193,7 @@ export class RuxModal {
                                     <slot name="message">{modalMessage}</slot>
                                 </div>
                             </div>
-                            {hasFooterSlot ? (
+                            {hasSlot(element, 'footer') ? (
                                 <footer
                                     part="modal-footer"
                                     class="rux-modal__footer"
