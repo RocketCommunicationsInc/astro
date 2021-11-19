@@ -72,14 +72,17 @@
         flex-shrink: 0;
         align-items: center;
         width: 100%;
-        padding: 0 20px;
-        background-color: rgb(16, 25, 35, 0.4);
+        padding: 16px 20px;
+        background-color: rgb(16, 25, 35, 0.4); //! Change this to css var
         color: var(--modal-title-color);
         user-select: none;
         font-family: var(--font-heading-2-font-family);
         font-size: var(--font-heading-2-font-size);
         font-weight: var(--font-heading-2-font-weight);
         letter-spacing: var(--font-heading-2-letter-spacing);
+        ::slotted(h4) {
+            padding: 0px 10px;
+        }
     }
 
     &__content {
