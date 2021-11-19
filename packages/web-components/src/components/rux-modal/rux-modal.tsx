@@ -17,7 +17,7 @@ import {
  * @part modal-footer - The footer container of modal
  *
  * @slot header - the header of the modal
- * @slot (default) - the content of the modal
+ * @slot message - the message of the modal
  * @slot footer - the footer of the modal
  */
 @Component({
@@ -178,7 +178,7 @@ export class RuxModal {
                                 part="modal-content"
                             >
                                 <div class="rux-modal__props-message">
-                                    <slot name="content">{modalMessage}</slot>
+                                    <slot name="message">{modalMessage}</slot>
                                 </div>
                             </div>
                             {hasFooterSlot ? (
@@ -221,54 +221,3 @@ export class RuxModal {
         )
     }
 }
-
-/*
-
-{modalMessage ? (
-                                <div class="rux-modal__props-content">
-                                    <div class="rux-modal__props-message">
-                                        {modalMessage}
-                                    </div>
-                                    <rux-button-group
-                                        class="props-button-group"
-                                        h-align="right"
-                                    >
-                                        <rux-button
-                                            secondary={confirmText.length > 0}
-                                            onClick={_handleModalChoice}
-                                            data-value="false"
-                                            hidden={!denyText}
-                                            tabindex="-1"
-                                        >
-                                            {denyText}
-                                        </rux-button>
-                                        <rux-button
-                                            onClick={_handleModalChoice}
-                                            data-value="true"
-                                            hidden={!confirmText}
-                                            tabindex="0"
-                                        >
-                                            {confirmText}
-                                        </rux-button>
-                                    </rux-button-group>
-                                </div>
-                            ) : (
-                                <div>
-                                    <div
-                                        part="modal-content"
-                                        class="rux-modal__content"
-                                    >
-                                        <slot></slot>
-                                    </div>
-                                    <footer
-                                        part="modal-footer"
-                                        class="rux-modal__footer"
-                                    >
-                                        <slot name="footer"></slot>
-                                    </footer>
-                                </div>
-                            )}
-
-
-
-*/
