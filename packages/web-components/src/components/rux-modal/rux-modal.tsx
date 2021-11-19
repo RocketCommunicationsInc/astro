@@ -178,7 +178,7 @@ export class RuxModal {
                                 part="modal-content"
                             >
                                 <div class="rux-modal__props-message">
-                                    <slot>{modalMessage}</slot>
+                                    <slot name="content">{modalMessage}</slot>
                                 </div>
                             </div>
                             {hasFooterSlot ? (
