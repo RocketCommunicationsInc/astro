@@ -48,7 +48,7 @@ rux-status {
     bottom: -0.75rem;
     right: -0.4rem;
     border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 3px;
+    border-radius: var(--radius-base);
     padding: 0.65rem 0.25rem;
     color: #fff;
     font-family: var(--font-body-3-font-family);

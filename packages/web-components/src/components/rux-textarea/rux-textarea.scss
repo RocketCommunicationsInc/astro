@@ -43,7 +43,7 @@
     width: 100%;
     padding: 0.5rem;
     border: 1px solid var(--textarea-border-color);
-    border-radius: 3px;
+    border-radius: var(--radius-base);
     font-family: var(--font-body-1-font-family);
     font-size: var(--font-body-1-font-size);
     letter-spacing: var(--font-body-1-letter-spacing);

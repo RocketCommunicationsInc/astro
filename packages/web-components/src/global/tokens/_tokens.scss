@@ -1,9 +1,22 @@
 /**
  * Do not edit directly
- * Generated on Tue, 16 Nov 2021 22:19:09 GMT
+ * Generated on Thu, 18 Nov 2021 20:26:50 GMT
  */
 
 :root {
+    --indeterminate-progress-radius-outer: 30px;
+    --indeterminate-progress-radius-inner: 23px;
+    --progress-radius-outer: 9px;
+    --progress-radius-inner: 8px;
+    --scrollbar-radius: 4px;
+    --switch-radius-track: 4.7px;
+    --radio-radius-outer: 9px;
+    --radio-radius-inner: 4px;
+    --app-state-radius: 2px;
+    --checkbox-radius: 2px;
+    --slider-radius-background-track: 1px;
+    --radius-circle: 50%;
+    --radius-base: 3px;
     --font-monospace-1-paragraph-spacing: 0;
     --font-monospace-1-letter-spacing: 0em;
     --font-monospace-1-font-size: 1.75rem;

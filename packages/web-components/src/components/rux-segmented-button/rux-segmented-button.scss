@@ -36,7 +36,7 @@
     --segmented-button-selected-hover-border-color: var(--color-primary);
 
     /** @prop --segmented-button-border-radius: Segmented button border radius */
-    --segmented-button-border-radius: 3px;
+    --segmented-button-border-radius: var(--radius-base);
 }
 
 :host([hidden]) {
