@@ -89,7 +89,21 @@ export class RuxNotification {
     }
     render() {
         return (
-            <Host>
+            /**
+             * Add a randomly generated class name when the banner is open
+             * so that we can achieve backwards compatibility if anybody is
+             * styling the host element.
+             *
+             * We shouldn't be changing the component's class because the developer
+             * has full control of it and can easily override it. But by using
+             * a random string, we reduce the chances of that happening unknowingly.
+             */
+
+            <Host
+                class={{
+                    'rux-notification-banner-0ba5409c--open': this.open,
+                }}
+            >
                 <div class="rux-notification__message">{`${this.message}`}</div>
                 <rux-icon
                     role="button"
