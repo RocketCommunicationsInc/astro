@@ -95,22 +95,19 @@ Applying the `label` property attribute to the classification custom element add
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
-| Property         | Attribute        | Description                                                          | Type                                                                                               | Default          |
-| ---------------- | ---------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ---------------- |
-| `classification` | `classification` | Defines which classification marking will be displayed.              | `"confidential" \| "controlled" \| "secret" \| "top-secret" \| "top-secret-sci" \| "unclassified"` | `'unclassified'` |
-| `label`          | `label`          | Allows additional text labels to be added to the marking             | `string \| undefined`                                                                              | `undefined`      |
-| `tag`            | `tag`            | Declares the marking as a `tag` rather than the default banner style | `boolean`                                                                                          | `false`          |
-
+| Property         | Attribute        | Description                                                          | Type                                                                                                        | Default          |
+| ---------------- | ---------------- | -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ---------------- |
+| `classification` | `classification` | Defines which classification marking will be displayed.              | `"confidential" \| "controlled" \| "cui" \| "secret" \| "top-secret" \| "top-secret-sci" \| "unclassified"` | `'unclassified'` |
+| `label`          | `label`          | Allows additional text labels to be added to the marking             | `string \| undefined`                                                                                       | `undefined`      |
+| `tag`            | `tag`            | Declares the marking as a `tag` rather than the default banner style | `boolean`                                                                                                   | `false`          |
 
 ## Shadow Parts
 
 | Part              | Description       |
 | ----------------- | ----------------- |
 | `"footer-banner"` | the footer banner |
-
 
 ## CSS Custom Properties
 
@@ -119,7 +116,6 @@ Applying the `label` property attribute to the classification custom element add
 | `--color-classification-text-dark`  | the color of dark text in the classification marking  |
 | `--color-classification-text-light` | the color of light text in the classification marking |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

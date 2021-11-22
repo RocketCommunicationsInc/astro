@@ -7,6 +7,7 @@ export type Status =
     | 'critical'
 
 export type Classification =
+    | 'cui'
     | 'controlled'
     | 'confidential'
     | 'secret'
