@@ -1965,8 +1965,8 @@ ag-grid-aurelia {
   -webkit-font-smoothing: antialiased;
   color: var(--color-default-text, #ffffff);
   color: var(--ag-foreground-color, var(--color-default-text, #ffffff));
-  font-family: var(--font-b1-font-family, "Helvetica Neue", sans-serif);
-  font-size: var(--font-b1-font-size, 16px);
+  font-family: var(--font-body-1-font-family, "Helvetica Neue", sans-serif);
+  font-size: var(--font-body-1-font-size, 16px);
   line-height: normal;
 }
 @font-face {
@@ -5311,7 +5311,7 @@ ag-grid-aurelia {
   left: 0;
 }
 .ag-theme-astro .ag-row {
-  font-size: var(--font-b1-font-size, 16px) 1;
+  font-size: var(--font-body-1-font-size, 16px) 1;
 }
 .ag-theme-astro input[class^="ag-"]:not([type]),
 .ag-theme-astro input[class^="ag-"][type="text"],
@@ -5428,7 +5428,7 @@ ag-grid-aurelia {
   margin-bottom: 0;
 }
 .ag-theme-astro .ag-dnd-ghost {
-  font-size: var(--font-b1-font-size, 16px)-1;
+  font-size: var(--font-body-1-font-size, 16px)-1;
   font-weight: 700;
 }
 .ag-theme-astro .ag-side-buttons {

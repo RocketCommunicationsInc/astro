@@ -1,4 +1,5 @@
 dist/
+!packages/ag-grid-theme/dist
 www/
 loader/
 storybook-static/
