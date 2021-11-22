@@ -11,6 +11,11 @@ args.status.defaultValue = 'standby'
     title="Components/Notification"
     component="rux-notification"
     argTypes={args}
+    parameters={{
+        actions: {
+            handles: ['ruxclosed rux-notification'],
+        },
+    }}
 />
 
 # Notification
