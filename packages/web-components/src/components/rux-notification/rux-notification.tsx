@@ -1,5 +1,13 @@
 /* eslint react/jsx-no-bind: 0 */ // --> OFF
-import { Component, Host, h, Prop, Watch } from '@stencil/core'
+import {
+    Component,
+    Event,
+    EventEmitter,
+    Host,
+    h,
+    Prop,
+    Watch,
+} from '@stencil/core'
 import { Status } from '../../common/commonTypes.module'
 
 @Component({
@@ -25,12 +33,24 @@ export class RuxNotification {
      */
     @Prop({ attribute: 'close-after', mutable: true }) closeAfter?: number
 
+    /**
+     * Fires when the notification banner is closed
+     */
+    @Event({
+        eventName: 'ruxclosed',
+    })
+    ruxClosed!: EventEmitter<boolean>
+
     private _timeoutRef: number | null = null
 
     @Watch('open')
     watchHandler() {
         this._updated()
+        if (!this.open) {
+            this.ruxClosed.emit()
+        }
     }
+
     connectedCallback() {
         this._updated()
     }
