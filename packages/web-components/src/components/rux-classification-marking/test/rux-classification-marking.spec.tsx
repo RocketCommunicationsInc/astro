@@ -55,11 +55,26 @@ describe('rux-classification-marking banners', () => {
         expect(page.root).toEqualHtml(`
       <rux-classification-marking classification="controlled">
         <mock:shadow-root>
-          <div class="rux-classification rux-classification--banner">cui</div>
+          <div class="rux-classification rux-classification--banner">controlled</div>
           <slot></slot>
         </mock:shadow-root>
       </rux-classification-marking>
     `)
+    })
+
+    it('renders cui banner', async () => {
+        const page = await newSpecPage({
+            components: [RuxClassificationMarking],
+            html: `<rux-classification-marking classification="cui"></rux-classification-marking>`,
+        })
+        expect(page.root).toEqualHtml(`
+          <rux-classification-marking classification="cui">
+            <mock:shadow-root>
+              <div class="rux-classification rux-classification--banner">cui</div>
+              <slot></slot>
+            </mock:shadow-root>
+          </rux-classification-marking>
+        `)
     })
 
     it('renders confidential banner', async () => {
