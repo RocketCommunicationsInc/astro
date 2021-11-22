@@ -1,3 +1,4 @@
+/* eslint react/jsx-no-bind: 0 */ // --> OFF
 import {
     Prop,
     Event,
@@ -218,7 +219,9 @@ export class RuxTreeNode {
                 role="treeitem"
                 aria-expanded={this.expanded ? 'true' : 'false'}
                 aria-selected={this.selected ? 'true' : 'false'}
-                onClick={this._handleTreeNodeClick}
+                onClick={(event: MouseEvent) =>
+                    this._handleTreeNodeClick(event)
+                }
             >
                 <div
                     id={this.componentId}
@@ -232,7 +235,7 @@ export class RuxTreeNode {
                     <div class="parent" tabindex="0">
                         {this._hasChildren && (
                             <i
-                                onClick={this._handleArrowClick}
+                                onClick={(e) => this._handleArrowClick(e)}
                                 class="arrow"
                             ></i>
                         )}
