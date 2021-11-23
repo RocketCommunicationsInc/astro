@@ -73,6 +73,7 @@
 :host([classification='confidential']) .rux-classification {
     background-color: var(--color-global-classification-confidential);
 }
+:host([classification='cui']) .rux-classification,
 :host([classification='controlled']) .rux-classification {
     background-color: var(--color-global-classification-cui);
 }

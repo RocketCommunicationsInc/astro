@@ -51,7 +51,8 @@ export class RuxClassificationMarking {
     private _getDisplayData(): string {
         const markings = {
             banner: {
-                controlled: 'cui',
+                cui: 'cui',
+                controlled: 'controlled',
                 confidential: 'confidential',
                 secret: 'secret',
                 'top-secret': 'top secret',
@@ -59,6 +60,7 @@ export class RuxClassificationMarking {
                 unclassified: 'unclassified',
             },
             tag: {
+                cui: 'cui',
                 controlled: 'cui',
                 confidential: 'c',
                 secret: 's',
