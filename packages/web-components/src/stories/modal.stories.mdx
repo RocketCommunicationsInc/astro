@@ -8,7 +8,7 @@ import { html, render } from 'lit-html'
     argTypes={extractArgTypes('rux-modal')}
     parameters={{
         actions: {
-            handles: ['ruxmodalclosed rux-modal'],
+            handles: ['ruxmodalclosed rux-modal', 'ruxmodalopened rux-modal'],
         },
     }}
 />
@@ -16,7 +16,7 @@ import { html, render } from 'lit-html'
 # Modal
 
 A Modal interrupts the app experience to prompt a user to confirm an action or acknowledge a piece of information. `<rux-modal>` can be passed props for title and message, named slots, or a combination
-of both. In the case of any slot/prop overlap, props will be prioritized.
+of both.
 
 ## Guidelines
 
@@ -74,44 +74,52 @@ export const Modal = (args) => {
 
 export const WithSlots = (args) => {
     return html`
-    <style>
-        .sbdocs #story--components-modal--with-slots {
-        display: block;
-        min-height: 500px;
-    }
-        rux-modal::part(modal-wrapper) {
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
+        <style>
+            .sbdocs #story--components-modal--with-slots {
+                display: block;
+                min-height: 500px;
+            }
+            rux-modal::part(modal-wrapper) {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+            }
+        </style>
         <div style="display: flex; flex-flow: column; justify-content: center;">
-            <rux-modal id="default-modal" ?open="${args.open}">
-                <h4 slot="header">Slot Title</h4>
-                <div>
+            <rux-modal ?open="${args.open}" }>
+                <div slot="header">Slot Title</div>
+                <div slot="message">
                     <rux-input
                         placeholder="Modal Input"
-                        label="Slot Content"
+                        label="Slotted Input"
                     ></rux-input>
                 </div>
                 <div
                     slot="footer"
-                    style="width: 100%; display: flex; justify-content: space-between; align-items: center;"
+                    style="
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    "
                 >
-                    <div>
-                        <a
-                            href="#"
-                            style="margin-right: 10px; text-decoration: none; color: var(--color-primary);"
-                            >Slot Link</a
-                        >
-                    </div>
-                    <div>
+                    <a
+                        href="https://astrouxds.com/"
+                        style="
+                            margin-right: 10px;
+                            text-decoration: none;
+                            color: var(--color-primary);
+                        "
+                        >Slot Link</a
+                    >
                     <rux-button-group>
-                        <rux-button id="cancel-btn" secondary>Cancel</rux-button>
+                        <rux-button id="cancel-btn" secondary
+                            >Cancel</rux-button
+                        >
                         <rux-button id="confirm-btn">Confirm</rux-button>
-                    </div>
+                    </rux-button-group>
                 </div>
             </rux-modal>
         </div>
@@ -151,8 +159,8 @@ export const ClickToClose = (args) => {
                 ?open="${args.open}"
                 ?click-to-close="${args.clickToClose}"
             >
-                <h4 slot="header">Click Off Close</h4>
-                <div>
+                <div slot="header">Click Off Close</div>
+                <div slot="message">
                     <p>
                         If click-to-close is true, clicking off of rux-modal
                         will close it.
@@ -164,7 +172,7 @@ export const ClickToClose = (args) => {
                 >
                     <div>
                         <a
-                            href="#"
+                            href="https://astrouxds.com/"
                             style="margin-right: 10px; text-decoration: none; color: var(--color-primary);"
                             >Modal Link</a
                         >
@@ -203,7 +211,7 @@ The `open` prop of `rux-modal` is mutable and can be changed accordingly. Here i
 
 ```js
 <rux-modal id="modal" click-to-close>
-    <h4 slot="header">Modal Header</h4>
+    <div slot="header">Modal Header</div>
     <p>Modal Content here!</p>
     <div slot="footer">
         <rux-button id="confirm">Confirm</rux-button>
@@ -225,7 +233,7 @@ using the previous example:
 
 ```js
 <rux-modal id="modal" click-to-close>
-    <h4 slot="header">Modal Header</h4>
+    <div slot="header">Modal Header</div>
     <p>Modal Content here!</p>
     <div slot="footer">
         <rux-button id="confirm">Confirm</rux-button>

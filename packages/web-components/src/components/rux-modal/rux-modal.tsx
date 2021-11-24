@@ -54,10 +54,6 @@ export class RuxModal {
     /**
      * Event that is fired when modal closes
      */
-
-    /**
-     * Event that is fired when modal closes
-     */
     @Event({
         eventName: 'ruxmodalclosed',
         composed: true,
@@ -78,7 +74,7 @@ export class RuxModal {
     @Element() element!: HTMLRuxModalElement
 
     @Watch('open')
-    handleOpenChange(newValue: boolean) {
+    async handleOpenChange(newValue: boolean) {
         // This will only toggle between true and false.
         // If the new value is true, that means open. Emit open event
         if (newValue) {
@@ -167,14 +163,14 @@ export class RuxModal {
                 <Host>
                     <div part="modal-wrapper" class="rux-modal__wrapper">
                         <dialog class="rux-modal__dialog" role="dialog">
-                            <header class="rux-modal__props-titlebar">
+                            <header class="rux-modal__titlebar">
                                 <slot name="header">{modalTitle}</slot>
                             </header>
                             <div
                                 class="rux-modal__content"
                                 part="modal-content"
                             >
-                                <div class="rux-modal__props-message">
+                                <div class="rux-modal__message">
                                     <slot name="message">{modalMessage}</slot>
                                 </div>
                             </div>
@@ -186,7 +182,7 @@ export class RuxModal {
                                     <slot name="footer"></slot>
                                 </footer>
                             ) : (
-                                <div class="rux-modal__props-content">
+                                <div class="rux-modal__content">
                                     <rux-button-group
                                         class="props-button-group"
                                         h-align="right"
