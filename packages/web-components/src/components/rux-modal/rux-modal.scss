@@ -89,34 +89,10 @@
     }
 
     &__footer {
-        padding: 1.25rem; //20px
-    }
-    // If props are being used for title, content
-    &__props-titlebar {
-        display: flex;
-        flex-grow: 0;
-        flex-shrink: 0;
-        align-items: center;
-        width: 100%;
-        padding: 16px 20px;
-        background-color: var(--color-dialog-header);
-        color: var(--modal-title-color);
-        user-select: none;
-        font-family: var(--font-heading-2-font-family);
-        font-size: var(--font-heading-2-font-size);
-        font-weight: var(--font-heading-2-font-weight);
-        letter-spacing: var(--font-heading-2-letter-spacing);
+        padding: 0.625rem 1.25rem; //10px 20px
     }
 
-    &__props-content {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-        padding: 1rem;
-        color: var(--color-default-text);
-    }
-
-    &__props-message {
+    &__message {
         margin: 0.5rem 1.875rem 2.5rem 1.875rem;
     }
     .props-button-group {
