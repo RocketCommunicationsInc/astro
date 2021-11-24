@@ -34,9 +34,13 @@ export default function App() {
     }
     const handleThings = (e) => {
         let arr = things
-        arr.push(e.target.value)
-        let unique = [...new Set(arr)]
-        setThings(unique)
+        if (e.target.checked) {
+            arr.push(e.target.value)
+            let unique = [...new Set(arr)]
+            setThings(unique)
+        } else {
+            setThings(arr.filter((item) => item !== e.target.value))
+        }
     }
     return (
         <div className="container">

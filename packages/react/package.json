@@ -1,7 +1,7 @@
 {
   "name": "@astrouxds/react",
   "sideEffects": false,
-  "version": "6.0.2",
+  "version": "6.0.3",
   "description": "Astro Web Components React Wrapper",
   "repository": {
     "type": "git",
@@ -40,7 +40,7 @@
     "typescript": "^3.3.4000"
   },
   "dependencies": {
-    "@astrouxds/astro-web-components": "^6.0.2",
+    "@astrouxds/astro-web-components": "^6.0.3",
     "babel-jest": "^26.6.3",
     "ts-jest": "^27.0.5"
   },

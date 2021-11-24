@@ -14,6 +14,8 @@ Classification and control markings are required for digital products created fo
 
 For the most up-to-date policies, see the [ISOO Training Aids](https://www.archives.gov/isoo/training/training-aids) for classification marking policies and the [CUI Registry](https://www.archives.gov/cui) for control marking policies. In addition to these requirements, each government agency may have their own rules to use for classification and control markings.
 
+> NOTE: 'CUI' and 'Controlled' markings are semantically the same. It is up to your organization's preference to decide which one to use.
+
 ## Guidelines
 
 -   [Astro UXDS: Classification Markings](https://astrouxds.com/components/classification-markings/)
@@ -227,6 +229,13 @@ export const AllBannerVariants = (args) => {
                 style="position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
             >
                 <rux-classification-marking
+                    classification="cui"
+                ></rux-classification-marking>
+            </div>
+            <div
+                style="position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
+            >
+                <rux-classification-marking
                     classification="unclassified"
                 ></rux-classification-marking>
             </div>
@@ -314,6 +323,19 @@ export const AllTagVariants = () => {
                 style="display: flex; align-items:baseline; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
             >
                 <p
+                    style="display:flex; width:225px; font-size:14px; font-style:italic; color:#d5d7d9; margin: 0 0 1rem 0;"
+                >
+                    CUI Unclassified
+                </p>
+                <rux-classification-marking
+                    tag
+                    classification="cui"
+                ></rux-classification-marking>
+            </div>
+            <div
+                style="display: flex; align-items:baseline; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
+            >
+                <p
                     style="display: flex; width:225px; font-size:13px; font-style:italic; color:#d5d7d9; margin: 0 0 1rem 0;"
                 >
                     Uncontrolled Unclassified
@@ -328,6 +350,8 @@ export const AllTagVariants = () => {
 }
 
 By default classification markings rendered in banner format. Applying the `tag` property attribute sets the marking type. The `tag` attribute property defines the classification marking as a tag.
+
+> NOTE: The 'Controlled' marking will always display as 'CUI' when using the tag property.
 
 <Canvas>
     <Story

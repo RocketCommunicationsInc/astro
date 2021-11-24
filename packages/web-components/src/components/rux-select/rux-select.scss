@@ -4,7 +4,7 @@
     display: block;
 
     /** @prop --select-menu-border-radius: Border radius for Select Menu */
-    --select-menu-border-radius: 3px;
+    --select-menu-border-radius: var(--radius-base);
 
     /** @prop --select-menu-border-hover-color: Border Hover Color of the Select Input */
     --select-menu-border-hover-color: var(--color-hover);

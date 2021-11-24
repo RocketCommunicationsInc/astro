@@ -1,4 +1,13 @@
-import { Component, Host, h, Prop, Watch } from '@stencil/core'
+/* eslint react/jsx-no-bind: 0 */ // --> OFF
+import {
+    Component,
+    Event,
+    EventEmitter,
+    Host,
+    h,
+    Prop,
+    Watch,
+} from '@stencil/core'
 import { Status } from '../../common/commonTypes.module'
 
 @Component({
@@ -24,12 +33,24 @@ export class RuxNotification {
      */
     @Prop({ attribute: 'close-after', mutable: true }) closeAfter?: number
 
+    /**
+     * Fires when the notification banner is closed
+     */
+    @Event({
+        eventName: 'ruxclosed',
+    })
+    ruxClosed!: EventEmitter<boolean>
+
     private _timeoutRef: number | null = null
 
     @Watch('open')
     watchHandler() {
         this._updated()
+        if (!this.open) {
+            this.ruxClosed.emit()
+        }
     }
+
     connectedCallback() {
         this._updated()
     }
@@ -68,12 +89,26 @@ export class RuxNotification {
     }
     render() {
         return (
-            <Host>
+            /**
+             * Add a randomly generated class name when the banner is open
+             * so that we can achieve backwards compatibility if anybody is
+             * styling the host element.
+             *
+             * We shouldn't be changing the component's class because the developer
+             * has full control of it and can easily override it. But by using
+             * a random string, we reduce the chances of that happening unknowingly.
+             */
+
+            <Host
+                class={{
+                    'rux-notification-banner-0ba5409c--open': this.open,
+                }}
+            >
                 <div class="rux-notification__message">{`${this.message}`}</div>
                 <rux-icon
                     role="button"
                     label="Close notification"
-                    onClick={this._onClick}
+                    onClick={() => this._onClick()}
                     icon="close"
                     size="36px"
                 ></rux-icon>

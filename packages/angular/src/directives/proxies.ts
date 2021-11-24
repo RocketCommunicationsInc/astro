@@ -20058,12 +20058,16 @@ export declare interface RuxNotification extends Components.RuxNotification {}
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: "<ng-content></ng-content>",
   inputs: ["closeAfter", "message", "open", "status"],
+  outputs: ["ruxclosed"],
 })
 export class RuxNotification {
+  /** Fires when the notification banner is closed */
+  ruxclosed!: EventEmitter<CustomEvent<boolean>>;
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ["ruxclosed"]);
   }
 }
 

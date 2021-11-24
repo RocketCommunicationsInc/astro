@@ -19,6 +19,28 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
     <body>
-        <rux-notification open>Hello world</rux-notification>
+        <section>
+            <h2>Default</h2>
+            <div style="position: relative; overflow: hidden; height: 200px">
+                <rux-notification
+                    open
+                    data-test-id="default"
+                    message="testing time"
+                ></rux-notification>
+            </div>
+        </section>
+
+        <section>
+            <h2>With Autoclose</h2>
+            <div style="position: relative; overflow: hidden; height: 200px">
+                <rux-notification
+                    data-test-id="autoclose"
+                    open
+                    close-after="100"
+                    status="caution"
+                    message="testing time"
+                ></rux-notification>
+            </div>
+        </section>
     </body>
 </html>

@@ -1,4 +1,5 @@
-import { newSpecPage } from '@stencil/core/testing'
+import { h } from '@stencil/core'
+import { newSpecPage, SpecPage } from '@stencil/core/testing'
 import { RuxNotification } from '../rux-notification'
 
 jest.useFakeTimers()
@@ -10,7 +11,7 @@ describe('rux-notification', () => {
             html: `<rux-notification open message="hello there"></rux-notification>`,
         })
         expect(page.root).toEqualHtml(`
-         <rux-notification message="hello there" open="" status="standby">
+         <rux-notification class="rux-notification-banner-0ba5409c--open" message="hello there" open="" status="standby">
            <mock:shadow-root>
              <div class="rux-notification__message">
                hello there
@@ -78,5 +79,29 @@ describe('rux-notification', () => {
         ruxNotif.closeAfter = 15000 // 15s
         ruxNotif._closeAfter
         expect(ruxNotif.closeAfter).toBe(2000)
+    })
+
+    it('should emit one event when closed', async () => {
+        const buttonSpy = jest.fn()
+        let page: SpecPage
+
+        page = await newSpecPage({
+            components: [RuxNotification],
+            template: () => (
+                <rux-notification
+                    open
+                    onRuxclosed={(ev: any) => buttonSpy(ev)}
+                ></rux-notification>
+            ),
+        })!
+        const notification = page.doc?.querySelector('rux-notification')
+        expect(notification!.open).toBe(true)
+        const icon = notification?.shadowRoot?.querySelector('rux-icon')
+        page.waitForChanges()
+        icon!.click()
+        page.waitForChanges()
+
+        expect(notification!.open).toBe(false)
+        expect(buttonSpy).toHaveBeenCalledTimes(1)
     })
 })
