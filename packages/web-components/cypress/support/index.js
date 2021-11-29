@@ -20,3 +20,22 @@ import './commands'
 // require('./commands')
 
 import 'cypress-real-events/support'
+
+/**
+ * Make Cypress fail if it finds any console.errors
+ */
+Cypress.on('window:before:load', (win) => {
+    cy.stub(win.console, 'error', (msg) => {
+        // Whitelist errors should we so ever desire to
+        // if (msg.includes("This is an error")) {
+        //   return null;
+        // }
+
+        cy.now('task', 'error', msg)
+        throw new Error(msg)
+    })
+
+    cy.stub(win.console, 'warn', (msg) => {
+        cy.now('task', 'warn', msg)
+    })
+})
