@@ -70,11 +70,11 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 
 ## Slots
 
-| Slot          | Description              |
-| ------------- | ------------------------ |
-| `"(default)"` | the content of the modal |
-| `"footer"`    | the footer of the modal  |
-| `"header"`    | the header of the modal  |
+| Slot        | Description              |
+| ----------- | ------------------------ |
+| `"footer"`  | the footer of the modal  |
+| `"header"`  | the header of the modal  |
+| `"message"` | the message of the modal |
 
 ## Shadow Parts
 
