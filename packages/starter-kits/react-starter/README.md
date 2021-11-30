@@ -33,6 +33,7 @@ export default MyComp;
 ### Boilerplate
 
 - Astro UXDS stylesheet import on `index.js`.
+- Roboto font loading in `index.html`.
 
 ### Resources
 
