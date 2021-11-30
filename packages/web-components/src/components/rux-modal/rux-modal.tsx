@@ -199,7 +199,7 @@ export class RuxModal {
                             ) : (
                                 <div class="rux-modal__content">
                                     <rux-button-group
-                                        class="props-button-group"
+                                        class="button-group"
                                         h-align="right"
                                     >
                                         <rux-button
