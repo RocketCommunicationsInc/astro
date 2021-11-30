@@ -74,14 +74,9 @@ export class RuxModal {
     @Element() element!: HTMLRuxModalElement
 
     @Watch('open')
-    async handleOpenChange(newValue: boolean) {
-        // This will only toggle between true and false.
-        // If the new value is true, that means open. Emit open event
-        if (newValue) {
+    async handleOpenChange() {
+        if (this.open) {
             this.ruxModalOpened.emit(true)
-            if (this.modalMessage) {
-                this._getDefaultButton()
-            }
         } else {
             this.ruxModalClosed.emit(true)
         }
@@ -100,19 +95,18 @@ export class RuxModal {
     }
 
     connectedCallback() {
-        this._focusDefaultButton()
         this._handleModalChoice = this._handleModalChoice.bind(this)
     }
 
-    componentDidLoad() {
+    componentDidRender() {
         this._focusDefaultButton()
     }
     private _focusDefaultButton() {
-        if (this.modalMessage) {
+        if (!hasSlot(this.element, 'footer')) {
             setTimeout(() => {
                 const button = this._getDefaultButton()
                 button && button.focus()
-            })
+            }, 0)
         }
     }
 
