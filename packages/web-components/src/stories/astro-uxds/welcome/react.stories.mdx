@@ -20,9 +20,19 @@ Otherwise, use:
 
 Astro Web Components make use of Stencil's automatic lazy loader which only loads components that are actually used on the page.
 
-First, import the @astrouxds/astro-web-components main CSS file into your `index.js` or `app.js` file.
+Import the `@astrouxds/astro-web-components` main CSS file into your `index.js` or `app.js` file.
 
 `import '@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css'`
+
+Import [Roboto](https://fonts.google.com/specimen/Roboto) in your index.html. We recommend using Google's CDN for ease of use but you can also install it locally.
+
+```html
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&family=Roboto:wght@200;300;400;500;600;800&display=swap"
+    rel="stylesheet"
+/>
+```
 
 Next, import any desired Astro component as you would any React component.
 
