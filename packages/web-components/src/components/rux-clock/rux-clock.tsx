@@ -72,11 +72,8 @@ export class RuxClock {
     @Watch('timezone')
     timezoneChanged() {
         this._convertTimezone(this.timezone)
-        this._updateTime()
-    }
-
-    constructor() {
-        this._timezone = this.timezone
+        if (this.aos) this.convertedAos = this._formatLosAos(this.aos)
+        if (this.los) this.convertedLos = this._formatLosAos(this.los)
         this._updateTime()
     }
 
@@ -96,6 +93,12 @@ export class RuxClock {
 
     disconnectedCallback() {
         clearTimeout(this._timer)
+    }
+
+    componentWillLoad() {
+        this._timezone = this.timezone
+        this._convertTimezone(this.timezone)
+        this._updateTime()
     }
 
     private _formatTime(time: Date, timezone: string): string {

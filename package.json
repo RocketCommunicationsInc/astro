@@ -15,6 +15,6 @@
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "build.tests": "lerna run --scope '{@astrouxds/astro-web-components,@astrouxds/react}' build",
-    "test": "lerna run --parallel --ignore @astrouxds/angular test"
+    "test": "lerna run --ignore @astrouxds/angular test"
   }
 }
