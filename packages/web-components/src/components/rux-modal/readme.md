@@ -57,6 +57,7 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 | `clickToClose` | `click-to-close` | Allows modal to close by clicking off of it | `boolean`             | `false`     |
 | `confirmText`  | `confirm-text`   | Text for confirmation button                | `string`              | `'Confirm'` |
 | `denyText`     | `deny-text`      | Text for close button                       | `string`              | `'Cancel'`  |
+| `hideFooter`   | `hide-footer`    | Hide the modal footer                       | `boolean`             | `false`     |
 | `modalMessage` | `modal-message`  | Modal body message                          | `string \| undefined` | `undefined` |
 | `modalTitle`   | `modal-title`    | Modal header title                          | `string \| undefined` | `undefined` |
 | `open`         | `open`           | Shows and hides modal                       | `boolean`             | `false`     |

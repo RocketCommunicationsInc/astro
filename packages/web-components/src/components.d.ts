@@ -6682,6 +6682,10 @@ export namespace Components {
          */
         denyText: string
         /**
+         * Hide the modal footer
+         */
+        hideFooter: boolean
+        /**
          * Modal body message
          */
         modalMessage?: string
@@ -22614,6 +22618,10 @@ declare namespace LocalJSX {
          * Text for close button
          */
         denyText?: string
+        /**
+         * Hide the modal footer
+         */
+        hideFooter?: boolean
         /**
          * Modal body message
          */
