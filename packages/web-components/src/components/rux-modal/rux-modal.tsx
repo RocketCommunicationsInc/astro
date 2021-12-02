@@ -52,6 +52,10 @@ export class RuxModal {
      */
     @Prop() denyText: string = 'Cancel'
     /**
+     *  Hide the modal footer
+     */
+    @Prop() hideFooter: boolean = false
+    /**
      * Event that is fired when modal closes
      */
     @Event({
@@ -150,6 +154,7 @@ export class RuxModal {
             confirmText,
             denyText,
             element,
+            hideFooter,
             _handleModalChoice,
         } = this
         return (
@@ -170,7 +175,7 @@ export class RuxModal {
                                     <slot name="message">{modalMessage}</slot>
                                 </div>
                             </div>
-                            {hasSlot(element, 'footer') ? (
+                            {hideFooter ? null : hasSlot(element, 'footer') ? (
                                 <footer
                                     part="modal-footer"
                                     class="rux-modal__footer"
@@ -178,30 +183,34 @@ export class RuxModal {
                                     <slot name="footer"></slot>
                                 </footer>
                             ) : (
-                                <div class="rux-modal__content">
-                                    <rux-button-group
-                                        class="button-group"
-                                        h-align="right"
-                                    >
-                                        <rux-button
-                                            secondary={confirmText.length > 0}
-                                            onClick={_handleModalChoice}
-                                            data-value="false"
-                                            hidden={!denyText}
-                                            tabindex="-1"
+                                <footer part="modal-footer">
+                                    <div class="rux-modal__content">
+                                        <rux-button-group
+                                            class="button-group"
+                                            h-align="right"
                                         >
-                                            {denyText}
-                                        </rux-button>
-                                        <rux-button
-                                            onClick={_handleModalChoice}
-                                            data-value="true"
-                                            hidden={!confirmText}
-                                            tabindex="0"
-                                        >
-                                            {confirmText}
-                                        </rux-button>
-                                    </rux-button-group>
-                                </div>
+                                            <rux-button
+                                                secondary={
+                                                    confirmText.length > 0
+                                                }
+                                                onClick={_handleModalChoice}
+                                                data-value="false"
+                                                hidden={!denyText}
+                                                tabindex="-1"
+                                            >
+                                                {denyText}
+                                            </rux-button>
+                                            <rux-button
+                                                onClick={_handleModalChoice}
+                                                data-value="true"
+                                                hidden={!confirmText}
+                                                tabindex="0"
+                                            >
+                                                {confirmText}
+                                            </rux-button>
+                                        </rux-button-group>
+                                    </div>
+                                </footer>
                             )}
                         </dialog>
                     </div>

@@ -6686,6 +6686,10 @@ export namespace Components {
          */
         denyText: string
         /**
+         * Hide the modal footer
+         */
+        hideFooter: boolean
+        /**
          * Modal body message
          */
         modalMessage?: string
@@ -22623,6 +22627,10 @@ declare namespace LocalJSX {
          */
         denyText?: string
         /**
+         * Hide the modal footer
+         */
+        hideFooter?: boolean
+        /**
          * Modal body message
          */
         modalMessage?: string
@@ -22704,6 +22712,10 @@ declare namespace LocalJSX {
          * Message for the notification banner.
          */
         message?: string
+        /**
+         * Fires when the notification banner is closed
+         */
+        onRuxclosed?: (event: CustomEvent<boolean>) => void
         /**
          * Set to true to display the Banner and begin countdown to close (if a close-after Number value is provided).
          */
