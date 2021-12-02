@@ -172,9 +172,11 @@ export class RuxModal {
                 <Host>
                     <div part="modal-wrapper" class="rux-modal__wrapper">
                         <dialog class="rux-modal__dialog" role="dialog">
-                            <header class="rux-modal__titlebar">
-                                <slot name="header">{modalTitle}</slot>
-                            </header>
+                            {hasSlot(element, 'header') || modalTitle ? (
+                                <header class="rux-modal__titlebar">
+                                    <slot name="header">{modalTitle}</slot>
+                                </header>
+                            ) : null}
                             <div
                                 class="rux-modal__content"
                                 part="modal-content"
