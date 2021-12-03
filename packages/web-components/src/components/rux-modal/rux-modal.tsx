@@ -8,6 +8,7 @@ import {
     Listen,
     Host,
     Watch,
+    State,
 } from '@stencil/core'
 import { hasSlot } from '../../utils/utils'
 
@@ -35,26 +36,7 @@ export class RuxModal {
      * Allows modal to close by clicking off of it
      */
     @Prop() clickToClose: boolean = false
-    /**
-     * Modal body message
-     */
-    @Prop() modalMessage?: string
-    /**
-     * Modal header title
-     */
-    @Prop() modalTitle?: string
-    /**
-     * Text for confirmation button
-     */
-    @Prop() confirmText: string = 'Confirm'
-    /**
-     * Text for close button
-     */
-    @Prop() denyText: string = 'Cancel'
-    /**
-     *  Hide the modal footer
-     */
-    @Prop() hideFooter: boolean = false
+
     /**
      * Event that is fired when modal closes
      */
@@ -77,6 +59,11 @@ export class RuxModal {
 
     @Element() element!: HTMLRuxModalElement
 
+    @State()
+    hasHeader = hasSlot(this.element, 'header')
+    hasMessage = hasSlot(this.element, 'message')
+    hasFooter = hasSlot(this.element, 'footer')
+
     @Watch('open')
     async handleOpenChange() {
         if (this.open) {
@@ -98,43 +85,6 @@ export class RuxModal {
         }
     }
 
-    connectedCallback() {
-        this._handleModalChoice = this._handleModalChoice.bind(this)
-    }
-
-    componentDidRender() {
-        this._focusDefaultButton()
-    }
-    private _focusDefaultButton() {
-        if (!hasSlot(this.element, 'footer')) {
-            setTimeout(() => {
-                const button = this._getDefaultButton()
-                button && button.focus()
-            }, 0)
-        }
-    }
-
-    private _handleModalChoice(e: MouseEvent) {
-        // convert string value to boolean
-        const target = e.currentTarget as HTMLElement
-        const choice = target.dataset.value === 'true'
-        this.ruxModalClosed.emit(choice)
-        this.open = false
-    }
-
-    private _getDefaultButton(): HTMLElement | null {
-        const buttonSet = this.element?.shadowRoot?.querySelectorAll(
-            'rux-button:not([hidden])'
-        ) as NodeListOf<HTMLElement>
-
-        if (buttonSet.length > 0) {
-            const defaultButton = buttonSet[buttonSet.length - 1]
-            return defaultButton
-        }
-
-        return null
-    }
-
     private _getWrapper(): HTMLElement | null {
         const wrapper = this.element?.shadowRoot?.querySelector(
             '.rux-modal__wrapper'
@@ -147,71 +97,66 @@ export class RuxModal {
     }
 
     render() {
-        const {
-            open,
-            modalMessage,
-            modalTitle,
-            confirmText,
-            denyText,
-            element,
-            hideFooter,
-            _handleModalChoice,
-        } = this
         return (
-            open && (
+            this.open && (
                 <Host>
                     <div part="modal-wrapper" class="rux-modal__wrapper">
                         <dialog class="rux-modal__dialog" role="dialog">
-                            {hasSlot(element, 'header') || modalTitle ? (
-                                <header class="rux-modal__titlebar">
-                                    <slot name="header">{modalTitle}</slot>
-                                </header>
-                            ) : null}
+                            <header
+                                class={{
+                                    'rux-modal__titlebar': true,
+                                    invisible: !this.hasHeader,
+                                }}
+                                part="modal-header"
+                            >
+                                <slot
+                                    name="header"
+                                    onSlotchange={() =>
+                                        (this.hasHeader = hasSlot(
+                                            this.element,
+                                            'header'
+                                        ))
+                                    }
+                                ></slot>
+                            </header>
+
                             <div
-                                class="rux-modal__content"
+                                class={{
+                                    'rux-modal__content': true,
+                                    invisible: !this.hasMessage,
+                                }}
                                 part="modal-content"
                             >
                                 <div class="rux-modal__message">
-                                    <slot name="message">{modalMessage}</slot>
+                                    <slot
+                                        name="message"
+                                        onSlotchange={() =>
+                                            (this.hasMessage = hasSlot(
+                                                this.element,
+                                                'message'
+                                            ))
+                                        }
+                                    ></slot>
                                 </div>
                             </div>
-                            {hideFooter ? null : hasSlot(element, 'footer') ? (
-                                <footer
-                                    part="modal-footer"
-                                    class="rux-modal__footer"
-                                >
-                                    <slot name="footer"></slot>
-                                </footer>
-                            ) : (
-                                <footer part="modal-footer">
-                                    <div class="rux-modal__content">
-                                        <rux-button-group
-                                            class="button-group"
-                                            h-align="right"
-                                        >
-                                            <rux-button
-                                                secondary={
-                                                    confirmText.length > 0
-                                                }
-                                                onClick={_handleModalChoice}
-                                                data-value="false"
-                                                hidden={!denyText}
-                                                tabindex="-1"
-                                            >
-                                                {denyText}
-                                            </rux-button>
-                                            <rux-button
-                                                onClick={_handleModalChoice}
-                                                data-value="true"
-                                                hidden={!confirmText}
-                                                tabindex="0"
-                                            >
-                                                {confirmText}
-                                            </rux-button>
-                                        </rux-button-group>
-                                    </div>
-                                </footer>
-                            )}
+
+                            <footer
+                                part="modal-footer"
+                                class={{
+                                    'rux-modal__footer': true,
+                                    invisible: !this.hasFooter,
+                                }}
+                            >
+                                <slot
+                                    name="footer"
+                                    onSlotchange={() =>
+                                        (this.hasFooter = hasSlot(
+                                            this.element,
+                                            'footer'
+                                        ))
+                                    }
+                                ></slot>
+                            </footer>
                         </dialog>
                     </div>
                 </Host>
