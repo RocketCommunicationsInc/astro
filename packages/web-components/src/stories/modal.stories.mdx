@@ -15,8 +15,7 @@ import { html, render } from 'lit-html'
 
 # Modal
 
-A Modal interrupts the app experience to prompt a user to confirm an action or acknowledge a piece of information. `<rux-modal>` can be passed props for title and message, named slots, or a combination
-of both.
+A Modal interrupts the app experience to prompt a user to confirm an action or acknowledge a piece of information.
 
 ## Guidelines
 
@@ -25,9 +24,14 @@ of both.
 export const Modal = (args) => {
     return html`
             <style>
-            .sbdocs #story--components-modal--with-props {
+            .sbdocs #story--components-modal--default-story {
                 display: block;
                 min-height: 500px;
+            }
+            .rux-button-group{
+                margin-top: auto;
+                margin-left: auto;
+                align-self: flex-end;
             }
             rux-modal::part(modal-wrapper) {
                 position: absolute;
@@ -40,12 +44,26 @@ export const Modal = (args) => {
         <div style="display: flex; flex-flow: column; justify-content: center;">
             <rux-modal
                 ?open="${args.open}"
-                modal-message="${args.modalMessage}"
-                modal-title="${args.modalTitle}"
-                confirm-text="${args.confirmText}"
-                deny-text="${args.denyText}"
-            ></rux-modal>
-        </div
+                id="modal-1"
+            >
+            <div slot="header">Modal title</div>
+            <div slot="message">Modal message</div>
+            <div slot="footer">
+                <rux-button-group class="rux-button-group" h-align="right">
+                    <rux-button class="btn" secondary>Cancel</rux-button>
+                    <rux-button class="btn" >Release</rux-button>
+                </rux-button-group>
+            </rux-modal>
+        </div>
+        <script>
+            let modal = document.getElementById('modal-1');
+            let btns = document.querySelectorAll('.btn');
+            btns.forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    modal.open = false;
+                })
+            })
+        </script>
     `
 }
 
@@ -53,12 +71,8 @@ export const Modal = (args) => {
     <Story
         args={{
             open: true,
-            modalMessage: 'Props message',
-            modalTitle: 'Props title',
-            confirmText: 'Release',
-            denyText: 'Cancel',
         }}
-        name="With Props"
+        name="Default"
     >
         {Modal.bind()}
     </Story>
@@ -69,73 +83,6 @@ export const Modal = (args) => {
 <ArgsTable of="rux-modal" />
 
 ## Variants
-
-### With Slots
-
-export const WithSlots = (args) => {
-    return html`
-        <style>
-            .sbdocs #story--components-modal--with-slots {
-                display: block;
-                min-height: 500px;
-            }
-            rux-modal::part(modal-wrapper) {
-                position: absolute;
-                top: 0px;
-                left: 0px;
-                width: 100%;
-                height: 100%;
-            }
-        </style>
-        <div style="display: flex; flex-flow: column; justify-content: center;">
-            <rux-modal ?open="${args.open}" }>
-                <div slot="header">Slot Title</div>
-                <div slot="message">
-                    <rux-input
-                        placeholder="Modal Input"
-                        label="Slotted Input"
-                    ></rux-input>
-                </div>
-                <div
-                    slot="footer"
-                    style="
-                        width: 100%;
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                    "
-                >
-                    <a
-                        href="https://astrouxds.com/"
-                        style="
-                            margin-right: 10px;
-                            text-decoration: none;
-                            color: var(--color-primary);
-                        "
-                        >Slot Link</a
-                    >
-                    <rux-button-group>
-                        <rux-button id="cancel-btn" secondary
-                            >Cancel</rux-button
-                        >
-                        <rux-button id="confirm-btn">Confirm</rux-button>
-                    </rux-button-group>
-                </div>
-            </rux-modal>
-        </div>
-    `
-}
-
-<Canvas>
-    <Story
-        args={{
-            open: true,
-        }}
-        name="With Slots"
-    >
-        {WithSlots.bind()}
-    </Story>
-</Canvas>
 
 ### Close on click away
 
@@ -158,6 +105,7 @@ export const ClickToClose = (args) => {
             <rux-modal
                 ?open="${args.open}"
                 ?click-to-close="${args.clickToClose}"
+                ?hide-footer="${args.hideFooter}"
             >
                 <div slot="header">Click Off Close</div>
                 <div slot="message">
@@ -194,6 +142,7 @@ export const ClickToClose = (args) => {
         args={{
             open: true,
             clickToClose: true,
+            hideFooter: false,
         }}
         name="Click To Close"
     >
@@ -203,16 +152,14 @@ export const ClickToClose = (args) => {
 
 ## Opening, Closing and Focusing
 
-These functions are handled by default if passing in props for `modal-message`. If slots are being used, a bit more boilerplate is required.
-
 ### Opening and Closing
 
-The `open` prop of `rux-modal` is mutable and can be changed accordingly. Here is a basic example of doing so with buttons:
+The `open` prop of `rux-modal` is mutable and can be changed accordingly. The `click-to-close` prop can be used to enable the closing of `rux-modal` when a user clicks off of it. Here is a basic example of doing so with buttons:
 
 ```js
-<rux-modal id="modal" click-to-close>
+<rux-modal id="modal" open click-to-close>
     <div slot="header">Modal Header</div>
-    <p>Modal Content here!</p>
+    <p slot="message">Modal message here!</p>
     <div slot="footer">
         <rux-button id="confirm">Confirm</rux-button>
     </div>
@@ -228,27 +175,32 @@ The `open` prop of `rux-modal` is mutable and can be changed accordingly. Here i
 
 ### Applying Focus
 
-Often times when a modal opens, you want to autofocus a specific element. This is done by default by `rux-modal` if `modal-message` is passed in as props. If using slots, here's a quick way to do that
-using the previous example:
+Often times when a modal opens, you want to focus a specific element. Here's a simple way to apply focus using a `rux-button` to open the modal:
 
 ```js
+<rux-button id="open">Open Modal</rux-button>
 <rux-modal id="modal" click-to-close>
     <div slot="header">Modal Header</div>
-    <p>Modal Content here!</p>
+    <p slot="message">Modal message here!</p>
     <div slot="footer">
         <rux-button id="confirm">Confirm</rux-button>
     </div>
 </rux-modal>
+
 <script>
-    const modal = document.getElementById('modal');
+    const modal = document.getElementById('modal')
+    const open = document.getElementById('open')
     const confirm = document.getElementById('confirm')
-    modal.addEventListener('onruxmodalopened', () => {
-        setTimout(() => {
+    modal.addEventListener('ruxmodalopened', () => {
+        setTimeout(() => {
             confirm.focus()
         }, 0)
     })
     confirm.addEventListener('click', () => {
-        modal.open = false;
+        modal.open = false
+    })
+    open.addEventListener('click', () => {
+        modal.open = true
     })
 </script>
 ```
@@ -259,7 +211,5 @@ If you're already utilizing a build system that supports tree shaking and want t
 
 ```js
 import RuxModal from '@astrouxds/astro-web-components/dist/components/rux-modal.js'
-import RuxButton from '@astrouxds/astro-web-components/dist/components/rux-button.js'
 customElements.define('rux-modal', RuxModal)
-customElements.define('rux-button', RuxButton)
 ```

@@ -6678,26 +6678,6 @@ export namespace Components {
          */
         clickToClose: boolean
         /**
-         * Text for confirmation button
-         */
-        confirmText: string
-        /**
-         * Text for close button
-         */
-        denyText: string
-        /**
-         * Hide the modal footer
-         */
-        hideFooter: boolean
-        /**
-         * Modal body message
-         */
-        modalMessage?: string
-        /**
-         * Modal header title
-         */
-        modalTitle?: string
-        /**
          * Shows and hides modal
          */
         open: boolean
@@ -22618,26 +22598,6 @@ declare namespace LocalJSX {
          * Allows modal to close by clicking off of it
          */
         clickToClose?: boolean
-        /**
-         * Text for confirmation button
-         */
-        confirmText?: string
-        /**
-         * Text for close button
-         */
-        denyText?: string
-        /**
-         * Hide the modal footer
-         */
-        hideFooter?: boolean
-        /**
-         * Modal body message
-         */
-        modalMessage?: string
-        /**
-         * Modal header title
-         */
-        modalTitle?: string
         /**
          * Event that is fired when modal closes
          */
