@@ -37,6 +37,10 @@
     display: none;
 }
 
+.invisible {
+    visibility: hidden;
+}
+
 .rux-modal {
     &__wrapper {
         position: fixed;
