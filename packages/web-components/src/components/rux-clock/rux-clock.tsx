@@ -120,10 +120,6 @@ export class RuxClock {
         const localDate = new Date(Date.now())
         const clockDate = utcToZonedTime(localDate, this._timezone)
         this.dayOfYear = getDayOfYear(clockDate)
-
-        // this.dayOfYear = getDayOfYear(
-        //     zonedTimeToUtc(new Date(), this._timezone)
-        // )
     }
 
     /**

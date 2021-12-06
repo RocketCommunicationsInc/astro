@@ -27,7 +27,6 @@ afterAll(() => {
 
 describe('rux-clock', () => {
     it('shows the current time', async () => {
-        console.log(new Date(Date.now()).getFullYear())
         const clock = await newSpecPage({
             components: [RuxClock],
             html: `<rux-clock></rux-clock>`,
