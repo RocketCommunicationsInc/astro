@@ -1,7 +1,6 @@
 import { newSpecPage } from '@stencil/core/testing'
 import { RuxClock } from '../rux-clock'
 import { militaryTimezones } from '../military-timezones'
-import { parse } from 'date-fns'
 
 /**
  * NOTE: Timezone is set to UTC via npm test scripts.
