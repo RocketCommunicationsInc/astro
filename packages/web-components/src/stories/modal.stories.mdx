@@ -44,6 +44,7 @@ export const Modal = (args) => {
         <div style="display: flex; flex-flow: column; justify-content: center;">
             <rux-modal
                 ?open="${args.open}"
+                ?click-to-close="${args.clickToClose}"
                 id="modal-1"
             >
             <div slot="header">Modal title</div>
