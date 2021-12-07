@@ -96,21 +96,6 @@ export class RuxModal {
         return null
     }
 
-    connectedCallback() {
-        setTimeout(() => {
-            const button = this._getDefaultButton()
-            button && button.focus()
-        })
-        this._handleModalChoice = this._handleModalChoice.bind(this)
-    }
-
-    // componentDidLoad() {
-    //     setTimeout(() => {
-    //         const button = this._getDefaultButton()
-    //         button && button.focus()
-    //     })
-    // }
-
     render() {
         return (
             this.open && (
@@ -179,87 +164,3 @@ export class RuxModal {
         )
     }
 }
-
-/*
-
-{modalMessage ? (
-                                <div class="rux-modal__props-content">
-                                    <div class="rux-modal__props-message">
-                                        {modalMessage}
-                                    </div>
-                                    <rux-button-group
-                                        class="props-button-group"
-                                        h-align="right"
-                                    >
-                                        <rux-button
-                                            secondary={confirmText.length > 0}
-                                            onClick={_handleModalChoice}
-                                            data-value="false"
-                                            hidden={!denyText}
-                                            tabindex="-1"
-                                        >
-                                            {denyText}
-                                        </rux-button>
-                                        <rux-button
-                                            onClick={_handleModalChoice}
-                                            data-value="true"
-                                            hidden={!confirmText}
-                                            tabindex="0"
-                                        >
-                                            {confirmText}
-                                        </rux-button>
-                                    </rux-button-group>
-                                </div>
-                            ) : (
-                                <div>
-                                    <div
-                                        part="modal-content"
-                                        class="rux-modal__content"
-                                    >
-                                        <slot></slot>
-                                    </div>
-                                    <footer
-                                        part="modal-footer"
-                                        class="rux-modal__footer"
-                                    >
-                                        <slot name="footer"></slot>
-                                    </footer>
-                                </div>
-                            )}
-                        </dialog>
-                    </div>
-                </Host>
-            )
-        )
-    }
-}
-
-/*
-{modalTitle && (
-     <header class="rux-modal__titlebar">
-        <div>{modalTitle}</div>
-    </header>
-)}
-<div class="rux-modal__message">
-                                    {modalMessage}
-                                </div>
-<rux-button-group h-align="right">
-                                    <rux-button
-                                        secondary={confirmText.length > 0}
-                                        onClick={_handleModalChoice}
-                                        data-value="false"
-                                        hidden={!denyText}
-                                        tabindex="-1"
-                                    >
-                                        {denyText}
-                                    </rux-button>
-                                    <rux-button
-                                        onClick={_handleModalChoice}
-                                        data-value="true"
-                                        hidden={!confirmText}
-                                        tabindex="0"
-                                    >
-                                        {confirmText}
-                                    </rux-button>
-                                </rux-button-group>
-*/

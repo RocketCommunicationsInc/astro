@@ -19959,14 +19959,28 @@ export class RuxMenuItemDivider {
 
 export declare interface RuxModal extends Components.RuxModal {}
 @ProxyCmp({
-  inputs: ["confirmText", "denyText", "modalMessage", "modalTitle", "open"],
+  inputs: [
+    "clickToClose",
+    "confirmText",
+    "denyText",
+    "modalMessage",
+    "modalTitle",
+    "open",
+  ],
 })
 @Component({
   selector: "rux-modal",
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: "<ng-content></ng-content>",
-  inputs: ["confirmText", "denyText", "modalMessage", "modalTitle", "open"],
-  outputs: ["ruxmodalclosed"],
+  inputs: [
+    "clickToClose",
+    "confirmText",
+    "denyText",
+    "modalMessage",
+    "modalTitle",
+    "open",
+  ],
+  outputs: ["ruxmodalclosed", "ruxmodalopened"],
 })
 export class RuxModal {
   /** Event that is fired when modal closes */
@@ -19977,7 +19991,7 @@ export class RuxModal {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ["ruxmodalclosed"]);
+    proxyOutputs(this, this.el, ["ruxmodalclosed", "ruxmodalopened"]);
   }
 }
 
