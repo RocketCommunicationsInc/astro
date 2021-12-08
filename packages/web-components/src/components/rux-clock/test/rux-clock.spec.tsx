@@ -9,8 +9,14 @@ import { militaryTimezones } from '../military-timezones'
 const RealDate = Date.now
 
 beforeAll(() => {
-    //Swap Date.now() with global mock - 1988-04-22 01:02:03
-    global.Date.now = jest.fn(() => 577688523000)
+    //Swap Date.now() with global mock
+
+    /**
+     * 2020 is a leap year so we can test 366 days
+     */
+    const date = Date.UTC(2021, 0o0, 0o1, 0o1, 0o2, 0o3)
+
+    global.Date.now = jest.fn(() => date)
 })
 
 afterAll(() => {
