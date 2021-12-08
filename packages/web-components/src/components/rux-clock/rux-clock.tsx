@@ -1,6 +1,6 @@
 import { Watch, Prop, State, Component, Host, h } from '@stencil/core'
 import { getDayOfYear } from 'date-fns'
-import { format, utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz'
+import { format, utcToZonedTime } from 'date-fns-tz'
 import { militaryTimezones } from './military-timezones'
 import { MilitaryTimezone } from './rux-clock.model'
 
@@ -111,9 +111,15 @@ export class RuxClock {
 
     private _updateTime(): void {
         this._time = this._formatTime(new Date(Date.now()), this._timezone)
-        this.dayOfYear = getDayOfYear(
-            zonedTimeToUtc(new Date(Date.now()), this._timezone)
-        )
+
+        /**
+         * Date.now() is a unix timestamp of the current time in UTC
+         * We need to convert that to the Clock's defined timezone
+         * before we get the day of the year.
+         */
+        const localDate = new Date(Date.now())
+        const clockDate = utcToZonedTime(localDate, this._timezone)
+        this.dayOfYear = getDayOfYear(clockDate)
     }
 
     /**
