@@ -6674,21 +6674,9 @@ export namespace Components {
     interface RuxMenuItemDivider {}
     interface RuxModal {
         /**
-         * Text for confirmation button
+         * Allows modal to close by clicking off of it
          */
-        confirmText: string
-        /**
-         * Text for close button
-         */
-        denyText: string
-        /**
-         * Modal body message
-         */
-        modalMessage?: string
-        /**
-         * Modal header title
-         */
-        modalTitle?: string
+        clickToClose: boolean
         /**
          * Shows and hides modal
          */
@@ -22607,25 +22595,17 @@ declare namespace LocalJSX {
     interface RuxMenuItemDivider {}
     interface RuxModal {
         /**
-         * Text for confirmation button
+         * Allows modal to close by clicking off of it
          */
-        confirmText?: string
-        /**
-         * Text for close button
-         */
-        denyText?: string
-        /**
-         * Modal body message
-         */
-        modalMessage?: string
-        /**
-         * Modal header title
-         */
-        modalTitle?: string
+        clickToClose?: boolean
         /**
          * Event that is fired when modal closes
          */
         onRuxmodalclosed?: (event: CustomEvent<boolean>) => void
+        /**
+         * Event that is fired when modal opens
+         */
+        onRuxmodalopened?: (event: CustomEvent<boolean>) => void
         /**
          * Shows and hides modal
          */

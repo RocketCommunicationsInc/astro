@@ -19,6 +19,43 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
     <body>
-        <rux-modal open modal-title="hello" modal-message="world"></rux-modal>
+        <rux-modal open></rux-modal>
+        <rux-button id="open">Open Modal</rux-button>
+        <rux-button id="open-slots">Open Modal</rux-button>
+
+        <rux-modal
+            id="test"
+            modal-message="Props Message"
+            modal-title="Props Title"
+        >
+            <h4 slot="header">Slot Header</h4>
+            <p>Default Slot Content</p>
+            <div slot="footer">
+                <rux-button secondary>Slot Deny</rux-button>
+                <rux-button>Slot Confirm</rux-button>
+            </div>
+        </rux-modal>
+        <rux-modal id="test-slots">
+            <h4 slot="header">Slot Header</h4>
+            <p>Default Slot Content</p>
+            <div slot="footer">
+                <rux-button secondary>Slot Deny</rux-button>
+                <rux-button>Slot Confirm</rux-button>
+            </div>
+        </rux-modal>
+        <script>
+            let open = document.getElementById('open')
+            let openSlots = document.getElementById('open-slots')
+
+            let test = document.getElementById('test')
+            let testSlots = document.getElementById('test-slots')
+
+            open.addEventListener('click', () => {
+                test.open = true
+            })
+            openSlots.addEventListener('click', () => {
+                testSlots.open = true
+            })
+        </script>
     </body>
 </html>

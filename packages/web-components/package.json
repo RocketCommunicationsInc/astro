@@ -37,14 +37,14 @@
         "test.all": "concurrently npm:test.unit npm:test.e2e"
     },
     "dependencies": {
-        "@stencil/core": "~2.5.2",
+        "@stencil/core": "~2.10.0",
         "date-fns": "~2.21.1",
         "date-fns-tz": "~1.1.4"
     },
     "license": "MIT",
     "devDependencies": {
         "@astrouxds/astro-figma-export": "~1.0.1",
-        "@astrouxds/storybook-addon-docs-stencil": "~1.0.9",
+        "@astrouxds/storybook-addon-docs-stencil": "~1.0.10",
         "@babel/core": "~7.13.16",
         "@stencil/angular-output-target": "~0.2.0",
         "@stencil/eslint-plugin": "~0.4.0",
