@@ -79,7 +79,6 @@ export class RuxModal {
         if (this.clickToClose) {
             const wrapper = this._getWrapper()
             if (ev.composedPath()[0] === wrapper) {
-                this.ruxModalClosed.emit(false)
                 this.open = false
             }
         }
