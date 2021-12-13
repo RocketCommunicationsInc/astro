@@ -3,11 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.0.1] (2021-11-4)
+
+### Stencil
+
+-   Updated @stencil/core [2.5.2] -> [2.10.0]
+
 ## [4.4.5](https://github.com/nortonprojects/astro/compare/v1.0.0...v4.4.5) (2021-10-20)
 
 **Note:** Version bump only for package @astrouxds/astro-web-components
-
-# Change Log
 
 ## [0.0.18] (2021-10-12)
 
