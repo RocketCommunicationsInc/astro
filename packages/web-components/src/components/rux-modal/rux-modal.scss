@@ -37,10 +37,8 @@
     display: none;
 }
 
-rux-button-group {
-    margin-top: auto;
-    margin-left: auto;
-    align-self: flex-end;
+.invisible {
+    visibility: hidden;
 }
 
 .rux-modal {
@@ -64,7 +62,7 @@ rux-button-group {
         justify-content: space-between;
         background-color: var(--modal-background-color);
         width: 28rem;
-        height: 13.5rem;
+        min-height: 13.5rem;
         border: 0;
         margin: auto;
         padding: 0;
@@ -83,26 +81,34 @@ rux-button-group {
         background-color: var(--color-dialog-header);
         color: var(--modal-title-color);
         user-select: none;
-        cursor: move;
         font-family: var(--font-heading-2-font-family);
         font-size: var(--font-heading-2-font-size);
         font-weight: var(--font-heading-2-font-weight);
         letter-spacing: var(--font-heading-2-letter-spacing);
+        // Allows h tags to have same amount of margin as any other tag
+        ::slotted(h6),
+        ::slotted(h5),
+        ::slotted(h4),
+        ::slotted(h3),
+        ::slotted(h2),
+        ::slotted(h1) {
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
     }
 
     &__content {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-        padding: 1rem;
+        padding: 0 1rem 1rem;
         color: var(--color-default-text);
     }
 
-    &__message {
-        margin: 0.5rem 1.875rem 2.5rem 1.875rem;
+    &__footer {
+        padding: 0 1rem 1rem;
     }
-    .rux-button {
-        box-shadow: none !important;
+
+    &__message {
+        margin: 0 1.875rem 2.5rem 1.875rem;
+        padding-top: 1rem;
     }
 }
 

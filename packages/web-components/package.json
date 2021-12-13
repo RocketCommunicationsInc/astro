@@ -37,7 +37,7 @@
         "test.all": "concurrently npm:test.unit npm:test.e2e"
     },
     "dependencies": {
-        "@stencil/core": "~2.5.2",
+        "@stencil/core": "~2.10.0",
         "date-fns": "~2.21.1",
         "date-fns-tz": "~1.1.4"
     },
