@@ -19959,27 +19959,13 @@ export class RuxMenuItemDivider {
 
 export declare interface RuxModal extends Components.RuxModal {}
 @ProxyCmp({
-  inputs: [
-    "clickToClose",
-    "confirmText",
-    "denyText",
-    "modalMessage",
-    "modalTitle",
-    "open",
-  ],
+  inputs: ["clickToClose", "open"],
 })
 @Component({
   selector: "rux-modal",
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: "<ng-content></ng-content>",
-  inputs: [
-    "clickToClose",
-    "confirmText",
-    "denyText",
-    "modalMessage",
-    "modalTitle",
-    "open",
-  ],
+  inputs: ["clickToClose", "open"],
   outputs: ["ruxmodalclosed", "ruxmodalopened"],
 })
 export class RuxModal {
