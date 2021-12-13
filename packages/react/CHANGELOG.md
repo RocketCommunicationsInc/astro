@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.1.0](https://github.com/RocketCommunicationsInc/astro/compare/v6.0.3...v6.1.0) (2021-12-13)
+
+**Note:** Version bump only for package @astrouxds/react
+
 ## [4.4.5](https://github.com/RocketCommunicationsInc/astro/compare/v1.0.0...v4.4.5) (2021-10-20)
 
 ### Reverts
