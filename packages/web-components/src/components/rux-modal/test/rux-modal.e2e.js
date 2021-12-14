@@ -34,7 +34,7 @@ describe('Modal', () => {
             .find('.rux-modal__wrapper')
             .should('not.exist')
     })
-    it('should fire ruxmodalclosed once if clicked to close', async () => {
+    it('should fire ruxmodalclosed once if clicked to close', () => {
         let count = 0
 
         cy.get('rux-modal').then(($modal) => {
