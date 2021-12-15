@@ -45,7 +45,7 @@ Conveys part-to-whole data. Pie charts are very common, but research has shown t
 #### Donut Chart
 
 ![Donut Chart](/img/patterns/data-viz-donut.png)
-Similar to a pie chart – but the center can be useful for additional information about the data (e.g. total). Example: [GRM Sample app](https://grm-dashboard.astrouxds.com/) - equipment tab
+Similar to a pie chart – but the center can be useful for additional information about the data (e.g. total). Example: [GRM Sample app](https://grm-dashboard.astrouxds.com/) - Equipment tab
 
 :::
 
@@ -63,7 +63,7 @@ Standard bar charts display the ranks of values more easily when sorted in order
 #### Stack Bar Chart
 
 ![Stack Bar Chart](/img/patterns/data-viz-stacked-bar.png)
-The standard way to show a statistical distribution - keep the gaps between columns small to highlight the ‘shape’ of the data. Example: [GRM Sample app](https://grm-dashboard.astrouxds.com/) - contacts tab
+The standard way to show a statistical distribution - keep the gaps between columns small to highlight the ‘shape’ of the data. Example: [GRM Sample app](https://grm-dashboard.astrouxds.com/) - Contacts tab
 
 :::
 
@@ -87,9 +87,9 @@ This chart type excels at showing changes to total, but seeing change in compone
 
 :::col
 
-#### Fill Guage
+#### Fill Gauge
 
-![Fill Guage](/img/patterns/data-viz-fill-gauge.png)
+![Fill Gauge](/img/patterns/data-viz-fill-gauge.png)
 A circular shape that represents a percentage value of a whole. May also be depicted as a dial.
 
 :::
@@ -117,7 +117,7 @@ Conveys an accurate representation of the distribution of numerical data. It is 
 #### Gantt Chart
 
 ![Gantt Chart](/img/patterns/data-viz-gantt.png)
-A chart that depicts how a set of resources are used over time. Gantt charts illustrate the start, end, and duration of tasks (e.g. timeline or schedule). Example: [TT&C Sample app](https://ttc-monitor.astrouxds.com/) - timeline view
+A chart that depicts how a set of resources are used over time. Gantt charts illustrate the start, end, and duration of tasks (e.g. timeline or schedule). Example: [TT&C Sample app](https://ttc-monitor.astrouxds.com/) - Timeline view
 
 :::
 
