@@ -18,5 +18,15 @@
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
-    <body></body>
+    <body>
+        <rux-button id="btn">Rux Button</rux-button>
+        <rux-button id="dis" disabled="true">Disabled?</rux-button>
+        <script>
+            const btn = document.getElementById('btn')
+            const dis = document.getElementById('dis')
+            btn.addEventListener('click', () => {
+                dis.disabled = !dis.disabled
+            })
+        </script>
+    </body>
 </html>

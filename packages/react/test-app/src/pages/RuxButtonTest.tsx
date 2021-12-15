@@ -5,6 +5,14 @@ function RuxButtonTest() {
   const [clicked, setClicked] = useState(false);
   const [secondClick, setSecondClick] = useState(false);
 
+  function handleDisabled(clicked: boolean | undefined) {
+    if (!clicked) {
+      return !clicked;
+    } else if (clicked) {
+      return undefined;
+    }
+  }
+
   return (
     <div>
       <RuxButton
@@ -16,6 +24,7 @@ function RuxButtonTest() {
         Rux Button
       </RuxButton>
       <RuxButton
+        // disabled={!clicked ? true : undefined}
         disabled={!clicked}
         data-testid="disabled"
         onClick={() => setSecondClick(!secondClick)}

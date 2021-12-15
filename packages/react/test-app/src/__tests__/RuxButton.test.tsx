@@ -16,11 +16,11 @@ describe("RuxButton", () => {
   test("Should be able to toggle disabled state", async () => {
     const { getByTestId, findByDisplayValue } = render(<RuxButtonTest />);
     const btn = getByTestId("rux-btn");
-    const btn2 = getByTestId("rux-btn-2");
-    expect(btn2).toHaveAttribute("disabled", true);
+    const btn2 = getByTestId("disabled");
+    expect(btn2).toHaveAttribute("disabled");
     //Clicking the first btn should make the second have disabled=false
     fireEvent.click(btn);
-    expect(btn2).toHaveAttribute("disabled", false);
+    expect(btn2).not.toHaveAttribute("disabled");
     //Should be able to click it now and have the textarea appear
     fireEvent.click(btn2);
     await findByDisplayValue("Second Click!");
