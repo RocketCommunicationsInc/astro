@@ -116,6 +116,15 @@ export class RuxInput implements FormFieldInterface {
     @Prop() step?: string
 
     /**
+     * The input's autocomplete attribute
+     */
+    @Prop() autocomplete?: string
+
+    /**
+     * The input's spellcheck attribute
+     */
+
+    /**
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
      */
     @Event({ eventName: 'ruxchange' }) ruxChange!: EventEmitter
@@ -209,6 +218,19 @@ export class RuxInput implements FormFieldInterface {
         return realType
     }
 
+    //Autocomplete should equal whatever is passed into it - and if nothing is and it's a pw type, it should be off
+    // private _handleAutoComplete() {
+    //     // maybe do if(this.autocomplete.length > 0)
+    //     if (this.autocomplete) {
+    //         return this.autocomplete
+    //     } else {
+    //         let type = this._handleType()
+    //         if (type === 'password') {
+    //             this.autocomplete = 'off'
+    //         }
+    //     }
+    // }
+
     render() {
         const {
             disabled,
@@ -235,6 +257,8 @@ export class RuxInput implements FormFieldInterface {
             hasLabel,
             iconName,
             size,
+            autocomplete,
+            togglePassword,
         } = this
 
         renderHiddenInput(true, el, name, value, disabled)
@@ -285,12 +309,13 @@ export class RuxInput implements FormFieldInterface {
                             'rux-input--large': size === 'large',
                         }}
                         id={this.inputId}
-                        autoComplete={this.togglePassword ? 'off' : 'on'}
+                        //? Autocomplete should be whatever is passed in. If nothing is, check if it's a pw. If it is a pw, autoComplete should be off.
+                        autocomplete={togglePassword ? 'off' : autocomplete}
                         onChange={_onChange}
                         onInput={_onInput}
                         onBlur={_onBlur}
                     ></input>
-                    {this.togglePassword && (
+                    {togglePassword && (
                         <div
                             class={{
                                 'icon-container': true,

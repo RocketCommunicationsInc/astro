@@ -6568,6 +6568,10 @@ export namespace Components {
     }
     interface RuxInput {
         /**
+         * The input's autocomplete attribute
+         */
+        autocomplete?: string
+        /**
          * Disables the button via HTML disabled attribute. Button takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
          */
         disabled: boolean
@@ -22484,6 +22488,10 @@ declare namespace LocalJSX {
         size?: 'extra-small' | 'small' | 'normal' | 'large' | 'auto' | string
     }
     interface RuxInput {
+        /**
+         * The input's autocomplete attribute
+         */
+        autocomplete?: string
         /**
          * Disables the button via HTML disabled attribute. Button takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
          */
