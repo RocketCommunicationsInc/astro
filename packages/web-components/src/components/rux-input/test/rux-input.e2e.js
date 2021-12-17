@@ -18,7 +18,7 @@ describe('Input Field with Form', () => {
 
         cy.get('#formSubmitBtn').click()
 
-        cy.get('#log').children().its('length').should('eq', 5)
+        cy.get('#log').children().its('length').should('eq', 9)
 
         cy.get('#log').contains(`ruxInput:${testString}`)
         cy.get('#log').contains(`nativeInput:${testString}`)
@@ -38,7 +38,7 @@ describe('Input Field with Form', () => {
 
         cy.get('#formSubmitBtn').click()
 
-        cy.get('#log').children().its('length').should('eq', 5)
+        cy.get('#log').children().its('length').should('eq', 9)
 
         cy.get('#log').should('not.contain', `ruxInput2:${testString}`)
         cy.get('#log').should('not.contain', `nativeInput2:${testString}`)
@@ -91,5 +91,30 @@ describe('Input Field with Form', () => {
             .shadow()
             .find('rux-icon-visibility-off')
             .should('exist')
+    })
+    it('cannot have its value changed if readonly is true', () => {
+        cy.get('#readonly')
+            .shadow()
+            .find('input')
+            .should('have.attr', 'readonly')
+    })
+    it('applies spellcheck prop to shadow input', () => {
+        cy.get('#spellcheck')
+            .shadow()
+            .find('input')
+            .should('have.attr', 'spellcheck')
+    })
+    it('applies autocomplete prop to shadow input', () => {
+        cy.get('#autocomplete')
+            .shadow()
+            .find('input')
+            .should('have.attr', 'autocomplete')
+    })
+    it('changes autocomplete to false if type is password', () => {
+        cy.get('#autocomplete-to-off')
+            .shadow()
+            .find('input')
+            .invoke('attr', 'autocomplete')
+            .should('eq', 'off')
     })
 })
