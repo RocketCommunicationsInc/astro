@@ -121,10 +121,6 @@ export class RuxInput implements FormFieldInterface {
     @Prop() autocomplete?: string
 
     /**
-     * The input's spellcheck attribute
-     */
-
-    /**
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
      */
     @Event({ eventName: 'ruxchange' }) ruxChange!: EventEmitter
@@ -217,19 +213,6 @@ export class RuxInput implements FormFieldInterface {
             : (realType = this.type)
         return realType
     }
-
-    //Autocomplete should equal whatever is passed into it - and if nothing is and it's a pw type, it should be off
-    // private _handleAutoComplete() {
-    //     // maybe do if(this.autocomplete.length > 0)
-    //     if (this.autocomplete) {
-    //         return this.autocomplete
-    //     } else {
-    //         let type = this._handleType()
-    //         if (type === 'password') {
-    //             this.autocomplete = 'off'
-    //         }
-    //     }
-    // }
 
     render() {
         const {
