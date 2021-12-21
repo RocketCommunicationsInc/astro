@@ -9,7 +9,7 @@ import RuxButtonTest from "./pages/RuxButtonTest";
 
 ReactDOM.render(
   <React.StrictMode>
-    <RuxButtonTest />
+    <RuxInputTest />
   </React.StrictMode>,
   document.getElementById("root")
 );

@@ -3,7 +3,8 @@ import { RuxInput } from "@astrouxds/react";
 
 function RuxInputTest() {
   const [ruxInput, setRuxInput] = useState("");
-  // const [valid, setValid] = useState(false);
+  const [ruxInput2, setRuxInput2] = useState("");
+  const [valid, setValid] = useState(false);
 
   function handleSubmit() {
     alert(`
@@ -15,6 +16,13 @@ function RuxInputTest() {
   //     setValid(true);
   //   } else setValid(false);
   // }, [ruxInput]);
+  function validate() {
+    if (ruxInput2.includes("Cid")) {
+      setValid(true);
+    } else {
+      setValid(false);
+    }
+  }
 
   return (
     <div className="form">
@@ -34,6 +42,18 @@ function RuxInputTest() {
           }}
           name="rux-input"
           error-text={ruxInput.includes("@") ? undefined : "Error text."}
+        />
+        <RuxInput
+          data-testid="input-2"
+          type="text"
+          label="Rux Input 2"
+          onRuxinput={(e: CustomEvent<HTMLRuxInputElement>) => {
+            const target = e.target as HTMLInputElement;
+            setRuxInput2(target.value);
+          }}
+          onRuxblur={() => validate()}
+          //! using errorText generates two attr - error-text and errorText. error-text is what's actually controlling things
+          error-text={valid ? undefined : "Enter cid"}
         />
       </form>
     </div>

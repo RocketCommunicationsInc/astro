@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, waitFor } from "@testing-library/react";
 import { screen, within } from "testing-library__dom";
 
 import RuxInputTest from "../pages/RuxInputTest";
@@ -48,5 +48,29 @@ describe("RuxInput", () => {
 
     expect(input).not.toBeNull();
     expect(shadowInput).not.toBeNull();
+  });
+
+  test("Can test for ruxBlur being called", async () => {
+    const { getByTestId, findByText } = render(<RuxInputTest />);
+    const input1 = getByTestId("rux-input-test");
+    const input2 = getByTestId("input-2");
+    // async function findErrorText() {
+    //   let res;
+    //   await within(input2)
+    //     .findAllByText("Enter cid")
+    //     .then((resolved) => {
+    //       res = resolved;
+    //     });
+    //   return res;
+    // }
+    let errorText = await within(input2).findByText("Enter cid");
+    console.log(errorText.nodeValue);
+    expect(errorText).not.toBeNull();
+    fireEvent.change(input2, { target: { value: "Cid" } });
+    //click off, blur should fire and error text should go away
+    fireEvent.click(input1);
+    let error2 = await within(input2).findByDisplayValue("Enter cid");
+    console.log(error2);
+    // expect(errorText).toBeNull();
   });
 });

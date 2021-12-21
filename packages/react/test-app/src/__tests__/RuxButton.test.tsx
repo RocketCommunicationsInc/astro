@@ -12,6 +12,7 @@ describe("RuxButton", () => {
     //* Using a textarea to render the "Clicked!" message, since findByDispalyValue has strict element parameters: https://testing-library.com/docs/queries/bydisplayvalue
     await findByDisplayValue("Clicked!");
   });
+  //* This will be fixed in the next release.
   //! Currently failing. Unable to click the button after changing disabled=false, since disabled is still present the stencil component thinks it's disabled still.
   test("Should be able to toggle disabled state", async () => {
     const { getByTestId, findByDisplayValue } = render(<RuxButtonTest />);
