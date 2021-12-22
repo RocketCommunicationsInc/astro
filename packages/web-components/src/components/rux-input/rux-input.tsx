@@ -116,6 +116,21 @@ export class RuxInput implements FormFieldInterface {
     @Prop() step?: string
 
     /**
+     * The input's autocomplete attribute
+     */
+    @Prop() autocomplete?: string
+
+    /**
+     * The input's spellcheck attribute
+     */
+    @Prop() spellcheck = false
+
+    /**
+     * The inputs readonly attribute
+     */
+    @Prop() readonly = false
+
+    /**
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
      */
     @Event({ eventName: 'ruxchange' }) ruxChange!: EventEmitter
@@ -235,6 +250,10 @@ export class RuxInput implements FormFieldInterface {
             hasLabel,
             iconName,
             size,
+            autocomplete,
+            spellcheck,
+            readonly,
+            togglePassword,
         } = this
 
         renderHiddenInput(true, el, name, value, disabled)
@@ -285,12 +304,14 @@ export class RuxInput implements FormFieldInterface {
                             'rux-input--large': size === 'large',
                         }}
                         id={this.inputId}
-                        autoComplete={this.togglePassword ? 'off' : 'on'}
+                        spellcheck={spellcheck}
+                        autocomplete={togglePassword ? 'off' : autocomplete}
+                        readonly={readonly}
                         onChange={_onChange}
                         onInput={_onInput}
                         onBlur={_onBlur}
                     ></input>
-                    {this.togglePassword && (
+                    {togglePassword && (
                         <div
                             class={{
                                 'icon-container': true,
