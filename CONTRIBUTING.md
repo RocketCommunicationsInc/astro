@@ -109,6 +109,8 @@ If your PR contains a minor, non-breaking change, select minor. If it contains a
 
 You'll want to select all packages to version.
 
+> NOTE: Not everything needs a changeset! Things like doc typos and build tooling don't need changesets.
+
 ## Icons
 
 In order to ship the RuxIcon component with all SVG assets included, we create individual Icon components for every Astro icon. Due to the number of icons, it is not efficient to create these manually. Instead, we utilize Stencil's build process to automatically create Icon components for each available SVG icon. Then we automatically convert those assets to Base64 and inject them into their respective components. This is all done in relatively few lines of code. A `rux-icon` wrapper component is available to make to it easier to call these individual components.
