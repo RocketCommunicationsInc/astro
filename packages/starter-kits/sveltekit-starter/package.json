@@ -1,6 +1,6 @@
 {
-	"name": "sveltekit-starter",
-	"version": "0.0.1",
+	"name": "sveltekit-sample-app",
+	"version": "1.0.0",
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
@@ -30,6 +30,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@astrouxds/astro-web-components": "^6.0.5",
 		"@fontsource/fira-mono": "^4.5.0",
 		"@lukeed/uuid": "^2.0.0",
 		"cookie": "^0.4.1"

@@ -1,6 +1,10 @@
 <script lang="ts">
+	// Import Astro's base styles
+	import '../../node_modules/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css';
+	// Define the Astro Components
+	import { defineCustomElements } from '../../node_modules/@astrouxds/astro-web-components/loader/index.js';
+	defineCustomElements();
 	import Header from '$lib/header/Header.svelte';
-	import '../app.css';
 </script>
 
 <Header />
@@ -10,6 +14,9 @@
 </main>
 
 <footer>
+	<p>
+		visit <a href="https://www.astrouxds.com/">www.astrouxds.com</a> to learn how to use the Astro UXDS
+	</p>
 	<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
 </footer>
 
@@ -31,10 +38,6 @@
 		justify-content: center;
 		align-items: center;
 		padding: 40px;
-	}
-
-	footer a {
-		font-weight: bold;
 	}
 
 	@media (min-width: 480px) {
