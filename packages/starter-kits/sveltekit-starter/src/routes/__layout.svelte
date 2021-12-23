@@ -45,4 +45,8 @@
 			padding: 40px 0;
 		}
 	}
+
+	a {
+		color: white;
+	}
 </style>
