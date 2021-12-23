@@ -2,6 +2,7 @@
   "name": "root",
   "private": true,
   "devDependencies": {
+    "@changesets/cli": "^2.19.0",
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
     "husky": "^7.0.2",
@@ -15,6 +16,7 @@
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "build.tests": "lerna run --scope '{@astrouxds/astro-web-components,@astrouxds/react}' build",
-    "test": "lerna run --ignore @astrouxds/angular test"
+    "test": "lerna run --ignore @astrouxds/angular test",
+    "release": "node ./.scripts/release.js && changeset publish"
   }
 }

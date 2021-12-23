@@ -6568,6 +6568,10 @@ export namespace Components {
     }
     interface RuxInput {
         /**
+         * The input's autocomplete attribute
+         */
+        autocomplete?: string
+        /**
          * Disables the button via HTML disabled attribute. Button takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
          */
         disabled: boolean
@@ -6604,6 +6608,10 @@ export namespace Components {
          */
         placeholder?: string
         /**
+         * The inputs readonly attribute
+         */
+        readonly: boolean
+        /**
          * Sets the input as disabled
          */
         required: boolean
@@ -6611,6 +6619,10 @@ export namespace Components {
          * Control the padding around the input field
          */
         size: 'small' | 'medium' | 'large'
+        /**
+         * The input's spellcheck attribute
+         */
+        spellcheck: boolean
         /**
          * The input step attribute
          */
@@ -22473,6 +22485,10 @@ declare namespace LocalJSX {
     }
     interface RuxInput {
         /**
+         * The input's autocomplete attribute
+         */
+        autocomplete?: string
+        /**
          * Disables the button via HTML disabled attribute. Button takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
          */
         disabled?: boolean
@@ -22521,6 +22537,10 @@ declare namespace LocalJSX {
          */
         placeholder?: string
         /**
+         * The inputs readonly attribute
+         */
+        readonly?: boolean
+        /**
          * Sets the input as disabled
          */
         required?: boolean
@@ -22528,6 +22548,10 @@ declare namespace LocalJSX {
          * Control the padding around the input field
          */
         size?: 'small' | 'medium' | 'large'
+        /**
+         * The input's spellcheck attribute
+         */
+        spellcheck?: boolean
         /**
          * The input step attribute
          */

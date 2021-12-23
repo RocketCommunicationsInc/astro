@@ -16,7 +16,7 @@ describe('rux-input', () => {
                   <slot name="label"></slot>
                 </span>
               </label>
-              <input aria-invalid="false" autocomplete="on" class="rux-input rux-input--medium" id="rux-input-1" type="text" value="">
+              <input aria-invalid="false" class="rux-input rux-input--medium" id="rux-input-1" type="text" value="">
             </div>
             </mock:shadow-root>
             <input class="aux-input" type="hidden" value="">
@@ -38,7 +38,7 @@ describe('rux-input', () => {
                 <slot name="label">hello</slot>
               </span>
             </label>
-            <input aria-invalid="false" autocomplete="on" class="rux-input rux-input--medium" id="rux-input-2" type="text" value="">
+            <input aria-invalid="false" class="rux-input rux-input--medium" id="rux-input-2" type="text" value="">
           </div>
           </mock:shadow-root>
           <input class="aux-input" type="hidden" value="">
@@ -60,7 +60,7 @@ describe('rux-input', () => {
                 <slot name="label"></slot>
               </span>
             </label>
-            <input aria-invalid="false" autocomplete="on" class="rux-input rux-input--medium" id="rux-input-3" type="text" value="">
+            <input aria-invalid="false" class="rux-input rux-input--medium" id="rux-input-3" type="text" value="">
           </div>
           </mock:shadow-root>
           <div slot="label">hello</div>
