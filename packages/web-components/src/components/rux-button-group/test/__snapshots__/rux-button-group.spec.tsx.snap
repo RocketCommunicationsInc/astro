@@ -3,7 +3,7 @@
 exports[`rux-button-group aligns 1`] = `
 <rux-button-group h-align="right">
   <mock:shadow-root>
-    <div class="rux-button-group rux-button-group--right">
+    <div class="rux-button-group rux-button-group--right" part="container">
       <slot></slot>
     </div>
   </mock:shadow-root>
@@ -13,7 +13,7 @@ exports[`rux-button-group aligns 1`] = `
 exports[`rux-button-group renders 1`] = `
 <rux-button-group>
   <mock:shadow-root>
-    <div class="rux-button-group rux-button-group--left">
+    <div class="rux-button-group rux-button-group--left" part="container">
       <slot></slot>
     </div>
   </mock:shadow-root>
