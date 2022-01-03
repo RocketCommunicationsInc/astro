@@ -22,13 +22,15 @@ describe('rux-monitoring-icon', () => {
              <rux-status status="standby"></rux-status>
              </div>
              <rux-icon class="rux-status--standby" icon="altitude" size="2.5rem"></rux-icon>
-             <div class="rux-advanced-status__badge">
+             <div class="rux-advanced-status__badge" part="monitoring-badge">
                10K
              </div>
            </div>
            <div class="rux-advanced-status__label">
+            <span part="monitoring-label">
              Altitude for satellite X
-             <span class="rux-advanced-status__sublabel">
+             </span>
+             <span class="rux-advanced-status__sublabel" part="monitoring-sublabel">
                100000m
              </span>
            </div>

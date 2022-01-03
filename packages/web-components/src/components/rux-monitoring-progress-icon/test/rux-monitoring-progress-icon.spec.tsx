@@ -17,25 +17,27 @@ describe('rux-monitoring-progress-icon', () => {
         expect(page.root).toEqualHtml(`
       <rux-monitoring-progress-icon label="Label" max="100" notifications="345678" progress="70" sublabel="sublabel">
         <mock:shadow-root>
-          <div class="rux-advanced-status" id="rux-advanced-status__icon" title="345678 Label sublabel">
-            <div class="rux-advanced-status__icon-group">
-              <rux-status status="serious"></rux-status>
-              <svg class="rux-status--serious" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+          <div class="rux-advanced-status" id="rux-advanced-status__icon" title="345678 Label sublabel" part="container">
+            <div class="rux-advanced-status__icon-group" part="icon-group">
+              <rux-status status="serious" part="status-icon"></rux-status>
+              <svg class="rux-status--serious" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" part="radial-progress">
                 <g id="progress">
                   <circle cx="60" cy="60" fill="transparent" r="56" stroke="rgba(40, 63, 88, 1)" stroke-width="10" transform="rotate(-90 61 60)"></circle>
                   <circle class="progress-ring__circle" cx="60" cy="60" fill="transparent" r="56" stroke-dasharray="351.8583772 351.8583772" stroke-dashoffset="105.55751316061708" stroke-linecap="round" stroke-width="10" transform="rotate(-90 61 60)"></circle>
                 </g>
               </svg>
-              <div class="rux-advanced-status__progress">
+              <div class="rux-advanced-status__progress" part="progress-display">
                 70%
               </div>
-              <div class="rux-advanced-status__badge">
+              <div class="rux-advanced-status__badge" part="monitoring-badge">
                 345K
               </div>
             </div>
             <div class="rux-advanced-status__label">
-              Label
-              <span class="rux-advanced-status__sublabel">
+              <span part="monitoring-label">
+                Label
+              </span>
+              <span class="rux-advanced-status__sublabel" part="monitoring-sublabel">
                 sublabel
               </span>
             </div>
