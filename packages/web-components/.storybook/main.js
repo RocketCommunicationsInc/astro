@@ -11,4 +11,5 @@ module.exports = {
         'storybook-addon-themes',
         '@astrouxds/storybook-addon-docs-stencil',
     ],
+    staticDirs: ['../dist'],
 }
