@@ -20,7 +20,6 @@ describe('rux-button-group', () => {
               <rux-button icon="">Button</rux-button>
             </rux-button-group>`,
         })
-
         expect(page.root).toMatchSnapshot()
     })
 
