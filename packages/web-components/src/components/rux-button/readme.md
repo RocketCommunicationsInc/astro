@@ -121,7 +121,6 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property    | Attribute   | Description                                                                                                                                                                                                                                                                                                   | Type                                          | Default     |
@@ -133,6 +132,11 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 | `size`      | `size`      | Changes size of a button from medium to small or large by setting sizing classes rux-button--small rux-button--large                                                                                                                                                                                          | `"large" \| "medium" \| "small" \| undefined` | `undefined` |
 | `type`      | `type`      | The button type. Use 'submit' to submit native form data.                                                                                                                                                                                                                                                     | `"button" \| "submit"`                        | `'button'`  |
 
+## Shadow Parts
+
+| Part          | Description               |
+| ------------- | ------------------------- |
+| `"container"` | the components container. |
 
 ## CSS Custom Properties
 
@@ -151,18 +155,18 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 | `--button-secondary-text-color`             | Button secondary text color             |
 | `--button-text-color`                       | Button text color                       |
 
-
 ## Dependencies
 
 ### Used by
 
- - [rux-modal](../rux-modal)
+-   [rux-modal](../rux-modal)
 
 ### Depends on
 
-- [rux-icon](../rux-icon)
+-   [rux-icon](../rux-icon)
 
 ### Graph
+
 ```mermaid
 graph TD;
   rux-button --> rux-icon
@@ -170,6 +174,6 @@ graph TD;
   style rux-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

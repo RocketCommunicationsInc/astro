@@ -1,6 +1,9 @@
 import { Prop, Element, Component, h, Host } from '@stencil/core'
 import { hasShadowDom } from '../../utils/utils'
 
+/**
+ * @part container - the components container.
+ */
 @Component({
     tag: 'rux-button',
     styleUrl: 'rux-button.scss',
@@ -85,6 +88,7 @@ export class RuxButton {
                     }}
                     aria-disabled={disabled ? 'true' : null}
                     disabled={disabled}
+                    part="container"
                 >
                     {icon ? (
                         <rux-icon
