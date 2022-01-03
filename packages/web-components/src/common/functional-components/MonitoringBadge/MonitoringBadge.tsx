@@ -39,6 +39,7 @@ const MonitoringBadge: FunctionalComponent<MonitoringBadgeProps> = ({
         class={`rux-advanced-status__badge ${
             !notifications ? 'rux-advanced-status__hidden' : ''
         }`}
+        part="monitoring-badge"
     >
         {notifications && collapseNotifications(notifications)}
     </div>

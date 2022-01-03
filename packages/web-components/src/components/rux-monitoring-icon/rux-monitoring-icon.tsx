@@ -3,6 +3,11 @@ import { Status, StatusTypes } from '../../common/commonTypes.module'
 import MonitoringBadge from '../../common/functional-components/MonitoringBadge/MonitoringBadge'
 import MonitoringLabel from '../../common/functional-components/MonitoringLabel'
 
+/**
+ * @part monitoring-badge - The component's notification badge
+ * @part monitoring-label - The component's label
+ * @part monitoring-sublabel - The component's sublabel
+ */
 @Component({
     tag: 'rux-monitoring-icon',
     styleUrl: 'rux-monitoring-icon.scss',
