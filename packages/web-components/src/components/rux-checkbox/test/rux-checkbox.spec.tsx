@@ -37,21 +37,6 @@ describe('rux-checkbox', () => {
             components: [RuxCheckbox],
             html: `<rux-checkbox></rux-checkbox>`,
         })
-        expect(page.root).toEqualHtml(`
-      <rux-checkbox value="">
-        <mock:shadow-root>
-          <div class="rux-form-field">
-            <div class="rux-checkbox">
-                <input id="rux-checkbox-2" type="checkbox" value="">
-                <label htmlfor="rux-checkbox-2">
-                  <span>
-                  <slot></slot>
-                  </span>
-                </label>
-            </div>
-          </div>
-        </mock:shadow-root>
-      </rux-checkbox>
-    `)
+        expect(page.root).toMatchSnapshot()
     })
 })
