@@ -16,7 +16,7 @@
     ],
     "scripts": {
         "build.stencil": "stencil build --docs",
-        "build.storybook": "build-storybook -s ./dist",
+        "build.storybook": "build-storybook",
         "build": "npm run build.stencil",
         "icons.fetch": "export-icons",
         "icons.generate": "node src/utils/generate-icons.js",
@@ -25,7 +25,7 @@
         "prepack": "npm run build",
         "prettier": "prettier --write --loglevel warn .",
         "start.stencil": "stencil build --dev --watch --serve",
-        "start.storybook": "start-storybook -p 6006 -s ./dist",
+        "start.storybook": "start-storybook -p 6006",
         "start": "concurrently npm:start.stencil npm:start.storybook",
         "test": "start-server-and-test ci.server 3333 test.all",
         "test.e2e.run": "cypress run",
