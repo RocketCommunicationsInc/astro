@@ -6,6 +6,7 @@
 "@astrouxds/react": minor
 ---
 
-Adds new CSS Shadow Parts for `monitoring-badge`, `monitoring-label`, `monitoring-sublabel`, `container`, `icon-group`, `progress-display`, `radial-progress`, `status-icon`.
-
-Adds new CSS Shadow Parts for `monitoring-badge`, `monitoring-label`, `monitoring-sublabel`.
+- Monitoring Progress Icon
+  - Adds new CSS Shadow Parts for `monitoring-badge`, `monitoring-label`, `monitoring-sublabel`, `container`, `icon-group`, `progress-display`, `radial-progress`, `status-icon`.
+- Monitoring Icon
+  - Adds new CSS Shadow Parts for `monitoring-badge`, `monitoring-label`, `monitoring-sublabel`.
