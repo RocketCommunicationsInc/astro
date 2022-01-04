@@ -3,9 +3,10 @@ import { Classification } from '../../common/commonTypes.module'
 import { hasSlot } from '../../utils/utils'
 
 /**
- * @part footer-banner - the footer banner
+ * @part footer-banner - the footer banner ! DEPRECATED IN FAVOR OF FOOTER !
  * @part footer - the footer banner
- * @part container - the container for the tag/banner
+ * @part tag - the container for the tag
+ * @part header - the container for the header banner
  *
  */
 @Component({
@@ -86,7 +87,7 @@ export class RuxClassificationMarking {
                         'rux-classification--tag': type === 'tag',
                         'rux-classification--banner': type === 'banner',
                     }}
-                    part="container"
+                    part="tag header"
                 >
                     {this._getDisplayData()}
                     {label}
