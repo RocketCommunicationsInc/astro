@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rux-radio-group renders 1`] = `
+<rux-radio-group>
+  <mock:shadow-root>
+    <div class="rux-form-field" part="form-field">
+      <div class="hidden rux-label" part="label">
+        <slot name="label"></slot>
+      </div>
+      <div class="rux-radio-group" part="radiogroup" role="radiogroup">
+        <slot></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+</rux-radio-group>
+`;
+
+exports[`rux-radio-group renders label prop 1`] = `
+<rux-radio-group label="hello">
+  <mock:shadow-root>
+    <div class="rux-form-field" part="form-field">
+      <div class="rux-label" part="label">
+        <slot name="label">
+          hello
+        </slot>
+      </div>
+      <div class="rux-radio-group" part="radiogroup" role="radiogroup">
+        <slot></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+</rux-radio-group>
+`;
+
+exports[`rux-radio-group renders label slot 1`] = `
+<rux-radio-group>
+  <mock:shadow-root>
+    <div class="rux-form-field" part="form-field">
+      <div class="rux-label" part="label">
+        <slot name="label"></slot>
+      </div>
+      <div class="rux-radio-group" part="radiogroup" role="radiogroup">
+        <slot></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+  <div slot="label">
+    hello
+  </div>
+</rux-radio-group>
+`;

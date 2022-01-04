@@ -7,15 +7,7 @@ describe('rux-push-button', () => {
             components: [RuxPushButton],
             html: `<rux-push-button></rux-push-button>`,
         })
-        expect(page.root).toEqualHtml(`
-        <rux-push-button aria-checked="false" role="switch" value="">
-            <mock:shadow-root>
-                <input class="rux-push-button__input" id="rux-push-button-0" type="checkbox" value="">
-                <label class="rux-push-button__button" htmlFor="rux-push-button-0">Push Button</label>
-                <slot></slot>
-            </mock:shadow-root>
-        </rux-push-button>
-    `)
+        expect(page.root).toMatchSnapshot()
     })
 
     it('should auto increments its own unique id', async () => {

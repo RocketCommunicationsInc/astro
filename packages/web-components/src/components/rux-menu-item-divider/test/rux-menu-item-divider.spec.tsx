@@ -7,12 +7,6 @@ describe('rux-menu-item-divider', () => {
             components: [RuxMenuItemDivider],
             html: `<rux-menu-item-divider></rux-menu-item-divider>`,
         })
-        expect(page.root).toEqualHtml(`
-      <rux-menu-item-divider>
-        <mock:shadow-root>
-          <li role="separator"></li>
-        </mock:shadow-root>
-      </rux-menu-item-divider>
-    `)
+        expect(page.root).toMatchSnapshot()
     })
 })

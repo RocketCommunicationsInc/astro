@@ -7,14 +7,7 @@ describe('rux-progress', () => {
             components: [RuxProgress],
             html: `<rux-progress></rux-progress>`,
         })
-        expect(page.root).toEqualHtml(`
-      <rux-progress>
-        <mock:shadow-root>
-        <progress class="rux-progress"></progress>
-          <slot></slot>
-        </mock:shadow-root>
-      </rux-progress>
-    `)
+        expect(page.root).toMatchSnapshot()
     })
     it('returns progress as string', async () => {
         const progress = new RuxProgress()
@@ -48,15 +41,7 @@ describe('rux-progress', () => {
             components: [RuxProgress],
             html: `<rux-progress value="0"></rux-progress>`,
         })
-        expect(page.root).toEqualHtml(`
-        <rux-progress value="0">
-          <mock:shadow-root>
-          <progress class="rux-progress" value="0" max="100"></progress>
-          <output class="rux-progress__value">0%</output>
-            <slot></slot>
-          </mock:shadow-root>
-        </rux-progress>
-      `)
+        expect(page.root).toMatchSnapshot()
     })
 
     it('only renders the value if max is set to ""', async () => {
@@ -66,14 +51,6 @@ describe('rux-progress', () => {
         })
         await page?.root?.setAttribute('max', '')
         await page.waitForChanges()
-        expect(page.root).toEqualHtml(`
-      <rux-progress max="" value="20">
-        <mock:shadow-root>
-        <progress class="rux-progress" value="20" max="NaN"></progress>
-        <output class="rux-progress__value">20</output>
-          <slot></slot>
-        </mock:shadow-root>
-      </rux-progress>
-    `)
+        expect(page.root).toMatchSnapshot()
     })
 })
