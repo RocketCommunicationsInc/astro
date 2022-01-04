@@ -4,6 +4,16 @@ import { format, utcToZonedTime } from 'date-fns-tz'
 import { militaryTimezones } from './military-timezones'
 import { MilitaryTimezone } from './rux-clock.model'
 
+/**
+ * @part date - the container for the date section of clock
+ * @part date-label - the container for the date label
+ * @part time - the conatiner for the time section of clock
+ * @part time-label - the container for the time label
+ * @part aos - the container for the aos section of clock
+ * @part aos-label - the container for the aos label
+ * @part los - the container for the los section of clock
+ * @part los-label - the container for the los label
+ */
 @Component({
     tag: 'rux-clock',
     styleUrl: 'rux-clock.scss',
@@ -151,10 +161,11 @@ export class RuxClock {
         return (
             <Host>
                 {!this.hideDate && (
-                    <div class="rux-clock__segment rux-clock__day-of-the-year">
+                    <div class="rux-clock__segment">
                         <div
                             class="rux-clock__segment__value"
                             aria-labelledby="rux-clock__day-of-year-label"
+                            part="date"
                         >
                             {this.dayOfYear}
                         </div>
@@ -162,6 +173,7 @@ export class RuxClock {
                             <div
                                 class="rux-clock__segment__label"
                                 id="rux-clock__day-of-year-label"
+                                part="date-label"
                             >
                                 Date
                             </div>
@@ -169,10 +181,11 @@ export class RuxClock {
                     </div>
                 )}
 
-                <div class="rux-clock__segment rux-clock__time">
+                <div class="rux-clock__segment">
                     <div
                         class="rux-clock__segment__value"
                         aria-labelledby="rux-clock__time-label"
+                        part="time"
                     >
                         {this.time}
                     </div>
@@ -180,6 +193,7 @@ export class RuxClock {
                         <div
                             class="rux-clock__segment__label"
                             id="rux-clock__time-label"
+                            part="time-label"
                         >
                             Time
                         </div>
@@ -192,6 +206,7 @@ export class RuxClock {
                             class="rux-clock__segment__value"
                             aria-labelledby="rux-clock__time-label--aos"
                             id="rux-clock__time--aos"
+                            part="aos"
                         >
                             {this.convertedAos}
                         </div>
@@ -199,6 +214,7 @@ export class RuxClock {
                             <div
                                 class="rux-clock__segment__label"
                                 id="rux-clock__time-label--aos"
+                                part="aos-label"
                             >
                                 AOS
                             </div>
@@ -212,6 +228,7 @@ export class RuxClock {
                             class="rux-clock__segment__value"
                             aria-labelledby="rux-clock__time-label--los"
                             id="rux-clock__time--los"
+                            part="los"
                         >
                             {this.convertedLos}
                         </div>
@@ -219,6 +236,7 @@ export class RuxClock {
                             <div
                                 class="rux-clock__segment__label"
                                 id="rux-clock__time-label--los"
+                                part="los-label"
                             >
                                 LOS
                             </div>
