@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rux-tree renders 1`] = `
+<rux-tree role="tree">
+  <mock:shadow-root>
+    <div>
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+</rux-tree>
+`;

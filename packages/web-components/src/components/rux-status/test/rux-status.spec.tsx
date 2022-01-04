@@ -14,11 +14,7 @@ describe('rux-status', () => {
             html: `<rux-status status='normal'></rux-status>`,
         })
 
-        expect(page.root).toEqualHtml(`
-      <rux-status status="normal">
-        <mock:shadow-root></mock:shadow-root>
-      </rux-status>
-    `)
+        expect(page.root).toMatchSnapshot()
     })
 
     it('errors with invalid status', async () => {
