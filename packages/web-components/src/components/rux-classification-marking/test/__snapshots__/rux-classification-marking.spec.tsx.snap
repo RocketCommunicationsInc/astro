@@ -3,7 +3,7 @@
 exports[`rux-classification-marking renders component with no properties set 1`] = `
 <rux-classification-marking classification="unclassified">
   <mock:shadow-root>
-    <div class="rux-classification rux-classification--banner">
+    <div class="rux-classification rux-classification--banner" part="tag header">
       unclassified
     </div>
     <slot></slot>
@@ -14,7 +14,7 @@ exports[`rux-classification-marking renders component with no properties set 1`]
 exports[`rux-classification-marking rux-classification-marking banners renders confidential banner 1`] = `
 <rux-classification-marking classification="confidential">
   <mock:shadow-root>
-    <div class="rux-classification rux-classification--banner">
+    <div class="rux-classification rux-classification--banner" part="tag header">
       confidential
     </div>
     <slot></slot>
@@ -25,7 +25,7 @@ exports[`rux-classification-marking rux-classification-marking banners renders c
 exports[`rux-classification-marking rux-classification-marking banners renders controlled banner 1`] = `
 <rux-classification-marking classification="controlled">
   <mock:shadow-root>
-    <div class="rux-classification rux-classification--banner">
+    <div class="rux-classification rux-classification--banner" part="tag header">
       controlled
     </div>
     <slot></slot>
@@ -36,7 +36,7 @@ exports[`rux-classification-marking rux-classification-marking banners renders c
 exports[`rux-classification-marking rux-classification-marking banners renders cui banner 1`] = `
 <rux-classification-marking classification="cui">
   <mock:shadow-root>
-    <div class="rux-classification rux-classification--banner">
+    <div class="rux-classification rux-classification--banner" part="tag header">
       cui
     </div>
     <slot></slot>
@@ -47,7 +47,7 @@ exports[`rux-classification-marking rux-classification-marking banners renders c
 exports[`rux-classification-marking rux-classification-marking banners renders secret banner 1`] = `
 <rux-classification-marking classification="secret">
   <mock:shadow-root>
-    <div class="rux-classification rux-classification--banner">
+    <div class="rux-classification rux-classification--banner" part="tag header">
       secret
     </div>
     <slot></slot>
@@ -58,7 +58,7 @@ exports[`rux-classification-marking rux-classification-marking banners renders s
 exports[`rux-classification-marking rux-classification-marking banners renders tincorrect option banner 1`] = `
 <rux-classification-marking classification="notapprovedoption">
   <mock:shadow-root>
-    <div class="rux-classification rux-classification--banner"></div>
+    <div class="rux-classification rux-classification--banner" part="tag header"></div>
     <slot></slot>
   </mock:shadow-root>
 </rux-classification-marking>
@@ -67,7 +67,7 @@ exports[`rux-classification-marking rux-classification-marking banners renders t
 exports[`rux-classification-marking rux-classification-marking banners renders top secret banner 1`] = `
 <rux-classification-marking classification="top-secret">
   <mock:shadow-root>
-    <div class="rux-classification rux-classification--banner">
+    <div class="rux-classification rux-classification--banner" part="tag header">
       top secret
     </div>
     <slot></slot>
@@ -78,7 +78,7 @@ exports[`rux-classification-marking rux-classification-marking banners renders t
 exports[`rux-classification-marking rux-classification-marking banners renders top secret sci banner 1`] = `
 <rux-classification-marking classification="top-secret-sci">
   <mock:shadow-root>
-    <div class="rux-classification rux-classification--banner">
+    <div class="rux-classification rux-classification--banner" part="tag header">
       top secret//sci
     </div>
     <slot></slot>
@@ -89,7 +89,7 @@ exports[`rux-classification-marking rux-classification-marking banners renders t
 exports[`rux-classification-marking rux-classification-marking banners renders unclassified banner 1`] = `
 <rux-classification-marking classification="unclassified">
   <mock:shadow-root>
-    <div class="rux-classification rux-classification--banner">
+    <div class="rux-classification rux-classification--banner" part="tag header">
       unclassified
     </div>
     <slot></slot>
@@ -100,7 +100,7 @@ exports[`rux-classification-marking rux-classification-marking banners renders u
 exports[`rux-classification-marking rux-classification-marking label renders footer banner 1`] = `
 <rux-classification-marking classification="secret">
   <mock:shadow-root>
-    <div class="rux-classification rux-classification--banner">
+    <div class="rux-classification rux-classification--banner" part="tag header">
       secret
     </div>
     <slot></slot>
@@ -114,7 +114,7 @@ exports[`rux-classification-marking rux-classification-marking label renders foo
 exports[`rux-classification-marking rux-classification-marking label renders unclassified banner label 1`] = `
 <rux-classification-marking classification="unclassified" label="-hello world-">
   <mock:shadow-root>
-    <div class="rux-classification rux-classification--banner">
+    <div class="rux-classification rux-classification--banner" part="tag header">
       unclassified-hello world-
     </div>
     <slot></slot>
@@ -125,7 +125,7 @@ exports[`rux-classification-marking rux-classification-marking label renders unc
 exports[`rux-classification-marking rux-classification-marking label renders unclassified tag label 1`] = `
 <rux-classification-marking classification="unclassified" label="-hello world-" tag="">
   <mock:shadow-root>
-    <div class="rux-classification rux-classification--tag">
+    <div class="rux-classification rux-classification--tag" part="tag header">
       u-hello world-
     </div>
     <slot></slot>
@@ -136,7 +136,7 @@ exports[`rux-classification-marking rux-classification-marking label renders unc
 exports[`rux-classification-marking rux-classification-marking tags renders confidential tag 1`] = `
 <rux-classification-marking classification="confidential" tag="">
   <mock:shadow-root>
-    <div class="rux-classification rux-classification--tag">
+    <div class="rux-classification rux-classification--tag" part="tag header">
       c
     </div>
     <slot></slot>
@@ -147,7 +147,7 @@ exports[`rux-classification-marking rux-classification-marking tags renders conf
 exports[`rux-classification-marking rux-classification-marking tags renders controlled tag 1`] = `
 <rux-classification-marking classification="controlled" tag="">
   <mock:shadow-root>
-    <div class="rux-classification rux-classification--tag">
+    <div class="rux-classification rux-classification--tag" part="tag header">
       cui
     </div>
     <slot></slot>
@@ -158,7 +158,7 @@ exports[`rux-classification-marking rux-classification-marking tags renders cont
 exports[`rux-classification-marking rux-classification-marking tags renders incorrect option tag 1`] = `
 <rux-classification-marking classification="notapprovedoption" tag="">
   <mock:shadow-root>
-    <div class="rux-classification rux-classification--tag"></div>
+    <div class="rux-classification rux-classification--tag" part="tag header"></div>
     <slot></slot>
   </mock:shadow-root>
 </rux-classification-marking>
@@ -167,7 +167,7 @@ exports[`rux-classification-marking rux-classification-marking tags renders inco
 exports[`rux-classification-marking rux-classification-marking tags renders secret tag 1`] = `
 <rux-classification-marking classification="secret" tag="">
   <mock:shadow-root>
-    <div class="rux-classification rux-classification--tag">
+    <div class="rux-classification rux-classification--tag" part="tag header">
       s
     </div>
     <slot></slot>
@@ -178,7 +178,7 @@ exports[`rux-classification-marking rux-classification-marking tags renders secr
 exports[`rux-classification-marking rux-classification-marking tags renders top secret sci tag 1`] = `
 <rux-classification-marking classification="top-secret-sci" tag="">
   <mock:shadow-root>
-    <div class="rux-classification rux-classification--tag">
+    <div class="rux-classification rux-classification--tag" part="tag header">
       TS//SCI
     </div>
     <slot></slot>
@@ -189,7 +189,7 @@ exports[`rux-classification-marking rux-classification-marking tags renders top 
 exports[`rux-classification-marking rux-classification-marking tags renders top secret tag 1`] = `
 <rux-classification-marking classification="top-secret" tag="">
   <mock:shadow-root>
-    <div class="rux-classification rux-classification--tag">
+    <div class="rux-classification rux-classification--tag" part="tag header">
       ts
     </div>
     <slot></slot>
@@ -200,7 +200,7 @@ exports[`rux-classification-marking rux-classification-marking tags renders top 
 exports[`rux-classification-marking rux-classification-marking tags renders unclassified tag 1`] = `
 <rux-classification-marking classification="unclassified" tag="">
   <mock:shadow-root>
-    <div class="rux-classification rux-classification--tag">
+    <div class="rux-classification rux-classification--tag" part="tag header">
       u
     </div>
     <slot></slot>
