@@ -105,9 +105,11 @@ Applying the `label` property attribute to the classification custom element add
 
 ## Shadow Parts
 
-| Part              | Description       |
-| ----------------- | ----------------- |
-| `"footer-banner"` | the footer banner |
+| Part              | Description                      |
+| ----------------- | -------------------------------- |
+| `"container"`     | the container for the tag/banner |
+| `"footer"`        | the footer banner                |
+| `"footer-banner"` | the footer banner                |
 
 ## CSS Custom Properties
 
