@@ -164,8 +164,8 @@ export class RuxClock {
                     <div class="rux-clock__segment">
                         <div
                             class="rux-clock__segment__value"
-                            part="date"
                             aria-labelledby="rux-clock__day-of-year-label"
+                            part="date"
                         >
                             {this.dayOfYear}
                         </div>
@@ -181,7 +181,7 @@ export class RuxClock {
                     </div>
                 )}
 
-                <div class="rux-clock__segment" part="time">
+                <div class="rux-clock__segment">
                     <div
                         class="rux-clock__segment__value"
                         aria-labelledby="rux-clock__time-label"
