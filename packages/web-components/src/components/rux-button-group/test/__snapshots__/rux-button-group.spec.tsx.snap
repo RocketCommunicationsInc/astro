@@ -19,7 +19,7 @@ exports[`rux-button-group renders 1`] = `
   </mock:shadow-root>
   <rux-button icon="" secondary="">
     <mock:shadow-root>
-      <button class="rux-button rux-button--secondary" type="button">
+      <button class="rux-button rux-button--secondary" part="container" type="button">
         <slot></slot>
       </button>
     </mock:shadow-root>
@@ -27,7 +27,7 @@ exports[`rux-button-group renders 1`] = `
   </rux-button>
   <rux-button icon="">
     <mock:shadow-root>
-      <button class="rux-button rux-button--default" type="button">
+      <button class="rux-button rux-button--default" part="container" type="button">
         <slot></slot>
       </button>
     </mock:shadow-root>

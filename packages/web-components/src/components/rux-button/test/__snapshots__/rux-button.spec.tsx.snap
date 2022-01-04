@@ -3,7 +3,7 @@
 exports[`rux-button renders 1`] = `
 <rux-button>
   <mock:shadow-root>
-    <button class="rux-button rux-button--default" type="button">
+    <button class="rux-button rux-button--default" part="container" type="button">
       <slot></slot>
     </button>
   </mock:shadow-root>
@@ -14,7 +14,7 @@ exports[`rux-button renders 1`] = `
 exports[`rux-button sets attributes 1`] = `
 <rux-button disabled="" secondary="" type="submit">
   <mock:shadow-root>
-    <button aria-disabled="true" class="rux-button rux-button--secondary" disabled="" type="button">
+    <button aria-disabled="true" class="rux-button rux-button--secondary" disabled="" part="container" type="button">
       <slot></slot>
     </button>
   </mock:shadow-root>
