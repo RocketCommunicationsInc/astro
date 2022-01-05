@@ -123,9 +123,9 @@ In Astro 4.0, these groups have been flattened, and each icon is now imported di
 
 ## Shadow Parts
 
-| Part     | Description |
-| -------- | ----------- |
-| `"icon"` |             |
+| Part     | Description                    |
+| -------- | ------------------------------ |
+| `"icon"` | the icon container in rux-icon |
 
 ## CSS Custom Properties
 
