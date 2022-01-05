@@ -3,7 +3,7 @@
 exports[`rux-global-status-bar renders 1`] = `
 <rux-global-status-bar menu-icon="apps">
   <mock:shadow-root>
-    <header>
+    <header part="container">
       <slot name="left-side"></slot>
       <slot name="app-meta"></slot>
       <div class="slotted-content">
@@ -18,7 +18,7 @@ exports[`rux-global-status-bar renders 1`] = `
 exports[`rux-global-status-bar renders with icon and app meta 1`] = `
 <rux-global-status-bar app-domain="ASTRO" app-name="Test App Name" app-state="App State" app-version="test v1.0" include-icon="" menu-icon="apps" username="Username">
   <mock:shadow-root>
-    <header>
+    <header part="container">
       <slot name="left-side">
         <rux-icon class="shifted-up" icon="apps" size="small"></rux-icon>
       </slot>
@@ -36,10 +36,10 @@ exports[`rux-global-status-bar renders with icon and app meta 1`] = `
             </span>
           </div>
           <div class="app-state-wrapper">
-            <div class="app-state" style="background-color: var(--color-global-tag-tag1-600);">
+            <div class="app-state" part="app-state" style="background-color: var(--color-global-tag-tag1-600);">
               App State
             </div>
-            <div class="username">
+            <div class="username" part="username">
               Username
             </div>
           </div>
@@ -57,7 +57,7 @@ exports[`rux-global-status-bar renders with icon and app meta 1`] = `
 exports[`rux-global-status-bar renders with icon, app meta and slotted content 1`] = `
 <rux-global-status-bar app-domain="ASTRO" app-name="Test App Name" app-state="App State" app-version="test v1.0" include-icon="" menu-icon="apps" username="Username">
   <mock:shadow-root>
-    <header>
+    <header part="container">
       <slot name="left-side">
         <rux-icon class="shifted-up" icon="apps" size="small"></rux-icon>
       </slot>
@@ -75,10 +75,10 @@ exports[`rux-global-status-bar renders with icon, app meta and slotted content 1
             </span>
           </div>
           <div class="app-state-wrapper">
-            <div class="app-state" style="background-color: var(--color-global-tag-tag1-600);">
+            <div class="app-state" part="app-state" style="background-color: var(--color-global-tag-tag1-600);">
               App State
             </div>
-            <div class="username">
+            <div class="username" part="username">
               Username
             </div>
           </div>
