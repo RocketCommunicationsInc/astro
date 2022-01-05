@@ -1,5 +1,8 @@
 import { Component, Host, Prop, h } from '@stencil/core'
 
+/**
+ * @part icon - the icon container in rux-icon
+ */
 @Component({
     tag: 'rux-icon',
     styleUrl: 'rux-icon.scss',
