@@ -6,6 +6,8 @@ import { AppMeta } from './appMeta/appMeta'
  * @slot left-side - Used to prepend a RuxIcon or similar element
  * @slot app-meta - Used to display the Application's metadata (Domain, Name, State, Version, etc.)
  * @slot right-side - Used to append optional content
+ *
+ * @part container - the container for global-status-bar
  */
 @Component({
     tag: 'rux-global-status-bar',
@@ -78,7 +80,7 @@ export class RuxGlobalStatusBar {
 
         return (
             <Host>
-                <header>
+                <header part="container">
                     <slot name="left-side">
                         {this.includeIcon && (
                             <rux-icon
@@ -106,6 +108,7 @@ export class RuxGlobalStatusBar {
                                     {this.appState && (
                                         <div
                                             class="app-state"
+                                            part="app-state"
                                             style={{
                                                 backgroundColor: `${
                                                     TagColor[
@@ -118,7 +121,7 @@ export class RuxGlobalStatusBar {
                                         </div>
                                     )}
                                     {this.username && (
-                                        <div class="username">
+                                        <div class="username" part="username">
                                             {this.username}
                                         </div>
                                     )}
