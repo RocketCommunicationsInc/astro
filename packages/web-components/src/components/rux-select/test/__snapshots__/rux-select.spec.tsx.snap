@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rux-select renders 1`] = `
+<rux-select label="test">
+  <mock:shadow-root>
+    <label aria-hidden="false">
+      <span>
+        <slot name="label">
+          test
+        </slot>
+      </span>
+    </label>
+    <select class="rux-select"></select>
+    <div aria-hidden="true" class="hidden">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <rux-option label="one"></rux-option>
+  <rux-option label="two"></rux-option>
+  <input class="aux-input" type="hidden" value="">
+</rux-select>
+`;
+
+exports[`rux-select renders option groups 1`] = `
+<rux-select>
+  <mock:shadow-root>
+    <label aria-hidden="true">
+      <span class="hidden">
+        <slot name="label"></slot>
+      </span>
+    </label>
+    <select class="rux-select"></select>
+    <div aria-hidden="true" class="hidden">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <rux-option label="outside option"></rux-option>
+  <rux-option-group label="Group one">
+    <rux-option label="inside option"></rux-option>
+  </rux-option-group>
+  <rux-option label="outside option"></rux-option>
+  <input class="aux-input" type="hidden" value="">
+</rux-select>
+`;

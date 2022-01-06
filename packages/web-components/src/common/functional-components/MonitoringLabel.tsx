@@ -10,11 +10,12 @@ const MonitoringLabel: FunctionalComponent<MonitoringLabelProps> = ({
     sublabel,
 }) => (
     <div class="rux-advanced-status__label">
-        {label}
+        <span part="monitoring-label">{label}</span>
         <span
             class={`rux-advanced-status__sublabel ${
                 !sublabel ? 'rux-advanced-status__hidden' : ''
             }`}
+            part="monitoring-sublabel"
         >
             {sublabel}
         </span>

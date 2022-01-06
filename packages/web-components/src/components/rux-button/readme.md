@@ -132,6 +132,12 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 | `size`      | `size`      | Changes size of a button from medium to small or large by setting sizing classes rux-button--small rux-button--large                                                                                                                                                                                          | `"large" \| "medium" \| "small" \| undefined` | `undefined` |
 | `type`      | `type`      | The button type. Use 'submit' to submit native form data.                                                                                                                                                                                                                                                     | `"button" \| "submit"`                        | `'button'`  |
 
+## Shadow Parts
+
+| Part          | Description               |
+| ------------- | ------------------------- |
+| `"container"` | the components container. |
+
 ## CSS Custom Properties
 
 | Name                                        | Description                             |
@@ -150,6 +156,10 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 | `--button-text-color`                       | Button text color                       |
 
 ## Dependencies
+
+### Used by
+
+-   [rux-modal](../rux-modal)
 
 ### Depends on
 

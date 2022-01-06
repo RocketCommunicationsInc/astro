@@ -19848,6 +19848,7 @@ export class RuxIconZoomOutMap {
 export declare interface RuxInput extends Components.RuxInput {}
 @ProxyCmp({
   inputs: [
+    "autocomplete",
     "disabled",
     "errorText",
     "helpText",
@@ -19857,8 +19858,10 @@ export declare interface RuxInput extends Components.RuxInput {}
     "min",
     "name",
     "placeholder",
+    "readonly",
     "required",
     "size",
+    "spellcheck",
     "step",
     "type",
     "value",
@@ -19869,6 +19872,7 @@ export declare interface RuxInput extends Components.RuxInput {}
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: "<ng-content></ng-content>",
   inputs: [
+    "autocomplete",
     "disabled",
     "errorText",
     "helpText",
@@ -19878,8 +19882,10 @@ export declare interface RuxInput extends Components.RuxInput {}
     "min",
     "name",
     "placeholder",
+    "readonly",
     "required",
     "size",
+    "spellcheck",
     "step",
     "type",
     "value",

@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rux-global-status-bar renders 1`] = `
+<rux-global-status-bar menu-icon="apps">
+  <mock:shadow-root>
+    <header part="container">
+      <slot name="left-side"></slot>
+      <slot name="app-meta"></slot>
+      <div class="slotted-content">
+        <slot></slot>
+      </div>
+      <slot name="right-side"></slot>
+    </header>
+  </mock:shadow-root>
+</rux-global-status-bar>
+`;
+
+exports[`rux-global-status-bar renders with icon and app meta 1`] = `
+<rux-global-status-bar app-domain="ASTRO" app-name="Test App Name" app-state="App State" app-version="test v1.0" include-icon="" menu-icon="apps" username="Username">
+  <mock:shadow-root>
+    <header part="container">
+      <slot name="left-side">
+        <rux-icon class="shifted-up" icon="apps" size="small"></rux-icon>
+      </slot>
+      <slot name="app-meta">
+        <div class="app-meta">
+          <div class="app-info-wrapper">
+            <h1 class="app-domain">
+              ASTRO
+            </h1>
+            <h1 class="app-name">
+              TEST APP NAME
+            </h1>
+            <span class="app-version">
+              test v1.0
+            </span>
+          </div>
+          <div class="app-state-wrapper">
+            <div class="app-state" part="app-state" style="background-color: var(--color-global-tag-tag1-600);">
+              App State
+            </div>
+            <div class="username" part="username">
+              Username
+            </div>
+          </div>
+        </div>
+      </slot>
+      <div class="slotted-content">
+        <slot></slot>
+      </div>
+      <slot name="right-side"></slot>
+    </header>
+  </mock:shadow-root>
+</rux-global-status-bar>
+`;
+
+exports[`rux-global-status-bar renders with icon, app meta and slotted content 1`] = `
+<rux-global-status-bar app-domain="ASTRO" app-name="Test App Name" app-state="App State" app-version="test v1.0" include-icon="" menu-icon="apps" username="Username">
+  <mock:shadow-root>
+    <header part="container">
+      <slot name="left-side">
+        <rux-icon class="shifted-up" icon="apps" size="small"></rux-icon>
+      </slot>
+      <slot name="app-meta">
+        <div class="app-meta">
+          <div class="app-info-wrapper">
+            <h1 class="app-domain">
+              ASTRO
+            </h1>
+            <h1 class="app-name">
+              TEST APP NAME
+            </h1>
+            <span class="app-version">
+              test v1.0
+            </span>
+          </div>
+          <div class="app-state-wrapper">
+            <div class="app-state" part="app-state" style="background-color: var(--color-global-tag-tag1-600);">
+              App State
+            </div>
+            <div class="username" part="username">
+              Username
+            </div>
+          </div>
+        </div>
+      </slot>
+      <div class="slotted-content">
+        <slot></slot>
+      </div>
+      <slot name="right-side"></slot>
+    </header>
+  </mock:shadow-root>
+  <div>
+    Tab links
+    <div>
+      <button slot="right-side">
+        Emergency shut off
+      </button>
+    </div>
+  </div>
+</rux-global-status-bar>
+`;
