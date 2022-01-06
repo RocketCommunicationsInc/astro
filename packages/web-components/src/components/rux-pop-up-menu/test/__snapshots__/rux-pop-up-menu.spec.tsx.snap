@@ -3,7 +3,7 @@
 exports[`rux-pop-up-menu renders 1`] = `
 <rux-pop-up-menu aria-hidden="true" id="menu">
   <mock:shadow-root>
-    <ul aria-expanded="false" role="menu">
+    <ul aria-expanded="false" part="container" role="menu">
       <slot></slot>
     </ul>
     <slot name="menu-end"></slot>
