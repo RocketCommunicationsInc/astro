@@ -11,8 +11,9 @@ import {
 } from '@stencil/core'
 
 /**
- * @part wrapper - the modal wrapper overlay
- *
+ * @part wrapper - the modal wrapper overlay ! DEPRECATED IN FAVOR OF CONTAINER !
+ * @part container - the modal container
+ * @part content - the content container of the modal
  */
 @Component({
     tag: 'rux-modal',
@@ -143,14 +144,21 @@ export class RuxModal {
         return (
             open && (
                 <Host>
-                    <div part="wrapper" class="rux-modal__wrapper">
-                        <dialog class="rux-modal__dialog" role="dialog">
+                    <div part="wrapper container" class="rux-modal__wrapper">
+                        <dialog
+                            class="rux-modal__dialog"
+                            role="dialog"
+                            part="dialog"
+                        >
                             {modalTitle && (
-                                <header class="rux-modal__titlebar">
+                                <header
+                                    class="rux-modal__titlebar"
+                                    part="header"
+                                >
                                     <div>{modalTitle}</div>
                                 </header>
                             )}
-                            <div class="rux-modal__content">
+                            <div class="rux-modal__content" part="content">
                                 <div class="rux-modal__message">
                                     {modalMessage}
                                 </div>
