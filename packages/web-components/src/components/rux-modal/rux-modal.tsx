@@ -13,6 +13,7 @@ import {
 /**
  * @part wrapper - the modal wrapper overlay ! DEPRECATED IN FAVOR OF CONTAINER !
  * @part container - the modal container
+ * @part header - the modal's header container
  * @part content - the content container of the modal
  */
 @Component({
