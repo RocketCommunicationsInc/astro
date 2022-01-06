@@ -114,6 +114,15 @@ Pass properties as attributes of the Astro Monitoring Progress Icon custom eleme
 | `sublabel`           | `sublabel`      | Displays a smaller label underneath the icon label                                                                                                                                                                                                                                      | `string \| undefined`                                                    | `undefined` |
 
 
+## Shadow Parts
+
+| Part                    | Description                        |
+| ----------------------- | ---------------------------------- |
+| `"monitoring-badge"`    | The component's notification badge |
+| `"monitoring-label"`    | The component's label              |
+| `"monitoring-sublabel"` | The component's sublabel           |
+
+
 ## Dependencies
 
 ### Depends on
@@ -132,3 +141,4 @@ graph TD;
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
+````

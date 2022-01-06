@@ -14,6 +14,7 @@ import {
 
 /**
  * @slot menu-end - Area below the menu list to insert elements. For example, confirmation and/or cancel button group.
+ * @part container - the container for the pop-up-menu
  */
 
 @Component({
@@ -266,7 +267,7 @@ export class RuxPopUpMenu {
     render() {
         return (
             <Host aria-hidden={!this.open ? 'true' : 'false'}>
-                <ul role="menu" aria-expanded={`${this.open}`}>
+                <ul role="menu" aria-expanded={`${this.open}`} part="container">
                     <slot></slot>
                 </ul>
                 <slot name="menu-end"></slot>

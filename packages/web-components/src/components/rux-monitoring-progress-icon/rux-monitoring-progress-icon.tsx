@@ -8,6 +8,16 @@ export interface RangeItem {
     status: Status
 }
 
+/**
+ * @part container - The component's container element
+ * @part radial-progress - The "donut"-style progress meter
+ * @part icon-group - A wrapper element containing the status icon, radial progress, and notification elements.
+ * @part status-icon - The component's status symbol
+ * @part progress-display - The component's progress value
+ * @part monitoring-badge - The component's notification badge
+ * @part monitoring-label - The component's label
+ * @part monitoring-sublabel - The component's sublabel
+ */
 @Component({
     tag: 'rux-monitoring-progress-icon',
     styleUrl: 'rux-monitoring-progress-icon.scss',
@@ -154,14 +164,19 @@ export class RuxMonitoringProgressIcon {
                 id="rux-advanced-status__icon"
                 class="rux-advanced-status"
                 title={`${this.notifications} ${this.label} ${this.sublabel}`}
+                part="container"
             >
-                <div class="rux-advanced-status__icon-group">
-                    <rux-status status={this._status}></rux-status>
+                <div class="rux-advanced-status__icon-group" part="icon-group">
+                    <rux-status
+                        status={this._status}
+                        part="status-icon"
+                    ></rux-status>
 
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 128 128"
                         class={`rux-status--${this._status}`}
+                        part="radial-progress"
                     >
                         <g id="progress">
                             <circle
@@ -187,7 +202,10 @@ export class RuxMonitoringProgressIcon {
                             />
                         </g>
                     </svg>
-                    <div class="rux-advanced-status__progress">
+                    <div
+                        class="rux-advanced-status__progress"
+                        part="progress-display"
+                    >
                         {Math.ceil(
                             ((this.progress - this.min) /
                                 (this.max - this.min)) *

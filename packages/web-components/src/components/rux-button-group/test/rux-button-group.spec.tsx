@@ -21,31 +21,7 @@ describe('rux-button-group', () => {
             </rux-button-group>`,
         })
 
-        expect(page.root).toEqualHtml(`
-          <rux-button-group>
-            <mock:shadow-root>
-              <div class="rux-button-group rux-button-group--left">
-                <slot></slot>
-              </div>
-            </mock:shadow-root>
-              <rux-button icon="" secondary="">
-                  <mock:shadow-root>
-                  <button class="rux-button rux-button--secondary" type="button">
-                    <slot></slot>
-                  </button>
-                </mock:shadow-root>
-                Button
-              </rux-button>
-              <rux-button icon="">
-                <mock:shadow-root>
-                  <button class="rux-button rux-button--default" type="button">
-                    <slot></slot>
-                  </button>
-                </mock:shadow-root>
-                Button
-              </rux-button>
-          </rux-button-group>
-        `)
+        expect(page.root).toMatchSnapshot()
     })
 
     it('aligns', async () => {
@@ -54,14 +30,6 @@ describe('rux-button-group', () => {
             html: `<rux-button-group h-align="right"></rux-button-group>`,
         })
 
-        expect(page.root).toEqualHtml(`
-          <rux-button-group h-align="right">
-            <mock:shadow-root>
-              <div class="rux-button-group rux-button-group--right">
-                <slot></slot>
-              </div>
-            </mock:shadow-root>
-          </rux-button-group>
-        `)
+        expect(page.root).toMatchSnapshot()
     })
 })

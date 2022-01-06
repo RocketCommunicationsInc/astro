@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rux-radio renders 1`] = `
+<rux-radio value="test">
+  <mock:shadow-root>
+    <div class="rux-form-field">
+      <div class="rux-radio">
+        <input id="rux-radio-2" type="radio" value="test">
+        <label htmlfor="rux-radio-2">
+          <slot></slot>
+        </label>
+      </div>
+    </div>
+  </mock:shadow-root>
+</rux-radio>
+`;

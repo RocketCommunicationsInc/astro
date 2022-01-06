@@ -27,19 +27,6 @@ describe('rux-radio', () => {
             components: [RuxRadio],
             html: `<rux-radio value="test"></rux-radio>`,
         })
-        expect(page.root).toEqualHtml(`
-      <rux-radio value="test">
-        <mock:shadow-root>
-          <div class="rux-form-field">
-            <div class="rux-radio">
-                <input id="rux-radio-2" type="radio" value="test">
-                <label htmlfor="rux-radio-2">
-                  <slot></slot>
-                </label>
-            </div>
-          </div>
-        </mock:shadow-root>
-      </rux-radio>
-    `)
+        expect(page.root).toMatchSnapshot()
     })
 })
