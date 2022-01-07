@@ -9,6 +9,10 @@ import {
 } from '@stencil/core'
 import { renderHiddenInput } from '../../utils/utils'
 
+/**
+ * @part label - the label of rux-push-button
+ * @part icon - the optional rux-icon in rux-push-button
+ */
 @Component({
     tag: 'rux-push-button',
     styleUrl: 'rux-push-button.scss',
@@ -131,9 +135,14 @@ export class RuxPushButton {
                         'rux-push-button__button--icon-only': iconOnly,
                     }}
                     htmlFor={this.pushButtonId}
+                    part="label"
                 >
                     {icon ? (
-                        <rux-icon size="extra-small" icon={icon}></rux-icon>
+                        <rux-icon
+                            size="extra-small"
+                            exportparts="icon"
+                            icon={icon}
+                        ></rux-icon>
                     ) : null}
 
                     {label}
