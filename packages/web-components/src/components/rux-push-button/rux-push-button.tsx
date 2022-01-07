@@ -131,6 +131,7 @@ export class RuxPushButton {
                         'rux-push-button__button--icon-only': iconOnly,
                     }}
                     htmlFor={this.pushButtonId}
+                    part="label"
                 >
                     {icon ? (
                         <rux-icon size="extra-small" icon={icon}></rux-icon>
