@@ -44,8 +44,13 @@ export class RuxIcon {
         const SVG = `rux-icon-${this.icon}`
 
         return (
-            <Host part="icon">
-                <SVG class="icon" size={this.size} title={this.iconLabel}></SVG>
+            <Host>
+                <SVG
+                    class="icon"
+                    part="icon"
+                    size={this.size}
+                    title={this.iconLabel}
+                ></SVG>
             </Host>
         )
     }
