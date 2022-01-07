@@ -3,6 +3,7 @@ import { hasShadowDom } from '../../utils/utils'
 
 /**
  * @part container - the components container.
+ * @part icon - the optional rux-icon
  */
 @Component({
     tag: 'rux-button',
@@ -94,6 +95,7 @@ export class RuxButton {
                         <rux-icon
                             size="extra-small"
                             icon={icon}
+                            exportparts="icon"
                             color={secondary ? 'primary' : 'dark'}
                         ></rux-icon>
                     ) : null}

@@ -11,7 +11,7 @@ import { renderHiddenInput } from '../../utils/utils'
 
 /**
  * @part label - the label of rux-push-button
- * @part icon - the optional rux-icon in rux-push-button
+ * @part icon - the optional rux-icon
  */
 @Component({
     tag: 'rux-push-button',
