@@ -2,7 +2,7 @@ import { Prop, Element, Component, h, Host } from '@stencil/core'
 import { hasShadowDom } from '../../utils/utils'
 
 /**
- * @part container - the components container.
+ * @part native - the components native button element.
  * @part icon - the optional rux-icon
  */
 @Component({
@@ -89,7 +89,7 @@ export class RuxButton {
                     }}
                     aria-disabled={disabled ? 'true' : null}
                     disabled={disabled}
-                    part="container"
+                    part="native"
                 >
                     {icon ? (
                         <rux-icon

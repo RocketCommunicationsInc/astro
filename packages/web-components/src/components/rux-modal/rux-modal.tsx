@@ -11,8 +11,10 @@ import {
 } from '@stencil/core'
 
 /**
- * @part wrapper - the modal wrapper overlay
- *
+ * @part wrapper - the modal wrapper overlay ! DEPRECATED IN FAVOR OF CONTAINER !
+ * @part container - the modal container
+ * @part header - the header of the modal
+ * @part message - the message of the modal
  */
 @Component({
     tag: 'rux-modal',
@@ -143,15 +145,18 @@ export class RuxModal {
         return (
             open && (
                 <Host>
-                    <div part="wrapper" class="rux-modal__wrapper">
+                    <div part="wrapper container" class="rux-modal__wrapper">
                         <dialog class="rux-modal__dialog" role="dialog">
                             {modalTitle && (
-                                <header class="rux-modal__titlebar">
+                                <header
+                                    class="rux-modal__titlebar"
+                                    part="header"
+                                >
                                     <div>{modalTitle}</div>
                                 </header>
                             )}
                             <div class="rux-modal__content">
-                                <div class="rux-modal__message">
+                                <div class="rux-modal__message" part="message">
                                     {modalMessage}
                                 </div>
                                 <rux-button-group h-align="right">
@@ -161,6 +166,7 @@ export class RuxModal {
                                         data-value="false"
                                         hidden={!denyText}
                                         tabindex="-1"
+                                        exportparts="native"
                                     >
                                         {denyText}
                                     </rux-button>
@@ -169,6 +175,7 @@ export class RuxModal {
                                         data-value="true"
                                         hidden={!confirmText}
                                         tabindex="0"
+                                        exportparts="native"
                                     >
                                         {confirmText}
                                     </rux-button>
