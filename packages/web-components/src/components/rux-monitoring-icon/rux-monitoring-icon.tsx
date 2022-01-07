@@ -74,6 +74,7 @@ export class RuxMonitoringIcon {
                         icon={this.icon}
                         class={`rux-status--${this.status}`}
                         size="2.5rem"
+                        exportparts="icon"
                     ></rux-icon>
                     <MonitoringBadge notifications={this.notifications} />
                 </div>
