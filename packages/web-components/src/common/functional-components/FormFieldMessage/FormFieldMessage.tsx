@@ -15,6 +15,7 @@ const FormFieldMessage = (props: FormFieldMessageInterface, children: any) => {
                     'rux-error-text': !!errorText,
                     'rux-help-text': !!helpText,
                 }}
+                part="form-field-message"
             >
                 {children}
 
