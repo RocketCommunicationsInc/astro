@@ -89,7 +89,7 @@ export class RuxButton {
                     }}
                     aria-disabled={disabled ? 'true' : null}
                     disabled={disabled}
-                    part="native"
+                    part="container"
                 >
                     {icon ? (
                         <rux-icon
