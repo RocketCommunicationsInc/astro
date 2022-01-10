@@ -157,10 +157,6 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 
 ## Dependencies
 
-### Used by
-
--   [rux-modal](../rux-modal)
-
 ### Depends on
 
 -   [rux-icon](../rux-icon)

@@ -20242,6 +20242,21 @@ export class RuxRadioGroup {
   }
 }
 
+export declare interface RuxRuler extends Components.RuxRuler {}
+
+@Component({
+  selector: "rux-ruler",
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: "<ng-content></ng-content>",
+})
+export class RuxRuler {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
 export declare interface RuxSegmentedButton
   extends Components.RuxSegmentedButton {}
 @ProxyCmp({
@@ -20634,6 +20649,51 @@ export class RuxTextarea {
     c.detach();
     this.el = r.nativeElement;
     proxyOutputs(this, this.el, ["ruxchange", "ruxinput", "ruxblur"]);
+  }
+}
+
+export declare interface RuxTimeRegion extends Components.RuxTimeRegion {}
+
+@Component({
+  selector: "rux-time-region",
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: "<ng-content></ng-content>",
+})
+export class RuxTimeRegion {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+export declare interface RuxTimeline extends Components.RuxTimeline {}
+
+@Component({
+  selector: "rux-timeline",
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: "<ng-content></ng-content>",
+})
+export class RuxTimeline {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+export declare interface RuxTrack extends Components.RuxTrack {}
+
+@Component({
+  selector: "rux-track",
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: "<ng-content></ng-content>",
+})
+export class RuxTrack {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
   }
 }
 
