@@ -166,7 +166,7 @@ export class RuxModal {
                                         data-value="false"
                                         hidden={!denyText}
                                         tabindex="-1"
-                                        exportparts="container:confirm-button"
+                                        exportparts="container:deny-button"
                                     >
                                         {denyText}
                                     </rux-button>
@@ -175,7 +175,7 @@ export class RuxModal {
                                         data-value="true"
                                         hidden={!confirmText}
                                         tabindex="0"
-                                        exportparts="container:deny-button"
+                                        exportparts="container:confirm-button"
                                     >
                                         {confirmText}
                                     </rux-button>
