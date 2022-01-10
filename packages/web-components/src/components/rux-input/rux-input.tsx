@@ -310,6 +310,7 @@ export class RuxInput implements FormFieldInterface {
                         onChange={_onChange}
                         onInput={_onInput}
                         onBlur={_onBlur}
+                        part="input"
                     ></input>
                     {togglePassword && (
                         <div
@@ -320,7 +321,7 @@ export class RuxInput implements FormFieldInterface {
                             }}
                         >
                             <rux-icon
-                                part="icon"
+                                exportparts="icon"
                                 onClick={_handleTogglePassword}
                                 icon={iconName}
                                 size="extra-small"
