@@ -110,7 +110,7 @@ export class RuxSegmentedButton {
                             data-label={item.label}
                             onChange={this._handleChange}
                         />
-                        <label htmlFor={this._slugify(item.label)}>
+                        <label htmlFor={this._slugify(item.label)} part="label">
                             {item.label}
                         </label>
                     </li>
