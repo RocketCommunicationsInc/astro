@@ -149,12 +149,17 @@ export class RuxSwitch {
                         onInput={this._onInput}
                         onBlur={this._onBlur}
                     />
-                    <label class="rux-switch__button" htmlFor={switchId}>
+                    <label
+                        class="rux-switch__button"
+                        htmlFor={switchId}
+                        part="switch"
+                    >
                         <span
                             class={{
                                 'rux-switch__label': true,
                                 hidden: !this.hasLabel,
                             }}
+                            part="label"
                         >
                             <slot
                                 onSlotchange={this._handleSlotChange}
