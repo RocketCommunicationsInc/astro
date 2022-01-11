@@ -3,7 +3,7 @@
 exports[`rux-menu-item-divider renders 1`] = `
 <rux-menu-item-divider>
   <mock:shadow-root>
-    <li role="separator"></li>
+    <li part="container" role="separator"></li>
   </mock:shadow-root>
 </rux-menu-item-divider>
 `;
