@@ -1,3 +1,13 @@
 :host {
-    display: block;
+    display: contents;
+}
+
+.rux-track {
+    display: contents;
+}
+
+::slotted(rux-time-region) {
+    background: blue;
+    // border: 2px solid red;
+    // grid-row: 1;
 }

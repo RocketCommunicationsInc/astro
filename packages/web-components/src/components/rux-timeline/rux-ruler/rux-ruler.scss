@@ -1,3 +1,14 @@
 :host {
-    display: block;
+    display: contents;
+}
+
+.ruler-time__first {
+    grid-column: time-0000 / time-0100;
+}
+
+.rux-ruler .ruler-time {
+}
+
+.rux-track {
+    display: contents;
 }

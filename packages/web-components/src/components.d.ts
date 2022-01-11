@@ -6906,7 +6906,12 @@ export namespace Components {
          */
         value?: any | null
     }
-    interface RuxRuler {}
+    interface RuxRuler {
+        /**
+         * The track
+         */
+        track: string
+    }
     interface RuxSegmentedButton {
         /**
          * Items in this Array are the individual button segments.
@@ -7109,9 +7114,31 @@ export namespace Components {
          */
         value: string
     }
-    interface RuxTimeRegion {}
+    interface RuxTimeRegion {
+        /**
+         * The end time
+         */
+        end: string
+        /**
+         * The label
+         */
+        label?: string
+        /**
+         * The start time
+         */
+        start: string
+        /**
+         * The track
+         */
+        track: string
+    }
     interface RuxTimeline {}
-    interface RuxTrack {}
+    interface RuxTrack {
+        /**
+         * the id
+         */
+        track?: number
+    }
     interface RuxTree {}
     interface RuxTreeNode {
         /**
@@ -22905,7 +22932,12 @@ declare namespace LocalJSX {
          */
         value?: any | null
     }
-    interface RuxRuler {}
+    interface RuxRuler {
+        /**
+         * The track
+         */
+        track?: string
+    }
     interface RuxSegmentedButton {
         /**
          * Items in this Array are the individual button segments.
@@ -23163,9 +23195,31 @@ declare namespace LocalJSX {
          */
         value?: string
     }
-    interface RuxTimeRegion {}
+    interface RuxTimeRegion {
+        /**
+         * The end time
+         */
+        end?: string
+        /**
+         * The label
+         */
+        label?: string
+        /**
+         * The start time
+         */
+        start?: string
+        /**
+         * The track
+         */
+        track?: string
+    }
     interface RuxTimeline {}
-    interface RuxTrack {}
+    interface RuxTrack {
+        /**
+         * the id
+         */
+        track?: number
+    }
     interface RuxTree {}
     interface RuxTreeNode {
         /**

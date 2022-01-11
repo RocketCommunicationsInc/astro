@@ -1,3 +1,40 @@
 :host {
     display: block;
 }
+
+.rux-timeline {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns:
+        [header] 200px
+        [time-0000] 1fr
+        [time-0100] 1fr
+        [time-0200] 1fr
+        [time-0300] 1fr
+        [time-0400] 1fr
+        [time-0500] 1fr
+        [time-0600] 1fr
+        [time-0700] 1fr
+        [time-0800] 1fr
+        [time-0900] 1fr
+        [time-1000] 1fr
+        [time-1100] 1fr
+        [time-1200] 1fr
+        [time-1300] 1fr
+        [time-1400] 1fr
+        [time-1500] 1fr
+        [time-1600] 1fr
+        [time-1700] 1fr
+        [time-1800] 1fr
+        [time-1900] 1fr
+        [time-2000] 1fr
+        [time-2100] 1fr
+        [time-2200] 1fr
+        [time-2300] 1fr
+        [time-2359];
+
+    grid-template-rows: auto;
+    // [track-1] 1fr
+    // [track-2] 1fr
+    // [ruler] 1fr;
+}
