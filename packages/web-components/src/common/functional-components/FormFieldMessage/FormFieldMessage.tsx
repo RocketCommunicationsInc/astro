@@ -5,6 +5,10 @@ export interface FormFieldMessageInterface {
     errorText?: string
 }
 
+/**
+ * @part form-field-message - the container for the help or error text
+ */
+
 const FormFieldMessage = (props: FormFieldMessageInterface, children: any) => {
     const { helpText, errorText } = props
 

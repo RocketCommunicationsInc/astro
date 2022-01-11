@@ -15,6 +15,8 @@ let id = 0
 
 /**
  * @slot label - The switch label
+ * @part switch - the track (::before) and the button (::after) on rux-switch
+ * @part label - the label of switch
  */
 @Component({
     tag: 'rux-switch',

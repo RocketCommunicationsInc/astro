@@ -15,6 +15,8 @@ import {
  * @part container - the modal container
  * @part header - the header of the modal
  * @part message - the message of the modal
+ * @part confirm-button - the modal's confirm button
+ * @part deny-button - the modal's deny button
  */
 @Component({
     tag: 'rux-modal',

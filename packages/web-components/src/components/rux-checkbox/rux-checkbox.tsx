@@ -17,6 +17,8 @@ let id = 0
 
 /**
  * @slot (default) - the label of the checkbox.
+ * @part form-field - the form field wrapper container
+ * @part label - the label of rux-checkbox
  */
 @Component({
     tag: 'rux-checkbox',

@@ -2,7 +2,6 @@ import { Prop, Component, h } from '@stencil/core'
 
 /**
  * @slot (default) - Two or more RuxButton components to render in the group
- *
  * @part container - the components container
  */
 @Component({

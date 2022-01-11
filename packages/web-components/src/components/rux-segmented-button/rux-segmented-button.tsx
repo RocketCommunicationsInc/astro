@@ -9,6 +9,9 @@ import {
 } from '@stencil/core'
 import { SegmentedButton } from './rux-segmented-button.model'
 
+/**
+ * @part label - the label of rux-segmented-button
+ */
 @Component({
     tag: 'rux-segmented-button',
     styleUrl: 'rux-segmented-button.scss',

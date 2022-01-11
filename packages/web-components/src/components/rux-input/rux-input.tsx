@@ -19,6 +19,7 @@ let id = 0
  * @slot label - The input label
  * @part form-field - The form-field wrapper container
  * @part label - The input label when `label` prop is set
+ * @part input - the shadow dom input of rux-input
  * @part icon - The icon displayed when toggle-password prop is set
  */
 @Component({

@@ -2,7 +2,7 @@ import { Prop, Element, Component, h, Host } from '@stencil/core'
 import { hasShadowDom } from '../../utils/utils'
 
 /**
- * @part native - the components native button element.
+ * @part container - the components native button element.
  * @part icon - the optional rux-icon
  */
 @Component({
