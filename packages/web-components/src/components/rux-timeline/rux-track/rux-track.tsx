@@ -72,11 +72,14 @@ export class RuxTrack {
     render() {
         return (
             <Host>
-                <div
-                    class="rux-track"
-                    style={{ gridRow: `${id}` }}
-                    ref={(el) => (this.slotContainer = el)}
-                >
+                <div class="rux-track" ref={(el) => (this.slotContainer = el)}>
+                    <div
+                        class="rux-track__header"
+                        style={{ gridRow: `${this.track}` }}
+                    >
+                        <slot name="label"></slot>
+                    </div>
+
                     <slot onSlotchange={this._handleSlotChange}></slot>
                 </div>
             </Host>

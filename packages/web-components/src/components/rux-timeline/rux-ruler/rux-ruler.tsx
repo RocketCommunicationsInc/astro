@@ -24,10 +24,6 @@ export class RuxRuler {
         return (
             <Host>
                 <div class="rux-ruler rux-track">
-                    <span
-                        class="ruler-time"
-                        style={{ gridRow: `${this.track}` }}
-                    ></span>
                     {this.times.map((time, index) => (
                         <span
                             class={{

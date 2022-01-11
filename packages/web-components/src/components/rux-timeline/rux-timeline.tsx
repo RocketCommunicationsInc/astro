@@ -51,11 +51,13 @@ export class RuxTimeline {
     render() {
         return (
             <Host>
-                <div
-                    class="rux-timeline"
-                    ref={(el) => (this.slotContainer = el)}
-                >
-                    <slot onSlotchange={this._handleSlotChange}></slot>
+                <div class="border">
+                    <div
+                        class="rux-timeline"
+                        ref={(el) => (this.slotContainer = el)}
+                    >
+                        <slot onSlotchange={this._handleSlotChange}></slot>
+                    </div>
                 </div>
             </Host>
         )

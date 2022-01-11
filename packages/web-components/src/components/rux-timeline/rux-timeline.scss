@@ -4,7 +4,7 @@
 
 .rux-timeline {
     display: grid;
-    grid-gap: 1em;
+    // grid-gap: 1em;
     grid-template-columns:
         [header] 200px
         [time-0000] 1fr
@@ -37,4 +37,5 @@
     // [track-1] 1fr
     // [track-2] 1fr
     // [ruler] 1fr;
+    background: var(--color-surface);
 }

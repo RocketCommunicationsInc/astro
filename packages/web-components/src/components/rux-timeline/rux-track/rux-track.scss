@@ -4,6 +4,21 @@
 
 .rux-track {
     display: contents;
+    background: var(--color-surface);
+}
+.rux-track__header {
+    padding: 11px 8px 13px 8px;
+    background: var(--color-surface);
+    border-bottom: 2px solid var(--color-background);
+    display: flex;
+    align-items: center;
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
+}
+.rux-track__header::slotted(*) {
+    grid-column: header / time-0000;
 }
 
 ::slotted(rux-time-region) {
