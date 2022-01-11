@@ -75,6 +75,14 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 | `"(default)"` | The select options |
 | `"label"`     | The select label   |
 
+## Shadow Parts
+
+| Part                   | Description                                  |
+| ---------------------- | -------------------------------------------- |
+| `"form-field-message"` | the container for the error/help text        |
+| `"label"`              | The select label                             |
+| `"select"`             | the native select element used by rux-select |
+
 ## CSS Custom Properties
 
 | Name                                             | Description                                 |

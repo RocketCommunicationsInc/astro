@@ -11,6 +11,7 @@ import {
 
 /**
  * @slot start - before element text. Typically used for icons
+ * @part container - the container of the rux-menu-item
  */
 
 @Component({
@@ -88,7 +89,7 @@ export class RuxMenuItem {
 
         return (
             <Host aria-disabled={disabled ? 'true' : null}>
-                <li>
+                <li part="container">
                     <TagType {...attributes}>
                         <slot name="start"></slot>
                         <slot></slot>

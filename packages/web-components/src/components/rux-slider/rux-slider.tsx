@@ -19,6 +19,8 @@ let id = 0
  * @slot label - The slider label
  * @part form-field - The form-field wrapper container
  * @part label - The input label when `label` prop is set
+ * @part input - The native input element used by rux-slider
+ * @part form-field-message - the error/help text container
  */
 @Component({
     tag: 'rux-slider',
@@ -230,6 +232,7 @@ export class RuxSlider implements FormFieldInterface {
                             aria-label="slider"
                             aria-disabled={disabled ? 'true' : 'false'}
                             onBlur={_onBlur}
+                            part="input"
                         ></input>
                     </div>
                 </div>
