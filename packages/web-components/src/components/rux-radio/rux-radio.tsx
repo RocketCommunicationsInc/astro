@@ -4,6 +4,8 @@ let id = 0
 
 /**
  * @slot (default) - The radio label
+ * @part form-field - the form field of the radio
+ * @part label - the label of the radio
  */
 
 @Component({
