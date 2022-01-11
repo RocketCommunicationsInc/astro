@@ -96,7 +96,7 @@ export class RuxRadio {
         } = this
 
         return (
-            <div class="rux-form-field">
+            <div class="rux-form-field" part="form-field">
                 <div class="rux-radio">
                     <input
                         type="radio"
@@ -108,7 +108,7 @@ export class RuxRadio {
                         onChange={_onChange}
                         onBlur={_onBlur}
                     />
-                    <label htmlFor={radioId}>
+                    <label htmlFor={radioId} part="label">
                         <slot>{label}</slot>
                     </label>
                 </div>
