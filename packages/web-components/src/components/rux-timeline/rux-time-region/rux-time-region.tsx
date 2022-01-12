@@ -52,8 +52,12 @@ export class RuxTimeRegion {
                         gridColumn: `time-${this.start} / time-${this.end}`,
                     }}
                 >
-                    {this.track}
-                    <slot></slot>
+                    <div class="rux-time-region__content">
+                        <slot></slot>
+                    </div>
+                    <div class="rux-time-region__datetime">
+                        {this.start} - {this.end}
+                    </div>
                 </div>
             </Host>
         )

@@ -4,6 +4,29 @@
 
 .rux-time-region {
     background: var(--color-background);
-    border: 2px solid red;
-    padding: 1rem;
+    border: 1px solid var(--color-status-normal-fill);
+    padding: 0.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.rux-time-region__content {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-body-2-font-family);
+    font-size: var(--font-body-2-font-size);
+    font-weight: var(--font-body-2-font-weight);
+    letter-spacing: var(--font-body-2-letter-spacing);
+    ::slotted(rux-status) {
+        margin-right: 0.25rem;
+    }
+}
+
+.rux-time-region__datetime {
+    margin-top: 0.25rem;
+    text-align: right;
+    font-family: var(--font-body-3-font-family);
+    font-size: var(--font-body-3-font-size);
+    font-weight: var(--font-body-3-font-weight);
+    letter-spacing: var(--font-body-3-letter-spacing);
 }
