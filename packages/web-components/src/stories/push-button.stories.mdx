@@ -23,29 +23,19 @@ Push Buttons are a variant of the toggle button which incorporate label and acti
 
 export const PushButton = (args) => {
     return html`
-        <div style="padding: 10%; display: flex; justify-content: center;">
-            <rux-push-button
-                .size=${args.size}
-                .icon="${args.icon}"
-                ?icon-only="${args.iconOnly}"
-                .disabled=${args.disabled}
-                .checked=${args.checked}
-                .label=${args.label}
-                .value=${args.value}
-            ></rux-push-button>
-        </div>
+<div style="padding: 10%; display: flex; justify-content: center;">
+    <rux-push-button
+        label=${args.label}
+    ></rux-push-button>
+</div>
     `
 }
 
 <Canvas>
     <Story
-        parameters={{
-            docs: {
-                source: {
-                    code: '<rux-push-button>Push Button</rux-push-button>',
-                },
-            },
-        }}
+    args={{
+        label: "Push Button",    }
+    }
         name="Push Button"
     >
         {PushButton.bind()}
@@ -58,65 +48,65 @@ export const PushButton = (args) => {
 
 export const AllVariants = (args) => {
     return html`
-        <style>
-            .button-list {
-                list-style-type: none;
-                margin: 0 1rem 0 0;
-                padding: 0;
-                display: flex;
-                flex-flow: column;
-            }
-            .button-list li {
-                margin: 0 1rem 1rem 0;
-                display: flex;
-            }
-            .button-list li rux-button:not(:last-child) {
-                margin-right: 1rem;
-            }
-        </style>
-        <div
-            style="padding: 8vh 2vw; display: flex; flex-flow: row wrap; justify-content: space-evenly;"
-        >
-            <ul class="button-list">
-                <li>
-                    <rux-push-button
-                        label="Push button small"
-                        size="small"
-                    ></rux-push-button>
-                </li>
-                <li>
-                    <rux-push-button
-                        label="Push button medium"
-                    ></rux-push-button>
-                </li>
-                <li>
-                    <rux-push-button
-                        label="Push button large"
-                        size="large"
-                    ></rux-push-button>
-                </li>
-                <li>
-                    <rux-push-button
-                        checked
-                        label="Push button checked"
-                    ></rux-push-button>
-                </li>
-                <li>
-                    <rux-push-button
-                        disabled
-                        label="Push button disabled"
-                    ></rux-push-button>
-                </li>
-                <li>
-                    <rux-push-button
-                        checked
-                        disabled
-                        label="Push button disabled checked"
-                    ></rux-push-button>
-                </li>
-            </ul>
-        </div>
-    `
+<style>
+    .button-list {
+        list-style-type: none;
+        margin: 0 1rem 0 0;
+        padding: 0;
+        display: flex;
+        flex-flow: column;
+    }
+    .button-list li {
+        margin: 0 1rem 1rem 0;
+        display: flex;
+    }
+    .button-list li rux-button:not(:last-child) {
+        margin-right: 1rem;
+    }
+</style>
+<div
+    style="padding: 8vh 2vw; display: flex; flex-flow: row wrap; justify-content: space-evenly;"
+>
+    <ul class="button-list">
+        <li>
+            <rux-push-button
+                label="Push button small"
+                size="small"
+            ></rux-push-button>
+        </li>
+        <li>
+            <rux-push-button
+                label="Push button medium"
+            ></rux-push-button>
+        </li>
+        <li>
+            <rux-push-button
+                label="Push button large"
+                size="large"
+            ></rux-push-button>
+        </li>
+        <li>
+            <rux-push-button
+                checked
+                label="Push button checked"
+            ></rux-push-button>
+        </li>
+        <li>
+            <rux-push-button
+                disabled
+                label="Push button disabled"
+            ></rux-push-button>
+        </li>
+        <li>
+            <rux-push-button
+                checked
+                disabled
+                label="Push button disabled checked"
+            ></rux-push-button>
+        </li>
+    </ul>
+</div>
+`
 }
 
 <Canvas>
