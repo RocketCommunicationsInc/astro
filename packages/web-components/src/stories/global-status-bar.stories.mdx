@@ -20,14 +20,11 @@ export const Default = (args) => {
     return html`
         <div style="display: flex; justify-content: center;">
             <rux-global-status-bar
-                .includeIcon="${args.includeIcon}"
-                .appState="${args.appState}"
-                .appStateColor="${args.appStateColor}"
-                .username="${args.username}"
-                .appDomain="${args.appDomain}"
-                .appName="${args.appName}"
-                .appVersion="${args.appVersion}"
-                .menuIcon="${args.menuIcon}"
+                include-icon="${args.includeIcon}"
+                app-domain="${args.appDomain}"
+                app-name="${args.appName}"
+                app-version="${args.appVersion}"
+                menu-icon="${args.menuIcon}"
             >
             </rux-global-status-bar>
         </div>
@@ -61,14 +58,14 @@ export const GlobalStatusBarWithAppState = (args) => {
     return html`
         <div style="display: flex; justify-content: center;">
             <rux-global-status-bar
-                .includeIcon="${args.includeIcon}"
-                .appState="${args.appState}"
-                .appStateColor="${args.appStateColor}"
-                .username="${args.username}"
-                .appDomain="${args.appDomain}"
-                .appName="${args.appName}"
-                .appVersion="${args.appVersion}"
-                .menuIcon="${args.menuIcon}"
+                include-icon="${args.includeIcon}"
+                app-state="${args.appState}"
+                app-state-color="${args.appStateColor}"
+                username="${args.username}"
+                app-domain="${args.appDomain}"
+                app-name="${args.appName}"
+                app-version="${args.appVersion}"
+                menu-icon="${args.menuIcon}"
             >
             </rux-global-status-bar>
         </div>
@@ -99,14 +96,14 @@ export const GlobalStatusBarWithSlotContent = (args) => {
     return html`
         <div style="display: flex; justify-content: center;">
             <rux-global-status-bar
-                .includeIcon="${args.includeIcon}"
-                .appState="${args.appState}"
-                .appStateColor="${args.appStateColor}"
-                .username="${args.username}"
-                .appDomain="${args.appDomain}"
-                .appName="${args.appName}"
-                .appVersion="${args.appVersion}"
-                .menuIcon="${args.menuIcon}"
+                include-icon="${args.includeIcon}"
+                app-state="${args.appState}"
+                app-state-color="${args.appStateColor}"
+                username="${args.username}"
+                app-domain="${args.appDomain}"
+                app-name="${args.appName}"
+                app-version="${args.appVersion}"
+                menu-icon="${args.menuIcon}"
             >
                 <rux-clock></rux-clock>
                 <rux-button slot="right-side">Emergency shut off</rux-button>
@@ -138,14 +135,14 @@ export const GlobalStatusBarWithSlotContent = (args) => {
 export const GlobalStatusBarWithTabs = (args) => {
     return html`
         <rux-global-status-bar
-            .includeIcon="${args.includeIcon}"
-            .appState="${args.appState}"
-            .appStateColor="${args.appStateColor}"
-            .username="${args.username}"
-            .appDomain="${args.appDomain}"
-            .appName="${args.appName}"
-            .appVersion="${args.appVersion}"
-            .menuIcon="${args.menuIcon}"
+            include-icon="${args.includeIcon}"
+            app-state="${args.appState}"
+            app-state-color="${args.appStateColor}"
+            username="${args.username}"
+            app-domain="${args.appDomain}"
+            app-name="${args.appName}"
+            app-version="${args.appVersion}"
+            menu-icon="${args.menuIcon}"
         >
             <rux-tabs id="tab-set-id-1">
                 <rux-tab id="tab-id-1">Tab 1</rux-tab>
