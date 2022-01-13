@@ -18,17 +18,17 @@ The Global Status Bar is a full-width view across the top of an application — 
 
 export const Default = (args) => {
     return html`
-        <div style="display: flex; justify-content: center;">
-            <rux-global-status-bar
-                include-icon="${args.includeIcon}"
-                app-domain="${args.appDomain}"
-                app-name="${args.appName}"
-                app-version="${args.appVersion}"
-                menu-icon="${args.menuIcon}"
-            >
-            </rux-global-status-bar>
-        </div>
-    `
+<div style="display: flex; justify-content: center;">
+    <rux-global-status-bar
+        include-icon="${args.includeIcon}"
+        app-domain="${args.appDomain}"
+        app-name="${args.appName}"
+        app-version="${args.appVersion}"
+        menu-icon="${args.menuIcon}"
+    >
+    </rux-global-status-bar>
+</div>
+`
 }
 
 <Canvas>
@@ -56,20 +56,20 @@ export const Default = (args) => {
 
 export const GlobalStatusBarWithAppState = (args) => {
     return html`
-        <div style="display: flex; justify-content: center;">
-            <rux-global-status-bar
-                include-icon="${args.includeIcon}"
-                app-state="${args.appState}"
-                app-state-color="${args.appStateColor}"
-                username="${args.username}"
-                app-domain="${args.appDomain}"
-                app-name="${args.appName}"
-                app-version="${args.appVersion}"
-                menu-icon="${args.menuIcon}"
-            >
-            </rux-global-status-bar>
-        </div>
-    `
+<div style="display: flex; justify-content: center;">
+    <rux-global-status-bar
+        include-icon="${args.includeIcon}"
+        app-state="${args.appState}"
+        app-state-color="${args.appStateColor}"
+        username="${args.username}"
+        app-domain="${args.appDomain}"
+        app-name="${args.appName}"
+        app-version="${args.appVersion}"
+        menu-icon="${args.menuIcon}"
+    >
+    </rux-global-status-bar>
+</div>
+`
 }
 
 <Canvas>
@@ -94,22 +94,22 @@ export const GlobalStatusBarWithAppState = (args) => {
 
 export const GlobalStatusBarWithSlotContent = (args) => {
     return html`
-        <div style="display: flex; justify-content: center;">
-            <rux-global-status-bar
-                include-icon="${args.includeIcon}"
-                app-state="${args.appState}"
-                app-state-color="${args.appStateColor}"
-                username="${args.username}"
-                app-domain="${args.appDomain}"
-                app-name="${args.appName}"
-                app-version="${args.appVersion}"
-                menu-icon="${args.menuIcon}"
-            >
-                <rux-clock></rux-clock>
-                <rux-button slot="right-side">Emergency shut off</rux-button>
-            </rux-global-status-bar>
-        </div>
-    `
+<div style="display: flex; justify-content: center;">
+    <rux-global-status-bar
+        include-icon="${args.includeIcon}"
+        app-state="${args.appState}"
+        app-state-color="${args.appStateColor}"
+        username="${args.username}"
+        app-domain="${args.appDomain}"
+        app-name="${args.appName}"
+        app-version="${args.appVersion}"
+        menu-icon="${args.menuIcon}"
+    >
+        <rux-clock></rux-clock>
+        <rux-button slot="right-side">Emergency shut off</rux-button>
+    </rux-global-status-bar>
+</div>
+`
 }
 
 <Canvas>
