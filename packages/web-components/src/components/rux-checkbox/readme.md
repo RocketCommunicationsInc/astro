@@ -63,11 +63,11 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
 
 ## Shadow Parts
 
-| Part                   | Description                      |
-| ---------------------- | -------------------------------- |
-| `"form-field"`         | the form field wrapper container |
-| `"form-field-message"` | The help text container          |
-| `"label"`              | the label of rux-checkbox        |
+| Part           | Description                      |
+| -------------- | -------------------------------- |
+| `"form-field"` | the form field wrapper container |
+| `"help-text"`  | The help text element            |
+| `"label"`      | the label of rux-checkbox        |
 
 ## CSS Custom Properties
 

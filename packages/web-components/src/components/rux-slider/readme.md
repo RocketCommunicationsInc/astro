@@ -83,12 +83,13 @@ Pass properties via attributes similar to the native [HTML Input Range](https://
 
 ## Shadow Parts
 
-| Part                   | Description                                 |
-| ---------------------- | ------------------------------------------- |
-| `"form-field"`         | The form-field wrapper container            |
-| `"form-field-message"` | the error/help text container               |
-| `"input"`              | The native input element used by rux-slider |
-| `"label"`              | The input label when `label` prop is set    |
+| Part           | Description                              |
+| -------------- | ---------------------------------------- |
+| `"error-text"` | The error text element                   |
+| `"form-field"` | The form-field wrapper container         |
+| `"help-text"`  | The help text element                    |
+| `"input"`      | The input element                        |
+| `"label"`      | The input label when `label` prop is set |
 
 ## CSS Custom Properties
 

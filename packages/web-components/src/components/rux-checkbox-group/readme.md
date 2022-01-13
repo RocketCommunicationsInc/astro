@@ -20,12 +20,13 @@
 
 ## Shadow Parts
 
-| Part                   | Description                              |
-| ---------------------- | ---------------------------------------- |
-| `"container"`          | The container div of checkbox elements   |
-| `"form-field"`         | The form-field wrapper container         |
-| `"form-field-message"` | The error/help text container            |
-| `"label"`              | The input label when `label` prop is set |
+| Part           | Description                              |
+| -------------- | ---------------------------------------- |
+| `"container"`  | The container div of checkbox elements   |
+| `"error-text"` | The error text element                   |
+| `"form-field"` | The form-field wrapper container         |
+| `"help-text"`  | The help text element                    |
+| `"label"`      | The input label when `label` prop is set |
 
 ## CSS Custom Properties
 

@@ -6,28 +6,34 @@ export interface FormFieldMessageInterface {
 }
 
 /**
- * @part form-field-message - the container for the help or error text
+ * @part error-text - The error text element
+ * @part help-text - The help text element
  */
 
 const FormFieldMessage = (props: FormFieldMessageInterface, children: any) => {
     const { helpText, errorText } = props
 
+    function shouldShowHelpText() {
+        return helpText && !errorText
+    }
+
+    function shouldShowErrorText() {
+        return errorText ? true : false
+    }
+
     return (
-        (helpText || errorText) && (
-            <div
-                class={{
-                    'rux-error-text': !!errorText,
-                    'rux-help-text': !!helpText,
-                }}
-                part="form-field-message"
-            >
+        (shouldShowHelpText() ? (
+            <div class="rux-help-text" part="help-text">
                 {children}
-
-                {helpText && !errorText && helpText}
-
-                {errorText && errorText}
+                {helpText}
             </div>
-        )
+        ) : null) ||
+        (shouldShowErrorText() ? (
+            <div class="rux-error-text" part="error-text">
+                {children}
+                {errorText}
+            </div>
+        ) : null)
     )
 }
 

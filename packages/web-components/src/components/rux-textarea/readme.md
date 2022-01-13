@@ -36,12 +36,13 @@
 
 ## Shadow Parts
 
-| Part                   | Description                                 |
-| ---------------------- | ------------------------------------------- |
-| `"form-field"`         | The form-field wrapper container            |
-| `"form-field-message"` | The error/help text container               |
-| `"label"`              | The input label when `label` prop is set    |
-| `"textarea"`           | The native textarea element in rux-textarea |
+| Part           | Description                              |
+| -------------- | ---------------------------------------- |
+| `"error-text"` | The error text element                   |
+| `"form-field"` | The form-field wrapper container         |
+| `"help-text"`  | The help text element                    |
+| `"label"`      | The input label when `label` prop is set |
+| `"textarea"`   | The textarea element                     |
 
 ## CSS Custom Properties
 

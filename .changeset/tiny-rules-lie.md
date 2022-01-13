@@ -14,7 +14,7 @@
     Added label shadow part to rux-segmented-button
     Added switch shadow part to rux-switch. The pseudo selectors ::before select the track, ::after selects the button.
     Added input, form-field shadow parts to rux-input
-    Added form-field-message shadow part to FormFieldMessage to allow styling of help/error text.
+    Added error-text and help-text parts to FormFieldMessage to allow styling of help/error text.
     Added form-field and label shadow parts to rux-checkbox.
     Added form-field and label shadow parts to rux-radio.
     Added label and select shadow parts to rux-select.
