@@ -25,20 +25,9 @@ import { html, render } from 'lit-html'
 
 export const Default = (args) => {
     return html`
-        <rux-textarea
-            .label="${args.label}"
-            .disabled="${args.disabled}"
-            .errorText="${args.errorText}"
-            .invalid="${args.invalid}"
-            .helpText="${args.helpText}"
-            .min-length="${args.minLength}"
-            .maxLength="${args.maxLength}"
-            .rows="${args.rows}"
-            .name="${args.name}"
-            .placeholder="${args.placeholder}"
-            ?required="${args.required}"
-            .value="${args.value}"
-        ></rux-textarea>
+<rux-textarea
+    label="${args.label}"
+></rux-textarea>
     `
 }
 
@@ -63,20 +52,10 @@ export const Default = (args) => {
 
 export const Disabled = (args) => {
     return html`
-        <rux-textarea
-            .label="${args.label}"
-            .disabled="${args.disabled}"
-            .errorText="${args.errorText}"
-            .invalid="${args.invalid}"
-            .helpText="${args.helpText}"
-            .minLength="${args.minLength}"
-            .maxLength="${args.maxLength}"
-            .rows="${args.rows}"
-            .name="${args.name}"
-            .placeholder="${args.placeholder}"
-            ?required="${args.required}"
-            .value="${args.value}"
-        ></rux-textarea>
+<rux-textarea
+    label="${args.label}"
+    disabled="${args.disabled}"
+></rux-textarea>
     `
 }
 
@@ -96,20 +75,11 @@ export const Disabled = (args) => {
 
 export const HelpText = (args) => {
     return html`
-        <rux-textarea
-            .label="${args.label}"
-            .disabled="${args.disabled}"
-            .errorText="${args.errorText}"
-            .invalid="${args.invalid}"
-            .helpText="${args.helpText}"
-            .minLength="${args.minLength}"
-            .maxLength="${args.maxLength}"
-            .rows="${args.rows}"
-            .name="${args.name}"
-            .placeholder="${args.placeholder}"
-            ?required="${args.required}"
-            .value="${args.value}"
-        ></rux-textarea>
+<rux-textarea
+    label="${args.label}"
+    help-text="${args.helpText}"
+    type="${args.type}"
+></rux-textarea>
     `
 }
 
@@ -130,20 +100,11 @@ export const HelpText = (args) => {
 
 export const Invalid = (args) => {
     return html`
-        <rux-textarea
-            .label="${args.label}"
-            .disabled="${args.disabled}"
-            .errorText="${args.errorText}"
-            .invalid="${args.invalid}"
-            .helpText="${args.helpText}"
-            .minLength="${args.minLength}"
-            .maxLength="${args.maxLength}"
-            .rows="${args.rows}"
-            .name="${args.name}"
-            .placeholder="${args.placeholder}"
-            ?required="${args.required}"
-            .value="${args.value}"
-        ></rux-textarea>
+<rux-textarea
+    label="${args.label}"
+    error-text="${args.errorText}"
+    invalid="${args.invalid}"
+></rux-textarea>
     `
 }
 
@@ -164,20 +125,10 @@ export const Invalid = (args) => {
 
 export const Placeholder = (args) => {
     return html`
-        <rux-textarea
-            .label="${args.label}"
-            .disabled="${args.disabled}"
-            .errorText="${args.errorText}"
-            .invalid="${args.invalid}"
-            .helpText="${args.helpText}"
-            .minLength="${args.minLength}"
-            .maxLength="${args.maxLength}"
-            .rows="${args.rows}"
-            .name="${args.name}"
-            .placeholder="${args.placeholder}"
-            ?required="${args.required}"
-            .value="${args.value}"
-        ></rux-textarea>
+<rux-textarea
+    label="${args.label}"
+    placeholder="${args.placeholder}"
+></rux-textarea>
     `
 }
 
@@ -210,20 +161,20 @@ rux-textarea::part(label) {
 
 export const HorizontalLabel = (args) => {
     return html`
-        <style>
-            #left-example::part(form-field) {
-                flex-direction: row;
-            }
-            #left-example::part(label) {
-                margin-right: var(--spacing-input-label-left);
-            }
-        </style>
-        <rux-textarea
-            id="left-example"
-            label="Label"
-            type="text"
-            placeholder="Text input"
-        ></rux-textarea>
+<style>
+    #left-example::part(form-field) {
+        flex-direction: row;
+    }
+    #left-example::part(label) {
+        margin-right: var(--spacing-input-label-left);
+    }
+</style>
+<rux-textarea
+    id="left-example"
+    label="Label"
+    type="text"
+    placeholder="Text input"
+></rux-textarea>
     `
 }
 
