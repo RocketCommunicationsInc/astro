@@ -17,8 +17,11 @@ let id = 0
 
 /**
  * @slot label - The textarea label
+ * @part error-text - The error text element
  * @part form-field - The form-field wrapper container
+ * @part help-text - The help text element
  * @part label - The input label when `label` prop is set
+ * @part textarea - The textarea element
  */
 @Component({
     tag: 'rux-textarea',
@@ -196,6 +199,7 @@ export class RuxTextarea implements FormFieldInterface {
                         onChange={this._onChange}
                         onInput={this._onInput}
                         onBlur={this._onBlur}
+                        part="textarea"
                     ></textarea>
                 </div>
                 <FormFieldMessage

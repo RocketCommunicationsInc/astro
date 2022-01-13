@@ -118,9 +118,11 @@ Pass properties as attributes of the Astro Monitoring Progress Icon custom eleme
 
 | Part                    | Description                        |
 | ----------------------- | ---------------------------------- |
+| `"container"`           | the components container           |
 | `"monitoring-badge"`    | The component's notification badge |
 | `"monitoring-label"`    | The component's label              |
 | `"monitoring-sublabel"` | The component's sublabel           |
+| `"status-icon"`         | the components status symbol       |
 
 
 ## Dependencies

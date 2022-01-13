@@ -3,14 +3,14 @@
 exports[`rux-select renders 1`] = `
 <rux-select label="test">
   <mock:shadow-root>
-    <label aria-hidden="false">
+    <label aria-hidden="false" part="label">
       <span>
         <slot name="label">
           test
         </slot>
       </span>
     </label>
-    <select class="rux-select"></select>
+    <select class="rux-select" part="select"></select>
     <div aria-hidden="true" class="hidden">
       <slot></slot>
     </div>
@@ -24,12 +24,12 @@ exports[`rux-select renders 1`] = `
 exports[`rux-select renders option groups 1`] = `
 <rux-select>
   <mock:shadow-root>
-    <label aria-hidden="true">
+    <label aria-hidden="true" part="label">
       <span class="hidden">
         <slot name="label"></slot>
       </span>
     </label>
-    <select class="rux-select"></select>
+    <select class="rux-select" part="select"></select>
     <div aria-hidden="true" class="hidden">
       <slot></slot>
     </div>

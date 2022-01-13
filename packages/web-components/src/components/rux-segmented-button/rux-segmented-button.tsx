@@ -9,6 +9,9 @@ import {
 } from '@stencil/core'
 import { SegmentedButton } from './rux-segmented-button.model'
 
+/**
+ * @part label - the label of rux-segmented-button
+ */
 @Component({
     tag: 'rux-segmented-button',
     styleUrl: 'rux-segmented-button.scss',
@@ -110,7 +113,7 @@ export class RuxSegmentedButton {
                             data-label={item.label}
                             onChange={this._handleChange}
                         />
-                        <label htmlFor={this._slugify(item.label)}>
+                        <label htmlFor={this._slugify(item.label)} part="label">
                             {item.label}
                         </label>
                     </li>

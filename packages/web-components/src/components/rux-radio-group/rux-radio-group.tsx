@@ -15,7 +15,9 @@ import { hasSlot, renderHiddenInput } from '../../utils/utils'
 
 /**
  * @slot label - The radio group label
+ * @part error-text - The error text element
  * @part form-field - The form-field wrapper container
+ * @part help-text - The help text element
  * @part label - The input label when `label` prop is set
  * @part radiogroup - The container of radios
  */

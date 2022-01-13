@@ -1,7 +1,7 @@
 import { Component, Host, Prop, h } from '@stencil/core'
 
 /**
- * @part icon - the icon container in rux-icon
+ * @part icon - the icon in rux-icon
  */
 @Component({
     tag: 'rux-icon',
@@ -44,8 +44,13 @@ export class RuxIcon {
         const SVG = `rux-icon-${this.icon}`
 
         return (
-            <Host part="icon">
-                <SVG class="icon" size={this.size} title={this.iconLabel}></SVG>
+            <Host>
+                <SVG
+                    class="icon"
+                    part="icon"
+                    size={this.size}
+                    title={this.iconLabel}
+                ></SVG>
             </Host>
         )
     }

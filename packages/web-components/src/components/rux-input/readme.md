@@ -42,8 +42,11 @@
 
 | Part           | Description                                         |
 | -------------- | --------------------------------------------------- |
+| `"error-text"` | The error text element                              |
 | `"form-field"` | The form-field wrapper container                    |
+| `"help-text"`  | The help text element                               |
 | `"icon"`       | The icon displayed when toggle-password prop is set |
+| `"input"`      | The input element                                   |
 | `"label"`      | The input label when `label` prop is set            |
 
 ## CSS Custom Properties

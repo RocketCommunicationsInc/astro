@@ -5,8 +5,8 @@ exports[`rux-switch renders 1`] = `
   <mock:shadow-root>
     <div class="rux-switch">
       <input aria-checked="false" class="rux-switch__input" id="rux-switch-3" role="switch" type="checkbox" value="">
-      <label class="rux-switch__button" htmlfor="rux-switch-3">
-        <span class="hidden rux-switch__label">
+      <label class="rux-switch__button" htmlfor="rux-switch-3" part="switch">
+        <span class="hidden rux-switch__label" part="label">
           <slot name="label"></slot>
         </span>
       </label>
@@ -20,8 +20,8 @@ exports[`rux-switch renders label prop 1`] = `
   <mock:shadow-root>
     <div class="rux-switch">
       <input aria-checked="false" class="rux-switch__input" id="rux-switch-4" role="switch" type="checkbox" value="">
-      <label class="rux-switch__button" htmlfor="rux-switch-4">
-        <span class="rux-switch__label">
+      <label class="rux-switch__button" htmlfor="rux-switch-4" part="switch">
+        <span class="rux-switch__label" part="label">
           <slot name="label">
             hello
           </slot>
@@ -37,8 +37,8 @@ exports[`rux-switch renders label slot 1`] = `
   <mock:shadow-root>
     <div class="rux-switch">
       <input aria-checked="false" class="rux-switch__input" id="rux-switch-5" role="switch" type="checkbox" value="">
-      <label class="rux-switch__button" htmlfor="rux-switch-5">
-        <span class="rux-switch__label">
+      <label class="rux-switch__button" htmlfor="rux-switch-5" part="switch">
+        <span class="rux-switch__label" part="label">
           <slot name="label"></slot>
         </span>
       </label>

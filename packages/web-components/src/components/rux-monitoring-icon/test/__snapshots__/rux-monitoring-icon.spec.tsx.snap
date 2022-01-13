@@ -3,12 +3,12 @@
 exports[`rux-monitoring-icon renders 1`] = `
 <rux-monitoring-icon icon="altitude" label="Altitude for satellite X" notifications="10210" status="standby" sublabel="100000m">
   <mock:shadow-root>
-    <div class="rux-advanced-status" id="rux-advanced-status__icon" title="10210 Altitude for satellite X 100000m">
+    <div class="rux-advanced-status" id="rux-advanced-status__icon" part="container" title="10210 Altitude for satellite X 100000m">
       <div class="rux-advanced-status__icon-group">
         <div class="rux-advanced-status__status">
-          <rux-status status="standby"></rux-status>
+          <rux-status part="status-icon" status="standby"></rux-status>
         </div>
-        <rux-icon class="rux-status--standby" icon="altitude" size="2.5rem"></rux-icon>
+        <rux-icon class="rux-status--standby" exportparts="icon" icon="altitude" size="2.5rem"></rux-icon>
         <div class="rux-advanced-status__badge" part="monitoring-badge">
           10K
         </div>
