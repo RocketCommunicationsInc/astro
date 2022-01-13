@@ -20,7 +20,7 @@ exports[`rux-global-status-bar renders with icon and app meta 1`] = `
   <mock:shadow-root>
     <header part="container">
       <slot name="left-side">
-        <rux-icon class="shifted-up" icon="apps" size="small"></rux-icon>
+        <rux-icon class="shifted-up" exportparts="icon" icon="apps" size="small"></rux-icon>
       </slot>
       <slot name="app-meta">
         <div class="app-meta">
@@ -59,7 +59,7 @@ exports[`rux-global-status-bar renders with icon, app meta and slotted content 1
   <mock:shadow-root>
     <header part="container">
       <slot name="left-side">
-        <rux-icon class="shifted-up" icon="apps" size="small"></rux-icon>
+        <rux-icon class="shifted-up" exportparts="icon" icon="apps" size="small"></rux-icon>
       </slot>
       <slot name="app-meta">
         <div class="app-meta">

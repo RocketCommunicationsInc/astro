@@ -82,6 +82,12 @@ The Astro UXDS Notification Banner hides from view using absolute positioning in
 | ----------- | -------------------------------------------- | ---------------------- |
 | `ruxclosed` | Fires when the notification banner is closed | `CustomEvent<boolean>` |
 
+## Shadow Parts
+
+| Part     | Description          |
+| -------- | -------------------- |
+| `"icon"` | the icon of rux-icon |
+
 ## CSS Custom Properties
 
 | Name                        | Description                 |

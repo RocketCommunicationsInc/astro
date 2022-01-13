@@ -4,6 +4,8 @@ let id = 0
 
 /**
  * @slot (default) - The radio label
+ * @part form-field - the form field of the radio
+ * @part label - the label of the radio
  */
 
 @Component({
@@ -96,7 +98,7 @@ export class RuxRadio {
         } = this
 
         return (
-            <div class="rux-form-field">
+            <div class="rux-form-field" part="form-field">
                 <div class="rux-radio">
                     <input
                         type="radio"
@@ -108,7 +110,7 @@ export class RuxRadio {
                         onChange={_onChange}
                         onBlur={_onBlur}
                     />
-                    <label htmlFor={radioId}>
+                    <label htmlFor={radioId} part="label">
                         <slot>{label}</slot>
                     </label>
                 </div>

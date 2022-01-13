@@ -10,6 +10,9 @@ import {
 } from '@stencil/core'
 import { Status } from '../../common/commonTypes.module'
 
+/**
+ * @part icon - the icon of rux-icon
+ */
 @Component({
     tag: 'rux-notification',
     styleUrl: 'rux-notification.scss',
@@ -111,6 +114,7 @@ export class RuxNotification {
                     onClick={() => this._onClick()}
                     icon="close"
                     size="36px"
+                    exportparts="icon"
                 ></rux-icon>
             </Host>
         )

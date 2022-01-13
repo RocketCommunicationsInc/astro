@@ -2,7 +2,8 @@ import { Prop, Element, Component, h, Host } from '@stencil/core'
 import { hasShadowDom } from '../../utils/utils'
 
 /**
- * @part container - the components container.
+ * @part container - the components native button element.
+ * @part icon - the optional rux-icon
  */
 @Component({
     tag: 'rux-button',
@@ -94,6 +95,7 @@ export class RuxButton {
                         <rux-icon
                             size="extra-small"
                             icon={icon}
+                            exportparts="icon"
                             color={secondary ? 'primary' : 'dark'}
                         ></rux-icon>
                     ) : null}

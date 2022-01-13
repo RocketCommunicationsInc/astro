@@ -18,6 +18,7 @@ import { hasSlot, renderHiddenInput } from '../../utils/utils'
  * @part form-field - The form-field wrapper container
  * @part label - The input label when `label` prop is set
  * @part radiogroup - The container of radios
+ * @part form-field-message - The error/help text container.
  */
 @Component({
     tag: 'rux-radio-group',

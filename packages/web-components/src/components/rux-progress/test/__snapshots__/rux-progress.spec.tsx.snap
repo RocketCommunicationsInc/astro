@@ -3,7 +3,7 @@
 exports[`rux-progress only renders the value if max is set to "" 1`] = `
 <rux-progress max="" value="20">
   <mock:shadow-root>
-    <progress class="rux-progress" max="NaN" value="20"></progress><output class="rux-progress__value">20</output>
+    <progress class="rux-progress" max="NaN" part="progress" value="20"></progress><output class="rux-progress__value" part="output">20</output>
     <slot></slot>
   </mock:shadow-root>
 </rux-progress>
@@ -21,7 +21,7 @@ exports[`rux-progress renders 1`] = `
 exports[`rux-progress renders a progress bar of 0/100 if value provided is 0 1`] = `
 <rux-progress value="0">
   <mock:shadow-root>
-    <progress class="rux-progress" max="100" value="0"></progress><output class="rux-progress__value">0%</output>
+    <progress class="rux-progress" max="100" part="progress" value="0"></progress><output class="rux-progress__value" part="output">0%</output>
     <slot></slot>
   </mock:shadow-root>
 </rux-progress>

@@ -8,6 +8,7 @@ import { hasSlot } from '../../utils/utils'
  * @part container - The container div of checkbox elements
  * @part form-field - The form-field wrapper container
  * @part label - The input label when `label` prop is set
+ * @part form-field-message - The error/help text container
  */
 @Component({
     tag: 'rux-checkbox-group',

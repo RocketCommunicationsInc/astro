@@ -1,5 +1,9 @@
 import { Component, Host, h, Prop, Watch } from '@stencil/core'
 
+/**
+ * @part progress - the native progress element
+ * @part output - the native output element
+ */
 @Component({
     tag: 'rux-progress',
     styleUrl: 'rux-progress.scss',
@@ -64,10 +68,12 @@ export class RuxProgress {
                             class="rux-progress"
                             value={this.value}
                             max={this.max}
+                            part="progress"
                         ></progress>,
                         <output
                             class="rux-progress__value"
                             hidden={this.hideLabel}
+                            part="output"
                         >
                             {this._getProgressAsString()}
                         </output>,

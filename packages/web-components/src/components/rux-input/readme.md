@@ -44,6 +44,7 @@
 | -------------- | --------------------------------------------------- |
 | `"form-field"` | The form-field wrapper container                    |
 | `"icon"`       | The icon displayed when toggle-password prop is set |
+| `"input"`      | the shadow dom input of rux-input                   |
 | `"label"`      | The input label when `label` prop is set            |
 
 ## CSS Custom Properties

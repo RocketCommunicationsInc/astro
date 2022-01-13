@@ -18,6 +18,9 @@ import { hasSlot, renderHiddenInput } from '../../utils/utils'
 /**
  * @slot (default) - The select options
  * @slot label - The select label
+ * @part label - The select label
+ * @part select - the native select element used by rux-select
+ * @part form-field-message - the container for the error/help text
  */
 @Component({
     tag: 'rux-select',
@@ -248,6 +251,7 @@ export class RuxSelect implements FormFieldInterface {
                     id={labelId}
                     htmlFor={inputId}
                     aria-hidden={this.hasLabel ? 'false' : 'true'}
+                    part="label"
                 >
                     <span class={{ hidden: !this.hasLabel }}>
                         <slot
@@ -269,6 +273,7 @@ export class RuxSelect implements FormFieldInterface {
                     name={name}
                     onChange={(e) => this._onChange(e)}
                     onBlur={this._onBlur}
+                    part="select"
                 ></select>
                 <div
                     aria-hidden="true"

@@ -9,7 +9,7 @@ exports[`rux-input renders 1`] = `
           <slot name="label"></slot>
         </span>
       </label>
-      <input aria-invalid="false" class="rux-input rux-input--medium" id="rux-input-1" type="text" value="">
+      <input aria-invalid="false" class="rux-input rux-input--medium" id="rux-input-1" part="input" type="text" value="">
     </div>
   </mock:shadow-root>
   <input class="aux-input" type="hidden" value="">
@@ -27,7 +27,7 @@ exports[`rux-input renders label prop 1`] = `
           </slot>
         </span>
       </label>
-      <input aria-invalid="false" class="rux-input rux-input--medium" id="rux-input-2" type="text" value="">
+      <input aria-invalid="false" class="rux-input rux-input--medium" id="rux-input-2" part="input" type="text" value="">
     </div>
   </mock:shadow-root>
   <input class="aux-input" type="hidden" value="">
@@ -43,7 +43,7 @@ exports[`rux-input renders label slot 1`] = `
           <slot name="label"></slot>
         </span>
       </label>
-      <input aria-invalid="false" class="rux-input rux-input--medium" id="rux-input-3" type="text" value="">
+      <input aria-invalid="false" class="rux-input rux-input--medium" id="rux-input-3" part="input" type="text" value="">
     </div>
   </mock:shadow-root>
   <div slot="label">
@@ -62,9 +62,9 @@ exports[`rux-input renders rux-icon if type is password 1`] = `
           <slot name="label"></slot>
         </span>
       </label>
-      <input aria-invalid="false" autocomplete="off" class="rux-input rux-input--medium" id="rux-input-4" type="password" value="">
+      <input aria-invalid="false" autocomplete="off" class="rux-input rux-input--medium" id="rux-input-4" part="input" type="password" value="">
       <div class="icon-container show-password">
-        <rux-icon icon="visibility" part="icon" size="extra-small"></rux-icon>
+        <rux-icon exportparts="icon" icon="visibility" size="extra-small"></rux-icon>
       </div>
     </div>
   </mock:shadow-root>

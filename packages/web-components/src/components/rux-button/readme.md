@@ -134,9 +134,10 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 
 ## Shadow Parts
 
-| Part          | Description               |
-| ------------- | ------------------------- |
-| `"container"` | the components container. |
+| Part          | Description                           |
+| ------------- | ------------------------------------- |
+| `"container"` | the components native button element. |
+| `"icon"`      | the optional rux-icon                 |
 
 ## CSS Custom Properties
 
