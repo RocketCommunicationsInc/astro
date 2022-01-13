@@ -17,10 +17,12 @@ let id = 0
 
 /**
  * @slot label - The input label
+ * @part error-text - The error text element
  * @part form-field - The form-field wrapper container
- * @part label - The input label when `label` prop is set
- * @part input - the shadow dom input of rux-input
+ * @part help-text - The help text element
  * @part icon - The icon displayed when toggle-password prop is set
+ * @part input - The input element
+ * @part label - The input label when `label` prop is set
  */
 @Component({
     tag: 'rux-input',

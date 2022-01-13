@@ -6,7 +6,8 @@ export interface FormFieldMessageInterface {
 }
 
 /**
- * @part form-field-message - the container for the help or error text
+ * @part error-text - The error text element
+ * @part help-text - The help text element
  */
 
 const FormFieldMessage = (props: FormFieldMessageInterface, children: any) => {

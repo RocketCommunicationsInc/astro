@@ -18,9 +18,11 @@ import { hasSlot, renderHiddenInput } from '../../utils/utils'
 /**
  * @slot (default) - The select options
  * @slot label - The select label
+ * @part error-text - The error text element
+ * @part form-field - The form-field wrapper container
+ * @part help-text - The help text element
  * @part label - The select label
- * @part select - the native select element used by rux-select
- * @part form-field-message - the container for the error/help text
+ * @part select - The select element
  */
 @Component({
     tag: 'rux-select',
