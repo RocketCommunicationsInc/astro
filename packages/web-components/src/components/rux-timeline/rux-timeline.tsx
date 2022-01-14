@@ -31,7 +31,7 @@ export class RuxTimeline {
         // this._handleSlotChange()
 
         window.setInterval(() => {
-            // ++this.margin
+            this.margin = this.margin + 2
             //   console.log(this.margin);
         }, 1000)
 
@@ -41,8 +41,12 @@ export class RuxTimeline {
 
     handleMouse(e: any) {
         const rect = this.el.getBoundingClientRect()
+        console.log('scrollleft', this.slotContainer?.scrollLeft)
+        const scrollOffset = this.slotContainer
+            ? this.slotContainer?.scrollLeft
+            : 0
 
-        const position = e.clientX - rect.left
+        const position = e.clientX - rect.left + scrollOffset
 
         this.margin = position
         const time = position - 200
