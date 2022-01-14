@@ -8,7 +8,7 @@ exports[`rux-textarea renders 1`] = `
         <span class="hidden">
           <slot name="label"></slot>
         </span>
-      </label><textarea aria-invalid="false" class="rux-textarea" id="rux-textarea-1" value=""></textarea>
+      </label><textarea aria-invalid="false" class="rux-textarea" id="rux-textarea-1" part="textarea" value=""></textarea>
     </div>
   </mock:shadow-root>
   <input class="aux-input" type="hidden" value="">
@@ -25,7 +25,7 @@ exports[`rux-textarea renders label prop 1`] = `
             hello
           </slot>
         </span>
-      </label><textarea aria-invalid="false" class="rux-textarea" id="rux-textarea-2" value=""></textarea>
+      </label><textarea aria-invalid="false" class="rux-textarea" id="rux-textarea-2" part="textarea" value=""></textarea>
     </div>
   </mock:shadow-root>
   <input class="aux-input" type="hidden" value="">
@@ -40,7 +40,7 @@ exports[`rux-textarea renders label slot 1`] = `
         <span>
           <slot name="label"></slot>
         </span>
-      </label><textarea aria-invalid="false" class="rux-textarea" id="rux-textarea-3" value=""></textarea>
+      </label><textarea aria-invalid="false" class="rux-textarea" id="rux-textarea-3" part="textarea" value=""></textarea>
     </div>
   </mock:shadow-root>
   <div slot="label">

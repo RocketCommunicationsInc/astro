@@ -6,7 +6,9 @@ import { hasSlot } from '../../utils/utils'
  * @slot (default) - The checkbox elements
  * @slot label - The checkbox group label
  * @part container - The container div of checkbox elements
+ * @part error-text - The error text element
  * @part form-field - The form-field wrapper container
+ * @part help-text - The help text element
  * @part label - The input label when `label` prop is set
  */
 @Component({

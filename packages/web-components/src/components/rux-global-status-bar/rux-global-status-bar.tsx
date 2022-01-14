@@ -94,6 +94,7 @@ export class RuxGlobalStatusBar {
                                         ? 'shifted-up'
                                         : ''
                                 }
+                                exportparts="icon"
                             />
                         )}
                     </slot>

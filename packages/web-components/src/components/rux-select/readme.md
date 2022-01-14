@@ -75,6 +75,16 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 | `"(default)"` | The select options |
 | `"label"`     | The select label   |
 
+## Shadow Parts
+
+| Part           | Description                      |
+| -------------- | -------------------------------- |
+| `"error-text"` | The error text element           |
+| `"form-field"` | The form-field wrapper container |
+| `"help-text"`  | The help text element            |
+| `"label"`      | The select label                 |
+| `"select"`     | The select element               |
+
 ## CSS Custom Properties
 
 | Name                                             | Description                                 |

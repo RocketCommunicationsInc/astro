@@ -4,9 +4,11 @@ import MonitoringBadge from '../../common/functional-components/MonitoringBadge/
 import MonitoringLabel from '../../common/functional-components/MonitoringLabel'
 
 /**
+ * @part container - the components container
  * @part monitoring-badge - The component's notification badge
  * @part monitoring-label - The component's label
  * @part monitoring-sublabel - The component's sublabel
+ * @part status-icon - the components status symbol
  */
 @Component({
     tag: 'rux-monitoring-icon',
@@ -64,16 +66,21 @@ export class RuxMonitoringIcon {
                 id="rux-advanced-status__icon"
                 class="rux-advanced-status"
                 title={`${this.notifications} ${this.label} ${this.sublabel}`}
+                part="container"
             >
                 <div class="rux-advanced-status__icon-group">
                     <div class="rux-advanced-status__status">
-                        <rux-status status={this.status}></rux-status>
+                        <rux-status
+                            status={this.status}
+                            part="status-icon"
+                        ></rux-status>
                     </div>
 
                     <rux-icon
                         icon={this.icon}
                         class={`rux-status--${this.status}`}
                         size="2.5rem"
+                        exportparts="icon"
                     ></rux-icon>
                     <MonitoringBadge notifications={this.notifications} />
                 </div>
