@@ -1,4 +1,4 @@
-import { Element, Component, Host, h } from '@stencil/core'
+import { Element, State, Component, Host, h } from '@stencil/core'
 
 @Component({
     tag: 'rux-timeline',
@@ -8,10 +8,12 @@ import { Element, Component, Host, h } from '@stencil/core'
 export class RuxTimeline {
     private slotContainer?: HTMLElement
     public slots?: any = 'empty'
+    @State() margin = 20
     @Element() el!: HTMLRuxTimelineElement
 
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
+        this.handleMouse = this.handleMouse.bind(this)
     }
     componentWillLoad() {
         console.log('timelinechildnodes', this.el.childNodes)
@@ -26,8 +28,18 @@ export class RuxTimeline {
             el.track = ++index
         })
         // this._handleSlotChange()
+
+        window.setInterval(() => {
+            ++this.margin
+            //   console.log(this.margin);
+        }, 1000)
     }
 
+    handleMouse(e: any) {
+        const rect = this.el.getBoundingClientRect()
+        this.margin = e.clientX
+        console.log(e.clientX - 200)
+    }
     get theSlots() {
         return this.slots
     }
@@ -55,7 +67,12 @@ export class RuxTimeline {
                     <div
                         class="rux-timeline"
                         ref={(el) => (this.slotContainer = el)}
+                        onMouseMove={(ev) => this.handleMouse(ev)}
                     >
+                        <div
+                            class="rux-playhead"
+                            style={{ left: `${this.margin}px` }}
+                        ></div>
                         <slot onSlotchange={this._handleSlotChange}></slot>
                     </div>
                 </div>
