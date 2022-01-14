@@ -20,54 +20,64 @@
     </head>
 
     <body>
-        <rux-timeline>
-            <rux-track id="track" label="second">
-                <div slot="label">
-                    <status></status>
-                    Region1
-                </div>
-                <rux-time-region start="0000" end="0100">
-                    <rux-status status="normal"></rux-status>
-                    Region1
-                </rux-time-region>
-            </rux-track>
-            <rux-track label="second">
-                <div slot="label">Region2</div>
-                <rux-time-region start="0300" end="0400">
-                    <rux-status status="normal"></rux-status>
-                    Region4
-                </rux-time-region>
-                <rux-time-region start="0400" end="0500">
-                    <rux-status status="normal"></rux-status>
-                    Region5
-                </rux-time-region>
-            </rux-track>
-            <rux-track label="first">
-                <div slot="label">Region3</div>
-                <rux-time-region start="0100" end="0300">
-                    <rux-status status="normal"></rux-status>
-                    Region2
-                </rux-time-region>
-                <rux-time-region start="0200" end="0800">
-                    <rux-status status="normal"></rux-status>
-                    Region3
-                </rux-time-region>
-            </rux-track>
+        <div style="width: 1250px; margin: auto">
+            <rux-timeline>
+                <rux-track id="track" label="second">
+                    <div slot="label">
+                        <status></status>
+                        Region1
+                    </div>
+                    <rux-time-region start="0000" end="0100">
+                        <rux-status status="normal"></rux-status>
+                        Region1
+                    </rux-time-region>
+                </rux-track>
+                <rux-track label="second">
+                    <div slot="label">Region2</div>
+                    <rux-time-region start="0300" end="0400">
+                        <rux-status status="normal"></rux-status>
+                        Region4
+                    </rux-time-region>
+                    <rux-time-region start="0400" end="0500">
+                        <rux-status status="normal"></rux-status>
+                        Region5
+                    </rux-time-region>
+                    <rux-time-region start="0400" end="0500">
+                        <rux-status status="normal"></rux-status>
+                        Region5
+                    </rux-time-region>
+                    <rux-time-region start="0400" end="0500">
+                        <rux-status status="normal"></rux-status>
+                        Region5
+                    </rux-time-region>
+                </rux-track>
+                <rux-track label="first">
+                    <div slot="label">Region3</div>
+                    <rux-time-region start="0100" end="0300">
+                        <rux-status status="normal"></rux-status>
+                        Region2
+                    </rux-time-region>
+                    <rux-time-region start="0200" end="0800">
+                        <rux-status status="normal"></rux-status>
+                        Region3
+                    </rux-time-region>
+                </rux-track>
 
-            <rux-track label="third">
-                <div slot="label">Region3</div>
-                <rux-time-region start="0500" end="0600">
-                    <rux-status status="normal"></rux-status>
-                    Region6
-                </rux-time-region>
-                <rux-time-region start="0600" end="0700">
-                    <rux-status status="normal"></rux-status>
-                    Region6
-                </rux-time-region>
-            </rux-track>
-            <rux-track>
-                <rux-ruler></rux-ruler>
-            </rux-track>
-        </rux-timeline>
+                <rux-track label="third">
+                    <div slot="label">Region3</div>
+                    <rux-time-region start="0500" end="0600">
+                        <rux-status status="normal"></rux-status>
+                        Region6
+                    </rux-time-region>
+                    <rux-time-region start="0600" end="0700">
+                        <rux-status status="normal"></rux-status>
+                        Region6
+                    </rux-time-region>
+                </rux-track>
+                <rux-track>
+                    <rux-ruler></rux-ruler>
+                </rux-track>
+            </rux-timeline>
+        </div>
     </body>
 </html>

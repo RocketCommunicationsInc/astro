@@ -1,37 +1,79 @@
 :host {
     display: block;
+    ::-webkit-scrollbar {
+        width: 16px;
+        height: 16px;
+        background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--color-active, rgb(43, 101, 155));
+        border-radius: 8px;
+        border: 3px solid transparent;
+        background-clip: padding-box;
+    }
+
+    /* visually "centers" because the dark edge of the shadow gives the illusion this is offset */
+    ::-webkit-scrollbar-thumb:vertical {
+        border-left-width: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:horizontal {
+        border-top-width: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:active,
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--color-primary, rgb(58, 129, 191));
+    }
+
+    ::-webkit-scrollbar-track,
+    ::-webkit-scrollbar-corner {
+        background-color: var(--color-surface, rgb(27, 45, 62));
+    }
+
+    ::-webkit-scrollbar-track:vertical {
+        box-shadow: inset 3px 3px 3px 0px rgba(0, 0, 0, 0.5);
+    }
+
+    ::-webkit-scrollbar-track:horizontal {
+        box-shadow: inset 1px 3px 3px 0px rgba(0, 0, 0, 0.5);
+    }
 }
 
 .rux-timeline {
+    scrollbar-color: var(--color-active);
+
+    overflow: auto;
     position: relative;
     display: grid;
     // grid-gap: 1em;
     grid-template-columns:
         [header] 200px
-        [time-0000] 4.2%
-        [time-0100] 4.2%
-        [time-0200] 4.2%
-        [time-0300] 4.2%
-        [time-0400] 4.2%
-        [time-0500] 4.2%
-        [time-0600] 4.2%
-        [time-0700] 4.2%
-        [time-0800] 4.2%
-        [time-0900] 4.2%
-        [time-1000] 4.2%
-        [time-1100] 4.2%
-        [time-1200] 4.2%
-        [time-1300] 4.2%
-        [time-1400] 4.2%
-        [time-1500] 4.2%
-        [time-1600] 4.2%
-        [time-1700] 4.2%
-        [time-1800] 4.2%
-        [time-1900] 4.2%
-        [time-2000] 4.2%
-        [time-2100] 4.2%
-        [time-2200] 4.2%
-        [time-2300] 4.2%
+        [time-0000] 120px
+        [time-0100] 120px
+        [time-0200] 120px
+        [time-0300] 120px
+        [time-0400] 120px
+        [time-0500] 120px
+        [time-0600] 120px
+        [time-0700] 120px
+        [time-0800] 120px
+        [time-0900] 120px
+        [time-1000] 120px
+        [time-1100] 120px
+        [time-1200] 120px
+        [time-1300] 120px
+        [time-1400] 120px
+        [time-1500] 120px
+        [time-1600] 120px
+        [time-1700] 120px
+        [time-1800] 120px
+        [time-1900] 120px
+        [time-2000] 120px
+        [time-2100] 120px
+        [time-2200] 120px
+        [time-2300] 120px
         [time-2359];
 
     grid-template-rows: auto;

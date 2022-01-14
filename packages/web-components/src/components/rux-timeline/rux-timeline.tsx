@@ -9,6 +9,7 @@ export class RuxTimeline {
     private slotContainer?: HTMLElement
     public slots?: any = 'empty'
     @State() margin = 20
+    @State() time = '00:00'
     @Element() el!: HTMLRuxTimelineElement
 
     connectedCallback() {
@@ -30,15 +31,30 @@ export class RuxTimeline {
         // this._handleSlotChange()
 
         window.setInterval(() => {
-            ++this.margin
+            // ++this.margin
             //   console.log(this.margin);
         }, 1000)
+
+        const { width } = this.el.getBoundingClientRect()
+        console.log('current width', width)
     }
 
     handleMouse(e: any) {
         const rect = this.el.getBoundingClientRect()
-        this.margin = e.clientX
-        console.log(e.clientX - 200)
+
+        const position = e.clientX - rect.left
+
+        this.margin = position
+        const time = position - 200
+
+        const min = time / 2
+
+        const hours = Math.floor(min / 60)
+        const minutes = Math.floor(min % 60)
+
+        // const hour = Math.floor(min / 60)
+        console.log(`${hours}:${minutes}`)
+        this.time = `${hours}:${minutes}`
     }
     get theSlots() {
         return this.slots
@@ -75,6 +91,7 @@ export class RuxTimeline {
                         ></div>
                         <slot onSlotchange={this._handleSlotChange}></slot>
                     </div>
+                    <div>The current time is {this.time}</div>
                 </div>
             </Host>
         )
