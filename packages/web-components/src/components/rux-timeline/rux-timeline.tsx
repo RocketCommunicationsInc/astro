@@ -8,7 +8,7 @@ import { Element, State, Component, Host, h } from '@stencil/core'
 export class RuxTimeline {
     private slotContainer?: HTMLElement
     public slots?: any = 'empty'
-    @State() margin = 20
+    @State() margin = 200
     @State() time = '00:00'
     @Element() el!: HTMLRuxTimelineElement
 
@@ -31,7 +31,7 @@ export class RuxTimeline {
         // this._handleSlotChange()
 
         window.setInterval(() => {
-            this.margin = this.margin + 2
+            // this.margin = this.margin + 2
             //   console.log(this.margin);
         }, 1000)
 
@@ -47,18 +47,21 @@ export class RuxTimeline {
             : 0
 
         const position = e.clientX - rect.left + scrollOffset
+        if (position > 200) {
+            this.margin = position
+            const time = position - 200
 
-        this.margin = position
-        const time = position - 200
+            const min = time / 2
 
-        const min = time / 2
+            const hours = Math.floor(min / 60)
+            const minutes = Math.floor(min % 60)
 
-        const hours = Math.floor(min / 60)
-        const minutes = Math.floor(min % 60)
-
-        // const hour = Math.floor(min / 60)
-        console.log(`${hours}:${minutes}`)
-        this.time = `${hours}:${minutes}`
+            // const hour = Math.floor(min / 60)
+            console.log(`${hours}:${minutes}`)
+            this.time = `${hours}:${minutes}`
+        } else {
+            this.margin = 200
+        }
     }
     get theSlots() {
         return this.slots
