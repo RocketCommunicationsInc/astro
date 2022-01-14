@@ -22,16 +22,15 @@ For the most up-to-date policies, see the [ISOO Training Aids](https://www.archi
 
 export const Default = (args) => {
     return html`
-        <div
-            style="display: flex; flex-flow: column; justify-content: center; margin-bottom:50px; position: relative;"
-        >
-            <rux-classification-marking
-                classification="${args.classification}"
-                .label="${args.label}"
-                ?tag="${args.tag}"
-            >
-            </rux-classification-marking>
-        </div>
+<div
+    style="display: flex; flex-flow: column; justify-content: center; margin-bottom:50px; position: relative;"
+>
+    <rux-classification-marking
+        classification="${args.classification}"
+        .label="${args.label}"
+        ?tag="${args.tag}"
+    ></rux-classification-marking>
+</div>
     `
 }
 
