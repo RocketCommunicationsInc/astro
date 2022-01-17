@@ -1,25 +1,20 @@
-<!DOCTYPE html>
-<html dir="ltr" lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
-        />
-        <title>Stencil Component Starter</title>
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { html, render } from 'lit-html'
 
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
-            rel="stylesheet"
-        />
-        <script type="module" src="/build/astro-web-components.esm.js"></script>
-        <script nomodule src="/build/astro-web-components.js"></script>
+<Meta
+    title="Components/Timeline"
+    component="rux-timeline"
+    subcomponents={{ RuxRange: 'rux-range' }}
+    argTypes={extractArgTypes('rux-timeline')}
+/>
 
-        <link rel="stylesheet" href="/build/astro-web-components.css" />
-    </head>
+# Timeline
 
-    <body>
+## Guidelines
+
+export const Default = (args) => {
+    return html`
         <div style="width: 1050px; margin: auto">
             <rux-timeline>
                 <rux-track id="track" label="second">
@@ -62,7 +57,6 @@
                         Region3
                     </rux-time-region>
                 </rux-track>
-
                 <rux-track label="third">
                     <div slot="label">Region3</div>
                     <rux-time-region start="0500" end="0600">
@@ -79,12 +73,13 @@
                 </rux-track>
             </rux-timeline>
         </div>
-        <script>
-            const data = [
-                {
-                    label: '',
-                },
-            ]
-        </script>
-    </body>
-</html>
+    `
+}
+
+<Canvas>
+    <Story name="Default">{Default.bind()}</Story>
+</Canvas>
+
+## API
+
+<ArgsTable of="rux-timeline" />

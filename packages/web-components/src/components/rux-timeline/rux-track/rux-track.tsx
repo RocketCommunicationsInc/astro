@@ -1,4 +1,4 @@
-import { Element, Method, Component, Prop, Host, h } from '@stencil/core'
+import { Element, Component, Prop, Host, h } from '@stencil/core'
 
 let id = 1
 @Component({
@@ -18,7 +18,7 @@ export class RuxTrack {
     @Element() el!: HTMLRuxTrackElement
     private slotContainer?: HTMLElement
 
-    private _trackId = `rux-track-${++id}`
+    // private _trackId = `rux-track-${++id}`
 
     /**the id */
     @Prop({ reflect: true }) track?: number = 0
@@ -29,7 +29,7 @@ export class RuxTrack {
 
     componentWillLoad() {
         const timeline = this.el.closest('rux-timeline')
-        const lost = timeline?.querySelector('slot')
+        // const lost = timeline?.querySelector('slot')
         //@ts-ignore
         console.log('timeline', timeline?.theSlots)
 

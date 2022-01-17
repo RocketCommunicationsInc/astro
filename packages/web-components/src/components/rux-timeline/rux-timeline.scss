@@ -50,36 +50,34 @@
     // grid-gap: 1em;
     grid-template-columns:
         [header] 200px
-        [time-0000] 120px
-        [time-0100] 120px
-        [time-0200] 120px
-        [time-0300] 120px
-        [time-0400] 120px
-        [time-0500] 120px
-        [time-0600] 120px
-        [time-0700] 120px
-        [time-0800] 120px
-        [time-0900] 120px
-        [time-1000] 120px
-        [time-1100] 120px
-        [time-1200] 120px
-        [time-1300] 120px
-        [time-1400] 120px
-        [time-1500] 120px
-        [time-1600] 120px
-        [time-1700] 120px
-        [time-1800] 120px
-        [time-1900] 120px
-        [time-2000] 120px
-        [time-2100] 120px
-        [time-2200] 120px
-        [time-2300] 120px
-        [time-2359];
+        repeat(24, 120px);
+    // [time-0000] 120px
+    // [time-0100] 120px
+    // [time-0200] 120px
+    // [time-0300] 120px
+    // [time-0400] 120px
+    // [time-0500] 120px
+    // [time-0600] 120px
+    // [time-0700] 120px
+    // [time-0800] 120px
+    // [time-0900] 120px
+    // [time-1000] 120px
+    // [time-1100] 120px
+    // [time-1200] 120px
+    // [time-1300] 120px
+    // [time-1400] 120px
+    // [time-1500] 120px
+    // [time-1600] 120px
+    // [time-1700] 120px
+    // [time-1800] 120px
+    // [time-1900] 120px
+    // [time-2000] 120px
+    // [time-2100] 120px
+    // [time-2200] 120px
+    // [time-2300] 120px;
+    // [time-2359];
 
     grid-template-rows: auto;
-    // [track-1] 1fr
-    // [track-2] 1fr
-    // [ruler] 1fr;
     background: var(--color-surface);
 }
 
