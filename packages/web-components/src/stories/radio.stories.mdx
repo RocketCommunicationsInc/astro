@@ -29,13 +29,14 @@ The Radio Group component is responsible for checking and unchecking individual 
 
 export const Default = (args) => {
     return html`
-        <rux-radio
-            name="radios"
-            ?checked=${args.checked}
-            ?disabled=${args.disabled}
-            .value="${args.value}"
-            >${args.label}</rux-radio
-        >
+<rux-radio
+    name="radios"
+    ?checked=${args.checked}
+    ?disabled=${args.disabled}
+    .value="${args.value}"
+    .label="${args.label}"
+    >Radio Label</rux-radio
+>
     `
 }
 
@@ -61,13 +62,14 @@ export const Default = (args) => {
 
 export const Checked = (args) => {
     return html`
-        <rux-radio
-            .name="${args.name}"
-            ?checked=${args.checked}
-            ?disabled=${args.disabled}
-            .value="${args.value}"
-            >${args.label}</rux-radio
-        >
+<rux-radio
+    .name="${args.name}"
+    ?checked=${args.checked}
+    ?disabled=${args.disabled}
+    .value="${args.value}"
+    .label="${args.label}"
+    >Radio Label</rux-radio
+>
     `
 }
 
@@ -88,13 +90,14 @@ export const Checked = (args) => {
 
 export const Disabled = (args) => {
     return html`
-        <rux-radio
-            .name="${args.name}"
-            ?checked=${args.checked}
-            ?disabled=${args.disabled}
-            .value="${args.value}"
-            >${args.label}</rux-radio
-        >
+<rux-radio
+    .name="${args.name}"
+    ?checked=${args.checked}
+    ?disabled=${args.disabled}
+    .value="${args.value}"
+    .label="${args.label}"
+    >Radio Label</rux-radio
+>
     `
 }
 

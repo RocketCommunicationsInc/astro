@@ -18,24 +18,22 @@ These icons represent objects, equipment, and concepts that are being administer
 
 export const Default = (args) => {
     return html`
-        <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
-            <rux-monitoring-icon
-                icon="${args.icon}"
-                label="${args.label}"
-                .sublabel="${args.sublabel}"
-                .status="${args.status}"
-                .notifications="${args.notifications}"
-            ></rux-monitoring-icon>
-        </div>
-        <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
-            <rux-monitoring-icon
-                icon="widgets"
-                label="Widgets icon"
-                .sublabel="${args.sublabel}"
-                .status="${args.status}"
-                .notifications="${args.notifications}"
-            ></rux-monitoring-icon>
-        </div>
+<div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
+    <rux-monitoring-icon
+        icon="${args.icon}"
+        label="${args.label}"
+        status="${args.status}"
+        notifications="${args.notifications}"
+    ></rux-monitoring-icon>
+</div>
+<div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
+    <rux-monitoring-icon
+        icon="widgets"
+        label="Widgets icon"
+        status="${args.status}"
+        notifications="${args.notifications}"
+    ></rux-monitoring-icon>
+</div>
     `
 }
 
@@ -61,75 +59,75 @@ export const Default = (args) => {
 
 export const AllVariants = (args) => {
     return html`
-        <style>
-            ul {
-                display: flex;
-                list-style: none;
-                justify-content: space-around;
-                padding: 0 1rem;
-            }
-            ul li {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-        </style>
-        <ul>
-            <li>
-                <rux-monitoring-icon
-                    icon="mission"
-                    label="Mission"
-                    sublabel="Sub-label"
-                    status="off"
-                    notifications="4"
-                ></rux-monitoring-icon>
-            </li>
-            <li>
-                <rux-monitoring-icon
-                    icon="equipment"
-                    label="Equipment"
-                    sublabel="Sub-label"
-                    status="standby"
-                    notifications="100"
-                ></rux-monitoring-icon>
-            </li>
-            <li>
-                <rux-monitoring-icon
-                    icon="processor"
-                    label="Processor"
-                    sublabel="Sub-label"
-                    status="normal"
-                ></rux-monitoring-icon>
-            </li>
-            <li>
-                <rux-monitoring-icon
-                    icon="antenna"
-                    label="Antenna"
-                    sublabel="Sub-label"
-                    status="caution"
-                    notifications="1200"
-                ></rux-monitoring-icon>
-            </li>
-            <li>
-                <rux-monitoring-icon
-                    icon="antenna-transmit"
-                    label="NROL"
-                    sublabel="Sub-label"
-                    status="serious"
-                    notifications="1000000"
-                ></rux-monitoring-icon>
-            </li>
-            <li>
-                <rux-monitoring-icon
-                    icon="antenna-receive"
-                    label="SBSS=1"
-                    sublabel="Receiving"
-                    status="critical"
-                    notifications="34000000000000"
-                ></rux-monitoring-icon>
-            </li>
-        </ul>
-    `
+<style>
+    ul {
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
+        padding: 0 1rem;
+    }
+    ul li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>
+<ul>
+    <li>
+        <rux-monitoring-icon
+            icon="mission"
+            label="Mission"
+            sublabel="Sub-label"
+            status="off"
+            notifications="4"
+        ></rux-monitoring-icon>
+    </li>
+    <li>
+        <rux-monitoring-icon
+            icon="equipment"
+            label="Equipment"
+            sublabel="Sub-label"
+            status="standby"
+            notifications="100"
+        ></rux-monitoring-icon>
+    </li>
+    <li>
+        <rux-monitoring-icon
+            icon="processor"
+            label="Processor"
+            sublabel="Sub-label"
+            status="normal"
+        ></rux-monitoring-icon>
+    </li>
+    <li>
+        <rux-monitoring-icon
+            icon="antenna"
+            label="Antenna"
+            sublabel="Sub-label"
+            status="caution"
+            notifications="1200"
+        ></rux-monitoring-icon>
+    </li>
+    <li>
+        <rux-monitoring-icon
+            icon="antenna-transmit"
+            label="NROL"
+            sublabel="Sub-label"
+            status="serious"
+            notifications="1000000"
+        ></rux-monitoring-icon>
+    </li>
+    <li>
+        <rux-monitoring-icon
+            icon="antenna-receive"
+            label="SBSS=1"
+            sublabel="Receiving"
+            status="critical"
+            notifications="34000000000000"
+        ></rux-monitoring-icon>
+    </li>
+</ul>
+`
 }
 
 <Canvas>

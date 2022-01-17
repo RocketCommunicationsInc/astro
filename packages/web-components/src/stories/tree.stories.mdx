@@ -95,58 +95,58 @@ export const Default = (args) => {
         },
     ]
     return html`
-        <style>
-            .container {
-                padding: 1rem 10%;
-                display: flex;
-                justify-content: center;
-            }
-            rux-tree {
-                width: 18rem;
-                margin: 1rem;
-            }
-        </style>
-        <div class="container">
-            <rux-tree>
-                ${treeData.map(
-                    (node) => html`
-                        <rux-tree-node .expanded=${node.expanded}>
-                            ${node.label} ${node.children?.map(
-                                (child) => html`
-                                    <rux-tree-node
-                                        .expanded=${child.expanded}
-                                        .selected=${child.selected}
-                                        slot="node"
-                                    >
-                                        ${child.label} ${child.children?.map(
-                                            (grandchild) => html`
-                                                <rux-tree-node
-                                                    .expanded=${grandchild.expanded}
-                                                    .selected=${grandchild.selected}
-                                                    slot="node"
-                                                >
-                                                    ${grandchild.label} ${grandchild.children?.map(
-                                                        (grandchild) => html`
-                                                            <rux-tree-node
-                                                                .expanded=${grandchild.expanded}
-                                                                .selected=${grandchild.selected}
-                                                                slot="node"
-                                                            >
-                                                                ${grandchild.label}
-                                                            </rux-tree-node>
-                                                        `
-                                                    )}
-                                                </rux-tree-node>
-                                            `
-                                        )}
-                                    </rux-tree-node>
-                                `
-                            )}
-                        </rux-tree-node>
-                    `
-                )}
-            </rux-tree>
-        </div>
+<style>
+    .container {
+        padding: 1rem 10%;
+        display: flex;
+        justify-content: center;
+    }
+    rux-tree {
+        width: 18rem;
+        margin: 1rem;
+    }
+</style>
+<div class="container">
+    <rux-tree>
+        ${treeData.map(
+            (node) => html`
+                <rux-tree-node .expanded=${node.expanded}>
+                    ${node.label} ${node.children?.map(
+                        (child) => html`
+                            <rux-tree-node
+                                .expanded=${child.expanded}
+                                .selected=${child.selected}
+                                slot="node"
+                            >
+                                ${child.label} ${child.children?.map(
+                                    (grandchild) => html`
+                                        <rux-tree-node
+                                            .expanded=${grandchild.expanded}
+                                            .selected=${grandchild.selected}
+                                            slot="node"
+                                        >
+                                            ${grandchild.label} ${grandchild.children?.map(
+                                                (grandchild) => html`
+                                                    <rux-tree-node
+                                                        .expanded=${grandchild.expanded}
+                                                        .selected=${grandchild.selected}
+                                                        slot="node"
+                                                    >
+                                                        ${grandchild.label}
+                                                    </rux-tree-node>
+                                                `
+                                            )}
+                                        </rux-tree-node>
+                                    `
+                                )}
+                            </rux-tree-node>
+                        `
+                    )}
+                </rux-tree-node>
+            `
+        )}
+    </rux-tree>
+</div>
     `
 }
 
@@ -225,68 +225,68 @@ export const status = (args) => {
         },
     ]
     return html`
-        <style>
-            .container {
-                padding: 1rem 10%;
-                display: flex;
-                justify-content: center;
-            }
-            rux-tree {
-                width: 18rem;
-                margin: 1rem;
-            }
-        </style>
-        <div class="container">
-            <rux-tree>
-                ${treeData.map(
-                    (node) => html`
-                        <rux-tree-node>
-                            <rux-status status="${node.status}"></rux-status>
-                            ${node.label} ${node.children?.map(
-                                (child) => html`
-                                    <rux-tree-node
-                                        .expanded=${child.expanded}
-                                        .selected=${child.selected}
-                                        slot="node"
-                                    >
-                                        <rux-status
-                                            status="${child.status}"
-                                        ></rux-status>
-                                        ${child.label} ${child.children?.map(
-                                            (grandchild) => html`
-                                                <rux-tree-node
-                                                    .expanded=${grandchild.expanded}
-                                                    .selected=${grandchild.selected}
-                                                    slot="node"
-                                                >
-                                                    <rux-status
-                                                        status="${grandchild.status}"
-                                                    ></rux-status>
-                                                    ${grandchild.label} ${grandchild.children?.map(
-                                                        (grandchild) => html`
-                                                            <rux-tree-node
-                                                                .expanded=${grandchild.expanded}
-                                                                .selected=${grandchild.selected}
-                                                                slot="node"
-                                                            >
-                                                                <rux-status
-                                                                    status="${grandchild.status}"
-                                                                ></rux-status>
-                                                                ${grandchild.label}
-                                                            </rux-tree-node>
-                                                        `
-                                                    )}
-                                                </rux-tree-node>
-                                            `
-                                        )}
-                                    </rux-tree-node>
-                                `
-                            )}
-                        </rux-tree-node>
-                    `
-                )}
-            </rux-tree>
-        </div>
+<style>
+    .container {
+        padding: 1rem 10%;
+        display: flex;
+        justify-content: center;
+    }
+    rux-tree {
+        width: 18rem;
+        margin: 1rem;
+    }
+</style>
+<div class="container">
+    <rux-tree>
+        ${treeData.map(
+            (node) => html`
+                <rux-tree-node>
+                    <rux-status status="${node.status}"></rux-status>
+                    ${node.label} ${node.children?.map(
+                        (child) => html`
+                            <rux-tree-node
+                                .expanded=${child.expanded}
+                                .selected=${child.selected}
+                                slot="node"
+                            >
+                                <rux-status
+                                    status="${child.status}"
+                                ></rux-status>
+                                ${child.label} ${child.children?.map(
+                                    (grandchild) => html`
+                                        <rux-tree-node
+                                            .expanded=${grandchild.expanded}
+                                            .selected=${grandchild.selected}
+                                            slot="node"
+                                        >
+                                            <rux-status
+                                                status="${grandchild.status}"
+                                            ></rux-status>
+                                            ${grandchild.label} ${grandchild.children?.map(
+                                                (grandchild) => html`
+                                                    <rux-tree-node
+                                                        .expanded=${grandchild.expanded}
+                                                        .selected=${grandchild.selected}
+                                                        slot="node"
+                                                    >
+                                                        <rux-status
+                                                            status="${grandchild.status}"
+                                                        ></rux-status>
+                                                        ${grandchild.label}
+                                                    </rux-tree-node>
+                                                `
+                                            )}
+                                        </rux-tree-node>
+                                    `
+                                )}
+                            </rux-tree-node>
+                        `
+                    )}
+                </rux-tree-node>
+            `
+        )}
+    </rux-tree>
+</div>
     `
 }
 
