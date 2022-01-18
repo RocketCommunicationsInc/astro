@@ -21,7 +21,7 @@
 
     <body>
         <div style="width: 1050px; margin: auto">
-            <rux-timeline>
+            <rux-timeline start="2021-02-01T04:00:00Z">
                 <rux-track id="track" label="second">
                     <div slot="label">
                         <status></status>
@@ -78,8 +78,50 @@
                     <rux-ruler></rux-ruler>
                 </rux-track>
             </rux-timeline>
+
+            <div>
+                <input
+                    id="startDate"
+                    type="date"
+                    value="01/01/2020"
+                    label="start Date"
+                />
+                <input
+                    id="startDateTime"
+                    type="text"
+                    label="Start Date Time"
+                    value="00:00"
+                />
+
+                <input id="endDate" type="date" label="End Date" />
+                <input
+                    id="endDateTime"
+                    type="text"
+                    value="00:00"
+                    label="End Date Time"
+                />
+
+                <rux-button id="update">Update</rux-button>
+            </div>
         </div>
         <script>
+            const saveEl = document.querySelector('rux-button')
+            const timelineEl = document.querySelector('rux-timeline')
+            const startDate = document.querySelector('#startDate')
+            const startDateTime = document.querySelector('#startDateTime')
+            const endDate = document.querySelector('#endDate')
+            const endDateTime = document.querySelector('#endDateTime')
+
+            saveEl.addEventListener('click', () => {
+                const newStart = new Date(
+                    `${startDate.value} ${startDateTime.value}`
+                ).toISOString()
+                const newEnd = new Date(
+                    `${endDate.value} ${endDateTime.value}`
+                ).toISOString()
+                timelineEl.start = newStart
+                timelineEl.end = newEnd
+            })
             const data = [
                 {
                     label: '',

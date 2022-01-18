@@ -1,4 +1,14 @@
-import { Element, State, Component, Host, h } from '@stencil/core'
+import {
+    Watch,
+    Element,
+    State,
+    Method,
+    Component,
+    Host,
+    h,
+    Prop,
+} from '@stencil/core'
+import { differenceInHours, differenceInMinutes } from 'date-fns/esm'
 
 @Component({
     tag: 'rux-timeline',
@@ -11,12 +21,23 @@ export class RuxTimeline {
     @State() margin = 200
     @State() time = '00:00'
     @Element() el!: HTMLRuxTimelineElement
+    @Prop() start = '2021-02-01T00:00:00Z'
+    @Prop() end = '2021-02-10T00:00:00Z'
+    @Prop() totalCol: any = null
 
+    @Watch('start')
+    handleStartChange() {
+        this.calcDiff()
+        console.log('start changed')
+    }
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this.handleMouse = this.handleMouse.bind(this)
     }
     componentWillLoad() {
+        const diff = this.calcDiff()
+        console.log('diff', diff)
+
         console.log('timelinechildnodes', this.el.childNodes)
         const childNodes = this.el.childNodes
         const children = Array.prototype.filter.call(
@@ -39,6 +60,18 @@ export class RuxTimeline {
         console.log('current width', width)
     }
 
+    @Method()
+    async getTotalColumns() {
+        const start = new Date(this.start)
+        const end = new Date(this.end)
+        return differenceInHours(start, end)
+    }
+
+    calcDiff() {
+        const start = new Date(this.start)
+        const end = new Date(this.end)
+        this.totalCol = -differenceInHours(start, end)
+    }
     handleMouse(e: any) {
         const rect = this.el.getBoundingClientRect()
         console.log('scrollleft', this.slotContainer?.scrollLeft)
@@ -87,10 +120,16 @@ export class RuxTimeline {
         return (
             <Host>
                 <div class="border">
+                    {this.totalCol}
                     <div
                         class="rux-timeline"
                         ref={(el) => (this.slotContainer = el)}
                         onMouseMove={(ev) => this.handleMouse(ev)}
+                        style={{
+                            gridTemplateColumns: `[header] 200px repeat(${
+                                this.totalCol + 1
+                            }, 120px)`,
+                        }}
                     >
                         <div
                             class="rux-playhead"

@@ -6907,6 +6907,8 @@ export namespace Components {
         value?: any | null
     }
     interface RuxRuler {
+        interval: number
+        totalColumns: number
         /**
          * The track
          */
@@ -7132,7 +7134,12 @@ export namespace Components {
          */
         track: string
     }
-    interface RuxTimeline {}
+    interface RuxTimeline {
+        end: string
+        getTotalColumns: () => Promise<number>
+        start: string
+        totalCol: any
+    }
     interface RuxTrack {
         /**
          * the id
@@ -22933,6 +22940,8 @@ declare namespace LocalJSX {
         value?: any | null
     }
     interface RuxRuler {
+        interval?: number
+        totalColumns?: number
         /**
          * The track
          */
@@ -23213,7 +23222,11 @@ declare namespace LocalJSX {
          */
         track?: string
     }
-    interface RuxTimeline {}
+    interface RuxTimeline {
+        end?: string
+        start?: string
+        totalCol?: any
+    }
     interface RuxTrack {
         /**
          * the id

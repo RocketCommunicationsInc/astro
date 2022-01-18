@@ -41,7 +41,8 @@
     "dependencies": {
         "@stencil/core": "~2.10.0",
         "date-fns": "~2.21.1",
-        "date-fns-tz": "~1.1.4"
+        "date-fns-tz": "~1.1.4",
+        "lodash": "~4.17.21"
     },
     "license": "MIT",
     "devDependencies": {
@@ -62,6 +63,7 @@
         "@storybook/theming": "~6.4.9",
         "@storybook/web-components": "~6.4.9",
         "@types/jest": "~26.0.23",
+        "@types/lodash": "~4.14.178",
         "@types/puppeteer": "~5.4.3",
         "@typescript-eslint/eslint-plugin": "~4.22.1",
         "@typescript-eslint/parser": "~4.22.1",
