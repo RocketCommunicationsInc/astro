@@ -6907,7 +6907,8 @@ export namespace Components {
         value?: any | null
     }
     interface RuxRuler {
-        interval: number
+        interval: any
+        intervalIncrement: number
         totalColumns: number
         /**
          * The track
@@ -7137,6 +7138,7 @@ export namespace Components {
     interface RuxTimeline {
         end: string
         getTotalColumns: () => Promise<number>
+        interval: 'hour' | 'day' | 'month'
         start: string
         totalCol: any
         zoom: number
@@ -22941,7 +22943,8 @@ declare namespace LocalJSX {
         value?: any | null
     }
     interface RuxRuler {
-        interval?: number
+        interval?: any
+        intervalIncrement?: number
         totalColumns?: number
         /**
          * The track
@@ -23225,6 +23228,7 @@ declare namespace LocalJSX {
     }
     interface RuxTimeline {
         end?: string
+        interval?: 'hour' | 'day' | 'month'
         start?: string
         totalCol?: any
         zoom?: number

@@ -23,7 +23,28 @@
         <div style="width: 1050px; margin: auto">
             <rux-timeline
                 start="2021-02-01T00:00:00Z"
+                end="2021-02-10T00:00:00Z"
+                interval="day"
+            >
+                <rux-track id="track" label="second">
+                    <div slot="label">
+                        <status></status>
+                        Region1
+                    </div>
+                    <rux-time-region start="0000" end="0100">
+                        <rux-status status="normal"></rux-status>
+                        Region1
+                    </rux-time-region>
+                </rux-track>
+
+                <rux-track>
+                    <rux-ruler></rux-ruler>
+                </rux-track>
+            </rux-timeline>
+            <rux-timeline
+                start="2021-02-01T00:00:00Z"
                 end="2021-02-02T00:00:00Z"
+                interval="hour"
             >
                 <rux-track id="track" label="second">
                     <div slot="label">
@@ -87,23 +108,16 @@
             <div>
                 <input
                     id="startDate"
-                    type="date"
-                    value="01/01/2020"
+                    type="datetime-local"
+                    value="2020-01-19T16:23"
                     label="start Date"
                 />
-                <input
-                    id="startDateTime"
-                    type="text"
-                    label="Start Date Time"
-                    value="00:00"
-                />
 
-                <input id="endDate" type="date" label="End Date" />
                 <input
-                    id="endDateTime"
-                    type="text"
-                    value="00:00"
-                    label="End Date Time"
+                    id="endDate"
+                    type="datetime-local"
+                    value="2020-01-21T16:23"
+                    label="End Date"
                 />
 
                 <rux-button id="update">Update</rux-button>
@@ -113,12 +127,10 @@
             const increaseButton = document.querySelector('#increase')
             const decreaseButton = document.querySelector('#decrease')
 
-            const saveEl = document.querySelector('rux-button')
+            const saveEl = document.querySelector('#update')
             const timelineEl = document.querySelector('rux-timeline')
             const startDate = document.querySelector('#startDate')
-            const startDateTime = document.querySelector('#startDateTime')
             const endDate = document.querySelector('#endDate')
-            const endDateTime = document.querySelector('#endDateTime')
 
             increaseButton.addEventListener('click', () => {
                 timelineEl.zoom = timelineEl.zoom + 50
@@ -128,16 +140,11 @@
                 timelineEl.zoom = timelineEl.zoom - 50
             })
 
-            // saveEl.addEventListener('click', () => {
-            //     const newStart = new Date(
-            //         `${startDate.value} ${startDateTime.value}`
-            //     ).toISOString()
-            //     const newEnd = new Date(
-            //         `${endDate.value} ${endDateTime.value}`
-            //     ).toISOString()
-            //     timelineEl.start = newStart
-            //     timelineEl.end = newEnd
-            // })
+            saveEl.addEventListener('click', () => {
+                console.log('time', startDate.value)
+                timelineEl.start = startDate.value
+                timelineEl.end = endDate.value
+            })
             const data = [
                 {
                     label: '',

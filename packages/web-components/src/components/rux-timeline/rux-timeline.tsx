@@ -9,6 +9,7 @@ import {
     Prop,
 } from '@stencil/core'
 import { differenceInHours } from 'date-fns/esm'
+import { dateRange } from './helpers'
 
 @Component({
     tag: 'rux-timeline',
@@ -25,8 +26,10 @@ export class RuxTimeline {
     @Prop() end = '2021-02-10T00:00:00Z'
     @Prop() totalCol: any = null
     @Prop() zoom = 120
+    @Prop() interval: 'hour' | 'day' | 'month' = 'hour'
 
     @Watch('start')
+    @Watch('end')
     handleStartChange() {
         this.calcDiff()
         console.log('start changed')
@@ -71,7 +74,11 @@ export class RuxTimeline {
     calcDiff() {
         const start = new Date(this.start)
         const end = new Date(this.end)
-        this.totalCol = -differenceInHours(start, end)
+        const test = dateRange(this.start, this.end, this.interval)
+        this.totalCol = test.length
+        console.log('test', test)
+
+        // this.totalCol = -differenceInHours(start, end)
     }
     handleMouse(e: any) {
         const rect = this.el.getBoundingClientRect()
@@ -127,9 +134,7 @@ export class RuxTimeline {
                         ref={(el) => (this.slotContainer = el)}
                         onMouseMove={(ev) => this.handleMouse(ev)}
                         style={{
-                            gridTemplateColumns: `[header] 200px repeat(${
-                                this.totalCol + 1
-                            }, ${this.zoom}px)`,
+                            gridTemplateColumns: `[header] 200px repeat(${this.totalCol}, ${this.zoom}px)`,
                         }}
                     >
                         <div
