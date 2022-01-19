@@ -8,7 +8,7 @@ import {
     h,
     Prop,
 } from '@stencil/core'
-import { differenceInHours, differenceInMinutes } from 'date-fns/esm'
+import { differenceInHours } from 'date-fns/esm'
 
 @Component({
     tag: 'rux-timeline',
@@ -24,6 +24,7 @@ export class RuxTimeline {
     @Prop() start = '2021-02-01T00:00:00Z'
     @Prop() end = '2021-02-10T00:00:00Z'
     @Prop() totalCol: any = null
+    @Prop() zoom = 120
 
     @Watch('start')
     handleStartChange() {
@@ -128,7 +129,7 @@ export class RuxTimeline {
                         style={{
                             gridTemplateColumns: `[header] 200px repeat(${
                                 this.totalCol + 1
-                            }, 120px)`,
+                            }, ${this.zoom}px)`,
                         }}
                     >
                         <div

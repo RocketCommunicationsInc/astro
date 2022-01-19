@@ -5,7 +5,12 @@ import { html, render } from 'lit-html'
 <Meta
     title="Components/Timeline"
     component="rux-timeline"
-    subcomponents={{ RuxRange: 'rux-range' }}
+    subcomponents={{
+        RuxRange: 'rux-range',
+        RuxTrack: 'rux-track',
+        RuxTimeRegion: 'rux-time-region',
+        RuxRuler: 'rux-ruler',
+    }}
     argTypes={extractArgTypes('rux-timeline')}
 />
 
@@ -16,7 +21,7 @@ import { html, render } from 'lit-html'
 export const Default = (args) => {
     return html`
         <div style="width: 1050px; margin: auto">
-            <rux-timeline>
+            <rux-timeline zoom="${args.zoom}">
                 <rux-track id="track" label="second">
                     <div slot="label">
                         <status></status>
@@ -77,7 +82,14 @@ export const Default = (args) => {
 }
 
 <Canvas>
-    <Story name="Default">{Default.bind()}</Story>
+    <Story
+        name="Default"
+        args={{
+            zoom: 120,
+        }}
+    >
+        {Default.bind()}
+    </Story>
 </Canvas>
 
 ## API

@@ -20243,11 +20243,14 @@ export class RuxRadioGroup {
 }
 
 export declare interface RuxRuler extends Components.RuxRuler {}
-
+@ProxyCmp({
+  inputs: ["interval", "totalColumns", "track"],
+})
 @Component({
   selector: "rux-ruler",
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: "<ng-content></ng-content>",
+  inputs: ["interval", "totalColumns", "track"],
 })
 export class RuxRuler {
   protected el: HTMLElement;
@@ -20653,11 +20656,14 @@ export class RuxTextarea {
 }
 
 export declare interface RuxTimeRegion extends Components.RuxTimeRegion {}
-
+@ProxyCmp({
+  inputs: ["end", "label", "start", "track"],
+})
 @Component({
   selector: "rux-time-region",
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: "<ng-content></ng-content>",
+  inputs: ["end", "label", "start", "track"],
 })
 export class RuxTimeRegion {
   protected el: HTMLElement;
@@ -20668,11 +20674,15 @@ export class RuxTimeRegion {
 }
 
 export declare interface RuxTimeline extends Components.RuxTimeline {}
-
+@ProxyCmp({
+  inputs: ["end", "start", "totalCol", "zoom"],
+  methods: ["getTotalColumns"],
+})
 @Component({
   selector: "rux-timeline",
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: "<ng-content></ng-content>",
+  inputs: ["end", "start", "totalCol", "zoom"],
 })
 export class RuxTimeline {
   protected el: HTMLElement;
@@ -20683,11 +20693,14 @@ export class RuxTimeline {
 }
 
 export declare interface RuxTrack extends Components.RuxTrack {}
-
+@ProxyCmp({
+  inputs: ["track"],
+})
 @Component({
   selector: "rux-track",
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: "<ng-content></ng-content>",
+  inputs: ["track"],
 })
 export class RuxTrack {
   protected el: HTMLElement;

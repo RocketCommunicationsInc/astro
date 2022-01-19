@@ -7,11 +7,8 @@ import {
     addMonths,
     differenceInDays,
     differenceInMonths,
-    getDay,
 } from 'date-fns'
-import { zonedTimeToUtc } from 'date-fns-tz'
 import { utcToZonedTime } from 'date-fns-tz/esm'
-import { groupBy } from 'lodash'
 
 @Component({
     tag: 'rux-ruler',
@@ -33,7 +30,7 @@ export class RuxRuler {
         const timeline = this.el?.closest('rux-timeline')
         // this.totalColumns = -timeline?.totalCol
         this._timeline = timeline
-        const time = timeline?.getTotalColumns().then((r) => {
+        timeline?.getTotalColumns().then((r) => {
             this.totalColumns = -r
         })
         console.log('times', this.times)

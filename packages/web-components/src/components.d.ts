@@ -7139,6 +7139,7 @@ export namespace Components {
         getTotalColumns: () => Promise<number>
         start: string
         totalCol: any
+        zoom: number
     }
     interface RuxTrack {
         /**
@@ -23226,6 +23227,7 @@ declare namespace LocalJSX {
         end?: string
         start?: string
         totalCol?: any
+        zoom?: number
     }
     interface RuxTrack {
         /**

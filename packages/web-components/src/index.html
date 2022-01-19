@@ -21,7 +21,10 @@
 
     <body>
         <div style="width: 1050px; margin: auto">
-            <rux-timeline start="2021-02-01T04:00:00Z">
+            <rux-timeline
+                start="2021-02-01T00:00:00Z"
+                end="2021-02-02T00:00:00Z"
+            >
                 <rux-track id="track" label="second">
                     <div slot="label">
                         <status></status>
@@ -79,6 +82,8 @@
                 </rux-track>
             </rux-timeline>
 
+            <rux-button id="decrease">-</rux-button>
+            <rux-button id="increase">+</rux-button>
             <div>
                 <input
                     id="startDate"
@@ -105,6 +110,9 @@
             </div>
         </div>
         <script>
+            const increaseButton = document.querySelector('#increase')
+            const decreaseButton = document.querySelector('#decrease')
+
             const saveEl = document.querySelector('rux-button')
             const timelineEl = document.querySelector('rux-timeline')
             const startDate = document.querySelector('#startDate')
@@ -112,16 +120,24 @@
             const endDate = document.querySelector('#endDate')
             const endDateTime = document.querySelector('#endDateTime')
 
-            saveEl.addEventListener('click', () => {
-                const newStart = new Date(
-                    `${startDate.value} ${startDateTime.value}`
-                ).toISOString()
-                const newEnd = new Date(
-                    `${endDate.value} ${endDateTime.value}`
-                ).toISOString()
-                timelineEl.start = newStart
-                timelineEl.end = newEnd
+            increaseButton.addEventListener('click', () => {
+                timelineEl.zoom = timelineEl.zoom + 50
             })
+
+            decreaseButton.addEventListener('click', () => {
+                timelineEl.zoom = timelineEl.zoom - 50
+            })
+
+            // saveEl.addEventListener('click', () => {
+            //     const newStart = new Date(
+            //         `${startDate.value} ${startDateTime.value}`
+            //     ).toISOString()
+            //     const newEnd = new Date(
+            //         `${endDate.value} ${endDateTime.value}`
+            //     ).toISOString()
+            //     timelineEl.start = newStart
+            //     timelineEl.end = newEnd
+            // })
             const data = [
                 {
                     label: '',
