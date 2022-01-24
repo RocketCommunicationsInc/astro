@@ -24,7 +24,7 @@ export function dateRange(
         return [...Array(days + 1).keys()].map((i) => {
             const time = addDays(startDate, i)
             const utcTime = utcToZonedTime(time, 'UTC')
-            const formattedTime = format(utcTime, 'MM/dd')
+            const formattedTime = format(time, 'MM/dd')
 
             return formattedTime
         })
@@ -39,7 +39,7 @@ export function dateRange(
         const output = [...Array(days + 1).keys()].map((i) => {
             const time = addHours(startDate, i)
             const utcTime = utcToZonedTime(time, 'UTC')
-            const formattedTime = format(utcTime, 'HH:mm')
+            const formattedTime = format(time, 'HH:mm')
             return formattedTime
         })
 

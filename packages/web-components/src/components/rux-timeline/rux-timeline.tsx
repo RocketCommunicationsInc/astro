@@ -12,6 +12,7 @@ import { format, parse } from 'date-fns'
 import { utcToZonedTime } from 'date-fns-tz/esm'
 import { addMinutes, differenceInHours } from 'date-fns/esm'
 import differenceInMinutes from 'date-fns/esm/fp/differenceInMinutes/index.js'
+import { RuxIconContactSupport } from '../rux-icon/icons/rux-icon-contact-support'
 import { dateRange } from './helpers'
 
 @Component({
@@ -42,7 +43,7 @@ export class RuxTimeline {
         console.log('old', oldRatio)
         console.log('new', newRatio)
 
-        const newMargin = this.calcPlayheadFromTime(this.newTime, oldRatio)
+        const newMargin = this.calcPlayheadFromTime(this.newTime)
         console.log('newMarg', newMargin)
         this.margin = newMargin
 
@@ -115,6 +116,8 @@ export class RuxTimeline {
 
     calcTimeFromPlayhead(position: any) {
         this.margin = position
+        console.log('current margin', position)
+
         const time = position - 200
 
         const min = time / this.ratio
@@ -123,8 +126,8 @@ export class RuxTimeline {
         let intervalValue = 60
         if (this.interval === 'day') {
         }
-        const start = utcToZonedTime(this.start, 'utc')
-        const newTime = addMinutes(start, min)
+        // const start = utcToZonedTime(this.start, 'utc')
+        const newTime = addMinutes(new Date(this.start), min)
         const newTimeFormatted = format(newTime, 'MM/dd/Y HH:mm:ss')
         this.newTime = newTime
 
@@ -141,13 +144,19 @@ export class RuxTimeline {
             ratio = this.ratio
         }
 
-        const start = utcToZonedTime(this.start, 'utc')
-        const targetTime = utcToZonedTime(time, 'utc')
-        const newTime = differenceInMinutes(start, targetTime)
-        console.log('newtime', newTime)
+        // const start = utcToZonedTime(this.start, 'utc')
+        // const targetTime = utcToZonedTime(time, 'utc')
+        const newTime = differenceInMinutes(
+            new Date(this.start),
+            new Date(time)
+        )
+        console.log('newtime', time)
         console.log('ratio', ratio)
 
-        return (newTime + 200) * ratio - 200
+        const result = newTime * ratio + 200
+        console.log('playhead time result', result)
+
+        return result
     }
 
     handleMouse(e: any) {
@@ -157,6 +166,9 @@ export class RuxTimeline {
             ? this.slotContainer?.scrollLeft
             : 0
 
+        console.log('rect', rect.left)
+        console.log('clientx', e.clientX)
+
         const position = e.clientX - rect.left + scrollOffset
 
         // if (e.clientY <= 234) { // ignore scrollbar
@@ -165,6 +177,7 @@ export class RuxTimeline {
             console.log('pos', position)
 
             this.time = this.calcTimeFromPlayhead(position)
+            // this.calcPlayheadFromTime(this.time)
         } else {
             this.margin = 200
         }
