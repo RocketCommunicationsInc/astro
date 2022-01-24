@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { RuxInput } from "@astrouxds/react";
+import React, { useState } from "react";
+import { RuxInput, RuxButton } from "@astrouxds/react";
 
 function RuxInputTest() {
   const [ruxInput, setRuxInput] = useState("");
@@ -11,11 +11,6 @@ function RuxInputTest() {
       RuxInput: ${ruxInput}
     `);
   }
-  // useEffect(() => {
-  //   if (ruxInput && ruxInput.includes("@")) {
-  //     setValid(true);
-  //   } else setValid(false);
-  // }, [ruxInput]);
   function validate() {
     if (ruxInput2.includes("Cid")) {
       setValid(true);
@@ -55,6 +50,7 @@ function RuxInputTest() {
           //! using errorText generates two attr - error-text and errorText. error-text is what's actually controlling things
           error-text={valid ? undefined : "Enter cid"}
         />
+        <RuxButton data-testid="btn">Maybe</RuxButton>
       </form>
     </div>
   );

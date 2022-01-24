@@ -1,6 +1,11 @@
 import React from "react";
-import { render, fireEvent, waitFor } from "@testing-library/react";
-import { screen, within } from "testing-library__dom";
+import { render, fireEvent, waitFor, act } from "@testing-library/react";
+import {
+  screen,
+  within,
+  waitForElementToBeRemoved,
+} from "testing-library__dom";
+import userEvent from "@testing-library/user-event";
 
 import RuxInputTest from "../pages/RuxInputTest";
 
@@ -51,26 +56,33 @@ describe("RuxInput", () => {
   });
 
   test("Can test for ruxBlur being called", async () => {
-    const { getByTestId, findByText } = render(<RuxInputTest />);
-    const input1 = getByTestId("rux-input-test");
+    const { getByTestId } = render(<RuxInputTest />);
     const input2 = getByTestId("input-2");
-    // async function findErrorText() {
-    //   let res;
-    //   await within(input2)
-    //     .findAllByText("Enter cid")
-    //     .then((resolved) => {
-    //       res = resolved;
-    //     });
-    //   return res;
-    // }
-    let errorText = await within(input2).findByText("Enter cid");
-    console.log(errorText.nodeValue);
-    expect(errorText).not.toBeNull();
-    fireEvent.change(input2, { target: { value: "Cid" } });
-    //click off, blur should fire and error text should go away
-    fireEvent.click(input1);
-    let error2 = await within(input2).findByDisplayValue("Enter cid");
-    console.log(error2);
-    // expect(errorText).toBeNull();
+
+    let errorText: HTMLDivElement = await within(input2).findByText(
+      "Enter cid"
+    );
+
+    //We could do fireEvent on the input1 itself and await findByDisplayValue, just trying
+    // a new approach here.
+    const shadowInput: HTMLRuxInputElement = within(input2).getByLabelText(
+      "Rux Input 2"
+    );
+    // fireEvent.change(shadowInput, { target: {value: "Cid"}})
+    // expect(shadowInput.value).toBe('Cid')
+
+    act(() => {
+      userEvent.type(shadowInput, "Cid");
+    });
+    expect(shadowInput.value).toBe("Cid");
+
+    // Trigger blur
+    act(() => {
+      shadowInput.blur();
+    });
+    // retries until the wrapped function stops throwing an error
+    await waitFor(() => {
+      expect(errorText).not.toBeInTheDocument();
+    });
   });
 });

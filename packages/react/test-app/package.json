@@ -6,7 +6,6 @@
     "@astrouxds/react": "^0.0.0-6.1-rc-20220114175111",
     "@testing-library/jest-dom": "^5.16.0",
     "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
     "@types/jest": "^26.0.24",
     "@types/node": "^12.20.37",
     "@types/react": "^17.0.37",
@@ -41,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/user-event": "^13.5.0"
   }
 }
