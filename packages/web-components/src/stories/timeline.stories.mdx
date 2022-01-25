@@ -5,12 +5,6 @@ import { html, render } from 'lit-html'
 <Meta
     title="Components/Timeline"
     component="rux-timeline"
-    subcomponents={{
-        RuxRange: 'rux-range',
-        RuxTrack: 'rux-track',
-        RuxTimeRegion: 'rux-time-region',
-        RuxRuler: 'rux-ruler',
-    }}
     argTypes={extractArgTypes('rux-timeline')}
 />
 
@@ -95,3 +89,44 @@ export const Default = (args) => {
 ## API
 
 <ArgsTable of="rux-timeline" />
+
+## Timeline
+
+The Timeline component is responsible for
+
+-   creating and manipulating the grid used to display events.
+-   rendering the appropriate labels for **Ruler**
+
+<Story name="Track">{''}</Story>
+
+## Track
+
+Tracks are responsible for containing individual **Time Regions** across a horizontal lane. They are composed of a header section and a time region section.
+
+<ArgsTable of="rux-track" />
+
+## Time Region
+
+Time Regions represent single events in time. A `start` time and an `end` time are required. If a `start` and `end` time aren't provided, or an invalid range is provided,
+the component will fail silently and not render.
+
+```
+<rux-time-region
+    start="2021-02-01T00:00:00Z"
+    end="2021-02-01T00:30:00Z"
+>
+    Region1
+</rux-time-region>
+```
+
+<ArgsTable of="rux-time-region" />
+
+## Ruler
+
+**Ruler** is responsible for displaying the intervals of time across the timeline grid.
+
+```
+    <rux-ruler></rux-ruler>
+```
+
+<ArgsTable of="rux-ruler" />
