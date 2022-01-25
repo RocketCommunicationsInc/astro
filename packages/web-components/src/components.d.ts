@@ -6780,6 +6780,7 @@ export namespace Components {
          */
         label?: string
     }
+    interface RuxPlayhead {}
     interface RuxPopUpMenu {
         /**
          * Element to anchor the menu to. If none is given the menu will anchor to the trigger element where aria-controls === menu id
@@ -7121,7 +7122,7 @@ export namespace Components {
         /**
          * The end time
          */
-        end: string
+        end: any
         /**
          * The label
          */
@@ -7129,7 +7130,7 @@ export namespace Components {
         /**
          * The start time
          */
-        start: string
+        start: any
         /**
          * The track
          */
@@ -14688,6 +14689,13 @@ declare global {
         prototype: HTMLRuxOptionGroupElement
         new (): HTMLRuxOptionGroupElement
     }
+    interface HTMLRuxPlayheadElement
+        extends Components.RuxPlayhead,
+            HTMLStencilElement {}
+    var HTMLRuxPlayheadElement: {
+        prototype: HTMLRuxPlayheadElement
+        new (): HTMLRuxPlayheadElement
+    }
     interface HTMLRuxPopUpMenuElement
         extends Components.RuxPopUpMenu,
             HTMLStencilElement {}
@@ -15957,6 +15965,7 @@ declare global {
         'rux-notification': HTMLRuxNotificationElement
         'rux-option': HTMLRuxOptionElement
         'rux-option-group': HTMLRuxOptionGroupElement
+        'rux-playhead': HTMLRuxPlayheadElement
         'rux-pop-up-menu': HTMLRuxPopUpMenuElement
         'rux-progress': HTMLRuxProgressElement
         'rux-push-button': HTMLRuxPushButtonElement
@@ -22800,6 +22809,7 @@ declare namespace LocalJSX {
         label?: string
         'onRux-option-group-changed'?: (event: CustomEvent<void>) => void
     }
+    interface RuxPlayhead {}
     interface RuxPopUpMenu {
         /**
          * Element to anchor the menu to. If none is given the menu will anchor to the trigger element where aria-controls === menu id
@@ -23212,7 +23222,7 @@ declare namespace LocalJSX {
         /**
          * The end time
          */
-        end?: string
+        end?: any
         /**
          * The label
          */
@@ -23220,7 +23230,7 @@ declare namespace LocalJSX {
         /**
          * The start time
          */
-        start?: string
+        start?: any
         /**
          * The track
          */
@@ -24329,6 +24339,7 @@ declare namespace LocalJSX {
         'rux-notification': RuxNotification
         'rux-option': RuxOption
         'rux-option-group': RuxOptionGroup
+        'rux-playhead': RuxPlayhead
         'rux-pop-up-menu': RuxPopUpMenu
         'rux-progress': RuxProgress
         'rux-push-button': RuxPushButton
@@ -26511,6 +26522,8 @@ declare module '@stencil/core' {
                 JSXBase.HTMLAttributes<HTMLRuxOptionElement>
             'rux-option-group': LocalJSX.RuxOptionGroup &
                 JSXBase.HTMLAttributes<HTMLRuxOptionGroupElement>
+            'rux-playhead': LocalJSX.RuxPlayhead &
+                JSXBase.HTMLAttributes<HTMLRuxPlayheadElement>
             'rux-pop-up-menu': LocalJSX.RuxPopUpMenu &
                 JSXBase.HTMLAttributes<HTMLRuxPopUpMenuElement>
             'rux-progress': LocalJSX.RuxProgress &

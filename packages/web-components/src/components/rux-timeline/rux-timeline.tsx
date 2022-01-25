@@ -35,36 +35,20 @@ export class RuxTimeline {
 
     @Watch('zoom')
     handleZoomChange(old: any, newValue: any) {
-        // const current = utcToZonedTime(this.newTime, 'utc')
-        // console.log('cur', current);
-
-        const oldRatio = newValue / 60
-        const newRatio = this.zoom / 60
-        console.log('old', oldRatio)
-        console.log('new', newRatio)
-
         const newMargin = this.calcPlayheadFromTime(this.newTime)
-        console.log('newMarg', newMargin)
         this.margin = newMargin
-
-        // this.margin = 500
     }
 
     @Watch('start')
     @Watch('end')
     handleStartChange() {
         this.calcDiff()
-        console.log('start changed')
     }
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this.handleMouse = this.handleMouse.bind(this)
     }
     componentWillLoad() {
-        const diff = this.calcDiff()
-        console.log('diff', diff)
-
-        console.log('timelinechildnodes', this.el.childNodes)
         const childNodes = this.el.childNodes
         const children = Array.prototype.filter.call(
             childNodes,
@@ -82,8 +66,7 @@ export class RuxTimeline {
             //   console.log(this.margin);
         }, 1000)
 
-        const { width } = this.el.getBoundingClientRect()
-        console.log('current width', width)
+        // const { width } = this.el.getBoundingClientRect()
     }
 
     @Method()
@@ -94,13 +77,8 @@ export class RuxTimeline {
     }
 
     calcDiff() {
-        const start = new Date(this.start)
-        const end = new Date(this.end)
         const test = dateRange(this.start, this.end, this.interval)
         this.totalCol = test.length
-        console.log('test', test)
-
-        // this.totalCol = -differenceInHours(start, end)
     }
 
     get ratio() {
@@ -116,13 +94,11 @@ export class RuxTimeline {
 
     calcTimeFromPlayhead(position: any) {
         this.margin = position
-        console.log('current margin', position)
 
         const time = position - 200
 
         const min = time / this.ratio
 
-        console.log('time', min)
         let intervalValue = 60
         if (this.interval === 'day') {
         }
@@ -134,8 +110,6 @@ export class RuxTimeline {
         const hours = Math.floor(min / intervalValue)
         const minutes = Math.floor(min % intervalValue)
 
-        // const hour = Math.floor(min / 60)
-        console.log(`${hours}:${minutes}`)
         return `${hours}:${minutes}`
     }
 
@@ -150,32 +124,23 @@ export class RuxTimeline {
             new Date(this.start),
             new Date(time)
         )
-        console.log('newtime', time)
-        console.log('ratio', ratio)
 
         const result = newTime * ratio + 200
-        console.log('playhead time result', result)
 
         return result
     }
 
     handleMouse(e: any) {
         const rect = this.el.getBoundingClientRect()
-        console.log('scrollleft', this.slotContainer?.scrollLeft)
         const scrollOffset = this.slotContainer
             ? this.slotContainer?.scrollLeft
             : 0
-
-        console.log('rect', rect.left)
-        console.log('clientx', e.clientX)
 
         const position = e.clientX - rect.left + scrollOffset
 
         // if (e.clientY <= 234) { // ignore scrollbar
 
         if (position > 200) {
-            console.log('pos', position)
-
             this.time = this.calcTimeFromPlayhead(position)
             // this.calcPlayheadFromTime(this.time)
         } else {
