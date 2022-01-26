@@ -28,11 +28,11 @@ export class RuxTrack {
     }
 
     componentWillLoad() {
-        const timeline = this.el.closest('rux-timeline')
-        // const lost = timeline?.querySelector('slot')
-        //@ts-ignore
-        console.log('timeline', timeline?.theSlots)
+        // const timeline = this.el.closest('rux-timeline')
+        this.initializeRows()
+    }
 
+    initializeRows() {
         const childNodes = this.el.childNodes
         const children = Array.prototype.filter.call(
             childNodes,
@@ -40,7 +40,6 @@ export class RuxTrack {
         )
 
         children.forEach((el) => {
-            //@ts-ignore
             el.track = this.track
         })
     }
@@ -54,8 +53,6 @@ export class RuxTrack {
             flatten: true,
         }) as HTMLElement[]
 
-        console.log('ass', assignedElements)
-
         //@ts-ignore
         assignedElements.map((el, index) => {
             //@ts-ignore
@@ -63,10 +60,6 @@ export class RuxTrack {
             // el.trackId = ++index
             // el.setAttribute('track-id', 10)
         })
-    }
-
-    get gridRow() {
-        return id
     }
 
     render() {

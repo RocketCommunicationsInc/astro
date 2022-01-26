@@ -136,9 +136,6 @@ export class RuxTimeline {
         }
         // }
     }
-    get theSlots() {
-        return this.slots
-    }
 
     get formattedCurrentTime() {
         if (this.newTime) {
