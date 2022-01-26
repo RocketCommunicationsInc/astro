@@ -7129,6 +7129,7 @@ export namespace Components {
          * The label
          */
         label?: string
+        ratio: number
         /**
          * The start time
          */
@@ -23230,6 +23231,7 @@ declare namespace LocalJSX {
          * The label
          */
         label?: string
+        ratio?: number
         /**
          * The start time
          */

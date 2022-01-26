@@ -14,13 +14,15 @@ import { addMinutes, differenceInHours } from 'date-fns/esm'
 import differenceInMinutes from 'date-fns/esm/fp/differenceInMinutes/index.js'
 import { hasSlot } from '../../utils/utils'
 import { dateRange } from './helpers'
-
+import { MyService } from './MyServiceController'
+let id = 0
 @Component({
     tag: 'rux-timeline',
     styleUrl: 'rux-timeline.scss',
     shadow: true,
 })
 export class RuxTimeline {
+    private inputId = `rux-input-${++id}`
     private playheadContainer?: HTMLElement
     private slotContainer?: HTMLElement
     public slots?: any = 'empty'
@@ -38,6 +40,7 @@ export class RuxTimeline {
     handleZoomChange(old: any, newValue: any) {
         const newMargin = this.calcPlayheadFromTime(this.newTime)
         this.margin = newMargin
+        this.updateRegions()
     }
 
     @Watch('start')
@@ -72,6 +75,7 @@ export class RuxTimeline {
     componentWillLoad() {
         this.calcDiff()
         this.initializeTracks()
+        MyService.addData(this.inputId)
     }
 
     initializeTracks() {
@@ -167,21 +171,55 @@ export class RuxTimeline {
         }
     }
 
-    private _handleSlotChange() {
-        const slot = this.slotContainer?.querySelector(
-            'slot'
-        ) as HTMLSlotElement
+    private _handleSlotChange(e: any) {
+        this.updateRegions()
 
-        const assignedElements = slot.assignedElements({
-            flatten: true,
-        }) as HTMLElement[]
-        this.slots = assignedElements
-        //@ts-ignore
-        assignedElements.map((el, index) => {
-            //@ts-ignore
-            // el.trackId = ++index
-            // el.setAttribute('track-id', 10)
-        })
+        const slot = this.slotContainer?.querySelector(
+            'slot[name=""]'
+        ) as HTMLSlotElement
+        console.log('slots', slot)
+
+        // const assignedElements = slot.assignedElements({
+        //     flatten: true,
+        // }) as HTMLElement[]
+        // this.slots = assignedElements
+        // //@ts-ignore
+        // assignedElements.map((el, index) => {
+        //     //@ts-ignore
+        //     // el.trackId = ++index
+        //     // el.setAttribute('track-id', 10)
+        // })
+    }
+
+    updateRegions() {
+        const slots = this.slotContainer?.querySelectorAll('slot')[1]
+        const assignedNodes = slots?.assignedNodes({ flatten: true })
+        let tracks = []
+        if (assignedNodes) {
+            tracks = assignedNodes.filter((node: any) => {
+                return (
+                    node.tagName && node.tagName.toLowerCase() === 'rux-track'
+                )
+            })
+
+            tracks.map((track) => {
+                const regions = Array.prototype.filter.call(
+                    track.childNodes,
+                    (node) => {
+                        return (
+                            node.nodeType == Node.ELEMENT_NODE &&
+                            node.tagName === 'RUX-TIME-REGION'
+                        )
+                    }
+                )
+
+                regions.map((region) => {
+                    console.log('travk', track.childNodes)
+                    //@ts-ignore
+                    region.ratio = this.ratio
+                })
+            })
+        }
     }
     goToMin() {
         const marg = this.calcPlayheadFromTime('2021-02-01T01:30:00Z')
@@ -192,6 +230,7 @@ export class RuxTimeline {
         return (
             <Host>
                 <div class="border">
+                    <button onClick={() => this.goToMin()}>go</button>
                     <div
                         class="rux-timeline"
                         ref={(el) => (this.slotContainer = el)}
