@@ -12,7 +12,6 @@ import { format, parse } from 'date-fns'
 import { utcToZonedTime } from 'date-fns-tz/esm'
 import { addMinutes, differenceInHours } from 'date-fns/esm'
 import differenceInMinutes from 'date-fns/esm/fp/differenceInMinutes/index.js'
-import { RuxIconContactSupport } from '../rux-icon/icons/rux-icon-contact-support'
 import { dateRange } from './helpers'
 
 @Component({
@@ -49,31 +48,22 @@ export class RuxTimeline {
         this.handleMouse = this.handleMouse.bind(this)
     }
     componentWillLoad() {
-        const childNodes = this.el.childNodes
-        const children = Array.prototype.filter.call(
-            childNodes,
-            (node) => node.nodeType == Node.ELEMENT_NODE
-        )
-
-        children.forEach((el, index) => {
-            //@ts-ignore
-            el.track = ++index
-        })
-        // this._handleSlotChange()
-
-        window.setInterval(() => {
-            // this.margin = this.margin + 2
-            //   console.log(this.margin);
-        }, 1000)
-
-        // const { width } = this.el.getBoundingClientRect()
+        this.calcDiff()
+        this.initializeTracks()
     }
 
-    @Method()
-    async getTotalColumns() {
-        const start = new Date(this.start)
-        const end = new Date(this.end)
-        return differenceInHours(start, end)
+    initializeTracks() {
+        const childNodes = this.el.childNodes
+        const children = Array.prototype.filter.call(childNodes, (node) => {
+            return (
+                node.nodeType == Node.ELEMENT_NODE &&
+                node.tagName === 'RUX-TRACK'
+            )
+        })
+
+        children.forEach((el, index) => {
+            el.track = ++index
+        })
     }
 
     calcDiff() {
@@ -118,8 +108,6 @@ export class RuxTimeline {
             ratio = this.ratio
         }
 
-        // const start = utcToZonedTime(this.start, 'utc')
-        // const targetTime = utcToZonedTime(time, 'utc')
         const newTime = differenceInMinutes(
             new Date(this.start),
             new Date(time)

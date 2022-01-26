@@ -32,9 +32,10 @@ export class RuxRuler {
         const timeline = this.el?.closest('rux-timeline')
         // this.totalColumns = -timeline?.totalCol
         this._timeline = timeline
-        timeline?.getTotalColumns().then((r) => {
-            this.totalColumns = -r
-        })
+        // timeline?.getTotalColumns().then((r) => {
+        //     this.totalColumns = -r
+        // })
+        this.totalColumns = timeline?.totalCol
         this.interval = timeline?.interval
         console.log('times', this.times)
 
