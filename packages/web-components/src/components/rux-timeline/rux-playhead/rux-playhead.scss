@@ -1,0 +1,27 @@
+:host {
+    display: block;
+}
+
+.rux-playhead {
+    width: 5px;
+    //   grid-row: 1 / 5;
+    //   grid-column: time-0000 / time-2359;
+
+    background: var(--color-primary);
+    z-index: 10;
+
+    height: 100%;
+    position: absolute;
+    top: 0;
+    // left: 200px;
+    &:after {
+        width: 0;
+        height: 0;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-top: 12px solid var(--color-primary);
+        content: '';
+        position: absolute;
+        left: -9.5px;
+    }
+}

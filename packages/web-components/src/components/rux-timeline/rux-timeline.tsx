@@ -12,6 +12,7 @@ import { format, parse } from 'date-fns'
 import { utcToZonedTime } from 'date-fns-tz/esm'
 import { addMinutes, differenceInHours } from 'date-fns/esm'
 import differenceInMinutes from 'date-fns/esm/fp/differenceInMinutes/index.js'
+import { hasSlot } from '../../utils/utils'
 import { dateRange } from './helpers'
 
 @Component({
@@ -20,6 +21,7 @@ import { dateRange } from './helpers'
     shadow: true,
 })
 export class RuxTimeline {
+    private playheadContainer?: HTMLElement
     private slotContainer?: HTMLElement
     public slots?: any = 'empty'
     @State() newTime: any = ''
@@ -43,6 +45,26 @@ export class RuxTimeline {
     handleStartChange() {
         this.calcDiff()
     }
+
+    @Watch('margin')
+    syncMargin() {
+        const hasPlayed = hasSlot(this.el, 'playhead')
+        if (hasPlayed) {
+            const slot = this.playheadContainer?.querySelector(
+                'slot'
+            ) as HTMLSlotElement
+
+            const assignedElements = slot
+                .assignedElements({
+                    flatten: true,
+                })
+                .filter(
+                    (el) => el.tagName.toLowerCase() === 'rux-playhead'
+                )[0] as HTMLRuxPlayheadElement
+            assignedElements.time = this.margin
+        }
+    }
+
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this.handleMouse = this.handleMouse.bind(this)
@@ -180,10 +202,9 @@ export class RuxTimeline {
                             gridTemplateColumns: `[header] 200px repeat(${this.totalCol}, ${this.zoom}px)`,
                         }}
                     >
-                        <div
-                            class="rux-playhead"
-                            style={{ left: `${this.margin}px` }}
-                        ></div>
+                        <div ref={(el) => (this.playheadContainer = el)}>
+                            <slot name="playhead"></slot>
+                        </div>
                         <slot onSlotchange={this._handleSlotChange}></slot>
                     </div>
                     <div>The current time is {this.time}</div>

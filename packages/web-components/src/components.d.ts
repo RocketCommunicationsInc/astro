@@ -6780,7 +6780,9 @@ export namespace Components {
          */
         label?: string
     }
-    interface RuxPlayhead {}
+    interface RuxPlayhead {
+        time: any
+    }
     interface RuxPopUpMenu {
         /**
          * Element to anchor the menu to. If none is given the menu will anchor to the trigger element where aria-controls === menu id
@@ -7138,7 +7140,6 @@ export namespace Components {
     }
     interface RuxTimeline {
         end: string
-        getTotalColumns: () => Promise<number>
         interval: 'hour' | 'day' | 'month'
         start: string
         totalCol: any
@@ -22809,7 +22810,9 @@ declare namespace LocalJSX {
         label?: string
         'onRux-option-group-changed'?: (event: CustomEvent<void>) => void
     }
-    interface RuxPlayhead {}
+    interface RuxPlayhead {
+        time?: any
+    }
     interface RuxPopUpMenu {
         /**
          * Element to anchor the menu to. If none is given the menu will anchor to the trigger element where aria-controls === menu id
