@@ -36,7 +36,7 @@ function RuxInputTest() {
             setRuxInput(target.value);
           }}
           name="rux-input"
-          error-text={ruxInput.includes("@") ? undefined : "Error text."}
+          errorText={ruxInput.includes("@") ? undefined : "Error text."}
         />
         <RuxInput
           data-testid="input-2"
@@ -48,7 +48,7 @@ function RuxInputTest() {
           }}
           onRuxblur={() => validate()}
           //! using errorText generates two attr - error-text and errorText. error-text is what's actually controlling things
-          error-text={valid ? undefined : "Enter cid"}
+          errorText={valid ? undefined : "Enter cid"}
         />
         <RuxButton data-testid="btn">Maybe</RuxButton>
       </form>

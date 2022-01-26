@@ -1,6 +1,5 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-// import { screen, within } from "testing-library__dom";
 import { ruxFireEvent } from "../RuxEvents";
 
 import RuxModalTest from "../pages/RuxModalTest";
