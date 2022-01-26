@@ -192,8 +192,6 @@ export class RuxTimeline {
         return (
             <Host>
                 <div class="border">
-                    {this.totalCol}
-                    <button onClick={() => this.goToMin()}>go</button>
                     <div
                         class="rux-timeline"
                         ref={(el) => (this.slotContainer = el)}
@@ -207,8 +205,7 @@ export class RuxTimeline {
                         </div>
                         <slot onSlotchange={this._handleSlotChange}></slot>
                     </div>
-                    <div>The current time is {this.time}</div>
-                    {this.formattedCurrentTime}
+                    <div>The current time is {this.formattedCurrentTime}</div>
                 </div>
             </Host>
         )
