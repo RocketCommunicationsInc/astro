@@ -31,19 +31,22 @@ export class RuxTimeRegion {
      * The track
      */
     @Prop() track: string = '1'
-    @Prop() ratio = 2
+    @Prop({ reflect: true }) ratio = 2
+    @Prop({ reflect: true }) interval = 'hour'
 
-    @State() startOffset = 0
-    @State() endOffset = 0
+    // @State() startOffset = 0
+    // @State() endOffset = 0
+    @State() startDate: any
+    @State() endDate: any
     componentWillLoad() {
-        const start = new Date(this.start)
-        const end = new Date(this.end)
+        this.startDate = new Date(this.start)
+        this.endDate = new Date(this.end)
         this.ruxTimeline = this.el?.closest('rux-timeline')
 
         // if (length < 60) {
 
-        this.startOffset = start.getHours() * this.ratio
-        this.endOffset = end.getHours() * this.ratio
+        // this.startOffset = start.getMinutes() * this.ratio
+        // this.endOffset = end.getMinutes() * this.ratio
 
         // MyService.getData().then(r => {
         //     console.log('res', r)
@@ -61,6 +64,29 @@ export class RuxTimeRegion {
         // this.track = id ? id : '1'
     }
 
+    get startOffset() {
+        if (this.interval === 'hour') {
+            return this.startDate.getMinutes() * this.ratio
+        }
+        if (this.interval === 'day') {
+            return this.startDate.getHours() * this.ratio
+        }
+
+        return 0
+    }
+
+    get endOffset() {
+        if (this.interval === 'hour') {
+            return this.endDate.getMinutes() * this.ratio
+        }
+
+        if (this.interval === 'day') {
+            return this.endDate.getHours() * this.ratio
+        }
+
+        return 0
+    }
+
     // get ratio() {
     //     if (this.ruxTimeline.interval === 'hour') {
     //         return this.ruxTimeline.zoom / 60 // for hours.
@@ -73,14 +99,24 @@ export class RuxTimeRegion {
     // }
 
     calculateGridColumnFromTime(time: any) {
-        console.log('test', this.ruxTimeline.start)
         const timelineStart = new Date(this.ruxTimeline.start)
-        const difference = Math.abs(
-            differenceInDays(timelineStart, new Date(time))
-        )
-        console.log('diff in hour', difference)
 
-        return difference + 2
+        if (this.interval === 'hour') {
+            const difference = Math.abs(
+                differenceInHours(timelineStart, new Date(time))
+            )
+
+            return difference + 2
+        }
+
+        if (this.interval === 'day') {
+            const difference = Math.abs(
+                differenceInDays(timelineStart, new Date(time))
+            )
+
+            return difference + 2
+        }
+        return 0
         // console.log('dif', difference);
 
         // const date = new Date(time)
@@ -93,7 +129,6 @@ export class RuxTimeRegion {
     }
 
     render() {
-        console.log('rendering event', this.ratio)
         return (
             <Host>
                 <div
@@ -108,7 +143,6 @@ export class RuxTimeRegion {
                         marginRight: `-${this.endOffset}px`,
                     }}
                 >
-                    {this.ratio}
                     <div class="rux-time-region__content">
                         <slot></slot>
                     </div>

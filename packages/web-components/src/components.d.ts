@@ -7125,6 +7125,7 @@ export namespace Components {
          * The end time
          */
         end: any
+        interval: string
         /**
          * The label
          */
@@ -23227,6 +23228,7 @@ declare namespace LocalJSX {
          * The end time
          */
         end?: any
+        interval?: string
         /**
          * The label
          */

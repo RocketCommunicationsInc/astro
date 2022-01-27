@@ -103,7 +103,7 @@ export class RuxTimeline {
         }
 
         if (this.interval === 'day') {
-            return this.zoom / 120 //tbd
+            return this.zoom / 20 //tbd
         }
         return 2
     }
@@ -217,6 +217,7 @@ export class RuxTimeline {
                     console.log('travk', track.childNodes)
                     //@ts-ignore
                     region.ratio = this.ratio
+                    region.interval = this.interval
                 })
             })
         }
