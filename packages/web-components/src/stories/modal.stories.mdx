@@ -23,15 +23,15 @@ A Modal interrupts the app experience to prompt a user to confirm an action or a
 
 export const Modal = (args) => {
     return html`
-        <div style="display: flex; flex-flow: column; justify-content: center;">
-            <rux-modal
-                ?open="${args.open}"
-                modal-message="${args.modalMessage}"
-                modal-title="${args.modalTitle}"
-                confirm-text="${args.confirmText}"
-                deny-text="${args.denyText}"
-            ></rux-modal>
-        </div
+<div style="display: flex; flex-flow: column; justify-content: center;">
+    <rux-modal
+        ?open="${args.open}"
+        modal-message="${args.modalMessage}"
+        modal-title="${args.modalTitle}"
+        confirm-text="${args.confirmText}"
+        deny-text="${args.denyText}"
+    ></rux-modal>
+</div
     `
 }
 

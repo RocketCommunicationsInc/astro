@@ -3,6 +3,11 @@
 Astro is an open source Web Components and design library.
 Astro Web Components use [`Stencil`](https://stenciljs.com) in order to provide fast and easy integration no matter the framework.
 
+## Documentation
+
+**Current documentation**: [astro-components.netlify.app](https://astro-components.netlify.app/)
+Beta documentation: [beta-astro-components.netlify.app](https://beta-astro-components.netlify.app/)
+
 ### Packages
 
 | Project                  | Description                                                                                                                                |                                                      Links                                                       |

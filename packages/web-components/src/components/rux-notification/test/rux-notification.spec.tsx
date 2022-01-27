@@ -10,16 +10,7 @@ describe('rux-notification', () => {
             components: [RuxNotification],
             html: `<rux-notification open message="hello there"></rux-notification>`,
         })
-        expect(page.root).toEqualHtml(`
-         <rux-notification class="rux-notification-banner-0ba5409c--open" message="hello there" open="" status="standby">
-           <mock:shadow-root>
-             <div class="rux-notification__message">
-               hello there
-             </div>
-             <rux-icon icon="close" label="Close notification" role="button" size="36px"></rux-icon>
-        </mock:shadow-root>
-      </rux-notification>
-    `)
+        expect(page.root).toMatchSnapshot()
     })
     it('sets open to false after the closeAfter time has been met', async () => {
         const ruxNotif = new RuxNotification()

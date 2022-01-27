@@ -113,7 +113,6 @@ In Astro 4.0, these groups have been flattened, and each icon is now imported di
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property            | Attribute | Description                                                                                                                    | Type                  | Default     |
@@ -122,6 +121,11 @@ In Astro 4.0, these groups have been flattened, and each icon is now imported di
 | `label`             | `label`   | The icon SVG's title attribute. Used for accessibility. If none is provided, the icon name will be used.                       | `string \| undefined` | `undefined` |
 | `size`              | `size`    | The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em') | `string`              | `'normal'`  |
 
+## Shadow Parts
+
+| Part     | Description          |
+| -------- | -------------------- |
+| `"icon"` | the icon in rux-icon |
 
 ## CSS Custom Properties
 
@@ -129,19 +133,19 @@ In Astro 4.0, these groups have been flattened, and each icon is now imported di
 | ---------------------- | ----------------------------- |
 | `--icon-default-color` | the default color of the icon |
 
-
 ## Dependencies
 
 ### Used by
 
- - [rux-button](../rux-button)
- - [rux-global-status-bar](../rux-global-status-bar)
- - [rux-input](../rux-input)
- - [rux-monitoring-icon](../rux-monitoring-icon)
- - [rux-notification](../rux-notification)
- - [rux-push-button](../rux-push-button)
+-   [rux-button](../rux-button)
+-   [rux-global-status-bar](../rux-global-status-bar)
+-   [rux-input](../rux-input)
+-   [rux-monitoring-icon](../rux-monitoring-icon)
+-   [rux-notification](../rux-notification)
+-   [rux-push-button](../rux-push-button)
 
 ### Graph
+
 ```mermaid
 graph TD;
   rux-button --> rux-icon
@@ -153,6 +157,6 @@ graph TD;
   style rux-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

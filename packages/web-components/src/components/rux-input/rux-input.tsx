@@ -17,9 +17,12 @@ let id = 0
 
 /**
  * @slot label - The input label
+ * @part error-text - The error text element
  * @part form-field - The form-field wrapper container
- * @part label - The input label when `label` prop is set
+ * @part help-text - The help text element
  * @part icon - The icon displayed when toggle-password prop is set
+ * @part input - The input element
+ * @part label - The input label when `label` prop is set
  */
 @Component({
     tag: 'rux-input',
@@ -114,6 +117,21 @@ export class RuxInput implements FormFieldInterface {
      * The input step attribute
      */
     @Prop() step?: string
+
+    /**
+     * The input's autocomplete attribute
+     */
+    @Prop() autocomplete?: string
+
+    /**
+     * The input's spellcheck attribute
+     */
+    @Prop() spellcheck = false
+
+    /**
+     * The inputs readonly attribute
+     */
+    @Prop() readonly = false
 
     /**
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
@@ -235,6 +253,10 @@ export class RuxInput implements FormFieldInterface {
             hasLabel,
             iconName,
             size,
+            autocomplete,
+            spellcheck,
+            readonly,
+            togglePassword,
         } = this
 
         renderHiddenInput(true, el, name, value, disabled)
@@ -285,12 +307,15 @@ export class RuxInput implements FormFieldInterface {
                             'rux-input--large': size === 'large',
                         }}
                         id={this.inputId}
-                        autoComplete={this.togglePassword ? 'off' : 'on'}
+                        spellcheck={spellcheck}
+                        autocomplete={togglePassword ? 'off' : autocomplete}
+                        readonly={readonly}
                         onChange={_onChange}
                         onInput={_onInput}
                         onBlur={_onBlur}
+                        part="input"
                     ></input>
-                    {this.togglePassword && (
+                    {togglePassword && (
                         <div
                             class={{
                                 'icon-container': true,
@@ -299,7 +324,7 @@ export class RuxInput implements FormFieldInterface {
                             }}
                         >
                             <rux-icon
-                                part="icon"
+                                exportparts="icon"
                                 onClick={_handleTogglePassword}
                                 icon={iconName}
                                 size="extra-small"

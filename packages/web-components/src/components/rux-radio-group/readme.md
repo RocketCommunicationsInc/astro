@@ -2,7 +2,6 @@
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property    | Attribute    | Description                                                                                                         | Type                  | Default     |
@@ -14,13 +13,11 @@
 | `name`      | `name`       | The name of the radio group - submitted with form data. Must match the name of the radios in the group.             | `string`              | `''`        |
 | `value`     | `value`      | The value of the current selected radio in the group. Changing this will also mark that radio as checked in the UI. | `any`                 | `undefined` |
 
-
 ## Events
 
 | Event       | Description                                                                                                                                     | Type               |
 | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
 | `ruxchange` | Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) | `CustomEvent<any>` |
-
 
 ## Slots
 
@@ -28,15 +25,15 @@
 | --------- | --------------------- |
 | `"label"` | The radio group label |
 
-
 ## Shadow Parts
 
 | Part           | Description                              |
 | -------------- | ---------------------------------------- |
+| `"error-text"` | The error text element                   |
 | `"form-field"` | The form-field wrapper container         |
+| `"help-text"`  | The help text element                    |
 | `"label"`      | The input label when `label` prop is set |
 | `"radiogroup"` | The container of radios                  |
-
 
 ## CSS Custom Properties
 
@@ -44,7 +41,6 @@
 | --------------------------- | ---------------------------- |
 | `--radiogroup-border-color` | the radio group border color |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

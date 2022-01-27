@@ -17,6 +17,10 @@ let id = 0
 
 /**
  * @slot (default) - the label of the checkbox.
+ * @part form-field - the form field wrapper container
+ * @part help-text - The help text element
+ * @part label - the label of rux-checkbox
+ *
  */
 @Component({
     tag: 'rux-checkbox',
@@ -146,7 +150,7 @@ export class RuxCheckbox implements FormFieldInterface {
 
         return (
             <Host>
-                <div class="rux-form-field">
+                <div class="rux-form-field" part="form-field">
                     <div
                         class={{
                             'rux-checkbox': true,
@@ -168,7 +172,7 @@ export class RuxCheckbox implements FormFieldInterface {
                             onBlur={this._onBlur}
                             ref={(el) => (this._inputEl = el)}
                         />
-                        <label htmlFor={checkboxId}>
+                        <label htmlFor={checkboxId} part="label">
                             {this.label}
                             <span
                                 class={{

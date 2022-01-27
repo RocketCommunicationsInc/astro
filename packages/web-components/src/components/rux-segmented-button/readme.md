@@ -42,7 +42,6 @@ document.addEventListener('change', (e) =>
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property   | Attribute  | Description                                                                                                                                                                                                                                                                                                                                                                                                    | Type                | Default |
@@ -50,13 +49,17 @@ document.addEventListener('change', (e) =>
 | `data`     | --         | Items in this Array are the individual button segments.                                                                                                                                                                                                                                                                                                                                                        | `SegmentedButton[]` | `[]`    |
 | `selected` | `selected` | When passed in on load, this selects the first button segment with a matching label. When the selected segment changes, this property updates with the currently selected value, which reflects back to the component attribute. If no button segment label matches this string, then no segment is selected. This value takes priority over setting selected boolean property on the items in the data array. | `string`            | `''`    |
 
-
 ## Events
 
 | Event       | Description                                  | Type               |
 | ----------- | -------------------------------------------- | ------------------ |
 | `ruxchange` | Emitted when the value property has changed. | `CustomEvent<any>` |
 
+## Shadow Parts
+
+| Part      | Description                       |
+| --------- | --------------------------------- |
+| `"label"` | the label of rux-segmented-button |
 
 ## CSS Custom Properties
 
@@ -75,7 +78,6 @@ document.addEventListener('change', (e) =>
 | `--segmented-button-selected-text-color`             | Segmented button selected text color             |
 | `--segmented-button-text-color`                      | Segmented button text color                      |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

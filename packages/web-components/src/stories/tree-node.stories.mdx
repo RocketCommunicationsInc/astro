@@ -23,19 +23,18 @@ Tree Node should be used with the [Tree](/?path=/story/components-tree--tree) co
 
 export const Default = (args) => {
     return html`
-        <rux-tree-node
-            ?selected="${args.selected}"
-            ?expanded="${args.expanded}"
-        >
-            Level 1
-            <rux-tree-node slot="node"> </rux-tree-node>
-        </rux-tree-node>
+<rux-tree-node
+    ?selected="${args.selected}"
+    ?expanded="${args.expanded}"
+>
+    Level 1
+    <rux-tree-node slot="node"></rux-tree-node>
+</rux-tree-node>
     `
 }
 
 <Canvas>
-    <Story
-        args={{ disabled: true }} // Set default args here
+    <Story // Set default args here
         name="Default"
     >
         {Default.bind()}
@@ -52,7 +51,7 @@ export const Default = (args) => {
 
 export const Selected = (args) => {
     return html`
-        <rux-tree-node ?selected="${args.selected}"> Level 1 </rux-tree-node>
+<rux-tree-node ?selected="${args.selected}"> Level 1 </rux-tree-node>
     `
 }
 
@@ -66,12 +65,13 @@ export const Selected = (args) => {
 
 export const Expanded = (args) => {
     return html`
-        <rux-tree-node
-            ?selected="${args.selected}"
-            ?expanded="${args.expanded}"
-        >
-            Level 1
-        </rux-tree-node>
+<rux-tree-node
+    ?selected="${args.selected}"
+    ?expanded="${args.expanded}"
+>
+    Level 1
+    <rux-tree-node slot="node"></rux-tree-node>
+</rux-tree-node>
     `
 }
 

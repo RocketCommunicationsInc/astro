@@ -7,12 +7,6 @@ describe('rux-tabs', () => {
             components: [RuxTabs],
             html: `<rux-tabs></rux-tabs>`,
         })
-        expect(page.root).toEqualHtml(`
-      <rux-tabs>
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
-      </rux-tabs>
-    `)
+        expect(page.root).toMatchSnapshot()
     })
 })

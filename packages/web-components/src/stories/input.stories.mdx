@@ -27,21 +27,24 @@ Input allow users to enter freeform text. Variations on this field often provide
 
 export const Default = (args) => {
     return html`
-        <rux-input
-            .label="${args.label}"
-            .disabled="${args.disabled}"
-            .errorText="${args.errorText}"
-            .invalid="${args.invalid}"
-            .helpText="${args.helpText}"
-            .min="${args.min}"
-            .max="${args.max}"
-            .name="${args.name}"
-            .placeholder="${args.placeholder}"
-            ?required="${args.required}"
-            .value="${args.value}"
-            .step="${args.step}"
-            .type=${args.type}
-        ></rux-input>
+<rux-input
+    label="${args.label}"
+    .disabled="${args.disabled}"
+    .errorText="${args.errorText}"
+    ?invalid="${args.invalid}"
+    .helpText="${args.helpText}"
+    .min="${args.min}"
+    .max="${args.max}"
+    .name="${args.name}"
+    .placeholder="${args.placeholder}"
+    ?required="${args.required}"
+    .value="${args.value}"
+    .step="${args.step}"
+    type=${args.type}
+    ?readonly="${args.readonly}"
+    ?autocomplete="${args.autocomplete}"
+    ?spellcheck="${args.spellcheck}"
+></rux-input>
     `
 }
 
@@ -67,22 +70,24 @@ export const Default = (args) => {
 
 export const Disabled = (args) => {
     return html`
-        <rux-input
-            .label="${args.label}"
-            .disabled="${args.disabled}"
-            .error-text="${args.errorText}"
-            .invalid="${args.invalid}"
-            .help-text="${args.helpText}"
-            .min="${args.min}"
-            .max="${args.max}"
-            .name="${args.name}"
-            .placeholder="${args.placeholder}"
-            ?required="${args.required}"
-            .value="${args.value}"
-            .step="${args.step}"
-            type=${args.type}
-        ></rux-input>
-        ${args.helpText}
+<rux-input
+    label="${args.label}"
+    ?disabled="${args.disabled}"
+    .error-text="${args.errorText}"
+    ?invalid="${args.invalid}"
+    .help-text="${args.helpText}"
+    .min="${args.min}"
+    .max="${args.max}"
+    .name="${args.name}"
+    .placeholder="${args.placeholder}"
+    ?required="${args.required}"
+    .value="${args.value}"
+    .step="${args.step}"
+    type=${args.type}
+    ?readonly="${args.readonly}"
+    ?autocomplete="${args.autocomplete}"
+    ?spellcheck="${args.spellcheck}"
+></rux-input>
     `
 }
 
@@ -103,56 +108,65 @@ export const Disabled = (args) => {
 
 export const Sizes = (args) => {
     return html`
-        <rux-input
-            label="Small input"
-            .disabled="${args.disabled}"
-            .errorText="${args.errorText}"
-            .invalid="${args.invalid}"
-            .helpText="${args.helpText}"
-            .min="${args.min}"
-            .max="${args.max}"
-            .name="${args.name}"
-            .placeholder="${args.placeholder}"
-            ?required="${args.required}"
-            size="small"
-            .value="${args.value}"
-            type=${args.type}
-            .step="${args.step}"
-        ></rux-input>
-        <br />
-        <rux-input
-            label="Medium input"
-            .disabled="${args.disabled}"
-            .errorText="${args.errorText}"
-            .invalid="${args.invalid}"
-            .helpText="${args.helpText}"
-            .min="${args.min}"
-            .max="${args.max}"
-            .name="${args.name}"
-            .placeholder="${args.placeholder}"
-            ?required="${args.required}"
-            size="medium"
-            .value="${args.value}"
-            type=${args.type}
-            .step="${args.step}"
-        ></rux-input>
-        <br />
-        <rux-input
-            label="Large input"
-            .disabled="${args.disabled}"
-            .errorText="${args.errorText}"
-            .invalid="${args.invalid}"
-            .helpText="${args.helpText}"
-            .min="${args.min}"
-            .max="${args.max}"
-            .name="${args.name}"
-            .placeholder="${args.placeholder}"
-            ?required="${args.required}"
-            size="large"
-            .value="${args.value}"
-            type=${args.type}
-            .step="${args.step}"
-        ></rux-input>
+<rux-input
+    label="Small input"
+    ?disabled="${args.disabled}"
+    .errorText="${args.errorText}"
+    ?invalid="${args.invalid}"
+    .helpText="${args.helpText}"
+    .min="${args.min}"
+    .max="${args.max}"
+    .name="${args.name}"
+    .placeholder="${args.placeholder}"
+    ?required="${args.required}"
+    size="small"
+    .value="${args.value}"
+    type=${args.type}
+    .step="${args.step}"
+    ?readonly="${args.readonly}"
+    ?autocomplete="${args.autocomplete}"
+    ?spellcheck="${args.spellcheck}"
+></rux-input>
+<br />
+<rux-input
+    label="Medium input"
+    ?disabled="${args.disabled}"
+    .errorText="${args.errorText}"
+    ?invalid="${args.invalid}"
+    .helpText="${args.helpText}"
+    .min="${args.min}"
+    .max="${args.max}"
+    .name="${args.name}"
+    .placeholder="${args.placeholder}"
+    ?required="${args.required}"
+    size="medium"
+    .value="${args.value}"
+    type=${args.type}
+    .step="${args.step}"
+    ?readonly="${args.readonly}"
+    ?autocomplete="${args.autocomplete}"
+    ?spellcheck="${args.spellcheck}"
+></rux-input>
+<br />
+<rux-input
+    label="Large input"
+    ?disabled="${args.disabled}"
+    .errorText="${args.errorText}"
+    ?invalid="${args.invalid}"
+    .helpText="${args.helpText}"
+    .min="${args.min}"
+    .max="${args.max}"
+    .name="${args.name}"
+    .placeholder="${args.placeholder}"
+    ?required="${args.required}"
+    size="large"
+    .value="${args.value}"
+    type=${args.type}
+    .step="${args.step}"
+    ?readonly="${args.readonly}"
+    ?autocomplete="${args.autocomplete}"
+    ?spellcheck="${args.spellcheck}"
+></rux-input>
     `
 }
 
@@ -171,21 +185,24 @@ export const Sizes = (args) => {
 
 export const HelpText = (args) => {
     return html`
-        <rux-input
-            .label="${args.label}"
-            .disabled="${args.disabled}"
-            .errorText="${args.errorText}"
-            .invalid="${args.invalid}"
-            .helpText="${args.helpText}"
-            .min="${args.min}"
-            .max="${args.max}"
-            .name="${args.name}"
-            .placeholder="${args.placeholder}"
-            ?required="${args.required}"
-            .value="${args.value}"
-            type=${args.type}
-            .step="${args.step}"
-        ></rux-input>
+<rux-input
+    label="${args.label}"
+    ?disabled="${args.disabled}"
+    .error-text="${args.errorText}"
+    ?invalid="${args.invalid}"
+    help-text="${args.helpText}"
+    .min="${args.min}"
+    .max="${args.max}"
+    .name="${args.name}"
+    .placeholder="${args.placeholder}"
+    ?required="${args.required}"
+    .value="${args.value}"
+    type=${args.type}
+    .step="${args.step}"
+    ?readonly="${args.readonly}"
+    ?autocomplete="${args.autocomplete}"
+    ?spellcheck="${args.spellcheck}"
+></rux-input>
     `
 }
 
@@ -206,21 +223,24 @@ export const HelpText = (args) => {
 
 export const Invalid = (args) => {
     return html`
-        <rux-input
-            .label="${args.label}"
-            .disabled="${args.disabled}"
-            .errorText="${args.errorText}"
-            .invalid="${args.invalid}"
-            .helpText="${args.helpText}"
-            .min="${args.min}"
-            .max="${args.max}"
-            .name="${args.name}"
-            .placeholder="${args.placeholder}"
-            ?required="${args.required}"
-            .value="${args.value}"
-            type=${args.type}
-            .step="${args.step}"
-        ></rux-input>
+<rux-input
+    label="${args.label}"
+    .disabled="${args.disabled}"
+    error-text="${args.errorText}"
+    ?invalid="${args.invalid}"
+    .helpText="${args.helpText}"
+    .min="${args.min}"
+    .max="${args.max}"
+    .name="${args.name}"
+    .placeholder="${args.placeholder}"
+    ?required="${args.required}"
+    .value="${args.value}"
+    type=${args.type}
+    .step="${args.step}"
+    ?readonly="${args.readonly}"
+    ?autocomplete="${args.autocomplete}"
+    ?spellcheck="${args.spellcheck}"
+></rux-input>
     `
 }
 

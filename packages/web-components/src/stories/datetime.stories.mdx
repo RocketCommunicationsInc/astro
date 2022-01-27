@@ -14,23 +14,18 @@ Datetime is a utility component that provides a convenient wrapper around the [I
 
 export const Default = (args) => {
     return html`
-        <div style="padding: 10%; display: flex; justify-content: center;">
-            <rux-datetime
-                date=${args.date}
-                .day=${args.day}
-                .era=${args.era}
-                .hour=${args.hour}
-                .hour12=${args.hour12}
-                .locale=${args.locale}
-                .minute=${args.minute}
-                .month=${args.month}
-                .second=${args.second}
-                .timeZone=${args.timeZone}
-                .timeZoneName=${args.timeZoneName}
-                .weekday=${args.weekday}
-                .year=${args.year}
-            ></rux-datetime>
-        </div>
+<div style="padding: 10%; display: flex; justify-content: center;">
+    <rux-datetime
+        date=${args.date}
+        day=${args.day}
+        hour=${args.hour}
+        minute=${args.minute}
+        month=${args.month}
+        second=${args.second}
+        time-zone=${args.timeZone}
+        year=${args.year}
+    ></rux-datetime>
+</div>
     `
 }
 
