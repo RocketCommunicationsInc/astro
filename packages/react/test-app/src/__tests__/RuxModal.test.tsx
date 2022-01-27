@@ -1,18 +1,15 @@
-import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import { ruxFireEvent } from "../RuxEvents";
 
 import RuxModalTest from "../pages/RuxModalTest";
-
+//! Will need re-worked when slots modal is released
 describe("RuxModal", () => {
   it("Should open when triggered", async () => {
     const { getByTestId } = render(<RuxModalTest />);
     const modal = getByTestId("modal");
     const btn = getByTestId("btn");
 
-    //modal should be closed
     expect(modal).not.toHaveAttribute("open");
-    //click btn to open modal
     fireEvent.click(btn);
     expect(modal).toHaveAttribute("open");
   });
@@ -23,6 +20,7 @@ describe("RuxModal", () => {
 
     fireEvent.click(btn);
     expect(modal).toHaveAttribute("open");
+    // Added custom event to fireEvent's object - see ../RuxEvents.tsx
     ruxFireEvent.ruxmodalclosed(modal);
     expect(modal).not.toHaveAttribute("open");
   });

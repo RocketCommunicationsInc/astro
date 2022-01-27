@@ -12,11 +12,7 @@ function RuxInputTest() {
     `);
   }
   function validate() {
-    if (ruxInput2.includes("Cid")) {
-      setValid(true);
-    } else {
-      setValid(false);
-    }
+    ruxInput2.includes("Cid") ? setValid(true) : setValid(false);
   }
 
   return (
@@ -47,7 +43,7 @@ function RuxInputTest() {
             setRuxInput2(target.value);
           }}
           onRuxblur={() => validate()}
-          //! using errorText generates two attr - error-text and errorText. error-text is what's actually controlling things
+          //! using errorText generates two attr - error-text and errorText.
           errorText={valid ? undefined : "Enter cid"}
         />
         <RuxButton data-testid="btn">Maybe</RuxButton>

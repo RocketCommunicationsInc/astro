@@ -4,7 +4,6 @@ import { RuxModal, RuxButton } from "@astrouxds/react";
 function RuxModalTest() {
   const [open, setOpen] = useState(false);
 
-  function handleModalClose() {}
   return (
     <div>
       <RuxButton onClick={() => setOpen(!open)} data-testid="btn">

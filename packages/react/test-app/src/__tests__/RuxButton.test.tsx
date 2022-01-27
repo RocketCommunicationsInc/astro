@@ -1,5 +1,5 @@
-import React from "react";
 import { render, fireEvent } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import RuxButtonTest from "../pages/RuxButtonTest";
 
 describe("RuxButton", () => {
@@ -9,6 +9,16 @@ describe("RuxButton", () => {
 
     fireEvent.click(btn);
     //* Using a textarea to render the "Clicked!" message, since findByDispalyValue has strict element parameters: https://testing-library.com/docs/queries/bydisplayvalue
+    await findByDisplayValue("Clicked!");
+  });
+  /**
+   * userEvent click
+   */
+  test("Hears a userEvent Click", async () => {
+    const { getByTestId, findByDisplayValue } = render(<RuxButtonTest />);
+    const btn = getByTestId("rux-btn");
+
+    userEvent.click(btn);
     await findByDisplayValue("Clicked!");
   });
   test("Should be able to toggle disabled state", async () => {

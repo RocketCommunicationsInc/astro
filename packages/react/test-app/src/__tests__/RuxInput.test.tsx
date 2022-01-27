@@ -1,15 +1,13 @@
-import React from "react";
 import { render, fireEvent, waitFor, act } from "@testing-library/react";
-import {
-  screen,
-  within,
-  waitForElementToBeRemoved,
-} from "testing-library__dom";
+import { screen, within } from "testing-library__dom";
 import userEvent from "@testing-library/user-event";
 
 import RuxInputTest from "../pages/RuxInputTest";
 
 describe("RuxInput", () => {
+  /**
+   * fireEvent Tests
+   */
   test("Should change with fireEvent", async () => {
     const { getByTestId, findByDisplayValue } = render(<RuxInputTest />);
     const input = getByTestId("rux-input-test");
@@ -22,18 +20,32 @@ describe("RuxInput", () => {
 
     expect(input).toHaveValue("foo@bar.com");
   });
+
   test("Should accept input with fireEvent", async () => {
     const { getByTestId, findByDisplayValue } = render(<RuxInputTest />);
     const input = getByTestId("rux-input-test");
 
     fireEvent.input(input, { target: { value: "foo@input.com" } });
     await findByDisplayValue("foo@input.com");
+    //* Uncomment to see a failing test
+    // await findByDisplayValue("foo@fail.com")
 
     expect(input).toHaveValue("foo@input.com");
   });
+
   /**
-   *  This simply finds the error text within the input.
+   *  userEvent test
    */
+  test("Should be typed into with userEvent", async () => {
+    render(<RuxInputTest />);
+    let input = await screen.findByLabelText("Rux Input");
+    act(() => {
+      userEvent.type(input, "User Event");
+    });
+    await screen.findByDisplayValue("User Event");
+    expect(input).toHaveValue("User Event");
+  });
+
   test("Should render error-text", async () => {
     render(<RuxInputTest />);
     const input = screen.getByTestId("rux-input-test");
@@ -63,14 +75,9 @@ describe("RuxInput", () => {
       "Enter cid"
     );
 
-    //We could do fireEvent on the input1 itself and await findByDisplayValue, just trying
-    // a new approach here.
     const shadowInput: HTMLRuxInputElement = within(input2).getByLabelText(
       "Rux Input 2"
     );
-    // fireEvent.change(shadowInput, { target: {value: "Cid"}})
-    // expect(shadowInput.value).toBe('Cid')
-
     act(() => {
       userEvent.type(shadowInput, "Cid");
     });
@@ -80,7 +87,7 @@ describe("RuxInput", () => {
     act(() => {
       shadowInput.blur();
     });
-    // retries until the wrapped function stops throwing an error
+    // retries until the wrapped function stops throwing an error or times out
     await waitFor(() => {
       expect(errorText).not.toBeInTheDocument();
     });
