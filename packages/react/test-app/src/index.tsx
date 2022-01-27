@@ -5,11 +5,10 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css";
 import RuxInputTest from "./pages/RuxInputTest";
-import FormTest from "./pages/FromTest";
 
 ReactDOM.render(
   <React.StrictMode>
-    <FormTest />
+    <RuxInputTest />
   </React.StrictMode>,
   document.getElementById("root")
 );
