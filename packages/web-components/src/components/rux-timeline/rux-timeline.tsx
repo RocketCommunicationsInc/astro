@@ -10,7 +10,12 @@ import {
 } from '@stencil/core'
 import { format, parse } from 'date-fns'
 import { utcToZonedTime } from 'date-fns-tz/esm'
-import { addMinutes, differenceInHours } from 'date-fns/esm'
+import {
+    addHours,
+    addMinutes,
+    differenceInHours,
+    startOfDay,
+} from 'date-fns/esm'
 import differenceInMinutes from 'date-fns/esm/fp/differenceInMinutes/index.js'
 import { hasSlot } from '../../utils/utils'
 import { dateRange } from './helpers'
@@ -33,7 +38,7 @@ export class RuxTimeline {
     @Prop() start = '2021-02-01T00:00:00Z'
     @Prop() end = '2021-02-10T00:00:00Z'
     @Prop() totalCol: any = null
-    @Prop() zoom = 120
+    @Prop() zoom = 48
     @Prop() interval: 'hour' | 'day' | 'month' = 'hour'
 
     @Watch('zoom')
@@ -103,7 +108,7 @@ export class RuxTimeline {
         }
 
         if (this.interval === 'day') {
-            return this.zoom / 20 //tbd
+            return this.zoom / 24 //tbd
         }
         return 2
     }
@@ -117,9 +122,26 @@ export class RuxTimeline {
 
         let intervalValue = 60
         if (this.interval === 'day') {
+            intervalValue = 24
         }
         // const start = utcToZonedTime(this.start, 'utc')
-        const newTime = addMinutes(new Date(this.start), min)
+        console.log('time', this.margin)
+
+        let newTime = new Date()
+        if (this.interval === 'hour') {
+            newTime = addMinutes(new Date(this.start), min)
+        }
+
+        if (this.interval === 'day') {
+            /**
+             * If the interval is day, we need to round the start/end times to the start of the day
+             * Ie you passing 01/01/2020 06:00 as the start, the timeline needs to start at 00
+             */
+
+            const start = startOfDay(new Date(this.start))
+            newTime = addHours(start, min)
+        }
+
         const newTimeFormatted = format(newTime, 'MM/dd/Y HH:mm:ss')
         this.newTime = newTime
 
