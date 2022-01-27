@@ -14,7 +14,7 @@
     "compile": "npm run tsc",
     "tsc": "tsc -p .",
     "rollup": "rollup -c",
-    "test": "jest",
+    "test": "jest ./__tests__",
     "test.watch": "jest --watchAll"
   },
   "main": "./dist/index.js",
