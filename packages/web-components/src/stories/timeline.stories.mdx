@@ -108,7 +108,7 @@ Tracks are responsible for containing individual **Time Regions** across a horiz
 ## Time Region
 
 Time Regions represent single events in time. A `start` time and an `end` time are required. If a `start` and `end` time aren't provided, or an invalid range is provided,
-the component will fail silently and not render.
+the component will fail silently and not render. A valid `start` and `end` time must fall within the date range specified on the root **Timeline** component
 
 ```
 <rux-time-region

@@ -34,7 +34,7 @@ export class RuxTimeline {
     @Element() el!: HTMLRuxTimelineElement
     @Prop() start = '2021-02-01T00:00:00Z'
     @Prop() end = '2021-02-10T00:00:00Z'
-    @Prop() zoom = 48
+    @Prop() zoom = 120
     @Prop() interval: 'hour' | 'day' | 'month' = 'hour'
 
     @Watch('zoom')
@@ -207,10 +207,18 @@ export class RuxTimeline {
                 )
 
                 regions.map((region) => {
-                    console.log('travk', track.childNodes)
-                    //@ts-ignore
                     region.ratio = this.pxToTimeRatio
                     region.interval = this.interval
+                    const isValid = this.validateTimeRegion(
+                        region.start,
+                        region.end
+                    )
+                    console.log('region', region.classList)
+
+                    if (!isValid) {
+                        console.log('Invalid Region', region)
+                        region.style.visibility = 'hidden'
+                    }
                 })
 
                 const ruler = Array.prototype.filter.call(
@@ -229,6 +237,13 @@ export class RuxTimeline {
                 }
             })
         }
+    }
+
+    validateTimeRegion(start: any, end: any) {
+        return (
+            new Date(start) >= new Date(this.start) &&
+            new Date(end) <= new Date(this.end)
+        )
     }
     goToMin() {
         const marg = this.calcPlayheadFromTime('2021-02-01T01:30:00Z')

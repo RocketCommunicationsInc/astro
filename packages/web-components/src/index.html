@@ -188,7 +188,7 @@
                         Region1
                     </div>
                     <rux-time-region
-                        start="2021-02-01T09:00:00Z"
+                        start="2020-02-01T09:00:00Z"
                         end="2021-02-08T00:00:00Z"
                     >
                         <rux-status status="normal"></rux-status>
@@ -217,12 +217,23 @@
                     label="End Date"
                 />
 
+                <rux-segmented-button> </rux-segmented-button>
                 <rux-button id="update">Update</rux-button>
             </div>
         </div>
         <script>
             const increaseButton = document.querySelector('#increase')
             const decreaseButton = document.querySelector('#decrease')
+            const segButtEl = document.querySelector('rux-segmented-button')
+            segButtEl.data = [
+                {
+                    label: 'hour',
+                    selected: true,
+                },
+                {
+                    label: 'day',
+                },
+            ]
 
             const saveEl = document.querySelector('#update')
             const timelineEl = document.querySelector('rux-timeline')
@@ -242,6 +253,10 @@
                 console.log('time', startDate.value)
                 timelineEl.start = startDate.value
                 timelineEl.end = endDate.value
+            })
+
+            segButtEl.addEventListener('ruxchange', (e) => {
+                timelineEl.interval = e.detail
             })
             const data = [
                 {
