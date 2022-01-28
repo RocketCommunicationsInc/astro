@@ -70,6 +70,7 @@ export class RuxTimeRegion {
         }
         if (this.interval === 'day') {
             return this.startDate.getHours() * this.ratio
+            // return 0
         }
 
         return 0

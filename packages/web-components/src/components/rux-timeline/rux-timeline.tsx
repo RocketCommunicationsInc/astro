@@ -102,7 +102,10 @@ export class RuxTimeline {
         this.totalCol = test.length
     }
 
-    get ratio() {
+    /**
+     * The relationship between 1px and the datetime it represents.
+     */
+    get pxToTimeRatio() {
         if (this.interval === 'hour') {
             return this.zoom / 60 // for hours.
         }
@@ -118,7 +121,7 @@ export class RuxTimeline {
 
         const time = position - 200
 
-        const min = time / this.ratio
+        const min = time / this.pxToTimeRatio
 
         let intervalValue = 60
         if (this.interval === 'day') {
@@ -151,17 +154,13 @@ export class RuxTimeline {
         return `${hours}:${minutes}`
     }
 
-    calcPlayheadFromTime(time: any, ratio?: any) {
-        if (!ratio) {
-            ratio = this.ratio
-        }
-
+    calcPlayheadFromTime(time: any) {
         const newTime = differenceInMinutes(
             new Date(this.start),
             new Date(time)
         )
 
-        const result = newTime * ratio + 200
+        const result = newTime * this.pxToTimeRatio + 200
 
         return result
     }
@@ -213,6 +212,9 @@ export class RuxTimeline {
         // })
     }
 
+    /**
+     * Syncs the Timeline's current interval and ratio to it's children and grandchildren
+     */
     updateRegions() {
         const slots = this.slotContainer?.querySelectorAll('slot')[1]
         const assignedNodes = slots?.assignedNodes({ flatten: true })
@@ -238,7 +240,7 @@ export class RuxTimeline {
                 regions.map((region) => {
                     console.log('travk', track.childNodes)
                     //@ts-ignore
-                    region.ratio = this.ratio
+                    region.ratio = this.pxToTimeRatio
                     region.interval = this.interval
                 })
             })
