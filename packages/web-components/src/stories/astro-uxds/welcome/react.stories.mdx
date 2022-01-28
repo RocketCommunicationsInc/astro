@@ -347,3 +347,107 @@ const MyComp = () => {
 ```
 
 React also has syntactic sugar for two way data binding, which can be found [here](https://reactjs.org/docs/two-way-binding-helpers.html).
+
+## Testing
+
+### React Testing Library
+
+#### Overview
+
+[React Testing Library](https://testing-library.com/docs/react-testing-library/intro) is built for testing React components and supports the native HTML elements such as `<input>`. 
+Because our Astro components are web-components, some adaptations must be made to make testing with React Testing Library possible.
+[testing-library__dom](https://www.npmjs.com/package/testing-library__dom) is an adpatation of the DOM testing library for use with 
+shadow dom. It is still in an early beta stage, however we will show some examples on how to make use of it below.
+
+> For a complete list of the React Testing Library API, read their [docs](https://testing-library.com/docs/react-testing-library/api).
+
+#### Queires
+
+To find certain elements on the page, use the `findBy...` and `getBy...` queries. Here's an example using `getByTestId`.
+```jsx
+import { RuxButton } from "@astrouxds/react"
+import { render, fireEvent } from "@testing-library/react";
+
+declare interface Props {
+    handleClick: React.MouseEventHandler<HTMLRuxButtonElement>
+}
+
+const Comp = (props: Props) =>{
+    return(
+        <div>
+            <RuxButton data-testid="btn" onClick={(e) => props.handleClick(e)}>Button</RuxButton>
+        </div>
+    )
+}
+
+test('Can find and click a rux-button', async () => {
+    const mockClick = jest.fn();
+    const { getByTestId } = render(<Comp handleClick={mockClick}/>)
+    let btn = getByTestId('btn')
+    expect(btn).not.toBeNull()
+    
+    fireEvent.click(btn);
+    expect(mockClick).toHaveBeenCalledTimes(1)
+})
+```
+#### User input
+
+Handling user input can be done through `fireEvent` or `userEvent`. According to [the docs](https://testing-library.com/docs/ecosystem-user-event), `userEvent` is more true to 
+how the dom would behave with actual user interaction. However, there may be some hiccups with `userEvent` and shadow dom.
+
+Here's an example using both `fireEvent` and `userEvent` to handle user input.
+
+```jsx
+// MyForm.tsx
+import { useState } from "react"
+import { RuxInput } from "@astrouxds/react"
+
+function RuxInputTest() {
+    const [input, setInput] = useState("")
+    
+    return(
+        <div>
+            <RuxInput
+                label="Rux Input"
+                type="text"
+                data-testid="rux-input-test"
+                value={input}
+                setInput={(e: CustomEvent<HTMLRuxInputElement>) => {
+                    const target = e.target as HTMLInputElement;
+                    setRuxInput(target.value);
+                }}
+            />
+        </div>
+    )
+
+}
+```
+```jsx
+//input.test.tsx
+import { render, fireEvent, act } from "@testing-library/react";
+import { within } from "testing-library__dom";
+import userEvent from "@testing-library/user-event";
+import RuxInputTest from './MyForm'
+
+describe('RuxInput', () => {
+    test("Input changes with fireEvent", async () => {
+        const { getByTestId, findByDisplayValue } = render(<RuxInputTest />)
+        const ruxInput = getByTestId('rux-input-test')
+        fireEvent.change(ruxInput, {target: { value: 'Input!'}})
+        await findByDisplayValue('Input!')
+    })
+
+    test("Input changes with userEvent", async () => {
+        const { getByTestId, findByDisplayValue } = render(<RuxInputTest />)
+        const ruxInput = getByTestId('rux-input-test')
+        let shadowInput: HTMLRuxInputElement = await within(ruxInput).findByLabelText('Rux Input')
+        act(() => {
+            userEvent.type(shadowInput, 'User input!')
+        })
+        await findByDisplayValue('User input!')
+        expect(shadowInput.value).toBe('User input!')
+    })
+})
+```
+
+For more React testing examples, see our React repo [here](https://github.com/RocketCommunicationsInc/astro/tree/main/packages/react).
