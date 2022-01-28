@@ -28,62 +28,6 @@
                 zoom="140"
             >
                 <rux-playhead slot="playhead"></rux-playhead>
-                <rux-track id="track" label="second">
-                    <div slot="label">Region1</div>
-                    <rux-time-region
-                        start="2021-02-01T00:00:00Z"
-                        end="2021-02-01T01:30:00Z"
-                    >
-                        <rux-status status="normal"></rux-status>
-                        Region1
-                    </rux-time-region>
-                    <rux-time-region
-                        start="2021-02-01T05:40:00Z"
-                        end="2021-02-01T09:45:00Z"
-                    >
-                        <rux-status status="normal"></rux-status>
-                        Region1.1
-                    </rux-time-region>
-                </rux-track>
-
-                <rux-track label="first">
-                    <div slot="label">Region3</div>
-                    <rux-time-region
-                        start="2021-02-01T00:00:00Z"
-                        end="2021-02-01T03:00:00Z"
-                    >
-                        <rux-status status="normal"></rux-status>
-                        Region2
-                    </rux-time-region>
-                    <rux-time-region
-                        start="2021-02-01T00:00:00Z"
-                        end="2021-02-01T08:00:00Z"
-                    >
-                        <rux-status status="normal"></rux-status>
-                        Region3
-                    </rux-time-region>
-                </rux-track>
-
-                <rux-track label="third">
-                    <div slot="label">Region3</div>
-                    <rux-time-region
-                        start="2021-02-01T05:00:00Z"
-                        end="2021-02-01T06:00:00Z"
-                    >
-                        <rux-status status="normal"></rux-status>
-                        Region6
-                    </rux-time-region>
-                    <rux-time-region
-                        start="2021-02-01T06:00:00Z"
-                        end="2021-02-01T07:00:00Z"
-                    >
-                        <rux-status status="normal"></rux-status>
-                        Region6
-                    </rux-time-region>
-                </rux-track>
-                <rux-track>
-                    <rux-ruler></rux-ruler>
-                </rux-track>
             </rux-timeline>
 
             <rux-timeline
@@ -170,9 +114,6 @@
                         Region6
                     </rux-time-region>
                 </rux-track>
-                <rux-track>
-                    <rux-ruler></rux-ruler>
-                </rux-track>
             </rux-timeline>
 
             <rux-timeline
@@ -258,11 +199,62 @@
             segButtEl.addEventListener('ruxchange', (e) => {
                 timelineEl.interval = e.detail
             })
-            const data = [
+
+            function seedTimeline() {
+                events.map((region) => {
+                    const trackEl = document.createElement('rux-track')
+                    const labelEl = document.createElement('div')
+                    labelEl.setAttribute('slot', 'label')
+                    labelEl.innerText = region.label
+                    trackEl.appendChild(labelEl)
+
+                    region.events.map((event) => {
+                        const eventEl = document.createElement(
+                            'rux-time-region'
+                        )
+                        eventEl.start = event.start
+                        eventEl.end = event.end
+                        eventEl.innerText = event.label
+                        trackEl.appendChild(eventEl)
+                    })
+
+                    timelineEl.appendChild(trackEl)
+                })
+
+                const ruler = makeRuler()
+                timelineEl.appendChild(ruler)
+
+                function makeRuler() {
+                    const ruler = document.createElement('rux-ruler')
+                    const rulerTrack = document.createElement('rux-track')
+                    rulerTrack.appendChild(ruler)
+                    return rulerTrack
+                }
+            }
+            const events = [
                 {
-                    label: '',
+                    label: 'region1',
+                    events: [
+                        {
+                            label: 'Event 1',
+                            start: '2021-02-01T09:00:00Z',
+                            end: '2021-02-01T12:00:00Z',
+                        },
+                    ],
+                },
+                {
+                    label: 'Region 2',
+                    events: [
+                        {
+                            label: 'Event 2.1',
+                            start: '2021-02-01T00:00:00Z',
+                            end: '2021-02-01T05:00:00Z',
+                        },
+                    ],
                 },
             ]
+
+            seedTimeline()
         </script>
     </body>
 </html>

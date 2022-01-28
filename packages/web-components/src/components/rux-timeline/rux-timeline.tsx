@@ -178,6 +178,7 @@ export class RuxTimeline {
     }
 
     private _handleSlotChange(e: any) {
+        // this.initializeTracks()
         this.updateRegions()
     }
 
@@ -254,7 +255,6 @@ export class RuxTimeline {
         return (
             <Host>
                 <div class="border">
-                    {this.totalColumns}
                     <button onClick={() => this.goToMin()}>go</button>
                     <div
                         class="rux-timeline"
