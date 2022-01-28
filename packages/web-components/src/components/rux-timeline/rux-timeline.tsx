@@ -19,42 +19,38 @@ import {
 import differenceInMinutes from 'date-fns/esm/fp/differenceInMinutes/index.js'
 import { hasSlot } from '../../utils/utils'
 import { dateRange } from './helpers'
-import { MyService } from './MyServiceController'
-let id = 0
 @Component({
     tag: 'rux-timeline',
     styleUrl: 'rux-timeline.scss',
     shadow: true,
 })
 export class RuxTimeline {
-    private inputId = `rux-input-${++id}`
     private playheadContainer?: HTMLElement
     private slotContainer?: HTMLElement
     public slots?: any = 'empty'
     @State() newTime: any = ''
-    @State() margin = 200
+    @State() playheadPositionInPixels = 200
     @State() time = '00:00'
     @Element() el!: HTMLRuxTimelineElement
     @Prop() start = '2021-02-01T00:00:00Z'
     @Prop() end = '2021-02-10T00:00:00Z'
-    @Prop() totalCol: any = null
     @Prop() zoom = 48
     @Prop() interval: 'hour' | 'day' | 'month' = 'hour'
 
     @Watch('zoom')
-    handleZoomChange(old: any, newValue: any) {
+    handleZoomChange() {
         const newMargin = this.calcPlayheadFromTime(this.newTime)
-        this.margin = newMargin
+        this.playheadPositionInPixels = newMargin
         this.updateRegions()
     }
 
     @Watch('start')
     @Watch('end')
     handleStartChange() {
-        this.calcDiff()
+        this.updateRegions()
     }
 
-    @Watch('margin')
+    @Watch('playheadPositionInPixels')
     syncMargin() {
         const hasPlayed = hasSlot(this.el, 'playhead')
         if (hasPlayed) {
@@ -69,7 +65,7 @@ export class RuxTimeline {
                 .filter(
                     (el) => el.tagName.toLowerCase() === 'rux-playhead'
                 )[0] as HTMLRuxPlayheadElement
-            assignedElements.time = this.margin
+            assignedElements.time = this.playheadPositionInPixels
         }
     }
 
@@ -78,9 +74,7 @@ export class RuxTimeline {
         this.handleMouse = this.handleMouse.bind(this)
     }
     componentWillLoad() {
-        this.calcDiff()
         this.initializeTracks()
-        MyService.addData(this.inputId)
     }
 
     initializeTracks() {
@@ -97,11 +91,14 @@ export class RuxTimeline {
         })
     }
 
-    calcDiff() {
-        const test = dateRange(this.start, this.end, this.interval)
-        this.totalCol = test.length
+    get totalColumns() {
+        const range = dateRange(this.start, this.end, this.interval)
+        if (range) {
+            return range.length
+        } else {
+            return 0
+        }
     }
-
     /**
      * The relationship between 1px and the datetime it represents.
      */
@@ -117,18 +114,11 @@ export class RuxTimeline {
     }
 
     calcTimeFromPlayhead(position: any) {
-        this.margin = position
+        this.playheadPositionInPixels = position
 
         const time = position - 200
 
         const min = time / this.pxToTimeRatio
-
-        let intervalValue = 60
-        if (this.interval === 'day') {
-            intervalValue = 24
-        }
-        // const start = utcToZonedTime(this.start, 'utc')
-        console.log('time', this.margin)
 
         let newTime = new Date()
         if (this.interval === 'hour') {
@@ -145,13 +135,7 @@ export class RuxTimeline {
             newTime = addHours(start, min)
         }
 
-        const newTimeFormatted = format(newTime, 'MM/dd/Y HH:mm:ss')
         this.newTime = newTime
-
-        const hours = Math.floor(min / intervalValue)
-        const minutes = Math.floor(min % intervalValue)
-
-        return `${hours}:${minutes}`
     }
 
     calcPlayheadFromTime(time: any) {
@@ -176,10 +160,11 @@ export class RuxTimeline {
         // if (e.clientY <= 234) { // ignore scrollbar
 
         if (position > 200) {
-            this.time = this.calcTimeFromPlayhead(position)
+            this.calcTimeFromPlayhead(position)
+            // this.time = this.calcTimeFromPlayhead(position)
             // this.calcPlayheadFromTime(this.time)
         } else {
-            this.margin = 200
+            this.playheadPositionInPixels = 200
         }
         // }
     }
@@ -194,22 +179,6 @@ export class RuxTimeline {
 
     private _handleSlotChange(e: any) {
         this.updateRegions()
-
-        const slot = this.slotContainer?.querySelector(
-            'slot[name=""]'
-        ) as HTMLSlotElement
-        console.log('slots', slot)
-
-        // const assignedElements = slot.assignedElements({
-        //     flatten: true,
-        // }) as HTMLElement[]
-        // this.slots = assignedElements
-        // //@ts-ignore
-        // assignedElements.map((el, index) => {
-        //     //@ts-ignore
-        //     // el.trackId = ++index
-        //     // el.setAttribute('track-id', 10)
-        // })
     }
 
     /**
@@ -243,25 +212,41 @@ export class RuxTimeline {
                     region.ratio = this.pxToTimeRatio
                     region.interval = this.interval
                 })
+
+                const ruler = Array.prototype.filter.call(
+                    track.childNodes,
+                    (node) => {
+                        return (
+                            node.nodeType == Node.ELEMENT_NODE &&
+                            node.tagName === 'RUX-RULER'
+                        )
+                    }
+                )
+                if (ruler.length) {
+                    ruler[0].startDate = this.start
+                    ruler[0].endDate = this.end
+                    ruler[0].interval = this.interval
+                }
             })
         }
     }
     goToMin() {
         const marg = this.calcPlayheadFromTime('2021-02-01T01:30:00Z')
 
-        this.margin = marg
+        this.playheadPositionInPixels = marg
     }
     render() {
         return (
             <Host>
                 <div class="border">
+                    {this.totalColumns}
                     <button onClick={() => this.goToMin()}>go</button>
                     <div
                         class="rux-timeline"
                         ref={(el) => (this.slotContainer = el)}
                         onMouseMove={(ev) => this.handleMouse(ev)}
                         style={{
-                            gridTemplateColumns: `[header] 200px repeat(${this.totalCol}, ${this.zoom}px)`,
+                            gridTemplateColumns: `[header] 200px repeat(${this.totalColumns}, ${this.zoom}px)`,
                         }}
                     >
                         <div ref={(el) => (this.playheadContainer = el)}>

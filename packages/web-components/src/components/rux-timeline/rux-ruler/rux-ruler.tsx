@@ -21,50 +21,26 @@ export class RuxRuler {
      * The track
      */
     @Prop() track: string = '1'
-    @Prop() totalColumns = 24
     @Prop() intervalIncrement = 1
     @Prop() interval: any = ''
-
-    private _timeline: any
+    @Prop() startDate: any
+    @Prop() endDate: any
     @Element() el!: HTMLRuxRulerElement
 
-    componentWillLoad() {
-        const timeline = this.el?.closest('rux-timeline')
-        // this.totalColumns = -timeline?.totalCol
-        this._timeline = timeline
-        // timeline?.getTotalColumns().then((r) => {
-        //     this.totalColumns = -r
-        // })
-        this.totalColumns = timeline?.totalCol
-        this.interval = timeline?.interval
-        console.log('times', this.times)
-
-        // const range = this.dateRange(new Date('2021-02-01T00:00:00Z'), new Date('2021-02-02T00:00:00Z'), 'hour')
-    }
-
-    get times() {
-        const times = []
-        for (let i = 0; i < this.totalColumns; i = i + this.intervalIncrement) {
-            times.push((i < 10 ? '0' : '') + `${i}:00`)
-        }
-        return times
-    }
-
-    dateRange() {
+    get dateRange() {
         return getRange(
-            this._timeline.start,
-            this._timeline.end,
+            new Date(this.startDate),
+            new Date(this.endDate),
             this.interval,
             this.intervalIncrement
         )
     }
 
     render() {
-        console.log('times', this.times)
         return (
             <Host>
                 <div class="rux-ruler rux-track">
-                    {this.dateRange().map((time, index) => (
+                    {this.dateRange.map((time, index) => (
                         <span
                             class={{
                                 'ruler-time': true,

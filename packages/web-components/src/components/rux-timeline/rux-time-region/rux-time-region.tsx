@@ -2,7 +2,6 @@ import { Element, Prop, Component, State, Host, h } from '@stencil/core'
 import differenceInMinutes from 'date-fns/differenceInMinutes'
 import { differenceInDays, differenceInHours } from 'date-fns/esm'
 import format from 'date-fns/format'
-import { MyService } from '../MyServiceController'
 
 @Component({
     tag: 'rux-time-region',

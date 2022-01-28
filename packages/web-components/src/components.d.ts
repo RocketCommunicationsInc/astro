@@ -6910,9 +6910,10 @@ export namespace Components {
         value?: any | null
     }
     interface RuxRuler {
+        endDate: any
         interval: any
         intervalIncrement: number
-        totalColumns: number
+        startDate: any
         /**
          * The track
          */
@@ -7144,7 +7145,6 @@ export namespace Components {
         end: string
         interval: 'hour' | 'day' | 'month'
         start: string
-        totalCol: any
         zoom: number
     }
     interface RuxTrack {
@@ -22958,9 +22958,10 @@ declare namespace LocalJSX {
         value?: any | null
     }
     interface RuxRuler {
+        endDate?: any
         interval?: any
         intervalIncrement?: number
-        totalColumns?: number
+        startDate?: any
         /**
          * The track
          */
@@ -23247,7 +23248,6 @@ declare namespace LocalJSX {
         end?: string
         interval?: 'hour' | 'day' | 'month'
         start?: string
-        totalCol?: any
         zoom?: number
     }
     interface RuxTrack {
