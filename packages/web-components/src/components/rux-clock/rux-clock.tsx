@@ -26,7 +26,6 @@ export class RuxClock {
     private tzFormat: string = 'z'
     private convertedAos?: string
     private convertedLos?: string
-    private dayOfYearStr!: string
 
     @State() _time!: string
     /**
@@ -131,7 +130,6 @@ export class RuxClock {
         const localDate = new Date(Date.now())
         const clockDate = utcToZonedTime(localDate, this._timezone)
         this.dayOfYear = getDayOfYear(clockDate)
-        this.dayOfYearStr = this.dayOfYear.toString()
     }
 
     /**
@@ -169,7 +167,7 @@ export class RuxClock {
                             aria-labelledby="rux-clock__day-of-year-label"
                             part="date"
                         >
-                            {this.dayOfYearStr.padStart(3, '0')}
+                            {this.dayOfYear.toString().padStart(3, '0')}
                         </div>
                         {!this.hideLabels && (
                             <div
