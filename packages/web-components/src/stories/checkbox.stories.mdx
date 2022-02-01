@@ -31,16 +31,15 @@ For displaying invalid state, consider using a [Checkbox Group](?path=/docs/form
 
 export const Default = (args) => {
     return html`
-        <rux-checkbox
-            ?disabled="${args.disabled}"
-            ?checked="${args.checked}"
-            ?indeterminate="${args.indeterminate}"
-            .helpText="${args.helpText}"
-            name="${args.name}"
-            .value="${args.value}"
-        >
-            Checkbox Label
-        </rux-checkbox>
+<rux-checkbox
+    ?disabled="${args.disabled}"
+    ?checked="${args.checked}"
+    ?indeterminate="${args.indeterminate}"
+    .helpText="${args.helpText}"
+    name="${args.name}"
+    .value="${args.value}"
+    label="${args.label}"
+>Checkbox Label</rux-checkbox>
     `
 }
 
@@ -49,6 +48,7 @@ export const Default = (args) => {
         name="Default"
         args={{
             name: 'checkbox',
+            label: 'Checkbox Label'
         }}
     >
         {Default.bind()}
@@ -65,21 +65,22 @@ export const Default = (args) => {
 
 export const Checked = (args) => {
     return html`
-        <rux-checkbox
-            ?disabled="${args.disabled}"
-            ?checked="${args.checked}"
-            ?indeterminate="${args.indeterminate}"
-            .helpText="${args.helpText}"
-            name="${args.name}"
-            .value="${args.value}"
-        >
-            Checkbox Label
-        </rux-checkbox>
+<rux-checkbox
+    ?disabled="${args.disabled}"
+    ?checked="${args.checked}"
+    ?indeterminate="${args.indeterminate}"
+    .helpText="${args.helpText}"
+    name="${args.name}"
+    .value="${args.value}"
+    label="${args.label}"
+>
+    Checkbox Label
+</rux-checkbox>
     `
 }
 
 <Canvas>
-    <Story args={{ checked: true }} name="Checked">
+    <Story args={{ checked: true, label: 'Checkbox Label' }} name="Checked">
         {Checked.bind()}
     </Story>
 </Canvas>
@@ -88,21 +89,22 @@ export const Checked = (args) => {
 
 export const Disabled = (args) => {
     return html`
-        <rux-checkbox
-            ?disabled="${args.disabled}"
-            ?checked="${args.checked}"
-            ?indeterminate="${args.indeterminate}"
-            .helpText="${args.helpText}"
-            name="${args.name}"
-            .value="${args.value}"
-        >
-            Checkbox Label
-        </rux-checkbox>
+<rux-checkbox
+    ?disabled="${args.disabled}"
+    ?checked="${args.checked}"
+    ?indeterminate="${args.indeterminate}"
+    .helpText="${args.helpText}"
+    name="${args.name}"
+    .value="${args.value}"
+    label="${args.label}"
+>
+Checkbox Label
+</rux-checkbox>
     `
 }
 
 <Canvas>
-    <Story args={{ disabled: true }} name="Disabled">
+    <Story args={{ disabled: true, label: 'Checkbox Label' }} name="Disabled">
         {Disabled.bind()}
     </Story>
 </Canvas>
@@ -113,21 +115,22 @@ An Indeterminate state (a dash symbol rather than checked) may display when a ch
 
 export const Indeterminate = (args) => {
     return html`
-        <rux-checkbox
-            ?disabled="${args.disabled}"
-            ?checked="${args.checked}"
-            ?indeterminate="${args.indeterminate}"
-            .helpText="${args.helpText}"
-            name="${args.name}"
-            .value="${args.value}"
-        >
-            Checkbox Label
-        </rux-checkbox>
-    `
+<rux-checkbox
+    ?disabled="${args.disabled}"
+    ?checked="${args.checked}"
+    ?indeterminate="${args.indeterminate}"
+    .helpText="${args.helpText}"
+    name="${args.name}"
+    .value="${args.value}"
+    label="${args.label}"
+>
+    Checkbox Label
+</rux-checkbox>
+`
 }
 
 <Canvas>
-    <Story args={{ indeterminate: true, checked: true }} name="Indeterminate">
+    <Story args={{ indeterminate: true, checked: true, label: 'Checkbox Label' }} name="Indeterminate">
         {Indeterminate.bind()}
     </Story>
 </Canvas>
@@ -136,21 +139,22 @@ export const Indeterminate = (args) => {
 
 export const WithHelpText = (args) => {
     return html`
-        <rux-checkbox
-            ?disabled="${args.disabled}"
-            ?checked="${args.checked}"
-            ?indeterminate="${args.indeterminate}"
-            .helpText="${args.helpText}"
-            name="${args.name}"
-            .value="${args.value}"
-        >
-            Checkbox Label
-        </rux-checkbox>
+<rux-checkbox
+    ?disabled="${args.disabled}"
+    ?checked="${args.checked}"
+    ?indeterminate="${args.indeterminate}"
+    help-text="${args.helpText}"
+    name="${args.name}"
+    .value="${args.value}"
+    label="${args.label}"
+>
+    Checkbox Label
+</rux-checkbox>
     `
 }
 
 <Canvas>
-    <Story args={{ helpText: 'Help text' }} name="With Help Text">
+    <Story args={{ helpText: 'Help text', label: 'Checkbox Label' }} name="With Help Text">
         {WithHelpText.bind()}
     </Story>
 </Canvas>

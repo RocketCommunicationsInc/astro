@@ -18,25 +18,22 @@ Clock shows the current date and time, and optional AOS and LOS timers. It will 
 
 export const Default = (args) => {
     return html`
-        <div style="padding: 10%; display: flex; justify-content: center;">
-            <rux-clock
-                .aos="${args.aos}"
-                .los="${args.los}"
-                .timezone="${args.timezone}"
-                ?hide-timezone="${args.hideTimezone}"
-                ?hide-date="${args.hideDate}"
-                ?hide-labels="${args.hideLabels}"
-                ?small="${args.small}"
-            ></rux-clock>
-        </div>
+<div style="padding: 10%; display: flex; justify-content: center;">
+    <rux-clock
+        .aos="${args.aos}"
+        .los="${args.los}"
+        .timezone="${args.timezone}"
+        ?hide-timezone="${args.hideTimezone}"
+        ?hide-date="${args.hideDate}"
+        ?hide-labels="${args.hideLabels}"
+        ?small="${args.small}"
+    ></rux-clock>
+</div>
     `
 }
 
 <Canvas>
     <Story
-        parameters={{
-            docs: { source: { code: '<rux-clock></rux-clock>' } },
-        }}
         name="Default"
     >
         {Default.bind()}
@@ -56,17 +53,17 @@ export const Default = (args) => {
 
 export const ClockWithAosLos = (args) => {
     return html`
-        <div style="padding: 10%; display: flex; justify-content: center;">
-            <rux-clock
-                .timezone="${args.timezone}"
-                .aos="${args.aos}"
-                .los="${args.los}"
-                ?hide-timezone="${args.hideTimezone}"
-                ?hide-date="${args.hideDate}"
-                ?hide-labels="${args.hideLabels}"
-                ?small="${args.small}"
-            ></rux-clock>
-        </div>
+<div style="padding: 10%; display: flex; justify-content: center;">
+    <rux-clock
+        .timezone="${args.timezone}"
+        aos="${args.aos}"
+        los="${args.los}"
+        ?hide-timezone="${args.hideTimezone}"
+        ?hide-date="${args.hideDate}"
+        ?hide-labels="${args.hideLabels}"
+        ?small="${args.small}"
+    ></rux-clock>
+</div>
     `
 }
 
@@ -86,17 +83,17 @@ export const ClockWithAosLos = (args) => {
 
 export const Small = (args) => {
     return html`
-        <div style="padding: 10%; display: flex; justify-content: center;">
-            <rux-clock
-                .timezone="${args.timezone}"
-                .aos="${args.aos}"
-                .los="${args.los}"
-                ?hide-timezone="${args.hideTimezone}"
-                ?hide-date="${args.hideDate}"
-                ?hide-labels="${args.hideLabels}"
-                ?small="${args.small}"
-            ></rux-clock>
-        </div>
+<div style="padding: 10%; display: flex; justify-content: center;">
+    <rux-clock
+        .timezone="${args.timezone}"
+        .aos="${args.aos}"
+        .los="${args.los}"
+        ?hide-timezone="${args.hideTimezone}"
+        ?hide-date="${args.hideDate}"
+        ?hide-labels="${args.hideLabels}"
+        ?small="${args.small}"
+    ></rux-clock>
+</div>
     `
 }
 

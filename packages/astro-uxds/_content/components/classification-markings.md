@@ -8,7 +8,7 @@ title: Classification & Control Markings
 demo: components-classification-markings--all-banner-variants
 storybook: components-classification-markings--all-banner-variants
 git: rux-classification-marking
-height: 360px
+height: 450px
 theme: false
 ---
 
