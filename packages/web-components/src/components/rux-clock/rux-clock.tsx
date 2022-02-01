@@ -26,7 +26,7 @@ export class RuxClock {
     private tzFormat: string = 'z'
     private convertedAos?: string
     private convertedLos?: string
-    private dayOfYearStr: string = this.dayOfYear.toString()
+    private dayOfYearStr!: string
 
     @State() _time!: string
     /**

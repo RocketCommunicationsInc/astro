@@ -5,7 +5,7 @@ exports[`rux-clock converts all military timezones 1`] = `
   <mock:shadow-root>
     <div class="rux-clock__segment">
       <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        1
+        001
       </div>
       <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
         Date
@@ -28,7 +28,7 @@ exports[`rux-clock converts all military timezones 2`] = `
   <mock:shadow-root>
     <div class="rux-clock__segment">
       <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        1
+        001
       </div>
       <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
         Date
@@ -51,7 +51,7 @@ exports[`rux-clock converts all military timezones 3`] = `
   <mock:shadow-root>
     <div class="rux-clock__segment">
       <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        1
+        001
       </div>
       <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
         Date
@@ -74,7 +74,7 @@ exports[`rux-clock converts all military timezones 4`] = `
   <mock:shadow-root>
     <div class="rux-clock__segment">
       <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        1
+        001
       </div>
       <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
         Date
@@ -97,7 +97,7 @@ exports[`rux-clock converts all military timezones 5`] = `
   <mock:shadow-root>
     <div class="rux-clock__segment">
       <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        1
+        001
       </div>
       <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
         Date
@@ -120,7 +120,7 @@ exports[`rux-clock converts all military timezones 6`] = `
   <mock:shadow-root>
     <div class="rux-clock__segment">
       <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        1
+        001
       </div>
       <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
         Date
@@ -143,7 +143,7 @@ exports[`rux-clock converts all military timezones 7`] = `
   <mock:shadow-root>
     <div class="rux-clock__segment">
       <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        1
+        001
       </div>
       <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
         Date
@@ -166,7 +166,7 @@ exports[`rux-clock converts all military timezones 8`] = `
   <mock:shadow-root>
     <div class="rux-clock__segment">
       <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        1
+        001
       </div>
       <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
         Date
@@ -189,7 +189,7 @@ exports[`rux-clock converts all military timezones 9`] = `
   <mock:shadow-root>
     <div class="rux-clock__segment">
       <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        1
+        001
       </div>
       <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
         Date
@@ -212,7 +212,7 @@ exports[`rux-clock converts all military timezones 10`] = `
   <mock:shadow-root>
     <div class="rux-clock__segment">
       <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        1
+        001
       </div>
       <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
         Date
@@ -235,7 +235,7 @@ exports[`rux-clock converts all military timezones 11`] = `
   <mock:shadow-root>
     <div class="rux-clock__segment">
       <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        1
+        001
       </div>
       <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
         Date
@@ -258,7 +258,7 @@ exports[`rux-clock converts all military timezones 12`] = `
   <mock:shadow-root>
     <div class="rux-clock__segment">
       <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        1
+        001
       </div>
       <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
         Date
@@ -281,7 +281,7 @@ exports[`rux-clock converts all military timezones 13`] = `
   <mock:shadow-root>
     <div class="rux-clock__segment">
       <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        1
+        001
       </div>
       <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
         Date
@@ -557,7 +557,7 @@ exports[`rux-clock converts all military timezones 25`] = `
   <mock:shadow-root>
     <div class="rux-clock__segment">
       <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        1
+        001
       </div>
       <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
         Date
@@ -580,7 +580,7 @@ exports[`rux-clock converts aos/los unix timestamps when timezone is changed 1`]
   <mock:shadow-root>
     <div class="rux-clock__segment">
       <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        1
+        001
       </div>
       <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
         Date
@@ -681,7 +681,7 @@ exports[`rux-clock converts time to timezone on the fly 1`] = `
   <mock:shadow-root>
     <div class="rux-clock__segment">
       <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        1
+        001
       </div>
       <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
         Date
@@ -742,7 +742,7 @@ exports[`rux-clock hides the labels 1`] = `
   <mock:shadow-root>
     <div class="rux-clock__segment">
       <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        1
+        001
       </div>
     </div>
     <div class="rux-clock__segment">
@@ -759,7 +759,7 @@ exports[`rux-clock hides the timezone 1`] = `
   <mock:shadow-root>
     <div class="rux-clock__segment">
       <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        1
+        001
       </div>
       <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
         Date
@@ -782,7 +782,7 @@ exports[`rux-clock shows and updates aos 1`] = `
   <mock:shadow-root>
     <div class="rux-clock__segment">
       <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        1
+        001
       </div>
       <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
         Date
@@ -813,7 +813,7 @@ exports[`rux-clock shows and updates aos 2`] = `
   <mock:shadow-root>
     <div class="rux-clock__segment">
       <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        1
+        001
       </div>
       <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
         Date
@@ -844,7 +844,7 @@ exports[`rux-clock shows and updates los 1`] = `
   <mock:shadow-root>
     <div class="rux-clock__segment">
       <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        1
+        001
       </div>
       <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
         Date
@@ -875,7 +875,7 @@ exports[`rux-clock shows and updates los 2`] = `
   <mock:shadow-root>
     <div class="rux-clock__segment">
       <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        1
+        001
       </div>
       <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
         Date
@@ -906,7 +906,7 @@ exports[`rux-clock shows the current time 1`] = `
   <mock:shadow-root>
     <div class="rux-clock__segment">
       <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        1
+        001
       </div>
       <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
         Date
