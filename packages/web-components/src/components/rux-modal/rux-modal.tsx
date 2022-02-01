@@ -13,10 +13,10 @@ import {
 import { hasSlot } from '../../utils/utils'
 
 /**
- * @part modal-wrapper - the modal wrapper overlay
- * @part modal-header - The header container of modal
- * @part modal-content - The message container of modal
- * @part modal-footer - The footer container of modal
+ * @part container - the modal's container
+ * @part header - The header container of modal
+ * @part message - The message container of modal
+ * @part footer - The footer container of modal
  *
  * @slot header - the header of the modal
  * @slot message - the message of the modal
@@ -99,14 +99,14 @@ export class RuxModal {
         return (
             this.open && (
                 <Host>
-                    <div part="modal-wrapper" class="rux-modal__wrapper">
+                    <div part="container" class="rux-modal__wrapper">
                         <dialog class="rux-modal__dialog" role="dialog">
                             <header
                                 class={{
                                     'rux-modal__titlebar': true,
                                     invisible: !this.hasHeader,
                                 }}
-                                part="modal-header"
+                                part="header"
                             >
                                 <slot
                                     name="header"
@@ -124,7 +124,7 @@ export class RuxModal {
                                     'rux-modal__content': true,
                                     invisible: !this.hasMessage,
                                 }}
-                                part="modal-content"
+                                part="message"
                             >
                                 <div class="rux-modal__message">
                                     <slot
@@ -140,7 +140,7 @@ export class RuxModal {
                             </div>
 
                             <footer
-                                part="modal-footer"
+                                part="footer"
                                 class={{
                                     'rux-modal__footer': true,
                                     invisible: !this.hasFooter,
