@@ -9,7 +9,6 @@ import format from 'date-fns/format'
     shadow: true,
 })
 export class RuxTimeRegion {
-    // private ruxTrack: HTMLRuxTrackElement | null = null
     private ruxTimeline: any
     @Element() el!: HTMLRuxTimeRegionElement
     /**
@@ -32,35 +31,12 @@ export class RuxTimeRegion {
     @Prop() track: string = '1'
     @Prop({ reflect: true }) ratio = 2
     @Prop({ reflect: true }) interval = 'hour'
-
-    // @State() startOffset = 0
-    // @State() endOffset = 0
     @State() startDate: any
     @State() endDate: any
     componentWillLoad() {
         this.startDate = new Date(this.start)
         this.endDate = new Date(this.end)
         this.ruxTimeline = this.el?.closest('rux-timeline')
-
-        // if (length < 60) {
-
-        // this.startOffset = start.getMinutes() * this.ratio
-        // this.endOffset = end.getMinutes() * this.ratio
-
-        // MyService.getData().then(r => {
-        //     console.log('res', r)
-        // })
-        // }
-
-        // console.log('region track', this.track)
-        // this.ruxTrack = this.el.closest('rux-track')
-        // console.log('track', this.ruxTrack);
-        // const id = this.ruxTrack?.getAttribute('track-id')
-        // if (!id) {
-        // console.log('no id', this.ruxTrack?.trackId)
-        // }
-        // console.log('id', id);
-        // this.track = id ? id : '1'
     }
 
     get startOffset() {
@@ -87,17 +63,6 @@ export class RuxTimeRegion {
         return 0
     }
 
-    // get ratio() {
-    //     if (this.ruxTimeline.interval === 'hour') {
-    //         return this.ruxTimeline.zoom / 60 // for hours.
-    //     }
-
-    //     if (this.ruxTimeline.interval === 'day') {
-    //         return this.ruxTimeline.zoom / 120 //tbd
-    //     }
-    //     return 2
-    // }
-
     calculateGridColumnFromTime(time: any) {
         const timelineStart = new Date(this.ruxTimeline.start)
 
@@ -117,15 +82,6 @@ export class RuxTimeRegion {
             return difference + 2
         }
         return 0
-        // console.log('dif', difference);
-
-        // const date = new Date(time)
-        // const form = format(date, 'HH')
-        // console.log('form', form);
-
-        // // return new Date(time).getHours() + 2
-        // return +form + 2
-        // return +time.substring(0, 2) + 2
     }
 
     render() {

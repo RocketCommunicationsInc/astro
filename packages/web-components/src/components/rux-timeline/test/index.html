@@ -22,6 +22,101 @@
     <body>
         <div style="width: 1050px; margin: auto">
             <rux-timeline
+                start="2021-02-01T00:00:00Z"
+                end="2021-02-03T00:00:00Z"
+                interval="hour"
+                zoom="140"
+            >
+                <rux-playhead slot="playhead"></rux-playhead>
+            </rux-timeline>
+
+            <rux-timeline
+                start="2021-02-01T00:00:00Z"
+                end="2021-02-02T00:00:00Z"
+                interval="hour"
+            >
+                <rux-track id="track" label="second">
+                    <div slot="label">
+                        <status></status>
+                        Region1
+                    </div>
+                    <rux-time-region
+                        start="2021-02-01T00:00:00Z"
+                        end="2021-02-01T01:30:00Z"
+                    >
+                        <rux-status status="normal"></rux-status>
+                        Region1
+                    </rux-time-region>
+                </rux-track>
+                <rux-track label="second">
+                    <div slot="label">Region2</div>
+                    <rux-time-region
+                        start="2021-02-01T03:00:00Z"
+                        end="2021-02-01T04:00:00Z"
+                    >
+                        <rux-status status="normal"></rux-status>
+                        Region4
+                    </rux-time-region>
+                    <rux-time-region
+                        start="2021-02-01T04:00:00Z"
+                        end="2021-02-01T05:00:00Z"
+                    >
+                        <rux-status status="normal"></rux-status>
+                        Region5
+                    </rux-time-region>
+                    <rux-time-region
+                        start="2021-02-01T04:00:00Z"
+                        end="2021-02-01T05:00:00Z"
+                    >
+                        <rux-status status="normal"></rux-status>
+                        Region5
+                    </rux-time-region>
+                    <rux-time-region
+                        start="2021-02-01T04:00:00Z"
+                        end="2021-02-01T05:00:00Z"
+                    >
+                        <rux-status status="normal"></rux-status>
+                        Region5 </rux-time-region
+                    >`
+                </rux-track>
+                <rux-track label="first">
+                    <div slot="label">Region3</div>
+                    <rux-time-region
+                        start="2021-02-01T01:00:00Z"
+                        end="2021-02-01T03:00:00Z"
+                    >
+                        <rux-status status="normal"></rux-status>
+                        Region2
+                    </rux-time-region>
+                    <rux-time-region
+                        start="2021-02-01T02:00:00Z"
+                        end="2021-02-01T08:00:00Z"
+                    >
+                        <rux-status status="normal"></rux-status>
+                        Region3
+                    </rux-time-region>
+                </rux-track>
+
+                <rux-track label="third">
+                    <div slot="label">Region3</div>
+                    <rux-time-region
+                        start="2021-02-01T05:00:00Z"
+                        end="2021-02-01T06:00:00Z"
+                    >
+                        <rux-status status="normal"></rux-status>
+                        Region6
+                    </rux-time-region>
+                    <rux-time-region
+                        start="2021-02-01T06:00:00Z"
+                        end="2021-02-01T07:00:00Z"
+                    >
+                        <rux-status status="normal"></rux-status>
+                        Region6
+                    </rux-time-region>
+                </rux-track>
+            </rux-timeline>
+
+            <rux-timeline
                 start="2021-02-01T05:00:00Z"
                 end="2021-02-10T00:00:00Z"
                 interval="day"
@@ -34,20 +129,7 @@
                         Region1
                     </div>
                     <rux-time-region
-                        start="2021-02-01T09:00:00Z"
-                        end="2021-02-01T10:00:00Z"
-                    >
-                        <rux-status status="normal"></rux-status>
-                        Region1
-                    </rux-time-region>
-                </rux-track>
-                <rux-track id="track" label="second">
-                    <div slot="label">
-                        <status></status>
-                        Region2
-                    </div>
-                    <rux-time-region
-                        start="2021-02-01T09:00:00Z"
+                        start="2020-02-01T09:00:00Z"
                         end="2021-02-08T00:00:00Z"
                     >
                         <rux-status status="normal"></rux-status>
@@ -197,7 +279,7 @@
 
             const events = generateEvents(3)
 
-            // seedTimeline(events)
+            seedTimeline(events)
         </script>
     </body>
 </html>

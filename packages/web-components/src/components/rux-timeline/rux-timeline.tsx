@@ -157,16 +157,11 @@ export class RuxTimeline {
 
         const position = e.clientX - rect.left + scrollOffset
 
-        // if (e.clientY <= 234) { // ignore scrollbar
-
         if (position > 200) {
             this.calcTimeFromPlayhead(position)
-            // this.time = this.calcTimeFromPlayhead(position)
-            // this.calcPlayheadFromTime(this.time)
         } else {
             this.playheadPositionInPixels = 200
         }
-        // }
     }
 
     get formattedCurrentTime() {
@@ -246,31 +241,23 @@ export class RuxTimeline {
             new Date(end) <= new Date(this.end)
         )
     }
-    goToMin() {
-        const marg = this.calcPlayheadFromTime('2021-02-01T01:30:00Z')
-
-        this.playheadPositionInPixels = marg
-    }
     render() {
         return (
             <Host>
-                <div class="border">
-                    <button onClick={() => this.goToMin()}>go</button>
-                    <div
-                        class="rux-timeline"
-                        ref={(el) => (this.slotContainer = el)}
-                        onMouseMove={(ev) => this.handleMouse(ev)}
-                        style={{
-                            gridTemplateColumns: `[header] 200px repeat(${this.totalColumns}, ${this.zoom}px)`,
-                        }}
-                    >
-                        <div ref={(el) => (this.playheadContainer = el)}>
-                            <slot name="playhead"></slot>
-                        </div>
-                        <slot onSlotchange={this._handleSlotChange}></slot>
+                <div
+                    class="rux-timeline"
+                    ref={(el) => (this.slotContainer = el)}
+                    onMouseMove={(ev) => this.handleMouse(ev)}
+                    style={{
+                        gridTemplateColumns: `[header] 200px repeat(${this.totalColumns}, ${this.zoom}px)`,
+                    }}
+                >
+                    <div ref={(el) => (this.playheadContainer = el)}>
+                        <slot name="playhead"></slot>
                     </div>
-                    <div>The current time is {this.formattedCurrentTime}</div>
+                    <slot onSlotchange={this._handleSlotChange}></slot>
                 </div>
+                <div>The current time is {this.formattedCurrentTime}</div>
             </Host>
         )
     }
