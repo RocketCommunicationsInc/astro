@@ -50,6 +50,7 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property       | Attribute       | Description                  | Type                  | Default     |
@@ -60,11 +61,13 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 | `modalTitle`   | `modal-title`   | Modal header title           | `string \| undefined` | `undefined` |
 | `open`         | `open`          | Shows and hides modal        | `boolean`             | `false`     |
 
+
 ## Events
 
 | Event            | Description                           | Type                   |
 | ---------------- | ------------------------------------- | ---------------------- |
 | `ruxmodalclosed` | Event that is fired when modal closes | `CustomEvent<boolean>` |
+
 
 ## Shadow Parts
 
@@ -77,6 +80,7 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 | `"message"`        | the message of the modal                                       |
 | `"wrapper"`        | the modal wrapper overlay ! DEPRECATED IN FAVOR OF CONTAINER ! |
 
+
 ## CSS Custom Properties
 
 | Name                       | Description            |
@@ -85,15 +89,15 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 | `--modal-border-color`     | Modal border color     |
 | `--modal-title-color`      | Modal title color      |
 
+
 ## Dependencies
 
 ### Depends on
 
--   [rux-button-group](../rux-button-group)
--   [rux-button](../rux-button)
+- [rux-button-group](../rux-button-group)
+- [rux-button](../rux-button)
 
 ### Graph
-
 ```mermaid
 graph TD;
   rux-modal --> rux-button-group
@@ -102,6 +106,6 @@ graph TD;
   style rux-modal fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

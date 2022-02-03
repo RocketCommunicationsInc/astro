@@ -46,6 +46,7 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property    | Attribute    | Description                                                                                                                                                                                       | Type                  | Default     |
@@ -61,6 +62,7 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 | `required`  | `required`   | Sets the field as required                                                                                                                                                                        | `boolean`             | `false`     |
 | `value`     | `value`      | The value of the selected option                                                                                                                                                                  | `string \| undefined` | `undefined` |
 
+
 ## Events
 
 | Event       | Description                                                                                                                          | Type                |
@@ -68,12 +70,14 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 | `ruxblur`   | Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) | `CustomEvent<any>`  |
 | `ruxchange` | Event Emitted when the Value of the Select is Changed                                                                                | `CustomEvent<void>` |
 
+
 ## Slots
 
 | Slot          | Description        |
 | ------------- | ------------------ |
 | `"(default)"` | The select options |
 | `"label"`     | The select label   |
+
 
 ## Shadow Parts
 
@@ -84,6 +88,7 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 | `"help-text"`  | The help text element            |
 | `"label"`      | The select label                 |
 | `"select"`     | The select element               |
+
 
 ## CSS Custom Properties
 
@@ -103,6 +108,7 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 | `--select-menu-option-text-hover-color`          | Text Hover Color of the Select Menu Options |
 | `--select-menu-text-color`                       | Text Color of the Select Input              |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*
