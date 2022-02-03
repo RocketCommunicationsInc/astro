@@ -29,12 +29,11 @@ export const SegmentedButton = (args) => {
     ]
     document.addEventListener('change', (e) => action('change')(e.target))
     return html`
-        <div style="padding: 10vh 5vw; display: flex; justify-content: center;">
-            <rux-segmented-button
-                .data="${args.data}"
-                ?selected="${args.selected}"
-            ></rux-segmented-button>
-        </div>
+<div style="padding: 10vh 5vw; display: flex; justify-content: center;">
+    <rux-segmented-button
+        .data="${args.data}"
+    ></rux-segmented-button>
+</div>
     `
 }
 

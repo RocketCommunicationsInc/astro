@@ -167,7 +167,7 @@ export class RuxClock {
                             aria-labelledby="rux-clock__day-of-year-label"
                             part="date"
                         >
-                            {this.dayOfYear}
+                            {this.dayOfYear.toString().padStart(3, '0')}
                         </div>
                         {!this.hideLabels && (
                             <div

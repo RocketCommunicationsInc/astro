@@ -23,7 +23,9 @@ log.txt
 
 .stencil/
 .idea/
-.vscode/
+
+.vscode/*
+!.vscode/extensions.json
 .sass-cache/
 .versions/
 .netlify
