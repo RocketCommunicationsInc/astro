@@ -1,9 +1,8 @@
 ---
 "@astrouxds/astro-web-components": minor
-"@astrouxds/ag-grid-theme": minor
 "@astrouxds/angular": minor
 "astro-website": minor
 "@astrouxds/react": minor
 ---
 
-Added a icon shadow part to rux-icon.
+Added new CSS Shadow Part `icon` to `rux-icon`

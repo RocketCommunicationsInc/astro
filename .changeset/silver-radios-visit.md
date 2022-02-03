@@ -5,4 +5,4 @@
 "@astrouxds/react": minor
 ---
 
-rux-clock now displays the julien date as always 3 digits
+`rux-clock` now displays the julien date as always 3 digits

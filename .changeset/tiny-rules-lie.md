@@ -1,26 +1,25 @@
 ---
 "@astrouxds/astro-web-components": minor
-"@astrouxds/ag-grid-theme": minor
 "@astrouxds/angular": minor
 "astro-website": minor
 "@astrouxds/react": minor
 ---
 
-    Moved the icon shadow part in rux-icon to be on the SVG element.
-    Added exportparts to rux-icon in rux-monitoring-icon.
-    Added label and icon shadow parts to rux-push-button.
-    Added progress and output shadow shadow parts to rux-progress.
-    Added confirm-button and deny-button to the modal's rux-buttons as shadow parts.
-    Added label shadow part to rux-segmented-button
-    Added switch shadow part to rux-switch. The pseudo selectors ::before select the track, ::after selects the button.
-    Added input, form-field shadow parts to rux-input
-    Added error-text and help-text parts to FormFieldMessage to allow styling of help/error text.
-    Added form-field and label shadow parts to rux-checkbox.
-    Added form-field and label shadow parts to rux-radio.
-    Added label and select shadow parts to rux-select.
-    Added input shadow part to rux-input.
-    Added input shadow part to rux-slider
-    Added texarea shadow part to rux-textarea
-    Added container shadow part to rux-menu-item.
-    Added container shadow part to rux-menu-item-divider
-    Added exportparts to rux-icon inside of rux-global-status-bar
+- Moved the `icon` shadow part in `rux-icon` to be on the SVG element.
+- Added new CSS Shadow Part `exportparts` to `rux-icon` on `rux-monitoring-icon`.
+- Added new CSS Shadow Parts `label` and `icon` to `rux-push-button`.
+- Added new CSS Shadow Parts `progress` and `output` to `rux-progress`.
+- Added new CSS Shadow Parts `confirm-button` and `deny-button` to `rux-modal`.
+- Added new CSS Shadow Part `label` to `rux-segmented-button`.
+- Added new CSS Shadow Part `switch` to `rux-switch`. The pseudo selectors ::before select the track, ::after selects the button.
+- Added new CSS Shadow Parts `input` and `form-field` to `rux-input`.
+- Added new CSS Shadow Parts `error-text` and `help-text` to `rux-checkbox-group`, `rux-input`, `rux-radio-group`, `rux-select`, `rux-slider`, `rux-textarea`.
+- Added new CSS Shadow Parts `form-field` and `label` to `rux-checkbox`.
+- Added new CSS Shadow Parts `form-field` and `label` to `rux-radio`.
+- Added new CSS Shadow Parts `label` and `select` to `rux-select`.
+- Added new CSS Shadow Part `input` to `rux-input`
+- Added new CSS Shadow Part `input` to `rux-slider`
+- Added new CSS Shadow Part `textarea` to `rux-textarea`
+- Added new CSS Shadow Part `container` to `rux-menu-item`.
+- Added new CSS Shadow Part `container` to `rux-menu-item-divider`.
+- Added new CSS Shadow Part `icon` to `rux-global-status-bar`.

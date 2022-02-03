@@ -6,4 +6,4 @@
 "@astrouxds/react": minor
 ---
 
-Adds a 'container' shadow part to rux-button
+Adds new CSS Shadow Part `container` to `rux-button`
