@@ -14,11 +14,11 @@ export class RuxTimeRegion {
     /**
      * The start time
      */
-    @Prop() start: any
+    @Prop({ reflect: true }) start: any
     /**
      * The end time
      */
-    @Prop() end: any
+    @Prop({ reflect: true }) end: any
 
     /**
      * The label
@@ -41,10 +41,10 @@ export class RuxTimeRegion {
 
     get startOffset() {
         if (this.interval === 'hour') {
-            return this.startDate.getMinutes() * this.ratio
+            // return this.startDate.getMinutes() * this.ratio
         }
         if (this.interval === 'day') {
-            return this.startDate.getHours() * this.ratio
+            // return this.startDate.getHours() * this.ratio
             // return 0
         }
 
@@ -53,17 +53,38 @@ export class RuxTimeRegion {
 
     get endOffset() {
         if (this.interval === 'hour') {
-            return this.endDate.getMinutes() * this.ratio
+            // return this.endDate.getMinutes() * this.ratio
         }
 
         if (this.interval === 'day') {
-            return this.endDate.getHours() * this.ratio
+            // return this.endDate.getHours() * this.ratio
         }
 
         return 0
     }
 
     calculateGridColumnFromTime(time: any) {
+        const timelineStart = new Date(this.ruxTimeline.start)
+
+        if (this.interval === 'hour') {
+            const difference = Math.abs(
+                differenceInMinutes(timelineStart, new Date(time))
+            )
+
+            return difference + 2
+        }
+
+        if (this.interval === 'day') {
+            const difference = Math.abs(
+                differenceInHours(timelineStart, new Date(time))
+            )
+
+            return difference + 2
+        }
+        return 0
+    }
+
+    OldcalculateGridColumnFromTime(time: any) {
         const timelineStart = new Date(this.ruxTimeline.start)
 
         if (this.interval === 'hour') {

@@ -23,7 +23,7 @@
         <div style="width: 1050px; margin: auto">
             <rux-timeline
                 start="2021-02-01T00:00:00Z"
-                end="2021-02-03T00:00:00Z"
+                end="2021-03-01T12:00:00Z"
                 interval="hour"
                 zoom="140"
             >
@@ -32,115 +32,29 @@
 
             <rux-timeline
                 start="2021-02-01T00:00:00Z"
-                end="2021-02-02T00:00:00Z"
+                end="2021-02-01T12:00:00Z"
                 interval="hour"
+                zoom="480"
             >
-                <rux-track id="track" label="second">
-                    <div slot="label">
-                        <status></status>
-                        Region1
-                    </div>
+                <rux-playhead slot="playhead"></rux-playhead>
+                <rux-track>
                     <rux-time-region
-                        start="2021-02-01T00:00:00Z"
-                        end="2021-02-01T01:30:00Z"
+                        start="2021-02-01T10:00:00Z"
+                        end="2021-02-01T11:00:00Z"
                     >
-                        <rux-status status="normal"></rux-status>
-                        Region1
+                        hi
                     </rux-time-region>
                 </rux-track>
-                <rux-track label="second">
-                    <div slot="label">Region2</div>
-                    <rux-time-region
-                        start="2021-02-01T03:00:00Z"
-                        end="2021-02-01T04:00:00Z"
-                    >
-                        <rux-status status="normal"></rux-status>
-                        Region4
-                    </rux-time-region>
-                    <rux-time-region
-                        start="2021-02-01T04:00:00Z"
-                        end="2021-02-01T05:00:00Z"
-                    >
-                        <rux-status status="normal"></rux-status>
-                        Region5
-                    </rux-time-region>
-                    <rux-time-region
-                        start="2021-02-01T04:00:00Z"
-                        end="2021-02-01T05:00:00Z"
-                    >
-                        <rux-status status="normal"></rux-status>
-                        Region5
-                    </rux-time-region>
-                    <rux-time-region
-                        start="2021-02-01T04:00:00Z"
-                        end="2021-02-01T05:00:00Z"
-                    >
-                        <rux-status status="normal"></rux-status>
-                        Region5 </rux-time-region
-                    >`
-                </rux-track>
-                <rux-track label="first">
-                    <div slot="label">Region3</div>
-                    <rux-time-region
-                        start="2021-02-01T01:00:00Z"
-                        end="2021-02-01T03:00:00Z"
-                    >
-                        <rux-status status="normal"></rux-status>
-                        Region2
-                    </rux-time-region>
-                    <rux-time-region
-                        start="2021-02-01T02:00:00Z"
-                        end="2021-02-01T08:00:00Z"
-                    >
-                        <rux-status status="normal"></rux-status>
-                        Region3
-                    </rux-time-region>
-                </rux-track>
-
-                <rux-track label="third">
-                    <div slot="label">Region3</div>
-                    <rux-time-region
-                        start="2021-02-01T05:00:00Z"
-                        end="2021-02-01T06:00:00Z"
-                    >
-                        <rux-status status="normal"></rux-status>
-                        Region6
-                    </rux-time-region>
-                    <rux-time-region
-                        start="2021-02-01T06:00:00Z"
-                        end="2021-02-01T07:00:00Z"
-                    >
-                        <rux-status status="normal"></rux-status>
-                        Region6
-                    </rux-time-region>
-                </rux-track>
-            </rux-timeline>
-
-            <rux-timeline
-                start="2021-02-01T05:00:00Z"
-                end="2021-02-10T00:00:00Z"
-                interval="day"
-                id="dayline"
-                zoom="140"
-            >
-                <rux-track id="track" label="second">
-                    <div slot="label">
-                        <status></status>
-                        Region1
-                    </div>
-                    <rux-time-region
-                        start="2020-02-01T09:00:00Z"
-                        end="2021-02-08T00:00:00Z"
-                    >
-                        <rux-status status="normal"></rux-status>
-                        Region1
-                    </rux-time-region>
-                </rux-track>
-
                 <rux-track>
                     <rux-ruler></rux-ruler>
                 </rux-track>
+                <div
+                    style="grid-row: 1; grid-column: 302 / 362; background: red"
+                >
+                    h
+                </div>
             </rux-timeline>
+
             <rux-button id="decrease">-</rux-button>
             <rux-button id="increase">+</rux-button>
             <div>
@@ -258,17 +172,33 @@
                         events: [],
                     }
                     for (let i = 0; i < numberOfEvents; i++) {
-                        const eventStart = randomDate()
+                        const eventStart = randomDate(
+                            new Date(2021, 1, 1),
+                            new Date(2021, 1, 1)
+                        )
                         const eventYear = eventStart.getFullYear()
                         const eventMonth = eventStart.getMonth()
                         const eventDay = eventStart.getDay()
 
-                        const eventEnd = randomDate(new Date(eventStart))
+                        const newEnd = new Date(eventStart)
+                        console.log('event beffore', eventStart)
+                        const newDate = new Date(
+                            newEnd.setHours(
+                                newEnd.getHours() +
+                                    Math.floor(Math.random() * 24)
+                            )
+                        )
+                        const eventEnd = randomDate(
+                            new Date(eventStart),
+                            newDate
+                        )
+                        console.log('new', newDate.toISOString())
 
+                        console.log('event after', eventStart)
                         const event = {
                             label: generateLabel(),
                             start: eventStart.toISOString(),
-                            end: eventEnd.toISOString(),
+                            end: newDate.toISOString(),
                         }
                         region.events.push(event)
                     }

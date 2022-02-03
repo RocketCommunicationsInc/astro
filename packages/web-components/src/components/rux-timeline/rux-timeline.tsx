@@ -114,7 +114,8 @@ export class RuxTimeline {
     }
 
     calcTimeFromPlayhead(position: any) {
-        this.playheadPositionInPixels = position
+        console.log('posss', position)
+        this.playheadPositionInPixels = position - 2
 
         const time = position - 200
 
@@ -158,6 +159,7 @@ export class RuxTimeline {
         const position = e.clientX - rect.left + scrollOffset
 
         if (position > 200) {
+            console.log('position', position)
             this.calcTimeFromPlayhead(position)
         } else {
             this.playheadPositionInPixels = 200
@@ -241,6 +243,21 @@ export class RuxTimeline {
             new Date(end) <= new Date(this.end)
         )
     }
+
+    getWidth() {
+        let unitOfTime = 60
+        if (this.interval === 'day') {
+            unitOfTime = 24
+        }
+        return this.zoom / unitOfTime
+    }
+    getColumns() {
+        let unitOfTime = 60
+        if (this.interval === 'day') {
+            unitOfTime = 24
+        }
+        return this.totalColumns * unitOfTime
+    }
     render() {
         return (
             <Host>
@@ -249,7 +266,7 @@ export class RuxTimeline {
                     ref={(el) => (this.slotContainer = el)}
                     onMouseMove={(ev) => this.handleMouse(ev)}
                     style={{
-                        gridTemplateColumns: `[header] 200px repeat(${this.totalColumns}, ${this.zoom}px)`,
+                        gridTemplateColumns: `[header] 200px repeat(${this.getColumns()}, ${this.getWidth()}px)`,
                     }}
                 >
                     <div ref={(el) => (this.playheadContainer = el)}>

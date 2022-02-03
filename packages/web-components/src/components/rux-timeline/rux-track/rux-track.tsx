@@ -62,19 +62,39 @@ export class RuxTrack {
         })
     }
 
+    getCol(index: number) {
+        if (index === 0) {
+            return 2
+        } else {
+            return index + 2
+        }
+    }
+
     render() {
         return (
             <Host>
                 <div class="rux-track" ref={(el) => (this.slotContainer = el)}>
                     <div
                         class="rux-track__header"
-                        style={{ gridRow: `${this.track}` }}
+                        style={{
+                            gridRow: `${this.track}`,
+                        }}
                     >
                         <slot name="label"></slot>
                     </div>
 
                     <slot onSlotchange={this._handleSlotChange}></slot>
                 </div>
+                {[...Array(780)].map((x: any, i: any) => (
+                    <div
+                        style={{
+                            gridRow: `${this.track}`,
+                            gridColumn: `${i + 2} / ${++i + 2}`,
+                        }}
+                        class="cell"
+                        part="cell"
+                    ></div>
+                ))}
             </Host>
         )
     }

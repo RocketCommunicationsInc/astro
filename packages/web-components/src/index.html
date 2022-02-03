@@ -24,18 +24,19 @@
             <rux-timeline
                 start="2021-02-01T05:00:00Z"
                 end="2021-02-10T00:00:00Z"
-                interval="day"
+                interval="hour"
                 id="dayline"
                 zoom="140"
             >
+                <rux-playhead slot="playhead"></rux-playhead>
                 <rux-track id="track" label="second">
                     <div slot="label">
                         <status></status>
                         Region1
                     </div>
                     <rux-time-region
-                        start="2021-02-01T09:00:00Z"
-                        end="2021-02-01T10:00:00Z"
+                        start="2021-02-01T09:40:00Z"
+                        end="2021-02-02T10:05:00Z"
                     >
                         <rux-status status="normal"></rux-status>
                         Region1
@@ -46,6 +47,16 @@
                         <status></status>
                         Region2
                     </div>
+                    <rux-time-region
+                        start="2021-02-01T09:00:00Z"
+                        end="2021-02-08T00:00:00Z"
+                    >
+                        <rux-status status="normal"></rux-status>
+                        Region1
+                    </rux-time-region>
+                </rux-track>
+                <rux-track>
+                    <div slot="label">empty</div>
                     <rux-time-region
                         start="2021-02-01T09:00:00Z"
                         end="2021-02-08T00:00:00Z"

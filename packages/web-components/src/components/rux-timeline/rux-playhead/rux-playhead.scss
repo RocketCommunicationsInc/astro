@@ -3,7 +3,7 @@
 }
 
 .rux-playhead {
-    width: 5px;
+    width: 2px;
     //   grid-row: 1 / 5;
     //   grid-column: time-0000 / time-2359;
 
@@ -22,6 +22,6 @@
         border-top: 12px solid var(--color-primary);
         content: '';
         position: absolute;
-        left: -9.5px;
+        left: -11.5px;
     }
 }

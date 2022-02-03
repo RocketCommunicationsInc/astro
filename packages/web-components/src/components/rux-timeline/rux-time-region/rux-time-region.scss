@@ -5,7 +5,8 @@
 .rux-time-region {
     background: var(--color-background);
     border: 1px solid var(--color-status-normal-fill);
-    padding: 0.25rem;
+    // padding: 0.25rem;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
 }

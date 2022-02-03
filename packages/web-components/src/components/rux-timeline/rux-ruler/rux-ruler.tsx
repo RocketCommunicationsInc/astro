@@ -36,6 +36,20 @@ export class RuxRuler {
         )
     }
 
+    getColumn(index: number) {
+        let unitOfTime = 60
+        if (this.interval === 'day') {
+            unitOfTime = 24
+        }
+
+        if (index === 0) {
+            return `${2 + index} / ${(unitOfTime + 2) * index}`
+        } else {
+            return `${unitOfTime * index + 2} / ${
+                unitOfTime * (index * ++index) + 2
+            }`
+        }
+    }
     render() {
         return (
             <Host>
@@ -46,7 +60,10 @@ export class RuxRuler {
                                 'ruler-time': true,
                                 'ruler-time__first': index === 0,
                             }}
-                            style={{ gridRow: `${this.track}` }}
+                            style={{
+                                gridRow: `${this.track}`,
+                                gridColumn: this.getColumn(index),
+                            }}
                         >
                             {time}
                         </span>

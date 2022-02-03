@@ -26,3 +26,11 @@
     // border: 2px solid red;
     // grid-row: 1;
 }
+
+.cell {
+    border: 1px solid red;
+    border-right: 0;
+    // grid-column: span 60;
+    z-index: 9999;
+    grid-column: span 1;
+}
