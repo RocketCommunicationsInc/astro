@@ -28,9 +28,16 @@
 }
 
 .cell {
-    border: 1px solid red;
+    // border: 0.5px solid red;
     border-right: 0;
     // grid-column: span 60;
     z-index: 9999;
     grid-column: span 1;
+}
+.cell:nth-child(10n) {
+    // background: blue;
+}
+
+.marker {
+    background: blue;
 }

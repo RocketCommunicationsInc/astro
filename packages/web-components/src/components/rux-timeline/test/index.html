@@ -23,7 +23,7 @@
         <div style="width: 1050px; margin: auto">
             <rux-timeline
                 start="2021-02-01T00:00:00Z"
-                end="2021-03-01T12:00:00Z"
+                end="2021-02-05T12:00:00Z"
                 interval="hour"
                 zoom="140"
             >
@@ -172,7 +172,7 @@
                         events: [],
                     }
                     for (let i = 0; i < numberOfEvents; i++) {
-                        const eventStart = randomDate(
+                        let eventStart = randomDate(
                             new Date(2021, 1, 1),
                             new Date(2021, 1, 1)
                         )
@@ -182,19 +182,31 @@
 
                         const newEnd = new Date(eventStart)
                         console.log('event beffore', eventStart)
-                        const newDate = new Date(
+                        let newDate = new Date(
                             newEnd.setHours(
                                 newEnd.getHours() +
                                     Math.floor(Math.random() * 24)
+                            )
+                        )
+
+                        newDate = new Date(
+                            newDate.setMinutes(
+                                newDate.getMinutes() +
+                                    Math.floor(Math.random() * 60)
                             )
                         )
                         const eventEnd = randomDate(
                             new Date(eventStart),
                             newDate
                         )
-                        console.log('new', newDate.toISOString())
 
-                        console.log('event after', eventStart)
+                        eventStart = new Date(
+                            eventStart.setMinutes(
+                                eventStart.getMinutes() +
+                                    Math.floor(Math.random() * 60)
+                            )
+                        )
+
                         const event = {
                             label: generateLabel(),
                             start: eventStart.toISOString(),

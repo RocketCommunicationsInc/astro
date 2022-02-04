@@ -34,7 +34,7 @@ export class RuxTimeline {
     @Element() el!: HTMLRuxTimelineElement
     @Prop() start = '2021-02-01T00:00:00Z'
     @Prop() end = '2021-02-10T00:00:00Z'
-    @Prop() zoom = 120
+    @Prop({ reflect: true }) zoom = 120
     @Prop() interval: 'hour' | 'day' | 'month' = 'hour'
 
     @Watch('zoom')

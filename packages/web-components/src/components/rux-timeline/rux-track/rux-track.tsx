@@ -85,13 +85,16 @@ export class RuxTrack {
 
                     <slot onSlotchange={this._handleSlotChange}></slot>
                 </div>
-                {[...Array(780)].map((x: any, i: any) => (
+                {[...Array(2300)].map((x: any, i: any) => (
                     <div
                         style={{
                             gridRow: `${this.track}`,
                             gridColumn: `${i + 2} / ${++i + 2}`,
                         }}
-                        class="cell"
+                        class={{
+                            cell: true,
+                            marker: i % 60 === 0,
+                        }}
                         part="cell"
                     ></div>
                 ))}
