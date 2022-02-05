@@ -85,7 +85,7 @@ export class RuxTrack {
 
                     <slot onSlotchange={this._handleSlotChange}></slot>
                 </div>
-                {[...Array(2300)].map((x: any, i: any) => (
+                {[...Array(2440)].map((x: any, i: any) => (
                     <div
                         style={{
                             gridRow: `${this.track}`,

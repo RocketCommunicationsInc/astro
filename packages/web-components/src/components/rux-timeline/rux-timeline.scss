@@ -79,6 +79,44 @@
     background: var(--color-surface);
 }
 
+.rux-timeline-overlay {
+    scrollbar-color: var(--color-active);
+
+    overflow: auto;
+    position: relative;
+    display: grid;
+    // grid-gap: 1em;
+    // grid-template-columns: [header] 200px repeat(12, 120px);
+    // [time-0000] 120px
+    // [time-0100] 120px
+    // [time-0200] 120px
+    // [time-0300] 120px
+    // [time-0400] 120px
+    // [time-0500] 120px
+    // [time-0600] 120px
+    // [time-0700] 120px
+    // [time-0800] 120px
+    // [time-0900] 120px
+    // [time-1000] 120px
+    // [time-1100] 120px
+    // [time-1200] 120px
+    // [time-1300] 120px
+    // [time-1400] 120px
+    // [time-1500] 120px
+    // [time-1600] 120px
+    // [time-1700] 120px
+    // [time-1800] 120px
+    // [time-1900] 120px
+    // [time-2000] 120px
+    // [time-2100] 120px
+    // [time-2200] 120px
+    // [time-2300] 120px;
+    // [time-2359];
+
+    grid-template-rows: auto;
+    background: var(--color-surface);
+}
+
 // .rux-playhead {
 //     width: 5px;
 //     //   grid-row: 1 / 5;
@@ -105,4 +143,30 @@
 
 .hidden {
     display: none;
+}
+
+.cell {
+    // border: 1px solid blue;
+    border-right: 0;
+    border-top: 0;
+    // grid-column: span 60;
+    z-index: 9999;
+    grid-column: span 1;
+}
+.cell:nth-child(10n) {
+    // background: blue;
+}
+
+.cell:nth-child(odd) {
+    // background: var(--color-background);
+    background: red;
+}
+
+.cell:nth-child(even) {
+    background: blue;
+    // opacity: 10%;
+}
+
+.marker {
+    background: blue;
 }

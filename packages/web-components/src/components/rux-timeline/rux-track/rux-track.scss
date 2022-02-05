@@ -8,7 +8,8 @@
 }
 .rux-track__header {
     padding: 11px 8px 13px 8px;
-    background: var(--color-surface);
+    // background: var(--color-surface);
+    background: rgba(39, 90, 142, 0.9);
     border-bottom: 2px solid var(--color-background);
     display: flex;
     align-items: center;
@@ -27,16 +28,26 @@
     // grid-row: 1;
 }
 
-.cell {
-    // border: 0.5px solid red;
-    border-right: 0;
-    // grid-column: span 60;
-    z-index: 9999;
-    grid-column: span 1;
-}
-.cell:nth-child(10n) {
-    // background: blue;
-}
+// .cell {
+//     // border: 1px solid blue;
+//     border-right: 0;
+//     // grid-column: span 60;
+//     z-index: 9999;
+//     grid-column: span 1;
+// }
+// .cell:nth-child(10n) {
+//     // background: blue;
+// }
+
+// .cell:nth-child(odd) {
+//     // background: var(--color-background);
+//     background: red;
+// }
+
+// .cell:nth-child(even) {
+//     background: blue;
+//     // opacity: 10%;
+// }
 
 .marker {
     background: blue;

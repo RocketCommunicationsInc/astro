@@ -21,7 +21,7 @@ export function dateRange(
     if (interval === 'day') {
         const days = differenceInDays(endDate, startDate)
 
-        return [...Array(days + 1).keys()].map((i) => {
+        return [...Array(days).keys()].map((i) => {
             const time = addDays(startDate, i)
             const utcTime = utcToZonedTime(time, 'UTC')
             const formattedTime = format(time, 'MM/dd')
@@ -32,11 +32,9 @@ export function dateRange(
 
     if (interval === 'hour') {
         let days = differenceInHours(endDate, startDate)
-        console.log('days', [...Array(days + 1).keys()])
-
         days = days / intervalValue
 
-        const output = [...Array(days + 1).keys()].map((i) => {
+        const output = [...Array(days).keys()].map((i) => {
             const time = addHours(startDate, i)
             const utcTime = utcToZonedTime(time, 'UTC')
             const formattedTime = format(time, 'HH:mm')
@@ -49,7 +47,7 @@ export function dateRange(
     if (interval === 'month') {
         const months = differenceInMonths(endDate, startDate)
 
-        return [...Array(months + 1).keys()].map((i) => addMonths(startDate, i))
+        return [...Array(months).keys()].map((i) => addMonths(startDate, i))
     }
     return ['foo']
 }

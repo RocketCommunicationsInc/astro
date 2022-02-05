@@ -158,8 +158,7 @@ export class RuxTimeline {
 
         const position = e.clientX - rect.left + scrollOffset
 
-        if (position > 200) {
-            console.log('position', position)
+        if (position >= 200) {
             this.calcTimeFromPlayhead(position)
         } else {
             this.playheadPositionInPixels = 200
@@ -211,7 +210,7 @@ export class RuxTimeline {
                         region.start,
                         region.end
                     )
-                    console.log('region', region.classList)
+                    // console.log('region', region.classList)
 
                     if (!isValid) {
                         console.log('Invalid Region', region)
@@ -256,6 +255,7 @@ export class RuxTimeline {
         if (this.interval === 'day') {
             unitOfTime = 24
         }
+        // console.log('col', this.totalColumns)
         return this.totalColumns * unitOfTime
     }
     render() {
