@@ -250,7 +250,7 @@ export class RuxTimeline {
         }
         return this.zoom / unitOfTime
     }
-    getColumns() {
+    get columns() {
         let unitOfTime = 60
         if (this.interval === 'day') {
             unitOfTime = 24
@@ -258,6 +258,16 @@ export class RuxTimeline {
         // console.log('col', this.totalColumns)
         return this.totalColumns * unitOfTime
     }
+
+    /**
+     * #TODO Temp
+     * Used for debugging only so that rux-track can know how many debug cells to render.
+     */
+    @Method()
+    async fetchColumns() {
+        return this.columns
+    }
+
     render() {
         return (
             <Host>
@@ -266,7 +276,9 @@ export class RuxTimeline {
                     ref={(el) => (this.slotContainer = el)}
                     onMouseMove={(ev) => this.handleMouse(ev)}
                     style={{
-                        gridTemplateColumns: `[header] 200px repeat(${this.getColumns()}, ${this.getWidth()}px)`,
+                        gridTemplateColumns: `[header] 200px repeat(${
+                            this.columns
+                        }, ${this.getWidth()}px)`,
                     }}
                 >
                     <div ref={(el) => (this.playheadContainer = el)}>

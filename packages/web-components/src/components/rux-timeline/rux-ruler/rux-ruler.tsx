@@ -42,13 +42,13 @@ export class RuxRuler {
             unitOfTime = 24
         }
 
-        if (index === 0) {
-            return `${2 + index} / ${(unitOfTime + 2) * index}`
-        } else {
-            return `${unitOfTime * index + 2} / ${
-                unitOfTime * (index * ++index) + 2
-            }`
-        }
+        // if (index === 0) {
+        //     return `${2 + index} / ${(unitOfTime + 2) * index}`
+        // } else {
+        return `${unitOfTime * index + 2} / ${
+            unitOfTime * (index * ++index) + 2
+        }`
+        // }
     }
     render() {
         return (
@@ -58,7 +58,6 @@ export class RuxRuler {
                         <span
                             class={{
                                 'ruler-time': true,
-                                'ruler-time__first': index === 0,
                             }}
                             style={{
                                 gridRow: `${this.track}`,

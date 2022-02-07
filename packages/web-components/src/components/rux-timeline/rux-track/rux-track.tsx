@@ -1,4 +1,4 @@
-import { Element, Component, Prop, Host, h } from '@stencil/core'
+import { Element, State, Component, Prop, Host, h } from '@stencil/core'
 
 let id = 1
 @Component({
@@ -16,6 +16,7 @@ let id = 1
 })
 export class RuxTrack {
     @Element() el!: HTMLRuxTrackElement
+    @State() timelineColumns = 0
     private slotContainer?: HTMLElement
 
     // private _trackId = `rux-track-${++id}`
@@ -30,6 +31,13 @@ export class RuxTrack {
     componentWillLoad() {
         // const timeline = this.el.closest('rux-timeline')
         this.initializeRows()
+
+        const timeline = this.el.closest('rux-timeline')
+        console.log('timeline', timeline)
+
+        timeline?.fetchColumns().then((r) => {
+            this.timelineColumns = r
+        })
     }
 
     initializeRows() {
@@ -70,6 +78,26 @@ export class RuxTrack {
         }
     }
 
+    renderDebug() {
+        return (
+            <div style={{ display: 'contents' }}>
+                {[...Array(this.timelineColumns)].map((x: any, i: any) => (
+                    <div
+                        style={{
+                            gridRow: `${this.track}`,
+                            gridColumn: `${i + 2} / ${++i + 2}`,
+                        }}
+                        class={{
+                            cell: true,
+                            marker: i % 60 === 0,
+                        }}
+                        part="cell"
+                    ></div>
+                ))}
+            </div>
+        )
+    }
+
     render() {
         return (
             <Host>
@@ -85,19 +113,7 @@ export class RuxTrack {
 
                     <slot onSlotchange={this._handleSlotChange}></slot>
                 </div>
-                {[...Array(2440)].map((x: any, i: any) => (
-                    <div
-                        style={{
-                            gridRow: `${this.track}`,
-                            gridColumn: `${i + 2} / ${++i + 2}`,
-                        }}
-                        class={{
-                            cell: true,
-                            marker: i % 60 === 0,
-                        }}
-                        part="cell"
-                    ></div>
-                ))}
+                {this.renderDebug()}
             </Host>
         )
     }

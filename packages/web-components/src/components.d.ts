@@ -7143,6 +7143,10 @@ export namespace Components {
     }
     interface RuxTimeline {
         end: string
+        /**
+         * #TODO Temp Used for debugging only so that rux-track can know how many debug cells to render.
+         */
+        fetchColumns: () => Promise<number>
         interval: 'hour' | 'day' | 'month'
         start: string
         zoom: number
