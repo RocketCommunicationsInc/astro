@@ -15,6 +15,7 @@ export function dateRange(
     interval: any,
     intervalValue: any = 1
 ) {
+    console.log('interval', interval)
     const startDate = new Date(start)
     const endDate = new Date(end)
 
@@ -49,5 +50,5 @@ export function dateRange(
 
         return [...Array(months).keys()].map((i) => addMonths(startDate, i))
     }
-    return ['foo']
+    return []
 }

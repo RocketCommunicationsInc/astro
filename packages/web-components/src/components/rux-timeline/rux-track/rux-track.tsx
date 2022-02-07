@@ -113,7 +113,7 @@ export class RuxTrack {
 
                     <slot onSlotchange={this._handleSlotChange}></slot>
                 </div>
-                {this.renderDebug()}
+                {/* {this.renderDebug()} */}
             </Host>
         )
     }

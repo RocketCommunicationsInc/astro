@@ -28,18 +28,19 @@ export class RuxTimeline {
     private playheadContainer?: HTMLElement
     private slotContainer?: HTMLElement
     public slots?: any = 'empty'
+    @Element() el!: HTMLRuxTimelineElement
+
     @State() newTime: any = ''
     @State() playheadPositionInPixels = 200
     @State() time = '00:00'
-    @Element() el!: HTMLRuxTimelineElement
+    @State() columnWidth = 120
     @Prop() start = '2021-02-01T00:00:00Z'
     @Prop() end = '2021-02-10T00:00:00Z'
     @Prop({ reflect: true }) zoom = 1
-    @State() columnWidth = 120
-    @Prop() interval: 'hour' | 'day' | 'month' = 'hour'
+    @Prop() interval: 'hour' | 'day' = 'hour'
 
     @Watch('zoom')
-    handleZoomChange(value: any) {
+    handleZoomChange() {
         this.setZoom()
         const newMargin = this.calcPlayheadFromTime(this.newTime)
         this.playheadPositionInPixels = newMargin
