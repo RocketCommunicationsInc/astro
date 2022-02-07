@@ -23,10 +23,10 @@
         <div style="width: 1050px; margin: auto">
             <rux-timeline
                 start="2021-02-01T05:00:00Z"
-                end="2021-02-02T05:00:00Z"
-                interval="hour"
+                end="2021-02-12T05:00:00Z"
+                interval="day"
                 id="dayline"
-                zoom="120"
+                zoom="1"
             >
                 <rux-playhead slot="playhead"></rux-playhead>
                 <rux-track id="track" label="second">
@@ -102,11 +102,11 @@
             const endDate = document.querySelector('#endDate')
 
             increaseButton.addEventListener('click', () => {
-                timelineEl.zoom = timelineEl.zoom + 50
+                timelineEl.zoom = timelineEl.zoom + 1
             })
 
             decreaseButton.addEventListener('click', () => {
-                timelineEl.zoom = timelineEl.zoom - 50
+                timelineEl.zoom = timelineEl.zoom - 1
             })
 
             saveEl.addEventListener('click', () => {

@@ -34,11 +34,13 @@ export class RuxTimeline {
     @Element() el!: HTMLRuxTimelineElement
     @Prop() start = '2021-02-01T00:00:00Z'
     @Prop() end = '2021-02-10T00:00:00Z'
-    @Prop({ reflect: true }) zoom = 120
+    @Prop({ reflect: true }) zoom = 1
+    @State() columnWidth = 120
     @Prop() interval: 'hour' | 'day' | 'month' = 'hour'
 
     @Watch('zoom')
-    handleZoomChange() {
+    handleZoomChange(value: any) {
+        this.setZoom()
         const newMargin = this.calcPlayheadFromTime(this.newTime)
         this.playheadPositionInPixels = newMargin
         this.updateRegions()
@@ -74,6 +76,7 @@ export class RuxTimeline {
         this.handleMouse = this.handleMouse.bind(this)
     }
     componentWillLoad() {
+        this.setZoom()
         this.initializeTracks()
     }
 
@@ -104,11 +107,11 @@ export class RuxTimeline {
      */
     get pxToTimeRatio() {
         if (this.interval === 'hour') {
-            return this.zoom / 60 // for hours.
+            return this.columnWidth / 60 // for hours.
         }
 
         if (this.interval === 'day') {
-            return this.zoom / 24 //tbd
+            return this.columnWidth / 24 //tbd
         }
         return 2
     }
@@ -248,7 +251,7 @@ export class RuxTimeline {
         if (this.interval === 'day') {
             unitOfTime = 24
         }
-        return this.zoom / unitOfTime
+        return this.columnWidth / unitOfTime
     }
     get columns() {
         let unitOfTime = 60
@@ -257,6 +260,17 @@ export class RuxTimeline {
         }
         // console.log('col', this.totalColumns)
         return this.totalColumns * unitOfTime
+    }
+
+    setZoom() {
+        let unitOfTime = 60
+        if (this.interval === 'day') {
+            unitOfTime = 24 * 5
+        }
+
+        if (this.zoom >= 1) {
+            this.columnWidth = this.zoom * unitOfTime
+        }
     }
 
     /**

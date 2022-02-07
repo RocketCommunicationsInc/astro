@@ -25,7 +25,7 @@
                 start="2021-02-01T00:00:00Z"
                 end="2021-02-05T12:00:00Z"
                 interval="hour"
-                zoom="140"
+                zoom="1"
             >
                 <rux-playhead slot="playhead"></rux-playhead>
             </rux-timeline>
@@ -34,7 +34,7 @@
                 start="2021-02-01T00:00:00Z"
                 end="2021-02-01T12:00:00Z"
                 interval="hour"
-                zoom="480"
+                zoom="2"
             >
                 <rux-playhead slot="playhead"></rux-playhead>
                 <rux-track>
@@ -97,11 +97,11 @@
             const endDate = document.querySelector('#endDate')
 
             increaseButton.addEventListener('click', () => {
-                timelineEl.zoom = timelineEl.zoom + 50
+                timelineEl.zoom = timelineEl.zoom + 1
             })
 
             decreaseButton.addEventListener('click', () => {
-                timelineEl.zoom = timelineEl.zoom - 50
+                timelineEl.zoom = timelineEl.zoom - 1
             })
 
             saveEl.addEventListener('click', () => {
