@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rux-timeline renders 1`] = `
+<rux-timeline end="2021-02-05T12:00:00Z" start="2021-02-01T00:00:00Z" zoom="1">
+  <mock:shadow-root>
+    <div class="rux-timeline" style="grid-template-columns: [header] 200px repeat(6480, 1px);">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+</rux-timeline>
+`;
