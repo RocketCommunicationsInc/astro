@@ -103,15 +103,11 @@ export class RuxTimeline {
     }
 
     initializeTracks() {
-        const childNodes = this.el.childNodes
-        const children = Array.prototype.filter.call(childNodes, (node) => {
-            return (
-                node.nodeType == Node.ELEMENT_NODE &&
-                node.tagName === 'RUX-TRACK'
-            )
-        })
+        const tracks = [...this.el.children].filter(
+            (el) => el.tagName.toLowerCase() === 'rux-track'
+        ) as HTMLRuxTrackElement[]
 
-        children.forEach((el, index) => {
+        tracks.forEach((el, index) => {
             el.track = ++index
         })
     }
@@ -235,15 +231,9 @@ export class RuxTimeline {
         ]
 
         tracks.map((track: any) => {
-            const regions = Array.prototype.filter.call(
-                track.childNodes,
-                (node) => {
-                    return (
-                        node.nodeType == Node.ELEMENT_NODE &&
-                        node.tagName.toLowerCase() === 'rux-time-region'
-                    )
-                }
-            )
+            const regions = [...track.children].filter(
+                (el: any) => el.tagName.toLowerCase() === 'rux-time-region'
+            ) as HTMLRuxTimeRegionElement[]
 
             regions.map((region) => {
                 region.ratio = this.pxToTimeRatio
@@ -260,19 +250,13 @@ export class RuxTimeline {
                 }
             })
 
-            const ruler = Array.prototype.filter.call(
-                track.childNodes,
-                (node) => {
-                    return (
-                        node.nodeType == Node.ELEMENT_NODE &&
-                        node.tagName.toLowerCase() === 'rux-ruler'
-                    )
-                }
-            )
-            if (ruler.length) {
-                ruler[0].startDate = this.start
-                ruler[0].endDate = this.end
-                ruler[0].interval = this.interval
+            const ruler = [...track.children].find(
+                (el: any) => el.tagName.toLowerCase() === 'rux-ruler'
+            ) as HTMLRuxRulerElement
+            if (ruler) {
+                ruler.startDate = this.start
+                ruler.endDate = this.end
+                ruler.interval = this.interval
             }
         })
     }
