@@ -29,8 +29,8 @@ export class RuxTimeline {
 
     @State() newTime: any = ''
     @State() playheadPositionInPixels = 200
-    @State() time = '00:00'
     @State() columnWidth = 120
+
     /**
      * The timeline's start date. Must be an ISO string "2021-02-02T05:00:00Z"
      */
@@ -86,29 +86,6 @@ export class RuxTimeline {
         // }
     }
 
-    @Watch('playheadPositionInPixels')
-    syncMargin() {
-        // const hasPlayed = hasSlot(this.el, 'playhead')
-        // if (hasPlayed) {
-        //     // const slot = this.playheadContainer?.querySelector(
-        //     //     'slot'
-        //     // ) as HTMLSlotElement
-        //     // const assignedElements = slot
-        //     //     .assignedElements({
-        //     //         flatten: true,
-        //     //     })
-        //     //     .filter(
-        //     //         (el) => el.tagName.toLowerCase() === 'rux-playhead'
-        //     //     )[0] as HTMLRuxPlayheadElement
-        //     const assignedElements = this.el.querySelector(
-        //         '[slot="playhead"]'
-        //     ) as HTMLRuxPlayheadElement
-        //     if (assignedElements) {
-        //         assignedElements.time = this.playheadPositionInPixels
-        //     }
-        // }
-    }
-
     @Watch('interval')
     handleIntervalChange() {
         this.updateRegions()
@@ -118,16 +95,11 @@ export class RuxTimeline {
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this.handleMouse = this.handleMouse.bind(this)
         this.syncPlayhead = this.syncPlayhead.bind(this)
-        this.syncMargin = this.syncMargin.bind(this)
     }
     componentWillLoad() {
         this.setZoom()
         this.initializeTracks()
         this.syncPlayhead()
-    }
-
-    componentWillRender() {
-        // this.syncPlayhead()
     }
 
     initializeTracks() {
@@ -238,63 +210,71 @@ export class RuxTimeline {
         this.updateRegions()
     }
 
+    getChildElement(nodes: any, needle: any) {
+        return [
+            ...nodes
+                ?.assignedElements({ flatten: true })
+                .filter((node: any) => node.tagName.toLowerCase() === needle),
+        ]
+    }
+
     /**
      * Syncs the Timeline's current interval and ratio to it's children and grandchildren
      */
     updateRegions() {
-        const slots = this.slotContainer?.querySelectorAll('slot')[0]
-        const assignedNodes = slots?.assignedNodes({ flatten: true })
-        let tracks = []
-        if (assignedNodes) {
-            tracks = assignedNodes.filter((node: any) => {
-                return (
-                    node.tagName && node.tagName.toLowerCase() === 'rux-track'
-                )
-            })
+        const slot = this.slotContainer?.querySelectorAll(
+            'slot'
+        )[0] as HTMLSlotElement
 
-            tracks.map((track) => {
-                const regions = Array.prototype.filter.call(
-                    track.childNodes,
-                    (node) => {
-                        return (
-                            node.nodeType == Node.ELEMENT_NODE &&
-                            node.tagName === 'RUX-TIME-REGION'
-                        )
-                    }
-                )
+        const tracks = [
+            ...(slot
+                ?.assignedElements({ flatten: true })
+                .filter(
+                    (node: any) => node.tagName.toLowerCase() === 'rux-track'
+                ) as [HTMLRuxTrackElement]),
+        ]
 
-                regions.map((region) => {
-                    region.ratio = this.pxToTimeRatio
-                    region.interval = this.interval
-                    region.timelineStart = this.start
-                    const isValid = this.validateTimeRegion(
-                        region.start,
-                        region.end
+        tracks.map((track: any) => {
+            const regions = Array.prototype.filter.call(
+                track.childNodes,
+                (node) => {
+                    return (
+                        node.nodeType == Node.ELEMENT_NODE &&
+                        node.tagName.toLowerCase() === 'rux-time-region'
                     )
-                    // console.log('region', region.classList)
+                }
+            )
 
-                    if (!isValid) {
-                        console.log('Invalid Region', region)
-                        region.style.visibility = 'hidden'
-                    }
-                })
-
-                const ruler = Array.prototype.filter.call(
-                    track.childNodes,
-                    (node) => {
-                        return (
-                            node.nodeType == Node.ELEMENT_NODE &&
-                            node.tagName === 'RUX-RULER'
-                        )
-                    }
+            regions.map((region) => {
+                region.ratio = this.pxToTimeRatio
+                region.interval = this.interval
+                region.timelineStart = this.start
+                const isValid = this.validateTimeRegion(
+                    region.start,
+                    region.end
                 )
-                if (ruler.length) {
-                    ruler[0].startDate = this.start
-                    ruler[0].endDate = this.end
-                    ruler[0].interval = this.interval
+
+                if (!isValid) {
+                    console.log('Invalid Region', region)
+                    region.style.visibility = 'hidden'
                 }
             })
-        }
+
+            const ruler = Array.prototype.filter.call(
+                track.childNodes,
+                (node) => {
+                    return (
+                        node.nodeType == Node.ELEMENT_NODE &&
+                        node.tagName.toLowerCase() === 'rux-ruler'
+                    )
+                }
+            )
+            if (ruler.length) {
+                ruler[0].startDate = this.start
+                ruler[0].endDate = this.end
+                ruler[0].interval = this.interval
+            }
+        })
     }
 
     validateTimeRegion(start: any, end: any) {
@@ -324,7 +304,6 @@ export class RuxTimeline {
         if (this.interval === 'day') {
             unitOfTime = 24
         }
-        // console.log('col', this.totalColumns)
         return this.totalColumns * unitOfTime
     }
 
