@@ -60,7 +60,7 @@ export class RuxTimeline {
     syncPlayhead() {
         if (this.position) {
             this.newTime = new Date(this.position)
-            const time = this.calcPlayheadFromTime(this.position)
+            const time = this._calculatePlayheadFromTime(this.position)
             if (time) {
                 this.playheadPositionInPixels = time
             }
@@ -69,47 +69,50 @@ export class RuxTimeline {
 
     @Watch('zoom')
     handleZoomChange() {
-        this.setZoom()
-        const newMargin = this.calcPlayheadFromTime(this.newTime)
+        this._setZoom()
+        const newMargin = this._calculatePlayheadFromTime(this.newTime)
 
         if (newMargin) {
             this.playheadPositionInPixels = newMargin
         }
-        this.updateRegions()
+        this._updateRegions()
     }
 
     @Watch('start')
     @Watch('end')
     handleStartChange() {
-        // if (this.start && this.end) {
-        this.updateRegions()
-        // }
+        this._updateRegions()
     }
 
     @Watch('interval')
     handleIntervalChange() {
-        this.updateRegions()
+        this._updateRegions()
     }
 
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
-        this.handleMouse = this.handleMouse.bind(this)
+        this._handleMouse = this._handleMouse.bind(this)
         this.syncPlayhead = this.syncPlayhead.bind(this)
     }
     componentWillLoad() {
-        this.setZoom()
+        this._setZoom()
         this.initializeTracks()
         this.syncPlayhead()
     }
 
-    initializeTracks() {
-        const tracks = [...this.el.children].filter(
-            (el) => el.tagName.toLowerCase() === 'rux-track'
-        ) as HTMLRuxTrackElement[]
-
-        tracks.forEach((el, index) => {
-            el.track = ++index
-        })
+    get width() {
+        let unitOfTime = 60
+        if (this.interval === 'day') {
+            unitOfTime = 24
+        }
+        return this.columnWidth / unitOfTime
+    }
+    get columns() {
+        let unitOfTime = 60
+        if (this.interval === 'day') {
+            unitOfTime = 24
+        }
+        return this.totalColumns * unitOfTime
     }
 
     get totalColumns() {
@@ -118,14 +121,13 @@ export class RuxTimeline {
         }
 
         const range = dateRange(this.start, this.end, this.interval)
-        if (range) {
-            return range.length
-        } else {
-            return 0
-        }
+        return range.length
     }
     /**
      * The relationship between 1px and the datetime it represents.
+     * We need a way to map individual pixels to a particular time, so that
+     * if the playhead or an event is positioned at 120px visually, we can determine
+     * what exact time that represents.
      */
     get pxToTimeRatio() {
         if (this.interval === 'hour') {
@@ -138,7 +140,32 @@ export class RuxTimeline {
         return 2
     }
 
-    calcTimeFromPlayhead(position: any) {
+    get formattedCurrentTime() {
+        if (this.newTime) {
+            return format(this.newTime, 'MM/dd/Y HH:mm:ss')
+        } else {
+            return null
+        }
+    }
+
+    /**
+     * Slotted tracks need to render in the order they are provided in markup
+     * Because they load asynchronously, we need a better way to set their row in the grid
+     */
+    initializeTracks() {
+        const tracks = [...this.el.children].filter(
+            (el) => el.tagName.toLowerCase() === 'rux-track'
+        ) as HTMLRuxTrackElement[]
+
+        tracks.forEach((el, index) => {
+            el.track = ++index
+        })
+    }
+
+    /**
+     * Give it a position (in pixels) and get the time that represents
+     */
+    private _calculateTimeFromPlayhead(position: any) {
         this.playheadPositionInPixels = position - 2
 
         const time = position - 200
@@ -163,7 +190,10 @@ export class RuxTimeline {
         this.newTime = newTime
     }
 
-    calcPlayheadFromTime(time: any) {
+    /**
+     * Give it a time, get where it should be positioned visually (in pixels)
+     */
+    private _calculatePlayheadFromTime(time: any) {
         let newTime = Math.abs(
             differenceInMinutes(new Date(this.start), new Date(time))
         )
@@ -178,7 +208,10 @@ export class RuxTimeline {
         return result
     }
 
-    handleMouse(e: any) {
+    /**
+     * For debugging
+     */
+    private _handleMouse(e: any) {
         const rect = this.el.getBoundingClientRect()
         const scrollOffset = this.slotContainer
             ? this.slotContainer?.scrollLeft
@@ -187,37 +220,21 @@ export class RuxTimeline {
         const position = e.clientX - rect.left + scrollOffset
 
         if (position >= 200) {
-            // this.calcTimeFromPlayhead(position)
+            // this._calcTimeFromPlayhead(position)
         } else {
             // this.playheadPositionInPixels = 200
         }
     }
 
-    get formattedCurrentTime() {
-        if (this.newTime) {
-            return format(this.newTime, 'MM/dd/Y HH:mm:ss')
-        } else {
-            return null
-        }
-    }
-
     private _handleSlotChange() {
-        // this.initializeTracks()
-        this.updateRegions()
-    }
-
-    getChildElement(nodes: any, needle: any) {
-        return [
-            ...nodes
-                ?.assignedElements({ flatten: true })
-                .filter((node: any) => node.tagName.toLowerCase() === needle),
-        ]
+        this._updateRegions()
     }
 
     /**
-     * Syncs the Timeline's current interval and ratio to it's children and grandchildren
+     * Syncs the Timeline's current interval and pxToTimeRatio to it's children and grandchildren
+     * We're taking a props down, events up approach to data flow here.
      */
-    updateRegions() {
+    private _updateRegions() {
         const slot = this.slotContainer?.querySelectorAll(
             'slot'
         )[0] as HTMLSlotElement
@@ -239,7 +256,7 @@ export class RuxTimeline {
                 region.ratio = this.pxToTimeRatio
                 region.interval = this.interval
                 region.timelineStart = this.start
-                const isValid = this.validateTimeRegion(
+                const isValid = this._validateTimeRegion(
                     region.start,
                     region.end
                 )
@@ -261,7 +278,7 @@ export class RuxTimeline {
         })
     }
 
-    validateTimeRegion(start: any, end: any) {
+    private _validateTimeRegion(start: any, end: any) {
         if (!this.start) {
             return false
         }
@@ -276,22 +293,7 @@ export class RuxTimeline {
         )
     }
 
-    getWidth() {
-        let unitOfTime = 60
-        if (this.interval === 'day') {
-            unitOfTime = 24
-        }
-        return this.columnWidth / unitOfTime
-    }
-    get columns() {
-        let unitOfTime = 60
-        if (this.interval === 'day') {
-            unitOfTime = 24
-        }
-        return this.totalColumns * unitOfTime
-    }
-
-    setZoom() {
+    private _setZoom() {
         let unitOfTime = 60
         if (this.interval === 'day') {
             unitOfTime = 24 * 5
@@ -317,11 +319,9 @@ export class RuxTimeline {
                 <div
                     class="rux-timeline"
                     ref={(el) => (this.slotContainer = el)}
-                    onMouseMove={(ev) => this.handleMouse(ev)}
+                    onMouseMove={(ev) => this._handleMouse(ev)}
                     style={{
-                        gridTemplateColumns: `[header] 200px repeat(${
-                            this.columns
-                        }, ${this.getWidth()}px)`,
+                        gridTemplateColumns: `[header] 200px repeat(${this.columns}, ${this.width}px)`,
                     }}
                 >
                     {this.position && (
