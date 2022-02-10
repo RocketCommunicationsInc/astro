@@ -1,5 +1,11 @@
 # @astrouxds/astro-web-components
 
+## 0.0.0-timeline-alpha.0-20220210144104
+
+### Minor Changes
+
+-   Fixed issue with reloading
+
 ## 6.1.0
 
 ### Minor Changes
