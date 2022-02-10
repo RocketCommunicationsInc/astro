@@ -27,7 +27,6 @@ export class RuxTimeline {
     public slots?: any = 'empty'
     @Element() el!: HTMLRuxTimelineElement
 
-    @State() newTime: any = ''
     @State() playheadPositionInPixels = 200
     @State() columnWidth = 120
 
@@ -49,7 +48,7 @@ export class RuxTimeline {
     /**
      * The timeline's playhead date time. Must be an ISO string "2021-02-02T05:00:00Z"
      */
-    @Prop({ reflect: true }) position?: string
+    @Prop({ reflect: true, mutable: true }) position?: string
 
     /**
      * The timeline's date time interval
@@ -59,7 +58,6 @@ export class RuxTimeline {
     @Watch('position')
     syncPlayhead() {
         if (this.position) {
-            this.newTime = new Date(this.position)
             const time = this._calculatePlayheadFromTime(this.position)
             if (time) {
                 this.playheadPositionInPixels = time
@@ -70,22 +68,14 @@ export class RuxTimeline {
     @Watch('zoom')
     handleZoomChange() {
         this._setZoom()
-        const newMargin = this._calculatePlayheadFromTime(this.newTime)
-
-        if (newMargin) {
-            this.playheadPositionInPixels = newMargin
-        }
+        this.syncPlayhead()
         this._updateRegions()
     }
 
     @Watch('start')
     @Watch('end')
-    handleStartChange() {
-        this._updateRegions()
-    }
-
     @Watch('interval')
-    handleIntervalChange() {
+    handleChange() {
         this._updateRegions()
     }
 
@@ -141,8 +131,8 @@ export class RuxTimeline {
     }
 
     get formattedCurrentTime() {
-        if (this.newTime) {
-            return format(this.newTime, 'MM/dd/Y HH:mm:ss')
+        if (this.position) {
+            return format(new Date(this.position), 'MM/dd/Y HH:mm:ss')
         } else {
             return null
         }
@@ -187,13 +177,24 @@ export class RuxTimeline {
     //         newTime = addHours(start, min)
     //     }
 
-    //     this.newTime = newTime
+    //     return newTime
     // }
 
     /**
      * Give it a time, get where it should be positioned visually (in pixels)
      */
     private _calculatePlayheadFromTime(time: any) {
+        if (
+            new Date(time) < new Date(this.start) ||
+            new Date(time) > new Date(this.end)
+        ) {
+            throw new RangeError(
+                `Playhead date must be between ${new Date(
+                    this.start
+                ).toISOString()} - ${new Date(this.end).toISOString()}`
+            )
+        }
+
         let newTime = Math.abs(
             differenceInMinutes(new Date(this.start), new Date(time))
         )
@@ -220,15 +221,14 @@ export class RuxTimeline {
         const position = e.clientX - rect.left + scrollOffset
 
         if (position >= 200) {
-            // this._calculateTimeFromPlayhead(position)
+            // const time = this._calculateTimeFromPlayhead(position)
+            // this.position = time.toISOString()
         } else {
             // this.playheadPositionInPixels = 200
         }
     }
 
     private _handleSlotChange() {
-        console.log('heard slot change')
-
         this.initializeTracks()
         this._updateRegions()
     }

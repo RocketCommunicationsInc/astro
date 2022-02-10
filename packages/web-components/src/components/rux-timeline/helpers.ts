@@ -14,7 +14,6 @@ export function dateRange(
     interval: any,
     intervalValue: any = 1
 ) {
-    console.log('interval', interval)
     const startDate = new Date(start)
     const endDate = new Date(end)
 
