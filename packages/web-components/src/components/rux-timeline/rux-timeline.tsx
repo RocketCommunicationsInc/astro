@@ -9,10 +9,10 @@ import {
     Prop,
 } from '@stencil/core'
 import {
-    addHours,
-    addMinutes,
+    // addHours,
+    // addMinutes,
     differenceInMinutes,
-    startOfDay,
+    // startOfDay,
     differenceInHours,
     format,
 } from 'date-fns'
@@ -158,30 +158,30 @@ export class RuxTimeline {
     /**
      * Give it a position (in pixels) and get the time that represents
      */
-    private _calculateTimeFromPlayhead(position: any) {
-        this.playheadPositionInPixels = position - 2
+    // private _calculateTimeFromPlayhead(position: any) {
+    //     this.playheadPositionInPixels = position - 2
 
-        const time = position - 200
+    //     const time = position - 200
 
-        const min = time / this.pxToTimeRatio
+    //     const min = time / this.pxToTimeRatio
 
-        let newTime = new Date()
-        if (this.interval === 'hour') {
-            newTime = addMinutes(new Date(this.start), min)
-        }
+    //     let newTime = new Date()
+    //     if (this.interval === 'hour') {
+    //         newTime = addMinutes(new Date(this.start), min)
+    //     }
 
-        if (this.interval === 'day') {
-            /**
-             * If the interval is day, we need to round the start/end times to the start of the day
-             * Ie you passing 01/01/2020 06:00 as the start, the timeline needs to start at 00
-             */
+    //     if (this.interval === 'day') {
+    //         /**
+    //          * If the interval is day, we need to round the start/end times to the start of the day
+    //          * Ie you passing 01/01/2020 06:00 as the start, the timeline needs to start at 00
+    //          */
 
-            const start = startOfDay(new Date(this.start))
-            newTime = addHours(start, min)
-        }
+    //         const start = startOfDay(new Date(this.start))
+    //         newTime = addHours(start, min)
+    //     }
 
-        return newTime
-    }
+    //     return newTime
+    // }
 
     /**
      * Give it a time, get where it should be positioned visually (in pixels)
@@ -224,8 +224,8 @@ export class RuxTimeline {
         const position = e.clientX - rect.left + scrollOffset
 
         if (position >= 200) {
-            const time = this._calculateTimeFromPlayhead(position)
-            this.position = time.toISOString()
+            // const time = this._calculateTimeFromPlayhead(position)
+            // this.position = time.toISOString()
         } else {
             // this.playheadPositionInPixels = 200
         }
@@ -362,7 +362,6 @@ export class RuxTimeline {
                         <slot name="ruler"></slot>
                     </div>
                 </div>
-                Time {this.formattedCurrentTime}
             </Host>
         )
     }
