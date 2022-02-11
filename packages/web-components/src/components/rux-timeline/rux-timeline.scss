@@ -3,7 +3,9 @@
     ::-webkit-scrollbar {
         width: 16px;
         height: 16px;
-        background-color: transparent;
+        // // margin-left: -20px;
+        // background-color: transparent;
+        border: 2px solid red;
     }
 
     ::-webkit-scrollbar-thumb {
@@ -29,7 +31,13 @@
 
     ::-webkit-scrollbar-track,
     ::-webkit-scrollbar-corner {
-        background-color: var(--color-surface, rgb(27, 45, 62));
+        // background: linear-gradient(
+        //     to right,
+        //     var(--color-background) 200px,
+        //     var(--color-surface) 200px 100%
+        // );
+        background: var(--color-surface);
+        // background-color: var(--color-surface, rgb(27, 45, 62));
     }
 
     ::-webkit-scrollbar-track:vertical {
@@ -42,41 +50,17 @@
 }
 
 .rux-timeline {
-    scrollbar-color: var(--color-active);
-
-    overflow: auto;
+    // scrollbar-color: var(--color-active);
+    // overflow: auto;
+    // position: relative;
+    // display: grid;
+    // grid-template-rows: auto;
+    // background: var(--color-surface);
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
     position: relative;
-    display: grid;
-    // grid-gap: 1em;
-    // grid-template-columns: [header] 200px repeat(12, 120px);
-    // [time-0000] 120px
-    // [time-0100] 120px
-    // [time-0200] 120px
-    // [time-0300] 120px
-    // [time-0400] 120px
-    // [time-0500] 120px
-    // [time-0600] 120px
-    // [time-0700] 120px
-    // [time-0800] 120px
-    // [time-0900] 120px
-    // [time-1000] 120px
-    // [time-1100] 120px
-    // [time-1200] 120px
-    // [time-1300] 120px
-    // [time-1400] 120px
-    // [time-1500] 120px
-    // [time-1600] 120px
-    // [time-1700] 120px
-    // [time-1800] 120px
-    // [time-1900] 120px
-    // [time-2000] 120px
-    // [time-2100] 120px
-    // [time-2200] 120px
-    // [time-2300] 120px;
-    // [time-2359];
-
-    grid-template-rows: auto;
-    background: var(--color-surface);
+    height: 300px;
 }
 
 .rux-timeline-overlay {
@@ -177,12 +161,12 @@
     //   grid-column: time-0000 / time-2359;
 
     background: var(--color-primary);
-    z-index: 10;
-
-    height: 100%;
+    z-index: 1;
     position: absolute;
+    height: 100%;
     top: 0;
     // left: 200px;
+    pointer-events: none; // allows scrolling when mouse cursor is positioned over the playhead
     &:after {
         width: 0;
         height: 0;
@@ -191,6 +175,29 @@
         border-top: 12px solid var(--color-primary);
         content: '';
         position: absolute;
-        left: -11.5px;
+        left: -10.3px;
     }
+}
+
+.events {
+}
+.ruler {
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+}
+
+.rux-track {
+    display: contents;
+}
+
+.ruler-time {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    // background: red;
+}
+
+#rulerTrack::part(container) {
+    margin-bottom: 0;
 }

@@ -11,7 +11,6 @@ export class RuxRuler {
      * The track
      */
     @Prop() track: string = '1'
-    @Prop() intervalIncrement = 1
     @Prop() interval: any = ''
     @Prop() startDate: any
     @Prop() endDate: any
@@ -22,7 +21,7 @@ export class RuxRuler {
             new Date(this.startDate),
             new Date(this.endDate),
             this.interval,
-            this.intervalIncrement
+            1
         )
     }
 
@@ -32,14 +31,11 @@ export class RuxRuler {
             unitOfTime = 24
         }
 
-        // if (index === 0) {
-        //     return `${2 + index} / ${(unitOfTime + 2) * index}`
-        // } else {
-        return `${unitOfTime * index + 2} / ${
-            unitOfTime * (index * ++index) + 2
-        }`
-        // }
+        const start = unitOfTime * index + 2
+        const end = start + unitOfTime
+        return `${unitOfTime * index + 2} / ${end}`
     }
+
     render() {
         return (
             <Host>
@@ -50,7 +46,7 @@ export class RuxRuler {
                                 'ruler-time': true,
                             }}
                             style={{
-                                gridRow: `${this.track}`,
+                                gridRow: '1',
                                 gridColumn: this.getColumn(index),
                             }}
                         >

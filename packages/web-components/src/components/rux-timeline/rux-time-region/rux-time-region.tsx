@@ -36,30 +36,6 @@ export class RuxTimeRegion {
         this.endDate = new Date(this.end)
     }
 
-    get startOffset() {
-        if (this.interval === 'hour') {
-            // return this.startDate.getMinutes() * this.ratio
-        }
-        if (this.interval === 'day') {
-            // return this.startDate.getHours() * this.ratio
-            // return 0
-        }
-
-        return 0
-    }
-
-    get endOffset() {
-        if (this.interval === 'hour') {
-            // return this.endDate.getMinutes() * this.ratio
-        }
-
-        if (this.interval === 'day') {
-            // return this.endDate.getHours() * this.ratio
-        }
-
-        return 0
-    }
-
     calculateGridColumnFromTime(time: any) {
         if (this.timelineStart) {
             const timelineStart = new Date(this.timelineStart)
@@ -90,12 +66,10 @@ export class RuxTimeRegion {
                     part="container"
                     class="rux-time-region"
                     style={{
-                        gridRow: `${this.track}`,
+                        gridRow: '1',
                         gridColumn: `${this.calculateGridColumnFromTime(
                             this.start
                         )} / ${this.calculateGridColumnFromTime(this.end)}`,
-                        marginLeft: `${this.startOffset}px`,
-                        marginRight: `-${this.endOffset}px`,
                     }}
                 >
                     <div class="rux-time-region__content">

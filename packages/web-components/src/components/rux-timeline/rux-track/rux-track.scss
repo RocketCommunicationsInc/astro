@@ -1,54 +1,33 @@
 :host {
-    display: contents;
 }
 
 .rux-track {
-    display: contents;
     background: var(--color-surface);
+    width: fit-content;
+    padding-bottom: 2px;
+    border-bottom: 2px solid var(--color-background);
 }
+
 .rux-track__header {
     padding: 11px 8px 13px 8px;
-    // background: var(--color-surface);
-    background: rgba(39, 90, 142, 0.9);
-    border-bottom: 2px solid var(--color-background);
+    background: var(--color-surface);
+    border-right: 2px solid var(--color-background);
     display: flex;
     align-items: center;
     font-family: var(--font-body-1-font-family);
     font-size: var(--font-body-1-font-size);
     font-weight: var(--font-body-1-font-weight);
     letter-spacing: var(--font-body-1-letter-spacing);
-}
-.rux-track__header::slotted(*) {
-    grid-column: header / time-0000;
-}
-
-::slotted(rux-time-region) {
-    background: blue;
-    // border: 2px solid red;
-    // grid-row: 1;
+    position: sticky;
+    left: 0;
+    min-width: 184px;
+    z-index: 2;
 }
 
-// .cell {
-//     // border: 1px solid blue;
-//     border-right: 0;
-//     // grid-column: span 60;
-//     z-index: 9999;
-//     grid-column: span 1;
-// }
-// .cell:nth-child(10n) {
-//     // background: blue;
-// }
-
-// .cell:nth-child(odd) {
-//     // background: var(--color-background);
-//     background: red;
-// }
-
-// .cell:nth-child(even) {
-//     background: blue;
-//     // opacity: 10%;
-// }
-
-.marker {
-    background: blue;
+.rux-timeline {
+    scrollbar-color: var(--color-active);
+    position: relative;
+    display: grid;
+    grid-template-rows: auto;
+    background: var(--color-surface);
 }

@@ -29,6 +29,9 @@
                 zoom="1"
             >
                 <rux-playhead slot="playhead"></rux-playhead>
+                <rux-track slot="ruler">
+                    <rux-ruler></rux-ruler>
+                </rux-track>
             </rux-timeline>
 
             <rux-button id="decrease">-</rux-button>
@@ -111,8 +114,8 @@
                     timelineEl.appendChild(trackEl)
                 })
 
-                const ruler = makeRuler()
-                timelineEl.appendChild(ruler)
+                // const ruler = makeRuler()
+                // timelineEl.appendChild(ruler)
 
                 function makeRuler() {
                     const ruler = document.createElement('rux-ruler')
@@ -195,7 +198,7 @@
                 return events
             }
 
-            const events = generateEvents(3)
+            const events = generateEvents(15)
 
             seedTimeline(events)
         </script>

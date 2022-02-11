@@ -7,8 +7,9 @@
     border: 1px solid var(--color-status-normal-fill);
     // padding: 0.25rem;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
+    min-height: 40px;
 }
 
 .rux-time-region__content {

@@ -6921,7 +6921,6 @@ export namespace Components {
     interface RuxRuler {
         endDate: any
         interval: any
-        intervalIncrement: number
         startDate: any
         /**
          * The track
@@ -7175,10 +7174,9 @@ export namespace Components {
         zoom: number
     }
     interface RuxTrack {
-        /**
-         * the id
-         */
+        columns: number
         track?: number
+        width: number
     }
     interface RuxTree {}
     interface RuxTreeNode {
@@ -22984,7 +22982,6 @@ declare namespace LocalJSX {
     interface RuxRuler {
         endDate?: any
         interval?: any
-        intervalIncrement?: number
         startDate?: any
         /**
          * The track
@@ -23292,10 +23289,9 @@ declare namespace LocalJSX {
         zoom?: number
     }
     interface RuxTrack {
-        /**
-         * the id
-         */
+        columns?: number
         track?: number
+        width?: number
     }
     interface RuxTree {}
     interface RuxTreeNode {

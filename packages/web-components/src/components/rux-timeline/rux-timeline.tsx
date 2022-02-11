@@ -24,11 +24,14 @@ import { dateRange } from './helpers'
 })
 export class RuxTimeline {
     private slotContainer?: HTMLElement
+    private timelineContainer?: HTMLElement
+    private rulerContainer?: HTMLElement
     public slots?: any = 'empty'
     @Element() el!: HTMLRuxTimelineElement
 
     @State() playheadPositionInPixels = 200
     @State() columnWidth = 120
+    @State() playheadHeight = 0
 
     /**
      * The timeline's start date. Must be an ISO string "2021-02-02T05:00:00Z"
@@ -70,6 +73,7 @@ export class RuxTimeline {
         this._setZoom()
         this.syncPlayhead()
         this._updateRegions()
+        this.initializeTracks()
     }
 
     @Watch('start')
@@ -149,6 +153,8 @@ export class RuxTimeline {
 
         tracks.forEach((el, index) => {
             el.track = ++index
+            el.width = this.width
+            el.columns = this.columns
         })
     }
 
@@ -156,7 +162,7 @@ export class RuxTimeline {
      * Give it a position (in pixels) and get the time that represents
      */
     // private _calculateTimeFromPlayhead(position: any) {
-    //     this.playheadPositionInPixels = position - 2
+    //     // this.playheadPositionInPixels = position - 2
 
     //     const time = position - 200
 
@@ -214,22 +220,21 @@ export class RuxTimeline {
      */
     private _handleMouse(e: any) {
         const rect = this.el.getBoundingClientRect()
-        const scrollOffset = this.slotContainer
-            ? this.slotContainer?.scrollLeft
+
+        const scrollOffset = this.timelineContainer
+            ? this.timelineContainer?.scrollLeft
             : 0
 
         const position = e.clientX - rect.left + scrollOffset
 
         if (position >= 200) {
+            // this.playheadPositionInPixels = position - scrollOffset
             // const time = this._calculateTimeFromPlayhead(position)
             // this.position = time.toISOString()
-        } else {
-            // this.playheadPositionInPixels = 200
         }
     }
 
     private _handleSlotChange() {
-        this.initializeTracks()
         this._updateRegions()
     }
 
@@ -250,6 +255,12 @@ export class RuxTimeline {
                 ) as [HTMLRuxTrackElement]),
         ]
 
+        tracks.forEach((el, index) => {
+            el.track = ++index
+            el.width = this.width
+            el.columns = this.columns
+        })
+
         tracks.map((track: any) => {
             const regions = [...track.children].filter(
                 (el: any) => el.tagName.toLowerCase() === 'rux-time-region'
@@ -269,16 +280,24 @@ export class RuxTimeline {
                     region.style.visibility = 'hidden'
                 }
             })
+        })
 
-            const ruler = [...track.children].find(
+        const rulerSlot = this.rulerContainer?.querySelector(
+            'slot'
+        ) as HTMLSlotElement
+        const rulerTrack = rulerSlot
+            ?.assignedElements({ flatten: true })
+            .find((el: any) => el.tagName.toLowerCase() === 'rux-track')
+        if (rulerTrack) {
+            const rulerEl = [...rulerTrack.children].find(
                 (el: any) => el.tagName.toLowerCase() === 'rux-ruler'
             ) as HTMLRuxRulerElement
-            if (ruler) {
-                ruler.startDate = this.start
-                ruler.endDate = this.end
-                ruler.interval = this.interval
+            if (rulerEl) {
+                rulerEl.startDate = this.start
+                rulerEl.endDate = this.end
+                rulerEl.interval = this.interval
             }
-        })
+        }
     }
 
     private _validateTimeRegion(start: any, end: any) {
@@ -316,28 +335,48 @@ export class RuxTimeline {
         return this.columns
     }
 
+    _handleScroll() {
+        // #TODO Maybe throttle this event w/ requestAnimationFrame?
+        const scrollOffset = this.timelineContainer
+            ? this.timelineContainer?.scrollTop
+            : 0
+        this.playheadHeight = scrollOffset
+    }
+
     render() {
         return (
             <Host>
-                <div
-                    class="rux-timeline"
-                    ref={(el) => (this.slotContainer = el)}
-                    onMouseMove={(ev) => this._handleMouse(ev)}
-                    style={{
-                        gridTemplateColumns: `[header] 200px repeat(${this.columns}, ${this.width}px)`,
-                    }}
-                >
-                    {this.position && (
-                        <div
-                            class="rux-playhead"
-                            part="playhead"
-                            style={{
-                                left: `${this.playheadPositionInPixels}px`,
-                            }}
-                        ></div>
-                    )}
+                <div style={{ position: 'relative' }}>
+                    <div
+                        class="rux-timeline"
+                        onMouseMove={(ev) => this._handleMouse(ev)}
+                        onScroll={() => this._handleScroll()}
+                        ref={(el) => (this.timelineContainer = el)}
+                    >
+                        {this.position && (
+                            <div
+                                class="rux-playhead"
+                                part="playhead"
+                                style={{
+                                    top: `${this.playheadHeight}px`,
+                                    left: `${this.playheadPositionInPixels}px`,
+                                }}
+                            ></div>
+                        )}
 
-                    <slot onSlotchange={this._handleSlotChange}></slot>
+                        <div
+                            class="events"
+                            ref={(el) => (this.slotContainer = el)}
+                        >
+                            <slot onSlotchange={this._handleSlotChange}></slot>
+                        </div>
+                        <div
+                            class="ruler"
+                            ref={(el) => (this.rulerContainer = el)}
+                        >
+                            <slot name="ruler"></slot>
+                        </div>
+                    </div>
                 </div>
             </Host>
         )
