@@ -50,7 +50,8 @@ export class RuxRuler {
                                 'ruler-time': true,
                             }}
                             style={{
-                                gridRow: `${this.track}`,
+                                // gridRow: `${this.track}`,
+                                gridRow: '1',
                                 gridColumn: this.getColumn(index),
                             }}
                         >

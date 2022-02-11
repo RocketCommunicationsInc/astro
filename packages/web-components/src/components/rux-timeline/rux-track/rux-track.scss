@@ -5,6 +5,7 @@
 .rux-track {
     // display: contents;
     background: var(--color-surface);
+    width: fit-content;
 }
 .rux-track__header {
     padding: 11px 8px 13px 8px;
@@ -17,8 +18,9 @@
     font-size: var(--font-body-1-font-size);
     font-weight: var(--font-body-1-font-weight);
     letter-spacing: var(--font-body-1-letter-spacing);
-    position: fixed;
-    width: 184px;
+    position: sticky;
+    left: 0;
+    min-width: 184px;
     // height: auto;
 }
 .rux-track__header::slotted(*) {
