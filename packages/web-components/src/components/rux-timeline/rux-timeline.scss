@@ -30,7 +30,12 @@
 
     ::-webkit-scrollbar-track,
     ::-webkit-scrollbar-corner {
-        background-color: var(--color-surface, rgb(27, 45, 62));
+        background: linear-gradient(
+            to right,
+            var(--color-background) 200px,
+            var(--color-surface) 200px 100%
+        );
+        // background-color: var(--color-surface, rgb(27, 45, 62));
     }
 
     ::-webkit-scrollbar-track:vertical {
