@@ -22,6 +22,8 @@ export class RuxTrack {
 
     /**the id */
     @Prop({ reflect: true }) track?: number = 0
+    @Prop({ reflect: true }) width = 0
+    @Prop({ reflect: true }) columns = 0
 
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
@@ -99,11 +101,17 @@ export class RuxTrack {
     render() {
         return (
             <Host>
-                <div class="rux-track" ref={(el) => (this.slotContainer = el)}>
+                <div
+                    class="rux-timeline rux-track"
+                    ref={(el) => (this.slotContainer = el)}
+                    style={{
+                        gridTemplateColumns: `[header] 200px repeat(${this.columns}, ${this.width}px)`,
+                    }}
+                >
                     <div
                         class="rux-track__header"
                         style={{
-                            gridRow: `${this.track}`,
+                            gridRow: '1',
                         }}
                     >
                         <slot name="label"></slot>

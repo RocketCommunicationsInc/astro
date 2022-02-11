@@ -7175,10 +7175,12 @@ export namespace Components {
         zoom: number
     }
     interface RuxTrack {
+        columns: number
         /**
          * the id
          */
         track?: number
+        width: number
     }
     interface RuxTree {}
     interface RuxTreeNode {
@@ -23292,10 +23294,12 @@ declare namespace LocalJSX {
         zoom?: number
     }
     interface RuxTrack {
+        columns?: number
         /**
          * the id
          */
         track?: number
+        width?: number
     }
     interface RuxTree {}
     interface RuxTreeNode {

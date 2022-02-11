@@ -90,7 +90,8 @@ export class RuxTimeRegion {
                     part="container"
                     class="rux-time-region"
                     style={{
-                        gridRow: `${this.track}`,
+                        // gridRow: `${this.track}`,
+                        gridRow: '1',
                         gridColumn: `${this.calculateGridColumnFromTime(
                             this.start
                         )} / ${this.calculateGridColumnFromTime(this.end)}`,

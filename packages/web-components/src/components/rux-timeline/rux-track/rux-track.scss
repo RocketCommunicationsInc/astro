@@ -1,15 +1,15 @@
 :host {
-    display: contents;
+    // display: contents;
 }
 
 .rux-track {
-    display: contents;
+    // display: contents;
     background: var(--color-surface);
 }
 .rux-track__header {
     padding: 11px 8px 13px 8px;
-    // background: var(--color-surface);
-    background: rgba(39, 90, 142, 0.9);
+    background: var(--color-background);
+    // background: rgba(39, 90, 142, 0.9);
     border-bottom: 2px solid var(--color-background);
     display: flex;
     align-items: center;
@@ -17,6 +17,9 @@
     font-size: var(--font-body-1-font-size);
     font-weight: var(--font-body-1-font-weight);
     letter-spacing: var(--font-body-1-letter-spacing);
+    position: fixed;
+    width: 184px;
+    // height: auto;
 }
 .rux-track__header::slotted(*) {
     grid-column: header / time-0000;
@@ -51,4 +54,13 @@
 
 .marker {
     background: blue;
+}
+
+.rux-timeline {
+    scrollbar-color: var(--color-active);
+    // overflow: auto;
+    position: relative;
+    display: grid;
+    grid-template-rows: auto;
+    background: var(--color-surface);
 }
