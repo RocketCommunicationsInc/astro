@@ -107,6 +107,7 @@ export class RuxTrack {
                     style={{
                         gridTemplateColumns: `[header] 200px repeat(${this.columns}, ${this.width}px)`,
                     }}
+                    part="container"
                 >
                     <div
                         class="rux-track__header"

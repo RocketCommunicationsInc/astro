@@ -3,8 +3,9 @@
     ::-webkit-scrollbar {
         width: 16px;
         height: 16px;
-        margin-left: -20px;
-        background-color: transparent;
+        // // margin-left: -20px;
+        // background-color: transparent;
+        border: 2px solid red;
     }
 
     ::-webkit-scrollbar-thumb {
@@ -30,11 +31,12 @@
 
     ::-webkit-scrollbar-track,
     ::-webkit-scrollbar-corner {
-        background: linear-gradient(
-            to right,
-            var(--color-background) 200px,
-            var(--color-surface) 200px 100%
-        );
+        // background: linear-gradient(
+        //     to right,
+        //     var(--color-background) 200px,
+        //     var(--color-surface) 200px 100%
+        // );
+        background: var(--color-surface);
         // background-color: var(--color-surface, rgb(27, 45, 62));
     }
 
@@ -181,4 +183,20 @@
 .ruler {
     position: sticky;
     bottom: 0;
+    z-index: 2;
+}
+
+.rux-track {
+    display: contents;
+}
+
+.ruler-time {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    // background: red;
+}
+
+#rulerTrack::part(container) {
+    margin-bottom: 0;
 }

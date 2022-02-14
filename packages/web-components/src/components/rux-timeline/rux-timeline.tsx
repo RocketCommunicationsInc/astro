@@ -253,7 +253,7 @@ export class RuxTimeline {
     private _updateRegions() {
         const height = this.timelineContainer?.scrollHeight
         if (height) {
-            this.playheadHeight = height - 40
+            this.playheadHeight = height - 20
         } else {
             console.log('no height')
         }
@@ -306,22 +306,22 @@ export class RuxTimeline {
             }
         })
 
-        const rulerSlot = this.rulerContainer?.querySelector(
-            'slot'
-        ) as HTMLSlotElement
-        const rulerTrack = rulerSlot
-            ?.assignedElements({ flatten: true })
-            .find((el: any) => el.tagName.toLowerCase() === 'rux-track')
-        if (rulerTrack) {
-            const rulerEl = [...rulerTrack.children].find(
-                (el: any) => el.tagName.toLowerCase() === 'rux-ruler'
-            ) as HTMLRuxRulerElement
-            if (rulerEl) {
-                rulerEl.startDate = this.start
-                rulerEl.endDate = this.end
-                rulerEl.interval = this.interval
-            }
-        }
+        // const rulerSlot = this.rulerContainer?.querySelector(
+        //     'slot'
+        // ) as HTMLSlotElement
+        // const rulerTrack = rulerSlot
+        //     ?.assignedElements({ flatten: true })
+        //     .find((el: any) => el.tagName.toLowerCase() === 'rux-track')
+        // if (rulerTrack) {
+        //     const rulerEl = [...rulerTrack.children].find(
+        //         (el: any) => el.tagName.toLowerCase() === 'rux-ruler'
+        //     ) as HTMLRuxRulerElement
+        //     if (rulerEl) {
+        //         rulerEl.startDate = this.start
+        //         rulerEl.endDate = this.end
+        //         rulerEl.interval = this.interval
+        //     }
+        // }
     }
 
     private _validateTimeRegion(start: any, end: any) {
@@ -350,6 +350,31 @@ export class RuxTimeline {
         }
     }
 
+    get rulerRange() {
+        return dateRange(
+            new Date(this.start),
+            new Date(this.end),
+            this.interval,
+            1
+        )
+    }
+
+    getRulerColumn(index: number) {
+        console.log('idnex', index)
+        let unitOfTime = 60
+        if (this.interval === 'day') {
+            unitOfTime = 24
+        }
+
+        // if (index === 0) {
+        //     return `${2 + index} / ${(unitOfTime + 2) * index}`
+        // } else {
+        // return `${unitOfTime * index + 2} / ${unitOfTime * (index * ++index) + 2
+        const start = unitOfTime * index + 2
+        const end = start + unitOfTime
+        return `${unitOfTime * index + 2} / ${end}`
+        // }
+    }
     @Method()
     async doThing() {
         this._updateRegions()
@@ -365,6 +390,8 @@ export class RuxTimeline {
     }
 
     render() {
+        console.log('rulertranga', this.rulerRange)
+
         return (
             <Host>
                 <div style={{ position: 'relative' }}>
@@ -394,7 +421,28 @@ export class RuxTimeline {
                             class="ruler"
                             ref={(el) => (this.rulerContainer = el)}
                         >
-                            <slot name="ruler"></slot>
+                            <rux-track
+                                width={this.width}
+                                columns={this.columns}
+                                id="rulerTrack"
+                            >
+                                {this.rulerRange.map((time, index) => (
+                                    <span
+                                        class={{
+                                            'ruler-time': true,
+                                        }}
+                                        style={{
+                                            // gridRow: `${this.track}`,
+                                            gridRow: '1',
+                                            gridColumn: this.getRulerColumn(
+                                                index
+                                            ),
+                                        }}
+                                    >
+                                        {time}
+                                    </span>
+                                ))}
+                            </rux-track>
                         </div>
                     </div>
                 </div>
