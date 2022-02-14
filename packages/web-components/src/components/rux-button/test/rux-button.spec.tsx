@@ -10,6 +10,7 @@ describe('rux-button', () => {
             iconOnly: false,
             handleClick: expect.any(Function),
             secondary: false,
+            borderless: false,
             disabled: false,
             type: 'button',
         })
