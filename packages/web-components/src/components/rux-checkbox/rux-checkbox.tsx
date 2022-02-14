@@ -20,7 +20,6 @@ let id = 0
  * @part form-field - the form field wrapper container
  * @part help-text - The help text element
  * @part label - the label of rux-checkbox
- *
  */
 @Component({
     tag: 'rux-checkbox',
@@ -181,11 +180,6 @@ export class RuxCheckbox implements FormFieldInterface {
                         />
                         <label htmlFor={checkboxId} part="label">
                             {label}
-                            {required && label ? (
-                                <span class="rux-checkbox-label__asterisk">
-                                    &#42;
-                                </span>
-                            ) : null}
                             <span
                                 class={{
                                     hidden: !!label,
