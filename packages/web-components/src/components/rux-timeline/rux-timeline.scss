@@ -163,10 +163,11 @@
     background: var(--color-primary);
     z-index: 1;
     position: absolute;
+    height: 100%;
     top: 0;
     // left: 200px;
     pointer-events: none; // allows scrolling when mouse cursor is positioned over the playhead
-    &:before {
+    &:after {
         width: 0;
         height: 0;
         border-left: 12px solid transparent;
@@ -174,7 +175,7 @@
         border-top: 12px solid var(--color-primary);
         content: '';
         position: absolute;
-        left: -11.5px;
+        left: -10.3px;
     }
 }
 

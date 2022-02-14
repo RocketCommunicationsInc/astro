@@ -31,7 +31,7 @@ export class RuxTimeline {
 
     @State() playheadPositionInPixels = 200
     @State() columnWidth = 120
-    @State() playheadHeight = 200
+    @State() playheadHeight = 0
 
     /**
      * The timeline's start date. Must be an ISO string "2021-02-02T05:00:00Z"
@@ -258,11 +258,11 @@ export class RuxTimeline {
             this.el.shadowRoot?.querySelector('.events')?.clientHeight
         )
 
-        if (height) {
-            this.playheadHeight = height - 20
-        } else {
-            console.log('no height')
-        }
+        // if (height) {
+        //     this.playheadHeight = height - 20
+        // } else {
+        //     console.log('no height')
+        // }
         const slot = this.slotContainer?.querySelectorAll(
             'slot'
         )[0] as HTMLSlotElement
@@ -395,8 +395,15 @@ export class RuxTimeline {
         return this.columns
     }
 
+    _handleScroll(ev: any) {
+        const scrollOffset = this.timelineContainer
+            ? this.timelineContainer?.scrollTop
+            : 0
+        this.playheadHeight = scrollOffset
+    }
+
     render() {
-        console.log('rulertranga', this.rulerRange)
+        console.log('rerendering')
 
         return (
             <Host>
@@ -404,6 +411,7 @@ export class RuxTimeline {
                     <div
                         class="rux-timeline"
                         onMouseMove={(ev) => this._handleMouse(ev)}
+                        onScroll={(ev) => this._handleScroll(ev)}
                         ref={(el) => (this.timelineContainer = el)}
                     >
                         {this.position && (
@@ -411,7 +419,7 @@ export class RuxTimeline {
                                 class="rux-playhead"
                                 part="playhead"
                                 style={{
-                                    height: `${this.playheadHeight}px`,
+                                    top: `${this.playheadHeight}px`,
                                     left: `${this.playheadPositionInPixels}px`,
                                 }}
                             ></div>
