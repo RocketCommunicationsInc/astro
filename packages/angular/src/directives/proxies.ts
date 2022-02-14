@@ -57,6 +57,7 @@ export declare interface RuxCheckbox extends Components.RuxCheckbox {}
     "indeterminate",
     "label",
     "name",
+    "required",
     "value",
   ],
 })
@@ -71,6 +72,7 @@ export declare interface RuxCheckbox extends Components.RuxCheckbox {}
     "indeterminate",
     "label",
     "name",
+    "required",
     "value",
   ],
   outputs: ["ruxchange", "ruxinput", "ruxblur"],
