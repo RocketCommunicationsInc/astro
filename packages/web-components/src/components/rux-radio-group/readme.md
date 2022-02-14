@@ -12,6 +12,7 @@
 | `invalid`   | `invalid`    | Presentational only. Renders the Radio Group as invalid.                                                            | `boolean`             | `false`     |
 | `label`     | `label`      | The label of the radio group. For HTML content, use the `label` slot instead.                                       | `string \| undefined` | `undefined` |
 | `name`      | `name`       | The name of the radio group - submitted with form data. Must match the name of the radios in the group.             | `string`              | `''`        |
+| `required`  | `required`   | Marks that a selection from the radio-group is requried.                                                            | `boolean`             | `false`     |
 | `value`     | `value`      | The value of the current selected radio in the group. Changing this will also mark that radio as checked in the UI. | `any`                 | `undefined` |
 
 
@@ -38,6 +39,7 @@
 | `"help-text"`  | The help text element                    |
 | `"label"`      | The input label when `label` prop is set |
 | `"radiogroup"` | The container of radios                  |
+| `"required"`   | The asterisk when required is true       |
 
 
 ## CSS Custom Properties

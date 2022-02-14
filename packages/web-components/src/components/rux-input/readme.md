@@ -52,6 +52,7 @@
 | `"icon"`       | The icon displayed when toggle-password prop is set |
 | `"input"`      | The input element                                   |
 | `"label"`      | The input label when `label` prop is set            |
+| `"required"`   | The asterisk when required is true                  |
 
 
 ## CSS Custom Properties
