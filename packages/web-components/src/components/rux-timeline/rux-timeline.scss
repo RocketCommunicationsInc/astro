@@ -57,6 +57,7 @@
     display: flex;
     flex-direction: column;
     overflow-x: auto;
+    position: relative;
     height: 300px;
 }
 
@@ -159,13 +160,11 @@
 
     background: var(--color-primary);
     z-index: 1;
-
-    height: 100%;
     position: absolute;
     top: 0;
     // left: 200px;
     pointer-events: none; // allows scrolling when mouse cursor is positioned over the playhead
-    &:after {
+    &:before {
         width: 0;
         height: 0;
         border-left: 12px solid transparent;

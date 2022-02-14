@@ -31,6 +31,7 @@ export class RuxTimeline {
 
     @State() playheadPositionInPixels = 200
     @State() columnWidth = 120
+    @State() playheadHeight = 200
 
     /**
      * The timeline's start date. Must be an ISO string "2021-02-02T05:00:00Z"
@@ -241,6 +242,7 @@ export class RuxTimeline {
 
     private _handleSlotChange() {
         // this.initializeTracks()
+
         this._updateRegions()
     }
 
@@ -249,6 +251,12 @@ export class RuxTimeline {
      * We're taking a props down, events up approach to data flow here.
      */
     private _updateRegions() {
+        const height = this.timelineContainer?.scrollHeight
+        if (height) {
+            this.playheadHeight = height - 40
+        } else {
+            console.log('no height')
+        }
         const slot = this.slotContainer?.querySelectorAll(
             'slot'
         )[0] as HTMLSlotElement
@@ -364,16 +372,13 @@ export class RuxTimeline {
                         class="rux-timeline"
                         onMouseMove={(ev) => this._handleMouse(ev)}
                         ref={(el) => (this.timelineContainer = el)}
-                        style={{
-                            position: 'relative',
-                            gridTemplateColumns: `[header] 200px repeat(${this.columns}, ${this.width}px)`,
-                        }}
                     >
                         {this.position && (
                             <div
                                 class="rux-playhead"
                                 part="playhead"
                                 style={{
+                                    height: `${this.playheadHeight}px`,
                                     left: `${this.playheadPositionInPixels}px`,
                                 }}
                             ></div>
