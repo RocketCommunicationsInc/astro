@@ -7152,6 +7152,7 @@ export namespace Components {
         track: string
     }
     interface RuxTimeline {
+        doThing: () => Promise<void>
         /**
          * The timeline's end date. Must be an ISO string "2021-02-02T05:00:00Z"
          */

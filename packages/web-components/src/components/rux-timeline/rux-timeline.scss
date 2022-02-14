@@ -158,12 +158,13 @@
     //   grid-column: time-0000 / time-2359;
 
     background: var(--color-primary);
-    z-index: 10;
+    z-index: 1;
 
     height: 100%;
     position: absolute;
     top: 0;
     // left: 200px;
+    pointer-events: none; // allows scrolling when mouse cursor is positioned over the playhead
     &:after {
         width: 0;
         height: 0;

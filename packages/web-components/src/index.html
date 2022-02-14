@@ -23,8 +23,8 @@
         <div style="width: 1050px; margin: auto">
             <rux-timeline
                 start="2021-02-01T05:00:00Z"
-                end="2021-02-03T05:00:00.00Z"
-                position="2021-02-01T05:00:00.000Z"
+                end="2021-02-13T05:00:00.00Z"
+                position="2021-02-01T06:30:00.000Z"
                 interval="hour"
                 zoom="2"
             >
@@ -36,7 +36,7 @@
                     <div slot="label">region1</div>
                     <rux-time-region
                         start="2021-02-01T06:00:00Z"
-                        end="2021-02-02T07:00:00Z"
+                        end="2021-02-01T07:00:00Z"
                     ></rux-time-region>
                 </rux-track>
                 <rux-track>
@@ -132,8 +132,9 @@
             const button = document.querySelector('rux-button')
             let time = 0
             button.addEventListener('click', () => {
-                let newTime = (++time).toString().padStart(2, '0')
-                timeline.position = `2021-02-01T${newTime}:00:00Z`
+                // let newTime = (++time).toString().padStart(2, '0')
+                // timeline.position = `2021-02-01T${newTime}:00:00Z`
+                timeline.doThing()
             })
         </script>
     </body>
