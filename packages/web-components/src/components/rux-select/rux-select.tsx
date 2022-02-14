@@ -23,6 +23,7 @@ import { hasSlot, renderHiddenInput } from '../../utils/utils'
  * @part help-text - The help text element
  * @part label - The select label
  * @part select - The select element
+ * @part required - The asterisk when required is true
  */
 @Component({
     tag: 'rux-select',
@@ -261,6 +262,14 @@ export class RuxSelect implements FormFieldInterface {
                             name="label"
                         >
                             {label}
+                            {this.required && (
+                                <span
+                                    part="required"
+                                    class="rux-label__asterisk"
+                                >
+                                    &#42;
+                                </span>
+                            )}
                         </slot>
                     </span>
                 </label>
