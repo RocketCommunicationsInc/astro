@@ -145,6 +145,28 @@
             color: var(--button-secondary-text-color);
         }
     }
+    &--borderless {
+        color: var(--button-secondary-text-color); //color-primary?
+        border: none;
+        background: none;
+        &:hover:not([disabled]) {
+            color: var(--color-hover);
+            background: none;
+            rux-icon {
+                color: var(--color-hover);
+            }
+        }
+        &:active:not([disabled]) {
+            color: var(--button-secondary-text-color);
+            rux-icon {
+                color: var(--button-secondary-text-color);
+            }
+        }
+        rux-icon,
+        ::slotted(rux-icon) {
+            color: var(--button-secondary-text-color);
+        }
+    }
 
     &--small {
         height: 1.625rem;
