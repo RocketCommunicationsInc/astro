@@ -35,7 +35,6 @@ export const Default = (args) => {
     ?disabled="${args.disabled}"
     ?checked="${args.checked}"
     ?indeterminate="${args.indeterminate}"
-    ?required="${args.required}"
     .helpText="${args.helpText}"
     name="${args.name}"
     .value="${args.value}"
@@ -69,7 +68,6 @@ export const Checked = (args) => {
 <rux-checkbox
     ?disabled="${args.disabled}"
     ?checked="${args.checked}"
-    ?required="${args.required}"
     ?indeterminate="${args.indeterminate}"
     .helpText="${args.helpText}"
     name="${args.name}"
@@ -95,7 +93,6 @@ export const Disabled = (args) => {
     ?disabled="${args.disabled}"
     ?checked="${args.checked}"
     ?indeterminate="${args.indeterminate}"
-    ?required="${args.required}"
     .helpText="${args.helpText}"
     name="${args.name}"
     .value="${args.value}"
@@ -112,31 +109,6 @@ Checkbox Label
     </Story>
 </Canvas>
 
-### Required
-
-export const Required = (args) => {
-    return html`
-<rux-checkbox
-    ?disabled="${args.disabled}"
-    ?checked="${args.checked}"
-    ?indeterminate="${args.indeterminate}"
-    ?required="${args.required}"
-    .helpText="${args.helpText}"
-    name="${args.name}"
-    .value="${args.value}"
-    label="${args.label}"
->
-Checkbox Label
-</rux-checkbox>
-    `
-}
-
-<Canvas>
-    <Story args={{ required: true, label: 'Checkbox Label' }} name="Required">
-        {Required.bind()}
-    </Story>
-</Canvas>
-
 ### Indeterminate
 
 An Indeterminate state (a dash symbol rather than checked) may display when a checkbox is used as a parent of a group of checkboxes where at least one child is selected and at least one is not.
@@ -147,7 +119,6 @@ export const Indeterminate = (args) => {
     ?disabled="${args.disabled}"
     ?checked="${args.checked}"
     ?indeterminate="${args.indeterminate}"
-    ?required="${args.required}"
     .helpText="${args.helpText}"
     name="${args.name}"
     .value="${args.value}"
@@ -172,7 +143,6 @@ export const WithHelpText = (args) => {
     ?disabled="${args.disabled}"
     ?checked="${args.checked}"
     ?indeterminate="${args.indeterminate}"
-    ?required="${args.required}"
     help-text="${args.helpText}"
     name="${args.name}"
     .value="${args.value}"
