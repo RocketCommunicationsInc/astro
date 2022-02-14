@@ -23,6 +23,8 @@ let id = 0
  * @part icon - The icon displayed when toggle-password prop is set
  * @part input - The input element
  * @part label - The input label when `label` prop is set
+ * @part required - The asterisk when required is true
+ *
  */
 @Component({
     tag: 'rux-input',
@@ -279,7 +281,10 @@ export class RuxInput implements FormFieldInterface {
                             <slot name="label" onSlotchange={_handleSlotChange}>
                                 {label}
                                 {required && (
-                                    <span class="rux-input-label__asterisk">
+                                    <span
+                                        part="required"
+                                        class="rux-input-label__asterisk"
+                                    >
                                         &#42;
                                     </span>
                                 )}

@@ -41,6 +41,11 @@ export class RuxCheckboxGroup {
      */
     @Prop() invalid: boolean = false
 
+    /**
+     * Marks that a selection from the checkbox group is requried.
+     */
+    @Prop() required: boolean = false
+
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
     }
@@ -79,6 +84,14 @@ export class RuxCheckboxGroup {
                             name="label"
                         >
                             {this.label}
+                            {this.required && (
+                                <span
+                                    part="required"
+                                    class="rux-label__asterisk"
+                                >
+                                    &#42;
+                                </span>
+                            )}
                         </slot>
                     </div>
                     <div
