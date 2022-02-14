@@ -139,7 +139,6 @@ export class RuxCheckbox implements FormFieldInterface {
             name,
             value,
             indeterminate,
-            required,
             label,
         } = this
 

@@ -10,6 +10,7 @@ import { hasSlot } from '../../utils/utils'
  * @part form-field - The form-field wrapper container
  * @part help-text - The help text element
  * @part label - The input label when `label` prop is set
+ * @part required - The asterisk when required is true
  */
 @Component({
     tag: 'rux-checkbox-group',
