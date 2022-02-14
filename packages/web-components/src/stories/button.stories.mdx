@@ -55,6 +55,7 @@ export const slottedIconButton = (args) => {
         ?disabled="${args.disabled}"
         ?icon-only="${args.iconOnly}"
         ?secondary="${args.secondary}"
+        ?borderless="${args.borderless}"
         .size="${args.size}"
         .icon="${args.icon}"
     >
@@ -78,6 +79,7 @@ export const Secondary = (args) => {
         ?disabled="${args.disabled}"
         ?icon-only="${args.iconOnly}"
         ?secondary="${args.secondary}"
+        ?borderless="${args.borderless}"
         .size="${args.size}"
         .icon="${args.icon}"
     >
@@ -90,6 +92,31 @@ export const Secondary = (args) => {
 <Canvas>
     <Story args={{ secondary: true }} name="Secondary">
         {Secondary.bind()}
+    </Story>
+</Canvas>
+
+### Borderless
+
+export const Borderless = (args) => {
+    return html`
+<div style="padding: 10%; display: flex; justify-content: center;">
+    <rux-button
+        ?disabled="${args.disabled}"
+        ?icon-only="${args.iconOnly}"
+        ?secondary="${args.secondary}"
+        ?borderless="${args.borderless}"
+        .size="${args.size}"
+        .icon="${args.icon}"
+    >
+        Button
+    </rux-button>
+</div>
+    `
+}
+
+<Canvas>
+    <Story args={{ borderless: true }} name="Borderless">
+        {Borderless.bind()}
     </Story>
 </Canvas>
 
@@ -276,6 +303,53 @@ export const AllVariants = () => {
             <rux-button size="large" secondary disabled icon="settings"
                 >Large disabled secondary button with icon</rux-button
             >
+        </li>
+    </ul>
+    <ul class="button-list">
+        <li>
+            <rux-button
+                icon-only
+                icon="settings"
+                borderless
+            >
+            </rux-button>
+            <rux-button
+                borderless
+            >
+            Borderless button
+            </rux-button>
+        </li>
+        <li>
+            <rux-button
+                borderless
+                icon="settings"
+            >
+            Borderless button with icon
+            </rux-button>
+        </li>
+        <li>
+            <rux-button
+                icon-only
+                icon="settings"
+                borderless
+                disabled
+            >
+            </rux-button>
+            <rux-button
+                borderless
+                disabled
+            >
+            Disabled borderless button
+            </rux-button>
+        </li>
+        <li>
+            <rux-button
+                borderless
+                icon="settings"
+                disabled
+            >
+            Disabled borderless button with icon
+            </rux-button>
         </li>
     </ul>
 </div>
