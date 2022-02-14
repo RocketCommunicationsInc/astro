@@ -252,6 +252,12 @@ export class RuxTimeline {
      */
     private _updateRegions() {
         const height = this.timelineContainer?.scrollHeight
+        console.log('timeline-ehgiht', height)
+        console.log(
+            'all',
+            this.el.shadowRoot?.querySelector('.events')?.clientHeight
+        )
+
         if (height) {
             this.playheadHeight = height - 20
         } else {
@@ -306,22 +312,22 @@ export class RuxTimeline {
             }
         })
 
-        // const rulerSlot = this.rulerContainer?.querySelector(
-        //     'slot'
-        // ) as HTMLSlotElement
-        // const rulerTrack = rulerSlot
-        //     ?.assignedElements({ flatten: true })
-        //     .find((el: any) => el.tagName.toLowerCase() === 'rux-track')
-        // if (rulerTrack) {
-        //     const rulerEl = [...rulerTrack.children].find(
-        //         (el: any) => el.tagName.toLowerCase() === 'rux-ruler'
-        //     ) as HTMLRuxRulerElement
-        //     if (rulerEl) {
-        //         rulerEl.startDate = this.start
-        //         rulerEl.endDate = this.end
-        //         rulerEl.interval = this.interval
-        //     }
-        // }
+        const rulerSlot = this.rulerContainer?.querySelector(
+            'slot'
+        ) as HTMLSlotElement
+        const rulerTrack = rulerSlot
+            ?.assignedElements({ flatten: true })
+            .find((el: any) => el.tagName.toLowerCase() === 'rux-track')
+        if (rulerTrack) {
+            const rulerEl = [...rulerTrack.children].find(
+                (el: any) => el.tagName.toLowerCase() === 'rux-ruler'
+            ) as HTMLRuxRulerElement
+            if (rulerEl) {
+                rulerEl.startDate = this.start
+                rulerEl.endDate = this.end
+                rulerEl.interval = this.interval
+            }
+        }
     }
 
     private _validateTimeRegion(start: any, end: any) {
@@ -421,7 +427,8 @@ export class RuxTimeline {
                             class="ruler"
                             ref={(el) => (this.rulerContainer = el)}
                         >
-                            <rux-track
+                            <slot name="ruler"></slot>
+                            {/* <rux-track
                                 width={this.width}
                                 columns={this.columns}
                                 id="rulerTrack"
@@ -442,7 +449,7 @@ export class RuxTimeline {
                                         {time}
                                     </span>
                                 ))}
-                            </rux-track>
+                            </rux-track> */}
                         </div>
                     </div>
                 </div>

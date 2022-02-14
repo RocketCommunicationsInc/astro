@@ -35,9 +35,12 @@ export class RuxRuler {
         // if (index === 0) {
         //     return `${2 + index} / ${(unitOfTime + 2) * index}`
         // } else {
-        return `${unitOfTime * index + 2} / ${
-            unitOfTime * (index * ++index) + 2
-        }`
+        // return `${unitOfTime * index + 2} / ${
+        //     unitOfTime * (index * ++index) + 2
+        // }`
+        const start = unitOfTime * index + 2
+        const end = start + unitOfTime
+        return `${unitOfTime * index + 2} / ${end}`
         // }
     }
     render() {
