@@ -6612,7 +6612,7 @@ export namespace Components {
          */
         readonly: boolean
         /**
-         * Sets the input as disabled
+         * Sets the input as required
          */
         required: boolean
         /**
@@ -22553,7 +22553,7 @@ declare namespace LocalJSX {
          */
         readonly?: boolean
         /**
-         * Sets the input as disabled
+         * Sets the input as required
          */
         required?: boolean
         /**

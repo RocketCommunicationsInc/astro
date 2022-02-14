@@ -104,7 +104,7 @@ export class RuxInput implements FormFieldInterface {
     @Prop({ reflect: true }) disabled = false
 
     /**
-     * Sets the input as disabled
+     * Sets the input as required
      */
     @Prop() required: boolean = false
 
