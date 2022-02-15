@@ -17,6 +17,10 @@ import {
     format,
 } from 'date-fns'
 import { dateRange } from './helpers'
+
+/**
+ * @part time-region-container - The container for time regions. Use this part to set a maximum height and enable vertical scrolling.
+ */
 @Component({
     tag: 'rux-timeline',
     styleUrl: 'rux-timeline.scss',
@@ -352,6 +356,7 @@ export class RuxTimeline {
                         onMouseMove={(ev) => this._handleMouse(ev)}
                         onScroll={() => this._handleScroll()}
                         ref={(el) => (this.timelineContainer = el)}
+                        part="time-region-container"
                     >
                         {this.position && (
                             <div
