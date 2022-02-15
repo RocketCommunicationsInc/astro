@@ -108,6 +108,49 @@ export const Small = (args) => {
     </Story>
 </Canvas>
 
+### All Variants
+
+export const AllVariants = () => {
+    return html`
+    <style>
+        .clock-list {
+            list-style-type: none;
+            margin: 0 1rem 1rem 0;
+            display: flex;
+            flex-flow: column;
+        }
+        .clock-list li {
+            padding-bottom: 2rem;
+        }
+        span {
+            margin: 0 0 1rem 1rem;
+        }
+    </style>
+    <div
+    style="padding: 8vh 2vw; display: flex; flex-flow: row wrap; justify-content: space-evenly;"
+>
+    <ul class="clock-list">
+            <span>Hide Date</span>
+        <li>
+            <rux-clock hide-date></rux-clock>
+        </li>
+            <span>Hide Labels</span>
+        <li>
+            <rux-clock hide-labels></rux-clock>
+        </li>
+            <span>Hide Timezone</span>
+        <li>
+            <rux-clock hide-timezone></rux-clock>
+        </li>
+    </ul>
+</div>
+`
+}
+
+<Canvas>
+    <Story name="All Variants">{AllVariants.bind()}</Story>
+</Canvas>
+
 ## Military Timezones
 
 Clock's timezone parameter can accept any military timezone.
