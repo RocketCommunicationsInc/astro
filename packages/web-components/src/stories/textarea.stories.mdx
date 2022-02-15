@@ -97,6 +97,41 @@ export const Disabled = (args) => {
     </Story>
 </Canvas>
 
+### Required
+
+export const Required = (args) => {
+    return html`
+<rux-textarea
+    label="${args.label}"
+    ?disabled="${args.disabled}"
+    .error-text="${args.errorText}"
+    .help-text="${args.helpText}"
+    ?invalid="${args.invalid}"
+    .max-length="${args.maxLength}"
+    .min-length="${args.minLength}"
+    .name="${args.name}"
+    .placeholder="${args.placeholder}"
+    ?required="${args.required}"
+    .rows="${args.rows}"
+    ?small="${args.small}"
+    .value="${args.value}"
+    .type="${args.type}"
+></rux-textarea>
+    `
+}
+
+<Canvas>
+    <Story
+        name="Required"
+        args={{
+            label: 'Required textarea',
+            required: true,
+        }}
+    >
+        {Required.bind()}
+    </Story>
+</Canvas>
+
 ### Help Text
 
 export const HelpText = (args) => {

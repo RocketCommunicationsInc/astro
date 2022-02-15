@@ -22,6 +22,7 @@ let id = 0
  * @part help-text - The help text element
  * @part label - The input label when `label` prop is set
  * @part textarea - The textarea element
+ * @part required - The asterisk when required is true
  */
 @Component({
     tag: 'rux-textarea',
@@ -177,6 +178,14 @@ export class RuxTextarea implements FormFieldInterface {
                                 name="label"
                             >
                                 {this.label}
+                                {this.required && (
+                                    <span
+                                        part="required"
+                                        class="rux-textarea-label__asterisk"
+                                    >
+                                        &#42;
+                                    </span>
+                                )}
                             </slot>
                         </span>
                     </label>
