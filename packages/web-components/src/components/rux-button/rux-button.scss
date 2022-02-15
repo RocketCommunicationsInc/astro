@@ -41,6 +41,11 @@
     --button-secondary-text-color: var(--color-primary);
 
     /**
+    * @prop --button-secondary-hover-text-color: Secondary button hover text color
+    */
+    --button-secondary-hover-text-color: var(--color-hover);
+
+    /**
      * @prop --button-secondary-background-color: Button secondary background color
      */
     --button-secondary-background-color: transparent;
@@ -141,14 +146,23 @@
         border: 1px solid var(--button-secondary-border-color);
 
         &:hover:not([disabled]) {
-            color: var(--button-secondary-text-color);
+            color: var(--button-secondary-hover-text-color);
             background-color: var(--button-secondary-hover-background-color);
             border-color: var(--button-secondary-hover-border-color);
+            rux-icon,
+            ::slotted(rux-icon) {
+                color: var(--button-secondary-hover-text-color);
+            }
         }
 
         &:active:not([disabled]) {
             border-color: var(--button-secondary-border-color);
             background-color: var(--button-secondary-background-color);
+            color: var(--button-secondary-text-color);
+            rux-icon,
+            ::slotted(rux-icon) {
+                color: var(--button-secondary-text-color);
+            }
         }
         rux-icon,
         ::slotted(rux-icon) {
@@ -162,13 +176,15 @@
         &:hover:not([disabled]) {
             color: var(--button-borderless-hover-color);
             background: none;
-            rux-icon {
+            rux-icon,
+            ::slotted(rux-icon) {
                 color: var(--button-borderless-hover-color);
             }
         }
         &:active:not([disabled]) {
             color: var(--button-borderless-color);
-            rux-icon {
+            rux-icon,
+            ::slotted(rux-icon) {
                 color: var(--button-borderless-color);
             }
         }
