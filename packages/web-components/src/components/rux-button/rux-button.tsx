@@ -28,13 +28,18 @@ export class RuxButton {
     })
     iconOnly: boolean = false
     /**
-     * Changes button style from solid to secondary by setting rux-button--secondary class
+     * Changes button style from solid to secondary by setting the rux-button--secondary class
      */
     @Prop() secondary: boolean = false
     /**
      * Toggles disabled attribute on the button
      */
     @Prop({ reflect: true }) disabled = false
+
+    /**
+     * Changes button style from solid to borderless by setting the rux-button--borderless class
+     */
+    @Prop() borderless: boolean = false
 
     /**
      * Changes size of a button from medium to small or large by setting sizing classes
@@ -73,7 +78,7 @@ export class RuxButton {
     }
 
     render() {
-        const { size, iconOnly, secondary, disabled, icon } = this
+        const { size, iconOnly, secondary, disabled, icon, borderless } = this
         return (
             <Host>
                 <button
@@ -86,6 +91,7 @@ export class RuxButton {
                         'rux-button--small': size === 'small',
                         'rux-button--large': size === 'large',
                         'rux-button--icon-only': iconOnly,
+                        'rux-button--borderless': borderless,
                     }}
                     aria-disabled={disabled ? 'true' : null}
                     disabled={disabled}

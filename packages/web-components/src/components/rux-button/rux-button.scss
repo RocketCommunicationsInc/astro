@@ -60,6 +60,16 @@
      */
     --button-secondary-hover-border-color: var(--color-hover);
 
+    /**
+    * @prop --button-borderless-text-color: Button borderless text color
+    */
+    --button-borderless-color: var(--color-primary);
+
+    /**
+    * @prop --button-borderless-hover-color: Borderless buttons hover text color 
+    */
+    --button-borderless-hover-color: var(--color-hover);
+
     display: inline-block;
 }
 
@@ -143,6 +153,28 @@
         rux-icon,
         ::slotted(rux-icon) {
             color: var(--button-secondary-text-color);
+        }
+    }
+    &--borderless {
+        color: var(--button-borderless-color);
+        border: none;
+        background: none;
+        &:hover:not([disabled]) {
+            color: var(--button-borderless-hover-color);
+            background: none;
+            rux-icon {
+                color: var(--button-borderless-hover-color);
+            }
+        }
+        &:active:not([disabled]) {
+            color: var(--button-borderless-color);
+            rux-icon {
+                color: var(--button-borderless-color);
+            }
+        }
+        rux-icon,
+        ::slotted(rux-icon) {
+            color: var(--button-borderless-color);
         }
     }
 

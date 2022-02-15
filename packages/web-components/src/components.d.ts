@@ -12,6 +12,10 @@ import { SegmentedButton } from './components/rux-segmented-button/rux-segmented
 export namespace Components {
     interface RuxButton {
         /**
+         * Changes button style from solid to borderless by setting the rux-button--borderless class
+         */
+        borderless: boolean
+        /**
          * Toggles disabled attribute on the button
          */
         disabled: boolean
@@ -24,7 +28,7 @@ export namespace Components {
          */
         iconOnly: boolean
         /**
-         * Changes button style from solid to secondary by setting rux-button--secondary class
+         * Changes button style from solid to secondary by setting the rux-button--secondary class
          */
         secondary: boolean
         /**
@@ -15941,6 +15945,10 @@ declare global {
 declare namespace LocalJSX {
     interface RuxButton {
         /**
+         * Changes button style from solid to borderless by setting the rux-button--borderless class
+         */
+        borderless?: boolean
+        /**
          * Toggles disabled attribute on the button
          */
         disabled?: boolean
@@ -15953,7 +15961,7 @@ declare namespace LocalJSX {
          */
         iconOnly?: boolean
         /**
-         * Changes button style from solid to secondary by setting rux-button--secondary class
+         * Changes button style from solid to secondary by setting the rux-button--secondary class
          */
         secondary?: boolean
         /**

@@ -14,13 +14,29 @@ import { Components } from "@astrouxds/astro-web-components";
 
 export declare interface RuxButton extends Components.RuxButton {}
 @ProxyCmp({
-  inputs: ["disabled", "icon", "iconOnly", "secondary", "size", "type"],
+  inputs: [
+    "borderless",
+    "disabled",
+    "icon",
+    "iconOnly",
+    "secondary",
+    "size",
+    "type",
+  ],
 })
 @Component({
   selector: "rux-button",
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: "<ng-content></ng-content>",
-  inputs: ["disabled", "icon", "iconOnly", "secondary", "size", "type"],
+  inputs: [
+    "borderless",
+    "disabled",
+    "icon",
+    "iconOnly",
+    "secondary",
+    "size",
+    "type",
+  ],
 })
 export class RuxButton {
   protected el: HTMLElement;
