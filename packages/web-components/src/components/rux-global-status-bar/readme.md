@@ -131,7 +131,6 @@ There is one unnamed slot in the Global Status Bar. This slot is intended for an
 | `"app-meta"`   | Used to display the Application's metadata (Domain, Name, State, Version, etc.) |
 | `"left-side"`  | Used to prepend a RuxIcon or similar element                                    |
 | `"right-side"` | Used to append optional content                                                 |
-| `"username"`   | Used to display the username                                                    |
 
 
 ## Shadow Parts
