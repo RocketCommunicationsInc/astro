@@ -14,13 +14,29 @@ import { Components } from "@astrouxds/astro-web-components";
 
 export declare interface RuxButton extends Components.RuxButton {}
 @ProxyCmp({
-  inputs: ["disabled", "icon", "iconOnly", "secondary", "size", "type"],
+  inputs: [
+    "borderless",
+    "disabled",
+    "icon",
+    "iconOnly",
+    "secondary",
+    "size",
+    "type",
+  ],
 })
 @Component({
   selector: "rux-button",
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: "<ng-content></ng-content>",
-  inputs: ["disabled", "icon", "iconOnly", "secondary", "size", "type"],
+  inputs: [
+    "borderless",
+    "disabled",
+    "icon",
+    "iconOnly",
+    "secondary",
+    "size",
+    "type",
+  ],
 })
 export class RuxButton {
   protected el: HTMLElement;
@@ -57,6 +73,7 @@ export declare interface RuxCheckbox extends Components.RuxCheckbox {}
     "indeterminate",
     "label",
     "name",
+    "required",
     "value",
   ],
 })
@@ -71,6 +88,7 @@ export declare interface RuxCheckbox extends Components.RuxCheckbox {}
     "indeterminate",
     "label",
     "name",
+    "required",
     "value",
   ],
   outputs: ["ruxchange", "ruxinput", "ruxblur"],
@@ -92,13 +110,13 @@ export class RuxCheckbox {
 
 export declare interface RuxCheckboxGroup extends Components.RuxCheckboxGroup {}
 @ProxyCmp({
-  inputs: ["errorText", "helpText", "invalid", "label"],
+  inputs: ["errorText", "helpText", "invalid", "label", "required"],
 })
 @Component({
   selector: "rux-checkbox-group",
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: "<ng-content></ng-content>",
-  inputs: ["errorText", "helpText", "invalid", "label"],
+  inputs: ["errorText", "helpText", "invalid", "label", "required"],
 })
 export class RuxCheckboxGroup {
   protected el: HTMLElement;
@@ -20222,13 +20240,29 @@ export class RuxRadio {
 
 export declare interface RuxRadioGroup extends Components.RuxRadioGroup {}
 @ProxyCmp({
-  inputs: ["errorText", "helpText", "invalid", "label", "name", "value"],
+  inputs: [
+    "errorText",
+    "helpText",
+    "invalid",
+    "label",
+    "name",
+    "required",
+    "value",
+  ],
 })
 @Component({
   selector: "rux-radio-group",
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: "<ng-content></ng-content>",
-  inputs: ["errorText", "helpText", "invalid", "label", "name", "value"],
+  inputs: [
+    "errorText",
+    "helpText",
+    "invalid",
+    "label",
+    "name",
+    "required",
+    "value",
+  ],
   outputs: ["ruxchange"],
 })
 export class RuxRadioGroup {

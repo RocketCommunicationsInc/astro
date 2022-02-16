@@ -121,16 +121,19 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
-| Property    | Attribute   | Description                                                                                                                                                                                                                                                                                                   | Type                                          | Default     |
-| ----------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- | ----------- |
-| `disabled`  | `disabled`  | Toggles disabled attribute on the button                                                                                                                                                                                                                                                                      | `boolean`                                     | `false`     |
-| `icon`      | `icon`      | For a [button style guide, see the Button section in Astro UXDS Guidelines](https://astrouxds.com/components/button) Displays an Astro icon matching this string. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols) | `string \| undefined`                         | `undefined` |
-| `iconOnly`  | `icon-only` | Hides slotted text from the button by setting rux-button--icon-only class                                                                                                                                                                                                                                     | `boolean`                                     | `false`     |
-| `secondary` | `secondary` | Changes button style from solid to secondary by setting rux-button--secondary class                                                                                                                                                                                                                           | `boolean`                                     | `false`     |
-| `size`      | `size`      | Changes size of a button from medium to small or large by setting sizing classes rux-button--small rux-button--large                                                                                                                                                                                          | `"large" \| "medium" \| "small" \| undefined` | `undefined` |
-| `type`      | `type`      | The button type. Use 'submit' to submit native form data.                                                                                                                                                                                                                                                     | `"button" \| "submit"`                        | `'button'`  |
+| Property     | Attribute    | Description                                                                                                                                                                                                                                                                                                   | Type                                          | Default     |
+| ------------ | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- | ----------- |
+| `borderless` | `borderless` | Changes button style from solid to borderless by setting the rux-button--borderless class                                                                                                                                                                                                                     | `boolean`                                     | `false`     |
+| `disabled`   | `disabled`   | Toggles disabled attribute on the button                                                                                                                                                                                                                                                                      | `boolean`                                     | `false`     |
+| `icon`       | `icon`       | For a [button style guide, see the Button section in Astro UXDS Guidelines](https://astrouxds.com/components/button) Displays an Astro icon matching this string. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols) | `string \| undefined`                         | `undefined` |
+| `iconOnly`   | `icon-only`  | Hides slotted text from the button by setting rux-button--icon-only class                                                                                                                                                                                                                                     | `boolean`                                     | `false`     |
+| `secondary`  | `secondary`  | Changes button style from solid to secondary by setting the rux-button--secondary class                                                                                                                                                                                                                       | `boolean`                                     | `false`     |
+| `size`       | `size`       | Changes size of a button from medium to small or large by setting sizing classes rux-button--small rux-button--large                                                                                                                                                                                          | `"large" \| "medium" \| "small" \| undefined` | `undefined` |
+| `type`       | `type`       | The button type. Use 'submit' to submit native form data.                                                                                                                                                                                                                                                     | `"button" \| "submit"`                        | `'button'`  |
+
 
 ## Shadow Parts
 
@@ -138,6 +141,7 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 | ------------- | ------------------------------------- |
 | `"container"` | the components native button element. |
 | `"icon"`      | the optional rux-icon                 |
+
 
 ## CSS Custom Properties
 
@@ -147,6 +151,8 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 | `--button-active-border-color`              | Button active border color              |
 | `--button-background-color`                 | Button background color                 |
 | `--button-border-color`                     | Button border color                     |
+| `--button-borderless-hover-color`           | Borderless buttons hover text color     |
+| `--button-borderless-text-color`            | Button borderless text color            |
 | `--button-hover-background-color`           | Button hover background color           |
 | `--button-hover-border-color`               | Button hover border color               |
 | `--button-secondary-background-color`       | Button secondary background color       |
@@ -156,24 +162,24 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 | `--button-secondary-text-color`             | Button secondary text color             |
 | `--button-text-color`                       | Button text color                       |
 
+
 ## Dependencies
 
 ### Used by
 
--   [rux-modal](../rux-modal)
+ - [rux-modal](../rux-modal)
 
 ### Depends on
 
--   [rux-icon](../rux-icon)
+- [rux-icon](../rux-icon)
 
 ### Graph
-
 ```mermaid
 graph TD;
   rux-button --> rux-icon
   style rux-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

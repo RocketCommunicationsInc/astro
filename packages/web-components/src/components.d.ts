@@ -12,6 +12,10 @@ import { SegmentedButton } from './components/rux-segmented-button/rux-segmented
 export namespace Components {
     interface RuxButton {
         /**
+         * Changes button style from solid to borderless by setting the rux-button--borderless class
+         */
+        borderless: boolean
+        /**
          * Toggles disabled attribute on the button
          */
         disabled: boolean
@@ -24,7 +28,7 @@ export namespace Components {
          */
         iconOnly: boolean
         /**
-         * Changes button style from solid to secondary by setting rux-button--secondary class
+         * Changes button style from solid to secondary by setting the rux-button--secondary class
          */
         secondary: boolean
         /**
@@ -68,6 +72,10 @@ export namespace Components {
          */
         name: string
         /**
+         * Sets the checkbox as required
+         */
+        required: boolean
+        /**
          * The checkbox value
          */
         value: string
@@ -89,6 +97,10 @@ export namespace Components {
          * The label of the checkbox group. For HTML content, use the `label` slot instead.
          */
         label?: string
+        /**
+         * Marks that a selection from the checkbox group is requried.
+         */
+        required: boolean
     }
     interface RuxClassificationMarking {
         /**
@@ -6612,7 +6624,7 @@ export namespace Components {
          */
         readonly: boolean
         /**
-         * Sets the input as disabled
+         * Sets the input as required
          */
         required: boolean
         /**
@@ -6901,6 +6913,10 @@ export namespace Components {
          * The name of the radio group - submitted with form data. Must match the name of the radios in the group.
          */
         name: string
+        /**
+         * Marks that a selection from the radio-group is requried.
+         */
+        required: boolean
         /**
          * The value of the current selected radio in the group. Changing this will also mark that radio as checked in the UI.
          */
@@ -15917,6 +15933,10 @@ declare global {
 declare namespace LocalJSX {
     interface RuxButton {
         /**
+         * Changes button style from solid to borderless by setting the rux-button--borderless class
+         */
+        borderless?: boolean
+        /**
          * Toggles disabled attribute on the button
          */
         disabled?: boolean
@@ -15929,7 +15949,7 @@ declare namespace LocalJSX {
          */
         iconOnly?: boolean
         /**
-         * Changes button style from solid to secondary by setting rux-button--secondary class
+         * Changes button style from solid to secondary by setting the rux-button--secondary class
          */
         secondary?: boolean
         /**
@@ -15985,6 +16005,10 @@ declare namespace LocalJSX {
          */
         onRuxinput?: (event: CustomEvent<any>) => void
         /**
+         * Sets the checkbox as required
+         */
+        required?: boolean
+        /**
          * The checkbox value
          */
         value?: string
@@ -16006,6 +16030,10 @@ declare namespace LocalJSX {
          * The label of the checkbox group. For HTML content, use the `label` slot instead.
          */
         label?: string
+        /**
+         * Marks that a selection from the checkbox group is requried.
+         */
+        required?: boolean
     }
     interface RuxClassificationMarking {
         /**
@@ -22541,7 +22569,7 @@ declare namespace LocalJSX {
          */
         readonly?: boolean
         /**
-         * Sets the input as disabled
+         * Sets the input as required
          */
         required?: boolean
         /**
@@ -22864,6 +22892,10 @@ declare namespace LocalJSX {
          * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */
         onRuxchange?: (event: CustomEvent<any>) => void
+        /**
+         * Marks that a selection from the radio-group is requried.
+         */
+        required?: boolean
         /**
          * The value of the current selected radio in the group. Changing this will also mark that radio as checked in the UI.
          */
