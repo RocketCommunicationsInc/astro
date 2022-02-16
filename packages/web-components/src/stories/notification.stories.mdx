@@ -67,6 +67,7 @@ export const NotificationAutoClose = (args) => {
 <div style="display: flex; flex-flow: column; justify-content: center;">
     <rux-notification
         ?open="${args.open}"
+        ?small="${args.small}"
         .closeAfter="${args.closeAfter}"
         .status="${args.status}"
         message="This is a notification banner. It will disappear in 2000 ms."
@@ -86,6 +87,29 @@ export const NotificationAutoClose = (args) => {
         height="100px"
     >
         {NotificationAutoClose.bind()}
+    </Story>
+</Canvas>
+
+### Small
+
+export const Small = (args) => {
+    return html`
+<div style="display: flex; flex-flow: column; justify-content: center;">
+    <rux-notification
+        ?open="${args.open}"
+        ?small="${args.small}"
+        .closeAfter="${args.closeAfter}"
+        status="${args.status}"
+        message="${args.message}"
+    >
+    </rux-notification>
+</div>
+    `
+}
+
+<Canvas>
+    <Story name="Small" height="100px" args={{ small: true}}>
+        {Small.bind()}
     </Story>
 </Canvas>
 
