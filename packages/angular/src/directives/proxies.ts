@@ -20059,13 +20059,13 @@ export class RuxMonitoringProgressIcon {
 
 export declare interface RuxNotification extends Components.RuxNotification {}
 @ProxyCmp({
-  inputs: ["closeAfter", "message", "open", "status"],
+  inputs: ["closeAfter", "message", "open", "small", "status"],
 })
 @Component({
   selector: "rux-notification",
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: "<ng-content></ng-content>",
-  inputs: ["closeAfter", "message", "open", "status"],
+  inputs: ["closeAfter", "message", "open", "small", "status"],
   outputs: ["ruxclosed"],
 })
 export class RuxNotification {
