@@ -18,5 +18,24 @@
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
-    <body></body>
+    <body>
+        <div style="width: 260px; height: 90px; position: relative">
+            <rux-notification
+                small
+                message="Notification Banner"
+                open
+            ></rux-notification>
+        </div>
+        <rux-button style="margin-top: 100px">Change Size</rux-button>
+
+        <script>
+            let notif = document.querySelector('rux-notification')
+            let btn = document.querySelector('rux-button')
+            btn.addEventListener('click', () => {
+                if (notif.small) {
+                    notif.small = false
+                } else notif.small = true
+            })
+        </script>
+    </body>
 </html>
