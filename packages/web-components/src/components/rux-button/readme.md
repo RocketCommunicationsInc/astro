@@ -159,6 +159,7 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 | `--button-secondary-border-color`           | Button secondary border color           |
 | `--button-secondary-hover-background-color` | Button secondary hover background color |
 | `--button-secondary-hover-border-color`     | Button secondary hover border color     |
+| `--button-secondary-hover-text-color`       | Secondary button hover text color       |
 | `--button-secondary-text-color`             | Button secondary text color             |
 | `--button-text-color`                       | Button text color                       |
 
