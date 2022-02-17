@@ -7,3 +7,7 @@ storybook-static
 # Ignore Stencil Build files
 src/components.d.ts
 src/globals.d.ts
+
+# Ignore Wrapper Build files
+*proxies.ts
+*attatchProps.ts
