@@ -36,3 +36,9 @@
 .hidden {
     display: none;
 }
+
+.rux-status--off {
+    ::slotted(rux-status) {
+        color: red;
+    }
+}

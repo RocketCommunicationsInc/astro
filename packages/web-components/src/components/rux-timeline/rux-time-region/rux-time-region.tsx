@@ -23,6 +23,11 @@ export class RuxTimeRegion {
     @Prop() label?: string
 
     /**
+     * Optionally hide the bottom right timestamp.
+     */
+    @Prop({ attribute: 'hide-timestamp' }) hideTimestamp = false
+
+    /**
      * The track
      */
     @Prop() track: string = '1'
@@ -75,10 +80,12 @@ export class RuxTimeRegion {
                     <div class="rux-time-region__content">
                         <slot></slot>
                     </div>
-                    <div class="rux-time-region__datetime">
-                        {format(new Date(this.start), 'HH:mm')} -{' '}
-                        {format(new Date(this.end), 'HH:mm')}
-                    </div>
+                    {!this.hideTimestamp ? (
+                        <div class="rux-time-region__datetime">
+                            {format(new Date(this.start), 'HH:mm')} -{' '}
+                            {format(new Date(this.end), 'HH:mm')}
+                        </div>
+                    ) : null}
                 </div>
             </Host>
         )

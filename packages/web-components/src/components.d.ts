@@ -7134,6 +7134,10 @@ export namespace Components {
          * The end time
          */
         end: any
+        /**
+         * Optionally hide the bottom right timestamp.
+         */
+        hideTimestamp: boolean
         interval: string
         /**
          * The label
@@ -23250,6 +23254,10 @@ declare namespace LocalJSX {
          * The end time
          */
         end?: any
+        /**
+         * Optionally hide the bottom right timestamp.
+         */
+        hideTimestamp?: boolean
         interval?: string
         /**
          * The label

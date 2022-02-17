@@ -40,7 +40,7 @@ export class RuxRuler {
         return (
             <Host>
                 <div class="rux-ruler rux-track">
-                    {this.dateRange.map((time, index) => (
+                    {this.dateRange.map((time: any, index: any) => (
                         <span
                             class={{
                                 'ruler-time': true,
