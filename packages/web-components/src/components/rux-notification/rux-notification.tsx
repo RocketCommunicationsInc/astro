@@ -12,6 +12,7 @@ import { Status } from '../../common/commonTypes.module'
 
 /**
  * @part icon - the icon of rux-icon
+ * @part message - the notifications message
  */
 @Component({
     tag: 'rux-notification',
@@ -112,7 +113,10 @@ export class RuxNotification {
                     'rux-notification-banner--small': this.small,
                 }}
             >
-                <div class="rux-notification__message">{`${this.message}`}</div>
+                <div
+                    part="message"
+                    class="rux-notification__message"
+                >{`${this.message}`}</div>
                 <rux-icon
                     role="button"
                     label="Close notification"
