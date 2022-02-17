@@ -18,7 +18,11 @@
     --pushbutton-selected-border-color: var(--color-status-normal-fill);
 
     /** @prop --pushbutton-selected-text-color: the Push Button text color when checked */
-    --pushbutton-selected-text-color: var(--color-global-tertiary-900);
+    --pushbutton-selected-text-color: var(--color-inverse-text);
+
+    --pushbutton-selected-hover-text-color: var(
+        --color-global-status-normal-400
+    );
 
     margin: 0 2px;
     -webkit-user-select: none;
@@ -51,24 +55,29 @@
             background-color: var(--pushbutton-background-color);
             border-radius: var(--radius-base);
             border: 1px solid var(--pushbutton-border-color);
-            padding: 0.5rem 1rem;
-
-            &--small {
-                padding: 0.25rem 1rem;
-            }
-
-            &--large {
-                padding: 0.875rem 1rem;
-            }
+            padding: 0.469rem 1rem; // 7.5 16
 
             &:hover {
                 cursor: pointer;
+                color: var(--color-hover);
+                border-color: var(--color-hover);
+                rux-icon {
+                    color: var(--color-hover);
+                }
+            }
+
+            &--small {
+                padding: 0.219rem 1rem; //4 16
+            }
+
+            &--large {
+                padding: 0.844rem 1rem; //13.5 16
             }
 
             rux-icon {
                 height: 1rem;
                 width: 1rem;
-                margin-right: 0.75rem;
+                margin-right: 0.625rem; //10
             }
 
             &--icon-only {
@@ -88,11 +97,21 @@
             rux-icon {
                 color: var(--pushbutton-selected-text-color);
             }
+            &:hover:not([disabled]) {
+                background-color: var(--pushbutton-selected-hover-text-color);
+            }
         }
 
         &__input:disabled + .rux-push-button__button {
             opacity: var(--disabled-opacity);
             cursor: not-allowed;
+            &:hover {
+                border-color: var(--pushbutton-border-color);
+                color: var(--pushbutton-text-color);
+            }
+            rux-icon {
+                color: var(--pushbutton-text-color);
+            }
         }
     }
 }
