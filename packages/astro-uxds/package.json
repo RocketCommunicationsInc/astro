@@ -16,7 +16,7 @@
     "start:eleventy": "eleventy --serve",
     "build": "run-s -l build:*",
     "build:clean": "rimraf _site",
-    "build:scss": "sass scss:css --no-source-map",
+    "build:scss": "sass scss:css --no-source-map --style compressed",
     "build:eleventy": "eleventy",
     "build:search": "node ./_includes/search_config/search-generator.js",
     "fetch:images": "export-icons -p"
