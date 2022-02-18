@@ -89,6 +89,7 @@
             }
         }
 
+        //active
         &__input:checked + .rux-push-button__button {
             display: flex;
             color: var(--pushbutton-selected-text-color);
@@ -97,20 +98,33 @@
             rux-icon {
                 color: var(--pushbutton-selected-text-color);
             }
-            &:hover:not([disabled]) {
+            &:hover {
                 background-color: var(--pushbutton-selected-hover-text-color);
             }
         }
 
+        //active, disabled
+        &__input:checked:disabled + .rux-push-button__button {
+            &:hover {
+                color: var(--pushbutton-selected-text-color);
+                background-color: var(--pushbutton-selected-background-color);
+                border-color: var(--pushbutton-selected-border-color);
+                rux-icon {
+                    color: var(--pushbutton-selected-text-color);
+                }
+            }
+        }
+
+        //disabled, not active
         &__input:disabled + .rux-push-button__button {
             opacity: var(--disabled-opacity);
             cursor: not-allowed;
             &:hover {
                 border-color: var(--pushbutton-border-color);
                 color: var(--pushbutton-text-color);
-            }
-            rux-icon {
-                color: var(--pushbutton-text-color);
+                rux-icon {
+                    color: var(--pushbutton-text-color);
+                }
             }
         }
     }
