@@ -27,6 +27,12 @@ export const PushButton = (args) => {
     <rux-push-button
         label=${args.label}
         .size=${args.size}
+        .icon=${args.icon}
+        ?checked=${args.checked}
+        ?disabled=${args.disabled}
+        ?icon-only=${args.iconOnly}
+        .name=${args.name}
+        .value=${args.value}
     ></rux-push-button>
 </div>
     `
