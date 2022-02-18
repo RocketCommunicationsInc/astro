@@ -1,5 +1,31 @@
 # @astrouxds/angular
 
+## 6.2.0
+
+### Minor Changes
+
+#### Button
+
+- Adds a borderless prop to rux-button, enabling borderless styling.
+
+#### Checkbox Group/Radio Group/Select/Textarea
+
+- Adds required props and functionality to checkbox group, radio group, select and textarea.
+
+### Patch Changes
+
+#### Clock
+
+- Updated margin-left on AOS from 16px to 17px.
+
+#### Classification Marking
+
+- Updated the overall height of classification-tags to match Figma designs. Overall height has gone from 20px -> 22px
+
+#### Button
+
+- Secondary button now has the correct text color on hover.
+
 ## 6.1.0
 
 ### Minor Changes
