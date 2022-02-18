@@ -11,3 +11,6 @@ src/globals.d.ts
 # Ignore Wrapper Build files
 *proxies.ts
 *attachProps.ts
+
+# Ignore Astro-uxds css files
+packages/astro-uxds/css
