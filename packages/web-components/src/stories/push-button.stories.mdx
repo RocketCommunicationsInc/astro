@@ -64,6 +64,9 @@ export const AllVariants = (args) => {
     .button-list li rux-button:not(:last-child) {
         margin-right: 1rem;
     }
+    .icon-only {
+        padding-right: 1rem;
+    }
 </style>
 <div
     style="padding: 8vh 2vw; display: flex; flex-flow: row wrap; justify-content: space-evenly;"
@@ -103,6 +106,59 @@ export const AllVariants = (args) => {
                 checked
                 disabled
                 label="Push button disabled checked"
+            ></rux-push-button>
+        </li>
+        <li>
+            <rux-push-button
+                icon="apps"
+                label="Push button with icon"
+            ></rux-push-button>
+        </li>
+        <li>
+            <rux-push-button
+                icon="apps"
+                disabled
+                label="Push button disabled with icon"
+            ></rux-push-button>
+        </li>
+        <li>
+            <rux-push-button
+                icon="apps"
+                checked
+                label="Push button checked with icon"
+            ></rux-push-button>
+        </li>
+        <li>
+            <rux-push-button
+                icon="apps"
+                checked
+                disabled
+                label="Push button disabled checked with icon"
+            ></rux-push-button>
+        </li>
+        <li>
+            <rux-push-button
+                icon="apps"
+                icon-only
+                class="icon-only"
+            ></rux-push-button>
+            <rux-push-button
+                icon="apps"
+                icon-only
+                checked
+                class="icon-only"
+            ></rux-push-button>
+            <rux-push-button
+                icon="apps"
+                icon-only
+                disabled
+                class="icon-only"
+            ></rux-push-button>
+            <rux-push-button
+                icon="apps"
+                icon-only
+                checked
+                disabled
             ></rux-push-button>
         </li>
     </ul>
