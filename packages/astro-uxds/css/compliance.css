@@ -1,6 +1,5 @@
 main {
-  padding: var(--content-padding-horizontal, 1rem)
-    var(--content-padding-vertical, 1rem);
+  padding: var(--content-padding-horizontal, 1rem) var(--content-padding-vertical, 1rem);
   color: var(--font-color, #494949);
   max-width: var(--content-max-text-width, 40em);
 }

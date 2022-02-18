@@ -17,7 +17,7 @@
   background-size: 125px 125px;
   transition: background 0.2s ease-in-out;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width:767px) {
   .demo .icon-play {
     width: 100px;
     height: 100px;

@@ -107,7 +107,7 @@
 .home__nav li a:hover {
   text-decoration: none;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width:767px) {
   .home__nav ul {
     width: 100%;
     color: red;
@@ -217,7 +217,7 @@
   font-weight: 700;
   margin: 0 auto 0.9rem;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width:767px) {
   .home__benefits .row {
     flex-direction: column;
   }
@@ -253,8 +253,7 @@
   padding: 0;
   margin: 0;
 }
-.home__email-signup form input[type="text"],
-.home__email-signup form input[type="email"] {
+.home__email-signup form input[type=text], .home__email-signup form input[type=email] {
   width: auto;
   border: none;
   padding: 13px 19px;
@@ -296,17 +295,14 @@
   width: 100%;
   font-size: 18px;
 }
-.home__email-signup
-  #mc_embed_signup
-  #mc-embedded-subscribe-form
-  div.mce_inline_error {
+.home__email-signup #mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error {
   position: absolute;
 }
 .home__email-signup #mc_embed_signup #mce-success-response,
 .home__email-signup #mc_embed_signup #mce-error-response {
   color: #fff;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width:767px) {
   .home__email-signup .mc-field-layout {
     flex-direction: column;
   }

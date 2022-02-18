@@ -2,8 +2,7 @@
   position: relative;
   color: #fff;
   overflow-y: auto;
-  scrollbar-color: var(--nav-scrollbar-thumb-color)
-    var(--nav-scrollbar-track-color);
+  scrollbar-color: var(--nav-scrollbar-thumb-color) var(--nav-scrollbar-track-color);
   scrollbar-width: thin;
   padding-bottom: 2rem;
   transition: scrollbar-color 0.1367s ease-in;
@@ -56,20 +55,18 @@
   -webkit-font-smoothing: antialiased;
   color: "rgba(0,0,0, 0.75)";
 }
-.tree__tree-item[aria-selected="true"] a,
-.tree__tree-item[aria-expanded="true"][aria-level="1"] > a {
+.tree__tree-item[aria-selected=true] a, .tree__tree-item[aria-expanded=true][aria-level="1"] > a {
   font-weight: bold;
   opacity: 1;
 }
-.tree__tree-item[aria-selected="true"][aria-level="1"] a,
-.tree__tree-item[aria-expanded="true"][aria-level="1"] > a {
+.tree__tree-item[aria-selected=true][aria-level="1"] a, .tree__tree-item[aria-expanded=true][aria-level="1"] > a {
   color: var(--secondary-color);
 }
-.tree__tree-item[aria-expanded="false"] > ul {
+.tree__tree-item[aria-expanded=false] > ul {
   height: 0;
   display: none;
 }
-.tree__tree-item[aria-expanded="true"] > ul {
+.tree__tree-item[aria-expanded=true] > ul {
   height: auto;
   display: block;
 }
@@ -95,8 +92,7 @@
   left: 0;
   width: 100%;
   height: 60px;
-  background: #000 url(/img/_site/astro-mobile-bkgnd.jpg) center bottom
-    no-repeat;
+  background: #000 url(/img/_site/astro-mobile-bkgnd.jpg) center bottom no-repeat;
 }
 .mobile-nav .menu-container {
   position: absolute;
@@ -127,7 +123,7 @@
   background-image: url(/img/_site/astro-logo.svg);
   background-position: center center;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width:767px) {
   .mobile-nav {
     display: block;
   }
@@ -150,7 +146,7 @@
 .close-menu .close:hover {
   opacity: 1;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width:767px) {
   .close-menu {
     display: block;
   }
@@ -193,8 +189,7 @@
   font-size: 0.9rem;
   justify-content: flex-end;
   margin-top: 1rem;
-  border-top: 1px solid
-    var(--demo-container-border-color, rgba(255, 255, 255, 0.25));
+  border-top: 1px solid var(--demo-container-border-color, rgba(255, 255, 255, 0.25));
   padding: 1rem 1rem 0;
 }
 

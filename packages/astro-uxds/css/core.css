@@ -178,7 +178,7 @@ body {
 .container {
   display: flex;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width:767px) {
   .container .content {
     max-width: 100%;
   }
@@ -198,7 +198,7 @@ body {
   white-space: normal;
   overflow-x: scroll;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width:767px) {
   .content {
     width: 100%;
     padding-right: 0;

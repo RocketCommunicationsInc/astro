@@ -16,7 +16,7 @@
   user-select: none;
   transition: all 0.3s;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width:767px) {
   .sidebar {
     position: fixed;
     top: 0;
@@ -42,7 +42,7 @@
   width: 35%;
   margin: 2.2rem auto 1.25rem auto;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width:767px) {
   .masthead-logo {
     display: none;
   }
@@ -58,7 +58,7 @@
   left: 0;
   transition: all 0.3s;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width:767px) {
   .masthead {
     padding-top: 2em;
   }
@@ -78,8 +78,7 @@
   padding: 0.8125rem 0.875rem;
   text-indent: 1.75em;
   line-height: 1;
-  background: rgba(255, 255, 255, 0.15) url(/img/_site/search.svg) left 1em
-    center/1rem no-repeat;
+  background: rgba(255, 255, 255, 0.15) url(/img/_site/search.svg) left 1em center/1rem no-repeat;
   width: 100%;
   font-size: 0.875rem;
   color: white;

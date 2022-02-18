@@ -1,6 +1,5 @@
 main {
-  padding: var(--content-padding-horizontal, 1rem)
-    var(--content-padding-vertical, 1rem);
+  padding: var(--content-padding-horizontal, 1rem) var(--content-padding-vertical, 1rem);
   color: var(--font-color, #494949);
   max-width: var(--content-max-text-width, 40em);
 }
@@ -12,7 +11,7 @@ main ul {
   margin: 0 0 0 1.5em;
   padding: 0.7em 0 0;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width:767px) {
   main {
     padding: 30px 20px;
   }
@@ -121,7 +120,7 @@ figcaption {
 .two-col {
   grid-template-columns: repeat(2, [col-start] 1fr);
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width:767px) {
   .two-col {
     display: block;
   }

@@ -26,7 +26,7 @@
     visibility: hidden;
   }
   .site-footer,
-  .home__email-signup {
+.home__email-signup {
     display: none !important;
     visibility: hidden;
   }

@@ -21,8 +21,7 @@
   font-size: 0.9rem;
   justify-content: flex-end;
   margin-top: 1rem;
-  border-top: 1px solid
-    var(--demo-container-border-color, rgba(255, 255, 255, 0.25));
+  border-top: 1px solid var(--demo-container-border-color, rgba(255, 255, 255, 0.25));
   padding: 1rem 1rem 0;
 }
 
