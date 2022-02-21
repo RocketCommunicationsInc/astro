@@ -8,6 +8,7 @@
 }
 
 .rux-track__header {
+    box-sizing: border-box;
     padding: 11px 8px 13px 8px;
     background: var(--color-surface);
     border-right: 2px solid var(--color-background);
