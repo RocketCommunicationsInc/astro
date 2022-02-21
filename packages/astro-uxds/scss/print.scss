@@ -4,12 +4,18 @@
   margin-top: 0.5cm;
   margin-bottom: 0.5cm;
 
-  &:left {
+  #{if(&, "&", "*")}:left {
     margin: 0.5cm;
   }
-  &:right {
+  #{if(&, "&", "*")}:right {
     margin: 0.8cm;
   }
+  // &:left {
+  //   margin: 0.5cm;
+  // }
+  // &:right {
+  //   margin: 0.8cm;
+  // }
 }
 
 @media print {

@@ -10,13 +10,13 @@ AstroUXDS.com can be run locally for use in secure locations or for development 
 
 The live Astro site is available at https://www.astrouxds.com
 
-### Clone the AstroUXDS.com Repository
+### Clone the Astro Repository
 
-Clone the AstroUXDS.com repository to your local working environment. Note the following instructions assume Command Line Interface, if you use a Git client such as GitHub Desktop or BeanStalk follow their procedures for cloning.
+Clone the Astro repository to your local working environment. Note the following instructions assume Command Line Interface, if you use a Git client such as GitHub Desktop or BeanStalk follow their procedures for cloning.
 
 ```
-git clone git@github.com:RocketCommunicationsInc/astro-uxds.git
-cd astro-uxds
+git clone git@github.com:RocketCommunicationsInc/astro.git
+cd packages/astro-uxds
 ```
 
 ### Install Dependencies
