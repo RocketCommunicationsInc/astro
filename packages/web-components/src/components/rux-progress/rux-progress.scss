@@ -43,10 +43,14 @@
     --progress-label-color: var(--color-default-text);
 
     position: relative;
+    display: inline-block;
+    padding: 1.25rem; //20px
+}
+:host([value]) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.075rem 0;
+    padding: 0.125rem; //2px
 }
 
 :host([hidden]) {
@@ -95,8 +99,6 @@
     text-align: right;
     color: var(--progress-label-color);
 }
-
-/* Indeterminate */
 .rux-progress:indeterminate {
     -webkit-appearance: none;
     position: relative;
