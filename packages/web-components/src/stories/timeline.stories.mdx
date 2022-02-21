@@ -274,6 +274,17 @@ To add any number of Time Regions, you can simply add them as children to any Tr
 </rux-track>
 ```
 
+### Enabling the Ruler
+
+To enable the bottom ruler, make use of the `ruler` slot by passing in a `rux-ruler` within a `rux-track`:
+
+```
+<rux-track slot="ruler">
+  <rux-ruler></rux-ruler>
+</rux-track>
+```
+
+
 ### Enabling Vertical Scrolling
 
 If your Timeline contains too many rows to fit into your viewport, you can make use of the `time-region-container` CSS Shadow Part and set a height using CSS.
