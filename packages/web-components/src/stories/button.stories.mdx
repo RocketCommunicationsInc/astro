@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
 <Meta
@@ -34,7 +34,23 @@ export const Default = (args) => {
 }
 
 <Canvas>
-    <Story name="Default">{Default.bind()}</Story>
+    <Story
+        name="Default"
+        args={{
+            disabled: false,
+            iconOnly: false,
+            secondary: false,
+            size: 'medium',
+            icon: '',
+            type: 'button'
+        }}
+        argTypes={{
+            size: { control: "select" },
+            type: { control: "select" }
+        }}
+    >
+        {Default.bind()}
+    </Story>
 </Canvas>
 
 ## API
@@ -66,7 +82,23 @@ export const slottedIconButton = (args) => {
 }
 
 <Canvas>
-    <Story name="With Slotted Icon">{slottedIconButton.bind()}</Story>
+    <Story
+        name="With Slotted Icon" 
+        args={{
+            disabled: false,
+            iconOnly: false,
+            secondary: false,
+            size: 'medium',
+            icon: '',
+            type: 'button'
+        }}
+         argTypes={{
+            size: { control: "select" },
+            type: { control: "select" }
+        }}
+    >
+        {slottedIconButton.bind()}
+        </Story>
 </Canvas>
 
 ### Secondary
@@ -88,7 +120,21 @@ export const Secondary = (args) => {
 }
 
 <Canvas>
-    <Story args={{ secondary: true }} name="Secondary">
+    <Story
+        args={{ 
+            secondary: true, 
+            disabled: false,
+            iconOnly: false,
+            size: 'medium',
+            icon: '',
+            type: 'button'
+        }}
+        argTypes={{
+            size: { control: "select" },
+            type: { control: "select" }
+        }}
+        name="Secondary"
+    >
         {Secondary.bind()}
     </Story>
 </Canvas>
@@ -283,7 +329,20 @@ export const AllVariants = () => {
 }
 
 <Canvas>
-    <Story name="All Variants">{AllVariants.bind()}</Story>
+    <Story
+        name="All Variants"
+        argTypes={{
+            disabled: { table: { disable: true } },
+            icon: { table: { disable: true } },
+            iconOnly: { table: { disable: true } },
+            secondary: { table: { disable: true } },
+            size: { table: { disable: true } },
+            type: { table: { disable: true } }
+        }}
+        
+    >
+        {AllVariants.bind()}
+    </Story>
 </Canvas>
 
 ## Cherry Picking

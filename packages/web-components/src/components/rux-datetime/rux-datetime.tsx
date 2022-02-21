@@ -76,6 +76,8 @@ export class RuxDatetime {
             year,
         } = this
 
+        // try catch here and throw a console error for now
+
         return new Intl.DateTimeFormat(locale, {
             day,
             era,

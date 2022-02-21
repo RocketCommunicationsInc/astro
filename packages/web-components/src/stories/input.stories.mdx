@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
 <Meta
@@ -42,8 +42,9 @@ export const Default = (args) => {
     .step="${args.step}"
     type=${args.type}
     ?readonly="${args.readonly}"
-    ?autocomplete="${args.autocomplete}"
+    autocomplete="${args.autocomplete}"
     ?spellcheck="${args.spellcheck}"
+    size="${args.size}"
 ></rux-input>
     `
 }
@@ -54,6 +55,24 @@ export const Default = (args) => {
         args={{
             type: 'text',
             label: 'Input label',
+            autocomplete: "",
+            disabled: false,
+            errorText: "",
+            helpText: "",
+            invalid: false,
+            max: "",
+            min: "",
+            name: "",
+            placeholder: "",
+            readonly: false,
+            required: false,
+            size: "medium",
+            spellcheck: false,
+            step: "",
+            value: ""
+        }}
+        argTypes={{
+            size: { control: "select" }
         }}
     >
         {Default.bind()}
@@ -87,6 +106,7 @@ export const Disabled = (args) => {
     ?readonly="${args.readonly}"
     ?autocomplete="${args.autocomplete}"
     ?spellcheck="${args.spellcheck}"
+    size="${args.size}"
 ></rux-input>
     `
 }
@@ -95,9 +115,26 @@ export const Disabled = (args) => {
     <Story
         name="Disabled"
         args={{
-            label: 'Disabled input',
-            disabled: true,
             type: 'text',
+            label: 'Disabled input',
+            autocomplete: "",
+            disabled: true,
+            errorText: "",
+            helpText: "",
+            invalid: false,
+            max: "",
+            min: "",
+            name: "",
+            placeholder: "",
+            readonly: false,
+            required: false,
+            size: "medium",
+            spellcheck: false,
+            step: "",
+            value: ""
+        }}
+        argTypes={{
+            size: { control: "select" }
         }}
     >
         {Disabled.bind()}
@@ -176,6 +213,25 @@ export const Sizes = (args) => {
         args={{
             type: 'text',
         }}
+        argTypes={{
+            autcomplete: { table: { disable: true } },
+            disabled: { table: { disable: true } },
+            errorText: { table: { disable: true } },
+            invalid: { table: { disable: true } },
+            label: { table: { disable: true } },
+            max: { table: { disable: true } },
+            min: { table: { disable: true } },
+            name: { table: { disable: true } },
+            placeholder: { table: { disable: true } },   
+            readonly: { table: { disable: true } },   
+            required: { table: { disable: true } },   
+            size: { table: { disable: true } },   
+            spellcheck: { table: { disable: true } },   
+            step: { table: { disable: true } },   
+            helpText: { table: { disable: true } },
+            autocomplete: { table: { disable: true } },
+            value: { table: { disable: true } }
+        }}
     >
         {Sizes.bind()}
     </Story>
@@ -202,6 +258,7 @@ export const HelpText = (args) => {
     ?readonly="${args.readonly}"
     ?autocomplete="${args.autocomplete}"
     ?spellcheck="${args.spellcheck}"
+    size="${args.size}"
 ></rux-input>
     `
 }
@@ -210,9 +267,26 @@ export const HelpText = (args) => {
     <Story
         name="Help Text"
         args={{
-            label: 'Help text',
-            helpText: 'Help text',
             type: 'text',
+            label: 'Help text',
+            autocomplete: "",
+            disabled: false,
+            errorText: "",
+            helpText: "Help text",
+            invalid: false,
+            max: "",
+            min: "",
+            name: "",
+            placeholder: "",
+            readonly: false,
+            required: false,
+            size: "medium",
+            spellcheck: false,
+            step: "",
+            value: ""
+        }}
+        argTypes={{
+            size: { control: "select" }
         }}
     >
         {HelpText.bind()}
@@ -240,6 +314,7 @@ export const Invalid = (args) => {
     ?readonly="${args.readonly}"
     ?autocomplete="${args.autocomplete}"
     ?spellcheck="${args.spellcheck}"
+    size="${args.size}"
 ></rux-input>
     `
 }
@@ -252,6 +327,22 @@ export const Invalid = (args) => {
             errorText: 'Field is required',
             label: 'Input Field',
             type: 'text',
+            autocomplete: "",
+            disabled: true,
+            helpText: "",
+            max: "",
+            min: "",
+            name: "",
+            placeholder: "",
+            readonly: false,
+            required: true,
+            size: "medium",
+            spellcheck: false,
+            step: "",
+            value: ""
+        }}
+        argTypes={{
+            size: { control: "select" }
         }}
     >
         {Invalid.bind()}
@@ -320,7 +411,31 @@ export const Types = (args) => {
 }
 
 <Canvas>
-    <Story name="Types">{Types.bind()}</Story>
+    <Story
+        name="Types"
+        argTypes={{
+            type: { table: { disable: true } },
+            autcomplete: { table: { disable: true } },
+            disabled: { table: { disable: true } },
+            errorText: { table: { disable: true } },
+            invalid: { table: { disable: true } },
+            label: { table: { disable: true } },
+            max: { table: { disable: true } },
+            min: { table: { disable: true } },
+            name: { table: { disable: true } },
+            placeholder: { table: { disable: true } },   
+            readonly: { table: { disable: true } },   
+            required: { table: { disable: true } },   
+            size: { table: { disable: true } },   
+            spellcheck: { table: { disable: true } },   
+            step: { table: { disable: true } },   
+            helpText: { table: { disable: true } },
+            autocomplete: { table: { disable: true } },
+            value: { table: { disable: true } }
+        }}
+    >
+        {Types.bind()}
+    </Story>
 </Canvas>
 
 ## Customization
@@ -352,15 +467,55 @@ export const HorizontalLabel = (args) => {
         </style>
         <rux-input
             id="left-example"
-            label="Label"
-            type="text"
-            placeholder="Text input"
+            label="${args.label}"
+            .disabled="${args.disabled}"
+            error-text="${args.errorText}"
+            ?invalid="${args.invalid}"
+            .helpText="${args.helpText}"
+            .min="${args.min}"
+            .max="${args.max}"
+            .name="${args.name}"
+            .placeholder="${args.placeholder}"
+            ?required="${args.required}"
+            .value="${args.value}"
+            type=${args.type}
+            .step="${args.step}"
+            ?readonly="${args.readonly}"
+            ?autocomplete="${args.autocomplete}"
+            ?spellcheck="${args.spellcheck}"
+            size="${args.size}"
         ></rux-input>
     `
 }
 
 <Canvas>
-    <Story name="Horizontal Label">{HorizontalLabel.bind()}</Story>
+    <Story
+        name="Horizontal Label"
+        args={{
+            invalid: false,
+            errorText: '',
+            label: 'Input Field',
+            type: 'text',
+            autocomplete: "",
+            disabled: false,
+            helpText: "",
+            max: "",
+            min: "",
+            name: "",
+            placeholder: "",
+            readonly: false,
+            required: false,
+            size: "medium",
+            spellcheck: false,
+            step: "",
+            value: ""
+        }}
+        argTypes={{
+            size: { control: "select" }
+        }}
+    >
+        {HorizontalLabel.bind()}
+    </Story>
 </Canvas>
 
 ## Cherry Picking

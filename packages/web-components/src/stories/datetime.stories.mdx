@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
 <Meta
@@ -24,6 +24,8 @@ export const Default = (args) => {
         second=${args.second}
         time-zone=${args.timeZone}
         year=${args.year}
+        hour-12=${args.hour12}
+        .era=${args.era}
     ></rux-datetime>
 </div>
     `
@@ -31,6 +33,7 @@ export const Default = (args) => {
 
 <Canvas>
     <Story
+        name="Default"
         args={{
             date: new Date(),
             year: '2-digit',
@@ -39,9 +42,11 @@ export const Default = (args) => {
             hour: '2-digit',
             minute: '2-digit',
             second: '2-digit',
-            timeZone: 'America/Los_Angeles',
+            timeZone: 'America/New_York',
+            hour12: true,
+            era: undefined
         }}
-        name="Default"
+        
     >
         {Default.bind()}
     </Story>

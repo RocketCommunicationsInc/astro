@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
 <Meta
@@ -28,17 +28,17 @@ export const Default = (args) => {
 <rux-textarea
     label="${args.label}"
     ?disabled="${args.disabled}"
-    .error-text="${args.errorText}"
-    .help-text="${args.helpText}"
+    error-text="${args.errorText}"
+    help-text="${args.helpText}"
     ?invalid="${args.invalid}"
-    .max-length="${args.maxLength}"
-    .min-length="${args.minLength}"
-    .name="${args.name}"
-    .placeholder="${args.placeholder}"
+    max-length="${args.maxLength}"
+    min-length="${args.minLength}"
+    name="${args.name}"
+    placeholder="${args.placeholder}"
     ?required="${args.required}"
-    .rows="${args.rows}"
+    rows="${args.rows}"
     ?small="${args.small}"
-    .value="${args.value}"
+    value="${args.value}"
     type="${args.type}"
 ></rux-textarea>
     `
@@ -49,7 +49,18 @@ export const Default = (args) => {
         name="Default"
         args={{
             label: 'Textarea label',
-            type: 'text'
+            disabled: false,
+            errorText: "",
+            helpText: "",
+            invalid: false,
+            maxLength: "",
+            minLength: "",
+            name: "",
+            placeholder: "",
+            required: false,
+            rows: null,
+            small: false,
+            value: ""
         }}
     >
         {Default.bind()}
@@ -69,18 +80,18 @@ export const Disabled = (args) => {
 <rux-textarea
     label="${args.label}"
     ?disabled="${args.disabled}"
-    .error-text="${args.errorText}"
-    .help-text="${args.helpText}"
+    error-text="${args.errorText}"
+    help-text="${args.helpText}"
     ?invalid="${args.invalid}"
-    .max-length="${args.maxLength}"
-    .min-length="${args.minLength}"
-    .name="${args.name}"
-    .placeholder="${args.placeholder}"
+    max-length="${args.maxLength}"
+    min-length="${args.minLength}"
+    name="${args.name}"
+    placeholder="${args.placeholder}"
     ?required="${args.required}"
-    .rows="${args.rows}"
+    rows="${args.rows}"
     ?small="${args.small}"
-    .value="${args.value}"
-    .type="${args.type}"
+    value="${args.value}"
+    type="${args.type}"
 ></rux-textarea>
     `
 }
@@ -91,6 +102,17 @@ export const Disabled = (args) => {
         args={{
             label: 'Disabled textarea',
             disabled: true,
+            errorText: "",
+            helpText: "",
+            invalid: false,
+            maxLength: "",
+            minLength: "",
+            name: "",
+            placeholder: "",
+            required: false,
+            rows: null,
+            small: false,
+            value: ""
         }}
     >
         {Disabled.bind()}
@@ -104,17 +126,17 @@ export const HelpText = (args) => {
 <rux-textarea
     label="${args.label}"
     ?disabled="${args.disabled}"
-    .error-text="${args.errorText}"
+    error-text="${args.errorText}"
     help-text="${args.helpText}"
     ?invalid="${args.invalid}"
-    .max-length="${args.maxLength}"
-    .min-length="${args.minLength}"
-    .name="${args.name}"
-    .placeholder="${args.placeholder}"
+    max-length="${args.maxLength}"
+    min-length="${args.minLength}"
+    name="${args.name}"
+    placeholder="${args.placeholder}"
     ?required="${args.required}"
-    .rows="${args.rows}"
+    rows="${args.rows}"
     ?small="${args.small}"
-    .value="${args.value}"
+    value="${args.value}"
     type="${args.type}"
 ></rux-textarea>
     `
@@ -126,7 +148,17 @@ export const HelpText = (args) => {
         args={{
             label: 'Help text',
             helpText: 'Help text',
-            type: 'text',
+            disabled: false,
+            errorText: "",
+            invalid: false,
+            maxLength: "",
+            minLength: "",
+            name: "",
+            placeholder: "",
+            required: false,
+            rows: null,
+            small: false,
+            value: ""
         }}
     >
         {HelpText.bind()}
@@ -141,16 +173,16 @@ export const Invalid = (args) => {
     label="${args.label}"
     ?disabled="${args.disabled}"
     error-text="${args.errorText}"
-    .help-text="${args.helpText}"
+    help-text="${args.helpText}"
     ?invalid="${args.invalid}"
-    .max-length="${args.maxLength}"
-    .min-length="${args.minLength}"
-    .name="${args.name}"
-    .placeholder="${args.placeholder}"
+    max-length="${args.maxLength}"
+    min-length="${args.minLength}"
+    name="${args.name}"
+    placeholder="${args.placeholder}"
     ?required="${args.required}"
-    .rows="${args.rows}"
+    rows="${args.rows}"
     ?small="${args.small}"
-    .value="${args.value}"
+    value="${args.value}"
     type="${args.type}"
 ></rux-textarea>
     `
@@ -163,7 +195,16 @@ export const Invalid = (args) => {
             invalid: true,
             errorText: 'Field is required',
             label: 'Textarea Field',
-            type: 'text'
+            helpText: '',
+            disabled: false,
+            maxLength: "",
+            minLength: "",
+            name: "",
+            placeholder: "",
+            required: false,
+            rows: null,
+            small: false,
+            value: ""
         }}
     >
         {Invalid.bind()}
@@ -177,17 +218,17 @@ export const Placeholder = (args) => {
 <rux-textarea
     label="${args.label}"
     ?disabled="${args.disabled}"
-    .error-text="${args.errorText}"
-    .help-text="${args.helpText}"
+    error-text="${args.errorText}"
+    help-text="${args.helpText}"
     ?invalid="${args.invalid}"
-    .max-length="${args.maxLength}"
-    .min-length="${args.minLength}"
-    .name="${args.name}"
+    max-length="${args.maxLength}"
+    min-length="${args.minLength}"
+    name="${args.name}"
     placeholder="${args.placeholder}"
     ?required="${args.required}"
-    .rows="${args.rows}"
+    rows="${args.rows}"
     ?small="${args.small}"
-    .value="${args.value}"
+    value="${args.value}"
     type="${args.type}"
 ></rux-textarea>
     `
@@ -199,7 +240,17 @@ export const Placeholder = (args) => {
         args={{
             label: 'Placeholder Text',
             placeholder: 'Placeholder',
-            type: 'text'
+            invalid: false,
+            errorText: '',
+            helpText: '',
+            disabled: false,
+            maxLength: "",
+            minLength: "",
+            name: "",
+            required: false,
+            rows: null,
+            small: false,
+            value: ""
         }}
     >
         {Placeholder.bind()}
@@ -233,15 +284,45 @@ export const HorizontalLabel = (args) => {
 </style>
 <rux-textarea
     id="left-example"
-    label="Label"
-    type="text"
-    placeholder="Text input"
+    label="${args.label}"
+    ?disabled="${args.disabled}"
+    error-text="${args.errorText}"
+    help-text="${args.helpText}"
+    ?invalid="${args.invalid}"
+    max-length="${args.maxLength}"
+    min-length="${args.minLength}"
+    name="${args.name}"
+    placeholder="${args.placeholder}"
+    ?required="${args.required}"
+    rows="${args.rows}"
+    ?small="${args.small}"
+    value="${args.value}"
+    type="${args.type}"
 ></rux-textarea>
     `
 }
 
 <Canvas>
-    <Story name="Horizontal Label">{HorizontalLabel.bind()}</Story>
+    <Story
+        name="Horizontal Label"
+        args={{
+            label: 'Label',
+            placeholder: 'Text input',
+            invalid: false,
+            errorText: '',
+            helpText: '',
+            disabled: false,
+            maxLength: "",
+            minLength: "",
+            name: "",
+            required: false,
+            rows: null,
+            small: false,
+            value: ""
+        }}
+    >
+        {HorizontalLabel.bind()}
+    </Story>
 </Canvas>
 
 ## Cherry Picking

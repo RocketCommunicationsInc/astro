@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
 <Meta
@@ -30,23 +30,25 @@ The Radio Group component is responsible for checking and unchecking individual 
 export const Default = (args) => {
     return html`
 <rux-radio
-    name="radios"
+    name="${args.name}"
     ?checked=${args.checked}
     ?disabled=${args.disabled}
     .value="${args.value}"
-    .label="${args.label}"
-    >Radio Label</rux-radio
+    >${args.label}</rux-radio
 >
     `
 }
 
 <Canvas>
     <Story
+        name="Default"
         args={{
             name: 'radios',
             label: 'Radio Label',
-        }}
-        name="Default"
+            checked: false,
+            disabled: false,
+            value: ""
+        }}     
     >
         {Default.bind()}
     </Story>
@@ -63,24 +65,25 @@ export const Default = (args) => {
 export const Checked = (args) => {
     return html`
 <rux-radio
-    .name="${args.name}"
+    name="${args.name}"
     ?checked=${args.checked}
     ?disabled=${args.disabled}
-    .value="${args.value}"
-    .label="${args.label}"
-    >Radio Label</rux-radio
+    value="${args.value}"
+    >${args.label}</rux-radio
 >
     `
 }
 
 <Canvas>
     <Story
+        name="Checked"
         args={{
             name: 'radios',
             label: 'Radio Label',
             checked: true,
+            disabled: false,
+            value: ""
         }}
-        name="Checked"
     >
         {Checked.bind()}
     </Story>
@@ -96,7 +99,7 @@ export const Disabled = (args) => {
     ?disabled=${args.disabled}
     .value="${args.value}"
     .label="${args.label}"
-    >Radio Label</rux-radio
+    >${args.label}</rux-radio
 >
     `
 }
@@ -107,6 +110,8 @@ export const Disabled = (args) => {
             name: 'radios',
             label: 'Radio Label',
             disabled: true,
+            checked: false,
+            value: ""
         }}
         name="Disabled"
     >

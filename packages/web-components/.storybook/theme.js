@@ -64,10 +64,10 @@ let dark = create({
     barBg: 'rgb(32, 50, 70)',
 
     // Form colors
-    inputBg: 'white',
-    inputBorder: '#DDD',
-    inputTextColor: 'black',
-    inputBorderRadius: 3,
+    inputBg: '#172635',
+    inputBorder: 'rgba(153,153,153,0.4)',
+    inputTextColor: 'white',
+    inputBorderRadius: 8,
 
     brandTitle: 'AstroUXDS',
     brandUrl: 'https://astrouxds.com',
