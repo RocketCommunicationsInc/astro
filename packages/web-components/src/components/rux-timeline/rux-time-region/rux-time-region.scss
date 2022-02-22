@@ -4,12 +4,10 @@
 
 .rux-time-region {
     background: var(--color-background);
-    border: 1px solid var(--color-status-normal-fill);
-    // padding: 0.25rem;
+    padding: 0.25rem; // 4px;
     overflow: hidden;
-    // display: flex;
-    // flex-direction: column;
     min-height: 40px;
+    color: var(--color-default-text);
 }
 
 .rux-time-region__content {
@@ -19,8 +17,10 @@
     font-size: var(--font-body-2-font-size);
     font-weight: var(--font-body-2-font-weight);
     letter-spacing: var(--font-body-2-letter-spacing);
-    ::slotted(rux-status) {
-        margin-right: 0.25rem;
+
+    ::slotted(rux-status),
+    rux-status {
+        margin-right: 0.125rem; //2px
     }
 }
 
@@ -31,6 +31,29 @@
     font-size: var(--font-body-3-font-size);
     font-weight: var(--font-body-3-font-weight);
     letter-spacing: var(--font-body-3-letter-spacing);
+}
+
+.rux-time-region--selected {
+    background: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    --status-symbols: var(--status-symbols-light);
+    color: var(--color-inverse-text);
+}
+
+.rux-time-region--normal:not(.rux-time-region--selected) {
+    border: 1px solid var(--color-primary);
+}
+
+.rux-time-region--critical:not(.rux-time-region--selected) {
+    border: 1px solid var(--color-status-critical-fill);
+}
+
+.rux-time-region--caution:not(.rux-time-region--selected) {
+    border: 1px solid var(--color-status-caution-fill);
+}
+
+.rux-time-region--standby:not(.rux-time-region--selected) {
+    border: 1px solid var(--color-status-standby-fill);
 }
 
 .hidden {

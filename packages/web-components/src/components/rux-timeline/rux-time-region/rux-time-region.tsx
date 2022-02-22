@@ -1,6 +1,9 @@
 import { Element, Prop, Component, State, Host, h } from '@stencil/core'
 import { differenceInMinutes, format, differenceInHours } from 'date-fns'
 
+/**
+ * @slot (default) - The content of the Time Region
+ */
 @Component({
     tag: 'rux-time-region',
     styleUrl: 'rux-time-region.scss',
@@ -36,6 +39,17 @@ export class RuxTimeRegion {
     @State() startDate: any
     @State() endDate: any
     @Prop() timelineStart: any
+
+    /**
+     * Short hand attribute for displaying a Status icon and appropriate border color.
+     */
+    @Prop() status?: 'normal' | 'critical' | 'serious' | 'caution' | 'standby'
+
+    /**
+     * Visually displays the selected state
+     */
+    @Prop() selected = false
+
     componentWillLoad() {
         this.startDate = new Date(this.start)
         this.endDate = new Date(this.end)
@@ -69,7 +83,15 @@ export class RuxTimeRegion {
             <Host>
                 <div
                     part="container"
-                    class="rux-time-region"
+                    class={{
+                        'rux-time-region': true,
+                        'rux-time-region--normal': this.status === 'normal',
+                        'rux-time-region--critical': this.status === 'critical',
+                        'rux-time-region--serious': this.status === 'serious',
+                        'rux-time-region--caution': this.status === 'caution',
+                        'rux-time-region--standby': this.status === 'standby',
+                        'rux-time-region--selected': this.selected,
+                    }}
                     style={{
                         gridRow: '1',
                         gridColumn: `${this.calculateGridColumnFromTime(
@@ -78,6 +100,14 @@ export class RuxTimeRegion {
                     }}
                 >
                     <div class="rux-time-region__content">
+                        {this.status ? (
+                            <rux-status
+                                class={{
+                                    'light-theme': this.selected,
+                                }}
+                                status={this.status}
+                            ></rux-status>
+                        ) : null}
                         <slot></slot>
                     </div>
                     {!this.hideTimestamp ? (
