@@ -159,6 +159,9 @@ export class RuxTimeline {
             el.track = ++index
             el.width = this.width
             el.columns = this.columns
+
+            el.interval = this.interval
+            el.timelineStart = this.start
         })
     }
 
@@ -270,20 +273,20 @@ export class RuxTimeline {
                 (el: any) => el.tagName.toLowerCase() === 'rux-time-region'
             ) as HTMLRuxTimeRegionElement[]
 
-            regions.map((region) => {
-                region.ratio = this.pxToTimeRatio
-                region.interval = this.interval
-                region.timelineStart = this.start
-                const isValid = this._validateTimeRegion(
-                    region.start,
-                    region.end
-                )
+            // regions.map((region) => {
+            //     region.ratio = this.pxToTimeRatio
+            //     region.interval = this.interval
+            //     region.timelineStart = this.start
+            //     const isValid = this._validateTimeRegion(
+            //         region.start,
+            //         region.end
+            //     )
 
-                if (!isValid) {
-                    console.log('Invalid Region', region)
-                    region.style.visibility = 'hidden'
-                }
-            })
+            //     if (!isValid) {
+            //         console.log('Invalid Region', region)
+            //         region.style.visibility = 'hidden'
+            //     }
+            // })
         })
 
         const rulerSlot = this.rulerContainer?.querySelector(

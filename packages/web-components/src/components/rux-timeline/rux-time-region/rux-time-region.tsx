@@ -1,5 +1,5 @@
-import { Element, Prop, Component, State, Host, h } from '@stencil/core'
-import { differenceInMinutes, format, differenceInHours } from 'date-fns'
+import { Element, Prop, State, Component, Host, h } from '@stencil/core'
+import { format } from 'date-fns'
 
 /**
  * @slot (default) - The content of the Time Region
@@ -21,24 +21,9 @@ export class RuxTimeRegion {
     @Prop({ reflect: true }) end: any
 
     /**
-     * The label
-     */
-    @Prop() label?: string
-
-    /**
      * Optionally hide the bottom right timestamp.
      */
     @Prop({ attribute: 'hide-timestamp' }) hideTimestamp = false
-
-    /**
-     * The track
-     */
-    @Prop() track: string = '1'
-    @Prop({ reflect: true }) ratio = 2
-    @Prop({ reflect: true }) interval = 'hour'
-    @State() startDate: any
-    @State() endDate: any
-    @Prop() timelineStart: any
 
     /**
      * Short hand attribute for displaying a Status icon and appropriate border color.
@@ -50,32 +35,20 @@ export class RuxTimeRegion {
      */
     @Prop() selected = false
 
-    componentWillLoad() {
-        this.startDate = new Date(this.start)
-        this.endDate = new Date(this.end)
-    }
-
-    calculateGridColumnFromTime(time: any) {
-        if (this.timelineStart) {
-            const timelineStart = new Date(this.timelineStart)
-
-            if (this.interval === 'hour') {
-                const difference = Math.abs(
-                    differenceInMinutes(timelineStart, new Date(time))
-                )
-
-                return difference + 2
-            }
-
-            if (this.interval === 'day') {
-                const difference = Math.abs(
-                    differenceInHours(timelineStart, new Date(time))
-                )
-
-                return difference + 2
-            }
+    get formattedTime() {
+        if (!this.start || !this.end) {
+            return false
         }
-        return 0
+
+        try {
+            return (
+                format(new Date(this.start), 'HH:mm') +
+                '-' +
+                format(new Date(this.end), 'HH:mm')
+            )
+        } catch (e) {
+            return false
+        }
     }
 
     render() {
@@ -92,12 +65,6 @@ export class RuxTimeRegion {
                         'rux-time-region--standby': this.status === 'standby',
                         'rux-time-region--selected': this.selected,
                     }}
-                    style={{
-                        gridRow: '1',
-                        gridColumn: `${this.calculateGridColumnFromTime(
-                            this.start
-                        )} / ${this.calculateGridColumnFromTime(this.end)}`,
-                    }}
                 >
                     <div class="rux-time-region__content">
                         {this.status ? (
@@ -112,8 +79,7 @@ export class RuxTimeRegion {
                     </div>
                     {!this.hideTimestamp ? (
                         <div class="rux-time-region__datetime">
-                            {format(new Date(this.start), 'HH:mm')} -{' '}
-                            {format(new Date(this.end), 'HH:mm')}
+                            {this.formattedTime}
                         </div>
                     ) : null}
                 </div>

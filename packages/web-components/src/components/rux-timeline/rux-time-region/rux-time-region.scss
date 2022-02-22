@@ -1,5 +1,5 @@
 :host {
-    display: contents;
+    display: block;
 }
 
 .rux-time-region {
@@ -8,6 +8,7 @@
     overflow: hidden;
     min-height: 40px;
     color: var(--color-default-text);
+    border: 1px solid var(--color-primary);
 }
 
 .rux-time-region__content {
@@ -57,11 +58,5 @@
 }
 
 .hidden {
-    display: none;
-}
-
-.rux-status--off {
-    ::slotted(rux-status) {
-        color: red;
-    }
+    visibility: hidden;
 }
