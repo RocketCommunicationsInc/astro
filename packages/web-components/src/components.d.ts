@@ -12064,6 +12064,10 @@ export namespace Components {
          */
         "open": boolean;
         /**
+          * Changes the size of the banner to a small variant.
+         */
+        "small": boolean;
+        /**
           * The background color. Possible values include 'off', 'standby', 'normal', 'caution', 'serious' and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).
          */
         "status": Status;
@@ -32227,6 +32231,10 @@ declare namespace LocalJSX {
           * Set to true to display the Banner and begin countdown to close (if a close-after Number value is provided).
          */
         "open"?: boolean;
+        /**
+          * Changes the size of the banner to a small variant.
+         */
+        "small"?: boolean;
         /**
           * The background color. Possible values include 'off', 'standby', 'normal', 'caution', 'serious' and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).
          */
