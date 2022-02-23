@@ -77,7 +77,6 @@ export class RuxTimeline {
         this._setZoom()
         this.syncPlayhead()
         this._updateRegions()
-        this.initializeTracks()
     }
 
     @Watch('start')
@@ -91,11 +90,12 @@ export class RuxTimeline {
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._handleMouse = this._handleMouse.bind(this)
         this.syncPlayhead = this.syncPlayhead.bind(this)
+        this._updateRegions = this._updateRegions.bind(this)
     }
     componentWillLoad() {
         this._setZoom()
-        this.initializeTracks()
         this.syncPlayhead()
+        // this.initializeTracks()
     }
 
     get width() {
@@ -146,17 +146,12 @@ export class RuxTimeline {
         }
     }
 
-    /**
-     * Slotted tracks need to render in the order they are provided in markup
-     * Because they load asynchronously, we need a better way to set their row in the grid
-     */
     initializeTracks() {
         const tracks = [...this.el.children].filter(
             (el) => el.tagName.toLowerCase() === 'rux-track'
         ) as HTMLRuxTrackElement[]
 
-        tracks.forEach((el, index) => {
-            el.track = ++index
+        tracks.map((el) => {
             el.width = this.width
             el.columns = this.columns
 
@@ -250,6 +245,8 @@ export class RuxTimeline {
      * We're taking a props down, events up approach to data flow here.
      */
     private _updateRegions() {
+        console.log('updating regions')
+
         const slot = this.slotContainer?.querySelectorAll(
             'slot'
         )[0] as HTMLSlotElement
@@ -262,40 +259,30 @@ export class RuxTimeline {
                 ) as [HTMLRuxTrackElement]),
         ]
 
-        tracks.forEach((el, index) => {
-            el.track = ++index
+        tracks.map((el: HTMLRuxTrackElement) => {
             el.width = this.width
             el.columns = this.columns
-        })
 
-        tracks.map((track: any) => {
-            const regions = [...track.children].filter(
-                (el: any) => el.tagName.toLowerCase() === 'rux-time-region'
-            ) as HTMLRuxTimeRegionElement[]
-
-            // regions.map((region) => {
-            //     region.ratio = this.pxToTimeRatio
-            //     region.interval = this.interval
-            //     region.timelineStart = this.start
-            //     const isValid = this._validateTimeRegion(
-            //         region.start,
-            //         region.end
-            //     )
-
-            //     if (!isValid) {
-            //         console.log('Invalid Region', region)
-            //         region.style.visibility = 'hidden'
-            //     }
-            // })
+            el.interval = this.interval
+            el.timelineStart = this.start
         })
 
         const rulerSlot = this.rulerContainer?.querySelector(
             'slot'
         ) as HTMLSlotElement
+
         const rulerTrack = rulerSlot
             ?.assignedElements({ flatten: true })
-            .find((el: any) => el.tagName.toLowerCase() === 'rux-track')
+            .find(
+                (el: any) => el.tagName.toLowerCase() === 'rux-track'
+            ) as HTMLRuxTrackElement
+
         if (rulerTrack) {
+            rulerTrack.width = this.width
+            rulerTrack.columns = this.columns
+
+            rulerTrack.interval = this.interval
+            rulerTrack.timelineStart = this.start
             const rulerEl = [...rulerTrack.children].find(
                 (el: any) => el.tagName.toLowerCase() === 'rux-ruler'
             ) as HTMLRuxRulerElement
@@ -307,20 +294,20 @@ export class RuxTimeline {
         }
     }
 
-    private _validateTimeRegion(start: any, end: any) {
-        if (!this.start) {
-            return false
-        }
+    // private _validateTimeRegion(start: any, end: any) {
+    //     if (!this.start) {
+    //         return false
+    //     }
 
-        if (!this.end) {
-            return false
-        }
+    //     if (!this.end) {
+    //         return false
+    //     }
 
-        return (
-            new Date(start) >= new Date(this.start) &&
-            new Date(end) <= new Date(this.end)
-        )
-    }
+    //     return (
+    //         new Date(start) >= new Date(this.start) &&
+    //         new Date(end) <= new Date(this.end)
+    //     )
+    // }
 
     private _setZoom() {
         let unitOfTime = 60

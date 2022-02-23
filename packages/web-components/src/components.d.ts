@@ -7138,21 +7138,18 @@ export namespace Components {
          * Optionally hide the bottom right timestamp.
          */
         hideTimestamp: boolean
-        interval: string
         /**
-         * The label
+         * Visually displays the selected state
          */
-        label?: string
-        ratio: number
+        selected: boolean
         /**
          * The start time
          */
         start: any
-        timelineStart: any
         /**
-         * The track
+         * Short hand attribute for displaying a Status icon and appropriate border color.
          */
-        track: string
+        status?: 'normal' | 'critical' | 'serious' | 'caution' | 'standby'
     }
     interface RuxTimeline {
         /**
@@ -7179,7 +7176,10 @@ export namespace Components {
     }
     interface RuxTrack {
         columns: number
-        track?: number
+        end: any
+        interval: any
+        start: any
+        timelineStart: any
         width: number
     }
     interface RuxTree {}
@@ -23258,21 +23258,18 @@ declare namespace LocalJSX {
          * Optionally hide the bottom right timestamp.
          */
         hideTimestamp?: boolean
-        interval?: string
         /**
-         * The label
+         * Visually displays the selected state
          */
-        label?: string
-        ratio?: number
+        selected?: boolean
         /**
          * The start time
          */
         start?: any
-        timelineStart?: any
         /**
-         * The track
+         * Short hand attribute for displaying a Status icon and appropriate border color.
          */
-        track?: string
+        status?: 'normal' | 'critical' | 'serious' | 'caution' | 'standby'
     }
     interface RuxTimeline {
         /**
@@ -23298,7 +23295,10 @@ declare namespace LocalJSX {
     }
     interface RuxTrack {
         columns?: number
-        track?: number
+        end?: any
+        interval?: any
+        start?: any
+        timelineStart?: any
         width?: number
     }
     interface RuxTree {}

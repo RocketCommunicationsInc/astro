@@ -1,6 +1,10 @@
 import { Element, State, Component, Prop, Host, h, Watch } from '@stencil/core'
 import { differenceInMinutes, differenceInHours } from 'date-fns'
 
+interface DateValidation {
+    success: boolean
+    error?: string
+}
 @Component({
     tag: 'rux-track',
     styleUrl: 'rux-track.scss',
@@ -10,7 +14,6 @@ export class RuxTrack {
     @Element() el!: HTMLRuxTrackElement
     @State() timelineColumns = 0
 
-    @Prop({ reflect: true }) track?: number = 0
     @Prop({ reflect: true }) width = 0
     @Prop({ reflect: true }) columns = 0
 
@@ -19,12 +22,19 @@ export class RuxTrack {
     @Prop({ reflect: true }) start: any
     @Prop({ reflect: true }) end: any
 
+    @State() timelineData = {
+        start: '',
+        interval: '',
+    }
+
     @Watch('start')
     @Watch('end')
     @Watch('timelineStart')
     @Watch('interval')
-    handleUpdate() {
-        this.initializeRows()
+    handleUpdate(_newValue: any, old: any) {
+        if (old) {
+            this.initializeRows()
+        }
     }
 
     connectedCallback() {
@@ -32,9 +42,13 @@ export class RuxTrack {
     }
 
     componentWillLoad() {
-        this.initializeRows()
-
         const timeline = this.el.closest('rux-timeline')
+
+        // this.timelineStart = timeline?.start
+        // this.interval = timeline?.interval
+        // console.log('timelinestart', this.timelineStart);
+
+        // this.initializeRows()
 
         timeline?.fetchColumns().then((r) => {
             this.timelineColumns = r
@@ -64,66 +78,88 @@ export class RuxTrack {
         return 0
     }
 
-    private _validateTimeRegion(start: any, end: any) {
-        if (!this.start) {
-            throw new Error('Time Region must have a start date provided')
+    private _validateTimeRegion(start: any, end: any): DateValidation {
+        if (!start) {
+            return {
+                success: false,
+                error: 'Time Region must have a start date provided',
+            }
         }
 
-        if (!this.end) {
-            throw new Error('Time Region must have a end date provided')
+        if (!end) {
+            return {
+                success: false,
+                error: 'Time Region must have a end date provided',
+            }
         }
 
         if (new Date(start) > new Date(end)) {
-            throw new RangeError(
-                `The Time Region start date must be before the end date: ${start} - ${end}`
-            )
+            return {
+                success: false,
+                error: `The Time Region start date must be before the end date: ${start} - ${end}`,
+            }
         }
 
         if (new Date(start) < new Date(this.start)) {
-            throw new RangeError(
-                `The Time Region start date does not fall within the Timeline's range: ${start} - ${this.start}/${this.end}`
-            )
+            return {
+                success: false,
+                error: `The Time Region start date does not fall within the Timeline's range: ${start} - ${this.start}/${this.end}`,
+            }
         }
 
         if (new Date(start) > new Date(this.end)) {
-            throw new RangeError(
-                `The Time Region start date does not fall within the Timeline's range: ${start} - ${this.start}/${this.end}`
-            )
+            return {
+                success: false,
+                error: `The Time Region start date does not fall within the Timeline's range: ${start} - ${this.start}/${this.end}`,
+            }
         }
 
         if (new Date(end) > new Date(this.end)) {
-            throw new RangeError(
-                `The Time Region end date does not fall within the Timeline's range: ${start} - ${this.start}/${this.end}`
-            )
+            return {
+                success: false,
+                error: `The Time Region end date does not fall within the Timeline's range: ${start} - ${this.start}/${this.end}`,
+            }
         }
 
         if (new Date(start) < new Date(this.end)) {
-            throw new RangeError(
-                `The Time Region end date does not fall within the Timeline's range: ${start} - ${this.start}/${this.end}`
-            )
+            return {
+                success: false,
+                error: `The Time Region end date does not fall within the Timeline's range: ${start} - ${this.start}/${this.end}`,
+            }
         }
 
-        return true
+        return {
+            success: true,
+        }
     }
 
     initializeRows() {
-        const childNodes = this.el.childNodes
-        const children = Array.prototype.filter.call(
-            childNodes,
-            (node) => node.nodeType == Node.ELEMENT_NODE
-        )
+        const children = [...this.el.children].filter(
+            (el) => el.tagName.toLowerCase() === 'rux-time-region'
+        ) as HTMLRuxTimeRegionElement[]
 
         children.forEach((el) => {
-            el.style.gridRow = 1
-            const gridColumn = `${this.calculateGridColumnFromTime(
-                el.start
-            )} / ${this.calculateGridColumnFromTime(el.end)}`
-            el.style.gridColumn = gridColumn
+            const isHidden = el.style.visibility === 'hidden'
+            const isValid = this._validateTimeRegion(el.start, el.end)
+
+            if (isValid.success) {
+                el.style.gridRow = '1'
+                el.style.visibility = 'inherit'
+                const gridColumn = `${this.calculateGridColumnFromTime(
+                    el.start
+                )} / ${this.calculateGridColumnFromTime(el.end)}`
+                el.style.gridColumn = gridColumn
+            } else {
+                if (!isHidden) {
+                    el.style.visibility = 'hidden'
+                    console.error(isValid.error)
+                }
+            }
         })
     }
 
     private _handleSlotChange() {
-        //TODO
+        this.initializeRows()
     }
 
     renderDebug() {
@@ -132,7 +168,7 @@ export class RuxTrack {
                 {[...Array(this.timelineColumns)].map((_: any, i: any) => (
                     <div
                         style={{
-                            gridRow: `${this.track}`,
+                            gridRow: '1',
                             gridColumn: `${i + 2} / ${++i + 2}`,
                         }}
                         class={{

@@ -1,4 +1,4 @@
-import { Element, Prop, State, Component, Host, h } from '@stencil/core'
+import { Element, Prop, Component, Host, h } from '@stencil/core'
 import { format } from 'date-fns'
 
 /**
