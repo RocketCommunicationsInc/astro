@@ -245,8 +245,6 @@ export class RuxTimeline {
      * We're taking a props down, events up approach to data flow here.
      */
     private _updateRegions() {
-        console.log('updating regions')
-
         const slot = this.slotContainer?.querySelectorAll(
             'slot'
         )[0] as HTMLSlotElement
