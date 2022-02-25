@@ -18,5 +18,20 @@
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
-    <body></body>
+    <body>
+        <div style="padding: 5%">
+            <rux-segmented-button id="2"></rux-segmented-button>
+        </div>
+        <script>
+            const two = document.getElementById('2')
+            two.data = [
+                { label: 'First segment' },
+                { label: 'Second segment' },
+                { label: 'Third segment', selected: true },
+                { label: 'Fourth segment' },
+                { label: 'Fourth segment' },
+                { label: 'Sixth segment' },
+            ]
+        </script>
+    </body>
 </html>

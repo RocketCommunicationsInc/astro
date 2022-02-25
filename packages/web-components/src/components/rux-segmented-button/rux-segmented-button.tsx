@@ -31,6 +31,13 @@ export class RuxSegmentedButton {
     @Prop({ reflect: true, mutable: true }) selected: string = ''
 
     /**
+     * Changes size of segmented button from medium to small or large by setting sizing classes
+     * rux-segmented-button--small
+     * rux-segmented-button--large
+     */
+    @Prop({ reflect: true }) size?: 'small' | 'medium' | 'large'
+
+    /**
      * Emitted when the value property has changed.
      */
     @Event({ eventName: 'ruxchange' })
@@ -101,7 +108,13 @@ export class RuxSegmentedButton {
 
     render() {
         return (
-            <ul class="rux-segmented-button">
+            <ul
+                class={{
+                    'rux-segmented-button': true,
+                    'rux-segmented-button--medium': this.size === 'medium',
+                    'rux-segmented-button--large': this.size === 'large',
+                }}
+            >
                 {this.data.map((item) => (
                     <li class="rux-segmented-button__segment">
                         <input
@@ -113,7 +126,17 @@ export class RuxSegmentedButton {
                             data-label={item.label}
                             onChange={this._handleChange}
                         />
-                        <label htmlFor={this._slugify(item.label)} part="label">
+                        <label
+                            htmlFor={this._slugify(item.label)}
+                            part="label"
+                            class={{
+                                'rux-segmented-button-label': true,
+                                'rux-segmented-button-label--medium':
+                                    this.size === 'medium',
+                                'rux-segmented-button-label--large':
+                                    this.size === 'large',
+                            }}
+                        >
                             {item.label}
                         </label>
                     </li>

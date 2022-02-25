@@ -8,7 +8,8 @@ Segmented Buttons allow users to select one item at a time from two to four opti
 
 ### Usage
 
-Pass an Array of segments via the `data` attribute on the Segmented Button custom element. Segment items in the `data` Array must be objects with a `label` string. The first item in the Array will be auto-selected unless another segment item has a `selected` property with a truthy value
+Pass an Array of segments via the `data` attribute on the Segmented Button custom element. Segment items in the `data` Array must be objects with a `label` string. The first item in the Array will be auto-selected unless another segment item has a `selected` property with a truthy value.
+Avoid labels with the same text, as this will interfere with selecting segments. 
 
 ### Properties for items within the `data` Array
 
