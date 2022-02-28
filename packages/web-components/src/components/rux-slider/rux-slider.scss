@@ -43,7 +43,7 @@
     display: flex;
     flex-grow: 1;
     flex-flow: column;
-    cursor: pointer;
+    // cursor: pointer;
 }
 
 .hidden,
@@ -58,10 +58,41 @@
     label {
         margin-bottom: var(--spacing-input-label-top);
     }
+    #steplist {
+        //! Curor is still pointer on these.
+        cursor: default;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        // width: 101%;
+
+        .tick-label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            // padding-left: 10.75px;
+
+            option {
+                // From figma
+                padding-top: 4px;
+                cursor: default;
+            }
+        }
+        .tick {
+            background: var(--color-primary);
+            //! is 4x4 in figma but that's so tiny?
+            height: 4px;
+            width: 4px;
+            border-radius: 2px;
+        }
+        // .tick-label:last-child {
+        //     margin-left: 10px;
+        // }
+    }
 }
 
 .rux-slider {
-    display: flex;
+    // display: flex;
     height: 20px;
     :hover {
         cursor: pointer;

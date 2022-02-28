@@ -12271,6 +12271,7 @@ export namespace Components {
         "value"?: string;
     }
     interface RuxSlider {
+        "axisLabels": string[];
         /**
           * Determines if the slider is disabled.
          */
@@ -32469,6 +32470,7 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface RuxSlider {
+        "axisLabels"?: string[];
         /**
           * Determines if the slider is disabled.
          */

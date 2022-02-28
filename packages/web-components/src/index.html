@@ -18,5 +18,31 @@
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
-    <body></body>
+    <body>
+        <div style="padding: 5%">
+            <rux-slider
+                max="100"
+                min="0"
+                value="50"
+                step="25"
+                help-text="Help Text Here"
+            ></rux-slider>
+        </div>
+        <div style="padding: 5%; width: 400px">
+            <rux-slider
+                max="100"
+                min="0"
+                value="50"
+                step="25"
+                help-text="Help Text Here"
+            ></rux-slider>
+        </div>
+        <!-- <script>
+            const slider = document.querySelector('rux-slider')
+            slider.value="25"
+            slider.setAttribute('axis-labels', [
+                '0', '25', '50', '75', '100'
+            ] )
+        </script> -->
+    </body>
 </html>

@@ -49,6 +49,14 @@ export class RuxSlider implements FormFieldInterface {
      */
     @Prop({ mutable: true }) value: number =
         (this.max! - this.min!) / 2 + this.min!
+    //! hard coded for development
+    @Prop({ attribute: 'axis-labels' }) axisLabels: string[] = [
+        '0',
+        '25',
+        '50',
+        '75',
+        '100',
+    ]
     /**
      * Determines if the slider is disabled.
      */
@@ -205,7 +213,7 @@ export class RuxSlider implements FormFieldInterface {
         } = this
 
         renderHiddenInput(true, el, name, JSON.stringify(this.value), disabled)
-
+        console.log(this.axisLabels, 'ALL LABELS')
         return (
             <Host>
                 <div class="rux-form-field" part="form-field">
@@ -234,9 +242,27 @@ export class RuxSlider implements FormFieldInterface {
                             aria-disabled={disabled ? 'true' : 'false'}
                             onBlur={_onBlur}
                             part="input"
+                            list="steplist"
                         ></input>
+                        <datalist id="steplist">
+                            {/*
+                                    ? Can I get where the thumb will be at the break points? ie if 
+                                    ? going by step=25
+                                    */}
+                            {this.axisLabels?.map((label) => {
+                                console.log(label, 'LABEL')
+                                return (
+                                    <div class="tick-label">
+                                        <div class="tick"></div>
+                                        <option>{label}</option>
+                                    </div>
+                                )
+                            })}
+                        </datalist>
                     </div>
                 </div>
+                {/* br just for now */}
+                <br />
                 <FormFieldMessage
                     helpText={this.helpText}
                     errorText={this.errorText}
@@ -245,3 +271,12 @@ export class RuxSlider implements FormFieldInterface {
         )
     }
 }
+
+/*
+                            {
+                                this.axisLabels?.map(label => {
+                                    return <option>{label}</option>
+                                })
+                            }
+
+*/
