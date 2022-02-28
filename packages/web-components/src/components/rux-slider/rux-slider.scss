@@ -61,8 +61,11 @@
     #steplist {
         //! Curor is still pointer on these.
         cursor: default;
-        display: flex;
-        justify-content: space-between;
+        // display: flex;
+        // justify-content: space-between;
+        display: grid;
+        grid-auto-columns: 340px;
+        grid-row: 1;
         padding-bottom: 10px;
         // width: 101%;
 
