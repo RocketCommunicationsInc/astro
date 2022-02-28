@@ -59,22 +59,19 @@
         margin-bottom: var(--spacing-input-label-top);
     }
     #steplist {
-        //! Curor is still pointer on these.
         cursor: default;
-        // display: flex;
-        // justify-content: space-between;
         display: grid;
-        grid-auto-columns: 340px;
-        grid-row: 1;
-        padding-bottom: 10px;
-        // width: 101%;
+        // grid-auto-columns: 1fr;
+        // grid-template-columns: max-content;
+        // grid-template-columns: auto;
+        padding: 0 10px;
 
         .tick-label {
+            grid-row: 1;
+            width: 1%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            // padding-left: 10.75px;
-
             option {
                 // From figma
                 padding-top: 4px;
@@ -88,9 +85,9 @@
             width: 4px;
             border-radius: 2px;
         }
-        // .tick-label:last-child {
-        //     margin-left: 10px;
-        // }
+        .tick-label:first-child {
+            // margin-left: -3px;
+        }
     }
 }
 

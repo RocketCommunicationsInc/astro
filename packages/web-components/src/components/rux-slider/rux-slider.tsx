@@ -197,6 +197,11 @@ export class RuxSlider implements FormFieldInterface {
         this.hasLabelSlot = hasSlot(this.el, 'label')
     }
 
+    private _getTickWidths() {
+        const dif = this.max / (this.axisLabels.length - 1)
+        return dif
+    }
+
     render() {
         const {
             el,
@@ -213,7 +218,7 @@ export class RuxSlider implements FormFieldInterface {
         } = this
 
         renderHiddenInput(true, el, name, JSON.stringify(this.value), disabled)
-        console.log(this.axisLabels, 'ALL LABELS')
+        this._getTickWidths()
         return (
             <Host>
                 <div class="rux-form-field" part="form-field">
@@ -244,13 +249,17 @@ export class RuxSlider implements FormFieldInterface {
                             part="input"
                             list="steplist"
                         ></input>
-                        <datalist id="steplist">
-                            {/*
-                                    ? Can I get where the thumb will be at the break points? ie if 
-                                    ? going by step=25
-                                    */}
+
+                        <datalist
+                            id="steplist"
+                            style={{
+                                gridTemplateColumns: `[tick] repeat(${
+                                    this.axisLabels.length - 1
+                                }, ${this._getTickWidths()}%)`,
+                            }}
+                        >
+                            {/* 0, 25, 50, 75, 100 */}
                             {this.axisLabels?.map((label) => {
-                                console.log(label, 'LABEL')
                                 return (
                                     <div class="tick-label">
                                         <div class="tick"></div>
@@ -273,10 +282,11 @@ export class RuxSlider implements FormFieldInterface {
 }
 
 /*
-                            {
-                                this.axisLabels?.map(label => {
-                                    return <option>{label}</option>
-                                })
-                            }
+                                return (
+                                    <div class="tick-label">
+                                        <div class="tick"></div>
+                                        <option>{label}</option>
+                                    </div>
+                                )
 
 */
