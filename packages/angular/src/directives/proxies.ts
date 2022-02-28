@@ -20378,13 +20378,13 @@ export class RuxMonitoringProgressIcon {
 
 export declare interface RuxNotification extends Components.RuxNotification {}
 @ProxyCmp({
-  inputs: ['closeAfter', 'message', 'open', 'status']
+  inputs: ['closeAfter', 'message', 'open', 'small', 'status']
 })
 @Component({
   selector: 'rux-notification',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['closeAfter', 'message', 'open', 'status'],
+  inputs: ['closeAfter', 'message', 'open', 'small', 'status'],
   outputs: ['ruxclosed']
 })
 export class RuxNotification {
@@ -20559,13 +20559,13 @@ export class RuxRadioGroup {
 
 export declare interface RuxSegmentedButton extends Components.RuxSegmentedButton {}
 @ProxyCmp({
-  inputs: ['data', 'selected']
+  inputs: ['data', 'selected', 'size']
 })
 @Component({
   selector: 'rux-segmented-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['data', 'selected'],
+  inputs: ['data', 'selected', 'size'],
   outputs: ['ruxchange']
 })
 export class RuxSegmentedButton {

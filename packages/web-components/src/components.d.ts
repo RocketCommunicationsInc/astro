@@ -12227,6 +12227,10 @@ export namespace Components {
           * When passed in on load, this selects the first button segment with a matching label. When the selected segment changes, this property updates with the currently selected value, which reflects back to the component attribute. If no button segment label matches this string, then no segment is selected. This value takes priority over setting selected boolean property on the items in the data array.
          */
         "selected": string;
+        /**
+          * Changes size of segmented button from medium to small or large by setting sizing classes rux-segmented-button--small rux-segmented-button--large
+         */
+        "size"?: 'small' | 'medium' | 'large';
     }
     interface RuxSelect {
         /**
@@ -32417,6 +32421,10 @@ declare namespace LocalJSX {
           * When passed in on load, this selects the first button segment with a matching label. When the selected segment changes, this property updates with the currently selected value, which reflects back to the component attribute. If no button segment label matches this string, then no segment is selected. This value takes priority over setting selected boolean property on the items in the data array.
          */
         "selected"?: string;
+        /**
+          * Changes size of segmented button from medium to small or large by setting sizing classes rux-segmented-button--small rux-segmented-button--large
+         */
+        "size"?: 'small' | 'medium' | 'large';
     }
     interface RuxSelect {
         /**
