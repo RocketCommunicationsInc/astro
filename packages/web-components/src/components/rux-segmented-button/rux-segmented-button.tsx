@@ -31,9 +31,7 @@ export class RuxSegmentedButton {
     @Prop({ reflect: true, mutable: true }) selected: string = ''
 
     /**
-     * Changes size of segmented button from medium to small or large by setting sizing classes
-     * rux-segmented-button--small
-     * rux-segmented-button--large
+     * Changes size of segmented button from small to medium or large.
      */
     @Prop({ reflect: true }) size?: 'small' | 'medium' | 'large'
 

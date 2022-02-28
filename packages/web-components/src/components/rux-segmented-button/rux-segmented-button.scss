@@ -52,7 +52,7 @@
 .rux-segmented-button {
     display: inline-flex;
     // Default is small for 6.0 - will update default to be medium in 7.0
-    height: 26px;
+    height: 1.625rem;
     overflow: hidden;
     padding: 0;
     margin: 0;
@@ -60,10 +60,10 @@
     border-radius: var(--segmented-button-border-radius);
     background-color: var(--segmented-button-background-color);
     &--large {
-        height: 46px;
+        height: 2.875rem;
     }
     &--medium {
-        height: 34px;
+        height: 2.125rem;
     }
 }
 
@@ -116,16 +116,16 @@
     }
     .rux-segmented-button-label {
         // Defaults to small in 6.0 - will default to medium in 7
-        height: 26px;
-        padding: 3.5px 1rem;
+        height: 1.625rem;
+        padding: 0.219rem 1rem; // 16px
 
         &--large {
-            height: 46px;
-            padding: 13.5px 1rem;
+            height: 2.875rem;
+            padding: 0.844rem 1rem; //13.5px 16px
         }
         &--medium {
-            height: 34px;
-            padding: 7.5px 1rem;
+            height: 2.125rem;
+            padding: 0.469rem 1rem; //7.5px 16px
         }
     }
 
