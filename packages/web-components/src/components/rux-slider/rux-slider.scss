@@ -43,7 +43,6 @@
     display: flex;
     flex-grow: 1;
     flex-flow: column;
-    // cursor: pointer;
 }
 
 .hidden,
@@ -54,7 +53,7 @@
 .rux-form-field {
     display: flex;
     flex-direction: column;
-    padding-bottom: 10px;
+    padding-bottom: 2rem; //! this so help/error text doesn't overlap with tick labels
 
     label {
         margin-bottom: var(--spacing-input-label-top);
@@ -62,10 +61,6 @@
     #steplist {
         cursor: default;
         display: grid;
-        // grid-auto-columns: 1fr;
-        // grid-template-columns: max-content;
-        // grid-template-columns: auto;
-        // padding: 0 10px;
         //? 9.5 is half the size of the thumb, 19px
         padding: 0 9.5px;
 
@@ -84,24 +79,17 @@
         }
         .tick {
             background: var(--color-primary);
-            //! is 4x4 in figma but that's so tiny?
             height: 4px;
             width: 4px;
             border-radius: 2px;
         }
         .tick-label:not(:first-child):not(:last-child) {
-            // margin-left: -3px;
             padding: 0;
-            // + .tick-label:not(:last-child){
-            //     counter-increment: margin-counter;
-            //     margin-left: calc(margin-counter + 1px);
-            // }
         }
     }
 }
 
 .rux-slider {
-    // display: flex;
     height: 20px;
     :hover {
         cursor: pointer;

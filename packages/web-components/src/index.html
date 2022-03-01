@@ -33,14 +33,16 @@
         <rux-button id="quarters">Quarters</rux-button>
         <rux-button id="tens">Tens</rux-button>
         <rux-button id="ends">Ends</rux-button>
+
         <br />
         <rux-switch id="step" label="Step"></rux-switch>
         <rux-switch id="small" label="Small"></rux-switch>
-        <h4>Smaller version</h4>
-        <div style="padding: 5%; width: 400px">
+
+        <div style="padding: 5%">
             <rux-slider
-                max="100"
-                min="0"
+                id="negative-slider"
+                max="60"
+                min="-60"
                 value="0"
                 step="1"
                 help-text="Help Text Here"
@@ -52,6 +54,12 @@
             const small = document.getElementById('small')
             const contaienr = document.getElementById('container')
             const btns = document.querySelectorAll('rux-button')
+
+            const negSlider = document.getElementById('negative-slider')
+            negSlider.addEventListener('ruxinput', (e) => {
+                console.log(e.target.value, 'neg slider value')
+            })
+            negSlider.axisLabels = ['-60', '-30', '0', '30', '60']
 
             slider.addEventListener('ruxinput', (e) => {
                 console.log(e.target.value, 'actual slider value')

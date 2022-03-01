@@ -194,8 +194,10 @@ export class RuxSlider implements FormFieldInterface {
     }
 
     private _getTickWidths() {
-        const dif = this.max / (this.axisLabels.length - 1)
-        // console.log(dif, 'Width of columns in percent')
+        // * We're dealing with percents of the whole slider - don't need the max, just need to
+        // * identify what percent each chunck is of the grid. So use 100
+        const dif = 100 / (this.axisLabels.length - 1)
+
         return dif
     }
 
@@ -267,8 +269,7 @@ export class RuxSlider implements FormFieldInterface {
                         </datalist>
                     </div>
                 </div>
-                {/* br just for now */}
-                <br />
+
                 <FormFieldMessage
                     helpText={this.helpText}
                     errorText={this.errorText}
