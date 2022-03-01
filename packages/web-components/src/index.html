@@ -33,6 +33,7 @@
         <rux-button id="quarters">Quarters</rux-button>
         <rux-button id="tens">Tens</rux-button>
         <rux-button id="ends">Ends</rux-button>
+        <rux-button id="odd">Odd</rux-button>
 
         <br />
         <rux-switch id="step" label="Step"></rux-switch>
@@ -95,12 +96,14 @@
                 '100',
             ]
             let ends = ['0', '100']
+            let odd = ['25', '50', '75', '100']
 
             let obj = {
                 halves: halves,
                 quarters: quarters,
                 tens: tens,
                 ends: ends,
+                odd: odd,
             }
             btns.forEach((btn) => {
                 btn.addEventListener('click', (e) => {

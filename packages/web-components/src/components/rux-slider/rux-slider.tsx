@@ -269,7 +269,6 @@ export class RuxSlider implements FormFieldInterface {
                         </datalist>
                     </div>
                 </div>
-
                 <FormFieldMessage
                     helpText={this.helpText}
                     errorText={this.errorText}
