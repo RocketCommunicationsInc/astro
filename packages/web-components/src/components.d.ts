@@ -12284,7 +12284,6 @@ export namespace Components {
           * The help or explanation text
          */
         "helpText"?: string;
-        "includeTicks": boolean;
         /**
           * The slider label text. For HTML content, use the `label` slot instead.
          */
@@ -12305,6 +12304,7 @@ export namespace Components {
           * Step amount of slider value.
          */
         "step": number;
+        "ticksOnly": boolean;
         /**
           * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
          */
@@ -32484,7 +32484,6 @@ declare namespace LocalJSX {
           * The help or explanation text
          */
         "helpText"?: string;
-        "includeTicks"?: boolean;
         /**
           * The slider label text. For HTML content, use the `label` slot instead.
          */
@@ -32513,6 +32512,7 @@ declare namespace LocalJSX {
           * Step amount of slider value.
          */
         "step"?: number;
+        "ticksOnly"?: boolean;
         /**
           * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
          */

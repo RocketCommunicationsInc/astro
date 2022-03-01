@@ -19,30 +19,86 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
     <body>
-        <div style="padding: 5%">
+        <div style="padding: 5%" id="container">
             <rux-slider
+                id="slider"
                 max="100"
                 min="0"
                 value="0"
-                step="25"
+                step="1"
                 help-text="Help Text Here"
             ></rux-slider>
         </div>
+        <rux-button id="halves">Halves</rux-button>
+        <rux-button id="quarters">Quarters</rux-button>
+        <rux-button id="tens">Tens</rux-button>
+        <rux-button id="ends">Ends</rux-button>
+        <br />
+        <rux-switch id="step" label="Step"></rux-switch>
+        <rux-switch id="small" label="Small"></rux-switch>
+        <h4>Smaller version</h4>
         <div style="padding: 5%; width: 400px">
             <rux-slider
                 max="100"
                 min="0"
                 value="0"
-                step="25"
+                step="1"
                 help-text="Help Text Here"
             ></rux-slider>
         </div>
-        <!-- <script>
+        <script>
             const slider = document.querySelector('rux-slider')
-            slider.value="25"
-            slider.setAttribute('axis-labels', [
-                '0', '25', '50', '75', '100'
-            ] )
-        </script> -->
+            const step = document.querySelector('rux-switch')
+            const small = document.getElementById('small')
+            const contaienr = document.getElementById('container')
+            const btns = document.querySelectorAll('rux-button')
+
+            slider.addEventListener('ruxinput', (e) => {
+                console.log(e.target.value, 'actual slider value')
+            })
+            step.addEventListener('click', () => {
+                if (step.checked) {
+                    console.log('checked')
+                    slider.step = 1
+                } else {
+                    console.log('not checked')
+                    slider.step = 25
+                }
+            })
+            small.addEventListener('click', () => {
+                small.checked
+                    ? (container.style.width = '100%')
+                    : (container.style.width = '40%')
+            })
+            // slider.value="25"
+            let halves = ['0', '50', '100']
+            let quarters = ['0', '25', '50', '75', '100']
+            let tens = [
+                '0',
+                '10',
+                '20',
+                '30',
+                '40',
+                '50',
+                '60',
+                '70',
+                '80',
+                '90',
+                '100',
+            ]
+            let ends = ['0', '100']
+
+            let obj = {
+                halves: halves,
+                quarters: quarters,
+                tens: tens,
+                ends: ends,
+            }
+            btns.forEach((btn) => {
+                btn.addEventListener('click', (e) => {
+                    slider.axisLabels = obj[e.target.id]
+                })
+            })
+        </script>
     </body>
 </html>

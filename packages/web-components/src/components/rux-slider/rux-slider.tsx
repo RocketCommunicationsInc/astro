@@ -50,16 +50,9 @@ export class RuxSlider implements FormFieldInterface {
     @Prop({ mutable: true }) value: number =
         (this.max! - this.min!) / 2 + this.min!
 
-    @Prop({ attribute: 'include-ticks' }) includeTicks: boolean = false
+    @Prop({ attribute: 'ticks-only' }) ticksOnly: boolean = false
 
-    //! hard coded for development
-    @Prop({ attribute: 'axis-labels' }) axisLabels: string[] = [
-        '0',
-        '25',
-        '50',
-        '75',
-        '100',
-    ]
+    @Prop({ attribute: 'axis-labels' }) axisLabels: string[] = []
     /**
      * Determines if the slider is disabled.
      */
@@ -202,7 +195,7 @@ export class RuxSlider implements FormFieldInterface {
 
     private _getTickWidths() {
         const dif = this.max / (this.axisLabels.length - 1)
-        console.log(dif, 'Width of columns in percent')
+        // console.log(dif, 'Width of columns in percent')
         return dif
     }
 
@@ -261,12 +254,13 @@ export class RuxSlider implements FormFieldInterface {
                                 }, ${this._getTickWidths()}%)`,
                             }}
                         >
-                            {/* 0, 25, 50, 75, 100 */}
                             {this.axisLabels?.map((label) => {
                                 return (
                                     <div class="tick-label">
                                         <div class="tick"></div>
-                                        <option>{label}</option>
+                                        {this.ticksOnly ? null : (
+                                            <option>{label}</option>
+                                        )}
                                     </div>
                                 )
                             })}
