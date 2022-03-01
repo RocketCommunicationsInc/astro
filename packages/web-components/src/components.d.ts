@@ -12284,6 +12284,7 @@ export namespace Components {
           * The help or explanation text
          */
         "helpText"?: string;
+        "includeTicks": boolean;
         /**
           * The slider label text. For HTML content, use the `label` slot instead.
          */
@@ -32483,6 +32484,7 @@ declare namespace LocalJSX {
           * The help or explanation text
          */
         "helpText"?: string;
+        "includeTicks"?: boolean;
         /**
           * The slider label text. For HTML content, use the `label` slot instead.
          */

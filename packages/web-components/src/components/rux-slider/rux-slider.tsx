@@ -49,6 +49,9 @@ export class RuxSlider implements FormFieldInterface {
      */
     @Prop({ mutable: true }) value: number =
         (this.max! - this.min!) / 2 + this.min!
+
+    @Prop({ attribute: 'include-ticks' }) includeTicks: boolean = false
+
     //! hard coded for development
     @Prop({ attribute: 'axis-labels' }) axisLabels: string[] = [
         '0',
@@ -199,6 +202,7 @@ export class RuxSlider implements FormFieldInterface {
 
     private _getTickWidths() {
         const dif = this.max / (this.axisLabels.length - 1)
+        console.log(dif, 'Width of columns in percent')
         return dif
     }
 
@@ -218,7 +222,6 @@ export class RuxSlider implements FormFieldInterface {
         } = this
 
         renderHiddenInput(true, el, name, JSON.stringify(this.value), disabled)
-        this._getTickWidths()
         return (
             <Host>
                 <div class="rux-form-field" part="form-field">

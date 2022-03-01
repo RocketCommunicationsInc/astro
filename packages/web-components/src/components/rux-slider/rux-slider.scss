@@ -64,11 +64,13 @@
         // grid-auto-columns: 1fr;
         // grid-template-columns: max-content;
         // grid-template-columns: auto;
-        padding: 0 10px;
+        // padding: 0 10px;
+        //? 9.5 is half the size of the thumb, 19px
+        padding: 0 9.5px;
 
         .tick-label {
             grid-row: 1;
-            width: 1%;
+            width: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -85,8 +87,13 @@
             width: 4px;
             border-radius: 2px;
         }
-        .tick-label:first-child {
+        .tick-label:not(:first-child):not(:last-child) {
             // margin-left: -3px;
+            padding: 0;
+            // + .tick-label:not(:last-child){
+            //     counter-increment: margin-counter;
+            //     margin-left: calc(margin-counter + 1px);
+            // }
         }
     }
 }
