@@ -1,5 +1,13 @@
 # @astrouxds/react
 
+## 0.0.0-timeline-alpha.2-20220302214256
+
+### Patch Changes
+
+- time region props
+- Updated dependencies
+  - @astrouxds/astro-web-components@0.0.0-timeline-alpha.2-20220302214256
+
 ## 6.1.0
 
 ### Minor Changes
