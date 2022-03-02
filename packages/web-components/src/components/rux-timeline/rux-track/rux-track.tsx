@@ -12,7 +12,6 @@ interface DateValidation {
 })
 export class RuxTrack {
     @Element() el!: HTMLRuxTrackElement
-    @State() timelineColumns = 0
 
     @Prop({ reflect: true }) width = 0
     @Prop({ reflect: true }) columns = 0
@@ -39,20 +38,6 @@ export class RuxTrack {
 
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
-    }
-
-    componentWillLoad() {
-        const timeline = this.el.closest('rux-timeline')
-
-        // this.timelineStart = timeline?.start
-        // this.interval = timeline?.interval
-        // console.log('timelinestart', this.timelineStart);
-
-        // this.initializeRows()
-
-        timeline?.fetchColumns().then((r) => {
-            this.timelineColumns = r
-        })
     }
 
     calculateGridColumnFromTime(time: any) {
@@ -165,7 +150,7 @@ export class RuxTrack {
     renderDebug() {
         return (
             <div style={{ display: 'contents' }}>
-                {[...Array(this.timelineColumns)].map((_: any, i: any) => (
+                {[...Array(this.columns)].map((_: any, i: any) => (
                     <div
                         style={{
                             gridRow: '1',

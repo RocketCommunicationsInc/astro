@@ -1,13 +1,4 @@
-import {
-    Watch,
-    Element,
-    State,
-    Method,
-    Component,
-    Host,
-    h,
-    Prop,
-} from '@stencil/core'
+import { Watch, Element, State, Component, Host, h, Prop } from '@stencil/core'
 import {
     // addHours,
     // addMinutes,
@@ -317,15 +308,6 @@ export class RuxTimeline {
         if (this.zoom >= 1) {
             this.columnWidth = this.zoom * unitOfTime
         }
-    }
-
-    @Method()
-    async fetchColumns() {
-        /**
-         * #TODO Temp
-         * Used for debugging only so that rux-track can know how many debug cells to render.
-         */
-        return this.columns
     }
 
     _handleScroll() {

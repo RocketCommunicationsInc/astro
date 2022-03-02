@@ -5,16 +5,22 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                  | Default |
-| -------- | --------- | ----------- | --------------------- | ------- |
-| `track`  | `track`   | the id      | `number \| undefined` | `0`     |
+| Property        | Attribute        | Description | Type     | Default     |
+| --------------- | ---------------- | ----------- | -------- | ----------- |
+| `columns`       | `columns`        |             | `number` | `0`         |
+| `end`           | `end`            |             | `any`    | `undefined` |
+| `interval`      | `interval`       |             | `any`    | `undefined` |
+| `start`         | `start`          |             | `any`    | `undefined` |
+| `timelineStart` | `timeline-start` |             | `any`    | `undefined` |
+| `width`         | `width`          |             | `number` | `0`         |
 
 
 ## Shadow Parts
 
-| Part     | Description |
-| -------- | ----------- |
-| `"cell"` |             |
+| Part          | Description |
+| ------------- | ----------- |
+| `"cell"`      |             |
+| `"container"` |             |
 
 
 ----------------------------------------------

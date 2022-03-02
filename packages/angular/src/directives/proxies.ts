@@ -20242,13 +20242,13 @@ export class RuxRadioGroup {
 
 export declare interface RuxRuler extends Components.RuxRuler {}
 @ProxyCmp({
-  inputs: ["endDate", "interval", "intervalIncrement", "startDate", "track"],
+  inputs: ["endDate", "interval", "startDate", "track"],
 })
 @Component({
   selector: "rux-ruler",
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: "<ng-content></ng-content>",
-  inputs: ["endDate", "interval", "intervalIncrement", "startDate", "track"],
+  inputs: ["endDate", "interval", "startDate", "track"],
 })
 export class RuxRuler {
   protected el: HTMLElement;
@@ -20655,29 +20655,13 @@ export class RuxTextarea {
 
 export declare interface RuxTimeRegion extends Components.RuxTimeRegion {}
 @ProxyCmp({
-  inputs: [
-    "end",
-    "interval",
-    "label",
-    "ratio",
-    "start",
-    "timelineStart",
-    "track",
-  ],
+  inputs: ["end", "hideTimestamp", "selected", "start", "status"],
 })
 @Component({
   selector: "rux-time-region",
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: "<ng-content></ng-content>",
-  inputs: [
-    "end",
-    "interval",
-    "label",
-    "ratio",
-    "start",
-    "timelineStart",
-    "track",
-  ],
+  inputs: ["end", "hideTimestamp", "selected", "start", "status"],
 })
 export class RuxTimeRegion {
   protected el: HTMLElement;
@@ -20689,14 +20673,13 @@ export class RuxTimeRegion {
 
 export declare interface RuxTimeline extends Components.RuxTimeline {}
 @ProxyCmp({
-  inputs: ["end", "interval", "position", "start", "zoom"],
-  methods: ["fetchColumns"],
+  inputs: ["end", "interval", "playhead", "start", "zoom"],
 })
 @Component({
   selector: "rux-timeline",
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: "<ng-content></ng-content>",
-  inputs: ["end", "interval", "position", "start", "zoom"],
+  inputs: ["end", "interval", "playhead", "start", "zoom"],
 })
 export class RuxTimeline {
   protected el: HTMLElement;
@@ -20708,13 +20691,13 @@ export class RuxTimeline {
 
 export declare interface RuxTrack extends Components.RuxTrack {}
 @ProxyCmp({
-  inputs: ["track"],
+  inputs: ["columns", "end", "interval", "start", "timelineStart", "width"],
 })
 @Component({
   selector: "rux-track",
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: "<ng-content></ng-content>",
-  inputs: ["track"],
+  inputs: ["columns", "end", "interval", "start", "timelineStart", "width"],
 })
 export class RuxTrack {
   protected el: HTMLElement;

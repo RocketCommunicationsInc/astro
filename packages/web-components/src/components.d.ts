@@ -7156,7 +7156,6 @@ export namespace Components {
          * The timeline's end date. Must be an ISO string "2021-02-02T05:00:00Z"
          */
         end: string
-        fetchColumns: () => Promise<number>
         /**
          * The timeline's date time interval
          */
