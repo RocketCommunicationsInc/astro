@@ -32,6 +32,15 @@ body {
 
     background-color: var(--color-background);
     scrollbar-color: var(--color-active);
+
+    a {
+        text-decoration: none;
+        color: var(--color-primary);
+    }
+    a:hover {
+        text-decoration: underline;
+        color: var(--color-hover);
+    }
 }
 
 label {
