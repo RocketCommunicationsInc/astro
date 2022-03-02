@@ -111,7 +111,7 @@
             padding: 0;
         }
         :disabled {
-            opacity: 40%;
+            opacity: var(--disabled-opacity);
         }
     }
 }

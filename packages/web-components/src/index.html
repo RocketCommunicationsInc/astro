@@ -27,9 +27,9 @@
                 value="0"
                 step="1"
                 help-text="Help Text Here"
-                disabled
             ></rux-slider>
         </div>
+        <a href="#">Just a link</a>
         <rux-button id="halves">Halves</rux-button>
         <rux-button id="quarters">Quarters</rux-button>
         <rux-button id="tens">Tens</rux-button>
@@ -39,6 +39,7 @@
         <br />
         <rux-switch id="step" label="Step"></rux-switch>
         <rux-switch id="small" label="Small"></rux-switch>
+        <rux-switch id="dis" label="Disable"></rux-switch>
 
         <div style="padding: 5%">
             <rux-slider
@@ -48,13 +49,13 @@
                 value="0"
                 step="1"
                 help-text="Help Text Here"
-                disabled
             ></rux-slider>
         </div>
         <script>
             const slider = document.querySelector('rux-slider')
             const step = document.querySelector('rux-switch')
             const small = document.getElementById('small')
+            const dis = document.getElementById('dis')
             const contaienr = document.getElementById('container')
             const btns = document.querySelectorAll('rux-button')
 
@@ -81,6 +82,15 @@
                     ? (container.style.width = '100%')
                     : (container.style.width = '40%')
             })
+
+            dis.addEventListener('click', () => {
+                console.log('disabled.checked?', dis.checked)
+
+                dis.checked
+                    ? (slider.disabled = true)
+                    : (slider.disabled = false)
+            })
+
             // slider.value="25"
             let halves = ['0', '50', '100']
             let quarters = ['0', '25', '50', '75', '100']
