@@ -1,5 +1,24 @@
 # @astrouxds/react
 
+## 6.3.0
+
+### Minor Changes
+
+- 57189154: Added a 'small' prop to rux-notification allowing for a smaller variant. Updated the padding around message and icon.
+- 5463ecda: Adds size prop to rux-segmented-button, which accepts small, medium or large. Updates hover state styling.
+
+### Patch Changes
+
+- 563076f5: Adds hover state styling to Push Button
+- 1621ede5: Updates the min height and width on rux-monitiong-icon to match design.
+- c22707a1: Changed the overall size of rux-status symbol to be 12px.
+- Updated dependencies [57189154]
+- Updated dependencies [5463ecda]
+- Updated dependencies [563076f5]
+- Updated dependencies [1621ede5]
+- Updated dependencies [c22707a1]
+  - @astrouxds/astro-web-components@6.3.0
+
 ## 6.2.0
 
 ### Minor Changes
