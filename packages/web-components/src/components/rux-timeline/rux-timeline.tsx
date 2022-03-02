@@ -36,6 +36,7 @@ export class RuxTimeline {
     @State() playheadPositionInPixels = 200
     @State() columnWidth = 120
     @State() playheadHeight = 0
+    @State() showPlayhead = true
 
     /**
      * The timeline's start date. Must be an ISO string "2021-02-02T05:00:00Z"
@@ -55,17 +56,17 @@ export class RuxTimeline {
     /**
      * The timeline's playhead date time. Must be an ISO string "2021-02-02T05:00:00Z"
      */
-    @Prop({ reflect: true, mutable: true }) position?: string
+    @Prop({ reflect: true, mutable: true }) playhead?: string
 
     /**
      * The timeline's date time interval
      */
     @Prop() interval: 'hour' | 'day' = 'hour'
 
-    @Watch('position')
+    @Watch('playhead')
     syncPlayhead() {
-        if (this.position) {
-            const time = this._calculatePlayheadFromTime(this.position)
+        if (this.playhead) {
+            const time = this._calculatePlayheadFromTime(this.playhead)
             if (time) {
                 this.playheadPositionInPixels = time
             }
@@ -139,8 +140,8 @@ export class RuxTimeline {
     }
 
     get formattedCurrentTime() {
-        if (this.position) {
-            return format(new Date(this.position), 'MM/dd/Y HH:mm:ss')
+        if (this.playhead) {
+            return format(new Date(this.playhead), 'MM/dd/Y HH:mm:ss')
         } else {
             return null
         }
@@ -232,7 +233,7 @@ export class RuxTimeline {
         if (position >= 200) {
             // this.playheadPositionInPixels = position - scrollOffset
             // const time = this._calculateTimeFromPlayhead(position)
-            // this.position = time.toISOString()
+            // this.playhead = time.toISOString()
         }
     }
 
@@ -333,6 +334,11 @@ export class RuxTimeline {
             ? this.timelineContainer?.scrollTop
             : 0
         this.playheadHeight = scrollOffset
+
+        const leftOffset = this.timelineContainer
+            ? this.timelineContainer?.scrollLeft
+            : 0
+        this.showPlayhead = leftOffset + 200 <= this.playheadPositionInPixels
     }
 
     render() {
@@ -346,9 +352,12 @@ export class RuxTimeline {
                         ref={(el) => (this.timelineContainer = el)}
                         part="time-region-container"
                     >
-                        {this.position && (
+                        {this.playhead && (
                             <div
-                                class="rux-playhead"
+                                class={{
+                                    'rux-playhead': true,
+                                    hidden: !this.showPlayhead,
+                                }}
                                 part="playhead"
                                 style={{
                                     top: `${this.playheadHeight}px`,

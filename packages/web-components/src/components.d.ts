@@ -7164,7 +7164,7 @@ export namespace Components {
         /**
          * The timeline's playhead date time. Must be an ISO string "2021-02-02T05:00:00Z"
          */
-        position?: string
+        playhead?: string
         /**
          * The timeline's start date. Must be an ISO string "2021-02-02T05:00:00Z"
          */
@@ -23283,7 +23283,7 @@ declare namespace LocalJSX {
         /**
          * The timeline's playhead date time. Must be an ISO string "2021-02-02T05:00:00Z"
          */
-        position?: string
+        playhead?: string
         /**
          * The timeline's start date. Must be an ISO string "2021-02-02T05:00:00Z"
          */

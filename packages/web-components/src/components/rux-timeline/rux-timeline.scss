@@ -3,9 +3,6 @@
     ::-webkit-scrollbar {
         width: 16px;
         height: 16px;
-        // // margin-left: -20px;
-        // background-color: transparent;
-        border: 2px solid red;
     }
 
     ::-webkit-scrollbar-thumb {
@@ -37,7 +34,6 @@
         //     var(--color-surface) 200px 100%
         // );
         background: var(--color-surface);
-        // background-color: var(--color-surface, rgb(27, 45, 62));
     }
 
     ::-webkit-scrollbar-track:vertical {
@@ -50,42 +46,12 @@
 }
 
 .rux-timeline {
-    // scrollbar-color: var(--color-active);
-    // overflow: auto;
-    // position: relative;
-    // display: grid;
-    // grid-template-rows: auto;
-    // background: var(--color-surface);
     display: flex;
     flex-direction: column;
     overflow-x: auto;
     position: relative;
     max-height: 300px;
 }
-
-// .rux-playhead {
-//     width: 5px;
-//     //   grid-row: 1 / 5;
-//     //   grid-column: time-0000 / time-2359;
-
-//     background: var(--color-primary);
-//     z-index: 10;
-
-//     height: 100%;
-//     position: absolute;
-//     top: 0;
-//     // left: 200px;
-//     &:after {
-//         width: 0;
-//         height: 0;
-//         border-left: 12px solid transparent;
-//         border-right: 12px solid transparent;
-//         border-top: 12px solid var(--color-primary);
-//         content: '';
-//         position: absolute;
-//         left: -9.5px;
-//     }
-// }
 
 .hidden {
     display: none;
@@ -137,12 +103,10 @@
         border-top: 12px solid var(--color-primary);
         content: '';
         position: absolute;
-        left: -10.3px;
+        left: -10.9px;
     }
 }
 
-.events {
-}
 .ruler {
     position: sticky;
     bottom: 0;
@@ -157,7 +121,6 @@
     display: flex;
     align-items: center;
     padding: 12px 20px;
-    // background: red;
 }
 
 #rulerTrack::part(container) {
