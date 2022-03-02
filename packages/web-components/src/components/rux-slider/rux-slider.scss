@@ -53,13 +53,37 @@
 .rux-form-field {
     display: flex;
     flex-direction: column;
-    padding-bottom: 2rem; //! this so help/error text doesn't overlap with tick labels
-
     label {
         margin-bottom: var(--spacing-input-label-top);
     }
+}
+
+.rux-slider {
+    height: 20px;
+    :hover {
+        cursor: pointer;
+    }
+    :disabled {
+        cursor: not-allowed;
+    }
+
+    padding-bottom: 2rem; //! this so help/error text doesn't overlap with tick labels - will need this to not be there by default
+
+    .rux-range:disabled + #steplist {
+        opacity: var(--disabled-opacity);
+        cursor: not-allowed;
+        .tick {
+            cursor: not-allowed;
+        }
+        .tick-label {
+            option {
+                cursor: not-allowed;
+            }
+        }
+    }
+
     #steplist {
-        cursor: default;
+        // cursor: default;
         display: grid;
         //? 9.5 is half the size of the thumb, 19px
         padding: 0 9.5px;
@@ -86,16 +110,9 @@
         .tick-label:not(:first-child):not(:last-child) {
             padding: 0;
         }
-    }
-}
-
-.rux-slider {
-    height: 20px;
-    :hover {
-        cursor: pointer;
-    }
-    :disabled {
-        cursor: not-allowed;
+        :disabled {
+            opacity: 40%;
+        }
     }
 }
 
