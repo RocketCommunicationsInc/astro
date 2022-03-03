@@ -22,6 +22,9 @@ let id = 0
  * @part help-text - The help text element
  * @part input - The input element
  * @part label - The input label when `label` prop is set
+ * @part tick-container - The container of the tick mark and axis-label
+ * @part tick - the tick mark
+ * @part axis-label - the axis label
  */
 @Component({
     tag: 'rux-slider',
@@ -258,10 +261,15 @@ export class RuxSlider implements FormFieldInterface {
                         >
                             {this.axisLabels?.map((label) => {
                                 return (
-                                    <div class="tick-label">
-                                        <div class="tick"></div>
+                                    <div
+                                        class="tick-label"
+                                        part="tick-container"
+                                    >
+                                        <div class="tick" part="tick"></div>
                                         {this.ticksOnly ? null : (
-                                            <option>{label}</option>
+                                            <option part="axis-label">
+                                                {label}
+                                            </option>
                                         )}
                                     </div>
                                 )
