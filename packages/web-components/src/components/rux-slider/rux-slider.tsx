@@ -186,9 +186,11 @@ export class RuxSlider implements FormFieldInterface {
         this.ruxBlur.emit()
     }
     //Safari needs 0px top for the thumb to look normal.
+    //Safari needs differnet padding on ticks.
     private _getBrowser(ua: string) {
         if (ua.indexOf('safari') > -1 && ua.indexOf('chrome') == -1) {
             this.el.style.setProperty('--slider-top', '0px')
+            this.el.style.setProperty('--slider-tick-padding-top', '7px')
         }
     }
 
@@ -197,11 +199,8 @@ export class RuxSlider implements FormFieldInterface {
     }
 
     private _getTickWidths() {
-        // * We're dealing with percents of the whole slider - don't need the max, just need to
-        // * identify what percent each chunck is of the grid. So use 100
-        const dif = 100 / (this.axisLabels.length - 1)
-
-        return dif
+        const width = 100 / (this.axisLabels.length - 1)
+        return width
     }
 
     render() {
@@ -250,31 +249,35 @@ export class RuxSlider implements FormFieldInterface {
                             part="input"
                             list="steplist"
                         ></input>
-
-                        <datalist
-                            id="steplist"
-                            style={{
-                                gridTemplateColumns: `[tick] repeat(${
-                                    this.axisLabels.length - 1
-                                }, ${this._getTickWidths()}%)`,
-                            }}
-                        >
-                            {this.axisLabels?.map((label) => {
-                                return (
-                                    <div
-                                        class="tick-label"
-                                        part="tick-container"
-                                    >
-                                        <div class="tick" part="tick"></div>
-                                        {this.ticksOnly ? null : (
-                                            <option part="axis-label">
-                                                {label}
-                                            </option>
-                                        )}
-                                    </div>
-                                )
-                            })}
-                        </datalist>
+                        {this.axisLabels.length > 0 ? (
+                            <datalist
+                                id="steplist"
+                                style={{
+                                    gridTemplateColumns: `[tick] repeat(${
+                                        this.axisLabels.length - 1
+                                    }, ${this._getTickWidths()}%)`,
+                                }}
+                            >
+                                {this.axisLabels.map((label) => {
+                                    return (
+                                        <div
+                                            class="tick-label"
+                                            part="tick-container"
+                                        >
+                                            <div class="tick" part="tick"></div>
+                                            {this.ticksOnly ? null : (
+                                                <div
+                                                    class="axis-label"
+                                                    part="axis-label"
+                                                >
+                                                    {label}
+                                                </div>
+                                            )}
+                                        </div>
+                                    )
+                                })}
+                            </datalist>
+                        ) : null}
                     </div>
                 </div>
                 <FormFieldMessage

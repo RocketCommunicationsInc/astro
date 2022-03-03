@@ -40,6 +40,8 @@
     /** @prop --slider-track-before-thumb-height: the slider track before thumb height */
     --slider-track-before-thumb-height: 5px;
 
+    --slider-tick-padding-top: 0px;
+
     display: flex;
     flex-grow: 1;
     flex-flow: column;
@@ -76,7 +78,7 @@
             cursor: not-allowed;
         }
         .tick-label {
-            option {
+            .axis-label {
                 cursor: not-allowed;
             }
         }
@@ -86,7 +88,8 @@
         // cursor: default;
         display: grid;
         //? 9.5 is half the size of the thumb, 19px
-        padding: 0 9.5px;
+        padding: var(--slider-tick-padding-top) 9.5px;
+        cursor: default;
 
         .tick-label {
             grid-row: 1;
@@ -94,7 +97,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            option {
+            .axis-label {
                 // From figma
                 padding-top: 4px;
                 cursor: default;
@@ -106,6 +109,7 @@
             height: 4px;
             width: 4px;
             border-radius: 2px;
+            cursor: default;
         }
         .tick-label:not(:first-child):not(:last-child) {
             padding: 0;
