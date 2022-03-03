@@ -12228,7 +12228,7 @@ export namespace Components {
          */
         "selected": string;
         /**
-          * Changes size of segmented button from medium to small or large by setting sizing classes rux-segmented-button--small rux-segmented-button--large
+          * Changes size of segmented button from small to medium or large.
          */
         "size"?: 'small' | 'medium' | 'large';
     }
@@ -32422,7 +32422,7 @@ declare namespace LocalJSX {
          */
         "selected"?: string;
         /**
-          * Changes size of segmented button from medium to small or large by setting sizing classes rux-segmented-button--small rux-segmented-button--large
+          * Changes size of segmented button from small to medium or large.
          */
         "size"?: 'small' | 'medium' | 'large';
     }
