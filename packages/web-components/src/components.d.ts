@@ -6919,13 +6919,9 @@ export namespace Components {
         value?: any | null
     }
     interface RuxRuler {
-        endDate: any
+        end: string
         interval: any
-        startDate: any
-        /**
-         * The track
-         */
-        track: string
+        start: string
     }
     interface RuxSegmentedButton {
         /**
@@ -7131,9 +7127,9 @@ export namespace Components {
     }
     interface RuxTimeRegion {
         /**
-         * The end time
+         * The end date. Must be an ISO string "2021-02-02T05:00:00Z"
          */
-        end: any
+        end: string
         /**
          * Optionally hide the bottom right timestamp.
          */
@@ -7143,9 +7139,9 @@ export namespace Components {
          */
         selected: boolean
         /**
-         * The start time
+         * The start date. Must be an ISO string "2021-02-02T05:00:00Z".
          */
-        start: any
+        start: string
         /**
          * Short hand attribute for displaying a Status icon and appropriate border color.
          */
@@ -7175,10 +7171,9 @@ export namespace Components {
     }
     interface RuxTrack {
         columns: number
-        end: any
+        end: string
         interval: any
-        start: any
-        timelineStart: any
+        start: string
         width: number
     }
     interface RuxTree {}
@@ -22983,13 +22978,9 @@ declare namespace LocalJSX {
         value?: any | null
     }
     interface RuxRuler {
-        endDate?: any
+        end?: string
         interval?: any
-        startDate?: any
-        /**
-         * The track
-         */
-        track?: string
+        start?: string
     }
     interface RuxSegmentedButton {
         /**
@@ -23250,9 +23241,9 @@ declare namespace LocalJSX {
     }
     interface RuxTimeRegion {
         /**
-         * The end time
+         * The end date. Must be an ISO string "2021-02-02T05:00:00Z"
          */
-        end?: any
+        end?: string
         /**
          * Optionally hide the bottom right timestamp.
          */
@@ -23262,9 +23253,9 @@ declare namespace LocalJSX {
          */
         selected?: boolean
         /**
-         * The start time
+         * The start date. Must be an ISO string "2021-02-02T05:00:00Z".
          */
-        start?: any
+        start?: string
         /**
          * Short hand attribute for displaying a Status icon and appropriate border color.
          */
@@ -23294,10 +23285,9 @@ declare namespace LocalJSX {
     }
     interface RuxTrack {
         columns?: number
-        end?: any
+        end?: string
         interval?: any
-        start?: any
-        timelineStart?: any
+        start?: string
         width?: number
     }
     interface RuxTree {}

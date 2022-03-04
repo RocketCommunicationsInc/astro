@@ -10,6 +10,7 @@ import {
 import { dateRange } from './helpers'
 
 /**
+ * @part playhead - The timeline's playhead
  * @part time-region-container - The container for time regions. Use this part to set a maximum height and enable vertical scrolling.
  */
 @Component({
@@ -87,7 +88,6 @@ export class RuxTimeline {
     componentWillLoad() {
         this._setZoom()
         this.syncPlayhead()
-        // this.initializeTracks()
     }
 
     get width() {
@@ -148,7 +148,8 @@ export class RuxTimeline {
             el.columns = this.columns
 
             el.interval = this.interval
-            el.timelineStart = this.start
+            el.start = this.start
+            el.end = this.end
         })
     }
 
@@ -254,7 +255,8 @@ export class RuxTimeline {
             el.columns = this.columns
 
             el.interval = this.interval
-            el.timelineStart = this.start
+            el.start = this.start
+            el.end = this.end
         })
 
         const rulerSlot = this.rulerContainer?.querySelector(
@@ -272,32 +274,18 @@ export class RuxTimeline {
             rulerTrack.columns = this.columns
 
             rulerTrack.interval = this.interval
-            rulerTrack.timelineStart = this.start
+            rulerTrack.start = this.start
+            rulerTrack.end = this.end
             const rulerEl = [...rulerTrack.children].find(
                 (el: any) => el.tagName.toLowerCase() === 'rux-ruler'
             ) as HTMLRuxRulerElement
             if (rulerEl) {
-                rulerEl.startDate = this.start
-                rulerEl.endDate = this.end
+                rulerEl.start = this.start
+                rulerEl.end = this.end
                 rulerEl.interval = this.interval
             }
         }
     }
-
-    // private _validateTimeRegion(start: any, end: any) {
-    //     if (!this.start) {
-    //         return false
-    //     }
-
-    //     if (!this.end) {
-    //         return false
-    //     }
-
-    //     return (
-    //         new Date(start) >= new Date(this.start) &&
-    //         new Date(end) <= new Date(this.end)
-    //     )
-    // }
 
     private _setZoom() {
         let unitOfTime = 60

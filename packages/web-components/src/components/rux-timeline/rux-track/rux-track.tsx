@@ -1,10 +1,14 @@
-import { Element, State, Component, Prop, Host, h, Watch } from '@stencil/core'
+import { Element, Component, Prop, Host, h, Watch } from '@stencil/core'
 import { differenceInMinutes, differenceInHours } from 'date-fns'
 
 interface DateValidation {
     success: boolean
     error?: string
 }
+/**
+ * @part track-header - The Track's header
+ * @part container - The component's container
+ */
 @Component({
     tag: 'rux-track',
     styleUrl: 'rux-track.scss',
@@ -13,22 +17,30 @@ interface DateValidation {
 export class RuxTrack {
     @Element() el!: HTMLRuxTrackElement
 
+    /**
+     * @internal - The grid's width. Set automatically from the parent Timeline component.
+     */
     @Prop({ reflect: true }) width = 0
+    /**
+     * @internal - The number of grid columns to display. Set automatically from the parent Timeline component.
+     */
     @Prop({ reflect: true }) columns = 0
 
-    @Prop({ reflect: true }) timelineStart: any
+    /**
+     * @internal - The Timeline's interval. Set automatically from the parent Timeline component.
+     */
     @Prop({ reflect: true }) interval: any
-    @Prop({ reflect: true }) start: any
-    @Prop({ reflect: true }) end: any
-
-    @State() timelineData = {
-        start: '',
-        interval: '',
-    }
+    /**
+     * @internal - The Timeline's start date. Set automatically from the parent Timeline component.
+     */
+    @Prop({ reflect: true }) start = ''
+    /**
+     * @internal - The Timeline's end date. Set automatically from the parent Timeline component.
+     */
+    @Prop({ reflect: true }) end = ''
 
     @Watch('start')
     @Watch('end')
-    @Watch('timelineStart')
     @Watch('interval')
     handleUpdate(_newValue: any, old: any) {
         if (old) {
@@ -41,8 +53,8 @@ export class RuxTrack {
     }
 
     calculateGridColumnFromTime(time: any) {
-        if (this.timelineStart) {
-            const timelineStart = new Date(this.timelineStart)
+        if (this.start) {
+            const timelineStart = new Date(this.start)
 
             if (this.interval === 'hour') {
                 const difference = Math.abs(
@@ -64,6 +76,7 @@ export class RuxTrack {
     }
 
     private _validateTimeRegion(start: any, end: any): DateValidation {
+        console.log('thisstart', this.start)
         if (!start) {
             return {
                 success: false,
@@ -106,10 +119,10 @@ export class RuxTrack {
             }
         }
 
-        if (new Date(start) < new Date(this.end)) {
+        if (new Date(start) < new Date(this.start)) {
             return {
                 success: false,
-                error: `The Time Region end date does not fall within the Timeline's range: ${start} - ${this.start}/${this.end}`,
+                error: `The Time Region start date does not fall within the Timeline's range: ${start} - ${this.start}/${this.end}`,
             }
         }
 
@@ -179,6 +192,7 @@ export class RuxTrack {
                 >
                     <div
                         class="rux-track__header"
+                        part="track-header"
                         style={{
                             gridRow: '1',
                         }}

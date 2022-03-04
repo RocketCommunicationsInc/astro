@@ -3,6 +3,9 @@ import { format } from 'date-fns'
 
 /**
  * @slot (default) - The content of the Time Region
+ * @part container - The component's container
+ * @part time-region-container - The container for time regions. Use this part to set a maximum height and enable vertical scrolling.
+ * @part timestamp - The time region's timestamp
  */
 @Component({
     tag: 'rux-time-region',
@@ -12,19 +15,17 @@ import { format } from 'date-fns'
 export class RuxTimeRegion {
     @Element() el!: HTMLRuxTimeRegionElement
     /**
-     * The start time
+     * The start date. Must be an ISO string "2021-02-02T05:00:00Z".
      */
-    @Prop({ reflect: true }) start: any
+    @Prop({ reflect: true }) start = ''
     /**
-     * The end time
+     * The end date. Must be an ISO string "2021-02-02T05:00:00Z"
      */
-    @Prop({ reflect: true }) end: any
-
+    @Prop({ reflect: true }) end = ''
     /**
      * Optionally hide the bottom right timestamp.
      */
     @Prop({ attribute: 'hide-timestamp' }) hideTimestamp = false
-
     /**
      * Short hand attribute for displaying a Status icon and appropriate border color.
      */
@@ -78,7 +79,7 @@ export class RuxTimeRegion {
                         <slot></slot>
                     </div>
                     {!this.hideTimestamp ? (
-                        <div class="rux-time-region__datetime">
+                        <div class="rux-time-region__datetime" part="timestamp">
                             {this.formattedTime}
                         </div>
                     ) : null}

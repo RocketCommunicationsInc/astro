@@ -7,19 +7,24 @@ import { dateRange as getRange } from '../helpers'
     shadow: true,
 })
 export class RuxRuler {
-    /**
-     * The track
-     */
-    @Prop() track: string = '1'
-    @Prop() interval: any = ''
-    @Prop() startDate: any
-    @Prop() endDate: any
     @Element() el!: HTMLRuxRulerElement
+    /**
+     * @internal The Timeline's interval. Set automatically from the parent Timeline component
+     */
+    @Prop() interval: any = ''
+    /**
+     * @internal The Timeline's start date. Set automatically from the parent Timeline component
+     */
+    @Prop() start: string = ''
+    /**
+     * @internal The Timeline's end date. Set automatically from the parent Timeline component
+     */
+    @Prop() end: string = ''
 
     get dateRange() {
         return getRange(
-            new Date(this.startDate),
-            new Date(this.endDate),
+            new Date(this.start),
+            new Date(this.end),
             this.interval,
             1
         )
