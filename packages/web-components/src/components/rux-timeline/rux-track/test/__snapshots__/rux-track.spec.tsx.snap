@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`rux-track renders 1`] = `
-<rux-track columns="0" width="0">
+<rux-track columns="0" end="" start="" width="0">
   <mock:shadow-root>
     <div class="rux-timeline rux-track" part="container" style="grid-template-columns: [header] 200px repeat(0, 0px);">
-      <div class="rux-track__header" style="grid-row: 1;">
+      <div class="rux-track__header" part="track-header" style="grid-row: 1;">
         <slot name="label"></slot>
       </div>
       <slot></slot>
