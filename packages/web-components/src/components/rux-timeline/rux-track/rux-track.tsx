@@ -6,8 +6,9 @@ interface DateValidation {
     error?: string
 }
 /**
+ * @slot (default) - The Track's content
  * @part track-header - The Track's header
- * @part container - The component's container
+ * @part container - The Track's container
  */
 @Component({
     tag: 'rux-track',
@@ -76,7 +77,6 @@ export class RuxTrack {
     }
 
     private _validateTimeRegion(start: any, end: any): DateValidation {
-        console.log('thisstart', this.start)
         if (!start) {
             return {
                 success: false,
@@ -173,7 +173,6 @@ export class RuxTrack {
                             cell: true,
                             marker: i % 60 === 0,
                         }}
-                        part="cell"
                     ></div>
                 ))}
             </div>

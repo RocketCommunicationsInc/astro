@@ -1,10 +1,39 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import { html, render } from 'lit-html'
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-// console.log(extractArgTypes('rux-time-region'));
+import { styled } from '@storybook/theming'
+export const StyledDiv = styled.div`
+    position: relative;
+    margin: 1rem 0;
+    border-left: 20px solid var(--color-status-serious-fill);
+    background: white;
+    color: var(--color-status-serious-fill);
+    padding: 19px;
+    font-family: var(--font-body-1-bold-font-family);
+    font-size: var(--font-body-1-bold-font-size);
+    font-weight: var(--font-body-1-bold-font-weight);
+    letter-spacing: var(--font-body-1-bold-letter-spacing);
+    .banner-text {
+        margin-top: 1rem;
+        color: var(--color-inverse-text);
+    }
+`
+
+export const BetaTag = styled.div`
+  display: inline-block;
+  padding: 7px;
+  color: var(--color-global-basics-black);
+  border-radius: var(--radius-base);
+  background: var(--color-global-tag-tag1-300);
+      font-family: var(--font-body-2-bold-font-family);
+    font-size: var(--font-body-2-bold-font-size);
+    font-weight: var(--font-body-2-bold-font-weight);
+    letter-spacing: var(--font-body-2-bold-letter-spacing);
+`
+
 
 <Meta
-    title="Components/Timeline/Time Region"
+    title="Beta/Timeline [BETA]/Time Region"
     component="rux-time-region"
     argTypes={{
 	        "end": {
@@ -69,9 +98,21 @@ import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
     }}
 />
 
-# Time Region
+# Time Region <BetaTag>BETA</BetaTag>
+
+<StyledDiv>
+    <div>Warning: This is an experimental component</div>
+    <p class="banner-text">
+        Time Region is currently experimental which means that we may introduce breaking changes at any time. 
+        These will not be reflected in our current semvar versioning and release strategy.
+        If you are using this component, make sure to frequently check our release notes and update your
+        applications accordingly.
+    </p>
+</StyledDiv>
 
 ## Guidelines
+
+-   [Astro UXDS: Timeline](http://www.astrouxds.com/components/timeline)
 
 export const Default = (args) => {
 	let start = args.start

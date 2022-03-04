@@ -20241,14 +20241,11 @@ export class RuxRadioGroup {
 }
 
 export declare interface RuxRuler extends Components.RuxRuler {}
-@ProxyCmp({
-  inputs: ["endDate", "interval", "startDate", "track"],
-})
+
 @Component({
   selector: "rux-ruler",
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: "<ng-content></ng-content>",
-  inputs: ["endDate", "interval", "startDate", "track"],
 })
 export class RuxRuler {
   protected el: HTMLElement;
@@ -20690,14 +20687,11 @@ export class RuxTimeline {
 }
 
 export declare interface RuxTrack extends Components.RuxTrack {}
-@ProxyCmp({
-  inputs: ["columns", "end", "interval", "start", "timelineStart", "width"],
-})
+
 @Component({
   selector: "rux-track",
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: "<ng-content></ng-content>",
-  inputs: ["columns", "end", "interval", "start", "timelineStart", "width"],
 })
 export class RuxTrack {
   protected el: HTMLElement;

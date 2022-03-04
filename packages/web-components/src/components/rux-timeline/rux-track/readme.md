@@ -3,24 +3,20 @@
 <!-- Auto Generated Below -->
 
 
-## Properties
+## Slots
 
-| Property        | Attribute        | Description | Type     | Default     |
-| --------------- | ---------------- | ----------- | -------- | ----------- |
-| `columns`       | `columns`        |             | `number` | `0`         |
-| `end`           | `end`            |             | `any`    | `undefined` |
-| `interval`      | `interval`       |             | `any`    | `undefined` |
-| `start`         | `start`          |             | `any`    | `undefined` |
-| `timelineStart` | `timeline-start` |             | `any`    | `undefined` |
-| `width`         | `width`          |             | `number` | `0`         |
+| Slot          | Description         |
+| ------------- | ------------------- |
+| `"(default)"` | The Track's content |
 
 
 ## Shadow Parts
 
-| Part          | Description |
-| ------------- | ----------- |
-| `"cell"`      |             |
-| `"container"` |             |
+| Part             | Description           |
+| ---------------- | --------------------- |
+| `"cell"`         |                       |
+| `"container"`    | The Track's container |
+| `"track-header"` | The Track's header    |
 
 
 ----------------------------------------------

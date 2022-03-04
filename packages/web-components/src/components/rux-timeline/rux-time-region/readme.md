@@ -7,10 +7,10 @@
 
 | Property        | Attribute        | Description                                                                     | Type                                                                         | Default     |
 | --------------- | ---------------- | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ----------- |
-| `end`           | `end`            | The end time                                                                    | `any`                                                                        | `undefined` |
+| `end`           | `end`            | The end date. Must be an ISO string "2021-02-02T05:00:00Z"                      | `string`                                                                     | `''`        |
 | `hideTimestamp` | `hide-timestamp` | Optionally hide the bottom right timestamp.                                     | `boolean`                                                                    | `false`     |
 | `selected`      | `selected`       | Visually displays the selected state                                            | `boolean`                                                                    | `false`     |
-| `start`         | `start`          | The start time                                                                  | `any`                                                                        | `undefined` |
+| `start`         | `start`          | The start date. Must be an ISO string "2021-02-02T05:00:00Z".                   | `string`                                                                     | `''`        |
 | `status`        | `status`         | Short hand attribute for displaying a Status icon and appropriate border color. | `"caution" \| "critical" \| "normal" \| "serious" \| "standby" \| undefined` | `undefined` |
 
 
@@ -23,9 +23,11 @@
 
 ## Shadow Parts
 
-| Part          | Description |
-| ------------- | ----------- |
-| `"container"` |             |
+| Part                      | Description                                                                                          |
+| ------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `"container"`             | The component's container                                                                            |
+| `"time-region-container"` | The container for time regions. Use this part to set a maximum height and enable vertical scrolling. |
+| `"timestamp"`             | The time region's timestamp                                                                          |
 
 
 ## Dependencies

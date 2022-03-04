@@ -1,9 +1,39 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import { html, render } from 'lit-html'
+import { styled } from '@storybook/theming'
+export const StyledDiv = styled.div`
+    position: relative;
+    margin: 1rem 0;
+    border-left: 20px solid var(--color-status-serious-fill);
+    background: white;
+    color: var(--color-status-serious-fill);
+    padding: 19px;
+    font-family: var(--font-body-1-bold-font-family);
+    font-size: var(--font-body-1-bold-font-size);
+    font-weight: var(--font-body-1-bold-font-weight);
+    letter-spacing: var(--font-body-1-bold-letter-spacing);
+    .banner-text {
+        margin-top: 1rem;
+        color: var(--color-inverse-text);
+    }
+`
+
+export const BetaTag = styled.div`
+  display: inline-block;
+  padding: 7px;
+  color: var(--color-global-basics-black);
+  border-radius: var(--radius-base);
+  background: var(--color-global-tag-tag1-300);
+      font-family: var(--font-body-2-bold-font-family);
+    font-size: var(--font-body-2-bold-font-size);
+    font-weight: var(--font-body-2-bold-font-weight);
+    letter-spacing: var(--font-body-2-bold-letter-spacing);
+`
 
 <Meta
-    title="Components/Timeline"
+    title="Beta/Timeline [BETA]"
     component="rux-timeline"
+    subcomponents={{ 'RuxTrack': 'rux-track', 'RuxRuler': 'rux-ruler', 'RuxTimeRegion': 'rux-time-region' }}
     argTypes={{
           "end": {
             "name": "end",
@@ -121,9 +151,23 @@ import { html, render } from 'lit-html'
     }}
 />
 
-# Timeline
+# Timeline <BetaTag>BETA</BetaTag>
+
+Timeline displays a sequence of realtime events during a fixed time span. The Playhead indicates the current time of day. Time Regions represent events.
+
+<StyledDiv>
+    <div>Warning: This is an experimental component</div>
+    <p class="banner-text">
+        Timeline is currently experimental which means that we may introduce breaking changes at any time. 
+        These will not be reflected in our current semvar versioning and release strategy.
+        If you are using this component, make sure to frequently check our release notes and update your
+        applications accordingly.
+    </p>
+</StyledDiv>
 
 ## Guidelines
+
+-   [Astro UXDS: Timeline](http://www.astrouxds.com/components/timeline)
 
 export const Default = (args) => {
     let start = args.start
@@ -239,18 +283,6 @@ You should consider your timeline's range and set an appropriate default zoom le
 If your timeline spans multiple days, you will also want to consider manually controlling the interval. For example, if your timeline is set to days,
 you will probably want your interval to change to hours as your zoom level increases.
 
-### Setting the Label
-
-To set the label of a Region, you can use the `label` slot:
-
-```
-<rux-track>
-    <div slot="label">
-        Region1
-    </div>
-</rux-track>
-```
-
 ### Setting the Time Regions
 
 To add any number of Time Regions, you can simply add them as children to any Track element:
@@ -306,6 +338,20 @@ rux-timeline::part(time-region-container) {
 Tracks are responsible for displaying content in horizontal lanes across the Timeline.
 They can include **Time Regions** or the **Ruler** component. 
 They are composed of a label section and a time region section.
+
+<ArgsTable of="rux-track" />
+
+### Setting the Label
+
+To set the label of a Region, you can use the `label` slot:
+
+```
+<rux-track>
+    <div slot="label">
+        Region1
+    </div>
+</rux-track>
+```
 
 ## Time Region
 

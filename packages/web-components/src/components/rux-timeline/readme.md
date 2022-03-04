@@ -18,7 +18,7 @@
 
 | Part                      | Description                                                                                          |
 | ------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `"playhead"`              |                                                                                                      |
+| `"playhead"`              | The timeline's playhead                                                                              |
 | `"time-region-container"` | The container for time regions. Use this part to set a maximum height and enable vertical scrolling. |
 
 
