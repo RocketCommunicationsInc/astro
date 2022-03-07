@@ -153,6 +153,46 @@ export const WithErrorText = (args) => {
     </Story>
 </Canvas>
 
+### With Axis Labels
+
+export const WithAxisLabels = (args) => {
+    return html`
+<div style="padding: 5%">
+    <rux-slider
+        id="axis-labels"
+        max="${args.max}"
+        min="${args.min}"
+        step="${args.step}"
+        .value="${args.value}"
+        ?disabled="${args.disabled}"
+        .help-text="${args.helpText}"
+        .error-text="${args.errorText}"
+        axis-labels="${args.axisLabels}"
+        ?ticks-only="${args.ticksOnly}"
+    ></rux-slider>
+</div>
+<script>
+    const slider = document.getElementById('axis-labels')
+    slider.axisLabels = ['0', '25', '50', '75', '100']
+</script>
+    `
+}
+
+<Canvas>
+    <Story
+        name="With Axis Labels"
+        args={{
+            max: 100,
+            min: 0,
+            value: 50,
+            axisLabels: ['0', '25', '50', '75', '100'],
+            ticksOnly: false
+        }}
+    >
+        {WithAxisLabels.bind()}
+    </Story>
+</Canvas>
+
 ### Horizontal Labels
 
 You can utilize the `form-field` and `label` Shadow Parts to have full control over label placement. For example:

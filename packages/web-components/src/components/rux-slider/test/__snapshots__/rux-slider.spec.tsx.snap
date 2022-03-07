@@ -10,7 +10,7 @@ exports[`rux-slider renders 1`] = `
         </span>
       </label>
       <div class="rux-slider">
-        <input aria-disabled="false" aria-label="slider" class="rux-range" id="rux-slider-1" max="100" min="0" part="input" step="1" type="range" value="50">
+        <input aria-disabled="false" aria-label="slider" class="rux-range" id="rux-slider-1" list="steplist" max="100" min="0" part="input" step="1" type="range" value="50">
       </div>
     </div>
   </mock:shadow-root>
@@ -30,7 +30,7 @@ exports[`rux-slider renders label prop 1`] = `
         </span>
       </label>
       <div class="rux-slider">
-        <input aria-disabled="false" aria-label="slider" class="rux-range" id="rux-slider-2" max="100" min="0" part="input" step="1" type="range" value="50">
+        <input aria-disabled="false" aria-label="slider" class="rux-range" id="rux-slider-2" list="steplist" max="100" min="0" part="input" step="1" type="range" value="50">
       </div>
     </div>
   </mock:shadow-root>
@@ -48,7 +48,7 @@ exports[`rux-slider renders label slot 1`] = `
         </span>
       </label>
       <div class="rux-slider">
-        <input aria-disabled="false" aria-label="slider" class="rux-range" id="rux-slider-3" max="100" min="0" part="input" step="1" type="range" value="50">
+        <input aria-disabled="false" aria-label="slider" class="rux-range" id="rux-slider-3" list="steplist" max="100" min="0" part="input" step="1" type="range" value="50">
       </div>
     </div>
   </mock:shadow-root>

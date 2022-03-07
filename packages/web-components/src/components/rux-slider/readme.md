@@ -59,7 +59,7 @@ Pass properties via attributes similar to the native [HTML Input Range](https://
 
 | Property     | Attribute    | Description                                                                                                                                                                                                   | Type                  | Default                                   |
 | ------------ | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | ----------------------------------------- |
-| `axisLabels` | --           |                                                                                                                                                                                                               | `string[]`            | `[]`                                      |
+| `axisLabels` | --           | Shows tick marks and labels of provided array, evenly splitting the width of rux-slider by the amount of axis-labels provided. Axis-lables are listed in the order of the array provided.                     | `string[]`            | `[]`                                      |
 | `disabled`   | `disabled`   | Determines if the slider is disabled.                                                                                                                                                                         | `boolean`             | `false`                                   |
 | `errorText`  | `error-text` | The validation error text                                                                                                                                                                                     | `string \| undefined` | `undefined`                               |
 | `helpText`   | `help-text`  | The help or explanation text                                                                                                                                                                                  | `string \| undefined` | `undefined`                               |
@@ -68,7 +68,7 @@ Pass properties via attributes similar to the native [HTML Input Range](https://
 | `min`        | `min`        | Min value of the slider.                                                                                                                                                                                      | `number`              | `0`                                       |
 | `name`       | `name`       | Name of the Input Field for Form Submission                                                                                                                                                                   | `string`              | `''`                                      |
 | `step`       | `step`       | Step amount of slider value.                                                                                                                                                                                  | `number`              | `1`                                       |
-| `ticksOnly`  | `ticks-only` |                                                                                                                                                                                                               | `boolean`             | `false`                                   |
+| `ticksOnly`  | `ticks-only` | Hides labels and only shows tick marks if axis-labels is provided.                                                                                                                                            | `boolean`             | `false`                                   |
 | `value`      | `value`      | Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) | `number`              | `(this.max! - this.min!) / 2 + this.min!` |
 
 
@@ -89,13 +89,16 @@ Pass properties via attributes similar to the native [HTML Input Range](https://
 
 ## Shadow Parts
 
-| Part           | Description                              |
-| -------------- | ---------------------------------------- |
-| `"error-text"` | The error text element                   |
-| `"form-field"` | The form-field wrapper container         |
-| `"help-text"`  | The help text element                    |
-| `"input"`      | The input element                        |
-| `"label"`      | The input label when `label` prop is set |
+| Part               | Description                                   |
+| ------------------ | --------------------------------------------- |
+| `"axis-label"`     | the axis label                                |
+| `"error-text"`     | The error text element                        |
+| `"form-field"`     | The form-field wrapper container              |
+| `"help-text"`      | The help text element                         |
+| `"input"`          | The input element                             |
+| `"label"`          | The input label when `label` prop is set      |
+| `"tick"`           | the tick mark                                 |
+| `"tick-container"` | The container of the tick mark and axis-label |
 
 
 ## CSS Custom Properties

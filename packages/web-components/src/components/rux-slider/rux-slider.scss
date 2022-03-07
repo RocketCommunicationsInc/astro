@@ -283,8 +283,8 @@ input[type='range']:focus {
     -moz-appearance: none;
     position: relative;
     top: var(--slider-top);
-    height: var(--slider-thumb-size);
-    width: var(--slider-thumb-size);
+    height: calc(var(--slider-thumb-size) - 4px);
+    width: calc(var(--slider-thumb-size) - 4px);
     border-radius: 100%;
     border: var(--slider-thumb-border-size) solid
         var(--slider-thumb-border-color);

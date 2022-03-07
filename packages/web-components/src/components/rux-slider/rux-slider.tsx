@@ -53,7 +53,14 @@ export class RuxSlider implements FormFieldInterface {
     @Prop({ mutable: true }) value: number =
         (this.max! - this.min!) / 2 + this.min!
 
+    /**
+     * Hides labels and only shows tick marks if axis-labels is provided.
+     */
     @Prop({ attribute: 'ticks-only' }) ticksOnly: boolean = false
+
+    /**
+     *  Shows tick marks and labels of provided array, evenly splitting the width of rux-slider by the amount of axis-labels provided. Axis-lables are listed in the order of the array provided.
+     */
 
     @Prop({ attribute: 'axis-labels' }) axisLabels: string[] = []
     /**
@@ -122,7 +129,7 @@ export class RuxSlider implements FormFieldInterface {
 
     @Watch('step')
     handleStep() {
-        //? Value needs to be a multiple of step, otherwise slider begins to look wrong
+        // Value needs to be a multiple of step, otherwise slider begins to look wrong
         this.value = this._closestMultiple(this.value, this.step)
     }
 
@@ -185,12 +192,19 @@ export class RuxSlider implements FormFieldInterface {
     private _onBlur = () => {
         this.ruxBlur.emit()
     }
-    //Safari needs 0px top for the thumb to look normal.
-    //Safari needs differnet padding on ticks.
+
     private _getBrowser(ua: string) {
+        //Safari needs 0px top for the thumb to look normal.
+        //Safari needs differnet padding on ticks.
         if (ua.indexOf('safari') > -1 && ua.indexOf('chrome') == -1) {
             this.el.style.setProperty('--slider-top', '0px')
             this.el.style.setProperty('--slider-tick-padding-top', '7px')
+        }
+        //firefox - thumb too large, tick padding not enough
+        if (ua.indexOf('firefox') > -1) {
+            this.el.style.setProperty('--slider-tick-padding-top', '3px')
+            //? Better to set this here, or in the css with a calc(--slider-thumb-size - 4px)?
+            // this.el.style.setProperty('--slider-thumb-size', '15px')
         }
     }
 
