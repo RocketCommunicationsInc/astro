@@ -91,6 +91,9 @@
     font-weight: var(--font-body-1-font-weight);
     letter-spacing: var(--font-body-1-letter-spacing);
     margin-bottom: var(--spacing-input-label-top);
+    &__asterisk {
+        margin-left: 4px;
+    }
 }
 
 ::selection {

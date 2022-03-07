@@ -4,8 +4,8 @@
       <rux-clock aos="1557503698781" los="2019-05-10T16:21:12.000Z"></rux-clock>
     </rux-global-status-bar>
 
-    <div id="cont" class="container">
-      <h1>Astro Vue 2 Starter-Kit</h1>
+    <div class="container">
+      <h1>Astro Vue Starter-Kit</h1>
     </div>
   </div>
 </template>

@@ -104,6 +104,44 @@ export const Disabled = (args) => {
     </Story>
 </Canvas>
 
+### Required
+
+export const Required = (args) => {
+    return html`
+<rux-input
+    label="${args.label}"
+    ?disabled="${args.disabled}"
+    .error-text="${args.errorText}"
+    ?invalid="${args.invalid}"
+    .help-text="${args.helpText}"
+    .min="${args.min}"
+    .max="${args.max}"
+    .name="${args.name}"
+    .placeholder="${args.placeholder}"
+    ?required="${args.required}"
+    .value="${args.value}"
+    .step="${args.step}"
+    type=${args.type}
+    ?readonly="${args.readonly}"
+    ?autocomplete="${args.autocomplete}"
+    ?spellcheck="${args.spellcheck}"
+></rux-input>
+    `
+}
+
+<Canvas>
+    <Story
+        name="Required"
+        args={{
+            label: 'Required input',
+            required: true,
+            type: 'text',
+        }}
+    >
+        {Required.bind()}
+    </Story>
+</Canvas>
+
 ### Sizes
 
 export const Sizes = (args) => {

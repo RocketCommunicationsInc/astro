@@ -108,6 +108,7 @@ There is one unnamed slot in the Global Status Bar. This slot is intended for an
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property        | Attribute         | Description                                                                                           | Type                                                | Default     |
@@ -121,6 +122,7 @@ There is one unnamed slot in the Global Status Bar. This slot is intended for an
 | `menuIcon`      | `menu-icon`       | Sets the icon to be displayed in the default rux-icon component                                       | `string`                                            | `'apps'`    |
 | `username`      | `username`        | Declares what text will render and whether the username component will be shown in the app-meta slot  | `string \| undefined`                               | `''`        |
 
+
 ## Slots
 
 | Slot           | Description                                                                     |
@@ -129,7 +131,7 @@ There is one unnamed slot in the Global Status Bar. This slot is intended for an
 | `"app-meta"`   | Used to display the Application's metadata (Domain, Name, State, Version, etc.) |
 | `"left-side"`  | Used to prepend a RuxIcon or similar element                                    |
 | `"right-side"` | Used to append optional content                                                 |
-| `"username"`   | Used to display the username                                                    |
+
 
 ## Shadow Parts
 
@@ -139,20 +141,20 @@ There is one unnamed slot in the Global Status Bar. This slot is intended for an
 | `"container"` | The container for global-status-bar      |
 | `"username"`  | The container for the username           |
 
+
 ## Dependencies
 
 ### Depends on
 
--   [rux-icon](../rux-icon)
+- [rux-icon](../rux-icon)
 
 ### Graph
-
 ```mermaid
 graph TD;
   rux-global-status-bar --> rux-icon
   style rux-global-status-bar fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*
