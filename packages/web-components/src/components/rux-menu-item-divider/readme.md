@@ -53,11 +53,13 @@ Pass properties as slotted components in the Astro Pop Up Menu or Astro Select M
 
 <!-- Auto Generated Below -->
 
+
 ## Shadow Parts
 
-| Part          | Description |
-| ------------- | ----------- |
-| `"container"` |             |
+| Part          | Description                                |
+| ------------- | ------------------------------------------ |
+| `"container"` | the container of the rux-menu-item-divider |
+
 
 ## CSS Custom Properties
 
@@ -65,6 +67,7 @@ Pass properties as slotted components in the Astro Pop Up Menu or Astro Select M
 | ---------------------------------- | ------------------------------ |
 | `--menu-item-divider-border-color` | Menu Item Divider Border Color |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

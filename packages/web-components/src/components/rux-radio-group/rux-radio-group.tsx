@@ -20,6 +20,7 @@ import { hasSlot, renderHiddenInput } from '../../utils/utils'
  * @part help-text - The help text element
  * @part label - The input label when `label` prop is set
  * @part radiogroup - The container of radios
+ * @part required - The asterisk when required is true
  */
 @Component({
     tag: 'rux-radio-group',
@@ -39,6 +40,11 @@ export class RuxRadioGroup implements FormFieldInterface {
      * Presentational only. Renders the Radio Group as invalid.
      */
     @Prop() invalid: boolean = false
+
+    /**
+     * Marks that a selection from the radio-group is requried.
+     */
+    @Prop() required: boolean = false
 
     /**
      * The name of the radio group - submitted with form data. Must match the name of the radios in the group.
@@ -151,6 +157,14 @@ export class RuxRadioGroup implements FormFieldInterface {
                             name="label"
                         >
                             {this.label}
+                            {this.required && (
+                                <span
+                                    part="required"
+                                    class="rux-label__asterisk"
+                                >
+                                    &#42;
+                                </span>
+                            )}
                         </slot>
                     </div>
                     <div

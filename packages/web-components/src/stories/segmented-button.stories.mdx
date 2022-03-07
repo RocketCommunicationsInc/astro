@@ -21,7 +21,7 @@ Segmented Buttons allow users to select one item at a time from two to four opti
 
 -   [Astro UXDS: Segmented Button](https://astrouxds.com/ui-components/segmented-button)
 
-export const SegmentedButton = (args) => {
+export const Default = (args) => {
     const segmentButtonArray = [
         { label: 'First item' },
         { label: 'Second item' },
@@ -32,6 +32,7 @@ export const SegmentedButton = (args) => {
 <div style="padding: 10vh 5vw; display: flex; justify-content: center;">
     <rux-segmented-button
         .data="${args.data}"
+        .size="${args.size}"
     ></rux-segmented-button>
 </div>
     `
@@ -46,10 +47,11 @@ export const SegmentedButton = (args) => {
                 { label: 'Third item' },
             ],
             selected: 'Second item',
+            size: 'small'
         }}
-        name="Segmented Button"
+        name="Default"
     >
-        {SegmentedButton.bind()}
+        {Default.bind()}
     </Story>
 </Canvas>
 
@@ -57,9 +59,83 @@ export const SegmentedButton = (args) => {
 
 <ArgsTable of="rux-segmented-button" />
 
+## Variants
+
+### Medium
+
+export const Medium = (args) => {
+    const segmentButtonArray = [
+        { label: 'First item' },
+        { label: 'Second item' },
+        { label: 'Third item' },
+    ]
+    document.addEventListener('change', (e) => action('change')(e.target))
+    return html`
+<div style="padding: 10vh 5vw; display: flex; justify-content: center;">
+    <rux-segmented-button
+        .data="${args.data}"
+        .size="${args.size}"
+    ></rux-segmented-button>
+</div>
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+            data: [
+                { label: 'First item' },
+                { label: 'Second item', selected: true },
+                { label: 'Third item' },
+            ],
+            selected: 'Second item',
+            size: 'medium'
+        }}
+        name="Medium"
+    >
+        {Medium.bind()}
+    </Story>
+</Canvas>
+
+### Large
+
+export const Large = (args) => {
+    const segmentButtonArray = [
+        { label: 'First item' },
+        { label: 'Second item' },
+        { label: 'Third item' },
+    ]
+    document.addEventListener('change', (e) => action('change')(e.target))
+    return html`
+<div style="padding: 10vh 5vw; display: flex; justify-content: center;">
+    <rux-segmented-button
+        .data="${args.data}"
+        .size="${args.size}"
+    ></rux-segmented-button>
+</div>
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+            data: [
+                { label: 'First item' },
+                { label: 'Second item', selected: true },
+                { label: 'Third item' },
+            ],
+            selected: 'Second item',
+            size: 'large'
+        }}
+        name="Large"
+    >
+        {Large.bind()}
+    </Story>
+</Canvas>
+
 ## Usage
 
-Pass an array of segments via the `data` attribute on the Segmented Button custom element. Segment items in the `data` array must be objects with a `label` string. The first item in the array will be auto-selected unless another segment item has a `selected` property with a truthy value
+Pass an array of segments via the `data` attribute on the Segmented Button custom element. Segment items in the `data` array must be objects with a `label` string. The first item in the array will be auto-selected unless another segment item has a `selected` property with a truthy value. Avoid labels with the same text, as this will interfere with selecting segments. 
 
 ### SegmentedButton Data Object
 
