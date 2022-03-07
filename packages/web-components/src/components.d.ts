@@ -12272,7 +12272,7 @@ export namespace Components {
     }
     interface RuxSlider {
         /**
-          * Shows tick marks and labels of provided array, evenly splitting the width of rux-slider by the amount of axis-labels provided. Axis-lables are listed in the order of the array provided.
+          * Shows tick marks and labels in the order provided and aligns evenly based on the length.
          */
         "axisLabels": string[];
         /**
@@ -32478,7 +32478,7 @@ declare namespace LocalJSX {
     }
     interface RuxSlider {
         /**
-          * Shows tick marks and labels of provided array, evenly splitting the width of rux-slider by the amount of axis-labels provided. Axis-lables are listed in the order of the array provided.
+          * Shows tick marks and labels in the order provided and aligns evenly based on the length.
          */
         "axisLabels"?: string[];
         /**

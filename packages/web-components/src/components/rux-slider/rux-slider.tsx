@@ -38,31 +38,35 @@ export class RuxSlider implements FormFieldInterface {
     /**
      * Min value of the slider.
      */
+
     @Prop() min: number = 0
     /**
      * Max value of slider.
      */
+
     @Prop() max: number = 100
     /**
      * Step amount of slider value.
      */
+
     @Prop() step: number = 1
     /**
      * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
      */
+
     @Prop({ mutable: true }) value: number =
         (this.max! - this.min!) / 2 + this.min!
+
+    /**
+     *  Shows tick marks and labels in the order provided and aligns evenly based on the length.
+     */
+    @Prop({ attribute: 'axis-labels' }) axisLabels: string[] = []
 
     /**
      * Hides labels and only shows tick marks if axis-labels is provided.
      */
     @Prop({ attribute: 'ticks-only' }) ticksOnly: boolean = false
 
-    /**
-     *  Shows tick marks and labels of provided array, evenly splitting the width of rux-slider by the amount of axis-labels provided. Axis-lables are listed in the order of the array provided.
-     */
-
-    @Prop({ attribute: 'axis-labels' }) axisLabels: string[] = []
     /**
      * Determines if the slider is disabled.
      */
