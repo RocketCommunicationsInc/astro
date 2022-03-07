@@ -37,7 +37,6 @@ describe('Slider with Form', () => {
         cy.get('#log').should('be.empty')
     })
     it('should render the datalist when axis-labels is provided', () => {
-        const types = ['']
         cy.get('#ticks').shadow().find('.rux-slider').find('#steplist')
     })
 })
