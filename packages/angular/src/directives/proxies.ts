@@ -20582,13 +20582,13 @@ export class RuxSegmentedButton {
 
 export declare interface RuxSelect extends Components.RuxSelect {}
 @ProxyCmp({
-  inputs: ['disabled', 'errorText', 'helpText', 'inputId', 'invalid', 'label', 'labelId', 'name', 'required', 'value']
+  inputs: ['disabled', 'errorText', 'helpText', 'inputId', 'invalid', 'label', 'labelId', 'multiple', 'name', 'required', 'value']
 })
 @Component({
   selector: 'rux-select',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'errorText', 'helpText', 'inputId', 'invalid', 'label', 'labelId', 'name', 'required', 'value'],
+  inputs: ['disabled', 'errorText', 'helpText', 'inputId', 'invalid', 'label', 'labelId', 'multiple', 'name', 'required', 'value'],
   outputs: ['ruxchange', 'ruxblur']
 })
 export class RuxSelect {

@@ -17,7 +17,7 @@ exports[`rux-select renders 1`] = `
   </mock:shadow-root>
   <rux-option label="one"></rux-option>
   <rux-option label="two"></rux-option>
-  <input class="aux-input" type="hidden" value="">
+  <input class="aux-select aux-select-0" type="hidden">
 </rux-select>
 `;
 
@@ -39,6 +39,6 @@ exports[`rux-select renders option groups 1`] = `
     <rux-option label="inside option"></rux-option>
   </rux-option-group>
   <rux-option label="outside option"></rux-option>
-  <input class="aux-input" type="hidden" value="">
+  <input class="aux-select aux-select-0" type="hidden">
 </rux-select>
 `;
