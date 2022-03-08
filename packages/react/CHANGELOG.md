@@ -1,5 +1,39 @@
 # @astrouxds/react
 
+## 6.3.0
+
+### Minor Changes
+
+#### Notification
+
+- Added a `small` prop allowing for a smaller variant.
+
+#### Segmented Button
+
+- Added `size` prop which accepts small, medium or large.
+
+### Patch Changes
+
+#### Notification
+
+- Updated the padding around message and icon to match design.
+
+#### Segmented Button
+
+- Updated hover state styling to match design.
+
+#### Push Button
+
+- Added hover state styling to match design.
+
+#### Monitoring Icon
+
+- Updated the min height and width to match design.
+
+#### Status
+
+- Changed the overall size to be 12px to match design.
+
 ## 6.2.0
 
 ### Minor Changes
