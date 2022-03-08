@@ -250,7 +250,12 @@ export class RuxSlider implements FormFieldInterface {
                             <slot name="label">{label}</slot>
                         </span>
                     </label>
-                    <div class="rux-slider">
+                    <div
+                        class={{
+                            'rux-slider': true,
+                            'with-axis-labels': this.axisLabels.length > 0,
+                        }}
+                    >
                         <input
                             id={sliderId}
                             onInput={_onInput}

@@ -60,17 +60,18 @@
     }
 }
 
+.with-axis-labels {
+    padding-bottom: 2rem;
+}
+
 .rux-slider {
-    height: 20px;
+    height: 1.25rem;
     :hover {
         cursor: pointer;
     }
     :disabled {
         cursor: not-allowed;
     }
-
-    padding-bottom: 2rem; //! this so help/error text doesn't overlap with tick labels - will need this to not be there by default
-
     .rux-range:disabled + #steplist {
         opacity: var(--disabled-opacity);
         cursor: not-allowed;
@@ -85,10 +86,8 @@
     }
 
     #steplist {
-        // cursor: default;
         display: grid;
-        //? 9.5 is half the size of the thumb, 19px
-        padding: var(--slider-tick-padding-top) 9.5px;
+        padding: var(--slider-tick-padding-top) 0.594rem; //9.5px
         cursor: default;
 
         .tick-label {
@@ -98,16 +97,14 @@
             flex-direction: column;
             align-items: center;
             .axis-label {
-                // From figma
-                padding-top: 4px;
+                padding-top: 0.25rem; //4px
                 cursor: default;
             }
-            padding-bottom: 10px;
         }
         .tick {
             background: var(--color-primary);
-            height: 4px;
-            width: 4px;
+            height: 0.25rem; //4px
+            width: 0.25rem;
             border-radius: 2px;
             cursor: default;
         }
