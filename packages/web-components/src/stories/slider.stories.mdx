@@ -155,7 +155,7 @@ export const WithErrorText = (args) => {
 
 ### With Axis Labels
 
-export const WithAxisLabels = (args) => {
+export const WithAxisLabels = (args, data) => {
     return html`
 <div style="padding: 5%">
     <rux-slider
@@ -167,7 +167,7 @@ export const WithAxisLabels = (args) => {
         ?disabled="${args.disabled}"
         .help-text="${args.helpText}"
         .error-text="${args.errorText}"
-        .axis-labels="${args.axisLabels}"
+        .axisLabels="${args.axisLabels}"
         ?ticks-only="${args.ticksOnly}"
     ></rux-slider>
 </div>
@@ -181,8 +181,8 @@ export const WithAxisLabels = (args) => {
             max: 100,
             min: 0,
             value: 50,
-            axisLabels: ['0', '25', '50', '75', '100'],
-            ticksOnly: false
+            ticksOnly: false,
+            axisLabels: ["0", "25", "50", "75", "100"]
         }}
     >
         {WithAxisLabels.bind()}
