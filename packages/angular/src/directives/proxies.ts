@@ -20869,6 +20869,25 @@ export class RuxTabs {
 }
 
 
+export declare interface RuxTag extends Components.RuxTag {}
+@ProxyCmp({
+  inputs: ['status']
+})
+@Component({
+  selector: 'rux-tag',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['status']
+})
+export class RuxTag {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface RuxTextarea extends Components.RuxTextarea {}
 @ProxyCmp({
   inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'rows', 'small', 'value']
