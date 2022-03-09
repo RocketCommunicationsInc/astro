@@ -18,5 +18,21 @@
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
-    <body></body>
+    <body>
+        <div style="padding: 10px 5%">
+            <rux-tag status="pass"> </rux-tag>
+        </div>
+        <div style="padding: 10px 5%">
+            <rux-tag status="fail"> </rux-tag>
+        </div>
+        <div style="padding: 10px 5%">
+            <rux-tag status="unknown"> </rux-tag>
+        </div>
+        <div style="padding: 10px 5%">
+            <rux-tag tag-base="0" tag-style="100">
+                <div slot="tag-text">Tag 0 100</div>
+            </rux-tag>
+        </div>
+        <rux-button>button</rux-button>
+    </body>
 </html>

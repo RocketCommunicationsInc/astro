@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { Classification, Status } from "./common/commonTypes.module";
+import { Classification, Status, StatusTags } from "./common/commonTypes.module";
 import { LogRow } from "./components/rux-log/rux-log.model";
 import { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
 import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
@@ -12378,6 +12378,17 @@ export namespace Components {
          */
         "small"?: boolean;
     }
+    interface RuxTag {
+        /**
+          * Used to display a status of pass, fail, or unknown.
+         */
+        "status"?: StatusTags;
+        /**
+          * Used to change the visual of a non-status rux-tag.
+         */
+        "tagBase"?: '0' | '1' | '2' | '3' | '4';
+        "tagStyle"?: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900';
+    }
     interface RuxTextarea {
         /**
           * Disables the button via HTML disabled attribute. Button takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
@@ -19026,6 +19037,12 @@ declare global {
         prototype: HTMLRuxTabsElement;
         new (): HTMLRuxTabsElement;
     };
+    interface HTMLRuxTagElement extends Components.RuxTag, HTMLStencilElement {
+    }
+    var HTMLRuxTagElement: {
+        prototype: HTMLRuxTagElement;
+        new (): HTMLRuxTagElement;
+    };
     interface HTMLRuxTextareaElement extends Components.RuxTextarea, HTMLStencilElement {
     }
     var HTMLRuxTextareaElement: {
@@ -20140,6 +20157,7 @@ declare global {
         "rux-table-header-row": HTMLRuxTableHeaderRowElement;
         "rux-table-row": HTMLRuxTableRowElement;
         "rux-tabs": HTMLRuxTabsElement;
+        "rux-tag": HTMLRuxTagElement;
         "rux-textarea": HTMLRuxTextareaElement;
         "rux-tree": HTMLRuxTreeElement;
         "rux-tree-node": HTMLRuxTreeNodeElement;
@@ -32608,6 +32626,17 @@ declare namespace LocalJSX {
          */
         "small"?: boolean;
     }
+    interface RuxTag {
+        /**
+          * Used to display a status of pass, fail, or unknown.
+         */
+        "status"?: StatusTags;
+        /**
+          * Used to change the visual of a non-status rux-tag.
+         */
+        "tagBase"?: '0' | '1' | '2' | '3' | '4';
+        "tagStyle"?: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900';
+    }
     interface RuxTextarea {
         /**
           * Disables the button via HTML disabled attribute. Button takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
@@ -33786,6 +33815,7 @@ declare namespace LocalJSX {
         "rux-table-header-row": RuxTableHeaderRow;
         "rux-table-row": RuxTableRow;
         "rux-tabs": RuxTabs;
+        "rux-tag": RuxTag;
         "rux-textarea": RuxTextarea;
         "rux-tree": RuxTree;
         "rux-tree-node": RuxTreeNode;
@@ -34890,6 +34920,7 @@ declare module "@stencil/core" {
             "rux-table-header-row": LocalJSX.RuxTableHeaderRow & JSXBase.HTMLAttributes<HTMLRuxTableHeaderRowElement>;
             "rux-table-row": LocalJSX.RuxTableRow & JSXBase.HTMLAttributes<HTMLRuxTableRowElement>;
             "rux-tabs": LocalJSX.RuxTabs & JSXBase.HTMLAttributes<HTMLRuxTabsElement>;
+            "rux-tag": LocalJSX.RuxTag & JSXBase.HTMLAttributes<HTMLRuxTagElement>;
             "rux-textarea": LocalJSX.RuxTextarea & JSXBase.HTMLAttributes<HTMLRuxTextareaElement>;
             "rux-tree": LocalJSX.RuxTree & JSXBase.HTMLAttributes<HTMLRuxTreeElement>;
             "rux-tree-node": LocalJSX.RuxTreeNode & JSXBase.HTMLAttributes<HTMLRuxTreeNodeElement>;
