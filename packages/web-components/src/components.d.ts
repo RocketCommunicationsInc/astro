@@ -12386,8 +12386,20 @@ export namespace Components {
         /**
           * Used to change the visual of a non-status rux-tag.
          */
-        "tagBase"?: '0' | '1' | '2' | '3' | '4';
-        "tagStyle"?: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900';
+        "tagBase"?: | '0'
+        | '1'
+        | '2'
+        | '3'
+        | '4';
+        "tagStyle"?: | '100'
+        | '200'
+        | '300'
+        | '400'
+        | '500'
+        | '600'
+        | '700'
+        | '800'
+        | '900';
     }
     interface RuxTextarea {
         /**
@@ -32634,8 +32646,20 @@ declare namespace LocalJSX {
         /**
           * Used to change the visual of a non-status rux-tag.
          */
-        "tagBase"?: '0' | '1' | '2' | '3' | '4';
-        "tagStyle"?: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900';
+        "tagBase"?: | '0'
+        | '1'
+        | '2'
+        | '3'
+        | '4';
+        "tagStyle"?: | '100'
+        | '200'
+        | '300'
+        | '400'
+        | '500'
+        | '600'
+        | '700'
+        | '800'
+        | '900';
     }
     interface RuxTextarea {
         /**
