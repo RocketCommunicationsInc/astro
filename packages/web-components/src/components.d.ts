@@ -12276,6 +12276,10 @@ export namespace Components {
     }
     interface RuxSlider {
         /**
+          * Shows tick marks and labels in the order provided and aligns evenly based on the length.
+         */
+        "axisLabels": string[];
+        /**
           * Determines if the slider is disabled.
          */
         "disabled": boolean;
@@ -12307,6 +12311,10 @@ export namespace Components {
           * Step amount of slider value.
          */
         "step": number;
+        /**
+          * Hides labels and only shows tick marks if axis-labels is provided.
+         */
+        "ticksOnly": boolean;
         /**
           * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
          */
@@ -32478,6 +32486,10 @@ declare namespace LocalJSX {
     }
     interface RuxSlider {
         /**
+          * Shows tick marks and labels in the order provided and aligns evenly based on the length.
+         */
+        "axisLabels"?: string[];
+        /**
           * Determines if the slider is disabled.
          */
         "disabled"?: boolean;
@@ -32517,6 +32529,10 @@ declare namespace LocalJSX {
           * Step amount of slider value.
          */
         "step"?: number;
+        /**
+          * Hides labels and only shows tick marks if axis-labels is provided.
+         */
+        "ticksOnly"?: boolean;
         /**
           * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
          */

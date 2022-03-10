@@ -20607,13 +20607,13 @@ export class RuxSelect {
 
 export declare interface RuxSlider extends Components.RuxSlider {}
 @ProxyCmp({
-  inputs: ['disabled', 'errorText', 'helpText', 'label', 'max', 'min', 'name', 'step', 'value']
+  inputs: ['axisLabels', 'disabled', 'errorText', 'helpText', 'label', 'max', 'min', 'name', 'step', 'ticksOnly', 'value']
 })
 @Component({
   selector: 'rux-slider',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'errorText', 'helpText', 'label', 'max', 'min', 'name', 'step', 'value'],
+  inputs: ['axisLabels', 'disabled', 'errorText', 'helpText', 'label', 'max', 'min', 'name', 'step', 'ticksOnly', 'value'],
   outputs: ['ruxinput', 'ruxblur']
 })
 export class RuxSlider {
