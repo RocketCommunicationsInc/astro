@@ -39,7 +39,7 @@
     --segmented-button-border-radius: var(--radius-base);
 }
 :host([disabled]) {
-    opacity: 0.4;
+    opacity: var(--disabled-opacity);
     label {
         cursor: not-allowed;
         border-color: var(--segmented-button-border-color) !important;
