@@ -182,13 +182,21 @@ export const WithAxisLabels = (args, data) => {
             max: 100,
             min: 0,
             value: 50,
-            ticksOnly: false,
+            ticksOnly: true,
             axisLabels: ["0", "25", "50", "75", "100"]
         }}
     >
         {WithAxisLabels.bind()}
     </Story>
 </Canvas>
+
+To display tick marks and labels, make use of the `axis-labels` property. This accepts an array of strings that will
+be evenly distributed across the progress bar. 
+
+#### Ticks Only
+
+If you only want to show tick marks without labels, make use of the `ticks-only` property. NOTE: you will still need to pass in the array of strings to determine how many
+ticks to show.
 
 ### Horizontal Labels
 
