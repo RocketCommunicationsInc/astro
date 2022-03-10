@@ -40,6 +40,7 @@
 }
 :host([disabled]) {
     opacity: var(--disabled-opacity);
+    pointer-events: none;
     label {
         cursor: not-allowed;
         border-color: var(--segmented-button-border-color) !important;
