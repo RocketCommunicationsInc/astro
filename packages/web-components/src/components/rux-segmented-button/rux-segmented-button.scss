@@ -38,6 +38,13 @@
     /** @prop --segmented-button-border-radius: Segmented button border radius */
     --segmented-button-border-radius: var(--radius-base);
 }
+:host([disabled]) {
+    opacity: 0.4;
+    label {
+        cursor: not-allowed;
+        border-color: var(--segmented-button-border-color) !important;
+    }
+}
 
 :host([hidden]) {
     display: none;
@@ -143,6 +150,7 @@
             border-color: var(--segmented-button-hover-border-color);
         }
     }
+
     &:first-child label {
         border-radius: var(--segmented-button-border-radius) 0 0
             var(--segmented-button-border-radius);
