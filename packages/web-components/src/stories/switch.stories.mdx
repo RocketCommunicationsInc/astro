@@ -75,6 +75,31 @@ export const Disabled = (args) => {
     </Story>
 </Canvas>
 
+### With Label 
+
+export const WithLabel = (args) => {
+    return html`
+<div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
+    <rux-switch
+        ?disabled=${args.disabled}
+        ?checked=${args.checked}
+        .label=${args.label}
+    ></rux-switch>
+</div>
+    `
+}
+
+<Canvas>
+    <Story
+        name="With Label"
+        args={{
+            label: 'Switch Label'
+        }}
+    >
+        {WithLabel.bind()}
+    </Story>
+</Canvas>
+
 ## Cherry Picking
 
 If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
