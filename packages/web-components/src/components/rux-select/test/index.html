@@ -73,5 +73,39 @@
                 <button id="multiSelectSubmitBtn" type="submit">submit</button>
             </form>
         </section>
+        <section>
+            <h2>Multi Select W/ OptGroup</h2>
+
+            <form id="multiSelectForm" method="POST" action="/form">
+                <div style="width: 400px">
+                    <rux-select
+                        id="ruxMultiSelectGroup"
+                        label="Best Thing?"
+                        name="bestThing"
+                        multiple
+                    >
+                        <rux-option-group label="Group 1">
+                            <rux-option value="red" label="Red"></rux-option>
+                            <rux-option value="blue" label="Blue"></rux-option>
+                        </rux-option-group>
+                        <rux-option-group label="Group 2">
+                            <rux-option
+                                value="green"
+                                label="Green"
+                            ></rux-option>
+                            <rux-option
+                                value="purple"
+                                label="Purple"
+                            ></rux-option>
+                            <rux-option
+                                value="yellow"
+                                label="Yellow"
+                            ></rux-option>
+                        </rux-option-group>
+                    </rux-select>
+                </div>
+                <button id="multiSelectSubmitBtn" type="submit">submit</button>
+            </form>
+        </section>
     </body>
 </html>

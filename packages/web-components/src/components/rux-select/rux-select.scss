@@ -2,6 +2,7 @@
 
 :host {
     display: block;
+    scrollbar-color: var(--color-active) var(--color-surface);
     ::-webkit-scrollbar {
         width: 16px;
         height: 16px;
@@ -189,7 +190,7 @@ label {
     background: var(--color-background);
     option {
         padding: 0.438rem 0 0.438rem 1rem; // 7px 0px 7px 16px
-
+        text-indent: 1rem; //! Make sure this doesn't break chrome
         &:hover {
             color: var(--color-hover);
             background-color: var(--color-list-hover);
@@ -199,6 +200,9 @@ label {
             background: var(--color-selected);
             color: var(--color-default-text);
         }
+        &:active {
+            background-color: green;
+        }
     }
     optgroup {
         text-indent: 1rem;
@@ -207,5 +211,6 @@ label {
         font-size: var(--font-body-1-font-size);
         font-weight: var(--font-body-1-font-weight);
         letter-spacing: var(--font-body-1-letter-spacing);
+        font-style: normal;
     }
 }
