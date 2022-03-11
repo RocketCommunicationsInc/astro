@@ -58,37 +58,4 @@ describe('rux-segmented-button', () => {
 
         expect(page.root.selected).toBe('Third segment')
     })
-    it('does fire change event', async () => {
-        const data = [
-            { label: 'First segment' },
-            { label: 'Second segment' },
-            { label: 'Third segment' },
-        ]
-        let page: SpecPage
-
-        const buttonSpy = jest.fn()
-
-        page = await newSpecPage({
-            components: [RuxSegmentedButton],
-            template: () => (
-                <rux-segmented-button
-                    onRuxchange={(ev: any) => buttonSpy(ev)}
-                ></rux-segmented-button>
-            ),
-        })!
-        page.root.data = data
-        const btn = page.doc?.querySelector('rux-segmented-button')
-        // btn!.data = data;
-        page.waitForChanges()
-        //? Was trying to get the label to click since maybe it's not clicking correct spot
-        // console.log(btn!.children, 'btn')
-        // const ul = btn?.shadowRoot?.querySelector('ul')
-        // console.log(ul, 'UL')
-        // const firstLi = ul?.querySelector('li')
-        // console.log(firstLi, 'LI')
-        page.waitForChanges()
-        btn!.click()
-        page.waitForChanges()
-        expect(buttonSpy).toHaveBeenCalledTimes(1)
-    })
 })

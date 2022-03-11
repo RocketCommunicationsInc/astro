@@ -40,9 +40,10 @@
 }
 :host([disabled]) {
     opacity: var(--disabled-opacity);
+    cursor: not-allowed;
     pointer-events: none;
+
     label {
-        cursor: not-allowed;
         border-color: var(--segmented-button-border-color) !important;
     }
 }

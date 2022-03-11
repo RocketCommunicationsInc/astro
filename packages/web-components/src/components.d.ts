@@ -12224,6 +12224,10 @@ export namespace Components {
          */
         "data": SegmentedButton[];
         /**
+          * Sets the disabled attribute.
+         */
+        "disabled": boolean;
+        /**
           * When passed in on load, this selects the first button segment with a matching label. When the selected segment changes, this property updates with the currently selected value, which reflects back to the component attribute. If no button segment label matches this string, then no segment is selected. This value takes priority over setting selected boolean property on the items in the data array.
          */
         "selected": string;
@@ -32421,6 +32425,10 @@ declare namespace LocalJSX {
           * Items in this Array are the individual button segments.
          */
         "data"?: SegmentedButton[];
+        /**
+          * Sets the disabled attribute.
+         */
+        "disabled"?: boolean;
         /**
           * Emitted when the value property has changed.
          */
