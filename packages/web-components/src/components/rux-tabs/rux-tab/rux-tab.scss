@@ -28,7 +28,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 2rem;
+    padding: 1.875rem 1rem; //30 16
     margin: 0;
     min-width: 5rem;
     text-decoration: none;
@@ -47,6 +47,7 @@
 }
 :host([small]) {
     min-width: 2rem;
+    padding: 1.25rem 1rem; //20 16
     border-bottom: 3px solid var(--tab-border-color);
 }
 :host([small][selected]) {
