@@ -12436,9 +12436,9 @@ export namespace Components {
          */
         "rows"?: number;
         /**
-          * Styles the input element and label smaller for space-limited situations.
+          * Styles the input element size between small, medium and large. The default styling is medium.
          */
-        "small": boolean;
+        "size"?: 'small' | 'medium' | 'large';
         /**
           * The input value
          */
@@ -32690,9 +32690,9 @@ declare namespace LocalJSX {
          */
         "rows"?: number;
         /**
-          * Styles the input element and label smaller for space-limited situations.
+          * Styles the input element size between small, medium and large. The default styling is medium.
          */
-        "small"?: boolean;
+        "size"?: 'small' | 'medium' | 'large';
         /**
           * The input value
          */

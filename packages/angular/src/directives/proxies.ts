@@ -20871,13 +20871,13 @@ export class RuxTabs {
 
 export declare interface RuxTextarea extends Components.RuxTextarea {}
 @ProxyCmp({
-  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'rows', 'small', 'value']
+  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'rows', 'size', 'value']
 })
 @Component({
   selector: 'rux-textarea',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'rows', 'small', 'value'],
+  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'rows', 'size', 'value'],
   outputs: ['ruxchange', 'ruxinput', 'ruxblur']
 })
 export class RuxTextarea {
