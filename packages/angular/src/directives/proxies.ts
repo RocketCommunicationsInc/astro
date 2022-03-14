@@ -20559,13 +20559,13 @@ export class RuxRadioGroup {
 
 export declare interface RuxSegmentedButton extends Components.RuxSegmentedButton {}
 @ProxyCmp({
-  inputs: ['data', 'selected', 'size']
+  inputs: ['data', 'disabled', 'selected', 'size']
 })
 @Component({
   selector: 'rux-segmented-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['data', 'selected', 'size'],
+  inputs: ['data', 'disabled', 'selected', 'size'],
   outputs: ['ruxchange']
 })
 export class RuxSegmentedButton {
