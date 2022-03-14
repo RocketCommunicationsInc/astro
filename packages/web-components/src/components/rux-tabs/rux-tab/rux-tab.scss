@@ -57,7 +57,7 @@
     border-bottom: 5px solid var(--tab-selected-border-color);
 }
 :host(:hover) {
-    color: var(--tab-hover-text-color);
+    color: var(--color-hover);
 }
 :host([disabled]) {
     color: var(--tab-text-color);
