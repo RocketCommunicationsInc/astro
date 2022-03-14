@@ -2,6 +2,7 @@ import { Prop, Component, h } from '@stencil/core'
 
 /**
  * @slot (default) - Two or more RuxButton components to render in the group
+ * @part container - the components container
  */
 @Component({
     tag: 'rux-button-group',
@@ -27,6 +28,7 @@ export class RuxButtonGroup {
                     'rux-button-group--right': hAlign === 'right',
                     'rux-button-group--center': hAlign === 'center',
                 }}
+                part="container"
             >
                 <slot></slot>
             </div>

@@ -4,8 +4,8 @@ path: /components/tree
 date: Last Modified
 layout: components.template.njk
 title: Tree
-demo: components-tree--tree
-storybook: components-tree--tree
+demo: components-tree--default-story
+storybook: components-tree--default-story
 git: rux-tree
 height: 480px
 scrolling: yes

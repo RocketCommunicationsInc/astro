@@ -49,6 +49,14 @@ Radio Buttons allow users to mutually select an option from a predefined set of 
 | `"(default)"` | The radio label |
 
 
+## Shadow Parts
+
+| Part           | Description                 |
+| -------------- | --------------------------- |
+| `"form-field"` | the form field of the radio |
+| `"label"`      | the label of the radio      |
+
+
 ## CSS Custom Properties
 
 | Name                         | Description                 |

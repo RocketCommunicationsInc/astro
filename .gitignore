@@ -1,4 +1,5 @@
 dist/
+!packages/ag-grid-theme/dist
 www/
 loader/
 storybook-static/
@@ -22,7 +23,9 @@ log.txt
 
 .stencil/
 .idea/
-.vscode/
+
+.vscode/*
+!.vscode/extensions.json
 .sass-cache/
 .versions/
 .netlify

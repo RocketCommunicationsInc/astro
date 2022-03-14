@@ -9,6 +9,10 @@ import {
 } from '@stencil/core'
 import { renderHiddenInput } from '../../utils/utils'
 
+/**
+ * @part label - the label of rux-push-button
+ * @part icon - the optional rux-icon
+ */
 @Component({
     tag: 'rux-push-button',
     styleUrl: 'rux-push-button.scss',
@@ -53,7 +57,7 @@ export class RuxPushButton {
     /**
      * The value of the push button.
      */
-    @Prop({ reflect: true, mutable: true }) value: string = ''
+    @Prop({ reflect: true }) value: string = ''
     /**
      * Changes size of a push button from medium to small or large by setting sizing classes
      * rux-button--small
@@ -120,7 +124,7 @@ export class RuxPushButton {
                     disabled={disabled}
                     checked={checked}
                     onChange={_onChange}
-                    onBlur={() => _onBlur()}
+                    onBlur={_onBlur}
                     value={value}
                 />
                 <label
@@ -131,9 +135,14 @@ export class RuxPushButton {
                         'rux-push-button__button--icon-only': iconOnly,
                     }}
                     htmlFor={this.pushButtonId}
+                    part="label"
                 >
                     {icon ? (
-                        <rux-icon size="extra-small" icon={icon}></rux-icon>
+                        <rux-icon
+                            size="extra-small"
+                            exportparts="icon"
+                            icon={icon}
+                        ></rux-icon>
                     ) : null}
 
                     {label}

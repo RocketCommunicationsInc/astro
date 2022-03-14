@@ -80,6 +80,13 @@ Pass properties as slotted components in the Astro Pop Up Menu or Astro Select M
 | `"start"` | before element text. Typically used for icons |
 
 
+## Shadow Parts
+
+| Part          | Description                        |
+| ------------- | ---------------------------------- |
+| `"container"` | the container of the rux-menu-item |
+
+
 ## CSS Custom Properties
 
 | Name                                       | Description                      |

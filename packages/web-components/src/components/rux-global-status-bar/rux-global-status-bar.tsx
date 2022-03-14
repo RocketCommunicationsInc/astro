@@ -6,6 +6,10 @@ import { AppMeta } from './appMeta/appMeta'
  * @slot left-side - Used to prepend a RuxIcon or similar element
  * @slot app-meta - Used to display the Application's metadata (Domain, Name, State, Version, etc.)
  * @slot right-side - Used to append optional content
+ *
+ * @part app-state - The container for the applications state
+ * @part container - The container for global-status-bar
+ * @part username - The container for the username
  */
 @Component({
     tag: 'rux-global-status-bar',
@@ -65,20 +69,20 @@ export class RuxGlobalStatusBar {
     /**
      * Sets the icon to be displayed in the default rux-icon component
      */
-    @Prop({ attribute: 'menu-icon', mutable: true, reflect: true })
+    @Prop({ attribute: 'menu-icon', reflect: true })
     menuIcon: string = 'apps'
 
     render() {
         const TagColor = {
-            tag1: 'var(--color-tag-1-600)',
-            tag2: 'var(--color-tag-2-600)',
-            tag3: 'var(--color-tag-3-600)',
-            tag4: 'var(--color-tag-4-600)',
+            tag1: 'var(--color-global-tag-tag1-600)',
+            tag2: 'var(--color-global-tag-tag2-600)',
+            tag3: 'var(--color-global-tag-tag3-600)',
+            tag4: 'var(--color-global-tag-tag4-600)',
         }
 
         return (
             <Host>
-                <header>
+                <header part="container">
                     <slot name="left-side">
                         {this.includeIcon && (
                             <rux-icon
@@ -89,6 +93,7 @@ export class RuxGlobalStatusBar {
                                         ? 'shifted-up'
                                         : ''
                                 }
+                                exportparts="icon"
                             />
                         )}
                     </slot>
@@ -106,6 +111,7 @@ export class RuxGlobalStatusBar {
                                     {this.appState && (
                                         <div
                                             class="app-state"
+                                            part="app-state"
                                             style={{
                                                 backgroundColor: `${
                                                     TagColor[
@@ -118,7 +124,7 @@ export class RuxGlobalStatusBar {
                                         </div>
                                     )}
                                     {this.username && (
-                                        <div class="username">
+                                        <div class="username" part="username">
                                             {this.username}
                                         </div>
                                     )}

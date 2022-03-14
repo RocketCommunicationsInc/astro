@@ -1,4 +1,4 @@
-@use "../../global/variables" as variables;
+@use '../../global/tokens/colors-dark' as variables;
 
 :host {
     display: block;
@@ -10,7 +10,7 @@
     width: 100%;
     padding: 0 1.875rem;
     box-sizing: border-box;
-    background-color: var(--global-status-bar);
+    background-color: var(--color-gsb-global-status-bar);
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -53,7 +53,7 @@ slot[name='left-side'] > .shifted-up,
     flex-wrap: wrap;
     padding: 0;
     margin: 0 auto 0 0;
-    color: var(--color-basics-white);
+    color: var(--color-global-basics-white);
     white-space: nowrap;
 }
 
@@ -69,18 +69,18 @@ slot[name='left-side'] > .shifted-up,
     margin-bottom: 0;
     margin-top: 0;
     height: 32px;
-    font-family: var(--font-h1-font-family);
-    font-size: var(--font-h1-font-size);
-    font-weight: var(--font-h1-font-weight);
-    letter-spacing: var(--font-h1-letter-spacing);
+    font-family: var(--font-heading-1-font-family);
+    font-size: var(--font-heading-1-font-size);
+    font-weight: var(--font-heading-1-font-weight);
+    letter-spacing: var(--font-heading-1-letter-spacing);
 }
 
 .app-meta h1.app-domain {
     margin-right: 13px;
-    font-family: var(--font-h1-bold-font-family);
-    font-size: var(--font-h1-bold-font-size);
-    font-weight: var(--font-h1-bold-font-weight);
-    letter-spacing: var(--font-h1-bold-letter-spacing);
+    font-family: var(--font-heading-1-bold-font-family);
+    font-size: var(--font-heading-1-bold-font-size);
+    font-weight: var(--font-heading-1-bold-font-weight);
+    letter-spacing: var(--font-heading-1-bold-letter-spacing);
 }
 
 .app-name {
@@ -89,8 +89,8 @@ slot[name='left-side'] > .shifted-up,
 
 .app-version {
     display: inline-block;
-    font-size: var(--font-h6-font-size);
-    font-weight: var(--font-h6-font-weight);
+    font-size: var(--font-heading-6-font-size);
+    font-weight: var(--font-heading-6-font-weight);
 }
 
 .app-state-wrapper {
@@ -100,13 +100,13 @@ slot[name='left-side'] > .shifted-up,
 // all temp classes and their subsequent styling will be replaced with internal component styles.
 .app-state {
     box-sizing: border-box;
-    color: var(--color-basics-white);
-    background-color: var(--color-basics-black);
-    border-radius: 2px;
-    font-family: var(--font-b2-font-family);
-    font-size: var(--font-b2-font-size);
-    font-weight: var(--font-b2-font-weight);
-    letter-spacing: var(--font-b2-letter-spacing);
+    color: var(--color-global-basics-white);
+    background-color: var(--color-global-basics-black);
+    border-radius: var(--app-state-radius);
+    font-family: var(--font-body-2-font-family);
+    font-size: var(--font-body-2-font-size);
+    font-weight: var(--font-body-2-font-weight);
+    letter-spacing: var(--font-body-2-letter-spacing);
     padding: 2px 6px;
     text-align: center;
     height: 22px;
@@ -117,10 +117,10 @@ slot[name='left-side'] > .shifted-up,
 .username {
     box-sizing: border-box;
     flex-basis: 50%;
-    font-family: var(--font-b2-font-family);
-    font-size: var(--font-b2-font-size);
-    font-weight: var(--font-b2-font-weight);
-    letter-spacing: var(--font-b2-letter-spacing);
+    font-family: var(--font-body-2-font-family);
+    font-size: var(--font-body-2-font-size);
+    font-weight: var(--font-body-2-font-weight);
+    letter-spacing: var(--font-body-2-letter-spacing);
     padding: 2px 0;
     height: 22px;
 }

@@ -162,6 +162,13 @@ Type: `Promise<boolean>`
 | `"menu-end"` | Area below the menu list to insert elements. For example, confirmation and/or cancel button group. |
 
 
+## Shadow Parts
+
+| Part          | Description                       |
+| ------------- | --------------------------------- |
+| `"container"` | the container for the pop-up-menu |
+
+
 ## CSS Custom Properties
 
 | Name                                  | Description                         |

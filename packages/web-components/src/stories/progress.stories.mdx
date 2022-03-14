@@ -18,13 +18,12 @@ A visual indicator of a task's progress. When indicating progress with a finite 
 
 export const Default = (args) => {
     return html`
-        <div style="margin: 3rem auto;  padding: 2rem; text-align: center;">
-            <rux-progress
-                value="${args.value}"
-                .max=${args.max}
-                ?hide-label="${args.hideLabel}"
-            ></rux-progress>
-        </div>
+<div style="margin: 3rem auto;  padding: 2rem; text-align: center;">
+    <rux-progress
+        value="${args.value}"
+        .max=${args.max}
+    ></rux-progress>
+</div>
     `
 }
 
@@ -59,7 +58,7 @@ export const DeterminateProgressMax = (args) => {
         <div style="margin: 3rem auto;  padding: 2rem; text-align: center;">
             <rux-progress
                 value="${args.value}"
-                .max=${args.max}
+                max=${args.max}
                 ?hide-label="${args.hideLabel}"
             ></rux-progress>
         </div>
@@ -82,13 +81,13 @@ export const DeterminateProgressMax = (args) => {
 
 export const DeterminateProgressCustomMax = (args) => {
     return html`
-        <div style="margin: 3rem auto;  padding: 2rem; text-align: center;">
-            <rux-progress
-                value="${args.value}"
-                .max=${args.max}
-                ?hide-label="${args.hideLabel}"
-            ></rux-progress>
-        </div>
+<div style="margin: 3rem auto;  padding: 2rem; text-align: center;">
+    <rux-progress
+        value="${args.value}"
+        max=${args.max}
+        ?hide-label="${args.hideLabel}"
+    ></rux-progress>
+</div>
     `
 }
 
@@ -107,17 +106,32 @@ export const DeterminateProgressCustomMax = (args) => {
 ## Indeterminate Progress
 
 export const IndeterminateProgress = (args) => html`
-    <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
-        <rux-progress
-            .value="${args.value}"
-            .max=${args.max}
-            ?hide-label="${args.hideLabel}"
-        ></rux-progress>
-    </div>
+<div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
+    <rux-progress
+    ></rux-progress>
+</div>
 `
 
 <Canvas>
-    <Story name="Indeterminate Progress">{IndeterminateProgress.bind()}</Story>
+    <Story name="Indeterminate Progress" 
+    argTypes={{
+        value: { 
+            table: {
+                disable: true 
+            },
+        },
+        max: {
+            table: {
+                disable: true
+            },
+        },
+        hideLabel: {
+            table: {
+                disable: true
+            }
+        }
+    }}
+    >{IndeterminateProgress.bind()}</Story>
 </Canvas>
 
 ### Cherry Picking

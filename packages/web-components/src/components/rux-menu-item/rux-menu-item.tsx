@@ -11,6 +11,7 @@ import {
 
 /**
  * @slot start - before element text. Typically used for icons
+ * @part container - the container of the rux-menu-item
  */
 
 @Component({
@@ -68,7 +69,7 @@ export class RuxMenuItem {
     })
     ruxMenuItemSelected!: EventEmitter<object>
 
-    @Listen('click')
+    @Listen('click', { passive: false })
     handleClick() {
         if (!this.disabled) {
             this.itemOnClick()
@@ -88,7 +89,7 @@ export class RuxMenuItem {
 
         return (
             <Host aria-disabled={disabled ? 'true' : null}>
-                <li>
+                <li part="container">
                     <TagType {...attributes}>
                         <slot name="start"></slot>
                         <slot></slot>

@@ -310,6 +310,10 @@
     ]
   },
   {
+    "label": "Release Schedule",
+    "url": "/release-schedule"
+  },
+  {
     "label": "Downloads",
     "url": "/downloads"
   },

@@ -1,3 +1,4 @@
+/* eslint react/jsx-no-bind: 0 */ // --> OFF
 import {
     Prop,
     Event,
@@ -24,7 +25,7 @@ let id = 0
  * @slot node - Renders a child node within the current node
  */
 export class RuxTreeNode {
-    componentId = `node-${++id}`
+    private componentId = `node-${++id}`
     @Element() el!: HTMLRuxTreeNodeElement
     @State() children: Array<HTMLRuxTreeNodeElement> = []
 
@@ -53,7 +54,7 @@ export class RuxTreeNode {
         this.setSelected(newValue)
     }
 
-    @Listen('keydown')
+    @Listen('keydown', { passive: true })
     handleKeyDown(ev: KeyboardEvent) {
         if (ev.target !== ev.currentTarget) {
             return true
@@ -84,11 +85,11 @@ export class RuxTreeNode {
     }
 
     connectedCallback() {
-        this.handleSlotChange = this.handleSlotChange.bind(this)
+        this._handleSlotChange = this._handleSlotChange.bind(this)
     }
 
     componentWillLoad() {
-        this.handleSlotChange()
+        this._handleSlotChange()
     }
 
     get _hasChildren() {
@@ -116,7 +117,7 @@ export class RuxTreeNode {
         }
     }
 
-    handleSlotChange() {
+    private _handleSlotChange() {
         const children = Array.from(
             this.el.querySelectorAll(`[slot="node"]`)
         ) as HTMLRuxTreeNodeElement[]
@@ -128,7 +129,7 @@ export class RuxTreeNode {
      * Manually set the aria-level attribute.
      * Tree is responsible for setting the root node levels.
      */
-    _setAriaLevel() {
+    private _setAriaLevel() {
         const level = this.el.getAttribute('aria-level')
         if (level) {
             this.children.map((child) => {
@@ -137,30 +138,30 @@ export class RuxTreeNode {
         }
     }
 
-    _handleArrowClick(e: MouseEvent) {
+    private _handleArrowClick(e: MouseEvent) {
         e.stopPropagation()
         this.setExpanded(!this.expanded)
     }
 
-    _handleTreeNodeClick(e: MouseEvent) {
+    private _handleTreeNodeClick(e: MouseEvent) {
         e.stopPropagation()
         this.selected = !this.selected
     }
 
-    _expandNextNode() {
+    private _expandNextNode() {
         if (!this.expanded && this._hasChildren) {
             this.setExpanded(true)
         }
     }
 
-    _focusItem(el: HTMLRuxTreeNodeElement) {
+    private _focusItem(el: HTMLRuxTreeNodeElement) {
         const parent = el?.shadowRoot?.querySelector('.parent') as HTMLElement
         if (parent) {
             parent.focus()
         }
     }
 
-    _collapseParent() {
+    private _collapseParent() {
         if (this.expanded) {
             this.setExpanded(false)
         } else if (this.el.parentElement) {
@@ -177,9 +178,10 @@ export class RuxTreeNode {
         }
     }
 
-    _focusNext(direction: number) {
+    private _focusNext(direction: number) {
         const visibleNodes = this._getVisibleNodes()
         const currentIndex: number = visibleNodes.indexOf(this.el)
+        console.log('start focus')
         if (currentIndex !== -1) {
             let nextElement: HTMLRuxTreeNodeElement | undefined =
                 visibleNodes[currentIndex + direction]
@@ -189,19 +191,19 @@ export class RuxTreeNode {
                     const offset: number = direction >= 0 ? 1 : -1
                     nextElement =
                         visibleNodes[currentIndex + direction + offset]
-                    if (!nextElement) {
+                    if (nextElement) {
                         break
                     }
                 }
             }
 
-            if (nextElement) {
+            if (nextElement !== null) {
                 this._focusItem(nextElement as HTMLRuxTreeNodeElement)
             }
         }
     }
 
-    _getVisibleNodes() {
+    private _getVisibleNodes() {
         const rootTree = this.el.closest("[role='tree']") as HTMLRuxTreeElement
         const nodes = Array.from(rootTree.querySelectorAll('rux-tree-node'))
         return nodes.filter(
@@ -237,12 +239,12 @@ export class RuxTreeNode {
                                 class="arrow"
                             ></i>
                         )}
-                        <slot onSlotchange={this.handleSlotChange}></slot>
+                        <slot onSlotchange={this._handleSlotChange}></slot>
                     </div>
                     <div {...attrs} class="children">
                         <slot
                             name="node"
-                            onSlotchange={this.handleSlotChange}
+                            onSlotchange={this._handleSlotChange}
                         ></slot>
                     </div>
                 </div>

@@ -15,6 +15,8 @@ let id = 0
 
 /**
  * @slot label - The switch label
+ * @part switch - the track (::before) and the button (::after) on rux-switch
+ * @part label - the label of switch
  */
 @Component({
     tag: 'rux-switch',
@@ -22,7 +24,7 @@ let id = 0
     shadow: true,
 })
 export class RuxSwitch {
-    switchId = `rux-switch-${++id}`
+    private switchId = `rux-switch-${++id}`
     @Element() el!: HTMLRuxSwitchElement
     @State() hasLabelSlot = false
 
@@ -114,7 +116,6 @@ export class RuxSwitch {
 
     render() {
         const { switchId, checked, disabled, name, value } = this
-
         renderHiddenInput(
             true,
             this.el,
@@ -148,14 +149,19 @@ export class RuxSwitch {
                         aria-checked={`${checked}`}
                         onChange={this._onChange}
                         onInput={this._onInput}
-                        onBlur={() => this._onBlur()}
+                        onBlur={this._onBlur}
                     />
-                    <label class="rux-switch__button" htmlFor={switchId}>
+                    <label
+                        class="rux-switch__button"
+                        htmlFor={switchId}
+                        part="switch"
+                    >
                         <span
                             class={{
                                 'rux-switch__label': true,
                                 hidden: !this.hasLabel,
                             }}
+                            part="label"
                         >
                             <slot
                                 onSlotchange={this._handleSlotChange}

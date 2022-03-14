@@ -130,6 +130,14 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 | `ruxchange` | Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) | `CustomEvent<any>` |
 
 
+## Shadow Parts
+
+| Part      | Description                  |
+| --------- | ---------------------------- |
+| `"icon"`  | the optional rux-icon        |
+| `"label"` | the label of rux-push-button |
+
+
 ## CSS Custom Properties
 
 | Name                                     | Description                                   |

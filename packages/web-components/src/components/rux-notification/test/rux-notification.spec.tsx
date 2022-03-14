@@ -1,4 +1,5 @@
-import { newSpecPage } from '@stencil/core/testing'
+import { h } from '@stencil/core'
+import { newSpecPage, SpecPage } from '@stencil/core/testing'
 import { RuxNotification } from '../rux-notification'
 
 jest.useFakeTimers()
@@ -9,16 +10,7 @@ describe('rux-notification', () => {
             components: [RuxNotification],
             html: `<rux-notification open message="hello there"></rux-notification>`,
         })
-        expect(page.root).toEqualHtml(`
-         <rux-notification message="hello there" open="" status="standby">
-           <mock:shadow-root>
-             <div class="rux-notification__message">
-               hello there
-             </div>
-             <rux-icon icon="close" label="Close notification" role="button" size="36px"></rux-icon>
-        </mock:shadow-root>
-      </rux-notification>
-    `)
+        expect(page.root).toMatchSnapshot()
     })
     it('sets open to false after the closeAfter time has been met', async () => {
         const ruxNotif = new RuxNotification()
@@ -26,7 +18,7 @@ describe('rux-notification', () => {
         ruxNotif.message = 'Hey, Listen!'
         ruxNotif.status = 'critical'
         ruxNotif.closeAfter = 3000
-        ruxNotif.updated()
+        ruxNotif._updated()
         // expect(ruxNotif.open).toBe(false)
         setTimeout(() => expect(ruxNotif.open).toBe(false), 3001)
     })
@@ -53,7 +45,7 @@ describe('rux-notification', () => {
         ruxNotif.message = 'The Duality of RuxNotification'
         ruxNotif.status = 'caution'
         ruxNotif.closeAfter = 3000
-        ruxNotif.updated()
+        ruxNotif._updated()
         //!running updated should also do the timeout and close, if not that's your problem here
         // expect(ruxNotif.open).toBe(false)
         setTimeout(() => expect(ruxNotif.open).toBe(false), ruxNotif.closeAfter)
@@ -64,7 +56,7 @@ describe('rux-notification', () => {
         ruxNotif.message = 'The Duality of RuxNotification'
         ruxNotif.status = 'caution'
         ruxNotif.closeAfter = 3
-        ruxNotif.updated()
+        ruxNotif._updated()
         setTimeout(() => expect(ruxNotif.open).toBe(false), ruxNotif.closeAfter)
     })
     it('get _closeAfter returns 2000 if closeAfter is > 10s or < 2s', async () => {
@@ -78,5 +70,29 @@ describe('rux-notification', () => {
         ruxNotif.closeAfter = 15000 // 15s
         ruxNotif._closeAfter
         expect(ruxNotif.closeAfter).toBe(2000)
+    })
+
+    it('should emit one event when closed', async () => {
+        const buttonSpy = jest.fn()
+        let page: SpecPage
+
+        page = await newSpecPage({
+            components: [RuxNotification],
+            template: () => (
+                <rux-notification
+                    open
+                    onRuxclosed={(ev: any) => buttonSpy(ev)}
+                ></rux-notification>
+            ),
+        })!
+        const notification = page.doc?.querySelector('rux-notification')
+        expect(notification!.open).toBe(true)
+        const icon = notification?.shadowRoot?.querySelector('rux-icon')
+        page.waitForChanges()
+        icon!.click()
+        page.waitForChanges()
+
+        expect(notification!.open).toBe(false)
+        expect(buttonSpy).toHaveBeenCalledTimes(1)
     })
 })

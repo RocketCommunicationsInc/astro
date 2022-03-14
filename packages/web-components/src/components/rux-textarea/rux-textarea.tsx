@@ -17,8 +17,12 @@ let id = 0
 
 /**
  * @slot label - The textarea label
+ * @part error-text - The error text element
  * @part form-field - The form-field wrapper container
+ * @part help-text - The help text element
  * @part label - The input label when `label` prop is set
+ * @part textarea - The textarea element
+ * @part required - The asterisk when required is true
  */
 @Component({
     tag: 'rux-textarea',
@@ -26,7 +30,7 @@ let id = 0
     shadow: true,
 })
 export class RuxTextarea implements FormFieldInterface {
-    inputId = `rux-textarea-${++id}`
+    private inputId = `rux-textarea-${++id}`
     @State() hasLabelSlot = false
 
     /**
@@ -174,6 +178,14 @@ export class RuxTextarea implements FormFieldInterface {
                                 name="label"
                             >
                                 {this.label}
+                                {this.required && (
+                                    <span
+                                        part="required"
+                                        class="rux-textarea-label__asterisk"
+                                    >
+                                        &#42;
+                                    </span>
+                                )}
                             </slot>
                         </span>
                     </label>
@@ -195,7 +207,8 @@ export class RuxTextarea implements FormFieldInterface {
                         rows={this.rows}
                         onChange={this._onChange}
                         onInput={this._onInput}
-                        onBlur={() => this._onBlur()}
+                        onBlur={this._onBlur}
+                        part="textarea"
                     ></textarea>
                 </div>
                 <FormFieldMessage

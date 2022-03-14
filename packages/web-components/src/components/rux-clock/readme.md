@@ -66,6 +66,20 @@ Define AOS and LOS with valid [Unix Time Stamp](http://pubs.opengroup.org/online
 | `timezone`     | `timezone`      | Accepts the [IANA timezone string format](https://www.iana.org/time-zones) such as `'America/Los_Angeles'` or any single-character designation for a [military timezones](https://en.wikipedia.org/wiki/List_of_military_time_zones) (`'A'` through `'Z'`, excluding `'J'`), both case-insensitive. If no value for timezone is provided, the clock will use `'UTC'`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details. | `string`              | `'UTC'`     |
 
 
+## Shadow Parts
+
+| Part           | Description                                 |
+| -------------- | ------------------------------------------- |
+| `"aos"`        | the container for the aos section of clock  |
+| `"aos-label"`  | the container for the aos label             |
+| `"date"`       | the container for the date section of clock |
+| `"date-label"` | the container for the date label            |
+| `"los"`        | the container for the los section of clock  |
+| `"los-label"`  | the container for the los label             |
+| `"time"`       | the conatiner for the time section of clock |
+| `"time-label"` | the container for the time label            |
+
+
 ## CSS Custom Properties
 
 | Name                       | Description                        |

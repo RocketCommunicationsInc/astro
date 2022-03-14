@@ -4,33 +4,33 @@
     /**
   * @prop --input-background-color: the input background color
   */
-    --input-background-color: var(--background);
+    --input-background-color: var(--color-background);
 
     /**
     * @prop --input-border-color: the input border color
     */
-    --input-border-color: var(--active);
+    --input-border-color: var(--color-active);
 
     /**
     * @prop --input-text-color: the input text color
     */
-    --input-text-color: var(--default-text);
+    --input-text-color: var(--color-default-text);
 
     /**
     * @prop --input-focus-border-color: the input focus border color
     */
 
-    --input-focus-border-color: var(--hover);
+    --input-focus-border-color: var(--color-hover);
 
     /**
     * @prop --input-selection-background-color: the background color of highlighted text
     */
-    --input-selection-background-color: var(--color-secondary-300);
+    --input-selection-background-color: var(--color-global-secondary-300);
 
     /**
     * @prop --input-invalid-border-color: the input invalid border color
     */
-    --input-invalid-border-color: var(--color-critical);
+    --input-invalid-border-color: var(--color-status-critical-fill);
 
     display: block;
 
@@ -39,7 +39,7 @@
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-        color: var(--default-text);
+        color: var(--color-default-text);
     }
     .icon-container {
         background-color: #101923;
@@ -65,11 +65,11 @@
         order: 2;
         width: 100%;
         border: 1px solid var(--input-border-color);
-        border-radius: 3px;
-        font-family: var(--font-b1-font-family);
-        font-size: var(--font-b1-font-size);
-        font-weight: var(--font-b1-font-weight);
-        letter-spacing: var(--font-b1-letter-spacing);
+        border-radius: var(--radius-base);
+        font-family: var(--font-body-1-font-family);
+        font-size: var(--font-body-1-font-size);
+        font-weight: var(--font-body-1-font-weight);
+        letter-spacing: var(--font-body-1-letter-spacing);
         color: var(--input-text-color);
         background-color: var(--input-background-color);
         &--invalid {
@@ -113,16 +113,15 @@
             border: 1px solid var(--input-invalid-border-color);
         }
         &::placeholder {
-            color: var(--default-text);
-            opacity: 0.6;
+            color: var(--color-placeholder-text);
         }
     }
 
     .rux-input-label {
-        font-family: var(--font-b1-font-family);
-        font-size: var(--font-b1-font-size);
-        font-weight: var(--font-b1-font-weight);
-        letter-spacing: var(--font-b1-letter-spacing);
+        font-family: var(--font-body-1-font-family);
+        font-size: var(--font-body-1-font-size);
+        font-weight: var(--font-body-1-font-weight);
+        letter-spacing: var(--font-body-1-letter-spacing);
         margin-bottom: var(--spacing-input-label-top);
         &__asterisk {
             margin-left: 4px;

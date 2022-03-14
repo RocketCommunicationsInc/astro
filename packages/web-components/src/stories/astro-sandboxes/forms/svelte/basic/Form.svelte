@@ -1,13 +1,37 @@
 <script>
-  let count = 0;
+  let optionsVal;
 
-  function handleClick() {
-    count += 1;
+  function onSubmit(e) {
+    const formData = new FormData(e.target);
+
+    const data = {};
+    let arr = [];
+    for (let field of formData) {
+      const [key, value] = field;
+      if (key === "things") {
+        arr.push(value);
+        data[key] = arr;
+      } else {
+        data[key] = value;
+      }
+    }
+    alert(`
+      First Name: ${data["firstName"]}
+      Last Name: ${data["lastName"]}
+      Email: ${data["email"]}
+      Country: ${data["country"]}
+      Things: ${data["things"]}
+      Options: ${optionsVal}
+      range: ${data["range"]}
+    `);
+  }
+  function handleChange(e) {
+    optionsVal = e.target.value;
   }
 </script>
 
 <div style="width: 60%; margin: auto;">
-  <form style="padding: 1rem;" method="POST" action="/">
+  <form style="padding: 1rem;" method="POST" action="/" on:submit|preventDefault={onSubmit}>
     <div>
       <rux-input
         name="firstName"
@@ -44,7 +68,7 @@
       </rux-checkbox-group>
     </div>
     <div>
-      <rux-radio-group label="Options">
+      <rux-radio-group label="Options" value="everything" on:ruxchange={handleChange}>
         <rux-radio name="options" value="everything">
           Everything
         </rux-radio>

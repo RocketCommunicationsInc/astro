@@ -98,18 +98,21 @@ Applying the `label` property attribute to the classification custom element add
 
 ## Properties
 
-| Property         | Attribute        | Description                                                          | Type                                                                                               | Default          |
-| ---------------- | ---------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ---------------- |
-| `classification` | `classification` | Defines which classification marking will be displayed.              | `"confidential" \| "controlled" \| "secret" \| "top-secret" \| "top-secret-sci" \| "unclassified"` | `'unclassified'` |
-| `label`          | `label`          | Allows additional text labels to be added to the marking             | `string \| undefined`                                                                              | `undefined`      |
-| `tag`            | `tag`            | Declares the marking as a `tag` rather than the default banner style | `boolean`                                                                                          | `false`          |
+| Property         | Attribute        | Description                                                          | Type                                                                                                        | Default          |
+| ---------------- | ---------------- | -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ---------------- |
+| `classification` | `classification` | Defines which classification marking will be displayed.              | `"confidential" \| "controlled" \| "cui" \| "secret" \| "top-secret" \| "top-secret-sci" \| "unclassified"` | `'unclassified'` |
+| `label`          | `label`          | Allows additional text labels to be added to the marking             | `string \| undefined`                                                                                       | `undefined`      |
+| `tag`            | `tag`            | Declares the marking as a `tag` rather than the default banner style | `boolean`                                                                                                   | `false`          |
 
 
 ## Shadow Parts
 
-| Part              | Description       |
-| ----------------- | ----------------- |
-| `"footer-banner"` | the footer banner |
+| Part              | Description                                         |
+| ----------------- | --------------------------------------------------- |
+| `"footer"`        | the footer banner                                   |
+| `"footer-banner"` | the footer banner ! DEPRECATED IN FAVOR OF FOOTER ! |
+| `"header"`        | the container for the header banner                 |
+| `"tag"`           | the container for the tag                           |
 
 
 ## CSS Custom Properties

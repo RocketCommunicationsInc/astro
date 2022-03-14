@@ -1,5 +1,8 @@
 import { Component, h } from '@stencil/core'
 
+/**
+ * @part container - the container of the rux-menu-item-divider
+ */
 @Component({
     tag: 'rux-menu-item-divider',
     styleUrl: 'rux-menu-item-divider.scss',
@@ -7,6 +10,6 @@ import { Component, h } from '@stencil/core'
 })
 export class RuxMenuItemDivider {
     render() {
-        return <li role="separator"></li>
+        return <li part="container" role="separator"></li>
     }
 }

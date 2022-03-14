@@ -42,8 +42,12 @@
 
 | Part           | Description                              |
 | -------------- | ---------------------------------------- |
+| `"error-text"` | The error text element                   |
 | `"form-field"` | The form-field wrapper container         |
+| `"help-text"`  | The help text element                    |
 | `"label"`      | The input label when `label` prop is set |
+| `"required"`   | The asterisk when required is true       |
+| `"textarea"`   | The textarea element                     |
 
 
 ## CSS Custom Properties

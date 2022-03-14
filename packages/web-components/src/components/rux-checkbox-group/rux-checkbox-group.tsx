@@ -6,8 +6,11 @@ import { hasSlot } from '../../utils/utils'
  * @slot (default) - The checkbox elements
  * @slot label - The checkbox group label
  * @part container - The container div of checkbox elements
+ * @part error-text - The error text element
  * @part form-field - The form-field wrapper container
+ * @part help-text - The help text element
  * @part label - The input label when `label` prop is set
+ * @part required - The asterisk when required is true
  */
 @Component({
     tag: 'rux-checkbox-group',
@@ -38,6 +41,11 @@ export class RuxCheckboxGroup {
      * Presentational only. Renders the Checkbox Group as invalid.
      */
     @Prop() invalid: boolean = false
+
+    /**
+     * Marks that a selection from the checkbox group is requried.
+     */
+    @Prop() required: boolean = false
 
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
@@ -77,6 +85,14 @@ export class RuxCheckboxGroup {
                             name="label"
                         >
                             {this.label}
+                            {this.required && (
+                                <span
+                                    part="required"
+                                    class="rux-label__asterisk"
+                                >
+                                    &#42;
+                                </span>
+                            )}
                         </slot>
                     </div>
                     <div

@@ -34,9 +34,13 @@ export default function App() {
     }
     const handleThings = (e) => {
         let arr = things
-        arr.push(e.target.value)
-        let unique = [...new Set(arr)]
-        setThings(unique)
+        if (e.target.checked) {
+            arr.push(e.target.value)
+            let unique = [...new Set(arr)]
+            setThings(unique)
+        } else {
+            setThings(arr.filter((item) => item !== e.target.value))
+        }
     }
     return (
         <div className="container">
@@ -67,10 +71,11 @@ export default function App() {
                         label="Country/Region"
                         onRuxchange={(e) => setCountryRegion(e.target.value)}
                     >
-                        <RuxOption value="Canada">Canada</RuxOption>
-                        <RuxOption value="United States">
-                            United States
-                        </RuxOption>
+                        <RuxOption value="Canada" label="Canada"></RuxOption>
+                        <RuxOption
+                            value="United States"
+                            label="United States"
+                        ></RuxOption>
                     </RuxSelect>
                 </div>
                 <div>

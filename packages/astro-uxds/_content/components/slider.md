@@ -4,10 +4,10 @@ path: /components/slider
 date: Last Modified
 layout: components.template.njk
 title: Slider
-demo: components-slider--slider
-storybook: components-slider--slider
+demo: forms-slider--default-story
+storybook: forms-slider--default-story
 git: rux-slider
-height: 170px
+height: 130px
 theme: true
 ---
 

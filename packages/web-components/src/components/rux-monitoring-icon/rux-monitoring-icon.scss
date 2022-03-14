@@ -1,6 +1,8 @@
 :host {
     display: inline-block;
     padding: 0;
+    min-height: 5.188rem; //83px;
+    min-width: 4.938rem; //79px;
 }
 
 :host([hidden]) {
@@ -36,8 +38,6 @@
 rux-icon {
     order: 2;
     margin: 0 auto;
-    width: 2.7rem;
-    height: 2.7rem;
 }
 
 .rux-advanced-status__status {
@@ -54,14 +54,14 @@ rux-icon {
     position: absolute;
     left: 3.438rem;
     top: -0.625rem;
-    border: 1px solid var(--primary);
+    border: 1px solid var(--color-primary);
     border-radius: 2px;
     padding: 0.5rem 0.25rem;
-    color: var(--color-basics-white);
-    font-family: var(--font-b3-font-family);
-    font-size: var(--font-b3-font-size);
-    font-weight: var(--font-b3-font-weight);
-    letter-spacing: var(--font-b3-letter-spacing);
+    color: var(--color-global-basics-white);
+    font-family: var(--font-body-3-font-family);
+    font-size: var(--font-body-3-font-size);
+    font-weight: var(--font-body-3-font-weight);
+    letter-spacing: var(--font-body-3-letter-spacing);
     text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -70,11 +70,11 @@ rux-icon {
 }
 
 .rux-advanced-status__label {
-    color: var(--default-text);
-    font-family: var(--font-b2-font-family);
-    font-size: var(--font-b2-font-size);
-    font-weight: var(--font-b2-font-weight);
-    letter-spacing: var(--font-b2-letter-spacing);
+    color: var(--color-default-text);
+    font-family: var(--font-body-2-font-family);
+    font-size: var(--font-body-2-font-size);
+    font-weight: var(--font-body-2-font-weight);
+    letter-spacing: var(--font-body-2-letter-spacing);
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -86,11 +86,11 @@ rux-icon {
 }
 
 .rux-advanced-status__sublabel {
-    font-family: var(--font-b3-font-family);
-    font-size: var(--font-b3-font-size);
-    font-weight: var(--font-b3-font-weight);
-    letter-spacing: var(--font-b3-letter-spacing);
-    color: var(--gsb-default-text);
+    font-family: var(--font-body-3-font-family);
+    font-size: var(--font-body-3-font-size);
+    font-weight: var(--font-body-3-font-weight);
+    letter-spacing: var(--font-body-3-letter-spacing);
+    color: var(--color-gsb-default-text);
     display: block;
 }
 
@@ -100,36 +100,36 @@ rux-icon {
 
 :host([status='off']) {
     rux-icon {
-        color: var(--color-off);
+        color: var(--color-status-off-fill);
     }
 }
 
 :host([status='standby']) {
     rux-icon {
-        color: var(--color-standby);
+        color: var(--color-status-standby-fill);
     }
 }
 
 :host([status='normal']) {
     rux-icon {
-        color: var(--color-normal);
+        color: var(--color-status-normal-fill);
     }
 }
 
 :host([status='caution']) {
     rux-icon {
-        color: var(--color-caution);
+        color: var(--color-status-caution-fill);
     }
 }
 
 :host([status='serious']) {
     rux-icon {
-        color: var(--color-serious);
+        color: var(--color-status-serious-fill);
     }
 }
 
 :host([status='critical']) {
     rux-icon {
-        color: var(--color-critical);
+        color: var(--color-status-critical-fill);
     }
 }

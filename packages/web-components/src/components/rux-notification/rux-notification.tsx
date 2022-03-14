@@ -1,6 +1,19 @@
-import { Component, Host, h, Prop, Watch } from '@stencil/core'
+/* eslint react/jsx-no-bind: 0 */ // --> OFF
+import {
+    Component,
+    Event,
+    EventEmitter,
+    Host,
+    h,
+    Prop,
+    Watch,
+} from '@stencil/core'
 import { Status } from '../../common/commonTypes.module'
 
+/**
+ * @part icon - the icon of rux-icon
+ * @part message - the notifications message
+ */
 @Component({
     tag: 'rux-notification',
     styleUrl: 'rux-notification.scss',
@@ -23,18 +36,34 @@ export class RuxNotification {
      *  If provided, the banner will automatically close after this amount of time. Accepts value either in milliseconds or seconds (which will be converted to milliseconds internally), between `2000` and `10000`, or `2` and `10`, respectively. Any number provided outside of the `2000`-`10000` range will be ignored in favor of the default 2000ms delay. <br>If `closeAfter` is not passed or if it is given an undefined or `null` value, the banner will stay open until the user closes it.
      */
     @Prop({ attribute: 'close-after', mutable: true }) closeAfter?: number
+    /**
+     * Changes the size of the banner to a small variant.
+     */
+    @Prop() small: boolean = false
+
+    /**
+     * Fires when the notification banner is closed
+     */
+    @Event({
+        eventName: 'ruxclosed',
+    })
+    ruxClosed!: EventEmitter<boolean>
 
     private _timeoutRef: number | null = null
 
     @Watch('open')
     watchHandler() {
-        this.updated()
-    }
-    connectedCallback() {
-        this.updated()
+        this._updated()
+        if (!this.open) {
+            this.ruxClosed.emit()
+        }
     }
 
-    updated() {
+    connectedCallback() {
+        this._updated()
+    }
+
+    private _updated() {
         if (this._closeAfter && this.open) {
             this._timeoutRef = window.setTimeout(() => {
                 this.open = false
@@ -42,7 +71,7 @@ export class RuxNotification {
         }
     }
 
-    _onClick() {
+    private _onClick() {
         if (this._timeoutRef) {
             clearTimeout(this._timeoutRef)
         }
@@ -68,14 +97,33 @@ export class RuxNotification {
     }
     render() {
         return (
-            <Host>
-                <div class="rux-notification__message">{`${this.message}`}</div>
+            /**
+             * Add a randomly generated class name when the banner is open
+             * so that we can achieve backwards compatibility if anybody is
+             * styling the host element.
+             *
+             * We shouldn't be changing the component's class because the developer
+             * has full control of it and can easily override it. But by using
+             * a random string, we reduce the chances of that happening unknowingly.
+             */
+
+            <Host
+                class={{
+                    'rux-notification-banner-0ba5409c--open': this.open,
+                    'rux-notification-banner--small': this.small,
+                }}
+            >
+                <div
+                    part="message"
+                    class="rux-notification__message"
+                >{`${this.message}`}</div>
                 <rux-icon
                     role="button"
                     label="Close notification"
                     onClick={() => this._onClick()}
-                    icon="close"
-                    size="36px"
+                    icon="clear"
+                    size={this.small ? '16px' : '36px'}
+                    exportparts="icon"
                 ></rux-icon>
             </Host>
         )

@@ -30,9 +30,15 @@ export const attachProps = (node: HTMLElement, newProps: any, oldProps: any = {}
       } else {
         (node as any)[name] = newProps[name];
         const propType = typeof newProps[name];
-        if (propType === 'string') {
-          node.setAttribute(camelToDashCase(name), newProps[name]);
-        }
+        if (propType === "boolean") {
+	if (newProps[name] === true) {
+				node.setAttribute(camelToDashCase(name), camelToDashCase(name));
+} else {
+	node.removeAttribute(camelToDashCase(name));
+	}
+} else if (propType === "string") {
+	node.setAttribute(camelToDashCase(name), newProps[name]);
+}
       }
     });
   }

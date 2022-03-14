@@ -1,6 +1,7 @@
 {
   "name": "astro-website",
-  "version": "4.4.5",
+  "version": "6.3.0",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/RocketCommunicationsInc/astro-uxds"
@@ -11,13 +12,14 @@
     "start": "run-p -l start:*",
     "start:clean": "rimraf _site",
     "start:search": "node ./_includes/search_config/search-generator.js",
-    "start:scss": "node-sass -rw scss -o css",
+    "start:scss": "sass -w scss:css --no-source-map",
     "start:eleventy": "eleventy --serve",
     "build": "run-s -l build:*",
     "build:clean": "rimraf _site",
-    "build:scss": "node-sass -r scss -o css --output-style compressed",
+    "build:scss": "sass scss:css --no-source-map --style compressed",
     "build:eleventy": "eleventy",
-    "build:search": "node ./_includes/search_config/search-generator.js"
+    "build:search": "node ./_includes/search_config/search-generator.js",
+    "fetch:images": "export-icons -p"
   },
   "keywords": [],
   "author": "",
@@ -25,18 +27,19 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
     "list-stream": "^2.0.0",
-    "markdown-it": "^12.2.0",
+    "markdown-it": "^12.3.2",
     "markdown-it-anchor": "^5.3.0",
     "markdown-it-container": "^2.0.0",
     "markdown-it-div": "^1.1.0",
     "markdown-it-implicit-figures": "^0.9.0",
     "markdown-json": "^1.6.0",
-    "node-sass": "^6.0.1",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2"
   },
   "dependencies": {
+    "@astrouxds/astro-figma-export": "^1.4.0",
     "fuse.js": "^3.6.1",
-    "nodemon": "^2.0.14"
+    "nodemon": "^2.0.14",
+    "sass": "^1.49.8"
   }
 }

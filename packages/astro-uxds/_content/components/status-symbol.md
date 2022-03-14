@@ -4,8 +4,8 @@ path: /components/status-symbol
 date: Last Modified
 layout: components.template.njk
 title: Status Symbol
-demo: components-status--status
-storybook: components-status--status
+demo: components-status--all-variants
+storybook: components-status--all-variants
 git: rux-status
 height: 80px
 theme: true

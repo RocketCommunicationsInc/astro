@@ -4,10 +4,10 @@ path: /components/pop-up
 date: Last Modified
 layout: components.template.njk
 title: Pop Up
-demo: components-pop-up-menu--pop-up-menu
-storybook: components-pop-up-menu--pop-up-menu
+demo: components-pop-up-menu--default-story
+storybook: components-pop-up-menu--default-story
 git: rux-pop-up-menu
-height: 450px
+height: 250px
 theme: true
 ---
 

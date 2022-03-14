@@ -11,6 +11,11 @@ args.status.defaultValue = 'standby'
     title="Components/Notification"
     component="rux-notification"
     argTypes={args}
+    parameters={{
+        actions: {
+            handles: ['ruxclosed rux-notification'],
+        },
+    }}
 />
 
 # Notification
@@ -27,15 +32,16 @@ If another Notification Banner is waiting, it appears when the current Banner is
 
 export const Default = (args) => {
     return html`
-        <div style="display: flex; flex-flow: column; justify-content: center;">
-            <rux-notification
-                ?open="${args.open}"
-                .closeAfter="${args.closeAfter}"
-                status="${args.status}"
-                message="${args.message}"
-            >
-            </rux-notification>
-        </div>
+<div style="display: flex; flex-flow: column; justify-content: center;">
+    <rux-notification
+        ?open="${args.open}"
+        ?small="${args.small}"
+        .closeAfter="${args.closeAfter}"
+        status="${args.status}"
+        message="${args.message}"
+    >
+    </rux-notification>
+</div>
     `
 }
 
@@ -59,15 +65,16 @@ The Astro UXDS Notification Banner hides from view using absolute positioning in
 
 export const NotificationAutoClose = (args) => {
     return html`
-        <div style="display: flex; flex-flow: column; justify-content: center;">
-            <rux-notification
-                open="${args.open}"
-                .closeAfter="${args.closeAfter}"
-                status="${args.status}"
-                message="This is a notification banner. It will disappear in 2000 ms."
-            >
-            </rux-notification>
-        </div>
+<div style="display: flex; flex-flow: column; justify-content: center;">
+    <rux-notification
+        ?open="${args.open}"
+        ?small="${args.small}"
+        .closeAfter="${args.closeAfter}"
+        .status="${args.status}"
+        message="This is a notification banner. It will disappear in 2000 ms."
+    >
+    </rux-notification>
+</div>
     `
 }
 
@@ -84,67 +91,150 @@ export const NotificationAutoClose = (args) => {
     </Story>
 </Canvas>
 
+### Small
+
+export const Small = (args) => {
+    return html`
+<div style="display: flex; flex-flow: column; justify-content: center;">
+    <rux-notification
+        ?open="${args.open}"
+        ?small="${args.small}"
+        .closeAfter="${args.closeAfter}"
+        status="${args.status}"
+        message="${args.message}"
+    >
+    </rux-notification>
+</div>
+    `
+}
+
+<Canvas>
+    <Story name="Small" height="100px" args={{ small: true}}>
+        {Small.bind()}
+    </Story>
+</Canvas>
+
 ### All Variants
 
 export const AllVariants = () => html`
+<div
+    style="display: flex; flex-flow: column; justify-content: center; margin:20px;"
+>
     <div
-        style="display: flex; flex-flow: column; justify-content: center; margin:20px;"
+        style="display: flex; position: relative; height: 68px; margin-bottom: 20px; overflow: hidden;"
     >
-        <div
-            style="display: flex; position: relative; height: 68px; margin-bottom: 20px; overflow: hidden;"
-        >
-            <rux-notification
-                open
-                status="off"
-                message="Off notification banner"
-            ></rux-notification>
-        </div>
-        <div
-            style="display: flex; position: relative; height: 68px; margin-bottom: 20px; overflow: hidden;"
-        >
-            <rux-notification
-                open
-                status="standby"
-                message="Standby notification banner"
-            ></rux-notification>
-        </div>
-        <div
-            style="display: flex; position: relative; height: 68px; margin-bottom: 20px; overflow: hidden;"
-        >
-            <rux-notification
-                open
-                status="normal"
-                message="Normal notification banner"
-            ></rux-notification>
-        </div>
-        <div
-            style="display: flex; position: relative; height: 68px; margin-bottom: 20px; overflow: hidden;"
-        >
-            <rux-notification
-                open
-                status="caution"
-                message="Caution notification banner"
-            ></rux-notification>
-        </div>
-        <div
-            style="display: flex; position: relative; height: 68px; margin-bottom: 20px; overflow: hidden;"
-        >
-            <rux-notification
-                open
-                status="serious"
-                message="Serious notification banner"
-            ></rux-notification>
-        </div>
-        <div
-            style="display: flex; position: relative; height: 68px; margin-bottom: 20px; overflow: hidden;"
-        >
-            <rux-notification
-                open
-                status="critical"
-                message="Critical notification banner"
-            ></rux-notification>
-        </div>
+        <rux-notification
+            open
+            status="off"
+            message="Off notification banner"
+        ></rux-notification>
     </div>
+    <div
+        style="display: flex; position: relative; height: 68px; margin-bottom: 20px; overflow: hidden;"
+    >
+        <rux-notification
+            open
+            status="standby"
+            message="Standby notification banner"
+        ></rux-notification>
+    </div>
+    <div
+        style="display: flex; position: relative; height: 68px; margin-bottom: 20px; overflow: hidden;"
+    >
+        <rux-notification
+            open
+            status="normal"
+            message="Normal notification banner"
+        ></rux-notification>
+    </div>
+    <div
+        style="display: flex; position: relative; height: 68px; margin-bottom: 20px; overflow: hidden;"
+    >
+        <rux-notification
+            open
+            status="caution"
+            message="Caution notification banner"
+        ></rux-notification>
+    </div>
+    <div
+        style="display: flex; position: relative; height: 68px; margin-bottom: 20px; overflow: hidden;"
+    >
+        <rux-notification
+            open
+            status="serious"
+            message="Serious notification banner"
+        ></rux-notification>
+    </div>
+    <div
+        style="display: flex; position: relative; height: 68px; margin-bottom: 20px; overflow: hidden;"
+    >
+        <rux-notification
+            open
+            status="critical"
+            message="Critical notification banner"
+        ></rux-notification>
+    </div>
+    <div
+        style="display: flex; position: relative; height: 68px; margin-bottom: 20px; overflow: hidden;"
+    >
+        <rux-notification
+            open
+            small
+            status="off"
+            message="Small off notification banner"
+        ></rux-notification>
+    </div>
+    <div
+        style="display: flex; position: relative; height: 68px; margin-bottom: 20px; overflow: hidden;"
+    >
+        <rux-notification
+            open
+            small
+            status="standby"
+            message="Small standby notification banner"
+        ></rux-notification>
+    </div>
+    <div
+        style="display: flex; position: relative; height: 68px; margin-bottom: 20px; overflow: hidden;"
+    >
+        <rux-notification
+            open
+            small
+            status="normal"
+            message="Small normal notification banner"
+        ></rux-notification>
+    </div>
+    <div
+        style="display: flex; position: relative; height: 68px; margin-bottom: 20px; overflow: hidden;"
+    >
+        <rux-notification
+            open
+            small
+            status="caution"
+            message="Small caution notification banner"
+        ></rux-notification>
+    </div>
+    <div
+        style="display: flex; position: relative; height: 68px; margin-bottom: 20px; overflow: hidden;"
+    >
+        <rux-notification
+            open
+            small
+            status="serious"
+            message="Small serious notification banner"
+        ></rux-notification>
+    </div>
+    <div
+        style="display: flex; position: relative; height: 68px; margin-bottom: 20px; overflow: hidden;"
+    >
+        <rux-notification
+            open
+            small
+            status="critical"
+            message="Small critical notification banner"
+        ></rux-notification>
+    </div>
+</div>
 `
 
 <Canvas>

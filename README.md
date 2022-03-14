@@ -3,6 +3,14 @@
 Astro is an open source Web Components and design library.
 Astro Web Components use [`Stencil`](https://stenciljs.com) in order to provide fast and easy integration no matter the framework.
 
+The Astro AG-Grid theme has moved to [it's own repo](https://github.com/RocketCommunicationsInc/ag-grid-theme). The npm package remains the same, [@astrouxds/ag-grid-theme](https://www.npmjs.com/package/@astrouxds/ag-grid-theme).
+
+
+## Documentation
+
+**Current documentation**: [astro-components.netlify.app](https://astro-components.netlify.app/)
+Beta documentation: [beta-astro-components.netlify.app](https://beta-astro-components.netlify.app/)
+
 ### Packages
 
 | Project                  | Description                                                                                                                                |                                                      Links                                                       |
@@ -10,8 +18,8 @@ Astro Web Components use [`Stencil`](https://stenciljs.com) in order to provide 
 | **AstroUXDS**            | The Astro UXDS site for design and developer guidelines.                                                                                   |                                     [`astrouxds.com`](https://astrouxds.com)                                     |
 | **Astro Web Components** | [`@astrouxds/astro-web-components`](https://www.npmjs.com/package/@astrouxds/astro-web-components) - Astro Web Components built in Stencil |       [`README.md`](packages/web-components/README.md), [`Storybook`](https://astro-stencil.netlify.app/)        |
 | **React**                | [`@astrouxds/react`](https://www.npmjs.com/package/@astrouxds/react) - Astro Web Components wrapped for React use                          |                                     [`README.md`](packages/react/README.md)                                      |
-| **AG-Grid Theme**        | Astro UXDS theming for AG-Grid                                                                                                             |                                 [`README.md`](packages/ag-grid-theme/README.md)                                  |
-| **Starter Kits**         | Starter kits for getting Astro web-components running in React, Svelte, Angular and HTML/JS                                                | [React](packages/starter-kits/react-starter/README.md), [Svelte](packages/starter-kits/svelte-starter/README.md) |
+|**Angular** | [`@astrouxds/angular`](https://www.npmjs.com/package/@astrouxds/angular) - Astro Web Components wrapped for Angular use | [`README.md`](packages/angular/README.md) 
+| **Starter Kits**         | Starter kits for getting Astro web-components running in React, Svelte, Vue, Angular and HTML/JS                                                | [React](packages/starter-kits/react-starter/README.md), [Svelte](packages/starter-kits/svelte-starter/README.md), [Vue](packages/starter-kits/vue3-starter), [Angular](packages/starter-kits/angular-starter/README.md), [HTML/JS](packages/starter-kits/html-js-starter) |
 
 ## Release Notes
 

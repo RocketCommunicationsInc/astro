@@ -9,13 +9,16 @@ import {
 } from '@stencil/core'
 import { SegmentedButton } from './rux-segmented-button.model'
 
+/**
+ * @part label - the label of rux-segmented-button
+ */
 @Component({
     tag: 'rux-segmented-button',
     styleUrl: 'rux-segmented-button.scss',
     shadow: true,
 })
 export class RuxSegmentedButton {
-    @Element() el!: HTMLElement
+    @Element() el!: HTMLRuxSegmentedButtonElement
 
     /**
      * Items in this Array are the individual button segments.
@@ -26,6 +29,16 @@ export class RuxSegmentedButton {
      * When passed in on load, this selects the first button segment with a matching label. When the selected segment changes, this property updates with the currently selected value, which reflects back to the component attribute. If no button segment label matches this string, then no segment is selected. This value takes priority over setting selected boolean property on the items in the data array.
      */
     @Prop({ reflect: true, mutable: true }) selected: string = ''
+
+    /**
+     * Changes size of segmented button from small to medium or large.
+     */
+    @Prop({ reflect: true }) size?: 'small' | 'medium' | 'large'
+
+    /**
+     * Sets the disabled attribute.
+     */
+    @Prop({ reflect: true }) disabled: boolean = false
 
     /**
      * Emitted when the value property has changed.
@@ -49,12 +62,6 @@ export class RuxSegmentedButton {
         }
     }
 
-    _handleChange(e: Event) {
-        const el = e.target as HTMLInputElement
-        this._setSelected(el.value)
-        this.ruxChange.emit(el.value)
-    }
-
     connectedCallback() {
         this._handleChange = this._handleChange.bind(this)
         const initialSelection =
@@ -62,6 +69,12 @@ export class RuxSegmentedButton {
         if (initialSelection) {
             this._setSelected(initialSelection.label)
         }
+    }
+
+    private _handleChange(e: Event) {
+        const el = e.target as HTMLInputElement
+        this._setSelected(el.value)
+        this.ruxChange.emit(el.value)
     }
 
     private _setSelected(label: string) {
@@ -98,7 +111,13 @@ export class RuxSegmentedButton {
 
     render() {
         return (
-            <ul class="rux-segmented-button">
+            <ul
+                class={{
+                    'rux-segmented-button': true,
+                    'rux-segmented-button--medium': this.size === 'medium',
+                    'rux-segmented-button--large': this.size === 'large',
+                }}
+            >
                 {this.data.map((item) => (
                     <li class="rux-segmented-button__segment">
                         <input
@@ -109,8 +128,19 @@ export class RuxSegmentedButton {
                             checked={this._isSelected(item.label)}
                             data-label={item.label}
                             onChange={this._handleChange}
+                            disabled={this.disabled}
                         />
-                        <label htmlFor={this._slugify(item.label)}>
+                        <label
+                            htmlFor={this._slugify(item.label)}
+                            part="label"
+                            class={{
+                                'rux-segmented-button-label': true,
+                                'rux-segmented-button-label--medium':
+                                    this.size === 'medium',
+                                'rux-segmented-button-label--large':
+                                    this.size === 'large',
+                            }}
+                        >
                             {item.label}
                         </label>
                     </li>

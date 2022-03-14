@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rux-notification renders 1`] = `
+<rux-notification class="rux-notification-banner-0ba5409c--open" message="hello there" open="" status="standby">
+  <mock:shadow-root>
+    <div class="rux-notification__message" part="message">
+      hello there
+    </div>
+    <rux-icon exportparts="icon" icon="clear" label="Close notification" role="button" size="36px"></rux-icon>
+  </mock:shadow-root>
+</rux-notification>
+`;

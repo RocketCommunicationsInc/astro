@@ -53,8 +53,8 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
   }
   .framework {
     text-align: center;
-    border-radius: var(--border-radius-button);
-    border: 1px solid var(--primary);
+    border-radius: var(--radius-base);
+    border: 1px solid var(--color-primary);
     cursor: pointer;
   }
   .framework .sbdocs {
@@ -65,10 +65,10 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
     font-size: 1.5rem;
   }
   .framework:hover {
-    border-color: var(--hover);
+    border-color: var(--color-hover);
   }
   .framework:hover .sbdocs-a {
-    color: var(--hover);
+    color: var(--color-hover);
   }
   .framework .sbdocs svg {
     margin-bottom: 2rem;
@@ -147,7 +147,7 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
         </a>
     </li>
     <li class="framework">
-        <a href="?path=/docs/astro-uxds-welcome-vue-2--page">
+        <a href="?path=/docs/astro-uxds-welcome-vue--page">
             <svg viewBox="0 0 261.76 226.69" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="m161.096.001-30.224 52.35L100.647.002H-.005L130.872 226.69 261.749 0z"
@@ -158,30 +158,12 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
                     fill="#34495e"
                 />
             </svg>
-            Vue 2
+            Vue
         </a>
-        <a href="https://codesandbox.io/s/github/RocketCommunicationsInc/astro/tree/main/packages/starter-kits/vue2-starter">
-            <img
-                alt="Edit Astro - Vue"
-                src="https://codesandbox.io/static/img/play-codesandbox.svg"
-            />
-        </a>
-    </li>
-    <li class="framework">
-        <a href="?path=/docs/astro-uxds-welcome-vue-3--page">
-            <svg viewBox="0 0 261.76 226.69" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="m161.096.001-30.224 52.35L100.647.002H-.005L130.872 226.69 261.749 0z"
-                    fill="#41b883"
-                />
-                <path
-                    d="m161.096.001-30.224 52.35L100.647.002H52.346l78.526 136.01L209.398.001z"
-                    fill="#34495e"
-                />
-            </svg>
-            Vue 3
-        </a>
-        <a href="https://codesandbox.io/s/github/RocketCommunicationsInc/astro/tree/main/packages/starter-kits/vue3-starter">
+        <a
+            target="_blank"
+            href="https://codesandbox.io/s/github/RocketCommunicationsInc/astro/tree/main/packages/starter-kits/vue-starter"
+        >
             <img
                 alt="Edit Astro - Vue"
                 src="https://codesandbox.io/static/img/play-codesandbox.svg"
@@ -202,7 +184,10 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
             </svg>
             Svelte
         </a>
-        <a href="https://codesandbox.io/s/github/RocketCommunicationsInc/astro/tree/main/packages/starter-kits/svelte-starter">
+        <a
+            target="_blank"
+            href="https://codesandbox.io/s/github/RocketCommunicationsInc/astro/tree/main/packages/starter-kits/svelte-starter"
+        >
             <img
                 alt="Edit Astro - Svelte"
                 src="https://codesandbox.io/static/img/play-codesandbox.svg"

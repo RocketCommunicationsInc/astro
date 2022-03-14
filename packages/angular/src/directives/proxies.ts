@@ -8,13 +8,13 @@ import { Components } from '@astrouxds/astro-web-components';
 
 export declare interface RuxButton extends Components.RuxButton {}
 @ProxyCmp({
-  inputs: ['disabled', 'icon', 'iconOnly', 'secondary', 'size', 'type']
+  inputs: ['borderless', 'disabled', 'icon', 'iconOnly', 'secondary', 'size', 'type']
 })
 @Component({
   selector: 'rux-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'icon', 'iconOnly', 'secondary', 'size', 'type']
+  inputs: ['borderless', 'disabled', 'icon', 'iconOnly', 'secondary', 'size', 'type']
 })
 export class RuxButton {
   protected el: HTMLElement;
@@ -46,13 +46,13 @@ export class RuxButtonGroup {
 
 export declare interface RuxCheckbox extends Components.RuxCheckbox {}
 @ProxyCmp({
-  inputs: ['checked', 'disabled', 'helpText', 'indeterminate', 'label', 'name', 'value']
+  inputs: ['checked', 'disabled', 'helpText', 'indeterminate', 'label', 'name', 'required', 'value']
 })
 @Component({
   selector: 'rux-checkbox',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['checked', 'disabled', 'helpText', 'indeterminate', 'label', 'name', 'value'],
+  inputs: ['checked', 'disabled', 'helpText', 'indeterminate', 'label', 'name', 'required', 'value'],
   outputs: ['ruxchange', 'ruxinput', 'ruxblur']
 })
 export class RuxCheckbox {
@@ -73,13 +73,13 @@ export class RuxCheckbox {
 
 export declare interface RuxCheckboxGroup extends Components.RuxCheckboxGroup {}
 @ProxyCmp({
-  inputs: ['errorText', 'helpText', 'invalid', 'label']
+  inputs: ['errorText', 'helpText', 'invalid', 'label', 'required']
 })
 @Component({
   selector: 'rux-checkbox-group',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['errorText', 'helpText', 'invalid', 'label']
+  inputs: ['errorText', 'helpText', 'invalid', 'label', 'required']
 })
 export class RuxCheckboxGroup {
   protected el: HTMLElement;
@@ -20232,13 +20232,13 @@ export class RuxIconZoomOutMap {
 
 export declare interface RuxInput extends Components.RuxInput {}
 @ProxyCmp({
-  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'min', 'name', 'placeholder', 'required', 'size', 'step', 'type', 'value']
+  inputs: ['autocomplete', 'disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'min', 'name', 'placeholder', 'readonly', 'required', 'size', 'spellcheck', 'step', 'type', 'value']
 })
 @Component({
   selector: 'rux-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'min', 'name', 'placeholder', 'required', 'size', 'step', 'type', 'value'],
+  inputs: ['autocomplete', 'disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'min', 'name', 'placeholder', 'readonly', 'required', 'size', 'spellcheck', 'step', 'type', 'value'],
   outputs: ['ruxchange', 'ruxinput', 'ruxblur']
 })
 export class RuxInput {
@@ -20378,19 +20378,23 @@ export class RuxMonitoringProgressIcon {
 
 export declare interface RuxNotification extends Components.RuxNotification {}
 @ProxyCmp({
-  inputs: ['closeAfter', 'message', 'open', 'status']
+  inputs: ['closeAfter', 'message', 'open', 'small', 'status']
 })
 @Component({
   selector: 'rux-notification',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['closeAfter', 'message', 'open', 'status']
+  inputs: ['closeAfter', 'message', 'open', 'small', 'status'],
+  outputs: ['ruxclosed']
 })
 export class RuxNotification {
+  /** Fires when the notification banner is closed */
+  ruxclosed!: EventEmitter<CustomEvent<boolean>>;
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['ruxclosed']);
   }
 }
 
@@ -20532,13 +20536,13 @@ export class RuxRadio {
 
 export declare interface RuxRadioGroup extends Components.RuxRadioGroup {}
 @ProxyCmp({
-  inputs: ['errorText', 'helpText', 'invalid', 'label', 'name', 'value']
+  inputs: ['errorText', 'helpText', 'invalid', 'label', 'name', 'required', 'value']
 })
 @Component({
   selector: 'rux-radio-group',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['errorText', 'helpText', 'invalid', 'label', 'name', 'value'],
+  inputs: ['errorText', 'helpText', 'invalid', 'label', 'name', 'required', 'value'],
   outputs: ['ruxchange']
 })
 export class RuxRadioGroup {
@@ -20555,13 +20559,13 @@ export class RuxRadioGroup {
 
 export declare interface RuxSegmentedButton extends Components.RuxSegmentedButton {}
 @ProxyCmp({
-  inputs: ['data', 'selected']
+  inputs: ['data', 'disabled', 'selected', 'size']
 })
 @Component({
   selector: 'rux-segmented-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['data', 'selected'],
+  inputs: ['data', 'disabled', 'selected', 'size'],
   outputs: ['ruxchange']
 })
 export class RuxSegmentedButton {
@@ -20603,13 +20607,13 @@ export class RuxSelect {
 
 export declare interface RuxSlider extends Components.RuxSlider {}
 @ProxyCmp({
-  inputs: ['disabled', 'errorText', 'helpText', 'label', 'max', 'min', 'name', 'step', 'value']
+  inputs: ['axisLabels', 'disabled', 'errorText', 'helpText', 'label', 'max', 'min', 'name', 'step', 'ticksOnly', 'value']
 })
 @Component({
   selector: 'rux-slider',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'errorText', 'helpText', 'label', 'max', 'min', 'name', 'step', 'value'],
+  inputs: ['axisLabels', 'disabled', 'errorText', 'helpText', 'label', 'max', 'min', 'name', 'step', 'ticksOnly', 'value'],
   outputs: ['ruxinput', 'ruxblur']
 })
 export class RuxSlider {

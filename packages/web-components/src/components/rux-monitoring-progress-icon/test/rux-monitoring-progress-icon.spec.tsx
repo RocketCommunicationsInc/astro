@@ -14,35 +14,7 @@ describe('rux-monitoring-progress-icon', () => {
         notifications="345678"
       ></rux-monitoring-progress-icon>`,
         })
-        expect(page.root).toEqualHtml(`
-      <rux-monitoring-progress-icon label="Label" max="100" notifications="345678" progress="70" sublabel="sublabel">
-        <mock:shadow-root>
-          <div class="rux-advanced-status" id="rux-advanced-status__icon" title="345678 Label sublabel">
-            <div class="rux-advanced-status__icon-group">
-              <rux-status status="serious"></rux-status>
-              <svg class="rux-status--serious" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-                <g id="progress">
-                  <circle cx="60" cy="60" fill="transparent" r="56" stroke="rgba(40, 63, 88, 1)" stroke-width="10" transform="rotate(-90 61 60)"></circle>
-                  <circle class="progress-ring__circle" cx="60" cy="60" fill="transparent" r="56" stroke-dasharray="351.8583772 351.8583772" stroke-dashoffset="105.55751316061708" stroke-linecap="round" stroke-width="10" transform="rotate(-90 61 60)"></circle>
-                </g>
-              </svg>
-              <div class="rux-advanced-status__progress">
-                70%
-              </div>
-              <div class="rux-advanced-status__badge">
-                345K
-              </div>
-            </div>
-            <div class="rux-advanced-status__label">
-              Label
-              <span class="rux-advanced-status__sublabel">
-                sublabel
-              </span>
-            </div>
-          </div>
-        </mock:shadow-root>
-      </rux-monitoring-progress-icon>
-    `)
+        expect(page.root).toMatchSnapshot()
     })
 
     it('applies custom range arrays properly', () => {
@@ -64,7 +36,7 @@ describe('rux-monitoring-progress-icon', () => {
                 status: 'serious',
             },
         ]
-        progressIcon.updateProgress()
+        progressIcon._updateProgress()
         expect(progressIcon.status).toBe('normal')
         expect(
             Math.ceil(
@@ -75,7 +47,7 @@ describe('rux-monitoring-progress-icon', () => {
         ).toBe(58)
 
         progressIcon.progress = 1100
-        progressIcon.updateProgress()
+        progressIcon._updateProgress()
         expect(progressIcon.status).toBe('serious')
     })
 

@@ -44,6 +44,9 @@ Pass properties as attributes of the Astro Switch custom element:
 <rux-switch disabled="false" checked="false"></rux-switch>
 ```
 
+### 4. Listening for Events
+
+In order to get the correct value of rux-switch's `checked` attribute, use the event listener `ruxchange`. 
 ### Properties
 
 | Property   | Type    | Default | Required | Description                                                                                                                                                                                 |
@@ -104,6 +107,14 @@ Configure the component using native HTML attributes.
 | Slot      | Description      |
 | --------- | ---------------- |
 | `"label"` | The switch label |
+
+
+## Shadow Parts
+
+| Part       | Description                                                 |
+| ---------- | ----------------------------------------------------------- |
+| `"label"`  | the label of switch                                         |
+| `"switch"` | the track (::before) and the button (::after) on rux-switch |
 
 
 ## CSS Custom Properties

@@ -46,6 +46,7 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
 | `indeterminate` | `indeterminate` | Toggles indeterminate state of a checkbox. The indeterminate property does not exist in HTML, but can be set in JS. [HTML Checkbox & Indeterminate State](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#indeterminate) | `boolean`             | `false`     |
 | `label`         | `label`         | The checkbox label text. For HTML content, use the default slot instead.                                                                                                                                                                          | `string \| undefined` | `undefined` |
 | `name`          | `name`          | The checkbox name                                                                                                                                                                                                                                 | `string`              | `''`        |
+| `required`      | `required`      | Sets the checkbox as required                                                                                                                                                                                                                     | `boolean`             | `false`     |
 | `value`         | `value`         | The checkbox value                                                                                                                                                                                                                                | `string`              | `''`        |
 
 
@@ -63,6 +64,15 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
 | Slot          | Description                |
 | ------------- | -------------------------- |
 | `"(default)"` | the label of the checkbox. |
+
+
+## Shadow Parts
+
+| Part           | Description                      |
+| -------------- | -------------------------------- |
+| `"form-field"` | the form field wrapper container |
+| `"help-text"`  | The help text element            |
+| `"label"`      | the label of rux-checkbox        |
 
 
 ## CSS Custom Properties

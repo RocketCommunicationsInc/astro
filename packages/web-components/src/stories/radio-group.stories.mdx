@@ -27,18 +27,19 @@ The Radio Group component is responsible for checking and unchecking individual 
 
 export const Default = (args) => {
     return html`
-        <rux-radio-group
-            name="radios"
-            .label="${args.label}"
-            .value="${args.value}"
-            ?invalid="${args.invalid}"
-            .helpText="${args.helpText}"
-            .errorText="${args.errorText}"
-        >
-            <rux-radio value="one" name="radios">One</rux-radio>
-            <rux-radio value="two" name="radios">Two</rux-radio>
-            <rux-radio value="three" name="radios">Three</rux-radio>
-        </rux-radio-group>
+<rux-radio-group
+    name="radios"
+    label="${args.label}"
+    .value="${args.value}"
+    ?invalid="${args.invalid}"
+    ?required="${args.required}"
+    .helpText="${args.helpText}"
+    .errorText="${args.errorText}"
+>
+    <rux-radio value="one" name="radios">One</rux-radio>
+    <rux-radio value="two" name="radios">Two</rux-radio>
+    <rux-radio value="three" name="radios">Three</rux-radio>
+</rux-radio-group>
     `
 }
 
@@ -70,18 +71,19 @@ Make use of the `value` property to control the state of the checked radio value
 
 export const Invalid = (args) => {
     return html`
-        <rux-radio-group
-            name="radios"
-            .label="${args.label}"
-            .value="${args.value}"
-            ?invalid="${args.invalid}"
-            .helpText="${args.helpText}"
-            .errorText="${args.errorText}"
-        >
-            <rux-radio value="one" name="radios">One</rux-radio>
-            <rux-radio value="two" name="radios">Two</rux-radio>
-            <rux-radio value="three" name="radios">Three</rux-radio>
-        </rux-radio-group>
+<rux-radio-group
+    name="radios"
+    label="${args.label}"
+    .value="${args.value}"
+    ?invalid="${args.invalid}"
+    ?required="${args.required}"
+    .helpText="${args.helpText}"
+    .errorText="${args.errorText}"
+>
+    <rux-radio value="one" name="radios">One</rux-radio>
+    <rux-radio value="two" name="radios">Two</rux-radio>
+    <rux-radio value="three" name="radios">Three</rux-radio>
+</rux-radio-group>
     `
 }
 
@@ -98,22 +100,56 @@ export const Invalid = (args) => {
     </Story>
 </Canvas>
 
+### Required
+
+export const Required = (args) => {
+    return html`
+<rux-radio-group
+    name="radios"
+    label="${args.label}"
+    .value="${args.value}"
+    ?invalid="${args.invalid}"
+    ?required="${args.required}"
+    .helpText="${args.helpText}"
+    .errorText="${args.errorText}"
+>
+    <rux-radio value="one" name="radios">One</rux-radio>
+    <rux-radio value="two" name="radios">Two</rux-radio>
+    <rux-radio value="three" name="radios">Three</rux-radio>
+</rux-radio-group>
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+            name: 'radios',
+            label: 'Radio group',
+            required: true,
+        }}
+        name="Required"
+    >
+        {Required.bind()}
+    </Story>
+</Canvas>
+
 ### With Help Text
 
 export const WithHelpText = (args) => {
     return html`
-        <rux-radio-group
-            name="radios"
-            .label="${args.label}"
-            .value="${args.value}"
-            ?invalid="${args.invalid}"
-            .helpText="${args.helpText}"
-            .errorText="${args.errorText}"
-        >
-            <rux-radio value="one" name="radios">One</rux-radio>
-            <rux-radio value="two" name="radios">Two</rux-radio>
-            <rux-radio value="three" name="radios">Three</rux-radio>
-        </rux-radio-group>
+<rux-radio-group
+    name="radios"
+    label="${args.label}"
+    .value="${args.value}"
+    ?invalid="${args.invalid}"
+    ?required="${args.required}"
+    help-text="${args.helpText}"
+    .error-text="${args.errorText}"
+>
+    <rux-radio value="one" name="radios">One</rux-radio>
+    <rux-radio value="two" name="radios">Two</rux-radio>
+    <rux-radio value="three" name="radios">Three</rux-radio>
+</rux-radio-group>
     `
 }
 
@@ -134,18 +170,19 @@ export const WithHelpText = (args) => {
 
 export const WithErrorText = (args) => {
     return html`
-        <rux-radio-group
-            name="radios"
-            .label="${args.label}"
-            .value="${args.value}"
-            ?invalid="${args.invalid}"
-            .helpText="${args.helpText}"
-            .errorText="${args.errorText}"
-        >
-            <rux-radio value="one" name="radios">One</rux-radio>
-            <rux-radio value="two" name="radios">Two</rux-radio>
-            <rux-radio value="three" name="radios">Three</rux-radio>
-        </rux-radio-group>
+<rux-radio-group
+    name="radios"
+    label="${args.label}"
+    .value="${args.value}"
+    ?invalid="${args.invalid}"
+    ?required="${args.required}"
+    .help-text="${args.helpText}"
+    error-text="${args.errorText}"
+>
+    <rux-radio value="one" name="radios">One</rux-radio>
+    <rux-radio value="two" name="radios">Two</rux-radio>
+    <rux-radio value="three" name="radios">Three</rux-radio>
+</rux-radio-group>
     `
 }
 
@@ -181,20 +218,20 @@ rux-radio-group::part(label) {
 
 export const HorizontalLabel = (args) => {
     return html`
-        <style>
-            #left-example::part(form-field) {
-                display: flex;
-                flex-direction: row;
-            }
-            #left-example::part(label) {
-                margin-right: var(--spacing-input-label-left);
-            }
-        </style>
-        <rux-radio-group id="left-example" label="Label">
-            <rux-radio value="1">one</rux-radio>
-            <rux-radio value="2">two</rux-radio>
-            <rux-radio value="3">three</rux-radio>
-        </rux-radio-group>
+<style>
+    #left-example::part(form-field) {
+        display: flex;
+        flex-direction: row;
+    }
+    #left-example::part(label) {
+        margin-right: var(--spacing-input-label-left);
+    }
+</style>
+<rux-radio-group id="left-example" label="Label">
+    <rux-radio value="1">one</rux-radio>
+    <rux-radio value="2">two</rux-radio>
+    <rux-radio value="3">three</rux-radio>
+</rux-radio-group>
     `
 }
 

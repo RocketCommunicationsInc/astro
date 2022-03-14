@@ -3,7 +3,10 @@ import { Classification } from '../../common/commonTypes.module'
 import { hasSlot } from '../../utils/utils'
 
 /**
- * @part footer-banner - the footer banner
+ * @part footer-banner - the footer banner ! DEPRECATED IN FAVOR OF FOOTER !
+ * @part footer - the footer banner
+ * @part tag - the container for the tag
+ * @part header - the container for the header banner
  *
  */
 @Component({
@@ -48,10 +51,11 @@ export class RuxClassificationMarking {
         return this.tag ? 'tag' : 'banner'
     }
 
-    _getDisplayData(): string {
+    private _getDisplayData(): string {
         const markings = {
             banner: {
-                controlled: 'cui',
+                cui: 'cui',
+                controlled: 'controlled',
                 confidential: 'confidential',
                 secret: 'secret',
                 'top-secret': 'top secret',
@@ -59,6 +63,7 @@ export class RuxClassificationMarking {
                 unclassified: 'unclassified',
             },
             tag: {
+                cui: 'cui',
                 controlled: 'cui',
                 confidential: 'c',
                 secret: 's',
@@ -82,6 +87,7 @@ export class RuxClassificationMarking {
                         'rux-classification--tag': type === 'tag',
                         'rux-classification--banner': type === 'banner',
                     }}
+                    part="tag header"
                 >
                     {this._getDisplayData()}
                     {label}
@@ -95,7 +101,7 @@ export class RuxClassificationMarking {
                             'rux-classification--banner__footer':
                                 isWrapper === true,
                         }}
-                        part="footer-banner"
+                        part="footer-banner footer"
                     >
                         {this._getDisplayData()}
                         {label}

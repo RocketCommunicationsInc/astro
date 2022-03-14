@@ -15,9 +15,12 @@ import { hasSlot, renderHiddenInput } from '../../utils/utils'
 
 /**
  * @slot label - The radio group label
+ * @part error-text - The error text element
  * @part form-field - The form-field wrapper container
+ * @part help-text - The help text element
  * @part label - The input label when `label` prop is set
  * @part radiogroup - The container of radios
+ * @part required - The asterisk when required is true
  */
 @Component({
     tag: 'rux-radio-group',
@@ -37,6 +40,11 @@ export class RuxRadioGroup implements FormFieldInterface {
      * Presentational only. Renders the Radio Group as invalid.
      */
     @Prop() invalid: boolean = false
+
+    /**
+     * Marks that a selection from the radio-group is requried.
+     */
+    @Prop() required: boolean = false
 
     /**
      * The name of the radio group - submitted with form data. Must match the name of the radios in the group.
@@ -74,7 +82,7 @@ export class RuxRadioGroup implements FormFieldInterface {
     }
 
     connectedCallback() {
-        this.handleClick = this.handleClick.bind(this)
+        this._handleClick = this._handleClick.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
     }
 
@@ -101,7 +109,7 @@ export class RuxRadioGroup implements FormFieldInterface {
         return this.label ? true : this.hasLabelSlot
     }
 
-    handleClick(e: MouseEvent) {
+    private _handleClick(e: MouseEvent) {
         const selectedRadio =
             e.target && (e.target as HTMLElement).closest('rux-radio')
         if (selectedRadio && !selectedRadio.disabled) {
@@ -113,7 +121,7 @@ export class RuxRadioGroup implements FormFieldInterface {
         }
     }
 
-    selectedRadioIsDisabled(): boolean {
+    private _selectedRadioIsDisabled(): boolean {
         const radio = this.el.querySelector(
             `rux-radio[value="${this.value}"]`
         ) as HTMLRuxRadioElement
@@ -131,11 +139,11 @@ export class RuxRadioGroup implements FormFieldInterface {
                 this.el,
                 this.name,
                 this.value,
-                this.selectedRadioIsDisabled()
+                this._selectedRadioIsDisabled()
             )
         }
         return (
-            <Host onClick={this.handleClick}>
+            <Host onClick={this._handleClick}>
                 <div class="rux-form-field" part="form-field">
                     <div
                         class={{
@@ -149,6 +157,14 @@ export class RuxRadioGroup implements FormFieldInterface {
                             name="label"
                         >
                             {this.label}
+                            {this.required && (
+                                <span
+                                    part="required"
+                                    class="rux-label__asterisk"
+                                >
+                                    &#42;
+                                </span>
+                            )}
                         </slot>
                     </div>
                     <div

@@ -133,6 +133,15 @@ There is one unnamed slot in the Global Status Bar. This slot is intended for an
 | `"right-side"` | Used to append optional content                                                 |
 
 
+## Shadow Parts
+
+| Part          | Description                              |
+| ------------- | ---------------------------------------- |
+| `"app-state"` | The container for the applications state |
+| `"container"` | The container for global-status-bar      |
+| `"username"`  | The container for the username           |
+
+
 ## Dependencies
 
 ### Depends on

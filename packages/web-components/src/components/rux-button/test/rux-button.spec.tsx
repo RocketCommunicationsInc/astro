@@ -10,6 +10,7 @@ describe('rux-button', () => {
             iconOnly: false,
             handleClick: expect.any(Function),
             secondary: false,
+            borderless: false,
             disabled: false,
             type: 'button',
         })
@@ -21,16 +22,7 @@ describe('rux-button', () => {
             html: `<rux-button>Button</rux-button>`,
         })
 
-        expect(page.root).toEqualHtml(`
-          <rux-button>
-            <mock:shadow-root>
-              <button type="button" class="rux-button rux-button--default">
-                <slot></slot>
-              </button>
-            </mock:shadow-root>
-            Button
-          </rux-button>
-        `)
+        expect(page.root).toMatchSnapshot()
     })
 
     it('sets attributes', async () => {
@@ -39,15 +31,6 @@ describe('rux-button', () => {
             html: `<rux-button type="submit" secondary disabled>Button</rux-button>`,
         })
 
-        expect(page.root).toEqualHtml(`
-          <rux-button type="submit" secondary disabled>
-            <mock:shadow-root>
-              <button type="button" class="rux-button rux-button--secondary" disabled aria-disabled="true">
-                <slot></slot>
-              </button>
-            </mock:shadow-root>
-            Button
-          </rux-button>
-        `)
+        expect(page.root).toMatchSnapshot()
     })
 })

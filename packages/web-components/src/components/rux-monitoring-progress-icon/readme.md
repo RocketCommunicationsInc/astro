@@ -109,6 +109,20 @@ A sample of a `range` Array. This sample is also the default value for `range`. 
 | `sublabel`           | `sublabel`      | Displays a smaller label underneath the icon label                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | `string \| undefined` | `undefined` |
 
 
+## Shadow Parts
+
+| Part                    | Description                                                                               |
+| ----------------------- | ----------------------------------------------------------------------------------------- |
+| `"container"`           | The component's container element                                                         |
+| `"icon-group"`          | A wrapper element containing the status icon, radial progress, and notification elements. |
+| `"monitoring-badge"`    | The component's notification badge                                                        |
+| `"monitoring-label"`    | The component's label                                                                     |
+| `"monitoring-sublabel"` | The component's sublabel                                                                  |
+| `"progress-display"`    | The component's progress value                                                            |
+| `"radial-progress"`     | The "donut"-style progress meter                                                          |
+| `"status-icon"`         | The component's status symbol                                                             |
+
+
 ## Dependencies
 
 ### Depends on

@@ -4,8 +4,8 @@ path: /components/timeline
 date: Last Modified
 layout: components.template.njk
 title: Timeline
-demo: components-timeline--timeline
-storybook: components-timeline--timeline
+demo:
+storybook:
 git: rux-timeline
 height: 160px
 theme: true

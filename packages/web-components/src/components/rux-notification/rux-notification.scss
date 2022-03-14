@@ -2,7 +2,11 @@
     /**
   * @prop --notification-text-color: The notification text color
   */
-    --notification-text-color: var(--color-tertiary-900);
+    --notification-text-color: var(--color-global-basics-black);
+
+    /**
+    * @prop --notification-icon-color: The 'clear' icon's color
+    */
 
     display: flex;
     justify-content: space-between;
@@ -15,19 +19,23 @@
     height: 4.375rem;
     width: 100%;
     position: absolute;
-    padding: 0 1.25rem;
-    background-color: var(--color-status-standby-400);
+    background-color: var(--color-global-status-standby-400);
     transition: top 0.5s ease;
     box-sizing: border-box;
-    font-family: var(--font-h5-font-family);
-    font-size: var(--font-h5-font-size);
-    font-weight: var(--font-h5-font-weight);
-    letter-spacing: var(--font-h5-letter-spacing);
+    font-family: var(--font-heading-5-font-family);
+    font-size: var(--font-heading-5-font-size);
+    font-weight: var(--font-heading-5-font-weight);
+    letter-spacing: var(--font-heading-5-letter-spacing);
     color: var(--notification-text-color);
     rux-icon {
         align-items: center;
         justify-content: flex-end;
-        color: var(--banner-clear);
+        padding: 0 1.25rem 0 0.625rem;
+    }
+    .rux-notification__message {
+        padding: 1.063rem 1.25rem; //17px 20px
+        white-space: nowrap;
+        overflow: hidden;
     }
 }
 
@@ -35,29 +43,64 @@
     display: none;
 }
 
-:host([open]) {
+:host(.rux-notification-banner-0ba5409c--open) {
     top: 0;
 }
+:host(.rux-notification-banner--small) {
+    height: 2rem;
+    font-family: var(--font-body-1-font-family);
+    font-weight: var(--font-body-1-font-weight);
+    font-size: var(--font-body-1-font-size);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    line-height: var(--font-body-1-line-height);
+    font-weight: var(--font-body-1-font-weight);
 
-:host,
+    .rux-notification__message {
+        padding: 0.406rem 0.625rem; //6.5px 10px
+    }
+}
+.rux-notification__message {
+    padding: 1.063rem 0; //17 0
+}
+
+//TODO: When tokens are made for the icon color, replace the hard coded values below.
+
 :host([status='off']) {
-    background-color: var(--color-status-off-400);
+    background-color: var(--color-global-status-off-400);
+    rux-icon {
+        color: #00000050; //TODO replace with --color-status-off-banner-icon
+    }
 }
 
 :host([status='standby']) {
-    background-color: var(--color-status-standby-400);
+    background-color: var(--color-global-status-standby-400);
+    rux-icon {
+        color: #409eb3; //TODO replace with --color-status-standby-banner-icon
+    }
 }
 
 :host([status='normal']) {
-    background-color: var(--color-status-normal-400);
+    background-color: var(--color-global-status-normal-400);
+    rux-icon {
+        color: #6bac47; //TODO replace with --color-status-normal-banner-icon
+    }
 }
 :host([status='caution']) {
-    background-color: var(--color-status-caution-400);
+    background-color: var(--color-global-status-caution-400);
+    rux-icon {
+        color: #b1a644; //TODO replace with --color-status-caution-banner-icon
+    }
 }
 
 :host([status='serious']) {
-    background-color: var(--color-status-serious-500);
+    background-color: var(--color-global-status-serious-500);
+    rux-icon {
+        color: #00000050; //TODO replace with --color-status-serious-banner-icon
+    }
 }
 :host([status='critical']) {
-    background-color: var(--color-status-critical-400);
+    background-color: var(--color-global-status-critical-400);
+    rux-icon {
+        color: #b34343; //TODO replace with --color-status-critical-banner-icon
+    }
 }

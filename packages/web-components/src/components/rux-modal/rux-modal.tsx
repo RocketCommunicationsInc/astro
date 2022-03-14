@@ -11,8 +11,12 @@ import {
 } from '@stencil/core'
 
 /**
- * @part wrapper - the modal wrapper overlay
- *
+ * @part wrapper - the modal wrapper overlay ! DEPRECATED IN FAVOR OF CONTAINER !
+ * @part container - the modal container
+ * @part header - the header of the modal
+ * @part message - the message of the modal
+ * @part confirm-button - the modal's confirm button
+ * @part deny-button - the modal's deny button
  */
 @Component({
     tag: 'rux-modal',
@@ -27,7 +31,7 @@ export class RuxModal {
     /**
      * Modal body message
      */
-    @Prop() modalMessage!: string
+    @Prop() modalMessage?: string
     /**
      * Modal header title
      */
@@ -116,11 +120,11 @@ export class RuxModal {
     }
 
     connectedCallback() {
-        this.validate('rux-modal', ['open', 'modalMessage', 'modalTitle'])
         setTimeout(() => {
             const button = this._getDefaultButton()
             button && button.focus()
         })
+        this._handleModalChoice = this._handleModalChoice.bind(this)
     }
 
     componentDidLoad() {
@@ -143,32 +147,37 @@ export class RuxModal {
         return (
             open && (
                 <Host>
-                    <div part="wrapper" class="rux-modal__wrapper">
+                    <div part="wrapper container" class="rux-modal__wrapper">
                         <dialog class="rux-modal__dialog" role="dialog">
                             {modalTitle && (
-                                <header class="rux-modal__titlebar">
+                                <header
+                                    class="rux-modal__titlebar"
+                                    part="header"
+                                >
                                     <div>{modalTitle}</div>
                                 </header>
                             )}
                             <div class="rux-modal__content">
-                                <div class="rux-modal__message">
+                                <div class="rux-modal__message" part="message">
                                     {modalMessage}
                                 </div>
                                 <rux-button-group h-align="right">
                                     <rux-button
                                         secondary={confirmText.length > 0}
-                                        onClick={_handleModalChoice.bind(this)}
+                                        onClick={_handleModalChoice}
                                         data-value="false"
                                         hidden={!denyText}
                                         tabindex="-1"
+                                        exportparts="container:deny-button"
                                     >
                                         {denyText}
                                     </rux-button>
                                     <rux-button
-                                        onClick={_handleModalChoice.bind(this)}
+                                        onClick={_handleModalChoice}
                                         data-value="true"
                                         hidden={!confirmText}
                                         tabindex="0"
+                                        exportparts="container:confirm-button"
                                     >
                                         {confirmText}
                                     </rux-button>
@@ -179,38 +188,5 @@ export class RuxModal {
                 </Host>
             )
         )
-    }
-
-    // TODO find a way to share logic to put this validation into
-    // Stencil prevents using native extends class functionality
-    private validate(componentTag: string, requiredProps: string[]) {
-        const erroredFields: string[] = []
-        const isBlank = (prop: any) => typeof prop === 'undefined'
-        requiredProps.forEach((key: string) =>
-            isBlank(this[key as keyof RuxModal])
-                ? erroredFields.push(this.kebabize(key))
-                : null
-        )
-
-        if (erroredFields.length) {
-            throw new Error(
-                `[${componentTag}]: Following propert${
-                    erroredFields.length > 1 ? 'ies' : 'y'
-                } (${erroredFields.join(', ')}) ${
-                    erroredFields.length > 1 ? 'are' : 'is'
-                } required`
-            )
-        }
-    }
-
-    private kebabize = (str: string) => {
-        return str
-            .split('')
-            .map((letter: string, idx: number) => {
-                return letter.toUpperCase() === letter
-                    ? `${idx !== 0 ? '-' : ''}${letter.toLowerCase()}`
-                    : letter
-            })
-            .join('')
     }
 }

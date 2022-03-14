@@ -18,25 +18,22 @@ Clock shows the current date and time, and optional AOS and LOS timers. It will 
 
 export const Default = (args) => {
     return html`
-        <div style="padding: 10%; display: flex; justify-content: center;">
-            <rux-clock
-                .aos="${args.aos}"
-                .los="${args.los}"
-                .timezone="${args.timezone}"
-                ?hide-timezone="${args.hideTimezone}"
-                ?hide-date="${args.hideDate}"
-                ?hide-labels="${args.hideLabels}"
-                ?small="${args.small}"
-            ></rux-clock>
-        </div>
+<div style="padding: 10%; display: flex; justify-content: center;">
+    <rux-clock
+        .aos="${args.aos}"
+        .los="${args.los}"
+        .timezone="${args.timezone}"
+        ?hide-timezone="${args.hideTimezone}"
+        ?hide-date="${args.hideDate}"
+        ?hide-labels="${args.hideLabels}"
+        ?small="${args.small}"
+    ></rux-clock>
+</div>
     `
 }
 
 <Canvas>
     <Story
-        parameters={{
-            docs: { source: { code: '<rux-clock></rux-clock>' } },
-        }}
         name="Default"
     >
         {Default.bind()}
@@ -51,27 +48,30 @@ export const Default = (args) => {
 
 ### With AOS/LOS Timestamps
 
+> NOTE: The AOS and LOS timestamps accept a number of different time formats. If you don't provide a timezone ("1988-04-22 12:12:12"), they will default to the user's system time zone.
+> It is recommended to use the following format `"1988-04-22T12:12:12.000Z"`.
+
 export const ClockWithAosLos = (args) => {
     return html`
-        <div style="padding: 10%; display: flex; justify-content: center;">
-            <rux-clock
-                .timezone="${args.timezone}"
-                .aos="${args.aos}"
-                .los="${args.los}"
-                ?hide-timezone="${args.hideTimezone}"
-                ?hide-date="${args.hideDate}"
-                ?hide-labels="${args.hideLabels}"
-                ?small="${args.small}"
-            ></rux-clock>
-        </div>
+<div style="padding: 10%; display: flex; justify-content: center;">
+    <rux-clock
+        .timezone="${args.timezone}"
+        aos="${args.aos}"
+        los="${args.los}"
+        ?hide-timezone="${args.hideTimezone}"
+        ?hide-date="${args.hideDate}"
+        ?hide-labels="${args.hideLabels}"
+        ?small="${args.small}"
+    ></rux-clock>
+</div>
     `
 }
 
 <Canvas>
     <Story
         args={{
-            aos: new Date().getTime(),
-            los: new Date().toISOString(),
+            aos: '1988-04-22T12:12:12.000Z',
+            los: '1988-04-22T12:12:12.000Z',
         }}
         name="With AOS/LOS"
     >
@@ -83,17 +83,17 @@ export const ClockWithAosLos = (args) => {
 
 export const Small = (args) => {
     return html`
-        <div style="padding: 10%; display: flex; justify-content: center;">
-            <rux-clock
-                .timezone="${args.timezone}"
-                .aos="${args.aos}"
-                .los="${args.los}"
-                ?hide-timezone="${args.hideTimezone}"
-                ?hide-date="${args.hideDate}"
-                ?hide-labels="${args.hideLabels}"
-                ?small="${args.small}"
-            ></rux-clock>
-        </div>
+<div style="padding: 10%; display: flex; justify-content: center;">
+    <rux-clock
+        .timezone="${args.timezone}"
+        .aos="${args.aos}"
+        .los="${args.los}"
+        ?hide-timezone="${args.hideTimezone}"
+        ?hide-date="${args.hideDate}"
+        ?hide-labels="${args.hideLabels}"
+        ?small="${args.small}"
+    ></rux-clock>
+</div>
     `
 }
 
@@ -106,6 +106,49 @@ export const Small = (args) => {
     >
         {Small.bind()}
     </Story>
+</Canvas>
+
+### Other Variants
+
+export const OtherVariants = () => {
+    return html`
+    <style>
+        .clock-list {
+            list-style-type: none;
+            margin: 0 1rem 1rem 0;
+            display: flex;
+            flex-flow: column;
+        }
+        .clock-list li {
+            padding-bottom: 2rem;
+        }
+        span {
+            margin: 0 0 1rem 1rem;
+        }
+    </style>
+    <div
+    style="padding: 8vh 2vw; display: flex; flex-flow: row wrap; justify-content: space-evenly;"
+>
+    <ul class="clock-list">
+            <span>Hide Date</span>
+        <li>
+            <rux-clock hide-date></rux-clock>
+        </li>
+            <span>Hide Labels</span>
+        <li>
+            <rux-clock hide-labels></rux-clock>
+        </li>
+            <span>Hide Timezone</span>
+        <li>
+            <rux-clock hide-timezone></rux-clock>
+        </li>
+    </ul>
+</div>
+`
+}
+
+<Canvas>
+    <Story name="Other Variants">{OtherVariants.bind()}</Story>
 </Canvas>
 
 ## Military Timezones

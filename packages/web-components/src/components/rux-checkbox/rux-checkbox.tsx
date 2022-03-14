@@ -17,6 +17,9 @@ let id = 0
 
 /**
  * @slot (default) - the label of the checkbox.
+ * @part form-field - the form field wrapper container
+ * @part help-text - The help text element
+ * @part label - the label of rux-checkbox
  */
 @Component({
     tag: 'rux-checkbox',
@@ -76,6 +79,11 @@ export class RuxCheckbox implements FormFieldInterface {
     @Prop({ reflect: true }) disabled: boolean = false
 
     /**
+     * Sets the checkbox as required
+     */
+    @Prop() required: boolean = false
+
+    /**
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
      */
     @Event({ eventName: 'ruxchange' }) ruxChange!: EventEmitter
@@ -131,6 +139,7 @@ export class RuxCheckbox implements FormFieldInterface {
             name,
             value,
             indeterminate,
+            label,
         } = this
 
         if (!this.indeterminate) {
@@ -146,7 +155,7 @@ export class RuxCheckbox implements FormFieldInterface {
 
         return (
             <Host>
-                <div class="rux-form-field">
+                <div class="rux-form-field" part="form-field">
                     <div
                         class={{
                             'rux-checkbox': true,
@@ -165,14 +174,14 @@ export class RuxCheckbox implements FormFieldInterface {
                             value={value}
                             onChange={this._onClick}
                             onInput={this._onInput}
-                            onBlur={() => this._onBlur()}
+                            onBlur={this._onBlur}
                             ref={(el) => (this._inputEl = el)}
                         />
-                        <label htmlFor={checkboxId}>
-                            {this.label}
+                        <label htmlFor={checkboxId} part="label">
+                            {label}
                             <span
                                 class={{
-                                    hidden: !!this.label,
+                                    hidden: !!label,
                                 }}
                             >
                                 <slot></slot>

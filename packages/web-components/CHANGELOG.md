@@ -1,110 +1,169 @@
-# Change Log
+# @astrouxds/astro-web-components
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+## 6.3.0
 
-## [4.4.5](https://github.com/nortonprojects/astro/compare/v1.0.0...v4.4.5) (2021-10-20)
+### Minor Changes
 
-**Note:** Version bump only for package @astrouxds/astro-web-components
+#### Notification
 
-# Change Log
+-   Added a `small` prop allowing for a smaller variant.
 
-## [0.0.18] (2021-10-12)
+#### Segmented Button
 
-### Breaking Changes
+-   Added `size` prop which accepts small, medium or large.
 
-#### Events
+### Patch Changes
 
--   Globally updated event names from camel case to lower case to be compatible with angular event name formats. You can do a find/replace for 'rux-{eventname}' -> 'rux{eventname}'
+#### Notification
 
-#### Input
+-   Updated the padding around message and icon to match design.
 
--   `small` property has been removed. Use `size=small` instead.
+#### Segmented Button
 
-#### Textarea
+-   Updated hover state styling to match design.
 
--   `small` property has been removed. Use `rows` property instead to control the height of the element.
+#### Push Button
 
-#### Select
+-   Added hover state styling to match design.
 
-Select has had a significant rewrite and is now a full Shadow DOM component. Instead of using the native `<option>` and `<optgroup>` elements, you should now use the new Astro versions: `<rux-option>` and `<rux-option-group>`. This should be a simple find and replace.
+#### Monitoring Icon
 
-The other major breaking change is that `<rux-option>` requires a label property rather than setting the label as a slot.
+-   Updated the min height and width to match design.
 
-For example:
+#### Status
 
-```
-<option value="1">One</option>
-```
+-   Changed the overall size to be 12px to match design.
 
-should now become:
+## 6.2.0
 
-```
-<rux-option value="1" label="One"></rux-option>
-```
+### Minor Changes
 
-### Features
+#### Button
 
-#### Input
+-   Adds a borderless prop to rux-button, enabling borderless styling.
 
--   Inputs with `type="password"` now support toggle show/hide by including the `visibility` and `visibility-off` rux-icons as clickable.
--   Password inputs now swap types between `password` and `text` to show/hide the password.
+#### Checkbox Group/Radio Group/Select/Textarea
 
-#### Event names
+-   Adds required props and functionality to checkbox group, radio group, select and textarea.
 
--   Updated unit tests, e2e tests, and stories to use lowercase event names `rux{$eventName}`
--   Updated documentation for frameworks to reflect event name change
--   Updated react tests to use lowercase event names `onRux{$eventName}`
+### Patch Changes
 
-## [0.0.17] 2021-09-24
+#### Clock
 
-### Switch
+-   Updated margin-left on AOS from 16px to 17px.
 
--   `help-text` prop has been removed.
--   `error-text` prop has been removed
+#### Classification Marking
 
-### Input Field
+-   Updated the overall height of classification-tags to match Figma designs. Overall height has gone from 20px -> 22px
 
--   Component has been renamed to `rux-input` for convenience
+#### Button
 
-### Radio
+-   Secondary button now has the correct text color on hover.
 
--   `rux-change` event has been removed. Use the `rux-change` event on rux-radio-group instead.
+## 6.1.0
 
-## [0.0.15] 2021-09-22
-
-### Breaking Changes
-
-#### Input Field
-
--   Component has been renamed to `rux-input` for convenience.
-
-#### Checkbox
-
--   `required` prop has been removed. Use Checkbox Group component instead to display invalid state.
--   `errorText` prop has been removed. Use Checkbox Group component instead.
-
-### Switch
-
--   `required` prop has been removed.
--   `help-text` prop has been removed.
--   `error-text` prop has been removed.
-
-## [0.0.14] 2021-09-10
-
-### Breaking Changes
-
-### CSS Custom Props
-
-> MAJOR CHANGE
-
-CSS Custom Properties have been significantly rewritten. Some properties have been renamed or removed entirely. In addition, we have switched to dash-case for naming. Consult each individual component's documentation for more information.
-
-#### Global Status Bar
-
--   Removed `include-app-state` property in favor of `app-state`
--   Removed `include-username` property in favor of `username`
+### Minor Changes
 
 #### Icon
 
--   Removed `color` property in favor of css styling via `currentColor`
+-   Added new CSS Shadow Part `icon`
+-   Moved the `icon` shadow part in `rux-icon` to be on the SVG element.
+
+#### Global Status Bar
+
+-   Added new CSS Shadow Parts: `icon`, `container`, `username`, and `app-state`
+
+#### Pop Up Menu
+
+-   Added new CSS Shadow Part `container`
+
+#### Clock
+
+-   Added new CSS Shadow Parts `date`, `date-label`, `time`, `time-label`, `aos`, `aos-label`, `los`, `los-label`.
+-   Clock now displays the julien date as always 3 digits
+
+#### Button Group
+
+-   Added new CSS Shadow Part `container`
+
+#### Button
+
+-   Added new CSS Shadow Part `container`
+
+#### Monitoring Progress Icon
+
+-   Added new CSS Shadow Parts: `icon`, `monitoring-badge`, `monitoring-label`, `monitoring-sublabel`, `container`, `icon-group`, `progress-display`, `radial-progress`, `status-icon`.
+
+#### Monitoring Icon
+
+-   Added new CSS Shadow Parts: `monitoring-badge`, `monitoring-label`, `monitoring-sublabel`.
+
+#### Input
+
+-   Added `readonly`, `spellcheck`, and `autocomplete` attributes.
+-   Added new CSS Shadow Parts: `input`, `form-field`, `error-text`, and `help-text`.
+
+#### Checkbox Group
+
+-   Added new CSS Shadow Parts: `error-text` and `help-text`.
+
+#### Radio Group
+
+-   Added new CSS Shadow Parts: `error-text` and `help-text`.
+
+#### Slider
+
+-   Added new CSS Shadow Parts: `input`, `error-text` and `help-text`.
+
+#### Select
+
+-   Added new CSS Shadow Parts: `label`, `select`, `error-text` and `help-text`.
+
+#### Textarea
+
+-   Added new CSS Shadow Parts: `textarea`, `error-text` and `help-text`.
+
+#### Push Button
+
+-   Added new CSS Shadow Parts: `label` and `icon`.
+
+#### Checkbox
+
+-   Added new CSS Shadow Parts: `form-field` and `label`.
+
+#### Radio
+
+-   Added new CSS Shadow Parts: `form-field` and `label`.
+
+#### Progress
+
+-   Added new CSS Shadow Parts: `progress` and `output`.
+
+#### Modal
+
+-   Added new CSS Shadow Parts: `confirm-button` and `deny-button`.
+
+#### Segmented Button
+
+-   Added new CSS Shadow Part `label`.
+
+#### Switch
+
+-   Added new CSS Shadow Part `switch`. The pseudo selectors ::before select the track, ::after selects the button.
+
+#### Menu Item
+
+-   Added new CSS Shadow Part `container`.
+
+#### Menu Item Divider
+
+-   Added new CSS Shadow Part `container`.
+
+#### Classification Marking
+
+-   Added new CSS Shadow Parts: `footer`, `tag`, and `header`.
+-   Deprecated CSS Shadow Part `footer-header`. Use `footer` instead.
+
+### Patch Changes
+
+-   Fixes issue [#121](https://github.com/RocketCommunicationsInc/astro/issues/121) where boolean attributes in React were not behaving as intended.

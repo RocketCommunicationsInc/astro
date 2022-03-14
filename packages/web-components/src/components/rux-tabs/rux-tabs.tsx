@@ -1,3 +1,4 @@
+/* eslint react/jsx-no-bind: 0 */ // --> OFF
 import {
     Component,
     Host,
@@ -19,7 +20,7 @@ import {
     shadow: true,
 })
 export class RuxTabs {
-    @Element() el!: HTMLElement
+    @Element() el!: HTMLRuxTabsElement
     /**
      *  Holds all `<rux-tab-panel>` components based on the event emitted from the `<rux-tab-panels>` component.
      */
@@ -48,11 +49,11 @@ export class RuxTabs {
         this._addTabs()
     }
 
-    _addTabs() {
+    private _addTabs() {
         this._tabs = Array.from(this.el.querySelectorAll('rux-tab'))
     }
 
-    _registerPanels(e: CustomEvent) {
+    private _registerPanels(e: CustomEvent) {
         e.detail.forEach((panel: HTMLRuxTabPanelElement) => {
             this._panels.push(panel)
         })
@@ -62,7 +63,7 @@ export class RuxTabs {
         this._setTab(selectedTab)
     }
 
-    _onClick(e: MouseEvent) {
+    private _onClick(e: MouseEvent) {
         const tab = e.target as HTMLRuxTabElement
         this.ruxSelected.emit(tab)
         if (
@@ -73,14 +74,14 @@ export class RuxTabs {
         }
     }
 
-    _reset() {
+    private _reset() {
         // hide everything
         this._tabs.forEach((tab) => (tab.selected = false))
         //* classLIst on rux-tab-panel is an array of strings.
         this._panels.forEach((panel) => panel.classList.add('hidden'))
     }
 
-    _setTab(selectedTab: HTMLRuxTabElement) {
+    private _setTab(selectedTab: HTMLRuxTabElement) {
         this._reset()
 
         // find the panel whose aria-labeldby attribute matches the tab’s id

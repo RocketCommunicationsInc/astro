@@ -22,9 +22,10 @@ export const Default = (args) => {
     return html`
         <rux-checkbox-group
             name="checkboxes"
-            .label="${args.label}"
+            label="${args.label}"
             .value="${args.value}"
             ?invalid="${args.invalid}"
+            ?required="${args.required}"
             .helpText="${args.helpText}"
             .errorText="${args.errorText}"
         >
@@ -38,7 +39,6 @@ export const Default = (args) => {
 <Canvas>
     <Story
         args={{
-            name: 'checkboxes',
             label: 'Checkbox group',
         }}
         name="Default"
@@ -57,18 +57,19 @@ export const Default = (args) => {
 
 export const Invalid = (args) => {
     return html`
-        <rux-checkbox-group
-            name="checkboxes"
-            .label="${args.label}"
-            .value="${args.value}"
-            ?invalid="${args.invalid}"
-            .helpText="${args.helpText}"
-            .errorText="${args.errorText}"
-        >
-            <rux-checkbox value="one" name="checkboxes">One</rux-checkbox>
-            <rux-checkbox value="two" name="checkboxes">Two</rux-checkbox>
-            <rux-checkbox value="three" name="checkboxes">Three</rux-checkbox>
-        </rux-checkbox-group>
+<rux-checkbox-group
+    name="checkboxes"
+    label="${args.label}"
+    .value="${args.value}"
+    ?invalid="${args.invalid}"
+    ?required="${args.required}"
+    .helpText="${args.helpText}"
+    .errorText="${args.errorText}"
+>
+    <rux-checkbox value="one" name="checkboxes">One</rux-checkbox>
+    <rux-checkbox value="two" name="checkboxes">Two</rux-checkbox>
+    <rux-checkbox value="three" name="checkboxes">Three</rux-checkbox>
+</rux-checkbox-group>
     `
 }
 
@@ -85,22 +86,56 @@ export const Invalid = (args) => {
     </Story>
 </Canvas>
 
+### Required
+
+export const Required = (args) => {
+    return html`
+<rux-checkbox-group
+    name="checkboxes"
+    label="${args.label}"
+    .value="${args.value}"
+    ?invalid="${args.invalid}"
+    ?required="${args.required}"
+    .helpText="${args.helpText}"
+    .errorText="${args.errorText}"
+>
+    <rux-checkbox value="one" name="checkboxes">One</rux-checkbox>
+    <rux-checkbox value="two" name="checkboxes">Two</rux-checkbox>
+    <rux-checkbox value="three" name="checkboxes">Three</rux-checkbox>
+</rux-checkbox-group>
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+            name: 'checkboxes',
+            label: 'Checkbox group',
+            required: true,
+        }}
+        name="Required"
+    >
+        {Required.bind()}
+    </Story>
+</Canvas>
+
 ### With Help Text
 
 export const WithHelpText = (args) => {
     return html`
-        <rux-checkbox-group
-            name="checkboxes"
-            .label="${args.label}"
-            .value="${args.value}"
-            ?invalid="${args.invalid}"
-            .helpText="${args.helpText}"
-            .errorText="${args.errorText}"
-        >
-            <rux-checkbox value="one" name="checkboxes">One</rux-checkbox>
-            <rux-checkbox value="two" name="checkboxes">Two</rux-checkbox>
-            <rux-checkbox value="three" name="checkboxes">Three</rux-checkbox>
-        </rux-checkbox-group>
+<rux-checkbox-group
+    name="checkboxes"
+    label="${args.label}"
+    .value="${args.value}"
+    ?invalid="${args.invalid}"
+    ?required="${args.required}"
+    help-text="${args.helpText}"
+    .errorText="${args.errorText}"
+>
+    <rux-checkbox value="one" name="checkboxes">One</rux-checkbox>
+    <rux-checkbox value="two" name="checkboxes">Two</rux-checkbox>
+    <rux-checkbox value="three" name="checkboxes">Three</rux-checkbox>
+</rux-checkbox-group>
     `
 }
 
@@ -121,18 +156,19 @@ export const WithHelpText = (args) => {
 
 export const WithErrorText = (args) => {
     return html`
-        <rux-checkbox-group
-            name="checkboxes"
-            .label="${args.label}"
-            .value="${args.value}"
-            ?invalid="${args.invalid}"
-            .helpText="${args.helpText}"
-            .errorText="${args.errorText}"
-        >
-            <rux-checkbox value="one" name="checkboxes">One</rux-checkbox>
-            <rux-checkbox value="two" name="checkboxes">Two</rux-checkbox>
-            <rux-checkbox value="three" name="checkboxes">Three</rux-checkbox>
-        </rux-checkbox-group>
+<rux-checkbox-group
+    name="checkboxes"
+    label="${args.label}"
+    .value="${args.value}"
+    ?invalid="${args.invalid}"
+    ?required="${args.required}"
+    .helpText="${args.helpText}"
+    error-text="${args.errorText}"
+>
+    <rux-checkbox value="one" name="checkboxes">One</rux-checkbox>
+    <rux-checkbox value="two" name="checkboxes">Two</rux-checkbox>
+    <rux-checkbox value="three" name="checkboxes">Three</rux-checkbox>
+</rux-checkbox-group>
     `
 }
 
@@ -168,20 +204,20 @@ rux-checkbox-group::part(label) {
 
 export const HorizontalLabel = (args) => {
     return html`
-        <style>
-            #left-example::part(form-field) {
-                display: flex;
-                flex-direction: row;
-            }
-            #left-example::part(label) {
-                margin-right: var(--spacing-input-label-left);
-            }
-        </style>
-        <rux-checkbox-group id="left-example" label="Label">
-            <rux-checkbox value="1">one</rux-checkbox>
-            <rux-checkbox value="2">two</rux-checkbox>
-            <rux-checkbox value="3">three</rux-checkbox>
-        </rux-checkbox-group>
+<style>
+    #left-example::part(form-field) {
+        display: flex;
+        flex-direction: row;
+    }
+    #left-example::part(label) {
+        margin-right: var(--spacing-input-label-left);
+    }
+</style>
+<rux-checkbox-group id="left-example" label="Label">
+    <rux-checkbox value="1">one</rux-checkbox>
+    <rux-checkbox value="2">two</rux-checkbox>
+    <rux-checkbox value="3">three</rux-checkbox>
+</rux-checkbox-group>
     `
 }
 

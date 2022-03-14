@@ -1,3 +1,4 @@
+/* eslint react/jsx-no-bind: 0 */ // --> OFF
 import {
     Component,
     Element,
@@ -17,6 +18,12 @@ import { hasSlot, renderHiddenInput } from '../../utils/utils'
 /**
  * @slot (default) - The select options
  * @slot label - The select label
+ * @part error-text - The error text element
+ * @part form-field - The form-field wrapper container
+ * @part help-text - The help text element
+ * @part label - The select label
+ * @part select - The select element
+ * @part required - The asterisk when required is true
  */
 @Component({
     tag: 'rux-select',
@@ -24,10 +31,11 @@ import { hasSlot, renderHiddenInput } from '../../utils/utils'
     shadow: true,
 })
 export class RuxSelect implements FormFieldInterface {
+    private slotContainer?: HTMLElement
+    private selectEl!: HTMLSelectElement
+
     @Element() el!: HTMLRuxSelectElement
     @State() hasLabelSlot = false
-    slotContainer?: HTMLElement
-    selectEl!: HTMLSelectElement
 
     /**
      * Disables the select menu via HTML disabled attribute. Select menu takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
@@ -246,6 +254,7 @@ export class RuxSelect implements FormFieldInterface {
                     id={labelId}
                     htmlFor={inputId}
                     aria-hidden={this.hasLabel ? 'false' : 'true'}
+                    part="label"
                 >
                     <span class={{ hidden: !this.hasLabel }}>
                         <slot
@@ -253,6 +262,14 @@ export class RuxSelect implements FormFieldInterface {
                             name="label"
                         >
                             {label}
+                            {this.required && (
+                                <span
+                                    part="required"
+                                    class="rux-label__asterisk"
+                                >
+                                    &#42;
+                                </span>
+                            )}
                         </slot>
                     </span>
                 </label>
@@ -266,7 +283,8 @@ export class RuxSelect implements FormFieldInterface {
                     required={required}
                     name={name}
                     onChange={(e) => this._onChange(e)}
-                    onBlur={() => this._onBlur()}
+                    onBlur={this._onBlur}
+                    part="select"
                 ></select>
                 <div
                     aria-hidden="true"

@@ -9,29 +9,29 @@
     box-sizing: border-box;
 
     /** @prop --radio-hover-border-color: Radio border color on hover */
-    --radio-hover-border-color: var(--hover);
+    --radio-hover-border-color: var(--color-hover);
 
     /** @prop --radio-border-color: Selected radio border color */
-    --radio-border-color: var(--active);
+    --radio-border-color: var(--color-active);
 
     /** @prop --radio-label-color: label text color */
-    --radio-label-color: var(--default-text);
+    --radio-label-color: var(--color-default-text);
 
     /** @prop --radio-background-color: the radio background color */
-    --radio-background-color: var(--background);
+    --radio-background-color: var(--color-background);
 
     /** @prop --radio-selected-color: the radio selected color */
-    --radio-selected-color: var(--primary);
+    --radio-selected-color: var(--color-primary);
 }
 
 .rux-form-field {
     display: flex;
     flex-direction: column;
-    font-family: var(--font-b1-font-family);
-    font-size: var(--font-b1-font-size);
-    letter-spacing: var(--font-b1-letter-spacing);
-    font-weight: var(--font-b1-font-weight);
-    color: var(--default-text);
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    font-weight: var(--font-body-1-font-weight);
+    color: var(--color-default-text);
 }
 
 .rux-radio {
@@ -64,7 +64,7 @@
                 width: 1.125rem;
                 margin: 0 0.625rem 0 0;
                 border: 1px solid var(--radio-border-color);
-                border-radius: 100%;
+                border-radius: var(--radius-circle);
                 background-color: var(--radio-background-color);
             }
 
@@ -91,11 +91,11 @@
                     left: 5px;
                     height: 8px;
                     width: 8px;
-                    border-radius: 100%;
+                    border-radius: var(--radius-circle);
 
                     /* box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9); */
 
-                    background-color: var(--primary);
+                    background-color: var(--color-primary);
                 }
             }
         }

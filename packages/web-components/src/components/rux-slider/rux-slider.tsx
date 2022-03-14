@@ -17,8 +17,14 @@ let id = 0
 
 /**
  * @slot label - The slider label
+ * @part error-text - The error text element
  * @part form-field - The form-field wrapper container
+ * @part help-text - The help text element
+ * @part input - The input element
  * @part label - The input label when `label` prop is set
+ * @part tick-container - The container of the tick mark and axis-label
+ * @part tick - the tick mark
+ * @part axis-label - the axis label
  */
 @Component({
     tag: 'rux-slider',
@@ -26,26 +32,41 @@ let id = 0
     shadow: true,
 })
 export class RuxSlider implements FormFieldInterface {
+    private sliderId = `rux-slider-${++id}`
     @Element() el!: HTMLRuxSliderElement
-    sliderId = `rux-slider-${++id}`
     @State() hasLabelSlot = false
     /**
      * Min value of the slider.
      */
+
     @Prop() min: number = 0
     /**
      * Max value of slider.
      */
+
     @Prop() max: number = 100
     /**
      * Step amount of slider value.
      */
+
     @Prop() step: number = 1
     /**
      * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
      */
+
     @Prop({ mutable: true }) value: number =
         (this.max! - this.min!) / 2 + this.min!
+
+    /**
+     *  Shows tick marks and labels in the order provided and aligns evenly based on the length.
+     */
+    @Prop({ attribute: 'axis-labels' }) axisLabels: string[] = []
+
+    /**
+     * Hides labels and only shows tick marks if axis-labels is provided.
+     */
+    @Prop({ attribute: 'ticks-only' }) ticksOnly: boolean = false
+
     /**
      * Determines if the slider is disabled.
      */
@@ -112,7 +133,7 @@ export class RuxSlider implements FormFieldInterface {
 
     @Watch('step')
     handleStep() {
-        //? Value needs to be a multiple of step, otherwise slider begins to look wrong
+        // Value needs to be a multiple of step, otherwise slider begins to look wrong
         this.value = this._closestMultiple(this.value, this.step)
     }
 
@@ -175,15 +196,29 @@ export class RuxSlider implements FormFieldInterface {
     private _onBlur = () => {
         this.ruxBlur.emit()
     }
-    //Safari needs 0px top for the thumb to look normal.
+
     private _getBrowser(ua: string) {
+        //Safari needs 0px top for the thumb to look normal.
+        //Safari needs differnet padding on ticks.
         if (ua.indexOf('safari') > -1 && ua.indexOf('chrome') == -1) {
             this.el.style.setProperty('--slider-top', '0px')
+            this.el.style.setProperty('--slider-tick-padding-top', '7px')
+        }
+        //firefox - thumb too large, tick padding not enough
+        if (ua.indexOf('firefox') > -1) {
+            this.el.style.setProperty('--slider-tick-padding-top', '3px')
+            //? Better to set this here, or in the css with a calc(--slider-thumb-size - 4px)?
+            // this.el.style.setProperty('--slider-thumb-size', '15px')
         }
     }
 
     private _handleSlotChange() {
         this.hasLabelSlot = hasSlot(this.el, 'label')
+    }
+
+    private _getTickWidths() {
+        const width = 100 / (this.axisLabels.length - 1)
+        return width
     }
 
     render() {
@@ -202,7 +237,6 @@ export class RuxSlider implements FormFieldInterface {
         } = this
 
         renderHiddenInput(true, el, name, JSON.stringify(this.value), disabled)
-
         return (
             <Host>
                 <div class="rux-form-field" part="form-field">
@@ -216,7 +250,12 @@ export class RuxSlider implements FormFieldInterface {
                             <slot name="label">{label}</slot>
                         </span>
                     </label>
-                    <div class="rux-slider">
+                    <div
+                        class={{
+                            'rux-slider': true,
+                            'with-axis-labels': this.axisLabels.length > 0,
+                        }}
+                    >
                         <input
                             id={sliderId}
                             onInput={_onInput}
@@ -229,8 +268,39 @@ export class RuxSlider implements FormFieldInterface {
                             disabled={disabled}
                             aria-label="slider"
                             aria-disabled={disabled ? 'true' : 'false'}
-                            onBlur={() => _onBlur()}
+                            onBlur={_onBlur}
+                            part="input"
+                            list="steplist"
                         ></input>
+                        {this.axisLabels.length > 0 ? (
+                            <datalist
+                                id="steplist"
+                                style={{
+                                    gridTemplateColumns: `[tick] repeat(${
+                                        this.axisLabels.length - 1
+                                    }, ${this._getTickWidths()}%)`,
+                                }}
+                            >
+                                {this.axisLabels.map((label) => {
+                                    return (
+                                        <div
+                                            class="tick-label"
+                                            part="tick-container"
+                                        >
+                                            <div class="tick" part="tick"></div>
+                                            {this.ticksOnly ? null : (
+                                                <div
+                                                    class="axis-label"
+                                                    part="axis-label"
+                                                >
+                                                    {label}
+                                                </div>
+                                            )}
+                                        </div>
+                                    )
+                                })}
+                            </datalist>
+                        ) : null}
                     </div>
                 </div>
                 <FormFieldMessage
@@ -241,3 +311,13 @@ export class RuxSlider implements FormFieldInterface {
         )
     }
 }
+
+/*
+                                return (
+                                    <div class="tick-label">
+                                        <div class="tick"></div>
+                                        <option>{label}</option>
+                                    </div>
+                                )
+
+*/

@@ -1,11 +1,15 @@
 import { Component, Host, Prop, h } from '@stencil/core'
 
+/**
+ * @part icon - the icon in rux-icon
+ */
 @Component({
     tag: 'rux-icon',
     styleUrl: 'rux-icon.scss',
     shadow: true,
 })
 export class RuxIcon {
+    // eslint-disable-next-line
     svg: string = ''
 
     /**
@@ -17,7 +21,7 @@ export class RuxIcon {
         | 'normal'
         | 'large'
         | 'auto'
-        | string = 'auto'
+        | string = 'normal'
     /**
      * The icon name
      */
@@ -41,7 +45,12 @@ export class RuxIcon {
 
         return (
             <Host>
-                <SVG class="icon" size={this.size} title={this.iconLabel}></SVG>
+                <SVG
+                    class="icon"
+                    part="icon"
+                    size={this.size}
+                    title={this.iconLabel}
+                ></SVG>
             </Host>
         )
     }

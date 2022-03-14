@@ -95,6 +95,14 @@ Indeterminate progress
 | `value`     | `value`      | Current progress value between 0 and 100 (or the max, if defined below).            | `number \| undefined` | `undefined` |
 
 
+## Shadow Parts
+
+| Part         | Description                 |
+| ------------ | --------------------------- |
+| `"output"`   | the native output element   |
+| `"progress"` | the native progress element |
+
+
 ## CSS Custom Properties
 
 | Name                                            | Description                                    |

@@ -1,9 +1,19 @@
 import { Watch, Prop, State, Component, Host, h } from '@stencil/core'
 import { getDayOfYear } from 'date-fns'
-import { format, utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz'
+import { format, utcToZonedTime } from 'date-fns-tz'
 import { militaryTimezones } from './military-timezones'
 import { MilitaryTimezone } from './rux-clock.model'
 
+/**
+ * @part date - the container for the date section of clock
+ * @part date-label - the container for the date label
+ * @part time - the conatiner for the time section of clock
+ * @part time-label - the container for the time label
+ * @part aos - the container for the aos section of clock
+ * @part aos-label - the container for the aos label
+ * @part los - the container for the los section of clock
+ * @part los-label - the container for the los label
+ */
 @Component({
     tag: 'rux-clock',
     styleUrl: 'rux-clock.scss',
@@ -39,7 +49,7 @@ export class RuxClock {
     /**
      * Accepts the [IANA timezone string format](https://www.iana.org/time-zones) such as `'America/Los_Angeles'` or any single-character designation for a [military timezones](https://en.wikipedia.org/wiki/List_of_military_time_zones) (`'A'` through `'Z'`, excluding `'J'`), both case-insensitive. If no value for timezone is provided, the clock will use `'UTC'`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.
      */
-    @Prop({ mutable: true }) timezone: string = 'UTC'
+    @Prop() timezone: string = 'UTC'
     /**
      * Hides the timezone in the main 24-hour clock. Timezone does not display on AOS/LOS.
      */
@@ -71,12 +81,9 @@ export class RuxClock {
 
     @Watch('timezone')
     timezoneChanged() {
-        this.convertTimezone(this.timezone)
-        this._updateTime()
-    }
-
-    constructor() {
-        this._timezone = this.timezone
+        this._convertTimezone(this.timezone)
+        if (this.aos) this.convertedAos = this._formatLosAos(this.aos)
+        if (this.los) this.convertedLos = this._formatLosAos(this.los)
         this._updateTime()
     }
 
@@ -85,7 +92,7 @@ export class RuxClock {
     }
 
     connectedCallback() {
-        this.convertTimezone(this.timezone)
+        this._convertTimezone(this.timezone)
 
         this._timer = window.setInterval(() => {
             this._updateTime()
@@ -98,7 +105,13 @@ export class RuxClock {
         clearTimeout(this._timer)
     }
 
-    formatTime(time: Date, timezone: string): string {
+    componentWillLoad() {
+        this._timezone = this.timezone
+        this._convertTimezone(this.timezone)
+        this._updateTime()
+    }
+
+    private _formatTime(time: Date, timezone: string): string {
         return format(
             utcToZonedTime(time, timezone),
             `HH:mm:ss ${this.hideTimezone ? '' : this.tzFormat}`,
@@ -107,10 +120,16 @@ export class RuxClock {
     }
 
     private _updateTime(): void {
-        this._time = this.formatTime(new Date(Date.now()), this._timezone)
-        this.dayOfYear = getDayOfYear(
-            zonedTimeToUtc(new Date(Date.now()), this._timezone)
-        )
+        this._time = this._formatTime(new Date(Date.now()), this._timezone)
+
+        /**
+         * Date.now() is a unix timestamp of the current time in UTC
+         * We need to convert that to the Clock's defined timezone
+         * before we get the day of the year.
+         */
+        const localDate = new Date(Date.now())
+        const clockDate = utcToZonedTime(localDate, this._timezone)
+        this.dayOfYear = getDayOfYear(clockDate)
     }
 
     /**
@@ -126,7 +145,7 @@ export class RuxClock {
         return format(utcToZonedTime(dateTime, this._timezone), 'HH:mm:ss')
     }
 
-    convertTimezone(timezone: string) {
+    private _convertTimezone(timezone: string) {
         const _militaryTimezones = militaryTimezones as MilitaryTimezone
         this._timezone = _militaryTimezones[timezone.toUpperCase()]
         this.tzFormat = 'O'
@@ -142,17 +161,19 @@ export class RuxClock {
         return (
             <Host>
                 {!this.hideDate && (
-                    <div class="rux-clock__segment rux-clock__day-of-the-year">
+                    <div class="rux-clock__segment">
                         <div
                             class="rux-clock__segment__value"
                             aria-labelledby="rux-clock__day-of-year-label"
+                            part="date"
                         >
-                            {this.dayOfYear}
+                            {this.dayOfYear.toString().padStart(3, '0')}
                         </div>
                         {!this.hideLabels && (
                             <div
                                 class="rux-clock__segment__label"
                                 id="rux-clock__day-of-year-label"
+                                part="date-label"
                             >
                                 Date
                             </div>
@@ -160,10 +181,11 @@ export class RuxClock {
                     </div>
                 )}
 
-                <div class="rux-clock__segment rux-clock__time">
+                <div class="rux-clock__segment">
                     <div
                         class="rux-clock__segment__value"
                         aria-labelledby="rux-clock__time-label"
+                        part="time"
                     >
                         {this.time}
                     </div>
@@ -171,6 +193,7 @@ export class RuxClock {
                         <div
                             class="rux-clock__segment__label"
                             id="rux-clock__time-label"
+                            part="time-label"
                         >
                             Time
                         </div>
@@ -183,6 +206,7 @@ export class RuxClock {
                             class="rux-clock__segment__value"
                             aria-labelledby="rux-clock__time-label--aos"
                             id="rux-clock__time--aos"
+                            part="aos"
                         >
                             {this.convertedAos}
                         </div>
@@ -190,6 +214,7 @@ export class RuxClock {
                             <div
                                 class="rux-clock__segment__label"
                                 id="rux-clock__time-label--aos"
+                                part="aos-label"
                             >
                                 AOS
                             </div>
@@ -203,6 +228,7 @@ export class RuxClock {
                             class="rux-clock__segment__value"
                             aria-labelledby="rux-clock__time-label--los"
                             id="rux-clock__time--los"
+                            part="los"
                         >
                             {this.convertedLos}
                         </div>
@@ -210,6 +236,7 @@ export class RuxClock {
                             <div
                                 class="rux-clock__segment__label"
                                 id="rux-clock__time-label--los"
+                                part="los-label"
                             >
                                 LOS
                             </div>
