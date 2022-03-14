@@ -93,9 +93,9 @@ export class RuxTextarea implements FormFieldInterface {
     @Prop() required: boolean = false
 
     /**
-     * Styles the input element and label smaller for space-limited situations.
+     * Styles the input element size between small, medium and large. The default styling is medium.
      */
-    @Prop() small: boolean = false
+    @Prop({ reflect: true }) size?: 'small' | 'medium' | 'large'
 
     /**
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
@@ -202,6 +202,8 @@ export class RuxTextarea implements FormFieldInterface {
                             'rux-textarea': true,
                             'rux-textarea--disabled': this.disabled,
                             'rux-textarea--invalid': this.invalid,
+                            'rux-textarea--small': this.size === 'small',
+                            'rux-textarea--large': this.size === 'large',
                         }}
                         id={this.inputId}
                         rows={this.rows}
