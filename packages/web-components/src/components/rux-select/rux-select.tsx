@@ -259,12 +259,6 @@ export class RuxSelect implements FormFieldInterface {
         this.ruxSelectChanged.emit()
     }
 
-    private _isChrome(ua: string) {
-        if (ua.indexOf('safari') > -1 && ua.indexOf('firefox') > -1) {
-            return false
-        } else return true
-    }
-
     render() {
         const {
             disabled,
