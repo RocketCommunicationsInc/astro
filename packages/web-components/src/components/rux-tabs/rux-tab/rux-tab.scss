@@ -56,6 +56,9 @@
     color: var(--tab-selected-text-color);
     border-bottom: 5px solid var(--tab-selected-border-color);
 }
+:host([selected]:hover) {
+    color: var(--tab-selected-text-color);
+}
 :host(:hover) {
     color: var(--color-hover);
 }
