@@ -70,6 +70,7 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 | `ruxmodalopened` | Event that is fired when modal opens  | `CustomEvent<boolean>` |
 
 
+
 ## Shadow Parts
 
 | Part               | Description                                                    |

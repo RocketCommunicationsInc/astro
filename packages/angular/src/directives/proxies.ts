@@ -20317,14 +20317,14 @@ export class RuxMenuItemDivider {
 
 export declare interface RuxModal extends Components.RuxModal {}
 @ProxyCmp({
-  inputs: ["clickToClose", "open"],
+  inputs: ['confirmText', 'denyText', 'modalMessage', 'modalTitle', 'open']
 })
 @Component({
   selector: 'rux-modal',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: "<ng-content></ng-content>",
-  inputs: ["clickToClose", "open"],
-  outputs: ["ruxmodalclosed", "ruxmodalopened"],
+  template: '<ng-content></ng-content>',
+  inputs: ['confirmText', 'denyText', 'modalMessage', 'modalTitle', 'open'],
+  outputs: ['ruxmodalclosed']
 })
 export class RuxModal {
   /** Event that is fired when modal closes */
@@ -20335,7 +20335,7 @@ export class RuxModal {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ["ruxmodalclosed", "ruxmodalopened"]);
+    proxyOutputs(this, this.el, ['ruxmodalclosed']);
   }
 }
 
@@ -20561,13 +20561,13 @@ export class RuxRadioGroup {
 
 export declare interface RuxSegmentedButton extends Components.RuxSegmentedButton {}
 @ProxyCmp({
-  inputs: ['data', 'selected', 'size']
+  inputs: ['data', 'disabled', 'selected', 'size']
 })
 @Component({
   selector: 'rux-segmented-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['data', 'selected', 'size'],
+  inputs: ['data', 'disabled', 'selected', 'size'],
   outputs: ['ruxchange']
 })
 export class RuxSegmentedButton {
@@ -20609,13 +20609,13 @@ export class RuxSelect {
 
 export declare interface RuxSlider extends Components.RuxSlider {}
 @ProxyCmp({
-  inputs: ['disabled', 'errorText', 'helpText', 'label', 'max', 'min', 'name', 'step', 'value']
+  inputs: ['axisLabels', 'disabled', 'errorText', 'helpText', 'label', 'max', 'min', 'name', 'step', 'ticksOnly', 'value']
 })
 @Component({
   selector: 'rux-slider',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'errorText', 'helpText', 'label', 'max', 'min', 'name', 'step', 'value'],
+  inputs: ['axisLabels', 'disabled', 'errorText', 'helpText', 'label', 'max', 'min', 'name', 'step', 'ticksOnly', 'value'],
   outputs: ['ruxinput', 'ruxblur']
 })
 export class RuxSlider {
