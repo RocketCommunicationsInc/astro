@@ -41,6 +41,11 @@
     --button-secondary-text-color: var(--color-primary);
 
     /**
+    * @prop --button-secondary-hover-text-color: Secondary button hover text color
+    */
+    --button-secondary-hover-text-color: var(--color-hover);
+
+    /**
      * @prop --button-secondary-background-color: Button secondary background color
      */
     --button-secondary-background-color: transparent;
@@ -59,6 +64,16 @@
      * @prop --button-secondary-hover-border-color:  Button secondary hover border color
      */
     --button-secondary-hover-border-color: var(--color-hover);
+
+    /**
+    * @prop --button-borderless-text-color: Button borderless text color
+    */
+    --button-borderless-color: var(--color-primary);
+
+    /**
+    * @prop --button-borderless-hover-color: Borderless buttons hover text color 
+    */
+    --button-borderless-hover-color: var(--color-hover);
 
     display: inline-block;
 }
@@ -131,18 +146,51 @@
         border: 1px solid var(--button-secondary-border-color);
 
         &:hover:not([disabled]) {
-            color: var(--button-secondary-text-color);
+            color: var(--button-secondary-hover-text-color);
             background-color: var(--button-secondary-hover-background-color);
             border-color: var(--button-secondary-hover-border-color);
+            rux-icon,
+            ::slotted(rux-icon) {
+                color: var(--button-secondary-hover-text-color);
+            }
         }
 
         &:active:not([disabled]) {
             border-color: var(--button-secondary-border-color);
             background-color: var(--button-secondary-background-color);
+            color: var(--button-secondary-text-color);
+            rux-icon,
+            ::slotted(rux-icon) {
+                color: var(--button-secondary-text-color);
+            }
         }
         rux-icon,
         ::slotted(rux-icon) {
             color: var(--button-secondary-text-color);
+        }
+    }
+    &--borderless {
+        color: var(--button-borderless-color);
+        border: none;
+        background: none;
+        &:hover:not([disabled]) {
+            color: var(--button-borderless-hover-color);
+            background: none;
+            rux-icon,
+            ::slotted(rux-icon) {
+                color: var(--button-borderless-hover-color);
+            }
+        }
+        &:active:not([disabled]) {
+            color: var(--button-borderless-color);
+            rux-icon,
+            ::slotted(rux-icon) {
+                color: var(--button-borderless-color);
+            }
+        }
+        rux-icon,
+        ::slotted(rux-icon) {
+            color: var(--button-borderless-color);
         }
     }
 

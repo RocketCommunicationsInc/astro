@@ -8,7 +8,8 @@ Segmented Buttons allow users to select one item at a time from two to four opti
 
 ### Usage
 
-Pass an Array of segments via the `data` attribute on the Segmented Button custom element. Segment items in the `data` Array must be objects with a `label` string. The first item in the Array will be auto-selected unless another segment item has a `selected` property with a truthy value
+Pass an Array of segments via the `data` attribute on the Segmented Button custom element. Segment items in the `data` Array must be objects with a `label` string. The first item in the Array will be auto-selected unless another segment item has a `selected` property with a truthy value.
+Avoid labels with the same text, as this will interfere with selecting segments. 
 
 ### Properties for items within the `data` Array
 
@@ -42,12 +43,15 @@ document.addEventListener('change', (e) =>
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
-| Property   | Attribute  | Description                                                                                                                                                                                                                                                                                                                                                                                                    | Type                | Default |
-| ---------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | ------- |
-| `data`     | --         | Items in this Array are the individual button segments.                                                                                                                                                                                                                                                                                                                                                        | `SegmentedButton[]` | `[]`    |
-| `selected` | `selected` | When passed in on load, this selects the first button segment with a matching label. When the selected segment changes, this property updates with the currently selected value, which reflects back to the component attribute. If no button segment label matches this string, then no segment is selected. This value takes priority over setting selected boolean property on the items in the data array. | `string`            | `''`    |
+| Property   | Attribute  | Description                                                                                                                                                                                                                                                                                                                                                                                                    | Type                                          | Default     |
+| ---------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- | ----------- |
+| `data`     | --         | Items in this Array are the individual button segments.                                                                                                                                                                                                                                                                                                                                                        | `SegmentedButton[]`                           | `[]`        |
+| `selected` | `selected` | When passed in on load, this selects the first button segment with a matching label. When the selected segment changes, this property updates with the currently selected value, which reflects back to the component attribute. If no button segment label matches this string, then no segment is selected. This value takes priority over setting selected boolean property on the items in the data array. | `string`                                      | `''`        |
+| `size`     | `size`     | Changes size of segmented button from small to medium or large.                                                                                                                                                                                                                                                                                                                                                | `"large" \| "medium" \| "small" \| undefined` | `undefined` |
+
 
 ## Events
 
@@ -55,11 +59,13 @@ document.addEventListener('change', (e) =>
 | ----------- | -------------------------------------------- | ------------------ |
 | `ruxchange` | Emitted when the value property has changed. | `CustomEvent<any>` |
 
+
 ## Shadow Parts
 
 | Part      | Description                       |
 | --------- | --------------------------------- |
 | `"label"` | the label of rux-segmented-button |
+
 
 ## CSS Custom Properties
 
@@ -78,6 +84,7 @@ document.addEventListener('change', (e) =>
 | `--segmented-button-selected-text-color`             | Segmented button selected text color             |
 | `--segmented-button-text-color`                      | Segmented button text color                      |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

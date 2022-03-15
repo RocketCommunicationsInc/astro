@@ -6,7 +6,6 @@ import { AppMeta } from './appMeta/appMeta'
  * @slot left-side - Used to prepend a RuxIcon or similar element
  * @slot app-meta - Used to display the Application's metadata (Domain, Name, State, Version, etc.)
  * @slot right-side - Used to append optional content
- * @slot username - Used to display the username
  *
  * @part app-state - The container for the applications state
  * @part container - The container for global-status-bar

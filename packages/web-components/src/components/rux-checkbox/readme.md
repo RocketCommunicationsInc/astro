@@ -35,6 +35,7 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property        | Attribute       | Description                                                                                                                                                                                                                                       | Type                  | Default     |
@@ -45,7 +46,9 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
 | `indeterminate` | `indeterminate` | Toggles indeterminate state of a checkbox. The indeterminate property does not exist in HTML, but can be set in JS. [HTML Checkbox & Indeterminate State](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#indeterminate) | `boolean`             | `false`     |
 | `label`         | `label`         | The checkbox label text. For HTML content, use the default slot instead.                                                                                                                                                                          | `string \| undefined` | `undefined` |
 | `name`          | `name`          | The checkbox name                                                                                                                                                                                                                                 | `string`              | `''`        |
+| `required`      | `required`      | Sets the checkbox as required                                                                                                                                                                                                                     | `boolean`             | `false`     |
 | `value`         | `value`         | The checkbox value                                                                                                                                                                                                                                | `string`              | `''`        |
+
 
 ## Events
 
@@ -55,11 +58,13 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
 | `ruxchange` | Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)                                | `CustomEvent<any>` |
 | `ruxinput`  | Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) | `CustomEvent<any>` |
 
+
 ## Slots
 
 | Slot          | Description                |
 | ------------- | -------------------------- |
 | `"(default)"` | the label of the checkbox. |
+
 
 ## Shadow Parts
 
@@ -68,6 +73,7 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
 | `"form-field"` | the form field wrapper container |
 | `"help-text"`  | The help text element            |
 | `"label"`      | the label of rux-checkbox        |
+
 
 ## CSS Custom Properties
 
@@ -79,6 +85,7 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
 | `--checkbox-hover-border-color` | Hover border color           |
 | `--checkbox-label-color`        | Label text color             |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*
