@@ -54,6 +54,7 @@ export const Modal = (args) => {
                     <rux-button class="btn" secondary>Cancel</rux-button>
                     <rux-button class="btn" >Release</rux-button>
                 </rux-button-group>
+            </div>
             </rux-modal>
         </div>
         <script>
@@ -106,7 +107,6 @@ export const ClickToClose = (args) => {
             <rux-modal
                 ?open="${args.open}"
                 ?click-to-close="${args.clickToClose}"
-                ?hide-footer="${args.hideFooter}"
             >
                 <div slot="header">Click Off Close</div>
                 <div slot="message">
@@ -143,7 +143,6 @@ export const ClickToClose = (args) => {
         args={{
             open: true,
             clickToClose: true,
-            hideFooter: false,
         }}
         name="Click To Close"
     >
