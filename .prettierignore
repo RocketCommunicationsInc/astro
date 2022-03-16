@@ -5,5 +5,12 @@ storybook-static
 *readme.md
 
 # Ignore Stencil Build files
-src/components.d.ts
+packages/web-components/src/components.d.ts
 src/globals.d.ts
+
+# Ignore Wrapper Build files
+*proxies.ts
+*attachProps.ts
+
+# Ignore Astro-uxds css files
+packages/astro-uxds/css

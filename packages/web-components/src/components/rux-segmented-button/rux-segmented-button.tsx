@@ -31,6 +31,16 @@ export class RuxSegmentedButton {
     @Prop({ reflect: true, mutable: true }) selected: string = ''
 
     /**
+     * Changes size of segmented button from small to medium or large.
+     */
+    @Prop({ reflect: true }) size?: 'small' | 'medium' | 'large'
+
+    /**
+     * Sets the disabled attribute.
+     */
+    @Prop({ reflect: true }) disabled: boolean = false
+
+    /**
      * Emitted when the value property has changed.
      */
     @Event({ eventName: 'ruxchange' })
@@ -101,7 +111,13 @@ export class RuxSegmentedButton {
 
     render() {
         return (
-            <ul class="rux-segmented-button">
+            <ul
+                class={{
+                    'rux-segmented-button': true,
+                    'rux-segmented-button--medium': this.size === 'medium',
+                    'rux-segmented-button--large': this.size === 'large',
+                }}
+            >
                 {this.data.map((item) => (
                     <li class="rux-segmented-button__segment">
                         <input
@@ -112,8 +128,19 @@ export class RuxSegmentedButton {
                             checked={this._isSelected(item.label)}
                             data-label={item.label}
                             onChange={this._handleChange}
+                            disabled={this.disabled}
                         />
-                        <label htmlFor={this._slugify(item.label)} part="label">
+                        <label
+                            htmlFor={this._slugify(item.label)}
+                            part="label"
+                            class={{
+                                'rux-segmented-button-label': true,
+                                'rux-segmented-button-label--medium':
+                                    this.size === 'medium',
+                                'rux-segmented-button-label--large':
+                                    this.size === 'large',
+                            }}
+                        >
                             {item.label}
                         </label>
                     </li>

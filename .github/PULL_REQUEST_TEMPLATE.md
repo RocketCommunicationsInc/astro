@@ -26,3 +26,5 @@
 
 - [ ] This PR adds or removes a Storybook story.
 - [ ] I have added tests to cover my changes.
+- [ ] Regressions are passing and/or failures are documented
+- [ ] Changes have been checked in evergreen browsers

@@ -29,9 +29,10 @@ export const Default = (args) => {
         min="${args.min}"
         step="${args.step}"
         value="${args.value}"
-        .disabled="${args.disabled}"
-        .help-text="${args.helpText}"
-        .error-text="${args.errorText}"
+        ?disabled="${args.disabled}"
+        help-text="${args.helpText}"
+        error-text="${args.errorText}"
+        label="${args.label}"
     ></rux-slider>
 </div>
     `
@@ -68,8 +69,9 @@ export const Disabled = (args) => {
         step="${args.step}"
         .value="${args.value}"
         ?disabled="${args.disabled}"
-        .help-text="${args.helpText}"
-        .error-text="${args.errorText}"
+        help-text="${args.helpText}"
+        error-text="${args.errorText}"
+        label="${args.label}"
     ></rux-slider>
 </div>
     `
@@ -101,7 +103,8 @@ export const WithHelpText = (args) => {
         .value="${args.value}"
         ?disabled="${args.disabled}"
         help-text="${args.helpText}"
-        .error-text="${args.errorText}"
+        error-text="${args.errorText}"
+        label="${args.label}"
     ></rux-slider>
 </div>
     `
@@ -132,8 +135,9 @@ export const WithErrorText = (args) => {
         step="${args.step}"
         .value="${args.value}"
         ?disabled="${args.disabled}"
-        .help-text="${args.helpText}"
+        help-text="${args.helpText}"
         error-text="${args.errorText}"
+        label="${args.label}"
     ></rux-slider>
 </div>
     `
@@ -152,6 +156,51 @@ export const WithErrorText = (args) => {
         {WithErrorText.bind()}
     </Story>
 </Canvas>
+
+### With Axis Labels
+
+export const WithAxisLabels = (args, data) => {
+    return html`
+<div style="padding: 5%">
+    <rux-slider
+        id="axis-labels"
+        max="${args.max}"
+        min="${args.min}"
+        step="${args.step}"
+        .value="${args.value}"
+        ?disabled="${args.disabled}"
+        help-text="${args.helpText}"
+        error-text="${args.errorText}"
+        .axisLabels="${args.axisLabels}"
+        ?ticks-only="${args.ticksOnly}"
+        label="${args.label}"
+    ></rux-slider>
+</div>
+    `
+}
+
+<Canvas>
+    <Story
+        name="With Axis Labels"
+        args={{
+            max: 100,
+            min: 0,
+            value: 50,
+            ticksOnly: true,
+            axisLabels: ["0", "25", "50", "75", "100"]
+        }}
+    >
+        {WithAxisLabels.bind()}
+    </Story>
+</Canvas>
+
+To display tick marks and labels, make use of the `axis-labels` property. This accepts an array of strings that will
+be evenly distributed across the progress bar. 
+
+#### Ticks Only
+
+If you only want to show tick marks without labels, make use of the `ticks-only` property. NOTE: you will still need to pass in the array of strings to determine how many
+ticks to show.
 
 ### Horizontal Labels
 
@@ -179,12 +228,21 @@ export const HorizontalLabel = (args) => {
         margin-right: var(--spacing-input-label-left);
     }
 </style>
-<rux-slider id="left-example" label="Label"></rux-slider>
+<rux-slider id="left-example"
+        max="${args.max}"
+        min="${args.min}"
+        step="${args.step}"
+        .value="${args.value}"
+        ?disabled="${args.disabled}"
+        help-text="${args.helpText}"
+        error-text="${args.errorText}"
+        label="${args.label}"
+></rux-slider>
     `
 }
 
 <Canvas>
-    <Story name="Horizontal Label">{HorizontalLabel.bind()}</Story>
+    <Story name="Horizontal Label" args={{label: "Label"}}>{HorizontalLabel.bind()}</Story>
 </Canvas>
 
 ## Cherry Picking

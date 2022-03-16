@@ -27,6 +27,12 @@ export const PushButton = (args) => {
     <rux-push-button
         label=${args.label}
         .size=${args.size}
+        .icon=${args.icon}
+        ?checked=${args.checked}
+        ?disabled=${args.disabled}
+        ?icon-only=${args.iconOnly}
+        .name=${args.name}
+        .value=${args.value}
     ></rux-push-button>
 </div>
     `
@@ -63,6 +69,9 @@ export const AllVariants = (args) => {
     }
     .button-list li rux-button:not(:last-child) {
         margin-right: 1rem;
+    }
+    .icon-only {
+        padding-right: 1rem;
     }
 </style>
 <div
@@ -103,6 +112,59 @@ export const AllVariants = (args) => {
                 checked
                 disabled
                 label="Push button disabled checked"
+            ></rux-push-button>
+        </li>
+        <li>
+            <rux-push-button
+                icon="apps"
+                label="Push button with icon"
+            ></rux-push-button>
+        </li>
+        <li>
+            <rux-push-button
+                icon="apps"
+                disabled
+                label="Push button disabled with icon"
+            ></rux-push-button>
+        </li>
+        <li>
+            <rux-push-button
+                icon="apps"
+                checked
+                label="Push button checked with icon"
+            ></rux-push-button>
+        </li>
+        <li>
+            <rux-push-button
+                icon="apps"
+                checked
+                disabled
+                label="Push button disabled checked with icon"
+            ></rux-push-button>
+        </li>
+        <li>
+            <rux-push-button
+                icon="apps"
+                icon-only
+                class="icon-only"
+            ></rux-push-button>
+            <rux-push-button
+                icon="apps"
+                icon-only
+                checked
+                class="icon-only"
+            ></rux-push-button>
+            <rux-push-button
+                icon="apps"
+                icon-only
+                disabled
+                class="icon-only"
+            ></rux-push-button>
+            <rux-push-button
+                icon="apps"
+                icon-only
+                checked
+                disabled
             ></rux-push-button>
         </li>
     </ul>

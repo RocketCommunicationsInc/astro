@@ -219,6 +219,51 @@ export const Invalid = (args) => {
     </Story>
 </Canvas>
 
+### Required
+
+export const Required = (args) => {
+    return html`
+<div style="width: 200px; margin: 0 auto;">
+    <rux-select
+        ?disabled="${args.disabled}"
+        ?required="${args.required}"
+        ?invalid="${args.invalid}"
+        label="${args.label}"
+        input-id="${args.inputId}"
+        label-id="${args.labelId}"
+        .errorText="${args.errorText}"
+        .helpText="${args.helpText}"
+    >
+        <rux-option
+            value=""
+            selected
+            label="Select an option"
+        ></rux-option>
+        <rux-option value="1.1" label="Option 1.1"></rux-option>
+        <rux-option value="1.2" label="Option 1.2"></rux-option>
+        <rux-option value="1.3" label="Option 1.3"></rux-option>
+        <rux-option value="1.4" label="Option 1.4"></rux-option>
+    </rux-select>
+</div>
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+            label: 'Required Select Menu',
+            required: true,
+            inputId: 1,
+            labelId: 1,
+        }}
+        name="Required"
+    >
+        {Required.bind()}
+    </Story>
+</Canvas>
+
+### With Help Text
+
 export const WithHelpText = (args) => {
     return html`
 <div style="width: 200px; margin: 0 auto;">
@@ -259,6 +304,8 @@ export const WithHelpText = (args) => {
         {WithHelpText.bind()}
     </Story>
 </Canvas>
+
+### With Error Text
 
 export const WithErrorText = (args) => {
     return html`
