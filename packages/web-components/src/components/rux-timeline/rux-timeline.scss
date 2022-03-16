@@ -1,0 +1,127 @@
+:host {
+    display: block;
+    ::-webkit-scrollbar {
+        width: 16px;
+        height: 16px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--color-active, rgb(43, 101, 155));
+        border-radius: 8px;
+        border: 3px solid transparent;
+        background-clip: padding-box;
+    }
+
+    /* visually "centers" because the dark edge of the shadow gives the illusion this is offset */
+    ::-webkit-scrollbar-thumb:vertical {
+        border-left-width: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:horizontal {
+        border-top-width: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:active,
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--color-primary, rgb(58, 129, 191));
+    }
+
+    ::-webkit-scrollbar-track,
+    ::-webkit-scrollbar-corner {
+        // background: linear-gradient(
+        //     to right,
+        //     var(--color-background) 200px,
+        //     var(--color-surface) 200px 100%
+        // );
+        background: var(--color-surface);
+    }
+
+    ::-webkit-scrollbar-track:vertical {
+        box-shadow: inset 3px 3px 3px 0px rgba(0, 0, 0, 0.5);
+    }
+
+    ::-webkit-scrollbar-track:horizontal {
+        box-shadow: inset 1px 3px 3px 0px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.rux-timeline {
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+    position: relative;
+}
+
+.hidden {
+    display: none;
+}
+
+.cell {
+    // border: 1px solid blue;
+    border-right: 0;
+    border-top: 0;
+    // grid-column: span 60;
+    z-index: 9999;
+    grid-column: span 1;
+}
+.cell:nth-child(10n) {
+    // background: blue;
+}
+
+.cell:nth-child(odd) {
+    // background: var(--color-background);
+    background: red;
+}
+
+.cell:nth-child(even) {
+    background: blue;
+    // opacity: 10%;
+}
+
+.marker {
+    background: blue;
+}
+
+.rux-playhead {
+    width: 2px;
+    //   grid-row: 1 / 5;
+    //   grid-column: time-0000 / time-2359;
+
+    background: var(--color-primary);
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    // left: 200px;
+    pointer-events: none; // allows scrolling when mouse cursor is positioned over the playhead
+    &:after {
+        width: 0;
+        height: 0;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-top: 12px solid var(--color-primary);
+        content: '';
+        position: absolute;
+        left: -10.9px;
+    }
+}
+
+.ruler {
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+}
+
+.rux-track {
+    display: contents;
+}
+
+.ruler-time {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+}
+
+#rulerTrack::part(container) {
+    margin-bottom: 0;
+}
