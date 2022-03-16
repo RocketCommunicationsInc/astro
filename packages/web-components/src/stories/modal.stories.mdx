@@ -109,6 +109,11 @@ export const ClickToClose = (args) => {
                 width: 100%;
                 height: 100%;
             }
+            .rux-button-group {
+                margin-top: auto;
+                margin-left: auto;
+                align-self: flex-end;
+            }
         </style>
         <div style="display: flex; flex-flow: column; justify-content: center;">
             <rux-modal
@@ -154,6 +159,95 @@ export const ClickToClose = (args) => {
         name="Click To Close"
     >
         {ClickToClose.bind()}
+    </Story>
+</Canvas>
+
+### Other Variants
+
+export const OtherVariants = (args) => {
+    return html`
+        <style>
+            .sbdocs #story--components-modal--other-variants {
+                display: block;
+                min-height: 500px;
+            }
+            rux-modal::part(container) {
+                position: relative;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+            }
+            ul {
+                list-style: none;
+                background-color: black;
+            }
+            li {
+                padding: 1rem;
+            }
+        </style>
+        <ul>
+            <li>
+                <rux-modal open>
+                    <div slot="header">Title and message with no footer</div>
+                    <div slot="message">Modal Message</div>
+                </rux-modal>
+            </li>
+            <li>
+                <rux-modal open>
+                    <div slot="header">Title and footer with no message</div>
+                    <div
+                    slot="footer"
+                    style="width: 100%; display: flex; justify-content: space-between; align-items: center;"
+                >
+                    <div>
+                        <a
+                            href="https://astrouxds.com/"
+                            style="margin-right: 10px; text-decoration: none; color: var(--color-primary);"
+                            >Modal Link</a
+                        >
+                    </div>
+                    <div>
+                        <rux-button-group>
+                            <rux-button secondary>Cancel</rux-button>
+                            <rux-button>Confirm</rux-button>
+                        </rux-button-group>
+                    </div>
+                </div>
+                </rux-modal>
+            </li>
+            <li>
+                <rux-modal open>
+                    <div slot="message">Message and footer, no title</div>
+                     <div
+                        slot="footer"
+                        style="width: 100%; display: flex; justify-content: space-between; align-items: center;"
+                     >
+                        <div>
+                            <a
+                                href="https://astrouxds.com/"
+                                style="margin-right: 10px; text-decoration: none; color: var(--color-primary);"
+                                >Modal Link</a
+                            >
+                        </div>
+                    <div>
+                        <rux-button-group>
+                            <rux-button secondary>Cancel</rux-button>
+                            <rux-button>Confirm</rux-button>
+                        </rux-button-group>
+                    </div>
+                </div>
+                </rux-modal>
+            </li>
+        </ul>
+    `
+}
+
+<Canvas>
+    <Story
+        name="Other Variants"
+    >
+        {OtherVariants.bind()}
     </Story>
 </Canvas>
 
