@@ -12266,6 +12266,10 @@ export namespace Components {
          */
         "labelId"?: string;
         /**
+          * Enables multiselect
+         */
+        "multiple": boolean;
+        /**
           * Sets the Name of the Input Element
          */
         "name": string;
@@ -12274,9 +12278,9 @@ export namespace Components {
          */
         "required": boolean;
         /**
-          * The value of the selected option
+          * The value of the selected option. If multiple is true, this is an array.
          */
-        "value"?: string;
+        "value"?: string | string[];
     }
     interface RuxSlider {
         /**
@@ -32472,6 +32476,10 @@ declare namespace LocalJSX {
          */
         "labelId"?: string;
         /**
+          * Enables multiselect
+         */
+        "multiple"?: boolean;
+        /**
           * Sets the Name of the Input Element
          */
         "name"?: string;
@@ -32488,9 +32496,9 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
         /**
-          * The value of the selected option
+          * The value of the selected option. If multiple is true, this is an array.
          */
-        "value"?: string;
+        "value"?: string | string[];
     }
     interface RuxSlider {
         /**
