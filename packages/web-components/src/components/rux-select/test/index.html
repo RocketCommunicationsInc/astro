@@ -17,11 +17,32 @@
         <script nomodule src="/build/astro-web-components.esm.js"></script>
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
+        <style>
+            body {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+
+            h2 {
+                margin: 0;
+                margin-bottom: 1rem;
+            }
+
+            button {
+                margin-top: 1rem;
+            }
+
+            section {
+                margin-bottom: 1rem;
+            }
+        </style>
     </head>
 
     <body class="dark-theme">
-        <div style="padding: 10%; display: flex; justify-content: center">
-            <form id="form">
+        <section>
+            <h2>Single Select</h2>
+
+            <form id="form" method="POST" action="/form">
                 <rux-select id="ruxSelect" label="Best Thing?" name="bestThing">
                     <rux-option label="" value="" selected></rux-option>
                     <rux-option label="Red" value="red"></rux-option>
@@ -30,27 +51,61 @@
                 </rux-select>
                 <button id="formSubmitBtn" type="submit">submit</button>
             </form>
-            <ul id="log"></ul>
-            <script>
-                const log = document.getElementById('log')
-                const form = document.getElementById('form')
-                form.addEventListener('submit', (e) => {
-                    event.preventDefault()
-                    // trigger formdata event
-                    new FormData(form)
-                })
-                form.addEventListener('formdata', (e) => {
-                    log.innerHTML = ''
-                    // Get the form data from the event object
-                    let data = e.formData
-                    const values = data.values()
-                    for (var value of data.entries()) {
-                        const item = document.createElement('li')
-                        item.innerHTML = `<strong>${value[0]}:</strong>${value[1]}`
-                        log.appendChild(item)
-                    }
-                })
-            </script>
-        </div>
+        </section>
+        <hr />
+
+        <section>
+            <h2>Multi Select</h2>
+
+            <form id="multiSelectForm" method="POST" action="/form">
+                <rux-select
+                    id="ruxMultiSelect"
+                    label="Best Thing?"
+                    name="bestThing"
+                    multiple
+                >
+                    <rux-option value="red" label="Red"></rux-option>
+                    <rux-option value="blue" label="Blue"></rux-option>
+                    <rux-option value="green" label="Green"></rux-option>
+                    <rux-option value="purple" label="Purple"></rux-option>
+                    <rux-option value="yellow" label="Yellow"></rux-option>
+                </rux-select>
+                <button id="multiSelectSubmitBtn" type="submit">submit</button>
+            </form>
+        </section>
+        <section>
+            <h2>Multi Select W/ OptGroup</h2>
+
+            <form id="multiSelectForm" method="POST" action="/form">
+                <div style="width: 400px">
+                    <rux-select
+                        id="ruxMultiSelectGroup"
+                        label="Best Thing?"
+                        name="bestThing"
+                        multiple
+                    >
+                        <rux-option-group label="Group 1">
+                            <rux-option value="red" label="Red"></rux-option>
+                            <rux-option value="blue" label="Blue"></rux-option>
+                        </rux-option-group>
+                        <rux-option-group label="Group 2">
+                            <rux-option
+                                value="green"
+                                label="Green"
+                            ></rux-option>
+                            <rux-option
+                                value="purple"
+                                label="Purple"
+                            ></rux-option>
+                            <rux-option
+                                value="yellow"
+                                label="Yellow"
+                            ></rux-option>
+                        </rux-option-group>
+                    </rux-select>
+                </div>
+                <button id="multiSelectSubmitBtn" type="submit">submit</button>
+            </form>
+        </section>
     </body>
 </html>

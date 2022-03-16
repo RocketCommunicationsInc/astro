@@ -2,6 +2,47 @@
 
 :host {
     display: block;
+    scrollbar-color: var(--color-active) var(--color-surface);
+    ::-webkit-scrollbar {
+        width: 16px;
+        height: 16px;
+        background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--color-active, rgb(43, 101, 155));
+        border-radius: 8px;
+        border: 3px solid transparent;
+        background-clip: padding-box;
+    }
+
+    /* visually "centers" because the dark edge of the shadow gives the illusion this is offset */
+    ::-webkit-scrollbar-thumb:vertical {
+        border-left-width: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:horizontal {
+        border-top-width: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:active,
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--color-primary, rgb(58, 129, 191));
+    }
+
+    ::-webkit-scrollbar-track,
+    ::-webkit-scrollbar-corner {
+        background-color: var(--color-surface, rgb(27, 45, 62));
+        box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    ::-webkit-scrollbar-track:vertical {
+        box-shadow: inset 3px 3px 3px 0px rgba(0, 0, 0, 0.5);
+    }
+
+    ::-webkit-scrollbar-track:horizontal {
+        box-shadow: inset 1px 3px 3px 0px rgba(0, 0, 0, 0.5);
+    }
 
     /** @prop --select-menu-border-radius: Border radius for Select Menu */
     --select-menu-border-radius: var(--radius-base);
@@ -65,6 +106,22 @@ label {
     }
 }
 
+.rux-select:not(.rux-select--multiple) {
+    background-image: var(--select-menu-inactive-caret),
+        var(--select-menu-background-color);
+    background-position: center right 0.625rem, center left 0;
+    background-repeat: no-repeat;
+    padding: 0.438rem 3.125rem 0.438rem 0.5rem;
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5);
+    &:active:not(:disabled) {
+        background-image: var(--select-menu-active-caret),
+            var(--select-menu-background-color);
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}
+
 .rux-select {
     position: relative;
     appearance: none;
@@ -78,21 +135,11 @@ label {
     font-size: var(--font-body-1-font-size);
     font-weight: var(--font-body-1-font-weight);
     letter-spacing: var(--font-body-1-letter-spacing);
-    padding: 0.438rem 3.125rem 0.438rem 0.5rem;
-    background-image: var(--select-menu-inactive-caret),
-        var(--select-menu-background-color);
-    background-position: center right 0.625rem, center left 0;
-    background-repeat: no-repeat;
+
     user-select: none;
 
     &:hover {
-        cursor: pointer;
         border: 1px solid var(--select-menu-border-hover-color);
-    }
-
-    &:active:not(:disabled) {
-        background-image: var(--select-menu-active-caret),
-            var(--select-menu-background-color);
     }
 
     &:focus {
@@ -124,7 +171,6 @@ label {
         opacity: 1;
         color: var(--select-menu-text-color);
         border-radius: 0;
-        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5);
 
         &:hover {
             color: var(--select-menu-option-text-hover-color);
@@ -137,5 +183,34 @@ label {
                 --select-menu-option-selected-background-color
             );
         }
+    }
+}
+
+.rux-select--multiple {
+    background: var(--color-background);
+    option {
+        padding: 0.438rem 0 0.438rem 1rem; // 7px 0px 7px 16px
+        text-indent: 1rem; //! Make sure this doesn't break chrome
+        &:hover {
+            color: var(--color-hover);
+            background-color: var(--color-list-hover);
+            cursor: pointer;
+        }
+        &:checked {
+            background: var(--color-selected);
+            color: var(--color-default-text);
+        }
+        &:active {
+            background-color: green;
+        }
+    }
+    optgroup {
+        text-indent: 1rem;
+        color: var(--color-default-text);
+        font-family: var(--font-body-1-font-family);
+        font-size: var(--font-body-1-font-size);
+        font-weight: var(--font-body-1-font-weight);
+        letter-spacing: var(--font-body-1-letter-spacing);
+        font-style: normal;
     }
 }
