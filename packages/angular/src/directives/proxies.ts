@@ -22821,14 +22821,14 @@ export declare interface RuxSelect extends Components.RuxSelect {
 }
 
 @ProxyCmp({
+  defineCustomElementFn: undefined,
   inputs: ['disabled', 'errorText', 'helpText', 'inputId', 'invalid', 'label', 'labelId', 'multiple', 'name', 'required', 'value']
 })
 @Component({
   selector: 'rux-select',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'errorText', 'helpText', 'inputId', 'invalid', 'label', 'labelId', 'multiple', 'name', 'required', 'value'],
-  outputs: ['ruxchange', 'ruxblur']
+  inputs: ['disabled', 'errorText', 'helpText', 'inputId', 'invalid', 'label', 'labelId', 'multiple', 'name', 'required', 'value']
 })
 export class RuxSelect {
   protected el: HTMLElement;
