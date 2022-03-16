@@ -12,6 +12,10 @@ import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented
 export namespace Components {
     interface RuxButton {
         /**
+          * Changes button style from solid to borderless by setting the rux-button--borderless class
+         */
+        "borderless": boolean;
+        /**
           * Toggles disabled attribute on the button
          */
         "disabled": boolean;
@@ -24,7 +28,7 @@ export namespace Components {
          */
         "iconOnly": boolean;
         /**
-          * Changes button style from solid to secondary by setting rux-button--secondary class
+          * Changes button style from solid to secondary by setting the rux-button--secondary class
          */
         "secondary": boolean;
         /**
@@ -68,6 +72,10 @@ export namespace Components {
          */
         "name": string;
         /**
+          * Sets the checkbox as required
+         */
+        "required": boolean;
+        /**
           * The checkbox value
          */
         "value": string;
@@ -89,6 +97,10 @@ export namespace Components {
           * The label of the checkbox group. For HTML content, use the `label` slot instead.
          */
         "label"?: string;
+        /**
+          * Marks that a selection from the checkbox group is requried.
+         */
+        "required": boolean;
     }
     interface RuxClassificationMarking {
         /**
@@ -11892,7 +11904,7 @@ export namespace Components {
          */
         "readonly": boolean;
         /**
-          * Sets the input as disabled
+          * Sets the input as required
          */
         "required": boolean;
         /**
@@ -12040,6 +12052,10 @@ export namespace Components {
          */
         "open": boolean;
         /**
+          * Changes the size of the banner to a small variant.
+         */
+        "small": boolean;
+        /**
           * The background color. Possible values include 'off', 'standby', 'normal', 'caution', 'serious' and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).
          */
         "status": Status;
@@ -12182,6 +12198,10 @@ export namespace Components {
          */
         "name": string;
         /**
+          * Marks that a selection from the radio-group is requried.
+         */
+        "required": boolean;
+        /**
           * The value of the current selected radio in the group. Changing this will also mark that radio as checked in the UI.
          */
         "value"?: any | null;
@@ -12192,9 +12212,17 @@ export namespace Components {
          */
         "data": SegmentedButton[];
         /**
+          * Sets the disabled attribute.
+         */
+        "disabled": boolean;
+        /**
           * When passed in on load, this selects the first button segment with a matching label. When the selected segment changes, this property updates with the currently selected value, which reflects back to the component attribute. If no button segment label matches this string, then no segment is selected. This value takes priority over setting selected boolean property on the items in the data array.
          */
         "selected": string;
+        /**
+          * Changes size of segmented button from small to medium or large.
+         */
+        "size"?: 'small' | 'medium' | 'large';
     }
     interface RuxSelect {
         /**
@@ -12240,6 +12268,10 @@ export namespace Components {
     }
     interface RuxSlider {
         /**
+          * Shows tick marks and labels in the order provided and aligns evenly based on the length.
+         */
+        "axisLabels": string[];
+        /**
           * Determines if the slider is disabled.
          */
         "disabled": boolean;
@@ -12271,6 +12303,10 @@ export namespace Components {
           * Step amount of slider value.
          */
         "step": number;
+        /**
+          * Hides labels and only shows tick marks if axis-labels is provided.
+         */
+        "ticksOnly": boolean;
         /**
           * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
          */
@@ -20112,6 +20148,10 @@ declare global {
 declare namespace LocalJSX {
     interface RuxButton {
         /**
+          * Changes button style from solid to borderless by setting the rux-button--borderless class
+         */
+        "borderless"?: boolean;
+        /**
           * Toggles disabled attribute on the button
          */
         "disabled"?: boolean;
@@ -20124,7 +20164,7 @@ declare namespace LocalJSX {
          */
         "iconOnly"?: boolean;
         /**
-          * Changes button style from solid to secondary by setting rux-button--secondary class
+          * Changes button style from solid to secondary by setting the rux-button--secondary class
          */
         "secondary"?: boolean;
         /**
@@ -20180,6 +20220,10 @@ declare namespace LocalJSX {
          */
         "onRuxinput"?: (event: CustomEvent<any>) => void;
         /**
+          * Sets the checkbox as required
+         */
+        "required"?: boolean;
+        /**
           * The checkbox value
          */
         "value"?: string;
@@ -20201,6 +20245,10 @@ declare namespace LocalJSX {
           * The label of the checkbox group. For HTML content, use the `label` slot instead.
          */
         "label"?: string;
+        /**
+          * Marks that a selection from the checkbox group is requried.
+         */
+        "required"?: boolean;
     }
     interface RuxClassificationMarking {
         /**
@@ -32016,7 +32064,7 @@ declare namespace LocalJSX {
          */
         "readonly"?: boolean;
         /**
-          * Sets the input as disabled
+          * Sets the input as required
          */
         "required"?: boolean;
         /**
@@ -32180,6 +32228,10 @@ declare namespace LocalJSX {
          */
         "open"?: boolean;
         /**
+          * Changes the size of the banner to a small variant.
+         */
+        "small"?: boolean;
+        /**
           * The background color. Possible values include 'off', 'standby', 'normal', 'caution', 'serious' and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).
          */
         "status"?: Status;
@@ -32340,6 +32392,10 @@ declare namespace LocalJSX {
          */
         "onRuxchange"?: (event: CustomEvent<any>) => void;
         /**
+          * Marks that a selection from the radio-group is requried.
+         */
+        "required"?: boolean;
+        /**
           * The value of the current selected radio in the group. Changing this will also mark that radio as checked in the UI.
          */
         "value"?: any | null;
@@ -32350,6 +32406,10 @@ declare namespace LocalJSX {
          */
         "data"?: SegmentedButton[];
         /**
+          * Sets the disabled attribute.
+         */
+        "disabled"?: boolean;
+        /**
           * Emitted when the value property has changed.
          */
         "onRuxchange"?: (event: CustomEvent<any>) => void;
@@ -32357,6 +32417,10 @@ declare namespace LocalJSX {
           * When passed in on load, this selects the first button segment with a matching label. When the selected segment changes, this property updates with the currently selected value, which reflects back to the component attribute. If no button segment label matches this string, then no segment is selected. This value takes priority over setting selected boolean property on the items in the data array.
          */
         "selected"?: string;
+        /**
+          * Changes size of segmented button from small to medium or large.
+         */
+        "size"?: 'small' | 'medium' | 'large';
     }
     interface RuxSelect {
         /**
@@ -32410,6 +32474,10 @@ declare namespace LocalJSX {
     }
     interface RuxSlider {
         /**
+          * Shows tick marks and labels in the order provided and aligns evenly based on the length.
+         */
+        "axisLabels"?: string[];
+        /**
           * Determines if the slider is disabled.
          */
         "disabled"?: boolean;
@@ -32449,6 +32517,10 @@ declare namespace LocalJSX {
           * Step amount of slider value.
          */
         "step"?: number;
+        /**
+          * Hides labels and only shows tick marks if axis-labels is provided.
+         */
+        "ticksOnly"?: boolean;
         /**
           * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
          */

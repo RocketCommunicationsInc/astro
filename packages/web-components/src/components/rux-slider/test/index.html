@@ -25,11 +25,15 @@
                 <rux-slider name="ruxSlider" id="ruxSlider"></rux-slider>
                 <input type="range" id="nativeSlider" name="nativeSlider" />
 
+                <rux-slider name="ruxSliderTicks" id="ticks"></rux-slider>
+
                 <button type="submit">submit</button>
             </form>
             <ul id="log"></ul>
             <script>
                 const log = document.getElementById('log')
+                const ticks = document.getElementById('ticks')
+                ticks.axisLabels = ['0', '25', '50', '75', '100']
                 const form = document.getElementById('form')
                 form.addEventListener('submit', (e) => {
                     event.preventDefault()

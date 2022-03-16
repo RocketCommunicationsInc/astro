@@ -153,6 +153,51 @@ export const WithErrorText = (args) => {
     </Story>
 </Canvas>
 
+### With Axis Labels
+
+export const WithAxisLabels = (args, data) => {
+    return html`
+<div style="padding: 5%">
+    <rux-slider
+        id="axis-labels"
+        max="${args.max}"
+        min="${args.min}"
+        step="${args.step}"
+        .value="${args.value}"
+        ?disabled="${args.disabled}"
+        help-text="${args.helpText}"
+        error-text="${args.errorText}"
+        .axisLabels="${args.axisLabels}"
+        ?ticks-only="${args.ticksOnly}"
+        .label="${args.label}"
+    ></rux-slider>
+</div>
+    `
+}
+
+<Canvas>
+    <Story
+        name="With Axis Labels"
+        args={{
+            max: 100,
+            min: 0,
+            value: 50,
+            ticksOnly: true,
+            axisLabels: ["0", "25", "50", "75", "100"]
+        }}
+    >
+        {WithAxisLabels.bind()}
+    </Story>
+</Canvas>
+
+To display tick marks and labels, make use of the `axis-labels` property. This accepts an array of strings that will
+be evenly distributed across the progress bar. 
+
+#### Ticks Only
+
+If you only want to show tick marks without labels, make use of the `ticks-only` property. NOTE: you will still need to pass in the array of strings to determine how many
+ticks to show.
+
 ### Horizontal Labels
 
 You can utilize the `form-field` and `label` Shadow Parts to have full control over label placement. For example:
