@@ -6,12 +6,8 @@ import { ProxyCmp, proxyOutputs } from './angular-component-lib/utils';
 import { Components } from '@astrouxds/astro-web-components';
 
 
-
-
 export declare interface RuxButton extends Components.RuxButton {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['borderless', 'disabled', 'icon', 'iconOnly', 'secondary', 'size', 'type']
 })
 @Component({
@@ -30,9 +26,7 @@ export class RuxButton {
 
 
 export declare interface RuxButtonGroup extends Components.RuxButtonGroup {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['hAlign']
 })
 @Component({
@@ -50,33 +44,24 @@ export class RuxButtonGroup {
 }
 
 
-export declare interface RuxCheckbox extends Components.RuxCheckbox {
-  /**
-   * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) 
-   */
-  ruxchange: EventEmitter<CustomEvent<any>>;
-  /**
-   * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) 
-   */
-  ruxinput: EventEmitter<CustomEvent<any>>;
-  /**
-   * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) 
-   */
-  ruxblur: EventEmitter<CustomEvent<any>>;
-
-}
-
+export declare interface RuxCheckbox extends Components.RuxCheckbox {}
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['checked', 'disabled', 'helpText', 'indeterminate', 'label', 'name', 'required', 'value']
 })
 @Component({
   selector: 'rux-checkbox',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['checked', 'disabled', 'helpText', 'indeterminate', 'label', 'name', 'required', 'value']
+  inputs: ['checked', 'disabled', 'helpText', 'indeterminate', 'label', 'name', 'required', 'value'],
+  outputs: ['ruxchange', 'ruxinput', 'ruxblur']
 })
 export class RuxCheckbox {
+  /** Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) */
+  ruxchange!: EventEmitter<CustomEvent<any>>;
+  /** Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) */
+  ruxinput!: EventEmitter<CustomEvent<any>>;
+  /** Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) */
+  ruxblur!: EventEmitter<CustomEvent<any>>;
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -87,9 +72,7 @@ export class RuxCheckbox {
 
 
 export declare interface RuxCheckboxGroup extends Components.RuxCheckboxGroup {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['errorText', 'helpText', 'invalid', 'label', 'required']
 })
 @Component({
@@ -108,9 +91,7 @@ export class RuxCheckboxGroup {
 
 
 export declare interface RuxClassificationMarking extends Components.RuxClassificationMarking {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['classification', 'label', 'tag']
 })
 @Component({
@@ -129,9 +110,7 @@ export class RuxClassificationMarking {
 
 
 export declare interface RuxClock extends Components.RuxClock {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['aos', 'hideDate', 'hideLabels', 'hideTimezone', 'los', 'small', 'timezone']
 })
 @Component({
@@ -150,9 +129,7 @@ export class RuxClock {
 
 
 export declare interface RuxDatetime extends Components.RuxDatetime {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['date', 'day', 'era', 'hour', 'hour12', 'locale', 'minute', 'month', 'second', 'timeZone', 'timeZoneName', 'weekday', 'year']
 })
 @Component({
@@ -171,9 +148,7 @@ export class RuxDatetime {
 
 
 export declare interface RuxGlobalStatusBar extends Components.RuxGlobalStatusBar {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['appDomain', 'appName', 'appState', 'appStateColor', 'appVersion', 'includeIcon', 'menuIcon', 'username']
 })
 @Component({
@@ -192,9 +167,7 @@ export class RuxGlobalStatusBar {
 
 
 export declare interface RuxIcon extends Components.RuxIcon {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['icon', 'label', 'size']
 })
 @Component({
@@ -213,9 +186,7 @@ export class RuxIcon {
 
 
 export declare interface RuxIcon360 extends Components.RuxIcon360 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -234,9 +205,7 @@ export class RuxIcon360 {
 
 
 export declare interface RuxIcon3dRotation extends Components.RuxIcon3dRotation {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -255,9 +224,7 @@ export class RuxIcon3dRotation {
 
 
 export declare interface RuxIcon4k extends Components.RuxIcon4k {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -276,9 +243,7 @@ export class RuxIcon4k {
 
 
 export declare interface RuxIconAcUnit extends Components.RuxIconAcUnit {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -297,9 +262,7 @@ export class RuxIconAcUnit {
 
 
 export declare interface RuxIconAccessAlarms extends Components.RuxIconAccessAlarms {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -318,9 +281,7 @@ export class RuxIconAccessAlarms {
 
 
 export declare interface RuxIconAccessTime extends Components.RuxIconAccessTime {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -339,9 +300,7 @@ export class RuxIconAccessTime {
 
 
 export declare interface RuxIconAccessibility extends Components.RuxIconAccessibility {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -360,9 +319,7 @@ export class RuxIconAccessibility {
 
 
 export declare interface RuxIconAccessibilityNew extends Components.RuxIconAccessibilityNew {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -381,9 +338,7 @@ export class RuxIconAccessibilityNew {
 
 
 export declare interface RuxIconAccessible extends Components.RuxIconAccessible {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -402,9 +357,7 @@ export class RuxIconAccessible {
 
 
 export declare interface RuxIconAccessibleForward extends Components.RuxIconAccessibleForward {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -423,9 +376,7 @@ export class RuxIconAccessibleForward {
 
 
 export declare interface RuxIconAccountBalance extends Components.RuxIconAccountBalance {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -444,9 +395,7 @@ export class RuxIconAccountBalance {
 
 
 export declare interface RuxIconAccountBalanceWallet extends Components.RuxIconAccountBalanceWallet {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -465,9 +414,7 @@ export class RuxIconAccountBalanceWallet {
 
 
 export declare interface RuxIconAccountBox extends Components.RuxIconAccountBox {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -486,9 +433,7 @@ export class RuxIconAccountBox {
 
 
 export declare interface RuxIconAccountCircle extends Components.RuxIconAccountCircle {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -507,9 +452,7 @@ export class RuxIconAccountCircle {
 
 
 export declare interface RuxIconAdb extends Components.RuxIconAdb {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -528,9 +471,7 @@ export class RuxIconAdb {
 
 
 export declare interface RuxIconAdd extends Components.RuxIconAdd {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -549,9 +490,7 @@ export class RuxIconAdd {
 
 
 export declare interface RuxIconAddAPhoto extends Components.RuxIconAddAPhoto {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -570,9 +509,7 @@ export class RuxIconAddAPhoto {
 
 
 export declare interface RuxIconAddAlarm extends Components.RuxIconAddAlarm {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -591,9 +528,7 @@ export class RuxIconAddAlarm {
 
 
 export declare interface RuxIconAddAlert extends Components.RuxIconAddAlert {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -612,9 +547,7 @@ export class RuxIconAddAlert {
 
 
 export declare interface RuxIconAddBox extends Components.RuxIconAddBox {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -633,9 +566,7 @@ export class RuxIconAddBox {
 
 
 export declare interface RuxIconAddCircle extends Components.RuxIconAddCircle {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -654,9 +585,7 @@ export class RuxIconAddCircle {
 
 
 export declare interface RuxIconAddCircleOutline extends Components.RuxIconAddCircleOutline {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -675,9 +604,7 @@ export class RuxIconAddCircleOutline {
 
 
 export declare interface RuxIconAddComment extends Components.RuxIconAddComment {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -696,9 +623,7 @@ export class RuxIconAddComment {
 
 
 export declare interface RuxIconAddLocation extends Components.RuxIconAddLocation {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -717,9 +642,7 @@ export class RuxIconAddLocation {
 
 
 export declare interface RuxIconAddPhotoAlternate extends Components.RuxIconAddPhotoAlternate {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -738,9 +661,7 @@ export class RuxIconAddPhotoAlternate {
 
 
 export declare interface RuxIconAddShoppingCart extends Components.RuxIconAddShoppingCart {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -759,9 +680,7 @@ export class RuxIconAddShoppingCart {
 
 
 export declare interface RuxIconAddToHomeScreen extends Components.RuxIconAddToHomeScreen {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -780,9 +699,7 @@ export class RuxIconAddToHomeScreen {
 
 
 export declare interface RuxIconAddToPhotos extends Components.RuxIconAddToPhotos {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -801,9 +718,7 @@ export class RuxIconAddToPhotos {
 
 
 export declare interface RuxIconAddToQueue extends Components.RuxIconAddToQueue {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -822,9 +737,7 @@ export class RuxIconAddToQueue {
 
 
 export declare interface RuxIconAdjust extends Components.RuxIconAdjust {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -843,9 +756,7 @@ export class RuxIconAdjust {
 
 
 export declare interface RuxIconAirlineSeatFlat extends Components.RuxIconAirlineSeatFlat {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -864,9 +775,7 @@ export class RuxIconAirlineSeatFlat {
 
 
 export declare interface RuxIconAirlineSeatFlatAngled extends Components.RuxIconAirlineSeatFlatAngled {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -885,9 +794,7 @@ export class RuxIconAirlineSeatFlatAngled {
 
 
 export declare interface RuxIconAirlineSeatIndividualSuite extends Components.RuxIconAirlineSeatIndividualSuite {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -906,9 +813,7 @@ export class RuxIconAirlineSeatIndividualSuite {
 
 
 export declare interface RuxIconAirlineSeatLegroomExtra extends Components.RuxIconAirlineSeatLegroomExtra {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -927,9 +832,7 @@ export class RuxIconAirlineSeatLegroomExtra {
 
 
 export declare interface RuxIconAirlineSeatLegroomNormal extends Components.RuxIconAirlineSeatLegroomNormal {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -948,9 +851,7 @@ export class RuxIconAirlineSeatLegroomNormal {
 
 
 export declare interface RuxIconAirlineSeatLegroomReduced extends Components.RuxIconAirlineSeatLegroomReduced {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -969,9 +870,7 @@ export class RuxIconAirlineSeatLegroomReduced {
 
 
 export declare interface RuxIconAirlineSeatReclineExtra extends Components.RuxIconAirlineSeatReclineExtra {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -990,9 +889,7 @@ export class RuxIconAirlineSeatReclineExtra {
 
 
 export declare interface RuxIconAirlineSeatReclineNormal extends Components.RuxIconAirlineSeatReclineNormal {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1011,9 +908,7 @@ export class RuxIconAirlineSeatReclineNormal {
 
 
 export declare interface RuxIconAirplanemodeActive extends Components.RuxIconAirplanemodeActive {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1032,9 +927,7 @@ export class RuxIconAirplanemodeActive {
 
 
 export declare interface RuxIconAirplanemodeInactive extends Components.RuxIconAirplanemodeInactive {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1053,9 +946,7 @@ export class RuxIconAirplanemodeInactive {
 
 
 export declare interface RuxIconAirplay extends Components.RuxIconAirplay {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1074,9 +965,7 @@ export class RuxIconAirplay {
 
 
 export declare interface RuxIconAirportShuttle extends Components.RuxIconAirportShuttle {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1095,9 +984,7 @@ export class RuxIconAirportShuttle {
 
 
 export declare interface RuxIconAlarm extends Components.RuxIconAlarm {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1116,9 +1003,7 @@ export class RuxIconAlarm {
 
 
 export declare interface RuxIconAlarmAdd extends Components.RuxIconAlarmAdd {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1137,9 +1022,7 @@ export class RuxIconAlarmAdd {
 
 
 export declare interface RuxIconAlarmOff extends Components.RuxIconAlarmOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1158,9 +1041,7 @@ export class RuxIconAlarmOff {
 
 
 export declare interface RuxIconAlarmOn extends Components.RuxIconAlarmOn {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1179,9 +1060,7 @@ export class RuxIconAlarmOn {
 
 
 export declare interface RuxIconAlbum extends Components.RuxIconAlbum {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1200,9 +1079,7 @@ export class RuxIconAlbum {
 
 
 export declare interface RuxIconAllInbox extends Components.RuxIconAllInbox {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1221,9 +1098,7 @@ export class RuxIconAllInbox {
 
 
 export declare interface RuxIconAllInclusive extends Components.RuxIconAllInclusive {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1242,9 +1117,7 @@ export class RuxIconAllInclusive {
 
 
 export declare interface RuxIconAllOut extends Components.RuxIconAllOut {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1263,9 +1136,7 @@ export class RuxIconAllOut {
 
 
 export declare interface RuxIconAlternateEmail extends Components.RuxIconAlternateEmail {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1284,9 +1155,7 @@ export class RuxIconAlternateEmail {
 
 
 export declare interface RuxIconAltitude extends Components.RuxIconAltitude {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1305,9 +1174,7 @@ export class RuxIconAltitude {
 
 
 export declare interface RuxIconAndroid extends Components.RuxIconAndroid {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1326,9 +1193,7 @@ export class RuxIconAndroid {
 
 
 export declare interface RuxIconAnnouncement extends Components.RuxIconAnnouncement {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1347,9 +1212,7 @@ export class RuxIconAnnouncement {
 
 
 export declare interface RuxIconAntenna extends Components.RuxIconAntenna {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1368,9 +1231,7 @@ export class RuxIconAntenna {
 
 
 export declare interface RuxIconAntennaOff extends Components.RuxIconAntennaOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1389,9 +1250,7 @@ export class RuxIconAntennaOff {
 
 
 export declare interface RuxIconAntennaReceive extends Components.RuxIconAntennaReceive {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1410,9 +1269,7 @@ export class RuxIconAntennaReceive {
 
 
 export declare interface RuxIconAntennaTransmit extends Components.RuxIconAntennaTransmit {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1431,9 +1288,7 @@ export class RuxIconAntennaTransmit {
 
 
 export declare interface RuxIconApps extends Components.RuxIconApps {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1452,9 +1307,7 @@ export class RuxIconApps {
 
 
 export declare interface RuxIconArchive extends Components.RuxIconArchive {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1473,9 +1326,7 @@ export class RuxIconArchive {
 
 
 export declare interface RuxIconArrowBack extends Components.RuxIconArrowBack {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1494,9 +1345,7 @@ export class RuxIconArrowBack {
 
 
 export declare interface RuxIconArrowBackIos extends Components.RuxIconArrowBackIos {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1515,9 +1364,7 @@ export class RuxIconArrowBackIos {
 
 
 export declare interface RuxIconArrowDownward extends Components.RuxIconArrowDownward {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1536,9 +1383,7 @@ export class RuxIconArrowDownward {
 
 
 export declare interface RuxIconArrowDropDown extends Components.RuxIconArrowDropDown {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1557,9 +1402,7 @@ export class RuxIconArrowDropDown {
 
 
 export declare interface RuxIconArrowDropDownCircle extends Components.RuxIconArrowDropDownCircle {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1578,9 +1421,7 @@ export class RuxIconArrowDropDownCircle {
 
 
 export declare interface RuxIconArrowDropUp extends Components.RuxIconArrowDropUp {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1599,9 +1440,7 @@ export class RuxIconArrowDropUp {
 
 
 export declare interface RuxIconArrowForward extends Components.RuxIconArrowForward {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1620,9 +1459,7 @@ export class RuxIconArrowForward {
 
 
 export declare interface RuxIconArrowForwardIos extends Components.RuxIconArrowForwardIos {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1641,9 +1478,7 @@ export class RuxIconArrowForwardIos {
 
 
 export declare interface RuxIconArrowLeft extends Components.RuxIconArrowLeft {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1662,9 +1497,7 @@ export class RuxIconArrowLeft {
 
 
 export declare interface RuxIconArrowRight extends Components.RuxIconArrowRight {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1683,9 +1516,7 @@ export class RuxIconArrowRight {
 
 
 export declare interface RuxIconArrowRightAlt extends Components.RuxIconArrowRightAlt {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1704,9 +1535,7 @@ export class RuxIconArrowRightAlt {
 
 
 export declare interface RuxIconArrowUpward extends Components.RuxIconArrowUpward {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1725,9 +1554,7 @@ export class RuxIconArrowUpward {
 
 
 export declare interface RuxIconArtTrack extends Components.RuxIconArtTrack {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1746,9 +1573,7 @@ export class RuxIconArtTrack {
 
 
 export declare interface RuxIconAspectRatio extends Components.RuxIconAspectRatio {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1767,9 +1592,7 @@ export class RuxIconAspectRatio {
 
 
 export declare interface RuxIconAssessment extends Components.RuxIconAssessment {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1788,9 +1611,7 @@ export class RuxIconAssessment {
 
 
 export declare interface RuxIconAssignment extends Components.RuxIconAssignment {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1809,9 +1630,7 @@ export class RuxIconAssignment {
 
 
 export declare interface RuxIconAssignmentFind extends Components.RuxIconAssignmentFind {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1830,9 +1649,7 @@ export class RuxIconAssignmentFind {
 
 
 export declare interface RuxIconAssignmentLate extends Components.RuxIconAssignmentLate {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1851,9 +1668,7 @@ export class RuxIconAssignmentLate {
 
 
 export declare interface RuxIconAssignmentReturn extends Components.RuxIconAssignmentReturn {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1872,9 +1687,7 @@ export class RuxIconAssignmentReturn {
 
 
 export declare interface RuxIconAssignmentReturned extends Components.RuxIconAssignmentReturned {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1893,9 +1706,7 @@ export class RuxIconAssignmentReturned {
 
 
 export declare interface RuxIconAssignmentTurnedIn extends Components.RuxIconAssignmentTurnedIn {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1914,9 +1725,7 @@ export class RuxIconAssignmentTurnedIn {
 
 
 export declare interface RuxIconAssistant extends Components.RuxIconAssistant {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1935,9 +1744,7 @@ export class RuxIconAssistant {
 
 
 export declare interface RuxIconAssistantPhoto extends Components.RuxIconAssistantPhoto {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1956,9 +1763,7 @@ export class RuxIconAssistantPhoto {
 
 
 export declare interface RuxIconAttachFile extends Components.RuxIconAttachFile {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1977,9 +1782,7 @@ export class RuxIconAttachFile {
 
 
 export declare interface RuxIconAttachMoney extends Components.RuxIconAttachMoney {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -1998,9 +1801,7 @@ export class RuxIconAttachMoney {
 
 
 export declare interface RuxIconAttachment extends Components.RuxIconAttachment {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2019,9 +1820,7 @@ export class RuxIconAttachment {
 
 
 export declare interface RuxIconAudiotrack extends Components.RuxIconAudiotrack {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2040,9 +1839,7 @@ export class RuxIconAudiotrack {
 
 
 export declare interface RuxIconAutorenew extends Components.RuxIconAutorenew {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2061,9 +1858,7 @@ export class RuxIconAutorenew {
 
 
 export declare interface RuxIconAvTimer extends Components.RuxIconAvTimer {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2082,9 +1877,7 @@ export class RuxIconAvTimer {
 
 
 export declare interface RuxIconBackspace extends Components.RuxIconBackspace {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2103,9 +1896,7 @@ export class RuxIconBackspace {
 
 
 export declare interface RuxIconBackup extends Components.RuxIconBackup {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2124,9 +1915,7 @@ export class RuxIconBackup {
 
 
 export declare interface RuxIconBallot extends Components.RuxIconBallot {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2145,9 +1934,7 @@ export class RuxIconBallot {
 
 
 export declare interface RuxIconBarChart extends Components.RuxIconBarChart {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2166,9 +1953,7 @@ export class RuxIconBarChart {
 
 
 export declare interface RuxIconBattery20 extends Components.RuxIconBattery20 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2187,9 +1972,7 @@ export class RuxIconBattery20 {
 
 
 export declare interface RuxIconBattery30 extends Components.RuxIconBattery30 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2208,9 +1991,7 @@ export class RuxIconBattery30 {
 
 
 export declare interface RuxIconBattery50 extends Components.RuxIconBattery50 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2229,9 +2010,7 @@ export class RuxIconBattery50 {
 
 
 export declare interface RuxIconBattery60 extends Components.RuxIconBattery60 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2250,9 +2029,7 @@ export class RuxIconBattery60 {
 
 
 export declare interface RuxIconBattery80 extends Components.RuxIconBattery80 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2271,9 +2048,7 @@ export class RuxIconBattery80 {
 
 
 export declare interface RuxIconBattery90 extends Components.RuxIconBattery90 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2292,9 +2067,7 @@ export class RuxIconBattery90 {
 
 
 export declare interface RuxIconBatteryAlert extends Components.RuxIconBatteryAlert {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2313,9 +2086,7 @@ export class RuxIconBatteryAlert {
 
 
 export declare interface RuxIconBatteryCharging20 extends Components.RuxIconBatteryCharging20 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2334,9 +2105,7 @@ export class RuxIconBatteryCharging20 {
 
 
 export declare interface RuxIconBatteryCharging30 extends Components.RuxIconBatteryCharging30 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2355,9 +2124,7 @@ export class RuxIconBatteryCharging30 {
 
 
 export declare interface RuxIconBatteryCharging50 extends Components.RuxIconBatteryCharging50 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2376,9 +2143,7 @@ export class RuxIconBatteryCharging50 {
 
 
 export declare interface RuxIconBatteryCharging60 extends Components.RuxIconBatteryCharging60 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2397,9 +2162,7 @@ export class RuxIconBatteryCharging60 {
 
 
 export declare interface RuxIconBatteryCharging80 extends Components.RuxIconBatteryCharging80 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2418,9 +2181,7 @@ export class RuxIconBatteryCharging80 {
 
 
 export declare interface RuxIconBatteryCharging90 extends Components.RuxIconBatteryCharging90 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2439,9 +2200,7 @@ export class RuxIconBatteryCharging90 {
 
 
 export declare interface RuxIconBatteryChargingFull extends Components.RuxIconBatteryChargingFull {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2460,9 +2219,7 @@ export class RuxIconBatteryChargingFull {
 
 
 export declare interface RuxIconBatteryFull extends Components.RuxIconBatteryFull {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2481,9 +2238,7 @@ export class RuxIconBatteryFull {
 
 
 export declare interface RuxIconBatteryStd extends Components.RuxIconBatteryStd {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2502,9 +2257,7 @@ export class RuxIconBatteryStd {
 
 
 export declare interface RuxIconBatteryUnknown extends Components.RuxIconBatteryUnknown {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2523,9 +2276,7 @@ export class RuxIconBatteryUnknown {
 
 
 export declare interface RuxIconBeachAccess extends Components.RuxIconBeachAccess {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2544,9 +2295,7 @@ export class RuxIconBeachAccess {
 
 
 export declare interface RuxIconBeenhere extends Components.RuxIconBeenhere {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2565,9 +2314,7 @@ export class RuxIconBeenhere {
 
 
 export declare interface RuxIconBlock extends Components.RuxIconBlock {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2586,9 +2333,7 @@ export class RuxIconBlock {
 
 
 export declare interface RuxIconBluetooth extends Components.RuxIconBluetooth {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2607,9 +2352,7 @@ export class RuxIconBluetooth {
 
 
 export declare interface RuxIconBluetoothAudio extends Components.RuxIconBluetoothAudio {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2628,9 +2371,7 @@ export class RuxIconBluetoothAudio {
 
 
 export declare interface RuxIconBluetoothConnected extends Components.RuxIconBluetoothConnected {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2649,9 +2390,7 @@ export class RuxIconBluetoothConnected {
 
 
 export declare interface RuxIconBluetoothDisabled extends Components.RuxIconBluetoothDisabled {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2670,9 +2409,7 @@ export class RuxIconBluetoothDisabled {
 
 
 export declare interface RuxIconBluetoothSearching extends Components.RuxIconBluetoothSearching {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2691,9 +2428,7 @@ export class RuxIconBluetoothSearching {
 
 
 export declare interface RuxIconBlurCircular extends Components.RuxIconBlurCircular {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2712,9 +2447,7 @@ export class RuxIconBlurCircular {
 
 
 export declare interface RuxIconBlurLinear extends Components.RuxIconBlurLinear {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2733,9 +2466,7 @@ export class RuxIconBlurLinear {
 
 
 export declare interface RuxIconBlurOff extends Components.RuxIconBlurOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2754,9 +2485,7 @@ export class RuxIconBlurOff {
 
 
 export declare interface RuxIconBlurOn extends Components.RuxIconBlurOn {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2775,9 +2504,7 @@ export class RuxIconBlurOn {
 
 
 export declare interface RuxIconBook extends Components.RuxIconBook {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2796,9 +2523,7 @@ export class RuxIconBook {
 
 
 export declare interface RuxIconBookmark extends Components.RuxIconBookmark {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2817,9 +2542,7 @@ export class RuxIconBookmark {
 
 
 export declare interface RuxIconBookmarkBorder extends Components.RuxIconBookmarkBorder {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2838,9 +2561,7 @@ export class RuxIconBookmarkBorder {
 
 
 export declare interface RuxIconBookmarks extends Components.RuxIconBookmarks {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2859,9 +2580,7 @@ export class RuxIconBookmarks {
 
 
 export declare interface RuxIconBorderAll extends Components.RuxIconBorderAll {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2880,9 +2599,7 @@ export class RuxIconBorderAll {
 
 
 export declare interface RuxIconBorderBottom extends Components.RuxIconBorderBottom {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2901,9 +2618,7 @@ export class RuxIconBorderBottom {
 
 
 export declare interface RuxIconBorderClear extends Components.RuxIconBorderClear {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2922,9 +2637,7 @@ export class RuxIconBorderClear {
 
 
 export declare interface RuxIconBorderColor extends Components.RuxIconBorderColor {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2943,9 +2656,7 @@ export class RuxIconBorderColor {
 
 
 export declare interface RuxIconBorderHorizontal extends Components.RuxIconBorderHorizontal {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2964,9 +2675,7 @@ export class RuxIconBorderHorizontal {
 
 
 export declare interface RuxIconBorderInner extends Components.RuxIconBorderInner {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -2985,9 +2694,7 @@ export class RuxIconBorderInner {
 
 
 export declare interface RuxIconBorderLeft extends Components.RuxIconBorderLeft {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3006,9 +2713,7 @@ export class RuxIconBorderLeft {
 
 
 export declare interface RuxIconBorderOuter extends Components.RuxIconBorderOuter {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3027,9 +2732,7 @@ export class RuxIconBorderOuter {
 
 
 export declare interface RuxIconBorderRight extends Components.RuxIconBorderRight {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3048,9 +2751,7 @@ export class RuxIconBorderRight {
 
 
 export declare interface RuxIconBorderStyle extends Components.RuxIconBorderStyle {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3069,9 +2770,7 @@ export class RuxIconBorderStyle {
 
 
 export declare interface RuxIconBorderTop extends Components.RuxIconBorderTop {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3090,9 +2789,7 @@ export class RuxIconBorderTop {
 
 
 export declare interface RuxIconBorderVertical extends Components.RuxIconBorderVertical {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3111,9 +2808,7 @@ export class RuxIconBorderVertical {
 
 
 export declare interface RuxIconBrandingWatermark extends Components.RuxIconBrandingWatermark {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3132,9 +2827,7 @@ export class RuxIconBrandingWatermark {
 
 
 export declare interface RuxIconBrightness1 extends Components.RuxIconBrightness1 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3153,9 +2846,7 @@ export class RuxIconBrightness1 {
 
 
 export declare interface RuxIconBrightness2 extends Components.RuxIconBrightness2 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3174,9 +2865,7 @@ export class RuxIconBrightness2 {
 
 
 export declare interface RuxIconBrightness3 extends Components.RuxIconBrightness3 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3195,9 +2884,7 @@ export class RuxIconBrightness3 {
 
 
 export declare interface RuxIconBrightness4 extends Components.RuxIconBrightness4 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3216,9 +2903,7 @@ export class RuxIconBrightness4 {
 
 
 export declare interface RuxIconBrightness5 extends Components.RuxIconBrightness5 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3237,9 +2922,7 @@ export class RuxIconBrightness5 {
 
 
 export declare interface RuxIconBrightness6 extends Components.RuxIconBrightness6 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3258,9 +2941,7 @@ export class RuxIconBrightness6 {
 
 
 export declare interface RuxIconBrightness7 extends Components.RuxIconBrightness7 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3279,9 +2960,7 @@ export class RuxIconBrightness7 {
 
 
 export declare interface RuxIconBrightnessAuto extends Components.RuxIconBrightnessAuto {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3300,9 +2979,7 @@ export class RuxIconBrightnessAuto {
 
 
 export declare interface RuxIconBrightnessHigh extends Components.RuxIconBrightnessHigh {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3321,9 +2998,7 @@ export class RuxIconBrightnessHigh {
 
 
 export declare interface RuxIconBrightnessLow extends Components.RuxIconBrightnessLow {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3342,9 +3017,7 @@ export class RuxIconBrightnessLow {
 
 
 export declare interface RuxIconBrightnessMedium extends Components.RuxIconBrightnessMedium {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3363,9 +3036,7 @@ export class RuxIconBrightnessMedium {
 
 
 export declare interface RuxIconBrokenImage extends Components.RuxIconBrokenImage {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3384,9 +3055,7 @@ export class RuxIconBrokenImage {
 
 
 export declare interface RuxIconBrush extends Components.RuxIconBrush {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3405,9 +3074,7 @@ export class RuxIconBrush {
 
 
 export declare interface RuxIconBubbleChart extends Components.RuxIconBubbleChart {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3426,9 +3093,7 @@ export class RuxIconBubbleChart {
 
 
 export declare interface RuxIconBugReport extends Components.RuxIconBugReport {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3447,9 +3112,7 @@ export class RuxIconBugReport {
 
 
 export declare interface RuxIconBuild extends Components.RuxIconBuild {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3468,9 +3131,7 @@ export class RuxIconBuild {
 
 
 export declare interface RuxIconBurstMode extends Components.RuxIconBurstMode {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3489,9 +3150,7 @@ export class RuxIconBurstMode {
 
 
 export declare interface RuxIconBusiness extends Components.RuxIconBusiness {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3510,9 +3169,7 @@ export class RuxIconBusiness {
 
 
 export declare interface RuxIconBusinessCenter extends Components.RuxIconBusinessCenter {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3531,9 +3188,7 @@ export class RuxIconBusinessCenter {
 
 
 export declare interface RuxIconCached extends Components.RuxIconCached {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3552,9 +3207,7 @@ export class RuxIconCached {
 
 
 export declare interface RuxIconCake extends Components.RuxIconCake {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3573,9 +3226,7 @@ export class RuxIconCake {
 
 
 export declare interface RuxIconCalendarToday extends Components.RuxIconCalendarToday {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3594,9 +3245,7 @@ export class RuxIconCalendarToday {
 
 
 export declare interface RuxIconCalendarViewDay extends Components.RuxIconCalendarViewDay {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3615,9 +3264,7 @@ export class RuxIconCalendarViewDay {
 
 
 export declare interface RuxIconCall extends Components.RuxIconCall {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3636,9 +3283,7 @@ export class RuxIconCall {
 
 
 export declare interface RuxIconCallEnd extends Components.RuxIconCallEnd {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3657,9 +3302,7 @@ export class RuxIconCallEnd {
 
 
 export declare interface RuxIconCallMade extends Components.RuxIconCallMade {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3678,9 +3321,7 @@ export class RuxIconCallMade {
 
 
 export declare interface RuxIconCallMerge extends Components.RuxIconCallMerge {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3699,9 +3340,7 @@ export class RuxIconCallMerge {
 
 
 export declare interface RuxIconCallMissed extends Components.RuxIconCallMissed {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3720,9 +3359,7 @@ export class RuxIconCallMissed {
 
 
 export declare interface RuxIconCallMissedOutgoing extends Components.RuxIconCallMissedOutgoing {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3741,9 +3378,7 @@ export class RuxIconCallMissedOutgoing {
 
 
 export declare interface RuxIconCallReceived extends Components.RuxIconCallReceived {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3762,9 +3397,7 @@ export class RuxIconCallReceived {
 
 
 export declare interface RuxIconCallSplit extends Components.RuxIconCallSplit {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3783,9 +3416,7 @@ export class RuxIconCallSplit {
 
 
 export declare interface RuxIconCallToAction extends Components.RuxIconCallToAction {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3804,9 +3435,7 @@ export class RuxIconCallToAction {
 
 
 export declare interface RuxIconCamera extends Components.RuxIconCamera {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3825,9 +3454,7 @@ export class RuxIconCamera {
 
 
 export declare interface RuxIconCameraAlt extends Components.RuxIconCameraAlt {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3846,9 +3473,7 @@ export class RuxIconCameraAlt {
 
 
 export declare interface RuxIconCameraEnhance extends Components.RuxIconCameraEnhance {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3867,9 +3492,7 @@ export class RuxIconCameraEnhance {
 
 
 export declare interface RuxIconCameraFront extends Components.RuxIconCameraFront {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3888,9 +3511,7 @@ export class RuxIconCameraFront {
 
 
 export declare interface RuxIconCameraRear extends Components.RuxIconCameraRear {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3909,9 +3530,7 @@ export class RuxIconCameraRear {
 
 
 export declare interface RuxIconCameraRoll extends Components.RuxIconCameraRoll {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3930,9 +3549,7 @@ export class RuxIconCameraRoll {
 
 
 export declare interface RuxIconCancel extends Components.RuxIconCancel {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3951,9 +3568,7 @@ export class RuxIconCancel {
 
 
 export declare interface RuxIconCancelPresentation extends Components.RuxIconCancelPresentation {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3972,9 +3587,7 @@ export class RuxIconCancelPresentation {
 
 
 export declare interface RuxIconCardGiftcard extends Components.RuxIconCardGiftcard {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -3993,9 +3606,7 @@ export class RuxIconCardGiftcard {
 
 
 export declare interface RuxIconCardMembership extends Components.RuxIconCardMembership {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4014,9 +3625,7 @@ export class RuxIconCardMembership {
 
 
 export declare interface RuxIconCardTravel extends Components.RuxIconCardTravel {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4035,9 +3644,7 @@ export class RuxIconCardTravel {
 
 
 export declare interface RuxIconCasino extends Components.RuxIconCasino {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4056,9 +3663,7 @@ export class RuxIconCasino {
 
 
 export declare interface RuxIconCast extends Components.RuxIconCast {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4077,9 +3682,7 @@ export class RuxIconCast {
 
 
 export declare interface RuxIconCastConnected extends Components.RuxIconCastConnected {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4098,9 +3701,7 @@ export class RuxIconCastConnected {
 
 
 export declare interface RuxIconCastForEducation extends Components.RuxIconCastForEducation {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4119,9 +3720,7 @@ export class RuxIconCastForEducation {
 
 
 export declare interface RuxIconCategory extends Components.RuxIconCategory {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4140,9 +3739,7 @@ export class RuxIconCategory {
 
 
 export declare interface RuxIconCellWifi extends Components.RuxIconCellWifi {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4161,9 +3758,7 @@ export class RuxIconCellWifi {
 
 
 export declare interface RuxIconCenterFocusStrong extends Components.RuxIconCenterFocusStrong {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4182,9 +3777,7 @@ export class RuxIconCenterFocusStrong {
 
 
 export declare interface RuxIconCenterFocusWeak extends Components.RuxIconCenterFocusWeak {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4203,9 +3796,7 @@ export class RuxIconCenterFocusWeak {
 
 
 export declare interface RuxIconChangeHistory extends Components.RuxIconChangeHistory {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4224,9 +3815,7 @@ export class RuxIconChangeHistory {
 
 
 export declare interface RuxIconChat extends Components.RuxIconChat {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4245,9 +3834,7 @@ export class RuxIconChat {
 
 
 export declare interface RuxIconChatBubble extends Components.RuxIconChatBubble {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4266,9 +3853,7 @@ export class RuxIconChatBubble {
 
 
 export declare interface RuxIconChatBubbleOutline extends Components.RuxIconChatBubbleOutline {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4287,9 +3872,7 @@ export class RuxIconChatBubbleOutline {
 
 
 export declare interface RuxIconCheck extends Components.RuxIconCheck {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4308,9 +3891,7 @@ export class RuxIconCheck {
 
 
 export declare interface RuxIconCheckBox extends Components.RuxIconCheckBox {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4329,9 +3910,7 @@ export class RuxIconCheckBox {
 
 
 export declare interface RuxIconCheckBoxOutlineBlank extends Components.RuxIconCheckBoxOutlineBlank {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4350,9 +3929,7 @@ export class RuxIconCheckBoxOutlineBlank {
 
 
 export declare interface RuxIconCheckCircle extends Components.RuxIconCheckCircle {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4371,9 +3948,7 @@ export class RuxIconCheckCircle {
 
 
 export declare interface RuxIconCheckCircleOutline extends Components.RuxIconCheckCircleOutline {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4392,9 +3967,7 @@ export class RuxIconCheckCircleOutline {
 
 
 export declare interface RuxIconChevronLeft extends Components.RuxIconChevronLeft {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4413,9 +3986,7 @@ export class RuxIconChevronLeft {
 
 
 export declare interface RuxIconChevronRight extends Components.RuxIconChevronRight {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4434,9 +4005,7 @@ export class RuxIconChevronRight {
 
 
 export declare interface RuxIconChildCare extends Components.RuxIconChildCare {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4455,9 +4024,7 @@ export class RuxIconChildCare {
 
 
 export declare interface RuxIconChildFriendly extends Components.RuxIconChildFriendly {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4476,9 +4043,7 @@ export class RuxIconChildFriendly {
 
 
 export declare interface RuxIconChromeReaderMode extends Components.RuxIconChromeReaderMode {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4497,9 +4062,7 @@ export class RuxIconChromeReaderMode {
 
 
 export declare interface RuxIconClass extends Components.RuxIconClass {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4518,9 +4081,7 @@ export class RuxIconClass {
 
 
 export declare interface RuxIconClear extends Components.RuxIconClear {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4539,9 +4100,7 @@ export class RuxIconClear {
 
 
 export declare interface RuxIconClearAll extends Components.RuxIconClearAll {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4560,9 +4119,7 @@ export class RuxIconClearAll {
 
 
 export declare interface RuxIconClose extends Components.RuxIconClose {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4581,9 +4138,7 @@ export class RuxIconClose {
 
 
 export declare interface RuxIconClosedCaption extends Components.RuxIconClosedCaption {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4602,9 +4157,7 @@ export class RuxIconClosedCaption {
 
 
 export declare interface RuxIconCloud extends Components.RuxIconCloud {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4623,9 +4176,7 @@ export class RuxIconCloud {
 
 
 export declare interface RuxIconCloudCircle extends Components.RuxIconCloudCircle {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4644,9 +4195,7 @@ export class RuxIconCloudCircle {
 
 
 export declare interface RuxIconCloudDone extends Components.RuxIconCloudDone {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4665,9 +4214,7 @@ export class RuxIconCloudDone {
 
 
 export declare interface RuxIconCloudDownload extends Components.RuxIconCloudDownload {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4686,9 +4233,7 @@ export class RuxIconCloudDownload {
 
 
 export declare interface RuxIconCloudOff extends Components.RuxIconCloudOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4707,9 +4252,7 @@ export class RuxIconCloudOff {
 
 
 export declare interface RuxIconCloudQueue extends Components.RuxIconCloudQueue {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4728,9 +4271,7 @@ export class RuxIconCloudQueue {
 
 
 export declare interface RuxIconCloudUpload extends Components.RuxIconCloudUpload {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4749,9 +4290,7 @@ export class RuxIconCloudUpload {
 
 
 export declare interface RuxIconCode extends Components.RuxIconCode {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4770,9 +4309,7 @@ export class RuxIconCode {
 
 
 export declare interface RuxIconCollections extends Components.RuxIconCollections {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4791,9 +4328,7 @@ export class RuxIconCollections {
 
 
 export declare interface RuxIconCollectionsBookmark extends Components.RuxIconCollectionsBookmark {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4812,9 +4347,7 @@ export class RuxIconCollectionsBookmark {
 
 
 export declare interface RuxIconColorLens extends Components.RuxIconColorLens {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4833,9 +4366,7 @@ export class RuxIconColorLens {
 
 
 export declare interface RuxIconColorize extends Components.RuxIconColorize {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4854,9 +4385,7 @@ export class RuxIconColorize {
 
 
 export declare interface RuxIconComment extends Components.RuxIconComment {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4875,9 +4404,7 @@ export class RuxIconComment {
 
 
 export declare interface RuxIconCommute extends Components.RuxIconCommute {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4896,9 +4423,7 @@ export class RuxIconCommute {
 
 
 export declare interface RuxIconCompare extends Components.RuxIconCompare {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4917,9 +4442,7 @@ export class RuxIconCompare {
 
 
 export declare interface RuxIconCompareArrows extends Components.RuxIconCompareArrows {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4938,9 +4461,7 @@ export class RuxIconCompareArrows {
 
 
 export declare interface RuxIconCompassCalibration extends Components.RuxIconCompassCalibration {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4959,9 +4480,7 @@ export class RuxIconCompassCalibration {
 
 
 export declare interface RuxIconComputer extends Components.RuxIconComputer {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -4980,9 +4499,7 @@ export class RuxIconComputer {
 
 
 export declare interface RuxIconConfirmationNumber extends Components.RuxIconConfirmationNumber {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5001,9 +4518,7 @@ export class RuxIconConfirmationNumber {
 
 
 export declare interface RuxIconContactMail extends Components.RuxIconContactMail {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5022,9 +4537,7 @@ export class RuxIconContactMail {
 
 
 export declare interface RuxIconContactPhone extends Components.RuxIconContactPhone {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5043,9 +4556,7 @@ export class RuxIconContactPhone {
 
 
 export declare interface RuxIconContactSupport extends Components.RuxIconContactSupport {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5064,9 +4575,7 @@ export class RuxIconContactSupport {
 
 
 export declare interface RuxIconContacts extends Components.RuxIconContacts {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5085,9 +4594,7 @@ export class RuxIconContacts {
 
 
 export declare interface RuxIconControlCamera extends Components.RuxIconControlCamera {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5106,9 +4613,7 @@ export class RuxIconControlCamera {
 
 
 export declare interface RuxIconControlPoint extends Components.RuxIconControlPoint {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5127,9 +4632,7 @@ export class RuxIconControlPoint {
 
 
 export declare interface RuxIconControlPointDuplicate extends Components.RuxIconControlPointDuplicate {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5148,9 +4651,7 @@ export class RuxIconControlPointDuplicate {
 
 
 export declare interface RuxIconCopyright extends Components.RuxIconCopyright {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5169,9 +4670,7 @@ export class RuxIconCopyright {
 
 
 export declare interface RuxIconCreate extends Components.RuxIconCreate {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5190,9 +4689,7 @@ export class RuxIconCreate {
 
 
 export declare interface RuxIconCreateNewFolder extends Components.RuxIconCreateNewFolder {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5211,9 +4708,7 @@ export class RuxIconCreateNewFolder {
 
 
 export declare interface RuxIconCreditCard extends Components.RuxIconCreditCard {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5232,9 +4727,7 @@ export class RuxIconCreditCard {
 
 
 export declare interface RuxIconCrop extends Components.RuxIconCrop {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5253,9 +4746,7 @@ export class RuxIconCrop {
 
 
 export declare interface RuxIconCrop169 extends Components.RuxIconCrop169 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5274,9 +4765,7 @@ export class RuxIconCrop169 {
 
 
 export declare interface RuxIconCrop32 extends Components.RuxIconCrop32 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5295,9 +4784,7 @@ export class RuxIconCrop32 {
 
 
 export declare interface RuxIconCrop54 extends Components.RuxIconCrop54 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5316,9 +4803,7 @@ export class RuxIconCrop54 {
 
 
 export declare interface RuxIconCrop75 extends Components.RuxIconCrop75 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5337,9 +4822,7 @@ export class RuxIconCrop75 {
 
 
 export declare interface RuxIconCropDin extends Components.RuxIconCropDin {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5358,9 +4841,7 @@ export class RuxIconCropDin {
 
 
 export declare interface RuxIconCropFree extends Components.RuxIconCropFree {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5379,9 +4860,7 @@ export class RuxIconCropFree {
 
 
 export declare interface RuxIconCropLandscape extends Components.RuxIconCropLandscape {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5400,9 +4879,7 @@ export class RuxIconCropLandscape {
 
 
 export declare interface RuxIconCropOriginal extends Components.RuxIconCropOriginal {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5421,9 +4898,7 @@ export class RuxIconCropOriginal {
 
 
 export declare interface RuxIconCropPortrait extends Components.RuxIconCropPortrait {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5442,9 +4917,7 @@ export class RuxIconCropPortrait {
 
 
 export declare interface RuxIconCropRotate extends Components.RuxIconCropRotate {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5463,9 +4936,7 @@ export class RuxIconCropRotate {
 
 
 export declare interface RuxIconCropSquare extends Components.RuxIconCropSquare {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5484,9 +4955,7 @@ export class RuxIconCropSquare {
 
 
 export declare interface RuxIconDashboard extends Components.RuxIconDashboard {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5505,9 +4974,7 @@ export class RuxIconDashboard {
 
 
 export declare interface RuxIconDataUsage extends Components.RuxIconDataUsage {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5526,9 +4993,7 @@ export class RuxIconDataUsage {
 
 
 export declare interface RuxIconDateRange extends Components.RuxIconDateRange {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5547,9 +5012,7 @@ export class RuxIconDateRange {
 
 
 export declare interface RuxIconDehaze extends Components.RuxIconDehaze {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5568,9 +5031,7 @@ export class RuxIconDehaze {
 
 
 export declare interface RuxIconDelete extends Components.RuxIconDelete {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5589,9 +5050,7 @@ export class RuxIconDelete {
 
 
 export declare interface RuxIconDeleteForever extends Components.RuxIconDeleteForever {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5610,9 +5069,7 @@ export class RuxIconDeleteForever {
 
 
 export declare interface RuxIconDeleteOutline extends Components.RuxIconDeleteOutline {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5631,9 +5088,7 @@ export class RuxIconDeleteOutline {
 
 
 export declare interface RuxIconDeleteSweep extends Components.RuxIconDeleteSweep {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5652,9 +5107,7 @@ export class RuxIconDeleteSweep {
 
 
 export declare interface RuxIconDepartureBoard extends Components.RuxIconDepartureBoard {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5673,9 +5126,7 @@ export class RuxIconDepartureBoard {
 
 
 export declare interface RuxIconDescription extends Components.RuxIconDescription {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5694,9 +5145,7 @@ export class RuxIconDescription {
 
 
 export declare interface RuxIconDesktopAccessDisabled extends Components.RuxIconDesktopAccessDisabled {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5715,9 +5164,7 @@ export class RuxIconDesktopAccessDisabled {
 
 
 export declare interface RuxIconDesktopMac extends Components.RuxIconDesktopMac {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5736,9 +5183,7 @@ export class RuxIconDesktopMac {
 
 
 export declare interface RuxIconDesktopWindows extends Components.RuxIconDesktopWindows {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5757,9 +5202,7 @@ export class RuxIconDesktopWindows {
 
 
 export declare interface RuxIconDetails extends Components.RuxIconDetails {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5778,9 +5221,7 @@ export class RuxIconDetails {
 
 
 export declare interface RuxIconDeveloperBoard extends Components.RuxIconDeveloperBoard {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5799,9 +5240,7 @@ export class RuxIconDeveloperBoard {
 
 
 export declare interface RuxIconDeveloperMode extends Components.RuxIconDeveloperMode {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5820,9 +5259,7 @@ export class RuxIconDeveloperMode {
 
 
 export declare interface RuxIconDeviceHub extends Components.RuxIconDeviceHub {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5841,9 +5278,7 @@ export class RuxIconDeviceHub {
 
 
 export declare interface RuxIconDeviceUnknown extends Components.RuxIconDeviceUnknown {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5862,9 +5297,7 @@ export class RuxIconDeviceUnknown {
 
 
 export declare interface RuxIconDevices extends Components.RuxIconDevices {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5883,9 +5316,7 @@ export class RuxIconDevices {
 
 
 export declare interface RuxIconDevicesOther extends Components.RuxIconDevicesOther {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5904,9 +5335,7 @@ export class RuxIconDevicesOther {
 
 
 export declare interface RuxIconDialerSip extends Components.RuxIconDialerSip {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5925,9 +5354,7 @@ export class RuxIconDialerSip {
 
 
 export declare interface RuxIconDialpad extends Components.RuxIconDialpad {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5946,9 +5373,7 @@ export class RuxIconDialpad {
 
 
 export declare interface RuxIconDirections extends Components.RuxIconDirections {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5967,9 +5392,7 @@ export class RuxIconDirections {
 
 
 export declare interface RuxIconDirectionsBike extends Components.RuxIconDirectionsBike {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -5988,9 +5411,7 @@ export class RuxIconDirectionsBike {
 
 
 export declare interface RuxIconDirectionsBoat extends Components.RuxIconDirectionsBoat {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6009,9 +5430,7 @@ export class RuxIconDirectionsBoat {
 
 
 export declare interface RuxIconDirectionsBus extends Components.RuxIconDirectionsBus {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6030,9 +5449,7 @@ export class RuxIconDirectionsBus {
 
 
 export declare interface RuxIconDirectionsCar extends Components.RuxIconDirectionsCar {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6051,9 +5468,7 @@ export class RuxIconDirectionsCar {
 
 
 export declare interface RuxIconDirectionsRailway extends Components.RuxIconDirectionsRailway {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6072,9 +5487,7 @@ export class RuxIconDirectionsRailway {
 
 
 export declare interface RuxIconDirectionsRun extends Components.RuxIconDirectionsRun {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6093,9 +5506,7 @@ export class RuxIconDirectionsRun {
 
 
 export declare interface RuxIconDirectionsSubway extends Components.RuxIconDirectionsSubway {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6114,9 +5525,7 @@ export class RuxIconDirectionsSubway {
 
 
 export declare interface RuxIconDirectionsTransit extends Components.RuxIconDirectionsTransit {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6135,9 +5544,7 @@ export class RuxIconDirectionsTransit {
 
 
 export declare interface RuxIconDirectionsWalk extends Components.RuxIconDirectionsWalk {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6156,9 +5563,7 @@ export class RuxIconDirectionsWalk {
 
 
 export declare interface RuxIconDiscFull extends Components.RuxIconDiscFull {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6177,9 +5582,7 @@ export class RuxIconDiscFull {
 
 
 export declare interface RuxIconDns extends Components.RuxIconDns {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6198,9 +5601,7 @@ export class RuxIconDns {
 
 
 export declare interface RuxIconDock extends Components.RuxIconDock {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6219,9 +5620,7 @@ export class RuxIconDock {
 
 
 export declare interface RuxIconDomain extends Components.RuxIconDomain {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6240,9 +5639,7 @@ export class RuxIconDomain {
 
 
 export declare interface RuxIconDomainDisabled extends Components.RuxIconDomainDisabled {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6261,9 +5658,7 @@ export class RuxIconDomainDisabled {
 
 
 export declare interface RuxIconDone extends Components.RuxIconDone {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6282,9 +5677,7 @@ export class RuxIconDone {
 
 
 export declare interface RuxIconDoneAll extends Components.RuxIconDoneAll {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6303,9 +5696,7 @@ export class RuxIconDoneAll {
 
 
 export declare interface RuxIconDoneOutline extends Components.RuxIconDoneOutline {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6324,9 +5715,7 @@ export class RuxIconDoneOutline {
 
 
 export declare interface RuxIconDonutLarge extends Components.RuxIconDonutLarge {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6345,9 +5734,7 @@ export class RuxIconDonutLarge {
 
 
 export declare interface RuxIconDonutSmall extends Components.RuxIconDonutSmall {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6366,9 +5753,7 @@ export class RuxIconDonutSmall {
 
 
 export declare interface RuxIconDrafts extends Components.RuxIconDrafts {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6387,9 +5772,7 @@ export class RuxIconDrafts {
 
 
 export declare interface RuxIconDragHandle extends Components.RuxIconDragHandle {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6408,9 +5791,7 @@ export class RuxIconDragHandle {
 
 
 export declare interface RuxIconDragIndicator extends Components.RuxIconDragIndicator {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6429,9 +5810,7 @@ export class RuxIconDragIndicator {
 
 
 export declare interface RuxIconDriveEta extends Components.RuxIconDriveEta {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6450,9 +5829,7 @@ export class RuxIconDriveEta {
 
 
 export declare interface RuxIconDuo extends Components.RuxIconDuo {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6471,9 +5848,7 @@ export class RuxIconDuo {
 
 
 export declare interface RuxIconDvr extends Components.RuxIconDvr {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6492,9 +5867,7 @@ export class RuxIconDvr {
 
 
 export declare interface RuxIconEdit extends Components.RuxIconEdit {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6513,9 +5886,7 @@ export class RuxIconEdit {
 
 
 export declare interface RuxIconEditAttributes extends Components.RuxIconEditAttributes {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6534,9 +5905,7 @@ export class RuxIconEditAttributes {
 
 
 export declare interface RuxIconEditLocation extends Components.RuxIconEditLocation {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6555,9 +5924,7 @@ export class RuxIconEditLocation {
 
 
 export declare interface RuxIconEject extends Components.RuxIconEject {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6576,9 +5943,7 @@ export class RuxIconEject {
 
 
 export declare interface RuxIconEmail extends Components.RuxIconEmail {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6597,9 +5962,7 @@ export class RuxIconEmail {
 
 
 export declare interface RuxIconEnhancedEncryption extends Components.RuxIconEnhancedEncryption {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6618,9 +5981,7 @@ export class RuxIconEnhancedEncryption {
 
 
 export declare interface RuxIconEqualizer extends Components.RuxIconEqualizer {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6639,9 +6000,7 @@ export class RuxIconEqualizer {
 
 
 export declare interface RuxIconEquipment extends Components.RuxIconEquipment {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6660,9 +6019,7 @@ export class RuxIconEquipment {
 
 
 export declare interface RuxIconError extends Components.RuxIconError {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6681,9 +6038,7 @@ export class RuxIconError {
 
 
 export declare interface RuxIconErrorOutline extends Components.RuxIconErrorOutline {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6702,9 +6057,7 @@ export class RuxIconErrorOutline {
 
 
 export declare interface RuxIconEuroSymbol extends Components.RuxIconEuroSymbol {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6723,9 +6076,7 @@ export class RuxIconEuroSymbol {
 
 
 export declare interface RuxIconEvStation extends Components.RuxIconEvStation {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6744,9 +6095,7 @@ export class RuxIconEvStation {
 
 
 export declare interface RuxIconEvent extends Components.RuxIconEvent {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6765,9 +6114,7 @@ export class RuxIconEvent {
 
 
 export declare interface RuxIconEventAvailable extends Components.RuxIconEventAvailable {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6786,9 +6133,7 @@ export class RuxIconEventAvailable {
 
 
 export declare interface RuxIconEventBusy extends Components.RuxIconEventBusy {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6807,9 +6152,7 @@ export class RuxIconEventBusy {
 
 
 export declare interface RuxIconEventNote extends Components.RuxIconEventNote {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6828,9 +6171,7 @@ export class RuxIconEventNote {
 
 
 export declare interface RuxIconExitToApp extends Components.RuxIconExitToApp {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6849,9 +6190,7 @@ export class RuxIconExitToApp {
 
 
 export declare interface RuxIconExpandLess extends Components.RuxIconExpandLess {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6870,9 +6209,7 @@ export class RuxIconExpandLess {
 
 
 export declare interface RuxIconExpandMore extends Components.RuxIconExpandMore {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6891,9 +6228,7 @@ export class RuxIconExpandMore {
 
 
 export declare interface RuxIconExplicit extends Components.RuxIconExplicit {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6912,9 +6247,7 @@ export class RuxIconExplicit {
 
 
 export declare interface RuxIconExplore extends Components.RuxIconExplore {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6933,9 +6266,7 @@ export class RuxIconExplore {
 
 
 export declare interface RuxIconExploreOff extends Components.RuxIconExploreOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6954,9 +6285,7 @@ export class RuxIconExploreOff {
 
 
 export declare interface RuxIconExposure extends Components.RuxIconExposure {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6975,9 +6304,7 @@ export class RuxIconExposure {
 
 
 export declare interface RuxIconExposureNeg1 extends Components.RuxIconExposureNeg1 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -6996,9 +6323,7 @@ export class RuxIconExposureNeg1 {
 
 
 export declare interface RuxIconExposureNeg2 extends Components.RuxIconExposureNeg2 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7017,9 +6342,7 @@ export class RuxIconExposureNeg2 {
 
 
 export declare interface RuxIconExposurePlus1 extends Components.RuxIconExposurePlus1 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7038,9 +6361,7 @@ export class RuxIconExposurePlus1 {
 
 
 export declare interface RuxIconExposurePlus2 extends Components.RuxIconExposurePlus2 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7059,9 +6380,7 @@ export class RuxIconExposurePlus2 {
 
 
 export declare interface RuxIconExposureZero extends Components.RuxIconExposureZero {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7080,9 +6399,7 @@ export class RuxIconExposureZero {
 
 
 export declare interface RuxIconExtension extends Components.RuxIconExtension {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7101,9 +6418,7 @@ export class RuxIconExtension {
 
 
 export declare interface RuxIconFace extends Components.RuxIconFace {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7122,9 +6437,7 @@ export class RuxIconFace {
 
 
 export declare interface RuxIconFastForward extends Components.RuxIconFastForward {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7143,9 +6456,7 @@ export class RuxIconFastForward {
 
 
 export declare interface RuxIconFastRewind extends Components.RuxIconFastRewind {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7164,9 +6475,7 @@ export class RuxIconFastRewind {
 
 
 export declare interface RuxIconFastfood extends Components.RuxIconFastfood {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7185,9 +6494,7 @@ export class RuxIconFastfood {
 
 
 export declare interface RuxIconFavorite extends Components.RuxIconFavorite {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7206,9 +6513,7 @@ export class RuxIconFavorite {
 
 
 export declare interface RuxIconFavoriteBorder extends Components.RuxIconFavoriteBorder {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7227,9 +6532,7 @@ export class RuxIconFavoriteBorder {
 
 
 export declare interface RuxIconFeaturedPlayList extends Components.RuxIconFeaturedPlayList {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7248,9 +6551,7 @@ export class RuxIconFeaturedPlayList {
 
 
 export declare interface RuxIconFeaturedVideo extends Components.RuxIconFeaturedVideo {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7269,9 +6570,7 @@ export class RuxIconFeaturedVideo {
 
 
 export declare interface RuxIconFeedback extends Components.RuxIconFeedback {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7290,9 +6589,7 @@ export class RuxIconFeedback {
 
 
 export declare interface RuxIconFiberDvr extends Components.RuxIconFiberDvr {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7311,9 +6608,7 @@ export class RuxIconFiberDvr {
 
 
 export declare interface RuxIconFiberManualRecord extends Components.RuxIconFiberManualRecord {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7332,9 +6627,7 @@ export class RuxIconFiberManualRecord {
 
 
 export declare interface RuxIconFiberNew extends Components.RuxIconFiberNew {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7353,9 +6646,7 @@ export class RuxIconFiberNew {
 
 
 export declare interface RuxIconFiberPin extends Components.RuxIconFiberPin {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7374,9 +6665,7 @@ export class RuxIconFiberPin {
 
 
 export declare interface RuxIconFiberSmartRecord extends Components.RuxIconFiberSmartRecord {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7395,9 +6684,7 @@ export class RuxIconFiberSmartRecord {
 
 
 export declare interface RuxIconFileCopy extends Components.RuxIconFileCopy {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7416,9 +6703,7 @@ export class RuxIconFileCopy {
 
 
 export declare interface RuxIconFilter extends Components.RuxIconFilter {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7437,9 +6722,7 @@ export class RuxIconFilter {
 
 
 export declare interface RuxIconFilter1 extends Components.RuxIconFilter1 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7458,9 +6741,7 @@ export class RuxIconFilter1 {
 
 
 export declare interface RuxIconFilter2 extends Components.RuxIconFilter2 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7479,9 +6760,7 @@ export class RuxIconFilter2 {
 
 
 export declare interface RuxIconFilter3 extends Components.RuxIconFilter3 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7500,9 +6779,7 @@ export class RuxIconFilter3 {
 
 
 export declare interface RuxIconFilter4 extends Components.RuxIconFilter4 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7521,9 +6798,7 @@ export class RuxIconFilter4 {
 
 
 export declare interface RuxIconFilter5 extends Components.RuxIconFilter5 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7542,9 +6817,7 @@ export class RuxIconFilter5 {
 
 
 export declare interface RuxIconFilter6 extends Components.RuxIconFilter6 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7563,9 +6836,7 @@ export class RuxIconFilter6 {
 
 
 export declare interface RuxIconFilter7 extends Components.RuxIconFilter7 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7584,9 +6855,7 @@ export class RuxIconFilter7 {
 
 
 export declare interface RuxIconFilter8 extends Components.RuxIconFilter8 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7605,9 +6874,7 @@ export class RuxIconFilter8 {
 
 
 export declare interface RuxIconFilter9 extends Components.RuxIconFilter9 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7626,9 +6893,7 @@ export class RuxIconFilter9 {
 
 
 export declare interface RuxIconFilter9Plus extends Components.RuxIconFilter9Plus {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7647,9 +6912,7 @@ export class RuxIconFilter9Plus {
 
 
 export declare interface RuxIconFilterBAndW extends Components.RuxIconFilterBAndW {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7668,9 +6931,7 @@ export class RuxIconFilterBAndW {
 
 
 export declare interface RuxIconFilterCenterFocus extends Components.RuxIconFilterCenterFocus {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7689,9 +6950,7 @@ export class RuxIconFilterCenterFocus {
 
 
 export declare interface RuxIconFilterDrama extends Components.RuxIconFilterDrama {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7710,9 +6969,7 @@ export class RuxIconFilterDrama {
 
 
 export declare interface RuxIconFilterFrames extends Components.RuxIconFilterFrames {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7731,9 +6988,7 @@ export class RuxIconFilterFrames {
 
 
 export declare interface RuxIconFilterHdr extends Components.RuxIconFilterHdr {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7752,9 +7007,7 @@ export class RuxIconFilterHdr {
 
 
 export declare interface RuxIconFilterList extends Components.RuxIconFilterList {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7773,9 +7026,7 @@ export class RuxIconFilterList {
 
 
 export declare interface RuxIconFilterNone extends Components.RuxIconFilterNone {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7794,9 +7045,7 @@ export class RuxIconFilterNone {
 
 
 export declare interface RuxIconFilterTiltShift extends Components.RuxIconFilterTiltShift {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7815,9 +7064,7 @@ export class RuxIconFilterTiltShift {
 
 
 export declare interface RuxIconFilterVintage extends Components.RuxIconFilterVintage {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7836,9 +7083,7 @@ export class RuxIconFilterVintage {
 
 
 export declare interface RuxIconFindInPage extends Components.RuxIconFindInPage {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7857,9 +7102,7 @@ export class RuxIconFindInPage {
 
 
 export declare interface RuxIconFindReplace extends Components.RuxIconFindReplace {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7878,9 +7121,7 @@ export class RuxIconFindReplace {
 
 
 export declare interface RuxIconFingerprint extends Components.RuxIconFingerprint {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7899,9 +7140,7 @@ export class RuxIconFingerprint {
 
 
 export declare interface RuxIconFirstPage extends Components.RuxIconFirstPage {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7920,9 +7159,7 @@ export class RuxIconFirstPage {
 
 
 export declare interface RuxIconFitnessCenter extends Components.RuxIconFitnessCenter {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7941,9 +7178,7 @@ export class RuxIconFitnessCenter {
 
 
 export declare interface RuxIconFlag extends Components.RuxIconFlag {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7962,9 +7197,7 @@ export class RuxIconFlag {
 
 
 export declare interface RuxIconFlare extends Components.RuxIconFlare {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -7983,9 +7216,7 @@ export class RuxIconFlare {
 
 
 export declare interface RuxIconFlashAuto extends Components.RuxIconFlashAuto {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8004,9 +7235,7 @@ export class RuxIconFlashAuto {
 
 
 export declare interface RuxIconFlashOff extends Components.RuxIconFlashOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8025,9 +7254,7 @@ export class RuxIconFlashOff {
 
 
 export declare interface RuxIconFlashOn extends Components.RuxIconFlashOn {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8046,9 +7273,7 @@ export class RuxIconFlashOn {
 
 
 export declare interface RuxIconFlight extends Components.RuxIconFlight {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8067,9 +7292,7 @@ export class RuxIconFlight {
 
 
 export declare interface RuxIconFlightLand extends Components.RuxIconFlightLand {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8088,9 +7311,7 @@ export class RuxIconFlightLand {
 
 
 export declare interface RuxIconFlightTakeoff extends Components.RuxIconFlightTakeoff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8109,9 +7330,7 @@ export class RuxIconFlightTakeoff {
 
 
 export declare interface RuxIconFlip extends Components.RuxIconFlip {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8130,9 +7349,7 @@ export class RuxIconFlip {
 
 
 export declare interface RuxIconFlipToBack extends Components.RuxIconFlipToBack {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8151,9 +7368,7 @@ export class RuxIconFlipToBack {
 
 
 export declare interface RuxIconFlipToFront extends Components.RuxIconFlipToFront {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8172,9 +7387,7 @@ export class RuxIconFlipToFront {
 
 
 export declare interface RuxIconFolder extends Components.RuxIconFolder {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8193,9 +7406,7 @@ export class RuxIconFolder {
 
 
 export declare interface RuxIconFolderOpen extends Components.RuxIconFolderOpen {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8214,9 +7425,7 @@ export class RuxIconFolderOpen {
 
 
 export declare interface RuxIconFolderShared extends Components.RuxIconFolderShared {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8235,9 +7444,7 @@ export class RuxIconFolderShared {
 
 
 export declare interface RuxIconFolderSpecial extends Components.RuxIconFolderSpecial {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8256,9 +7463,7 @@ export class RuxIconFolderSpecial {
 
 
 export declare interface RuxIconFontDownload extends Components.RuxIconFontDownload {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8277,9 +7482,7 @@ export class RuxIconFontDownload {
 
 
 export declare interface RuxIconFormatAlignCenter extends Components.RuxIconFormatAlignCenter {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8298,9 +7501,7 @@ export class RuxIconFormatAlignCenter {
 
 
 export declare interface RuxIconFormatAlignJustify extends Components.RuxIconFormatAlignJustify {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8319,9 +7520,7 @@ export class RuxIconFormatAlignJustify {
 
 
 export declare interface RuxIconFormatAlignLeft extends Components.RuxIconFormatAlignLeft {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8340,9 +7539,7 @@ export class RuxIconFormatAlignLeft {
 
 
 export declare interface RuxIconFormatAlignRight extends Components.RuxIconFormatAlignRight {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8361,9 +7558,7 @@ export class RuxIconFormatAlignRight {
 
 
 export declare interface RuxIconFormatBold extends Components.RuxIconFormatBold {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8382,9 +7577,7 @@ export class RuxIconFormatBold {
 
 
 export declare interface RuxIconFormatClear extends Components.RuxIconFormatClear {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8403,9 +7596,7 @@ export class RuxIconFormatClear {
 
 
 export declare interface RuxIconFormatColorFill extends Components.RuxIconFormatColorFill {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8424,9 +7615,7 @@ export class RuxIconFormatColorFill {
 
 
 export declare interface RuxIconFormatColorReset extends Components.RuxIconFormatColorReset {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8445,9 +7634,7 @@ export class RuxIconFormatColorReset {
 
 
 export declare interface RuxIconFormatColorText extends Components.RuxIconFormatColorText {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8466,9 +7653,7 @@ export class RuxIconFormatColorText {
 
 
 export declare interface RuxIconFormatIndentDecrease extends Components.RuxIconFormatIndentDecrease {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8487,9 +7672,7 @@ export class RuxIconFormatIndentDecrease {
 
 
 export declare interface RuxIconFormatIndentIncrease extends Components.RuxIconFormatIndentIncrease {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8508,9 +7691,7 @@ export class RuxIconFormatIndentIncrease {
 
 
 export declare interface RuxIconFormatItalic extends Components.RuxIconFormatItalic {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8529,9 +7710,7 @@ export class RuxIconFormatItalic {
 
 
 export declare interface RuxIconFormatLineSpacing extends Components.RuxIconFormatLineSpacing {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8550,9 +7729,7 @@ export class RuxIconFormatLineSpacing {
 
 
 export declare interface RuxIconFormatListBulleted extends Components.RuxIconFormatListBulleted {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8571,9 +7748,7 @@ export class RuxIconFormatListBulleted {
 
 
 export declare interface RuxIconFormatListNumbered extends Components.RuxIconFormatListNumbered {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8592,9 +7767,7 @@ export class RuxIconFormatListNumbered {
 
 
 export declare interface RuxIconFormatListNumberedRtl extends Components.RuxIconFormatListNumberedRtl {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8613,9 +7786,7 @@ export class RuxIconFormatListNumberedRtl {
 
 
 export declare interface RuxIconFormatPaint extends Components.RuxIconFormatPaint {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8634,9 +7805,7 @@ export class RuxIconFormatPaint {
 
 
 export declare interface RuxIconFormatQuote extends Components.RuxIconFormatQuote {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8655,9 +7824,7 @@ export class RuxIconFormatQuote {
 
 
 export declare interface RuxIconFormatShapes extends Components.RuxIconFormatShapes {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8676,9 +7843,7 @@ export class RuxIconFormatShapes {
 
 
 export declare interface RuxIconFormatSize extends Components.RuxIconFormatSize {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8697,9 +7862,7 @@ export class RuxIconFormatSize {
 
 
 export declare interface RuxIconFormatStrikethrough extends Components.RuxIconFormatStrikethrough {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8718,9 +7881,7 @@ export class RuxIconFormatStrikethrough {
 
 
 export declare interface RuxIconFormatTextdirectionLToR extends Components.RuxIconFormatTextdirectionLToR {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8739,9 +7900,7 @@ export class RuxIconFormatTextdirectionLToR {
 
 
 export declare interface RuxIconFormatTextdirectionRToL extends Components.RuxIconFormatTextdirectionRToL {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8760,9 +7919,7 @@ export class RuxIconFormatTextdirectionRToL {
 
 
 export declare interface RuxIconFormatUnderlined extends Components.RuxIconFormatUnderlined {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8781,9 +7938,7 @@ export class RuxIconFormatUnderlined {
 
 
 export declare interface RuxIconForum extends Components.RuxIconForum {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8802,9 +7957,7 @@ export class RuxIconForum {
 
 
 export declare interface RuxIconForward extends Components.RuxIconForward {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8823,9 +7976,7 @@ export class RuxIconForward {
 
 
 export declare interface RuxIconForward10 extends Components.RuxIconForward10 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8844,9 +7995,7 @@ export class RuxIconForward10 {
 
 
 export declare interface RuxIconForward30 extends Components.RuxIconForward30 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8865,9 +8014,7 @@ export class RuxIconForward30 {
 
 
 export declare interface RuxIconForward5 extends Components.RuxIconForward5 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8886,9 +8033,7 @@ export class RuxIconForward5 {
 
 
 export declare interface RuxIconFreeBreakfast extends Components.RuxIconFreeBreakfast {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8907,9 +8052,7 @@ export class RuxIconFreeBreakfast {
 
 
 export declare interface RuxIconFullscreen extends Components.RuxIconFullscreen {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8928,9 +8071,7 @@ export class RuxIconFullscreen {
 
 
 export declare interface RuxIconFullscreenExit extends Components.RuxIconFullscreenExit {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8949,9 +8090,7 @@ export class RuxIconFullscreenExit {
 
 
 export declare interface RuxIconFunctions extends Components.RuxIconFunctions {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8970,9 +8109,7 @@ export class RuxIconFunctions {
 
 
 export declare interface RuxIconGTranslate extends Components.RuxIconGTranslate {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -8991,9 +8128,7 @@ export class RuxIconGTranslate {
 
 
 export declare interface RuxIconGamepad extends Components.RuxIconGamepad {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9012,9 +8147,7 @@ export class RuxIconGamepad {
 
 
 export declare interface RuxIconGames extends Components.RuxIconGames {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9033,9 +8166,7 @@ export class RuxIconGames {
 
 
 export declare interface RuxIconGavel extends Components.RuxIconGavel {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9054,9 +8185,7 @@ export class RuxIconGavel {
 
 
 export declare interface RuxIconGesture extends Components.RuxIconGesture {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9075,9 +8204,7 @@ export class RuxIconGesture {
 
 
 export declare interface RuxIconGetApp extends Components.RuxIconGetApp {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9096,9 +8223,7 @@ export class RuxIconGetApp {
 
 
 export declare interface RuxIconGif extends Components.RuxIconGif {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9117,9 +8242,7 @@ export class RuxIconGif {
 
 
 export declare interface RuxIconGolfCourse extends Components.RuxIconGolfCourse {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9138,9 +8261,7 @@ export class RuxIconGolfCourse {
 
 
 export declare interface RuxIconGpsFixed extends Components.RuxIconGpsFixed {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9159,9 +8280,7 @@ export class RuxIconGpsFixed {
 
 
 export declare interface RuxIconGpsNotFixed extends Components.RuxIconGpsNotFixed {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9180,9 +8299,7 @@ export class RuxIconGpsNotFixed {
 
 
 export declare interface RuxIconGpsOff extends Components.RuxIconGpsOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9201,9 +8318,7 @@ export class RuxIconGpsOff {
 
 
 export declare interface RuxIconGrade extends Components.RuxIconGrade {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9222,9 +8337,7 @@ export class RuxIconGrade {
 
 
 export declare interface RuxIconGradient extends Components.RuxIconGradient {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9243,9 +8356,7 @@ export class RuxIconGradient {
 
 
 export declare interface RuxIconGrain extends Components.RuxIconGrain {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9264,9 +8375,7 @@ export class RuxIconGrain {
 
 
 export declare interface RuxIconGraphicEq extends Components.RuxIconGraphicEq {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9285,9 +8394,7 @@ export class RuxIconGraphicEq {
 
 
 export declare interface RuxIconGridOff extends Components.RuxIconGridOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9306,9 +8413,7 @@ export class RuxIconGridOff {
 
 
 export declare interface RuxIconGridOn extends Components.RuxIconGridOn {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9327,9 +8432,7 @@ export class RuxIconGridOn {
 
 
 export declare interface RuxIconGroup extends Components.RuxIconGroup {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9348,9 +8451,7 @@ export class RuxIconGroup {
 
 
 export declare interface RuxIconGroupAdd extends Components.RuxIconGroupAdd {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9369,9 +8470,7 @@ export class RuxIconGroupAdd {
 
 
 export declare interface RuxIconGroupWork extends Components.RuxIconGroupWork {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9390,9 +8489,7 @@ export class RuxIconGroupWork {
 
 
 export declare interface RuxIconHd extends Components.RuxIconHd {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9411,9 +8508,7 @@ export class RuxIconHd {
 
 
 export declare interface RuxIconHdrOff extends Components.RuxIconHdrOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9432,9 +8527,7 @@ export class RuxIconHdrOff {
 
 
 export declare interface RuxIconHdrOn extends Components.RuxIconHdrOn {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9453,9 +8546,7 @@ export class RuxIconHdrOn {
 
 
 export declare interface RuxIconHdrStrong extends Components.RuxIconHdrStrong {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9474,9 +8565,7 @@ export class RuxIconHdrStrong {
 
 
 export declare interface RuxIconHdrWeak extends Components.RuxIconHdrWeak {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9495,9 +8584,7 @@ export class RuxIconHdrWeak {
 
 
 export declare interface RuxIconHeadset extends Components.RuxIconHeadset {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9516,9 +8603,7 @@ export class RuxIconHeadset {
 
 
 export declare interface RuxIconHeadsetMic extends Components.RuxIconHeadsetMic {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9537,9 +8622,7 @@ export class RuxIconHeadsetMic {
 
 
 export declare interface RuxIconHealing extends Components.RuxIconHealing {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9558,9 +8641,7 @@ export class RuxIconHealing {
 
 
 export declare interface RuxIconHearing extends Components.RuxIconHearing {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9579,9 +8660,7 @@ export class RuxIconHearing {
 
 
 export declare interface RuxIconHelp extends Components.RuxIconHelp {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9600,9 +8679,7 @@ export class RuxIconHelp {
 
 
 export declare interface RuxIconHelpOutline extends Components.RuxIconHelpOutline {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9621,9 +8698,7 @@ export class RuxIconHelpOutline {
 
 
 export declare interface RuxIconHighQuality extends Components.RuxIconHighQuality {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9642,9 +8717,7 @@ export class RuxIconHighQuality {
 
 
 export declare interface RuxIconHighlight extends Components.RuxIconHighlight {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9663,9 +8736,7 @@ export class RuxIconHighlight {
 
 
 export declare interface RuxIconHighlightOff extends Components.RuxIconHighlightOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9684,9 +8755,7 @@ export class RuxIconHighlightOff {
 
 
 export declare interface RuxIconHistory extends Components.RuxIconHistory {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9705,9 +8774,7 @@ export class RuxIconHistory {
 
 
 export declare interface RuxIconHome extends Components.RuxIconHome {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9726,9 +8793,7 @@ export class RuxIconHome {
 
 
 export declare interface RuxIconHorizontalSplit extends Components.RuxIconHorizontalSplit {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9747,9 +8812,7 @@ export class RuxIconHorizontalSplit {
 
 
 export declare interface RuxIconHotTub extends Components.RuxIconHotTub {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9768,9 +8831,7 @@ export class RuxIconHotTub {
 
 
 export declare interface RuxIconHotel extends Components.RuxIconHotel {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9789,9 +8850,7 @@ export class RuxIconHotel {
 
 
 export declare interface RuxIconHourglassEmpty extends Components.RuxIconHourglassEmpty {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9810,9 +8869,7 @@ export class RuxIconHourglassEmpty {
 
 
 export declare interface RuxIconHourglassFull extends Components.RuxIconHourglassFull {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9831,9 +8888,7 @@ export class RuxIconHourglassFull {
 
 
 export declare interface RuxIconHowToReg extends Components.RuxIconHowToReg {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9852,9 +8907,7 @@ export class RuxIconHowToReg {
 
 
 export declare interface RuxIconHowToVote extends Components.RuxIconHowToVote {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9873,9 +8926,7 @@ export class RuxIconHowToVote {
 
 
 export declare interface RuxIconHttp extends Components.RuxIconHttp {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9894,9 +8945,7 @@ export class RuxIconHttp {
 
 
 export declare interface RuxIconHttps extends Components.RuxIconHttps {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9915,9 +8964,7 @@ export class RuxIconHttps {
 
 
 export declare interface RuxIconImage extends Components.RuxIconImage {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9936,9 +8983,7 @@ export class RuxIconImage {
 
 
 export declare interface RuxIconImageAspectRatio extends Components.RuxIconImageAspectRatio {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9957,9 +9002,7 @@ export class RuxIconImageAspectRatio {
 
 
 export declare interface RuxIconImageSearch extends Components.RuxIconImageSearch {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9978,9 +9021,7 @@ export class RuxIconImageSearch {
 
 
 export declare interface RuxIconImportContacts extends Components.RuxIconImportContacts {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -9999,9 +9040,7 @@ export class RuxIconImportContacts {
 
 
 export declare interface RuxIconImportExport extends Components.RuxIconImportExport {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10020,9 +9059,7 @@ export class RuxIconImportExport {
 
 
 export declare interface RuxIconImportantDevices extends Components.RuxIconImportantDevices {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10041,9 +9078,7 @@ export class RuxIconImportantDevices {
 
 
 export declare interface RuxIconInbox extends Components.RuxIconInbox {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10062,9 +9097,7 @@ export class RuxIconInbox {
 
 
 export declare interface RuxIconIndeterminateCheckBox extends Components.RuxIconIndeterminateCheckBox {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10083,9 +9116,7 @@ export class RuxIconIndeterminateCheckBox {
 
 
 export declare interface RuxIconInfo extends Components.RuxIconInfo {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10104,9 +9135,7 @@ export class RuxIconInfo {
 
 
 export declare interface RuxIconInput extends Components.RuxIconInput {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10125,9 +9154,7 @@ export class RuxIconInput {
 
 
 export declare interface RuxIconInsertChart extends Components.RuxIconInsertChart {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10146,9 +9173,7 @@ export class RuxIconInsertChart {
 
 
 export declare interface RuxIconInsertChartOutlined extends Components.RuxIconInsertChartOutlined {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10167,9 +9192,7 @@ export class RuxIconInsertChartOutlined {
 
 
 export declare interface RuxIconInsertComment extends Components.RuxIconInsertComment {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10188,9 +9211,7 @@ export class RuxIconInsertComment {
 
 
 export declare interface RuxIconInsertDriveFile extends Components.RuxIconInsertDriveFile {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10209,9 +9230,7 @@ export class RuxIconInsertDriveFile {
 
 
 export declare interface RuxIconInsertEmoticon extends Components.RuxIconInsertEmoticon {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10230,9 +9249,7 @@ export class RuxIconInsertEmoticon {
 
 
 export declare interface RuxIconInsertInvitation extends Components.RuxIconInsertInvitation {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10251,9 +9268,7 @@ export class RuxIconInsertInvitation {
 
 
 export declare interface RuxIconInsertLink extends Components.RuxIconInsertLink {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10272,9 +9287,7 @@ export class RuxIconInsertLink {
 
 
 export declare interface RuxIconInsertPhoto extends Components.RuxIconInsertPhoto {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10293,9 +9306,7 @@ export class RuxIconInsertPhoto {
 
 
 export declare interface RuxIconInvertColors extends Components.RuxIconInvertColors {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10314,9 +9325,7 @@ export class RuxIconInvertColors {
 
 
 export declare interface RuxIconInvertColorsOff extends Components.RuxIconInvertColorsOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10335,9 +9344,7 @@ export class RuxIconInvertColorsOff {
 
 
 export declare interface RuxIconIso extends Components.RuxIconIso {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10356,9 +9363,7 @@ export class RuxIconIso {
 
 
 export declare interface RuxIconKeyboard extends Components.RuxIconKeyboard {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10377,9 +9382,7 @@ export class RuxIconKeyboard {
 
 
 export declare interface RuxIconKeyboardArrowDown extends Components.RuxIconKeyboardArrowDown {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10398,9 +9401,7 @@ export class RuxIconKeyboardArrowDown {
 
 
 export declare interface RuxIconKeyboardArrowLeft extends Components.RuxIconKeyboardArrowLeft {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10419,9 +9420,7 @@ export class RuxIconKeyboardArrowLeft {
 
 
 export declare interface RuxIconKeyboardArrowRight extends Components.RuxIconKeyboardArrowRight {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10440,9 +9439,7 @@ export class RuxIconKeyboardArrowRight {
 
 
 export declare interface RuxIconKeyboardArrowUp extends Components.RuxIconKeyboardArrowUp {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10461,9 +9458,7 @@ export class RuxIconKeyboardArrowUp {
 
 
 export declare interface RuxIconKeyboardBackspace extends Components.RuxIconKeyboardBackspace {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10482,9 +9477,7 @@ export class RuxIconKeyboardBackspace {
 
 
 export declare interface RuxIconKeyboardCapslock extends Components.RuxIconKeyboardCapslock {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10503,9 +9496,7 @@ export class RuxIconKeyboardCapslock {
 
 
 export declare interface RuxIconKeyboardHide extends Components.RuxIconKeyboardHide {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10524,9 +9515,7 @@ export class RuxIconKeyboardHide {
 
 
 export declare interface RuxIconKeyboardReturn extends Components.RuxIconKeyboardReturn {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10545,9 +9534,7 @@ export class RuxIconKeyboardReturn {
 
 
 export declare interface RuxIconKeyboardTab extends Components.RuxIconKeyboardTab {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10566,9 +9553,7 @@ export class RuxIconKeyboardTab {
 
 
 export declare interface RuxIconKeyboardVoice extends Components.RuxIconKeyboardVoice {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10587,9 +9572,7 @@ export class RuxIconKeyboardVoice {
 
 
 export declare interface RuxIconKitchen extends Components.RuxIconKitchen {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10608,9 +9591,7 @@ export class RuxIconKitchen {
 
 
 export declare interface RuxIconLabel extends Components.RuxIconLabel {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10629,9 +9610,7 @@ export class RuxIconLabel {
 
 
 export declare interface RuxIconLabelImportant extends Components.RuxIconLabelImportant {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10650,9 +9629,7 @@ export class RuxIconLabelImportant {
 
 
 export declare interface RuxIconLabelOff extends Components.RuxIconLabelOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10671,9 +9648,7 @@ export class RuxIconLabelOff {
 
 
 export declare interface RuxIconLandscape extends Components.RuxIconLandscape {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10692,9 +9667,7 @@ export class RuxIconLandscape {
 
 
 export declare interface RuxIconLanguage extends Components.RuxIconLanguage {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10713,9 +9686,7 @@ export class RuxIconLanguage {
 
 
 export declare interface RuxIconLaptop extends Components.RuxIconLaptop {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10734,9 +9705,7 @@ export class RuxIconLaptop {
 
 
 export declare interface RuxIconLaptopChromebook extends Components.RuxIconLaptopChromebook {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10755,9 +9724,7 @@ export class RuxIconLaptopChromebook {
 
 
 export declare interface RuxIconLaptopMac extends Components.RuxIconLaptopMac {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10776,9 +9743,7 @@ export class RuxIconLaptopMac {
 
 
 export declare interface RuxIconLaptopWindows extends Components.RuxIconLaptopWindows {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10797,9 +9762,7 @@ export class RuxIconLaptopWindows {
 
 
 export declare interface RuxIconLastPage extends Components.RuxIconLastPage {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10818,9 +9781,7 @@ export class RuxIconLastPage {
 
 
 export declare interface RuxIconLaunch extends Components.RuxIconLaunch {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10839,9 +9800,7 @@ export class RuxIconLaunch {
 
 
 export declare interface RuxIconLayers extends Components.RuxIconLayers {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10860,9 +9819,7 @@ export class RuxIconLayers {
 
 
 export declare interface RuxIconLayersClear extends Components.RuxIconLayersClear {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10881,9 +9838,7 @@ export class RuxIconLayersClear {
 
 
 export declare interface RuxIconLeakAdd extends Components.RuxIconLeakAdd {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10902,9 +9857,7 @@ export class RuxIconLeakAdd {
 
 
 export declare interface RuxIconLeakRemove extends Components.RuxIconLeakRemove {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10923,9 +9876,7 @@ export class RuxIconLeakRemove {
 
 
 export declare interface RuxIconLens extends Components.RuxIconLens {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10944,9 +9895,7 @@ export class RuxIconLens {
 
 
 export declare interface RuxIconLibraryAdd extends Components.RuxIconLibraryAdd {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10965,9 +9914,7 @@ export class RuxIconLibraryAdd {
 
 
 export declare interface RuxIconLibraryBooks extends Components.RuxIconLibraryBooks {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -10986,9 +9933,7 @@ export class RuxIconLibraryBooks {
 
 
 export declare interface RuxIconLibraryMusic extends Components.RuxIconLibraryMusic {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11007,9 +9952,7 @@ export class RuxIconLibraryMusic {
 
 
 export declare interface RuxIconLineStyle extends Components.RuxIconLineStyle {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11028,9 +9971,7 @@ export class RuxIconLineStyle {
 
 
 export declare interface RuxIconLineWeight extends Components.RuxIconLineWeight {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11049,9 +9990,7 @@ export class RuxIconLineWeight {
 
 
 export declare interface RuxIconLinearScale extends Components.RuxIconLinearScale {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11070,9 +10009,7 @@ export class RuxIconLinearScale {
 
 
 export declare interface RuxIconLink extends Components.RuxIconLink {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11091,9 +10028,7 @@ export class RuxIconLink {
 
 
 export declare interface RuxIconLinkOff extends Components.RuxIconLinkOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11112,9 +10047,7 @@ export class RuxIconLinkOff {
 
 
 export declare interface RuxIconLinkedCamera extends Components.RuxIconLinkedCamera {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11133,9 +10066,7 @@ export class RuxIconLinkedCamera {
 
 
 export declare interface RuxIconList extends Components.RuxIconList {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11154,9 +10085,7 @@ export class RuxIconList {
 
 
 export declare interface RuxIconListAlt extends Components.RuxIconListAlt {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11175,9 +10104,7 @@ export class RuxIconListAlt {
 
 
 export declare interface RuxIconLiveHelp extends Components.RuxIconLiveHelp {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11196,9 +10123,7 @@ export class RuxIconLiveHelp {
 
 
 export declare interface RuxIconLiveTv extends Components.RuxIconLiveTv {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11217,9 +10142,7 @@ export class RuxIconLiveTv {
 
 
 export declare interface RuxIconLocalActivity extends Components.RuxIconLocalActivity {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11238,9 +10161,7 @@ export class RuxIconLocalActivity {
 
 
 export declare interface RuxIconLocalAirport extends Components.RuxIconLocalAirport {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11259,9 +10180,7 @@ export class RuxIconLocalAirport {
 
 
 export declare interface RuxIconLocalAtm extends Components.RuxIconLocalAtm {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11280,9 +10199,7 @@ export class RuxIconLocalAtm {
 
 
 export declare interface RuxIconLocalBar extends Components.RuxIconLocalBar {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11301,9 +10218,7 @@ export class RuxIconLocalBar {
 
 
 export declare interface RuxIconLocalCafe extends Components.RuxIconLocalCafe {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11322,9 +10237,7 @@ export class RuxIconLocalCafe {
 
 
 export declare interface RuxIconLocalCarWash extends Components.RuxIconLocalCarWash {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11343,9 +10256,7 @@ export class RuxIconLocalCarWash {
 
 
 export declare interface RuxIconLocalConvenienceStore extends Components.RuxIconLocalConvenienceStore {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11364,9 +10275,7 @@ export class RuxIconLocalConvenienceStore {
 
 
 export declare interface RuxIconLocalDining extends Components.RuxIconLocalDining {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11385,9 +10294,7 @@ export class RuxIconLocalDining {
 
 
 export declare interface RuxIconLocalDrink extends Components.RuxIconLocalDrink {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11406,9 +10313,7 @@ export class RuxIconLocalDrink {
 
 
 export declare interface RuxIconLocalGasStation extends Components.RuxIconLocalGasStation {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11427,9 +10332,7 @@ export class RuxIconLocalGasStation {
 
 
 export declare interface RuxIconLocalGroceryStore extends Components.RuxIconLocalGroceryStore {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11448,9 +10351,7 @@ export class RuxIconLocalGroceryStore {
 
 
 export declare interface RuxIconLocalHospital extends Components.RuxIconLocalHospital {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11469,9 +10370,7 @@ export class RuxIconLocalHospital {
 
 
 export declare interface RuxIconLocalHotel extends Components.RuxIconLocalHotel {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11490,9 +10389,7 @@ export class RuxIconLocalHotel {
 
 
 export declare interface RuxIconLocalLaundryService extends Components.RuxIconLocalLaundryService {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11511,9 +10408,7 @@ export class RuxIconLocalLaundryService {
 
 
 export declare interface RuxIconLocalLibrary extends Components.RuxIconLocalLibrary {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11532,9 +10427,7 @@ export class RuxIconLocalLibrary {
 
 
 export declare interface RuxIconLocalMall extends Components.RuxIconLocalMall {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11553,9 +10446,7 @@ export class RuxIconLocalMall {
 
 
 export declare interface RuxIconLocalMovies extends Components.RuxIconLocalMovies {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11574,9 +10465,7 @@ export class RuxIconLocalMovies {
 
 
 export declare interface RuxIconLocalOffer extends Components.RuxIconLocalOffer {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11595,9 +10484,7 @@ export class RuxIconLocalOffer {
 
 
 export declare interface RuxIconLocalParking extends Components.RuxIconLocalParking {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11616,9 +10503,7 @@ export class RuxIconLocalParking {
 
 
 export declare interface RuxIconLocalPharmacy extends Components.RuxIconLocalPharmacy {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11637,9 +10522,7 @@ export class RuxIconLocalPharmacy {
 
 
 export declare interface RuxIconLocalPhone extends Components.RuxIconLocalPhone {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11658,9 +10541,7 @@ export class RuxIconLocalPhone {
 
 
 export declare interface RuxIconLocalPlay extends Components.RuxIconLocalPlay {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11679,9 +10560,7 @@ export class RuxIconLocalPlay {
 
 
 export declare interface RuxIconLocalPostOffice extends Components.RuxIconLocalPostOffice {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11700,9 +10579,7 @@ export class RuxIconLocalPostOffice {
 
 
 export declare interface RuxIconLocalPrintshop extends Components.RuxIconLocalPrintshop {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11721,9 +10598,7 @@ export class RuxIconLocalPrintshop {
 
 
 export declare interface RuxIconLocalSee extends Components.RuxIconLocalSee {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11742,9 +10617,7 @@ export class RuxIconLocalSee {
 
 
 export declare interface RuxIconLocalShipping extends Components.RuxIconLocalShipping {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11763,9 +10636,7 @@ export class RuxIconLocalShipping {
 
 
 export declare interface RuxIconLocalTaxi extends Components.RuxIconLocalTaxi {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11784,9 +10655,7 @@ export class RuxIconLocalTaxi {
 
 
 export declare interface RuxIconLocationCity extends Components.RuxIconLocationCity {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11805,9 +10674,7 @@ export class RuxIconLocationCity {
 
 
 export declare interface RuxIconLocationDisabled extends Components.RuxIconLocationDisabled {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11826,9 +10693,7 @@ export class RuxIconLocationDisabled {
 
 
 export declare interface RuxIconLocationOff extends Components.RuxIconLocationOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11847,9 +10712,7 @@ export class RuxIconLocationOff {
 
 
 export declare interface RuxIconLocationOn extends Components.RuxIconLocationOn {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11868,9 +10731,7 @@ export class RuxIconLocationOn {
 
 
 export declare interface RuxIconLocationSearching extends Components.RuxIconLocationSearching {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11889,9 +10750,7 @@ export class RuxIconLocationSearching {
 
 
 export declare interface RuxIconLock extends Components.RuxIconLock {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11910,9 +10769,7 @@ export class RuxIconLock {
 
 
 export declare interface RuxIconLockOpen extends Components.RuxIconLockOpen {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11931,9 +10788,7 @@ export class RuxIconLockOpen {
 
 
 export declare interface RuxIconLooks extends Components.RuxIconLooks {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11952,9 +10807,7 @@ export class RuxIconLooks {
 
 
 export declare interface RuxIconLooks1 extends Components.RuxIconLooks1 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11973,9 +10826,7 @@ export class RuxIconLooks1 {
 
 
 export declare interface RuxIconLooks2 extends Components.RuxIconLooks2 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -11994,9 +10845,7 @@ export class RuxIconLooks2 {
 
 
 export declare interface RuxIconLooks3 extends Components.RuxIconLooks3 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12015,9 +10864,7 @@ export class RuxIconLooks3 {
 
 
 export declare interface RuxIconLooks4 extends Components.RuxIconLooks4 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12036,9 +10883,7 @@ export class RuxIconLooks4 {
 
 
 export declare interface RuxIconLooks5 extends Components.RuxIconLooks5 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12057,9 +10902,7 @@ export class RuxIconLooks5 {
 
 
 export declare interface RuxIconLooks6 extends Components.RuxIconLooks6 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12078,9 +10921,7 @@ export class RuxIconLooks6 {
 
 
 export declare interface RuxIconLoop extends Components.RuxIconLoop {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12099,9 +10940,7 @@ export class RuxIconLoop {
 
 
 export declare interface RuxIconLoupe extends Components.RuxIconLoupe {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12120,9 +10959,7 @@ export class RuxIconLoupe {
 
 
 export declare interface RuxIconLowPriority extends Components.RuxIconLowPriority {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12141,9 +10978,7 @@ export class RuxIconLowPriority {
 
 
 export declare interface RuxIconLoyalty extends Components.RuxIconLoyalty {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12162,9 +10997,7 @@ export class RuxIconLoyalty {
 
 
 export declare interface RuxIconMail extends Components.RuxIconMail {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12183,9 +11016,7 @@ export class RuxIconMail {
 
 
 export declare interface RuxIconMailOutline extends Components.RuxIconMailOutline {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12204,9 +11035,7 @@ export class RuxIconMailOutline {
 
 
 export declare interface RuxIconMap extends Components.RuxIconMap {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12225,9 +11054,7 @@ export class RuxIconMap {
 
 
 export declare interface RuxIconMarkunread extends Components.RuxIconMarkunread {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12246,9 +11073,7 @@ export class RuxIconMarkunread {
 
 
 export declare interface RuxIconMarkunreadMailbox extends Components.RuxIconMarkunreadMailbox {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12267,9 +11092,7 @@ export class RuxIconMarkunreadMailbox {
 
 
 export declare interface RuxIconMaximize extends Components.RuxIconMaximize {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12288,9 +11111,7 @@ export class RuxIconMaximize {
 
 
 export declare interface RuxIconMeetingRoom extends Components.RuxIconMeetingRoom {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12309,9 +11130,7 @@ export class RuxIconMeetingRoom {
 
 
 export declare interface RuxIconMemory extends Components.RuxIconMemory {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12330,9 +11149,7 @@ export class RuxIconMemory {
 
 
 export declare interface RuxIconMenu extends Components.RuxIconMenu {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12351,9 +11168,7 @@ export class RuxIconMenu {
 
 
 export declare interface RuxIconMergeType extends Components.RuxIconMergeType {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12372,9 +11187,7 @@ export class RuxIconMergeType {
 
 
 export declare interface RuxIconMessage extends Components.RuxIconMessage {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12393,9 +11206,7 @@ export class RuxIconMessage {
 
 
 export declare interface RuxIconMic extends Components.RuxIconMic {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12414,9 +11225,7 @@ export class RuxIconMic {
 
 
 export declare interface RuxIconMicNone extends Components.RuxIconMicNone {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12435,9 +11244,7 @@ export class RuxIconMicNone {
 
 
 export declare interface RuxIconMicOff extends Components.RuxIconMicOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12456,9 +11263,7 @@ export class RuxIconMicOff {
 
 
 export declare interface RuxIconMinimize extends Components.RuxIconMinimize {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12477,9 +11282,7 @@ export class RuxIconMinimize {
 
 
 export declare interface RuxIconMissedVideoCall extends Components.RuxIconMissedVideoCall {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12498,9 +11301,7 @@ export class RuxIconMissedVideoCall {
 
 
 export declare interface RuxIconMission extends Components.RuxIconMission {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12519,9 +11320,7 @@ export class RuxIconMission {
 
 
 export declare interface RuxIconMms extends Components.RuxIconMms {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12540,9 +11339,7 @@ export class RuxIconMms {
 
 
 export declare interface RuxIconMobileFriendly extends Components.RuxIconMobileFriendly {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12561,9 +11358,7 @@ export class RuxIconMobileFriendly {
 
 
 export declare interface RuxIconMobileOff extends Components.RuxIconMobileOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12582,9 +11377,7 @@ export class RuxIconMobileOff {
 
 
 export declare interface RuxIconMobileScreenShare extends Components.RuxIconMobileScreenShare {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12603,9 +11396,7 @@ export class RuxIconMobileScreenShare {
 
 
 export declare interface RuxIconModeComment extends Components.RuxIconModeComment {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12624,9 +11415,7 @@ export class RuxIconModeComment {
 
 
 export declare interface RuxIconMonetizationOn extends Components.RuxIconMonetizationOn {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12645,9 +11434,7 @@ export class RuxIconMonetizationOn {
 
 
 export declare interface RuxIconMoney extends Components.RuxIconMoney {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12666,9 +11453,7 @@ export class RuxIconMoney {
 
 
 export declare interface RuxIconMoneyOff extends Components.RuxIconMoneyOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12687,9 +11472,7 @@ export class RuxIconMoneyOff {
 
 
 export declare interface RuxIconMonochromePhotos extends Components.RuxIconMonochromePhotos {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12708,9 +11491,7 @@ export class RuxIconMonochromePhotos {
 
 
 export declare interface RuxIconMood extends Components.RuxIconMood {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12729,9 +11510,7 @@ export class RuxIconMood {
 
 
 export declare interface RuxIconMoodBad extends Components.RuxIconMoodBad {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12750,9 +11529,7 @@ export class RuxIconMoodBad {
 
 
 export declare interface RuxIconMore extends Components.RuxIconMore {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12771,9 +11548,7 @@ export class RuxIconMore {
 
 
 export declare interface RuxIconMoreHoriz extends Components.RuxIconMoreHoriz {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12792,9 +11567,7 @@ export class RuxIconMoreHoriz {
 
 
 export declare interface RuxIconMoreVert extends Components.RuxIconMoreVert {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12813,9 +11586,7 @@ export class RuxIconMoreVert {
 
 
 export declare interface RuxIconMotorcycle extends Components.RuxIconMotorcycle {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12834,9 +11605,7 @@ export class RuxIconMotorcycle {
 
 
 export declare interface RuxIconMouse extends Components.RuxIconMouse {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12855,9 +11624,7 @@ export class RuxIconMouse {
 
 
 export declare interface RuxIconMoveToInbox extends Components.RuxIconMoveToInbox {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12876,9 +11643,7 @@ export class RuxIconMoveToInbox {
 
 
 export declare interface RuxIconMovie extends Components.RuxIconMovie {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12897,9 +11662,7 @@ export class RuxIconMovie {
 
 
 export declare interface RuxIconMovieCreation extends Components.RuxIconMovieCreation {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12918,9 +11681,7 @@ export class RuxIconMovieCreation {
 
 
 export declare interface RuxIconMovieFilter extends Components.RuxIconMovieFilter {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12939,9 +11700,7 @@ export class RuxIconMovieFilter {
 
 
 export declare interface RuxIconMultilineChart extends Components.RuxIconMultilineChart {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12960,9 +11719,7 @@ export class RuxIconMultilineChart {
 
 
 export declare interface RuxIconMusicNote extends Components.RuxIconMusicNote {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -12981,9 +11738,7 @@ export class RuxIconMusicNote {
 
 
 export declare interface RuxIconMusicOff extends Components.RuxIconMusicOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13002,9 +11757,7 @@ export class RuxIconMusicOff {
 
 
 export declare interface RuxIconMusicVideo extends Components.RuxIconMusicVideo {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13023,9 +11776,7 @@ export class RuxIconMusicVideo {
 
 
 export declare interface RuxIconMyLocation extends Components.RuxIconMyLocation {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13044,9 +11795,7 @@ export class RuxIconMyLocation {
 
 
 export declare interface RuxIconNature extends Components.RuxIconNature {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13065,9 +11814,7 @@ export class RuxIconNature {
 
 
 export declare interface RuxIconNaturePeople extends Components.RuxIconNaturePeople {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13086,9 +11833,7 @@ export class RuxIconNaturePeople {
 
 
 export declare interface RuxIconNavigateBefore extends Components.RuxIconNavigateBefore {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13107,9 +11852,7 @@ export class RuxIconNavigateBefore {
 
 
 export declare interface RuxIconNavigateNext extends Components.RuxIconNavigateNext {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13128,9 +11871,7 @@ export class RuxIconNavigateNext {
 
 
 export declare interface RuxIconNavigation extends Components.RuxIconNavigation {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13149,9 +11890,7 @@ export class RuxIconNavigation {
 
 
 export declare interface RuxIconNearMe extends Components.RuxIconNearMe {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13170,9 +11909,7 @@ export class RuxIconNearMe {
 
 
 export declare interface RuxIconNetcom extends Components.RuxIconNetcom {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13191,9 +11928,7 @@ export class RuxIconNetcom {
 
 
 export declare interface RuxIconNetworkCell extends Components.RuxIconNetworkCell {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13212,9 +11947,7 @@ export class RuxIconNetworkCell {
 
 
 export declare interface RuxIconNetworkCheck extends Components.RuxIconNetworkCheck {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13233,9 +11966,7 @@ export class RuxIconNetworkCheck {
 
 
 export declare interface RuxIconNetworkLocked extends Components.RuxIconNetworkLocked {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13254,9 +11985,7 @@ export class RuxIconNetworkLocked {
 
 
 export declare interface RuxIconNetworkWifi extends Components.RuxIconNetworkWifi {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13275,9 +12004,7 @@ export class RuxIconNetworkWifi {
 
 
 export declare interface RuxIconNewReleases extends Components.RuxIconNewReleases {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13296,9 +12023,7 @@ export class RuxIconNewReleases {
 
 
 export declare interface RuxIconNextWeek extends Components.RuxIconNextWeek {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13317,9 +12042,7 @@ export class RuxIconNextWeek {
 
 
 export declare interface RuxIconNfc extends Components.RuxIconNfc {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13338,9 +12061,7 @@ export class RuxIconNfc {
 
 
 export declare interface RuxIconNoEncryption extends Components.RuxIconNoEncryption {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13359,9 +12080,7 @@ export class RuxIconNoEncryption {
 
 
 export declare interface RuxIconNoMeetingRoom extends Components.RuxIconNoMeetingRoom {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13380,9 +12099,7 @@ export class RuxIconNoMeetingRoom {
 
 
 export declare interface RuxIconNoSim extends Components.RuxIconNoSim {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13401,9 +12118,7 @@ export class RuxIconNoSim {
 
 
 export declare interface RuxIconNotInterested extends Components.RuxIconNotInterested {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13422,9 +12137,7 @@ export class RuxIconNotInterested {
 
 
 export declare interface RuxIconNotListedLocation extends Components.RuxIconNotListedLocation {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13443,9 +12156,7 @@ export class RuxIconNotListedLocation {
 
 
 export declare interface RuxIconNote extends Components.RuxIconNote {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13464,9 +12175,7 @@ export class RuxIconNote {
 
 
 export declare interface RuxIconNoteAdd extends Components.RuxIconNoteAdd {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13485,9 +12194,7 @@ export class RuxIconNoteAdd {
 
 
 export declare interface RuxIconNotes extends Components.RuxIconNotes {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13506,9 +12213,7 @@ export class RuxIconNotes {
 
 
 export declare interface RuxIconNotificationImportant extends Components.RuxIconNotificationImportant {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13527,9 +12232,7 @@ export class RuxIconNotificationImportant {
 
 
 export declare interface RuxIconNotifications extends Components.RuxIconNotifications {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13548,9 +12251,7 @@ export class RuxIconNotifications {
 
 
 export declare interface RuxIconNotificationsActive extends Components.RuxIconNotificationsActive {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13569,9 +12270,7 @@ export class RuxIconNotificationsActive {
 
 
 export declare interface RuxIconNotificationsNone extends Components.RuxIconNotificationsNone {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13590,9 +12289,7 @@ export class RuxIconNotificationsNone {
 
 
 export declare interface RuxIconNotificationsOff extends Components.RuxIconNotificationsOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13611,9 +12308,7 @@ export class RuxIconNotificationsOff {
 
 
 export declare interface RuxIconNotificationsPaused extends Components.RuxIconNotificationsPaused {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13632,9 +12327,7 @@ export class RuxIconNotificationsPaused {
 
 
 export declare interface RuxIconOfflineBolt extends Components.RuxIconOfflineBolt {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13653,9 +12346,7 @@ export class RuxIconOfflineBolt {
 
 
 export declare interface RuxIconOfflinePin extends Components.RuxIconOfflinePin {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13674,9 +12365,7 @@ export class RuxIconOfflinePin {
 
 
 export declare interface RuxIconOndemandVideo extends Components.RuxIconOndemandVideo {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13695,9 +12384,7 @@ export class RuxIconOndemandVideo {
 
 
 export declare interface RuxIconOpacity extends Components.RuxIconOpacity {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13716,9 +12403,7 @@ export class RuxIconOpacity {
 
 
 export declare interface RuxIconOpenInBrowser extends Components.RuxIconOpenInBrowser {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13737,9 +12422,7 @@ export class RuxIconOpenInBrowser {
 
 
 export declare interface RuxIconOpenInNew extends Components.RuxIconOpenInNew {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13758,9 +12441,7 @@ export class RuxIconOpenInNew {
 
 
 export declare interface RuxIconOpenWith extends Components.RuxIconOpenWith {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13779,9 +12460,7 @@ export class RuxIconOpenWith {
 
 
 export declare interface RuxIconOutlinedFlag extends Components.RuxIconOutlinedFlag {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13800,9 +12479,7 @@ export class RuxIconOutlinedFlag {
 
 
 export declare interface RuxIconPages extends Components.RuxIconPages {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13821,9 +12498,7 @@ export class RuxIconPages {
 
 
 export declare interface RuxIconPageview extends Components.RuxIconPageview {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13842,9 +12517,7 @@ export class RuxIconPageview {
 
 
 export declare interface RuxIconPalette extends Components.RuxIconPalette {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13863,9 +12536,7 @@ export class RuxIconPalette {
 
 
 export declare interface RuxIconPanTool extends Components.RuxIconPanTool {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13884,9 +12555,7 @@ export class RuxIconPanTool {
 
 
 export declare interface RuxIconPanorama extends Components.RuxIconPanorama {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13905,9 +12574,7 @@ export class RuxIconPanorama {
 
 
 export declare interface RuxIconPanoramaFishEye extends Components.RuxIconPanoramaFishEye {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13926,9 +12593,7 @@ export class RuxIconPanoramaFishEye {
 
 
 export declare interface RuxIconPanoramaHorizontal extends Components.RuxIconPanoramaHorizontal {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13947,9 +12612,7 @@ export class RuxIconPanoramaHorizontal {
 
 
 export declare interface RuxIconPanoramaVertical extends Components.RuxIconPanoramaVertical {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13968,9 +12631,7 @@ export class RuxIconPanoramaVertical {
 
 
 export declare interface RuxIconPanoramaWideAngle extends Components.RuxIconPanoramaWideAngle {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -13989,9 +12650,7 @@ export class RuxIconPanoramaWideAngle {
 
 
 export declare interface RuxIconPartyMode extends Components.RuxIconPartyMode {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14010,9 +12669,7 @@ export class RuxIconPartyMode {
 
 
 export declare interface RuxIconPause extends Components.RuxIconPause {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14031,9 +12688,7 @@ export class RuxIconPause {
 
 
 export declare interface RuxIconPauseCircleFilled extends Components.RuxIconPauseCircleFilled {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14052,9 +12707,7 @@ export class RuxIconPauseCircleFilled {
 
 
 export declare interface RuxIconPauseCircleOutline extends Components.RuxIconPauseCircleOutline {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14073,9 +12726,7 @@ export class RuxIconPauseCircleOutline {
 
 
 export declare interface RuxIconPausePresentation extends Components.RuxIconPausePresentation {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14094,9 +12745,7 @@ export class RuxIconPausePresentation {
 
 
 export declare interface RuxIconPayload extends Components.RuxIconPayload {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14115,9 +12764,7 @@ export class RuxIconPayload {
 
 
 export declare interface RuxIconPayment extends Components.RuxIconPayment {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14136,9 +12783,7 @@ export class RuxIconPayment {
 
 
 export declare interface RuxIconPeopleOutline extends Components.RuxIconPeopleOutline {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14157,9 +12802,7 @@ export class RuxIconPeopleOutline {
 
 
 export declare interface RuxIconPermCameraMic extends Components.RuxIconPermCameraMic {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14178,9 +12821,7 @@ export class RuxIconPermCameraMic {
 
 
 export declare interface RuxIconPermContactCalendar extends Components.RuxIconPermContactCalendar {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14199,9 +12840,7 @@ export class RuxIconPermContactCalendar {
 
 
 export declare interface RuxIconPermDataSetting extends Components.RuxIconPermDataSetting {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14220,9 +12859,7 @@ export class RuxIconPermDataSetting {
 
 
 export declare interface RuxIconPermDeviceInformation extends Components.RuxIconPermDeviceInformation {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14241,9 +12878,7 @@ export class RuxIconPermDeviceInformation {
 
 
 export declare interface RuxIconPermIdentity extends Components.RuxIconPermIdentity {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14262,9 +12897,7 @@ export class RuxIconPermIdentity {
 
 
 export declare interface RuxIconPermMedia extends Components.RuxIconPermMedia {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14283,9 +12916,7 @@ export class RuxIconPermMedia {
 
 
 export declare interface RuxIconPermPhoneMsg extends Components.RuxIconPermPhoneMsg {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14304,9 +12935,7 @@ export class RuxIconPermPhoneMsg {
 
 
 export declare interface RuxIconPermScanWifi extends Components.RuxIconPermScanWifi {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14325,9 +12954,7 @@ export class RuxIconPermScanWifi {
 
 
 export declare interface RuxIconPerson extends Components.RuxIconPerson {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14346,9 +12973,7 @@ export class RuxIconPerson {
 
 
 export declare interface RuxIconPersonAdd extends Components.RuxIconPersonAdd {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14367,9 +12992,7 @@ export class RuxIconPersonAdd {
 
 
 export declare interface RuxIconPersonAddDisabled extends Components.RuxIconPersonAddDisabled {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14388,9 +13011,7 @@ export class RuxIconPersonAddDisabled {
 
 
 export declare interface RuxIconPersonOutline extends Components.RuxIconPersonOutline {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14409,9 +13030,7 @@ export class RuxIconPersonOutline {
 
 
 export declare interface RuxIconPersonPin extends Components.RuxIconPersonPin {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14430,9 +13049,7 @@ export class RuxIconPersonPin {
 
 
 export declare interface RuxIconPersonPinCircle extends Components.RuxIconPersonPinCircle {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14451,9 +13068,7 @@ export class RuxIconPersonPinCircle {
 
 
 export declare interface RuxIconPersonalVideo extends Components.RuxIconPersonalVideo {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14472,9 +13087,7 @@ export class RuxIconPersonalVideo {
 
 
 export declare interface RuxIconPets extends Components.RuxIconPets {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14493,9 +13106,7 @@ export class RuxIconPets {
 
 
 export declare interface RuxIconPhone extends Components.RuxIconPhone {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14514,9 +13125,7 @@ export class RuxIconPhone {
 
 
 export declare interface RuxIconPhoneAndroid extends Components.RuxIconPhoneAndroid {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14535,9 +13144,7 @@ export class RuxIconPhoneAndroid {
 
 
 export declare interface RuxIconPhoneBluetoothSpeaker extends Components.RuxIconPhoneBluetoothSpeaker {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14556,9 +13163,7 @@ export class RuxIconPhoneBluetoothSpeaker {
 
 
 export declare interface RuxIconPhoneCallback extends Components.RuxIconPhoneCallback {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14577,9 +13182,7 @@ export class RuxIconPhoneCallback {
 
 
 export declare interface RuxIconPhoneForwarded extends Components.RuxIconPhoneForwarded {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14598,9 +13201,7 @@ export class RuxIconPhoneForwarded {
 
 
 export declare interface RuxIconPhoneInTalk extends Components.RuxIconPhoneInTalk {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14619,9 +13220,7 @@ export class RuxIconPhoneInTalk {
 
 
 export declare interface RuxIconPhoneIphone extends Components.RuxIconPhoneIphone {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14640,9 +13239,7 @@ export class RuxIconPhoneIphone {
 
 
 export declare interface RuxIconPhoneLocked extends Components.RuxIconPhoneLocked {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14661,9 +13258,7 @@ export class RuxIconPhoneLocked {
 
 
 export declare interface RuxIconPhoneMissed extends Components.RuxIconPhoneMissed {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14682,9 +13277,7 @@ export class RuxIconPhoneMissed {
 
 
 export declare interface RuxIconPhonePaused extends Components.RuxIconPhonePaused {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14703,9 +13296,7 @@ export class RuxIconPhonePaused {
 
 
 export declare interface RuxIconPhonelink extends Components.RuxIconPhonelink {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14724,9 +13315,7 @@ export class RuxIconPhonelink {
 
 
 export declare interface RuxIconPhonelinkErase extends Components.RuxIconPhonelinkErase {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14745,9 +13334,7 @@ export class RuxIconPhonelinkErase {
 
 
 export declare interface RuxIconPhonelinkLock extends Components.RuxIconPhonelinkLock {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14766,9 +13353,7 @@ export class RuxIconPhonelinkLock {
 
 
 export declare interface RuxIconPhonelinkOff extends Components.RuxIconPhonelinkOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14787,9 +13372,7 @@ export class RuxIconPhonelinkOff {
 
 
 export declare interface RuxIconPhonelinkRing extends Components.RuxIconPhonelinkRing {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14808,9 +13391,7 @@ export class RuxIconPhonelinkRing {
 
 
 export declare interface RuxIconPhonelinkSetup extends Components.RuxIconPhonelinkSetup {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14829,9 +13410,7 @@ export class RuxIconPhonelinkSetup {
 
 
 export declare interface RuxIconPhoto extends Components.RuxIconPhoto {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14850,9 +13429,7 @@ export class RuxIconPhoto {
 
 
 export declare interface RuxIconPhotoAlbum extends Components.RuxIconPhotoAlbum {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14871,9 +13448,7 @@ export class RuxIconPhotoAlbum {
 
 
 export declare interface RuxIconPhotoCamera extends Components.RuxIconPhotoCamera {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14892,9 +13467,7 @@ export class RuxIconPhotoCamera {
 
 
 export declare interface RuxIconPhotoFilter extends Components.RuxIconPhotoFilter {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14913,9 +13486,7 @@ export class RuxIconPhotoFilter {
 
 
 export declare interface RuxIconPhotoLibrary extends Components.RuxIconPhotoLibrary {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14934,9 +13505,7 @@ export class RuxIconPhotoLibrary {
 
 
 export declare interface RuxIconPhotoSizeSelectActual extends Components.RuxIconPhotoSizeSelectActual {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14955,9 +13524,7 @@ export class RuxIconPhotoSizeSelectActual {
 
 
 export declare interface RuxIconPhotoSizeSelectLarge extends Components.RuxIconPhotoSizeSelectLarge {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14976,9 +13543,7 @@ export class RuxIconPhotoSizeSelectLarge {
 
 
 export declare interface RuxIconPhotoSizeSelectSmall extends Components.RuxIconPhotoSizeSelectSmall {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -14997,9 +13562,7 @@ export class RuxIconPhotoSizeSelectSmall {
 
 
 export declare interface RuxIconPictureAsPdf extends Components.RuxIconPictureAsPdf {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15018,9 +13581,7 @@ export class RuxIconPictureAsPdf {
 
 
 export declare interface RuxIconPictureInPicture extends Components.RuxIconPictureInPicture {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15039,9 +13600,7 @@ export class RuxIconPictureInPicture {
 
 
 export declare interface RuxIconPictureInPictureAlt extends Components.RuxIconPictureInPictureAlt {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15060,9 +13619,7 @@ export class RuxIconPictureInPictureAlt {
 
 
 export declare interface RuxIconPieChart extends Components.RuxIconPieChart {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15081,9 +13638,7 @@ export class RuxIconPieChart {
 
 
 export declare interface RuxIconPinDrop extends Components.RuxIconPinDrop {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15102,9 +13657,7 @@ export class RuxIconPinDrop {
 
 
 export declare interface RuxIconPlace extends Components.RuxIconPlace {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15123,9 +13676,7 @@ export class RuxIconPlace {
 
 
 export declare interface RuxIconPlayArrow extends Components.RuxIconPlayArrow {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15144,9 +13695,7 @@ export class RuxIconPlayArrow {
 
 
 export declare interface RuxIconPlayCircleFilled extends Components.RuxIconPlayCircleFilled {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15165,9 +13714,7 @@ export class RuxIconPlayCircleFilled {
 
 
 export declare interface RuxIconPlayCircleFilledWhite extends Components.RuxIconPlayCircleFilledWhite {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15186,9 +13733,7 @@ export class RuxIconPlayCircleFilledWhite {
 
 
 export declare interface RuxIconPlayCircleOutline extends Components.RuxIconPlayCircleOutline {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15207,9 +13752,7 @@ export class RuxIconPlayCircleOutline {
 
 
 export declare interface RuxIconPlayForWork extends Components.RuxIconPlayForWork {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15228,9 +13771,7 @@ export class RuxIconPlayForWork {
 
 
 export declare interface RuxIconPlaylistAdd extends Components.RuxIconPlaylistAdd {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15249,9 +13790,7 @@ export class RuxIconPlaylistAdd {
 
 
 export declare interface RuxIconPlaylistAddCheck extends Components.RuxIconPlaylistAddCheck {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15270,9 +13809,7 @@ export class RuxIconPlaylistAddCheck {
 
 
 export declare interface RuxIconPlaylistPlay extends Components.RuxIconPlaylistPlay {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15291,9 +13828,7 @@ export class RuxIconPlaylistPlay {
 
 
 export declare interface RuxIconPlusOne extends Components.RuxIconPlusOne {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15312,9 +13847,7 @@ export class RuxIconPlusOne {
 
 
 export declare interface RuxIconPoll extends Components.RuxIconPoll {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15333,9 +13866,7 @@ export class RuxIconPoll {
 
 
 export declare interface RuxIconPool extends Components.RuxIconPool {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15354,9 +13885,7 @@ export class RuxIconPool {
 
 
 export declare interface RuxIconPortableWifiOff extends Components.RuxIconPortableWifiOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15375,9 +13904,7 @@ export class RuxIconPortableWifiOff {
 
 
 export declare interface RuxIconPortrait extends Components.RuxIconPortrait {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15396,9 +13923,7 @@ export class RuxIconPortrait {
 
 
 export declare interface RuxIconPower extends Components.RuxIconPower {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15417,9 +13942,7 @@ export class RuxIconPower {
 
 
 export declare interface RuxIconPowerInput extends Components.RuxIconPowerInput {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15438,9 +13961,7 @@ export class RuxIconPowerInput {
 
 
 export declare interface RuxIconPowerOff extends Components.RuxIconPowerOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15459,9 +13980,7 @@ export class RuxIconPowerOff {
 
 
 export declare interface RuxIconPowerSettingsNew extends Components.RuxIconPowerSettingsNew {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15480,9 +13999,7 @@ export class RuxIconPowerSettingsNew {
 
 
 export declare interface RuxIconPregnantWoman extends Components.RuxIconPregnantWoman {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15501,9 +14018,7 @@ export class RuxIconPregnantWoman {
 
 
 export declare interface RuxIconPresentToAll extends Components.RuxIconPresentToAll {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15522,9 +14037,7 @@ export class RuxIconPresentToAll {
 
 
 export declare interface RuxIconPrint extends Components.RuxIconPrint {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15543,9 +14056,7 @@ export class RuxIconPrint {
 
 
 export declare interface RuxIconPrintDisabled extends Components.RuxIconPrintDisabled {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15564,9 +14075,7 @@ export class RuxIconPrintDisabled {
 
 
 export declare interface RuxIconPriorityHigh extends Components.RuxIconPriorityHigh {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15585,9 +14094,7 @@ export class RuxIconPriorityHigh {
 
 
 export declare interface RuxIconProcessor extends Components.RuxIconProcessor {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15606,9 +14113,7 @@ export class RuxIconProcessor {
 
 
 export declare interface RuxIconProcessorAlt extends Components.RuxIconProcessorAlt {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15627,9 +14132,7 @@ export class RuxIconProcessorAlt {
 
 
 export declare interface RuxIconPropulsionPower extends Components.RuxIconPropulsionPower {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15648,9 +14151,7 @@ export class RuxIconPropulsionPower {
 
 
 export declare interface RuxIconPublic extends Components.RuxIconPublic {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15669,9 +14170,7 @@ export class RuxIconPublic {
 
 
 export declare interface RuxIconPublish extends Components.RuxIconPublish {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15690,9 +14189,7 @@ export class RuxIconPublish {
 
 
 export declare interface RuxIconQueryBuilder extends Components.RuxIconQueryBuilder {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15711,9 +14208,7 @@ export class RuxIconQueryBuilder {
 
 
 export declare interface RuxIconQuestionAnswer extends Components.RuxIconQuestionAnswer {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15732,9 +14227,7 @@ export class RuxIconQuestionAnswer {
 
 
 export declare interface RuxIconQueue extends Components.RuxIconQueue {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15753,9 +14246,7 @@ export class RuxIconQueue {
 
 
 export declare interface RuxIconQueueMusic extends Components.RuxIconQueueMusic {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15774,9 +14265,7 @@ export class RuxIconQueueMusic {
 
 
 export declare interface RuxIconQueuePlayNext extends Components.RuxIconQueuePlayNext {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15795,9 +14284,7 @@ export class RuxIconQueuePlayNext {
 
 
 export declare interface RuxIconRadio extends Components.RuxIconRadio {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15816,9 +14303,7 @@ export class RuxIconRadio {
 
 
 export declare interface RuxIconRadioButtonChecked extends Components.RuxIconRadioButtonChecked {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15837,9 +14322,7 @@ export class RuxIconRadioButtonChecked {
 
 
 export declare interface RuxIconRadioButtonUnchecked extends Components.RuxIconRadioButtonUnchecked {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15858,9 +14341,7 @@ export class RuxIconRadioButtonUnchecked {
 
 
 export declare interface RuxIconRateReview extends Components.RuxIconRateReview {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15879,9 +14360,7 @@ export class RuxIconRateReview {
 
 
 export declare interface RuxIconReceipt extends Components.RuxIconReceipt {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15900,9 +14379,7 @@ export class RuxIconReceipt {
 
 
 export declare interface RuxIconRecentActors extends Components.RuxIconRecentActors {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15921,9 +14398,7 @@ export class RuxIconRecentActors {
 
 
 export declare interface RuxIconRecordVoiceOver extends Components.RuxIconRecordVoiceOver {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15942,9 +14417,7 @@ export class RuxIconRecordVoiceOver {
 
 
 export declare interface RuxIconRedeem extends Components.RuxIconRedeem {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15963,9 +14436,7 @@ export class RuxIconRedeem {
 
 
 export declare interface RuxIconRedo extends Components.RuxIconRedo {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -15984,9 +14455,7 @@ export class RuxIconRedo {
 
 
 export declare interface RuxIconRefresh extends Components.RuxIconRefresh {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16005,9 +14474,7 @@ export class RuxIconRefresh {
 
 
 export declare interface RuxIconRemove extends Components.RuxIconRemove {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16026,9 +14493,7 @@ export class RuxIconRemove {
 
 
 export declare interface RuxIconRemoveCircle extends Components.RuxIconRemoveCircle {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16047,9 +14512,7 @@ export class RuxIconRemoveCircle {
 
 
 export declare interface RuxIconRemoveCircleOutline extends Components.RuxIconRemoveCircleOutline {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16068,9 +14531,7 @@ export class RuxIconRemoveCircleOutline {
 
 
 export declare interface RuxIconRemoveFromQueue extends Components.RuxIconRemoveFromQueue {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16089,9 +14550,7 @@ export class RuxIconRemoveFromQueue {
 
 
 export declare interface RuxIconRemoveRedEye extends Components.RuxIconRemoveRedEye {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16110,9 +14569,7 @@ export class RuxIconRemoveRedEye {
 
 
 export declare interface RuxIconRemoveShoppingCart extends Components.RuxIconRemoveShoppingCart {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16131,9 +14588,7 @@ export class RuxIconRemoveShoppingCart {
 
 
 export declare interface RuxIconReorder extends Components.RuxIconReorder {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16152,9 +14607,7 @@ export class RuxIconReorder {
 
 
 export declare interface RuxIconRepeat extends Components.RuxIconRepeat {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16173,9 +14626,7 @@ export class RuxIconRepeat {
 
 
 export declare interface RuxIconRepeatOne extends Components.RuxIconRepeatOne {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16194,9 +14645,7 @@ export class RuxIconRepeatOne {
 
 
 export declare interface RuxIconReplay extends Components.RuxIconReplay {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16215,9 +14664,7 @@ export class RuxIconReplay {
 
 
 export declare interface RuxIconReplay10 extends Components.RuxIconReplay10 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16236,9 +14683,7 @@ export class RuxIconReplay10 {
 
 
 export declare interface RuxIconReplay30 extends Components.RuxIconReplay30 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16257,9 +14702,7 @@ export class RuxIconReplay30 {
 
 
 export declare interface RuxIconReplay5 extends Components.RuxIconReplay5 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16278,9 +14721,7 @@ export class RuxIconReplay5 {
 
 
 export declare interface RuxIconReply extends Components.RuxIconReply {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16299,9 +14740,7 @@ export class RuxIconReply {
 
 
 export declare interface RuxIconReplyAll extends Components.RuxIconReplyAll {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16320,9 +14759,7 @@ export class RuxIconReplyAll {
 
 
 export declare interface RuxIconReport extends Components.RuxIconReport {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16341,9 +14778,7 @@ export class RuxIconReport {
 
 
 export declare interface RuxIconReportOff extends Components.RuxIconReportOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16362,9 +14797,7 @@ export class RuxIconReportOff {
 
 
 export declare interface RuxIconReportProblem extends Components.RuxIconReportProblem {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16383,9 +14816,7 @@ export class RuxIconReportProblem {
 
 
 export declare interface RuxIconRestaurant extends Components.RuxIconRestaurant {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16404,9 +14835,7 @@ export class RuxIconRestaurant {
 
 
 export declare interface RuxIconRestaurantMenu extends Components.RuxIconRestaurantMenu {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16425,9 +14854,7 @@ export class RuxIconRestaurantMenu {
 
 
 export declare interface RuxIconRestore extends Components.RuxIconRestore {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16446,9 +14873,7 @@ export class RuxIconRestore {
 
 
 export declare interface RuxIconRestoreFromTrash extends Components.RuxIconRestoreFromTrash {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16467,9 +14892,7 @@ export class RuxIconRestoreFromTrash {
 
 
 export declare interface RuxIconRestorePage extends Components.RuxIconRestorePage {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16488,9 +14911,7 @@ export class RuxIconRestorePage {
 
 
 export declare interface RuxIconRingVolume extends Components.RuxIconRingVolume {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16509,9 +14930,7 @@ export class RuxIconRingVolume {
 
 
 export declare interface RuxIconRoom extends Components.RuxIconRoom {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16530,9 +14949,7 @@ export class RuxIconRoom {
 
 
 export declare interface RuxIconRoomService extends Components.RuxIconRoomService {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16551,9 +14968,7 @@ export class RuxIconRoomService {
 
 
 export declare interface RuxIconRotate90DegreesCc extends Components.RuxIconRotate90DegreesCc {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16572,9 +14987,7 @@ export class RuxIconRotate90DegreesCc {
 
 
 export declare interface RuxIconRotateLeft extends Components.RuxIconRotateLeft {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16593,9 +15006,7 @@ export class RuxIconRotateLeft {
 
 
 export declare interface RuxIconRotateRight extends Components.RuxIconRotateRight {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16614,9 +15025,7 @@ export class RuxIconRotateRight {
 
 
 export declare interface RuxIconRoundedCorner extends Components.RuxIconRoundedCorner {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16635,9 +15044,7 @@ export class RuxIconRoundedCorner {
 
 
 export declare interface RuxIconRouter extends Components.RuxIconRouter {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16656,9 +15063,7 @@ export class RuxIconRouter {
 
 
 export declare interface RuxIconRowing extends Components.RuxIconRowing {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16677,9 +15082,7 @@ export class RuxIconRowing {
 
 
 export declare interface RuxIconRssFeed extends Components.RuxIconRssFeed {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16698,9 +15101,7 @@ export class RuxIconRssFeed {
 
 
 export declare interface RuxIconRvHookup extends Components.RuxIconRvHookup {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16719,9 +15120,7 @@ export class RuxIconRvHookup {
 
 
 export declare interface RuxIconSatellite extends Components.RuxIconSatellite {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16740,9 +15139,7 @@ export class RuxIconSatellite {
 
 
 export declare interface RuxIconSatelliteOff extends Components.RuxIconSatelliteOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16761,9 +15158,7 @@ export class RuxIconSatelliteOff {
 
 
 export declare interface RuxIconSatelliteReceive extends Components.RuxIconSatelliteReceive {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16782,9 +15177,7 @@ export class RuxIconSatelliteReceive {
 
 
 export declare interface RuxIconSatelliteTransmit extends Components.RuxIconSatelliteTransmit {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16803,9 +15196,7 @@ export class RuxIconSatelliteTransmit {
 
 
 export declare interface RuxIconSave extends Components.RuxIconSave {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16824,9 +15215,7 @@ export class RuxIconSave {
 
 
 export declare interface RuxIconSaveAlt extends Components.RuxIconSaveAlt {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16845,9 +15234,7 @@ export class RuxIconSaveAlt {
 
 
 export declare interface RuxIconScanner extends Components.RuxIconScanner {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16866,9 +15253,7 @@ export class RuxIconScanner {
 
 
 export declare interface RuxIconScatterPlot extends Components.RuxIconScatterPlot {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16887,9 +15272,7 @@ export class RuxIconScatterPlot {
 
 
 export declare interface RuxIconSchedule extends Components.RuxIconSchedule {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16908,9 +15291,7 @@ export class RuxIconSchedule {
 
 
 export declare interface RuxIconSchool extends Components.RuxIconSchool {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16929,9 +15310,7 @@ export class RuxIconSchool {
 
 
 export declare interface RuxIconScore extends Components.RuxIconScore {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16950,9 +15329,7 @@ export class RuxIconScore {
 
 
 export declare interface RuxIconScreenLockLandscape extends Components.RuxIconScreenLockLandscape {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16971,9 +15348,7 @@ export class RuxIconScreenLockLandscape {
 
 
 export declare interface RuxIconScreenLockPortrait extends Components.RuxIconScreenLockPortrait {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -16992,9 +15367,7 @@ export class RuxIconScreenLockPortrait {
 
 
 export declare interface RuxIconScreenLockRotation extends Components.RuxIconScreenLockRotation {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17013,9 +15386,7 @@ export class RuxIconScreenLockRotation {
 
 
 export declare interface RuxIconScreenRotation extends Components.RuxIconScreenRotation {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17034,9 +15405,7 @@ export class RuxIconScreenRotation {
 
 
 export declare interface RuxIconScreenShare extends Components.RuxIconScreenShare {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17055,9 +15424,7 @@ export class RuxIconScreenShare {
 
 
 export declare interface RuxIconSdCard extends Components.RuxIconSdCard {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17076,9 +15443,7 @@ export class RuxIconSdCard {
 
 
 export declare interface RuxIconSdStorage extends Components.RuxIconSdStorage {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17097,9 +15462,7 @@ export class RuxIconSdStorage {
 
 
 export declare interface RuxIconSearch extends Components.RuxIconSearch {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17118,9 +15481,7 @@ export class RuxIconSearch {
 
 
 export declare interface RuxIconSeat extends Components.RuxIconSeat {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17139,9 +15500,7 @@ export class RuxIconSeat {
 
 
 export declare interface RuxIconSecurity extends Components.RuxIconSecurity {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17160,9 +15519,7 @@ export class RuxIconSecurity {
 
 
 export declare interface RuxIconSelectAll extends Components.RuxIconSelectAll {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17181,9 +15538,7 @@ export class RuxIconSelectAll {
 
 
 export declare interface RuxIconSend extends Components.RuxIconSend {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17202,9 +15557,7 @@ export class RuxIconSend {
 
 
 export declare interface RuxIconSentimentDissatisfied extends Components.RuxIconSentimentDissatisfied {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17223,9 +15576,7 @@ export class RuxIconSentimentDissatisfied {
 
 
 export declare interface RuxIconSentimentSatisfied extends Components.RuxIconSentimentSatisfied {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17244,9 +15595,7 @@ export class RuxIconSentimentSatisfied {
 
 
 export declare interface RuxIconSentimentSatisfiedAlt extends Components.RuxIconSentimentSatisfiedAlt {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17265,9 +15614,7 @@ export class RuxIconSentimentSatisfiedAlt {
 
 
 export declare interface RuxIconSentimentVeryDissatisfied extends Components.RuxIconSentimentVeryDissatisfied {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17286,9 +15633,7 @@ export class RuxIconSentimentVeryDissatisfied {
 
 
 export declare interface RuxIconSentimentVerySatisfied extends Components.RuxIconSentimentVerySatisfied {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17307,9 +15652,7 @@ export class RuxIconSentimentVerySatisfied {
 
 
 export declare interface RuxIconSettings extends Components.RuxIconSettings {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17328,9 +15671,7 @@ export class RuxIconSettings {
 
 
 export declare interface RuxIconSettingsApplications extends Components.RuxIconSettingsApplications {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17349,9 +15690,7 @@ export class RuxIconSettingsApplications {
 
 
 export declare interface RuxIconSettingsBackupRestore extends Components.RuxIconSettingsBackupRestore {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17370,9 +15709,7 @@ export class RuxIconSettingsBackupRestore {
 
 
 export declare interface RuxIconSettingsBluetooth extends Components.RuxIconSettingsBluetooth {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17391,9 +15728,7 @@ export class RuxIconSettingsBluetooth {
 
 
 export declare interface RuxIconSettingsBrightness extends Components.RuxIconSettingsBrightness {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17412,9 +15747,7 @@ export class RuxIconSettingsBrightness {
 
 
 export declare interface RuxIconSettingsCell extends Components.RuxIconSettingsCell {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17433,9 +15766,7 @@ export class RuxIconSettingsCell {
 
 
 export declare interface RuxIconSettingsEthernet extends Components.RuxIconSettingsEthernet {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17454,9 +15785,7 @@ export class RuxIconSettingsEthernet {
 
 
 export declare interface RuxIconSettingsInputAntenna extends Components.RuxIconSettingsInputAntenna {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17475,9 +15804,7 @@ export class RuxIconSettingsInputAntenna {
 
 
 export declare interface RuxIconSettingsInputComponent extends Components.RuxIconSettingsInputComponent {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17496,9 +15823,7 @@ export class RuxIconSettingsInputComponent {
 
 
 export declare interface RuxIconSettingsInputComposite extends Components.RuxIconSettingsInputComposite {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17517,9 +15842,7 @@ export class RuxIconSettingsInputComposite {
 
 
 export declare interface RuxIconSettingsInputHdmi extends Components.RuxIconSettingsInputHdmi {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17538,9 +15861,7 @@ export class RuxIconSettingsInputHdmi {
 
 
 export declare interface RuxIconSettingsInputSvideo extends Components.RuxIconSettingsInputSvideo {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17559,9 +15880,7 @@ export class RuxIconSettingsInputSvideo {
 
 
 export declare interface RuxIconSettingsOverscan extends Components.RuxIconSettingsOverscan {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17580,9 +15899,7 @@ export class RuxIconSettingsOverscan {
 
 
 export declare interface RuxIconSettingsPhone extends Components.RuxIconSettingsPhone {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17601,9 +15918,7 @@ export class RuxIconSettingsPhone {
 
 
 export declare interface RuxIconSettingsPower extends Components.RuxIconSettingsPower {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17622,9 +15937,7 @@ export class RuxIconSettingsPower {
 
 
 export declare interface RuxIconSettingsRemote extends Components.RuxIconSettingsRemote {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17643,9 +15956,7 @@ export class RuxIconSettingsRemote {
 
 
 export declare interface RuxIconSettingsSystemDaydream extends Components.RuxIconSettingsSystemDaydream {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17664,9 +15975,7 @@ export class RuxIconSettingsSystemDaydream {
 
 
 export declare interface RuxIconSettingsVoice extends Components.RuxIconSettingsVoice {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17685,9 +15994,7 @@ export class RuxIconSettingsVoice {
 
 
 export declare interface RuxIconShare extends Components.RuxIconShare {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17706,9 +16013,7 @@ export class RuxIconShare {
 
 
 export declare interface RuxIconShop extends Components.RuxIconShop {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17727,9 +16032,7 @@ export class RuxIconShop {
 
 
 export declare interface RuxIconShopTwo extends Components.RuxIconShopTwo {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17748,9 +16051,7 @@ export class RuxIconShopTwo {
 
 
 export declare interface RuxIconShoppingBasket extends Components.RuxIconShoppingBasket {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17769,9 +16070,7 @@ export class RuxIconShoppingBasket {
 
 
 export declare interface RuxIconShoppingCart extends Components.RuxIconShoppingCart {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17790,9 +16089,7 @@ export class RuxIconShoppingCart {
 
 
 export declare interface RuxIconShortText extends Components.RuxIconShortText {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17811,9 +16108,7 @@ export class RuxIconShortText {
 
 
 export declare interface RuxIconShowChart extends Components.RuxIconShowChart {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17832,9 +16127,7 @@ export class RuxIconShowChart {
 
 
 export declare interface RuxIconShuffle extends Components.RuxIconShuffle {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17853,9 +16146,7 @@ export class RuxIconShuffle {
 
 
 export declare interface RuxIconShutterSpeed extends Components.RuxIconShutterSpeed {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17874,9 +16165,7 @@ export class RuxIconShutterSpeed {
 
 
 export declare interface RuxIconSignalCellular0Bar extends Components.RuxIconSignalCellular0Bar {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17895,9 +16184,7 @@ export class RuxIconSignalCellular0Bar {
 
 
 export declare interface RuxIconSignalCellular1Bar extends Components.RuxIconSignalCellular1Bar {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17916,9 +16203,7 @@ export class RuxIconSignalCellular1Bar {
 
 
 export declare interface RuxIconSignalCellular2Bar extends Components.RuxIconSignalCellular2Bar {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17937,9 +16222,7 @@ export class RuxIconSignalCellular2Bar {
 
 
 export declare interface RuxIconSignalCellular3Bar extends Components.RuxIconSignalCellular3Bar {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17958,9 +16241,7 @@ export class RuxIconSignalCellular3Bar {
 
 
 export declare interface RuxIconSignalCellular4Bar extends Components.RuxIconSignalCellular4Bar {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -17979,9 +16260,7 @@ export class RuxIconSignalCellular4Bar {
 
 
 export declare interface RuxIconSignalCellularAlt extends Components.RuxIconSignalCellularAlt {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18000,9 +16279,7 @@ export class RuxIconSignalCellularAlt {
 
 
 export declare interface RuxIconSignalCellularConnectedNoInternet0Bar extends Components.RuxIconSignalCellularConnectedNoInternet0Bar {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18021,9 +16298,7 @@ export class RuxIconSignalCellularConnectedNoInternet0Bar {
 
 
 export declare interface RuxIconSignalCellularConnectedNoInternet1Bar extends Components.RuxIconSignalCellularConnectedNoInternet1Bar {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18042,9 +16317,7 @@ export class RuxIconSignalCellularConnectedNoInternet1Bar {
 
 
 export declare interface RuxIconSignalCellularConnectedNoInternet2Bar extends Components.RuxIconSignalCellularConnectedNoInternet2Bar {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18063,9 +16336,7 @@ export class RuxIconSignalCellularConnectedNoInternet2Bar {
 
 
 export declare interface RuxIconSignalCellularConnectedNoInternet3Bar extends Components.RuxIconSignalCellularConnectedNoInternet3Bar {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18084,9 +16355,7 @@ export class RuxIconSignalCellularConnectedNoInternet3Bar {
 
 
 export declare interface RuxIconSignalCellularConnectedNoInternet4Bar extends Components.RuxIconSignalCellularConnectedNoInternet4Bar {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18105,9 +16374,7 @@ export class RuxIconSignalCellularConnectedNoInternet4Bar {
 
 
 export declare interface RuxIconSignalCellularNoSim extends Components.RuxIconSignalCellularNoSim {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18126,9 +16393,7 @@ export class RuxIconSignalCellularNoSim {
 
 
 export declare interface RuxIconSignalCellularNull extends Components.RuxIconSignalCellularNull {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18147,9 +16412,7 @@ export class RuxIconSignalCellularNull {
 
 
 export declare interface RuxIconSignalCellularOff extends Components.RuxIconSignalCellularOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18168,9 +16431,7 @@ export class RuxIconSignalCellularOff {
 
 
 export declare interface RuxIconSignalWifi0Bar extends Components.RuxIconSignalWifi0Bar {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18189,9 +16450,7 @@ export class RuxIconSignalWifi0Bar {
 
 
 export declare interface RuxIconSignalWifi1Bar extends Components.RuxIconSignalWifi1Bar {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18210,9 +16469,7 @@ export class RuxIconSignalWifi1Bar {
 
 
 export declare interface RuxIconSignalWifi1BarLock extends Components.RuxIconSignalWifi1BarLock {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18231,9 +16488,7 @@ export class RuxIconSignalWifi1BarLock {
 
 
 export declare interface RuxIconSignalWifi2Bar extends Components.RuxIconSignalWifi2Bar {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18252,9 +16507,7 @@ export class RuxIconSignalWifi2Bar {
 
 
 export declare interface RuxIconSignalWifi2BarLock extends Components.RuxIconSignalWifi2BarLock {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18273,9 +16526,7 @@ export class RuxIconSignalWifi2BarLock {
 
 
 export declare interface RuxIconSignalWifi3Bar extends Components.RuxIconSignalWifi3Bar {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18294,9 +16545,7 @@ export class RuxIconSignalWifi3Bar {
 
 
 export declare interface RuxIconSignalWifi3BarLock extends Components.RuxIconSignalWifi3BarLock {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18315,9 +16564,7 @@ export class RuxIconSignalWifi3BarLock {
 
 
 export declare interface RuxIconSignalWifi4Bar extends Components.RuxIconSignalWifi4Bar {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18336,9 +16583,7 @@ export class RuxIconSignalWifi4Bar {
 
 
 export declare interface RuxIconSignalWifi4BarLock extends Components.RuxIconSignalWifi4BarLock {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18357,9 +16602,7 @@ export class RuxIconSignalWifi4BarLock {
 
 
 export declare interface RuxIconSignalWifiOff extends Components.RuxIconSignalWifiOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18378,9 +16621,7 @@ export class RuxIconSignalWifiOff {
 
 
 export declare interface RuxIconSimCard extends Components.RuxIconSimCard {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18399,9 +16640,7 @@ export class RuxIconSimCard {
 
 
 export declare interface RuxIconSkipNext extends Components.RuxIconSkipNext {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18420,9 +16659,7 @@ export class RuxIconSkipNext {
 
 
 export declare interface RuxIconSkipPrevious extends Components.RuxIconSkipPrevious {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18441,9 +16678,7 @@ export class RuxIconSkipPrevious {
 
 
 export declare interface RuxIconSlideshow extends Components.RuxIconSlideshow {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18462,9 +16697,7 @@ export class RuxIconSlideshow {
 
 
 export declare interface RuxIconSlowMotionVideo extends Components.RuxIconSlowMotionVideo {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18483,9 +16716,7 @@ export class RuxIconSlowMotionVideo {
 
 
 export declare interface RuxIconSmartphone extends Components.RuxIconSmartphone {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18504,9 +16735,7 @@ export class RuxIconSmartphone {
 
 
 export declare interface RuxIconSmokeFree extends Components.RuxIconSmokeFree {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18525,9 +16754,7 @@ export class RuxIconSmokeFree {
 
 
 export declare interface RuxIconSmokingRooms extends Components.RuxIconSmokingRooms {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18546,9 +16773,7 @@ export class RuxIconSmokingRooms {
 
 
 export declare interface RuxIconSms extends Components.RuxIconSms {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18567,9 +16792,7 @@ export class RuxIconSms {
 
 
 export declare interface RuxIconSmsFailed extends Components.RuxIconSmsFailed {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18588,9 +16811,7 @@ export class RuxIconSmsFailed {
 
 
 export declare interface RuxIconSnooze extends Components.RuxIconSnooze {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18609,9 +16830,7 @@ export class RuxIconSnooze {
 
 
 export declare interface RuxIconSolar extends Components.RuxIconSolar {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18630,9 +16849,7 @@ export class RuxIconSolar {
 
 
 export declare interface RuxIconSort extends Components.RuxIconSort {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18651,9 +16868,7 @@ export class RuxIconSort {
 
 
 export declare interface RuxIconSortByAlpha extends Components.RuxIconSortByAlpha {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18672,9 +16887,7 @@ export class RuxIconSortByAlpha {
 
 
 export declare interface RuxIconSpa extends Components.RuxIconSpa {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18693,9 +16906,7 @@ export class RuxIconSpa {
 
 
 export declare interface RuxIconSpaceBar extends Components.RuxIconSpaceBar {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18714,9 +16925,7 @@ export class RuxIconSpaceBar {
 
 
 export declare interface RuxIconSpeaker extends Components.RuxIconSpeaker {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18735,9 +16944,7 @@ export class RuxIconSpeaker {
 
 
 export declare interface RuxIconSpeakerGroup extends Components.RuxIconSpeakerGroup {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18756,9 +16963,7 @@ export class RuxIconSpeakerGroup {
 
 
 export declare interface RuxIconSpeakerNotes extends Components.RuxIconSpeakerNotes {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18777,9 +16982,7 @@ export class RuxIconSpeakerNotes {
 
 
 export declare interface RuxIconSpeakerNotesOff extends Components.RuxIconSpeakerNotesOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18798,9 +17001,7 @@ export class RuxIconSpeakerNotesOff {
 
 
 export declare interface RuxIconSpeakerPhone extends Components.RuxIconSpeakerPhone {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18819,9 +17020,7 @@ export class RuxIconSpeakerPhone {
 
 
 export declare interface RuxIconSpellcheck extends Components.RuxIconSpellcheck {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18840,9 +17039,7 @@ export class RuxIconSpellcheck {
 
 
 export declare interface RuxIconStar extends Components.RuxIconStar {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18861,9 +17058,7 @@ export class RuxIconStar {
 
 
 export declare interface RuxIconStarBorder extends Components.RuxIconStarBorder {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18882,9 +17077,7 @@ export class RuxIconStarBorder {
 
 
 export declare interface RuxIconStarHalf extends Components.RuxIconStarHalf {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18903,9 +17096,7 @@ export class RuxIconStarHalf {
 
 
 export declare interface RuxIconStarRate extends Components.RuxIconStarRate {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18924,9 +17115,7 @@ export class RuxIconStarRate {
 
 
 export declare interface RuxIconStars extends Components.RuxIconStars {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18945,9 +17134,7 @@ export class RuxIconStars {
 
 
 export declare interface RuxIconStayCurrentLandscape extends Components.RuxIconStayCurrentLandscape {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18966,9 +17153,7 @@ export class RuxIconStayCurrentLandscape {
 
 
 export declare interface RuxIconStayCurrentPortrait extends Components.RuxIconStayCurrentPortrait {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -18987,9 +17172,7 @@ export class RuxIconStayCurrentPortrait {
 
 
 export declare interface RuxIconStayPrimaryLandscape extends Components.RuxIconStayPrimaryLandscape {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19008,9 +17191,7 @@ export class RuxIconStayPrimaryLandscape {
 
 
 export declare interface RuxIconStayPrimaryPortrait extends Components.RuxIconStayPrimaryPortrait {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19029,9 +17210,7 @@ export class RuxIconStayPrimaryPortrait {
 
 
 export declare interface RuxIconStop extends Components.RuxIconStop {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19050,9 +17229,7 @@ export class RuxIconStop {
 
 
 export declare interface RuxIconStopScreenShare extends Components.RuxIconStopScreenShare {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19071,9 +17248,7 @@ export class RuxIconStopScreenShare {
 
 
 export declare interface RuxIconStorage extends Components.RuxIconStorage {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19092,9 +17267,7 @@ export class RuxIconStorage {
 
 
 export declare interface RuxIconStore extends Components.RuxIconStore {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19113,9 +17286,7 @@ export class RuxIconStore {
 
 
 export declare interface RuxIconStoreMallDirectory extends Components.RuxIconStoreMallDirectory {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19134,9 +17305,7 @@ export class RuxIconStoreMallDirectory {
 
 
 export declare interface RuxIconStraighten extends Components.RuxIconStraighten {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19155,9 +17324,7 @@ export class RuxIconStraighten {
 
 
 export declare interface RuxIconStreetview extends Components.RuxIconStreetview {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19176,9 +17343,7 @@ export class RuxIconStreetview {
 
 
 export declare interface RuxIconStrikethroughS extends Components.RuxIconStrikethroughS {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19197,9 +17362,7 @@ export class RuxIconStrikethroughS {
 
 
 export declare interface RuxIconStyle extends Components.RuxIconStyle {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19218,9 +17381,7 @@ export class RuxIconStyle {
 
 
 export declare interface RuxIconSubdirectoryArrowLeft extends Components.RuxIconSubdirectoryArrowLeft {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19239,9 +17400,7 @@ export class RuxIconSubdirectoryArrowLeft {
 
 
 export declare interface RuxIconSubdirectoryArrowRight extends Components.RuxIconSubdirectoryArrowRight {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19260,9 +17419,7 @@ export class RuxIconSubdirectoryArrowRight {
 
 
 export declare interface RuxIconSubject extends Components.RuxIconSubject {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19281,9 +17438,7 @@ export class RuxIconSubject {
 
 
 export declare interface RuxIconSubscriptions extends Components.RuxIconSubscriptions {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19302,9 +17457,7 @@ export class RuxIconSubscriptions {
 
 
 export declare interface RuxIconSubtitles extends Components.RuxIconSubtitles {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19323,9 +17476,7 @@ export class RuxIconSubtitles {
 
 
 export declare interface RuxIconSubway extends Components.RuxIconSubway {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19344,9 +17495,7 @@ export class RuxIconSubway {
 
 
 export declare interface RuxIconSupervisedUserCircle extends Components.RuxIconSupervisedUserCircle {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19365,9 +17514,7 @@ export class RuxIconSupervisedUserCircle {
 
 
 export declare interface RuxIconSupervisorAccount extends Components.RuxIconSupervisorAccount {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19386,9 +17533,7 @@ export class RuxIconSupervisorAccount {
 
 
 export declare interface RuxIconSurroundSound extends Components.RuxIconSurroundSound {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19407,9 +17552,7 @@ export class RuxIconSurroundSound {
 
 
 export declare interface RuxIconSwapCalls extends Components.RuxIconSwapCalls {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19428,9 +17571,7 @@ export class RuxIconSwapCalls {
 
 
 export declare interface RuxIconSwapHoriz extends Components.RuxIconSwapHoriz {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19449,9 +17590,7 @@ export class RuxIconSwapHoriz {
 
 
 export declare interface RuxIconSwapHorizontalCircle extends Components.RuxIconSwapHorizontalCircle {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19470,9 +17609,7 @@ export class RuxIconSwapHorizontalCircle {
 
 
 export declare interface RuxIconSwapVert extends Components.RuxIconSwapVert {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19491,9 +17628,7 @@ export class RuxIconSwapVert {
 
 
 export declare interface RuxIconSwapVerticalCircle extends Components.RuxIconSwapVerticalCircle {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19512,9 +17647,7 @@ export class RuxIconSwapVerticalCircle {
 
 
 export declare interface RuxIconSwitchCamera extends Components.RuxIconSwitchCamera {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19533,9 +17666,7 @@ export class RuxIconSwitchCamera {
 
 
 export declare interface RuxIconSwitchVideo extends Components.RuxIconSwitchVideo {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19554,9 +17685,7 @@ export class RuxIconSwitchVideo {
 
 
 export declare interface RuxIconSync extends Components.RuxIconSync {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19575,9 +17704,7 @@ export class RuxIconSync {
 
 
 export declare interface RuxIconSyncDisabled extends Components.RuxIconSyncDisabled {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19596,9 +17723,7 @@ export class RuxIconSyncDisabled {
 
 
 export declare interface RuxIconSyncProblem extends Components.RuxIconSyncProblem {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19617,9 +17742,7 @@ export class RuxIconSyncProblem {
 
 
 export declare interface RuxIconSystemUpdate extends Components.RuxIconSystemUpdate {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19638,9 +17761,7 @@ export class RuxIconSystemUpdate {
 
 
 export declare interface RuxIconTab extends Components.RuxIconTab {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19659,9 +17780,7 @@ export class RuxIconTab {
 
 
 export declare interface RuxIconTabUnselected extends Components.RuxIconTabUnselected {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19680,9 +17799,7 @@ export class RuxIconTabUnselected {
 
 
 export declare interface RuxIconTableChart extends Components.RuxIconTableChart {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19701,9 +17818,7 @@ export class RuxIconTableChart {
 
 
 export declare interface RuxIconTablet extends Components.RuxIconTablet {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19722,9 +17837,7 @@ export class RuxIconTablet {
 
 
 export declare interface RuxIconTabletAndroid extends Components.RuxIconTabletAndroid {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19743,9 +17856,7 @@ export class RuxIconTabletAndroid {
 
 
 export declare interface RuxIconTabletMac extends Components.RuxIconTabletMac {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19764,9 +17875,7 @@ export class RuxIconTabletMac {
 
 
 export declare interface RuxIconTagFaces extends Components.RuxIconTagFaces {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19785,9 +17894,7 @@ export class RuxIconTagFaces {
 
 
 export declare interface RuxIconTapAndPlay extends Components.RuxIconTapAndPlay {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19806,9 +17913,7 @@ export class RuxIconTapAndPlay {
 
 
 export declare interface RuxIconTerrain extends Components.RuxIconTerrain {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19827,9 +17932,7 @@ export class RuxIconTerrain {
 
 
 export declare interface RuxIconTextFields extends Components.RuxIconTextFields {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19848,9 +17951,7 @@ export class RuxIconTextFields {
 
 
 export declare interface RuxIconTextFormat extends Components.RuxIconTextFormat {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19869,9 +17970,7 @@ export class RuxIconTextFormat {
 
 
 export declare interface RuxIconTextRotateUp extends Components.RuxIconTextRotateUp {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19890,9 +17989,7 @@ export class RuxIconTextRotateUp {
 
 
 export declare interface RuxIconTextRotateVertical extends Components.RuxIconTextRotateVertical {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19911,9 +18008,7 @@ export class RuxIconTextRotateVertical {
 
 
 export declare interface RuxIconTextRotationNone extends Components.RuxIconTextRotationNone {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19932,9 +18027,7 @@ export class RuxIconTextRotationNone {
 
 
 export declare interface RuxIconTextsms extends Components.RuxIconTextsms {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19953,9 +18046,7 @@ export class RuxIconTextsms {
 
 
 export declare interface RuxIconTexture extends Components.RuxIconTexture {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19974,9 +18065,7 @@ export class RuxIconTexture {
 
 
 export declare interface RuxIconTheaters extends Components.RuxIconTheaters {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -19995,9 +18084,7 @@ export class RuxIconTheaters {
 
 
 export declare interface RuxIconThermal extends Components.RuxIconThermal {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20016,9 +18103,7 @@ export class RuxIconThermal {
 
 
 export declare interface RuxIconThumbDown extends Components.RuxIconThumbDown {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20037,9 +18122,7 @@ export class RuxIconThumbDown {
 
 
 export declare interface RuxIconThumbDownAlt extends Components.RuxIconThumbDownAlt {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20058,9 +18141,7 @@ export class RuxIconThumbDownAlt {
 
 
 export declare interface RuxIconThumbUp extends Components.RuxIconThumbUp {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20079,9 +18160,7 @@ export class RuxIconThumbUp {
 
 
 export declare interface RuxIconThumbUpAlt extends Components.RuxIconThumbUpAlt {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20100,9 +18179,7 @@ export class RuxIconThumbUpAlt {
 
 
 export declare interface RuxIconThumbsUpDown extends Components.RuxIconThumbsUpDown {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20121,9 +18198,7 @@ export class RuxIconThumbsUpDown {
 
 
 export declare interface RuxIconTimeToLeave extends Components.RuxIconTimeToLeave {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20142,9 +18217,7 @@ export class RuxIconTimeToLeave {
 
 
 export declare interface RuxIconTimelapse extends Components.RuxIconTimelapse {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20163,9 +18236,7 @@ export class RuxIconTimelapse {
 
 
 export declare interface RuxIconTimeline extends Components.RuxIconTimeline {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20184,9 +18255,7 @@ export class RuxIconTimeline {
 
 
 export declare interface RuxIconTimer extends Components.RuxIconTimer {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20205,9 +18274,7 @@ export class RuxIconTimer {
 
 
 export declare interface RuxIconTimer10 extends Components.RuxIconTimer10 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20226,9 +18293,7 @@ export class RuxIconTimer10 {
 
 
 export declare interface RuxIconTimer3 extends Components.RuxIconTimer3 {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20247,9 +18312,7 @@ export class RuxIconTimer3 {
 
 
 export declare interface RuxIconTimerOff extends Components.RuxIconTimerOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20268,9 +18331,7 @@ export class RuxIconTimerOff {
 
 
 export declare interface RuxIconTitle extends Components.RuxIconTitle {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20289,9 +18350,7 @@ export class RuxIconTitle {
 
 
 export declare interface RuxIconToc extends Components.RuxIconToc {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20310,9 +18369,7 @@ export class RuxIconToc {
 
 
 export declare interface RuxIconToday extends Components.RuxIconToday {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20331,9 +18388,7 @@ export class RuxIconToday {
 
 
 export declare interface RuxIconToggleOff extends Components.RuxIconToggleOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20352,9 +18407,7 @@ export class RuxIconToggleOff {
 
 
 export declare interface RuxIconToggleOn extends Components.RuxIconToggleOn {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20373,9 +18426,7 @@ export class RuxIconToggleOn {
 
 
 export declare interface RuxIconToll extends Components.RuxIconToll {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20394,9 +18445,7 @@ export class RuxIconToll {
 
 
 export declare interface RuxIconTonality extends Components.RuxIconTonality {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20415,9 +18464,7 @@ export class RuxIconTonality {
 
 
 export declare interface RuxIconTouchApp extends Components.RuxIconTouchApp {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20436,9 +18483,7 @@ export class RuxIconTouchApp {
 
 
 export declare interface RuxIconToys extends Components.RuxIconToys {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20457,9 +18502,7 @@ export class RuxIconToys {
 
 
 export declare interface RuxIconTrackChanges extends Components.RuxIconTrackChanges {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20478,9 +18521,7 @@ export class RuxIconTrackChanges {
 
 
 export declare interface RuxIconTraffic extends Components.RuxIconTraffic {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20499,9 +18540,7 @@ export class RuxIconTraffic {
 
 
 export declare interface RuxIconTrain extends Components.RuxIconTrain {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20520,9 +18559,7 @@ export class RuxIconTrain {
 
 
 export declare interface RuxIconTram extends Components.RuxIconTram {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20541,9 +18578,7 @@ export class RuxIconTram {
 
 
 export declare interface RuxIconTransferWithinAStation extends Components.RuxIconTransferWithinAStation {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20562,9 +18597,7 @@ export class RuxIconTransferWithinAStation {
 
 
 export declare interface RuxIconTransform extends Components.RuxIconTransform {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20583,9 +18616,7 @@ export class RuxIconTransform {
 
 
 export declare interface RuxIconTransitEnterexit extends Components.RuxIconTransitEnterexit {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20604,9 +18635,7 @@ export class RuxIconTransitEnterexit {
 
 
 export declare interface RuxIconTranslate extends Components.RuxIconTranslate {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20625,9 +18654,7 @@ export class RuxIconTranslate {
 
 
 export declare interface RuxIconTrendingDown extends Components.RuxIconTrendingDown {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20646,9 +18673,7 @@ export class RuxIconTrendingDown {
 
 
 export declare interface RuxIconTrendingFlat extends Components.RuxIconTrendingFlat {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20667,9 +18692,7 @@ export class RuxIconTrendingFlat {
 
 
 export declare interface RuxIconTrendingUp extends Components.RuxIconTrendingUp {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20688,9 +18711,7 @@ export class RuxIconTrendingUp {
 
 
 export declare interface RuxIconTripOrigin extends Components.RuxIconTripOrigin {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20709,9 +18730,7 @@ export class RuxIconTripOrigin {
 
 
 export declare interface RuxIconTune extends Components.RuxIconTune {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20730,9 +18749,7 @@ export class RuxIconTune {
 
 
 export declare interface RuxIconTurnedIn extends Components.RuxIconTurnedIn {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20751,9 +18768,7 @@ export class RuxIconTurnedIn {
 
 
 export declare interface RuxIconTurnedInNot extends Components.RuxIconTurnedInNot {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20772,9 +18787,7 @@ export class RuxIconTurnedInNot {
 
 
 export declare interface RuxIconTv extends Components.RuxIconTv {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20793,9 +18806,7 @@ export class RuxIconTv {
 
 
 export declare interface RuxIconTvOff extends Components.RuxIconTvOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20814,9 +18825,7 @@ export class RuxIconTvOff {
 
 
 export declare interface RuxIconUnarchive extends Components.RuxIconUnarchive {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20835,9 +18844,7 @@ export class RuxIconUnarchive {
 
 
 export declare interface RuxIconUndo extends Components.RuxIconUndo {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20856,9 +18863,7 @@ export class RuxIconUndo {
 
 
 export declare interface RuxIconUnfoldLess extends Components.RuxIconUnfoldLess {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20877,9 +18882,7 @@ export class RuxIconUnfoldLess {
 
 
 export declare interface RuxIconUnfoldMore extends Components.RuxIconUnfoldMore {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20898,9 +18901,7 @@ export class RuxIconUnfoldMore {
 
 
 export declare interface RuxIconUnsubscribe extends Components.RuxIconUnsubscribe {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20919,9 +18920,7 @@ export class RuxIconUnsubscribe {
 
 
 export declare interface RuxIconUpdate extends Components.RuxIconUpdate {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20940,9 +18939,7 @@ export class RuxIconUpdate {
 
 
 export declare interface RuxIconUsb extends Components.RuxIconUsb {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20961,9 +18958,7 @@ export class RuxIconUsb {
 
 
 export declare interface RuxIconVerifiedUser extends Components.RuxIconVerifiedUser {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -20982,9 +18977,7 @@ export class RuxIconVerifiedUser {
 
 
 export declare interface RuxIconVerticalAlignBottom extends Components.RuxIconVerticalAlignBottom {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21003,9 +18996,7 @@ export class RuxIconVerticalAlignBottom {
 
 
 export declare interface RuxIconVerticalAlignCenter extends Components.RuxIconVerticalAlignCenter {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21024,9 +19015,7 @@ export class RuxIconVerticalAlignCenter {
 
 
 export declare interface RuxIconVerticalAlignTop extends Components.RuxIconVerticalAlignTop {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21045,9 +19034,7 @@ export class RuxIconVerticalAlignTop {
 
 
 export declare interface RuxIconVerticalSplit extends Components.RuxIconVerticalSplit {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21066,9 +19053,7 @@ export class RuxIconVerticalSplit {
 
 
 export declare interface RuxIconVibration extends Components.RuxIconVibration {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21087,9 +19072,7 @@ export class RuxIconVibration {
 
 
 export declare interface RuxIconVideoCall extends Components.RuxIconVideoCall {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21108,9 +19091,7 @@ export class RuxIconVideoCall {
 
 
 export declare interface RuxIconVideoLabel extends Components.RuxIconVideoLabel {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21129,9 +19110,7 @@ export class RuxIconVideoLabel {
 
 
 export declare interface RuxIconVideoLibrary extends Components.RuxIconVideoLibrary {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21150,9 +19129,7 @@ export class RuxIconVideoLibrary {
 
 
 export declare interface RuxIconVideocam extends Components.RuxIconVideocam {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21171,9 +19148,7 @@ export class RuxIconVideocam {
 
 
 export declare interface RuxIconVideocamOff extends Components.RuxIconVideocamOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21192,9 +19167,7 @@ export class RuxIconVideocamOff {
 
 
 export declare interface RuxIconVideogameAsset extends Components.RuxIconVideogameAsset {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21213,9 +19186,7 @@ export class RuxIconVideogameAsset {
 
 
 export declare interface RuxIconViewAgenda extends Components.RuxIconViewAgenda {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21234,9 +19205,7 @@ export class RuxIconViewAgenda {
 
 
 export declare interface RuxIconViewArray extends Components.RuxIconViewArray {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21255,9 +19224,7 @@ export class RuxIconViewArray {
 
 
 export declare interface RuxIconViewCarousel extends Components.RuxIconViewCarousel {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21276,9 +19243,7 @@ export class RuxIconViewCarousel {
 
 
 export declare interface RuxIconViewColumn extends Components.RuxIconViewColumn {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21297,9 +19262,7 @@ export class RuxIconViewColumn {
 
 
 export declare interface RuxIconViewComfy extends Components.RuxIconViewComfy {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21318,9 +19281,7 @@ export class RuxIconViewComfy {
 
 
 export declare interface RuxIconViewCompact extends Components.RuxIconViewCompact {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21339,9 +19300,7 @@ export class RuxIconViewCompact {
 
 
 export declare interface RuxIconViewDay extends Components.RuxIconViewDay {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21360,9 +19319,7 @@ export class RuxIconViewDay {
 
 
 export declare interface RuxIconViewHeadline extends Components.RuxIconViewHeadline {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21381,9 +19338,7 @@ export class RuxIconViewHeadline {
 
 
 export declare interface RuxIconViewList extends Components.RuxIconViewList {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21402,9 +19357,7 @@ export class RuxIconViewList {
 
 
 export declare interface RuxIconViewModule extends Components.RuxIconViewModule {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21423,9 +19376,7 @@ export class RuxIconViewModule {
 
 
 export declare interface RuxIconViewQuilt extends Components.RuxIconViewQuilt {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21444,9 +19395,7 @@ export class RuxIconViewQuilt {
 
 
 export declare interface RuxIconViewStream extends Components.RuxIconViewStream {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21465,9 +19414,7 @@ export class RuxIconViewStream {
 
 
 export declare interface RuxIconViewWeek extends Components.RuxIconViewWeek {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21486,9 +19433,7 @@ export class RuxIconViewWeek {
 
 
 export declare interface RuxIconVignette extends Components.RuxIconVignette {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21507,9 +19452,7 @@ export class RuxIconVignette {
 
 
 export declare interface RuxIconVisibility extends Components.RuxIconVisibility {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21528,9 +19471,7 @@ export class RuxIconVisibility {
 
 
 export declare interface RuxIconVisibilityOff extends Components.RuxIconVisibilityOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21549,9 +19490,7 @@ export class RuxIconVisibilityOff {
 
 
 export declare interface RuxIconVoiceChat extends Components.RuxIconVoiceChat {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21570,9 +19509,7 @@ export class RuxIconVoiceChat {
 
 
 export declare interface RuxIconVoiceOverOff extends Components.RuxIconVoiceOverOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21591,9 +19528,7 @@ export class RuxIconVoiceOverOff {
 
 
 export declare interface RuxIconVoicemail extends Components.RuxIconVoicemail {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21612,9 +19547,7 @@ export class RuxIconVoicemail {
 
 
 export declare interface RuxIconVolumeDown extends Components.RuxIconVolumeDown {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21633,9 +19566,7 @@ export class RuxIconVolumeDown {
 
 
 export declare interface RuxIconVolumeMute extends Components.RuxIconVolumeMute {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21654,9 +19585,7 @@ export class RuxIconVolumeMute {
 
 
 export declare interface RuxIconVolumeOff extends Components.RuxIconVolumeOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21675,9 +19604,7 @@ export class RuxIconVolumeOff {
 
 
 export declare interface RuxIconVolumeUp extends Components.RuxIconVolumeUp {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21696,9 +19623,7 @@ export class RuxIconVolumeUp {
 
 
 export declare interface RuxIconVpnKey extends Components.RuxIconVpnKey {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21717,9 +19642,7 @@ export class RuxIconVpnKey {
 
 
 export declare interface RuxIconVpnLock extends Components.RuxIconVpnLock {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21738,9 +19661,7 @@ export class RuxIconVpnLock {
 
 
 export declare interface RuxIconWallpaper extends Components.RuxIconWallpaper {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21759,9 +19680,7 @@ export class RuxIconWallpaper {
 
 
 export declare interface RuxIconWarning extends Components.RuxIconWarning {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21780,9 +19699,7 @@ export class RuxIconWarning {
 
 
 export declare interface RuxIconWatch extends Components.RuxIconWatch {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21801,9 +19718,7 @@ export class RuxIconWatch {
 
 
 export declare interface RuxIconWatchLater extends Components.RuxIconWatchLater {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21822,9 +19737,7 @@ export class RuxIconWatchLater {
 
 
 export declare interface RuxIconWaves extends Components.RuxIconWaves {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21843,9 +19756,7 @@ export class RuxIconWaves {
 
 
 export declare interface RuxIconWbAuto extends Components.RuxIconWbAuto {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21864,9 +19775,7 @@ export class RuxIconWbAuto {
 
 
 export declare interface RuxIconWbCloudy extends Components.RuxIconWbCloudy {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21885,9 +19794,7 @@ export class RuxIconWbCloudy {
 
 
 export declare interface RuxIconWbIncandescent extends Components.RuxIconWbIncandescent {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21906,9 +19813,7 @@ export class RuxIconWbIncandescent {
 
 
 export declare interface RuxIconWbIridescent extends Components.RuxIconWbIridescent {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21927,9 +19832,7 @@ export class RuxIconWbIridescent {
 
 
 export declare interface RuxIconWbSunny extends Components.RuxIconWbSunny {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21948,9 +19851,7 @@ export class RuxIconWbSunny {
 
 
 export declare interface RuxIconWc extends Components.RuxIconWc {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21969,9 +19870,7 @@ export class RuxIconWc {
 
 
 export declare interface RuxIconWeb extends Components.RuxIconWeb {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -21990,9 +19889,7 @@ export class RuxIconWeb {
 
 
 export declare interface RuxIconWebAsset extends Components.RuxIconWebAsset {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -22011,9 +19908,7 @@ export class RuxIconWebAsset {
 
 
 export declare interface RuxIconWeekend extends Components.RuxIconWeekend {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -22032,9 +19927,7 @@ export class RuxIconWeekend {
 
 
 export declare interface RuxIconWhatshot extends Components.RuxIconWhatshot {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -22053,9 +19946,7 @@ export class RuxIconWhatshot {
 
 
 export declare interface RuxIconWhereToVote extends Components.RuxIconWhereToVote {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -22074,9 +19965,7 @@ export class RuxIconWhereToVote {
 
 
 export declare interface RuxIconWidgets extends Components.RuxIconWidgets {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -22095,9 +19984,7 @@ export class RuxIconWidgets {
 
 
 export declare interface RuxIconWifi extends Components.RuxIconWifi {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -22116,9 +20003,7 @@ export class RuxIconWifi {
 
 
 export declare interface RuxIconWifiLock extends Components.RuxIconWifiLock {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -22137,9 +20022,7 @@ export class RuxIconWifiLock {
 
 
 export declare interface RuxIconWifiOff extends Components.RuxIconWifiOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -22158,9 +20041,7 @@ export class RuxIconWifiOff {
 
 
 export declare interface RuxIconWifiTethering extends Components.RuxIconWifiTethering {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -22179,9 +20060,7 @@ export class RuxIconWifiTethering {
 
 
 export declare interface RuxIconWork extends Components.RuxIconWork {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -22200,9 +20079,7 @@ export class RuxIconWork {
 
 
 export declare interface RuxIconWorkOff extends Components.RuxIconWorkOff {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -22221,9 +20098,7 @@ export class RuxIconWorkOff {
 
 
 export declare interface RuxIconWorkOutline extends Components.RuxIconWorkOutline {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -22242,9 +20117,7 @@ export class RuxIconWorkOutline {
 
 
 export declare interface RuxIconWrapText extends Components.RuxIconWrapText {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -22263,9 +20136,7 @@ export class RuxIconWrapText {
 
 
 export declare interface RuxIconYoutubeSearchedFor extends Components.RuxIconYoutubeSearchedFor {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -22284,9 +20155,7 @@ export class RuxIconYoutubeSearchedFor {
 
 
 export declare interface RuxIconZoomIn extends Components.RuxIconZoomIn {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -22305,9 +20174,7 @@ export class RuxIconZoomIn {
 
 
 export declare interface RuxIconZoomInMap extends Components.RuxIconZoomInMap {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -22326,9 +20193,7 @@ export class RuxIconZoomInMap {
 
 
 export declare interface RuxIconZoomOut extends Components.RuxIconZoomOut {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -22347,9 +20212,7 @@ export class RuxIconZoomOut {
 
 
 export declare interface RuxIconZoomOutMap extends Components.RuxIconZoomOutMap {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['size']
 })
 @Component({
@@ -22367,33 +20230,24 @@ export class RuxIconZoomOutMap {
 }
 
 
-export declare interface RuxInput extends Components.RuxInput {
-  /**
-   * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) 
-   */
-  ruxchange: EventEmitter<CustomEvent<any>>;
-  /**
-   * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) 
-   */
-  ruxinput: EventEmitter<CustomEvent<any>>;
-  /**
-   * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) 
-   */
-  ruxblur: EventEmitter<CustomEvent<any>>;
-
-}
-
+export declare interface RuxInput extends Components.RuxInput {}
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['autocomplete', 'disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'min', 'name', 'placeholder', 'readonly', 'required', 'size', 'spellcheck', 'step', 'type', 'value']
 })
 @Component({
   selector: 'rux-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['autocomplete', 'disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'min', 'name', 'placeholder', 'readonly', 'required', 'size', 'spellcheck', 'step', 'type', 'value']
+  inputs: ['autocomplete', 'disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'min', 'name', 'placeholder', 'readonly', 'required', 'size', 'spellcheck', 'step', 'type', 'value'],
+  outputs: ['ruxchange', 'ruxinput', 'ruxblur']
 })
 export class RuxInput {
+  /** Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) */
+  ruxchange!: EventEmitter<CustomEvent<any>>;
+  /** Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) */
+  ruxinput!: EventEmitter<CustomEvent<any>>;
+  /** Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) */
+  ruxblur!: EventEmitter<CustomEvent<any>>;
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -22404,9 +20258,7 @@ export class RuxInput {
 
 
 export declare interface RuxLog extends Components.RuxLog {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['data', 'filter', 'timezone']
 })
 @Component({
@@ -22424,25 +20276,20 @@ export class RuxLog {
 }
 
 
-export declare interface RuxMenuItem extends Components.RuxMenuItem {
-  /**
-   * Emitted when item is clicked. Ex `{value : 10}` 
-   */
-  ruxmenuitemselected: EventEmitter<CustomEvent<object>>;
-
-}
-
+export declare interface RuxMenuItem extends Components.RuxMenuItem {}
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['disabled', 'download', 'href', 'rel', 'target', 'value']
 })
 @Component({
   selector: 'rux-menu-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'download', 'href', 'rel', 'target', 'value']
+  inputs: ['disabled', 'download', 'href', 'rel', 'target', 'value'],
+  outputs: ['ruxmenuitemselected']
 })
 export class RuxMenuItem {
+  /** Emitted when item is clicked. Ex `{value : 10}` */
+  ruxmenuitemselected!: EventEmitter<CustomEvent<object>>;
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -22454,9 +20301,6 @@ export class RuxMenuItem {
 
 export declare interface RuxMenuItemDivider extends Components.RuxMenuItemDivider {}
 
-@ProxyCmp({
-  defineCustomElementFn: undefined
-})
 @Component({
   selector: 'rux-menu-item-divider',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -22471,25 +20315,20 @@ export class RuxMenuItemDivider {
 }
 
 
-export declare interface RuxModal extends Components.RuxModal {
-  /**
-   * Event that is fired when modal closes 
-   */
-  ruxmodalclosed: EventEmitter<CustomEvent<boolean>>;
-
-}
-
+export declare interface RuxModal extends Components.RuxModal {}
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['confirmText', 'denyText', 'modalMessage', 'modalTitle', 'open']
 })
 @Component({
   selector: 'rux-modal',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['confirmText', 'denyText', 'modalMessage', 'modalTitle', 'open']
+  inputs: ['confirmText', 'denyText', 'modalMessage', 'modalTitle', 'open'],
+  outputs: ['ruxmodalclosed']
 })
 export class RuxModal {
+  /** Event that is fired when modal closes */
+  ruxmodalclosed!: EventEmitter<CustomEvent<boolean>>;
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -22500,9 +20339,7 @@ export class RuxModal {
 
 
 export declare interface RuxMonitoringIcon extends Components.RuxMonitoringIcon {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['icon', 'label', 'notifications', 'status', 'sublabel']
 })
 @Component({
@@ -22521,9 +20358,7 @@ export class RuxMonitoringIcon {
 
 
 export declare interface RuxMonitoringProgressIcon extends Components.RuxMonitoringProgressIcon {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['label', 'max', 'min', 'notifications', 'progress', 'range', 'sublabel']
 })
 @Component({
@@ -22541,25 +20376,20 @@ export class RuxMonitoringProgressIcon {
 }
 
 
-export declare interface RuxNotification extends Components.RuxNotification {
-  /**
-   * Fires when the notification banner is closed 
-   */
-  ruxclosed: EventEmitter<CustomEvent<boolean>>;
-
-}
-
+export declare interface RuxNotification extends Components.RuxNotification {}
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['closeAfter', 'message', 'open', 'small', 'status']
 })
 @Component({
   selector: 'rux-notification',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['closeAfter', 'message', 'open', 'small', 'status']
+  inputs: ['closeAfter', 'message', 'open', 'small', 'status'],
+  outputs: ['ruxclosed']
 })
 export class RuxNotification {
+  /** Fires when the notification banner is closed */
+  ruxclosed!: EventEmitter<CustomEvent<boolean>>;
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -22570,9 +20400,7 @@ export class RuxNotification {
 
 
 export declare interface RuxOption extends Components.RuxOption {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['label', 'value']
 })
 @Component({
@@ -22591,9 +20419,7 @@ export class RuxOption {
 
 
 export declare interface RuxOptionGroup extends Components.RuxOptionGroup {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['label']
 })
 @Component({
@@ -22611,28 +20437,8 @@ export class RuxOptionGroup {
 }
 
 
-export declare interface RuxPopUpMenu extends Components.RuxPopUpMenu {
-  /**
-   * Emitted when the menu is about to open. 
-   */
-  ruxmenuwillopen: EventEmitter<CustomEvent<void>>;
-  /**
-   * Emitted when the menu is about to close 
-   */
-  ruxmenuwillclose: EventEmitter<CustomEvent<void>>;
-  /**
-   * Emitted when the menu is open. 
-   */
-  ruxmenudidopen: EventEmitter<CustomEvent<void>>;
-  /**
-   * Emitted when the menu is closed. 
-   */
-  ruxmenudidclose: EventEmitter<CustomEvent<void>>;
-
-}
-
+export declare interface RuxPopUpMenu extends Components.RuxPopUpMenu {}
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['anchorEl', 'open', 'triggerEl'],
   methods: ['isOpen', 'show', 'close', 'toggle']
 })
@@ -22640,9 +20446,18 @@ export declare interface RuxPopUpMenu extends Components.RuxPopUpMenu {
   selector: 'rux-pop-up-menu',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['anchorEl', 'open', 'triggerEl']
+  inputs: ['anchorEl', 'open', 'triggerEl'],
+  outputs: ['ruxmenuwillopen', 'ruxmenuwillclose', 'ruxmenudidopen', 'ruxmenudidclose']
 })
 export class RuxPopUpMenu {
+  /** Emitted when the menu is about to open. */
+  ruxmenuwillopen!: EventEmitter<CustomEvent<void>>;
+  /** Emitted when the menu is about to close */
+  ruxmenuwillclose!: EventEmitter<CustomEvent<void>>;
+  /** Emitted when the menu is open. */
+  ruxmenudidopen!: EventEmitter<CustomEvent<void>>;
+  /** Emitted when the menu is closed. */
+  ruxmenudidclose!: EventEmitter<CustomEvent<void>>;
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -22653,9 +20468,7 @@ export class RuxPopUpMenu {
 
 
 export declare interface RuxProgress extends Components.RuxProgress {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['hideLabel', 'max', 'value']
 })
 @Component({
@@ -22673,29 +20486,22 @@ export class RuxProgress {
 }
 
 
-export declare interface RuxPushButton extends Components.RuxPushButton {
-  /**
-   * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) 
-   */
-  ruxchange: EventEmitter<CustomEvent<any>>;
-  /**
-   * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) 
-   */
-  ruxblur: EventEmitter<CustomEvent<any>>;
-
-}
-
+export declare interface RuxPushButton extends Components.RuxPushButton {}
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['checked', 'disabled', 'icon', 'iconOnly', 'label', 'name', 'size', 'value']
 })
 @Component({
   selector: 'rux-push-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['checked', 'disabled', 'icon', 'iconOnly', 'label', 'name', 'size', 'value']
+  inputs: ['checked', 'disabled', 'icon', 'iconOnly', 'label', 'name', 'size', 'value'],
+  outputs: ['ruxchange', 'ruxblur']
 })
 export class RuxPushButton {
+  /** Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) */
+  ruxchange!: EventEmitter<CustomEvent<any>>;
+  /** Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) */
+  ruxblur!: EventEmitter<CustomEvent<any>>;
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -22705,25 +20511,20 @@ export class RuxPushButton {
 }
 
 
-export declare interface RuxRadio extends Components.RuxRadio {
-  /**
-   * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) 
-   */
-  ruxblur: EventEmitter<CustomEvent<any>>;
-
-}
-
+export declare interface RuxRadio extends Components.RuxRadio {}
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['checked', 'disabled', 'label', 'name', 'value']
 })
 @Component({
   selector: 'rux-radio',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['checked', 'disabled', 'label', 'name', 'value']
+  inputs: ['checked', 'disabled', 'label', 'name', 'value'],
+  outputs: ['ruxblur']
 })
 export class RuxRadio {
+  /** Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) */
+  ruxblur!: EventEmitter<CustomEvent<any>>;
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -22733,25 +20534,20 @@ export class RuxRadio {
 }
 
 
-export declare interface RuxRadioGroup extends Components.RuxRadioGroup {
-  /**
-   * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) 
-   */
-  ruxchange: EventEmitter<CustomEvent<any>>;
-
-}
-
+export declare interface RuxRadioGroup extends Components.RuxRadioGroup {}
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['errorText', 'helpText', 'invalid', 'label', 'name', 'required', 'value']
 })
 @Component({
   selector: 'rux-radio-group',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['errorText', 'helpText', 'invalid', 'label', 'name', 'required', 'value']
+  inputs: ['errorText', 'helpText', 'invalid', 'label', 'name', 'required', 'value'],
+  outputs: ['ruxchange']
 })
 export class RuxRadioGroup {
+  /** Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) */
+  ruxchange!: EventEmitter<CustomEvent<any>>;
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -22763,9 +20559,6 @@ export class RuxRadioGroup {
 
 export declare interface RuxRuler extends Components.RuxRuler {}
 
-@ProxyCmp({
-  defineCustomElementFn: undefined
-})
 @Component({
   selector: 'rux-ruler',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -22780,25 +20573,20 @@ export class RuxRuler {
 }
 
 
-export declare interface RuxSegmentedButton extends Components.RuxSegmentedButton {
-  /**
-   * Emitted when the value property has changed. 
-   */
-  ruxchange: EventEmitter<CustomEvent<any>>;
-
-}
-
+export declare interface RuxSegmentedButton extends Components.RuxSegmentedButton {}
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['data', 'disabled', 'selected', 'size']
 })
 @Component({
   selector: 'rux-segmented-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['data', 'disabled', 'selected', 'size']
+  inputs: ['data', 'disabled', 'selected', 'size'],
+  outputs: ['ruxchange']
 })
 export class RuxSegmentedButton {
+  /** Emitted when the value property has changed. */
+  ruxchange!: EventEmitter<CustomEvent<any>>;
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -22808,29 +20596,22 @@ export class RuxSegmentedButton {
 }
 
 
-export declare interface RuxSelect extends Components.RuxSelect {
-  /**
-   * Event Emitted when the Value of the Select is Changed 
-   */
-  ruxchange: EventEmitter<CustomEvent<void>>;
-  /**
-   * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) 
-   */
-  ruxblur: EventEmitter<CustomEvent<any>>;
-
-}
-
+export declare interface RuxSelect extends Components.RuxSelect {}
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['disabled', 'errorText', 'helpText', 'inputId', 'invalid', 'label', 'labelId', 'multiple', 'name', 'required', 'value']
 })
 @Component({
   selector: 'rux-select',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'errorText', 'helpText', 'inputId', 'invalid', 'label', 'labelId', 'multiple', 'name', 'required', 'value']
+  inputs: ['disabled', 'errorText', 'helpText', 'inputId', 'invalid', 'label', 'labelId', 'multiple', 'name', 'required', 'value'],
+  outputs: ['ruxchange', 'ruxblur']
 })
 export class RuxSelect {
+  /** Event Emitted when the Value of the Select is Changed */
+  ruxchange!: EventEmitter<CustomEvent<void>>;
+  /** Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) */
+  ruxblur!: EventEmitter<CustomEvent<any>>;
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -22840,29 +20621,22 @@ export class RuxSelect {
 }
 
 
-export declare interface RuxSlider extends Components.RuxSlider {
-  /**
-   * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) 
-   */
-  ruxinput: EventEmitter<CustomEvent<any>>;
-  /**
-   * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) 
-   */
-  ruxblur: EventEmitter<CustomEvent<any>>;
-
-}
-
+export declare interface RuxSlider extends Components.RuxSlider {}
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['axisLabels', 'disabled', 'errorText', 'helpText', 'label', 'max', 'min', 'name', 'step', 'ticksOnly', 'value']
 })
 @Component({
   selector: 'rux-slider',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['axisLabels', 'disabled', 'errorText', 'helpText', 'label', 'max', 'min', 'name', 'step', 'ticksOnly', 'value']
+  inputs: ['axisLabels', 'disabled', 'errorText', 'helpText', 'label', 'max', 'min', 'name', 'step', 'ticksOnly', 'value'],
+  outputs: ['ruxinput', 'ruxblur']
 })
 export class RuxSlider {
+  /** Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) */
+  ruxinput!: EventEmitter<CustomEvent<any>>;
+  /** Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) */
+  ruxblur!: EventEmitter<CustomEvent<any>>;
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -22873,9 +20647,7 @@ export class RuxSlider {
 
 
 export declare interface RuxStatus extends Components.RuxStatus {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['status']
 })
 @Component({
@@ -22893,33 +20665,24 @@ export class RuxStatus {
 }
 
 
-export declare interface RuxSwitch extends Components.RuxSwitch {
-  /**
-   * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) 
-   */
-  ruxchange: EventEmitter<CustomEvent<any>>;
-  /**
-   * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) 
-   */
-  ruxinput: EventEmitter<CustomEvent<any>>;
-  /**
-   * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) 
-   */
-  ruxblur: EventEmitter<CustomEvent<any>>;
-
-}
-
+export declare interface RuxSwitch extends Components.RuxSwitch {}
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['checked', 'disabled', 'label', 'name', 'value']
 })
 @Component({
   selector: 'rux-switch',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['checked', 'disabled', 'label', 'name', 'value']
+  inputs: ['checked', 'disabled', 'label', 'name', 'value'],
+  outputs: ['ruxchange', 'ruxinput', 'ruxblur']
 })
 export class RuxSwitch {
+  /** Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) */
+  ruxchange!: EventEmitter<CustomEvent<any>>;
+  /** Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) */
+  ruxinput!: EventEmitter<CustomEvent<any>>;
+  /** Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) */
+  ruxblur!: EventEmitter<CustomEvent<any>>;
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -22930,9 +20693,7 @@ export class RuxSwitch {
 
 
 export declare interface RuxTab extends Components.RuxTab {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['disabled', 'selected']
 })
 @Component({
@@ -22952,9 +20713,6 @@ export class RuxTab {
 
 export declare interface RuxTabPanel extends Components.RuxTabPanel {}
 
-@ProxyCmp({
-  defineCustomElementFn: undefined
-})
 @Component({
   selector: 'rux-tab-panel',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -22969,23 +20727,17 @@ export class RuxTabPanel {
 }
 
 
-export declare interface RuxTabPanels extends Components.RuxTabPanels {
-  /**
-   * Emits a list of the Tab Panels that have been passed in 
-   */
-  ruxregisterpanels: EventEmitter<CustomEvent<HTMLRuxTabPanelsElement[]>>;
+export declare interface RuxTabPanels extends Components.RuxTabPanels {}
 
-}
-
-@ProxyCmp({
-  defineCustomElementFn: undefined
-})
 @Component({
   selector: 'rux-tab-panels',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>'
+  template: '<ng-content></ng-content>',
+  outputs: ['ruxregisterpanels']
 })
 export class RuxTabPanels {
+  /** Emits a list of the Tab Panels that have been passed in */
+  ruxregisterpanels!: EventEmitter<CustomEvent<HTMLRuxTabPanelsElement[]>>;
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -22997,9 +20749,6 @@ export class RuxTabPanels {
 
 export declare interface RuxTable extends Components.RuxTable {}
 
-@ProxyCmp({
-  defineCustomElementFn: undefined
-})
 @Component({
   selector: 'rux-table',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -23016,9 +20765,6 @@ export class RuxTable {
 
 export declare interface RuxTableBody extends Components.RuxTableBody {}
 
-@ProxyCmp({
-  defineCustomElementFn: undefined
-})
 @Component({
   selector: 'rux-table-body',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -23035,9 +20781,6 @@ export class RuxTableBody {
 
 export declare interface RuxTableCell extends Components.RuxTableCell {}
 
-@ProxyCmp({
-  defineCustomElementFn: undefined
-})
 @Component({
   selector: 'rux-table-cell',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -23054,9 +20797,6 @@ export class RuxTableCell {
 
 export declare interface RuxTableHeader extends Components.RuxTableHeader {}
 
-@ProxyCmp({
-  defineCustomElementFn: undefined
-})
 @Component({
   selector: 'rux-table-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -23073,9 +20813,6 @@ export class RuxTableHeader {
 
 export declare interface RuxTableHeaderCell extends Components.RuxTableHeaderCell {}
 
-@ProxyCmp({
-  defineCustomElementFn: undefined
-})
 @Component({
   selector: 'rux-table-header-cell',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -23092,9 +20829,6 @@ export class RuxTableHeaderCell {
 
 export declare interface RuxTableHeaderRow extends Components.RuxTableHeaderRow {}
 
-@ProxyCmp({
-  defineCustomElementFn: undefined
-})
 @Component({
   selector: 'rux-table-header-row',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -23110,9 +20844,7 @@ export class RuxTableHeaderRow {
 
 
 export declare interface RuxTableRow extends Components.RuxTableRow {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['selected']
 })
 @Component({
@@ -23130,25 +20862,20 @@ export class RuxTableRow {
 }
 
 
-export declare interface RuxTabs extends Components.RuxTabs {
-  /**
-   * Fires whenever a new tab is selected, and emits the selected tab. 
-   */
-  ruxselected: EventEmitter<CustomEvent<any>>;
-
-}
-
+export declare interface RuxTabs extends Components.RuxTabs {}
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['small']
 })
 @Component({
   selector: 'rux-tabs',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['small']
+  inputs: ['small'],
+  outputs: ['ruxselected']
 })
 export class RuxTabs {
+  /** Fires whenever a new tab is selected, and emits the selected tab. */
+  ruxselected!: EventEmitter<CustomEvent<any>>;
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -23158,33 +20885,24 @@ export class RuxTabs {
 }
 
 
-export declare interface RuxTextarea extends Components.RuxTextarea {
-  /**
-   * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) 
-   */
-  ruxchange: EventEmitter<CustomEvent<any>>;
-  /**
-   * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) 
-   */
-  ruxinput: EventEmitter<CustomEvent<any>>;
-  /**
-   * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) 
-   */
-  ruxblur: EventEmitter<CustomEvent<any>>;
-
-}
-
+export declare interface RuxTextarea extends Components.RuxTextarea {}
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'rows', 'size', 'value']
 })
 @Component({
   selector: 'rux-textarea',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'rows', 'size', 'value']
+  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'rows', 'size', 'value'],
+  outputs: ['ruxchange', 'ruxinput', 'ruxblur']
 })
 export class RuxTextarea {
+  /** Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) */
+  ruxchange!: EventEmitter<CustomEvent<any>>;
+  /** Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) */
+  ruxinput!: EventEmitter<CustomEvent<any>>;
+  /** Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) */
+  ruxblur!: EventEmitter<CustomEvent<any>>;
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -23195,9 +20913,7 @@ export class RuxTextarea {
 
 
 export declare interface RuxTimeRegion extends Components.RuxTimeRegion {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['end', 'hideTimestamp', 'selected', 'start', 'status']
 })
 @Component({
@@ -23216,9 +20932,7 @@ export class RuxTimeRegion {
 
 
 export declare interface RuxTimeline extends Components.RuxTimeline {}
-
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['end', 'interval', 'playhead', 'start', 'zoom']
 })
 @Component({
@@ -23238,9 +20952,6 @@ export class RuxTimeline {
 
 export declare interface RuxTrack extends Components.RuxTrack {}
 
-@ProxyCmp({
-  defineCustomElementFn: undefined
-})
 @Component({
   selector: 'rux-track',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -23257,9 +20968,6 @@ export class RuxTrack {
 
 export declare interface RuxTree extends Components.RuxTree {}
 
-@ProxyCmp({
-  defineCustomElementFn: undefined
-})
 @Component({
   selector: 'rux-tree',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -23274,16 +20982,8 @@ export class RuxTree {
 }
 
 
-export declare interface RuxTreeNode extends Components.RuxTreeNode {
-  /**
-   * Emit when user selects a tree node 
-   */
-  ruxtreenodeselected: EventEmitter<CustomEvent<string>>;
-
-}
-
+export declare interface RuxTreeNode extends Components.RuxTreeNode {}
 @ProxyCmp({
-  defineCustomElementFn: undefined,
   inputs: ['expanded', 'selected'],
   methods: ['setExpanded', 'setSelected']
 })
@@ -23291,9 +20991,12 @@ export declare interface RuxTreeNode extends Components.RuxTreeNode {
   selector: 'rux-tree-node',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['expanded', 'selected']
+  inputs: ['expanded', 'selected'],
+  outputs: ['ruxtreenodeselected']
 })
 export class RuxTreeNode {
+  /** Emit when user selects a tree node */
+  ruxtreenodeselected!: EventEmitter<CustomEvent<string>>;
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
