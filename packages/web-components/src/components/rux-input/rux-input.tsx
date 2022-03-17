@@ -339,9 +339,15 @@ export class RuxInput implements FormFieldInterface {
                             onChange={_onChange}
                             onInput={_onInput}
                             onBlur={_onBlur}
-                            onFocus={() => (this.hasFocus = true)}
+                            onFocus={
+                                () =>
+                                    (this.hasFocus = true) /*! probs a better way, focus event?*/
+                            }
                             part="input"
                         ></input>
+                        <span part="suffix" class="rux-input-suffix">
+                            <slot name="suffix"></slot>
+                        </span>
                     </div>
                 </div>
 

@@ -20,6 +20,12 @@
     </head>
 
     <body>
+        <style>
+            rux-input::part(icon) {
+                height: 1rem;
+                width: 1rem;
+            }
+        </style>
         <div style="padding: 5%; width: 300px">
             <rux-input
                 name="text"
@@ -28,7 +34,8 @@
                 placeholder="Text"
                 label="Text Label"
             >
-                <rux-icon icon="close" slot="prefix"></rux-icon>
+                <rux-icon icon="close" slot="prefix" size="small"></rux-icon>
+                <rux-icon icon="close" slot="suffix" size="small"></rux-icon>
             </rux-input>
             <br />
             <rux-input

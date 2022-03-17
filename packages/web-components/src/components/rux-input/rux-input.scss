@@ -76,6 +76,7 @@
             outline: none;
         }
 
+        overflow: hidden;
         flex: 1 1 auto;
         display: inline-flex;
         align-items: stretch;
@@ -174,6 +175,14 @@
         flex: 0 0 auto;
         align-items: center;
         cursor: default;
+        padding-right: 12px; //!probs just for med?
+    }
+    .rux-input-suffix {
+        display: inline-flex;
+        flex: 0 0 auto;
+        align-items: center;
+        cursor: default;
+        padding: 0;
     }
 
     ::selection {
