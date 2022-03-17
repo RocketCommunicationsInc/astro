@@ -19,5 +19,34 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body></body>
+    <body>
+        <div style="padding: 5%; width: 300px">
+            <rux-input
+                name="text"
+                error-text="Error Text"
+                type="text"
+                placeholder="Text"
+                label="Text Label"
+            >
+                <rux-icon icon="close" slot="prefix"></rux-icon>
+            </rux-input>
+            <br />
+            <rux-input
+                name="pw"
+                error-text="Error Text"
+                type="password"
+                placeholder="PW"
+                label="PW Label"
+            ></rux-input>
+            <br />
+            <rux-input
+                name="search"
+                error-text="Error Text"
+                type="search"
+                placeholder="Search"
+                label="Search Label"
+            >
+            </rux-input>
+        </div>
+    </body>
 </html>

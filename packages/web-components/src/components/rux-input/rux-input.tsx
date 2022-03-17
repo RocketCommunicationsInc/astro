@@ -42,7 +42,9 @@ export class RuxInput implements FormFieldInterface {
 
     @State() isPasswordVisible = false
 
-    @State() iconName = 'visibility'
+    @State() hasFocus = false
+
+    // @State() iconName = 'visibility'
 
     /**
      * The input label text. For HTML content, use the `label` slot instead.
@@ -155,6 +157,12 @@ export class RuxInput implements FormFieldInterface {
         this._handleSlotChange()
     }
 
+    // @Watch('hasFocus')
+    // handleFocusChange() {
+    //     // this._handleFocus()
+    //     console.log('watch')
+    // }
+
     @Watch('type')
     handleTypeChange() {
         this._setTogglePassword()
@@ -165,7 +173,7 @@ export class RuxInput implements FormFieldInterface {
         this._onInput = this._onInput.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._handleType = this._handleType.bind(this)
-        this._handleTogglePassword = this._handleTogglePassword.bind(this)
+        // this._handleTogglePassword = this._handleTogglePassword.bind(this)
     }
 
     disconnectedCallback() {
@@ -198,6 +206,7 @@ export class RuxInput implements FormFieldInterface {
 
     private _onBlur = () => {
         this.ruxBlur.emit()
+        this.hasFocus = false
     }
 
     private _handleSlotChange() {
@@ -210,14 +219,14 @@ export class RuxInput implements FormFieldInterface {
         }
     }
 
-    private _handleTogglePassword() {
-        this.isPasswordVisible = !this.isPasswordVisible
-        if (this.isPasswordVisible) {
-            this.iconName = 'visibility-off'
-        } else {
-            this.iconName = 'visibility'
-        }
-    }
+    // private _handleTogglePassword() {
+    //     this.isPasswordVisible = !this.isPasswordVisible
+    //     if (this.isPasswordVisible) {
+    //         this.iconName = 'visibility-off'
+    //     } else {
+    //         this.iconName = 'visibility'
+    //     }
+    // }
 
     private _handleType() {
         let realType = ''
@@ -228,6 +237,11 @@ export class RuxInput implements FormFieldInterface {
             : (realType = this.type)
         return realType
     }
+
+    // private _handleFocus() {
+    //     this.hasFocus = true;
+    //     console.log('Handle focus')
+    // }
 
     render() {
         const {
@@ -246,14 +260,14 @@ export class RuxInput implements FormFieldInterface {
             _onBlur,
             _handleType,
             _handleSlotChange,
-            _handleTogglePassword,
+            // _handleTogglePassword,
             placeholder,
             required,
             step,
             type,
             value,
             hasLabel,
-            iconName,
+            // iconName,
             size,
             autocomplete,
             spellcheck,
@@ -291,19 +305,10 @@ export class RuxInput implements FormFieldInterface {
                             </slot>
                         </span>
                     </label>
-                    <input
-                        name={name}
-                        disabled={disabled}
-                        type={_handleType()}
-                        aria-invalid={invalid ? 'true' : 'false'}
-                        placeholder={placeholder}
-                        required={required}
-                        step={step}
-                        min={min}
-                        max={max}
-                        value={value}
+                    <div
                         class={{
                             'rux-input': true,
+                            'rux-input--focused': this.hasFocus,
                             'rux-input--disabled': disabled,
                             'rux-input--invalid': invalid,
                             'rux-input--search': type === 'search',
@@ -311,32 +316,35 @@ export class RuxInput implements FormFieldInterface {
                             'rux-input--medium': size === 'medium',
                             'rux-input--large': size === 'large',
                         }}
-                        id={this.inputId}
-                        spellcheck={spellcheck}
-                        autocomplete={togglePassword ? 'off' : autocomplete}
-                        readonly={readonly}
-                        onChange={_onChange}
-                        onInput={_onInput}
-                        onBlur={_onBlur}
-                        part="input"
-                    ></input>
-                    {togglePassword && (
-                        <div
-                            class={{
-                                'icon-container': true,
-                                'show-password': true,
-                                'with-label': hasLabel,
-                            }}
-                        >
-                            <rux-icon
-                                exportparts="icon"
-                                onClick={_handleTogglePassword}
-                                icon={iconName}
-                                size="extra-small"
-                            />
-                        </div>
-                    )}
+                    >
+                        <span part="prefix" class="rux-input-prefix">
+                            <slot name="prefix"></slot>
+                        </span>
+                        <input
+                            name={name}
+                            disabled={disabled}
+                            type={_handleType()}
+                            aria-invalid={invalid ? 'true' : 'false'}
+                            placeholder={placeholder}
+                            required={required}
+                            step={step}
+                            min={min}
+                            max={max}
+                            value={value}
+                            class="native-input"
+                            id={this.inputId}
+                            spellcheck={spellcheck}
+                            autocomplete={togglePassword ? 'off' : autocomplete}
+                            readonly={readonly}
+                            onChange={_onChange}
+                            onInput={_onInput}
+                            onBlur={_onBlur}
+                            onFocus={() => (this.hasFocus = true)}
+                            part="input"
+                        ></input>
+                    </div>
                 </div>
+
                 <FormFieldMessage
                     errorText={errorText}
                     helpText={helpText}

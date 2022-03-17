@@ -61,9 +61,28 @@
     }
 
     .rux-input {
+        input {
+            border: none;
+            background: none;
+            box-shadow: none;
+            padding: 0;
+            margin: 0;
+            color: inherit;
+            font-family: inherit;
+            font-size: inherit;
+            font-weight: inherit;
+            -webkit-appearance: none;
+            appearance: none;
+            outline: none;
+        }
+
+        flex: 1 1 auto;
+        display: inline-flex;
+        align-items: stretch;
+        justify-content: start;
+        position: relative;
         box-sizing: border-box;
         order: 2;
-        width: 100%;
         border: 1px solid var(--input-border-color);
         border-radius: var(--radius-base);
         font-family: var(--font-body-1-font-family);
@@ -72,6 +91,7 @@
         letter-spacing: var(--font-body-1-letter-spacing);
         color: var(--input-text-color);
         background-color: var(--input-background-color);
+
         &--invalid {
             border: 1px solid var(--input-invalid-border-color);
         }
@@ -97,10 +117,14 @@
                 url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.37 26.457a15.282 15.282 0 000-21.918c-6.176-6.052-16.187-6.052-22.361 0a15.274 15.274 0 00-1.541 20.166c-.367.147-.713.37-1.014.665L.926 34.709a3.056 3.056 0 000 4.383 3.208 3.208 0 004.472 0l9.528-9.339c.352-.345.604-.753.756-1.186 6.137 3.831 14.347 3.124 19.687-2.11zM24.193 4.043c6.454 0 11.686 5.129 11.686 11.455 0 6.326-5.232 11.455-11.686 11.455-6.455 0-11.687-5.129-11.687-11.455 0-6.326 5.232-11.455 11.687-11.455z' fill='%234dacff' fill-rule='evenodd'/%3E%3C/svg%3E")
                 10px/0.975rem no-repeat;
         }
-        &:focus {
+        &--focused {
             border-color: var(--input-focus-border-color);
             outline: none;
         }
+        // &:focus {
+        //     border-color: var(--input-focus-border-color);
+        //     outline: none;
+        // }
         &:hover {
             border-color: var(--input-focus-border-color);
             outline: none;
@@ -126,6 +150,30 @@
         &__asterisk {
             margin-left: 4px;
         }
+    }
+
+    .test {
+        flex: 1 1 auto;
+        display: inline-flex;
+        align-items: stretch;
+        justify-content: start;
+        position: relative;
+        width: 100%;
+        border: 1px solid var(--input-border-color);
+        border-radius: var(--radius-base);
+        font-family: var(--font-body-1-font-family);
+        font-size: var(--font-body-1-font-size);
+        font-weight: var(--font-body-1-font-weight);
+        letter-spacing: var(--font-body-1-letter-spacing);
+        color: var(--input-text-color);
+        background-color: var(--input-background-color);
+    }
+
+    .rux-input-prefix {
+        display: inline-flex;
+        flex: 0 0 auto;
+        align-items: center;
+        cursor: default;
     }
 
     ::selection {
