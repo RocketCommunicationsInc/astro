@@ -1,5 +1,21 @@
 # astro-website
 
+## 6.4.0
+
+### Minor Changes
+
+- 4589b10f: Added multiple support to Select
+- 924048a8: Timeline component beta
+- c7cc5074: Added text underline to link hover states globally.
+- 0625cd00: Adds axis-labels and ticks-only props to rux-slider, providing tick mark and label support.
+- 241062b2: Added a size prop to rux-textarea as well as relvant styling for each size. Removed unused small prop.
+
+### Patch Changes
+
+- a4b86a79: Updated Switch's thumb hover state color to align with design.
+- e42eac91: Updates the clock labels to match design.
+- 5352e167: Updates Tabs to align with design
+
 ## 6.3.0
 
 ### Minor Changes
