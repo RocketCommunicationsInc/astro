@@ -18,7 +18,7 @@
 | `name`         | `name`         | The input name                                                                                                                                                                          | `string`                                                                    | `''`        |
 | `placeholder`  | `placeholder`  | The input placeholder text                                                                                                                                                              | `string \| undefined`                                                       | `undefined` |
 | `readonly`     | `readonly`     | The inputs readonly attribute                                                                                                                                                           | `boolean`                                                                   | `false`     |
-| `required`     | `required`     | Sets the input as disabled                                                                                                                                                              | `boolean`                                                                   | `false`     |
+| `required`     | `required`     | Sets the input as required                                                                                                                                                              | `boolean`                                                                   | `false`     |
 | `size`         | `size`         | Control the padding around the input field                                                                                                                                              | `"large" \| "medium" \| "small"`                                            | `'medium'`  |
 | `spellcheck`   | `spellcheck`   | The input's spellcheck attribute                                                                                                                                                        | `boolean`                                                                   | `false`     |
 | `step`         | `step`         | The input step attribute                                                                                                                                                                | `string \| undefined`                                                       | `undefined` |
@@ -52,6 +52,7 @@
 | `"icon"`       | The icon displayed when toggle-password prop is set |
 | `"input"`      | The input element                                   |
 | `"label"`      | The input label when `label` prop is set            |
+| `"required"`   | The asterisk when required is true                  |
 
 
 ## CSS Custom Properties

@@ -44,6 +44,9 @@ Pass properties as attributes of the Astro Switch custom element:
 <rux-switch disabled="false" checked="false"></rux-switch>
 ```
 
+### 4. Listening for Events
+
+In order to get the correct value of rux-switch's `checked` attribute, use the event listener `ruxchange`. 
 ### Properties
 
 | Property   | Type    | Default | Required | Description                                                                                                                                                                                 |

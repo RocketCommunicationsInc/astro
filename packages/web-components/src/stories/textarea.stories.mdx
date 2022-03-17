@@ -33,13 +33,14 @@ export const Default = (args) => {
     ?invalid="${args.invalid}"
     max-length="${args.maxLength}"
     min-length="${args.minLength}"
-    name="${args.name}"
-    placeholder="${args.placeholder}"
+    .name="${args.name}"
+    .placeholder="${args.placeholder}"
     ?required="${args.required}"
     rows="${args.rows}"
     ?small="${args.small}"
     value="${args.value}"
     type="${args.type}"
+    .size="${args.size}"
 ></rux-textarea>
     `
 }
@@ -73,6 +74,78 @@ export const Default = (args) => {
 
 ## Variants
 
+### Small
+
+export const Small = (args) => {
+    return html`
+<rux-textarea
+    label="${args.label}"
+    ?disabled="${args.disabled}"
+    error-text="${args.errorText}"
+    help-text="${args.helpText}"
+    ?invalid="${args.invalid}"
+    max-length="${args.maxLength}"
+    min-length="${args.minLength}"
+    .name="${args.name}"
+    .placeholder="${args.placeholder}"
+    ?required="${args.required}"
+    .rows="${args.rows}"
+    ?small="${args.small}"
+    .value="${args.value}"
+    .type="${args.type}"
+    .size="${args.size}"
+></rux-textarea>
+    `
+}
+
+<Canvas>
+    <Story
+        name="Small"
+        args={{
+            label: 'Small textarea',
+            size: 'small'
+        }}
+    >
+        {Small.bind()}
+    </Story>
+</Canvas>
+
+### Large
+
+export const Large = (args) => {
+    return html`
+<rux-textarea
+    label="${args.label}"
+    ?disabled="${args.disabled}"
+    error-text="${args.errorText}"
+    help-text="${args.helpText}"
+    ?invalid="${args.invalid}"
+    max-length="${args.maxLength}"
+    min-length="${args.minLength}"
+    .name="${args.name}"
+    .placeholder="${args.placeholder}"
+    ?required="${args.required}"
+    .rows="${args.rows}"
+    ?small="${args.small}"
+    .value="${args.value}"
+    .type="${args.type}"
+    .size="${args.size}"
+></rux-textarea>
+    `
+}
+
+<Canvas>
+    <Story
+        name="Large"
+        args={{
+            label: 'Large textarea',
+            size: 'large'
+        }}
+    >
+        {Large.bind()}
+    </Story>
+</Canvas>
+
 ### Disabled
 
 export const Disabled = (args) => {
@@ -85,13 +158,14 @@ export const Disabled = (args) => {
     ?invalid="${args.invalid}"
     max-length="${args.maxLength}"
     min-length="${args.minLength}"
-    name="${args.name}"
-    placeholder="${args.placeholder}"
+    .name="${args.name}"
+    .placeholder="${args.placeholder}"
     ?required="${args.required}"
     rows="${args.rows}"
     ?small="${args.small}"
-    value="${args.value}"
-    type="${args.type}"
+    .value="${args.value}"
+    .type="${args.type}"
+    .size="${args.size}"
 ></rux-textarea>
     `
 }
@@ -119,6 +193,42 @@ export const Disabled = (args) => {
     </Story>
 </Canvas>
 
+### Required
+
+export const Required = (args) => {
+    return html`
+<rux-textarea
+    label="${args.label}"
+    ?disabled="${args.disabled}"
+    error-text="${args.errorText}"
+    help-text="${args.helpText}"
+    ?invalid="${args.invalid}"
+    max-length="${args.maxLength}"
+    min-length="${args.minLength}"
+    .name="${args.name}"
+    .placeholder="${args.placeholder}"
+    ?required="${args.required}"
+    .rows="${args.rows}"
+    ?small="${args.small}"
+    .value="${args.value}"
+    .type="${args.type}"
+    .size="${args.size}"
+></rux-textarea>
+    `
+}
+
+<Canvas>
+    <Story
+        name="Required"
+        args={{
+            label: 'Required textarea',
+            required: true,
+        }}
+    >
+        {Required.bind()}
+    </Story>
+</Canvas>
+
 ### Help Text
 
 export const HelpText = (args) => {
@@ -131,13 +241,14 @@ export const HelpText = (args) => {
     ?invalid="${args.invalid}"
     max-length="${args.maxLength}"
     min-length="${args.minLength}"
-    name="${args.name}"
-    placeholder="${args.placeholder}"
+    .name="${args.name}"
+    .placeholder="${args.placeholder}"
     ?required="${args.required}"
     rows="${args.rows}"
     ?small="${args.small}"
     value="${args.value}"
     type="${args.type}"
+    .size="${args.size}"
 ></rux-textarea>
     `
 }
@@ -177,13 +288,14 @@ export const Invalid = (args) => {
     ?invalid="${args.invalid}"
     max-length="${args.maxLength}"
     min-length="${args.minLength}"
-    name="${args.name}"
-    placeholder="${args.placeholder}"
+    .name="${args.name}"
+    .placeholder="${args.placeholder}"
     ?required="${args.required}"
     rows="${args.rows}"
     ?small="${args.small}"
     value="${args.value}"
     type="${args.type}"
+    .size="${args.size}"
 ></rux-textarea>
     `
 }
@@ -223,13 +335,14 @@ export const Placeholder = (args) => {
     ?invalid="${args.invalid}"
     max-length="${args.maxLength}"
     min-length="${args.minLength}"
-    name="${args.name}"
+    .name="${args.name}"
     placeholder="${args.placeholder}"
     ?required="${args.required}"
     rows="${args.rows}"
     ?small="${args.small}"
     value="${args.value}"
     type="${args.type}"
+    .size="${args.size}"
 ></rux-textarea>
     `
 }

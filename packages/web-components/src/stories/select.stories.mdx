@@ -251,6 +251,51 @@ export const Invalid = (args) => {
     </Story>
 </Canvas>
 
+### Required
+
+export const Required = (args) => {
+    return html`
+<div style="width: 200px; margin: 0 auto;">
+    <rux-select
+        ?disabled="${args.disabled}"
+        ?required="${args.required}"
+        ?invalid="${args.invalid}"
+        label="${args.label}"
+        input-id="${args.inputId}"
+        label-id="${args.labelId}"
+        .errorText="${args.errorText}"
+        .helpText="${args.helpText}"
+    >
+        <rux-option
+            value=""
+            selected
+            label="Select an option"
+        ></rux-option>
+        <rux-option value="1.1" label="Option 1.1"></rux-option>
+        <rux-option value="1.2" label="Option 1.2"></rux-option>
+        <rux-option value="1.3" label="Option 1.3"></rux-option>
+        <rux-option value="1.4" label="Option 1.4"></rux-option>
+    </rux-select>
+</div>
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+            label: 'Required Select Menu',
+            required: true,
+            inputId: 1,
+            labelId: 1,
+        }}
+        name="Required"
+    >
+        {Required.bind()}
+    </Story>
+</Canvas>
+
+### With Help Text
+
 export const WithHelpText = (args) => {
     return html`
 <div style="width: 200px; margin: 0 auto;">
@@ -261,7 +306,7 @@ export const WithHelpText = (args) => {
         label="${args.label}"
         input-id="${args.inputId}"
         label-id="${args.labelId}"
-        error-text="${args.errorText}"
+        .error-text="${args.errorText}"
         help-text="${args.helpText}"
         name="${args.name}"
     >
@@ -298,6 +343,8 @@ export const WithHelpText = (args) => {
         {WithHelpText.bind()}
     </Story>
 </Canvas>
+
+### With Error Text
 
 export const WithErrorText = (args) => {
     return html`
@@ -344,6 +391,101 @@ export const WithErrorText = (args) => {
         name="With Error Text"
     >
         {WithErrorText.bind()}
+    </Story>
+</Canvas>
+
+### Multiple
+
+> NOTE: This component uses the native browser `<select>` element under the hood. 
+As a result, styling may appear inconsistent across different browsers. 
+
+export const Multiple = (args) => {
+    return html`
+<div style="width: 200px; margin: 0 auto;">
+    <rux-select
+        ?disabled="${args.disabled}"
+        ?required="${args.required}"
+        ?invalid="${args.invalid}"
+        label="${args.label}"
+        input-id="${args.inputId}"
+        label-id="${args.labelId}"
+        .error-text="${args.errorText}"
+        help-text="${args.helpText}"
+        .multiple="${args.multiple}"
+    >
+        <rux-option value="1.1" label="Option 1.1"></rux-option>
+        <rux-option value="1.2" label="Option 1.2"></rux-option>
+        <rux-option value="1.3" label="Option 1.3"></rux-option>
+        <rux-option value="1.4" label="Option 1.4"></rux-option>
+        <rux-option value="1.5" label="Option 1.5"></rux-option>
+    </rux-select>
+</div>
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+            label: 'Select menu',
+            inputId: 1,
+            labelId: 1,
+            helpText: '',
+            multiple: true
+        }}
+        name="Multiple"
+    >
+        {Multiple.bind()}
+    </Story>
+</Canvas>
+
+### Multiple With Option Groups
+
+export const MultipleWithOptionGroups = (args) => {
+    return html`
+<div style="width: 200px; margin: 0 auto;">
+    <rux-select
+        ?disabled="${args.disabled}"
+        ?required="${args.required}"
+        ?invalid="${args.invalid}"
+        label="${args.label}"
+        input-id="${args.inputId}"
+        label-id="${args.labelId}"
+        .error-text="${args.errorText}"
+        help-text="${args.helpText}"
+        .multiple="${args.multiple}"
+    >
+        <rux-option value="" label="Select Option"></rux-option>
+        <rux-option-group label="Option 1">
+            <rux-option value="1.1" label="Option 1.1"></rux-option>
+            <rux-option value="1.2" label="Option 1.2"></rux-option>
+            <rux-option value="1.3" label="Option 1.3"></rux-option>
+            <rux-option value="1.4" label="Option 1.4"></rux-option>
+            <rux-option value="1.5" label="Option 1.5"></rux-option>
+        </rux-option-group>
+        <rux-option-group label="Option 2">
+            <rux-option value="2.1" label="Option 2.1"></rux-option>
+            <rux-option value="2.2" label="Option 2.2"></rux-option>
+            <rux-option value="2.3" label="Option 2.3"></rux-option>
+            <rux-option value="2.4" label="Option 2.4"></rux-option>
+            <rux-option value="2.5" label="Option 2.5"></rux-option>
+        </rux-option-group> 
+    </rux-select>
+</div>
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+            label: 'Select menu',
+            inputId: 1,
+            labelId: 1,
+            helpText: '',
+            multiple: true
+        }}
+        name="Multiple With Option Groups"
+    >
+        {MultipleWithOptionGroups.bind()}
     </Story>
 </Canvas>
 

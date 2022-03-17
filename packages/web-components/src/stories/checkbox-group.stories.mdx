@@ -25,6 +25,7 @@ export const Default = (args) => {
             label="${args.label}"
             .value="${args.value}"
             ?invalid="${args.invalid}"
+            ?required="${args.required}"
             .helpText="${args.helpText}"
             .errorText="${args.errorText}"
         >
@@ -64,6 +65,7 @@ export const Invalid = (args) => {
     label="${args.label}"
     .value="${args.value}"
     ?invalid="${args.invalid}"
+    ?required="${args.required}"
     .helpText="${args.helpText}"
     .errorText="${args.errorText}"
 >
@@ -88,6 +90,39 @@ export const Invalid = (args) => {
     </Story>
 </Canvas>
 
+### Required
+
+export const Required = (args) => {
+    return html`
+<rux-checkbox-group
+    name="checkboxes"
+    label="${args.label}"
+    .value="${args.value}"
+    ?invalid="${args.invalid}"
+    ?required="${args.required}"
+    .helpText="${args.helpText}"
+    .errorText="${args.errorText}"
+>
+    <rux-checkbox value="one" name="checkboxes">One</rux-checkbox>
+    <rux-checkbox value="two" name="checkboxes">Two</rux-checkbox>
+    <rux-checkbox value="three" name="checkboxes">Three</rux-checkbox>
+</rux-checkbox-group>
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+            name: 'checkboxes',
+            label: 'Checkbox group',
+            required: true,
+        }}
+        name="Required"
+    >
+        {Required.bind()}
+    </Story>
+</Canvas>
+
 ### With Help Text
 
 export const WithHelpText = (args) => {
@@ -97,6 +132,7 @@ export const WithHelpText = (args) => {
     label="${args.label}"
     .value="${args.value}"
     ?invalid="${args.invalid}"
+    ?required="${args.required}"
     help-text="${args.helpText}"
     .errorText="${args.errorText}"
 >
@@ -130,6 +166,7 @@ export const WithErrorText = (args) => {
     label="${args.label}"
     .value="${args.value}"
     ?invalid="${args.invalid}"
+    ?required="${args.required}"
     .helpText="${args.helpText}"
     error-text="${args.errorText}"
 >

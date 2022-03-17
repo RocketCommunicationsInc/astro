@@ -18,7 +18,38 @@
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
+
     <body>
-        <rux-segmented-button></rux-segmented-button>
+        <div style="padding: 5%">
+            <rux-segmented-button></rux-segmented-button>
+        </div>
+        <div style="padding: 5%">
+            <rux-segmented-button id="disabled" disabled></rux-segmented-button>
+        </div>
+        <script>
+            const seg = document.querySelector('rux-segmented-button')
+            const disabled = document.getElementById('disabled')
+            const data = [
+                { label: 'First segment' },
+                { label: 'Second segment', selected: true },
+                { label: 'Third segment' },
+            ]
+
+            seg.data = data
+            seg.addEventListener('click', () => {
+                console.log('heard click')
+            })
+            seg.addEventListener('ruxchange', () => {
+                console.log('heard change')
+            })
+
+            disabled.data = data
+            disabled.addEventListener('click', () => {
+                console.log('Disabled --- heard click')
+            })
+            disabled.addEventListener('ruxchange', () => {
+                console.log('disabled --- heard change')
+            })
+        </script>
     </body>
 </html>

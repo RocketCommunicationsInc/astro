@@ -32,6 +32,7 @@ export const Default = (args) => {
     label="${args.label}"
     .value="${args.value}"
     ?invalid="${args.invalid}"
+    ?required="${args.required}"
     .helpText="${args.helpText}"
     .errorText="${args.errorText}"
 >
@@ -79,6 +80,7 @@ export const Invalid = (args) => {
     label="${args.label}"
     .value="${args.value}"
     ?invalid="${args.invalid}"
+    ?required="${args.required}"
     .helpText="${args.helpText}"
     .errorText="${args.errorText}"
 >
@@ -105,6 +107,39 @@ export const Invalid = (args) => {
     </Story>
 </Canvas>
 
+### Required
+
+export const Required = (args) => {
+    return html`
+<rux-radio-group
+    name="radios"
+    label="${args.label}"
+    .value="${args.value}"
+    ?invalid="${args.invalid}"
+    ?required="${args.required}"
+    .helpText="${args.helpText}"
+    .errorText="${args.errorText}"
+>
+    <rux-radio value="one" name="radios">One</rux-radio>
+    <rux-radio value="two" name="radios">Two</rux-radio>
+    <rux-radio value="three" name="radios">Three</rux-radio>
+</rux-radio-group>
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+            name: 'radios',
+            label: 'Radio group',
+            required: true,
+        }}
+        name="Required"
+    >
+        {Required.bind()}
+    </Story>
+</Canvas>
+
 ### With Help Text
 
 export const WithHelpText = (args) => {
@@ -114,6 +149,7 @@ export const WithHelpText = (args) => {
     label="${args.label}"
     .value="${args.value}"
     ?invalid="${args.invalid}"
+    ?required="${args.required}"
     help-text="${args.helpText}"
     .error-text="${args.errorText}"
 >
@@ -149,7 +185,8 @@ export const WithErrorText = (args) => {
     label="${args.label}"
     .value="${args.value}"
     ?invalid="${args.invalid}"
-    help-text="${args.helpText}"
+    ?required="${args.required}"
+    .help-text="${args.helpText}"
     error-text="${args.errorText}"
 >
     <rux-radio value="one" name="radios">One</rux-radio>

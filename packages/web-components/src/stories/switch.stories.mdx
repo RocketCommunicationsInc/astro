@@ -60,6 +60,31 @@ export const Switch = (args) => {
 
 ## Variants
 
+### On
+
+export const On = (args) => {
+    return html`
+<div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
+    <rux-switch
+        ?disabled=${args.disabled}
+        ?checked=${args.checked}
+        .label=${args.label}
+    ></rux-switch>
+</div>
+    `
+}
+
+<Canvas>
+    <Story
+        name="On"
+        args={{
+           checked: true
+        }}
+    >
+        {On.bind()}
+    </Story>
+</Canvas>
+
 ### Disabled
 
 export const Disabled = (args) => {
@@ -68,9 +93,9 @@ export const Disabled = (args) => {
     <rux-switch
         ?disabled=${args.disabled}
         ?checked=${args.checked}
-        label=${args.label}
         name=${args.name}
         value=${args.value}
+        .label=${args.label}
     ></rux-switch>
 </div>
     `
@@ -88,6 +113,31 @@ export const Disabled = (args) => {
         }}
     >
         {Disabled.bind()}
+    </Story>
+</Canvas>
+
+### With Label 
+
+export const WithLabel = (args) => {
+    return html`
+<div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
+    <rux-switch
+        ?disabled=${args.disabled}
+        ?checked=${args.checked}
+        .label=${args.label}
+    ></rux-switch>
+</div>
+    `
+}
+
+<Canvas>
+    <Story
+        name="With Label"
+        args={{
+            label: 'Switch Label'
+        }}
+    >
+        {WithLabel.bind()}
     </Story>
 </Canvas>
 

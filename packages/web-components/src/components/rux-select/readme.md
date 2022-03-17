@@ -49,18 +49,19 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 
 ## Properties
 
-| Property    | Attribute    | Description                                                                                                                                                                                       | Type                  | Default     |
-| ----------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | ----------- |
-| `disabled`  | `disabled`   | Disables the select menu via HTML disabled attribute. Select menu takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored. | `boolean`             | `false`     |
-| `errorText` | `error-text` | The validation error text                                                                                                                                                                         | `string \| undefined` | `undefined` |
-| `helpText`  | `help-text`  | The help or explanation text                                                                                                                                                                      | `string \| undefined` | `undefined` |
-| `inputId`   | `input-id`   | Id for the Select Input                                                                                                                                                                           | `string \| undefined` | `undefined` |
-| `invalid`   | `invalid`    | Presentational only. Renders the Select Menu as invalid.                                                                                                                                          | `boolean`             | `false`     |
-| `label`     | `label`      | The select label text. For HTML content, use the `label` slot instead.                                                                                                                            | `string \| undefined` | `undefined` |
-| `labelId`   | `label-id`   | Id for the Label                                                                                                                                                                                  | `string \| undefined` | `undefined` |
-| `name`      | `name`       | Sets the Name of the Input Element                                                                                                                                                                | `string`              | `''`        |
-| `required`  | `required`   | Sets the field as required                                                                                                                                                                        | `boolean`             | `false`     |
-| `value`     | `value`      | The value of the selected option                                                                                                                                                                  | `string \| undefined` | `undefined` |
+| Property    | Attribute    | Description                                                                                                                                                                                       | Type                              | Default     |
+| ----------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- | ----------- |
+| `disabled`  | `disabled`   | Disables the select menu via HTML disabled attribute. Select menu takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored. | `boolean`                         | `false`     |
+| `errorText` | `error-text` | The validation error text                                                                                                                                                                         | `string \| undefined`             | `undefined` |
+| `helpText`  | `help-text`  | The help or explanation text                                                                                                                                                                      | `string \| undefined`             | `undefined` |
+| `inputId`   | `input-id`   | Id for the Select Input                                                                                                                                                                           | `string \| undefined`             | `undefined` |
+| `invalid`   | `invalid`    | Presentational only. Renders the Select Menu as invalid.                                                                                                                                          | `boolean`                         | `false`     |
+| `label`     | `label`      | The select label text. For HTML content, use the `label` slot instead.                                                                                                                            | `string \| undefined`             | `undefined` |
+| `labelId`   | `label-id`   | Id for the Label                                                                                                                                                                                  | `string \| undefined`             | `undefined` |
+| `multiple`  | `multiple`   | Enables multiselect                                                                                                                                                                               | `boolean`                         | `false`     |
+| `name`      | `name`       | Sets the Name of the Input Element                                                                                                                                                                | `string`                          | `''`        |
+| `required`  | `required`   | Sets the field as required                                                                                                                                                                        | `boolean`                         | `false`     |
+| `value`     | `value`      | The value of the selected option. If multiple is true, this is an array.                                                                                                                          | `string \| string[] \| undefined` | `undefined` |
 
 
 ## Events
@@ -81,13 +82,14 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 
 ## Shadow Parts
 
-| Part           | Description                      |
-| -------------- | -------------------------------- |
-| `"error-text"` | The error text element           |
-| `"form-field"` | The form-field wrapper container |
-| `"help-text"`  | The help text element            |
-| `"label"`      | The select label                 |
-| `"select"`     | The select element               |
+| Part           | Description                        |
+| -------------- | ---------------------------------- |
+| `"error-text"` | The error text element             |
+| `"form-field"` | The form-field wrapper container   |
+| `"help-text"`  | The help text element              |
+| `"label"`      | The select label                   |
+| `"required"`   | The asterisk when required is true |
+| `"select"`     | The select element                 |
 
 
 ## CSS Custom Properties
