@@ -15,13 +15,14 @@ In an effort to provide as close to native a development experience as possible,
 
 ### Astro Icons, Fonts and Colors
 
-We recognize that not all space application development projects are tooled for utilizing Web Components, you can download [Astro’s Dark theme](https://github.com/RocketCommunicationsInc/astro/blob/main/packages/web-components/src/global/_variables.scss) and [Light theme](https://github.com/RocketCommunicationsInc/astro/blob/main/packages/web-components/src/global/theme/_theme-light.scss) hex/rgb values. You may also view the specifications in the [Astro UXDS Figma file](https://www.figma.com/community/file/1014254163928270411). 
+We recognize that not all space application development projects are tooled for utilizing Web Components, you can download [Astro’s Dark theme](https://github.com/RocketCommunicationsInc/astro/blob/main/packages/web-components/src/global/_variables.scss) and [Light theme](https://github.com/RocketCommunicationsInc/astro/blob/main/packages/web-components/src/global/theme/_theme-light.scss) hex/rgb values. You may also view the specifications in the [Astro UXDS Figma file](https://www.figma.com/community/file/1014254163928270411).
 
 Icon assets are available as SVGs via the [Astro Icon Github Repository](https://github.com/RocketCommunicationsInc/astro/tree/main/packages/web-components/src/icons) or export to the format and size you need from the [Astro Icons Figma library](https://www.figma.com/community/file/1022883566772542677).
 
 Astro uses the freely availabe [Roboto](https://fonts.google.com/specimen/Roboto) and [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono?query=roboto+mono).
 
-For 
+For
+
 ### Astro Storybook and Sample Apps
 
 You can review the latest versions of the web components at the [Astro Storybook](https://astro-components.netlify.app/?path=/story/astro-uxds-welcome-start-here--page). The Astro development team uses Storybook as an environment for building and demonstrating the capabilities of each component. If your team often works offline, you may want to [download and run the Storybook](https://github.com/RocketCommunicationsInc/astro/tree/main/packages/web-components) on your local network to see how the examples work.
