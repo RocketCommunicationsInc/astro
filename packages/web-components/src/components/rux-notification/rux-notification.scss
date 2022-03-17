@@ -2,7 +2,7 @@
     /**
   * @prop --notification-text-color: The notification text color
   */
-    --notification-text-color: var(--color-global-basics-black);
+    --notification-text-color: var(--color-palette-neutral-1000);
 
     /**
     * @prop --notification-icon-color: The 'clear' icon's color
@@ -19,7 +19,7 @@
     height: 4.375rem;
     width: 100%;
     position: absolute;
-    background-color: var(--color-global-status-standby-400);
+    background-color: var(--color-banner-status-background-standby);
     transition: top 0.5s ease;
     box-sizing: border-box;
     font-family: var(--font-heading-5-font-family);
@@ -66,41 +66,41 @@
 //TODO: When tokens are made for the icon color, replace the hard coded values below.
 
 :host([status='off']) {
-    background-color: var(--color-global-status-off-400);
+    background-color: var(--color-banner-status-background-off);
     rux-icon {
-        color: #00000050; //TODO replace with --color-status-off-banner-icon
+        color: var(--color-banner-status-icon-fill-off);
     }
 }
 
 :host([status='standby']) {
-    background-color: var(--color-global-status-standby-400);
+    background-color: var(--color-banner-status-background-standby);
     rux-icon {
-        color: #409eb3; //TODO replace with --color-status-standby-banner-icon
+        color: var(--color-banner-status-icon-fill-standby);
     }
 }
 
 :host([status='normal']) {
-    background-color: var(--color-global-status-normal-400);
+    background-color: var(--color-banner-status-background-normal);
     rux-icon {
-        color: #6bac47; //TODO replace with --color-status-normal-banner-icon
+        color: var(--color-banner-status-icon-fill-normal);
     }
 }
 :host([status='caution']) {
-    background-color: var(--color-global-status-caution-400);
+    background-color: var(--color-banner-status-background-caution);
     rux-icon {
-        color: #b1a644; //TODO replace with --color-status-caution-banner-icon
+        color: var(--color-banner-status-icon-fill-caution);
     }
 }
 
 :host([status='serious']) {
-    background-color: var(--color-global-status-serious-500);
+    background-color: var(--color-banner-status-background-serious);
     rux-icon {
-        color: #00000050; //TODO replace with --color-status-serious-banner-icon
+        color: var(--color-banner-status-icon-fill-serious);
     }
 }
 :host([status='critical']) {
-    background-color: var(--color-global-status-critical-400);
+    background-color: var(--color-banner-status-background-critical);
     rux-icon {
-        color: #b34343; //TODO replace with --color-status-critical-banner-icon
+        color: var(--color-banner-status-icon-fill-critical);
     }
 }

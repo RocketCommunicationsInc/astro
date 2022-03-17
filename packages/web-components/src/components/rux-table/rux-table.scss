@@ -14,22 +14,22 @@
     /**
      * @prop --table-border-color: Table background color
      */
-    --table-border-color: var(--color-background);
+    --table-border-color: var(--color-background-base-default);
 
     /**
       * @prop --table-header-background-color: Table header background color
       */
-    --table-header-background-color: var(--color-gsb-global-status-bar);
+    --table-header-background-color: var(--color-background-surface-header);
 
     /**
       * @prop --table-header-border-color: Table header border color
       */
-    --table-header-border-color: var(--color-surface);
+    --table-header-border-color: var(--color-background-surface-default);
 
     /**
       * @prop --table-header-text-color: Table header text color
       */
-    --table-header-text-color: var(--color-gsb-default-text);
+    --table-header-text-color: var(--color-gsb-text-primary);
 
     /**
       * @prop --table-header-box-shadow: Table header box shadow
@@ -39,37 +39,40 @@
     /**
       * @prop --table-row-background-color: Table row background color
       */
-    --table-row-background-color: var(--color-surface);
+    --table-row-background-color: var(--color-background-surface-default);
 
     /**
       * @prop --table-row-text-color: Table row text color
       */
-    --table-row-text-color: var(--color-default-text);
+    --table-row-text-color: var(--color-text-primary);
 
     /**
       * @prop --table-row-border-color: Table row border color
       */
-    --table-row-border-color: var(--color-background);
+    --table-row-border-color: var(--color-background-base-default);
 
     /**
       * @prop --table-row-hover-background-color: Table row hover background color
       */
-    --table-row-hover-background-color: var(--color-table-hover);
+    --table-row-hover-background-color: var(--color-background-surface-hover);
 
     /**
       * @prop --table-row-hover-text-color: Table row hover text color
       */
-    --table-row-hover-text-color: var(--color-default-text);
+    --table-row-hover-text-color: var(--color-text-primary);
 
     /**
       * @prop --table-row-selected-background-color: Table row selected background color
       */
-    --table-row-selected-background-color: var(--color-background);
+    --table-row-selected-background-color: var(
+        --color-background-surface-selected
+    );
 
     /**
       * @prop --table-row-selected-border-color: Table row selected border color
       */
-    --table-row-selected-border-color: var(--color-primary);
+    --table-row-selected-border-color: var(--color-background-surface-selected);
+    // --table-row-selected-border-color: var(--color-interactive-default);
 }
 
 :host([hidden]) {

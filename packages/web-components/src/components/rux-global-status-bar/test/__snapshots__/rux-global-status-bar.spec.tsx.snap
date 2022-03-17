@@ -36,7 +36,7 @@ exports[`rux-global-status-bar renders with icon and app meta 1`] = `
             </span>
           </div>
           <div class="app-state-wrapper">
-            <div class="app-state" part="app-state" style="background-color: var(--color-global-tag-tag1-600);">
+            <div class="app-state" part="app-state" style="background-color: var(--color-palette-teal-600);">
               App State
             </div>
             <div class="username" part="username">
@@ -75,7 +75,7 @@ exports[`rux-global-status-bar renders with icon, app meta and slotted content 1
             </span>
           </div>
           <div class="app-state-wrapper">
-            <div class="app-state" part="app-state" style="background-color: var(--color-global-tag-tag1-600);">
+            <div class="app-state" part="app-state" style="background-color: var(--color-palette-teal-600);">
               App State
             </div>
             <div class="username" part="username">

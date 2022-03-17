@@ -1,3 +1,73 @@
-@import '../../node_modules/@astrouxds/design-tokens/dist/internal/css/_colors-light.css';
+/**
+ * Do not edit directly
+ * Generated on Thu, 17 Mar 2022 21:36:55 GMT
+ */
 
-/* the import has to be from the perspective of global.scss, so it's up a higher level. */
+.light-theme {
+    --color-gsb-interactive-muted: #2b659b;
+    --color-gsb-interactive-hover: #92cbff;
+    --color-gsb-text-secondary: #d4d8dd;
+    --color-banner-status-background-off: #bbc1c9;
+    --color-banner-status-background-standby: #5ce2ff;
+    --color-banner-status-background-normal: #99f666;
+    --color-banner-status-background-caution: #fded61;
+    --color-banner-status-background-serious: #ffcc57;
+    --color-banner-status-background-critical: #ff5f60;
+    --color-gsb-interactive-default: var(--color-palette-brightblue-500);
+    --color-gsb-text-primary: var(--color-palette-neutral-000);
+    --color-gsb-background-default: var(--color-palette-darkblue-900);
+    --color-icon-status-border-off: var(--color-palette-grey-800);
+    --color-icon-status-border-standby: var(--color-palette-cyan-900);
+    --color-icon-status-border-normal: var(--color-palette-green-900);
+    --color-icon-status-border-caution: var(--color-palette-yellow-900);
+    --color-icon-status-border-serious: var(--color-palette-orange-900);
+    --color-icon-status-border-critical: var(--color-palette-red-900);
+    --color-icon-status-fill-off: var(--color-palette-grey-600);
+    --color-icon-status-fill-standby: var(--color-palette-cyan-500);
+    --color-icon-status-fill-normal: var(--color-palette-green-600);
+    --color-icon-status-fill-caution: var(--color-palette-yellow-600);
+    --color-icon-status-fill-serious: var(--color-palette-orange-600);
+    --color-icon-status-fill-critical: var(--color-palette-red-600);
+    --color-banner-status-icon-fill-off: var(--color-palette-grey-700);
+    --color-banner-status-icon-fill-standby: var(--color-palette-cyan-800);
+    --color-banner-status-icon-fill-normal: var(--color-palette-green-800);
+    --color-banner-status-icon-fill-caution: var(--color-palette-yellow-800);
+    --color-banner-status-icon-fill-serious: var(--color-palette-orange-800);
+    --color-banner-status-icon-fill-critical: var(--color-palette-red-800);
+    --color-banner-classification-background-unclassified: var(
+        --color-palette-green-800
+    );
+    --color-banner-classification-background-cui: var(
+        --color-palette-violet-800
+    );
+    --color-banner-classification-background-confidential: var(
+        --color-palette-blue-800
+    );
+    --color-banner-classification-background-secret: var(
+        --color-palette-red-700
+    );
+    --color-banner-classification-background-topsecret: var(
+        --color-palette-orange-700
+    );
+    --color-banner-classification-background-topsecretsci: var(
+        --color-palette-yellow-500
+    );
+    --color-interactive-muted: var(--color-palette-darkblue-300);
+    --color-interactive-hover: var(--color-palette-darkblue-600);
+    --color-interactive-default: var(--color-palette-darkblue-500);
+    --color-text-black: var(--color-palette-neutral-1000);
+    --color-text-white: var(--color-palette-neutral-000);
+    --color-text-error: var(--color-palette-red-500);
+    --color-text-inverse: var(--color-palette-neutral-000);
+    --color-text-placeholder: var(--color-palette-grey-600);
+    --color-text-secondary: var(--color-palette-grey-700);
+    --color-text-primary: var(--color-palette-grey-900);
+    --color-background-surface-selected: var(--color-palette-brightblue-200);
+    --color-background-surface-hover: var(--color-palette-brightblue-100);
+    --color-background-surface-header: var(--color-palette-grey-100);
+    --color-background-surface-default: var(--color-palette-neutral-000);
+    --color-background-base-selected: var(--color-palette-brightblue-200);
+    --color-background-base-hover: var(--color-palette-darkblue-200);
+    --color-background-base-header: var(--color-palette-grey-100);
+    --color-background-base-default: var(--color-palette-grey-200);
+}

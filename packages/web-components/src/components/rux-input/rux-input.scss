@@ -4,33 +4,33 @@
     /**
   * @prop --input-background-color: the input background color
   */
-    --input-background-color: var(--color-background);
+    --input-background-color: var(--color-background-base-default);
 
     /**
     * @prop --input-border-color: the input border color
     */
-    --input-border-color: var(--color-active);
+    --input-border-color: var(--color-interactive-muted);
 
     /**
     * @prop --input-text-color: the input text color
     */
-    --input-text-color: var(--color-default-text);
+    --input-text-color: var(--color-text-primary);
 
     /**
     * @prop --input-focus-border-color: the input focus border color
     */
 
-    --input-focus-border-color: var(--color-hover);
+    --input-focus-border-color: var(--color-interactive-hover);
 
     /**
     * @prop --input-selection-background-color: the background color of highlighted text
     */
-    --input-selection-background-color: var(--color-global-secondary-300);
+    --input-selection-background-color: var(--color-palette-brightblue-400);
 
     /**
     * @prop --input-invalid-border-color: the input invalid border color
     */
-    --input-invalid-border-color: var(--color-status-critical-fill);
+    --input-invalid-border-color: var(--color-icon-status-fill-critical);
 
     display: block;
 
@@ -39,7 +39,7 @@
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-        color: var(--color-default-text);
+        color: var(--color-text-primary);
     }
     .icon-container {
         background-color: #101923;
@@ -113,7 +113,7 @@
             border: 1px solid var(--input-invalid-border-color);
         }
         &::placeholder {
-            color: var(--color-placeholder-text);
+            color: var(--color-text-placeholder);
         }
     }
 
