@@ -41,21 +41,21 @@
         justify-content: center;
         color: var(--color-default-text);
     }
-    .icon-container {
-        background-color: #101923;
-        align-self: flex-end;
-        position: absolute;
-        width: 1.188rem;
-        height: 1.313rem;
-        padding-left: 0.5rem;
-    }
-    .show-password {
-        margin-top: 0.6rem;
-        margin-right: 0.5rem;
-    }
-    .with-label {
-        margin-top: 1.7rem;
-    }
+    // .icon-container {
+    //     background-color: #101923;
+    //     align-self: flex-end;
+    //     position: absolute;
+    //     width: 1.188rem;
+    //     height: 1.313rem;
+    //     padding-left: 0.5rem;
+    // }
+    // .show-password {
+    //     margin-top: 0.6rem;
+    //     margin-right: 0.5rem;
+    // }
+    // .with-label {
+    //     margin-top: 1.7rem;
+    // }
     rux-icon {
         cursor: pointer;
     }
@@ -74,12 +74,13 @@
             -webkit-appearance: none;
             appearance: none;
             outline: none;
+            width: 100%;
         }
-
+        width: 100%;
         overflow: hidden;
         flex: 1 1 auto;
         display: inline-flex;
-        align-items: stretch;
+        align-items: center;
         justify-content: start;
         position: relative;
         box-sizing: border-box;
@@ -102,13 +103,13 @@
             cursor: not-allowed;
         }
         &--small {
-            padding: 0.25rem 0.5rem 0.188rem 0.5rem; // 4px 8px 3px 8px;
+            padding: 0.219rem 0.5rem; // 3.5px 8px;
         }
         &--medium {
-            padding: 0.5rem 0.5rem 0.438rem 0.5rem; // 8px 8px 7px 8px;
+            padding: 0.469rem 0.5rem; // 7.5px 8px;
         }
         &--large {
-            padding: 0.813rem 0.5rem 0.875rem 0.5rem; //13px 8px 14px 8px;
+            padding: 0.844rem 0.5rem; //13.5px 8px;
         }
         &--search {
             -webkit-appearance: none;
@@ -140,6 +141,23 @@
         &::placeholder {
             color: var(--color-placeholder-text);
         }
+        .rux-input-prefix,
+        .rux-input-suffix {
+            display: inline-flex;
+            flex: 0 0 auto;
+            align-items: center;
+            cursor: default;
+        }
+        .rux-input-prefix {
+            ::slotted(*) {
+                padding-right: 10px;
+            }
+        }
+        .rux-input-suffix {
+            ::slotted(*) {
+                padding-left: 10px;
+            }
+        }
     }
 
     .rux-input-label {
@@ -151,38 +169,6 @@
         &__asterisk {
             margin-left: 4px;
         }
-    }
-
-    .test {
-        flex: 1 1 auto;
-        display: inline-flex;
-        align-items: stretch;
-        justify-content: start;
-        position: relative;
-        width: 100%;
-        border: 1px solid var(--input-border-color);
-        border-radius: var(--radius-base);
-        font-family: var(--font-body-1-font-family);
-        font-size: var(--font-body-1-font-size);
-        font-weight: var(--font-body-1-font-weight);
-        letter-spacing: var(--font-body-1-letter-spacing);
-        color: var(--input-text-color);
-        background-color: var(--input-background-color);
-    }
-
-    .rux-input-prefix {
-        display: inline-flex;
-        flex: 0 0 auto;
-        align-items: center;
-        cursor: default;
-        padding-right: 12px; //!probs just for med?
-    }
-    .rux-input-suffix {
-        display: inline-flex;
-        flex: 0 0 auto;
-        align-items: center;
-        cursor: default;
-        padding: 0;
     }
 
     ::selection {

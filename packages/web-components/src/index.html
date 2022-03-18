@@ -20,18 +20,36 @@
     </head>
 
     <body>
-        <style>
-            rux-input::part(icon) {
-                height: 1rem;
-                width: 1rem;
-            }
-        </style>
-        <div style="padding: 5%; width: 300px">
+        <div style="padding-left: 5%; width: 300px">
             <rux-input
                 name="text"
                 error-text="Error Text"
                 type="text"
                 placeholder="Text"
+                label="Text Label"
+            >
+                <rux-icon icon="close" slot="prefix" size="small"></rux-icon>
+                <rux-icon icon="close" slot="suffix" size="small"></rux-icon>
+            </rux-input>
+            <br />
+            <rux-input
+                name="text"
+                error-text="Error Text"
+                type="text"
+                placeholder="Text"
+                size="large"
+                label="Text Label"
+            >
+                <rux-icon icon="altitude" slot="prefix" size="small"></rux-icon>
+                <rux-icon icon="close" slot="suffix" size="small"></rux-icon>
+            </rux-input>
+            <br />
+            <rux-input
+                name="text"
+                error-text="Error Text"
+                type="text"
+                placeholder="Text"
+                size="small"
                 label="Text Label"
             >
                 <rux-icon icon="close" slot="prefix" size="small"></rux-icon>
