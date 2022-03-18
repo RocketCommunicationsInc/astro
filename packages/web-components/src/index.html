@@ -48,8 +48,16 @@
                 size="large"
                 label="Text Label"
             >
-                <rux-icon icon="altitude" slot="prefix" size="small"></rux-icon>
-                <rux-icon icon="close" slot="suffix" size="small"></rux-icon>
+                <rux-icon
+                    icon="altitude"
+                    slot="prefix"
+                    size="extra-small"
+                ></rux-icon>
+                <rux-icon
+                    icon="close"
+                    slot="suffix"
+                    size="extra-small"
+                ></rux-icon>
             </rux-input>
             <br />
             <rux-input
@@ -57,13 +65,13 @@
                 error-text="Error Text"
                 type="text"
                 placeholder="Text"
-                size="small"
+                size="extra-small"
                 label="Text Label"
             >
                 <rux-icon
                     icon="border-clear"
                     slot="prefix"
-                    size="small"
+                    size="extra-small"
                 ></rux-icon>
                 <rux-icon
                     icon="border-clear"
@@ -91,11 +99,9 @@
         </div>
     </body>
     <script>
-        const test = document.getElementById('test')
-        test.addEventListener('click', () => {
-            if (test.icon === 'border-clear') {
-                test.icon = 'close'
-            } else test.icon = 'border-clear'
+        const test = document.querySelector('rux-input')
+        test.addEventListener('ruxfocus', () => {
+            console.log('heard focus')
         })
     </script>
 </html>

@@ -150,6 +150,11 @@ export class RuxInput implements FormFieldInterface {
      */
     @Event({ eventName: 'ruxblur' }) ruxBlur!: EventEmitter
 
+    /**
+     * Fired when an element has gained focus - [link here dummy]
+     */
+    @Event({ eventName: 'ruxfocus' }) ruxFocus!: EventEmitter
+
     @Watch('label')
     handleLabelChange() {
         this._handleSlotChange()
@@ -200,6 +205,11 @@ export class RuxInput implements FormFieldInterface {
         this.hasFocus = false
     }
 
+    private _onFocus = () => {
+        this.ruxFocus.emit()
+        this.hasFocus = true
+    }
+
     private _handleSlotChange() {
         this.hasLabelSlot = hasSlot(this.el, 'label')
     }
@@ -227,6 +237,7 @@ export class RuxInput implements FormFieldInterface {
             _onChange,
             _onInput,
             _onBlur,
+            _onFocus,
             _handleSlotChange,
             _handleTogglePassword,
             placeholder,
@@ -310,10 +321,7 @@ export class RuxInput implements FormFieldInterface {
                             onChange={_onChange}
                             onInput={_onInput}
                             onBlur={_onBlur}
-                            onFocus={
-                                () =>
-                                    (this.hasFocus = true) /*! probs a better way, focus event?*/
-                            }
+                            onFocus={_onFocus}
                             part="input"
                         ></input>
                         {this.togglePassword ? (
