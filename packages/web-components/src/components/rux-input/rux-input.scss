@@ -104,12 +104,15 @@
         }
         &--small {
             padding: 0.219rem 0.5rem; // 3.5px 8px;
+            min-height: 1.625rem; //26px
         }
         &--medium {
             padding: 0.469rem 0.5rem; // 7.5px 8px;
+            min-height: 2.25rem; //36px
         }
         &--large {
             padding: 0.844rem 0.5rem; //13.5px 8px;
+            min-height: 2.875rem; //46px
         }
         &--search {
             -webkit-appearance: none;
