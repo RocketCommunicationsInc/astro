@@ -153,7 +153,7 @@ export class RuxInput implements FormFieldInterface {
     @Event({ eventName: 'ruxblur' }) ruxBlur!: EventEmitter
 
     /**
-     * Fired when an element has gained focus - [link here dummy]
+     * Fired when an element has gained focus - [HTMLElement/focus_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event)
      */
     @Event({ eventName: 'ruxfocus' }) ruxFocus!: EventEmitter
 

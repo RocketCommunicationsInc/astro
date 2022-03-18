@@ -32152,7 +32152,7 @@ declare namespace LocalJSX {
          */
         "onRuxchange"?: (event: CustomEvent<any>) => void;
         /**
-          * Fired when an element has gained focus - [link here dummy]
+          * Fired when an element has gained focus - [HTMLElement/focus_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event)
          */
         "onRuxfocus"?: (event: CustomEvent<any>) => void;
         /**
