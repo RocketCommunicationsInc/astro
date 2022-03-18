@@ -144,6 +144,12 @@ export const Required = (args) => {
 
 ### With Icons
 
+Icons on either the left or right can be accomplished using the named slots `prefix` or `suffix`.
+For example,
+```html
+<rux-icon icon="apps" slot="prefix"></rux-icon>
+```
+
 export const WithIcons = (args) => {
     return html`
 <rux-input
