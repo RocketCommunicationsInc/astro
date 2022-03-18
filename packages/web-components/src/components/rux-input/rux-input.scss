@@ -41,21 +41,6 @@
         justify-content: center;
         color: var(--color-default-text);
     }
-    // .icon-container {
-    //     background-color: #101923;
-    //     align-self: flex-end;
-    //     position: absolute;
-    //     width: 1.188rem;
-    //     height: 1.313rem;
-    //     padding-left: 0.5rem;
-    // }
-    // .show-password {
-    //     margin-top: 0.6rem;
-    //     margin-right: 0.5rem;
-    // }
-    // .with-label {
-    //     margin-top: 1.7rem;
-    // }
     rux-icon {
         cursor: pointer;
     }
@@ -177,7 +162,7 @@
     }
 }
 .pw-button {
-    padding-top: 1px;
+    padding-top: 1px; //icon looked like half a px off from being centered.
 }
 .pw-button::part(container) {
     display: flex;

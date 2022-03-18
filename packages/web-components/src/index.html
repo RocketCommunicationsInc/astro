@@ -19,52 +19,5 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body>
-        <div style="padding-left: 1%; width: 300px">
-            <rux-input
-                name="text"
-                error-text="Error Text"
-                disabled
-                type="text"
-                placeholder="Text"
-                label="Medium Input"
-            >
-                <rux-icon
-                    icon="border-clear"
-                    slot="prefix"
-                    size="extra-small"
-                ></rux-icon>
-                <rux-icon
-                    icon="border-clear"
-                    slot="suffix"
-                    size="extra-small"
-                ></rux-icon>
-            </rux-input>
-
-            <rux-input
-                name="pw"
-                error-text="Error Text"
-                type="password"
-                placeholder="PW"
-                label="PW Label"
-                size="medium"
-            >
-            </rux-input>
-            <br />
-            <rux-input
-                name="search"
-                error-text="Error Text"
-                type="search"
-                placeholder="Search"
-                label="Search Label"
-            >
-            </rux-input>
-        </div>
-    </body>
-    <script>
-        const test = document.querySelector('rux-input')
-        test.addEventListener('ruxfocus', () => {
-            console.log('heard focus')
-        })
-    </script>
+    <body></body>
 </html>

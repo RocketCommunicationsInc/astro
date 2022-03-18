@@ -17,6 +17,8 @@ let id = 0
 
 /**
  * @slot label - The input label
+ * @slot prefix - Left side input icon
+ * @slot suffix - Right side input icon
  * @part error-text - The error text element
  * @part form-field - The form-field wrapper container
  * @part help-text - The help text element
