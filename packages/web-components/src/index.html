@@ -20,7 +20,7 @@
     </head>
 
     <body>
-        <div style="padding-left: 5%; width: 300px">
+        <div style="padding-left: 1%; width: 300px">
             <rux-input
                 name="text"
                 error-text="Error Text"
@@ -28,8 +28,16 @@
                 placeholder="Text"
                 label="Text Label"
             >
-                <rux-icon icon="altitude" slot="prefix" size="small"></rux-icon>
-                <rux-icon icon="close" slot="suffix" size="small"></rux-icon>
+                <rux-icon
+                    icon="border-clear"
+                    slot="prefix"
+                    size="extra-small"
+                ></rux-icon>
+                <rux-icon
+                    icon="border-clear"
+                    slot="suffix"
+                    size="extra-small"
+                ></rux-icon>
             </rux-input>
             <br />
             <rux-input
@@ -52,8 +60,16 @@
                 size="small"
                 label="Text Label"
             >
-                <rux-icon icon="close" slot="prefix" size="small"></rux-icon>
-                <rux-icon icon="close" slot="suffix" size="small"></rux-icon>
+                <rux-icon
+                    icon="border-clear"
+                    slot="prefix"
+                    size="small"
+                ></rux-icon>
+                <rux-icon
+                    icon="border-clear"
+                    slot="suffix"
+                    size="small"
+                ></rux-icon>
             </rux-input>
             <br />
             <rux-input
@@ -74,4 +90,12 @@
             </rux-input>
         </div>
     </body>
+    <script>
+        const test = document.getElementById('test')
+        test.addEventListener('click', () => {
+            if (test.icon === 'border-clear') {
+                test.icon = 'close'
+            } else test.icon = 'border-clear'
+        })
+    </script>
 </html>

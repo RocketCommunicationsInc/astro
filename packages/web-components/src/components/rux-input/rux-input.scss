@@ -170,6 +170,16 @@
         background-color: var(--input-selection-background-color);
     }
 }
+.pw-button {
+    padding-top: 1px;
+}
+.pw-button::part(container) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    height: 1rem;
+}
 
 .hidden,
 :host([hidden]) {
