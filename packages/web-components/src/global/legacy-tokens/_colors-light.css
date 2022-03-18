@@ -1,0 +1,52 @@
+/**
+ * Do not edit directly
+ * Generated on Thu, 24 Feb 2022 15:35:18 GMT
+ */
+
+.light-theme {
+    --color-dialog-header: #f7f8fb;
+    --color-classification-top-secret-sci: #fce83a;
+    --color-classification-top-secret: #ff8c00;
+    --color-classification-secret: #c8102e;
+    --color-classification-confidential: #0033a0;
+    --color-classification-cui: #502b85;
+    --color-classification-unclassified: #007a33;
+    --color-status-off-banner: #ced6e4;
+    --color-status-standby-under-border: #2dccff;
+    --color-status-standby-banner: #5ce2ff;
+    --color-status-normal-banner: #99f666;
+    --color-status-caution-banner: #fded61;
+    --color-status-critical-banner: #ff5f60;
+    --color-status-border: rgba(0, 0, 0, 0.5);
+    --color-status-off-border: #32363a;
+    --color-status-off-fill: #8e9aa3;
+    --color-status-standby-fill: #2dccff;
+    --color-status-normal-fill: #00e200;
+    --color-status-caution-fill: #fad800;
+    --color-status-serious-fill: #ffaf3d;
+    --color-status-critical-fill: #ff2a04;
+    --color-gsb-default-text: #ffffff;
+    --color-gsb-primary: #4dacff;
+    --color-gsb-global-status-bar: #172635;
+    --color-banner-text-dark: #000000;
+    --color-banner-text-light: #ffffff;
+    --color-banner-clear: rgba(8, 12, 17, 0.3);
+    --color-dialog-shadow3: rgba(0, 0, 0, 0.2);
+    --color-dialog-shadow2: rgba(0, 0, 0, 0.12);
+    --color-dialog-shadow1: rgba(0, 0, 0, 0.14);
+    --color-table-header-shadow: #000000;
+    --color-scrollbar-shadow: rgba(0, 0, 0, 0.5);
+    --color-list-hover: #e2edf6;
+    --color-table-hover: rgba(0, 72, 114, 0.3);
+    --color-hover: #004872;
+    --color-selected: #cee9fc;
+    --color-active: #649cbd;
+    --color-primary-alt: #2f7aa7;
+    --color-primary: #005a8f;
+    --color-inverse-text: #ffffff;
+    --color-placeholder-text: #76787d;
+    --color-secondary-text: #51555b;
+    --color-default-text: #292a2d;
+    --color-surface: #ffffff;
+    --color-background: #eaeef4;
+}
