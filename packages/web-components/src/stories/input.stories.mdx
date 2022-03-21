@@ -179,6 +179,97 @@ export const Required = (args) => {
     </Story>
 </Canvas>
 
+### With Icons
+
+Icons on either the left or right can be accomplished using the named slots `prefix` or `suffix`.
+For example,
+```html
+<rux-icon icon="apps" slot="prefix"></rux-icon>
+```
+
+export const WithIcons = (args) => {
+    return html`
+<rux-input
+    label="With Prefix"
+    ?disabled="${args.disabled}"
+    .errorText="${args.errorText}"
+    ?invalid="${args.invalid}"
+    .helpText="${args.helpText}"
+    .min="${args.min}"
+    .max="${args.max}"
+    .name="${args.name}"
+    .placeholder="${args.placeholder}"
+    ?required="${args.required}"
+    .size="${args.size}"
+    .value="${args.value}"
+    type=${args.type}
+    .step="${args.step}"
+    ?readonly="${args.readonly}"
+    ?autocomplete="${args.autocomplete}"
+    ?spellcheck="${args.spellcheck}"
+>
+    <rux-icon slot="prefix" icon="border-clear" size="extra-small"></rux-icon>
+</rux-input>
+<br />
+<rux-input
+    label="With Suffix"
+    ?disabled="${args.disabled}"
+    .errorText="${args.errorText}"
+    ?invalid="${args.invalid}"
+    .helpText="${args.helpText}"
+    .min="${args.min}"
+    .max="${args.max}"
+    .name="${args.name}"
+    .placeholder="${args.placeholder}"
+    ?required="${args.required}"
+    .size="${args.size}"
+    .value="${args.value}"
+    type=${args.type}
+    .step="${args.step}"
+    ?readonly="${args.readonly}"
+    ?autocomplete="${args.autocomplete}"
+    ?spellcheck="${args.spellcheck}"
+>
+    <rux-icon slot="suffix" icon="border-clear" size="extra-small"></rux-icon>
+</rux-input>
+<br />
+<rux-input
+    label="With Prefix and Suffix"
+    ?disabled="${args.disabled}"
+    .errorText="${args.errorText}"
+    ?invalid="${args.invalid}"
+    .helpText="${args.helpText}"
+    .min="${args.min}"
+    .max="${args.max}"
+    .name="${args.name}"
+    .placeholder="${args.placeholder}"
+    ?required="${args.required}"
+    .size="${args.size}"
+    .value="${args.value}"
+    type=${args.type}
+    .step="${args.step}"
+    ?readonly="${args.readonly}"
+    ?autocomplete="${args.autocomplete}"
+    ?spellcheck="${args.spellcheck}"
+>
+    <rux-icon slot="prefix" icon="border-clear" size="extra-small"></rux-icon>
+    <rux-icon slot="suffix" icon="border-clear" size="extra-small"></rux-icon>
+</rux-input>
+    `
+}
+
+<Canvas>
+    <Story
+        name="With Icons"
+        args={{
+            type: 'text',
+            size: "medium"
+        }}
+    >
+        {WithIcons.bind()}
+    </Story>
+</Canvas>
+
 ### Sizes
 
 export const Sizes = (args) => {

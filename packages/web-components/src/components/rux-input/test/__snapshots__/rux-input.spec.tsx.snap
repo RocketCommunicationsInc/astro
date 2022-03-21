@@ -9,7 +9,15 @@ exports[`rux-input renders 1`] = `
           <slot name="label"></slot>
         </span>
       </label>
-      <input aria-invalid="false" class="rux-input rux-input--medium" id="rux-input-1" part="input" type="text" value="">
+      <div class="rux-input rux-input--medium">
+        <span class="rux-input-prefix" part="prefix">
+          <slot name="prefix"></slot>
+        </span>
+        <input aria-invalid="false" class="native-input" id="rux-input-1" part="input" type="text" value="">
+        <span class="rux-input-suffix" part="suffix">
+          <slot name="suffix"></slot>
+        </span>
+      </div>
     </div>
   </mock:shadow-root>
   <input class="aux-input" type="hidden" value="">
@@ -27,7 +35,15 @@ exports[`rux-input renders label prop 1`] = `
           </slot>
         </span>
       </label>
-      <input aria-invalid="false" class="rux-input rux-input--medium" id="rux-input-2" part="input" type="text" value="">
+      <div class="rux-input rux-input--medium">
+        <span class="rux-input-prefix" part="prefix">
+          <slot name="prefix"></slot>
+        </span>
+        <input aria-invalid="false" class="native-input" id="rux-input-2" part="input" type="text" value="">
+        <span class="rux-input-suffix" part="suffix">
+          <slot name="suffix"></slot>
+        </span>
+      </div>
     </div>
   </mock:shadow-root>
   <input class="aux-input" type="hidden" value="">
@@ -43,7 +59,15 @@ exports[`rux-input renders label slot 1`] = `
           <slot name="label"></slot>
         </span>
       </label>
-      <input aria-invalid="false" class="rux-input rux-input--medium" id="rux-input-3" part="input" type="text" value="">
+      <div class="rux-input rux-input--medium">
+        <span class="rux-input-prefix" part="prefix">
+          <slot name="prefix"></slot>
+        </span>
+        <input aria-invalid="false" class="native-input" id="rux-input-3" part="input" type="text" value="">
+        <span class="rux-input-suffix" part="suffix">
+          <slot name="suffix"></slot>
+        </span>
+      </div>
     </div>
   </mock:shadow-root>
   <div slot="label">
@@ -62,9 +86,17 @@ exports[`rux-input renders rux-icon if type is password 1`] = `
           <slot name="label"></slot>
         </span>
       </label>
-      <input aria-invalid="false" autocomplete="off" class="rux-input rux-input--medium" id="rux-input-4" part="input" type="password" value="">
-      <div class="icon-container show-password">
-        <rux-icon exportparts="icon" icon="visibility" size="extra-small"></rux-icon>
+      <div class="rux-input rux-input--medium">
+        <span class="rux-input-prefix" part="prefix">
+          <slot name="prefix"></slot>
+        </span>
+        <input aria-invalid="false" autocomplete="off" class="native-input" id="rux-input-4" part="input" type="password" value="">
+        <rux-button borderless="" class="pw-button" icononly="" size="small">
+          <rux-icon exportparts="icon" icon="visibility" size="extra-small"></rux-icon>
+        </rux-button>
+        <span class="rux-input-suffix" part="suffix">
+          <slot name="suffix"></slot>
+        </span>
       </div>
     </div>
   </mock:shadow-root>
