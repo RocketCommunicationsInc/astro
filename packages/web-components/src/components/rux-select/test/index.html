@@ -44,7 +44,12 @@
 
             <form id="form" method="POST" action="/form">
                 <rux-select id="ruxSelect" label="Best Thing?" name="bestThing">
-                    <rux-option label="" value="" selected></rux-option>
+                    <rux-option
+                        label="Select an option"
+                        value=""
+                        selected
+                        disabled
+                    ></rux-option>
                     <rux-option label="Red" value="red"></rux-option>
                     <rux-option value="blue" label="Blue"></rux-option>
                     <rux-option value="green" label="Green"></rux-option>

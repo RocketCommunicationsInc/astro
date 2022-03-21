@@ -105,6 +105,7 @@ export class RuxSelect implements FormFieldInterface {
 
     @Watch('value')
     onValueChange() {
+        console.log('Value Change!')
         this._syncOptionsFromValue()
     }
 
@@ -132,6 +133,7 @@ export class RuxSelect implements FormFieldInterface {
         this._handleLabelSlotChange()
         if (this.value) {
             this._handleSlotChange()
+            // this._SetInitialSelected()
         }
     }
 
@@ -174,10 +176,15 @@ export class RuxSelect implements FormFieldInterface {
             assignedElements.map((item: any) => {
                 const option = item
                 if (option.tagName.toLowerCase() === 'rux-option') {
+                    console.log(
+                        `Label: ${option.label} - Selected: ${option.selected}`
+                    )
+
                     this._appendOptionToNativeSelect(
                         option.label,
                         option.value,
                         option.disabled,
+                        option.selected,
                         this.selectEl
                     )
                 }
@@ -209,6 +216,7 @@ export class RuxSelect implements FormFieldInterface {
                 option.label,
                 option.value,
                 option.disabled,
+                option.selected,
                 group
             )
             this.selectEl.appendChild(group)
@@ -221,14 +229,31 @@ export class RuxSelect implements FormFieldInterface {
         label: string,
         value: string,
         disabled: boolean,
+        selected: boolean,
         target: HTMLSelectElement | HTMLOptGroupElement
     ) {
         const item = Object.assign(document.createElement('option'), {
             innerHTML: label ? label : '',
             value: value,
             disabled: disabled,
+            selected: selected,
         })
         target.appendChild(item)
+    }
+
+    private _SetInitialSelected() {
+        if (this.selectEl) {
+            const options = [
+                ...Array.from(this.selectEl.querySelectorAll('option')),
+            ]
+            options.map((option: HTMLOptionElement) => {
+                //! Works, but doens't allow for the selected to change since it's this is always hit.
+                // maybe every time value changes, match it up, set selected?
+                if (option.selected) {
+                    this.value = option.value
+                }
+            })
+        }
     }
 
     private _syncOptionsFromValue() {
@@ -237,6 +262,10 @@ export class RuxSelect implements FormFieldInterface {
                 ...Array.from(this.selectEl.querySelectorAll('option')),
             ]
             options.map((option: HTMLOptionElement) => {
+                //! Works, but doens't allow for the selected to change since it's this is always hit.
+                // if(option.selected) {
+                //     this.value = option.value;
+                // }
                 if (Array.isArray(this.value)) {
                     option.selected = this.value.includes(option.value)
                 } else {
