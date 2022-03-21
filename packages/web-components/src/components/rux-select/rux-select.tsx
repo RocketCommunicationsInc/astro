@@ -105,7 +105,6 @@ export class RuxSelect implements FormFieldInterface {
 
     @Watch('value')
     onValueChange() {
-        console.log('Value Change!')
         this._syncOptionsFromValue()
     }
 
