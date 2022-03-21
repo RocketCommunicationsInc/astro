@@ -40,12 +40,14 @@
         align-items: flex-start;
         justify-content: center;
         color: var(--color-default-text);
+        background: var(--color-background);
     }
     rux-icon {
         cursor: pointer;
     }
 
     .rux-input {
+        background: none;
         input {
             border: none;
             background: none;
