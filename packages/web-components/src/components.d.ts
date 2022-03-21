@@ -12081,7 +12081,6 @@ export namespace Components {
           * The option label
          */
         "label": string;
-        "selected": boolean;
         /**
           * The option value
          */
@@ -32363,7 +32362,6 @@ declare namespace LocalJSX {
          */
         "label": string;
         "onRux-option-changed"?: (event: CustomEvent<void>) => void;
-        "selected"?: boolean;
         /**
           * The option value
          */

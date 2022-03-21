@@ -35,8 +35,6 @@ export class RuxOption {
     /** Sets the option as disabled */
     @Prop() disabled: boolean = false
 
-    @Prop() selected: boolean = false
-
     /** @internal **/
     @Event({ eventName: 'rux-option-changed', composed: true })
     optionChanged!: EventEmitter<void>
@@ -57,11 +55,7 @@ export class RuxOption {
 
     render() {
         return (
-            <Host
-                class="rux-option"
-                disabled={this.disabled}
-                selected={this.selected}
-            >
+            <Host class="rux-option" disabled={this.disabled}>
                 {this.label ? this.label : ''}
             </Host>
         )
