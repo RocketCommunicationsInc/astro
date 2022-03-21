@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
 <Meta
@@ -38,6 +38,7 @@ export const Default = (args) => {
         label-id="${args.labelId}"
         .errorText="${args.errorText}"
         .helpText="${args.helpText}"
+        name="${args.name}"
     >
         <rux-option
             value=""
@@ -57,8 +58,15 @@ export const Default = (args) => {
     <Story
         args={{
             label: 'Select Menu',
-            inputId: 1,
-            labelId: 1,
+            inputId: "1",
+            labelId: "1",
+            disabled: false,
+            errorText: "",
+            helpText: "",
+            invalid: false,
+            name: "",
+            required: false,
+            value: ""
         }}
         name="Select Menu"
     >
@@ -98,6 +106,7 @@ export const WithOptionGroups = (args) => {
         label-id="${args.labelId}"
         .errorText="${args.errorText}"
         .helpText="${args.helpText}"
+        name="${args.name}"
     >
         <rux-option
             value=""
@@ -126,8 +135,15 @@ export const WithOptionGroups = (args) => {
     <Story
         args={{
             label: 'With option groups',
-            inputId: 1,
-            labelId: 1,
+            inputId: "1",
+            labelId: "1",
+            disabled: false,
+            errorText: "",
+            helpText: "",
+            invalid: false,
+            name: "",
+            required: false,
+            value: ""
         }}
         name="With Option Groups"
     >
@@ -149,6 +165,7 @@ export const Disabled = (args) => {
         label-id="${args.labelId}"
         .errorText="${args.errorText}"
         .helpText="${args.helpText}"
+        .name="${args.name}"
     >
         <rux-option
             value=""
@@ -169,8 +186,14 @@ export const Disabled = (args) => {
         args={{
             label: 'Disabled Select Menu',
             disabled: true,
-            inputId: 1,
-            labelId: 1,
+            inputId: "1",
+            labelId: "1",
+            errorText: "",
+            helpText: "",
+            invalid: false,
+            name: "",
+            required: false,
+            value: ""
         }}
         name="Disabled"
     >
@@ -190,6 +213,9 @@ export const Invalid = (args) => {
         label="${args.label}"
         input-id="${args.inputId}"
         label-id="${args.labelId}"
+        .errorText="${args.errorText}"
+        .helpText="${args.helpText}"
+        .name="${args.name}"
     >
         <rux-option
             value=""
@@ -210,8 +236,14 @@ export const Invalid = (args) => {
         args={{
             label: 'Invalid Select Menu',
             invalid: true,
-            inputId: 1,
-            labelId: 1,
+            inputId: "1",
+            labelId: "1",
+            errorText: "",
+            helpText: "",
+            disabled: false,
+            name: "",
+            required: false,
+            value: ""
         }}
         name="Invalid"
     >
@@ -276,6 +308,7 @@ export const WithHelpText = (args) => {
         label-id="${args.labelId}"
         .error-text="${args.errorText}"
         help-text="${args.helpText}"
+        name="${args.name}"
     >
         <rux-option
             value=""
@@ -295,9 +328,15 @@ export const WithHelpText = (args) => {
     <Story
         args={{
             label: 'Select menu',
-            inputId: 1,
-            labelId: 1,
+            inputId: "1",
+            labelId: "1",
             helpText: 'Help text',
+            disabled: false,
+            errorText: "",
+            invalid: false,
+            name: "",
+            required: false,
+            value: ""
         }}
         name="With Help Text"
     >
@@ -318,7 +357,8 @@ export const WithErrorText = (args) => {
         input-id="${args.inputId}"
         label-id="${args.labelId}"
         error-text="${args.errorText}"
-        .help-text="${args.helpText}"
+        help-text="${args.helpText}"
+        name="${args.name}"
     >
         <rux-option
             value=""
@@ -338,9 +378,15 @@ export const WithErrorText = (args) => {
     <Story
         args={{
             label: 'Select menu',
-            inputId: 1,
-            labelId: 1,
+            inputId: "1",
+            labelId: "1",
             errorText: 'Error text',
+            disabled: false,
+            helpText: "",
+            invalid: false,
+            name: "",
+            required: false,
+            value: ""
         }}
         name="With Error Text"
     >

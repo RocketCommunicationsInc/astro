@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
 <Meta
@@ -48,7 +48,12 @@ export const Default = (args) => {
         name="Default"
         args={{
             name: 'checkbox',
-            label: 'Checkbox Label'
+            label: 'Checkbox Label',
+            checked: false,
+            disabled: false,
+            helpText: "",
+            indeterminate: false,
+            value: ""
         }}
     >
         {Default.bind()}
@@ -80,7 +85,18 @@ export const Checked = (args) => {
 }
 
 <Canvas>
-    <Story args={{ checked: true, label: 'Checkbox Label' }} name="Checked">
+    <Story
+        args={{
+            checked: true,
+            label: 'Checkbox Label',
+            disabled: false,
+            helpText: "",
+            indeterminate: false,
+            value: "",
+            name: ""
+        }}
+        name="Checked"
+    >
         {Checked.bind()}
     </Story>
 </Canvas>
@@ -104,7 +120,17 @@ Checkbox Label
 }
 
 <Canvas>
-    <Story args={{ disabled: true, label: 'Checkbox Label' }} name="Disabled">
+    <Story args={{
+            checked: false,
+            label: 'Checkbox Label',
+            disabled: true,
+            helpText: "",
+            indeterminate: false,
+            value: "",
+            name: ""
+        }}
+        name="Disabled"
+    >
         {Disabled.bind()}
     </Story>
 </Canvas>
@@ -130,7 +156,18 @@ export const Indeterminate = (args) => {
 }
 
 <Canvas>
-    <Story args={{ indeterminate: true, checked: true, label: 'Checkbox Label' }} name="Indeterminate">
+    <Story
+        args={{
+            indeterminate: true,
+            checked: true,
+            label: 'Checkbox Label',
+            disabled: false,
+            helpText: "",
+            name: "",
+            value: ""
+        }} 
+        name="Indeterminate"
+    >
         {Indeterminate.bind()}
     </Story>
 </Canvas>
@@ -154,7 +191,18 @@ export const WithHelpText = (args) => {
 }
 
 <Canvas>
-    <Story args={{ helpText: 'Help text', label: 'Checkbox Label' }} name="With Help Text">
+    <Story
+        args={{
+            indeterminate: false,
+            checked: false,
+            label: 'Checkbox Label',
+            disabled: false,
+            helpText: "Help text",
+            name: "",
+            value: ""
+        }} 
+        name="With Help Text"
+    >
         {WithHelpText.bind()}
     </Story>
 </Canvas>

@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 const args = extractArgTypes('rux-notification')
 args.open.defaultValue = true
@@ -46,7 +46,16 @@ export const Default = (args) => {
 }
 
 <Canvas>
-    <Story name="Default" height="100px">
+    <Story
+        name="Default"
+        height="100px"
+        args={{
+            open: true,
+            closeAfter: null,
+            message: "This is a notification banner. It won’t disappear until the user dismisses it.",
+            status: "standby"
+        }}
+    >
         {Default.bind()}
     </Story>
 </Canvas>
@@ -238,7 +247,17 @@ export const AllVariants = () => html`
 `
 
 <Canvas>
-    <Story name="All Variants">{AllVariants.bind()}</Story>
+    <Story
+        name="All Variants"
+        argTypes={{
+            closeAfter: { table: { disable: true } },
+            message: { table: { disable: true } },
+            open: { table: { disable: true } },
+            status: { table: { disable: true } }
+        }}
+    >
+        {AllVariants.bind()}
+    </Story>
 </Canvas>
 
 ## Cherry Picking

@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
 <Meta
@@ -22,7 +22,7 @@ export const Default = (args) => {
     return html`
         <rux-menu-item
             ?disabled="${args.disabled}"
-            .downloaed="${args.download}"
+            .download="${args.download}"
             .href="${args.href}"
             .rel="${args.rel}"
             .target="${args.target}"
@@ -33,7 +33,19 @@ export const Default = (args) => {
 }
 
 <Canvas>
-    <Story name="Default">{Default.bind()}</Story>
+    <Story
+        name="Default"
+        args={{
+            disabled: false,
+            download: "",
+            href: "",
+            rel: "",
+            target: "",
+            value: {}
+        }}
+    >
+        {Default.bind()}
+    </Story>
 </Canvas>
 
 ## API
@@ -48,7 +60,7 @@ export const Disabled = (args) => {
     return html`
         <rux-menu-item
             ?disabled="${args.disabled}"
-            .downloaed="${args.download}"
+            .download="${args.download}"
             .href="${args.href}"
             .rel="${args.rel}"
             .target="${args.target}"
@@ -62,6 +74,11 @@ export const Disabled = (args) => {
     <Story
         args={{
             disabled: true,
+            download: "",
+            href: "",
+            rel: "",
+            target: "",
+            value: {}
         }}
         name="Disabled"
     >

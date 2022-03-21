@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
 <Meta
@@ -32,6 +32,8 @@ export const Default = (args) => {
     <Story
         args={{
             value: 1,
+            hideLabel: false,
+            max: 100
         }}
         name="Default"
     >
@@ -71,6 +73,7 @@ export const DeterminateProgressMax = (args) => {
         args={{
             value: 100,
             max: 100,
+            hideLabel: false
         }}
         name="Determinate Progress Max"
     >
@@ -97,6 +100,7 @@ export const DeterminateProgressCustomMax = (args) => {
         args={{
             value: 1123,
             max: 2400,
+            hideLabel: false
         }}
         name="Determinate Progress with Custom Max"
     >
@@ -114,25 +118,16 @@ export const IndeterminateProgress = (args) => html`
 `
 
 <Canvas>
-    <Story name="Indeterminate Progress" 
-    argTypes={{
-        value: { 
-            table: {
-                disable: true 
-            },
-        },
-        max: {
-            table: {
-                disable: true
-            },
-        },
-        hideLabel: {
-            table: {
-                disable: true
-            }
-        }
-    }}
-    >{IndeterminateProgress.bind()}</Story>
+    <Story
+        name="Indeterminate Progress"
+        argTypes={{
+            hideLabel: { table: { disable: true } },
+            max: { table: { disable: true } },
+            value: { table: { disable: true } }
+        }}
+    >
+        {IndeterminateProgress.bind()}
+    </Story>
 </Canvas>
 
 ### Cherry Picking

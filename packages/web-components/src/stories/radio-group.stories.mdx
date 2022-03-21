@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
 <Meta
@@ -28,7 +28,7 @@ The Radio Group component is responsible for checking and unchecking individual 
 export const Default = (args) => {
     return html`
 <rux-radio-group
-    name="radios"
+    name="${args.name}"
     label="${args.label}"
     .value="${args.value}"
     ?invalid="${args.invalid}"
@@ -48,6 +48,10 @@ export const Default = (args) => {
         args={{
             name: 'radios',
             label: 'Radio group',
+            errorText: "",
+            helpText: "",
+            invalid: false,
+            value: {}
         }}
         name="Default"
     >
@@ -93,6 +97,9 @@ export const Invalid = (args) => {
             name: 'radios',
             label: 'Radio group',
             invalid: true,
+            errorText: "",
+            helpText: "",
+            value: {}
         }}
         name="Invalid"
     >
@@ -159,6 +166,9 @@ export const WithHelpText = (args) => {
             name: 'radios',
             label: 'Radio group',
             helpText: 'Help text',
+            errorText: "",
+            invalid: false,
+            value: {}
         }}
         name="With Help Text"
     >
@@ -192,6 +202,9 @@ export const WithErrorText = (args) => {
             name: 'radios',
             label: 'Radio group',
             errorText: 'Error text',
+            helpText: "",
+            invalid: true,
+            value: {}
         }}
         name="With Error Text"
     >
@@ -227,7 +240,15 @@ export const HorizontalLabel = (args) => {
         margin-right: var(--spacing-input-label-left);
     }
 </style>
-<rux-radio-group id="left-example" label="Label">
+<rux-radio-group
+    id="left-example"
+    name="${args.name}"
+    label="${args.label}"
+    .value="${args.value}"
+    ?invalid="${args.invalid}"
+    help-text="${args.helpText}"
+    error-text="${args.errorText}"
+>
     <rux-radio value="1">one</rux-radio>
     <rux-radio value="2">two</rux-radio>
     <rux-radio value="3">three</rux-radio>
@@ -236,7 +257,19 @@ export const HorizontalLabel = (args) => {
 }
 
 <Canvas>
-    <Story name="Horizontal Label">{HorizontalLabel.bind()}</Story>
+    <Story
+        name="Horizontal Label"
+        args={{
+            name: 'radios',
+            label: 'Label',
+            errorText: "",
+            helpText: "",
+            invalid: false,
+            value: {}
+        }}
+    >
+        {HorizontalLabel.bind()}
+    </Story>
 </Canvas>
 
 ## Cherry Picking
