@@ -1,5 +1,7 @@
 :host {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 3px;
     font-size: var(--font-body-2-bold-font-size);
     font-weight: var(--font-body-2-bold-font-weight);
@@ -8,6 +10,12 @@
     letter-spacing: var(--font-body-2-bold-letter-spacing);
     padding: 4px 10px;
     text-align: center;
+}
+:host(.is-undefined) {
+    height: 24px;
+    width: 60px;
+    border: 1px solid #9ea7ad;
+    background: #32363a;
 }
 
 :host([status='pass']) {
@@ -30,30 +38,3 @@
     border: 1px solid #9ea7ad;
     background: #32363a;
 }
-
-:host([tag-base='0']) {
-    min-height: 24px;
-    min-width: 60px;
-    color: black;
-    padding: 0;
-
-    .rux-tag-style--100 {
-        //because we are setting the border here since it has to change between each level, the padding must be set here too :/
-        border: 1px solid #eaeef4; //global quaternary 200
-        background: #f5f6f9; //global quat 400
-        border-radius: 3px;
-        padding: 4px 10px;
-    }
-    .rux-tag-style--200 {
-        //styles
-    }
-    .rux-tag-style--300 {
-        //styles
-    }
-}
-
-// .rux-tag-base--0 {
-//     color: black;
-//     background: green;
-//     border: 1px solid red;
-// }

@@ -12380,26 +12380,9 @@ export namespace Components {
     }
     interface RuxTag {
         /**
-          * Used to display a status of pass, fail, or unknown.
+          * Used to display a status of pass, fail, or unknown. If no status is provided or the provided status is not an accepted status type, the default is unknown.
          */
         "status"?: StatusTags;
-        /**
-          * Used to change the visual of a non-status rux-tag.
-         */
-        "tagBase"?: | '0'
-        | '1'
-        | '2'
-        | '3'
-        | '4';
-        "tagStyle"?: | '100'
-        | '200'
-        | '300'
-        | '400'
-        | '500'
-        | '600'
-        | '700'
-        | '800'
-        | '900';
     }
     interface RuxTextarea {
         /**
@@ -32640,26 +32623,9 @@ declare namespace LocalJSX {
     }
     interface RuxTag {
         /**
-          * Used to display a status of pass, fail, or unknown.
+          * Used to display a status of pass, fail, or unknown. If no status is provided or the provided status is not an accepted status type, the default is unknown.
          */
         "status"?: StatusTags;
-        /**
-          * Used to change the visual of a non-status rux-tag.
-         */
-        "tagBase"?: | '0'
-        | '1'
-        | '2'
-        | '3'
-        | '4';
-        "tagStyle"?: | '100'
-        | '200'
-        | '300'
-        | '400'
-        | '500'
-        | '600'
-        | '700'
-        | '800'
-        | '900';
     }
     interface RuxTextarea {
         /**

@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rux-tag renders 1`] = `
+<rux-tag status="unknown">
+  <mock:shadow-root>
+    <div part="container">
+      UNK
+    </div>
+  </mock:shadow-root>
+</rux-tag>
+`;
+
+exports[`rux-tag renders default unk status if status is invalid 1`] = `
+<rux-tag class="is-undefined" status="bad">
+  <mock:shadow-root>
+    <div part="container">
+      UNK
+    </div>
+  </mock:shadow-root>
+</rux-tag>
+`;
+
+exports[`rux-tag renders fail status 1`] = `
+<rux-tag status="fail">
+  <mock:shadow-root>
+    <div part="container">
+      FAIL
+    </div>
+  </mock:shadow-root>
+  <rux-tag status="unknown">
+    <mock:shadow-root>
+      <div part="container">
+        UNK
+      </div>
+    </mock:shadow-root>
+  </rux-tag>
+</rux-tag>
+`;
+
+exports[`rux-tag renders pass status 1`] = `
+<rux-tag status="pass">
+  <mock:shadow-root>
+    <div part="container">
+      PASS
+    </div>
+  </mock:shadow-root>
+  <rux-tag status="unknown">
+    <mock:shadow-root>
+      <div part="container">
+        UNK
+      </div>
+    </mock:shadow-root>
+  </rux-tag>
+</rux-tag>
+`;
+
+exports[`rux-tag renders tag-text slot 1`] = `
+<rux-tag status="unknown">
+  <mock:shadow-root>
+    <div part="container">
+      <slot name="tag-text"></slot>
+    </div>
+  </mock:shadow-root>
+  <div slot="tag-text">
+    Custom Text
+  </div>
+</rux-tag>
+`;
+
+exports[`rux-tag renders unk status 1`] = `
+<rux-tag status="unknown">
+  <mock:shadow-root>
+    <div part="container">
+      UNK
+    </div>
+  </mock:shadow-root>
+  <rux-tag status="unknown">
+    <mock:shadow-root>
+      <div part="container">
+        UNK
+      </div>
+    </mock:shadow-root>
+  </rux-tag>
+</rux-tag>
+`;
