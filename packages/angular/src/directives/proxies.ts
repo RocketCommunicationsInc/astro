@@ -21314,6 +21314,10 @@ export declare interface RuxInput extends Components.RuxInput {
    * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) 
    */
   ruxblur: EventEmitter<CustomEvent<any>>;
+  /**
+   * Fired when an element has gained focus - [HTMLElement/focus_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event) 
+   */
+  ruxfocus: EventEmitter<CustomEvent<any>>;
 
 }
 
@@ -21331,7 +21335,7 @@ export class RuxInput {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['ruxchange', 'ruxinput', 'ruxblur']);
+    proxyOutputs(this, this.el, ['ruxchange', 'ruxinput', 'ruxblur', 'ruxfocus']);
   }
 }
 
@@ -21679,6 +21683,23 @@ export class RuxRadioGroup {
 }
 
 
+export declare interface RuxRuler extends Components.RuxRuler {}
+
+
+@Component({
+  selector: 'rux-ruler',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class RuxRuler {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface RuxSegmentedButton extends Components.RuxSegmentedButton {
   /**
    * Emitted when the value property has changed. 
@@ -21694,7 +21715,7 @@ export declare interface RuxSegmentedButton extends Components.RuxSegmentedButto
   selector: 'rux-segmented-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['data', 'selected', 'size']
+  inputs: ['data', 'disabled', 'selected', 'size']
 })
 export class RuxSegmentedButton {
   protected el: HTMLElement;
@@ -21725,7 +21746,7 @@ export declare interface RuxSelect extends Components.RuxSelect {
   selector: 'rux-select',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'errorText', 'helpText', 'inputId', 'invalid', 'label', 'labelId', 'name', 'required', 'value']
+  inputs: ['disabled', 'errorText', 'helpText', 'inputId', 'invalid', 'label', 'labelId', 'multiple', 'name', 'required', 'value']
 })
 export class RuxSelect {
   protected el: HTMLElement;
@@ -21756,7 +21777,7 @@ export declare interface RuxSlider extends Components.RuxSlider {
   selector: 'rux-slider',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'errorText', 'helpText', 'label', 'max', 'min', 'name', 'step', 'value']
+  inputs: ['axisLabels', 'disabled', 'errorText', 'helpText', 'label', 'max', 'min', 'name', 'step', 'ticksOnly', 'value']
 })
 export class RuxSlider {
   protected el: HTMLElement;
@@ -22076,7 +22097,7 @@ export declare interface RuxTextarea extends Components.RuxTextarea {
   selector: 'rux-textarea',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'rows', 'small', 'value']
+  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'rows', 'size', 'value']
 })
 export class RuxTextarea {
   protected el: HTMLElement;
@@ -22089,6 +22110,7 @@ export class RuxTextarea {
 
 
 export declare interface RuxTimeRegion extends Components.RuxTimeRegion {}
+
 @ProxyCmp({
   inputs: ['end', 'hideTimestamp', 'selected', 'start', 'status']
 })
@@ -22108,6 +22130,7 @@ export class RuxTimeRegion {
 
 
 export declare interface RuxTimeline extends Components.RuxTimeline {}
+
 @ProxyCmp({
   inputs: ['end', 'interval', 'playhead', 'start', 'zoom']
 })
@@ -22127,6 +22150,7 @@ export class RuxTimeline {
 
 
 export declare interface RuxTrack extends Components.RuxTrack {}
+
 
 @Component({
   selector: 'rux-track',
