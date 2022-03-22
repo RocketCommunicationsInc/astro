@@ -21,9 +21,9 @@
 
 ## Shadow Parts
 
-| Part          | Description              |
-| ------------- | ------------------------ |
-| `"container"` | The container of rux-tag |
+| Part          | Description                         |
+| ------------- | ----------------------------------- |
+| `"container"` | The container of the rux-tag's text |
 
 
 ----------------------------------------------
