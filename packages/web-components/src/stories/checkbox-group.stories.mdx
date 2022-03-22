@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
 <Meta
@@ -40,6 +40,9 @@ export const Default = (args) => {
     <Story
         args={{
             label: 'Checkbox group',
+            errorText: "",
+            helpText: "",
+            invalid: false
         }}
         name="Default"
     >
@@ -76,9 +79,10 @@ export const Invalid = (args) => {
 <Canvas>
     <Story
         args={{
-            name: 'checkboxes',
             label: 'Checkbox group',
             invalid: true,
+            errorText: "",
+            helpText: ""
         }}
         name="Invalid"
     >
@@ -142,9 +146,10 @@ export const WithHelpText = (args) => {
 <Canvas>
     <Story
         args={{
-            name: 'checkboxes',
             label: 'Checkbox group',
             helpText: 'Help text',
+            errorText: "",
+            invalid: false
         }}
         name="With Help Text"
     >
@@ -175,9 +180,10 @@ export const WithErrorText = (args) => {
 <Canvas>
     <Story
         args={{
-            name: 'checkboxes',
             label: 'Checkbox group',
             errorText: 'Error text',
+            helpText: "",
+            invalid: true
         }}
         name="With Error Text"
     >
@@ -213,7 +219,13 @@ export const HorizontalLabel = (args) => {
         margin-right: var(--spacing-input-label-left);
     }
 </style>
-<rux-checkbox-group id="left-example" label="Label">
+<rux-checkbox-group id="left-example"
+    label="${args.label}"
+    .value="${args.value}"
+    ?invalid="${args.invalid}"
+    .helpText="${args.helpText}"
+    error-text="${args.errorText}"
+>
     <rux-checkbox value="1">one</rux-checkbox>
     <rux-checkbox value="2">two</rux-checkbox>
     <rux-checkbox value="3">three</rux-checkbox>
@@ -222,7 +234,17 @@ export const HorizontalLabel = (args) => {
 }
 
 <Canvas>
-    <Story name="Horizontal Label">{HorizontalLabel.bind()}</Story>
+    <Story
+        name="Horizontal Label"
+        args={{
+            label: "Label",
+            invalid: false,
+            errorText: "",
+            helpText: ""
+        }}
+    >
+        {HorizontalLabel.bind()}
+    </Story>
 </Canvas>
 
 ## Cherry Picking

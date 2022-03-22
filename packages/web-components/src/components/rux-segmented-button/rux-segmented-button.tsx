@@ -36,6 +36,11 @@ export class RuxSegmentedButton {
     @Prop({ reflect: true }) size?: 'small' | 'medium' | 'large'
 
     /**
+     * Sets the disabled attribute.
+     */
+    @Prop({ reflect: true }) disabled: boolean = false
+
+    /**
      * Emitted when the value property has changed.
      */
     @Event({ eventName: 'ruxchange' })
@@ -123,6 +128,7 @@ export class RuxSegmentedButton {
                             checked={this._isSelected(item.label)}
                             data-label={item.label}
                             onChange={this._handleChange}
+                            disabled={this.disabled}
                         />
                         <label
                             htmlFor={this._slugify(item.label)}

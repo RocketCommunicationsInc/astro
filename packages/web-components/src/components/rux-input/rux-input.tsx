@@ -17,6 +17,8 @@ let id = 0
 
 /**
  * @slot label - The input label
+ * @slot prefix - Left side input icon
+ * @slot suffix - Right side input icon
  * @part error-text - The error text element
  * @part form-field - The form-field wrapper container
  * @part help-text - The help text element
@@ -42,7 +44,7 @@ export class RuxInput implements FormFieldInterface {
 
     @State() isPasswordVisible = false
 
-    @State() iconName = 'visibility'
+    @State() hasFocus = false
 
     /**
      * The input label text. For HTML content, use the `label` slot instead.
@@ -150,6 +152,11 @@ export class RuxInput implements FormFieldInterface {
      */
     @Event({ eventName: 'ruxblur' }) ruxBlur!: EventEmitter
 
+    /**
+     * Fired when an element has gained focus - [HTMLElement/focus_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event)
+     */
+    @Event({ eventName: 'ruxfocus' }) ruxFocus!: EventEmitter
+
     @Watch('label')
     handleLabelChange() {
         this._handleSlotChange()
@@ -164,7 +171,6 @@ export class RuxInput implements FormFieldInterface {
         this._onChange = this._onChange.bind(this)
         this._onInput = this._onInput.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
-        this._handleType = this._handleType.bind(this)
         this._handleTogglePassword = this._handleTogglePassword.bind(this)
     }
 
@@ -198,6 +204,12 @@ export class RuxInput implements FormFieldInterface {
 
     private _onBlur = () => {
         this.ruxBlur.emit()
+        this.hasFocus = false
+    }
+
+    private _onFocus = () => {
+        this.ruxFocus.emit()
+        this.hasFocus = true
     }
 
     private _handleSlotChange() {
@@ -205,28 +217,11 @@ export class RuxInput implements FormFieldInterface {
     }
 
     private _setTogglePassword() {
-        if (this.type === 'password') {
-            this.togglePassword = true
-        }
+        this.type === 'password' ? (this.togglePassword = true) : false
     }
 
     private _handleTogglePassword() {
         this.isPasswordVisible = !this.isPasswordVisible
-        if (this.isPasswordVisible) {
-            this.iconName = 'visibility-off'
-        } else {
-            this.iconName = 'visibility'
-        }
-    }
-
-    private _handleType() {
-        let realType = ''
-        !this.togglePassword
-            ? (realType = this.type)
-            : this.togglePassword && this.isPasswordVisible
-            ? (realType = 'text')
-            : (realType = this.type)
-        return realType
     }
 
     render() {
@@ -244,7 +239,7 @@ export class RuxInput implements FormFieldInterface {
             _onChange,
             _onInput,
             _onBlur,
-            _handleType,
+            _onFocus,
             _handleSlotChange,
             _handleTogglePassword,
             placeholder,
@@ -253,7 +248,6 @@ export class RuxInput implements FormFieldInterface {
             type,
             value,
             hasLabel,
-            iconName,
             size,
             autocomplete,
             spellcheck,
@@ -291,19 +285,10 @@ export class RuxInput implements FormFieldInterface {
                             </slot>
                         </span>
                     </label>
-                    <input
-                        name={name}
-                        disabled={disabled}
-                        type={_handleType()}
-                        aria-invalid={invalid ? 'true' : 'false'}
-                        placeholder={placeholder}
-                        required={required}
-                        step={step}
-                        min={min}
-                        max={max}
-                        value={value}
+                    <div
                         class={{
                             'rux-input': true,
+                            'rux-input--focused': this.hasFocus,
                             'rux-input--disabled': disabled,
                             'rux-input--invalid': invalid,
                             'rux-input--search': type === 'search',
@@ -311,32 +296,61 @@ export class RuxInput implements FormFieldInterface {
                             'rux-input--medium': size === 'medium',
                             'rux-input--large': size === 'large',
                         }}
-                        id={this.inputId}
-                        spellcheck={spellcheck}
-                        autocomplete={togglePassword ? 'off' : autocomplete}
-                        readonly={readonly}
-                        onChange={_onChange}
-                        onInput={_onInput}
-                        onBlur={_onBlur}
-                        part="input"
-                    ></input>
-                    {togglePassword && (
-                        <div
-                            class={{
-                                'icon-container': true,
-                                'show-password': true,
-                                'with-label': hasLabel,
-                            }}
-                        >
-                            <rux-icon
-                                exportparts="icon"
+                    >
+                        <span part="prefix" class="rux-input-prefix">
+                            <slot name="prefix"></slot>
+                        </span>
+                        <input
+                            name={name}
+                            disabled={disabled}
+                            type={
+                                type === 'password' && this.isPasswordVisible
+                                    ? 'text'
+                                    : type
+                            }
+                            aria-invalid={invalid ? 'true' : 'false'}
+                            placeholder={placeholder}
+                            required={required}
+                            step={step}
+                            min={min}
+                            max={max}
+                            value={value}
+                            class="native-input"
+                            id={this.inputId}
+                            spellcheck={spellcheck}
+                            autocomplete={togglePassword ? 'off' : autocomplete}
+                            readonly={readonly}
+                            onChange={_onChange}
+                            onInput={_onInput}
+                            onBlur={_onBlur}
+                            onFocus={_onFocus}
+                            part="input"
+                        ></input>
+                        {this.togglePassword ? (
+                            <rux-button
+                                borderless
+                                iconOnly
+                                size="small"
                                 onClick={_handleTogglePassword}
-                                icon={iconName}
-                                size="extra-small"
-                            />
-                        </div>
-                    )}
+                                class="pw-button"
+                            >
+                                <rux-icon
+                                    exportparts="icon"
+                                    icon={
+                                        this.isPasswordVisible
+                                            ? 'visibility-off'
+                                            : 'visibility'
+                                    }
+                                    size="extra-small"
+                                />
+                            </rux-button>
+                        ) : null}
+                        <span part="suffix" class="rux-input-suffix">
+                            <slot name="suffix"></slot>
+                        </span>
+                    </div>
                 </div>
+
                 <FormFieldMessage
                     errorText={errorText}
                     helpText={helpText}

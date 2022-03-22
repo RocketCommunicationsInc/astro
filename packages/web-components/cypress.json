@@ -4,5 +4,6 @@
     "integrationFolder": "./src/components",
     "testFiles": "**/*.e2e.js",
     "video": false,
-    "screenshotOnRunFailure": false
+    "screenshotOnRunFailure": false,
+    "chromeWebSecurity": false
 }

@@ -20,8 +20,6 @@ Before reading any further, we recommend you take a look at a live [Astro sample
 [Glossary](/design-guidelines/glossary/)
 [Compliance](/design-guidelines/compliance/)
 
-
-
 ## Figma
 
 [Astro UXDS Figma Library](https://www.figma.com/community/file/1014254163928270411)
@@ -130,4 +128,3 @@ Each page on astrouxds.com has a support button at the bottom of the page for te
 - [Axure](https://www.axure.com/)
 - [Invision](https://www.invisionapp.com/)
 - [Sketch](https://www.sketch.com/)
-

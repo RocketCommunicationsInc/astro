@@ -9,7 +9,7 @@ title: "Support"
 
 ## Contact Us
 
-Astro belongs to the Space App Community, so please provide feedback and let us know when you have questions or need help by using our [Jira Support Desk](https://rocketcom.atlassian.net/servicedesk/customer/portal/2) or emailing uxsupport@rocketcom.com.
+Astro belongs to the Space App Community, so please provide feedback and let us know when you have questions or need help by using our [GitHub Issues](https://github.com/RocketCommunicationsInc/astro/issues), [GitHub Discussions](https://github.com/RocketCommunicationsInc/astro/discussions), [Figma](https://www.figma.com/@astrouxds) on the [AstroUXDS Slack Channel](https://astrouxds.slack.com) or emailing support@astrouxds.com.
 
 ## Sign Up
 

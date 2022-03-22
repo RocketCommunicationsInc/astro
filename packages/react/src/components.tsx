@@ -4327,6 +4327,10 @@ export const RuxRadioGroup = /*@__PURE__*/ createReactComponent<
   JSX.RuxRadioGroup,
   HTMLRuxRadioGroupElement
 >("rux-radio-group");
+export const RuxRuler = /*@__PURE__*/ createReactComponent<
+  JSX.RuxRuler,
+  HTMLRuxRulerElement
+>("rux-ruler");
 export const RuxSegmentedButton = /*@__PURE__*/ createReactComponent<
   JSX.RuxSegmentedButton,
   HTMLRuxSegmentedButtonElement
@@ -4399,6 +4403,18 @@ export const RuxTextarea = /*@__PURE__*/ createReactComponent<
   JSX.RuxTextarea,
   HTMLRuxTextareaElement
 >("rux-textarea");
+export const RuxTimeRegion = /*@__PURE__*/ createReactComponent<
+  JSX.RuxTimeRegion,
+  HTMLRuxTimeRegionElement
+>("rux-time-region");
+export const RuxTimeline = /*@__PURE__*/ createReactComponent<
+  JSX.RuxTimeline,
+  HTMLRuxTimelineElement
+>("rux-timeline");
+export const RuxTrack = /*@__PURE__*/ createReactComponent<
+  JSX.RuxTrack,
+  HTMLRuxTrackElement
+>("rux-track");
 export const RuxTree = /*@__PURE__*/ createReactComponent<
   JSX.RuxTree,
   HTMLRuxTreeElement

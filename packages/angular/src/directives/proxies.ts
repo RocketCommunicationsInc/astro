@@ -21688,7 +21688,7 @@ export declare interface RuxSegmentedButton extends Components.RuxSegmentedButto
 }
 
 @ProxyCmp({
-  inputs: ['data', 'selected', 'size']
+  inputs: ['data', 'disabled', 'selected', 'size']
 })
 @Component({
   selector: 'rux-segmented-button',
@@ -21719,7 +21719,7 @@ export declare interface RuxSelect extends Components.RuxSelect {
 }
 
 @ProxyCmp({
-  inputs: ['disabled', 'errorText', 'helpText', 'inputId', 'invalid', 'label', 'labelId', 'name', 'required', 'value']
+  inputs: ['disabled', 'errorText', 'helpText', 'inputId', 'invalid', 'label', 'labelId', 'multiple', 'name', 'required', 'value']
 })
 @Component({
   selector: 'rux-select',
@@ -21750,7 +21750,7 @@ export declare interface RuxSlider extends Components.RuxSlider {
 }
 
 @ProxyCmp({
-  inputs: ['disabled', 'errorText', 'helpText', 'label', 'max', 'min', 'name', 'step', 'value']
+  inputs: ['axisLabels', 'disabled', 'errorText', 'helpText', 'label', 'max', 'min', 'name', 'step', 'ticksOnly', 'value']
 })
 @Component({
   selector: 'rux-slider',
@@ -22070,7 +22070,7 @@ export declare interface RuxTextarea extends Components.RuxTextarea {
 }
 
 @ProxyCmp({
-  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'rows', 'small', 'value']
+  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'rows', 'size', 'value']
 })
 @Component({
   selector: 'rux-textarea',
@@ -22084,6 +22084,60 @@ export class RuxTextarea {
     c.detach();
     this.el = r.nativeElement;
     proxyOutputs(this, this.el, ['ruxchange', 'ruxinput', 'ruxblur']);
+  }
+}
+
+
+export declare interface RuxTimeRegion extends Components.RuxTimeRegion {}
+@ProxyCmp({
+  inputs: ['end', 'hideTimestamp', 'selected', 'start', 'status']
+})
+@Component({
+  selector: 'rux-time-region',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['end', 'hideTimestamp', 'selected', 'start', 'status']
+})
+export class RuxTimeRegion {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface RuxTimeline extends Components.RuxTimeline {}
+@ProxyCmp({
+  inputs: ['end', 'interval', 'playhead', 'start', 'zoom']
+})
+@Component({
+  selector: 'rux-timeline',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['end', 'interval', 'playhead', 'start', 'zoom']
+})
+export class RuxTimeline {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface RuxTrack extends Components.RuxTrack {}
+
+@Component({
+  selector: 'rux-track',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class RuxTrack {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
   }
 }
 

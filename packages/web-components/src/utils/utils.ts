@@ -74,3 +74,59 @@ export const renderHiddenInput = (
         }
     }
 }
+
+/**
+ * Renders multiple hidden inputs from an array of values
+ * Used in multiselect
+ * @param always
+ * @param container
+ * @param name
+ * @param value
+ * @param disabled
+ */
+export const renderHiddenSelect = (
+    always: boolean,
+    container: HTMLElement,
+    name: string,
+    value: string | undefined | null | string[],
+    disabled: boolean
+) => {
+    // Clear any existing hidden options. May be more performant to edit their values instead though.
+    let inputs = container.querySelectorAll(
+        'input.aux-select'
+    ) as NodeListOf<HTMLInputElement>
+    if (inputs) {
+        for (const elem of inputs) {
+            elem.remove()
+        }
+    }
+
+    if (always || hasShadowDom(container)) {
+        if (Array.isArray(value)) {
+            for (const el in value) {
+                let input = container.ownerDocument!.createElement('input')
+                input.type = 'hidden'
+                input.classList.add('aux-select')
+                input.classList.add(`aux-select-${el}`)
+                input.disabled = disabled
+                input.name = name
+
+                if (value[el]) {
+                    input.value = value[el]
+                }
+                container.appendChild(input)
+            }
+        } else {
+            let input = container.ownerDocument!.createElement('input')
+            input.type = 'hidden'
+            input.classList.add('aux-select')
+            input.classList.add(`aux-select-0`)
+            input.disabled = disabled
+            input.name = name
+            if (value) {
+                input.value = value
+            }
+            container.appendChild(input)
+        }
+    }
+}

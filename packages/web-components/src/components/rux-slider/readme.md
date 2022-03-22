@@ -57,17 +57,19 @@ Pass properties via attributes similar to the native [HTML Input Range](https://
 
 ## Properties
 
-| Property    | Attribute    | Description                                                                                                                                                                                                   | Type                  | Default                                   |
-| ----------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | ----------------------------------------- |
-| `disabled`  | `disabled`   | Determines if the slider is disabled.                                                                                                                                                                         | `boolean`             | `false`                                   |
-| `errorText` | `error-text` | The validation error text                                                                                                                                                                                     | `string \| undefined` | `undefined`                               |
-| `helpText`  | `help-text`  | The help or explanation text                                                                                                                                                                                  | `string \| undefined` | `undefined`                               |
-| `label`     | `label`      | The slider label text. For HTML content, use the `label` slot instead.                                                                                                                                        | `string \| undefined` | `undefined`                               |
-| `max`       | `max`        | Max value of slider.                                                                                                                                                                                          | `number`              | `100`                                     |
-| `min`       | `min`        | Min value of the slider.                                                                                                                                                                                      | `number`              | `0`                                       |
-| `name`      | `name`       | Name of the Input Field for Form Submission                                                                                                                                                                   | `string`              | `''`                                      |
-| `step`      | `step`       | Step amount of slider value.                                                                                                                                                                                  | `number`              | `1`                                       |
-| `value`     | `value`      | Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) | `number`              | `(this.max! - this.min!) / 2 + this.min!` |
+| Property     | Attribute    | Description                                                                                                                                                                                                   | Type                  | Default                                   |
+| ------------ | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | ----------------------------------------- |
+| `axisLabels` | --           | Shows tick marks and labels in the order provided and aligns evenly based on the length.                                                                                                                      | `string[]`            | `[]`                                      |
+| `disabled`   | `disabled`   | Determines if the slider is disabled.                                                                                                                                                                         | `boolean`             | `false`                                   |
+| `errorText`  | `error-text` | The validation error text                                                                                                                                                                                     | `string \| undefined` | `undefined`                               |
+| `helpText`   | `help-text`  | The help or explanation text                                                                                                                                                                                  | `string \| undefined` | `undefined`                               |
+| `label`      | `label`      | The slider label text. For HTML content, use the `label` slot instead.                                                                                                                                        | `string \| undefined` | `undefined`                               |
+| `max`        | `max`        | Max value of slider.                                                                                                                                                                                          | `number`              | `100`                                     |
+| `min`        | `min`        | Min value of the slider.                                                                                                                                                                                      | `number`              | `0`                                       |
+| `name`       | `name`       | Name of the Input Field for Form Submission                                                                                                                                                                   | `string`              | `''`                                      |
+| `step`       | `step`       | Step amount of slider value.                                                                                                                                                                                  | `number`              | `1`                                       |
+| `ticksOnly`  | `ticks-only` | Hides labels and only shows tick marks if axis-labels is provided.                                                                                                                                            | `boolean`             | `false`                                   |
+| `value`      | `value`      | Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) | `number`              | `(this.max! - this.min!) / 2 + this.min!` |
 
 
 ## Events
@@ -87,13 +89,16 @@ Pass properties via attributes similar to the native [HTML Input Range](https://
 
 ## Shadow Parts
 
-| Part           | Description                              |
-| -------------- | ---------------------------------------- |
-| `"error-text"` | The error text element                   |
-| `"form-field"` | The form-field wrapper container         |
-| `"help-text"`  | The help text element                    |
-| `"input"`      | The input element                        |
-| `"label"`      | The input label when `label` prop is set |
+| Part               | Description                                   |
+| ------------------ | --------------------------------------------- |
+| `"axis-label"`     | the axis label                                |
+| `"error-text"`     | The error text element                        |
+| `"form-field"`     | The form-field wrapper container              |
+| `"help-text"`      | The help text element                         |
+| `"input"`          | The input element                             |
+| `"label"`          | The input label when `label` prop is set      |
+| `"tick"`           | the tick mark                                 |
+| `"tick-container"` | The container of the tick mark and axis-label |
 
 
 ## CSS Custom Properties

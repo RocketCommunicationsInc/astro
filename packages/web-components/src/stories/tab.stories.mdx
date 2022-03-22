@@ -1,9 +1,9 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
 <Meta
-    title="Components/Tab"
+    title="Components/Tabs/Tab"
     component="rux-tab"
     subcomponents={{ 'Rux Tabs': 'rux-tabs' }}
     argTypes={extractArgTypes('rux-tab')}
@@ -19,14 +19,25 @@ Tab belongs to the Tabs component.
 
 export const Default = (args) => {
     return html`
-<rux-tab id="tab1" ?disabled=${args.disabled} ?selected=${args.selected}
-    >Tab 1</rux-tab
+<rux-tab id="tab1"
+    ?disabled=${args.disabled}
+    ?selected=${args.selected}
 >
+    Tab 1
+</rux-tab>
     `
 }
 
 <Canvas>
-    <Story name="Default">{Default.bind()}</Story>
+    <Story
+        name="Default"
+        args={{
+            disabled: false,
+            selected: false
+        }}
+    >
+        {Default.bind()}
+    </Story>
 </Canvas>
 
 ## API
@@ -39,9 +50,12 @@ export const Default = (args) => {
 
 export const Disabled = (args) => {
     return html`
-<rux-tab id="tab1" ?disabled=${args.disabled} ?selected=${args.selected}
-    >Tab 1</rux-tab
+<rux-tab id="tab1"
+    ?disabled=${args.disabled}
+    ?selected=${args.selected}
 >
+    Tab 1
+</rux-tab>
     `
 }
 
@@ -50,6 +64,7 @@ export const Disabled = (args) => {
         name="Disabled"
         args={{
             disabled: true,
+            selected: false
         }}
     >
         {Disabled.bind()}
@@ -71,6 +86,7 @@ export const Selected = (args) => {
         name="Selected"
         args={{
             selected: true,
+            disabled: false
         }}
     >
         {Selected.bind()}

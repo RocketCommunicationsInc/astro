@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
 <Meta
@@ -32,6 +32,7 @@ export const Default = (args) => {
 <div style="padding: 10vh 5vw; display: flex; justify-content: center;">
     <rux-segmented-button
         .data="${args.data}"
+        .selected="${args.selected}"
         .size="${args.size}"
     ></rux-segmented-button>
 </div>
@@ -60,6 +61,44 @@ export const Default = (args) => {
 <ArgsTable of="rux-segmented-button" />
 
 ## Variants
+
+### Disabled
+
+export const Disabled = (args) => {
+    const segmentButtonArray = [
+        { label: 'First item' },
+        { label: 'Second item' },
+        { label: 'Third item' },
+    ]
+    document.addEventListener('change', (e) => action('change')(e.target))
+    return html`
+<div style="padding: 10vh 5vw; display: flex; justify-content: center;">
+    <rux-segmented-button
+        .data="${args.data}"
+        .size="${args.size}"
+        ?disabled="${args.disabled}"
+    ></rux-segmented-button>
+</div>
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+            data: [
+                { label: 'First item' },
+                { label: 'Second item', selected: true },
+                { label: 'Third item' },
+            ],
+            selected: 'Second item',
+            size: 'small',
+            disabled: true
+        }}
+        name="Disabled"
+    >
+        {Disabled.bind()}
+    </Story>
+</Canvas>
 
 ### Medium
 

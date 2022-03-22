@@ -29,6 +29,7 @@ All Sketch files are being deprecated in favor of Figma.
 :::note
 Lit Element based components are being replaced with Stencil
 :::
+
 - \[DEPRECATED\] Astro Boilerplate ([Git Repository](https://github.com/RocketCommunicationsInc/astro-boilerplate))
 - \[DEPRECATED\] Astro Angular Boilerplate ([Git Repository](https://github.com/RocketCommunicationsInc/astro-boilerplate-angular))
 - \[DEPRECATED\] Astro React Wrapper ([Git Repository](https://github.com/RocketCommunicationsInc/astro-boilerplate-react))

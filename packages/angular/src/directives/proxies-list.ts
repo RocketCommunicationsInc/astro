@@ -1080,6 +1080,7 @@ export const DIRECTIVES = [
   d.RuxPushButton,
   d.RuxRadio,
   d.RuxRadioGroup,
+  d.RuxRuler,
   d.RuxSegmentedButton,
   d.RuxSelect,
   d.RuxSlider,
@@ -1098,6 +1099,9 @@ export const DIRECTIVES = [
   d.RuxTabs,
   d.RuxTag,
   d.RuxTextarea,
+  d.RuxTimeRegion,
+  d.RuxTimeline,
+  d.RuxTrack,
   d.RuxTree,
   d.RuxTreeNode,
 ];

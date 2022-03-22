@@ -5,4 +5,4 @@
 "@astrouxds/react": minor
 ---
 
-Added text underline to link hover states globally.
+Added a prefix and suffix named slots to input, refactored password input types.

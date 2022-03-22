@@ -1,5 +1,6 @@
-import { newSpecPage } from '@stencil/core/testing'
+import { newSpecPage, SpecPage } from '@stencil/core/testing'
 import { RuxSegmentedButton } from '../rux-segmented-button'
+import { h } from '@stencil/core'
 
 describe('rux-segmented-button', () => {
     it('builds', async () => {

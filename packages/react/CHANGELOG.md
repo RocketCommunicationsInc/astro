@@ -1,4 +1,40 @@
-# @astrouxds/react
+# @astrouxds/astro-web-components
+
+## 6.4.0
+
+### Minor Changes
+
+- Added text underline to link hover states globally.
+
+#### Select
+
+- Added `multiple` support
+
+#### Timeline [Beta]
+
+- New beta component Timeline is now available
+
+#### Slider
+
+- Added `axis-labels` and `ticks-only` properties, providing tick mark and label support.
+
+#### Textarea
+
+- Added a `size` property. Removed unused `small` property. (This property had no effect so this is not a breaking change)
+
+### Patch Changes
+
+#### Switch
+
+- Updated thumb hover state color to align with design.
+
+#### Clock
+
+- Updated the clock labels to align with design.
+
+#### Tabs
+
+- Updated to align with design
 
 ## 6.3.0
 
