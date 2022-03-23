@@ -172,6 +172,26 @@ export const Indeterminate = (args) => {
     </Story>
 </Canvas>
 
+### Without Labels
+
+export const NoLabels = (args) => {
+    return html`
+<div style="display: flex; flex-direction: column;">
+    <rux-checkbox></rux-checkbox>
+    <br />
+    <rux-checkbox checked></rux-checkbox>
+    <br />
+    <rux-checkbox indeterminate></rux-checkbox>
+    <br />
+    <rux-checkbox disabled></rux-checkbox>
+</div>
+    `
+}
+
+<Canvas>
+    <Story name="Without Lables">{NoLabels.bind()}</Story>
+</Canvas>
+
 ### With Help Text
 
 export const WithHelpText = (args) => {
