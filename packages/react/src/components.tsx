@@ -4395,6 +4395,10 @@ export const RuxTabs = /*@__PURE__*/ createReactComponent<
   JSX.RuxTabs,
   HTMLRuxTabsElement
 >("rux-tabs");
+export const RuxTag = /*@__PURE__*/ createReactComponent<
+  JSX.RuxTag,
+  HTMLRuxTagElement
+>("rux-tag");
 export const RuxTextarea = /*@__PURE__*/ createReactComponent<
   JSX.RuxTextarea,
   HTMLRuxTextareaElement
