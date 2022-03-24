@@ -26,6 +26,8 @@ let id = 0
  * @part input - The input element
  * @part label - The input label when `label` prop is set
  * @part required - The asterisk when required is true
+ * @part prefix - The container of the prefix slot
+ * @part suffix - The container of the suffix slot
  *
  */
 @Component({
