@@ -39,7 +39,7 @@ describe('rux-tag', () => {
         expect(tag!.shadowRoot!.children[0].innerHTML).toEqual('UNK')
         expect(page.root).toMatchSnapshot()
     })
-    it('renders tag-text slot', async () => {
+    it('renders slot', async () => {
         const page = await newSpecPage({
             components: [RuxTag],
             html: `<rux-tag>Custom Text</rux-tag>`,
