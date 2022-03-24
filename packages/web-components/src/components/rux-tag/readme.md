@@ -14,9 +14,9 @@
 
 ## Slots
 
-| Slot         | Description              |
-| ------------ | ------------------------ |
-| `"tag-text"` | The text for the rux-tag |
+| Slot          | Description              |
+| ------------- | ------------------------ |
+| `"(default)"` | The text for the rux-tag |
 
 
 ## Shadow Parts

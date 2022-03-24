@@ -43,7 +43,7 @@ describe('rux-tag', () => {
         const page = await newSpecPage({
             components: [RuxTag],
             html: `<rux-tag>
-          <div slot="tag-text">Custom Text</div>
+          <div>Custom Text</div>
         </rux-tag>`,
         })
         const tag = document.querySelector('rux-tag div')

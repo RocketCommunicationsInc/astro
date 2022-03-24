@@ -9,7 +9,7 @@ const statusMap = {
 }
 
 /**
- * @slot tag-text - The text for the rux-tag
+ * @slot (default) - The text for the rux-tag
  * @part container - The container of the rux-tag's text
  */
 
@@ -26,6 +26,19 @@ export class RuxTag {
 
     @Element() el!: HTMLRuxTagElement
 
+    private _getValidStatus() {
+        if (this.status) {
+            //if it is a valid status, return it
+            if (statusMap[this.status]) {
+                return statusMap[this.status]
+            }
+            //if it's not, return the default status
+            else {
+                return statusMap['unknown']
+            }
+        }
+    }
+
     render() {
         return (
             <Host
@@ -34,15 +47,7 @@ export class RuxTag {
                 }}
             >
                 <div part="container">
-                    {this.status && !hasSlot(this.el, 'tag-text') ? (
-                        statusMap[this.status] ? (
-                            `${statusMap[this.status]}`
-                        ) : (
-                            'UNK'
-                        )
-                    ) : (
-                        <slot name="tag-text"></slot>
-                    )}
+                    {hasSlot(this.el) ? <slot></slot> : this._getValidStatus()}
                 </div>
             </Host>
         )

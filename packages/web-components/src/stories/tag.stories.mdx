@@ -11,7 +11,7 @@ import { html, render } from 'lit-html'
 # Tag
 
 Tags are currently used to indicate one of three statuses: pass, fail, and unknown. However, there is
-an available `tag-text` slot that can be utilized to create your own tag.
+an available slot that can be utilized to create your own tag.
 
 export const Default = (args) => {
     return html`
@@ -75,7 +75,7 @@ export const Variants = (args) => {
 </div>
 <div style="padding: 1% 5%;">
     <rux-tag id="custom">
-    <div slot="tag-text">Custom Tag</div>
+    <div>Custom Tag</div>
     </rux-tag>
 </div>
 </div>
