@@ -54,6 +54,17 @@ exports[`rux-tag renders pass status 1`] = `
 </rux-tag>
 `;
 
+exports[`rux-tag renders slot 1`] = `
+<rux-tag status="unknown">
+  <mock:shadow-root>
+    <div part="container">
+      UNK
+    </div>
+  </mock:shadow-root>
+  Custom Text
+</rux-tag>
+`;
+
 exports[`rux-tag renders tag-text slot 1`] = `
 <rux-tag status="unknown">
   <mock:shadow-root>
