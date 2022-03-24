@@ -42,11 +42,9 @@ describe('rux-tag', () => {
     it('renders tag-text slot', async () => {
         const page = await newSpecPage({
             components: [RuxTag],
-            html: `<rux-tag>
-          <div>Custom Text</div>
-        </rux-tag>`,
+            html: `<rux-tag>Custom Text</rux-tag>`,
         })
-        const tag = document.querySelector('rux-tag div')
+        const tag = document.querySelector('rux-tag')
         expect(tag?.innerHTML).toEqual('Custom Text')
         expect(page.root).toMatchSnapshot()
     })

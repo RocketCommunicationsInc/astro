@@ -61,9 +61,7 @@ exports[`rux-tag renders tag-text slot 1`] = `
       UNK
     </div>
   </mock:shadow-root>
-  <div>
-    Custom Text
-  </div>
+  Custom Text
 </rux-tag>
 `;
 
