@@ -55,6 +55,7 @@
 .rux-form-field {
     display: flex;
     flex-direction: column;
+    background: var(--color-background);
     label {
         margin-bottom: var(--spacing-input-label-top);
     }
