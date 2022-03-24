@@ -12074,6 +12074,10 @@ export namespace Components {
     }
     interface RuxOption {
         /**
+          * Sets the option as disabled
+         */
+        "disabled": boolean;
+        /**
           * The option label
          */
         "label": string;
@@ -32349,6 +32353,10 @@ declare namespace LocalJSX {
         "status"?: Status;
     }
     interface RuxOption {
+        /**
+          * Sets the option as disabled
+         */
+        "disabled"?: boolean;
         /**
           * The option label
          */

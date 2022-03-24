@@ -21501,13 +21501,13 @@ export class RuxNotification {
 export declare interface RuxOption extends Components.RuxOption {}
 
 @ProxyCmp({
-  inputs: ['label', 'value']
+  inputs: ['disabled', 'label', 'selected', 'value']
 })
 @Component({
   selector: 'rux-option',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['label', 'value']
+  inputs: ['disabled', 'label', 'selected', 'value']
 })
 export class RuxOption {
   protected el: HTMLElement;

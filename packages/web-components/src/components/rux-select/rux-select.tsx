@@ -177,6 +177,7 @@ export class RuxSelect implements FormFieldInterface {
                     this._appendOptionToNativeSelect(
                         option.label,
                         option.value,
+                        option.disabled,
                         this.selectEl
                     )
                 }
@@ -204,7 +205,12 @@ export class RuxSelect implements FormFieldInterface {
         })
 
         children.map((option: any) => {
-            this._appendOptionToNativeSelect(option.label, option.value, group)
+            this._appendOptionToNativeSelect(
+                option.label,
+                option.value,
+                option.disabled,
+                group
+            )
             this.selectEl.appendChild(group)
         })
 
@@ -214,11 +220,13 @@ export class RuxSelect implements FormFieldInterface {
     private _appendOptionToNativeSelect(
         label: string,
         value: string,
+        disabled: boolean,
         target: HTMLSelectElement | HTMLOptGroupElement
     ) {
         const item = Object.assign(document.createElement('option'), {
             innerHTML: label ? label : '',
             value: value,
+            disabled: disabled,
         })
         target.appendChild(item)
     }
