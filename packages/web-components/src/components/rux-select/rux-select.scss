@@ -183,6 +183,10 @@ label {
                 --select-menu-option-selected-background-color
             );
         }
+        &:disabled {
+            opacity: var(--disabled-opacity);
+            cursor: not-allowed;
+        }
     }
 }
 
@@ -190,7 +194,7 @@ label {
     background: var(--color-background);
     option {
         padding: 0.438rem 0 0.438rem 1rem; // 7px 0px 7px 16px
-        text-indent: 1rem; //! Make sure this doesn't break chrome
+        text-indent: 1rem;
         &:hover {
             color: var(--color-hover);
             background-color: var(--color-list-hover);
@@ -202,6 +206,14 @@ label {
         }
         &:active {
             background-color: green;
+        }
+        &:disabled {
+            opacity: var(--disabled-opacity);
+            cursor: not-allowed;
+            &:hover {
+                color: var(--select-menu-text-color);
+                background-color: var(--select-menu-background-color);
+            }
         }
     }
     optgroup {
