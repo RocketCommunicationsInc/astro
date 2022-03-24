@@ -22054,26 +22054,6 @@ export class RuxTabs {
 }
 
 
-export declare interface RuxTag extends Components.RuxTag {}
-
-@ProxyCmp({
-  inputs: ['status']
-})
-@Component({
-  selector: 'rux-tag',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['status']
-})
-export class RuxTag {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
-}
-
-
 export declare interface RuxTextarea extends Components.RuxTextarea {
   /**
    * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) 
