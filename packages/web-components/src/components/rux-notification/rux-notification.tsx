@@ -52,6 +52,7 @@ export class RuxNotification {
     private _timeoutRef: number | null = null
 
     @Watch('open')
+    @Watch('closeAfter')
     watchHandler() {
         this._updated()
         if (!this.open) {
