@@ -15,7 +15,7 @@
         "loader/"
     ],
     "scripts": {
-        "prebuild": "rm -rf ./cache",
+        "prebuild": "rm -rf ../cache",
         "build.stencil": "stencil build --docs",
         "build.storybook": "build-storybook",
         "build": "npm run build.stencil",
