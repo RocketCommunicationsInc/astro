@@ -48,7 +48,7 @@ describe("RuxNotification", () => {
     } = includeWebComponent<HTMLRuxNotificationElement>(
       renderWithStrictMode(<RuxNotification closeAfter={3}></RuxNotification>)
     );
-    expect(ruxNotification.closeAfter).toEqual(3);
+    expect(ruxNotification.closeAfter).toEqual(3000);
   });
 });
 describe("createComponent - ref", () => {
