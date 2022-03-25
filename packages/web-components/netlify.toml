@@ -2,3 +2,6 @@
 
 publish = "storybook-static/"
 command = "npm run build.stencil && npm run build.storybook"
+
+[[plugins]]
+package = "netlify-plugin-debug-cache"
