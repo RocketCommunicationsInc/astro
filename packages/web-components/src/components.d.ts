@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { Classification, Status } from "./common/commonTypes.module";
+import { Classification, Status, StatusTags } from "./common/commonTypes.module";
 import { LogRow } from "./components/rux-log/rux-log.model";
 import { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
 import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
@@ -12074,6 +12074,10 @@ export namespace Components {
     }
     interface RuxOption {
         /**
+          * Sets the option as disabled
+         */
+        "disabled": boolean;
+        /**
           * The option label
          */
         "label": string;
@@ -12398,6 +12402,12 @@ export namespace Components {
           * If passed or set to true, displays the tabs in a smaller style, suitable for limited-space uses.
          */
         "small"?: boolean;
+    }
+    interface RuxTag {
+        /**
+          * Used to display a status of pass, fail, or unknown. If no status is provided or the provided status is not an accepted status type, the default is unknown.
+         */
+        "status"?: StatusTags;
     }
     interface RuxTextarea {
         /**
@@ -19104,6 +19114,12 @@ declare global {
         prototype: HTMLRuxTabsElement;
         new (): HTMLRuxTabsElement;
     };
+    interface HTMLRuxTagElement extends Components.RuxTag, HTMLStencilElement {
+    }
+    var HTMLRuxTagElement: {
+        prototype: HTMLRuxTagElement;
+        new (): HTMLRuxTagElement;
+    };
     interface HTMLRuxTextareaElement extends Components.RuxTextarea, HTMLStencilElement {
     }
     var HTMLRuxTextareaElement: {
@@ -20237,6 +20253,7 @@ declare global {
         "rux-table-header-row": HTMLRuxTableHeaderRowElement;
         "rux-table-row": HTMLRuxTableRowElement;
         "rux-tabs": HTMLRuxTabsElement;
+        "rux-tag": HTMLRuxTagElement;
         "rux-textarea": HTMLRuxTextareaElement;
         "rux-time-region": HTMLRuxTimeRegionElement;
         "rux-timeline": HTMLRuxTimelineElement;
@@ -32152,6 +32169,10 @@ declare namespace LocalJSX {
          */
         "onRuxchange"?: (event: CustomEvent<any>) => void;
         /**
+          * Fired when an element has gained focus - [HTMLElement/focus_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event)
+         */
+        "onRuxfocus"?: (event: CustomEvent<any>) => void;
+        /**
           * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
          */
         "onRuxinput"?: (event: CustomEvent<any>) => void;
@@ -32345,6 +32366,10 @@ declare namespace LocalJSX {
         "status"?: Status;
     }
     interface RuxOption {
+        /**
+          * Sets the option as disabled
+         */
+        "disabled"?: boolean;
         /**
           * The option label
          */
@@ -32728,6 +32753,12 @@ declare namespace LocalJSX {
           * If passed or set to true, displays the tabs in a smaller style, suitable for limited-space uses.
          */
         "small"?: boolean;
+    }
+    interface RuxTag {
+        /**
+          * Used to display a status of pass, fail, or unknown. If no status is provided or the provided status is not an accepted status type, the default is unknown.
+         */
+        "status"?: StatusTags;
     }
     interface RuxTextarea {
         /**
@@ -33959,6 +33990,7 @@ declare namespace LocalJSX {
         "rux-table-header-row": RuxTableHeaderRow;
         "rux-table-row": RuxTableRow;
         "rux-tabs": RuxTabs;
+        "rux-tag": RuxTag;
         "rux-textarea": RuxTextarea;
         "rux-time-region": RuxTimeRegion;
         "rux-timeline": RuxTimeline;
@@ -35067,6 +35099,7 @@ declare module "@stencil/core" {
             "rux-table-header-row": LocalJSX.RuxTableHeaderRow & JSXBase.HTMLAttributes<HTMLRuxTableHeaderRowElement>;
             "rux-table-row": LocalJSX.RuxTableRow & JSXBase.HTMLAttributes<HTMLRuxTableRowElement>;
             "rux-tabs": LocalJSX.RuxTabs & JSXBase.HTMLAttributes<HTMLRuxTabsElement>;
+            "rux-tag": LocalJSX.RuxTag & JSXBase.HTMLAttributes<HTMLRuxTagElement>;
             "rux-textarea": LocalJSX.RuxTextarea & JSXBase.HTMLAttributes<HTMLRuxTextareaElement>;
             "rux-time-region": LocalJSX.RuxTimeRegion & JSXBase.HTMLAttributes<HTMLRuxTimeRegionElement>;
             "rux-timeline": LocalJSX.RuxTimeline & JSXBase.HTMLAttributes<HTMLRuxTimelineElement>;

@@ -5,4 +5,4 @@
 "@astrouxds/react": minor
 ---
 
-Adds axis-labels and ticks-only props to rux-slider, providing tick mark and label support.
+Adds a disabled prop to rux-option along with relevant styling.

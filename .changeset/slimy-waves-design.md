@@ -5,4 +5,4 @@
 "astro-website": minor
 ---
 
-Timeline component beta
+Created a new rux-tag component.

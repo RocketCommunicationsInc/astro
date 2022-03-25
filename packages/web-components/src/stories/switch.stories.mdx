@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
 <Meta
@@ -32,6 +32,8 @@ export const Switch = (args) => {
         ?disabled=${args.disabled}
         ?checked=${args.checked}
         label=${args.label}
+        name=${args.name}
+        value=${args.value}
     ></rux-switch>
 </div>
     `
@@ -40,6 +42,13 @@ export const Switch = (args) => {
 <Canvas>
     <Story
         name="Switch"
+        args={{
+            checked: false,
+            disabled: false,
+            label: "",
+            name: "",
+            value: ""
+        }}
     >
         {Switch.bind()}
     </Story>
@@ -84,6 +93,8 @@ export const Disabled = (args) => {
     <rux-switch
         ?disabled=${args.disabled}
         ?checked=${args.checked}
+        name=${args.name}
+        value=${args.value}
         .label=${args.label}
     ></rux-switch>
 </div>
@@ -95,6 +106,10 @@ export const Disabled = (args) => {
         name="Disabled"
         args={{
             disabled: true,
+            checked: false,
+            label: "",
+            name: "",
+            value: ""
         }}
     >
         {Disabled.bind()}

@@ -1,0 +1,40 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    font-size: var(--font-body-2-bold-font-size);
+    font-weight: var(--font-body-2-bold-font-weight);
+    line-height: var(--font-body-2-bold-line-height);
+    font-family: var(--font-body-2-bold-font-family);
+    letter-spacing: var(--font-body-2-bold-letter-spacing);
+    padding: 4px 10px;
+    text-align: center;
+}
+:host(.is-undefined) {
+    height: 24px;
+    width: 60px;
+    border: 1px solid #9ea7ad;
+    background: #32363a;
+}
+
+:host([status='pass']) {
+    height: 24px;
+    width: 60px;
+    border: 1px solid #56f000; //dark/status/normal-fill
+    background: #015800; //global/tag/status/pass
+}
+
+:host([status='fail']) {
+    height: 24px;
+    width: 60px;
+    border: 1px solid #ff3838;
+    background: #570d01;
+}
+
+:host([status='unknown']) {
+    height: 24px;
+    width: 60px;
+    border: 1px solid #9ea7ad;
+    background: #32363a;
+}

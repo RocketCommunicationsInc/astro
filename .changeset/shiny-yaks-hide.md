@@ -5,4 +5,4 @@
 "@astrouxds/react": patch
 ---
 
-Updates Tabs to align with design
+fix(notification): Watch closeAfter to close when updated

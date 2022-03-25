@@ -5,4 +5,4 @@
 "@astrouxds/react": minor
 ---
 
-Added multiple support to Select
+Added a prefix and suffix named slots to input, refactored password input types.
