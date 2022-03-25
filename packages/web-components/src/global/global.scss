@@ -2,10 +2,6 @@
 @use 'tokens/colors-dark';
 @use 'tokens/colors-light';
 @use 'tokens/tokens';
-@use './legacy-tokens/_colors-global' as legacy-global;
-@use './legacy-tokens/_colors-dark' as legacy-dark;
-@use './legacy-tokens/_colors-light' as legacy-light;
-@use './legacy-tokens/_tokens' as legacy-tokens;
 @use 'variables';
 @use 'mixins';
 @use 'fouc';
