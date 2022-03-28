@@ -111,7 +111,6 @@ label {
         var(--select-menu-background-color);
     background-position: center right 0.625rem, center left 0;
     background-repeat: no-repeat;
-    padding: 0.438rem 3.125rem 0.438rem 0.5rem;
     box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5);
     &:active:not(:disabled) {
         background-image: var(--select-menu-active-caret),
