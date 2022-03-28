@@ -111,7 +111,7 @@ label {
         var(--select-menu-background-color);
     background-position: center right 0.625rem, center left 0;
     background-repeat: no-repeat;
-    padding: 0.438rem 3.125rem 0.438rem 0.5rem;
+    // padding: 0.438rem 3.125rem 0.438rem 0.5rem;
     box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5);
     &:active:not(:disabled) {
         background-image: var(--select-menu-active-caret),
@@ -137,6 +137,16 @@ label {
     letter-spacing: var(--font-body-1-letter-spacing);
 
     user-select: none;
+
+    &--small {
+        padding: 3.5px 8px;
+    }
+    &--medium {
+        padding: 7.5px 8px;
+    }
+    &--large {
+        padding: 13.5px 8px;
+    }
 
     &:hover {
         border: 1px solid var(--select-menu-border-hover-color);

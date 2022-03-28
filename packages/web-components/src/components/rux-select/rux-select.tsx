@@ -93,6 +93,11 @@ export class RuxSelect implements FormFieldInterface {
     @Prop({ attribute: 'error-text' }) errorText?: string
 
     /**
+     * The size of rux-select
+     */
+    @Prop({ reflect: true }) size?: 'small' | 'medium' | 'large' = 'medium'
+
+    /**
      * Event Emitted when the Value of the Select is Changed
      */
     @Event({ eventName: 'ruxchange' })
@@ -307,6 +312,9 @@ export class RuxSelect implements FormFieldInterface {
                 <select
                     class={{
                         'rux-select': true,
+                        'rux-select--small': this.size === 'small',
+                        'rux-select--medium': this.size === 'medium',
+                        'rux-select--large': this.size === 'large',
                         'rux-select-invalid': invalid,
                         'rux-select--multiple': multiple,
                     }}
