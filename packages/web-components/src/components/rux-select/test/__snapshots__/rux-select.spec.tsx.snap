@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`rux-select renders 1`] = `
-<rux-select label="test">
+<rux-select label="test" size="medium">
   <mock:shadow-root>
     <label aria-hidden="false" part="label">
       <span>
@@ -10,7 +10,7 @@ exports[`rux-select renders 1`] = `
         </slot>
       </span>
     </label>
-    <select class="rux-select" part="select"></select>
+    <select class="rux-select rux-select--medium" part="select"></select>
     <div aria-hidden="true" class="hidden">
       <slot></slot>
     </div>
@@ -22,14 +22,14 @@ exports[`rux-select renders 1`] = `
 `;
 
 exports[`rux-select renders option groups 1`] = `
-<rux-select>
+<rux-select size="medium">
   <mock:shadow-root>
     <label aria-hidden="true" part="label">
       <span class="hidden">
         <slot name="label"></slot>
       </span>
     </label>
-    <select class="rux-select" part="select"></select>
+    <select class="rux-select rux-select--medium" part="select"></select>
     <div aria-hidden="true" class="hidden">
       <slot></slot>
     </div>
