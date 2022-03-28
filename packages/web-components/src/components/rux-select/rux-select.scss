@@ -37,15 +37,16 @@
             --color-background-surface-default,
             rgb(27, 45, 62)
         );
-        box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.5);
+
+        box-shadow: var(--shadow-inner-scrollbar-vertical);
     }
 
     ::-webkit-scrollbar-track:vertical {
-        box-shadow: inset 3px 3px 3px 0px rgba(0, 0, 0, 0.5);
+        box-shadow: var(--shadow-inner-scrollbar-vertical);
     }
 
     ::-webkit-scrollbar-track:horizontal {
-        box-shadow: inset 1px 3px 3px 0px rgba(0, 0, 0, 0.5);
+        box-shadow: var(--shadow-inner-scrollbar-horizontal);
     }
 
     /** @prop --select-menu-border-radius: Border radius for Select Menu */
