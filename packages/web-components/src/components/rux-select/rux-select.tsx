@@ -315,7 +315,7 @@ export class RuxSelect implements FormFieldInterface {
                         'rux-select--small': this.size === 'small',
                         'rux-select--medium': this.size === 'medium',
                         'rux-select--large': this.size === 'large',
-                        'rux-select-invalid': invalid,
+                        'rux-select--invalid': invalid,
                         'rux-select--multiple': multiple,
                     }}
                     ref={(el) => (this.selectEl = el as HTMLSelectElement)}

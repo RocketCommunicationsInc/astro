@@ -111,7 +111,7 @@ label {
         var(--select-menu-background-color);
     background-position: center right 0.625rem, center left 0;
     background-repeat: no-repeat;
-    // padding: 0.438rem 3.125rem 0.438rem 0.5rem;
+    padding: 0.438rem 3.125rem 0.438rem 0.5rem;
     box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5);
     &:active:not(:disabled) {
         background-image: var(--select-menu-active-caret),
@@ -147,6 +147,37 @@ label {
     &--large {
         padding: 13.5px 8px;
     }
+    &--multiple {
+        background: var(--color-background);
+        padding: 0;
+        option {
+            padding: 0.438rem 0 0.438rem 1rem; // 7px 0px 7px 16px
+            text-indent: 1rem;
+            &:hover {
+                color: var(--color-hover);
+                background-color: var(--color-list-hover);
+                cursor: pointer;
+            }
+            &:checked {
+                background: var(--color-selected);
+                color: var(--color-default-text);
+            }
+            &:active {
+                background-color: green;
+            }
+            &:disabled {
+                opacity: var(--disabled-opacity);
+                cursor: not-allowed;
+                &:hover {
+                    color: var(--select-menu-text-color);
+                    background-color: var(--select-menu-background-color);
+                }
+            }
+        }
+    }
+    &--invalid {
+        border: 1px solid var(--select-menu-invalid-border-color);
+    }
 
     &:hover {
         border: 1px solid var(--select-menu-border-hover-color);
@@ -163,10 +194,6 @@ label {
         &:hover {
             border: 1px solid var(--select-menu-border-color);
         }
-    }
-
-    &.rux-select-invalid {
-        border: 1px solid var(--select-menu-invalid-border-color);
     }
 
     &::-ms-expand {
@@ -198,34 +225,7 @@ label {
             cursor: not-allowed;
         }
     }
-}
 
-.rux-select--multiple {
-    background: var(--color-background);
-    option {
-        padding: 0.438rem 0 0.438rem 1rem; // 7px 0px 7px 16px
-        text-indent: 1rem;
-        &:hover {
-            color: var(--color-hover);
-            background-color: var(--color-list-hover);
-            cursor: pointer;
-        }
-        &:checked {
-            background: var(--color-selected);
-            color: var(--color-default-text);
-        }
-        &:active {
-            background-color: green;
-        }
-        &:disabled {
-            opacity: var(--disabled-opacity);
-            cursor: not-allowed;
-            &:hover {
-                color: var(--select-menu-text-color);
-                background-color: var(--select-menu-background-color);
-            }
-        }
-    }
     optgroup {
         text-indent: 1rem;
         color: var(--color-default-text);
