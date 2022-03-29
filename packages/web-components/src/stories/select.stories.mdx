@@ -92,6 +92,42 @@ For Grouping, make sure to use the Astro `<rux-option-group>` component instead 
 
 ## Variants
 
+### Sizes
+
+export const Sizes = (args) => {
+    return html`
+<div style="width: 200px; margin: 0 auto;">
+<rux-select size="small" label="Small">
+        <rux-option label="Select an option" value=""></rux-option>
+        <rux-option label="Red" value="red"></rux-option>
+        <rux-option value="Blue" label="Blue"></rux-option>
+        <rux-option value="Green" label="Green"></rux-option>
+    </rux-select>
+    <br />
+    <rux-select size="medium" label="Medium">
+        <rux-option label="Select an option" value=""></rux-option>
+        <rux-option label="Red" value="red"></rux-option>
+        <rux-option value="Blue" label="Blue"></rux-option>
+        <rux-option value="Green" label="Green"></rux-option>
+    </rux-select>
+    <br />
+    <rux-select size="large" label="Large">
+        <rux-option label="Select an option" value=""></rux-option>
+        <rux-option label="Red" value="red"></rux-option>
+        <rux-option value="Blue" label="Blue"></rux-option>
+        <rux-option value="Green" label="Green"></rux-option>
+    </rux-select>
+    `
+}
+
+<Canvas>
+    <Story
+        name="Sizes"
+    >
+        {Sizes.bind()}
+    </Story>
+</Canvas>
+
 ### With Option Groups
 
 export const WithOptionGroups = (args) => {

@@ -12287,6 +12287,10 @@ export namespace Components {
          */
         "required": boolean;
         /**
+          * The size of rux-select
+         */
+        "size"?: 'small' | 'medium' | 'large';
+        /**
           * The value of the selected option. If multiple is true, this is an array.
          */
         "value"?: string | string[];
@@ -32609,6 +32613,10 @@ declare namespace LocalJSX {
           * Sets the field as required
          */
         "required"?: boolean;
+        /**
+          * The size of rux-select
+         */
+        "size"?: 'small' | 'medium' | 'large';
         /**
           * The value of the selected option. If multiple is true, this is an array.
          */
