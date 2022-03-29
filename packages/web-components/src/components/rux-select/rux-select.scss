@@ -154,22 +154,19 @@ label {
         padding: 13.5px 8px;
     }
     &--multiple {
-        background: var(--color-background);
+        background: var(--color-background-base-default);
         padding: 0;
         option {
             padding: 0.438rem 0 0.438rem 1rem; // 7px 0px 7px 16px
             text-indent: 1rem;
             &:hover {
-                color: var(--color-hover);
-                background-color: var(--color-list-hover);
+                color: var(--color-interactive-hover);
+                background-color: var(--color-background-surface-hover);
                 cursor: pointer;
             }
             &:checked {
-                background: var(--color-selected);
-                color: var(--color-default-text);
-            }
-            &:active {
-                background-color: green;
+                background: var(--color-background-surface-selected);
+                color: var(--color-text-primary);
             }
             &:disabled {
                 opacity: var(--disabled-opacity);
@@ -240,33 +237,5 @@ label {
         font-weight: var(--font-body-1-font-weight);
         letter-spacing: var(--font-body-1-letter-spacing);
         font-style: normal;
-    }
-}
-
-.rux-select--multiple {
-    background: var(--color-background-base-default);
-    option {
-        padding: 0.438rem 0 0.438rem 1rem; // 7px 0px 7px 16px
-        text-indent: 1rem;
-        &:hover {
-            color: var(--color-interactive-hover);
-            background-color: var(--color-background-surface-hover);
-            cursor: pointer;
-        }
-        &:checked {
-            background: var(--color-background-surface-selected);
-            color: var(--color-text-primary);
-        }
-        &:active {
-            background-color: green;
-        }
-        &:disabled {
-            opacity: var(--disabled-opacity);
-            cursor: not-allowed;
-            &:hover {
-                color: var(--select-menu-text-color);
-                background-color: var(--select-menu-background-color);
-            }
-        }
     }
 }
