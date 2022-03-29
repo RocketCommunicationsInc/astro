@@ -76,6 +76,7 @@
     --button-borderless-hover-color: var(--color-hover);
 
     display: inline-block;
+    width: auto;
 }
 
 :host([hidden]) {
@@ -89,6 +90,7 @@
     display: flex;
     position: relative;
     margin: 0;
+    width: inherit;
     padding: 0 1rem;
     height: 2.125rem;
     min-width: 2.25rem;
