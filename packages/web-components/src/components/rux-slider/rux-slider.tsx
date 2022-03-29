@@ -188,7 +188,7 @@ export class RuxSlider implements FormFieldInterface {
 
     private _onInput(e: Event) {
         const target = e.target as HTMLInputElement
-        this.value = parseInt(target.value)
+        this.value = parseFloat(target.value)
         this._setValuePercent()
         this.ruxInput.emit()
     }
