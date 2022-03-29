@@ -19,5 +19,18 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body></body>
+    <body>
+        <div style="width: 200px">
+            <rux-input type="date">
+                <rux-icon icon="close" slot="prefix"></rux-icon>
+            </rux-input>
+        </div>
+        <rux-input id="test" type="date"></rux-input>
+        <script>
+            const test = document.getElementById('test')
+            test.addEventListener('ruxblur', (e) => {
+                console.log(e.target.value)
+            })
+        </script>
+    </body>
 </html>
