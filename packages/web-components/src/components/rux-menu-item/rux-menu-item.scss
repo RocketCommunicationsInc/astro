@@ -2,22 +2,24 @@
     /**
       * @prop --popup-menu-text-color: Menu Text Color
     */
-    --popup-menu-text-color: var(--color-primary);
+    --popup-menu-text-color: var(--color-interactive-default);
 
     /**
       * @prop --popup-menu-item-background-color: Menu Item Background Color
     */
-    --popup-menu-item-background-color: var(--color-background);
+    --popup-menu-item-background-color: var(--color-background-base-default);
 
     /**
       * @prop --popup-menu-item-hover-background-color: Menu Item Hover Background Color
     */
-    --popup-menu-item-hover-background-color: var(--color-list-hover);
+    --popup-menu-item-hover-background-color: var(
+        --color-background-surface-hover
+    );
 
     /**
       * @prop --popup-menu-item-hover-background-color: Menu Item Hover Text Color
     */
-    --popup-menu-item-hover-text-color: var(--color-hover);
+    --popup-menu-item-hover-text-color: var(--color-interactive-hover);
 
     display: block;
 

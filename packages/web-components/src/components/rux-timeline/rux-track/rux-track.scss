@@ -2,16 +2,16 @@
 }
 
 .rux-track {
-    background: var(--color-surface);
+    background: var(--color-background-surface-default);
     width: fit-content;
-    border-bottom: 2px solid var(--color-background);
+    border-bottom: 2px solid var(--color-background-base-default);
 }
 
 .rux-track__header {
     box-sizing: border-box;
     padding: 11px 8px 13px 8px;
-    background: var(--color-surface);
-    border-right: 2px solid var(--color-background);
+    background: var(--color-background-surface-default);
+    border-right: 2px solid var(--color-background-base-default);
     display: flex;
     align-items: center;
     font-family: var(--font-body-1-font-family);
@@ -25,9 +25,9 @@
 }
 
 .rux-timeline {
-    scrollbar-color: var(--color-active);
+    scrollbar-color: var(--color-interactive-muted);
     position: relative;
     display: grid;
     grid-template-rows: auto;
-    background: var(--color-surface);
+    background: var(--color-background-surface-default);
 }

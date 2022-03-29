@@ -2,25 +2,25 @@
 
 :host {
     /** @prop --slider-thumb-background-color: Background color of the slider's thumb. */
-    --slider-thumb-background-color: var(--color-background);
+    --slider-thumb-background-color: var(--color-background-base-default);
 
     /** @prop --slider-thumb-border-color: Border color of the slider's thumb. */
-    --slider-thumb-border-color: var(--color-primary);
+    --slider-thumb-border-color: var(--color-interactive-default);
 
     /** @prop --slider-hover-thumb-background-color: Background color of the slider's thumb in a hover state. */
-    --slider-hover-thumb-background-color: var(--color-background);
+    --slider-hover-thumb-background-color: var(--color-background-base-default);
 
     /** @prop --slider-hover-thumb-border-color: Border color of the slider's thumb in a hover state. */
-    --slider-hover-thumb-border-color: var(--color-hover);
+    --slider-hover-thumb-border-color: var(--color-interactive-hover);
 
     /** @prop --slider-track-background-color: Background color of the slider's track. */
-    --slider-track-background-color: var(--color-primary);
+    --slider-track-background-color: var(--color-interactive-default);
 
     /** @prop --slider-selected-track-background-color: Background color of the slider's thumb in a selected state. */
-    --slider-selected-track-background-color: var(--color-primary);
+    --slider-selected-track-background-color: var(--color-interactive-default);
 
     /** @prop --slider-selected-thumb-border-color: Border color of the slider's thumb in a selected state. */
-    --slider-selected-thumb-border-color: var(--color-hover);
+    --slider-selected-thumb-border-color: var(--color-interactive-hover);
 
     /** @prop --slider-thumb-size: Size of the slider's thumb, both width and height. */
     --slider-thumb-size: 19px;
@@ -102,7 +102,7 @@
             }
         }
         .tick {
-            background: var(--color-primary);
+            background: var(--color-interactive-default);
             height: 0.25rem; //4px
             width: 0.25rem;
             border-radius: 2px;
@@ -267,7 +267,7 @@ input[type='range']:focus {
 
 .rux-range:not(:disabled)::-webkit-slider-thumb:active {
     border-color: var(--slider-selected-thumb-border-color);
-    background-color: var(--color-background);
+    background-color: var(--color-background-base-default);
 }
 
 .rux-range:not(:disabled)::-webkit-slider-thumb:focus,
@@ -290,7 +290,7 @@ input[type='range']:focus {
 }
 .rux-range:not(:disabled)::-moz-range-thumb:active {
     border-color: var(--slider-selected-thumb-border-color);
-    background-color: var(--color-background);
+    background-color: var(--color-background-base-default);
 }
 .rux-range::-moz-range-thumb:hover {
     border-color: var(--slider-hover-thumb-border-color);
