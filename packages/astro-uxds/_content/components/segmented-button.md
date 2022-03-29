@@ -4,8 +4,8 @@ path: /components/segmented-button
 date: Last Modified
 layout: components.template.njk
 title: Segmented Button
-demo: components-segmented-button--segmented-button
-storybook: components-segmented-button--segmented-button
+demo: components-segmented-button--default-story
+storybook: components-segmented-button--default-story
 git: rux-segmented-button
 height: 50px
 theme: true
