@@ -23,19 +23,15 @@
         <div style="width: 200px">
             <rux-input id="test" type="datetime-local"> </rux-input>
             <br />
-            <rux-input label="With Suffix for Cal" type="datetime-local">
-                <rux-icon
-                    icon="date-range"
-                    size="extra-small"
-                    slot="suffix"
-                ></rux-icon>
-            </rux-input>
+            <rux-input type="time"></rux-input>
+            <br />
+            <rux-input type="password"></rux-input>
         </div>
         <br />
-        <input type="date" />
+        <input id="native" type="datetime-local" />
         <script>
-            const test = document.getElementById('test')
-            test.addEventListener('ruxblur', (e) => {
+            const native = document.getElementById('native')
+            native.addEventListener('change', (e) => {
                 console.log(e.target.value)
             })
         </script>
