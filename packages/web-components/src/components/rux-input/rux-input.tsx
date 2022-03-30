@@ -188,7 +188,6 @@ export class RuxInput implements FormFieldInterface {
     componentWillLoad() {
         this._handleSlotChange()
         this._setTogglePassword()
-        console.log(this.type, 'this.TYPE')
     }
 
     get hasLabel() {
