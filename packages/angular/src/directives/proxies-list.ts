@@ -1097,6 +1097,7 @@ export const DIRECTIVES = [
   d.RuxTableHeaderRow,
   d.RuxTableRow,
   d.RuxTabs,
+  d.RuxTag,
   d.RuxTextarea,
   d.RuxTimeRegion,
   d.RuxTimeline,

@@ -54,10 +54,10 @@ rux-icon {
     position: absolute;
     left: 3.438rem;
     top: -0.625rem;
-    border: 1px solid var(--color-primary);
+    border: 1px solid var(--color-interactive-default);
     border-radius: 2px;
     padding: 0.5rem 0.25rem;
-    color: var(--color-global-basics-white);
+    color: var(--color-palette-neutral-000);
     font-family: var(--font-body-3-font-family);
     font-size: var(--font-body-3-font-size);
     font-weight: var(--font-body-3-font-weight);
@@ -70,7 +70,7 @@ rux-icon {
 }
 
 .rux-advanced-status__label {
-    color: var(--color-default-text);
+    color: var(--color-text-primary);
     font-family: var(--font-body-2-font-family);
     font-size: var(--font-body-2-font-size);
     font-weight: var(--font-body-2-font-weight);
@@ -90,7 +90,7 @@ rux-icon {
     font-size: var(--font-body-3-font-size);
     font-weight: var(--font-body-3-font-weight);
     letter-spacing: var(--font-body-3-letter-spacing);
-    color: var(--color-gsb-default-text);
+    color: var(--color-gsb-text-primary);
     display: block;
 }
 
@@ -100,36 +100,36 @@ rux-icon {
 
 :host([status='off']) {
     rux-icon {
-        color: var(--color-status-off-fill);
+        color: var(--color-icon-status-fill-off);
     }
 }
 
 :host([status='standby']) {
     rux-icon {
-        color: var(--color-status-standby-fill);
+        color: var(--color-icon-status-fill-standby);
     }
 }
 
 :host([status='normal']) {
     rux-icon {
-        color: var(--color-status-normal-fill);
+        color: var(--color-icon-status-fill-normal);
     }
 }
 
 :host([status='caution']) {
     rux-icon {
-        color: var(--color-status-caution-fill);
+        color: var(--color-icon-status-fill-caution);
     }
 }
 
 :host([status='serious']) {
     rux-icon {
-        color: var(--color-status-serious-fill);
+        color: var(--color-icon-status-fill-serious);
     }
 }
 
 :host([status='critical']) {
     rux-icon {
-        color: var(--color-status-critical-fill);
+        color: var(--color-icon-status-fill-critical);
     }
 }

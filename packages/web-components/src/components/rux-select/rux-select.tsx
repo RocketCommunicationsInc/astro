@@ -93,6 +93,11 @@ export class RuxSelect implements FormFieldInterface {
     @Prop({ attribute: 'error-text' }) errorText?: string
 
     /**
+     * The size of rux-select
+     */
+    @Prop({ reflect: true }) size?: 'small' | 'medium' | 'large' = 'medium'
+
+    /**
      * Event Emitted when the Value of the Select is Changed
      */
     @Event({ eventName: 'ruxchange' })
@@ -177,6 +182,7 @@ export class RuxSelect implements FormFieldInterface {
                     this._appendOptionToNativeSelect(
                         option.label,
                         option.value,
+                        option.disabled,
                         this.selectEl
                     )
                 }
@@ -204,7 +210,12 @@ export class RuxSelect implements FormFieldInterface {
         })
 
         children.map((option: any) => {
-            this._appendOptionToNativeSelect(option.label, option.value, group)
+            this._appendOptionToNativeSelect(
+                option.label,
+                option.value,
+                option.disabled,
+                group
+            )
             this.selectEl.appendChild(group)
         })
 
@@ -214,11 +225,13 @@ export class RuxSelect implements FormFieldInterface {
     private _appendOptionToNativeSelect(
         label: string,
         value: string,
+        disabled: boolean,
         target: HTMLSelectElement | HTMLOptGroupElement
     ) {
         const item = Object.assign(document.createElement('option'), {
             innerHTML: label ? label : '',
             value: value,
+            disabled: disabled,
         })
         target.appendChild(item)
     }
@@ -299,7 +312,10 @@ export class RuxSelect implements FormFieldInterface {
                 <select
                     class={{
                         'rux-select': true,
-                        'rux-select-invalid': invalid,
+                        'rux-select--small': this.size === 'small',
+                        'rux-select--medium': this.size === 'medium',
+                        'rux-select--large': this.size === 'large',
+                        'rux-select--invalid': invalid,
                         'rux-select--multiple': multiple,
                     }}
                     ref={(el) => (this.selectEl = el as HTMLSelectElement)}

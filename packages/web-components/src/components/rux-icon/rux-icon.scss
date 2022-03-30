@@ -1,6 +1,6 @@
 :host {
     /** @prop --icon-default-color: the default color of the icon */
-    --icon-default-color: var(--color-primary);
+    --icon-default-color: var(--color-interactive-default);
 
     display: inline-flex;
     color: var(--icon-default-color);

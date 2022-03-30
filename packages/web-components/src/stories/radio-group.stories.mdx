@@ -51,7 +51,6 @@ export const Default = (args) => {
             errorText: "",
             helpText: "",
             invalid: false,
-            value: {}
         }}
         name="Default"
     >
@@ -99,7 +98,6 @@ export const Invalid = (args) => {
             invalid: true,
             errorText: "",
             helpText: "",
-            value: {}
         }}
         name="Invalid"
     >
@@ -168,7 +166,6 @@ export const WithHelpText = (args) => {
             helpText: 'Help text',
             errorText: "",
             invalid: false,
-            value: {}
         }}
         name="With Help Text"
     >
@@ -203,8 +200,7 @@ export const WithErrorText = (args) => {
             label: 'Radio group',
             errorText: 'Error text',
             helpText: "",
-            invalid: true,
-            value: {}
+            invalid: false
         }}
         name="With Error Text"
     >
@@ -264,8 +260,7 @@ export const HorizontalLabel = (args) => {
             label: 'Label',
             errorText: "",
             helpText: "",
-            invalid: false,
-            value: {}
+            invalid: false
         }}
     >
         {HorizontalLabel.bind()}

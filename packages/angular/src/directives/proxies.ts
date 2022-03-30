@@ -21501,13 +21501,13 @@ export class RuxNotification {
 export declare interface RuxOption extends Components.RuxOption {}
 
 @ProxyCmp({
-  inputs: ['label', 'value']
+  inputs: ['disabled', 'label', 'value']
 })
 @Component({
   selector: 'rux-option',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['label', 'value']
+  inputs: ['disabled', 'label', 'value']
 })
 export class RuxOption {
   protected el: HTMLElement;
@@ -21740,13 +21740,13 @@ export declare interface RuxSelect extends Components.RuxSelect {
 }
 
 @ProxyCmp({
-  inputs: ['disabled', 'errorText', 'helpText', 'inputId', 'invalid', 'label', 'labelId', 'multiple', 'name', 'required', 'value']
+  inputs: ['disabled', 'errorText', 'helpText', 'inputId', 'invalid', 'label', 'labelId', 'multiple', 'name', 'required', 'size', 'value']
 })
 @Component({
   selector: 'rux-select',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'errorText', 'helpText', 'inputId', 'invalid', 'label', 'labelId', 'multiple', 'name', 'required', 'value']
+  inputs: ['disabled', 'errorText', 'helpText', 'inputId', 'invalid', 'label', 'labelId', 'multiple', 'name', 'required', 'size', 'value']
 })
 export class RuxSelect {
   protected el: HTMLElement;
@@ -22050,6 +22050,26 @@ export class RuxTabs {
     c.detach();
     this.el = r.nativeElement;
     proxyOutputs(this, this.el, ['ruxselected']);
+  }
+}
+
+
+export declare interface RuxTag extends Components.RuxTag {}
+
+@ProxyCmp({
+  inputs: ['status']
+})
+@Component({
+  selector: 'rux-tag',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['status']
+})
+export class RuxTag {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
   }
 }
 

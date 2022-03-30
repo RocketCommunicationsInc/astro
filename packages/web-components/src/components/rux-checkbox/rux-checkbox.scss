@@ -8,19 +8,19 @@
     display: inline-block;
 
     /** @prop --checkbox-label-color: Label text color */
-    --checkbox-label-color: var(--color-default-text);
+    --checkbox-label-color: var(--color-text-primary);
 
     /** @prop --checkbox-background-color: Checkbox background color */
-    --checkbox-background-color: var(--color-background);
+    --checkbox-background-color: var(--color-background-base-default);
 
     /** @prop --checkbox-border-color: Checkbox border color */
-    --checkbox-border-color: var(--color-active);
+    --checkbox-border-color: var(--color-interactive-muted);
 
     /** @prop --checkbox-checked-color: Checkmark color when checked */
-    --checkbox-checked-color: var(--color-primary);
+    --checkbox-checked-color: var(--color-interactive-default);
 
     /** @prop --checkbox-hover-border-color: Hover border color */
-    --checkbox-hover-border-color: var(--color-hover);
+    --checkbox-hover-border-color: var(--color-interactive-hover);
 }
 
 .hidden,
@@ -35,7 +35,7 @@
     font-size: var(--font-body-1-font-size);
     letter-spacing: var(--font-body-1-letter-spacing);
     font-weight: var(--font-body-1-font-weight);
-    color: var(--color-default-text);
+    color: var(--color-text-primary);
 }
 
 .rux-checkbox {
@@ -83,7 +83,7 @@
                 margin: 0 0.625rem 0 0;
                 background-color: var(--checkbox-background-color);
                 border: 1px solid var(--checkbox-border-color);
-                border-radius: var(--checkbox-radius);
+                border-radius: var(--radius-checkbox);
             }
         }
 
@@ -139,7 +139,7 @@
 
 .rux-help-text {
     margin-top: 0.625rem;
-    color: var(--color-default-text);
+    color: var(--color-text-primary);
     font-size: var(--font-body-2-font-size);
     font-family: var(--font-body-2-font-family);
     font-weight: var(--font-body-2-font-weight);

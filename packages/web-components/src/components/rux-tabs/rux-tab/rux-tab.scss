@@ -2,7 +2,7 @@
     /**
     *   @prop --tab-text-color: Tab text color
     */
-    --tab-text-color: var(--color-primary);
+    --tab-text-color: var(--color-interactive-default);
 
     /**
     *   @prop --tab-border-color: Tab border color
@@ -12,17 +12,17 @@
     /**
     *   @prop --tab-hover-text-color: Tab hover text color
     */
-    --tab-hover-text-color: var(--color-default-text);
+    --tab-hover-text-color: var(--color-text-primary);
 
     /**
     *   @prop --tab-selected-text-color: Tab selected text color
     */
-    --tab-selected-text-color: var(--color-default-text);
+    --tab-selected-text-color: var(--color-text-primary);
 
     /**
     *   @prop --tab-selected-border-color: Tab selected border color
     */
-    --tab-selected-border-color: var(--color-primary);
+    --tab-selected-border-color: var(--color-interactive-default);
 
     box-sizing: border-box;
     display: flex;
@@ -61,7 +61,7 @@
     color: var(--tab-selected-text-color);
 }
 :host(:hover) {
-    color: var(--color-hover);
+    color: var(--color-interactive-hover);
 }
 :host([disabled]) {
     color: var(--tab-text-color);

@@ -63,7 +63,7 @@ rux-status {
 }
 
 .rux-advanced-status__label {
-    color: var(--color-default-text);
+    color: var(--color-text-primary);
     font-family: var(--font-body-2-font-family);
     font-size: var(--font-body-2-font-size);
     font-weight: var(--font-body-2-font-weight);
@@ -83,7 +83,7 @@ rux-status {
     font-size: var(--font-body-3-font-size);
     font-weight: var(--font-body-3-font-weight);
     letter-spacing: var(--font-body-3-letter-spacing);
-    color: var(--color-default-text);
+    color: var(--color-text-primary);
     opacity: 0.6;
     display: block;
 }
@@ -98,33 +98,33 @@ svg {
     height: 3rem;
 }
 svg.rux-status--off {
-    stroke: var(--color-status-off-fill, rgb(158, 167, 173));
-    fill: var(--color-status-off-fill, rgb(158, 167, 173));
+    stroke: var(--color-icon-status-fill-off, rgb(158, 167, 173));
+    fill: var(--color-icon-status-fill-off, rgb(158, 167, 173));
 }
 
 svg.rux-status--standby {
-    stroke: var(--color-status-standby-fill, rgb(45, 204, 255));
-    fill: var(--color-status-standby-fill, rgb(45, 204, 255));
+    stroke: var(--color-icon-status-fill-standby, rgb(45, 204, 255));
+    fill: var(--color-icon-status-fill-standby, rgb(45, 204, 255));
 }
 
 svg.rux-status--normal {
-    stroke: var(--color-status-normal-fill, rgb(86, 240, 0));
-    fill: var(--color-status-normal-fill, rgb(86, 240, 0));
+    stroke: var(--color-icon-status-fill-normal, rgb(86, 240, 0));
+    fill: var(--color-icon-status-fill-normal, rgb(86, 240, 0));
 }
 
 svg.rux-status--caution {
-    stroke: var(--color-status-caution-fill, rgb(252, 232, 58));
-    fill: var(--color-status-caution-fill, rgb(252, 232, 58));
+    stroke: var(--color-icon-status-fill-caution, rgb(252, 232, 58));
+    fill: var(--color-icon-status-fill-caution, rgb(252, 232, 58));
 }
 
 svg.rux-status--serious {
-    stroke: var(--color-status-serious-fill, rgb(255, 179, 0));
-    fill: var(--color-status-serious-fill, rgb(255, 179, 0));
+    stroke: var(--color-icon-status-fill-serious, rgb(255, 179, 0));
+    fill: var(--color-icon-status-fill-serious, rgb(255, 179, 0));
 }
 
 svg.rux-status--critical {
-    stroke: var(--color-status-critical-fill, rgb(255, 56, 56));
-    fill: var(--color-status-critical-fill, rgb(255, 56, 56));
+    stroke: var(--color-icon-status-fill-critical, rgb(255, 56, 56));
+    fill: var(--color-icon-status-fill-critical, rgb(255, 56, 56));
 }
 
 [data-progress] svg {

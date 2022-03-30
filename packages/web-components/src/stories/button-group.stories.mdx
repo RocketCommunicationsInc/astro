@@ -11,6 +11,7 @@ import { html, render } from 'lit-html'
 
 # Button Group
 
+TEST 
 Common button groupings follow these conventions:
 
 -   Cancel buttons are always presented to the left of actions such as “Submit.”
@@ -25,12 +26,12 @@ export const Default = (args) => {
     return html`
 <style>
     .light-theme {
-        --exampleContainerBackgroundColor: var(--color-inverse-text);
+        --exampleContainerBackgroundColor: var(--color-text-inverse);
         --exampleContainerBorderColor: var(--colorQuaternaryLighten1);
     }
     .dark-theme {
         --exampleContainerBackgroundColor: var(
-            --color-global-tertiary-600
+            --color-background-surface-default
         );
         --exampleContainerBorderColor: #283f58;
     }
@@ -45,7 +46,7 @@ export const Default = (args) => {
 <div style="padding: 10%; display: flex; justify-content: center;">
     <div class="example-container">
         <rux-button-group
-            hAlign="${args.hAlign ? args.hAlign : 'right'}"
+            h-align="${args.hAlign ? args.hAlign : 'right'}"
         >
             <rux-button secondary>Cancel</rux-button>
             <rux-button>Continue</rux-button>

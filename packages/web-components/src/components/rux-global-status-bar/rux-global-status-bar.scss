@@ -10,7 +10,7 @@
     width: 100%;
     padding: 0 1.875rem;
     box-sizing: border-box;
-    background-color: var(--color-gsb-global-status-bar);
+    background-color: var(--color-gsb-background-default);
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -53,7 +53,7 @@ slot[name='left-side'] > .shifted-up,
     flex-wrap: wrap;
     padding: 0;
     margin: 0 auto 0 0;
-    color: var(--color-global-basics-white);
+    color: var(--color-palette-neutral-000);
     white-space: nowrap;
 }
 
@@ -100,9 +100,9 @@ slot[name='left-side'] > .shifted-up,
 // all temp classes and their subsequent styling will be replaced with internal component styles.
 .app-state {
     box-sizing: border-box;
-    color: var(--color-global-basics-white);
-    background-color: var(--color-global-basics-black);
-    border-radius: var(--app-state-radius);
+    color: var(--color-palette-neutral-000);
+    background-color: var(--color-palette-neutral-1000);
+    border-radius: var(--radius-base);
     font-family: var(--font-body-2-font-family);
     font-size: var(--font-body-2-font-size);
     font-weight: var(--font-body-2-font-weight);

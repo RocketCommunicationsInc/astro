@@ -3,12 +3,12 @@
 }
 
 .rux-time-region {
-    background: var(--color-background);
+    background: var(--color-background-base-default);
     padding: 0.25rem; // 4px;
     overflow: hidden;
     min-height: 40px;
-    color: var(--color-default-text);
-    border: 1px solid var(--color-primary);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-interactive-default);
 }
 
 .rux-time-region__content {
@@ -35,26 +35,26 @@
 }
 
 .rux-time-region--selected {
-    background: var(--color-primary);
-    border: 1px solid var(--color-primary);
+    background: var(--color-interactive-default);
+    border: 1px solid var(--color-interactive-default);
     --status-symbols: var(--status-symbols-light);
-    color: var(--color-inverse-text);
+    color: var(--color-text-inverse);
 }
 
 .rux-time-region--normal:not(.rux-time-region--selected) {
-    border: 1px solid var(--color-primary);
+    border: 1px solid var(--color-interactive-default);
 }
 
 .rux-time-region--critical:not(.rux-time-region--selected) {
-    border: 1px solid var(--color-status-critical-fill);
+    border: 1px solid var(--color-icon-status-fill-critical);
 }
 
 .rux-time-region--caution:not(.rux-time-region--selected) {
-    border: 1px solid var(--color-status-caution-fill);
+    border: 1px solid var(--color-icon-status-fill-caution);
 }
 
 .rux-time-region--standby:not(.rux-time-region--selected) {
-    border: 1px solid var(--color-status-standby-fill);
+    border: 1px solid var(--color-icon-status-fill-standby);
 }
 
 .hidden {
