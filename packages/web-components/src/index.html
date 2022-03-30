@@ -21,11 +21,18 @@
 
     <body>
         <div style="width: 200px">
-            <rux-input type="date">
-                <rux-icon icon="close" slot="prefix"></rux-icon>
+            <rux-input id="test" type="datetime-local"> </rux-input>
+            <br />
+            <rux-input label="With Suffix for Cal" type="datetime-local">
+                <rux-icon
+                    icon="date-range"
+                    size="extra-small"
+                    slot="suffix"
+                ></rux-icon>
             </rux-input>
         </div>
-        <rux-input id="test" type="date"></rux-input>
+        <br />
+        <input type="date" />
         <script>
             const test = document.getElementById('test')
             test.addEventListener('ruxblur', (e) => {

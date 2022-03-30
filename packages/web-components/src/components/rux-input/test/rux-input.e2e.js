@@ -117,4 +117,12 @@ describe('Input Field with Form', () => {
             .invoke('attr', 'autocomplete')
             .should('eq', 'off')
     })
+    it('submits the correct value in type date', () => {
+        // cy.get("#dateinput").click();
+        // cy.get(".dayContainer span:nth-child(15)").click();
+        cy.get('#date-type').shadow().find('div div input').click(205, 10)
+        cy.get('#date-type').click(100, 100)
+        // cy.get(".dayContainer span:nth-child(15)").click();
+        // cy.get("#formSubmitBtn").click()
+    })
 })
