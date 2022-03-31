@@ -1,5 +1,22 @@
 # @astrouxds/astro-web-components
 
+## 6.5.0
+
+### Minor Changes
+
+-   f803245f: Added different sizes to rux-select through a size prop.
+-   270395cf: Adds a disabled prop to rux-option along with relevant styling.
+-   12f8b250: Added date and datetime-local types to rux-input along with styling.
+-   04cb102b: Created a new rux-tag component.
+-   c76c66a3: Added a prefix and suffix named slots to input, refactored password input types.
+
+### Patch Changes
+
+-   e2c82384: Update components to use the new beta design tokens
+-   3a000967: Moves width attribute out of shadow dom, can now be styled without CSS parts.
+-   57028e86: fix(notification): Watch closeAfter to close when updated
+-   167b3c1e: Changes the value logic on slider to accept float values.
+
 ## 6.4.0
 
 ### Minor Changes
