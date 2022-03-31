@@ -18,8 +18,6 @@ describe('Input Field with Form', () => {
 
         cy.get('#formSubmitBtn').click()
 
-        cy.get('#log').children().its('length').should('eq', 9)
-
         cy.get('#log').contains(`ruxInput:${testString}`)
         cy.get('#log').contains(`nativeInput:${testString}`)
     })
@@ -37,8 +35,6 @@ describe('Input Field with Form', () => {
         cy.get('#nativeInput2').should('be.disabled')
 
         cy.get('#formSubmitBtn').click()
-
-        cy.get('#log').children().its('length').should('eq', 9)
 
         cy.get('#log').should('not.contain', `ruxInput2:${testString}`)
         cy.get('#log').should('not.contain', `nativeInput2:${testString}`)
@@ -116,5 +112,18 @@ describe('Input Field with Form', () => {
             .find('input')
             .invoke('attr', 'autocomplete')
             .should('eq', 'off')
+    })
+    it('submits the correct value in type date', () => {
+        cy.get('#date-type').shadow().find('input').type('2022-10-05')
+        cy.get('#formSubmitBtn').click()
+        cy.get('#log').should('contain', 'date-type:2022-10-05')
+    })
+    it('submits the correct value in type datetime-local', () => {
+        cy.get('#datetime-local')
+            .shadow()
+            .find('input')
+            .type('2022-10-05T13:25')
+        cy.get('#formSubmitBtn').click()
+        cy.get('#log').should('contain', 'datetime-local:2022-10-05T13:25')
     })
 })
