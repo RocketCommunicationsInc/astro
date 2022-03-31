@@ -14,7 +14,7 @@ Astro represents a collection of artifacts including, but not limited to, guidan
 <table class="release-table release-table--current-version">
 <thead>
 <tr>
-<th colspan="3">Astro {{ meta.version }} - Updated <time>March 17, 2022</time></th>
+<th colspan="3">Astro {{ meta.version }} - Updated <time>March 31, 2022</time></th>
 </tr>
 </thead>
 <tbody>
@@ -25,13 +25,13 @@ Astro represents a collection of artifacts including, but not limited to, guidan
 </tr>
 <tr>
 <td>Figma</td>
-<td class="tabular">6.1.0 -&gt; <b>6.1.2</b></td>
+<td class="tabular">6.1.2 -&gt; <b>6.1.3</b></td>
 <td><a href="https://www.figma.com/community/file/1014254163928270411">Release Notes</a></td>
 </tr>
 <tr>
 <td>Web Components</td>
-<td class="tabular">6.3.0 -&gt; <b>6.4.0</b></td>
-<td><a href="https://github.com/RocketCommunicationsInc/astro/releases/tag/v6.4.0">Release Notes</a></td>
+<td class="tabular">6.4.0 -&gt; <b>6.5.0</b></td>
+<td><a href="https://github.com/RocketCommunicationsInc/astro/releases/tag/v6.5.0">Release Notes</a></td>
 </tr>
 <tr>
 <td>EGS Design Compliance</td>
