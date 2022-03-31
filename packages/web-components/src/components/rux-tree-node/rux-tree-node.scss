@@ -43,15 +43,27 @@
     display: block;
 }
 
+.tree-node {
+    border-top: 1px solid var(--color-interactive-default);
+    .parent {
+        border-left: 1px solid var(--color-interactive-default);
+        border-right: 1px solid var(--color-interactive-default);
+    }
+    .children {
+        border-left: none;
+        border-right: none;
+    }
+}
+
 :host([hidden]) {
     display: none;
 }
 
-:host([aria-expanded='true'][aria-level='1']:not([aria-selected='true'])) {
-    .parent::after {
-        border-bottom: solid 1px var(--tree-expanded-border-color);
-    }
-}
+// :host([aria-expanded='true'][aria-level='1']:not([aria-selected='true'])) {
+//     .parent::after {
+//         // border-bottom: solid 1px var(--tree-expanded-border-color);
+//     }
+// }
 
 :host([aria-selected='true']) {
     .parent {
@@ -63,8 +75,6 @@
             z-index: 0;
             position: absolute;
             transition: background-color 0.0967s ease-in 0s;
-            border-top: 1px solid var(--tree-selected-border-color);
-            border-bottom: 1px solid var(--tree-selected-border-color);
         }
     }
 }
