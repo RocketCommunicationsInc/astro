@@ -86,7 +86,6 @@
 :host([aria-level='1']) {
     .parent {
         font-weight: bold;
-        // padding-left: 0.5rem;
         padding: 0;
         &::after {
             content: '';
@@ -169,8 +168,6 @@
     position: relative;
     cursor: pointer;
     width: 0.35rem;
-    // margin-right: 1rem;
-    // margin-left: 1rem;
     margin: 0 13px;
     background-color: transparent;
     transition: transform 0.167s ease-in-out 0s;

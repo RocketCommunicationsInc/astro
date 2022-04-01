@@ -21,13 +21,14 @@ let id = 0
 })
 
 /**
- * @slot - The parent node content
+ * @slot (default) - The parent node content
  * @slot node - Renders a child node within the current node
  */
 export class RuxTreeNode {
     private componentId = `node-${++id}`
     @Element() el!: HTMLRuxTreeNodeElement
     @State() children: Array<HTMLRuxTreeNodeElement> = []
+    @State() addClass: boolean = false
 
     /**
      * Sets the expanded state
@@ -84,6 +85,23 @@ export class RuxTreeNode {
         }
     }
 
+    @Listen('mouseenter', { passive: true })
+    handleHover(ev: MouseEvent) {
+        if (ev.target === ev.currentTarget) {
+            this.addClass = true
+        } else this.addClass = false
+        this._swapToLightStatus()
+    }
+
+    @Listen('mouseout', { passive: true })
+    handleLeave(ev: MouseEvent) {
+        console.log('heard mouse out')
+        if (ev.target === ev.currentTarget) {
+            this.addClass = false
+        }
+        this._swapToLightStatus()
+    }
+
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
     }
@@ -123,6 +141,16 @@ export class RuxTreeNode {
         ) as HTMLRuxTreeNodeElement[]
         this.children = children
         this._setAriaLevel()
+    }
+
+    private _swapToLightStatus() {
+        const slottedStatus = this.el.querySelector('rux-status')
+        // have the specifc status slotted to this rux-tree-node
+        if (this.addClass) {
+            slottedStatus?.classList.add('light-theme')
+        } else {
+            slottedStatus?.classList.remove('light-theme')
+        }
     }
 
     /**
@@ -252,10 +280,3 @@ export class RuxTreeNode {
         )
     }
 }
-
-/*
-                    {this.selected && (
-                        <div class="selected"></div>
-                        )
-                    }
-*/
