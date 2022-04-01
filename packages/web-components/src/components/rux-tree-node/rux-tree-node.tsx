@@ -252,3 +252,10 @@ export class RuxTreeNode {
         )
     }
 }
+
+/*
+                    {this.selected && (
+                        <div class="selected"></div>
+                        )
+                    }
+*/
