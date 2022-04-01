@@ -5,11 +5,21 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Placement } from "@floating-ui/dom";
 import { Classification, Status, StatusTags } from "./common/commonTypes.module";
 import { LogRow } from "./components/rux-log/rux-log.model";
 import { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
 import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
 export namespace Components {
+    interface RuxBetaMenu {
+    }
+    interface RuxBetaMenuItem {
+        "selected": boolean;
+    }
+    interface RuxBetaPopUpMenu {
+        "open": boolean;
+        "placement": Placement;
+    }
     interface RuxButton {
         /**
           * Changes button style from solid to borderless by setting the rux-button--borderless class
@@ -12542,6 +12552,24 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLRuxBetaMenuElement extends Components.RuxBetaMenu, HTMLStencilElement {
+    }
+    var HTMLRuxBetaMenuElement: {
+        prototype: HTMLRuxBetaMenuElement;
+        new (): HTMLRuxBetaMenuElement;
+    };
+    interface HTMLRuxBetaMenuItemElement extends Components.RuxBetaMenuItem, HTMLStencilElement {
+    }
+    var HTMLRuxBetaMenuItemElement: {
+        prototype: HTMLRuxBetaMenuItemElement;
+        new (): HTMLRuxBetaMenuItemElement;
+    };
+    interface HTMLRuxBetaPopUpMenuElement extends Components.RuxBetaPopUpMenu, HTMLStencilElement {
+    }
+    var HTMLRuxBetaPopUpMenuElement: {
+        prototype: HTMLRuxBetaPopUpMenuElement;
+        new (): HTMLRuxBetaPopUpMenuElement;
+    };
     interface HTMLRuxButtonElement extends Components.RuxButton, HTMLStencilElement {
     }
     var HTMLRuxButtonElement: {
@@ -19161,6 +19189,9 @@ declare global {
         new (): HTMLRuxTreeNodeElement;
     };
     interface HTMLElementTagNameMap {
+        "rux-beta-menu": HTMLRuxBetaMenuElement;
+        "rux-beta-menu-item": HTMLRuxBetaMenuItemElement;
+        "rux-beta-pop-up-menu": HTMLRuxBetaPopUpMenuElement;
         "rux-button": HTMLRuxButtonElement;
         "rux-button-group": HTMLRuxButtonGroupElement;
         "rux-checkbox": HTMLRuxCheckboxElement;
@@ -20267,6 +20298,15 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface RuxBetaMenu {
+    }
+    interface RuxBetaMenuItem {
+        "selected"?: boolean;
+    }
+    interface RuxBetaPopUpMenu {
+        "open"?: boolean;
+        "placement"?: Placement;
+    }
     interface RuxButton {
         /**
           * Changes button style from solid to borderless by setting the rux-button--borderless class
@@ -32902,6 +32942,9 @@ declare namespace LocalJSX {
         "selected"?: boolean;
     }
     interface IntrinsicElements {
+        "rux-beta-menu": RuxBetaMenu;
+        "rux-beta-menu-item": RuxBetaMenuItem;
+        "rux-beta-pop-up-menu": RuxBetaPopUpMenu;
         "rux-button": RuxButton;
         "rux-button-group": RuxButtonGroup;
         "rux-checkbox": RuxCheckbox;
@@ -34011,6 +34054,9 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "rux-beta-menu": LocalJSX.RuxBetaMenu & JSXBase.HTMLAttributes<HTMLRuxBetaMenuElement>;
+            "rux-beta-menu-item": LocalJSX.RuxBetaMenuItem & JSXBase.HTMLAttributes<HTMLRuxBetaMenuItemElement>;
+            "rux-beta-pop-up-menu": LocalJSX.RuxBetaPopUpMenu & JSXBase.HTMLAttributes<HTMLRuxBetaPopUpMenuElement>;
             "rux-button": LocalJSX.RuxButton & JSXBase.HTMLAttributes<HTMLRuxButtonElement>;
             "rux-button-group": LocalJSX.RuxButtonGroup & JSXBase.HTMLAttributes<HTMLRuxButtonGroupElement>;
             "rux-checkbox": LocalJSX.RuxCheckbox & JSXBase.HTMLAttributes<HTMLRuxCheckboxElement>;

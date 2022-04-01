@@ -1,0 +1,17 @@
+:host {
+    display: block;
+}
+
+.rux-menu-item {
+    padding: 6px 8px;
+    color: var(--color-interactive-default);
+    cursor: pointer;
+    &:hover {
+        color: var(--color-interactive-hover);
+        background: var(--color-background-base-hover);
+    }
+    &--selected {
+        background: var(--color-background-surface-selected);
+        color: var(--color-text-primary);
+    }
+}

@@ -1,0 +1,33 @@
+:host {
+    display: block;
+}
+
+.hidden,
+:host([hidden]) {
+    display: none;
+}
+
+.rux-popup__content {
+    position: absolute;
+    color: white;
+    padding: 12px;
+    border-radius: var(--radius-base);
+    background: var(--color-background-base-default);
+    border: 1px solid var(--color-interactive-muted);
+}
+
+.rux-popup__content--menu {
+    padding: 0;
+}
+
+.rux-popup {
+    // position: relative;
+}
+
+.rux-popup-arrow {
+    position: absolute;
+    background: #333;
+    width: 8px;
+    height: 8px;
+    transform: rotate(45deg);
+}
