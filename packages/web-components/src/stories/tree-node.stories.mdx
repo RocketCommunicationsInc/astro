@@ -23,9 +23,15 @@ Tree Node should be used with the [Tree](/?path=/story/components-tree--tree) co
 
 export const Default = (args) => {
     return html`
+<style>
+rux-tree-node{
+    border-bottom: 1px solid var(--color-interactive-muted);
+}
+</style>
 <rux-tree-node
     ?selected="${args.selected}"
     ?expanded="${args.expanded}"
+    aria-level="1"
 >
     Level 1
     <rux-tree-node slot="node"></rux-tree-node>
@@ -55,11 +61,18 @@ export const Default = (args) => {
 
 export const Selected = (args) => {
     return html`
+<style>
+rux-tree-node{
+    border-bottom: 1px solid var(--color-interactive-muted);
+}
+</style>
 <rux-tree-node
     ?selected="${args.selected}"
     ?expanded="${args.expanded}"
+    aria-level="1"
 >
     Level 1
+    <rux-tree-node slot="node"></rux-tree-node>
 </rux-tree-node>
     `
 }
@@ -80,9 +93,15 @@ export const Selected = (args) => {
 
 export const Expanded = (args) => {
     return html`
+<style>
+rux-tree-node{
+    border-bottom: 1px solid var(--color-interactive-muted);
+}
+</style>
 <rux-tree-node
     ?selected="${args.selected}"
     ?expanded="${args.expanded}"
+    aria-level="1"
 >
     Level 1
     <rux-tree-node slot="node"></rux-tree-node>
