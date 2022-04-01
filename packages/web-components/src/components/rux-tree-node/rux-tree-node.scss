@@ -44,10 +44,10 @@
 }
 
 .tree-node {
-    border-top: 1px solid var(--color-interactive-default);
+    border-top: 1px solid var(--color-interactive-muted);
     .parent {
-        border-left: 1px solid var(--color-interactive-default);
-        border-right: 1px solid var(--color-interactive-default);
+        border-left: 1px solid var(--color-interactive-muted);
+        border-right: 1px solid var(--color-interactive-muted);
     }
     .children {
         border-left: none;

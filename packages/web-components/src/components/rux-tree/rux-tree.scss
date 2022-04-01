@@ -23,9 +23,7 @@
     font-weight: var(--font-body-1-font-weight);
     letter-spacing: var(--font-body-1-letter-spacing);
     color: var(--tree-text-color);
-    // border: solid 1px var(--tree-border-color);
-    // border: 1px solid var(--color-interactive-default);
-    border-bottom: 1px solid var(--color-interactive-default);
+    border-bottom: 1px solid var(--color-interactive-muted);
     background-color: var(--tree-background-color);
     user-select: none;
     width: 100%;
