@@ -95,7 +95,6 @@ export class RuxTreeNode {
 
     @Listen('mouseout', { passive: true })
     handleLeave(ev: MouseEvent) {
-        console.log('heard mouse out')
         if (ev.target === ev.currentTarget) {
             this.addClass = false
         }
@@ -209,7 +208,6 @@ export class RuxTreeNode {
     private _focusNext(direction: number) {
         const visibleNodes = this._getVisibleNodes()
         const currentIndex: number = visibleNodes.indexOf(this.el)
-        console.log('start focus')
         if (currentIndex !== -1) {
             let nextElement: HTMLRuxTreeNodeElement | undefined =
                 visibleNodes[currentIndex + direction]
