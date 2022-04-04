@@ -25,6 +25,12 @@ export class RuxBetaPopUpMenu {
     handleOpen() {
         console.log(this.hasMenu)
 
+        if (this.open) {
+            this.content.style.display = 'block'
+        } else {
+            this.content.style.display = ''
+        }
+
         this.position()
     }
 
@@ -32,13 +38,13 @@ export class RuxBetaPopUpMenu {
         this.handleTriggerClick = this.handleTriggerClick.bind(this)
     }
 
-    handleTriggerClick() {
+    private async handleTriggerClick() {
         this.open = !this.open
-        console.log('hello world')
     }
 
     componentDidLoad() {
         console.log(this.contentSlot)
+        // this.position()
     }
 
     private position() {
@@ -116,6 +122,7 @@ export class RuxBetaPopUpMenu {
                 <div class="rux-popup">
                     <div
                         onClick={this.handleTriggerClick}
+                        class="rux-popup__trigger"
                         //@ts-ignore
                         ref={(el) => (this.trigger = el)}
                     >
@@ -123,8 +130,8 @@ export class RuxBetaPopUpMenu {
                     </div>
 
                     <div
+                        // hidden={!this.open}
                         class={{
-                            hidden: !this.open,
                             'rux-popup__content': true,
                             'rux-popup__content--menu': this.hasMenu,
                         }}
