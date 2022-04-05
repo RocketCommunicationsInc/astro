@@ -166,6 +166,11 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 
 ## Dependencies
 
+### Used by
+
+ - [rux-input](../rux-input)
+ - [rux-modal](../rux-modal)
+
 ### Depends on
 
 - [rux-icon](../rux-icon)
@@ -174,6 +179,8 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 ```mermaid
 graph TD;
   rux-button --> rux-icon
+  rux-input --> rux-button
+  rux-modal --> rux-button
   style rux-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { Classification, Status } from "./common/commonTypes.module";
+import { Classification, Status, StatusTags } from "./common/commonTypes.module";
 import { LogRow } from "./components/rux-log/rux-log.model";
 import { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
 import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
@@ -11928,6 +11928,8 @@ export namespace Components {
         | 'url'
         | 'search'
         | 'password'
+        | 'date'
+        | 'datetime-local'
         | 'tel';
         /**
           * The input value
@@ -11978,9 +11980,21 @@ export namespace Components {
     }
     interface RuxModal {
         /**
-          * Allows modal to close by clicking off of it
+          * Text for confirmation button
          */
-        "clickToClose": boolean;
+        "confirmText": string;
+        /**
+          * Text for close button
+         */
+        "denyText": string;
+        /**
+          * Modal body message
+         */
+        "modalMessage"?: string;
+        /**
+          * Modal header title
+         */
+        "modalTitle"?: string;
         /**
           * Shows and hides modal
          */
@@ -12061,6 +12075,10 @@ export namespace Components {
         "status": Status;
     }
     interface RuxOption {
+        /**
+          * Sets the option as disabled
+         */
+        "disabled": boolean;
         /**
           * The option label
          */
@@ -12206,6 +12224,11 @@ export namespace Components {
          */
         "value"?: any | null;
     }
+    interface RuxRuler {
+        "end": string;
+        "interval": any;
+        "start": string;
+    }
     interface RuxSegmentedButton {
         /**
           * Items in this Array are the individual button segments.
@@ -12254,6 +12277,10 @@ export namespace Components {
          */
         "labelId"?: string;
         /**
+          * Enables multiselect
+         */
+        "multiple": boolean;
+        /**
           * Sets the Name of the Input Element
          */
         "name": string;
@@ -12262,9 +12289,13 @@ export namespace Components {
          */
         "required": boolean;
         /**
-          * The value of the selected option
+          * The size of rux-select
          */
-        "value"?: string;
+        "size"?: 'small' | 'medium' | 'large';
+        /**
+          * The value of the selected option. If multiple is true, this is an array.
+         */
+        "value"?: string | string[];
     }
     interface RuxSlider {
         /**
@@ -12378,6 +12409,12 @@ export namespace Components {
          */
         "small"?: boolean;
     }
+    interface RuxTag {
+        /**
+          * Used to display a status of pass, fail, or unknown. If no status is provided or the provided status is not an accepted status type, the default is unknown.
+         */
+        "status"?: StatusTags;
+    }
     interface RuxTextarea {
         /**
           * Disables the button via HTML disabled attribute. Button takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
@@ -12424,13 +12461,64 @@ export namespace Components {
          */
         "rows"?: number;
         /**
-          * Styles the input element and label smaller for space-limited situations.
+          * Styles the input element size between small, medium and large. The default styling is medium.
          */
-        "small": boolean;
+        "size"?: 'small' | 'medium' | 'large';
         /**
           * The input value
          */
         "value": string;
+    }
+    interface RuxTimeRegion {
+        /**
+          * The end date. Must be an ISO string "2021-02-02T05:00:00Z"
+         */
+        "end": string;
+        /**
+          * Optionally hide the bottom right timestamp.
+         */
+        "hideTimestamp": boolean;
+        /**
+          * Visually displays the selected state
+         */
+        "selected": boolean;
+        /**
+          * The start date. Must be an ISO string "2021-02-02T05:00:00Z".
+         */
+        "start": string;
+        /**
+          * Short hand attribute for displaying a Status icon and appropriate border color.
+         */
+        "status"?: 'normal' | 'critical' | 'serious' | 'caution' | 'standby';
+    }
+    interface RuxTimeline {
+        /**
+          * The timeline's end date. Must be an ISO string "2021-02-02T05:00:00Z"
+         */
+        "end": string;
+        /**
+          * The timeline's date time interval
+         */
+        "interval": 'hour' | 'day';
+        /**
+          * The timeline's playhead date time. Must be an ISO string "2021-02-02T05:00:00Z"
+         */
+        "playhead"?: string;
+        /**
+          * The timeline's start date. Must be an ISO string "2021-02-02T05:00:00Z"
+         */
+        "start": string;
+        /**
+          * The timeline's zoom level.
+         */
+        "zoom": number;
+    }
+    interface RuxTrack {
+        "columns": number;
+        "end": string;
+        "interval": any;
+        "start": string;
+        "width": number;
     }
     interface RuxTree {
     }
@@ -18930,6 +19018,12 @@ declare global {
         prototype: HTMLRuxRadioGroupElement;
         new (): HTMLRuxRadioGroupElement;
     };
+    interface HTMLRuxRulerElement extends Components.RuxRuler, HTMLStencilElement {
+    }
+    var HTMLRuxRulerElement: {
+        prototype: HTMLRuxRulerElement;
+        new (): HTMLRuxRulerElement;
+    };
     interface HTMLRuxSegmentedButtonElement extends Components.RuxSegmentedButton, HTMLStencilElement {
     }
     var HTMLRuxSegmentedButtonElement: {
@@ -19026,11 +19120,35 @@ declare global {
         prototype: HTMLRuxTabsElement;
         new (): HTMLRuxTabsElement;
     };
+    interface HTMLRuxTagElement extends Components.RuxTag, HTMLStencilElement {
+    }
+    var HTMLRuxTagElement: {
+        prototype: HTMLRuxTagElement;
+        new (): HTMLRuxTagElement;
+    };
     interface HTMLRuxTextareaElement extends Components.RuxTextarea, HTMLStencilElement {
     }
     var HTMLRuxTextareaElement: {
         prototype: HTMLRuxTextareaElement;
         new (): HTMLRuxTextareaElement;
+    };
+    interface HTMLRuxTimeRegionElement extends Components.RuxTimeRegion, HTMLStencilElement {
+    }
+    var HTMLRuxTimeRegionElement: {
+        prototype: HTMLRuxTimeRegionElement;
+        new (): HTMLRuxTimeRegionElement;
+    };
+    interface HTMLRuxTimelineElement extends Components.RuxTimeline, HTMLStencilElement {
+    }
+    var HTMLRuxTimelineElement: {
+        prototype: HTMLRuxTimelineElement;
+        new (): HTMLRuxTimelineElement;
+    };
+    interface HTMLRuxTrackElement extends Components.RuxTrack, HTMLStencilElement {
+    }
+    var HTMLRuxTrackElement: {
+        prototype: HTMLRuxTrackElement;
+        new (): HTMLRuxTrackElement;
     };
     interface HTMLRuxTreeElement extends Components.RuxTree, HTMLStencilElement {
     }
@@ -20124,6 +20242,7 @@ declare global {
         "rux-push-button": HTMLRuxPushButtonElement;
         "rux-radio": HTMLRuxRadioElement;
         "rux-radio-group": HTMLRuxRadioGroupElement;
+        "rux-ruler": HTMLRuxRulerElement;
         "rux-segmented-button": HTMLRuxSegmentedButtonElement;
         "rux-select": HTMLRuxSelectElement;
         "rux-slider": HTMLRuxSliderElement;
@@ -20140,7 +20259,11 @@ declare global {
         "rux-table-header-row": HTMLRuxTableHeaderRowElement;
         "rux-table-row": HTMLRuxTableRowElement;
         "rux-tabs": HTMLRuxTabsElement;
+        "rux-tag": HTMLRuxTagElement;
         "rux-textarea": HTMLRuxTextareaElement;
+        "rux-time-region": HTMLRuxTimeRegionElement;
+        "rux-timeline": HTMLRuxTimelineElement;
+        "rux-track": HTMLRuxTrackElement;
         "rux-tree": HTMLRuxTreeElement;
         "rux-tree-node": HTMLRuxTreeNodeElement;
     }
@@ -32052,6 +32175,10 @@ declare namespace LocalJSX {
          */
         "onRuxchange"?: (event: CustomEvent<any>) => void;
         /**
+          * Fired when an element has gained focus - [HTMLElement/focus_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event)
+         */
+        "onRuxfocus"?: (event: CustomEvent<any>) => void;
+        /**
           * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
          */
         "onRuxinput"?: (event: CustomEvent<any>) => void;
@@ -32088,6 +32215,8 @@ declare namespace LocalJSX {
         | 'url'
         | 'search'
         | 'password'
+        | 'date'
+        | 'datetime-local'
         | 'tel';
         /**
           * The input value
@@ -32142,17 +32271,25 @@ declare namespace LocalJSX {
     }
     interface RuxModal {
         /**
-          * Allows modal to close by clicking off of it
+          * Text for confirmation button
          */
-        "clickToClose"?: boolean;
+        "confirmText"?: string;
+        /**
+          * Text for close button
+         */
+        "denyText"?: string;
+        /**
+          * Modal body message
+         */
+        "modalMessage"?: string;
+        /**
+          * Modal header title
+         */
+        "modalTitle"?: string;
         /**
           * Event that is fired when modal closes
          */
         "onRuxmodalclosed"?: (event: CustomEvent<boolean>) => void;
-        /**
-          * Event that is fired when modal opens
-         */
-        "onRuxmodalopened"?: (event: CustomEvent<boolean>) => void;
         /**
           * Shows and hides modal
          */
@@ -32237,6 +32374,10 @@ declare namespace LocalJSX {
         "status"?: Status;
     }
     interface RuxOption {
+        /**
+          * Sets the option as disabled
+         */
+        "disabled"?: boolean;
         /**
           * The option label
          */
@@ -32400,6 +32541,11 @@ declare namespace LocalJSX {
          */
         "value"?: any | null;
     }
+    interface RuxRuler {
+        "end"?: string;
+        "interval"?: any;
+        "start"?: string;
+    }
     interface RuxSegmentedButton {
         /**
           * Items in this Array are the individual button segments.
@@ -32452,6 +32598,10 @@ declare namespace LocalJSX {
          */
         "labelId"?: string;
         /**
+          * Enables multiselect
+         */
+        "multiple"?: boolean;
+        /**
           * Sets the Name of the Input Element
          */
         "name"?: string;
@@ -32468,9 +32618,13 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
         /**
-          * The value of the selected option
+          * The size of rux-select
          */
-        "value"?: string;
+        "size"?: 'small' | 'medium' | 'large';
+        /**
+          * The value of the selected option. If multiple is true, this is an array.
+         */
+        "value"?: string | string[];
     }
     interface RuxSlider {
         /**
@@ -32612,6 +32766,12 @@ declare namespace LocalJSX {
          */
         "small"?: boolean;
     }
+    interface RuxTag {
+        /**
+          * Used to display a status of pass, fail, or unknown. If no status is provided or the provided status is not an accepted status type, the default is unknown.
+         */
+        "status"?: StatusTags;
+    }
     interface RuxTextarea {
         /**
           * Disables the button via HTML disabled attribute. Button takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
@@ -32670,13 +32830,64 @@ declare namespace LocalJSX {
          */
         "rows"?: number;
         /**
-          * Styles the input element and label smaller for space-limited situations.
+          * Styles the input element size between small, medium and large. The default styling is medium.
          */
-        "small"?: boolean;
+        "size"?: 'small' | 'medium' | 'large';
         /**
           * The input value
          */
         "value"?: string;
+    }
+    interface RuxTimeRegion {
+        /**
+          * The end date. Must be an ISO string "2021-02-02T05:00:00Z"
+         */
+        "end"?: string;
+        /**
+          * Optionally hide the bottom right timestamp.
+         */
+        "hideTimestamp"?: boolean;
+        /**
+          * Visually displays the selected state
+         */
+        "selected"?: boolean;
+        /**
+          * The start date. Must be an ISO string "2021-02-02T05:00:00Z".
+         */
+        "start"?: string;
+        /**
+          * Short hand attribute for displaying a Status icon and appropriate border color.
+         */
+        "status"?: 'normal' | 'critical' | 'serious' | 'caution' | 'standby';
+    }
+    interface RuxTimeline {
+        /**
+          * The timeline's end date. Must be an ISO string "2021-02-02T05:00:00Z"
+         */
+        "end"?: string;
+        /**
+          * The timeline's date time interval
+         */
+        "interval"?: 'hour' | 'day';
+        /**
+          * The timeline's playhead date time. Must be an ISO string "2021-02-02T05:00:00Z"
+         */
+        "playhead"?: string;
+        /**
+          * The timeline's start date. Must be an ISO string "2021-02-02T05:00:00Z"
+         */
+        "start"?: string;
+        /**
+          * The timeline's zoom level.
+         */
+        "zoom"?: number;
+    }
+    interface RuxTrack {
+        "columns"?: number;
+        "end"?: string;
+        "interval"?: any;
+        "start"?: string;
+        "width"?: number;
     }
     interface RuxTree {
     }
@@ -33774,6 +33985,7 @@ declare namespace LocalJSX {
         "rux-push-button": RuxPushButton;
         "rux-radio": RuxRadio;
         "rux-radio-group": RuxRadioGroup;
+        "rux-ruler": RuxRuler;
         "rux-segmented-button": RuxSegmentedButton;
         "rux-select": RuxSelect;
         "rux-slider": RuxSlider;
@@ -33790,7 +34002,11 @@ declare namespace LocalJSX {
         "rux-table-header-row": RuxTableHeaderRow;
         "rux-table-row": RuxTableRow;
         "rux-tabs": RuxTabs;
+        "rux-tag": RuxTag;
         "rux-textarea": RuxTextarea;
+        "rux-time-region": RuxTimeRegion;
+        "rux-timeline": RuxTimeline;
+        "rux-track": RuxTrack;
         "rux-tree": RuxTree;
         "rux-tree-node": RuxTreeNode;
     }
@@ -34878,6 +35094,7 @@ declare module "@stencil/core" {
             "rux-push-button": LocalJSX.RuxPushButton & JSXBase.HTMLAttributes<HTMLRuxPushButtonElement>;
             "rux-radio": LocalJSX.RuxRadio & JSXBase.HTMLAttributes<HTMLRuxRadioElement>;
             "rux-radio-group": LocalJSX.RuxRadioGroup & JSXBase.HTMLAttributes<HTMLRuxRadioGroupElement>;
+            "rux-ruler": LocalJSX.RuxRuler & JSXBase.HTMLAttributes<HTMLRuxRulerElement>;
             "rux-segmented-button": LocalJSX.RuxSegmentedButton & JSXBase.HTMLAttributes<HTMLRuxSegmentedButtonElement>;
             "rux-select": LocalJSX.RuxSelect & JSXBase.HTMLAttributes<HTMLRuxSelectElement>;
             "rux-slider": LocalJSX.RuxSlider & JSXBase.HTMLAttributes<HTMLRuxSliderElement>;
@@ -34894,7 +35111,11 @@ declare module "@stencil/core" {
             "rux-table-header-row": LocalJSX.RuxTableHeaderRow & JSXBase.HTMLAttributes<HTMLRuxTableHeaderRowElement>;
             "rux-table-row": LocalJSX.RuxTableRow & JSXBase.HTMLAttributes<HTMLRuxTableRowElement>;
             "rux-tabs": LocalJSX.RuxTabs & JSXBase.HTMLAttributes<HTMLRuxTabsElement>;
+            "rux-tag": LocalJSX.RuxTag & JSXBase.HTMLAttributes<HTMLRuxTagElement>;
             "rux-textarea": LocalJSX.RuxTextarea & JSXBase.HTMLAttributes<HTMLRuxTextareaElement>;
+            "rux-time-region": LocalJSX.RuxTimeRegion & JSXBase.HTMLAttributes<HTMLRuxTimeRegionElement>;
+            "rux-timeline": LocalJSX.RuxTimeline & JSXBase.HTMLAttributes<HTMLRuxTimelineElement>;
+            "rux-track": LocalJSX.RuxTrack & JSXBase.HTMLAttributes<HTMLRuxTrackElement>;
             "rux-tree": LocalJSX.RuxTree & JSXBase.HTMLAttributes<HTMLRuxTreeElement>;
             "rux-tree-node": LocalJSX.RuxTreeNode & JSXBase.HTMLAttributes<HTMLRuxTreeNodeElement>;
         }

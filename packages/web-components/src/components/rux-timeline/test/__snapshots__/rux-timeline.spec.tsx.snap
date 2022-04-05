@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rux-timeline renders 1`] = `
+<rux-timeline end="2021-02-05T12:00:00Z" start="2021-02-01T00:00:00Z" zoom="1">
+  <mock:shadow-root>
+    <div style="position: relative;">
+      <div class="rux-timeline" part="time-region-container">
+        <div class="events">
+          <slot></slot>
+        </div>
+        <div class="ruler">
+          <slot name="ruler"></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</rux-timeline>
+`;

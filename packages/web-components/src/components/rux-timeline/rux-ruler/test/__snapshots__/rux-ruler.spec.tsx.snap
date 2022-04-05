@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rux-ruler renders 1`] = `
+<rux-ruler>
+  <mock:shadow-root>
+    <div class="rux-ruler rux-track"></div>
+  </mock:shadow-root>
+</rux-ruler>
+`;

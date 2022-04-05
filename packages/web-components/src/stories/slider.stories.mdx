@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
 <Meta
@@ -29,9 +29,11 @@ export const Default = (args) => {
         min="${args.min}"
         step="${args.step}"
         value="${args.value}"
-        .disabled="${args.disabled}"
-        .help-text="${args.helpText}"
-        .error-text="${args.errorText}"
+        ?disabled="${args.disabled}"
+        help-text="${args.helpText}"
+        error-text="${args.errorText}"
+        label="${args.label}"
+        name="${args.name}"
     ></rux-slider>
 </div>
     `
@@ -45,6 +47,11 @@ export const Default = (args) => {
             min: 0,
             value: 50,
             step: 1,
+            disabled: false,
+            errorText: "",
+            helpText: "",
+            label: "",
+            name: ""
         }}
     >
         {Default.bind()}
@@ -66,10 +73,12 @@ export const Disabled = (args) => {
         max="${args.max}"
         min="${args.min}"
         step="${args.step}"
-        .value="${args.value}"
+        value="${args.value}"
         ?disabled="${args.disabled}"
-        .help-text="${args.helpText}"
-        .error-text="${args.errorText}"
+        help-text="${args.helpText}"
+        error-text="${args.errorText}"
+        label="${args.label}"
+        name="${args.name}"
     ></rux-slider>
 </div>
     `
@@ -83,6 +92,11 @@ export const Disabled = (args) => {
             min: 0,
             value: 50,
             disabled: true,
+            errorText: "",
+            helpText: "",
+            label: "",
+            name: "",
+            step: null
         }}
     >
         {Disabled.bind()}
@@ -101,7 +115,9 @@ export const WithHelpText = (args) => {
         .value="${args.value}"
         ?disabled="${args.disabled}"
         help-text="${args.helpText}"
-        .error-text="${args.errorText}"
+        error-text="${args.errorText}"
+        label="${args.label}"
+        name="${args.label}"
     ></rux-slider>
 </div>
     `
@@ -115,6 +131,11 @@ export const WithHelpText = (args) => {
             min: 0,
             value: 50,
             helpText: 'Help text',
+            disabled: false,
+            errorText: "",
+            label: "",
+            name: "",
+            step: null
         }}
     >
         {WithHelpText.bind()}
@@ -132,8 +153,10 @@ export const WithErrorText = (args) => {
         step="${args.step}"
         .value="${args.value}"
         ?disabled="${args.disabled}"
-        .help-text="${args.helpText}"
+        help-text="${args.helpText}"
         error-text="${args.errorText}"
+        label="${args.label}"
+        name="${args.name}"
     ></rux-slider>
 </div>
     `
@@ -147,6 +170,11 @@ export const WithErrorText = (args) => {
             min: 0,
             value: 50,
             errorText: 'Error text',
+            step: null,
+            disabled: false,
+            helpText: "",
+            label: "",
+            name: ""
         }}
     >
         {WithErrorText.bind()}
@@ -169,7 +197,7 @@ export const WithAxisLabels = (args, data) => {
         error-text="${args.errorText}"
         .axisLabels="${args.axisLabels}"
         ?ticks-only="${args.ticksOnly}"
-        .label="${args.label}"
+        label="${args.label}"
     ></rux-slider>
 </div>
     `
@@ -224,12 +252,38 @@ export const HorizontalLabel = (args) => {
         margin-right: var(--spacing-input-label-left);
     }
 </style>
-<rux-slider id="left-example" label="Label"></rux-slider>
+<rux-slider
+    id="left-example"
+    max="${args.max}"
+    min="${args.min}"
+    step="${args.step}"
+    .value="${args.value}"
+    ?disabled="${args.disabled}"
+    help-text="${args.helpText}"
+    error-text="${args.errorText}"
+    label="${args.label}"
+    name="${args.label}"
+></rux-slider>
     `
 }
 
 <Canvas>
-    <Story name="Horizontal Label">{HorizontalLabel.bind()}</Story>
+    <Story
+        name="Horizontal Label"
+        args={{
+            max: 100,
+            min: 0,
+            value: 50,
+            errorText: "",
+            step: null,
+            disabled: false,
+            helpText: "",
+            label: "Label",
+            name: ""
+        }}
+    >
+        {HorizontalLabel.bind()}
+    </Story>
 </Canvas>
 
 ## Cherry Picking

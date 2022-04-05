@@ -1,4 +1,79 @@
-# astro-website
+# @astrouxds/astrouxds
+
+## 6.5.0
+
+> NOTE: This release renames many of our internal private CSS Custom Properties (--color-background). If you are using these to build your own UIs, this may be a breaking change for you.
+
+### Minor Changes
+
+#### Select
+
+- Added `size` property.
+
+#### Option
+
+- Added a `disabled` property.
+
+#### Input
+
+- Added `date` and `datetime-local` types.
+- Added a `prefix` and `suffix` named slots.
+
+#### Tag
+
+- Created a new Tag component.
+
+### Patch Changes
+
+- Updated components to use the new beta design tokens
+
+#### Button
+
+- Moved `width` attribute out of shadow dom, can now be styled without CSS parts.
+
+#### Notification
+
+- Watch closeAfter to close when updated
+
+#### Slider
+
+- Updated to accept float values.
+
+## 6.4.0
+
+### Minor Changes
+
+- Added text underline to link hover states globally.
+
+#### Select
+
+- Added `multiple` support
+
+#### Timeline [Beta]
+
+- New beta component Timeline is now available
+
+#### Slider
+
+- Added `axis-labels` and `ticks-only` properties, providing tick mark and label support.
+
+#### Textarea
+
+- Added a `size` property. Removed unused `small` property. (This property had no effect so this is not a breaking change)
+
+### Patch Changes
+
+#### Switch
+
+- Updated thumb hover state color to align with design.
+
+#### Clock
+
+- Updated the clock labels to align with design.
+
+#### Tabs
+
+- Updated to align with design
 
 ## 6.3.0
 

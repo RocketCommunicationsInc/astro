@@ -9,19 +9,19 @@
     box-sizing: border-box;
 
     /** @prop --radio-hover-border-color: Radio border color on hover */
-    --radio-hover-border-color: var(--color-hover);
+    --radio-hover-border-color: var(--color-interactive-hover);
 
     /** @prop --radio-border-color: Selected radio border color */
-    --radio-border-color: var(--color-active);
+    --radio-border-color: var(--color-interactive-muted);
 
     /** @prop --radio-label-color: label text color */
-    --radio-label-color: var(--color-default-text);
+    --radio-label-color: var(--color-text-primary);
 
     /** @prop --radio-background-color: the radio background color */
-    --radio-background-color: var(--color-background);
+    --radio-background-color: var(--color-background-base-default);
 
     /** @prop --radio-selected-color: the radio selected color */
-    --radio-selected-color: var(--color-primary);
+    --radio-selected-color: var(--color-interactive-default);
 }
 
 .rux-form-field {
@@ -31,7 +31,7 @@
     font-size: var(--font-body-1-font-size);
     letter-spacing: var(--font-body-1-letter-spacing);
     font-weight: var(--font-body-1-font-weight);
-    color: var(--color-default-text);
+    color: var(--color-text-primary);
 }
 
 .rux-radio {
@@ -95,7 +95,7 @@
 
                     /* box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9); */
 
-                    background-color: var(--color-primary);
+                    background-color: var(--color-interactive-default);
                 }
             }
         }

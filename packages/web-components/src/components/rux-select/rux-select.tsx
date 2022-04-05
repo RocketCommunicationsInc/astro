@@ -13,7 +13,7 @@ import {
 } from '@stencil/core'
 import FormFieldMessage from '../../common/functional-components/FormFieldMessage/FormFieldMessage'
 import { FormFieldInterface } from '../../common/interfaces.module'
-import { hasSlot, renderHiddenInput } from '../../utils/utils'
+import { hasSlot, renderHiddenSelect } from '../../utils/utils'
 
 /**
  * @slot (default) - The select options
@@ -68,14 +68,19 @@ export class RuxSelect implements FormFieldInterface {
     @Prop({ reflect: true }) invalid: boolean = false
 
     /**
+     * Enables multiselect
+     */
+    @Prop({ reflect: true }) multiple: boolean = false
+
+    /**
      * Sets the Name of the Input Element
      */
     @Prop({ reflect: true }) name = ''
 
     /**
-     * The value of the selected option
+     * The value of the selected option. If multiple is true, this is an array.
      */
-    @Prop({ mutable: true, reflect: true }) value?: string
+    @Prop({ mutable: true }) value?: string | string[]
 
     /**
      * The help or explanation text
@@ -86,6 +91,11 @@ export class RuxSelect implements FormFieldInterface {
      * The validation error text
      */
     @Prop({ attribute: 'error-text' }) errorText?: string
+
+    /**
+     * The size of rux-select
+     */
+    @Prop({ reflect: true }) size?: 'small' | 'medium' | 'large' = 'medium'
 
     /**
      * Event Emitted when the Value of the Select is Changed
@@ -172,6 +182,7 @@ export class RuxSelect implements FormFieldInterface {
                     this._appendOptionToNativeSelect(
                         option.label,
                         option.value,
+                        option.disabled,
                         this.selectEl
                     )
                 }
@@ -199,7 +210,12 @@ export class RuxSelect implements FormFieldInterface {
         })
 
         children.map((option: any) => {
-            this._appendOptionToNativeSelect(option.label, option.value, group)
+            this._appendOptionToNativeSelect(
+                option.label,
+                option.value,
+                option.disabled,
+                group
+            )
             this.selectEl.appendChild(group)
         })
 
@@ -209,11 +225,13 @@ export class RuxSelect implements FormFieldInterface {
     private _appendOptionToNativeSelect(
         label: string,
         value: string,
+        disabled: boolean,
         target: HTMLSelectElement | HTMLOptGroupElement
     ) {
         const item = Object.assign(document.createElement('option'), {
             innerHTML: label ? label : '',
             value: value,
+            disabled: disabled,
         })
         target.appendChild(item)
     }
@@ -224,15 +242,33 @@ export class RuxSelect implements FormFieldInterface {
                 ...Array.from(this.selectEl.querySelectorAll('option')),
             ]
             options.map((option: HTMLOptionElement) => {
-                option.selected = option.value === this.value
+                if (Array.isArray(this.value)) {
+                    option.selected = this.value.includes(option.value)
+                } else {
+                    option.selected = option.value === this.value
+                }
             })
         }
         return Promise.resolve()
     }
 
     private _onChange(e: Event) {
-        const target = e.target as HTMLOptionElement
-        this.value = target.value
+        const target = e.target as HTMLSelectElement
+
+        const values = [...target.options]
+            .filter((option) => {
+                return option.selected
+            })
+            .map((option) => {
+                return option.value
+            })
+
+        if (values.length === 1) {
+            this.value = values[0]
+        } else {
+            this.value = values
+        }
+
         this.ruxSelectChanged.emit()
     }
 
@@ -245,9 +281,9 @@ export class RuxSelect implements FormFieldInterface {
             labelId,
             invalid,
             name,
+            multiple,
         } = this
-
-        renderHiddenInput(true, this.el, this.name, this.value, this.disabled)
+        renderHiddenSelect(true, this.el, this.name, this.value, this.disabled)
         return (
             <Host>
                 <label
@@ -274,13 +310,19 @@ export class RuxSelect implements FormFieldInterface {
                     </span>
                 </label>
                 <select
-                    class={
-                        'rux-select ' + (invalid ? 'rux-select-invalid' : '')
-                    }
+                    class={{
+                        'rux-select': true,
+                        'rux-select--small': this.size === 'small',
+                        'rux-select--medium': this.size === 'medium',
+                        'rux-select--large': this.size === 'large',
+                        'rux-select--invalid': invalid,
+                        'rux-select--multiple': multiple,
+                    }}
                     ref={(el) => (this.selectEl = el as HTMLSelectElement)}
                     id={inputId}
                     disabled={disabled}
                     required={required}
+                    multiple={multiple}
                     name={name}
                     onChange={(e) => this._onChange(e)}
                     onBlur={this._onBlur}

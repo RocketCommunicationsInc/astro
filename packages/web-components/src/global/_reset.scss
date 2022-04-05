@@ -28,18 +28,18 @@ body {
     font-size: var(--font-body-1-font-size);
     font-weight: var(--font-body-1-font-weight);
     letter-spacing: var(--font-body-1-letter-spacing);
-    color: var(--color-default-text, rgb(255, 255, 255));
+    color: var(--color-text-primary, rgb(255, 255, 255));
 
-    background-color: var(--color-background);
-    scrollbar-color: var(--color-active);
+    background-color: var(--color-background-base-default);
+    scrollbar-color: var(--color-interactive-muted);
 
     a {
         text-decoration: none;
-        color: var(--color-primary);
+        color: var(--color-interactive-default);
     }
     a:hover {
         text-decoration: underline;
-        color: var(--color-hover);
+        color: var(--color-interactive-hover);
     }
 }
 
@@ -60,7 +60,7 @@ label {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--color-active, rgb(43, 101, 155));
+    background-color: var(--color-interactive-muted, rgb(43, 101, 155));
     border-radius: 8px;
     border: 3px solid transparent;
     background-clip: padding-box;
@@ -77,18 +77,18 @@ label {
 
 ::-webkit-scrollbar-thumb:active,
 ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--color-primary, rgb(58, 129, 191));
+    background-color: var(--color-interactive-default, rgb(58, 129, 191));
 }
 
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-corner {
-    background-color: var(--color-surface, rgb(27, 45, 62));
+    background-color: var(--color-background-surface-default, rgb(27, 45, 62));
 }
 
 ::-webkit-scrollbar-track:vertical {
-    box-shadow: inset 3px 3px 3px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--shadow-inner-scrollbar-vertical);
 }
 
 ::-webkit-scrollbar-track:horizontal {
-    box-shadow: inset 1px 3px 3px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--shadow-inner-scrollbar-horizontal);
 }

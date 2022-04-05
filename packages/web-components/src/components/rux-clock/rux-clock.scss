@@ -2,22 +2,22 @@
     /**
     * @prop --clock-text-color: the color of the clock text
     */
-    --clock-text-color: var(--color-global-basics-white);
+    --clock-text-color: var(--color-palette-neutral-000);
 
     /**
     * @prop --clock-background-color: the background color for the clock
     */
-    --clock-background-color: var(--color-global-tertiary-800);
+    --clock-background-color: var(--color-palette-brightblue-900);
 
     /**
     * @prop --clock-border-color: the border color for the clock
     */
-    --clock-border-color: var(--color-global-snowflakes-dark-surface);
+    --clock-border-color: var(--color-background-surface-default);
 
     /**
     * @prop --clock-label-color: the label color for the clock
     */
-    --clock-label-color: var(--color-global-basics-white);
+    --clock-label-color: var(--color-palette-neutral-000);
 
     display: flex;
     margin: 0 1rem;
@@ -68,8 +68,8 @@
     font-weight: var(--font-body-2-font-weight);
     letter-spacing: var(--font-body-2-letter-spacing);
     color: var(--clock-label-color);
-    background: var(--clock-border-color);
-    border: 1px solid var(--clock-border-color);
+    background: var(--color-gsb-background-default);
+    padding: 0.094rem 0.625rem;
     width: -moz-available;
     width: -webkit-fill-available;
     width: fill-available;

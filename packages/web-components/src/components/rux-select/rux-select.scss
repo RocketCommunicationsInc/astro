@@ -2,33 +2,81 @@
 
 :host {
     display: block;
+    scrollbar-color: var(--color-interactive-muted)
+        var(--color-background-surface-default);
+    ::-webkit-scrollbar {
+        width: 16px;
+        height: 16px;
+        background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--color-interactive-muted, rgb(43, 101, 155));
+        border-radius: 8px;
+        border: 3px solid transparent;
+        background-clip: padding-box;
+    }
+
+    /* visually "centers" because the dark edge of the shadow gives the illusion this is offset */
+    ::-webkit-scrollbar-thumb:vertical {
+        border-left-width: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:horizontal {
+        border-top-width: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:active,
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--color-interactive-default, rgb(58, 129, 191));
+    }
+
+    ::-webkit-scrollbar-track,
+    ::-webkit-scrollbar-corner {
+        background-color: var(
+            --color-background-surface-default,
+            rgb(27, 45, 62)
+        );
+
+        box-shadow: var(--shadow-inner-scrollbar-vertical);
+    }
+
+    ::-webkit-scrollbar-track:vertical {
+        box-shadow: var(--shadow-inner-scrollbar-vertical);
+    }
+
+    ::-webkit-scrollbar-track:horizontal {
+        box-shadow: var(--shadow-inner-scrollbar-horizontal);
+    }
 
     /** @prop --select-menu-border-radius: Border radius for Select Menu */
     --select-menu-border-radius: var(--radius-base);
 
     /** @prop --select-menu-border-hover-color: Border Hover Color of the Select Input */
-    --select-menu-border-hover-color: var(--color-hover);
+    --select-menu-border-hover-color: var(--color-interactive-hover);
 
     /** @prop --select-menu-border-focus-color: Border Focus Color of the Select Input */
-    --select-menu-border-focus-color: var(--color-hover);
+    --select-menu-border-focus-color: var(--color-interactive-hover);
 
     /** @prop --select-menu-invalid-border-color: Border Color of the Invalid Select Input */
-    --select-menu-invalid-border-color: var(--color-status-critical-fill);
+    --select-menu-invalid-border-color: var(--color-icon-status-fill-critical);
 
     /** @prop --select-menu-text-color: Text Color of the Select Input */
-    --select-menu-text-color: var(--color-primary);
+    --select-menu-text-color: var(--color-interactive-default);
 
     /** @prop --select-menu-option-text-hover-color: Text Hover Color of the Select Menu Options */
-    --select-menu-option-text-hover-color: var(--color-hover);
+    --select-menu-option-text-hover-color: var(--color-interactive-hover);
 
     /** @prop --select-menu-option-selected-background-color: Background Color of the Selected Option */
-    --select-menu-option-selected-background-color: var(--color-selected);
+    --select-menu-option-selected-background-color: var(
+        --color-background-surface-selected
+    );
 
     /** @prop --select-menu-option-selected-text-color: Text Color of the Selected Option */
-    --select-menu-option-selected-text-color: var(--color-default-text);
+    --select-menu-option-selected-text-color: var(--color-text-primary);
 
     /** @prop --select-menu-label-color: Text Color of the Label */
-    --select-menu-label-color: var(--color-default-text);
+    --select-menu-label-color: var(--color-text-primary);
 
     /** @prop --select-menu-inactive-caret: Caret Shown When the Select Menu is Closed */
     --select-menu-inactive-caret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%234dacff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
@@ -39,12 +87,12 @@
     /** @prop --select-menu-background-color: Background Color of the Select Input */
     --select-menu-background-color: linear-gradient(
         to left,
-        var(--color-selected) 2rem,
-        var(--color-background) 2rem
+        var(--color-background-surface-selected) 2rem,
+        var(--color-background-base-default) 2rem
     );
 
     /** @prop --select-menu-border-color: Border Color of the Select Input */
-    --select-menu-border-color: var(--color-active);
+    --select-menu-border-color: var(--color-interactive-muted);
 }
 
 .hidden,
@@ -65,6 +113,21 @@ label {
     }
 }
 
+.rux-select:not(.rux-select--multiple) {
+    background-image: var(--select-menu-inactive-caret),
+        var(--select-menu-background-color);
+    background-position: center right 0.625rem, center left 0;
+    background-repeat: no-repeat;
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5);
+    &:active:not(:disabled) {
+        background-image: var(--select-menu-active-caret),
+            var(--select-menu-background-color);
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}
+
 .rux-select {
     position: relative;
     appearance: none;
@@ -78,21 +141,49 @@ label {
     font-size: var(--font-body-1-font-size);
     font-weight: var(--font-body-1-font-weight);
     letter-spacing: var(--font-body-1-letter-spacing);
-    padding: 0.438rem 3.125rem 0.438rem 0.5rem;
-    background-image: var(--select-menu-inactive-caret),
-        var(--select-menu-background-color);
-    background-position: center right 0.625rem, center left 0;
-    background-repeat: no-repeat;
+
     user-select: none;
 
-    &:hover {
-        cursor: pointer;
-        border: 1px solid var(--select-menu-border-hover-color);
+    &--small {
+        padding: 3.5px 8px;
+    }
+    &--medium {
+        padding: 7.5px 8px;
+    }
+    &--large {
+        padding: 13.5px 8px;
+    }
+    &--multiple {
+        background: var(--color-background-base-default);
+        padding: 0;
+        option {
+            padding: 0.438rem 0 0.438rem 1rem; // 7px 0px 7px 16px
+            text-indent: 1rem;
+            &:hover {
+                color: var(--color-interactive-hover);
+                background-color: var(--color-background-surface-hover);
+                cursor: pointer;
+            }
+            &:checked {
+                background: var(--color-background-surface-selected);
+                color: var(--color-text-primary);
+            }
+            &:disabled {
+                opacity: var(--disabled-opacity);
+                cursor: not-allowed;
+                &:hover {
+                    color: var(--select-menu-text-color);
+                    background-color: var(--select-menu-background-color);
+                }
+            }
+        }
+    }
+    &--invalid {
+        border: 1px solid var(--select-menu-invalid-border-color);
     }
 
-    &:active:not(:disabled) {
-        background-image: var(--select-menu-active-caret),
-            var(--select-menu-background-color);
+    &:hover {
+        border: 1px solid var(--select-menu-border-hover-color);
     }
 
     &:focus {
@@ -108,10 +199,6 @@ label {
         }
     }
 
-    &.rux-select-invalid {
-        border: 1px solid var(--select-menu-invalid-border-color);
-    }
-
     &::-ms-expand {
         display: none;
     }
@@ -124,7 +211,6 @@ label {
         opacity: 1;
         color: var(--select-menu-text-color);
         border-radius: 0;
-        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5);
 
         &:hover {
             color: var(--select-menu-option-text-hover-color);
@@ -137,5 +223,19 @@ label {
                 --select-menu-option-selected-background-color
             );
         }
+        &:disabled {
+            opacity: var(--disabled-opacity);
+            cursor: not-allowed;
+        }
+    }
+
+    optgroup {
+        text-indent: 1rem;
+        color: var(--color-text-primary);
+        font-family: var(--font-body-1-font-family);
+        font-size: var(--font-body-1-font-size);
+        font-weight: var(--font-body-1-font-weight);
+        letter-spacing: var(--font-body-1-letter-spacing);
+        font-style: normal;
     }
 }

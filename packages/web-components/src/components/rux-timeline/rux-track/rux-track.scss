@@ -1,0 +1,33 @@
+:host {
+}
+
+.rux-track {
+    background: var(--color-background-surface-default);
+    width: fit-content;
+    border-bottom: 2px solid var(--color-background-base-default);
+}
+
+.rux-track__header {
+    box-sizing: border-box;
+    padding: 11px 8px 13px 8px;
+    background: var(--color-background-surface-default);
+    border-right: 2px solid var(--color-background-base-default);
+    display: flex;
+    align-items: center;
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    position: sticky;
+    left: 0;
+    min-width: 184px;
+    z-index: 2;
+}
+
+.rux-timeline {
+    scrollbar-color: var(--color-interactive-muted);
+    position: relative;
+    display: grid;
+    grid-template-rows: auto;
+    background: var(--color-background-surface-default);
+}
