@@ -20,17 +20,58 @@
     </head>
 
     <body>
-        whatup
-        <rux-beta-menu>
-            <rux-beta-menu-item selected
-                >Pop up menu option test</rux-beta-menu-item
-            >
-            <rux-beta-menu-item>Pop up menu option test</rux-beta-menu-item>
-        </rux-beta-menu>
-        <div style="margin: 20rem; notposition: relative">
+        <div style="padding: 10% 5%">
+            <rux-beta-pop-up-menu placement="top">
+                <rux-button slot="trigger">Top</rux-button>
+                <rux-beta-menu id="test">
+                    <rux-beta-menu-item selected
+                        >Pop up menu option test</rux-beta-menu-item
+                    >
+                    <rux-beta-menu-item
+                        >Pop up menu option test</rux-beta-menu-item
+                    >
+                    <rux-beta-menu-item
+                        >Pop up menu option test</rux-beta-menu-item
+                    >
+                </rux-beta-menu>
+            </rux-beta-pop-up-menu>
+        </div>
+        <div style="padding: 5%">
+            <rux-beta-pop-up-menu placement="right">
+                <rux-button slot="trigger">Right</rux-button>
+                <rux-beta-menu id="test">
+                    <rux-beta-menu-item selected
+                        >Pop up menu option test</rux-beta-menu-item
+                    >
+                    <rux-beta-menu-item
+                        >Pop up menu option test</rux-beta-menu-item
+                    >
+                    <rux-beta-menu-item
+                        >Pop up menu option test</rux-beta-menu-item
+                    >
+                </rux-beta-menu>
+            </rux-beta-pop-up-menu>
+        </div>
+        <div style="padding: 5%">
+            <rux-beta-pop-up-menu placement="bottom">
+                <rux-button slot="trigger">Bottom</rux-button>
+                <rux-beta-menu id="test">
+                    <rux-beta-menu-item selected
+                        >Pop up menu option test</rux-beta-menu-item
+                    >
+                    <rux-beta-menu-item
+                        >Pop up menu option test</rux-beta-menu-item
+                    >
+                    <rux-beta-menu-item
+                        >Pop up menu option test</rux-beta-menu-item
+                    >
+                </rux-beta-menu>
+            </rux-beta-pop-up-menu>
+        </div>
+        <div style="padding: 5% 20%">
             <rux-beta-pop-up-menu placement="left">
-                <rux-button slot="trigger">Hello</rux-button>
-                <rux-beta-menu>
+                <rux-button slot="trigger">Left</rux-button>
+                <rux-beta-menu id="test">
                     <rux-beta-menu-item selected
                         >Pop up menu option test</rux-beta-menu-item
                     >

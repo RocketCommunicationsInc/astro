@@ -6,6 +6,7 @@ import {
     offset,
     shift,
     flip,
+    autoUpdate,
 } from '@floating-ui/dom'
 
 @Component({
@@ -17,14 +18,13 @@ export class RuxBetaPopUpMenu {
     private trigger!: HTMLElement
     private content!: HTMLElement
     private arrowEl?: HTMLElement
+    private positionerCleanup: ReturnType<typeof autoUpdate> | undefined
 
     @Prop({ mutable: true }) open = false
     @Prop() placement: Placement = 'bottom'
 
     @Watch('open')
     handleOpen() {
-        console.log(this.hasMenu)
-
         if (this.open) {
             this.content.style.display = 'block'
         } else {
@@ -32,7 +32,8 @@ export class RuxBetaPopUpMenu {
         }
 
         if (this.open) {
-            this.position()
+            console.log('TRIGGER startPositioner()')
+            this.startPositioner()
         }
     }
 
@@ -46,11 +47,13 @@ export class RuxBetaPopUpMenu {
     }
 
     componentDidLoad() {
-        console.log(this.contentSlot)
+        //? Don't think this is necessary anymore - just calls an extra time
+        // console.log('**** position() call in compDidLoad *****')
         // this.position()
     }
 
     private position() {
+        console.log('*****Run postion()*****')
         /**
          * TOMORROWS NOTES
          * Problem: The initial position is off by like 20pixels. If you hide/show again,
@@ -68,6 +71,9 @@ export class RuxBetaPopUpMenu {
          * compute is calcualted.
          */
 
+        if (!this.open || !this.triggerSlot || !this.content) {
+            return
+        }
         //@ts-ignore
         computePosition(this.triggerSlot, this.content, {
             placement: this.placement,
@@ -108,7 +114,27 @@ export class RuxBetaPopUpMenu {
         })
     }
 
-    private _handleSlotChange() {
+    private startPositioner() {
+        console.log('****Start Positioner****')
+        this.stopPositioner()
+        this.position()
+        this.positionerCleanup = autoUpdate(
+            this.triggerSlot,
+            this.content,
+            this.position.bind(this)
+        )
+    }
+
+    private stopPositioner() {
+        console.log('****Stop Positioner****')
+        if (this.positionerCleanup) {
+            this.positionerCleanup()
+            this.positionerCleanup = undefined
+        }
+    }
+
+    private _handleSlotChange(e: any) {
+        console.log('inside handleSlotChange', e.path[1])
         this.position()
     }
 
@@ -121,6 +147,7 @@ export class RuxBetaPopUpMenu {
     }
 
     get triggerSlot() {
+        // console.log('fire triggerSlot()', this.trigger)
         //@ts-ignore
         return this.trigger
             ?.querySelector('slot')
@@ -139,7 +166,7 @@ export class RuxBetaPopUpMenu {
     }
 
     render() {
-        console.log(this.hasMenu)
+        // console.log(this.hasMenu, 'hasMenu in render')
 
         return (
             <Host>
@@ -168,7 +195,12 @@ export class RuxBetaPopUpMenu {
                             ref={(el) => (this.arrowEl = el)}
                         ></div>
 
-                        <slot onSlotchange={this._handleSlotChange}></slot>
+                        <slot
+                            onSlotchange={(e) => {
+                                console.log('Fire onSlotChange')
+                                this._handleSlotChange(e)
+                            }}
+                        ></slot>
                     </div>
                 </div>
             </Host>

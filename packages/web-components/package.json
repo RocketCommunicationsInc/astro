@@ -39,7 +39,7 @@
         "deploy.storybook": "netlify deploy --site 'bfaf1790-0a59-47fb-ab34-4a3530a715f1'"
     },
     "dependencies": {
-        "@floating-ui/dom": "~0.4.2",
+        "@floating-ui/dom": "~0.4.4",
         "@stencil/core": "~2.5.2",
         "date-fns": "~2.21.1",
         "date-fns-tz": "~1.1.7"

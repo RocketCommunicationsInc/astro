@@ -31,8 +31,9 @@
 
 .rux-popup-arrow {
     position: absolute;
-    background: #333;
-    width: 8px;
-    height: 8px;
+    background: #2b659b;
+    // background: linear-gradient(315deg, #232629 50%, #101923 50%); works great for a top placed menu, not for others lol
+    width: 9px;
+    height: 9px;
     transform: rotate(45deg);
 }
