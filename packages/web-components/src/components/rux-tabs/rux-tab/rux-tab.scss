@@ -2,7 +2,7 @@
     /**
     *   @prop --tab-text-color: Tab text color
     */
-    --tab-text-color: var(--color-primary);
+    --tab-text-color: var(--color-interactive-default);
 
     /**
     *   @prop --tab-border-color: Tab border color
@@ -12,23 +12,23 @@
     /**
     *   @prop --tab-hover-text-color: Tab hover text color
     */
-    --tab-hover-text-color: var(--color-default-text);
+    --tab-hover-text-color: var(--color-text-primary);
 
     /**
     *   @prop --tab-selected-text-color: Tab selected text color
     */
-    --tab-selected-text-color: var(--color-default-text);
+    --tab-selected-text-color: var(--color-text-primary);
 
     /**
     *   @prop --tab-selected-border-color: Tab selected border color
     */
-    --tab-selected-border-color: var(--color-primary);
+    --tab-selected-border-color: var(--color-interactive-default);
 
     box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 2rem;
+    padding: 1.875rem 1rem; //30 16
     margin: 0;
     min-width: 5rem;
     text-decoration: none;
@@ -47,6 +47,7 @@
 }
 :host([small]) {
     min-width: 2rem;
+    padding: 1.25rem 1rem; //20 16
     border-bottom: 3px solid var(--tab-border-color);
 }
 :host([small][selected]) {
@@ -56,8 +57,11 @@
     color: var(--tab-selected-text-color);
     border-bottom: 5px solid var(--tab-selected-border-color);
 }
+:host([selected]:hover) {
+    color: var(--tab-selected-text-color);
+}
 :host(:hover) {
-    color: var(--tab-hover-text-color);
+    color: var(--color-interactive-hover);
 }
 :host([disabled]) {
     color: var(--tab-text-color);

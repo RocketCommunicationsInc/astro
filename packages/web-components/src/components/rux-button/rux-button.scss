@@ -2,12 +2,12 @@
     /**
      * @prop --button-text-color: Button text color
      */
-    --button-text-color: var(--color-inverse-text);
+    --button-text-color: var(--color-text-inverse);
 
     /**
      * @prop --button-background-color: Button background color
      */
-    --button-background-color: var(--color-primary);
+    --button-background-color: var(--color-interactive-default);
 
     /**
      * @prop --button-border-color: Button border color
@@ -17,7 +17,7 @@
     /**
      * @prop --button-hover-background-color: Button hover background color
      */
-    --button-hover-background-color: var(--color-hover);
+    --button-hover-background-color: var(--color-interactive-hover);
 
     /**
      * @prop --button-hover-border-color: Button hover border color
@@ -27,23 +27,23 @@
     /**
      * @prop --button-active-background-color: Button active background color
      */
-    --button-active-background-color: var(--color-primary);
+    --button-active-background-color: var(--color-interactive-default);
 
     /**
      * @prop --button-active-border-color: Button active border color
      */
-    --button-active-border-color: var(--color-primary);
+    --button-active-border-color: var(--color-interactive-default);
 
     /**
      * @prop --button-secondary-text-color: Button secondary text color
      */
 
-    --button-secondary-text-color: var(--color-primary);
+    --button-secondary-text-color: var(--color-interactive-default);
 
     /**
     * @prop --button-secondary-hover-text-color: Secondary button hover text color
     */
-    --button-secondary-hover-text-color: var(--color-hover);
+    --button-secondary-hover-text-color: var(--color-interactive-hover);
 
     /**
      * @prop --button-secondary-background-color: Button secondary background color
@@ -53,7 +53,10 @@
     /**
      * @prop --button-secondary-border-color: Button secondary border color
      */
-    --button-secondary-border-color: var(--color-primary, rgb(0, 90, 143));
+    --button-secondary-border-color: var(
+        --color-interactive-default,
+        rgb(0, 90, 143)
+    );
 
     /**
      * @prop --button-secondary-hover-background-color:  Button secondary hover background color
@@ -63,19 +66,20 @@
     /**
      * @prop --button-secondary-hover-border-color:  Button secondary hover border color
      */
-    --button-secondary-hover-border-color: var(--color-hover);
+    --button-secondary-hover-border-color: var(--color-interactive-hover);
 
     /**
     * @prop --button-borderless-text-color: Button borderless text color
     */
-    --button-borderless-color: var(--color-primary);
+    --button-borderless-color: var(--color-interactive-default);
 
     /**
     * @prop --button-borderless-hover-color: Borderless buttons hover text color 
     */
-    --button-borderless-hover-color: var(--color-hover);
+    --button-borderless-hover-color: var(--color-interactive-hover);
 
     display: inline-block;
+    width: auto;
 }
 
 :host([hidden]) {
@@ -89,6 +93,7 @@
     display: flex;
     position: relative;
     margin: 0;
+    width: inherit;
     padding: 0 1rem;
     height: 2.125rem;
     min-width: 2.25rem;

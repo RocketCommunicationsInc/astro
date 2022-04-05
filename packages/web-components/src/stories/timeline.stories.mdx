@@ -1,0 +1,379 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { html, render } from 'lit-html'
+import { styled } from '@storybook/theming'
+export const StyledDiv = styled.div`
+    position: relative;
+    margin: 1rem 0;
+    border-left: 20px solid var(--color-icon-status-fill-serious);
+    background: white;
+    color: var(--color-icon-status-fill-serious);
+    padding: 19px;
+    font-family: var(--font-body-1-bold-font-family);
+    font-size: var(--font-body-1-bold-font-size);
+    font-weight: var(--font-body-1-bold-font-weight);
+    letter-spacing: var(--font-body-1-bold-letter-spacing);
+    .banner-text {
+        margin-top: 1rem;
+        color: var(--color-text-inverse);
+    }
+`
+
+export const BetaTag = styled.div`
+  display: inline-block;
+  padding: 7px;
+  color: var(--color-palette-neutral-1000);
+  border-radius: var(--radius-base);
+  background: var(--color-palette-teal-300);
+      font-family: var(--font-body-2-bold-font-family);
+    font-size: var(--font-body-2-bold-font-size);
+    font-weight: var(--font-body-2-bold-font-weight);
+    letter-spacing: var(--font-body-2-bold-letter-spacing);
+`
+
+<Meta
+    title="Beta/Timeline [BETA]"
+    component="rux-timeline"
+    subcomponents={{ 'RuxTrack': 'rux-track', 'RuxRuler': 'rux-ruler', 'RuxTimeRegion': 'rux-time-region' }}
+    argTypes={{
+          "end": {
+            "name": "end",
+            "description": "The timeline's end date. Must be an ISO string \"2021-02-02T05:00:00Z\"",
+            "type": {
+                "name": "date",
+                "required": false
+            },
+            "control": {
+                "type": "date"
+            },
+            "table": {
+                "category": "props",
+                "type": {
+                    "summary": "string"
+                },
+                "defaultValue": {
+                    "summary": "2021-02-02T00:00:00Z"
+                }
+            }
+        },
+        "interval": {
+            "name": "interval",
+            "description": "The timeline's date time interval",
+            "type": {
+                "name": "\"day\" | \"hour\"",
+                "required": false
+            },
+            "control": {
+                "type": "radio"
+            },
+            "table": {
+                "category": "props",
+                "type": {
+                    "summary": "\"day\" | \"hour\""
+                },
+                "defaultValue": {
+                    "summary": "'hour'"
+                }
+            },
+            "options": [
+                "day",
+                "hour"
+            ]
+        },
+        "playhead": {
+            "name": "playhead",
+            "description": "The timeline's playhead date time. Must be an ISO string \"2021-02-02T05:00:00Z\"",
+            "type": {
+                "name": "date | undefined",
+                "required": false
+            },
+            "control": {
+                "type": "date"
+            },
+            "table": {
+                "category": "props",
+                "type": {
+                    "summary": "date | undefined"
+                },
+                "defaultValue": {
+                    "summary": "2021-02-01T10:00:00Z"
+                }
+            },
+            "options": [
+                null
+            ]
+        },
+        "start": {
+            "name": "start",
+            "description": "The timeline's start date. Must be an ISO string \"2021-02-02T05:00:00Z\"",
+            "type": {
+                "name": "string",
+                "required": false
+            },
+            "control": {
+                "type": "date"
+            },
+            "table": {
+                "category": "props",
+                "type": {
+                    "summary": "string"
+                },
+                "defaultValue": {
+                    "summary": "2021-02-01T00:00:00Z"
+                }
+            },
+            "options": [
+                null
+            ]
+        },
+        "zoom": {
+            "name": "zoom",
+            "description": "The timeline's zoom level.",
+            "type": {
+                "name": "number",
+                "required": false
+            },
+            "control": {
+                "type": "number"
+            },
+            "table": {
+                "category": "props",
+                "type": {
+                    "summary": "number"
+                },
+                "defaultValue": {
+                    "summary": "1"
+                }
+            },
+            "options": [
+                null
+            ]
+        }
+    }}
+/>
+
+# Timeline <BetaTag>BETA</BetaTag>
+
+Timeline displays a sequence of realtime events during a fixed time span. The Playhead indicates the current time of day. Time Regions represent events.
+
+<StyledDiv>
+    <div>Warning: This is an experimental component</div>
+    <p class="banner-text">
+        Timeline is currently experimental which means that we may introduce breaking changes at any time. 
+        These will not be reflected in our current semvar versioning and release strategy.
+        If you are using this component, make sure to frequently check our release notes and update your
+        applications accordingly.
+    </p>
+</StyledDiv>
+
+## Guidelines
+
+-   [Astro UXDS: Timeline](http://www.astrouxds.com/components/timeline)
+
+export const Default = (args) => {
+    let start = args.start
+    let end = args.end
+    let position = args.playhead
+    if (args.start) {
+        start = new Date(args.start).toISOString()
+    }
+    if (args.end) {
+        end = new Date(args.end).toISOString()
+    }
+    if (args.playhead) {
+        position = new Date(args.playhead).toISOString()
+    }
+    return html`
+        <div style="width: 1050px; margin: auto">
+            <rux-timeline start="${start}" end="${end}" playhead="${position}" interval="${args.interval}" zoom="${args.zoom}">
+                <rux-track>
+                    <div slot="label">Region 1</div>
+                    <rux-time-region start="2021-02-01T01:00:00Z" end="2021-02-01T02:00:00Z">
+                        <rux-status status="normal"></rux-status>
+                        Event 1.2
+                    </rux-time-region>
+                </rux-track>
+                <rux-track>
+                    <div slot="label">Region 2</div>
+                    <rux-time-region start="2021-02-01T10:00:00Z" end="2021-02-01T12:00:00Z">
+                        <rux-status status="normal"></rux-status>
+                        Event 2.1
+                    </rux-time-region>
+                </rux-track>
+                <rux-track>
+                    <div slot="label">Region 3</div>
+                    <rux-time-region start="2021-02-01T00:00:00Z" end="2021-02-02T02:00:00Z">
+                        <rux-status status="normal"></rux-status>
+                        Event 3.1
+                    </rux-time-region>
+                </rux-track>
+                <rux-track>
+                    <div slot="label">Region 4</div>
+                    <rux-time-region start="2021-02-01T05:00:00Z" end="2021-02-02T05:33:00Z">
+                        <rux-status status="normal"></rux-status>
+                        Event 4.1
+                    </rux-time-region>
+                </rux-track>
+                <rux-track>
+                    <div slot="label">Region 4</div>
+                    <rux-time-region start="2021-02-01T05:00:00Z" end="2021-02-02T05:33:00Z">
+                        <rux-status status="normal"></rux-status>
+                        Event 4.1
+                    </rux-time-region>
+                </rux-track>
+                <rux-track>
+                    <div slot="label">Region 4</div>
+                    <rux-time-region start="2021-02-01T05:00:00Z" end="2021-02-02T05:33:00Z">
+                        <rux-status status="normal"></rux-status>
+                        Event 4.1
+                    </rux-time-region>
+                </rux-track>
+                <rux-track>
+                    <div slot="label">Region 4</div>
+                    <rux-time-region start="2021-02-01T05:00:00Z" end="2021-02-02T05:33:00Z">
+                        <rux-status status="normal"></rux-status>
+                        Event 4.1
+                    </rux-time-region>
+                </rux-track>
+                <rux-track slot="ruler">
+                    <rux-ruler></rux-ruler>
+                </rux-track>
+            </rux-timeline>
+        </div>
+    `
+}
+
+<Canvas>
+    <Story
+        name="Default"
+        args={{
+            zoom: 2,
+            interval: 'hour',
+            start: '2021-02-01T00:00:00Z',
+            end: '2021-02-03T00:00:00Z',
+            playhead: '2021-02-01T04:00:00Z'
+        }}
+    >
+        {Default.bind()}
+    </Story>
+</Canvas>
+
+## API
+
+<ArgsTable of="rux-timeline" />
+
+## Timeline
+
+The Timeline component is responsible for
+
+-   creating and manipulating the grid used to display events.
+-   rendering the appropriate labels for **Ruler**
+-   controlling the position of the playhead
+
+It is composed of the following subcomponents:
+-  Track
+-  Time Region
+-  Ruler
+
+## Zoom
+
+The width between each time interval can be controlled by the `zoom` property. By default, it starts at 1 and can be incremented. 
+The column width is automatically calculated based off of the timeline's current interval (days/hours/etc).
+You should consider your timeline's range and set an appropriate default zoom level so that your time intervals can fill the entire viewport.
+
+If your timeline spans multiple days, you will also want to consider manually controlling the interval. For example, if your timeline is set to days,
+you will probably want your interval to change to hours as your zoom level increases.
+
+### Setting the Time Regions
+
+To add any number of Time Regions, you can simply add them as children to any Track element:
+
+```
+<rux-track>
+    <div slot="label">
+        Region1
+    </div>
+    <rux-time-region
+        start="2021-02-01T00:00:00Z"
+        end="2021-02-01T00:30:00Z"
+    >
+        Region1
+    </rux-time-region>
+    <rux-time-region
+        start="2021-02-01T03:00:00Z"
+        end="2021-02-01T05:30:00Z"
+    >
+        Region2
+    </rux-time-region>
+</rux-track>
+```
+
+### Enabling the Ruler
+
+To enable the bottom ruler, make use of the `ruler` slot by passing in a `rux-ruler` within a `rux-track`:
+
+```
+<rux-track slot="ruler">
+  <rux-ruler></rux-ruler>
+</rux-track>
+```
+
+
+### Enabling Vertical Scrolling
+
+If your Timeline contains too many rows to fit into your viewport, you can make use of the `time-region-container` CSS Shadow Part and set a height using CSS.
+This will enable the overflow: scroll.
+
+For example: 
+
+```
+rux-timeline::part(time-region-container) {
+    height: 400px;
+}
+```
+
+<Story name="Track">{''}</Story>
+
+## Track
+
+Tracks are responsible for displaying content in horizontal lanes across the Timeline.
+They can include **Time Regions** or the **Ruler** component. 
+They are composed of a label section and a time region section.
+
+<ArgsTable of="rux-track" />
+
+### Setting the Label
+
+To set the label of a Region, you can use the `label` slot:
+
+```
+<rux-track>
+    <div slot="label">
+        Region1
+    </div>
+</rux-track>
+```
+
+## Time Region
+
+Time Regions represent single events in time. A `start` time and an `end` time are required. If a `start` and `end` time aren't provided, or an invalid range is provided,
+the component will throw an error and not render. A valid `start` and `end` time must fall within the date range specified on the root **Timeline** component
+
+```
+<rux-time-region
+    start="2021-02-01T00:00:00Z"
+    end="2021-02-01T00:30:00Z"
+>
+    Region1
+</rux-time-region>
+```
+> NOTE: Editing a Time Region's start or end dates after it has been rendered will not trigger another rerender. If you need to update data, instead remove the `time-region` node entirely and create a new one.
+
+<ArgsTable of="rux-time-region" />
+
+## Ruler
+
+**Ruler** is responsible for displaying the intervals of time across the timeline grid.
+
+```
+    <rux-ruler></rux-ruler>
+```

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script type="module" src="/build/astro-web-components.esm.js"></script>
+        <script nomodule src="/build/astro-web-components.js"></script>
+
+        <link rel="stylesheet" href="/build/astro-web-components.css" />
+    </head>
+
+    <body>
+        <style>
+            #custom {
+                border: 1px solid green;
+                width: 70px;
+                min-height: 24px;
+            }
+        </style>
+        <div style="padding: 10px 5%">
+            <rux-tag status="pass"></rux-tag>
+        </div>
+        <div style="padding: 10px 5%">
+            <rux-tag status="fail"></rux-tag>
+        </div>
+        <div style="padding: 10px 5%">
+            <rux-tag status="unknown"></rux-tag>
+        </div>
+        <h4>With Slot</h4>
+        <div style="padding: 10px 5%; width: 100px">
+            <rux-tag id="custom">Custom</rux-tag>
+        </div>
+        <h4>Default</h4>
+        <div style="padding: 10px 5%; width: 100px">
+            <rux-tag></rux-tag>
+        </div>
+        <h4>Bad Status</h4>
+        <div style="padding: 10px 5%; width: 100px">
+            <rux-tag status="standby" id="invalid-status"></rux-tag>
+        </div>
+    </body>
+</html>

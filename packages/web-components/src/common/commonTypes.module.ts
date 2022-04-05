@@ -18,3 +18,5 @@ export type Classification =
 export type StatusTypes = {
     [id: string]: boolean
 }
+
+export type StatusTags = 'pass' | 'fail' | 'unknown'

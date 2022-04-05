@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
 <Meta
@@ -25,9 +25,9 @@ export const Default = (args) => {
         app-name="${args.appName}"
         app-version="${args.appVersion}"
         menu-icon="${args.menuIcon}"
-        .username="${args.username}"
-        .app-state-color="${args.appStateColor}"
-        .app-state="${args.appState}"
+        username="${args.username}"
+        app-state-color="${args.appStateColor}"
+        app-state="${args.appState}"
     >
     </rux-global-status-bar>
 </div>
@@ -43,6 +43,12 @@ export const Default = (args) => {
             appVersion: '4.0 Alpha',
             menuIcon: 'apps',
             includeIcon: true,
+            appState: "",
+            appStateColor: "",
+            username: ""
+        }}
+        argTypes={{
+            appStateColor: { control: { type: "select" } },
         }}
     >
         {Default.bind()}
@@ -87,6 +93,9 @@ export const GlobalStatusBarWithAppState = (args) => {
             menuIcon: 'apps',
             includeIcon: true,
         }}
+        argTypes={{
+            appStateColor: { control: { type: "select" } },
+        }}
         name="With App State"
     >
         {GlobalStatusBarWithAppState.bind()}
@@ -126,6 +135,9 @@ export const GlobalStatusBarWithSlotContent = (args) => {
             appVersion: '4.0 Alpha',
             menuIcon: 'apps',
             includeIcon: true,
+        }}
+        argTypes={{
+            appStateColor: { control: { type: "select" } },
         }}
         name="With Slot Content"
     >
@@ -191,6 +203,9 @@ export const GlobalStatusBarWithTabs = (args) => {
             appVersion: '4.0 Alpha',
             menuIcon: 'apps',
             includeIcon: true,
+        }}
+         argTypes={{
+            appStateColor: { control: { type: "select" } },
         }}
         name="With Tabs"
     >

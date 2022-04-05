@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
 <Meta
@@ -87,7 +87,14 @@ export const AllVariants = () => {
 }
 
 <Canvas>
-    <Story name="All Variants">{AllVariants.bind()}</Story>
+    <Story
+        name="All Variants"
+         argTypes={{
+            status: { table: { disable: true } }
+        }}
+    >
+        {AllVariants.bind()}
+    </Story>
 </Canvas>
 
 ## Cherry Picking

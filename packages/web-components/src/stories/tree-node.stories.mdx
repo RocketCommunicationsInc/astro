@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
 <Meta
@@ -34,8 +34,12 @@ export const Default = (args) => {
 }
 
 <Canvas>
-    <Story // Set default args here
+    <Story
         name="Default"
+        args={{
+            expanded: false,
+            selected: false
+        }}
     >
         {Default.bind()}
     </Story>
@@ -51,12 +55,23 @@ export const Default = (args) => {
 
 export const Selected = (args) => {
     return html`
-<rux-tree-node ?selected="${args.selected}"> Level 1 </rux-tree-node>
+<rux-tree-node
+    ?selected="${args.selected}"
+    ?expanded="${args.expanded}"
+>
+    Level 1
+</rux-tree-node>
     `
 }
 
 <Canvas>
-    <Story args={{ selected: true }} name="Selected">
+    <Story
+        args={{
+            selected: true,
+            expanded: false
+        }}
+        name="Selected"
+    >
         {Selected.bind()}
     </Story>
 </Canvas>
@@ -76,7 +91,13 @@ export const Expanded = (args) => {
 }
 
 <Canvas>
-    <Story args={{ expanded: true }} name="Expanded">
+    <Story
+        args={{
+            expanded: true,
+            selected: false
+        }}
+        name="Expanded"
+    >
         {Expanded.bind()}
     </Story>
 </Canvas>

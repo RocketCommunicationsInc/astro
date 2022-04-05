@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
 <Meta
@@ -24,6 +24,7 @@ export const Default = (args) => {
         label="${args.label}"
         status="${args.status}"
         notifications="${args.notifications}"
+        sublabel="${args.sublabel}"
     ></rux-monitoring-icon>
 </div>
 <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
@@ -44,6 +45,7 @@ export const Default = (args) => {
             icon: 'altitude',
             label: 'Monitoring',
             notifications: 1,
+            sublabel: ""
         }}
         name="Default"
     >
@@ -131,7 +133,18 @@ export const AllVariants = (args) => {
 }
 
 <Canvas>
-    <Story name="All Variants">{AllVariants.bind()}</Story>
+    <Story
+        name="All Variants"
+        argTypes={{
+            label: { table: { disable: true } },
+            icon: { table: { disable: true } },
+            notifications: { table: { disable: true } },
+            status: { table: { disable: true } },
+            sublabel: { table: { disable: true } }
+        }}
+    >
+        {AllVariants.bind()}
+    </Story>
 </Canvas>
 
 ## Cherry Picking

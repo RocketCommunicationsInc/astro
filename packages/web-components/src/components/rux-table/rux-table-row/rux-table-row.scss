@@ -7,9 +7,9 @@
 }
 
 :host(.is-selected) {
-    background: var(--table-row-selected-background-color);
+    background: var(--color-background-surface-selected);
     ::slotted(rux-table-cell) {
-        border-color: var(--table-row-selected-border-color);
+        border-color: var(--color-background-base-default);
     }
 }
 

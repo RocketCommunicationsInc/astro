@@ -6,19 +6,21 @@
     --pushbutton-background-color: none;
 
     /** @prop --pushbutton-border-color: the Push Button border color */
-    --pushbutton-border-color: var(--color-primary);
+    --pushbutton-border-color: var(--color-interactive-default);
 
     /** @prop --pushbutton-text-color: the Push Button text color */
-    --pushbutton-text-color: var(--color-primary);
+    --pushbutton-text-color: var(--color-interactive-default);
 
     /** @prop --pushbutton-selected-background-color: the Push Button background color when checked */
-    --pushbutton-selected-background-color: var(--color-status-normal-fill);
+    --pushbutton-selected-background-color: var(
+        --color-icon-status-fill-normal
+    );
 
     /** @prop --pushbutton-selected-border-color: the Push Button border color when checked */
-    --pushbutton-selected-border-color: var(--color-status-normal-fill);
+    --pushbutton-selected-border-color: var(--color-icon-status-fill-normal);
 
     /** @prop --pushbutton-selected-text-color: the Push Button text color when checked */
-    --pushbutton-selected-text-color: var(--color-inverse-text);
+    --pushbutton-selected-text-color: var(--color-text-inverse);
 
     --pushbutton-selected-hover-text-color: var(
         --color-global-status-normal-400
@@ -59,10 +61,10 @@
 
             &:hover {
                 cursor: pointer;
-                color: var(--color-hover);
-                border-color: var(--color-hover);
+                color: var(--color-interactive-hover);
+                border-color: var(--color-interactive-hover);
                 rux-icon {
-                    color: var(--color-hover);
+                    color: var(--color-interactive-hover);
                 }
             }
 

@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 const args = extractArgTypes('rux-icon')
 import ruxIconsJson from './icons.json'
@@ -18,8 +18,8 @@ export const Default = (args) => {
     return html`
         <rux-icon
             icon="${args.icon}"
-            .size="${args.size}"
-            .label="${args.label}"
+            size="${args.size}"
+            label="${args.label}"
         ></rux-icon>
     `
 }
@@ -29,6 +29,7 @@ export const Default = (args) => {
         args={{
             icon: 'satellite-transmit',
             size: 'normal',
+            label: ""
         }}
         parameters={{
             docs: {
@@ -184,6 +185,11 @@ export const AllIcons = (args) => {
     <Story
         args={{
             size: 'normal',
+        }}
+        argTypes={{
+            size: { table: { disable: true } },
+            icon: { table: { disable: true } },
+            label: { table: { disable: true } }
         }}
         name="All Icons"
     >

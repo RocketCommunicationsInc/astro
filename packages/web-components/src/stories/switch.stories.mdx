@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
 <Meta
@@ -32,6 +32,8 @@ export const Switch = (args) => {
         ?disabled=${args.disabled}
         ?checked=${args.checked}
         label=${args.label}
+        name=${args.name}
+        value=${args.value}
     ></rux-switch>
 </div>
     `
@@ -40,6 +42,13 @@ export const Switch = (args) => {
 <Canvas>
     <Story
         name="Switch"
+        args={{
+            checked: false,
+            disabled: false,
+            label: "",
+            name: "",
+            value: ""
+        }}
     >
         {Switch.bind()}
     </Story>
@@ -51,6 +60,31 @@ export const Switch = (args) => {
 
 ## Variants
 
+### On
+
+export const On = (args) => {
+    return html`
+<div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
+    <rux-switch
+        ?disabled=${args.disabled}
+        ?checked=${args.checked}
+        .label=${args.label}
+    ></rux-switch>
+</div>
+    `
+}
+
+<Canvas>
+    <Story
+        name="On"
+        args={{
+           checked: true
+        }}
+    >
+        {On.bind()}
+    </Story>
+</Canvas>
+
 ### Disabled
 
 export const Disabled = (args) => {
@@ -59,6 +93,9 @@ export const Disabled = (args) => {
     <rux-switch
         ?disabled=${args.disabled}
         ?checked=${args.checked}
+        name=${args.name}
+        value=${args.value}
+        .label=${args.label}
     ></rux-switch>
 </div>
     `
@@ -69,9 +106,38 @@ export const Disabled = (args) => {
         name="Disabled"
         args={{
             disabled: true,
+            checked: false,
+            label: "",
+            name: "",
+            value: ""
         }}
     >
         {Disabled.bind()}
+    </Story>
+</Canvas>
+
+### With Label 
+
+export const WithLabel = (args) => {
+    return html`
+<div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
+    <rux-switch
+        ?disabled=${args.disabled}
+        ?checked=${args.checked}
+        .label=${args.label}
+    ></rux-switch>
+</div>
+    `
+}
+
+<Canvas>
+    <Story
+        name="With Label"
+        args={{
+            label: 'Switch Label'
+        }}
+    >
+        {WithLabel.bind()}
     </Story>
 </Canvas>
 

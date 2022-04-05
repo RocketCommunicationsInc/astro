@@ -310,6 +310,10 @@
     ]
   },
   {
+    "label": "Releases",
+    "url": "/releases"
+  },
+  {
     "label": "Downloads",
     "url": "/downloads"
   },

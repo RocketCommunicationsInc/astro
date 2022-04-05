@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script type="module" src="/build/astro-web-components.esm.js"></script>
+        <script nomodule src="/build/astro-web-components.js"></script>
+
+        <link rel="stylesheet" href="/build/astro-web-components.css" />
+    </head>
+
+    <body>
+        <div style="width: 1050px; margin: auto">
+            <rux-timeline
+                start="2021-02-01T00:00:00Z"
+                end="2021-02-05T12:00:00Z"
+                position="2021-02-01T04:00:00Z"
+                interval="hour"
+                zoom="1"
+            >
+                <rux-playhead slot="playhead"></rux-playhead>
+                <rux-track slot="ruler">
+                    <rux-ruler></rux-ruler>
+                </rux-track>
+            </rux-timeline>
+
+            <rux-button id="decrease">-</rux-button>
+            <rux-button id="increase">+</rux-button>
+            <div>
+                <input
+                    id="startDate"
+                    type="datetime-local"
+                    value="2020-01-19T16:23"
+                    label="start Date"
+                />
+
+                <input
+                    id="endDate"
+                    type="datetime-local"
+                    value="2020-01-21T16:23"
+                    label="End Date"
+                />
+
+                <rux-segmented-button> </rux-segmented-button>
+                <rux-button id="update">Update</rux-button>
+            </div>
+        </div>
+        <script>
+            const increaseButton = document.querySelector('#increase')
+            const decreaseButton = document.querySelector('#decrease')
+            const segButtEl = document.querySelector('rux-segmented-button')
+            segButtEl.data = [
+                {
+                    label: 'hour',
+                    selected: true,
+                },
+                {
+                    label: 'day',
+                },
+            ]
+
+            const saveEl = document.querySelector('#update')
+            const timelineEl = document.querySelector('rux-timeline')
+            // const timelineEl = document.querySelector('#dayline')
+            const startDate = document.querySelector('#startDate')
+            const endDate = document.querySelector('#endDate')
+
+            increaseButton.addEventListener('click', () => {
+                timelineEl.zoom = timelineEl.zoom + 1
+            })
+
+            decreaseButton.addEventListener('click', () => {
+                timelineEl.zoom = timelineEl.zoom - 1
+            })
+
+            saveEl.addEventListener('click', () => {
+                console.log('time', startDate.value)
+                timelineEl.start = startDate.value
+                timelineEl.end = endDate.value
+            })
+
+            segButtEl.addEventListener('ruxchange', (e) => {
+                timelineEl.interval = e.detail
+            })
+
+            function seedTimeline(events) {
+                events.map((region) => {
+                    const trackEl = document.createElement('rux-track')
+                    const labelEl = document.createElement('div')
+                    labelEl.setAttribute('slot', 'label')
+                    labelEl.innerText = region.label
+                    trackEl.appendChild(labelEl)
+
+                    region.events.map((event) => {
+                        const eventEl = document.createElement(
+                            'rux-time-region'
+                        )
+                        eventEl.start = event.start
+                        eventEl.end = event.end
+                        eventEl.innerText = event.label
+                        trackEl.appendChild(eventEl)
+                    })
+
+                    timelineEl.appendChild(trackEl)
+                })
+
+                // const ruler = makeRuler()
+                // timelineEl.appendChild(ruler)
+
+                function makeRuler() {
+                    const ruler = document.createElement('rux-ruler')
+                    const rulerTrack = document.createElement('rux-track')
+                    rulerTrack.appendChild(ruler)
+                    return rulerTrack
+                }
+            }
+
+            function generateLabel() {
+                return (Math.random() + 1).toString(36).substring(7)
+            }
+
+            function randomDate(
+                start = new Date(2021, 1, 1),
+                end = new Date(2021, 1, 2),
+                startHour = 0,
+                endHour = 24
+            ) {
+                var date = new Date(+start + Math.random() * (end - start))
+                var hour =
+                    (startHour + Math.random() * (endHour - startHour)) | 0
+                date.setHours(hour)
+                return date
+            }
+
+            function generateEvents(numberOfRegions = 20, numberOfEvents = 5) {
+                const events = []
+                for (let i = 0; i < numberOfRegions; i++) {
+                    const name = generateLabel()
+                    let region = {
+                        label: name,
+                        events: [],
+                    }
+                    for (let i = 0; i < numberOfEvents; i++) {
+                        let eventStart = randomDate(
+                            new Date(2021, 1, 1),
+                            new Date(2021, 1, 1)
+                        )
+                        const eventYear = eventStart.getFullYear()
+                        const eventMonth = eventStart.getMonth()
+                        const eventDay = eventStart.getDay()
+
+                        const newEnd = new Date(eventStart)
+                        console.log('event beffore', eventStart)
+                        let newDate = new Date(
+                            newEnd.setHours(
+                                newEnd.getHours() +
+                                    Math.floor(Math.random() * 24)
+                            )
+                        )
+
+                        newDate = new Date(
+                            newDate.setMinutes(
+                                newDate.getMinutes() +
+                                    Math.floor(Math.random() * 60)
+                            )
+                        )
+                        const eventEnd = randomDate(
+                            new Date(eventStart),
+                            newDate
+                        )
+
+                        eventStart = new Date(
+                            eventStart.setMinutes(
+                                eventStart.getMinutes() +
+                                    Math.floor(Math.random() * 60)
+                            )
+                        )
+
+                        const event = {
+                            label: generateLabel(),
+                            start: eventStart.toISOString(),
+                            end: newDate.toISOString(),
+                        }
+                        region.events.push(event)
+                    }
+                    events.push(region)
+                }
+                return events
+            }
+
+            const events = generateEvents(15)
+
+            seedTimeline(events)
+        </script>
+    </body>
+</html>

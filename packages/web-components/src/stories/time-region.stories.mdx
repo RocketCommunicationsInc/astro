@@ -1,0 +1,255 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { html, render } from 'lit-html'
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { styled } from '@storybook/theming'
+export const StyledDiv = styled.div`
+    position: relative;
+    margin: 1rem 0;
+    border-left: 20px solid var(--color-icon-status-fill-serious);
+    background: white;
+    color: var(--color-icon-status-fill-serious);
+    padding: 19px;
+    font-family: var(--font-body-1-bold-font-family);
+    font-size: var(--font-body-1-bold-font-size);
+    font-weight: var(--font-body-1-bold-font-weight);
+    letter-spacing: var(--font-body-1-bold-letter-spacing);
+    .banner-text {
+        margin-top: 1rem;
+        color: var(--color-text-inverse);
+    }
+`
+
+export const BetaTag = styled.div`
+  display: inline-block;
+  padding: 7px;
+  color: var(--color-palette-neutral-1000);
+  border-radius: var(--radius-base);
+  background: var(--color-palette-teal-300);
+      font-family: var(--font-body-2-bold-font-family);
+    font-size: var(--font-body-2-bold-font-size);
+    font-weight: var(--font-body-2-bold-font-weight);
+    letter-spacing: var(--font-body-2-bold-letter-spacing);
+`
+
+
+<Meta
+    title="Beta/Timeline [BETA]/Time Region"
+    component="rux-time-region"
+    argTypes={{
+	        "end": {
+        "name": "end",
+        "description": "The end time",
+        "type": {
+            "name": "any",
+            "required": false
+        },
+        "control": {
+            "type": "date"
+        },
+        "table": {
+            "category": "props",
+            "type": {
+                "summary": "any"
+            },
+            "defaultValue": {}
+        },
+        "options": []
+    },
+    "hideTimestamp": {
+        "name": "hide-timestamp",
+        "description": "Optionally hide the bottom right timestamp.",
+        "type": {
+            "name": "boolean",
+            "required": false
+        },
+        "control": {
+            "type": "boolean"
+        },
+        "table": {
+            "category": "props",
+            "type": {
+                "summary": "boolean"
+            },
+            "defaultValue": {
+                "summary": "false"
+            }
+        },
+        "options": []
+    },
+    "start": {
+        "name": "start",
+        "description": "The start time",
+        "type": {
+            "name": "any",
+            "required": false
+        },
+        "control": {
+            "type": "date"
+        },
+        "table": {
+            "category": "props",
+            "type": {
+                "summary": "any"
+            },
+            "defaultValue": {}
+        },
+        "options": []
+    }
+    }}
+/>
+
+# Time Region <BetaTag>BETA</BetaTag>
+
+<StyledDiv>
+    <div>Warning: This is an experimental component</div>
+    <p class="banner-text">
+        Time Region is currently experimental which means that we may introduce breaking changes at any time. 
+        These will not be reflected in our current semvar versioning and release strategy.
+        If you are using this component, make sure to frequently check our release notes and update your
+        applications accordingly.
+    </p>
+</StyledDiv>
+
+## Guidelines
+
+-   [Astro UXDS: Timeline](http://www.astrouxds.com/components/timeline)
+
+export const Default = (args) => {
+	let start = args.start
+    let end = args.end
+    if (args.start) {
+        start = new Date(args.start).toISOString()
+    }
+    if (args.end) {
+        end = new Date(args.end).toISOString()
+    }
+    return html`
+	<rux-time-region start="${start}" ?hide-timestamp="${args.hideTimestamp}" end="${end}" selected="${args.selected}">
+		Cras vestibulum orci sed nisl
+	</rux-time-region>
+    `
+}
+
+<Canvas>
+    <Story
+        name="Default"
+	args={{
+		start: '2021-01-01T00:00',
+		end: '2021-01-02T00:00',
+		selected: false,
+		hideTimestamp: false
+	}}
+    >
+        {Default.bind()}
+    </Story>
+</Canvas>
+
+export const Selected = (args) => {
+    return html`
+	<rux-time-region start="2021-01-01T00:00" end="2021-01-02T00:00" selected="${args.selected}">
+		Cras vestibulum orci sed nisl
+	</rux-time-region>
+    `
+}
+
+<Canvas>
+    <Story
+        name="Selected"
+	args={{
+		selected: true
+	}}
+    >
+        {Selected.bind()}
+    </Story>
+</Canvas>
+
+export const AllVariants = (args) => {
+    return html`
+    <style>
+	rux-time-region {
+		margin-bottom: 1rem;
+	}
+    </style>
+	<h2>With Slotted Status</h2>
+	<rux-time-region start="2021-01-01T00:00" end="2021-01-02T00:00">
+	    <rux-status status="normal"></rux-status>
+		Cras vestibulum orci sed nisl
+	</rux-time-region>
+	<br>
+	<rux-time-region selected start="2021-01-01T00:00" end="2021-01-02T00:00">
+	    <rux-status status="normal"></rux-status>
+		Cras vestibulum orci sed nisl
+	</rux-time-region>
+	<h2>Without Status</h2>
+	<rux-time-region start="2021-01-01T00:00" end="2021-01-02T00:00">
+		Cras vestibulum orci sed nisl
+	</rux-time-region>
+	<br>
+	<rux-time-region selected start="2021-01-01T00:00" end="2021-01-02T00:00">
+		Cras vestibulum orci sed nisl
+	</rux-time-region>
+	<h2>With Status</h2>
+	<br>
+	<rux-time-region status="normal" start="2021-01-01T00:00" end="2021-01-02T00:00">
+		Cras vestibulum orci sed nisl
+	</rux-time-region>
+	<br>
+	<rux-time-region selected status="normal" start="2021-01-01T00:00" end="2021-01-02T00:00">
+		Cras vestibulum orci sed nisl
+	</rux-time-region>
+	<br>
+	<rux-time-region status="critical" start="2021-01-01T00:00" end="2021-01-02T00:00">
+		Cras vestibulum orci sed nisl
+	</rux-time-region>
+	<br>
+	<rux-time-region selected status="critical" start="2021-01-01T00:00" end="2021-01-02T00:00">
+		Cras vestibulum orci sed nisl
+	</rux-time-region>
+	<br>
+	<rux-time-region status="caution" start="2021-01-01T00:00" end="2021-01-02T00:00">
+		Cras vestibulum orci sed nisl
+	</rux-time-region>
+	<br>
+	<rux-time-region selected status="caution" start="2021-01-01T00:00" end="2021-01-02T00:00">
+		Cras vestibulum orci sed nisl
+	</rux-time-region>
+	<br>
+	<rux-time-region status="standby" start="2021-01-01T00:00" end="2021-01-02T00:00">
+		Cras vestibulum orci sed nisl
+	</rux-time-region>
+	<br>
+	<rux-time-region selected status="standby" start="2021-01-01T00:00" end="2021-01-02T00:00">
+		Cras vestibulum orci sed nisl
+	</rux-time-region>
+    `
+}
+
+<Canvas>
+    <Story
+        name="All Variants"
+	args={{
+		start: '2021-01-01T00:00',
+		end: '2021-01-02T00:00'
+	}}
+    >
+        {AllVariants.bind()}
+    </Story>
+</Canvas>
+
+## API
+
+<ArgsTable of="rux-time-region" />
+
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxTimeRegion } from 'astro-web-components/dist/components/rux-time-region'
+customElements.define('rux-time-region', RuxTimeRegion)
+
+// If using the status attribute
+// import { RuxStatus } from 'astro-web-components/dist/components/rux-status'
+// customElements.define('rux-status', RuxStatus)
+```

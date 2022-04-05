@@ -1,5 +1,5 @@
 import { html, render } from 'lit-html'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
 
 <Meta
@@ -35,7 +35,11 @@ export const Default = (args) => {
 }
 
 <Canvas>
-    <Story args={{ classification: 'unclassified' }} name="Default">
+    <Story args={{ 
+        classification: 'unclassified',
+        tag: false, 
+        label: "" }}
+        name="Default">
         {Default.bind()}
     </Story>
 </Canvas>
@@ -69,6 +73,7 @@ export const WithLabel = (args) => {
     <Story
         args={{
             classification: 'unclassified',
+            tag: false,
             label: ' customlabel',
         }}
         name="With Label"
@@ -86,7 +91,11 @@ export const WithFooterBanner = (args) => {
 <div
     style="display: flex; flex-flow: column; justify-content: center; margin-bottom:50px; position: relative;"
 >
-    <rux-classification-marking classification="${args.classification}">
+     <rux-classification-marking
+        classification="${args.classification}"
+        label="${args.label}"
+        ?tag="${args.tag}"
+    >
         <h1>Document Title</h1>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -175,6 +184,8 @@ export const WithFooterBanner = (args) => {
     <Story
         args={{
             classification: 'secret',
+            tag: false,
+            label: ""
         }}
         name="With Footer Banner"
     >
@@ -243,7 +254,11 @@ export const AllBannerVariants = (args) => {
 }
 
 <Canvas>
-    <Story name="All Banner Variants">{AllBannerVariants.bind()}</Story>
+    <Story argTypes={{
+            classification: { table: { disable: true } },
+            label: { table: { disable: true } },
+            tag: { table: { disable: true } },
+        }} name="All Banner Variants">{AllBannerVariants.bind()}</Story>
 </Canvas>
 
 ### All Tag Variants

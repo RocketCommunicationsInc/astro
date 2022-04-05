@@ -1,0 +1,62 @@
+:host {
+    display: block;
+}
+
+.rux-time-region {
+    background: var(--color-background-base-default);
+    padding: 0.25rem; // 4px;
+    overflow: hidden;
+    min-height: 40px;
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-interactive-default);
+}
+
+.rux-time-region__content {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-body-2-font-family);
+    font-size: var(--font-body-2-font-size);
+    font-weight: var(--font-body-2-font-weight);
+    letter-spacing: var(--font-body-2-letter-spacing);
+
+    ::slotted(rux-status),
+    rux-status {
+        margin-right: 0.125rem; //2px
+    }
+}
+
+.rux-time-region__datetime {
+    margin-top: 0.25rem;
+    text-align: right;
+    font-family: var(--font-body-3-font-family);
+    font-size: var(--font-body-3-font-size);
+    font-weight: var(--font-body-3-font-weight);
+    letter-spacing: var(--font-body-3-letter-spacing);
+}
+
+.rux-time-region--selected {
+    background: var(--color-interactive-default);
+    border: 1px solid var(--color-interactive-default);
+    --status-symbols: var(--status-symbols-light);
+    color: var(--color-text-inverse);
+}
+
+.rux-time-region--normal:not(.rux-time-region--selected) {
+    border: 1px solid var(--color-interactive-default);
+}
+
+.rux-time-region--critical:not(.rux-time-region--selected) {
+    border: 1px solid var(--color-icon-status-fill-critical);
+}
+
+.rux-time-region--caution:not(.rux-time-region--selected) {
+    border: 1px solid var(--color-icon-status-fill-caution);
+}
+
+.rux-time-region--standby:not(.rux-time-region--selected) {
+    border: 1px solid var(--color-icon-status-fill-standby);
+}
+
+.hidden {
+    visibility: hidden;
+}

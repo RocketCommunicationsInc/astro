@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
 <Meta
@@ -40,9 +40,19 @@ export const PushButton = (args) => {
 
 <Canvas>
     <Story
-    args={{
-        label: "Push Button",    }
-    }
+        args={{
+            label: "Push Button",
+            checked: false,    
+            disabled: false,
+            icon: "",
+            iconOnly: false,
+            name: "",
+            size: "medium",
+            value: ""
+        }}
+        argTypes={{
+            size: { control: "select"}
+        }}
         name="Push Button"
     >
         {PushButton.bind()}
@@ -173,7 +183,21 @@ export const AllVariants = (args) => {
 }
 
 <Canvas>
-    <Story name="All Variants">{AllVariants.bind()}</Story>
+    <Story
+        name="All Variants"
+        argTypes={{
+            checked: { table: { disable: true } },
+            disabled: { table: { disable: true } },
+            icon: { table: { disable: true } },
+            iconOnly: { table: { disable: true } },
+            size: { table: { disable: true } },
+            label: { table: { disable: true } },
+            name: { table: { disable: true } },
+            value: { table: { disable: true } }
+        }}
+    >
+        {AllVariants.bind()}
+    </Story>
 </Canvas>
 
 ## Cherry Picking

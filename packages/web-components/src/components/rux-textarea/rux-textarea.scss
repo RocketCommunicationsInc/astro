@@ -4,28 +4,28 @@
     /**
      * @prop --textarea-border-color: Border color of the textarea.
     */
-    --textarea-border-color: var(--color-active);
+    --textarea-border-color: var(--color-interactive-muted);
 
     /**
      * @prop --textarea-text-color: Text color
     */
-    --textarea-text-color: var(--color-default-text);
+    --textarea-text-color: var(--color-text-primary);
 
     /** @prop --textarea-background-color: Background color */
-    --textarea-background-color: var(--color-background);
+    --textarea-background-color: var(--color-background-base-default);
 
     /** @prop --textarea-invalid-border-color: Border color while in an invalid state */
-    --textarea-invalid-border-color: var(--color-status-critical-fill);
+    --textarea-invalid-border-color: var(--color-icon-status-fill-critical);
 
     /**
      * @prop --textarea-focus-border-color: Border color while in a focused state
     */
-    --textarea-focus-border-color: var(--color-hover);
+    --textarea-focus-border-color: var(--color-interactive-hover);
 
     /**
      * @prop --textarea-selection-background-color: Background color while in a selected state
     */
-    --textarea-selection-background-color: var(--color-global-secondary-300);
+    --textarea-selection-background-color: var(--color-palette-brightblue-400);
 
     display: block;
 }
@@ -41,7 +41,7 @@
     order: 2;
     min-height: 4.25rem;
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.469rem 0.5rem; //7.5px 8px
     border: 1px solid var(--textarea-border-color);
     border-radius: var(--radius-base);
     font-family: var(--font-body-1-font-family);
@@ -57,6 +57,14 @@
         opacity: 0.4;
         opacity: var(--disabled-opacity);
         cursor: not-allowed;
+    }
+    &--small {
+        padding: 0.219rem 0.5rem; //3.5px 8px
+        min-height: 3.25rem; //52px
+    }
+    &--large {
+        min-height: 5.75rem; //92px
+        padding: 0.844rem 0.5rem; //13.5px 8px
     }
 
     &:focus {
@@ -75,14 +83,14 @@
         border: 1px solid var(--textarea-invalid-border-color);
     }
     &::placeholder {
-        color: var(--color-placeholder-text);
+        color: var(--color-text-placeholder);
     }
 }
 
 .rux-textarea-field {
     display: flex;
     flex-direction: column;
-    color: var(--color-default-text);
+    color: var(--color-text-primary);
 }
 
 .rux-textarea-label {
