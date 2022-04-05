@@ -31,11 +31,14 @@ export class RuxBetaPopUpMenu {
             this.content.style.display = ''
         }
 
-        this.position()
+        if (this.open) {
+            this.position()
+        }
     }
 
     connectedCallback() {
         this.handleTriggerClick = this.handleTriggerClick.bind(this)
+        this._handleSlotChange = this._handleSlotChange.bind(this)
     }
 
     private async handleTriggerClick() {
@@ -48,6 +51,23 @@ export class RuxBetaPopUpMenu {
     }
 
     private position() {
+        /**
+         * TOMORROWS NOTES
+         * Problem: The initial position is off by like 20pixels. If you hide/show again,
+         * its in the correct spot.
+         *
+         * Problem: if you set the outside div to position: relative; it fucks everything
+         *
+         * If we replace the slot with some hardcoded content, it works as expected
+         * https://github.com/floating-ui/floating-ui/issues/796
+         *
+         * I think what's happening is that the slotted content hasn't finished rendered
+         * or just isnt available yet.
+         *
+         * For floating UI to work, the element needs to be visible before
+         * compute is calcualted.
+         */
+
         //@ts-ignore
         computePosition(this.triggerSlot, this.content, {
             placement: this.placement,
@@ -86,6 +106,10 @@ export class RuxBetaPopUpMenu {
                 [staticSide]: '-4px',
             })
         })
+    }
+
+    private _handleSlotChange() {
+        this.position()
     }
 
     get contentSlot() {
@@ -144,7 +168,7 @@ export class RuxBetaPopUpMenu {
                             ref={(el) => (this.arrowEl = el)}
                         ></div>
 
-                        <slot></slot>
+                        <slot onSlotchange={this._handleSlotChange}></slot>
                     </div>
                 </div>
             </Host>
