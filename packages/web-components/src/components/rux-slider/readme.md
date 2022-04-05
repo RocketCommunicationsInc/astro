@@ -72,7 +72,6 @@ Pass properties via attributes similar to the native [HTML Input Range](https://
 | `value`      | `value`      | Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) | `number`              | `(this.max! - this.min!) / 2 + this.min!` |
 
 
-
 ## Events
 
 | Event      | Description                                                                                                                                     | Type               |
@@ -100,7 +99,6 @@ Pass properties via attributes similar to the native [HTML Input Range](https://
 | `"label"`          | The input label when `label` prop is set      |
 | `"tick"`           | the tick mark                                 |
 | `"tick-container"` | The container of the tick mark and axis-label |
-
 
 
 ## CSS Custom Properties
