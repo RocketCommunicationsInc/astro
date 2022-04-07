@@ -54,7 +54,7 @@ rux-icon {
     position: absolute;
     left: 3.438rem;
     top: -0.625rem;
-    border: 1px solid var(--color-interactive-default);
+    border: 1px solid var(--color-background-interactive-default);
     border-radius: 2px;
     padding: 0.5rem 0.25rem;
     color: var(--color-palette-neutral-000);
@@ -90,7 +90,7 @@ rux-icon {
     font-size: var(--font-body-3-font-size);
     font-weight: var(--font-body-3-font-weight);
     letter-spacing: var(--font-body-3-letter-spacing);
-    color: var(--color-gsb-text-primary);
+    color: var(--gsb-color-text);
     display: block;
 }
 
@@ -100,36 +100,36 @@ rux-icon {
 
 :host([status='off']) {
     rux-icon {
-        color: var(--color-icon-status-fill-off);
+        color: var(--status-symbol-color-fill-off);
     }
 }
 
 :host([status='standby']) {
     rux-icon {
-        color: var(--color-icon-status-fill-standby);
+        color: var(--status-symbol-color-fill-standby);
     }
 }
 
 :host([status='normal']) {
     rux-icon {
-        color: var(--color-icon-status-fill-normal);
+        color: var(--status-symbol-color-fill-normal);
     }
 }
 
 :host([status='caution']) {
     rux-icon {
-        color: var(--color-icon-status-fill-caution);
+        color: var(--status-symbol-color-fill-caution);
     }
 }
 
 :host([status='serious']) {
     rux-icon {
-        color: var(--color-icon-status-fill-serious);
+        color: var(--status-symbol-color-fill-serious);
     }
 }
 
 :host([status='critical']) {
     rux-icon {
-        color: var(--color-icon-status-fill-critical);
+        color: var(--status-symbol-color-fill-critical);
     }
 }

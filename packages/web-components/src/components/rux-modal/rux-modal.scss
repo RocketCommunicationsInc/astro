@@ -18,7 +18,7 @@
     /**
     * @prop --modal-border-color: Modal border color
     */
-    --modal-border-color: var(--color-interactive-default);
+    --modal-border-color: var(--color-background-interactive-default);
 
     display: contents;
 }
@@ -98,7 +98,7 @@
 
     &__content {
         padding: 0 1.25rem; //0 20px
-        color: var(--color-default-text);
+        color: var(--color-text-primary);
     }
 
     &__footer {

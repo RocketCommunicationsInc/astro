@@ -10,31 +10,36 @@
     letter-spacing: var(--font-body-2-bold-letter-spacing);
     padding: 0.25rem 0.625rem;
     text-align: center;
+    color: var(--color-palette-neutral-000);
 }
 :host(.is-undefined) {
     height: 1.5rem;
     width: 3.75rem;
-    border: 1px solid #9ea7ad;
-    background: #32363a;
+    border: 1px solid var(--status-symbol-color-fill-off);
+    background: var(--color-palette-grey-800);
+    box-shadow: var(--tag-shadow-inner-off);
 }
 
 :host([status='pass']) {
     height: 1.5rem;
     width: 3.75rem;
-    border: 1px solid #56f000; //dark/status/normal-fill
-    background: #015800; //global/tag/status/pass
+    border: 1px solid var(--status-symbol-color-fill-normal);
+    background: var(--color-palette-green-900);
+    box-shadow: var(--tag-shadow-inner-normal);
 }
 
 :host([status='fail']) {
     height: 1.5rem;
     width: 3.75rem;
-    border: 1px solid #ff3838;
-    background: #570d01;
+    border: 1px solid var(--status-symbol-color-fill-critical);
+    background: var(--color-palette-red-900);
+    box-shadow: var(--tag-shadow-inner-critical);
 }
 
 :host([status='unknown']) {
     height: 1.5rem;
     width: 3.75rem;
-    border: 1px solid #9ea7ad;
-    background: #32363a;
+    border: 1px solid var(--status-symbol-color-fill-off);
+    background: var(--color-palette-grey-800);
+    box-shadow: var(--tag-shadow-inner-off);
 }
