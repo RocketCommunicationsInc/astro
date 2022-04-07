@@ -5,21 +5,12 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { Placement } from "@floating-ui/dom";
 import { Classification, Status, StatusTags } from "./common/commonTypes.module";
 import { LogRow } from "./components/rux-log/rux-log.model";
 import { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
+import { Placement } from "@floating-ui/dom";
 import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
 export namespace Components {
-    interface RuxBetaMenu {
-    }
-    interface RuxBetaMenuItem {
-        "selected": boolean;
-    }
-    interface RuxBetaPopUpMenu {
-        "open": boolean;
-        "placement": Placement;
-    }
     interface RuxButton {
         /**
           * Changes button style from solid to borderless by setting the rux-button--borderless class
@@ -11958,31 +11949,10 @@ export namespace Components {
          */
         "timezone": string;
     }
+    interface RuxMenu {
+    }
     interface RuxMenuItem {
-        /**
-          * Disables the item
-         */
-        "disabled": boolean;
-        /**
-          * This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want).
-         */
-        "download": string | undefined;
-        /**
-          * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
-         */
-        "href": string | undefined;
-        /**
-          * Specifies the relationship of the target object to the link object. The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).
-         */
-        "rel": string | undefined;
-        /**
-          * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
-         */
-        "target": string | undefined;
-        /**
-          * Value returned when item is selected. If no value is given, the text content will be used.
-         */
-        "value": any;
+        "selected": boolean;
     }
     interface RuxMenuItemDivider {
     }
@@ -12103,34 +12073,8 @@ export namespace Components {
         "label"?: string;
     }
     interface RuxPopUpMenu {
-        /**
-          * Element to anchor the menu to. If none is given the menu will anchor to the trigger element where aria-controls === menu id
-         */
-        "anchorEl"?: HTMLElement;
-        /**
-          * Closes the menu. If the menu is already closed it returns 'false'.
-         */
-        "close": () => Promise<boolean>;
-        /**
-          * Returns 'true' if the menu is open, 'false' if it is not.
-         */
-        "isOpen": () => Promise<boolean>;
-        /**
-          * Boolean which controls when to show the menu
-         */
         "open": boolean;
-        /**
-          * Opens the menu. If the menu is already open it returns 'false'.
-         */
-        "show": () => Promise<boolean>;
-        /**
-          * Toggles the menu open or close. Will return 'true' on menu open and 'false' on menu close
-         */
-        "toggle": () => Promise<boolean>;
-        /**
-          * Optional element to trigger opening and closing of the menu. If none is supplied the element where aria-controls === menu id will be assigned
-         */
-        "triggerEl"?: HTMLElement;
+        "placement": Placement;
     }
     interface RuxProgress {
         /**
@@ -12552,24 +12496,6 @@ export namespace Components {
     }
 }
 declare global {
-    interface HTMLRuxBetaMenuElement extends Components.RuxBetaMenu, HTMLStencilElement {
-    }
-    var HTMLRuxBetaMenuElement: {
-        prototype: HTMLRuxBetaMenuElement;
-        new (): HTMLRuxBetaMenuElement;
-    };
-    interface HTMLRuxBetaMenuItemElement extends Components.RuxBetaMenuItem, HTMLStencilElement {
-    }
-    var HTMLRuxBetaMenuItemElement: {
-        prototype: HTMLRuxBetaMenuItemElement;
-        new (): HTMLRuxBetaMenuItemElement;
-    };
-    interface HTMLRuxBetaPopUpMenuElement extends Components.RuxBetaPopUpMenu, HTMLStencilElement {
-    }
-    var HTMLRuxBetaPopUpMenuElement: {
-        prototype: HTMLRuxBetaPopUpMenuElement;
-        new (): HTMLRuxBetaPopUpMenuElement;
-    };
     interface HTMLRuxButtonElement extends Components.RuxButton, HTMLStencilElement {
     }
     var HTMLRuxButtonElement: {
@@ -18966,6 +18892,12 @@ declare global {
         prototype: HTMLRuxLogElement;
         new (): HTMLRuxLogElement;
     };
+    interface HTMLRuxMenuElement extends Components.RuxMenu, HTMLStencilElement {
+    }
+    var HTMLRuxMenuElement: {
+        prototype: HTMLRuxMenuElement;
+        new (): HTMLRuxMenuElement;
+    };
     interface HTMLRuxMenuItemElement extends Components.RuxMenuItem, HTMLStencilElement {
     }
     var HTMLRuxMenuItemElement: {
@@ -19189,9 +19121,6 @@ declare global {
         new (): HTMLRuxTreeNodeElement;
     };
     interface HTMLElementTagNameMap {
-        "rux-beta-menu": HTMLRuxBetaMenuElement;
-        "rux-beta-menu-item": HTMLRuxBetaMenuItemElement;
-        "rux-beta-pop-up-menu": HTMLRuxBetaPopUpMenuElement;
         "rux-button": HTMLRuxButtonElement;
         "rux-button-group": HTMLRuxButtonGroupElement;
         "rux-checkbox": HTMLRuxCheckboxElement;
@@ -20258,6 +20187,7 @@ declare global {
         "rux-icon-zoom-out-map": HTMLRuxIconZoomOutMapElement;
         "rux-input": HTMLRuxInputElement;
         "rux-log": HTMLRuxLogElement;
+        "rux-menu": HTMLRuxMenuElement;
         "rux-menu-item": HTMLRuxMenuItemElement;
         "rux-menu-item-divider": HTMLRuxMenuItemDividerElement;
         "rux-modal": HTMLRuxModalElement;
@@ -20298,15 +20228,6 @@ declare global {
     }
 }
 declare namespace LocalJSX {
-    interface RuxBetaMenu {
-    }
-    interface RuxBetaMenuItem {
-        "selected"?: boolean;
-    }
-    interface RuxBetaPopUpMenu {
-        "open"?: boolean;
-        "placement"?: Placement;
-    }
     interface RuxButton {
         /**
           * Changes button style from solid to borderless by setting the rux-button--borderless class
@@ -32273,35 +32194,10 @@ declare namespace LocalJSX {
          */
         "timezone"?: string;
     }
+    interface RuxMenu {
+    }
     interface RuxMenuItem {
-        /**
-          * Disables the item
-         */
-        "disabled"?: boolean;
-        /**
-          * This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want).
-         */
-        "download"?: string | undefined;
-        /**
-          * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
-         */
-        "href"?: string | undefined;
-        /**
-          * Emitted when item is clicked. Ex `{value : 10}`
-         */
-        "onRuxmenuitemselected"?: (event: CustomEvent<object>) => void;
-        /**
-          * Specifies the relationship of the target object to the link object. The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).
-         */
-        "rel"?: string | undefined;
-        /**
-          * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
-         */
-        "target"?: string | undefined;
-        /**
-          * Value returned when item is selected. If no value is given, the text content will be used.
-         */
-        "value"?: any;
+        "selected"?: boolean;
     }
     interface RuxMenuItemDivider {
     }
@@ -32432,34 +32328,8 @@ declare namespace LocalJSX {
         "onRux-option-group-changed"?: (event: CustomEvent<void>) => void;
     }
     interface RuxPopUpMenu {
-        /**
-          * Element to anchor the menu to. If none is given the menu will anchor to the trigger element where aria-controls === menu id
-         */
-        "anchorEl"?: HTMLElement;
-        /**
-          * Emitted when the menu is closed.
-         */
-        "onRuxmenudidclose"?: (event: CustomEvent<void>) => void;
-        /**
-          * Emitted when the menu is open.
-         */
-        "onRuxmenudidopen"?: (event: CustomEvent<void>) => void;
-        /**
-          * Emitted when the menu is about to close
-         */
-        "onRuxmenuwillclose"?: (event: CustomEvent<void>) => void;
-        /**
-          * Emitted when the menu is about to open.
-         */
-        "onRuxmenuwillopen"?: (event: CustomEvent<void>) => void;
-        /**
-          * Boolean which controls when to show the menu
-         */
         "open"?: boolean;
-        /**
-          * Optional element to trigger opening and closing of the menu. If none is supplied the element where aria-controls === menu id will be assigned
-         */
-        "triggerEl"?: HTMLElement;
+        "placement"?: Placement;
     }
     interface RuxProgress {
         /**
@@ -32942,9 +32812,6 @@ declare namespace LocalJSX {
         "selected"?: boolean;
     }
     interface IntrinsicElements {
-        "rux-beta-menu": RuxBetaMenu;
-        "rux-beta-menu-item": RuxBetaMenuItem;
-        "rux-beta-pop-up-menu": RuxBetaPopUpMenu;
         "rux-button": RuxButton;
         "rux-button-group": RuxButtonGroup;
         "rux-checkbox": RuxCheckbox;
@@ -34011,6 +33878,7 @@ declare namespace LocalJSX {
         "rux-icon-zoom-out-map": RuxIconZoomOutMap;
         "rux-input": RuxInput;
         "rux-log": RuxLog;
+        "rux-menu": RuxMenu;
         "rux-menu-item": RuxMenuItem;
         "rux-menu-item-divider": RuxMenuItemDivider;
         "rux-modal": RuxModal;
@@ -34054,9 +33922,6 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "rux-beta-menu": LocalJSX.RuxBetaMenu & JSXBase.HTMLAttributes<HTMLRuxBetaMenuElement>;
-            "rux-beta-menu-item": LocalJSX.RuxBetaMenuItem & JSXBase.HTMLAttributes<HTMLRuxBetaMenuItemElement>;
-            "rux-beta-pop-up-menu": LocalJSX.RuxBetaPopUpMenu & JSXBase.HTMLAttributes<HTMLRuxBetaPopUpMenuElement>;
             "rux-button": LocalJSX.RuxButton & JSXBase.HTMLAttributes<HTMLRuxButtonElement>;
             "rux-button-group": LocalJSX.RuxButtonGroup & JSXBase.HTMLAttributes<HTMLRuxButtonGroupElement>;
             "rux-checkbox": LocalJSX.RuxCheckbox & JSXBase.HTMLAttributes<HTMLRuxCheckboxElement>;
@@ -35123,6 +34988,7 @@ declare module "@stencil/core" {
             "rux-icon-zoom-out-map": LocalJSX.RuxIconZoomOutMap & JSXBase.HTMLAttributes<HTMLRuxIconZoomOutMapElement>;
             "rux-input": LocalJSX.RuxInput & JSXBase.HTMLAttributes<HTMLRuxInputElement>;
             "rux-log": LocalJSX.RuxLog & JSXBase.HTMLAttributes<HTMLRuxLogElement>;
+            "rux-menu": LocalJSX.RuxMenu & JSXBase.HTMLAttributes<HTMLRuxMenuElement>;
             "rux-menu-item": LocalJSX.RuxMenuItem & JSXBase.HTMLAttributes<HTMLRuxMenuItemElement>;
             "rux-menu-item-divider": LocalJSX.RuxMenuItemDivider & JSXBase.HTMLAttributes<HTMLRuxMenuItemDividerElement>;
             "rux-modal": LocalJSX.RuxModal & JSXBase.HTMLAttributes<HTMLRuxModalElement>;

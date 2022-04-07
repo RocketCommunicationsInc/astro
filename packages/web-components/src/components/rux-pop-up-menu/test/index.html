@@ -14,58 +14,75 @@
             rel="stylesheet"
         />
         <script type="module" src="/build/astro-web-components.esm.js"></script>
-        <script nomodule src="/build/astro-web-components.esm.js"></script>
+        <script nomodule src="/build/astro-web-components.js"></script>
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body class="dark-theme">
-        <div style="padding: 10%; display: flex; justify-content: center">
-            <section
-                style="
-                    width: 600px;
-                    display: flex;
-                    justify-content: space-between;
-                "
-            >
-                <div>
-                    <rux-button aria-controls="popup-menu-1">
-                        Open Menu
-                    </rux-button>
-
-                    <rux-pop-up-menu id="popup-menu-1">
-                        <rux-menu-item>Item 1</rux-menu-item>
-                        <rux-menu-item-divider></rux-menu-item-divider>
-                        <rux-menu-item value="2"
-                            >Item 2 with an exceedingly long title that overruns
-                            the width</rux-menu-item
-                        >
-                        <rux-menu-item disabled
-                            >Item 3 is disabled</rux-menu-item
-                        >
-                        <rux-menu-item value="Item 4"
-                            >Item 4 has a string value</rux-menu-item
-                        >
-                        <rux-menu-item href="https://www.astrouxds.com"
-                            >Item 5 is an anchor</rux-menu-item
-                        >
-                    </rux-pop-up-menu>
-                </div>
-                <div>
-                    <ul id="log"></ul>
-                </div>
-            </section>
-            <script>
-                const log = document.getElementById('log')
-                const menu = document.querySelectorAll('rux-menu-item')
-
-                menu.forEach((item) => {
-                    item.addEventListener('ruxmenuitemselected', (e) => {
-                        item.innerHTML = `<strong>Value:</strong>${e.detail.value}`
-                        log.appendChild(item)
-                    })
-                })
-            </script>
+    <body>
+        <div style="padding: 10% 5%">
+            <rux-beta-pop-up-menu placement="top-start">
+                <rux-button slot="trigger">Top</rux-button>
+                <rux-beta-menu id="test">
+                    <rux-beta-menu-item selected
+                        >Pop up menu option test</rux-beta-menu-item
+                    >
+                    <rux-beta-menu-item
+                        >Pop up menu option test</rux-beta-menu-item
+                    >
+                    <rux-beta-menu-item
+                        >Pop up menu option test</rux-beta-menu-item
+                    >
+                </rux-beta-menu>
+            </rux-beta-pop-up-menu>
+        </div>
+        <div style="padding: 5%">
+            <rux-beta-pop-up-menu placement="right-start">
+                <rux-button slot="trigger">Right</rux-button>
+                <rux-beta-menu id="test">
+                    <rux-beta-menu-item selected
+                        >Pop up menu option test</rux-beta-menu-item
+                    >
+                    <rux-beta-menu-item
+                        >Pop up menu option test</rux-beta-menu-item
+                    >
+                    <rux-beta-menu-item
+                        >Pop up menu option test</rux-beta-menu-item
+                    >
+                </rux-beta-menu>
+            </rux-beta-pop-up-menu>
+        </div>
+        <div style="padding: 5%">
+            <rux-beta-pop-up-menu placement="bottom-start">
+                <rux-button slot="trigger">Bottom</rux-button>
+                <rux-beta-menu id="test">
+                    <rux-beta-menu-item selected
+                        >Pop up menu option test</rux-beta-menu-item
+                    >
+                    <rux-beta-menu-item
+                        >Pop up menu option test</rux-beta-menu-item
+                    >
+                    <rux-beta-menu-item
+                        >Pop up menu option test</rux-beta-menu-item
+                    >
+                </rux-beta-menu>
+            </rux-beta-pop-up-menu>
+        </div>
+        <div style="padding: 5% 20%">
+            <rux-beta-pop-up-menu placement="left-start">
+                <rux-button slot="trigger">Left</rux-button>
+                <rux-beta-menu id="test">
+                    <rux-beta-menu-item selected
+                        >Pop up menu option test</rux-beta-menu-item
+                    >
+                    <rux-beta-menu-item
+                        >Pop up menu option test</rux-beta-menu-item
+                    >
+                    <rux-beta-menu-item
+                        >Pop up menu option test</rux-beta-menu-item
+                    >
+                </rux-beta-menu>
+            </rux-beta-pop-up-menu>
         </div>
     </body>
 </html>

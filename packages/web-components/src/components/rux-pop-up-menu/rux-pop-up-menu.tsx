@@ -1,21 +1,13 @@
+//@ts-nocheck
+import { Prop, Watch, Element, Component, Host, h, State } from '@stencil/core'
 import {
-    Component,
-    Host,
-    h,
-    Prop,
-    Element,
-    EventEmitter,
-    Event,
-    Method,
-    Watch,
-    State,
-    Listen,
-} from '@stencil/core'
-
-/**
- * @slot menu-end - Area below the menu list to insert elements. For example, confirmation and/or cancel button group.
- * @part container - the container for the pop-up-menu
- */
+    Placement,
+    computePosition,
+    arrow,
+    offset,
+    flip,
+    autoUpdate,
+} from '@floating-ui/dom'
 
 @Component({
     tag: 'rux-pop-up-menu',
@@ -23,254 +15,206 @@ import {
     shadow: true,
 })
 export class RuxPopUpMenu {
-    @Element() el!: HTMLRuxPopUpMenuElement
+    private trigger!: HTMLElement
+    private content!: HTMLElement
+    private arrowEl?: HTMLElement
+    private positionerCleanup: ReturnType<typeof autoUpdate> | undefined
 
-    @State() anchorBounds?: DOMRect
-    @State() menuBounds?: DOMRect
+    @Prop({ mutable: true }) open = false
+    @Prop() placement: Placement = 'bottom'
 
-    /**
-     * Optional element to trigger opening and closing of the menu.
-     * If none is supplied the element where aria-controls === menu id will be assigned
-     */
-    @Prop({ mutable: true }) triggerEl?: HTMLElement
+    @State() arrowPosition?: string
 
-    /**
-     * Element to anchor the menu to. If none is given the menu will anchor
-     * to the trigger element where aria-controls === menu id
-     */
-    @Prop({ mutable: true }) anchorEl?: HTMLElement
-    @Watch('triggerEl')
-    @Watch('anchorEl')
-    tieElements() {
-        this._bindElements()
-    }
-
-    /**
-     * Boolean which controls when to show the menu
-     */
-    @Prop({ reflect: true, mutable: true }) open: boolean = false
     @Watch('open')
-    openMenu() {
-        this._toggleOpenClose()
-    }
-
-    /**
-     * Emitted when the menu is about to open.
-     */
-    @Event({ eventName: 'ruxmenuwillopen' })
-    ruxMenuWillOpen!: EventEmitter<void>
-
-    /**
-     * Emitted when the menu is about to close
-     */
-    @Event({ eventName: 'ruxmenuwillclose' })
-    ruxMenuWillClose!: EventEmitter<void>
-
-    /**
-     * Emitted when the menu is open.
-     */
-    @Event({ eventName: 'ruxmenudidopen' })
-    ruxMenuDidOpen!: EventEmitter<void>
-
-    /**
-     * Emitted when the menu is closed.
-     */
-    @Event({ eventName: 'ruxmenudidclose' })
-    ruxMenuDidClose!: EventEmitter<void>
-
-    componentDidRender() {
+    handleOpen() {
         if (this.open) {
-            this._setMenuPosition()
+            this.content.style.display = 'block'
+        } else {
+            this.content.style.display = ''
+        }
+
+        if (this.open) {
+            this.startPositioner()
         }
     }
 
     connectedCallback() {
-        this._handleClick = this._handleClick.bind(this)
-        this._handleOutsideClick = this._handleOutsideClick.bind(this)
-
-        this._bindElements()
-
-        this._toggleOpenClose()
+        this.handleTriggerClick = this.handleTriggerClick.bind(this)
+        this._handleSlotChange = this._handleSlotChange.bind(this)
     }
 
-    disconnectedCallback() {
-        if (this.triggerEl) {
-            this.triggerEl.removeEventListener('mousedown', this._handleClick)
-        }
-    }
-
-    /**
-     * Returns 'true' if the menu is open, 'false' if it is not.
-     */
-    @Method()
-    async isOpen(): Promise<boolean> {
-        return this.open
-    }
-
-    /**
-     * Opens the menu. If the menu is already open it returns 'false'.
-     */
-    @Method()
-    async show(): Promise<boolean> {
-        if (this.open) {
-            return false
-        }
-        this.open = true
-        return true
-    }
-
-    /**
-     * Closes the menu. If the menu is already closed it returns 'false'.
-     */
-    @Method()
-    async close(): Promise<boolean> {
-        if (!this.open) {
-            return false
-        }
-        this.open = false
-        return true
-    }
-
-    /**
-     * Toggles the menu open or close. Will return 'true' on menu open and 'false' on menu close
-     */
-    @Method()
-    async toggle(): Promise<boolean> {
+    private async handleTriggerClick() {
         this.open = !this.open
-        return this.open
     }
 
-    @Listen('ruxmenuitemselected')
-    handleListen() {
-        this.open = false
+    private position() {
+        /**
+         * TOMORROWS NOTES
+         * Problem: The initial position is off by like 20pixels. If you hide/show again,
+         * its in the correct spot.
+         *
+         * Problem: if you set the outside div to position: relative; it fucks everything
+         *
+         * If we replace the slot with some hardcoded content, it works as expected
+         * https://github.com/floating-ui/floating-ui/issues/796
+         *
+         * I think what's happening is that the slotted content hasn't finished rendered
+         * or just isnt available yet.
+         *
+         * For floating UI to work, the element needs to be visible before
+         * compute is calcualted.
+         */
+
+        // If it's not visible, can't be opened or doesn't have content se don't need to compute anything.
+        if (!this.open || !this.triggerSlot || !this.content) {
+            return
+        }
+        computePosition(this.triggerSlot, this.content, {
+            placement: this.placement,
+            middleware: [offset(12), flip(), arrow({ element: this.arrowEl })],
+        }).then(({ x, y, placement, middlewareData }) => {
+            Object.assign(this.content.style, {
+                left: `${x}px`,
+                top: `${y}px`,
+            })
+
+            const { x: arrowX, y: arrowY } = middlewareData.arrow
+
+            const staticSide = {
+                top: 'bottom',
+                right: 'left',
+                bottom: 'top',
+                left: 'right',
+            }[placement.split('-')[0]]
+
+            Object.assign(this.arrowEl.style, {
+                left: arrowX != null ? `${arrowX}px` : '',
+                top: arrowY != null ? `${arrowY}px` : '',
+                right: '',
+                bottom: '',
+                [staticSide]: '-6px',
+            })
+        })
+        this._determineArrowPosition()
     }
 
-    private _bindElements() {
-        // find and set triggerEl from aria-controls if not given
-        if (!this.triggerEl) {
-            const triggerEl: HTMLElement | null = document.querySelector(
-                `[aria-controls="${this.el.id}"]`
-            )
+    private startPositioner() {
+        this.stopPositioner()
+        this.position()
+        this.positionerCleanup = autoUpdate(
+            this.triggerSlot,
+            this.content,
+            this.position.bind(this)
+        )
+    }
 
-            if (triggerEl) {
-                this.triggerEl = triggerEl
-                this.triggerEl.addEventListener('mousedown', this._handleClick)
+    /**
+     * This returns which side the arrow is on: top, right, left or bottom.
+     * Currently using this to determine which border to bolster, but could be useful in the future.
+     */
+    private _determineArrowPosition() {
+        if (!this.open) {
+            return
+        }
+        const triggerElRect = this.triggerSlot.getBoundingClientRect()
+        const arrowDivRect = this.arrowEl?.getBoundingClientRect()
+
+        // If trigger's bottom is higher than the arrows bottom, and triggers top is lower than the arrow's top
+        //it's not top or bottom. Check for left or right
+        if (
+            triggerElRect.bottom > arrowDivRect.bottom &&
+            triggerElRect.top < arrowDivRect.top
+        ) {
+            if (triggerElRect.right > arrowDivRect.right) {
+                this.arrowPosition = 'left'
+            } else {
+                this.arrowPosition = 'right'
             }
         } else {
-            this.triggerEl.addEventListener('mousedown', this._handleClick)
-        }
-
-        // If a trigger element exists but no anchor, assign trigger to anchor
-        if (!this.anchorEl && this.triggerEl) {
-            this.anchorEl = this.triggerEl
-            this.anchorBounds = this.anchorEl.getBoundingClientRect()
-        } else if (this.anchorEl) {
-            this.anchorBounds = this.anchorEl.getBoundingClientRect()
-        }
-        this.menuBounds = this.el.getBoundingClientRect()
-    }
-
-    private _setMenuPosition() {
-        if (this.anchorEl && this.anchorBounds && this.menuBounds) {
-            let { anchorBounds, menuBounds } = this
-            anchorBounds = this.anchorEl.getBoundingClientRect()
-            menuBounds = this.el.getBoundingClientRect()
-            const caret = parseInt(getComputedStyle(this.el, ':after').height)
-            let top: number
-            let left: number
-            let caretLeft: number
-
-            const padding = 8
-
-            if (
-                menuBounds.width + anchorBounds.left - padding >
-                window.innerWidth
-            ) {
-                left = anchorBounds.right - menuBounds.width
-                caretLeft = menuBounds.width - 25
-            } else if (anchorBounds.left - padding > 0) {
-                left = anchorBounds.left - padding
-                caretLeft = 10
+            if (triggerElRect.bottom > arrowDivRect.bottom) {
+                this.arrowPosition = 'top'
             } else {
-                left = padding
-                caretLeft = 10
+                this.arrowPosition = 'bottom'
             }
+        }
 
-            top =
-                anchorBounds.bottom +
-                padding / 2 +
-                19 / 2 /* changed caret ref to 19 for bug fix */
+        console.log(`${this.arrowPosition}: Arrow Position`)
+    }
 
-            if (
-                menuBounds.height + anchorBounds.bottom + padding >
-                window.innerHeight
-            ) {
-                top = anchorBounds.top - menuBounds.height - caret
-                this.el.classList.add('from-top')
-            } else {
-                this.el.classList.remove('from-top')
-            }
-
-            this.el.style.left = `${left}px`
-            this.el.style.top = `${top}px`
-
-            this.el.style.setProperty(
-                '--popup-menu-caret-left',
-                `${caretLeft}px`
-            )
+    private stopPositioner() {
+        if (this.positionerCleanup) {
+            this.positionerCleanup()
+            this.positionerCleanup = undefined
         }
     }
 
-    private _handleClick(e: Event) {
-        e.preventDefault()
-        this.open = true
+    private _handleSlotChange(e: any) {
+        this.position()
     }
 
-    private _handleOutsideClick(e: MouseEvent) {
-        const menuClick = e.composedPath().includes(this.el)
-        if (!menuClick) {
-            this.open = false
-        }
+    get contentSlot() {
+        return this.content
+            ?.querySelector('slot')
+            .assignedElements({ flatten: true })[0]
     }
 
-    private _toggleOpenClose() {
-        if (this.open) {
-            if (!this.anchorEl) {
-                this.open = false
-                console.error(
-                    'Unable to open pop up menu without an anchor element. See documentation'
-                )
-                return
-            }
-            this.ruxMenuWillOpen.emit()
+    get triggerSlot() {
+        return this.trigger
+            ?.querySelector('slot')
+            .assignedElements({ flatten: true })[0]
+    }
 
-            const debounce = setTimeout(() => {
-                window.addEventListener('resize', () => this._setMenuPosition())
-                window.addEventListener('mousedown', this._handleOutsideClick)
-                clearTimeout(debounce)
-            }, 10)
-
-            this.triggerEl?.removeEventListener('mousedown', this._handleClick)
-
-            this.ruxMenuDidOpen.emit()
-        } else {
-            this.ruxMenuWillClose.emit()
-
-            window.removeEventListener('mousedown', this._handleOutsideClick)
-            window.removeEventListener('resize', this._setMenuPosition)
-
-            this.triggerEl?.addEventListener('mousedown', this._handleClick)
-            this.ruxMenuDidClose.emit()
-        }
+    get hasMenu(): boolean {
+        return !!this.content
+            ?.querySelector('slot')
+            .assignedElements({ flatten: true })
+            .filter(
+                (el) => el.tagName.toLowerCase() === 'rux-menu'
+            )[0] as HTMLRuxMenuElement
     }
 
     render() {
         return (
-            <Host aria-hidden={!this.open ? 'true' : 'false'}>
-                <ul role="menu" aria-expanded={`${this.open}`} part="container">
-                    <slot></slot>
-                </ul>
-                <slot name="menu-end"></slot>
+            <Host>
+                <div class="rux-popup">
+                    <div
+                        onClick={this.handleTriggerClick}
+                        class="rux-popup__trigger"
+                        ref={(el) => (this.trigger = el)}
+                    >
+                        <slot name="trigger"></slot>
+                    </div>
+
+                    <div
+                        class={{
+                            // wish I could set the arrow class like this
+                            //`rux-popup__arrow-${this._determineArrowPosition()}`: true,
+                            'rux-popup__arrow-left':
+                                this.arrowPosition === 'left',
+                            'rux-popup__arrow-top':
+                                this.arrowPosition === 'top',
+                            'rux-popup__arrow-right':
+                                this.arrowPosition === 'right',
+                            'rux-popup__arrow-bottom':
+                                this.arrowPosition === 'bottom',
+                            'rux-popup__content': true,
+                            'rux-popup__content--menu': this.hasMenu,
+                        }}
+                        part="popup-content"
+                        ref={(el) => (this.content = el)}
+                    >
+                        <div
+                            class="rux-popup-arrow"
+                            ref={(el) => (this.arrowEl = el)}
+                        ></div>
+
+                        <slot
+                            onSlotchange={(e) => {
+                                this._handleSlotChange(e)
+                            }}
+                        ></slot>
+                    </div>
+                </div>
             </Host>
         )
     }

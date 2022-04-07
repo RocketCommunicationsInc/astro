@@ -1,11 +1,11 @@
 import { Component, Host, h } from '@stencil/core'
 
 @Component({
-    tag: 'rux-beta-menu',
-    styleUrl: 'rux-beta-menu.scss',
+    tag: 'rux-menu',
+    styleUrl: 'rux-menu.scss',
     shadow: true,
 })
-export class RuxBetaMenu {
+export class RuxMenu {
     render() {
         return (
             <Host>
