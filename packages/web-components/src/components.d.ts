@@ -12075,7 +12075,13 @@ export namespace Components {
         "label"?: string;
     }
     interface RuxPopUpMenu {
+        /**
+          * @prop open - determines if the pop up is open or closed
+         */
         "open": boolean;
+        /**
+          * @prop placement - the placement of the pop up relative to it's slotted trigger element. A list of  acceptable placements can be found at [floatingui.com/docs](https://floating-ui.com/docs/computePosition#placement)
+         */
         "placement": Placement;
     }
     interface RuxProgress {
@@ -32332,7 +32338,13 @@ declare namespace LocalJSX {
         "onRux-option-group-changed"?: (event: CustomEvent<void>) => void;
     }
     interface RuxPopUpMenu {
+        /**
+          * @prop open - determines if the pop up is open or closed
+         */
         "open"?: boolean;
+        /**
+          * @prop placement - the placement of the pop up relative to it's slotted trigger element. A list of  acceptable placements can be found at [floatingui.com/docs](https://floating-ui.com/docs/computePosition#placement)
+         */
         "placement"?: Placement;
     }
     interface RuxProgress {

@@ -18,9 +18,16 @@ export class RuxPopUpMenu {
     private trigger!: HTMLElement
     private content!: HTMLElement
     private arrowEl?: HTMLElement
-    private positionerCleanup: ReturnType<typeof autoUpdate> | undefined
+    private _positionerCleanup: ReturnType<typeof autoUpdate> | undefined
 
+    /**
+     * @prop open - determines if the pop up is open or closed
+     */
     @Prop({ mutable: true }) open = false
+    /**
+     * @prop placement - the placement of the pop up relative to it's slotted trigger element. A list of
+     * acceptable placements can be found at [floatingui.com/docs](https://floating-ui.com/docs/computePosition#placement)
+     */
     @Prop() placement: Placement = 'bottom'
 
     @State() arrowPosition?: string
@@ -34,38 +41,22 @@ export class RuxPopUpMenu {
         }
 
         if (this.open) {
-            this.startPositioner()
+            this._startPositioner()
         }
     }
 
     connectedCallback() {
-        this.handleTriggerClick = this.handleTriggerClick.bind(this)
+        this._handleTriggerClick = this._handleTriggerClick.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
+        this._determineArrowPosition()
     }
 
-    private async handleTriggerClick() {
+    private async _handleTriggerClick() {
         this.open = !this.open
     }
 
-    private position() {
-        /**
-         * TOMORROWS NOTES
-         * Problem: The initial position is off by like 20pixels. If you hide/show again,
-         * its in the correct spot.
-         *
-         * Problem: if you set the outside div to position: relative; it fucks everything
-         *
-         * If we replace the slot with some hardcoded content, it works as expected
-         * https://github.com/floating-ui/floating-ui/issues/796
-         *
-         * I think what's happening is that the slotted content hasn't finished rendered
-         * or just isnt available yet.
-         *
-         * For floating UI to work, the element needs to be visible before
-         * compute is calcualted.
-         */
-
-        // If it's not visible, can't be opened or doesn't have content se don't need to compute anything.
+    private _position() {
+        // If it's not visible, can't be opened or doesn't have content we don't need to compute anything.
         if (!this.open || !this.triggerSlot || !this.content) {
             return
         }
@@ -95,16 +86,15 @@ export class RuxPopUpMenu {
                 [staticSide]: '-6px',
             })
         })
-        this._determineArrowPosition()
     }
 
-    private startPositioner() {
-        this.stopPositioner()
-        this.position()
-        this.positionerCleanup = autoUpdate(
+    private _startPositioner() {
+        this._stopPositioner()
+        this._position()
+        this._positionerCleanup = autoUpdate(
             this.triggerSlot,
             this.content,
-            this.position.bind(this)
+            this._position.bind(this)
         )
     }
 
@@ -137,19 +127,17 @@ export class RuxPopUpMenu {
                 this.arrowPosition = 'bottom'
             }
         }
-
-        console.log(`${this.arrowPosition}: Arrow Position`)
     }
 
-    private stopPositioner() {
-        if (this.positionerCleanup) {
-            this.positionerCleanup()
-            this.positionerCleanup = undefined
+    private _stopPositioner() {
+        if (this._positionerCleanup) {
+            this._positionerCleanup()
+            this._positionerCleanup = undefined
         }
     }
 
     private _handleSlotChange(e: any) {
-        this.position()
+        this._position()
     }
 
     get contentSlot() {
@@ -178,7 +166,7 @@ export class RuxPopUpMenu {
             <Host>
                 <div class="rux-popup">
                     <div
-                        onClick={this.handleTriggerClick}
+                        onClick={this._handleTriggerClick}
                         class="rux-popup__trigger"
                         ref={(el) => (this.trigger = el)}
                     >
@@ -208,11 +196,7 @@ export class RuxPopUpMenu {
                             ref={(el) => (this.arrowEl = el)}
                         ></div>
 
-                        <slot
-                            onSlotchange={(e) => {
-                                this._handleSlotChange(e)
-                            }}
-                        ></slot>
+                        <slot onSlotchange={this._handleSlotChange()}></slot>
                     </div>
                 </div>
             </Host>
