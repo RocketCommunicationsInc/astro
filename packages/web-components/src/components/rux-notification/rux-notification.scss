@@ -19,7 +19,7 @@
     height: 4.375rem;
     width: 100%;
     position: absolute;
-    background-color: var(--color-banner-status-background-standby);
+    background-color: var(--notification-banner-color-background-standby);
     transition: top 0.5s ease;
     box-sizing: border-box;
     font-family: var(--font-heading-5-font-family);
@@ -66,41 +66,41 @@
 //TODO: When tokens are made for the icon color, replace the hard coded values below.
 
 :host([status='off']) {
-    background-color: var(--color-banner-status-background-off);
+    background-color: var(--notification-banner-color-background-off);
     rux-icon {
-        color: var(--color-banner-status-icon-fill-off);
+        color: var(--notification-banner-icon-color-fill-off);
     }
 }
 
 :host([status='standby']) {
-    background-color: var(--color-banner-status-background-standby);
+    background-color: var(--notification-banner-color-background-standby);
     rux-icon {
-        color: var(--color-banner-status-icon-fill-standby);
+        color: var(--notification-banner-icon-color-fill-standby);
     }
 }
 
 :host([status='normal']) {
-    background-color: var(--color-banner-status-background-normal);
+    background-color: var(--notification-banner-color-background-normal);
     rux-icon {
-        color: var(--color-banner-status-icon-fill-normal);
+        color: var(--notification-banner-icon-color-fill-normal);
     }
 }
 :host([status='caution']) {
-    background-color: var(--color-banner-status-background-caution);
+    background-color: var(--notification-banner-color-background-caution);
     rux-icon {
-        color: var(--color-banner-status-icon-fill-caution);
+        color: var(--notification-banner-icon-color-fill-caution);
     }
 }
 
 :host([status='serious']) {
-    background-color: var(--color-banner-status-background-serious);
+    background-color: var(--notification-banner-color-background-serious);
     rux-icon {
-        color: var(--color-banner-status-icon-fill-serious);
+        color: var(--notification-banner-icon-color-fill-serious);
     }
 }
 :host([status='critical']) {
-    background-color: var(--color-banner-status-background-critical);
+    background-color: var(--notification-banner-color-background-critical);
     rux-icon {
-        color: var(--color-banner-status-icon-fill-critical);
+        color: var(--notification-banner-icon-color-fill-critical);
     }
 }
