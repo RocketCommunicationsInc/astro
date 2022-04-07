@@ -11929,6 +11929,8 @@ export namespace Components {
         | 'url'
         | 'search'
         | 'password'
+        | 'date'
+        | 'datetime-local'
         | 'tel';
         /**
           * The input value
@@ -32174,6 +32176,8 @@ declare namespace LocalJSX {
         | 'url'
         | 'search'
         | 'password'
+        | 'date'
+        | 'datetime-local'
         | 'tel';
         /**
           * The input value

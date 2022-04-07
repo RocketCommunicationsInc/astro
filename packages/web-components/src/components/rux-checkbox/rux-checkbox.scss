@@ -14,13 +14,13 @@
     --checkbox-background-color: var(--color-background-base-default);
 
     /** @prop --checkbox-border-color: Checkbox border color */
-    --checkbox-border-color: var(--color-interactive-muted);
+    --checkbox-border-color: var(--color-border-interactive-muted);
 
     /** @prop --checkbox-checked-color: Checkmark color when checked */
-    --checkbox-checked-color: var(--color-interactive-default);
+    --checkbox-checked-color: var(--color-background-interactive-default);
 
     /** @prop --checkbox-hover-border-color: Hover border color */
-    --checkbox-hover-border-color: var(--color-interactive-hover);
+    --checkbox-hover-border-color: var(--color-background-interactive-hover);
 }
 
 .hidden,

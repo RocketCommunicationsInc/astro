@@ -490,6 +490,8 @@ The following `<input>` types are available:
 -   Telephone inputs (type="tel")
 -   Search inputs (type="search")
 -   Number-only inputs (type="number")
+-   Date inputs (type="date")
+-   Datetime-local inputs (type="datetime-local")
 
 export const Types = (args) => {
     return html`
@@ -535,6 +537,14 @@ export const Types = (args) => {
                 label="Search"
                 type="search"
                 placeholder="Enter search term"
+            ></rux-input>
+            <rux-input
+                label="Date"
+                type="date"
+            ></rux-input>
+            <rux-input
+                label="Datetime-local"
+                type="datetime-local"
             ></rux-input>
         </div>
     `

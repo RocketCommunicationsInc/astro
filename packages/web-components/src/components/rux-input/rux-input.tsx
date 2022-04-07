@@ -92,6 +92,8 @@ export class RuxInput implements FormFieldInterface {
         | 'url'
         | 'search'
         | 'password'
+        | 'date'
+        | 'datetime-local'
         | 'tel' = 'text'
 
     /**

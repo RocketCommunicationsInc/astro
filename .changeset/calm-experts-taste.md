@@ -5,4 +5,4 @@
 "@astrouxds/react": patch
 ---
 
-Update components to use the new beta design tokens
+Implements design tokens@1.5. Adds shadow to Tag

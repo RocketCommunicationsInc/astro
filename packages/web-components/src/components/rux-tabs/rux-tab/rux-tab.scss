@@ -2,7 +2,7 @@
     /**
     *   @prop --tab-text-color: Tab text color
     */
-    --tab-text-color: var(--color-interactive-default);
+    --tab-text-color: var(--color-background-interactive-default);
 
     /**
     *   @prop --tab-border-color: Tab border color
@@ -22,7 +22,7 @@
     /**
     *   @prop --tab-selected-border-color: Tab selected border color
     */
-    --tab-selected-border-color: var(--color-interactive-default);
+    --tab-selected-border-color: var(--color-background-interactive-default);
 
     box-sizing: border-box;
     display: flex;
@@ -61,7 +61,7 @@
     color: var(--tab-selected-text-color);
 }
 :host(:hover) {
-    color: var(--color-interactive-hover);
+    color: var(--color-background-interactive-hover);
 }
 :host([disabled]) {
     color: var(--tab-text-color);

@@ -2,7 +2,7 @@
 
 :host {
     display: block;
-    scrollbar-color: var(--color-interactive-muted)
+    scrollbar-color: var(--color-border-interactive-muted)
         var(--color-background-surface-default);
     ::-webkit-scrollbar {
         width: 16px;
@@ -11,7 +11,10 @@
     }
 
     ::-webkit-scrollbar-thumb {
-        background-color: var(--color-interactive-muted, rgb(43, 101, 155));
+        background-color: var(
+            --color-background-interactive-muted,
+            rgb(43, 101, 155)
+        );
         border-radius: 8px;
         border: 3px solid transparent;
         background-clip: padding-box;
@@ -28,7 +31,10 @@
 
     ::-webkit-scrollbar-thumb:active,
     ::-webkit-scrollbar-thumb:hover {
-        background-color: var(--color-interactive-default, rgb(58, 129, 191));
+        background-color: var(
+            --color-background-interactive-default,
+            rgb(58, 129, 191)
+        );
     }
 
     ::-webkit-scrollbar-track,
@@ -53,19 +59,23 @@
     --select-menu-border-radius: var(--radius-base);
 
     /** @prop --select-menu-border-hover-color: Border Hover Color of the Select Input */
-    --select-menu-border-hover-color: var(--color-interactive-hover);
+    --select-menu-border-hover-color: var(--color-background-interactive-hover);
 
     /** @prop --select-menu-border-focus-color: Border Focus Color of the Select Input */
-    --select-menu-border-focus-color: var(--color-interactive-hover);
+    --select-menu-border-focus-color: var(--color-background-interactive-hover);
 
     /** @prop --select-menu-invalid-border-color: Border Color of the Invalid Select Input */
-    --select-menu-invalid-border-color: var(--color-icon-status-fill-critical);
+    --select-menu-invalid-border-color: var(
+        --status-symbol-color-fill-critical
+    );
 
     /** @prop --select-menu-text-color: Text Color of the Select Input */
-    --select-menu-text-color: var(--color-interactive-default);
+    --select-menu-text-color: var(--color-background-interactive-default);
 
     /** @prop --select-menu-option-text-hover-color: Text Hover Color of the Select Menu Options */
-    --select-menu-option-text-hover-color: var(--color-interactive-hover);
+    --select-menu-option-text-hover-color: var(
+        --color-background-interactive-hover
+    );
 
     /** @prop --select-menu-option-selected-background-color: Background Color of the Selected Option */
     --select-menu-option-selected-background-color: var(
@@ -92,7 +102,7 @@
     );
 
     /** @prop --select-menu-border-color: Border Color of the Select Input */
-    --select-menu-border-color: var(--color-interactive-muted);
+    --select-menu-border-color: var(--color-border-interactive-muted);
 }
 
 .hidden,
@@ -160,7 +170,7 @@ label {
             padding: 0.438rem 0 0.438rem 1rem; // 7px 0px 7px 16px
             text-indent: 1rem;
             &:hover {
-                color: var(--color-interactive-hover);
+                color: var(--color-background-interactive-hover);
                 background-color: var(--color-background-surface-hover);
                 cursor: pointer;
             }

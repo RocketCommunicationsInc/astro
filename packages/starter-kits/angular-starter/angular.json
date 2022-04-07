@@ -27,7 +27,10 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              "src/styles.scss",
+              "./node_modules/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css"
+            ],
             "scripts": []
           },
           "configurations": {

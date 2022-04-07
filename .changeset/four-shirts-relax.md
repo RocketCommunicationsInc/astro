@@ -5,4 +5,4 @@
 "@astrouxds/react": patch
 ---
 
-fix(notification): Watch closeAfter to close when updated
+Updated the selected row styling on rux-table and added data to empty column in storybook.
