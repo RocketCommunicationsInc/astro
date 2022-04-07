@@ -21413,7 +21413,7 @@ export declare interface RuxModal extends Components.RuxModal {
 }
 
 @ProxyCmp({
-  inputs: ['clickToClose', 'open']
+  inputs: ['confirmText', 'denyText', 'modalMessage', 'modalTitle', 'open']
 })
 @Component({
   selector: 'rux-modal',
@@ -21426,7 +21426,7 @@ export class RuxModal {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['ruxmodalclosed', 'ruxmodalopened']);
+    proxyOutputs(this, this.el, ['ruxmodalclosed']);
   }
 }
 
