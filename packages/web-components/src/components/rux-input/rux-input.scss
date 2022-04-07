@@ -9,7 +9,7 @@
     /**
     * @prop --input-border-color: the input border color
     */
-    --input-border-color: var(--color-interactive-muted);
+    --input-border-color: var(--color-border-interactive-muted);
 
     /**
     * @prop --input-text-color: the input text color
@@ -20,7 +20,7 @@
     * @prop --input-focus-border-color: the input focus border color
     */
 
-    --input-focus-border-color: var(--color-interactive-hover);
+    --input-focus-border-color: var(--color-background-interactive-hover);
 
     /**
     * @prop --input-selection-background-color: the background color of highlighted text
@@ -30,7 +30,7 @@
     /**
     * @prop --input-invalid-border-color: the input invalid border color
     */
-    --input-invalid-border-color: var(--color-icon-status-fill-critical);
+    --input-invalid-border-color: var(--status-symbol-color-fill-critical);
 
     display: block;
 

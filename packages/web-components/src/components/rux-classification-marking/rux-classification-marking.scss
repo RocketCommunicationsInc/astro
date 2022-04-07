@@ -21,7 +21,7 @@
     letter-spacing: var(--font-body-1-bold-letter-spacing);
     color: var(--color-text-white);
     background-color: var(
-        --color-banner-classification-background-unclassified
+        --classification-banner-color-background-unclassified
     );
     text-transform: uppercase;
 }
@@ -36,7 +36,7 @@
     overflow-wrap: anywhere;
     color: var(--color-text-white);
     background-color: var(
-        --color-banner-classification-background-unclassified
+        --classification-banner-color-background-unclassified
     );
     position: sticky;
     top: 0;
@@ -63,29 +63,29 @@
 
 :host([classification='top-secret-sci']) .rux-classification {
     background-color: var(
-        --color-banner-classification-background-topsecretsci
+        --classification-banner-color-background-topsecretsci
     );
     color: var(--color-text-black);
 }
 
 :host([classification='top-secret']) .rux-classification {
-    background-color: var(--color-banner-classification-background-topsecret);
+    background-color: var(--classification-banner-color-background-topsecret);
     color: var(--color-text-black);
 }
 :host([classification='secret']) .rux-classification {
-    background-color: var(--color-banner-classification-background-secret);
+    background-color: var(--classification-banner-color-background-secret);
 }
 :host([classification='confidential']) .rux-classification {
     background-color: var(
-        --color-banner-classification-background-confidential
+        --classification-banner-color-background-confidential
     );
 }
 :host([classification='cui']) .rux-classification,
 :host([classification='controlled']) .rux-classification {
-    background-color: var(--color-banner-classification-background-cui);
+    background-color: var(--classification-banner-color-background-cui);
 }
 :host([classification='unclassified']) .rux-classification {
     background-color: var(
-        --color-banner-classification-background-unclassified
+        --classification-banner-color-background-unclassified
     );
 }

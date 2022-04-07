@@ -2,7 +2,7 @@
     /**
       * @prop --popup-menu-text-color: Menu Text Color
     */
-    --popup-menu-text-color: var(--color-interactive-default);
+    --popup-menu-text-color: var(--color-background-interactive-default);
 
     /**
       * @prop --popup-menu-item-background-color: Menu Item Background Color
@@ -19,7 +19,9 @@
     /**
       * @prop --popup-menu-item-hover-background-color: Menu Item Hover Text Color
     */
-    --popup-menu-item-hover-text-color: var(--color-interactive-hover);
+    --popup-menu-item-hover-text-color: var(
+        --color-background-interactive-hover
+    );
 
     display: block;
 

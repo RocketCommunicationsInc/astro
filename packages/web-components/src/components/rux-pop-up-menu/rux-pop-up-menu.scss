@@ -10,12 +10,12 @@
     /**
       * @prop --popup-menu-border-color: Pop Up Menu Border Color
     */
-    --popup-menu-border-color: var(--color-interactive-muted);
+    --popup-menu-border-color: var(--color-border-interactive-muted);
 
     /**
       * @prop --popup-menu-caret-background-color: Pop Up Menu Caret Background Color
     */
-    --popup-menu-caret-background-color: var(--color-interactive-muted);
+    --popup-menu-caret-background-color: var(--color-border-interactive-muted);
 
     /**
       * @prop --popup-menu-caret-left: Position of Caret
@@ -37,7 +37,7 @@
     padding: 0;
     position: absolute;
     pointer-events: none;
-    color: var(--color-interactive-default);
+    color: var(--color-background-interactive-default);
     background-color: var(--popup-menu-border-color);
     border: 1px solid var(--popup-menu-border-color);
     border-top-width: 4px;
