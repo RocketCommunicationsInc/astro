@@ -24,6 +24,19 @@
 .rux-popup__content--menu {
     padding: 0;
 }
+.rux-popup__arrow-left {
+    border-right: 2px solid var(--color-interactive-muted);
+}
+
+.rux-popup__arrow-top {
+    border-bottom: 2px solid var(--color-interactive-muted);
+}
+.rux-popup__arrow-right {
+    border-left: 2px solid var(--color-interactive-muted);
+}
+.rux-popup__arrow-bottom {
+    border-top: 2px solid var(--color-interactive-muted);
+}
 
 .rux-popup {
     // position: relative;
@@ -33,7 +46,10 @@
     position: absolute;
     background: #2b659b;
     // background: linear-gradient(315deg, #232629 50%, #101923 50%); works great for a top placed menu, not for others lol
-    width: 9px;
-    height: 9px;
+    // width: 9px;
+    // height: 9px;
+    width: 17px;
+    height: 17px;
     transform: rotate(45deg);
+    z-index: -9999;
 }

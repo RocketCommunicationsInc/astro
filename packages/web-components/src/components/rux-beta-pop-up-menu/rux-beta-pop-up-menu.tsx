@@ -1,10 +1,10 @@
-import { Prop, Watch, Element, Component, Host, h } from '@stencil/core'
+//@ts-nocheck
+import { Prop, Watch, Element, Component, Host, h, State } from '@stencil/core'
 import {
     Placement,
     computePosition,
     arrow,
     offset,
-    shift,
     flip,
     autoUpdate,
 } from '@floating-ui/dom'
@@ -23,6 +23,8 @@ export class RuxBetaPopUpMenu {
     @Prop({ mutable: true }) open = false
     @Prop() placement: Placement = 'bottom'
 
+    @State() arrowPosition?: string
+
     @Watch('open')
     handleOpen() {
         if (this.open) {
@@ -32,7 +34,6 @@ export class RuxBetaPopUpMenu {
         }
 
         if (this.open) {
-            console.log('TRIGGER startPositioner()')
             this.startPositioner()
         }
     }
@@ -46,14 +47,7 @@ export class RuxBetaPopUpMenu {
         this.open = !this.open
     }
 
-    componentDidLoad() {
-        //? Don't think this is necessary anymore - just calls an extra time
-        // console.log('**** position() call in compDidLoad *****')
-        // this.position()
-    }
-
     private position() {
-        console.log('*****Run postion()*****')
         /**
          * TOMORROWS NOTES
          * Problem: The initial position is off by like 20pixels. If you hide/show again,
@@ -71,28 +65,19 @@ export class RuxBetaPopUpMenu {
          * compute is calcualted.
          */
 
+        // If it's not visible, can't be opened or doesn't have content se don't need to compute anything.
         if (!this.open || !this.triggerSlot || !this.content) {
             return
         }
-        //@ts-ignore
         computePosition(this.triggerSlot, this.content, {
             placement: this.placement,
-            middleware: [
-                offset(6),
-                flip(),
-                // shift({padding: 5}),
-                //@ts-ignore
-                arrow({ element: this.arrowEl }),
-            ],
-            //@ts-ignore
-            // middleware: [flip()]
+            middleware: [offset(12), flip(), arrow({ element: this.arrowEl })],
         }).then(({ x, y, placement, middlewareData }) => {
             Object.assign(this.content.style, {
                 left: `${x}px`,
                 top: `${y}px`,
             })
 
-            //@ts-ignore
             const { x: arrowX, y: arrowY } = middlewareData.arrow
 
             const staticSide = {
@@ -102,20 +87,18 @@ export class RuxBetaPopUpMenu {
                 left: 'right',
             }[placement.split('-')[0]]
 
-            //@ts-ignore
             Object.assign(this.arrowEl.style, {
                 left: arrowX != null ? `${arrowX}px` : '',
                 top: arrowY != null ? `${arrowY}px` : '',
                 right: '',
                 bottom: '',
-                //@ts-ignore
-                [staticSide]: '-4px',
+                [staticSide]: '-6px',
             })
         })
+        this._determineArrowPosition()
     }
 
     private startPositioner() {
-        console.log('****Start Positioner****')
         this.stopPositioner()
         this.position()
         this.positionerCleanup = autoUpdate(
@@ -125,8 +108,40 @@ export class RuxBetaPopUpMenu {
         )
     }
 
+    /**
+     * This returns which side the arrow is on: top, right, left or bottom.
+     * Currently using this to determine which border to bolster, but could be useful in the future.
+     */
+    private _determineArrowPosition() {
+        if (!this.open) {
+            return
+        }
+        const triggerElRect = this.triggerSlot.getBoundingClientRect()
+        const arrowDivRect = this.arrowEl?.getBoundingClientRect()
+
+        // If trigger's bottom is higher than the arrows bottom, and triggers top is lower than the arrow's top
+        //it's not top or bottom. Check for left or right
+        if (
+            triggerElRect.bottom > arrowDivRect.bottom &&
+            triggerElRect.top < arrowDivRect.top
+        ) {
+            if (triggerElRect.right > arrowDivRect.right) {
+                this.arrowPosition = 'left'
+            } else {
+                this.arrowPosition = 'right'
+            }
+        } else {
+            if (triggerElRect.bottom > arrowDivRect.bottom) {
+                this.arrowPosition = 'top'
+            } else {
+                this.arrowPosition = 'bottom'
+            }
+        }
+
+        console.log(`${this.arrowPosition}: Arrow Position`)
+    }
+
     private stopPositioner() {
-        console.log('****Stop Positioner****')
         if (this.positionerCleanup) {
             this.positionerCleanup()
             this.positionerCleanup = undefined
@@ -134,29 +149,22 @@ export class RuxBetaPopUpMenu {
     }
 
     private _handleSlotChange(e: any) {
-        console.log('inside handleSlotChange', e.path[1])
         this.position()
     }
 
     get contentSlot() {
-        //@ts-ignore
         return this.content
             ?.querySelector('slot')
             .assignedElements({ flatten: true })[0]
-        // .filter(el => el.tagName.toLowerCase() === 'sl-menu')[0] as HTMLSlMenuElement;
     }
 
     get triggerSlot() {
-        // console.log('fire triggerSlot()', this.trigger)
-        //@ts-ignore
         return this.trigger
             ?.querySelector('slot')
             .assignedElements({ flatten: true })[0]
-        // .filter(el => el.tagName.toLowerCase() === 'sl-menu')[0] as HTMLSlMenuElement;
     }
 
     get hasMenu(): boolean {
-        //@ts-ignore
         return !!this.content
             ?.querySelector('slot')
             .assignedElements({ flatten: true })
@@ -166,28 +174,33 @@ export class RuxBetaPopUpMenu {
     }
 
     render() {
-        // console.log(this.hasMenu, 'hasMenu in render')
-
         return (
             <Host>
                 <div class="rux-popup">
                     <div
                         onClick={this.handleTriggerClick}
                         class="rux-popup__trigger"
-                        //@ts-ignore
                         ref={(el) => (this.trigger = el)}
                     >
                         <slot name="trigger"></slot>
                     </div>
 
                     <div
-                        // hidden={!this.open}
                         class={{
+                            // wish I could set the arrow class like this
+                            //`rux-popup__arrow-${this._determineArrowPosition()}`: true,
+                            'rux-popup__arrow-left':
+                                this.arrowPosition === 'left',
+                            'rux-popup__arrow-top':
+                                this.arrowPosition === 'top',
+                            'rux-popup__arrow-right':
+                                this.arrowPosition === 'right',
+                            'rux-popup__arrow-bottom':
+                                this.arrowPosition === 'bottom',
                             'rux-popup__content': true,
                             'rux-popup__content--menu': this.hasMenu,
                         }}
                         part="popup-content"
-                        //@ts-ignore
                         ref={(el) => (this.content = el)}
                     >
                         <div
@@ -197,7 +210,6 @@ export class RuxBetaPopUpMenu {
 
                         <slot
                             onSlotchange={(e) => {
-                                console.log('Fire onSlotChange')
                                 this._handleSlotChange(e)
                             }}
                         ></slot>
