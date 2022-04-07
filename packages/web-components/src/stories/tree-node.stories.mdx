@@ -3,7 +3,7 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
 <Meta
-    title="Components/Tree Node"
+    title="Components/Tree/Tree Node"
     component="rux-tree-node"
     argTypes={extractArgTypes('rux-tree-node')}
     parameters={{
@@ -15,7 +15,7 @@ import { html, render } from 'lit-html'
 
 # Tree Node
 
-Tree Node should be used with the [Tree](/?path=/story/components-tree--tree) component.
+Tree Node should be used with the [Tree](/?path=/story/components-tree--tree) component. If a rux-tree-node is used in isolation (like this example), it will be missing it's bottom border.
 
 ## Guidelines
 
@@ -23,18 +23,12 @@ Tree Node should be used with the [Tree](/?path=/story/components-tree--tree) co
 
 export const Default = (args) => {
     return html`
-<style>
-rux-tree-node{
-    border-bottom: 1px solid var(--color-interactive-muted);
-}
-</style>
 <rux-tree-node
     ?selected="${args.selected}"
     ?expanded="${args.expanded}"
     aria-level="1"
 >
     Level 1
-    <rux-tree-node slot="node"></rux-tree-node>
 </rux-tree-node>
     `
 }
@@ -61,18 +55,12 @@ rux-tree-node{
 
 export const Selected = (args) => {
     return html`
-<style>
-rux-tree-node{
-    border-bottom: 1px solid var(--color-interactive-muted);
-}
-</style>
 <rux-tree-node
     ?selected="${args.selected}"
     ?expanded="${args.expanded}"
     aria-level="1"
 >
     Level 1
-    <rux-tree-node slot="node"></rux-tree-node>
 </rux-tree-node>
     `
 }
@@ -93,11 +81,6 @@ rux-tree-node{
 
 export const Expanded = (args) => {
     return html`
-<style>
-rux-tree-node{
-    border-bottom: 1px solid var(--color-interactive-muted);
-}
-</style>
 <rux-tree-node
     ?selected="${args.selected}"
     ?expanded="${args.expanded}"
