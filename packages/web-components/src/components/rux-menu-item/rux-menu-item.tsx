@@ -33,9 +33,8 @@ export class RuxMenuItem {
     /**
      * @event ruxmenuitemselected - When a rux-menu item is selected, emits the value of that item.
      */
-    //@ts-ignore
     @Event({ eventName: 'ruxmenuitemselected', bubbles: true, composed: true })
-    ruxMenuItemSelected: EventEmitter<object>
+    ruxMenuItemSelected!: EventEmitter<object>
 
     @Listen('click', { passive: true })
     handleClick() {
