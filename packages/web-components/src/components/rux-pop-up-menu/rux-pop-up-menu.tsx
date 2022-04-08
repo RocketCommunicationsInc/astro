@@ -91,6 +91,7 @@ export class RuxPopUpMenu {
         if (this.open) {
             this._startPositioner()
         }
+        // this._determineArrowPosition()
     }
 
     private async _handleTriggerClick() {
@@ -184,11 +185,6 @@ export class RuxPopUpMenu {
         }
     }
 
-    private _handleSlotChange(e: any) {
-        console.log('slot change')
-        this._position()
-    }
-
     get contentSlot() {
         return this.content
             ?.querySelector('slot')
@@ -246,7 +242,7 @@ export class RuxPopUpMenu {
                             ref={(el) => (this.arrowEl = el)}
                         ></div>
 
-                        <slot onSlotchange={this._handleSlotChange()}></slot>
+                        <slot></slot>
                     </div>
                 </div>
             </Host>

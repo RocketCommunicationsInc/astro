@@ -20,8 +20,8 @@
     </head>
 
     <body>
-        <div style="margin: 30%">
-            <rux-pop-up-menu id="test" open placement="top-start">
+        <div style="margin: 20%">
+            <rux-pop-up-menu id="test" placement="top-start">
                 <rux-button slot="trigger">top</rux-button>
                 <rux-menu>
                     <rux-menu-item value="1" selected
@@ -38,13 +38,20 @@
                 </rux-menu>
             </rux-pop-up-menu>
         </div>
+        <rux-button id="add">Add</rux-button>
         <rux-button id="btn">isOpen()</rux-button>
         <script>
             const btn = document.getElementById('btn')
             const popup = document.getElementById('test')
+            const add = document.getElementById('add')
 
             btn.addEventListener('click', () => {
                 methodCall()
+            })
+            add.addEventListener('click', () => {
+                let newItem = document.createElement('rux-menu-item')
+                newItem.innerHTML = 'This was added!'
+                popup.append(newItem)
             })
             async function methodCall() {
                 await popup
