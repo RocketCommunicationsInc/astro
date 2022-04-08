@@ -8,14 +8,14 @@ import { html, render } from 'lit-html'
     argTypes={extractArgTypes('rux-modal')}
     parameters={{
         actions: {
-            handles: ['ruxmodalclosed rux-modal'],
+            handles: ['ruxmodalclosed rux-modal', 'ruxmodalopened rux-modal'],
         },
     }}
 />
 
 # Modal
 
-A Modal interrupts the app experience to prompt a user to confirm an action or acknowledge a piece of information. It displays information along with a set of buttons allowing users to “Accept or Cancel” the actions presented within the Rux Modal.
+A Modal interrupts the app experience to prompt a user to confirm an action or acknowledge a piece of information.
 
 ## Guidelines
 
@@ -23,15 +23,56 @@ A Modal interrupts the app experience to prompt a user to confirm an action or a
 
 export const Modal = (args) => {
     return html`
-<div style="display: flex; flex-flow: column; justify-content: center;">
-    <rux-modal
-        ?open="${args.open}"
-        modal-message="${args.modalMessage}"
-        modal-title="${args.modalTitle}"
-        confirm-text="${args.confirmText}"
-        deny-text="${args.denyText}"
-    ></rux-modal>
-</div
+            <style>
+            .sbdocs #story--components-modal--default-story {
+                display: block;
+                min-height: 500px;
+            }
+                .sbdocs #story--components-modal--modal rux-modal::part(container) {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+    }
+            .rux-button-group{
+                margin-top: auto;
+                margin-left: auto;
+                align-self: flex-end;
+            }
+            rux-modal::part(modal-wrapper) {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+        <div style="display: flex; flex-flow: column; justify-content: center;">
+            <rux-modal
+                ?open="${args.open}"
+                ?click-to-close="${args.clickToClose}"
+                id="modal-1"
+            >
+            <div slot="header">Modal title</div>
+            <div slot="message">Modal message</div>
+            <div slot="footer">
+                <rux-button-group class="rux-button-group" h-align="right">
+                    <rux-button class="btn" secondary>Cancel</rux-button>
+                    <rux-button class="btn" >Release</rux-button>
+                </rux-button-group>
+            </div>
+            </rux-modal>
+        </div>
+        <script>
+            let modal = document.getElementById('modal-1');
+            let btns = document.querySelectorAll('.btn');
+            btns.forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    modal.open = false;
+                })
+            })
+        </script>
     `
 }
 
@@ -39,12 +80,8 @@ export const Modal = (args) => {
     <Story
         args={{
             open: true,
-            modalMessage: 'Modal message',
-            modalTitle: 'Modal title',
-            confirmText: 'Release',
-            denyText: 'Cancel',
         }}
-        name="Modal"
+        name="Default"
     >
         {Modal.bind()}
     </Story>
@@ -54,13 +91,226 @@ export const Modal = (args) => {
 
 <ArgsTable of="rux-modal" />
 
+## Variants
+
+### Close on click away
+
+export const ClickToClose = (args) => {
+    return html`
+        <style>
+            .sbdocs #story--components-modal--click-to-close {
+                display: block;
+                min-height: 500px;
+            }
+            rux-modal::part(container) {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+            }
+            .rux-button-group {
+                margin-top: auto;
+                margin-left: auto;
+                align-self: flex-end;
+            }
+        </style>
+        <div style="display: flex; flex-flow: column; justify-content: center;">
+            <rux-modal
+                ?open="${args.open}"
+                ?click-to-close="${args.clickToClose}"
+            >
+                <div slot="header">Click Off Close</div>
+                <div slot="message">
+                    <p>
+                        If click-to-close is true, clicking off of rux-modal
+                        will close it.
+                    </p>
+                </div>
+                <div
+                    slot="footer"
+                    style="width: 100%; display: flex; justify-content: space-between; align-items: center;"
+                >
+                    <div>
+                        <a
+                            href="https://astrouxds.com/"
+                            style="margin-right: 10px; text-decoration: none; color: var(--color-primary);"
+                            >Modal Link</a
+                        >
+                    </div>
+                    <div>
+                        <rux-button-group>
+                            <rux-button secondary>Cancel</rux-button>
+                            <rux-button>Confirm</rux-button>
+                        </rux-button-group>
+                    </div>
+                </div>
+            </rux-modal>
+        </div>
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+            open: true,
+            clickToClose: true,
+        }}
+        name="Click To Close"
+    >
+        {ClickToClose.bind()}
+    </Story>
+</Canvas>
+
+### Other Variants
+
+export const OtherVariants = (args) => {
+    return html`
+        <style>
+            .sbdocs #story--components-modal--other-variants {
+                display: block;
+                min-height: 500px;
+            }
+            rux-modal::part(container) {
+                position: relative;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+            }
+            ul {
+                list-style: none;
+                background-color: black;
+            }
+            li {
+                padding: 1rem;
+            }
+        </style>
+        <ul>
+            <li>
+                <rux-modal open>
+                    <div slot="header">Title and message with no footer</div>
+                    <div slot="message">Modal Message</div>
+                </rux-modal>
+            </li>
+            <li>
+                <rux-modal open>
+                    <div slot="header">Title and footer with no message</div>
+                    <div
+                    slot="footer"
+                    style="width: 100%; display: flex; justify-content: space-between; align-items: center;"
+                >
+                    <div>
+                        <a
+                            href="https://astrouxds.com/"
+                            style="margin-right: 10px; text-decoration: none; color: var(--color-primary);"
+                            >Modal Link</a
+                        >
+                    </div>
+                    <div>
+                        <rux-button-group>
+                            <rux-button secondary>Cancel</rux-button>
+                            <rux-button>Confirm</rux-button>
+                        </rux-button-group>
+                    </div>
+                </div>
+                </rux-modal>
+            </li>
+            <li>
+                <rux-modal open>
+                    <div slot="message">Message and footer, no title</div>
+                     <div
+                        slot="footer"
+                        style="width: 100%; display: flex; justify-content: space-between; align-items: center;"
+                     >
+                        <div>
+                            <a
+                                href="https://astrouxds.com/"
+                                style="margin-right: 10px; text-decoration: none; color: var(--color-primary);"
+                                >Modal Link</a
+                            >
+                        </div>
+                    <div>
+                        <rux-button-group>
+                            <rux-button secondary>Cancel</rux-button>
+                            <rux-button>Confirm</rux-button>
+                        </rux-button-group>
+                    </div>
+                </div>
+                </rux-modal>
+            </li>
+        </ul>
+    `
+}
+
+<Canvas>
+    <Story
+        name="Other Variants"
+    >
+        {OtherVariants.bind()}
+    </Story>
+</Canvas>
+
+## Opening, Closing and Focusing
+
+### Opening and Closing
+
+The `open` prop of `rux-modal` is mutable and can be changed accordingly. The `click-to-close` prop can be used to enable the closing of `rux-modal` when a user clicks off of it. Here is a basic example of doing so with buttons:
+
+```js
+<rux-modal id="modal" open click-to-close>
+    <div slot="header">Modal Header</div>
+    <p slot="message">Modal message here!</p>
+    <div slot="footer">
+        <rux-button id="confirm">Confirm</rux-button>
+    </div>
+</rux-modal>
+<script>
+    const modal = document.getElementById('modal');
+    const confirm = document.getElementById('confirm')
+    confirm.addEventListener('click', () => {
+        modal.open = false;
+    })
+</script>
+```
+
+### Applying Focus
+
+Often times when a modal opens, you want to focus a specific element. Here's a simple way to apply focus using a `rux-button` to open the modal:
+
+```js
+<rux-button id="open">Open Modal</rux-button>
+<rux-modal id="modal" click-to-close>
+    <div slot="header">Modal Header</div>
+    <p slot="message">Modal message here!</p>
+    <div slot="footer">
+        <rux-button id="confirm">Confirm</rux-button>
+    </div>
+</rux-modal>
+
+<script>
+    const modal = document.getElementById('modal')
+    const open = document.getElementById('open')
+    const confirm = document.getElementById('confirm')
+    modal.addEventListener('ruxmodalopened', () => {
+        setTimeout(() => {
+            confirm.focus()
+        }, 0)
+    })
+    confirm.addEventListener('click', () => {
+        modal.open = false
+    })
+    open.addEventListener('click', () => {
+        modal.open = true
+    })
+</script>
+```
+
 ## Cherry Picking
 
 If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
 
 ```js
 import RuxModal from '@astrouxds/astro-web-components/dist/components/rux-modal.js'
-import RuxButton from '@astrouxds/astro-web-components/dist/components/rux-button.js'
 customElements.define('rux-modal', RuxModal)
-customElements.define('rux-button', RuxButton)
 ```

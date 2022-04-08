@@ -1,0 +1,12 @@
+{
+  "mode": "pre",
+  "tag": "beta",
+  "initialVersions": {
+    "@astrouxds/ag-grid-theme": "6.1.0",
+    "@astrouxds/angular": "6.1.0",
+    "astro-website": "6.1.0",
+    "@astrouxds/react": "6.1.0",
+    "@astrouxds/astro-web-components": "6.1.0"
+  },
+  "changesets": []
+}
