@@ -86,15 +86,10 @@ export class RuxPopUpMenu {
         this._handleSlotChange = this._handleSlotChange.bind(this)
     }
 
-    // still get change during render warning
-    // componentDidRender() {
-    //     if(this.open) {
-    //         this._determineArrowPosition()
-    //     }
-    // }
-
-    private _findMenuItems() {
-        const items = this.el.querySelectorAll('rux-menu-item')
+    componentDidRender() {
+        if (this.open) {
+            this._startPositioner()
+        }
     }
 
     private async _handleTriggerClick() {
@@ -104,6 +99,9 @@ export class RuxPopUpMenu {
     private _position() {
         // If it's not visible, can't be opened or doesn't have content we don't need to compute anything.
         if (!this.open || !this.triggerSlot || !this.content) {
+            console.log(
+                `returning early, one or more are false: open - ${this.open}, triggerSlot - ${this.triggerSlot}, content - ${this.content}`
+            )
             return
         }
         computePosition(this.triggerSlot, this.content, {
@@ -149,6 +147,7 @@ export class RuxPopUpMenu {
     /**
      * This returns which side the arrow is on: top, right, left or bottom.
      * Currently using this to determine which border to bolster, but could be useful in the future.
+     * ! This does cause a 'state changed during render' stencil erorr.
      */
     private _determineArrowPosition() {
         if (!this.open) {
@@ -185,6 +184,7 @@ export class RuxPopUpMenu {
     }
 
     private _handleSlotChange(e: any) {
+        console.log('slot change')
         this._position()
     }
 
@@ -235,6 +235,7 @@ export class RuxPopUpMenu {
                                 this.arrowPosition === 'bottom',
                             'rux-popup__content': true,
                             'rux-popup__content--menu': this.hasMenu,
+                            hidden: this.open === false,
                         }}
                         part="popup-content"
                         ref={(el) => (this.content = el)}
