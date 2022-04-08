@@ -40,6 +40,7 @@
     },
     "dependencies": {
         "@stencil/core": "~2.5.2",
+        "@storybook/addon-google-analytics": "~6.2.9",
         "date-fns": "~2.21.1",
         "date-fns-tz": "~1.1.7"
     },
