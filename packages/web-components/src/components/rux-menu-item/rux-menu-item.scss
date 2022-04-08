@@ -15,4 +15,8 @@
         background: var(--color-background-surface-selected);
         color: var(--color-text-primary);
     }
+    &--disabled {
+        opacity: 0.4; // change to token
+        cursor: not-allowed;
+    }
 }

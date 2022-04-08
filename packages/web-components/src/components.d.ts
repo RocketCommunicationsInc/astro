@@ -11954,7 +11954,18 @@ export namespace Components {
     interface RuxMenu {
     }
     interface RuxMenuItem {
+        /**
+          * @prop disabled - sets the menu item as disabled
+         */
+        "disabled": boolean;
+        /**
+          * @prop selected - sets the menu item as selected
+         */
         "selected": boolean;
+        /**
+          * @prop value - the value returned when item is selected. If no value is given, the text content will be used.
+         */
+        "value": any;
     }
     interface RuxMenuItemDivider {
     }
@@ -12076,11 +12087,15 @@ export namespace Components {
     }
     interface RuxPopUpMenu {
         /**
+          * @returns Promise<boolean> depending on if the popup is open
+         */
+        "isOpen": () => Promise<boolean>;
+        /**
           * @prop open - determines if the pop up is open or closed
          */
         "open": boolean;
         /**
-          * @prop placement - the placement of the pop up relative to it's slotted trigger element. A list of  acceptable placements can be found at [floatingui.com/docs](https://floating-ui.com/docs/computePosition#placement)
+          * @prop placement - the placement of the pop up relative to it's slotted trigger element. A list of acceptable placements can be found at [floatingui.com/docs](https://floating-ui.com/docs/computePosition#placement)
          */
         "placement": Placement;
     }
@@ -32207,7 +32222,22 @@ declare namespace LocalJSX {
     interface RuxMenu {
     }
     interface RuxMenuItem {
+        /**
+          * @prop disabled - sets the menu item as disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * @event ruxmenuitemselected - When a rux-menu item is selected, emits the value of that item.
+         */
+        "onRuxmenuitemselected"?: (event: CustomEvent<object>) => void;
+        /**
+          * @prop selected - sets the menu item as selected
+         */
         "selected"?: boolean;
+        /**
+          * @prop value - the value returned when item is selected. If no value is given, the text content will be used.
+         */
+        "value"?: any;
     }
     interface RuxMenuItemDivider {
     }
@@ -32339,11 +32369,27 @@ declare namespace LocalJSX {
     }
     interface RuxPopUpMenu {
         /**
+          * @event ruxmenudidclose - emitted after the pop up has closed
+         */
+        "onRuxmenudidclose"?: (event: CustomEvent<void>) => void;
+        /**
+          * @event ruxmenudidopen - emitted after the pop up has opened
+         */
+        "onRuxmenudidopen"?: (event: CustomEvent<void>) => void;
+        /**
+          * @event ruxmenuwillclose - emitted when the pop up will close
+         */
+        "onRuxmenuwillclose"?: (event: CustomEvent<void>) => void;
+        /**
+          * @event ruxmenuwillopen - emitted when the pop up will open
+         */
+        "onRuxmenuwillopen"?: (event: CustomEvent<void>) => void;
+        /**
           * @prop open - determines if the pop up is open or closed
          */
         "open"?: boolean;
         /**
-          * @prop placement - the placement of the pop up relative to it's slotted trigger element. A list of  acceptable placements can be found at [floatingui.com/docs](https://floating-ui.com/docs/computePosition#placement)
+          * @prop placement - the placement of the pop up relative to it's slotted trigger element. A list of acceptable placements can be found at [floatingui.com/docs](https://floating-ui.com/docs/computePosition#placement)
          */
         "placement"?: Placement;
     }

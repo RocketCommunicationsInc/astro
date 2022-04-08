@@ -21,22 +21,37 @@
 
     <body>
         <div style="margin: 30%">
-            <rux-pop-up-menu id="test" placement="left">
+            <rux-pop-up-menu id="test" placement="top-start">
                 <rux-button slot="trigger">top</rux-button>
                 <rux-menu>
-                    <rux-menu-item selected
+                    <rux-menu-item value="1" selected
                         >Pop up menu option test adsfasdf asdf asdf asdf asdf
                     </rux-menu-item>
-                    <rux-menu-item
+                    <rux-menu-item value="2" disabled
                         >Pop up menu option testasdf asdf asdf asdf asdf asdf
                         asdf
                     </rux-menu-item>
-                    <rux-menu-item
+                    <rux-menu-item value="3"
                         >Pop up menu option test asdf asdf asdf asdf asdf asdf
                         asdf asdf
                     </rux-menu-item>
                 </rux-menu>
             </rux-pop-up-menu>
         </div>
+        <rux-button id="btn">show()</rux-button>
+        <script>
+            const btn = document.getElementById('btn')
+            const popup = document.getElementById('test')
+
+            btn.addEventListener('click', () => {
+                methodCall()
+            })
+            async function methodCall() {
+                await popup
+                    .isOpen()
+                    .then((res) => console.log(res))
+                    .catch((err) => console.log(err))
+            }
+        </script>
     </body>
 </html>

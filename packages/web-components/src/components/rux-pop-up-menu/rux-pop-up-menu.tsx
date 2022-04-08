@@ -1,5 +1,17 @@
 //@ts-nocheck
-import { Prop, Watch, Element, Component, Host, h, State } from '@stencil/core'
+import {
+    Prop,
+    Watch,
+    Element,
+    Component,
+    Host,
+    h,
+    State,
+    Event,
+    EventEmitter,
+    Method,
+    Listen,
+} from '@stencil/core'
 import {
     Placement,
     computePosition,
@@ -20,6 +32,8 @@ export class RuxPopUpMenu {
     private arrowEl?: HTMLElement
     private _positionerCleanup: ReturnType<typeof autoUpdate> | undefined
 
+    @Element() el!: HTMLRuxPopUpMenuElement
+
     /**
      * @prop open - determines if the pop up is open or closed
      */
@@ -31,24 +45,74 @@ export class RuxPopUpMenu {
     @Prop() placement: Placement = 'bottom'
 
     @State() arrowPosition?: string
+    @State() menuItems?: HTMLRuxMenuItemElement[] = []
+
+    /**
+     * @event ruxmenuwillopen - emitted when the pop up will open
+     */
+    @Event({ eventName: 'ruxmenuwillopen' }) ruxMenuWillOpen: EventEmitter<void>
+    /**
+     * @event ruxmenuwillclose - emitted when the pop up will close
+     */
+    @Event({ eventName: 'ruxmenuwillclose' })
+    ruxMenuWillClose: EventEmitter<void>
+    /**
+     * @event ruxmenudidopen - emitted after the pop up has opened
+     */
+    @Event({ eventName: 'ruxmenudidopen' }) ruxMenuDidOpen: EventEmitter<void>
+    /**
+     * @event ruxmenudidclose - emitted after the pop up has closed
+     */
+    @Event({ eventName: 'ruxmenudidclose' }) ruxMenuDidClose: EventEmitter<void>
 
     @Watch('open')
     handleOpen() {
         if (this.open) {
             this.content.style.display = 'block'
+            this._startPositioner()
         } else {
             this.content.style.display = ''
         }
+    }
 
+    /**
+     *
+     * @returns Promise<boolean> depending on if the popup is open
+     */
+    @Method()
+    async isOpen(): Promise<boolean> {
         if (this.open) {
-            this._startPositioner()
-        }
+            return true
+        } else return false
+    }
+
+    @Listen('ruxmenuitemselected', { passive: true })
+    handleSelected(e: CustomEvent) {
+        //click a menu item, go thru connected menu items, if target matches update selected
+        const items = this.el.querySelectorAll('rux-menu-item')
+        items.forEach((item) => {
+            if (item.value === e.target.value) {
+                item.selected = true
+            } else {
+                item.selected = false
+            }
+        })
     }
 
     connectedCallback() {
         this._handleTriggerClick = this._handleTriggerClick.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
-        this._determineArrowPosition()
+    }
+
+    // still get change during render warning
+    // componentDidRender() {
+    //     if(this.open) {
+    //         this._determineArrowPosition()
+    //     }
+    // }
+
+    private _findMenuItems() {
+        const items = this.el.querySelectorAll('rux-menu-item')
     }
 
     private async _handleTriggerClick() {
@@ -86,6 +150,8 @@ export class RuxPopUpMenu {
                 [staticSide]: '-6px',
             })
         })
+        //* Tried component will load, did load
+        this._determineArrowPosition() // right every time, but change during render warning
     }
 
     private _startPositioner() {
