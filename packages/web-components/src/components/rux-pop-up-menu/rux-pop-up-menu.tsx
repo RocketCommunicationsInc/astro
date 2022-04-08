@@ -54,11 +54,11 @@ export class RuxPopUpMenu {
             this._startPositioner()
         } else {
             this.content.style.display = ''
+            this._stopPositioner()
         }
     }
 
     /**
-     *
      * @returns Promise<boolean> depending on if the popup is open
      */
     @Method()
@@ -83,8 +83,11 @@ export class RuxPopUpMenu {
 
     connectedCallback() {
         this._handleTriggerClick = this._handleTriggerClick.bind(this)
-        this._handleSlotChange = this._handleSlotChange.bind(this)
     }
+
+    // disconnectedCallback() {
+    //     this._stopPositioner()
+    // }
 
     componentDidRender() {
         //if open is passed true on init, then wait for things to be defined and run positioner.
@@ -99,6 +102,7 @@ export class RuxPopUpMenu {
     }
 
     private _position() {
+        console.log('position call!')
         // If it's not visible, can't be opened or doesn't have content we don't need to compute anything.
         if (!this.open || !this.triggerSlot || !this.content) {
             console.log(
@@ -138,12 +142,14 @@ export class RuxPopUpMenu {
 
     private _startPositioner() {
         this._stopPositioner()
-        this._position()
-        this._positionerCleanup = autoUpdate(
-            this.triggerSlot,
-            this.content,
-            this._position.bind(this)
-        )
+        if (this.open) {
+            this._position()
+            this._positionerCleanup = autoUpdate(
+                this.triggerSlot,
+                this.content,
+                this._position.bind(this)
+            )
+        }
     }
 
     /**
