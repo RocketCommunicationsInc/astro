@@ -21409,6 +21409,10 @@ export declare interface RuxModal extends Components.RuxModal {
    * Event that is fired when modal closes 
    */
   ruxmodalclosed: EventEmitter<CustomEvent<boolean>>;
+  /**
+   * Event that is fired when modal opens 
+   */
+  ruxmodalopened: EventEmitter<CustomEvent<boolean>>;
 
 }
 
@@ -21419,7 +21423,7 @@ export declare interface RuxModal extends Components.RuxModal {
   selector: 'rux-modal',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['confirmText', 'denyText', 'modalMessage', 'modalTitle', 'open']
+  inputs: ['clickToClose', 'open']
 })
 export class RuxModal {
   protected el: HTMLElement;

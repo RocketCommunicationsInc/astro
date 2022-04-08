@@ -6,10 +6,12 @@
     --segmented-button-background-color: var(--color-background-base-default);
 
     /** @prop --segmented-button-text-color: Segmented button text color */
-    --segmented-button-text-color: var(--color-interactive-default);
+    --segmented-button-text-color: var(--color-background-interactive-default);
 
     /** @prop --segmented-button-border-color: Segmented button border color */
-    --segmented-button-border-color: var(--color-interactive-default);
+    --segmented-button-border-color: var(
+        --color-background-interactive-default
+    );
 
     /** @prop --segmented-button-hover-background-color: Segmented button hover background color */
     --segmented-button-hover-background-color: var(
@@ -17,10 +19,14 @@
     );
 
     /** @prop --segmented-button-hover-text-color: Segmented button hover text color */
-    --segmented-button-hover-text-color: var(--color-interactive-default);
+    --segmented-button-hover-text-color: var(
+        --color-background-interactive-default
+    );
 
     /** @prop --segmented-button-hover-border-color: Segmented button hover border color */
-    --segmented-button-hover-border-color: var(--color-interactive-hover);
+    --segmented-button-hover-border-color: var(
+        --color-background-interactive-hover
+    );
 
     /** @prop --segmented-button-selected-background-color: Segmented button selected background color */
     --segmented-button-selected-background-color: var(
@@ -40,7 +46,7 @@
 
     /** @prop --segmented-button-selected-hover-border-color: Segmented button selected hover border color */
     --segmented-button-selected-hover-border-color: var(
-        --color-interactive-default
+        --color-background-interactive-default
     );
 
     /** @prop --segmented-button-border-radius: Segmented button border radius */
@@ -160,6 +166,7 @@
             border-color: var(--segmented-button-hover-border-color);
         }
     }
+
     &:first-child label {
         border-radius: var(--segmented-button-border-radius) 0 0
             var(--segmented-button-border-radius);

@@ -4,7 +4,7 @@
     /**
      * @prop --textarea-border-color: Border color of the textarea.
     */
-    --textarea-border-color: var(--color-interactive-muted);
+    --textarea-border-color: var(--color-border-interactive-muted);
 
     /**
      * @prop --textarea-text-color: Text color
@@ -15,12 +15,12 @@
     --textarea-background-color: var(--color-background-base-default);
 
     /** @prop --textarea-invalid-border-color: Border color while in an invalid state */
-    --textarea-invalid-border-color: var(--color-icon-status-fill-critical);
+    --textarea-invalid-border-color: var(--status-symbol-color-fill-critical);
 
     /**
      * @prop --textarea-focus-border-color: Border color while in a focused state
     */
-    --textarea-focus-border-color: var(--color-interactive-hover);
+    --textarea-focus-border-color: var(--color-background-interactive-hover);
 
     /**
      * @prop --textarea-selection-background-color: Background color while in a selected state

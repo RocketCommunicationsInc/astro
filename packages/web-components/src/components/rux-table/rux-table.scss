@@ -29,7 +29,7 @@
     /**
       * @prop --table-header-text-color: Table header text color
       */
-    --table-header-text-color: var(--color-gsb-text-primary);
+    --table-header-text-color: var(--gsb-color-text);
 
     /**
       * @prop --table-header-box-shadow: Table header box shadow
@@ -72,7 +72,7 @@
       * @prop --table-row-selected-border-color: Table row selected border color
       */
     --table-row-selected-border-color: var(--color-background-surface-selected);
-    // --table-row-selected-border-color: var(--color-interactive-default);
+    // --table-row-selected-border-color: var(--color-background-interactive-default);
 }
 
 :host([hidden]) {
