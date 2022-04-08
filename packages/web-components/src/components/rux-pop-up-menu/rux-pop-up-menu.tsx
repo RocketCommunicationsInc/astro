@@ -47,24 +47,6 @@ export class RuxPopUpMenu {
     @State() arrowPosition?: string
     @State() menuItems?: HTMLRuxMenuItemElement[] = []
 
-    /**
-     * @event ruxmenuwillopen - emitted when the pop up will open
-     */
-    @Event({ eventName: 'ruxmenuwillopen' }) ruxMenuWillOpen: EventEmitter<void>
-    /**
-     * @event ruxmenuwillclose - emitted when the pop up will close
-     */
-    @Event({ eventName: 'ruxmenuwillclose' })
-    ruxMenuWillClose: EventEmitter<void>
-    /**
-     * @event ruxmenudidopen - emitted after the pop up has opened
-     */
-    @Event({ eventName: 'ruxmenudidopen' }) ruxMenuDidOpen: EventEmitter<void>
-    /**
-     * @event ruxmenudidclose - emitted after the pop up has closed
-     */
-    @Event({ eventName: 'ruxmenudidclose' }) ruxMenuDidClose: EventEmitter<void>
-
     @Watch('open')
     handleOpen() {
         if (this.open) {
