@@ -87,6 +87,7 @@ export class RuxPopUpMenu {
     }
 
     componentDidRender() {
+        //if open is passed true on init, then wait for things to be defined and run positioner.
         if (this.open) {
             this._startPositioner()
         }
