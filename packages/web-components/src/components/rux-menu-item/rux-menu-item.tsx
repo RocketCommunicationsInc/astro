@@ -3,7 +3,6 @@ import {
     Component,
     Host,
     h,
-    Watch,
     Event,
     EventEmitter,
     Listen,
