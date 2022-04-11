@@ -1,17 +1,20 @@
 :host {
     display: block;
+    width: min-content;
 }
 
 .hidden,
 :host([hidden]) {
     display: none;
 }
+.hidden {
+    display: none !important;
+}
 
 .rux-popup__content {
     position: absolute;
     color: white;
     padding: 12px;
-    // display: none;
     border-radius: var(--radius-base);
     background: var(--color-background-base-default);
     border: 1px solid var(--color-border-interactive-muted);

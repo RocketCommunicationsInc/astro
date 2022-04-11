@@ -20,6 +20,37 @@
     </head>
 
     <body>
+        <style>
+            #form-pop::part(popup-content) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+            }
+        </style>
+        <div style="margin: 10%">
+            <rux-pop-up-menu id="form-pop">
+                <rux-icon icon="apps" slot="trigger"></rux-icon>
+                <rux-input
+                    id="1"
+                    type="text"
+                    placeholder="Warrior"
+                    value=""
+                ></rux-input>
+                <rux-input
+                    id="2"
+                    type="password"
+                    placeholder="Of Light"
+                    value=""
+                ></rux-input>
+                <rux-button type="submit" id="submit">Submit</rux-button>
+            </rux-pop-up-menu>
+        </div>
+        <div
+            id="form-test"
+            style="background: gray; width: 100px; height: 100px"
+        ></div>
+
         <div style="margin: 20%">
             <rux-pop-up-menu id="test" placement="top-start">
                 <rux-button slot="trigger">top</rux-button>
@@ -44,6 +75,15 @@
             const btn = document.getElementById('btn')
             const popup = document.getElementById('test')
             const add = document.getElementById('add')
+            const submitBtn = document.getElementById('submit')
+            const testDiv = document.getElementById('form-test')
+            const input1 = document.getElementById('1')
+            const input2 = document.getElementById('2')
+
+            submitBtn.addEventListener('click', (e) => {
+                e.preventDefault()
+                testDiv.innerText = input1.value + input2.value
+            })
 
             btn.addEventListener('click', () => {
                 methodCall()

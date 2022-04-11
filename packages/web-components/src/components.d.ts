@@ -32349,6 +32349,10 @@ declare namespace LocalJSX {
     }
     interface RuxPopUpMenu {
         /**
+          * @event ruxpopupmenuselected - emits the value of the selected rux-menu-item inside of rux-pop-up-menu
+         */
+        "onRuxpopupmenuselected"?: (event: CustomEvent<any>) => void;
+        /**
           * @prop open - determines if the pop up is open or closed
          */
         "open"?: boolean;
