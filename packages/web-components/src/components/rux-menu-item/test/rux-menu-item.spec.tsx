@@ -7,12 +7,6 @@ describe('rux-beta-menu-item', () => {
             components: [RuxMenuItem],
             html: `<rux-menu-item></rux-menu-item>`,
         })
-        expect(page.root).toEqualHtml(`
-      <rux-menu-item>
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
-      </rux-menu-item>
-    `)
+        expect(page.root).toMatchSnapshot()
     })
 })
