@@ -12075,7 +12075,7 @@ export namespace Components {
     }
     interface RuxPopUpMenu {
         /**
-          * @returns Promise<boolean> depending on if the popup is open
+          * @retruns Promise<boolean> - true if the pop-up is open, false if not.
          */
         "isOpen": () => Promise<boolean>;
         /**

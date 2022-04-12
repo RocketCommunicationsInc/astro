@@ -26,7 +26,7 @@ import {
  * @slot (default) - The contents for rux-pop-up-menu
  * @slot trigger - The trigger element for rux-pop-up-menu
  *
- * @part conatiner - the container of rux-pop-up-menu
+ * @part container - the container of rux-pop-up-menu
  * @part trigger-container - the container of the pop-up trigger
  * @part popup-content - the content that is shown when rux-pop-up-menu is opened
  * @part arrow - the arrow pointing to the trigger of rux-pop-up-menu
@@ -80,7 +80,7 @@ export class RuxPopUpMenu {
     }
 
     /**
-     * @returns Promise<boolean> depending on if the popup is open
+     * @retruns Promise<boolean> - true if the pop-up is open, false if not.
      */
     @Method()
     async isOpen(): Promise<boolean> {
