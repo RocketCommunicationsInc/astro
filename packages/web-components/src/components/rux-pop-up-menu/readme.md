@@ -1,0 +1,57 @@
+# rux-pop-up-menu
+
+
+
+<!-- Auto Generated Below -->
+
+
+## Properties
+
+| Property    | Attribute   | Description | Type                                                                                                                                                                 | Default    |
+| ----------- | ----------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| `open`      | `open`      |             | `boolean`                                                                                                                                                            | `false`    |
+| `placement` | `placement` |             | `"bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'bottom'` |
+
+
+## Events
+
+| Event                  | Description | Type               |
+| ---------------------- | ----------- | ------------------ |
+| `ruxpopupmenuselected` |             | `CustomEvent<any>` |
+
+
+## Methods
+
+### `isOpen() => Promise<boolean>`
+
+
+
+#### Returns
+
+Type: `Promise<boolean>`
+
+Promise<boolean> depending on if the popup is open
+
+
+## Slots
+
+| Slot          | Description                             |
+| ------------- | --------------------------------------- |
+| `"(default)"` | The contents for rux-pop-up-menu        |
+| `"trigger"`   | The trigger element for rux-pop-up-menu |
+
+
+## Shadow Parts
+
+| Part                  | Description                                              |
+| --------------------- | -------------------------------------------------------- |
+| `"arrow"`             | the arrow pointing to the trigger of rux-pop-up-menu     |
+| `"conatiner"`         | the container of rux-pop-up-menu                         |
+| `"container"`         |                                                          |
+| `"popup-content"`     | the content that is shown when rux-pop-up-menu is opened |
+| `"trigger-container"` | the container of the pop-up trigger                      |
+
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

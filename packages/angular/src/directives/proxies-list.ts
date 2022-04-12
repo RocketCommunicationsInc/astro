@@ -1067,6 +1067,7 @@ export const DIRECTIVES = [
   d.RuxIconZoomOutMap,
   d.RuxInput,
   d.RuxLog,
+  d.RuxMenu,
   d.RuxMenuItem,
   d.RuxMenuItemDivider,
   d.RuxModal,
