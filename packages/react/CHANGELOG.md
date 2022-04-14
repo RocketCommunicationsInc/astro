@@ -1,5 +1,22 @@
 # @astrouxds/react
 
+## 6.5.1
+
+### Patch Changes
+
+#### Tag
+
+- Added shadows to align with design.
+
+#### Table
+
+- Updated selected row styling to align with design.
+
+#### Tree / Tree Node
+
+- Updated styling to align with design.
+- Added hover state.
+
 ## 6.5.0
 
 > NOTE: This release renames many of our internal private CSS Custom Properties (--color-background). If you are using these to build your own UIs, this may be a breaking change for you.
