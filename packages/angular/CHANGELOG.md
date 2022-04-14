@@ -1,5 +1,17 @@
 # @astrouxds/angular
 
+## 6.5.1
+
+### Patch Changes
+
+- 3d358fd5: Implements design tokens@1.5. Adds shadow to Tag
+- f2fe32bc: Updated the selected row styling on rux-table and added data to empty column in storybook.
+- 021c9189: Updated styling on rux-tree and rux-tree-node, along with a hover state that swaps to light-theme icons.
+- Updated dependencies [3d358fd5]
+- Updated dependencies [f2fe32bc]
+- Updated dependencies [021c9189]
+  - @astrouxds/astro-web-components@6.5.1
+
 ## 6.5.0
 
 > NOTE: This release renames many of our internal private CSS Custom Properties (--color-background). If you are using these to build your own UIs, this may be a breaking change for you.
