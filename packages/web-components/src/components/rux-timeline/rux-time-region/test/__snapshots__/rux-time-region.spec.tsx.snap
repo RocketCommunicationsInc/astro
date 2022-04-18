@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rux-time-region renders 1`] = `
+<rux-time-region end="" start="">
+  <mock:shadow-root>
+    <div class="rux-time-region" part="container">
+      <div class="rux-time-region__content">
+        <slot></slot>
+      </div>
+      <div class="rux-time-region__datetime" part="timestamp"></div>
+    </div>
+  </mock:shadow-root>
+</rux-time-region>
+`;

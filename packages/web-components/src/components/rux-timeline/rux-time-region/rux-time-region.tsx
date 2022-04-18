@@ -1,5 +1,5 @@
 import { Element, Prop, Component, Host, h } from '@stencil/core'
-import { format } from 'date-fns'
+import { formatInTimeZone } from 'date-fns-tz'
 
 /**
  * @slot (default) - The content of the Time Region
@@ -36,6 +36,11 @@ export class RuxTimeRegion {
      */
     @Prop() selected = false
 
+    /**
+     * @internal - The Time Regions's time zone. Set automatically from the parent Track component.
+     */
+    @Prop() timezone = 'UTC'
+
     get formattedTime() {
         if (!this.start || !this.end) {
             return false
@@ -43,9 +48,9 @@ export class RuxTimeRegion {
 
         try {
             return (
-                format(new Date(this.start), 'HH:mm') +
+                formatInTimeZone(new Date(this.start), this.timezone, 'HH:mm') +
                 '-' +
-                format(new Date(this.end), 'HH:mm')
+                formatInTimeZone(new Date(this.end), this.timezone, 'HH:mm')
             )
         } catch (e) {
             return false

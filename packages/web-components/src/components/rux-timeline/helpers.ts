@@ -1,18 +1,27 @@
 import {
-    format,
     addHours,
     differenceInHours,
     addDays,
-    addMonths,
     differenceInDays,
-    differenceInMonths,
 } from 'date-fns'
+import { formatInTimeZone } from 'date-fns-tz'
 
+export async function validateTimezone(timezone: string) {
+    return new Promise((resolve, reject) => {
+        try {
+            formatInTimeZone(new Date(), timezone, 'MM/dd')
+            resolve(true)
+        } catch (e) {
+            reject(false)
+        }
+    })
+}
 export function dateRange(
     start: any,
     end: any,
     interval: any,
-    intervalValue: any = 1
+    intervalValue: any = 1,
+    timezone: any = 'UTC'
 ) {
     const startDate = new Date(start)
     const endDate = new Date(end)
@@ -20,12 +29,14 @@ export function dateRange(
     if (interval === 'day') {
         const days = differenceInDays(endDate, startDate)
 
-        return [...Array(days).keys()].map((i) => {
+        const output = [...Array(days).keys()].map((i) => {
             const time = addDays(startDate, i)
-            const formattedTime = format(time, 'MM/dd')
+            const formattedTime = formatInTimeZone(time, timezone, 'MM/dd')
 
             return formattedTime
         })
+
+        return output
     }
 
     if (interval === 'hour') {
@@ -34,17 +45,13 @@ export function dateRange(
 
         const output = [...Array(days).keys()].map((i) => {
             const time = addHours(startDate, i)
-            const formattedTime = format(time, 'HH:mm')
+
+            const formattedTime = formatInTimeZone(time, timezone, 'HH:mm')
             return formattedTime
         })
 
         return output
     }
 
-    if (interval === 'month') {
-        const months = differenceInMonths(endDate, startDate)
-
-        return [...Array(months).keys()].map((i) => addMonths(startDate, i))
-    }
     return []
 }

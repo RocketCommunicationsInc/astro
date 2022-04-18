@@ -8,6 +8,7 @@ import {
     format,
 } from 'date-fns'
 import { dateRange } from './helpers'
+import { validateTimezone } from './helpers'
 
 /**
  * @part playhead - The timeline's playhead
@@ -55,6 +56,11 @@ export class RuxTimeline {
      */
     @Prop() interval: 'hour' | 'day' = 'hour'
 
+    /**
+     * Controls the timezone that the timeline is localized to. Must be an IANA time zone name ("America/New_York") or an offset string.
+     */
+    @Prop() timezone = 'UTC'
+
     @Watch('playhead')
     syncPlayhead() {
         if (this.playhead) {
@@ -75,6 +81,7 @@ export class RuxTimeline {
     @Watch('start')
     @Watch('end')
     @Watch('interval')
+    @Watch('timezone')
     handleChange() {
         this._updateRegions()
     }
@@ -257,6 +264,7 @@ export class RuxTimeline {
             el.interval = this.interval
             el.start = this.start
             el.end = this.end
+            el.timezone = this.timezone
         })
 
         const rulerSlot = this.rulerContainer?.querySelector(
@@ -279,7 +287,12 @@ export class RuxTimeline {
             const rulerEl = [...rulerTrack.children].find(
                 (el: any) => el.tagName.toLowerCase() === 'rux-ruler'
             ) as HTMLRuxRulerElement
+
             if (rulerEl) {
+                validateTimezone(this.timezone).then(() => {
+                    rulerEl.timezone = this.timezone
+                })
+
                 rulerEl.start = this.start
                 rulerEl.end = this.end
                 rulerEl.interval = this.interval
