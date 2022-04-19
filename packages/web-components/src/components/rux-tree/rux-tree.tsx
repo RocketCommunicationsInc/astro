@@ -66,7 +66,7 @@ export class RuxTree {
 
     render() {
         return (
-            <Host role="tree">
+            <Host role="tree" class="rux-tree">
                 <div ref={(el) => (this.slotContainer = el)}>
                     <slot onSlotchange={this._handleSlotChange}></slot>
                 </div>
