@@ -21,12 +21,18 @@ export class RuxRuler {
      */
     @Prop() end: string = ''
 
+    /**
+     * @internal - The Ruler's time zone. Set automatically from the parent Timeline component.
+     */
+    @Prop({ reflect: true }) timezone = 'UTC'
+
     get dateRange() {
         return getRange(
             new Date(this.start),
             new Date(this.end),
             this.interval,
-            1
+            1,
+            this.timezone
         )
     }
 

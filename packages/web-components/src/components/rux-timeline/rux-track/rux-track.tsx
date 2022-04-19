@@ -28,17 +28,22 @@ export class RuxTrack {
     @Prop({ reflect: true }) columns = 0
 
     /**
-     * @internal - The Timeline's interval. Set automatically from the parent Timeline component.
+     * @internal - The Track's interval. Set automatically from the parent Timeline component.
      */
     @Prop({ reflect: true }) interval: any
     /**
-     * @internal - The Timeline's start date. Set automatically from the parent Timeline component.
+     * @internal - The Track's start date. Set automatically from the parent Timeline component.
      */
     @Prop({ reflect: true }) start = ''
     /**
-     * @internal - The Timeline's end date. Set automatically from the parent Timeline component.
+     * @internal - The Track's end date. Set automatically from the parent Timeline component.
      */
     @Prop({ reflect: true }) end = ''
+
+    /**
+     * @internal - The Track's time zone. Set automatically from the parent Timeline component.
+     */
+    @Prop({ reflect: true }) timezone = 'UTC'
 
     @Watch('start')
     @Watch('end')
@@ -47,6 +52,11 @@ export class RuxTrack {
         if (old) {
             this.initializeRows()
         }
+    }
+
+    @Watch('timezone')
+    handleTimezoneUpdate() {
+        this.initializeRows()
     }
 
     connectedCallback() {
@@ -141,6 +151,7 @@ export class RuxTrack {
             const isValid = this._validateTimeRegion(el.start, el.end)
 
             if (isValid.success) {
+                el.timezone = this.timezone
                 el.style.gridRow = '1'
                 el.style.visibility = 'inherit'
                 const gridColumn = `${this.calculateGridColumnFromTime(

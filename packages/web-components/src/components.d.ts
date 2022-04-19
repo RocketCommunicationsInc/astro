@@ -12228,6 +12228,7 @@ export namespace Components {
         "end": string;
         "interval": any;
         "start": string;
+        "timezone": string;
     }
     interface RuxSegmentedButton {
         /**
@@ -12490,6 +12491,7 @@ export namespace Components {
           * Short hand attribute for displaying a Status icon and appropriate border color.
          */
         "status"?: 'normal' | 'critical' | 'serious' | 'caution' | 'standby';
+        "timezone": string;
     }
     interface RuxTimeline {
         /**
@@ -12509,6 +12511,10 @@ export namespace Components {
          */
         "start": string;
         /**
+          * Controls the timezone that the timeline is localized to. Must be an IANA time zone name ("America/New_York") or an offset string.
+         */
+        "timezone": string;
+        /**
           * The timeline's zoom level.
          */
         "zoom": number;
@@ -12518,6 +12524,7 @@ export namespace Components {
         "end": string;
         "interval": any;
         "start": string;
+        "timezone": string;
         "width": number;
     }
     interface RuxTree {
@@ -32545,6 +32552,7 @@ declare namespace LocalJSX {
         "end"?: string;
         "interval"?: any;
         "start"?: string;
+        "timezone"?: string;
     }
     interface RuxSegmentedButton {
         /**
@@ -32859,6 +32867,7 @@ declare namespace LocalJSX {
           * Short hand attribute for displaying a Status icon and appropriate border color.
          */
         "status"?: 'normal' | 'critical' | 'serious' | 'caution' | 'standby';
+        "timezone"?: string;
     }
     interface RuxTimeline {
         /**
@@ -32878,6 +32887,10 @@ declare namespace LocalJSX {
          */
         "start"?: string;
         /**
+          * Controls the timezone that the timeline is localized to. Must be an IANA time zone name ("America/New_York") or an offset string.
+         */
+        "timezone"?: string;
+        /**
           * The timeline's zoom level.
          */
         "zoom"?: number;
@@ -32887,6 +32900,7 @@ declare namespace LocalJSX {
         "end"?: string;
         "interval"?: any;
         "start"?: string;
+        "timezone"?: string;
         "width"?: number;
     }
     interface RuxTree {
