@@ -241,14 +241,15 @@ export class RuxSlider implements FormFieldInterface {
             <Host>
                 <div class="rux-form-field" part="form-field">
                     <label
-                        class="rux-input-label"
+                        class={{
+                            'rux-input-label': true,
+                            hidden: !this.hasLabel,
+                        }}
                         aria-hidden={this.hasLabel ? 'false' : 'true'}
                         htmlFor={sliderId}
                         part="label"
                     >
-                        <span class={{ hidden: !this.hasLabel }}>
-                            <slot name="label">{label}</slot>
-                        </span>
+                        <slot name="label">{label}</slot>
                     </label>
                     <div
                         class={{
