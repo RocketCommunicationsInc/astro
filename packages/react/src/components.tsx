@@ -35,6 +35,10 @@ export const RuxClock = /*@__PURE__*/ createReactComponent<
   JSX.RuxClock,
   HTMLRuxClockElement
 >("rux-clock");
+export const RuxContainer = /*@__PURE__*/ createReactComponent<
+  JSX.RuxContainer,
+  HTMLRuxContainerElement
+>("rux-container");
 export const RuxDatetime = /*@__PURE__*/ createReactComponent<
   JSX.RuxDatetime,
   HTMLRuxDatetimeElement

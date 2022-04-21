@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rux-container renders 1`] = `
+<rux-container>
+  <mock:shadow-root>
+    <div class="rux-container">
+      <div class="hidden rux-container__header" part="header">
+        <slot name="header"></slot>
+      </div>
+      <div class="hidden rux-container__tab-bar" part="tab-bar">
+        <slot name="tab-bar"></slot>
+      </div>
+      <div class="hidden rux-container__toolbar" part="toolbar">
+        <slot name="toolbar"></slot>
+      </div>
+      <div class="rux-container__body" part="body">
+        <slot></slot>
+      </div>
+      <div class="hidden rux-container__footer" part="footer">
+        <slot name="footer"></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+</rux-container>
+`;
