@@ -16,47 +16,6 @@
     <link rel="stylesheet" href="/build/astro-web-components.css" />
 </head>
 
-<body>
-    <div id="test" style="padding: 5%;">
-        <rux-indeterminate-progress>
-            <rux-button>Loading</rux-button>
-        </rux-indeterminate-progress>
-    </div>
-    <rux-button id="red">Red</rux-button>
-    <rux-button id="green">Green</rux-button>
-    <rux-button id="norm">Normal</rux-button>
-    <br />
-    <div style="width: 400px">
-        <rux-progress max="100" min="0">
-            <rux-button id="prog">Progress Slot</rux-button>
-        </rux-progress>
-    </div>
-
-    <script>
-        const spinner = document.getElementById('test')
-        const btn = document.getElementById('red');
-        const green = document.getElementById('green');
-        const normal = document.getElementById('norm');
-        const prog = document.querySelector('rux-progress')
-        const progBtn = document.getElementById('prog');
-
-        progBtn.addEventListener('click', () => {
-            if (prog.value) {
-                prog.value = undefined
-            } else prog.value = '50'
-        })
-
-        btn.addEventListener('click', () => {
-            spinner.style.background = 'red'
-        })
-        green.addEventListener('click', () => {
-            spinner.style.background = 'green'
-        })
-        normal.addEventListener('click', () => {
-            spinner.style.background = 'inherit'
-        })
-
-    </script>
-</body>
+<body></body>
 
 </html>
