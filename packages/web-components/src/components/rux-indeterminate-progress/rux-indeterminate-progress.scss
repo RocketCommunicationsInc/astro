@@ -8,14 +8,24 @@
         ((var(--wrapper-height) - var(--second-div-height)) / 2) - 4px
     );
 
-    --indeterminate-gradient: conic-gradient(
-        rgba(77, 172, 255, 0),
-        rgba(51, 51, 51, 0),
-        rgba(77, 172, 255, 0.3),
-        rgba(77, 172, 255, 0.6),
-        rgba(77, 172, 255, 0.7),
-        rgb(77, 172, 255)
-    );
+    // --indeterminate-gradient: conic-gradient(
+    //     rgba(77, 172, 255, 0),
+    //     rgba(51, 51, 51, 0),
+    //     rgba(77, 172, 255, 0.3),
+    //     rgba(77, 172, 255, 0.6),
+    //     rgba(77, 172, 255, 0.7),
+    //     rgb(77, 172, 255)
+    // );
+
+    // --light-theme-gradient: conic-gradient(
+    //     rgba(47, 122, 167, 0),
+    //     rgba(51, 51, 51, 0),
+    //     rgba(47, 122, 167, 0.3),
+    //     rgba(47, 122, 167, 0.6),
+    //     rgba(47, 122, 167, 0.7),
+    //     rgb(47, 122, 167)
+    // );
+
     // .5's here to pervent hard stops in mask
     --mask: radial-gradient(
         farthest-side,
@@ -37,9 +47,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // border: 2px solid var(--color-border-interactive-default);
+    border: 2px solid var(--color-border-interactive-default);
     //hard coded for light theme
-    border: 2px solid #4dacff;
+    // border: 2px solid #4dacff;
     background: var(--color-background-base-default);
 
     -webkit-mask: var(--mask);
@@ -62,9 +72,9 @@
     &::after {
         position: absolute;
         content: '';
-        // background: var(--color-background-interactive-default);
+        background: var(--color-background-interactive-default);
         // Hard coded for light theme's sake
-        background: #4dacff;
+        // background: #4dacff;
         width: var(--nub-size);
         height: var(--nub-size);
         top: 0;
@@ -87,9 +97,9 @@
 .rux-indeterminate-inner-circle {
     height: calc(100% - 4px);
     width: calc(100% - 4px);
-    // border: 2px solid var(--color-background-interactive-default);
+    border: 2px solid var(--color-background-interactive-default);
     //hard coded for light theme
-    border: 2px solid #4dacff;
+    // border: 2px solid #4dacff;
 
     border-radius: 100%;
     background-color: transparent;

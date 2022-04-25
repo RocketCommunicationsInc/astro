@@ -118,6 +118,19 @@ Indeterminate progress
 | `--progress-width`                              | The width of rux-progress                      |
 
 
+## Dependencies
+
+### Depends on
+
+- [rux-indeterminate-progress](../rux-indeterminate-progress)
+
+### Graph
+```mermaid
+graph TD;
+  rux-progress --> rux-indeterminate-progress
+  style rux-progress fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
