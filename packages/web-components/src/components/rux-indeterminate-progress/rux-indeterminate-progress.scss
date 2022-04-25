@@ -37,9 +37,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid var(--color-border-interactive-default);
+    // border: 2px solid var(--color-border-interactive-default);
     //hard coded for light theme
-    // border: 2px solid #4dacff;
+    border: 2px solid #4dacff;
     background: var(--color-background-base-default);
 
     -webkit-mask: var(--mask);
@@ -87,9 +87,9 @@
 .rux-indeterminate-inner-circle {
     height: calc(100% - 4px);
     width: calc(100% - 4px);
-    border: 2px solid var(--color-background-interactive-default);
+    // border: 2px solid var(--color-background-interactive-default);
     //hard coded for light theme
-    // border: 2px solid #4dacff;
+    border: 2px solid #4dacff;
 
     border-radius: 100%;
     background-color: transparent;
