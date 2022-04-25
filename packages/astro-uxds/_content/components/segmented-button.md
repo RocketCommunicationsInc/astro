@@ -24,7 +24,7 @@ Segmented Buttons allow users to select one item at a time from two to four opti
 
 ## Appearance and Behavior
 
-To learn more about adding Help Text to form elements like Segmented Buttons, see the [Forms and Validation](/patterns/forms-and-validation) guidance.
+To learn more about adding Help Text to Segmented Buttons, see the [Forms and Validation](/patterns/forms-and-validation) guidance.
 
 ## Examples
 
