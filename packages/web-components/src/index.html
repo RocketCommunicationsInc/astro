@@ -1,23 +1,62 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
-        />
-        <title>Stencil Component Starter</title>
 
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
-            rel="stylesheet"
-        />
-        <script type="module" src="/build/astro-web-components.esm.js"></script>
-        <script nomodule src="/build/astro-web-components.js"></script>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
 
-        <link rel="stylesheet" href="/build/astro-web-components.css" />
-    </head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet" />
+    <script type="module" src="/build/astro-web-components.esm.js"></script>
+    <script nomodule src="/build/astro-web-components.js"></script>
 
-    <body></body>
+    <link rel="stylesheet" href="/build/astro-web-components.css" />
+</head>
+
+<body>
+    <div id="test" style="padding: 5%;">
+        <rux-indeterminate-progress>
+            <rux-button>Loading</rux-button>
+        </rux-indeterminate-progress>
+    </div>
+    <rux-button id="red">Red</rux-button>
+    <rux-button id="green">Green</rux-button>
+    <rux-button id="norm">Normal</rux-button>
+    <br />
+    <div style="width: 400px">
+        <rux-progress max="100" min="0">
+            <rux-button id="prog">Progress Slot</rux-button>
+        </rux-progress>
+    </div>
+
+    <script>
+        const spinner = document.getElementById('test')
+        const btn = document.getElementById('red');
+        const green = document.getElementById('green');
+        const normal = document.getElementById('norm');
+        const prog = document.querySelector('rux-progress')
+        const progBtn = document.getElementById('prog');
+
+        progBtn.addEventListener('click', () => {
+            if (prog.value) {
+                prog.value = undefined
+            } else prog.value = '50'
+        })
+
+        btn.addEventListener('click', () => {
+            spinner.style.background = 'red'
+        })
+        green.addEventListener('click', () => {
+            spinner.style.background = 'green'
+        })
+        normal.addEventListener('click', () => {
+            spinner.style.background = 'inherit'
+        })
+
+    </script>
+</body>
+
 </html>

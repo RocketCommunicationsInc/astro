@@ -79,7 +79,7 @@ export class RuxProgress {
                         </output>,
                     ]
                 ) : (
-                    <progress class="rux-progress"></progress>
+                    <rux-indeterminate-progress></rux-indeterminate-progress>
                 )}
 
                 <slot></slot>

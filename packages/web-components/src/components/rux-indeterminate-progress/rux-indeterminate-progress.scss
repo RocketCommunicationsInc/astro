@@ -1,0 +1,97 @@
+:host {
+    --size: 60px;
+    --wrapper-height: calc(var(--size) + 4px);
+    --second-div-height: calc(var(--size) * 0.9 - 6px);
+
+    --nub-size: calc(
+        ((var(--wrapper-height) - var(--second-div-height)) / 2) - 4px
+    );
+
+    --indeterminate-gradient: conic-gradient(
+        rgba(77, 172, 255, 0),
+        rgba(51, 51, 51, 0),
+        rgba(77, 172, 255, 0.3),
+        rgba(77, 172, 255, 0.6),
+        rgba(77, 172, 255, 0.7),
+        rgb(77, 172, 255)
+    );
+    --third-bg: #101923;
+    --mask: radial-gradient(
+        farthest-side,
+        transparent calc((((100% - 4px) * 0.9) - 5.5px)),
+        var(--color-background-interactive-default)
+            calc((((100% - 4px) * 0.9) - 4.5px))
+    );
+    display: flex;
+    align-items: center;
+}
+::slotted(*) {
+    padding: 1.25rem;
+}
+
+.rux-indeterminate-wrapper {
+    height: var(--size);
+    width: var(--size);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--color-border-interactive-default);
+    background: var(--color-background-base-default);
+
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+}
+
+.rux-indeterminate-second {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--indeterminate-gradient);
+    /* h/w here increases distance of progress bar from top border*/
+    height: calc(100% - 4px);
+    width: calc(100% - 4px);
+    border-radius: 100%;
+
+    animation: spin 1.367s infinite linear;
+
+    &::after {
+        position: absolute;
+        content: '';
+        background: var(--color-background-interactive-default);
+        width: var(--nub-size);
+        height: var(--nub-size);
+        top: 0;
+        margin: 0;
+        padding: 0;
+        border-radius: 100%;
+    }
+}
+
+.rux-indeterminate-third {
+    height: calc(90% - 6px);
+    width: calc(90% - 6px);
+    background: transparent;
+    border-radius: 100%;
+    border: 2px solid var(--color-background-base-default);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rux-indeterminate-fourth {
+    height: calc(100% - 4px);
+    width: calc(100% - 4px);
+    border: 2px solid var(--color-background-interactive-default);
+    border-radius: 100%;
+    background-color: transparent;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
