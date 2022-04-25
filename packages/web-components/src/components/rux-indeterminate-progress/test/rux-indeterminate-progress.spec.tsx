@@ -1,7 +1,7 @@
 import { newSpecPage } from '@stencil/core/testing'
 import { RuxIndeterminateProgress } from '../rux-indeterminate-progress'
 
-describe('rux-spinner', () => {
+describe('rux-indeterminate-progress', () => {
     it('renders', async () => {
         const page = await newSpecPage({
             components: [RuxIndeterminateProgress],

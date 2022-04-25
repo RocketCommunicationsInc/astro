@@ -2,9 +2,9 @@ import { Component, Host, h } from '@stencil/core'
 
 /**
  * @part wrapper - The outermost div encasing rux-indeterminate-progress which is responsible for the overall size and the outermost border.
- * @part second - The second div in the heirarchy which is responsible for the spinning conic-gradient and the dark border between the spinner and the wrapper's border.
- * @part third - The third div in the heirarchy which controls the gap between the animated-spinner and the inner-most border.
- * @part fourth - The fourth div in the heirarchy which controls the inner-most border.
+ * @part animated-spinner - The second div in the heirarchy which is responsible for the spinning conic-gradient and the gap between the spinner and the wrapper's border.
+ * @part inner-spinner-gap - The third div in the heirarchy which controls the gap between the animated-spinner and the inner-circle's border.
+ * @part inner-cirlce - The fourth div in the heirarchy which controls the inner-most circle.
  */
 
 @Component({
@@ -18,13 +18,16 @@ export class RuxIndeterminateProgress {
             <Host>
                 <div class="rux-indeterminate-wrapper" part="wrapper">
                     <div
-                        class="rux-indeterminate-second"
+                        class="rux-indeterminate-animated-spinner"
                         part="animated-spinner"
                     >
-                        <div class="rux-indeterminate-third" part="third">
+                        <div
+                            class="rux-indeterminate-inner-spinner-gap"
+                            part="inner-spinner-gap"
+                        >
                             <div
-                                class="rux-indeterminate-fourth"
-                                part="fourth"
+                                class="rux-indeterminate-inner-circle"
+                                part="inner-circle"
                             ></div>
                         </div>
                     </div>
