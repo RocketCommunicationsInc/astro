@@ -1,5 +1,6 @@
 :host {
-    --size: 60px;
+    --size: 3.75rem;
+    // These are used to determine nub-size
     --wrapper-height: calc(var(--size) + 4px);
     --second-div-height: calc(var(--size) * 0.9 - 6px);
 
@@ -15,7 +16,7 @@
         rgba(77, 172, 255, 0.7),
         rgb(77, 172, 255)
     );
-    --third-bg: #101923;
+    // .5's here to pervent hard stops in mask
     --mask: radial-gradient(
         farthest-side,
         transparent calc((((100% - 4px) * 0.9) - 5.5px)),
@@ -36,7 +37,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid var(--color-border-interactive-default);
+    // border: 2px solid var(--color-border-interactive-default);
+    //hard coded for light theme
+    border: 2px solid #4dacff;
     background: var(--color-background-base-default);
 
     -webkit-mask: var(--mask);
@@ -59,7 +62,9 @@
     &::after {
         position: absolute;
         content: '';
-        background: var(--color-background-interactive-default);
+        // background: var(--color-background-interactive-default);
+        // Hard coded for light theme's sake
+        background: #4dacff;
         width: var(--nub-size);
         height: var(--nub-size);
         top: 0;
@@ -82,7 +87,10 @@
 .rux-indeterminate-fourth {
     height: calc(100% - 4px);
     width: calc(100% - 4px);
-    border: 2px solid var(--color-background-interactive-default);
+    // border: 2px solid var(--color-background-interactive-default);
+    //hard coded for light theme
+    border: 2px solid #4dacff;
+
     border-radius: 100%;
     background-color: transparent;
 }
