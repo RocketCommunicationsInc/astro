@@ -7,12 +7,6 @@ describe('rux-indeterminate-progress', () => {
             components: [RuxIndeterminateProgress],
             html: `<rux-indeterminate-progress></rux-indeterminate-progress>`,
         })
-        expect(page.root).toEqualHtml(`
-      <rux-indeterminate-progress>
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
-      </rux-indeterminate-progress>
-    `)
+        expect(page.root).toMatchSnapshot()
     })
 })
