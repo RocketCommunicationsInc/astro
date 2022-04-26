@@ -164,31 +164,34 @@ export class RuxTextarea implements FormFieldInterface {
         return (
             <Host>
                 <div class="rux-textarea-field" part="form-field">
-                    <label
-                        class={{
-                            'rux-textarea-label': true,
-                        }}
-                        aria-hidden={this.hasLabel ? 'false' : 'true'}
-                        htmlFor={this.inputId}
-                        part="label"
-                    >
-                        <span class={{ hidden: !this.hasLabel }}>
-                            <slot
-                                onSlotchange={this._handleSlotChange}
-                                name="label"
-                            >
-                                {this.label}
-                                {this.required && (
-                                    <span
-                                        part="required"
-                                        class="rux-textarea-label__asterisk"
-                                    >
-                                        &#42;
-                                    </span>
-                                )}
-                            </slot>
-                        </span>
-                    </label>
+                    {this.hasLabel ? (
+                        <label
+                            class={{
+                                'rux-textarea-label': true,
+                            }}
+                            aria-hidden={this.hasLabel ? 'false' : 'true'}
+                            htmlFor={this.inputId}
+                            part="label"
+                        >
+                            <span class={{ hidden: !this.hasLabel }}>
+                                <slot
+                                    onSlotchange={this._handleSlotChange}
+                                    name="label"
+                                >
+                                    {this.label}
+                                    {this.required && (
+                                        <span
+                                            part="required"
+                                            class="rux-textarea-label__asterisk"
+                                        >
+                                            &#42;
+                                        </span>
+                                    )}
+                                </slot>
+                            </span>
+                        </label>
+                    ) : null}
+
                     <textarea
                         name={this.name}
                         disabled={this.disabled}
