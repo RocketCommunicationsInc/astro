@@ -10,7 +10,6 @@ exports[`rux-indeterminate-progress renders 1`] = `
         </div>
       </div>
     </div>
-    <slot></slot>
   </mock:shadow-root>
 </rux-indeterminate-progress>
 `;
