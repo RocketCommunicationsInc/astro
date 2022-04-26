@@ -6,7 +6,7 @@ exports[`rux-radio renders 1`] = `
     <div class="rux-form-field" part="form-field">
       <div class="rux-radio">
         <input id="rux-radio-2" type="radio" value="test">
-        <label htmlfor="rux-radio-2" part="label">
+        <label class="rux-radio--no-label" htmlfor="rux-radio-2" part="label">
           <slot></slot>
         </label>
       </div>
