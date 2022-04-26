@@ -53,10 +53,6 @@ export class RuxCheckbox implements FormFieldInterface {
      * The checkbox label text. For HTML content, use the default slot instead.
      */
     @Prop() label?: string
-    @Watch('label')
-    handleLabelChange() {
-        this._handleSlotChange()
-    }
 
     /**
      * Toggles checked state of a checkbox
@@ -107,11 +103,10 @@ export class RuxCheckbox implements FormFieldInterface {
     connectedCallback() {
         this._onClick = this._onClick.bind(this)
         this._onInput = this._onInput.bind(this)
-        this._handleSlotChange = this._handleSlotChange.bind(this)
     }
 
     componentWillLoad() {
-        this._handleSlotChange()
+        this.hasLabelSlot = hasSlot(this.el)
     }
     componentDidLoad() {
         if (this._inputEl && this.indeterminate) {
@@ -143,10 +138,6 @@ export class RuxCheckbox implements FormFieldInterface {
         this.ruxBlur.emit()
     }
 
-    private _handleSlotChange() {
-        this.hasLabelSlot = hasSlot(this.el)
-    }
-
     render() {
         const {
             checkboxId,
@@ -157,8 +148,8 @@ export class RuxCheckbox implements FormFieldInterface {
             value,
             indeterminate,
             label,
-            _handleSlotChange,
             hasLabel,
+            hasLabelSlot,
         } = this
 
         if (!this.indeterminate) {
@@ -203,13 +194,13 @@ export class RuxCheckbox implements FormFieldInterface {
                                 'rux-checkbox--no-label': !hasLabel,
                             }}
                         >
-                            {label}
+                            {hasLabelSlot ? null : label}
                             <span
                                 class={{
                                     hidden: !hasLabel,
                                 }}
                             >
-                                <slot onSlotchange={_handleSlotChange}></slot>
+                                <slot></slot>
                             </span>
                         </label>
                     </div>
