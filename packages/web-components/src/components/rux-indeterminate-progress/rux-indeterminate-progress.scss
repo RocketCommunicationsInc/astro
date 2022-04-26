@@ -17,8 +17,9 @@
         var(--color-background-interactive-default)
             calc((((100% - 4px) * 0.9) - 4.5px))
     );
-    display: flex;
-    align-items: center;
+    display: inline-block;
+    // display: flex;
+    // align-items: center;
     padding: 1.25rem;
 }
 
