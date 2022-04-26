@@ -1,5 +1,7 @@
 :host {
     --size: 3.75rem;
+    // width: 3.75rem;
+    // height: 3.75rem;
     // These are used to determine nub-size
     --wrapper-height: calc(var(--size) + 4px);
     --second-div-height: calc(var(--size) * 0.9 - 6px);
@@ -17,8 +19,6 @@
     );
     display: flex;
     align-items: center;
-}
-::slotted(*) {
     padding: 1.25rem;
 }
 

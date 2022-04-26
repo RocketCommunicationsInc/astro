@@ -32,7 +32,6 @@ export class RuxIndeterminateProgress {
                         </div>
                     </div>
                 </div>
-                <slot></slot>
             </Host>
         )
     }
