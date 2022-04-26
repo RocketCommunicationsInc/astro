@@ -121,8 +121,6 @@ export class RuxCheckbox implements FormFieldInterface {
     }
 
     get hasLabel() {
-        console.log(this.label, 'Label')
-        console.log(this.hasLabelSlot, 'hasLabelSlot')
         return this.label ? true : this.hasLabelSlot
     }
 
@@ -146,7 +144,6 @@ export class RuxCheckbox implements FormFieldInterface {
     }
 
     private _handleSlotChange() {
-        console.log('slot change')
         this.hasLabelSlot = hasSlot(this.el)
     }
 
