@@ -15,6 +15,13 @@
 | `"wrapper"`           | The outermost div encasing rux-indeterminate-progress which is responsible for the overall size and the outermost border.                      |
 
 
+## CSS Custom Properties
+
+| Name     | Description                                                                                              |
+| -------- | -------------------------------------------------------------------------------------------------------- |
+| `--size` | Used to determine the overall size of rux-indeterminate-progress, and used in multiple CSS calculations. |
+
+
 ## Dependencies
 
 ### Used by
