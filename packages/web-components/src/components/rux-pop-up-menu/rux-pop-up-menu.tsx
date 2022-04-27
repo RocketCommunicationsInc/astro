@@ -169,13 +169,6 @@ export class RuxPopUpMenu {
         }
     }
 
-    /**
-     * This returns which side the arrow is on: top, right, left or bottom.
-     * Currently using this to determine which border to bolster, but could be useful in the future.
-     * ! This does cause a 'state changed during render' stencil erorr.
-     * ! Tried returning the postion instead of storing in state, but the class list never updates that way.
-     * * solved with async getTriggerRect and getArrowRect
-     */
     private async _determineArrowPosition() {
         if (!this.open) {
             return
