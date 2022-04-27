@@ -263,32 +263,38 @@ export class RuxInput implements FormFieldInterface {
         return (
             <Host>
                 <div class="rux-form-field" part="form-field">
-                    <label
-                        class={{
-                            'rux-input-label': true,
-                        }}
-                        part="label"
-                        aria-hidden={hasLabel ? 'false' : 'true'}
-                        htmlFor={inputId}
-                    >
-                        <span
+                    {hasLabel ? (
+                        <label
                             class={{
-                                hidden: !hasLabel,
+                                'rux-input-label': true,
                             }}
+                            part="label"
+                            aria-hidden={hasLabel ? 'false' : 'true'}
+                            htmlFor={inputId}
                         >
-                            <slot name="label" onSlotchange={_handleSlotChange}>
-                                {label}
-                                {required && (
-                                    <span
-                                        part="required"
-                                        class="rux-input-label__asterisk"
-                                    >
-                                        &#42;
-                                    </span>
-                                )}
-                            </slot>
-                        </span>
-                    </label>
+                            <span
+                                class={{
+                                    hidden: !hasLabel,
+                                }}
+                            >
+                                <slot
+                                    name="label"
+                                    onSlotchange={_handleSlotChange}
+                                >
+                                    {label}
+                                    {required && (
+                                        <span
+                                            part="required"
+                                            class="rux-input-label__asterisk"
+                                        >
+                                            &#42;
+                                        </span>
+                                    )}
+                                </slot>
+                            </span>
+                        </label>
+                    ) : null}
+
                     <div
                         class={{
                             'rux-input': true,

@@ -80,10 +80,17 @@
                 align-self: start;
                 height: 1.125rem;
                 width: 1.125rem;
+
                 margin: 0 0.625rem 0 0;
                 background-color: var(--checkbox-background-color);
                 border: 1px solid var(--checkbox-border-color);
                 border-radius: var(--radius-checkbox);
+            }
+        }
+        //If no label is passed in we don't want the margin
+        + .rux-checkbox--no-label {
+            &::before {
+                margin: 0;
             }
         }
 
