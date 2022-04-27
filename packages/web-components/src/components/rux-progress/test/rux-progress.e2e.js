@@ -5,7 +5,4 @@ describe('Progress', () => {
     it('renders', () => {
         cy.get('rux-progress').should('have.class', 'hydrated')
     })
-    it('renders rux-indeterminate-progress when no value is present', () => {
-        cy.get('#spinner').shadow().children().should('have.length', '3')
-    })
 })
