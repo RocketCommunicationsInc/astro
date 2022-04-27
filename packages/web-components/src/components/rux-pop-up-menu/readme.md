@@ -30,7 +30,7 @@
 
 Type: `Promise<boolean>`
 
-Promise<boolean> depending on if the popup is open
+
 
 
 ## Slots
@@ -46,8 +46,7 @@ Promise<boolean> depending on if the popup is open
 | Part                  | Description                                              |
 | --------------------- | -------------------------------------------------------- |
 | `"arrow"`             | the arrow pointing to the trigger of rux-pop-up-menu     |
-| `"conatiner"`         | the container of rux-pop-up-menu                         |
-| `"container"`         |                                                          |
+| `"container"`         | the container of rux-pop-up-menu                         |
 | `"popup-content"`     | the content that is shown when rux-pop-up-menu is opened |
 | `"trigger-container"` | the container of the pop-up trigger                      |
 

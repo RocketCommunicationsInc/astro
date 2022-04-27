@@ -49,12 +49,13 @@ export class RuxPopUpMenu {
      */
     @Prop({ mutable: true }) open = false
     /**
-     * @prop placement - the placement of the pop up relative to it's slotted trigger element. A list of
-     * acceptable placements can be found at [floatingui.com/docs](https://floating-ui.com/docs/computePosition#placement)
+     * @prop placement - the placement of the pop up relative to it's slotted trigger element.
      */
     @Prop() placement: Placement = 'bottom'
 
     @State() arrowPosition?: string
+
+    // private arrowPosition?: string
 
     /**
      * @event ruxpopupmenuselected - emits the value of the selected rux-menu-item inside of rux-pop-up-menu
@@ -154,7 +155,7 @@ export class RuxPopUpMenu {
                 [staticSide]: '-6px',
             })
         })
-        this._determineArrowPosition()
+        this._setArrowPosition()
     }
 
     private _startPositioner() {
@@ -167,6 +168,13 @@ export class RuxPopUpMenu {
                 this._position.bind(this)
             )
         }
+    }
+
+    private async _setArrowPosition() {
+        const arrowPos = await this._determineArrowPosition()
+        if (this.arrowPosition === arrowPos) {
+            return
+        } else this.arrowPosition = arrowPos
     }
 
     private async _determineArrowPosition() {
@@ -184,19 +192,15 @@ export class RuxPopUpMenu {
             triggerElRect.top < arrowDivRect.top
         ) {
             if (triggerElRect.right > arrowDivRect.right) {
-                this.arrowPosition = 'left'
-                // return 'left'
+                return 'left'
             } else {
-                this.arrowPosition = 'right'
-                // return 'right'
+                return 'right'
             }
         } else {
             if (triggerElRect.bottom > arrowDivRect.bottom) {
-                this.arrowPosition = 'top'
-                // return 'top'
+                return 'top'
             } else {
-                this.arrowPosition = 'bottom'
-                // return 'bottom'
+                return 'bottom'
             }
         }
     }
@@ -262,8 +266,6 @@ export class RuxPopUpMenu {
 
                     <div
                         class={{
-                            // wish I could set the arrow class like this
-                            //`rux-popup__arrow-${this._determineArrowPosition()}`: true,
                             'rux-popup__arrow-left':
                                 this.arrowPosition === 'left',
                             'rux-popup__arrow-top':

@@ -12083,7 +12083,7 @@ export namespace Components {
          */
         "open": boolean;
         /**
-          * @prop placement - the placement of the pop up relative to it's slotted trigger element. A list of acceptable placements can be found at [floatingui.com/docs](https://floating-ui.com/docs/computePosition#placement)
+          * @prop placement - the placement of the pop up relative to it's slotted trigger element.
          */
         "placement": Placement;
     }
@@ -32357,7 +32357,7 @@ declare namespace LocalJSX {
          */
         "open"?: boolean;
         /**
-          * @prop placement - the placement of the pop up relative to it's slotted trigger element. A list of acceptable placements can be found at [floatingui.com/docs](https://floating-ui.com/docs/computePosition#placement)
+          * @prop placement - the placement of the pop up relative to it's slotted trigger element.
          */
         "placement"?: Placement;
     }
