@@ -103,10 +103,11 @@ export class RuxCheckbox implements FormFieldInterface {
     connectedCallback() {
         this._onClick = this._onClick.bind(this)
         this._onInput = this._onInput.bind(this)
+        this._checkForLabelSlot = this._checkForLabelSlot.bind(this)
     }
 
     componentWillLoad() {
-        this.hasLabelSlot = hasSlot(this.el)
+        this._checkForLabelSlot()
     }
     componentDidLoad() {
         if (this._inputEl && this.indeterminate) {
@@ -117,6 +118,10 @@ export class RuxCheckbox implements FormFieldInterface {
 
     get hasLabel() {
         return this.label ? true : this.hasLabelSlot
+    }
+
+    private _checkForLabelSlot() {
+        this.hasLabelSlot = hasSlot(this.el)
     }
 
     private _onClick(e: Event): void {
@@ -200,7 +205,9 @@ export class RuxCheckbox implements FormFieldInterface {
                                     hidden: !hasLabel,
                                 }}
                             >
-                                <slot></slot>
+                                <slot
+                                    onSlotchange={this._checkForLabelSlot}
+                                ></slot>
                             </span>
                         </label>
                     </div>
