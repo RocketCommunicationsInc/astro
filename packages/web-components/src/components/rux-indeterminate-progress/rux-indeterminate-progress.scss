@@ -1,7 +1,9 @@
 :host {
+    /**
+    * @prop --size: Used to determine the overall size of rux-indeterminate-progress, and used in multiple CSS calculations. 
+    */
     --size: 3.75rem;
-    // width: 3.75rem;
-    // height: 3.75rem;
+
     // These are used to determine nub-size
     --wrapper-height: calc(var(--size) + 4px);
     --second-div-height: calc(var(--size) * 0.9 - 6px);
@@ -18,8 +20,6 @@
             calc((((100% - 4px) * 0.9) - 4.5px))
     );
     display: inline-block;
-    // display: flex;
-    // align-items: center;
     padding: 1.25rem;
 }
 
@@ -42,7 +42,6 @@
     justify-content: center;
     align-items: center;
     background: var(--indeterminate-gradient);
-    /* h/w here increases distance of progress bar from top border*/
     height: calc(100% - 4px);
     width: calc(100% - 4px);
     border-radius: 100%;
