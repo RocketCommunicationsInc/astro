@@ -1,5 +1,17 @@
 # @astrouxds/astrouxds
 
+## 6.6.0
+
+### Minor Changes
+
+- ca08026a: [timeline] - add timezone property
+
+### Patch Changes
+
+- a1bdaeb2: Segmented Button - fixed issue where the bottom border was being clipped when inside a container element.
+- 7c693fda: Slider - hides label if none is present
+- 085e091d: Removed extra margin on form elements (checkbox, radio, slider, select, input, textarea) that didn't have a label.
+
 ## 6.5.1
 
 ### Patch Changes
