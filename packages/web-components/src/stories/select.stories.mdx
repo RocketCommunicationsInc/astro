@@ -39,6 +39,8 @@ export const Default = (args) => {
         .errorText="${args.errorText}"
         .helpText="${args.helpText}"
         name="${args.name}"
+        size="${args.size}"
+        ?multiple="${args.multiple}"
     >
         <rux-option
             value=""
@@ -64,9 +66,13 @@ export const Default = (args) => {
             errorText: "",
             helpText: "",
             invalid: false,
-            name: "",
+            name: "default",
             required: false,
-            value: ""
+            size: "medium",
+            multiple: false,
+        }}
+        argTypes={{
+            value: { table: {disable: true}}
         }}
         name="Select Menu"
     >
