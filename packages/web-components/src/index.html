@@ -79,9 +79,13 @@
             </rux-pop-up-menu>
         </div>
         <rux-button id="add">Add</rux-button>
-        <rux-button id="btn">isOpen()</rux-button>
+        <rux-button id="open">show()</rux-button>
+        <rux-button id="close">hide()</rux-button>
+
         <script>
-            const btn = document.getElementById('btn')
+            const open = document.getElementById('open')
+            const close = document.getElementById('close')
+
             const popup = document.getElementById('test')
             const add = document.getElementById('add')
             const submitBtn = document.getElementById('submit')
@@ -94,20 +98,17 @@
                 testDiv.innerText = input1.value + input2.value
             })
 
-            btn.addEventListener('click', () => {
-                methodCall()
+            open.addEventListener('click', () => {
+                popup.show()
+            })
+            close.addEventListener('click', () => {
+                popup.hide()
             })
             add.addEventListener('click', () => {
                 let newItem = document.createElement('rux-menu-item')
                 newItem.innerHTML = 'This was added!'
                 popup.append(newItem)
             })
-            async function methodCall() {
-                await popup
-                    .isOpen()
-                    .then((res) => console.log(res))
-                    .catch((err) => console.log(err))
-            }
         </script>
     </body>
 </html>

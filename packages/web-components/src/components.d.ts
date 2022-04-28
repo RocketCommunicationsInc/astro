@@ -12075,9 +12075,9 @@ export namespace Components {
     }
     interface RuxPopUpMenu {
         /**
-          * @retruns Promise<boolean> - true if the pop-up is open, false if not.
+          * Closes the pop up menu and returns false.
          */
-        "isOpen": () => Promise<boolean>;
+        "hide": () => Promise<false>;
         /**
           * @prop open - determines if the pop up is open or closed
          */
@@ -12086,6 +12086,10 @@ export namespace Components {
           * @prop placement - the placement of the pop up relative to it's slotted trigger element.
          */
         "placement": Placement;
+        /**
+          * Opens the pop up menu and returns true.
+         */
+        "show": () => Promise<true>;
     }
     interface RuxProgress {
         /**

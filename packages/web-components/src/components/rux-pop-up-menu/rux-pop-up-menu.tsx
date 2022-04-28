@@ -47,15 +47,13 @@ export class RuxPopUpMenu {
     /**
      * @prop open - determines if the pop up is open or closed
      */
-    @Prop({ mutable: true }) open = false
+    @Prop({ mutable: true, reflect: true }) open = false
     /**
      * @prop placement - the placement of the pop up relative to it's slotted trigger element.
      */
     @Prop() placement: Placement = 'bottom'
 
     @State() arrowPosition?: string
-
-    // private arrowPosition?: string
 
     /**
      * @event ruxpopupmenuselected - emits the value of the selected rux-menu-item inside of rux-pop-up-menu
@@ -81,20 +79,27 @@ export class RuxPopUpMenu {
     }
 
     /**
-     * @retruns Promise<boolean> - true if the pop-up is open, false if not.
+     * Opens the pop up menu and returns true.
      */
     @Method()
-    async isOpen(): Promise<boolean> {
+    async show() {
         if (this.open) {
-            return true
-        } else return false
+            return this.open
+        } else this.open = true
+        return this.open
     }
 
-    //? If we really want the ability to isolate rux-pop-up-menu as a container of sorts, then this might be unnecessary
-    //? It's only helpful if the pop-up is being used with rux-menu-items. Otherwise this is a waste of code.
-    //* Pros - most the time it'll be used with menu-items, and therefore this is better DX since you don't have to add
-    //* listeners to each menu item, and can add a listener just to pop-up-menu.
-    //* Cons - if not using rux-menu-items, this doesn't do anything at all.
+    /**
+     * Closes the pop up menu and returns false.
+     */
+    @Method()
+    async hide() {
+        if (!this.open) {
+            return this.open
+        } else this.open = false
+        return this.open
+    }
+
     @Listen('ruxmenuitemselected', { passive: true })
     handleSelected(e: CustomEvent) {
         const items = this.el.querySelectorAll('rux-menu-item')
@@ -114,7 +119,6 @@ export class RuxPopUpMenu {
     }
 
     componentDidRender() {
-        //if open is passed true on init, then wait for things to be defined and run positioner.
         if (this.open) {
             this._startPositioner()
         }
@@ -125,7 +129,6 @@ export class RuxPopUpMenu {
     }
 
     private _position() {
-        // If it's not visible, can't be opened or doesn't have content we don't need to compute anything.
         if (!this.open || !this.triggerSlot || !this.content) {
             return
         }
@@ -185,8 +188,6 @@ export class RuxPopUpMenu {
         const triggerElRect = await this.getTriggerRect()
         const arrowDivRect = await this.getArrowRect()
 
-        // If trigger's bottom is higher than the arrows bottom, and triggers top is lower than the arrow's top
-        //it's not top or bottom. Check for left or right
         if (
             triggerElRect.bottom > arrowDivRect.bottom &&
             triggerElRect.top < arrowDivRect.top
@@ -221,9 +222,6 @@ export class RuxPopUpMenu {
     private _handleOutsideClick(e: MouseEvent) {
         const menuClick = e.composedPath().includes(this.contentSlot)
         const triggerClick = e.composedPath().includes(this.triggerSlot)
-        //! This prevents the pop up from closing if you're not using rux-menu to encapsulate everything within pop-up - but
-        //! since pop-up is display block, clicking in ceratin places still won't close the pop-up.
-        //! Setting width: min-content solves this. What are the downsides to that?
         const popUpClick = e.composedPath().includes(this.el)
         if (!menuClick && !triggerClick && !popUpClick) {
             this.open = false
