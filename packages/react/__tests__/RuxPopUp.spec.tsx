@@ -15,6 +15,12 @@ import {
   includeWebComponent,
 } from "./common/commonFunctions";
 
+//Need to define Resize observer here for the method tests.
+class ResizeObserver {
+  observe() {}
+  unobserve() {}
+}
+
 describe("RuxPopUpMenu", () => {
   it("should be rendered by react", () => {
     const { container } = renderWithStrictMode(<RuxPopUpMenu></RuxPopUpMenu>);
@@ -32,26 +38,15 @@ describe("RuxPopUpMenu", () => {
 
   describe("createComponent - ref", () => {
     test("should pass ref on to web component instance", () => {
+      //@ts-ignore
+      window.ResizeObserver = ResizeObserver;
       const popRef: React.RefObject<any> = React.createRef();
       const { webcomponent: ruxPopUpMenu } = includeWebComponent(
         renderWithStrictMode(<RuxPopUpMenu ref={popRef}></RuxPopUpMenu>)
       );
       expect(popRef.current).toEqual(ruxPopUpMenu);
     });
-    test("should allow use of custom methods -- show", () => {
-      const popRef: React.RefObject<HTMLRuxPopUpMenuElement> = React.createRef();
-
-      const { container } = renderWithStrictMode(
-        <RuxPopUpMenu ref={popRef} open={true} id="1"></RuxPopUpMenu>
-      );
-
-      const comp = container.getElementsByTagName("rux-pop-up-menu")[0];
-      expect(popRef.current).toEqual(comp);
-      return comp.show().then((res) => {
-        expect(res).toEqual(true);
-      });
-    });
-    test("should allow use of custom methods -- hide", () => {
+    test("should allow use of custom methods -- show", async () => {
       const popRef: React.RefObject<HTMLRuxPopUpMenuElement> = React.createRef();
 
       const { container } = renderWithStrictMode(
@@ -59,10 +54,25 @@ describe("RuxPopUpMenu", () => {
       );
 
       const comp = container.getElementsByTagName("rux-pop-up-menu")[0];
-      expect(popRef.current).toEqual(comp);
-      return comp.hide().then((res) => {
-        expect(res).toEqual(false);
-      });
+      await comp
+        .show()
+        .then(() => expect(comp.open).toBe(true))
+        .catch(() => console.log("catch inside show method test."));
+    });
+    test("should allow use of custom methods -- hide", () => {
+      //@ts-ignore
+      window.ResizeObserver = ResizeObserver;
+      const popRef: React.RefObject<HTMLRuxPopUpMenuElement> = React.createRef();
+
+      const { container } = renderWithStrictMode(
+        <RuxPopUpMenu ref={popRef} open={true} id="1"></RuxPopUpMenu>
+      );
+
+      const comp = container.getElementsByTagName("rux-pop-up-menu")[0];
+      comp
+        .hide()
+        .then(() => expect(comp.open).toBe(false))
+        .catch(() => console.log("Catch inside hide method test."));
     });
   });
   describe("createComponent - events", () => {
