@@ -128,6 +128,9 @@ export const Sizes = (args) => {
 
 <Canvas>
     <Story
+            argTypes={{
+            value: { table: {disable: true}}
+        }}
         name="Sizes"
     >
         {Sizes.bind()}
@@ -149,6 +152,8 @@ export const WithOptionGroups = (args) => {
         .errorText="${args.errorText}"
         .helpText="${args.helpText}"
         name="${args.name}"
+        size="${args.size}"
+        ?multiple="${args.multiple}"
     >
         <rux-option
             value=""
@@ -185,7 +190,11 @@ export const WithOptionGroups = (args) => {
             invalid: false,
             name: "",
             required: false,
-            value: ""
+                        size: "medium",
+            multiple: false
+        }}
+                argTypes={{
+            value: { table: {disable: true}}
         }}
         name="With Option Groups"
     >
@@ -208,6 +217,8 @@ export const Disabled = (args) => {
         .errorText="${args.errorText}"
         .helpText="${args.helpText}"
         .name="${args.name}"
+        size="${args.size}"
+        ?multiple="${args.multiple}"
     >
         <rux-option
             value=""
@@ -235,7 +246,11 @@ export const Disabled = (args) => {
             invalid: false,
             name: "",
             required: false,
-            value: ""
+                        size: "medium",
+            multiple: false
+        }}
+                argTypes={{
+            value: { table: {disable: true}}
         }}
         name="Disabled"
     >
@@ -258,6 +273,8 @@ export const Invalid = (args) => {
         .errorText="${args.errorText}"
         .helpText="${args.helpText}"
         .name="${args.name}"
+        size="${args.size}"
+        ?multiple="${args.multiple}"
     >
         <rux-option
             value=""
@@ -285,7 +302,11 @@ export const Invalid = (args) => {
             disabled: false,
             name: "",
             required: false,
-            value: ""
+                        size: "medium",
+            multiple: false
+        }}
+                argTypes={{
+            value: { table: {disable: true}}
         }}
         name="Invalid"
     >
@@ -307,6 +328,8 @@ export const Required = (args) => {
         label-id="${args.labelId}"
         .errorText="${args.errorText}"
         .helpText="${args.helpText}"
+                size="${args.size}"
+        ?multiple="${args.multiple}"
     >
         <rux-option
             value=""
@@ -326,9 +349,19 @@ export const Required = (args) => {
     <Story
         args={{
             label: 'Required Select Menu',
+            invalid: false,
+            inputId: "1",
+            labelId: "1",
+            errorText: "",
+            helpText: "",
+            disabled: false,
+            name: "",
             required: true,
-            inputId: 1,
-            labelId: 1,
+            size: "medium",
+            multiple: false
+        }}
+                argTypes={{
+            value: { table: {disable: true}}
         }}
         name="Required"
     >
@@ -351,6 +384,8 @@ export const WithHelpText = (args) => {
         .error-text="${args.errorText}"
         help-text="${args.helpText}"
         name="${args.name}"
+                        size="${args.size}"
+        ?multiple="${args.multiple}"
     >
         <rux-option
             value=""
@@ -378,7 +413,11 @@ export const WithHelpText = (args) => {
             invalid: false,
             name: "",
             required: false,
-            value: ""
+            size: "medium",
+            multiple: false
+        }}
+        argTypes={{
+            value: { table: {disable: true}}
         }}
         name="With Help Text"
     >
@@ -401,6 +440,8 @@ export const WithErrorText = (args) => {
         error-text="${args.errorText}"
         help-text="${args.helpText}"
         name="${args.name}"
+                size="${args.size}"
+        ?multiple="${args.multiple}"
     >
         <rux-option
             value=""
@@ -428,7 +469,11 @@ export const WithErrorText = (args) => {
             invalid: false,
             name: "",
             required: false,
-            value: ""
+            size: "medium",
+            multiple: false
+        }}
+                argTypes={{
+            value: { table: {disable: true}}
         }}
         name="With Error Text"
     >
@@ -454,6 +499,7 @@ export const Multiple = (args) => {
         .error-text="${args.errorText}"
         help-text="${args.helpText}"
         .multiple="${args.multiple}"
+                size="${args.size}"
     >
         <rux-option value="1.1" label="Option 1.1"></rux-option>
         <rux-option value="1.2" label="Option 1.2"></rux-option>
@@ -469,10 +515,19 @@ export const Multiple = (args) => {
     <Story
         args={{
             label: 'Select menu',
-            inputId: 1,
-            labelId: 1,
+            inputId: "1",
+            labelId: "1",
             helpText: '',
-            multiple: true
+            disabled: false,
+            errorText: "",
+            invalid: false,
+            name: "",
+            required: false,
+            size: "medium",
+            multiple: true,
+        }}
+                argTypes={{
+            value: { table: {disable: true}}
         }}
         name="Multiple"
     >
@@ -495,6 +550,7 @@ export const MultipleWithOptionGroups = (args) => {
         .error-text="${args.errorText}"
         help-text="${args.helpText}"
         .multiple="${args.multiple}"
+        size="${args.size}"
     >
         <rux-option value="" label="Select Option"></rux-option>
         <rux-option-group label="Option 1">
@@ -519,11 +575,20 @@ export const MultipleWithOptionGroups = (args) => {
 <Canvas>
     <Story
         args={{
-            label: 'Select menu',
-            inputId: 1,
-            labelId: 1,
+label: 'Select menu',
+            inputId: "1",
+            labelId: "1",
             helpText: '',
-            multiple: true
+            disabled: false,
+            errorText: "",
+            invalid: false,
+            name: "",
+            required: false,
+            size: "medium",
+            multiple: true,
+        }}
+                argTypes={{
+            value: { table: {disable: true}}
         }}
         name="Multiple With Option Groups"
     >
