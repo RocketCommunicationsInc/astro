@@ -14,8 +14,6 @@ import {
   renderWithStrictMode,
   includeWebComponent,
 } from "./common/commonFunctions";
-// import { fireEvent } from "@testing-library/dom";
-import { RuxIcon } from "../src";
 
 describe("RuxPopUpMenu", () => {
   it("should be rendered by react", () => {
@@ -24,30 +22,16 @@ describe("RuxPopUpMenu", () => {
     expect(comp).toBeInTheDocument();
   });
   it("should get bools as props", () => {
-    const { webcomponent: icon } = includeWebComponent<HTMLRuxIconAppsElement>(
-      renderWithStrictMode(<RuxIcon icon="apps" aria-controls="1" />)
-    );
     const {
       webcomponent: ruxPopUpMenu,
     } = includeWebComponent<HTMLRuxPopUpMenuElement>(
       renderWithStrictMode(
-        <RuxPopUpMenu open={true} anchorEl={icon} id="1"></RuxPopUpMenu>
+        <RuxPopUpMenu open={true} id="1"></RuxPopUpMenu>
       )
     );
     expect(ruxPopUpMenu.open).toEqual(true);
   });
-  it("should get objects as props", () => {
-    const { webcomponent: icon } = includeWebComponent<HTMLRuxIconAppsElement>(
-      renderWithStrictMode(<RuxIcon icon="apps" />)
-    );
-    const {
-      webcomponent: ruxPopUpMenu,
-    } = includeWebComponent<HTMLRuxPopUpMenuElement>(
-      renderWithStrictMode(<RuxPopUpMenu triggerEl={icon} />)
-    );
-    expect(ruxPopUpMenu.triggerEl).toEqual(icon);
-  });
-});
+
 describe("createComponent - ref", () => {
   test("should pass ref on to web component instance", () => {
     const popRef: React.RefObject<any> = React.createRef();
@@ -56,36 +40,13 @@ describe("createComponent - ref", () => {
     );
     expect(popRef.current).toEqual(ruxPopUpMenu);
   });
-  test("should allow use of custom methods -- isOpen", () => {
+  test("should allow use of custom methods -- show", () => {
     const popRef: React.RefObject<HTMLRuxPopUpMenuElement> = React.createRef();
-    const { webcomponent: icon } = includeWebComponent<HTMLRuxIconAppsElement>(
-      renderWithStrictMode(<RuxIcon icon="apps" aria-controls="1" />)
-    );
+
     const { container } = renderWithStrictMode(
       <RuxPopUpMenu
         ref={popRef}
         open={true}
-        triggerEl={icon}
-        id="1"
-      ></RuxPopUpMenu>
-    );
-
-    const comp = container.getElementsByTagName("rux-pop-up-menu")[0];
-    expect(popRef.current).toEqual(comp);
-    return comp.isOpen().then((res) => {
-      expect(res).toEqual(true);
-    });
-  });
-  test("should allow use of custom methods -- show", () => {
-    const popRef: React.RefObject<HTMLRuxPopUpMenuElement> = React.createRef();
-    const { webcomponent: icon } = includeWebComponent<HTMLRuxIconAppsElement>(
-      renderWithStrictMode(<RuxIcon icon="apps" aria-controls="1" />)
-    );
-    const { container } = renderWithStrictMode(
-      <RuxPopUpMenu
-        ref={popRef}
-        open={false}
-        triggerEl={icon}
         id="1"
       ></RuxPopUpMenu>
     );
@@ -96,43 +57,20 @@ describe("createComponent - ref", () => {
       expect(res).toEqual(true);
     });
   });
-  test("should allow use of custom methods -- close", () => {
+  test("should allow use of custom methods -- hide", () => {
     const popRef: React.RefObject<HTMLRuxPopUpMenuElement> = React.createRef();
-    const { webcomponent: icon } = includeWebComponent<HTMLRuxIconAppsElement>(
-      renderWithStrictMode(<RuxIcon icon="apps" aria-controls="1" />)
-    );
+
     const { container } = renderWithStrictMode(
       <RuxPopUpMenu
         ref={popRef}
-        open={true}
-        triggerEl={icon}
+        open={false}
         id="1"
       ></RuxPopUpMenu>
     );
 
     const comp = container.getElementsByTagName("rux-pop-up-menu")[0];
     expect(popRef.current).toEqual(comp);
-    return comp.close().then((res) => {
-      expect(res).toEqual(true);
-    });
-  });
-  test("should allow use of custom methods -- toggle", () => {
-    const popRef: React.RefObject<HTMLRuxPopUpMenuElement> = React.createRef();
-    const { webcomponent: icon } = includeWebComponent<HTMLRuxIconAppsElement>(
-      renderWithStrictMode(<RuxIcon icon="apps" aria-controls="1" />)
-    );
-    const { container } = renderWithStrictMode(
-      <RuxPopUpMenu
-        ref={popRef}
-        open={true}
-        triggerEl={icon}
-        id="1"
-      ></RuxPopUpMenu>
-    );
-
-    const comp = container.getElementsByTagName("rux-pop-up-menu")[0];
-    expect(popRef.current).toEqual(comp);
-    return comp.toggle().then((res) => {
+    return comp.hide().then((res) => {
       expect(res).toEqual(false);
     });
   });
@@ -140,30 +78,19 @@ describe("createComponent - ref", () => {
 describe("createComponent - events", () => {
   test("should set events on handler", () => {
     const popRef: React.RefObject<HTMLRuxPopUpMenuElement> = React.createRef();
-    const FakeDidClose = jest.fn();
-    const FakeDidOpen = jest.fn();
-    const FakeWillClose = jest.fn();
-    const FakeWillOpen = jest.fn();
-    const { webcomponent: icon } = includeWebComponent<HTMLRuxIconAppsElement>(
-      renderWithStrictMode(<RuxIcon icon="apps" aria-controls="1" />)
-    );
+    const FakePopUpMenuSelected = jest.fn();
+
     const { webcomponent } = includeWebComponent<HTMLRuxPopUpMenuElement>(
       renderWithStrictMode(
         <RuxPopUpMenu
           ref={popRef}
-          triggerEl={icon}
           id="1"
-          onRuxmenuwillclose={FakeWillClose}
-          onRuxmenuwillopen={FakeWillOpen}
-          onRuxmenudidopen={FakeDidOpen}
-          onRuxmenudidclose={FakeDidClose}
+          onRuxpopupmenuselected={FakePopUpMenuSelected}
         ></RuxPopUpMenu>
       )
     );
     const attatchedEvents = (webcomponent as any).__events;
-    expect(Object.keys(attatchedEvents)).toContain("ruxmenudidclose");
-    expect(Object.keys(attatchedEvents)).toContain("ruxmenudidopen");
-    expect(Object.keys(attatchedEvents)).toContain("ruxmenuwillclose");
-    expect(Object.keys(attatchedEvents)).toContain("ruxmenuwillopen");
+    expect(Object.keys(attatchedEvents)).toContain("ruxpopupmenuselected");
+
   });
 });
