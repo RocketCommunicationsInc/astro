@@ -9,7 +9,7 @@
 }
 .hidden {
     //! This allows for the display to be changed with the ::part(popup-content) but still
-    //! be hidden when it needs to be. Gotta think of a better way.
+    //! be hidden when it needs to be. Any better ideas?
     display: none !important;
 }
 

@@ -20,6 +20,7 @@
     </head>
 
     <body>
+        <!-- Top -->
         <div style="padding: 10% 5%; display: flex">
             <rux-pop-up-menu placement="top-start" id="top">
                 <rux-button slot="trigger">Top</rux-button>
@@ -46,6 +47,7 @@
                 id="results"
             ></div>
         </div>
+        <!-- Right -->
         <div style="padding: 5%">
             <rux-pop-up-menu placement="right-start" id="right">
                 <rux-button slot="trigger">Right</rux-button>
@@ -62,6 +64,7 @@
                 </rux-menu>
             </rux-pop-up-menu>
         </div>
+        <!-- Bottom -->
         <div style="padding: 5%">
             <rux-pop-up-menu placement="bottom-start" id="bottom">
                 <rux-button slot="trigger">Bottom</rux-button>
@@ -78,6 +81,7 @@
                 </rux-menu>
             </rux-pop-up-menu>
         </div>
+        <!-- Left -->
         <div style="padding: 5% 20%">
             <rux-pop-up-menu placement="left-start" id="left">
                 <rux-button slot="trigger">Left</rux-button>
@@ -94,16 +98,91 @@
                 </rux-menu>
             </rux-pop-up-menu>
         </div>
+        <!-- Form Test -->
+        <div style="margin: 10%; display: flex">
+            <rux-pop-up-menu id="form-pop">
+                <rux-icon icon="apps" slot="trigger"></rux-icon>
+                <rux-input
+                    id="1"
+                    type="text"
+                    placeholder="Warrior"
+                    value=""
+                ></rux-input>
+                <rux-input
+                    id="2"
+                    type="text"
+                    placeholder="Of Light"
+                    value=""
+                ></rux-input>
+                <rux-button type="submit" id="submit">Submit</rux-button>
+            </rux-pop-up-menu>
+            <div
+                id="form-test"
+                style="
+                    background: gray;
+                    width: 100px;
+                    height: 100px;
+                    margin-left: 100px;
+                "
+            ></div>
+        </div>
+        <!-- Show() test -->
+        <div style="margin: 5%">
+            <rux-pop-up-menu id="toggle" placement="top">
+                <rux-button slot="trigger">Toggle</rux-button>
+                <rux-menu>
+                    <rux-menu-item value="1">Option 1</rux-menu-item>
+                    <rux-menu-item value="2">Option 2</rux-menu-item>
+                    <rux-menu-item value="3">Option 3</rux-menu-item>
+                </rux-menu>
+            </rux-pop-up-menu>
+            <div style="padding-top: 5%">
+                <rux-button id="show">Show</rux-button>
+                <rux-button id="hide">Hide</rux-button>
+            </div>
+            <!-- hide() test -->
+            <div style="margin: 15%">
+                <rux-pop-up-menu id="open-def" open>
+                    <rux-button slot="trigger">Open by Def</rux-button>
+                    <rux-menu>
+                        <rux-menu-item value="1" selected
+                            >Pop up menu option test</rux-menu-item
+                        >
+                        <rux-menu-item value="2"
+                            >Pop up menu option test</rux-menu-item
+                        >
+                        <rux-menu-item value="3"
+                            >Pop up menu option test</rux-menu-item
+                        >
+                    </rux-menu>
+                </rux-pop-up-menu>
+            </div>
+        </div>
         <script>
-            // let topItems = document.getElementById('top').querySelectorAll('rux-menu rux-menu-item')
             let resultDiv = document.getElementById('results')
-            // topItems.forEach((item) => item.addEventListener('ruxmenuitemselected', () => {
-            //     resultDiv.innerText = item.value
-            // }))
             let topPop = document.getElementById('top')
             topPop.addEventListener('ruxpopupmenuselected', (e) => {
-                console.log('heard, here it is:', e.detail)
                 resultDiv.innerText = e.detail.value
+            })
+            const testDiv = document.getElementById('form-test')
+            const input1 = document.getElementById('1')
+            const input2 = document.getElementById('2')
+            const submitBtn = document.getElementById('submit')
+            const show = document.getElementById('show')
+            const hide = document.getElementById('hide')
+            const togglePopup = document.getElementById('toggle')
+            const openDef = document.getElementById('open-def')
+
+            show.addEventListener('click', () => {
+                togglePopup.show()
+            })
+            hide.addEventListener('click', () => {
+                openDef.hide()
+            })
+
+            submitBtn.addEventListener('click', (e) => {
+                e.preventDefault()
+                testDiv.innerText = input1.value + ' ' + input2.value
             })
         </script>
     </body>
