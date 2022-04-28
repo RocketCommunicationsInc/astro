@@ -22,13 +22,23 @@
 
 ## Methods
 
-### `isOpen() => Promise<boolean>`
+### `hide() => Promise<false>`
 
-
+Closes the pop up menu and returns false.
 
 #### Returns
 
-Type: `Promise<boolean>`
+Type: `Promise<false>`
+
+
+
+### `show() => Promise<true>`
+
+Opens the pop up menu and returns true.
+
+#### Returns
+
+Type: `Promise<true>`
 
 
 

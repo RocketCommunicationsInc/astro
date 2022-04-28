@@ -21569,7 +21569,7 @@ export declare interface RuxPopUpMenu extends Components.RuxPopUpMenu {
 
 @ProxyCmp({
   inputs: ['open', 'placement'],
-  methods: ['isOpen']
+  methods: ['show', 'hide']
 })
 @Component({
   selector: 'rux-pop-up-menu',
