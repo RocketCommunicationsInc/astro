@@ -1,6 +1,6 @@
 {
     "name": "@astrouxds/astro-web-components",
-    "version": "6.5.0",
+    "version": "6.5.1",
     "description": "Astro Web Components",
     "main": "dist/index.cjs.js",
     "module": "dist/custom-elements/index.js",
@@ -58,6 +58,7 @@
         "@storybook/addon-actions": "~6.4.18",
         "@storybook/addon-docs": "~6.4.18",
         "@storybook/addon-essentials": "~6.4.18",
+        "@storybook/addon-google-analytics": "~6.2.9",
         "@storybook/addon-knobs": "~6.4.0",
         "@storybook/addon-links": "~6.4.18",
         "@storybook/addons": "~6.4.18",

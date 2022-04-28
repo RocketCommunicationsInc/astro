@@ -43,17 +43,25 @@
     display: block;
 }
 
+.tree-node {
+    border-top: 1px solid var(--color-interactive-muted);
+    .parent {
+        border-left: 1px solid var(--color-interactive-muted);
+        border-right: 1px solid var(--color-interactive-muted);
+    }
+    .children {
+        border-left: none;
+        border-right: none;
+    }
+}
+
 :host([hidden]) {
     display: none;
 }
 
-:host([aria-expanded='true'][aria-level='1']:not([aria-selected='true'])) {
-    .parent::after {
-        border-bottom: solid 1px var(--tree-expanded-border-color);
-    }
-}
-
 :host([aria-selected='true']) {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='33' viewBox='0 0 5 33' fill='none'%3E%3Crect width='5' height='33' fill='%234DACFF'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
     .parent {
         &::after {
             content: '';
@@ -63,8 +71,6 @@
             z-index: 0;
             position: absolute;
             transition: background-color 0.0967s ease-in 0s;
-            border-top: 1px solid var(--tree-selected-border-color);
-            border-bottom: 1px solid var(--tree-selected-border-color);
         }
     }
 }
@@ -72,7 +78,7 @@
 :host([aria-level='1']) {
     .parent {
         font-weight: bold;
-        padding-left: 0.5rem;
+        padding: 0;
         &::after {
             content: '';
             height: 31px;
@@ -81,6 +87,9 @@
             z-index: 0;
             position: absolute;
             transition: background-color 0.0967s ease-in 0s;
+        }
+        .selected {
+            margin-right: -5px;
         }
     }
     .tree-node:not(.tree-node--has-children) {
@@ -95,6 +104,9 @@
         .parent {
             padding-left: 3.5rem;
         }
+    }
+    .selected {
+        margin-right: -10px;
     }
 }
 
@@ -148,8 +160,7 @@
     position: relative;
     cursor: pointer;
     width: 0.35rem;
-    margin-right: 1rem;
-    margin-left: 0.15rem;
+    margin: 0 13px;
     background-color: transparent;
     transition: transform 0.167s ease-in-out 0s;
     z-index: 11;
@@ -195,4 +206,9 @@
         transition: transform 0.167s ease-in-out 0s;
         z-index: 11;
     }
+}
+.selected {
+    width: 5px;
+    height: 100%;
+    background-color: var(--color-interactive-default);
 }
