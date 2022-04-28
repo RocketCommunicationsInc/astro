@@ -22141,13 +22141,13 @@ export class RuxTimeRegion {
 export declare interface RuxTimeline extends Components.RuxTimeline {}
 
 @ProxyCmp({
-  inputs: ['end', 'interval', 'playhead', 'start', 'zoom']
+  inputs: ['end', 'interval', 'playhead', 'start', 'timezone', 'zoom']
 })
 @Component({
   selector: 'rux-timeline',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['end', 'interval', 'playhead', 'start', 'zoom']
+  inputs: ['end', 'interval', 'playhead', 'start', 'timezone', 'zoom']
 })
 export class RuxTimeline {
   protected el: HTMLElement;
