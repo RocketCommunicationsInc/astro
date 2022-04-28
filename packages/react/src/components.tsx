@@ -4275,10 +4275,6 @@ export const RuxLog = /*@__PURE__*/ createReactComponent<
   JSX.RuxLog,
   HTMLRuxLogElement
 >("rux-log");
-export const RuxMenu = /*@__PURE__*/ createReactComponent<
-  JSX.RuxMenu,
-  HTMLRuxMenuElement
->("rux-menu");
 export const RuxMenuItem = /*@__PURE__*/ createReactComponent<
   JSX.RuxMenuItem,
   HTMLRuxMenuItemElement
