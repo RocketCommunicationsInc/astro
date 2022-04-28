@@ -5,11 +5,11 @@
     --size: 3.75rem;
 
     // These are used to determine nub-size
-    --wrapper-height: calc(var(--size) + 4px);
+    --container-height: calc(var(--size) + 4px);
     --second-div-height: calc(var(--size) * 0.9 - 6px);
 
     --nub-size: calc(
-        ((var(--wrapper-height) - var(--second-div-height)) / 2) - 4px
+        ((var(--container-height) - var(--second-div-height)) / 2) - 4px
     );
 
     // .5's here to pervent hard stops in mask
@@ -20,10 +20,9 @@
             calc((((100% - 4px) * 0.9) - 4.5px))
     );
     display: inline-block;
-    padding: 1.25rem;
 }
 
-.rux-indeterminate-wrapper {
+.rux-indeterminate-container {
     height: var(--size);
     width: var(--size);
     border-radius: 100%;
