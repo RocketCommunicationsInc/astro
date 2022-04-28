@@ -35,7 +35,7 @@ Astro represents a collection of artifacts including, but not limited to, guidan
 </tr>
 <tr>
 <td>Web Components</td>
-<td class="tabular">6.5.0 -&gt; <b>6.5.1</b></td>
+<td class="tabular">6.5.1 -&gt; <b>6.6.0</b></td>
 <td><a href="https://github.com/RocketCommunicationsInc/astro/releases/tag/v6.6.0">Release Notes</a></td>
 </tr>
 <tr>
