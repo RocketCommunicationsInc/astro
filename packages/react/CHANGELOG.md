@@ -1,5 +1,27 @@
 # @astrouxds/react
 
+## 6.6.0
+
+### Minor Changes
+
+#### Timeline
+
+- Added `timezone` property
+
+### Patch Changes
+
+#### Segmented Button
+
+- fixed issue where the bottom border was being clipped when inside a container element.
+
+#### Slider
+
+- hides label if none is present
+
+#### Form Elements
+
+- Removed extra margin on form elements (checkbox, radio, slider, select, input, textarea) that didn't have a label.
+
 ## 6.5.1
 
 ### Patch Changes
