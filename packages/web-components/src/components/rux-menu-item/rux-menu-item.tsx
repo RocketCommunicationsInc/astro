@@ -17,20 +17,20 @@ import {
 export class RuxMenuItem {
     @Element() el!: HTMLRuxMenuItemElement
     /**
-     * @prop selected - sets the menu item as selected
+     * sets the menu item as selected
      */
     @Prop({ reflect: true }) selected = false
     /**
-     * @prop disabled - sets the menu item as disabled
+     * sets the menu item as disabled
      */
     @Prop({ reflect: true }) disabled = false
     /**
-     * @prop value - the value returned when item is selected. If no value is given, the text content will be used.
+     * the value returned when item is selected. If no value is given, the text content will be used.
      */
     @Prop() value: any
 
     /**
-     * @event ruxmenuitemselected - When a rux-menu item is selected, emits the value of that item.
+     *  When a rux-menu item is selected, emits the value of that item.
      */
     @Event({ eventName: 'ruxmenuitemselected', bubbles: true, composed: true })
     ruxMenuItemSelected!: EventEmitter<object>

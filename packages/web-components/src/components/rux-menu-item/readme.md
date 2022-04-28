@@ -7,18 +7,18 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type      | Default     |
-| ---------- | ---------- | ----------- | --------- | ----------- |
-| `disabled` | `disabled` |             | `boolean` | `false`     |
-| `selected` | `selected` |             | `boolean` | `false`     |
-| `value`    | `value`    |             | `any`     | `undefined` |
+| Property   | Attribute  | Description                                                                                    | Type      | Default     |
+| ---------- | ---------- | ---------------------------------------------------------------------------------------------- | --------- | ----------- |
+| `disabled` | `disabled` | sets the menu item as disabled                                                                 | `boolean` | `false`     |
+| `selected` | `selected` | sets the menu item as selected                                                                 | `boolean` | `false`     |
+| `value`    | `value`    | the value returned when item is selected. If no value is given, the text content will be used. | `any`     | `undefined` |
 
 
 ## Events
 
-| Event                 | Description | Type                  |
-| --------------------- | ----------- | --------------------- |
-| `ruxmenuitemselected` |             | `CustomEvent<object>` |
+| Event                 | Description                                                     | Type                  |
+| --------------------- | --------------------------------------------------------------- | --------------------- |
+| `ruxmenuitemselected` | When a rux-menu item is selected, emits the value of that item. | `CustomEvent<object>` |
 
 
 ----------------------------------------------

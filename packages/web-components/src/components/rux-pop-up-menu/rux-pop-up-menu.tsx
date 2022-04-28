@@ -45,18 +45,19 @@ export class RuxPopUpMenu {
     @Element() el!: HTMLRuxPopUpMenuElement
 
     /**
-     * @prop open - determines if the pop up is open or closed
+     * determines if the pop up is open or closed
      */
     @Prop({ mutable: true, reflect: true }) open = false
+
     /**
-     * @prop placement - the placement of the pop up relative to it's slotted trigger element.
+     * the placement of the pop up relative to it's slotted trigger element.
      */
     @Prop() placement: Placement = 'bottom'
 
     @State() arrowPosition?: string
 
     /**
-     * @event ruxpopupmenuselected - emits the value of the selected rux-menu-item inside of rux-pop-up-menu
+     * emits the value of the selected rux-menu-item inside of rux-pop-up-menu
      */
     @Event({ eventName: 'ruxpopupmenuselected' })
     ruxPopUpMenuSelected!: EventEmitter

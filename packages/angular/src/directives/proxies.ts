@@ -21379,7 +21379,7 @@ export class RuxMenu {
 
 export declare interface RuxMenuItem extends Components.RuxMenuItem {
   /**
-   *  @event ruxmenuitemselected - When a rux-menu item is selected, emits the value of that item.
+   * When a rux-menu item is selected, emits the value of that item. 
    */
   ruxmenuitemselected: EventEmitter<CustomEvent<object>>;
 
@@ -21561,7 +21561,7 @@ export class RuxOptionGroup {
 
 export declare interface RuxPopUpMenu extends Components.RuxPopUpMenu {
   /**
-   *  @event ruxpopupmenuselected - emits the value of the selected rux-menu-item inside of rux-pop-up-menu
+   * emits the value of the selected rux-menu-item inside of rux-pop-up-menu 
    */
   ruxpopupmenuselected: EventEmitter<CustomEvent<any>>;
 
