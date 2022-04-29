@@ -11950,7 +11950,7 @@ export namespace Components {
          */
         "timezone": string;
     }
-    interface RuxMenuItem {
+    interface RuxLog {
         /**
           * Disables the item
          */
@@ -11980,9 +11980,21 @@ export namespace Components {
     }
     interface RuxModal {
         /**
-          * Allows modal to close by clicking off of it
+          * Text for confirmation button
          */
-        "clickToClose": boolean;
+        "confirmText": string;
+        /**
+          * Text for close button
+         */
+        "denyText": string;
+        /**
+          * Modal body message
+         */
+        "modalMessage"?: string;
+        /**
+          * Modal header title
+         */
+        "modalTitle"?: string;
         /**
           * Shows and hides modal
          */
@@ -32266,17 +32278,25 @@ declare namespace LocalJSX {
     }
     interface RuxModal {
         /**
-          * Allows modal to close by clicking off of it
+          * Text for confirmation button
          */
-        "clickToClose"?: boolean;
+        "confirmText"?: string;
+        /**
+          * Text for close button
+         */
+        "denyText"?: string;
+        /**
+          * Modal body message
+         */
+        "modalMessage"?: string;
+        /**
+          * Modal header title
+         */
+        "modalTitle"?: string;
         /**
           * Event that is fired when modal closes
          */
         "onRuxmodalclosed"?: (event: CustomEvent<boolean>) => void;
-        /**
-          * Event that is fired when modal opens
-         */
-        "onRuxmodalopened"?: (event: CustomEvent<boolean>) => void;
         /**
           * Shows and hides modal
          */

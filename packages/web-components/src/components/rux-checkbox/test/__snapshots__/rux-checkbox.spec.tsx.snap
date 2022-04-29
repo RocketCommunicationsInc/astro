@@ -6,8 +6,8 @@ exports[`rux-checkbox renders 1`] = `
     <div class="rux-form-field" part="form-field">
       <div class="rux-checkbox">
         <input id="rux-checkbox-2" type="checkbox" value="">
-        <label htmlfor="rux-checkbox-2" part="label">
-          <span>
+        <label class="rux-checkbox--no-label" htmlfor="rux-checkbox-2" part="label">
+          <span class="hidden">
             <slot></slot>
           </span>
         </label>

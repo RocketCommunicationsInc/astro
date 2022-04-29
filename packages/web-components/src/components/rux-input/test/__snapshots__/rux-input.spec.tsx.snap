@@ -4,11 +4,6 @@ exports[`rux-input renders 1`] = `
 <rux-input value="">
   <mock:shadow-root>
     <div class="rux-form-field" part="form-field">
-      <label aria-hidden="true" class="rux-input-label" htmlfor="rux-input-1" part="label">
-        <span class="hidden">
-          <slot name="label"></slot>
-        </span>
-      </label>
       <div class="rux-input rux-input--medium">
         <span class="rux-input-prefix" part="prefix">
           <slot name="prefix"></slot>
@@ -81,11 +76,6 @@ exports[`rux-input renders rux-icon if type is password 1`] = `
 <rux-input type="password" value="">
   <mock:shadow-root>
     <div class="rux-form-field" part="form-field">
-      <label aria-hidden="true" class="rux-input-label" htmlfor="rux-input-4" part="label">
-        <span class="hidden">
-          <slot name="label"></slot>
-        </span>
-      </label>
       <div class="rux-input rux-input--medium">
         <span class="rux-input-prefix" part="prefix">
           <slot name="prefix"></slot>

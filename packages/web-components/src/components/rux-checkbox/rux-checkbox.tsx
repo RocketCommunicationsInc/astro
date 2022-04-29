@@ -7,11 +7,12 @@ import {
     Element,
     Watch,
     Host,
+    State,
 } from '@stencil/core'
 import FormFieldMessage from '../../common/functional-components/FormFieldMessage/FormFieldMessage'
 
 import { FormFieldInterface } from '../../common/interfaces.module'
-import { renderHiddenInput } from '../../utils/utils'
+import { renderHiddenInput, hasSlot } from '../../utils/utils'
 
 let id = 0
 
@@ -31,6 +32,8 @@ export class RuxCheckbox implements FormFieldInterface {
     private _inputEl?: HTMLInputElement
 
     @Element() el!: HTMLRuxCheckboxElement
+
+    @State() hasLabelSlot = false
 
     /**
      * The help or explanation text
@@ -97,18 +100,28 @@ export class RuxCheckbox implements FormFieldInterface {
      */
     @Event({ eventName: 'ruxblur' }) ruxBlur!: EventEmitter
 
-    constructor() {}
-
     connectedCallback() {
         this._onClick = this._onClick.bind(this)
         this._onInput = this._onInput.bind(this)
+        this._checkForLabelSlot = this._checkForLabelSlot.bind(this)
     }
 
+    componentWillLoad() {
+        this._checkForLabelSlot()
+    }
     componentDidLoad() {
         if (this._inputEl && this.indeterminate) {
             // indeterminate property does not exist in HTML but is accessible via js
             this._inputEl.indeterminate = true
         }
+    }
+
+    get hasLabel() {
+        return this.label ? true : this.hasLabelSlot
+    }
+
+    private _checkForLabelSlot() {
+        this.hasLabelSlot = hasSlot(this.el)
     }
 
     private _onClick(e: Event): void {
@@ -140,6 +153,8 @@ export class RuxCheckbox implements FormFieldInterface {
             value,
             indeterminate,
             label,
+            hasLabel,
+            hasLabelSlot,
         } = this
 
         if (!this.indeterminate) {
@@ -177,14 +192,22 @@ export class RuxCheckbox implements FormFieldInterface {
                             onBlur={this._onBlur}
                             ref={(el) => (this._inputEl = el)}
                         />
-                        <label htmlFor={checkboxId} part="label">
-                            {label}
+                        <label
+                            htmlFor={checkboxId}
+                            part="label"
+                            class={{
+                                'rux-checkbox--no-label': !hasLabel,
+                            }}
+                        >
+                            {hasLabelSlot ? null : label}
                             <span
                                 class={{
-                                    hidden: !!label,
+                                    hidden: !hasLabel,
                                 }}
                             >
-                                <slot></slot>
+                                <slot
+                                    onSlotchange={this._checkForLabelSlot}
+                                ></slot>
                             </span>
                         </label>
                     </div>
