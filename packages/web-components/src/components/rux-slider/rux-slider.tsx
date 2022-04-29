@@ -226,6 +226,7 @@ export class RuxSlider implements FormFieldInterface {
             el,
             sliderId,
             label,
+            hasLabel,
             min,
             max,
             value,
@@ -240,17 +241,20 @@ export class RuxSlider implements FormFieldInterface {
         return (
             <Host>
                 <div class="rux-form-field" part="form-field">
-                    <label
-                        class={{
-                            'rux-input-label': true,
-                            hidden: !this.hasLabel,
-                        }}
-                        aria-hidden={this.hasLabel ? 'false' : 'true'}
-                        htmlFor={sliderId}
-                        part="label"
-                    >
-                        <slot name="label">{label}</slot>
-                    </label>
+                    {hasLabel ? (
+                        <label
+                            class={{
+                                'rux-input-label': true,
+                                hidden: !this.hasLabel,
+                            }}
+                            aria-hidden={this.hasLabel ? 'false' : 'true'}
+                            htmlFor={sliderId}
+                            part="label"
+                        >
+                            <slot name="label">{label}</slot>
+                        </label>
+                    ) : null}
+
                     <div
                         class={{
                             'rux-slider': true,
