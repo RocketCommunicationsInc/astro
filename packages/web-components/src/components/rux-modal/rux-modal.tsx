@@ -13,6 +13,7 @@ import {
 /**
  * @part wrapper - the modal wrapper overlay ! DEPRECATED IN FAVOR OF CONTAINER !
  * @part container - the modal container
+ * @part dialog - the native dialog element
  * @part header - the header of the modal
  * @part message - the message of the modal
  * @part confirm-button - the modal's confirm button
@@ -148,7 +149,11 @@ export class RuxModal {
             open && (
                 <Host>
                     <div part="wrapper container" class="rux-modal__wrapper">
-                        <dialog class="rux-modal__dialog" role="dialog">
+                        <dialog
+                            class="rux-modal__dialog"
+                            role="dialog"
+                            part="dialog"
+                        >
                             {modalTitle && (
                                 <header
                                     class="rux-modal__titlebar"
