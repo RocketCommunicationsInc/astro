@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core'
+import { Component, Host, h, Prop } from '@stencil/core'
 
 /**
  * @part container - The outermost div encasing rux-indeterminate-progress which is responsible for the overall size and the outermost border.
@@ -13,10 +13,21 @@ import { Component, Host, h } from '@stencil/core'
     shadow: true,
 })
 export class RuxIndeterminateProgress {
+    /**
+     * Determines if the spinner is to be used at <= 60px;
+     */
+    @Prop({ reflect: true }) small: boolean = false
+
     render() {
         return (
             <Host>
-                <div class="rux-indeterminate-container" part="container">
+                <div
+                    class={{
+                        'rux-indeterminate-container': true,
+                        small: this.small,
+                    }}
+                    part="container"
+                >
                     <div
                         class="rux-indeterminate-animated-spinner"
                         part="animated-spinner"

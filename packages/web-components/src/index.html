@@ -1,21 +1,51 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script type="module" src="/build/astro-web-components.esm.js"></script>
+        <script nomodule src="/build/astro-web-components.js"></script>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
-        rel="stylesheet" />
-    <script type="module" src="/build/astro-web-components.esm.js"></script>
-    <script nomodule src="/build/astro-web-components.js"></script>
+        <link rel="stylesheet" href="/build/astro-web-components.css" />
+    </head>
 
-    <link rel="stylesheet" href="/build/astro-web-components.css" />
-</head>
+    <body>
+        <style>
+            #small {
+                --size: 20px;
+            }
 
-<body></body>
+            #test {
+                --size: 20px;
+            }
 
+            #slotted {
+                --size: 20px;
+            }
+        </style>
+        <rux-indeterminate-progress
+            small
+            id="small"
+        ></rux-indeterminate-progress>
+        <br />
+        <br />
+        <rux-indeterminate-progress id="test"></rux-indeterminate-progress>
+        <rux-button
+            >Slotted
+            <rux-indeterminate-progress
+                id="slotted"
+                small
+            ></rux-indeterminate-progress>
+        </rux-button>
+    </body>
 </html>
