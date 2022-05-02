@@ -49,19 +49,26 @@ By default button group aligns buttons to the left. Alternatively an `h-align` p
 | ------------- | ------------------------ |
 | `"container"` | the components container |
 
+## Dependencies
+
+| Part          | Description              |
+| ------------- | ------------------------ |
+| `"container"` | the components container |
+
 
 ## Dependencies
 
-### Used by
+| Part          | Description              |
+| ------------- | ------------------------ |
+| `"container"` | the components container |
 
- - [rux-modal](../rux-modal)
 
-### Graph
-```mermaid
-graph TD;
-  rux-modal --> rux-button-group
-  style rux-button-group fill:#f9f,stroke:#333,stroke-width:4px
-```
+## Dependencies
+
+| Part          | Description              |
+| ------------- | ------------------------ |
+| `"container"` | the components container |
+
 
 ----------------------------------------------
 

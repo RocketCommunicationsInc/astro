@@ -146,6 +146,8 @@ export namespace Components {
          */
         "timezone": string;
     }
+    interface RuxContainer {
+    }
     interface RuxDatetime {
         /**
           * The date time to be formatted
@@ -11858,12 +11860,6 @@ export namespace Components {
         | 'auto'
         | string;
     }
-    interface RuxIndeterminateProgress {
-        /**
-          * Determines if the spinner is to be used at <= 60px;
-         */
-        "small": boolean;
-    }
     interface RuxInput {
         /**
           * The input's autocomplete attribute
@@ -11956,7 +11952,7 @@ export namespace Components {
          */
         "timezone": string;
     }
-    interface RuxMenuItem {
+    interface RuxLog {
         /**
           * Disables the item
          */
@@ -12592,6 +12588,12 @@ declare global {
     var HTMLRuxClockElement: {
         prototype: HTMLRuxClockElement;
         new (): HTMLRuxClockElement;
+    };
+    interface HTMLRuxContainerElement extends Components.RuxContainer, HTMLStencilElement {
+    }
+    var HTMLRuxContainerElement: {
+        prototype: HTMLRuxContainerElement;
+        new (): HTMLRuxContainerElement;
     };
     interface HTMLRuxDatetimeElement extends Components.RuxDatetime, HTMLStencilElement {
     }
@@ -18941,12 +18943,6 @@ declare global {
         prototype: HTMLRuxIconZoomOutMapElement;
         new (): HTMLRuxIconZoomOutMapElement;
     };
-    interface HTMLRuxIndeterminateProgressElement extends Components.RuxIndeterminateProgress, HTMLStencilElement {
-    }
-    var HTMLRuxIndeterminateProgressElement: {
-        prototype: HTMLRuxIndeterminateProgressElement;
-        new (): HTMLRuxIndeterminateProgressElement;
-    };
     interface HTMLRuxInputElement extends Components.RuxInput, HTMLStencilElement {
     }
     var HTMLRuxInputElement: {
@@ -19188,6 +19184,7 @@ declare global {
         "rux-checkbox-group": HTMLRuxCheckboxGroupElement;
         "rux-classification-marking": HTMLRuxClassificationMarkingElement;
         "rux-clock": HTMLRuxClockElement;
+        "rux-container": HTMLRuxContainerElement;
         "rux-datetime": HTMLRuxDatetimeElement;
         "rux-global-status-bar": HTMLRuxGlobalStatusBarElement;
         "rux-icon": HTMLRuxIconElement;
@@ -20246,7 +20243,6 @@ declare global {
         "rux-icon-zoom-in-map": HTMLRuxIconZoomInMapElement;
         "rux-icon-zoom-out": HTMLRuxIconZoomOutElement;
         "rux-icon-zoom-out-map": HTMLRuxIconZoomOutMapElement;
-        "rux-indeterminate-progress": HTMLRuxIndeterminateProgressElement;
         "rux-input": HTMLRuxInputElement;
         "rux-log": HTMLRuxLogElement;
         "rux-menu-item": HTMLRuxMenuItemElement;
@@ -20436,6 +20432,8 @@ declare namespace LocalJSX {
           * Accepts the [IANA timezone string format](https://www.iana.org/time-zones) such as `'America/Los_Angeles'` or any single-character designation for a [military timezones](https://en.wikipedia.org/wiki/List_of_military_time_zones) (`'A'` through `'Z'`, excluding `'J'`), both case-insensitive. If no value for timezone is provided, the clock will use `'UTC'`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.
          */
         "timezone"?: string;
+    }
+    interface RuxContainer {
     }
     interface RuxDatetime {
         /**
@@ -32149,12 +32147,6 @@ declare namespace LocalJSX {
         | 'auto'
         | string;
     }
-    interface RuxIndeterminateProgress {
-        /**
-          * Determines if the spinner is to be used at <= 60px;
-         */
-        "small"?: boolean;
-    }
     interface RuxInput {
         /**
           * The input's autocomplete attribute
@@ -32945,6 +32937,7 @@ declare namespace LocalJSX {
         "rux-checkbox-group": RuxCheckboxGroup;
         "rux-classification-marking": RuxClassificationMarking;
         "rux-clock": RuxClock;
+        "rux-container": RuxContainer;
         "rux-datetime": RuxDatetime;
         "rux-global-status-bar": RuxGlobalStatusBar;
         "rux-icon": RuxIcon;
@@ -34003,7 +33996,6 @@ declare namespace LocalJSX {
         "rux-icon-zoom-in-map": RuxIconZoomInMap;
         "rux-icon-zoom-out": RuxIconZoomOut;
         "rux-icon-zoom-out-map": RuxIconZoomOutMap;
-        "rux-indeterminate-progress": RuxIndeterminateProgress;
         "rux-input": RuxInput;
         "rux-log": RuxLog;
         "rux-menu-item": RuxMenuItem;
@@ -34055,6 +34047,7 @@ declare module "@stencil/core" {
             "rux-checkbox-group": LocalJSX.RuxCheckboxGroup & JSXBase.HTMLAttributes<HTMLRuxCheckboxGroupElement>;
             "rux-classification-marking": LocalJSX.RuxClassificationMarking & JSXBase.HTMLAttributes<HTMLRuxClassificationMarkingElement>;
             "rux-clock": LocalJSX.RuxClock & JSXBase.HTMLAttributes<HTMLRuxClockElement>;
+            "rux-container": LocalJSX.RuxContainer & JSXBase.HTMLAttributes<HTMLRuxContainerElement>;
             "rux-datetime": LocalJSX.RuxDatetime & JSXBase.HTMLAttributes<HTMLRuxDatetimeElement>;
             "rux-global-status-bar": LocalJSX.RuxGlobalStatusBar & JSXBase.HTMLAttributes<HTMLRuxGlobalStatusBarElement>;
             "rux-icon": LocalJSX.RuxIcon & JSXBase.HTMLAttributes<HTMLRuxIconElement>;
@@ -35113,7 +35106,6 @@ declare module "@stencil/core" {
             "rux-icon-zoom-in-map": LocalJSX.RuxIconZoomInMap & JSXBase.HTMLAttributes<HTMLRuxIconZoomInMapElement>;
             "rux-icon-zoom-out": LocalJSX.RuxIconZoomOut & JSXBase.HTMLAttributes<HTMLRuxIconZoomOutElement>;
             "rux-icon-zoom-out-map": LocalJSX.RuxIconZoomOutMap & JSXBase.HTMLAttributes<HTMLRuxIconZoomOutMapElement>;
-            "rux-indeterminate-progress": LocalJSX.RuxIndeterminateProgress & JSXBase.HTMLAttributes<HTMLRuxIndeterminateProgressElement>;
             "rux-input": LocalJSX.RuxInput & JSXBase.HTMLAttributes<HTMLRuxInputElement>;
             "rux-log": LocalJSX.RuxLog & JSXBase.HTMLAttributes<HTMLRuxLogElement>;
             "rux-menu-item": LocalJSX.RuxMenuItem & JSXBase.HTMLAttributes<HTMLRuxMenuItemElement>;

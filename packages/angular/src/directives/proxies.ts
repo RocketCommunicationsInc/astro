@@ -141,6 +141,23 @@ export class RuxClock {
 }
 
 
+export declare interface RuxContainer extends Components.RuxContainer {}
+
+
+@Component({
+  selector: 'rux-container',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class RuxContainer {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface RuxDatetime extends Components.RuxDatetime {}
 
 @ProxyCmp({
@@ -21293,23 +21310,6 @@ export declare interface RuxIconZoomOutMap extends Components.RuxIconZoomOutMap 
   inputs: ['size']
 })
 export class RuxIconZoomOutMap {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
-}
-
-
-export declare interface RuxIndeterminateProgress extends Components.RuxIndeterminateProgress {}
-
-
-@Component({
-  selector: 'rux-indeterminate-progress',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>'
-})
-export class RuxIndeterminateProgress {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();

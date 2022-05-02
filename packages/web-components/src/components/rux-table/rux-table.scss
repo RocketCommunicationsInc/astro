@@ -4,9 +4,8 @@
     border-collapse: separate;
     border-spacing: 0;
     color: var(--table-row-text-color);
-    border-style: solid;
-    border-width: 1px;
-    border-color: var(--table-border-color);
+    border-top: 1px solid var(--table-border-color);
+    border-bottom: 1px solid var(--table-border-color);
     background: var(--table-row-background-color);
     text-align: left;
     overflow: scroll;
