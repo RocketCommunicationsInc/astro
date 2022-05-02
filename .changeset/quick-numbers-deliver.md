@@ -5,4 +5,4 @@
 "astro-website": minor
 ---
 
-Added a new component, rux-indeterminate-progress, which replaces the loading spinner previously provided by a rux-progress with no value. Also replaced the indeterminate progress functionality of rux-progress with the new rux-indeterminate-progress.
+Added a new component, rux-indeterminate-progress, which replaces the loading spinner previously provided by a rux-progress with no value. Removed the indeterminate progress functionality of rux-progress.
