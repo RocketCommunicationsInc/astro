@@ -141,6 +141,23 @@ export class RuxClock {
 }
 
 
+export declare interface RuxContainer extends Components.RuxContainer {}
+
+
+@Component({
+  selector: 'rux-container',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class RuxContainer {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface RuxDatetime extends Components.RuxDatetime {}
 
 @ProxyCmp({
@@ -21426,28 +21443,24 @@ export declare interface RuxModal extends Components.RuxModal {
    * Event that is fired when modal closes 
    */
   ruxmodalclosed: EventEmitter<CustomEvent<boolean>>;
-  /**
-   * Event that is fired when modal opens 
-   */
-  ruxmodalopened: EventEmitter<CustomEvent<boolean>>;
 
 }
 
 @ProxyCmp({
-  inputs: ['clickToClose', 'open']
+  inputs: ['confirmText', 'denyText', 'modalMessage', 'modalTitle', 'open']
 })
 @Component({
   selector: 'rux-modal',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['clickToClose', 'open']
+  inputs: ['confirmText', 'denyText', 'modalMessage', 'modalTitle', 'open']
 })
 export class RuxModal {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['ruxmodalclosed', 'ruxmodalopened']);
+    proxyOutputs(this, this.el, ['ruxmodalclosed']);
   }
 }
 

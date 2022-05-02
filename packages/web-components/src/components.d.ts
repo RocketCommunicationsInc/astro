@@ -147,6 +147,8 @@ export namespace Components {
          */
         "timezone": string;
     }
+    interface RuxContainer {
+    }
     interface RuxDatetime {
         /**
           * The date time to be formatted
@@ -11951,9 +11953,7 @@ export namespace Components {
          */
         "timezone": string;
     }
-    interface RuxMenu {
-    }
-    interface RuxMenuItem {
+    interface RuxLog {
         /**
           * sets the menu item as disabled
          */
@@ -11971,9 +11971,21 @@ export namespace Components {
     }
     interface RuxModal {
         /**
-          * Allows modal to close by clicking off of it
+          * Text for confirmation button
          */
-        "clickToClose": boolean;
+        "confirmText": string;
+        /**
+          * Text for close button
+         */
+        "denyText": string;
+        /**
+          * Modal body message
+         */
+        "modalMessage"?: string;
+        /**
+          * Modal header title
+         */
+        "modalTitle"?: string;
         /**
           * Shows and hides modal
          */
@@ -12557,6 +12569,12 @@ declare global {
     var HTMLRuxClockElement: {
         prototype: HTMLRuxClockElement;
         new (): HTMLRuxClockElement;
+    };
+    interface HTMLRuxContainerElement extends Components.RuxContainer, HTMLStencilElement {
+    }
+    var HTMLRuxContainerElement: {
+        prototype: HTMLRuxContainerElement;
+        new (): HTMLRuxContainerElement;
     };
     interface HTMLRuxDatetimeElement extends Components.RuxDatetime, HTMLStencilElement {
     }
@@ -19153,6 +19171,7 @@ declare global {
         "rux-checkbox-group": HTMLRuxCheckboxGroupElement;
         "rux-classification-marking": HTMLRuxClassificationMarkingElement;
         "rux-clock": HTMLRuxClockElement;
+        "rux-container": HTMLRuxContainerElement;
         "rux-datetime": HTMLRuxDatetimeElement;
         "rux-global-status-bar": HTMLRuxGlobalStatusBarElement;
         "rux-icon": HTMLRuxIconElement;
@@ -20401,6 +20420,8 @@ declare namespace LocalJSX {
           * Accepts the [IANA timezone string format](https://www.iana.org/time-zones) such as `'America/Los_Angeles'` or any single-character designation for a [military timezones](https://en.wikipedia.org/wiki/List_of_military_time_zones) (`'A'` through `'Z'`, excluding `'J'`), both case-insensitive. If no value for timezone is provided, the clock will use `'UTC'`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.
          */
         "timezone"?: string;
+    }
+    interface RuxContainer {
     }
     interface RuxDatetime {
         /**
@@ -32246,17 +32267,25 @@ declare namespace LocalJSX {
     }
     interface RuxModal {
         /**
-          * Allows modal to close by clicking off of it
+          * Text for confirmation button
          */
-        "clickToClose"?: boolean;
+        "confirmText"?: string;
+        /**
+          * Text for close button
+         */
+        "denyText"?: string;
+        /**
+          * Modal body message
+         */
+        "modalMessage"?: string;
+        /**
+          * Modal header title
+         */
+        "modalTitle"?: string;
         /**
           * Event that is fired when modal closes
          */
         "onRuxmodalclosed"?: (event: CustomEvent<boolean>) => void;
-        /**
-          * Event that is fired when modal opens
-         */
-        "onRuxmodalopened"?: (event: CustomEvent<boolean>) => void;
         /**
           * Shows and hides modal
          */
@@ -32874,6 +32903,7 @@ declare namespace LocalJSX {
         "rux-checkbox-group": RuxCheckboxGroup;
         "rux-classification-marking": RuxClassificationMarking;
         "rux-clock": RuxClock;
+        "rux-container": RuxContainer;
         "rux-datetime": RuxDatetime;
         "rux-global-status-bar": RuxGlobalStatusBar;
         "rux-icon": RuxIcon;
@@ -33984,6 +34014,7 @@ declare module "@stencil/core" {
             "rux-checkbox-group": LocalJSX.RuxCheckboxGroup & JSXBase.HTMLAttributes<HTMLRuxCheckboxGroupElement>;
             "rux-classification-marking": LocalJSX.RuxClassificationMarking & JSXBase.HTMLAttributes<HTMLRuxClassificationMarkingElement>;
             "rux-clock": LocalJSX.RuxClock & JSXBase.HTMLAttributes<HTMLRuxClockElement>;
+            "rux-container": LocalJSX.RuxContainer & JSXBase.HTMLAttributes<HTMLRuxContainerElement>;
             "rux-datetime": LocalJSX.RuxDatetime & JSXBase.HTMLAttributes<HTMLRuxDatetimeElement>;
             "rux-global-status-bar": LocalJSX.RuxGlobalStatusBar & JSXBase.HTMLAttributes<HTMLRuxGlobalStatusBarElement>;
             "rux-icon": LocalJSX.RuxIcon & JSXBase.HTMLAttributes<HTMLRuxIconElement>;
