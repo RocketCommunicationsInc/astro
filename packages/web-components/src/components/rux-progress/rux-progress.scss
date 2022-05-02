@@ -106,11 +106,6 @@
     color: var(--progress-label-color);
 }
 
-rux-indeterminate-progress {
-    --size: 80px;
-    padding: 1.25rem;
-}
-
 @keyframes spin {
     from {
         transform: rotate(0deg);

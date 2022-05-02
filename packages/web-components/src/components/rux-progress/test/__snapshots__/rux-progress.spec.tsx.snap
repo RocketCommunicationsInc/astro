@@ -12,7 +12,7 @@ exports[`rux-progress only renders the value if max is set to "" 1`] = `
 exports[`rux-progress renders 1`] = `
 <rux-progress>
   <mock:shadow-root>
-    <rux-indeterminate-progress></rux-indeterminate-progress>
+    <progress class="rux-progress" max="100" part="progress" value="0"></progress><output class="rux-progress__value" part="output">0%</output>
     <slot></slot>
   </mock:shadow-root>
 </rux-progress>

@@ -1,8 +1,6 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
-import { DepTag } from './storybook-tags.stories.mdx'
-import { styled } from '@storybook/theming'
 
 
 
@@ -109,31 +107,6 @@ export const DeterminateProgressCustomMax = (args) => {
         name="Determinate Progress with Custom Max"
     >
         {DeterminateProgressCustomMax.bind()}
-    </Story>
-</Canvas>
-
-## Indeterminate Progress <DepTag>DEPRECATED</DepTag>
-
-A `<rux-progress>` without a value will render an indeterminate state with `<rux-indeterminate-progress>`. This is
-being deprecated and that functionality will be removed in Astro 7.0. 
-
-export const IndeterminateProgress = (args) => html`
-<div style="padding: 5%">
-    <rux-progress
-    ></rux-progress>
-</div>
-`
-
-<Canvas>
-    <Story
-        name="Indeterminate Progress"
-        argTypes={{
-            hideLabel: { table: { disable: true } },
-            max: { table: { disable: true } },
-            value: { table: { disable: true } }
-        }}
-    >
-        {IndeterminateProgress.bind()}
     </Story>
 </Canvas>
 
