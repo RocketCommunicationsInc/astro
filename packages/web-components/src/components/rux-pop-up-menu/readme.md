@@ -7,10 +7,11 @@
 
 ## Properties
 
-| Property    | Attribute   | Description                                                           | Type                                                                                                                                                                 | Default    |
-| ----------- | ----------- | --------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| `open`      | `open`      | determines if the pop up is open or closed                            | `boolean`                                                                                                                                                            | `false`    |
-| `placement` | `placement` | the placement of the pop up relative to it's slotted trigger element. | `"bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'bottom'` |
+| Property    | Attribute   | Description                                                           | Type                                                                                                                                                                 | Default      |
+| ----------- | ----------- | --------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| `open`      | `open`      | determines if the pop up is open or closed                            | `boolean`                                                                                                                                                            | `false`      |
+| `placement` | `placement` | the placement of the pop up relative to it's slotted trigger element. | `"bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'bottom'`   |
+| `strategy`  | `strategy`  | The position strategy of the popup, either absolute or fixed.         | `"absolute" \| "fixed"`                                                                                                                                              | `'absolute'` |
 
 
 ## Events

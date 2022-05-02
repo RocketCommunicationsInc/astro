@@ -21443,24 +21443,28 @@ export declare interface RuxModal extends Components.RuxModal {
    * Event that is fired when modal closes 
    */
   ruxmodalclosed: EventEmitter<CustomEvent<boolean>>;
+  /**
+   * Event that is fired when modal opens 
+   */
+  ruxmodalopened: EventEmitter<CustomEvent<boolean>>;
 
 }
 
 @ProxyCmp({
-  inputs: ['confirmText', 'denyText', 'modalMessage', 'modalTitle', 'open']
+  inputs: ['clickToClose', 'open']
 })
 @Component({
   selector: 'rux-modal',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['confirmText', 'denyText', 'modalMessage', 'modalTitle', 'open']
+  inputs: ['clickToClose', 'open']
 })
 export class RuxModal {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['ruxmodalclosed']);
+    proxyOutputs(this, this.el, ['ruxmodalclosed', 'ruxmodalopened']);
   }
 }
 
@@ -21581,14 +21585,14 @@ export declare interface RuxPopUpMenu extends Components.RuxPopUpMenu {
 }
 
 @ProxyCmp({
-  inputs: ['open', 'placement'],
+  inputs: ['open', 'placement', 'strategy'],
   methods: ['show', 'hide']
 })
 @Component({
   selector: 'rux-pop-up-menu',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['open', 'placement']
+  inputs: ['open', 'placement', 'strategy']
 })
 export class RuxPopUpMenu {
   protected el: HTMLElement;
