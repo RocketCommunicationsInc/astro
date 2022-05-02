@@ -12090,6 +12090,10 @@ export namespace Components {
           * Opens the pop up menu and returns true.
          */
         "show": () => Promise<true>;
+        /**
+          * The position strategy of the popup, either absolute or fixed.
+         */
+        "strategy": 'absolute' | 'fixed';
     }
     interface RuxProgress {
         /**
@@ -32371,6 +32375,10 @@ declare namespace LocalJSX {
           * the placement of the pop up relative to it's slotted trigger element.
          */
         "placement"?: Placement;
+        /**
+          * The position strategy of the popup, either absolute or fixed.
+         */
+        "strategy"?: 'absolute' | 'fixed';
     }
     interface RuxProgress {
         /**

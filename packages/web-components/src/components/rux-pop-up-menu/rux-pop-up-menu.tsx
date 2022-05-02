@@ -54,6 +54,11 @@ export class RuxPopUpMenu {
      */
     @Prop() placement: Placement = 'bottom'
 
+    /**
+     * The position strategy of the popup, either absolute or fixed.
+     */
+    @Prop() strategy: 'absolute' | 'fixed' = 'absolute'
+
     @State() arrowPosition?: string
 
     /**
@@ -133,8 +138,10 @@ export class RuxPopUpMenu {
         if (!this.open || !this.triggerSlot || !this.content) {
             return
         }
+        console.log('postion call, passed first return')
         computePosition(this.triggerSlot, this.content, {
             placement: this.placement,
+            strategy: this.strategy,
             middleware: [offset(12), flip(), arrow({ element: this.arrowEl })],
         }).then(({ x, y, placement, middlewareData }) => {
             Object.assign(this.content.style, {
