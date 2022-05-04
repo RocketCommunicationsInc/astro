@@ -44,8 +44,7 @@
     --progress-label-color: var(--color-text-primary);
 
     position: relative;
-    display: block;
-    padding: 1.25rem; //20px
+    display: flex;
 }
 :host([value]) {
     display: flex;
@@ -57,7 +56,6 @@
 :host([hidden]) {
     display: none;
 }
-
 .rux-progress[value] {
     appearance: none;
     background-color: var(--progress-determinate-track-background-color);
