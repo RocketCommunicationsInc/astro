@@ -19,9 +19,30 @@ export class RuxIndeterminateProgress {
 
     private _setSmall() {
         const size = getComputedStyle(this.el).getPropertyValue('--size')
-        console.log(size)
-        if (parseFloat(size) <= 30) {
-            this.small = true
+        // don't want to assume they using px for ind prog --size
+        const unitObj = {
+            rem: 1.875,
+            px: 30,
+            unk: 30,
+        }
+        const unit = this._determineMeasurement(size)
+        if (unitObj[unit]) {
+            if (parseFloat(size) <= unitObj[unit]) {
+                this.small = true
+            }
+        }
+        // if (parseFloat(size) <= 30) {
+        //     this.small = true
+        // }
+    }
+    private _determineMeasurement(size: string) {
+        if (size.includes('px')) {
+            return 'px'
+        } else if (size.includes('rem')) {
+            return 'rem'
+        } else {
+            //very rigid - only px and rem? Should I add more? Scrap it entirely?
+            return 'unk'
         }
     }
     componentWillRender() {
