@@ -27,6 +27,13 @@
 | `"toolbar"` | The container's outside toolbar element |
 
 
+## CSS Custom Properties
+
+| Name             | Description                  |
+| ---------------- | ---------------------------- |
+| `--body-padding` | the container's body padding |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

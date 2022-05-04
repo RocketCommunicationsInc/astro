@@ -22,19 +22,6 @@
 | `--size` | Used to determine the overall size of rux-indeterminate-progress, and used in multiple CSS calculations. |
 
 
-## Dependencies
-
-### Used by
-
- - [rux-progress](../rux-progress)
-
-### Graph
-```mermaid
-graph TD;
-  rux-progress --> rux-indeterminate-progress
-  style rux-indeterminate-progress fill:#f9f,stroke:#333,stroke-width:4px
-```
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

@@ -11861,10 +11861,6 @@ export namespace Components {
         | string;
     }
     interface RuxIndeterminateProgress {
-        /**
-          * Determines if the spinner is to be used at <= 60px;
-         */
-        "small": boolean;
     }
     interface RuxInput {
         /**
@@ -32149,10 +32145,6 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIndeterminateProgress {
-        /**
-          * Determines if the spinner is to be used at <= 60px;
-         */
-        "small"?: boolean;
     }
     interface RuxInput {
         /**

@@ -22,7 +22,11 @@
     <body>
         <style>
             #small {
-                --size: 40px;
+                --size: 30px;
+            }
+
+            #almost-small {
+                --size: 31px;
             }
         </style>
         <div id="test" style="padding: 5%">
@@ -55,9 +59,9 @@
         </div>
         <br />
         <br />
+        <rux-indeterminate-progress id="small"></rux-indeterminate-progress>
         <rux-indeterminate-progress
-            small
-            id="small"
+            id="almost-small"
         ></rux-indeterminate-progress>
 
         <script>
