@@ -19,6 +19,10 @@ export const RuxButtonGroup = /*@__PURE__*/ createReactComponent<
   JSX.RuxButtonGroup,
   HTMLRuxButtonGroupElement
 >("rux-button-group");
+export const RuxCard = /*@__PURE__*/ createReactComponent<
+  JSX.RuxCard,
+  HTMLRuxCardElement
+>("rux-card");
 export const RuxCheckbox = /*@__PURE__*/ createReactComponent<
   JSX.RuxCheckbox,
   HTMLRuxCheckboxElement
