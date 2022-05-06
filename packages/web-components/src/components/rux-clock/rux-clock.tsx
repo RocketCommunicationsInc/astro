@@ -75,6 +75,11 @@ export class RuxClock {
     hideLabels: boolean = false
 
     /**
+     * When supplied with a valid date string overrides the date on the standard clock.
+     */
+    @Prop({ attribute: 'date-in' }) dateIn?: string
+
+    /**
      * Applies a smaller clock style.
      */
     @Prop({ reflect: true }) small: boolean = false
@@ -92,6 +97,7 @@ export class RuxClock {
     }
 
     connectedCallback() {
+        console.log(this.dateIn, 'dateIn')
         this._convertTimezone(this.timezone)
 
         this._timer = window.setInterval(() => {
@@ -122,14 +128,21 @@ export class RuxClock {
     private _updateTime(): void {
         this._time = this._formatTime(new Date(Date.now()), this._timezone)
 
+        this.dateIn = ''
         /**
          * Date.now() is a unix timestamp of the current time in UTC
          * We need to convert that to the Clock's defined timezone
          * before we get the day of the year.
          */
-        const localDate = new Date(Date.now())
+        let localDate = new Date(Date.now())
+        console.log(localDate)
         const clockDate = utcToZonedTime(localDate, this._timezone)
         this.dayOfYear = getDayOfYear(clockDate)
+        if (this.dateIn) {
+            this._time = this.dateIn.toString()
+            localDate = new Date(this.dateIn)
+            console.log('in if, new localDate:', localDate)
+        }
     }
 
     /**
