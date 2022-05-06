@@ -46,6 +46,23 @@ export class RuxButtonGroup {
 }
 
 
+export declare interface RuxCard extends Components.RuxCard {}
+
+
+@Component({
+  selector: 'rux-card',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class RuxCard {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface RuxCheckbox extends Components.RuxCheckbox {
   /**
    * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) 

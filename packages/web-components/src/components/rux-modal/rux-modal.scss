@@ -67,7 +67,7 @@
         margin: auto;
         padding: 0;
         user-select: none;
-        box-shadow: var(--shadow-outer-dialog);
+        box-shadow: var(--dialog-shadow-outer);
     }
 
     &__titlebar {

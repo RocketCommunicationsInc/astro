@@ -46,6 +46,8 @@ export namespace Components {
          */
         "hAlign": 'left' | 'center' | 'right';
     }
+    interface RuxCard {
+    }
     interface RuxCheckbox {
         /**
           * Toggles checked state of a checkbox
@@ -12555,6 +12557,12 @@ declare global {
         prototype: HTMLRuxButtonGroupElement;
         new (): HTMLRuxButtonGroupElement;
     };
+    interface HTMLRuxCardElement extends Components.RuxCard, HTMLStencilElement {
+    }
+    var HTMLRuxCardElement: {
+        prototype: HTMLRuxCardElement;
+        new (): HTMLRuxCardElement;
+    };
     interface HTMLRuxCheckboxElement extends Components.RuxCheckbox, HTMLStencilElement {
     }
     var HTMLRuxCheckboxElement: {
@@ -19176,6 +19184,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "rux-button": HTMLRuxButtonElement;
         "rux-button-group": HTMLRuxButtonGroupElement;
+        "rux-card": HTMLRuxCardElement;
         "rux-checkbox": HTMLRuxCheckboxElement;
         "rux-checkbox-group": HTMLRuxCheckboxGroupElement;
         "rux-classification-marking": HTMLRuxClassificationMarkingElement;
@@ -20317,6 +20326,8 @@ declare namespace LocalJSX {
           * The horizontal alignment of buttons within the group
          */
         "hAlign"?: 'left' | 'center' | 'right';
+    }
+    interface RuxCard {
     }
     interface RuxCheckbox {
         /**
@@ -32924,6 +32935,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "rux-button": RuxButton;
         "rux-button-group": RuxButtonGroup;
+        "rux-card": RuxCard;
         "rux-checkbox": RuxCheckbox;
         "rux-checkbox-group": RuxCheckboxGroup;
         "rux-classification-marking": RuxClassificationMarking;
@@ -34035,6 +34047,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "rux-button": LocalJSX.RuxButton & JSXBase.HTMLAttributes<HTMLRuxButtonElement>;
             "rux-button-group": LocalJSX.RuxButtonGroup & JSXBase.HTMLAttributes<HTMLRuxButtonGroupElement>;
+            "rux-card": LocalJSX.RuxCard & JSXBase.HTMLAttributes<HTMLRuxCardElement>;
             "rux-checkbox": LocalJSX.RuxCheckbox & JSXBase.HTMLAttributes<HTMLRuxCheckboxElement>;
             "rux-checkbox-group": LocalJSX.RuxCheckboxGroup & JSXBase.HTMLAttributes<HTMLRuxCheckboxGroupElement>;
             "rux-classification-marking": LocalJSX.RuxClassificationMarking & JSXBase.HTMLAttributes<HTMLRuxClassificationMarkingElement>;
