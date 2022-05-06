@@ -23,24 +23,6 @@
     display: inline-block;
 }
 
-.small {
-    --border-width: 2px;
-    --container-height: calc(var(--size) + 2px);
-    --second-div-height: calc(var(--size) * 0.9 - 4px);
-
-    --nub-size: calc(
-        ((var(--container-height) - var(--second-div-height)) / 2) - 2px
-    );
-
-    // .5's here to pervent hard stops in mask
-    --mask: radial-gradient(
-        farthest-side,
-        transparent calc((((100% - 4px) * 0.9) - 4.5px)),
-        var(--color-background-interactive-default)
-            calc((((100% - 4px) * 0.9) - 3.5px))
-    );
-}
-
 .rux-indeterminate-container {
     height: var(--size);
     width: var(--size);

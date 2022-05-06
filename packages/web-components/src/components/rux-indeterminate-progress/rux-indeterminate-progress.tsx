@@ -1,4 +1,4 @@
-import { Component, Host, h, Element } from '@stencil/core'
+import { Component, Host, h } from '@stencil/core'
 
 /**
  * @part container - The outermost div encasing rux-indeterminate-progress which is responsible for the overall size and the outermost border.
@@ -13,49 +13,12 @@ import { Component, Host, h, Element } from '@stencil/core'
     shadow: true,
 })
 export class RuxIndeterminateProgress {
-    @Element() el!: HTMLRuxIndeterminateProgressElement
-
-    private small: boolean = false
-
-    private _setSmall() {
-        const size = getComputedStyle(this.el).getPropertyValue('--size')
-        // don't want to assume they using px for ind prog --size
-        const unitObj = {
-            rem: 1.875,
-            px: 30,
-            unk: 30,
-        }
-        const unit = this._determineMeasurement(size)
-        if (unitObj[unit]) {
-            if (parseFloat(size) <= unitObj[unit]) {
-                this.small = true
-            }
-        }
-        // if (parseFloat(size) <= 30) {
-        //     this.small = true
-        // }
-    }
-    private _determineMeasurement(size: string) {
-        if (size.includes('px')) {
-            return 'px'
-        } else if (size.includes('rem')) {
-            return 'rem'
-        } else {
-            //very rigid - only px and rem? Should I add more? Scrap it entirely?
-            return 'unk'
-        }
-    }
-    componentWillRender() {
-        this._setSmall()
-    }
-
     render() {
         return (
             <Host>
                 <div
                     class={{
                         'rux-indeterminate-container': true,
-                        small: this.small,
                     }}
                     part="container"
                 >
