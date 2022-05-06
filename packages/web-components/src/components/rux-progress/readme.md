@@ -88,11 +88,11 @@ Indeterminate progress
 
 ## Properties
 
-| Property    | Attribute    | Description                                                                         | Type                  | Default     |
-| ----------- | ------------ | ----------------------------------------------------------------------------------- | --------------------- | ----------- |
-| `hideLabel` | `hide-label` | Hides the progress label                                                            | `boolean`             | `false`     |
-| `max`       | `max`        | For progress bars where progress bars have a maximum value greater or less than 100 | `number`              | `100`       |
-| `value`     | `value`      | Current progress value between 0 and 100 (or the max, if defined below).            | `number \| undefined` | `undefined` |
+| Property    | Attribute    | Description                                                                         | Type                  | Default |
+| ----------- | ------------ | ----------------------------------------------------------------------------------- | --------------------- | ------- |
+| `hideLabel` | `hide-label` | Hides the progress label                                                            | `boolean`             | `false` |
+| `max`       | `max`        | For progress bars where progress bars have a maximum value greater or less than 100 | `number`              | `100`   |
+| `value`     | `value`      | Current progress value between 0 and 100 (or the max, if defined below).            | `number \| undefined` | `0`     |
 
 
 ## Shadow Parts
@@ -111,7 +111,6 @@ Indeterminate progress
 | `--progress-determinate-track-background-color` | Track background color of determinate progress |
 | `--progress-determinate-track-border-color`     | Track border color of determinate progress.    |
 | `--progress-height`                             | The height of rux-progress                     |
-| `--progress-indeterminate`                      | The indeterminate progress svg                 |
 | `--progress-label-color`                        | The progress label color                       |
 | `--progress-padding`                            | The padding of rux-progress                    |
 | `--progress-radius`                             | The border radius of rux-progress bar          |

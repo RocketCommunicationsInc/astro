@@ -11862,6 +11862,8 @@ export namespace Components {
         | 'auto'
         | string;
     }
+    interface RuxIndeterminateProgress {
+    }
     interface RuxInput {
         /**
           * The input's autocomplete attribute
@@ -18939,6 +18941,12 @@ declare global {
         prototype: HTMLRuxIconZoomOutMapElement;
         new (): HTMLRuxIconZoomOutMapElement;
     };
+    interface HTMLRuxIndeterminateProgressElement extends Components.RuxIndeterminateProgress, HTMLStencilElement {
+    }
+    var HTMLRuxIndeterminateProgressElement: {
+        prototype: HTMLRuxIndeterminateProgressElement;
+        new (): HTMLRuxIndeterminateProgressElement;
+    };
     interface HTMLRuxInputElement extends Components.RuxInput, HTMLStencilElement {
     }
     var HTMLRuxInputElement: {
@@ -20240,6 +20248,7 @@ declare global {
         "rux-icon-zoom-in-map": HTMLRuxIconZoomInMapElement;
         "rux-icon-zoom-out": HTMLRuxIconZoomOutElement;
         "rux-icon-zoom-out-map": HTMLRuxIconZoomOutMapElement;
+        "rux-indeterminate-progress": HTMLRuxIndeterminateProgressElement;
         "rux-input": HTMLRuxInputElement;
         "rux-log": HTMLRuxLogElement;
         "rux-menu-item": HTMLRuxMenuItemElement;
@@ -32146,6 +32155,8 @@ declare namespace LocalJSX {
         | 'auto'
         | string;
     }
+    interface RuxIndeterminateProgress {
+    }
     interface RuxInput {
         /**
           * The input's autocomplete attribute
@@ -33988,6 +33999,7 @@ declare namespace LocalJSX {
         "rux-icon-zoom-in-map": RuxIconZoomInMap;
         "rux-icon-zoom-out": RuxIconZoomOut;
         "rux-icon-zoom-out-map": RuxIconZoomOutMap;
+        "rux-indeterminate-progress": RuxIndeterminateProgress;
         "rux-input": RuxInput;
         "rux-log": RuxLog;
         "rux-menu-item": RuxMenuItem;
@@ -35099,6 +35111,7 @@ declare module "@stencil/core" {
             "rux-icon-zoom-in-map": LocalJSX.RuxIconZoomInMap & JSXBase.HTMLAttributes<HTMLRuxIconZoomInMapElement>;
             "rux-icon-zoom-out": LocalJSX.RuxIconZoomOut & JSXBase.HTMLAttributes<HTMLRuxIconZoomOutElement>;
             "rux-icon-zoom-out-map": LocalJSX.RuxIconZoomOutMap & JSXBase.HTMLAttributes<HTMLRuxIconZoomOutMapElement>;
+            "rux-indeterminate-progress": LocalJSX.RuxIndeterminateProgress & JSXBase.HTMLAttributes<HTMLRuxIndeterminateProgressElement>;
             "rux-input": LocalJSX.RuxInput & JSXBase.HTMLAttributes<HTMLRuxInputElement>;
             "rux-log": LocalJSX.RuxLog & JSXBase.HTMLAttributes<HTMLRuxLogElement>;
             "rux-menu-item": LocalJSX.RuxMenuItem & JSXBase.HTMLAttributes<HTMLRuxMenuItemElement>;

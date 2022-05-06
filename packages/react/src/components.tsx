@@ -4275,6 +4275,10 @@ export const RuxIconZoomOutMap = /*@__PURE__*/ createReactComponent<
   JSX.RuxIconZoomOutMap,
   HTMLRuxIconZoomOutMapElement
 >("rux-icon-zoom-out-map");
+export const RuxIndeterminateProgress = /*@__PURE__*/ createReactComponent<
+  JSX.RuxIndeterminateProgress,
+  HTMLRuxIndeterminateProgressElement
+>("rux-indeterminate-progress");
 export const RuxInput = /*@__PURE__*/ createReactComponent<
   JSX.RuxInput,
   HTMLRuxInputElement

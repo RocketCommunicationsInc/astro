@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rux-indeterminate-progress renders 1`] = `
+<rux-indeterminate-progress>
+  <mock:shadow-root>
+    <div class="rux-indeterminate-container" part="container">
+      <div class="rux-indeterminate-animated-spinner" part="animated-spinner">
+        <div class="rux-indeterminate-inner-spinner-gap" part="inner-spinner-gap">
+          <div class="rux-indeterminate-inner-circle" part="inner-circle"></div>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</rux-indeterminate-progress>
+`;
