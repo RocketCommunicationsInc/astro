@@ -3,6 +3,7 @@ import * as d from "./proxies";
 export const DIRECTIVES = [
   d.RuxButton,
   d.RuxButtonGroup,
+  d.RuxCard,
   d.RuxCheckbox,
   d.RuxCheckboxGroup,
   d.RuxClassificationMarking,
