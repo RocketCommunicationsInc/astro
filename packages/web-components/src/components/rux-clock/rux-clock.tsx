@@ -132,16 +132,25 @@ export class RuxClock {
             // The first time it runs with date in, we need to create a Date obj from that date-in
             // so that we can modify it every _upateTime call
             if (!this.hasRun) {
+                //create a new Date based off the dateIn
                 this._rawTime = new Date(this.dateIn)
+                //Format the time for the display
                 this._time = this._formatTime(this._rawTime, this._timezone)
-                this.dayOfYear = getDayOfYear(this._rawTime)
+
+                // get correct date zoned to UTC, gives us correct dayOfYear
+                const clockDate = utcToZonedTime(this._rawTime, this._timezone)
+                this.dayOfYear = getDayOfYear(clockDate)
                 this.hasRun = true
             } else {
-                //raw time holds the date value we need to increment
+                //raw time holds the date value we need to increment, add 1 second every call
                 let seconds = this._rawTime.getSeconds() + 1
                 this._rawTime.setSeconds(seconds)
+                // reformat time with updated value
                 this._time = this._formatTime(this._rawTime, this._timezone)
-                this.dayOfYear = getDayOfYear(this._rawTime)
+
+                // get correct date zoned to UTC, gives us correct dayOfYear
+                const clockDate = utcToZonedTime(this._rawTime, this._timezone)
+                this.dayOfYear = getDayOfYear(clockDate)
             }
         } else {
             this._time = this._formatTime(new Date(Date.now()), this._timezone)
