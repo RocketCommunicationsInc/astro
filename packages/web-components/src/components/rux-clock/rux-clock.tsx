@@ -100,10 +100,15 @@ export class RuxClock {
 
     connectedCallback() {
         this._convertTimezone(this.timezone)
-        if (this.dateIn) this._time = this.dateIn
-        this._timer = window.setInterval(() => {
-            this._updateTime()
-        }, 1000)
+
+        if (this.dateIn) {
+            this._handleDateIn()
+        } else {
+            this._timer = window.setInterval(() => {
+                this._updateTime()
+            }, 1000)
+        }
+
         if (this.aos) this.convertedAos = this._formatLosAos(this.aos)
         if (this.los) this.convertedLos = this._formatLosAos(this.los)
     }
@@ -126,29 +131,52 @@ export class RuxClock {
         )
     }
 
-    private _updateTime(): void {
-        // If date in is provided, we can't use Date.now()
-        if (this.dateIn) {
-            // The first time it runs with date in, we need to create a Date obj from that date-in
-            // so that we can modify it every _upateTime call
-            if (!this.hasRun) {
-                //create a new Date based off the dateIn
-                this._rawTime = new Date(this.dateIn)
-                //Format the time for the display
-                this._time = this._formatTime(this._rawTime, this._timezone)
+    private _handleDateIn() {
+        if (!this.dateIn!.includes('-')) {
+            this._validateDateInUnix(this.dateIn!)
+        }
+        this._time = this.dateIn!
+        if (!this._rawTime) this._rawTime = new Date(this.dateIn!)
+        if (this._validateDateIn(this._rawTime)) {
+            this._timer = window.setInterval(() => {
+                this._updateTime()
+            }, 1000)
+        } else {
+            console.warn(
+                `The date-in value of ${this.dateIn} is not a valid date.`
+            )
+        }
+    }
 
-                // get correct date zoned to UTC, gives us correct dayOfYear
+    /**
+     * @param date a Date type to be validated
+     * @returns A boolean representative of if the date provided is valid
+     */
+    private _validateDateIn(date: Date) {
+        //If it's not valid then date.getTime() will be NaN, which isn't equal to itself
+        return date.getTime() === date.getTime()
+    }
+
+    /**
+     * @param date A unix date string
+     * Converts a unix string to a Date and stores the value in _rawTime
+     */
+    private _validateDateInUnix(date: string) {
+        let d = new Date(parseInt(date))
+        this._rawTime = d
+    }
+
+    private _updateTime(): void {
+        if (this.dateIn) {
+            if (!this.hasRun) {
+                this._time = this._formatTime(this._rawTime, this._timezone)
                 const clockDate = utcToZonedTime(this._rawTime, this._timezone)
                 this.dayOfYear = getDayOfYear(clockDate)
                 this.hasRun = true
             } else {
-                //raw time holds the date value we need to increment, add 1 second every call
                 let seconds = this._rawTime.getSeconds() + 1
                 this._rawTime.setSeconds(seconds)
-                // reformat time with updated value
                 this._time = this._formatTime(this._rawTime, this._timezone)
-
-                // get correct date zoned to UTC, gives us correct dayOfYear
                 const clockDate = utcToZonedTime(this._rawTime, this._timezone)
                 this.dayOfYear = getDayOfYear(clockDate)
             }

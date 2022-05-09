@@ -128,7 +128,14 @@ describe('rux-clock', () => {
     it('Uses the time passed into date-in if provided', async () => {
         const page = await newSpecPage({
             components: [RuxClock],
-            html: `<rux-clock date-in="2022-04-22T23:59:55"></rux-clock>`,
+            html: `<rux-clock date-in="2022-04-22T23:59:55.000Z"></rux-clock>`,
+        })
+        expect(page.root).toMatchSnapshot()
+    })
+    it('Can accept a unix timestamp for date-in', async () => {
+        const page = await newSpecPage({
+            components: [RuxClock],
+            html: `<rux-clock date-in="1652129256662"></rux-clock>`,
         })
         expect(page.root).toMatchSnapshot()
     })
