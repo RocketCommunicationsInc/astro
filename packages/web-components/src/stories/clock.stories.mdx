@@ -27,6 +27,7 @@ export const Default = (args) => {
         ?hide-date="${args.hideDate}"
         ?hide-labels="${args.hideLabels}"
         ?small="${args.small}"
+        date-in="${args.dateIn}"
     ></rux-clock>
 </div>
     `
@@ -42,7 +43,8 @@ export const Default = (args) => {
             hideLabels: false,
             hideTimezone: false,
             small: false,
-            timezone: "UTC"
+            timezone: "UTC",
+            dateIn: ""
         }}
     >
         {Default.bind()}
@@ -71,6 +73,7 @@ export const ClockWithAosLos = (args) => {
         ?hide-date="${args.hideDate}"
         ?hide-labels="${args.hideLabels}"
         ?small="${args.small}"
+        date-in="${args.dateIn}"
     ></rux-clock>
 </div>
     `
@@ -85,7 +88,8 @@ export const ClockWithAosLos = (args) => {
             hideLabels: false,
             hideTimezone: false,
             small: false,
-            timezone: "UTC"
+            timezone: "UTC",
+            dateIn: ''
         }}
         name="With AOS/LOS"
     >
@@ -94,6 +98,9 @@ export const ClockWithAosLos = (args) => {
 </Canvas>
 
 ### With date-in 
+
+> NOTE: Similar to the AOS/LOS timestamps, date-in accepts a number of different time formats. If you don't provide a timezone ("1988-04-22 12:12:12"), they will default to the user's system time zone.
+> It is recommended to use the following format `"1988-04-22T12:12:12.000Z"`.
 
 export const DateIn = (args) => {
     return html`
@@ -122,7 +129,7 @@ export const DateIn = (args) => {
             hideTimezone: false,
             small: false,
             timezone: "UTC",
-            dateIn: "2022-10-05T23:59:55"
+            dateIn: "2022-04-22T23:59:55.000Z"
         }}
         name="With Date In"
     >
