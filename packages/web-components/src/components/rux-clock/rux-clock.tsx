@@ -1,5 +1,5 @@
 import { Watch, Prop, State, Component, Host, h } from '@stencil/core'
-import { getDayOfYear } from 'date-fns'
+import { getDay, getDayOfYear } from 'date-fns'
 import { format, utcToZonedTime } from 'date-fns-tz'
 import { militaryTimezones } from './military-timezones'
 import { MilitaryTimezone } from './rux-clock.model'
@@ -99,7 +99,6 @@ export class RuxClock {
     }
 
     connectedCallback() {
-        console.log(this.dateIn, 'dateIn')
         this._convertTimezone(this.timezone)
         if (this.dateIn) this._time = this.dateIn
         this._timer = window.setInterval(() => {
@@ -128,34 +127,25 @@ export class RuxClock {
     }
 
     private _updateTime(): void {
-        /**
-         * The way the orginal one works (without datein) is that it has a funciton that runs every 1000 ms(1 sec) and
-         * uses date.now to get the time. This updates the time every second, thus making a clock. But this only wokrs
-         * beacuse of date.now. For a date in, we need to increment from that date in, not the date.now. So we c
-         * can't just call date.now, that won't be from the date in that we want to increment from. Need to increment
-         * from date in.
-         * How to do that every second? The updateTime func gets called every second, so if we can figure out how to
-         * increment date in by 1 second every call, store that, and keep it going.
-         *
-         */
+        // If date in is provided, we can't use Date.now()
         if (this.dateIn) {
+            // The first time it runs with date in, we need to create a Date obj from that date-in
+            // so that we can modify it every _upateTime call
             if (!this.hasRun) {
                 this._rawTime = new Date(this.dateIn)
-                console.log('init rawTime', this._rawTime)
                 this._time = this._formatTime(this._rawTime, this._timezone)
-                console.log(this._time, 'first time')
                 this.dayOfYear = getDayOfYear(this._rawTime)
                 this.hasRun = true
             } else {
                 //raw time holds the date value we need to increment
-                console.log(this._rawTime, 'raw')
                 let seconds = this._rawTime.getSeconds() + 1
                 this._rawTime.setSeconds(seconds)
                 this._time = this._formatTime(this._rawTime, this._timezone)
-                let day = this._time[0] + this.time[1]
-                if (day === '00' && seconds === 60) {
-                    this.dayOfYear = this.dayOfYear + 1
-                }
+                this.dayOfYear = getDayOfYear(this._rawTime)
+                // let day = this._time[0] + this.time[1]
+                // if (day === '00' && seconds === 60) {
+                //     this.dayOfYear = this.dayOfYear + 1
+                // }
             }
         } else {
             this._time = this._formatTime(new Date(Date.now()), this._timezone)
