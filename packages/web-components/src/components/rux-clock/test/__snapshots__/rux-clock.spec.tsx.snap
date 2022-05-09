@@ -1,5 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`rux-clock Uses the time passed into date-in if provided 1`] = `
+<rux-clock date-in="2022-04-22T23:59:55">
+  <mock:shadow-root>
+    <div class="rux-clock__segment">
+      <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
+        112
+      </div>
+      <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
+        Date
+      </div>
+    </div>
+    <div class="rux-clock__segment">
+      <div aria-labelledby="rux-clock__time-label" class="rux-clock__segment__value" part="time">
+        23:59:55 UTC
+      </div>
+      <div class="rux-clock__segment__label" id="rux-clock__time-label" part="time-label">
+        Time
+      </div>
+    </div>
+  </mock:shadow-root>
+</rux-clock>
+`;
+
 exports[`rux-clock converts all military timezones 1`] = `
 <rux-clock timezone="A">
   <mock:shadow-root>

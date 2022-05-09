@@ -122,13 +122,6 @@ Astro UXDS Tab (child) properties are passed as simple attributes on the individ
 | `"(default)"` | Used for instances of rux-tab |
 
 
-## CSS Custom Properties
-
-| Name                 | Description      |
-| -------------------- | ---------------- |
-| `--tab-border-color` | Tab border color |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

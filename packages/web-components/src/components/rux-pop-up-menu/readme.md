@@ -169,18 +169,6 @@ Type: `Promise<boolean>`
 | `"container"` | the container for the pop-up-menu |
 
 
-## CSS Custom Properties
-
-| Name                                  | Description                         |
-| ------------------------------------- | ----------------------------------- |
-| `--popup-menu-background-color`       | Pop Up Menu Backround Color         |
-| `--popup-menu-border-color`           | Pop Up Menu Border Color            |
-| `--popup-menu-caret-background-color` | Pop Up Menu Caret Background Color  |
-| `--popup-menu-caret-left`             | Position of Caret                   |
-| `--popup-menu-caret-size`             | Size of Caret                       |
-| `--popup-menu-transition-speed`       | Transition Time of Pop Up Animation |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

@@ -41,18 +41,6 @@ Type: `Promise<void>`
 
 
 
-## CSS Custom Properties
-
-| Name                            | Description                 |
-| ------------------------------- | --------------------------- |
-| `--tree-accent-color`           | tree accent color           |
-| `--tree-expanded-border-color`  | tree expanded border color  |
-| `--tree-hover-background-color` | tree hover background color |
-| `--tree-hover-text-color`       | tree hover text color       |
-| `--tree-selected-accent-color`  | tree selected accent color  |
-| `--tree-selected-border-color`  | tree selected border color  |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

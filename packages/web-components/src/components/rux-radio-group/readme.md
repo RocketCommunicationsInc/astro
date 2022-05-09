@@ -42,13 +42,6 @@
 | `"required"`   | The asterisk when required is true       |
 
 
-## CSS Custom Properties
-
-| Name                        | Description                  |
-| --------------------------- | ---------------------------- |
-| `--radiogroup-border-color` | the radio group border color |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

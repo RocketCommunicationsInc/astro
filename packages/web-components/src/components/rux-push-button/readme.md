@@ -138,18 +138,6 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 | `"label"` | the label of rux-push-button |
 
 
-## CSS Custom Properties
-
-| Name                                     | Description                                   |
-| ---------------------------------------- | --------------------------------------------- |
-| `--pushbutton-background-color`          | the Push Button background color              |
-| `--pushbutton-border-color`              | the Push Button border color                  |
-| `--pushbutton-selected-background-color` | the Push Button background color when checked |
-| `--pushbutton-selected-border-color`     | the Push Button border color when checked     |
-| `--pushbutton-selected-text-color`       | the Push Button text color when checked       |
-| `--pushbutton-text-color`                | the Push Button text color                    |
-
-
 ## Dependencies
 
 ### Depends on

@@ -54,15 +54,6 @@ TreeNode has two slots:
 | `"(default)"` | the nodes of the tree. |
 
 
-## CSS Custom Properties
-
-| Name                      | Description           |
-| ------------------------- | --------------------- |
-| `--tree-background-color` | tree background color |
-| `--tree-border-color`     | tree color            |
-| `--tree-text-color`       | tree text color       |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

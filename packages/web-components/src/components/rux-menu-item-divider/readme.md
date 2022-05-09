@@ -61,13 +61,6 @@ Pass properties as slotted components in the Astro Pop Up Menu or Astro Select M
 | `"container"` | the container of the rux-menu-item-divider |
 
 
-## CSS Custom Properties
-
-| Name                               | Description                    |
-| ---------------------------------- | ------------------------------ |
-| `--menu-item-divider-border-color` | Menu Item Divider Border Color |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

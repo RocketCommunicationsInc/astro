@@ -93,6 +93,43 @@ export const ClockWithAosLos = (args) => {
     </Story>
 </Canvas>
 
+### With date-in 
+
+export const DateIn = (args) => {
+    return html`
+<div style="padding: 10%; display: flex; justify-content: center;">
+    <rux-clock
+        .timezone="${args.timezone}"
+        aos="${args.aos}"
+        los="${args.los}"
+        date-in="${args.dateIn}"
+        ?hide-timezone="${args.hideTimezone}"
+        ?hide-date="${args.hideDate}"
+        ?hide-labels="${args.hideLabels}"
+        ?small="${args.small}"
+    ></rux-clock>
+</div>
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+            aos: '',
+            los: '',
+            hideDate: false,
+            hideLabels: false,
+            hideTimezone: false,
+            small: false,
+            timezone: "UTC",
+            dateIn: "2022-10-05T23:59:55"
+        }}
+        name="With Date In"
+    >
+        {DateIn.bind()}
+    </Story>
+</Canvas>
+
 ### Small
 
 export const Small = (args) => {

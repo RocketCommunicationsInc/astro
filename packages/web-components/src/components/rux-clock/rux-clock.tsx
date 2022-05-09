@@ -1,5 +1,5 @@
 import { Watch, Prop, State, Component, Host, h } from '@stencil/core'
-import { getDay, getDayOfYear } from 'date-fns'
+import { getDayOfYear } from 'date-fns'
 import { format, utcToZonedTime } from 'date-fns-tz'
 import { militaryTimezones } from './military-timezones'
 import { MilitaryTimezone } from './rux-clock.model'
@@ -77,7 +77,7 @@ export class RuxClock {
     hideLabels: boolean = false
 
     /**
-     * When supplied with a valid date string overrides the date on the standard clock.
+     * When supplied with a valid [date string or value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#syntax), sets the time and date of the clock.
      */
     @Prop({ attribute: 'date-in' }) dateIn?: string
 
@@ -142,10 +142,6 @@ export class RuxClock {
                 this._rawTime.setSeconds(seconds)
                 this._time = this._formatTime(this._rawTime, this._timezone)
                 this.dayOfYear = getDayOfYear(this._rawTime)
-                // let day = this._time[0] + this.time[1]
-                // if (day === '00' && seconds === 60) {
-                //     this.dayOfYear = this.dayOfYear + 1
-                // }
             }
         } else {
             this._time = this._formatTime(new Date(Date.now()), this._timezone)

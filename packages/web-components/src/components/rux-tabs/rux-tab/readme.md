@@ -137,17 +137,6 @@ Astro UXDS Tab (child) properties are passed as simple attributes on the individ
 | `selected` | `selected` | If present, overrides which tab is selected on load / mount. By default, the first <rux-tab> item is selected. | `boolean` | `false` |
 
 
-## CSS Custom Properties
-
-| Name                          | Description               |
-| ----------------------------- | ------------------------- |
-| `--tab-border-color`          | Tab border color          |
-| `--tab-hover-text-color`      | Tab hover text color      |
-| `--tab-selected-border-color` | Tab selected border color |
-| `--tab-selected-text-color`   | Tab selected text color   |
-| `--tab-text-color`            | Tab text color            |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

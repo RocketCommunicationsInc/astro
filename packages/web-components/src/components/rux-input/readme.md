@@ -60,18 +60,6 @@
 | `"suffix"`     | The container of the suffix slot                    |
 
 
-## CSS Custom Properties
-
-| Name                                 | Description                              |
-| ------------------------------------ | ---------------------------------------- |
-| `--input-background-color`           | the input background color               |
-| `--input-border-color`               | the input border color                   |
-| `--input-focus-border-color`         | the input focus border color             |
-| `--input-invalid-border-color`       | the input invalid border color           |
-| `--input-selection-background-color` | the background color of highlighted text |
-| `--input-text-color`                 | the input text color                     |
-
-
 ## Dependencies
 
 ### Used by

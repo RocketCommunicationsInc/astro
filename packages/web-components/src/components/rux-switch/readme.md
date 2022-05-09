@@ -117,17 +117,6 @@ Configure the component using native HTML attributes.
 | `"switch"` | the track (::before) and the button (::after) on rux-switch |
 
 
-## CSS Custom Properties
-
-| Name                        | Description                 |
-| --------------------------- | --------------------------- |
-| `--switch-background-color` | the Switch off color        |
-| `--switch-hover-off-color`  | the Switch hover off color  |
-| `--switch-hover-on-color`   | the Switch hover on color   |
-| `--switch-off-border-color` | the Switch off border color |
-| `--switch-on-color`         | the Switch on color         |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

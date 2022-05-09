@@ -122,7 +122,7 @@ export namespace Components {
          */
         "aos"?: string;
         /**
-          * When supplied with a valid date string overrides the date on the standard clock.
+          * When supplied with a valid [date string or value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#syntax), sets the time and date of the clock.
          */
         "dateIn"?: string;
         /**
@@ -20404,7 +20404,7 @@ declare namespace LocalJSX {
          */
         "aos"?: string;
         /**
-          * When supplied with a valid date string overrides the date on the standard clock.
+          * When supplied with a valid [date string or value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#syntax), sets the time and date of the clock.
          */
         "dateIn"?: string;
         /**

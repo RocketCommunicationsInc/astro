@@ -87,15 +87,6 @@ Pass properties as slotted components in the Astro Pop Up Menu or Astro Select M
 | `"container"` | the container of the rux-menu-item |
 
 
-## CSS Custom Properties
-
-| Name                                       | Description                      |
-| ------------------------------------------ | -------------------------------- |
-| `--popup-menu-item-background-color`       | Menu Item Background Color       |
-| `--popup-menu-item-hover-background-color` | Menu Item Hover Background Color |
-| `--popup-menu-text-color`                  | Menu Text Color                  |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

@@ -130,13 +130,6 @@ In Astro 4.0, these groups have been flattened, and each icon is now imported di
 | `"icon"` | the icon in rux-icon |
 
 
-## CSS Custom Properties
-
-| Name                   | Description                   |
-| ---------------------- | ----------------------------- |
-| `--icon-default-color` | the default color of the icon |
-
-
 ## Dependencies
 
 ### Used by

@@ -101,25 +101,6 @@ Pass properties via attributes similar to the native [HTML Input Range](https://
 | `"tick-container"` | The container of the tick mark and axis-label |
 
 
-## CSS Custom Properties
-
-| Name                                       | Description                                                 |
-| ------------------------------------------ | ----------------------------------------------------------- |
-| `--slider-hover-thumb-background-color`    | Background color of the slider's thumb in a hover state.    |
-| `--slider-hover-thumb-border-color`        | Border color of the slider's thumb in a hover state.        |
-| `--slider-selected-thumb-border-color`     | Border color of the slider's thumb in a selected state.     |
-| `--slider-selected-track-background-color` | Background color of the slider's thumb in a selected state. |
-| `--slider-thumb-background-color`          | Background color of the slider's thumb.                     |
-| `--slider-thumb-border-color`              | Border color of the slider's thumb.                         |
-| `--slider-thumb-border-size`               | Size of slider's thumb border.                              |
-| `--slider-thumb-size`                      | Size of the slider's thumb, both width and height.          |
-| `--slider-top`                             | Determines the top value of the slider thumb.               |
-| `--slider-track-background-color`          | Background color of the slider's track.                     |
-| `--slider-track-before-thumb-height`       | the slider track before thumb height                        |
-| `--slider-track-height`                    | the slider track height                                     |
-| `--slider-value-percent`                   | The current value of the slider in a percent.               |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
