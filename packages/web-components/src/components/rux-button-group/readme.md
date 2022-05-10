@@ -50,6 +50,13 @@ By default button group aligns buttons to the left. Alternatively an `h-align` p
 | `"container"` | the components container |
 
 
+## Dependencies
+
+| Part          | Description              |
+| ------------- | ------------------------ |
+| `"container"` | the components container |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

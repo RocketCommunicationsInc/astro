@@ -103,6 +103,14 @@ Indeterminate progress
 | `"progress"` | the native progress element |
 
 
+## Shadow Parts
+
+| Part         | Description                 |
+| ------------ | --------------------------- |
+| `"output"`   | the native output element   |
+| `"progress"` | the native progress element |
+
+
 ## CSS Custom Properties
 
 | Name                                            | Description                                    |

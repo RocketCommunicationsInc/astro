@@ -44,6 +44,10 @@
     --progress-label-color: var(--color-text-primary);
 
     position: relative;
+    display: inline-block;
+    padding: 1.25rem; //20px
+}
+:host([value]) {
     display: flex;
 }
 :host([value]) {

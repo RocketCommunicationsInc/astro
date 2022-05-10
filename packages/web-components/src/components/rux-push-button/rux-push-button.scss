@@ -6,25 +6,21 @@
     --pushbutton-background-color: none;
 
     /** @prop --pushbutton-border-color: the Push Button border color */
-    --pushbutton-border-color: var(--color-background-interactive-default);
+    --pushbutton-border-color: var(--color-border-interactive-default);
 
     /** @prop --pushbutton-text-color: the Push Button text color */
-    --pushbutton-text-color: var(--color-background-interactive-default);
+    --pushbutton-text-color: var(--color-text-interactive-default);
 
     /** @prop --pushbutton-selected-background-color: the Push Button background color when checked */
-    --pushbutton-selected-background-color: var(
-        --status-symbol-color-fill-normal
-    );
+    --pushbutton-selected-background-color: var(--color-palette-green-500);
 
     /** @prop --pushbutton-selected-border-color: the Push Button border color when checked */
-    --pushbutton-selected-border-color: var(--status-symbol-color-fill-normal);
+    --pushbutton-selected-border-color: var(--color-palette-green-500);
 
     /** @prop --pushbutton-selected-text-color: the Push Button text color when checked */
     --pushbutton-selected-text-color: var(--color-text-inverse);
 
-    --pushbutton-selected-hover-text-color: var(
-        --color-global-status-normal-400
-    );
+    --pushbutton-selected-hover-text-color: var(--color-text-inverse);
 
     margin: 0 2px;
     -webkit-user-select: none;
@@ -101,7 +97,7 @@
                 color: var(--pushbutton-selected-text-color);
             }
             &:hover {
-                background-color: var(--pushbutton-selected-hover-text-color);
+                background-color: var(--color-palette-green-400);
             }
         }
 
