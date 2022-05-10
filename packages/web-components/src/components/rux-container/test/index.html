@@ -20,104 +20,388 @@
     </head>
 
     <body>
-        <rux-container style="width: 840px; margin: auto; --body-padding: 0">
-            <div slot="header">Parent container title</div>
-            <div slot="tab-bar">
-                <rux-tabs id="tab-set-id-1" small>
-                    <rux-tab id="tab-id-1">Tab 1</rux-tab>
-                    <rux-tab id="tab-id-2">Tab 2</rux-tab>
-                    <rux-tab id="tab-id-3" disabled=""
-                        >Tab 3 (disabled)
-                    </rux-tab>
-                </rux-tabs>
-            </div>
-            <div slot="toolbar">
-                <rux-slider></rux-slider>
-            </div>
+        <section>
+            <rux-container
+                style="width: 840px; margin: auto; --body-padding: 0"
+            >
+                <div slot="header">Parent container title</div>
+                <div slot="tab-bar">
+                    <rux-tabs id="tab-set-id-1" small>
+                        <rux-tab id="tab-id-1">Tab 1</rux-tab>
+                        <rux-tab id="tab-id-2">Tab 2</rux-tab>
+                        <rux-tab id="tab-id-3" disabled=""
+                            >Tab 3 (disabled)
+                        </rux-tab>
+                    </rux-tabs>
+                </div>
+                <div slot="toolbar">
+                    <rux-slider></rux-slider>
+                </div>
 
-            <div>
-                <rux-tab-panels aria-labelledby="tab-set-id-1">
-                    <rux-tab-panel aria-labelledby="tab-id-1">
-                        <rux-table>
-                            <rux-table-header>
-                                <rux-table-header-row>
-                                    <rux-table-header-cell>
-                                        Header text
-                                    </rux-table-header-cell>
-                                    <rux-table-header-cell>
-                                        Header text
-                                    </rux-table-header-cell>
-                                    <rux-table-header-cell>
-                                        Header text
-                                    </rux-table-header-cell>
-                                    <rux-table-header-cell>
-                                        Header text
-                                    </rux-table-header-cell>
-                                </rux-table-header-row>
-                            </rux-table-header>
-                            <rux-table-body>
-                                <rux-table-row>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                </rux-table-row>
-                                <rux-table-row>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                </rux-table-row>
-                                <rux-table-row>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                </rux-table-row>
-                                <rux-table-row>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                </rux-table-row>
-                                <rux-table-row>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                </rux-table-row>
-                                <rux-table-row>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                </rux-table-row>
-                                <rux-table-row>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                </rux-table-row>
-                                <rux-table-row>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                    <rux-table-cell>Table text</rux-table-cell>
-                                </rux-table-row>
-                            </rux-table-body>
-                        </rux-table>
+                <div>
+                    <rux-tab-panels aria-labelledby="tab-set-id-1">
+                        <rux-tab-panel aria-labelledby="tab-id-1">
+                            <rux-table>
+                                <rux-table-header>
+                                    <rux-table-header-row>
+                                        <rux-table-header-cell>
+                                            Header text
+                                        </rux-table-header-cell>
+                                        <rux-table-header-cell>
+                                            Header text
+                                        </rux-table-header-cell>
+                                        <rux-table-header-cell>
+                                            Header text
+                                        </rux-table-header-cell>
+                                        <rux-table-header-cell>
+                                            Header text
+                                        </rux-table-header-cell>
+                                    </rux-table-header-row>
+                                </rux-table-header>
+                                <rux-table-body>
+                                    <rux-table-row>
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                    </rux-table-row>
+                                    <rux-table-row>
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                    </rux-table-row>
+                                    <rux-table-row>
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                    </rux-table-row>
+                                    <rux-table-row>
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                    </rux-table-row>
+                                    <rux-table-row>
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                    </rux-table-row>
+                                    <rux-table-row>
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                    </rux-table-row>
+                                    <rux-table-row>
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                    </rux-table-row>
+                                    <rux-table-row>
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                    </rux-table-row>
+                                </rux-table-body>
+                            </rux-table>
+                        </rux-tab-panel>
+                        <rux-tab-panel aria-labelledby="tab-id-2"
+                            >Tab 2 HTML content</rux-tab-panel
+                        >
+                        <rux-tab-panel aria-labelledby="tab-id-3"
+                            >Tab 3 HTML content</rux-tab-panel
+                        >
+                    </rux-tab-panels>
+                </div>
+                <div slot="footer">
+                    <rux-button>Primary Button</rux-button>
+                </div>
+            </rux-container>
+        </section>
+        <section>
+            <h2>With Cards</h2>
+            <rux-container>
+                <div slot="header">Container Title</div>
+                <div slot="tab-bar">
+                    <rux-tabs id="tab-set-id-2" small>
+                        <rux-tab id="tab-id-4">Tab 1</rux-tab>
+                        <rux-tab id="tab-id-5">Tab 2</rux-tab>
+                        <rux-tab id="tab-id-6" disabled>
+                            Tab 3 (disabled)
+                        </rux-tab>
+                    </rux-tabs>
+                </div>
+                <rux-tab-panels aria-labelledby="tab-set-id-2">
+                    <rux-tab-panel aria-labelledby="tab-id-4">
+                        <div
+                            style="
+                                display: grid;
+                                gap: 20px;
+                                grid-template-columns: repeat(
+                                    3,
+                                    minmax(0, 1fr)
+                                );
+                            "
+                        >
+                            <rux-card>
+                                <div
+                                    slot="header"
+                                    style="display: flex; align-items: center"
+                                >
+                                    Card Title
+                                    <rux-icon
+                                        size="26px"
+                                        icon="expand-more"
+                                        style="margin-left: auto"
+                                    ></rux-icon>
+                                </div>
+                                <div
+                                    style="
+                                        display: flex;
+                                        justify-content: center;
+                                    "
+                                >
+                                    <rux-clock style=""></rux-clock>
+                                </div>
+                                <div
+                                    slot="footer"
+                                    style="
+                                        display: flex;
+                                        justify-content: center;
+                                    "
+                                >
+                                    <rux-button borderless>View all</rux-button>
+                                </div>
+                            </rux-card>
+                            <rux-card>
+                                <div
+                                    slot="header"
+                                    style="display: flex; align-items: center"
+                                >
+                                    Card Title
+                                    <rux-icon
+                                        size="26px"
+                                        icon="expand-more"
+                                        style="margin-left: auto"
+                                    ></rux-icon>
+                                </div>
+                                <div
+                                    style="
+                                        display: flex;
+                                        justify-content: center;
+                                    "
+                                >
+                                    <rux-clock style=""></rux-clock>
+                                </div>
+                                <div
+                                    slot="footer"
+                                    style="
+                                        display: flex;
+                                        justify-content: center;
+                                    "
+                                >
+                                    <rux-button borderless>View all</rux-button>
+                                </div>
+                            </rux-card>
+                            <rux-card>
+                                <div
+                                    slot="header"
+                                    style="display: flex; align-items: center"
+                                >
+                                    Card Title
+                                    <rux-icon
+                                        size="26px"
+                                        icon="expand-more"
+                                        style="margin-left: auto"
+                                    ></rux-icon>
+                                </div>
+                                <div
+                                    style="
+                                        display: flex;
+                                        justify-content: center;
+                                    "
+                                >
+                                    <rux-clock style=""></rux-clock>
+                                </div>
+                                <div
+                                    slot="footer"
+                                    style="
+                                        display: flex;
+                                        justify-content: center;
+                                    "
+                                >
+                                    <rux-button borderless>View all</rux-button>
+                                </div>
+                            </rux-card>
+                            <rux-card>
+                                <div
+                                    slot="header"
+                                    style="display: flex; align-items: center"
+                                >
+                                    Card Title
+                                    <rux-icon
+                                        size="26px"
+                                        icon="expand-more"
+                                        style="margin-left: auto"
+                                    ></rux-icon>
+                                </div>
+                                <div
+                                    style="
+                                        display: flex;
+                                        justify-content: center;
+                                    "
+                                >
+                                    <rux-clock style=""></rux-clock>
+                                </div>
+                                <div
+                                    slot="footer"
+                                    style="
+                                        display: flex;
+                                        justify-content: center;
+                                    "
+                                >
+                                    <rux-button borderless>View all</rux-button>
+                                </div>
+                            </rux-card>
+                            <rux-card>
+                                <div
+                                    slot="header"
+                                    style="display: flex; align-items: center"
+                                >
+                                    Card Title
+                                    <rux-icon
+                                        size="26px"
+                                        icon="expand-more"
+                                        style="margin-left: auto"
+                                    ></rux-icon>
+                                </div>
+                                <div
+                                    style="
+                                        display: flex;
+                                        justify-content: center;
+                                    "
+                                >
+                                    <rux-clock style=""></rux-clock>
+                                </div>
+                                <div
+                                    slot="footer"
+                                    style="
+                                        display: flex;
+                                        justify-content: center;
+                                    "
+                                >
+                                    <rux-button borderless>View all</rux-button>
+                                </div>
+                            </rux-card>
+                            <rux-card>
+                                <div
+                                    slot="header"
+                                    style="display: flex; align-items: center"
+                                >
+                                    Card Title
+                                    <rux-icon
+                                        size="26px"
+                                        icon="expand-more"
+                                        style="margin-left: auto"
+                                    ></rux-icon>
+                                </div>
+                                <div
+                                    style="
+                                        display: flex;
+                                        justify-content: center;
+                                    "
+                                >
+                                    <rux-clock style=""></rux-clock>
+                                </div>
+                                <div
+                                    slot="footer"
+                                    style="
+                                        display: flex;
+                                        justify-content: center;
+                                    "
+                                >
+                                    <rux-button borderless>View all</rux-button>
+                                </div>
+                            </rux-card>
+                        </div>
                     </rux-tab-panel>
-                    <rux-tab-panel aria-labelledby="tab-id-2"
-                        >Tab 2 HTML content</rux-tab-panel
-                    >
-                    <rux-tab-panel aria-labelledby="tab-id-3"
-                        >Tab 3 HTML content</rux-tab-panel
-                    >
+                    <rux-tab-panel aria-labelledby="tab-id-5">
+                        Tab 2 HTML content
+                    </rux-tab-panel>
+                    <rux-tab-panel aria-labelledby="tab-id-6">
+                        Tab 3 HTML content
+                    </rux-tab-panel>
                 </rux-tab-panels>
-            </div>
-            <div slot="footer">
-                <rux-button>Primary Button</rux-button>
-            </div>
-        </rux-container>
+            </rux-container>
+        </section>
     </body>
 </html>

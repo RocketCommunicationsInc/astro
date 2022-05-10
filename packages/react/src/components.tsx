@@ -19,6 +19,10 @@ export const RuxButtonGroup = /*@__PURE__*/ createReactComponent<
   JSX.RuxButtonGroup,
   HTMLRuxButtonGroupElement
 >("rux-button-group");
+export const RuxCard = /*@__PURE__*/ createReactComponent<
+  JSX.RuxCard,
+  HTMLRuxCardElement
+>("rux-card");
 export const RuxCheckbox = /*@__PURE__*/ createReactComponent<
   JSX.RuxCheckbox,
   HTMLRuxCheckboxElement
@@ -4271,6 +4275,10 @@ export const RuxIconZoomOutMap = /*@__PURE__*/ createReactComponent<
   JSX.RuxIconZoomOutMap,
   HTMLRuxIconZoomOutMapElement
 >("rux-icon-zoom-out-map");
+export const RuxIndeterminateProgress = /*@__PURE__*/ createReactComponent<
+  JSX.RuxIndeterminateProgress,
+  HTMLRuxIndeterminateProgressElement
+>("rux-indeterminate-progress");
 export const RuxInput = /*@__PURE__*/ createReactComponent<
   JSX.RuxInput,
   HTMLRuxInputElement

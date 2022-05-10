@@ -3,6 +3,7 @@ import * as d from "./proxies";
 export const DIRECTIVES = [
   d.RuxButton,
   d.RuxButtonGroup,
+  d.RuxCard,
   d.RuxCheckbox,
   d.RuxCheckboxGroup,
   d.RuxClassificationMarking,
@@ -1066,6 +1067,7 @@ export const DIRECTIVES = [
   d.RuxIconZoomInMap,
   d.RuxIconZoomOut,
   d.RuxIconZoomOutMap,
+  d.RuxIndeterminateProgress,
   d.RuxInput,
   d.RuxLog,
   d.RuxMenu,

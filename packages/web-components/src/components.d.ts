@@ -47,6 +47,8 @@ export namespace Components {
          */
         "hAlign": 'left' | 'center' | 'right';
     }
+    interface RuxCard {
+    }
     interface RuxCheckbox {
         /**
           * Toggles checked state of a checkbox
@@ -11861,6 +11863,8 @@ export namespace Components {
         | 'auto'
         | string;
     }
+    interface RuxIndeterminateProgress {
+    }
     interface RuxInput {
         /**
           * The input's autocomplete attribute
@@ -11953,7 +11957,19 @@ export namespace Components {
          */
         "timezone": string;
     }
-    interface RuxMenu {
+    interface RuxLog {
+        /**
+          * An array of objects to display as log
+         */
+        "data": LogRow[];
+        /**
+          * A string to filter the array to return only the children whose `message` property contains a case-insensitive substring match.
+         */
+        "filter"?: string;
+        /**
+          * Accepts [IANA timezone string format](https://www.iana.org/time-zones) such as `America/Los_Angeles`. Default timezone is `UTC`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.
+         */
+        "timezone": string;
     }
     interface RuxMenuItem {
         /**
@@ -12535,6 +12551,12 @@ declare global {
     var HTMLRuxButtonGroupElement: {
         prototype: HTMLRuxButtonGroupElement;
         new (): HTMLRuxButtonGroupElement;
+    };
+    interface HTMLRuxCardElement extends Components.RuxCard, HTMLStencilElement {
+    }
+    var HTMLRuxCardElement: {
+        prototype: HTMLRuxCardElement;
+        new (): HTMLRuxCardElement;
     };
     interface HTMLRuxCheckboxElement extends Components.RuxCheckbox, HTMLStencilElement {
     }
@@ -18914,6 +18936,12 @@ declare global {
         prototype: HTMLRuxIconZoomOutMapElement;
         new (): HTMLRuxIconZoomOutMapElement;
     };
+    interface HTMLRuxIndeterminateProgressElement extends Components.RuxIndeterminateProgress, HTMLStencilElement {
+    }
+    var HTMLRuxIndeterminateProgressElement: {
+        prototype: HTMLRuxIndeterminateProgressElement;
+        new (): HTMLRuxIndeterminateProgressElement;
+    };
     interface HTMLRuxInputElement extends Components.RuxInput, HTMLStencilElement {
     }
     var HTMLRuxInputElement: {
@@ -19157,6 +19185,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "rux-button": HTMLRuxButtonElement;
         "rux-button-group": HTMLRuxButtonGroupElement;
+        "rux-card": HTMLRuxCardElement;
         "rux-checkbox": HTMLRuxCheckboxElement;
         "rux-checkbox-group": HTMLRuxCheckboxGroupElement;
         "rux-classification-marking": HTMLRuxClassificationMarkingElement;
@@ -20220,6 +20249,7 @@ declare global {
         "rux-icon-zoom-in-map": HTMLRuxIconZoomInMapElement;
         "rux-icon-zoom-out": HTMLRuxIconZoomOutElement;
         "rux-icon-zoom-out-map": HTMLRuxIconZoomOutMapElement;
+        "rux-indeterminate-progress": HTMLRuxIndeterminateProgressElement;
         "rux-input": HTMLRuxInputElement;
         "rux-log": HTMLRuxLogElement;
         "rux-menu": HTMLRuxMenuElement;
@@ -20298,6 +20328,8 @@ declare namespace LocalJSX {
           * The horizontal alignment of buttons within the group
          */
         "hAlign"?: 'left' | 'center' | 'right';
+    }
+    interface RuxCard {
     }
     interface RuxCheckbox {
         /**
@@ -32125,6 +32157,8 @@ declare namespace LocalJSX {
         | 'auto'
         | string;
     }
+    interface RuxIndeterminateProgress {
+    }
     interface RuxInput {
         /**
           * The input's autocomplete attribute
@@ -32881,6 +32915,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "rux-button": RuxButton;
         "rux-button-group": RuxButtonGroup;
+        "rux-card": RuxCard;
         "rux-checkbox": RuxCheckbox;
         "rux-checkbox-group": RuxCheckboxGroup;
         "rux-classification-marking": RuxClassificationMarking;
@@ -33944,6 +33979,7 @@ declare namespace LocalJSX {
         "rux-icon-zoom-in-map": RuxIconZoomInMap;
         "rux-icon-zoom-out": RuxIconZoomOut;
         "rux-icon-zoom-out-map": RuxIconZoomOutMap;
+        "rux-indeterminate-progress": RuxIndeterminateProgress;
         "rux-input": RuxInput;
         "rux-log": RuxLog;
         "rux-menu": RuxMenu;
@@ -33992,6 +34028,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "rux-button": LocalJSX.RuxButton & JSXBase.HTMLAttributes<HTMLRuxButtonElement>;
             "rux-button-group": LocalJSX.RuxButtonGroup & JSXBase.HTMLAttributes<HTMLRuxButtonGroupElement>;
+            "rux-card": LocalJSX.RuxCard & JSXBase.HTMLAttributes<HTMLRuxCardElement>;
             "rux-checkbox": LocalJSX.RuxCheckbox & JSXBase.HTMLAttributes<HTMLRuxCheckboxElement>;
             "rux-checkbox-group": LocalJSX.RuxCheckboxGroup & JSXBase.HTMLAttributes<HTMLRuxCheckboxGroupElement>;
             "rux-classification-marking": LocalJSX.RuxClassificationMarking & JSXBase.HTMLAttributes<HTMLRuxClassificationMarkingElement>;
@@ -35055,6 +35092,7 @@ declare module "@stencil/core" {
             "rux-icon-zoom-in-map": LocalJSX.RuxIconZoomInMap & JSXBase.HTMLAttributes<HTMLRuxIconZoomInMapElement>;
             "rux-icon-zoom-out": LocalJSX.RuxIconZoomOut & JSXBase.HTMLAttributes<HTMLRuxIconZoomOutElement>;
             "rux-icon-zoom-out-map": LocalJSX.RuxIconZoomOutMap & JSXBase.HTMLAttributes<HTMLRuxIconZoomOutMapElement>;
+            "rux-indeterminate-progress": LocalJSX.RuxIndeterminateProgress & JSXBase.HTMLAttributes<HTMLRuxIndeterminateProgressElement>;
             "rux-input": LocalJSX.RuxInput & JSXBase.HTMLAttributes<HTMLRuxInputElement>;
             "rux-log": LocalJSX.RuxLog & JSXBase.HTMLAttributes<HTMLRuxLogElement>;
             "rux-menu": LocalJSX.RuxMenu & JSXBase.HTMLAttributes<HTMLRuxMenuElement>;
