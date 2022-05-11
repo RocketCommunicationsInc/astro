@@ -18,6 +18,7 @@
     "test.react": "lerna run --ignore @astrouxds/angular --ignore @astrouxds/astro-web-components test",
     "test.unit": "lerna run --ignore @astrouxds/angular --ignore @astrouxds/react test.unit",
     "test.e2e": "lerna run --ignore @astrouxds/angular --ignore @astrouxds/react test.e2e.server",
+    "test.web-comps": "lerna run --ignore @astrouxds/angular --ignore @astrouxds/react test",
     "release": "node ./.scripts/release.js && changeset publish"
   }
 }

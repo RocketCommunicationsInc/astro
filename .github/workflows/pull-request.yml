@@ -23,4 +23,4 @@ jobs:
         run: npm run build.tests
 
       - name: Test
-        run: npm run test.e2e
+        run: npm run test.web-comps
