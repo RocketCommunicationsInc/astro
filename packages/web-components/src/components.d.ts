@@ -11956,20 +11956,6 @@ export namespace Components {
          */
         "timezone": string;
     }
-    interface RuxLog {
-        /**
-          * An array of objects to display as log
-         */
-        "data": LogRow[];
-        /**
-          * A string to filter the array to return only the children whose `message` property contains a case-insensitive substring match.
-         */
-        "filter"?: string;
-        /**
-          * Accepts [IANA timezone string format](https://www.iana.org/time-zones) such as `America/Los_Angeles`. Default timezone is `UTC`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.
-         */
-        "timezone": string;
-    }
     interface RuxMenuItem {
         /**
           * Disables the item
@@ -12066,6 +12052,10 @@ export namespace Components {
          */
         "closeAfter"?: number;
         /**
+          * Prevents the user from dismissing the notification. Hides the `close` slot.
+         */
+        "hideClose": boolean;
+        /**
           * Message for the notification banner.
          */
         "message": string;
@@ -12080,7 +12070,7 @@ export namespace Components {
         /**
           * The background color. Possible values include 'off', 'standby', 'normal', 'caution', 'serious' and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).
          */
-        "status": Status;
+        "status"?: Status;
     }
     interface RuxOption {
         /**
@@ -32386,6 +32376,10 @@ declare namespace LocalJSX {
           * If provided, the banner will automatically close after this amount of time. Accepts value either in milliseconds or seconds (which will be converted to milliseconds internally), between `2000` and `10000`, or `2` and `10`, respectively. Any number provided outside of the `2000`-`10000` range will be ignored in favor of the default 2000ms delay. <br>If `closeAfter` is not passed or if it is given an undefined or `null` value, the banner will stay open until the user closes it.
          */
         "closeAfter"?: number;
+        /**
+          * Prevents the user from dismissing the notification. Hides the `close` slot.
+         */
+        "hideClose"?: boolean;
         /**
           * Message for the notification banner.
          */

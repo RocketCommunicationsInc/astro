@@ -20,3 +20,12 @@ export type StatusTypes = {
 }
 
 export type StatusTags = 'pass' | 'fail' | 'unknown'
+
+export enum StatusSymbol {
+    CRITICAL = 'critical',
+    SERIOUS = 'serious',
+    CAUTION = 'caution',
+    NORMAL = 'normal',
+    STANDBY = 'standby',
+    OFF = 'off',
+}
