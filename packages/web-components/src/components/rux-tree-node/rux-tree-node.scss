@@ -44,10 +44,10 @@
 }
 
 .tree-node {
-    border-top: 1px solid var(--color-interactive-muted);
+    border-top: 1px solid var(--color-border-interactive-muted);
     .parent {
-        border-left: 1px solid var(--color-interactive-muted);
-        border-right: 1px solid var(--color-interactive-muted);
+        border-left: 1px solid var(--color-border-interactive-muted);
+        border-right: 1px solid var(--color-border-interactive-muted);
     }
     .children {
         border-left: none;
@@ -137,6 +137,8 @@
     padding: 0 0.5rem 0 2rem;
     display: flex;
     align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
     &:hover {
         color: var(--tree-hover-text-color);
         background: var(--tree-hover-background-color);

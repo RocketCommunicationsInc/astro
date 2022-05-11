@@ -68,8 +68,8 @@ export const Selected = (args) => {
 <Canvas>
     <Story
         args={{
-            selected: true,
-            expanded: false
+            expanded: false,
+            selected: true
         }}
         name="Selected"
     >
@@ -87,7 +87,7 @@ export const Expanded = (args) => {
     aria-level="1"
 >
     Level 1
-    <rux-tree-node slot="node"></rux-tree-node>
+    <rux-tree-node slot="node">Level 2</rux-tree-node>
 </rux-tree-node>
     `
 }
