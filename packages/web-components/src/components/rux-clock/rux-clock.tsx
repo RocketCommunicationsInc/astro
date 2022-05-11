@@ -36,7 +36,7 @@ export class RuxClock {
     @Prop() aos?: string
     @Watch('aos')
     updateAos(newValue: string) {
-        this.convertedAos = this._formatLosAos(newValue)
+        this.convertedAos = this._formatLosAosDateIn(newValue)
     }
 
     /**
@@ -45,7 +45,7 @@ export class RuxClock {
     @Prop() los?: string
     @Watch('los')
     updateLos(newValue: string) {
-        this.convertedLos = this._formatLosAos(newValue)
+        this.convertedLos = this._formatLosAosDateIn(newValue)
     }
 
     /**
@@ -89,8 +89,8 @@ export class RuxClock {
     @Watch('timezone')
     timezoneChanged() {
         this._convertTimezone(this.timezone)
-        if (this.aos) this.convertedAos = this._formatLosAos(this.aos)
-        if (this.los) this.convertedLos = this._formatLosAos(this.los)
+        if (this.aos) this.convertedAos = this._formatLosAosDateIn(this.aos)
+        if (this.los) this.convertedLos = this._formatLosAosDateIn(this.los)
         this._updateTime()
     }
 
@@ -109,8 +109,8 @@ export class RuxClock {
             }, 1000)
         }
 
-        if (this.aos) this.convertedAos = this._formatLosAos(this.aos)
-        if (this.los) this.convertedLos = this._formatLosAos(this.los)
+        if (this.aos) this.convertedAos = this._formatLosAosDateIn(this.aos)
+        if (this.los) this.convertedLos = this._formatLosAosDateIn(this.los)
     }
 
     disconnectedCallback() {
@@ -132,9 +132,7 @@ export class RuxClock {
     }
 
     private _handleDateIn() {
-        if (!this.dateIn!.includes('-')) {
-            this._validateDateInUnix(this.dateIn!)
-        }
+        this._formatLosAosDateIn(this.dateIn!)
         this._time = this.dateIn!
         if (!this._rawTime) this._rawTime = new Date(this.dateIn!)
         if (this._validateDateIn(this._rawTime)) {
@@ -157,20 +155,12 @@ export class RuxClock {
         return date.getTime() === date.getTime()
     }
 
-    /**
-     * @param date A unix date string
-     * Converts a unix string to a Date and stores the value in _rawTime
-     */
-    private _validateDateInUnix(date: string) {
-        let d = new Date(parseInt(date))
-        this._rawTime = d
-    }
-
     private _updateTime(): void {
         if (this.dateIn) {
             if (!this.hasRun) {
                 this._time = this._formatTime(this._rawTime, this._timezone)
                 const clockDate = utcToZonedTime(this._rawTime, this._timezone)
+
                 this.dayOfYear = getDayOfYear(clockDate)
                 this.hasRun = true
             } else {
@@ -198,10 +188,16 @@ export class RuxClock {
      * @returns A timezone local ISO formatted 24h time string
      */
 
-    private _formatLosAos(dateTime: string | number): string {
+    private _formatLosAosDateIn(dateTime: string | number): string {
         // Check for unix timestamp
         if (new Date(Number(dateTime)).getTime() > 0) {
             dateTime = Number(dateTime)
+            // If date-in is provided and matches the conversion made if it's a unix stamp, then
+            // we need to handle it as a unix stamp.
+            if (this.dateIn && parseInt(this.dateIn) === dateTime) {
+                let d = new Date(dateTime)
+                this._rawTime = d
+            }
         }
         return format(utcToZonedTime(dateTime, this._timezone), 'HH:mm:ss')
     }
