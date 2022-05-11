@@ -76,6 +76,7 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 | `"confirm-button"` | the modal's confirm button                                     |
 | `"container"`      | the modal container                                            |
 | `"deny-button"`    | the modal's deny button                                        |
+| `"dialog"`         | the native dialog element                                      |
 | `"header"`         | the header of the modal                                        |
 | `"message"`        | the message of the modal                                       |
 | `"wrapper"`        | the modal wrapper overlay ! DEPRECATED IN FAVOR OF CONTAINER ! |
