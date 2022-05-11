@@ -1,5 +1,24 @@
 # @astrouxds/angular
 
+## 6.7.0
+
+### Minor Changes
+
+- 32950c60: tree node - added nowrap/overflow hidden to prevent overflow with long names
+
+### Patch Changes
+
+- f098ca4a: Tabs - fixed issue where styles were not properly shadow dom encapsulated
+- e4622f8a: Removed the fix height on the dialog element in rux-modal that was preventing a long modal message. Added a new 'dialog' shadow part attatched to the rux-modal's native dialog element.
+- 32950c60: Tree - fixes regression where border styles were not being applied
+- c30d2d28: PushButton - fixed the hover styling
+- Updated dependencies [f098ca4a]
+- Updated dependencies [32950c60]
+- Updated dependencies [e4622f8a]
+- Updated dependencies [32950c60]
+- Updated dependencies [c30d2d28]
+  - @astrouxds/astro-web-components@6.7.0
+
 ## 6.6.0
 
 ### Minor Changes
