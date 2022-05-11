@@ -82,6 +82,15 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 | `"wrapper"`        | the modal wrapper overlay ! DEPRECATED IN FAVOR OF CONTAINER ! |
 
 
+## CSS Custom Properties
+
+| Name                       | Description            |
+| -------------------------- | ---------------------- |
+| `--modal-background-color` | Modal background color |
+| `--modal-border-color`     | Modal border color     |
+| `--modal-title-color`      | Modal title color      |
+
+
 ## Dependencies
 
 ### Depends on
