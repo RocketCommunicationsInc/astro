@@ -1,5 +1,40 @@
 # @astrouxds/astrouxds
 
+## 7.0.0-beta.0
+
+### Major Changes
+
+#### Modal
+
+- Modal will no longer close when clicking outside by default.
+
+  - Why: To align with Astro UXDS compliance requirements 4.3.3: "Dialog Boxes shall be closed only with confirm or cancel Buttons."
+
+  - Migration: If you still require this functionality, a new `clickToClose` property has been added. It defaults to `false` so this will be a breaking change.
+
+- The following properties and attributes have been removed: `modalMessage`, `modalTitle`, `confirmText`, `denyText`.
+  - Why: These have been replaced in favor of slots to provide greater flexibility.
+  - Migration: Use the new `header`, `message`, and `footer` slots instead.
+
+#### Progress
+
+- Removed the indeterminate functionality from Progress
+  - Why: this functionality has been moved to its own component, rux-indeterminate-progress.
+
+### Minor Changes
+
+#### Card
+
+- New component
+
+#### Indeterminate Progress
+
+- New component
+
+#### Container
+
+- New component
+
 ## 6.7.0
 
 ### Minor Changes

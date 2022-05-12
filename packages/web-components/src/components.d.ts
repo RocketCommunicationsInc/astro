@@ -11956,20 +11956,6 @@ export namespace Components {
          */
         "timezone": string;
     }
-    interface RuxLog {
-        /**
-          * An array of objects to display as log
-         */
-        "data": LogRow[];
-        /**
-          * A string to filter the array to return only the children whose `message` property contains a case-insensitive substring match.
-         */
-        "filter"?: string;
-        /**
-          * Accepts [IANA timezone string format](https://www.iana.org/time-zones) such as `America/Los_Angeles`. Default timezone is `UTC`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.
-         */
-        "timezone": string;
-    }
     interface RuxMenuItem {
         /**
           * Disables the item
