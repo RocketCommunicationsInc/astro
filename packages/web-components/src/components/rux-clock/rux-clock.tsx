@@ -83,6 +83,7 @@ export class RuxClock {
     @Watch('dateIn')
     handleDateInChange() {
         clearTimeout(this._timer)
+        this._rawTime = new Date(this.dateIn!)
         this._handleDateIn()
         this._updateTime()
     }

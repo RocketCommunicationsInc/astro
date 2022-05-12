@@ -40,12 +40,20 @@
             <h2>With a date-in added after render</h2>
             <rux-clock id="add"></rux-clock>
             <rux-button id="btn">Set date-in</rux-button>
+            <rux-button style="padding: 3%" id="again"
+                >Change to UNIX</rux-button
+            >
         </section>
         <script>
             const btn = document.getElementById('btn')
+            const again = document.getElementById('again')
+
             const clock = document.getElementById('add')
             btn.addEventListener('click', () => {
                 clock.setAttribute('date-in', '2022-04-22T23:59:55.000Z')
+            })
+            again.addEventListener('click', () => {
+                clock.setAttribute('date-in', '1652129256662')
             })
         </script>
     </body>

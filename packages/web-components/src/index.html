@@ -19,20 +19,5 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body>
-        <rux-clock date-in="2022-04-22T23:59:55.000Z"></rux-clock>
-        <br />
-        <rux-clock id="test"></rux-clock>
-        <div>
-            <rux-button id="change">Set date in!</rux-button>
-        </div>
-        <script>
-            const btn = document.getElementById('change')
-            const clock = document.getElementById('test')
-
-            btn.addEventListener('click', () => {
-                clock.setAttribute('date-in', '2022-04-22T23:59:55.000Z')
-            })
-        </script>
-    </body>
+    <body></body>
 </html>
