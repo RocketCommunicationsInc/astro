@@ -1,5 +1,35 @@
 # @astrouxds/react
 
+## 6.7.0
+
+### Minor Changes
+
+#### Tree Node
+
+- added nowrap/overflow hidden to prevent overflow with long names
+
+#### Modal
+
+- Added a new `dialog` shadow part attached to the native dialog element.
+
+### Patch Changes
+
+#### Tabs
+
+- fixed issue where styles were not properly shadow dom encapsulated
+
+#### Modal
+
+- Removed the fix height on the dialog element that was preventing a long modal message.
+
+#### Tree
+
+- fixed regression where border styles were not being applied
+
+#### Push Button
+
+- fixed the hover styling
+
 ## 6.6.0
 
 ### Minor Changes
