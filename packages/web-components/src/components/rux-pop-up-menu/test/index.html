@@ -14,58 +14,177 @@
             rel="stylesheet"
         />
         <script type="module" src="/build/astro-web-components.esm.js"></script>
-        <script nomodule src="/build/astro-web-components.esm.js"></script>
+        <script nomodule src="/build/astro-web-components.js"></script>
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body class="dark-theme">
-        <div style="padding: 10%; display: flex; justify-content: center">
-            <section
+    <body>
+        <!-- Top -->
+        <div style="padding: 10% 5%; display: flex">
+            <rux-pop-up-menu placement="top-start" id="top">
+                <rux-button slot="trigger">Top</rux-button>
+                <rux-menu>
+                    <rux-menu-item value="1" selected
+                        >Pop up menu option test</rux-menu-item
+                    >
+                    <rux-menu-item-divider></rux-menu-item-divider>
+                    <rux-menu-item value="2"
+                        >Pop up menu option test</rux-menu-item
+                    >
+                    <rux-menu-item value="3"
+                        >Pop up menu option test</rux-menu-item
+                    >
+                </rux-menu>
+            </rux-pop-up-menu>
+            <div
                 style="
-                    width: 600px;
-                    display: flex;
-                    justify-content: space-between;
+                    background: black;
+                    color: white;
+                    width: 100px;
+                    height: 100px;
+                    margin-left: 200px;
                 "
-            >
-                <div>
-                    <rux-button aria-controls="popup-menu-1">
-                        Open Menu
-                    </rux-button>
-
-                    <rux-pop-up-menu id="popup-menu-1">
-                        <rux-menu-item>Item 1</rux-menu-item>
-                        <rux-menu-item-divider></rux-menu-item-divider>
-                        <rux-menu-item value="2"
-                            >Item 2 with an exceedingly long title that overruns
-                            the width</rux-menu-item
-                        >
-                        <rux-menu-item disabled
-                            >Item 3 is disabled</rux-menu-item
-                        >
-                        <rux-menu-item value="Item 4"
-                            >Item 4 has a string value</rux-menu-item
-                        >
-                        <rux-menu-item href="https://www.astrouxds.com"
-                            >Item 5 is an anchor</rux-menu-item
-                        >
-                    </rux-pop-up-menu>
-                </div>
-                <div>
-                    <ul id="log"></ul>
-                </div>
-            </section>
-            <script>
-                const log = document.getElementById('log')
-                const menu = document.querySelectorAll('rux-menu-item')
-
-                menu.forEach((item) => {
-                    item.addEventListener('ruxmenuitemselected', (e) => {
-                        item.innerHTML = `<strong>Value:</strong>${e.detail.value}`
-                        log.appendChild(item)
-                    })
-                })
-            </script>
+                id="results"
+            ></div>
         </div>
+        <!-- Right -->
+        <div style="padding: 5%">
+            <rux-pop-up-menu placement="right-start" id="right">
+                <rux-button slot="trigger">Right</rux-button>
+                <rux-menu>
+                    <rux-menu-item value="1" selected
+                        >Pop up menu option test</rux-menu-item
+                    >
+                    <rux-menu-item value="2"
+                        >Pop up menu option test</rux-menu-item
+                    >
+                    <rux-menu-item value="3"
+                        >Pop up menu option test</rux-menu-item
+                    >
+                </rux-menu>
+            </rux-pop-up-menu>
+        </div>
+        <!-- Bottom -->
+        <div style="padding: 5%">
+            <rux-pop-up-menu placement="bottom-start" id="bottom">
+                <rux-button slot="trigger">Bottom</rux-button>
+                <rux-menu>
+                    <rux-menu-item value="1" selected
+                        >Pop up menu option test</rux-menu-item
+                    >
+                    <rux-menu-item value="2"
+                        >Pop up menu option test</rux-menu-item
+                    >
+                    <rux-menu-item value="3"
+                        >Pop up menu option test</rux-menu-item
+                    >
+                </rux-menu>
+            </rux-pop-up-menu>
+        </div>
+        <!-- Left -->
+        <div style="padding: 5% 20%">
+            <rux-pop-up-menu placement="left-start" id="left">
+                <rux-button slot="trigger">Left</rux-button>
+                <rux-menu>
+                    <rux-menu-item value="1" selected
+                        >Pop up menu option test</rux-menu-item
+                    >
+                    <rux-menu-item value="2"
+                        >Pop up menu option test</rux-menu-item
+                    >
+                    <rux-menu-item value="3"
+                        >Pop up menu option test</rux-menu-item
+                    >
+                </rux-menu>
+            </rux-pop-up-menu>
+        </div>
+        <!-- Form Test -->
+        <div style="margin: 10%; display: flex">
+            <rux-pop-up-menu id="form-pop">
+                <rux-icon icon="apps" slot="trigger"></rux-icon>
+                <rux-input
+                    id="1"
+                    type="text"
+                    placeholder="Warrior"
+                    value=""
+                ></rux-input>
+                <rux-input
+                    id="2"
+                    type="text"
+                    placeholder="Of Light"
+                    value=""
+                ></rux-input>
+                <rux-button type="submit" id="submit">Submit</rux-button>
+            </rux-pop-up-menu>
+            <div
+                id="form-test"
+                style="
+                    background: gray;
+                    width: 100px;
+                    height: 100px;
+                    margin-left: 100px;
+                "
+            ></div>
+        </div>
+        <!-- Show() test -->
+        <div style="margin: 5%">
+            <rux-pop-up-menu id="toggle" placement="top">
+                <rux-button slot="trigger">Toggle</rux-button>
+                <rux-menu>
+                    <rux-menu-item value="1">Option 1</rux-menu-item>
+                    <rux-menu-item value="2">Option 2</rux-menu-item>
+                    <rux-menu-item value="3">Option 3</rux-menu-item>
+                </rux-menu>
+            </rux-pop-up-menu>
+            <div style="padding-top: 5%">
+                <rux-button id="show">Show</rux-button>
+                <rux-button id="hide">Hide</rux-button>
+            </div>
+            <!-- hide() test -->
+            <div style="margin: 15%">
+                <rux-pop-up-menu id="open-def" open>
+                    <rux-button slot="trigger">Open by Def</rux-button>
+                    <rux-menu>
+                        <rux-menu-item value="1" selected
+                            >Pop up menu option test</rux-menu-item
+                        >
+                        <rux-menu-item value="2"
+                            >Pop up menu option test</rux-menu-item
+                        >
+                        <rux-menu-item value="3"
+                            >Pop up menu option test</rux-menu-item
+                        >
+                    </rux-menu>
+                </rux-pop-up-menu>
+            </div>
+        </div>
+        <script>
+            let resultDiv = document.getElementById('results')
+            let topPop = document.getElementById('top')
+            topPop.addEventListener('ruxpopupmenuselected', (e) => {
+                resultDiv.innerText = e.detail.value
+            })
+            const testDiv = document.getElementById('form-test')
+            const input1 = document.getElementById('1')
+            const input2 = document.getElementById('2')
+            const submitBtn = document.getElementById('submit')
+            const show = document.getElementById('show')
+            const hide = document.getElementById('hide')
+            const togglePopup = document.getElementById('toggle')
+            const openDef = document.getElementById('open-def')
+
+            show.addEventListener('click', () => {
+                togglePopup.show()
+            })
+            hide.addEventListener('click', () => {
+                openDef.hide()
+            })
+
+            submitBtn.addEventListener('click', (e) => {
+                e.preventDefault()
+                testDiv.innerText = input1.value + ' ' + input2.value
+            })
+        </script>
     </body>
 </html>

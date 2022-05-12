@@ -21411,22 +21411,39 @@ export class RuxLog {
 }
 
 
+export declare interface RuxMenu extends Components.RuxMenu {}
+
+
+@Component({
+  selector: 'rux-menu',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class RuxMenu {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface RuxMenuItem extends Components.RuxMenuItem {
   /**
-   * Emitted when item is clicked. Ex `{value : 10}` 
+   * When a rux-menu item is selected, emits the value of that item. 
    */
   ruxmenuitemselected: EventEmitter<CustomEvent<object>>;
 
 }
 
 @ProxyCmp({
-  inputs: ['disabled', 'download', 'href', 'rel', 'target', 'value']
+  inputs: ['disabled', 'selected', 'value']
 })
 @Component({
   selector: 'rux-menu-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'download', 'href', 'rel', 'target', 'value']
+  inputs: ['disabled', 'selected', 'value']
 })
 export class RuxMenuItem {
   protected el: HTMLElement;
@@ -21595,40 +21612,28 @@ export class RuxOptionGroup {
 
 export declare interface RuxPopUpMenu extends Components.RuxPopUpMenu {
   /**
-   * Emitted when the menu is about to open. 
+   * emits the value of the selected rux-menu-item inside of rux-pop-up-menu 
    */
-  ruxmenuwillopen: EventEmitter<CustomEvent<void>>;
-  /**
-   * Emitted when the menu is about to close 
-   */
-  ruxmenuwillclose: EventEmitter<CustomEvent<void>>;
-  /**
-   * Emitted when the menu is open. 
-   */
-  ruxmenudidopen: EventEmitter<CustomEvent<void>>;
-  /**
-   * Emitted when the menu is closed. 
-   */
-  ruxmenudidclose: EventEmitter<CustomEvent<void>>;
+  ruxpopupmenuselected: EventEmitter<CustomEvent<any>>;
 
 }
 
 @ProxyCmp({
-  inputs: ['anchorEl', 'open', 'triggerEl'],
-  methods: ['isOpen', 'show', 'close', 'toggle']
+  inputs: ['open', 'placement', 'strategy'],
+  methods: ['show', 'hide']
 })
 @Component({
   selector: 'rux-pop-up-menu',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['anchorEl', 'open', 'triggerEl']
+  inputs: ['open', 'placement', 'strategy']
 })
 export class RuxPopUpMenu {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['ruxmenuwillopen', 'ruxmenuwillclose', 'ruxmenudidopen', 'ruxmenudidclose']);
+    proxyOutputs(this, this.el, ['ruxpopupmenuselected']);
   }
 }
 
