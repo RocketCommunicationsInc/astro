@@ -124,13 +124,13 @@ export class RuxClassificationMarking {
 export declare interface RuxClock extends Components.RuxClock {}
 
 @ProxyCmp({
-  inputs: ['aos', 'hideDate', 'hideLabels', 'hideTimezone', 'los', 'small', 'timezone']
+  inputs: ['aos', 'dateIn', 'hideDate', 'hideLabels', 'hideTimezone', 'los', 'small', 'timezone']
 })
 @Component({
   selector: 'rux-clock',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['aos', 'hideDate', 'hideLabels', 'hideTimezone', 'los', 'small', 'timezone']
+  inputs: ['aos', 'dateIn', 'hideDate', 'hideLabels', 'hideTimezone', 'los', 'small', 'timezone']
 })
 export class RuxClock {
   protected el: HTMLElement;

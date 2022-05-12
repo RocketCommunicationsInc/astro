@@ -125,6 +125,43 @@ describe('rux-clock', () => {
 
         expect(page.root).toMatchSnapshot()
     })
+    it('Uses the time passed into date-in if provided', async () => {
+        const page = await newSpecPage({
+            components: [RuxClock],
+            html: `<rux-clock date-in="2022-04-22T23:59:55.000Z"></rux-clock>`,
+        })
+        expect(page.root).toMatchSnapshot()
+    })
+    it('Can accept a unix timestamp for date-in', async () => {
+        const page = await newSpecPage({
+            components: [RuxClock],
+            html: `<rux-clock date-in="1652129256662"></rux-clock>`,
+        })
+        expect(page.root).toMatchSnapshot()
+    })
+    it('Can change the date when date-in is changed', async () => {
+        const page = await newSpecPage({
+            components: [RuxClock],
+            html: `<rux-clock date-in="2022-04-22T23:59:55.000Z"></rux-clock>`,
+        })
+        expect(page.root).toMatchSnapshot()
+        page.root?.setAttribute('date-in', '2022-07-22T23:59:55.000Z')
+        page.waitForChanges()
+        expect(page.root).toMatchSnapshot()
+    })
+    it('can swap between unix and non-unix date-in values', async () => {
+        const page = await newSpecPage({
+            components: [RuxClock],
+            html: `<rux-clock></rux-clock>`,
+        })
+        expect(page.root).toMatchSnapshot()
+        page.root?.setAttribute('date-in', '2022-07-22T23:59:55.000Z')
+        page.waitForChanges()
+        expect(page.root).toMatchSnapshot()
+        page.root?.setAttribute('date-in', '1652129256662')
+        page.waitForChanges()
+        expect(page.root).toMatchSnapshot()
+    })
 
     // Something weird going on here. I expect the snapshot value to be 09:12:12 but its being shown as 05:12:12
     //   it('converts aos/los string timestamps when timezone is changed', async () => {

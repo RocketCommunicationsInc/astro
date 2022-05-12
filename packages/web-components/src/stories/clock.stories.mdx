@@ -10,7 +10,7 @@ import { html, render } from 'lit-html'
 
 # Clock
 
-Clock shows the current date and time, and optional AOS and LOS timers. It will typically be positioned on the Global Status Bar.
+Clock shows the current or provided date and time, and optional AOS and LOS timers. It will typically be positioned on the Global Status Bar.
 
 ## Guidelines
 
@@ -27,6 +27,7 @@ export const Default = (args) => {
         ?hide-date="${args.hideDate}"
         ?hide-labels="${args.hideLabels}"
         ?small="${args.small}"
+        date-in="${args.dateIn}"
     ></rux-clock>
 </div>
     `
@@ -42,7 +43,8 @@ export const Default = (args) => {
             hideLabels: false,
             hideTimezone: false,
             small: false,
-            timezone: "UTC"
+            timezone: "UTC",
+            dateIn: ""
         }}
     >
         {Default.bind()}
@@ -71,6 +73,7 @@ export const ClockWithAosLos = (args) => {
         ?hide-date="${args.hideDate}"
         ?hide-labels="${args.hideLabels}"
         ?small="${args.small}"
+        date-in="${args.dateIn}"
     ></rux-clock>
 </div>
     `
@@ -85,11 +88,52 @@ export const ClockWithAosLos = (args) => {
             hideLabels: false,
             hideTimezone: false,
             small: false,
-            timezone: "UTC"
+            timezone: "UTC",
+            dateIn: ''
         }}
         name="With AOS/LOS"
     >
         {ClockWithAosLos.bind()}
+    </Story>
+</Canvas>
+
+### With date-in 
+
+> NOTE: Similar to the AOS/LOS timestamps, date-in accepts a number of different time formats. If you don't provide a timezone ("1988-04-22 12:12:12"), they will default to the user's system time zone.
+> It is recommended to use the following format `"1988-04-22T12:12:12.000Z"`.
+
+export const DateIn = (args) => {
+    return html`
+<div style="padding: 10%; display: flex; justify-content: center;">
+    <rux-clock
+        .timezone="${args.timezone}"
+        aos="${args.aos}"
+        los="${args.los}"
+        date-in="${args.dateIn}"
+        ?hide-timezone="${args.hideTimezone}"
+        ?hide-date="${args.hideDate}"
+        ?hide-labels="${args.hideLabels}"
+        ?small="${args.small}"
+    ></rux-clock>
+</div>
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+            aos: '',
+            los: '',
+            hideDate: false,
+            hideLabels: false,
+            hideTimezone: false,
+            small: false,
+            timezone: "UTC",
+            dateIn: "2022-04-22T23:59:55.000Z"
+        }}
+        name="With Date In"
+    >
+        {DateIn.bind()}
     </Story>
 </Canvas>
 
