@@ -36,5 +36,17 @@
             <h2>With Unix date-in</h2>
             <rux-clock date-in="1652129256662"></rux-clock>
         </section>
+        <section>
+            <h2>With a date-in added after render</h2>
+            <rux-clock id="add"></rux-clock>
+            <rux-button id="btn">Set date-in</rux-button>
+        </section>
+        <script>
+            const btn = document.getElementById('btn')
+            const clock = document.getElementById('add')
+            btn.addEventListener('click', () => {
+                clock.setAttribute('date-in', '2022-04-22T23:59:55.000Z')
+            })
+        </script>
     </body>
 </html>
