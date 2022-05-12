@@ -46,6 +46,23 @@ export class RuxButtonGroup {
 }
 
 
+export declare interface RuxCard extends Components.RuxCard {}
+
+
+@Component({
+  selector: 'rux-card',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class RuxCard {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface RuxCheckbox extends Components.RuxCheckbox {
   /**
    * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) 
@@ -133,6 +150,23 @@ export declare interface RuxClock extends Components.RuxClock {}
   inputs: ['aos', 'hideDate', 'hideLabels', 'hideTimezone', 'los', 'small', 'timezone']
 })
 export class RuxClock {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface RuxContainer extends Components.RuxContainer {}
+
+
+@Component({
+  selector: 'rux-container',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class RuxContainer {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -21293,6 +21327,23 @@ export declare interface RuxIconZoomOutMap extends Components.RuxIconZoomOutMap 
   inputs: ['size']
 })
 export class RuxIconZoomOutMap {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface RuxIndeterminateProgress extends Components.RuxIndeterminateProgress {}
+
+
+@Component({
+  selector: 'rux-indeterminate-progress',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class RuxIndeterminateProgress {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();

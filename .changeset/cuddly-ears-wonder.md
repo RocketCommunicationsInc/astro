@@ -1,5 +1,4 @@
 ---
-"@astrouxds/ag-grid-theme": patch
 "@astrouxds/angular": patch
 "astro-website": patch
 "@astrouxds/react": patch
