@@ -80,6 +80,12 @@ export class RuxClock {
      * When supplied with a valid [date string or value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#syntax), sets the time and date of the clock.
      */
     @Prop({ attribute: 'date-in' }) dateIn?: string
+    @Watch('dateIn')
+    handleDateInChange() {
+        clearTimeout(this._timer)
+        this._handleDateIn()
+        this._updateTime()
+    }
 
     /**
      * Applies a smaller clock style.
