@@ -140,6 +140,7 @@ label {
 
 .rux-select {
     position: relative;
+    background: var(--color-background-base-default);
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -241,7 +242,7 @@ label {
 
     optgroup {
         text-indent: 1rem;
-        color: var(--color-text-primary);
+        color: var(--select-menu-text-color);
         font-family: var(--font-body-1-font-family);
         font-size: var(--font-body-1-font-size);
         font-weight: var(--font-body-1-font-weight);

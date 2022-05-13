@@ -53,7 +53,25 @@
             </form>
         </section>
         <hr />
+        <section>
+            <h2>Single Select W/ Opt Groups</h2>
 
+            <form id="form" method="POST" action="/form">
+                <rux-select id="ruxSelect" label="Best Thing?" name="bestThing">
+                    <rux-option label="Select an option" value=""></rux-option>
+                    <rux-option-group label="Group 1">
+                        <rux-option label="Yellow" value="yellow"></rux-option>
+                        <rux-option label="Orange" value="orange"></rux-option>
+                    </rux-option-group>
+                    <rux-option-group label="Group 2">
+                        <rux-option label="Red" value="red"></rux-option>
+                        <rux-option value="blue" label="Blue"></rux-option>
+                        <rux-option value="green" label="Green"></rux-option>
+                    </rux-option-group>
+                </rux-select>
+                <button id="formSubmitBtn" type="submit">submit</button>
+            </form>
+        </section>
         <section>
             <h2>Multi Select</h2>
 

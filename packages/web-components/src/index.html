@@ -19,5 +19,45 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body></body>
+    <body>
+        <style>
+            select {
+                /* position: relative; */
+                /* appearance: none; */
+                background: var(--color-background-base-default);
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                width: 100%;
+                border: 1px solid var(--color-border-interactive-muted);
+                border-radius: var(--radius-base);
+                color: var(--color-background-interactive-default);
+            }
+
+            optgroup {
+                text-indent: 1rem;
+                font-family: var(--font-body-1-font-family);
+                font-size: var(--font-body-1-font-size);
+                font-weight: var(--font-body-1-font-weight);
+                letter-spacing: var(--font-body-1-letter-spacing);
+                font-style: normal;
+            }
+
+            option {
+                border-radius: 0;
+            }
+
+            option:hover {
+                background-color: green;
+                color: yellow;
+            }
+        </style>
+        <div style="width: 200px">
+            <select>
+                <optgroup label="Group 1">
+                    <option label="1"></option>
+                    <option label="1"></option>
+                </optgroup>
+            </select>
+        </div>
+    </body>
 </html>
