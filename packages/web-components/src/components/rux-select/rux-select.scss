@@ -152,7 +152,6 @@ label {
     font-size: var(--font-body-1-font-size);
     font-weight: var(--font-body-1-font-weight);
     letter-spacing: var(--font-body-1-letter-spacing);
-
     user-select: none;
 
     &--small {
@@ -180,10 +179,10 @@ label {
                 color: var(--color-text-primary);
             }
             &:disabled {
-                opacity: var(--disabled-opacity);
                 cursor: not-allowed;
                 &:hover {
                     color: var(--select-menu-text-color);
+                    opacity: var(--disabled-opacity);
                     background-color: var(--select-menu-background-color);
                 }
             }
@@ -235,8 +234,9 @@ label {
             );
         }
         &:disabled {
-            opacity: var(--disabled-opacity);
             cursor: not-allowed;
+            //var(--select-menu-text-color) with 0.4 opacity
+            color: #4dacff66;
         }
     }
 
