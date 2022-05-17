@@ -1,4 +1,4 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from "@angular/core/testing";
 
 type CompilerOptions = Partial<{
   providers: any[];
@@ -7,7 +7,10 @@ type CompilerOptions = Partial<{
 }>;
 export type ConfigureFn = (testBed: typeof TestBed) => void;
 
-export const configureTests = (configure: ConfigureFn, compilerOptions: CompilerOptions = {}) => {
+export const configureTests = (
+  configure: ConfigureFn,
+  compilerOptions: CompilerOptions = {}
+) => {
   const compilerConfig: CompilerOptions = {
     preserveWhitespaces: false,
     ...compilerOptions,
