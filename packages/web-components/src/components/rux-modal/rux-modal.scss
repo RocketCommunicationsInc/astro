@@ -71,7 +71,7 @@ rux-button-group {
         box-shadow: var(--shadow-outer-dialog);
     }
 
-    &__titlebar {
+    &__header {
         display: flex;
         flex-grow: 0;
         flex-shrink: 0;
@@ -86,9 +86,25 @@ rux-button-group {
         font-size: var(--font-heading-2-font-size);
         font-weight: var(--font-heading-2-font-weight);
         letter-spacing: var(--font-heading-2-letter-spacing);
+        ::slotted(h6),
+        ::slotted(h5),
+        ::slotted(h4),
+        ::slotted(h3),
+        ::slotted(h2),
+        ::slotted(h1) {
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
     }
 
     &__content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 1rem;
+        color: var(--color-text-primary);
+    }
+    &__footer {
         display: flex;
         flex-direction: column;
         flex-grow: 1;

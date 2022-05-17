@@ -9,6 +9,7 @@ import {
     Watch,
     Host,
 } from '@stencil/core'
+import { hasSlot } from '../../utils/utils'
 
 /**
  * @part wrapper - the modal wrapper overlay ! DEPRECATED IN FAVOR OF CONTAINER !
@@ -56,6 +57,10 @@ export class RuxModal {
     ruxModalClosed!: EventEmitter<boolean>
 
     @Element() element!: HTMLRuxModalElement
+
+    private hasFooter = hasSlot(this.element, 'footer')
+    private hasHeader = hasSlot(this.element, 'header')
+    private hasMessage = hasSlot(this.element, 'message')
 
     // confirm dialog if Enter key is pressed
     @Listen('keydown', { target: 'window' })
@@ -146,6 +151,7 @@ export class RuxModal {
         } = this
 
         return (
+            //Goal: support both slots or props - slots takes precedence
             open && (
                 <Host>
                     <div part="wrapper container" class="rux-modal__wrapper">
@@ -154,40 +160,52 @@ export class RuxModal {
                             role="dialog"
                             part="dialog"
                         >
-                            {modalTitle && (
-                                <header
-                                    class="rux-modal__titlebar"
-                                    part="header"
-                                >
-                                    <div>{modalTitle}</div>
+                            {modalTitle || this.hasHeader ? (
+                                <header class="rux-modal__header" part="header">
+                                    <slot name="header">{modalTitle}</slot>
                                 </header>
-                            )}
-                            <div class="rux-modal__content">
-                                <div class="rux-modal__message" part="message">
-                                    {modalMessage}
+                            ) : null}
+                            {modalMessage || this.hasMessage ? (
+                                <div class="rux-modal__content">
+                                    <div
+                                        class="rux-modal__message"
+                                        part="message"
+                                    >
+                                        <slot name="message">
+                                            {modalMessage}
+                                        </slot>
+                                    </div>
                                 </div>
-                                <rux-button-group h-align="right">
-                                    <rux-button
-                                        secondary={confirmText.length > 0}
-                                        onClick={_handleModalChoice}
-                                        data-value="false"
-                                        hidden={!denyText}
-                                        tabindex="-1"
-                                        exportparts="container:deny-button"
-                                    >
-                                        {denyText}
-                                    </rux-button>
-                                    <rux-button
-                                        onClick={_handleModalChoice}
-                                        data-value="true"
-                                        hidden={!confirmText}
-                                        tabindex="0"
-                                        exportparts="container:confirm-button"
-                                    >
-                                        {confirmText}
-                                    </rux-button>
-                                </rux-button-group>
-                            </div>
+                            ) : null}
+                            {this.hasFooter ? (
+                                <footer class="rux-modal__footer">
+                                    <slot name="footer"></slot>
+                                </footer>
+                            ) : (
+                                <footer class="rux-modal__footer">
+                                    <rux-button-group h-align="right">
+                                        <rux-button
+                                            secondary={confirmText.length > 0}
+                                            onClick={_handleModalChoice}
+                                            data-value="false"
+                                            hidden={!denyText}
+                                            tabindex="-1"
+                                            exportparts="container:deny-button"
+                                        >
+                                            {denyText}
+                                        </rux-button>
+                                        <rux-button
+                                            onClick={_handleModalChoice}
+                                            data-value="true"
+                                            hidden={!confirmText}
+                                            tabindex="0"
+                                            exportparts="container:confirm-button"
+                                        >
+                                            {confirmText}
+                                        </rux-button>
+                                    </rux-button-group>
+                                </footer>
+                            )}
                         </dialog>
                     </div>
                 </Host>
