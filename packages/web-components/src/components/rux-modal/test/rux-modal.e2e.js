@@ -20,7 +20,10 @@ describe('Modal', () => {
         cy.get('rux-modal').then(($modal) => {
             $modal[0].setAttribute('modal-title', 'This is a test title')
         })
-        cy.get('rux-modal').shadow().find('.rux-modal__titlebar').contains('This is a test title')
+        cy.get('rux-modal')
+            .shadow()
+            .find('.rux-modal__titlebar')
+            .contains('This is a test title')
     })
 
     it('should display new modal message in the dialog when changed', () => {
