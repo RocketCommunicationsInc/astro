@@ -138,7 +138,6 @@ export class RuxPopUpMenu {
         if (!this.open || !this.triggerSlot || !this.content) {
             return
         }
-        console.log('postion call, passed first return')
         computePosition(this.triggerSlot, this.content, {
             placement: this.placement,
             strategy: this.strategy,
