@@ -47,6 +47,10 @@ export class RuxModal {
      */
     @Prop() denyText: string = 'Cancel'
     /**
+     * Allows modal to close by clicking off of it
+     */
+    @Prop() clickToClose: boolean = false
+    /**
      * Event that is fired when modal closes
      */
     @Event({
@@ -76,10 +80,12 @@ export class RuxModal {
     // close modal if click happens outside of dialog
     @Listen('click', { target: 'window' })
     handleClick(ev: MouseEvent) {
-        const wrapper = this._getWrapper()
-        if (ev.composedPath()[0] === wrapper) {
-            this.ruxModalClosed.emit(false)
-            this.open = false
+        if (this.clickToClose) {
+            const wrapper = this._getWrapper()
+            if (ev.composedPath()[0] === wrapper) {
+                this.ruxModalClosed.emit(false)
+                this.open = false
+            }
         }
     }
 
@@ -151,7 +157,6 @@ export class RuxModal {
         } = this
 
         return (
-            //Goal: support both slots or props - slots takes precedence
             open && (
                 <Host>
                     <div part="wrapper container" class="rux-modal__wrapper">
@@ -166,7 +171,7 @@ export class RuxModal {
                                 </header>
                             ) : null}
                             {modalMessage || this.hasMessage ? (
-                                <div class="rux-modal__content">
+                                <div class="rux-modal__content" part="message">
                                     <div
                                         class="rux-modal__message"
                                         part="message"
@@ -178,11 +183,11 @@ export class RuxModal {
                                 </div>
                             ) : null}
                             {this.hasFooter ? (
-                                <footer class="rux-modal__footer">
+                                <footer class="rux-modal__footer" part="footer">
                                     <slot name="footer"></slot>
                                 </footer>
                             ) : (
-                                <footer class="rux-modal__footer">
+                                <footer class="rux-modal__footer" part="footer">
                                     <rux-button-group h-align="right">
                                         <rux-button
                                             secondary={confirmText.length > 0}

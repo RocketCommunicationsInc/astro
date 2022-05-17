@@ -11984,6 +11984,10 @@ export namespace Components {
     }
     interface RuxModal {
         /**
+          * Allows modal to close by clicking off of it
+         */
+        "clickToClose": boolean;
+        /**
           * Text for confirmation button
          */
         "confirmText": string;
@@ -32285,6 +32289,10 @@ declare namespace LocalJSX {
     interface RuxMenuItemDivider {
     }
     interface RuxModal {
+        /**
+          * Allows modal to close by clicking off of it
+         */
+        "clickToClose"?: boolean;
         /**
           * Text for confirmation button
          */
