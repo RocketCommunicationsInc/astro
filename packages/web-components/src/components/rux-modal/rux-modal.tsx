@@ -99,6 +99,8 @@ export class RuxModal {
 
     @Watch('open')
     validateName(isOpen: boolean) {
+        //? This is preventing the default focusing of a button if the footer slot exists.
+        //? I thought about runninng it anyway, but it could lead to cases where an unintentional button gets focused.
         if (isOpen && !this.hasFooter) {
             setTimeout(() => {
                 const button = this._getDefaultButton()

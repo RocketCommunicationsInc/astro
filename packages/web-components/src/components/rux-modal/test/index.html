@@ -100,10 +100,8 @@
 
             const confirmBtn = document.getElementById('confirm')
             mixed.addEventListener('ruxmodalopened', () => {
-                console.log(confirmBtn)
-                setTimeout(() => {
-                    confirmBtn.focus()
-                }, 1000)
+                const shadowBtn = confirmBtn.shadowRoot.querySelector('button')
+                setTimeout(() => shadowBtn.focus())
             })
         </script>
     </body>
