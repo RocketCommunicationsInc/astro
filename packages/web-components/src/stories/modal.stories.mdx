@@ -101,6 +101,66 @@ export const WithSlots = (args) => {
     </Story>
 </Canvas>
 
+## Opening, Closing and Focusing with Slots
+
+Using slots in the modal allows for near complete customization of the component, but also requires a bit more
+boilerplate for some things that are built in with the default method. 
+
+### Opening and Closing
+
+The `open` prop of `rux-modal` is mutable and can be changed accordingly. Here's an example of how you could do that 
+using the a `rux-button` in the `footer` slot.
+
+```js
+<rux-modal id="modal" open>
+    <div slot="header">Modal Header</div>
+    <span slot="message">Modal message here!</span>
+    <div slot="footer">
+        <rux-button id="confirm">Confirm</rux-button>
+    </div>
+</rux-modal>
+<script>
+    const modal = document.getElementById('modal');
+    const confirm = document.getElementById('confirm')
+    confirm.addEventListener('click', () => {
+        modal.open = false;
+    })
+</script>
+```
+
+### Applying Focus
+
+Often times when a modal opens, you want to focus a specific element like a confirm or cancel button. 
+Here's a simple way to do that
+
+```js
+<rux-button id="open">Open Modal</rux-button>
+<rux-modal id="modal">
+    <div slot="header">Modal Header</div>
+    <p slot="message">Modal message here!</p>
+    <div slot="footer">
+        <rux-button id="confirm">Confirm</rux-button>
+    </div>
+</rux-modal>
+
+<script>
+    const modal = document.getElementById('modal')
+    const open = document.getElementById('open')
+    const confirm = document.getElementById('confirm')
+    modal.addEventListener('ruxmodalopened', () => {
+        setTimeout(() => {
+            confirm.focus()
+        }, 0)
+    })
+    confirm.addEventListener('click', () => {
+        modal.open = false
+    })
+    open.addEventListener('click', () => {
+        modal.open = true
+    })
+</script>
+```
+
 ## Cherry Picking
 
 If you're already utilizing a build system that supports tree shaking and want to only import this individual component:

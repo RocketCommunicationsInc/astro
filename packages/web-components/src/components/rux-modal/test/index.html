@@ -20,7 +20,6 @@
     </head>
 
     <body>
-        <rux-modal open modal-title="hello" modal-message="world"></rux-modal>
         <rux-modal
             id="props"
             modal-message="Props Message"
@@ -53,7 +52,7 @@
             <div slot="footer">
                 <rux-button-group h-align="right">
                     <rux-button secondary>Slot Cancel</rux-button>
-                    <rux-button>Slot Confirm</rux-button>
+                    <rux-button id="confirm">Slot Confirm</rux-button>
                 </rux-button-group>
             </div>
         </rux-modal>
@@ -95,6 +94,16 @@
             const openMixed = document.getElementById('openmix')
             openMixed.addEventListener('click', () => {
                 mixed.open = !mixed.open
+            })
+
+            //Focus the confirm button on mixed modal
+
+            const confirmBtn = document.getElementById('confirm')
+            mixed.addEventListener('ruxmodalopened', () => {
+                console.log(confirmBtn)
+                setTimeout(() => {
+                    confirmBtn.focus()
+                }, 1000)
             })
         </script>
     </body>
