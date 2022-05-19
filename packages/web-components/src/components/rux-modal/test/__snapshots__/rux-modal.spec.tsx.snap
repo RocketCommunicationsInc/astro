@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rux-modal renders with slots 1`] = `
+<rux-modal>
+  <mock:shadow-root></mock:shadow-root>
+  <span slot="header">
+    Header
+  </span>
+  <div slot="message">
+    Message
+  </div>
+  <div slot="footer">
+    Footer
+  </div>
+</rux-modal>
+`;

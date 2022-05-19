@@ -8,7 +8,7 @@ import { html, render } from 'lit-html'
     argTypes={extractArgTypes('rux-modal')}
     parameters={{
         actions: {
-            handles: ['ruxmodalclosed rux-modal'],
+            handles: ['ruxmodalclosed rux-modal', 'ruxmodalopened rux-modal'],
         },
     }}
 />
@@ -53,6 +53,53 @@ export const Modal = (args) => {
 ## API
 
 <ArgsTable of="rux-modal" />
+
+### Variants
+
+export const WithSlots = (args) => {
+    return html`
+    <style>
+        rux-modal::part(message){
+            padding: 0.5rem;
+        }
+    </style>
+<div style="display: flex; flex-direction: column; justify-content: center;">
+<rux-modal
+    ?open="${args.open}"
+>
+    <span slot="header">Slot Header</span>
+    <div slot="message" style="display: flex; flex-direction: column;">
+        <span style="margin-bottom: 10px;">Slot Message</span>
+        <rux-input label="Input"></rux-input>
+    </div>
+    <div slot="footer" style="display: flex; justify-content: space-between; align-items: center;">
+        <a href="astrouxds.com">Link</a>
+        <rux-button-group h-align="right">
+            <rux-button secondary>Cancel</rux-button>
+            <rux-button>Confirm</rux-button>
+        </rux-button-group>
+    </div>
+</rux-modal>
+</div>
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+            open: true,
+        }}
+        argTypes={{
+            modalTitle: { table: { disable: true}},
+            modalMessage: { table: { disable: true}},
+            confirmText: { table: { disable: true}},
+            denyText: { table: { disable: true}}
+        }}
+        name="With Slots"
+    >
+        {WithSlots.bind()}
+    </Story>
+</Canvas>
 
 ## Cherry Picking
 

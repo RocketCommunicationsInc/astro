@@ -19,6 +19,11 @@ import { hasSlot } from '../../utils/utils'
  * @part message - the message of the modal
  * @part confirm-button - the modal's confirm button
  * @part deny-button - the modal's deny button
+ * @part footer - the footer of the modal
+ *
+ * @slot header - the header of the modal
+ * @slot message - the modal's message or content
+ * @slot footer - the footer of the modal
  */
 @Component({
     tag: 'rux-modal',
@@ -46,6 +51,15 @@ export class RuxModal {
      * Text for close button
      */
     @Prop() denyText: string = 'Cancel'
+    /**
+     * Event that is fired when modal opens
+     */
+    @Event({
+        eventName: 'ruxmodalopened',
+        composed: true,
+        bubbles: true,
+    })
+    ruxModalOpened!: EventEmitter<void>
     /**
      * Event that is fired when modal closes
      */
@@ -78,26 +92,27 @@ export class RuxModal {
     handleClick(ev: MouseEvent) {
         const wrapper = this._getWrapper()
         if (ev.composedPath()[0] === wrapper) {
-            this.ruxModalClosed.emit(false)
+            // this.ruxModalClosed.emit(false)
             this.open = false
         }
     }
 
     @Watch('open')
     validateName(isOpen: boolean) {
-        if (isOpen) {
+        if (isOpen && !this.hasFooter) {
             setTimeout(() => {
                 const button = this._getDefaultButton()
                 button && button.focus()
             })
         }
+        this.open ? this.ruxModalOpened.emit() : this.ruxModalClosed.emit()
     }
 
-    private _handleModalChoice(e: MouseEvent) {
+    private _handleModalChoice() {
         // convert string value to boolean
-        const target = e.currentTarget as HTMLElement
-        const choice = target.dataset.value === 'true'
-        this.ruxModalClosed.emit(choice)
+        // const target = e.currentTarget as HTMLElement
+        // const choice = target.dataset.value === 'true'
+        // this.ruxModalClosed.emit(choice)
         this.open = false
     }
 

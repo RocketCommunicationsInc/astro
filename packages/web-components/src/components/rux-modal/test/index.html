@@ -21,5 +21,81 @@
 
     <body>
         <rux-modal open modal-title="hello" modal-message="world"></rux-modal>
+        <rux-modal
+            id="props"
+            modal-message="Props Message"
+            modal-title="Props Title"
+        ></rux-modal>
+        <rux-button id="openprops">Open Props Version</rux-button>
+        <br />
+        <rux-modal id="slots">
+            <span slot="header">Slot Header</span>
+            <div slot="message">
+                <span>Slot Message</span>
+                <rux-input placeholder="input time"></rux-input>
+            </div>
+            <div slot="footer">
+                <rux-button-group h-align="right">
+                    <rux-button secondary>Slot Cancel</rux-button>
+                    <rux-button id="slotconfirm">Slot Confirm</rux-button>
+                </rux-button-group>
+            </div>
+        </rux-modal>
+        <rux-button id="openslots" style="padding: 15px 0px"
+            >Open Slots Version</rux-button
+        >
+        <br />
+        <rux-modal id="mix" modal-title="Mixed" deny-text="Custom Deny Text">
+            <div slot="message">
+                <span>Slot Message</span>
+                <rux-input placeholder="input time"></rux-input>
+            </div>
+            <div slot="footer">
+                <rux-button-group h-align="right">
+                    <rux-button secondary>Slot Cancel</rux-button>
+                    <rux-button>Slot Confirm</rux-button>
+                </rux-button-group>
+            </div>
+        </rux-modal>
+        <rux-button id="openmix">Open Mixed Version</rux-button>
+        <script>
+            const props = document.getElementById('props')
+            const openProps = document.getElementById('openprops')
+
+            openProps.addEventListener('click', () => {
+                props.open = !props.open
+            })
+
+            props.addEventListener('ruxmodalopened', () =>
+                console.log('props ruxmodalopened')
+            )
+            props.addEventListener('ruxmodalclosed', () =>
+                console.log('props ruxmodalclosed')
+            )
+
+            const slots = document.getElementById('slots')
+            const openSlots = document.getElementById('openslots')
+            const slotconfirm = document.getElementById('slotconfirm')
+
+            slotconfirm.addEventListener('click', () => {
+                slots.open = false
+            })
+
+            openSlots.addEventListener('click', () => {
+                slots.open = !slots.open
+            })
+            slots.addEventListener('ruxmodalopened', () =>
+                console.log('heard ruxmodalopened')
+            )
+            slots.addEventListener('ruxmodalclosed', () =>
+                console.log('heard ruxmodalclosed')
+            )
+
+            const mixed = document.getElementById('mix')
+            const openMixed = document.getElementById('openmix')
+            openMixed.addEventListener('click', () => {
+                mixed.open = !mixed.open
+            })
+        </script>
     </body>
 </html>
