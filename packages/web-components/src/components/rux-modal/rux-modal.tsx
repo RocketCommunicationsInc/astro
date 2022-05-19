@@ -102,8 +102,11 @@ export class RuxModal {
         if (isOpen && !this.hasFooter) {
             setTimeout(() => {
                 const button = this._getDefaultButton()
-                button && button.focus()
-            })
+
+                if (button) {
+                    button.focus()
+                }
+            }, 0)
         }
         this.open ? this.ruxModalOpened.emit() : this.ruxModalClosed.emit()
     }
@@ -123,7 +126,10 @@ export class RuxModal {
 
         if (buttonSet.length > 0) {
             const defaultButton = buttonSet[buttonSet.length - 1]
-            return defaultButton
+            //* Need to get the native <button> to focus. This isn't necessary if we add the delegateFocus option to the stencil shadow in Stencil 2.10
+            const shadow = defaultButton.shadowRoot?.querySelector('button')
+
+            if (shadow) return shadow
         }
 
         return null
@@ -141,18 +147,12 @@ export class RuxModal {
     }
 
     connectedCallback() {
-        setTimeout(() => {
-            const button = this._getDefaultButton()
-            button && button.focus()
-        })
         this._handleModalChoice = this._handleModalChoice.bind(this)
     }
 
-    componentDidLoad() {
-        setTimeout(() => {
-            const button = this._getDefaultButton()
-            button && button.focus()
-        })
+    componentDidRender() {
+        const button = this._getDefaultButton()
+        button && button.focus()
     }
 
     render() {

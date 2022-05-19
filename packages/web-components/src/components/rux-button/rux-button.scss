@@ -132,6 +132,7 @@
 
     &:focus {
         outline: none;
+        border: 1px solid white;
     }
 
     &:hover:not([disabled]) {
