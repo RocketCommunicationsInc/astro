@@ -9,23 +9,19 @@
     --segmented-button-text-color: var(--color-background-interactive-default);
 
     /** @prop --segmented-button-border-color: Segmented button border color */
-    --segmented-button-border-color: var(
-        --color-background-interactive-default
-    );
+    --segmented-button-border-color: var(--color-border-interactive-muted);
 
     /** @prop --segmented-button-hover-background-color: Segmented button hover background color */
     --segmented-button-hover-background-color: var(
-        --color-background-base-default
+        --color-background-base-hover
     );
 
     /** @prop --segmented-button-hover-text-color: Segmented button hover text color */
-    --segmented-button-hover-text-color: var(
-        --color-background-interactive-default
-    );
+    --segmented-button-hover-text-color: var(--color-text-interactive-hover);
 
     /** @prop --segmented-button-hover-border-color: Segmented button hover border color */
     --segmented-button-hover-border-color: var(
-        --color-background-interactive-hover
+        --color-border-interactive-muted
     );
 
     /** @prop --segmented-button-selected-background-color: Segmented button selected background color */
@@ -46,12 +42,13 @@
 
     /** @prop --segmented-button-selected-hover-border-color: Segmented button selected hover border color */
     --segmented-button-selected-hover-border-color: var(
-        --color-background-interactive-default
+        --color-border-interactive-muted
     );
 
     /** @prop --segmented-button-border-radius: Segmented button border radius */
     --segmented-button-border-radius: var(--radius-base);
 }
+
 :host([disabled]) {
     opacity: var(--disabled-opacity);
     cursor: not-allowed;
@@ -81,6 +78,7 @@
     list-style: none;
     border-radius: var(--segmented-button-border-radius);
     background-color: var(--segmented-button-background-color);
+
     &--large {
         height: 2.875rem;
     }
@@ -100,6 +98,7 @@
             border-right: none;
         }
     }
+
     // on hover, change the next segment's button left border to hover color.
     &:hover {
         + .rux-segmented-button__segment {
@@ -136,6 +135,7 @@
             outline: none;
         }
     }
+
     .rux-segmented-button-label {
         // Defaults to small in 6.0 - will default to medium in 7
         height: 1.625rem;
@@ -153,10 +153,12 @@
 
     input {
         display: none !important;
+
         &:checked + label {
             background-color: var(--segmented-button-selected-background-color);
             color: var(--segmented-button-selected-text-color);
         }
+
         &:checked:hover + label {
             background-color: var(
                 --segmented-button-selected-hover-background-color
@@ -170,14 +172,17 @@
         border-radius: var(--segmented-button-border-radius) 0 0
             var(--segmented-button-border-radius);
         border-right: none;
+
         &:hover {
             border-color: var(--segmented-button-hover-border-color);
         }
     }
+
     &:last-child label {
         border-radius: 0 var(--segmented-button-border-radius)
             var(--segmented-button-border-radius) 0;
         border-right: 1px solid var(--segmented-button-border-color);
+
         &:hover {
             border-right-color: var(--segmented-button-hover-border-color);
         }
