@@ -20,14 +20,23 @@
     </head>
 
     <body>
-        <div style="padding: 5%">
+        <div style="padding: 2.5% 5%">
             <rux-segmented-button></rux-segmented-button>
         </div>
-        <div style="padding: 5%">
+        <div style="padding: 2.5% 5%">
+            <rux-segmented-button size="small"></rux-segmented-button>
+        </div>
+        <div style="padding: 2.5% 5%">
+            <rux-segmented-button size="medium"></rux-segmented-button>
+        </div>
+        <div style="padding: 2.5% 5%">
+            <rux-segmented-button size="large"></rux-segmented-button>
+        </div>
+        <div style="padding: 2.5% 5%">
             <rux-segmented-button id="disabled" disabled></rux-segmented-button>
         </div>
         <script>
-            const seg = document.querySelector('rux-segmented-button')
+            const segs = document.querySelectorAll('rux-segmented-button')
             const disabled = document.getElementById('disabled')
             const data = [
                 { label: 'First segment' },
@@ -35,13 +44,15 @@
                 { label: 'Third segment' },
             ]
 
-            seg.data = data
-            seg.addEventListener('click', () => {
-                console.log('heard click')
-            })
-            seg.addEventListener('ruxchange', () => {
-                console.log('heard change')
-            })
+            for (let seg of segs) {
+                seg.data = data
+                seg.addEventListener('click', () => {
+                    console.log('heard click')
+                })
+                seg.addEventListener('ruxchange', () => {
+                    console.log('heard change')
+                })
+            }
 
             disabled.data = data
             disabled.addEventListener('click', () => {

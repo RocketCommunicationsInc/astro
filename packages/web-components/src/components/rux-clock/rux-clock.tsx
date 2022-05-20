@@ -26,15 +26,17 @@ export class RuxClock {
     private tzFormat: string = 'z'
     private convertedAos?: string
     private convertedLos?: string
+    private hasRun: boolean = false
 
     @State() _time!: string
+    @State() _rawTime!: Date
     /**
      * When supplied with a valid [date string or value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#syntax) displays a timestamp labeled "AOS" next to the standard clock.
      */
     @Prop() aos?: string
     @Watch('aos')
     updateAos(newValue: string) {
-        this.convertedAos = this._formatLosAos(newValue)
+        this.convertedAos = this._formatLosAosDateIn(newValue)
     }
 
     /**
@@ -43,7 +45,7 @@ export class RuxClock {
     @Prop() los?: string
     @Watch('los')
     updateLos(newValue: string) {
-        this.convertedLos = this._formatLosAos(newValue)
+        this.convertedLos = this._formatLosAosDateIn(newValue)
     }
 
     /**
@@ -75,6 +77,18 @@ export class RuxClock {
     hideLabels: boolean = false
 
     /**
+     * When supplied with a valid [date string or value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#syntax), sets the time and date of the clock.
+     */
+    @Prop({ attribute: 'date-in' }) dateIn?: string
+    @Watch('dateIn')
+    handleDateInChange() {
+        clearTimeout(this._timer)
+        this._rawTime = new Date(this.dateIn!)
+        this._handleDateIn()
+        this._updateTime()
+    }
+
+    /**
      * Applies a smaller clock style.
      */
     @Prop({ reflect: true }) small: boolean = false
@@ -82,8 +96,8 @@ export class RuxClock {
     @Watch('timezone')
     timezoneChanged() {
         this._convertTimezone(this.timezone)
-        if (this.aos) this.convertedAos = this._formatLosAos(this.aos)
-        if (this.los) this.convertedLos = this._formatLosAos(this.los)
+        if (this.aos) this.convertedAos = this._formatLosAosDateIn(this.aos)
+        if (this.los) this.convertedLos = this._formatLosAosDateIn(this.los)
         this._updateTime()
     }
 
@@ -94,11 +108,16 @@ export class RuxClock {
     connectedCallback() {
         this._convertTimezone(this.timezone)
 
-        this._timer = window.setInterval(() => {
-            this._updateTime()
-        }, 1000)
-        if (this.aos) this.convertedAos = this._formatLosAos(this.aos)
-        if (this.los) this.convertedLos = this._formatLosAos(this.los)
+        if (this.dateIn) {
+            this._handleDateIn()
+        } else {
+            this._timer = window.setInterval(() => {
+                this._updateTime()
+            }, 1000)
+        }
+
+        if (this.aos) this.convertedAos = this._formatLosAosDateIn(this.aos)
+        if (this.los) this.convertedLos = this._formatLosAosDateIn(this.los)
     }
 
     disconnectedCallback() {
@@ -119,17 +138,56 @@ export class RuxClock {
         )
     }
 
-    private _updateTime(): void {
-        this._time = this._formatTime(new Date(Date.now()), this._timezone)
+    private _handleDateIn() {
+        this._formatLosAosDateIn(this.dateIn!)
+        this._time = this.dateIn!
+        if (!this._rawTime) this._rawTime = new Date(this.dateIn!)
+        if (this._validateDateIn(this._rawTime)) {
+            this._timer = window.setInterval(() => {
+                this._updateTime()
+            }, 1000)
+        } else {
+            console.warn(
+                `The date-in value of ${this.dateIn} is not a valid date.`
+            )
+        }
+    }
 
-        /**
-         * Date.now() is a unix timestamp of the current time in UTC
-         * We need to convert that to the Clock's defined timezone
-         * before we get the day of the year.
-         */
-        const localDate = new Date(Date.now())
-        const clockDate = utcToZonedTime(localDate, this._timezone)
-        this.dayOfYear = getDayOfYear(clockDate)
+    /**
+     * @param date a Date type to be validated
+     * @returns A boolean representative of if the date provided is valid
+     */
+    private _validateDateIn(date: Date) {
+        //If it's not valid then date.getTime() will be NaN, which isn't equal to itself
+        return date.getTime() === date.getTime()
+    }
+
+    private _updateTime(): void {
+        if (this.dateIn) {
+            if (!this.hasRun) {
+                this._time = this._formatTime(this._rawTime, this._timezone)
+                const clockDate = utcToZonedTime(this._rawTime, this._timezone)
+
+                this.dayOfYear = getDayOfYear(clockDate)
+                this.hasRun = true
+            } else {
+                let seconds = this._rawTime.getSeconds() + 1
+                this._rawTime.setSeconds(seconds)
+                this._time = this._formatTime(this._rawTime, this._timezone)
+                const clockDate = utcToZonedTime(this._rawTime, this._timezone)
+                this.dayOfYear = getDayOfYear(clockDate)
+            }
+        } else {
+            this._time = this._formatTime(new Date(Date.now()), this._timezone)
+            /**
+             * Date.now() is a unix timestamp of the current time in UTC
+             * We need to convert that to the Clock's defined timezone
+             * before we get the day of the year.
+             */
+            const localDate = new Date(Date.now())
+            const clockDate = utcToZonedTime(localDate, this._timezone)
+            this.dayOfYear = getDayOfYear(clockDate)
+        }
     }
 
     /**
@@ -137,10 +195,16 @@ export class RuxClock {
      * @returns A timezone local ISO formatted 24h time string
      */
 
-    private _formatLosAos(dateTime: string | number): string {
+    private _formatLosAosDateIn(dateTime: string | number): string {
         // Check for unix timestamp
         if (new Date(Number(dateTime)).getTime() > 0) {
             dateTime = Number(dateTime)
+            // If date-in is provided and matches the conversion made if it's a unix stamp, then
+            // we need to handle it as a unix stamp.
+            if (this.dateIn && parseInt(this.dateIn) === dateTime) {
+                let d = new Date(dateTime)
+                this._rawTime = d
+            }
         }
         return format(utcToZonedTime(dateTime, this._timezone), 'HH:mm:ss')
     }

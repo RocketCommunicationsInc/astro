@@ -1,5 +1,5 @@
 // DIRECTIVES
-export * from './directives/proxies';
+export * from "./directives/proxies";
 
 // PACKAGE MODULE
-export { AstroComponentsModule } from "./component-library-module"
+export { AstroComponentsModule } from "./component-library-module";

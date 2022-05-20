@@ -125,6 +125,10 @@ export namespace Components {
          */
         "aos"?: string;
         /**
+          * When supplied with a valid [date string or value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#syntax), sets the time and date of the clock.
+         */
+        "dateIn"?: string;
+        /**
           * Hides the day of the year.
          */
         "hideDate": boolean;
@@ -20406,6 +20410,10 @@ declare namespace LocalJSX {
           * When supplied with a valid [date string or value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#syntax) displays a timestamp labeled "AOS" next to the standard clock.
          */
         "aos"?: string;
+        /**
+          * When supplied with a valid [date string or value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#syntax), sets the time and date of the clock.
+         */
+        "dateIn"?: string;
         /**
           * Hides the day of the year.
          */
