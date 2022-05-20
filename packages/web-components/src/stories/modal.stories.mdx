@@ -109,9 +109,10 @@ boilerplate for some things that are built in with the default method.
 ### Opening and Closing
 
 The `open` prop of `rux-modal` is mutable and can be changed accordingly. Here's an example of how you could do that 
-using the a `rux-button` in the `footer` slot.
+using a `rux-button` to open the modal, and another `rux-button` in the `footer` slot to close it.
 
 ```js
+<rux-button id="open">Open Modal</rux-button>
 <rux-modal id="modal" open>
     <div slot="header">Modal Header</div>
     <span slot="message">Modal message here!</span>
@@ -120,8 +121,12 @@ using the a `rux-button` in the `footer` slot.
     </div>
 </rux-modal>
 <script>
+    const openModal = document.getElementById('open')
     const modal = document.getElementById('modal');
     const confirm = document.getElementById('confirm')
+    openModal.addEventListener('click', () => { 
+        modal.open = true;
+    })
     confirm.addEventListener('click', () => {
         modal.open = false;
     })
@@ -131,7 +136,7 @@ using the a `rux-button` in the `footer` slot.
 ### Applying Focus
 
 Often times when a modal opens, you want to focus a specific element like a confirm or cancel button. 
-Here's a simple way to do that
+Here's a simple way to do that if you're using slots to customize the footer.
 
 ```js
 <rux-button id="open">Open Modal</rux-button>
