@@ -98,13 +98,12 @@ export class RuxModal {
     }
 
     @Watch('open')
-    validateName(isOpen: boolean) {
+    handleOpen(isOpen: boolean) {
         //? This is preventing the default focusing of a button if the footer slot exists.
         //? I thought about runninng it anyway, but it could lead to cases where an unintentional button gets focused.
         if (isOpen && !this.hasFooter) {
             setTimeout(() => {
                 const button = this._getDefaultButton()
-
                 if (button) {
                     button.focus()
                 }
@@ -115,9 +114,10 @@ export class RuxModal {
 
     private _handleModalChoice(e: MouseEvent) {
         // convert string value to boolean
-        // const target = e.currentTarget as HTMLElement
-        // const choice = target.dataset.value === 'true'
-        // this.ruxModalClosed.emit(choice)
+        const target = e.currentTarget as HTMLElement
+        const choice = target.dataset.value === 'true'
+        this.ruxModalClosed.emit(choice)
+
         this.open = false
     }
 
