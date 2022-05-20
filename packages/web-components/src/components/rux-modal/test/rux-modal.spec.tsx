@@ -33,4 +33,16 @@ describe('rux-modal', () => {
         })
         expect(page.root).toMatchSnapshot()
     })
+    it('renders with a mix of slots and props', async () => {
+        const page = await newSpecPage({
+            components: [RuxModal],
+            html: `
+            <rux-modal modal-title="Title">
+                <div slot="message">Message</div>
+                <div slot="footer">Footer</div>
+            </rux-modal>
+            `,
+        })
+        expect(page.root).toMatchSnapshot()
+    })
 })

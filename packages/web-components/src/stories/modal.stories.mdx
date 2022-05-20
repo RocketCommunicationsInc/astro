@@ -149,7 +149,7 @@ Here's a simple way to do that
     const confirm = document.getElementById('confirm')
     modal.addEventListener('ruxmodalopened', () => {
         //Find the native button that is in the shadow dom
-        const shadowBtn = confirm.shadowRoot.querySelector('butotn');
+        const shadowBtn = confirm.shadowRoot.querySelector('button');
         setTimeout(() => {
             shadowBtn.focus()
         })

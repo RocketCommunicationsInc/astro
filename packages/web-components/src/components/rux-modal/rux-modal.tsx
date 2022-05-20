@@ -112,12 +112,7 @@ export class RuxModal {
         this.open ? this.ruxModalOpened.emit() : this.ruxModalClosed.emit()
     }
 
-    private _handleModalChoice(e: MouseEvent) {
-        // convert string value to boolean
-        const target = e.currentTarget as HTMLElement
-        const choice = target.dataset.value === 'true'
-        this.ruxModalClosed.emit(choice)
-
+    private _handleModalChoice() {
         this.open = false
     }
 
@@ -203,7 +198,6 @@ export class RuxModal {
                                         <rux-button
                                             secondary={confirmText.length > 0}
                                             onClick={_handleModalChoice}
-                                            data-value="false"
                                             hidden={!denyText}
                                             tabindex="-1"
                                             exportparts="container:deny-button"
@@ -212,7 +206,6 @@ export class RuxModal {
                                         </rux-button>
                                         <rux-button
                                             onClick={_handleModalChoice}
-                                            data-value="true"
                                             hidden={!confirmText}
                                             tabindex="0"
                                             exportparts="container:confirm-button"
