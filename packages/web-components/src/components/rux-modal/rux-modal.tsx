@@ -92,15 +92,12 @@ export class RuxModal {
     handleClick(ev: MouseEvent) {
         const wrapper = this._getWrapper()
         if (ev.composedPath()[0] === wrapper) {
-            // this.ruxModalClosed.emit(false)
             this.open = false
         }
     }
 
     @Watch('open')
     handleOpen(isOpen: boolean) {
-        //? This is preventing the default focusing of a button if the footer slot exists.
-        //? I thought about runninng it anyway, but it could lead to cases where an unintentional button gets focused.
         if (isOpen && !this.hasFooter) {
             setTimeout(() => {
                 const button = this._getDefaultButton()
@@ -123,7 +120,6 @@ export class RuxModal {
 
         if (buttonSet.length > 0) {
             const defaultButton = buttonSet[buttonSet.length - 1]
-            //* Need to get the native <button> to focus. This isn't necessary if we add the delegateFocus option to the stencil shadow in Stencil 2.10
             const shadow = defaultButton.shadowRoot?.querySelector('button')
 
             if (shadow) return shadow
