@@ -19,25 +19,5 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body>
-        <rux-button id="open">Open</rux-button>
-        <rux-modal id="modal" modal-title="title"> </rux-modal>
-        <script>
-            const open = document.getElementById('open')
-            const modal = document.getElementById('modal')
-
-            open.addEventListener('click', () => {
-                modal.open = true
-            })
-            const attatch = document.createElement('span')
-            attatch.textContent = 'Slot Message!'
-            modal.addEventListener('ruxmodalopened', () => {
-                setTimeout(() => {
-                    // modal.setAttribute('modal-title', 'Title!')
-                    modal.appendChild(attatch)
-                    console.log('append')
-                }, 1000)
-            })
-        </script>
-    </body>
+    <body></body>
 </html>
