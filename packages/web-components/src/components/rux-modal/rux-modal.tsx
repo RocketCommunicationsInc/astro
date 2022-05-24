@@ -24,7 +24,7 @@ import { hasSlot } from '../../utils/utils'
  * @part footer - the footer of the modal
  *
  * @slot header - the header of the modal
- * @slot message - the modal's message or content
+ * @slot (default) - the modal's message or content
  * @slot footer - the footer of the modal
  */
 @Component({
@@ -76,7 +76,7 @@ export class RuxModal {
 
     @State() hasFooter = hasSlot(this.element, 'footer')
     @State() hasHeader = hasSlot(this.element, 'header')
-    @State() hasMessage = hasSlot(this.element, 'message')
+    @State() hasMessage = hasSlot(this.element)
 
     // confirm dialog if Enter key is pressed
     @Listen('keydown', { target: 'window' })
@@ -153,7 +153,7 @@ export class RuxModal {
 
     private _handleSlotChange() {
         this.hasHeader = hasSlot(this.element, 'header')
-        this.hasMessage = hasSlot(this.element, 'message')
+        this.hasMessage = hasSlot(this.element)
         this.hasFooter = hasSlot(this.element, 'footer')
     }
 
@@ -203,10 +203,7 @@ export class RuxModal {
                                     }}
                                     part="message"
                                 >
-                                    <slot
-                                        name="message"
-                                        onSlotchange={this._handleSlotChange}
-                                    >
+                                    <slot onSlotchange={this._handleSlotChange}>
                                         {modalMessage}
                                     </slot>
                                 </div>

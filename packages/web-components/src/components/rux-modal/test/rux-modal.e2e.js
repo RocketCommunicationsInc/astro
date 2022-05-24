@@ -105,4 +105,18 @@ describe('Modal', () => {
             .find('.rux-modal__wrapper')
             .should('not.exist')
     })
+    it('should be able to dynamically add slots', () => {
+        cy.get('rux-modal').then(($modal) => {
+            $modal[0].setAttribute('open', false)
+        })
+        cy.get('#dyn').click()
+        cy.get('#change').find('.test')
+        cy.get('#change')
+            .shadow()
+            .find('.rux-modal__wrapper')
+            .find('dialog')
+            .find('.rux-modal__footer')
+            .children()
+            .should('have.length', '1')
+    })
 })
