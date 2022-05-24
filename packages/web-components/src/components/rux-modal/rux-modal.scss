@@ -117,6 +117,15 @@ rux-button-group {
     .rux-button {
         box-shadow: none !important;
     }
+    &__header.hidden {
+        display: none;
+    }
+    &__message.hidden {
+        display: none;
+    }
+    &__footer.hidden {
+        display: none;
+    }
 }
 
 rux-icon {
