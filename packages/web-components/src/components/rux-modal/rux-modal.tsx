@@ -192,28 +192,25 @@ export class RuxModal {
                                     {modalTitle}
                                 </slot>
                             </header>
-                            {modalMessage || this.hasMessage ? (
-                                <div class="rux-modal__content" part="message">
-                                    <div
-                                        class={{
-                                            hidden:
-                                                !this.hasMessage &&
-                                                modalMessage === undefined,
-                                            'rux-modal__message': true,
-                                        }}
-                                        part="message"
+
+                            <div class="rux-modal__content" part="message">
+                                <div
+                                    class={{
+                                        hidden:
+                                            !this.hasMessage &&
+                                            modalMessage === undefined,
+                                        'rux-modal__message': true,
+                                    }}
+                                    part="message"
+                                >
+                                    <slot
+                                        name="message"
+                                        onSlotchange={this._handleSlotChange}
                                     >
-                                        <slot
-                                            name="message"
-                                            onSlotchange={
-                                                this._handleSlotChange
-                                            }
-                                        >
-                                            {modalMessage}
-                                        </slot>
-                                    </div>
+                                        {modalMessage}
+                                    </slot>
                                 </div>
-                            ) : null}
+                            </div>
                             <footer
                                 class={{
                                     'rux-modal__footer': true,

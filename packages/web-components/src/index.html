@@ -21,8 +21,7 @@
 
     <body>
         <rux-button id="open">Open</rux-button>
-        <rux-modal id="modal" modal-message="Message" modal-title="title">
-        </rux-modal>
+        <rux-modal id="modal" modal-title="title"> </rux-modal>
         <script>
             const open = document.getElementById('open')
             const modal = document.getElementById('modal')
@@ -31,14 +30,14 @@
                 modal.open = true
             })
             const attatch = document.createElement('span')
-            attatch.textContent = 'Slot Footer!'
-            attatch.slot = 'footer'
+            attatch.textContent = 'Slot Message!'
+            attatch.slot = 'message'
             modal.addEventListener('ruxmodalopened', () => {
-                // setTimeout(() => {
-                //     // modal.setAttribute('modal-title', 'Title!')
-                //     modal.appendChild(attatch)
-                //     console.log('append')
-                // }, 1000)
+                setTimeout(() => {
+                    // modal.setAttribute('modal-title', 'Title!')
+                    modal.appendChild(attatch)
+                    console.log('append')
+                }, 1000)
             })
         </script>
     </body>
