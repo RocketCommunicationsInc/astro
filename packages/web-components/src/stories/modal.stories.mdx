@@ -8,7 +8,7 @@ import { html, render } from 'lit-html'
     argTypes={extractArgTypes('rux-modal')}
     parameters={{
         actions: {
-            handles: ['ruxmodalclosed rux-modal'],
+            handles: ['ruxmodalclosed rux-modal', 'ruxmodalopened rux-modal'],
         },
     }}
 />
@@ -53,6 +53,120 @@ export const Modal = (args) => {
 ## API
 
 <ArgsTable of="rux-modal" />
+
+### Variants
+
+export const WithSlots = (args) => {
+    return html`
+    <style>
+        rux-modal::part(message){
+            padding: 0.5rem;
+        }
+    </style>
+<div style="display: flex; flex-direction: column; justify-content: center;">
+<rux-modal
+    ?open="${args.open}"
+>
+    <span slot="header">Slot Header</span>
+    <div slot="message" style="display: flex; flex-direction: column;">
+        <span style="margin-bottom: 10px;">Slot Message</span>
+        <rux-input label="Input"></rux-input>
+    </div>
+    <div slot="footer" style="display: flex; justify-content: space-between; align-items: center;">
+        <a href="astrouxds.com">Link</a>
+        <rux-button-group h-align="right">
+            <rux-button secondary>Cancel</rux-button>
+            <rux-button>Confirm</rux-button>
+        </rux-button-group>
+    </div>
+</rux-modal>
+</div>
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+            open: true,
+        }}
+        argTypes={{
+            modalTitle: { table: { disable: true}},
+            modalMessage: { table: { disable: true}},
+            confirmText: { table: { disable: true}},
+            denyText: { table: { disable: true}}
+        }}
+        name="With Slots"
+    >
+        {WithSlots.bind()}
+    </Story>
+</Canvas>
+
+## Opening, Closing and Focusing with Slots
+
+Using slots in the modal allows for near complete customization of the component, but also requires a bit more
+boilerplate for some things that are built in with the default method. 
+
+### Opening and Closing
+
+The `open` prop of `rux-modal` is mutable and can be changed accordingly. Here's an example of how you could do that 
+using a `rux-button` to open the modal, and another `rux-button` in the `footer` slot to close it.
+
+```js
+<rux-button id="open">Open Modal</rux-button>
+<rux-modal id="modal" open>
+    <div slot="header">Modal Header</div>
+    <span slot="message">Modal message here!</span>
+    <div slot="footer">
+        <rux-button id="confirm">Confirm</rux-button>
+    </div>
+</rux-modal>
+<script>
+    const openModal = document.getElementById('open')
+    const modal = document.getElementById('modal');
+    const confirm = document.getElementById('confirm')
+    openModal.addEventListener('click', () => { 
+        modal.open = true;
+    })
+    confirm.addEventListener('click', () => {
+        modal.open = false;
+    })
+</script>
+```
+
+### Applying Focus
+
+Often times when a modal opens, you want to focus a specific element like a confirm or cancel button. 
+Here's a simple way to do that if you're using slots to customize the footer.
+
+```js
+<rux-button id="open">Open Modal</rux-button>
+<rux-modal id="modal">
+    <div slot="header">Modal Header</div>
+    <p slot="message">Modal message here!</p>
+    <div slot="footer">
+        <rux-button id="confirm">Confirm</rux-button>
+    </div>
+</rux-modal>
+
+<script>
+    const modal = document.getElementById('modal')
+    const open = document.getElementById('open')
+    const confirm = document.getElementById('confirm')
+    modal.addEventListener('ruxmodalopened', () => {
+        //Find the native button that is in the shadow dom
+        const shadowBtn = confirm.shadowRoot.querySelector('button');
+        setTimeout(() => {
+            shadowBtn.focus()
+        })
+    })
+    confirm.addEventListener('click', () => {
+        modal.open = false
+    })
+    open.addEventListener('click', () => {
+        modal.open = true
+    })
+</script>
+```
 
 ## Cherry Picking
 

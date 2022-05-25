@@ -67,6 +67,16 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 | Event            | Description                           | Type                   |
 | ---------------- | ------------------------------------- | ---------------------- |
 | `ruxmodalclosed` | Event that is fired when modal closes | `CustomEvent<boolean>` |
+| `ruxmodalopened` | Event that is fired when modal opens  | `CustomEvent<void>`    |
+
+
+## Slots
+
+| Slot          | Description                    |
+| ------------- | ------------------------------ |
+| `"(default)"` | the modal's message or content |
+| `"footer"`    | the footer of the modal        |
+| `"header"`    | the header of the modal        |
 
 
 ## Shadow Parts
@@ -77,6 +87,7 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 | `"container"`      | the modal container                                            |
 | `"deny-button"`    | the modal's deny button                                        |
 | `"dialog"`         | the native dialog element                                      |
+| `"footer"`         | the footer of the modal                                        |
 | `"header"`         | the header of the modal                                        |
 | `"message"`        | the message of the modal                                       |
 | `"wrapper"`        | the modal wrapper overlay ! DEPRECATED IN FAVOR OF CONTAINER ! |

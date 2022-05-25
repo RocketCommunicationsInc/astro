@@ -21406,6 +21406,10 @@ export class RuxMenuItemDivider {
 
 export declare interface RuxModal extends Components.RuxModal {
   /**
+   * Event that is fired when modal opens 
+   */
+  ruxmodalopened: EventEmitter<CustomEvent<void>>;
+  /**
    * Event that is fired when modal closes 
    */
   ruxmodalclosed: EventEmitter<CustomEvent<boolean>>;
@@ -21426,7 +21430,7 @@ export class RuxModal {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['ruxmodalclosed']);
+    proxyOutputs(this, this.el, ['ruxmodalopened', 'ruxmodalclosed']);
   }
 }
 
