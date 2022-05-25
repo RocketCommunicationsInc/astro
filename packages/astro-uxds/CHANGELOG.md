@@ -1,5 +1,17 @@
 # @astrouxds/astrouxds
 
+## 6.8.0
+
+### Minor Changes
+
+- 7fba14ed: Modal - Added in slots for message, title and footer to allow for more customization.
+- c1463b4d: Clock - Added a 'date-in' prop that allows the clock to be set to increment from a specific date.
+
+### Patch Changes
+
+- b3129f02: Switch - Fix issue where label was breaking out of the container
+- 82b312cd: Select - Updated styles for better use on Windows OS and Firefox browsers
+
 ## 6.7.0
 
 ### Minor Changes

@@ -1,5 +1,22 @@
 # @astrouxds/react
 
+## 6.8.0
+
+### Minor Changes
+
+- 7fba14ed: Modal - Added in slots for message, title and footer to allow for more customization.
+- c1463b4d: Clock - Added a 'date-in' prop that allows the clock to be set to increment from a specific date.
+
+### Patch Changes
+
+- b3129f02: Switch - Fix issue where label was breaking out of the container
+- 82b312cd: Select - Updated styles for better use on Windows OS and Firefox browsers
+- Updated dependencies [b3129f02]
+- Updated dependencies [7fba14ed]
+- Updated dependencies [82b312cd]
+- Updated dependencies [c1463b4d]
+  - @astrouxds/astro-web-components@6.8.0
+
 ## 6.7.0
 
 ### Minor Changes
