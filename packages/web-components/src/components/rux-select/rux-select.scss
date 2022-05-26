@@ -65,9 +65,7 @@
     --select-menu-border-focus-color: var(--color-background-interactive-hover);
 
     /** @prop --select-menu-invalid-border-color: Border Color of the Invalid Select Input */
-    --select-menu-invalid-border-color: var(
-        --status-symbol-color-fill-critical
-    );
+    --select-menu-invalid-border-color: var(--color-text-error);
 
     /** @prop --select-menu-text-color: Text Color of the Select Input */
     --select-menu-text-color: var(--color-background-interactive-default);
