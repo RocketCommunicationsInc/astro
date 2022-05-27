@@ -35,6 +35,6 @@
     border: 1px solid var(--checkboxgroup-border-color);
     border-radius: var(--radius-base);
     &--invalid {
-        border: 1px solid var(--status-symbol-color-fill-critical);
+        border: 1px solid var(--color-text-error);
     }
 }

@@ -38,7 +38,7 @@
     font-size: var(--font-body-1-font-size);
     font-weight: var(--font-body-1-font-weight);
     letter-spacing: var(--font-body-1-letter-spacing);
-    color: var(--tree-text-color);
+    color: var(--color-text-primary);
     user-select: none;
     display: block;
 }
@@ -212,5 +212,5 @@
 .selected {
     width: 5px;
     height: 100%;
-    background-color: var(--color-interactive-default);
+    background-color: var(--color-background-interactive-default);
 }
