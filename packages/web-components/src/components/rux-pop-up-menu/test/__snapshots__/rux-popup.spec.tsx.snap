@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rux-pop-up-menu renders 1`] = `
+<rux-pop-up-menu aria-hidden="true">
+  <mock:shadow-root>
+    <div class="rux-popup" part="container">
+      <div class="rux-popup__trigger" part="trigger-container">
+        <slot name="trigger"></slot>
+      </div>
+      <div class="hidden rux-popup__content" part="popup-content">
+        <div class="rux-popup-arrow" part="arrow"></div>
+        <slot></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+</rux-pop-up-menu>
+`;

@@ -1070,6 +1070,7 @@ export const DIRECTIVES = [
   d.RuxIndeterminateProgress,
   d.RuxInput,
   d.RuxLog,
+  d.RuxMenu,
   d.RuxMenuItem,
   d.RuxMenuItemDivider,
   d.RuxModal,

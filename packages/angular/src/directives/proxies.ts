@@ -46,6 +46,23 @@ export class RuxButtonGroup {
 }
 
 
+export declare interface RuxCard extends Components.RuxCard {}
+
+
+@Component({
+  selector: 'rux-card',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class RuxCard {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface RuxCheckbox extends Components.RuxCheckbox {
   /**
    * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) 
@@ -133,6 +150,23 @@ export declare interface RuxClock extends Components.RuxClock {}
   inputs: ['aos', 'hideDate', 'hideLabels', 'hideTimezone', 'los', 'small', 'timezone']
 })
 export class RuxClock {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface RuxContainer extends Components.RuxContainer {}
+
+
+@Component({
+  selector: 'rux-container',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class RuxContainer {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -21301,6 +21335,23 @@ export class RuxIconZoomOutMap {
 }
 
 
+export declare interface RuxIndeterminateProgress extends Components.RuxIndeterminateProgress {}
+
+
+@Component({
+  selector: 'rux-indeterminate-progress',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class RuxIndeterminateProgress {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface RuxInput extends Components.RuxInput {
   /**
    * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) 
@@ -21360,22 +21411,39 @@ export class RuxLog {
 }
 
 
+export declare interface RuxMenu extends Components.RuxMenu {}
+
+
+@Component({
+  selector: 'rux-menu',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class RuxMenu {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface RuxMenuItem extends Components.RuxMenuItem {
   /**
-   * Emitted when item is clicked. Ex `{value : 10}` 
+   * When a rux-menu item is selected, emits the value of that item. 
    */
   ruxmenuitemselected: EventEmitter<CustomEvent<object>>;
 
 }
 
 @ProxyCmp({
-  inputs: ['disabled', 'download', 'href', 'rel', 'target', 'value']
+  inputs: ['disabled', 'selected', 'value']
 })
 @Component({
   selector: 'rux-menu-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'download', 'href', 'rel', 'target', 'value']
+  inputs: ['disabled', 'selected', 'value']
 })
 export class RuxMenuItem {
   protected el: HTMLElement;
@@ -21409,24 +21477,28 @@ export declare interface RuxModal extends Components.RuxModal {
    * Event that is fired when modal closes 
    */
   ruxmodalclosed: EventEmitter<CustomEvent<boolean>>;
+  /**
+   * Event that is fired when modal opens 
+   */
+  ruxmodalopened: EventEmitter<CustomEvent<boolean>>;
 
 }
 
 @ProxyCmp({
-  inputs: ['confirmText', 'denyText', 'modalMessage', 'modalTitle', 'open']
+  inputs: ['clickToClose', 'open']
 })
 @Component({
   selector: 'rux-modal',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['confirmText', 'denyText', 'modalMessage', 'modalTitle', 'open']
+  inputs: ['clickToClose', 'open']
 })
 export class RuxModal {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['ruxmodalclosed']);
+    proxyOutputs(this, this.el, ['ruxmodalclosed', 'ruxmodalopened']);
   }
 }
 
@@ -21540,40 +21612,28 @@ export class RuxOptionGroup {
 
 export declare interface RuxPopUpMenu extends Components.RuxPopUpMenu {
   /**
-   * Emitted when the menu is about to open. 
+   * emits the value of the selected rux-menu-item inside of rux-pop-up-menu 
    */
-  ruxmenuwillopen: EventEmitter<CustomEvent<void>>;
-  /**
-   * Emitted when the menu is about to close 
-   */
-  ruxmenuwillclose: EventEmitter<CustomEvent<void>>;
-  /**
-   * Emitted when the menu is open. 
-   */
-  ruxmenudidopen: EventEmitter<CustomEvent<void>>;
-  /**
-   * Emitted when the menu is closed. 
-   */
-  ruxmenudidclose: EventEmitter<CustomEvent<void>>;
+  ruxpopupmenuselected: EventEmitter<CustomEvent<any>>;
 
 }
 
 @ProxyCmp({
-  inputs: ['anchorEl', 'open', 'triggerEl'],
-  methods: ['isOpen', 'show', 'close', 'toggle']
+  inputs: ['open', 'placement', 'strategy'],
+  methods: ['show', 'hide']
 })
 @Component({
   selector: 'rux-pop-up-menu',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['anchorEl', 'open', 'triggerEl']
+  inputs: ['open', 'placement', 'strategy']
 })
 export class RuxPopUpMenu {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['ruxmenuwillopen', 'ruxmenuwillclose', 'ruxmenudidopen', 'ruxmenudidclose']);
+    proxyOutputs(this, this.el, ['ruxpopupmenuselected']);
   }
 }
 

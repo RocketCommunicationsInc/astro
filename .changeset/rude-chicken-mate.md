@@ -1,5 +1,4 @@
 ---
-"@astrouxds/ag-grid-theme": major
 "@astrouxds/angular": major
 "astro-website": major
 "@astrouxds/react": major
