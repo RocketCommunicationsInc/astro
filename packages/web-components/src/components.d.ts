@@ -11957,11 +11957,8 @@ export namespace Components {
          */
         "timezone": string;
     }
-<<<<<<< HEAD
-=======
     interface RuxMenu {
     }
->>>>>>> next
     interface RuxMenuItem {
         /**
           * sets the menu item as disabled
@@ -12046,7 +12043,7 @@ export namespace Components {
          */
         "closeAfter"?: number;
         /**
-          * Prevents the user from dismissing the notification. Hides the `close` slot.
+          * Prevents the user from dismissing the notification. Hides the `actions` slot.
          */
         "hideClose": boolean;
         /**
@@ -32360,7 +32357,7 @@ declare namespace LocalJSX {
          */
         "closeAfter"?: number;
         /**
-          * Prevents the user from dismissing the notification. Hides the `close` slot.
+          * Prevents the user from dismissing the notification. Hides the `actions` slot.
          */
         "hideClose"?: boolean;
         /**

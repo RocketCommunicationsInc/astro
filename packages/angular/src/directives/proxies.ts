@@ -21552,13 +21552,13 @@ export declare interface RuxNotification extends Components.RuxNotification {
 }
 
 @ProxyCmp({
-  inputs: ['closeAfter', 'message', 'open', 'small', 'status']
+  inputs: ['closeAfter', 'hideClose', 'message', 'open', 'small', 'status']
 })
 @Component({
   selector: 'rux-notification',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['closeAfter', 'message', 'open', 'small', 'status']
+  inputs: ['closeAfter', 'hideClose', 'message', 'open', 'small', 'status']
 })
 export class RuxNotification {
   protected el: HTMLElement;
