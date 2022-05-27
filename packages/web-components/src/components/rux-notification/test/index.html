@@ -17,7 +17,21 @@
         <script nomodule src="/build/astro-web-components.js"></script>
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
+        <style>
+            .wrapper {
+                position: relative;
+                overflow: hidden;
+                width: 800px;
+                height: 70px;
+                margin-bottom: 1rem;
+            }
+
+            .wrapper--small {
+                height: 44px;
+            }
+        </style>
     </head>
+
     <body>
         <section>
             <h2>Default</h2>
@@ -39,7 +53,135 @@
                     close-after="100"
                     status="caution"
                     message="testing time"
-                ></rux-notification>
+                >
+                </rux-notification>
+            </div>
+        </section>
+
+        <section>
+            <div class="wrapper">
+                <rux-notification open status="normal">
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper wrapper--small">
+                <rux-notification open small status="normal">
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open status="caution">
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper wrapper--small">
+                <rux-notification open small status="caution">
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+
+            <div class="wrapper">
+                <rux-notification open status="serious">
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper wrapper--small">
+                <rux-notification open small status="serious">
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open status="critical">
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper wrapper--small">
+                <rux-notification open small status="critical">
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open status="standby">
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper wrapper--small">
+                <rux-notification open small status="standby">
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open status="off">
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper wrapper--small">
+                <rux-notification open small status="off">
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open>
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper wrapper--small">
+                <rux-notification open small>
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+        </section>
+
+        <section>
+            <div class="wrapper">
+                <rux-notification open status="caution">
+                    <rux-classification-marking
+                        marking="secret"
+                        tag
+                        slot="prefix"
+                    ></rux-classification-marking>
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+        </section>
+
+        <section>
+            <h2>With Actions Slot</h2>
+            <div style="position: relative; overflow: hidden; height: 70px">
+                <rux-notification open status="critical" message="whatup">
+                    <rux-button slot="actions">Close</rux-button>
+                </rux-notification>
+            </div>
+        </section>
+
+        <section>
+            <div
+                style="
+                    position: relative;
+                    overflow: hidden;
+                    width: 800px;
+                    height: 70px;
+                "
+            >
+                <rux-notification open status="off">
+                    Notification banner
+                    <rux-button slot="actions">Acknowledge</rux-button>
+                </rux-notification>
             </div>
         </section>
     </body>

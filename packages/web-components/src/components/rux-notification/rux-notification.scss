@@ -4,103 +4,168 @@
   */
     --notification-text-color: var(--color-palette-neutral-1000);
 
-    /**
-    * @prop --notification-icon-color: The 'clear' icon's color
-    */
+    --notification-banner-color-border: var(--color-border-interactive-default);
+    --notification-banner-color-background: var(
+        --color-background-base-default
+    );
+    --notification-banner-border-width-left: 12px;
+    --notification-banner-radius-outer: var(--radius-base);
+    --notification-banner-radius-inner: 3px;
+    --notification-banner-border-width-large: 4px;
+    --notification-banner-padding: 0 0.5rem 0 1rem; //0 8px 0 16px
+    --notification-banner-border-width-small: 2px;
+    --notification-banner-inner-border-width: 1px;
 
+    /**
+        * @prop --height: the Notification's height
+        */
+    --height: 4.375rem; // 70px;
+
+    display: contents;
+}
+
+:host([hidden]),
+.hidden {
+    display: none;
+}
+
+.rux-notification-banner {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    flex-grow: 1;
     align-items: center;
     align-content: center;
-    top: -4.375rem;
+    border-radius: var(--notification-banner-radius-outer);
+    background: var(--notification-banner-color-border);
     left: 0;
-    height: 4.375rem;
     width: 100%;
     position: absolute;
-    background-color: var(--notification-banner-color-background-standby);
     transition: top 0.5s ease;
     box-sizing: border-box;
+    top: calc(var(--height) * -1);
+    height: var(--height);
+}
+
+.rux-notification-banner__inner {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    border-radius: var(--notification-banner-radius-inner);
+    border: var(--notification-banner-inner-border-width) solid;
+    background: var(--color-background-base-default);
+    height: 100%;
+    padding: var(--notification-banner-padding);
+}
+
+.rux-notification-banner__prefix:not(.hidden) {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem; //16px
+}
+
+.rux-notification-banner__status.rux-notification-banner--hasPrefixLabel {
+    margin-left: 1rem; //16px
+}
+.rux-notification-banner__status {
+    margin-right: 1rem; //16px
+}
+
+.rux-notification-banner__actions {
+    margin-left: auto;
+    display: flex;
+}
+
+/* ----- Large ----- */
+
+.rux-notification-banner--large {
+    border: var(--notification-banner-border-width-large) solid
+        var(--notification-banner-color-border);
+    border-left-width: calc(
+        var(--notification-banner-border-width-left) -
+            var(--notification-banner-inner-border-width)
+    );
+    .rux-notification-banner__inner {
+        border-color: var(--notification-banner-color-border);
+    }
+}
+
+.rux-notification-banner--large .rux-notification-banner__content {
     font-family: var(--font-heading-5-font-family);
     font-size: var(--font-heading-5-font-size);
     font-weight: var(--font-heading-5-font-weight);
     letter-spacing: var(--font-heading-5-letter-spacing);
-    color: var(--notification-text-color);
-    rux-icon {
-        align-items: center;
-        justify-content: flex-end;
-        padding: 0 1.25rem 0 0.625rem;
-    }
-    .rux-notification__message {
-        padding: 1.063rem 1.25rem; //17px 20px
-        white-space: nowrap;
-        overflow: hidden;
+    line-height: var(--font-heading-5-line-height);
+}
+
+/* ----- Small ----- */
+
+.rux-notification-banner--small {
+    --height: 2.75rem; // 44px;
+    border: var(--notification-banner-border-width-small) solid
+        var(--notification-banner-color-border);
+    border-left-width: var(--notification-banner-border-width-left);
+    .rux-notification-banner__inner {
+        border-color: var(--notification-banner-color-border);
     }
 }
 
-:host([hidden]) {
-    display: none;
-}
-
-:host(.rux-notification-banner-0ba5409c--open) {
-    top: 0;
-}
-:host(.rux-notification-banner--small) {
-    height: 2rem;
+.rux-notification-banner--small .rux-notification-banner__content {
     font-family: var(--font-body-1-font-family);
-    font-weight: var(--font-body-1-font-weight);
     font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
     letter-spacing: var(--font-body-1-letter-spacing);
     line-height: var(--font-body-1-line-height);
-    font-weight: var(--font-body-1-font-weight);
-
-    .rux-notification__message {
-        padding: 0.406rem 0.625rem; //6.5px 10px
-    }
-}
-.rux-notification__message {
-    padding: 1.063rem 0; //17 0
 }
 
-//TODO: When tokens are made for the icon color, replace the hard coded values below.
+.rux-notification-banner--open {
+    top: 0;
+}
 
-:host([status='off']) {
-    background-color: var(--notification-banner-color-background-off);
-    rux-icon {
-        color: var(--notification-banner-icon-color-fill-off);
+/* ----- Status Variants ----- */
+
+.rux-notification-banner--critical {
+    border-color: var(--color-status-critical);
+    background: var(--color-status-critical);
+    .rux-notification-banner__inner {
+        border-color: var(--color-status-critical);
     }
 }
 
-:host([status='standby']) {
-    background-color: var(--notification-banner-color-background-standby);
-    rux-icon {
-        color: var(--notification-banner-icon-color-fill-standby);
+.rux-notification-banner--caution {
+    border-color: var(--color-status-caution);
+    background: var(--color-status-caution);
+    .rux-notification-banner__inner {
+        border-color: var(--color-status-caution);
     }
 }
 
-:host([status='normal']) {
-    background-color: var(--notification-banner-color-background-normal);
-    rux-icon {
-        color: var(--notification-banner-icon-color-fill-normal);
-    }
-}
-:host([status='caution']) {
-    background-color: var(--notification-banner-color-background-caution);
-    rux-icon {
-        color: var(--notification-banner-icon-color-fill-caution);
+.rux-notification-banner--serious {
+    border-color: var(--color-status-serious);
+    background: var(--color-status-serious);
+    .rux-notification-banner__inner {
+        border-color: var(--color-status-serious);
     }
 }
 
-:host([status='serious']) {
-    background-color: var(--notification-banner-color-background-serious);
-    rux-icon {
-        color: var(--notification-banner-icon-color-fill-serious);
+.rux-notification-banner--normal {
+    border-color: var(--color-status-normal);
+    background: var(--color-status-normal);
+    .rux-notification-banner__inner {
+        border-color: var(--color-status-normal);
     }
 }
-:host([status='critical']) {
-    background-color: var(--notification-banner-color-background-critical);
-    rux-icon {
-        color: var(--notification-banner-icon-color-fill-critical);
+
+.rux-notification-banner--standby {
+    border-color: var(--color-status-standby);
+    background: var(--color-status-standby);
+    .rux-notification-banner__inner {
+        border-color: var(--color-status-standby);
+    }
+}
+
+.rux-notification-banner--off {
+    border-color: var(--color-status-off);
+    background: var(--color-status-off);
+    .rux-notification-banner__inner {
+        border-color: var(--color-status-off);
     }
 }
