@@ -1,0 +1,18 @@
+import { newSpecPage } from '@stencil/core/testing';
+import { RuxMenu } from '../rux-menu';
+
+describe('rux-menu', () => {
+  it('renders', async () => {
+    const page = await newSpecPage({
+      components: [RuxMenu],
+      html: `<rux-menu></rux-menu>`,
+    });
+    expect(page.root).toEqualHtml(`
+      <rux-menu>
+        <mock:shadow-root>
+          <slot></slot>
+        </mock:shadow-root>
+      </rux-menu>
+    `);
+  });
+});

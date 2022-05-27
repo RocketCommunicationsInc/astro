@@ -137,6 +137,8 @@
     padding: 0 0.5rem 0 2rem;
     display: flex;
     align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
     &:hover {
         color: var(--tree-hover-text-color);
         background: var(--tree-hover-background-color);

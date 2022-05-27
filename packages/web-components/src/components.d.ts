@@ -8,6 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Classification, Status, StatusTags } from "./common/commonTypes.module";
 import { LogRow } from "./components/rux-log/rux-log.model";
 import { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
+import { Placement } from "@floating-ui/dom";
 import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
 export namespace Components {
     interface RuxButton {
@@ -11956,29 +11957,19 @@ export namespace Components {
          */
         "timezone": string;
     }
+    interface RuxMenu {
+    }
     interface RuxMenuItem {
         /**
-          * Disables the item
+          * sets the menu item as disabled
          */
         "disabled": boolean;
         /**
-          * This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want).
+          * sets the menu item as selected
          */
-        "download": string | undefined;
+        "selected": boolean;
         /**
-          * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
-         */
-        "href": string | undefined;
-        /**
-          * Specifies the relationship of the target object to the link object. The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).
-         */
-        "rel": string | undefined;
-        /**
-          * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
-         */
-        "target": string | undefined;
-        /**
-          * Value returned when item is selected. If no value is given, the text content will be used.
+          * the value returned when item is selected. If no value is given, the text content will be used.
          */
         "value": any;
     }
@@ -12052,7 +12043,7 @@ export namespace Components {
          */
         "closeAfter"?: number;
         /**
-          * Prevents the user from dismissing the notification. Hides the `close` slot.
+          * Prevents the user from dismissing the notification. Hides the `actions` slot.
          */
         "hideClose": boolean;
         /**
@@ -12094,33 +12085,25 @@ export namespace Components {
     }
     interface RuxPopUpMenu {
         /**
-          * Element to anchor the menu to. If none is given the menu will anchor to the trigger element where aria-controls === menu id
+          * Closes the pop up menu and returns false.
          */
-        "anchorEl"?: HTMLElement;
+        "hide": () => Promise<false>;
         /**
-          * Closes the menu. If the menu is already closed it returns 'false'.
-         */
-        "close": () => Promise<boolean>;
-        /**
-          * Returns 'true' if the menu is open, 'false' if it is not.
-         */
-        "isOpen": () => Promise<boolean>;
-        /**
-          * Boolean which controls when to show the menu
+          * determines if the pop up is open or closed
          */
         "open": boolean;
         /**
-          * Opens the menu. If the menu is already open it returns 'false'.
+          * the placement of the pop up relative to it's slotted trigger element.
          */
-        "show": () => Promise<boolean>;
+        "placement": Placement;
         /**
-          * Toggles the menu open or close. Will return 'true' on menu open and 'false' on menu close
+          * Opens the pop up menu and returns true.
          */
-        "toggle": () => Promise<boolean>;
+        "show": () => Promise<true>;
         /**
-          * Optional element to trigger opening and closing of the menu. If none is supplied the element where aria-controls === menu id will be assigned
+          * The position strategy of the popup, either absolute or fixed.
          */
-        "triggerEl"?: HTMLElement;
+        "strategy": 'absolute' | 'fixed';
     }
     interface RuxProgress {
         /**
@@ -18963,6 +18946,12 @@ declare global {
         prototype: HTMLRuxLogElement;
         new (): HTMLRuxLogElement;
     };
+    interface HTMLRuxMenuElement extends Components.RuxMenu, HTMLStencilElement {
+    }
+    var HTMLRuxMenuElement: {
+        prototype: HTMLRuxMenuElement;
+        new (): HTMLRuxMenuElement;
+    };
     interface HTMLRuxMenuItemElement extends Components.RuxMenuItem, HTMLStencilElement {
     }
     var HTMLRuxMenuItemElement: {
@@ -20255,6 +20244,7 @@ declare global {
         "rux-indeterminate-progress": HTMLRuxIndeterminateProgressElement;
         "rux-input": HTMLRuxInputElement;
         "rux-log": HTMLRuxLogElement;
+        "rux-menu": HTMLRuxMenuElement;
         "rux-menu-item": HTMLRuxMenuItemElement;
         "rux-menu-item-divider": HTMLRuxMenuItemDividerElement;
         "rux-modal": HTMLRuxModalElement;
@@ -32269,33 +32259,23 @@ declare namespace LocalJSX {
          */
         "timezone"?: string;
     }
+    interface RuxMenu {
+    }
     interface RuxMenuItem {
         /**
-          * Disables the item
+          * sets the menu item as disabled
          */
         "disabled"?: boolean;
         /**
-          * This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want).
-         */
-        "download"?: string | undefined;
-        /**
-          * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
-         */
-        "href"?: string | undefined;
-        /**
-          * Emitted when item is clicked. Ex `{value : 10}`
+          * When a rux-menu item is selected, emits the value of that item.
          */
         "onRuxmenuitemselected"?: (event: CustomEvent<object>) => void;
         /**
-          * Specifies the relationship of the target object to the link object. The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).
+          * sets the menu item as selected
          */
-        "rel"?: string | undefined;
+        "selected"?: boolean;
         /**
-          * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
-         */
-        "target"?: string | undefined;
-        /**
-          * Value returned when item is selected. If no value is given, the text content will be used.
+          * the value returned when item is selected. If no value is given, the text content will be used.
          */
         "value"?: any;
     }
@@ -32377,7 +32357,7 @@ declare namespace LocalJSX {
          */
         "closeAfter"?: number;
         /**
-          * Prevents the user from dismissing the notification. Hides the `close` slot.
+          * Prevents the user from dismissing the notification. Hides the `actions` slot.
          */
         "hideClose"?: boolean;
         /**
@@ -32425,33 +32405,21 @@ declare namespace LocalJSX {
     }
     interface RuxPopUpMenu {
         /**
-          * Element to anchor the menu to. If none is given the menu will anchor to the trigger element where aria-controls === menu id
+          * emits the value of the selected rux-menu-item inside of rux-pop-up-menu
          */
-        "anchorEl"?: HTMLElement;
+        "onRuxpopupmenuselected"?: (event: CustomEvent<any>) => void;
         /**
-          * Emitted when the menu is closed.
-         */
-        "onRuxmenudidclose"?: (event: CustomEvent<void>) => void;
-        /**
-          * Emitted when the menu is open.
-         */
-        "onRuxmenudidopen"?: (event: CustomEvent<void>) => void;
-        /**
-          * Emitted when the menu is about to close
-         */
-        "onRuxmenuwillclose"?: (event: CustomEvent<void>) => void;
-        /**
-          * Emitted when the menu is about to open.
-         */
-        "onRuxmenuwillopen"?: (event: CustomEvent<void>) => void;
-        /**
-          * Boolean which controls when to show the menu
+          * determines if the pop up is open or closed
          */
         "open"?: boolean;
         /**
-          * Optional element to trigger opening and closing of the menu. If none is supplied the element where aria-controls === menu id will be assigned
+          * the placement of the pop up relative to it's slotted trigger element.
          */
-        "triggerEl"?: HTMLElement;
+        "placement"?: Placement;
+        /**
+          * The position strategy of the popup, either absolute or fixed.
+         */
+        "strategy"?: 'absolute' | 'fixed';
     }
     interface RuxProgress {
         /**
@@ -34010,6 +33978,7 @@ declare namespace LocalJSX {
         "rux-indeterminate-progress": RuxIndeterminateProgress;
         "rux-input": RuxInput;
         "rux-log": RuxLog;
+        "rux-menu": RuxMenu;
         "rux-menu-item": RuxMenuItem;
         "rux-menu-item-divider": RuxMenuItemDivider;
         "rux-modal": RuxModal;
@@ -35122,6 +35091,7 @@ declare module "@stencil/core" {
             "rux-indeterminate-progress": LocalJSX.RuxIndeterminateProgress & JSXBase.HTMLAttributes<HTMLRuxIndeterminateProgressElement>;
             "rux-input": LocalJSX.RuxInput & JSXBase.HTMLAttributes<HTMLRuxInputElement>;
             "rux-log": LocalJSX.RuxLog & JSXBase.HTMLAttributes<HTMLRuxLogElement>;
+            "rux-menu": LocalJSX.RuxMenu & JSXBase.HTMLAttributes<HTMLRuxMenuElement>;
             "rux-menu-item": LocalJSX.RuxMenuItem & JSXBase.HTMLAttributes<HTMLRuxMenuItemElement>;
             "rux-menu-item-divider": LocalJSX.RuxMenuItemDivider & JSXBase.HTMLAttributes<HTMLRuxMenuItemDividerElement>;
             "rux-modal": LocalJSX.RuxModal & JSXBase.HTMLAttributes<HTMLRuxModalElement>;

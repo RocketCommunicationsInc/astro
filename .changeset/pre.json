@@ -8,5 +8,20 @@
     "@astrouxds/react": "6.1.0",
     "@astrouxds/astro-web-components": "6.1.0"
   },
-  "changesets": []
+  "changesets": [
+    "calm-experts-taste",
+    "chilly-taxis-approve",
+    "cuddly-ears-wonder",
+    "early-beans-shake",
+    "eight-moons-allow",
+    "four-shirts-relax",
+    "happy-foxes-bathe",
+    "late-windows-design",
+    "loud-humans-study",
+    "mighty-years-jump",
+    "polite-pandas-smile",
+    "quick-numbers-deliver",
+    "rude-chicken-mate",
+    "wise-drinks-compare"
+  ]
 }
