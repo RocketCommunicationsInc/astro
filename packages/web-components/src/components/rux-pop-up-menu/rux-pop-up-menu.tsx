@@ -171,13 +171,10 @@ export class RuxPopUpMenu {
 
     private _setMenuPosition() {
         if (this.anchorEl && this.anchorBounds && this.menuBounds) {
-            console.log('anchorEl, bounds and menuBounds are there')
             let { anchorBounds, menuBounds } = this
             anchorBounds = this.anchorEl.getBoundingClientRect()
             menuBounds = this.el.getBoundingClientRect()
-            console.log(
-                `anchorBounds: ${anchorBounds.right} --- menuBounds: ${menuBounds.right}`
-            )
+
             const caret = parseInt(getComputedStyle(this.el, ':after').height)
             let top: number
             let left: number
@@ -252,7 +249,6 @@ export class RuxPopUpMenu {
             const debounce = setTimeout(() => {
                 window.addEventListener('resize', () => this._setMenuPosition())
                 window.addEventListener('scroll', () => {
-                    console.log('scroll, setmenupos')
                     this._setMenuPosition()
                 })
                 window.addEventListener('mousedown', this._handleOutsideClick)
