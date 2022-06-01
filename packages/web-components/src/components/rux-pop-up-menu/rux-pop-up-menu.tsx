@@ -87,7 +87,6 @@ export class RuxPopUpMenu {
     connectedCallback() {
         this._handleClick = this._handleClick.bind(this)
         this._handleOutsideClick = this._handleOutsideClick.bind(this)
-
         this._bindElements()
 
         this._toggleOpenClose()
@@ -172,21 +171,27 @@ export class RuxPopUpMenu {
 
     private _setMenuPosition() {
         if (this.anchorEl && this.anchorBounds && this.menuBounds) {
+            console.log('anchorEl, bounds and menuBounds are there')
             let { anchorBounds, menuBounds } = this
             anchorBounds = this.anchorEl.getBoundingClientRect()
             menuBounds = this.el.getBoundingClientRect()
+            console.log(
+                `anchorBounds: ${anchorBounds.right} --- menuBounds: ${menuBounds.right}`
+            )
             const caret = parseInt(getComputedStyle(this.el, ':after').height)
             let top: number
             let left: number
             let caretLeft: number
 
             const padding = 8
+            // Need to compensate for the amount scrolled horizontally, if present.
+            const scrollX = window.scrollX - padding
 
             if (
                 menuBounds.width + anchorBounds.left - padding >
                 window.innerWidth
             ) {
-                left = anchorBounds.right - menuBounds.width
+                left = anchorBounds.right - menuBounds.width + scrollX
                 caretLeft = menuBounds.width - 25
             } else if (anchorBounds.left - padding > 0) {
                 left = anchorBounds.left - padding
@@ -246,6 +251,10 @@ export class RuxPopUpMenu {
 
             const debounce = setTimeout(() => {
                 window.addEventListener('resize', () => this._setMenuPosition())
+                window.addEventListener('scroll', () => {
+                    console.log('scroll, setmenupos')
+                    this._setMenuPosition()
+                })
                 window.addEventListener('mousedown', this._handleOutsideClick)
                 clearTimeout(debounce)
             }, 10)

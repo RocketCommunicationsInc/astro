@@ -19,5 +19,29 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body></body>
+    <body>
+        <rux-global-status-bar
+            app-domain="Test"
+            app-name="Application"
+            style="width: 2000px"
+        >
+            <rux-icon
+                slot="right-side"
+                icon="settings"
+                label="Settings"
+                aria-controls="popup-menu-1"
+            ></rux-icon>
+        </rux-global-status-bar>
+
+        <rux-pop-up-menu id="popup-menu-1">
+            <rux-menu-item> Item 1 </rux-menu-item>
+            <rux-menu-item disabled="">Item 2 is disabled</rux-menu-item>
+            <rux-menu-item value="Item 3"
+                >Item 3 has a string value</rux-menu-item
+            >
+            <rux-menu-item href="https://www.astrouxds.com"
+                >Item 4 is an anchor/action item...</rux-menu-item
+            >
+        </rux-pop-up-menu>
+    </body>
 </html>
