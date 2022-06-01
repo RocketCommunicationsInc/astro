@@ -68,7 +68,7 @@
 
                 margin: 0 0.625rem 0 0;
                 background-color: var(--color-background-base-default);
-                border: 1px solid var(--color-background-interactive-muted);
+                border: 1px solid var(--color-border-interactive-muted);
                 border-radius: var(--radius-checkbox);
             }
         }
@@ -97,7 +97,7 @@
                     transform: rotate(125deg);
                 }
                 &::before {
-                    border-color: var(--color-background-interactive-muted);
+                    border-color: var(--color-border-interactive-muted);
                 }
             }
         }
@@ -113,7 +113,7 @@
     input[type='checkbox']:not(:disabled):hover {
         + label {
             &::before {
-                border-color: var(var(--color-background-interactive-hover));
+                border-color: var(--color-background-interactive-hover);
             }
         }
     }

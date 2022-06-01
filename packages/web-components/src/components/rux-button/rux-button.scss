@@ -68,12 +68,12 @@
 
     &--secondary {
         color: var(--color-background-interactive-default);
-        background-color: var(transparent);
+        background-color: transparent;
         border: 1px solid var(--color-background-interactive-default);
 
         &:hover:not([disabled]) {
             color: var(--color-background-interactive-hover);
-            background-color: var(transparent);
+            background-color: transparent;
             border-color: var(--color-background-interactive-hover);
             rux-icon,
             ::slotted(rux-icon) {
@@ -83,7 +83,7 @@
 
         &:active:not([disabled]) {
             border-color: var(--color-background-interactive-default);
-            background-color: var(transparent);
+            background-color: transparent;
             color: var(--color-background-interactive-default);
             rux-icon,
             ::slotted(rux-icon) {

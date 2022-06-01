@@ -7,6 +7,12 @@
 
 Remove CSS custom properties:
 
+Log
+
+--log-header-background-color
+--log-filter-background-color
+--log-filter-text-color
+
 Modal
 
 --modal-title-color
@@ -112,6 +118,31 @@ Textarea
 --textarea-text-color
 --textarea-focus-border-color
 --textarea-selection-background-color
+
+Tabs
+
+--tab-text-color
+
+--tab-border-color
+--tab-hover-text-color
+--tab-selected-text-color
+
+Table
+
+--table-border-color
+--table-header-background-color
+--table-header-text-color
+
+--table-header-box-shadow
+--table-row-hover-text-color
+--table-row-selected-background-color
+--table-row-selected-border-color
+--table-row-hover-background-color
+
+--table-row-border-color
+--table-row-text-color
+--table-row-background-color
+--table-header-border-color
 
 Tree
 
