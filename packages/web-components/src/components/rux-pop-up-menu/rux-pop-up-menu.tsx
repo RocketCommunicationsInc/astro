@@ -248,9 +248,6 @@ export class RuxPopUpMenu {
 
             const debounce = setTimeout(() => {
                 window.addEventListener('resize', () => this._setMenuPosition())
-                window.addEventListener('scroll', () => {
-                    this._setMenuPosition()
-                })
                 window.addEventListener('mousedown', this._handleOutsideClick)
                 clearTimeout(debounce)
             }, 10)
