@@ -70,13 +70,14 @@ export class RuxModal {
         composed: true,
         bubbles: true,
     })
-    ruxModalClosed!: EventEmitter<boolean>
+    ruxModalClosed!: EventEmitter<boolean | null>
 
     @Element() element!: HTMLRuxModalElement
 
     @State() hasFooter = hasSlot(this.element, 'footer')
     @State() hasHeader = hasSlot(this.element, 'header')
     @State() hasMessage = hasSlot(this.element)
+    private _userInput: boolean | null = null
 
     // confirm dialog if Enter key is pressed
     @Listen('keydown', { target: 'window' })
@@ -95,6 +96,7 @@ export class RuxModal {
         const wrapper = this._getWrapper()
         if (ev.composedPath()[0] === wrapper) {
             this.open = false
+            this.ruxModalClosed.emit()
         }
     }
 
@@ -108,10 +110,16 @@ export class RuxModal {
                 }
             }, 0)
         }
-        this.open ? this.ruxModalOpened.emit() : this.ruxModalClosed.emit()
+        this.open
+            ? this.ruxModalOpened.emit()
+            : this.ruxModalClosed.emit(this._userInput)
     }
 
-    private _handleModalChoice() {
+    private _handleModalChoice(e: MouseEvent) {
+        // convert string value to boolean
+        const target = e.currentTarget as HTMLElement
+        const choice = target.dataset.value === 'true'
+        this._userInput = choice
         this.open = false
     }
 
@@ -227,6 +235,7 @@ export class RuxModal {
                                                     confirmText.length > 0
                                                 }
                                                 onClick={_handleModalChoice}
+                                                data-value="false"
                                                 hidden={!denyText}
                                                 tabindex="-1"
                                                 exportparts="container:deny-button"
@@ -236,6 +245,7 @@ export class RuxModal {
                                             <rux-button
                                                 onClick={_handleModalChoice}
                                                 hidden={!confirmText}
+                                                data-value="true"
                                                 tabindex="0"
                                                 exportparts="container:confirm-button"
                                             >
