@@ -64,10 +64,10 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 
 ## Events
 
-| Event            | Description                           | Type                   |
-| ---------------- | ------------------------------------- | ---------------------- |
-| `ruxmodalclosed` | Event that is fired when modal closes | `CustomEvent<boolean>` |
-| `ruxmodalopened` | Event that is fired when modal opens  | `CustomEvent<void>`    |
+| Event            | Description                           | Type                           |
+| ---------------- | ------------------------------------- | ------------------------------ |
+| `ruxmodalclosed` | Event that is fired when modal closes | `CustomEvent<boolean \| null>` |
+| `ruxmodalopened` | Event that is fired when modal opens  | `CustomEvent<void>`            |
 
 
 ## Slots
