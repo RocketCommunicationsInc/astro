@@ -19,18 +19,24 @@
     */
     --clock-label-color: var(--color-palette-neutral-000);
 
-    display: flex;
-    margin: 0 1rem;
-    color: var(--clock-text-color);
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    height: 3.938rem; //63px
+    display: inline-block;
+    // margin: 0 1rem;
+    // color: var(--clock-text-color);
+    // -webkit-user-select: none;
+    // -moz-user-select: none;
+    // -ms-user-select: none;
+    // user-select: none;
 }
 
 :host([hidden]) {
     display: none;
+}
+
+.rux-clock {
+    display: flex;
+    user-select: none;
+    color: var(--clock-text-color);
+    height: 3.938rem; //63px
 }
 
 .rux-clock__segment {

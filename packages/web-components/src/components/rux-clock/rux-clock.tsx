@@ -5,6 +5,7 @@ import { militaryTimezones } from './military-timezones'
 import { MilitaryTimezone } from './rux-clock.model'
 
 /**
+ * @part container - the clocks's container
  * @part date - the container for the date section of clock
  * @part date-label - the container for the date label
  * @part time - the conatiner for the time section of clock
@@ -160,89 +161,91 @@ export class RuxClock {
     render() {
         return (
             <Host>
-                {!this.hideDate && (
+                <div class="rux-clock" part="container">
+                    {!this.hideDate && (
+                        <div class="rux-clock__segment">
+                            <div
+                                class="rux-clock__segment__value"
+                                aria-labelledby="rux-clock__day-of-year-label"
+                                part="date"
+                            >
+                                {this.dayOfYear.toString().padStart(3, '0')}
+                            </div>
+                            {!this.hideLabels && (
+                                <div
+                                    class="rux-clock__segment__label"
+                                    id="rux-clock__day-of-year-label"
+                                    part="date-label"
+                                >
+                                    Date
+                                </div>
+                            )}
+                        </div>
+                    )}
+
                     <div class="rux-clock__segment">
                         <div
                             class="rux-clock__segment__value"
-                            aria-labelledby="rux-clock__day-of-year-label"
-                            part="date"
+                            aria-labelledby="rux-clock__time-label"
+                            part="time"
                         >
-                            {this.dayOfYear.toString().padStart(3, '0')}
+                            {this.time}
                         </div>
                         {!this.hideLabels && (
                             <div
                                 class="rux-clock__segment__label"
-                                id="rux-clock__day-of-year-label"
-                                part="date-label"
+                                id="rux-clock__time-label"
+                                part="time-label"
                             >
-                                Date
+                                Time
                             </div>
                         )}
                     </div>
-                )}
 
-                <div class="rux-clock__segment">
-                    <div
-                        class="rux-clock__segment__value"
-                        aria-labelledby="rux-clock__time-label"
-                        part="time"
-                    >
-                        {this.time}
-                    </div>
-                    {!this.hideLabels && (
-                        <div
-                            class="rux-clock__segment__label"
-                            id="rux-clock__time-label"
-                            part="time-label"
-                        >
-                            Time
+                    {this.aos && (
+                        <div class="rux-clock__segment rux-clock__aos">
+                            <div
+                                class="rux-clock__segment__value"
+                                aria-labelledby="rux-clock__time-label--aos"
+                                id="rux-clock__time--aos"
+                                part="aos"
+                            >
+                                {this.convertedAos}
+                            </div>
+                            {!this.hideLabels && (
+                                <div
+                                    class="rux-clock__segment__label"
+                                    id="rux-clock__time-label--aos"
+                                    part="aos-label"
+                                >
+                                    AOS
+                                </div>
+                            )}
+                        </div>
+                    )}
+
+                    {this.los && (
+                        <div class="rux-clock__segment rux-clock__los">
+                            <div
+                                class="rux-clock__segment__value"
+                                aria-labelledby="rux-clock__time-label--los"
+                                id="rux-clock__time--los"
+                                part="los"
+                            >
+                                {this.convertedLos}
+                            </div>
+                            {!this.hideLabels && (
+                                <div
+                                    class="rux-clock__segment__label"
+                                    id="rux-clock__time-label--los"
+                                    part="los-label"
+                                >
+                                    LOS
+                                </div>
+                            )}
                         </div>
                     )}
                 </div>
-
-                {this.aos && (
-                    <div class="rux-clock__segment rux-clock__aos">
-                        <div
-                            class="rux-clock__segment__value"
-                            aria-labelledby="rux-clock__time-label--aos"
-                            id="rux-clock__time--aos"
-                            part="aos"
-                        >
-                            {this.convertedAos}
-                        </div>
-                        {!this.hideLabels && (
-                            <div
-                                class="rux-clock__segment__label"
-                                id="rux-clock__time-label--aos"
-                                part="aos-label"
-                            >
-                                AOS
-                            </div>
-                        )}
-                    </div>
-                )}
-
-                {this.los && (
-                    <div class="rux-clock__segment rux-clock__los">
-                        <div
-                            class="rux-clock__segment__value"
-                            aria-labelledby="rux-clock__time-label--los"
-                            id="rux-clock__time--los"
-                            part="los"
-                        >
-                            {this.convertedLos}
-                        </div>
-                        {!this.hideLabels && (
-                            <div
-                                class="rux-clock__segment__label"
-                                id="rux-clock__time-label--los"
-                                part="los-label"
-                            >
-                                LOS
-                            </div>
-                        )}
-                    </div>
-                )}
             </Host>
         )
     }
