@@ -1,28 +1,4 @@
 :host {
-    /**
-    *   @prop --tab-text-color: Tab text color
-    */
-    --tab-text-color: var(--color-background-interactive-default);
-
-    /**
-    *   @prop --tab-border-color: Tab border color
-    */
-    --tab-border-color: transparent;
-
-    /**
-    *   @prop --tab-hover-text-color: Tab hover text color
-    */
-    --tab-hover-text-color: var(--color-text-primary);
-
-    /**
-    *   @prop --tab-selected-text-color: Tab selected text color
-    */
-    --tab-selected-text-color: var(--color-text-primary);
-
-    /**
-    *   @prop --tab-selected-border-color: Tab selected border color
-    */
-    --tab-selected-border-color: var(--color-background-interactive-default);
     display: contents;
 }
 .rux-tab {
@@ -33,8 +9,8 @@
     margin: 0;
     min-width: 5rem;
     text-decoration: none;
-    color: var(--tab-text-color);
-    border-bottom: 5px solid var(--tab-border-color);
+    color: var(--color-background-interactive-default);
+    border-bottom: 5px solid transparent;
     &:hover {
         color: var(--color-background-interactive-hover);
     }
@@ -52,23 +28,23 @@
 .rux-tab--small {
     min-width: 2rem;
     padding: 1.25rem 1rem; //20 16
-    border-bottom: 3px solid var(--tab-border-color);
+    border-bottom: 3px solid transparent;
 }
 
 .rux-tab--selected {
-    color: var(--tab-selected-text-color);
-    border-bottom: 5px solid var(--tab-selected-border-color);
+    color: var(--color-text-primary);
+    border-bottom: 5px solid var(--color-background-interactive-default);
     &:hover {
-        color: var(--tab-selected-text-color);
+        color: var(--color-text-primary);
     }
 }
 
 .rux-tab--disabled {
-    color: var(--tab-text-color);
+    color: var(--color-background-interactive-default);
     opacity: var(--disabled-opacity);
     cursor: not-allowed;
 }
 
 .rux-tab--small.rux-tab--selected {
-    border-bottom: solid 3px var(--tab-selected-border-color);
+    border-bottom: solid 3px var(--color-background-interactive-default);
 }

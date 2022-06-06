@@ -1,19 +1,4 @@
 :host {
-    /**
-      * @prop --tree-text-color: tree text color
-      */
-    --tree-text-color: var(--color-text-primary);
-
-    /**
-      * @prop --tree-background-color: tree background color
-      */
-    --tree-background-color: var(--color-background-surface-default);
-
-    /**
-    * @prop --tree-border-color: tree color
-    */
-    --tree-border-color: var(--color-border-interactive-muted);
-
     display: block;
     position: relative;
     box-sizing: border-box;
@@ -22,9 +7,9 @@
     font-size: var(--font-body-1-font-size);
     font-weight: var(--font-body-1-font-weight);
     letter-spacing: var(--font-body-1-letter-spacing);
-    color: var(--tree-text-color);
+    color: var(--color-text-primary);
     border-bottom: 1px solid var(--color-border-interactive-muted);
-    background-color: var(--tree-background-color);
+    background-color: var(--color-background-surface-default);
     user-select: none;
     width: 100%;
 }

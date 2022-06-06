@@ -1,30 +1,6 @@
 @use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
 :host {
     display: block;
-
-    /**
-      * @prop --switch-background-color: the Switch off color
-      */
-
-    --switch-background-color: var(--color-background-base-default);
-
-    /**
-      * @prop --switch-hover-on-color: the Switch hover on color
-      */
-    --switch-hover-on-color: var(--color-background-interactive-default);
-
-    /**
-      * @prop --switch-hover-off-color: the Switch hover off color
-      */
-
-    --switch-hover-off-color: var(--color-background-interactive-default);
-
-    /** @prop --switch-on-color: the Switch on color */
-    --switch-on-color: var(--color-background-interactive-default);
-
-    /** @prop --switch-off-border-color: the Switch off border color */
-    --switch-off-border-color: var(--color-border-interactive-muted);
-
     padding-left: 1%;
 }
 .rux-switch {
@@ -47,8 +23,8 @@
             content: '';
             border-radius: var(--switch-radius-track);
             border: 1px solid;
-            border-color: var(--switch-off-border-color);
-            background-color: var(--switch-background-color);
+            border-color: var(--color-border-interactive-muted);
+            background-color: var(--color-background-base-default);
             height: 10px;
             width: 30px;
             z-index: 2;
@@ -65,8 +41,8 @@
             height: 18px;
             width: 18px;
             border-radius: var(--radius-circle);
-            border: 1px solid var(--switch-hover-off-color);
-            background-color: var(--switch-background-color);
+            border: 1px solid var(--color-background-interactive-default);
+            background-color: var(--color-background-base-default);
             transition: 0.1s left linear, 0.1s border-color linear;
         }
     }
@@ -80,13 +56,15 @@
         &:checked {
             + .rux-switch__button {
                 &::before {
-                    border-color: var(--switch-on-color);
-                    background-color: var(--switch-on-color);
+                    border-color: var(--color-background-interactive-default);
+                    background-color: var(
+                        --color-background-interactive-default
+                    );
                 }
                 &::after {
                     left: 16px;
-                    background-color: var(--switch-background-color);
-                    border-color: var(--switch-hover-off-color);
+                    background-color: var(--color-background-base-default);
+                    border-color: var(--color-background-interactive-default);
                 }
             }
         }
@@ -107,7 +85,9 @@
             &:checked:not(:disabled) {
                 + .rux-switch__button {
                     &::before {
-                        border-color: var(--switch-hover-off-color);
+                        border-color: var(
+                            --color-background-interactive-default
+                        );
                     }
                     &::after {
                         border-color: var(--color-background-interactive-hover);
@@ -118,7 +98,7 @@
             &:not(:disabled) {
                 + .rux-switch__button {
                     &::before {
-                        background-color: var(--switch-background-color);
+                        background-color: var(--color-background-base-default);
                     }
                 }
             }
@@ -126,7 +106,9 @@
             &:checked:not(:disabled) {
                 + .rux-switch__button {
                     &::before {
-                        background-color: var(--switch-hover-on-color);
+                        background-color: var(
+                            --color-background-interactive-default
+                        );
                     }
                 }
             }

@@ -1,9 +1,6 @@
 :host {
-    /** @prop --icon-default-color: the default color of the icon */
-    --icon-default-color: var(--color-background-interactive-default);
-
     display: inline-flex;
-    color: var(--icon-default-color);
+    color: var(--color-background-interactive-default);
 }
 
 :host([hidden]) {

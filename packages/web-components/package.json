@@ -34,7 +34,8 @@
         "test.e2e": "npm run test.e2e.run",
         "test.unit.watch": "TZ=UTC stencil test --spec --watchAll",
         "test.unit": "TZ=UTC stencil test --spec --coverage",
-        "test.all": "concurrently npm:test.unit npm:test.e2e",
+        "test.unit.silent": "TZ=UTC stencil test --spec --coverage, --silent",
+        "test.all": "concurrently npm:test.unit.silent npm:test.e2e",
         "deploy.beta": "netlify deploy --site '27100b54-2df5-4ab2-a331-4ef2b81f8054'",
         "deploy.storybook": "netlify deploy --site 'bfaf1790-0a59-47fb-ab34-4a3530a715f1'"
     },

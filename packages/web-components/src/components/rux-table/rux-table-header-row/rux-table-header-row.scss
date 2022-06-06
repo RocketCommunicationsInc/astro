@@ -1,9 +1,5 @@
 :host {
-    /** @prop() --table-header-background-color: the table header background color */
-    --table-header-background-color: var(--color-background-surface-header);
-
     display: table-row;
-    background-color: var(--table-header-background-color);
 }
 
 :host([hidden]) {
