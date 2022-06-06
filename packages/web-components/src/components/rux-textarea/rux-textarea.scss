@@ -2,12 +2,12 @@
 
 :host {
     /**
-     * @prop --textarea-border-color: Border color of the textarea.
+     * @prop --textarea-border-color: [DEPRECATED] Border color of the textarea.
     */
     --textarea-border-color: var(--color-border-interactive-muted);
 
     /**
-     * @prop --textarea-text-color: Text color
+     * @prop --textarea-text-color: [DEPRECATED] Text color
     */
     --textarea-text-color: var(--color-text-primary);
 
@@ -18,12 +18,12 @@
     --textarea-invalid-border-color: var(--status-symbol-color-fill-critical);
 
     /**
-     * @prop --textarea-focus-border-color: Border color while in a focused state
+     * @prop --textarea-focus-border-color: [DEPRECATED] Border color while in a focused state
     */
     --textarea-focus-border-color: var(--color-background-interactive-hover);
 
     /**
-     * @prop --textarea-selection-background-color: Background color while in a selected state
+     * @prop --textarea-selection-background-color: [DEPRECATED] Background color while in a selected state
     */
     --textarea-selection-background-color: var(--color-palette-brightblue-400);
 

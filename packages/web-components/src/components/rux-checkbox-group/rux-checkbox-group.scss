@@ -1,7 +1,7 @@
 @use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
 
 :host {
-    /** @prop --checkboxgroup-border-color: the radio group border color */
+    /** @prop --checkboxgroup-border-color: [DEPRECATED] the radio group border color */
     --checkboxgroup-border-color: var(--color-border-interactive-muted);
 
     display: block;

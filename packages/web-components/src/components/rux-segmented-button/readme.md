@@ -70,20 +70,20 @@ document.addEventListener('change', (e) =>
 
 ## CSS Custom Properties
 
-| Name                                                 | Description                                      |
-| ---------------------------------------------------- | ------------------------------------------------ |
-| `--segmented-button-background-color`                | Segmented button background color                |
-| `--segmented-button-border-color`                    | Segmented button border color                    |
-| `--segmented-button-border-radius`                   | Segmented button border radius                   |
-| `--segmented-button-hover-background-color`          | Segmented button hover background color          |
-| `--segmented-button-hover-border-color`              | Segmented button hover border color              |
-| `--segmented-button-hover-text-color`                | Segmented button hover text color                |
-| `--segmented-button-selected-background-color`       | Segmented button selected background color       |
-| `--segmented-button-selected-hover-background-color` | Segmented button selected hover background color |
-| `--segmented-button-selected-hover-border-color`     | Segmented button selected hover border color     |
-| `--segmented-button-selected-hover-text-color`       | Segmented button selected hover text color       |
-| `--segmented-button-selected-text-color`             | Segmented button selected text color             |
-| `--segmented-button-text-color`                      | Segmented button text color                      |
+| Name                                                 | Description                                                   |
+| ---------------------------------------------------- | ------------------------------------------------------------- |
+| `--segmented-button-background-color`                | [DEPRECATED] Segmented button background color                |
+| `--segmented-button-border-color`                    | [DEPRECATED] Segmented button border color                    |
+| `--segmented-button-border-radius`                   | [DEPRECATED] Segmented button border radius                   |
+| `--segmented-button-hover-background-color`          | [DEPRECATED] Segmented button hover background color          |
+| `--segmented-button-hover-border-color`              | [DEPRECATED] Segmented button hover border color              |
+| `--segmented-button-hover-text-color`                | [DEPRECATED] Segmented button hover text color                |
+| `--segmented-button-selected-background-color`       | [DEPRECATED] Segmented button selected background color       |
+| `--segmented-button-selected-hover-background-color` | [DEPRECATED] Segmented button selected hover background color |
+| `--segmented-button-selected-hover-border-color`     | [DEPRECATED] Segmented button selected hover border color     |
+| `--segmented-button-selected-hover-text-color`       | [DEPRECATED] Segmented button selected hover text color       |
+| `--segmented-button-selected-text-color`             | [DEPRECATED] Segmented button selected text color             |
+| `--segmented-button-text-color`                      | [DEPRECATED] Segmented button text color                      |
 
 
 ----------------------------------------------

@@ -1,61 +1,61 @@
 :host {
     /**
-     * @prop --button-text-color: Button text color
+     * @prop --button-text-color: [DEPRECATED] Button text color
      */
     --button-text-color: var(--color-text-inverse);
 
     /**
-     * @prop --button-background-color: Button background color
+     * @prop --button-background-color: [DEPRECATED] Button background color
      */
     --button-background-color: var(--color-background-interactive-default);
 
     /**
-     * @prop --button-border-color: Button border color
+     * @prop --button-border-color: [DEPRECATED] Button border color
      */
     --button-border-color: transparent;
 
     /**
-     * @prop --button-hover-background-color: Button hover background color
+     * @prop --button-hover-background-color: [DEPRECATED] Button hover background color
      */
     --button-hover-background-color: var(--color-background-interactive-hover);
 
     /**
-     * @prop --button-hover-border-color: Button hover border color
+     * @prop --button-hover-border-color: [DEPRECATED] Button hover border color
      */
     --button-hover-border-color: transparent;
 
     /**
-     * @prop --button-active-background-color: Button active background color
+     * @prop --button-active-background-color: [DEPRECATED] Button active background color
      */
     --button-active-background-color: var(
         --color-background-interactive-default
     );
 
     /**
-     * @prop --button-active-border-color: Button active border color
+     * @prop --button-active-border-color: [DEPRECATED] Button active border color
      */
     --button-active-border-color: var(--color-background-interactive-default);
 
     /**
-     * @prop --button-secondary-text-color: Button secondary text color
+     * @prop --button-secondary-text-color: [DEPRECATED] Button secondary text color
      */
 
     --button-secondary-text-color: var(--color-background-interactive-default);
 
     /**
-    * @prop --button-secondary-hover-text-color: Secondary button hover text color
+    * @prop --button-secondary-hover-text-color: [DEPRECATED] Secondary button hover text color
     */
     --button-secondary-hover-text-color: var(
         --color-background-interactive-hover
     );
 
     /**
-     * @prop --button-secondary-background-color: Button secondary background color
+     * @prop --button-secondary-background-color: [DEPRECATED] Button secondary background color
      */
     --button-secondary-background-color: transparent;
 
     /**
-     * @prop --button-secondary-border-color: Button secondary border color
+     * @prop --button-secondary-border-color: [DEPRECATED] Button secondary border color
      */
     --button-secondary-border-color: var(
         --color-background-interactive-default,
@@ -63,24 +63,24 @@
     );
 
     /**
-     * @prop --button-secondary-hover-background-color:  Button secondary hover background color
+     * @prop --button-secondary-hover-background-color: [DEPRECATED]  Button secondary hover background color
      */
     --button-secondary-hover-background-color: transparent;
 
     /**
-     * @prop --button-secondary-hover-border-color:  Button secondary hover border color
+     * @prop --button-secondary-hover-border-color: [DEPRECATED]  Button secondary hover border color
      */
     --button-secondary-hover-border-color: var(
         --color-background-interactive-hover
     );
 
     /**
-    * @prop --button-borderless-text-color: Button borderless text color
+    * @prop --button-borderless-text-color: [DEPRECATED] Button borderless text color
     */
     --button-borderless-color: var(--color-background-interactive-default);
 
     /**
-    * @prop --button-borderless-hover-color: Borderless buttons hover text color 
+    * @prop --button-borderless-hover-color: [DEPRECATED] Borderless buttons hover text color 
     */
     --button-borderless-hover-color: var(--color-background-interactive-hover);
 

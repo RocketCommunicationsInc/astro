@@ -2,22 +2,22 @@
     cursor: pointer;
     display: block;
 
-    /** @prop --pushbutton-background-color: the Push Button background color */
+    /** @prop --pushbutton-background-color: [DEPRECATED] the Push Button background color */
     --pushbutton-background-color: none;
 
-    /** @prop --pushbutton-border-color: the Push Button border color */
+    /** @prop --pushbutton-border-color: [DEPRECATED] the Push Button border color */
     --pushbutton-border-color: var(--color-border-interactive-default);
 
-    /** @prop --pushbutton-text-color: the Push Button text color */
+    /** @prop --pushbutton-text-color: [DEPRECATED] the Push Button text color */
     --pushbutton-text-color: var(--color-text-interactive-default);
 
-    /** @prop --pushbutton-selected-background-color: the Push Button background color when checked */
+    /** @prop --pushbutton-selected-background-color: [DEPRECATED] the Push Button background color when checked */
     --pushbutton-selected-background-color: var(--color-palette-green-500);
 
-    /** @prop --pushbutton-selected-border-color: the Push Button border color when checked */
+    /** @prop --pushbutton-selected-border-color: [DEPRECATED] the Push Button border color when checked */
     --pushbutton-selected-border-color: var(--color-palette-green-500);
 
-    /** @prop --pushbutton-selected-text-color: the Push Button text color when checked */
+    /** @prop --pushbutton-selected-text-color: [DEPRECATED] the Push Button text color when checked */
     --pushbutton-selected-text-color: var(--color-text-inverse);
 
     --pushbutton-selected-hover-text-color: var(--color-text-inverse);

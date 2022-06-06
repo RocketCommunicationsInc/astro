@@ -21412,7 +21412,7 @@ export declare interface RuxModal extends Components.RuxModal {
   /**
    * Event that is fired when modal closes 
    */
-  ruxmodalclosed: EventEmitter<CustomEvent<boolean>>;
+  ruxmodalclosed: EventEmitter<CustomEvent<boolean | null>>;
 
 }
 

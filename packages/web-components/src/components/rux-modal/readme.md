@@ -64,10 +64,10 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 
 ## Events
 
-| Event            | Description                           | Type                   |
-| ---------------- | ------------------------------------- | ---------------------- |
-| `ruxmodalclosed` | Event that is fired when modal closes | `CustomEvent<boolean>` |
-| `ruxmodalopened` | Event that is fired when modal opens  | `CustomEvent<void>`    |
+| Event            | Description                           | Type                           |
+| ---------------- | ------------------------------------- | ------------------------------ |
+| `ruxmodalclosed` | Event that is fired when modal closes | `CustomEvent<boolean \| null>` |
+| `ruxmodalopened` | Event that is fired when modal opens  | `CustomEvent<void>`            |
 
 
 ## Slots
@@ -95,11 +95,11 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 
 ## CSS Custom Properties
 
-| Name                       | Description            |
-| -------------------------- | ---------------------- |
-| `--modal-background-color` | Modal background color |
-| `--modal-border-color`     | Modal border color     |
-| `--modal-title-color`      | Modal title color      |
+| Name                       | Description                         |
+| -------------------------- | ----------------------------------- |
+| `--modal-background-color` | [DEPRECATED] Modal background color |
+| `--modal-border-color`     | [DEPRECATED] Modal border color     |
+| `--modal-title-color`      | [DEPRECATED] Modal title color      |
 
 
 ## Dependencies
