@@ -8,19 +8,19 @@
     display: inline-block;
     box-sizing: border-box;
 
-    /** @prop --radio-hover-border-color: Radio border color on hover */
+    /** @prop --radio-hover-border-color: [DEPRECATED] Radio border color on hover */
     --radio-hover-border-color: var(--color-background-interactive-hover);
 
-    /** @prop --radio-border-color: Selected radio border color */
+    /** @prop --radio-border-color: [DEPRECATED] Selected radio border color */
     --radio-border-color: var(--color-border-interactive-muted);
 
-    /** @prop --radio-label-color: label text color */
+    /** @prop --radio-label-color: [DEPRECATED] label text color */
     --radio-label-color: var(--color-text-primary);
 
-    /** @prop --radio-background-color: the radio background color */
+    /** @prop --radio-background-color: [DEPRECATED] the radio background color */
     --radio-background-color: var(--color-background-base-default);
 
-    /** @prop --radio-selected-color: the radio selected color */
+    /** @prop --radio-selected-color: [DEPRECATED] the radio selected color */
     --radio-selected-color: var(--color-background-interactive-default);
 }
 

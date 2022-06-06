@@ -1,16 +1,16 @@
 :host {
     /**
-      * @prop --tree-text-color: tree text color
+      * @prop --tree-text-color: [DEPRECATED] tree text color
       */
     --tree-text-color: var(--color-text-primary);
 
     /**
-      * @prop --tree-background-color: tree background color
+      * @prop --tree-background-color: [DEPRECATED] tree background color
       */
     --tree-background-color: var(--color-background-surface-default);
 
     /**
-    * @prop --tree-border-color: tree color
+    * @prop --tree-border-color: [DEPRECATED] tree color
     */
     --tree-border-color: var(--color-border-interactive-muted);
 

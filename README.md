@@ -1,10 +1,8 @@
-# Astro
+![Astro Logo](./logo.svg)
 
-Astro is an open source Web Components and design library.
-Astro Web Components use [`Stencil`](https://stenciljs.com) in order to provide fast and easy integration no matter the framework.
+![Built With Stencil](https://img.shields.io/badge/-Built%20With%20Stencil-16161d.svg?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI%2BCjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI%2BCgkuc3Qwe2ZpbGw6I0ZGRkZGRjt9Cjwvc3R5bGU%2BCjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik00MjQuNywzNzMuOWMwLDM3LjYtNTUuMSw2OC42LTkyLjcsNjguNkgxODAuNGMtMzcuOSwwLTkyLjctMzAuNy05Mi43LTY4LjZ2LTMuNmgzMzYuOVYzNzMuOXoiLz4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTQyNC43LDI5Mi4xSDE4MC40Yy0zNy42LDAtOTIuNy0zMS05Mi43LTY4LjZ2LTMuNkgzMzJjMzcuNiwwLDkyLjcsMzEsOTIuNyw2OC42VjI5Mi4xeiIvPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDI0LjcsMTQxLjdIODcuN3YtMy42YzAtMzcuNiw1NC44LTY4LjYsOTIuNy02OC42SDMzMmMzNy45LDAsOTIuNywzMC43LDkyLjcsNjguNlYxNDEuN3oiLz4KPC9zdmc%2BCg%3D%3D&colorA=16161d&style=flat-square)
 
-The Astro AG-Grid theme has moved to [it's own repo](https://github.com/RocketCommunicationsInc/ag-grid-theme). The npm package remains the same, [@astrouxds/ag-grid-theme](https://www.npmjs.com/package/@astrouxds/ag-grid-theme).
-
+The Astro UXDS Web Component and CSS libraries provide a starting point to build in-browser space app experiences and custom applications following today’s web development best practices. The Astro UXDS Web Components are designed to be as platform and implementation-agnostic as possible, easy to implement or extend in existing projects, and generic by default.
 
 ## Documentation
 
@@ -21,40 +19,17 @@ Beta documentation: [beta-astro-components.netlify.app](https://beta-astro-compo
 |**Angular** | [`@astrouxds/angular`](https://www.npmjs.com/package/@astrouxds/angular) - Astro Web Components wrapped for Angular use | [`README.md`](packages/angular/README.md) 
 | **Starter Kits**         | Starter kits for getting Astro web-components running in React, Svelte, Vue, Angular and HTML/JS                                                | [React](packages/starter-kits/react-starter/README.md), [Svelte](packages/starter-kits/svelte-starter/README.md), [Vue](packages/starter-kits/vue3-starter), [Angular](packages/starter-kits/angular-starter/README.md), [HTML/JS](packages/starter-kits/html-js-starter) |
 
-## Release Notes
+## Release Strategy
 
-:tada: _NEW_
+During 2022, Astro will publish minor and patch updates on a bi-weekly basis on Thursday and major updates on a bi-annual cadence. Astro patch/minor releases may include updates to design assets, compliance, components, design tokens and documentation.
 
-- Can be used without NPM dependencies
-- [Form elements as Web Components](https://astro-stencil.netlify.app/?path=/story/astro-uxds-patterns-forms-html--page)
-- Form patterns/guidance for HTML, React, Vue, Angular and Svelte
-- Unit and Integration tests
-- Visual regression tests
-- TypeScript support
-- Single package import with tree shaking
-- Integrations with Libraries/Frameworks
-  - [Angular Wrapper](https://astro-stencil.netlify.app/?path=/docs/astro-uxds-welcome-angular--page)
-  - [React Wrapper](https://astro-stencil.netlify.app/?path=/story/astro-uxds-welcome-react--page)
-  - [Vue 3](https://astro-stencil.netlify.app/?path=/story/astro-uxds-welcome-vue-3--page)
-  - [Svelte](https://astro-stencil.netlify.app/?path=/story/astro-uxds-welcome-svelte--page)
-- Starter kits
-  - [Angular](https://github.com/RocketCommunicationsInc/astro/tree/main/packages/starter-kits/angular-starter)
-  - [HTML/JS](https://github.com/RocketCommunicationsInc/astro/tree/main/packages/starter-kits/html-js-starter)
-  - [Svelte](https://github.com/RocketCommunicationsInc/astro/blob/main/packages/starter-kits/svelte-starter)
-  - [Vue 2](https://github.com/RocketCommunicationsInc/astro/blob/main/packages/starter-kits/vue2-starter)
-  - [Vue 3](https://github.com/RocketCommunicationsInc/astro/blob/main/packages/starter-kits/vue3-starter)
+For more information, see https://www.astrouxds.com/releases/
 
-:pencil: _IMPROVED_
+## Deprecations
 
-- [Storybook documentation](https://astro-stencil.netlify.app/?path=/story/astro-uxds-welcome-start-here--page)
-- CSS Custom Property documentation for developer overrides
-- Framework integrations
-  - [HTML/JavaScript](https://astro-stencil.netlify.app/?path=/story/astro-uxds-welcome-javascript--page)
-  - [React](https://astro-stencil.netlify.app/?path=/story/astro-uxds-welcome-react--page)
-  - [Vue2](https://astro-stencil.netlify.app/?path=/story/astro-uxds-welcome-vue-2--page)
-- Starter kits
-  - [React](https://github.com/RocketCommunicationsInc/astro/blob/main/packages/starter-kits/react-starter/README.md)
-    ​
+Most of our component's CSS Custom Properties are now deprecated and will be removed in 7.0. Please remove our [migration guide](./MIGRATION.md) for more information on how you can prepare for this change.
 
-:warning: Deprecation notification
-The existing Lit/CSS libraries are moving to maintenance mode and only receive bug fixes starting January 1, 2022. We encourage all new projects to start with the new Stencil based components https://github.com/RocketCommunicationsInc/astro/tree/main/packages/web-components(https://github.com/RocketCommunicationsInc/astro/tree/main/packages/web-components)
+
+## Contributing
+
+Interested in submitting a new PR? Check out our [contributing guide](./CONTRIBUTING.md) for more information.

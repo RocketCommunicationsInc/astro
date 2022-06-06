@@ -59,13 +59,13 @@ Radio Buttons allow users to mutually select an option from a predefined set of 
 
 ## CSS Custom Properties
 
-| Name                         | Description                 |
-| ---------------------------- | --------------------------- |
-| `--radio-background-color`   | the radio background color  |
-| `--radio-border-color`       | Selected radio border color |
-| `--radio-hover-border-color` | Radio border color on hover |
-| `--radio-label-color`        | label text color            |
-| `--radio-selected-color`     | the radio selected color    |
+| Name                         | Description                              |
+| ---------------------------- | ---------------------------------------- |
+| `--radio-background-color`   | [DEPRECATED] the radio background color  |
+| `--radio-border-color`       | [DEPRECATED] Selected radio border color |
+| `--radio-hover-border-color` | [DEPRECATED] Radio border color on hover |
+| `--radio-label-color`        | [DEPRECATED] label text color            |
+| `--radio-selected-color`     | [DEPRECATED] the radio selected color    |
 
 
 ----------------------------------------------
