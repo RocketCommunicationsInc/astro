@@ -13,6 +13,13 @@
     display: none;
 }
 
+.rux-clock {
+    display: flex;
+    user-select: none;
+    color: var(--clock-text-color);
+    height: 3.938rem; //63px
+}
+
 .rux-clock__segment {
     display: flex;
     flex-direction: column;
