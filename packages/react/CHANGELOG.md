@@ -1,5 +1,20 @@
 # @astrouxds/react
 
+## 6.9.0
+
+### Minor Changes
+
+- d9d16035: Deprecates CSS Custom Properties. See MIGRATION.md for more information
+
+### Patch Changes
+
+- b14eef82: Fixed modal not emitting a detail value when using default confirm/deny buttons.
+- fbe41685: Pop-up-menu will now position correctly if the anchor element is beyond a horizontal scrollbar.
+- Updated dependencies [b14eef82]
+- Updated dependencies [fbe41685]
+- Updated dependencies [d9d16035]
+  - @astrouxds/astro-web-components@6.9.0
+
 ## 6.8.0
 
 ### Minor Changes
