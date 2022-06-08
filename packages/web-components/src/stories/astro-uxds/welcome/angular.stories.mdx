@@ -25,12 +25,12 @@ Otherwise, use:
 
 ## Integration
 
-Import `CUSTOM_ELEMENTS_SCHEMA` and `AstroComponentsModule`
+Import `AstroComponentsModule`
 
 ```js
 // app.module.ts
 import { BrowserModule } from '@angular/platform-browser'
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core'
+import { NgModule } from '@angular/core'
 import { AstroComponentsModule } from '@astrouxds/angular'
 
 import { AppComponent } from './app.component'
@@ -38,8 +38,7 @@ import { AppComponent } from './app.component'
 @NgModule({
     declarations: [AppComponent],
     imports: [BrowserModule, AstroComponentsModule],
-    bootstrap: [AppComponent],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    bootstrap: [AppComponent]
 })
 export class AppModule {}
 ```
