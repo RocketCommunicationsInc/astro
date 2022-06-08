@@ -2,6 +2,7 @@ import { Config } from '@stencil/core'
 import { sass } from '@stencil/sass'
 import { svgOptimizerPlugin } from './src/utils/rollup-svg'
 import { angularOutputTarget } from '@stencil/angular-output-target'
+import { angularValueAccessorBindings } from './wrapper-bindings/angular.bindings'
 import { reactOutputTarget } from '@stencil/react-output-target'
 import { reactBooleanFix } from './wrapper-bindings/react-boolean-fix'
 
@@ -15,6 +16,7 @@ export const config: Config = {
                 '../angular/projects/angular-lib/src/directives/proxies.ts',
             directivesArrayFile:
                 '../angular/projects/angular-lib/src/directives/proxies-list.ts',
+            valueAccessorConfigs: angularValueAccessorBindings,
         }),
         reactOutputTarget({
             componentCorePackage: '@astrouxds/astro-web-components',

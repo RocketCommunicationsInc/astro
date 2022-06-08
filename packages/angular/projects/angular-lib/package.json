@@ -1,11 +1,18 @@
 {
-  "name": "angular-lib",
-  "version": "0.0.1",
+  "name": "@astrouxds/angular",
+  "version": "6.8.0",
+  "description": "Astro Web Components Angular Wrapper",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RocketCommunicationsInc/astro/tree/main/packages/angular"
+  },
   "peerDependencies": {
     "@angular/common": "^13.2.0",
     "@angular/core": "^13.2.0"
   },
   "dependencies": {
+    "@astrouxds/astro-web-components": "^6.8.0",
     "tslib": "^2.3.0"
   }
 }

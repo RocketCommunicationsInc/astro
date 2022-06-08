@@ -1,12 +1,6 @@
 {
-  "name": "@astrouxds/angular",
+  "name": "angular-workspace",
   "version": "6.8.0",
-  "description": "Astro Web Components Angular Wrapper",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/RocketCommunicationsInc/astro/tree/main/packages/angular"
-  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -17,6 +11,9 @@
   "files": [
     "dist/"
   ],
+  "module": "dist/angular-lib/fesm2015/angular-lib.js",
+  "main": "dist/angular-lib/fesm2015/angular-lib.js",
+  "types": "dist/angular-lib/public_api.d.ts",
   "dependencies": {
     "@angular/animations": "~13.2.0",
     "@angular/common": "~13.2.0",

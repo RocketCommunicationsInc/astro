@@ -3,5 +3,6 @@
   "dest": "../../dist/angular-lib",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": ["astrouxds/astro-web-components"]
 }
