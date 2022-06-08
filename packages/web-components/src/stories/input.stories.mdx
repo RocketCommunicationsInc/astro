@@ -492,6 +492,7 @@ The following `<input>` types are available:
 -   Number-only inputs (type="number")
 -   Date inputs (type="date")
 -   Datetime-local inputs (type="datetime-local")
+-   Time inputs (type="time")
 
 export const Types = (args) => {
     return html`
@@ -546,6 +547,7 @@ export const Types = (args) => {
                 label="Datetime-local"
                 type="datetime-local"
             ></rux-input>
+            <rux-input label="Time" type="time"></rux-input>
         </div>
     `
 }
