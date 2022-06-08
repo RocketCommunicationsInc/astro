@@ -1,21 +1,21 @@
 :host {
     /**
-    * @prop --clock-text-color: the color of the clock text
+    * @prop --clock-text-color: [DEPRECATED] the color of the clock text
     */
     --clock-text-color: var(--color-palette-neutral-000);
 
     /**
-    * @prop --clock-background-color: the background color for the clock
+    * @prop --clock-background-color: [DEPRECATED] the background color for the clock
     */
     --clock-background-color: var(--color-palette-brightblue-900);
 
     /**
-    * @prop --clock-border-color: the border color for the clock
+    * @prop --clock-border-color: [DEPRECATED] the border color for the clock
     */
     --clock-border-color: var(--color-background-surface-default);
 
     /**
-    * @prop --clock-label-color: the label color for the clock
+    * @prop --clock-label-color: [DEPRECATED] the label color for the clock
     */
     --clock-label-color: var(--color-palette-neutral-000);
 

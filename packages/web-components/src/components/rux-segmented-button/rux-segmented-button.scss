@@ -2,50 +2,50 @@
     display: block;
     box-sizing: border-box;
 
-    /** @prop --segmented-button-background-color: Segmented button background color */
+    /** @prop --segmented-button-background-color: [DEPRECATED] Segmented button background color */
     --segmented-button-background-color: var(--color-background-base-default);
 
-    /** @prop --segmented-button-text-color: Segmented button text color */
+    /** @prop --segmented-button-text-color: [DEPRECATED] Segmented button text color */
     --segmented-button-text-color: var(--color-background-interactive-default);
 
-    /** @prop --segmented-button-border-color: Segmented button border color */
+    /** @prop --segmented-button-border-color: [DEPRECATED] Segmented button border color */
     --segmented-button-border-color: var(--color-border-interactive-muted);
 
-    /** @prop --segmented-button-hover-background-color: Segmented button hover background color */
+    /** @prop --segmented-button-hover-background-color: [DEPRECATED] Segmented button hover background color */
     --segmented-button-hover-background-color: var(
         --color-background-base-hover
     );
 
-    /** @prop --segmented-button-hover-text-color: Segmented button hover text color */
+    /** @prop --segmented-button-hover-text-color: [DEPRECATED] Segmented button hover text color */
     --segmented-button-hover-text-color: var(--color-text-interactive-hover);
 
-    /** @prop --segmented-button-hover-border-color: Segmented button hover border color */
+    /** @prop --segmented-button-hover-border-color: [DEPRECATED]  Segmented button hover border color */
     --segmented-button-hover-border-color: var(
         --color-border-interactive-muted
     );
 
-    /** @prop --segmented-button-selected-background-color: Segmented button selected background color */
+    /** @prop --segmented-button-selected-background-color: [DEPRECATED] Segmented button selected background color */
     --segmented-button-selected-background-color: var(
         --color-background-surface-selected
     );
 
-    /** @prop --segmented-button-selected-text-color: Segmented button selected text color */
+    /** @prop --segmented-button-selected-text-color: [DEPRECATED] Segmented button selected text color */
     --segmented-button-selected-text-color: var(--color-text-primary);
 
-    /** @prop --segmented-button-selected-hover-background-color: Segmented button selected hover background color */
+    /** @prop --segmented-button-selected-hover-background-color: [DEPRECATED] Segmented button selected hover background color */
     --segmented-button-selected-hover-background-color: var(
         --color-background-surface-selected
     );
 
-    /** @prop --segmented-button-selected-hover-text-color: Segmented button selected hover text color */
+    /** @prop --segmented-button-selected-hover-text-color: [DEPRECATED] Segmented button selected hover text color */
     --segmented-button-selected-hover-text-color: var(--color-text-primary);
 
-    /** @prop --segmented-button-selected-hover-border-color: Segmented button selected hover border color */
+    /** @prop --segmented-button-selected-hover-border-color: [DEPRECATED] Segmented button selected hover border color */
     --segmented-button-selected-hover-border-color: var(
         --color-border-interactive-muted
     );
 
-    /** @prop --segmented-button-border-radius: Segmented button border radius */
+    /** @prop --segmented-button-border-radius: [DEPRECATED] Segmented button border radius */
     --segmented-button-border-radius: var(--radius-base);
 }
 

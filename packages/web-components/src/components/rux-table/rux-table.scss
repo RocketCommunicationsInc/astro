@@ -12,64 +12,64 @@
     overflow: scroll;
 
     /**
-     * @prop --table-border-color: Table background color
+     * @prop --table-border-color: [DEPRECATED] Table background color
      */
     --table-border-color: var(--color-background-base-default);
 
     /**
-      * @prop --table-header-background-color: Table header background color
+      * @prop --table-header-background-color: [DEPRECATED] Table header background color
       */
     --table-header-background-color: var(--color-background-surface-header);
 
     /**
-      * @prop --table-header-border-color: Table header border color
+      * @prop --table-header-border-color: [DEPRECATED] Table header border color
       */
     --table-header-border-color: var(--color-background-surface-default);
 
     /**
-      * @prop --table-header-text-color: Table header text color
+      * @prop --table-header-text-color: [DEPRECATED] Table header text color
       */
     --table-header-text-color: var(--gsb-color-text);
 
     /**
-      * @prop --table-header-box-shadow: Table header box shadow
+      * @prop --table-header-box-shadow: [DEPRECATED] Table header box shadow
       */
     --table-header-box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.45);
 
     /**
-      * @prop --table-row-background-color: Table row background color
+      * @prop --table-row-background-color: [DEPRECATED] Table row background color
       */
     --table-row-background-color: var(--color-background-surface-default);
 
     /**
-      * @prop --table-row-text-color: Table row text color
+      * @prop --table-row-text-color: [DEPRECATED] Table row text color
       */
     --table-row-text-color: var(--color-text-primary);
 
     /**
-      * @prop --table-row-border-color: Table row border color
+      * @prop --table-row-border-color: [DEPRECATED] Table row border color
       */
     --table-row-border-color: var(--color-background-base-default);
 
     /**
-      * @prop --table-row-hover-background-color: Table row hover background color
+      * @prop --table-row-hover-background-color: [DEPRECATED] Table row hover background color
       */
     --table-row-hover-background-color: var(--color-background-surface-hover);
 
     /**
-      * @prop --table-row-hover-text-color: Table row hover text color
+      * @prop --table-row-hover-text-color: [DEPRECATED] Table row hover text color
       */
     --table-row-hover-text-color: var(--color-text-primary);
 
     /**
-      * @prop --table-row-selected-background-color: Table row selected background color
+      * @prop --table-row-selected-background-color: [DEPRECATED]  Table row selected background color
       */
     --table-row-selected-background-color: var(
         --color-background-surface-selected
     );
 
     /**
-      * @prop --table-row-selected-border-color: Table row selected border color
+      * @prop --table-row-selected-border-color: [DEPRECATED] Table row selected border color
       */
     --table-row-selected-border-color: var(--color-background-surface-selected);
     // --table-row-selected-border-color: var(--color-background-interactive-default);

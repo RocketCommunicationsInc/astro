@@ -1,7 +1,7 @@
 @use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
 
 :host {
-    /** @prop --radiogroup-border-color: the radio group border color */
+    /** @prop --radiogroup-border-color: [DEPRECATED] the radio group border color */
     --radiogroup-border-color: var(--color-border-interactive-muted);
 
     display: block;

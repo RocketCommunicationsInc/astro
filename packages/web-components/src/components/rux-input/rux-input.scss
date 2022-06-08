@@ -2,33 +2,33 @@
 
 :host {
     /**
-  * @prop --input-background-color: the input background color
+  * @prop --input-background-color: [DEPRECATED] the input background color
   */
     --input-background-color: var(--color-background-base-default);
 
     /**
-    * @prop --input-border-color: the input border color
+    * @prop --input-border-color: [DEPRECATED] the input border color
     */
     --input-border-color: var(--color-border-interactive-muted);
 
     /**
-    * @prop --input-text-color: the input text color
+    * @prop --input-text-color: [DEPRECATED] the input text color
     */
     --input-text-color: var(--color-text-primary);
 
     /**
-    * @prop --input-focus-border-color: the input focus border color
+    * @prop --input-focus-border-color: [DEPRECATED] the input focus border color
     */
 
     --input-focus-border-color: var(--color-background-interactive-hover);
 
     /**
-    * @prop --input-selection-background-color: the background color of highlighted text
+    * @prop --input-selection-background-color: [DEPRECATED] the background color of highlighted text
     */
     --input-selection-background-color: var(--color-palette-brightblue-400);
 
     /**
-    * @prop --input-invalid-border-color: the input invalid border color
+    * @prop --input-invalid-border-color: [DEPRECATED] the input invalid border color
     */
     --input-invalid-border-color: var(--status-symbol-color-fill-critical);
 

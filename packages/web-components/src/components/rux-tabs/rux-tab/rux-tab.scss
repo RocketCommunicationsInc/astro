@@ -1,21 +1,21 @@
 :host {
     /**
-    *   @prop --tab-text-color: Tab text color
+    *   @prop --tab-text-color: [DEPRECATED] Tab text color
     */
     --tab-text-color: var(--color-background-interactive-default);
 
     /**
-    *   @prop --tab-border-color: Tab border color
+    *   @prop --tab-border-color: [DEPRECATED] Tab border color
     */
     --tab-border-color: transparent;
 
     /**
-    *   @prop --tab-hover-text-color: Tab hover text color
+    *   @prop --tab-hover-text-color: [DEPRECATED] Tab hover text color
     */
     --tab-hover-text-color: var(--color-text-primary);
 
     /**
-    *   @prop --tab-selected-text-color: Tab selected text color
+    *   @prop --tab-selected-text-color: [DEPRECATED] Tab selected text color
     */
     --tab-selected-text-color: var(--color-text-primary);
 

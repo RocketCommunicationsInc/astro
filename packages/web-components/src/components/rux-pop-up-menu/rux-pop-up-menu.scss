@@ -2,33 +2,33 @@
     display: block;
 
     /**
-      * @prop --popup-menu-background-color: Pop Up Menu Backround Color
+      * @prop --popup-menu-background-color: [DEPRECATED] Pop Up Menu Backround Color
     */
 
     --popup-menu-background-color: var(--color-background-base-default);
 
     /**
-      * @prop --popup-menu-border-color: Pop Up Menu Border Color
+      * @prop --popup-menu-border-color: [DEPRECATED] Pop Up Menu Border Color
     */
     --popup-menu-border-color: var(--color-border-interactive-muted);
 
     /**
-      * @prop --popup-menu-caret-background-color: Pop Up Menu Caret Background Color
+      * @prop --popup-menu-caret-background-color: [DEPRECATED] Pop Up Menu Caret Background Color
     */
     --popup-menu-caret-background-color: var(--color-border-interactive-muted);
 
     /**
-      * @prop --popup-menu-caret-left: Position of Caret
+      * @prop --popup-menu-caret-left: [DEPRECATED] Position of Caret
     */
     --popup-menu-caret-left: 2px;
 
     /**
-      * @prop --popup-menu-caret-size: Size of Caret
+      * @prop --popup-menu-caret-size: [DEPRECATED] Size of Caret
     */
     --popup-menu-caret-size: 1.875rem;
 
     /**
-      * @prop --popup-menu-transition-speed: Transition Time of Pop Up Animation
+      * @prop --popup-menu-transition-speed: [DEPRECATED] Transition Time of Pop Up Animation
     */
     --popup-menu-transition-speed: 0.1667s;
 
