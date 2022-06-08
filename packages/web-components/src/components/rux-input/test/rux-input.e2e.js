@@ -126,4 +126,9 @@ describe('Input Field with Form', () => {
         cy.get('#formSubmitBtn').click()
         cy.get('#log').should('contain', 'datetime-local:2022-10-05T13:25')
     })
+    it('sumbits the correct value in type time', () => {
+        cy.get('#time').shadow().find('input').type('01:25:00')
+        cy.get('#formSubmitBtn').click()
+        cy.get('#log').should('contain', 'time:01:25:00')
+    })
 })
