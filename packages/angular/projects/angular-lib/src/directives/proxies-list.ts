@@ -1,5 +1,7 @@
+//@ts-nocheck
+
 import * as d from './proxies';
-//@ts-ignore
+
 export const DIRECTIVES = [
   d.RuxButton,
   d.RuxButtonGroup,

@@ -3,6 +3,7 @@ import { sass } from '@stencil/sass'
 import { svgOptimizerPlugin } from './src/utils/rollup-svg'
 import { angularOutputTarget } from '@stencil/angular-output-target'
 import { angularValueAccessorBindings } from './wrapper-bindings/angular.bindings'
+import { angularProxiesListIgnore } from './wrapper-bindings/angular-proxies-list-ignore'
 import { reactOutputTarget } from '@stencil/react-output-target'
 import { reactBooleanFix } from './wrapper-bindings/react-boolean-fix'
 
@@ -10,14 +11,6 @@ export const config: Config = {
     namespace: 'astro-web-components',
     globalStyle: 'src/global/global.scss',
     outputTargets: [
-        angularOutputTarget({
-            componentCorePackage: '@astrouxds/astro-web-components',
-            directivesProxyFile:
-                '../angular/projects/angular-lib/src/directives/proxies.ts',
-            directivesArrayFile:
-                '../angular/projects/angular-lib/src/directives/proxies-list.ts',
-            valueAccessorConfigs: angularValueAccessorBindings,
-        }),
         reactOutputTarget({
             componentCorePackage: '@astrouxds/astro-web-components',
             proxiesFile: '../react/src/components.tsx',
@@ -27,6 +20,18 @@ export const config: Config = {
         reactBooleanFix({
             attatchPropsFile:
                 '../../react/src/react-component-lib/utils/attachProps.ts',
+        }),
+        angularOutputTarget({
+            componentCorePackage: '@astrouxds/astro-web-components',
+            directivesProxyFile:
+                '../angular/projects/angular-lib/src/directives/proxies.ts',
+            directivesArrayFile:
+                '../angular/projects/angular-lib/src/directives/proxies-list.ts',
+            valueAccessorConfigs: angularValueAccessorBindings,
+        }),
+        angularProxiesListIgnore({
+            proxiesListFile:
+                '../../angular/projects/angular-lib/src/directives/proxies-list.ts',
         }),
         {
             type: 'dist',
