@@ -66,10 +66,9 @@
     "rollup": "^1.1.2",
     "rollup-plugin-node-resolve": "^4.0.0",
     "rxjs": "^6.2.0",
-    "tsickle": "^0.34.0",
+    "tsickle": "^0.34.2",
     "tslint": "^5.12.1",
-    "tslint-ionic-rules": "0.0.21",
-    "typescript": ">=3.1.1",
+    "typescript": "^3.2.4",
     "zone.js": "^0.8.28"
   },
   "jest": {
