@@ -69,7 +69,7 @@
     "tsickle": "^0.34.0",
     "tslint": "^5.12.1",
     "tslint-ionic-rules": "0.0.21",
-    "typescript": "3.2.4",
+    "typescript": ">=3.0.0",
     "zone.js": "^0.8.28"
   },
   "jest": {
