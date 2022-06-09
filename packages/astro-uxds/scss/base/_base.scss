@@ -68,7 +68,7 @@ tr:not(:last-of-type) {
 blockquote {
   margin: 0.5rem 1rem;
   padding: 0.5rem 1rem;
-  border-left: solid 8px $txt-orange;
+  border-left: solid 8px var(--color-border-interactive-default);
   // -moz-box-shadow: 2px 2px 10px #ccc;
   // -webkit-box-shadow: 2px 2px 10px #ccc;
   // box-shadow: 2px 2px 10px #ccc;

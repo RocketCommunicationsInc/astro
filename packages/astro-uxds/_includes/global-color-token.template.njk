@@ -4,25 +4,25 @@
 <h1 style="margin-bottom: 20px;">{{ title }}</h1>
 <table class="token-table">
     <thead class="token-head">
-    <tr>
-        <td class="table-cell">Token Name</td>
-        <td class="table-cell">Token Value</td>
-        <td class="table-cell">Example</td>
-    </tr>
+    <rux-table-row>
+        <td class="table-cell">Token Name</rux-table-cell>
+        <td class="table-cell">Token Value</rux-table-cell>
+        <td class="table-cell">Example</rux-table-cell>
+    </rux-table-row>
     </thead>
         <tbody>
             {% for key, value in global %}      
                 <tr class="token-color">
-                    <td class="table-cell">{{ key }}</td>
-                    <td class="table-cell" style="font-weight: bold">{{ value }}</td>
+                    <td class="table-cell">{{ key }}</rux-table-cell>
+                    <td class="table-cell" style="font-weight: bold">{{ value }}</rux-table-cell>
                     <td class="table-cell table-cell-color">
                         <div class="color-banner" style="background-color: {{ value }};">
                         </div>
-                    </td>
-                </tr> 
+                    </rux-table-cell>
+                </rux-table-row> 
             {% endfor %}
         </tbody>
-    </table>
+    </rux-rux-table>
 </div>
 {% endblock %}
 

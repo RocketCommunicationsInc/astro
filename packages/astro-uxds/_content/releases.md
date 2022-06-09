@@ -13,95 +13,95 @@ Astro represents a collection of artifacts including, but not limited to, guidan
 
 <table class="release-table release-table--current-version">
 <thead>
-<tr>
-<th colspan="3">Astro {{ meta.version }} - Updated <time>May 26, 2022</time></th>
-</tr>
+<rux-table-row>
+<th colspan="3">Astro {{ meta.version }} - Updated <time>May 26, 2022</time></rux-table-header>
+</rux-table-row>
 </thead>
 <tbody>
-<tr>
-<td>Design Language</td>
-<td class="tabular"><b>{{ meta.version }}</b></td>
-<td>No changes this release</td>
-</tr>
-<tr>
-<td>Figma Dark Theme Library</td>
-<td class="tabular">6.1.4 -&gt; <b>6.1.5</b></td>
-<td>No changes this release</td>
-</tr>
-<tr>
-<td>Figma Wireframe Theme Library</td>
-<td class="tabular">6.0.0</td>
-<td>No changes this release</td>
-</tr>
-<tr>
-<td>Web Components</td>
-<td class="tabular">6.7.0 -&gt; <b>6.8.0</b></td>
-<td><a href="https://github.com/RocketCommunicationsInc/astro/releases/tag/v6.8.0">Release Notes</a></td>
-</tr>
-<tr>
-<td>EGS Design Compliance</td>
-<td class="tabular"><b>3.1.0</b></td>
-<td>No changes this release</td>
-</tr>
+<rux-table-row>
+<rux-table-cell>Design Language</rux-table-cell>
+<td class="tabular"><b>{{ meta.version }}</b></rux-table-cell>
+<rux-table-cell>No changes this release</rux-table-cell>
+</rux-table-row>
+<rux-table-row>
+<rux-table-cell>Figma Dark Theme Library</rux-table-cell>
+<td class="tabular">6.1.4 -&gt; <b>6.1.5</b></rux-table-cell>
+<rux-table-cell>No changes this release</rux-table-cell>
+</rux-table-row>
+<rux-table-row>
+<rux-table-cell>Figma Wireframe Theme Library</rux-table-cell>
+<td class="tabular">6.0.0</rux-table-cell>
+<rux-table-cell>No changes this release</rux-table-cell>
+</rux-table-row>
+<rux-table-row>
+<rux-table-cell>Web Components</rux-table-cell>
+<td class="tabular">6.7.0 -&gt; <b>6.8.0</b></rux-table-cell>
+<rux-table-cell><a href="https://github.com/RocketCommunicationsInc/astro/releases/tag/v6.8.0">Release Notes</a></rux-table-cell>
+</rux-table-row>
+<rux-table-row>
+<rux-table-cell>EGS Design Compliance</rux-table-cell>
+<td class="tabular"><b>3.1.0</b></rux-table-cell>
+<rux-table-cell>No changes this release</rux-table-cell>
+</rux-table-row>
 </tbody>
-</table>
+</rux-rux-table>
 
 ## Previous Major Versions
 
 <table class="release-table releast-table--previous-versions">
 <thead>
-<tr>
-<th class="release-table__version">Version</th>
-<th>Status</th>
-<th>Released</th>
-<th>End of Support</th>
-</tr>
+<rux-table-row>
+<th class="release-table__version">Version</rux-table-header>
+<rux-table-header>Status</rux-table-header>
+<rux-table-header>Released</rux-table-header>
+<rux-table-header>End of Support</rux-table-header>
+</rux-table-row>
 </thead>
 <tbody>
-<tr>
-<td>1.0</td>
-<td>Unsupported</td>
-<td>Sep 1, 2015</td>
-<td>Dec 15, 2016</td>
-</tr>
-<tr>
-<td>2.0</td>
-<td>Unsupported</td>
-<td>Dec 15, 2016</td>
-<td>April 16, 2018</td>
-</tr>
-<tr>
-<td>3.0</td>
-<td>Unsupported</td>
-<td>Apr 16, 2018</td>
-<td>Apr 8, 2019</td>
-</tr>
-<tr>
-<td>4.0</td>
-<td>Unsupported</td>
-<td>Apr 8, 2019</td>
-<td>Jan 27, 2021</td>
-</tr>
-<tr>
-<td><a href="https://github.com/RocketCommunicationsInc/astro-uxds/tree/v5.0">5.0</a></td>
-<td>Deprecated</td>
-<td>Jan 27, 2021</td>
-<td>Jul 7, 2022</td>
-</tr>
-<tr>
-<td><a href="https://github.com/RocketCommunicationsInc/astro/tree/v6.0.0">6.0</a></td>
-<td>Supported</td>
-<td>Oct 27, 2021</td>
-<td>Jan 12, 2023</td>
-</tr>
-<tr>
-<td>7.0</td>
-<td>Scheduled</td>
-<td>Q3 2022</td>
-<td>TBD</td>
-</tr>
+<rux-table-row>
+<rux-table-cell>1.0</rux-table-cell>
+<rux-table-cell>Unsupported</rux-table-cell>
+<rux-table-cell>Sep 1, 2015</rux-table-cell>
+<rux-table-cell>Dec 15, 2016</rux-table-cell>
+</rux-table-row>
+<rux-table-row>
+<rux-table-cell>2.0</rux-table-cell>
+<rux-table-cell>Unsupported</rux-table-cell>
+<rux-table-cell>Dec 15, 2016</rux-table-cell>
+<rux-table-cell>April 16, 2018</rux-table-cell>
+</rux-table-row>
+<rux-table-row>
+<rux-table-cell>3.0</rux-table-cell>
+<rux-table-cell>Unsupported</rux-table-cell>
+<rux-table-cell>Apr 16, 2018</rux-table-cell>
+<rux-table-cell>Apr 8, 2019</rux-table-cell>
+</rux-table-row>
+<rux-table-row>
+<rux-table-cell>4.0</rux-table-cell>
+<rux-table-cell>Unsupported</rux-table-cell>
+<rux-table-cell>Apr 8, 2019</rux-table-cell>
+<rux-table-cell>Jan 27, 2021</rux-table-cell>
+</rux-table-row>
+<rux-table-row>
+<rux-table-cell><a href="https://github.com/RocketCommunicationsInc/astro-uxds/tree/v5.0">5.0</a></rux-table-cell>
+<rux-table-cell>Deprecated</rux-table-cell>
+<rux-table-cell>Jan 27, 2021</rux-table-cell>
+<rux-table-cell>Jul 7, 2022</rux-table-cell>
+</rux-table-row>
+<rux-table-row>
+<rux-table-cell><a href="https://github.com/RocketCommunicationsInc/astro/tree/v6.0.0">6.0</a></rux-table-cell>
+<rux-table-cell>Supported</rux-table-cell>
+<rux-table-cell>Oct 27, 2021</rux-table-cell>
+<rux-table-cell>Jan 12, 2023</rux-table-cell>
+</rux-table-row>
+<rux-table-row>
+<rux-table-cell>7.0</rux-table-cell>
+<rux-table-cell>Scheduled</rux-table-cell>
+<rux-table-cell>Q3 2022</rux-table-cell>
+<rux-table-cell>TBD</rux-table-cell>
+</rux-table-row>
 </tbody>
-</table>
+</rux-rux-table>
 
 ## Release Schedule
 

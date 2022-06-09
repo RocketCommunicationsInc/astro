@@ -9,60 +9,60 @@
     <h1 style="margin-bottom: 20px;">{{ title }}</h1>
     <table class="token-table">
         <thead class="token-head">
-        <tr>
-            <td class="table-cell">Token Name</td>
-            <td class="table-cell">Token Value</td>
-            <td class="table-cell">Example</td>
-        </tr>
+        <rux-table-row>
+            <td class="table-cell">Token Name</rux-table-cell>
+            <td class="table-cell">Token Value</rux-table-cell>
+            <td class="table-cell">Example</rux-table-cell>
+        </rux-table-row>
         </thead>
         <tbody>
             {% if family %}
             {% for key, value in fontFamily %}
-                    <tr>
-                        <td class="table-cell">{{ key }}</td>
-                        <td class="table-cell" style="font-weight: bold; font-size: 16px;">{{ value }}</td>
-                        <td class="table-cell" style="font-family: {{ value }}">Example Font Family</td>
-                    </tr>
+                    <rux-table-row>
+                        <td class="table-cell">{{ key }}</rux-table-cell>
+                        <td class="table-cell" style="font-weight: bold; font-size: 16px;">{{ value }}</rux-table-cell>
+                        <td class="table-cell" style="font-family: {{ value }}">Example Font Family</rux-table-cell>
+                    </rux-table-row>
             {% endfor %}
             {% endif %}
             {% if size %}
                 {% for key, value in fontSize %}
-                    <tr>
-                        <td class="table-cell">{{ key }}</td>
-                        <td class="table-cell" style="font-weight: bold; font-size: 16px;">{{ value }}</td>
-                        <td class="table-cell" style="font-size: {{ value }}">Example Font Size</td>
-                    </tr>
+                    <rux-table-row>
+                        <td class="table-cell">{{ key }}</rux-table-cell>
+                        <td class="table-cell" style="font-weight: bold; font-size: 16px;">{{ value }}</rux-table-cell>
+                        <td class="table-cell" style="font-size: {{ value }}">Example Font Size</rux-table-cell>
+                    </rux-table-row>
                 {% endfor %}
             {% endif %}
             {% if weight %}
                 {% for key, value in fontWeight %}
-                    <tr>
-                        <td class="table-cell">{{ key }}</td>
-                        <td class="table-cell" style="font-weight: bold; font-size: 16px;">{{ value }}</td>
-                        <td class="table-cell" style="font-weight: {{ value }}">Example Font Weight</td>
-                    </tr>
+                    <rux-table-row>
+                        <td class="table-cell">{{ key }}</rux-table-cell>
+                        <td class="table-cell" style="font-weight: bold; font-size: 16px;">{{ value }}</rux-table-cell>
+                        <td class="table-cell" style="font-weight: {{ value }}">Example Font Weight</rux-table-cell>
+                    </rux-table-row>
                 {% endfor %}
             {% endif %}
             {% if spacing %}
                 {% for key, value in letterSpacing %}
-                    <tr>
-                        <td class="table-cell">{{ key }}</td>
-                        <td class="table-cell" style="font-weight: bold; font-size: 16px;">{{ value }}</td>
-                        <td class="table-cell" style="letter-spacing: {{ value }}">Example letter-spacing</td>
-                    </tr>
+                    <rux-table-row>
+                        <td class="table-cell">{{ key }}</rux-table-cell>
+                        <td class="table-cell" style="font-weight: bold; font-size: 16px;">{{ value }}</rux-table-cell>
+                        <td class="table-cell" style="letter-spacing: {{ value }}">Example letter-spacing</rux-table-cell>
+                    </rux-table-row>
                 {% endfor %}
             {% endif %}
             {% if height %}
                 {% for key, value in lineHeight %}
-                    <tr>
-                        <td class="table-cell">{{ key }}</td>
-                        <td class="table-cell" style="font-weight: bold; font-size: 16px;">{{ value }}</td>
-                        <td class="table-cell" style="line-height: {{ value }}">Example line-height</td>
-                    </tr>
+                    <rux-table-row>
+                        <td class="table-cell">{{ key }}</rux-table-cell>
+                        <td class="table-cell" style="font-weight: bold; font-size: 16px;">{{ value }}</rux-table-cell>
+                        <td class="table-cell" style="line-height: {{ value }}">Example line-height</rux-table-cell>
+                    </rux-table-row>
                 {% endfor %}
             {% endif %}
         </tbody>
-    </table> 
+    </rux-rux-table> 
 </div>
 {% endblock %}
 

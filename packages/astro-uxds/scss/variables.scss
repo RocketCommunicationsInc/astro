@@ -1,16 +1,17 @@
 // CSS VARIABLES
 :root {
-  --primary-color: #e47836;
-  --secondary-color: #ffa301;
+  --primary-color: var(--color-background-interactive-default);
+  --secondary-color: var(--color-background-interactive-default);
+  // --secondary-color: #ffa301;
 
   --background-color: #fff;
 
   --content-max-text-width: 56.25em;
   --content-max-width: 1200px;
 
-  --font: Helvetica, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-color: rgb(73, 73, 73);
-  --font-size: 1rem;
+  --font: var(--font-family-sans);
+  --font-color: var(--color-text-primary);
+  --font-size: var(--font-body-1-font-size);
   --font-size-sm: 0.85rem;
 
   --nav-background-color: #000;

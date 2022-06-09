@@ -14,11 +14,92 @@ Astro uses the open source typefaces [Roboto](https://fonts.google.com/specimen/
 
 Astro supports three levels of headline text (h1, h2, h3). CSS properties are automatically applied to HTML elements.
 
-| Heading         | Weight       | Markup | REM   | PX  | Class |
-| --------------- | ------------ | ------ | ----- | --- | ----- |
-| Heading Level 1 | Normal (400) | `<h1>` | 2.125 | 34  | `.h1` |
-| Heading Level 2 | Normal (400) | `<h2>` | 1.5   | 24  | `.h2` |
-| Heading Level 3 | Medium (500) | `<h3>` | 1.25  | 20  | `.h3` |
+<rux-table>
+<rux-table-header>
+	<rux-table-header-row>
+		<rux-table-header-cell>
+			Heading
+		</rux-table-header-cell>
+		<rux-table-header-cell>
+			Weight
+		</rux-table-header-cell>
+		<rux-table-header-cell>
+			Markup
+		</rux-table-header-cell>
+		<rux-table-header-cell>
+					REM
+		</rux-table-header-cell>
+		<rux-table-header-cell>
+			PX
+		</rux-table-header-cell>
+		<rux-table-header-cell>
+			Class
+		</rux-table-header-cell>
+	</rux-table-header-row>
+</rux-table-header>
+<rux-table-body>
+	<rux-table-row>
+		<rux-table-cell>
+			Heading Level 1
+		</rux-table-cell>
+		<rux-table-cell>
+			Normal (400)
+		</rux-table-cell>			
+		<rux-table-cell>
+			h1
+		</rux-table-cell>
+		<rux-table-cell>
+			2.125rem
+		</rux-table-cell>
+		<rux-table-cell>
+			34
+		</rux-table-cell>			
+		<rux-table-cell>
+			.h1
+		</rux-table-cell>
+	</rux-table-row>
+<rux-table-row>
+		<rux-table-cell>
+			Heading Level 2
+		</rux-table-cell>
+		<rux-table-cell>
+			Normal (400)
+		</rux-table-cell>			
+		<rux-table-cell>
+			h2
+		</rux-table-cell>
+		<rux-table-cell>
+			1.5
+		</rux-table-cell>
+		<rux-table-cell>
+			24
+		</rux-table-cell>			
+		<rux-table-cell>
+			.h2
+		</rux-table-cell>
+	</rux-table-row>	
+	<rux-table-row>
+		<rux-table-cell>
+			Heading Level 3
+		</rux-table-cell>
+		<rux-table-cell>
+			Medium (500)
+		</rux-table-cell>			
+		<rux-table-cell>
+			h3
+		</rux-table-cell>
+		<rux-table-cell>
+			1.25
+		</rux-table-cell>
+		<rux-table-cell>
+			20
+		</rux-table-cell>			
+		<rux-table-cell>
+			.h3
+		</rux-table-cell>
+	</rux-table-row>
+</rux-table-body>
+</rux-table>
 
 ::: note
 In addition to semantic headings, Astro supports overriding a header element's presentation via .h1, .h2 .h3 CSS classes which will apply the visual appearance of the corresponding header element.
