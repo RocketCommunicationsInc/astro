@@ -1,5 +1,25 @@
 # @astrouxds/angular
 
+## 6.9.0
+
+### Minor Changes
+
+- !!! Deprecates CSS Custom Properties. See MIGRATION.md for more information !!!
+
+#### Input
+
+- Added support for `time` type
+
+### Patch Changes
+
+#### Modal
+
+- Fixed issue with emitting a detail value when using default confirm/deny buttons.
+
+#### Pop Up Menu
+
+- Pop-up-menu will now position correctly if the anchor element is beyond a horizontal scrollbar.
+
 ## 6.8.0
 
 ### Minor Changes
