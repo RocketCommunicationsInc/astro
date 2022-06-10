@@ -2,7 +2,7 @@ import { Meta } from '@storybook/addon-docs'
 
 <Meta title="Astro UXDS/Welcome/Angular" />
 
-# Angular
+# Angular (v10+)
 
 For your convienence, we offer a wrapper library for our Angular components. Out of the box, Angular already has [very good support for Custom Elements](https://custom-elements-everywhere.com/libraries/angular/results/results.html).
 Our wrapper library builds on top of that and adds:
@@ -30,7 +30,7 @@ Import `CUSTOM_ELEMENTS_SCHEMA` and `AstroComponentsModule`
 ```js
 // app.module.ts
 import { BrowserModule } from '@angular/platform-browser'
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core'
+import { NgModule } from '@angular/core'
 import { AstroComponentsModule } from '@astrouxds/angular'
 
 import { AppComponent } from './app.component'
@@ -38,8 +38,7 @@ import { AppComponent } from './app.component'
 @NgModule({
     declarations: [AppComponent],
     imports: [BrowserModule, AstroComponentsModule],
-    bootstrap: [AppComponent],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    bootstrap: [AppComponent]
 })
 export class AppModule {}
 ```
@@ -156,4 +155,60 @@ export class ExampleComponent {
         await this.myTestPopUpMenu.nativeElement.isOpen()
     }
 }
+```
+
+## Usage Without Wrapper 
+
+Our `@astrouxds/angular` wrapper library provides a number of quality of life features that enhance our core web component library. However, you may find it more convenient to use the core library directly if:
+
+1. You aren't using Angular's Reactive Forms.
+2. You don't need Angular's template checking.
+3. You are using an older version of Angular (< 10).
+
+### Installation 
+
+1. `npm i @astrouxds/astro-web-components`
+
+2. Register the custom elements
+
+```
+// main.ts
+import { defineCustomElements } from '@astrouxds/astro-web-components/loader';
+defineCustomElements();
+```
+
+
+3. Import `CUSTOM_ELEMENTS_SCHEMA`
+
+```js
+// app.module.ts
+import { BrowserModule } from '@angular/platform-browser'
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core'
+
+import { AppComponent } from './app.component'
+
+@NgModule({
+    declarations: [AppComponent],
+    imports: [BrowserModule],
+    bootstrap: [AppComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+})
+export class AppModule {}
+```
+
+4. Install Astro's CSS custom properties
+
+```css
+// styles.scss
+@import '@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css';
+```
+
+5. Import [Roboto](https://fonts.google.com/specimen/Roboto) in your index.html. We recommend using Google's CDN for ease of use but you can also install it locally.
+
+```html
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&family=Roboto:wght@200;300;400;500;600;800&display=swap"
+    rel="stylesheet"
+/>
 ```

@@ -1,6 +1,25 @@
 @use '../../global/mixins';
 
 :host {
+    /**
+    * @part wrapper - css part hook to style modal wrapper
+    */
+
+    /**
+    * @prop --modal-title-color: [DEPRECATED] Modal title color
+    */
+    --modal-title-color: var(--color-text-primary);
+
+    /**
+    * @prop --modal-background-color: [DEPRECATED] Modal background color
+    */
+    --modal-background-color: var(--color-background-surface-default);
+
+    /**
+    * @prop --modal-border-color: [DEPRECATED] Modal border color
+    */
+    --modal-border-color: var(--color-background-interactive-default);
+
     display: contents;
 }
 
@@ -51,7 +70,7 @@
         box-shadow: var(--dialog-shadow-outer);
     }
 
-    &__titlebar {
+    &__header {
         display: flex;
         flex-grow: 0;
         flex-shrink: 0;
@@ -65,7 +84,6 @@
         font-size: var(--font-heading-2-font-size);
         font-weight: var(--font-heading-2-font-weight);
         letter-spacing: var(--font-heading-2-letter-spacing);
-        // Allows h tags to have same amount of margin as any other tag
         ::slotted(h6),
         ::slotted(h5),
         ::slotted(h4),
@@ -78,12 +96,28 @@
     }
 
     &__content {
-        padding: 0 1.25rem; //0 20px
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 1rem 1rem 0 1rem;
+        color: var(--color-text-primary);
+    }
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 0 1rem 1rem 1rem;
         color: var(--color-text-primary);
     }
 
     &__footer {
         padding: 1.25rem; //20px
+    }
+    &__header.hidden {
+        display: none;
+    }
+    &__message.hidden {
+        display: none;
     }
 }
 

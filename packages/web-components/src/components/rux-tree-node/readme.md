@@ -43,14 +43,14 @@ Type: `Promise<void>`
 
 ## CSS Custom Properties
 
-| Name                            | Description                 |
-| ------------------------------- | --------------------------- |
-| `--tree-accent-color`           | tree accent color           |
-| `--tree-expanded-border-color`  | tree expanded border color  |
-| `--tree-hover-background-color` | tree hover background color |
-| `--tree-hover-text-color`       | tree hover text color       |
-| `--tree-selected-accent-color`  | tree selected accent color  |
-| `--tree-selected-border-color`  | tree selected border color  |
+| Name                            | Description                              |
+| ------------------------------- | ---------------------------------------- |
+| `--tree-accent-color`           | [DEPRECATED] tree accent color           |
+| `--tree-expanded-border-color`  | [DEPRECATED] tree expanded border color  |
+| `--tree-hover-background-color` | [DEPRECATED] tree hover background color |
+| `--tree-hover-text-color`       | [DEPRECATED] tree hover text color       |
+| `--tree-selected-accent-color`  | [DEPRECATED] tree selected accent color  |
+| `--tree-selected-border-color`  | [DEPRECATED] tree selected border color  |
 
 
 ----------------------------------------------

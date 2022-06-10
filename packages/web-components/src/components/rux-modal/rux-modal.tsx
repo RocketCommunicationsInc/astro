@@ -7,19 +7,23 @@ import {
     Element,
     Listen,
     Host,
-    Watch,
     State,
+    Fragment,
 } from '@stencil/core'
 import { hasSlot } from '../../utils/utils'
 
 /**
- * @part container - the modal's container
- * @part header - The header container of modal
- * @part message - The message container of modal
- * @part footer - The footer container of modal
+ * @part wrapper - the modal wrapper overlay ! DEPRECATED IN FAVOR OF CONTAINER !
+ * @part container - the modal container
+ * @part dialog - the native dialog element
+ * @part header - the header of the modal
+ * @part message - the message of the modal
+ * @part confirm-button - the modal's confirm button
+ * @part deny-button - the modal's deny button
+ * @part footer - the footer of the modal
  *
  * @slot header - the header of the modal
- * @slot message - the message of the modal
+ * @slot (default) - the modal's message or content
  * @slot footer - the footer of the modal
  */
 @Component({
@@ -38,6 +42,15 @@ export class RuxModal {
     @Prop() clickToClose: boolean = false
 
     /**
+     * Event that is fired when modal opens
+     */
+    @Event({
+        eventName: 'ruxmodalopened',
+        composed: true,
+        bubbles: true,
+    })
+    ruxModalOpened!: EventEmitter<void>
+    /**
      * Event that is fired when modal closes
      */
     @Event({
@@ -45,7 +58,7 @@ export class RuxModal {
         composed: true,
         bubbles: true,
     })
-    ruxModalClosed!: EventEmitter<boolean>
+    ruxModalClosed!: EventEmitter<boolean | null>
 
     /**
      * Event that is fired when modal opens
@@ -59,29 +72,68 @@ export class RuxModal {
 
     @Element() element!: HTMLRuxModalElement
 
-    @State()
-    hasHeader = hasSlot(this.element, 'header')
-    hasMessage = hasSlot(this.element, 'message')
-    hasFooter = hasSlot(this.element, 'footer')
+    @State() hasFooter = hasSlot(this.element, 'footer')
+    @State() hasHeader = hasSlot(this.element, 'header')
+    @State() hasMessage = hasSlot(this.element)
+    private _userInput: boolean | null = null
 
-    @Watch('open')
-    async handleOpenChange() {
-        if (this.open) {
-            this.ruxModalOpened.emit(true)
-        } else {
-            this.ruxModalClosed.emit(true)
+    // confirm dialog if Enter key is pressed
+    @Listen('keydown', { target: 'window' })
+    handleKeyDown(ev: KeyboardEvent) {
+        if (ev.key === 'Enter') {
+            const button = this._getDefaultButton()
+            if (button) {
+                button.click()
+            }
         }
     }
 
     // close modal if click happens outside of dialog
     @Listen('click', { target: 'window' })
     handleClick(ev: MouseEvent) {
-        if (this.clickToClose) {
-            const wrapper = this._getWrapper()
-            if (ev.composedPath()[0] === wrapper) {
-                this.open = false
-            }
+        const wrapper = this._getWrapper()
+        if (ev.composedPath()[0] === wrapper) {
+            this.open = false
+            this.ruxModalClosed.emit()
         }
+    }
+
+    @Watch('open')
+    handleOpen(isOpen: boolean) {
+        if (isOpen && !this.hasFooter) {
+            setTimeout(() => {
+                const button = this._getDefaultButton()
+                if (button) {
+                    button.focus()
+                }
+            }, 0)
+        }
+        this.open
+            ? this.ruxModalOpened.emit()
+            : this.ruxModalClosed.emit(this._userInput)
+    }
+
+    private _handleModalChoice(e: MouseEvent) {
+        // convert string value to boolean
+        const target = e.currentTarget as HTMLElement
+        const choice = target.dataset.value === 'true'
+        this._userInput = choice
+        this.open = false
+    }
+
+    private _getDefaultButton(): HTMLElement | null {
+        const buttonSet = this.element?.shadowRoot?.querySelectorAll(
+            'rux-button:not([hidden])'
+        ) as NodeListOf<HTMLElement>
+
+        if (buttonSet.length > 0) {
+            const defaultButton = buttonSet[buttonSet.length - 1]
+            const shadow = defaultButton.shadowRoot?.querySelector('button')
+
+            if (shadow) return shadow
+        }
+
+        return null
     }
 
     private _getWrapper(): HTMLElement | null {
@@ -95,66 +147,108 @@ export class RuxModal {
         return null
     }
 
+    connectedCallback() {
+        this._handleModalChoice = this._handleModalChoice.bind(this)
+        this._handleSlotChange = this._handleSlotChange.bind(this)
+    }
+
+    componentDidRender() {
+        const button = this._getDefaultButton()
+        button && button.focus()
+    }
+
+    private _handleSlotChange() {
+        this.hasHeader = hasSlot(this.element, 'header')
+        this.hasMessage = hasSlot(this.element)
+        this.hasFooter = hasSlot(this.element, 'footer')
+    }
+
     render() {
         return (
             this.open && (
                 <Host>
-                    <div part="container" class="rux-modal__wrapper">
-                        <dialog class="rux-modal__dialog" role="dialog">
+                    <div part="wrapper container" class="rux-modal__wrapper">
+                        <dialog
+                            class="rux-modal__dialog"
+                            role="dialog"
+                            part="dialog"
+                        >
                             <header
                                 class={{
-                                    'rux-modal__titlebar': true,
-                                    invisible: !this.hasHeader,
+                                    hidden:
+                                        !this.hasHeader &&
+                                        modalTitle === undefined,
+                                    'rux-modal__header': true,
                                 }}
                                 part="header"
                             >
                                 <slot
                                     name="header"
-                                    onSlotchange={() =>
-                                        (this.hasHeader = hasSlot(
-                                            this.element,
-                                            'header'
-                                        ))
-                                    }
-                                ></slot>
+                                    onSlotchange={this._handleSlotChange}
+                                >
+                                    {modalTitle}
+                                </slot>
                             </header>
 
-                            <div
-                                class={{
-                                    'rux-modal__content': true,
-                                    invisible: !this.hasMessage,
-                                }}
-                                part="message"
-                            >
-                                <div class="rux-modal__message">
-                                    <slot
-                                        name="message"
-                                        onSlotchange={() =>
-                                            (this.hasMessage = hasSlot(
-                                                this.element,
-                                                'message'
-                                            ))
-                                        }
-                                    ></slot>
+                            <div class="rux-modal__content" part="message">
+                                <div
+                                    class={{
+                                        hidden:
+                                            !this.hasMessage &&
+                                            modalMessage === undefined,
+                                        'rux-modal__message': true,
+                                    }}
+                                    part="message"
+                                >
+                                    <slot onSlotchange={this._handleSlotChange}>
+                                        {modalMessage}
+                                    </slot>
                                 </div>
                             </div>
-
                             <footer
-                                part="footer"
                                 class={{
                                     'rux-modal__footer': true,
-                                    invisible: !this.hasFooter,
                                 }}
+                                part="footer"
                             >
-                                <slot
-                                    name="footer"
-                                    onSlotchange={() =>
-                                        (this.hasFooter = hasSlot(
-                                            this.element,
-                                            'footer'
-                                        ))
-                                    }
-                                ></slot>
+                                {this.hasFooter ? (
+                                    <slot
+                                        name="footer"
+                                        onSlotchange={this._handleSlotChange}
+                                    ></slot>
+                                ) : (
+                                    <Fragment>
+                                        <rux-button-group h-align="right">
+                                            <rux-button
+                                                secondary={
+                                                    confirmText.length > 0
+                                                }
+                                                onClick={_handleModalChoice}
+                                                data-value="false"
+                                                hidden={!denyText}
+                                                tabindex="-1"
+                                                exportparts="container:deny-button"
+                                            >
+                                                {denyText}
+                                            </rux-button>
+                                            <rux-button
+                                                onClick={_handleModalChoice}
+                                                hidden={!confirmText}
+                                                data-value="true"
+                                                tabindex="0"
+                                                exportparts="container:confirm-button"
+                                            >
+                                                {confirmText}
+                                            </rux-button>
+                                        </rux-button-group>
+                                        <slot
+                                            name="footer"
+                                            onSlotchange={
+                                                this._handleSlotChange
+                                            }
+                                        ></slot>
+                                    </Fragment>
+                                )}
                             </footer>
                         </dialog>
                     </div>

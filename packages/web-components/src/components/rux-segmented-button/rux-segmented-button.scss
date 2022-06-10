@@ -1,6 +1,52 @@
 :host {
     display: block;
     box-sizing: border-box;
+
+    /** @prop --segmented-button-background-color: [DEPRECATED] Segmented button background color */
+    --segmented-button-background-color: var(--color-background-base-default);
+
+    /** @prop --segmented-button-text-color: [DEPRECATED] Segmented button text color */
+    --segmented-button-text-color: var(--color-background-interactive-default);
+
+    /** @prop --segmented-button-border-color: [DEPRECATED] Segmented button border color */
+    --segmented-button-border-color: var(--color-border-interactive-muted);
+
+    /** @prop --segmented-button-hover-background-color: [DEPRECATED] Segmented button hover background color */
+    --segmented-button-hover-background-color: var(
+        --color-background-base-hover
+    );
+
+    /** @prop --segmented-button-hover-text-color: [DEPRECATED] Segmented button hover text color */
+    --segmented-button-hover-text-color: var(--color-text-interactive-hover);
+
+    /** @prop --segmented-button-hover-border-color: [DEPRECATED]  Segmented button hover border color */
+    --segmented-button-hover-border-color: var(
+        --color-border-interactive-muted
+    );
+
+    /** @prop --segmented-button-selected-background-color: [DEPRECATED] Segmented button selected background color */
+    --segmented-button-selected-background-color: var(
+        --color-background-surface-selected
+    );
+
+    /** @prop --segmented-button-selected-text-color: [DEPRECATED] Segmented button selected text color */
+    --segmented-button-selected-text-color: var(--color-text-primary);
+
+    /** @prop --segmented-button-selected-hover-background-color: [DEPRECATED] Segmented button selected hover background color */
+    --segmented-button-selected-hover-background-color: var(
+        --color-background-surface-selected
+    );
+
+    /** @prop --segmented-button-selected-hover-text-color: [DEPRECATED] Segmented button selected hover text color */
+    --segmented-button-selected-hover-text-color: var(--color-text-primary);
+
+    /** @prop --segmented-button-selected-hover-border-color: [DEPRECATED] Segmented button selected hover border color */
+    --segmented-button-selected-hover-border-color: var(
+        --color-border-interactive-muted
+    );
+
+    /** @prop --segmented-button-border-radius: [DEPRECATED] Segmented button border radius */
+    --segmented-button-border-radius: var(--radius-base);
 }
 
 :host([disabled]) {

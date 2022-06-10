@@ -16,9 +16,32 @@
 
 ## Events
 
-| Event                 | Description                                                     | Type                  |
-| --------------------- | --------------------------------------------------------------- | --------------------- |
-| `ruxmenuitemselected` | When a rux-menu item is selected, emits the value of that item. | `CustomEvent<object>` |
+| Event                 | Description                                     | Type                  |
+| --------------------- | ----------------------------------------------- | --------------------- |
+| `ruxmenuitemselected` | Emitted when item is clicked. Ex `{value : 10}` | `CustomEvent<object>` |
+
+
+## Slots
+
+| Slot      | Description                                   |
+| --------- | --------------------------------------------- |
+| `"start"` | before element text. Typically used for icons |
+
+
+## Shadow Parts
+
+| Part          | Description                        |
+| ------------- | ---------------------------------- |
+| `"container"` | the container of the rux-menu-item |
+
+
+## CSS Custom Properties
+
+| Name                                       | Description                                   |
+| ------------------------------------------ | --------------------------------------------- |
+| `--popup-menu-item-background-color`       | [DEPRECATED] Menu Item Background Color       |
+| `--popup-menu-item-hover-background-color` | [DEPRECATED] Menu Item Hover Background Color |
+| `--popup-menu-text-color`                  | [DEPRECATED] Menu Text Color                  |
 
 
 ----------------------------------------------

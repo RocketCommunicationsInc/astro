@@ -19,5 +19,20 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body></body>
+    <body>
+        <div style="width: 200px">
+            <rux-input type="time"></rux-input>
+        </div>
+        <div style="width: 200px">
+            <input type="time" value="01:25:00" />
+        </div>
+        <script>
+            //get the value of rux-input
+            document
+                .querySelector('rux-input')
+                .addEventListener('ruxchange', (e) => {
+                    console.log(e.target.value)
+                })
+        </script>
+    </body>
 </html>

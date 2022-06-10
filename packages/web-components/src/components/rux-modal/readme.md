@@ -61,38 +61,42 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 
 ## Events
 
-| Event            | Description                           | Type                   |
-| ---------------- | ------------------------------------- | ---------------------- |
-| `ruxmodalclosed` | Event that is fired when modal closes | `CustomEvent<boolean>` |
-| `ruxmodalopened` | Event that is fired when modal opens  | `CustomEvent<boolean>` |
+| Event            | Description                           | Type                           |
+| ---------------- | ------------------------------------- | ------------------------------ |
+| `ruxmodalclosed` | Event that is fired when modal closes | `CustomEvent<boolean \| null>` |
+| `ruxmodalopened` | Event that is fired when modal opens  | `CustomEvent<void>`            |
 
 
 ## Slots
 
-| Slot        | Description              |
-| ----------- | ------------------------ |
-| `"footer"`  | the footer of the modal  |
-| `"header"`  | the header of the modal  |
-| `"message"` | the message of the modal |
+| Slot          | Description                    |
+| ------------- | ------------------------------ |
+| `"(default)"` | the modal's message or content |
+| `"footer"`    | the footer of the modal        |
+| `"header"`    | the header of the modal        |
 
 
 ## Shadow Parts
 
-| Part          | Description                    |
-| ------------- | ------------------------------ |
-| `"container"` | the modal's container          |
-| `"footer"`    | The footer container of modal  |
-| `"header"`    | The header container of modal  |
-| `"message"`   | The message container of modal |
+| Part               | Description                                                    |
+| ------------------ | -------------------------------------------------------------- |
+| `"confirm-button"` | the modal's confirm button                                     |
+| `"container"`      | the modal container                                            |
+| `"deny-button"`    | the modal's deny button                                        |
+| `"dialog"`         | the native dialog element                                      |
+| `"footer"`         | the footer of the modal                                        |
+| `"header"`         | the header of the modal                                        |
+| `"message"`        | the message of the modal                                       |
+| `"wrapper"`        | the modal wrapper overlay ! DEPRECATED IN FAVOR OF CONTAINER ! |
 
 
 ## CSS Custom Properties
 
-| Name                       | Description            |
-| -------------------------- | ---------------------- |
-| `--modal-background-color` | Modal background color |
-| `--modal-border-color`     | Modal border color     |
-| `--modal-title-color`      | Modal title color      |
+| Name                       | Description                         |
+| -------------------------- | ----------------------------------- |
+| `--modal-background-color` | [DEPRECATED] Modal background color |
+| `--modal-border-color`     | [DEPRECATED] Modal border color     |
+| `--modal-title-color`      | [DEPRECATED] Modal title color      |
 
 
 ----------------------------------------------

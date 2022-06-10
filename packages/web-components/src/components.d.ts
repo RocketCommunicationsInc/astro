@@ -11941,6 +11941,7 @@ export namespace Components {
         | 'password'
         | 'date'
         | 'datetime-local'
+        | 'time'
         | 'tel';
         /**
           * The input value
@@ -32247,6 +32248,7 @@ declare namespace LocalJSX {
         | 'password'
         | 'date'
         | 'datetime-local'
+        | 'time'
         | 'tel';
         /**
           * The input value
@@ -32297,7 +32299,11 @@ declare namespace LocalJSX {
         /**
           * Event that is fired when modal closes
          */
-        "onRuxmodalclosed"?: (event: CustomEvent<boolean>) => void;
+        "onRuxmodalclosed"?: (event: CustomEvent<boolean | null>) => void;
+        /**
+          * Event that is fired when modal opens
+         */
+        "onRuxmodalopened"?: (event: CustomEvent<void>) => void;
         /**
           * Event that is fired when modal opens
          */
