@@ -1,25 +1,6 @@
 @use '../../global/mixins';
 
 :host {
-    /**
-    * @part wrapper - css part hook to style modal wrapper
-    */
-
-    /**
-    * @prop --modal-title-color: Modal title color
-    */
-    --modal-title-color: var(--color-text-primary);
-
-    /**
-    * @prop --modal-background-color: Modal background color
-    */
-    --modal-background-color: var(--color-background-surface-default);
-
-    /**
-    * @prop --modal-border-color: Modal border color
-    */
-    --modal-border-color: var(--color-background-interactive-default);
-
     display: contents;
 }
 
@@ -60,7 +41,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        background-color: var(--modal-background-color);
+        background-color: var(--color-background-surface-default);
         width: 28rem;
         min-height: 13.5rem;
         border: 0;
@@ -78,7 +59,7 @@
         width: 100%;
         padding: 16px 20px;
         background-color: var(--color-background-surface-header);
-        color: var(--modal-title-color);
+        color: var(--color-text-primary);
         user-select: none;
         font-family: var(--font-heading-2-font-family);
         font-size: var(--font-heading-2-font-size);

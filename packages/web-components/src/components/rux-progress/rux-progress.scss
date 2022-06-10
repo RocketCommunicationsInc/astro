@@ -1,48 +1,4 @@
 :host {
-    /**
-    *  @prop --progress-padding: The padding of rux-progress
-    */
-    --progress-padding: 0.125rem 0 0 0.125rem;
-
-    /**
-    * @prop --progress-radius: The border radius of rux-progress bar
-    */
-    --progress-radius: var(--progress-radius-outer);
-
-    /**
-    * @prop --progress-height: The height of rux-progress
-    */
-    --progress-height: 0.875rem;
-
-    /**
-    * @prop --progress-width: The width of rux-progress
-    */
-    --progress-width: calc(100% - 4px);
-
-    /**
-    * @prop --progress-determinate-bar-background-color: Bar background color of determinate progress
-    */
-    --progress-determinate-bar-background-color: var(
-        --color-background-interactive-default
-    );
-
-    /**
-    * @prop --progress-determinate-track-background-color: Track background color of determinate progress
-    */
-    --progress-determinate-track-background-color: var(
-        --color-background-surface-default
-    );
-
-    /**
-    * @prop --progress-determinate-track-border-color: Track border color of determinate progress.
-    */
-    --progress-determinate-track-border-color: var(
-        --color-background-interactive-default
-    );
-
-    /** @prop --progress-label-color: The progress label color */
-    --progress-label-color: var(--color-text-primary);
-
     position: relative;
     display: inline-block;
     padding: 1.25rem; //20px
@@ -62,45 +18,45 @@
 }
 .rux-progress[value] {
     appearance: none;
-    background-color: var(--progress-determinate-track-background-color);
-    border: 1px solid var(--progress-determinate-track-border-color);
-    border-radius: var(--progress-radius);
+    background-color: var(--color-background-surface-default);
+    border: 1px solid var(--color-background-interactive-default);
+    border-radius: var(--progress-radius-outer);
     height: 1.25rem;
     width: 100%;
     &::-webkit-progress-bar {
         background-color: transparent;
     }
     &::-webkit-progress-value {
-        border-radius: var(--progress-radius);
-        height: var(--progress-height);
-        margin: var(--progress-padding);
-        max-width: var(--progress-width);
-        background: var(--progress-determinate-bar-background-color);
+        border-radius: var(--progress-radius-outer);
+        height: 0.875rem;
+        margin: 0.125rem 0 0 0.125rem;
+        max-width: calc(100% - 4px);
+        background: var(--color-background-interactive-default);
         transition: width 0.3s ease;
         -moz-transition: width 0.3s ease;
         -webkit-transition: width 0.3s ease;
         -o-transition: width 0.3s ease;
     }
     &::-ms-fill {
-        border-radius: var(--progress-radius);
+        border-radius: var(--progress-radius-outer);
         border: none;
-        height: var(--progress-height);
+        height: 0.875rem;
         margin: 0.125rem;
         max-width: calc(100% - 0.375rem);
-        background-color: var(--progress-determinate-bar-background-color);
+        background-color: var(--color-background-interactive-default);
     }
     &::-moz-progress-bar {
-        border-radius: var(--progress-radius);
+        border-radius: var(--progress-radius-outer);
         margin: 0.125rem 0.125rem 0 0.125rem;
-        height: var(--progress-height);
-        max-width: var(--progress-width);
-        background: var(--progress-determinate-bar-background-color);
+        height: 0.875rem;
+        max-width: calc(100% - 4px);
+        background: var(--color-background-interactive-default);
     }
 }
 .rux-progress__value {
     margin-left: 0.5rem;
     text-align: right;
-    color: var(--progress-label-color);
+    color: var(--color-text-primary);
 }
 
 @keyframes spin {

@@ -12,7 +12,7 @@
 
     ::-webkit-scrollbar-thumb {
         background-color: var(
-            --color-background-interactive-muted,
+            --color-border-interactive-muted,
             rgb(43, 101, 155)
         );
         border-radius: 8px;
@@ -54,55 +54,6 @@
     ::-webkit-scrollbar-track:horizontal {
         box-shadow: var(--shadow-inner-scrollbar-horizontal);
     }
-
-    /** @prop --select-menu-border-radius: Border radius for Select Menu */
-    --select-menu-border-radius: var(--radius-base);
-
-    /** @prop --select-menu-border-hover-color: Border Hover Color of the Select Input */
-    --select-menu-border-hover-color: var(--color-background-interactive-hover);
-
-    /** @prop --select-menu-border-focus-color: Border Focus Color of the Select Input */
-    --select-menu-border-focus-color: var(--color-background-interactive-hover);
-
-    /** @prop --select-menu-invalid-border-color: Border Color of the Invalid Select Input */
-    --select-menu-invalid-border-color: var(
-        --status-symbol-color-fill-critical
-    );
-
-    /** @prop --select-menu-text-color: Text Color of the Select Input */
-    --select-menu-text-color: var(--color-background-interactive-default);
-
-    /** @prop --select-menu-option-text-hover-color: Text Hover Color of the Select Menu Options */
-    --select-menu-option-text-hover-color: var(
-        --color-background-interactive-hover
-    );
-
-    /** @prop --select-menu-option-selected-background-color: Background Color of the Selected Option */
-    --select-menu-option-selected-background-color: var(
-        --color-background-surface-selected
-    );
-
-    /** @prop --select-menu-option-selected-text-color: Text Color of the Selected Option */
-    --select-menu-option-selected-text-color: var(--color-text-primary);
-
-    /** @prop --select-menu-label-color: Text Color of the Label */
-    --select-menu-label-color: var(--color-text-primary);
-
-    /** @prop --select-menu-inactive-caret: Caret Shown When the Select Menu is Closed */
-    --select-menu-inactive-caret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%234dacff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
-
-    /** @prop --select-menu-active-caret: Caret Shown When the Select Menu is Open */
-    --select-menu-active-caret: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20style%3D%22transform%3A%20rotate%28180deg%29%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%234dacff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E');
-
-    /** @prop --select-menu-background-color: Background Color of the Select Input */
-    --select-menu-background-color: linear-gradient(
-        to left,
-        var(--color-background-surface-selected) 2rem,
-        var(--color-background-base-default) 2rem
-    );
-
-    /** @prop --select-menu-border-color: Border Color of the Select Input */
-    --select-menu-border-color: var(--color-border-interactive-muted);
 }
 
 .hidden,
@@ -113,7 +64,7 @@
 label {
     display: inline-block;
     margin-bottom: 10px;
-    color: var(--select-menu-label-color);
+    color: var(--color-text-primary);
     font-family: var(--font-body-1-font-family);
     font-size: var(--font-body-1-font-size);
     font-weight: var(--font-body-1-font-weight);
@@ -124,14 +75,22 @@ label {
 }
 
 .rux-select:not(.rux-select--multiple) {
-    background-image: var(--select-menu-inactive-caret),
-        var(--select-menu-background-color);
+    background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%234dacff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E'),
+        linear-gradient(
+            to left,
+            var(--color-background-surface-selected) 2rem,
+            var(--color-background-base-default) 2rem
+        );
     background-position: center right 0.625rem, center left 0;
     background-repeat: no-repeat;
     box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5);
     &:active:not(:disabled) {
-        background-image: var(--select-menu-active-caret),
-            var(--select-menu-background-color);
+        background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20style%3D%22transform%3A%20rotate%28180deg%29%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%234dacff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E'),
+            linear-gradient(
+                to left,
+                var(--color-background-surface-selected) 2rem,
+                var(--color-background-base-default) 2rem
+            );
     }
     &:hover {
         cursor: pointer;
@@ -145,9 +104,9 @@ label {
     -webkit-appearance: none;
     -moz-appearance: none;
     width: 100%;
-    border: 1px solid var(--select-menu-border-color);
-    border-radius: var(--select-menu-border-radius);
-    color: var(--select-menu-text-color);
+    border: 1px solid var(--color-border-interactive-muted);
+    border-radius: var(--radius-base);
+    color: var(--color-background-interactive-default);
     font-family: var(--font-body-1-font-family);
     font-size: var(--font-body-1-font-size);
     font-weight: var(--font-body-1-font-weight);
@@ -181,31 +140,34 @@ label {
             &:disabled {
                 cursor: not-allowed;
                 &:hover {
-                    color: var(--select-menu-text-color);
-                    opacity: var(--disabled-opacity);
-                    background-color: var(--select-menu-background-color);
+                    color: var(--color-background-interactive-default);
+                    background-color: linear-gradient(
+                        to left,
+                        var(--color-background-surface-selected) 2rem,
+                        var(--color-background-base-default) 2rem
+                    );
                 }
             }
         }
     }
     &--invalid {
-        border: 1px solid var(--select-menu-invalid-border-color);
+        border: 1px solid var(--color-text-error);
     }
 
     &:hover {
-        border: 1px solid var(--select-menu-border-hover-color);
+        border: 1px solid var(--color-background-interactive-hover);
     }
 
     &:focus {
         outline: none;
-        border: 1px solid var(--select-menu-border-focus-color);
+        border: 1px solid var(--color-background-interactive-hover);
     }
 
     &:disabled {
         opacity: 0.4;
         cursor: not-allowed;
         &:hover {
-            border: 1px solid var(--select-menu-border-color);
+            border: 1px solid var(--color-border-interactive-muted);
         }
     }
 
@@ -219,19 +181,17 @@ label {
 
     option {
         opacity: 1;
-        color: var(--select-menu-text-color);
+        color: var(--color-background-interactive-default);
         border-radius: 0;
 
         &:hover {
-            color: var(--select-menu-option-text-hover-color);
+            color: var(--color-background-interactive-hover);
             background-color: var(--select-menu-option-hover-background-color);
         }
 
         &:focus {
-            color: var(--select-menu-option-selected-text-color);
-            background-color: var(
-                --select-menu-option-selected-background-color
-            );
+            color: var(--color-text-primary);
+            background-color: var(--color-background-surface-selected);
         }
         &:disabled {
             cursor: not-allowed;

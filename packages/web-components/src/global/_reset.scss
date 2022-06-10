@@ -60,10 +60,7 @@ label {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(
-        --color-background-interactive-muted,
-        rgb(43, 101, 155)
-    );
+    background-color: var(--color-border-interactive-muted, rgb(43, 101, 155));
     border-radius: 8px;
     border: 3px solid transparent;
     background-clip: padding-box;

@@ -1,9 +1,6 @@
 @use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
 
 :host {
-    /** @prop --radiogroup-border-color: the radio group border color */
-    --radiogroup-border-color: var(--color-border-interactive-muted);
-
     display: block;
 }
 
@@ -23,11 +20,11 @@
 
 .rux-radio-group {
     padding: 1rem; // 16px
-    border: 1px solid var(--radiogroup-border-color, rgb(43, 101, 155));
+    border: 1px solid var(--color-border-interactive-muted);
     border-radius: var(--radius-base);
 }
 .rux-radio-group--invalid {
-    border: 1px solid var(--status-symbol-color-fill-critical);
+    border: 1px solid var(--color-text-error);
 }
 
 .rux-label {

@@ -1,27 +1,7 @@
 :host {
-    /**
-    * @prop --clock-text-color: the color of the clock text
-    */
-    --clock-text-color: var(--color-palette-neutral-000);
-
-    /**
-    * @prop --clock-background-color: the background color for the clock
-    */
-    --clock-background-color: var(--color-palette-brightblue-900);
-
-    /**
-    * @prop --clock-border-color: the border color for the clock
-    */
-    --clock-border-color: var(--color-background-surface-default);
-
-    /**
-    * @prop --clock-label-color: the label color for the clock
-    */
-    --clock-label-color: var(--color-palette-neutral-000);
-
     display: flex;
     margin: 0 1rem;
-    color: var(--clock-text-color);
+    color: var(--color-palette-neutral-000);
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -31,6 +11,13 @@
 
 :host([hidden]) {
     display: none;
+}
+
+.rux-clock {
+    display: flex;
+    user-select: none;
+    color: var(--clock-text-color);
+    height: 3.938rem; //63px
 }
 
 .rux-clock__segment {
@@ -46,8 +33,8 @@
     font-weight: var(--font-monospace-1-font-weight);
     font-size: var(--font-monospace-1-font-size);
     letter-spacing: var(--font-monospace-1-letter-spacing);
-    border: 1px solid var(--clock-border-color);
-    background-color: var(--clock-background-color);
+    border: 1px solid var(--color-background-surface-default);
+    background-color: var(--color-palette-brightblue-900);
     white-space: nowrap;
     overflow-y: hidden;
     text-overflow: ellipsis;
@@ -67,7 +54,7 @@
     font-size: var(--font-body-2-font-size);
     font-weight: var(--font-body-2-font-weight);
     letter-spacing: var(--font-body-2-letter-spacing);
-    color: var(--clock-label-color);
+    color: var(--color-palette-neutral-000);
     background: var(--gsb-color-background);
     padding: 0.094rem 0.625rem;
     width: -moz-available;

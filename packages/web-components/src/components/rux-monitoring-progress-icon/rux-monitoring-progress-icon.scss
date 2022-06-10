@@ -98,33 +98,33 @@ svg {
     height: 3rem;
 }
 svg.rux-status--off {
-    stroke: var(--status-symbol-color-fill-off, rgb(158, 167, 173));
-    fill: var(--status-symbol-color-fill-off, rgb(158, 167, 173));
+    stroke: var(--status-symbol-color-fill-off-on-dark, rgb(158, 167, 173));
+    fill: var(--status-symbol-color-fill-off-on-dark, rgb(158, 167, 173));
 }
 
 svg.rux-status--standby {
-    stroke: var(--status-symbol-color-fill-standby, rgb(45, 204, 255));
-    fill: var(--status-symbol-color-fill-standby, rgb(45, 204, 255));
+    stroke: var(--status-symbol-color-fill-standby-on-dark, rgb(45, 204, 255));
+    fill: var(--status-symbol-color-fill-standby-on-dark, rgb(45, 204, 255));
 }
 
 svg.rux-status--normal {
-    stroke: var(--status-symbol-color-fill-normal, rgb(86, 240, 0));
-    fill: var(--status-symbol-color-fill-normal, rgb(86, 240, 0));
+    stroke: var(--status-symbol-color-fill-normal-on-dark, rgb(86, 240, 0));
+    fill: var(--status-symbol-color-fill-normal-on-dark, rgb(86, 240, 0));
 }
 
 svg.rux-status--caution {
-    stroke: var(--status-symbol-color-fill-caution, rgb(252, 232, 58));
-    fill: var(--status-symbol-color-fill-caution, rgb(252, 232, 58));
+    stroke: var(--status-symbol-color-fill-caution-on-dark, rgb(252, 232, 58));
+    fill: var(--status-symbol-color-fill-caution-on-dark, rgb(252, 232, 58));
 }
 
 svg.rux-status--serious {
-    stroke: var(--status-symbol-color-fill-serious, rgb(255, 179, 0));
-    fill: var(--status-symbol-color-fill-serious, rgb(255, 179, 0));
+    stroke: var(--status-symbol-color-fill-serious-on-dark, rgb(255, 179, 0));
+    fill: var(--status-symbol-color-fill-serious-on-dark, rgb(255, 179, 0));
 }
 
 svg.rux-status--critical {
-    stroke: var(--status-symbol-color-fill-critical, rgb(255, 56, 56));
-    fill: var(--status-symbol-color-fill-critical, rgb(255, 56, 56));
+    stroke: var(--status-symbol-color-fill-critical-on-dark, rgb(255, 56, 56));
+    fill: var(--status-symbol-color-fill-critical-on-dark, rgb(255, 56, 56));
 }
 
 [data-progress] svg {

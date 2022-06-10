@@ -14,8 +14,8 @@
 }
 
 :host(:hover:not(.is-selected)) {
-    background: var(--table-row-hover-background-color);
-    color: var(--table-row-hover-text-color);
+    background: var(--color-background-surface-hover);
+    color: var(--color-text-primary);
 }
 
 ::slotted(rux-table-cell:first-child) {

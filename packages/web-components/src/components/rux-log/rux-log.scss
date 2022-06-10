@@ -1,23 +1,10 @@
 :host {
-    /** @prop() --log-header-background-color: the log header background color */
-    --log-header-background-color: var(--color-background-surface-header);
-
-    /** @prop() --log-filter-background-color: the log filter background color */
-    --log-filter-background-color: #3a87cf; // #TODO find out new value for --color-primary-alt
-
-    /** @prop() --log-filter-text-color: the log filter text color */
-    --log-filter-text-color: var(--color-text-inverse);
-
     display: block;
     overflow: hidden;
 }
 
 :host([hidden]) {
     display: none;
-}
-
-rux-table {
-    --table-header-background-color: var(--log-header-background-color);
 }
 
 .rux-log__header-event-cell {
@@ -40,7 +27,7 @@ rux-table-header-cell {
 .rux-log__notification {
     width: 2000%;
     align-content: center;
-    color: var(--log-filter-text-color);
-    background-color: var(--log-filter-background-color);
+    color: var(--color-text-inverse);
+    background-color: #3a87cf;
     padding: 0.5rem;
 }

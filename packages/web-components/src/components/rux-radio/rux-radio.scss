@@ -7,21 +7,6 @@
 
     display: inline-block;
     box-sizing: border-box;
-
-    /** @prop --radio-hover-border-color: Radio border color on hover */
-    --radio-hover-border-color: var(--color-background-interactive-hover);
-
-    /** @prop --radio-border-color: Selected radio border color */
-    --radio-border-color: var(--color-border-interactive-muted);
-
-    /** @prop --radio-label-color: label text color */
-    --radio-label-color: var(--color-text-primary);
-
-    /** @prop --radio-background-color: the radio background color */
-    --radio-background-color: var(--color-background-base-default);
-
-    /** @prop --radio-selected-color: the radio selected color */
-    --radio-selected-color: var(--color-background-interactive-default);
 }
 
 .rux-form-field {
@@ -49,7 +34,7 @@
             align-items: center;
             justify-content: flex-start;
             margin-left: -8px;
-            color: var(--radio-label-color);
+            color: var(--color-text-primary);
             letter-spacing: 0.5px;
             cursor: pointer;
 
@@ -63,9 +48,9 @@
                 height: 1.125rem;
                 width: 1.125rem;
                 margin: 0 0.625rem 0 0;
-                border: 1px solid var(--radio-border-color);
+                border: 1px solid var(--color-border-interactive-muted);
                 border-radius: var(--radius-circle);
-                background-color: var(--radio-background-color);
+                background-color: var(--color-background-base-default);
             }
 
             &::after {
@@ -85,8 +70,8 @@
         &:checked {
             + label {
                 &::before {
-                    background-color: var(--radio-background-color);
-                    border-color: var(--radio-border-color);
+                    background-color: var(--color-background-base-default);
+                    border-color: var(--color-border-interactive-muted);
                 }
 
                 &::after {
@@ -120,10 +105,12 @@
             &:checked:hover {
                 + label {
                     &::before {
-                        border-color: var(--radio-hover-border-color);
+                        border-color: var(--color-background-interactive-hover);
                     }
                     &::after {
-                        background-color: var(--radio-selected-color);
+                        background-color: var(
+                            --color-background-interactive-default
+                        );
                     }
                 }
             }
