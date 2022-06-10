@@ -6,6 +6,7 @@ import {
     EventEmitter,
     Element,
     Listen,
+    Watch,
     Host,
     State,
     Fragment,
@@ -29,7 +30,7 @@ import { hasSlot } from '../../utils/utils'
 @Component({
     tag: 'rux-modal',
     styleUrl: 'rux-modal.scss',
-    shadow: { delegatesFocus: true },
+    shadow: true,
 })
 export class RuxModal {
     /**
@@ -37,10 +38,21 @@ export class RuxModal {
      */
     @Prop({ reflect: true, mutable: true }) open: boolean = false
     /**
-     * Allows modal to close by clicking off of it
+     * Modal body message
      */
-    @Prop() clickToClose: boolean = false
-
+    @Prop() modalMessage?: string
+    /**
+     * Modal header title
+     */
+    @Prop() modalTitle?: string
+    /**
+     * Text for confirmation button
+     */
+    @Prop() confirmText: string = 'Confirm'
+    /**
+     * Text for close button
+     */
+    @Prop() denyText: string = 'Cancel'
     /**
      * Event that is fired when modal opens
      */
@@ -59,16 +71,6 @@ export class RuxModal {
         bubbles: true,
     })
     ruxModalClosed!: EventEmitter<boolean | null>
-
-    /**
-     * Event that is fired when modal opens
-     */
-    @Event({
-        eventName: 'ruxmodalopened',
-        composed: true,
-        bubbles: true,
-    })
-    ruxModalOpened!: EventEmitter<boolean>
 
     @Element() element!: HTMLRuxModalElement
 
@@ -164,8 +166,17 @@ export class RuxModal {
     }
 
     render() {
+        const {
+            open,
+            modalMessage,
+            modalTitle,
+            confirmText,
+            denyText,
+            _handleModalChoice,
+        } = this
+
         return (
-            this.open && (
+            open && (
                 <Host>
                     <div part="wrapper container" class="rux-modal__wrapper">
                         <dialog

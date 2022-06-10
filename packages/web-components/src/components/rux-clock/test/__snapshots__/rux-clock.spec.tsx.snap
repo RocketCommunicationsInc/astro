@@ -3,20 +3,22 @@
 exports[`rux-clock Can accept a unix timestamp for date-in 1`] = `
 <rux-clock date-in="1652129256662">
   <mock:shadow-root>
-    <div class="rux-clock__segment">
-      <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        129
+    <div class="rux-clock" part="container">
+      <div class="rux-clock__segment">
+        <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
+          129
+        </div>
+        <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
+          Date
+        </div>
       </div>
-      <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
-        Date
-      </div>
-    </div>
-    <div class="rux-clock__segment">
-      <div aria-labelledby="rux-clock__time-label" class="rux-clock__segment__value" part="time">
-        20:47:36 UTC
-      </div>
-      <div class="rux-clock__segment__label" id="rux-clock__time-label" part="time-label">
-        Time
+      <div class="rux-clock__segment">
+        <div aria-labelledby="rux-clock__time-label" class="rux-clock__segment__value" part="time">
+          20:47:36 UTC
+        </div>
+        <div class="rux-clock__segment__label" id="rux-clock__time-label" part="time-label">
+          Time
+        </div>
       </div>
     </div>
   </mock:shadow-root>
@@ -26,20 +28,22 @@ exports[`rux-clock Can accept a unix timestamp for date-in 1`] = `
 exports[`rux-clock Can change the date when date-in is changed 1`] = `
 <rux-clock date-in="2022-04-22T23:59:55.000Z">
   <mock:shadow-root>
-    <div class="rux-clock__segment">
-      <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        112
+    <div class="rux-clock" part="container">
+      <div class="rux-clock__segment">
+        <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
+          112
+        </div>
+        <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
+          Date
+        </div>
       </div>
-      <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
-        Date
-      </div>
-    </div>
-    <div class="rux-clock__segment">
-      <div aria-labelledby="rux-clock__time-label" class="rux-clock__segment__value" part="time">
-        23:59:55 UTC
-      </div>
-      <div class="rux-clock__segment__label" id="rux-clock__time-label" part="time-label">
-        Time
+      <div class="rux-clock__segment">
+        <div aria-labelledby="rux-clock__time-label" class="rux-clock__segment__value" part="time">
+          23:59:55 UTC
+        </div>
+        <div class="rux-clock__segment__label" id="rux-clock__time-label" part="time-label">
+          Time
+        </div>
       </div>
     </div>
   </mock:shadow-root>
@@ -49,20 +53,22 @@ exports[`rux-clock Can change the date when date-in is changed 1`] = `
 exports[`rux-clock Can change the date when date-in is changed 2`] = `
 <rux-clock date-in="2022-07-22T23:59:55.000Z">
   <mock:shadow-root>
-    <div class="rux-clock__segment">
-      <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        112
+    <div class="rux-clock" part="container">
+      <div class="rux-clock__segment">
+        <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
+          112
+        </div>
+        <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
+          Date
+        </div>
       </div>
-      <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
-        Date
-      </div>
-    </div>
-    <div class="rux-clock__segment">
-      <div aria-labelledby="rux-clock__time-label" class="rux-clock__segment__value" part="time">
-        23:59:55 UTC
-      </div>
-      <div class="rux-clock__segment__label" id="rux-clock__time-label" part="time-label">
-        Time
+      <div class="rux-clock__segment">
+        <div aria-labelledby="rux-clock__time-label" class="rux-clock__segment__value" part="time">
+          23:59:55 UTC
+        </div>
+        <div class="rux-clock__segment__label" id="rux-clock__time-label" part="time-label">
+          Time
+        </div>
       </div>
     </div>
   </mock:shadow-root>
@@ -72,20 +78,22 @@ exports[`rux-clock Can change the date when date-in is changed 2`] = `
 exports[`rux-clock Uses the time passed into date-in if provided 1`] = `
 <rux-clock date-in="2022-04-22T23:59:55.000Z">
   <mock:shadow-root>
-    <div class="rux-clock__segment">
-      <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        112
+    <div class="rux-clock" part="container">
+      <div class="rux-clock__segment">
+        <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
+          112
+        </div>
+        <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
+          Date
+        </div>
       </div>
-      <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
-        Date
-      </div>
-    </div>
-    <div class="rux-clock__segment">
-      <div aria-labelledby="rux-clock__time-label" class="rux-clock__segment__value" part="time">
-        23:59:55 UTC
-      </div>
-      <div class="rux-clock__segment__label" id="rux-clock__time-label" part="time-label">
-        Time
+      <div class="rux-clock__segment">
+        <div aria-labelledby="rux-clock__time-label" class="rux-clock__segment__value" part="time">
+          23:59:55 UTC
+        </div>
+        <div class="rux-clock__segment__label" id="rux-clock__time-label" part="time-label">
+          Time
+        </div>
       </div>
     </div>
   </mock:shadow-root>
@@ -95,20 +103,22 @@ exports[`rux-clock Uses the time passed into date-in if provided 1`] = `
 exports[`rux-clock can swap between unix and non-unix date-in values 1`] = `
 <rux-clock>
   <mock:shadow-root>
-    <div class="rux-clock__segment">
-      <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        001
+    <div class="rux-clock" part="container">
+      <div class="rux-clock__segment">
+        <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
+          001
+        </div>
+        <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
+          Date
+        </div>
       </div>
-      <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
-        Date
-      </div>
-    </div>
-    <div class="rux-clock__segment">
-      <div aria-labelledby="rux-clock__time-label" class="rux-clock__segment__value" part="time">
-        01:02:03 UTC
-      </div>
-      <div class="rux-clock__segment__label" id="rux-clock__time-label" part="time-label">
-        Time
+      <div class="rux-clock__segment">
+        <div aria-labelledby="rux-clock__time-label" class="rux-clock__segment__value" part="time">
+          01:02:03 UTC
+        </div>
+        <div class="rux-clock__segment__label" id="rux-clock__time-label" part="time-label">
+          Time
+        </div>
       </div>
     </div>
   </mock:shadow-root>
@@ -118,20 +128,22 @@ exports[`rux-clock can swap between unix and non-unix date-in values 1`] = `
 exports[`rux-clock can swap between unix and non-unix date-in values 2`] = `
 <rux-clock date-in="2022-07-22T23:59:55.000Z">
   <mock:shadow-root>
-    <div class="rux-clock__segment">
-      <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        001
+    <div class="rux-clock" part="container">
+      <div class="rux-clock__segment">
+        <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
+          001
+        </div>
+        <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
+          Date
+        </div>
       </div>
-      <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
-        Date
-      </div>
-    </div>
-    <div class="rux-clock__segment">
-      <div aria-labelledby="rux-clock__time-label" class="rux-clock__segment__value" part="time">
-        01:02:03 UTC
-      </div>
-      <div class="rux-clock__segment__label" id="rux-clock__time-label" part="time-label">
-        Time
+      <div class="rux-clock__segment">
+        <div aria-labelledby="rux-clock__time-label" class="rux-clock__segment__value" part="time">
+          01:02:03 UTC
+        </div>
+        <div class="rux-clock__segment__label" id="rux-clock__time-label" part="time-label">
+          Time
+        </div>
       </div>
     </div>
   </mock:shadow-root>
@@ -141,20 +153,22 @@ exports[`rux-clock can swap between unix and non-unix date-in values 2`] = `
 exports[`rux-clock can swap between unix and non-unix date-in values 3`] = `
 <rux-clock date-in="1652129256662">
   <mock:shadow-root>
-    <div class="rux-clock__segment">
-      <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
-        001
+    <div class="rux-clock" part="container">
+      <div class="rux-clock__segment">
+        <div aria-labelledby="rux-clock__day-of-year-label" class="rux-clock__segment__value" part="date">
+          001
+        </div>
+        <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
+          Date
+        </div>
       </div>
-      <div class="rux-clock__segment__label" id="rux-clock__day-of-year-label" part="date-label">
-        Date
-      </div>
-    </div>
-    <div class="rux-clock__segment">
-      <div aria-labelledby="rux-clock__time-label" class="rux-clock__segment__value" part="time">
-        01:02:03 UTC
-      </div>
-      <div class="rux-clock__segment__label" id="rux-clock__time-label" part="time-label">
-        Time
+      <div class="rux-clock__segment">
+        <div aria-labelledby="rux-clock__time-label" class="rux-clock__segment__value" part="time">
+          01:02:03 UTC
+        </div>
+        <div class="rux-clock__segment__label" id="rux-clock__time-label" part="time-label">
+          Time
+        </div>
       </div>
     </div>
   </mock:shadow-root>
