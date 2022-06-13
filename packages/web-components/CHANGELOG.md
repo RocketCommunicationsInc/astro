@@ -1,5 +1,11 @@
 # @astrouxds/astro-web-components
 
+## 6.9.1
+
+### Patch Changes
+
+-   Updates Angular dependencies and documentation
+
 ## 6.9.0
 
 ### Minor Changes
