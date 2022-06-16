@@ -74,7 +74,7 @@ If operators choose to drill into an alert via the Investigate button in the Ale
 
 1. **Breadcrumb Navigation** - returns the user to the Dashboard view.
 2. **Alert Details** - contains information relevant to the particular alert.
-3. **Acknowledge/Dismiss** - operators can acknowledge or dismiss the alert based.
+3. **Acknowledge/Dismiss** - operators can acknowledge or dismiss the alert.
 4. **Contact Details** - because the alert in the example above is related to a contact, information relevant to that contact is displayed here.
 5. **Status Information** - in this example, the equipment string indicates that an antenna is in a critical status for this contact
 6. **Event Log** - displays the events leading up to the alert, which could be useful in troubleshooting
