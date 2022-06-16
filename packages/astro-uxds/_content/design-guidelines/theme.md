@@ -20,7 +20,7 @@ By convention, the Global Status Bar and its enclosed elements will always use t
 
 It is important to determine the users’ environment and select the appropriate theme. In low-light operating environments where users’ pupils expand to allow more light to enter the cornea, a light-themed UI can be glaring and cause eye strain. Conversely, in a bright operating environment where the pupil contracts, letting less light in, dark-themed UIs can lose distinction and readability.
 
-## Light Theme Use Cases:
+## Light Theme Use Cases
 
 - Outdoor environments
 - Brightly lit operating environments
@@ -38,7 +38,7 @@ It is important to determine the users’ environment and select the appropriate
 
 Individual sections or components can override their inherited theme on a case-by-case basis, enabling the render of an element with a light theme in an predominantly dark-themed interface and vice versa. Examples:
 
-- Dark-themed elements in the global status bar
+- Dark-themed elements in the Global Status Bar
 - Light-themed modal window in a dark themed app
 
 ![Example of a predominantly dark theme interface with the modal window rendered using the light theme to place greater emphasis on an interaction demanding the user’s attention.](/img/design-guidelines/theme-darkui-mixed.png "Example of a predominantly dark theme interface with the modal window rendered using the light theme to place greater emphasis on an interaction demanding the user’s attention.")
