@@ -65,7 +65,7 @@ Utility Icons represent access to tools used to modify the settings for a compon
 
 Events that require some user attention, but no immediate response, may be indicated by changes to a Notification Symbol.
 
-This Notification Symbol shows that five events related to a Satellite have occurred. You may hyperlink indicators to reveal a deeper view of relevant [Notification](/patterns/notifications) information. You may also link to the general Log.
+This Notification Symbol shows that ninety-nine events related to a Satellite have occurred. You may hyperlink indicators to reveal a deeper view of relevant [Notification](/patterns/notifications) information. You may also link to the general Log.
 
 ![Anatomy of the notification count symbol.](/img/components/notifications-symbol.png "Anatomy of the notification count symbol.")
 
