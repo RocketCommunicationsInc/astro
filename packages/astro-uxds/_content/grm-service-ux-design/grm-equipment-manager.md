@@ -25,13 +25,13 @@ There are three main areas of the GRM Equipment Manager app: the Global Status B
 
 ## Global Status Bar
 
-As outlined on the [About GRM Designs](/grm-service-ux-design/about-the-grm-designs) page, each of the apps in the GRM Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar), an Astro component featured in all three apps. Though the status bar contents vary somewhat between apps in order to best support each app’s individual workflows, all contain a [Clock](/components/clock), [Monitoring Icons](/components/icons-and-symbols), and an app switching menu that allows operators to transition quickly from one GRM task flow to another.
+As outlined on the [About GRM Designs](/grm-service-ux-design/about-the-grm-designs) page, each of the apps in the GRM Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar), an Astro component featured in all three apps. Though the status bar contents vary somewhat between apps in order to best support each app’s individual workflows, all contain a [Clock](/components/clock), [Monitoring Icons](/components/icons-and-symbols), and an App Switcher Menu that allows operators to transition quickly from one GRM task flow to another.
 
 ![GRM Dashboard App Details](/img/service-specific-ux-design/grm-equipment-manager-global-status-bar-details.png)
 
-1. **App Switcher Menu** - the App Switcher Menu allows the user to launch new instances of different GRM apps, sign in/sign out, and edit preferences.
-2. **Global Clock** - time is central to many GRM service task flows, so it is included in the Global Status Bar in all GRM apps.
-3. **Monitoring Icons** - the Dashboard app includes Upcoming Contacts Allocated (UCA) and Software status indicators, as well as status and alert counts for each of the top categories in the equipment hierarchy.
+1. **App Switcher Menu** - The App Switcher Menu allows the user to launch new instances of different GRM apps, sign in/sign out, and edit preferences.
+2. **Global Clock** - Time is central to many GRM service task flows, so it is included in the Global Status Bar in all GRM apps.
+3. **Monitoring Icons** - The Dashboard app includes Upcoming Contacts Allocated (UCA) and Software status indicators, as well as status and alert counts for each of the top categories in the equipment hierarchy.
 
 ## Equipment Navigation Tree
 
@@ -39,8 +39,8 @@ Along the left side of the GRM Equipment Manager app is a [navigation tree](/com
 
 ![GRM Equipment Manager Navigation Tree](/img/service-specific-ux-design/grm-equipment-manager-nav-tree-details.png)
 
-1. **Tree Structure** - equipment is organized into a hierarchy with expandable and collapsible elements.
-2. **Equipment Tab** - when a piece of equipment is selected, a new tab is created in the tabbed pane and its Equipment Details page is displayed.
+1. **Tree Structure** - Equipment is organized into a hierarchy with expandable and collapsible elements.
+2. **Equipment Tab** - When a piece of equipment is selected, a new tab is created in the tabbed pane and its Equipment Details page is displayed.
 
 ## Inoperable Equipment Page
 
@@ -48,8 +48,8 @@ The default view of the Equipment Manager app is the Inoperable Equipment page, 
 
 ![GRM Equipment Manager Inoperable Equipment Page](/img/service-specific-ux-design/grm-equipment-manager-inop-details.png)
 
-1. **Equipment Categories** - inoperable equipment is organized into categories along with a total for the category.
-2. **Equipment Status** - inoperable equipment is displayed with status coding indicating the severity of the problem.
+1. **Equipment Categories** - Inoperable equipment is organized into categories along with a total for the category.
+2. **Equipment Status** - Inoperable equipment is displayed with status coding indicating the severity of the problem.
 
 ## Equipment Details Page
 
@@ -61,18 +61,18 @@ There are two panels on the Equipment Details page, one on top designed to provi
 
 ![GRM Equipment Manager Equipment Details](/img/service-specific-ux-design/grm-equipment-manager-equip-det-top-details.png)
 
-1. **Equipment Tab** - a new tab labeled with the name of the equipment appears to the right of the “Inoperable” home button when operators navigate to any Equipment Details page.
-2. **Toggles** - allow operators to change equipment's online/offline and considered/deconsidered states.
-3. **Alerts** - a list of all current and past alerts for the related equipment.
-4. **Current Contacts** - all contacts currently executing that include the related equipment in their equipment string.
+1. **Equipment Tab** - A new tab labeled with the name of the equipment appears to the right of the “Inoperable” home button when operators navigate to any Equipment Details page.
+2. **Toggles** - Allow operators to change equipment's online/offline and considered/deconsidered states.
+3. **Alerts** - A list of all current and past alerts for the related equipment.
+4. **Current Contacts** - All contacts currently executing that include the related equipment in their equipment string.
 
 ### Maintenance
 
 ![GRM Equipment Maintenance Details](/img/service-specific-ux-design/grm-equipment-manager-equip-det-maint-details.png)
 
-1. **Schedule Job** - the Schedule Maintenance Job page is displayed when operators click this button.
-2. **Job Status** - the status of all current maintenance jobs for the equipment is displayed along with a button to view additional detail.
-3. **Maintenance History** - displays the history of all maintenance job performed on the equipment.
+1. **Schedule Job** - The Schedule Maintenance Job page is displayed when operators click this button.
+2. **Job Status** - The status of all current maintenance jobs for the equipment is displayed along with a button to view additional detail.
+3. **Maintenance History** - Displays the history of all maintenance job performed on the equipment.
 
 ### Schedule Maintenance Job
 
@@ -82,11 +82,11 @@ Note that maintenance-related task flows are covered in much more detail in the 
 
 ![GRM Equipment Manager Schedule Jobs Details](/img/service-specific-ux-design/grm-equipment-manager-sched-maint-details.png)
 
-1. **Page** - returns the user to the Dashboard view.
-2. **Job Settings** - operators enter required information for the maintenance in the form at the left.
-3. **Calculate Conflicts** - generates a list of contacts that will not execute due to the time window of this job, unless they are allocated different equipment.
-4. **Conflicts Table** - if there are conflicts caused by the maintenance window, they are displayed in this table.
-5. **Submit Request** - once operators have.
+1. **Page** - Returns the user to the Dashboard view.
+2. **Job Settings** - Operators enter required information for the maintenance in the form at the left.
+3. **Calculate Conflicts** - Generates a list of contacts that will not execute due to the time window of this job, unless they are allocated different equipment.
+4. **Conflicts Table** - If there are conflicts caused by the maintenance window, they are displayed in this table.
+5. **Submit Request** - Once operators have.
 
 ## Task Flow Example - Schedule Maintenance Job
 
