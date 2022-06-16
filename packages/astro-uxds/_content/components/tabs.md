@@ -33,7 +33,7 @@ Tabs in Astro Applications are used to divide major areas of content and to indi
 
 ## Interior/Compact Tabs
 
-For use outside of main navigation, a more compact tab component can be used.
+For use outside of main navigation, a more compact Tab component can be used.
 
 ## Rules of Thumb
 
