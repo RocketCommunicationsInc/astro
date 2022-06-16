@@ -1,145 +1,117 @@
 :host {
-    display: inline-block;
-    width: auto;
-}
+    /* @TODO: Should these be moved into the design tokens library? */
+    /* references */
+    --disabled-opacity: var(--opacity-40);
+    --size: 0.25rem;
 
-:host([hidden]) {
-    display: none;
+    /* @TODO: Should these be moved into the design tokens library? */
+    /* aliases */
+    --button-font-size: var(--font-body-1-font-size);
+    --button-line-size: var(--line-height-sm);
+
+    cursor: pointer;
+    display: inline-flex;
+    flex-flow: column wrap;
 }
 
 :host([disabled]) {
-    pointer-events: none;
+    cursor: not-allowed;
 }
-.rux-button {
-    display: flex;
-    position: relative;
+
+button {
+    appearance: none;
+    background-color: transparent;
+    border-width: 0;
+    color: inherit;
+    font: inherit;
+    line-height: inherit;
     margin: 0;
-    width: inherit;
-    padding: 0 1rem;
-    height: 2.125rem;
-    min-width: 2.25rem;
-    border-radius: var(--radius-base);
-    color: var(--color-text-inverse);
-    font-family: var(--font-body-1-font-family);
-    font-size: var(--font-body-1-font-size);
-    font-weight: var(--font-body-1-font-weight);
-    letter-spacing: var(--font-body-1-letter-spacing);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    justify-content: center;
+    padding: 0;
+}
+
+.rux-button {
     align-items: center;
+    border-radius: var(--radius-base);
+    cursor: pointer;
+    box-shadow: var(--border-color, transparent) 0px 0px var(--border-width, 0px) inset;
+    display: flex;
+    justify-content: center;
     user-select: none;
 
-    rux-icon,
-    ::slotted(rux-icon) {
-        height: 1rem;
-        width: 1rem;
-        margin-right: 0.625rem;
-        color: var(--color-text-inverse);
+    /* body/body-1 */
+    font-size: var(--button-font-size);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    line-height: var(--button-line-size);
+
+    & rux-icon {
+        align-items: center;
+        block-size: calc(5 * var(--size));
+        inline-size: calc(5 * var(--size));
+        color: currentColor;
+        display: inline-flex;
+        justify-content: center;
+        fill: currentColor;
+        margin-inline: calc(-0.5 * var(--size)) calc(1.5 * var(--size));
+    }
+
+    & slot {
+        display: inline-block;
     }
 
     &:disabled {
-        opacity: var(--disabled-opacity);
         cursor: not-allowed;
+        opacity: var(--disabled-opacity);
         pointer-events: none;
     }
 
-    &:focus {
-        outline: none;
+    &.--icon-only {
+        & rux-icon {
+            margin-inline: calc(-4 * var(--size));
+        }
     }
 
-    &:hover:not([disabled]) {
-        cursor: pointer;
+    &.--small-size {
+        padding-block: var(--spacing-050);
+        padding-inline: var(--spacing-4);
     }
 
-    &--default {
-        border: 1px solid transparent;
+    &.--medium-size {
+        padding-block: calc(1.5 * var(--size));
+        padding-inline: var(--spacing-4);
+    }
+
+    &.--large-size {
+        padding-block: var(--spacing-2);
+        padding-inline: var(--spacing-4);
+    }
+
+    &.--default-appearance {
+        color: var(--color-text-inverse);
         background-color: var(--color-background-interactive-default);
-        &:hover:not([disabled]) {
-            border-color: transparent;
+
+        &:hover {
             background-color: var(--color-background-interactive-hover);
         }
-        &:active:not([disabled]) {
-            border-color: var(--color-background-interactive-default);
-            background-color: var(--color-background-interactive-default);
+    }
+
+    &.--secondary-appearance {
+        --border-color: currentColor;
+        --border-width: 1px;
+
+        background-color: var(--color-background-base-default);
+        color: var(--color-text-interactive-default);
+
+        &:hover {
+            color: var(--color-text-interactive-hover);
         }
     }
 
-    &--secondary {
-        color: var(--color-background-interactive-default);
-        background-color: transparent;
-        border: 1px solid var(--color-background-interactive-default);
+    &.--borderless-appearance {
+        background-color: var(--color-background-base-default);
+        color: var(--color-text-interactive-default);
 
-        &:hover:not([disabled]) {
-            color: var(--color-background-interactive-hover);
-            background-color: transparent;
-            border-color: var(--color-background-interactive-hover);
-            rux-icon,
-            ::slotted(rux-icon) {
-                color: var(--color-background-interactive-hover);
-            }
-        }
-
-        &:active:not([disabled]) {
-            border-color: var(--color-background-interactive-default);
-            background-color: transparent;
-            color: var(--color-background-interactive-default);
-            rux-icon,
-            ::slotted(rux-icon) {
-                color: var(--color-background-interactive-default);
-            }
-        }
-        rux-icon,
-        ::slotted(rux-icon) {
-            color: var(--color-background-interactive-default);
+        &:hover {
+            color: var(--color-text-interactive-hover);
         }
     }
-    &--borderless {
-        color: var(--color-background-interactive-default);
-        border: none;
-        background: none;
-        &:hover:not([disabled]) {
-            color: var(--color-background-interactive-hover);
-            background: none;
-            rux-icon,
-            ::slotted(rux-icon) {
-                color: var(--color-background-interactive-hover);
-            }
-        }
-        &:active:not([disabled]) {
-            color: var(--color-background-interactive-default);
-            rux-icon,
-            ::slotted(rux-icon) {
-                color: var(--color-background-interactive-default);
-            }
-        }
-        rux-icon,
-        ::slotted(rux-icon) {
-            color: var(--color-background-interactive-default);
-        }
-    }
-
-    &--small {
-        height: 1.625rem;
-        padding: 0 1rem;
-        line-height: 1;
-    }
-
-    &--large {
-        height: 2.875rem;
-        min-width: 3rem;
-        padding: 0 1rem;
-    }
-
-    &--icon-only {
-        font-size: 0;
-        width: 3rem;
-    }
-}
-
-.rux-button--icon-only ::slotted(rux-icon),
-.rux-button--icon-only rux-icon {
-    margin-left: -0.625rem;
-    margin-right: -0.625rem;
 }
