@@ -23,13 +23,13 @@ There are three main areas of the GRM Dashboard app: the Global Status Bar, the 
 
 ## Global Status Bar
 
-As outlined on the [About GRM Designs](/grm-service-ux-design/about-the-grm-designs) page, each of the apps in the GRM Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar), an Astro component featured in all three apps. Though the status bar contents vary somewhat between apps in order to best support each app’s individual workflows, all contain a [Clock](/components/clock), [Monitoring Icons](/components/icons-and-symbols), and an app switching menu that allows operators to transition quickly from one GRM task flow to another.
+As outlined on the [About GRM Designs](/grm-service-ux-design/about-the-grm-designs) page, each of the apps in the GRM Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar), an Astro component featured in all three apps. Though the status bar contents vary somewhat between apps in order to best support each app’s individual workflows, all contain a [Clock](/components/clock), [Monitoring Icons](/components/icons-and-symbols), and an App Switcher Menu that allows operators to transition quickly from one GRM task flow to another.
 
 ![GRM Dashboard App Details](/img/service-specific-ux-design/grm-dashboard-global-status-bar-details.png)
 
-1. **App Switcher Menu** - the App Switcher Menu allows the user to launch new instances of different GRM apps, sign in/sign out, and edit preferences.
-2. **Global Clock** - time is central to many GRM service task flows, so it is included in the Global Status Bar in all GRM apps.
-3. **Monitoring Icons** - the Dashboard app includes Upcoming Contacts Allocated (UCA) and Software status indicators, as well as status and alert counts for each of the top categories in the equipment hierarchy.
+1. **App Switcher Menu** - The App Switcher Menu allows the user to launch new instances of different GRM apps, sign in/sign out, and edit preferences.
+2. **Global Clock** - Time is central to many GRM service task flows, so it is included in the Global Status Bar in all GRM apps.
+3. **Monitoring Icons** - The Dashboard app includes Upcoming Contacts Allocated (UCA) and Software status indicators, as well as status and alert counts for each of the top categories in the equipment hierarchy.
 
 ## Alerts
 
@@ -38,10 +38,10 @@ The Alerts panel provides operators with a roll-up of issues across the ground s
 ![GRM Dashboard Alerts Details](/img/service-specific-ux-design/grm-dashboard-alert-details.png)
 
 1. **Active Alert Hero Number** - Shows number of active alerts at a glance.
-2. **Filter Select menus** - filters alert list by severity and category.
-3. **Expandable List Items** - expands to show alert details and call-to-action (if applicable).
-4. **Investigate** - sends operators to a page with full alert details and actions for resolving the alert.
-5. **Acknowledge/Dismiss** - acknowledges or dismisses alerts.
+2. **Filter Select menus** - Filters alert list by severity and category.
+3. **Expandable List Items** - Expands to show alert details and call-to-action (if applicable).
+4. **Investigate** - Sends operators to a page with full alert details and actions for resolving the alert.
+5. **Acknowledge/Dismiss** - Acknowledges or dismisses alerts.
    :::
 
 ## Contacts
@@ -50,11 +50,11 @@ The Contacts tab allows operators to view all contacts configured in the GRM app
 
 ![GRM Dashboard Contacts Details](/img/service-specific-ux-design/grm-dashboard-contact-details.png)
 
-1. **Contacts Hero Numbers** - shows number of executing contacts at a glance.
-2. **Segmented Button Filter** - filters Current Contacts by All, Executing, or Failed.
-3. **Histogram** - y-axis measures contact counts, while the x-axis represents time.
-4. **Histogram Filters** - filters may be applied to one, many or all of the Contact States; Upcoming, Executing, Complete, Failed.
-5. **Zoom Control** - operators can drag the slider to zoom in or out of the Histogram
+1. **Contacts Hero Numbers** - Shows number of executing contacts at a glance.
+2. **Segmented Button Filter** - Filters Current Contacts by All, Executing, or Failed.
+3. **Histogram** - Y-axis measures contact counts, while the x-axis represents time.
+4. **Histogram Filters** - Filters may be applied to one, many or all of the Contact States; Upcoming, Executing, Complete, Failed.
+5. **Zoom Control** - Operators can drag the slider to zoom in or out of the Histogram
 
 ## Equipment
 
@@ -62,9 +62,9 @@ The Equipment tab provides operators with a usage summary of the major equipment
 
 ![GRM Dashboard Equipment Details](/img/service-specific-ux-design/grm-dashboard-equipment-details.png)
 
-1. **Equipment Allocation** - shows percentage of usage across top line categories at a glance.
-2. **Line Chart** - y-axis displays percent of equipment in a given category allocated and x-axis represents time. A “Usage Threshold” value may be defined to identify equipment that exceeds this limit.
-3. **Trending Equipment Status Filters** - filters may be applied to one, many or all of the equipment categories defined.
+1. **Equipment Allocation** - Shows percentage of usage across top line categories at a glance.
+2. **Line Chart** - Y-axis displays percent of equipment in a given category allocated and x-axis represents time. A “Usage Threshold” value may be defined to identify equipment that exceeds this limit.
+3. **Trending Equipment Status Filters** - Filters may be applied to one, many or all of the equipment categories defined.
 
 ## Alert Details
 
