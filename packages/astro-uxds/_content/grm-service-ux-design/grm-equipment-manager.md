@@ -70,9 +70,9 @@ There are two panels on the Equipment Details page, one on top designed to provi
 
 ![GRM Equipment Maintenance Details](/img/service-specific-ux-design/grm-equipment-manager-equip-det-maint-details.png)
 
-1. **Schedule Job** - The Schedule Maintenance Job page is displayed when operators click this button.
-2. **Job Status** - The status of all current maintenance jobs for the equipment is displayed along with a button to view additional detail.
-3. **Maintenance History** - Displays the history of all maintenance job performed on the equipment.
+1. **Schedule Job** - the Schedule Maintenance Job page is displayed when operators click this button.
+2. **Job Status** - the status of all current maintenance jobs for the equipment is displayed along with a button to view additional detail.
+3. **Maintenance History** - displays the history of all maintenance jobs performed on the equipment.
 
 ### Schedule Maintenance Job
 
