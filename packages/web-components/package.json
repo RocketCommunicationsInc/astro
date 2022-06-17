@@ -38,7 +38,7 @@
         "test.all": "concurrently npm:test.unit.silent npm:test.e2e",
         "deploy.beta": "netlify deploy --site '27100b54-2df5-4ab2-a331-4ef2b81f8054'",
         "deploy.storybook": "netlify deploy --site 'bfaf1790-0a59-47fb-ab34-4a3530a715f1'",
-        "test.e2e.ga": "npm run start-server-and-test ci.server 3333 test.e2e"
+        "test.e2e.ga": "start-server-and-test ci.server 3333 test.e2e"
     },
     "dependencies": {
         "@floating-ui/dom": "~0.4.4",
