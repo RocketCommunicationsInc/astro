@@ -146,6 +146,9 @@
                     //The assertion in the e2e test will timeout after 4000 ms of not finding the appended stuff
                 }, 500)
             })
+            document.addEventListener('ruxmodalclosed', () => {
+                console.log('heard ruxmodalclosed')
+            })
         </script>
     </body>
 </html>
