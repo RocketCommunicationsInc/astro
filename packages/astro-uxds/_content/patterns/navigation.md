@@ -48,13 +48,13 @@ Avoid mixing unrelated object types in a single tree. Although this usage is com
 
 Applications with large uniform data sets can be structured with [Table Navigation](/patterns/table). Table Navigation begins with a full screen tabular view of the application data. The table’s searching, sorting, and filtering capabilities allow the user to find objects of interest before drilling down to additional detail pages.
 
-![Table navigation sample app layout](/img/patterns/table-nav.png)
+![Table Navigation sample app layout](/img/patterns/table-nav.png)
 
 ## Timeline Navigation
 
 Applications that are principally organized around events on a realtime schedule can make use of [Timeline Navigation](/components/timeline). A timeline atop the page allows the user to select events that are shown in detail in the main area the page.
 
-![Timeline navigation sample app layout](/img/patterns/timeline-nav.png)
+![Timeline Navigation sample app layout](/img/patterns/timeline-nav.png)
 
 ## Combining Navigation
 
