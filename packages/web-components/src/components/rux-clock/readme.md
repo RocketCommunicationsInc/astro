@@ -73,11 +73,12 @@ Define AOS and LOS with valid [Unix Time Stamp](http://pubs.opengroup.org/online
 | -------------- | ------------------------------------------- |
 | `"aos"`        | the container for the aos section of clock  |
 | `"aos-label"`  | the container for the aos label             |
+| `"container"`  | the container for the clock                 |
 | `"date"`       | the container for the date section of clock |
 | `"date-label"` | the container for the date label            |
 | `"los"`        | the container for the los section of clock  |
 | `"los-label"`  | the container for the los label             |
-| `"time"`       | the conatiner for the time section of clock |
+| `"time"`       | the container for the time section of clock |
 | `"time-label"` | the container for the time label            |
 
 

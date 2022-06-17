@@ -53,10 +53,13 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 
 ## Properties
 
-| Property       | Attribute        | Description                                 | Type      | Default |
-| -------------- | ---------------- | ------------------------------------------- | --------- | ------- |
-| `clickToClose` | `click-to-close` | Allows modal to close by clicking off of it | `boolean` | `false` |
-| `open`         | `open`           | Shows and hides modal                       | `boolean` | `false` |
+| Property       | Attribute       | Description                  | Type                  | Default     |
+| -------------- | --------------- | ---------------------------- | --------------------- | ----------- |
+| `confirmText`  | `confirm-text`  | Text for confirmation button | `string`              | `'Confirm'` |
+| `denyText`     | `deny-text`     | Text for close button        | `string`              | `'Cancel'`  |
+| `modalMessage` | `modal-message` | Modal body message           | `string \| undefined` | `undefined` |
+| `modalTitle`   | `modal-title`   | Modal header title           | `string \| undefined` | `undefined` |
+| `open`         | `open`          | Shows and hides modal        | `boolean`             | `false`     |
 
 
 ## Events
@@ -98,6 +101,22 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 | `--modal-border-color`     | [DEPRECATED] Modal border color     |
 | `--modal-title-color`      | [DEPRECATED] Modal title color      |
 
+
+## Dependencies
+
+### Depends on
+
+- [rux-button-group](../rux-button-group)
+- [rux-button](../rux-button)
+
+### Graph
+```mermaid
+graph TD;
+  rux-modal --> rux-button-group
+  rux-modal --> rux-button
+  rux-button --> rux-icon
+  style rux-modal fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 
