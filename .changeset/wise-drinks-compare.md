@@ -1,8 +1,8 @@
 ---
 "@astrouxds/angular": minor
+"astro-website": minor
 "@astrouxds/react": minor
 "@astrouxds/astro-web-components": minor
-"astro-website": minor
 ---
 
-Deprecates CSS Custom Properties. See MIGRATION.md for more information
+Container - Adds new Container component

@@ -49,10 +49,10 @@
             align-items: center;
             height: 1.375rem;
             margin: -27px 0 0 0;
-            color: var(--pushbutton-text-color);
+            color: var(--color-text-interactive-default);
             background-color: var(--pushbutton-background-color);
             border-radius: var(--radius-base);
-            border: 1px solid var(--pushbutton-border-color);
+            border: 1px solid var(--color-border-interactive-default);
             padding: 0.469rem 1rem; // 7.5 16
 
             &:hover {
@@ -90,11 +90,11 @@
         //active
         &__input:checked + .rux-push-button__button {
             display: flex;
-            color: var(--pushbutton-selected-text-color);
-            background-color: var(--pushbutton-selected-background-color);
-            border-color: var(--pushbutton-selected-border-color);
+            color: var(--color-text-inverse);
+            background-color: var(--color-palette-green-500);
+            border-color: var(--color-palette-green-500);
             rux-icon {
-                color: var(--pushbutton-selected-text-color);
+                color: var(--color-text-inverse);
             }
             &:hover {
                 background-color: var(--color-palette-green-400);
@@ -104,11 +104,11 @@
         //active, disabled
         &__input:checked:disabled + .rux-push-button__button {
             &:hover {
-                color: var(--pushbutton-selected-text-color);
-                background-color: var(--pushbutton-selected-background-color);
-                border-color: var(--pushbutton-selected-border-color);
+                color: var(--color-text-inverse);
+                background-color: var(--color-palette-green-500);
+                border-color: var(--color-palette-green-500);
                 rux-icon {
-                    color: var(--pushbutton-selected-text-color);
+                    color: var(--color-text-inverse);
                 }
             }
         }
@@ -118,10 +118,10 @@
             opacity: var(--disabled-opacity);
             cursor: not-allowed;
             &:hover {
-                border-color: var(--pushbutton-border-color);
-                color: var(--pushbutton-text-color);
+                border-color: var(--color-border-interactive-default);
+                color: var(--color-text-interactive-default);
                 rux-icon {
-                    color: var(--pushbutton-text-color);
+                    color: var(--color-text-interactive-default);
                 }
             }
         }

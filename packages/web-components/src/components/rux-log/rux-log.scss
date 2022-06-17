@@ -13,10 +13,6 @@
     display: none;
 }
 
-rux-table {
-    --table-header-background-color: var(--log-header-background-color);
-}
-
 .rux-log__header-event-cell {
     width: 80%;
 }
@@ -37,7 +33,7 @@ rux-table-header-cell {
 .rux-log__notification {
     width: 2000%;
     align-content: center;
-    color: var(--log-filter-text-color);
-    background-color: var(--log-filter-background-color);
+    color: var(--color-text-inverse);
+    background-color: #3a87cf;
     padding: 0.5rem;
 }

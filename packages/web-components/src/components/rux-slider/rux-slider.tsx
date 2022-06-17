@@ -316,3 +316,13 @@ export class RuxSlider implements FormFieldInterface {
         )
     }
 }
+
+/*
+                                return (
+                                    <div class="tick-label">
+                                        <div class="tick"></div>
+                                        <option>{label}</option>
+                                    </div>
+                                )
+
+*/

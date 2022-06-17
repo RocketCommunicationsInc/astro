@@ -8,7 +8,7 @@ import { hasShadowDom } from '../../utils/utils'
 @Component({
     tag: 'rux-button',
     styleUrl: 'rux-button.scss',
-    shadow: true,
+    shadow: { delegatesFocus: true },
 })
 export class RuxButton {
     @Element() el!: HTMLRuxButtonElement

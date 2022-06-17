@@ -1,0 +1,50 @@
+:host {
+    // Internal private design tokens
+    --container-header-padding: 1rem 1.25rem; //16px 20px
+    --container-footer-padding: 1.25rem; //20px
+    --container-header-background-color: var(--color-background-surface-header);
+
+    /**
+     * @prop --body-padding: the container's body padding
+     */
+    --body-padding: var(--container-footer-padding, 1.25rem);
+    display: block;
+}
+
+.hidden,
+:host([hidden]) {
+    display: none;
+}
+
+.rux-container {
+    background: var(--color-background-surface-default);
+    border: 1px solid var(--container-color-border);
+}
+
+.rux-container__header {
+    padding: var(--container-header-padding);
+    background: var(--color-background-surface-header);
+    font-family: var(--font-heading-2-font-family);
+    font-size: var(--font-heading-2-font-size);
+    font-weight: var(--font-heading-2-font-weight);
+    letter-spacing: var(--font-heading-2-letter-spacing);
+}
+
+.rux-container__tab-bar {
+    background: var(--color-background-surface-header);
+    padding: 0 0.625rem; //10px
+}
+
+.rux-container__toolbar {
+    background: var(--color-background-surface-header);
+    padding: var(--container-header-padding);
+}
+
+.rux-container__body {
+    padding: var(--body-padding);
+}
+
+.rux-container__footer {
+    background: var(--color-background-surface-default);
+    padding: var(--container-footer-padding);
+}

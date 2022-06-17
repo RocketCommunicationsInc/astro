@@ -34,34 +34,13 @@ export const proxyOutputs = (instance: any, el: any, events: string[]) => {
   );
 };
 
-export const defineCustomElement = (tagName: string, customElement: any) => {
-  if (
-    customElement !== undefined &&
-    typeof customElements !== 'undefined' &&
-    !customElements.get(tagName)
-  ) {
-    customElements.define(tagName, customElement);
-  }
-};
-
-// tslint:disable-next-line: only-arrow-functions
-export function ProxyCmp(opts: {
-  defineCustomElementFn?: () => void;
-  inputs?: any;
-  methods?: any;
-}) {
+export function ProxyCmp(opts: { inputs?: any; methods?: any }) {
   const decorator = function (cls: any) {
-    const { defineCustomElementFn, inputs, methods } = opts;
-
-    if (defineCustomElementFn !== undefined) {
-      defineCustomElementFn();
+    if (opts.inputs) {
+      proxyInputs(cls, opts.inputs);
     }
-
-    if (inputs) {
-      proxyInputs(cls, inputs);
-    }
-    if (methods) {
-      proxyMethods(cls, methods);
+    if (opts.methods) {
+      proxyMethods(cls, opts.methods);
     }
     return cls;
   };

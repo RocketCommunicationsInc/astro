@@ -38,7 +38,7 @@
     font-size: var(--font-body-1-font-size);
     font-weight: var(--font-body-1-font-weight);
     letter-spacing: var(--font-body-1-letter-spacing);
-    color: var(--tree-text-color);
+    color: var(--color-text-primary);
     user-select: none;
     display: block;
 }
@@ -140,8 +140,8 @@
     white-space: nowrap;
     overflow: hidden;
     &:hover {
-        color: var(--tree-hover-text-color);
-        background: var(--tree-hover-background-color);
+        color: var(--color-text-inverse);
+        background: var(--color-background-interactive-hover);
     }
 }
 
@@ -182,7 +182,7 @@
         border-style: solid;
         border-width: 0.35rem 0 0.35rem 0.35rem;
         border-color: transparent transparent transparent
-            var(--tree-accent-color);
+            var(--color-background-interactive-default);
         display: inline-block;
     }
 }
@@ -212,5 +212,5 @@
 .selected {
     width: 5px;
     height: 100%;
-    background-color: var(--color-interactive-default);
+    background-color: var(--color-background-interactive-default);
 }

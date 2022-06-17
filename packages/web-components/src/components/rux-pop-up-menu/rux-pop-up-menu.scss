@@ -1,106 +1,53 @@
 :host {
     display: block;
-
-    /**
-      * @prop --popup-menu-background-color: [DEPRECATED] Pop Up Menu Backround Color
-    */
-
-    --popup-menu-background-color: var(--color-background-base-default);
-
-    /**
-      * @prop --popup-menu-border-color: [DEPRECATED] Pop Up Menu Border Color
-    */
-    --popup-menu-border-color: var(--color-border-interactive-muted);
-
-    /**
-      * @prop --popup-menu-caret-background-color: [DEPRECATED] Pop Up Menu Caret Background Color
-    */
-    --popup-menu-caret-background-color: var(--color-border-interactive-muted);
-
-    /**
-      * @prop --popup-menu-caret-left: [DEPRECATED] Position of Caret
-    */
-    --popup-menu-caret-left: 2px;
-
-    /**
-      * @prop --popup-menu-caret-size: [DEPRECATED] Size of Caret
-    */
-    --popup-menu-caret-size: 1.875rem;
-
-    /**
-      * @prop --popup-menu-transition-speed: [DEPRECATED] Transition Time of Pop Up Animation
-    */
-    --popup-menu-transition-speed: 0.1667s;
-
-    opacity: 0;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    pointer-events: none;
-    color: var(--color-background-interactive-default);
-    background-color: var(--popup-menu-border-color);
-    border: 1px solid var(--popup-menu-border-color);
-    border-top-width: 4px;
-    z-index: 10000;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border-radius: var(--radius-base);
-    top: -9999rem;
-    left: -9999rem;
-    transition: opacity 0.1667s ease-out;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+    width: min-content;
 }
 
+.hidden,
 :host([hidden]) {
     display: none;
 }
-
-:host([open]) {
-    pointer-events: auto;
-    opacity: 1;
-    transition: opacity 0.1667s ease-in;
+.hidden {
+    //! This allows for the display to be changed with the ::part(popup-content) but still
+    //! be hidden when it needs to be. Any better ideas?
+    display: none !important;
 }
 
-:host::after {
-    content: '';
-    display: block;
+.rux-popup__content {
     position: absolute;
-    z-index: 1;
-    border: 8px solid transparent;
-    border-bottom: 11px solid var(--popup-menu-caret-background-color);
-    left: var(--popup-menu-caret-left, 2px);
-    top: -1.4375rem;
+    color: white;
+    padding: 12px;
+    border-radius: var(--radius-base);
+    background: var(--color-background-base-default);
+    border: 1px solid var(--color-border-interactive-muted);
+    transform-style: preserve-3d;
 }
 
-ul {
-    position: relative;
-    list-style: none;
+.rux-popup__trigger {
+    display: contents;
+}
+
+.rux-popup__content--menu {
     padding: 0;
-    margin: 0;
-    background-color: var(--popup-menu-background-color);
-    z-index: 2;
-    border-radius: 2px;
+}
+.rux-popup__arrow-left {
+    border-right: 2px solid var(--color-border-interactive-muted);
 }
 
-li:last-of-type {
-    border: none;
-    border-radius: 0 0 2px 2px;
+.rux-popup__arrow-top {
+    border-bottom: 2px solid var(--color-border-interactive-muted);
+}
+.rux-popup__arrow-right {
+    border-left: 2px solid var(--color-border-interactive-muted);
+}
+.rux-popup__arrow-bottom {
+    border-top: 2px solid var(--color-border-interactive-muted);
 }
 
-li:first-of-type {
-    border: none;
-    border-radius: 2px 2px 0 0;
-}
-
-:host(.from-top) {
-    border-top-width: 1px;
-    border-bottom-width: 4px;
-}
-
-:host(.from-top)::after {
-    top: unset;
-    bottom: -23px;
-    transform: rotate(180deg);
+.rux-popup-arrow {
+    position: absolute;
+    background: #2b659b;
+    width: 17px;
+    height: 17px;
+    transform: translateZ(-1px) rotate(45deg);
 }

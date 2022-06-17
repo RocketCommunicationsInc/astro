@@ -100,36 +100,36 @@ rux-icon {
 
 :host([status='off']) {
     rux-icon {
-        color: var(--status-symbol-color-fill-off);
+        color: var(--status-symbol-color-fill-off-on-dark);
     }
 }
 
 :host([status='standby']) {
     rux-icon {
-        color: var(--status-symbol-color-fill-standby);
+        color: var(--status-symbol-color-fill-standby-on-dark);
     }
 }
 
 :host([status='normal']) {
     rux-icon {
-        color: var(--status-symbol-color-fill-normal);
+        color: var(--status-symbol-color-fill-normal-on-dark);
     }
 }
 
 :host([status='caution']) {
     rux-icon {
-        color: var(--status-symbol-color-fill-caution);
+        color: var(--status-symbol-color-fill-caution-on-dark);
     }
 }
 
 :host([status='serious']) {
     rux-icon {
-        color: var(--status-symbol-color-fill-serious);
+        color: var(--status-symbol-color-fill-serious-on-dark);
     }
 }
 
 :host([status='critical']) {
     rux-icon {
-        color: var(--status-symbol-color-fill-critical);
+        color: var(--status-symbol-color-fill-critical-on-dark);
     }
 }

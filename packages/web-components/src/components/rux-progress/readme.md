@@ -88,11 +88,11 @@ Indeterminate progress
 
 ## Properties
 
-| Property    | Attribute    | Description                                                                         | Type                  | Default     |
-| ----------- | ------------ | ----------------------------------------------------------------------------------- | --------------------- | ----------- |
-| `hideLabel` | `hide-label` | Hides the progress label                                                            | `boolean`             | `false`     |
-| `max`       | `max`        | For progress bars where progress bars have a maximum value greater or less than 100 | `number`              | `100`       |
-| `value`     | `value`      | Current progress value between 0 and 100 (or the max, if defined below).            | `number \| undefined` | `undefined` |
+| Property    | Attribute    | Description                                                                         | Type                  | Default |
+| ----------- | ------------ | ----------------------------------------------------------------------------------- | --------------------- | ------- |
+| `hideLabel` | `hide-label` | Hides the progress label                                                            | `boolean`             | `false` |
+| `max`       | `max`        | For progress bars where progress bars have a maximum value greater or less than 100 | `number`              | `100`   |
+| `value`     | `value`      | Current progress value between 0 and 100 (or the max, if defined below).            | `number \| undefined` | `0`     |
 
 
 ## Shadow Parts

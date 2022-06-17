@@ -19,5 +19,14 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body></body>
+    <body>
+        <rux-modal open>
+            <span slot="header">Modal Title</span>
+            <span>Modal Content</span>
+            <div slot="footer">
+                <rux-button>Cancel</rux-button>
+                <rux-button>OK</rux-button>
+            </div>
+        </rux-modal>
+    </body>
 </html>

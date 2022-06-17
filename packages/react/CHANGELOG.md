@@ -1,5 +1,85 @@
 # @astrouxds/react
 
+## 7.0.0-beta.0
+
+### Major Changes
+
+#### Modal
+
+- Modal will no longer close when clicking outside by default.
+
+  - Why: To align with Astro UXDS compliance requirements 4.3.3: "Dialog Boxes shall be closed only with confirm or cancel Buttons."
+
+  - Migration: If you still require this functionality, a new `clickToClose` property has been added. It defaults to `false` so this will be a breaking change.
+
+- The following properties and attributes have been removed: `modalMessage`, `modalTitle`, `confirmText`, `denyText`.
+  - Why: These have been replaced in favor of slots to provide greater flexibility.
+  - Migration: Use the new `header`, `message`, and `footer` slots instead.
+
+#### Progress
+
+- Removed the indeterminate functionality from Progress
+  - Why: this functionality has been moved to its own component, rux-indeterminate-progress.
+
+### Minor Changes
+
+#### Card
+
+- New component
+
+#### Indeterminate Progress
+
+- New component
+
+#### Container
+
+- New component
+  iner - Adds new Container component
+
+### Patch Changes
+
+- 2a7e22c1: Implements design tokens@1.5. Adds shadow to Tag
+- e171cbe1: Segmented Button - fixed issue where the bottom border was being clipped when inside a container element.
+- f94be0fc: Fixed an issue with `ruxmodalclosed` event firing twice. Added tests as well.
+- 010907c4: table - removed left/right borders to align with design and work inside containers
+- 4c701386: Updated the selected row styling on rux-table and added data to empty column in storybook.
+- 1c49914c: Slider - hides label if none is present
+- Updated dependencies [2a7e22c1]
+- Updated dependencies [e171cbe1]
+- Updated dependencies [f94be0fc]
+- Updated dependencies [541523ab]
+- Updated dependencies [010907c4]
+- Updated dependencies [4c701386]
+- Updated dependencies [809eb56c]
+- Updated dependencies [f73e2219]
+- Updated dependencies [1c49914c]
+- Updated dependencies [541523ab]
+- Updated dependencies [1482d397]
+- Updated dependencies [f73e2219]
+- Updated dependencies [541523ab]
+- Updated dependencies [c9b10b83]
+  - @astrouxds/astro-web-components@7.0.0-beta.0
+
+## 6.9.0
+
+### Minor Changes
+
+- !!! Deprecates CSS Custom Properties. See MIGRATION.md for more information !!!
+
+#### Input
+
+- Added support for `time` type
+
+### Patch Changes
+
+#### Modal
+
+- Fixed issue with emitting a detail value when using default confirm/deny buttons.
+
+#### Pop Up Menu
+
+- Pop-up-menu will now position correctly if the anchor element is beyond a horizontal scrollbar.
+
 ## 6.8.0
 
 ### Minor Changes

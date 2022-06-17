@@ -19,6 +19,10 @@ export const RuxButtonGroup = /*@__PURE__*/ createReactComponent<
   JSX.RuxButtonGroup,
   HTMLRuxButtonGroupElement
 >("rux-button-group");
+export const RuxCard = /*@__PURE__*/ createReactComponent<
+  JSX.RuxCard,
+  HTMLRuxCardElement
+>("rux-card");
 export const RuxCheckbox = /*@__PURE__*/ createReactComponent<
   JSX.RuxCheckbox,
   HTMLRuxCheckboxElement
@@ -35,6 +39,10 @@ export const RuxClock = /*@__PURE__*/ createReactComponent<
   JSX.RuxClock,
   HTMLRuxClockElement
 >("rux-clock");
+export const RuxContainer = /*@__PURE__*/ createReactComponent<
+  JSX.RuxContainer,
+  HTMLRuxContainerElement
+>("rux-container");
 export const RuxDatetime = /*@__PURE__*/ createReactComponent<
   JSX.RuxDatetime,
   HTMLRuxDatetimeElement
@@ -4267,6 +4275,10 @@ export const RuxIconZoomOutMap = /*@__PURE__*/ createReactComponent<
   JSX.RuxIconZoomOutMap,
   HTMLRuxIconZoomOutMapElement
 >("rux-icon-zoom-out-map");
+export const RuxIndeterminateProgress = /*@__PURE__*/ createReactComponent<
+  JSX.RuxIndeterminateProgress,
+  HTMLRuxIndeterminateProgressElement
+>("rux-indeterminate-progress");
 export const RuxInput = /*@__PURE__*/ createReactComponent<
   JSX.RuxInput,
   HTMLRuxInputElement
@@ -4275,6 +4287,10 @@ export const RuxLog = /*@__PURE__*/ createReactComponent<
   JSX.RuxLog,
   HTMLRuxLogElement
 >("rux-log");
+export const RuxMenu = /*@__PURE__*/ createReactComponent<
+  JSX.RuxMenu,
+  HTMLRuxMenuElement
+>("rux-menu");
 export const RuxMenuItem = /*@__PURE__*/ createReactComponent<
   JSX.RuxMenuItem,
   HTMLRuxMenuItemElement

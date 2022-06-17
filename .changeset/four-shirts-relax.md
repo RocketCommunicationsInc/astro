@@ -5,4 +5,4 @@
 "@astrouxds/react": patch
 ---
 
-Fixed modal not emitting a detail value when using default confirm/deny buttons.
+Updated the selected row styling on rux-table and added data to empty column in storybook.

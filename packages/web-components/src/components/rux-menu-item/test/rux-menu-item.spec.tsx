@@ -9,11 +9,4 @@ describe('rux-menu-item', () => {
         })
         expect(page.root).toMatchSnapshot()
     })
-    it('changes to anchor tag based on an href prop', async () => {
-        const page = await newSpecPage({
-            components: [RuxMenuItem],
-            html: `<rux-menu-item href="https://www.astrouxds.com"></rux-menu-item>`,
-        })
-        expect(page.root).toMatchSnapshot()
-    })
 })

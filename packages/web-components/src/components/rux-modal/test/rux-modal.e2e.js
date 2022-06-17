@@ -5,7 +5,6 @@ describe('Modal', () => {
     it('renders', () => {
         cy.get('rux-modal').should('have.class', 'hydrated')
     })
-
     it('should close and open the modal', () => {
         cy.get('rux-modal').then(($modal) => {
             $modal[0].setAttribute('open', false)
@@ -47,10 +46,9 @@ describe('Modal', () => {
             .next()
             .contains('Test Confirm Text')
     })
-
-    it('should display new deny text in the dialog when changed', () => {
+    it('should close on off click if click-to-close is true', () => {
         cy.get('rux-modal').then(($modal) => {
-            $modal[0].setAttribute('deny-text', 'Test Deny Text')
+            $modal[0].setAttribute('click-to-close', true)
         })
         cy.get('rux-modal')
             .shadow()
@@ -83,27 +81,36 @@ describe('Modal', () => {
         cy.get('rux-modal')
             .shadow()
             .find('.rux-modal__wrapper')
-            .should('not.exist')
-    })
-
-    it('should close when enter key pressed', () => {
-        cy.get('rux-modal').shadow().find('dialog').click()
-        cy.get('body').type('{enter}')
-        cy.get('rux-modal')
-            .shadow()
-            .find('.rux-modal__wrapper')
-            .should('not.exist')
-    })
-
-    it('should close the modal when click occurs outside modal', () => {
-        cy.get('rux-modal')
-            .shadow()
-            .find('.rux-modal__wrapper')
             .click('topLeft')
         cy.get('rux-modal')
             .shadow()
             .find('.rux-modal__wrapper')
             .should('not.exist')
+    })
+    it('should fire ruxmodalclosed once if clicked to close', () => {
+        let count = 0
+
+        cy.get('rux-modal').then(($modal) => {
+            $modal[0].setAttribute('click-to-close', true)
+            $modal[0].setAttribute('open', true)
+        })
+        cy.document().then(($doc) => {
+            $doc.addEventListener('ruxmodalclosed', () => {
+                count++
+            })
+        })
+        cy.get('rux-modal')
+            .shadow()
+            .find('.rux-modal__wrapper')
+            .click('topLeft')
+            .then(() => expect(count).to.equal(1))
+    })
+    it('should have a footer el if footer slot is used', () => {
+        cy.get('rux-modal').then(($modal) => {
+            $modal[0].setAttribute('open', false)
+            $modal[1].setAttribute('open', true)
+        })
+        cy.get('#test').shadow().find('footer').should('exist')
     })
     it('should be able to dynamically add slots', () => {
         cy.get('rux-modal').then(($modal) => {

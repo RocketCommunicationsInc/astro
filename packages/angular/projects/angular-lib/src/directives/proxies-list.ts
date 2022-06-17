@@ -1,14 +1,17 @@
 //@ts-nocheck
+//@ts-nocheck
 
 import * as d from './proxies';
 
 export const DIRECTIVES = [
   d.RuxButton,
   d.RuxButtonGroup,
+  d.RuxCard,
   d.RuxCheckbox,
   d.RuxCheckboxGroup,
   d.RuxClassificationMarking,
   d.RuxClock,
+  d.RuxContainer,
   d.RuxDatetime,
   d.RuxGlobalStatusBar,
   d.RuxIcon,
@@ -1067,8 +1070,10 @@ export const DIRECTIVES = [
   d.RuxIconZoomInMap,
   d.RuxIconZoomOut,
   d.RuxIconZoomOutMap,
+  d.RuxIndeterminateProgress,
   d.RuxInput,
   d.RuxLog,
+  d.RuxMenu,
   d.RuxMenuItem,
   d.RuxMenuItemDivider,
   d.RuxModal,

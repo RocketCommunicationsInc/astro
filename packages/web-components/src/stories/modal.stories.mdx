@@ -15,7 +15,7 @@ import { html, render } from 'lit-html'
 
 # Modal
 
-A Modal interrupts the app experience to prompt a user to confirm an action or acknowledge a piece of information. It displays information along with a set of buttons allowing users to “Accept or Cancel” the actions presented within the Rux Modal.
+A Modal interrupts the app experience to prompt a user to confirm an action or acknowledge a piece of information.
 
 ## Guidelines
 
@@ -23,15 +23,56 @@ A Modal interrupts the app experience to prompt a user to confirm an action or a
 
 export const Modal = (args) => {
     return html`
-<div style="display: flex; flex-flow: column; justify-content: center;">
-    <rux-modal
-        ?open="${args.open}"
-        modal-message="${args.modalMessage}"
-        modal-title="${args.modalTitle}"
-        confirm-text="${args.confirmText}"
-        deny-text="${args.denyText}"
-    ></rux-modal>
-</div
+            <style>
+            .sbdocs #story--components-modal--default-story {
+                display: block;
+                min-height: 500px;
+            }
+                .sbdocs #story--components-modal--modal rux-modal::part(container) {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+    }
+            .rux-button-group{
+                margin-top: auto;
+                margin-left: auto;
+                align-self: flex-end;
+            }
+            rux-modal::part(modal-wrapper) {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+        <div style="display: flex; flex-flow: column; justify-content: center;">
+            <rux-modal
+                ?open="${args.open}"
+                ?click-to-close="${args.clickToClose}"
+                id="modal-1"
+            >
+            <div slot="header">Modal title</div>
+            <div slot="message">Modal message</div>
+            <div slot="footer">
+                <rux-button-group class="rux-button-group" h-align="right">
+                    <rux-button class="btn" secondary>Cancel</rux-button>
+                    <rux-button class="btn" >Release</rux-button>
+                </rux-button-group>
+            </div>
+            </rux-modal>
+        </div>
+        <script>
+            let modal = document.getElementById('modal-1');
+            let btns = document.querySelectorAll('.btn');
+            btns.forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    modal.open = false;
+                })
+            })
+        </script>
     `
 }
 
@@ -39,12 +80,8 @@ export const Modal = (args) => {
     <Story
         args={{
             open: true,
-            modalMessage: 'Modal message',
-            modalTitle: 'Modal title',
-            confirmText: 'Release',
-            denyText: 'Cancel',
         }}
-        name="Modal"
+        name="Default"
     >
         {Modal.bind()}
     </Story>
@@ -173,10 +210,6 @@ Here's a simple way to do that if you're using slots to customize the footer.
 If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
 
 ```js
-import { RuxModal } from '@astrouxds/astro-web-components/dist/components/rux-modal.js'
-import { RuxButton } from '@astrouxds/astro-web-components/dist/components/rux-button.js'
-import { RuxButtonGroup } from '@astrouxds/astro-web-components/dist/components/rux-button-group.js'
+import RuxModal from '@astrouxds/astro-web-components/dist/components/rux-modal.js'
 customElements.define('rux-modal', RuxModal)
-customElements.define('rux-button', RuxButton)
-customElements.define('rux-button-group', RuxButtonGroup)
 ```

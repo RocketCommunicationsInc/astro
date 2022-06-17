@@ -54,7 +54,7 @@
             transform: rotate(0deg);
             border-right: 0;
             border-top: 0;
-            border-bottom: 2px solid var(--checkbox-checked-color);
+            border-bottom: 2px solid var(--color-background-interactive-default);
             left: 4px;
         }
     }
@@ -68,7 +68,7 @@
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            color: var(--checkbox-label-color);
+            color: var(--color-text-primary);
             letter-spacing: 0.5px;
             cursor: pointer;
             margin-left: -7px;
@@ -82,8 +82,8 @@
                 width: 1.125rem;
 
                 margin: 0 0.625rem 0 0;
-                background-color: var(--checkbox-background-color);
-                border: 1px solid var(--checkbox-border-color);
+                background-color: var(--color-background-base-default);
+                border: 1px solid var(--color-border-interactive-muted);
                 border-radius: var(--radius-checkbox);
             }
         }
@@ -105,12 +105,14 @@
                     height: 6px;
                     width: 12px;
                     left: 3px;
-                    border-right: 2px solid var(--checkbox-checked-color);
-                    border-top: 2px solid var(--checkbox-checked-color);
+                    border-right: 2px solid
+                        var(--color-background-interactive-default);
+                    border-top: 2px solid
+                        var(--color-background-interactive-default);
                     transform: rotate(125deg);
                 }
                 &::before {
-                    border-color: var(--checkbox-border-color);
+                    border-color: var(--color-border-interactive-muted);
                 }
             }
         }
@@ -126,7 +128,7 @@
     input[type='checkbox']:not(:disabled):hover {
         + label {
             &::before {
-                border-color: var(--checkbox-hover-border-color);
+                border-color: var(--color-background-interactive-hover);
             }
         }
     }

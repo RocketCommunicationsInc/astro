@@ -5,4 +5,4 @@
 "@astrouxds/react": patch
 ---
 
-Pop-up-menu will now position correctly if the anchor element is beyond a horizontal scrollbar.
+Implements design tokens@1.5. Adds shadow to Tag

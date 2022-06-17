@@ -104,7 +104,7 @@
     height: 2.125rem;
     min-width: 2.25rem;
     border-radius: var(--radius-base);
-    color: var(--button-text-color);
+    color: var(--color-text-inverse);
     font-family: var(--font-body-1-font-family);
     font-size: var(--font-body-1-font-size);
     font-weight: var(--font-body-1-font-weight);
@@ -121,7 +121,7 @@
         height: 1rem;
         width: 1rem;
         margin-right: 0.625rem;
-        color: var(--button-text-color);
+        color: var(--color-text-inverse);
     }
 
     &:disabled {
@@ -139,69 +139,69 @@
     }
 
     &--default {
-        border: 1px solid var(--button-border-color);
-        background-color: var(--button-background-color);
+        border: 1px solid transparent;
+        background-color: var(--color-background-interactive-default);
         &:hover:not([disabled]) {
-            border-color: var(--button-hover-border-color);
-            background-color: var(--button-hover-background-color);
+            border-color: transparent;
+            background-color: var(--color-background-interactive-hover);
         }
         &:active:not([disabled]) {
-            border-color: var(--button-active-border-color);
-            background-color: var(--button-active-background-color);
+            border-color: var(--color-background-interactive-default);
+            background-color: var(--color-background-interactive-default);
         }
     }
 
     &--secondary {
-        color: var(--button-secondary-text-color);
-        background-color: var(--button-secondary-background-color);
-        border: 1px solid var(--button-secondary-border-color);
+        color: var(--color-background-interactive-default);
+        background-color: transparent;
+        border: 1px solid var(--color-background-interactive-default);
 
         &:hover:not([disabled]) {
-            color: var(--button-secondary-hover-text-color);
-            background-color: var(--button-secondary-hover-background-color);
-            border-color: var(--button-secondary-hover-border-color);
+            color: var(--color-background-interactive-hover);
+            background-color: transparent;
+            border-color: var(--color-background-interactive-hover);
             rux-icon,
             ::slotted(rux-icon) {
-                color: var(--button-secondary-hover-text-color);
+                color: var(--color-background-interactive-hover);
             }
         }
 
         &:active:not([disabled]) {
-            border-color: var(--button-secondary-border-color);
-            background-color: var(--button-secondary-background-color);
-            color: var(--button-secondary-text-color);
+            border-color: var(--color-background-interactive-default);
+            background-color: transparent;
+            color: var(--color-background-interactive-default);
             rux-icon,
             ::slotted(rux-icon) {
-                color: var(--button-secondary-text-color);
+                color: var(--color-background-interactive-default);
             }
         }
         rux-icon,
         ::slotted(rux-icon) {
-            color: var(--button-secondary-text-color);
+            color: var(--color-background-interactive-default);
         }
     }
     &--borderless {
-        color: var(--button-borderless-color);
+        color: var(--color-background-interactive-default);
         border: none;
         background: none;
         &:hover:not([disabled]) {
-            color: var(--button-borderless-hover-color);
+            color: var(--color-background-interactive-hover);
             background: none;
             rux-icon,
             ::slotted(rux-icon) {
-                color: var(--button-borderless-hover-color);
+                color: var(--color-background-interactive-hover);
             }
         }
         &:active:not([disabled]) {
-            color: var(--button-borderless-color);
+            color: var(--color-background-interactive-default);
             rux-icon,
             ::slotted(rux-icon) {
-                color: var(--button-borderless-color);
+                color: var(--color-background-interactive-default);
             }
         }
         rux-icon,
         ::slotted(rux-icon) {
-            color: var(--button-borderless-color);
+            color: var(--color-background-interactive-default);
         }
     }
 
