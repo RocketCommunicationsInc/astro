@@ -15,7 +15,9 @@
     "build": "lerna run build",
     "build.tests": "lerna run --scope '{@astrouxds/astro-web-components,@astrouxds/react}' build",
     "test": "lerna run --ignore @astrouxds/angular test",
-    "release": "node ./.scripts/release.js && changeset publish"
+    "release": "node ./.scripts/release.js && changeset publish",
+    "build.web-comps": "lerna run --scope @astrouxds/astro-web-components build",
+    "test.web-comps": "lerna run --scope @astrouxds/astro-web-components test"
   },
   "engines": {
     "node": "^16",
