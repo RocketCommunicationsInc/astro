@@ -24,14 +24,14 @@ export const config: Config = {
         angularOutputTarget({
             componentCorePackage: '@astrouxds/astro-web-components',
             directivesProxyFile:
-                '../angular/projects/angular-lib/src/directives/proxies.ts',
+                '../angular-workspace/projects/angular/src/directives/proxies.ts',
             directivesArrayFile:
-                '../angular/projects/angular-lib/src/directives/proxies-list.ts',
+                '../angular-workspace/projects/angular/src/directives/proxies-list.ts',
             valueAccessorConfigs: angularValueAccessorBindings,
         }),
         angularProxiesListIgnore({
             proxiesListFile:
-                '../../angular/projects/angular-lib/src/directives/proxies-list.ts',
+                '../../angular-workspace/projects/angular/src/directives/proxies-list.ts',
         }),
         {
             type: 'dist',
