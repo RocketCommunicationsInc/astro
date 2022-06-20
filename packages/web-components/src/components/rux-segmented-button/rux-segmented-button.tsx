@@ -110,16 +110,29 @@ export class RuxSegmentedButton {
     }
 
     render() {
+        let { disabled = false, size = 'medium' } = this
+
         return (
             <ul
                 class={{
-                    'rux-segmented-button': true,
-                    'rux-segmented-button--medium': this.size === 'medium',
-                    'rux-segmented-button--large': this.size === 'large',
+                    'rux-segmented-buttons': true,
+                    '--small': size === 'small',
+                    '--medium': size === 'medium',
+                    '--large': size === 'large',
+                    '--disabled': disabled,
                 }}
             >
                 {this.data.map((item) => (
-                    <li class="rux-segmented-button__segment">
+                    <li
+                        class={{
+                            'rux-segmented-button': true,
+                            '--small': size === 'small',
+                            '--medium': size === 'medium',
+                            '--large': size === 'large',
+                            '--selected': Boolean(item.selected),
+                            '--disabled': disabled,
+                        }}
+                    >
                         <input
                             type="radio"
                             name="rux-group"
@@ -128,7 +141,7 @@ export class RuxSegmentedButton {
                             checked={this._isSelected(item.label)}
                             data-label={item.label}
                             onChange={this._handleChange}
-                            disabled={this.disabled}
+                            disabled={disabled}
                         />
                         <label
                             htmlFor={this._slugify(item.label)}
@@ -136,9 +149,9 @@ export class RuxSegmentedButton {
                             class={{
                                 'rux-segmented-button-label': true,
                                 'rux-segmented-button-label--medium':
-                                    this.size === 'medium',
+                                    size === 'medium',
                                 'rux-segmented-button-label--large':
-                                    this.size === 'large',
+                                    size === 'large',
                             }}
                         >
                             {item.label}
