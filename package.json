@@ -14,10 +14,12 @@
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "build.tests": "lerna run --scope '{@astrouxds/astro-web-components,@astrouxds/react}' build",
+    "build.web-comps": "lerna run --scope '@astrouxds/astro-web-components' build",
     "test": "lerna run --ignore @astrouxds/angular test",
     "release": "node ./.scripts/release.js && changeset publish",
-    "build.web-comps": "lerna run --scope @astrouxds/astro-web-components build",
-    "test.web-comps": "lerna run --scope @astrouxds/astro-web-components test"
+    "test.web-comps.unit": "lerna run --scope '@astrouxds/astro-web-components' test.unit",
+    "test.web-comps.e2e": "lerna run --scope '@astrouxds/astro-web-components' test.e2e.ga",
+    "web-comps.install": "lerna install --scope '@astrouxds/astro-web-components'"
   },
   "engines": {
     "node": "^16",
