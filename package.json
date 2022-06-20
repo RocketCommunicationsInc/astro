@@ -21,7 +21,7 @@
     "test.web-comps.e2e": "lerna run --scope '@astrouxds/astro-web-components' test.e2e.ga",
     "web-comps.install": "cd ./packages/web-components && npm ci",
     "react.install": "cd ./packages/react && npm i",
-    "test.react": "leran run --scrope '@astrouxds/react' test"
+    "test.react": "lerna run --scope '@astrouxds/react' test"
   },
   "engines": {
     "node": "^16",
