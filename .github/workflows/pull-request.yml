@@ -10,7 +10,7 @@ on:
 env:
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 jobs:
-  build-and-test:
+  unit-tests:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,4 +23,32 @@ jobs:
         run: npm run build.web-comps
 
       - name: Test
-        run: npm run test.web-comps.unit && npm run test.web-comps.e2e
+        run: npm run test.web-comps.unit
+  e2e-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install Modules
+        run: npm run web-comps.install
+
+      - name: Build
+        run: npm run build.web-comps
+
+      - name: Test
+        run: npm run test.web-comps.e2e
+  react:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install Modules
+        run: npm run web-comps.install & npm run react.install
+
+      - name: Build
+        run: npm run build.tests
+
+      - name: Test
+        run: npm run test.react
