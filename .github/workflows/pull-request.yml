@@ -45,7 +45,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install Modules
-        run: npm run web-comps.install & npm run react.install
+        run: npm run web-comps.install && npm run react.install
 
       - name: Build
         run: npm run build.tests
