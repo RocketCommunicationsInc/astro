@@ -20,7 +20,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build.tests
+        run: npm run build.web-comps
 
       - name: Test
         run: npm run test.web-comps.unit & npm run test.web-comps.e2e
