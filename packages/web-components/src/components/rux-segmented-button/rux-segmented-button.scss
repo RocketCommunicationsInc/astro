@@ -1,94 +1,108 @@
 :host {
-    /* @TODO: Should these be moved into the design tokens library? */
-    /* references */
-    --disabled-opacity: var(--opacity-40);
-
-    /* @TODO: Should this custom property exist elsewhere. */
-    /* sizing unit */
-    --scale: 0.25rem;
-
-    /* @TODO: Should this custom property exist elsewhere. */
-    /* font-size: 16px; line-height: 20px; */
-    --button-font: 1rem/1.25 'Roboto', system-ui, sans-serif;
-
     display: inline-flex;
+
+    /* layout */
     flex-flow: column;
 }
 
-/* @TODO: Should this reset be moved into a separate file? */
-
-/* unset/list */
+/* reset unorganized list */
 ul {
     list-style-type: none;
     margin-block: 0;
     padding-inline: 0;
 }
 
-/* hide the input[type="checkbox"] implementation detail */
+/* remove input display */
 input {
     display: none;
 }
 
+/* reset label style */
 label {
-  cursor: inherit;
+    cursor: inherit;
 }
 
 .rux-segmented-buttons {
-    border-radius: var(--radius-base);
     display: flex;
+
+    /* appearance */
+    border-radius: var(--radius-base);
 }
 
 .rux-segmented-button {
-    --border-color:var(--color-text-interactive-default);
+    /* reference */
+    --border-color: var(--color-text-interactive-default);
 
-    box-shadow: var(--border-color, currentColor) 0 0 0 1px inset;
-    color: var(--color-text-interactive-default);
-    cursor: pointer;
+    /* typography */
     font: var(--button-font);
 
-    /* collapse inline borders */
-    & + & {
-        margin-inline-start: -1px;
+    /* appearance */
+    box-shadow: var(--border-color, currentColor) 0 0 0 1px inset;
+    color: var(--color-text-interactive-default);
+
+    /* input */
+    cursor: pointer;
+
+    /* state: hover or keyboard focused */
+    &:hover,
+    &:focus-visible {
+        background-color: var(--color-background-base-hover);
+        color: var(--color-text-interactive-hover);
     }
 
-    &:nth-child(1) {
+    /* state: disabled */
+    &.--disabled {
+        /* input */
+        cursor: not-allowed;
+
+        /* appearance */
+        opacity: var(--disabled-opacity);
+    }
+
+    /* variant: first-child */
+    &:first-child {
+        /* appearance */
         border-start-start-radius: inherit;
         border-end-start-radius: inherit;
     }
 
-    &:nth-last-child(1) {
+    /* variant: last-child */
+    &:last-child {
+        /* appearance */
         border-start-end-radius: inherit;
         border-end-end-radius: inherit;
     }
 
+    /* variant: small size */
     &.--small {
+        /* layout */
         padding-block: calc(1 * var(--scale));
         padding-inline: calc(4 * var(--scale));
     }
 
+    /* variant: medium size */
     &.--medium {
+        /* layout */
         padding-block: calc(1.5 * var(--scale));
         padding-inline: calc(4 * var(--scale));
     }
 
+    /* variant: large size */
     &.--large {
+        /* layout */
         padding-block: calc(3 * var(--scale));
         padding-inline: calc(4 * var(--scale));
     }
 
-    &.--disabled {
-        cursor: not-allowed;
-        opacity: var(--disabled-opacity);
-    }
-
-    &:hover,
-    &:focus-visible {
-      background-color: var(--color-background-base-hover);
-      color: var(--color-text-interactive-hover);
-    }
-
     &.--selected {
-      background-color: var(--color-background-base-selected);
-      color: var(--color-text-primary);
+        /* color */
+        background-color: var(--color-background-base-selected);
+        color: var(--color-text-primary);
+    }
+
+    /* collapsed inline borders */
+    & + & {
+        /* layout */
+        margin-inline-start: -1px;
     }
 }
