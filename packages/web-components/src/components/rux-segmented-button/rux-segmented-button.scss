@@ -5,6 +5,10 @@
     flex-flow: column;
 }
 
+:host([hidden]) {
+  display: none;
+}
+
 /* reset unorganized list */
 ul {
     list-style-type: none;
