@@ -45,12 +45,15 @@ label {
     /* typography */
     font: var(--button-font);
 
-    /* appearance */
-    box-shadow: var(--border-color, currentColor) 0 0 0 1px inset;
+    /* color */
+    background-color: var(--color-background-base-default);
     color: var(--color-text-interactive-default);
 
     /* input */
     cursor: pointer;
+
+    /* appearance */
+    box-shadow: var(--border-color, currentColor) 0 0 0 1px inset;
 
     /* state: hover or keyboard focused */
     &:hover,
