@@ -1,5 +1,5 @@
 ---
-"angular-workspace": minor
+"@astrouxds/angular": minor
 "@astrouxds/react": minor
 "@astrouxds/astro-web-components": minor
 "astro-website": minor
