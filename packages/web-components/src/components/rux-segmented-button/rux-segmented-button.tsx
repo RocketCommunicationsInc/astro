@@ -123,16 +123,7 @@ export class RuxSegmentedButton {
                 }}
             >
                 {this.data.map((item) => (
-                    <li
-                        class={{
-                            'rux-segmented-button': true,
-                            '--small': size === 'small',
-                            '--medium': size === 'medium',
-                            '--large': size === 'large',
-                            '--selected': Boolean(item.selected),
-                            '--disabled': disabled,
-                        }}
-                    >
+                    <li>
                         <input
                             type="radio"
                             name="rux-group"
@@ -144,15 +135,17 @@ export class RuxSegmentedButton {
                             disabled={disabled}
                         />
                         <label
-                            htmlFor={this._slugify(item.label)}
                             part="label"
+                            htmlFor={this._slugify(item.label)}
                             class={{
-                                'rux-segmented-button-label': true,
-                                'rux-segmented-button-label--medium':
-                                    size === 'medium',
-                                'rux-segmented-button-label--large':
-                                    size === 'large',
+                                'rux-segmented-button': true,
+                                '--small': size === 'small',
+                                '--medium': size === 'medium',
+                                '--large': size === 'large',
+                                '--selected': Boolean(item.selected),
+                                '--disabled': disabled,
                             }}
+                            tabindex={disabled ? -1 : 0}
                         >
                             {item.label}
                         </label>
