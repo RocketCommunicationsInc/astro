@@ -49,7 +49,7 @@ button {
 
     /* decoration */
     border-radius: var(--radius-base);
-    box-shadow: var(--border-color, transparent) 0px 0px var(--border-width, 0px) inset;
+    box-shadow: var(--border-color, transparent) 0 0 0 var(--border-width, 0px) inset;
 
     /* state: disabled */
     &:disabled {
