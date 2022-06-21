@@ -1,91 +1,12 @@
 :host {
-    /**
-     * @prop --button-text-color: [DEPRECATED] Button text color
-     */
-    --button-text-color: var(--color-text-inverse);
+    display: inline-flex;
 
-    /**
-     * @prop --button-background-color: [DEPRECATED] Button background color
-     */
-    --button-background-color: var(--color-background-interactive-default);
+    /* layout */
+    flex-flow: column wrap;
+    vertical-align: middle;
 
-    /**
-     * @prop --button-border-color: [DEPRECATED] Button border color
-     */
-    --button-border-color: transparent;
-
-    /**
-     * @prop --button-hover-background-color: [DEPRECATED] Button hover background color
-     */
-    --button-hover-background-color: var(--color-background-interactive-hover);
-
-    /**
-     * @prop --button-hover-border-color: [DEPRECATED] Button hover border color
-     */
-    --button-hover-border-color: transparent;
-
-    /**
-     * @prop --button-active-background-color: [DEPRECATED] Button active background color
-     */
-    --button-active-background-color: var(
-        --color-background-interactive-default
-    );
-
-    /**
-     * @prop --button-active-border-color: [DEPRECATED] Button active border color
-     */
-    --button-active-border-color: var(--color-background-interactive-default);
-
-    /**
-     * @prop --button-secondary-text-color: [DEPRECATED] Button secondary text color
-     */
-
-    --button-secondary-text-color: var(--color-background-interactive-default);
-
-    /**
-    * @prop --button-secondary-hover-text-color: [DEPRECATED] Secondary button hover text color
-    */
-    --button-secondary-hover-text-color: var(
-        --color-background-interactive-hover
-    );
-
-    /**
-     * @prop --button-secondary-background-color: [DEPRECATED] Button secondary background color
-     */
-    --button-secondary-background-color: transparent;
-
-    /**
-     * @prop --button-secondary-border-color: [DEPRECATED] Button secondary border color
-     */
-    --button-secondary-border-color: var(
-        --color-background-interactive-default,
-        rgb(0, 90, 143)
-    );
-
-    /**
-     * @prop --button-secondary-hover-background-color: [DEPRECATED]  Button secondary hover background color
-     */
-    --button-secondary-hover-background-color: transparent;
-
-    /**
-     * @prop --button-secondary-hover-border-color: [DEPRECATED]  Button secondary hover border color
-     */
-    --button-secondary-hover-border-color: var(
-        --color-background-interactive-hover
-    );
-
-    /**
-    * @prop --button-borderless-text-color: [DEPRECATED] Button borderless text color
-    */
-    --button-borderless-color: var(--color-background-interactive-default);
-
-    /**
-    * @prop --button-borderless-hover-color: [DEPRECATED] Borderless buttons hover text color 
-    */
-    --button-borderless-hover-color: var(--color-background-interactive-hover);
-
-    display: inline-block;
-    width: auto;
+    /* input */
+    cursor: pointer;
 }
 
 :host([hidden]) {
@@ -93,138 +14,139 @@
 }
 
 :host([disabled]) {
-    pointer-events: none;
+    /* input */
+    cursor: not-allowed;
 }
+
+/* reset native button style */
+
+button {
+    appearance: none;
+    background-color: transparent;
+    border-width: 0;
+    color: inherit;
+    font: inherit;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+/* style rux button */
+
 .rux-button {
     display: flex;
-    position: relative;
-    margin: 0;
-    width: inherit;
-    padding: 0 1rem;
-    height: 2.125rem;
-    min-width: 2.25rem;
-    border-radius: var(--radius-base);
-    color: var(--color-text-inverse);
-    font-family: var(--font-body-1-font-family);
-    font-size: var(--font-body-1-font-size);
-    font-weight: var(--font-body-1-font-weight);
-    letter-spacing: var(--font-body-1-letter-spacing);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    justify-content: center;
+
+    /* layout */
     align-items: center;
+    justify-content: center;
+
+    /* type */
+    font: var(--button-type-shorthand);
+    letter-spacing: var(--font-body-1-letter-spacing);
+
+    /* input */
+    cursor: pointer;
     user-select: none;
 
-    rux-icon,
-    ::slotted(rux-icon) {
-        height: 1rem;
-        width: 1rem;
-        margin-right: 0.625rem;
-        color: var(--color-text-inverse);
-    }
+    /* decoration */
+    border-radius: var(--radius-base);
+    box-shadow: var(--border-color, transparent) 0 0 0 var(--border-width, 0px) inset;
 
+    /* state: disabled */
     &:disabled {
-        opacity: var(--disabled-opacity);
         cursor: not-allowed;
+        opacity: var(--disabled-opacity);
         pointer-events: none;
     }
 
-    &:focus {
-        outline: none;
+    /* variant: icon-only */
+    &.--icon-only {
+        & rux-icon,
+        & ::slotted(rux-icon) {
+            margin-inline: calc(-4 * var(--scale));
+        }
     }
 
-    &:hover:not([disabled]) {
-        cursor: pointer;
+    /* variant: small size */
+    &.--small {
+        padding-block: calc(0.5 * var(--scale));
+        padding-inline: calc(4 * var(--scale));
     }
 
-    &--default {
-        border: 1px solid transparent;
+    /* variant: medium size */
+    &.--medium {
+        padding-block: calc(1.5 * var(--scale));
+        padding-inline: calc(4 * var(--scale));
+    }
+
+    /* variant: large size */
+    &.--large {
+        padding-block: calc(2 * var(--scale));
+        padding-inline: calc(4 * var(--scale));
+    }
+
+    /* variant: primary appearance */
+    &.--primary {
+        color: var(--color-text-inverse);
         background-color: var(--color-background-interactive-default);
-        &:hover:not([disabled]) {
-            border-color: transparent;
+
+        /* state: hovered or keyboard focused */
+        &:hover,
+        &:focus-visible {
             background-color: var(--color-background-interactive-hover);
         }
-        &:active:not([disabled]) {
-            border-color: var(--color-background-interactive-default);
-            background-color: var(--color-background-interactive-default);
+    }
+
+    /* variant: secondary appearance */
+    &.--secondary {
+        /* reference */
+        --border-color: currentColor;
+        --border-width: 1px;
+
+        /* color */
+        background-color: var(--color-background-base-default);
+        color: var(--color-text-interactive-default);
+
+        /* state: hovered or keyboard focused */
+        &:hover,
+        &:focus-visible {
+            color: var(--color-text-interactive-hover);
         }
     }
 
-    &--secondary {
-        color: var(--color-background-interactive-default);
-        background-color: transparent;
-        border: 1px solid var(--color-background-interactive-default);
+    /* variant: borderless appearance */
+    &.--borderless {
+        /* color */
+        background-color: var(--color-background-base-default);
+        color: var(--color-text-interactive-default);
 
-        &:hover:not([disabled]) {
-            color: var(--color-background-interactive-hover);
-            background-color: transparent;
-            border-color: var(--color-background-interactive-hover);
-            rux-icon,
-            ::slotted(rux-icon) {
-                color: var(--color-background-interactive-hover);
-            }
-        }
-
-        &:active:not([disabled]) {
-            border-color: var(--color-background-interactive-default);
-            background-color: transparent;
-            color: var(--color-background-interactive-default);
-            rux-icon,
-            ::slotted(rux-icon) {
-                color: var(--color-background-interactive-default);
-            }
-        }
-        rux-icon,
-        ::slotted(rux-icon) {
-            color: var(--color-background-interactive-default);
-        }
-    }
-    &--borderless {
-        color: var(--color-background-interactive-default);
-        border: none;
-        background: none;
-        &:hover:not([disabled]) {
-            color: var(--color-background-interactive-hover);
-            background: none;
-            rux-icon,
-            ::slotted(rux-icon) {
-                color: var(--color-background-interactive-hover);
-            }
-        }
-        &:active:not([disabled]) {
-            color: var(--color-background-interactive-default);
-            rux-icon,
-            ::slotted(rux-icon) {
-                color: var(--color-background-interactive-default);
-            }
-        }
-        rux-icon,
-        ::slotted(rux-icon) {
-            color: var(--color-background-interactive-default);
+        /* state: hovered or keyboard focused */
+        &:hover,
+        &:focus-visible {
+            color: var(--color-text-interactive-hover);
         }
     }
 
-    &--small {
-        height: 1.625rem;
-        padding: 0 1rem;
-        line-height: 1;
+    /* shadow: embedded icon */
+    & rux-icon,
+    & ::slotted(rux-icon) {
+        display: inline-flex;
+
+        /* layout */
+        align-items: center;
+        block-size: calc(5 * var(--scale));
+        inline-size: calc(5 * var(--scale));
+        justify-content: center;
+        margin-inline: calc(-0.5 * var(--scale)) calc(1.5 * var(--scale));
+        vertical-align: top;
+
+        /* color */
+        color: currentColor;
+        fill: currentColor;
     }
 
-    &--large {
-        height: 2.875rem;
-        min-width: 3rem;
-        padding: 0 1rem;
+    /* shadow: slot */
+    & slot {
+        display: inline-block;
     }
-
-    &--icon-only {
-        font-size: 0;
-        width: 3rem;
-    }
-}
-
-.rux-button--icon-only ::slotted(rux-icon),
-.rux-button--icon-only rux-icon {
-    margin-left: -0.625rem;
-    margin-right: -0.625rem;
 }

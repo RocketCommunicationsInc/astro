@@ -43,8 +43,6 @@ export class RuxButton {
 
     /**
      * Changes size of a button from medium to small or large by setting sizing classes
-     * rux-button--small
-     * rux-button--large
      */
     @Prop({ reflect: true }) size?: 'small' | 'medium' | 'large'
 
@@ -78,7 +76,7 @@ export class RuxButton {
     }
 
     render() {
-        const { size, iconOnly, secondary, disabled, icon, borderless } = this
+        const { size = 'medium', iconOnly, secondary, disabled, icon, borderless } = this
         return (
             <Host>
                 <button
@@ -86,12 +84,19 @@ export class RuxButton {
                     onClick={this.handleClick}
                     class={{
                         'rux-button': true,
-                        'rux-button--secondary': secondary,
-                        'rux-button--default': !secondary,
-                        'rux-button--small': size === 'small',
-                        'rux-button--large': size === 'large',
-                        'rux-button--icon-only': iconOnly,
-                        'rux-button--borderless': borderless,
+
+                        // appearance variant
+                        '--primary': !secondary && !borderless,
+                        '--secondary': secondary,
+                        '--borderless': borderless,
+
+                        // size variant
+                        '--small': size === 'small',
+                        '--medium': size === 'medium',
+                        '--large': size === 'large',
+
+                        // icon-only variant
+                        '--icon-only': iconOnly,
                     }}
                     aria-disabled={disabled ? 'true' : null}
                     disabled={disabled}
