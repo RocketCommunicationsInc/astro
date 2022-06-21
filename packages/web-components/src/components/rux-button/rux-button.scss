@@ -3,6 +3,7 @@
 
     /* layout */
     flex-flow: column wrap;
+    vertical-align: middle;
 
     /* input */
     cursor: pointer;
@@ -60,7 +61,8 @@ button {
 
     /* variant: icon-only */
     &.--icon-only {
-        & rux-icon {
+        & rux-icon,
+        & ::slotted(rux-icon) {
             margin-inline: calc(-4 * var(--scale));
         }
     }
@@ -126,7 +128,8 @@ button {
     }
 
     /* shadow: embedded icon */
-    & rux-icon {
+    & rux-icon,
+    & ::slotted(rux-icon) {
         display: inline-flex;
 
         /* layout */
@@ -135,6 +138,7 @@ button {
         inline-size: calc(5 * var(--scale));
         justify-content: center;
         margin-inline: calc(-0.5 * var(--scale)) calc(1.5 * var(--scale));
+        vertical-align: top;
 
         /* color */
         color: currentColor;
