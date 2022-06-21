@@ -86,14 +86,14 @@ export class RuxButton {
                         'rux-button': true,
 
                         // appearance variant
-                        '--default-appearance': !secondary && !borderless,
-                        '--secondary-appearance': secondary,
-                        '--borderless-appearance': borderless,
+                        '--primary': !secondary && !borderless,
+                        '--secondary': secondary,
+                        '--borderless': borderless,
 
                         // size variant
-                        '--small-size': size === 'small',
-                        '--medium-size': size === 'medium',
-                        '--large-size': size === 'large',
+                        '--small': size === 'small',
+                        '--medium': size === 'medium',
+                        '--large': size === 'large',
 
                         // icon-only variant
                         '--icon-only': iconOnly,

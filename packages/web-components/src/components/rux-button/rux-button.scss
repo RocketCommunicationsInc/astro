@@ -66,25 +66,25 @@ button {
     }
 
     /* variant: small size */
-    &.--small-size {
+    &.--small {
         padding-block: calc(0.5 * var(--scale));
         padding-inline: calc(4 * var(--scale));
     }
 
     /* variant: medium size */
-    &.--medium-size {
+    &.--medium {
         padding-block: calc(1.5 * var(--scale));
         padding-inline: calc(4 * var(--scale));
     }
 
     /* variant: large size */
-    &.--large-size {
+    &.--large {
         padding-block: calc(2 * var(--scale));
         padding-inline: calc(4 * var(--scale));
     }
 
     /* variant: primary appearance */
-    &.--default-appearance {
+    &.--primary {
         color: var(--color-text-inverse);
         background-color: var(--color-background-interactive-default);
 
@@ -96,7 +96,7 @@ button {
     }
 
     /* variant: secondary appearance */
-    &.--secondary-appearance {
+    &.--secondary {
         /* reference */
         --border-color: currentColor;
         --border-width: 1px;
@@ -113,7 +113,7 @@ button {
     }
 
     /* variant: borderless appearance */
-    &.--borderless-appearance {
+    &.--borderless {
         /* color */
         background-color: var(--color-background-base-default);
         color: var(--color-text-interactive-default);
