@@ -87,7 +87,7 @@ label {
     /* variant: medium size */
     &.--medium {
         /* layout */
-        padding-block: calc(1.5 * var(--scale));
+        padding-block: calc(2 * var(--scale));
         padding-inline: calc(4 * var(--scale));
     }
 
