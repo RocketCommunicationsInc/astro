@@ -96,7 +96,6 @@ export class RuxModal {
         const wrapper = this._getWrapper()
         if (ev.composedPath()[0] === wrapper) {
             this.open = false
-            this.ruxModalClosed.emit()
         }
     }
 

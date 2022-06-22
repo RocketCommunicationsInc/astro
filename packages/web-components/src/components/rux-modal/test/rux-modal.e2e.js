@@ -64,15 +64,6 @@ describe('Modal', () => {
             .find('rux-button-group')
             .find('rux-button')
             .first()
-            .contains('Test Deny Text')
-    })
-
-    it('should close the modal when deny clicked', () => {
-        cy.get('rux-modal')
-            .shadow()
-            .find('rux-button-group')
-            .find('rux-button')
-            .first()
             .click()
         cy.get('rux-modal')
             .shadow()
