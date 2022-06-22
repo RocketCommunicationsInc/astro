@@ -87,9 +87,9 @@
         "puppeteer": "~5.5.0",
         "start-server-and-test": "~1.14.0",
         "storybook-addon-themes": "~6.1.0",
-        "stylelint": "~13.13.1",
-        "stylelint-config-prettier": "~8.0.2",
-        "stylelint-config-standard": "~22.0.0",
+        "stylelint": "~14.9.1",
+        "stylelint-config-prettier": "~9.0.3",
+        "stylelint-config-standard": "~26.0.0",
         "svgo": "~2.3.0",
         "wait-on": "~6.0.0"
     }
