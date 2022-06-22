@@ -29,9 +29,9 @@ As outlined on the [About GRM Designs](/grm-service-ux-design/about-the-grm-desi
 
 ![GRM Schedule Global Status Bar Details](/img/service-specific-ux-design/grm-schedule-global-status-bar-details.png)
 
-1. **App Switcher Menu** - the App Switcher Menu allows the user to launch new instances of different GRM apps, sign in/sign out, and edit preferences.
-2. **Global Clock** - time is central to many GRM service task flows, so it is included in the Global Status Bar in all GRM apps.
-3. **Monitoring Icons** - the Dashboard app includes Upcoming Contacts Allocated (UCA) and Software status indicators, as well as status and alert counts for each of the top categories in the equipment hierarchy.
+1. **App Switcher Menu** - The App Switcher Menu allows the user to launch new instances of different GRM apps, sign in/sign out, and edit preferences.
+2. **Global Clock** - Time is central to many GRM service task flows, so it is included in the Global Status Bar in all GRM apps.
+3. **Monitoring Icons** - The Dashboard app includes Upcoming Contacts Allocated (UCA) and Software status indicators, as well as status and alert counts for each of the top categories in the equipment hierarchy.
 
 ## Contacts Panel
 
@@ -43,12 +43,12 @@ In the Timeline view, contacts are plotted by ground station and antenna on the 
 
 ![GRM Schedule Timeline View](/img/service-specific-ux-design/grm-schedule-timeline-details.png)
 
-1. **Time Range Display** - displays the time range for the current timeline view.
-2. **Top Line Data Aggregates** - displays total contacts and contact state counts.
-3. **Zoom Controls** - allows operators to focus on certain time range by zooming the timeline in or out.
-4. **View Toggle** - allows operators to switch between Timeline and List views.
-5. **Ground Stations** - ground stations can be collapsed or expanded to display contacts by antenna.
-6. **Playhead** - line marks current time with completed contacts to the left and future contacts to the right.
+1. **Time Range Display** - Displays the time range for the current timeline view.
+2. **Top Line Data Aggregates** - Displays total contacts and contact state counts.
+3. **Zoom Controls** - Allows operators to focus on certain time range by zooming the timeline in or out.
+4. **View Toggle** - Allows operators to switch between Timeline and List views.
+5. **Ground Stations** - Ground stations can be collapsed or expanded to display contacts by antenna.
+6. **Playhead** - Line marks current time with completed contacts to the left and future contacts to the right.
 
 ### List View
 
@@ -56,11 +56,11 @@ The List view shares many of the elements of the Timeline view including the tim
 
 ![GRM Schedule List View](/img/service-specific-ux-design/grm-schedule-list-details.png)
 
-1. **Time Range Display** - displays the time range for the current timeline view.
-2. **Top Line Data Aggregates** - displays total contacts and contact state counts.
-3. **Manage Contacts Toggle** - opens the Manage Contacts Pane to filter or add contacts.
-4. **View Toggle** - allows operators to switch between Timeline and List views.
-5. **Contacts Table** - contacts are listed in a large data table.
+1. **Time Range Display** - Displays the time range for the current timeline view.
+2. **Top Line Data Aggregates** - Displays total contacts and contact state counts.
+3. **Manage Contacts Toggle** - Opens the Manage Contacts Pane to filter or add contacts.
+4. **View Toggle** - Allows operators to switch between Timeline and List views.
+5. **Contacts Table** - Contacts are listed in a large data table.
 
 ## Manage Contacts Pane
 
@@ -71,9 +71,9 @@ The image below shows the Contact pane for this Add Contact task flow. To see th
 :::two-col
 ![GRM Schedule Manage Contacts Pane](/img/service-specific-ux-design/grm-schedule-manage-contacts-details.png)
 
-1. **Modeless Pane** - the functionality to manage contact appears in a pane on the right side of the browser window that is collapsed when the task is complete.
-2. **Contact Settings** - the settings for the contact are specified using dynamic fields to guide the operator through the process.
-3. **Action Buttons** - once the required values have been specified and the contact is added, the pane closes and a confirmation message is displayed.
+1. **Modeless Pane** - The functionality to manage contact appears in a pane on the right side of the browser window that is collapsed when the task is complete.
+2. **Contact Settings** - The settings for the contact are specified using dynamic fields to guide the operator through the process.
+3. **Action Buttons** - Once the required values have been specified and the contact is added, the pane closes and a confirmation message is displayed.
    :::
 
 ## Task Flow Example - Modify Contact

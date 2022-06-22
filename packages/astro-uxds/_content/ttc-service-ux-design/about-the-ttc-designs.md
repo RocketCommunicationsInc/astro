@@ -16,9 +16,9 @@ The images depicted on this page use the color palette and fonts from Astro 4. A
 
 The purpose of a Telemetry, Tracking, and Command (TT&C) system is to support missions requiring communication between satellites and ground systems. Key aspects of this include tracking the satellites, monitoring and maintaining their state of health (SOH) via telemetry data, and transmitting commands to them to achieve mission objectives. An analysis of existing systems and task flows reveals three main components to supporting TT&C services:
 
-- **Monitor Constellation** - monitor the status, health, and function of a satellite constellation and the systems it relies on.
-- **Command Satellites** - send and receive streams of data to and from a spacecraft, done using a set of commands arranged into a pass plan.
-- **Investigate Anomalies** - investigate spacecraft alerts and anomalies, as well as analyze subsystem mnemonics, measurements, value limits, etc.
+- **Monitor Constellation** - Monitor the status, health, and function of a satellite constellation and the systems it relies on.
+- **Command Satellites** - Send and receive streams of data to and from a spacecraft, done using a set of commands arranged into a pass plan.
+- **Investigate Anomalies** - Investigate spacecraft alerts and anomalies, as well as analyze subsystem mnemonics, measurements, value limits, etc.
 
 The animated graphic below depicts a much simplified version of a TT&C task flow, including major phases and activities.
 
@@ -99,7 +99,7 @@ The TT&C Command app allows operators to send and receive streams of data to and
 ![TT&C Schedule App](/img/service-specific-ux-design/ttc-investigate-app.png)
 
 :::col
-The TT&C Investigate app allows operators to investigate spacecraft alerts and anomalies and analyze subsystem mnemonics, measurements, limits, etc.
+The TT&C Investigate App allows operators to investigate spacecraft alerts and anomalies and analyze subsystem mnemonics, measurements, limits, etc.
 
 - [Overview of TT&C Investigate](/ttc-service-ux-design/ttc-investigate)
 - [Launch TT&C Investigate Sample App](https://ttc-investigate.astrouxds.com/)

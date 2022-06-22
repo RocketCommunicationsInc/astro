@@ -76,8 +76,9 @@
     padding: 0;
     margin: 0;
     list-style: none;
-    border-radius: var(--radius-base);
-    background-color: var(--color-background-base-default);
+    border-radius: var(--segmented-button-border-radius);
+    background-color: var(--segmented-button-background-color);
+
     &--large {
         height: 2.875rem;
     }
@@ -175,8 +176,10 @@
     }
 
     &:last-child label {
-        border-radius: 0 var(--radius-base) var(--radius-base) 0;
-        border-right: 1px solid var(--color-background-interactive-default);
+        border-radius: 0 var(--segmented-button-border-radius)
+            var(--segmented-button-border-radius) 0;
+        border-right: 1px solid var(--segmented-button-border-color);
+
         &:hover {
             border-right-color: var(--color-background-interactive-hover);
         }
