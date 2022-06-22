@@ -25,6 +25,7 @@
 		should preload critical css via http2, but it‘s not loading and throwing an error in chrome
 		<link rel="preload" href="/css/variables.css" as="style"> 
 		//-->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
 		<link rel="stylesheet" href="/css/reset.css">
 		<link rel="stylesheet" href="/css/variables.css">
 		<link rel="stylesheet" href="/css/core.css">
@@ -45,7 +46,7 @@
 			{% include "_nav.njk" %}
 			<div class="content">
 
-				<main>
+				<main class="DocSearch-content">
 
 					{% block content %}
 						<h1>Default Content</h1>
@@ -57,5 +58,14 @@
 				{% include "_footer.njk" %}
 			</div>
 		</div>
+		<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+		<script>
+			docsearch({
+  appId: 'EQEH1X5N4X',
+  indexName: 'astrouxds',
+  apiKey: 'a402f3cc6d8965606af2d7235ba75700',
+  container: '#docsearch'
+});
+		</script>
 	</body>
 </html>
