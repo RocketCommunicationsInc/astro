@@ -117,10 +117,10 @@ Applying the `label` property attribute to the classification custom element add
 
 ## CSS Custom Properties
 
-| Name                                | Description                                           |
-| ----------------------------------- | ----------------------------------------------------- |
-| `--color-classification-text-dark`  | the color of dark text in the classification marking  |
-| `--color-classification-text-light` | the color of light text in the classification marking |
+| Name                                | Description                                                        |
+| ----------------------------------- | ------------------------------------------------------------------ |
+| `--color-classification-text-dark`  | [DEPRECATED] the color of dark text in the classification marking  |
+| `--color-classification-text-light` | [DEPRECATED] the color of light text in the classification marking |
 
 
 ----------------------------------------------

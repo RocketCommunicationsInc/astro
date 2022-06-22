@@ -1,6 +1,6 @@
 {
     "name": "@astrouxds/astro-web-components",
-    "version": "7.0.0-beta.0",
+    "version": "6.9.0",
     "description": "Astro Web Components",
     "main": "dist/index.cjs.js",
     "module": "dist/custom-elements/index.js",
@@ -37,7 +37,8 @@
         "test.unit.silent": "TZ=UTC stencil test --spec --coverage, --silent",
         "test.all": "concurrently npm:test.unit.silent npm:test.e2e",
         "deploy.beta": "netlify deploy --site '27100b54-2df5-4ab2-a331-4ef2b81f8054'",
-        "deploy.storybook": "netlify deploy --site 'bfaf1790-0a59-47fb-ab34-4a3530a715f1'"
+        "deploy.storybook": "netlify deploy --site 'bfaf1790-0a59-47fb-ab34-4a3530a715f1'",
+        "test.e2e.ga": "start-server-and-test ci.server 3333 test.e2e"
     },
     "dependencies": {
         "@floating-ui/dom": "~0.4.4",
@@ -51,7 +52,7 @@
         "@astrouxds/design-tokens": "2.0.0-beta.6",
         "@astrouxds/storybook-addon-docs-stencil": "~1.0.10",
         "@babel/core": "~7.13.16",
-        "@stencil/angular-output-target": "~0.2.1",
+        "@stencil/angular-output-target": "~0.4.0",
         "@stencil/eslint-plugin": "~0.4.0",
         "@stencil/react-output-target": "~0.1.0",
         "@stencil/sass": "~1.4.1",
@@ -60,7 +61,6 @@
         "@storybook/addon-docs": "~6.4.18",
         "@storybook/addon-essentials": "~6.4.18",
         "@storybook/addon-google-analytics": "~6.2.9",
-        "@storybook/addon-knobs": "~6.4.0",
         "@storybook/addon-links": "~6.4.18",
         "@storybook/addons": "~6.4.18",
         "@storybook/theming": "~6.4.18",

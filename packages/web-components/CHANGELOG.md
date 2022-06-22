@@ -35,6 +35,48 @@
 
 -   New component
 
+## 6.9.0
+
+### Minor Changes
+
+-   !!! Deprecates CSS Custom Properties. See MIGRATION.md for more information !!!
+
+#### Input
+
+-   Added support for `time` type
+
+### Patch Changes
+
+#### Modal
+
+-   Fixed issue with emitting a detail value when using default confirm/deny buttons.
+
+#### Pop Up Menu
+
+-   Pop-up-menu will now position correctly if the anchor element is beyond a horizontal scrollbar.
+
+## 6.8.0
+
+### Minor Changes
+
+#### Modal
+
+-   Added in slots for message, title and footer to allow for more customization.
+
+#### Clock
+
+-   Added a 'date-in' prop that allows the clock to be set to increment from a specific date.
+
+### Patch Changes
+
+#### Switch
+
+-   Fixed issue where label was breaking out of the container
+
+#### Select
+
+-   Updated styles for better use on Windows OS and Firefox browsers
+
 ## 6.7.0
 
 ### Minor Changes

@@ -1,4 +1,34 @@
 :host {
+    /**
+    * @prop --tree-accent-color: [DEPRECATED] tree accent color
+    */
+    --tree-accent-color: var(--color-background-interactive-default);
+
+    /**
+    * @prop --tree-hover-background-color: [DEPRECATED] tree hover background color
+    */
+    --tree-hover-background-color: var(--color-background-interactive-hover);
+
+    /**
+    * @prop --tree-hover-text-color: [DEPRECATED] tree hover text color
+    */
+    --tree-hover-text-color: var(--color-text-inverse);
+
+    /**
+    * @prop --tree-selected-border-color: [DEPRECATED] tree selected border color
+    */
+    --tree-selected-border-color: var(--color-border-interactive-muted);
+
+    /**
+    * @prop --tree-selected-accent-color: [DEPRECATED] tree selected accent color
+    */
+    --tree-selected-accent-color: var(--color-background-interactive-default);
+
+    /**
+    * @prop --tree-expanded-border-color: [DEPRECATED] tree expanded border color
+    */
+    --tree-expanded-border-color: var(--color-background-base-default);
+
     position: relative;
     box-sizing: border-box;
     width: 100%;

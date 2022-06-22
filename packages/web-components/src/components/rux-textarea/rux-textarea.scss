@@ -1,6 +1,32 @@
 @use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
 
 :host {
+    /**
+     * @prop --textarea-border-color: [DEPRECATED] Border color of the textarea.
+    */
+    --textarea-border-color: var(--color-border-interactive-muted);
+
+    /**
+     * @prop --textarea-text-color: [DEPRECATED] Text color
+    */
+    --textarea-text-color: var(--color-text-primary);
+
+    /** @prop --textarea-background-color: Background color */
+    --textarea-background-color: var(--color-background-base-default);
+
+    /** @prop --textarea-invalid-border-color: Border color while in an invalid state */
+    --textarea-invalid-border-color: var(--status-symbol-color-fill-critical);
+
+    /**
+     * @prop --textarea-focus-border-color: [DEPRECATED] Border color while in a focused state
+    */
+    --textarea-focus-border-color: var(--color-background-interactive-hover);
+
+    /**
+     * @prop --textarea-selection-background-color: [DEPRECATED] Background color while in a selected state
+    */
+    --textarea-selection-background-color: var(--color-palette-brightblue-400);
+
     display: block;
 }
 

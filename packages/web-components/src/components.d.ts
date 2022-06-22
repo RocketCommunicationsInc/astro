@@ -125,6 +125,10 @@ export namespace Components {
          */
         "aos"?: string;
         /**
+          * When supplied with a valid [date string or value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#syntax), sets the time and date of the clock.
+         */
+        "dateIn"?: string;
+        /**
           * Hides the day of the year.
          */
         "hideDate": boolean;
@@ -11937,6 +11941,7 @@ export namespace Components {
         | 'password'
         | 'date'
         | 'datetime-local'
+        | 'time'
         | 'tel';
         /**
           * The input value
@@ -11977,9 +11982,21 @@ export namespace Components {
     }
     interface RuxModal {
         /**
-          * Allows modal to close by clicking off of it
+          * Text for confirmation button
          */
-        "clickToClose": boolean;
+        "confirmText": string;
+        /**
+          * Text for close button
+         */
+        "denyText": string;
+        /**
+          * Modal body message
+         */
+        "modalMessage"?: string;
+        /**
+          * Modal header title
+         */
+        "modalTitle"?: string;
         /**
           * Shows and hides modal
          */
@@ -20410,6 +20427,10 @@ declare namespace LocalJSX {
           * When supplied with a valid [date string or value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#syntax) displays a timestamp labeled "AOS" next to the standard clock.
          */
         "aos"?: string;
+        /**
+          * When supplied with a valid [date string or value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#syntax), sets the time and date of the clock.
+         */
+        "dateIn"?: string;
         /**
           * Hides the day of the year.
          */
@@ -32239,6 +32260,7 @@ declare namespace LocalJSX {
         | 'password'
         | 'date'
         | 'datetime-local'
+        | 'time'
         | 'tel';
         /**
           * The input value
@@ -32283,17 +32305,29 @@ declare namespace LocalJSX {
     }
     interface RuxModal {
         /**
-          * Allows modal to close by clicking off of it
+          * Text for confirmation button
          */
-        "clickToClose"?: boolean;
+        "confirmText"?: string;
+        /**
+          * Text for close button
+         */
+        "denyText"?: string;
+        /**
+          * Modal body message
+         */
+        "modalMessage"?: string;
+        /**
+          * Modal header title
+         */
+        "modalTitle"?: string;
         /**
           * Event that is fired when modal closes
          */
-        "onRuxmodalclosed"?: (event: CustomEvent<boolean>) => void;
+        "onRuxmodalclosed"?: (event: CustomEvent<boolean | null>) => void;
         /**
           * Event that is fired when modal opens
          */
-        "onRuxmodalopened"?: (event: CustomEvent<boolean>) => void;
+        "onRuxmodalopened"?: (event: CustomEvent<void>) => void;
         /**
           * Shows and hides modal
          */

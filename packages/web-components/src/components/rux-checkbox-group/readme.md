@@ -36,9 +36,9 @@
 
 ## CSS Custom Properties
 
-| Name                           | Description                  |
-| ------------------------------ | ---------------------------- |
-| `--checkboxgroup-border-color` | the radio group border color |
+| Name                           | Description                               |
+| ------------------------------ | ----------------------------------------- |
+| `--checkboxgroup-border-color` | [DEPRECATED] the radio group border color |
 
 
 ----------------------------------------------

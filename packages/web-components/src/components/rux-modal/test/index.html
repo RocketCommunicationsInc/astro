@@ -18,43 +18,136 @@
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
+
     <body>
-        <rux-modal open></rux-modal>
-        <rux-button id="open">Open Modal</rux-button>
-        <rux-button id="open-slots">Open Modal</rux-button>
-
-        <rux-modal
-            id="test"
-            modal-message="Props Message"
-            modal-title="Props Title"
-        >
-            <h4 slot="header">Slot Header</h4>
-            <p>Default Slot Content</p>
-            <div slot="footer">
-                <rux-button secondary>Slot Deny</rux-button>
-                <rux-button>Slot Confirm</rux-button>
-            </div>
-        </rux-modal>
-        <rux-modal id="test-slots">
-            <h4 slot="header">Slot Header</h4>
-            <p>Default Slot Content</p>
-            <div slot="footer">
-                <rux-button secondary>Slot Deny</rux-button>
-                <rux-button>Slot Confirm</rux-button>
-            </div>
-        </rux-modal>
+        <section>
+            <rux-modal
+                open
+                modal-title="hello"
+                modal-message="world"
+            ></rux-modal>
+        </section>
+        <section>
+            <rux-modal
+                id="props"
+                modal-message="Props Message"
+                modal-title="Props Title"
+            ></rux-modal>
+            <rux-button id="openprops">Open Props Version</rux-button>
+        </section>
+        <section>
+            <rux-modal id="slots">
+                <span slot="header">Slot Header</span>
+                <div slot="message">
+                    <span>Slot Message</span>
+                    <rux-input placeholder="input time"></rux-input>
+                </div>
+                <div slot="footer">
+                    <rux-button-group h-align="right">
+                        <rux-button secondary>Slot Cancel</rux-button>
+                        <rux-button id="slotconfirm">Slot Confirm</rux-button>
+                    </rux-button-group>
+                </div>
+            </rux-modal>
+            <rux-button id="openslots" style="padding: 15px 0px"
+                >Open Slots Version</rux-button
+            >
+        </section>
+        <section>
+            <rux-modal
+                id="mix"
+                modal-title="Mixed"
+                deny-text="Custom Deny Text"
+            >
+                <div slot="message">
+                    <span>Slot Message</span>
+                    <rux-input placeholder="input time"></rux-input>
+                </div>
+                <div slot="footer">
+                    <rux-button-group h-align="right">
+                        <rux-button secondary>Slot Cancel</rux-button>
+                        <rux-button id="confirm">Slot Confirm</rux-button>
+                    </rux-button-group>
+                </div>
+            </rux-modal>
+            <rux-button id="openmix">Open Mixed Version</rux-button>
+        </section>
+        <section>
+            <rux-button id="dyn" style="padding: 15px 0px"
+                >Open changing slot</rux-button
+            >
+            <rux-modal id="change" modal-title="Title"> </rux-modal>
+        </section>
         <script>
-            let open = document.getElementById('open')
-            let openSlots = document.getElementById('open-slots')
+            const props = document.getElementById('props')
+            const openProps = document.getElementById('openprops')
 
-            let test = document.getElementById('test')
-            let testSlots = document.getElementById('test-slots')
-
-            open.addEventListener('click', () => {
-                test.open = true
+            openProps.addEventListener('click', () => {
+                props.open = !props.open
             })
+
+            props.addEventListener('ruxmodalopened', () =>
+                console.log('props ruxmodalopened')
+            )
+            props.addEventListener('ruxmodalclosed', () =>
+                console.log('props ruxmodalclosed')
+            )
+
+            const slots = document.getElementById('slots')
+            const openSlots = document.getElementById('openslots')
+            const slotconfirm = document.getElementById('slotconfirm')
+
+            slotconfirm.addEventListener('click', () => {
+                slots.open = false
+            })
+
             openSlots.addEventListener('click', () => {
-                testSlots.open = true
+                slots.open = !slots.open
+            })
+            slots.addEventListener('ruxmodalopened', () =>
+                console.log('heard ruxmodalopened')
+            )
+            slots.addEventListener('ruxmodalclosed', () =>
+                console.log('heard ruxmodalclosed')
+            )
+
+            const mixed = document.getElementById('mix')
+            const openMixed = document.getElementById('openmix')
+            openMixed.addEventListener('click', () => {
+                mixed.open = !mixed.open
+            })
+
+            //Focus the confirm button on mixed modal
+
+            const confirmBtn = document.getElementById('confirm')
+            mixed.addEventListener('ruxmodalopened', () => {
+                const shadowBtn = confirmBtn.shadowRoot.querySelector('button')
+                setTimeout(() => shadowBtn.focus())
+            })
+
+            const dyn = document.getElementById('dyn')
+            const changeModal = document.getElementById('change')
+
+            const newFooter = document.createElement('span')
+            const newMessage = document.createElement('span')
+
+            newFooter.innerHTML = 'Slot Footer'
+            newFooter.slot = 'footer'
+            newMessage.innerHTML = 'Slot Message'
+            newMessage.classList.add('test')
+
+            dyn.addEventListener('click', () => {
+                changeModal.open = true
+            })
+            changeModal.addEventListener('ruxmodalopened', () => {
+                setTimeout(() => {
+                    changeModal.append(newFooter)
+                    changeModal.append(newMessage)
+                    //The assertion in the e2e test will timeout after 4000 ms of not finding the appended stuff
+                }, 500)
+            })
+            document.addEventListener('ruxmodalclosed', () => {
+                console.log('heard ruxmodalclosed')
             })
         </script>
     </body>

@@ -18,5 +18,5 @@ export const angularValueAccessorBindings: ValueAccessorConfig[] = [
         event: 'ruxchange',
         targetAttr: 'value',
         type: 'text',
-    }
+    },
 ]
