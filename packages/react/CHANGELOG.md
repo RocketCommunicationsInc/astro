@@ -59,6 +59,11 @@
 - Updated dependencies [541523ab]
 - Updated dependencies [c9b10b83]
   - @astrouxds/astro-web-components@7.0.0-beta.0
+## 6.9.1
+
+### Patch Changes
+
+- Updates Angular dependencies and documentation
 
 ## 6.9.0
 

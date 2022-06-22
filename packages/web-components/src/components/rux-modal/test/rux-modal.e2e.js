@@ -64,6 +64,15 @@ describe('Modal', () => {
             .find('rux-button-group')
             .find('rux-button')
             .first()
+            .contains('Test Deny Text')
+    })
+
+    it('should close the modal when deny clicked', () => {
+        cy.get('rux-modal')
+            .shadow()
+            .find('rux-button-group')
+            .find('rux-button')
+            .first()
             .click()
         cy.get('rux-modal')
             .shadow()
@@ -96,6 +105,60 @@ describe('Modal', () => {
             .find('.rux-modal__wrapper')
             .click('topRight')
             .then(() => expect(count).to.equal(1))
+    })
+    it('should be able to dynamically add slots', () => {
+        cy.get('rux-modal').then(($modal) => {
+            $modal[0].setAttribute('open', false)
+        })
+        cy.get('#dyn').click()
+        cy.get('#change').find('.test')
+        cy.get('#change')
+            .shadow()
+            .find('.rux-modal__wrapper')
+            .find('dialog')
+            .find('.rux-modal__footer')
+            .children()
+            .should('have.length', '1')
+    })
+    it('should emit ruxmodalclosed with a detail of false when default deny button is clicked', () => {
+        cy.get('rux-modal').then(($modal) => {
+            $modal[0].setAttribute('open', true)
+        })
+        cy.document().invoke(
+            'addEventListener',
+            'ruxmodalclosed',
+            cy.stub().as('ruxmodalclosed')
+        )
+        cy.get('rux-modal')
+            .shadow()
+            .find('rux-button-group')
+            .find('rux-button')
+            .first()
+            .click()
+        cy.get('@ruxmodalclosed')
+            .should('have.been.calledOnce')
+            .its('firstCall.args.0.detail')
+            .should('deep.equal', false)
+    })
+    it('should emit ruxmodalclosed with a detail of true when default confirm button is clicked', () => {
+        cy.get('rux-modal').then(($modal) => {
+            $modal[0].setAttribute('open', true)
+        })
+        cy.document().invoke(
+            'addEventListener',
+            'ruxmodalclosed',
+            cy.stub().as('ruxmodalclosed')
+        )
+        cy.get('rux-modal')
+            .shadow()
+            .find('rux-button-group')
+            .find('rux-button')
+            .next()
+            .click()
+        cy.get('@ruxmodalclosed')
+            .should('have.been.calledOnce')
+            .its('firstCall.args.0.detail')
+            .should('deep.equal', true)
     })
     it('should be able to dynamically add slots', () => {
         cy.get('rux-modal').then(($modal) => {

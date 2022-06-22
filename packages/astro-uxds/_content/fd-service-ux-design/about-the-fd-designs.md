@@ -71,7 +71,7 @@ While some operations use older legacy systems to perform tasks like OASYS, othe
 
 **Pain Points**:
 
-- The OASYS legacy system did not provide the 3d/2d visualization that is often times helpful for visual minded operators, or when explaining solutions to leadership.
+- The OASYS legacy system did not provide the 2D/3D visualization that is often times helpful for visual minded operators, or when explaining solutions to leadership.
 - Programs like FreeFlyer came with too many options with a small margin of error, resulting in user input errors.
 - Key information is often times not accessible in the operators current software solution which costs time when tracking and identifying necessary data from outside sources.
 
@@ -84,7 +84,7 @@ While some operations use older legacy systems to perform tasks like OASYS, othe
 **FDS Design Solution**:
 
 - **Using best practice UX Design**. Leveraging the ASTRO UX Design System allow operators from different missions to learn one set of user interface components. This helps onboard and train new OA’s to begin contributing to the mission immediately, as well as transitioning existing OA’s by allowing them to focus more on their mission and less on learning a new system.
-- **Tabular Data and Visual Data**. While some users interviewed were more ‘data people,’ there was a strong desire to visualize the orbit through a 2d/3d simulated, as some operators understand and digest visual information more effectively. We identified areas of the application where this data existed and integrated more system flexibility by allowing an OA to switch views between tabular data and visual data.
+- **Tabular Data and Visual Data**. While some users interviewed were more ‘data people,’ there was a strong desire to visualize the orbit through a 2d/3d simulation, as some operators understand and digest visual information more effectively. We identified areas of the application where this data existed and integrated more system flexibility by allowing an OA to switch views between tabular data and visual data.
 - **3rd party solutions**. Inspiration was drawn from the off-the-shelf products created for Flight Dynamics such as FreeFlyer and ODTK. We wanted to leverage the thinking behind these softwares that our users were partial to, while adhering to the unique capabilities of the FDS legacy software, OASYS. The FDS designs include customizable “Scenarios” that allow OA’s to create or pre-load any orbit determination type as well as generate any necessary products or reports with minimal effort.
 - **Creating Utility Tool Kits**. Identify and abstract the key common features shared between the dispersed tool sets. This lead to the creation of Utility Tool Kits. Utility Tool Kits are temporary work environments for key subtasks such as filtering track data or propagating a satellite. User testing revealed that different missions do these in different order. By leaving the subtasks open and agnostic to the mission, users can approach orbit determinations in each of their unique ways.
 
@@ -100,17 +100,17 @@ Based on system requirements and user research, the architecture of the applicat
 
 ## FDS Orbit Determination
 
-For operators of the FDS application, flexibility and automating redundant tasks are key. The FDS app supports missions and their unique work flows, as well as the customization of common scenarios, allowing OA’s to load and store attributes that are unique to each satellite, without having to reinvent the wheel each time.
+For operators of the FDS Application, flexibility and automating redundant tasks are key. The FDS App supports missions and their unique work flows, as well as the customization of common scenarios, allowing OA’s to load and store attributes that are unique to each satellite, without having to reinvent the wheel each time.
 
 ### Global Status Bar
 
-The [Global Status Bar](../../components/global-status-bar) of the FDS app contains a single sign in, high level navigation [tabs](../../components/tabs) to switch between tools, a [clock](../../components/clock) and notification, chat and help icons. [Monitoring icons](../../components/icons-and-symbols) may be included if the mission requires additional situational awareness.
+The [Global Status Bar](../../components/global-status-bar) of the FDS App contains a single sign in, high level navigation [tabs](../../components/tabs) to switch between tools, a [clock](../../components/clock) and notification, chat and help icons. [Monitoring icons](../../components/icons-and-symbols) may be included if the mission requires additional situational awareness.
 
 ![Global Status Bar](/img/service-specific-ux-design/fds-global-status-bar.png)
 
-1. **App Switcher Menu** - The app switcher menu allows the operator to launch new instances of different apps, sign in/sign out, and edit preferences. The App Name appears directly to the right of the menu.
+1. **App Switcher Menu** - The App Switcher Menu allows the operator to launch new instances of different apps, sign in/sign out, and edit preferences. The App Name appears directly to the right of the menu.
 2. **Navigation Tabs** - The navigation tabs allow the operator to switch between workspaces or tools.
-3. **Global Clock** - The global clock is central to FDS service task flows, so it is included in the Global Status Bar.
+3. **Global Clock** - The global Clock is central to FDS service task flows, so it is included in the Global Status Bar.
 4. **Monitoring Icons**\* - The monitoring icons communicate status to an operator. Each icon displays a color associated with the status level and a badge to indicate the number of alerts.
 5. **Notification**\*, Chat and Help Icons - notification, chat and help icons display system messages, while chat handles the human-to-human messaging
 
@@ -124,8 +124,8 @@ The [Global Status Bar](../../components/global-status-bar) of the FDS app conta
 
 The scenarios panel is where a task begins. Depending on common mission tasks, operators may create, edit, or delete scenarios that best fit their workflows. For example, if an operator performs orbit determinations on Mondays for each satellite they are responsible for, they might create a “Nominal OD” scenario. Clicking a satellite in this scenario would load its last state, its last input files, and pre-select all the necessary products and reports needed for this task.
 
-1. **Expandable/Collapsible Scenario Groups** - Expands to show items, such as spacecrafts, grouped in the respected scenario for quickly loading the attributes for the scenario
-2. **Create New Scenario** - Allows operators to create and name new scenarios
+1. **Expandable/Collapsible Scenario Groups** - Expands to show items, such as spacecrafts, grouped in the respected scenario for quickly loading the attributes for the scenario.
+2. **Create New Scenario** - Allows operators to create and name new scenarios.
 
 :::
 
@@ -153,7 +153,7 @@ The inputs pane houses the initial input files required in order to run an orbit
 
 1. **Notification Banner** - Indicates whether the latest database file has been synced.
 2. **Sync Button** - The sync button allows an operator to quickly load the latest database file into the database and initialize the orbit for a new orbit determination.
-3. **Orbit Source** - The orbit source field displays what source is being used to determine the orbit (TLE, Ephemeris, etc.). Source type can be selected from the select menu.
+3. **Orbit Source** - The orbit source field displays what source is being used to determine the orbit (TLE, Ephemeris, etc.). Source type can be selected from the Select Menu.
 4. **Epoch Fields** - Displays the reference epoch, range, and span for the selected input file.
 5. **Other inputs** - Missions may require different input files to determine their orbit. The remaining fields provide this flexibility. For instance, some user permissions may allow for replacing, or not including a Thrust Profile for maneuvers, or a Processed Track File in determining an orbit.
 6. **Determine Orbit Button** - The determine orbit button initializes an orbit determination.
@@ -178,10 +178,10 @@ The data display is a multi-functional output view of an orbit determination.
 
 ![Data Display wireframe](/img/service-specific-ux-design/fds-log-utility.png)
 
-1. **Notification Banner** - The notification banner shows the status for the latest/last orbit determination that was initiated.
+1. **Notification Banner** - The Notification Banner shows the status for the latest/last orbit determination that was initiated.
 2. **Deviation Count** - The deviation count shows the total number of deviations (violations of the standard deviation found in the OD Results.
 3. **Primary/Secondary Action Buttons** - Action buttons to be defined by mission. These could include actions such as “Create TLE, etc &hellip;”.
-4. **Table Segmented Button** - The table segmented button allows an operator to switch from viewing data in a tabular format to a visual data display.
+4. **Table Segmented Button** - The table Segmented Button allows an operator to switch from viewing data in a tabular format to a visual data display.
 5. **Action Menu** - The action menu is reserved for non-primary actions an operator would execute such as export table, print, save, or table display settings.
 6. **Interactive Text Affordance** - Allows the operator to click for additional information about the method of standard deviation being applied to the column.
 7. **Selectable Table Rows** - When setting up an orbit determination an operator can select to include or exclude the orbit properties they wish to solve for. These properties should be pre-selected based on the scenario applied.
