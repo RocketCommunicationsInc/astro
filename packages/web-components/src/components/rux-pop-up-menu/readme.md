@@ -62,19 +62,6 @@ Type: `Promise<true>`
 | `"trigger-container"` | the container of the pop-up trigger                      |
 
 
-
-## CSS Custom Properties
-
-| Name                                  | Description                                      |
-| ------------------------------------- | ------------------------------------------------ |
-| `--popup-menu-background-color`       | [DEPRECATED] Pop Up Menu Backround Color         |
-| `--popup-menu-border-color`           | [DEPRECATED] Pop Up Menu Border Color            |
-| `--popup-menu-caret-background-color` | [DEPRECATED] Pop Up Menu Caret Background Color  |
-| `--popup-menu-caret-left`             | [DEPRECATED] Position of Caret                   |
-| `--popup-menu-caret-size`             | [DEPRECATED] Size of Caret                       |
-| `--popup-menu-transition-speed`       | [DEPRECATED] Transition Time of Pop Up Animation |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

@@ -1,5 +1,5 @@
-import { Directive, ElementRef, HostListener } from "@angular/core";
-import { ControlValueAccessor } from "@angular/forms";
+import { Directive, ElementRef, HostListener } from '@angular/core';
+import { ControlValueAccessor } from '@angular/forms';
 
 @Directive({})
 export class ValueAccessor implements ControlValueAccessor {
@@ -14,7 +14,7 @@ export class ValueAccessor implements ControlValueAccessor {
   constructor(protected el: ElementRef) {}
 
   writeValue(value: any) {
-    this.el.nativeElement.value = this.lastValue = value == null ? "" : value;
+    this.el.nativeElement.value = this.lastValue = value == null ? '' : value;
   }
 
   handleChangeEvent(value: any) {
@@ -24,7 +24,7 @@ export class ValueAccessor implements ControlValueAccessor {
     }
   }
 
-  @HostListener("focusout")
+  @HostListener('focusout')
   _handleBlurEvent() {
     this.onTouched();
   }
