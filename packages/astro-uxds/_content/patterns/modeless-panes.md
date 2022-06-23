@@ -16,7 +16,7 @@ Modeless Panes are revealed inline by shifting existing content downward or to t
 
 ## Interaction Model
 
-The simplest type of Modeless Pane displays static content and has a single Close button.
+The simplest type of Modeless Pane displays static content and has a single close button.
 
 ![Modeless Pane example.](/img/patterns/modeless-panes-1.png)
 
@@ -32,9 +32,9 @@ After committable changes have been made, the button pair become Cancel (enabled
 
 ![Modeless Pane example.](/img/patterns/modeless-panes-3.png)
 
-Note that the design of this interaction, and the very nature of the web, means that the user can simply leave this pane by navigating elsewhere or closing the browser window. This design expects the users affirmative command to Apply before new values take effect.
+Note that the design of this interaction, and the very nature of the Web, means that the user can simply leave this pane by navigating elsewhere or closing the browser window. This design expects the users affirmative command to apply before new values take effect.
 
-**Never place two “Close” buttons on the same Pane.** Users may think they have different purposes. Always follow the distinct button layout described above.
+**Never place two “close” buttons on the same Pane.** Users may think they have different purposes. Always follow the distinct button layout described above.
 
 ![Modeless Pane Don't Example.](/img/patterns/modeless-panes-dont-2.png)
 ::: note
