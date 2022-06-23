@@ -94,7 +94,7 @@ export class RuxPushButton {
             disabled,
             checked,
             label,
-            size,
+            size = 'medium',
             _onChange,
             value,
             _onBlur,
@@ -112,13 +112,8 @@ export class RuxPushButton {
         )
 
         return (
-            <Host
-                aria-checked={`${checked}`}
-                aria-hidden={disabled ? 'true' : null}
-                role="switch"
-            >
+            <Host>
                 <input
-                    class="rux-push-button__input"
                     id={this.pushButtonId}
                     type="checkbox"
                     disabled={disabled}
@@ -126,16 +121,20 @@ export class RuxPushButton {
                     onChange={_onChange}
                     onBlur={_onBlur}
                     value={value}
+                    role="switch"
                 />
                 <label
+                    part="label"
                     class={{
-                        'rux-push-button__button': true,
-                        'rux-push-button__button--small': size === 'small',
-                        'rux-push-button__button--large': size === 'large',
-                        'rux-push-button__button--icon-only': iconOnly,
+                        'rux-push-button': true,
+                        '--small': size === 'small',
+                        '--medium': size === 'medium',
+                        '--large': size === 'large',
+                        '--icon-only': iconOnly,
+                        '--checked': checked,
+                        '--disabled': disabled,
                     }}
                     htmlFor={this.pushButtonId}
-                    part="label"
                 >
                     {icon ? (
                         <rux-icon
@@ -144,10 +143,9 @@ export class RuxPushButton {
                             icon={icon}
                         ></rux-icon>
                     ) : null}
-
                     {label}
+                    <slot></slot>
                 </label>
-                <slot></slot>
             </Host>
         )
     }
