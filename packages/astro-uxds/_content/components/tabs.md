@@ -13,17 +13,17 @@ theme: true
 
 # Tabs
 
-Tabs in Astro Applications are used to divide major areas of content and to indicate work process.
+Tabs in Astro applications are used to divide major areas of content and to indicate work process.
 
 ## Rules of Thumb
 
 - Use only one row of Tabs.
-- Use Higher Level Tabs only on top of the panel.
+- Use higher level Tabs only on top of the panel.
 - Tab labels should not be more than two words and should accurately reflect what underlying content the user can expect to reveal.
 - Use title-style capitalization for labels.
-- High level tabs are often used to organize an application by work process.
+- High level Tabs are often used to organize an application by work process.
 
-:::note note High Level Tabs are often process/workflow oriented. Process oriented tabs should:
+:::note note High Level Tabs are often process/workflow oriented. Process oriented Tabs should:
 
 - Appear in the upper left quadrant.
 - Be clearly labeled.
