@@ -18,7 +18,7 @@ Segmented Buttons allow users to select one item at a time from two to four opti
 ## Rules of Thumb
 
 - Use Segmented Buttons:
-  - To filter a grid or table.
+  - To filter a Grid or Table.
   - To switch a view's display mode.
 - One option must always be selected.
 
@@ -29,7 +29,7 @@ To learn more about adding Help Text to Segmented Buttons, see the [Forms and Va
 ## Examples
 
 :::two-col
-![Do: Use Segmented Buttons to filter an associated table or grid.](/img/components/segmented-button-do-1.png "Do: Use Segmented Buttons to filter an associated table or grid.")
+![Do: Use Segmented Buttons to filter an associated table or grid.](/img/components/segmented-button-do-1.png "Do: Use Segmented Buttons to filter an associated Table or Grid.")
 
 ![Don’t: Use Segmented Buttons to switch between separate views. Use Tabs instead.](/img/components/segmented-button-dont-1.png "Don’t: Use Segmented Buttons to switch between separate views. Use Tabs instead.")
 
