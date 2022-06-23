@@ -31,7 +31,7 @@ To ensure compliance with [WCAG 2.0 contrast specifications for non-text content
 ::: note
 Adding a title attribute to status elements can improve accessibility by offering additional information about the status when the user hovers over the element or when used in conjunction with a screen reader.
 
-Place your cursor over any status symbol above to see an example.
+Place your cursor over any Status Symbol above to see an example.
 :::
 
 ## Related Pages
