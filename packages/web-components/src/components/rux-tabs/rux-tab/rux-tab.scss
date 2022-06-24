@@ -41,7 +41,7 @@
 
 .rux-tab--disabled {
     color: var(--color-background-interactive-default);
-    opacity: var(--disabled-opacity);
+    opacity: var(--opacity-disabled, 40%);
     cursor: not-allowed;
 }
 

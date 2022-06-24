@@ -96,7 +96,7 @@
         &:disabled {
             + label {
                 cursor: not-allowed;
-                opacity: var(--disabled-opacity);
+                opacity: var(--opacity-disabled, 40%);
             }
         }
 
