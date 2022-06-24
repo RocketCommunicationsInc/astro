@@ -13,17 +13,29 @@
     display: none;
 }
 
+:host([disabled]),
+:host-context([disabled]) {
+    /* input */
+    cursor: not-allowed;
+    opacity: var(--opacity-disabled, 40%);
+}
+
+/* hide the radio */
+input {
+    display: none;
+}
+
+/* allow label to use outer cursor */
+label {
+  cursor: inherit;
+}
+
 [part='field'] {
     /* display */
     display: flex;
 
     /* layout */
     flex-flow: row;
-
-    /* hide the radio */
-    input {
-        display: none;
-    }
 }
 
 [part='indicator'] {
@@ -38,6 +50,6 @@
     margin-inline-end: calc(1.5 * var(--scale));
 
     [part='--no-label'] & {
-      margin-inline-end: 0;
+        margin-inline-end: 0;
     }
 }
