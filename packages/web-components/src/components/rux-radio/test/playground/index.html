@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Stencil Component Starter</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@300;400;700&display=swap"
+        />
+        <link rel="stylesheet" href="/build/astro-web-components.css" />
+        <style>
+        body {
+          padding-block: max(2rem, 10vh);
+          padding-inline: max(2rem, calc(50vw - 18rem));
+        }
+        ul {
+          list-style: none;
+        }
+        </style>
+        <script src="/build/astro-web-components.esm.js" type="module"></script>
+    </head>
+
+    <body>
+      <form id="form">
+        <fieldset>
+          <legend>
+            Choose your favorite fruit
+          </legend>
+          <rux-radio name="fruit">Apple</rux-radio>
+          <rux-radio name="fruit">Banana</rux-radio>
+          <rux-radio name="fruit">Kiwi</rux-radio>
+        </fieldset>
+        <p>
+          <button type="submit">submit</button>
+        </p>
+      </form>
+    </body>
+</html>
