@@ -10,7 +10,7 @@
 }
 
 :host([hidden]) {
-  display: none;
+    display: none;
 }
 
 /* reset unorganized list */
@@ -21,7 +21,7 @@ ul {
 }
 
 li {
-  display: contents;
+    display: contents;
 }
 
 /* remove input display */
@@ -68,7 +68,7 @@ label {
         cursor: not-allowed;
 
         /* appearance */
-        opacity: var(--disabled-opacity);
+        opacity: var(--opacity-disabled, 40%);
     }
 
     /* variant: first-child */

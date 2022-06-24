@@ -8,7 +8,7 @@
     user-select: none;
 
     &[disabled] {
-        opacity: var(--disabled-opacity);
+        opacity: var(--opacity-disabled, 40%);
         cursor: not-allowed;
     }
 
@@ -94,7 +94,7 @@
 
         //disabled, not active
         &__input:disabled + .rux-push-button__button {
-            opacity: var(--disabled-opacity);
+            opacity: var(--opacity-disabled, 40%);
             cursor: not-allowed;
             &:hover {
                 border-color: var(--color-border-interactive-default);

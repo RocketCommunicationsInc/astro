@@ -138,7 +138,7 @@ label {
                 color: var(--color-text-primary);
             }
             &:disabled {
-                opacity: var(--disabled-opacity);
+                opacity: var(--opacity-disabled, 40%);
                 cursor: not-allowed;
                 &:hover {
                     color: var(--color-background-interactive-default);
@@ -195,7 +195,7 @@ label {
             background-color: var(--color-background-surface-selected);
         }
         &:disabled {
-            opacity: var(--disabled-opacity);
+            opacity: var(--opacity-disabled, 40%);
             cursor: not-allowed;
         }
     }
