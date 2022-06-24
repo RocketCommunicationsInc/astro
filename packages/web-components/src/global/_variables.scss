@@ -5,9 +5,6 @@
     // Sets default theme variables for component library
     @include variables.root-variables;
 
-    /* Opacity applied to disabled elements. */
-    --disabled-opacity: 40%;
-
     /* Relative scale applied to elements. */
     --scale: 0.25rem;
 
@@ -18,7 +15,8 @@
     --button-type-line-spacing: 1.25;
 
     /* Typography size, line height, and family applied to a button. */
-    --button-type-shorthand: var(--button-type-size)/var(--button-type-line-spacing) var(--type-family);
+    --button-type-shorthand: var(--button-type-size) /
+        var(--button-type-line-spacing) var(--type-family);
 
     /* Typography size applied to a button. */
     --button-type-size: calc(4 * var(--step));

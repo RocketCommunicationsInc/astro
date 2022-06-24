@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 :host([disabled]) {
-    opacity: var(--disabled-opacity);
+    opacity: var(--opacity-disabled, 40%);
     cursor: not-allowed;
     pointer-events: none;
 

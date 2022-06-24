@@ -50,12 +50,13 @@ button {
 
     /* decoration */
     border-radius: var(--radius-base);
-    box-shadow: var(--border-color, transparent) 0 0 0 var(--border-width, 0px) inset;
+    box-shadow: var(--border-color, transparent) 0 0 0 var(--border-width, 0px)
+        inset;
 
     /* state: disabled */
     &:disabled {
         cursor: not-allowed;
-        opacity: var(--disabled-opacity);
+        opacity: var(--opacity-disabled, 40%);
         pointer-events: none;
     }
 
