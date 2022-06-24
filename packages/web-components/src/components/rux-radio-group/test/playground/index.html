@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Stencil Component Starter</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@300;400;700&display=swap"
+        />
+        <link rel="stylesheet" href="/build/astro-web-components.css" />
+        <style>
+        body {
+          padding-block: max(2rem, 10vh);
+          padding-inline: max(2rem, calc(50vw - 18rem));
+        }
+        </style>
+        <script src="/build/astro-web-components.esm.js" type="module"></script>
+    </head>
+
+    <body>
+        <form id="form1">
+            <rux-radio-group name="radio" label="Radio Group">
+                <rux-radio value="option-1" name="radio">Option 1</rux-radio>
+                <rux-radio value="option-2" name="radio">Option 2</rux-radio>
+                <rux-radio value="option-3" name="radio">Option 3</rux-radio>
+            </rux-radio-group>
+            <p>
+              <button type="submit">submit</button>
+            </p>
+        </form>
+        <form id="form2">
+            <rux-radio-group name="radio" label="Required Radio Group" required>
+                <rux-radio value="option-1" name="radio">Option 1</rux-radio>
+                <rux-radio value="option-2" name="radio">Option 2</rux-radio>
+                <rux-radio value="option-3" name="radio">Option 3</rux-radio>
+            </rux-radio-group>
+            <p>
+              <button type="submit">submit</button>
+            </p>
+        </form>
+        <form id="form3">
+            <rux-radio-group name="radio" label="Invalid Radio Group" invalid>
+                <rux-radio value="option-1" name="radio">Option 1</rux-radio>
+                <rux-radio value="option-2" name="radio">Option 2</rux-radio>
+                <rux-radio value="option-3" name="radio">Option 3</rux-radio>
+            </rux-radio-group>
+            <p>
+              <button type="submit">submit</button>
+            </p>
+        </form>
+    </body>
+</html>

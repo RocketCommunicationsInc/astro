@@ -144,37 +144,17 @@ export class RuxRadioGroup implements FormFieldInterface {
         }
         return (
             <Host onClick={this._handleClick}>
-                <div class="rux-form-field" part="form-field">
-                    <div
-                        class={{
-                            'rux-label': true,
-                            hidden: !this.hasLabel,
-                        }}
-                        part="label"
-                    >
+                <div part="group">
+                    <div part="label" hidden={!this.hasLabel}>
                         <slot
-                            onSlotchange={this._handleSlotChange}
                             name="label"
+                            onSlotchange={this._handleSlotChange}
                         >
                             {this.label}
-                            {this.required && (
-                                <span
-                                    part="required"
-                                    class="rux-label__asterisk"
-                                >
-                                    &#42;
-                                </span>
-                            )}
+                            {this.required && <span part="required" />}
                         </slot>
                     </div>
-                    <div
-                        class={{
-                            'rux-radio-group': true,
-                            'rux-radio-group--invalid': this.invalid,
-                        }}
-                        role="radiogroup"
-                        part="radiogroup"
-                    >
+                    <div part="options" role="radiogroup">
                         <slot></slot>
                     </div>
                 </div>

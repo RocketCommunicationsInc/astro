@@ -126,29 +126,25 @@ export class RuxRadio {
             hasLabel,
         } = this
 
+        let part = hasLabel ? 'field' : 'field --no-label'
+        let icon = checked ? 'radio-button-checked' : 'radio-button-unchecked'
+
         return (
-            <div class="rux-form-field" part="form-field">
-                <div class="rux-radio">
-                    <input
-                        type="radio"
-                        name={name}
-                        id={radioId}
-                        disabled={disabled}
-                        checked={checked}
-                        value={value}
-                        onChange={_onChange}
-                        onBlur={_onBlur}
-                    />
-                    <label
-                        htmlFor={radioId}
-                        part="label"
-                        class={{
-                            'rux-radio--no-label': !hasLabel,
-                        }}
-                    >
-                        <slot>{label}</slot>
-                    </label>
-                </div>
+            <div part={part}>
+                <input
+                    type="radio"
+                    name={name}
+                    id={radioId}
+                    disabled={disabled}
+                    checked={checked}
+                    value={value}
+                    onChange={_onChange}
+                    onBlur={_onBlur}
+                />
+                <rux-icon icon={icon} size="18px" part="indicator" />
+                <label part="label" htmlFor={radioId}>
+                    <slot>{label}</slot>
+                </label>
             </div>
         )
     }

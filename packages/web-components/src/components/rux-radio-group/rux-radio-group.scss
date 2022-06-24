@@ -1,35 +1,41 @@
 @use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
 
 :host {
+    /* reference */
+    --border-color: var(--color-border-interactive-muted);
+
+    /* display */
     display: block;
 }
 
-.hidden,
+:host([invalid]) {
+    /* reference */
+    --border-color: var(--color-text-error);
+}
+
 :host([hidden]) {
     display: none;
 }
 
 ::slotted(rux-radio) {
+    /* display */
     display: block;
-    margin-bottom: 0.625rem; //10px
 }
 
-::slotted(rux-radio:last-of-type) {
-    margin-bottom: 0;
+::slotted(rux-radio:not(:first-child)) {
+    margin-block-start: 1rem;
 }
 
-.rux-radio-group {
-    padding: 1rem; // 16px
-    border: 1px solid var(--color-border-interactive-muted);
-    border-radius: var(--radius-base);
-}
-.rux-radio-group--invalid {
-    border: 1px solid var(--color-text-error);
-}
-
-.rux-label {
+[part='label'] {
     margin-bottom: var(--spacing-input-label-top);
-    &__asterisk {
-        margin-left: 4px;
-    }
+}
+
+[part='required']::after {
+    content: ' *';
+}
+
+[part='options'] {
+    padding: calc(4 * var(--scale));
+    box-shadow: var(--border-color, CurrentColor) 0 0 0 1px inset;
+    border-radius: calc(0.75 * var(--scale));
 }
