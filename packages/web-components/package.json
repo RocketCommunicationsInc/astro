@@ -1,6 +1,6 @@
 {
     "name": "@astrouxds/astro-web-components",
-    "version": "6.9.1",
+    "version": "7.0.0-beta.2",
     "description": "Astro Web Components",
     "main": "dist/index.cjs.js",
     "module": "dist/custom-elements/index.js",
