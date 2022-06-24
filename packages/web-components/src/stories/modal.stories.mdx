@@ -15,7 +15,7 @@ import { html, render } from 'lit-html'
 
 # Modal
 
-A Modal interrupts the app experience to prompt a user to confirm an action or acknowledge a piece of information. It displays information along with a set of buttons allowing users to “Accept or Cancel” the actions presented within the Rux Modal.
+A Modal interrupts the app experience to prompt a user to confirm an action or acknowledge a piece of information. It displays information along with a set of Buttons allowing users to “Accept or Cancel” the actions presented within the Rux Modal.
 
 ## Guidelines
 
@@ -103,13 +103,13 @@ export const WithSlots = (args) => {
 
 ## Opening, Closing and Focusing with Slots
 
-Using slots in the modal allows for near complete customization of the component, but also requires a bit more
+Using slots in the Modal allows for near complete customization of the component, but also requires a bit more
 boilerplate for some things that are built in with the default method. 
 
 ### Opening and Closing
 
 The `open` prop of `rux-modal` is mutable and can be changed accordingly. Here's an example of how you could do that 
-using a `rux-button` to open the modal, and another `rux-button` in the `footer` slot to close it.
+using a `rux-button` to open the Modal, and another `rux-button` in the `footer` slot to close it.
 
 ```js
 <rux-button id="open">Open Modal</rux-button>
@@ -135,7 +135,7 @@ using a `rux-button` to open the modal, and another `rux-button` in the `footer`
 
 ### Applying Focus
 
-Often times when a modal opens, you want to focus a specific element like a confirm or cancel button. 
+Often times when a Modal opens, you want to focus a specific element like a confirm or cancel button. 
 Here's a simple way to do that if you're using slots to customize the footer.
 
 ```js
