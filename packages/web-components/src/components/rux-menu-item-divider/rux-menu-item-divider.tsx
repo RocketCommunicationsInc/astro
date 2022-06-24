@@ -10,6 +10,10 @@ import { Component, h } from '@stencil/core'
 })
 export class RuxMenuItemDivider {
     render() {
-        return <li part="container" role="separator"></li>
+        return (
+            <div class="wrapper">
+                <li role="separator" part="container"></li>
+            </div>
+        )
     }
 }
