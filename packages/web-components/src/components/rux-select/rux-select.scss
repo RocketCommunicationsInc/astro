@@ -194,7 +194,7 @@ label {
 
                 &:hover {
                     color: var(--select-menu-text-color);
-                    opacity: var(--disabled-opacity);
+                    opacity: var(--opacity-disabled);
                     background-color: var(--select-menu-background-color);
                 }
             }
