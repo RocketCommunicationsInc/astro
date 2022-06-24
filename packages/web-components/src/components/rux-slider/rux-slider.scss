@@ -80,7 +80,7 @@
         cursor: not-allowed;
     }
     .rux-range:disabled + #steplist {
-        opacity: var(--disabled-opacity);
+        opacity: var(--opacity-disabled, 40%);
         cursor: not-allowed;
         .tick {
             cursor: not-allowed;
@@ -119,7 +119,7 @@
             padding: 0;
         }
         :disabled {
-            opacity: var(--disabled-opacity);
+            opacity: var(--opacity-disabled, 40%);
         }
     }
 }
@@ -166,7 +166,7 @@ input[type='range']:focus {
     background-position: left, right;
 }
 .rux-range:disabled::-webkit-slider-runnable-track {
-    opacity: var(--disabled-opacity, 0.4);
+    opacity: var(--opacity-disabled, 40%);
     cursor: not-allowed;
 }
 
@@ -197,14 +197,14 @@ input[type='range']:focus {
 }
 .rux-range:disabled::-moz-range-track,
 .rux-range:disabled::-moz-range-progress {
-    opacity: var(--disabled-opacity, 0.4);
+    opacity: var(--opacity-disabled, 40%);
     cursor: not-allowed;
 }
 .rux-range::-moz-range-progress {
     background-color: var(--color-background-interactive-default);
 }
 .rux-input:disabled {
-    opacity: var(--disabled-opacity, 0.4);
+    opacity: var(--opacity-disabled, 40%);
     cursor: not-allowed;
 }
 
@@ -304,7 +304,7 @@ input:-moz-focusring {
     outline: none;
 }
 .rux-range:disabled::-moz-range-thumb {
-    opacity: var(--disabled-opacity, 0.4);
+    opacity: var(--opacity-disabled, 40%);
     cursor: not-allowed;
 }
 

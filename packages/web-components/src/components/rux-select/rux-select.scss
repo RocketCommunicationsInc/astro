@@ -133,6 +133,7 @@ label {
     background-position: center right 0.625rem, center left 0;
     background-repeat: no-repeat;
     box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5);
+
     &:active:not(:disabled) {
         background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20style%3D%22transform%3A%20rotate%28180deg%29%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%234dacff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E'),
             linear-gradient(
@@ -141,6 +142,7 @@ label {
                 var(--color-background-base-default) 2rem
             );
     }
+
     &:hover {
         cursor: pointer;
     }
@@ -187,7 +189,9 @@ label {
                 color: var(--color-text-primary);
             }
             &:disabled {
+                opacity: var(--opacity-disabled, 40%);
                 cursor: not-allowed;
+
                 &:hover {
                     color: var(--select-menu-text-color);
                     opacity: var(--disabled-opacity);
@@ -239,7 +243,9 @@ label {
             color: var(--color-text-primary);
             background-color: var(--color-background-surface-selected);
         }
+
         &:disabled {
+            opacity: var(--opacity-disabled, 40%);
             cursor: not-allowed;
             //var(--select-menu-text-color) with 0.4 opacity
             color: #4dacff66;
