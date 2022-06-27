@@ -15,7 +15,7 @@ In an effort to provide as close to native a development experience as possible,
 
 ### Astro Icons, Fonts and Colors
 
-We recognize that not all space application development projects are tooled for utilizing Web Components, you can download [Astro’s Dark theme](https://github.com/RocketCommunicationsInc/astro/blob/main/packages/web-components/src/global/_variables.scss) and [Light theme](https://github.com/RocketCommunicationsInc/astro/blob/main/packages/web-components/src/global/theme/_theme-light.scss) hex/rgb values. You may also view the specifications in the [Astro UXDS Figma file](https://www.figma.com/community/file/1014254163928270411).
+We recognize that not all space application development projects are tooled for utilizing Web Components; you can download [Astro’s Dark theme](https://github.com/RocketCommunicationsInc/astro/blob/main/packages/web-components/src/global/_variables.scss) and [Light theme](https://github.com/RocketCommunicationsInc/astro/blob/main/packages/web-components/src/global/theme/_theme-light.scss) hex/rgb values. You may also view the specifications in the [Astro UXDS Figma file](https://www.figma.com/community/file/1014254163928270411).
 
 Icon assets are available as SVGs via the [Astro Icon Github Repository](https://github.com/RocketCommunicationsInc/astro/tree/main/packages/web-components/src/icons) or export to the format and size you need from the [Astro Icons Figma library](https://www.figma.com/community/file/1022883566772542677).
 
@@ -41,7 +41,7 @@ These examples use a previous release of Astro, and are not intended as boilerpl
 
 ### Astro for Material Design
 
-We also have Material Design themes using Astro styling. These files include everything needed to build an Astro Application using both Astro Components and/or Material Design Components.
+We also have Material Design themes using Astro styling. These files include everything needed to build an Astro application using both Astro components and/or Material Design components.
 
 There are two ways to add Astro for Material Design CSS to your project:
 
@@ -56,7 +56,7 @@ The Astro team has worked with EGS to establish the EGS Compliance requirements 
 
 ### Offline Development Resources
 
-This website and its contents are provided as separate downloadable files for the convenience of developers and designers working in closed environments. Designer and Developer assets are provided as downloads on their respective ‘Getting Started’ sections:
+This website and its contents are provided as separate downloadable files for the convenience of developers and designers working in closed environments. Designer and developer assets are provided as downloads on their respective ‘Getting Started’ sections:
 
 [Gzip Archive of Astro](git@github.com:RocketCommunicationsInc/astro.git)
 
