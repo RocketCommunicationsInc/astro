@@ -9,4 +9,4 @@ Modal is now deprecated and will be removed in 7.0. It is being renamed to Dialo
 
 `rux-modal` -> `rux-dialog`
 `ruxmodalclosed` -> `ruxdialogclosed`
-`ruxmodalopened` -> `ruxmodalopened`
+`ruxmodalopened` -> `ruxdialogopened`
