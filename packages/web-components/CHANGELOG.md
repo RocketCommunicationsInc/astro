@@ -1,5 +1,11 @@
 # @astrouxds/astro-web-components
 
+## 7.0.0-beta.3
+
+### Minor Changes
+
+-   3c0cd2b8: Updates help text to use text-secondary to align with design
+
 ## 7.0.0-beta.2
 
 ### Major Changes
