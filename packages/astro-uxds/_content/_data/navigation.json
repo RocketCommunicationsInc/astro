@@ -296,6 +296,28 @@
     "class": "section-end"
   },
   {
+    "label": "Design Tokens",
+    "url": "/design-tokens",
+    "items": [
+      {
+        "label": "Getting Started",
+        "url": "/design-tokens/getting-started"
+      },
+      {
+        "label": "Reference",
+        "url": "/design-tokens/reference"
+      },
+      {
+        "label": "System",
+        "url": "/design-tokens/system"
+      },
+      {
+        "label": "Component",
+        "url": "/design-tokens/component"
+      }
+    ]
+  },
+  {
     "label": "Community",
     "url": "/community",
     "items": [

@@ -1,0 +1,121 @@
+---
+tags: resources
+path: /design-tokens/reference
+date: Last Modified
+layout: interior.template.njk
+title: Dark Theme Reference Tokens
+dark: true
+---
+
+
+<h1>Reference Tokens</h1>
+		<h2>Colors</h2>
+		{% for token in tokens.reference('dark', 'color') %}
+			<rux-design-token-preview
+				name="{{ token.name }}"
+				value="{{ token.value }}"
+				alias="{{ token.referenceToken }}"
+				{% if token.description !== 'Protected' %}
+					description="{{ token.description }}"
+				{% endif %}
+				type="background"
+			></rux-design-token-preview>
+		{% endfor %}
+
+		<hr/>
+
+		<h2> Font Size </h2>
+
+		{% for token in tokens.reference('dark', 'fontSizes') %}
+			<rux-design-token-preview
+				name="{{ token.name }}"
+				value="{{ token.value }}"
+				alias="{{ token.referenceToken }}"
+				description="{{ token.description }}"
+				type="font-size"
+			></rux-design-token-preview>
+		{% endfor %}
+
+		<hr/>
+
+		<h2>Font Weight</h2>
+
+		{% for token in tokens.reference('dark', 'fontWeight') %}
+			<rux-design-token-preview
+				name="{{ token.name }}"
+				value="{{ token.value }}"
+				alias="{{ token.referenceToken }}"
+				description="{{ token.description }}"
+				type="font-weight"
+			></rux-design-token-preview>
+		{% endfor %}
+
+		<hr/>
+
+		<h2>Radii</h2>
+
+		{% for token in tokens.reference('dark', 'borderRadius') %}
+			<rux-design-token-preview
+				name="{{ token.name }}"
+				value="{{ token.value }}"
+				alias="{{ token.referenceToken }}"
+				description="{{ token.description }}"
+				type="radius"
+			></rux-design-token-preview>
+		{% endfor %}
+
+		<hr/>
+
+		<h2>Opacity</h2>
+
+		{% for token in tokens.reference('dark', 'opacity') %}
+			<rux-design-token-preview
+				name="{{ token.name }}"
+				value="{{ token.value }}"
+				alias="{{ token.referenceToken }}"
+				description="{{ token.description }}"
+				type="opacity"
+			></rux-design-token-preview>
+		{% endfor %}
+
+		<hr/>
+
+		<h2>Border Width</h2>
+
+		{% for token in tokens.reference('dark', 'borderWidth') %}
+			<rux-design-token-preview
+				name="{{ token.name }}"
+				value="{{ token.value }}"
+				alias="{{ token.referenceToken }}"
+				description="{{ token.description }}"
+				type="border-width"
+			></rux-design-token-preview>
+		{% endfor %}
+
+		<hr/>
+
+		<h2>Spacing</h2>
+
+		{% for token in tokens.reference('dark', 'spacing') %}
+			<rux-design-token-preview
+				name="{{ token.name }}"
+				value="{{ token.value }}"
+				alias="{{ token.referenceToken }}"
+				description="{{ token.description }}"
+				type="spacing"
+			></rux-design-token-preview>
+		{% endfor %}
+
+		<hr/>
+
+		<h2>Line Height</h2>
+
+		{% for token in tokens.reference('dark', 'lineHeights') %}
+			<rux-design-token-preview
+				name="{{ token.name }}"
+				value="{{ token.value }}"
+				alias="{{ token.referenceToken }}"
+				description="{{ token.description }}"
+				type="line-height"
+			></rux-design-token-preview>
+		{% endfor %}
