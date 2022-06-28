@@ -1,10 +1,10 @@
-# rux-modal
+# rux-dialog
 
-A Rux Modal interrupts the app experience to prompt a user to confirm an action or acknowledge a piece of information. It displays information along with a set of buttons allowing users to “Accept or Cancel” the actions presented within the Rux Modal.
+A Rux dialog interrupts the app experience to prompt a user to confirm an action or acknowledge a piece of information. It displays information along with a set of buttons allowing users to “Accept or Cancel” the actions presented within the Rux dialog.
 
 ## Guidelines
 
--   [Astro UXDS: Rux Modal](https://astrouxds.com/ui-components/dialog-box)
+-   [Astro UXDS: Rux Dialog](https://astrouxds.com/ui-components/dialog-box)
 
 ## Web Components Usage
 
@@ -20,32 +20,39 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
 
 Or, [download the Astro UXDS Components as a .zip](https://github.com/RocketCommunicationsInc/astro-components/archive/master.zip)
 
-### 2. Import the Astro Rux Modal Web Component
+### 2. Import the Astro Rux Dialog Web Component
 
 This example assumes you're using the NPM package in `node_modules`. Otherwise, import the component using the path to the Astro Components directory in your project.
 
 ```javascript
-import { RuxModal } from '@astrouxds/rux-modal/rux-modal.js'
+import { RuxDialog } from '@astrouxds/rux-dialog/rux-dialog.js'
 ```
 
-### 3. Render the Astro Rux Modal Web Component
+### 3. Render the Astro Rux Dialog Web Component
 
-At a minimum, Astro UXDS Rux Modal requires a message. In this instance, a single button labeled "Cancel" will be automatically rendered.
-
-```xml
-<rux-modal message="This is a message"></rux-modal>
-```
-
-Pass properties as attributes of the Astro Rux Modal custom element:
+Pass properties as attributes of the Astro Rux Dialog custom element:
 
 ```xml
-<rux-modal
-  title="Modal title"
-  message="Modal message"
+<rux-dialog
+  title="dialog title"
+  message="dialog message"
   confirmText="Ok"
   denyText="Cancel"
   customEvent="listen-for-me">
-</rux-modal>
+</rux-dialog>
+```
+
+Or use slots to render the header, content and footer.
+
+```xml
+<rux-dialog>
+  <span slot="header">Slot Header</span>
+  <p>Dialog Content as a slot</p>
+  <div slot="footer">
+    <rux-button secondary>Cancel</rux-button>
+    <rux-button>Confrim</rux-button>
+  </div>
+</rux-dialog>
 ```
 
 <!-- Auto Generated Below -->
@@ -57,8 +64,8 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 | -------------- | --------------- | ---------------------------- | --------------------- | ----------- |
 | `confirmText`  | `confirm-text`  | Text for confirmation button | `string`              | `'Confirm'` |
 | `denyText`     | `deny-text`     | Text for close button        | `string`              | `'Cancel'`  |
-| `modalMessage` | `modal-message` | Dialog body message          | `string \| undefined` | `undefined` |
-| `modalTitle`   | `modal-title`   | Dialog header title          | `string \| undefined` | `undefined` |
+| `dialogMessage` | `dialog-message` | Dialog body message          | `string \| undefined` | `undefined` |
+| `dialogTitle`   | `dialog-title`   | Dialog header title          | `string \| undefined` | `undefined` |
 | `open`         | `open`          | Shows and hides dialog       | `boolean`             | `false`     |
 
 
@@ -90,15 +97,6 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 | `"footer"`         | the footer of the dialog    |
 | `"header"`         | the header of the dialog    |
 | `"message"`        | the message of the dialog   |
-
-
-## CSS Custom Properties
-
-| Name                       | Description                         |
-| -------------------------- | ----------------------------------- |
-| `--modal-background-color` | [DEPRECATED] Modal background color |
-| `--modal-border-color`     | [DEPRECATED] Modal border color     |
-| `--modal-title-color`      | [DEPRECATED] Modal title color      |
 
 
 ## Dependencies

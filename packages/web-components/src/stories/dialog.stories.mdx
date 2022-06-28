@@ -68,7 +68,7 @@ export const WithSlots = (args) => {
     ?open="${args.open}"
 >
     <span slot="header">Slot Header</span>
-    <div slot="message" style="display: flex; flex-direction: column;">
+    <div style="display: flex; flex-direction: column;">
         <span style="margin-bottom: 10px;">Slot Message</span>
         <rux-input label="Input"></rux-input>
     </div>
@@ -115,7 +115,7 @@ using a `rux-button` to open the Dialog, and another `rux-button` in the `footer
 <rux-button id="open">Open Dialog</rux-button>
 <rux-dialog id="dialog" open>
     <div slot="header">Dialog Header</div>
-    <span slot="message">Dialog message here!</span>
+    <span>Dialog message here!</span>
     <div slot="footer">
         <rux-button id="confirm">Confirm</rux-button>
     </div>
@@ -142,7 +142,7 @@ Here's a simple way to do that if you're using slots to customize the footer.
 <rux-button id="open">Open Dialog</rux-button>
 <rux-dialog id="dialog">
     <div slot="header">Dialog Header</div>
-    <p slot="message">Dialog message here!</p>
+    <p>Dialog message here!</p>
     <div slot="footer">
         <rux-button id="confirm">Confirm</rux-button>
     </div>
