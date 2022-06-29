@@ -4,6 +4,39 @@
 	{{ content | safe }}
   <p>Version {{ compliance.version }}</p>
 
+
+<section class="compliance">
+  <article>
+    <h2>Intro Title Goes Here</h2>
+    <p>This is an introductory paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <a href="#">View GitHub</a>
+  </article>
+
+<article class="compliancy-headline">
+    <h2>About Compliancy Headline</h2>
+    <p>
+      This is an introductory paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+
+    <ol>
+      <li>
+        <span class="tier tier--1">Tier 1</span>
+        Basic status icons, status colors, really important things for operators to quickly become familiar with the application
+      </li>
+      <li>
+        <span class="tier tier--2">Tier 2</span>
+        Tier 1 + Astro colors to make it look like an Astro application (visual)
+      </li>
+      <li>
+        <span class="tier tier--3">Tier 3</span>
+        Tier 2 + interaction patterns (behavioral) 
+        </li>
+      </ol>
+  </article>
+
+<hr>
+</section>
+
   <!-- Recursive rendering of compliance rules //-->
 {% macro complianceMacro(data, prefix) %}
 
@@ -33,7 +66,13 @@
 
       <span class="rules-name">
         {% if data.link %}
-          <a href="{{ data.link }}">{{ data.name }}</a>
+          {{ data.name }} 
+          <a href="{{ data.link }}" class="rules-name--link">
+            View {{ data.name }} Page 
+            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00001 2.14375C4.32001 2.14375 1.33334 5.13042 1.33334 8.81042C1.33334 12.4904 4.32001 15.4771 8.00001 15.4771C11.68 15.4771 14.6667 12.4904 14.6667 8.81042C14.6667 5.13042 11.68 2.14375 8.00001 2.14375ZM8.00001 12.1438C7.63334 12.1438 7.33334 11.8438 7.33334 11.4771V8.81042C7.33334 8.44375 7.63334 8.14375 8.00001 8.14375C8.36668 8.14375 8.66668 8.44375 8.66668 8.81042V11.4771C8.66668 11.8438 8.36668 12.1438 8.00001 12.1438ZM7.33334 6.81042H8.66668V5.47709H7.33334V6.81042Z" fill="#D67D46"/>
+            </svg>
+          </a>
         {% else %}
           {{ data.name }}
         {% endif %}
@@ -48,17 +87,27 @@
             {% if prefix != null %}{{ prefix }}.{% endif %}{{ data.numeral }}.{{ rule.numeral }}
           </span>
 
-          <span class="rule-text" data-status="{{ rule.status }}">
+          {% if rule.tier %}
+          <span class="tier tier--{{ rule.tier}}">
+            Tier {{ rule.tier }}
+          </span>
+          {% endif %}
+
+          <div class="rule-text" data-status="{{ rule.status }}">
               {{ rule.rule | markdownify | safe }}
-          </span>  
+
+              {% if rule.status !== 'current' %}
+                <span class="rule-status">{{rule.status.replace('-', ' ')}}</span>
+              {% endif %}
+          </div>  
         </li>
 
-        {% if rule.figure %}
+        {# {% if rule.figure %}
           <li class="rule">
           <span class="numeral"></span>
             <img class="rule-figure" src="{{ rule.figure }}" alt="{{ rule.rule | markdownify | striptags }}"/>
           </li>
-        {% endif %}
+        {% endif %} #}
 
       {% endfor %}
       </ol>
