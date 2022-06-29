@@ -61,9 +61,6 @@
 .rux-tab--selected {
     color: var(--tab-selected-text-color);
     border-bottom: 5px solid var(--tab-selected-border-color);
-    &:hover {
-        color: var(--tab-selected-text-color);
-    }
 }
 
 .rux-tab--disabled {
