@@ -2,6 +2,36 @@ import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
+import { styled } from '@storybook/theming'
+export const StyledDiv = styled.div`
+    position: relative;
+    margin: 1rem 0;
+    border-left: 20px solid var(--color-status-serious);
+    background: white;
+    color: var(--color-status-serious);
+    padding: 19px;
+    font-family: var(--font-body-1-bold-font-family);
+    font-size: var(--font-body-1-bold-font-size);
+    font-weight: var(--font-body-1-bold-font-weight);
+    letter-spacing: var(--font-body-1-bold-letter-spacing);
+    .banner-text {
+        margin-top: 1rem;
+        color: var(--color-text-inverse);
+    }
+`
+
+export const BetaTag = styled.div`
+  display: inline-block;
+  padding: 7px;
+  color: var(--color-palette-neutral-1000);
+  border-radius: var(--radius-base);
+  background: var(--color-status-serious);
+      font-family: var(--font-body-2-bold-font-family);
+    font-size: var(--font-body-2-bold-font-size);
+    font-weight: var(--font-body-2-bold-font-weight);
+    letter-spacing: var(--font-body-2-bold-letter-spacing);
+`
+
 <Meta
     title="Components/Modal"
     component="rux-modal"
@@ -13,7 +43,14 @@ import { html, render } from 'lit-html'
     }}
 />
 
-# Modal
+# Modal <BetaTag>Deprecated</BetaTag>
+
+<StyledDiv>
+    <div>Deprecation Warning</div>
+    <p class="banner-text">
+        Modal has been renamed to Dialog and will be removed in 7.0.
+    </p>
+</StyledDiv>
 
 A Modal interrupts the app experience to prompt a user to confirm an action or acknowledge a piece of information.
 

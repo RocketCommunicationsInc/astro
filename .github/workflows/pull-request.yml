@@ -47,6 +47,9 @@ jobs:
       - name: Install Modules
         run: npm run web-comps.install && npm run react.install
 
+      - name: Symlink
+        run: lerna link
+
       - name: Build
         run: npm run build.tests
 

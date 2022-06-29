@@ -47,6 +47,10 @@ export const RuxDatetime = /*@__PURE__*/ createReactComponent<
   JSX.RuxDatetime,
   HTMLRuxDatetimeElement
 >("rux-datetime");
+export const RuxDialog = /*@__PURE__*/ createReactComponent<
+  JSX.RuxDialog,
+  HTMLRuxDialogElement
+>("rux-dialog");
 export const RuxGlobalStatusBar = /*@__PURE__*/ createReactComponent<
   JSX.RuxGlobalStatusBar,
   HTMLRuxGlobalStatusBarElement
