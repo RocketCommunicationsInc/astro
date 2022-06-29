@@ -22546,7 +22546,7 @@ export declare interface RuxMenuItem extends Components.RuxMenuItem {
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['disabled', 'download', 'href', 'rel', 'target', 'value']
+  inputs: ['disabled', 'selected', 'value']
 })
 @Component({
   selector: 'rux-menu-item',
@@ -22579,38 +22579,6 @@ export class RuxMenuItemDivider {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-  }
-}
-
-
-export declare interface RuxModal extends Components.RuxModal {
-  /**
-   * Event that is fired when modal opens 
-   */
-  ruxmodalopened: EventEmitter<CustomEvent<void>>;
-  /**
-   * Event that is fired when modal closes 
-   */
-  ruxmodalclosed: EventEmitter<CustomEvent<boolean | null>>;
-
-}
-
-@ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['confirmText', 'denyText', 'modalMessage', 'modalTitle', 'open']
-})
-@Component({
-  selector: 'rux-modal',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['confirmText', 'denyText', 'modalMessage', 'modalTitle', 'open']
-})
-export class RuxModal {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['ruxmodalopened', 'ruxmodalclosed']);
   }
 }
 
@@ -22667,7 +22635,7 @@ export declare interface RuxNotification extends Components.RuxNotification {
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['closeAfter', 'message', 'open', 'small', 'status']
+  inputs: ['closeAfter', 'hideClose', 'message', 'open', 'small', 'status']
 })
 @Component({
   selector: 'rux-notification',
@@ -22737,8 +22705,8 @@ export declare interface RuxPopUpMenu extends Components.RuxPopUpMenu {
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['anchorEl', 'open', 'triggerEl'],
-  methods: ['isOpen', 'show', 'close', 'toggle']
+  inputs: ['open', 'placement', 'strategy'],
+  methods: ['show', 'hide']
 })
 @Component({
   selector: 'rux-pop-up-menu',

@@ -86,11 +86,11 @@
                 props.open = !props.open
             })
 
-            props.addEventListener('ruxmodalopened', () =>
-                console.log('props ruxmodalopened')
+            props.addEventListener('ruxdialogopened', () =>
+                console.log('props ruxdialogopened')
             )
-            props.addEventListener('ruxmodalclosed', () =>
-                console.log('props ruxmodalclosed')
+            props.addEventListener('ruxdialogclosed', () =>
+                console.log('props ruxdialogclosed')
             )
 
             const slots = document.getElementById('slots')
@@ -104,11 +104,11 @@
             openSlots.addEventListener('click', () => {
                 slots.open = !slots.open
             })
-            slots.addEventListener('ruxmodalopened', () =>
-                console.log('heard ruxmodalopened')
+            slots.addEventListener('ruxdialogopened', () =>
+                console.log('heard ruxdialogopened')
             )
-            slots.addEventListener('ruxmodalclosed', () =>
-                console.log('heard ruxmodalclosed')
+            slots.addEventListener('ruxdialogclosed', () =>
+                console.log('heard ruxdialogclosed')
             )
 
             const mixed = document.getElementById('mix')
@@ -120,7 +120,7 @@
             //Focus the confirm button on mixed modal
 
             const confirmBtn = document.getElementById('confirm')
-            mixed.addEventListener('ruxmodalopened', () => {
+            mixed.addEventListener('ruxdialogopened', () => {
                 const shadowBtn = confirmBtn.shadowRoot.querySelector('button')
                 setTimeout(() => shadowBtn.focus())
             })
@@ -139,7 +139,7 @@
             dyn.addEventListener('click', () => {
                 changeModal.open = true
             })
-            changeModal.addEventListener('ruxmodalopened', () => {
+            changeModal.addEventListener('ruxdialogopened', () => {
                 setTimeout(() => {
                     changeModal.append(newFooter)
                     changeModal.append(newMessage)

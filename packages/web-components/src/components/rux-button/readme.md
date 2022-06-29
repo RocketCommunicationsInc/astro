@@ -170,7 +170,6 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 
  - [rux-dialog](../rux-dialog)
  - [rux-input](../rux-input)
- - [rux-modal](../rux-modal)
 
 ### Depends on
 
@@ -182,7 +181,6 @@ graph TD;
   rux-button --> rux-icon
   rux-dialog --> rux-button
   rux-input --> rux-button
-  rux-modal --> rux-button
   style rux-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
