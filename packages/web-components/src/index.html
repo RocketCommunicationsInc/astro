@@ -1,21 +1,76 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script type="module" src="/build/astro-web-components.esm.js"></script>
+        <script nomodule src="/build/astro-web-components.js"></script>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
-        rel="stylesheet" />
-    <script type="module" src="/build/astro-web-components.esm.js"></script>
-    <script nomodule src="/build/astro-web-components.js"></script>
+        <link rel="stylesheet" href="/build/astro-web-components.css" />
+    </head>
 
-    <link rel="stylesheet" href="/build/astro-web-components.css" />
-</head>
+    <body>
+        <rux-tabs id="tab-set-id-1">
+            <rux-tab id="tab-id-1">Tab 1 title</rux-tab>
+            <rux-tab id="tab-id-2">Tab 2 title</rux-tab>
+            <rux-tab id="tab-id-3">Tab 3 title</rux-tab>
+        </rux-tabs>
 
-<body></body>
+        <rux-tab-panels aria-labelledby="tab-set-id-1">
+            <rux-tab-panel aria-labelledby="tab-id-1"
+                >Tab 1 HTML content</rux-tab-panel
+            >
+            <rux-tab-panel aria-labelledby="tab-id-2"
+                >Tab 2 HTML content</rux-tab-panel
+            >
+            <rux-tab-panel aria-labelledby="tab-id-3"
+                >Tab 3 HTML content</rux-tab-panel
+            >
+        </rux-tab-panels>
 
+        <rux-button id="btn" style="padding: 1rem">Toggle small</rux-button>
+
+        <h4>Small By default</h4>
+        <rux-tabs id="tab-set-id-2" small>
+            <rux-tab id="tab-id-2-1">Tab 1 title</rux-tab>
+            <rux-tab id="tab-id-2-2">Tab 2 title</rux-tab>
+            <rux-tab id="tab-id-2-3">Tab 3 title</rux-tab>
+        </rux-tabs>
+
+        <rux-tab-panels aria-labelledby="tab-set-id-2">
+            <rux-tab-panel aria-labelledby="tab-id-2-1"
+                >Tab 1 HTML content</rux-tab-panel
+            >
+            <rux-tab-panel aria-labelledby="tab-id-2-2"
+                >Tab 2 HTML content</rux-tab-panel
+            >
+            <rux-tab-panel aria-labelledby="tab-id-2-3"
+                >Tab 3 HTML content</rux-tab-panel
+            >
+        </rux-tab-panels>
+
+        <script>
+            const btn = document.getElementById('btn')
+            const tabs = document.getElementById('tab-set-id-1')
+
+            btn.addEventListener('click', () => {
+                let isSmall = tabs.getAttribute('small')
+                if (isSmall) {
+                    tabs.removeAttribute('small')
+                } else {
+                    tabs.setAttribute('small', true)
+                }
+            })
+        </script>
+    </body>
 </html>
