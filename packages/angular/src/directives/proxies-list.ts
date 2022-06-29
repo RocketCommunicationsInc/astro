@@ -8,6 +8,7 @@ export const DIRECTIVES = [
   d.RuxClassificationMarking,
   d.RuxClock,
   d.RuxDatetime,
+  d.RuxDialog,
   d.RuxGlobalStatusBar,
   d.RuxIcon,
   d.RuxIcon360,

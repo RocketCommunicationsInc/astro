@@ -14,36 +14,34 @@ import {
 import { hasSlot } from '../../utils/utils'
 
 /**
- * @deprecated Use `RuxDialog` instead.
- * @part wrapper - the modal wrapper overlay ! DEPRECATED IN FAVOR OF CONTAINER !
- * @part container - the modal container
+ * @part container - the dialog container
  * @part dialog - the native dialog element
- * @part header - the header of the modal
- * @part message - the message of the modal
- * @part confirm-button - the modal's confirm button
- * @part deny-button - the modal's deny button
- * @part footer - the footer of the modal
+ * @part header - the header of the dialog
+ * @part message - the message of the dialog
+ * @part confirm-button - the dialog's confirm button
+ * @part deny-button - the dialog's deny button
+ * @part footer - the footer of the dialog
  *
- * @slot header - the header of the modal
- * @slot (default) - the modal's message or content
- * @slot footer - the footer of the modal
+ * @slot header - the header of the dialog
+ * @slot (default) - the dialog's message or content
+ * @slot footer - the footer of the dialog
  */
 @Component({
-    tag: 'rux-modal',
-    styleUrl: 'rux-modal.scss',
+    tag: 'rux-dialog',
+    styleUrl: 'rux-dialog.scss',
     shadow: true,
 })
-export class RuxModal {
+export class RuxDialog {
     /**
-     * Shows and hides modal
+     * Shows and hides dialog
      */
     @Prop({ reflect: true, mutable: true }) open: boolean = false
     /**
-     * Modal body message
+     * Dialog body message
      */
     @Prop() modalMessage?: string
     /**
-     * Modal header title
+     * Dialog header title
      */
     @Prop() modalTitle?: string
     /**
@@ -55,25 +53,25 @@ export class RuxModal {
      */
     @Prop() denyText: string = 'Cancel'
     /**
-     * Event that is fired when modal opens
+     * Event that is fired when dialog opens
      */
     @Event({
-        eventName: 'ruxmodalopened',
+        eventName: 'ruxdialogopened',
         composed: true,
         bubbles: true,
     })
-    ruxModalOpened!: EventEmitter<void>
+    ruxDialogOpened!: EventEmitter<void>
     /**
-     * Event that is fired when modal closes
+     * Event that is fired when dialog closes
      */
     @Event({
-        eventName: 'ruxmodalclosed',
+        eventName: 'ruxdialogclosed',
         composed: true,
         bubbles: true,
     })
-    ruxModalClosed!: EventEmitter<boolean | null>
+    ruxDialogClosed!: EventEmitter<boolean | null>
 
-    @Element() element!: HTMLRuxModalElement
+    @Element() element!: HTMLRuxDialogElement
 
     @State() hasFooter = hasSlot(this.element, 'footer')
     @State() hasHeader = hasSlot(this.element, 'header')
@@ -111,17 +109,11 @@ export class RuxModal {
             }, 0)
         }
         this.open
-            ? this.ruxModalOpened.emit()
-            : this.ruxModalClosed.emit(this._userInput)
+            ? this.ruxDialogOpened.emit()
+            : this.ruxDialogClosed.emit(this._userInput)
     }
 
-    componentWillLoad() {
-        console.warn(
-            'RuxModal is deprecated and will be removed in 7.0. Use RuxDialog instead.'
-        )
-    }
-
-    private _handleModalChoice(e: MouseEvent) {
+    private _handleDialogChoice(e: MouseEvent) {
         // convert string value to boolean
         const target = e.currentTarget as HTMLElement
         const choice = target.dataset.value === 'true'
@@ -146,7 +138,7 @@ export class RuxModal {
 
     private _getWrapper(): HTMLElement | null {
         const wrapper = this.element?.shadowRoot?.querySelector(
-            '.rux-modal__wrapper'
+            '.rux-dialog__wrapper'
         ) as HTMLElement
 
         if (wrapper) {
@@ -156,7 +148,7 @@ export class RuxModal {
     }
 
     connectedCallback() {
-        this._handleModalChoice = this._handleModalChoice.bind(this)
+        this._handleDialogChoice = this._handleDialogChoice.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
     }
 
@@ -178,15 +170,15 @@ export class RuxModal {
             modalTitle,
             confirmText,
             denyText,
-            _handleModalChoice,
+            _handleDialogChoice,
         } = this
 
         return (
             open && (
                 <Host>
-                    <div part="wrapper container" class="rux-modal__wrapper">
+                    <div part="container" class="rux-dialog__wrapper">
                         <dialog
-                            class="rux-modal__dialog"
+                            class="rux-dialog__dialog"
                             role="dialog"
                             part="dialog"
                         >
@@ -195,7 +187,7 @@ export class RuxModal {
                                     hidden:
                                         !this.hasHeader &&
                                         modalTitle === undefined,
-                                    'rux-modal__header': true,
+                                    'rux-dialog__header': true,
                                 }}
                                 part="header"
                             >
@@ -207,13 +199,13 @@ export class RuxModal {
                                 </slot>
                             </header>
 
-                            <div class="rux-modal__content" part="message">
+                            <div class="rux-dialog__content" part="message">
                                 <div
                                     class={{
                                         hidden:
                                             !this.hasMessage &&
                                             modalMessage === undefined,
-                                        'rux-modal__message': true,
+                                        'rux-dialog__message': true,
                                     }}
                                     part="message"
                                 >
@@ -224,7 +216,7 @@ export class RuxModal {
                             </div>
                             <footer
                                 class={{
-                                    'rux-modal__footer': true,
+                                    'rux-dialog__footer': true,
                                 }}
                                 part="footer"
                             >
@@ -240,7 +232,7 @@ export class RuxModal {
                                                 secondary={
                                                     confirmText.length > 0
                                                 }
-                                                onClick={_handleModalChoice}
+                                                onClick={_handleDialogChoice}
                                                 data-value="false"
                                                 hidden={!denyText}
                                                 tabindex="-1"
@@ -249,7 +241,7 @@ export class RuxModal {
                                                 {denyText}
                                             </rux-button>
                                             <rux-button
-                                                onClick={_handleModalChoice}
+                                                onClick={_handleDialogChoice}
                                                 hidden={!confirmText}
                                                 data-value="true"
                                                 tabindex="0"
