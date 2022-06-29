@@ -26,22 +26,22 @@ describe("RuxDialog", () => {
   });
   it("should get bools as props", () => {
     const {
-      webcomponent: RuxDialog,
+      webcomponent: ruxDialog,
     } = includeWebComponent<HTMLRuxDialogElement>(
       renderWithStrictMode(<RuxDialog open={true}></RuxDialog>)
     );
-    expect(RuxDialog.open).toBe(true);
+    expect(ruxDialog.open).toBe(true);
   });
 });
 describe("createComponent - ref", () => {
   test("should pass ref on to web component instance", () => {
     const modalRef: React.RefObject<HTMLRuxDialogElement> = React.createRef();
     const {
-      webcomponent: RuxDialog,
+      webcomponent: ruxDialog,
     } = includeWebComponent<HTMLRuxDialogElement>(
       renderWithStrictMode(<RuxDialog ref={modalRef} open={true}></RuxDialog>)
     );
-    expect(modalRef.current).toEqual(RuxDialog);
+    expect(modalRef.current).toEqual(ruxDialog);
   });
 });
 describe("createComponent - events", () => {
