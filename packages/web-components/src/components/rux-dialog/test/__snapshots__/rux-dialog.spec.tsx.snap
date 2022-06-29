@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rux-dialog renders with a mix of slots and props 1`] = `
+<rux-dialog modal-title="Title">
+  <mock:shadow-root></mock:shadow-root>
+  <div slot="message">
+    Message
+  </div>
+  <div slot="footer">
+    Footer
+  </div>
+</rux-dialog>
+`;
+
+exports[`rux-dialog renders with slots 1`] = `
+<rux-dialog>
+  <mock:shadow-root></mock:shadow-root>
+  <span slot="header">
+    Header
+  </span>
+  <div slot="message">
+    Message
+  </div>
+  <div slot="footer">
+    Footer
+  </div>
+</rux-dialog>
+`;

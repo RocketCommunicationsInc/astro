@@ -2,6 +2,36 @@ import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
+import { styled } from '@storybook/theming'
+export const StyledDiv = styled.div`
+    position: relative;
+    margin: 1rem 0;
+    border-left: 20px solid var(--color-status-serious);
+    background: white;
+    color: var(--color-status-serious);
+    padding: 19px;
+    font-family: var(--font-body-1-bold-font-family);
+    font-size: var(--font-body-1-bold-font-size);
+    font-weight: var(--font-body-1-bold-font-weight);
+    letter-spacing: var(--font-body-1-bold-letter-spacing);
+    .banner-text {
+        margin-top: 1rem;
+        color: var(--color-text-inverse);
+    }
+`
+
+export const BetaTag = styled.div`
+  display: inline-block;
+  padding: 7px;
+  color: var(--color-palette-neutral-1000);
+  border-radius: var(--radius-base);
+  background: var(--color-status-serious);
+      font-family: var(--font-body-2-bold-font-family);
+    font-size: var(--font-body-2-bold-font-size);
+    font-weight: var(--font-body-2-bold-font-weight);
+    letter-spacing: var(--font-body-2-bold-letter-spacing);
+`
+
 <Meta
     title="Components/Modal"
     component="rux-modal"
@@ -13,7 +43,14 @@ import { html, render } from 'lit-html'
     }}
 />
 
-# Modal
+# Modal <BetaTag>Deprecated</BetaTag>
+
+<StyledDiv>
+    <div>Deprecation Warning</div>
+    <p class="banner-text">
+        Modal has been renamed to Dialog and will be removed in 7.0.
+    </p>
+</StyledDiv>
 
 A Modal interrupts the app experience to prompt a user to confirm an action or acknowledge a piece of information. It displays information along with a set of Buttons allowing users to “Accept or Cancel” the actions presented within the Rux Modal.
 
@@ -68,7 +105,7 @@ export const WithSlots = (args) => {
     ?open="${args.open}"
 >
     <span slot="header">Slot Header</span>
-    <div slot="message" style="display: flex; flex-direction: column;">
+    <div style="display: flex; flex-direction: column;">
         <span style="margin-bottom: 10px;">Slot Message</span>
         <rux-input label="Input"></rux-input>
     </div>
@@ -115,7 +152,7 @@ using a `rux-button` to open the Modal, and another `rux-button` in the `footer`
 <rux-button id="open">Open Modal</rux-button>
 <rux-modal id="modal" open>
     <div slot="header">Modal Header</div>
-    <span slot="message">Modal message here!</span>
+    <span>Modal message here!</span>
     <div slot="footer">
         <rux-button id="confirm">Confirm</rux-button>
     </div>
@@ -142,7 +179,7 @@ Here's a simple way to do that if you're using slots to customize the footer.
 <rux-button id="open">Open Modal</rux-button>
 <rux-modal id="modal">
     <div slot="header">Modal Header</div>
-    <p slot="message">Modal message here!</p>
+    <p>Modal message here!</p>
     <div slot="footer">
         <rux-button id="confirm">Confirm</rux-button>
     </div>
