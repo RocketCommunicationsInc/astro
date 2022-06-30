@@ -27,9 +27,9 @@ A Pop-Up Menu provides users with a quick way to access common actions for a hig
 ## Examples
 
 :::two-col
-![Do: Position Pop Ups to avoid obscuring vital screen elements like classification banners](/img/components/popup-do-1.png "Do: Position Pop Ups to avoid obscuring vital screen elements like classification banners")
+![Do: Position Pop Ups to avoid obscuring vital screen elements like Classification Banners](/img/components/popup-do-1.png "Do: Position Pop Ups to avoid obscuring vital screen elements like Classification Banners")
 
-![Don't: Cover vital screen elements like classification markings](/img/components/popup-dont-1.png "Cover vital screen elements like classification markings")
+![Don't: Cover vital screen elements like Classification Markings](/img/components/popup-dont-1.png "Cover vital screen elements like Classification Markings")
 
 ![Do: Position a Pop Up so it stays within the edges of the frame](/img/components/popup-do-2.png "Position a Pop Up so it stays within the edges of the frame")
 
