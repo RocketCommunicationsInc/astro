@@ -19,7 +19,7 @@ The Status Symbol combines color and shape to create a standard and consistent w
 ![Astro Status Symbols in context of a modem list layout.](/img/components/icons-symbols-modems.png "Astro Status Symbols in context of a modem list layout.")
 
 ::: note
-To ensure compliance with [WCAG 2.0 contrast specifications for non-text content](https://www.w3.org/WAI/standards-guidelines/wcag/new-in-21/#1411-non-text-contrast-aa) light themed status symbols must have a 1px black border set to 50% opacity.
+To ensure compliance with [WCAG 2.0 contrast specifications for non-text content](https://www.w3.org/WAI/standards-guidelines/wcag/new-in-21/#1411-non-text-contrast-aa) light themed Status Symbols must have a 1px black border set to 50% opacity.
 :::
 
 ## Rules of Thumb

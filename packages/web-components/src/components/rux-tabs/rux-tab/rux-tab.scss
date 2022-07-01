@@ -49,7 +49,10 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-.rux-tab--small {
+:host([small]) {
+    .rux-tab--selected {
+        border-bottom: solid 3px var(--tab-selected-border-color);
+    }
     min-width: 2rem;
     padding: 1.25rem 1rem; //20 16
     border-bottom: 3px solid var(--tab-border-color);
@@ -58,17 +61,10 @@
 .rux-tab--selected {
     color: var(--tab-selected-text-color);
     border-bottom: 5px solid var(--tab-selected-border-color);
-    &:hover {
-        color: var(--tab-selected-text-color);
-    }
 }
 
 .rux-tab--disabled {
     color: var(--tab-text-color);
     opacity: var(--disabled-opacity);
     cursor: not-allowed;
-}
-
-.rux-tab--small.rux-tab--selected {
-    border-bottom: solid 3px var(--tab-selected-border-color);
 }

@@ -44,8 +44,8 @@ Outline Buttons are an alternative Button style to be used in situations where a
 
 ![Do: Right-align Buttons and give them adequate spacing from fields.](/img/components/button-do-2.png "Do: Right-align Buttons and give them adequate spacing from fields.")
 
-![Don’t: Mix button colors and sizes.](/img/components/button-dont-2.png "Don’t: Mix Button colors and sizes.")
+![Don’t: Mix Button colors and sizes.](/img/components/button-dont-2.png "Don’t: Mix Button colors and sizes.")
 
-![Do: Use standardized button colors only.](/img/components/button-do-3.png "Do: Use standardized Button colors only.")
+![Do: Use standardized Button colors only.](/img/components/button-do-3.png "Do: Use standardized Button colors only.")
 
 :::

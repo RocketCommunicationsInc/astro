@@ -9,6 +9,7 @@ import {
     Listen,
     Event,
     EventEmitter,
+    Watch,
 } from '@stencil/core'
 
 /**
@@ -38,6 +39,20 @@ export class RuxTabs {
     @Listen('ruxregisterpanels', { target: 'window' })
     handleListen(e: CustomEvent) {
         this._registerPanels(e)
+    }
+
+    @Watch('small')
+    handleSmallChange() {
+        //determine whether or not to pass small attr to child tabs
+        if (this.small) {
+            this._tabs.forEach((tab) => tab.setAttribute('small', ''))
+        } else {
+            this._tabs.forEach((tab) => {
+                if (tab.hasAttribute('small')) {
+                    tab.removeAttribute('small')
+                }
+            })
+        }
     }
 
     /**
