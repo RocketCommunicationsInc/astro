@@ -54,21 +54,12 @@ Type: `Promise<true>`
 
 ## Shadow Parts
 
-| Part          | Description                       |
-| ------------- | --------------------------------- |
-| `"container"` | the container for the pop-up-menu |
-
-
-## CSS Custom Properties
-
-| Name                                  | Description                                      |
-| ------------------------------------- | ------------------------------------------------ |
-| `--popup-menu-background-color`       | [DEPRECATED] Pop Up Menu Backround Color         |
-| `--popup-menu-border-color`           | [DEPRECATED] Pop Up Menu Border Color            |
-| `--popup-menu-caret-background-color` | [DEPRECATED] Pop Up Menu Caret Background Color  |
-| `--popup-menu-caret-left`             | [DEPRECATED] Position of Caret                   |
-| `--popup-menu-caret-size`             | [DEPRECATED] Size of Caret                       |
-| `--popup-menu-transition-speed`       | [DEPRECATED] Transition Time of Pop Up Animation |
+| Part                  | Description                                              |
+| --------------------- | -------------------------------------------------------- |
+| `"arrow"`             | the arrow pointing to the trigger of rux-pop-up-menu     |
+| `"container"`         | the container of rux-pop-up-menu                         |
+| `"popup-content"`     | the content that is shown when rux-pop-up-menu is opened |
+| `"trigger-container"` | the container of the pop-up trigger                      |
 
 
 ----------------------------------------------
