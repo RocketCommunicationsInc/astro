@@ -14,6 +14,7 @@ import {
 import { hasSlot } from '../../utils/utils'
 
 /**
+ * @deprecated Use `RuxDialog` instead.
  * @part wrapper - the modal wrapper overlay ! DEPRECATED IN FAVOR OF CONTAINER !
  * @part container - the modal container
  * @part dialog - the native dialog element
@@ -112,6 +113,12 @@ export class RuxModal {
         this.open
             ? this.ruxModalOpened.emit()
             : this.ruxModalClosed.emit(this._userInput)
+    }
+
+    componentWillLoad() {
+        console.warn(
+            'RuxModal is deprecated and will be removed in 7.0. Use RuxDialog instead.'
+        )
     }
 
     private _handleModalChoice(e: MouseEvent) {

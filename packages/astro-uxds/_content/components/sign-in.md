@@ -21,7 +21,7 @@ The Sign In page is often the first interaction a user has with your product. Th
 When implementing validation and security measures Astro users should consult with their organization's IT/Security departments and adapt these patterns to suit the requirements of their organization’s best practices and security needs.
 :::
 
-![Example of a full-page, simple sign in screen](/img/components/signin-simple-full.png "Example of a full-page, simple sign in screen")
+![Example of a full-page, Simple Sign In screen](/img/components/signin-simple-full.png "Example of a full-page, Simple Sign In screen")
 
 The Sign In page is presented to users in the following scenarios:
 
@@ -53,7 +53,7 @@ The Sign In can currently be configured to display _Sign in with Username or Ema
 
 ### Sign in with Username or Email Plus Password
 
-![Example of a sign in screen hosted within a modal dialog](/img/components/signin-dialog-simple.png "Example of a sign in screen hosted within a modal dialog")
+![Example of a Sign In screen hosted within a modal dialog](/img/components/signin-dialog-simple.png "Example of a Sign In screen hosted within a modal dialog")
 
 The Sign In component consists of a field to identify the user, typically a username or email, and a masked field for a unique passcode, as well as a button that submits the content.
 

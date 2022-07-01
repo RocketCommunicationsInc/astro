@@ -37,7 +37,7 @@ Wireframes should:
 - Specify the placement of functionality (which should reinforce the priorities of the user).
 - Indicate the flow of the functionality.
 
-Validate the Wireframes with the users. It’s important that you elicit feedback from users on the wireframes prior to prototyping. Make sure the:
+Validate the wireframes with the users. It’s important that you elicit feedback from users on the wireframes prior to prototyping. Make sure the:
 
 - App supports the users workflow and tasks.
 - Wireframes communicate the functionality.

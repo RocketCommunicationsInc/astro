@@ -108,9 +108,10 @@ The Astro UXDS Notification Banner hides from view using absolute positioning in
 
 ## CSS Custom Properties
 
-| Name       | Description               |
-| ---------- | ------------------------- |
-| `--height` | the Notification's height |
+| Name                        | Description                              |
+| --------------------------- | ---------------------------------------- |
+| `--notification-icon-color` | The 'clear' icon's color                 |
+| `--notification-text-color` | [DEPRECATED] The notification text color |
 
 
 ## Dependencies

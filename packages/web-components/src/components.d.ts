@@ -209,6 +209,28 @@ export namespace Components {
          */
         "year"?: 'numeric' | '2-digit';
     }
+    interface RuxDialog {
+        /**
+          * Text for confirmation button
+         */
+        "confirmText": string;
+        /**
+          * Text for close button
+         */
+        "denyText": string;
+        /**
+          * Dialog body message
+         */
+        "modalMessage"?: string;
+        /**
+          * Dialog header title
+         */
+        "modalTitle"?: string;
+        /**
+          * Shows and hides dialog
+         */
+        "open": boolean;
+    }
     interface RuxGlobalStatusBar {
         /**
           * Sets the domain of the application to be displayed in the app-meta element
@@ -12603,6 +12625,12 @@ declare global {
         prototype: HTMLRuxDatetimeElement;
         new (): HTMLRuxDatetimeElement;
     };
+    interface HTMLRuxDialogElement extends Components.RuxDialog, HTMLStencilElement {
+    }
+    var HTMLRuxDialogElement: {
+        prototype: HTMLRuxDialogElement;
+        new (): HTMLRuxDialogElement;
+    };
     interface HTMLRuxGlobalStatusBarElement extends Components.RuxGlobalStatusBar, HTMLStencilElement {
     }
     var HTMLRuxGlobalStatusBarElement: {
@@ -19201,6 +19229,7 @@ declare global {
         "rux-clock": HTMLRuxClockElement;
         "rux-container": HTMLRuxContainerElement;
         "rux-datetime": HTMLRuxDatetimeElement;
+        "rux-dialog": HTMLRuxDialogElement;
         "rux-global-status-bar": HTMLRuxGlobalStatusBarElement;
         "rux-icon": HTMLRuxIconElement;
         "rux-icon-360": HTMLRuxIcon360Element;
@@ -20511,6 +20540,36 @@ declare namespace LocalJSX {
           * Format options for year
          */
         "year"?: 'numeric' | '2-digit';
+    }
+    interface RuxDialog {
+        /**
+          * Text for confirmation button
+         */
+        "confirmText"?: string;
+        /**
+          * Text for close button
+         */
+        "denyText"?: string;
+        /**
+          * Dialog body message
+         */
+        "modalMessage"?: string;
+        /**
+          * Dialog header title
+         */
+        "modalTitle"?: string;
+        /**
+          * Event that is fired when dialog closes
+         */
+        "onRuxdialogclosed"?: (event: CustomEvent<boolean | null>) => void;
+        /**
+          * Event that is fired when dialog opens
+         */
+        "onRuxdialogopened"?: (event: CustomEvent<void>) => void;
+        /**
+          * Shows and hides dialog
+         */
+        "open"?: boolean;
     }
     interface RuxGlobalStatusBar {
         /**
@@ -32952,6 +33011,7 @@ declare namespace LocalJSX {
         "rux-clock": RuxClock;
         "rux-container": RuxContainer;
         "rux-datetime": RuxDatetime;
+        "rux-dialog": RuxDialog;
         "rux-global-status-bar": RuxGlobalStatusBar;
         "rux-icon": RuxIcon;
         "rux-icon-360": RuxIcon360;
@@ -34065,6 +34125,7 @@ declare module "@stencil/core" {
             "rux-clock": LocalJSX.RuxClock & JSXBase.HTMLAttributes<HTMLRuxClockElement>;
             "rux-container": LocalJSX.RuxContainer & JSXBase.HTMLAttributes<HTMLRuxContainerElement>;
             "rux-datetime": LocalJSX.RuxDatetime & JSXBase.HTMLAttributes<HTMLRuxDatetimeElement>;
+            "rux-dialog": LocalJSX.RuxDialog & JSXBase.HTMLAttributes<HTMLRuxDialogElement>;
             "rux-global-status-bar": LocalJSX.RuxGlobalStatusBar & JSXBase.HTMLAttributes<HTMLRuxGlobalStatusBarElement>;
             "rux-icon": LocalJSX.RuxIcon & JSXBase.HTMLAttributes<HTMLRuxIconElement>;
             "rux-icon-360": LocalJSX.RuxIcon360 & JSXBase.HTMLAttributes<HTMLRuxIcon360Element>;
