@@ -40,6 +40,8 @@ jobs:
           key: node-modules-${{ hashFiles('package-lock.json') }}
       - run: npm run react.install
         if: steps.cache-react-node-modules.outputs.cache-hit != 'true'
+      - run: lerna link
+        if: steps.cache-react-node-modules.outputs.cache-hit != 'true'
       - run: npm run build.react
         if: steps.cache-react-node-modules.outputs.cache-hit != 'true'
   unit-tests:
@@ -77,6 +79,5 @@ jobs:
         with:
           path: ./packages/react/node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
-      - run: lerna link
       - name: Test
         run: npm run test.react
