@@ -19,7 +19,7 @@
     "test": "lerna run --ignore @astrouxds/angular test",
     "release": "node ./.scripts/release.js && changeset publish",
     "test.web-comps.unit": "lerna run --scope '@astrouxds/astro-web-components' test.unit",
-    "test.web-comps.e2e": "lerna run --scope '@astrouxds/astro-web-components' test.e2e.ga",
+    "test.web-comps.e2e": "cd ./packages/web-components && npm run test.e2e.ga",
     "web-comps.install": "cd ./packages/web-components && npm ci",
     "react.install": "cd ./packages/react && npm ci",
     "test.react": "lerna run --scope '@astrouxds/react' test"
