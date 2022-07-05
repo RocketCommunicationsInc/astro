@@ -22,6 +22,7 @@ jobs:
           path: ./packages/web-components/node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
       - run: npm run web-comps.install
+      - run: npm run build.web-comps
   unit-tests:
     needs: setup
     runs-on: ubuntu-latest
@@ -32,9 +33,6 @@ jobs:
         with:
           path: ./packages/web-components/node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
-      - name: Build
-        run: npm run build.web-comps
-
       - name: Test
         run: npm run test.web-comps.unit
   e2e-tests:
@@ -43,9 +41,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Build
-        run: npm run build.web-comps
+      - uses: actions/cache@v2
+        with:
+          path: ./packages/web-components/node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
 
       - name: Test
         run: npm run test.web-comps.e2e
@@ -55,6 +54,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: ./packages/web-components/node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
 
       - name: Install Modules
         run: npm run react.install
@@ -63,7 +66,7 @@ jobs:
         run: lerna link
 
       - name: Build
-        run: npm run build.tests
+        run: cd ./packages/react && npm run build
 
       - name: Test
         run: npm run test.react
