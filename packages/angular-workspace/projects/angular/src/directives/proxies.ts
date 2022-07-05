@@ -208,6 +208,38 @@ export class RuxDatetime {
 }
 
 
+export declare interface RuxDialog extends Components.RuxDialog {
+  /**
+   * Event that is fired when dialog opens 
+   */
+  ruxdialogopened: EventEmitter<CustomEvent<void>>;
+  /**
+   * Event that is fired when dialog closes 
+   */
+  ruxdialogclosed: EventEmitter<CustomEvent<boolean | null>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['confirmText', 'denyText', 'modalMessage', 'modalTitle', 'open']
+})
+@Component({
+  selector: 'rux-dialog',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['confirmText', 'denyText', 'modalMessage', 'modalTitle', 'open']
+})
+export class RuxDialog {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['ruxdialogopened', 'ruxdialogclosed']);
+  }
+}
+
+
 export declare interface RuxGlobalStatusBar extends Components.RuxGlobalStatusBar {}
 
 @ProxyCmp({

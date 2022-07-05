@@ -1,15 +1,8 @@
 :host {
-    --notification-banner-color-border: var(--color-border-interactive-default);
-    --notification-banner-color-background: var(
-        --color-background-base-default
-    );
-    --notification-banner-border-width-left: 12px;
-    --notification-banner-radius-outer: var(--radius-base);
-    --notification-banner-radius-inner: 3px;
-    --notification-banner-border-width-large: 4px;
-    --notification-banner-padding: 0 0.5rem 0 1rem; //0 8px 0 16px
-    --notification-banner-border-width-small: 2px;
-    --notification-banner-inner-border-width: 1px;
+    /**
+  * @prop --notification-text-color: [DEPRECATED] The notification text color
+  */
+    --notification-text-color: var(--color-palette-neutral-1000);
 
     /**
         * @prop --height: the Notification's height

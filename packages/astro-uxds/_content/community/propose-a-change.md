@@ -33,7 +33,7 @@ Use Github’s integrated editor to make the changes you plan on submitting.
 
 When you have completed your changes scroll the browser window down to the **Propose file change** interface at the bottom of the page.
 
-Create a brief desscription of the change you are proposing in the first field. This is required. Keep this description informative but succinct. If your change requires more than a brief length of text use the larger text field to elaborate on your change.
+Create a brief description of the change you are proposing in the first field. This is required. Keep this description informative but succinct. If your change requires more than a brief length of text use the larger text field to elaborate on your change.
 
 Click the **Propose file change** button
 

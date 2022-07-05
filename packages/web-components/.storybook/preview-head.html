@@ -60,11 +60,13 @@
         color: var(--color-text-primary);
     }
 
+    .sbdocs #story--components-dialog--dialog,
     .sbdocs #story--components-modal--modal {
         display: block;
         min-height: 500px;
     }
 
+    .sbdocs #story--components-dialog--dialog rux-dialog::part(container),
     .sbdocs #story--components-modal--modal rux-modal::part(wrapper) {
         position: absolute;
         top: 0px;
@@ -73,11 +75,13 @@
         height: 100%;
     }
 
+    .sbdocs #story--components-dialog--with-slots,
     .sbdocs #story--components-modal--with-slots {
         display: block;
         min-height: 500px;
     }
 
+    .sbdocs #story--components-dialog--with-slots rux-dialog::part(container),
     .sbdocs #story--components-modal--with-slots rux-modal::part(wrapper) {
         position: absolute;
         top: 0px;
