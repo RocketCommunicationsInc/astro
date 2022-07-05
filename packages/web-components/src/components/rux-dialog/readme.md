@@ -4,7 +4,7 @@ A Rux dialog interrupts the app experience to prompt a user to confirm an action
 
 ## Guidelines
 
--   [Astro UXDS: Rux Dialog](https://astrouxds.com/ui-components/dialog-box)
+-   [Astro UXDS: Dialog](https://astrouxds.com/ui-components/dialog)
 
 ## Web Components Usage
 

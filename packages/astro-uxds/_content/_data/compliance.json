@@ -267,13 +267,13 @@
           ]
         },
         {
-          "name": "Dialog Box",
+          "name": "Dialog",
           "numeral": 3,
-          "link": "/components/dialog-box/",
+          "link": "/components/dialog/",
           "rules": [
             {
               "numeral": 1,
-              "rule": "Dialog Boxes shall use text Buttons for confirm or cancel actions, not links or other components.",
+              "rule": "Dialogs shall use text Buttons for confirm or cancel actions, not links or other components.",
               "status": "current"
             },
             {
@@ -283,7 +283,7 @@
             },
             {
               "numeral": 3,
-              "rule": "Dialog Boxes shall be closed only with confirm or cancel Buttons.",
+              "rule": "Dialogs shall be closed only with confirm or cancel Buttons.",
               "status": "new"
             },
             {
@@ -293,7 +293,7 @@
             },
             {
               "numeral": 5,
-              "rule": "Dialog Box text shall be clear, brief, and actionable.",
+              "rule": "Dialog text shall be clear, brief, and actionable.",
               "status": "new"
             },
             {
