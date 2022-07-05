@@ -22,7 +22,9 @@ jobs:
           path: ./packages/web-components/node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
       - run: npm run web-comps.install
-      - run: npm run build.web-comps
+      - run: npm run react.install
+      - run: lerna link
+      - run: npm run build.tests
   unit-tests:
     needs: setup
     runs-on: ubuntu-latest
@@ -58,15 +60,5 @@ jobs:
         with:
           path: ./packages/web-components/node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
-
-      - name: Install Modules
-        run: npm run react.install
-
-      - name: Symlink
-        run: lerna link
-
-      - name: Build
-        run: cd ./packages/react && npm run build
-
       - name: Test
         run: npm run test.react
