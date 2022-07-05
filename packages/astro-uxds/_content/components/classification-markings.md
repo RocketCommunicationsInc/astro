@@ -12,7 +12,7 @@ height: 450px
 theme: false
 ---
 
-Classification and control markings are required for digital products created for government clients who interact with classified or controlled information. In your digital product, such as a desktop or web application, there should be an [Overall Marking](#overall-marking), [Portion Markings](#portion-marking) if possible, and an [Authority Block](#authority-block). Each of these features will be described in more detail below.
+Classification and Control Markings are required for digital products created for government clients who interact with classified or controlled information. In your digital product, such as a desktop or web application, there should be an [Overall Marking](#overall-marking), [Portion Markings](#portion-marking) if possible, and an [Authority Block](#authority-block). Each of these features will be described in more detail below.
 
 ::: note
 All Classification and Control Markings on this page are for illustration purposes only.
