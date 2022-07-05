@@ -4303,10 +4303,6 @@ export const RuxMenuItemDivider = /*@__PURE__*/ createReactComponent<
   JSX.RuxMenuItemDivider,
   HTMLRuxMenuItemDividerElement
 >("rux-menu-item-divider");
-export const RuxModal = /*@__PURE__*/ createReactComponent<
-  JSX.RuxModal,
-  HTMLRuxModalElement
->("rux-modal");
 export const RuxMonitoringIcon = /*@__PURE__*/ createReactComponent<
   JSX.RuxMonitoringIcon,
   HTMLRuxMonitoringIconElement
