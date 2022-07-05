@@ -7,7 +7,8 @@
     top: 0;
     left: 0;
     height: 100px;
-    width: 100%;
+    width: -webkit-fill-available;
+    width: -moz-available;
     padding: 0 1.875rem;
     box-sizing: border-box;
     background-color: var(--gsb-color-background);
