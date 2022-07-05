@@ -103,16 +103,21 @@ aside footer {
 .compliance .section,
 .compliance .ruleset {
   line-height: 1;
-  margin-bottom: 1rem;
   display: flex;
+  margin: 2.5rem 0 1rem 0;
+  font-size: 1.5rem;
 }
 
 .compliance section {
   font-size: 1.5rem;
 }
 
-.compliance .ruleset {
+.compliance .rulesets .ruleset {
   font-size: 1.125rem;
+}
+
+.compliance .rulesets .ruleset:first-child {
+  margin-top: 1.25rem;
 }
 
 .compliance .rules {
@@ -127,7 +132,7 @@ aside footer {
 .compliance .rule .numeral {
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .compliance .rule-text[data-status="under-review"] .rule-status {
@@ -149,7 +154,7 @@ aside footer {
 .compliance .rule-status {
   font-style: normal;
   font-weight: 700;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   display: flex;
   align-items: center;
   text-align: center;
@@ -167,12 +172,13 @@ aside footer {
   white-space: nowrap;
   height: 100%;
   border-radius: 3px;
-  padding: 0.125rem 0.59375rem;
+  padding: 0.125rem 0.75rem;
   font-style: normal;
   font-weight: 700;
-  font-size: 0.875rem; //14px
+  font-size: 0.75em; //12px
   text-align: center;
   letter-spacing: 0.005em;
+  line-height: 16px;
   color: #ffffff;
   margin-right: 1rem;
 }
