@@ -49,26 +49,22 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-.rux-tab--small {
+:host([small]) {
+    .rux-tab--selected {
+        border-bottom: solid 3px var(--tab-selected-border-color);
+    }
     min-width: 2rem;
     padding: 1.25rem 1rem; //20 16
     border-bottom: 3px solid transparent;
 }
 
 .rux-tab--selected {
-    color: var(--color-text-primary);
-    border-bottom: 5px solid var(--color-background-interactive-default);
-    &:hover {
-        color: var(--color-text-primary);
-    }
+    color: var(--tab-selected-text-color);
+    border-bottom: 5px solid var(--tab-selected-border-color);
 }
 
 .rux-tab--disabled {
     color: var(--color-background-interactive-default);
     opacity: var(--disabled-opacity);
     cursor: not-allowed;
-}
-
-.rux-tab--small.rux-tab--selected {
-    border-bottom: solid 3px var(--color-background-interactive-default);
 }

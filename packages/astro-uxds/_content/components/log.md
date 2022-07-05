@@ -23,7 +23,7 @@ A Log is a tabular representation of application events and may include username
 
 ### Basic Log
 
-![The log includes a Table of timestamped events and a Search field to narrow the displayed events](/img/components/log-basic.png "The log includes a Table of timestamped events and a Search field to narrow the displayed events")
+![The Log includes a Table of timestamped events and a Search field to narrow the displayed events](/img/components/log-basic.png "The Log includes a Table of timestamped events and a Search field to narrow the displayed events")
 
 ### Scroll Interaction
 
