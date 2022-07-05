@@ -10,14 +10,24 @@ on:
 env:
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - uses: actions/cache@v2
+        with:
+          path: packages/web-components/node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
+      - run: npm run web-comps.install
   unit-tests:
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Install Modules
-        run: npm run web-comps.install
 
       - name: Build
         run: npm run build.web-comps
@@ -25,13 +35,11 @@ jobs:
       - name: Test
         run: npm run test.web-comps.unit
   e2e-tests:
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Install Modules
-        run: npm run web-comps.install
 
       - name: Build
         run: npm run build.web-comps
@@ -39,13 +47,14 @@ jobs:
       - name: Test
         run: npm run test.web-comps.e2e
   react:
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
       - name: Install Modules
-        run: npm run web-comps.install && npm run react.install
+        run: npm run react.install
 
       - name: Symlink
         run: lerna link
