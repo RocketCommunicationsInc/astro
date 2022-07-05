@@ -50,4 +50,7 @@ jobs:
           key: node-modules-${{ hashFiles('package-lock.json') }}
 
       - name: Test
-        run: npm run test.web-comps.e2e
+        uses: cypress-io/github-action@v2
+        with:
+          build: npm run build.stencil
+          start: npm run start.stencil
