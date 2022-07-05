@@ -63,7 +63,7 @@ jobs:
       - name: Test
         run: npm run test.web-comps.e2e
   react:
-    needs: [setup, react-setup]
+    needs: [setup, setup-react]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
