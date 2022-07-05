@@ -52,5 +52,5 @@ jobs:
       - name: Test
         uses: cypress-io/github-action@v2
         with:
-          build: npm run build.stencil
-          start: npm run start.stencil
+          build: npm run build.web-comps
+          start: cd ./packages/web-components && npm run start.stencil
