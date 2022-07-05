@@ -50,5 +50,5 @@ jobs:
           key: node-modules-${{ hashFiles('package-lock.json') }}
 
       - name: Test
-        run: cd ./packages/web-components && npm run start.stencil
-        run: cd ./packages/web-components && npm run test.e2e
+      - run: cd ./packages/web-components && npm run start.stencil
+      - run: cd ./packages/web-components && npm run test.e2e
