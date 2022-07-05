@@ -51,6 +51,8 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 <!-- Auto Generated Below -->
 
 
+> **[DEPRECATED]** Use `RuxDialog` instead.
+
 ## Properties
 
 | Property       | Attribute       | Description                  | Type                  | Default     |
