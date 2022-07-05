@@ -148,8 +148,8 @@
         "url": "/components/clock"
       },
       {
-        "label": "Dialog Box",
-        "url": "/components/dialog-box"
+        "label": "Dialog",
+        "url": "/components/dialog"
       },
       {
         "label": "Global Status Bar",

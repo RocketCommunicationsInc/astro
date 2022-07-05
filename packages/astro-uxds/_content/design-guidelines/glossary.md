@@ -23,7 +23,7 @@ title: Glossary
 - [Checkbox](/components/checkbox) - A Checkbox allows a user to select a value from a small set of options.
 - [Classification & Control Markings](/components/classification-markings) - Markings required to be present on software that includes controlled or classified information.
 - [Clock](/components/clock) - Clock shows the current date and time, and optional AOS and LOS timers.
-- Close Button - A UI component that, when activated, dismisses a [Dialog Box](/components/dialog-box).
+- Close Button - A UI component that, when activated, dismisses a [Dialog](/components/dialog).
 - [Color Palettes](/design-guidelines/color) - The list of color values used in and approved by the Astro design system.
 - [Compliance](/design-guidelines/compliance) - A list of rules used to determine if products align with Astro design and usage patterns.
 - Container - An object that holds other objects.
@@ -33,7 +33,7 @@ title: Glossary
 
 - [Data Visualization](/patterns/data-visualization) - The goal of Data Visualization is to make complex information accessible and easy to digest in a visual manner.
 - Default Action - The action that users would most likely want to execute in the window with focus.
-- [Dialog Box](/components/dialog-box) - A Dialog Box interrupts app processing to prompt a user to confirm an action or acknowledge a piece of information. It displays information along with a set of buttons allowing users to accept or cancel the actions presented within the Dialog Box.
+- [Dialog](/components/dialog) - A Dialog interrupts app processing to prompt a user to confirm an action or acknowledge a piece of information. It displays information along with a set of buttons allowing users to accept or cancel the actions presented within the Dialog.
 
 ### G
 

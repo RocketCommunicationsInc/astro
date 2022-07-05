@@ -8,7 +8,7 @@ title: Forms and Validation
 
 ## Forms
 
-Forms are used to collect, validate, and submit user input. They usually contains form elements including [Checkbox](/components/checkbox), [Dialog Box](/components/dialog-box), [Select Menu](/components/select), [Input Field](/components/input-field), [Radio Button](/components/radio-button) and [Switch](/components/switch).
+Forms are used to collect, validate, and submit user input. They usually contains form elements including [Checkbox](/components/checkbox), [Dialog](/components/dialog), [Select Menu](/components/select), [Input Field](/components/input-field), [Radio Button](/components/radio-button) and [Switch](/components/switch).
 
 ### Form Layout
 
@@ -79,9 +79,9 @@ Like labels, in general, Help Text should only have one line of text below a fie
 
 Validation ensures that data is properly entered into a form or form element. This includes both validation of input within required form elements and invalid data such as going over a character limit. Form validation should provide information about what and where the error is as well as how to make the necessary corrections, if possible. Validation can take place inline after a specific form element loses focus or after submission of a full form. Both can take place in the same form.
 
-[Input Fields](/components/input-field), [Checkboxes](/components/checkbox), and [Select Menus](/components/select) can be configured to require user input and to enforce specific data formats. Once configured, these elements can provide validation as users move through a group of controls, such as a form, within a [Dialog Box](/components/dialog-box) or [Pane](/patterns/modeless-panes). Validation is then employed a second time when a form submission [Button](/components/button) is pressed.
+[Input Fields](/components/input-field), [Checkboxes](/components/checkbox), and [Select Menus](/components/select) can be configured to require user input and to enforce specific data formats. Once configured, these elements can provide validation as users move through a group of controls, such as a form, within a [Dialog](/components/dialog) or [Pane](/patterns/modeless-panes). Validation is then employed a second time when a form submission [Button](/components/button) is pressed.
 
-Individual elements outside of a Dialog Box or Pane can also be configured for validation.
+Individual elements outside of a Dialog or Pane can also be configured for validation.
 
 ### Rules of Thumb
 
