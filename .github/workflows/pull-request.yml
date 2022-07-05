@@ -23,20 +23,6 @@ jobs:
           key: node-modules-${{ hashFiles('package-lock.json') }}
       - run: npm run web-comps.install
       - run: npm run build.web-comps
-  setup-react:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 16
-      - uses: actions/cache@v2
-        with:
-          path: ./packages/react/node_modules
-          key: node-modules-${{ hashFiles('package-lock.json') }}
-      - run: npm run react.install
-      - run: lerna link
-      - run: npm run build.react
   unit-tests:
     needs: setup
     runs-on: ubuntu-latest
@@ -72,5 +58,8 @@ jobs:
         with:
           path: ./packages/react/node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
+      - run: npm run react.install
+      - run: lerna link
+      - run: npm run build.react
       - name: Test
         run: npm run test.react
