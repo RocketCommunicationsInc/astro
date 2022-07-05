@@ -19,7 +19,7 @@ jobs:
           node-version: 16
       - uses: actions/cache@v2
         with:
-          path: packages/web-components/node_modules
+          path: ./packages/web-components/node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
       - run: npm run web-comps.install
   unit-tests:
@@ -28,7 +28,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
+      - uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
       - name: Build
         run: npm run build.web-comps
 
