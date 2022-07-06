@@ -136,6 +136,10 @@
         "url": "/components/button"
       },
       {
+        "label": "Card",
+        "url": "/components/card"
+      },
+      {
         "label": "Checkbox",
         "url": "/components/checkbox"
       },
