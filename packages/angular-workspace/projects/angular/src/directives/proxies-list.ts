@@ -1,17 +1,4 @@
 //@ts-nocheck
-//@ts-nocheck
-//@ts-nocheck
-//@ts-nocheck
-//@ts-nocheck
-//@ts-nocheck
-//@ts-nocheck
-//@ts-nocheck
-//@ts-nocheck
-//@ts-nocheck
-//@ts-nocheck
-//@ts-nocheck
-//@ts-nocheck
-
 import * as d from './proxies';
 
 export const DIRECTIVES = [
@@ -1088,7 +1075,6 @@ export const DIRECTIVES = [
   d.RuxMenu,
   d.RuxMenuItem,
   d.RuxMenuItemDivider,
-  d.RuxModal,
   d.RuxMonitoringIcon,
   d.RuxMonitoringProgressIcon,
   d.RuxNotification,

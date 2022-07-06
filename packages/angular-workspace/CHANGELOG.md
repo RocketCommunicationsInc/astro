@@ -1,5 +1,28 @@
 # @astrouxds/angular
 
+## 7.0.0-beta.3
+
+### Major Changes
+
+- a7296b6b: Our /dist/custom-elements build has been removed in favor of a faster treeshakeable /dist/components build. We anticipate very few people are using this build. To check if your project is affected, you can do a global find for 'astro-web-components/dist/custom-elements' in your project. If you are using this build, switch to 'astro-web-components/dist/loader' instead.
+- 27b72893: Modal has been removed. It has been renamed to Dialog to align with our Design System naming and shares the exact same API as Modal.
+
+  Migration: You can do a global find/replace on your project for:
+
+  `rux-modal` -> `rux-dialog`
+  `ruxmodalclosed` -> `ruxdialogclosed`
+  `ruxmodalopened` -> `ruxdialogopened`
+
+### Patch Changes
+
+- Updated dependencies [a7296b6b]
+- Updated dependencies [f9b842f7]
+- Updated dependencies [3c0cd2b8]
+- Updated dependencies [f9b842f7]
+- Updated dependencies [f9b842f7]
+- Updated dependencies [27b72893]
+  - @astrouxds/astro-web-components@7.0.0-beta.3
+
 ## 7.0.0-beta.2
 
 ### Major Changes
