@@ -1,5 +1,33 @@
 # @astrouxds/astrouxds
 
+## 7.0.0-beta.3
+
+### Major Changes
+
+- a7296b6b: Our /dist/custom-elements build has been removed in favor of a faster treeshakeable /dist/components build. We anticipate very few people are using this build. To check if your project is affected, you can do a global find for 'astro-web-components/dist/custom-elements' in your project. If you are using this build, switch to 'astro-web-components/dist/loader' instead.
+- 27b72893: Modal has been removed. It has been renamed to Dialog to align with our Design System naming and shares the exact same API as Modal.
+
+  Migration: You can do a global find/replace on your project for:
+
+  `rux-modal` -> `rux-dialog`
+  `ruxmodalclosed` -> `ruxdialogclosed`
+  `ruxmodalopened` -> `ruxdialogopened`
+
+### Minor Changes
+
+- f9b842f7: Modal is now deprecated and will be removed in 7.0. It is being renamed to Dialog to align with our Design System naming and which shares the exact same API as Modal. It is recommended that you migrate to Dialog before 7.0. You can do a global find/replace on your project for:
+
+  `rux-modal` -> `rux-dialog`
+  `ruxmodalclosed` -> `ruxdialogclosed`
+  `ruxmodalopened` -> `ruxdialogopened`
+
+- 3c0cd2b8: Updates help text to use text-secondary to align with design
+
+### Patch Changes
+
+- f9b842f7: Fixed an issue with modal emitting an extra 'ruxmodalclosed' event when closed by an off click.
+- f9b842f7: Fixed an issue where rux-tab border would not style correctly when rux-tabs was set to small.
+
 ## 7.0.0-beta.2
 
 ### Major Changes
