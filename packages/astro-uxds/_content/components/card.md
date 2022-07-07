@@ -15,11 +15,11 @@ theme: true
 
 A “card” is a UI design pattern that groups related information in a flexible-size container visually resembling a playing card. Within the Astro system, card sits on top of a container.
 
-A card is container for a few short, related pieces of information. It roughly resembles a playing card in size and shape, and is intended as a linked, short representation of a conceptual unit.
+A card is a container for a few short, related pieces of information. It roughly resembles a playing card in size and shape, and is intended as a linked, short representation of a conceptual unit.
 
 ## Rules of Thumb
 
-Limit actions on a card. Actions should be simple, direct, and predictable. Actions should clearly indicate will happen when selected
+Limit actions on a card. Actions should be simple, direct, and predictable. Actions should clearly indicate what will happen when selected.
 
 Display content with a logical hierarchy, setting clear prioritization of content.
 
