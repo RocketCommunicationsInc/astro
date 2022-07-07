@@ -64,8 +64,8 @@ Or use slots to render the header, content and footer.
 | -------------- | --------------- | ---------------------------- | --------------------- | ----------- |
 | `confirmText`  | `confirm-text`  | Text for confirmation button | `string`              | `'Confirm'` |
 | `denyText`     | `deny-text`     | Text for close button        | `string`              | `'Cancel'`  |
-| `dialogMessage` | `dialog-message` | Dialog body message          | `string \| undefined` | `undefined` |
-| `dialogTitle`   | `dialog-title`   | Dialog header title          | `string \| undefined` | `undefined` |
+| `modalMessage` | `modal-message` | Dialog body message          | `string \| undefined` | `undefined` |
+| `modalTitle`   | `modal-title`   | Dialog header title          | `string \| undefined` | `undefined` |
 | `open`         | `open`          | Shows and hides dialog       | `boolean`             | `false`     |
 
 
