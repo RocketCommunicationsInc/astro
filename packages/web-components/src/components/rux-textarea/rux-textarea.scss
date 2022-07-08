@@ -55,7 +55,7 @@
     }
     &--disabled {
         opacity: 0.4;
-        opacity: var(--disabled-opacity);
+        opacity: var(--opacity-disabled, 40%);
         cursor: not-allowed;
     }
     &--small {

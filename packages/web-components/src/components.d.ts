@@ -33,7 +33,7 @@ export namespace Components {
          */
         "secondary": boolean;
         /**
-          * Changes size of a button from medium to small or large by setting sizing classes rux-button--small rux-button--large
+          * Changes size of a button from medium to small or large by setting sizing classes
          */
         "size"?: 'small' | 'medium' | 'large';
         /**
@@ -20324,7 +20324,7 @@ declare namespace LocalJSX {
          */
         "secondary"?: boolean;
         /**
-          * Changes size of a button from medium to small or large by setting sizing classes rux-button--small rux-button--large
+          * Changes size of a button from medium to small or large by setting sizing classes
          */
         "size"?: 'small' | 'medium' | 'large';
         /**
