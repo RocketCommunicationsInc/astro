@@ -148,6 +148,10 @@
         "url": "/components/clock"
       },
       {
+        "label": "Container",
+        "url": "/components/container"
+      },
+      {
         "label": "Dialog",
         "url": "/components/dialog"
       },
