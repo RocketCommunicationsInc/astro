@@ -236,6 +236,10 @@
         "url": "/components/tabs"
       },
       {
+        "label": "Textarea",
+        "url": "/components/textarea"
+      },
+      {
         "label": "Timeline",
         "url": "/components/timeline"
       },
