@@ -107,25 +107,25 @@ new Vue({
 
 #### Angular
 
-1. Include `CUSTOM_ELEMENTS_SCHEMA` in any module that uses an Astro component.
+1. Include the `AstroComponentsModule` in any module that uses an Astro component.
 
 ```js
 import { BrowserModule } from '@angular/platform-browser'
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core'
+import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
+import { AstroComponentsModule } from '@astrouxds/angular'
 
 import { AppComponent } from './app.component'
 
 @NgModule({
     declarations: [AppComponent],
-    imports: [BrowserModule, FormsModule],
+    imports: [BrowserModule, FormsModule, AstroComponentsModule],
     bootstrap: [AppComponent],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}
 ```
 
-2. Define your Custom Elements in main.ts
+Or, Define your Custom Elements in main.ts
 
 ```js
 import { enableProdMode } from '@angular/core'

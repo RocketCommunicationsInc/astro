@@ -58,6 +58,7 @@ Define AOS and LOS with valid [Unix Time Stamp](http://pubs.opengroup.org/online
 | Property       | Attribute       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Type                  | Default     |
 | -------------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | ----------- |
 | `aos`          | `aos`           | When supplied with a valid [date string or value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#syntax) displays a timestamp labeled "AOS" next to the standard clock.                                                                                                                                                                                                                                                                                                                               | `string \| undefined` | `undefined` |
+| `dateIn`       | `date-in`       | When supplied with a valid [date string or value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#syntax), sets the time and date of the clock.                                                                                                                                                                                                                                                                                                                                                        | `string \| undefined` | `undefined` |
 | `hideDate`     | `hide-date`     | Hides the day of the year.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | `boolean`             | `false`     |
 | `hideLabels`   | `hide-labels`   | Hides all of the labels.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | `boolean`             | `false`     |
 | `hideTimezone` | `hide-timezone` | Hides the timezone in the main 24-hour clock. Timezone does not display on AOS/LOS.                                                                                                                                                                                                                                                                                                                                                                                                                                                          | `boolean`             | `false`     |
@@ -72,22 +73,23 @@ Define AOS and LOS with valid [Unix Time Stamp](http://pubs.opengroup.org/online
 | -------------- | ------------------------------------------- |
 | `"aos"`        | the container for the aos section of clock  |
 | `"aos-label"`  | the container for the aos label             |
+| `"container"`  | the container for the clock                 |
 | `"date"`       | the container for the date section of clock |
 | `"date-label"` | the container for the date label            |
 | `"los"`        | the container for the los section of clock  |
 | `"los-label"`  | the container for the los label             |
-| `"time"`       | the conatiner for the time section of clock |
+| `"time"`       | the container for the time section of clock |
 | `"time-label"` | the container for the time label            |
 
 
 ## CSS Custom Properties
 
-| Name                       | Description                        |
-| -------------------------- | ---------------------------------- |
-| `--clock-background-color` | the background color for the clock |
-| `--clock-border-color`     | the border color for the clock     |
-| `--clock-label-color`      | the label color for the clock      |
-| `--clock-text-color`       | the color of the clock text        |
+| Name                       | Description                                     |
+| -------------------------- | ----------------------------------------------- |
+| `--clock-background-color` | [DEPRECATED] the background color for the clock |
+| `--clock-border-color`     | [DEPRECATED] the border color for the clock     |
+| `--clock-label-color`      | [DEPRECATED] the label color for the clock      |
+| `--clock-text-color`       | [DEPRECATED] the color of the clock text        |
 
 
 ----------------------------------------------

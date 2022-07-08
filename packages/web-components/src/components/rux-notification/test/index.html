@@ -162,8 +162,16 @@
 
         <section>
             <h2>With Actions Slot</h2>
-            <div style="position: relative; overflow: hidden; height: 70px">
-                <rux-notification open status="critical" message="whatup">
+            <div
+                style="
+                    position: relative;
+                    overflow: hidden;
+                    width: 800px;
+                    height: 70px;
+                "
+            >
+                <rux-notification open status="critical">
+                    Notification banner
                     <rux-button slot="actions">Close</rux-button>
                 </rux-notification>
             </div>

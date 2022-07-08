@@ -148,8 +148,12 @@
         "url": "/components/clock"
       },
       {
-        "label": "Dialog Box",
-        "url": "/components/dialog-box"
+        "label": "Container",
+        "url": "/components/container"
+      },
+      {
+        "label": "Dialog",
+        "url": "/components/dialog"
       },
       {
         "label": "Global Status Bar",
@@ -294,6 +298,28 @@
     "label": "FD Service UX Design",
     "url": "/fd-service-ux-design/about-the-fd-designs",
     "class": "section-end"
+  },
+  {
+    "label": "Design Tokens",
+    "url": "/design-tokens",
+    "items": [
+      {
+        "label": "Getting Started",
+        "url": "/design-tokens/getting-started"
+      },
+      {
+        "label": "Reference",
+        "url": "/design-tokens/reference"
+      },
+      {
+        "label": "System",
+        "url": "/design-tokens/system"
+      },
+      {
+        "label": "Component",
+        "url": "/design-tokens/component"
+      }
+    ]
   },
   {
     "label": "Community",

@@ -27,7 +27,7 @@ const runReactBooleanFix = async (outputTarget: ReactOutputTarget) => {
     })
     needToReplace = needToReplace.replace(
         /if \(propType === 'string'\) \{\n          node.setAttribute\(camelToDashCase\(name\), newProps\[name\]\);\n        \}/gm,
-        'if (propType === "boolean") {\n\tif (newProps[name] === true) {\n\t\t\t\tnode.setAttribute(camelToDashCase(name), camelToDashCase(name));\n} else {\n\tnode.removeAttribute(camelToDashCase(name));\n\t}\n} else if (propType === "string") {\n\tnode.setAttribute(camelToDashCase(name), newProps[name]);\n}'
+        '//boolean props fix \n if (propType === "boolean") {\n\tif (newProps[name] === true) {\n\t\t\t\tnode.setAttribute(camelToDashCase(name), camelToDashCase(name));\n} else {\n\tnode.removeAttribute(camelToDashCase(name));\n\t}\n} else if (propType === "string") {\n\tnode.setAttribute(camelToDashCase(name), newProps[name]);\n}'
     )
 
     await fs.promises.writeFile(attatchPropsFilePath, needToReplace)
@@ -52,7 +52,7 @@ export const reactBooleanFix = (
             true
         )
 
-        await new Promise((resolve) => {
+        await new Promise<void>((resolve) => {
             compilerCtx.events.on('buildLog', (log) => {
                 if (
                     log.messages.findIndex((elm) =>

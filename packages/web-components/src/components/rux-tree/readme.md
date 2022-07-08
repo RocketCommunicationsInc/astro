@@ -56,11 +56,11 @@ TreeNode has two slots:
 
 ## CSS Custom Properties
 
-| Name                      | Description           |
-| ------------------------- | --------------------- |
-| `--tree-background-color` | tree background color |
-| `--tree-border-color`     | tree color            |
-| `--tree-text-color`       | tree text color       |
+| Name                      | Description                        |
+| ------------------------- | ---------------------------------- |
+| `--tree-background-color` | [DEPRECATED] tree background color |
+| `--tree-border-color`     | [DEPRECATED] tree color            |
+| `--tree-text-color`       | [DEPRECATED] tree text color       |
 
 
 ----------------------------------------------

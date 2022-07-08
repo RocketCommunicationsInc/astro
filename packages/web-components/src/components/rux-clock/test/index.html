@@ -18,6 +18,7 @@
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
+
     <body>
         <section>
             <h2>Default</h2>
@@ -27,5 +28,33 @@
             <h2>With Military Timezone</h2>
             <rux-clock timezone="A"></rux-clock>
         </section>
+        <section>
+            <h2>With date-in</h2>
+            <rux-clock date-in="2022-04-22T23:59:55.000Z"></rux-clock>
+        </section>
+        <section>
+            <h2>With Unix date-in</h2>
+            <rux-clock date-in="1652129256662"></rux-clock>
+        </section>
+        <section>
+            <h2>With a date-in added after render</h2>
+            <rux-clock id="add"></rux-clock>
+            <rux-button id="btn">Set date-in</rux-button>
+            <rux-button style="padding: 3%" id="again"
+                >Change to UNIX</rux-button
+            >
+        </section>
+        <script>
+            const btn = document.getElementById('btn')
+            const again = document.getElementById('again')
+
+            const clock = document.getElementById('add')
+            btn.addEventListener('click', () => {
+                clock.setAttribute('date-in', '2022-04-22T23:59:55.000Z')
+            })
+            again.addEventListener('click', () => {
+                clock.setAttribute('date-in', '1652129256662')
+            })
+        </script>
     </body>
 </html>

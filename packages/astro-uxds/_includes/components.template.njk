@@ -13,14 +13,12 @@
 			{% set scrolling = 'no' %}
 		{% endif %}
 		<div class="demo-container">
-
-
 			{% if legacyDemo %}
 				<iframe id="live-sample" class="live-sample" scrolling="{{ scrolling }}" src="{{ demo }}" style="width: 100%; height: {{height}}; overflow: hidden;"></iframe>
 			{% else %}
 
-					{% if meta.branch and meta.branch === 'draft' %}
-						<iframe id="live-sample" class="live-sample" scrolling="{{ scrolling }}" src="https://next--astro-components.netlify.app/iframe.html?id={{ demo }}&viewMode=story" style="width: 100%; height: {{height}}; overflow: hidden;"></iframe>
+					{% if meta.branch and meta.branch === 'next' %}
+						<iframe id="live-sample" class="live-sample" scrolling="{{ scrolling }}" src="https://beta-astro-components.netlify.app/iframe.html?id={{ demo }}&viewMode=story" style="width: 100%; height: {{height}}; overflow: hidden;"></iframe>
 					{% else %}
 						<iframe id="live-sample" class="live-sample" scrolling="{{ scrolling }}" src="https://astro-components.netlify.app/iframe.html?id={{ demo }}&viewMode=story" style="width: 100%; height: {{height}}; overflow: hidden;"></iframe>
 					{% endif %}

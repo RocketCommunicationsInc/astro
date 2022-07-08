@@ -12,7 +12,7 @@ Tables are a fundamental UX design tool for organizing and displaying data. They
 
 ## Header
 
-A table can be configured with a tall header with large hero numbers (if the count of some type is important to know at a glance) or with a compact header if vertical space is at a premium.
+A Table can be configured with a tall header with large hero numbers (if the count of some type is important to know at a glance) or with a compact header if vertical space is at a premium.
 
 ![Table with tall header.](/img/patterns/table-header-tall.png "Table with tall header.")
 
@@ -20,11 +20,11 @@ A table can be configured with a tall header with large hero numbers (if the cou
 
 ## Filters
 
-Filters, to narrow what is displayed in the table, may be presented in the header as Select menus, as a Segmented Button, or as an Input Field. If it is critical that the user knows that not all data is displayed, a warning may be shown when filters are applied.
+Filters, to narrow what is displayed in the Table, may be presented in the header as Select Menus, as a Segmented Button, or as an Input Field. If it is critical that the user knows that not all data is displayed, a warning may be shown when filters are applied.
 
 While filters are often related to the data types displayed in columns, it is not recommended that filters be activated directly from the column headers or displayed there. Filters selected through a combination UI elements in the header can be more expressive and focused by combining and highlighting key data types.
 
-![Table with filters as Select menus and wildcard Input Field.](/img/patterns/table-filters.png "Table with filters as Select menus and wildcard Input Field.")
+![Table with filters as Select Menus and wildcard Input Field.](/img/patterns/table-filters.png "Table with filters as Select Menus and wildcard Input Field.")
 
 ![Table with filters as Segmented Buttons and wildcard Input Field.](/img/patterns/table-segmented-button.png "Table with filters as Segmented Buttons and wildcard Input Field.")
 
@@ -42,7 +42,7 @@ Tables use a familiar Selection/Action model. Selection is accomplished by click
 
 ## Complex Tables
 
-For more complex tables, we recommend using either the community or enterprise tier of [ag-Grid](https://www.ag-grid.com/). While we cannot provide support for ag-Grid or its many features, we do provide light and dark variants of Astro in a theme file consumable by ag-grid.
+For more complex Tables, we recommend using either the community or enterprise tier of [ag-Grid](https://www.ag-grid.com/). While we cannot provide support for ag-Grid or its many features, we do provide light and dark variants of Astro in a theme file consumable by ag-grid.
 
 We maintain a [separate repo for the ag-Grid Astro theme](https://github.com/RocketCommunicationsInc/astro-ag-Grid). Please visit the following links to get started:
 

@@ -24,9 +24,9 @@ When activated, Select Menus allow users to select a value from a list. Once a v
 - When the user knows what they’re looking for in advance, consider using a text field with client-side auto-complete functionality instead.
 - Consider including advanced functionality enhancing behavior, such as auto-complete and intelligent filters.
 - Items in a list should be ordered in a meaningful way, such as by value, alphabetically, or by recently selected.
-- Keep the number of list values to a reasonable number to avoid endless scrolling. Alternative components, such as [Input Fields](/components/input-field) and [Search](/components/search) (with autocomplete and appropriate validation) or [Table](/patterns/table) pattern instead, could be used rather than making users scroll through large quantities of data.
+- Keep the number of list values to a reasonable number to avoid endless scrolling. Alternative components, such as [Input Fields](/components/input-field) and [Search](/components/search) (with auto-complete and appropriate validation) or [Table](/patterns/table) pattern instead, could be used rather than making users scroll through large quantities of data.
 - Do not remove disabled items from the selection list. Disabled items should give a visual indicator of their disabled state, without hover.
-- Use appropriate field labels, placeholder text, and help text when possible to assist the user in selecting an appropriate value.
+- Use appropriate field labels, placeholder text, and Help Text when possible to assist the user in selecting an appropriate value.
 
 ## Appearance and Behavior
 

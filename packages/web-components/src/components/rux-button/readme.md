@@ -145,29 +145,30 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 
 ## CSS Custom Properties
 
-| Name                                        | Description                             |
-| ------------------------------------------- | --------------------------------------- |
-| `--button-active-background-color`          | Button active background color          |
-| `--button-active-border-color`              | Button active border color              |
-| `--button-background-color`                 | Button background color                 |
-| `--button-border-color`                     | Button border color                     |
-| `--button-borderless-hover-color`           | Borderless buttons hover text color     |
-| `--button-borderless-text-color`            | Button borderless text color            |
-| `--button-hover-background-color`           | Button hover background color           |
-| `--button-hover-border-color`               | Button hover border color               |
-| `--button-secondary-background-color`       | Button secondary background color       |
-| `--button-secondary-border-color`           | Button secondary border color           |
-| `--button-secondary-hover-background-color` | Button secondary hover background color |
-| `--button-secondary-hover-border-color`     | Button secondary hover border color     |
-| `--button-secondary-hover-text-color`       | Secondary button hover text color       |
-| `--button-secondary-text-color`             | Button secondary text color             |
-| `--button-text-color`                       | Button text color                       |
+| Name                                        | Description                                          |
+| ------------------------------------------- | ---------------------------------------------------- |
+| `--button-active-background-color`          | [DEPRECATED] Button active background color          |
+| `--button-active-border-color`              | [DEPRECATED] Button active border color              |
+| `--button-background-color`                 | [DEPRECATED] Button background color                 |
+| `--button-border-color`                     | [DEPRECATED] Button border color                     |
+| `--button-borderless-hover-color`           | [DEPRECATED] Borderless buttons hover text color     |
+| `--button-borderless-text-color`            | [DEPRECATED] Button borderless text color            |
+| `--button-hover-background-color`           | [DEPRECATED] Button hover background color           |
+| `--button-hover-border-color`               | [DEPRECATED] Button hover border color               |
+| `--button-secondary-background-color`       | [DEPRECATED] Button secondary background color       |
+| `--button-secondary-border-color`           | [DEPRECATED] Button secondary border color           |
+| `--button-secondary-hover-background-color` | [DEPRECATED] Button secondary hover background color |
+| `--button-secondary-hover-border-color`     | [DEPRECATED] Button secondary hover border color     |
+| `--button-secondary-hover-text-color`       | [DEPRECATED] Secondary button hover text color       |
+| `--button-secondary-text-color`             | [DEPRECATED] Button secondary text color             |
+| `--button-text-color`                       | [DEPRECATED] Button text color                       |
 
 
 ## Dependencies
 
 ### Used by
 
+ - [rux-dialog](../rux-dialog)
  - [rux-input](../rux-input)
 
 ### Depends on
@@ -178,6 +179,7 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 ```mermaid
 graph TD;
   rux-button --> rux-icon
+  rux-dialog --> rux-button
   rux-input --> rux-button
   style rux-button fill:#f9f,stroke:#333,stroke-width:4px
 ```

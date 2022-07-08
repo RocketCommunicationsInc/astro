@@ -22,7 +22,7 @@ The Astro Grid is a standard 12 [column](https://developer.mozilla.org/en-US/doc
 
 At certain screen sizes, Astro optimizes for display on narrow devices by reducing the number of columns and rearranging the layout of your application via [responsive design](https://developers.google.com/web/fundamentals/design-and-ux/responsive/) practices.
 
-| Breakpoint | Columns | Margin | Cap  | Gap (compact) |
+| Breakpoint | Columns | Margin | Gap  | Gap (compact) |
 | ---------- | ------- | ------ | ---- | ------------- |
 | 0-350px    | 4       | 20px   | 20px | 10px          |
 | 351-768px  | 8       | 30px   | 20px | 10px          |

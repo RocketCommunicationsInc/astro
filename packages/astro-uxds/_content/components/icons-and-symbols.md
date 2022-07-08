@@ -29,15 +29,15 @@ Monitoring Icons must include a label, a title attribute in the HTML and a statu
 
 These icons represent objects, equipment, and concepts that are being administered or monitored. The purpose of these icons is to easily, concisely, and clearly visually communicate their status to users.
 
-![Example of the same monitoring icon in all possible states](/img/components/icons-monitoring-1.png "Example of the same monitoring icon in all possible states")
+![Example of the same Monitoring Icon in all possible states](/img/components/icons-monitoring-1.png "Example of the same monitoring icon in all possible states")
 
-![Example of different monitoring icon symbols](/img/components/icons-monitoring-2.png "Example of different monitoring icon symbols")
+![Example of different Monitoring Icon symbols](/img/components/icons-monitoring-2.png "Example of different monitoring icon symbols")
 
 ### Labeling
 
 An Icon may also include a Label and Sub-Label.
 
-![Anatomy of icon label and sub-label.](/img/components/icons-labeling.png "Anatomy of icon label and sub-label.")
+![Anatomy of Icon Label and Sub-Label.](/img/components/icons-labeling.png "Anatomy of Icon Label and Sub-Label.")
 
 An Icon Label provides the name of the item being represented. An Icon Label should not change.
 
@@ -47,7 +47,7 @@ An Icon Sub-Label provides additional information to the user and may be dynamic
 
 Percentage Monitoring Icons depict a value between 0 and 100 as an arc and a numeric display. Ranges within the arc may be mapped to the standard [Astro Status Colors](/patterns/status-system). In this example the range containing 80% is mapped to Serious.
 
-![Anatomy of the monitoring progress icon](/img/components/percentage-monitoring-graphic.png "Anatomy of the monitoring progress icon")
+![Anatomy of the Monitoring Progress Icon](/img/components/percentage-monitoring-graphic.png "Anatomy of the Monitoring Progress Icon")
 
 ### Action Icons
 
@@ -65,9 +65,9 @@ Utility Icons represent access to tools used to modify the settings for a compon
 
 Events that require some user attention, but no immediate response, may be indicated by changes to a Notification Symbol.
 
-This Notification Symbol shows that five events related to a Satellite have occurred. You may hyperlink indicators to reveal a deeper view of relevant [Notification](/patterns/notifications) information. You may also link to the general Log.
+This Notification Symbol shows that ninety-nine events related to a Satellite have occurred. You may hyperlink indicators to reveal a deeper view of relevant [Notification](/patterns/notifications) information. You may also link to the general Log.
 
-![Anatomy of the notification count symbol.](/img/components/notifications-symbol.png "Anatomy of the notification count symbol.")
+![Anatomy of the Notification Count Symbol.](/img/components/notifications-symbol.png "Anatomy of the Notification Count Symbol.")
 
 ## Examples
 

@@ -1,5 +1,350 @@
 # @astrouxds/astro-web-components
 
+## 7.0.0-beta.3
+
+### Major Changes
+
+-   a7296b6b: Our /dist/custom-elements build has been removed in favor of a faster treeshakeable /dist/components build. We anticipate very few people are using this build. To check if your project is affected, you can do a global find for 'astro-web-components/dist/custom-elements' in your project. If you are using this build, switch to 'astro-web-components/dist/loader' instead.
+-   27b72893: Modal has been removed. It has been renamed to Dialog to align with our Design System naming and shares the exact same API as Modal.
+
+    Migration: You can do a global find/replace on your project for:
+
+    `rux-modal` -> `rux-dialog`
+    `ruxmodalclosed` -> `ruxdialogclosed`
+    `ruxmodalopened` -> `ruxdialogopened`
+
+### Minor Changes
+
+-   f9b842f7: Modal is now deprecated and will be removed in 7.0. It is being renamed to Dialog to align with our Design System naming and which shares the exact same API as Modal. It is recommended that you migrate to Dialog before 7.0. You can do a global find/replace on your project for:
+
+    `rux-modal` -> `rux-dialog`
+    `ruxmodalclosed` -> `ruxdialogclosed`
+    `ruxmodalopened` -> `ruxdialogopened`
+
+-   3c0cd2b8: Updates help text to use text-secondary to align with design
+
+### Patch Changes
+
+-   f9b842f7: Fixed an issue with modal emitting an extra 'ruxmodalclosed' event when closed by an off click.
+-   f9b842f7: Fixed an issue where rux-tab border would not style correctly when rux-tabs was set to small.
+
+## 7.0.0-beta.2
+
+### Major Changes
+
+#### CSS Custom Properties
+
+The majority of our CSS Custom Properties have been removed. See the MIGRATION.md file for more information.
+
+#### Angular
+
+The angular wrapper has been updated and will no longer be compatible with Angular versions less than 12.
+
+#### Pop Up Menu
+
+Pop Up Menu has been re-written to take a slotted trigger element and slotted content. Now changes placement based on available space. Replaces all methods with two new methods, show and hide.
+
+#### Clock
+
+-   The following styles have been removed from the :host element:
+
+    `margin: 0 1rem`
+
+    You may need to apply this to your element directly:
+
+    ```
+      rux-clock {
+        margin: 0 1rem;
+      }
+    ```
+
+    `user-select: none`
+
+    If you wish to override this, use the new `container` CSS Shadow Part.
+
+    `height: 3.938rem`
+
+    If you wish to override this, use the new `container` CSS Shadow Part.
+
+    `display: flex`
+
+    The default `display` has been changed to `inline-block`. This can be overwritten by targeting the `rux-clock` host element.
+
+#### Notification
+
+-   Host styles have been moved to the shadow dom. If you were previously styling the <rux-notification> element, use shadow parts instead
+
+### Minor Changes
+
+#### Notification
+
+-   add `--height` css custom property
+-   add prefix, default, and actions slots
+
+#### Clock
+
+-   add `container` CSS Shadow Part
+
+### Major Changes
+
+-   d89430ef: Clock - removed CSS custom properties:
+
+    --clock-text-color
+    --clock-background-color
+    --clock-border-color
+    --clock-label-color
+
+-   d89430ef: Log - Removed CSS custom properties:
+
+    --log-header-background-color
+    --log-filter-background-color
+    --log-filter-text-color
+
+-   1d4926c4: Menu Item Divider --menu-item-divider-border-color css custom property has been removed. Use the container shadow part instead
+-   d89430ef: Icon - remove CSS custom properties:
+
+    --icon-default-color
+
+-   14961eb5: The angular wrapper has been updated and will no longer be compatible with Angular versions less than 12.
+-   d89430ef: Classification Marking - removed css custom properties:
+
+    --color-classification-text-dark
+    --color-classification-text-light
+
+-   853eead3: rux-pop-up-menu has been re-written to take a slotted trigger element and slotted content. Now changes placement based on available space. Replaces all methods with two new methods, show and hide.
+-   d89430ef: Checkbox - Deprecate CSS custom properties:
+
+        --checkbox-label-color
+        --checkbox-background-color
+        --checkbox-border-color
+        --checkbox-checked-color
+        --checkbox-hover-border-color
+
+-   8d885e14: Clock - The following styles have been removed from the :host element:
+
+    `margin: 0 1rem`
+
+    You may need to apply this to your element directly:
+
+    ```
+    rux-clock {
+      margin: 0 1rem;
+    }
+    ```
+
+    `user-select: none`
+
+    If you wish to override this, use the new `container` CSS Shadow Part.
+
+    `height: 3.938rem`
+
+    If you wish to override this, use the new `container` CSS Shadow Part.
+
+    `display: flex`
+
+    The default `display` has been changed to `inline-block`. This can be overwritten by targeting the `rux-clock` host element.
+
+-   d89430ef: Checkbox Group - Remove CSS custom properties:
+
+    --checkboxgroup-border-color
+
+-   d89430ef: Button - Removed CSS Custom Proprties:
+
+    --button-active-background-color
+    --button-active-border-color
+    --button-background-color
+    --button-border-color
+    --button-borderless-hover-color
+    --button-borderless-text-color
+    --button-hover-background-color
+    --button-hover-border-color
+    --button-secondary-background-color
+    --button-secondary-border-color
+    --button-secondary-hover-background-color
+    --button-secondary-hover-border-color
+    --button-secondary-hover-text-color
+    --button-secondary-text-color
+    --button-text-color
+
+-   d89430ef: Input - removed CSS custom properties:
+
+    --input-background-color
+    --input-border-color
+    --input-text-color
+    --input-focus-border-color
+    --input-selection-background-color
+    --input-invalid-border-color
+
+-   84e89afc: Notification - Host styles have been moved to the shadow dom. If you were previously styling the <rux-notification> element, use shadow parts instead
+-   d89430ef: Menu Item Divider - remove CSS custom properties:
+
+    --menu-item-divider-border-color
+
+-   d89430ef: Remove CSS custom properties:
+
+    Log
+
+    --log-header-background-color
+    --log-filter-background-color
+    --log-filter-text-color
+
+    Modal
+
+    --modal-title-color
+    --modal-background-color
+    --modal-border-color
+
+    Notification
+
+    --notification-text-color
+
+    Progress
+
+    --progress-padding
+    --progress-radius
+    --progress-height
+    --progress-width
+    --progress-determinate-bar-background-color
+    --progress-determinate-track-background-color
+    --progress-determinate-track-border-color
+    --progress-label-color
+
+    Push Button
+
+    --pushbutton-background-color
+    --pushbutton-border-color
+    --pushbutton-text-color
+    --pushbutton-selected-background-color
+    --pushbutton-selected-border-color
+    --pushbutton-selected-text-color
+    --pushbutton-selected-hover-text-color
+
+    Radio
+
+    --radio-hover-border-color
+    --radio-border-color
+    --radio-label-color
+    --radio-background-color
+    --radio-selected-color
+
+    Radio Group
+
+    --radiogroup-border-color
+
+    Segmented Button
+
+    --segmented-button-background-color
+    --segmented-button-text-color
+    --segmented-button-border-color
+    --segmented-button-hover-background-color
+    --segmented-button-hover-text-color
+    --segmented-button-hover-border-color
+    --segmented-button-selected-background-color
+    --segmented-button-selected-text-color
+    --segmented-button-selected-hover-background-color
+    --segmented-button-selected-hover-text-color
+    --segmented-button-selected-hover-border-color
+    --segmented-button-border-radius
+
+    Select
+
+    --select-menu-border-radius
+    --select-menu-border-hover-color
+    --select-menu-border-focus-color
+    --select-menu-invalid-border-color
+    --select-menu-text-color
+    --select-menu-option-text-hover-color
+    --select-menu-option-selected-background-color
+    --select-menu-option-selected-text-color
+    --select-menu-label-color
+    --select-menu-inactive-caret
+    --select-menu-active-caret
+    --select-menu-background-color
+    --select-menu-border-color
+
+    Slider
+
+    --slider-thumb-background-color
+    --slider-thumb-border-color
+    --slider-hover-thumb-background-color
+    --slider-hover-thumb-border-color
+    --slider-track-background-color
+    --slider-selected-track-background-color
+    --slider-selected-thumb-border-color
+    --slider-thumb-size
+    --slider-thumb-border-size
+    --slider-value-percent
+    --slider-top
+    --slider-track-height
+    --slider-track-before-thumb-height
+    --slider-tick-padding-top
+
+    Switch
+
+    --switch-background-color
+    --switch-hover-on-color
+    --switch-hover-off-color
+    --switch-on-color
+    --switch-off-border-color
+
+    Textarea
+
+    --textarea-border-color
+    --textarea-text-color
+    --textarea-focus-border-color
+    --textarea-selection-background-color
+
+    Tabs
+
+    --tab-text-color
+
+    --tab-border-color
+    --tab-hover-text-color
+    --tab-selected-text-color
+
+    Table
+
+    --table-border-color
+    --table-header-background-color
+    --table-header-text-color
+
+    --table-header-box-shadow
+    --table-row-hover-text-color
+    --table-row-selected-background-color
+    --table-row-selected-border-color
+    --table-row-hover-background-color
+
+    --table-row-border-color
+    --table-row-text-color
+    --table-row-background-color
+    --table-header-border-color
+
+    Tree
+
+    --tree-text-color
+    --tree-background-color
+    --tree-border-color
+
+    Tree Node
+
+    --tree-accent-color
+    --tree-hover-background-color
+    --tree-hover-text-color
+    --tree-selected-border-color
+    --tree-selected-accent-color
+    --tree-expanded-border-color
+
+### Minor Changes
+
+-   84e89afc: Notification - add `--height` css custom property
+-   84e89afc: Notification - add prefix, default, and actions slots
+-   14961eb5: Updated the angular wrapper. NOTE: angular no longer requires CUSTOM_ELEMENTS_SCHEMA on your app module. It is recommended you remove this after upgrading so you can benefit from angular’s template checking.
+-   8d885e14: Clock - add container shadow part
+
+### Patch Changes
+
+-   14961eb5: Updates Angular dependencies and documentation
+
 ## 7.0.0-beta.0
 
 ### Major Changes
@@ -34,6 +379,54 @@
 #### Container
 
 -   New component
+
+## 6.9.1
+
+### Patch Changes
+
+-   Updates Angular dependencies and documentation
+
+## 6.9.0
+
+### Minor Changes
+
+-   !!! Deprecates CSS Custom Properties. See MIGRATION.md for more information !!!
+
+#### Input
+
+-   Added support for `time` type
+
+### Patch Changes
+
+#### Modal
+
+-   Fixed issue with emitting a detail value when using default confirm/deny buttons.
+
+#### Pop Up Menu
+
+-   Pop-up-menu will now position correctly if the anchor element is beyond a horizontal scrollbar.
+
+## 6.8.0
+
+### Minor Changes
+
+#### Modal
+
+-   Added in slots for message, title and footer to allow for more customization.
+
+#### Clock
+
+-   Added a 'date-in' prop that allows the clock to be set to increment from a specific date.
+
+### Patch Changes
+
+#### Switch
+
+-   Fixed issue where label was breaking out of the container
+
+#### Select
+
+-   Updated styles for better use on Windows OS and Firefox browsers
 
 ## 6.7.0
 

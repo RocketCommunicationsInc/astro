@@ -13,25 +13,25 @@ The images depicted on this page use the color palette and fonts from Astro 4. A
 :::
 [Launch TT&C Investigate Sample App](https://ttc-investigate.astrouxds.com) | [Design Materials and Source Code](#contentBottom)
 
-The Investigate app displays system schematics and status data for a selected satellite. This allows operators to gather additional detail on alerts, view the relationships of components in the equipment hierarchy, and select particular values to add to the Watcher panel in the Monitor and Command apps.
+The Investigate App displays system schematics and status data for a selected satellite. This allows operators to gather additional detail on alerts, view the relationships of components in the equipment hierarchy, and select particular values to add to the Watcher panel in the Monitor and Command Apps.
 
-UX research revealed that existing systems often require operators to drill-in through the hierarchy of systems and subsystems in a manner that opens a new window each time. This forces operators to spend time and effort managing windows in order to find data they need. To overcome this problem, the design of the Investigate app allows operators to select an item of interest from a tree structure on the left side of the window and then drill-in to more detail using panes to the right, keeping everything in a single window.
+UX research revealed that existing systems often require operators to drill-in through the hierarchy of systems and subsystems in a manner that opens a new window each time. This forces operators to spend time and effort managing windows in order to find data they need. To overcome this problem, the design of the Investigate App allows operators to select an item of interest from a tree structure on the left side of the window and then drill-in to more detail using panes to the right, keeping everything in a single window.
 
 ![TT&C Investigate App](/img/service-specific-ux-design/ttc-investigate-app.png)
 
-There are four main areas in the Investigate app: the Global Status Bar, Subsystem Tree Menu, Subsystem Assembly Layout, and Mnemonic Data Table. The key elements are described below, but you can find much more design and task flow detail in the [TT&C Design Specification and Wireframes](/ttc-service-ux-design/ttc-investigate#contentBottom) documents. You can also launch the [TT&C Investigate Sample App](https://ttc-investigate.astrouxds.com/) to explore the design interactively.
+There are four main areas in the Investigate App: the Global Status Bar, Subsystem Tree Menu, Subsystem Assembly Layout, and Mnemonic Data Table. The key elements are described below, but you can find much more design and task flow detail in the [TT&C Design Specification and Wireframes](/ttc-service-ux-design/ttc-investigate#contentBottom) documents. You can also launch the [TT&C Investigate Sample App](https://ttc-investigate.astrouxds.com/) to explore the design interactively.
 
 ![TT&C Investigate App Details](/img/service-specific-ux-design/ttc-investigate-app-details.png)
 
 ## Global Status Bar
 
-As outlined on the [About TT&C Designs](/ttc-service-ux-design/about-the-ttc-designs) page, each of the apps in the TT&C Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar), an Astro component featured in all three apps. Though the status bar contents vary somewhat between apps in order to best support each app’s individual workflows, all contain a [Clock](/components/clock), [Monitoring Icons](/components/icons-and-symbols), and an app switching menu that allows operators to transition quickly from one TT&C task flow to another.
+As outlined on the [About TT&C Designs](/ttc-service-ux-design/about-the-ttc-designs) page, each of the apps in the TT&C Suite is designed to occupy its own browser window, allowing operators to focus on the task at hand. But by virtue of being integrated into a suite, the apps share common functionality, such as a single login. Much of the shared functionality is provided in the [Global Status Bar](/components/global-status-bar), an Astro component featured in all three apps. Though the status bar contents vary somewhat between apps in order to best support each app’s individual workflows, all contain a [Clock](/components/clock), [Monitoring Icons](/components/icons-and-symbols), and an App Switcher Menu that allows operators to transition quickly from one TT&C task flow to another.
 
 ![TT&C Dashboard Global Status Bar Details](/img/service-specific-ux-design/ttc-investigate-global-status-bar-details.png)
 
-1. **App Switcher Menu** - the App Switcher Menu allows the user to launch new instances of different TT&C apps, sign in/sign out, and edit preferences.
-2. **Global Clock** - time is central to many TT&C service task flows, so it is included in the Global Status Bar in all TT&C apps.
-3. **Monitoring Icons** - the Dashboard app includes Upcoming Contacts Allocated (UCA) and Software status indicators, as well as status and alert counts for each of the top categories in the equipment hierarchy.
+1. **App Switcher Menu** - The App Switcher Menu allows the user to launch new instances of different TT&C apps, sign in/sign out, and edit preferences.
+2. **Global Clock** - Time is central to many TT&C service task flows, so it is included in the Global Status Bar in all TT&C apps.
+3. **Monitoring Icons** - The Dashboard App includes Upcoming Contacts Allocated (UCA) and Software status indicators, as well as status and alert counts for each of the top categories in the equipment hierarchy.
 
 ## Subsystem Tree Menu
 
@@ -41,13 +41,13 @@ The Subsystem Tree Menu shows a hierarchical list of the satellite subsystems. S
 
 ![TT&C Subsytem Tree](/img/service-specific-ux-design/ttc-investigate-subsystem-tree-details.png)
 
-1. **Expandable List Items** - subsystem menu items expand to show any related sub-subsystems in the section to the right.
-2. **Status Symbols** - status symbols indicate current subsystem status and severity.
+1. **Expandable List Items** - Subsystem menu items expand to show any related sub-subsystems in the section to the right.
+2. **Status Symbols** - Status symbols indicate current subsystem status and severity.
 
 :::
 
-1. **Equipment Categories** - inoperable equipment is organized into categories along with a total for the category.
-2. **Equipment Status** - inoperable equipment is displayed with status coding indicating the severity of the problem.
+1. **Equipment Categories** - Inoperable equipment is organized into categories along with a total for the category.
+2. **Equipment Status** - Inoperable equipment is displayed with status coding indicating the severity of the problem.
 
 ## Subsystem Assembly Layout
 
@@ -55,22 +55,22 @@ When an item has been selected in the Subsystem Tree Menu, its next level of det
 
 ![TT&C Subsystem Assembly Layout Details](/img/service-specific-ux-design/ttc-investigate-subsystem-assembly-details.png)
 
-1. **Selectable Elements** - operators can select an element in the schematic to have its data load in the Mnemonic Data Table below
-2. **Status Colors** - the elements in the schematic are color coded to reflect current status.
+1. **Selectable Elements** - Operators can select an element in the schematic to have its data load in the Mnemonic Data Table below
+2. **Status Colors** - The elements in the schematic are color coded to reflect current status.
 
 ### Mnemonic Data Table
 
-The Mnemonic Data Table displays the data for the component selected in the Subsystem Assembly Layout above. Because there could be a large number of mnemonics, the table includes the ability to do a type-ahead search for a particular item or filter the table by status. Once operators have identified a mnemonic of interest, the table includes the ability to add it to the Watcher panels in the Monitor and Command apps to keep an eye on it over time.
+The Mnemonic Data Table displays the data for the component selected in the Subsystem Assembly Layout above. Because there could be a large number of mnemonics, the table includes the ability to do a type-ahead search for a particular item or filter the table by status. Once operators have identified a mnemonic of interest, the table includes the ability to add it to the Watcher panels in the Monitor and Command Apps to keep an eye on it over time.
 
 ![TT&C Mnemonic Data Table Details](/img/service-specific-ux-design/ttc-investigate-mnemonics-table-details.png)
 
-1. **Status Symbols** - symbols indicate current subsystem status and can be sorted by severity.
-2. **Table Filters** - the table can be filtered by name or severity to narrow down high volumes of content and surface the most relevant results.
-3. **Add to Watcher** - clicking the checkbox adds the row item, or mnemonic, to the Watcher component in the Monitor Application.
+1. **Status Symbols** - Symbols indicate current subsystem status and can be sorted by severity.
+2. **Table Filters** - The table can be filtered by name or severity to narrow down high volumes of content and surface the most relevant results.
+3. **Add to Watcher** - Clicking the checkbox adds the row item, or mnemonic, to the Watcher component in the Monitor Application.
 
 ## Task Flow Example - Add Mnemonics to Watcher
 
-Below is an animated walkthrough of a representative task flow using the TT&C Investigate app. In this flow, an operator uses the app to identify a problem in a satellite subsystem assembly and then adds two mnemonics to the Watcher panels in the Monitor and Command apps.
+Below is an animated walkthrough of a representative task flow using the TT&C Investigate App. In this flow, an operator uses the app to identify a problem in a satellite subsystem assembly and then adds two mnemonics to the Watcher panels in the Monitor and Command Apps.
 
 <div markdown="1">
 	<figure markdown="1">

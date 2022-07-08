@@ -14,9 +14,9 @@ The images depicted on this page use the color palette and fonts from Astro 4. A
 
 Directing and maintaining satellites orbiting in space requires coordinating personnel, processes, and equipment on the ground. This is the role of Ground Resource Management (GRM) systems. Key aspects of GRM services include the following:
 
-- Monitor System - maintaining awareness of the status of critical components of the ground system, including equipment and scheduled contacts.
-- Manage Contacts - coordinate ground systems to ensure satellite contacts have all the equipment needed to achieve mission objectives.
-- Manage Equipment - monitor health status of ground system equipment and schedule maintenance jobs as needed to ensure availability and ongoing reliability.
+- Monitor System - Maintaining awareness of the status of critical components of the ground system, including equipment and scheduled contacts.
+- Manage Contacts - Coordinate ground systems to ensure satellite contacts have all the equipment needed to achieve mission objectives.
+- Manage Equipment - Monitor health status of ground system equipment and schedule maintenance jobs as needed to ensure availability and ongoing reliability.
 
 ### UX Research Findings
 

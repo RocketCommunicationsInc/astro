@@ -1,4 +1,10 @@
 :host {
+    --log-header-background-color: var(--color-background-surface-header);
+
+    --log-filter-background-color: #3a87cf; // #TODO find out new value for --color-primary-alt
+
+    --log-filter-text-color: var(--color-text-inverse);
+
     display: block;
     overflow: hidden;
 }

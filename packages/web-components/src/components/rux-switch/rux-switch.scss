@@ -1,13 +1,36 @@
 @use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
 :host {
     display: block;
+
+    /**
+      * @prop --switch-background-color: [DEPRECATED] the Switch off color
+      */
+
+    --switch-background-color: var(--color-background-base-default);
+
+    /**
+      * @prop --switch-hover-on-color: [DEPRECATED] the Switch hover on color
+      */
+    --switch-hover-on-color: var(--color-background-interactive-default);
+
+    /**
+      * @prop --switch-hover-off-color: [DEPRECATED] the Switch hover off color
+      */
+
+    --switch-hover-off-color: var(--color-background-interactive-default);
+
+    /** @prop --switch-on-color: [DEPRECATED] the Switch on color */
+    --switch-on-color: var(--color-background-interactive-default);
+
+    /** @prop --switch-off-border-color: [DEPRECATED] the Switch off border color */
+    --switch-off-border-color: var(--color-border-interactive-muted);
+
     padding-left: 1%;
 }
 .rux-switch {
     position: relative;
     display: flex;
     height: 22px;
-    width: 42px;
     white-space: nowrap;
 
     // Default Styling

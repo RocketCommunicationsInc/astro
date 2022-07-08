@@ -93,3 +93,9 @@ command = "npm run build"
 	to = "/getting-started/readme"
 	status = 301
 	force = true
+
+[[redirects]]
+	from = "/components/dialog-box"
+	to = "/components/dialog"
+	status = 301
+	force = true

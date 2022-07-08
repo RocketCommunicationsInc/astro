@@ -35,7 +35,7 @@ Cypress.on('window:before:load', (win) => {
         throw new Error(msg)
     })
 
-    cy.stub(win.console, 'warn', (msg) => {
-        cy.now('task', 'warn', msg)
-    })
+    // cy.stub(win.console, 'warn', (msg) => {
+    //     cy.now('task', 'warn', msg)
+    // })
 })

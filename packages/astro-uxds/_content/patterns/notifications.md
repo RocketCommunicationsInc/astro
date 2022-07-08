@@ -38,6 +38,6 @@ If the user is currently working in a specific screen area, the Banner may be pr
 
 ## Modal Dialog
 
-For events that require the user's immediate attention and response, a modal [Dialog Box](/components/dialog-box) may be used. Modal Dialog Boxes should be avoided if possible, as they deliberately interrupt all other user interaction which could be critical.
+For events that require the user's immediate attention and response, a modal [Dialog](/components/dialog) may be used. Modal Dialogs should be avoided if possible, as they deliberately interrupt all other user interaction which could be critical.
 
 ![Modal dialog example.](/img/patterns/notifications-modal-dialog.png)
