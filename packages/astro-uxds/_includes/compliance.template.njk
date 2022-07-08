@@ -18,18 +18,24 @@
       This is an introductory paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
 
-    <ol>
+    <ol class="compliancy-list">
       <li>
         <span class="tier tier--1">Tier 1</span>
+        <div>
         Basic status icons, status colors, really important things for operators to quickly become familiar with the application
+        </div>
       </li>
       <li>
         <span class="tier tier--2">Tier 2</span>
+        <div>
         Tier 1 + Astro colors to make it look like an Astro application (visual)
+        </div>
       </li>
       <li>
         <span class="tier tier--3">Tier 3</span>
+        <div>
         Tier 2 + interaction patterns (behavioral) 
+        </div>
         </li>
       </ol>
   </article>
@@ -69,9 +75,6 @@
           {{ data.name }} 
           <a href="{{ data.link }}" class="rules-name--link">
             View {{ data.name }} Page 
-            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00001 2.14375C4.32001 2.14375 1.33334 5.13042 1.33334 8.81042C1.33334 12.4904 4.32001 15.4771 8.00001 15.4771C11.68 15.4771 14.6667 12.4904 14.6667 8.81042C14.6667 5.13042 11.68 2.14375 8.00001 2.14375ZM8.00001 12.1438C7.63334 12.1438 7.33334 11.8438 7.33334 11.4771V8.81042C7.33334 8.44375 7.63334 8.14375 8.00001 8.14375C8.36668 8.14375 8.66668 8.44375 8.66668 8.81042V11.4771C8.66668 11.8438 8.36668 12.1438 8.00001 12.1438ZM7.33334 6.81042H8.66668V5.47709H7.33334V6.81042Z" fill="#D67D46"/>
-            </svg>
           </a>
         {% else %}
           {{ data.name }}

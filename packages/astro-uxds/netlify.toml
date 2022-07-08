@@ -93,3 +93,10 @@ command = "npm run build"
 	to = "/getting-started/readme"
 	status = 301
 	force = true
+
+[[redirects]]
+	from = "/design-guidelines/compliance"
+	to = "/compliance"
+	status = 301
+	force = true
+

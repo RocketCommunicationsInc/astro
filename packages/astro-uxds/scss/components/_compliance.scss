@@ -14,6 +14,22 @@ main ul {
   margin: 0 0 0 1.5em;
   padding: 0.7em 0 0;
 }
+
+main li {
+  line-height: 1.4;
+  margin: 0 0 0.85em -0.1rem;
+}
+
+#contribution-footer {
+  border-top: 1px solid #ddd;
+  margin-top: 2.75rem;
+  h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0;
+    border: none;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   main {
     padding: 30px 20px;
@@ -90,10 +106,9 @@ aside footer {
   display: inline-flex;
   align-items: center;
   font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 0.875rem;
+  line-height: 1rem;
   margin-left: 1rem;
-  text-decoration: underline;
 }
 
 .compliance .rules-name--link svg {
@@ -104,7 +119,7 @@ aside footer {
 .compliance .ruleset {
   line-height: 1;
   display: flex;
-  margin: 2.5rem 0 1rem 0;
+  margin: 2.5rem 0 1.25rem 0;
   font-size: 1.5rem;
 }
 
@@ -117,7 +132,7 @@ aside footer {
 }
 
 .compliance .rulesets .ruleset:first-child {
-  margin-top: 1.25rem;
+  margin-top: 0;
 }
 
 .compliance .rules {
@@ -159,13 +174,13 @@ aside footer {
   align-items: center;
   text-align: center;
   text-transform: uppercase;
-  margin-top: 0.375rem;
+  margin-top: 0.025rem;
 }
 
 .compliance .numeral {
   font-weight: bold;
   margin-right: 16px;
-  min-width: 42px;
+  min-width: 50px;
 }
 
 .compliance .tier {
@@ -208,10 +223,6 @@ aside footer {
   margin-bottom: 3.75rem;
 }
 
-.compliance a {
-  text-decoration: underline;
-}
-
 .compliance hr {
   margin-bottom: 2rem;
 }
@@ -222,4 +233,9 @@ aside footer {
 
 .compliancy-headline ol {
   margin-top: 2.5rem;
+}
+
+.compliancy-list li {
+  display: flex;
+  align-items: flex-start;
 }

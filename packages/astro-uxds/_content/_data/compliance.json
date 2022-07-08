@@ -7,7 +7,7 @@
       "rules": [
         {
           "numeral": 1,
-          "rule": "ASTRO UXDS provides developers with guidance to develop user interfaces. User interfaces must compy with the guidance in this section to be EGS Design Compliant. Developers are encouraged to conform to guidance in other sections identified as “Rules of Thumb”, “Do's” and “Don'ts” as described on individual component pages.",
+          "rule": "ASTRO UXDS provides developers with guidance to develop user interfaces. User interfaces must comply with the guidance in this section to be EGS Design Compliant. Developers are encouraged to conform to guidance in other sections identified as “Rules of Thumb”, “Do” examples, and “Don't” examples as described on individual component pages.",
           "status": "current"
         }
       ]
@@ -421,7 +421,7 @@
           "rules": [
             {
               "numeral": 1,
-              "rule": "Monitoring Icons shall include a label and a [status symbol](/components/icons-and-symbols#status-symbol).",
+              "rule": "Monitoring Icons shall include a label and a [status symbol](/components/status-symbol).",
               "status": "current",
               "tier": 1
             },
@@ -440,13 +440,13 @@
             },
             {
               "numeral": 4,
-              "rule": "[Status Symbols](/patterns/status-system/#status-colors) shall not be altered. They are required for ADA 508 and WCAG 2.0 compliance.",
+              "rule": "[Status Symbols](/components/status-symbol) shall not be altered. They are required for ADA 508 and WCAG 2.0 compliance.",
               "status": "current",
               "tier": 1
             },
             {
               "numeral": 5,
-              "rule": "[Icon labels](/patterns/status-system/#lableing) shall identify the item represented, and shall not change. A Sub-Label may provide dynamic information.",
+              "rule": "[Icon labels](/components/icons-and-symbols/#labeling) shall identify the item represented, and shall not change. A Sub-Label may provide dynamic information.",
               "status": "under-review",
               "tier": 3
             },
@@ -805,7 +805,7 @@
           "rules": [
             {
               "numeral": 1,
-              "rule": "Status Symbols shall be displayed with the [specified shapes](/patterns/status-system/).",
+              "rule": "Status Symbols shall be displayed with the [specified shapes](/components/status-symbol).",
               "status": "current",
               "tier": 1
             },
@@ -1055,7 +1055,7 @@
             },
             {
               "numeral": 2,
-              "rule": "Application State shall only use the default background color or a color from the [Astro Tag palettes.](https://astrouxds.com/design-guidelines/color/)",
+              "rule": "Application State shall only use the default background color or a color from the [Astro Tag palettes.](/design-guidelines/color/#tag-1)",
               "status": "under-review",
               "tier": 2
             },
