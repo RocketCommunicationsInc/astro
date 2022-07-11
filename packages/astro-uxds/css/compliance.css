@@ -14,6 +14,21 @@ main ul {
   padding: 0.7em 0 0;
 }
 
+main li {
+  line-height: 1.4;
+  margin: 0 0 0.85em -0.1rem;
+}
+
+#contribution-footer {
+  border-top: 1px solid #ddd;
+  margin-top: 2.75rem;
+}
+#contribution-footer h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0;
+  border: none;
+}
+
 @media only screen and (max-width: 767px) {
   main {
     padding: 30px 20px;
@@ -75,6 +90,7 @@ aside footer {
 
 .compliance ol {
   display: table;
+<<<<<<< HEAD
   margin: 0 0 1em 1em;
   list-style-type: none;
 }
@@ -100,11 +116,126 @@ aside footer {
 .compliance span {
   display: table-cell;
   padding: 0 0 0.5em;
+=======
+  list-style-type: none;
+}
+
+.compliance .rules-name {
+  font-weight: 700;
+  display: flex;
+}
+
+.compliance .rules-name--link {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  margin-left: 1rem;
+}
+
+.compliance .rules-name--link svg {
+  margin-left: 0.25rem;
+}
+
+.compliance .section,
+.compliance .ruleset {
+  line-height: 1;
+  display: flex;
+  margin: 2.5rem 0 1.25rem 0;
+  font-size: 1.5rem;
+}
+
+.compliance section {
+  font-size: 1.5rem;
+}
+
+.compliance .rulesets .ruleset {
+  font-size: 1.125rem;
+}
+
+.compliance .rulesets .ruleset:first-child {
+  margin-top: 0;
+}
+
+.compliance .rules {
+  margin: 0;
+}
+
+.compliance .rule {
+  display: flex;
+  margin-bottom: 1.25rem;
+}
+
+.compliance .rule .numeral {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.compliance .rule-text[data-status=under-review] .rule-status {
+  color: #c8102e;
+}
+
+.compliance .rule-text[data-status=updated] .rule-status {
+  color: #786dd3;
+}
+
+.compliance .rule-text[data-status=deprecated] .rule-status {
+  color: #51555b;
+}
+
+.compliance .rule-text[data-status=new] .rule-status {
+  color: #007a33;
+}
+
+.compliance .rule-status {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 0.025rem;
+>>>>>>> next
 }
 
 .compliance .numeral {
   font-weight: bold;
+<<<<<<< HEAD
   padding-right: 0.5em;
+=======
+  margin-right: 16px;
+  min-width: 50px;
+}
+
+.compliance .tier {
+  white-space: nowrap;
+  height: 100%;
+  border-radius: 3px;
+  padding: 0.125rem 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.75em;
+  text-align: center;
+  letter-spacing: 0.005em;
+  line-height: 16px;
+  color: #ffffff;
+  margin-right: 1rem;
+}
+
+.compliance .tier.tier--1 {
+  background: #009fa3;
+}
+
+.compliance .tier.tier--2 {
+  background: #3a87cf;
+}
+
+.compliance .tier.tier--3 {
+  background: #81009a;
+>>>>>>> next
 }
 
 .compliance .rule-figure {
@@ -115,3 +246,27 @@ aside footer {
   font-weight: bold;
   font-size: larger;
 }
+<<<<<<< HEAD
+=======
+
+.compliance article {
+  margin-bottom: 3.75rem;
+}
+
+.compliance hr {
+  margin-bottom: 2rem;
+}
+
+.compliancy-headline li {
+  margin-bottom: 1.875rem;
+}
+
+.compliancy-headline ol {
+  margin-top: 2.5rem;
+}
+
+.compliancy-list li {
+  display: flex;
+  align-items: flex-start;
+}
+>>>>>>> next

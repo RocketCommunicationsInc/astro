@@ -66,10 +66,6 @@
       {
         "label": "Glossary",
         "url": "/design-guidelines/glossary"
-      },
-      {
-        "label": "Compliance",
-        "url": "/design-guidelines/compliance"
       }
     ]
   },
@@ -134,6 +130,10 @@
       {
         "label": "Button",
         "url": "/components/button"
+      },
+      {
+        "label": "Card",
+        "url": "/components/card"
       },
       {
         "label": "Checkbox",
@@ -338,6 +338,10 @@
         "url": "/community/content-policy"
       }
     ]
+  },
+  {
+    "label": "Compliance",
+    "url": "/compliance"
   },
   {
     "label": "Releases",

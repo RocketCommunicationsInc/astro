@@ -95,6 +95,12 @@ command = "npm run build"
 	force = true
 
 [[redirects]]
+	from = "/design-guidelines/compliance"
+	to = "/compliance"
+	status = 301
+	force = true
+	
+[[redirects]]
 	from = "/components/dialog-box"
 	to = "/components/dialog"
 	status = 301

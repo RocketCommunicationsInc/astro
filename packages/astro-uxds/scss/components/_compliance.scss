@@ -14,6 +14,22 @@ main ul {
   margin: 0 0 0 1.5em;
   padding: 0.7em 0 0;
 }
+
+main li {
+  line-height: 1.4;
+  margin: 0 0 0.85em -0.1rem;
+}
+
+#contribution-footer {
+  border-top: 1px solid #ddd;
+  margin-top: 2.75rem;
+  h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0;
+    border: none;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   main {
     padding: 30px 20px;
@@ -74,33 +90,126 @@ aside footer {
 }
 .compliance ol {
   display: table;
-  margin: 0 0 1em 1em;
   list-style-type: none;
-}
-.compliance img {
-  max-width: 50%;
 }
 
-/* .compliance li ol {
-  list-style-type: none;
-  margin: 0 0 1.5em 1.5em;
-  padding: 0.7em 0 0;
-} */
+// .compliance img {
+//   max-width: 50%;
+// }
+
+.compliance .rules-name {
+  font-weight: 700;
+  display: flex;
+}
+
+.compliance .rules-name--link {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  margin-left: 1rem;
+}
+
+.compliance .rules-name--link svg {
+  margin-left: 0.25rem;
+}
+
 .compliance .section,
 .compliance .ruleset {
-  margin: 0 0 0.5em;
+  line-height: 1;
+  display: flex;
+  margin: 2.5rem 0 1.25rem 0;
+  font-size: 1.5rem;
 }
+
+.compliance section {
+  font-size: 1.5rem;
+}
+
+.compliance .rulesets .ruleset {
+  font-size: 1.125rem;
+}
+
+.compliance .rulesets .ruleset:first-child {
+  margin-top: 0;
+}
+
+.compliance .rules {
+  margin: 0;
+}
+
 .compliance .rule {
-  display: table-row;
+  display: flex;
+  margin-bottom: 1.25rem;
 }
-.compliance span {
-  display: table-cell;
-  padding: 0 0 0.5em;
+
+.compliance .rule .numeral {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
 }
+
+.compliance .rule-text[data-status="under-review"] .rule-status {
+  color: #c8102e; // palette/red/700
+}
+
+.compliance .rule-text[data-status="updated"] .rule-status {
+  color: #786dd3; // palette/purple/500
+}
+
+.compliance .rule-text[data-status="deprecated"] .rule-status {
+  color: #51555b; // palette/grey/700
+}
+
+.compliance .rule-text[data-status="new"] .rule-status {
+  color: #007a33; // palette/green/800
+}
+
+.compliance .rule-status {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 0.025rem;
+}
+
 .compliance .numeral {
   font-weight: bold;
-  padding-right: 0.5em;
+  margin-right: 16px;
+  min-width: 50px;
 }
+
+.compliance .tier {
+  white-space: nowrap;
+  height: 100%;
+  border-radius: 3px;
+  padding: 0.125rem 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.75em; //12px
+  text-align: center;
+  letter-spacing: 0.005em;
+  line-height: 16px;
+  color: #ffffff;
+  margin-right: 1rem;
+}
+
+.compliance .tier.tier--1 {
+  background: #009fa3; // color/palette/teal/600
+}
+
+.compliance .tier.tier--2 {
+  background: #3a87cf; // color/palette/brigthblue/600
+}
+
+.compliance .tier.tier--3 {
+  background: #81009a; // color/pink/brigthblue/600
+}
+
 .compliance .rule-figure {
   margin: 1em 0;
 }
@@ -108,4 +217,25 @@ aside footer {
 .compliance > li {
   font-weight: bold;
   font-size: larger;
+}
+
+.compliance article {
+  margin-bottom: 3.75rem;
+}
+
+.compliance hr {
+  margin-bottom: 2rem;
+}
+
+.compliancy-headline li {
+  margin-bottom: 1.875rem;
+}
+
+.compliancy-headline ol {
+  margin-top: 2.5rem;
+}
+
+.compliancy-list li {
+  display: flex;
+  align-items: flex-start;
 }
