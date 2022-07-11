@@ -90,6 +90,33 @@ aside footer {
 
 .compliance ol {
   display: table;
+<<<<<<< HEAD
+  margin: 0 0 1em 1em;
+  list-style-type: none;
+}
+
+.compliance img {
+  max-width: 50%;
+}
+
+/* .compliance li ol {
+  list-style-type: none;
+  margin: 0 0 1.5em 1.5em;
+  padding: 0.7em 0 0;
+} */
+.compliance .section,
+.compliance .ruleset {
+  margin: 0 0 0.5em;
+}
+
+.compliance .rule {
+  display: table-row;
+}
+
+.compliance span {
+  display: table-cell;
+  padding: 0 0 0.5em;
+=======
   list-style-type: none;
 }
 
@@ -171,10 +198,14 @@ aside footer {
   text-align: center;
   text-transform: uppercase;
   margin-top: 0.025rem;
+>>>>>>> next
 }
 
 .compliance .numeral {
   font-weight: bold;
+<<<<<<< HEAD
+  padding-right: 0.5em;
+=======
   margin-right: 16px;
   min-width: 50px;
 }
@@ -204,6 +235,7 @@ aside footer {
 
 .compliance .tier.tier--3 {
   background: #81009a;
+>>>>>>> next
 }
 
 .compliance .rule-figure {
@@ -214,6 +246,8 @@ aside footer {
   font-weight: bold;
   font-size: larger;
 }
+<<<<<<< HEAD
+=======
 
 .compliance article {
   margin-bottom: 3.75rem;
@@ -235,3 +269,4 @@ aside footer {
   display: flex;
   align-items: flex-start;
 }
+>>>>>>> next
