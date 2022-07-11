@@ -4,6 +4,45 @@
 	{{ content | safe }}
   <p>Version {{ compliance.version }}</p>
 
+
+<section class="compliance">
+  <article>
+    <h2>Intro Title Goes Here</h2>
+    <p>This is an introductory paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <a href="#">View GitHub</a>
+  </article>
+
+<article class="compliancy-headline">
+    <h2>About Compliancy Headline</h2>
+    <p>
+      This is an introductory paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+
+    <ol class="compliancy-list">
+      <li>
+        <span class="tier tier--1">Tier 1</span>
+        <div>
+        Basic status icons, status colors, really important things for operators to quickly become familiar with the application
+        </div>
+      </li>
+      <li>
+        <span class="tier tier--2">Tier 2</span>
+        <div>
+        Tier 1 + Astro colors to make it look like an Astro application (visual)
+        </div>
+      </li>
+      <li>
+        <span class="tier tier--3">Tier 3</span>
+        <div>
+        Tier 2 + interaction patterns (behavioral) 
+        </div>
+        </li>
+      </ol>
+  </article>
+
+<hr>
+</section>
+
   <!-- Recursive rendering of compliance rules //-->
 {% macro complianceMacro(data, prefix) %}
 
@@ -33,7 +72,10 @@
 
       <span class="rules-name">
         {% if data.link %}
-          <a href="{{ data.link }}">{{ data.name }}</a>
+          {{ data.name }} 
+          <a href="{{ data.link }}" class="rules-name--link">
+            View {{ data.name }} Page 
+          </a>
         {% else %}
           {{ data.name }}
         {% endif %}
@@ -48,17 +90,27 @@
             {% if prefix != null %}{{ prefix }}.{% endif %}{{ data.numeral }}.{{ rule.numeral }}
           </span>
 
-          <span class="rule-text" data-status="{{ rule.status }}">
+          {% if rule.tier %}
+          <span class="tier tier--{{ rule.tier}}">
+            Tier {{ rule.tier }}
+          </span>
+          {% endif %}
+
+          <div class="rule-text" data-status="{{ rule.status }}">
               {{ rule.rule | markdownify | safe }}
-          </span>  
+
+              {% if rule.status !== 'current' %}
+                <span class="rule-status">{{rule.status.replace('-', ' ')}}</span>
+              {% endif %}
+          </div>  
         </li>
 
-        {% if rule.figure %}
+        {# {% if rule.figure %}
           <li class="rule">
           <span class="numeral"></span>
             <img class="rule-figure" src="{{ rule.figure }}" alt="{{ rule.rule | markdownify | striptags }}"/>
           </li>
-        {% endif %}
+        {% endif %} #}
 
       {% endfor %}
       </ol>
