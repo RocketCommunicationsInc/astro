@@ -1,6 +1,6 @@
 {
     "name": "@astrouxds/astro-web-components",
-    "version": "7.0.0-beta.2",
+    "version": "7.0.0-beta.3",
     "description": "Astro Web Components",
     "main": "dist/index.cjs.js",
     "module": "dist/index.js",
@@ -22,7 +22,6 @@
         "icons.generate": "node src/utils/generate-icons.js",
         "lint.js": "eslint src/**/*{.ts,.tsx}",
         "lint.css": "stylelint \"src/components/**/*.scss\" --fix",
-        "prepack": "npm run build",
         "prettier": "prettier --write --loglevel warn .",
         "start.stencil": "stencil build --dev --watch --serve",
         "start.storybook": "start-storybook -p 6006",

@@ -209,6 +209,28 @@ export namespace Components {
          */
         "year"?: 'numeric' | '2-digit';
     }
+    interface RuxDialog {
+        /**
+          * Text for confirmation button
+         */
+        "confirmText": string;
+        /**
+          * Text for close button
+         */
+        "denyText": string;
+        /**
+          * Dialog body message
+         */
+        "modalMessage"?: string;
+        /**
+          * Dialog header title
+         */
+        "modalTitle"?: string;
+        /**
+          * Shows and hides dialog
+         */
+        "open": boolean;
+    }
     interface RuxGlobalStatusBar {
         /**
           * Sets the domain of the application to be displayed in the app-meta element
@@ -11980,28 +12002,6 @@ export namespace Components {
     }
     interface RuxMenuItemDivider {
     }
-    interface RuxModal {
-        /**
-          * Text for confirmation button
-         */
-        "confirmText": string;
-        /**
-          * Text for close button
-         */
-        "denyText": string;
-        /**
-          * Modal body message
-         */
-        "modalMessage"?: string;
-        /**
-          * Modal header title
-         */
-        "modalTitle"?: string;
-        /**
-          * Shows and hides modal
-         */
-        "open": boolean;
-    }
     interface RuxMonitoringIcon {
         /**
           * Displays an Astro icon matching this string. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols)
@@ -12602,6 +12602,12 @@ declare global {
     var HTMLRuxDatetimeElement: {
         prototype: HTMLRuxDatetimeElement;
         new (): HTMLRuxDatetimeElement;
+    };
+    interface HTMLRuxDialogElement extends Components.RuxDialog, HTMLStencilElement {
+    }
+    var HTMLRuxDialogElement: {
+        prototype: HTMLRuxDialogElement;
+        new (): HTMLRuxDialogElement;
     };
     interface HTMLRuxGlobalStatusBarElement extends Components.RuxGlobalStatusBar, HTMLStencilElement {
     }
@@ -18981,12 +18987,6 @@ declare global {
         prototype: HTMLRuxMenuItemDividerElement;
         new (): HTMLRuxMenuItemDividerElement;
     };
-    interface HTMLRuxModalElement extends Components.RuxModal, HTMLStencilElement {
-    }
-    var HTMLRuxModalElement: {
-        prototype: HTMLRuxModalElement;
-        new (): HTMLRuxModalElement;
-    };
     interface HTMLRuxMonitoringIconElement extends Components.RuxMonitoringIcon, HTMLStencilElement {
     }
     var HTMLRuxMonitoringIconElement: {
@@ -19201,6 +19201,7 @@ declare global {
         "rux-clock": HTMLRuxClockElement;
         "rux-container": HTMLRuxContainerElement;
         "rux-datetime": HTMLRuxDatetimeElement;
+        "rux-dialog": HTMLRuxDialogElement;
         "rux-global-status-bar": HTMLRuxGlobalStatusBarElement;
         "rux-icon": HTMLRuxIconElement;
         "rux-icon-360": HTMLRuxIcon360Element;
@@ -20264,7 +20265,6 @@ declare global {
         "rux-menu": HTMLRuxMenuElement;
         "rux-menu-item": HTMLRuxMenuItemElement;
         "rux-menu-item-divider": HTMLRuxMenuItemDividerElement;
-        "rux-modal": HTMLRuxModalElement;
         "rux-monitoring-icon": HTMLRuxMonitoringIconElement;
         "rux-monitoring-progress-icon": HTMLRuxMonitoringProgressIconElement;
         "rux-notification": HTMLRuxNotificationElement;
@@ -20511,6 +20511,36 @@ declare namespace LocalJSX {
           * Format options for year
          */
         "year"?: 'numeric' | '2-digit';
+    }
+    interface RuxDialog {
+        /**
+          * Text for confirmation button
+         */
+        "confirmText"?: string;
+        /**
+          * Text for close button
+         */
+        "denyText"?: string;
+        /**
+          * Dialog body message
+         */
+        "modalMessage"?: string;
+        /**
+          * Dialog header title
+         */
+        "modalTitle"?: string;
+        /**
+          * Event that is fired when dialog closes
+         */
+        "onRuxdialogclosed"?: (event: CustomEvent<boolean | null>) => void;
+        /**
+          * Event that is fired when dialog opens
+         */
+        "onRuxdialogopened"?: (event: CustomEvent<void>) => void;
+        /**
+          * Shows and hides dialog
+         */
+        "open"?: boolean;
     }
     interface RuxGlobalStatusBar {
         /**
@@ -32303,36 +32333,6 @@ declare namespace LocalJSX {
     }
     interface RuxMenuItemDivider {
     }
-    interface RuxModal {
-        /**
-          * Text for confirmation button
-         */
-        "confirmText"?: string;
-        /**
-          * Text for close button
-         */
-        "denyText"?: string;
-        /**
-          * Modal body message
-         */
-        "modalMessage"?: string;
-        /**
-          * Modal header title
-         */
-        "modalTitle"?: string;
-        /**
-          * Event that is fired when modal closes
-         */
-        "onRuxmodalclosed"?: (event: CustomEvent<boolean | null>) => void;
-        /**
-          * Event that is fired when modal opens
-         */
-        "onRuxmodalopened"?: (event: CustomEvent<void>) => void;
-        /**
-          * Shows and hides modal
-         */
-        "open"?: boolean;
-    }
     interface RuxMonitoringIcon {
         /**
           * Displays an Astro icon matching this string. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols)
@@ -32952,6 +32952,7 @@ declare namespace LocalJSX {
         "rux-clock": RuxClock;
         "rux-container": RuxContainer;
         "rux-datetime": RuxDatetime;
+        "rux-dialog": RuxDialog;
         "rux-global-status-bar": RuxGlobalStatusBar;
         "rux-icon": RuxIcon;
         "rux-icon-360": RuxIcon360;
@@ -34015,7 +34016,6 @@ declare namespace LocalJSX {
         "rux-menu": RuxMenu;
         "rux-menu-item": RuxMenuItem;
         "rux-menu-item-divider": RuxMenuItemDivider;
-        "rux-modal": RuxModal;
         "rux-monitoring-icon": RuxMonitoringIcon;
         "rux-monitoring-progress-icon": RuxMonitoringProgressIcon;
         "rux-notification": RuxNotification;
@@ -34065,6 +34065,7 @@ declare module "@stencil/core" {
             "rux-clock": LocalJSX.RuxClock & JSXBase.HTMLAttributes<HTMLRuxClockElement>;
             "rux-container": LocalJSX.RuxContainer & JSXBase.HTMLAttributes<HTMLRuxContainerElement>;
             "rux-datetime": LocalJSX.RuxDatetime & JSXBase.HTMLAttributes<HTMLRuxDatetimeElement>;
+            "rux-dialog": LocalJSX.RuxDialog & JSXBase.HTMLAttributes<HTMLRuxDialogElement>;
             "rux-global-status-bar": LocalJSX.RuxGlobalStatusBar & JSXBase.HTMLAttributes<HTMLRuxGlobalStatusBarElement>;
             "rux-icon": LocalJSX.RuxIcon & JSXBase.HTMLAttributes<HTMLRuxIconElement>;
             "rux-icon-360": LocalJSX.RuxIcon360 & JSXBase.HTMLAttributes<HTMLRuxIcon360Element>;
@@ -35128,7 +35129,6 @@ declare module "@stencil/core" {
             "rux-menu": LocalJSX.RuxMenu & JSXBase.HTMLAttributes<HTMLRuxMenuElement>;
             "rux-menu-item": LocalJSX.RuxMenuItem & JSXBase.HTMLAttributes<HTMLRuxMenuItemElement>;
             "rux-menu-item-divider": LocalJSX.RuxMenuItemDivider & JSXBase.HTMLAttributes<HTMLRuxMenuItemDividerElement>;
-            "rux-modal": LocalJSX.RuxModal & JSXBase.HTMLAttributes<HTMLRuxModalElement>;
             "rux-monitoring-icon": LocalJSX.RuxMonitoringIcon & JSXBase.HTMLAttributes<HTMLRuxMonitoringIconElement>;
             "rux-monitoring-progress-icon": LocalJSX.RuxMonitoringProgressIcon & JSXBase.HTMLAttributes<HTMLRuxMonitoringProgressIconElement>;
             "rux-notification": LocalJSX.RuxNotification & JSXBase.HTMLAttributes<HTMLRuxNotificationElement>;

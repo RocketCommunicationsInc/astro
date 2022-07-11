@@ -7,9 +7,9 @@ title: "Getting Started for Designers"
 
 # Getting Started For Designers
 
-Astro UX Design assets include files for creating Astro Application wireframes and mockups in Sketch and Adobe XD.
+Astro UX design assets include files for creating Astro application wireframes and mockups in Sketch and Adobe XD.
 
-Before reading any further, we recommend you take a look at a live [Astro sample application](https://sample-app.astrouxds.com/) and review available Astro components on the [Astro Storybook](https://astro-components.netlify.app/?path=/story/astro-uxds-welcome--start-here) site. Examples of Astro in-use can be seen within the Astro Service [Specific Design](/service-specific-ux-design/) pages.
+Before reading any further, we recommend you take a look at a live [Astro Sample Application](https://sample-app.astrouxds.com/) and review available Astro components on the [Astro Storybook](https://astro-components.netlify.app/?path=/story/astro-uxds-welcome--start-here) site. Examples of Astro in-use can be seen within the Astro Service [Specific Design](/service-specific-ux-design/) pages.
 
 ## Design Guidance
 
@@ -33,7 +33,7 @@ Sketch libraries are no longer under active development. We will be using Figma 
 
 ## Designer Starter Kit
 
-To download the Design starter kit, navigate to Astro Design Resources [Git Repository](https://github.com/RocketCommunicationsInc/astro-design-resources)
+To download the Design Starter Kit, navigate to Astro Design Resources [Git Repository](https://github.com/RocketCommunicationsInc/astro-design-resources)
 
 ### Sketch Installation and Use
 
@@ -56,9 +56,9 @@ Working with library symbols is as easy as working with symbols created in-docum
 [View Tutorials for working with symbols](https://www.sketch.com/docs/symbols/)
 [View Tutorials for working with library symbols](https://www.sketch.com/docs/libraries/#library-symbols)
 
-### How to use Astro color swatches
+### How to use Astro Color Swatches
 
-Astro color swatches are built into the Astro libraries and can be used once loaded. Using library color swatches helps keep your application consistent through reusable, documented fills, and styles:
+Astro Color Swatches are built into the Astro libraries and can be used once loaded. Using library color swatches helps keep your application consistent through reusable, documented fills, and styles:
 
 [View Tutorials for working with styling presets](https://www.sketch.com/docs/styling/#presets)
 [View Tutorials for working with library styles](https://www.sketch.com/docs/libraries/#library-styles)

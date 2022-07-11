@@ -8,7 +8,7 @@ title: Forms and Validation
 
 ## Forms
 
-Forms are used to collect, validate, and submit user input. They usually contains form elements including [Checkbox](/components/checkbox), [Dialog Box](/components/dialog-box), [Select Menu](/components/select), [Input Field](/components/input-field), [Radio Button](/components/radio-button) and [Switch](/components/switch).
+Forms are used to collect, validate, and submit user input. They usually contains form elements including [Checkbox](/components/checkbox), [Dialog](/components/dialog), [Select Menu](/components/select), [Input Field](/components/input-field), [Radio Button](/components/radio-button) and [Switch](/components/switch).
 
 ### Form Layout
 
@@ -29,7 +29,7 @@ One-column layout is preferred, but use two to four column layouts when:
 
 Labels should use clear but concise language and provide enough information for the user to accurately complete the required information.
 
-In general, labels should follow the vertical format of the form. Place labels above their respective fields and align with the left edge of the form element. If the form has a limited amount of height available to it, labels can also be placed to the left of the field as long as the placement of labels is consistent within the form. Either way, group a label with its field so that there is a clear distinction between fields.
+In general, labels should follow the vertical format of the Form. Place labels above their respective fields and align with the left edge of the Form element. If the Form has a limited amount of height available to it, labels can also be placed to the left of the field as long as the placement of labels is consistent within the Form. Either way, group a label with its field so that there is a clear distinction between fields.
 
 ### Rules of Thumb
 
@@ -37,7 +37,7 @@ In general, labels should follow the vertical format of the form. Place labels a
 - Read-only elements (e.g., `<input type=“text” readonly />`) should allow focus via click, tap, or keyboard, are accessible when tabbing, and are submitted with form data.
 - Generally, the size of the control should match the length of the expected content.
 - Use help text to provide validation support, rather than placeholder text.
-- Do not use placeholder text for information that is vital to the user's understanding of the control. A placeholder will disappear once the control has focus, and it should only be used for short, clear, and generic instructions, such as using "Search..." in a search field.
+- Do not use placeholder text for information that is vital to the user's understanding of the control. A placeholder will disappear once the control has focus, and it should only be used for short, clear, and generic instructions, such as using "Search..." in a Search field.
 - Use required and optional indicators depending on their frequency. e.g. If more fields are optional, only mark required fields.
 - When indicating required fields, an asterisk should be placed to the right of the label.
 - When indicating optional fields, add the word _"Optional"_ in parentheses after the label.
@@ -57,7 +57,7 @@ Use Help Text instead of placeholder text when the user needs to refer to the in
 
 #### Appearance and Behavior
 
-Help Text uses a smaller font size with the secondary text color so that it doesn’t take away too much focus from the main form element that the user should focus on. As usual, sentence case capitalization is used for Help Text for readability. Help Text is placed 10 px below the form element and is left-aligned with the beginning of that form element to make sure that it is clear which element the help content is related to. For forms using labels above fields, this means that the Help Text would align with the start of the field’s label as well. For forms with labels to the left of the field, the Help Text would only start with the form element, not the label, to make it easier to scan down the list of element labels without distraction. Two exceptions to this rule are [Radio Button](/components/radio-button) and [Checkbox](/components/checkbox) list items. In these cases, Help Text for a particular item in the list will be left-aligned to the start of the item text and not the Radio Button or Checkbox icon. This improves readability of the list. If the Help Text is relevant to a group of controls, like a group of Checkboxes that requires one selection, then the Help Text can go below the full grouping, left-aligned with the element’s label.
+Help Text uses a smaller font size with the secondary text color so that it doesn’t take away too much focus from the main form element that the user should focus on. As usual, sentence case capitalization is used for Help Text for readability. Help Text is placed 10 px below the form element and is left-aligned with the beginning of that form element to make sure that it is clear which element the help content is related to. For Forms using labels above fields, this means that the Help Text would align with the start of the field’s label as well. For Forms with labels to the left of the field, the Help Text would only start with the form element, not the label, to make it easier to scan down the list of element labels without distraction. Two exceptions to this rule are [Radio Button](/components/radio-button) and [Checkbox](/components/checkbox) list items. In these cases, Help Text for a particular item in the list will be left-aligned to the start of the item text and not the Radio Button or Checkbox icon. This improves readability of the list. If the Help Text is relevant to a group of controls, like a group of Checkboxes that requires one selection, then the Help Text can go below the full grouping, left-aligned with the element’s label.
 
 Like labels, in general, Help Text should only have one line of text below a field. If the text would need to wrap to a second line, use an icon that triggers a Pop Over on-click that contains the help content instead. This reduces scrolling and user distraction from the main content, the form elements themselves.
 
@@ -79,18 +79,18 @@ Like labels, in general, Help Text should only have one line of text below a fie
 
 Validation ensures that data is properly entered into a form or form element. This includes both validation of input within required form elements and invalid data such as going over a character limit. Form validation should provide information about what and where the error is as well as how to make the necessary corrections, if possible. Validation can take place inline after a specific form element loses focus or after submission of a full form. Both can take place in the same form.
 
-[Input Fields](/components/input-field), [Checkboxes](/components/checkbox), and [Select Menus](/components/select) can be configured to require user input and to enforce specific data formats. Once configured, these elements can provide validation as users move through a group of controls, such as a form, within a [Dialog Box](/components/dialog-box) or [Pane](/patterns/modeless-panes). Validation is then employed a second time when a form submission [Button](/components/button) is pressed.
+[Input Fields](/components/input-field), [Checkboxes](/components/checkbox), and [Select Menus](/components/select) can be configured to require user input and to enforce specific data formats. Once configured, these elements can provide validation as users move through a group of controls, such as a form, within a [Dialog](/components/dialog) or [Pane](/patterns/modeless-panes). Validation is then employed a second time when a form submission [Button](/components/button) is pressed.
 
-Individual elements outside of a Dialog Box or Pane can also be configured for validation.
+Individual elements outside of a Dialog or Pane can also be configured for validation.
 
 ### Rules of Thumb
 
 - Validate user input immediately after the element loses focus when possible. Don’t wait to validate elements upon “Submit.”
-- Don’t reset the form. Requiring users to re-input valid data is poor user experience.
+- Don’t reset the Form. Requiring users to re-input valid data is poor user experience.
 - In the same voice, write short, simple, and precise error messages that assist users in easily correcting input errors.
 - Clearly mark required fields with an asterisk to the right of the label when the majority of a form is optional.
 - Clearly mark optional fields with (optional) to the right of the label when the majority of a form is required.
-- Display examples of correctly formatted data. When validating data format, use placeholders and help text to clearly convey to the user the expected data formats. Automatically format data when possible and appropriate to avoid user errors.
+- Display examples of correctly formatted data. When validating data format, use placeholders and Help Text to clearly convey to the user the expected data formats. Automatically format data when possible and appropriate to avoid user errors.
 - Use appropriate input type on form fields for the expected data input (e.g., `<input type="number">` when entering numeric data).
 
 ::: note Poorly written error messages confuse and frustrate the user and force them to fix the input problem through trial and error.
@@ -115,7 +115,7 @@ Tips for writing validation error messages in the voice of Astro:
 
 ### Appearance and Behavior
 
-For inline validation on specific form elements, Validation Text follows the same guidelines as Help Text in terms of general appearance and location. The font is the same medium font size, 10 px below the form element or group, uses sentence case capitalization, and lines up under the left-edge of the form element or form element group in the case of checkboxes or radio buttons. If Help Text is present at the same time as an error state, the Validation Text replaces the existing Help Text under that form element.
+For inline validation on specific form elements, Validation Text follows the same guidelines as Help Text in terms of general appearance and location. The font is the same medium font size, 10 px below the form element or group, uses sentence case capitalization, and lines up under the left-edge of the form element or form element group in the case of Checkboxes or Radio Buttons. If Help Text is present at the same time as an error state, the Validation Text replaces the existing Help Text under that form element.
 
 The validation-specific appearance elements are a red border around the relevant element or grouping, use of red, bold text instead of secondary text color, and starting the text with a red warning icon. This provides the user with multiple cues about the error state to aid in accessibility. The bold text enables accessible color contrast levels between the text and background colors.
 

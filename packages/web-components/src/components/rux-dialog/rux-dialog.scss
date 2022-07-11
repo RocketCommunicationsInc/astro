@@ -1,25 +1,6 @@
 @use '../../global/mixins';
 
 :host {
-    /**
-    * @part wrapper - css part hook to style modal wrapper
-    */
-
-    /**
-    * @prop --modal-title-color: [DEPRECATED] Modal title color
-    */
-    --modal-title-color: var(--color-text-primary);
-
-    /**
-    * @prop --modal-background-color: [DEPRECATED] Modal background color
-    */
-    --modal-background-color: var(--color-background-surface-default);
-
-    /**
-    * @prop --modal-border-color: [DEPRECATED] Modal border color
-    */
-    --modal-border-color: var(--color-background-interactive-default);
-
     display: contents;
 }
 
@@ -37,11 +18,13 @@
     display: none;
 }
 
-.invisible {
-    visibility: hidden;
+rux-button-group {
+    margin-top: auto;
+    margin-left: auto;
+    align-self: flex-end;
 }
 
-.rux-modal {
+.rux-dialog {
     &__wrapper {
         position: fixed;
         top: 0;
@@ -62,12 +45,11 @@
         justify-content: space-between;
         background-color: var(--color-background-surface-default);
         width: 28rem;
-        min-height: 13.5rem;
         border: 0;
         margin: auto;
         padding: 0;
         user-select: none;
-        box-shadow: var(--dialog-shadow-outer);
+        box-shadow: var(--shadow-outer-dialog);
     }
 
     &__header {
@@ -110,14 +92,11 @@
         color: var(--color-text-primary);
     }
 
-    &__footer {
-        padding: 1.25rem; //20px
+    &__message {
+        margin: 0.5rem 1.875rem 2.5rem 1.875rem;
     }
-    &__header.hidden {
-        display: none;
-    }
-    &__message.hidden {
-        display: none;
+    .rux-button {
+        box-shadow: none !important;
     }
     &__header.hidden {
         display: none;

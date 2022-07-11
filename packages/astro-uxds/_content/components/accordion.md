@@ -26,7 +26,7 @@ An Accordion is a device which presents a hierarchical set of items in which onl
   Accordions are not commonly used for direct action or data manipulation. Use Accordions for navigation within a master-detail navigational pattern.
   :::
 
-![Example of an accordion in its collapsed state](/img/components/accordion-1.png)
+![Example of an Accordion in its collapsed state](/img/components/accordion-1.png)
 
 ## Appearance and Behavior
 
