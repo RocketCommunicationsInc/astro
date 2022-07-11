@@ -14,7 +14,7 @@ theme: true
 
 # Textarea
 
-Textareas are multi-line text inputs that allow for entering text in a larger area than a single-line text input would allow. They are typically used for multi-line input use cases like comments or feedback. (This short description could go in the Storybook section.)
+Textareas are multi-line text inputs that allow for entering text in a larger area than a single-line text input would allow. They are typically used for multi-line input use cases like comments or feedback.
 
 ## Rules of Thumb
 
