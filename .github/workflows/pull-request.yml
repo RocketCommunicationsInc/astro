@@ -50,12 +50,13 @@ jobs:
       # (which is important when using ^ version in package.json)
       # see https://github.com/actions/cache
       - name: Cache NPM and Cypress 📦
+        needs: setup
         uses: actions/cache@v2
         with:
           path: |
             ~/.cache/Cypress
             ./packages/web-components/node_modules
-          key: my-cache-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          key: node-modules-${{ hashFiles('package-lock.json') }}
 
       - name: Install Cypress and Stencil 📥
         run: npm i cypress@8.0.0 & npm i @stencil/core@2.5.2
