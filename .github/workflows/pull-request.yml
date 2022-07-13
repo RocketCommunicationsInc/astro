@@ -39,12 +39,18 @@ jobs:
       - name: Test
         run: npm run test.web-comps.unit
   e2e-tests:
-    needs: setup
+    # example with web application build,
+    # server start and waiting for the server
+    # to respond before running tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Install
-        run: npm run web-comps.install
-      - name: Test
-        run: npm run test.web-comps.e2e
+
+      - name: Cypress tests
+        uses: cypress-io/github-action@v4
+        with:
+          working-directory: ./packages/web-components
+          build: npm run build.stencil
+          start: npm start.stencil
+          wait-on: "http://localhost:3333"
