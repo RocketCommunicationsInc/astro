@@ -44,9 +44,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - uses: actions/cache@v2
-        with:
-          path: ./packages/web-components/node_modules
-          key: node-modules-${{ hashFiles('package-lock.json') }}
-      - name: Run e2e tests
+      - name: Install
+        run: npm run web-comps.install
+      - name: Test
         run: npm run test.web-comps.e2e
