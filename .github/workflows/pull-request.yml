@@ -39,6 +39,7 @@ jobs:
       - name: Test
         run: npm run test.web-comps.unit
   e2e-tests:
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎
@@ -50,7 +51,6 @@ jobs:
       # (which is important when using ^ version in package.json)
       # see https://github.com/actions/cache
       - name: Cache NPM and Cypress 📦
-        needs: setup
         uses: actions/cache@v2
         with:
           path: |
