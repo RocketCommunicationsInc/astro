@@ -28,6 +28,7 @@
         "start.storybook": "start-storybook -p 6006",
         "start": "concurrently npm:start.stencil npm:start.storybook",
         "test": "start-server-and-test ci.server 3333 test.all",
+        "cypress.ga": "start-server-and-test ci.server 3333",
         "test.e2e.ga": "start-server-and-test ci.server 3333 test.e2e",
         "test.e2e.run": "cypress run",
         "test.e2e.watch": "cypress open",

@@ -49,3 +49,4 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           working-directory: packages/web-components
+        run: npm run test.web-comps.e2e
