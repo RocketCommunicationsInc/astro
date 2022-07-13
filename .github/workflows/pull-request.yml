@@ -59,7 +59,7 @@ jobs:
             ~/.cache/Cypress
           key: node-modules-${{ hashFiles('package-lock.json') }}
       - run: npm i cypress@8.0.0
-        if: steps.cache-module-and-cypress.outputs.cache-hit != 'true'
+        if: steps.cache-modules-and-cypress.outputs.cache-hit != 'true'
       - name: Cypress tests 🧪
         uses: cypress-io/github-action@v4
         with:
