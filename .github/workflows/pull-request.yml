@@ -52,5 +52,5 @@ jobs:
         with:
           working-directory: ./packages/web-components
           build: npm run build.stencil
-          start: npm start.stencil
+          start: npm run start.stencil
           wait-on: "http://localhost:3333"
