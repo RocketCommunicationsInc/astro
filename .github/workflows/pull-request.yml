@@ -39,10 +39,15 @@ jobs:
       - name: Test
         run: npm run test.web-comps.unit
   cypress-run:
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: ./packages/web-components/node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
       - name: Start server
         run: npm run test.web-comps.e2e
       # Install NPM dependencies, cache them correctly
