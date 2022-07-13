@@ -57,8 +57,8 @@ jobs:
             node_modules
           key: my-cache-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
 
-      - name: Install Cypress 📥
-        run: npm i cypress@8.0.0
+      - name: Install Cypress and Stencil 📥
+        run: npm i cypress@8.0.0 & npm i @stencil/core@2.5.2
 
       - name: Cypress tests 🧪
         uses: cypress-io/github-action@v4
