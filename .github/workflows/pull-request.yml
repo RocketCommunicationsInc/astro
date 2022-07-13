@@ -54,7 +54,7 @@ jobs:
         with:
           path: |
             ~/.cache/Cypress
-            node_modules
+            ./packages/web-components/node_modules
           key: my-cache-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
 
       - name: Install Cypress and Stencil 📥
