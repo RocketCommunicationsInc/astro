@@ -44,12 +44,6 @@ jobs:
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@v2
-
-      # cache NPM modules and Cypress binary folder
-      # we can use "package-lock.json" as the key file
-      # to make sure we use the precise Cypress version
-      # (which is important when using ^ version in package.json)
-      # see https://github.com/actions/cache
       - name: Cache NPM and Cypress 📦
         uses: actions/cache@v2
         id: cache-modules-and-cypress
