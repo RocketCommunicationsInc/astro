@@ -39,18 +39,29 @@ jobs:
       - name: Test
         run: npm run test.web-comps.unit
   e2e-tests:
-    # example with web application build,
-    # server start and waiting for the server
-    # to respond before running tests
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout 🛎
         uses: actions/checkout@v2
 
-      - name: Cypress tests
+      # cache NPM modules and Cypress binary folder
+      # we can use "package-lock.json" as the key file
+      # to make sure we use the precise Cypress version
+      # (which is important when using ^ version in package.json)
+      # see https://github.com/actions/cache
+      - name: Cache NPM and Cypress 📦
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cache/Cypress
+            node_modules
+          key: my-cache-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install Cypress 📥
+        run: npm i cypress@8.0.0
+
+      - name: Cypress tests 🧪
         uses: cypress-io/github-action@v4
         with:
           working-directory: ./packages/web-components
-          build: npm run build.stencil
-          start: npm run start.stencil
-          wait-on: "http://localhost:3333"
+          install: false
