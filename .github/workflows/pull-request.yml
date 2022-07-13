@@ -55,14 +55,10 @@ jobs:
         with:
           path: ./packages/web-components/node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
-
-      - name: Install Cypress 📥
-        run: npm i cypress@8.0.0
-
       - name: Cypress tests 🧪
         uses: cypress-io/github-action@v4
         with:
           working-directory: ./packages/web-components
           install: false
-          start: npm run ci.server
+          start: npm run start.stencil
           wait-on: "http://localhost:3333"
