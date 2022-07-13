@@ -22,9 +22,9 @@ Textareas are multi-line text inputs that allow for entering text in a larger ar
 - Does not utilize text formatting for the Textarea.
 - Every Textarea should have a label. A Textarea without a label is ambiguous and not accessible.
 - For **sizing**, consider the amount of text likely to be input into the field:
-- By default, start with two rows.
-- Where space is limited such as inside a modal, limit manual resizing.
-- On page load, if the Textarea already contains large amounts of text, consider resizing to reveal the full text.
+  - By default, start with two rows.
+  - Where space is limited such as inside a modal, limit manual resizing.
+  - On page load, if the Textarea already contains large amounts of text, consider resizing to reveal the full text.
 
 ## Appearance and Behavior
 
@@ -52,7 +52,7 @@ The user is allowed to manually resize the text area components to fit whatever 
 
 ![Do: Use a multi-line text field that is the correct size for the expected input.](/img/components/textarea-do-1.png "Do: Use a multi-line text field that is the correct size for the expected input.")
 
-![Don't: Use if needing to format some of the text, such as applying bold or adding links.](/img/components/textarea-dont-1.png "Don't: Use if needing to format some of the text, such as applying bold or adding links.")
+![Don't: Use a Textarea if custom formatting is desired, such as applying bold or adding links.](/img/components/textarea-dont-1.png "Don't: Use a Textarea if custom formatting is desired, such as applying bold or adding links.")
 
 ![Do: Use a label along with a Textarea for better user accessibility.](/img/components/textarea-do-2.png "Do: Use a label along with a Textarea for better user accessibility.")
 
