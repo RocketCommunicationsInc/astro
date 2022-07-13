@@ -65,3 +65,4 @@ jobs:
           working-directory: ./packages/web-components
           install: false
           start: npm run start.stencil
+          wait-on: "http://localhost:3333"
