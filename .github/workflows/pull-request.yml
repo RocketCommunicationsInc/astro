@@ -38,16 +38,14 @@ jobs:
           key: node-modules-${{ hashFiles('package-lock.json') }}
       - name: Test
         run: npm run test.web-comps.unit
-  e2e-tests:
-    name: End-to-end tests
-    cypress-run:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v2
-        # Install NPM dependencies, cache them correctly
-        # and run all Cypress tests
-        - name: Cypress run
-          uses: cypress-io/github-action@v4
-          with:
-            working-directory: packages/web-components
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          working-directory: packages/web-components
