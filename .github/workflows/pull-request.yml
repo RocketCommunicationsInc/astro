@@ -22,7 +22,7 @@ jobs:
         with:
           path: |
             ./packages/web-components/node_modules
-            ~/.cache/Cypress
+            ./home/runner/.cache/Cypress
           key: node-modules-${{ hashFiles('package-lock.json') }}
       - run: npm run web-comps.install
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
