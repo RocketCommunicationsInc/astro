@@ -38,7 +38,7 @@ jobs:
           key: node-modules-${{ hashFiles('package-lock.json') }}
       - name: Test
         run: npm run test.web-comps.unit
-  cypress-run:
+  e2e-tests:
     needs: setup
     runs-on: ubuntu-latest
     steps:
@@ -48,11 +48,5 @@ jobs:
         with:
           path: ./packages/web-components/node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
-      - name: Start server
+      - name: Run e2e tests
         run: npm run test.web-comps.e2e
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v4
-        with:
-          working-directory: packages/web-components
