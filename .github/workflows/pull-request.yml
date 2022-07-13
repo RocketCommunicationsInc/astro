@@ -39,13 +39,13 @@ jobs:
       - name: Test
         run: npm run test.web-comps.unit
   e2e-tests:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: install
-        run: npm run web-comps.install
-      - name: build
-        run: npm run build.web-comps
-      - name: Test
-        run: npm run test.web-comps.e2e
+    name: End-to-end tests
+    cypress-run:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+        # Install NPM dependencies, cache them correctly
+        # and run all Cypress tests
+        - name: Cypress run
+          uses: cypress-io/github-action@v4
