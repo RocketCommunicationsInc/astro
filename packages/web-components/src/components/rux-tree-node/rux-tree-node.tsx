@@ -45,6 +45,18 @@ export class RuxTreeNode {
     @Event({ eventName: 'ruxtreenodeselected' })
     ruxTreeNodeSelected!: EventEmitter<string>
 
+    /**
+     * Emit when user expands a tree node
+     */
+    @Event({ eventName: 'ruxtreenodeexpanded' })
+    ruxTreeNodeExpanded!: EventEmitter<string>
+
+    /**
+     * Emit when user collapses a tree node
+     */
+    @Event({ eventName: 'ruxtreenodecollapsed' })
+    ruxTreeNodeCollapsed!: EventEmitter<string>
+
     @Watch('expanded')
     handleExpandedChange(newValue: boolean) {
         this.setExpanded(newValue)
@@ -168,6 +180,9 @@ export class RuxTreeNode {
     private _handleArrowClick(e: MouseEvent) {
         e.stopPropagation()
         this.setExpanded(!this.expanded)
+        this.expanded
+            ? this.ruxTreeNodeExpanded.emit(this.componentId)
+            : this.ruxTreeNodeCollapsed.emit(this.componentId)
     }
 
     private _handleTreeNodeClick(e: MouseEvent) {

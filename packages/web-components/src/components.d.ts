@@ -32984,6 +32984,14 @@ declare namespace LocalJSX {
          */
         "expanded"?: boolean;
         /**
+          * Emit when user collapses a tree node
+         */
+        "onRuxtreenodecollapsed"?: (event: CustomEvent<string>) => void;
+        /**
+          * Emit when user expands a tree node
+         */
+        "onRuxtreenodeexpanded"?: (event: CustomEvent<string>) => void;
+        /**
           * Emit when user selects a tree node
          */
         "onRuxtreenodeselected"?: (event: CustomEvent<string>) => void;
