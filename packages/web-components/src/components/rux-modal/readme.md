@@ -66,10 +66,10 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 
 ## Events
 
-| Event            | Description                           | Type                           |
-| ---------------- | ------------------------------------- | ------------------------------ |
-| `ruxmodalclosed` | Event that is fired when modal closes | `CustomEvent<boolean \| null>` |
-| `ruxmodalopened` | Event that is fired when modal opens  | `CustomEvent<void>`            |
+| Event            | Description                                                                                                                                                                                      | Type                           |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------ |
+| `ruxmodalclosed` | Event that is fired when modal closes. If modal is closed by clicking on the default confirm or deny buttons (when no footer slot is provided), then true or false will be emitted respectively. | `CustomEvent<boolean \| null>` |
+| `ruxmodalopened` | Event that is fired when modal opens                                                                                                                                                             | `CustomEvent<void>`            |
 
 
 ## Slots
