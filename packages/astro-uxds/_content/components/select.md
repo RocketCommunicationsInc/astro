@@ -27,10 +27,11 @@ When activated, Select Menus allow users to select a value from a list. Once a v
 - Keep the number of list values to a reasonable number to avoid endless scrolling. Alternative components, such as [Input Fields](/components/input-field) and [Search](/components/search) (with auto-complete and appropriate validation) or [Table](/patterns/table) pattern instead, could be used rather than making users scroll through large quantities of data.
 - Do not remove disabled items from the selection list. Disabled items should give a visual indicator of their disabled state, without hover.
 - Use appropriate field labels, placeholder text, and Help Text when possible to assist the user in selecting an appropriate value.
+- Use an ellipsis (…) to indicate to users that further action is required to complete a command. The ellipsis character means that a Dialog Box or a separate window will open allowing users to make additional choices or supply additional information to complete the action.
 
 ## Appearance and Behavior
 
-The Select component consists of an input field containing a downward facing caret icon. Clicking on the caret expands a list of items (below, or above if there is no room below due to the position of the component on screen) related to the input field. Once an item in the list is selected, the selection is populated in the input field.
+The Select Menu component consists of an input field containing a downward facing caret icon. Clicking on the caret expands a list of items (below, or above if there is no room below due to the position of the component on screen) related to the input field. Once an item in the list is selected, the selection is populated in the input field.
 
 To learn more about adding Help Text or Validation to Select Menus, see the [Forms and Validation](/patterns/forms-and-validation) guidance.
 
