@@ -71,10 +71,10 @@ Or use slots to render the header, content and footer.
 
 ## Events
 
-| Event             | Description                            | Type                           |
-| ----------------- | -------------------------------------- | ------------------------------ |
-| `ruxdialogclosed` | Event that is fired when dialog closes | `CustomEvent<boolean \| null>` |
-| `ruxdialogopened` | Event that is fired when dialog opens  | `CustomEvent<void>`            |
+| Event             | Description                                                                                                                                                                                        | Type                           |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
+| `ruxdialogclosed` | Event that is fired when dialog closes. If dialog is closed by clicking on the default confirm or deny buttons (when no footer slot is provided), then true or false will be emitted respectively. | `CustomEvent<boolean \| null>` |
+| `ruxdialogopened` | Event that is fired when dialog opens                                                                                                                                                              | `CustomEvent<void>`            |
 
 
 ## Slots
