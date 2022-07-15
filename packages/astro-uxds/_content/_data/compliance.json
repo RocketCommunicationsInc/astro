@@ -99,13 +99,15 @@
           "rules": [
             {
               "numeral": 1,
-              "rule": "Data Visualizations shall have no more than 8 colors per data set.",
-              "status": "new"
+              "rule": "Data visualizations shall have no more than 8 colors per data set.",
+              "status": "current",
+              "tier": 3
             },
             {
               "numeral": 2,
-              "rule": "Data Visualizations shall use sentence case capitalization for titles, labels, and legends.",
-              "status": "new"
+              "rule": "Data visualizations shall use sentence case capitalization for titles, labels, and legends.",
+              "status": "current",
+              "tier": 3
             }
           ]
         },
@@ -362,8 +364,9 @@
             },
             {
               "numeral": 3,
-              "rule": "Select Menus shall not exceed 25 menu items. For longer lists, use a [Table](/patterns/table) instead.",
-              "status": "current"
+              "rule": "Select menus shall not exceed 25 menu items. For longer lists, use a [Table](/patterns/table) instead.",
+              "status": "current",
+              "tier": 3
             },
             {
               "numeral": 4,
@@ -418,8 +421,9 @@
           "rules": [
             {
               "numeral": 1,
-              "rule": "Monitoring Icons shall include a label and a [Status Symbol](/components/icons-and-symbols#status-symbol).",
-              "status": "current"
+              "rule": "Monitoring Icons shall include a label and a [status symbol](/components/status-symbol).",
+              "status": "current",
+              "tier": 1
             },
             {
               "numeral": 2,
@@ -536,8 +540,9 @@
             },
             {
               "numeral": 3,
-              "rule": "Linked text shall indicated what will happen when the Link is clicked, not \"Click Here\" or \"Link\".",
-              "status": "current"
+              "rule": "Linked text shall indicated what will happen when the link is clicked, not \"Click Here\" or \"Link\".",
+              "status": "under-review",
+              "tier": 2
             }
           ]
         },
