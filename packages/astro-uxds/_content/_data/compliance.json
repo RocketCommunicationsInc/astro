@@ -99,15 +99,13 @@
           "rules": [
             {
               "numeral": 1,
-              "rule": "Data visualizations shall have no more than 8 colors per data set.",
-              "status": "current",
-              "tier": 3
+              "rule": "Data Visualizations shall have no more than 8 colors per data set.",
+              "status": "new"
             },
             {
               "numeral": 2,
-              "rule": "Data visualizations shall use sentence case capitalization for titles, labels, and legends.",
-              "status": "current",
-              "tier": 3
+              "rule": "Data Visualizations shall use sentence case capitalization for titles, labels, and legends.",
+              "status": "new"
             }
           ]
         },
@@ -364,9 +362,8 @@
             },
             {
               "numeral": 3,
-              "rule": "Select menus shall not exceed 25 menu items. For longer lists, use a [Table](/patterns/table) instead.",
-              "status": "current",
-              "tier": 3
+              "rule": "Select Menus shall not exceed 25 menu items. For longer lists, use a [Table](/patterns/table) instead.",
+              "status": "current"
             },
             {
               "numeral": 4,
@@ -421,9 +418,8 @@
           "rules": [
             {
               "numeral": 1,
-              "rule": "Monitoring Icons shall include a label and a [status symbol](/components/status-symbol).",
-              "status": "current",
-              "tier": 1
+              "rule": "Monitoring Icons shall include a label and a [Status Symbol](/components/icons-and-symbols#status-symbol).",
+              "status": "current"
             },
             {
               "numeral": 2,
@@ -452,7 +448,7 @@
             },
             {
               "numeral": 6,
-              "rule": "Grouped icons shall be equally sized.",
+              "rule": "Grouped Icons shall be equally sized.",
               "figure": "/img/components/icons-do-1.png",
               "status": "current",
               "tier": 2
@@ -540,9 +536,8 @@
             },
             {
               "numeral": 3,
-              "rule": "Linked text shall indicated what will happen when the link is clicked, not \"Click Here\" or \"Link\".",
-              "status": "under-review",
-              "tier": 2
+              "rule": "Linked text shall indicated what will happen when the Link is clicked, not \"Click Here\" or \"Link\".",
+              "status": "current"
             }
           ]
         },
@@ -647,14 +642,14 @@
           "rules": [
             {
               "numeral": 1,
-              "rule": "A determinate Progress indicator shall indicate an operation that has a well-defined duration.",
+              "rule": "A Determinate Progress indicator shall indicate an operation that has a well-defined duration.",
               "figure": "/img/components/determinate-progress-do-1.png",
               "status": "current",
               "tier": 2
             },
             {
               "numeral": 2,
-              "rule": "An indeterminate Progress indicator shall indicate an operation that has unknown duration.",
+              "rule": "An Indeterminate Progress indicator shall indicate an operation that has unknown duration.",
               "figure": "/img/components/indeterminate-progress-do-1.png",
               "status": "current",
               "tier": 2

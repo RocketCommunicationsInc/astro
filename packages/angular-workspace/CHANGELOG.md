@@ -9,6 +9,14 @@
 
   Migration: You can do a global find/replace on your project for:
 
+## 6.10.0
+
+### Minor Changes
+
+#### Modal
+
+- Modal is now deprecated and will be removed in 7.0. It is being renamed to Dialog to align with our Design System naming and which shares the exact same API as Modal. It is recommended that you migrate to Dialog before 7.0. You can do a global find/replace on your project for:
+
   `rux-modal` -> `rux-dialog`
   `ruxmodalclosed` -> `ruxdialogclosed`
   `ruxmodalopened` -> `ruxdialogopened`
@@ -114,6 +122,18 @@ Pop Up Menu has been re-written to take a slotted trigger element and slotted co
 #### Container
 
 - New component
+
+#### GSB
+
+- Fixed layout bug when used with classification marking
+
+#### Modal / Dialog
+
+- Fixed an issue with modal emitting an extra 'ruxmodalclosed' event when closed by an off click.
+
+#### Tabs
+
+- Fixed a styling bug with `small` variant
 
 ## 6.9.1
 

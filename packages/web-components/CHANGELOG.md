@@ -17,16 +17,19 @@
 
 -   f9b842f7: Modal is now deprecated and will be removed in 7.0. It is being renamed to Dialog to align with our Design System naming and which shares the exact same API as Modal. It is recommended that you migrate to Dialog before 7.0. You can do a global find/replace on your project for:
 
+## 6.10.0
+
+### Minor Changes
+
+#### Modal
+
+-   Modal is now deprecated and will be removed in 7.0. It is being renamed to Dialog to align with our Design System naming and which shares the exact same API as Modal. It is recommended that you migrate to Dialog before 7.0. You can do a global find/replace on your project for:
+
     `rux-modal` -> `rux-dialog`
     `ruxmodalclosed` -> `ruxdialogclosed`
     `ruxmodalopened` -> `ruxdialogopened`
 
 -   3c0cd2b8: Updates help text to use text-secondary to align with design
-
-### Patch Changes
-
--   f9b842f7: Fixed an issue with modal emitting an extra 'ruxmodalclosed' event when closed by an off click.
--   f9b842f7: Fixed an issue where rux-tab border would not style correctly when rux-tabs was set to small.
 
 ## 7.0.0-beta.2
 
@@ -380,17 +383,19 @@ Pop Up Menu has been re-written to take a slotted trigger element and slotted co
 
 -   New component
 
+### Patch Changes
+
+#### Tabs
+
+-   Fixed a styling bug with `small` variant
+
 ## 6.9.1
 
 ### Patch Changes
 
--   Updates Angular dependencies and documentation
-
 ## 6.9.0
 
 ### Minor Changes
-
--   !!! Deprecates CSS Custom Properties. See MIGRATION.md for more information !!!
 
 #### Input
 
