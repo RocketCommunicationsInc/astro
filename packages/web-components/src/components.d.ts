@@ -20530,7 +20530,7 @@ declare namespace LocalJSX {
          */
         "modalTitle"?: string;
         /**
-          * Event that is fired when dialog closes
+          * <<<<<<< HEAD      Event that is fired when dialog closes =======      Event that is fired when dialog closes. If dialog is closed by clicking on the default confirm or deny buttons (when no footer slot is provided), then true or false will be emitted respectively. >>>>>>> main
          */
         "onRuxdialogclosed"?: (event: CustomEvent<boolean | null>) => void;
         /**
