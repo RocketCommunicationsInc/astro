@@ -452,7 +452,7 @@
             },
             {
               "numeral": 6,
-              "rule": "Grouped icons shall be equally sized.",
+              "rule": "Grouped Icons shall be equally sized.",
               "figure": "/img/components/icons-do-1.png",
               "status": "current",
               "tier": 2
@@ -647,14 +647,14 @@
           "rules": [
             {
               "numeral": 1,
-              "rule": "A determinate Progress indicator shall indicate an operation that has a well-defined duration.",
+              "rule": "A Determinate Progress indicator shall indicate an operation that has a well-defined duration.",
               "figure": "/img/components/determinate-progress-do-1.png",
               "status": "current",
               "tier": 2
             },
             {
               "numeral": 2,
-              "rule": "An indeterminate Progress indicator shall indicate an operation that has unknown duration.",
+              "rule": "An Indeterminate Progress indicator shall indicate an operation that has unknown duration.",
               "figure": "/img/components/indeterminate-progress-do-1.png",
               "status": "current",
               "tier": 2

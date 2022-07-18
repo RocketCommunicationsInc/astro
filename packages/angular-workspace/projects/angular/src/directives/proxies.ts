@@ -23372,6 +23372,14 @@ export declare interface RuxTreeNode extends Components.RuxTreeNode {
    * Emit when user selects a tree node 
    */
   ruxtreenodeselected: EventEmitter<CustomEvent<string>>;
+  /**
+   * Emit when user expands a tree node 
+   */
+  ruxtreenodeexpanded: EventEmitter<CustomEvent<string>>;
+  /**
+   * Emit when user collapses a tree node 
+   */
+  ruxtreenodecollapsed: EventEmitter<CustomEvent<string>>;
 
 }
 
@@ -23391,6 +23399,6 @@ export class RuxTreeNode {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['ruxtreenodeselected']);
+    proxyOutputs(this, this.el, ['ruxtreenodeselected', 'ruxtreenodeexpanded', 'ruxtreenodecollapsed']);
   }
 }

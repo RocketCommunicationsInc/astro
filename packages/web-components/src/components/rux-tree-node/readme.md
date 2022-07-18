@@ -13,9 +13,11 @@
 
 ## Events
 
-| Event                 | Description                        | Type                  |
-| --------------------- | ---------------------------------- | --------------------- |
-| `ruxtreenodeselected` | Emit when user selects a tree node | `CustomEvent<string>` |
+| Event                  | Description                          | Type                  |
+| ---------------------- | ------------------------------------ | --------------------- |
+| `ruxtreenodecollapsed` | Emit when user collapses a tree node | `CustomEvent<string>` |
+| `ruxtreenodeexpanded`  | Emit when user expands a tree node   | `CustomEvent<string>` |
+| `ruxtreenodeselected`  | Emit when user selects a tree node   | `CustomEvent<string>` |
 
 
 ## Methods
