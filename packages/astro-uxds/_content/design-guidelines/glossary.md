@@ -28,7 +28,7 @@ title: Glossary
 - Close Button - A UI component that, when activated, dismisses a [Dialog](/components/dialog).
 - [Color Palettes](/design-guidelines/color) - The list of color values used in and approved by the Astro design system.
 - [Compliance](/design-guidelines/compliance) - A list of rules used to determine if products align with Astro design and usage patterns.
-- Containers - Used to group multiple components into a specific area that allows them to flow in a flexible/responsive manner. Containers can be used to help manage lists, tables, dialogs, modals, slide out panels, content containers (top and bottom), and other components.
+- [Containers](/components/container) - Used to group multiple components into a specific area that allows them to flow in a flexible/responsive manner. Containers can be used to help manage lists, tables, dialogs, modals, slide out panels, content containers (top and bottom), and other components.
 - [Concept Sketch](/design-process/ui-design) - A sketch on paper that lays out the main content workspace and controls and clarifies the flow of user interaction from screen-to-screen.
 
 ### D
