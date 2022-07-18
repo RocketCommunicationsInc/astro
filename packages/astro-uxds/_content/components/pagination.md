@@ -11,16 +11,13 @@ height: 300px
 
 # Pagination
 
-::: note
-Be sure the current page is easily distinguishable from other pages referenced by the Pagination.
-:::
-
 ## Rules of Thumb
 
-- Don’t underline links.
+- Do not use underlined text except for in hovered elements.
 - Use Pagination only when necessary. Instead, think about editing the content to fit onto one page.
 - Make each page a similar length.
 - If there is only one page, no Pagination is needed.
+- Be sure the current page is easily distinguishable from other pages referenced by the Pagination
 
 ## Appearance and Behavior
 
