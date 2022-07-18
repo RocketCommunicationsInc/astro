@@ -1,6 +1,6 @@
 ---
-tags: components
-path: /components/sign-in
+tags: patterns
+path: /patterns/sign-in
 date: Last Modified
 layout: components.template.njk
 title: Sign In
