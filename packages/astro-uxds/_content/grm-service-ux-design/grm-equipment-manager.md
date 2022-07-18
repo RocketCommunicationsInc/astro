@@ -9,7 +9,7 @@ title: GRM Equipment Manager
 # GRM Equipment Manager
 
 :::note
-The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 5 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
+The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
 :::
 [Launch GRM Equipment Manager Sample App](https://grm-equipment.astrouxds.com/) | [Design Materials and Source Code](#contentBottom)
 

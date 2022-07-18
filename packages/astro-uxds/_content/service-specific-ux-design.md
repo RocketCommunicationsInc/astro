@@ -9,7 +9,7 @@ title: Service Specific UX Design
 # Service Specific UX Design
 
 :::note
-The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 5 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
+The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
 :::
 The goal of the Service Specific UX Design effort is to promote the development of consistent, robust applications to support Enterprise Ground Services (EGS) by applying UX design process and the Astro Space UX Design System to create, document and implement baseline designs as interactive sample apps. The work described here focused on two key EGS services, [Ground Resource Management (GRM)][grm-designs] and [Telemetry, Tracking & Command (TT&C)][ttc-designs] and followed the process below:
 
