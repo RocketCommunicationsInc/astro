@@ -10,14 +10,10 @@
     --notification-banner-padding: 0 0.5rem 0 1rem; //0 8px 0 16px
     --notification-banner-border-width-small: 2px;
     --notification-banner-inner-border-width: 1px;
-    /**
-  * @prop --notification-text-color: [DEPRECATED] The notification text color
-  */
-    --notification-text-color: var(--color-palette-neutral-1000);
 
     /**
-        * @prop --height: the Notification's height
-        */
+    * @prop --height: the Notification's height
+    */
     --height: 4.375rem; // 70px;
 
     display: contents;
