@@ -29,7 +29,7 @@ import { hasSlot } from '../../utils/utils'
 @Component({
     tag: 'rux-dialog',
     styleUrl: 'rux-dialog.scss',
-    shadow: true,
+    shadow: { delegatesFocus: true },
 })
 export class RuxDialog {
     /**
