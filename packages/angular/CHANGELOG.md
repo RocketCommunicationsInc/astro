@@ -1,5 +1,16 @@
 # @astrouxds/angular
 
+## 6.11.0
+
+### Minor Changes
+
+- 8cf0f224: Added two new events to rux-tree-node: ruxtreenodeexpanded and ruxtreenodecollapsed.
+
+### Patch Changes
+
+- Updated dependencies [8cf0f224]
+  - @astrouxds/astro-web-components@6.11.0
+
 ## 6.10.0
 
 ### Minor Changes
