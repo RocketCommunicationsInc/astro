@@ -61,6 +61,7 @@ export class RuxTimeRegion {
         return (
             <Host>
                 <div
+                    tabindex="0"
                     part="container"
                     class={{
                         'rux-time-region': true,
