@@ -23,7 +23,7 @@ jobs:
           path: |
             ./packages/web-components/node_modules
             ~/.cache/Cypress
-          key: node-modules-${{ hashFiles('package-lock.json') }}
+          key: node-modules-1-${{ hashFiles('package-lock.json') }}
       - run: npm run web-comps.install
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
       - run: npm run build.web-comps
@@ -37,7 +37,7 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: ./packages/web-components/node_modules
-          key: node-modules-${{ hashFiles('package-lock.json') }}
+          key: node-modules-1-${{ hashFiles('package-lock.json') }}
       - name: Test
         run: npm run test.web-comps.unit
   e2e-tests:
@@ -52,7 +52,7 @@ jobs:
           path: |
             ./packages/web-components/node_modules
             ~/.cache/Cypress
-          key: node-modules-${{ hashFiles('package-lock.json') }}
+          key: node-modules-1-${{ hashFiles('package-lock.json') }}
       - run: npm i cypress@9.3.0
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
       - name: Cypress tests 🧪
