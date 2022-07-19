@@ -583,7 +583,7 @@
           "link": "/components/pagination/",
           "rules": [
             {
-              "rule": "Pagination shall not use underlined text.",
+              "rule": "Pagination shall not use underlined text except for in hovered elements.",
               "numeral": 1,
               "status": "under-review",
               "tier": 3
