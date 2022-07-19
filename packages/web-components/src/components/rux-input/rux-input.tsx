@@ -286,6 +286,11 @@ export class RuxInput implements FormFieldInterface {
             spellcheck,
             readonly,
             togglePassword,
+            hasFocus,
+            fileMultiple,
+            fileAcceptAttr,
+            fileCapture,
+            isPasswordVisible,
         } = this
 
         renderHiddenInput(true, el, name, value, disabled)
@@ -327,7 +332,7 @@ export class RuxInput implements FormFieldInterface {
                     <div
                         class={{
                             'rux-input': true,
-                            'rux-input--focused': this.hasFocus,
+                            'rux-input--focused': hasFocus,
                             'rux-input--disabled': disabled,
                             'rux-input--invalid': invalid,
                             'rux-input--search': type === 'search',
@@ -344,7 +349,7 @@ export class RuxInput implements FormFieldInterface {
                             name={name}
                             disabled={disabled}
                             type={
-                                type === 'password' && this.isPasswordVisible
+                                type === 'password' && isPasswordVisible
                                     ? 'text'
                                     : type
                             }
@@ -358,9 +363,9 @@ export class RuxInput implements FormFieldInterface {
                             class="native-input"
                             id={this.inputId}
                             spellcheck={spellcheck}
-                            accept={this.fileAcceptAttr}
-                            multiple={this.fileMultiple}
-                            capture={this.fileCapture}
+                            accept={fileAcceptAttr}
+                            multiple={fileMultiple}
+                            capture={fileCapture}
                             autocomplete={togglePassword ? 'off' : autocomplete}
                             readonly={readonly}
                             onChange={_onChange}
@@ -380,7 +385,7 @@ export class RuxInput implements FormFieldInterface {
                                 <rux-icon
                                     exportparts="icon"
                                     icon={
-                                        this.isPasswordVisible
+                                        isPasswordVisible
                                             ? 'visibility-off'
                                             : 'visibility'
                                     }
