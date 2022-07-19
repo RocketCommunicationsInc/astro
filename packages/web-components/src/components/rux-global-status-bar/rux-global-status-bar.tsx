@@ -74,10 +74,10 @@ export class RuxGlobalStatusBar {
 
     render() {
         const TagColor = {
-            tag1: 'var(--color-palette-teal-600)',
-            tag2: 'var(--color-palette-purple-600)',
-            tag3: 'var(--color-palette-pink-600)',
-            tag4: 'var(--color-palette-hotorange-600)',
+            tag1: 'var(--color-palette-teal-600, #009fa3)',
+            tag2: 'var(--color-palette-purple-600, #6058a8)',
+            tag3: 'var(--color-palette-pink-600, #81009a)',
+            tag4: 'var(--color-palette-hotorange-600, #af420a)',
         }
 
         return (

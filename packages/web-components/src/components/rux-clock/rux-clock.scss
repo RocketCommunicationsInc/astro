@@ -1,7 +1,6 @@
 :host {
     display: flex;
     margin: 0 1rem;
-    color: var(--color-palette-neutral-000);
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -16,7 +15,7 @@
 .rux-clock {
     display: flex;
     user-select: none;
-    color: var(--clock-text-color);
+    color: var(--gsb-color-text);
     height: 3.938rem; //63px
 }
 
@@ -35,7 +34,7 @@
     font-size: var(--font-monospace-1-font-size);
     letter-spacing: var(--font-monospace-1-letter-spacing);
     border: 1px solid var(--color-background-surface-default);
-    background-color: var(--color-palette-brightblue-900);
+    background-color: var(--color-palette-brightblue-900, #101923);
     white-space: nowrap;
     overflow-y: hidden;
     text-overflow: ellipsis;
@@ -55,7 +54,7 @@
     font-size: var(--font-body-2-font-size);
     font-weight: var(--font-body-2-font-weight);
     letter-spacing: var(--font-body-2-letter-spacing);
-    color: var(--color-palette-neutral-000);
+    color: var(--color-text-white);
     background: var(--gsb-color-background);
     padding: 0.094rem 0.625rem;
     width: -moz-available;

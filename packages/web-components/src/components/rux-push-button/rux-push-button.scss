@@ -70,13 +70,13 @@
         &__input:checked + .rux-push-button__button {
             display: flex;
             color: var(--color-text-inverse);
-            background-color: var(--color-palette-green-500);
-            border-color: var(--color-palette-green-500);
+            background-color: var(--color-status-normal);
+            border-color: var(--color-status-normal);
             rux-icon {
                 color: var(--color-text-inverse);
             }
             &:hover {
-                background-color: var(--color-palette-green-400);
+                background-color: var(--color-palette-green-400, #99f666);
             }
         }
 
@@ -84,8 +84,8 @@
         &__input:checked:disabled + .rux-push-button__button {
             &:hover {
                 color: var(--color-text-inverse);
-                background-color: var(--color-palette-green-500);
-                border-color: var(--color-palette-green-500);
+                background-color: var(--color-status-normal);
+                border-color: var(--color-status-normal);
                 rux-icon {
                     color: var(--color-text-inverse);
                 }
