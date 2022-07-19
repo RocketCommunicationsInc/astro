@@ -104,6 +104,10 @@
       {
         "label": "Forms and Validation",
         "url": "/patterns/forms-and-validation"
+      },
+      {
+        "label": "Sign In",
+        "url": "/patterns/sign-in"
       }
     ]
   },
@@ -206,10 +210,6 @@
       {
         "label": "Segmented Button",
         "url": "/components/segmented-button"
-      },
-      {
-        "label": "Sign In",
-        "url": "/components/sign-in"
       },
       {
         "label": "Select Menu",

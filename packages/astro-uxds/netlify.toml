@@ -105,3 +105,9 @@ command = "npm run build"
 	to = "/components/dialog"
 	status = 301
 	force = true
+
+[[redirects]]
+	from = "/components/sign-in"
+	to = "/patterns/sign-in"
+	status = 301
+	force = true
