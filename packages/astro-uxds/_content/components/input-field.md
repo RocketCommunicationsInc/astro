@@ -34,7 +34,7 @@ Input Fields allow users to enter freeform text. Variations on this field often 
 
 An Input Field consists of a descriptive, concise label paired with an entry field. Optionally, Inputs may include Help Text, left-aligned beneath the Input, to assist the user in understanding what kind of content is accepted by the Input. Inputs displayed in a form may also be paired with a visual indicator of a required, or optional state. Disabled Inputs are displayed with a different opacity and cannot be interacted with by the user.
 
-Standard states for Input Fields include Active (the default, interactive state for a text Input), Hover (the user has paused over an active or focused Input), Focus (the field is selected and ready for data entry), Disabled (the field is not interactive, and its content is not sent when the form is submitted), and Read-only.
+Standard states for Input Fields include Default (the initial, interactive state for a text Input), Hover (the user has paused over an active or focused Input), Focus (the field is selected and ready for data entry), Invalid (the field shows an error in data entry or formatting, such as going over a character limit), Disabled (the field is not interactive, and its content is not sent when the form is submitted), and Read-only.
 
 An Input Field is enabled if it is eligible for interaction and focused if it is the current target for keystrokes.
 
