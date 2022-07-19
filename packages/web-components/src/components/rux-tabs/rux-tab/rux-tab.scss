@@ -27,7 +27,7 @@
 }
 :host([small]) {
     .rux-tab--selected {
-        border-bottom: solid 3px var(--tab-selected-border-color);
+        border-bottom: solid 3px var(--color-border-interactive-default);
     }
     min-width: 2rem;
     padding: 1.25rem 1rem; //20 16
@@ -36,11 +36,11 @@
 
 .rux-tab--selected {
     color: var(--color-text-primary);
-    border-bottom: 5px solid var(--color-background-interactive-default);
+    border-bottom: 5px solid var(--color-border-interactive-default);
 }
 
 .rux-tab--disabled {
-    color: var(--color-background-interactive-default);
+    color: var(--color-text-interactive-default);
     opacity: var(--disabled-opacity);
     cursor: not-allowed;
 }
