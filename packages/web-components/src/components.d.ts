@@ -11957,6 +11957,7 @@ export namespace Components {
         | 'date'
         | 'datetime-local'
         | 'time'
+        | 'file'
         | 'tel';
         /**
           * The input value
@@ -32293,6 +32294,7 @@ declare namespace LocalJSX {
         | 'date'
         | 'datetime-local'
         | 'time'
+        | 'file'
         | 'tel';
         /**
           * The input value

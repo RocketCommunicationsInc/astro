@@ -158,6 +158,15 @@
                         name="native-time"
                     />
                 </div>
+                <div>
+                    <rux-input
+                        id="file"
+                        type="file"
+                        accept=".doc,image/*"
+                        multiple
+                        capture="user"
+                    ></rux-input>
+                </div>
 
                 <button id="formSubmitBtn" type="submit">submit</button>
             </form>
@@ -165,6 +174,7 @@
             <script>
                 const log = document.getElementById('log')
                 const form = document.getElementById('form')
+                const fileType = document.getElementById('file')
                 form.addEventListener('submit', (e) => {
                     event.preventDefault()
                     // trigger formdata event
@@ -174,12 +184,14 @@
                     log.innerHTML = ''
                     // Get the form data from the event object
                     let data = e.formData
-                    const values = data.values()
                     for (var value of data.entries()) {
                         const item = document.createElement('li')
                         item.innerHTML = `<strong>${value[0]}:</strong>${value[1]}`
                         log.appendChild(item)
                     }
+                    let fileItem = document.createElement('li')
+                    fileItem.innerHTML = `<strong>${fileType.id}</strong>:${fileType.value}`
+                    log.appendChild(fileItem)
                 })
             </script>
         </div>

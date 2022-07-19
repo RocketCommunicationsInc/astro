@@ -38,6 +38,12 @@ let id = 0
 export class RuxInput implements FormFieldInterface {
     private inputId = `rux-input-${++id}`
 
+    private fileAcceptAttr: string | undefined
+
+    private fileMultiple: boolean | undefined
+
+    private fileCapture: string | undefined
+
     @Element() el!: HTMLRuxInputElement
 
     @State() hasLabelSlot = false
@@ -95,6 +101,7 @@ export class RuxInput implements FormFieldInterface {
         | 'date'
         | 'datetime-local'
         | 'time'
+        | 'file'
         | 'tel' = 'text'
 
     /**
@@ -170,6 +177,9 @@ export class RuxInput implements FormFieldInterface {
     @Watch('type')
     handleTypeChange() {
         this._setTogglePassword()
+        if (this.type === 'file') {
+            this._setFileAttributes()
+        }
     }
 
     connectedCallback() {
@@ -177,6 +187,7 @@ export class RuxInput implements FormFieldInterface {
         this._onInput = this._onInput.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._handleTogglePassword = this._handleTogglePassword.bind(this)
+        this._setFileAttributes()
     }
 
     disconnectedCallback() {
@@ -227,6 +238,23 @@ export class RuxInput implements FormFieldInterface {
 
     private _handleTogglePassword() {
         this.isPasswordVisible = !this.isPasswordVisible
+    }
+
+    private _setFileAttributes() {
+        if (this.type === 'file') {
+            // set the accept attribute
+            if (this.el.getAttribute('accept')) {
+                this.fileAcceptAttr = this.el.getAttribute('accept')!
+            }
+            //Set the file multiple attribute if present
+            if (this.el.hasAttribute('multiple')) {
+                this.fileMultiple = true
+            }
+            //Set the file capture attribute if present
+            if (this.el.getAttribute('capture')) {
+                this.fileCapture = this.el.getAttribute('capture')!
+            }
+        }
     }
 
     render() {
@@ -306,6 +334,7 @@ export class RuxInput implements FormFieldInterface {
                             'rux-input--small': size === 'small',
                             'rux-input--medium': size === 'medium',
                             'rux-input--large': size === 'large',
+                            'rux-input--file': type === 'file',
                         }}
                     >
                         <span part="prefix" class="rux-input-prefix">
@@ -329,6 +358,9 @@ export class RuxInput implements FormFieldInterface {
                             class="native-input"
                             id={this.inputId}
                             spellcheck={spellcheck}
+                            accept={this.fileAcceptAttr}
+                            multiple={this.fileMultiple}
+                            capture={this.fileCapture}
                             autocomplete={togglePassword ? 'off' : autocomplete}
                             readonly={readonly}
                             onChange={_onChange}
