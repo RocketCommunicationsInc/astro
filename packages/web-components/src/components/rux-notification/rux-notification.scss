@@ -60,6 +60,13 @@
     }
 }
 .rux-notification__message {
+    color: var(--notification-text-color);
+    font-family: var(--font-heading-5-font-family);
+    font-weight: var(--font-heading-5-font-weight);
+    font-size: var(--font-heading-5-font-size);
+    letter-spacing: var(--font-heading-5-letter-spacing);
+    line-height: var(--font-heading-5-line-height);
+    font-weight: var(--font-heading-5-font-weight);
     padding: 1.063rem 0; //17 0
 }
 

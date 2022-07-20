@@ -133,6 +133,7 @@ svg.rux-status--critical {
 }
 
 .rux-advanced-status__progress {
+    color: var(--color-text-primary);
     font-family: var(--font-monospace-1-font-family);
     font-size: var(--font-body-3-font-size);
     font-weight: var(--font-monospace-1-font-weight);
