@@ -54,6 +54,11 @@
     }
 }
 .rux-progress__value {
+    font-family: var(--font-body-1-font-family);
+    font-weight: var(--font-body-1-font-weight);
+    font-size: var(--font-body-1-font-size);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    line-height: var(--font-body-1-line-height);
     margin-left: 0.5rem;
     text-align: right;
     color: var(--color-text-primary);
