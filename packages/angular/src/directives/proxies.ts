@@ -167,7 +167,7 @@ export declare interface RuxDialog extends Components.RuxDialog {
    */
   ruxdialogopened: EventEmitter<CustomEvent<void>>;
   /**
-   * Event that is fired when dialog closes 
+   * Event that is fired when dialog closes. If dialog is closed by clicking on the default confirm or deny buttons (when no footer slot is provided), then true or false will be emitted respectively. 
    */
   ruxdialogclosed: EventEmitter<CustomEvent<boolean | null>>;
 
@@ -21441,7 +21441,7 @@ export declare interface RuxModal extends Components.RuxModal {
    */
   ruxmodalopened: EventEmitter<CustomEvent<void>>;
   /**
-   * Event that is fired when modal closes 
+   * Event that is fired when modal closes. If modal is closed by clicking on the default confirm or deny buttons (when no footer slot is provided), then true or false will be emitted respectively. 
    */
   ruxmodalclosed: EventEmitter<CustomEvent<boolean | null>>;
 

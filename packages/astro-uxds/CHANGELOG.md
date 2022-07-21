@@ -1,5 +1,13 @@
 # @astrouxds/astrouxds
 
+## 6.11.0
+
+### Minor Changes
+
+#### Tree
+
+- Added two new events to rux-tree-node: ruxtreenodeexpanded and ruxtreenodecollapsed.
+
 ## 6.10.0
 
 ### Minor Changes
