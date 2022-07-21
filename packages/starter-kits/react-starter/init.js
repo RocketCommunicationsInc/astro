@@ -8,7 +8,7 @@ const readline = require("readline");
 let inSrc = false;
 let inPublic = false;
 
-function writeFile(fileName) {
+async function writeFile(fileName) {
   console.log(`Creating ${fileName} ...`);
   let url;
   if (!inSrc && !inPublic) {
@@ -26,12 +26,23 @@ function writeFile(fileName) {
   }
 
   const file = fs.createWriteStream(`${fileName}`);
-  const request = http.get(url, (res) => {
-    res.on("error", (err) => {
-      console.log(err);
-      process.exit(1);
+
+  await fetchFile(url)
+    .then((res) => {
+      res.pipe(file);
+    })
+    .catch((err) => {
+      throw new Error(err);
     });
-    res.pipe(file);
+}
+
+async function fetchFile(url) {
+  return new Promise((resolve, reject) => {
+    http.get(url, (res) => {
+      if (res.statusCode === 200) {
+        resolve(res);
+      } else reject(`${res.statusCode} - Could not fetch file from ${url}`);
+    });
   });
 }
 
@@ -68,20 +79,20 @@ async function init() {
 
   changeDir(`./${appName}`);
   console.log(`Root directory ${appName} created!`);
-  writeFile("package.json");
-  writeFile("README.md");
-  writeFile(".gitignore");
+  await writeFile("package.json");
+  await writeFile("README.md");
+  await writeFile(".gitignore");
 
   //create src dir, or change into it if it exists
   changeDir("./src");
   inSrc = true;
-  writeFile("App.css");
-  writeFile("App.js");
-  writeFile("App.test.js");
-  writeFile("index.css");
-  writeFile("index.js");
-  writeFile("reportWebVitals.js");
-  writeFile("setupTests.js");
+  await writeFile("App.css");
+  await writeFile("App.js");
+  await writeFile("App.test.js");
+  await writeFile("index.css");
+  await writeFile("index.js");
+  await writeFile("reportWebVitals.js");
+  await writeFile("setupTests.js");
 
   console.log(`/src directory created in ${process.cwd()}`);
 
@@ -90,12 +101,12 @@ async function init() {
   changeDir("./public");
 
   inPublic = true;
-  writeFile("favicon.ico");
-  writeFile("index.html");
-  writeFile("logo512.png");
-  writeFile("logo192.png");
-  writeFile("manifest.json");
-  writeFile("robots.txt");
+  await writeFile("favicon.ico");
+  await writeFile("index.html");
+  await writeFile("logo512.png");
+  await writeFile("logo192.png");
+  await writeFile("manifest.json");
+  await writeFile("robots.txt");
 
   console.log(`./public directory created in ${process.cwd()}`);
   console.log(`Finished!`);
