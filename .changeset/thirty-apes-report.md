@@ -19,4 +19,6 @@ Tree Node - text color and typography are now fully shadow dom encapsulated.
 
 Monitoring Progress Icon - label text color is now fully shadow dom encapsulated.
 
-Radio Group - Label's text color and typography are now fully shadow dom encapsulated.
+Radio Group - label text color and typography are now fully shadow dom encapsulated.
+
+Switch - label text color and typography are now fully shadow dom encapsulated.
