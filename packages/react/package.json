@@ -8,7 +8,6 @@
     "url": "https://github.com/RocketCommunicationsInc/astro/tree/main/packages/react"
   },
   "scripts": {
-    "prepack": "npm run build",
     "build": "npm run clean && npm run compile",
     "clean": "rm -rf dist",
     "compile": "npm run tsc",
