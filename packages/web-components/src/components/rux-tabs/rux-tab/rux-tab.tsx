@@ -15,6 +15,11 @@ export class RuxTab {
      */
     @Prop({ reflect: true }) disabled: boolean = false
 
+    /**
+     * If passed or set to true, displays the tabs in a smaller style, suitable for limited-space uses.
+     */
+    @Prop() small: boolean = false
+
     @Element() el!: HTMLRuxTabElement
 
     connectedCallback() {
@@ -40,6 +45,8 @@ export class RuxTab {
                     class={{
                         'rux-tab': true,
                         'rux-tab--selected': this.selected,
+                        'rux-tab--small': this.small,
+                        'rux-tab--large': !this.small,
                         'rux-tab--disabled': this.disabled,
                     }}
                 >
