@@ -15,6 +15,7 @@
         "loader/"
     ],
     "scripts": {
+        "sonic": "stencil build --dev --watch --serve --config=stencil.dev.config.ts",
         "build.stencil": "stencil build --docs",
         "build.storybook": "build-storybook",
         "build": "npm run build.stencil",
