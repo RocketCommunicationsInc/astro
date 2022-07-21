@@ -25,18 +25,32 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-:host([small]) {
-    .rux-tab--selected {
-        border-bottom: solid 3px var(--color-border-interactive-default);
-    }
-    min-width: 2rem;
-    padding: 1.25rem 1rem; //20 16
-    border-bottom: 3px solid transparent;
+
+.rux-tab--large {
+    font-family: var(--font-heading-2-font-family);
+    font-size: var(--font-heading-2-font-size);
+    letter-spacing: var(--font-heading-2-letter-spacing);
+    font-weight: var(--font-heading-2-font-weight);
+}
+
+.rux-tab--small {
+    font-family: var(--font-heading-5-font-family);
+    font-size: var(--font-heading-5-font-size);
+    letter-spacing: var(--font-heading-5-letter-spacing);
+    font-weight: var(--font-heading-5-font-weight);
+    min-width: 5rem;
+}
+
+.rux-tab--large.rux-tab--selected {
+    border-color: var(--color-border-interactive-default);
+}
+
+.rux-tab--small.rux-tab--selected {
+    border-bottom: 3px solid var(--color-border-interactive-default);
 }
 
 .rux-tab--selected {
     color: var(--color-text-primary);
-    border-bottom: 5px solid var(--color-border-interactive-default);
 }
 
 .rux-tab--disabled {
