@@ -29,6 +29,7 @@
 .rux-clock__segment__value {
     display: flex;
     align-items: center;
+    color: var(--gsb-color-text);
     font-family: var(--font-monospace-1-font-family);
     font-weight: var(--font-monospace-1-font-weight);
     font-size: var(--font-monospace-1-font-size);
@@ -64,5 +65,5 @@
 }
 
 .rux-clock__aos {
-    margin-left: 1.063em;
+    margin-left: 1.25rem; //20px
 }

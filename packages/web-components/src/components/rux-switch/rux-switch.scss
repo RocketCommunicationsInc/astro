@@ -116,7 +116,12 @@
 }
 
 .rux-switch__label {
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
     margin-left: 0.75rem;
+    color: var(--color-text-primary);
 }
 
 .rux-form-field {
