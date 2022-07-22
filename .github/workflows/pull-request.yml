@@ -62,5 +62,5 @@ jobs:
         with:
           working-directory: ./packages/web-components
           install: false
-          start: npm run start.stencil
+          start: npm run sonic
           wait-on: "http://localhost:3333"
