@@ -1,9 +1,9 @@
 {
   "name": "@astrouxds/react-starter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "bin": "init.js",
   "dependencies": {
-    "@astrouxds/react": "^6.1.0",
+    "@astrouxds/react": "^6.11.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
