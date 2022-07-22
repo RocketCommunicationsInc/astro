@@ -236,6 +236,10 @@
         "url": "/components/tabs"
       },
       {
+        "label": "Tag",
+        "url": "/components/tag"
+      },
+      {
         "label": "Textarea",
         "url": "/components/textarea"
       },
