@@ -50,6 +50,7 @@ rux-button-group {
         padding: 0;
         user-select: none;
         box-shadow: var(--shadow-outer-dialog);
+        max-height: 100%;
     }
 
     &__header {
@@ -83,6 +84,53 @@ rux-button-group {
         flex-grow: 1;
         padding: 1rem 1rem 0 1rem;
         color: var(--color-text-primary);
+        overflow: auto;
+        white-space: nowrap;
+        &::-webkit-scrollbar {
+            width: 16px;
+            height: 16px;
+            background-color: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(
+                --color-border-interactive-muted,
+                rgb(43, 101, 155)
+            );
+            border-radius: 8px;
+            border: 3px solid transparent;
+            background-clip: padding-box;
+        }
+
+        /* visually "centers" because the dark edge of the shadow gives the illusion this is offset */
+        &::-webkit-scrollbar-thumb:vertical {
+            border-left-width: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb:horizontal {
+            border-top-width: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb:active,
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: var(
+                --color-background-interactive-default,
+                rgb(58, 129, 191)
+            );
+        }
+
+        &::-webkit-scrollbar-track,
+        &::-webkit-scrollbar-corner {
+            background-color: var(--color-background-surface-default);
+        }
+
+        &::-webkit-scrollbar-track:vertical {
+            box-shadow: inset 3px 3px 3px 0px rgba(0, 0, 0, 0.5);
+        }
+
+        &::-webkit-scrollbar-track:horizontal {
+            box-shadow: inset 1px 3px 3px 0px rgba(0, 0, 0, 0.5);
+        }
     }
     &__footer {
         display: flex;
