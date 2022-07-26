@@ -8,6 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Classification, Status, StatusTags } from "./common/commonTypes.module";
 import { LogRow } from "./components/rux-log/rux-log.model";
 import { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
+import { Placement } from "@floating-ui/dom";
 import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
 export namespace Components {
     interface RuxButton {
@@ -45,6 +46,8 @@ export namespace Components {
           * The horizontal alignment of buttons within the group
          */
         "hAlign": 'left' | 'center' | 'right';
+    }
+    interface RuxCard {
     }
     interface RuxCheckbox {
         /**
@@ -149,6 +152,8 @@ export namespace Components {
           * Accepts the [IANA timezone string format](https://www.iana.org/time-zones) such as `'America/Los_Angeles'` or any single-character designation for a [military timezones](https://en.wikipedia.org/wiki/List_of_military_time_zones) (`'A'` through `'Z'`, excluding `'J'`), both case-insensitive. If no value for timezone is provided, the clock will use `'UTC'`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.
          */
         "timezone": string;
+    }
+    interface RuxContainer {
     }
     interface RuxDatetime {
         /**
@@ -11884,6 +11889,8 @@ export namespace Components {
         | 'auto'
         | string;
     }
+    interface RuxIndeterminateProgress {
+    }
     interface RuxInput {
         /**
           * The input's autocomplete attribute
@@ -11977,55 +11984,23 @@ export namespace Components {
          */
         "timezone": string;
     }
+    interface RuxMenu {
+    }
     interface RuxMenuItem {
         /**
-          * Disables the item
+          * sets the menu item as disabled
          */
         "disabled": boolean;
         /**
-          * This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want).
+          * sets the menu item as selected
          */
-        "download": string | undefined;
+        "selected": boolean;
         /**
-          * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
-         */
-        "href": string | undefined;
-        /**
-          * Specifies the relationship of the target object to the link object. The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).
-         */
-        "rel": string | undefined;
-        /**
-          * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
-         */
-        "target": string | undefined;
-        /**
-          * Value returned when item is selected. If no value is given, the text content will be used.
+          * the value returned when item is selected. If no value is given, the text content will be used.
          */
         "value": any;
     }
     interface RuxMenuItemDivider {
-    }
-    interface RuxModal {
-        /**
-          * Text for confirmation button
-         */
-        "confirmText": string;
-        /**
-          * Text for close button
-         */
-        "denyText": string;
-        /**
-          * Modal body message
-         */
-        "modalMessage"?: string;
-        /**
-          * Modal header title
-         */
-        "modalTitle"?: string;
-        /**
-          * Shows and hides modal
-         */
-        "open": boolean;
     }
     interface RuxMonitoringIcon {
         /**
@@ -12085,6 +12060,10 @@ export namespace Components {
          */
         "closeAfter"?: number;
         /**
+          * Prevents the user from dismissing the notification. Hides the `actions` slot.
+         */
+        "hideClose": boolean;
+        /**
           * Message for the notification banner.
          */
         "message": string;
@@ -12099,7 +12078,7 @@ export namespace Components {
         /**
           * The background color. Possible values include 'off', 'standby', 'normal', 'caution', 'serious' and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).
          */
-        "status": Status;
+        "status"?: Status;
     }
     interface RuxOption {
         /**
@@ -12123,33 +12102,25 @@ export namespace Components {
     }
     interface RuxPopUpMenu {
         /**
-          * Element to anchor the menu to. If none is given the menu will anchor to the trigger element where aria-controls === menu id
+          * Closes the pop up menu and returns false.
          */
-        "anchorEl"?: HTMLElement;
+        "hide": () => Promise<false>;
         /**
-          * Closes the menu. If the menu is already closed it returns 'false'.
-         */
-        "close": () => Promise<boolean>;
-        /**
-          * Returns 'true' if the menu is open, 'false' if it is not.
-         */
-        "isOpen": () => Promise<boolean>;
-        /**
-          * Boolean which controls when to show the menu
+          * determines if the pop up is open or closed
          */
         "open": boolean;
         /**
-          * Opens the menu. If the menu is already open it returns 'false'.
+          * the placement of the pop up relative to it's slotted trigger element.
          */
-        "show": () => Promise<boolean>;
+        "placement": Placement;
         /**
-          * Toggles the menu open or close. Will return 'true' on menu open and 'false' on menu close
+          * Opens the pop up menu and returns true.
          */
-        "toggle": () => Promise<boolean>;
+        "show": () => Promise<true>;
         /**
-          * Optional element to trigger opening and closing of the menu. If none is supplied the element where aria-controls === menu id will be assigned
+          * The position strategy of the popup, either absolute or fixed.
          */
-        "triggerEl"?: HTMLElement;
+        "strategy": 'absolute' | 'fixed';
     }
     interface RuxProgress {
         /**
@@ -12594,6 +12565,12 @@ declare global {
         prototype: HTMLRuxButtonGroupElement;
         new (): HTMLRuxButtonGroupElement;
     };
+    interface HTMLRuxCardElement extends Components.RuxCard, HTMLStencilElement {
+    }
+    var HTMLRuxCardElement: {
+        prototype: HTMLRuxCardElement;
+        new (): HTMLRuxCardElement;
+    };
     interface HTMLRuxCheckboxElement extends Components.RuxCheckbox, HTMLStencilElement {
     }
     var HTMLRuxCheckboxElement: {
@@ -12617,6 +12594,12 @@ declare global {
     var HTMLRuxClockElement: {
         prototype: HTMLRuxClockElement;
         new (): HTMLRuxClockElement;
+    };
+    interface HTMLRuxContainerElement extends Components.RuxContainer, HTMLStencilElement {
+    }
+    var HTMLRuxContainerElement: {
+        prototype: HTMLRuxContainerElement;
+        new (): HTMLRuxContainerElement;
     };
     interface HTMLRuxDatetimeElement extends Components.RuxDatetime, HTMLStencilElement {
     }
@@ -18972,6 +18955,12 @@ declare global {
         prototype: HTMLRuxIconZoomOutMapElement;
         new (): HTMLRuxIconZoomOutMapElement;
     };
+    interface HTMLRuxIndeterminateProgressElement extends Components.RuxIndeterminateProgress, HTMLStencilElement {
+    }
+    var HTMLRuxIndeterminateProgressElement: {
+        prototype: HTMLRuxIndeterminateProgressElement;
+        new (): HTMLRuxIndeterminateProgressElement;
+    };
     interface HTMLRuxInputElement extends Components.RuxInput, HTMLStencilElement {
     }
     var HTMLRuxInputElement: {
@@ -18984,6 +18973,12 @@ declare global {
         prototype: HTMLRuxLogElement;
         new (): HTMLRuxLogElement;
     };
+    interface HTMLRuxMenuElement extends Components.RuxMenu, HTMLStencilElement {
+    }
+    var HTMLRuxMenuElement: {
+        prototype: HTMLRuxMenuElement;
+        new (): HTMLRuxMenuElement;
+    };
     interface HTMLRuxMenuItemElement extends Components.RuxMenuItem, HTMLStencilElement {
     }
     var HTMLRuxMenuItemElement: {
@@ -18995,12 +18990,6 @@ declare global {
     var HTMLRuxMenuItemDividerElement: {
         prototype: HTMLRuxMenuItemDividerElement;
         new (): HTMLRuxMenuItemDividerElement;
-    };
-    interface HTMLRuxModalElement extends Components.RuxModal, HTMLStencilElement {
-    }
-    var HTMLRuxModalElement: {
-        prototype: HTMLRuxModalElement;
-        new (): HTMLRuxModalElement;
     };
     interface HTMLRuxMonitoringIconElement extends Components.RuxMonitoringIcon, HTMLStencilElement {
     }
@@ -19209,10 +19198,12 @@ declare global {
     interface HTMLElementTagNameMap {
         "rux-button": HTMLRuxButtonElement;
         "rux-button-group": HTMLRuxButtonGroupElement;
+        "rux-card": HTMLRuxCardElement;
         "rux-checkbox": HTMLRuxCheckboxElement;
         "rux-checkbox-group": HTMLRuxCheckboxGroupElement;
         "rux-classification-marking": HTMLRuxClassificationMarkingElement;
         "rux-clock": HTMLRuxClockElement;
+        "rux-container": HTMLRuxContainerElement;
         "rux-datetime": HTMLRuxDatetimeElement;
         "rux-dialog": HTMLRuxDialogElement;
         "rux-global-status-bar": HTMLRuxGlobalStatusBarElement;
@@ -20272,11 +20263,12 @@ declare global {
         "rux-icon-zoom-in-map": HTMLRuxIconZoomInMapElement;
         "rux-icon-zoom-out": HTMLRuxIconZoomOutElement;
         "rux-icon-zoom-out-map": HTMLRuxIconZoomOutMapElement;
+        "rux-indeterminate-progress": HTMLRuxIndeterminateProgressElement;
         "rux-input": HTMLRuxInputElement;
         "rux-log": HTMLRuxLogElement;
+        "rux-menu": HTMLRuxMenuElement;
         "rux-menu-item": HTMLRuxMenuItemElement;
         "rux-menu-item-divider": HTMLRuxMenuItemDividerElement;
-        "rux-modal": HTMLRuxModalElement;
         "rux-monitoring-icon": HTMLRuxMonitoringIconElement;
         "rux-monitoring-progress-icon": HTMLRuxMonitoringProgressIconElement;
         "rux-notification": HTMLRuxNotificationElement;
@@ -20349,6 +20341,8 @@ declare namespace LocalJSX {
           * The horizontal alignment of buttons within the group
          */
         "hAlign"?: 'left' | 'center' | 'right';
+    }
+    interface RuxCard {
     }
     interface RuxCheckbox {
         /**
@@ -20465,6 +20459,8 @@ declare namespace LocalJSX {
           * Accepts the [IANA timezone string format](https://www.iana.org/time-zones) such as `'America/Los_Angeles'` or any single-character designation for a [military timezones](https://en.wikipedia.org/wiki/List_of_military_time_zones) (`'A'` through `'Z'`, excluding `'J'`), both case-insensitive. If no value for timezone is provided, the clock will use `'UTC'`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.
          */
         "timezone"?: string;
+    }
+    interface RuxContainer {
     }
     interface RuxDatetime {
         /**
@@ -32208,6 +32204,8 @@ declare namespace LocalJSX {
         | 'auto'
         | string;
     }
+    interface RuxIndeterminateProgress {
+    }
     interface RuxInput {
         /**
           * The input's autocomplete attribute
@@ -32317,67 +32315,27 @@ declare namespace LocalJSX {
          */
         "timezone"?: string;
     }
+    interface RuxMenu {
+    }
     interface RuxMenuItem {
         /**
-          * Disables the item
+          * sets the menu item as disabled
          */
         "disabled"?: boolean;
         /**
-          * This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want).
-         */
-        "download"?: string | undefined;
-        /**
-          * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
-         */
-        "href"?: string | undefined;
-        /**
-          * Emitted when item is clicked. Ex `{value : 10}`
+          * When a rux-menu item is selected, emits the value of that item.
          */
         "onRuxmenuitemselected"?: (event: CustomEvent<object>) => void;
         /**
-          * Specifies the relationship of the target object to the link object. The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).
+          * sets the menu item as selected
          */
-        "rel"?: string | undefined;
+        "selected"?: boolean;
         /**
-          * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
-         */
-        "target"?: string | undefined;
-        /**
-          * Value returned when item is selected. If no value is given, the text content will be used.
+          * the value returned when item is selected. If no value is given, the text content will be used.
          */
         "value"?: any;
     }
     interface RuxMenuItemDivider {
-    }
-    interface RuxModal {
-        /**
-          * Text for confirmation button
-         */
-        "confirmText"?: string;
-        /**
-          * Text for close button
-         */
-        "denyText"?: string;
-        /**
-          * Modal body message
-         */
-        "modalMessage"?: string;
-        /**
-          * Modal header title
-         */
-        "modalTitle"?: string;
-        /**
-          * Event that is fired when modal closes. If modal is closed by clicking on the default confirm or deny buttons (when no footer slot is provided), then true or false will be emitted respectively.
-         */
-        "onRuxmodalclosed"?: (event: CustomEvent<boolean | null>) => void;
-        /**
-          * Event that is fired when modal opens
-         */
-        "onRuxmodalopened"?: (event: CustomEvent<void>) => void;
-        /**
-          * Shows and hides modal
-         */
-        "open"?: boolean;
     }
     interface RuxMonitoringIcon {
         /**
@@ -32437,6 +32395,10 @@ declare namespace LocalJSX {
          */
         "closeAfter"?: number;
         /**
+          * Prevents the user from dismissing the notification. Hides the `actions` slot.
+         */
+        "hideClose"?: boolean;
+        /**
           * Message for the notification banner.
          */
         "message"?: string;
@@ -32481,33 +32443,21 @@ declare namespace LocalJSX {
     }
     interface RuxPopUpMenu {
         /**
-          * Element to anchor the menu to. If none is given the menu will anchor to the trigger element where aria-controls === menu id
+          * emits the value of the selected rux-menu-item inside of rux-pop-up-menu
          */
-        "anchorEl"?: HTMLElement;
+        "onRuxpopupmenuselected"?: (event: CustomEvent<any>) => void;
         /**
-          * Emitted when the menu is closed.
-         */
-        "onRuxmenudidclose"?: (event: CustomEvent<void>) => void;
-        /**
-          * Emitted when the menu is open.
-         */
-        "onRuxmenudidopen"?: (event: CustomEvent<void>) => void;
-        /**
-          * Emitted when the menu is about to close
-         */
-        "onRuxmenuwillclose"?: (event: CustomEvent<void>) => void;
-        /**
-          * Emitted when the menu is about to open.
-         */
-        "onRuxmenuwillopen"?: (event: CustomEvent<void>) => void;
-        /**
-          * Boolean which controls when to show the menu
+          * determines if the pop up is open or closed
          */
         "open"?: boolean;
         /**
-          * Optional element to trigger opening and closing of the menu. If none is supplied the element where aria-controls === menu id will be assigned
+          * the placement of the pop up relative to it's slotted trigger element.
          */
-        "triggerEl"?: HTMLElement;
+        "placement"?: Placement;
+        /**
+          * The position strategy of the popup, either absolute or fixed.
+         */
+        "strategy"?: 'absolute' | 'fixed';
     }
     interface RuxProgress {
         /**
@@ -33011,10 +32961,12 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "rux-button": RuxButton;
         "rux-button-group": RuxButtonGroup;
+        "rux-card": RuxCard;
         "rux-checkbox": RuxCheckbox;
         "rux-checkbox-group": RuxCheckboxGroup;
         "rux-classification-marking": RuxClassificationMarking;
         "rux-clock": RuxClock;
+        "rux-container": RuxContainer;
         "rux-datetime": RuxDatetime;
         "rux-dialog": RuxDialog;
         "rux-global-status-bar": RuxGlobalStatusBar;
@@ -34074,11 +34026,12 @@ declare namespace LocalJSX {
         "rux-icon-zoom-in-map": RuxIconZoomInMap;
         "rux-icon-zoom-out": RuxIconZoomOut;
         "rux-icon-zoom-out-map": RuxIconZoomOutMap;
+        "rux-indeterminate-progress": RuxIndeterminateProgress;
         "rux-input": RuxInput;
         "rux-log": RuxLog;
+        "rux-menu": RuxMenu;
         "rux-menu-item": RuxMenuItem;
         "rux-menu-item-divider": RuxMenuItemDivider;
-        "rux-modal": RuxModal;
         "rux-monitoring-icon": RuxMonitoringIcon;
         "rux-monitoring-progress-icon": RuxMonitoringProgressIcon;
         "rux-notification": RuxNotification;
@@ -34121,10 +34074,12 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "rux-button": LocalJSX.RuxButton & JSXBase.HTMLAttributes<HTMLRuxButtonElement>;
             "rux-button-group": LocalJSX.RuxButtonGroup & JSXBase.HTMLAttributes<HTMLRuxButtonGroupElement>;
+            "rux-card": LocalJSX.RuxCard & JSXBase.HTMLAttributes<HTMLRuxCardElement>;
             "rux-checkbox": LocalJSX.RuxCheckbox & JSXBase.HTMLAttributes<HTMLRuxCheckboxElement>;
             "rux-checkbox-group": LocalJSX.RuxCheckboxGroup & JSXBase.HTMLAttributes<HTMLRuxCheckboxGroupElement>;
             "rux-classification-marking": LocalJSX.RuxClassificationMarking & JSXBase.HTMLAttributes<HTMLRuxClassificationMarkingElement>;
             "rux-clock": LocalJSX.RuxClock & JSXBase.HTMLAttributes<HTMLRuxClockElement>;
+            "rux-container": LocalJSX.RuxContainer & JSXBase.HTMLAttributes<HTMLRuxContainerElement>;
             "rux-datetime": LocalJSX.RuxDatetime & JSXBase.HTMLAttributes<HTMLRuxDatetimeElement>;
             "rux-dialog": LocalJSX.RuxDialog & JSXBase.HTMLAttributes<HTMLRuxDialogElement>;
             "rux-global-status-bar": LocalJSX.RuxGlobalStatusBar & JSXBase.HTMLAttributes<HTMLRuxGlobalStatusBarElement>;
@@ -35184,11 +35139,12 @@ declare module "@stencil/core" {
             "rux-icon-zoom-in-map": LocalJSX.RuxIconZoomInMap & JSXBase.HTMLAttributes<HTMLRuxIconZoomInMapElement>;
             "rux-icon-zoom-out": LocalJSX.RuxIconZoomOut & JSXBase.HTMLAttributes<HTMLRuxIconZoomOutElement>;
             "rux-icon-zoom-out-map": LocalJSX.RuxIconZoomOutMap & JSXBase.HTMLAttributes<HTMLRuxIconZoomOutMapElement>;
+            "rux-indeterminate-progress": LocalJSX.RuxIndeterminateProgress & JSXBase.HTMLAttributes<HTMLRuxIndeterminateProgressElement>;
             "rux-input": LocalJSX.RuxInput & JSXBase.HTMLAttributes<HTMLRuxInputElement>;
             "rux-log": LocalJSX.RuxLog & JSXBase.HTMLAttributes<HTMLRuxLogElement>;
+            "rux-menu": LocalJSX.RuxMenu & JSXBase.HTMLAttributes<HTMLRuxMenuElement>;
             "rux-menu-item": LocalJSX.RuxMenuItem & JSXBase.HTMLAttributes<HTMLRuxMenuItemElement>;
             "rux-menu-item-divider": LocalJSX.RuxMenuItemDivider & JSXBase.HTMLAttributes<HTMLRuxMenuItemDividerElement>;
-            "rux-modal": LocalJSX.RuxModal & JSXBase.HTMLAttributes<HTMLRuxModalElement>;
             "rux-monitoring-icon": LocalJSX.RuxMonitoringIcon & JSXBase.HTMLAttributes<HTMLRuxMonitoringIconElement>;
             "rux-monitoring-progress-icon": LocalJSX.RuxMonitoringProgressIcon & JSXBase.HTMLAttributes<HTMLRuxMonitoringProgressIconElement>;
             "rux-notification": LocalJSX.RuxNotification & JSXBase.HTMLAttributes<HTMLRuxNotificationElement>;
