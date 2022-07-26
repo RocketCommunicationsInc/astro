@@ -86,6 +86,11 @@ rux-button-group {
         color: var(--color-text-primary);
         overflow: auto;
         white-space: nowrap;
+        scrollbar-color: var(
+                --color-border-interactive-muted,
+                rgb(43, 101, 155)
+            )
+            var(--color-background-surface-default, rgb(27, 45, 62));
         &::-webkit-scrollbar {
             width: 16px;
             height: 16px;
