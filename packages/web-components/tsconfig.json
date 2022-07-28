@@ -14,7 +14,8 @@
         "jsxFactory": "h",
         "strict": true,
         "typeRoots": ["node_modules/@types"],
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "esModuleInterop": true
     },
     "include": ["src", "src/**/*.ts"],
     "exclude": ["node_modules", "src/stories"]
