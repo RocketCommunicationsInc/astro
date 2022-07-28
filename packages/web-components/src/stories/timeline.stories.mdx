@@ -8,10 +8,10 @@ export const StyledDiv = styled.div`
     background: white;
     color: var(--color-status-serious);
     padding: 19px;
-    font-family: var(--font-body-1-bold-font-family);
-    font-size: var(--font-body-1-bold-font-size);
-    font-weight: var(--font-body-1-bold-font-weight);
-    letter-spacing: var(--font-body-1-bold-letter-spacing);
+    font-family: var(--font-body-1-bold-font-family, $font-body-1-bold-font-family);
+    font-size: var(--font-body-1-bold-font-size, $font-body-1-bold-font-size);
+    font-weight: var(--font-body-1-bold-font-weight, $font-body-1-bold-font-weight);
+    letter-spacing: var(--font-body-1-bold-letter-spacing, $font-body-1-bold-letter-spacing);
     .banner-text {
         margin-top: 1rem;
         color: var(--color-text-inverse);
@@ -22,7 +22,7 @@ export const BetaTag = styled.div`
   display: inline-block;
   padding: 7px;
   color: var(--color-text-black);
-  border-radius: var(--radius-base);
+  border-radius: var(--radius-base, $radius-base);
   background: var(--color-palette-teal-300, #70dde0);
       font-family: var(--font-body-2-bold-font-family);
     font-size: var(--font-body-2-bold-font-size);

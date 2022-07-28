@@ -1,3 +1,5 @@
+@use '../../node_modules/@astrouxds/design-tokens/dist/scss/variables.scss' as *;
+@use '../../node_modules/@astrouxds/design-tokens/dist/scss/_colors-dark.scss' as *;
 /*
 **	This is as close as we get to a CSS reset in Astro, moving everything to
 **	the old IE border-box model of including padding in the overall size.
@@ -24,22 +26,37 @@ body {
     margin: 0;
     padding: 0;
 
-    font-family: var(--font-body-1-font-family);
-    font-size: var(--font-body-1-font-size);
-    font-weight: var(--font-body-1-font-weight);
-    letter-spacing: var(--font-body-1-letter-spacing);
-    color: var(--color-text-primary, rgb(255, 255, 255));
+    font-family: var(--font-body-1-font-family, $font-body-1-font-family);
+    font-size: var(--font-body-1-font-size, $font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight, $font-body-1-font-weight);
+    letter-spacing: var(
+        --font-body-1-letter-spacing,
+        $font-body-1-letter-spacing
+    );
+    color: var(--color-text-primary, $color-text-primary);
 
-    background-color: var(--color-background-base-default);
-    scrollbar-color: var(--color-border-interactive-muted);
+    background-color: var(
+        --color-background-base-default,
+        $color-background-base-default
+    );
+    scrollbar-color: var(
+        --color-border-interactive-muted,
+        $color-border-interactive-muted
+    );
 
     a {
         text-decoration: none;
-        color: var(--color-background-interactive-default);
+        color: var(
+            --color-background-interactive-default,
+            $color-background-interactive-default
+        );
     }
     a:hover {
         text-decoration: underline;
-        color: var(--color-background-interactive-hover);
+        color: var(
+            --color-background-interactive-hover,
+            $color-background-interactive-hover
+        );
     }
 }
 
@@ -60,7 +77,7 @@ label {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--color-border-interactive-muted, rgb(43, 101, 155));
+    background-color: var(--color-border-interactive-muted);
     border-radius: 8px;
     border: 3px solid transparent;
     background-clip: padding-box;
@@ -79,13 +96,16 @@ label {
 ::-webkit-scrollbar-thumb:hover {
     background-color: var(
         --color-background-interactive-default,
-        rgb(58, 129, 191)
+        $color-background-interactive-default
     );
 }
 
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-corner {
-    background-color: var(--color-background-surface-default, rgb(27, 45, 62));
+    background-color: var(
+        --color-background-surface-default,
+        $color-background-surface-default
+    );
 }
 
 ::-webkit-scrollbar-track:vertical {

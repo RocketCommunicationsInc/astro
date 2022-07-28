@@ -1,10 +1,15 @@
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/_colors-dark.scss' as *;
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/variables.scss' as *;
 .rux-help-text {
     margin-top: 0.625rem;
-    color: var(--color-text-secondary);
-    font-size: var(--font-body-2-font-size);
-    font-family: var(--font-body-2-font-family);
-    font-weight: var(--font-body-2-font-weight);
-    letter-spacing: var(--font-body-2-letter-spacing);
+    color: var(--color-text-secondary, $color-text-secondary);
+    font-size: var(--font-body-2-font-size, $font-body-2-font-size);
+    font-family: var(--font-body-2-font-family, $font-body-2-font-family);
+    font-weight: var(--font-body-2-font-weight, $font-body-2-font-weight);
+    letter-spacing: var(
+        --font-body-2-letter-spacing,
+        $font-body-2-letter-spacing
+    );
 }
 
 .rux-error-text {
@@ -18,9 +23,18 @@
     -webkit-order: 3;
     order: 3;
     margin-top: 0.625rem;
-    color: var(--color-text-error);
-    font-size: var(--font-body-2-bold-font-size);
-    font-family: var(--font-body-2-bold-font-family);
-    font-weight: var(--font-body-2-bold-font-weight);
-    letter-spacing: var(--font-body-2-bold-letter-spacing);
+    color: var(--color-text-error, $color-text-error);
+    font-size: var(--font-body-2-bold-font-size, $font-body-2-bold-font-size);
+    font-family: var(
+        --font-body-2-bold-font-family,
+        $font-body-2-bold-font-family
+    );
+    font-weight: var(
+        --font-body-2-bold-font-weight,
+        $font-body-2-bold-font-weight
+    );
+    letter-spacing: var(
+        --font-body-2-bold-letter-spacing,
+        $font-body-2-bold-letter-spacing
+    );
 }

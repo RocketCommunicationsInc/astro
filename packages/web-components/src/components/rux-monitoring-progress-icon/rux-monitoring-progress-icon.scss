@@ -1,3 +1,5 @@
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/_colors-dark.scss' as *;
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/variables.scss' as *;
 :host {
     display: inline-block;
     padding: 0;
@@ -48,13 +50,13 @@ rux-status {
     bottom: -0.75rem;
     right: -0.4rem;
     border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: var(--radius-base);
+    border-radius: var(--radius-base, $radius-base);
     padding: 0.65rem 0.25rem;
     color: #fff;
-    font-family: var(--font-body-3-font-family);
-    font-size: var(--font-body-3-font-size);
-    font-weight: var(--font-body-3-font-weight);
-    letter-spacing: var(--font-body-3-letter-spacing);
+    font-family: var(--font-body-3-font-family, $font-body-3-font-family);
+    font-size: var(--font-body-3-font-size, $font-body-3-font-size);
+    font-weight: var(--font-body-3-font-weight, $font-body-3-font-weight);
+    letter-spacing: var(--font-body-3-font-weight, $font-body-3-letter-spacing);
     text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -63,11 +65,14 @@ rux-status {
 }
 
 .rux-advanced-status__label {
-    color: var(--color-text-primary);
-    font-family: var(--font-body-2-font-family);
-    font-size: var(--font-body-2-font-size);
-    font-weight: var(--font-body-2-font-weight);
-    letter-spacing: var(--font-body-2-letter-spacing);
+    color: var(--color-text-primary, $color-text-primary);
+    font-family: var(--font-body-2-font-family, $font-body-2-font-family);
+    font-size: var(--font-body-2-font-size, $font-body-2-font-size);
+    font-weight: var(--font-body-2-font-weight, $font-body-2-font-weight);
+    letter-spacing: var(
+        --font-body-2-letter-spacing,
+        $font-body-2-letter-spacing
+    );
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -79,11 +84,11 @@ rux-status {
 }
 
 .rux-advanced-status__sublabel {
-    font-family: var(--font-body-3-font-family);
-    font-size: var(--font-body-3-font-size);
-    font-weight: var(--font-body-3-font-weight);
-    letter-spacing: var(--font-body-3-letter-spacing);
-    color: var(--color-text-primary);
+    font-family: var(--font-body-3-font-family, $font-body-3-font-family);
+    font-size: var(--font-body-3-font-size, $font-body-3-font-size);
+    font-weight: var(--font-body-3-font-weight, $font-body-3-font-weight);
+    letter-spacing: var(--font-body-3-font-weight, $font-body-3-letter-spacing);
+    color: var(--color-text-primary, $color-text-primary);
     opacity: 0.6;
     display: block;
 }
@@ -133,11 +138,20 @@ svg.rux-status--critical {
 }
 
 .rux-advanced-status__progress {
-    color: var(--color-text-primary);
-    font-family: var(--font-monospace-1-font-family);
-    font-size: var(--font-body-3-font-size);
-    font-weight: var(--font-monospace-1-font-weight);
-    letter-spacing: var(--font-monospace-1-letter-spacing);
+    color: var(--color-text-primary, $color-text-primary);
+    font-family: var(
+        --font-monospace-1-font-family,
+        $font-monospace-1-font-family
+    );
+    font-size: var(--font-body-3-font-size, $font-body-3-font-size);
+    font-weight: var(
+        --font-monospace-1-font-weight,
+        $font-monospace-1-font-weight
+    );
+    letter-spacing: var(
+        --font-monospace-1-letter-spacing,
+        $font-monospace-1-letter-spacing
+    );
     margin-top: -0.125rem;
     margin-left: -0.125rem;
     position: absolute;

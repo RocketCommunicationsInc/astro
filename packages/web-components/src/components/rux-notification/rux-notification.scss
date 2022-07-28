@@ -1,10 +1,16 @@
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/_colors-dark.scss' as *;
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/variables.scss' as *;
 :host {
-    --notification-banner-color-border: var(--color-border-interactive-default);
+    --notification-banner-color-border: var(
+        --color-border-interactive-default,
+        $color-border-interactive-default
+    );
     --notification-banner-color-background: var(
-        --color-background-base-default
+        --color-background-base-default,
+        $color-background-base-default
     );
     --notification-banner-border-width-left: 12px;
-    --notification-banner-radius-outer: var(--radius-base);
+    --notification-banner-radius-outer: var(--radius-base, $radius-base);
     --notification-banner-radius-inner: 3px;
     --notification-banner-border-width-large: 4px;
     --notification-banner-padding: 0 0.5rem 0 1rem; //0 8px 0 16px
@@ -46,7 +52,10 @@
     width: 100%;
     border-radius: var(--notification-banner-radius-inner);
     border: var(--notification-banner-inner-border-width) solid;
-    background: var(--color-background-base-default);
+    background: var(
+        --color-background-base-default,
+        $color-background-base-default
+    );
     height: 100%;
     padding: var(--notification-banner-padding);
 }
@@ -84,11 +93,14 @@
 }
 
 .rux-notification-banner--large .rux-notification-banner__content {
-    font-family: var(--font-heading-5-font-family);
-    font-size: var(--font-heading-5-font-size);
-    font-weight: var(--font-heading-5-font-weight);
-    letter-spacing: var(--font-heading-5-letter-spacing);
-    line-height: var(--font-heading-5-line-height);
+    font-family: var(--font-heading-5-font-family, $font-heading-5-font-family);
+    font-size: var(--font-heading-5-font-size, $font-heading-5-font-size);
+    font-weight: var(--font-heading-5-font-weight, $font-heading-5-font-weight);
+    letter-spacing: var(
+        --font-heading-5-letter-spacing,
+        $font-heading-5-letter-spacing
+    );
+    line-height: var(--font-heading-5-line-height, $font-heading-5-line-height);
 }
 
 /* ----- Small ----- */
@@ -104,11 +116,14 @@
 }
 
 .rux-notification-banner--small .rux-notification-banner__content {
-    font-family: var(--font-body-1-font-family);
-    font-size: var(--font-body-1-font-size);
-    font-weight: var(--font-body-1-font-weight);
-    letter-spacing: var(--font-body-1-letter-spacing);
-    line-height: var(--font-body-1-line-height);
+    font-family: var(--font-body-1-font-family, $font-body-1-font-family);
+    font-size: var(--font-body-1-font-size, $font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight, $font-body-1-font-weight);
+    letter-spacing: var(
+        --font-body-1-letter-spacing,
+        $font-body-1-letter-spacing
+    );
+    line-height: var(--font-body-1-line-height, $font-body-1-line-height);
 }
 
 .rux-notification-banner--open {
@@ -129,49 +144,49 @@
 /* ----- Status Variants ----- */
 
 .rux-notification-banner--critical {
-    border-color: var(--color-status-critical);
-    background: var(--color-status-critical);
+    border-color: var(--color-status-critical, $color-status-critical);
+    background: var(--color-status-critical, $color-status-critical);
     .rux-notification-banner__inner {
-        border-color: var(--color-status-critical);
+        border-color: var(--color-status-critical, $color-status-critical);
     }
 }
 
 .rux-notification-banner--caution {
-    border-color: var(--color-status-caution);
-    background: var(--color-status-caution);
+    border-color: var(--color-status-caution, $color-status-caution);
+    background: var(--color-status-caution, $color-status-caution);
     .rux-notification-banner__inner {
-        border-color: var(--color-status-caution);
+        border-color: var(--color-status-caution, $color-status-caution);
     }
 }
 
 .rux-notification-banner--serious {
-    border-color: var(--color-status-serious);
-    background: var(--color-status-serious);
+    border-color: var(--color-status-serious, $color-status-serious);
+    background: var(--color-status-serious, $color-status-serious);
     .rux-notification-banner__inner {
-        border-color: var(--color-status-serious);
+        border-color: var(--color-status-serious, $color-status-serious);
     }
 }
 
 .rux-notification-banner--normal {
-    border-color: var(--color-status-normal);
-    background: var(--color-status-normal);
+    border-color: var(--color-status-normal, $color-status-normal);
+    background: var(--color-status-normal, $color-status-normal);
     .rux-notification-banner__inner {
-        border-color: var(--color-status-normal);
+        border-color: var(--color-status-normal, $color-status-normal);
     }
 }
 
 .rux-notification-banner--standby {
-    border-color: var(--color-status-standby);
-    background: var(--color-status-standby);
+    border-color: var(--color-status-standby, $color-status-standby);
+    background: var(--color-status-standby, $color-status-standby);
     .rux-notification-banner__inner {
-        border-color: var(--color-status-standby);
+        border-color: var(--color-status-standby, $color-status-standby);
     }
 }
 
 .rux-notification-banner--off {
-    border-color: var(--color-status-off);
-    background: var(--color-status-off);
+    border-color: var(--color-status-off, $color-status-off);
+    background: var(--color-status-off, $color-status-off);
     .rux-notification-banner__inner {
-        border-color: var(--color-status-off);
+        border-color: var(--color-status-off, $color-status-off);
     }
 }

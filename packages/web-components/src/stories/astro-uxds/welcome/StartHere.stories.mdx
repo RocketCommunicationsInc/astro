@@ -53,8 +53,8 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
   }
   .framework {
     text-align: center;
-    border-radius: var(--radius-base);
-    border: 1px solid var(--color-background-interactive-default);
+    border-radius: var(--radius-base, $radius-base);
+    border: 1px solid var(--color-background-interactive-default, $color-background-interactive-default);
     cursor: pointer;
   }
   .framework .sbdocs {

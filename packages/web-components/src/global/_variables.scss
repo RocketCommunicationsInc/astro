@@ -2,6 +2,51 @@
 // This a mixin to allow for variables to be included in the shadow dom of a component and overwrite global thmese when necessary.
 @use './tokens/colors-dark' as variables;
 :root {
+    --menu-divider-color-fill: #51555b;
+    --tag-shadow-inner-off: inset 0px 0px 5px 0px rgb(164, 171, 182);
+    --tag-shadow-inner-critical: inset 0px 0px 5px 0px rgb(255, 56, 56);
+    --tag-shadow-inner-normal: inset 0px 0px 5px 0px rgb(86, 240, 0);
+    --scrollbar-shadow-inner-horizontal: inset 1px 3px 3px 0px
+        rgba(0, 0, 0, 0.5);
+    --scrollbar-shadow-inner-vertical: inset 3px 3px 3px 0px rgba(0, 0, 0, 0.5);
+    --gsb-color-text: #ffffff;
+    --gsb-color-background: #172635;
+    --gsb-icon-color-fill-hover: #92cbff;
+    --gsb-icon-color-fill-default: #4dacff;
+    --status-symbol-color-border-off: #3c3e42;
+    --status-symbol-color-border-standby: #285766;
+    --status-symbol-color-border-normal: #005a00;
+    --status-symbol-color-border-caution: #645600;
+    --status-symbol-color-border-serious: #664618;
+    --status-symbol-color-border-critical: #661102;
+    --status-symbol-color-fill-off-on-light: #7b8089;
+    --status-symbol-color-fill-off-on-dark: #a4abb6;
+    --status-symbol-color-fill-standby-on-light: #2dccff;
+    --status-symbol-color-fill-standby-on-dark: #2dccff;
+    --status-symbol-color-fill-normal-on-light: #00e200;
+    --status-symbol-color-fill-normal-on-dark: #56f000;
+    --status-symbol-color-fill-caution-on-light: #fad800;
+    --status-symbol-color-fill-caution-on-dark: #fce83a;
+    --status-symbol-color-fill-serious-on-light: #ffaf3d;
+    --status-symbol-color-fill-serious-on-dark: #ffb302;
+    --status-symbol-color-fill-critical-on-light: #ff2a04;
+    --status-symbol-color-fill-critical-on-dark: #ff3838;
+    --dialog-shadow-outer: 0px 4px 4px 1px rgba(0, 0, 0, 0.45);
+    --classification-banner-color-background-unclassified: #007a33;
+    --classification-banner-color-background-cui: #502b85;
+    --classification-banner-color-background-confidential: #0033a0;
+    --classification-banner-color-background-secret: #c8102e;
+    --classification-banner-color-background-topsecret: #ff8c00;
+    --classification-banner-color-background-topsecretsci: #fce83a;
+    --container-color-border: #000000;
+    --card-color-border: #51555b;
+    --popup-menu-caret-color-fill: #2b659b;
+    --link-color-text-hover: #4dacff;
+    --link-color-text-default: #4dacff;
+    --indeterminate-progress-radius-outer: 30px;
+    --indeterminate-progress-radius-inner: 23px;
+    --progress-radius-outer: 10px;
+    --progress-radius-inner: 8px;
     // Sets default theme variables for component library
     @include variables.root-variables;
     --disabled-opacity: 0.4;

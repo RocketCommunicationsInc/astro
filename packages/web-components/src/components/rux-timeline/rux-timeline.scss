@@ -1,3 +1,6 @@
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/_colors-dark.scss' as *;
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/variables.scss' as *;
+
 :host {
     display: block;
     ::-webkit-scrollbar {
@@ -8,7 +11,7 @@
     ::-webkit-scrollbar-thumb {
         background-color: var(
             --color-border-interactive-muted,
-            rgb(43, 101, 155)
+            $color-border-interactive-muted
         );
         border-radius: 8px;
         border: 3px solid transparent;
@@ -28,7 +31,7 @@
     ::-webkit-scrollbar-thumb:hover {
         background-color: var(
             --color-background-interactive-default,
-            rgb(58, 129, 191)
+            $color-background-interactive-default
         );
     }
 
@@ -36,10 +39,13 @@
     ::-webkit-scrollbar-corner {
         // background: linear-gradient(
         //     to right,
-        //     var(--color-background-base-default) 200px,
+        //     var(--color-background-base-default, $color-background-base-default) 200px,
         //     var(--color-background-surface-default) 200px 100%
         // );
-        background: var(--color-background-surface-default);
+        background: var(
+            --color-background-surface-default,
+            $color-background-surface-default
+        );
     }
 
     ::-webkit-scrollbar-track:vertical {
@@ -75,7 +81,7 @@
 }
 
 .cell:nth-child(odd) {
-    // background: var(--color-background-base-default);
+    // background: var(--color-background-base-default, $color-background-base-default);
     background: red;
 }
 
@@ -93,7 +99,10 @@
     //   grid-row: 1 / 5;
     //   grid-column: time-0000 / time-2359;
 
-    background: var(--color-background-interactive-default);
+    background: var(
+        --color-background-interactive-default,
+        $color-background-interactive-default
+    );
     z-index: 1;
     position: absolute;
     height: 100%;
@@ -105,7 +114,11 @@
         height: 0;
         border-left: 12px solid transparent;
         border-right: 12px solid transparent;
-        border-top: 12px solid var(--color-background-interactive-default);
+        border-top: 12px solid
+            var(
+                --color-background-interactive-default,
+                $color-background-interactive-default
+            );
         content: '';
         position: absolute;
         left: -10.9px;

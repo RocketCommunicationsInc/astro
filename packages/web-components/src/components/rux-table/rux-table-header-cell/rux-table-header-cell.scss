@@ -1,15 +1,26 @@
+@use '../../../../node_modules/@astrouxds/design-tokens/dist/scss/_colors-dark.scss' as *;
+@use '../../../../node_modules/@astrouxds/design-tokens/dist/scss/variables.scss' as *;
 :host {
     display: table-cell;
     vertical-align: middle;
     border-top-width: 1px;
     border-top-style: solid;
-    border-top-color: var(--color-background-surface-default);
-    background: var(--color-background-surface-header);
-    color: var(--color-text-primary);
-    font-family: var(--font-heading-5-font-family);
-    font-size: var(--font-heading-5-font-size);
-    font-weight: var(--font-heading-5-font-weight);
-    letter-spacing: var(--font-heading-5-letter-spacing);
+    border-top-color: var(
+        --color-background-surface-default,
+        $color-background-surface-default
+    );
+    background: var(
+        --color-background-surface-header,
+        $color-background-surface-header
+    );
+    color: var(--color-text-primary, $color-text-primary);
+    font-family: var(--font-heading-5-font-family, $font-heading-5-font-family);
+    font-size: var(--font-heading-5-font-size, $font-heading-5-font-size);
+    font-weight: var(--font-heading-5-font-weight, $font-heading-5-font-weight);
+    letter-spacing: var(
+        --font-heading-5-letter-spacing,
+        $font-heading-5-letter-spacing
+    );
     padding: 0.625rem 1rem;
     white-space: nowrap;
 }

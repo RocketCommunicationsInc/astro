@@ -1,3 +1,5 @@
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/_colors-dark.scss' as *;
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/variables.scss' as *;
 @use '../../global/tokens/colors-dark' as variables;
 
 :host {
@@ -12,7 +14,7 @@
     width: stretch;
     padding: 0 1.875rem;
     box-sizing: border-box;
-    background-color: var(--gsb-color-background);
+    background-color: var(--gsb-color-background, $gsb-color-background);
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -55,7 +57,7 @@ slot[name='left-side'] > .shifted-up,
     flex-wrap: wrap;
     padding: 0;
     margin: 0 auto 0 0;
-    color: var(--color-text-white);
+    color: var(--color-text-white, $color-text-white);
     white-space: nowrap;
 }
 
@@ -71,18 +73,33 @@ slot[name='left-side'] > .shifted-up,
     margin-bottom: 0;
     margin-top: 0;
     height: 32px;
-    font-family: var(--font-heading-1-font-family);
-    font-size: var(--font-heading-1-font-size);
-    font-weight: var(--font-heading-1-font-weight);
-    letter-spacing: var(--font-heading-1-letter-spacing);
+    font-family: var(--font-heading-1-font-family, $font-heading-1-font-family);
+    font-size: var(--font-heading-1-font-size, $font-heading-1-font-size);
+    font-weight: var(--font-heading-1-font-weight, $font-heading-1-font-weight);
+    letter-spacing: var(
+        --font-heading-1-letter-spacing,
+        $font-heading-1-letter-spacing
+    );
 }
 
 .app-meta h1.app-domain {
     margin-right: 13px;
-    font-family: var(--font-heading-1-bold-font-family);
-    font-size: var(--font-heading-1-bold-font-size);
-    font-weight: var(--font-heading-1-bold-font-weight);
-    letter-spacing: var(--font-heading-1-bold-letter-spacing);
+    font-family: var(
+        --font-heading-1-bold-font-family,
+        $font-heading-1-bold-font-family
+    );
+    font-size: var(
+        --font-heading-1-bold-font-size,
+        $font-heading-1-bold-font-size
+    );
+    font-weight: var(
+        --font-heading-1-bold-font-weight,
+        $font-heading-1-bold-font-weight
+    );
+    letter-spacing: var(
+        --font-heading-1-bold-letter-spacing,
+        $font-heading-1-bold-letter-spacing
+    );
 }
 
 .app-name {
@@ -91,11 +108,14 @@ slot[name='left-side'] > .shifted-up,
 
 .app-version {
     display: inline-block;
-    font-family: var(--font-heading-6-font-family);
-    font-size: var(--font-heading-6-font-size);
-    font-weight: var(--font-heading-6-font-weight);
-    letter-spacing: var(--font-heading-6-letter-spacing);
-    line-height: var(--font-heading-6-line-height);
+    font-family: var(--font-heading-6-font-family, $font-heading-6-font-family);
+    font-size: var(--font-heading-6-font-size, $font-heading-6-font-size);
+    font-weight: var(--font-heading-6-font-weight, $font-heading-6-font-weight);
+    letter-spacing: var(
+        --font-heading-6-letter-spacing,
+        $font-body-1-font-family
+    );
+    line-height: var(--font-heading-6-line-height, $font-heading-6-line-height);
 }
 
 .app-state-wrapper {
@@ -105,13 +125,16 @@ slot[name='left-side'] > .shifted-up,
 // all temp classes and their subsequent styling will be replaced with internal component styles.
 .app-state {
     box-sizing: border-box;
-    color: var(--color-text-white);
-    background-color: var(--color-text-white);
-    border-radius: var(--radius-base);
-    font-family: var(--font-body-2-font-family);
-    font-size: var(--font-body-2-font-size);
-    font-weight: var(--font-body-2-font-weight);
-    letter-spacing: var(--font-body-2-letter-spacing);
+    color: var(--color-text-white, $color-text-white);
+    background-color: var(--color-text-white, $color-text-white);
+    border-radius: var(--radius-base, $radius-base);
+    font-family: var(--font-body-2-font-family, $font-body-2-font-family);
+    font-size: var(--font-body-2-font-size, $font-body-2-font-size);
+    font-weight: var(--font-body-2-font-weight, $font-body-2-font-weight);
+    letter-spacing: var(
+        --font-body-2-letter-spacing,
+        $font-body-2-letter-spacing
+    );
     padding: 2px 6px;
     text-align: center;
     height: 22px;
@@ -122,10 +145,13 @@ slot[name='left-side'] > .shifted-up,
 .username {
     box-sizing: border-box;
     flex-basis: 50%;
-    font-family: var(--font-body-2-font-family);
-    font-size: var(--font-body-2-font-size);
-    font-weight: var(--font-body-2-font-weight);
-    letter-spacing: var(--font-body-2-letter-spacing);
+    font-family: var(--font-body-2-font-family, $font-body-2-font-family);
+    font-size: var(--font-body-2-font-size, $font-body-2-font-size);
+    font-weight: var(--font-body-2-font-weight, $font-body-2-font-weight);
+    letter-spacing: var(
+        --font-body-2-letter-spacing,
+        $font-body-2-letter-spacing
+    );
     padding: 2px 0;
     height: 22px;
 }

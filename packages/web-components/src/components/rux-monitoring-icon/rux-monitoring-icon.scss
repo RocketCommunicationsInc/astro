@@ -1,3 +1,5 @@
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/_colors-dark.scss' as *;
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/variables.scss' as *;
 :host {
     display: inline-block;
     padding: 0;
@@ -54,14 +56,18 @@ rux-icon {
     position: absolute;
     left: 3.438rem;
     top: -0.625rem;
-    border: 1px solid var(--color-background-interactive-default);
+    border: 1px solid
+        var(
+            --color-background-interactive-default,
+            $color-background-interactive-default
+        );
     border-radius: 2px;
     padding: 0.5rem 0.25rem;
-    color: var(--color-text-white);
-    font-family: var(--font-body-3-font-family);
-    font-size: var(--font-body-3-font-size);
-    font-weight: var(--font-body-3-font-weight);
-    letter-spacing: var(--font-body-3-letter-spacing);
+    color: var(--color-text-white, $color-text-white);
+    font-family: var(--font-body-3-font-family, $font-body-3-font-family);
+    font-size: var(--font-body-3-font-size, $font-body-3-font-size);
+    font-weight: var(--font-body-3-font-weight, $font-body-3-font-weight);
+    letter-spacing: var(--font-body-3-font-weight, $font-body-3-letter-spacing);
     text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -70,11 +76,14 @@ rux-icon {
 }
 
 .rux-advanced-status__label {
-    color: var(--color-text-primary);
-    font-family: var(--font-body-2-font-family);
-    font-size: var(--font-body-2-font-size);
-    font-weight: var(--font-body-2-font-weight);
-    letter-spacing: var(--font-body-2-letter-spacing);
+    color: var(--color-text-primary, $color-text-primary);
+    font-family: var(--font-body-2-font-family, $font-body-2-font-family);
+    font-size: var(--font-body-2-font-size, $font-body-2-font-size);
+    font-weight: var(--font-body-2-font-weight, $font-body-2-font-weight);
+    letter-spacing: var(
+        --font-body-2-letter-spacing,
+        $font-body-2-letter-spacing
+    );
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -86,11 +95,11 @@ rux-icon {
 }
 
 .rux-advanced-status__sublabel {
-    font-family: var(--font-body-3-font-family);
-    font-size: var(--font-body-3-font-size);
-    font-weight: var(--font-body-3-font-weight);
-    letter-spacing: var(--font-body-3-letter-spacing);
-    color: var(--gsb-color-text);
+    font-family: var(--font-body-3-font-family, $font-body-3-font-family);
+    font-size: var(--font-body-3-font-size, $font-body-3-font-size);
+    font-weight: var(--font-body-3-font-weight, $font-body-3-font-weight);
+    letter-spacing: var(--font-body-3-font-weight, $font-body-3-letter-spacing);
+    color: var(--gsb-color-text, $gsb-color-text);
     display: block;
 }
 

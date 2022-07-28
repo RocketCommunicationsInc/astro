@@ -1,23 +1,36 @@
+@use '../../../../node_modules/@astrouxds/design-tokens/dist/scss/_colors-dark.scss' as *;
+@use '../../../../node_modules/@astrouxds/design-tokens/dist/scss/variables.scss' as *;
+
 :host {
     display: block;
 }
 
 .rux-time-region {
-    background: var(--color-background-base-default);
+    background: var(
+        --color-background-base-default,
+        $color-background-base-default
+    );
     padding: 0.25rem; // 4px;
     overflow: hidden;
     min-height: 40px;
-    color: var(--color-text-primary);
-    border: 1px solid var(--color-background-interactive-default);
+    color: var(--color-text-primary, $color-text-primary);
+    border: 1px solid
+        var(
+            --color-background-interactive-default,
+            $color-background-interactive-default
+        );
 }
 
 .rux-time-region__content {
     display: flex;
     align-items: center;
-    font-family: var(--font-body-2-font-family);
-    font-size: var(--font-body-2-font-size);
-    font-weight: var(--font-body-2-font-weight);
-    letter-spacing: var(--font-body-2-letter-spacing);
+    font-family: var(--font-body-2-font-family, $font-body-2-font-family);
+    font-size: var(--font-body-2-font-size, $font-body-2-font-size);
+    font-weight: var(--font-body-2-font-weight, $font-body-2-font-weight);
+    letter-spacing: var(
+        --font-body-2-letter-spacing,
+        $font-body-2-letter-spacing
+    );
 
     ::slotted(rux-status),
     rux-status {
@@ -28,21 +41,32 @@
 .rux-time-region__datetime {
     margin-top: 0.25rem;
     text-align: right;
-    font-family: var(--font-body-3-font-family);
-    font-size: var(--font-body-3-font-size);
-    font-weight: var(--font-body-3-font-weight);
-    letter-spacing: var(--font-body-3-letter-spacing);
+    font-family: var(--font-body-3-font-family, $font-body-3-font-family);
+    font-size: var(--font-body-3-font-size, $font-body-3-font-size);
+    font-weight: var(--font-body-3-font-weight, $font-body-3-font-weight);
+    letter-spacing: var(--font-body-3-font-weight, $font-body-3-letter-spacing);
 }
 
 .rux-time-region--selected {
-    background: var(--color-background-interactive-default);
-    border: 1px solid var(--color-background-interactive-default);
+    background: var(
+        --color-background-interactive-default,
+        $color-background-interactive-default
+    );
+    border: 1px solid
+        var(
+            --color-background-interactive-default,
+            $color-background-interactive-default
+        );
     --status-symbols: var(--status-symbols-light);
-    color: var(--color-text-inverse);
+    color: var(--color-text-inverse, $color-text-inverse);
 }
 
 .rux-time-region--normal:not(.rux-time-region--selected) {
-    border: 1px solid var(--color-background-interactive-default);
+    border: 1px solid
+        var(
+            --color-background-interactive-default,
+            $color-background-interactive-default
+        );
 }
 
 .rux-time-region--critical:not(.rux-time-region--selected) {

@@ -1,23 +1,36 @@
+@use '../../../../node_modules/@astrouxds/design-tokens/dist/scss/_colors-dark.scss' as *;
+@use '../../../../node_modules/@astrouxds/design-tokens/dist/scss/variables.scss' as *;
 :host {
 }
 
 .rux-track {
-    background: var(--color-background-surface-default);
+    background: var(
+        --color-background-surface-default,
+        $color-background-surface-default
+    );
     width: fit-content;
-    border-bottom: 2px solid var(--color-background-base-default);
+    border-bottom: 2px solid
+        var(--color-background-base-default, $color-background-base-default);
 }
 
 .rux-track__header {
     box-sizing: border-box;
     padding: 11px 8px 13px 8px;
-    background: var(--color-background-surface-default);
-    border-right: 2px solid var(--color-background-base-default);
+    background: var(
+        --color-background-surface-default,
+        $color-background-surface-default
+    );
+    border-right: 2px solid
+        var(--color-background-base-default, $color-background-base-default);
     display: flex;
     align-items: center;
-    font-family: var(--font-body-1-font-family);
-    font-size: var(--font-body-1-font-size);
-    font-weight: var(--font-body-1-font-weight);
-    letter-spacing: var(--font-body-1-letter-spacing);
+    font-family: var(--font-body-1-font-family, $font-body-1-font-family);
+    font-size: var(--font-body-1-font-size, $font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight, $font-body-1-font-weight);
+    letter-spacing: var(
+        --font-body-1-letter-spacing,
+        $font-body-1-letter-spacing
+    );
     position: sticky;
     left: 0;
     min-width: 184px;
@@ -25,9 +38,15 @@
 }
 
 .rux-timeline {
-    scrollbar-color: var(--color-border-interactive-muted);
+    scrollbar-color: var(
+        --color-border-interactive-muted,
+        $color-border-interactive-muted
+    );
     position: relative;
     display: grid;
     grid-template-rows: auto;
-    background: var(--color-background-surface-default);
+    background: var(
+        --color-background-surface-default,
+        $color-background-surface-default
+    );
 }

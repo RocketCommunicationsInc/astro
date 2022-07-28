@@ -1,3 +1,5 @@
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/_colors-dark.scss' as *;
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/variables.scss' as *;
 :host {
     display: block;
 }
@@ -7,13 +9,23 @@
 }
 
 .rux-classification {
-    font-family: var(--font-body-1-bold-font-family);
-    font-size: var(--font-body-1-bold-font-size);
-    font-weight: var(--font-body-1-bold-font-weight);
-    letter-spacing: var(--font-body-1-bold-letter-spacing);
-    color: var(--color-text-white);
+    font-family: var(
+        --font-body-1-bold-font-family,
+        $font-body-1-bold-font-family
+    );
+    font-size: var(--font-body-1-bold-font-size, $font-body-1-bold-font-size);
+    font-weight: var(
+        --font-body-1-bold-font-weight,
+        $font-body-1-bold-font-weight
+    );
+    letter-spacing: var(
+        --font-body-1-bold-letter-spacing,
+        $font-body-1-bold-letter-spacing
+    );
+    color: var(--color-text-white, $color-text-white);
     background-color: var(
-        --classification-banner-color-background-unclassified
+        --classification-banner-color-background-unclassified,
+        $classification-banner-color-background-unclassified
     );
     text-transform: uppercase;
 }
@@ -26,9 +38,10 @@
     min-height: 26px;
     transition: top 10.5s ease;
     overflow-wrap: anywhere;
-    color: var(--color-text-white);
+    color: var(--color-text-white, $color-text-white);
     background-color: var(
-        --classification-banner-color-background-unclassified
+        --classification-banner-color-background-unclassified,
+        $classification-banner-color-background-unclassified
     );
     position: sticky;
     top: 0;
@@ -46,38 +59,59 @@
 .rux-classification--tag {
     width: fit-content;
     padding: 0.1875rem 0.625rem;
-    border-radius: var(--radius-base);
-    font-family: var(--font-body-2-bold-font-family);
-    font-size: var(--font-body-2-bold-font-size);
-    font-weight: var(--font-body-2-bold-font-weight);
-    letter-spacing: var(--font-body-2-bold-letter-spacing);
+    border-radius: var(--radius-base, $radius-base);
+    font-family: var(
+        --font-body-2-bold-font-family,
+        $font-body-2-bold-font-family
+    );
+    font-size: var(--font-body-2-bold-font-size, $font-body-2-bold-font-size);
+    font-weight: var(
+        --font-body-2-bold-font-weight,
+        $font-body-2-bold-font-weight
+    );
+    letter-spacing: var(
+        --font-body-2-bold-letter-spacing,
+        $font-body-2-bold-letter-spacing
+    );
 }
 
 :host([classification='top-secret-sci']) .rux-classification {
     background-color: var(
-        --classification-banner-color-background-topsecretsci
+        --classification-banner-color-background-topsecretsci,
+        $classification-banner-color-background-topsecretsci
     );
-    color: var(--color-text-black);
+    color: var(--color-text-black, $color-text-black);
 }
 
 :host([classification='top-secret']) .rux-classification {
-    background-color: var(--classification-banner-color-background-topsecret);
-    color: var(--color-text-black);
+    background-color: var(
+        --classification-banner-color-background-topsecret,
+        $classification-banner-color-background-topsecret
+    );
+    color: var(--color-text-black, $color-text-black);
 }
 :host([classification='secret']) .rux-classification {
-    background-color: var(--classification-banner-color-background-secret);
+    background-color: var(
+        --classification-banner-color-background-secret,
+        $classification-banner-color-background-secret
+    );
 }
 :host([classification='confidential']) .rux-classification {
     background-color: var(
-        --classification-banner-color-background-confidential
+        --classification-banner-color-background-confidential,
+        $classification-banner-color-background-confidential
     );
 }
 :host([classification='cui']) .rux-classification,
 :host([classification='controlled']) .rux-classification {
-    background-color: var(--classification-banner-color-background-cui);
+    background-color: var(
+        --classification-banner-color-background-cui,
+        $classification-banner-color-background-cui
+    );
 }
 :host([classification='unclassified']) .rux-classification {
     background-color: var(
-        --classification-banner-color-background-unclassified
+        --classification-banner-color-background-unclassified,
+        $classification-banner-color-background-unclassified
     );
 }

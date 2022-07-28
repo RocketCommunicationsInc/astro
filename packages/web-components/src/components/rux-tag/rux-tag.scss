@@ -1,16 +1,27 @@
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/_colors-dark.scss' as *;
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/variables.scss' as *;
 :host {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: var(--radius-base);
-    font-size: var(--font-body-2-bold-font-size);
-    font-weight: var(--font-body-2-bold-font-weight);
+    border-radius: var(--radius-base, $radius-base);
+    font-size: var(--font-body-2-bold-font-size, $font-body-2-bold-font-size);
+    font-weight: var(
+        --font-body-2-bold-font-weight,
+        $font-body-2-bold-font-weight
+    );
     line-height: var(--font-body-2-bold-line-height);
-    font-family: var(--font-body-2-bold-font-family);
-    letter-spacing: var(--font-body-2-bold-letter-spacing);
+    font-family: var(
+        --font-body-2-bold-font-family,
+        $font-body-2-bold-font-family
+    );
+    letter-spacing: var(
+        --font-body-2-bold-letter-spacing,
+        $font-body-2-bold-letter-spacing
+    );
     padding: 0.25rem 0.625rem;
     text-align: center;
-    color: var(--color-text-white);
+    color: var(--color-text-white, $color-text-white);
 }
 :host(.is-undefined) {
     height: 1.5rem;

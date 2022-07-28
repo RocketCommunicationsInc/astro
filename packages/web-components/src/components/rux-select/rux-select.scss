@@ -1,9 +1,17 @@
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/_colors-dark.scss' as *;
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/variables.scss' as *;
 @use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
 
 :host {
     display: block;
-    scrollbar-color: var(--color-border-interactive-muted)
-        var(--color-background-surface-default);
+    scrollbar-color: var(
+            --color-border-interactive-muted,
+            $color-border-interactive-muted
+        )
+        var(
+            --color-background-surface-default,
+            $color-background-surface-default
+        );
     ::-webkit-scrollbar {
         width: 16px;
         height: 16px;
@@ -33,7 +41,7 @@
     ::-webkit-scrollbar-thumb:hover {
         background-color: var(
             --color-background-interactive-default,
-            rgb(58, 129, 191)
+            $color-background-interactive-default
         );
     }
 
@@ -41,7 +49,7 @@
     ::-webkit-scrollbar-corner {
         background-color: var(
             --color-background-surface-default,
-            rgb(27, 45, 62)
+            $color-background-surface-default
         );
 
         box-shadow: var(--shadow-inner-scrollbar-vertical);
@@ -64,11 +72,14 @@
 label {
     display: inline-block;
     margin-bottom: 10px;
-    color: var(--color-text-primary);
-    font-family: var(--font-body-1-font-family);
-    font-size: var(--font-body-1-font-size);
-    font-weight: var(--font-body-1-font-weight);
-    letter-spacing: var(--font-body-1-letter-spacing);
+    color: var(--color-text-primary, $color-text-primary);
+    font-family: var(--font-body-1-font-family, $font-body-1-font-family);
+    font-size: var(--font-body-1-font-size, $font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight, $font-body-1-font-weight);
+    letter-spacing: var(
+        --font-body-1-letter-spacing,
+        $font-body-1-letter-spacing
+    );
     .rux-label__asterisk {
         margin-left: 4px;
     }
@@ -78,8 +89,13 @@ label {
     background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%234dacff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E'),
         linear-gradient(
             to left,
-            var(--color-background-surface-selected) 2rem,
-            var(--color-background-base-default) 2rem
+            var(
+                    --color-background-surface-selected,
+                    $color-background-surface-selected
+                )
+                2rem,
+            var(--color-background-base-default, $color-background-base-default)
+                2rem
         );
     background-position: center right 0.625rem, center left 0;
     background-repeat: no-repeat;
@@ -88,8 +104,16 @@ label {
         background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20style%3D%22transform%3A%20rotate%28180deg%29%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%234dacff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E'),
             linear-gradient(
                 to left,
-                var(--color-background-surface-selected) 2rem,
-                var(--color-background-base-default) 2rem
+                var(
+                        --color-background-surface-selected,
+                        $color-background-surface-selected
+                    )
+                    2rem,
+                var(
+                        --color-background-base-default,
+                        $color-background-base-default
+                    )
+                    2rem
             );
     }
     &:hover {
@@ -99,18 +123,28 @@ label {
 
 .rux-select {
     position: relative;
-    background: var(--color-background-base-default);
+    background: var(
+        --color-background-base-default,
+        $color-background-base-default
+    );
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     width: 100%;
-    border: 1px solid var(--color-border-interactive-muted);
-    border-radius: var(--radius-base);
-    color: var(--color-background-interactive-default);
-    font-family: var(--font-body-1-font-family);
-    font-size: var(--font-body-1-font-size);
-    font-weight: var(--font-body-1-font-weight);
-    letter-spacing: var(--font-body-1-letter-spacing);
+    border: 1px solid
+        var(--color-border-interactive-muted, $color-border-interactive-muted);
+    border-radius: var(--radius-base, $radius-base);
+    color: var(
+        --color-background-interactive-default,
+        $color-background-interactive-default
+    );
+    font-family: var(--font-body-1-font-family, $font-body-1-font-family);
+    font-size: var(--font-body-1-font-size, $font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight, $font-body-1-font-weight);
+    letter-spacing: var(
+        --font-body-1-letter-spacing,
+        $font-body-1-letter-spacing
+    );
     user-select: none;
 
     &--small {
@@ -123,51 +157,83 @@ label {
         padding: 13.5px 8px;
     }
     &--multiple {
-        background: var(--color-background-base-default);
+        background: var(
+            --color-background-base-default,
+            $color-background-base-default
+        );
         padding: 0;
         option {
             padding: 0.438rem 0 0.438rem 1rem; // 7px 0px 7px 16px
             text-indent: 1rem;
             &:hover {
-                color: var(--color-background-interactive-hover);
+                color: var(
+                    --color-background-interactive-hover,
+                    $color-background-interactive-hover
+                );
                 background-color: var(--color-background-surface-hover);
                 cursor: pointer;
             }
             &:checked {
-                background: var(--color-background-surface-selected);
-                color: var(--color-text-primary);
+                background: var(
+                    --color-background-surface-selected,
+                    $color-background-surface-selected
+                );
+                color: var(--color-text-primary, $color-text-primary);
             }
             &:disabled {
                 cursor: not-allowed;
                 &:hover {
-                    color: var(--color-background-interactive-default);
+                    color: var(
+                        --color-background-interactive-default,
+                        $color-background-interactive-default
+                    );
                     background-color: linear-gradient(
                         to left,
-                        var(--color-background-surface-selected) 2rem,
-                        var(--color-background-base-default) 2rem
+                        var(
+                                --color-background-surface-selected,
+                                $color-background-surface-selected
+                            )
+                            2rem,
+                        var(
+                                --color-background-base-default,
+                                $color-background-base-default
+                            )
+                            2rem
                     );
                 }
             }
         }
     }
     &--invalid {
-        border: 1px solid var(--color-text-error);
+        border: 1px solid var(--color-text-error, $color-text-error);
     }
 
     &:hover {
-        border: 1px solid var(--color-background-interactive-hover);
+        border: 1px solid
+            var(
+                --color-background-interactive-hover,
+                $color-background-interactive-hover
+            );
     }
 
     &:focus {
         outline: none;
-        border: 1px solid var(--color-background-interactive-hover);
+        border: 1px solid
+            var(
+                --color-background-interactive-hover,
+                $color-background-interactive-hover
+            );
     }
 
     &:disabled {
         opacity: 0.4;
         cursor: not-allowed;
         &:hover {
-            border: 1px solid var(--color-border-interactive-muted);
+            border: 1px solid
+                var(
+                    --color-border-interactive-muted,
+                    $color-border-interactive-muted
+                );
         }
     }
 
@@ -181,17 +247,26 @@ label {
 
     option {
         opacity: 1;
-        color: var(--color-background-interactive-default);
+        color: var(
+            --color-background-interactive-default,
+            $color-background-interactive-default
+        );
         border-radius: 0;
 
         &:hover {
-            color: var(--color-background-interactive-hover);
+            color: var(
+                --color-background-interactive-hover,
+                $color-background-interactive-hover
+            );
             background-color: var(--select-menu-option-hover-background-color);
         }
 
         &:focus {
-            color: var(--color-text-primary);
-            background-color: var(--color-background-surface-selected);
+            color: var(--color-text-primary, $color-text-primary);
+            background-color: var(
+                --color-background-surface-selected,
+                $color-background-surface-selected
+            );
         }
         &:disabled {
             cursor: not-allowed;
@@ -203,10 +278,13 @@ label {
     optgroup {
         text-indent: 1rem;
         color: var(--select-menu-text-color);
-        font-family: var(--font-body-1-font-family);
-        font-size: var(--font-body-1-font-size);
-        font-weight: var(--font-body-1-font-weight);
-        letter-spacing: var(--font-body-1-letter-spacing);
+        font-family: var(--font-body-1-font-family, $font-body-1-font-family);
+        font-size: var(--font-body-1-font-size, $font-body-1-font-size);
+        font-weight: var(--font-body-1-font-weight, $font-body-1-font-weight);
+        letter-spacing: var(
+            --font-body-1-letter-spacing,
+            $font-body-1-letter-spacing
+        );
         font-style: normal;
     }
 }

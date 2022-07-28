@@ -1,3 +1,5 @@
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/_colors-dark.scss' as *;
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/variables.scss' as *;
 :host {
     display: block;
     width: min-content;
@@ -15,9 +17,13 @@
     position: absolute;
     color: white;
     padding: 12px;
-    border-radius: var(--radius-base);
-    background: var(--color-background-base-default);
-    border: 1px solid var(--color-border-interactive-muted);
+    border-radius: var(--radius-base, $radius-base);
+    background: var(
+        --color-background-base-default,
+        $color-background-base-default
+    );
+    border: 1px solid
+        var(--color-border-interactive-muted, $color-border-interactive-muted);
     transform-style: preserve-3d;
 }
 
@@ -29,17 +35,21 @@
     padding: 0;
 }
 .rux-popup__arrow-left {
-    border-right: 2px solid var(--color-border-interactive-muted);
+    border-right: 2px solid
+        var(--color-border-interactive-muted, $color-border-interactive-muted);
 }
 
 .rux-popup__arrow-top {
-    border-bottom: 2px solid var(--color-border-interactive-muted);
+    border-bottom: 2px solid
+        var(--color-border-interactive-muted, $color-border-interactive-muted);
 }
 .rux-popup__arrow-right {
-    border-left: 2px solid var(--color-border-interactive-muted);
+    border-left: 2px solid
+        var(--color-border-interactive-muted, $color-border-interactive-muted);
 }
 .rux-popup__arrow-bottom {
-    border-top: 2px solid var(--color-border-interactive-muted);
+    border-top: 2px solid
+        var(--color-border-interactive-muted, $color-border-interactive-muted);
 }
 
 .rux-popup-arrow {

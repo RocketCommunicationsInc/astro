@@ -1,3 +1,5 @@
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/_colors-dark.scss' as *;
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/variables.scss' as *;
 :host {
     position: relative;
     box-sizing: border-box;
@@ -9,16 +11,28 @@
 }
 
 .tree-node {
-    color: var(--color-text-primary);
-    font-family: var(--font-body-1-font-family);
-    font-size: var(--font-body-1-font-size);
-    font-weight: var(--font-body-1-font-weight);
-    letter-spacing: var(--font-body-1-letter-spacing);
-    line-height: var(--font-body-1-line-height);
-    border-top: 1px solid var(--color-border-interactive-muted);
+    color: var(--color-text-primary, $color-text-primary);
+    font-family: var(--font-body-1-font-family, $font-body-1-font-family);
+    font-size: var(--font-body-1-font-size, $font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight, $font-body-1-font-weight);
+    letter-spacing: var(
+        --font-body-1-letter-spacing,
+        $font-body-1-letter-spacing
+    );
+    line-height: var(--font-body-1-line-height, $font-body-1-line-height);
+    border-top: 1px solid
+        var(--color-border-interactive-muted, $color-border-interactive-muted);
     .parent {
-        border-left: 1px solid var(--color-border-interactive-muted);
-        border-right: 1px solid var(--color-border-interactive-muted);
+        border-left: 1px solid
+            var(
+                --color-border-interactive-muted,
+                $color-border-interactive-muted
+            );
+        border-right: 1px solid
+            var(
+                --color-border-interactive-muted,
+                $color-border-interactive-muted
+            );
     }
     .children {
         border-left: none;
@@ -111,8 +125,11 @@
     white-space: nowrap;
     overflow: hidden;
     &:hover {
-        color: var(--color-text-inverse);
-        background: var(--color-background-interactive-hover);
+        color: var(--color-text-inverse, $color-text-inverse);
+        background: var(
+            --color-background-interactive-hover,
+            $color-background-interactive-hover
+        );
     }
 }
 
@@ -153,7 +170,10 @@
         border-style: solid;
         border-width: 0.35rem 0 0.35rem 0.35rem;
         border-color: transparent transparent transparent
-            var(--color-background-interactive-default);
+            var(
+                --color-background-interactive-default,
+                $color-background-interactive-default
+            );
         display: inline-block;
     }
 }
@@ -183,5 +203,8 @@
 .selected {
     width: 5px;
     height: 100%;
-    background-color: var(--color-background-interactive-default);
+    background-color: var(
+        --color-background-interactive-default,
+        $color-background-interactive-default
+    );
 }
