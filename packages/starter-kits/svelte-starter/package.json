@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@astrouxds/astro-web-components": "^6.11.0",
-    "svelte": "^3.32.3"
+    "svelte": "^3.49.0"
   },
   "scripts": {
     "build": "rollup -c",
