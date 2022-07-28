@@ -17,17 +17,18 @@
         <script nomodule src="/build/astro-web-components.js"></script>
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
+
         <style>
             .wrapper {
                 position: relative;
                 overflow: hidden;
                 width: 800px;
-                height: 70px;
+                height: 80px;
                 margin-bottom: 1rem;
             }
 
             .wrapper--small {
-                height: 44px;
+                height: 52px;
             }
         </style>
     </head>
@@ -59,12 +60,14 @@
         </section>
 
         <section>
+            <h2>FTL Arrange</h2>
             <div class="wrapper">
                 <rux-notification open status="normal">
                     Notification banner
                     <a href="#" style="margin-left: 8px">Link</a>
                 </rux-notification>
             </div>
+
             <div class="wrapper wrapper--small">
                 <rux-notification open small status="normal">
                     Notification banner
@@ -148,7 +151,7 @@
 
         <section>
             <div class="wrapper">
-                <rux-notification open status="caution">
+                <rux-notification open small status="normal">
                     <rux-classification-marking
                         marking="secret"
                         tag
