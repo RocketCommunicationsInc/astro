@@ -1,3 +1,5 @@
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/_colors-dark.scss' as *;
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/variables.scss' as *;
 :host {
     display: block;
     overflow: hidden;
@@ -27,7 +29,7 @@ rux-table-header-cell {
 .rux-log__notification {
     width: 2000%;
     align-content: center;
-    color: var(--color-text-inverse);
+    color: var(--color-text-inverse, $color-text-inverse);
     background-color: #3a87cf;
     padding: 0.5rem;
 }

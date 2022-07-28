@@ -1,8 +1,14 @@
+@use '../../../../node_modules/@astrouxds/design-tokens/dist/scss/_colors-dark.scss' as *;
+@use '../../../../node_modules/@astrouxds/design-tokens/dist/scss/variables.scss' as *;
+
 :host {
     display: table-cell;
     border-width: 1px 0;
     border-style: solid;
-    border-color: var(--color-background-base-default);
+    border-color: var(
+        --color-background-base-default,
+        $color-background-base-default
+    );
     padding: 0.625rem 1rem;
     white-space: nowrap;
 }

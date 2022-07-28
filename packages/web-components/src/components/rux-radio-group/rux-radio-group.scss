@@ -1,3 +1,5 @@
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/_colors-dark.scss' as *;
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/variables.scss' as *;
 @use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
 
 :host {
@@ -20,11 +22,12 @@
 
 .rux-radio-group {
     padding: 1rem; // 16px
-    border: 1px solid var(--color-border-interactive-muted);
-    border-radius: var(--radius-base);
+    border: 1px solid
+        var(--color-border-interactive-muted, $color-border-interactive-muted);
+    border-radius: var(--radius-base, $radius-base);
 }
 .rux-radio-group--invalid {
-    border: 1px solid var(--color-text-error);
+    border: 1px solid var(--color-text-error, $color-text-error);
 }
 
 .rux-label {

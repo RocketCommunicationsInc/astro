@@ -1,3 +1,6 @@
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/_colors-dark.scss' as *;
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/variables.scss' as *;
+
 :host {
     // Internal private design tokens
     --card-header-padding: 0.625rem; //11.5px 10px
@@ -17,22 +20,36 @@
 
 .rux-card {
     border: 1px solid var(--card-color-border);
-    border-radius: var(--radius-base);
-    background: var(--color-background-base-default);
+    border-radius: var(--radius-base, $radius-base);
+    background: var(
+        --color-background-base-default,
+        $color-background-base-default
+    );
     box-shadow: var(--dialog-shadow-outer);
+    color: var(--color-text-primary, $color-text-primary);
 }
 
 .rux-card__header {
     padding: var(--card-header-padding);
-    font-family: var(--font-heading-3-font-family);
-    font-size: var(--font-heading-3-font-size);
-    font-weight: var(--font-heading-3-font-weight);
-    letter-spacing: var(--font-heading-3-letter-spacing);
-    line-height: var(--font-heading-3-line-height);
+    font-family: var(--font-heading-3-font-family, $font-heading-3-font-family);
+    font-size: var(--font-heading-3-font-size, $font-heading-3-font-size);
+    font-weight: var(--font-heading-3-font-weight, $font-heading-3-font-weight);
+    letter-spacing: var(
+        --font-heading-3-letter-spacing,
+        $font-heading-3-letter-spacing
+    );
+    line-height: var(--font-heading-3-line-height, $font-heading-3-line-height);
 }
 
 .rux-card__body {
     padding: var(--body-padding);
+    font-family: var(--font-body-1-font-family, $font-body-1-font-family);
+    font-size: var(--font-body-1-font-size, $font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight, $font-body-1-font-weight);
+    letter-spacing: var(
+        --font-body-1-letter-spacing,
+        $font-body-1-letter-spacing
+    );
 }
 
 .rux-card__footer {

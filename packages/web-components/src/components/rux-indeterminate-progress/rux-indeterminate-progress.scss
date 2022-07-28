@@ -1,3 +1,5 @@
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/_colors-dark.scss' as *;
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/variables.scss' as *;
 :host {
     /**
     * @prop --size: Used to determine the overall size of rux-indeterminate-progress, and used in multiple CSS calculations. 
@@ -16,7 +18,10 @@
     --mask: radial-gradient(
         farthest-side,
         transparent calc((((100% - 4px) * 0.9) - 5.5px)),
-        var(--color-background-interactive-default)
+        var(
+                --color-background-interactive-default,
+                $color-background-interactive-default
+            )
             calc((((100% - 4px) * 0.9) - 4.5px))
     );
     --border-width: 2px;
@@ -30,8 +35,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: var(--border-width) solid var(--color-border-interactive-default);
-    background: var(--color-background-base-default);
+    border: var(--border-width) solid
+        var(
+            --color-border-interactive-default,
+            $color-border-interactive-default
+        );
+    background: var(
+        --color-background-base-default,
+        $color-background-base-default
+    );
     -webkit-mask: var(--mask);
     mask: var(--mask);
 }
@@ -41,7 +53,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--indeterminate-gradient);
+    background: var(
+        --indeterminate-gradient,
+        conic-gradient(
+            rgba(77, 172, 255, 0),
+            rgba(51, 51, 51, 0),
+            rgba(77, 172, 255, 0.3),
+            rgba(77, 172, 255, 0.6),
+            rgba(77, 172, 255, 0.7),
+            rgb(77, 172, 255)
+        )
+    );
     height: calc(100% - var(--border-width) * 2);
     width: calc(100% - var(--border-width) * 2);
     border-radius: 100%;
@@ -51,7 +73,7 @@
     &::after {
         position: absolute;
         content: '';
-        background: var(--indeterminate-nub-color);
+        background: var(--indeterminate-nub-color, #2f7aa7);
         width: var(--nub-size);
         height: var(--nub-size);
         top: 0;
@@ -66,7 +88,8 @@
     width: calc(90% - 6px);
     background: transparent;
     border-radius: 100%;
-    border: var(--border-width) solid var(--color-background-base-default);
+    border: var(--border-width) solid
+        var(--color-background-base-default, $color-background-base-default);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,7 +98,10 @@
     height: calc(100% - var(--border-width) * 2);
     width: calc(100% - var(--border-width) * 2);
     border: var(--border-width) solid
-        var(--color-background-interactive-default);
+        var(
+            --color-background-interactive-default,
+            $color-background-interactive-default
+        );
     border-radius: 100%;
     background-color: transparent;
 }

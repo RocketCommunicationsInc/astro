@@ -12,8 +12,93 @@
     href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
     rel="stylesheet"
 />
-<link rel="stylesheet" href="./astro-web-components/astro-web-components.css" />
+
 <style>
+    :root {
+        --menu-divider-color-fill: #51555b;
+        --tag-shadow-inner-off: inset 0px 0px 5px 0px rgb(164, 171, 182);
+        --tag-shadow-inner-critical: inset 0px 0px 5px 0px rgb(255, 56, 56);
+        --tag-shadow-inner-normal: inset 0px 0px 5px 0px rgb(86, 240, 0);
+        --scrollbar-shadow-inner-horizontal: inset 1px 3px 3px 0px
+            rgba(0, 0, 0, 0.5);
+        --scrollbar-shadow-inner-vertical: inset 3px 3px 3px 0px
+            rgba(0, 0, 0, 0.5);
+        --gsb-color-text: #ffffff;
+        --gsb-color-background: #172635;
+        --gsb-icon-color-fill-hover: #92cbff;
+        --gsb-icon-color-fill-default: #4dacff;
+        --status-symbol-color-border-off: #3c3e42;
+        --status-symbol-color-border-standby: #285766;
+        --status-symbol-color-border-normal: #005a00;
+        --status-symbol-color-border-caution: #645600;
+        --status-symbol-color-border-serious: #664618;
+        --status-symbol-color-border-critical: #661102;
+        --status-symbol-color-fill-off-on-light: #7b8089;
+        --status-symbol-color-fill-off-on-dark: #a4abb6;
+        --status-symbol-color-fill-standby-on-light: #2dccff;
+        --status-symbol-color-fill-standby-on-dark: #2dccff;
+        --status-symbol-color-fill-normal-on-light: #00e200;
+        --status-symbol-color-fill-normal-on-dark: #56f000;
+        --status-symbol-color-fill-caution-on-light: #fad800;
+        --status-symbol-color-fill-caution-on-dark: #fce83a;
+        --status-symbol-color-fill-serious-on-light: #ffaf3d;
+        --status-symbol-color-fill-serious-on-dark: #ffb302;
+        --status-symbol-color-fill-critical-on-light: #ff2a04;
+        --status-symbol-color-fill-critical-on-dark: #ff3838;
+        --dialog-shadow-outer: 0px 4px 4px 1px rgba(0, 0, 0, 0.45);
+        --classification-banner-color-background-unclassified: #007a33;
+        --classification-banner-color-background-cui: #502b85;
+        --classification-banner-color-background-confidential: #0033a0;
+        --classification-banner-color-background-secret: #c8102e;
+        --classification-banner-color-background-topsecret: #ff8c00;
+        --classification-banner-color-background-topsecretsci: #fce83a;
+        --container-color-border: #000000;
+        --card-color-border: #51555b;
+        --popup-menu-caret-color-fill: #2b659b;
+        --link-color-text-hover: #4dacff;
+        --link-color-text-default: #4dacff;
+        --indeterminate-progress-radius-outer: 30px;
+        --indeterminate-progress-radius-inner: 23px;
+        --progress-radius-outer: 10px;
+        --progress-radius-inner: 8px;
+        --scrollbar-radius: 4px;
+        --switch-radius-track: 10px;
+        --radio-radius-outer: 9px;
+        --radio-radius-inner: 4px;
+        --checkbox-radius: 2px;
+        --slider-radius-background-track: 1px;
+        --status-symbol-border-width-on-light: 1px;
+        --status-symbol-border-width-on-dark: 0;
+        --disabled-opacity: 0.4;
+        --radius-base: 3px;
+
+        --status-symbols: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAgCAMAAABzRoe3AAAAgVBMVEUAAAD/tQv/swL/OTn/PDzftl9W8QBW8AAtzP8v0P9Z9gD/tAP/uQb/tAItzf8tzf+eqK2ep60uzP9X8QCfqK4uzf8uzf9X8QAuzP9X8ACeqK4vzP9Y8QAuzv9Y8gCeqq4wz/8xzv9A1f9Y8QD/tAP86DpW8AD/swL/ODgtzP+ep63tgXPUAAAAJXRSTlMAGNfAQAv98/IdG8Io52zz8+DZ2dC9trabm4F+a05OQjAaDG6dAJcYcwAAAfdJREFUWMPtmNlygkAQRScyrBp3QTZFNBj8/w9MCGI3dBOHMg9jyvOmVFnn1HUSULx4LibjN/HMTN7Po2cu+PY/cwUfPYg2XhKsbHsVJJ5gcaf+cjZb+lN3qJjxyWIw/lAwNMALreKKFTIJh215Y3sYFiD5AEn9oWBowM4uEPau65A6JcJJ/2ACg/pDwdCAo1W0sI6ixbTsMH18Akn9oWBgwK7xh4LWBmlJSB+dwCD+pEA5wLMLgo3OwcGpvzhxludZfH1Bz4EZrefzdWSqTSCJPylQDggLhhA+oD6/G7d+5W7qk9yV3C8uPyz2KhMYxJ8UKAd4Fhdg3SZwa3/4wLrA7fhfbuwVJpDEnxQoByQFS9I6wQ7ydR16js0FBCzMuxMY1J8WqAYEfEDQXPcr3RjbxNU7vsBEF0R0dwJJ/LkCxYAVH7Bqri8r3QzbZNU7S4FZ44B1/ymgA4zPfZwUA2w+wG6uzyrdHMvk1TszgZnjgLmgyL4T8Dbq8R+bWgUIgw4ABby/Vl8hIckAUMD7a3WIYQIYgC0Af73+jOIJpKAF1F+vf2QwAQxAC7C/ZrcSeAIpegvAX7ObOZgABiAF2F+322mYAAagBeCv2wMNTEAGIAWVv3aPlDABDMAW1P7aPdQjDBiALaj89ftZBSGl+LXgZIoXL/4VXyptNwzuHR/QAAAAAElFTkSuQmCC');
+        --indeterminate-gradient: conic-gradient(
+            rgba(77, 172, 255, 0),
+            rgba(51, 51, 51, 0),
+            rgba(77, 172, 255, 0.3),
+            rgba(77, 172, 255, 0.6),
+            rgba(77, 172, 255, 0.7),
+            rgb(77, 172, 255)
+        );
+        --indeterminate-nub-color: #4dacff;
+        /*
+    Dev only
+    ==========================================================================
+  */
+        --spacing-input-label-top: 0.375rem;
+        --spacing-input-label-left: 0.625rem; //10
+    }
+    html {
+        box-sizing: border-box;
+        -webkit-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    body {
+        color: #ffffff;
+        background-color: #101923;
+    }
     /**
     * See [Theming](https://github.com/storybookjs/storybook/blob/next/addons/docs/docs/theming.md)
     */

@@ -1,3 +1,5 @@
+@use '../../../../node_modules/@astrouxds/design-tokens/dist/scss/_colors-dark.scss' as *;
+@use '../../../../node_modules/@astrouxds/design-tokens/dist/scss/variables.scss' as *;
 :host {
     display: table-row;
 }
@@ -7,15 +9,21 @@
 }
 
 :host(.is-selected) {
-    background: var(--color-background-surface-selected);
+    background: var(
+        --color-background-surface-selected,
+        $color-background-surface-selected
+    );
     ::slotted(rux-table-cell) {
-        border-color: var(--color-background-base-default);
+        border-color: var(
+            --color-background-base-default,
+            $color-background-base-default
+        );
     }
 }
 
 :host(:hover:not(.is-selected)) {
     background: var(--color-background-surface-hover);
-    color: var(--color-text-primary);
+    color: var(--color-text-primary, $color-text-primary);
 }
 
 ::slotted(rux-table-cell:first-child) {

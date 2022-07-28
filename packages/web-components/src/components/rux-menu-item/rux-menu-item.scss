@@ -1,26 +1,36 @@
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/_colors-dark.scss' as *;
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/variables.scss' as *;
 :host {
     /**
       * @prop --popup-menu-text-color: [DEPRECATED] Menu Text Color
     */
-    --popup-menu-text-color: var(--color-background-interactive-default);
+    --popup-menu-text-color: var(
+        --color-background-interactive-default,
+        $color-background-interactive-default
+    );
 
     /**
       * @prop --popup-menu-item-background-color: [DEPRECATED] Menu Item Background Color
     */
-    --popup-menu-item-background-color: var(--color-background-base-default);
+    --popup-menu-item-background-color: var(
+        --color-background-base-default,
+        $color-background-base-default
+    );
 
     /**
       * @prop --popup-menu-item-hover-background-color: [DEPRECATED] Menu Item Hover Background Color
     */
     --popup-menu-item-hover-background-color: var(
-        --color-background-surface-hover
+        --color-background-surface-hover,
+        $color-background-surface-hover
     );
 
     /**
       * @prop --popup-menu-item-hover-background-color: [DEPRECATED] Menu Item Hover Text Color
     */
     --popup-menu-item-hover-text-color: var(
-        --color-background-interactive-hover
+        --color-background-interactive-hover,
+        $color-background-interactive-hover
     );
 
     display: block;
@@ -29,15 +39,36 @@
 .rux-menu-item {
     position: relative;
     padding: 6px 8px;
-    color: var(--color-interactive-default);
+    color: var(
+        --color-text-interactive-default,
+        $color-text-interactive-default
+    );
+    font-family: var(--font-body-1-font-family, $font-body-1-font-family);
+    font-size: var(--font-body-1-font-size, $font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight, $font-body-1-font-weight);
+    letter-spacing: var(
+        --font-body-1-letter-spacing,
+        $font-body-1-letter-spacing
+    );
+    line-height: var(--font-body-1-line-height, $font-body-1-line-height);
+
     cursor: pointer;
     &:hover {
-        color: var(--color-interactive-hover);
-        background: var(--color-background-base-hover);
+        color: var(
+            --color-text-interactive-hover,
+            $color-text-interactive-hover
+        );
+        background: var(
+            --color-background-base-hover,
+            $color-background-base-hover
+        );
     }
     &--selected {
-        background: var(--color-background-surface-selected);
-        color: var(--color-text-primary);
+        background: var(
+            --color-background-surface-selected,
+            $color-background-surface-selected
+        );
+        color: var(--color-text-primary, $color-text-primary);
     }
     &--disabled {
         opacity: 0.4; // change to token

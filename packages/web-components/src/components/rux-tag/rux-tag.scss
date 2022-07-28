@@ -1,22 +1,33 @@
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/_colors-dark.scss' as *;
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/variables.scss' as *;
 :host {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: var(--radius-base);
-    font-size: var(--font-body-2-bold-font-size);
-    font-weight: var(--font-body-2-bold-font-weight);
+    border-radius: var(--radius-base, $radius-base);
+    font-size: var(--font-body-2-bold-font-size, $font-body-2-bold-font-size);
+    font-weight: var(
+        --font-body-2-bold-font-weight,
+        $font-body-2-bold-font-weight
+    );
     line-height: var(--font-body-2-bold-line-height);
-    font-family: var(--font-body-2-bold-font-family);
-    letter-spacing: var(--font-body-2-bold-letter-spacing);
+    font-family: var(
+        --font-body-2-bold-font-family,
+        $font-body-2-bold-font-family
+    );
+    letter-spacing: var(
+        --font-body-2-bold-letter-spacing,
+        $font-body-2-bold-letter-spacing
+    );
     padding: 0.25rem 0.625rem;
     text-align: center;
-    color: var(--color-palette-neutral-000);
+    color: var(--color-text-white, $color-text-white);
 }
 :host(.is-undefined) {
     height: 1.5rem;
     width: 3.75rem;
     border: 1px solid var(--status-symbol-color-fill-off);
-    background: var(--color-palette-grey-800);
+    background: var(--color-palette-grey-800, #3c3e42);
     box-shadow: var(--tag-shadow-inner-off);
 }
 
@@ -24,7 +35,7 @@
     height: 1.5rem;
     width: 3.75rem;
     border: 1px solid var(--status-symbol-color-fill-normal-on-dark);
-    background: var(--color-palette-green-900);
+    background: var(--color-palette-green-900, #005a00);
     box-shadow: var(--tag-shadow-inner-normal);
 }
 
@@ -32,7 +43,7 @@
     height: 1.5rem;
     width: 3.75rem;
     border: 1px solid var(--status-symbol-color-fill-critical-on-dark);
-    background: var(--color-palette-red-900);
+    background: var(--color-palette-red-900, #661102);
     box-shadow: var(--tag-shadow-inner-critical);
 }
 
@@ -40,6 +51,6 @@
     height: 1.5rem;
     width: 3.75rem;
     border: 1px solid var(--status-symbol-color-fill-off-on-dark);
-    background: var(--color-palette-grey-800);
+    background: var(--color-palette-grey-800, #3c3e42);
     box-shadow: var(--tag-shadow-inner-off);
 }

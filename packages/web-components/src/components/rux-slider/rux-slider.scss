@@ -1,3 +1,5 @@
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/_colors-dark.scss' as *;
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/variables.scss' as *;
 @use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
 
 :host {
@@ -67,7 +69,10 @@
             }
         }
         .tick {
-            background: var(--color-background-interactive-default);
+            background: var(
+                --color-background-interactive-default,
+                $color-background-interactive-default
+            );
             height: 0.25rem; //4px
             width: 0.25rem;
             border-radius: 2px;
@@ -110,12 +115,24 @@ input[type='range']:focus {
     min-height: 1px;
     max-height: var(--slider-track-before-thumb-height);
     background-image: linear-gradient(
-            var(--color-background-interactive-default),
-            var(--color-background-interactive-default)
+            var(
+                --color-background-interactive-default,
+                $color-background-interactive-default
+            ),
+            var(
+                --color-background-interactive-default,
+                $color-background-interactive-default
+            )
         ),
         linear-gradient(
-            var(--color-background-interactive-default),
-            var(--color-background-interactive-default)
+            var(
+                --color-background-interactive-default,
+                $color-background-interactive-default
+            ),
+            var(
+                --color-background-interactive-default,
+                $color-background-interactive-default
+            )
         );
     background-size: var(--slider-value-percent)
             var(--slider-track-before-thumb-height),
@@ -140,12 +157,24 @@ input[type='range']:focus {
     min-height: 1px;
     max-height: var(--slider-track-before-thumb-height);
     background-image: linear-gradient(
-            var(--color-background-interactive-default),
-            var(--color-background-interactive-default)
+            var(
+                --color-background-interactive-default,
+                $color-background-interactive-default
+            ),
+            var(
+                --color-background-interactive-default,
+                $color-background-interactive-default
+            )
         ),
         linear-gradient(
-            var(--color-background-interactive-default),
-            var(--color-background-interactive-default)
+            var(
+                --color-background-interactive-default,
+                $color-background-interactive-default
+            ),
+            var(
+                --color-background-interactive-default,
+                $color-background-interactive-default
+            )
         );
     background-size: calc(1 * var(--slider-value-percent))
             var(--slider-track-before-thumb-height),
@@ -159,7 +188,10 @@ input[type='range']:focus {
     cursor: not-allowed;
 }
 .rux-range::-moz-range-progress {
-    background-color: var(--color-background-interactive-default);
+    background-color: var(
+        --color-background-interactive-default,
+        $color-background-interactive-default
+    );
 }
 .rux-input:disabled {
     opacity: var(--disabled-opacity, 0.4);
@@ -178,12 +210,24 @@ input[type='range']:focus {
     min-height: 1px;
     max-height: 5px;
     background-image: linear-gradient(
-            var(--color-background-interactive-default),
-            var(--color-background-interactive-default)
+            var(
+                --color-background-interactive-default,
+                $color-background-interactive-default
+            ),
+            var(
+                --color-background-interactive-default,
+                $color-background-interactive-default
+            )
         ),
         linear-gradient(
-            var(--color-background-interactive-default),
-            var(--color-background-interactive-default)
+            var(
+                --color-background-interactive-default,
+                $color-background-interactive-default
+            ),
+            var(
+                --color-background-interactive-default,
+                $color-background-interactive-default
+            )
         );
     background-size: var(--slider-value-percent)
             var(--slider-track-before-thumb-height),
@@ -197,7 +241,10 @@ input[type='range']:focus {
 }
 .rux-range::-ms-fill-upper {
     height: 2px;
-    background-color: var(--color-background-interactive-default);
+    background-color: var(
+        --color-background-interactive-default,
+        $color-background-interactive-default
+    );
 }
 
 /*****  Thumb ******/
@@ -210,15 +257,28 @@ input[type='range']:focus {
     height: var(--slider-thumb-size);
     width: var(--slider-thumb-size);
     border-radius: 100%;
-    border: 2px solid var(--color-background-interactive-default);
-    background-color: var(--color-background-base-default);
+    border: 2px solid
+        var(
+            --color-background-interactive-default,
+            $color-background-interactive-default
+        );
+    background-color: var(
+        --color-background-base-default,
+        $color-background-base-default
+    );
     cursor: pointer;
     z-index: 6;
 }
 
 .rux-range::-webkit-slider-thumb:hover {
-    border-color: var(--color-background-interactive-hover);
-    background-color: var(--color-background-base-default);
+    border-color: var(
+        --color-background-interactive-hover,
+        $color-background-interactive-hover
+    );
+    background-color: var(
+        --color-background-base-default,
+        $color-background-base-default
+    );
 }
 
 .rux-range:disabled::-webkit-slider-thumb {
@@ -226,17 +286,29 @@ input[type='range']:focus {
 }
 
 .rux-range:disabled::-webkit-slider-thumb:hover {
-    border-color: var(--color-background-interactive-default);
+    border-color: var(
+        --color-background-interactive-default,
+        $color-background-interactive-default
+    );
 }
 
 .rux-range:not(:disabled)::-webkit-slider-thumb:active {
-    border-color: var(--color-background-interactive-default);
-    background-color: var(--color-background-base-default);
+    border-color: var(
+        --color-background-interactive-default,
+        $color-background-interactive-default
+    );
+    background-color: var(
+        --color-background-base-default,
+        $color-background-base-default
+    );
 }
 
 .rux-range:not(:disabled)::-webkit-slider-thumb:focus,
 .rux-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active) {
-    background-color: var(--color-background-base-default);
+    background-color: var(
+        --color-background-base-default,
+        $color-background-base-default
+    );
 }
 
 /* Thumb -> Moz */
@@ -247,16 +319,32 @@ input[type='range']:focus {
     height: calc(var(--slider-thumb-size) - 4px);
     width: calc(var(--slider-thumb-size) - 4px);
     border-radius: 100%;
-    border: 2px solid var(--color-background-interactive-default);
-    background-color: var(--color-background-base-default);
+    border: 2px solid
+        var(
+            --color-background-interactive-default,
+            $color-background-interactive-default
+        );
+    background-color: var(
+        --color-background-base-default,
+        $color-background-base-default
+    );
     cursor: pointer;
 }
 .rux-range:not(:disabled)::-moz-range-thumb:active {
-    border-color: var(--color-background-interactive-default);
-    background-color: var(--color-background-base-default);
+    border-color: var(
+        --color-background-interactive-default,
+        $color-background-interactive-default
+    );
+    background-color: var(
+        --color-background-base-default,
+        $color-background-base-default
+    );
 }
 .rux-range::-moz-range-thumb:hover {
-    border-color: var(--color-background-interactive-hover);
+    border-color: var(
+        --color-background-interactive-hover,
+        $color-background-interactive-hover
+    );
 }
 input:-moz-focusring {
     outline: none;
@@ -273,8 +361,15 @@ input:-moz-focusring {
     height: var(--slider-thumb-size);
     width: var(--slider-thumb-size);
     border-radius: 100%;
-    border: 2px solid var(--color-background-interactive-default);
-    background-color: var(--color-background-base-default);
+    border: 2px solid
+        var(
+            --color-background-interactive-default,
+            $color-background-interactive-default
+        );
+    background-color: var(
+        --color-background-base-default,
+        $color-background-base-default
+    );
     cursor: pointer;
     z-index: 6;
 }

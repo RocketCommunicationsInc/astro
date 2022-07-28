@@ -1,9 +1,14 @@
+@use '../../../../node_modules/@astrouxds/design-tokens/dist/scss/_colors-dark.scss' as *;
+@use '../../../../node_modules/@astrouxds/design-tokens/dist/scss/variables.scss' as *;
 :host {
     display: table-header-group;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.45);
     border-top-width: 1px;
     border-top-style: solid;
-    border-top-color: var(--color-background-surface-default);
+    border-top-color: var(
+        --color-background-surface-default,
+        $color-background-surface-default
+    );
 }
 
 :host([hidden]) {
