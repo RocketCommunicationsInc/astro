@@ -1,9 +1,9 @@
 ---
-"angular-workspace": major
-"@astrouxds/angular": major
-"astro-website": major
-"@astrouxds/react": major
-"@astrouxds/astro-web-components": major
+"angular-workspace": minor
+"@astrouxds/angular": minor
+"astro-website": minor
+"@astrouxds/react": minor
+"@astrouxds/astro-web-components": minor
 ---
 
 Links no longer change color on hover.
