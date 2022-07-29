@@ -36,9 +36,7 @@ jobs:
         uses: actions/checkout@v2
       - uses: actions/cache@v2
         with:
-          path: |
-            ./packages/web-components/node_modules
-            ~/.cache/Cypress
+          path: ./packages/web-components/node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
       - name: Test
         run: npm run test.web-comps.unit
@@ -64,3 +62,4 @@ jobs:
           install: false
           start: npm run start.stencil
           wait-on: "http://localhost:3333"
+          wait-on-timeout: "90"

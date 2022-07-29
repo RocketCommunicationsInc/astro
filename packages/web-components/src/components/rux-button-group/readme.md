@@ -60,9 +60,3 @@ By default button group aligns buttons to the left. Alternatively an `h-align` p
 ```mermaid
 graph TD;
   rux-dialog --> rux-button-group
-  style rux-button-group fill:#f9f,stroke:#333,stroke-width:4px
-```
-
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*

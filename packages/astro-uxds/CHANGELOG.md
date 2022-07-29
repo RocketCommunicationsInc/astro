@@ -17,6 +17,14 @@
 
 - f9b842f7: Modal is now deprecated and will be removed in 7.0. It is being renamed to Dialog to align with our Design System naming and which shares the exact same API as Modal. It is recommended that you migrate to Dialog before 7.0. You can do a global find/replace on your project for:
 
+## 6.11.0
+
+### Minor Changes
+
+#### Tree
+
+- Added two new events to rux-tree-node: ruxtreenodeexpanded and ruxtreenodecollapsed.
+
 ## 6.10.0
 
 ### Minor Changes
@@ -127,6 +135,10 @@ Pop Up Menu has been re-written to take a slotted trigger element and slotted co
 - New component
 
 ### Patch Changes
+
+### Patch Changes
+
+#### GSB
 
 - Fixed layout bug when used with classification marking
 
