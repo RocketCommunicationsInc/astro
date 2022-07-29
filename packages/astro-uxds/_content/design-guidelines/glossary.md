@@ -75,7 +75,10 @@ title: Glossary
 ### P
 
 - [Pagination](/components/pagination) - The process of dividing content for display on multiple pages. It is utilized when content, such as Search results, does not fit onto one page and must be split across multiple pages.
-- [Pop-Up](/components/pop-up) - A dialogue that provides users with a quick way to access additional information or actions.
+  <<<<<<< HEAD
+- # [Pop-Up](/components/pop-up) - A dialogue that provides users with a quick way to access additional information or actions.
+- [Pop-Up Menu](/components/pop-up) - A Pop-Up Menu provides users with a quick way to access common actions for a highlighted item.
+  > > > > > > > main
 - [Progress Indicator](/components/progress) - A Progress Indicator signals that an application is busy performing an operation.
 - [Push Button](/components/push-button) - A control that initiates an action.
 

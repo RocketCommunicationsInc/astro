@@ -93,13 +93,13 @@ Proper Portion Marking is critical to reduce classification problems and leaks. 
 
 For those developing applications/websites, there are specific rules about Portion Marking file names, URLs, and metadata. To learn more about these aspects, review the requirements in the relevant [Additional Resources](#additional-resources).
 
-Current policies require portion marking throughout a document, but, in practice, portion marking is often left to section markings at best. At a minimum, include section markings using the standard abbreviated text format in parentheses or other enclosed format, such as a Tag, if the classification information is available. Give serious consideration to adding portion marking to individual fields with drastically different classification levels or to move higher classification items to a separate section if the new grouping is still consistent with the user’s mental model and the UI organization. If relevant, the information could also be portrayed in a separate column in a table for each item’s row (preferably in an immediately visible location). In this case, the parentheses should no longer be necessary as the column division should provide enough differentiation from the rest of the table text.
+Current policies require Portion Marking throughout a document, but, in practice, Portion Marking is often left to section markings at best. At a minimum, include section markings using the standard abbreviated text format in parentheses or other enclosed format, such as a Tag, if the classification information is available. Give serious consideration to adding Portion Marking to individual fields with drastically different classification levels or to move higher classification items to a separate section if the new grouping is still consistent with the user’s mental model and the UI organization. If relevant, the information could also be portrayed in a separate column in a table for each item’s row (preferably in an immediately visible location). In this case, the parentheses should no longer be necessary as the column division should provide enough differentiation from the rest of the table text.
 
 There are few exceptions to Portion Marking requirements, but the ISOO does acknowledge that different types of documents such as “dynamic documents,” a category that many applications or databases fall under, may have difficulty with these requirements. If a document is not portion marked fully and the classification/control level is higher than CUI, the responsible agency for the application may need to obtain a waiver from the ISOO and will need to indicate on the document that it cannot be used as a derivative source document.
 
 ### Portion Marking Text
 
-Portion markings should be bold, all capital letters and abbreviated within parentheses like (CUI//SP-EXPT) or within a Tag as seen in the components pictured above. They can also be spelled out in full, if needed, however this method should be avoided for longer text strings. Note that control markings such as SCI, SAP, AEA, CUI, or dissemination are also required in portion markings if they are relevant to that portion.
+Portion Markings should be bold, all capital letters and abbreviated within parentheses like (CUI//SP-EXPT) or within a Tag as seen in the components pictured above. They can also be spelled out in full, if needed, however this method should be avoided for longer text strings. Note that control markings such as SCI, SAP, AEA, CUI, or dissemination are also required in Portion Markings if they are relevant to that portion.
 
 ### Portion Marking Placement
 
@@ -107,7 +107,7 @@ Portion Markings should be placed at the top or top-left of the classified or co
 
 ### Portion Marking Colors
 
-The colors used in the Tag components are the same as those in the overall banner markings for easy recognition.
+The colors used in the Tag components are the same as those in the Overall Banner Markings for easy recognition.
 
 ## Examples
 
@@ -121,9 +121,9 @@ The colors used in the Tag components are the same as those in the overall banne
 
 ![](/img/components/blank.png)
 
-![Do: Use colored Tags for general section markings and text portion marking in portions lower in the visual hierarchy  ](/img/components/portion-marking-do-3.png "Do: Use colored tags for general section markings and text portion marking in portions lower in the visual hierarchy")
+![Do: Use colored Tags for general section markings and text portion marking in portions lower in the visual hierarchy  ](/img/components/portion-marking-do-3.png "Do: Use colored Tags for general section markings and text Portion Marking in portions lower in the visual hierarchy")
 
-![Don't: Clutter the interface with colored Tags on every line](/img/components/portion-marking-dont-3.png "Don't: Clutter the interface with colored tags on every line")
+![Don't: Clutter the interface with colored Tags on every line](/img/components/portion-marking-dont-3.png "Don't: Clutter the interface with colored Tags on every line")
 
 :::
 
