@@ -39,4 +39,33 @@ describe('Slider with Form', () => {
     it('should render the datalist when axis-labels is provided', () => {
         cy.get('#ticks').shadow().find('.rux-slider').find('#steplist')
     })
+    it('should hear the ruxChange event', () => {
+        cy.document().invoke(
+            'addEventListener',
+            'ruxchange',
+            cy.stub().as('ruxChange')
+        )
+        // trigger a change event and expect it to fire once
+        cy.get('#change-test').trigger('change')
+        cy.get('@ruxChange').should('be.calledOnce')
+    })
+    it('should hear the ruxInput event', () => {
+        cy.document().invoke(
+            'addEventListener',
+            'ruxinput',
+            cy.stub().as('ruxInput')
+        )
+        cy.get('#change-test').trigger('input')
+        cy.get('@ruxInput').should('be.calledOnce')
+    })
+    it('should hear the ruxBlur event', () => {
+        cy.document().invoke(
+            'addEventListener',
+            'ruxblur',
+            cy.stub().as('ruxBlur')
+        )
+        cy.get('#change-test').click()
+        cy.get('#ticks').click()
+        cy.get('@ruxBlur').should('be.calledOnce')
+    })
 })
