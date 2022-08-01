@@ -105,7 +105,7 @@ title: Glossary
 
 - [Tabs](/components/tabs) - Tabs in Astro Applications are used to divide major areas of content and to indicate work process.
 - [Tables](/patterns/table) - A UX design mechanism comprised of rows and columns used for displaying content.
-- Tags - Small markers which often use color to identify important information at a glance, as well as filter and categorize items by keywords.
+- [Tags](/components/tag) - Small markers which often use color to identify important information at a glance, as well as filter and categorize items by keywords.
 - Textareas - A multi-line text input control often used in a form to collect user inputs like comments or reviews.
 - [Theme](/design-guidelines/theme) - A preset set of colors applied as a group to the design system.
 - [Timeline](/components/timeline) - Displays event information within a specified time period.
