@@ -1,5 +1,16 @@
 # @astrouxds/react
 
+## 6.12.0
+
+### Minor Changes
+
+- 8f207bc2: Adds a ruxchange event to rux-slider.
+
+### Patch Changes
+
+- Updated dependencies [8f207bc2]
+  - @astrouxds/astro-web-components@6.12.0
+
 ## 6.11.0
 
 ### Minor Changes
