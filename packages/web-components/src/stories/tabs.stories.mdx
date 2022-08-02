@@ -177,12 +177,12 @@ export const Small = (args) => {
 If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
 
 ```js
-import RuxTab from '@astrouxds/astro-web-components/dist/components/rux-tab'
-import RuxTabs from '@astrouxds/astro-web-components/dist/components/rux-tabs'
-import RuxTabPanels from '@astrouxds/astro-web-components/dist/components/rux-tab-panels'
-import RuxTabPanel from '@astrouxds/astro-web-components/dist/components/rux-tab-panel'
+import { RuxTab } from '@astrouxds/astro-web-components/dist/components/rux-tab'
+import { RuxTabs } from '@astrouxds/astro-web-components/dist/components/rux-tabs'
+import { RuxTabPanels } from '@astrouxds/astro-web-components/dist/components/rux-tab-panels'
+import { RuxTabPanel } from '@astrouxds/astro-web-components/dist/components/rux-tab-panel'
 
-customElements.define('rux-tab', RuxTable)
+customElements.define('rux-tab', RuxTab)
 customElements.define('rux-tabs', RuxTabs)
 customElements.define('rux-tab-panels', RuxTabPanels)
 customElements.define('rux-tab-panel', RuxTabPanel)
