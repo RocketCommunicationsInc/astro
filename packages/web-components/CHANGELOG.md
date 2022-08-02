@@ -1,5 +1,11 @@
 # @astrouxds/astro-web-components
 
+## 6.12.0
+
+### Minor Changes
+
+-   8f207bc2: Adds a ruxchange event to rux-slider.
+
 ## 6.11.0
 
 ### Minor Changes
