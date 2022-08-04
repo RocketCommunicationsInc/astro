@@ -1,5 +1,13 @@
 # @astrouxds/angular
 
+## 6.12.0
+
+### Minor Changes
+
+#### Slider
+
+- Added `ruxchange` event
+
 ## 6.11.0
 
 ### Minor Changes
