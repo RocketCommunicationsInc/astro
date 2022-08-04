@@ -12,23 +12,17 @@ height: 150px
 
 # Global Status Bar
 
-The Global Status Bar is a full width view across the top of an application — an area commonly reserved for global status, global command and top-level navigation. The Global Status Bar often includes: Application Name, Monitoring Icons, Top Level Navigation and an Emergency Button.
-
-## Rules of Thumb
-
-- Make Monitoring Icons interactive to reveal in-depth information.
-- Make sure that Monitoring Icons use color coding, iconography, and labels consistent with the standard design.
-- Include the name of the application.
+The Global Status Bar is a full width view across the top of an application — an area commonly reserved for global status, global command and top-level navigation.
 
 ## Appearance and Behavior
 
-![Simplest Global Status Bar - Only include the App Name.](/img/components/global-status-simple.png "Simplest Global Status Bar - Only include the App Name.")
+The Global Status Bar has four main parts: App Icon, App Title, App State, and Logged-in Username. Additional custom features can be added to the Global Status bar. Suggested elements include Clock, Monitoring Icons, and Buttons.
 
-![Simple Global Status Bar - App Name and Emergency Shut Off.](/img/components/global-status-more.png "Simple Global Status Bar - App Name and Emergency Shut Off.")
+![Simplest Global Status Bar - Only include the App Title.](/img/components/global-status-simple.png "Simplest Global Status Bar - Only include the App Title.")
 
-![More Complex Global Status Bar - App Name, Status Icons and Emergency Shut Off.](/img/components/global-status-very.png "More Complex Global Status Bar - App Name, Status Icons and Emergency Shut Off.")
+![Standard Global Status Bar - App Icon, App Title, App State, and Logged-in Username](/img/components/global-status-very.png "Standard Global Status Bar - App Icon, App Title, App State, and Logged-in Username")
 
-#5.1.1[Most Complex Global Status Bar - App Name, Navigation, Monitoring Icons and Emergency Shut Off.](/img/components/global-status-complex.png "Most Complex Global Status Bar - App Name, Navigation, Monitoring Icons and Emergency Shut Off.")
+![Complex Global Status Bar - App Icon, App Title, App State, Logged-in Username, Clock, and Monitoring Icons.](/img/components/global-status-complex.png "Complex Global Status Bar - App Icon, App Title, App State, Logged-in Username, Clock, and Monitoring Icons.")
 
 ::: note
 When using the alternate light theme in Astro, the Global Status Bar and all of the elements it contains still use the default dark theme styling.
@@ -42,7 +36,7 @@ When using the alternate light theme in Astro, the Global Status Bar and all of 
 
 ![Don’t: Use icons, labels and colors incorrectly.](/img/components/global-status-dont-1.png "Don’t: Use icons, labels, and colors incorrectly.")
 
-![Do: Left justify the application name and Top Level Nav (when utilized). Right justify Icons and Emergency Shut Off (when utilized).](/img/components/global-status-do-2.png "Do: Left justify the application name and Top Level Nav (when utilized). Right justify Icons and Emergency Shut Off (when utilized).")
+![Do: Left justify the application name. Additional custom elements should be centered in the Global Status Bar or right justified (when utilized).](/img/components/global-status-do-2.png "Do: Left justify the application name and Top Level Nav (when utilized). Right justify Icons and Emergency Shut Off (when utilized).")
 
 ![Don’t: Use the Global Status Bar for controls or indications that come and go with different app modes. Reserve it for truly global elements.](/img/components/global-status-dont-2.png "Don’t: Use the Global Status Bar for controls or indications that come and go with different app modes. Reserve it for truly global elements.")
 
