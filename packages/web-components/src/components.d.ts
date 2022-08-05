@@ -32699,6 +32699,10 @@ declare namespace LocalJSX {
          */
         "onRuxblur"?: (event: CustomEvent<any>) => void;
         /**
+          * Fired when the element's value is altered by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
+         */
+        "onRuxchange"?: (event: CustomEvent<any>) => void;
+        /**
           * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */
         "onRuxinput"?: (event: CustomEvent<any>) => void;

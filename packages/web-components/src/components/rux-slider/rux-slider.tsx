@@ -99,6 +99,10 @@ export class RuxSlider implements FormFieldInterface {
      * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
      */
     @Event({ eventName: 'ruxblur' }) ruxBlur!: EventEmitter
+    /**
+     * Fired when the element's value is altered by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
+     */
+    @Event({ eventName: 'ruxchange' }) ruxChange!: EventEmitter
 
     componentWillLoad() {
         this._updateValue()
@@ -110,6 +114,7 @@ export class RuxSlider implements FormFieldInterface {
         this._onInput = this._onInput.bind(this)
         this._onBlur = this._onBlur.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
+        this._onChange = this._onChange.bind(this)
     }
 
     disconnectedCallback() {
@@ -193,6 +198,10 @@ export class RuxSlider implements FormFieldInterface {
         this.ruxInput.emit()
     }
 
+    private _onChange() {
+        this.ruxChange.emit()
+    }
+
     private _onBlur = () => {
         this.ruxBlur.emit()
     }
@@ -235,6 +244,7 @@ export class RuxSlider implements FormFieldInterface {
             name,
             _onInput,
             _onBlur,
+            _onChange,
         } = this
 
         renderHiddenInput(true, el, name, JSON.stringify(this.value), disabled)
@@ -264,6 +274,7 @@ export class RuxSlider implements FormFieldInterface {
                         <input
                             id={sliderId}
                             onInput={_onInput}
+                            onChange={_onChange}
                             type="range"
                             class="rux-range"
                             min={min}

@@ -22921,6 +22921,10 @@ export declare interface RuxSlider extends Components.RuxSlider {
    * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) 
    */
   ruxblur: EventEmitter<CustomEvent<any>>;
+  /**
+   * Fired when the element's value is altered by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) 
+   */
+  ruxchange: EventEmitter<CustomEvent<any>>;
 
 }
 
@@ -22939,7 +22943,7 @@ export class RuxSlider {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['ruxinput', 'ruxblur']);
+    proxyOutputs(this, this.el, ['ruxinput', 'ruxblur', 'ruxchange']);
   }
 }
 
