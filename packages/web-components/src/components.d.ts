@@ -12499,6 +12499,10 @@ export namespace Components {
     }
     interface RuxTimeRegion {
         /**
+          * Description of the component
+         */
+        "boundary": 'inside' | 'left' | 'right';
+        /**
           * The end date. Must be an ISO string "2021-02-02T05:00:00Z"
          */
         "end": string;
@@ -32924,6 +32928,10 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface RuxTimeRegion {
+        /**
+          * Description of the component
+         */
+        "boundary"?: 'inside' | 'left' | 'right';
         /**
           * The end date. Must be an ISO string "2021-02-02T05:00:00Z"
          */

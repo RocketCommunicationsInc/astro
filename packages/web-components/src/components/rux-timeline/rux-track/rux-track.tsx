@@ -109,10 +109,10 @@ export class RuxTrack {
         }
 
         if (new Date(start) < new Date(this.start)) {
-            return {
-                success: false,
-                error: `The Time Region start date does not fall within the Timeline's range: ${start} - ${this.start}/${this.end}`,
-            }
+            // return {
+            //     success: false,
+            //     error: `The Time Region start date does not fall within the Timeline's range: ${start} - ${this.start}/${this.end}`,
+            // }
         }
 
         if (new Date(start) > new Date(this.end)) {
@@ -122,26 +122,19 @@ export class RuxTrack {
             }
         }
 
-        if (new Date(end) > new Date(this.end)) {
-            return {
-                success: false,
-                error: `The Time Region end date does not fall within the Timeline's range: ${start} - ${this.start}/${this.end}`,
-            }
-        }
-
-        if (new Date(start) < new Date(this.start)) {
-            return {
-                success: false,
-                error: `The Time Region start date does not fall within the Timeline's range: ${start} - ${this.start}/${this.end}`,
-            }
-        }
+        // if (new Date(end) > new Date(this.end)) {
+        //     return {
+        //         success: false,
+        //         error: `The Time Region end date does not fall within the Timeline's range: ${start} - ${this.start}/${this.end}`,
+        //     }
+        // }
 
         return {
             success: true,
         }
     }
 
-    initializeRows() {
+    private initializeRows() {
         const children = [...this.el.children].filter(
             (el) => el.tagName.toLowerCase() === 'rux-time-region'
         ) as HTMLRuxTimeRegionElement[]
@@ -151,6 +144,16 @@ export class RuxTrack {
             const isValid = this._validateTimeRegion(el.start, el.end)
 
             if (isValid.success) {
+                if (el.start < this.start) {
+                    el.boundary = 'left'
+                    el.start = this.start
+                }
+
+                if (el.end > this.end) {
+                    el.end = this.end
+                    el.boundary = 'right'
+                }
+
                 el.timezone = this.timezone
                 el.style.gridRow = '1'
                 el.style.visibility = 'inherit'
@@ -171,7 +174,7 @@ export class RuxTrack {
         this.initializeRows()
     }
 
-    renderDebug() {
+    private renderDebug() {
         return (
             <div style={{ display: 'contents' }}>
                 {[...Array(this.columns)].map((_: any, i: any) => (

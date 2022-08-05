@@ -60,3 +60,11 @@
 .hidden {
     visibility: hidden;
 }
+
+.rux-time-region--left-bound {
+    border-left-style: dashed;
+}
+
+.rux-time-region--right-bound {
+    border-right-style: dashed;
+}

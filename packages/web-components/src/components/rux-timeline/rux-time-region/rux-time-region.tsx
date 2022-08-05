@@ -41,6 +41,11 @@ export class RuxTimeRegion {
      */
     @Prop() timezone = 'UTC'
 
+    /**
+     * Description of the component
+     */
+    @Prop() boundary: 'inside' | 'left' | 'right' = 'inside'
+
     get formattedTime() {
         if (!this.start || !this.end) {
             return false
@@ -70,6 +75,9 @@ export class RuxTimeRegion {
                         'rux-time-region--caution': this.status === 'caution',
                         'rux-time-region--standby': this.status === 'standby',
                         'rux-time-region--selected': this.selected,
+                        'rux-time-region--left-bound': this.boundary === 'left',
+                        'rux-time-region--right-bound':
+                            this.boundary === 'right',
                     }}
                 >
                     <div class="rux-time-region__content">
