@@ -49,5 +49,4 @@ While not enabled by default at this time, light and dark themes can be swapped 
 
 ## Implementation
 
-When using the Astro Web Components, Astro applications will default to the dark theme with no additional involvement by the developer. To enable the light theme, the <body> element of the application should be given a light-theme class (e.g., <body class=“light-theme”>.
-For all other applications, refer to our [Design Tokens](/design-tokens/getting-started).
+When using the Astro Web Components, Astro applications will default to the dark theme with no additional involvement by the developer. To enable the light theme, the <body> element of the application should be given a light-theme class (e.g., <body class=“light-theme”>. For all other applications, refer to our [Design Tokens](/design-tokens/getting-started).
