@@ -1,4 +1,13 @@
-import { Element, Prop, Component, Host, h } from '@stencil/core'
+import {
+    Watch,
+    Event,
+    EventEmitter,
+    Element,
+    Prop,
+    Component,
+    Host,
+    h,
+} from '@stencil/core'
 import { formatInTimeZone } from 'date-fns-tz'
 
 /**
@@ -40,6 +49,23 @@ export class RuxTimeRegion {
      * @internal - The Time Regions's time zone. Set automatically from the parent Track component.
      */
     @Prop() timezone = 'UTC'
+
+    /**
+     * @internal - Emitted when the start or end date changes so that it's parent Track can update the Time Region's position.
+     */
+    @Event({
+        eventName: 'ruxtimeregionchange',
+    })
+    ruxTimeRegionChange!: EventEmitter
+
+    @Watch('start')
+    @Watch('end')
+    handleTimeUpdate() {
+        this.ruxTimeRegionChange.emit({
+            start: this.start,
+            end: this.end,
+        })
+    }
 
     get formattedTime() {
         if (!this.start || !this.end) {
