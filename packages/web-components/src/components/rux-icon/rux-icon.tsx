@@ -45,12 +45,7 @@ export class RuxIcon {
 
         return (
             <Host>
-                <SVG
-                    class="icon"
-                    part="icon"
-                    size={this.size}
-                    title={this.iconLabel}
-                ></SVG>
+                <SVG class="icon" part="icon" size={this.size}></SVG>
             </Host>
         )
     }
