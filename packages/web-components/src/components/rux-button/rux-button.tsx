@@ -77,6 +77,12 @@ export class RuxButton {
         }
     }
 
+    private get getTitle() {
+        if (this.el.title) {
+            return this.el.title
+        }
+    }
+
     render() {
         const { size, iconOnly, secondary, disabled, icon, borderless } = this
         return (
@@ -96,6 +102,7 @@ export class RuxButton {
                     aria-disabled={disabled ? 'true' : null}
                     disabled={disabled}
                     part="container"
+                    title={this.getTitle}
                 >
                     {icon ? (
                         <rux-icon
@@ -103,6 +110,7 @@ export class RuxButton {
                             icon={icon}
                             exportparts="icon"
                             color={secondary ? 'primary' : 'dark'}
+                            title={this.el.title}
                         ></rux-icon>
                     ) : null}
 

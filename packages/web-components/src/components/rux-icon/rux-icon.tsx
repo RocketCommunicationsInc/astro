@@ -1,4 +1,4 @@
-import { Component, Host, Prop, h } from '@stencil/core'
+import { Component, Host, Prop, h, Element } from '@stencil/core'
 
 /**
  * @part icon - the icon in rux-icon
@@ -11,6 +11,8 @@ import { Component, Host, Prop, h } from '@stencil/core'
 export class RuxIcon {
     // eslint-disable-next-line
     svg: string = ''
+
+    @Element() el!: HTMLRuxIconElement
 
     /**
      * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
@@ -40,6 +42,14 @@ export class RuxIcon {
         }
     }
 
+    private get _getTitle() {
+        if (this.el.parentElement && this.el.parentElement.title) {
+            return this.el.parentElement.title
+        } else {
+            return this.iconLabel
+        }
+    }
+
     render() {
         const SVG = `rux-icon-${this.icon}`
 
@@ -49,7 +59,7 @@ export class RuxIcon {
                     class="icon"
                     part="icon"
                     size={this.size}
-                    title={this.iconLabel}
+                    title={this._getTitle}
                 ></SVG>
             </Host>
         )
