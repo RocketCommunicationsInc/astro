@@ -41,7 +41,7 @@ This is a commit message and will be forever included in the Astro changelog.
 
 ![GitHub’s integrated Markdown editor](/img/community/step-3.png)
 
-## Step 4 - Confirm your changes and create a pull request
+## Step 5 - Confirm your changes and create a pull request
 
 Take a moment after submitting your change to confirm there are no errors. GitHub will present the file you are changing, the previous version highlighted in red and your proposed change highlighted in green.
 
