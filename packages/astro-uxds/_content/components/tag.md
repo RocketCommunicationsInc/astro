@@ -23,7 +23,7 @@ Tags are a distinct component that are useful for identifying important informat
 
 A Tag is a component made up of a text label, container, and color. Tags can be interactive, with the ability to edit or clear them from a data set, or static used as additional information or a link to other similarly tagged elements.
 
-In code, Astro provides Status Tags. A Status Tag is system generated and typically has three states (Pass, Fail, and Unknown). A Status Tag cannot be removed or cleared from the interface. The color style assigned to the Status Tag cannot be changed, though the text label of the tab can be. Status Tags should not be interactive. To use other colors or make a tag interactive, custom coding can be added on top of the provided Status Tag code.
+In code, Astro provides Status Tags. A Status Tag is system generated and typically has three states (Pass, Fail, and Unknown). A Status Tag cannot be removed or cleared from the interface. The color style assigned to the Status Tag cannot be changed, though the text label of the tag can be. Status Tags should not be interactive. To use other colors or make a tag interactive, custom coding can be added on top of the provided Status Tag code.
 
 ## Use Cases
 
