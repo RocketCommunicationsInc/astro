@@ -27,30 +27,12 @@ export class RuxIcon {
      */
     @Prop() icon!: string
 
-    /**
-     * The icon SVG's title attribute. Used for accessibility. If none is provided, the icon name will be used.
-     */
-    @Prop() label?: string
-
-    get iconLabel() {
-        if (this.label) {
-            return this.label
-        } else {
-            return this.icon
-        }
-    }
-
     render() {
         const SVG = `rux-icon-${this.icon}`
 
         return (
             <Host>
-                <SVG
-                    class="icon"
-                    part="icon"
-                    size={this.size}
-                    title={this.iconLabel}
-                ></SVG>
+                <SVG class="icon" part="icon" size={this.size}></SVG>
             </Host>
         )
     }

@@ -182,7 +182,6 @@ export class RuxNotification {
                                 <slot name="actions">
                                     <rux-icon
                                         role="button"
-                                        label="Close notification"
                                         onClick={() => this._onClick()}
                                         icon="clear"
                                         size={this.small ? '24px' : '32px'}
