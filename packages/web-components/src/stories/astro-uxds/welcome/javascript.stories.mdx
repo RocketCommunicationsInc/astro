@@ -145,17 +145,17 @@ Astro Components emit their own custom events, prefixed with `rux`.
 Some components offer public methods that can be executed. These methods are async and can be executed by selecting the Node element.
 
 ```js
-  <rux-tree>
-    <rux-tree-node id="firstNode">Hello</rux-tree-node>
-    <rux-tree-node>World</rux-tree-node>
-    </rux-tree>
-  <rux-button @click="selectNode">Select Node</rux-button>
+<rux-tree>
+  <rux-tree-node id="firstNode">Hello</rux-tree-node>
+  <rux-tree-node>World</rux-tree-node>
+</rux-tree>
+<rux-button @click="selectNode">Select Node</rux-button>
 
-  <script>
-    const button = document.querySelector('rux-button')
-    const node = document.querySelector('#firstNode')
-    button.addEventListener('click', () => {
-      node.setSelected(true)
-    })
-  </script>
+<script>
+  const button = document.querySelector('rux-button')
+  const node = document.querySelector('#firstNode')
+  button.addEventListener('click', () => {
+    node.setSelected(true)
+  })
+</script>
 ```
