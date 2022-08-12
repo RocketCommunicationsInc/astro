@@ -1,4 +1,4 @@
-import { Element, Component, Prop, Host, h, Watch } from '@stencil/core'
+import { Element, Listen, Component, Prop, Host, h, Watch } from '@stencil/core'
 import { differenceInMinutes, differenceInHours } from 'date-fns'
 
 interface DateValidation {
@@ -59,11 +59,21 @@ export class RuxTrack {
         this.initializeRows()
     }
 
+    @Listen('ruxtimeregionchange')
+    handleTimeRegionChange(e: CustomEvent) {
+        this.initializeRows()
+        e.stopPropagation()
+    }
+
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
     }
 
-    calculateGridColumnFromTime(time: any) {
+    /**
+     * Tracks are displayed as a (CSS) grid of cells.
+     * Each cell can represent a minute or hour depending on the interval.
+     */
+    private _calculateGridColumnFromTime(time: any) {
         if (this.start) {
             const timelineStart = new Date(this.start)
 
@@ -141,7 +151,11 @@ export class RuxTrack {
         }
     }
 
-    initializeRows() {
+    /**
+     * Time Regions are dumb and don't know anything about the grid.
+     * The Track is responsible for lining up the Time Regions with the grid.
+     */
+    private initializeRows() {
         const children = [...this.el.children].filter(
             (el) => el.tagName.toLowerCase() === 'rux-time-region'
         ) as HTMLRuxTimeRegionElement[]
@@ -154,9 +168,9 @@ export class RuxTrack {
                 el.timezone = this.timezone
                 el.style.gridRow = '1'
                 el.style.visibility = 'inherit'
-                const gridColumn = `${this.calculateGridColumnFromTime(
+                const gridColumn = `${this._calculateGridColumnFromTime(
                     el.start
-                )} / ${this.calculateGridColumnFromTime(el.end)}`
+                )} / ${this._calculateGridColumnFromTime(el.end)}`
                 el.style.gridColumn = gridColumn
             } else {
                 if (!isHidden) {
@@ -171,24 +185,25 @@ export class RuxTrack {
         this.initializeRows()
     }
 
-    renderDebug() {
-        return (
-            <div style={{ display: 'contents' }}>
-                {[...Array(this.columns)].map((_: any, i: any) => (
-                    <div
-                        style={{
-                            gridRow: '1',
-                            gridColumn: `${i + 2} / ${++i + 2}`,
-                        }}
-                        class={{
-                            cell: true,
-                            marker: i % 60 === 0,
-                        }}
-                    ></div>
-                ))}
-            </div>
-        )
-    }
+    // @TODO
+    // renderDebug() {
+    //     return (
+    //         <div style={{ display: 'contents' }}>
+    //             {[...Array(this.columns)].map((_: any, i: any) => (
+    //                 <div
+    //                     style={{
+    //                         gridRow: '1',
+    //                         gridColumn: `${i + 2} / ${++i + 2}`,
+    //                     }}
+    //                     class={{
+    //                         cell: true,
+    //                         marker: i % 60 === 0,
+    //                     }}
+    //                 ></div>
+    //             ))}
+    //         </div>
+    //     )
+    // }
 
     render() {
         return (
