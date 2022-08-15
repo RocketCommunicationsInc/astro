@@ -710,11 +710,6 @@
               "numeral": 2,
               "rule": "Status Symbols shall be displayed with the [specified colors](/components/status-symbol/#status-colors).",
               "status": "current"
-            },
-            {
-              "numeral": 3,
-              "rule": "Switch labels shall use sentence case capitalization.",
-              "status": "new"
             }
           ]
         },
