@@ -46,6 +46,8 @@
             font-size: inherit;
             font-weight: inherit;
             -webkit-appearance: none;
+            //Sets input area input area to correct height
+            height: 1.25rem;
             appearance: none;
             outline: none;
             width: 100%;
@@ -62,17 +64,20 @@
         position: relative;
         box-sizing: border-box;
         order: 2;
-        border: 1px solid var(--color-border-interactive-muted);
+        // use box shadow instead of border to create borders
+        box-shadow: var(--color-border-interactive-muted) 0 0 0 1px inset;
         border-radius: var(--radius-base);
         font-family: var(--font-body-1-font-family);
         font-size: var(--font-body-1-font-size);
         font-weight: var(--font-body-1-font-weight);
+        //control-body line heights not yet implemented
+        line-height: var(--line-height-sm);
         letter-spacing: var(--font-body-1-letter-spacing);
         color: var(--color-text-primary);
         background-color: var(--color-background-base-default);
 
         &--invalid {
-            border: 1px solid var(--color-text-error);
+            box-shadow: var(--color-border-error) 0 0 0 1px inset;
         }
         &--disabled {
             opacity: 0.4;
@@ -80,39 +85,38 @@
             cursor: not-allowed;
         }
         &--small {
-            padding: 0.219rem 0.5rem; // 3.5px 8px;
-            min-height: 1.625rem; //26px
+            padding: var(--spacing-1) var(--spacing-2); // 4px 8px;
         }
         &--medium {
-            padding: 0.469rem 0.5rem; // 7.5px 8px;
-            min-height: 2.25rem; //36px
+            padding: var(--spacing-2); //8px;
         }
         &--large {
-            padding: 0.844rem 0.5rem; //13.5px 8px;
-            min-height: 2.875rem; //46px
+            padding: var(--spacing-3) var(--spacing-2); //12px 8px;
         }
         &--search {
             -webkit-appearance: none;
             -moz-appearance: none;
-            padding-left: 2.25rem; //36px
+            padding-left: calc(var(--spacing-8)); //32px
             background: var(--color-background-base-default)
                 url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.37 26.457a15.282 15.282 0 000-21.918c-6.176-6.052-16.187-6.052-22.361 0a15.274 15.274 0 00-1.541 20.166c-.367.147-.713.37-1.014.665L.926 34.709a3.056 3.056 0 000 4.383 3.208 3.208 0 004.472 0l9.528-9.339c.352-.345.604-.753.756-1.186 6.137 3.831 14.347 3.124 19.687-2.11zM24.193 4.043c6.454 0 11.686 5.129 11.686 11.455 0 6.326-5.232 11.455-11.686 11.455-6.455 0-11.687-5.129-11.687-11.455 0-6.326 5.232-11.455 11.687-11.455z' fill='%234dacff' fill-rule='evenodd'/%3E%3C/svg%3E")
-                10px/0.975rem no-repeat;
+                8px/0.975rem no-repeat;
         }
         &--focused {
-            border-color: var(--color-background-interactive-hover);
+            box-shadow: var(--color-background-interactive-hover) 0 0 0 1px
+                inset;
             outline: none;
         }
         &:hover {
-            border-color: var(--color-background-interactive-hover);
+            box-shadow: var(--color-background-interactive-hover) 0 0 0 1px
+                inset;
             outline: none;
         }
         &--disabled:hover {
-            border: 1px solid var(--color-border-interactive-muted);
+            box-shadow: var(--color-border-interactive-muted) 0 0 0 1px inset;
             color: var(--color-text-primary);
         }
         &--invalid:hover {
-            border: 1px solid var(--color-text-error);
+            box-shadow: var(--color-border-error) 0 0 0 1px inset;
         }
         &::placeholder {
             color: var(--color-text-placeholder);
@@ -126,12 +130,12 @@
         }
         .rux-input-prefix {
             ::slotted(*) {
-                padding-right: 10px;
+                padding-right: var(--spacing-1);
             }
         }
         .rux-input-suffix {
             ::slotted(*) {
-                padding-left: 10px;
+                padding-left: var(--spacing-1);
             }
         }
     }
@@ -142,7 +146,7 @@
         letter-spacing: var(--font-body-1-letter-spacing);
         margin-bottom: var(--spacing-input-label-top);
         &__asterisk {
-            margin-left: 4px;
+            margin-left: var(--spacing-1);
         }
     }
 
@@ -150,15 +154,13 @@
         background-color: var(--color-palette-brightblue-400);
     }
 }
-.pw-button {
-    padding-top: 1px; //icon looked like half a px off from being centered.
-}
+
 .pw-button::part(container) {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
-    height: 1rem;
+    height: 1.25rem;
 }
 
 .hidden,
