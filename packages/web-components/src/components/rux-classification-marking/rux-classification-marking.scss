@@ -23,7 +23,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 26px;
+    min-height: var(--spacing-6);
     transition: top 10.5s ease;
     overflow-wrap: anywhere;
     color: var(--color-text-white);
