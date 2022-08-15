@@ -28,7 +28,7 @@
         <p>Small</p>
 
         <rux-input
-            id="ruxInput"
+            id="ruxInputSizing"
             name="ruxInput"
             value="Input test"
             size="small"
@@ -37,7 +37,7 @@
         <p>medium</p>
 
         <rux-input
-            id="ruxInput"
+            id="ruxInputSizing"
             name="ruxInput"
             value="Input test"
             size="medium"
@@ -46,7 +46,7 @@
         <p>large</p>
 
         <rux-input
-            id="ruxInput"
+            id="ruxInputSizing"
             name="ruxInput"
             value="Input test"
             size="large"
@@ -57,7 +57,7 @@
 
         <div style="width: 200px">
             <rux-input
-                id="ruxInput"
+                id="ruxInputSizing"
                 name="ruxInput"
                 value="Input test"
                 size="small"
@@ -69,7 +69,7 @@
 
         <div style="width: 200px">
             <rux-input
-                id="ruxInput"
+                id="ruxInputSizing"
                 name="ruxInput"
                 value="Input test"
                 size="medium"
@@ -81,7 +81,7 @@
 
         <div style="width: 194px">
             <rux-input
-                id="ruxInput"
+                id="ruxInputSizing"
                 name="ruxInput"
                 value="Input test"
                 size="large"
@@ -94,7 +94,7 @@
 
         <div style="width: 200px">
             <rux-input
-                id="ruxInput"
+                id="ruxInputSizing"
                 name="ruxInput"
                 value="Input test"
                 size="small"
@@ -108,7 +108,7 @@
 
         <div style="width: 200px">
             <rux-input
-                id="ruxInput"
+                id="ruxInputSizing"
                 name="ruxInput"
                 value="Input test"
                 size="medium"
@@ -120,7 +120,7 @@
 
         <div style="width: 200px">
             <rux-input
-                id="ruxInput"
+                id="ruxInputSizing"
                 name="ruxInput"
                 value="Input test"
                 size="small"
@@ -133,7 +133,7 @@
 
         <div style="width: 194px">
             <rux-input
-                id="ruxInput"
+                id="ruxInputSizing"
                 name="ruxInput"
                 value="Input test"
                 size="large"
@@ -196,11 +196,17 @@
         </div>
 
         <h1>Previous Tests</h1>
-
+        <!--
+                        IMPORTANT FOR CYPRESS TESTING | DO NOT MODIFY | DO NOT USE THESE IDs ELSEWHERE
+                    -->
         <div style="padding: 10%; display: flex; justify-content: center">
             <form id="form">
                 <div>
-                    <rux-input id="ruxInput" name="ruxInput" value="Input test">
+                    <rux-input
+                        id="ruxInput"
+                        name="ruxInput"
+                        label="Input Field"
+                    >
                     </rux-input>
                     <input type="text" id="nativeInput" name="nativeInput" />
                 </div>
@@ -352,5 +358,6 @@
                 })
             </script>
         </div>
+        <!-- END CYPRESS TESTING BLOCK -->
     </body>
 </html>
