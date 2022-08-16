@@ -17,6 +17,10 @@
         <script nomodule src="/build/astro-web-components.esm.js"></script>
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
+        <script
+            type="module"
+            src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"
+        ></script>
     </head>
 
     <body class="dark-theme">
@@ -88,5 +92,11 @@
                 }
             </script>
         </div>
+
+        <!--Spacing tests-->
+        <h2>Switch on</h2>
+        <rux-switch id="ruxSwitchOn" name="ruxSwitchOn" checked></rux-switch>
+        <h2>Switch off</h2>
+        <rux-switch id="ruxSwitchOff" name="ruxSwitchOff"></rux-switch>
     </body>
 </html>
