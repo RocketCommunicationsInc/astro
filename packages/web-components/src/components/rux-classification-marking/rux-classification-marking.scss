@@ -45,7 +45,10 @@
 
 .rux-classification--tag {
     width: fit-content;
-    padding: 0.1875rem 0.625rem;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0 var(--spacing-3);
     border-radius: var(--radius-base);
     font-family: var(--font-body-2-bold-font-family);
     font-size: var(--font-body-2-bold-font-size);
