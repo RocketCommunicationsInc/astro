@@ -103,8 +103,8 @@ export class RuxGlobalStatusBar {
                             this.appName ||
                             this.appVersion) && (
                             <AppMeta
-                                domain={this.appDomain?.toUpperCase()}
-                                name={this.appName?.toUpperCase()}
+                                domain={this.appDomain}
+                                name={this.appName}
                                 version={this.appVersion}
                             >
                                 <div class="app-state-wrapper">
