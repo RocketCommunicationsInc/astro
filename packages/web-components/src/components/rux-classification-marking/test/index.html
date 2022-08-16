@@ -17,8 +17,22 @@
         <script nomodule src="/build/astro-web-components.js"></script>
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
+        <script
+            type="module"
+            src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"
+        ></script>
     </head>
     <body>
+        <ftl-holster
+            access-token="figd_9S33KsQIz3Kpi6WvFmR0XmeDhfxbCzwm5RYLt4mv"
+            file-id="7tni7pdpLodbs6dGiKwGMz"
+            node="6943:146912"
+        >
+            <rux-classification-marking
+                tag
+                classification="unclassified"
+            ></rux-classification-marking>
+        </ftl-holster>
         <rux-classification-marking></rux-classification-marking>
     </body>
 </html>
