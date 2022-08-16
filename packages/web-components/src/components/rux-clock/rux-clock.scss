@@ -1,6 +1,6 @@
 :host {
     display: flex;
-    margin: 0 1rem;
+    margin: 0;
     color: var(--color-palette-neutral-000);
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -39,13 +39,15 @@
     white-space: nowrap;
     overflow-y: hidden;
     text-overflow: ellipsis;
-    height: 2.75rem;
-    padding: 0 0.75rem;
+    //height: 2.65rem;
+    //padding: 0 0.75rem;
+    padding: var(--spacing-1) var(--spacing-3);
 }
 
 :host([small]) .rux-clock__segment__value {
-    height: 2.75rem;
-    padding: 0 0.75rem;
+    //height: 2.75rem;
+    //padding: 0 0.75rem;
+    padding: var(--spacing-1) var(--spacing-3);
     font-size: 1.15rem;
     font-weight: 500;
 }
@@ -57,7 +59,8 @@
     letter-spacing: var(--font-body-2-letter-spacing);
     color: var(--color-palette-neutral-000);
     background: var(--gsb-color-background);
-    padding: 0.094rem 0.625rem;
+    //padding: 0.4rem 0.625rem 0.05rem 0.625rem;
+    padding: var(--spacing-1) var(--spacing-3) 0px var(--spacing-3);
     width: -moz-available;
     width: -webkit-fill-available;
     width: fill-available;
