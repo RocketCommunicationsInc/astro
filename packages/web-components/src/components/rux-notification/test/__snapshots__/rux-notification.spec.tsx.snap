@@ -15,7 +15,7 @@ exports[`rux-notification renders 1`] = `
         </div>
         <div class="rux-notification-banner__actions">
           <slot name="actions">
-            <rux-icon exportparts="icon" icon="clear" label="Close notification" role="button" size="32px"></rux-icon>
+            <rux-icon exportparts="icon" icon="clear" role="button" size="32px"></rux-icon>
           </slot>
         </div>
       </div>
