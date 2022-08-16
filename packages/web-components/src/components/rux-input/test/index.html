@@ -24,13 +24,188 @@
     </head>
 
     <body class="dark-theme">
+        <h2>Figma spacing test</h2>
+        <p>Small</p>
+
+        <rux-input
+            id="ruxInputSizing"
+            name="ruxInput"
+            value="Input test"
+            size="small"
+        ></rux-input>
+
+        <p>medium</p>
+
+        <rux-input
+            id="ruxInputSizing"
+            name="ruxInput"
+            value="Input test"
+            size="medium"
+        ></rux-input>
+
+        <p>large</p>
+
+        <rux-input
+            id="ruxInputSizing"
+            name="ruxInput"
+            value="Input test"
+            size="large"
+        ></rux-input>
+
+        <h3>With Icon</h3>
+        <p>small</p>
+
+        <div style="width: 200px">
+            <rux-input
+                id="ruxInputSizing"
+                name="ruxInput"
+                value="Input test"
+                size="small"
+                ><rux-icon slot="prefix" size="20px" icon="star"></rux-icon
+            ></rux-input>
+        </div>
+
+        <p>medium</p>
+
+        <div style="width: 200px">
+            <rux-input
+                id="ruxInputSizing"
+                name="ruxInput"
+                value="Input test"
+                size="medium"
+                ><rux-icon slot="prefix" size="20px" icon="star"></rux-icon
+            ></rux-input>
+        </div>
+
+        <p>large</p>
+
+        <div style="width: 194px">
+            <rux-input
+                id="ruxInputSizing"
+                name="ruxInput"
+                value="Input test"
+                size="large"
+                ><rux-icon slot="prefix" size="20px" icon="star"></rux-icon
+            ></rux-input>
+        </div>
+
+        <h3>With Icons</h3>
+        <p>small</p>
+
+        <div style="width: 200px">
+            <rux-input
+                id="ruxInputSizing"
+                name="ruxInput"
+                value="Input test"
+                size="small"
+            >
+                <rux-icon slot="prefix" size="20px" icon="star"></rux-icon>
+                <rux-icon slot="suffix" size="20px" icon="star"></rux-icon>
+            </rux-input>
+        </div>
+
+        <p>medium</p>
+
+        <div style="width: 200px">
+            <rux-input
+                id="ruxInputSizing"
+                name="ruxInput"
+                value="Input test"
+                size="medium"
+            >
+                <rux-icon slot="prefix" size="20px" icon="star"></rux-icon>
+                <rux-icon slot="suffix" size="20px" icon="star"></rux-icon>
+            </rux-input>
+        </div>
+
+        <div style="width: 200px">
+            <rux-input
+                id="ruxInputSizing"
+                name="ruxInput"
+                value="Input test"
+                size="small"
+            >
+                <rux-icon slot="suffix" size="20px" icon="star"></rux-icon>
+            </rux-input>
+        </div>
+
+        <p>large</p>
+
+        <div style="width: 194px">
+            <rux-input
+                id="ruxInputSizing"
+                name="ruxInput"
+                value="Input test"
+                size="large"
+            >
+                <rux-icon slot="prefix" size="20px" icon="star"></rux-icon>
+                <rux-icon slot="suffix" size="20px" icon="star"></rux-icon>
+            </rux-input>
+        </div>
+
+        <h3>Password</h3>
+        <p>small</p>
+
+        <div style="width: 218px">
+            <rux-input
+                type="password"
+                placeholder="Reindeer Flotilla"
+                size="small"
+            ></rux-input>
+        </div>
+
+        <p>medium</p>
+
+        <div style="width: 218px">
+            <rux-input
+                type="password"
+                placeholder="Reindeer Flotilla"
+                size="medium"
+            ></rux-input>
+        </div>
+
+        <p>large</p>
+
+        <div style="width: 218px">
+            <rux-input
+                type="password"
+                placeholder="Reindeer Flotilla"
+                size="large"
+            ></rux-input>
+        </div>
+
+        <h3>Search</h3>
+
+        <div style="width: 200px">
+            <rux-input
+                type="search"
+                placeholder="Enter search term"
+            ></rux-input>
+        </div>
+
+        <h3>Date</h3>
+
+        <div style="width: 200px">
+            <rux-input type="date"></rux-input>
+        </div>
+
+        <h3>Time</h3>
+
+        <div style="width: 200px">
+            <rux-input type="time"></rux-input>
+        </div>
+
+        <h1>Previous Tests</h1>
+        <!--
+                        IMPORTANT FOR CYPRESS TESTING | DO NOT MODIFY | DO NOT USE THESE IDs ELSEWHERE
+                    -->
         <div style="padding: 10%; display: flex; justify-content: center">
             <form id="form">
                 <div>
                     <rux-input
-                        label="Input Field"
                         id="ruxInput"
                         name="ruxInput"
+                        label="Input Field"
                     >
                     </rux-input>
                     <input type="text" id="nativeInput" name="nativeInput" />
@@ -183,5 +358,6 @@
                 })
             </script>
         </div>
+        <!-- END CYPRESS TESTING BLOCK -->
     </body>
 </html>
