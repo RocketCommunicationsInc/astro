@@ -6,4 +6,5 @@
 @use 'mixins';
 @use 'fouc';
 @use 'reset';
-@import '../../node_modules/@astrouxds/design-tokens/dist/css/classes/typography.css';
+// @import '../../node_modules/@astrouxds/design-tokens/dist/css/classes/typography.css';
+@import '~@astrouxds/design-tokens/dist/css/classes/typography.css';
