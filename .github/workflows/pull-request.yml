@@ -66,7 +66,7 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           working-directory: ./packages/web-components
-          install: ${{ (true && 'steps.cache-node-modules.outputs.cache-hit != 'true') || 'steps.cache-node-modules.outputs.cache-hit == 'true' }}
+          install: true
           start: npm run start.stencil
           wait-on: "http://localhost:3333"
           wait-on-timeout: "110"
