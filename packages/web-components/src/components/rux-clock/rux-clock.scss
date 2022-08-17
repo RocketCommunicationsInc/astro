@@ -6,7 +6,6 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    //height: 3.938rem; //63px
     height: calc(var(--spacing-8) * 2); //64px
 }
 
@@ -36,6 +35,7 @@
     font-size: var(--font-monospace-1-font-size);
     letter-spacing: var(--font-monospace-1-letter-spacing);
     border: 1px solid var(--gsb-color-background);
+    border-bottom: none;
     background-color: var(--color-palette-brightblue-900);
     white-space: nowrap;
     overflow-y: hidden;
@@ -59,7 +59,8 @@
     letter-spacing: var(--font-body-2-letter-spacing);
     color: var(--color-palette-neutral-000);
     background: var(--gsb-color-background);
-    padding: 0px var(--spacing-3) 1.5px var(--spacing-3);
+    padding: 0 var(--spacing-3) 0 var(--spacing-3);
+    line-height: var(--font-body-3-line-height);
     width: -moz-available;
     width: -webkit-fill-available;
     width: fill-available;
@@ -71,5 +72,5 @@
 }
 
 .rux-clock__aos {
-    margin-left: 1.25rem; //20px
+    margin-left: 1rem;
 }
