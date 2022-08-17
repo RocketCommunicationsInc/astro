@@ -32940,6 +32940,7 @@ declare namespace LocalJSX {
           * Optionally hide the bottom right timestamp.
          */
         "hideTimestamp"?: boolean;
+        "onRuxtimeregionchange"?: (event: CustomEvent<any>) => void;
         /**
           * Visually displays the selected state
          */

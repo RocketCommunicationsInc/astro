@@ -23,8 +23,8 @@
         <div style="width: 1050px; margin: auto">
             <rux-timeline
                 timezone="America/New_York"
-                start="2022-08-06T00:00"
-                end="2022-08-11T00:00"
+                start="2022-01-01T00:00"
+                end="2022-01-02T00:00"
                 interval="hour"
                 zoom="2"
             >
@@ -35,13 +35,24 @@
                 <rux-track id="region2">
                     <div slot="label">Region 2</div>
                 </rux-track>
+                <rux-track id="region3">
+                    <div slot="label">Region 3</div>
+                </rux-track>
                 <rux-track slot="ruler">
                     <rux-ruler></rux-ruler>
                 </rux-track>
             </rux-timeline>
 
-            <section>
-                <form id="form">
+            <section
+                style="
+                    width: 33.333%;
+                    background: var(--color-background-surface-default);
+                    padding: 1rem;
+                    border: 2px solid var(--color-border-interactive-muted);
+                "
+            >
+                <h2 style="margin-top: 0">Add New Event</h2>
+                <form id="form" style="display: flex; flex-direction: column">
                     <rux-select name="region" label="Region" value="region1">
                         <rux-option
                             label="Region 1"
@@ -61,16 +72,20 @@
                         name="start"
                         label="Event Start"
                         type="datetime-local"
-                        value="2022-08-10T00:00"
+                        value="2022-01-01T00:00"
                     ></rux-input>
                     <rux-input
                         name="end"
                         label="Event End"
-                        value="2022-08-11T00:00"
+                        value="2022-01-01T03:00"
                         type="datetime-local"
                     ></rux-input>
 
-                    <rux-button type="submit">Add Event</rux-button>
+                    <rux-button
+                        type="submit"
+                        style="margin-left: auto; margin-top: 1rem"
+                        >Add Event</rux-button
+                    >
                 </form>
             </section>
 
@@ -112,17 +127,17 @@
 
             <section
                 style="
-                    width: 66%;
+                    width: 33.333%;
+                    background: var(--color-background-surface-default);
                     padding: 1rem;
-                    border: 2px solid var(--color-palette-grey-900);
+                    border: 2px solid var(--color-border-interactive-muted);
                 "
             >
+                <h2 style="margin-top: 0">Timeline Range</h2>
                 <style>
                     #timeline-range {
                         display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
-                        align-items: center;
+                        flex-direction: column;
                         padding: 0.5rem;
                         border-radius: 0.5rem;
                     }
@@ -141,40 +156,7 @@
                     <rux-button type="submit">Submit</rux-button>
                 </form>
 
-                <rux-segmented-button id="range-presets"></rux-segmented-button>
                 <script>
-                    const rangePresets = document.getElementById(
-                        'range-presets'
-                    )
-                    rangePresets.data = [
-                        {
-                            label: 'This week',
-                        },
-                        {
-                            label: 'This month',
-                        },
-                        {
-                            label: 'This day',
-                        },
-                    ]
-                    rangePresets.addEventListener('ruxchange', (e) => {
-                        const timelineEl = document.querySelector(
-                            'rux-timeline'
-                        )
-                        if (e.target.selected === 'This week') {
-                            timelineEl.start = '2022-03-01T00:00'
-                            timelineEl.end = '2022-03-07T00:00'
-                        } else if (e.target.selected === 'This month') {
-                            timelineEl.start = '2022-03-01T00:00'
-                            timelineEl.end = '2022-03-30T00:00'
-                        } else if (e.target.selected === 'This day') {
-                            timelineEl.start = '2022-03-01T00:00'
-                            timelineEl.end = '2022-03-02T00:00'
-                        }
-
-                        console.log(e.target.selected)
-                    })
-
                     globalThis.changeRange = (e) => {
                         e.preventDefault()
                         const start = document.getElementById('timeline-start')
@@ -187,9 +169,26 @@
                 </script>
             </section>
 
-            <dialog id="favDialog">
+            <dialog
+                id="favDialog"
+                style="
+                    padding: 0;
+                    background: var(--color-background-surface-default);
+                "
+            >
+                <header
+                    style="
+                        font-size: var(--font-heading-2-font-size);
+                        font-weight: bold;
+                        color: var(--color-text-primary);
+                        padding: 1rem;
+                        background: var(--color-background-surface-header);
+                    "
+                >
+                    Edit Event
+                </header>
                 <div id="details"></div>
-                <form method="dialog">
+                <form method="dialog" style="padding: 1rem">
                     <rux-input
                         name="edit-event-start"
                         type="datetime-local"
@@ -203,6 +202,7 @@
                         label="Event End"
                     ></rux-input>
                     <div>
+                        <button value="delete">Remove</button>
                         <button value="cancel">Cancel</button>
                         <button id="confirmBtn" value="default">Confirm</button>
                     </div>
@@ -225,6 +225,13 @@
                         )
                         event.start = editEventStart.value
                         event.end = editEventEnd.value
+                    }
+
+                    if (dialogEl.returnValue === 'delete') {
+                        const event = document.getElementById(
+                            dialogEl.getAttribute('data-event')
+                        )
+                        event.remove()
                     }
                 })
             </script>
