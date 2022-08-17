@@ -17,8 +17,76 @@
         <script nomodule src="/build/astro-web-components.js"></script>
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
+        <script
+            type="module"
+            src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"
+        ></script>
     </head>
+
     <body>
         <rux-global-status-bar></rux-global-status-bar>
+
+        <section>
+            <h3>Basic</h3>
+            <ftl-belt access-token="" file-id="J77M8jPxzOBoxQeevckKwb">
+                <ftl-holster node="1626:8219">
+                    <rux-global-status-bar
+                        app-domain="Global"
+                        app-name="status bar"
+                        app-state="App state"
+                        username="User name"
+                        include-icon="true"
+                    >
+                    </rux-global-status-bar>
+                </ftl-holster>
+                <ftl-holster node="1628:8594">
+                    <rux-global-status-bar
+                        app-domain="Testing Text"
+                        app-name="Testing Text"
+                        app-state="App state"
+                        username="User name"
+                        include-icon="true"
+                    >
+                    </rux-global-status-bar>
+                </ftl-holster>
+                <ftl-holster node="1628:8698">
+                    <rux-global-status-bar
+                        style="width: 329px"
+                        app-domain="Testing Text"
+                        app-name="Testing Text"
+                        username="Jane Doe test"
+                        include-icon="true"
+                    >
+                    </rux-global-status-bar>
+                </ftl-holster>
+                <ftl-holster node="1628:8722">
+                    <rux-global-status-bar
+                        app-domain="Testing Text"
+                        app-name="Testing Text"
+                        app-state="App state text"
+                        username="Jane Doe test"
+                        include-icon="true"
+                    >
+                    </rux-global-status-bar>
+                </ftl-holster>
+                <ftl-holster node="1628:8749">
+                    <rux-global-status-bar
+                        app-domain="Testing Text"
+                        app-name="Testing Text"
+                        app-state="App state text"
+                        include-icon="true"
+                    >
+                    </rux-global-status-bar>
+                </ftl-holster>
+                <ftl-holster node="1628:8789">
+                    <rux-global-status-bar
+                        app-domain="Testing Text"
+                        app-name="Testing Text"
+                        app-state="App state text"
+                    >
+                    </rux-global-status-bar>
+                </ftl-holster>
+            </ftl-belt>
+        </section>
     </body>
 </html>
