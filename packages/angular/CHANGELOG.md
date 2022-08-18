@@ -1,5 +1,13 @@
 # @astrouxds/angular
 
+## 6.12.1
+
+### Patch Changes
+
+- e00a744a: timeline - fixed an issue where time regions were not updating when their ranges were edited
+- Updated dependencies [e00a744a]
+  - @astrouxds/astro-web-components@6.12.1
+
 ## 6.12.0
 
 ### Minor Changes
