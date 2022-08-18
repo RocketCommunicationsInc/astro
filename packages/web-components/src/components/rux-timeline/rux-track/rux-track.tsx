@@ -61,6 +61,8 @@ export class RuxTrack {
 
     @Listen('ruxtimeregionchange')
     handleTimeRegionChange(e: CustomEvent) {
+        console.log('heard time region change', e.detail)
+
         this.initializeRows()
         e.stopPropagation()
     }
@@ -156,24 +158,28 @@ export class RuxTrack {
         children.forEach((el) => {
             const isHidden = el.style.visibility === 'hidden'
             const isValid = this._validateTimeRegion(el.start, el.end)
+            let start = el.start
+            let end = el.end
 
             if (isValid.success) {
                 if (el.start < this.start) {
-                    el.boundary = 'left'
-                    el.start = this.start
-                }
-
-                if (el.end > this.end) {
-                    el.end = this.end
-                    el.boundary = 'right'
+                    el.partial = 'left'
+                    // el.start = this.start
+                    start = this.start
+                } else if (el.end > this.end) {
+                    // el.end = this.end
+                    el.partial = 'right'
+                    end = this.end
+                } else {
+                    el.partial = 'inside'
                 }
 
                 el.timezone = this.timezone
                 el.style.gridRow = '1'
                 el.style.visibility = 'inherit'
                 const gridColumn = `${this._calculateGridColumnFromTime(
-                    el.start
-                )} / ${this._calculateGridColumnFromTime(el.end)}`
+                    start
+                )} / ${this._calculateGridColumnFromTime(end)}`
                 el.style.gridColumn = gridColumn
             } else {
                 if (!isHidden) {

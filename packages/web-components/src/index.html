@@ -23,8 +23,8 @@
         <div style="width: 1050px; margin: auto">
             <rux-timeline
                 timezone="America/New_York"
-                start="2022-01-01T00:00"
-                end="2022-01-02T00:00"
+                start="2022-01-10T00:00"
+                end="2022-01-11T00:00"
                 interval="hour"
                 zoom="2"
             >
@@ -72,12 +72,12 @@
                         name="start"
                         label="Event Start"
                         type="datetime-local"
-                        value="2022-01-01T00:00"
+                        value="2022-01-09T03:00"
                     ></rux-input>
                     <rux-input
                         name="end"
                         label="Event End"
-                        value="2022-01-01T03:00"
+                        value="2022-01-10T01:00"
                         type="datetime-local"
                     ></rux-input>
 
@@ -142,18 +142,28 @@
                         border-radius: 0.5rem;
                     }
                 </style>
-                <form id="timeline-range" onsubmit="changeRange(event)">
+                <form
+                    id="timeline-range"
+                    onsubmit="changeRange(event)"
+                    style="display: flex; flex-direction: column"
+                >
                     <rux-input
                         label="Timeline Start"
                         id="timeline-start"
+                        value="2022-01-10T00:00"
                         type="datetime-local"
                     ></rux-input>
                     <rux-input
                         label="Timeline End"
+                        value="2022-01-11T00:00"
                         id="timeline-end"
                         type="datetime-local"
                     ></rux-input>
-                    <rux-button type="submit">Submit</rux-button>
+                    <rux-button
+                        style="margin-left: auto; margin-top: 1rem"
+                        type="submit"
+                        >Submit</rux-button
+                    >
                 </form>
 
                 <script>

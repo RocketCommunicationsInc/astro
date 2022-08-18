@@ -43,7 +43,7 @@ export class RuxTimeRegion {
     /**
      * Description of the component
      */
-    @Prop() boundary: 'inside' | 'left' | 'right' = 'inside'
+    @Prop() partial: 'inside' | 'left' | 'right' = 'inside'
 
     /**
      * Visually displays the selected state
@@ -101,9 +101,9 @@ export class RuxTimeRegion {
                         'rux-time-region--caution': this.status === 'caution',
                         'rux-time-region--standby': this.status === 'standby',
                         'rux-time-region--selected': this.selected,
-                        'rux-time-region--left-bound': this.boundary === 'left',
+                        'rux-time-region--left-bound': this.partial === 'left',
                         'rux-time-region--right-bound':
-                            this.boundary === 'right',
+                            this.partial === 'right',
                     }}
                 >
                     <div class="rux-time-region__content">

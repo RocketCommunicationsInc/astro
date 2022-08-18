@@ -12499,10 +12499,6 @@ export namespace Components {
     }
     interface RuxTimeRegion {
         /**
-          * Description of the component
-         */
-        "boundary": 'inside' | 'left' | 'right';
-        /**
           * The end date. Must be an ISO string "2021-02-02T05:00:00Z"
          */
         "end": string;
@@ -12510,6 +12506,10 @@ export namespace Components {
           * Optionally hide the bottom right timestamp.
          */
         "hideTimestamp": boolean;
+        /**
+          * Description of the component
+         */
+        "partial": 'inside' | 'left' | 'right';
         /**
           * Visually displays the selected state
          */
@@ -32929,10 +32929,6 @@ declare namespace LocalJSX {
     }
     interface RuxTimeRegion {
         /**
-          * Description of the component
-         */
-        "boundary"?: 'inside' | 'left' | 'right';
-        /**
           * The end date. Must be an ISO string "2021-02-02T05:00:00Z"
          */
         "end"?: string;
@@ -32941,6 +32937,10 @@ declare namespace LocalJSX {
          */
         "hideTimestamp"?: boolean;
         "onRuxtimeregionchange"?: (event: CustomEvent<any>) => void;
+        /**
+          * Description of the component
+         */
+        "partial"?: 'inside' | 'left' | 'right';
         /**
           * Visually displays the selected state
          */
