@@ -1,5 +1,13 @@
 # @astrouxds/astrouxds
 
+## 6.12.1
+
+### Patch Changes
+
+#### Timeline
+
+- Fixed an issue where time regions were not updating when their ranges were edited
+
 ## 6.12.0
 
 ### Minor Changes
