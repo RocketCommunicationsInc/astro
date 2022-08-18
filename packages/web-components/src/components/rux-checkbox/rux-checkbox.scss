@@ -26,7 +26,7 @@
 .rux-checkbox {
     display: flex;
     position: relative;
-    line-height: 1.2;
+    //line-height: 1.2;
 
     &--indeterminate {
         input[type='checkbox'] + label::after {
@@ -54,7 +54,7 @@
             align-items: center;
             justify-content: flex-start;
             color: var(--color-text-primary);
-            letter-spacing: 0.5px;
+            line-height: var(--font-body-1-bold-line-height);
             cursor: pointer;
             margin-left: -7px;
 
@@ -65,11 +65,13 @@
                 align-self: start;
                 height: 1.125rem;
                 width: 1.125rem;
-
-                margin: 0 0.625rem 0 0;
+                margin: calc(var(--spacing-1) / 2) calc(var(--spacing-2) + 2px)
+                    calc(var(--spacing-1) / 2) calc(var(--spacing-1) / 2);
+                //margin: calc(var(--spacing-1) / 2);
                 background-color: var(--color-background-base-default);
-                border: 1px solid var(--color-border-interactive-muted);
-                border-radius: var(--radius-checkbox);
+                border: var(--border-width-xs) solid
+                    var(--color-border-interactive-muted);
+                border-radius: 2px;
             }
         }
         //If no label is passed in we don't want the margin
@@ -86,10 +88,10 @@
                     position: absolute;
                     display: flex;
                     content: '';
-                    top: 5px;
-                    height: 6px;
-                    width: 12px;
-                    left: 3px;
+                    top: 7px;
+                    height: 5px;
+                    width: 10px;
+                    left: 6px;
                     border-right: 2px solid
                         var(--color-background-interactive-default);
                     border-top: 2px solid
