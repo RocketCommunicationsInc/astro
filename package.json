@@ -4,7 +4,7 @@
   "devDependencies": {
     "@changesets/cli": "^2.19.0",
     "husky": "^7.0.2",
-    "lerna": "^4.0.0",
+    "lerna": "^5.4.3",
     "prettier": "~2.2.1",
     "pretty-quick": "~3.1.0"
   },
