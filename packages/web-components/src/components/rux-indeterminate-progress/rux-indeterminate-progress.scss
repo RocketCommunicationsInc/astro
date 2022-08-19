@@ -2,24 +2,26 @@
     /**
     * @prop --size: Used to determine the overall size of rux-indeterminate-progress, and used in multiple CSS calculations. 
     */
-    --size: 3.75rem;
+    --size: calc(
+        var(--spacing-14) + (var(--spacing-1) / 2)
+    ); //need to account for border
 
     // These are used to determine nub-size
-    --container-height: calc(var(--size) + 4px);
-    --second-div-height: calc(var(--size) * 0.9 - 6px);
+    --container-height: calc(var(--size) + var(--spacing-1));
+    --second-div-height: calc(var(--size) * 0.9 - var(--spacing-1));
 
     --nub-size: calc(
-        ((var(--container-height) - var(--second-div-height)) / 2) - 4px
+        ((var(--container-height) - var(--second-div-height)) / 2) - 0.187rem
     );
 
-    // .5's here to pervent hard stops in mask
+    // .5 here to prevent hard stops in mask in color
     --mask: radial-gradient(
         farthest-side,
-        transparent calc((((100% - 4px) * 0.9) - 5.5px)),
+        transparent calc((((100% - 1px) * 0.9) - 4px)),
         var(--color-background-interactive-default)
-            calc((((100% - 4px) * 0.9) - 4.5px))
+            calc((((100% - 1px) * 0.9) - 3.5px))
     );
-    --border-width: 2px;
+    --border-width: 1px;
     display: inline-block;
 }
 
@@ -62,8 +64,8 @@
 }
 
 .rux-indeterminate-inner-spinner-gap {
-    height: calc(90% - 6px);
-    width: calc(90% - 6px);
+    height: calc(90% - var(--spacing-1));
+    width: calc(90% - var(--spacing-1));
     background: transparent;
     border-radius: 100%;
     border: var(--border-width) solid var(--color-background-base-default);
