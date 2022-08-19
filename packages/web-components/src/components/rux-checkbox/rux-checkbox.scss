@@ -26,7 +26,6 @@
 .rux-checkbox {
     display: flex;
     position: relative;
-    //line-height: 1.2;
 
     &--indeterminate {
         input[type='checkbox'] + label::after {
@@ -63,14 +62,13 @@
                 display: flex;
                 content: '';
                 align-self: start;
-                height: 1.125rem;
-                width: 1.125rem;
+                height: calc(var(--spacing-1) + var(--spacing-4)); //20px
+                width: calc(var(--spacing-1) + var(--spacing-4));
                 margin: calc(var(--spacing-1) / 2) calc(var(--spacing-2) + 2px)
                     calc(var(--spacing-1) / 2) calc(var(--spacing-1) / 2);
-                //margin: calc(var(--spacing-1) / 2);
                 background-color: var(--color-background-base-default);
-                border: var(--border-width-xs) solid
-                    var(--color-border-interactive-muted);
+                box-shadow: var(--color-border-interactive-muted) 0 0 0 1px
+                    inset;
                 border-radius: 2px;
             }
         }
