@@ -42,8 +42,6 @@ rux-icon {
 
 .rux-advanced-status__status {
     position: absolute;
-    // top: -0.4rem;
-    // left: -0.4rem;
     margin: 0;
 }
 
@@ -54,7 +52,7 @@ rux-icon {
     position: absolute;
     left: calc(var(--spacing-14) - var(--spacing-025));
     top: calc(var(--spacing-1) * -1);
-    border: 1px solid var(--color-text-secondary);
+    box-shadow: 0 0 0 1px var(--color-text-secondary);
     border-radius: var(--radius-base);
     padding: calc(var(--spacing-2) - var(--spacing-025))
         calc(var(--spacing-025) * 3); //7px 3px
