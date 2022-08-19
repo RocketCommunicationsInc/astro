@@ -29,7 +29,7 @@ exports[`rux-global-status-bar renders with icon and app meta 1`] = `
               ASTRO
             </h1>
             <h1 class="app-name">
-              TEST APP NAME
+              Test App Name
             </h1>
             <span class="app-version">
               test v1.0
@@ -68,7 +68,7 @@ exports[`rux-global-status-bar renders with icon, app meta and slotted content 1
               ASTRO
             </h1>
             <h1 class="app-name">
-              TEST APP NAME
+              Test App Name
             </h1>
             <span class="app-version">
               test v1.0

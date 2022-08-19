@@ -73,7 +73,7 @@ slot[name='right-side'] > rux-monitoring-icon,
     align-items: baseline;
     min-height: var(--spacing-10); //40px
     padding-bottom: var(--spacing-1);
-    min-width: 170px;
+    min-width: 10.625rem;
 }
 
 .app-meta h1 {
@@ -122,11 +122,8 @@ slot[name='right-side'] > rux-monitoring-icon,
     font-size: var(--font-body-2-font-size);
     font-weight: var(--font-body-2-font-weight);
     letter-spacing: var(--font-body-2-letter-spacing);
-    // padding: var(--spacing-050) calc(var(--spacing-1) + var(--spacing-050)); //2px 6px
-    // padding: 3px 8px;
     padding: calc(var(--spacing-050) + var(--spacing-025)) var(--spacing-2); //3px 8px
     text-align: center;
-    // height: 22px;
     margin-right: var(--spacing-2); //6px
     white-space: nowrap;
 }
