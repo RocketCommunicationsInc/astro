@@ -64,4 +64,4 @@ jobs:
           install: false
           start: npm run start.stencil
           wait-on: "http://localhost:3333"
-          wait-on-timeout: "110"
+          wait-on-timeout: "130"
