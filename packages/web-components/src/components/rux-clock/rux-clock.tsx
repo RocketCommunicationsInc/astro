@@ -233,7 +233,7 @@ export class RuxClock {
                                 aria-labelledby="rux-clock__day-of-year-label"
                                 part="date"
                             >
-                                {/* {this.dayOfYear.toString().padStart(3, '0')} */}
+                                {this.dayOfYear.toString().padStart(3, '0')}
                             </div>
                             {!this.hideLabels && (
                                 <div
@@ -253,7 +253,7 @@ export class RuxClock {
                             aria-labelledby="rux-clock__time-label"
                             part="time"
                         >
-                            {/* {this.time} */}
+                            {this.time}
                         </div>
                         {!this.hideLabels && (
                             <div
