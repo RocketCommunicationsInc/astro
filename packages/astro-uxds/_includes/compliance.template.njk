@@ -4,6 +4,54 @@
 	{{ content | safe }}
   <p>Version {{ compliance.version }}</p>
 
+
+<section class="compliance">
+  <article>
+    <h2>Design Compliance</h2>
+    <p>Applications adopted by EGS are required to meet the Design Compliance set forth by Astro UXDS. Design Compliance improves operator efficiency, engagement and reduces training time. When applications across the Enterprise have a common and consistent user interface Guardians can focus learning the mission unique needs rather than learning new interface paradigms.</p>
+  </article>
+
+<article class="compliancy-headline">
+    <h2>Tiered Compliance</h2>
+    <p>
+     Astro can be adopted incrementally though the tiered compliance system outlined below. Projects can achieve progressively higher levels of compliance with each iterative release. It is important to note that adherence to the EGS Design Compliance is only one factor in accomplishing a successful user interface. Be sure to employ a user centered design practice like<a href"https://www.astrouxds.com/design-process/research/"> Traditional UX</a> or <a href="https://www.scaledagileframework.com/lean-ux/">Lean UX</a>. For assistance please contact <a href = "mailto:support@astrouxds.com?">support@astrouxds.com.</a>
+    </p>
+    <p>
+    The EGS Design Compliance rules are a living document and version with the principles of <a href="https://semver.org/"> Semantic Versioning</a>. Contribution back to Astro and the Tiered Compliance model to address issues, propose new rules or contribute additional research or guidance can be made through <a href="https://github.com/RocketCommunicationsInc/astro/discussions"> Astro’s GitHub page</a>.
+    </p>
+
+    <h2>Version 4.0.0</h2>
+    <p>
+    Tier Descriptions:
+    </p>
+
+    <ul class="compliancy-list">
+      <li>
+        &#x2022 &nbsp; <span class="tier tier--1">Tier 1</span>
+        <div>=
+        Basic status icons, status colors, really important things for operators to quickly become familiar with the application
+        </div>
+      </li>
+      <li>
+       &#x2022 &nbsp; <span class="tier tier--2">Tier 2</span>
+        <div>=
+        Tier 1 + Astro colors to make it look like an Astro application (visual)
+        </div>
+      </li>
+      <li>
+       &#x2022 &nbsp; <span class="tier tier--3">Tier 3</span>
+        <div>=
+        Tier 2 + interaction patterns (behavioral) 
+        </div>
+        </li>
+      </ul>
+      <p> status:&nbsp; <span id="updated"> UPDATED</span>|&nbsp; <span id="under-review"> UNDER REVIEW</span>|&nbsp; <span id="new">NEW</span>|&nbsp; <span id="deprecated">DEPRECATED </span>
+      </p>
+  </article>
+
+<hr>
+</section>
+
   <!-- Recursive rendering of compliance rules //-->
 {% macro complianceMacro(data, prefix) %}
 
@@ -33,7 +81,10 @@
 
       <span class="rules-name">
         {% if data.link %}
-          <a href="{{ data.link }}">{{ data.name }}</a>
+          {{ data.name }} 
+          <a href="{{ data.link }}" class="rules-name--link">
+            View {{ data.name }} Page 
+          </a>
         {% else %}
           {{ data.name }}
         {% endif %}
@@ -48,17 +99,27 @@
             {% if prefix != null %}{{ prefix }}.{% endif %}{{ data.numeral }}.{{ rule.numeral }}
           </span>
 
-          <span class="rule-text" data-status="{{ rule.status }}">
+          {% if rule.tier %}
+          <span class="tier tier--{{ rule.tier}}">
+            Tier {{ rule.tier }}
+          </span>
+          {% endif %}
+
+          <div class="rule-text" data-status="{{ rule.status }}">
               {{ rule.rule | markdownify | safe }}
-          </span>  
+
+              {% if rule.status !== 'current' %}
+                <span class="rule-status">{{rule.status.replace('-', ' ')}}</span>
+              {% endif %}
+          </div>  
         </li>
 
-        {% if rule.figure %}
+        {# {% if rule.figure %}
           <li class="rule">
           <span class="numeral"></span>
             <img class="rule-figure" src="{{ rule.figure }}" alt="{{ rule.rule | markdownify | striptags }}"/>
           </li>
-        {% endif %}
+        {% endif %} #}
 
       {% endfor %}
       </ol>
