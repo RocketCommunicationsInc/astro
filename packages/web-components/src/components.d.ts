@@ -271,10 +271,6 @@ export namespace Components {
          */
         "icon": string;
         /**
-          * The icon SVG's title attribute. Used for accessibility. If none is provided, the icon name will be used.
-         */
-        "label"?: string;
-        /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
         "size": | 'extra-small'
@@ -20585,10 +20581,6 @@ declare namespace LocalJSX {
           * The icon name
          */
         "icon": string;
-        /**
-          * The icon SVG's title attribute. Used for accessibility. If none is provided, the icon name will be used.
-         */
-        "label"?: string;
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
