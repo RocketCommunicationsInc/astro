@@ -2,7 +2,6 @@
     box-sizing: border-box;
     display: flex;
     justify-content: flex-start;
-    min-height: 5.625rem;
     height: 100%;
     width: auto;
     margin: 0;
@@ -16,8 +15,4 @@
 }
 :host([hidden]) {
     display: none;
-}
-
-:host([small]) {
-    min-height: 4.125rem; //66px
 }

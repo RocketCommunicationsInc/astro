@@ -5,12 +5,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.875rem 1rem; //30 16
     margin: 0;
     min-width: 5rem;
     text-decoration: none;
     color: var(--color-background-interactive-default);
-    border-bottom: 5px solid transparent;
+    border-bottom: var(--border-width-lg) solid transparent;
     &:hover {
         color: var(--color-background-interactive-hover);
     }
@@ -31,6 +30,8 @@
     font-size: var(--font-heading-2-font-size);
     letter-spacing: var(--font-heading-2-letter-spacing);
     font-weight: var(--font-heading-2-font-weight);
+    line-height: var(--font-heading-2-line-height);
+    padding: var(--spacing-6) var(--spacing-3); //24 12
 }
 
 .rux-tab--small {
@@ -38,6 +39,8 @@
     font-size: var(--font-heading-5-font-size);
     letter-spacing: var(--font-heading-5-letter-spacing);
     font-weight: var(--font-heading-5-font-weight);
+    line-height: var(--font-heading-5-line-height);
+    padding: var(--spacing-4) var(--spacing-3); //16 12
     min-width: 5rem;
 }
 
@@ -46,7 +49,8 @@
 }
 
 .rux-tab--small.rux-tab--selected {
-    border-bottom: 3px solid var(--color-border-interactive-default);
+    border-bottom: var(--border-width-lg) solid
+        var(--color-border-interactive-default);
 }
 
 .rux-tab--selected {
