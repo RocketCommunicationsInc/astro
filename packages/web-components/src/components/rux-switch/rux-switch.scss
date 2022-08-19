@@ -5,7 +5,7 @@
 .rux-switch {
     position: relative;
     display: flex;
-    height: var(--line-height-sm);
+    height: calc(var(--spacing-4) + var(--spacing-1)); //20
     white-space: nowrap;
 
     // Default Styling
