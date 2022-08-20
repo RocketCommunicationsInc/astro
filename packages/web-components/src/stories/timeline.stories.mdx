@@ -281,6 +281,191 @@ export const Default = (args) => {
     </Story>
 </Canvas>
 
+export const Playground = (args) => {
+    console.log('render')
+    function init() {
+        console.log('initing')
+                const form = document.getElementById('form')
+                const timelineEl = document.querySelector('rux-timeline')
+                const dialogEl = document.getElementById('favDialog')
+                const showDialog = (e) => {
+                    dialogEl.setAttribute('data-event', e.getAttribute('id'))
+                    editEventStart.value = e.start
+                    editEventEnd.value = e.end
+                    dialogEl.showModal()
+                }
+                dialogEl.addEventListener('close', () => {
+                    if (dialogEl.returnValue === 'default') {
+                        const event = document.getElementById(
+                            dialogEl.getAttribute('data-event')
+                        )
+                        event.start = editEventStart.value
+                        event.end = editEventEnd.value
+                    }
+                    if (dialogEl.returnValue === 'delete') {
+                        const event = document.getElementById(
+                            dialogEl.getAttribute('data-event')
+                        )
+                        event.remove()
+                    }
+                })
+                const onEventClick = (event) => {
+                    console.log('event', event)
+                    console.log('eventtarget', event.target)
+                    showDialog(event.target)
+                }
+                form.addEventListener('submit', (e) => {
+                    event.preventDefault()
+                    // trigger formdata event
+                    new FormData(form)
+                })
+                form.addEventListener('formdata', (e) => {
+                    // Get the form data from the event object
+                    let data = e.formData
+                    const region = data.get('region')
+                    const start = data.get('start')
+                    const end = data.get('end')
+                    const track = document.querySelector(
+                        `rux-track[id="${region}"]`
+                    )
+                    const event = document.createElement('rux-time-region')
+                    event.setAttribute('id', self.crypto.randomUUID())
+                    event.addEventListener('click', onEventClick)
+                    event.innerHTML = 'whatup'
+                    event.setAttribute('start', start)
+                    event.setAttribute('end', end)
+                    track.appendChild(event)
+                    track.setAttribute('name', name)
+                })
+        console.log('el', form);
+    }
+    document.addEventListener('DOMContentLoaded', init)
+    return html`
+    <style>
+        dialog::backdrop {
+            background: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+            <div style="width: 1050px; margin: auto">
+            <rux-timeline timezone="${args.timezone}" 
+            start="${args.start}" end="${args.end}" 
+            interval="${args.interval}" 
+            zoom="${args.zoom}">
+                <rux-track id="region1">
+                    <div slot="label">Region 1</div>
+                </rux-track>
+                <rux-track id="region2">
+                    <div slot="label">Region 2</div>
+                </rux-track>
+                <rux-track id="region3">
+                    <div slot="label">Region 3</div>
+                </rux-track>
+                <rux-track slot="ruler">
+                    <rux-ruler></rux-ruler>
+                </rux-track>
+            </rux-timeline>
+</div>
+<section
+                style="
+                    width: 33.333%;
+                    background: var(--color-background-surface-default);
+                    padding: 1rem;
+                    border: 2px solid var(--color-border-interactive-muted);
+                "
+            >
+                <h2 style="margin-top: 0">Add New Event</h2>
+                <form id="form" style="display: flex; flex-direction: column">
+                    <rux-select name="region" label="Region" value="region1">
+                        <rux-option
+                            label="Region 1"
+                            value="region1"
+                        ></rux-option>
+                        <rux-option
+                            label="Region 2"
+                            value="region2"
+                        ></rux-option>
+                        <rux-option
+                            label="Region 3"
+                            value="region3"
+                        ></rux-option>
+                    </rux-select>
+                    <rux-input
+                        name="start"
+                        label="Event Start"
+                        type="datetime-local"
+                        value="2022-01-09T03:00"
+                    ></rux-input>
+                    <rux-input
+                        name="end"
+                        label="Event End"
+                        value="2022-01-10T01:00"
+                        type="datetime-local"
+                    ></rux-input>
+                    <rux-button
+                        type="submit"
+                        style="margin-left: auto; margin-top: 1rem"
+                        >Add Event</rux-button
+                    >
+                </form>
+            </section>
+            <dialog
+                id="favDialog"
+                style="
+                    padding: 0;
+                    background: var(--color-background-surface-default);
+                "
+            >
+                <header
+                    style="
+                        font-size: var(--font-heading-2-font-size);
+                        font-weight: bold;
+                        color: var(--color-text-primary);
+                        padding: 1rem;
+                        background: var(--color-background-surface-header);
+                    "
+                >
+                    Edit Event
+                </header>
+                <div id="details"></div>
+                <form method="dialog" style="padding: 1rem">
+                    <rux-input
+                        name="edit-event-start"
+                        type="datetime-local"
+                        id="editEventStart"
+                        label="Event Start"
+                    ></rux-input>
+                    <rux-input
+                        name="edit-event-end"
+                        type="datetime-local"
+                        id="editEventEnd"
+                        label="Event End"
+                    ></rux-input>
+                    <div>
+                        <button value="delete">Remove</button>
+                        <button value="cancel">Cancel</button>
+                        <button id="confirmBtn" value="default">Confirm</button>
+                    </div>
+                </form>
+            </dialog>
+    `
+}
+
+<Canvas>
+    <Story
+        name="Playground"
+        args={{
+            timezone:"America/New_York",
+            start:"2022-01-10T00:00",
+            end:"2022-01-11T00:00",
+            interval:"hour",
+            zoom:2
+        }}
+    >
+        {Playground.bind()}
+    </Story>
+</Canvas>
+
+
 ## API
 
 <ArgsTable of="rux-timeline" />
