@@ -80,7 +80,7 @@ export class RuxTimeRegion {
         try {
             return (
                 formatInTimeZone(new Date(this.start), this.timezone, 'HH:mm') +
-                '-' +
+                ' - ' +
                 formatInTimeZone(new Date(this.end), this.timezone, 'HH:mm')
             )
         } catch (e) {
@@ -115,13 +115,21 @@ export class RuxTimeRegion {
                                 status={this.status}
                             ></rux-status>
                         ) : null}
-                        <slot></slot>
-                    </div>
-                    {!this.hideTimestamp ? (
-                        <div class="rux-time-region__datetime" part="timestamp">
-                            {this.formattedTime}
+
+                        <div class="rux-time-region__details">
+                            <div class="rux-time-region__title">
+                                <slot></slot>
+                            </div>
+                            {!this.hideTimestamp ? (
+                                <div
+                                    class="rux-time-region__datetime"
+                                    part="timestamp"
+                                >
+                                    {this.formattedTime}
+                                </div>
+                            ) : null}
                         </div>
-                    ) : null}
+                    </div>
                 </div>
             </Host>
         )
