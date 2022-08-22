@@ -83,7 +83,7 @@ slot[name='right-side'] > rux-monitoring-icon,
     font-size: var(--font-heading-1-font-size);
     font-weight: var(--font-heading-1-font-weight);
     letter-spacing: var(--font-heading-1-letter-spacing);
-    line-height: var(--line-height-2xl);
+    line-height: var(--font-heading-1-line-height);
 }
 
 .app-meta h1.app-domain {
@@ -92,7 +92,7 @@ slot[name='right-side'] > rux-monitoring-icon,
     font-size: var(--font-heading-1-bold-font-size);
     font-weight: var(--font-heading-1-bold-font-weight);
     letter-spacing: var(--font-heading-1-bold-letter-spacing);
-    line-height: var(--line-height-2xl);
+    line-height: var(--font-heading-1-line-height);
 }
 
 .app-name {
