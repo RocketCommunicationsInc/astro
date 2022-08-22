@@ -20,33 +20,27 @@
     The EGS Design Compliance rules are a living document and version with the principles of <a href="https://semver.org/"> Semantic Versioning</a>. Contribution back to Astro and the Tiered Compliance model to address issues, propose new rules or contribute additional research or guidance can be made through <a href="https://github.com/RocketCommunicationsInc/astro/discussions"> Astro’s GitHub page</a>.
     </p>
 
-    <h2>Version 4.0.0</h2>
-    <p>
-    Tier Descriptions:
-    </p>
 
-    <ul class="compliancy-list">
+    <ol class="compliancy-list">
       <li>
-        &#x2022 &nbsp; <span class="tier tier--1">Tier 1</span>
+      <span class="tier tier--1">Tier 1</span>
         <div>=
         Basic status icons, status colors, really important things for operators to quickly become familiar with the application
         </div>
       </li>
       <li>
-       &#x2022 &nbsp; <span class="tier tier--2">Tier 2</span>
+      <span class="tier tier--2">Tier 2</span>
         <div>=
         Tier 1 + Astro colors to make it look like an Astro application (visual)
         </div>
       </li>
       <li>
-       &#x2022 &nbsp; <span class="tier tier--3">Tier 3</span>
+      <span class="tier tier--3">Tier 3</span>
         <div>=
         Tier 2 + interaction patterns (behavioral) 
         </div>
         </li>
-      </ul>
-      <p> status:&nbsp; <span id="updated"> UPDATED</span>|&nbsp; <span id="under-review"> UNDER REVIEW</span>|&nbsp; <span id="new">NEW</span>|&nbsp; <span id="deprecated">DEPRECATED </span>
-      </p>
+      </ol>
   </article>
 
 <hr>
@@ -107,7 +101,7 @@
 
           <div class="rule-text" data-status="{{ rule.status }}">
               {{ rule.rule | markdownify | safe }}
-
+              <br>
               {% if rule.status !== 'current' %}
                 <span class="rule-status">{{rule.status.replace('-', ' ')}}</span>
               {% endif %}

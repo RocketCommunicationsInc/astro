@@ -151,22 +151,18 @@ aside footer {
 }
 
 .compliance .rule-text[data-status="under-review"] .rule-status {
-  background-color: var(--ds-background-danger, #ffebe6);
-  color: var(--ds-text-danger, #bf2600);
+  color: #c8102e;
 }
 
 .compliance .rule-text[data-status="updated"] .rule-status {
-  background-color: var(--ds-background-discovery, #eae6ff);
-  color: var(--ds-text-discovery, #403294);
+  color: #786dd3;
 }
 
 .compliance .rule-text[data-status="deprecated"] .rule-status {
-  background-color: var(--ds-background-neutral, #dfe1e6);
-  color: var(--ds-text, #42526e);
+  color: #51555b;
 }
 
 .compliance .rule-text[data-status="new"] .rule-status {
-  background-color: var(--ds-background-success, #e3fcef);
   color: var(--ds-text-success, #006644);
 }
 
@@ -196,30 +192,27 @@ aside footer {
   white-space: nowrap;
   height: 100%;
   border-radius: 3px;
-  padding: 0.0125rem 0.3rem;
+  padding: 0.125rem 0.75rem;
   font-style: normal;
   font-weight: 700;
-  font-size: 0.75em; //12px
+  font-size: 0.75em;
   text-align: center;
   letter-spacing: 0.005em;
-  line-height: 20px;
-  color: #ffffff;
+  line-height: 16px;
+  color: #fff;
   margin-right: 1rem;
 }
 
 .compliance .tier.tier--1 {
-  background-color: var(--ds-background-success, #e3fcef);
-  color: var(--ds-text-success, #006644);
+  background: #009fa3;
 }
 
 .compliance .tier.tier--2 {
-  background-color: var(--ds-background-warning, #fff0b3);
-  color: var(--ds-text-warning, #172b4d);
+  background: #3a87cf;
 }
 
 .compliance .tier.tier--3 {
-  background-color: var(--ds-background-information, #deebff);
-  color: var(--ds-text-information, #0747a6);
+  background: #81009a;
 }
 
 .compliance .rule-figure {
@@ -250,34 +243,4 @@ aside footer {
 .compliancy-list li {
   display: flex;
   align-items: flex-start;
-}
-#updated,
-#under-review,
-#new,
-#deprecated {
-  white-space: nowrap;
-  height: 100%;
-  border-radius: 3px;
-  padding: 0.125rem 0.3rem;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 0.75em; //12px
-  text-align: center;
-  letter-spacing: 0.005em;
-  line-height: 16px;
-  background-color: var(--ds-background-discovery, #eae6ff);
-  color: var(--ds-text-discovery, #403294);
-  margin-right: 1rem;
-}
-#under-review {
-  background-color: var(--ds-background-danger, #ffebe6);
-  color: var(--ds-text-danger, #bf2600);
-}
-#new {
-  background-color: var(--ds-background-success, #e3fcef);
-  color: var(--ds-text-success, #006644);
-}
-#deprecated {
-  background-color: var(--ds-background-neutral, #dfe1e6);
-  color: var(--ds-text, #42526e);
 }
