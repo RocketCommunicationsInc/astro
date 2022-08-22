@@ -21,6 +21,14 @@
     </head>
 
     <body>
+        <rux-time-region
+            start="2020-01-01T00:00Z"
+            end="2020-01-02T00:00Z"
+            status="critical"
+            partial="ongoing"
+        >
+            Event title
+        </rux-time-region>
         <ftl-belt access-token="TOKEN" file-id="aSSearnbZ5iMLQRFukeWqK">
             <h2>Unselected</h2>
             <ftl-holster
@@ -114,7 +122,7 @@
                     start="2020-01-01T00:00Z"
                     end="2020-01-02T00:00Z"
                     status="critical"
-                    partial="right"
+                    partial="end"
                 >
                     Event title
                 </rux-time-region>
@@ -127,7 +135,7 @@
                     start="2020-01-01T00:00Z"
                     end="2020-01-02T00:00Z"
                     status="caution"
-                    partial="right"
+                    partial="end"
                 >
                     Event title
                 </rux-time-region>
@@ -140,7 +148,7 @@
                     start="2020-01-01T00:00Z"
                     end="2020-01-02T00:00Z"
                     status="normal"
-                    partial="right"
+                    partial="end"
                 >
                     Event title
                 </rux-time-region>
@@ -182,6 +190,33 @@
                     end="2020-01-02T00:00Z"
                     status="normal"
                     partial="ongoing"
+                >
+                    Event title
+                </rux-time-region>
+            </ftl-holster>
+            <h2>Start</h2>
+            <ftl-holster
+                name="Partial Start, Selected, Critical"
+                node="47007:116106"
+            >
+                <rux-time-region
+                    start="2020-01-01T00:00Z"
+                    end="2020-01-02T00:00Z"
+                    status="critical"
+                    partial="start"
+                >
+                    Event title
+                </rux-time-region>
+            </ftl-holster>
+            <ftl-holster
+                name="Partial Start, Selected, Serious"
+                node="47007:116812"
+            >
+                <rux-time-region
+                    start="2020-01-01T00:00Z"
+                    end="2020-01-02T00:00Z"
+                    status="serious"
+                    partial="start"
                 >
                     Event title
                 </rux-time-region>

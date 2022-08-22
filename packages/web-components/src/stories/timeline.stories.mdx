@@ -206,55 +206,48 @@ export const Default = (args) => {
         position = new Date(args.playhead).toISOString()
     }
     return html`
-        <div style="width: 1050px; margin: auto">
+        <div style="width: 950px; margin: auto">
             <rux-timeline timezone="${args.timezone}" start="${start}" end="${end}" playhead="${position}" interval="${args.interval}" zoom="${args.zoom}">
                 <rux-track>
                     <div slot="label">Region 1</div>
-                    <rux-time-region start="2021-02-01T01:00:00Z" end="2021-02-01T02:00:00Z">
-                        <rux-status status="normal"></rux-status>
+                    <rux-time-region start="2021-02-01T01:00:00Z" end="2021-02-01T02:00:00Z" status="normal">
                         Event 1.2
                     </rux-time-region>
                 </rux-track>
                 <rux-track>
                     <div slot="label">Region 2</div>
-                    <rux-time-region start="2021-02-01T10:00:00Z" end="2021-02-01T12:00:00Z">
-                        <rux-status status="normal"></rux-status>
+                    <rux-time-region start="2021-02-01T10:00:00Z" end="2021-02-01T12:00:00Z" status="normal">
                         Event 2.1
                     </rux-time-region>
                 </rux-track>
                 <rux-track>
                     <div slot="label">Region 3</div>
-                    <rux-time-region start="2021-02-01T00:00:00Z" end="2021-02-02T02:00:00Z">
-                        <rux-status status="normal"></rux-status>
+                    <rux-time-region start="2021-02-01T00:00:00Z" end="2021-02-02T02:00:00Z" status="normal">
                         Event 3.1
                     </rux-time-region>
                 </rux-track>
                 <rux-track>
                     <div slot="label">Region 4</div>
-                    <rux-time-region start="2021-02-01T05:00:00Z" end="2021-02-02T05:33:00Z">
-                        <rux-status status="normal"></rux-status>
+                    <rux-time-region start="2021-02-01T03:00:00Z" end="2021-02-02T04:33:00Z" status="critical">
                         Event 4.1
                     </rux-time-region>
                 </rux-track>
                 <rux-track>
-                    <div slot="label">Region 4</div>
-                    <rux-time-region start="2021-02-01T05:00:00Z" end="2021-02-02T05:33:00Z">
-                        <rux-status status="normal"></rux-status>
-                        Event 4.1
+                    <div slot="label">Region 5</div>
+                    <rux-time-region start="2021-02-01T05:00:00Z" end="2021-02-02T05:33:00Z" status="normal">
+                        Event 5.1
                     </rux-time-region>
                 </rux-track>
                 <rux-track>
-                    <div slot="label">Region 4</div>
-                    <rux-time-region start="2021-02-01T05:00:00Z" end="2021-02-02T05:33:00Z">
-                        <rux-status status="normal"></rux-status>
-                        Event 4.1
+                    <div slot="label">Region 6</div>
+                    <rux-time-region start="2021-02-01T05:00:00Z" end="2021-02-02T05:33:00Z" status="normal">
+                        Event 6.1
                     </rux-time-region>
                 </rux-track>
                 <rux-track>
-                    <div slot="label">Region 4</div>
-                    <rux-time-region start="2021-02-01T05:00:00Z" end="2021-02-02T05:33:00Z">
-                        <rux-status status="normal"></rux-status>
-                        Event 4.1
+                    <div slot="label">Region 7</div>
+                    <rux-time-region start="2021-02-01T05:00:00Z" end="2021-02-02T05:33:00Z" status="normal">
+                        Event 7.1
                     </rux-time-region>
                 </rux-track>
                 <rux-track slot="ruler">
@@ -278,190 +271,6 @@ export const Default = (args) => {
         }}
     >
         {Default.bind()}
-    </Story>
-</Canvas>
-
-export const Playground = (args) => {
-    console.log('render')
-    function init() {
-        console.log('initing')
-                const form = document.getElementById('form')
-                const timelineEl = document.querySelector('rux-timeline')
-                const dialogEl = document.getElementById('favDialog')
-                const showDialog = (e) => {
-                    dialogEl.setAttribute('data-event', e.getAttribute('id'))
-                    editEventStart.value = e.start
-                    editEventEnd.value = e.end
-                    dialogEl.showModal()
-                }
-                dialogEl.addEventListener('close', () => {
-                    if (dialogEl.returnValue === 'default') {
-                        const event = document.getElementById(
-                            dialogEl.getAttribute('data-event')
-                        )
-                        event.start = editEventStart.value
-                        event.end = editEventEnd.value
-                    }
-                    if (dialogEl.returnValue === 'delete') {
-                        const event = document.getElementById(
-                            dialogEl.getAttribute('data-event')
-                        )
-                        event.remove()
-                    }
-                })
-                const onEventClick = (event) => {
-                    console.log('event', event)
-                    console.log('eventtarget', event.target)
-                    showDialog(event.target)
-                }
-                form.addEventListener('submit', (e) => {
-                    event.preventDefault()
-                    // trigger formdata event
-                    new FormData(form)
-                })
-                form.addEventListener('formdata', (e) => {
-                    // Get the form data from the event object
-                    let data = e.formData
-                    const region = data.get('region')
-                    const start = data.get('start')
-                    const end = data.get('end')
-                    const track = document.querySelector(
-                        `rux-track[id="${region}"]`
-                    )
-                    const event = document.createElement('rux-time-region')
-                    event.setAttribute('id', self.crypto.randomUUID())
-                    event.addEventListener('click', onEventClick)
-                    event.innerHTML = 'whatup'
-                    event.setAttribute('start', start)
-                    event.setAttribute('end', end)
-                    track.appendChild(event)
-                    track.setAttribute('name', name)
-                })
-        console.log('el', form);
-    }
-    document.addEventListener('DOMContentLoaded', init)
-    return html`
-    <style>
-        dialog::backdrop {
-            background: rgba(0, 0, 0, 0.5);
-        }
-    </style>
-            <div style="width: 1050px; margin: auto">
-            <rux-timeline timezone="${args.timezone}" 
-            start="${args.start}" end="${args.end}" 
-            interval="${args.interval}" 
-            zoom="${args.zoom}">
-                <rux-track id="region1">
-                    <div slot="label">Region 1</div>
-                </rux-track>
-                <rux-track id="region2">
-                    <div slot="label">Region 2</div>
-                </rux-track>
-                <rux-track id="region3">
-                    <div slot="label">Region 3</div>
-                </rux-track>
-                <rux-track slot="ruler">
-                    <rux-ruler></rux-ruler>
-                </rux-track>
-            </rux-timeline>
-</div>
-<section
-                style="
-                    width: 33.333%;
-                    background: var(--color-background-surface-default);
-                    padding: 1rem;
-                    border: 2px solid var(--color-border-interactive-muted);
-                "
-            >
-                <h2 style="margin-top: 0">Add New Event</h2>
-                <form id="form" style="display: flex; flex-direction: column">
-                    <rux-select name="region" label="Region" value="region1">
-                        <rux-option
-                            label="Region 1"
-                            value="region1"
-                        ></rux-option>
-                        <rux-option
-                            label="Region 2"
-                            value="region2"
-                        ></rux-option>
-                        <rux-option
-                            label="Region 3"
-                            value="region3"
-                        ></rux-option>
-                    </rux-select>
-                    <rux-input
-                        name="start"
-                        label="Event Start"
-                        type="datetime-local"
-                        value="2022-01-09T03:00"
-                    ></rux-input>
-                    <rux-input
-                        name="end"
-                        label="Event End"
-                        value="2022-01-10T01:00"
-                        type="datetime-local"
-                    ></rux-input>
-                    <rux-button
-                        type="submit"
-                        style="margin-left: auto; margin-top: 1rem"
-                        >Add Event</rux-button
-                    >
-                </form>
-            </section>
-            <dialog
-                id="favDialog"
-                style="
-                    padding: 0;
-                    background: var(--color-background-surface-default);
-                "
-            >
-                <header
-                    style="
-                        font-size: var(--font-heading-2-font-size);
-                        font-weight: bold;
-                        color: var(--color-text-primary);
-                        padding: 1rem;
-                        background: var(--color-background-surface-header);
-                    "
-                >
-                    Edit Event
-                </header>
-                <div id="details"></div>
-                <form method="dialog" style="padding: 1rem">
-                    <rux-input
-                        name="edit-event-start"
-                        type="datetime-local"
-                        id="editEventStart"
-                        label="Event Start"
-                    ></rux-input>
-                    <rux-input
-                        name="edit-event-end"
-                        type="datetime-local"
-                        id="editEventEnd"
-                        label="Event End"
-                    ></rux-input>
-                    <div>
-                        <button value="delete">Remove</button>
-                        <button value="cancel">Cancel</button>
-                        <button id="confirmBtn" value="default">Confirm</button>
-                    </div>
-                </form>
-            </dialog>
-    `
-}
-
-<Canvas>
-    <Story
-        name="Playground"
-        args={{
-            timezone:"America/New_York",
-            start:"2022-01-10T00:00",
-            end:"2022-01-11T00:00",
-            interval:"hour",
-            zoom:2
-        }}
-    >
-        {Playground.bind()}
     </Story>
 </Canvas>
 
@@ -570,7 +379,7 @@ To set the label of a Region, you can use the `label` slot:
 ## Time Region
 
 Time Regions represent single events in time. A `start` time and an `end` time are required. If a `start` and `end` time aren't provided, or an invalid range is provided,
-the component will throw an error and not render. A valid `start` and `end` time must fall within the date range specified on the root **Timeline** component
+the component will throw an error and not render. 
 
 ```
 <rux-time-region
@@ -580,7 +389,9 @@ the component will throw an error and not render. A valid `start` and `end` time
     Region1
 </rux-time-region>
 ```
-> NOTE: Editing a Time Region's start or end dates after it has been rendered will not trigger another rerender. If you need to update data, instead remove the `time-region` node entirely and create a new one.
+### Partial Time Regions
+
+If a Time Region's start and end date falls outside of the range of the Timeline, a Time Region will be display visually as a Partial Time Region.
 
 <ArgsTable of="rux-time-region" />
 

@@ -163,6 +163,28 @@ export const Selected = (args) => {
     </Story>
 </Canvas>
 
+## Partial Events
+
+When a Time Region start and end dates fall outside the range of the Timeline, they have a "partial" appearance.
+For example, if your timeline range is set to 2020-02-01 - 2020-02-10 and you have a Time Region that starts on 2020-01-10 and ends on 2020-02-05, 
+the "partial" appearance indicates that the Time Region's start date falls outside the current Timeline range.
+
+export const Partial = (args) => {
+    return html`
+	<rux-time-region partial="ongoing" start="2020-01-01T00:00" end="2020-01-02T00:00">
+		Cras vestibulum orci sed nisl
+	</rux-time-region>
+    `
+}
+
+<Canvas>
+    <Story
+        name="Partial"
+    >
+        {Partial.bind()}
+    </Story>
+</Canvas>
+
 export const AllVariants = (args) => {
     return html`
     <style>
@@ -219,6 +241,19 @@ export const AllVariants = (args) => {
 	</rux-time-region>
 	<br>
 	<rux-time-region selected status="standby" start="2021-01-01T00:00" end="2021-01-02T00:00">
+		Cras vestibulum orci sed nisl
+	</rux-time-region>
+    <br>
+    <h2>Partial Events</h2>
+    <rux-time-region partial="start" status="critical" start="2021-01-01T00:00" end="2021-01-02T00:00">
+		Cras vestibulum orci sed nisl
+	</rux-time-region>
+    <br>
+    <rux-time-region partial="end" status="critical" start="2021-01-01T00:00" end="2021-01-02T00:00">
+		Cras vestibulum orci sed nisl
+	</rux-time-region>
+    <br>
+    <rux-time-region partial="ongoing" status="critical" start="2021-01-01T00:00" end="2021-01-02T00:00">
 		Cras vestibulum orci sed nisl
 	</rux-time-region>
     `

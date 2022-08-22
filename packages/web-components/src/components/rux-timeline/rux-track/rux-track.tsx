@@ -163,15 +163,15 @@ export class RuxTrack {
 
             if (isValid.success) {
                 if (el.start < this.start) {
-                    el.partial = 'left'
+                    el.partial = 'start'
                     // el.start = this.start
                     start = this.start
                 } else if (el.end > this.end) {
                     // el.end = this.end
-                    el.partial = 'right'
+                    el.partial = 'end'
                     end = this.end
                 } else {
-                    el.partial = 'inside'
+                    el.partial = 'none'
                 }
 
                 el.timezone = this.timezone
