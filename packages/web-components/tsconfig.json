@@ -16,6 +16,6 @@
         "typeRoots": ["node_modules/@types"],
         "resolveJsonModule": true
     },
-    "include": ["src", "src/**/*.ts"],
+    "include": ["src", "src/**/*.ts", "tests"],
     "exclude": ["node_modules", "src/stories"]
 }
