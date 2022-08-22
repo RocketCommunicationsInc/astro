@@ -9,7 +9,6 @@
     --notification-banner-border-width-large: var(--spacing-1); //4
     --notification-banner-padding: 0 var(--spacing-2) 0 var(--spacing-4); //0 8px 0 16px
     --notification-banner-border-width-small: var(--spacing-050); //2
-    --notification-banner-inner-border-width: var(--spacing-025); //1
 
     /**
     * @prop --height: the Notification's height
@@ -45,7 +44,6 @@
     align-content: center;
     width: 100%;
     border-radius: var(--notification-banner-radius-inner);
-    border: var(--notification-banner-inner-border-width) solid;
     background: var(--color-background-base-default);
     height: 100%;
     padding: var(--notification-banner-padding);
@@ -55,6 +53,8 @@
     display: flex;
     align-items: center;
     margin-right: var(--spacing-4); //16px
+    height: var(--spacing-8);
+    width: var(--spacing-8);
 }
 
 .rux-notification-banner__status.rux-notification-banner--hasPrefixLabel {
@@ -63,6 +63,9 @@
 .rux-notification-banner__status {
     margin-right: var(--spacing-4); //16px
 }
+.rux-notification-banner__status rux-status {
+    margin: var(--spacing-0);
+} //remove 2px margin around rux-status
 
 .rux-notification-banner__actions {
     margin-left: auto;
@@ -74,10 +77,7 @@
 .rux-notification-banner--large {
     border: var(--notification-banner-border-width-large) solid
         var(--notification-banner-color-border);
-    border-left-width: calc(
-        var(--notification-banner-border-width-left) -
-            var(--notification-banner-inner-border-width)
-    );
+    border-left-width: var(--notification-banner-border-width-left);
     .rux-notification-banner__inner {
         border-color: var(--notification-banner-color-border);
     }
