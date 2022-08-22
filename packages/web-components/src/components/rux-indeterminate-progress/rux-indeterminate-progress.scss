@@ -3,7 +3,7 @@
     * @prop --size: Used to determine the overall size of rux-indeterminate-progress, and used in multiple CSS calculations. 
     */
     --size: calc(
-        var(--spacing-14) + (var(--spacing-1) / 2)
+        var(--spacing-14) + var(--spacing-050)
     ); //need to account for border
 
     // These are used to determine nub-size
