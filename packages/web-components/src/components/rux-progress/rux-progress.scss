@@ -70,6 +70,7 @@
     border-radius: var(--progress-radius);
     height: 1.25rem;
     width: 100%;
+    box-sizing: border-box;
     &::-webkit-progress-bar {
         background-color: transparent;
     }
