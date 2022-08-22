@@ -22,12 +22,12 @@
                 position: relative;
                 overflow: hidden;
                 width: 800px;
-                height: 70px;
+                height: 90px;
                 margin-bottom: 1rem;
             }
 
             .wrapper--small {
-                height: 44px;
+                height: 60px;
             }
         </style>
     </head>
@@ -167,7 +167,7 @@
                     position: relative;
                     overflow: hidden;
                     width: 800px;
-                    height: 70px;
+                    height: 90px;
                 "
             >
                 <rux-notification open status="critical">
@@ -183,12 +183,28 @@
                     position: relative;
                     overflow: hidden;
                     width: 800px;
-                    height: 70px;
+                    height: 80px;
                 "
             >
                 <rux-notification open status="off">
                     Notification banner
                     <rux-button slot="actions">Acknowledge</rux-button>
+                </rux-notification>
+            </div>
+        </section>
+
+        <section>
+            <h2>Figma Testing</h2>
+            <div class="wrapper">
+                <rux-notification open status="normal">
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper wrapper--small">
+                <rux-notification open small status="normal">
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
                 </rux-notification>
             </div>
         </section>

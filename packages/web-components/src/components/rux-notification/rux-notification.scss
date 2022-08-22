@@ -3,18 +3,18 @@
     --notification-banner-color-background: var(
         --color-background-base-default
     );
-    --notification-banner-border-width-left: 12px;
+    --notification-banner-border-width-left: var(--spacing-3);
     --notification-banner-radius-outer: var(--radius-base);
-    --notification-banner-radius-inner: 3px;
-    --notification-banner-border-width-large: 4px;
-    --notification-banner-padding: 0 0.5rem 0 1rem; //0 8px 0 16px
-    --notification-banner-border-width-small: 2px;
-    --notification-banner-inner-border-width: 1px;
+    --notification-banner-radius-inner: calc(var(--radius-base) / 3 * 2);
+    --notification-banner-border-width-large: var(--spacing-1); //4
+    --notification-banner-padding: 0 var(--spacing-2) 0 var(--spacing-4); //0 8px 0 16px
+    --notification-banner-border-width-small: var(--spacing-050); //2
+    --notification-banner-inner-border-width: var(--spacing-025); //1
 
     /**
     * @prop --height: the Notification's height
     */
-    --height: 4.375rem; // 70px;
+    --height: var(--spacing-20); // 80px;
 
     display: contents;
 }
@@ -54,14 +54,14 @@
 .rux-notification-banner__prefix:not(.hidden) {
     display: flex;
     align-items: center;
-    margin-right: 1rem; //16px
+    margin-right: var(--spacing-4); //16px
 }
 
 .rux-notification-banner__status.rux-notification-banner--hasPrefixLabel {
-    margin-left: 1rem; //16px
+    margin-left: var(--spacing-4); //16px
 }
 .rux-notification-banner__status {
-    margin-right: 1rem; //16px
+    margin-right: var(--spacing-4); //16px
 }
 
 .rux-notification-banner__actions {
@@ -94,7 +94,7 @@
 /* ----- Small ----- */
 
 .rux-notification-banner--small {
-    --height: 2.75rem; // 44px;
+    --height: calc(var(--spacing-12) + var(--spacing-1)); // 52px;
     border: var(--notification-banner-border-width-small) solid
         var(--notification-banner-color-border);
     border-left-width: var(--notification-banner-border-width-left);
@@ -113,17 +113,6 @@
 
 .rux-notification-banner--open {
     top: 0;
-}
-
-.rux-notification__message {
-    color: var(--notification-text-color);
-    font-family: var(--font-heading-5-font-family);
-    font-weight: var(--font-heading-5-font-weight);
-    font-size: var(--font-heading-5-font-size);
-    letter-spacing: var(--font-heading-5-letter-spacing);
-    line-height: var(--font-heading-5-line-height);
-    font-weight: var(--font-heading-5-font-weight);
-    padding: 1.063rem 0; //17 0
 }
 
 /* ----- Status Variants ----- */
