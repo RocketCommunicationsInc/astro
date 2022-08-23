@@ -118,21 +118,13 @@ export class RuxTimeRegion {
                                 status={this.status}
                             ></rux-status>
                         ) : null}
-
-                        <div class="rux-time-region__details">
-                            <div class="rux-time-region__title">
-                                <slot></slot>
-                            </div>
-                            {!this.hideTimestamp ? (
-                                <div
-                                    class="rux-time-region__datetime"
-                                    part="timestamp"
-                                >
-                                    {this.formattedTime}
-                                </div>
-                            ) : null}
-                        </div>
+                        <slot></slot>
                     </div>
+                    {!this.hideTimestamp ? (
+                        <div class="rux-time-region__datetime" part="timestamp">
+                            {this.formattedTime}
+                        </div>
+                    ) : null}
                 </div>
             </Host>
         )

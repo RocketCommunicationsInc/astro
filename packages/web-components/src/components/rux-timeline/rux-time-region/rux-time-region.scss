@@ -4,10 +4,9 @@
 
 .rux-time-region {
     background: var(--color-background-base-default);
-    padding: 0.25rem 0 0.25rem 0.25rem;
+    padding: 0.25rem; //4px
     overflow: hidden;
     color: var(--color-text-primary);
-    // border: 1px solid var(--color-background-interactive-default);
     border-radius: 3px;
     border-style: solid;
     border-width: 1px;
@@ -24,16 +23,13 @@
 
     ::slotted(rux-status),
     rux-status {
-        align-self: flex-start;
         margin-right: 0.125rem; //2px
     }
 }
 
-.rux-time-region__details {
-}
-
 .rux-time-region__datetime {
     margin-top: 0.25rem;
+    text-align: right;
     font-family: var(--font-body-3-font-family);
     font-size: var(--font-body-3-font-size);
     font-weight: var(--font-body-3-font-weight);
