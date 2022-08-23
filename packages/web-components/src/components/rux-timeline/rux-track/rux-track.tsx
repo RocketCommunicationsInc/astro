@@ -153,7 +153,11 @@ export class RuxTrack {
             let end = el.end
 
             if (isValid.success) {
-                if (el.start < this.start) {
+                if (el.start < this.start && el.end > this.end) {
+                    el.partial = 'ongoing'
+                    start = this.start
+                    end = this.end
+                } else if (el.start < this.start) {
                     el.partial = 'start'
                     start = this.start
                 } else if (el.end > this.end) {

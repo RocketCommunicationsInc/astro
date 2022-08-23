@@ -20,3 +20,13 @@
 // 	Edit event start = 2022-01-09T00:00
 // Assert:
 // 	Event should be partial
+
+// WHen adding a new event
+// Event is added that starts before timeline, it should show partial start.
+// Event is added the ends after timeline, it should show partial end
+// Event is added that starts before timeline and ends after timeline, it should show partial ongoing
+
+// Event is added that falls within timeline range
+// Editing event start to be before, should show a partial start.
+// Event event end to be after, should show a partial end.
+// Edit event start and end to be before and after timeline, it should show ongoing.
