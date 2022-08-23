@@ -22,7 +22,8 @@ Before reading any further, we recommend you take a look at a live [Astro Sample
 
 ## Figma
 
-[Astro UXDS Figma Library](https://www.figma.com/community/file/1014254163928270411)
+[Astro UXDS Figma Library 6.0 - Dark Theme](https://www.figma.com/community/file/1014254163928270411)
+[Astro UXDS Figma Library 6.0 - Wireframe Theme](https://www.figma.com/community/file/1101538528179386032)
 [Astro UXDS Icon Library](https://www.figma.com/community/file/1022883566772542677)
 
 ## Sketch
