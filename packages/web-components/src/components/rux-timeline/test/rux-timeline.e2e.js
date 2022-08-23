@@ -1,7 +1,58 @@
-// Time Regions that have a start date outside of the Timeline range are not shown
-// Time Regions that have a end date outside of the Timeline range are not shown
+describe('Timeline', () => {
+    beforeEach(() => {
+        cy.visitComponent('rux-timeline')
+    })
 
-// Playhead should remain synced to its original position in time when zoom is increased
+    it('renders', () => {
+        cy.get('rux-timeline').should('have.class', 'hydrated')
+    })
+
+    // describe('when a new event is added', () => {
+    // 	context('if the events start date is before the timelines start date', () => {
+    // 		it('should display as a partial start event', () => {
+
+    // 		})
+    // 	})
+
+    // 	context('if the events end date is after the timelines end date', () => {
+    // 		it('should display a partial end event', () => {
+
+    // 		})
+    // 	})
+
+    // 	context('if the events start date is before the timelines start date and the end date is after the timelines start date', () => {
+    // 		it('should display an ongoing partial event', () => {
+
+    // 		})
+    // 	})
+    // })
+
+    // describe('when an existing event currently in the timelines range is editted', () => {
+    // 	context('if the events start date is before the timelines start date', () => {
+    // 		it('should display as a partial start event', () => {
+
+    // 		})
+    // 	})
+
+    // 	context('if the events end date is after the timelines end date', () => {
+    // 		it('should display a partial end event', () => {
+
+    // 		})
+    // 	})
+
+    // 	context('if the events start date is before the timelines start date and the end date is after the timelines start date', () => {
+    // 		it('should display an ongoing partial event', () => {
+
+    // 		})
+    // 	})
+    // })
+
+    // describe('when the zoom is increased', () => {
+    // 	it('should keep the playhead synced to its original position', () => {
+
+    // 	})
+    // })
+})
 
 // Should throw an error when trying to set the playhead position to a date that is not within the timeline range.
 
@@ -11,22 +62,3 @@
 
 // partial tests
 // event is partial start. it should visually indicate. timeline range is changed so that it is in range. event should no longer visually indicate.
-
-// Event should become partial if editted
-// Arrange:
-// 	Timeline range = 2022-01-10T00:00
-// 	Add new event with start = 2022-01-10T00:00 - 2022-01-10T03:00
-// Act:
-// 	Edit event start = 2022-01-09T00:00
-// Assert:
-// 	Event should be partial
-
-// WHen adding a new event
-// Event is added that starts before timeline, it should show partial start.
-// Event is added the ends after timeline, it should show partial end
-// Event is added that starts before timeline and ends after timeline, it should show partial ongoing
-
-// Event is added that falls within timeline range
-// Editing event start to be before, should show a partial start.
-// Event event end to be after, should show a partial end.
-// Edit event start and end to be before and after timeline, it should show ongoing.
