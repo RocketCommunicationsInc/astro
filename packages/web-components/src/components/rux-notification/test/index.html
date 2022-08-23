@@ -17,6 +17,7 @@
         <script nomodule src="/build/astro-web-components.js"></script>
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
+        <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
         <style>
             .wrapper {
                 position: relative;
@@ -215,6 +216,23 @@
                         <rux-notification open status="normal">
                             Notification banner<a href="#" style="margin-left: 8px">Link</a>
                             <rux-icon size="small"icon="error-outline" slot="prefix"></rux-icon>
+                        </rux-notification>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Notification Small with Prefix icon" node="21648:121738">
+                    <div class="wrapper wrapper--small">
+                            <rux-notification open small status="caution">
+                                Notification banner<a href="#" style="margin-left: 8px">Link</a>
+                                <rux-icon size="24px"icon="error-outline" slot="prefix"></rux-icon>
+                            </rux-notification>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Notification Large with Prefix and action button" node="22002:117917">
+                    <div class="wrapper">
+                        <rux-notification open status="critical">
+                            Notification banner<a href="#" style="margin-left: 8px">Link</a>
+                            <rux-classification-marking tag classification="secret" slot="prefix"></rux-classification-marking>
+                            <rux-button slot="actions">Acknowledge</rux-button>
                         </rux-notification>
                     </div>
                 </ftl-holster>
