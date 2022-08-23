@@ -61,8 +61,6 @@ export class RuxTrack {
 
     @Listen('ruxtimeregionchange')
     handleTimeRegionChange(e: CustomEvent) {
-        console.log('heard time region change', e.detail)
-
         this.initializeRows()
         e.stopPropagation()
     }
