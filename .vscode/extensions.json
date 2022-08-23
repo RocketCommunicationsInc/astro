@@ -1,7 +1,7 @@
 {
   "recommendations": [
     "dbaeumer.vscode-eslint",
-    "silvenon.mdx",
+    "unifiedjs.vscode-mdx",
     "stylelint.vscode-stylelint"
   ]
 }
