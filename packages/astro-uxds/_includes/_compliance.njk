@@ -16,6 +16,10 @@
         <span 
           class="rule-text" data-status="{{ rule.status }}">
             {{ rule.rule  | markdownify | safe }}
+            <br>
+              {% if (rule.status !== 'updated') and (rule.status !== 'under-review') and (rule.status !== 'current') %}
+                <span class="rule-status">{{rule.status.replace('-', ' ')}}</span>
+              {% endif %}
         </span>
       </li>
 
