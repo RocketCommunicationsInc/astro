@@ -22,17 +22,83 @@
     <body>
         <div style="width: 1050px; margin: auto">
             <rux-timeline
+                id="event-added"
                 start="2021-02-01T00:00:00Z"
                 end="2021-02-05T12:00:00Z"
                 position="2021-02-01T04:00:00Z"
                 interval="hour"
                 zoom="1"
+                timezone="America/New_York"
             >
-                <rux-track id="track-1"> </rux-track>
+                <rux-track data-test-id="track1">
+                    <div slot="label">Track 1</div>
+                </rux-track>
+                <rux-track data-test-id="track2">
+                    <div slot="label">Track 2</div>
+                    <rux-time-region
+                        data-test-id="editEvent"
+                        start="2021-02-01T01:00Z"
+                        end="2021-02-01T04:00Z"
+                        >Existing Event</rux-time-region
+                    >
+                </rux-track>
                 <rux-track slot="ruler">
                     <rux-ruler></rux-ruler>
                 </rux-track>
             </rux-timeline>
+            <button
+                onclick="addEvent('2021-01-30T00:00:00Z', '2021-02-02T00:00:00Z')"
+                id="add-partial-start-button"
+            >
+                Add Partial Start Event
+            </button>
+            <button
+                onclick="addEvent('2021-02-01T00:00:00Z', '2021-02-12T00:00:00Z')"
+                id="add-partial-end-button"
+            >
+                Add Partial End Event
+            </button>
+            <button
+                onclick="addEvent('2021-01-30T00:00:00Z', '2021-02-30T00:00:00Z')"
+                id="add-partial-ongoing-button"
+            >
+                Add Partial Ongoing Event
+            </button>
+
+            <button
+                onclick="editEvent('2021-01-30T00:00:00Z', '2021-02-02T00:00:00Z')"
+                id="edit-partial-start-button"
+            >
+                Edit Partial Start Event
+            </button>
+            <button
+                onclick="editEvent('2021-02-01T00:00:00Z', '2021-02-12T00:00:00Z')"
+                id="edit-partial-end-button"
+            >
+                Edit Partial End Event
+            </button>
+            <button
+                onclick="editEvent('2021-01-30T00:00:00Z', '2021-02-30T00:00:00Z')"
+                id="edit-partial-ongoing-button"
+            >
+                Edit Partial Ongoing Event
+            </button>
         </div>
+        <script>
+            globalThis.addEvent = (start, end) => {
+                const el = document.createElement('rux-time-region')
+                el.start = start
+                el.end = end
+                el.innerHTML = 'Test Event'
+                el.setAttribute('data-test-id', 'addEvent')
+                const track = document.querySelector('[data-test-id="track1"]')
+                track.appendChild(el)
+            }
+            globalThis.editEvent = (start, end) => {
+                const el = document.querySelector('[data-test-id="editEvent"]')
+                el.start = start
+                el.end = end
+            }
+        </script>
     </body>
 </html>

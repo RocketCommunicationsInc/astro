@@ -90,12 +90,9 @@
             </section>
 
             <script>
-                const log = document.getElementById('log')
                 const form = document.getElementById('form')
                 const timelineEl = document.querySelector('rux-timeline')
                 const onEventClick = (event) => {
-                    console.log('event', event)
-                    console.log('eventtarget', event.target)
                     showDialog(event.target)
                 }
 
