@@ -17,6 +17,7 @@
         <script nomodule src="/build/astro-web-components.esm.js"></script>
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
+        <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script>  -->
     </head>
 
     <body class="dark-theme">
@@ -55,5 +56,43 @@
                 })
             </script>
         </div>
+        <!-- <ftl-belt access-token="" file-id="">
+            <section>
+                <h2>Figma Testing</h2>
+                <ftl-holster name="Rux Slider 0" node="26066:119527">
+                    <div style="padding: 0  0  0">
+                        <rux-slider name="ruxSliderFigma" id="ruxSliderFigma" min="0" max="100" value="0"></rux-slider>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Rux Slider 50%" node="26066:120187">
+                    <div style="padding: 0">
+                        <rux-slider name="ruxSliderFigma" id="ruxSliderFigma" min="0" max="100" value="50"></rux-slider>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Rux Slider 100%" node="26066:118867">
+                    <div style="padding: 0 8px 0 0">
+                        <rux-slider name="ruxSliderFigma" id="ruxSliderFigma" min="0" max="100" value="100"></rux-slider>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Rux Slider with ticks" node="25997:117470">
+                    <div style="padding: 0">
+                        <rux-slider id="noAxisLabels" max="100" min="0" step="" help-text="" error-text=""  label=""></rux-slider>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Rux Slider with labels" node="25997:117459">
+                    <div style="padding: 0 8px 0 0;">
+                        <rux-slider id="axisLabels" max="100" min="0" value="100" step="" help-text="" error-text="" label=""></rux-slider>
+                    </div>
+                </ftl-holster>
+
+                <script>
+                    const labels = document.getElementById('axisLabels')
+                    labels.axisLabels = [1,2,3,4,5,6,7,8,9]
+                    const noLabels = document.getElementById('noAxisLabels')
+                    noLabels.axisLabels = [1,2,3,4,5,6,7,8,9]
+                </script>
+
+            </section>
+        </ftl-belt> -->
     </body>
 </html>
