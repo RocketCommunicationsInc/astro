@@ -1,9 +1,10 @@
 import { test, expect } from '@playwright/test'
+import { startTestEnv } from './utils/_startTestEnv'
+// import { test, expect } from './_fixture'
 
 test.describe('Button', () => {
-    test.beforeEach(async ({ page }) => {
-        await page.goto('http://localhost:3333')
-    })
+    startTestEnv()
+
     test('it renders', async ({ page }) => {
         await page.setContent(`
         <rux-button>Hello</rux-button>
