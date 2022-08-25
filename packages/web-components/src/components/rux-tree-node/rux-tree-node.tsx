@@ -13,6 +13,9 @@ import {
     h,
 } from '@stencil/core'
 
+const closedIcon = 'keyboard-arrow-right'
+const expandedIcon = 'keyboard-arrow-down'
+
 let id = 0
 @Component({
     tag: 'rux-tree-node',
@@ -26,6 +29,7 @@ let id = 0
  */
 export class RuxTreeNode {
     private componentId = `node-${++id}`
+    private iconName = closedIcon
     @Element() el!: HTMLRuxTreeNodeElement
     @State() children: Array<HTMLRuxTreeNodeElement> = []
     @State() addClass: boolean = false
@@ -115,6 +119,7 @@ export class RuxTreeNode {
 
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
+        if (this.expanded) this.iconName = expandedIcon
     }
 
     componentWillLoad() {
@@ -183,6 +188,11 @@ export class RuxTreeNode {
         this.expanded
             ? this.ruxTreeNodeExpanded.emit(this.componentId)
             : this.ruxTreeNodeCollapsed.emit(this.componentId)
+        if (this.expanded) {
+            this.iconName = expandedIcon
+        } else {
+            this.iconName = closedIcon
+        }
     }
 
     private _handleTreeNodeClick(e: MouseEvent) {
@@ -275,10 +285,16 @@ export class RuxTreeNode {
                 >
                     <div class="parent" tabindex="0">
                         {this._hasChildren && (
-                            <i
+                            <rux-icon
+                                class="icon"
                                 onClick={(e) => this._handleArrowClick(e)}
-                                class="arrow"
-                            ></i>
+                                size="1.25rem"
+                                icon={this.iconName}
+                            ></rux-icon>
+                            // <i
+                            //     onClick={(e) => this._handleArrowClick(e)}
+                            //     class="arrow"
+                            // ></i>
                         )}
                         <slot onSlotchange={this._handleSlotChange}></slot>
                     </div>
