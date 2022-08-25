@@ -118,13 +118,6 @@ export class RuxTrack {
             }
         }
 
-        if (new Date(start) < new Date(this.start)) {
-            return {
-                success: false,
-                error: `The Time Region start date does not fall within the Timeline's range: ${start} - ${this.start}/${this.end}`,
-            }
-        }
-
         if (new Date(start) > new Date(this.end)) {
             return {
                 success: false,
@@ -132,17 +125,13 @@ export class RuxTrack {
             }
         }
 
-        if (new Date(end) > new Date(this.end)) {
+        if (
+            new Date(start) < new Date(this.start) &&
+            new Date(end) < new Date(this.start)
+        ) {
             return {
                 success: false,
-                error: `The Time Region end date does not fall within the Timeline's range: ${start} - ${this.start}/${this.end}`,
-            }
-        }
-
-        if (new Date(start) < new Date(this.start)) {
-            return {
-                success: false,
-                error: `The Time Region start date does not fall within the Timeline's range: ${start} - ${this.start}/${this.end}`,
+                error: `The Time Region start and end dates do not fall within the Timeline's range: ${start} - ${end}`,
             }
         }
 
@@ -163,19 +152,40 @@ export class RuxTrack {
         children.forEach((el) => {
             const isHidden = el.style.visibility === 'hidden'
             const isValid = this._validateTimeRegion(el.start, el.end)
+            /**
+             * Store temp vars to use for calculating a Time Region's position in the grid
+             * If a Time Region's range is outside the Timeline's range (a partial event),
+             * visually it is treated as if its start/end dates = the timeline's.
+             * */
+            let start = el.start
+            let end = el.end
 
             if (isValid.success) {
+                if (el.start < this.start && el.end > this.end) {
+                    el.partial = 'ongoing'
+                    start = this.start
+                    end = this.end
+                } else if (el.start < this.start) {
+                    el.partial = 'start'
+                    start = this.start
+                } else if (el.end > this.end) {
+                    el.partial = 'end'
+                    end = this.end
+                } else {
+                    el.partial = 'none'
+                }
+
                 el.timezone = this.timezone
                 el.style.gridRow = '1'
-                el.style.visibility = 'inherit'
+                el.style.display = 'block'
                 const gridColumn = `${this._calculateGridColumnFromTime(
-                    el.start
-                )} / ${this._calculateGridColumnFromTime(el.end)}`
+                    start
+                )} / ${this._calculateGridColumnFromTime(end)}`
                 el.style.gridColumn = gridColumn
             } else {
                 if (!isHidden) {
-                    el.style.visibility = 'hidden'
-                    console.error(isValid.error)
+                    el.style.display = 'none'
+                    console.log(isValid.error)
                 }
             }
         })
@@ -184,26 +194,6 @@ export class RuxTrack {
     private _handleSlotChange() {
         this.initializeRows()
     }
-
-    // @TODO
-    // renderDebug() {
-    //     return (
-    //         <div style={{ display: 'contents' }}>
-    //             {[...Array(this.columns)].map((_: any, i: any) => (
-    //                 <div
-    //                     style={{
-    //                         gridRow: '1',
-    //                         gridColumn: `${i + 2} / ${++i + 2}`,
-    //                     }}
-    //                     class={{
-    //                         cell: true,
-    //                         marker: i % 60 === 0,
-    //                     }}
-    //                 ></div>
-    //             ))}
-    //         </div>
-    //     )
-    // }
 
     render() {
         return (
@@ -227,7 +217,6 @@ export class RuxTrack {
 
                     <slot onSlotchange={this._handleSlotChange}></slot>
                 </div>
-                {/* {this.renderDebug()} */}
             </Host>
         )
     }

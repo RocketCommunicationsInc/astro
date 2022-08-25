@@ -4,11 +4,13 @@
 
 .rux-time-region {
     background: var(--color-background-base-default);
-    padding: 0.25rem; // 4px;
+    padding: 0.25rem; //4px
     overflow: hidden;
-    min-height: 40px;
     color: var(--color-text-primary);
-    border: 1px solid var(--color-background-interactive-default);
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--color-background-interactive-default);
 }
 
 .rux-time-region__content {
@@ -42,21 +44,39 @@
 }
 
 .rux-time-region--normal:not(.rux-time-region--selected) {
-    border: 1px solid var(--color-background-interactive-default);
+    border-color: var(--status-symbol-color-fill-normal);
 }
 
 .rux-time-region--critical:not(.rux-time-region--selected) {
-    border: 1px solid var(--status-symbol-color-fill-critical);
+    border-color: var(--status-symbol-color-fill-critical);
 }
 
 .rux-time-region--caution:not(.rux-time-region--selected) {
-    border: 1px solid var(--status-symbol-color-fill-caution);
+    border-color: var(--status-symbol-color-fill-caution);
 }
 
 .rux-time-region--standby:not(.rux-time-region--selected) {
-    border: 1px solid var(--status-symbol-color-fill-standby);
+    border-color: var(--status-symbol-color-fill-standby);
 }
 
 .hidden {
     visibility: hidden;
+}
+
+.rux-time-region--partial-start {
+    border-left-style: dashed;
+    border-left-width: 2px;
+}
+
+.rux-time-region--partial-start.rux-time-region--selected {
+    border-right-color: var(--color-palette-neutral-1000);
+}
+
+.rux-time-region--partial-end.rux-time-region--selected {
+    border-left-color: var(--color-palette-neutral-1000);
+}
+
+.rux-time-region--partial-end {
+    border-right-width: 2px;
+    border-right-style: dashed;
 }
