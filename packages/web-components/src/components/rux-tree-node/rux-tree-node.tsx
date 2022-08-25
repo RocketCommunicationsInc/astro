@@ -119,7 +119,6 @@ export class RuxTreeNode {
 
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
-        if (this.expanded) this.iconName = expandedIcon
     }
 
     componentWillLoad() {
@@ -137,6 +136,12 @@ export class RuxTreeNode {
     @Method()
     async setExpanded(value: boolean) {
         this.expanded = value
+
+        if (value) {
+            this.iconName = expandedIcon
+        } else {
+            this.iconName = closedIcon
+        }
     }
 
     /**
@@ -157,6 +162,7 @@ export class RuxTreeNode {
         ) as HTMLRuxTreeNodeElement[]
         this.children = children
         this._setAriaLevel()
+        if (this.expanded) this.iconName = expandedIcon
     }
 
     private _swapToLightStatus() {
@@ -188,11 +194,6 @@ export class RuxTreeNode {
         this.expanded
             ? this.ruxTreeNodeExpanded.emit(this.componentId)
             : this.ruxTreeNodeCollapsed.emit(this.componentId)
-        if (this.expanded) {
-            this.iconName = expandedIcon
-        } else {
-            this.iconName = closedIcon
-        }
     }
 
     private _handleTreeNodeClick(e: MouseEvent) {
@@ -286,15 +287,11 @@ export class RuxTreeNode {
                     <div class="parent" tabindex="0">
                         {this._hasChildren && (
                             <rux-icon
-                                class="icon"
+                                class="arrow"
                                 onClick={(e) => this._handleArrowClick(e)}
                                 size="1.25rem"
                                 icon={this.iconName}
-                            ></rux-icon>
-                            // <i
-                            //     onClick={(e) => this._handleArrowClick(e)}
-                            //     class="arrow"
-                            // ></i>
+                            />
                         )}
                         <slot onSlotchange={this._handleSlotChange}></slot>
                     </div>
