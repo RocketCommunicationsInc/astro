@@ -26,6 +26,7 @@ let id = 0
 /**
  * @slot (default) - The parent node content
  * @slot node - Renders a child node within the current node
+ * @slot right - Renders content to the right of the text
  */
 export class RuxTreeNode {
     private componentId = `node-${++id}`
@@ -294,6 +295,9 @@ export class RuxTreeNode {
                             />
                         )}
                         <slot onSlotchange={this._handleSlotChange}></slot>
+                        <aside class="right">
+                            <slot name="right"></slot>
+                        </aside>
                     </div>
                     <div {...attrs} class="children">
                         <slot
