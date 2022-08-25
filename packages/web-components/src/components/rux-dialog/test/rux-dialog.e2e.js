@@ -1,46 +1,49 @@
-describe('Modal', () => {
+describe('dialog', () => {
     beforeEach(() => {
-        cy.visitComponent('rux-modal')
+        cy.visitComponent('rux-dialog')
     })
     it('renders', () => {
-        cy.get('rux-modal').should('have.class', 'hydrated')
+        cy.get('rux-dialog').should('have.class', 'hydrated')
     })
 
-    it('should close and open the modal', () => {
-        cy.get('rux-modal').then(($modal) => {
-            $modal[0].setAttribute('open', false)
+    it('should close and open the dialog', () => {
+        cy.get('rux-dialog').then(($dialog) => {
+            $dialog[0].setAttribute('open', false)
         })
-        cy.get('rux-modal').then(($modal) => {
-            $modal[0].setAttribute('open', true)
+        cy.get('rux-dialog').then(($dialog) => {
+            $dialog[0].setAttribute('open', true)
         })
-        cy.get('rux-modal').shadow().find('.rux-modal__wrapper').should('exist')
-    })
-
-    it('should display new modal title in the dialog when changed', () => {
-        cy.get('rux-modal').then(($modal) => {
-            $modal[0].setAttribute('modal-title', 'This is a test title')
-        })
-        cy.get('rux-modal')
+        cy.get('rux-dialog')
             .shadow()
-            .find('.rux-modal__header')
+            .find('.rux-dialog__wrapper')
+            .should('exist')
+    })
+
+    it('should display new dialog title in the dialog when changed', () => {
+        cy.get('rux-dialog').then(($dialog) => {
+            $dialog[0].setAttribute('modal-title', 'This is a test title')
+        })
+        cy.get('rux-dialog')
+            .shadow()
+            .find('.rux-dialog__header')
             .contains('This is a test title')
     })
 
-    it('should display new modal message in the dialog when changed', () => {
-        cy.get('rux-modal').then(($modal) => {
-            $modal[0].setAttribute('modal-message', 'This is a test message')
+    it('should display new dialog message in the dialog when changed', () => {
+        cy.get('rux-dialog').then(($dialog) => {
+            $dialog[0].setAttribute('modal-message', 'This is a test message')
         })
-        cy.get('rux-modal')
+        cy.get('rux-dialog')
             .shadow()
-            .find('.rux-modal__message')
+            .find('.rux-dialog__message')
             .contains('This is a test message')
     })
 
     it('should display new confirmation text in the dialog when changed', () => {
-        cy.get('rux-modal').then(($modal) => {
-            $modal[0].setAttribute('confirm-text', 'Test Confirm Text')
+        cy.get('rux-dialog').then(($dialog) => {
+            $dialog[0].setAttribute('confirm-text', 'Test Confirm Text')
         })
-        cy.get('rux-modal')
+        cy.get('rux-dialog')
             .shadow()
             .find('rux-button-group')
             .find('rux-button')
@@ -49,10 +52,10 @@ describe('Modal', () => {
     })
 
     it('should display new deny text in the dialog when changed', () => {
-        cy.get('rux-modal').then(($modal) => {
-            $modal[0].setAttribute('deny-text', 'Test Deny Text')
+        cy.get('rux-dialog').then(($dialog) => {
+            $dialog[0].setAttribute('deny-text', 'Test Deny Text')
         })
-        cy.get('rux-modal')
+        cy.get('rux-dialog')
             .shadow()
             .find('rux-button-group')
             .find('rux-button')
@@ -60,103 +63,120 @@ describe('Modal', () => {
             .contains('Test Deny Text')
     })
 
-    it('should close the modal when deny clicked', () => {
-        cy.get('rux-modal')
+    it('should close the dialog when deny clicked', () => {
+        cy.get('rux-dialog')
             .shadow()
             .find('rux-button-group')
             .find('rux-button')
             .first()
             .click()
-        cy.get('rux-modal')
+        cy.get('rux-dialog')
             .shadow()
-            .find('.rux-modal__wrapper')
+            .find('.rux-dialog__wrapper')
             .should('not.exist')
     })
 
-    it('should close the modal when confirm clicked', () => {
-        cy.get('rux-modal')
+    it('should close the dialog when confirm clicked', () => {
+        cy.get('rux-dialog')
             .shadow()
             .find('rux-button-group')
             .find('rux-button')
             .next()
             .click()
-        cy.get('rux-modal')
+        cy.get('rux-dialog')
             .shadow()
-            .find('.rux-modal__wrapper')
+            .find('.rux-dialog__wrapper')
             .should('not.exist')
     })
 
     it('should close when enter key pressed', () => {
-        cy.get('rux-modal').shadow().find('dialog').click()
+        cy.get('rux-dialog').shadow().find('dialog').click()
         cy.get('body').type('{enter}')
-        cy.get('rux-modal')
+        cy.get('rux-dialog')
             .shadow()
-            .find('.rux-modal__wrapper')
+            .find('.rux-dialog__wrapper')
             .should('not.exist')
     })
 
-    it('should close the modal when click occurs outside modal', () => {
-        cy.get('rux-modal')
+    it('should close the dialog when click occurs outside dialog', () => {
+        cy.get('rux-dialog')
             .shadow()
-            .find('.rux-modal__wrapper')
+            .find('.rux-dialog__wrapper')
             .click('topLeft')
-        cy.get('rux-modal')
+        cy.get('rux-dialog')
             .shadow()
-            .find('.rux-modal__wrapper')
+            .find('.rux-dialog__wrapper')
             .should('not.exist')
     })
     it('should be able to dynamically add slots', () => {
-        cy.get('rux-modal').then(($modal) => {
-            $modal[0].setAttribute('open', false)
+        cy.get('rux-dialog').then(($dialog) => {
+            $dialog[0].setAttribute('open', false)
         })
         cy.get('#dyn').click()
         cy.get('#change').find('.test')
         cy.get('#change')
             .shadow()
-            .find('.rux-modal__wrapper')
+            .find('.rux-dialog__wrapper')
             .find('dialog')
-            .find('.rux-modal__footer')
+            .find('.rux-dialog__footer')
             .children()
             .should('have.length', '1')
     })
-    it('should emit ruxmodalclosed with a detail of false when default deny button is clicked', () => {
-        cy.get('rux-modal').then(($modal) => {
-            $modal[0].setAttribute('open', true)
+    it('should emit ruxdialogclosed with a detail of false when default deny button is clicked', () => {
+        cy.get('rux-dialog').then(($dialog) => {
+            $dialog[0].setAttribute('open', true)
         })
         cy.document().invoke(
             'addEventListener',
-            'ruxmodalclosed',
-            cy.stub().as('ruxmodalclosed')
+            'ruxdialogclosed',
+            cy.stub().as('ruxdialogclosed')
         )
-        cy.get('rux-modal')
+        cy.get('rux-dialog')
             .shadow()
             .find('rux-button-group')
             .find('rux-button')
             .first()
             .click()
-        cy.get('@ruxmodalclosed')
+        cy.get('@ruxdialogclosed')
             .should('have.been.calledOnce')
             .its('firstCall.args.0.detail')
             .should('deep.equal', false)
     })
-    it('should emit ruxmodalclosed with a detail of true when default confirm button is clicked', () => {
-        cy.get('rux-modal').then(($modal) => {
-            $modal[0].setAttribute('open', true)
+    it('should emit ruxdialogclosed with a detail of true when default confirm button is clicked', () => {
+        cy.get('rux-dialog').then(($dialog) => {
+            $dialog[0].setAttribute('open', true)
         })
         cy.document().invoke(
             'addEventListener',
-            'ruxmodalclosed',
-            cy.stub().as('ruxmodalclosed')
+            'ruxdialogclosed',
+            cy.stub().as('ruxdialogclosed')
         )
-        cy.get('rux-modal')
+        cy.get('rux-dialog')
             .shadow()
             .find('rux-button-group')
             .find('rux-button')
             .next()
             .click()
-        cy.get('@ruxmodalclosed')
+        cy.get('@ruxdialogclosed')
             .should('have.been.calledOnce')
             .its('firstCall.args.0.detail')
             .should('deep.equal', true)
     })
+    // Cypress doesn't support a generic keyboard press. Can only use .type() in inputs and such.
+    // it('should be able to trigger the deny button on escape key press', () => {
+    //     cy.get('rux-dialog').then(($dialog) => {
+    //         $dialog[0].setAttribute('open', true)
+    //     })
+    //     cy.document().invoke(
+    //         'addEventListener',
+    //         'ruxdialogclosed',
+    //         cy.stub().as('ruxdialogclosed')
+    //     )
+    //     cy.get('rux-dialog').first().type('{esc}', { force: true })
+    //     cy.get('@ruxdialogclosed')
+    //         .should('have.been.calledOnce')
+    //         .its('first')
+    //         .its('firstCall.args.0.detail')
+    //         .should('deep.equal', false)
+    // })
 })
