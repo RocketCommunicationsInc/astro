@@ -57,7 +57,11 @@
                     error-text="PLZ YES"
                 ></rux-textarea>
                 <br />
-                <textarea id="nativeTextArea" name="native">
+                <textarea
+                    id="nativeTextArea"
+                    name="native"
+                    style="padding: 8px"
+                >
 Native Text Area</textarea
                 >
 
@@ -132,8 +136,9 @@ Native Text Area</textarea
             </ftl-holster>
 
             <ftl-holster name="With Error Text" node="1057:3759">
-                <div style="width: 170px">
+                <div style="min-width: 170px">
                     <rux-textarea
+                        error
                         id="figmatextarea1"
                         name="figmatest1"
                         placeholder="Textarea"
@@ -143,5 +148,16 @@ Native Text Area</textarea
             </ftl-holster>
         </section>
         <!-- </ftl-belt> -->
+
+        <rux-textarea
+            label="Textarea label"
+            error-text=""
+            help-text=""
+            max-length=""
+            min-length=""
+            rows=""
+            value=""
+            type=""
+        ></rux-textarea>
     </body>
 </html>
