@@ -7,6 +7,19 @@ describe('Timeline', () => {
         cy.get('rux-timeline').should('have.class', 'hydrated')
     })
 
+    it('when an event is currently in the timelines range if the timelines range is changed so that the event becomes out of range should not display as partial and be hidden', () => {
+        cy.get('rux-timeline[data-test-id="timeline"]')
+            .invoke('attr', 'end', '2022-02-30')
+            .invoke('attr', 'start', '2022-02-10')
+
+        cy.get('rux-time-region[data-test-id="editEvent"]')
+            .shadow()
+            .find('.rux-time-region')
+            .should('not.have.class', 'rux-time-region--partial-start')
+            .should('not.have.class', 'rux-time-region--partial-end')
+            .should('not.have.attr', 'partial')
+    })
+
     describe('when a new event is added', () => {
         context(
             'if the events start date is before the timelines start date',

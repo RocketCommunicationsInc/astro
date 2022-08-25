@@ -125,6 +125,16 @@ export class RuxTrack {
             }
         }
 
+        if (
+            new Date(start) < new Date(this.start) &&
+            new Date(end) < new Date(this.start)
+        ) {
+            return {
+                success: false,
+                error: `The Time Region start and end dates do not fall within the Timeline's range: ${start} - ${end}`,
+            }
+        }
+
         return {
             success: true,
         }
@@ -167,14 +177,14 @@ export class RuxTrack {
 
                 el.timezone = this.timezone
                 el.style.gridRow = '1'
-                el.style.visibility = 'inherit'
+                el.style.display = 'block'
                 const gridColumn = `${this._calculateGridColumnFromTime(
                     start
                 )} / ${this._calculateGridColumnFromTime(end)}`
                 el.style.gridColumn = gridColumn
             } else {
                 if (!isHidden) {
-                    el.style.visibility = 'hidden'
+                    el.style.display = 'none'
                     console.log(isValid.error)
                 }
             }
