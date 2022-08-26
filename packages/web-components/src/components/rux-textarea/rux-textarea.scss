@@ -30,6 +30,7 @@
 
 .rux-textarea-wrapper {
     box-sizing: border-box;
+    position: relative;
     display: flex;
     min-height: var(--spacing-16); //64
     width: 100%;
@@ -96,27 +97,27 @@
 }
 
 //add proper grabber icon - disabled for now
-// .rux-textarea::-webkit-resizer {
+// .rux-textarea-wrapper::-webkit-resizer {
 //     display: none;
 // }
-// .rux-textarea-field::after {
+// .rux-textarea-wrapper::after {
 //     content: '';
 //     background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5 9H19C19.55 9 20 9.45 20 10C20 10.55 19.55 11 19 11H5C4.45 11 4 10.55 4 10C4 9.45 4.45 9 5 9ZM19 15H5C4.45 15 4 14.55 4 14C4 13.45 4.45 13 5 13H19C19.55 13 20 13.45 20 14C20 14.55 19.55 15 19 15Z' fill='%23a4abb6'/%3E%3C/svg%3E");
 //     background-repeat: none;
 //     background-position: center;
 //     background-size: 10px;
 //     position: absolute;
-//     bottom: 8px;
-//     right: 4px;
-//     width: 8px;
-//     height: 8px;
+//     bottom: var(--spacing-1);
+//     right: var(--spacing-1);
+//     width: var(--spacing-2);
+//     height: var(--spacing-2);
 //     pointer-events: none;
 //     transform: rotate(-45deg);
 // }
 
 //firefox can't style the resize handle
 // @-moz-document url-prefix() {
-//     .rux-textarea-field::after {
+//     .rux-textarea-wrapper::after {
 //         display: none;
 //     }
 // }
