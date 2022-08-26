@@ -17,7 +17,7 @@
 
 .rux-popup__content {
     position: absolute;
-    padding: var(--spacing-1); //8
+    padding: var(--spacing-0); //no spacing, slotted content handles padding
     border-radius: var(--radius-base);
     background: var(--color-background-base-default);
     border: 1px solid var(--color-border-interactive-muted);
