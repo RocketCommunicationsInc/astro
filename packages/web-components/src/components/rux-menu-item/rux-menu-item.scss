@@ -28,7 +28,7 @@
 
 .rux-menu-item {
     position: relative;
-    padding: 6px 8px;
+    padding: var(--spacing-2); //8
     color: var(--color-interactive-default);
     cursor: pointer;
     &:hover {
