@@ -83,7 +83,8 @@ export class RuxModal {
     // confirm dialog if Enter key is pressed
     @Listen('keydown', { target: 'window' })
     handleKeyDown(ev: KeyboardEvent) {
-        if (this.open) {
+        // prevent this from running if the slots version is being used
+        if (this.open && !this.hasFooter) {
             const btns: NodeListOf<HTMLRuxButtonElement> = this.element.shadowRoot!.querySelectorAll(
                 'rux-button'
             )

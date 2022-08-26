@@ -81,11 +81,13 @@ export class RuxDialog {
     // confirm dialog if Enter key is pressed
     @Listen('keydown', { target: 'window' })
     handleKeyDown(ev: KeyboardEvent) {
-        if (this.open) {
+        // prevent this from running if the slots version is being used
+        if (this.open && !this.hasFooter) {
             const btns: NodeListOf<HTMLRuxButtonElement> = this.element.shadowRoot!.querySelectorAll(
                 'rux-button'
             )
             if (ev.key === 'Enter') {
+                console.log('inside the enter if, this is running')
                 //If enter is hit but the cancel/deny button is focused, we want to click that instead.
                 let activeEl: any = this.element.shadowRoot?.activeElement
                 if (activeEl && activeEl === btns[0]) {
