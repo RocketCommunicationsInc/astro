@@ -17,6 +17,7 @@
         <script nomodule src="/build/astro-web-components.js"></script>
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
+        <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
     </head>
 
     <body>
@@ -186,246 +187,41 @@
                 testDiv.innerText = input1.value + ' ' + input2.value
             })
         </script>
-
+        <!-- <ftl-belt access-token="" file-id="">
         <section>
             <h2>Figma Testing</h2>
-
-            <div style="padding: 5%; display: flex; justify-content: center">
-                <rux-pop-up-menu placement="top-end" id="bottom">
-                    <rux-icon
-                        size="normal"
-                        icon="menu"
-                        slot="trigger"
-                    ></rux-icon>
-                    <rux-menu>
-                        <rux-menu-item value="1" selected
-                            >Pop up menu option test</rux-menu-item
-                        >
-                        <rux-menu-item value="2"
-                            >Pop up menu option test</rux-menu-item
-                        >
-                        <rux-menu-item value="3"
-                            >Pop up menu option test</rux-menu-item
-                        >
-                    </rux-menu>
-                </rux-pop-up-menu>
-            </div>
-
-            <div style="padding: 5%; display: flex; justify-content: center">
-                <rux-pop-up-menu placement="top" id="bottom">
-                    <rux-icon
-                        size="normal"
-                        icon="menu"
-                        slot="trigger"
-                    ></rux-icon>
-                    <rux-menu>
-                        <rux-menu-item value="1" selected
-                            >Pop up menu option test</rux-menu-item
-                        >
-                        <rux-menu-item value="2"
-                            >Pop up menu option test</rux-menu-item
-                        >
-                        <rux-menu-item value="3"
-                            >Pop up menu option test</rux-menu-item
-                        >
-                    </rux-menu>
-                </rux-pop-up-menu>
-            </div>
-
-            <div style="padding: 5%; display: flex; justify-content: center">
-                <rux-pop-up-menu placement="top-start" id="bottom">
-                    <rux-icon
-                        size="normal"
-                        icon="menu"
-                        slot="trigger"
-                    ></rux-icon>
-                    <rux-menu>
-                        <rux-menu-item value="1" selected
-                            >Pop up menu option test</rux-menu-item
-                        >
-                        <rux-menu-item value="2"
-                            >Pop up menu option test</rux-menu-item
-                        >
-                        <rux-menu-item value="3"
-                            >Pop up menu option test</rux-menu-item
-                        >
-                    </rux-menu>
-                </rux-pop-up-menu>
-            </div>
-
-            <div style="padding: 5%; display: flex; justify-content: center">
-                <rux-pop-up-menu placement="bottom-end" id="bottom">
-                    <rux-icon
-                        size="normal"
-                        icon="menu"
-                        slot="trigger"
-                    ></rux-icon>
-                    <rux-menu>
-                        <rux-menu-item value="1" selected
-                            >Pop up menu option test</rux-menu-item
-                        >
-                        <rux-menu-item value="2"
-                            >Pop up menu option test</rux-menu-item
-                        >
-                        <rux-menu-item value="3"
-                            >Pop up menu option test</rux-menu-item
-                        >
-                    </rux-menu>
-                </rux-pop-up-menu>
-            </div>
-
-            <div style="padding: 5%; display: flex; justify-content: center">
-                <rux-pop-up-menu placement="bottom" id="bottom">
-                    <rux-icon
-                        size="normal"
-                        icon="menu"
-                        slot="trigger"
-                    ></rux-icon>
-                    <p style="width: 300px; max-width: 100%; display: block">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Sed at mi elementum, scelerisque tortor vitae, suscipit
-                        odio. Sed finibus dui nunc, eget posuere ipsum volutpat
-                        ac. Curabitur sit amet nibh mi. Sed sit amet eleifend
-                        dolor. Cras vitae orci neque. Ut mollis ante est, id
-                        hendrerit elit lacinia in. Quisque scelerisque ex at
-                        neque dignissim finibus. Pellentesque augue erat,
-                        ullamcorper sed laoreet ut, fringilla a metus. Ut tempor
-                        porttitor diam a bibendum. Pellentesque nulla nibh,
-                        vehicula fringilla tortor eget, consequat blandit ante.
-                        Integer ac sagittis risus. Sed vestibulum nisl sit amet
-                        tellus tempus lobortis. In convallis orci a magna
-                        posuere, at rutrum ipsum mattis. Etiam tempus aliquet
-                        felis, ac pulvinar urna elementum sit amet. Curabitur et
-                        ex lectus.
-                    </p>
-                </rux-pop-up-menu>
-            </div>
-
-            <div style="padding: 5%; display: flex; justify-content: center">
-                <rux-pop-up-menu placement="bottom-start" id="bottom">
-                    <rux-icon
-                        size="normal"
-                        icon="menu"
-                        slot="trigger"
-                    ></rux-icon>
-                    <rux-menu>
-                        <rux-menu-item value="1" selected
-                            >Pop up menu option test</rux-menu-item
-                        >
-                        <rux-menu-item value="2"
-                            >Pop up menu option test</rux-menu-item
-                        >
-                        <rux-menu-item value="3"
-                            >Pop up menu option test</rux-menu-item
-                        >
-                    </rux-menu>
-                </rux-pop-up-menu>
-            </div>
-
-            <div style="padding: 5%; display: flex; justify-content: center">
-                <rux-pop-up-menu placement="right-end" id="bottom">
-                    <rux-icon
-                        size="normal"
-                        icon="menu"
-                        slot="trigger"
-                    ></rux-icon>
-                    <rux-menu>
-                        <rux-menu-item value="1" selected
-                            >Pop up menu option test</rux-menu-item
-                        >
-                        <rux-menu-item value="2"
-                            >Pop up menu option test</rux-menu-item
-                        >
-                        <rux-menu-item value="3"
-                            >Pop up menu option test</rux-menu-item
-                        >
-                    </rux-menu>
-                </rux-pop-up-menu>
-            </div>
-
-            <div style="padding: 5%; display: flex; justify-content: center">
-                <rux-pop-up-menu placement="right" id="bottom">
-                    <rux-icon
-                        size="normal"
-                        icon="menu"
-                        slot="trigger"
-                    ></rux-icon>
-                    <rux-switch label="switching it up!"></rux-switch>
-                </rux-pop-up-menu>
-            </div>
-
-            <div style="padding: 5%; display: flex; justify-content: center">
-                <rux-pop-up-menu placement="right-start" id="bottom">
-                    <rux-icon
-                        size="normal"
-                        icon="menu"
-                        slot="trigger"
-                    ></rux-icon>
-                    <rux-slider min="0" max="100" value="50"></rux-slider>
-                </rux-pop-up-menu>
-            </div>
-            <div style="padding: 5%; display: flex; justify-content: center">
-                <rux-pop-up-menu placement="left-end" id="bottom">
-                    <rux-icon
-                        size="normal"
-                        icon="menu"
-                        slot="trigger"
-                    ></rux-icon>
-                    <rux-menu>
-                        <rux-menu-item value="1" selected
-                            >Pop up menu option test</rux-menu-item
-                        >
-                        <rux-menu-item value="2"
-                            >Pop up menu option test</rux-menu-item
-                        >
-                        <rux-menu-item value="3"
-                            >Pop up menu option test</rux-menu-item
-                        >
-                    </rux-menu>
-                </rux-pop-up-menu>
-            </div>
-
-            <div style="padding: 5%; display: flex; justify-content: center">
-                <rux-pop-up-menu placement="left" id="bottom">
-                    <rux-icon
-                        size="normal"
-                        icon="menu"
-                        slot="trigger"
-                    ></rux-icon>
-                    <rux-menu>
-                        <rux-menu-item value="1" selected
-                            >Pop up menu option test</rux-menu-item
-                        >
-                        <rux-menu-item value="2"
-                            >Pop up menu option test</rux-menu-item
-                        >
-                        <rux-menu-item value="3"
-                            >Pop up menu option test</rux-menu-item
-                        >
-                    </rux-menu>
-                </rux-pop-up-menu>
-            </div>
-
-            <div style="padding: 5%; display: flex; justify-content: center">
-                <rux-pop-up-menu placement="left-start" id="bottom">
-                    <rux-icon
-                        size="normal"
-                        icon="menu"
-                        slot="trigger"
-                    ></rux-icon>
-                    <rux-menu>
-                        <rux-menu-item value="1" selected
-                            >Pop up menu option test</rux-menu-item
-                        >
-                        <rux-menu-item value="2"
-                            >Pop up menu option test</rux-menu-item
-                        >
-                        <rux-menu-item value="3"
-                            >Pop up menu option test</rux-menu-item
-                        >
-                    </rux-menu>
-                </rux-pop-up-menu>
-            </div>
+            <ftl-holster name="Bottom Center Menu test" node="42751:130506">
+                <div style="margin-top: -52px; display: flex; justify-content: center">
+                    <rux-pop-up-menu placement="bottom" open>
+                        <rux-icon
+                            size="normal"
+                            icon="menu"
+                            slot="trigger"
+                        ></rux-icon>
+                        <rux-menu style="width:175px;">
+                            <rux-menu-item value="1"
+                                >Menu option</rux-menu-item
+                            >
+                            <rux-menu-item value="2"
+                                >Menu option</rux-menu-item
+                            >
+                        </rux-menu>
+                    </rux-pop-up-menu>
+                </div>
+            </ftl-holster>
+            <ftl-holster name="Top start custom content" node="27047:115928">
+                <div style="margin-top:60px;">
+                    <rux-pop-up-menu placement="top-start" open>
+                        <rux-icon
+                            size="small"
+                            icon="menu"
+                            slot="trigger"
+                        ></rux-icon>
+                        <rux-switch label="Aliquam in lorem"></rux-switch>
+                    </rux-pop-up-menu>
+                </div>
+            </ftl-holster>
         </section>
+    </ftl-belt> -->
     </body>
 </html>

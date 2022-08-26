@@ -29,10 +29,15 @@
 .rux-menu-item {
     position: relative;
     padding: var(--spacing-2); //8
-    color: var(--color-interactive-default);
+    color: var(--color-text-interactive-default);
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    font-weight: var(--font-control-body-1-font-weight);
+    line-height: var(--font-control-body-1-line-height);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
     cursor: pointer;
     &:hover {
-        color: var(--color-interactive-hover);
+        color: var(--color-text-interactive-hover);
         background: var(--color-background-base-hover);
     }
     &--selected {

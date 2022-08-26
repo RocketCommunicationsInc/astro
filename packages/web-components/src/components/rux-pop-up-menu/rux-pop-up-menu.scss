@@ -17,8 +17,7 @@
 
 .rux-popup__content {
     position: absolute;
-    color: var(--color-text-white);
-    padding: var(--spacing-3);
+    padding: var(--spacing-1); //8
     border-radius: var(--radius-base);
     background: var(--color-background-base-default);
     border: 1px solid var(--color-border-interactive-muted);
