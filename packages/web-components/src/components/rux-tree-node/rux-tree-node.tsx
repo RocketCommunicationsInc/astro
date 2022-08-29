@@ -13,6 +13,8 @@ import {
     h,
 } from '@stencil/core'
 
+import { hasSlot } from '../../utils/utils'
+
 const closedIcon = 'keyboard-arrow-right'
 const expandedIcon = 'keyboard-arrow-down'
 
@@ -25,8 +27,9 @@ let id = 0
 
 /**
  * @slot (default) - The parent node content
+ * @slot left - Renders content to the left of the default
+ * @slot right - Renders content to the right of the default
  * @slot node - Renders a child node within the current node
- * @slot right - Renders content to the right of the text
  */
 export class RuxTreeNode {
     private componentId = `node-${++id}`
@@ -128,6 +131,14 @@ export class RuxTreeNode {
 
     get _hasChildren() {
         return this.children.length > 0
+    }
+
+    get _hasLeftSlot() {
+        return hasSlot(this.el, 'left')
+    }
+
+    get _hasRightSlot() {
+        return hasSlot(this.el, 'right')
     }
 
     /**
@@ -289,15 +300,24 @@ export class RuxTreeNode {
                         {this._hasChildren && (
                             <rux-icon
                                 class="arrow"
-                                onClick={(e) => this._handleArrowClick(e)}
+                                onClick={this._handleArrowClick.bind(this)}
                                 size="1.25rem"
                                 icon={this.iconName}
                             />
                         )}
-                        <slot onSlotchange={this._handleSlotChange}></slot>
-                        <aside class="right">
-                            <slot name="right"></slot>
-                        </aside>
+                        {this._hasLeftSlot && (
+                            <div class="left">
+                                <slot name="left"></slot>
+                            </div>
+                        )}
+                        <div class="truncate">
+                            <slot onSlotchange={this._handleSlotChange}></slot>
+                        </div>
+                        {this._hasRightSlot && (
+                            <div class="right">
+                                <slot name="right"></slot>
+                            </div>
+                        )}
                     </div>
                     <div {...attrs} class="children">
                         <slot
