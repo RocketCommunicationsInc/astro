@@ -9,7 +9,7 @@ test.describe('Button', () => {
         await page.setContent(`
         <rux-button>Hello</rux-button>
     `)
-        const el = await page.locator('rux-button').first()
+        const el = page.locator('rux-button').first()
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })
@@ -17,7 +17,7 @@ test.describe('Button', () => {
         await page.setContent(`
         <rux-button id="attr" type="submit" secondary disabled>Hello</rux-button>
     `)
-        const el = await page.locator('#attr')
+        const el = page.locator('#attr')
         await expect(el).toBeVisible()
         await expect(el).toHaveAttribute('disabled', '')
         await expect(el).toHaveAttribute('secondary', '')
