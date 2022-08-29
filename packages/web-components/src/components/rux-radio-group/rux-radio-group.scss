@@ -11,20 +11,21 @@
 
 ::slotted(rux-radio) {
     display: block;
-    margin-bottom: 0.625rem; //10px
+    margin-bottom: var(--spacing-2); //8
 }
 
 ::slotted(rux-radio:last-of-type) {
-    margin-bottom: 0;
+    margin-bottom: var(--spacing-0);
 }
 
 .rux-radio-group {
-    padding: 1rem; // 16px
-    border: 1px solid var(--color-border-interactive-muted);
+    padding: var(--spacing-4); //16
+    //use inset shadow rather than border
+    box-shadow: var(--color-border-interactive-muted) 0 0 0 1px inset;
     border-radius: var(--radius-base);
 }
 .rux-radio-group--invalid {
-    border: 1px solid var(--color-text-error);
+    box-shadow: var(--color-border-error) 0 0 0 1px inset;
 }
 
 .rux-label {
@@ -36,6 +37,6 @@
     line-height: var(--font-body-1-line-height);
     margin-bottom: var(--spacing-input-label-top);
     &__asterisk {
-        margin-left: 4px;
+        margin-left: var(--spacing-1);
     }
 }

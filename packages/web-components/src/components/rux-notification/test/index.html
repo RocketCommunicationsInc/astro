@@ -17,17 +17,18 @@
         <script nomodule src="/build/astro-web-components.js"></script>
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
+        <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
         <style>
             .wrapper {
                 position: relative;
                 overflow: hidden;
                 width: 800px;
-                height: 70px;
+                height: 90px;
                 margin-bottom: 1rem;
             }
 
             .wrapper--small {
-                height: 44px;
+                height: 60px;
             }
         </style>
     </head>
@@ -167,7 +168,7 @@
                     position: relative;
                     overflow: hidden;
                     width: 800px;
-                    height: 70px;
+                    height: 90px;
                 "
             >
                 <rux-notification open status="critical">
@@ -183,7 +184,7 @@
                     position: relative;
                     overflow: hidden;
                     width: 800px;
-                    height: 70px;
+                    height: 80px;
                 "
             >
                 <rux-notification open status="off">
@@ -192,5 +193,59 @@
                 </rux-notification>
             </div>
         </section>
+
+        <!-- <ftl-belt access-token="" file-id="">
+            <section>
+                <h2>Figma Testing</h2>
+                <ftl-holster name="Notification Large" node="23160:125943">
+                    <div class="wrapper">
+                        <rux-notification open status="serious">
+                            Notification banner<a href="#" style="margin-left: 8px">Link</a>
+                        </rux-notification>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Notification Small" node="23160:125937">
+                    <div class="wrapper wrapper--small">
+                        <rux-notification open small status="serious">
+                            Notification banner<a href="#" style="margin-left: 8px">Link</a>
+                        </rux-notification>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Notification Large with Prefix" node="21955:118694">
+                    <div class="wrapper">
+                        <rux-notification open status="normal">
+                            Notification banner<a href="#" style="margin-left: 8px">Link</a>
+                            <rux-icon size="small"icon="error-outline" slot="prefix"></rux-icon>
+                        </rux-notification>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Notification Small with Prefix icon" node="21648:121738">
+                    <div class="wrapper wrapper--small">
+                            <rux-notification open small status="caution">
+                                Notification banner<a href="#" style="margin-left: 8px">Link</a>
+                                <rux-icon size="24px"icon="error-outline" slot="prefix"></rux-icon>
+                            </rux-notification>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Notification Large with Prefix and action button" node="22002:117917">
+                    <div class="wrapper">
+                        <rux-notification open status="critical">
+                            Notification banner<a href="#" style="margin-left: 8px">Link</a>
+                            <rux-classification-marking tag classification="secret" slot="prefix"></rux-classification-marking>
+                            <rux-button slot="actions">Acknowledge</rux-button>
+                        </rux-notification>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Notification Small with Prefix and actions button" node="22002:117918">
+                    <div class="wrapper wrapper--small">
+                        <rux-notification open small status="critical">
+                            Notification banner<a href="#" style="margin-left: 8px">Link</a>
+                            <rux-classification-marking tag classification="secret" slot="prefix"></rux-classification-marking>
+                            <rux-button size="small" slot="actions">Acknowledge</rux-button>
+                        </rux-notification>
+                    </div>
+                </ftl-holster>
+            </section>
+        </ftl-belt> -->
     </body>
 </html>
