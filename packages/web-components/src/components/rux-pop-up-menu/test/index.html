@@ -17,6 +17,7 @@
         <script nomodule src="/build/astro-web-components.js"></script>
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
+        <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
     </head>
 
     <body>
@@ -186,5 +187,41 @@
                 testDiv.innerText = input1.value + ' ' + input2.value
             })
         </script>
+        <!-- <ftl-belt access-token="" file-id="">
+        <section>
+            <h2>Figma Testing</h2>
+            <ftl-holster name="Bottom Center Menu test" node="42751:130506">
+                <div style="margin-top: -52px; display: flex; justify-content: center">
+                    <rux-pop-up-menu placement="bottom" open>
+                        <rux-icon
+                            size="normal"
+                            icon="menu"
+                            slot="trigger"
+                        ></rux-icon>
+                        <rux-menu style="width:175px;">
+                            <rux-menu-item value="1"
+                                >Menu option</rux-menu-item
+                            >
+                            <rux-menu-item value="2"
+                                >Menu option</rux-menu-item
+                            >
+                        </rux-menu>
+                    </rux-pop-up-menu>
+                </div>
+            </ftl-holster>
+            <ftl-holster name="Top start custom content" node="27047:115928">
+                <div style="margin-top:60px;">
+                    <rux-pop-up-menu placement="top-start" open>
+                        <rux-icon
+                            size="small"
+                            icon="menu"
+                            slot="trigger"
+                        ></rux-icon>
+                        <rux-switch label="Aliquam in lorem" style="padding:8px 4px;"></rux-switch>
+                    </rux-pop-up-menu>
+                </div>
+            </ftl-holster>
+        </section>
+    </ftl-belt> -->
     </body>
 </html>

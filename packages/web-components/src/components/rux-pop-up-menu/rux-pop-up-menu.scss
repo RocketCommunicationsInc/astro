@@ -11,10 +11,13 @@
     display: none !important;
 }
 
+::slotted(*[slot='trigger']) {
+    cursor: pointer;
+}
+
 .rux-popup__content {
     position: absolute;
-    color: white;
-    padding: 12px;
+    padding: var(--spacing-0); //no spacing, slotted content handles padding
     border-radius: var(--radius-base);
     background: var(--color-background-base-default);
     border: 1px solid var(--color-border-interactive-muted);
@@ -44,8 +47,8 @@
 
 .rux-popup-arrow {
     position: absolute;
-    background: #2b659b;
-    width: 17px;
-    height: 17px;
+    background: var(--color-border-interactive-muted);
+    width: var(--spacing-4); //16
+    height: var(--spacing-4); //16
     transform: translateZ(-1px) rotate(45deg);
 }
