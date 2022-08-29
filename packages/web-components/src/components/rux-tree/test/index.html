@@ -22,6 +22,12 @@
             type="module"
             src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"
         ></script>
+
+        <style>
+            #truncate-width rux-tree-node {
+                --truncate-width: 324px;
+            }
+        </style>
     </head>
 
     <body>
@@ -544,6 +550,27 @@
                 </ftl-holster>
             </div>
         </ftl-belt>
+
+        <div id="truncate-width">
+            <rux-tree>
+                <rux-tree-node expanded="">
+                    Level-1 Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Reiciendis, consequuntur!
+                    <rux-tree-node slot="node" expanded="">
+                        Level-2 Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Reiciendis, consequuntur!
+                        <rux-tree-node slot="node" expanded="">
+                            Level-3 Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Reiciendis, consequuntur!
+                            <rux-tree-node slot="node" expanded="">
+                                Level-4 Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Reiciendis, consequuntur!
+                            </rux-tree-node>
+                        </rux-tree-node>
+                    </rux-tree-node>
+                </rux-tree-node>
+            </rux-tree>
+        </div>
 
         <!-- <rux-tree role="tree" class="hydrated">
             <rux-tree-node
