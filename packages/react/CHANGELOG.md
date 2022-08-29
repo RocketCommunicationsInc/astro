@@ -1,5 +1,20 @@
 # @astrouxds/react
 
+## 6.13.0
+
+### Minor Changes
+
+- 966da90f: Timeline - support for partial time regions
+- 41bf9ba1: Added better keyboard support to rux-dialog. Now supports tabbing between confrim and deny buttons, and triggers deny on an escape key press.
+
+### Patch Changes
+
+- ba6a6612: rux-progress - visual fix for firefox, properly align progress indicator
+- Updated dependencies [966da90f]
+- Updated dependencies [ba6a6612]
+- Updated dependencies [41bf9ba1]
+  - @astrouxds/astro-web-components@6.13.0
+
 ## 6.12.1
 
 ### Patch Changes
