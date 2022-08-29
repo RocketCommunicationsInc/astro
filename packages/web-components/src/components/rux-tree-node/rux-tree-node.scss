@@ -1,10 +1,11 @@
 :host {
-    position: relative;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    user-select: none;
+    --no-wrap: nowrap;
+    // position: relative;
+    // box-sizing: border-box;
+    // width: 100%;
+    // padding: 0;
+    // margin: 0;
+    // user-select: none;
     display: block;
 }
 
@@ -14,7 +15,7 @@
     font-size: var(--font-body-1-font-size);
     font-weight: var(--font-body-1-font-weight);
     letter-spacing: var(--font-body-1-letter-spacing);
-    line-height: var(--font-body-1-line-height);
+    line-height: var(--line-height-base);
     // border-top: 1px solid var(--color-border-interactive-muted);
     // .parent {
     //     border-left: 1px solid var(--color-border-interactive-muted);
@@ -34,6 +35,9 @@
     // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='33' viewBox='0 0 5 33' fill='none'%3E%3Crect width='5' height='33' fill='%234DACFF'/%3E%3C/svg%3E%0A");
     // background-repeat: no-repeat;
     background-color: var(--color-background-surface-selected);
+    .arrow {
+        color: var(--color-text-interactive-default);
+    }
     // .parent {
     //     &::after {
     //         content: '';
@@ -50,7 +54,8 @@
 :host([aria-level='1']) {
     .parent {
         // font-weight: bold;
-        padding: 0 8px;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
         // &::after {
         //     content: '';
         //     height: 30px;
@@ -64,6 +69,9 @@
         //     margin-right: -5px;
         // }
     }
+    .truncate {
+        max-width: 224px;
+    }
     .tree-node:not(.tree-node--has-children) {
         .parent {
             padding-left: 2rem;
@@ -72,6 +80,9 @@
 }
 
 :host([aria-level='2']) {
+    .truncate {
+        max-width: 200px;
+    }
     .tree-node:not(.tree-node--has-children) {
         .parent {
             padding-left: 3.5rem;
@@ -88,6 +99,9 @@
     .parent {
         padding-left: 3.5rem;
     }
+    .truncate {
+        max-width: 176px;
+    }
 }
 
 :host([aria-level='4']) {
@@ -99,18 +113,40 @@
     .parent {
         padding-left: 5rem;
     }
+    .truncate {
+        max-width: 152px;
+    }
 }
 
 .parent {
-    height: 1.875rem;
-    padding: 0 0.5rem 0 2rem;
+    // height: 1.875rem;
+    padding: 3px 0.5rem 3px 2rem;
     display: flex;
     gap: 4px;
     align-items: center;
-    white-space: nowrap;
-    overflow: hidden;
+    // white-space: nowrap;
+    // overflow: hidden;
     &:hover {
         background: var(--color-background-surface-hover);
+
+        .arrow {
+            color: var(--color-text-interactive-hover);
+        }
+    }
+
+    .arrow {
+        cursor: pointer;
+    }
+
+    .left {
+        display: flex;
+        margin-right: 4px;
+    }
+
+    .truncate {
+        overflow: hidden;
+        white-space: var(--no-wrap);
+        text-overflow: ellipsis;
     }
 
     .right {
@@ -129,17 +165,16 @@
     }
 }
 
-.arrow {
-    cursor: pointer;
-    width: 1.25rem;
-}
+:host([wrap]) {
+    --no-wrap: wrap;
 
-::slotted(rux-status) {
-    margin-right: 0.375rem;
-}
+    .arrow {
+        align-self: baseline;
+    }
 
-::slotted(rux-icon) {
-    margin-right: 0.25rem;
+    .truncate {
+        line-height: var(--line-height-sm);
+    }
 }
 
 // ::slotted(rux-tree-node) {
