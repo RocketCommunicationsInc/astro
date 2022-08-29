@@ -115,7 +115,22 @@
             </rux-tab-panels>
         </div>
 
-        <h2>Small Tabs</h2>
+        <h2>Parts Styling Tabs</h2>
+        <style>
+            #tabs-spacing-styling rux-tab::part(tab) {
+                color: red;
+                border: 1px solid greenyellow;
+            }
+            #tabs-spacing-styling rux-tab::part(selected) {
+                color: black;
+                background: white;
+                border-color: blueviolet;
+            }
+            #tabs-spacing-styling rux-tab::part(tab):hover {
+                background: pink;
+                color: darkblue;
+            }
+        </style>
         <div
             style="
                 display: flex;
@@ -124,12 +139,12 @@
                 padding-left: 20px;
             "
         >
-            <rux-tabs id="tabs-spacing-small" small>
-                <rux-tab id="spacing-small-id-1">Tab small</rux-tab>
-                <rux-tab id="spacing-small-id-2">Tab small</rux-tab>
-                <rux-tab id="spacing-small-id-3">Tab small</rux-tab>
+            <rux-tabs id="tabs-spacing-styling" small>
+                <rux-tab id="spacing-small-id-1">Tab One</rux-tab>
+                <rux-tab id="spacing-small-id-2">Tab Two</rux-tab>
+                <rux-tab id="spacing-small-id-3">Tab Three</rux-tab>
             </rux-tabs>
-            <rux-tab-panels aria-labelledby="tabs-spacing-small">
+            <rux-tab-panels aria-labelledby="tabs-spacing-styling">
                 <rux-tab-panel aria-labelledby="spacing-small-id-1">
                     <div
                         style="
