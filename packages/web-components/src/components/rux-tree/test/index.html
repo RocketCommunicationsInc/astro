@@ -24,17 +24,26 @@
         ></script>
 
         <style>
-            #truncate-width rux-tree-node {
-                --truncate-width: 324px;
+            #truncate-width-test {
+                width: 324px;
+            }
+
+            #truncated-text {
+                width: 250px;
+            }
+
+            #wrapped-text {
+                width: 250px;
+            }
+
+            #right-slot {
+                width: 287px;
             }
         </style>
     </head>
 
     <body>
-        <ftl-belt
-            access-token="figd_RccD09MEcXQHNF5dNnslD1cBqPwA49WDDX5OdrK3"
-            file-id="R1u2WusQRYadHb5TsVrEnT"
-        >
+        <ftl-belt access-token="" file-id="R1u2WusQRYadHb5TsVrEnT">
             <div style="display: flex; gap: 1rem">
                 <ftl-holster name="Without Icon" node="44828:128729">
                     <rux-tree>
@@ -316,7 +325,7 @@
                     </rux-tree>
                 </ftl-holster>
                 <ftl-holster name="Truncated text" node="44828:128779">
-                    <rux-tree>
+                    <rux-tree id="truncated-text">
                         <rux-tree-node>
                             The first item has a long line of text
                             <rux-tree-node slot="node">One</rux-tree-node>
@@ -377,7 +386,7 @@
                     </rux-tree>
                 </ftl-holster>
                 <ftl-holster name="Wrapped text" node="44828:128785">
-                    <rux-tree>
+                    <rux-tree id="wrapped-text">
                         <rux-tree-node wrap="">
                             The first item has a long line of text
                             <rux-tree-node slot="node">One</rux-tree-node>
@@ -438,7 +447,7 @@
                     </rux-tree>
                 </ftl-holster>
                 <ftl-holster name="Right Slot" node="44828:128782">
-                    <rux-tree>
+                    <rux-tree id="right-slot">
                         <rux-tree-node>
                             The first item has a long line of text
                             <rux-icon
@@ -551,19 +560,19 @@
             </div>
         </ftl-belt>
 
-        <div id="truncate-width">
+        <div id="truncate-width-test">
             <rux-tree>
                 <rux-tree-node expanded="">
-                    Level-1 Lorem ipsum dolor sit amet consectetur adipisicing
+                    Level 1 - Lorem ipsum dolor sit amet consectetur adipisicing
                     elit. Reiciendis, consequuntur!
                     <rux-tree-node slot="node" expanded="">
-                        Level-2 Lorem ipsum dolor sit amet consectetur
+                        Level 2 - Lorem ipsum dolor sit amet consectetur
                         adipisicing elit. Reiciendis, consequuntur!
-                        <rux-tree-node slot="node" expanded="">
-                            Level-3 Lorem ipsum dolor sit amet consectetur
+                        <rux-tree-node slot="node" expanded="" wrap="">
+                            Level 3 - Lorem ipsum dolor sit amet consectetur
                             adipisicing elit. Reiciendis, consequuntur!
-                            <rux-tree-node slot="node" expanded="">
-                                Level-4 Lorem ipsum dolor sit amet consectetur
+                            <rux-tree-node slot="node" wrap="">
+                                Level 4 - Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit. Reiciendis, consequuntur!
                             </rux-tree-node>
                         </rux-tree-node>
