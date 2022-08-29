@@ -1,11 +1,18 @@
 :host {
+    // Internal private design tokens
     --no-wrap: nowrap;
+    --padding-offset: 1.5rem;
     // position: relative;
     // box-sizing: border-box;
     // width: 100%;
     // padding: 0;
     // margin: 0;
     // user-select: none;
+
+    /**
+     * @prop --truncate-width: the width of the default slot
+     */
+    --truncate-width: 14rem;
     display: block;
 }
 
@@ -70,7 +77,7 @@
         // }
     }
     .truncate {
-        max-width: 224px;
+        max-width: var(--truncate-width);
     }
     .tree-node:not(.tree-node--has-children) {
         .parent {
@@ -81,7 +88,7 @@
 
 :host([aria-level='2']) {
     .truncate {
-        max-width: 200px;
+        max-width: calc(var(--truncate-width) - var(--padding-offset));
     }
     .tree-node:not(.tree-node--has-children) {
         .parent {
@@ -100,7 +107,9 @@
         padding-left: 3.5rem;
     }
     .truncate {
-        max-width: 176px;
+        max-width: calc(
+            var(--truncate-width) - calc(var(--padding-offset) * 2)
+        );
     }
 }
 
@@ -114,7 +123,9 @@
         padding-left: 5rem;
     }
     .truncate {
-        max-width: 152px;
+        max-width: calc(
+            var(--truncate-width) - calc(var(--padding-offset) * 3)
+        );
     }
 }
 
