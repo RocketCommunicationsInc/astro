@@ -30,6 +30,7 @@ let id = 0
  * @slot left - Renders content to the left of the default
  * @slot right - Renders content to the right of the default
  * @slot node - Renders a child node within the current node
+ * @part text - The area bewteen the left and right slots
  */
 export class RuxTreeNode {
     private componentId = `node-${++id}`
@@ -310,7 +311,7 @@ export class RuxTreeNode {
                                 <slot name="left"></slot>
                             </div>
                         )}
-                        <div class="truncate">
+                        <div part="text">
                             <slot onSlotchange={this._handleSlotChange}></slot>
                         </div>
                         {this._hasRightSlot && (
