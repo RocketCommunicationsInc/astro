@@ -26,6 +26,11 @@ export function dateRange(
     const startDate = new Date(start)
     const endDate = new Date(end)
 
+    // Prevents unnecessary error when setting range to the future
+    if (startDate > endDate) {
+        return []
+    }
+
     if (interval === 'day') {
         const days = differenceInDays(endDate, startDate)
 
