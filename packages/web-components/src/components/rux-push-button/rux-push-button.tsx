@@ -12,6 +12,7 @@ import { renderHiddenInput } from '../../utils/utils'
 /**
  * @part label - the label of rux-push-button
  * @part icon - the optional rux-icon
+ * @part button - same part as label but more clearly defined as the stylable button
  */
 @Component({
     tag: 'rux-push-button',
@@ -135,7 +136,7 @@ export class RuxPushButton {
                         'rux-push-button__button--icon-only': iconOnly,
                     }}
                     htmlFor={this.pushButtonId}
-                    part="label"
+                    part="label button"
                 >
                     {icon ? (
                         <rux-icon

@@ -69,5 +69,34 @@
                 })
             </script>
         </div>
+        <section style="width: 400px; margin: 20px auto">
+            <h2>Parts testing</h2>
+            <style>
+                #ruxPushStyling::part(button) {
+                    color: red;
+                    background: darkblue;
+                    border-color: yellow;
+                }
+                #ruxPushStyling[aria-checked='true']::part(buttonOn) {
+                    color: white;
+                    background: darkgreen;
+                    border-color: lightskyblue;
+                }
+            </style>
+            <rux-push-button
+                name="ruxPushStyling"
+                id="ruxPushStyling"
+                value="true"
+                label="I'm a button!"
+            ></rux-push-button
+            ><br /><br />
+            <rux-push-button
+                name="ruxPushStyling"
+                id="ruxPushStyling"
+                value="true"
+                label="I'm a pushed button!"
+                checked
+            ></rux-push-button>
+        </section>
     </body>
 </html>
