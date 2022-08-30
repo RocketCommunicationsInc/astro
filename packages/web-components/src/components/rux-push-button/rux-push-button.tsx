@@ -15,7 +15,7 @@ import { renderHiddenInput } from '../../utils/utils'
  * @part buttonOff - for the 'unchecked' status of label
  * @part buttonOn - for the 'checked' state of the label
  * @part iconOff - for the 'unchecked' status of icon
- * @part iconOn - for the 'checked' state of the label
+ * @part iconOn - for the 'checked' state of the icon
  */
 @Component({
     tag: 'rux-push-button',
