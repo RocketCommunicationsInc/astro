@@ -37,20 +37,20 @@ test.describe('Dialog', () => {
         const el = page.locator('rux-dialog')
         const btn = page.locator('#toggle')
         await btn.click()
+        //! The toHaveAttribute way is better but is broken right now. Should be fixed by Playwright soon. See: https://github.com/microsoft/playwright/pull/16767
+        // await expect(el).toHaveAttribute('open', '')
         await el
             .evaluate((e) => e.hasAttribute('open'))
-            .then((e) => {
-                expect(e).toBeTruthy()
-            })
+            .then((e) => expect(e).toBeTruthy())
         // click off to close dialog
         await page.mouse.click(10, 10)
+        //? This timeout is helping the mouse click complete before evaluating hasAttribute. Probably won't need this when toHaveAttribute is fixed.
+        await page.waitForTimeout(100)
+        //! Uncomment when toHaveAttribute is fixed
+        // await expect(el).not.toHaveAttribute('open', '')
         await el
-            .evaluate((e) => {
-                e.hasAttribute('open')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
+            .evaluate((e) => e.hasAttribute('open'))
+            .then((e) => expect(e).toBeFalsy())
     })
     test('it closes the modal on deny click', async ({ page }) => {
         await page.setContent(`
@@ -109,7 +109,6 @@ test.describe('Dialog', () => {
         const el = page.locator('rux-dialog')
         const denyBtn = el.locator('rux-button').first()
         page.on('console', (msg) => {
-            console.log('in page on!')
             expect(msg.text()).toBe('false')
         })
         await Promise.all([page.waitForEvent('console'), denyBtn.click()])
@@ -148,7 +147,6 @@ test.describe('Dialog', () => {
         )
 
         page.on('console', (msg) => {
-            console.log('inside the on')
             expect(msg.text()).toBe('true')
         })
         await Promise.all([
@@ -170,7 +168,6 @@ test.describe('Dialog', () => {
     `
         )
         page.on('console', (msg) => {
-            console.log('inside the on')
             expect(msg.text()).toBe('false')
         })
         await Promise.all([
@@ -181,5 +178,7 @@ test.describe('Dialog', () => {
     /*
         Need to test: 
         - With slots? Not sure if that's acutally beneficial. 
+        - Better way to test events rather than console? 
+        - current e2e has tests for dialog props changing - I don't think these are helpful. Thoughts? 
     */
 })
