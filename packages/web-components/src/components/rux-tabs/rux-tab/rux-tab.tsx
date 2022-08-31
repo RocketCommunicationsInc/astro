@@ -1,5 +1,11 @@
 import { Component, Host, h, Prop, Element } from '@stencil/core'
 
+/**
+ *
+ * @part container - individual tabs
+ *
+ */
+
 @Component({
     tag: 'rux-tab',
     styleUrl: 'rux-tab.scss',
@@ -42,6 +48,7 @@ export class RuxTab {
         return (
             <Host onClick={this._clickHandler}>
                 <div
+                    part="container"
                     class={{
                         'rux-tab': true,
                         'rux-tab--selected': this.selected,
