@@ -1,9 +1,9 @@
 // Dark/Default Theme Variables Mixin
 // This a mixin to allow for variables to be included in the shadow dom of a component and overwrite global thmese when necessary.
-@use './tokens/colors-dark' as variables;
+// @use './tokens/colors-dark' as variables;
 :root {
     // Sets default theme variables for component library
-    @include variables.root-variables;
+    // @include variables.root-variables;
     --disabled-opacity: 0.4;
     --radius-base: 3px;
 

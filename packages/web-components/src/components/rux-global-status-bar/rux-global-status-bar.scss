@@ -1,4 +1,5 @@
-@use '../../global/tokens/colors-dark' as variables;
+@use '../../../node_modules/@astrouxds/design-tokens/dist/scss/base.system.scss' as system;
+@use 'sass:meta';
 
 :host {
     display: block;
@@ -147,5 +148,7 @@ slot[name='right-side'] > rux-monitoring-icon,
 
 //Preserves dark theme defaults for slotted elements in GSB since content must always be rendered in dark theme.
 ::slotted(*) {
-    @include variables.root-variables;
+    @each $name, $value in meta.module-variables(system) {
+        --#{$name}: #{$value};
+    }
 }
