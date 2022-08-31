@@ -6,7 +6,7 @@ test.describe('Icon', () => {
 
     test('it renders', async ({ page }) => {
         await page.setContent(`
-        <rux-icon></rux-icon>
+        <rux-icon icon="altitude"></rux-icon>
     `)
         const el = page.locator('rux-icon').first()
         await expect(el).toBeVisible()

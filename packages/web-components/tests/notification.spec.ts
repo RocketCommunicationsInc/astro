@@ -21,20 +21,32 @@ test.describe('Notification', () => {
         ></rux-notification>
         `)
 
-        const el = page.locator('rux-notification').first()
-        const icon = el.locator('rux-icon').first()
+        const el = page.locator('rux-notification')
+        const icon = el.locator('rux-icon')
 
         await icon.click()
-
-        //This works, except when you run npx playwright test, then it fails on icon.click()
-        await expect(el).not.toHaveClass(
-            'rux-notification-banner-0ba5409c--open'
-        )
-
-        //await expect(el).not.toHaveAttribute('open', '') <-- This does not work
+        await page.waitForTimeout(100)
+        await el
+            .evaluate((e) => e.hasAttribute('open'))
+            .then((e) => expect(e).toBeFalsy())
+    })
+    test('closes when closeAfter is up', async ({ page }) => {
+        await page.setContent(`
+        <rux-notification
+            open
+            close-after="2000"
+            message="testing time"
+        ></rux-notification>
+        `)
+        const el = page.locator('rux-notification')
+        await page.waitForTimeout(2100)
+        await el
+            .evaluate((e) => e.hasAttribute('open'))
+            .then((e) => expect(e).toBeFalsy())
     })
 })
 /*
     Need to test: 
-    
+        small prop - could probably test the size of the notification 
+        
 */
