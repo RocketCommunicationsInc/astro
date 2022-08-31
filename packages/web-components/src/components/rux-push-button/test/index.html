@@ -72,20 +72,20 @@
         <section style="width: 400px; margin: 20px auto">
             <h2>Parts testing</h2>
             <style>
-                #ruxPushStyling::part(buttonOff) {
+                #ruxPushStyling::part(container) {
                     color: red;
                     background: darkblue;
                     border-color: yellow;
                 }
-                #ruxPushStyling::part(buttonOn) {
+                #ruxPushStyling[checked]::part(container) {
                     color: white;
                     background: darkgreen;
                     border-color: lightskyblue;
                 }
-                #ruxPushStyling::part(iconOff) {
+                #ruxPushStyling::part(icon) {
                     color: red;
                 }
-                #ruxPushStyling::part(iconOn) {
+                #ruxPushStyling[checked]::part(icon) {
                     color: white;
                 }
             </style>
@@ -100,6 +100,7 @@
                 name="ruxPushStyling"
                 id="ruxPushStyling"
                 value="true"
+                icon="warning"
                 label="I'm a pushed button!"
                 checked
             ></rux-push-button

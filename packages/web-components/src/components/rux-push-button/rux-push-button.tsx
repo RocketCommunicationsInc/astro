@@ -12,10 +12,7 @@ import { renderHiddenInput } from '../../utils/utils'
 /**
  * @part label - the label of rux-push-button
  * @part icon - the optional rux-icon
- * @part buttonOff - for the 'unchecked' status of label
- * @part buttonOn - for the 'checked' state of the label
- * @part iconOff - for the 'unchecked' status of icon
- * @part iconOn - for the 'checked' state of the icon
+ * @part container - for styling the label
  */
 @Component({
     tag: 'rux-push-button',
@@ -132,7 +129,7 @@ export class RuxPushButton {
                     value={value}
                 />
                 <label
-                    part={checked ? 'label buttonOn' : 'label buttonOff'}
+                    part="label container"
                     class={{
                         'rux-push-button__button': true,
                         'rux-push-button__button--small': size === 'small',
@@ -145,7 +142,6 @@ export class RuxPushButton {
                         <rux-icon
                             size="extra-small"
                             exportparts="icon"
-                            part={checked ? 'iconOn' : 'iconOff'}
                             icon={icon}
                         ></rux-icon>
                     ) : null}
