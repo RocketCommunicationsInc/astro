@@ -65,10 +65,10 @@ label {
     display: inline-block;
     margin-bottom: 10px;
     color: var(--color-text-primary);
-    font-family: var(--font-body-1-font-family);
-    font-size: var(--font-body-1-font-size);
-    font-weight: var(--font-body-1-font-weight);
-    letter-spacing: var(--font-body-1-letter-spacing);
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    font-weight: var(--font-control-body-1-font-weight);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
     .rux-label__asterisk {
         margin-left: 4px;
     }
@@ -107,10 +107,10 @@ label {
     border: 1px solid var(--color-border-interactive-muted);
     border-radius: var(--radius-base);
     color: var(--color-background-interactive-default);
-    font-family: var(--font-body-1-font-family);
-    font-size: var(--font-body-1-font-size);
-    font-weight: var(--font-body-1-font-weight);
-    letter-spacing: var(--font-body-1-letter-spacing);
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    font-weight: var(--font-control-body-1-font-weight);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
     user-select: none;
 
     &--small {

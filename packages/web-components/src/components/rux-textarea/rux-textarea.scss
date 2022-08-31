@@ -86,10 +86,10 @@
 }
 
 .rux-textarea-label {
-    font-family: var(--font-body-1-font-family);
-    font-size: var(--font-body-1-font-size);
-    font-weight: var(--font-body-1-font-weight);
-    letter-spacing: var(--font-body-1-letter-spacing);
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    font-weight: var(--font-control-body-1-font-weight);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
     margin-bottom: var(--spacing-input-label-top);
     &__asterisk {
         margin-left: var(--spacing-1);

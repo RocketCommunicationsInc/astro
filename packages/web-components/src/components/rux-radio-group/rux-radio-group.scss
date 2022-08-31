@@ -30,12 +30,12 @@
 
 .rux-label {
     color: var(--color-text-primary);
-    font-family: var(--font-body-1-font-family);
-    font-size: var(--font-body-1-font-size);
-    font-weight: var(--font-body-1-font-weight);
-    letter-spacing: var(--font-body-1-letter-spacing);
-    line-height: var(--font-body-1-line-height);
-    margin-bottom: var(--spacing-input-label-top);
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    font-weight: var(--font-control-body-1-font-weight);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
+    line-height: var(--font-control-body-1-line-height);
+    margin-bottom: var(--spacing-2);
     &__asterisk {
         margin-left: var(--spacing-1);
     }
