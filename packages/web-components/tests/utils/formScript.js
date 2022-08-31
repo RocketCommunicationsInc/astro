@@ -6,6 +6,7 @@ for (const form of forms) {
         event.preventDefault()
         // trigger formdata event
         new FormData(form)
+        console.log(form)
     })
 
     form.addEventListener('formdata', logFormData)
