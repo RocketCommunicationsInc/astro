@@ -99,7 +99,7 @@ export class RuxButton {
                 >
                     {icon ? (
                         <rux-icon
-                            size="extra-small"
+                            size="auto"
                             icon={icon}
                             exportparts="icon"
                             color={secondary ? 'primary' : 'dark'}

@@ -11,19 +11,19 @@
     pointer-events: none;
 }
 .rux-button {
+    border: none;
     display: flex;
     position: relative;
-    margin: 0;
+    margin: var(--spacing-0);
     width: inherit;
-    padding: 0 1rem;
-    height: 2.125rem;
-    min-width: 2.25rem;
+    padding: var(--spacing-2) var(--spacing-4);
     border-radius: var(--radius-base);
     color: var(--color-text-inverse);
-    font-family: var(--font-body-1-font-family);
-    font-size: var(--font-body-1-font-size);
-    font-weight: var(--font-body-1-font-weight);
-    letter-spacing: var(--font-body-1-letter-spacing);
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    font-weight: var(--font-control-body-1-font-weight);
+    line-height: var(--font-control-body-1-line-height);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -33,9 +33,9 @@
 
     rux-icon,
     ::slotted(rux-icon) {
-        height: 1rem;
-        width: 1rem;
-        margin-right: 0.625rem;
+        height: calc(var(--spacing-4) + var(--spacing-1)); //20
+        width: calc(var(--spacing-4) + var(--spacing-1)); //20
+        margin-right: var(--spacing-1); //4
         color: var(--color-text-inverse);
     }
 
@@ -54,7 +54,6 @@
     }
 
     &--default {
-        border: 1px solid transparent;
         background-color: var(--color-background-interactive-default);
         &:hover:not([disabled]) {
             border-color: transparent;
@@ -69,12 +68,14 @@
     &--secondary {
         color: var(--color-background-interactive-default);
         background-color: transparent;
-        border: 1px solid var(--color-background-interactive-default);
+        //use box-shadow instead of border
+        box-shadow: var(--color-border-interactive-default) 0 0 0 1px inset;
 
         &:hover:not([disabled]) {
             color: var(--color-background-interactive-hover);
             background-color: transparent;
-            border-color: var(--color-background-interactive-hover);
+            box-shadow: var(--color-background-interactive-hover) 0 0 0 1px
+                inset;
             rux-icon,
             ::slotted(rux-icon) {
                 color: var(--color-background-interactive-hover);
@@ -82,7 +83,8 @@
         }
 
         &:active:not([disabled]) {
-            border-color: var(--color-background-interactive-default);
+            box-shadow: var(--color-background-interactive-default) 0 0 0 1px
+                inset;
             background-color: transparent;
             color: var(--color-background-interactive-default);
             rux-icon,
@@ -97,7 +99,7 @@
     }
     &--borderless {
         color: var(--color-background-interactive-default);
-        border: none;
+        box-shadow: none;
         background: none;
         &:hover:not([disabled]) {
             color: var(--color-background-interactive-hover);
@@ -121,25 +123,26 @@
     }
 
     &--small {
-        height: 1.625rem;
-        padding: 0 1rem;
-        line-height: 1;
+        padding: var(--spacing-1) var(--spacing-4);
+        &.rux-button--icon-only {
+            padding: var(--spacing-1);
+        }
     }
 
     &--large {
-        height: 2.875rem;
-        min-width: 3rem;
-        padding: 0 1rem;
+        padding: var(--spacing-3) var(--spacing-4);
+        &.rux-button--icon-only {
+            padding: var(--spacing-3);
+        }
     }
 
     &--icon-only {
         font-size: 0;
-        width: 3rem;
+        padding: var(--spacing-2);
     }
 }
 
 .rux-button--icon-only ::slotted(rux-icon),
 .rux-button--icon-only rux-icon {
-    margin-left: -0.625rem;
-    margin-right: -0.625rem;
+    margin: 0;
 }
