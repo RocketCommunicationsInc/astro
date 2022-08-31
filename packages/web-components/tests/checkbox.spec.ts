@@ -23,6 +23,9 @@ test.describe('Checkbox', () => {
 
         await expect(el).toBeVisible()
         await expect(el).toHaveAttribute('error-text', 'Error')
+        //! When haveAttr fix is released, replace with below comment. Right now, this will always pass.
+        // await expect(el).toHaveAttribute('checked')
+
         await expect(el).toHaveAttribute('checked', '')
     })
 })
@@ -80,9 +83,7 @@ test.describe('Checkbox in a form', () => {
             path: './tests/utils/formScript.js',
         })
     })
-    test('submits the correct select value when using a form', async ({
-        page,
-    }) => {
+    test('submits the correct value when using a form', async ({ page }) => {
         // Arrange
         const el = await page.locator('rux-checkbox').first()
         const submitBtnEl = await page.locator('button').first()
