@@ -43,7 +43,13 @@ or
 
 ```css
 @import "node_modules/@astrouxds/design-tokens/dist/css/base.reference.css";
+```
+
+```css
 @import "node_modules/@astrouxds/design-tokens/dist/css/base.system.css";
+```
+
+```css
 @import "node_modules/@astrouxds/design-tokens/dist/css/base.component.css";
 ```
 
@@ -67,7 +73,13 @@ A few utility classes for applying Astro typography.
 
 ```css
 @import "node_modules/@astrouxds/design-tokens/dist/scss/base.reference.scss";
+```
+
+```css
 @import "node_modules/@astrouxds/design-tokens/dist/scss/base.system.scss";
+```
+
+```css
 @import "node_modules/@astrouxds/design-tokens/dist/scss/base.component.scss";
 ```
 
@@ -75,6 +87,12 @@ A few utility classes for applying Astro typography.
 
 ```css
 @import "node_modules/@astrouxds/design-tokens/dist/scss-map-flat/base.reference.scss";
+```
+
+```css
 @import "node_modules/@astrouxds/design-tokens/dist/scss-map-flat/base.system.scss";
+```
+
+```css
 @import "node_modules/@astrouxds/design-tokens/dist/scss-map-flat/base.component.scss";
 ```
