@@ -2,8 +2,7 @@ import { Component, Host, h, Prop, Element } from '@stencil/core'
 
 /**
  *
- * @part tab - individual tabs
- * @part selected - the selected tab
+ * @part container - individual tabs
  *
  */
 
@@ -49,7 +48,7 @@ export class RuxTab {
         return (
             <Host onClick={this._clickHandler}>
                 <div
-                    part={this.selected ? 'tab selected' : 'tab'}
+                    part="container"
                     class={{
                         'rux-tab': true,
                         'rux-tab--selected': this.selected,

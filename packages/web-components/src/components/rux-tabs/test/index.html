@@ -117,16 +117,16 @@
 
         <h2>Parts Styling Tabs</h2>
         <style>
-            #tabs-spacing-styling rux-tab::part(tab) {
+            #tabs-spacing-styling rux-tab::part(container) {
                 color: red;
                 border: 1px solid greenyellow;
             }
-            #tabs-spacing-styling rux-tab::part(selected) {
+            #tabs-spacing-styling rux-tab[selected]::part(container) {
                 color: black;
                 background: white;
                 border-color: blueviolet;
             }
-            #tabs-spacing-styling rux-tab::part(tab):hover {
+            #tabs-spacing-styling rux-tab::part(container):hover {
                 background: pink;
                 color: darkblue;
             }
