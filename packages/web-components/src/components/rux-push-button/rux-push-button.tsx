@@ -140,7 +140,7 @@ export class RuxPushButton {
                 >
                     {icon ? (
                         <rux-icon
-                            size="extra-small"
+                            size="auto"
                             exportparts="icon"
                             icon={icon}
                         ></rux-icon>
