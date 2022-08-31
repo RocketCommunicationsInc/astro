@@ -9,7 +9,7 @@ test.describe('Global status bar', () => {
         <rux-global-status-bar></rux-global-status-bar>
         `)
         const el = page.locator('rux-global-status-bar')
-        expect(el).toHaveClass('hydrated')
+        await expect(el).toHaveClass('hydrated')
     })
     /**
      * Need to test:
