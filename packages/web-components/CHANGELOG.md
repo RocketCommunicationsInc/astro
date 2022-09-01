@@ -1,5 +1,23 @@
 # @astrouxds/astro-web-components
 
+## 6.13.0
+
+### Minor Changes
+
+#### Timeline
+
+-   support for partial time regions
+
+#### Dialog
+
+-   Added better keyboard support for tabbing between confirm and deny buttons, and triggers deny on an escape key press.
+
+### Patch Changes
+
+#### Progress
+
+-   Visual fix for Firefox to properly align progress indicator
+
 ## 6.12.1
 
 ### Patch Changes
