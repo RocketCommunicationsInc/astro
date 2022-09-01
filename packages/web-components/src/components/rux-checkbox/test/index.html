@@ -17,26 +17,52 @@
         <script nomodule src="/build/astro-web-components.esm.js"></script>
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
-        <!-- <script
+        <script
             type="module"
             src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"
-        ></script> -->
+        ></script>
     </head>
 
     <body class="dark-theme">
-        <!-- <ftl-belt access-token="figd_9S33KsQIz3Kpi6WvFmR0XmeDhfxbCzwm5RYLt4mv" file-id="oj8NRemkyC8dBRHHpo95f3">
-            <ftl-holster name="Test 1 Name" node="25916:114906">
-                <form id="form" style="width: 100%">
-                    <rux-checkbox
-                        id="ruxCheckbox"
-                        name="ruxCheckbox"
-                        value="foo"
-                    >
-                        Checkbox
-                    </rux-checkbox>
-                </form>
-            </ftl-holster>
-          </ftl-belt> -->
+        <div
+            style="
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                justify-content: center;
+            "
+        >
+            <ftl-belt access-token="" file-id="oj8NRemkyC8dBRHHpo95f3">
+                <ftl-holster name="Checkbox" node="25916:114906">
+                    <form id="form" style="width: 100%">
+                        <rux-checkbox
+                            id="ruxCheckbox"
+                            name="ruxCheckbox"
+                            value="foo"
+                        >
+                            Checkbox
+                        </rux-checkbox>
+                    </form>
+                </ftl-holster>
+            </ftl-belt>
+
+            <form>
+                <rux-checkbox>Label Prop</rux-checkbox>
+                <rux-checkbox>Label Slot</rux-checkbox>
+                <rux-checkbox disabled>Label Slot Disabled</rux-checkbox>
+                <rux-checkbox checked>Checked</rux-checkbox>
+                <rux-checkbox checked disabled>Checked Disabled</rux-checkbox>
+                <rux-checkbox indeterminate>Indeterminate</rux-checkbox>
+                <rux-checkbox indeterminate disabled>
+                    Indeterminate Disabled
+                </rux-checkbox>
+                <div style="display: flex; align-items: center">
+                    <rux-checkbox></rux-checkbox>
+                    no label after
+                </div>
+            </form>
+        </div>
+
         <div style="padding: 10%; display: flex; justify-content: center">
             <div style="width: 60%">
                 <form id="form" style="width: 100%">
