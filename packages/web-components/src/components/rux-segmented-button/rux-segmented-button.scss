@@ -58,7 +58,8 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        width: auto;
+        box-sizing: border-box;
+        width: 100%;
         margin: var(--spacing-0);
         border: 1px solid var(--color-background-interactive-default);
         color: var(--color-background-interactive-default);
