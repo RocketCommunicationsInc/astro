@@ -9,7 +9,7 @@
 .rux-button-group {
     display: flex;
     ::slotted(rux-button:not(:last-child)) {
-        margin-right: 0.625rem;
+        margin-right: var(--spacing-2);
     }
 
     &--left {
