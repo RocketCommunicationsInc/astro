@@ -27,26 +27,31 @@ let id = 0
 
 /**
  * @slot (default) - The parent node content
- * @slot left - Renders content to the left of the default
- * @slot right - Renders content to the right of the default
+ * @slot prefix - Renders content before the default slot
+ * @slot suffix - Renders content after the default slot
  * @slot node - Renders a child node within the current node
- * @part text - The area bewteen the left and right slots
+ * @part text - The area bewteen the prefix and suffix slots
  */
 export class RuxTreeNode {
     private componentId = `node-${++id}`
     private iconName = closedIcon
     @Element() el!: HTMLRuxTreeNodeElement
     @State() children: Array<HTMLRuxTreeNodeElement> = []
-    @State() addClass: boolean = false
 
     /**
      * Sets the expanded state
      */
     @Prop({ mutable: true, reflect: true }) expanded = false
+
     /**
      * Sets the selected state
      */
     @Prop({ mutable: true, reflect: true }) selected = false
+
+    /**
+     * Sets the text's part white-space to wrap
+     */
+    @Prop({ mutable: true, reflect: true }) wrap = false
 
     /**
      * Emit when user selects a tree node
@@ -106,22 +111,6 @@ export class RuxTreeNode {
         }
     }
 
-    @Listen('mouseenter', { passive: true })
-    handleHover(ev: MouseEvent) {
-        if (ev.target === ev.currentTarget) {
-            this.addClass = true
-        } else this.addClass = false
-        this._swapToLightStatus()
-    }
-
-    @Listen('mouseout', { passive: true })
-    handleLeave(ev: MouseEvent) {
-        if (ev.target === ev.currentTarget) {
-            this.addClass = false
-        }
-        this._swapToLightStatus()
-    }
-
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
     }
@@ -130,16 +119,16 @@ export class RuxTreeNode {
         this._handleSlotChange()
     }
 
-    get _hasChildren() {
+    get hasChildren() {
         return this.children.length > 0
     }
 
-    get _hasLeftSlot() {
-        return hasSlot(this.el, 'left')
+    get hasPrefix() {
+        return hasSlot(this.el, 'prefix')
     }
 
-    get _hasRightSlot() {
-        return hasSlot(this.el, 'right')
+    get hasSuffix() {
+        return hasSlot(this.el, 'suffix')
     }
 
     /**
@@ -178,16 +167,6 @@ export class RuxTreeNode {
         if (this.expanded) this.iconName = expandedIcon
     }
 
-    private _swapToLightStatus() {
-        const slottedStatus = this.el.querySelector('rux-status')
-        // have the specifc status slotted to this rux-tree-node
-        if (this.addClass) {
-            slottedStatus?.classList.add('light-theme')
-        } else {
-            slottedStatus?.classList.remove('light-theme')
-        }
-    }
-
     /**
      * Manually set the aria-level attribute.
      * Tree is responsible for setting the root node levels.
@@ -215,7 +194,7 @@ export class RuxTreeNode {
     }
 
     private _expandNextNode() {
-        if (!this.expanded && this._hasChildren) {
+        if (!this.expanded && this.hasChildren) {
             this.setExpanded(true)
         }
     }
@@ -277,47 +256,55 @@ export class RuxTreeNode {
     }
 
     render() {
-        const attrs = this._hasChildren && { role: 'group' }
+        const {
+            componentId,
+            expanded,
+            hasChildren,
+            hasPrefix,
+            hasSuffix,
+            iconName,
+            selected,
+        } = this
+        const attrs = hasChildren && { role: 'group' }
 
         return (
             <Host
                 role="treeitem"
-                aria-expanded={this.expanded ? 'true' : 'false'}
-                aria-selected={this.selected ? 'true' : 'false'}
+                aria-expanded={expanded ? 'true' : 'false'}
+                aria-selected={selected ? 'true' : 'false'}
                 onClick={(event: MouseEvent) =>
                     this._handleTreeNodeClick(event)
                 }
             >
                 <div
-                    id={this.componentId}
+                    id={componentId}
                     class={{
                         'tree-node': true,
-                        'tree-node--expanded': this.expanded,
-                        'tree-node--has-children': this._hasChildren,
-                        'tree-node--selected': this.selected,
+                        'tree-node--expanded': expanded,
+                        'tree-node--has-children': hasChildren,
                     }}
                 >
                     <div class="parent" tabindex="0">
-                        {this._hasChildren && (
+                        {hasChildren && (
                             <rux-icon
                                 class="arrow"
                                 onClick={this._handleArrowClick.bind(this)}
                                 size="1.25rem"
-                                icon={this.iconName}
+                                icon={iconName}
                             />
                         )}
-                        {this._hasLeftSlot && (
-                            <div class="left">
-                                <slot name="left"></slot>
-                            </div>
+                        {hasPrefix && (
+                            <span class="prefix">
+                                <slot name="prefix"></slot>
+                            </span>
                         )}
-                        <div part="text">
+                        <span part="text">
                             <slot onSlotchange={this._handleSlotChange}></slot>
-                        </div>
-                        {this._hasRightSlot && (
-                            <div class="right">
-                                <slot name="right"></slot>
-                            </div>
+                        </span>
+                        {hasSuffix && (
+                            <span class="suffix">
+                                <slot name="suffix"></slot>
+                            </span>
                         )}
                     </div>
                     <div {...attrs} class="children">
