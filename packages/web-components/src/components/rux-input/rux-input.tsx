@@ -24,6 +24,7 @@ let id = 0
  * @part help-text - The help text element
  * @part icon - The icon displayed when toggle-password prop is set
  * @part input - The input element
+ * @part input-field - the styled wrapper around the input element
  * @part label - The input label when `label` prop is set
  * @part required - The asterisk when required is true
  * @part prefix - The container of the prefix slot
@@ -297,6 +298,7 @@ export class RuxInput implements FormFieldInterface {
                     ) : null}
 
                     <div
+                        part="input-field"
                         class={{
                             'rux-input': true,
                             'rux-input--focused': this.hasFocus,
