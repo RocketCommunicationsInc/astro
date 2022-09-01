@@ -31,15 +31,25 @@
             }
             #styleTesting::part(input-field){
                 color: green;
-                background-color: white;
+                background-color: lightgrey;
+                box-shadow: 0 0 0 1px yellow;
             }
             #styleTesting::part(input-field):focus-within{
                 box-shadow: 0 0 0 1px orange;
-                background: lightgrey;
+                background: #fff;
+            }
+            #styleTesting::part(icon){
+                color: pink;
+            }
+            #styleTesting rux-icon{
+                color:black;
             }
         </style>
         <div style="width: 500px; margin: 4rem auto;">
-            <rux-input id="styleTesting" name="styleTesting" label="Style Testing" invalid></rux-input>
+            <rux-input id="styleTesting" name="styleTesting" label="Style Testing" type="password">
+                <rux-icon slot="prefix" size="20px" icon="star"></rux-icon>
+                <rux-icon slot="suffix" size="20px" icon="star"></rux-icon>
+            </rux-input>
         </div> -->
         <!-- <h2>Figma spacing test</h2>
         <ftl-belt access-token="" file-id="">
