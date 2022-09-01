@@ -22151,13 +22151,13 @@ export class RuxTextarea {
 export declare interface RuxTimeRegion extends Components.RuxTimeRegion {}
 
 @ProxyCmp({
-  inputs: ['end', 'hideTimestamp', 'selected', 'start', 'status']
+  inputs: ['end', 'hideTimestamp', 'partial', 'selected', 'start', 'status']
 })
 @Component({
   selector: 'rux-time-region',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['end', 'hideTimestamp', 'selected', 'start', 'status']
+  inputs: ['end', 'hideTimestamp', 'partial', 'selected', 'start', 'status']
 })
 export class RuxTimeRegion {
   protected el: HTMLElement;
