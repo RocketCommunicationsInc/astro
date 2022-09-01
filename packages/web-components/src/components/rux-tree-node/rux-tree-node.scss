@@ -1,6 +1,10 @@
 :host {
-    --no-wrap: nowrap;
     display: block;
+
+    /**
+     * @prop --white-space: The text's part white-space
+     */
+    --white-space: nowrap;
 }
 
 .tree-node {
@@ -85,14 +89,15 @@
 
     .arrow {
         cursor: pointer;
+        min-width: calc(var(--spacing-4) + var(--spacing-1));
     }
 
-    .left {
+    .prefix {
         display: flex;
         margin-right: var(--spacing-1);
     }
 
-    .right {
+    .suffix {
         margin-left: auto;
         display: flex;
     }
@@ -110,12 +115,12 @@
 
 :host::part(text) {
     overflow: hidden;
-    white-space: var(--no-wrap);
+    white-space: var(--white-space);
     text-overflow: ellipsis;
 }
 
 :host([wrap]) {
-    --no-wrap: wrap;
+    --white-space: wrap;
 
     &::part(text) {
         line-height: var(--line-height-sm);
