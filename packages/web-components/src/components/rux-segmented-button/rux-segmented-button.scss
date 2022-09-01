@@ -26,24 +26,17 @@
 .rux-segmented-button {
     display: inline-flex;
     // Default is small for 6.0 - will update default to be medium in 7.0
-    height: 1.625rem;
-    padding: 0;
-    margin: 0;
+    padding: var(--spacing-0);
+    margin: var(--spacing-0);
     list-style: none;
     border-radius: var(--radius-base);
     background-color: var(--color-background-base-default);
-    &--large {
-        height: 2.875rem;
-    }
-    &--medium {
-        height: 2.125rem;
-    }
 }
 
 .rux-segmented-button__segment {
     width: auto;
-    margin: 0;
-    padding: 0;
+    margin: var(--spacing-0);
+    padding: var(--spacing-0);
 
     //omit the right border on next sibling to avoid double borders
     + .rux-segmented-button__segment {
@@ -62,20 +55,19 @@
     }
 
     label {
-        display: flex;
+        display: inline-flex;
         justify-content: center;
         align-items: center;
         width: auto;
-        height: 1.5625rem;
-        margin: 0;
-        padding: 0 0.75rem;
+        margin: var(--spacing-0);
         border: 1px solid var(--color-background-interactive-default);
         color: var(--color-background-interactive-default);
         background-color: var(--color-background-base-default);
-        font-family: var(--font-body-1-font-family);
-        font-size: var(--font-body-1-font-size);
-        letter-spacing: var(--font-body-1-letter-spacing);
-        font-weight: var(--font-body-1-font-weight);
+        font-family: var(--font-control-body-1-font-family);
+        font-size: var(--font-control-body-1-font-size);
+        letter-spacing: var(--font-control-body-1-letter-spacing);
+        font-weight: var(--font-control-body-1-font-weight);
+        line-height: var(--font-control-body-1-line-height);
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
@@ -91,16 +83,16 @@
 
     .rux-segmented-button-label {
         // Defaults to small in 6.0 - will default to medium in 7
-        height: 1.625rem;
-        padding: 0.219rem 1rem; // 16px
+        height: calc(var(--spacing-6) + var(--spacing-1)); //28px
+        padding: var(--spacing-1) var(--spacing-4); // 4px 16px for small
 
         &--large {
-            height: 2.875rem;
-            padding: 0.844rem 1rem; //13.5px 16px
+            height: calc(var(--spacing-10) + var(--spacing-1)); //44px
+            padding: var(--spacing-3) var(--spacing-4); //12px 16px
         }
         &--medium {
-            height: 2.125rem;
-            padding: 0.469rem 1rem; //7.5px 16px
+            height: calc(var(--spacing-8) + var(--spacing-1)); //36px
+            padding: var(--spacing-2) var(--spacing-4); //8px 16px
         }
     }
 
