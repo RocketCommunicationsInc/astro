@@ -33,7 +33,7 @@ export class RuxSegmentedButton {
     /**
      * Changes size of segmented button from small to medium or large.
      */
-    @Prop({ reflect: true }) size?: 'small' | 'medium' | 'large'
+    @Prop({ reflect: true }) size: 'small' | 'medium' | 'large' = 'medium'
 
     /**
      * Sets the disabled attribute.
@@ -114,6 +114,7 @@ export class RuxSegmentedButton {
             <ul
                 class={{
                     'rux-segmented-button': true,
+                    'rux-segmented-button--small': this.size === 'small',
                     'rux-segmented-button--medium': this.size === 'medium',
                     'rux-segmented-button--large': this.size === 'large',
                 }}
@@ -135,6 +136,8 @@ export class RuxSegmentedButton {
                             part="label"
                             class={{
                                 'rux-segmented-button-label': true,
+                                'rux-segmented-button-label--small':
+                                    this.size === 'small',
                                 'rux-segmented-button-label--medium':
                                     this.size === 'medium',
                                 'rux-segmented-button-label--large':
