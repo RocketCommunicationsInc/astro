@@ -82,15 +82,13 @@
     }
 
     .rux-segmented-button-label {
+        // Defaults to medium
+        height: calc(var(--spacing-8) + var(--spacing-1)); //36px
+        padding: var(--spacing-2) var(--spacing-4); //8px 16px
+
         &--small {
             height: calc(var(--spacing-6) + var(--spacing-1)); //28px
             padding: var(--spacing-1) var(--spacing-4); // 4px 16px for small
-        }
-
-        // Defaults to medium
-        &--medium {
-            height: calc(var(--spacing-8) + var(--spacing-1)); //36px
-            padding: var(--spacing-2) var(--spacing-4); //8px 16px
         }
 
         &--large {
