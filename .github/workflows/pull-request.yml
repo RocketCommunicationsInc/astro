@@ -22,7 +22,6 @@ jobs:
         with:
           path: |
             ./packages/web-components/node_modules
-            ~/.cache/Cypress
           key: node-modules-${{ hashFiles('package-lock.json') }}
       - run: npm run web-comps.install
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
@@ -46,20 +45,3 @@ jobs:
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@v2
-      - name: Cache NPM and Cypress 📦
-        uses: actions/cache@v2
-        with:
-          path: |
-            ./packages/web-components/node_modules
-            ~/.cache/Cypress
-          key: node-modules-${{ hashFiles('package-lock.json') }}
-      - run: npm i cypress@8.0.0
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
-      - name: Cypress tests 🧪
-        uses: cypress-io/github-action@v4
-        with:
-          working-directory: ./packages/web-components
-          install: false
-          start: npm run start.stencil
-          wait-on: "http://localhost:3333"
-          wait-on-timeout: "110"
