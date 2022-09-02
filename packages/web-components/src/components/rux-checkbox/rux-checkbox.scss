@@ -23,7 +23,6 @@
     --checkbox-hover-border-color: var(--color-background-interactive-hover);
 }
 
-.hidden,
 :host([hidden]) {
     display: none;
 }
@@ -85,12 +84,6 @@
                 background-color: var(--checkbox-background-color);
                 border: 1px solid var(--checkbox-border-color);
                 border-radius: var(--radius-checkbox);
-            }
-        }
-        //If no label is passed in we don't want the margin
-        + .rux-checkbox--no-label {
-            &::before {
-                margin: 0;
             }
         }
 
