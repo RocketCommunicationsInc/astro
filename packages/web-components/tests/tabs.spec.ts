@@ -51,10 +51,6 @@ test.describe('Tabs', () => {
             </div>
         </body>
         `)
-
-        page.addScriptTag({
-            path: './tests/utils/formScript.js',
-        })
     })
 
     test('it renders', async ({ page }) => {
