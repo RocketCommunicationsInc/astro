@@ -3,7 +3,7 @@ const forms = document.querySelectorAll('form')
 
 for (const form of forms) {
     form.addEventListener('submit', (e) => {
-        event.preventDefault()
+        e.preventDefault()
         // trigger formdata event
         new FormData(form)
     })
