@@ -29,7 +29,7 @@ describe('dialog', () => {
             .contains('This is a test title')
     })
 
-    it('should display dialog message in the dialog when changed', () => {
+    it('should display new dialog message in the dialog when changed', () => {
         cy.get('rux-dialog').then(($dialog) => {
             $dialog[0].setAttribute('modal-message', 'This is a test message')
         })
@@ -162,4 +162,21 @@ describe('dialog', () => {
             .its('firstCall.args.0.detail')
             .should('deep.equal', true)
     })
+    // Cypress doesn't support a generic keyboard press. Can only use .type() in inputs and such.
+    // it('should be able to trigger the deny button on escape key press', () => {
+    //     cy.get('rux-dialog').then(($dialog) => {
+    //         $dialog[0].setAttribute('open', true)
+    //     })
+    //     cy.document().invoke(
+    //         'addEventListener',
+    //         'ruxdialogclosed',
+    //         cy.stub().as('ruxdialogclosed')
+    //     )
+    //     cy.get('rux-dialog').first().type('{esc}', { force: true })
+    //     cy.get('@ruxdialogclosed')
+    //         .should('have.been.calledOnce')
+    //         .its('first')
+    //         .its('firstCall.args.0.detail')
+    //         .should('deep.equal', false)
+    // })
 })

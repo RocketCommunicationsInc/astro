@@ -7,32 +7,35 @@
 
 <section class="compliance">
   <article>
-    <h2>Intro Title Goes Here</h2>
-    <p>This is an introductory paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <a href="#">View GitHub</a>
+    <h2>Design Compliance</h2>
+    <p>Applications adopted by EGS are required to meet the Design Compliance set forth by Astro UXDS. Design Compliance improves operator efficiency, engagement and reduces training time. When applications across the Enterprise have a common and consistent user interface Guardians can focus learning the mission unique needs rather than learning new interface paradigms.</p>
   </article>
 
 <article class="compliancy-headline">
-    <h2>About Compliancy Headline</h2>
+    <h2>Tiered Compliance</h2>
     <p>
-      This is an introductory paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+     Astro can be adopted incrementally though the tiered compliance system outlined below. Projects can achieve progressively higher levels of compliance with each iterative release. It is important to note that adherence to the EGS Design Compliance is only one factor in accomplishing a successful user interface. Be sure to employ a user centered design practice like<a href="https://www.astrouxds.com/design-process/research/"> Traditional UX</a> or <a href="https://www.scaledagileframework.com/lean-ux/">Lean UX</a>. For assistance please contact <a href = "mailto:support@astrouxds.com?">support@astrouxds.com</a>.
     </p>
+    <p>
+    The EGS Design Compliance rules are a living document and version with the principles of <a href="https://semver.org/"> Semantic Versioning</a>. Contribution back to Astro and the Tiered Compliance model to address issues, propose new rules or contribute additional research or guidance can be made through <a href="https://github.com/RocketCommunicationsInc/astro/discussions"> Astro’s GitHub page</a>.
+    </p>
+
 
     <ol class="compliancy-list">
       <li>
-        <span class="tier tier--1">Tier 1</span>
+      <span class="tier tier--1">Tier 1</span>
         <div>
         Basic status icons, status colors, really important things for operators to quickly become familiar with the application
         </div>
       </li>
       <li>
-        <span class="tier tier--2">Tier 2</span>
+      <span class="tier tier--2">Tier 2</span>
         <div>
         Tier 1 + Astro colors to make it look like an Astro application (visual)
         </div>
       </li>
       <li>
-        <span class="tier tier--3">Tier 3</span>
+      <span class="tier tier--3">Tier 3</span>
         <div>
         Tier 2 + interaction patterns (behavioral) 
         </div>
@@ -98,7 +101,7 @@
 
           <div class="rule-text" data-status="{{ rule.status }}">
               {{ rule.rule | markdownify | safe }}
-
+              <br>
               {% if rule.status !== 'current' %}
                 <span class="rule-status">{{rule.status.replace('-', ' ')}}</span>
               {% endif %}

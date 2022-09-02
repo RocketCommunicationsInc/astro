@@ -1,10 +1,131 @@
-// Time Regions that have a start date outside of the Timeline range are not shown
-// Time Regions that have a end date outside of the Timeline range are not shown
+describe('Timeline', () => {
+    beforeEach(() => {
+        cy.visitComponent('rux-timeline')
+    })
 
-// Playhead should remain synced to its original position in time when zoom is increased
+    it('renders', () => {
+        cy.get('rux-timeline').should('have.class', 'hydrated')
+    })
+
+    it('when an event is currently in the timelines range if the timelines range is changed so that the event becomes out of range should not display as partial and be hidden', () => {
+        cy.get('rux-timeline[data-test-id="timeline"]')
+            .invoke('attr', 'end', '2022-02-30')
+            .invoke('attr', 'start', '2022-02-10')
+
+        cy.get('rux-time-region[data-test-id="editEvent"]')
+            .shadow()
+            .find('.rux-time-region')
+            .should('not.have.class', 'rux-time-region--partial-start')
+            .should('not.have.class', 'rux-time-region--partial-end')
+            .should('not.have.attr', 'partial')
+    })
+
+    describe('when a new event is added', () => {
+        context(
+            'if the events start date is before the timelines start date',
+            () => {
+                it('should display as a partial start event', () => {
+                    cy.get('#add-partial-start-button').click()
+
+                    cy.get('rux-time-region[data-test-id="addEvent"]').should(
+                        'have.prop',
+                        'partial',
+                        'start'
+                    )
+                })
+            }
+        )
+
+        context(
+            'if the events end date is after the timelines end date',
+            () => {
+                it('should display a partial end event', () => {
+                    cy.get('#add-partial-end-button').click()
+
+                    cy.get('rux-time-region[data-test-id="addEvent"]').should(
+                        'have.prop',
+                        'partial',
+                        'end'
+                    )
+                })
+            }
+        )
+
+        context(
+            'if the events start date is before the timelines start date and the end date is after the timelines start date',
+            () => {
+                it('should display an ongoing partial event', () => {
+                    cy.get('#add-partial-ongoing-button').click()
+
+                    cy.get('rux-time-region[data-test-id="addEvent"]').should(
+                        'have.prop',
+                        'partial',
+                        'ongoing'
+                    )
+                })
+            }
+        )
+    })
+
+    describe('when an existing event currently in the timelines range is editted', () => {
+        context(
+            'if the events start date is before the timelines start date',
+            () => {
+                it('should display as a partial start event', () => {
+                    cy.get('#edit-partial-start-button').click()
+
+                    cy.get('rux-time-region[data-test-id="editEvent"]').should(
+                        'have.prop',
+                        'partial',
+                        'start'
+                    )
+                })
+            }
+        )
+
+        context(
+            'if the events end date is after the timelines end date',
+            () => {
+                it('should display a partial end event', () => {
+                    cy.get('#edit-partial-end-button').click()
+
+                    cy.get('rux-time-region[data-test-id="editEvent"]').should(
+                        'have.prop',
+                        'partial',
+                        'end'
+                    )
+                })
+            }
+        )
+
+        context(
+            'if the events start date is before the timelines start date and the end date is after the timelines start date',
+            () => {
+                it('should display an ongoing partial event', () => {
+                    cy.get('#edit-partial-ongoing-button').click()
+
+                    cy.get('rux-time-region[data-test-id="editEvent"]').should(
+                        'have.prop',
+                        'partial',
+                        'ongoing'
+                    )
+                })
+            }
+        )
+    })
+
+    // describe('when the zoom is increased', () => {
+    // 	it('should keep the playhead synced to its original position', () => {
+
+    // 	})
+    // })
+})
 
 // Should throw an error when trying to set the playhead position to a date that is not within the timeline range.
 
 // displays error if time region start is after time region end
 // displays error if time region start is missing
 // displays error if time region end is missing
+
+// partial tests
+// event is partial start. it should visually indicate. timeline range is changed so that it is in range. event should no longer visually indicate.
