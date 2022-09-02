@@ -17,6 +17,7 @@
         <script nomodule src="/build/astro-web-components.js"></script>
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
+        <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
     </head>
 
     <body>
@@ -62,5 +63,44 @@
                 console.log('disabled --- heard change')
             })
         </script>
+
+        <!-- <ftl-belt access-token="" file-id="">
+        <section>
+            <h2>Figma testing</h2>
+            <div style="padding: 5rem">
+                <ftl-holster name="Small" node="19977:128342">
+                    <rux-segmented-button
+                        id="FigmaTest"
+                    ></rux-segmented-button>
+                </ftl-holster>
+                <ftl-holster name="Medium" node="19977:128352">
+                    <div><rux-segmented-button
+                        id="FigmaTest"
+                        size="medium"
+                    ></rux-segmented-button></div>
+                </ftl-holster>
+                <ftl-holster name="Large" node="19977:128362">
+                    <rux-segmented-button
+                        id="FigmaTest"
+                        size="large"
+                    ></rux-segmented-button>
+                </ftl-holster>
+            </div>
+
+            <script>
+                const buttonSets = document.querySelectorAll('#FigmaTest')
+                const options = [
+                    { label: 'Option', selected: true},
+                    { label: 'Option' },
+                    { label: 'Option' },
+                    { label: 'Option' },
+                ]
+
+                for (let buttonSet of buttonSets) {
+                    buttonSet.data = options
+                }
+            </script>
+        </section>
+    </ftl-belt> -->
     </body>
 </html>
