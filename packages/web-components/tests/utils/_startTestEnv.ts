@@ -1,4 +1,4 @@
-import { test } from '@playwright/test'
+import { Page, test } from '@playwright/test'
 
 /**
  * Abstract the beforeEach call so that we don't have to write it for each test.
@@ -6,7 +6,7 @@ import { test } from '@playwright/test'
 export function startTestEnv() {
     test.beforeEach(async ({ page }) => {
         await page.goto('http://localhost:3333')
-        page.addStyleTag({
+        await page.addStyleTag({
             path: './dist/astro-web-components/astro-web-components.css',
         })
     })
@@ -23,4 +23,16 @@ export async function startTestInBefore(page: any) {
     })
 }
 
-export { expect } from '@playwright/test'
+/**
+ * A replacement for page.setContent that maintains the <head> tag.
+ * @param page The Playwright Page
+ * @param content The HTML content as a string to set on the page
+ */
+export async function setBodyContent(page: Page, content: string) {
+    await page.evaluate(
+        ([content]) => {
+            document.body.innerHTML = content
+        },
+        [content]
+    )
+}

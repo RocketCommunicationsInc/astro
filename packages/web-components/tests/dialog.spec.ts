@@ -1,13 +1,16 @@
 import { test, expect } from '@playwright/test'
-import { startTestEnv } from './utils/_startTestEnv'
+import { startTestEnv, setBodyContent } from './utils/_startTestEnv'
 
 test.describe('Dialog', () => {
     startTestEnv()
 
     test('it renders', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
             <rux-dialog open></rux-dialog>
-        `)
+        `
+        )
         const el = page.locator('rux-dialog')
         await expect(el).toHaveClass('hydrated')
     })
