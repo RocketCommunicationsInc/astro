@@ -1,16 +1,19 @@
 import { test, expect } from '@playwright/test'
-import { startTestInBefore } from './utils/_startTestEnv'
+import { startTestInBefore, setBodyContent } from './utils/_startTestEnv'
 
 test.describe('Button Group', () => {
     test.beforeEach(async ({ page }) => {
         await startTestInBefore(page)
 
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <rux-button-group h-align="right">
             <rux-button secondary>Cancel</rux-button>
             <rux-button>Confrim</rux-button>
         </rux-button-group>
-    `)
+    `
+        )
     })
     test('it renders', async ({ page }) => {
         const el = page.locator('rux-button-group').first()
