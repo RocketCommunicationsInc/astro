@@ -8,7 +8,7 @@ title: Table
 
 # Table
 
-Tables are a fundamental UX design tool for organizing and displaying data. They are used throughout space applications and may take many forms. The principal table interactions and styles are illustrated below and demonstrated in the [GRM](https://grm-dashboard.astrouxds.com/) and [TT&C](https://ttc-monitor.astrouxds.com/) sample applications.
+Tables are a fundamental UX design tool for organizing and displaying data. They are used throughout space applications and may take many forms. The principal table interactions and styles are illustrated below and demonstrated in the [GRM](https://grm-dashboard.astrouxds.com/) and [TT&C](https://ttc-monitor.astrouxds.com/) sample applications. Types of content used in table cells varies by use case, but often includes: text, checkboxes, icons, status indicators, or buttons.
 
 ## Header
 
@@ -20,9 +20,7 @@ A Table can be configured with a tall header with large hero numbers (if the cou
 
 ## Filters
 
-Filters, to narrow what is displayed in the Table, may be presented in the header as Select Menus, as a Segmented Button, or as an Input Field. If it is critical that the user knows that not all data is displayed, a warning may be shown when filters are applied.
-
-While filters are often related to the data types displayed in columns, it is not recommended that filters be activated directly from the column headers or displayed there. Filters selected through a combination UI elements in the header can be more expressive and focused by combining and highlighting key data types.
+Filters, to narrow what is displayed in the Table, may be presented in the header as Select Menus, as a Segmented Button, or as an Input Field. If it is critical that the user knows that not all data is displayed, a warning may be shown when filters are applied. Though it is not a requirement to display filters in the header row of the column to which they correspond, tables created using ag-Grid default to this design pattern.
 
 ![Table with filters as Select Menus and wildcard Input Field.](/img/patterns/table-filters.png "Table with filters as Select Menus and wildcard Input Field.")
 
@@ -30,7 +28,7 @@ While filters are often related to the data types displayed in columns, it is no
 
 ## Sorting
 
-Sorting is accomplished by clicking in a column header. The sort order (ascending or descending) is indicated by an arrow. A second click in the currently sorted column changes the sort order.
+Tables default to being sorted by the data in the first column with an arrow pointing up or down to indicate whether that column is being sorted in ascending or descending order, respectively. Manual sorting is accomplished by clicking the text in a column header. On initial sort, data may sort either ascending or descending, depending on what type of data is contained in that column, with subsequent clicks toggling between the two.
 
 ## Selection and Action
 
