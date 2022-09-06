@@ -1,12 +1,13 @@
 import { test, expect } from '@playwright/test'
-import { startTestInBefore } from './utils/_startTestEnv'
+import { startTestInBefore, setBodyContent } from './utils/_startTestEnv'
 
 test.describe('Radio-group-with-form', () => {
     test.beforeEach(async ({ page }) => {
         await startTestInBefore(page)
 
-        await page.setContent(`
-        <body class="dark-theme">
+        await setBodyContent(
+            page,
+            `
             <div style="padding: 10%; display: flex; justify-content: center">
                 <div style="width: 60%">
                     <form id="form-default">
@@ -119,8 +120,8 @@ test.describe('Radio-group-with-form', () => {
                     <ul id="log"></ul>
                 </div>
             </div>
-        </body>
-        `)
+        `
+        )
         page.addScriptTag({
             path: './tests/utils/formScript.js',
         })

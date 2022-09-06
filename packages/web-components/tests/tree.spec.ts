@@ -1,12 +1,13 @@
 import { test, expect } from '@playwright/test'
-import { startTestInBefore } from './utils/_startTestEnv'
+import { startTestInBefore, setBodyContent } from './utils/_startTestEnv'
 
 test.describe('Tree', () => {
     test.beforeEach(async ({ page }) => {
         await startTestInBefore(page)
 
-        await page.setContent(`
-        <body>
+        await setBodyContent(
+            page,
+            `
             <rux-tree role="tree" class="hydrated">
                 <rux-tree-node
                     role="treeitem"
@@ -309,8 +310,8 @@ test.describe('Tree', () => {
                     console.log('rux-tree-node-selected', event.detail)
                 })
             </script>
-        </body>
-        `)
+        `
+        )
     })
 
     test('it renders', async ({ page }) => {
@@ -408,5 +409,5 @@ test.describe('Tree', () => {
 })
 /*
     Need to test: 
-    
+    - Event only fires once
 */

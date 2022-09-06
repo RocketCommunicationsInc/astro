@@ -1,38 +1,51 @@
 import { test, expect } from '@playwright/test'
-import { startTestEnv, startTestInBefore } from './utils/_startTestEnv'
+import {
+    startTestEnv,
+    startTestInBefore,
+    setBodyContent,
+} from './utils/_startTestEnv'
 
 test.describe('Select', () => {
     startTestEnv()
     test('it renders', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
             <rux-select></rux-select>
-        `)
+        `
+        )
         const el = page.locator('rux-select')
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })
     test('it syncs value to select element', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <rux-select id="ruxSelect" label="Best Thing?" name="bestThing">
             <rux-option label="Select an option" value=""></rux-option>
             <rux-option label="Red" value="red"></rux-option>
             <rux-option value="blue" label="Blue"></rux-option>
             <rux-option value="green" label="Green"></rux-option>
         </rux-select>
-        `)
+        `
+        )
         const el = page.locator('rux-select')
         await el.evaluate((e) => e.setAttribute('value', 'blue'))
         await expect(el.locator('select')).toHaveValue('blue')
     })
     test('it syncs value from select element', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <rux-select id="ruxSelect" label="Best Thing?" name="bestThing">
             <rux-option label="Select an option" value=""></rux-option>
             <rux-option label="Red" value="red"></rux-option>
             <rux-option value="blue" label="Blue"></rux-option>
             <rux-option value="green" label="Green"></rux-option>
         </rux-select>
-        `)
+        `
+        )
         const el = page.locator('rux-select')
         await el.locator('select').selectOption('green')
         await expect(el.locator('select')).toHaveValue('green')
@@ -41,7 +54,9 @@ test.describe('Select', () => {
 test.describe('Select in a form', () => {
     test.beforeEach(async ({ page }) => {
         await startTestInBefore(page)
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <form id="form" method="POST" action="/form">
             <rux-select id="ruxSelect" label="Best Thing?" name="bestThing">
                 <rux-option label="Select an option" value=""></rux-option>
@@ -71,7 +86,8 @@ test.describe('Select in a form', () => {
             <button id="formSubmitBtn" type="submit">submit</button>
         </form>
         <ul id="log"></ul>
-        `)
+        `
+        )
         await page.addScriptTag({
             path: './tests/utils/formScript.js',
         })

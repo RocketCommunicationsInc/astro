@@ -1,15 +1,24 @@
 import { test, expect } from '@playwright/test'
-import { startTestEnv } from './utils/_startTestEnv'
+import { startTestEnv, setBodyContent } from './utils/_startTestEnv'
 
 test.describe('Table', () => {
     startTestEnv()
 
     test('it renders', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <rux-table>
         <rux-table-header>
             <rux-table-header-row>                
-                        <rux-table-header-cell>Current tag</rux-table-header-cell>                                            <rux-table-header-cell>Original tag</rux-table-header-cell>                                            <rux-table-header-cell>Sensor</rux-table-header-cell>                                            <rux-table-header-cell>ASTAT</rux-table-header-cell>                                            <rux-table-header-cell>Obs time</rux-table-header-cell>                                            <rux-table-header-cell>Ob type</rux-table-header-cell>                                            <rux-table-header-cell>Az/Rt asc</rux-table-header-cell>                                            <rux-table-header-cell>El/Dec</rux-table-header-cell>                    
+                        <rux-table-header-cell>Current tag</rux-table-header-cell>                                            
+                        <rux-table-header-cell>Original tag</rux-table-header-cell>
+                        <rux-table-header-cell>Sensor</rux-table-header-cell>
+                        <rux-table-header-cell>ASTAT</rux-table-header-cell>
+                        <rux-table-header-cell>Obs time</rux-table-header-cell>
+                        <rux-table-header-cell>Ob type</rux-table-header-cell>
+                        <rux-table-header-cell>Az/Rt asc</rux-table-header-cell>
+                        <rux-table-header-cell>El/Dec</rux-table-header-cell>                    
                         <rux-table-header-cell>Range</rux-table-header-cell>
                         <rux-table-header-cell>Range rate</rux-table-header-cell>                    
             </rux-table-header-row>
@@ -43,7 +52,8 @@ test.describe('Table', () => {
                     </rux-table-row>
                 </rux-table-body>
             </rux-table>
-        `)
+        `
+        )
         const el = page.locator('rux-table')
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')

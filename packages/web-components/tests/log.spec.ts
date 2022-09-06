@@ -1,13 +1,16 @@
 import { test, expect } from '@playwright/test'
-import { startTestEnv } from './utils/_startTestEnv'
+import { startTestEnv, setBodyContent } from './utils/_startTestEnv'
 
 test.describe('Log', () => {
     startTestEnv()
 
     test('it renders', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <rux-log></rux-log>
-    `)
+    `
+        )
         const el = page.locator('rux-log').first()
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')

@@ -1,38 +1,47 @@
 import { test, expect } from '@playwright/test'
-import { startTestEnv } from './utils/_startTestEnv'
+import { startTestEnv, setBodyContent } from './utils/_startTestEnv'
 
 test.describe('Checkbox-group', () => {
     startTestEnv()
 
     test('it renders', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <rux-checkbox-group>
             <rux-checkbox>one</rux-checkbox>
             <rux-checkbox>two</rux-checkbox>
             <rux-checkbox>three</rux-checkbox>
         </rux-checkbox-group>
-    `)
+    `
+        )
         const el = page.locator('rux-checkbox-group').first()
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })
     test('it sets label', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <rux-checkbox-group label="hello"></rux-checkbox-group>
-       `)
+       `
+        )
         const el = await page.locator('rux-checkbox-group').first()
 
         await expect(el).toBeVisible()
         await expect(el).toHaveAttribute('label', 'hello')
     })
     test('it renders help text', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <rux-checkbox-group help-text="Help text!">
             <rux-checkbox>one</rux-checkbox>
             <rux-checkbox>two</rux-checkbox>
             <rux-checkbox>three</rux-checkbox>
         </rux-checkbox-group>
-        `)
+        `
+        )
         const el = await page.locator('rux-checkbox-group').first()
         await expect(el).toBeVisible()
         await expect(el).toHaveAttribute('help-text', 'Help text!')

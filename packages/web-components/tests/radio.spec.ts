@@ -1,13 +1,16 @@
 import { test, expect } from '@playwright/test'
-import { startTestInBefore } from './utils/_startTestEnv'
+import { startTestInBefore, setBodyContent } from './utils/_startTestEnv'
 
 test.describe('Radio', () => {
     test.beforeEach(async ({ page }) => {
         await startTestInBefore(page)
 
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
             <rux-radio>hello</rux-radio>
-        `)
+        `
+        )
     })
 
     test('it renders', async ({ page }) => {
@@ -21,4 +24,5 @@ test.describe('Radio', () => {
     -Gets checked state on click/click-off
     -Does not check when disabled
     -Does not uncheck when disabled and checked
+    -Form tests?
 */

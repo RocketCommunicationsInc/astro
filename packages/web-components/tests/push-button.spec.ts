@@ -1,12 +1,13 @@
 import { test, expect } from '@playwright/test'
-import { startTestInBefore } from './utils/_startTestEnv'
+import { startTestInBefore, setBodyContent } from './utils/_startTestEnv'
 
 test.describe('Push-button', () => {
     test.beforeEach(async ({ page }) => {
         await startTestInBefore(page)
 
-        await page.setContent(`
-            <body class="dark-theme">
+        await setBodyContent(
+            page,
+            `
                 <div style="padding: 10%; display: flex; justify-content: center">
                     <form id="form">
                         <rux-push-button
@@ -42,8 +43,8 @@ test.describe('Push-button', () => {
                 <div style="width: 30%">
             <ul id="log"></ul>
         </div>
-            </body>
-        `)
+        `
+        )
 
         page.addScriptTag({
             path: './tests/utils/formScript.js',

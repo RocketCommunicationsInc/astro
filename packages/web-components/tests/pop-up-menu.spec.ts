@@ -1,11 +1,13 @@
 import { test, expect } from '@playwright/test'
-import { startTestEnv } from './utils/_startTestEnv'
+import { startTestEnv, setBodyContent } from './utils/_startTestEnv'
 
 test.describe('Pop up', async () => {
     startTestEnv()
 
     test('it renders', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <rux-pop-up-menu id="popup-menu-1" open>
         <rux-menu-item>Item 1</rux-menu-item>
         <rux-menu-item-divider></rux-menu-item-divider>
@@ -23,7 +25,8 @@ test.describe('Pop up', async () => {
             >Item 5 is an anchor</rux-menu-item
         >
     </rux-pop-up-menu>
-        `)
+        `
+        )
         const el = page.locator('rux-pop-up-menu')
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')

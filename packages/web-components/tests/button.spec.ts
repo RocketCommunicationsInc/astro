@@ -1,22 +1,27 @@
 import { test, expect } from '@playwright/test'
-import { startTestEnv } from './utils/_startTestEnv'
-// import { test, expect } from './_fixture'
+import { startTestEnv, setBodyContent } from './utils/_startTestEnv'
 
 test.describe('Button', () => {
     startTestEnv()
 
     test('it renders', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <rux-button>Hello</rux-button>
-    `)
+    `
+        )
         const el = page.locator('rux-button').first()
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })
     test('it sets attributes', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <rux-button id="attr" type="submit" secondary disabled>Hello</rux-button>
-    `)
+    `
+        )
         const el = page.locator('#attr')
         await expect(el).toBeVisible()
         await expect(el).toHaveAttribute('disabled', '')

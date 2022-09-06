@@ -15,16 +15,21 @@ test.describe('Dialog', () => {
         await expect(el).toHaveClass('hydrated')
     })
     test('it handles attributes', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <rux-dialog modal-title="Title" modal-message="Message"></rux-dialog>
-    `)
+    `
+        )
         const el = page.locator('rux-dialog')
         //! These will need to change to dialog-message and dialog-title in the future.
         await expect(el).toHaveAttribute('modal-message', 'Message')
         await expect(el).toHaveAttribute('modal-title', 'Title')
     })
     test('it opens and closes', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <rux-dialog modal-title="Title" modal-message="Message"></rux-dialog>
         <rux-button id="toggle">Open/Close</rux-button>
         <script>
@@ -35,7 +40,8 @@ test.describe('Dialog', () => {
             testDialog.open = !testDialog.open
         })
         </script>
-    `)
+    `
+        )
         // page.addScriptTag({ path: './tests/utils/dialogScript.js' })
         const el = page.locator('rux-dialog')
         const btn = page.locator('#toggle')
@@ -56,10 +62,13 @@ test.describe('Dialog', () => {
             .then((e) => expect(e).toBeFalsy())
     })
     test('it closes the modal on deny click', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <rux-dialog open modal-title="Title" modal-message="Message"></rux-dialog>
         <rux-button id="toggle">Open/Close</rux-button>
-    `)
+    `
+        )
         const el = page.locator('rux-dialog')
         const denyBtn = el.locator('rux-button').first()
         await el
@@ -77,10 +86,13 @@ test.describe('Dialog', () => {
             })
     })
     test('it closes the modal on confirm click', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <rux-dialog open modal-title="Title" modal-message="Message"></rux-dialog>
         <rux-button id="toggle">Open/Close</rux-button>
-    `)
+    `
+        )
         const el = page.locator('rux-dialog')
         const confirmBtn = el.locator('rux-button').last()
         await el
@@ -100,7 +112,9 @@ test.describe('Dialog', () => {
     test('it emits ruxdialogclosed event with detail of false when deny button is clicked', async ({
         page,
     }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <script>
             document.addEventListener('ruxdialogclosed', (e) => {
                 console.log(e.detail)
@@ -108,7 +122,8 @@ test.describe('Dialog', () => {
         </script>
         <rux-dialog open modal-title="Title" modal-message="Message"></rux-dialog>
         <rux-button id="toggle">Open/Close</rux-button>
-    `)
+    `
+        )
         const el = page.locator('rux-dialog')
         const denyBtn = el.locator('rux-button').first()
         page.on('console', (msg) => {
@@ -119,7 +134,9 @@ test.describe('Dialog', () => {
     test('it emits ruxdialogclosed event with detail of true when confrim button is clicked', async ({
         page,
     }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <script>
             document.addEventListener('ruxdialogclosed', (e) => {
                 console.log(e.detail)
@@ -127,7 +144,8 @@ test.describe('Dialog', () => {
         </script>
         <rux-dialog open modal-title="Title" modal-message="Message"></rux-dialog>
         <rux-button id="toggle">Open/Close</rux-button>
-    `)
+    `
+        )
         const el = page.locator('rux-dialog')
         const confirmBtn = el.locator('rux-button').last()
         page.on('console', (msg) => {
@@ -138,7 +156,8 @@ test.describe('Dialog', () => {
     test('it should trigger confirm button when enter is clicked', async ({
         page,
     }) => {
-        await page.setContent(
+        await setBodyContent(
+            page,
             `
         <script>
             document.addEventListener('ruxdialogclosed', (e) => {
@@ -160,7 +179,8 @@ test.describe('Dialog', () => {
     test('it should trigger deny button when escape is pressed and emit false', async ({
         page,
     }) => {
-        await page.setContent(
+        await setBodyContent(
+            page,
             `
         <script>
             document.addEventListener('ruxdialogclosed', (e) => {

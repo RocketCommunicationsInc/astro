@@ -24,7 +24,7 @@ export async function startTestInBefore(page: any) {
 }
 
 /**
- * A replacement for page.setContent that maintains the <head> tag.
+ * A replacement for page.setContent that maintains the head tag.
  * @param page The Playwright Page
  * @param content The HTML content as a string to set on the page
  */

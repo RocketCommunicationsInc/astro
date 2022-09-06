@@ -1,12 +1,13 @@
 import { test, expect } from '@playwright/test'
-import { startTestEnv } from './utils/_startTestEnv'
+import { startTestEnv, setBodyContent } from './utils/_startTestEnv'
 
 test.describe('Segmented-button', () => {
     startTestEnv()
 
     test('it renders', async ({ page }) => {
-        await page.setContent(`
-        <body>
+        await setBodyContent(
+            page,
+            `
         <div style="padding: 2.5% 5%">
             <rux-segmented-button></rux-segmented-button>
         </div>
@@ -49,8 +50,8 @@ test.describe('Segmented-button', () => {
                 console.log('disabled --- heard change')
             })
         </script>
-    </body>
-    `)
+    `
+        )
         const el = page.locator('rux-segmented-button').first()
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')

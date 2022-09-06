@@ -1,12 +1,13 @@
 import { test, expect } from '@playwright/test'
-import { startTestInBefore } from './utils/_startTestEnv'
+import { startTestInBefore, setBodyContent } from './utils/_startTestEnv'
 
 test.describe('Tabs', () => {
     test.beforeEach(async ({ page }) => {
         await startTestInBefore(page)
 
-        await page.setContent(`
-        <body>
+        await setBodyContent(
+            page,
+            `
             <div style="display: flex; flex-flow: column">
                 <rux-tabs id="tab-set-id-1">
                     <rux-tab id="tab-id-1">Tab 1</rux-tab>
@@ -49,8 +50,8 @@ test.describe('Tabs', () => {
                     </rux-tab-panel>
                 </rux-tab-panels>
             </div>
-        </body>
-        `)
+        `
+        )
     })
 
     test('it renders', async ({ page }) => {

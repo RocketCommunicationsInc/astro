@@ -1,12 +1,13 @@
 import { test, expect } from '@playwright/test'
-import { startTestInBefore } from './utils/_startTestEnv'
+import { startTestInBefore, setBodyContent } from './utils/_startTestEnv'
 
 test.describe('Switch', () => {
     test.beforeEach(async ({ page }) => {
         await startTestInBefore(page)
 
-        await page.setContent(`
-        <body class="dark-theme">
+        await setBodyContent(
+            page,
+            `
         <div style="padding: 10%; display: flex; justify-content: center">
             <div>
                 <form id="form" style="width: 100%">
@@ -48,8 +49,8 @@ test.describe('Switch', () => {
                 <ul id="log"></ul>
             </div>
         </div>
-    </body>
-        `)
+        `
+        )
 
         page.addScriptTag({
             path: './tests/utils/formScript.js',

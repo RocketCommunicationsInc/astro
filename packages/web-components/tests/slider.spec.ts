@@ -1,12 +1,19 @@
 import { test, expect } from '@playwright/test'
-import { startTestEnv, startTestInBefore } from './utils/_startTestEnv'
+import {
+    startTestEnv,
+    startTestInBefore,
+    setBodyContent,
+} from './utils/_startTestEnv'
 
 test.describe('Slider', () => {
     startTestEnv()
     test('it renders', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
             <rux-slider></rux-slider>
-        `)
+        `
+        )
         const el = page.locator('rux-slider')
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
@@ -14,25 +21,31 @@ test.describe('Slider', () => {
     test('should render the datalist when axis-labels is provided', async ({
         page,
     }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <rux-slider id="ticks"></rux-slider>
         <script>
             document.getElementById('ticks').axisLabels = ['0', '25', '50', '75', '100']
         </script>
-        `)
+        `
+        )
         const el = page.locator('#ticks')
         const stepDivs = el.locator('#steplist').locator('.tick-label')
         await expect(stepDivs).toHaveCount(5)
     })
     test('should hear the ruxchange event', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
             <rux-slider></rux-slider>
             <script>
                 document.addEventListener('ruxchange', (e) => {
                     console.log(e.type)
                 })
             </script>
-        `)
+        `
+        )
         page.on('console', (msg) => {
             expect(msg.text()).toBe('ruxchange')
         })
@@ -44,14 +57,17 @@ test.describe('Slider', () => {
         ])
     })
     test('should hear the ruxinput event', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
             <rux-slider></rux-slider>
             <script>
                 document.addEventListener('ruxinput', (e) => {
                     console.log(e.type)
                 })
             </script>
-        `)
+        `
+        )
         page.on('console', (msg) => {
             expect(msg.text()).toBe('ruxinput')
         })
@@ -63,7 +79,9 @@ test.describe('Slider', () => {
         ])
     })
     test('should hear the ruxblur event', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
             <rux-slider></rux-slider>
             <br />
             <rux-button>Click to blur!</rux-button>
@@ -72,7 +90,8 @@ test.describe('Slider', () => {
                     console.log(e.type)
                 })
             </script>
-        `)
+        `
+        )
         page.on('console', (msg) => {
             expect(msg.text()).toBe('ruxblur')
         })
@@ -90,7 +109,9 @@ test.describe('Slider', () => {
 test.describe('Slider in a form', () => {
     test.beforeEach(async ({ page }) => {
         await startTestInBefore(page)
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <form id="form">
             <rux-slider name="ruxSlider" id="ruxSlider"></rux-slider>
             <rux-slider name="disabled" id="slider-dis" disabled></rux-slider>
@@ -99,7 +120,8 @@ test.describe('Slider in a form', () => {
             <button type="submit">submit</button>
         </form>
         <ul id="log"></ul>
-        `)
+        `
+        )
         await page.addScriptTag({
             path: './tests/utils/formScript.js',
         })

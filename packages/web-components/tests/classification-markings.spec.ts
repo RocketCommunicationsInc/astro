@@ -1,22 +1,26 @@
 import { test, expect } from '@playwright/test'
-import { startTestEnv } from './utils/_startTestEnv'
+import { startTestEnv, setBodyContent } from './utils/_startTestEnv'
 
 test.describe('Classification marking banners', () => {
     startTestEnv()
 
     test('it renders', async ({ page }) => {
-        await page.setContent(`
-            <rux-classification-marking></rux-classification-marking>
-        `)
+        await setBodyContent(
+            page,
+            `<rux-classification-marking></rux-classification-marking>`
+        )
 
         const el = page.locator('rux-classification-marking')
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })
     test('it sets attributes', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <rux-classification-marking classification="secret" label="Label"></rux-classification-marking>
-    `)
+    `
+        )
 
         const el = page.locator('rux-classification-marking')
         await expect(el).toHaveAttribute('classification', 'secret')
@@ -26,7 +30,8 @@ test.describe('Classification marking banners', () => {
     // test('it renders the correct default of unclassified if incorrect classification is provided', async ({
     //     page,
     // }) => {
-    //     await page.setContent(`
+    //             await setBodyContent(
+    // page, `
     //     <rux-classification-marking classification="not real"></rux-classification-marking>
     // `)
 
@@ -34,11 +39,14 @@ test.describe('Classification marking banners', () => {
     //     await expect(el).toHaveAttribute('classification', 'unclassified')
     // })
     test('it renders a footer banner when supplied', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <rux-classification-marking classification="secret">
             <h1>Test title for footer banner</h1>
         </rux-classification-marking>
-        `)
+        `
+        )
 
         const topBanner = page.locator('.rux-classification--banner').first()
         const footerBanner = page.locator('.rux-classification--banner__footer')

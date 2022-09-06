@@ -1,21 +1,31 @@
 import { test, expect } from '@playwright/test'
-import { startTestEnv, startTestInBefore } from './utils/_startTestEnv'
+import {
+    startTestEnv,
+    startTestInBefore,
+    setBodyContent,
+} from './utils/_startTestEnv'
 
 test.describe('Checkbox', () => {
     startTestEnv()
 
     test('it renders', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <rux-checkbox></rux-checkbox>
-    `)
+    `
+        )
         const el = page.locator('rux-checkbox').first()
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })
     test('it sets attributes', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <rux-checkbox error-text="Error" checked></rux-checkbox>
-       `)
+       `
+        )
         const el = await page.locator('rux-checkbox').first()
 
         const myLog = await el.evaluate((e) => e.hasAttribute('checked'))
@@ -33,7 +43,9 @@ test.describe('Checkbox in a form', () => {
     test.beforeEach(async ({ page }) => {
         await startTestInBefore(page)
 
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <div style="padding: 10%; display: flex; justify-content: center">
         <div style="width: 60%">
             <form id="form" style="width: 100%">
@@ -78,7 +90,8 @@ test.describe('Checkbox in a form', () => {
         <div style="width: 30%">
             <ul id="log"></ul>
         </div>
-    `)
+    `
+        )
         page.addScriptTag({
             path: './tests/utils/formScript.js',
         })

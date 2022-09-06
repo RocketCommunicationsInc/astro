@@ -1,25 +1,31 @@
 import { test, expect } from '@playwright/test'
-import { startTestEnv } from './utils/_startTestEnv'
+import { startTestEnv, setBodyContent } from './utils/_startTestEnv'
 
 test.describe('Notification', () => {
     startTestEnv()
 
     test('it renders', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <rux-notification></rux-notification>
-    `)
+    `
+        )
         const el = page.locator('rux-notification').first()
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })
     test('closes when close icon is clicked', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <rux-notification
             open
             data-test-id="default"
             message="testing time"
         ></rux-notification>
-        `)
+        `
+        )
 
         const el = page.locator('rux-notification')
         const icon = el.locator('rux-icon')
@@ -31,13 +37,16 @@ test.describe('Notification', () => {
             .then((e) => expect(e).toBeFalsy())
     })
     test('closes when closeAfter is up', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
         <rux-notification
             open
             close-after="2000"
             message="testing time"
         ></rux-notification>
-        `)
+        `
+        )
         const el = page.locator('rux-notification')
         await page.waitForTimeout(2100)
         await el

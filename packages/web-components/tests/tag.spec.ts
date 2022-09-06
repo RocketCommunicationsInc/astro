@@ -1,13 +1,16 @@
 import { test, expect } from '@playwright/test'
-import { startTestEnv } from './utils/_startTestEnv'
+import { startTestEnv, setBodyContent } from './utils/_startTestEnv'
 
 test.describe('Tag', () => {
     startTestEnv()
 
     test('it renders', async ({ page }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
             <rux-tag></rux-tag>
-        `)
+        `
+        )
         const el = page.locator('rux-tag').first()
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
@@ -15,9 +18,12 @@ test.describe('Tag', () => {
     test('renders is-undefined class when invalid status is used', async ({
         page,
     }) => {
-        await page.setContent(`
+        await setBodyContent(
+            page,
+            `
             <rux-tag status="standby" id="invalid-status"></rux-tag>
-        `)
+        `
+        )
         const el = page.locator('#invalid-status')
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('is-undefined hydrated')
