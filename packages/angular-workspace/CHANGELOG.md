@@ -9,6 +9,32 @@
 
   Migration: You can do a global find/replace on your project for:
 
+## 6.13.0
+
+### Minor Changes
+
+#### Timeline
+
+- support for partial time regions
+
+#### Dialog
+
+- Added better keyboard support for tabbing between confirm and deny buttons, and triggers deny on an escape key press.
+
+### Patch Changes
+
+#### Progress
+
+- Visual fix for Firefox to properly align progress indicator
+
+## 6.12.1
+
+### Patch Changes
+
+- e00a744a: timeline - fixed an issue where time regions were not updating when their ranges were edited
+- Updated dependencies [e00a744a]
+  - @astrouxds/astro-web-components@6.12.1
+
 ## 6.12.0
 
 ### Minor Changes

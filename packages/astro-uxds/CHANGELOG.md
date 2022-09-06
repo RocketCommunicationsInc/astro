@@ -17,6 +17,32 @@
 
 - f9b842f7: Modal is now deprecated and will be removed in 7.0. It is being renamed to Dialog to align with our Design System naming and which shares the exact same API as Modal. It is recommended that you migrate to Dialog before 7.0. You can do a global find/replace on your project for:
 
+## 6.13.0
+
+### Minor Changes
+
+#### Timeline
+
+- support for partial time regions
+
+#### Dialog
+
+- Added better keyboard support for tabbing between confirm and deny buttons, and triggers deny on an escape key press.
+
+### Patch Changes
+
+#### Progress
+
+- Visual fix for Firefox to properly align progress indicator
+
+## 6.12.1
+
+### Patch Changes
+
+#### Timeline
+
+- Fixed an issue where time regions were not updating when their ranges were edited
+
 ## 6.12.0
 
 ### Minor Changes

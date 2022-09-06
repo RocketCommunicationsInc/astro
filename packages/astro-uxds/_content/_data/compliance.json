@@ -23,8 +23,8 @@
           "rules": [
             {
               "numeral": 1,
-              "rule": "Components and backgrounds shall conform to the colors specified in the [Primary](/design-guidelines/color/#primary), [Secondary](/design-guidelines/color/#secondary), [Tertiary](/design-guidelines/color/#tertiary), and [Quaternary](/design-guidelines/color/#quaternary) palettes.",
-              "status": "current",
+              "rule": "Components and backgrounds shall conform to the colors specified in Astro's [color palettes](/design-guidelines/color/).",
+              "status": "updated",
               "tier": 2
             },
             {
@@ -100,7 +100,7 @@
             {
               "numeral": 1,
               "rule": "Data Visualizations shall have no more than 8 colors per data set.",
-              "status": "current",
+              "status": "under-review",
               "tier": 3
             },
             {
@@ -219,7 +219,7 @@
               "numeral": 5,
               "rule": "Button widths shall accommodate the full title without truncating or abbreviating.",
               "status": "under-review",
-              "tier": 3
+              "tier": 1
             },
             {
               "numeral": 6,
@@ -267,7 +267,7 @@
             {
               "numeral": 2,
               "rule": "Checkboxes shall act independently of others in a group.",
-              "status": "under-review",
+              "status": "curent",
               "tier": 3
             },
             {
@@ -497,25 +497,25 @@
             },
             {
               "numeral": 5,
-              "rule": "Input Fields shall use sentence case capitalization.",
+              "rule": "Help Text shall be left-aligned under the relevant Input Field, regardless of location of the label.",
               "status": "current",
               "tier": 2
             },
             {
               "numeral": 6,
-              "rule": "Input Field labels shall not use placeholder text in place of labels.",
+              "rule": "Input Fields shall use sentence case capitalization.",
               "status": "current",
               "tier": 3
             },
             {
               "numeral": 7,
-              "rule": "Automatically formatted Input Fields shall use consistent, recognizable formatting.",
+              "rule": "Input Field labels shall not use placeholder text in place of labels.",
               "status": "under-review",
               "tier": 3
             },
             {
-              "numeral": 4,
-              "rule": "Help Text shall be left-aligned under the relevant Input Field, regardless of location of the label.",
+              "numeral": 8,
+              "rule": "Automatically formatted Input Fields shall use consistent, recognizable formatting.",
               "status": "current",
               "tier": 3
             }
@@ -682,7 +682,7 @@
               "numeral": 2,
               "rule": "A Radio Button group shall always have one option selected.",
               "status": "current",
-              "tier": 2
+              "tier": 3
             },
             {
               "numeral": 3,
@@ -814,6 +814,12 @@
               "rule": "Status Symbols shall be displayed with the [specified colors](/components/status-symbol/#status-colors).",
               "status": "current",
               "tier": 1
+            },
+            {
+              "numeral": 3,
+              "rule": "Switch labels shall use sentence case capitalization.",
+              "status": "under-review",
+              "tier": 3
             }
           ]
         },
@@ -831,7 +837,7 @@
             {
               "numeral": 2,
               "rule": "Tabs shall use sentence case capitalization.",
-              "status": "current",
+              "status": "deprecated",
               "tier": 3
             },
             {

@@ -6,6 +6,23 @@ Interested in contributing to Astro? We would love to have you. Here's everythin
 
 **Requirements:** Node v16+
 
+**M1 USERS ONLY:** Chromium needs to be installed manually
+
+1. Install chromium with Homebrew
+
+```bash
+brew install chromium --no-quarantine
+```
+
+2. Modify your .zshrc file and add the following 2 lines of code at the bottom:
+
+```bash
+export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+export PUPPETEER_EXECUTABLE_PATH=`which chromium`
+```
+
+3. Restart your terminal and proceed to the next step.
+
 Clone this repo and run
 
 ```bash

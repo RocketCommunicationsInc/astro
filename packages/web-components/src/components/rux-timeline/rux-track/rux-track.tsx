@@ -1,4 +1,4 @@
-import { Element, Component, Prop, Host, h, Watch } from '@stencil/core'
+import { Element, Listen, Component, Prop, Host, h, Watch } from '@stencil/core'
 import { differenceInMinutes, differenceInHours } from 'date-fns'
 
 interface DateValidation {
@@ -59,11 +59,21 @@ export class RuxTrack {
         this.initializeRows()
     }
 
+    @Listen('ruxtimeregionchange')
+    handleTimeRegionChange(e: CustomEvent) {
+        this.initializeRows()
+        e.stopPropagation()
+    }
+
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
     }
 
-    calculateGridColumnFromTime(time: any) {
+    /**
+     * Tracks are displayed as a (CSS) grid of cells.
+     * Each cell can represent a minute or hour depending on the interval.
+     */
+    private _calculateGridColumnFromTime(time: any) {
         if (this.start) {
             const timelineStart = new Date(this.start)
 
@@ -108,13 +118,6 @@ export class RuxTrack {
             }
         }
 
-        if (new Date(start) < new Date(this.start)) {
-            return {
-                success: false,
-                error: `The Time Region start date does not fall within the Timeline's range: ${start} - ${this.start}/${this.end}`,
-            }
-        }
-
         if (new Date(start) > new Date(this.end)) {
             return {
                 success: false,
@@ -122,17 +125,13 @@ export class RuxTrack {
             }
         }
 
-        if (new Date(end) > new Date(this.end)) {
+        if (
+            new Date(start) < new Date(this.start) &&
+            new Date(end) < new Date(this.start)
+        ) {
             return {
                 success: false,
-                error: `The Time Region end date does not fall within the Timeline's range: ${start} - ${this.start}/${this.end}`,
-            }
-        }
-
-        if (new Date(start) < new Date(this.start)) {
-            return {
-                success: false,
-                error: `The Time Region start date does not fall within the Timeline's range: ${start} - ${this.start}/${this.end}`,
+                error: `The Time Region start and end dates do not fall within the Timeline's range: ${start} - ${end}`,
             }
         }
 
@@ -141,7 +140,11 @@ export class RuxTrack {
         }
     }
 
-    initializeRows() {
+    /**
+     * Time Regions are dumb and don't know anything about the grid.
+     * The Track is responsible for lining up the Time Regions with the grid.
+     */
+    private initializeRows() {
         const children = [...this.el.children].filter(
             (el) => el.tagName.toLowerCase() === 'rux-time-region'
         ) as HTMLRuxTimeRegionElement[]
@@ -149,19 +152,40 @@ export class RuxTrack {
         children.forEach((el) => {
             const isHidden = el.style.visibility === 'hidden'
             const isValid = this._validateTimeRegion(el.start, el.end)
+            /**
+             * Store temp vars to use for calculating a Time Region's position in the grid
+             * If a Time Region's range is outside the Timeline's range (a partial event),
+             * visually it is treated as if its start/end dates = the timeline's.
+             * */
+            let start = el.start
+            let end = el.end
 
             if (isValid.success) {
+                if (el.start < this.start && el.end > this.end) {
+                    el.partial = 'ongoing'
+                    start = this.start
+                    end = this.end
+                } else if (el.start < this.start) {
+                    el.partial = 'start'
+                    start = this.start
+                } else if (el.end > this.end) {
+                    el.partial = 'end'
+                    end = this.end
+                } else {
+                    el.partial = 'none'
+                }
+
                 el.timezone = this.timezone
                 el.style.gridRow = '1'
-                el.style.visibility = 'inherit'
-                const gridColumn = `${this.calculateGridColumnFromTime(
-                    el.start
-                )} / ${this.calculateGridColumnFromTime(el.end)}`
+                el.style.display = 'block'
+                const gridColumn = `${this._calculateGridColumnFromTime(
+                    start
+                )} / ${this._calculateGridColumnFromTime(end)}`
                 el.style.gridColumn = gridColumn
             } else {
                 if (!isHidden) {
-                    el.style.visibility = 'hidden'
-                    console.error(isValid.error)
+                    el.style.display = 'none'
+                    console.log(isValid.error)
                 }
             }
         })
@@ -169,25 +193,6 @@ export class RuxTrack {
 
     private _handleSlotChange() {
         this.initializeRows()
-    }
-
-    renderDebug() {
-        return (
-            <div style={{ display: 'contents' }}>
-                {[...Array(this.columns)].map((_: any, i: any) => (
-                    <div
-                        style={{
-                            gridRow: '1',
-                            gridColumn: `${i + 2} / ${++i + 2}`,
-                        }}
-                        class={{
-                            cell: true,
-                            marker: i % 60 === 0,
-                        }}
-                    ></div>
-                ))}
-            </div>
-        )
     }
 
     render() {
@@ -212,7 +217,6 @@ export class RuxTrack {
 
                     <slot onSlotchange={this._handleSlotChange}></slot>
                 </div>
-                {/* {this.renderDebug()} */}
             </Host>
         )
     }

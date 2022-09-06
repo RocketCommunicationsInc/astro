@@ -12478,6 +12478,10 @@ export namespace Components {
          */
         "hideTimestamp": boolean;
         /**
+          * Visually indicates a partial time regions. Partial time regions are time regions that start or end outside of the current range of the timeline.
+         */
+        "partial": 'none' | 'start' | 'end' | 'ongoing';
+        /**
           * Visually displays the selected state
          */
         "selected": boolean;
@@ -32882,6 +32886,11 @@ declare namespace LocalJSX {
           * Optionally hide the bottom right timestamp.
          */
         "hideTimestamp"?: boolean;
+        "onRuxtimeregionchange"?: (event: CustomEvent<any>) => void;
+        /**
+          * Visually indicates a partial time regions. Partial time regions are time regions that start or end outside of the current range of the timeline.
+         */
+        "partial"?: 'none' | 'start' | 'end' | 'ongoing';
         /**
           * Visually displays the selected state
          */
