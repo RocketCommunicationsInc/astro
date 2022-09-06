@@ -17,6 +17,11 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16
+      - uses: tj-actions/changed-files@v11
+        id: changed-files
+        with:
+          files: |
+            **/package.json
       - uses: actions/cache@v2
         id: cache-node-modules
         with:
@@ -48,11 +53,6 @@ jobs:
         with:
           path: ./packages/web-components/node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "14.x"
-      - name: Intall Playwright
-        run: cd packages/web-components && npm i @playwright/test
       - name: Run Playwright tests
         run: npm run test.e2e
       - uses: actions/upload-artifact@v2
