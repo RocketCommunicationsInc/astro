@@ -316,6 +316,10 @@
         "url": "/design-tokens/getting-started"
       },
       {
+        "label": "Installation",
+        "url": "/design-tokens/installation"
+      },
+      {
         "label": "Reference",
         "url": "/design-tokens/reference"
       },
