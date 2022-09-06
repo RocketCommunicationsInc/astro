@@ -53,6 +53,8 @@ jobs:
         with:
           path: ./packages/web-components/node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
+      - name: Install Playwright
+        run: cd packages/web-components && npm install -D @playwright/test
       - name: Run Playwright tests
         run: npm run test.e2e
       - uses: actions/upload-artifact@v2
