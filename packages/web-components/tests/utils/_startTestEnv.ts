@@ -6,9 +6,6 @@ import { Page, test } from '@playwright/test'
 export function startTestEnv() {
     test.beforeEach(async ({ page }) => {
         await page.goto('http://localhost:3333')
-        await page.addStyleTag({
-            path: './dist/astro-web-components/astro-web-components.css',
-        })
     })
 }
 
@@ -18,9 +15,6 @@ export function startTestEnv() {
  */
 export async function startTestInBefore(page: any) {
     await page.goto('http://localhost:3333')
-    page.addStyleTag({
-        path: './dist/astro-web-components/astro-web-components.css',
-    })
 }
 
 /**

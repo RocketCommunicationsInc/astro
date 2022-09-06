@@ -101,6 +101,7 @@ const config: PlaywrightTestConfig = {
     webServer: {
         command: 'npm run start.stencil',
         url: 'http://localhost:3333/',
+        reuseExistingServer: true,
     },
 }
 
