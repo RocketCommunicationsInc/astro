@@ -299,19 +299,21 @@ test.describe('Tree', () => {
                     Tree item 3
                 </rux-tree-node>
             </rux-tree>
-            <script>
-                document.addEventListener('ruxtreenodeexpanded', function (event) {
-                    console.log('rux-tree-node-expanded', event.detail)
-                })
-                document.addEventListener('ruxtreenodecollapsed', function (event) {
-                    console.log('rux-tree-node-collapsed', event.detail)
-                })
-                document.addEventListener('ruxtreenodeselected', function (event) {
-                    console.log('rux-tree-node-selected', event.detail)
-                })
-            </script>
         `
         )
+        page.addScriptTag({
+            content: `
+        document.addEventListener('ruxtreenodeexpanded', function (event) {
+            console.log('rux-tree-node-expanded', event.detail)
+        })
+        document.addEventListener('ruxtreenodecollapsed', function (event) {
+            console.log('rux-tree-node-collapsed', event.detail)
+        })
+        document.addEventListener('ruxtreenodeselected', function (event) {
+            console.log('rux-tree-node-selected', event.detail)
+        })
+        `,
+        })
     })
 
     test('it renders', async ({ page }) => {

@@ -28,8 +28,8 @@ test.describe('Checkbox', () => {
         )
         const el = await page.locator('rux-checkbox').first()
 
-        const myLog = await el.evaluate((e) => e.hasAttribute('checked'))
-        console.log(myLog, 'Log example')
+        // const myLog = await el.evaluate((e) => e.hasAttribute('checked'))
+        // console.log(myLog, 'Log example')
 
         await expect(el).toBeVisible()
         await expect(el).toHaveAttribute('error-text', 'Error')

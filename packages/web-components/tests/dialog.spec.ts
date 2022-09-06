@@ -32,17 +32,18 @@ test.describe('Dialog', () => {
             `
         <rux-dialog modal-title="Title" modal-message="Message"></rux-dialog>
         <rux-button id="toggle">Open/Close</rux-button>
-        <script>
+    `
+        )
+        page.addScriptTag({
+            content: `
         const toggleBtn = document.getElementById('toggle')
         const testDialog = document.querySelector('rux-dialog')
 
         toggleBtn.addEventListener('click', () => {
             testDialog.open = !testDialog.open
         })
-        </script>
-    `
-        )
-        // page.addScriptTag({ path: './tests/utils/dialogScript.js' })
+        `,
+        })
         const el = page.locator('rux-dialog')
         const btn = page.locator('#toggle')
         await btn.click()
@@ -115,15 +116,16 @@ test.describe('Dialog', () => {
         await setBodyContent(
             page,
             `
-        <script>
-            document.addEventListener('ruxdialogclosed', (e) => {
-                console.log(e.detail)
-            })
-        </script>
         <rux-dialog open modal-title="Title" modal-message="Message"></rux-dialog>
         <rux-button id="toggle">Open/Close</rux-button>
     `
         )
+        page.addScriptTag({
+            content: `
+            document.addEventListener('ruxdialogclosed', (e) => {
+            console.log(e.detail)
+        })`,
+        })
         const el = page.locator('rux-dialog')
         const denyBtn = el.locator('rux-button').first()
         page.on('console', (msg) => {
@@ -137,15 +139,16 @@ test.describe('Dialog', () => {
         await setBodyContent(
             page,
             `
-        <script>
-            document.addEventListener('ruxdialogclosed', (e) => {
-                console.log(e.detail)
-            })
-        </script>
         <rux-dialog open modal-title="Title" modal-message="Message"></rux-dialog>
         <rux-button id="toggle">Open/Close</rux-button>
     `
         )
+        page.addScriptTag({
+            content: `
+            document.addEventListener('ruxdialogclosed', (e) => {
+            console.log(e.detail)
+        })`,
+        })
         const el = page.locator('rux-dialog')
         const confirmBtn = el.locator('rux-button').last()
         page.on('console', (msg) => {
@@ -159,15 +162,15 @@ test.describe('Dialog', () => {
         await setBodyContent(
             page,
             `
-        <script>
-            document.addEventListener('ruxdialogclosed', (e) => {
-                console.log(e.detail)
-            })
-        </script>
         <rux-dialog open modal-title="Title" modal-message="Message"></rux-dialog>
     `
         )
-
+        page.addScriptTag({
+            content: `
+            document.addEventListener('ruxdialogclosed', (e) => {
+            console.log(e.detail)
+        })`,
+        })
         page.on('console', (msg) => {
             expect(msg.text()).toBe('true')
         })
@@ -182,14 +185,15 @@ test.describe('Dialog', () => {
         await setBodyContent(
             page,
             `
-        <script>
-            document.addEventListener('ruxdialogclosed', (e) => {
-                console.log(e.detail)
-            })
-        </script>
         <rux-dialog open modal-title="Title" modal-message="Message"></rux-dialog>
     `
         )
+        page.addScriptTag({
+            content: `
+            document.addEventListener('ruxdialogclosed', (e) => {
+            console.log(e.detail)
+        })`,
+        })
         page.on('console', (msg) => {
             expect(msg.text()).toBe('false')
         })

@@ -25,11 +25,13 @@ test.describe('Slider', () => {
             page,
             `
         <rux-slider id="ticks"></rux-slider>
-        <script>
-            document.getElementById('ticks').axisLabels = ['0', '25', '50', '75', '100']
-        </script>
         `
         )
+        page.addScriptTag({
+            content: `
+        document.getElementById('ticks').axisLabels = ['0', '25', '50', '75', '100']
+        `,
+        })
         const el = page.locator('#ticks')
         const stepDivs = el.locator('#steplist').locator('.tick-label')
         await expect(stepDivs).toHaveCount(5)
@@ -39,21 +41,26 @@ test.describe('Slider', () => {
             page,
             `
             <rux-slider></rux-slider>
-            <script>
-                document.addEventListener('ruxchange', (e) => {
-                    console.log(e.type)
-                })
-            </script>
         `
         )
+        page.addScriptTag({
+            content: `
+        document.addEventListener('ruxchange', (e) => {
+            console.log(e.type)
+        })
+        `,
+        })
         page.on('console', (msg) => {
             expect(msg.text()).toBe('ruxchange')
         })
         const el = page.locator('rux-slider')
 
+        // waitForTimeout here to ensure that the waitForEvent has started listening
         await Promise.all([
             page.waitForEvent('console', { timeout: 5000 }),
-            el.click({ position: { x: 10, y: 0 } }),
+            page
+                .waitForTimeout(500)
+                .then(() => el.click({ position: { x: 10, y: 10 } })),
         ])
     })
     test('should hear the ruxinput event', async ({ page }) => {
@@ -61,13 +68,15 @@ test.describe('Slider', () => {
             page,
             `
             <rux-slider></rux-slider>
-            <script>
-                document.addEventListener('ruxinput', (e) => {
-                    console.log(e.type)
-                })
-            </script>
         `
         )
+        page.addScriptTag({
+            content: `
+        document.addEventListener('ruxinput', (e) => {
+            console.log(e.type)
+        })
+        `,
+        })
         page.on('console', (msg) => {
             expect(msg.text()).toBe('ruxinput')
         })
@@ -75,7 +84,9 @@ test.describe('Slider', () => {
 
         await Promise.all([
             page.waitForEvent('console', { timeout: 5000 }),
-            el.click({ position: { x: 10, y: 0 } }),
+            page
+                .waitForTimeout(500)
+                .then(() => el.click({ position: { x: 10, y: 10 } })),
         ])
     })
     test('should hear the ruxblur event', async ({ page }) => {
@@ -85,13 +96,15 @@ test.describe('Slider', () => {
             <rux-slider></rux-slider>
             <br />
             <rux-button>Click to blur!</rux-button>
-            <script>
-                document.addEventListener('ruxblur', (e) => {
-                    console.log(e.type)
-                })
-            </script>
         `
         )
+        page.addScriptTag({
+            content: `
+        document.addEventListener('ruxblur', (e) => {
+            console.log(e.type)
+        })
+        `,
+        })
         page.on('console', (msg) => {
             expect(msg.text()).toBe('ruxblur')
         })
@@ -100,9 +113,13 @@ test.describe('Slider', () => {
 
         await Promise.all([
             page.waitForEvent('console', { timeout: 5000 }),
-            await el
-                .click({ position: { x: 10, y: 0 } })
-                .then(() => btn.click()),
+            page
+                .waitForTimeout(500)
+                .then(() =>
+                    el
+                        .click({ position: { x: 10, y: 10 } })
+                        .then(() => btn.click())
+                ),
         ])
     })
 })
@@ -130,7 +147,9 @@ test.describe('Slider in a form', () => {
         const el = page.locator('#ruxSlider')
         const log = page.locator('#log')
         const submit = page.locator('button')
-        await el.click({ position: { x: 20, y: 0 } }) //Clicks it at the very left, value = 1
+        await page.waitForTimeout(100)
+        //Clicks it at the very left, value = 1
+        await el.click({ position: { x: 20, y: 10 } })
         await expect(el.locator('input').first()).toHaveValue('1')
         await submit.click()
         await expect(log).toContainText('ruxSlider:1')
@@ -148,7 +167,7 @@ test.describe('Slider in a form', () => {
         const log = page.locator('#log')
         const submit = page.locator('button')
         await expect(el.locator('input').first()).toHaveValue('50')
-        await el.click({ position: { x: 20, y: 0 } })
+        await el.click({ position: { x: 20, y: 10 } })
         await expect(el.locator('input').first()).toHaveValue('50')
         await submit.click()
         await expect(log).not.toContainText('disabled:1')
