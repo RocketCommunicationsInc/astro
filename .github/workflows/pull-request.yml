@@ -70,7 +70,7 @@ jobs:
           key: cache-playwright-macos
       - name: Install playwright deps
         if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: npx playwright install
+        run: cd ./packages/web-components && npm i @playwright/test && npx playwright install
       - name: Run Playwright tests
         run: npm run test.web-comps.e2e
       - uses: actions/upload-artifact@v2
