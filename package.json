@@ -19,10 +19,10 @@
     "test": "lerna run --ignore @astrouxds/angular test",
     "release": "node ./.scripts/release.js && changeset publish",
     "test.web-comps.unit": "lerna run --scope '@astrouxds/astro-web-components' test.unit",
+    "test.web-comps.e2e": "lerna run --scope '@astrouxds/astro-web-components' test.e2e",
     "web-comps.install": "cd ./packages/web-components && npm ci",
     "react.install": "cd ./packages/react && npm ci",
-    "test.react": "lerna run --scope '@astrouxds/react' test",
-    "test.e2e": "lerna run --scope '@astrouxds/astro-web-components' test.e2e"
+    "test.react": "lerna run --scope '@astrouxds/react' test"
   },
   "engines": {
     "node": "^16",
