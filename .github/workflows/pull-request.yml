@@ -64,7 +64,7 @@ jobs:
           key: node-modules-${{ hashFiles('package-lock.json') }}
       - name: Install playwright deps
         if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: npm install -D @playwright/test
+        run: npx playwright install
       - name: Run Playwright tests
         run: npm run test.web-comps.e2e
       - uses: actions/upload-artifact@v2
