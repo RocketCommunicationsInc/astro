@@ -11,6 +11,8 @@ import { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitor
 import { Placement } from "@floating-ui/dom";
 import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
 export namespace Components {
+    interface RuxAccordion {
+    }
     interface RuxButton {
         /**
           * Changes button style from solid to borderless by setting the rux-button--borderless class
@@ -12553,6 +12555,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLRuxAccordionElement extends Components.RuxAccordion, HTMLStencilElement {
+    }
+    var HTMLRuxAccordionElement: {
+        prototype: HTMLRuxAccordionElement;
+        new (): HTMLRuxAccordionElement;
+    };
     interface HTMLRuxButtonElement extends Components.RuxButton, HTMLStencilElement {
     }
     var HTMLRuxButtonElement: {
@@ -19196,6 +19204,7 @@ declare global {
         new (): HTMLRuxTreeNodeElement;
     };
     interface HTMLElementTagNameMap {
+        "rux-accordion": HTMLRuxAccordionElement;
         "rux-button": HTMLRuxButtonElement;
         "rux-button-group": HTMLRuxButtonGroupElement;
         "rux-card": HTMLRuxCardElement;
@@ -20306,6 +20315,8 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface RuxAccordion {
+    }
     interface RuxButton {
         /**
           * Changes button style from solid to borderless by setting the rux-button--borderless class
@@ -32964,6 +32975,7 @@ declare namespace LocalJSX {
         "selected"?: boolean;
     }
     interface IntrinsicElements {
+        "rux-accordion": RuxAccordion;
         "rux-button": RuxButton;
         "rux-button-group": RuxButtonGroup;
         "rux-card": RuxCard;
@@ -34077,6 +34089,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "rux-accordion": LocalJSX.RuxAccordion & JSXBase.HTMLAttributes<HTMLRuxAccordionElement>;
             "rux-button": LocalJSX.RuxButton & JSXBase.HTMLAttributes<HTMLRuxButtonElement>;
             "rux-button-group": LocalJSX.RuxButtonGroup & JSXBase.HTMLAttributes<HTMLRuxButtonGroupElement>;
             "rux-card": LocalJSX.RuxCard & JSXBase.HTMLAttributes<HTMLRuxCardElement>;
