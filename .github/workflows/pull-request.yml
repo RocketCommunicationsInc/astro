@@ -56,7 +56,7 @@ jobs:
           key: node-modules-${{ hashFiles('package-lock.json') }}
       - name: Install Deps
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
-        run: cd ./packages/web-components && npm i
+        run: cd ./packages/web-components && npm i && npx playwright install
       - name: Run Tests
         run: cd ./packages/web-components && npx playwright test
       - uses: actions/upload-artifact@v2
