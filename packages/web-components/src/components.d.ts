@@ -13,6 +13,28 @@ import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented
 export namespace Components {
     interface RuxAccordion {
     }
+    interface RuxAccordionItem {
+        /**
+          * ***** toggles disabled ********
+         */
+        "disabled": boolean;
+        /**
+          * ***** item expanded or not ********
+         */
+        "expanded": boolean;
+        /**
+          * ***** toggles left icon ********
+         */
+        "iconLeft": string;
+        /**
+          * ***** gives title of the item ********
+         */
+        "label": string;
+        /**
+          * ***** toggles truncated text ********
+         */
+        "truncated": boolean;
+    }
     interface RuxButton {
         /**
           * Changes button style from solid to borderless by setting the rux-button--borderless class
@@ -12561,6 +12583,12 @@ declare global {
         prototype: HTMLRuxAccordionElement;
         new (): HTMLRuxAccordionElement;
     };
+    interface HTMLRuxAccordionItemElement extends Components.RuxAccordionItem, HTMLStencilElement {
+    }
+    var HTMLRuxAccordionItemElement: {
+        prototype: HTMLRuxAccordionItemElement;
+        new (): HTMLRuxAccordionItemElement;
+    };
     interface HTMLRuxButtonElement extends Components.RuxButton, HTMLStencilElement {
     }
     var HTMLRuxButtonElement: {
@@ -19205,6 +19233,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "rux-accordion": HTMLRuxAccordionElement;
+        "rux-accordion-item": HTMLRuxAccordionItemElement;
         "rux-button": HTMLRuxButtonElement;
         "rux-button-group": HTMLRuxButtonGroupElement;
         "rux-card": HTMLRuxCardElement;
@@ -20316,6 +20345,28 @@ declare global {
 }
 declare namespace LocalJSX {
     interface RuxAccordion {
+    }
+    interface RuxAccordionItem {
+        /**
+          * ***** toggles disabled ********
+         */
+        "disabled"?: boolean;
+        /**
+          * ***** item expanded or not ********
+         */
+        "expanded"?: boolean;
+        /**
+          * ***** toggles left icon ********
+         */
+        "iconLeft"?: string;
+        /**
+          * ***** gives title of the item ********
+         */
+        "label"?: string;
+        /**
+          * ***** toggles truncated text ********
+         */
+        "truncated"?: boolean;
     }
     interface RuxButton {
         /**
@@ -32976,6 +33027,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "rux-accordion": RuxAccordion;
+        "rux-accordion-item": RuxAccordionItem;
         "rux-button": RuxButton;
         "rux-button-group": RuxButtonGroup;
         "rux-card": RuxCard;
@@ -34090,6 +34142,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "rux-accordion": LocalJSX.RuxAccordion & JSXBase.HTMLAttributes<HTMLRuxAccordionElement>;
+            "rux-accordion-item": LocalJSX.RuxAccordionItem & JSXBase.HTMLAttributes<HTMLRuxAccordionItemElement>;
             "rux-button": LocalJSX.RuxButton & JSXBase.HTMLAttributes<HTMLRuxButtonElement>;
             "rux-button-group": LocalJSX.RuxButtonGroup & JSXBase.HTMLAttributes<HTMLRuxButtonGroupElement>;
             "rux-card": LocalJSX.RuxCard & JSXBase.HTMLAttributes<HTMLRuxCardElement>;

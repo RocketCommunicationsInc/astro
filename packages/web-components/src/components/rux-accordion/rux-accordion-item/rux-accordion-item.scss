@@ -1,1 +1,70 @@
-hi
+:host {
+    box-sizing: border-box;
+}
+
+/*remove default marker*/
+summary {
+    list-style: none;
+}
+/*remove default marker in safari*/
+details > summary::-webkit-details-marker {
+    display: none;
+}
+
+.rux-accordion-item {
+    display: flex;
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    font-weight: var(--font-control-body-1-font-weight);
+    line-height: var(--font-control-body-1-line-height);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
+    color: var(--color-text-primary);
+    padding: var(--spacing-050) var(--spacing-2);
+
+    & summary {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        border-radius: var(--radius-base);
+        background-color: var(--color-background-surface-default);
+        color: var(--color-text-interactive-default);
+        padding: var(--spacing-2) calc(var(--spacing-2) - 2px);
+        min-height: var(--spacing-10);
+        box-shadow: 0px -1px 0px 0px var(--color-background-base-default) inset;
+        cursor: pointer;
+    }
+
+    &--title {
+        padding: var(--spacing-1) var(--spacing-1);
+        flex-grow: 1;
+    }
+    &--content {
+        padding: var(--spacing-4);
+        margin: var(--spacing-0);
+    }
+
+    /*when disabled*/
+    &--disabled {
+        opacity: var(--disabled-opacity);
+        cursor: not-allowed;
+
+        & > summary {
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+        & .rux-accordion-item--content {
+            pointer-events: none;
+        }
+    }
+}
+
+rux-icon {
+    padding: var(--spacing-1);
+}
+
+.indicator {
+}
+
+slot[name='label'] {
+    width: 100%;
+}

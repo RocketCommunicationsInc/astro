@@ -22,14 +22,59 @@
         <!-- Default State -->
         <div>
             <rux-accordion label="myAccordion">
-                <rux-accordion-item titleName="Test1" expanded>
-                    <p>This is my accordion test.</p>
+                <rux-accordion-item
+                    label="Test1"
+                    icon-left="apps"
+                    expanded
+                    truncated="true"
+                >
+                    <span slot="label"
+                        ><rux-tag status="pass"></rux-tag> <-- cause I'm the
+                        best</span
+                    >
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Atque porro odio recusandae aut cupiditate id,
+                        voluptatibus illo distinctio, asperiores quas nulla,
+                        maiores modi at? Harum quas voluptatem eius illo ex!
+                    </p>
                 </rux-accordion-item>
-                <rux-accordion-item titleName="Test2" disabled>
-                    <p>This is my accordion test.</p>
+                <rux-accordion-item
+                    label="Test2"
+                    icon-left="star"
+                    disabled
+                    expanded
+                >
+                    <form id="form">
+                        <rux-input
+                            id="ruxInput"
+                            name="ruxInput"
+                            label="Input Field"
+                        ></rux-input>
+                        <p>Add all the things!</p>
+                        <rux-checkbox-group>
+                            <rux-checkbox>one</rux-checkbox>
+                            <rux-checkbox>two</rux-checkbox>
+                            <rux-checkbox>three</rux-checkbox>
+                        </rux-checkbox-group>
+                    </form>
                 </rux-accordion-item>
-                <rux-accordion-item titleName="Test3" icon="app">
-                    <p>This is my accordion test.</p>
+                <rux-accordion-item
+                    label="this is a really really long title that we're doing over here where it might wrap and stuff"
+                    icon="apps"
+                >
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Repellendus assumenda adipisci error quas dolore nulla
+                        reiciendis soluta praesentium excepturi pariatur ipsum,
+                        eos provident sed, quisquam doloremque labore tenetur
+                        consequuntur numquam!
+                    </p>
+                    <img
+                        src="https://www.rd.com/wp-content/uploads/2021/04/GettyImages-138468381-scaled-e1619028416767.jpg"
+                        alt="KITTIES!"
+                        style="width: 80%; margin: 10px auto"
+                    />
                 </rux-accordion-item>
             </rux-accordion>
         </div>
