@@ -80,7 +80,7 @@
         }
         &--disabled {
             opacity: 0.4;
-            opacity: var(--disabled-opacity);
+            opacity: var(--opacity-disabled);
             cursor: not-allowed;
         }
         &--small {
