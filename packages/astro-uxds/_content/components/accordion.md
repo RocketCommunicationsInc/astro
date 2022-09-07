@@ -40,4 +40,6 @@ Clicking on an item in an Accordion selects and expands that item. If there are 
 
 ![If a different branch is selected, for example, by clicking on a different top level item, the current branch automatically closes and the new branch opens.](/img/components/accordion-4.png "If a different branch is selected, for example, by clicking on a different top level item, the current branch automatically closes and the new branch opens.")
 
+While Accordions are often used for presenting information hierarchy, Accordions can also be used to display controls, input fields and data visualizations. Accordions are provided with slots which can be swapped for other components depending on the use case.
+
 :::
