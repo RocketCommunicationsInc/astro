@@ -23,9 +23,9 @@ jobs:
         run: cd ./packages/web-components && npm i
       - name: Install Playwright
         run: cd ./packages/web-components && npx playwright install --with-deps
-      - nmae: Run Tests
+      - name: Run Tests
         run: cd ./packages/web-components && npx playwright test
-        uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v2
         if: always()
         with:
           name: playwright-report
