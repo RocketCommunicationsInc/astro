@@ -1,0 +1,33 @@
+name: Playwright Tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    permissions:
+
+env:
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - name: Install Deps
+        run: cd ./packages/web-components && npm i
+      - name: Install Playwright
+        run: cd ./packages/web-components && npx playwright install --with-deps
+      - nmae: Run Tests
+        run: cd ./packages/web-components && npx playwright test
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: playwright-report
+          path: packages/web-components/playwright-report/
+          retention-days: 30
