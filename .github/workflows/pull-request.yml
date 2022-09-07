@@ -23,6 +23,11 @@ jobs:
           path: |
             ./packages/web-components/node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
+      - uses: tj-actions/changed-files@v11
+        id: changed-files
+        with:
+          files: |
+            **/package.json
       - run: npm run web-comps.install
         if: steps.cache-node-modules.outputs.cache-hit != 'true' || steps.changed-files.outputs.any_changed == 'true'
       - run: npm run build.web-comps
