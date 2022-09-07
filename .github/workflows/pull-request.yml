@@ -57,8 +57,6 @@ jobs:
       - name: Install Deps
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: cd ./packages/web-components && npm i
-      - name: Install Playwright
-        run: cd ./packages/web-components && npx playwright install --with-deps
       - name: Run Tests
         run: cd ./packages/web-components && npx playwright test
       - uses: actions/upload-artifact@v2
