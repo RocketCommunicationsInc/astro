@@ -70,4 +70,5 @@ export const config: Config = {
     extras: {
         appendChildSlotFix: true,
     },
+    testing: { modulePathIgnorePatterns: ['tests/'] },
 }

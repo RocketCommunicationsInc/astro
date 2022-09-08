@@ -22,12 +22,16 @@ jobs:
         with:
           path: |
             ./packages/web-components/node_modules
-            ~/.cache/Cypress
           key: node-modules-${{ hashFiles('package-lock.json') }}
+      - uses: tj-actions/changed-files@v11
+        id: changed-files
+        with:
+          files: |
+            **/package.json
       - run: npm run web-comps.install
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        if: steps.cache-node-modules.outputs.cache-hit != 'true' || steps.changed-files.outputs.any_changed == 'true'
       - run: npm run build.web-comps
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        if: steps.cache-node-modules.outputs.cache-hit != 'true' || steps.changed-files.outputs.any_changed == 'true'
   unit-tests:
     needs: setup
     runs-on: ubuntu-latest
@@ -44,22 +48,25 @@ jobs:
     needs: setup
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎
+      - name: Checkout
         uses: actions/checkout@v2
-      - name: Cache NPM and Cypress 📦
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - name: Get Node Cache
         uses: actions/cache@v2
         with:
-          path: |
-            ./packages/web-components/node_modules
-            ~/.cache/Cypress
+          path: ./packages/web-components/node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
-      - run: npm i cypress@8.0.0
+      - name: Install Deps
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
-      - name: Cypress tests 🧪
-        uses: cypress-io/github-action@v4
+        run: cd ./packages/web-components && npm i && npx playwright install --with-deps
+      - name: Run Tests
+        run: cd ./packages/web-components && npm run test.cr
+      - uses: actions/upload-artifact@v2
+        if: always()
         with:
-          working-directory: ./packages/web-components
-          install: false
-          start: npm run start.stencil
-          wait-on: "http://localhost:3333"
-          wait-on-timeout: "110"
+          name: playwright-report
+          path: packages/web-components/playwright-report/
+          retention-days: 30
