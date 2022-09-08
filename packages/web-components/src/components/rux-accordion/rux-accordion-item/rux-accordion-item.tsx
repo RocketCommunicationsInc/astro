@@ -59,7 +59,6 @@ export class RuxAccordionItem {
             <Host>
                 <details
                     open={this.expanded}
-                    part="truncated"
                     class={{
                         'rux-accordion-item': true,
                         'rux-accordion-item--disabled': this.disabled,

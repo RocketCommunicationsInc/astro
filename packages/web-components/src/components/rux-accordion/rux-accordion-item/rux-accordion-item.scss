@@ -2,6 +2,16 @@
     box-sizing: border-box;
 }
 
+:host([truncated]) {
+    & summary {
+        & .rux-accordion-item--title {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}
+
 /*remove default marker*/
 summary {
     list-style: none;
