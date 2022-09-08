@@ -47,6 +47,7 @@ export class RuxAccordionItem {
     @Prop({ reflect: true }) iconLeft: string = ''
 
     private _clickHandler(e: MouseEvent) {
+        console.log(e.target)
         //if the rux-accordion-item has the disabled attribute, it cannot be manipulated
         if (this.disabled) {
             e.preventDefault()
@@ -67,8 +68,6 @@ export class RuxAccordionItem {
             })
             //only add the expanded attribute if it was not there when clicked. Else, close the item.
             !isExpanded && this.el.setAttribute('expanded', '')
-
-            console.log(items)
             return
         }
         this.expanded = !this.expanded
@@ -95,11 +94,11 @@ export class RuxAccordionItem {
                         'rux-accordion-item': true,
                         'rux-accordion-item--disabled': this.disabled,
                     }}
-                    onClick={this._clickHandler}
                 >
                     <summary
                         part="label-wrapper"
                         tabindex={this.disabled ? '-1' : undefined}
+                        onClick={this._clickHandler}
                     >
                         {this.iconLeft && (
                             <rux-icon
