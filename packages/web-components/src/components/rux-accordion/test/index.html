@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
     <body>
+        <!-- PARTS TESTING
         <style>
             rux-accordion-item::part(container) {
                 border: 3px solid green;
@@ -37,11 +38,11 @@
             rux-accordion-item::part(indicator) {
                 color: white;
             }
-        </style>
+        </style> -->
 
         <div>
             <rux-accordion label="myAccordion" truncated>
-                <rux-accordion-item label="Test1" icon-left="apps" expanded>
+                <rux-accordion-item label="Test1" icon-left="apps">
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Atque porro odio recusandae aut cupiditate id,
@@ -49,7 +50,7 @@
                         maiores modi at? Harum quas voluptatem eius illo ex!
                     </p>
                 </rux-accordion-item>
-                <rux-accordion-item label="Test2" icon-left="star" expanded>
+                <rux-accordion-item label="Test2" icon-left="star">
                     <form id="form">
                         <rux-input
                             id="ruxInput"
@@ -85,21 +86,24 @@
             </rux-accordion>
 
             <h3>Second test bed</h3>
-            <rux-accordion disallow-multiple truncated>
+            <rux-accordion disallow-multiple>
                 <rux-accordion-item
                     label="Lorem, ipsum dolor sit amet consectetur adipisicing elit. A eos impedit tempora labore magnam magni maiores esse unde, praesentium sed eaque ducimus in odit,"
                     expanded
-                >
+                    >content in here
                 </rux-accordion-item>
                 <rux-accordion-item expanded label="second one"
                     >Lorem, ipsum dolor sit amet consectetur adipisicing elit. A
                     eos impedit tempora labore magnam magni maiores esse unde,
                     praesentium sed eaque ducimus in odit,</rux-accordion-item
                 >
-                <rux-accordion-item label="third one" expanded
+                <rux-accordion-item label="third one"
                     >stuff in here</rux-accordion-item
                 >
-                <rux-accordion-item label="forth one"
+                <rux-accordion-item
+                    icon-left="star"
+                    label="Lorem, ipsum dolor sit amet consectetur adipisicing elit. A eos impedit tempora labore magnam magni maiores esse unde, praesentium sed eaque ducimus in odit,
+                "
                     >stuff in here</rux-accordion-item
                 >
             </rux-accordion>
