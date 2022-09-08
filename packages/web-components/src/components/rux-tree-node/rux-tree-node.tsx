@@ -37,6 +37,8 @@ export class RuxTreeNode {
     private iconName = closedIcon
     @Element() el!: HTMLRuxTreeNodeElement
     @State() children: Array<HTMLRuxTreeNodeElement> = []
+    @State() hasPrefix: boolean = false
+    @State() hasSuffix: boolean = false
 
     /**
      * Sets the expanded state
@@ -51,7 +53,7 @@ export class RuxTreeNode {
     /**
      * Sets the text's part white-space to wrap
      */
-    @Prop({ mutable: true, reflect: true }) wrap = false
+    @Prop({ reflect: true }) wrap = false
 
     /**
      * Emit when user selects a tree node
@@ -81,7 +83,7 @@ export class RuxTreeNode {
         this.setSelected(newValue)
     }
 
-    @Listen('keydown', { passive: true })
+    @Listen('keydown', { passive: false })
     handleKeyDown(ev: KeyboardEvent) {
         if (ev.target !== ev.currentTarget) {
             return true
@@ -112,23 +114,24 @@ export class RuxTreeNode {
     }
 
     connectedCallback() {
+        this._checkForPrefixAndSuffix = this._checkForPrefixAndSuffix.bind(this)
+        this._handleArrowClick = this._handleArrowClick.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
+        this._handleTreeNodeClick = this._handleTreeNodeClick.bind(this)
     }
 
     componentWillLoad() {
         this._handleSlotChange()
+        this._checkForPrefixAndSuffix()
     }
 
     get hasChildren() {
         return this.children.length > 0
     }
 
-    get hasPrefix() {
-        return hasSlot(this.el, 'prefix')
-    }
-
-    get hasSuffix() {
-        return hasSlot(this.el, 'suffix')
+    private _checkForPrefixAndSuffix() {
+        this.hasPrefix = hasSlot(this.el, 'prefix')
+        this.hasSuffix = hasSlot(this.el, 'suffix')
     }
 
     /**
@@ -257,6 +260,10 @@ export class RuxTreeNode {
 
     render() {
         const {
+            _checkForPrefixAndSuffix,
+            _handleArrowClick,
+            _handleSlotChange,
+            _handleTreeNodeClick,
             componentId,
             expanded,
             hasChildren,
@@ -272,9 +279,7 @@ export class RuxTreeNode {
                 role="treeitem"
                 aria-expanded={expanded ? 'true' : 'false'}
                 aria-selected={selected ? 'true' : 'false'}
-                onClick={(event: MouseEvent) =>
-                    this._handleTreeNodeClick(event)
-                }
+                onClick={_handleTreeNodeClick}
             >
                 <div
                     id={componentId}
@@ -288,30 +293,29 @@ export class RuxTreeNode {
                         {hasChildren && (
                             <rux-icon
                                 class="arrow"
-                                onClick={this._handleArrowClick.bind(this)}
+                                onClick={_handleArrowClick}
                                 size="1.25rem"
                                 icon={iconName}
                             />
                         )}
-                        {hasPrefix && (
-                            <span class="prefix">
-                                <slot name="prefix"></slot>
-                            </span>
-                        )}
-                        <span part="text">
-                            <slot onSlotchange={this._handleSlotChange}></slot>
+                        <span class={{ prefix: hasPrefix }}>
+                            <slot
+                                name="prefix"
+                                onSlotchange={_checkForPrefixAndSuffix}
+                            />
                         </span>
-                        {hasSuffix && (
-                            <span class="suffix">
-                                <slot name="suffix"></slot>
-                            </span>
-                        )}
+                        <span part="text">
+                            <slot onSlotchange={_handleSlotChange} />
+                        </span>
+                        <span class={{ suffix: hasSuffix }}>
+                            <slot
+                                name="suffix"
+                                onSlotchange={_checkForPrefixAndSuffix}
+                            />
+                        </span>
                     </div>
                     <div {...attrs} class="children">
-                        <slot
-                            name="node"
-                            onSlotchange={this._handleSlotChange}
-                        ></slot>
+                        <slot name="node" onSlotchange={_handleSlotChange} />
                     </div>
                 </div>
             </Host>

@@ -28,6 +28,10 @@
                 width: 324px;
             }
 
+            #append-test {
+                padding: 48px 24px;
+            }
+
             #truncated-text {
                 width: 250px;
             }
@@ -586,6 +590,33 @@
                 </ftl-holster>
             </div>
         </ftl-belt>
+
+        <div id="append-test">
+            Apppend prefix and suffix test
+            <rux-tree-node id="whatup" style="width: 300px">
+                whatup tree node
+            </rux-tree-node>
+            <button id="prefix">add a prefix</button>
+            <button id="suffix">add a suffix</button>
+            <script>
+                prefix.addEventListener('click', (e) => {
+                    console.log(e.target)
+                    const el = document.querySelector('#whatup')
+                    const icon = document.createElement('rux-status')
+                    icon.setAttribute('status', 'critical')
+                    icon.setAttribute('slot', 'prefix')
+                    el.appendChild(icon)
+                })
+                suffix.addEventListener('click', (e) => {
+                    console.log(e.target)
+                    const el = document.querySelector('#whatup')
+                    const icon = document.createElement('rux-status')
+                    icon.setAttribute('status', 'normal')
+                    icon.setAttribute('slot', 'suffix')
+                    el.appendChild(icon)
+                })
+            </script>
+        </div>
 
         <div id="truncate-width-test">
             <rux-tree>

@@ -12572,6 +12572,10 @@ export namespace Components {
           * @param value
          */
         "setSelected": (value: boolean) => Promise<void>;
+        /**
+          * Sets the text's part white-space to wrap
+         */
+        "wrap": boolean;
     }
 }
 declare global {
@@ -33021,6 +33025,10 @@ declare namespace LocalJSX {
           * Sets the selected state
          */
         "selected"?: boolean;
+        /**
+          * Sets the text's part white-space to wrap
+         */
+        "wrap"?: boolean;
     }
     interface IntrinsicElements {
         "rux-button": RuxButton;

@@ -76,7 +76,7 @@
     padding: calc(var(--spacing-050) + var(--spacing-025)) var(--spacing-2)
         calc(var(--spacing-050) + var(--spacing-025)) var(--spacing-8);
     display: flex;
-    gap: var(--spacing-1);
+    gap: var(--spacing-050);
     align-items: center;
 
     &:hover {
@@ -94,7 +94,7 @@
 
     .prefix {
         display: flex;
-        margin-right: var(--spacing-1);
+        margin: 0 var(--spacing-1);
     }
 
     .suffix {
