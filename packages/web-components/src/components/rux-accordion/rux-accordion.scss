@@ -1,0 +1,13 @@
+:host {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+:host([disabled]) {
+    cursor: not-allowed;
+    opacity: var(--disabled-opacity);
+}
+:host([disabled]) ::slotted(*) {
+    pointer-events: none;
+}

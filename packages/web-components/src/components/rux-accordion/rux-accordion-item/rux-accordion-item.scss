@@ -2,16 +2,6 @@
     box-sizing: border-box;
 }
 
-:host([truncated]) {
-    & summary {
-        & .rux-accordion-item--title {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-    }
-}
-
 /*remove default marker*/
 summary {
     list-style: none;
@@ -19,6 +9,11 @@ summary {
 /*remove default marker in safari*/
 details > summary::-webkit-details-marker {
     display: none;
+}
+
+summary:hover rux-icon,
+summary:hover .rux-accordion-item--title {
+    color: var(--color-text-interactive-hover);
 }
 
 .rux-accordion-item {
@@ -34,20 +29,34 @@ details > summary::-webkit-details-marker {
     & summary {
         box-sizing: border-box;
         display: flex;
+        flex-direction: row;
+        flex: 1 1 auto;
         align-items: center;
         border-radius: var(--radius-base);
         background-color: var(--color-background-surface-default);
         color: var(--color-text-interactive-default);
         padding: var(--spacing-2) calc(var(--spacing-2) - 2px);
         min-height: var(--spacing-10);
-        box-shadow: 0px -1px 0px 0px var(--color-background-base-default) inset;
+        box-shadow: 0 -1px 0 0 var(--color-background-base-default) inset;
         cursor: pointer;
+        min-width: 0;
     }
 
     &--title {
         padding: var(--spacing-1) var(--spacing-1);
-        flex-grow: 1;
+        //display:flex;
+        flex: 1 1 auto;
+        box-sizing: border-box;
+
+        &--truncated {
+            padding: var(--spacing-1) var(--spacing-1);
+            flex-grow: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
     }
+
     &--content {
         padding: var(--spacing-4);
         margin: var(--spacing-0);
@@ -70,11 +79,5 @@ details > summary::-webkit-details-marker {
 
 rux-icon {
     padding: var(--spacing-1);
-}
-
-.indicator {
-}
-
-slot[name='label'] {
-    width: 100%;
+    flex: 0 0 auto;
 }
