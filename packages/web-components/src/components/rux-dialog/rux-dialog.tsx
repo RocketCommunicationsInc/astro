@@ -235,8 +235,9 @@ export class RuxDialog {
                                                 onClick={_handleDialogChoice}
                                                 data-value="false"
                                                 hidden={!denyText}
-                                                tabindex="-1"
+                                                tabindex="0"
                                                 exportparts="container:deny-button"
+                                                id="rux-dialog-deny-button"
                                             >
                                                 {denyText}
                                             </rux-button>
@@ -244,7 +245,7 @@ export class RuxDialog {
                                                 onClick={_handleDialogChoice}
                                                 hidden={!confirmText}
                                                 data-value="true"
-                                                tabindex="0"
+                                                tabindex="1"
                                                 exportparts="container:confirm-button"
                                             >
                                                 {confirmText}

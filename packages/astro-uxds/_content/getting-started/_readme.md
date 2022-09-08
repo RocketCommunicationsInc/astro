@@ -45,7 +45,7 @@ Astro is tested & supported in major 'evergreen' web browsers (the latest browse
 
 |       |  Chrome  | Firefox  |   Edge   |  Safari  | Chrome (Android) | Safari (iOS) |
 | :---- | :------: | :------: | :------: | :------: | :--------------: | :----------: |
-| Astro | &#x2715; | &#x2715; | &#x2715; | &#x2715; |   unsupported    | unsupported  |
+| Astro | &check;  | &check;  | &check;  | &check;  |   unsupported    | unsupported  |
 
 ### Versioning
 

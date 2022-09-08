@@ -6,6 +6,23 @@ Interested in contributing to Astro? We would love to have you. Here's everythin
 
 **Requirements:** Node v16+
 
+**M1 USERS ONLY:** Chromium needs to be installed manually
+
+1. Install chromium with Homebrew
+
+```bash
+brew install chromium --no-quarantine
+```
+
+2. Modify your .zshrc file and add the following 2 lines of code at the bottom:
+
+```bash
+export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+export PUPPETEER_EXECUTABLE_PATH=`which chromium`
+```
+
+3. Restart your terminal and proceed to the next step.
+
 Clone this repo and run
 
 ```bash
@@ -23,7 +40,6 @@ This will spin up a stencil dev server for rapid prototyping at [localhost:3333]
 ## Project Structure
 
 - `packages`
-  - `ag-grid-theme` - An Astro theme for the [AG Grid](https://www.ag-grid.com/) grid library.
   - `angular` - Our sibling Angular wrapper library.
   - `astro-uxds` - Our design system documentation site, [astrouxds.com](https://astrouxds.com). Built with 11ty.
   - `react` - Our sibling React wrapper library
@@ -39,8 +55,7 @@ This will spin up a stencil dev server for rapid prototyping at [localhost:3333]
 - [Stencil](https://stenciljs.com/) is used to build our web components.
 - [Lerna](https://github.com/lerna/lerna) is used to manage our monorepo.
 - [Storybook](https://storybook.js.org/) is used for our [developer documentation](https://astro-components.netlify.app/).
-- [Cypress](https://www.cypress.io/) is used for our E2E testing.
-- [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) keep our git log nice and tidy.
+- [Playwright](https://playwright.dev/) is used for our e2e testing.
 - [Changesets](https://github.com/changesets/changesets) help us manage our releases.
 
 ## Branching
@@ -67,35 +82,27 @@ All new components should have an associated Storybook story that displays any v
 
 ### E2E Tests
 
-[Cypress.io](https://cypress.io/) is used for E2E testing. Single component E2E tests located in `src/component/tests/*.e2e.js`. Multi component tests are located in `src/tests/*.e2e.js`.
+[Playwright](https://playwright.dev/) is used for E2E testing. These E2E tests are located in `web-components/tests`.
 
 #### Writing an E2E Test
 
-Each component has it's own isolated example index.html that can be used in E2E tests or debugging. These example files can be viewed in the browser at `http://localhost:3333/components/{component-name}/test` when running Stencil's dev server.
+Each component has it's own isoloated test file within `web-components/tests`. These files generate the HTML to be tested using our `setBodyContent` method located in `/tests/utils/_startTestEnv.ts`.
 
-When creating a new component, make sure to create an example index.html under the `/src/components/{your-component}/tests` folder. Next, create an E2E test file in the same directory. In your test file, you can make use of the Cypress helper `visitComponent`:
+When creating a new component, make sure to create a new e2e test under `web-components/tests` named `new-component-name.spec.ts`. For examples, see our already written tests under `web-components/tests`.
 
-```js
-describe("My Test", () => {
-  beforeEach(() => {
-    cy.visitComponent("your-component");
-  });
-});
-```
+#### Running Tests
 
-#### Running All Tests
+Start the Stencil server using `npm run start.stencil`.
 
-`npm run test.e2e.run`
-
-#### Running All Tests w/ Watch
-
-> Make sure Stencil's dev server is running first - `npm run start.stencil`
-
-`npm run test.e2e.watch` - Opens Cypress in watch mode.
+- `npm run test.e2e` - Runs all e2e tests in Chromium, Firefox, and WebKit.
+- `npm run test.cr` - Runs e2e tests in Chromium.
+- `npm run test.ff` - Runs e2e tests in Firefox.
+- `npm run test.wk` - Runs e2e tests in WebKit.
+- `npm run test` - Runs all unit and e2e tests.
 
 ## Submitting your first PR
 
-Astro uses [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) for writing git messages.
+Astro loosely follows [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) for writing git messages.
 
 Once you've finished your change, be sure to run `npm run test`.
 
