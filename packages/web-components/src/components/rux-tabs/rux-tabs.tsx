@@ -72,6 +72,7 @@ export class RuxTabs {
         e.detail.forEach((panel: HTMLRuxTabPanelElement) => {
             this._panels.push(panel)
         })
+
         // Default to first tab if none are selected
         const selectedTab =
             this._tabs.find((tab) => tab.selected) || this._tabs[0]
@@ -91,14 +92,21 @@ export class RuxTabs {
 
     private _reset() {
         // hide everything
-        this._tabs.forEach((tab) => (tab.selected = false))
-        //* classLIst on rux-tab-panel is an array of strings.
-        this._panels.forEach((panel) => panel.classList.add('hidden'))
+        // Only reset the tabs and panels that are part of this instance of rux-tabs
+        this._tabs.forEach((tab) => {
+            if (tab.parentElement === this.el) tab.selected = false
+        })
+        this._panels.forEach((panel) => {
+            if (
+                panel.parentElement?.getAttribute('aria-labelledby') ===
+                this.el.id
+            )
+                panel.classList.add('hidden')
+        })
     }
 
     private _setTab(selectedTab: HTMLRuxTabElement) {
         this._reset()
-
         // find the panel whose aria-labeldby attribute matches the tab’s id
         const selectedPanel = this._panels.find(
             (panel) =>
