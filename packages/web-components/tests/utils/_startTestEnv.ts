@@ -10,7 +10,7 @@ export function startTestEnv() {
 }
 
 /**
- * goto and addStyleTag methods to be used WITHIN a beforeEach call. Helpful when multiple tests are using the same content.
+ * goto methods to be used WITHIN a beforeEach call. Helpful when multiple tests are using the same content.
  * @param page - the page var from playwright
  */
 export async function startTestInBefore(page: any) {
