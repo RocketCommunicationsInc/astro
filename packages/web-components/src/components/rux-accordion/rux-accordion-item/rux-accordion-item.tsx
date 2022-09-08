@@ -1,7 +1,6 @@
 import { Component, h, Host, Prop, Element } from '@stencil/core'
 
 /**
- * @slot label - sets the accordion item header title
  * @part container - the accordion item
  * @part label-wrapper - the element wrapping rux-icons and the label
  * @part label - the label
