@@ -4,7 +4,7 @@
 }
 
 :host([disabled]) {
-    opacity: var(--disabled-opacity);
+    opacity: var(--opacity-disabled);
     cursor: not-allowed;
     pointer-events: none;
 

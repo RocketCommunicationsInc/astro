@@ -20,7 +20,7 @@
 .rux-form-field {
     flex-direction: column;
     label {
-        margin-bottom: var(--spacing-input-label-top);
+        margin-bottom: var(--spacing-2);
     }
 }
 
@@ -38,7 +38,7 @@
         cursor: not-allowed;
     }
     .rux-range:disabled + #steplist {
-        opacity: var(--disabled-opacity);
+        opacity: var(--opacity-disabled);
         cursor: not-allowed;
         .tick {
             cursor: not-allowed;
@@ -83,7 +83,7 @@
             padding: 0;
         }
         :disabled {
-            opacity: var(--disabled-opacity);
+            opacity: var(--opacity-disabled);
         }
     }
 }
@@ -144,7 +144,7 @@ input[type='range']:focus {
         calc((var(--slider-thumb-size) / 2) - var(--spacing-050));
 }
 .rux-range:disabled::-webkit-slider-runnable-track {
-    opacity: var(--disabled-opacity, 0.4);
+    opacity: var(--opacity-disabled);
     cursor: not-allowed;
 }
 
@@ -186,12 +186,12 @@ input[type='range']:focus {
 }
 .rux-range:disabled::-moz-range-track,
 .rux-range:disabled::-moz-range-progress {
-    opacity: var(--disabled-opacity, 0.4);
+    opacity: var(--opacity-disabled);
     cursor: not-allowed;
 }
 
 .rux-input:disabled {
-    opacity: var(--disabled-opacity, 0.4);
+    opacity: var(--opacity-disabled);
     cursor: not-allowed;
 }
 
@@ -294,7 +294,7 @@ input:-moz-focusring {
     outline: none;
 }
 .rux-range:disabled::-moz-range-thumb {
-    opacity: var(--disabled-opacity, 0.4);
+    opacity: var(--opacity-disabled);
     cursor: not-allowed;
 }
 
