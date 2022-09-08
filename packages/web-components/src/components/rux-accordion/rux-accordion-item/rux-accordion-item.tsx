@@ -97,7 +97,10 @@ export class RuxAccordionItem {
                     }}
                     onClick={this._clickHandler}
                 >
-                    <summary part="label-wrapper">
+                    <summary
+                        part="label-wrapper"
+                        tabindex={this.disabled ? '-1' : undefined}
+                    >
                         {this.iconLeft && (
                             <rux-icon
                                 exportparts="icon"

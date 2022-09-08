@@ -26,7 +26,7 @@ export class RuxAccordion {
 
     render() {
         return (
-            <Host>
+            <Host tabindex={this.disabled ? '-1' : null}>
                 <slot></slot>
             </Host>
         )
