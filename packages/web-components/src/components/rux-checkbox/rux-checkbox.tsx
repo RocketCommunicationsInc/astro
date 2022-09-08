@@ -7,11 +7,12 @@ import {
     Element,
     Watch,
     Host,
+    State,
 } from '@stencil/core'
 import FormFieldMessage from '../../common/functional-components/FormFieldMessage/FormFieldMessage'
 
 import { FormFieldInterface } from '../../common/interfaces.module'
-import { renderHiddenInput } from '../../utils/utils'
+import { renderHiddenInput, hasSlot } from '../../utils/utils'
 
 let id = 0
 
@@ -32,16 +33,17 @@ export class RuxCheckbox implements FormFieldInterface {
 
     @Element() el!: HTMLRuxCheckboxElement
 
+    @State() hasLabelSlot = false
+
     /**
      * The help or explanation text
      */
-    @Prop({ attribute: 'help-text' }) helpText?: string
+    @Prop() helpText?: string
 
     /**
      * The checkbox name
      */
     @Prop() name = ''
-
     /**
      * The checkbox value
      */
@@ -104,6 +106,11 @@ export class RuxCheckbox implements FormFieldInterface {
     connectedCallback() {
         this._onClick = this._onClick.bind(this)
         this._onInput = this._onInput.bind(this)
+        this._checkForLabelSlot = this._checkForLabelSlot.bind(this)
+    }
+
+    componentWillLoad() {
+        this._checkForLabelSlot()
     }
 
     componentDidLoad() {
@@ -111,6 +118,14 @@ export class RuxCheckbox implements FormFieldInterface {
             // indeterminate property does not exist in HTML but is accessible via js
             this._inputEl.indeterminate = true
         }
+    }
+
+    get hasLabel() {
+        return this.label ? true : this.hasLabelSlot
+    }
+
+    private _checkForLabelSlot() {
+        this.hasLabelSlot = hasSlot(this.el)
     }
 
     private _onClick(e: Event): void {
@@ -134,39 +149,37 @@ export class RuxCheckbox implements FormFieldInterface {
 
     render() {
         const {
+            _checkForLabelSlot,
+            _onBlur,
+            _onClick,
+            _onInput,
             checkboxId,
             checked,
             disabled,
+            el,
             helpText,
-            indeterminate,
-            label,
             name,
             value,
+            indeterminate,
+            label,
+            hasLabel,
+            hasLabelSlot,
         } = this
 
         if (!this.indeterminate) {
-            renderHiddenInput(
-                true,
-                this.el,
-                this.name,
-                this.value ? this.value : 'on',
-                this.disabled,
-                this.checked
-            )
+            renderHiddenInput(true, el, name, value || 'on', disabled, checked)
         }
 
         return (
             <Host>
                 <div class="rux-form-field" part="form-field">
-                    <div
-                        class={{
-                            'rux-checkbox': true,
-                            'rux-checkbox--indeterminate': indeterminate,
-                            'rux-checkbox--has-text': helpText !== undefined,
-                        }}
-                    >
+                    <div class="rux-checkbox">
                         <input
                             type="checkbox"
+                            class={{
+                                'rux-checkbox__input': true,
+                                'rux-checkbox__input--no-label': !hasLabel,
+                            }}
                             name={name}
                             id={checkboxId}
                             disabled={disabled}
@@ -174,17 +187,20 @@ export class RuxCheckbox implements FormFieldInterface {
                             //Allows storybook's indetermiante control to take effect.
                             indeterminate={indeterminate}
                             value={value}
-                            onChange={this._onClick}
-                            onInput={this._onInput}
-                            onBlur={this._onBlur}
+                            onChange={_onClick}
+                            onInput={_onInput}
+                            onBlur={_onBlur}
                             ref={(el) => (this._inputEl = el)}
                         />
                         <label htmlFor={checkboxId} part="label">
-                            <span>{label || <slot />}</span>
+                            {hasLabelSlot ? null : label}
+                            <span class={{ hidden: !hasLabel }}>
+                                <slot onSlotchange={_checkForLabelSlot} />
+                            </span>
                         </label>
                     </div>
                 </div>
-                <FormFieldMessage helpText={helpText}></FormFieldMessage>
+                <FormFieldMessage helpText={helpText} />
             </Host>
         )
     }

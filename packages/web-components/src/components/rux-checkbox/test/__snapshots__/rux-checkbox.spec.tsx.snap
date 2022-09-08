@@ -5,9 +5,9 @@ exports[`rux-checkbox renders 1`] = `
   <mock:shadow-root>
     <div class="rux-form-field" part="form-field">
       <div class="rux-checkbox">
-        <input id="rux-checkbox-2" type="checkbox" value="">
+        <input class="rux-checkbox__input rux-checkbox__input--no-label" id="rux-checkbox-2" type="checkbox" value="">
         <label htmlfor="rux-checkbox-2" part="label">
-          <span>
+          <span class="hidden">
             <slot></slot>
           </span>
         </label>

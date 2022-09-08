@@ -23,6 +23,7 @@
     --checkbox-hover-border-color: var(--color-background-interactive-hover);
 }
 
+.hidden,
 :host([hidden]) {
     display: none;
 }
@@ -39,102 +40,62 @@
 
 .rux-checkbox {
     display: flex;
-    position: relative;
-    line-height: 1.2;
 
-    &--indeterminate {
-        input[type='checkbox'] + label::after {
-            position: absolute;
-            display: flex;
-            content: '';
-            top: 5px;
-            width: 10px;
-            height: 5px;
-            transform: rotate(0deg);
-            border-right: 0;
-            border-top: 0;
-            border-bottom: 2px solid var(--checkbox-checked-color);
-            left: 4px;
-        }
-    }
-
-    input[type='checkbox'] {
-        -webkit-appearance: none;
+    &__input {
         appearance: none;
+        -webkit-appearance: none;
+        width: 18px;
+        height: 18px;
+        margin: 0 10px 0 0;
 
-        + label {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            color: var(--checkbox-label-color);
-            letter-spacing: 0.5px;
-            cursor: pointer;
-            margin-left: -7px;
-
-            // Box
-            &::before {
-                display: flex;
-                content: '';
-                align-self: start;
-                height: 1.125rem;
-                width: 1.125rem;
-
-                margin: 0 0.625rem 0 0;
-                background-color: var(--checkbox-background-color);
-                border: 1px solid var(--checkbox-border-color);
-                border-radius: var(--radius-checkbox);
-            }
+        &--no-label {
+            margin-right: 0;
         }
 
-        // checked
+        background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='17' height='17' rx='1.5' fill='%23101923'/%3E%3Crect x='0.5' y='0.5' width='17' height='17' rx='1.5' stroke='%232B659B'/%3E%3C/svg%3E");
+
         &:checked {
-            + label {
-                &::after {
-                    position: absolute;
-                    display: flex;
-                    content: '';
-                    top: 5px;
-                    height: 6px;
-                    width: 12px;
-                    left: 3px;
-                    border-right: 2px solid var(--checkbox-checked-color);
-                    border-top: 2px solid var(--checkbox-checked-color);
-                    transform: rotate(125deg);
-                }
-                &::before {
-                    border-color: var(--checkbox-border-color);
-                }
+            background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='17' height='17' rx='1.5' fill='%23101923'/%3E%3Crect x='14.8988' y='4.80597' width='12' height='2' transform='rotate(125 14.8988 4.80597)' fill='%234DACFF'/%3E%3Crect x='9.16306' y='12.9975' width='2' height='6' transform='rotate(125 9.16306 12.9975)' fill='%234DACFF'/%3E%3Crect x='0.5' y='0.5' width='17' height='17' rx='1.5' stroke='%232B659B'/%3E%3C/svg%3E");
+        }
+
+        &:indeterminate {
+            background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='17' height='17' rx='1.5' fill='%23101923'/%3E%3Crect x='4' y='8' width='10' height='2' fill='%234DACFF'/%3E%3Crect x='0.5' y='0.5' width='17' height='17' rx='1.5' stroke='%232B659B'/%3E%3C/svg%3E%0A");
+        }
+
+        &:hover {
+            background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='17' height='17' rx='1.5' fill='%23101923'/%3E%3Crect x='0.5' y='0.5' width='17' height='17' rx='1.5' stroke='%2392CBFF'/%3E%3C/svg%3E%0A");
+
+            &:indeterminate {
+                background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='17' height='17' rx='1.5' fill='%23101923'/%3E%3Crect x='4' y='8' width='10' height='2' fill='%234DACFF'/%3E%3Crect x='0.5' y='0.5' width='17' height='17' rx='1.5' stroke='%2392CBFF'/%3E%3C/svg%3E");
+            }
+
+            &:checked {
+                background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='17' height='17' rx='1.5' fill='%23101923'/%3E%3Crect x='14.8988' y='4.80597' width='12' height='2' transform='rotate(125 14.8988 4.80597)' fill='%234DACFF'/%3E%3Crect x='9.16302' y='12.9975' width='2' height='6' transform='rotate(125 9.16302 12.9975)' fill='%234DACFF'/%3E%3Crect x='0.5' y='0.5' width='17' height='17' rx='1.5' stroke='%2392CBFF'/%3E%3C/svg%3E");
             }
         }
 
         &:disabled {
+            cursor: not-allowed;
+            opacity: var(--disabled-opacity);
+
             + label {
                 cursor: not-allowed;
                 opacity: var(--disabled-opacity);
             }
-        }
-    }
 
-    input[type='checkbox']:not(:disabled):hover {
-        + label {
-            &::before {
-                border-color: var(--checkbox-hover-border-color);
+            &:hover {
+                background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='17' height='17' rx='1.5' fill='%23101923'/%3E%3Crect x='0.5' y='0.5' width='17' height='17' rx='1.5' stroke='%232B659B'/%3E%3C/svg%3E");
+            }
+
+            &:checked {
+                background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='17' height='17' rx='1.5' fill='%23101923'/%3E%3Crect x='14.8988' y='4.80597' width='12' height='2' transform='rotate(125 14.8988 4.80597)' fill='%234DACFF'/%3E%3Crect x='9.16302' y='12.9975' width='2' height='6' transform='rotate(125 9.16302 12.9975)' fill='%234DACFF'/%3E%3Crect x='0.5' y='0.5' width='17' height='17' rx='1.5' stroke='%232B659B'/%3E%3C/svg%3E");
+            }
+
+            &:indeterminate {
+                background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='17' height='17' rx='1.5' fill='%23101923'/%3E%3Crect x='4' y='8' width='10' height='2' fill='%234DACFF'/%3E%3Crect x='0.5' y='0.5' width='17' height='17' rx='1.5' stroke='%232B659B'/%3E%3C/svg%3E");
             }
         }
     }
-
-    &--has-text {
-        margin-bottom: 0;
-    }
-
-    + .rux-help-text {
-        margin-bottom: 0.75rem;
-    }
-}
-
-.rux-checkbox-label__asterisk {
-    margin-left: 4px;
 }
 
 .rux-help-text {
