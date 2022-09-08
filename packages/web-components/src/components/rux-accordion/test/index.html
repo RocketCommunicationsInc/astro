@@ -19,15 +19,9 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
     <body>
-        <!-- Default State -->
         <div>
             <rux-accordion label="myAccordion">
-                <rux-accordion-item
-                    label="Test1"
-                    icon-left="apps"
-                    expanded
-                    truncated="true"
-                >
+                <rux-accordion-item label="Test1" icon-left="apps" expanded>
                     <span slot="label"
                         ><rux-tag status="pass"></rux-tag> <-- cause I'm the
                         best</span
@@ -42,9 +36,14 @@
                 <rux-accordion-item
                     label="Test2"
                     icon-left="star"
-                    disabled
                     expanded
+                    truncated
                 >
+                    <span slot="label"
+                        >Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Similique cumque facere quam dignissimos sit
+                        laboriosam enim voluptate ducimus magnam dolores.</span
+                    >
                     <form id="form">
                         <rux-input
                             id="ruxInput"
@@ -60,8 +59,9 @@
                     </form>
                 </rux-accordion-item>
                 <rux-accordion-item
-                    label="this is a really really long title that we're doing over here where it might wrap and stuff"
+                    label="this is a really really long title that we're doing over here where it might wrap and stuff this is a really really long title that we're doing over here where it might wrap and stuff"
                     icon="apps"
+                    disabled
                 >
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
