@@ -19,13 +19,29 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
     <body>
+        <style>
+            rux-accordion-item::part(container) {
+                border: 3px solid green;
+                border-radius: 20px;
+                padding: 0;
+                background-color: black;
+            }
+
+            rux-accordion-item::part(label-wrapper) {
+                background-color: purple;
+                border-radius: 15px;
+            }
+
+            rux-accordion-item::part(icon),
+            rux-accordion-item::part(label),
+            rux-accordion-item::part(indicator) {
+                color: white;
+            }
+        </style>
+
         <div>
-            <rux-accordion label="myAccordion">
+            <rux-accordion label="myAccordion" truncated>
                 <rux-accordion-item label="Test1" icon-left="apps" expanded>
-                    <span slot="label"
-                        ><rux-tag status="pass"></rux-tag> <-- cause I'm the
-                        best</span
-                    >
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Atque porro odio recusandae aut cupiditate id,
@@ -33,17 +49,7 @@
                         maiores modi at? Harum quas voluptatem eius illo ex!
                     </p>
                 </rux-accordion-item>
-                <rux-accordion-item
-                    label="Test2"
-                    icon-left="star"
-                    expanded
-                    truncated
-                >
-                    <span slot="label"
-                        >Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Similique cumque facere quam dignissimos sit
-                        laboriosam enim voluptate ducimus magnam dolores.</span
-                    >
+                <rux-accordion-item label="Test2" icon-left="star" expanded>
                     <form id="form">
                         <rux-input
                             id="ruxInput"
@@ -76,6 +82,26 @@
                         style="width: 80%; margin: 10px auto"
                     />
                 </rux-accordion-item>
+            </rux-accordion>
+
+            <h3>Second test bed</h3>
+            <rux-accordion disallow-multiple truncated>
+                <rux-accordion-item
+                    label="Lorem, ipsum dolor sit amet consectetur adipisicing elit. A eos impedit tempora labore magnam magni maiores esse unde, praesentium sed eaque ducimus in odit,"
+                    expanded
+                >
+                </rux-accordion-item>
+                <rux-accordion-item expanded label="second one"
+                    >Lorem, ipsum dolor sit amet consectetur adipisicing elit. A
+                    eos impedit tempora labore magnam magni maiores esse unde,
+                    praesentium sed eaque ducimus in odit,</rux-accordion-item
+                >
+                <rux-accordion-item label="third one" expanded
+                    >stuff in here</rux-accordion-item
+                >
+                <rux-accordion-item label="forth one"
+                    >stuff in here</rux-accordion-item
+                >
             </rux-accordion>
         </div>
     </body>
