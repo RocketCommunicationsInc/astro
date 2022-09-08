@@ -12,26 +12,38 @@ import { Placement } from "@floating-ui/dom";
 import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
 export namespace Components {
     interface RuxAccordion {
-    }
-    interface RuxAccordionItem {
         /**
-          * ***** toggles disabled ********
+          * If present, sets a disabled state on the accordion, indicating that no part of it can be manipulated by user action.
          */
         "disabled": boolean;
         /**
-          * ***** item expanded or not ********
+          * ***** toggles disabled - default false ********
+         */
+        "disallowMultiple": boolean;
+        /**
+          * If present, sets accordion item headers to wrap text instead of overflow: ellipsis
+         */
+        "truncated": boolean;
+    }
+    interface RuxAccordionItem {
+        /**
+          * If present, sets a disabled state on this accordion item, indicating it cannot be selected by user action.
+         */
+        "disabled": boolean;
+        /**
+          * If present, sets the initial state on this accordion icon to open, displaying the accordion content.
          */
         "expanded": boolean;
         /**
-          * ***** toggles left icon ********
+          * When set, places a rux-icon of the string type to the left of the label
          */
         "iconLeft": string;
         /**
-          * ***** gives title of the item ********
+          * Takes a string label set by  the user and places it in summary as the title
          */
         "label": string;
         /**
-          * ***** toggles truncated text ********
+          * If set to true or passed in this wraps lines of header text rather than truncating them
          */
         "truncated": boolean;
     }
@@ -20345,26 +20357,38 @@ declare global {
 }
 declare namespace LocalJSX {
     interface RuxAccordion {
-    }
-    interface RuxAccordionItem {
         /**
-          * ***** toggles disabled ********
+          * If present, sets a disabled state on the accordion, indicating that no part of it can be manipulated by user action.
          */
         "disabled"?: boolean;
         /**
-          * ***** item expanded or not ********
+          * ***** toggles disabled - default false ********
+         */
+        "disallowMultiple"?: boolean;
+        /**
+          * If present, sets accordion item headers to wrap text instead of overflow: ellipsis
+         */
+        "truncated"?: boolean;
+    }
+    interface RuxAccordionItem {
+        /**
+          * If present, sets a disabled state on this accordion item, indicating it cannot be selected by user action.
+         */
+        "disabled"?: boolean;
+        /**
+          * If present, sets the initial state on this accordion icon to open, displaying the accordion content.
          */
         "expanded"?: boolean;
         /**
-          * ***** toggles left icon ********
+          * When set, places a rux-icon of the string type to the left of the label
          */
         "iconLeft"?: string;
         /**
-          * ***** gives title of the item ********
+          * Takes a string label set by  the user and places it in summary as the title
          */
         "label"?: string;
         /**
-          * ***** toggles truncated text ********
+          * If set to true or passed in this wraps lines of header text rather than truncating them
          */
         "truncated"?: boolean;
     }
