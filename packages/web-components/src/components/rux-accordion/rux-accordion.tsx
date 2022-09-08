@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop, Element } from '@stencil/core'
+import { Component, h, Host, Prop } from '@stencil/core'
 //import { hasShadowDom } from '../../utils/utils'
 
 @Component({
@@ -7,8 +7,6 @@ import { Component, h, Host, Prop, Element } from '@stencil/core'
     shadow: true,
 })
 export class RuxAccordion {
-    @Element() el!: HTMLRuxAccordionElement
-
     /**
      * If present, sets a disabled state on the accordion, indicating that no part of it can be manipulated by user action.
      */
