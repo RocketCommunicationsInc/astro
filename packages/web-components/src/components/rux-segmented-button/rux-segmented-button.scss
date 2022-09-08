@@ -4,7 +4,7 @@
 }
 
 :host([disabled]) {
-    opacity: var(--disabled-opacity);
+    opacity: var(--opacity-disabled);
     cursor: not-allowed;
     pointer-events: none;
 
@@ -25,7 +25,6 @@
 
 .rux-segmented-button {
     display: inline-flex;
-    // Default is small for 6.0 - will update default to be medium in 7.0
     padding: var(--spacing-0);
     margin: var(--spacing-0);
     list-style: none;
@@ -83,17 +82,18 @@
     }
 
     .rux-segmented-button-label {
-        // Defaults to small in 6.0 - will default to medium in 7
-        height: calc(var(--spacing-6) + var(--spacing-1)); //28px
-        padding: var(--spacing-1) var(--spacing-4); // 4px 16px for small
+        // Defaults to medium
+        height: calc(var(--spacing-8) + var(--spacing-1)); //36px
+        padding: var(--spacing-2) var(--spacing-4); //8px 16px
+
+        &--small {
+            height: calc(var(--spacing-6) + var(--spacing-1)); //28px
+            padding: var(--spacing-1) var(--spacing-4); // 4px 16px for small
+        }
 
         &--large {
             height: calc(var(--spacing-10) + var(--spacing-1)); //44px
             padding: var(--spacing-3) var(--spacing-4); //12px 16px
-        }
-        &--medium {
-            height: calc(var(--spacing-8) + var(--spacing-1)); //36px
-            padding: var(--spacing-2) var(--spacing-4); //8px 16px
         }
     }
 

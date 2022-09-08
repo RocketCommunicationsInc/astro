@@ -47,7 +47,7 @@
     }
     &--disabled {
         opacity: 0.4;
-        opacity: var(--disabled-opacity);
+        opacity: var(--opacity-disabled);
         cursor: not-allowed;
     }
     &--small {
@@ -90,7 +90,7 @@
     font-size: var(--font-control-body-1-font-size);
     font-weight: var(--font-control-body-1-font-weight);
     letter-spacing: var(--font-control-body-1-letter-spacing);
-    margin-bottom: var(--spacing-input-label-top);
+    margin-bottom: var(--spacing-2);
     &__asterisk {
         margin-left: var(--spacing-1);
     }

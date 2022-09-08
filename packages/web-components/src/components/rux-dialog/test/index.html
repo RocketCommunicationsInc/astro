@@ -141,6 +141,7 @@
             })
             changeModal.addEventListener('ruxdialogopened', () => {
                 setTimeout(() => {
+                    console.log('heard')
                     changeModal.append(newFooter)
                     changeModal.append(newMessage)
                     //The assertion in the e2e test will timeout after 4000 ms of not finding the appended stuff
