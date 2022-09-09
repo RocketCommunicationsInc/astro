@@ -20,6 +20,49 @@
     </head>
 
     <body>
+        <style>
+            /* add Parts: tree-text-color */
+            rux-tree-node::part(item) {
+                color: red;
+            }
+
+            /* add Parts: tree-border-color*/
+            rux-tree {
+                border: 1px solid purple;
+            }
+            rux-tree-node {
+                border: 1px solid orange;
+            }
+            /* add Parts: tree-accent-color*/
+            rux-tree-node::part(icon)::after {
+                border-color: transparent transparent transparent white;
+            }
+
+            /*add Parts: tree-hover-background-color*/
+            /* add Parts: tree-hover-text-color */
+            rux-tree-node::part(item):hover {
+                background-color: orange;
+                color: green;
+            }
+
+            /*add Parts: Tree-selected-border-color*/
+            rux-tree-node[selected] {
+                border: 1px solid blue;
+            }
+
+            /* add Parts: tree-selected-accent-color */
+            rux-tree-node[selected]::part(item) {
+                color: green;
+            }
+            rux-tree-node[selected]::part(item)::before {
+                color: green;
+            }
+
+            /*add Parts: Tree-expanded-border-color */
+            rux-tree-node[expanded] {
+                border-color: pink;
+            }
+        </style>
         <rux-tree role="tree" class="hydrated">
             <rux-tree-node
                 role="treeitem"
