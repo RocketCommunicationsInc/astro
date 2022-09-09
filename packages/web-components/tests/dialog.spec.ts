@@ -22,18 +22,18 @@ test.describe('Dialog', () => {
         await setBodyContent(
             page,
             `
-        <rux-dialog dialog-title="Title" dialog-message="Message"></rux-dialog>
+        <rux-dialog header="Title" message="Message"></rux-dialog>
     `
         )
         const el = page.locator('rux-dialog')
-        await expect(el).toHaveAttribute('dialog-message', 'Message')
-        await expect(el).toHaveAttribute('dialog-title', 'Title')
+        await expect(el).toHaveAttribute('message', 'Message')
+        await expect(el).toHaveAttribute('header', 'Title')
     })
     test('it opens and closes', async ({ page }) => {
         await setBodyContent(
             page,
             `
-        <rux-dialog dialog-title="Title" dialog-message="Message" click-to-close></rux-dialog>
+        <rux-dialog header="Title" message="Message" click-to-close></rux-dialog>
         <rux-button id="toggle">Open/Close</rux-button>
     `
         )
@@ -69,7 +69,7 @@ test.describe('Dialog', () => {
         await setBodyContent(
             page,
             `
-        <rux-dialog open dialog-title="Title" dialog-message="Message"></rux-dialog>
+        <rux-dialog open header="Title" message="Message"></rux-dialog>
         <rux-button id="toggle">Open/Close</rux-button>
     `
         )
@@ -93,7 +93,7 @@ test.describe('Dialog', () => {
         await setBodyContent(
             page,
             `
-        <rux-dialog open dialog-title="Title" dialog-message="Message"></rux-dialog>
+        <rux-dialog open header="Title" message="Message"></rux-dialog>
         <rux-button id="toggle">Open/Close</rux-button>
     `
         )
@@ -119,7 +119,7 @@ test.describe('Dialog', () => {
         await setBodyContent(
             page,
             `
-        <rux-dialog open dialog-title="Title" dialog-message="Message"></rux-dialog>
+        <rux-dialog open header="Title" message="Message"></rux-dialog>
         <rux-button id="toggle">Open/Close</rux-button>
     `
         )
@@ -142,7 +142,7 @@ test.describe('Dialog', () => {
         await setBodyContent(
             page,
             `
-        <rux-dialog open dialog-title="Title" dialog-message="Message"></rux-dialog>
+        <rux-dialog open header="Title" message="Message"></rux-dialog>
         <rux-button id="toggle">Open/Close</rux-button>
     `
         )
@@ -165,7 +165,7 @@ test.describe('Dialog', () => {
         await setBodyContent(
             page,
             `
-        <rux-dialog open dialog-title="Title" dialog-message="Message"></rux-dialog>
+        <rux-dialog open header="Title" message="Message"></rux-dialog>
     `
         )
         page.addScriptTag({
@@ -188,7 +188,7 @@ test.describe('Dialog', () => {
         await setBodyContent(
             page,
             `
-        <rux-dialog open dialog-title="Title" dialog-message="Message"></rux-dialog>
+        <rux-dialog open header="Title" message="Message"></rux-dialog>
     `
         )
         page.addScriptTag({
@@ -213,8 +213,8 @@ test.describe(
             await startTestInBefore(page)
             await setBodyContent(
                 page,
-                `   <rux-dialog id="ctc-false" dialog-title="Click to close = False" dialog-message="world"></rux-dialog>
-                <rux-dialog id="ctc-true" dialog-title="Click to close = True" dialog-message="world" click-to-close></rux-dialog>
+                `   <rux-dialog id="ctc-false" header="Click to close = False" message="world"></rux-dialog>
+                <rux-dialog id="ctc-true" header="Click to close = True" message="world" click-to-close></rux-dialog>
                 <rux-button id="true">Open click-to-close true</rux-button>
                 <rux-button id="false">Open click-to-close false</rux-button>
             `

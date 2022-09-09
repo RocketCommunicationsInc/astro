@@ -26,8 +26,8 @@ export const Dialog = (args) => {
 <div style="display: flex; flex-flow: column; justify-content: center;">
     <rux-dialog
         ?open="${args.open}"
-        dialog-message="${args.dialogMessage}"
-        dialog-title="${args.dialogTitle}"
+        message="${args.message}"
+        header="${args.header}"
         confirm-text="${args.confirmText}"
         deny-text="${args.denyText}"
     ></rux-dialog>
@@ -39,8 +39,8 @@ export const Dialog = (args) => {
     <Story
         args={{
             open: true,
-            dialogMessage: 'Dialog message',
-            dialogTitle: 'Dialog title',
+            message: 'Dialog message',
+            header: 'Dialog header',
             confirmText: 'Release',
             denyText: 'Cancel',
             clickToClose: false,
@@ -92,8 +92,8 @@ export const WithSlots = (args) => {
             clickToClose: false,
         }}
         argTypes={{
-            dialogTitle: { table: { disable: true}},
-            dialogMessage: { table: { disable: true}},
+            header: { table: { disable: true}},
+            message: { table: { disable: true}},
             confirmText: { table: { disable: true}},
             denyText: { table: { disable: true}}
         }}

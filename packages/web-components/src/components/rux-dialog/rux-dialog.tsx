@@ -39,11 +39,11 @@ export class RuxDialog {
     /**
      * Dialog body message
      */
-    @Prop() dialogMessage?: string
+    @Prop() message?: string
     /**
      * Dialog header title
      */
-    @Prop() dialogTitle?: string
+    @Prop() header?: string
     /**
      * Text for confirmation button
      */
@@ -192,8 +192,8 @@ export class RuxDialog {
     render() {
         const {
             open,
-            dialogMessage,
-            dialogTitle,
+            message,
+            header,
             confirmText,
             denyText,
             _handleDialogChoice,
@@ -211,8 +211,7 @@ export class RuxDialog {
                             <header
                                 class={{
                                     hidden:
-                                        !this.hasHeader &&
-                                        dialogTitle === undefined,
+                                        !this.hasHeader && header === undefined,
                                     'rux-dialog__header': true,
                                 }}
                                 part="header"
@@ -221,7 +220,7 @@ export class RuxDialog {
                                     name="header"
                                     onSlotchange={this._handleSlotChange}
                                 >
-                                    {dialogTitle}
+                                    {header}
                                 </slot>
                             </header>
 
@@ -230,13 +229,13 @@ export class RuxDialog {
                                     class={{
                                         hidden:
                                             !this.hasMessage &&
-                                            dialogMessage === undefined,
+                                            message === undefined,
                                         'rux-dialog__message': true,
                                     }}
                                     part="message"
                                 >
                                     <slot onSlotchange={this._handleSlotChange}>
-                                        {dialogMessage}
+                                        {message}
                                     </slot>
                                 </div>
                             </div>
