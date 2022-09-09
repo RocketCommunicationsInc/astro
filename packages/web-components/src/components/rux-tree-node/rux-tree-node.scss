@@ -113,7 +113,7 @@
     }
 }
 
-:host::part(text) {
+.text {
     overflow: hidden;
     white-space: var(--white-space);
     text-overflow: ellipsis;
@@ -122,7 +122,7 @@
 :host([wrap]) {
     --white-space: wrap;
 
-    &::part(text) {
+    & .text {
         line-height: var(--line-height-sm);
     }
 

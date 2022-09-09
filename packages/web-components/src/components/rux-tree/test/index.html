@@ -18,10 +18,10 @@
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
 
-        <script
+        <!-- <script
             type="module"
             src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"
-        ></script>
+        ></script> -->
 
         <style>
             #truncate-width-test {
@@ -618,8 +618,44 @@
             </script>
         </div>
 
+        <!-- <style>
+            /* add Parts: tree-text-color */
+            rux-tree-node::part(item){
+                color: red;
+            }
+
+            /* add Parts: tree-border-color*/
+            rux-tree{border: 1px solid purple;}
+            rux-tree-node{border: 1px solid orange;}
+            /* add Parts: tree-accent-color*/
+            rux-tree-node::part(icon){
+                color: white;
+            }
+
+            /*add Parts: tree-hover-background-color*/
+            /* add Parts: tree-hover-text-color */
+            rux-tree-node::part(item):hover{
+                background-color: orange;
+                color: green;
+            }
+
+            /*add Parts: Tree-selected-border-color*/
+            rux-tree-node[selected]{border: 1px solid blue;}
+
+            /* add Parts: tree-selected-accent-color */
+            rux-tree-node[selected]::part(icon){
+                color:green;
+            }
+
+            /*add Parts: Tree-expanded-border-color */
+            rux-tree-node[expanded]{
+                border-color: pink;
+            }
+
+
+        </style> -->
         <div id="truncate-width-test">
-            <rux-tree>
+            <rux-tree id="partsTest">
                 <rux-tree-node expanded="">
                     Level 1 - Lorem ipsum dolor sit amet consectetur adipisicing
                     elit. Reiciendis, consequuntur!

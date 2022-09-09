@@ -30,7 +30,8 @@ let id = 0
  * @slot prefix - Renders content before the default slot
  * @slot suffix - Renders content after the default slot
  * @slot node - Renders a child node within the current node
- * @part text - The area bewteen the prefix and suffix slots
+ * @part icon - The expand/collapse indicator
+ * @part item - Each individual node in the tree
  */
 export class RuxTreeNode {
     private componentId = `node-${++id}`
@@ -289,13 +290,14 @@ export class RuxTreeNode {
                         'tree-node--has-children': hasChildren,
                     }}
                 >
-                    <div class="parent" tabindex="0">
+                    <div class="parent" tabindex="0" part="item">
                         {hasChildren && (
                             <rux-icon
                                 class="arrow"
                                 onClick={_handleArrowClick}
                                 size="1.25rem"
                                 icon={iconName}
+                                exportparts="icon"
                             />
                         )}
                         <span class={{ prefix: hasPrefix }}>
@@ -304,7 +306,7 @@ export class RuxTreeNode {
                                 onSlotchange={_checkForPrefixAndSuffix}
                             />
                         </span>
-                        <span part="text">
+                        <span class="text">
                             <slot onSlotchange={_handleSlotChange} />
                         </span>
                         <span class={{ suffix: hasSuffix }}>
