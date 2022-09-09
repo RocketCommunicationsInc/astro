@@ -61,7 +61,7 @@ summary:hover .rux-accordion-item--title {
 
     /*when disabled*/
     &--disabled {
-        opacity: var(--disabled-opacity);
+        opacity: var(--opacity-disabled);
         cursor: not-allowed;
 
         & > summary {
