@@ -1,5 +1,9 @@
 import { test, expect } from '@playwright/test'
-import { startTestEnv, setBodyContent } from './utils/_startTestEnv'
+import {
+    startTestEnv,
+    setBodyContent,
+    startTestInBefore,
+} from './utils/_startTestEnv'
 
 test.describe('Dialog', () => {
     startTestEnv()
@@ -29,7 +33,7 @@ test.describe('Dialog', () => {
         await setBodyContent(
             page,
             `
-        <rux-dialog dialog-title="Title" dialog-message="Message"></rux-dialog>
+        <rux-dialog dialog-title="Title" dialog-message="Message" click-to-close></rux-dialog>
         <rux-button id="toggle">Open/Close</rux-button>
     `
         )
@@ -201,10 +205,80 @@ test.describe('Dialog', () => {
             page.waitForTimeout(1000).then(() => page.keyboard.press('Escape')),
         ])
     })
-    /*
+})
+test.describe(
+    'Dialog does not close on an off click unless click-to-close is true',
+    () => {
+        test.beforeEach(async ({ page }) => {
+            await startTestInBefore(page)
+            await setBodyContent(
+                page,
+                `   <rux-dialog id="ctc-false" dialog-title="Click to close = False" dialog-message="world"></rux-dialog>
+                <rux-dialog id="ctc-true" dialog-title="Click to close = True" dialog-message="world" click-to-close></rux-dialog>
+                <rux-button id="true">Open click-to-close true</rux-button>
+                <rux-button id="false">Open click-to-close false</rux-button>
+            `
+            )
+            await page.addScriptTag({
+                content: `
+            document.addEventListener('ruxdialogclosed', (e) => console.log(e.detail))
+            const openTrue = document.getElementById('true');
+            const openFalse = document.getElementById('false');
+            const ctcTrueModal = document.getElementById('ctc-true')
+            const ctcFalseModal = document.getElementById('ctc-false')
+    
+            openTrue.addEventListener('click', () => {
+                ctcTrueModal.open = true
+            })
+            openFalse.addEventListener('click', () => {
+                ctcFalseModal.open = true
+            })
+        `,
+            })
+        })
+        test('it reamins open when click-to-close is false', async ({
+            page,
+        }) => {
+            await page.locator('#false').click()
+            const ctcFalseModal = page.locator('#ctc-false')
+            await ctcFalseModal
+                .evaluate((e) => e.hasAttribute('open'))
+                .then((e) => {
+                    expect(e).toBeTruthy()
+                })
+            //click off, it should remain open.
+            await page.locator('body').click({ position: { x: 10, y: 10 } })
+            //ctcFalseModal should still be open
+            await ctcFalseModal
+                .evaluate((e) => e.hasAttribute('open'))
+                .then((e) => {
+                    expect(e).toBeTruthy()
+                })
+        })
+        test('it closes on an off click when click-to-close is true', async ({
+            page,
+        }) => {
+            await page.locator('#true').click()
+            const ctcTrueModal = page.locator('#ctc-true')
+            await ctcTrueModal
+                .evaluate((e) => e.hasAttribute('open'))
+                .then((e) => {
+                    expect(e).toBeTruthy()
+                })
+            //click off, it should remain open.
+            await page.locator('body').click({ position: { x: 10, y: 10 } })
+            //ctcFalseModal should still be open
+            await ctcTrueModal
+                .evaluate((e) => e.hasAttribute('open'))
+                .then((e) => {
+                    expect(e).toBeFalsy()
+                })
+        })
+        /*
         Need to test: 
         - With slots? Not sure if that's acutally beneficial. 
         - Better way to test events rather than console? 
         - current e2e has tests for dialog props changing - I don't think these are helpful. Thoughts? 
     */
-})
+    }
+)
