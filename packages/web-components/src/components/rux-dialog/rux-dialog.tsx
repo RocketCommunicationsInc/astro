@@ -87,7 +87,6 @@ export class RuxDialog {
                 'rux-button'
             )
             if (ev.key === 'Enter') {
-                console.log('inside the enter if, this is running')
                 //If enter is hit but the cancel/deny button is focused, we want to click that instead.
                 let activeEl: any = this.element.shadowRoot?.activeElement
                 if (activeEl && activeEl === btns[0]) {
