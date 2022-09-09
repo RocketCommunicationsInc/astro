@@ -11,6 +11,22 @@ details > summary::-webkit-details-marker {
     display: none;
 }
 
+summary {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    align-items: center;
+    border-radius: var(--radius-base);
+    background-color: var(--color-background-surface-default);
+    color: var(--color-text-interactive-default);
+    padding: var(--spacing-2) calc(var(--spacing-2) - 2px);
+    min-height: var(--spacing-10);
+    box-shadow: 0 -1px 0 0 var(--color-background-base-default) inset;
+    cursor: pointer;
+    min-width: 0;
+}
+
 summary:hover rux-icon,
 summary:hover .rux-accordion-item--title {
     color: var(--color-text-interactive-hover);
@@ -25,22 +41,6 @@ summary:hover .rux-accordion-item--title {
     letter-spacing: var(--font-control-body-1-letter-spacing);
     color: var(--color-text-primary);
     padding: var(--spacing-050) var(--spacing-2);
-
-    & summary {
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: row;
-        flex: 1 1 auto;
-        align-items: center;
-        border-radius: var(--radius-base);
-        background-color: var(--color-background-surface-default);
-        color: var(--color-text-interactive-default);
-        padding: var(--spacing-2) calc(var(--spacing-2) - 2px);
-        min-height: var(--spacing-10);
-        box-shadow: 0 -1px 0 0 var(--color-background-base-default) inset;
-        cursor: pointer;
-        min-width: 0;
-    }
 
     &--title {
         padding: var(--spacing-1) var(--spacing-1);
@@ -76,5 +76,4 @@ summary:hover .rux-accordion-item--title {
 
 rux-icon {
     padding: var(--spacing-1);
-    flex: 0 0 auto;
 }
