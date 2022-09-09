@@ -18,7 +18,7 @@ test.describe('Button Group', () => {
     test('it renders', async ({ page }) => {
         const el = page.locator('rux-button-group').first()
         await expect(el).toBeVisible()
-        // await expect(el).toHaveClass('hydrated')
+        await expect(el).toHaveClass('hydrated')
     })
     test('it sets attributes', async ({ page }) => {
         const el = page.locator('rux-button-group').first()
