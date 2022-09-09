@@ -28,7 +28,6 @@ test.describe('Pop up', async () => {
         `
         )
         const el = page.locator('rux-pop-up-menu')
-        await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })
 
