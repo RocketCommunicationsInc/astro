@@ -18,19 +18,18 @@ test.describe('Dialog', () => {
         await setBodyContent(
             page,
             `
-        <rux-dialog modal-title="Title" modal-message="Message"></rux-dialog>
+        <rux-dialog dialog-title="Title" dialog-message="Message"></rux-dialog>
     `
         )
         const el = page.locator('rux-dialog')
-        //! These will need to change to dialog-message and dialog-title in the future.
-        await expect(el).toHaveAttribute('modal-message', 'Message')
-        await expect(el).toHaveAttribute('modal-title', 'Title')
+        await expect(el).toHaveAttribute('dialog-message', 'Message')
+        await expect(el).toHaveAttribute('dialog-title', 'Title')
     })
     test('it opens and closes', async ({ page }) => {
         await setBodyContent(
             page,
             `
-        <rux-dialog modal-title="Title" modal-message="Message"></rux-dialog>
+        <rux-dialog dialog-title="Title" dialog-message="Message"></rux-dialog>
         <rux-button id="toggle">Open/Close</rux-button>
     `
         )
@@ -66,7 +65,7 @@ test.describe('Dialog', () => {
         await setBodyContent(
             page,
             `
-        <rux-dialog open modal-title="Title" modal-message="Message"></rux-dialog>
+        <rux-dialog open dialog-title="Title" dialog-message="Message"></rux-dialog>
         <rux-button id="toggle">Open/Close</rux-button>
     `
         )
@@ -90,7 +89,7 @@ test.describe('Dialog', () => {
         await setBodyContent(
             page,
             `
-        <rux-dialog open modal-title="Title" modal-message="Message"></rux-dialog>
+        <rux-dialog open dialog-title="Title" dialog-message="Message"></rux-dialog>
         <rux-button id="toggle">Open/Close</rux-button>
     `
         )
@@ -116,7 +115,7 @@ test.describe('Dialog', () => {
         await setBodyContent(
             page,
             `
-        <rux-dialog open modal-title="Title" modal-message="Message"></rux-dialog>
+        <rux-dialog open dialog-title="Title" dialog-message="Message"></rux-dialog>
         <rux-button id="toggle">Open/Close</rux-button>
     `
         )
@@ -139,7 +138,7 @@ test.describe('Dialog', () => {
         await setBodyContent(
             page,
             `
-        <rux-dialog open modal-title="Title" modal-message="Message"></rux-dialog>
+        <rux-dialog open dialog-title="Title" dialog-message="Message"></rux-dialog>
         <rux-button id="toggle">Open/Close</rux-button>
     `
         )
@@ -162,7 +161,7 @@ test.describe('Dialog', () => {
         await setBodyContent(
             page,
             `
-        <rux-dialog open modal-title="Title" modal-message="Message"></rux-dialog>
+        <rux-dialog open dialog-title="Title" dialog-message="Message"></rux-dialog>
     `
         )
         page.addScriptTag({
@@ -185,7 +184,7 @@ test.describe('Dialog', () => {
         await setBodyContent(
             page,
             `
-        <rux-dialog open modal-title="Title" modal-message="Message"></rux-dialog>
+        <rux-dialog open dialog-title="Title" dialog-message="Message"></rux-dialog>
     `
         )
         page.addScriptTag({
