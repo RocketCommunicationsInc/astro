@@ -8,7 +8,7 @@ exports[`rux-tree-node renders 1`] = `
         <span>
           <slot name="prefix"></slot>
         </span>
-        <span class="text">
+        <span part="text">
           <slot></slot>
         </span>
         <span>
@@ -32,7 +32,7 @@ exports[`rux-tree-node renders children 1`] = `
         <span>
           <slot name="prefix"></slot>
         </span>
-        <span class="text">
+        <span part="text">
           <slot></slot>
         </span>
         <span>
@@ -52,7 +52,7 @@ exports[`rux-tree-node renders children 1`] = `
           <span>
             <slot name="prefix"></slot>
           </span>
-          <span class="text">
+          <span part="text">
             <slot></slot>
           </span>
           <span>

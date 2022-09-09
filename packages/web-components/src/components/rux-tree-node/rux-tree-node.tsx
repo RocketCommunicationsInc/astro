@@ -30,6 +30,7 @@ let id = 0
  * @slot prefix - Renders content before the default slot
  * @slot suffix - Renders content after the default slot
  * @slot node - Renders a child node within the current node
+ * @part text - The area bewteen the prefix and suffix slots
  * @part icon - The expand/collapse indicator
  * @part item - Each individual node in the tree
  */
@@ -306,7 +307,7 @@ export class RuxTreeNode {
                                 onSlotchange={_checkForPrefixAndSuffix}
                             />
                         </span>
-                        <span class="text">
+                        <span part="text">
                             <slot onSlotchange={_handleSlotChange} />
                         </span>
                         <span class={{ suffix: hasSuffix }}>
