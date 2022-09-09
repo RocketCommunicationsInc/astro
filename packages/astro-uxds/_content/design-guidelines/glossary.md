@@ -28,7 +28,7 @@ title: Glossary
 - Close Button - A UI component that, when activated, dismisses a [Dialog](/components/dialog).
 - [Color Palettes](/design-guidelines/color) - The list of color values used in and approved by the Astro design system.
 - [Compliance](/design-guidelines/compliance) - A list of rules used to determine if products align with Astro design and usage patterns.
-- [Containers](/components/container) - Used to group multiple components into a specific area that allows them to flow in a flexible/responsive manner. Containers can be used to help manage lists, tables, dialogs, modals, slide out panels, content containers (top and bottom), and other components.
+- Container - An object that holds other objects.
 - [Concept Sketch](/design-process/ui-design) - A sketch on paper that lays out the main content workspace and controls and clarifies the flow of user interaction from screen-to-screen.
 
 ### D
@@ -75,10 +75,7 @@ title: Glossary
 ### P
 
 - [Pagination](/components/pagination) - The process of dividing content for display on multiple pages. It is utilized when content, such as Search results, does not fit onto one page and must be split across multiple pages.
-  <<<<<<< HEAD
-- # [Pop-Up](/components/pop-up) - A dialogue that provides users with a quick way to access additional information or actions.
 - [Pop-Up Menu](/components/pop-up) - A Pop-Up Menu provides users with a quick way to access common actions for a highlighted item.
-  > > > > > > > main
 - [Progress Indicator](/components/progress) - A Progress Indicator signals that an application is busy performing an operation.
 - [Push Button](/components/push-button) - A control that initiates an action.
 

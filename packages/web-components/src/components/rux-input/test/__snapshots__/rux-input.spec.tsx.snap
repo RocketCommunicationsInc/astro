@@ -4,7 +4,7 @@ exports[`rux-input renders 1`] = `
 <rux-input value="">
   <mock:shadow-root>
     <div class="rux-form-field" part="form-field">
-      <div class="rux-input rux-input--medium">
+      <div class="rux-input rux-input--medium" part="input-field">
         <span class="rux-input-prefix" part="prefix">
           <slot name="prefix"></slot>
         </span>
@@ -30,7 +30,7 @@ exports[`rux-input renders label prop 1`] = `
           </slot>
         </span>
       </label>
-      <div class="rux-input rux-input--medium">
+      <div class="rux-input rux-input--medium" part="input-field">
         <span class="rux-input-prefix" part="prefix">
           <slot name="prefix"></slot>
         </span>
@@ -54,7 +54,7 @@ exports[`rux-input renders label slot 1`] = `
           <slot name="label"></slot>
         </span>
       </label>
-      <div class="rux-input rux-input--medium">
+      <div class="rux-input rux-input--medium" part="input-field">
         <span class="rux-input-prefix" part="prefix">
           <slot name="prefix"></slot>
         </span>
@@ -76,7 +76,7 @@ exports[`rux-input renders rux-icon if type is password 1`] = `
 <rux-input type="password" value="">
   <mock:shadow-root>
     <div class="rux-form-field" part="form-field">
-      <div class="rux-input rux-input--medium">
+      <div class="rux-input rux-input--medium" part="input-field">
         <span class="rux-input-prefix" part="prefix">
           <slot name="prefix"></slot>
         </span>

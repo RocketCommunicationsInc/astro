@@ -30,7 +30,6 @@ export class RuxTab {
 
     connectedCallback() {
         this.el.setAttribute('role', 'tab')
-        this.el.addEventListener('click', this._clickHandler)
 
         //handle small on init
         if (this.el?.parentElement?.getAttributeNode('small')) {
