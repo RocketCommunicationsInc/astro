@@ -99,3 +99,9 @@ command = "npm run build"
 	to = "/compliance"
 	status = 301
 	force = true
+
+[[redirects]]
+	from = "/patterns/validation"
+	to = "/patterns/forms-and-validation"
+	status = 301
+	force = true
