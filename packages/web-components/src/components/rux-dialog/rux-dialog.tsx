@@ -39,11 +39,11 @@ export class RuxDialog {
     /**
      * Dialog body message
      */
-    @Prop() modalMessage?: string
+    @Prop() message?: string
     /**
      * Dialog header title
      */
-    @Prop() modalTitle?: string
+    @Prop() header?: string
     /**
      * Text for confirmation button
      */
@@ -52,6 +52,12 @@ export class RuxDialog {
      * Text for close button
      */
     @Prop() denyText: string = 'Cancel'
+
+    /**
+     * Allows dialog to close when clicking off it
+     */
+    @Prop({ attribute: 'click-to-close' }) clickToClose: boolean = false
+
     /**
      * Event that is fired when dialog opens
      */
@@ -107,12 +113,14 @@ export class RuxDialog {
         }
     }
 
-    // close modal if click happens outside of dialog
+    // close dialog if click happens outside of dialog
     @Listen('click', { target: 'window' })
     handleClick(ev: MouseEvent) {
-        const wrapper = this._getWrapper()
-        if (ev.composedPath()[0] === wrapper) {
-            this.open = false
+        if (this.clickToClose) {
+            const wrapper = this._getWrapper()
+            if (ev.composedPath()[0] === wrapper) {
+                this.open = false
+            }
         }
     }
 
@@ -184,8 +192,8 @@ export class RuxDialog {
     render() {
         const {
             open,
-            modalMessage,
-            modalTitle,
+            message,
+            header,
             confirmText,
             denyText,
             _handleDialogChoice,
@@ -203,8 +211,7 @@ export class RuxDialog {
                             <header
                                 class={{
                                     hidden:
-                                        !this.hasHeader &&
-                                        modalTitle === undefined,
+                                        !this.hasHeader && header === undefined,
                                     'rux-dialog__header': true,
                                 }}
                                 part="header"
@@ -213,7 +220,7 @@ export class RuxDialog {
                                     name="header"
                                     onSlotchange={this._handleSlotChange}
                                 >
-                                    {modalTitle}
+                                    {header}
                                 </slot>
                             </header>
 
@@ -222,13 +229,13 @@ export class RuxDialog {
                                     class={{
                                         hidden:
                                             !this.hasMessage &&
-                                            modalMessage === undefined,
+                                            message === undefined,
                                         'rux-dialog__message': true,
                                     }}
                                     part="message"
                                 >
                                     <slot onSlotchange={this._handleSlotChange}>
-                                        {modalMessage}
+                                        {message}
                                     </slot>
                                 </div>
                             </div>

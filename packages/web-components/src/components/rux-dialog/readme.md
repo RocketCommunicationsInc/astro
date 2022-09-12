@@ -60,13 +60,14 @@ Or use slots to render the header, content and footer.
 
 ## Properties
 
-| Property       | Attribute       | Description                  | Type                  | Default     |
-| -------------- | --------------- | ---------------------------- | --------------------- | ----------- |
-| `confirmText`  | `confirm-text`  | Text for confirmation button | `string`              | `'Confirm'` |
-| `denyText`     | `deny-text`     | Text for close button        | `string`              | `'Cancel'`  |
-| `modalMessage` | `modal-message` | Dialog body message          | `string \| undefined` | `undefined` |
-| `modalTitle`   | `modal-title`   | Dialog header title          | `string \| undefined` | `undefined` |
-| `open`         | `open`          | Shows and hides dialog       | `boolean`             | `false`     |
+| Property       | Attribute        | Description                                 | Type                  | Default     |
+| -------------- | ---------------- | ------------------------------------------- | --------------------- | ----------- |
+| `clickToClose` | `click-to-close` | Allows dialog to close when clicking off it | `boolean`             | `false`     |
+| `confirmText`  | `confirm-text`   | Text for confirmation button                | `string`              | `'Confirm'` |
+| `denyText`     | `deny-text`      | Text for close button                       | `string`              | `'Cancel'`  |
+| `header`       | `header`         | Dialog header title                         | `string \| undefined` | `undefined` |
+| `message`      | `message`        | Dialog body message                         | `string \| undefined` | `undefined` |
+| `open`         | `open`           | Shows and hides dialog                      | `boolean`             | `false`     |
 
 
 ## Events
