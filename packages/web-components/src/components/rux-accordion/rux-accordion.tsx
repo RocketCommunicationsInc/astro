@@ -13,11 +13,6 @@ export class RuxAccordion {
      */
     @Prop({ reflect: true }) disabled: boolean = false
 
-    /**
-     * If present, sets accordion item headers to wrap text instead of overflow: ellipsis
-     */
-    @Prop({ reflect: true }) truncated: boolean = false
-
     /*******
      * toggles disallow muiltiple - default false
      * *********/

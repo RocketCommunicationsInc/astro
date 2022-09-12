@@ -12,6 +12,7 @@ import {
 /**
  * @slot (default) - content
  * @slot label - summary title
+ * @slot prefix - summary title
  * @part container - the accordion item
  * @part label-wrapper - the element wrapping rux-icons and the label
  * @part label - the label
@@ -47,12 +48,6 @@ export class RuxAccordionItem {
      */
 
     @Prop({ reflect: true }) disabled: boolean = false
-
-    /**
-     * If set to true or passed in this wraps lines of header text rather than truncating them
-     */
-
-    @Prop({ reflect: true }) truncated: boolean = false
 
     /**
      * When set, places a rux-icon of the string type to the left of the label
@@ -94,26 +89,28 @@ export class RuxAccordionItem {
                         tabindex={this.disabled ? '-1' : undefined}
                         onClick={this._clickHandler}
                     >
-                        {this.iconLeft && (
+                        {/* {this.iconLeft && (
                             <rux-icon
                                 exportparts="icon"
                                 icon={this.iconLeft}
                                 size="20px"
                             ></rux-icon>
-                        )}
+                        )} */}
+
+                        <slot name="prefix"></slot>
                         <div part="label" class="rux-accordion-item--title">
                             <slot name="label"></slot>
                         </div>
-                        <rux-icon
-                            part="indicator"
-                            icon={
-                                this.expanded
-                                    ? 'keyboard-arrow-up'
-                                    : 'keyboard-arrow-down'
-                            }
-                            size="20px"
-                            class="indicator"
-                        ></rux-icon>
+                        <span class="indicator" part="indicator">
+                            <rux-icon
+                                icon={
+                                    this.expanded
+                                        ? 'keyboard-arrow-up'
+                                        : 'keyboard-arrow-down'
+                                }
+                                size="20px"
+                            ></rux-icon>
+                        </span>
                     </summary>
                     <span class="rux-accordion-item--content">
                         <slot></slot>

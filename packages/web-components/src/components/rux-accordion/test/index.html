@@ -120,6 +120,48 @@
                     stuff in here
                 </rux-accordion-item>
             </rux-accordion>
+            <h3>Truncate test bed</h3>
+            <style>
+                #truncated rux-accordion-item > * {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            </style>
+            <rux-accordion id="truncated">
+                <rux-accordion-item expanded>
+                    <rux-icon icon="star" size="auto" slot="prefix"></rux-icon>
+                    <span slot="label">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. A eos impedit tempora labore magnam magni maiores
+                        esse unde, praesentium sed eaque ducimus in odit
+                    </span>
+                    content in here
+                </rux-accordion-item>
+                <rux-accordion-item expanded>
+                    <rux-status slot="prefix" status="critical"></rux-status>
+                    <span slot="label">second one</span>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. A
+                    eos impedit tempora labore magnam magni maiores esse unde,
+                    praesentium sed eaque ducimus in odit,</rux-accordion-item
+                >
+                <rux-accordion-item icon-left="star">
+                    <h1 slot="label">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. A eos impedit tempora labore magnam magni maiores
+                        esse unde, praesentium sed eaque ducimus in odit
+                    </h1>
+                    stuff in here
+                </rux-accordion-item>
+                <rux-accordion-item icon-left="star">
+                    <div slot="label">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. A eos impedit tempora labore magnam magni maiores
+                        esse unde, praesentium sed eaque ducimus in odit
+                    </div>
+                    stuff in here
+                </rux-accordion-item>
+            </rux-accordion>
         </div>
     </body>
 </html>

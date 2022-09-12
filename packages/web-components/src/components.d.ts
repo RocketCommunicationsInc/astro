@@ -20,10 +20,6 @@ export namespace Components {
           * ***** toggles disallow muiltiple - default false ********
          */
         "disallowMultiple": boolean;
-        /**
-          * If present, sets accordion item headers to wrap text instead of overflow: ellipsis
-         */
-        "truncated": boolean;
     }
     interface RuxAccordionItem {
         /**
@@ -42,10 +38,6 @@ export namespace Components {
           * Takes a string label set by  the user and places it in summary as the title
          */
         "label": string;
-        /**
-          * If set to true or passed in this wraps lines of header text rather than truncating them
-         */
-        "truncated": boolean;
     }
     interface RuxButton {
         /**
@@ -20365,10 +20357,6 @@ declare namespace LocalJSX {
           * ***** toggles disallow muiltiple - default false ********
          */
         "disallowMultiple"?: boolean;
-        /**
-          * If present, sets accordion item headers to wrap text instead of overflow: ellipsis
-         */
-        "truncated"?: boolean;
     }
     interface RuxAccordionItem {
         /**
@@ -20391,10 +20379,6 @@ declare namespace LocalJSX {
           * Fired when an element has expanded
          */
         "onRuxexpanded"?: (event: CustomEvent<any>) => void;
-        /**
-          * If set to true or passed in this wraps lines of header text rather than truncating them
-         */
-        "truncated"?: boolean;
     }
     interface RuxButton {
         /**

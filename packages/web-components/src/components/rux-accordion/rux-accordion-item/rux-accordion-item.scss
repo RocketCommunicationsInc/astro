@@ -1,5 +1,7 @@
 :host {
+    position: relative;
     box-sizing: border-box;
+    width: 100%;
 }
 
 /*remove default marker*/
@@ -15,16 +17,14 @@ summary {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    flex: 1 1 auto;
     align-items: center;
     border-radius: var(--radius-base);
     background-color: var(--color-background-surface-default);
     color: var(--color-text-interactive-default);
-    padding: var(--spacing-2) calc(var(--spacing-2) - 2px);
+    padding: var(--spacing-2) calc(var(--spacing-2) - var(--spacing-050));
     min-height: var(--spacing-10);
     box-shadow: 0 -1px 0 0 var(--color-background-base-default) inset;
     cursor: pointer;
-    min-width: 0;
 }
 
 summary:hover rux-icon,
@@ -44,8 +44,9 @@ summary:hover .rux-accordion-item--title {
 
     &--title {
         padding: var(--spacing-1) var(--spacing-1);
-        flex-grow: 1;
         box-sizing: border-box;
+        width: 100%;
+        overflow-x: hidden;
     }
 
     &--content {
@@ -68,6 +69,22 @@ summary:hover .rux-accordion-item--title {
     }
 }
 
-rux-icon {
+:host::part(indicator) {
+    width: calc(var(--spacing-4) + var(--spacing-1)); //20
+    height: calc(var(--spacing-4) + var(--spacing-1)); //20
     padding: var(--spacing-1);
+}
+
+slot[name='prefix']::slotted(*) {
+    padding: var(--spacing-1);
+}
+slot[name='prefix']::slotted(rux-icon) {
+    width: calc(var(--spacing-4) + var(--spacing-1)); //20
+    height: calc(var(--spacing-4) + var(--spacing-1)); //20
+    padding: var(--spacing-1);
+}
+
+slot[name='label']::slotted(*) {
+    width: 100%;
+    display: block;
 }
