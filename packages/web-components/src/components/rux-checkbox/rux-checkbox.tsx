@@ -7,11 +7,12 @@ import {
     Element,
     Watch,
     Host,
+    State,
 } from '@stencil/core'
 import FormFieldMessage from '../../common/functional-components/FormFieldMessage/FormFieldMessage'
 
 import { FormFieldInterface } from '../../common/interfaces.module'
-import { renderHiddenInput } from '../../utils/utils'
+import { renderHiddenInput, hasSlot } from '../../utils/utils'
 
 let id = 0
 
@@ -32,6 +33,8 @@ export class RuxCheckbox implements FormFieldInterface {
 
     @Element() el!: HTMLRuxCheckboxElement
 
+    @State() hasLabelSlot = false
+
     /**
      * The help or explanation text
      */
@@ -41,7 +44,6 @@ export class RuxCheckbox implements FormFieldInterface {
      * The checkbox name
      */
     @Prop() name = ''
-
     /**
      * The checkbox value
      */
@@ -56,7 +58,6 @@ export class RuxCheckbox implements FormFieldInterface {
      * Toggles checked state of a checkbox
      */
     @Prop({ reflect: true, mutable: true }) checked: boolean = false
-
     @Watch('checked')
     updateChecked() {
         if (this._inputEl) {
@@ -68,7 +69,6 @@ export class RuxCheckbox implements FormFieldInterface {
      * Toggles indeterminate state of a checkbox. The indeterminate property does not exist in HTML, but can be set in JS. [HTML Checkbox & Indeterminate State](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#indeterminate)
      */
     @Prop({ reflect: true, mutable: true }) indeterminate: boolean = false
-
     @Watch('indeterminate')
     updateIndeterminate() {
         if (this._inputEl) {
@@ -95,7 +95,6 @@ export class RuxCheckbox implements FormFieldInterface {
      * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
      */
     @Event({ eventName: 'ruxinput' }) ruxInput!: EventEmitter
-
     /**
      * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
      */
@@ -104,13 +103,25 @@ export class RuxCheckbox implements FormFieldInterface {
     connectedCallback() {
         this._onClick = this._onClick.bind(this)
         this._onInput = this._onInput.bind(this)
+        this._checkForLabelSlot = this._checkForLabelSlot.bind(this)
     }
 
+    componentWillLoad() {
+        this._checkForLabelSlot()
+    }
     componentDidLoad() {
         if (this._inputEl && this.indeterminate) {
             // indeterminate property does not exist in HTML but is accessible via js
             this._inputEl.indeterminate = true
         }
+    }
+
+    get hasLabel() {
+        return this.label ? true : this.hasLabelSlot
+    }
+
+    private _checkForLabelSlot() {
+        this.hasLabelSlot = hasSlot(this.el)
     }
 
     private _onClick(e: Event): void {
@@ -138,10 +149,12 @@ export class RuxCheckbox implements FormFieldInterface {
             checked,
             disabled,
             helpText,
-            label,
             name,
             value,
             indeterminate,
+            label,
+            hasLabel,
+            hasLabelSlot,
         } = this
 
         if (!this.indeterminate) {
@@ -157,28 +170,48 @@ export class RuxCheckbox implements FormFieldInterface {
 
         return (
             <Host>
-                <label htmlFor={checkboxId} part="container">
-                    <input
-                        type="checkbox"
-                        class="rux-checkbox__input"
-                        name={name}
-                        id={checkboxId}
-                        disabled={disabled}
-                        checked={checked}
-                        // Allows storybook's indetermiante control to take effect.
-                        indeterminate={indeterminate}
-                        value={value}
-                        onChange={this._onClick}
-                        onInput={this._onInput}
-                        onBlur={this._onBlur}
-                        ref={(el) => (this._inputEl = el)}
-                    />
-
-                    <span class="rux-checkbox__label" part="label">
-                        {label || <slot />}
-                    </span>
-                </label>
-
+                <div class="rux-form-field" part="form-field">
+                    <div
+                        class={{
+                            'rux-checkbox': true,
+                            'rux-checkbox--indeterminate': indeterminate,
+                            'rux-checkbox--has-text': helpText !== undefined,
+                        }}
+                    >
+                        <input
+                            type="checkbox"
+                            name={name}
+                            id={checkboxId}
+                            disabled={disabled}
+                            checked={checked}
+                            //Allows storybook's indetermiante control to take effect.
+                            indeterminate={indeterminate}
+                            value={value}
+                            onChange={this._onClick}
+                            onInput={this._onInput}
+                            onBlur={this._onBlur}
+                            ref={(el) => (this._inputEl = el)}
+                        />
+                        <label
+                            htmlFor={checkboxId}
+                            part="label"
+                            class={{
+                                'rux-checkbox--no-label': !hasLabel,
+                            }}
+                        >
+                            {hasLabelSlot ? null : label}
+                            <span
+                                class={{
+                                    hidden: !hasLabel,
+                                }}
+                            >
+                                <slot
+                                    onSlotchange={this._checkForLabelSlot}
+                                ></slot>
+                            </span>
+                        </label>
+                    </div>
+                </div>
                 <FormFieldMessage helpText={helpText}></FormFieldMessage>
             </Host>
         )
