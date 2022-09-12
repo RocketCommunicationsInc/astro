@@ -76,11 +76,11 @@ export class RuxAccordionItem {
         this._clickHandler = this._clickHandler.bind(this)
 
         //handle wrapped or truncated on init only add attribute if it doesn't already exist
-        if (this.el?.parentElement?.getAttributeNode('truncated')) {
-            if (!this.el.getAttribute('truncated')) {
-                this.el.setAttribute('truncated', '')
-            }
-        }
+        // if (this.el?.parentElement?.getAttributeNode('truncated')) {
+        //     if (!this.el.getAttribute('truncated')) {
+        //         this.el.setAttribute('truncated', '')
+        //     }
+        // }
     }
 
     render() {

@@ -19,8 +19,8 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
     <body>
-        <!-- PARTS TESTING
-        <style>
+        <!-- PARTS TESTING -->
+        <!-- <style>
             rux-accordion-item::part(container) {
                 border: 3px solid green;
                 border-radius: 20px;
@@ -29,19 +29,21 @@
             }
 
             rux-accordion-item::part(label-wrapper) {
-                background-color: purple;
-                border-radius: 15px;
+                
             }
-
+            rux-accordion-item::part(label) {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
             rux-accordion-item::part(icon),
-            rux-accordion-item::part(label),
             rux-accordion-item::part(indicator) {
                 color: white;
             }
         </style> -->
 
         <div>
-            <rux-accordion label="myAccordion" truncated>
+            <rux-accordion label="myAccordion">
                 <rux-accordion-item label="Test1" icon-left="apps">
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
