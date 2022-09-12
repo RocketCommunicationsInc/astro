@@ -1,5 +1,218 @@
 # @astrouxds/astro-web-components
 
+# 7.0 Changes
+
+## Major
+
+The large majority of our component's CSS Custom Properties have been removed. See [MIGRATION.md](MIGRATION.md) for more details.
+
+Our /dist/custom-elements build has been removed in favor of a faster treeshakeable /dist/components build.
+
+### Angular
+
+-   Angular versions <= 12 are no longer supported.
+
+### Clock
+
+-   The `color` CSS property can no longer be styled from the :host element.
+-   The default `display` css property is now `inline-block` rather than `flex`.
+
+### Checkbox Group
+
+-   `color`, `font-family`, `font-size`, `font-weight`, `letter-spacing`, and `line-height` CSS properties can no longer be styled from the :host element.
+
+### Classification Marking
+
+-   `footer-banner` CSS Shadow Part has been removed.
+
+### Dialog
+
+-   Dialog will no longer close when clicking outside by default.
+-   The `dialog-title` and `dialog-message` properties have been removed in favor of `title` and `messsage`.
+
+### Global Status Bar
+
+-   `appdomain` and `appname` are no longer uppercase.
+-   `font-family`, `letter-spacing`, `line-height` CSS properties can no longer be styled from the :host element.
+
+### Icon
+
+-   `label` attribute has been removed.
+
+### Modal
+
+-   Modal has been removed and renamed to `<rux-dialog>`.
+
+### Monitoring Progress Icon
+
+-   The `color` CSS property can no longer be styled from the :host element.
+
+### Notification
+
+-   The `color`, `font-family`, `font-weight`, `font-size`, `letter-spacing`, `line-height`, and `padding` CSS properties can no longer be styled from the :host element.
+
+### Pop Up Menu
+
+-   `anchorEl` and `triggerEl` properties have been removed.
+-   `ruxmenudidclose` , `ruxmenudidopen`, `ruxmenuwillclose`, `ruxmenuwillopen` events have been removed.
+-   `close`, `isOpen`, `show`, `toggle` methods have been removed.
+-   `menu-end` slot has been removed.
+
+### Progress
+
+-   Indeterminate functionality has been removed and is now a separate `<rux-indeterminate-progress>` component.
+-   The `color`, `font-family`, `font-size`, `font-weight`, `letter-spacing`, and `line-height` CSS properties can no longer be styled from the :host element.
+
+### Push Button
+
+-   `label` CSS Shadow Part has been renamed to `container`.
+
+### Segmented Button
+
+-   The default `size` property is now `medium` rather than `small`.
+
+### Switch
+
+-   The `color`, `font-family`, `font-size`, `font-weight`, `letter-spacing`, and `line-height` CSS properties can no longer be styled from the :host element.
+
+### Tab
+
+-   `font-family`, `font-size`, `letter-spacing`, `font-weight`, `border-color`, `border-bottom`, `min-width`, and `padding` can no longer be styled from the :host element.
+
+### Table
+
+-   Right and left border styles have been removed by default.
+
+### Tree Node
+
+-   The `color`, `font-family`, `font-size`, `font-weight`, `letter-spacing`, and `line-height` CSS properties can no longer be styled from the :host element.
+
+## Minor
+
+-   New typography utility classes have been added to `astro-web-components.css`.
+
+*   Links no longer change color on hover.
+
+### Angular
+
+-   Angular no longer requires CUSTOM_ELEMENTS_SCHEMA on your app module.
+
+### Clock
+
+-   Adds `container` CSS Shadow Part.
+
+### Container [New]
+
+-   Adds new Container component.
+
+### Card [New]
+
+-   Adds new card component.
+
+### Dialog
+
+-   Adds support for scrollbars in dialog.
+
+### Form Elements
+
+-   Help text now uses our `--color-text-secondary` design token.
+
+### Indeterminate Progress [New]
+
+-   Adds new Interdeterminate Progress component.
+
+### Tab
+
+-   Adds `small` attribute.
+-   Adds `container` CSS Shadow Part.
+
+### Notification
+
+-   Adds `--height` CSS Custom Property
+
+*   Adds `prefix`, `default`, and `actions` slots
+
+## Patch
+
+### Button
+
+-   Internal styles have been refactored to use spacing design tokens.
+
+### Clock
+
+-   Internal styles have been refactored to use spacing design tokens.
+
+### Checkbox
+
+-   Internal styles have been refactored to use spacing design tokens.
+
+### Checkbox Group
+
+-   Internal styles have been refactored to use spacing design tokens.
+
+### Classification Marking
+
+-   Internal styles have been refactored to use spacing design tokens.
+
+### Indeterminate Progress
+
+-   Internal styles have been refactored to use spacing design tokens.
+
+### Input
+
+-   Internal styles have been refactored to use spacing design tokens.
+-   Type=password now uses a native `button` element rather than `rux-button`.
+
+### Radio
+
+-   Internal styles have been refactored to use spacing design tokens.
+
+### Radio Group
+
+-   Internal styles have been refactored to use spacing design tokens.
+
+### Pop Up Menu
+
+-   Internal styles have been refactored to use spacing design tokens.
+
+### Push Button
+
+-   Internal styles have been refactored to use spacing design tokens.
+
+### Switch
+
+-   Internal styles have been refactored to use spacing design tokens.
+
+### Notification
+
+-   Internal styles have been refactored to use spacing design tokens.
+
+### Progress
+
+-   Internal styles have been refactored to use spacing design tokens.
+
+### Segmented Button
+
+-   Internal styles have been refactored to use spacing design tokens.
+
+### Slider
+
+-   Internal styles have been refactored to use spacing design tokens.
+
+### Tabs
+
+-   Tab heights no longer expand to the height of a direct container.
+
+### Tab
+
+-   Tab border color can now be properly styled when `size` is set to `small`.
+
+### Textarea
+
+-   Internal styles have been refactored to use spacing design tokens.
+-   Textarea can now be properly resized in Firefox
+-
+
 ## 7.0.0-beta.3
 
 ### Major Changes
