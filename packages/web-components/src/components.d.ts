@@ -17,7 +17,7 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * ***** toggles disabled - default false ********
+          * ***** toggles disallow muiltiple - default false ********
          */
         "disallowMultiple": boolean;
         /**
@@ -20362,7 +20362,7 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * ***** toggles disabled - default false ********
+          * ***** toggles disallow muiltiple - default false ********
          */
         "disallowMultiple"?: boolean;
         /**
@@ -20387,6 +20387,10 @@ declare namespace LocalJSX {
           * Takes a string label set by  the user and places it in summary as the title
          */
         "label"?: string;
+        /**
+          * Fired when an element has expanded
+         */
+        "onRuxexpanded"?: (event: CustomEvent<any>) => void;
         /**
           * If set to true or passed in this wraps lines of header text rather than truncating them
          */

@@ -44,7 +44,8 @@
 
         <div>
             <rux-accordion label="myAccordion">
-                <rux-accordion-item label="Test1" icon-left="apps">
+                <rux-accordion-item icon-left="apps">
+                    <div slot="label">Test1</div>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Atque porro odio recusandae aut cupiditate id,
@@ -52,7 +53,8 @@
                         maiores modi at? Harum quas voluptatem eius illo ex!
                     </p>
                 </rux-accordion-item>
-                <rux-accordion-item label="Test2" icon-left="star">
+                <rux-accordion-item icon-left="star">
+                    <div slot="label">Test2</div>
                     <form id="form">
                         <rux-input
                             id="ruxInput"
@@ -67,11 +69,13 @@
                         </rux-checkbox-group>
                     </form>
                 </rux-accordion-item>
-                <rux-accordion-item
-                    label="this is a really really long title that we're doing over here where it might wrap and stuff this is a really really long title that we're doing over here where it might wrap and stuff"
-                    icon="apps"
-                    disabled
-                >
+                <rux-accordion-item icon="apps" disabled>
+                    <div slot="label">
+                        this is a really really long title that we're doing over
+                        here where it might wrap and stuff this is a really
+                        really long title that we're doing over here where it
+                        might wrap and stuff
+                    </div>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Repellendus assumenda adipisci error quas dolore nulla
@@ -89,25 +93,32 @@
 
             <h3>Second test bed</h3>
             <rux-accordion disallow-multiple>
-                <rux-accordion-item
-                    label="Lorem, ipsum dolor sit amet consectetur adipisicing elit. A eos impedit tempora labore magnam magni maiores esse unde, praesentium sed eaque ducimus in odit,"
-                    expanded
-                    >content in here
+                <rux-accordion-item expanded>
+                    <div slot="label">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. A eos impedit tempora labore magnam magni maiores
+                        esse unde, praesentium sed eaque ducimus in odit
+                    </div>
+                    content in here
                 </rux-accordion-item>
-                <rux-accordion-item expanded label="second one"
-                    >Lorem, ipsum dolor sit amet consectetur adipisicing elit. A
+                <rux-accordion-item expanded>
+                    <div slot="label">second one</div>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. A
                     eos impedit tempora labore magnam magni maiores esse unde,
                     praesentium sed eaque ducimus in odit,</rux-accordion-item
                 >
-                <rux-accordion-item label="third one"
-                    >stuff in here</rux-accordion-item
-                >
-                <rux-accordion-item
-                    icon-left="star"
-                    label="Lorem, ipsum dolor sit amet consectetur adipisicing elit. A eos impedit tempora labore magnam magni maiores esse unde, praesentium sed eaque ducimus in odit,
-                "
-                    >stuff in here</rux-accordion-item
-                >
+                <rux-accordion-item>
+                    <div slot="label">third one</div>
+                    stuff in here
+                </rux-accordion-item>
+                <rux-accordion-item icon-left="star">
+                    <div slot="label">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. A eos impedit tempora labore magnam magni maiores
+                        esse unde, praesentium sed eaque ducimus in odit
+                    </div>
+                    stuff in here
+                </rux-accordion-item>
             </rux-accordion>
         </div>
     </body>

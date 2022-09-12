@@ -1,6 +1,17 @@
-import { Component, h, Host, Prop, Element } from '@stencil/core'
+import {
+    Component,
+    h,
+    Host,
+    Prop,
+    Element,
+    Watch,
+    Event,
+    EventEmitter,
+} from '@stencil/core'
 
 /**
+ * @slot (default) - content
+ * @slot label - summary title
  * @part container - the accordion item
  * @part label-wrapper - the element wrapping rux-icons and the label
  * @part label - the label
@@ -26,6 +37,10 @@ export class RuxAccordionItem {
      */
 
     @Prop({ mutable: true, reflect: true }) expanded: boolean = false
+    @Watch('expanded')
+    updateExpanded() {
+        this.ruxExpanded.emit()
+    }
 
     /**
      * If present, sets a disabled state on this accordion item, indicating it cannot be selected by user action.
@@ -45,28 +60,15 @@ export class RuxAccordionItem {
 
     @Prop({ reflect: true }) iconLeft: string = ''
 
+    /**
+     * Fired when an element has expanded
+     */
+    @Event({ eventName: 'ruxexpanded' }) ruxExpanded!: EventEmitter
+
     private _clickHandler(e: MouseEvent) {
-        console.log(e.target)
         //if the rux-accordion-item has the disabled attribute, it cannot be manipulated
         if (this.disabled) {
             e.preventDefault()
-            return
-        }
-
-        //MARK: should we extract this out into a function? What is best practice here?
-        //if rux-accordion has the attribute to disallow-multiple then make sure only one rux-accordion-item is open at a time
-        if (this.el?.parentElement?.getAttributeNode('disallow-multiple')) {
-            e.preventDefault()
-            const items = this.el.parentElement.querySelectorAll(
-                'rux-accordion-item'
-            ) //get all rux-accordion-items
-            const isExpanded: boolean = this.el.hasAttribute('expanded') // state of the item when accessed
-
-            items.forEach((item) => {
-                item.removeAttribute('expanded')
-            })
-            //only add the expanded attribute if it was not there when clicked. Else, close the item.
-            !isExpanded && this.el.setAttribute('expanded', '')
             return
         }
         this.expanded = !this.expanded
@@ -74,13 +76,6 @@ export class RuxAccordionItem {
 
     connectedCallback() {
         this._clickHandler = this._clickHandler.bind(this)
-
-        //handle wrapped or truncated on init only add attribute if it doesn't already exist
-        // if (this.el?.parentElement?.getAttributeNode('truncated')) {
-        //     if (!this.el.getAttribute('truncated')) {
-        //         this.el.setAttribute('truncated', '')
-        //     }
-        // }
     }
 
     render() {
@@ -106,15 +101,8 @@ export class RuxAccordionItem {
                                 size="20px"
                             ></rux-icon>
                         )}
-                        <div
-                            part="label"
-                            class={{
-                                'rux-accordion-item--title': true,
-                                'rux-accordion-item--title--truncated': this
-                                    .truncated,
-                            }}
-                        >
-                            {this.label}
+                        <div part="label" class="rux-accordion-item--title">
+                            <slot name="label"></slot>
                         </div>
                         <rux-icon
                             part="indicator"
