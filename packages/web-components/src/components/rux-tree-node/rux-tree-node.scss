@@ -1,10 +1,5 @@
 :host {
     display: block;
-
-    /**
-     * @prop --white-space: The text's part white-space
-     */
-    --white-space: nowrap;
 }
 
 .tree-node {
@@ -77,7 +72,6 @@
         calc(var(--spacing-050) + var(--spacing-025)) var(--spacing-8);
     display: flex;
     gap: var(--spacing-050);
-    align-items: center;
 
     &:hover {
         background: var(--color-background-surface-hover);
@@ -86,21 +80,22 @@
             color: var(--color-text-interactive-hover);
         }
     }
+}
 
-    .arrow {
-        cursor: pointer;
-        min-width: calc(var(--spacing-4) + var(--spacing-1));
-    }
+.arrow {
+    cursor: pointer;
+    min-width: calc(var(--spacing-4) + var(--spacing-1));
+    margin-top: var(--spacing-050);
+}
 
-    .prefix {
-        display: flex;
-        margin: 0 var(--spacing-1);
-    }
+.prefix {
+    display: flex;
+    margin: var(--spacing-1);
+}
 
-    .suffix {
-        margin-left: auto;
-        display: flex;
-    }
+.suffix {
+    margin-left: auto;
+    display: flex;
 }
 
 .children {
@@ -115,18 +110,6 @@
 
 :host::part(text) {
     overflow: hidden;
-    white-space: var(--white-space);
+    white-space: nowrap;
     text-overflow: ellipsis;
-}
-
-:host([wrap]) {
-    --white-space: wrap;
-
-    &::part(text) {
-        line-height: var(--line-height-sm);
-    }
-
-    .arrow {
-        align-self: baseline;
-    }
 }

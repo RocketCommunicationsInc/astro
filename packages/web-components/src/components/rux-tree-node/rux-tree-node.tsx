@@ -15,9 +15,6 @@ import {
 
 import { hasSlot } from '../../utils/utils'
 
-const closedIcon = 'keyboard-arrow-right'
-const expandedIcon = 'keyboard-arrow-down'
-
 let id = 0
 @Component({
     tag: 'rux-tree-node',
@@ -36,7 +33,7 @@ let id = 0
  */
 export class RuxTreeNode {
     private componentId = `node-${++id}`
-    private iconName = closedIcon
+
     @Element() el!: HTMLRuxTreeNodeElement
     @State() children: Array<HTMLRuxTreeNodeElement> = []
     @State() hasPrefix: boolean = false
@@ -51,11 +48,6 @@ export class RuxTreeNode {
      * Sets the selected state
      */
     @Prop({ mutable: true, reflect: true }) selected = false
-
-    /**
-     * Sets the text's part white-space to wrap
-     */
-    @Prop({ reflect: true }) wrap = false
 
     /**
      * Emit when user selects a tree node
@@ -131,6 +123,10 @@ export class RuxTreeNode {
         return this.children.length > 0
     }
 
+    get iconName() {
+        return this.expanded ? 'keyboard-arrow-down' : 'keyboard-arrow-right'
+    }
+
     private _checkForPrefixAndSuffix() {
         this.hasPrefix = hasSlot(this.el, 'prefix')
         this.hasSuffix = hasSlot(this.el, 'suffix')
@@ -143,12 +139,6 @@ export class RuxTreeNode {
     @Method()
     async setExpanded(value: boolean) {
         this.expanded = value
-
-        if (value) {
-            this.iconName = expandedIcon
-        } else {
-            this.iconName = closedIcon
-        }
     }
 
     /**
@@ -169,7 +159,6 @@ export class RuxTreeNode {
         ) as HTMLRuxTreeNodeElement[]
         this.children = children
         this._setAriaLevel()
-        if (this.expanded) this.iconName = expandedIcon
     }
 
     /**

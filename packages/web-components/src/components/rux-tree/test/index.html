@@ -40,8 +40,16 @@
                 width: 250px;
             }
 
+            #wrapped-text rux-tree-node::part(text) {
+                white-space: normal;
+            }
+
             #right-slot {
                 width: 287px;
+            }
+
+            #wrap-me {
+                white-space: normal;
             }
         </style>
     </head>
@@ -418,7 +426,7 @@
                 </ftl-holster>
                 <ftl-holster name="Wrapped text" node="44828:128785">
                     <rux-tree id="wrapped-text">
-                        <rux-tree-node wrap="">
+                        <rux-tree-node>
                             The first item has a long line of text
                             <rux-tree-node slot="node">One</rux-tree-node>
                             <rux-tree-node slot="node">Two</rux-tree-node>
@@ -436,7 +444,7 @@
                             <rux-tree-node slot="node">Two</rux-tree-node>
                             <rux-tree-node slot="node">Three</rux-tree-node>
                         </rux-tree-node>
-                        <rux-tree-node wrap="" selected="">
+                        <rux-tree-node selected="">
                             Four score and seven years ago
                             <rux-tree-node slot="node">One</rux-tree-node>
                             <rux-tree-node slot="node">Two</rux-tree-node>
@@ -468,8 +476,8 @@
                                 <rux-tree-node slot="node">Two</rux-tree-node>
                                 <rux-tree-node slot="node">Three</rux-tree-node>
                             </rux-tree-node>
-                            <rux-tree-node wrap="" slot="node">
-                                The fifth little piggy went to the market
+                            <rux-tree-node slot="node">
+                                The fifth little piggy went to the store
                                 <rux-tree-node slot="node">One</rux-tree-node>
                                 <rux-tree-node slot="node">Two</rux-tree-node>
                                 <rux-tree-node slot="node">Three</rux-tree-node>
@@ -512,8 +520,10 @@
                             <rux-tree-node slot="node">Two</rux-tree-node>
                             <rux-tree-node slot="node">Three</rux-tree-node>
                         </rux-tree-node>
-                        <rux-tree-node wrap="" selected="">
-                            Four score and seven years ago
+                        <rux-tree-node selected="">
+                            <span id="wrap-me">
+                                Four score and seven years ago
+                            </span>
                             <rux-icon
                                 slot="suffix"
                                 icon="star-border"
@@ -575,7 +585,9 @@
                                 <rux-tree-node slot="node">Three</rux-tree-node>
                             </rux-tree-node>
                             <rux-tree-node wrap slot="node">
-                                The fifth little piggy went to the market
+                                <span id="wrap-me">
+                                    The fifth little piggy went to the store
+                                </span>
                                 <rux-icon
                                     slot="suffix"
                                     icon="star-border"
@@ -662,10 +674,10 @@
                     <rux-tree-node slot="node" expanded="">
                         Level 2 - Lorem ipsum dolor sit amet consectetur
                         adipisicing elit. Reiciendis, consequuntur!
-                        <rux-tree-node slot="node" expanded="" wrap="">
+                        <rux-tree-node slot="node" expanded="">
                             Level 3 - Lorem ipsum dolor sit amet consectetur
                             adipisicing elit. Reiciendis, consequuntur!
-                            <rux-tree-node slot="node" wrap="">
+                            <rux-tree-node slot="node">
                                 Level 4 - Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit. Reiciendis, consequuntur!
                             </rux-tree-node>
