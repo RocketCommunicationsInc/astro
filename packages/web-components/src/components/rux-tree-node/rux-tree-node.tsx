@@ -23,7 +23,7 @@ let id = 0
 /**
  * @slot (default) - The parent node content
  * @slot node - Renders a child node within the current node
- * @part item - The individual tree node
+ * @part node - The individual tree node
  * @part icon - The open/closed indicator arrow that exists on parent nodes
  */
 export class RuxTreeNode {
@@ -275,7 +275,7 @@ export class RuxTreeNode {
                         'tree-node--selected': this.selected,
                     }}
                 >
-                    <div class="parent" tabindex="0" part="item">
+                    <div class="parent" tabindex="0" part="node">
                         {this._hasChildren && (
                             <i
                                 part="icon"
