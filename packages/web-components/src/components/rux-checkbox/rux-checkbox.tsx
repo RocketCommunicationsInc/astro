@@ -84,11 +84,6 @@ export class RuxCheckbox implements FormFieldInterface {
     @Prop({ reflect: true }) disabled: boolean = false
 
     /**
-     * Sets the checkbox as required
-     */
-    @Prop() required: boolean = false
-
-    /**
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
      */
     @Event({ eventName: 'ruxchange' }) ruxChange!: EventEmitter
