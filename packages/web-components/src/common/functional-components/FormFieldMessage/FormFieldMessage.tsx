@@ -1,6 +1,6 @@
-import { h } from '@stencil/core'
+import { FunctionalComponent, h } from '@stencil/core'
 
-export interface FormFieldMessageInterface {
+export interface FormFieldMessageProps {
     helpText?: string
     errorText?: string
 }
@@ -10,31 +10,31 @@ export interface FormFieldMessageInterface {
  * @part help-text - The help text element
  */
 
-const FormFieldMessage = (props: FormFieldMessageInterface, children: any) => {
+const FormFieldMessage: FunctionalComponent<FormFieldMessageProps> = (
+    props,
+    children
+) => {
     const { helpText, errorText } = props
 
-    function shouldShowHelpText() {
-        return helpText && !errorText
-    }
-
-    function shouldShowErrorText() {
-        return errorText ? true : false
-    }
-
-    return (
-        (shouldShowHelpText() ? (
-            <div class="rux-help-text" part="help-text">
-                {children}
-                {helpText}
-            </div>
-        ) : null) ||
-        (shouldShowErrorText() ? (
+    if (errorText) {
+        return (
             <div class="rux-error-text" part="error-text">
                 {children}
                 {errorText}
             </div>
-        ) : null)
-    )
+        )
+    }
+
+    if (helpText) {
+        return (
+            <div class="rux-help-text" part="help-text">
+                {children}
+                {helpText}
+            </div>
+        )
+    }
+
+    return null
 }
 
 export default FormFieldMessage
