@@ -38,7 +38,7 @@ export class RuxCheckbox implements FormFieldInterface {
     /**
      * The help or explanation text
      */
-    @Prop() helpText?: string
+    @Prop({ attribute: 'help-text' }) helpText?: string
 
     /**
      * The checkbox name
