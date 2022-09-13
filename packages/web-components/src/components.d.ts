@@ -27,13 +27,9 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * If present, sets the initial state on this accordion icon to open, displaying the accordion content.
+          * If present, sets the initial state on this accordion item to open, displaying the accordion content.
          */
         "expanded": boolean;
-        /**
-          * Takes a string label set by  the user and places it in summary as the title
-         */
-        "label": string;
     }
     interface RuxButton {
         /**
@@ -20360,13 +20356,9 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * If present, sets the initial state on this accordion icon to open, displaying the accordion content.
+          * If present, sets the initial state on this accordion item to open, displaying the accordion content.
          */
         "expanded"?: boolean;
-        /**
-          * Takes a string label set by  the user and places it in summary as the title
-         */
-        "label"?: string;
         /**
           * Fired when an element has expanded
          */
