@@ -4,7 +4,7 @@ exports[`rux-tree-node renders 1`] = `
 <rux-tree-node aria-expanded="false" aria-selected="false" role="treeitem">
   <mock:shadow-root>
     <div class="tree-node" id="node-1">
-      <div class="parent" part="item" tabindex="0">
+      <div class="parent" part="node" tabindex="0">
         <span>
           <slot name="prefix"></slot>
         </span>
@@ -27,8 +27,8 @@ exports[`rux-tree-node renders children 1`] = `
 <rux-tree-node aria-expanded="false" aria-selected="false" role="treeitem">
   <mock:shadow-root>
     <div class="tree-node tree-node--has-children" id="node-2">
-      <div class="parent" part="item" tabindex="0">
-        <rux-icon class="arrow" exportparts="icon" icon="keyboard-arrow-right" size="1.25rem"></rux-icon>
+      <div class="parent" part="node" tabindex="0">
+        <i class="arrow" part="indicator"></i>
         <span>
           <slot name="prefix"></slot>
         </span>
@@ -48,7 +48,7 @@ exports[`rux-tree-node renders children 1`] = `
   <rux-tree-node aria-expanded="false" aria-selected="false" role="treeitem" slot="node">
     <mock:shadow-root>
       <div class="tree-node" id="node-3">
-        <div class="parent" part="item" tabindex="0">
+        <div class="parent" part="node" tabindex="0">
           <span>
             <slot name="prefix"></slot>
           </span>

@@ -211,6 +211,10 @@ export namespace Components {
     }
     interface RuxDialog {
         /**
+          * Allows dialog to close when clicking off it
+         */
+        "clickToClose": boolean;
+        /**
           * Text for confirmation button
          */
         "confirmText": string;
@@ -219,13 +223,13 @@ export namespace Components {
          */
         "denyText": string;
         /**
-          * Dialog body message
-         */
-        "modalMessage"?: string;
-        /**
           * Dialog header title
          */
-        "modalTitle"?: string;
+        "header"?: string;
+        /**
+          * Dialog body message
+         */
+        "message"?: string;
         /**
           * Shows and hides dialog
          */
@@ -11998,28 +12002,6 @@ export namespace Components {
     }
     interface RuxMenuItemDivider {
     }
-    interface RuxModal {
-        /**
-          * Text for confirmation button
-         */
-        "confirmText": string;
-        /**
-          * Text for close button
-         */
-        "denyText": string;
-        /**
-          * Modal body message
-         */
-        "modalMessage"?: string;
-        /**
-          * Modal header title
-         */
-        "modalTitle"?: string;
-        /**
-          * Shows and hides modal
-         */
-        "open": boolean;
-    }
     interface RuxMonitoringIcon {
         /**
           * Displays an Astro icon matching this string. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols)
@@ -12572,10 +12554,6 @@ export namespace Components {
           * @param value
          */
         "setSelected": (value: boolean) => Promise<void>;
-        /**
-          * Sets the text's part white-space to wrap
-         */
-        "wrap": boolean;
     }
 }
 declare global {
@@ -19017,12 +18995,6 @@ declare global {
         prototype: HTMLRuxMenuItemDividerElement;
         new (): HTMLRuxMenuItemDividerElement;
     };
-    interface HTMLRuxModalElement extends Components.RuxModal, HTMLStencilElement {
-    }
-    var HTMLRuxModalElement: {
-        prototype: HTMLRuxModalElement;
-        new (): HTMLRuxModalElement;
-    };
     interface HTMLRuxMonitoringIconElement extends Components.RuxMonitoringIcon, HTMLStencilElement {
     }
     var HTMLRuxMonitoringIconElement: {
@@ -20301,7 +20273,6 @@ declare global {
         "rux-menu": HTMLRuxMenuElement;
         "rux-menu-item": HTMLRuxMenuItemElement;
         "rux-menu-item-divider": HTMLRuxMenuItemDividerElement;
-        "rux-modal": HTMLRuxModalElement;
         "rux-monitoring-icon": HTMLRuxMonitoringIconElement;
         "rux-monitoring-progress-icon": HTMLRuxMonitoringProgressIconElement;
         "rux-notification": HTMLRuxNotificationElement;
@@ -20551,6 +20522,10 @@ declare namespace LocalJSX {
     }
     interface RuxDialog {
         /**
+          * Allows dialog to close when clicking off it
+         */
+        "clickToClose"?: boolean;
+        /**
           * Text for confirmation button
          */
         "confirmText"?: string;
@@ -20559,13 +20534,13 @@ declare namespace LocalJSX {
          */
         "denyText"?: string;
         /**
-          * Dialog body message
-         */
-        "modalMessage"?: string;
-        /**
           * Dialog header title
          */
-        "modalTitle"?: string;
+        "header"?: string;
+        /**
+          * Dialog body message
+         */
+        "message"?: string;
         /**
           * Event that is fired when dialog closes. If dialog is closed by clicking on the default confirm or deny buttons (when no footer slot is provided), then true or false will be emitted respectively.
          */
@@ -32366,36 +32341,6 @@ declare namespace LocalJSX {
     }
     interface RuxMenuItemDivider {
     }
-    interface RuxModal {
-        /**
-          * Text for confirmation button
-         */
-        "confirmText"?: string;
-        /**
-          * Text for close button
-         */
-        "denyText"?: string;
-        /**
-          * Modal body message
-         */
-        "modalMessage"?: string;
-        /**
-          * Modal header title
-         */
-        "modalTitle"?: string;
-        /**
-          * Event that is fired when modal closes. If modal is closed by clicking on the default confirm or deny buttons (when no footer slot is provided), then true or false will be emitted respectively.
-         */
-        "onRuxmodalclosed"?: (event: CustomEvent<boolean | null>) => void;
-        /**
-          * Event that is fired when modal opens
-         */
-        "onRuxmodalopened"?: (event: CustomEvent<void>) => void;
-        /**
-          * Shows and hides modal
-         */
-        "open"?: boolean;
-    }
     interface RuxMonitoringIcon {
         /**
           * Displays an Astro icon matching this string. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols)
@@ -33025,10 +32970,6 @@ declare namespace LocalJSX {
           * Sets the selected state
          */
         "selected"?: boolean;
-        /**
-          * Sets the text's part white-space to wrap
-         */
-        "wrap"?: boolean;
     }
     interface IntrinsicElements {
         "rux-button": RuxButton;
@@ -34104,7 +34045,6 @@ declare namespace LocalJSX {
         "rux-menu": RuxMenu;
         "rux-menu-item": RuxMenuItem;
         "rux-menu-item-divider": RuxMenuItemDivider;
-        "rux-modal": RuxModal;
         "rux-monitoring-icon": RuxMonitoringIcon;
         "rux-monitoring-progress-icon": RuxMonitoringProgressIcon;
         "rux-notification": RuxNotification;
@@ -35218,7 +35158,6 @@ declare module "@stencil/core" {
             "rux-menu": LocalJSX.RuxMenu & JSXBase.HTMLAttributes<HTMLRuxMenuElement>;
             "rux-menu-item": LocalJSX.RuxMenuItem & JSXBase.HTMLAttributes<HTMLRuxMenuItemElement>;
             "rux-menu-item-divider": LocalJSX.RuxMenuItemDivider & JSXBase.HTMLAttributes<HTMLRuxMenuItemDividerElement>;
-            "rux-modal": LocalJSX.RuxModal & JSXBase.HTMLAttributes<HTMLRuxModalElement>;
             "rux-monitoring-icon": LocalJSX.RuxMonitoringIcon & JSXBase.HTMLAttributes<HTMLRuxMonitoringIconElement>;
             "rux-monitoring-progress-icon": LocalJSX.RuxMonitoringProgressIcon & JSXBase.HTMLAttributes<HTMLRuxMonitoringProgressIconElement>;
             "rux-notification": LocalJSX.RuxNotification & JSXBase.HTMLAttributes<HTMLRuxNotificationElement>;
