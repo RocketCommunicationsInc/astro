@@ -31,10 +31,6 @@ export namespace Components {
          */
         "expanded": boolean;
         /**
-          * When set, places a rux-icon of the string type to the left of the label
-         */
-        "iconLeft": string;
-        /**
           * Takes a string label set by  the user and places it in summary as the title
          */
         "label": string;
@@ -20367,10 +20363,6 @@ declare namespace LocalJSX {
           * If present, sets the initial state on this accordion icon to open, displaying the accordion content.
          */
         "expanded"?: boolean;
-        /**
-          * When set, places a rux-icon of the string type to the left of the label
-         */
-        "iconLeft"?: string;
         /**
           * Takes a string label set by  the user and places it in summary as the title
          */

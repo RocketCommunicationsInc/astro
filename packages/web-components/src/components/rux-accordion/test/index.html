@@ -43,8 +43,8 @@
         </style> -->
 
         <div>
-            <rux-accordion label="myAccordion">
-                <rux-accordion-item icon-left="apps">
+            <rux-accordion>
+                <rux-accordion-item>
                     <div slot="label">Test1</div>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -53,7 +53,8 @@
                         maiores modi at? Harum quas voluptatem eius illo ex!
                     </p>
                 </rux-accordion-item>
-                <rux-accordion-item icon-left="star">
+                <rux-accordion-item>
+                    <rux-icon slot="prefix" size="auto" icon="apps"></rux-icon>
                     <div slot="label">Test2</div>
                     <form id="form">
                         <rux-input
@@ -69,7 +70,8 @@
                         </rux-checkbox-group>
                     </form>
                 </rux-accordion-item>
-                <rux-accordion-item icon="apps" disabled>
+                <rux-accordion-item disabled>
+                    <rux-icon slot="prefix" size="auto" icon="apps"></rux-icon>
                     <div slot="label">
                         this is a really really long title that we're doing over
                         here where it might wrap and stuff this is a really
@@ -111,7 +113,7 @@
                     <div slot="label">third one</div>
                     stuff in here
                 </rux-accordion-item>
-                <rux-accordion-item icon-left="star">
+                <rux-accordion-item>
                     <div slot="label">
                         Lorem, ipsum dolor sit amet consectetur adipisicing
                         elit. A eos impedit tempora labore magnam magni maiores
@@ -145,7 +147,7 @@
                     eos impedit tempora labore magnam magni maiores esse unde,
                     praesentium sed eaque ducimus in odit,</rux-accordion-item
                 >
-                <rux-accordion-item icon-left="star">
+                <rux-accordion-item>
                     <h1 slot="label">
                         Lorem, ipsum dolor sit amet consectetur adipisicing
                         elit. A eos impedit tempora labore magnam magni maiores
@@ -153,7 +155,19 @@
                     </h1>
                     stuff in here
                 </rux-accordion-item>
-                <rux-accordion-item icon-left="star">
+                <rux-accordion-item>
+                    <div
+                        slot="prefix"
+                        style="
+                            display: flex;
+                            justify-content: space-between;
+                            width: 40px;
+                            align-items: center;
+                        "
+                    >
+                        <rux-icon size="auto" icon="star"></rux-icon
+                        ><rux-status status="normal"></rux-status>
+                    </div>
                     <div slot="label">
                         Lorem, ipsum dolor sit amet consectetur adipisicing
                         elit. A eos impedit tempora labore magnam magni maiores
