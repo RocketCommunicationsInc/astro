@@ -24,7 +24,7 @@
     </head>
 
     <body class="dark-theme">
-        <!-- <ftl-belt access-token="ACCESS_TOKEN">
+        <!-- <ftl-belt access-token="" file-id="3tYLyBkvKYOdUysPk6Fu60">
             <ftl-holster name="Test 1 Name" node="25916:114906">
                 <form id="form" style="width: 100%">
                     <rux-checkbox
@@ -36,7 +36,40 @@
                     </rux-checkbox>
                 </form>
             </ftl-holster>
-          </ftl-belt> -->
+        </ftl-belt> -->
+        <div>
+            <rux-checkbox></rux-checkbox>
+            <rux-checkbox></rux-checkbox>
+            <rux-checkbox></rux-checkbox>
+            <rux-checkbox></rux-checkbox>
+            <rux-checkbox></rux-checkbox>
+        </div>
+        <div>
+            <rux-checkbox label="Label Prop"></rux-checkbox>
+            <rux-checkbox>Label Slot</rux-checkbox>
+            <rux-checkbox label="Label Prop">Label Slot wth Prop</rux-checkbox>
+            <rux-checkbox checked>Checked</rux-checkbox>
+            <rux-checkbox indeterminate>Indeterminate</rux-checkbox>
+            <rux-checkbox disabled>Disabled</rux-checkbox>
+            <rux-checkbox checked disabled>Checked Disabled</rux-checkbox>
+            <rux-checkbox indeterminate disabled>
+                Indeterminate Disabled
+            </rux-checkbox>
+        </div>
+        <div>
+            <rux-checkbox help-text="Help Text">With Help Text</rux-checkbox>
+        </div>
+        <button id="add">Add</button>
+        <script>
+            add.addEventListener('click', () => {
+                const els = document.querySelectorAll('rux-checkbox')
+                els.forEach((el) => {
+                    const div = document.createElement('div')
+                    div.innerText = 'Hey now default slot!'
+                    el.appendChild(div)
+                })
+            })
+        </script>
         <div style="padding: 10%; display: flex; justify-content: center">
             <div style="width: 60%">
                 <form id="form" style="width: 100%">
