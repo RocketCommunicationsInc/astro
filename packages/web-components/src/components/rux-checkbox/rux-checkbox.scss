@@ -1,10 +1,4 @@
 :host {
-    *,
-    *::before,
-    *::after {
-        box-sizing: inherit;
-    }
-
     display: inline-block;
 }
 
@@ -25,115 +19,68 @@
 
 .rux-checkbox {
     display: flex;
-    position: relative;
+    line-height: var(--line-height-base);
 
-    &--indeterminate {
-        input[type='checkbox'] + label::after {
-            position: absolute;
-            display: flex;
-            content: '';
-            top: 5px;
-            width: 10px;
-            height: 5px;
-            transform: rotate(0deg);
-            border-right: 0;
-            border-top: 0;
-            border-bottom: 2px solid var(--color-background-interactive-default);
-            left: 4px;
-        }
-    }
-
-    input[type='checkbox'] {
-        -webkit-appearance: none;
+    &__input {
         appearance: none;
-        margin: 0;
+        -webkit-appearance: none;
+        width: var(--spacing-6);
+        height: var(--spacing-6);
+        margin: var(--spacing-0);
+        margin-right: var(--spacing-2);
 
-        + label {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            color: var(--color-text-primary);
-            line-height: var(--font-body-1-bold-line-height);
-            cursor: pointer;
-
-            // Box
-            &::before {
-                display: flex;
-                content: '';
-                align-self: start;
-                height: calc(var(--spacing-1) + var(--spacing-4)); //20px
-                width: calc(var(--spacing-1) + var(--spacing-4));
-                margin: calc(var(--spacing-1) / 2) calc(var(--spacing-2) + 2px)
-                    calc(var(--spacing-1) / 2) calc(var(--spacing-1) / 2);
-                background-color: var(--color-background-base-default);
-                box-shadow: var(--color-border-interactive-muted) 0 0 0 1px
-                    inset;
-                border-radius: 2px;
-            }
-        }
-        //If no label is passed in we don't want the margin
-        + .rux-checkbox--no-label {
-            &::before {
-                margin: 0;
-            }
+        &--no-label {
+            margin-right: var(--spacing-0);
         }
 
-        // checked
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2.5' y='2.5' width='19' height='19' rx='1.5' fill='%23101923'/%3E%3Crect x='2.5' y='2.5' width='19' height='19' rx='1.5' stroke='%232B659B'/%3E%3C/svg%3E");
+
         &:checked {
-            + label {
-                &::after {
-                    position: absolute;
-                    display: flex;
-                    content: '';
-                    top: 7px;
-                    height: 5px;
-                    width: 10px;
-                    left: 6px;
-                    border-right: 2px solid
-                        var(--color-background-interactive-default);
-                    border-top: 2px solid
-                        var(--color-background-interactive-default);
-                    transform: rotate(125deg);
-                }
-                &::before {
-                    border-color: var(--color-border-interactive-muted);
-                }
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2.5' y='2.5' width='19' height='19' rx='1.5' fill='%23101923'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.9149 17.2712L12.0621 15.6329L12.0621 15.6329L17.7978 7.44138L16.1595 6.29423L10.4238 14.4857L7.14719 12.1915L6.00004 13.8298L9.27661 16.124L9.2766 16.1241L10.9149 17.2712L10.9149 17.2712L10.9149 17.2712Z' fill='%234DACFF'/%3E%3Crect x='2.5' y='2.5' width='19' height='19' rx='1.5' stroke='%232B659B'/%3E%3C/svg%3E");
+        }
+
+        &:indeterminate {
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2.5' y='2.5' width='19' height='19' rx='1.5' fill='%23101923'/%3E%3Crect x='7' y='11' width='10' height='2' fill='%234DACFF'/%3E%3Crect x='2.5' y='2.5' width='19' height='19' rx='1.5' stroke='%232B659B'/%3E%3C/svg%3E");
+        }
+
+        &:hover {
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2.5' y='2.5' width='19' height='19' rx='1.5' fill='%23101923'/%3E%3Crect x='2.5' y='2.5' width='19' height='19' rx='1.5' stroke='%2392CBFF'/%3E%3C/svg%3E%0A");
+
+            &:indeterminate {
+                background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2.5' y='2.5' width='19' height='19' rx='1.5' fill='%23101923'/%3E%3Crect x='7' y='11' width='10' height='2' fill='%234DACFF'/%3E%3Crect x='2.5' y='2.5' width='19' height='19' rx='1.5' stroke='%2392CBFF'/%3E%3C/svg%3E ");
+            }
+
+            &:checked {
+                background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2.5' y='2.5' width='19' height='19' rx='1.5' fill='%23101923'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.9149 17.2712L12.0621 15.6329L12.0621 15.6329L17.7978 7.44138L16.1595 6.29423L10.4238 14.4857L7.14719 12.1915L6.00004 13.8298L9.27661 16.124L9.2766 16.1241L10.9149 17.2712L10.9149 17.2712L10.9149 17.2712Z' fill='%234DACFF'/%3E%3Crect x='2.5' y='2.5' width='19' height='19' rx='1.5' stroke='%2392CBFF'/%3E%3C/svg%3E");
             }
         }
 
         &:disabled {
+            cursor: not-allowed;
+            opacity: var(--opacity-disabled);
+
             + label {
                 cursor: not-allowed;
                 opacity: var(--opacity-disabled);
             }
-        }
-    }
 
-    input[type='checkbox']:not(:disabled):hover {
-        + label {
-            &::before {
-                box-shadow: var(--color-background-interactive-hover) 0 0 0 1px
-                    inset;
+            &:hover {
+                background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2.5' y='2.5' width='19' height='19' rx='1.5' fill='%23101923'/%3E%3Crect x='2.5' y='2.5' width='19' height='19' rx='1.5' stroke='%232B659B'/%3E%3C/svg%3E");
+            }
+
+            &:checked {
+                background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2.5' y='2.5' width='19' height='19' rx='1.5' fill='%23101923'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.9149 17.2712L12.0621 15.6329L12.0621 15.6329L17.7978 7.44138L16.1595 6.29423L10.4238 14.4857L7.14719 12.1915L6.00004 13.8298L9.27661 16.124L9.2766 16.1241L10.9149 17.2712L10.9149 17.2712L10.9149 17.2712Z' fill='%234DACFF'/%3E%3Crect x='2.5' y='2.5' width='19' height='19' rx='1.5' stroke='%232B659B'/%3E%3C/svg%3E");
+            }
+
+            &:indeterminate {
+                background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2.5' y='2.5' width='19' height='19' rx='1.5' fill='%23101923'/%3E%3Crect x='7' y='11' width='10' height='2' fill='%234DACFF'/%3E%3Crect x='2.5' y='2.5' width='19' height='19' rx='1.5' stroke='%232B659B'/%3E%3C/svg%3E");
             }
         }
     }
-
-    &--has-text {
-        margin-bottom: 0;
-    }
-
-    + .rux-help-text {
-        margin-bottom: 0.75rem;
-    }
-}
-
-.rux-checkbox-label__asterisk {
-    margin-left: 4px;
 }
 
 .rux-help-text {
-    margin-top: 0.625rem;
+    margin-top: calc(var(--spacing-2) + var(--spacing-050));
     color: var(--color-text-primary);
     font-size: var(--font-body-2-font-size);
     font-family: var(--font-body-2-font-family);

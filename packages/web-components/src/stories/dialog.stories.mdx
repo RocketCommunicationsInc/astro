@@ -26,8 +26,8 @@ export const Dialog = (args) => {
 <div style="display: flex; flex-flow: column; justify-content: center;">
     <rux-dialog
         ?open="${args.open}"
-        modal-message="${args.modalMessage}"
-        modal-title="${args.modalTitle}"
+        message="${args.message}"
+        header="${args.header}"
         confirm-text="${args.confirmText}"
         deny-text="${args.denyText}"
     ></rux-dialog>
@@ -39,10 +39,11 @@ export const Dialog = (args) => {
     <Story
         args={{
             open: true,
-            modalMessage: 'Dialog message',
-            modalTitle: 'Dialog title',
+            message: 'Dialog message',
+            header: 'Dialog header',
             confirmText: 'Release',
             denyText: 'Cancel',
+            clickToClose: false,
         }}
         name="Dialog"
     >
@@ -88,10 +89,11 @@ export const WithSlots = (args) => {
     <Story
         args={{
             open: true,
+            clickToClose: false,
         }}
         argTypes={{
-            modalTitle: { table: { disable: true}},
-            modalMessage: { table: { disable: true}},
+            header: { table: { disable: true}},
+            message: { table: { disable: true}},
             confirmText: { table: { disable: true}},
             denyText: { table: { disable: true}}
         }}
@@ -137,6 +139,9 @@ using a `rux-button` to open the Dialog, and another `rux-button` in the `footer
     })
 </script>
 ```
+
+The prop `click-to-close` controls whether or not the rux-dialog can be closed by clicking off of it. If false, 
+the user will have to make a choice (ie, confirm/deny) before they can close the dialog.
 
 ### Applying Focus
 

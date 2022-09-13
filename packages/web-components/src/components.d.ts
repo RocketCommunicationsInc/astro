@@ -211,6 +211,10 @@ export namespace Components {
     }
     interface RuxDialog {
         /**
+          * Allows dialog to close when clicking off it
+         */
+        "clickToClose": boolean;
+        /**
           * Text for confirmation button
          */
         "confirmText": string;
@@ -219,13 +223,13 @@ export namespace Components {
          */
         "denyText": string;
         /**
-          * Dialog body message
-         */
-        "modalMessage"?: string;
-        /**
           * Dialog header title
          */
-        "modalTitle"?: string;
+        "header"?: string;
+        /**
+          * Dialog body message
+         */
+        "message"?: string;
         /**
           * Shows and hides dialog
          */
@@ -20518,6 +20522,10 @@ declare namespace LocalJSX {
     }
     interface RuxDialog {
         /**
+          * Allows dialog to close when clicking off it
+         */
+        "clickToClose"?: boolean;
+        /**
           * Text for confirmation button
          */
         "confirmText"?: string;
@@ -20526,13 +20534,13 @@ declare namespace LocalJSX {
          */
         "denyText"?: string;
         /**
-          * Dialog body message
-         */
-        "modalMessage"?: string;
-        /**
           * Dialog header title
          */
-        "modalTitle"?: string;
+        "header"?: string;
+        /**
+          * Dialog body message
+         */
+        "message"?: string;
         /**
           * Event that is fired when dialog closes. If dialog is closed by clicking on the default confirm or deny buttons (when no footer slot is provided), then true or false will be emitted respectively.
          */
