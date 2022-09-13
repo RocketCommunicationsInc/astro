@@ -1,5 +1,12 @@
 # @astrouxds/astrouxds
 
+## 6.13.1
+
+### Patch Changes
+
+- 183d185b: rux-tab - add a part to facilitate styling
+- 850fb6f8: Fixed an issue where multiple rux-tabs on the same page would hide each others content when selected.
+
 ## 6.13.0
 
 ### Minor Changes

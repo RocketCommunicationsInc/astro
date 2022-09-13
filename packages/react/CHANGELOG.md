@@ -1,5 +1,17 @@
 # @astrouxds/react
 
+## 6.13.1
+
+### Patch Changes
+
+- 183d185b: rux-tab - add a part to facilitate styling
+- 850fb6f8: Fixed an issue where multiple rux-tabs on the same page would hide each others content when selected.
+- Updated dependencies [69d1e3bf]
+- Updated dependencies [183d185b]
+- Updated dependencies [42e35531]
+- Updated dependencies [850fb6f8]
+  - @astrouxds/astro-web-components@6.13.1
+
 ## 6.13.0
 
 ### Minor Changes
