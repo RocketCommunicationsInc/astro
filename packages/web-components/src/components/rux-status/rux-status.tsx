@@ -1,6 +1,6 @@
 import { Prop, Host, Component, h, Watch, State, Element } from '@stencil/core'
 import { Status, StatusTypes } from '../../common/commonTypes.module'
-import DarkStatus from './statuses/dark-theme'
+// import DarkStatus from './statuses/dark-theme'
 import LightStatus from './statuses/light-theme'
 
 @Component({
@@ -74,18 +74,13 @@ export class RuxStatus {
     }
 
     render() {
+        console.log(LightStatus[this.status!])
         return (
             <Host status={this.status}>
                 <div
                     part="status"
                     class="status-wrapper"
-                    innerHTML={
-                        this.status && this.theme === 'dark'
-                            ? DarkStatus[this.status]
-                            : this.status && this.theme === 'light'
-                            ? LightStatus[this.status]
-                            : undefined
-                    }
+                    innerHTML={this.status && LightStatus[this.status]}
                 ></div>
             </Host>
         )
