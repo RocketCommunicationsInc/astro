@@ -34,12 +34,7 @@ export class RuxAccordionItem {
     @State() hasPrefix: boolean = false
 
     /**
-     * Takes a string label set by  the user and places it in summary as the title
-     */
-    @Prop({ reflect: true }) label: string = ''
-
-    /**
-     * If present, sets the initial state on this accordion icon to open, displaying the accordion content.
+     * If present, sets the initial state on this accordion item to open, displaying the accordion content.
      */
 
     @Prop({ mutable: true, reflect: true }) expanded: boolean = false
