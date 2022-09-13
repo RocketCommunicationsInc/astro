@@ -17,6 +17,10 @@
         <script nomodule src="/build/astro-web-components.esm.js"></script>
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
+        <script
+            type="module"
+            src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"
+        ></script>
         <style>
             body {
                 padding-left: 2rem;
@@ -39,6 +43,29 @@
     </head>
 
     <body class="dark-theme">
+        <ftl-belt
+            access-token="figd_9S33KsQIz3Kpi6WvFmR0XmeDhfxbCzwm5RYLt4mv"
+            file-id="7tni7pdpLodbs6dGiKwGMz"
+        >
+            <ftl-holster name="Select Menu" node="25921:123190">
+                <form id="form" method="POST" action="/form">
+                    <rux-select
+                        id="ruxSelect"
+                        label="Best Thing?"
+                        name="bestThing"
+                    >
+                        <rux-option
+                            label="Select an option"
+                            value=""
+                        ></rux-option>
+                        <rux-option label="Red" value="red"></rux-option>
+                        <rux-option value="blue" label="Blue"></rux-option>
+                        <rux-option value="green" label="Green"></rux-option>
+                    </rux-select>
+                    <button id="formSubmitBtn" type="submit">submit</button>
+                </form>
+            </ftl-holster>
+        </ftl-belt>
         <section>
             <h2>Single Select</h2>
 
