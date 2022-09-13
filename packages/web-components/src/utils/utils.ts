@@ -21,7 +21,14 @@ export function hasSlot(el: HTMLElement, name?: string | undefined): boolean {
         //If node is an element with a slot attribute return true
         if (node.nodeType === node.ELEMENT_NODE) {
             const el = node as HTMLElement
-            if (!el.hasAttribute('slot')) {
+            if (
+                !el.hasAttribute('slot') &&
+                /*
+                 * This condition is specifically for checkbox because
+                 * the hidden input becomes slotted content
+                 */
+                el.getAttribute('type') !== 'hidden'
+            ) {
                 return true
             }
         }
