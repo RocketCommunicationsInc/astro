@@ -10,14 +10,6 @@ title: Table
 
 Tables are a fundamental UX design tool for organizing and displaying data. They are used throughout space applications and may take many forms. The principal table interactions and styles are illustrated below and demonstrated in the [GRM](https://grm-dashboard.astrouxds.com/) and [TT&C](https://ttc-monitor.astrouxds.com/) sample applications. Types of content used in table cells varies by use case, but often includes: [text](/design-guidelines/typography/), [checkboxes](/components/checkbox/), [icons](/components/icons-and-symbols/), [status indicators](/components/status-symbol/), or [buttons](/components/button/).
 
-## Header
-
-A Table can be configured with a tall header with large hero numbers (if the count of some type is important to know at a glance) or with a compact header if vertical space is at a premium.
-
-![Table with tall header.](/img/patterns/table-header-tall.png "Table with tall header.")
-
-![Table with compact header.](/img/patterns/table-header-compact.png "Table with compact header.")
-
 ## Filters
 
 Filters, to narrow what is displayed in the Table, may be presented in the header as Select Menus, as a Segmented Button, or as an Input Field. If it is critical that the user knows that not all data is displayed, a warning may be shown when filters are applied. Though it is not a requirement to display filters in the header row of the column to which they correspond, tables created using ag-Grid default to this design pattern.
