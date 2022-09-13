@@ -12,6 +12,6 @@
     box-sizing: border-box;
 }
 .status-wrapper {
-    height: 12px;
-    width: 12px;
+    height: var(--spacing-3);
+    width: var(--spacing-3);
 }
