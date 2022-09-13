@@ -56,7 +56,9 @@ export class RuxStatus {
         this._determineTheme()
 
         const config = { attributes: true }
+        //Observe classlist changes for body and rux-status (this.el)
         this.classObserver.observe(document.querySelector('body')!, config)
+        this.classObserver.observe(this.el, config)
     }
 
     disconnectedCallback() {
