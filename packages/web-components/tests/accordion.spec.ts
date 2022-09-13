@@ -10,83 +10,130 @@ test.describe('Accordion', () => {
             `
             <body>
             <div style="width: 300px;">
-                <rux-accordion label="myAccordion" truncated id="accordion1">
-                    <rux-accordion-item label="Test1" icon-left="apps">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Atque porro odio recusandae aut cupiditate id,
-                            voluptatibus illo distinctio, asperiores quas nulla,
-                            maiores modi at? Harum quas voluptatem eius illo ex!
-                        </p>
-                    </rux-accordion-item>
-                    <rux-accordion-item label="Test2" icon-left="star">
-                        <form id="form">
-                            <rux-input
-                                id="ruxInput"
-                                name="ruxInput"
-                                label="Input Field"
-                            ></rux-input>
-                            <p>Add all the things!</p>
-                            <rux-checkbox-group>
-                                <rux-checkbox>one</rux-checkbox>
-                                <rux-checkbox>two</rux-checkbox>
-                                <rux-checkbox>three</rux-checkbox>
-                            </rux-checkbox-group>
-                        </form>
-                    </rux-accordion-item>
-                    <rux-accordion-item
-                        label="this is a really really long title that we're doing over here where it might wrap and stuff this is a really really long title that we're doing over here where it might wrap and stuff"
-                        icon="apps"
-                        disabled
+            <rux-accordion id="accordion1">
+            <rux-accordion-item>
+                <div slot="label">Test1</div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Atque porro odio recusandae aut cupiditate id,
+                    voluptatibus illo distinctio, asperiores quas nulla,
+                    maiores modi at? Harum quas voluptatem eius illo ex!
+                </p>
+            </rux-accordion-item>
+            <rux-accordion-item expanded>
+                <rux-icon slot="prefix" size="auto" icon="apps"></rux-icon>
+                <div slot="label">Test2</div>
+                <form id="form">
+                    <rux-input
+                        id="ruxInput"
+                        name="ruxInput"
+                        label="Input Field"
+                    ></rux-input>
+                    <p>Add all the things!</p>
+                    <rux-checkbox-group>
+                        <rux-checkbox>one</rux-checkbox>
+                        <rux-checkbox>two</rux-checkbox>
+                        <rux-checkbox>three</rux-checkbox>
+                    </rux-checkbox-group>
+                </form>
+            </rux-accordion-item>
+            <rux-accordion-item disabled>
+                <rux-icon slot="prefix" size="auto" icon="apps"></rux-icon>
+                <div slot="label">
+                    this is a really really long title that we're doing over
+                    here where it might wrap and stuff this is a really
+                    really long title that we're doing over here where it
+                    might wrap and stuff
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repellendus assumenda adipisci error quas dolore nulla
+                    reiciendis soluta praesentium excepturi pariatur ipsum,
+                    eos provident sed, quisquam doloremque labore tenetur
+                    consequuntur numquam!
+                </p>
+                <img
+                    src="https://www.rd.com/wp-content/uploads/2021/04/GettyImages-138468381-scaled-e1619028416767.jpg"
+                    alt="KITTIES!"
+                    style="width: 80%; margin: 10px auto"
+                />
+            </rux-accordion-item>
+        </rux-accordion>
+        
+        <rux-accordion disallow-multiple id="accordion2">
+            <rux-accordion-item expanded>
+                <div slot="label">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit. A eos impedit tempora labore magnam magni maiores
+                    esse unde, praesentium sed eaque ducimus in odit
+                </div>
+                content in here
+            </rux-accordion-item>
+            <rux-accordion-item expanded>
+                <div slot="label">second one</div>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. A
+                eos impedit tempora labore magnam magni maiores esse unde,
+                praesentium sed eaque ducimus in odit,</rux-accordion-item
+            >
+            <rux-accordion-item>
+                <div slot="label">third one</div>
+                stuff in here
+            </rux-accordion-item>
+            <rux-accordion-item>
+                <div slot="label">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit. A eos impedit tempora labore magnam magni maiores
+                    esse unde, praesentium sed eaque ducimus in odit
+                </div>
+                stuff in here
+            </rux-accordion-item>
+        </rux-accordion>
+        <rux-accordion id="accordion3" disabled>
+                <rux-accordion-item>
+                    <rux-icon icon="star" size="auto" slot="prefix"></rux-icon>
+                    <span slot="label">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. A eos impedit tempora labore magnam magni maiores
+                        esse unde, praesentium sed eaque ducimus in odit
+                    </span>
+                    content in here
+                </rux-accordion-item>
+                <rux-accordion-item>
+                    <rux-status slot="prefix" status="critical"></rux-status>
+                    <span slot="label">second one</span>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. A
+                    eos impedit tempora labore magnam magni maiores esse unde,
+                    praesentium sed eaque ducimus in odit,</rux-accordion-item
+                >
+                <rux-accordion-item>
+                    <h1 slot="label">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. A eos impedit tempora labore magnam magni maiores
+                        esse unde, praesentium sed eaque ducimus in odit
+                    </h1>
+                    stuff in here
+                </rux-accordion-item>
+                <rux-accordion-item>
+                    <div
+                        slot="prefix"
+                        style="
+                            display: flex;
+                            justify-content: space-between;
+                            width: 40px;
+                            align-items: center;
+                        "
                     >
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Repellendus assumenda adipisci error quas dolore nulla
-                            reiciendis soluta praesentium excepturi pariatur ipsum,
-                            eos provident sed, quisquam doloremque labore tenetur
-                            consequuntur numquam!
-                        </p>
-                        <img
-                            src="https://www.rd.com/wp-content/uploads/2021/04/GettyImages-138468381-scaled-e1619028416767.jpg"
-                            alt="KITTIES!"
-                            style="width: 80%; margin: 10px auto"
-                        />
-                    </rux-accordion-item>
-                </rux-accordion>
-
-                <rux-accordion disallow-multiple id="accordion2">
-                    <rux-accordion-item
-                        label="Lorem, ipsum dolor sit amet consectetur adipisicing elit. A eos impedit tempora labore magnam magni maiores esse unde, praesentium sed eaque ducimus in odit,"
-                        expanded
-                        >content in here
-                    </rux-accordion-item>
-                    <rux-accordion-item expanded label="second one"
-                        >Lorem, ipsum dolor sit amet consectetur adipisicing elit. A
-                        eos impedit tempora labore magnam magni maiores esse unde,
-                        praesentium sed eaque ducimus in odit,</rux-accordion-item
-                    >
-                    <rux-accordion-item label="third one"
-                        >stuff in here</rux-accordion-item
-                    >
-                    <rux-accordion-item
-                        icon-left="star"
-                        truncated
-                        label="Lorem, ipsum dolor sit amet consectetur adipisicing elit. A eos impedit tempora labore magnam magni maiores esse unde, praesentium sed eaque ducimus in odit,
-                    "
-                        >stuff in here</rux-accordion-item
-                    >
-                </rux-accordion>
-                <rux-accordion disabled id="accordion3">
-                    <rux-accordion-item
-                        label="Lorem, ipsum dolor sit amet consectetur adipisicing elit. A eos impedit tempora labore magnam magni maiores esse unde, praesentium sed eaque ducimus in odit,"
-                        >content in here
-                    </rux-accordion-item>
-                    <rux-accordion-item expanded label="second one"
-                        >Lorem, ipsum dolor sit amet consectetur adipisicing elit. A
-                        eos impedit tempora labore magnam magni maiores esse unde,
-                        praesentium sed eaque ducimus in odit,</rux-accordion-item
-                    >
-                </rux-accordion>
+                        <rux-icon size="auto" icon="star"></rux-icon
+                        ><rux-status status="normal"></rux-status>
+                    </div>
+                    <div slot="label">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. A eos impedit tempora labore magnam magni maiores
+                        esse unde, praesentium sed eaque ducimus in odit
+                    </div>
+                    stuff in here
+                </rux-accordion-item>
+            </rux-accordion>
              </div>
              </body>
              `
@@ -169,29 +216,30 @@ test.describe('Accordion', () => {
         await expect(accordionParagraph).toBeVisible()
     })
 
-    //when expanded, indicator = 'keyboard-arrow-up', when collapsed indicator = 'keyboard-arrow-down'
+    //when expanded, indicator has class of open, when collapsed, does not have class of open'
 
-    test('indicator changes on open/close', async ({ page }) => {
+    test('indicator toggles class open on expand/collapse', async ({
+        page,
+    }) => {
         //arrange
         const accordionItem = page.locator('rux-accordion-item').first()
-        const accordionIndicator = accordionItem.locator('.indicator')
-        const indicatorArrowDown = accordionIndicator.locator(
-            'rux-icon-keyboard-arrow-down'
-        )
+        const accordionSummary = accordionItem.locator('summary')
+        const accordionIndicator = accordionItem.locator('.indicator--icon')
 
-        //assert - initial icon prop value is keyboard-arrow-down
-        await expect(indicatorArrowDown).toBeVisible()
+        //assert
+        await expect(accordionIndicator).toHaveClass('indicator--icon')
 
         //act
         await accordionItem.click()
 
-        //Arrange
-        const indicatorArrowUp = accordionIndicator.locator(
-            'rux-icon-keyboard-arrow-up'
-        )
+        //assert - once clicked the icon adds the class of open
+        await expect(accordionIndicator).toHaveClass('indicator--icon open')
 
-        //assert - once clicked the icon prop value becomes keyboard-arrow-up
-        await expect(indicatorArrowUp).toBeVisible()
+        //act
+        await accordionSummary.click({ force: true })
+
+        //assert - once clicked the icon removes open class
+        await expect(accordionIndicator).toHaveClass('indicator--icon')
     })
 
     //when it is expanded, and it is clicked it should lose the attributes open and expanded, and close, the expanded content should not be visible
@@ -229,24 +277,45 @@ test.describe('Accordion', () => {
             })
     })
 
-    //If rux-accordion-item has icon prop then that icon renders
-    test('when icon-left prop exists, an icon is rendered', async ({
+    //Testing for presence of prefix slot content
+    test('when prefix slot has content, wrapping span element loses prefix--hidden class', async ({
         page,
     }) => {
+        //Arrange
         const accordion = page.locator('#accordion1')
-        const accordionItem = accordion.locator('rux-accordion-item').first()
-        const accordionItemIcon = accordionItem.locator('rux-icon').first()
-        const accordionItemIconApps = accordionItemIcon
-            .locator('rux-icon-apps')
-            .first()
+        const accordionItem1 = accordion.locator('rux-accordion-item').first()
+        const accordionItem1SlotWrapper = accordionItem1.locator('span').first()
+        const accordionItem2 = accordion.locator('rux-accordion-item').nth(1)
+        const accordionItem2SlotWrapper = accordionItem2.locator('span').first()
 
         //assert
-        await expect(accordionItem).toHaveAttribute('icon-left', 'apps')
-        await expect(accordionItemIcon).toBeVisible()
-        await expect(accordionItemIconApps).toBeVisible()
+        await expect(accordionItem1SlotWrapper).toHaveClass('prefix--hidden')
+        await expect(accordionItem2SlotWrapper).toHaveClass('prefix')
     })
 
     //If attribute disabled is on rux-accordion-item then that item cannot be interacted with
+    test('if rux-accordion-item is disabled it cannot be interacted with', async ({
+        page,
+    }) => {
+        //Arrange
+        const accordion = page.locator('#accordion1')
+        const accordionChild = accordion.locator('rux-accordion-item').nth(2)
+
+        //Assert
+        await expect(accordionChild).toHaveAttribute('disabled', '')
+
+        //Act
+        await accordionChild.click({ force: true })
+
+        //Assert
+        await accordionChild
+            .evaluate((e) => {
+                return e.hasAttribute('expanded')
+            })
+            .then((e) => {
+                expect(e).toBeFalsy()
+            })
+    })
 
     //If attribute disabled is on rux-accordion then child items cannot be interacted with
     test('if rux-accordion is disabled, all rux-accordion-items are also disabled', async ({
