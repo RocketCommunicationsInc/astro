@@ -28,8 +28,8 @@ let id = 0
  * @slot suffix - Renders content after the default slot
  * @slot node - Renders a child node within the current node
  * @part text - The area bewteen the prefix and suffix slots
- * @part icon - The expand/collapse indicator
- * @part item - Each individual node in the tree
+ * @part indicator - The opened/closed indicator
+ * @part node - The individual tree node
  */
 export class RuxTreeNode {
     private componentId = `node-${++id}`
@@ -121,10 +121,6 @@ export class RuxTreeNode {
 
     get hasChildren() {
         return this.children.length > 0
-    }
-
-    get iconName() {
-        return this.expanded ? 'keyboard-arrow-down' : 'keyboard-arrow-right'
     }
 
     private _checkForPrefixAndSuffix() {
@@ -260,7 +256,6 @@ export class RuxTreeNode {
             hasChildren,
             hasPrefix,
             hasSuffix,
-            iconName,
             selected,
         } = this
         const attrs = hasChildren && { role: 'group' }
@@ -280,14 +275,12 @@ export class RuxTreeNode {
                         'tree-node--has-children': hasChildren,
                     }}
                 >
-                    <div class="parent" tabindex="0" part="item">
+                    <div class="parent" tabindex="0" part="node">
                         {hasChildren && (
-                            <rux-icon
-                                class="arrow"
+                            <i
                                 onClick={_handleArrowClick}
-                                size="1.25rem"
-                                icon={iconName}
-                                exportparts="icon"
+                                part="indicator"
+                                class="arrow"
                             />
                         )}
                         <span class={{ prefix: hasPrefix }}>
