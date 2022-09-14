@@ -7,7 +7,7 @@
     --notification-banner-radius-outer: var(--radius-base);
     --notification-banner-radius-inner: calc(var(--radius-base) / 3 * 2);
     --notification-banner-border-width-large: var(--spacing-1); //4
-    --notification-banner-padding: 0 var(--spacing-2) 0 var(--spacing-4); //0 8px 0 16px
+    --notification-banner-padding: 12px var(--spacing-2) 12px var(--spacing-4); //0 8px 0 16px
     --notification-banner-border-width-small: var(--spacing-050); //2
 
     /**
@@ -18,24 +18,25 @@
     display: contents;
 }
 
-:host([hidden]),
-.hidden {
-    display: none;
-}
-
 .rux-notification-banner {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     align-content: center;
     border-radius: var(--notification-banner-radius-outer);
     background: var(--notification-banner-color-border);
-    left: 0;
+    // left: 0;
     width: 100%;
-    position: absolute;
-    transition: top 0.5s ease;
+    // position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease;
     box-sizing: border-box;
-    top: calc(var(--height) * -1);
-    height: var(--height);
+    // top: calc(var(--height) * -1);
+    min-height: var(--height);
+}
+
+.rux-notification-banner:not(.rux-notification-banner--open) {
+    transform-origin: top;
+    transform: scaleY(0.5);
 }
 
 .rux-notification-banner__inner {
@@ -45,7 +46,6 @@
     width: 100%;
     border-radius: var(--notification-banner-radius-inner);
     background: var(--color-background-base-default);
-    height: 100%;
     padding: var(--notification-banner-padding);
 }
 
@@ -92,7 +92,7 @@
 /* ----- Small ----- */
 
 .rux-notification-banner--small {
-    --height: calc(var(--spacing-12) + var(--spacing-1)); // 52px;
+    min-height: calc(var(--spacing-12) + var(--spacing-1)); // 52px;
     border: var(--notification-banner-border-width-small) solid
         var(--notification-banner-color-border);
     border-left-width: var(--notification-banner-border-width-left);
@@ -110,7 +110,7 @@
 }
 
 .rux-notification-banner--open {
-    top: 0;
+    opacity: 1;
 }
 
 /* ----- Status Variants ----- */
