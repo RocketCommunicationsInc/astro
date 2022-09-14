@@ -29,40 +29,40 @@
 :host([aria-level='1']) {
     .tree-node:not(.tree-node--has-children) {
         .parent {
-            padding-left: 2rem;
+            padding-left: var(--spacing-8);
         }
     }
 }
 
 :host([aria-level='2']) {
     .parent {
-        padding-left: 2rem;
+        padding-left: var(--spacing-8);
     }
     .tree-node:not(.tree-node--has-children) {
         .parent {
-            padding-left: 3.5rem;
+            padding-left: var(--spacing-14);
         }
     }
 }
 
 :host([aria-level='3']) {
     .parent {
-        padding-left: 3.5rem;
+        padding-left: var(--spacing-14);
     }
     .tree-node:not(.tree-node--has-children) {
         .parent {
-            padding-left: 5rem;
+            padding-left: var(--spacing-20);
         }
     }
 }
 
 :host([aria-level='4']) {
     .parent {
-        padding-left: 5rem;
+        padding-left: var(--spacing-20);
     }
     .tree-node:not(.tree-node--has-children) {
         .parent {
-            padding-left: 6.5rem;
+            padding-left: calc(var(--spacing-14) + var(--spacing-12));
         }
     }
 }
