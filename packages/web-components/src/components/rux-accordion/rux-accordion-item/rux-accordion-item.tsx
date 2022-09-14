@@ -20,7 +20,7 @@ import { hasSlot } from '../../../utils/utils'
  * @part label-wrapper - The element wrapping prefix, indicator and the label
  * @part label - The label
  * @part prefix - The wrapper for the prefix slot
- * @part indicator - the opened/closed indicator
+ * @part indicator - The opened/closed indicator
  */
 
 @Component({
