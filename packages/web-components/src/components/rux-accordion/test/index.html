@@ -157,18 +157,8 @@
                     stuff in here
                 </rux-accordion-item>
                 <rux-accordion-item>
-                    <div
-                        slot="prefix"
-                        style="
-                            display: flex;
-                            justify-content: space-between;
-                            width: 40px;
-                            align-items: center;
-                        "
-                    >
-                        <rux-icon size="auto" icon="star"></rux-icon
-                        ><rux-status status="normal"></rux-status>
-                    </div>
+                    <rux-icon size="auto" icon="star" slot="prefix"></rux-icon
+                    ><rux-status status="normal" slot="prefix"></rux-status>
                     <div slot="label">
                         Lorem, ipsum dolor sit amet consectetur adipisicing
                         elit. A eos impedit tempora labore magnam magni maiores
@@ -181,13 +171,56 @@
 
         <!-- <section>
             <h2>Figma Testing Stuff</h2>
-            <ftl-belt file-id="wlDisMNmHxoiaJb63aWyz1">
-                <ftl-holster name="single item" node="39895:127961">
+            <ftl-belt file-id="7tni7pdpLodbs6dGiKwGMz">
+                <ftl-holster name="Single Item Closed" node='39895:127969'>
                     <div>
                         <rux-accordion>
                             <rux-accordion-item>
                                 <div slot="label">Parent Item</div>
                                 <div>Content goes here</div>
+                            </rux-accordion-item>
+                        </rux-accordion>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Single Item Open" node='39895:127996'>
+                    <div style="width: 450px">
+                        <rux-accordion>
+                            <rux-accordion-item expanded>
+                                <div slot="label">Parent item</div>
+                                <div>Place your text-based content here. If you need more advanced content options, consider creating a component and replacing the Slot layer.</div>
+                            </rux-accordion-item>
+                        </rux-accordion>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Single Item Disabled" node='39895:127978'>
+                    <div>
+                        <rux-accordion>
+                            <rux-accordion-item disabled>
+                                <div slot="label">Parent Item</div>
+                                <div>Content goes here</div>
+                            </rux-accordion-item>
+                        </rux-accordion>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Long Title Wrap Text" node='I39895:127904;39895:127964'>
+                    <div style="width: 450px">
+                        <rux-accordion>
+                            <rux-accordion-item>
+                                <div slot="label">Testing multiple line text Testing multiple line text Testing multiple line text Testing multiple line text</div>
+                                <div>Testing multiple line text Testing multiple line text Testing multiple line text Testing multiple line text </div>
+                            </rux-accordion-item>
+                        </rux-accordion>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Left Icon" node='I39895:127911;39895:127964'>
+                    <div style="width: 450px">
+                        <rux-accordion>
+                            <rux-accordion-item>
+                                <div slot="prefix">
+                                    <rux-icon icon="satellite-transmit" size="20px"></rux-icon>
+                                </div>
+                                <div slot="label">Parent item</div>
+                                <div>Testing multiple line text Testing multiple line text Testing multiple line text Testing multiple line text </div>
                             </rux-accordion-item>
                         </rux-accordion>
                     </div>
@@ -223,17 +256,13 @@
                                 <div slot="label">Parent Item</div>
                                 <div>Content goes here</div>
                             </rux-accordion-item>
-                            <rux-accordion-item>
-                                <div slot="label">Parent Item</div>
-                                <div>Content goes here</div>
-                            </rux-accordion-item>
                         </rux-accordion>
                     </div>
                 </ftl-holster>
 
 
-            </ftl-belt>
+            </ftl-belt> 
 
-        </section> -->
+        </section>-->
     </body>
 </html>

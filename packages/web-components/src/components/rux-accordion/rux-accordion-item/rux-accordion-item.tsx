@@ -13,14 +13,13 @@ import {
 import { hasSlot } from '../../../utils/utils'
 
 /**
- * @slot (default) - content
- * @slot label - summary title
- * @slot prefix - summary title
- * @part container - the accordion item
- * @part label-wrapper - the element wrapping rux-icons and the label
- * @part label - the label
+ * @slot (default) - The expanded content
+ * @slot label - Summary title
+ * @slot prefix - Area to the left of label
+ * @part container - The accordion item
+ * @part label-wrapper - The element wrapping prefix, indicator and the label
+ * @part label - The label
  * @part prefix - The wrapper for the prefix slot
- * @part icon - the optional rux-icon
  * @part indicator - the opened/closed indicator
  */
 

@@ -26,7 +26,8 @@ summary {
     cursor: pointer;
 }
 
-summary:hover rux-icon,
+summary:hover slot[name='prefix']::slotted(*),
+summary:hover .indicator--icon,
 summary:hover .rux-accordion-item--title {
     color: var(--color-text-interactive-hover);
 }
@@ -42,7 +43,7 @@ summary:hover .rux-accordion-item--title {
     padding: var(--spacing-050) var(--spacing-1);
 
     &--title {
-        padding: var(--spacing-0) var(--spacing-2);
+        padding: var(--spacing-1) var(--spacing-2);
         box-sizing: border-box;
         width: 100%;
         overflow-x: hidden;
@@ -51,6 +52,8 @@ summary:hover .rux-accordion-item--title {
     &--content {
         padding: var(--spacing-4);
         margin: var(--spacing-0);
+        font-size: var(--font-body-2-font-size);
+        line-height: var(--font-body-2-line-height);
     }
 
     /*when disabled*/
@@ -69,6 +72,7 @@ summary:hover .rux-accordion-item--title {
 }
 
 :host::part(indicator) {
+    display: flex;
     width: 20px;
     height: 20px;
     padding: var(--spacing-1);
@@ -86,12 +90,15 @@ summary:hover .rux-accordion-item--title {
 
 .indicator {
     &--icon {
-        transition: transform 200ms;
         &.open {
             -ms-transform: rotate(-180deg);
             transform: rotate(-180deg);
         }
     }
+}
+
+slot[name='prefix']::slotted(*) {
+    display: flex;
 }
 
 slot[name='prefix']::slotted(rux-icon) {
