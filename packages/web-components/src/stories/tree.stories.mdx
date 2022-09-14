@@ -300,6 +300,67 @@ export const status = (args) => {
     <Story name="With Status">{status.bind()}</Story>
 </Canvas>
 
+## Wrapped Text
+
+The text within Tree Nodes truncate by default, but if you need to support wrapped text, you can make use of the `text` CSS Shadow Part and override the white-space property:
+
+```
+rux-tree-node::part(text) {
+    white-space: normal;
+}
+```
+
+export const WrapText = (args) => {
+    return html`
+<style>
+    .container {
+        padding: 1rem 10%;
+        display: flex;
+        justify-content: center;
+    }
+    rux-tree {
+        width: 15rem;
+        margin: 1rem;
+    }
+    rux-tree-node::part(text) {
+        white-space: normal;
+    }
+</style>
+<div class="container">
+    <rux-tree>
+        <rux-tree-node>
+            The first item has a long line of text
+            <rux-tree-node slot="node">One</rux-tree-node>
+            <rux-tree-node slot="node">Two</rux-tree-node>
+            <rux-tree-node slot="node">Three</rux-tree-node>
+        </rux-tree-node>
+        <rux-tree-node>
+            Two
+            <rux-tree-node slot="node">One</rux-tree-node>
+            <rux-tree-node slot="node">Two</rux-tree-node>
+            <rux-tree-node slot="node">Three</rux-tree-node>
+        </rux-tree-node>
+        <rux-tree-node>
+            Three
+            <rux-tree-node slot="node">One</rux-tree-node>
+            <rux-tree-node slot="node">Two</rux-tree-node>
+            <rux-tree-node slot="node">Three</rux-tree-node>
+        </rux-tree-node>
+        <rux-tree-node>
+            Four score and seven years ago 
+            <rux-tree-node slot="node">One</rux-tree-node>
+            <rux-tree-node slot="node">Two</rux-tree-node>
+            <rux-tree-node slot="node">Three</rux-tree-node>
+        </rux-tree-node>
+    </rux-tree>
+</div>
+    `
+}
+
+<Canvas>
+    <Story name="With Wrapped Text">{WrapText.bind()}</Story>
+</Canvas>
+
 ## Cherry Picking
 
 If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
