@@ -109,6 +109,75 @@ export const DisallowMultiple = (args) => {
     </Story>
 </Canvas>
 
+### Truncated
+
+Long accordion summaries wrap lines by default. These can be made to truncate instead by targeting the rux-accordion-item slot 'label' and applying styles. For example:
+
+```html
+<style>
+    #truncated [slot="label"] {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+</style>
+```
+
+export const Truncate = (args) => {
+    return html`
+<div style="padding: 5%;">
+    <style>
+        #truncated [slot="label"] {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    </style>
+    <rux-accordion
+        ?disabled="${args.disabled}"
+        ?disallow-multiple="${args.disallowMultiple}"
+        id="truncated"
+    >
+        <rux-accordion-item>
+            <div slot="label">Title 1 - Lorem, ipsum dolor sit amet consectetur adipisicing
+                elit. A eos impedit tempora labore magnam magni maiores
+                esse unde, praesentium sed eaque ducimus in odit
+            </div>
+            <p>Content 1</p>
+        </rux-accordion-item>
+        <rux-accordion-item>
+            <div slot="label">Title 2 - Lorem, ipsum dolor sit amet consectetur adipisicing
+                elit. A eos impedit tempora labore magnam magni maiores
+                esse unde, praesentium sed eaque ducimus in odit
+            </div>
+            <p>Content 2</p>
+        </rux-accordion-item>
+        <rux-accordion-item>
+            <div slot="label">Title 3 - Lorem, ipsum dolor sit amet consectetur adipisicing
+                elit. A eos impedit tempora labore magnam magni maiores
+                esse unde, praesentium sed eaque ducimus in odit
+            </div>
+            <p>Content 3 Long - Lorem, ipsum dolor sit amet consectetur adipisicing elit. A eos impedit tempora
+                labore magnam magni maiores esse unde, praesentium sed eaque ducimus in oditLorem, ipsum dolor sit
+                amet consectetur adipisicing elit. A eos impedit tempora labore magnam magni maiores esse unde</p>
+        </rux-accordion-item>
+    </rux-accordion>
+</div>
+    `
+}
+
+<Canvas>
+    <Story
+        name="Truncated"
+        args={{
+            disabled: false,
+            disallowMultiple: false,
+        }}
+    >
+        {Truncate.bind()}
+    </Story>
+</Canvas>
+
 
 ## Cherry Picking
 
