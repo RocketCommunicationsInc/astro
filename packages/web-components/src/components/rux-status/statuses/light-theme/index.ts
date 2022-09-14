@@ -5,7 +5,7 @@ import off from './Off-Light.svg'
 import serious from './Serious-Light.svg'
 import standby from './Standby-Light.svg'
 
-const LightStatus = {
+const StatusSVG = {
     caution,
     critical,
     normal,
@@ -14,4 +14,4 @@ const LightStatus = {
     standby,
 }
 
-export default LightStatus
+export default StatusSVG

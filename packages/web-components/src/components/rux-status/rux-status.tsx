@@ -1,7 +1,7 @@
 import { Prop, Host, Component, h, Watch, State, Element } from '@stencil/core'
 import { Status, StatusTypes } from '../../common/commonTypes.module'
 // import DarkStatus from './statuses/dark-theme'
-import LightStatus from './statuses/light-theme'
+import StatusSVG from './statuses/light-theme'
 
 @Component({
     tag: 'rux-status',
@@ -25,7 +25,7 @@ export class RuxStatus {
     /**
      * Mutation observer to watch for class changes on body. Allows for theme switching.
      */
-    private classObserver = new MutationObserver((mutations) => {
+    private _classObserver = new MutationObserver((mutations) => {
         mutations.forEach((mu) => {
             //Only want to listen for specifc types
             if (mu.type !== 'attributes' && mu.attributeName !== 'class') return
@@ -57,12 +57,12 @@ export class RuxStatus {
 
         const config = { attributes: true }
         //Observe classlist changes for body and rux-status (this.el)
-        this.classObserver.observe(document.querySelector('body')!, config)
-        this.classObserver.observe(this.el, config)
+        this._classObserver.observe(document.querySelector('body')!, config)
+        this._classObserver.observe(this.el, config)
     }
 
     disconnectedCallback() {
-        this.classObserver.disconnect()
+        this._classObserver.disconnect()
     }
     private _determineTheme() {
         if (
@@ -74,13 +74,13 @@ export class RuxStatus {
     }
 
     render() {
-        console.log(LightStatus[this.status!])
+        console.log(StatusSVG[this.status!])
         return (
             <Host status={this.status}>
                 <div
                     part="status"
                     class="status-wrapper"
-                    innerHTML={this.status && LightStatus[this.status]}
+                    innerHTML={this.status && StatusSVG[this.status]}
                 ></div>
             </Host>
         )

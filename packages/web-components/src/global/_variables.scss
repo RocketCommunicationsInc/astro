@@ -14,8 +14,10 @@
         rgb(77, 172, 255)
     );
     --indeterminate-nub-color: #4dacff;
+    //Status symbol fills and border
     --standby-fill: #2dccff;
-    --standby-border: none;
+    --standby-border: #2dccff;
+    --standby-fill-opacity: 0;
     --critical-fill: #ff3838;
     --critical-border: #ff3838;
     --serious-fill: #ffb302;
@@ -38,7 +40,9 @@
         rgb(47, 122, 167)
     );
     --indeterminate-nub-color: #2f7aa7;
+    //Status symbol fills and border
     --standby-fill: #2dccff;
+    --standby-fill-opacity: 1;
     --standby-border: #285766;
     --critical-fill: #ff3838;
     --critical-border: #661102;
