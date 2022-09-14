@@ -333,6 +333,10 @@
                 width: 324px;
             }
 
+            #wrap-me {
+                white-space: normal;
+            }
+
             #append-test {
                 padding: 48px 24px;
             }
@@ -352,11 +356,30 @@
             #right-slot {
                 width: 287px;
             }
-
-            #wrap-me {
-                white-space: normal;
-            }
         </style> -->
+
+        <!-- <div id="truncate-width-test">
+            <rux-tree id="partsTest">
+                <rux-tree-node expanded="">
+                    Level 1 - Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Reiciendis, consequuntur!
+                    <rux-tree-node slot="node" expanded="">
+                        Level 2 - Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Reiciendis, consequuntur!
+                        <rux-tree-node slot="node" expanded="">
+                            <span id="wrap-me">
+                                Level 3 - Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Reiciendis, consequuntur!
+                            </span>
+                            <rux-tree-node slot="node">
+                                Level 4 - Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Reiciendis, consequuntur!
+                            </rux-tree-node>
+                        </rux-tree-node>
+                    </rux-tree-node>
+                </rux-tree-node>
+            </rux-tree>
+        </div> -->
 
         <!-- <ftl-belt access-token="" file-id="3tYLyBkvKYOdUysPk6Fu60">
             <div style="display: flex; gap: 1rem">
@@ -969,25 +992,5 @@
 
 
         </style> -->
-        <!-- <div id="truncate-width-test">
-            <rux-tree id="partsTest">
-                <rux-tree-node expanded="">
-                    Level 1 - Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Reiciendis, consequuntur!
-                    <rux-tree-node slot="node" expanded="">
-                        Level 2 - Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Reiciendis, consequuntur!
-                        <rux-tree-node slot="node" expanded="">
-                            Level 3 - Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Reiciendis, consequuntur!
-                            <rux-tree-node slot="node">
-                                Level 4 - Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Reiciendis, consequuntur!
-                            </rux-tree-node>
-                        </rux-tree-node>
-                    </rux-tree-node>
-                </rux-tree-node>
-            </rux-tree>
-        </div> -->
     </body>
 </html>
