@@ -16,16 +16,16 @@
 
 ## Events
 
-| Event                  | Description                                                             | Type               |
-| ---------------------- | ----------------------------------------------------------------------- | ------------------ |
-| `ruxpopupmenuselected` | emits the value of the selected rux-menu-item inside of rux-pop-up-menu | `CustomEvent<any>` |
+| Event              | Description                                                        | Type               |
+| ------------------ | ------------------------------------------------------------------ | ------------------ |
+| `ruxpopupselected` | emits the value of the selected rux-menu-item inside of rux-pop-up | `CustomEvent<any>` |
 
 
 ## Methods
 
 ### `hide() => Promise<false>`
 
-Closes the pop up menu and returns false.
+Closes the pop up and returns false.
 
 #### Returns
 
@@ -35,7 +35,7 @@ Type: `Promise<false>`
 
 ### `show() => Promise<true>`
 
-Opens the pop up menu and returns true.
+Opens the pop up and returns true.
 
 #### Returns
 
@@ -46,20 +46,20 @@ Type: `Promise<true>`
 
 ## Slots
 
-| Slot          | Description                             |
-| ------------- | --------------------------------------- |
-| `"(default)"` | The contents for rux-pop-up-menu        |
-| `"trigger"`   | The trigger element for rux-pop-up-menu |
+| Slot          | Description                        |
+| ------------- | ---------------------------------- |
+| `"(default)"` | The contents for rux-pop-up        |
+| `"trigger"`   | The trigger element for rux-pop-up |
 
 
 ## Shadow Parts
 
-| Part                  | Description                                              |
-| --------------------- | -------------------------------------------------------- |
-| `"arrow"`             | the arrow pointing to the trigger of rux-pop-up-menu     |
-| `"container"`         | the container of rux-pop-up-menu                         |
-| `"popup-content"`     | the content that is shown when rux-pop-up-menu is opened |
-| `"trigger-container"` | the container of the pop-up trigger                      |
+| Part                  | Description                                         |
+| --------------------- | --------------------------------------------------- |
+| `"arrow"`             | the arrow pointing to the trigger of rux-pop-up     |
+| `"container"`         | the container of rux-pop-up                         |
+| `"popup-content"`     | the content that is shown when rux-pop-up is opened |
+| `"trigger-container"` | the container of the pop-up trigger                 |
 
 
 ----------------------------------------------

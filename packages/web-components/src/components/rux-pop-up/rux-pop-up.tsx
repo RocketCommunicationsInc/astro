@@ -65,20 +65,31 @@ export class RuxPopUp {
      * emits the value of the selected rux-menu-item inside of rux-pop-up
      */
     @Event({ eventName: 'ruxpopupselected' })
-    //? Maybe rename this to ruxMenuItemSelected? NVM that's an event already
     ruxPopUpSelected!: EventEmitter
+    /**
+     * Emits when the pop up has opened
+     */
+    @Event({ eventName: 'ruxpopupopened' })
+    ruxPopUpOpened!: EventEmitter
+    /**
+     * Emits when the pop up has closed.
+     */
+    @Event({ eventName: 'ruxpopupclosed' })
+    ruxPopUpClosed!: EventEmitter
 
     @Watch('open')
     handleOpen() {
         if (this.open) {
             this.content.style.display = 'block'
             this._startPositioner()
+            this.ruxPopUpOpened.emit()
             window.addEventListener('mousedown', (e: MouseEvent) =>
                 this._handleOutsideClick(e)
             )
         } else {
             this.content.style.display = ''
             this._stopPositioner()
+            this.ruxPopUpClosed.emit()
             window.removeEventListener('mousedown', (e: MouseEvent) =>
                 this._handleOutsideClick(e)
             )
