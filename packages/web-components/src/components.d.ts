@@ -12075,6 +12075,10 @@ export namespace Components {
           * The background color. Possible values include 'off', 'standby', 'normal', 'caution', 'serious' and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).
          */
         "status"?: Status;
+        /**
+          * Allows long content in a banner to wrap lines
+         */
+        "wrap": boolean;
     }
     interface RuxOption {
         /**
@@ -32414,6 +32418,10 @@ declare namespace LocalJSX {
           * The background color. Possible values include 'off', 'standby', 'normal', 'caution', 'serious' and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).
          */
         "status"?: Status;
+        /**
+          * Allows long content in a banner to wrap lines
+         */
+        "wrap"?: boolean;
     }
     interface RuxOption {
         /**

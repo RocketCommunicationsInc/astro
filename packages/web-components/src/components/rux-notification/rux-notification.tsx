@@ -32,6 +32,7 @@ export class RuxNotification {
     @Element() el!: HTMLRuxNotificationElement
 
     @State() hasPrefixSlot = false
+    @State() bannerHeight: number = this.el.offsetHeight
     /**
      *  Set to true to display the Banner and begin countdown to close (if a close-after Number value is provided).
      */
@@ -53,6 +54,11 @@ export class RuxNotification {
      * Changes the size of the banner to a small variant.
      */
     @Prop() small: boolean = false
+
+    /**
+     * Allows long content in a banner to wrap lines
+     */
+    @Prop() wrap: boolean = false
 
     /**
      * Prevents the user from dismissing the notification. Hides the `actions` slot.
@@ -83,6 +89,11 @@ export class RuxNotification {
         this._updated()
     }
 
+    componentDidLoad() {
+        this.bannerHeight = this.el.offsetHeight
+        this.el.style.height = `${this.bannerHeight}px`
+    }
+
     private _updated() {
         if (this._closeAfter && this.open) {
             this._timeoutRef = window.setTimeout(() => {
@@ -91,10 +102,18 @@ export class RuxNotification {
         }
     }
 
+    closeBannerTransition() {
+        this.el.style.opacity = `0`
+        this.el.style.height = `0px`
+        this.el.style.transform = 'scaleY(0)'
+        this.el.style.transformOrigin = 'top'
+    }
+
     private _onClick() {
         if (this._timeoutRef) {
             clearTimeout(this._timeoutRef)
         }
+        this.closeBannerTransition()
         this.open = false
     }
 
@@ -171,7 +190,10 @@ export class RuxNotification {
                         ) : null}
 
                         <div
-                            class="rux-notification-banner__content"
+                            class={{
+                                'rux-notification-banner__content': true,
+                                'rux-notification-banner--wrap': this.wrap,
+                            }}
                             part="message"
                         >
                             <slot>{this.message}</slot>

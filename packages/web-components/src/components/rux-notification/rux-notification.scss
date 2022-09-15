@@ -16,11 +16,9 @@
     --height: var(--spacing-20); // 80px;
 
     display: block;
-}
-
-:host(:not([open])) {
-    animation: hideAnimation 0s ease 0.5s;
-    animation-fill-mode: forwards;
+    opacity: 1;
+    transition: all 0.3s ease-out;
+    transform: scaleY(1);
 }
 
 .rux-notification-banner {
@@ -30,31 +28,21 @@
     border-radius: var(--notification-banner-radius-outer);
     background: var(--notification-banner-color-border);
     width: 100%;
-    opacity: 0;
-    transition: all 0.5s ease;
+    transition: height 0.3s ease;
     box-sizing: border-box;
     min-height: var(--height);
 }
 
-.rux-notification-banner:not(.rux-notification-banner--open) {
-    transform-origin: top;
-    transform: scaleY(0);
-    animation: hideAnimation 0s ease-in 2s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes hideAnimation {
-    to {
-        visibility: hidden;
-        width: 0;
-        height: 0;
-    }
-}
+// :host(:not([open])) {
+//     transform-origin: top;
+//     transform: scaleY(0);
+// }
 
 .rux-notification-banner__inner {
     display: flex;
     align-items: center;
     align-content: center;
+    box-sizing: border-box;
     width: 100%;
     border-radius: var(--notification-banner-radius-inner);
     background: var(--color-background-base-default);
@@ -121,8 +109,13 @@
     line-height: var(--font-body-1-line-height);
 }
 
-.rux-notification-banner--open {
-    opacity: 1;
+/* ---- truncated/wrapped --- */
+.rux-notification-banner__content:not(.rux-notification-banner--wrap),
+.rux-notification-banner__content:not(.rux-notification-banner--wrap)
+    slot::slotted(*) {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 /* ----- Status Variants ----- */
