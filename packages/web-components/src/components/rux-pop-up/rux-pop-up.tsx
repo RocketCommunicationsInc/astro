@@ -23,26 +23,26 @@ import {
 } from '@floating-ui/dom'
 
 /**
- * @slot (default) - The contents for rux-pop-up-menu
- * @slot trigger - The trigger element for rux-pop-up-menu
+ * @slot (default) - The contents for rux-pop-up
+ * @slot trigger - The trigger element for rux-pop-up
  *
- * @part container - the container of rux-pop-up-menu
+ * @part container - the container of rux-pop-up
  * @part trigger-container - the container of the pop-up trigger
- * @part popup-content - the content that is shown when rux-pop-up-menu is opened
- * @part arrow - the arrow pointing to the trigger of rux-pop-up-menu
+ * @part popup-content - the content that is shown when rux-pop-up is opened
+ * @part arrow - the arrow pointing to the trigger of rux-pop-up
  */
 @Component({
-    tag: 'rux-pop-up-menu',
-    styleUrl: 'rux-pop-up-menu.scss',
+    tag: 'rux-pop-up',
+    styleUrl: 'rux-pop-up.scss',
     shadow: true,
 })
-export class RuxPopUpMenu {
+export class RuxPopUp {
     private trigger!: HTMLElement
     private content!: HTMLElement
     private arrowEl?: HTMLElement
     private _positionerCleanup: ReturnType<typeof autoUpdate> | undefined
 
-    @Element() el!: HTMLRuxPopUpMenuElement
+    @Element() el!: HTMLRuxPopUpElement
 
     /**
      * determines if the pop up is open or closed
@@ -62,10 +62,11 @@ export class RuxPopUpMenu {
     @State() arrowPosition?: string
 
     /**
-     * emits the value of the selected rux-menu-item inside of rux-pop-up-menu
+     * emits the value of the selected rux-menu-item inside of rux-pop-up
      */
-    @Event({ eventName: 'ruxpopupmenuselected' })
-    ruxPopUpMenuSelected!: EventEmitter
+    @Event({ eventName: 'ruxpopupselected' })
+    //? Maybe rename this to ruxMenuItemSelected? NVM that's an event already
+    ruxPopUpSelected!: EventEmitter
 
     @Watch('open')
     handleOpen() {
@@ -85,7 +86,7 @@ export class RuxPopUpMenu {
     }
 
     /**
-     * Opens the pop up menu and returns true.
+     * Opens the pop up and returns true.
      */
     @Method()
     async show() {
@@ -96,7 +97,7 @@ export class RuxPopUpMenu {
     }
 
     /**
-     * Closes the pop up menu and returns false.
+     * Closes the pop up and returns false.
      */
     @Method()
     async hide() {
@@ -112,7 +113,7 @@ export class RuxPopUpMenu {
         items.forEach((item) => {
             if (item.value === e.target.value) {
                 item.selected = true
-                this.ruxPopUpMenuSelected.emit(item)
+                this.ruxPopUpSelected.emit(item)
             } else {
                 item.selected = false
             }

@@ -3,9 +3,9 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
 <Meta
-    title="Components/Pop Up Menu"
-    component="rux-pop-up-menu"
-    argTypes={extractArgTypes('rux-pop-up-menu')}
+    title="Components/Pop Up"
+    component="rux-pop-up"
+    argTypes={extractArgTypes('rux-pop-up')}
     subcomponents={{
         RuxMenuItem: 'rux-menu-item',
         RuxMenuItemDivider: 'rux-menu-item-divider',
@@ -13,7 +13,7 @@ import { html, render } from 'lit-html'
     parameters={{
         actions: {
             handles: [
-                'ruxpopupmenuselected rux-pop-up-menu',
+                'ruxpopupselected rux-pop-up',
             ],
         },
     }}
@@ -21,23 +21,23 @@ import { html, render } from 'lit-html'
 
 # Pop Up
 
-A Pop-Up Menu provides users with a quick way to access common actions for a highlighted item.
+A Pop-Up provides users with a quick way to access common actions for a highlighted item.
 
 ## Guidelines
 
--   [Astro UXDS: Pop Up Menu](http://www.astrouxds.com/library/pop-up-menu)
+-   [Astro UXDS: Pop Up](http://www.astrouxds.com/library/pop-up)
 
 export const Default = (args) => {
     return html`
 <div style="display: flex; width: 100%; justify-content: center; margin-top: 10%;">
-    <rux-pop-up-menu open=${args.open} placement=${args.placement}>
+    <rux-pop-up open=${args.open} placement=${args.placement}>
         <rux-icon icon="apps" slot="trigger"></rux-icon>
         <rux-menu>
             <rux-menu-item value="1">Menu Item 1</rux-menu-item>
             <rux-menu-item value="2">Menu Item 2</rux-menu-item>
             <rux-menu-item value="3">Menu Item 3</rux-menu-item>
         </rux-menu>
-    </rux-pop-up-menu>
+    </rux-pop-up>
 </div>
 `
 }
@@ -56,12 +56,12 @@ export const Default = (args) => {
 
 ## API
 
-<ArgsTable of="rux-pop-up-menu" />
+<ArgsTable of="rux-pop-up" />
 
 ## Usage
 
-Make use of [Menu Item](?path=/docs/components-pop-up-menu-menu-item--default-story) and [Menu Item Divider](?path=/docs/components-pop-up-menu-menu-item-divider--default-story) to compose your own Pop Up Menus.
-Every `rux-pop-up-menu` should use the named `trigger` slot to render the trigger element for the pop-up menu.
+Make use of [Menu Item](?path=/docs/components-pop-up-item--default-story) and [Menu Item Divider](?path=/docs/components-pop-up-item-divider--default-story) to compose your own Pop Up.
+Every `rux-pop-up` should use the named `trigger` slot to render the trigger element for the pop-up menu.
 The menu will attempt to position according to the `placement` prop, but will utlimately position where it's content 
 can be seen.
 
@@ -72,44 +72,44 @@ can be seen.
 export const Placements = (args) => {
     return html`
 <div style="display: flex; width: 100%; justify-content: center; margin-bottom: 10%; margin-top: 10%;">
-    <rux-pop-up-menu placement="top" open>
+    <rux-pop-up placement="top" open>
         <rux-button slot="trigger">Top</rux-button>
         <rux-menu>
             <rux-menu-item value="1">Menu Item 1</rux-menu-item>
             <rux-menu-item value="2">Menu Item 2</rux-menu-item>
             <rux-menu-item value="3">Menu Item 3</rux-menu-item>
         </rux-menu>
-    </rux-pop-up-menu>
+    </rux-pop-up>
 </div>
 <div style="display: flex; width: 100%; justify-content: center; margin-bottom: 10%">
-    <rux-pop-up-menu placement="right" open>
+    <rux-pop-up placement="right" open>
         <rux-button slot="trigger">Right</rux-button>
         <rux-menu>
             <rux-menu-item value="1">Menu Item 1</rux-menu-item>
             <rux-menu-item value="2">Menu Item 2</rux-menu-item>
             <rux-menu-item value="3">Menu Item 3</rux-menu-item>
         </rux-menu>
-    </rux-pop-up-menu>
+    </rux-pop-up>
 </div>
 <div style="display: flex; width: 100%; justify-content: center; margin-bottom: 15%">
-    <rux-pop-up-menu placement="bottom" open>
+    <rux-pop-up placement="bottom" open>
         <rux-button slot="trigger">Bottom</rux-button>
         <rux-menu>
             <rux-menu-item value="1">Menu Item 1</rux-menu-item>
             <rux-menu-item value="2">Menu Item 2</rux-menu-item>
             <rux-menu-item value="3">Menu Item 3</rux-menu-item>
         </rux-menu>
-    </rux-pop-up-menu>
+    </rux-pop-up>
 </div>
 <div style="display: flex; width: 100%; justify-content: center; margin-bottom: 10%">
-    <rux-pop-up-menu placement="left" open>
+    <rux-pop-up placement="left" open>
         <rux-button slot="trigger">Left</rux-button>
         <rux-menu>
             <rux-menu-item value="1">Menu Item 1</rux-menu-item>
             <rux-menu-item value="2">Menu Item 2</rux-menu-item>
             <rux-menu-item value="3">Menu Item 3</rux-menu-item>
         </rux-menu>
-    </rux-pop-up-menu>
+    </rux-pop-up>
 </div>
 `
 }
@@ -131,6 +131,6 @@ export const Placements = (args) => {
 If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
 
 ```js
-import RuxPopUpMenu from '@astrouxds/astro-web-components/dist/components/rux-pop-up-menu.js'
-customElements.define('rux-pop-up-menu', RuxPopUpMenu)
+import RuxPopUp from '@astrouxds/astro-web-components/dist/components/rux-pop-up.js'
+customElements.define('rux-pop-up', RuxPopUp)
 ```
