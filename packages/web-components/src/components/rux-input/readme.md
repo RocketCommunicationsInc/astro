@@ -47,17 +47,18 @@
 
 ## Shadow Parts
 
-| Part           | Description                                         |
-| -------------- | --------------------------------------------------- |
-| `"error-text"` | The error text element                              |
-| `"form-field"` | The form-field wrapper container                    |
-| `"help-text"`  | The help text element                               |
-| `"icon"`       | The icon displayed when toggle-password prop is set |
-| `"input"`      | The input element                                   |
-| `"label"`      | The input label when `label` prop is set            |
-| `"prefix"`     | The container of the prefix slot                    |
-| `"required"`   | The asterisk when required is true                  |
-| `"suffix"`     | The container of the suffix slot                    |
+| Part            | Description                                         |
+| --------------- | --------------------------------------------------- |
+| `"error-text"`  | The error text element                              |
+| `"form-field"`  | The form-field wrapper container                    |
+| `"help-text"`   | The help text element                               |
+| `"icon"`        | The icon displayed when toggle-password prop is set |
+| `"input"`       | The input element                                   |
+| `"input-field"` | the styled wrapper around the input element         |
+| `"label"`       | The input label when `label` prop is set            |
+| `"prefix"`      | The container of the prefix slot                    |
+| `"required"`    | The asterisk when required is true                  |
+| `"suffix"`      | The container of the suffix slot                    |
 
 
 ## CSS Custom Properties
