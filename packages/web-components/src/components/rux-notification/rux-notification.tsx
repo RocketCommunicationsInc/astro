@@ -9,6 +9,7 @@ import {
     Element,
     Watch,
     State,
+    Listen,
 } from '@stencil/core'
 import { hasSlot } from '../../utils/utils'
 import { Status, StatusSymbol } from '../../common/commonTypes.module'
@@ -81,6 +82,20 @@ export class RuxNotification {
         this._updated()
         if (!this.open) {
             this.ruxClosed.emit()
+        }
+    }
+
+    //adds/changes height on rux-notification so that close animation can work based on height of inner banner
+    @Listen('resize', { target: 'window' })
+    handleResize() {
+        if (this.el && this.el.shadowRoot) {
+            const banner = this.el.shadowRoot.querySelector<HTMLElement>(
+                '.rux-notification-banner'
+            )?.offsetHeight
+            if (banner && banner != this.bannerHeight) {
+                this.bannerHeight = banner
+                this.el.style.height = `${banner}px`
+            }
         }
     }
 
