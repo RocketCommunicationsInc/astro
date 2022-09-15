@@ -9,7 +9,6 @@ import {
     Element,
     Watch,
     State,
-    Listen,
 } from '@stencil/core'
 import { hasSlot } from '../../utils/utils'
 import { Status, StatusSymbol } from '../../common/commonTypes.module'
@@ -33,7 +32,6 @@ export class RuxNotification {
     @Element() el!: HTMLRuxNotificationElement
 
     @State() hasPrefixSlot = false
-    @State() bannerHeight: number = this.el.offsetHeight
     /**
      *  Set to true to display the Banner and begin countdown to close (if a close-after Number value is provided).
      */
@@ -85,28 +83,9 @@ export class RuxNotification {
         }
     }
 
-    //adds/changes height on rux-notification so that close animation can work based on height of inner banner
-    @Listen('resize', { target: 'window' })
-    handleResize() {
-        if (this.el && this.el.shadowRoot) {
-            const banner = this.el.shadowRoot.querySelector<HTMLElement>(
-                '.rux-notification-banner'
-            )?.offsetHeight
-            if (banner && banner != this.bannerHeight) {
-                this.bannerHeight = banner
-                this.el.style.height = `${banner}px`
-            }
-        }
-    }
-
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._updated()
-    }
-
-    //set initial height (for close animation)
-    componentDidLoad() {
-        this.el.style.height = `${this.el.offsetHeight}px`
     }
 
     private _updated() {
@@ -117,18 +96,10 @@ export class RuxNotification {
         }
     }
 
-    closeBannerTransition() {
-        this.el.style.opacity = `0`
-        this.el.style.height = `0px`
-        this.el.style.transform = 'scaleY(0)'
-        this.el.style.transformOrigin = 'top'
-    }
-
     private _onClick() {
         if (this._timeoutRef) {
             clearTimeout(this._timeoutRef)
         }
-        this.closeBannerTransition()
         this.open = false
     }
 

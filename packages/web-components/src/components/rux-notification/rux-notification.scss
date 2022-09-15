@@ -14,11 +14,13 @@
     * @prop --height: the Notification's height
     */
     --height: var(--spacing-20); // 80px;
+}
 
+:host([open]) {
     display: block;
-    opacity: 1;
-    transition: all 0.3s ease-out;
-    transform: scaleY(1);
+}
+:host(:not([open])) {
+    display: none;
 }
 
 .rux-notification-banner {
@@ -28,15 +30,9 @@
     border-radius: var(--notification-banner-radius-outer);
     background: var(--notification-banner-color-border);
     width: 100%;
-    transition: height 0.3s ease;
     box-sizing: border-box;
     min-height: var(--height);
 }
-
-// :host(:not([open])) {
-//     transform-origin: top;
-//     transform: scaleY(0);
-// }
 
 .rux-notification-banner__inner {
     display: flex;
