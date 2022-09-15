@@ -104,9 +104,9 @@ export class RuxNotification {
         this._updated()
     }
 
+    //set initial height (for close animation)
     componentDidLoad() {
-        this.bannerHeight = this.el.offsetHeight
-        this.el.style.height = `${this.bannerHeight}px`
+        this.el.style.height = `${this.el.offsetHeight}px`
     }
 
     private _updated() {
