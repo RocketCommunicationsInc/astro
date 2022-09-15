@@ -143,7 +143,6 @@ test.describe('Radio-group-with-form', () => {
     test('submits the correct value when using a form', async ({ page }) => {
         //Arrange
         const ruxRadio = page.locator('#ruxRadioBlue').first()
-        const ruxRadioInput = ruxRadio.locator('input')
         const nativeRadio = page.locator('#nativeRadioBlue')
         const form = page.locator('#form')
         const formButton = form.locator('button[type="submit"]')

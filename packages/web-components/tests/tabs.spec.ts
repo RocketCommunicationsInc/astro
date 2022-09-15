@@ -1,9 +1,5 @@
 import { test, expect } from '@playwright/test'
-import {
-    startTestInBefore,
-    setBodyContent,
-    startTestEnv,
-} from './utils/_startTestEnv'
+import { startTestInBefore, setBodyContent } from './utils/_startTestEnv'
 
 test.describe('Tabs', () => {
     test.beforeEach(async ({ page }) => {

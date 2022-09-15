@@ -42,23 +42,24 @@ test.describe('Pop up', async () => {
             <rux-menu-item value="2">Pop up menu option test</rux-menu-item>
             <rux-menu-item value="3">Pop up menu option test</rux-menu-item>
         </rux-menu>
-    </rux-pop-up>
-    <script>
+    </rux-pop-up>`
+        )
+        page.addScriptTag({
+            content: `
         document.addEventListener('ruxpopupopened', () => {
             console.log('opened');
         })
         document.addEventListener('ruxpopupclosed', () => {
             console.log('closed');
+        })`,
         })
-    </script>`
-        )
         const toggleBtn = page.locator('#toggle-btn')
         page.on('console', (msg) => {
             expect(msg.text()).toBe('opened')
         })
         await Promise.all([
-            page.waitForEvent('console'),
-            toggleBtn.click().then(() => page.waitForTimeout(500)),
+            page.waitForEvent('console', { timeout: 5000 }),
+            toggleBtn.click(),
         ])
     })
     test('it emits ruxpopupclosed event', async ({ page }) => {
@@ -73,23 +74,24 @@ test.describe('Pop up', async () => {
             <rux-menu-item value="2">Pop up menu option test</rux-menu-item>
             <rux-menu-item value="3">Pop up menu option test</rux-menu-item>
         </rux-menu>
-        </rux-pop-up>
-        <script>
-            document.addEventListener('ruxpopupopened', () => {
-                console.log('opened');
-            })
-            document.addEventListener('ruxpopupclosed', () => {
-                console.log('closed');
-            })
-        </script>`
+        </rux-pop-up>`
         )
+        page.addScriptTag({
+            content: `
+        document.addEventListener('ruxpopupopened', () => {
+            console.log('opened');
+        })
+        document.addEventListener('ruxpopupclosed', () => {
+            console.log('closed');
+        })`,
+        })
         const toggleBtn = page.locator('#toggle-btn')
         page.on('console', (msg) => {
             expect(msg.text()).toBe('closed')
         })
         await Promise.all([
-            page.waitForEvent('console'),
-            toggleBtn.click().then(() => page.waitForTimeout(500)),
+            page.waitForEvent('console', { timeout: 5000 }),
+            toggleBtn.click(),
         ])
     })
     /**
