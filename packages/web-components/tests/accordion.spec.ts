@@ -10,6 +10,55 @@ test.describe('Accordion', () => {
             `
             <body>
             <div style="width: 300px;">
+            <rux-accordion id="accordion-collapsed">
+            <rux-accordion-item>
+                <div slot="label">Test1</div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Atque porro odio recusandae aut cupiditate id,
+                    voluptatibus illo distinctio, asperiores quas nulla,
+                    maiores modi at? Harum quas voluptatem eius illo ex!
+                </p>
+            </rux-accordion-item>
+            <rux-accordion-item>
+                <rux-icon slot="prefix" size="auto" icon="apps"></rux-icon>
+                <div slot="label">Test2</div>
+                <form id="form">
+                    <rux-input
+                        id="ruxInput"
+                        name="ruxInput"
+                        label="Input Field"
+                    ></rux-input>
+                    <p>Add all the things!</p>
+                    <rux-checkbox-group>
+                        <rux-checkbox>one</rux-checkbox>
+                        <rux-checkbox>two</rux-checkbox>
+                        <rux-checkbox>three</rux-checkbox>
+                    </rux-checkbox-group>
+                </form>
+            </rux-accordion-item>
+            <rux-accordion-item disabled>
+                <rux-icon slot="prefix" size="auto" icon="apps"></rux-icon>
+                <div slot="label">
+                    this is a really really long title that we're doing over
+                    here where it might wrap and stuff this is a really
+                    really long title that we're doing over here where it
+                    might wrap and stuff
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repellendus assumenda adipisci error quas dolore nulla
+                    reiciendis soluta praesentium excepturi pariatur ipsum,
+                    eos provident sed, quisquam doloremque labore tenetur
+                    consequuntur numquam!
+                </p>
+                <img
+                    src="https://www.rd.com/wp-content/uploads/2021/04/GettyImages-138468381-scaled-e1619028416767.jpg"
+                    alt="KITTIES!"
+                    style="width: 80%; margin: 10px auto"
+                />
+            </rux-accordion-item>
+        </rux-accordion>
             <rux-accordion id="accordion1">
             <rux-accordion-item>
                 <div slot="label">Test1</div>
@@ -149,7 +198,7 @@ test.describe('Accordion', () => {
     //none of them are expanded, none have attribute expanded or open
     test('all are initially collapsed', async ({ page }) => {
         //Arrange
-        const accordion1 = page.locator('#accordion1')
+        const accordion1 = page.locator('#accordion-collapsed')
         const child1 = accordion1.locator('rux-accordion-item').nth(0)
         const child2 = accordion1.locator('rux-accordion-item').nth(1)
         const child3 = accordion1.locator('rux-accordion-item').nth(2)
@@ -361,7 +410,7 @@ test.describe('Accordion', () => {
         await expect(accordionChild2).toHaveAttribute('expanded', '')
 
         //Act
-        await accordionChild2Summary.click()
+        await accordionChild2Summary.click({ force: true })
 
         //Assert
         //When one child item is clicked, they should both close
