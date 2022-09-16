@@ -62,7 +62,7 @@ export class RuxPopUpMenu {
     @State() arrowPosition?: string
 
     /**
-     * emits the value of the selected rux-menu-item inside of rux-pop-up-menu
+     * emits the value of the selected rux-menu-item inside of rux-pop-up-menu on the event.detail.
      */
     @Event({ eventName: 'ruxpopupmenuselected' })
     ruxPopUpMenuSelected!: EventEmitter
