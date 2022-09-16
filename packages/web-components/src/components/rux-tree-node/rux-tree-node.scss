@@ -60,7 +60,7 @@
 }
 
 :host([aria-selected='true']) {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='33' viewBox='0 0 5 33' fill='none'%3E%3Crect width='5' height='33' fill='%234DACFF'/%3E%3C/svg%3E%0A");
+    background-image: var(--tree-node-border-left-selected);
     background-repeat: no-repeat;
     .parent {
         &::after {
