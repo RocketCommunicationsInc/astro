@@ -40,6 +40,9 @@
     --notification-banner-color-border-critical: var(
         --notification-banner-color-background-critical
     );
+
+    --color-border-error: var(--color-palette-red-500);
+    --color-text-error: var(--color-palette-red-500);
 }
 
 .light-theme {
@@ -55,4 +58,7 @@
     --notification-banner-color-border-caution: var(--color-palette-yellow-900);
     --notification-banner-color-border-serious: var(--color-palette-orange-900);
     --notification-banner-color-border-critical: var(--color-palette-red-900);
+
+    --color-border-error: var(--color-palette-red-700);
+    --color-text-error: var(--color-palette-red-700);
 }
