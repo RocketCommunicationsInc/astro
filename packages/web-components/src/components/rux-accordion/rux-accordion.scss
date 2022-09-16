@@ -1,0 +1,11 @@
+:host {
+    display: block;
+}
+
+:host([disabled]) {
+    cursor: not-allowed;
+    opacity: var(--opacity-disabled);
+}
+:host([disabled]) ::slotted(*) {
+    pointer-events: none;
+}
