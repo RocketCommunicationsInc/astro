@@ -17,7 +17,7 @@
 }
 
 :host([open]) {
-    display: block;
+    display: contents;
 }
 :host(:not([open])) {
     display: none;
