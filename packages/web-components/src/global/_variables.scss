@@ -21,6 +21,25 @@
     );
 
     --tree-node-border-left-selected: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='33' viewBox='0 0 5 33' fill='none'%3E%3Crect width='5' height='33' fill='%234DACFF'/%3E%3C/svg%3E%0A"); // interactive-default
+
+    --notification-banner-color-border-off: var(
+        --notification-banner-color-background-off
+    );
+    --notification-banner-color-border-standby: var(
+        --notification-banner-color-background-standby
+    );
+    --notification-banner-color-border-normal: var(
+        --notification-banner-color-background-normal
+    );
+    --notification-banner-color-border-caution: var(
+        --notification-banner-color-background-caution
+    );
+    --notification-banner-color-border-serious: var(
+        --notification-banner-color-background-serious
+    );
+    --notification-banner-color-border-critical: var(
+        --notification-banner-color-background-critical
+    );
 }
 
 .light-theme {
@@ -29,4 +48,11 @@
     --tree-node-arrow-color-fill-hover: var(--color-text-inverse);
 
     --tree-node-border-left-selected: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='33' viewBox='0 0 5 33' fill='none'%3E%3Crect width='5' height='33' fill='%23005A8F'/%3E%3C/svg%3E%0A"); // interactive-muted
+
+    --notification-banner-color-border-standby: var(--color-palette-grey-900);
+    --notification-banner-color-border-standby: var(--color-palette-cyan-900);
+    --notification-banner-color-border-normal: var(--color-palette-green-900);
+    --notification-banner-color-border-caution: var(--color-palette-yellow-900);
+    --notification-banner-color-border-serious: var(--color-palette-orange-900);
+    --notification-banner-color-border-critical: var(--color-palette-red-900);
 }
