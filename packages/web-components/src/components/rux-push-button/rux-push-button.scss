@@ -18,9 +18,9 @@
     --pushbutton-selected-border-color: var(--color-palette-green-500);
 
     /** @prop --pushbutton-selected-text-color: [DEPRECATED] the Push Button text color when checked */
-    --pushbutton-selected-text-color: var(--color-text-inverse);
+    --pushbutton-selected-text-color: var(--color-text-default);
 
-    --pushbutton-selected-hover-text-color: var(--color-text-inverse);
+    --pushbutton-selected-hover-text-color: var(--color-text-default);
 
     margin: 0 2px;
     -webkit-user-select: none;
@@ -60,7 +60,7 @@
                 color: var(--color-background-interactive-hover);
                 border-color: var(--color-background-interactive-hover);
                 rux-icon {
-                    color: var(--color-background-interactive-hover);
+                    color: var(--pushbutton-selected-hover-text-color);
                 }
             }
 
