@@ -42,19 +42,19 @@ export class RuxTreeNode {
     @Prop({ mutable: true, reflect: true }) selected = false
 
     /**
-     * Emit when user selects a tree node
+     * Fires when the user selects a tree node and emits the node's id on the event.detail.
      */
     @Event({ eventName: 'ruxtreenodeselected' })
     ruxTreeNodeSelected!: EventEmitter<string>
 
     /**
-     * Emit when user expands a tree node
+     * Fires when the user expands a tree node and emits the node's id on the event.detail.
      */
     @Event({ eventName: 'ruxtreenodeexpanded' })
     ruxTreeNodeExpanded!: EventEmitter<string>
 
     /**
-     * Emit when user collapses a tree node
+     * Fire when the user collapses a tree node and emits the node's id on the event.detail.
      */
     @Event({ eventName: 'ruxtreenodecollapsed' })
     ruxTreeNodeCollapsed!: EventEmitter<string>

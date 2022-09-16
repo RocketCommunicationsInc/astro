@@ -60,7 +60,7 @@ export class RuxMenuItem {
     @Prop() download: string | undefined
 
     /**
-     * Emitted when item is clicked. Ex `{value : 10}`
+     * Fires when an item is clicked and emits the value on the event.detail. Ex `{value : 10}`
      */
     @Event({
         eventName: 'ruxmenuitemselected',
