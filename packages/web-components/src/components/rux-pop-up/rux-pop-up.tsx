@@ -62,11 +62,6 @@ export class RuxPopUp {
     @State() arrowPosition?: string
 
     /**
-     * emits the value of the selected rux-menu-item inside of rux-pop-up
-     */
-    @Event({ eventName: 'ruxpopupselected' })
-    ruxPopUpSelected!: EventEmitter
-    /**
      * Emits when the pop up has opened
      */
     @Event({ eventName: 'ruxpopupopened' })
@@ -116,19 +111,6 @@ export class RuxPopUp {
             return this.open
         } else this.open = false
         return this.open
-    }
-
-    @Listen('ruxmenuitemselected', { passive: true })
-    handleSelected(e: CustomEvent) {
-        const items = this.el.querySelectorAll('rux-menu-item')
-        items.forEach((item) => {
-            if (item.value === e.target.value) {
-                item.selected = true
-                this.ruxPopUpSelected.emit(item)
-            } else {
-                item.selected = false
-            }
-        })
     }
 
     connectedCallback() {
