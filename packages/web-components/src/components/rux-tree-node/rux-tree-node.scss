@@ -142,6 +142,7 @@
     &:hover {
         color: var(--tree-hover-text-color);
         background: var(--tree-hover-background-color);
+        --tree-accent-color: var(--tree-node-arrow-color-fill-hover);
     }
 }
 
