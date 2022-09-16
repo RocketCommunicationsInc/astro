@@ -41,7 +41,7 @@ export class RuxSegmentedButton {
     @Prop({ reflect: true }) disabled: boolean = false
 
     /**
-     * Emitted when the value property has changed.
+     * Fires when the value property has changed and emits that value on the event.detail.
      */
     @Event({ eventName: 'ruxchange' })
     ruxChange!: EventEmitter

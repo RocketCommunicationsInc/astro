@@ -68,7 +68,7 @@ export class RuxDialog {
     })
     ruxDialogOpened!: EventEmitter<void>
     /**
-     * Event that is fired when dialog closes. If dialog is closed by clicking on the default confirm or deny buttons (when no footer slot is provided), then true or false will be emitted respectively.
+     * Event that is fired when dialog closes. If dialog is closed by clicking on the default confirm or deny buttons (when no footer slot is provided), then true or false will be emitted respectively on the event.detail.
      */
     @Event({
         eventName: 'ruxdialogclosed',
