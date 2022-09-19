@@ -7,7 +7,7 @@ import { html, render } from 'lit-html'
     component="rux-pop-up"
     argTypes={extractArgTypes('rux-pop-up')}
     subcomponents={{
-        RuxMenu: 'rux-menu'
+        RuxMenu: 'rux-menu',
         RuxMenuItem: 'rux-menu-item',
         RuxMenuItemDivider: 'rux-menu-item-divider',
     }}
@@ -62,10 +62,9 @@ export const Default = (args) => {
 
 ## Usage
 
-Make use of [Menu Item](?path=/docs/components-pop-up-item--default-story) and [Menu Item Divider](?path=/docs/components-pop-up-item-divider--default-story) to compose your own Pop Up.
+Make use of [Menu](?path=/docs/components-pop-up-menu--default-story) [Menu Item](?path=/docs/components-pop-up-menu-item--default-story) and [Menu Item Divider](?path=/docs/components-pop-up-menu-item-divider--default-story) to compose your own Pop Up.
 Every `rux-pop-up` should use the named `trigger` slot to render the trigger element for the pop-up menu.
-The menu will attempt to position according to the `placement` prop, but will utlimately position where it's content 
-can be seen.
+The menu will attempt to position according to the `placement` prop if provided, or will use auto-placement if not.
 
 ## Variants
 
