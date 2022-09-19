@@ -93,7 +93,7 @@ export declare interface RuxCheckbox extends Components.RuxCheckbox {
   selector: 'rux-checkbox',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['checked', 'disabled', 'helpText', 'indeterminate', 'label', 'name', 'required', 'value']
+  inputs: ['checked', 'disabled', 'helpText', 'indeterminate', 'label', 'name', 'value']
 })
 export class RuxCheckbox {
   protected el: HTMLElement;

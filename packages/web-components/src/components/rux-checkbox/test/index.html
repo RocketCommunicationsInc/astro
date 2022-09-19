@@ -141,6 +141,17 @@
                     }
                 }
             </script>
+
+            <script>
+                add.addEventListener('click', () => {
+                    const els = document.querySelectorAll('rux-checkbox')
+                    els.forEach((el) => {
+                        const div = document.createElement('div')
+                        div.innerText = 'Hey now default slot!'
+                        el.appendChild(div)
+                    })
+                })
+            </script>
         </div>
     </body>
 </html>

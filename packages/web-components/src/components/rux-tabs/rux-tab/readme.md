@@ -137,6 +137,13 @@ Astro UXDS Tab (child) properties are passed as simple attributes on the individ
 | `selected` | `selected` | If present, overrides which tab is selected on load / mount. By default, the first <rux-tab> item is selected. | `boolean` | `false` |
 
 
+## Shadow Parts
+
+| Part          | Description     |
+| ------------- | --------------- |
+| `"container"` | individual tabs |
+
+
 ## CSS Custom Properties
 
 | Name                          | Description                          |

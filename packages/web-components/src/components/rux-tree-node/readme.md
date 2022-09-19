@@ -43,6 +43,14 @@ Type: `Promise<void>`
 
 
 
+## Shadow Parts
+
+| Part     | Description |
+| -------- | ----------- |
+| `"icon"` |             |
+| `"node"` |             |
+
+
 ## CSS Custom Properties
 
 | Name                            | Description                              |
