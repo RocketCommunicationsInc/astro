@@ -157,5 +157,45 @@
                 </ftl-holster>
             </ftl-belt>
         </section>
+        <section>
+            <h4>Helpful theme and status switching boilerplate</h4>
+            <style>
+                #theme-status::part(status) {
+                    width: 52px;
+                }
+            </style>
+            <rux-status id="theme-status" status="standby"></rux-status>
+            <rux-button id="change-status">Change Status</rux-button>
+            <rux-button id="theme">Theme Switch</rux-button>
+            <script>
+                const statusSwap = document.getElementById('change-status')
+                const themeBtn = document.getElementById('theme')
+                const status = document.getElementById('theme-status')
+                const stati = [
+                    'normal',
+                    'critical',
+                    'off',
+                    'serious',
+                    'caution',
+                    'standby',
+                ]
+                let count = 0
+                statusSwap.addEventListener('click', () => {
+                    status.status = stati[count]
+                    count++
+                    if (count >= stati.length) {
+                        count = 0
+                    }
+                })
+                themeBtn.addEventListener('click', () => {
+                    const body = document.querySelector('body')
+                    if (body.classList.contains('light-theme')) {
+                        body.classList.remove('light-theme')
+                    } else {
+                        body.classList.add('light-theme')
+                    }
+                })
+            </script>
+        </section>
     </body>
 </html>
