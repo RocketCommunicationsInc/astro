@@ -20,6 +20,7 @@
     width: 100%;
     position: absolute;
     background-color: var(--notification-banner-color-background-standby);
+    border: 1px solid var(--notification-banner-color-border-standby);
     transition: top 0.5s ease;
     box-sizing: border-box;
     font-family: var(--font-heading-5-font-family);
@@ -63,10 +64,9 @@
     padding: 1.063rem 0; //17 0
 }
 
-//TODO: When tokens are made for the icon color, replace the hard coded values below.
-
 :host([status='off']) {
     background-color: var(--notification-banner-color-background-off);
+    border-color: var(--notification-banner-color-border-off);
     rux-icon {
         color: var(--notification-banner-icon-color-fill-off);
     }
@@ -74,6 +74,7 @@
 
 :host([status='standby']) {
     background-color: var(--notification-banner-color-background-standby);
+    border-color: var(--notification-banner-color-border-standby);
     rux-icon {
         color: var(--notification-banner-icon-color-fill-standby);
     }
@@ -81,12 +82,14 @@
 
 :host([status='normal']) {
     background-color: var(--notification-banner-color-background-normal);
+    border-color: var(--notification-banner-color-border-normal);
     rux-icon {
         color: var(--notification-banner-icon-color-fill-normal);
     }
 }
 :host([status='caution']) {
     background-color: var(--notification-banner-color-background-caution);
+    border-color: var(--notification-banner-color-border-caution);
     rux-icon {
         color: var(--notification-banner-icon-color-fill-caution);
     }
@@ -94,12 +97,14 @@
 
 :host([status='serious']) {
     background-color: var(--notification-banner-color-background-serious);
+    border-color: var(--notification-banner-color-border-serious);
     rux-icon {
         color: var(--notification-banner-icon-color-fill-serious);
     }
 }
 :host([status='critical']) {
     background-color: var(--notification-banner-color-background-critical);
+    border-color: var(--notification-banner-color-border-critical);
     rux-icon {
         color: var(--notification-banner-icon-color-fill-critical);
     }

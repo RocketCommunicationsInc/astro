@@ -15,7 +15,7 @@
     --textarea-background-color: var(--color-background-base-default);
 
     /** @prop --textarea-invalid-border-color: Border color while in an invalid state */
-    --textarea-invalid-border-color: var(--status-symbol-color-fill-critical);
+    --textarea-invalid-border-color: var(--color-border-error);
 
     /**
      * @prop --textarea-focus-border-color: [DEPRECATED] Border color while in a focused state
