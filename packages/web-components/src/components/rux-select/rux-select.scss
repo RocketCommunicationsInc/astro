@@ -5,8 +5,8 @@
     scrollbar-color: var(--color-border-interactive-muted)
         var(--color-background-surface-default);
     ::-webkit-scrollbar {
-        width: 16px;
-        height: 16px;
+        width: var(--spacing-4); //16px
+        height: var(--spacing-4); //16px
         background-color: transparent;
     }
 
@@ -15,18 +15,18 @@
             --color-border-interactive-muted,
             rgb(43, 101, 155)
         );
-        border-radius: 8px;
+        border-radius: var(--progress-radius-inner);
         border: 3px solid transparent;
         background-clip: padding-box;
     }
 
     /* visually "centers" because the dark edge of the shadow gives the illusion this is offset */
     ::-webkit-scrollbar-thumb:vertical {
-        border-left-width: 4px;
+        border-left-width: var(--border-width-lg); //4px
     }
 
     ::-webkit-scrollbar-thumb:horizontal {
-        border-top-width: 4px;
+        border-top-width: var(--border-width-lg); //4px
     }
 
     ::-webkit-scrollbar-thumb:active,
@@ -63,33 +63,39 @@
 
 label {
     display: inline-block;
-    margin-bottom: 10px;
+    margin-bottom: calc(var(--spacing-3) - 2px); //10px
     color: var(--color-text-primary);
     font-family: var(--font-control-body-1-font-family);
     font-size: var(--font-control-body-1-font-size);
     font-weight: var(--font-control-body-1-font-weight);
     letter-spacing: var(--font-control-body-1-letter-spacing);
     .rux-label__asterisk {
-        margin-left: 4px;
+        margin-left: var(--spacing-1); //4px
     }
 }
 
 .rux-select:not(.rux-select--multiple) {
-    background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%234dacff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E'),
+    background-image: url("data:image/svg+xml,%3Csvg width='31' height='30' viewBox='0 0 31 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.6875 14.6375L14.925 17.875C15.4125 18.3625 16.2 18.3625 16.6875 17.875L19.925 14.6375C20.7125 13.85 20.15 12.5 19.0375 12.5H12.5625C11.45 12.5 10.9 13.85 11.6875 14.6375Z' fill='%234DACFF'/%3E%3C/svg%3E%0A"),
         linear-gradient(
             to left,
-            var(--color-background-surface-selected) 2rem,
-            var(--color-background-base-default) 2rem
+            var(--color-background-surface-selected) var(--spacing-8),
+            var(--color-background-base-default) var(--spacing-8)
         );
-    background-position: center right 0.625rem, center left 0;
+    // background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%234dacff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E'),
+    //     linear-gradient(
+    //         to left,
+    //         var(--color-background-surface-selected) var(--spacing-8),
+    //         var(--color-background-base-default) var(--spacing-8)
+    //     );
+    background-position: center right var(--spacing-025),
+        center left var(--spacing-0);
     background-repeat: no-repeat;
-    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5);
     &:active:not(:disabled) {
-        background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20style%3D%22transform%3A%20rotate%28180deg%29%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%234dacff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E'),
+        background-image: url("data:image/svg+xml,%3Csvg width='31' height='30' viewBox='0 0 31 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.6875 14.6375L14.925 17.875C15.4125 18.3625 16.2 18.3625 16.6875 17.875L19.925 14.6375C20.7125 13.85 20.15 12.5 19.0375 12.5H12.5625C11.45 12.5 10.9 13.85 11.6875 14.6375Z' fill='%234DACFF'/%3E%3C/svg%3E%0A"),
             linear-gradient(
                 to left,
-                var(--color-background-surface-selected) 2rem,
-                var(--color-background-base-default) 2rem
+                var(--color-background-surface-selected) var(--spacing-8),
+                var(--color-background-base-default) var(--spacing-8)
             );
     }
     &:hover {
@@ -98,36 +104,40 @@ label {
 }
 
 .rux-select {
+    box-sizing: border-box;
     position: relative;
     background: var(--color-background-base-default);
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     width: 100%;
-    border: 1px solid var(--color-border-interactive-muted);
+    box-shadow: var(--color-border-interactive-muted) 0 0 0 1px inset; //replaces border so the border width does not count towards overall component height
+    border: none;
     border-radius: var(--radius-base);
     color: var(--color-background-interactive-default);
     font-family: var(--font-control-body-1-font-family);
     font-size: var(--font-control-body-1-font-size);
     font-weight: var(--font-control-body-1-font-weight);
+    line-height: var(--font-control-body-1-line-height);
     letter-spacing: var(--font-control-body-1-letter-spacing);
     user-select: none;
 
     &--small {
-        padding: 3.5px 8px;
+        padding: var(--spacing-1) var(--spacing-2); //4px 8px
     }
     &--medium {
-        padding: 7.5px 8px;
+        padding: var(--spacing-2); //8px
     }
     &--large {
-        padding: 13.5px 8px;
+        padding: var(--spacing-3) var(--spacing-2); //12px 8px
     }
     &--multiple {
         background: var(--color-background-base-default);
         padding: 0;
         option {
-            padding: 0.438rem 0 0.438rem 1rem; // 7px 0px 7px 16px
-            text-indent: 1rem;
+            padding: calc(var(--spacing-2) - 1px) var(--spacing-0)
+                calc(var(--spacing-2) - 1px) var(--spacing-4); // 7px 0px 7px 16px
+            text-indent: var(--spacing-4);
             &:hover {
                 color: var(--color-background-interactive-hover);
                 background-color: var(--color-background-surface-hover);
@@ -143,31 +153,36 @@ label {
                     color: var(--color-background-interactive-default);
                     background-color: linear-gradient(
                         to left,
-                        var(--color-background-surface-selected) 2rem,
-                        var(--color-background-base-default) 2rem
+                        var(--color-background-surface-selected)
+                            var(--spacing-8),
+                        var(--color-background-base-default) var(--spacing-8)
                     );
                 }
             }
         }
     }
     &--invalid {
-        border: 1px solid var(--color-text-error);
+        box-shadow: var(--color-text-error) 0 0 0 1px inset; //replaces border so the border width does not count towards overall component height
+        border: none;
     }
 
     &:hover {
-        border: 1px solid var(--color-background-interactive-hover);
+        box-shadow: var(--color-background-interactive-hover) 0 0 0 1px inset; //replaces border so the border width does not count towards overall component height
+        border: none;
     }
 
     &:focus {
         outline: none;
-        border: 1px solid var(--color-background-interactive-hover);
+        box-shadow: var(--color-background-interactive-hover) 0 0 0 1px inset; //replaces border so the border width does not count towards overall component height
+        border: none;
     }
 
     &:disabled {
         opacity: 0.4;
         cursor: not-allowed;
         &:hover {
-            border: 1px solid var(--color-border-interactive-muted);
+            box-shadow: var(--color-border-interactive-muted) 0 0 0 1px inset; //replaces border so the border width does not count towards overall component height
+            border: none;
         }
     }
 
@@ -201,7 +216,7 @@ label {
     }
 
     optgroup {
-        text-indent: 1rem;
+        text-indent: var(--spacing-4);
         color: var(--select-menu-text-color);
         font-family: var(--font-body-1-font-family);
         font-size: var(--font-body-1-font-size);

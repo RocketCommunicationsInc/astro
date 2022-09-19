@@ -66,7 +66,7 @@ export class RuxPushButton {
      */
     @Prop({ reflect: true }) size?: 'small' | 'medium' | 'large'
     /**
-     * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
+     * Fired when an alteration to the input's value is committed by the user and emits the value on the event.detail - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
      */
     @Event({ eventName: 'ruxchange' }) ruxChange!: EventEmitter
     /**
