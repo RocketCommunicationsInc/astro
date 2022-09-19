@@ -168,7 +168,13 @@ export class RuxCheckbox implements FormFieldInterface {
         return (
             <Host>
                 <div class="rux-form-field" part="form-field">
-                    <div class="rux-checkbox">
+                    <label
+                        class={{
+                            'rux-checkbox': true,
+                            'rux-checkbox--disabled': disabled,
+                        }}
+                        htmlFor={checkboxId}
+                    >
                         <input
                             type="checkbox"
                             class={{
@@ -187,13 +193,107 @@ export class RuxCheckbox implements FormFieldInterface {
                             onBlur={_onBlur}
                             ref={(el) => (this._inputEl = el)}
                         />
-                        <label htmlFor={checkboxId} part="label">
+                        <div class="rux-checkbox__control">
+                            {indeterminate ? (
+                                <svg
+                                    width="18"
+                                    height="18"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 18 18"
+                                >
+                                    <rect
+                                        x=".5"
+                                        y=".5"
+                                        width="17"
+                                        height="17"
+                                        rx="1.5"
+                                        fill="var(--_checkbox-color-background)"
+                                    />
+                                    <path
+                                        fill="var(--_checkbox-checkmark-color-fill)"
+                                        d="M4 8h10v2H4z"
+                                    />
+                                    <rect
+                                        x=".5"
+                                        y=".5"
+                                        width="17"
+                                        height="17"
+                                        rx="1.5"
+                                        stroke="var(--_checkbox-color-border)"
+                                    />
+                                </svg>
+                            ) : checked ? (
+                                <svg
+                                    width="18"
+                                    height="18"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 18 18"
+                                >
+                                    <rect
+                                        x=".5"
+                                        y=".5"
+                                        width="17"
+                                        height="17"
+                                        rx="1.5"
+                                        fill="var(--_checkbox-color-background)"
+                                    />
+                                    <path
+                                        fill="var(--_checkbox-checkmark-color-fill)"
+                                        d="m14.899 4.806-6.883 9.83-1.639-1.147 6.883-9.83z"
+                                    />
+                                    <path
+                                        fill="var(--_checkbox-checkmark-color-fill)"
+                                        d="m9.163 12.997-1.147 1.638L3.1 11.194l1.147-1.638z"
+                                    />
+                                    <rect
+                                        x=".5"
+                                        y=".5"
+                                        width="17"
+                                        height="17"
+                                        rx="1.5"
+                                        stroke="var(--_checkbox-color-border)"
+                                    />
+                                </svg>
+                            ) : (
+                                <svg
+                                    width="18"
+                                    height="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 18 18"
+                                >
+                                    <rect
+                                        x=".5"
+                                        y=".5"
+                                        width="17"
+                                        height="17"
+                                        rx="1.5"
+                                        fill="var(--_checkbox-color-background)"
+                                    />
+                                    <rect
+                                        x=".5"
+                                        y=".5"
+                                        width="17"
+                                        height="17"
+                                        rx="1.5"
+                                        stroke="var(--_checkbox-color-border)"
+                                    />
+                                </svg>
+                            )}
+                        </div>
+                        <div
+                            part="label"
+                            class={{
+                                'rux-checkbox__label': true,
+                                hidden: !hasLabel,
+                            }}
+                        >
                             {hasLabelSlot ? null : label}
-                            <span class={{ hidden: !hasLabel }}>
-                                <slot onSlotchange={_checkForLabelSlot} />
-                            </span>
-                        </label>
-                    </div>
+                            <slot onSlotchange={_checkForLabelSlot} />
+                        </div>
+                    </label>
                 </div>
                 <FormFieldMessage helpText={helpText} />
             </Host>
