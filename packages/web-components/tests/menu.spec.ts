@@ -1,18 +1,20 @@
 import { test, expect } from '@playwright/test'
 import { startTestEnv, setBodyContent } from './utils/_startTestEnv'
 
-test.describe('Pop up', async () => {
+test.describe('Menu', async () => {
     startTestEnv()
     test('it renders', async ({ page }) => {
         await setBodyContent(
             page,
             `
-            <rux-menu></rux-menu>
+            <rux-menu>
+                <rux-menu-item>Item</rux-menu-item>
+            </rux-menu>
         `
         )
         const menu = page.locator('rux-menu')
-        expect(menu).toBeVisible()
-        expect(menu).toHaveClass('hydrated')
+        await expect(menu).toBeVisible()
+        await expect(menu).toHaveClass('hydrated')
     })
 
     test('it emits ruxmenuselected event with correct detail', async ({
