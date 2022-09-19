@@ -28,7 +28,7 @@ Our /dist/custom-elements build has been removed in favor of a faster treeshakea
 ### Dialog
 
 -   Dialog will no longer close when clicking outside by default.
--   The `dialog-title` and `dialog-message` properties have been removed in favor of `title` and `messsage`.
+-   The `dialog-title` and `dialog-message` properties have been removed in favor of `header` and `messsage`.
 
 ### Global Status Bar
 
@@ -211,7 +211,6 @@ Our /dist/custom-elements build has been removed in favor of a faster treeshakea
 
 -   Internal styles have been refactored to use spacing design tokens.
 -   Textarea can now be properly resized in Firefox
--
 
 ## 7.0.0-beta.3
 
