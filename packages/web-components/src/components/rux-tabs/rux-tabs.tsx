@@ -56,7 +56,7 @@ export class RuxTabs {
     }
 
     /**
-     * Fires whenever a new tab is selected, and emits the selected tab.
+     * Fires whenever a new tab is selected, and emits the selected tab on the event.detail.
      */
     @Event({ eventName: 'ruxselected' }) ruxSelected!: EventEmitter
 

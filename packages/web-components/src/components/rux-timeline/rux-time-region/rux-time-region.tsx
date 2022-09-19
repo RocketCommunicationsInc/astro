@@ -56,7 +56,7 @@ export class RuxTimeRegion {
     @Prop() timezone = 'UTC'
 
     /**
-     * @internal - Emitted when the start or end date changes so that it's parent Track can update the Time Region's position.
+     * @internal - Emitted on the event.detail when the start or end date changes so that it's parent Track can update the Time Region's position.
      */
     @Event({
         eventName: 'ruxtimeregionchange',
