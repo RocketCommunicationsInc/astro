@@ -7,13 +7,15 @@ import { html, render } from 'lit-html'
     component="rux-pop-up"
     argTypes={extractArgTypes('rux-pop-up')}
     subcomponents={{
+        RuxMenu: 'rux-menu'
         RuxMenuItem: 'rux-menu-item',
         RuxMenuItemDivider: 'rux-menu-item-divider',
     }}
     parameters={{
         actions: {
             handles: [
-                'ruxpopupselected rux-pop-up',
+                'ruxpopupopened rux-pop-up',
+                'ruxpopupclosed rux-pop-up'
             ],
         },
     }}

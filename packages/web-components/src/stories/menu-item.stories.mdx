@@ -5,13 +5,12 @@ import { html, render } from 'lit-html'
 <Meta
     title="Components/Pop Up/Menu Item"
     component="rux-menu-item"
-    subcomponents={{ RuxPopUp: 'rux-pop-up' }}
-    argTypes={extractArgTypes('rux-menu-item')}
-    parameters={{
-        actions: {
-            handles: ['ruxmenuitemselected', 'rux-menu-item'],
-        },
+    subcomponents={{ 
+        RuxPopUp: 'rux-pop-up'
+        RuxMenu: 'rux-menu'
     }}
+    argTypes={extractArgTypes('rux-menu-item')}
+
 />
 
 # Menu Item
