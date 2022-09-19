@@ -7,18 +7,20 @@
 
 ## Properties
 
-| Property    | Attribute   | Description                                                           | Type                                                                                                                                                                 | Default      |
-| ----------- | ----------- | --------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
-| `open`      | `open`      | determines if the pop up is open or closed                            | `boolean`                                                                                                                                                            | `false`      |
-| `placement` | `placement` | the placement of the pop up relative to it's slotted trigger element. | `"bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'bottom'`   |
-| `strategy`  | `strategy`  | The position strategy of the popup, either absolute or fixed.         | `"absolute" \| "fixed"`                                                                                                                                              | `'absolute'` |
+| Property        | Attribute        | Description                                                                                                                             | Type                                                                                                                                                                              | Default      |
+| --------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| `autoPlacement` | `auto-placement` | Determines the placement automatically based on available space for the pop-up.                                                         | `boolean`                                                                                                                                                                         | `false`      |
+| `open`          | `open`           | Determines if the pop up is open or closed                                                                                              | `boolean`                                                                                                                                                                         | `false`      |
+| `placement`     | `placement`      | The placement of the pop up relative to it's slotted trigger element. If none is specified, the pop-up with use auto-placement instead. | `"bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start" \| undefined` | `undefined`  |
+| `strategy`      | `strategy`       | The position strategy of the popup, either absolute or fixed.                                                                           | `"absolute" \| "fixed"`                                                                                                                                                           | `'absolute'` |
 
 
 ## Events
 
-| Event              | Description                                                        | Type               |
-| ------------------ | ------------------------------------------------------------------ | ------------------ |
-| `ruxpopupselected` | emits the value of the selected rux-menu-item inside of rux-pop-up | `CustomEvent<any>` |
+| Event            | Description                       | Type               |
+| ---------------- | --------------------------------- | ------------------ |
+| `ruxpopupclosed` | Emits when the pop up has closed. | `CustomEvent<any>` |
+| `ruxpopupopened` | Emits when the pop up has opened  | `CustomEvent<any>` |
 
 
 ## Methods
