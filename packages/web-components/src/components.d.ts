@@ -95,10 +95,6 @@ export namespace Components {
          */
         "name": string;
         /**
-          * Sets the checkbox as required
-         */
-        "required": boolean;
-        /**
           * The checkbox value
          */
         "value": string;
@@ -20443,10 +20439,6 @@ declare namespace LocalJSX {
           * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
          */
         "onRuxinput"?: (event: CustomEvent<any>) => void;
-        /**
-          * Sets the checkbox as required
-         */
-        "required"?: boolean;
         /**
           * The checkbox value
          */
