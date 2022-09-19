@@ -21,6 +21,8 @@ export class RuxMenu {
     }
 
     private _handleSelected(item: HTMLRuxMenuItemElement) {
+        //prevent code from running if the clicked element was disabled
+        if (item.disabled) return
         const menuItems = Array.from(this.el.querySelectorAll('rux-menu-item'))
         menuItems.forEach((el) => {
             el.selected = false
