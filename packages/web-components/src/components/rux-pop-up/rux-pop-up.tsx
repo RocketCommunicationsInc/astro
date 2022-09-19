@@ -20,6 +20,7 @@ import {
     offset,
     flip,
     autoUpdate,
+    autoPlacement,
 } from '@floating-ui/dom'
 
 /**
@@ -45,19 +46,24 @@ export class RuxPopUp {
     @Element() el!: HTMLRuxPopUpElement
 
     /**
-     * determines if the pop up is open or closed
+     * Determines if the pop up is open or closed
      */
     @Prop({ mutable: true, reflect: true }) open = false
 
     /**
-     * the placement of the pop up relative to it's slotted trigger element.
+     * The placement of the pop up relative to it's slotted trigger element. If none is specified, the pop-up with use auto-placement instead.
      */
-    @Prop() placement: Placement = 'bottom'
+    @Prop() placement?: Placement
 
     /**
      * The position strategy of the popup, either absolute or fixed.
      */
     @Prop() strategy: 'absolute' | 'fixed' = 'absolute'
+
+    /**
+     * Determines the placement automatically based on available space for the pop-up.
+     */
+    @Prop() autoPlacement: boolean = false
 
     @State() arrowPosition?: string
 
@@ -135,7 +141,13 @@ export class RuxPopUp {
         computePosition(this.triggerSlot, this.content, {
             placement: this.placement,
             strategy: this.strategy,
-            middleware: [offset(12), flip(), arrow({ element: this.arrowEl })],
+            middleware: [
+                offset(12),
+                this.autoPlacement || !this.placement
+                    ? autoPlacement({ alignment: 'start' })
+                    : flip(),
+                arrow({ element: this.arrowEl }),
+            ],
         }).then(({ x, y, placement, middlewareData }) => {
             Object.assign(this.content.style, {
                 left: `${x}px`,
@@ -150,7 +162,6 @@ export class RuxPopUp {
                 bottom: 'top',
                 left: 'right',
             }[placement.split('-')[0]]
-
             Object.assign(this.arrowEl.style, {
                 left: arrowX != null ? `${arrowX}px` : '',
                 top: arrowY != null ? `${arrowY}px` : '',

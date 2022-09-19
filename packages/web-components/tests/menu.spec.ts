@@ -30,15 +30,14 @@ test.describe('Pop up', async () => {
         )
         page.addScriptTag({
             content: `
-        document.addEventListener('ruxmenuselected', () => {
-            console.log('ruxmenuselected')
+        document.addEventListener('ruxmenuselected', (e) => {
+            console.log(e.detail.innerText)
         })
         `,
         })
         const menuItem = page.locator('rux-menu-item').first()
-
         page.on('console', (msg) => {
-            expect(msg.text()).toBe('ruxmenuselected')
+            expect(msg.text()).toBe('One')
         })
 
         await Promise.all([
@@ -59,13 +58,6 @@ test.describe('Pop up', async () => {
         </rux-menu>
         `
         )
-        page.addScriptTag({
-            content: `
-        document.addEventListener('ruxmenuselected', () => {
-            console.log('ruxmenuselected')
-        })
-        `,
-        })
         const first = page.locator('rux-menu-item').first()
         const last = page.locator('rux-menu-item').last()
         //! Replace with .not.toHaveAttribute when playwright issue is fixed
@@ -82,7 +74,8 @@ test.describe('Pop up', async () => {
                 return e.hasAttribute('selected')
             })
             .then((e) => expect(e).toBeTruthy())
-        await last.click()
+        //this timeout prevents flake from the next function running too fast
+        await last.click().then(() => page.waitForTimeout(500))
         await last
             .evaluate((e) => {
                 return e.hasAttribute('selected')
