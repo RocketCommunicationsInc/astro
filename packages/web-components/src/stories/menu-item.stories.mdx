@@ -3,9 +3,9 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
 <Meta
-    title="Components/Pop Up Menu/Menu Item"
+    title="Components/Pop Up/Menu Item"
     component="rux-menu-item"
-    subcomponents={{ RuxPopUpMenu: 'rux-pop-up-menu' }}
+    subcomponents={{ RuxPopUp: 'rux-pop-up' }}
     argTypes={extractArgTypes('rux-menu-item')}
     parameters={{
         actions: {
@@ -16,7 +16,7 @@ import { html, render } from 'lit-html'
 
 # Menu Item
 
-Menu Item should be used inside of [Pop Up Menu](?path=/docs/components-pop-up-menu--default-story)
+Menu Item should be used inside of [Pop Up](?path=/docs/components-pop-up--default-story)
 
 export const Default = (args) => {
     return html`

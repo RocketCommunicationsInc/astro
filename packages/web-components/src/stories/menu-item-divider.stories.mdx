@@ -3,15 +3,15 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
 <Meta
-    title="Components/Pop Up Menu/Menu Item Divider"
+    title="Components/Pop Up/Menu Item Divider"
     component="rux-menu-item-divider"
-    subcomponents={{ RuxPopUpMenu: 'rux-pop-up-menu' }}
+    subcomponents={{ RuxPopUp: 'rux-pop-up' }}
     argTypes={extractArgTypes('rux-menu-item-divider')}
 />
 
 # Menu Item Divider
 
-Menu Item should be used inside of [Pop Up Menu](?path=/docs/components-pop-up-menu--default-story). It is used to group Menu Items.
+Menu Item should be used inside of [Pop Up](?path=/docs/components-pop-up--default-story). It is used to group Menu Items.
 
 export const Default = (args) => {
     return html` <rux-menu-item-divider></rux-menu-item-divider> `
