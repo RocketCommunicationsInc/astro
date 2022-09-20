@@ -375,7 +375,7 @@ rux-notification::part(container) {
 
 **Resolution:** Search your application's CSS for anything that may be targeting `rux-notification` directly and replace with the appropriate CSS Shadow Part.
 
-## Pop Up Menu
+## Pop Up [New]
 
 ### Rewrite
 
@@ -420,6 +420,10 @@ The following events have been removed: `ruxmenudidclose`, `ruxmenudidopen`, `ru
 ### Slot Removal
 
 The `menu-end` slot has been removed. Use a regular `rux-menu-item` and style it accordingly.
+
+## Pop Up Menu
+
+Pop Up Menu has been removed and has been split into separate **Pop Up** and **Menu** components.
 
 ## Progress
 
