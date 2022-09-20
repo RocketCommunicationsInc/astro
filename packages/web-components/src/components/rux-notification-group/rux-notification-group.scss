@@ -1,0 +1,13 @@
+:host {
+    position: relative;
+    display: block;
+}
+
+:host([hidden]) {
+    display: none;
+}
+
+::slotted(rux-notification) {
+    position: absolute;
+    top: 0;
+}
