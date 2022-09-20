@@ -1,13 +1,13 @@
 :host {
     // Internal private design tokens
-    --container-header-padding: 1rem 1.25rem; //16px 20px
-    --container-footer-padding: 1.25rem; //20px
+    --container-header-padding: var(--spacing-4); //16px
+    --container-footer-padding: var(--spacing-4); //16px
     --container-header-background-color: var(--color-background-surface-header);
 
     /**
      * @prop --body-padding: the container's body padding
      */
-    --body-padding: var(--container-footer-padding, 1.25rem);
+    --body-padding: var(--spacing-0);
     display: block;
 }
 
@@ -28,11 +28,12 @@
     font-size: var(--font-heading-2-font-size);
     font-weight: var(--font-heading-2-font-weight);
     letter-spacing: var(--font-heading-2-letter-spacing);
+    line-height: var(--font-heading-2-line-height);
 }
 
 .rux-container__tab-bar {
     background: var(--color-background-surface-header);
-    padding: 0 0.625rem; //10px
+    padding: 0 var(--spacing-4) calc(var(--spacing-1) + 2px) var(--spacing-4); //0 16px 6px 16px
 }
 
 .rux-container__toolbar {
