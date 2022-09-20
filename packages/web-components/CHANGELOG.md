@@ -104,7 +104,9 @@ Our /dist/custom-elements build has been removed in favor of a faster treeshakea
 ### Notification
 
 -   The `color`, `font-family`, `font-weight`, `font-size`, `letter-spacing`, `line-height`, and `padding` CSS properties can no longer be styled from the :host element.
--   The deprecated `--notification-text-color` CSS Custom Property has been removed.
+-   The following deprecated CSS Custom Properties have been removed:
+    -   --notification-icon-color
+    -   --notification-text-color
 
 ### Pop Up
 
@@ -376,6 +378,7 @@ Our /dist/custom-elements build has been removed in favor of a faster treeshakea
 ### Progress
 
 -   Internal styles have been refactored to use spacing design tokens.
+-   Fixed visual regression when progress was not given a `value` attribute.
 
 ### Segmented Button
 
