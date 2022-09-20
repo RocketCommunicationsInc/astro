@@ -299,6 +299,14 @@ Our /dist/custom-elements build has been removed in favor of a faster treeshakea
 
 -   Adds new Interdeterminate Progress component.
 
+### Menu [New]
+
+-   Adds new Menu component for use within Pop Up.
+
+### Pop Up
+
+-   Adds `ruxpopupopened` and `ruxpopupclosed` events.
+
 ### Tab
 
 -   Adds `small` attribute.
