@@ -9,6 +9,19 @@
 
   Migration: You can do a global find/replace on your project for:
 
+## 6.13.1
+
+### Patch Changes
+
+#### Tab
+
+- Added `container` CSS Shadow Part.
+- Fixed an issue where multiple tabs on the same page would hide each others content when selected.
+
+#### Checkbox
+
+- Fixed an issue where the label was disappearing when checked.
+
 ## 6.13.0
 
 ### Minor Changes

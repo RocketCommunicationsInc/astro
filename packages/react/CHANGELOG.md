@@ -17,6 +17,19 @@
 
 - f9b842f7: Modal is now deprecated and will be removed in 7.0. It is being renamed to Dialog to align with our Design System naming and which shares the exact same API as Modal. It is recommended that you migrate to Dialog before 7.0. You can do a global find/replace on your project for:
 
+## 6.13.1
+
+### Patch Changes
+
+#### Tab
+
+- Added `container` CSS Shadow Part.
+- Fixed an issue where multiple tabs on the same page would hide each others content when selected.
+
+#### Checkbox
+
+- Fixed an issue where the label was disappearing when checked.
+
 ## 6.13.0
 
 ### Minor Changes
