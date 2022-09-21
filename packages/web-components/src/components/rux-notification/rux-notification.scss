@@ -106,9 +106,7 @@
 }
 
 /* ---- truncated/wrapped --- */
-.rux-notification-banner__content:not(.rux-notification-banner--wrap),
-.rux-notification-banner__content:not(.rux-notification-banner--wrap)
-    slot::slotted(*) {
+.rux-notification-banner__content {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;

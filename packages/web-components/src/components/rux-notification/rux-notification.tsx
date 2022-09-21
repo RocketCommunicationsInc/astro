@@ -55,11 +55,6 @@ export class RuxNotification {
     @Prop() small: boolean = false
 
     /**
-     * Allows long content in a banner to wrap lines
-     */
-    @Prop() wrap: boolean = false
-
-    /**
      * Prevents the user from dismissing the notification. Hides the `actions` slot.
      */
     @Prop({ attribute: 'hide-close' }) hideClose: boolean = false
@@ -178,7 +173,6 @@ export class RuxNotification {
                         <div
                             class={{
                                 'rux-notification-banner__content': true,
-                                'rux-notification-banner--wrap': this.wrap,
                             }}
                             part="message"
                         >
