@@ -17,115 +17,190 @@
         <script nomodule src="/build/astro-web-components.esm.js"></script>
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
+
+        <script
+            type="module"
+            src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"
+        ></script>
     </head>
 
-    <body class="dark-theme">
-        <div>
-            <rux-checkbox></rux-checkbox>
-            <rux-checkbox></rux-checkbox>
-            <rux-checkbox></rux-checkbox>
-            <rux-checkbox></rux-checkbox>
-            <rux-checkbox></rux-checkbox>
-        </div>
-        <div>
-            <rux-checkbox label="Label Prop"></rux-checkbox>
-            <rux-checkbox>Label Slot</rux-checkbox>
-            <rux-checkbox label="Label Prop">Label Slot wth Prop</rux-checkbox>
-            <rux-checkbox checked>Checked</rux-checkbox>
-            <rux-checkbox indeterminate>Indeterminate</rux-checkbox>
-            <rux-checkbox disabled>Disabled</rux-checkbox>
-            <rux-checkbox checked disabled>Checked Disabled</rux-checkbox>
-            <rux-checkbox indeterminate disabled>
-                Indeterminate Disabled
-            </rux-checkbox>
-            <rux-checkbox required>Required</rux-checkbox>
-        </div>
-        <div>
-            <rux-checkbox help-text="Help Text">With Help Text</rux-checkbox>
-        </div>
-        <button id="add">Add</button>
-        <div style="padding: 10%; display: flex; justify-content: center">
-            <div style="width: 60%">
-                <form id="form" style="width: 100%">
-                    <rux-checkbox
-                        id="ruxCheckbox"
-                        name="ruxCheckbox"
-                        value="foo"
+    <body>
+        <style>
+            ftl-holster {
+                padding: 1rem;
+            }
+        </style>
+        <section>
+            <h4>FTL Testing</h4>
+            <ftl-belt access-token="" file-id="ZtHeSWpISd8hJjN46uY9pm">
+                <div
+                    style="
+                        display: flex;
+                        flex-wrap: wrap;
+                        width: 100%;
+                        justify-content: space-evenly;
+                    "
+                >
+                    <ftl-holster
+                        name="Checkbox Checked W/ Label"
+                        node="971:5376"
                     >
-                        Checkbox
-                    </rux-checkbox>
-
-                    <rux-checkbox
-                        id="ruxCheckboxDisabled"
-                        name="ruxCheckboxDisabled"
-                        disabled
+                        <rux-checkbox
+                            id="ruxCheckbox"
+                            name="ruxCheckbox"
+                            value="foo"
+                            checked
+                        >
+                            Checked
+                        </rux-checkbox>
+                    </ftl-holster>
+                    <ftl-holster name="Checkbox W/ Label" node="971:5349">
+                        <rux-checkbox>Checkbox</rux-checkbox>
+                    </ftl-holster>
+                    <ftl-holster
+                        name="Indeterminate Checkbox W/ Label"
+                        node="971:5385"
                     >
-                        Disabled
-                    </rux-checkbox>
-
-                    <input
-                        id="nativeCheckbox"
-                        type="checkbox"
-                        name="nativeCheckbox"
-                        value="foo"
-                    />
-                    <button id="submit" type="submit">submit</button>
-                </form>
-
-                <form id="form-no-value" style="margin-top: 1rem; width: 100%">
-                    <rux-checkbox id="ruxCheckbox2" name="ruxCheckbox">
-                        Checkbox
-                    </rux-checkbox>
-
-                    <input
-                        id="nativeCheckbox2"
-                        type="checkbox"
-                        name="nativeCheckbox"
-                    />
-                    <button type="submit">submit</button>
-                </form>
+                        <rux-checkbox indeterminate>
+                            Indeterminate
+                        </rux-checkbox>
+                    </ftl-holster>
+                    <ftl-holster name="Checkbox" node="1030:4288">
+                        <rux-checkbox> </rux-checkbox>
+                    </ftl-holster>
+                    <ftl-holster name="Checked Checkbox" node="1030:4310">
+                        <rux-checkbox checked></rux-checkbox>
+                    </ftl-holster>
+                    <ftl-holster name="Indeterminate Checkbox" node="1007:3276">
+                        <rux-checkbox indeterminate></rux-checkbox>
+                    </ftl-holster>
+                </div>
+            </ftl-belt>
+        </section>
+        <section>
+            <div>
+                <rux-checkbox></rux-checkbox>
+                <rux-checkbox></rux-checkbox>
+                <rux-checkbox></rux-checkbox>
+                <rux-checkbox></rux-checkbox>
+                <rux-checkbox></rux-checkbox>
             </div>
-            <div style="width: 30%">
-                <ul id="log"></ul>
+            <div>
+                <rux-checkbox label="Label Prop"></rux-checkbox>
+                <rux-checkbox>Label Slot</rux-checkbox>
+                <rux-checkbox label="Label Prop"
+                    >Label Slot wth Prop</rux-checkbox
+                >
+                <rux-checkbox checked>Checked</rux-checkbox>
+                <rux-checkbox indeterminate>Indeterminate</rux-checkbox>
+                <rux-checkbox disabled>Disabled</rux-checkbox>
+                <rux-checkbox checked disabled>Checked Disabled</rux-checkbox>
+                <rux-checkbox indeterminate disabled>
+                    Indeterminate Disabled
+                </rux-checkbox>
+                <rux-checkbox required>Required</rux-checkbox>
             </div>
-            <script>
-                const log = document.getElementById('log')
-                const forms = document.querySelectorAll('form')
+            <div>
+                <rux-checkbox help-text="Help Text"
+                    >With Help Text</rux-checkbox
+                >
+            </div>
+            <button id="add">Add</button>
+            <div style="padding: 10%; display: flex; justify-content: center">
+                <div style="width: 60%">
+                    <form id="form" style="width: 100%">
+                        <rux-checkbox
+                            id="ruxCheckbox"
+                            name="ruxCheckbox"
+                            value="foo"
+                        >
+                            Checkbox
+                        </rux-checkbox>
 
-                for (const form of forms) {
-                    form.addEventListener('submit', (e) => {
-                        event.preventDefault()
-                        // trigger formdata event
-                        new FormData(form)
-                    })
+                        <rux-checkbox
+                            id="ruxCheckboxDisabled"
+                            name="ruxCheckboxDisabled"
+                            disabled
+                        >
+                            Disabled
+                        </rux-checkbox>
 
-                    form.addEventListener('formdata', logFormData)
-                }
+                        <input
+                            id="nativeCheckbox"
+                            type="checkbox"
+                            name="nativeCheckbox"
+                            value="foo"
+                        />
+                        <button id="submit" type="submit">submit</button>
+                    </form>
 
-                function logFormData(e) {
-                    const status = document.getElementById('status')
-                    log.innerHTML = ''
-                    // Get the form data from the event object
-                    let data = e.formData
-                    const values = data.values()
-                    for (var value of data.entries()) {
-                        const item = document.createElement('li')
-                        item.innerHTML = `<strong>${value[0]}:</strong>${value[1]}`
-                        log.appendChild(item)
-                    }
-                }
-            </script>
+                    <form
+                        id="form-no-value"
+                        style="margin-top: 1rem; width: 100%"
+                    >
+                        <rux-checkbox id="ruxCheckbox2" name="ruxCheckbox">
+                            Checkbox
+                        </rux-checkbox>
 
-            <script>
-                add.addEventListener('click', () => {
-                    const els = document.querySelectorAll('rux-checkbox')
-                    els.forEach((el) => {
-                        const div = document.createElement('div')
-                        div.innerText = 'Hey now default slot!'
-                        el.appendChild(div)
-                    })
+                        <input
+                            id="nativeCheckbox2"
+                            type="checkbox"
+                            name="nativeCheckbox"
+                        />
+                        <button type="submit">submit</button>
+                    </form>
+                </div>
+                <div style="width: 30%">
+                    <ul id="log"></ul>
+                </div>
+            </div>
+        </section>
+        <ftl-belt
+            file-id="ZtHeSWpISd8hJjN46uY9pm"
+            access-token="figd__NISjRg60M6hHqqc921uF-aeeMtKoiYKvsA3wFtB"
+        >
+            <ftl-holster node="971:5349">
+                <rux-checkbox label="Checkbox"></rux-checkbox>
+            </ftl-holster>
+        </ftl-belt>
+
+        <script>
+            const log = document.getElementById('log')
+            const forms = document.querySelectorAll('form')
+
+            for (const form of forms) {
+                form.addEventListener('submit', (e) => {
+                    event.preventDefault()
+                    // trigger formdata event
+                    new FormData(form)
                 })
-            </script>
-        </div>
+
+                form.addEventListener('formdata', logFormData)
+            }
+
+            function logFormData(e) {
+                const status = document.getElementById('status')
+                log.innerHTML = ''
+                // Get the form data from the event object
+                let data = e.formData
+                const values = data.values()
+                for (var value of data.entries()) {
+                    const item = document.createElement('li')
+                    item.innerHTML = `<strong>${value[0]}:</strong>${value[1]}`
+                    log.appendChild(item)
+                }
+            }
+        </script>
+
+        <script>
+            add.addEventListener('click', () => {
+                const els = document.querySelectorAll('rux-checkbox')
+                els.forEach((el) => {
+                    const div = document.createElement('div')
+                    div.innerText = 'Hey now default slot!'
+                    el.appendChild(div)
+                })
+            })
+        </script>
     </body>
 </html>
