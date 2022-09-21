@@ -354,10 +354,10 @@
 
         <script>
             const notifications = document.querySelectorAll('#animated')
-            console.log(notifications)
+
             const myObserver = new ResizeObserver((entries) => {
                 for (let entry of entries) {
-                    console.log(entry.target.scrollHeight)
+                    //console.log(entry.target.scrollHeight)
                     if (entry.target.hasAttribute('open', '')) {
                         entry.target.style.height = 'auto'
                         // console.log(entry.contentRect.height)
