@@ -171,7 +171,9 @@ export class RuxNotification {
                         ) : null}
 
                         <div
-                            class="rux-notification-banner__content"
+                            class={{
+                                'rux-notification-banner__content': true,
+                            }}
                             part="message"
                         >
                             <slot>{this.message}</slot>
