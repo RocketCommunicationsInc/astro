@@ -2,6 +2,7 @@ dist
 loader
 storybook-static
 *.mdx
+*.md
 *readme.md
 
 # Ignore Stencil Build files
