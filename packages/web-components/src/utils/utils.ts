@@ -10,7 +10,7 @@ export function hasSlot(el: HTMLElement, name?: string | undefined): boolean {
 
     // Look for a default slot
     return [...el.childNodes].some((node) => {
-        //If node is text and not an empy string return true
+        //If node is text and not an empty string return true
         if (
             node.nodeType === node.TEXT_NODE &&
             node?.textContent?.trim() !== ''

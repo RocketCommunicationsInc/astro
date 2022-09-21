@@ -25,6 +25,49 @@
     </head>
 
     <body>
+        <!-- <style>
+            /* add Parts: tree-text-color */
+            rux-tree-node::part(node) {
+                color: red;
+            }
+
+            /* add Parts: tree-border-color*/
+            rux-tree {
+                border: 1px solid purple;
+            }
+            rux-tree-node {
+                border: 1px solid orange;
+            }
+            /* add Parts: tree-accent-color*/
+            rux-tree-node::part(icon)::after {
+                border-color: transparent transparent transparent white;
+            }
+
+            /*add Parts: tree-hover-background-color*/
+            /* add Parts: tree-hover-text-color */
+            rux-tree-node::part(node):hover {
+                background-color: orange;
+                color: green;
+            }
+
+            /*add Parts: Tree-selected-border-color*/
+            rux-tree-node[selected] {
+                border: 1px solid blue;
+            }
+
+            /* add Parts: tree-selected-accent-color */
+            rux-tree-node[selected]::part(node) {
+                color: green;
+            }
+            rux-tree-node[selected] {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='33' viewBox='0 0 5 33' fill='none'%3E%3Crect width='5' height='33' fill='%23ffffff'/%3E%3C/svg%3E%0A");;
+            }
+
+            /*add Parts: Tree-expanded-border-color */
+            rux-tree-node[expanded] {
+                border-color: pink;
+            }
+        </style> -->
         <rux-tree role="tree" class="hydrated">
             <rux-tree-node
                 role="treeitem"

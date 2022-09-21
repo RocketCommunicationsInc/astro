@@ -8,15 +8,12 @@ test.describe('Status', () => {
         await setBodyContent(
             page,
             `
-        <rux-status></rux-status>
+        <rux-status status="standby"></rux-status>
     `
         )
         const el = page.locator('rux-status').first()
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
+        await expect(el).toHaveAttribute('status', 'standby')
     })
 })
-/*
-    Need to test: 
-    -has props status
-*/
