@@ -85,3 +85,9 @@ blockquote {
     margin-top: 70px;
   }
 }
+
+.page-migration {
+  pre > code {
+    white-space: pre;
+  }
+}
