@@ -65,6 +65,9 @@
         cursor: pointer;
         background-position: center;
     }
+    input::placeholder {
+        color: var(--color-text-placeholder);
+    }
     .rux-input {
         input {
             border: none;
@@ -144,9 +147,6 @@
         }
         &--invalid:hover {
             border: 1px solid var(--input-invalid-border-color);
-        }
-        &::placeholder {
-            color: var(--color-text-placeholder);
         }
         .rux-input-prefix,
         .rux-input-suffix {
