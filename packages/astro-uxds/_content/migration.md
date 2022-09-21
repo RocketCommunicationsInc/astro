@@ -383,6 +383,22 @@ rux-monitoring-progress-icon::part(container) {
 
 ## Notification
 
+### Remove Parent Styling
+
+**Likelihood of Impact:** High
+
+Notifications no longer require a parent element with `position: relative` and `overflow: hidden` applied.
+
+**Resolution:** Check your implementation of `rux-notification` and remove the `position: relative` and `overflow: hidden` styles.
+
+### Multiple Notification Stacking
+
+**Likelihood of Impact:** High
+
+Multiple sibling notifications will no longer stack by default. Previously, you could have multiple notifications and they would stack on top of each other. Because only one notification should be visible at a time, you should only need one element in the DOM.
+
+**Resolution:** You'll need to add some of your own custom logic to manage which notification should be presented. [Consult the documentation for more details](https://astro-components.netlify.app/?path=/docs/components-notification--default-story#multiple-notifications)
+
 ### Remove Deprecated CSS Custom Properties
 
 **Likelihood of Impact:** Low

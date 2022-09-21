@@ -103,6 +103,10 @@ Our /dist/custom-elements build has been removed in favor of a faster treeshakea
 
 ### Notification
 
+-   Notification no longer requires a parent element with `position: relative` and `overflow: hidden` applied.
+-   Multiple sibling notifications are no longer stacked by default.
+-   Notification no longer overlays content. Instead, when a notification becomes visible, it will shift content up or down accordingly.
+-   The slide in/out animation has been removed for better performance.
 -   The `color`, `font-family`, `font-weight`, `font-size`, `letter-spacing`, `line-height`, and `padding` CSS properties can no longer be styled from the :host element.
 -   The following deprecated CSS Custom Properties have been removed:
     -   --notification-icon-color
