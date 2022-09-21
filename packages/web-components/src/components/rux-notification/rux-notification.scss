@@ -23,6 +23,11 @@
     display: none;
 }
 
+:host([has-parent]) .rux-notification-banner {
+    position: absolute;
+    top: 0;
+}
+
 .rux-notification-banner {
     display: flex;
     align-items: stretch;

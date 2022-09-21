@@ -38,6 +38,11 @@ export class RuxNotification {
     @Prop({ reflect: true, mutable: true }) open: boolean = false
 
     /**
+     *  Set to true to allow styling from parent component rux-notification-group
+     */
+    @Prop({ reflect: true }) hasParent: boolean = false
+
+    /**
      *  Message for the notification banner.
      */
     @Prop() message: string = ''
