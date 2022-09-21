@@ -17,6 +17,7 @@
         <script nomodule src="/build/astro-web-components.esm.js"></script>
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
+
         <script
             type="module"
             src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"
@@ -24,12 +25,14 @@
     </head>
 
     <body>
+        <style>
+            ftl-holster {
+                padding: 1rem;
+            }
+        </style>
         <section>
             <h4>FTL Testing</h4>
-            <ftl-belt
-                access-token="figd__NISjRg60M6hHqqc921uF-aeeMtKoiYKvsA3wFtB"
-                file-id="o3VDbrHZ1oZpiqwMHW7mqj"
-            >
+            <ftl-belt access-token="" file-id="ZtHeSWpISd8hJjN46uY9pm">
                 <div
                     style="
                         display: flex;
@@ -40,7 +43,7 @@
                 >
                     <ftl-holster
                         name="Checkbox Checked W/ Label"
-                        node="25916:114905"
+                        node="971:5376"
                     >
                         <rux-checkbox
                             id="ruxCheckbox"
@@ -48,36 +51,27 @@
                             value="foo"
                             checked
                         >
-                            Checkbox
+                            Checked
                         </rux-checkbox>
                     </ftl-holster>
-                    <ftl-holster name="Checkbox W/ Label" node="25916:114852">
-                        <rux-checkbox> Checkbox test </rux-checkbox>
+                    <ftl-holster name="Checkbox W/ Label" node="971:5349">
+                        <rux-checkbox>Checkbox</rux-checkbox>
                     </ftl-holster>
                     <ftl-holster
                         name="Indeterminate Checkbox W/ Label"
-                        node="25916:114831"
+                        node="971:5385"
                     >
                         <rux-checkbox indeterminate>
-                            Checkbox test
+                            Indeterminate
                         </rux-checkbox>
                     </ftl-holster>
-                    <ftl-holster
-                        name="Checkbox"
-                        node="I25916:114844;25916:114906;34766:118711"
-                    >
+                    <ftl-holster name="Checkbox" node="1030:4288">
                         <rux-checkbox> </rux-checkbox>
                     </ftl-holster>
-                    <ftl-holster
-                        name="Checked Checkbox"
-                        node="I25916:114845;25916:114906;34766:118711"
-                    >
+                    <ftl-holster name="Checked Checkbox" node="1030:4310">
                         <rux-checkbox checked></rux-checkbox>
                     </ftl-holster>
-                    <ftl-holster
-                        name="Indeterminate Checkbox"
-                        node="I25916:114846;25916:114906;34766:118711"
-                    >
+                    <ftl-holster name="Indeterminate Checkbox" node="1007:3276">
                         <rux-checkbox indeterminate></rux-checkbox>
                     </ftl-holster>
                 </div>
@@ -161,6 +155,15 @@
                 </div>
             </div>
         </section>
+        <ftl-belt
+            file-id="ZtHeSWpISd8hJjN46uY9pm"
+            access-token="figd__NISjRg60M6hHqqc921uF-aeeMtKoiYKvsA3wFtB"
+        >
+            <ftl-holster node="971:5349">
+                <rux-checkbox label="Checkbox"></rux-checkbox>
+            </ftl-holster>
+        </ftl-belt>
+
         <script>
             const log = document.getElementById('log')
             const forms = document.querySelectorAll('form')
