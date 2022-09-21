@@ -247,5 +247,135 @@
                 </ftl-holster>
             </section>
         </ftl-belt> -->
+        <section>
+            <h1>Notification testing</h1>
+            <rux-notification open status="normal" id="animated">
+                Notification banner
+                <a href="#" style="margin-left: 8px">Link</a>
+            </rux-notification>
+            <h2>This should be below the notification</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                molestiae et maxime recusandae provident magni perspiciatis fuga
+                in voluptatem ea dolor quas, distinctio nobis esse praesentium
+                necessitatibus minus cumque corporis?
+            </p>
+            <rux-notification open status="normal" small id="animated">
+                Notification banner
+                <a href="#" style="margin-left: 8px">Link</a>
+            </rux-notification>
+            <h2>This should be below the notification</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                molestiae et maxime recusandae provident magni perspiciatis fuga
+                in voluptatem ea dolor quas, distinctio nobis esse praesentium
+                necessitatibus minus cumque corporis?
+            </p>
+            <rux-notification open status="critical">
+                <p>
+                    Notification banner Lorem ipsum dolor sit amet consectetur,
+                    adipisicing elit. Voluptas velit incidunt inventore numquam
+                    voluptates debitis neque perferendis, maxime exercitationem
+                    eligendi possimus ipsa labore aperiam eveniet. Accusantium
+                    nisi autem eligendi quos?
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </p>
+            </rux-notification>
+            <h2>This should be below the notification</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                molestiae et maxime recusandae provident magni perspiciatis fuga
+                in voluptatem ea dolor quas, distinctio nobis esse praesentium
+                necessitatibus minus cumque corporis?
+            </p>
+            <rux-notification open status="critical" small wrap>
+                Notification banner Lorem ipsum dolor sit amet consectetur,
+                adipisicing elit. Voluptas velit incidunt inventore numquam
+                voluptates debitis neque perferendis, maxime exercitationem
+                eligendi possimus ipsa labore aperiam eveniet. Accusantium nisi
+                autem eligendi quos?
+                <a href="#" style="margin-left: 8px">Link</a>
+            </rux-notification>
+            <h2>This should be below the notification</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                molestiae et maxime recusandae provident magni perspiciatis fuga
+                in voluptatem ea dolor quas, distinctio nobis esse praesentium
+                necessitatibus minus cumque corporis?
+            </p>
+            <rux-notification open status="critical" small wrap id="animated">
+                <p>
+                    Notification banner Lorem ipsum dolor sit amet consectetur,
+                    adipisicing elit. Voluptas velit incidunt inventore numquam
+                    voluptates debitis neque perferendis, maxime exercitationem
+                    eligendi possimus ipsa labore aperiam eveniet. Accusantium
+                    nisi autem eligendi quos?
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </p>
+            </rux-notification>
+            <p>This last one is animated from outside the shadow dom</p>
+            <rux-button id="toggle" onclick="toggleAnimated()"
+                >Toggle Animated</rux-button
+            >
+        </section>
+        <style>
+            #animated[open] {
+                display: block;
+                opacity: 1;
+                height: auto;
+            }
+            #animated {
+                display: block;
+                opacity: 0;
+                transition: all 0.3s linear;
+                overflow: hidden;
+                animation-name: collapse;
+                animation-duration: 4s;
+            }
+            #animated:not([open]) {
+                height: 0px !important;
+            }
+
+            @keyframes collapse {
+                0% {
+                    height: auto;
+                }
+                50% {
+                    height: 50%;
+                }
+                99% {
+                    height: 0;
+                }
+                100% {
+                    display: none;
+                }
+            }
+        </style>
+
+        <script>
+            const notifications = document.querySelectorAll('#animated')
+            console.log(notifications)
+            const myObserver = new ResizeObserver((entries) => {
+                for (let entry of entries) {
+                    console.log(entry.target.scrollHeight)
+                    if (entry.target.hasAttribute('open', '')) {
+                        entry.target.style.height = 'auto'
+                        // console.log(entry.contentRect.height)
+                        entry.target.style.height = `${entry.target.scrollHeight}px`
+                    }
+                }
+            })
+            notifications.forEach((notification) => {
+                myObserver.observe(notification)
+            })
+
+            function toggleAnimated() {
+                notifications.forEach((notification) => {
+                    notification.hasAttribute('open')
+                        ? notification.removeAttribute('open')
+                        : notification.setAttribute('open', '')
+                })
+            }
+        </script>
     </body>
 </html>
