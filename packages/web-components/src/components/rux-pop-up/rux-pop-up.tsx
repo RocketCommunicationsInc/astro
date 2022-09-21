@@ -1,4 +1,3 @@
-//@ts-nocheck
 import {
     Prop,
     Watch,
@@ -10,8 +9,6 @@ import {
     Event,
     EventEmitter,
     Method,
-    Listen,
-    Event,
 } from '@stencil/core'
 import {
     Placement,
@@ -32,6 +29,9 @@ import {
  * @part popup-content - the content that is shown when rux-pop-up is opened
  * @part arrow - the arrow pointing to the trigger of rux-pop-up
  */
+
+export declare type ExtendedPlacement = Placement | 'auto'
+
 @Component({
     tag: 'rux-pop-up',
     styleUrl: 'rux-pop-up.scss',
@@ -40,7 +40,7 @@ import {
 export class RuxPopUp {
     private trigger!: HTMLElement
     private content!: HTMLElement
-    private arrowEl?: HTMLElement
+    private arrowEl!: HTMLElement
     private _positionerCleanup: ReturnType<typeof autoUpdate> | undefined
 
     @Element() el!: HTMLRuxPopUpElement
@@ -51,19 +51,14 @@ export class RuxPopUp {
     @Prop({ mutable: true, reflect: true }) open = false
 
     /**
-     * The placement of the pop up relative to it's slotted trigger element. If none is specified, the pop-up with use auto-placement instead.
+     * The placement of the pop up relative to it's slotted trigger element. Defaults to auto.
      */
-    @Prop() placement?: Placement
+    @Prop() placement: ExtendedPlacement = 'auto'
 
     /**
      * The position strategy of the popup, either absolute or fixed.
      */
     @Prop() strategy: 'absolute' | 'fixed' = 'absolute'
-
-    /**
-     * Determines the placement automatically based on available space for the pop-up.
-     */
-    @Prop() autoPlacement: boolean = false
 
     @State() arrowPosition?: string
 
@@ -95,6 +90,12 @@ export class RuxPopUp {
                 this._handleOutsideClick(e)
             )
         }
+    }
+
+    @Watch('placement')
+    handlePlacement(oldValue: string, newValue: string) {
+        console.log('Watch Placement!')
+        console.log(`Changing from ${oldValue} to ${newValue}`)
     }
 
     /**
@@ -139,11 +140,12 @@ export class RuxPopUp {
             return
         }
         computePosition(this.triggerSlot, this.content, {
+            //@ts-ignore
             placement: this.placement,
             strategy: this.strategy,
             middleware: [
                 offset(12),
-                this.autoPlacement || !this.placement
+                this.placement === 'auto'
                     ? autoPlacement({ alignment: 'start' })
                     : flip(),
                 arrow({ element: this.arrowEl }),
@@ -154,6 +156,7 @@ export class RuxPopUp {
                 top: `${y}px`,
             })
 
+            //@ts-ignore
             const { x: arrowX, y: arrowY } = middlewareData.arrow
 
             const staticSide = {
@@ -162,11 +165,12 @@ export class RuxPopUp {
                 bottom: 'top',
                 left: 'right',
             }[placement.split('-')[0]]
-            Object.assign(this.arrowEl.style, {
+            Object.assign(this.arrowEl!.style, {
                 left: arrowX != null ? `${arrowX}px` : '',
                 top: arrowY != null ? `${arrowY}px` : '',
                 right: '',
                 bottom: '',
+                //@ts-ignore
                 [staticSide]: '-6px',
             })
         })
@@ -242,17 +246,18 @@ export class RuxPopUp {
 
     get contentSlot() {
         return this.content
-            ?.querySelector('slot')
+            ?.querySelector('slot')!
             .assignedElements({ flatten: true })[0]
     }
 
     get triggerSlot() {
         return this.trigger
-            ?.querySelector('slot')
+            ?.querySelector('slot')!
             .assignedElements({ flatten: true })[0]
     }
 
     get hasMenu(): boolean {
+        //@ts-ignore
         return !!this.content
             ?.querySelector('slot')
             .assignedElements({ flatten: true })
@@ -268,7 +273,7 @@ export class RuxPopUp {
                     <div
                         onClick={this._handleTriggerClick}
                         class="rux-popup__trigger"
-                        ref={(el) => (this.trigger = el)}
+                        ref={(el) => (this.trigger = el!)}
                         part="trigger-container"
                     >
                         <slot name="trigger"></slot>
@@ -289,11 +294,11 @@ export class RuxPopUp {
                             hidden: this.open === false,
                         }}
                         part="popup-content"
-                        ref={(el) => (this.content = el)}
+                        ref={(el) => (this.content = el!)}
                     >
                         <div
                             class="rux-popup-arrow"
-                            ref={(el) => (this.arrowEl = el)}
+                            ref={(el) => (this.arrowEl = el!)}
                             part="arrow"
                         ></div>
 

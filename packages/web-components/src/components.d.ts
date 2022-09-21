@@ -8,7 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Classification, Status, StatusTags } from "./common/commonTypes.module";
 import { LogRow } from "./components/rux-log/rux-log.model";
 import { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
-import { Placement } from "@floating-ui/dom";
+import { ExtendedPlacement } from "./components/rux-pop-up/rux-pop-up";
 import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
 export namespace Components {
     interface RuxAccordion {
@@ -12012,9 +12012,9 @@ export namespace Components {
          */
         "selected": boolean;
         /**
-          * the value returned when item is selected. If no value is given, the text content will be used.
+          * the value returned when item is selected.
          */
-        "value": any;
+        "value"?: string;
     }
     interface RuxMenuItemDivider {
     }
@@ -12116,21 +12116,21 @@ export namespace Components {
          */
         "label"?: string;
     }
-    interface RuxPopUpMenu {
+    interface RuxPopUp {
         /**
-          * Closes the pop up menu and returns false.
+          * Closes the pop up and returns false.
          */
         "hide": () => Promise<false>;
         /**
-          * determines if the pop up is open or closed
+          * Determines if the pop up is open or closed
          */
         "open": boolean;
         /**
-          * the placement of the pop up relative to it's slotted trigger element.
+          * The placement of the pop up relative to it's slotted trigger element. Defaults to auto.
          */
-        "placement": Placement;
+        "placement": ExtendedPlacement;
         /**
-          * Opens the pop up menu and returns true.
+          * Opens the pop up and returns true.
          */
         "show": () => Promise<true>;
         /**
@@ -19053,11 +19053,11 @@ declare global {
         prototype: HTMLRuxOptionGroupElement;
         new (): HTMLRuxOptionGroupElement;
     };
-    interface HTMLRuxPopUpMenuElement extends Components.RuxPopUpMenu, HTMLStencilElement {
+    interface HTMLRuxPopUpElement extends Components.RuxPopUp, HTMLStencilElement {
     }
-    var HTMLRuxPopUpMenuElement: {
-        prototype: HTMLRuxPopUpMenuElement;
-        new (): HTMLRuxPopUpMenuElement;
+    var HTMLRuxPopUpElement: {
+        prototype: HTMLRuxPopUpElement;
+        new (): HTMLRuxPopUpElement;
     };
     interface HTMLRuxProgressElement extends Components.RuxProgress, HTMLStencilElement {
     }
@@ -20308,7 +20308,7 @@ declare global {
         "rux-notification": HTMLRuxNotificationElement;
         "rux-option": HTMLRuxOptionElement;
         "rux-option-group": HTMLRuxOptionGroupElement;
-        "rux-pop-up-menu": HTMLRuxPopUpMenuElement;
+        "rux-pop-up": HTMLRuxPopUpElement;
         "rux-progress": HTMLRuxProgressElement;
         "rux-push-button": HTMLRuxPushButtonElement;
         "rux-radio": HTMLRuxRadioElement;
@@ -20592,7 +20592,7 @@ declare namespace LocalJSX {
          */
         "message"?: string;
         /**
-          * Event that is fired when dialog closes. If dialog is closed by clicking on the default confirm or deny buttons (when no footer slot is provided), then true or false will be emitted respectively.
+          * Event that is fired when dialog closes. If dialog is closed by clicking on the default confirm or deny buttons (when no footer slot is provided), then true or false will be emitted respectively on the event.detail.
          */
         "onRuxdialogclosed"?: (event: CustomEvent<boolean | null>) => void;
         /**
@@ -32370,6 +32370,10 @@ declare namespace LocalJSX {
         "timezone"?: string;
     }
     interface RuxMenu {
+        /**
+          * Emits when a rux-menu-item is selected. Emits the rux-menu-item selected in the event detail.
+         */
+        "onRuxmenuselected"?: (event: CustomEvent<any>) => void;
     }
     interface RuxMenuItem {
         /**
@@ -32377,17 +32381,13 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * When a rux-menu item is selected, emits the value of that item.
-         */
-        "onRuxmenuitemselected"?: (event: CustomEvent<object>) => void;
-        /**
           * sets the menu item as selected
          */
         "selected"?: boolean;
         /**
-          * the value returned when item is selected. If no value is given, the text content will be used.
+          * the value returned when item is selected.
          */
-        "value"?: any;
+        "value"?: string;
     }
     interface RuxMenuItemDivider {
     }
@@ -32495,19 +32495,23 @@ declare namespace LocalJSX {
         "label"?: string;
         "onRux-option-group-changed"?: (event: CustomEvent<void>) => void;
     }
-    interface RuxPopUpMenu {
+    interface RuxPopUp {
         /**
-          * emits the value of the selected rux-menu-item inside of rux-pop-up-menu
+          * Emits when the pop up has closed.
          */
-        "onRuxpopupmenuselected"?: (event: CustomEvent<any>) => void;
+        "onRuxpopupclosed"?: (event: CustomEvent<any>) => void;
         /**
-          * determines if the pop up is open or closed
+          * Emits when the pop up has opened
+         */
+        "onRuxpopupopened"?: (event: CustomEvent<any>) => void;
+        /**
+          * Determines if the pop up is open or closed
          */
         "open"?: boolean;
         /**
-          * the placement of the pop up relative to it's slotted trigger element.
+          * The placement of the pop up relative to it's slotted trigger element. Defaults to auto.
          */
-        "placement"?: Placement;
+        "placement"?: ExtendedPlacement;
         /**
           * The position strategy of the popup, either absolute or fixed.
          */
@@ -32557,7 +32561,7 @@ declare namespace LocalJSX {
          */
         "onRuxblur"?: (event: CustomEvent<any>) => void;
         /**
-          * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
+          * Fired when an alteration to the input's value is committed by the user and emits the value on the event.detail - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
          */
         "onRuxchange"?: (event: CustomEvent<any>) => void;
         /**
@@ -32617,7 +32621,7 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
-          * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
+          * Fired when the value of the input changes and emits that value on the event.detail. - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */
         "onRuxchange"?: (event: CustomEvent<any>) => void;
         /**
@@ -32645,7 +32649,7 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Emitted when the value property has changed.
+          * Fires when the value property has changed and emits that value on the event.detail.
          */
         "onRuxchange"?: (event: CustomEvent<any>) => void;
         /**
@@ -32801,7 +32805,7 @@ declare namespace LocalJSX {
          */
         "onRuxblur"?: (event: CustomEvent<any>) => void;
         /**
-          * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
+          * Fired when the value of the input changes and emits that value on the event.detail. - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */
         "onRuxchange"?: (event: CustomEvent<any>) => void;
         /**
@@ -32831,7 +32835,7 @@ declare namespace LocalJSX {
     }
     interface RuxTabPanels {
         /**
-          * Emits a list of the Tab Panels that have been passed in
+          * Emits a list of the Tab Panels on the event.detail which have been passed in
          */
         "onRuxregisterpanels"?: (event: CustomEvent<HTMLRuxTabPanelsElement[]>) => void;
     }
@@ -32855,7 +32859,7 @@ declare namespace LocalJSX {
     }
     interface RuxTabs {
         /**
-          * Fires whenever a new tab is selected, and emits the selected tab.
+          * Fires whenever a new tab is selected, and emits the selected tab on the event.detail.
          */
         "onRuxselected"?: (event: CustomEvent<any>) => void;
         /**
@@ -33005,15 +33009,15 @@ declare namespace LocalJSX {
          */
         "expanded"?: boolean;
         /**
-          * Emit when user collapses a tree node
+          * Fires when the user collapses a tree node and emits the node's id on the event.detail.
          */
         "onRuxtreenodecollapsed"?: (event: CustomEvent<string>) => void;
         /**
-          * Emit when user expands a tree node
+          * Fires when the user expands a tree node and emits the node's id on the event.detail.
          */
         "onRuxtreenodeexpanded"?: (event: CustomEvent<string>) => void;
         /**
-          * Emit when user selects a tree node
+          * Fires when the user selects a tree node and emits the node's id on the event.detail.
          */
         "onRuxtreenodeselected"?: (event: CustomEvent<string>) => void;
         /**
@@ -34102,7 +34106,7 @@ declare namespace LocalJSX {
         "rux-notification": RuxNotification;
         "rux-option": RuxOption;
         "rux-option-group": RuxOptionGroup;
-        "rux-pop-up-menu": RuxPopUpMenu;
+        "rux-pop-up": RuxPopUp;
         "rux-progress": RuxProgress;
         "rux-push-button": RuxPushButton;
         "rux-radio": RuxRadio;
@@ -35217,7 +35221,7 @@ declare module "@stencil/core" {
             "rux-notification": LocalJSX.RuxNotification & JSXBase.HTMLAttributes<HTMLRuxNotificationElement>;
             "rux-option": LocalJSX.RuxOption & JSXBase.HTMLAttributes<HTMLRuxOptionElement>;
             "rux-option-group": LocalJSX.RuxOptionGroup & JSXBase.HTMLAttributes<HTMLRuxOptionGroupElement>;
-            "rux-pop-up-menu": LocalJSX.RuxPopUpMenu & JSXBase.HTMLAttributes<HTMLRuxPopUpMenuElement>;
+            "rux-pop-up": LocalJSX.RuxPopUp & JSXBase.HTMLAttributes<HTMLRuxPopUpElement>;
             "rux-progress": LocalJSX.RuxProgress & JSXBase.HTMLAttributes<HTMLRuxProgressElement>;
             "rux-push-button": LocalJSX.RuxPushButton & JSXBase.HTMLAttributes<HTMLRuxPushButtonElement>;
             "rux-radio": LocalJSX.RuxRadio & JSXBase.HTMLAttributes<HTMLRuxRadioElement>;
