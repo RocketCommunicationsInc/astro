@@ -30,7 +30,7 @@ export class RuxMenuItem {
     @Prop() value: any
 
     /**
-     *  When a rux-menu item is selected, emits the value of that item.
+     *  When a rux-menu item is selected, emits the value of that item on the event.detail.
      */
     @Event({ eventName: 'ruxmenuitemselected', bubbles: true, composed: true })
     ruxMenuItemSelected!: EventEmitter<object>

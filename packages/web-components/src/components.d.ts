@@ -11,6 +11,26 @@ import { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitor
 import { Placement } from "@floating-ui/dom";
 import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
 export namespace Components {
+    interface RuxAccordion {
+        /**
+          * If present, sets a disabled state on the accordion, indicating that no part of it can be manipulated by user action.
+         */
+        "disabled": boolean;
+        /**
+          * ***** toggles disallow muiltiple - default false ********
+         */
+        "disallowMultiple": boolean;
+    }
+    interface RuxAccordionItem {
+        /**
+          * If present, sets a disabled state on this accordion item, indicating it cannot be selected by user action.
+         */
+        "disabled": boolean;
+        /**
+          * If present, sets the initial state on this accordion item to open, displaying the accordion content.
+         */
+        "expanded": boolean;
+    }
     interface RuxButton {
         /**
           * Changes button style from solid to borderless by setting the rux-button--borderless class
@@ -12557,6 +12577,18 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLRuxAccordionElement extends Components.RuxAccordion, HTMLStencilElement {
+    }
+    var HTMLRuxAccordionElement: {
+        prototype: HTMLRuxAccordionElement;
+        new (): HTMLRuxAccordionElement;
+    };
+    interface HTMLRuxAccordionItemElement extends Components.RuxAccordionItem, HTMLStencilElement {
+    }
+    var HTMLRuxAccordionItemElement: {
+        prototype: HTMLRuxAccordionItemElement;
+        new (): HTMLRuxAccordionItemElement;
+    };
     interface HTMLRuxButtonElement extends Components.RuxButton, HTMLStencilElement {
     }
     var HTMLRuxButtonElement: {
@@ -19200,6 +19232,8 @@ declare global {
         new (): HTMLRuxTreeNodeElement;
     };
     interface HTMLElementTagNameMap {
+        "rux-accordion": HTMLRuxAccordionElement;
+        "rux-accordion-item": HTMLRuxAccordionItemElement;
         "rux-button": HTMLRuxButtonElement;
         "rux-button-group": HTMLRuxButtonGroupElement;
         "rux-card": HTMLRuxCardElement;
@@ -20310,6 +20344,30 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface RuxAccordion {
+        /**
+          * If present, sets a disabled state on the accordion, indicating that no part of it can be manipulated by user action.
+         */
+        "disabled"?: boolean;
+        /**
+          * ***** toggles disallow muiltiple - default false ********
+         */
+        "disallowMultiple"?: boolean;
+    }
+    interface RuxAccordionItem {
+        /**
+          * If present, sets a disabled state on this accordion item, indicating it cannot be selected by user action.
+         */
+        "disabled"?: boolean;
+        /**
+          * If present, sets the initial state on this accordion item to open, displaying the accordion content.
+         */
+        "expanded"?: boolean;
+        /**
+          * Fired when an element has expanded
+         */
+        "onRuxexpanded"?: (event: CustomEvent<any>) => void;
+    }
     interface RuxButton {
         /**
           * Changes button style from solid to borderless by setting the rux-button--borderless class
@@ -20538,7 +20596,7 @@ declare namespace LocalJSX {
          */
         "message"?: string;
         /**
-          * Event that is fired when dialog closes. If dialog is closed by clicking on the default confirm or deny buttons (when no footer slot is provided), then true or false will be emitted respectively.
+          * Event that is fired when dialog closes. If dialog is closed by clicking on the default confirm or deny buttons (when no footer slot is provided), then true or false will be emitted respectively on the event.detail.
          */
         "onRuxdialogclosed"?: (event: CustomEvent<boolean | null>) => void;
         /**
@@ -32323,7 +32381,7 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * When a rux-menu item is selected, emits the value of that item.
+          * When a rux-menu item is selected, emits the value of that item on the event.detail.
          */
         "onRuxmenuitemselected"?: (event: CustomEvent<object>) => void;
         /**
@@ -32447,7 +32505,7 @@ declare namespace LocalJSX {
     }
     interface RuxPopUpMenu {
         /**
-          * emits the value of the selected rux-menu-item inside of rux-pop-up-menu
+          * emits the value of the selected rux-menu-item inside of rux-pop-up-menu on the event.detail.
          */
         "onRuxpopupmenuselected"?: (event: CustomEvent<any>) => void;
         /**
@@ -32507,7 +32565,7 @@ declare namespace LocalJSX {
          */
         "onRuxblur"?: (event: CustomEvent<any>) => void;
         /**
-          * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
+          * Fired when an alteration to the input's value is committed by the user and emits the value on the event.detail - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
          */
         "onRuxchange"?: (event: CustomEvent<any>) => void;
         /**
@@ -32567,7 +32625,7 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
-          * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
+          * Fired when the value of the input changes and emits that value on the event.detail. - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */
         "onRuxchange"?: (event: CustomEvent<any>) => void;
         /**
@@ -32595,7 +32653,7 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Emitted when the value property has changed.
+          * Fires when the value property has changed and emits that value on the event.detail.
          */
         "onRuxchange"?: (event: CustomEvent<any>) => void;
         /**
@@ -32751,7 +32809,7 @@ declare namespace LocalJSX {
          */
         "onRuxblur"?: (event: CustomEvent<any>) => void;
         /**
-          * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
+          * Fired when the value of the input changes and emits that value on the event.detail. - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */
         "onRuxchange"?: (event: CustomEvent<any>) => void;
         /**
@@ -32781,7 +32839,7 @@ declare namespace LocalJSX {
     }
     interface RuxTabPanels {
         /**
-          * Emits a list of the Tab Panels that have been passed in
+          * Emits a list of the Tab Panels on the event.detail which have been passed in
          */
         "onRuxregisterpanels"?: (event: CustomEvent<HTMLRuxTabPanelsElement[]>) => void;
     }
@@ -32805,7 +32863,7 @@ declare namespace LocalJSX {
     }
     interface RuxTabs {
         /**
-          * Fires whenever a new tab is selected, and emits the selected tab.
+          * Fires whenever a new tab is selected, and emits the selected tab on the event.detail.
          */
         "onRuxselected"?: (event: CustomEvent<any>) => void;
         /**
@@ -32955,15 +33013,15 @@ declare namespace LocalJSX {
          */
         "expanded"?: boolean;
         /**
-          * Emit when user collapses a tree node
+          * Fires when the user collapses a tree node and emits the node's id on the event.detail.
          */
         "onRuxtreenodecollapsed"?: (event: CustomEvent<string>) => void;
         /**
-          * Emit when user expands a tree node
+          * Fires when the user expands a tree node and emits the node's id on the event.detail.
          */
         "onRuxtreenodeexpanded"?: (event: CustomEvent<string>) => void;
         /**
-          * Emit when user selects a tree node
+          * Fires when the user selects a tree node and emits the node's id on the event.detail.
          */
         "onRuxtreenodeselected"?: (event: CustomEvent<string>) => void;
         /**
@@ -32972,6 +33030,8 @@ declare namespace LocalJSX {
         "selected"?: boolean;
     }
     interface IntrinsicElements {
+        "rux-accordion": RuxAccordion;
+        "rux-accordion-item": RuxAccordionItem;
         "rux-button": RuxButton;
         "rux-button-group": RuxButtonGroup;
         "rux-card": RuxCard;
@@ -34085,6 +34145,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "rux-accordion": LocalJSX.RuxAccordion & JSXBase.HTMLAttributes<HTMLRuxAccordionElement>;
+            "rux-accordion-item": LocalJSX.RuxAccordionItem & JSXBase.HTMLAttributes<HTMLRuxAccordionItemElement>;
             "rux-button": LocalJSX.RuxButton & JSXBase.HTMLAttributes<HTMLRuxButtonElement>;
             "rux-button-group": LocalJSX.RuxButtonGroup & JSXBase.HTMLAttributes<HTMLRuxButtonGroupElement>;
             "rux-card": LocalJSX.RuxCard & JSXBase.HTMLAttributes<HTMLRuxCardElement>;

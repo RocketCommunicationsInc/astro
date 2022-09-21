@@ -1,6 +1,6 @@
 {
     "parserOptions": {
-        "project": "./packages/web-components/tsconfig.json"
+        "project": "**/tsconfig.json"
     },
     "extends": ["plugin:@stencil/recommended"],
     "rules": {

@@ -13,6 +13,8 @@ import {
     h,
 } from '@stencil/core'
 
+import { hasSlot } from '../../utils/utils'
+
 let id = 0
 @Component({
     tag: 'rux-tree-node',
@@ -22,37 +24,45 @@ let id = 0
 
 /**
  * @slot (default) - The parent node content
+ * @slot prefix - Renders content before the default slot
+ * @slot suffix - Renders content after the default slot
  * @slot node - Renders a child node within the current node
+ * @part text - The area bewteen the prefix and suffix slots
+ * @part indicator - The opened/closed indicator
+ * @part node - The individual tree node
  */
 export class RuxTreeNode {
     private componentId = `node-${++id}`
+
     @Element() el!: HTMLRuxTreeNodeElement
     @State() children: Array<HTMLRuxTreeNodeElement> = []
-    @State() addClass: boolean = false
+    @State() hasPrefix: boolean = false
+    @State() hasSuffix: boolean = false
 
     /**
      * Sets the expanded state
      */
     @Prop({ mutable: true, reflect: true }) expanded = false
+
     /**
      * Sets the selected state
      */
     @Prop({ mutable: true, reflect: true }) selected = false
 
     /**
-     * Emit when user selects a tree node
+     * Fires when the user selects a tree node and emits the node's id on the event.detail.
      */
     @Event({ eventName: 'ruxtreenodeselected' })
     ruxTreeNodeSelected!: EventEmitter<string>
 
     /**
-     * Emit when user expands a tree node
+     * Fires when the user expands a tree node and emits the node's id on the event.detail.
      */
     @Event({ eventName: 'ruxtreenodeexpanded' })
     ruxTreeNodeExpanded!: EventEmitter<string>
 
     /**
-     * Emit when user collapses a tree node
+     * Fires when the user collapses a tree node and emits the node's id on the event.detail.
      */
     @Event({ eventName: 'ruxtreenodecollapsed' })
     ruxTreeNodeCollapsed!: EventEmitter<string>
@@ -67,7 +77,7 @@ export class RuxTreeNode {
         this.setSelected(newValue)
     }
 
-    @Listen('keydown', { passive: true })
+    @Listen('keydown', { passive: false })
     handleKeyDown(ev: KeyboardEvent) {
         if (ev.target !== ev.currentTarget) {
             return true
@@ -97,32 +107,25 @@ export class RuxTreeNode {
         }
     }
 
-    @Listen('mouseenter', { passive: true })
-    handleHover(ev: MouseEvent) {
-        if (ev.target === ev.currentTarget) {
-            this.addClass = true
-        } else this.addClass = false
-        this._swapToLightStatus()
-    }
-
-    @Listen('mouseout', { passive: true })
-    handleLeave(ev: MouseEvent) {
-        if (ev.target === ev.currentTarget) {
-            this.addClass = false
-        }
-        this._swapToLightStatus()
-    }
-
     connectedCallback() {
+        this._checkForPrefixAndSuffix = this._checkForPrefixAndSuffix.bind(this)
+        this._handleArrowClick = this._handleArrowClick.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
+        this._handleTreeNodeClick = this._handleTreeNodeClick.bind(this)
     }
 
     componentWillLoad() {
         this._handleSlotChange()
+        this._checkForPrefixAndSuffix()
     }
 
-    get _hasChildren() {
+    get hasChildren() {
         return this.children.length > 0
+    }
+
+    private _checkForPrefixAndSuffix() {
+        this.hasPrefix = hasSlot(this.el, 'prefix')
+        this.hasSuffix = hasSlot(this.el, 'suffix')
     }
 
     /**
@@ -154,16 +157,6 @@ export class RuxTreeNode {
         this._setAriaLevel()
     }
 
-    private _swapToLightStatus() {
-        const slottedStatus = this.el.querySelector('rux-status')
-        // have the specifc status slotted to this rux-tree-node
-        if (this.addClass) {
-            slottedStatus?.classList.add('light-theme')
-        } else {
-            slottedStatus?.classList.remove('light-theme')
-        }
-    }
-
     /**
      * Manually set the aria-level attribute.
      * Tree is responsible for setting the root node levels.
@@ -191,7 +184,7 @@ export class RuxTreeNode {
     }
 
     private _expandNextNode() {
-        if (!this.expanded && this._hasChildren) {
+        if (!this.expanded && this.hasChildren) {
             this.setExpanded(true)
         }
     }
@@ -253,40 +246,61 @@ export class RuxTreeNode {
     }
 
     render() {
-        const attrs = this._hasChildren && { role: 'group' }
+        const {
+            _checkForPrefixAndSuffix,
+            _handleArrowClick,
+            _handleSlotChange,
+            _handleTreeNodeClick,
+            componentId,
+            expanded,
+            hasChildren,
+            hasPrefix,
+            hasSuffix,
+            selected,
+        } = this
+        const attrs = hasChildren && { role: 'group' }
 
         return (
             <Host
                 role="treeitem"
-                aria-expanded={this.expanded ? 'true' : 'false'}
-                aria-selected={this.selected ? 'true' : 'false'}
-                onClick={(event: MouseEvent) =>
-                    this._handleTreeNodeClick(event)
-                }
+                aria-expanded={expanded ? 'true' : 'false'}
+                aria-selected={selected ? 'true' : 'false'}
+                onClick={_handleTreeNodeClick}
             >
                 <div
-                    id={this.componentId}
+                    id={componentId}
                     class={{
                         'tree-node': true,
-                        'tree-node--expanded': this.expanded,
-                        'tree-node--has-children': this._hasChildren,
-                        'tree-node--selected': this.selected,
+                        'tree-node--expanded': expanded,
+                        'tree-node--has-children': hasChildren,
                     }}
                 >
-                    <div class="parent" tabindex="0">
-                        {this._hasChildren && (
+                    <div class="parent" tabindex="0" part="node">
+                        {hasChildren && (
                             <i
-                                onClick={(e) => this._handleArrowClick(e)}
+                                onClick={_handleArrowClick}
+                                part="indicator"
                                 class="arrow"
-                            ></i>
+                            />
                         )}
-                        <slot onSlotchange={this._handleSlotChange}></slot>
+                        <span class={{ prefix: hasPrefix }}>
+                            <slot
+                                name="prefix"
+                                onSlotchange={_checkForPrefixAndSuffix}
+                            />
+                        </span>
+                        <span part="text">
+                            <slot onSlotchange={_handleSlotChange} />
+                        </span>
+                        <span class={{ suffix: hasSuffix }}>
+                            <slot
+                                name="suffix"
+                                onSlotchange={_checkForPrefixAndSuffix}
+                            />
+                        </span>
                     </div>
                     <div {...attrs} class="children">
-                        <slot
-                            name="node"
-                            onSlotchange={this._handleSlotChange}
-                        ></slot>
+                        <slot name="node" onSlotchange={_handleSlotChange} />
                     </div>
                 </div>
             </Host>
