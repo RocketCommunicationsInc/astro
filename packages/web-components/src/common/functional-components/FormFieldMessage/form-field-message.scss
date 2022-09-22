@@ -9,6 +9,10 @@
 }
 
 .rux-error-text {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    width: fit-content;
     -webkit-order: 3;
     order: 3;
     display: flex;
@@ -27,4 +31,8 @@
     color: var(--color-text-error);
     margin-right: var(--spacing-2); //8
     cursor: default;
+}
+
+.rux-error-text svg {
+    margin-right: 0.625rem; // 10px
 }
