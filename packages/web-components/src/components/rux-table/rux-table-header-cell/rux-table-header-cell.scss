@@ -1,16 +1,15 @@
 :host {
     display: table-cell;
     vertical-align: middle;
-    border-top-width: 1px;
-    border-top-style: solid;
-    border-top-color: var(--color-background-surface-default);
     background: var(--color-background-surface-header);
     color: var(--color-text-primary);
     font-family: var(--font-heading-5-font-family);
     font-size: var(--font-heading-5-font-size);
     font-weight: var(--font-heading-5-font-weight);
     letter-spacing: var(--font-heading-5-letter-spacing);
-    padding: 0.625rem 1rem;
+    line-height: var(--font-heading-5-line-height);
+    padding: var(--spacing-0) var(--spacing-2);
+    height: var(--spacing-10); //40
     white-space: nowrap;
 }
 
