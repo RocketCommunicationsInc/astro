@@ -27,25 +27,41 @@ exports.svgOptimizerPlugin = () => {
             if (!svgBase64) {
                 return null
             }
-
-            const result = optimize(svgBase64, {
-                path: fileName,
-                plugins: [
-                    'removeDimensions',
-                    {
-                        name: 'convertColors',
-                        params: {
-                            currentColor: true,
+            //* We don't want to use convertColors on status SVGs.
+            let result
+            if (fileName.includes('statuses/')) {
+                result = optimize(svgBase64, {
+                    path: fileName,
+                    plugins: [
+                        'removeDimensions',
+                        {
+                            name: 'removeAttrs',
+                            params: {
+                                attr: 'path:fill',
+                            },
                         },
-                    },
-                    {
-                        name: 'removeAttrs',
-                        params: {
-                            attr: 'path:fill',
+                    ],
+                })
+            } else {
+                result = optimize(svgBase64, {
+                    path: fileName,
+                    plugins: [
+                        'removeDimensions',
+                        {
+                            name: 'convertColors',
+                            params: {
+                                currentColor: true,
+                            },
                         },
-                    },
-                ],
-            })
+                        {
+                            name: 'removeAttrs',
+                            params: {
+                                attr: 'path:fill',
+                            },
+                        },
+                    ],
+                })
+            }
             return {
                 id: fileName,
                 code: `export default '${result.data}'`,
