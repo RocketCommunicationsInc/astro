@@ -224,7 +224,7 @@ export class RuxDialog {
                                 </slot>
                             </header>
 
-                            <div class="rux-dialog__content" part="message">
+                            <div class="rux-dialog__content">
                                 <div
                                     class={{
                                         hidden:

@@ -27,8 +27,8 @@ rux-button-group {
 .rux-dialog {
     &__wrapper {
         position: fixed;
-        top: 0;
-        left: 0;
+        top: var(--spacing-0);
+        left: var(--spacing-0);
         height: 100vh;
         width: 100vw;
         display: flex;
@@ -45,21 +45,22 @@ rux-button-group {
         justify-content: space-between;
         background-color: var(--color-background-surface-default);
         width: 28rem;
-        border: 0;
+        border: var(--spacing-0);
         margin: auto;
-        padding: 0;
+        padding: var(--spacing-0);
         user-select: none;
         box-shadow: var(--shadow-outer-dialog);
         max-height: 100%;
     }
 
     &__header {
+        box-sizing: border-box;
         display: flex;
-        flex-grow: 0;
-        flex-shrink: 0;
+        flex-grow: var(--spacing-0);
+        flex-shrink: var(--spacing-0);
         align-items: center;
         width: 100%;
-        padding: 16px 20px;
+        padding: var(--spacing-4);
         background-color: var(--color-background-surface-header);
         color: var(--color-text-primary);
         user-select: none;
@@ -73,8 +74,8 @@ rux-button-group {
         ::slotted(h3),
         ::slotted(h2),
         ::slotted(h1) {
-            margin-block-start: 0;
-            margin-block-end: 0;
+            margin-block-start: var(--spacing-0);
+            margin-block-end: var(--spacing-0);
         }
     }
 
@@ -82,7 +83,6 @@ rux-button-group {
         display: flex;
         flex-direction: column;
         flex-grow: 1;
-        padding: 1rem 1rem 0 1rem;
         color: var(--color-text-primary);
         overflow: auto;
         white-space: nowrap;
@@ -92,8 +92,8 @@ rux-button-group {
             )
             var(--color-background-surface-default, rgb(27, 45, 62));
         &::-webkit-scrollbar {
-            width: 16px;
-            height: 16px;
+            width: var(--spacing-4);
+            height: var(--spacing-4);
             background-color: transparent;
         }
 
@@ -109,11 +109,11 @@ rux-button-group {
 
         /* visually "centers" because the dark edge of the shadow gives the illusion this is offset */
         &::-webkit-scrollbar-thumb:vertical {
-            border-left-width: 4px;
+            border-left-width: var(--spacing-1);
         }
 
         &::-webkit-scrollbar-thumb:horizontal {
-            border-top-width: 4px;
+            border-top-width: var(--spacing-1);
         }
 
         &::-webkit-scrollbar-thumb:active,
@@ -142,12 +142,13 @@ rux-button-group {
         display: flex;
         flex-direction: column;
         flex-grow: 1;
-        padding: 0 1rem 1rem 1rem;
+        padding: var(--spacing-4);
         color: var(--color-text-primary);
     }
 
     &__message {
-        margin: 0.5rem 1.875rem 2.5rem 1.875rem;
+        padding: var(--spacing-4) var(--spacing-4) var(--spacing-0)
+            var(--spacing-4); //spacing 0 on bottom so there isn't double padding when footer is showing. Developer can add back padding if not footer using part.
     }
     .rux-button {
         box-shadow: none !important;
@@ -161,7 +162,7 @@ rux-button-group {
 }
 
 rux-icon {
-    margin-right: 0.75rem;
+    margin-right: var(--spacing-3);
 }
 
 @include mixins.keyframes(fadeIn) {
