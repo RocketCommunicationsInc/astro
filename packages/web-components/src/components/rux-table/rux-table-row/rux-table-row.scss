@@ -17,11 +17,3 @@
     background: var(--color-background-surface-hover);
     color: var(--color-text-primary);
 }
-
-::slotted(rux-table-cell:first-child) {
-    padding-left: 1.875rem;
-}
-
-::slotted(rux-table-cell:last-child) {
-    padding-right: 1.875rem;
-}
