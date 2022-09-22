@@ -482,8 +482,9 @@ New:
 
 **Likelihood of Impact:** High
 
-The following events have been removed: `ruxmenudidclose`, `ruxmenudidopen`, `ruxmenuwillclose`, `ruxmenuwillopen`.
-The following events have been added: `ruxpopupopened`, `ruxpopupclosed`.
+The following events have been removed: `ruxmenuwillclose`, `ruxmenuwillopen`.
+The `ruxmenudidclose` event has been renamed to `ruxpopupclosed`.
+The `ruxmenudidopen` event has been renamed to `ruxpopupopened`.
 
 ### Method Changes
 
