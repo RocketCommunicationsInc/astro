@@ -17,11 +17,15 @@
         background: var(--color-background-base-hover);
     }
     &--selected {
-        background: var(--color-background-surface-selected);
+        background: var(--color-background-base-selected);
         color: var(--color-text-primary);
     }
     &--disabled {
-        opacity: 0.4; // change to token
+        opacity: var(--opacity-disabled);
         cursor: not-allowed;
+    }
+    &--disabled:hover {
+        background: var(--color-background-base-default);
+        color: var(--color-text-interactive-default);
     }
 }

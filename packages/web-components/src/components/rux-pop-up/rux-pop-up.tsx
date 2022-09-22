@@ -1,4 +1,3 @@
-//@ts-nocheck
 import {
     Prop,
     Watch,
@@ -10,8 +9,6 @@ import {
     Event,
     EventEmitter,
     Method,
-    Listen,
-    Event,
 } from '@stencil/core'
 import {
     Placement,
@@ -20,39 +17,43 @@ import {
     offset,
     flip,
     autoUpdate,
+    autoPlacement,
 } from '@floating-ui/dom'
 
 /**
- * @slot (default) - The contents for rux-pop-up-menu
- * @slot trigger - The trigger element for rux-pop-up-menu
+ * @slot (default) - The contents for rux-pop-up
+ * @slot trigger - The trigger element for rux-pop-up
  *
- * @part container - the container of rux-pop-up-menu
+ * @part container - the container of rux-pop-up
  * @part trigger-container - the container of the pop-up trigger
- * @part popup-content - the content that is shown when rux-pop-up-menu is opened
- * @part arrow - the arrow pointing to the trigger of rux-pop-up-menu
+ * @part popup-content - the content that is shown when rux-pop-up is opened
+ * @part arrow - the arrow pointing to the trigger of rux-pop-up
  */
+
+export declare type ExtendedPlacement = Placement | 'auto'
+
 @Component({
-    tag: 'rux-pop-up-menu',
-    styleUrl: 'rux-pop-up-menu.scss',
+    tag: 'rux-pop-up',
+    styleUrl: 'rux-pop-up.scss',
     shadow: true,
 })
-export class RuxPopUpMenu {
+export class RuxPopUp {
     private trigger!: HTMLElement
     private content!: HTMLElement
-    private arrowEl?: HTMLElement
+    private arrowEl!: HTMLElement
     private _positionerCleanup: ReturnType<typeof autoUpdate> | undefined
 
-    @Element() el!: HTMLRuxPopUpMenuElement
+    @Element() el!: HTMLRuxPopUpElement
 
     /**
-     * determines if the pop up is open or closed
+     * Determines if the pop up is open or closed
      */
     @Prop({ mutable: true, reflect: true }) open = false
 
     /**
-     * the placement of the pop up relative to it's slotted trigger element.
+     * The placement of the pop up relative to it's slotted trigger element. Defaults to auto.
      */
-    @Prop() placement: Placement = 'bottom'
+    @Prop() placement: ExtendedPlacement = 'auto'
 
     /**
      * The position strategy of the popup, either absolute or fixed.
@@ -62,30 +63,43 @@ export class RuxPopUpMenu {
     @State() arrowPosition?: string
 
     /**
-     * emits the value of the selected rux-menu-item inside of rux-pop-up-menu on the event.detail.
+     * Emits when the pop up has opened
      */
-    @Event({ eventName: 'ruxpopupmenuselected' })
-    ruxPopUpMenuSelected!: EventEmitter
+    @Event({ eventName: 'ruxpopupopened' })
+    ruxPopUpOpened!: EventEmitter
+    /**
+     * Emits when the pop up has closed.
+     */
+    @Event({ eventName: 'ruxpopupclosed' })
+    ruxPopUpClosed!: EventEmitter
 
     @Watch('open')
     handleOpen() {
         if (this.open) {
             this.content.style.display = 'block'
             this._startPositioner()
+            this.ruxPopUpOpened.emit()
             window.addEventListener('mousedown', (e: MouseEvent) =>
                 this._handleOutsideClick(e)
             )
         } else {
             this.content.style.display = ''
             this._stopPositioner()
+            this.ruxPopUpClosed.emit()
             window.removeEventListener('mousedown', (e: MouseEvent) =>
                 this._handleOutsideClick(e)
             )
         }
     }
 
+    @Watch('placement')
+    handlePlacement(oldValue: string, newValue: string) {
+        console.log('Watch Placement!')
+        console.log(`Changing from ${oldValue} to ${newValue}`)
+    }
+
     /**
-     * Opens the pop up menu and returns true.
+     * Opens the pop up and returns true.
      */
     @Method()
     async show() {
@@ -96,7 +110,7 @@ export class RuxPopUpMenu {
     }
 
     /**
-     * Closes the pop up menu and returns false.
+     * Closes the pop up and returns false.
      */
     @Method()
     async hide() {
@@ -104,19 +118,6 @@ export class RuxPopUpMenu {
             return this.open
         } else this.open = false
         return this.open
-    }
-
-    @Listen('ruxmenuitemselected', { passive: true })
-    handleSelected(e: CustomEvent) {
-        const items = this.el.querySelectorAll('rux-menu-item')
-        items.forEach((item) => {
-            if (item.value === e.target.value) {
-                item.selected = true
-                this.ruxPopUpMenuSelected.emit(item)
-            } else {
-                item.selected = false
-            }
-        })
     }
 
     connectedCallback() {
@@ -139,15 +140,23 @@ export class RuxPopUpMenu {
             return
         }
         computePosition(this.triggerSlot, this.content, {
+            //@ts-ignore
             placement: this.placement,
             strategy: this.strategy,
-            middleware: [offset(12), flip(), arrow({ element: this.arrowEl })],
+            middleware: [
+                offset(12),
+                this.placement === 'auto'
+                    ? autoPlacement({ alignment: 'start' })
+                    : flip(),
+                arrow({ element: this.arrowEl }),
+            ],
         }).then(({ x, y, placement, middlewareData }) => {
             Object.assign(this.content.style, {
                 left: `${x}px`,
                 top: `${y}px`,
             })
 
+            //@ts-ignore
             const { x: arrowX, y: arrowY } = middlewareData.arrow
 
             const staticSide = {
@@ -156,12 +165,12 @@ export class RuxPopUpMenu {
                 bottom: 'top',
                 left: 'right',
             }[placement.split('-')[0]]
-
-            Object.assign(this.arrowEl.style, {
+            Object.assign(this.arrowEl!.style, {
                 left: arrowX != null ? `${arrowX}px` : '',
                 top: arrowY != null ? `${arrowY}px` : '',
                 right: '',
                 bottom: '',
+                //@ts-ignore
                 [staticSide]: '-6px',
             })
         })
@@ -237,17 +246,18 @@ export class RuxPopUpMenu {
 
     get contentSlot() {
         return this.content
-            ?.querySelector('slot')
+            ?.querySelector('slot')!
             .assignedElements({ flatten: true })[0]
     }
 
     get triggerSlot() {
         return this.trigger
-            ?.querySelector('slot')
+            ?.querySelector('slot')!
             .assignedElements({ flatten: true })[0]
     }
 
     get hasMenu(): boolean {
+        //@ts-ignore
         return !!this.content
             ?.querySelector('slot')
             .assignedElements({ flatten: true })
@@ -263,7 +273,7 @@ export class RuxPopUpMenu {
                     <div
                         onClick={this._handleTriggerClick}
                         class="rux-popup__trigger"
-                        ref={(el) => (this.trigger = el)}
+                        ref={(el) => (this.trigger = el!)}
                         part="trigger-container"
                     >
                         <slot name="trigger"></slot>
@@ -284,11 +294,11 @@ export class RuxPopUpMenu {
                             hidden: this.open === false,
                         }}
                         part="popup-content"
-                        ref={(el) => (this.content = el)}
+                        ref={(el) => (this.content = el!)}
                     >
                         <div
                             class="rux-popup-arrow"
-                            ref={(el) => (this.arrowEl = el)}
+                            ref={(el) => (this.arrowEl = el!)}
                             part="arrow"
                         ></div>
 
