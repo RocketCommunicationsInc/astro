@@ -20,7 +20,11 @@ module.exports = function (eleventyConfig) {
   };
 
   const markdownLib = markdownIt(options)
-    .use(markdownItAnchor, {})
+    .use(markdownItAnchor, {
+      permalink: true,
+      permalinkClass: "direct-link",
+      permalinkSymbol: "#",
+    })
     .use(implicitFigures, {
       figcaption: true,
     })

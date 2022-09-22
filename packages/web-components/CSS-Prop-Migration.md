@@ -2,7 +2,9 @@
 
 ## CSS Custom Properties
 
-As part of 7.0, we have removed the majority of our component's CSS Custom Properties in order to provide a cleaner API. CSS Shadow Parts are now the preferred way to customize the look and feel of your components. The majority of these properties were created before Shadow Parts existed and, as a result, they are quite verbose and have their own limitations.
+> As part of 7.0, we have removed the majority of our component's CSS Custom Properties in order to provide a cleaner API. CSS Shadow Parts are now the preferred way to customize the look and feel of your components. The majority of these properties were created before Shadow Parts existed and, as a result, they are quite verbose and have their own limitations.
+
+The following CSS Custom Properties have been deprecated and will be removed in 7.0. You should search your code base to see if you are using them and migrate to using the new parts syntax if you are.
 
 | CSS Custom Prop                           | Migration                                                                                                                       |
 | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
@@ -29,6 +31,7 @@ As part of 7.0, we have removed the majority of our component's CSS Custom Prope
 | --clock-background-color                  | `rux-clock::part(date), rux-clock::part(time) { background-color: red; }`                                                       |
 | --clock-border-color                      | `rux-clock::part(date), rux-clock::part(time) { border-color: red; }`                                                           |
 | --clock-label-color                       | `rux-clock::part(date-label), rux-clock::part(time-label) { color: red; }`                                                      |
+| --clock-text-color                        | `rux-clock::part(container) { color: red; }` **`container` part is only available in 7.0`**                                     |
 | --icon-default-color                      | `rux-icon::part(icon) { color: red;}`                                                                                           |
 | --log-header-background-color             | Construct your own table and pass it in the `table` slot to have full control over the styling                                  |
 | --log-filter-background-color             | `rux-log::part(log-notification) { background-color: red;}`                                                                     |
@@ -72,71 +75,76 @@ As part of 7.0, we have removed the majority of our component's CSS Custom Prope
 ## Removals
 
 The following Custom Properties currently do not have a 1:1 equivalent with the shadow parts API. Some of these may be added back in future minor releases.
+If you have a strong, immediate use case, open an issue describing the removed custom property and a brief description of your use case.
 
-| CSS Custom                                     | Migration                                                                                   |
-| ---------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| --input-background-color                       | Additional parts may be added in future 7.X releases to allow this level of customization   |
-| --input-text-color                             | Additional parts may be added in future 7.X releases to allow this level of customization   |
-| --input-focus-border-color                     | Additional parts may be added in future 7.X releases to allow this level of customization   |
-| --input-selection-background-color             | Additional parts may be added in future 7.X releases to allow this level of customization   |
-| --input-invalid-border-color                   | Additional parts may be added in future 7.X releases to allow this level of customization   |
-| --menu-item-divider-border-color               | Additional parts may be added in future 7.X releases to allow this level of customization   |
-| --progress-padding                             |                                                                                             |
-| --modal-background-color                       |                                                                                             |
-| --modal-border-color                           |                                                                                             |
-| --clock-text-color                             | `rux-clock::part(container) { color: red; }` **`container` part is only available in 7.0`** |
-| --progress-radius                              |                                                                                             |
-| --progress-height                              |                                                                                             |
-| --progress-width                               |                                                                                             |
-| --progress-determinate-bar-background-color    |                                                                                             |
-| --progress-determinate-track-background-color  |                                                                                             |
-| --progress-determinate-track-border-color      |                                                                                             |
-| --progress-label-color                         |                                                                                             |
-| --pushbutton-selected-background-color         | Additional parts may be added in future 7.X releases to allow this level of customization   |
-| --pushbutton-selected-border-color             | Additional parts may be added in future 7.X releases to allow this level of customization   |
-| --pushbutton-selected-text-color               | Additional parts may be added in future 7.X releases to allow this level of customization   |
-| --pushbutton-selected-hover-text-color         | Additional parts may be added in future 7.X releases to allow this level of customization   |
-| --segmented-button-hover-border-color          |                                                                                             |
-| --segmented-button-selected-background-color   |                                                                                             |
-| --select-menu-option-text-hover-color          |                                                                                             |
-| --select-menu-option-selected-background-color |                                                                                             |
-| --select-menu-option-selected-text-color       |                                                                                             |
-| --select-menu-inactive-caret                   |                                                                                             |
-| --select-menu-active-caret                     |                                                                                             |
-| --select-menu-background-color                 |                                                                                             |
-| --slider-thumb-background-color                |                                                                                             |
-| --slider-thumb-border-color                    |                                                                                             |
-| --slider-hover-thumb-background-color          |                                                                                             |
-| --slider-hover-thumb-border-color              |                                                                                             |
-| --slider-track-background-color                |                                                                                             |
-| --slider-selected-thumb-border-color           |                                                                                             |
-| --slider-thumb-size                            |                                                                                             |
-| --slider-thumb-border-size                     |                                                                                             |
-| --slider-tick-padding-top                      |                                                                                             |
-| --slider-selected-track-background-color       |                                                                                             |
-| --slider-value-percent                         |                                                                                             |
-| --slider-top                                   |                                                                                             |
-| --slider-track-height                          |                                                                                             |
-| --slider-track-before-thumb-height             |                                                                                             |
-| --switch-background-color                      |                                                                                             |
-| --switch-hover-on-color                        |                                                                                             |
-| --switch-hover-off-color                       |                                                                                             |
-| --switch-on-color                              |                                                                                             |
-| --switch-off-border-color                      |                                                                                             |
-| --tab-text-color                               | Additional parts may be added in future 7.X releases to allow this level of customization   |
-| --tab-border-color                             | Additional parts may be added in future 7.X releases to allow this level of customization   |
-| --tab-hover-text-color                         | Additional parts may be added in future 7.X releases to allow this level of customization   |
-| --tab-selected-text-color                      | Additional parts may be added in future 7.X releases to allow this level of customization   |
-| --table-header-background-color                |                                                                                             |
-| --table-header-text-color                      |                                                                                             |
-| --table-header-box-shadow                      |                                                                                             |
-| --table-row-selected-background-color          |                                                                                             |
-| --table-row-selected-border-color              |                                                                                             |
-| --tree-text-color                              | Additional parts may be added in future 7.X releases to allow this level of customization   |
-| --tree-border-color                            | Additional parts may be added in future 7.X releases to allow this level of customization   |
-| --tree-accent-color                            | Additional parts may be added in future 7.X releases to allow this level of customization   |
-| --tree-hover-background-color                  | Additional parts may be added in future 7.X releases to allow this level of customization   |
-| --tree-hover-text-color                        | Additional parts may be added in future 7.X releases to allow this level of customization   |
-| --tree-selected-border-color                   | Additional parts may be added in future 7.X releases to allow this level of customization   |
-| --tree-selected-accent-color                   | Additional parts may be added in future 7.X releases to allow this level of customization   |
-| --tree-expanded-border-color                   | Additional parts may be added in future 7.X releases to allow this level of customization   |
+-   --input-background-color
+-   --input-text-color
+-   --input-focus-border-color
+-   --input-selection-background-color
+-   --input-invalid-border-color
+-   --menu-item-divider-border-color
+-   --progress-padding
+-   --modal-background-color
+-   --modal-border-color
+-   --progress-radius
+-   --progress-height
+-   --progress-width
+-   --progress-determinate-bar-background-color
+-   --progress-determinate-track-background-color
+-   --progress-determinate-track-border-color
+-   --progress-label-color
+-   --pushbutton-selected-background-color
+-   --pushbutton-selected-border-color
+-   --pushbutton-selected-text-color
+-   --pushbutton-selected-hover-text-color
+-   --segmented-button-hover-border-color
+-   --segmented-button-selected-background-color
+-   --select-menu-option-text-hover-color
+-   --select-menu-option-selected-background-color
+-   --select-menu-option-selected-text-color
+-   --select-menu-inactive-caret
+-   --select-menu-active-caret
+-   --select-menu-background-color
+-   --slider-thumb-background-color
+-   --slider-thumb-border-color
+-   --slider-hover-thumb-background-color
+-   --slider-hover-thumb-border-color
+-   --slider-track-background-color
+-   --slider-selected-thumb-border-color
+-   --slider-thumb-size
+-   --slider-thumb-border-size
+-   --slider-tick-padding-top
+-   --slider-selected-track-background-color
+-   --slider-value-percent
+-   --slider-top
+-   --slider-track-height
+-   --slider-track-before-thumb-height
+-   --switch-background-color
+-   --switch-hover-on-color
+-   --switch-hover-off-color
+-   --switch-on-color
+-   --switch-off-border-color
+-   --tab-text-color
+-   --tab-border-color
+-   --tab-hover-text-color
+-   --tab-selected-text-color
+-   --table-header-background-color
+-   --table-header-text-color
+-   --table-header-box-shadow
+-   --table-row-selected-background-color
+-   --table-row-selected-border-color
+-   --tree-text-color
+-   --tree-border-color
+-   --tree-accent-color
+-   --tree-hover-background-color
+-   --tree-hover-text-color
+-   --tree-selected-border-color
+-   --tree-selected-accent-color
+-   --tree-expanded-border-color
+-   --popup-menu-background-color
+-   --popup-menu-border-color
+-   --popup-menu-caret-background-color
+-   --popup-menu-caret-left
+-   --popup-menu-caret-size
+-   --popup-menu-transition-speed
+-   --notification-icon-color
