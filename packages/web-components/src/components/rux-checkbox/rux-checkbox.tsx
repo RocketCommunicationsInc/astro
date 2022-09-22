@@ -44,7 +44,6 @@ export class RuxCheckbox implements FormFieldInterface {
      * The checkbox name
      */
     @Prop() name = ''
-
     /**
      * The checkbox value
      */
@@ -197,8 +196,6 @@ export class RuxCheckbox implements FormFieldInterface {
                         <div class="rux-checkbox__control">
                             {indeterminate ? (
                                 <svg
-                                    width="18"
-                                    height="18"
                                     fill="none"
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 18 18"
@@ -226,8 +223,6 @@ export class RuxCheckbox implements FormFieldInterface {
                                 </svg>
                             ) : checked ? (
                                 <svg
-                                    width="18"
-                                    height="18"
                                     fill="none"
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 18 18"
@@ -259,8 +254,6 @@ export class RuxCheckbox implements FormFieldInterface {
                                 </svg>
                             ) : (
                                 <svg
-                                    width="18"
-                                    height="18"
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 18 18"
