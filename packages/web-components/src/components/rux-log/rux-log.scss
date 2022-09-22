@@ -20,8 +20,25 @@
     margin-left: auto;
 }
 
+rux-datetime {
+    min-width: 4.875rem; //78px;
+    display: inline-block;
+}
+
 rux-table-header-cell {
     width: 1%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--color-background-base-default);
+    height: calc(
+        var(--spacing-10) + var(--spacing-1) - 2px
+    ); //44 height minus border
+}
+
+rux-table-cell {
+    height: calc(
+        var(--spacing-8) - var(--spacing-050) - 1px
+    ); //30 size - border
 }
 
 .rux-log__notification {
