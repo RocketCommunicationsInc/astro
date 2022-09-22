@@ -1,12 +1,12 @@
 :host {
     // Internal private design tokens
-    --card-header-padding: 0.625rem; //11.5px 10px
-    --card-footer-padding: 0.625rem; //10px
+    --card-header-padding: var(--spacing-2); //8px
+    --card-footer-padding: var(--spacing-2); //8px
 
     /**
      * @prop --body-padding: the card's body padding
      */
-    --body-padding: var(--card-footer-padding, 0.625rem);
+    --body-padding: var(--card-footer-padding);
     display: block;
 }
 
@@ -29,12 +29,18 @@
     font-weight: var(--font-heading-3-font-weight);
     letter-spacing: var(--font-heading-3-letter-spacing);
     line-height: var(--font-heading-3-line-height);
+    box-sizing: border-box;
 }
 
 .rux-card__body {
     padding: var(--body-padding);
+    box-sizing: border-box;
 }
 
 .rux-card__footer {
-    padding: var(--card-footer-padding);
+    padding-left: var(--card-footer-padding);
+    padding-right: var(--card-footer-padding);
+    padding-top: var(--card-footer-padding);
+    padding-bottom: var(--card-footer-padding);
+    box-sizing: border-box;
 }

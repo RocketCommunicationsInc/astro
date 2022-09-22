@@ -62,7 +62,46 @@ export const Default = (args) => {
 
 ## Usage
 
-The Astro UXDS Notification Banner hides from view using absolute positioning in CSS to slide up and outside of the parent element's content area. To ensure the Notification hides properly, make sure the Notification Banner's parent element has both `position: relative` and `overflow: hidden` applied.
+### Multiple Notifications
+
+To show multiple notifications, you'll need to create and manage a notification stack within your application code.
+Instead of using multiple `rux-notification` elements, you can listen on `ruxclosed` and update a single `rux-notification`
+element as the user dismisses the current visible notification. 
+
+A very basic pattern would look like:
+
+```html
+<rux-notification open id="notification" status="caution">Something caution has happened!</rux-notification>
+<script>
+    const eventSequence = [
+        {
+            status: 'critical',
+            message: '1 - something critical'
+        },
+        {
+            status: 'normal',
+            message: '2 - something normal'
+        },
+            {
+            status: 'normal',
+            message: '3 - something normal again'
+        }
+    ]
+    notification.addEventListener('ruxclosed', () => {
+        if (eventSequence.length > 0) {
+            // Grab the first notification data
+            notification.message = eventSequence[0].message
+            notification.status = eventSequence[0].status
+            // Remove the notification from the stack
+            eventSequence.shift()
+            // Reopen the notification
+            notification.open = true
+        }
+    })
+</script>
+```
+
+<a href="https://codepen.io/rocketmark/pen/jOxLLNZ" target="_blank">View on CodePen</a>
 
 ## API
 
@@ -255,19 +294,55 @@ export const WithSlottedContent = (args) => {
     </Story>
 </Canvas>
 
+### With Wrapped Text
+
+Text within Notifications is truncated by default. If you need to have text wrap, you can make use 
+of the `message` CSS Shadow Part to override the following properties:
+
+```
+rux-notification::part(message) {
+    overflow: visible;
+    text-overflow: unset;
+    white-space: normal;
+}
+```
+
+export const WithWrappedText = (args) => {
+    return html`
+    <style>
+    rux-notification::part(message) {
+        overflow: visible;
+        text-overflow: unset;
+        white-space: normal;
+    }
+    </style>
+<div style="display: flex; flex-flow: column; justify-content: center;">
+    <rux-notification
+        open
+        status="normal"
+    >
+        In my younger and more vulnerable years my father gave me some advice that I’ve been 
+        turning over in my mind ever since. “Whenever you feel like criticizing any one,” 
+        he told me, “just remember that all the people in this world haven’t had the advantages 
+        that you’ve had.”
+    </rux-notification>
+</div>
+    `
+}
+
+<Canvas>
+    <Story name="With Wrapped Content" height="100px">
+        {WithWrappedText.bind()}
+    </Story>
+</Canvas>
+
+
 ### All Variants
 
 export const AllVariants = () => html`
     <style>
         .wrapper {
-            position: relative;
-            overflow: hidden;
-            width: 800px;
-            height: 70px;
             margin-bottom: 1rem;
-        }
-        .wrapper--small {
-            height: 44px;
         }
     </style>
     <section>
