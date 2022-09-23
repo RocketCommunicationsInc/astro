@@ -64,6 +64,7 @@ export class RuxLog {
                                                     size="small"
                                                     class="rux-log__filter"
                                                     type="search"
+                                                    placeholder="Search..."
                                                     onRuxinput={(event) =>
                                                         this._setFilter(event)
                                                     }
