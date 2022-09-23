@@ -534,7 +534,7 @@
             },
             {
               "numeral": 2,
-              "rule": "Links shall not use underlined text.",
+              "rule": "Hovered links shall be styled with an underline.",
               "status": "under-review",
               "tier": 2
             },
