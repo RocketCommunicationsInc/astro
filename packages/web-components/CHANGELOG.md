@@ -276,6 +276,10 @@ Our /dist/custom-elements build has been removed in favor of a faster treeshakea
 
 -   Links no longer change color on hover.
 
+### Accordion [New]
+
+-   Adds new Accordion component.
+
 ### Angular
 
 -   Angular no longer requires CUSTOM_ELEMENTS_SCHEMA on your app module.
