@@ -16,10 +16,54 @@
         <script type="module" src="/build/astro-web-components.esm.js"></script>
         <script nomodule src="/build/astro-web-components.js"></script>
 
+        <script
+            type="module"
+            src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"
+        ></script>
+
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
+    <style>
+        rux-dialog::part(container) {
+            position: absolute;
+            top: -105px;
+            left: -12px;
+            /* width: 100%;
+            height: 100%; */
+        }
+    </style>
 
     <body>
+        <ftl-belt file-id="xn47jC9ZYiOita8mXjmghp">
+            <ftl-holster name="Dialog" node="27298:115203">
+                <!-- <section>
+                <rux-dialog open id="slot">
+                    <span slot="header">Dialog title</span>
+                    <div slot="message">
+                        <span>Slot Message</span>
+                        <rux-input placeholder="input time"></rux-input>
+                    </div>
+                    <div slot="footer">
+                        <rux-button-group h-align="right">
+                            <rux-button secondary>Secondary action</rux-button>
+                            <rux-button id="slotconfirm">Primary action</rux-button>
+                        </rux-button-group>
+                    </div>
+                </rux-dialog>
+            </section> -->
+                <section>
+                    <rux-dialog
+                        open
+                        id="ftl"
+                        dialog-message="Props Message"
+                        dialog-title="Props Title"
+                    >
+                        <h2 slot="header">Header Content</h2>
+                        Lorem ipsum dolor</rux-dialog
+                    >
+                </section>
+            </ftl-holster>
+        </ftl-belt>
         <section>
             <rux-dialog
                 open

@@ -59,11 +59,6 @@ export const Dialog = (args) => {
 
 export const WithSlots = (args) => {
     return html`
-    <style>
-        rux-dialog::part(message){
-            padding: 0.5rem;
-        }
-    </style>
 <div style="display: flex; flex-direction: column; justify-content: center;">
 <rux-dialog
     ?open="${args.open}"
