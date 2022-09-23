@@ -87,6 +87,11 @@ blockquote {
 }
 
 .page-migration {
+  p code {
+    background: #e3e3e3;
+    color: black;
+  }
+
   sl-details {
     margin-bottom: 1rem;
   }
@@ -104,7 +109,7 @@ blockquote {
     header {
       display: flex;
       align-items: center;
-      padding-bottom: 0.075rem;
+      padding-bottom: 1rem;
       border-bottom: 1px solid #eee;
       sl-badge {
         margin-left: auto;
@@ -113,6 +118,16 @@ blockquote {
 
     .breaking-change__content {
       padding: 1rem;
+    }
+    .breaking-change__code {
+      display: flex;
+      justify-content: space-between;
+    }
+    .breaking-change__code__title {
+      font-size: 1.5rem;
+    }
+    .breaking-change__code__block {
+      width: 45%;
     }
   }
 }

@@ -4,6 +4,7 @@ module.exports = function (eleventyConfig) {
   const markdownItAnchor = require("markdown-it-anchor");
   const implicitFigures = require("markdown-it-implicit-figures");
   const markdownItFigure = require("./js/markdown-figure-it.js");
+  const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
   const fs = require("fs");
 
   // console.log(markdownIt.escapeHtml);
@@ -88,7 +89,7 @@ module.exports = function (eleventyConfig) {
       return `
       <div class="breaking-change">
         <header>
-          <h3>${title}</h3>
+          <h3 style="color: var(--sl-color-${badgeVariant[impact]}-500);">${title}</h3>
           <sl-badge variant="${badgeVariant[impact]}">${impact} Impact</sl-badge>
         </header>
         <div class="breaking-change__content">
@@ -111,6 +112,7 @@ module.exports = function (eleventyConfig) {
     }
   );
 
+  eleventyConfig.addPlugin(syntaxHighlight);
   //
   eleventyConfig.setBrowserSyncConfig({
     callbacks: {
