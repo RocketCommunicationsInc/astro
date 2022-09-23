@@ -124,30 +124,18 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 
 ## Events
 
-| Event       | Description                                                                                                                                                                    | Type               |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------ |
-| `ruxblur`   | Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)                                           | `CustomEvent<any>` |
-| `ruxchange` | Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) | `CustomEvent<any>` |
+| Event       | Description                                                                                                                                                                                                            | Type               |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| `ruxblur`   | Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)                                                                                   | `CustomEvent<any>` |
+| `ruxchange` | Fired when an alteration to the input's value is committed by the user and emits the value on the event.detail - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) | `CustomEvent<any>` |
 
 
 ## Shadow Parts
 
-| Part      | Description                  |
-| --------- | ---------------------------- |
-| `"icon"`  | the optional rux-icon        |
-| `"label"` | the label of rux-push-button |
-
-
-## CSS Custom Properties
-
-| Name                                     | Description                                                |
-| ---------------------------------------- | ---------------------------------------------------------- |
-| `--pushbutton-background-color`          | [DEPRECATED] the Push Button background color              |
-| `--pushbutton-border-color`              | [DEPRECATED] the Push Button border color                  |
-| `--pushbutton-selected-background-color` | [DEPRECATED] the Push Button background color when checked |
-| `--pushbutton-selected-border-color`     | [DEPRECATED] the Push Button border color when checked     |
-| `--pushbutton-selected-text-color`       | [DEPRECATED] the Push Button text color when checked       |
-| `--pushbutton-text-color`                | [DEPRECATED] the Push Button text color                    |
+| Part          | Description                  |
+| ------------- | ---------------------------- |
+| `"container"` | the label of rux-push-button |
+| `"icon"`      | the optional rux-icon        |
 
 
 ## Dependencies

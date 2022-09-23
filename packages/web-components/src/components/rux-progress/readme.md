@@ -103,21 +103,6 @@ Indeterminate progress
 | `"progress"` | the native progress element |
 
 
-## CSS Custom Properties
-
-| Name                                            | Description                                                 |
-| ----------------------------------------------- | ----------------------------------------------------------- |
-| `--progress-determinate-bar-background-color`   | [DEPRECATED] Bar background color of determinate progress   |
-| `--progress-determinate-track-background-color` | [DEPRECATED] Track background color of determinate progress |
-| `--progress-determinate-track-border-color`     | [DEPRECATED] Track border color of determinate progress.    |
-| `--progress-height`                             | [DEPRECATED] The height of rux-progress                     |
-| `--progress-indeterminate`                      | The indeterminate progress svg                              |
-| `--progress-label-color`                        | [DEPRECATED] The progress label color                       |
-| `--progress-padding`                            | [DEPRECATED] The padding of rux-progress                    |
-| `--progress-radius`                             | [DEPRECATED] The border radius of rux-progress bar          |
-| `--progress-width`                              | [DEPRECATED] The width of rux-progress                      |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

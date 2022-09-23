@@ -82,16 +82,6 @@ Define AOS and LOS with valid [Unix Time Stamp](http://pubs.opengroup.org/online
 | `"time-label"` | the container for the time label            |
 
 
-## CSS Custom Properties
-
-| Name                       | Description                                     |
-| -------------------------- | ----------------------------------------------- |
-| `--clock-background-color` | [DEPRECATED] the background color for the clock |
-| `--clock-border-color`     | [DEPRECATED] the border color for the clock     |
-| `--clock-label-color`      | [DEPRECATED] the label color for the clock      |
-| `--clock-text-color`       | [DEPRECATED] the color of the clock text        |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

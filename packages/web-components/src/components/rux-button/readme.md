@@ -143,33 +143,11 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 | `"icon"`      | the optional rux-icon                 |
 
 
-## CSS Custom Properties
-
-| Name                                        | Description                                          |
-| ------------------------------------------- | ---------------------------------------------------- |
-| `--button-active-background-color`          | [DEPRECATED] Button active background color          |
-| `--button-active-border-color`              | [DEPRECATED] Button active border color              |
-| `--button-background-color`                 | [DEPRECATED] Button background color                 |
-| `--button-border-color`                     | [DEPRECATED] Button border color                     |
-| `--button-borderless-hover-color`           | [DEPRECATED] Borderless buttons hover text color     |
-| `--button-borderless-text-color`            | [DEPRECATED] Button borderless text color            |
-| `--button-hover-background-color`           | [DEPRECATED] Button hover background color           |
-| `--button-hover-border-color`               | [DEPRECATED] Button hover border color               |
-| `--button-secondary-background-color`       | [DEPRECATED] Button secondary background color       |
-| `--button-secondary-border-color`           | [DEPRECATED] Button secondary border color           |
-| `--button-secondary-hover-background-color` | [DEPRECATED] Button secondary hover background color |
-| `--button-secondary-hover-border-color`     | [DEPRECATED] Button secondary hover border color     |
-| `--button-secondary-hover-text-color`       | [DEPRECATED] Secondary button hover text color       |
-| `--button-secondary-text-color`             | [DEPRECATED] Button secondary text color             |
-| `--button-text-color`                       | [DEPRECATED] Button text color                       |
-
-
 ## Dependencies
 
 ### Used by
 
  - [rux-dialog](../rux-dialog)
- - [rux-input](../rux-input)
 
 ### Depends on
 
@@ -180,7 +158,6 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 graph TD;
   rux-button --> rux-icon
   rux-dialog --> rux-button
-  rux-input --> rux-button
   style rux-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

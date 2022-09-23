@@ -130,9 +130,7 @@ graph TD;
   rux-log --> rux-table-cell
   rux-log --> rux-datetime
   rux-log --> rux-status
-  rux-input --> rux-button
   rux-input --> rux-icon
-  rux-button --> rux-icon
   style rux-log fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

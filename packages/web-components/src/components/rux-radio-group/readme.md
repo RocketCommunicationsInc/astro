@@ -18,9 +18,9 @@
 
 ## Events
 
-| Event       | Description                                                                                                                                     | Type               |
-| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
-| `ruxchange` | Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) | `CustomEvent<any>` |
+| Event       | Description                                                                                                                                                                               | Type               |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| `ruxchange` | Fired when the value of the input changes and emits that value on the event.detail. - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) | `CustomEvent<any>` |
 
 
 ## Slots
@@ -40,13 +40,6 @@
 | `"label"`      | The input label when `label` prop is set |
 | `"radiogroup"` | The container of radios                  |
 | `"required"`   | The asterisk when required is true       |
-
-
-## CSS Custom Properties
-
-| Name                        | Description                               |
-| --------------------------- | ----------------------------------------- |
-| `--radiogroup-border-color` | [DEPRECATED] the radio group border color |
 
 
 ----------------------------------------------

@@ -1,7 +1,11 @@
 //@ts-nocheck
+
 import * as d from './proxies';
 
+//@ts-ignore
 export const DIRECTIVES = [
+  d.RuxAccordion,
+  d.RuxAccordionItem,
   d.RuxButton,
   d.RuxButtonGroup,
   d.RuxCard,
@@ -1080,7 +1084,7 @@ export const DIRECTIVES = [
   d.RuxNotification,
   d.RuxOption,
   d.RuxOptionGroup,
-  d.RuxPopUpMenu,
+  d.RuxPopUp,
   d.RuxProgress,
   d.RuxPushButton,
   d.RuxRadio,
