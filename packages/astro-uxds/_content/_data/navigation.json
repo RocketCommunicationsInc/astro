@@ -356,6 +356,10 @@
     "url": "/releases"
   },
   {
+    "label": "Migration",
+    "url": "/migration"
+  },
+  {
     "label": "Downloads",
     "url": "/downloads"
   },
