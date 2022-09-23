@@ -220,10 +220,6 @@
         "url": "/components/slider"
       },
       {
-        "label": "Spectrum Analyzer",
-        "url": "/components/spectrum-analyzer"
-      },
-      {
         "label": "Status Symbol",
         "url": "/components/status-symbol"
       },
