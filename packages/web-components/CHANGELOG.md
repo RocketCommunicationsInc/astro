@@ -208,7 +208,6 @@ Our /dist/custom-elements build has been removed in favor of a faster treeshakea
     -   --slider-value-percent
     -   --slider-top
     -   --slider-track-height
-    -   --slider-track-before-thumb-height
 
 ### Switch
 
@@ -343,6 +342,10 @@ Our /dist/custom-elements build has been removed in favor of a faster treeshakea
 -   Internal styles have been refactored to use spacing design tokens.
 
 ### Classification Marking
+
+-   Internal styles have been refactored to use spacing design tokens.
+
+### Dialog
 
 -   Internal styles have been refactored to use spacing design tokens.
 

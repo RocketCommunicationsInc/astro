@@ -1,11 +1,14 @@
 @use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
 
 :host {
-    --slider-thumb-size: calc(var(--spacing-4) + var(--spacing-1)); //20
-    --slider-value-percent: 50%;
-    --slider-top: calc(var(--slider-thumb-size) / -2.4);
+    /**
+     * @prop --slider-track-before-thumb-height: the height of the track before the thumb
+     */
     --slider-track-before-thumb-height: var(--spacing-1); //4
-    --slider-tick-padding-top: var(--spacing-0);
+
+    --_slider-thumb-size: calc(var(--spacing-4) + var(--spacing-1)); //20
+    --_slider-value-percent: 50%;
+    --_slider-top: calc(var(--_slider-thumb-size) / -2.4);
 
     display: flex;
     flex-grow: 1;
@@ -52,7 +55,7 @@
 
     #steplist {
         display: grid;
-        padding: var(--spacing-0) calc(var(--slider-thumb-size) / 2); //center first and last dot on thumb at start and end
+        padding: var(--spacing-0) calc(var(--_slider-thumb-size) / 2); //center first and last dot on thumb at start and end
         cursor: default;
 
         .tick-label {
@@ -133,15 +136,15 @@ input[type='range']:focus {
             transparent 100%
         );
     background-size: calc(
-                var(--slider-value-percent) - (var(--slider-thumb-size) / 2)
+                var(--_slider-value-percent) - (var(--_slider-thumb-size) / 2)
             )
             var(--slider-track-before-thumb-height),
-        calc(100% - var(--slider-thumb-size)) 1px,
+        calc(100% - var(--_slider-thumb-size)) 1px,
         var(--spacing-1) var(--spacing-1);
     background-repeat: no-repeat no-repeat;
-    background-position: calc(var(--slider-thumb-size) / 2),
-        calc(100% - (var(--slider-thumb-size) / 2)),
-        calc((var(--slider-thumb-size) / 2) - var(--spacing-050));
+    background-position: calc(var(--_slider-thumb-size) / 2),
+        calc(100% - (var(--_slider-thumb-size) / 2)),
+        calc((var(--_slider-thumb-size) / 2) - var(--spacing-050));
 }
 .rux-range:disabled::-webkit-slider-runnable-track {
     opacity: var(--opacity-disabled);
@@ -174,15 +177,15 @@ input[type='range']:focus {
             transparent 100%
         );
     background-size: calc(
-                var(--slider-value-percent) - (var(--slider-thumb-size) / 2)
+                var(--_slider-value-percent) - (var(--_slider-thumb-size) / 2)
             )
             var(--slider-track-before-thumb-height),
-        calc(100% - var(--slider-thumb-size)) 1px,
+        calc(100% - var(--_slider-thumb-size)) 1px,
         var(--spacing-1) var(--spacing-1);
     background-repeat: no-repeat no-repeat;
-    background-position: calc(var(--slider-thumb-size) / 2),
-        calc(100% - (var(--slider-thumb-size) / 2)),
-        calc((var(--slider-thumb-size) / 2) - var(--spacing-050));
+    background-position: calc(var(--_slider-thumb-size) / 2),
+        calc(100% - (var(--_slider-thumb-size) / 2)),
+        calc((var(--_slider-thumb-size) / 2) - var(--spacing-050));
 }
 .rux-range:disabled::-moz-range-track,
 .rux-range:disabled::-moz-range-progress {
@@ -214,7 +217,7 @@ input[type='range']:focus {
             var(--color-background-interactive-default),
             var(--color-background-interactive-default)
         );
-    background-size: var(--slider-value-percent)
+    background-size: var(--_slider-value-percent)
             var(--slider-track-before-thumb-height),
         100% 1px;
     background-repeat: no-repeat no-repeat;
@@ -236,9 +239,9 @@ input[type='range']:focus {
     -webkit-appearance: none;
     box-sizing: border-box;
     position: relative;
-    top: var(--slider-top);
-    height: var(--slider-thumb-size);
-    width: var(--slider-thumb-size);
+    top: var(--_slider-top);
+    height: var(--_slider-thumb-size);
+    width: var(--_slider-thumb-size);
     border-radius: 100%;
     border: 2px solid var(--color-background-interactive-default);
     background-color: var(--color-background-base-default);
@@ -274,9 +277,9 @@ input[type='range']:focus {
     -moz-appearance: none;
     position: relative;
     box-sizing: border-box;
-    top: var(--slider-top);
-    height: var(--slider-thumb-size);
-    width: var(--slider-thumb-size);
+    top: var(--_slider-top);
+    height: var(--_slider-thumb-size);
+    width: var(--_slider-thumb-size);
     border-radius: 100%;
     border: 2px solid var(--color-background-interactive-default);
     background-color: var(--color-background-base-default);
@@ -301,9 +304,9 @@ input:-moz-focusring {
 /* Thumb -> Ms */
 .rux-range::-ms-thumb {
     position: relative;
-    top: var(--slider-top);
-    height: var(--slider-thumb-size);
-    width: var(--slider-thumb-size);
+    top: var(--_slider-top);
+    height: var(--_slider-thumb-size);
+    width: var(--_slider-thumb-size);
     border-radius: 100%;
     border: 2px solid var(--color-background-interactive-default);
     background-color: var(--color-background-base-default);
