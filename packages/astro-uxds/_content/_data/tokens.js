@@ -41,6 +41,9 @@ module.exports = {
       );
     });
   },
+  findByName: (name) => {
+    return tokens.find(token => token.name === name)
+  },
   lookupProperty: (category, property = null) => {
     if (category === "boxShadow") {
       return "shadow";
