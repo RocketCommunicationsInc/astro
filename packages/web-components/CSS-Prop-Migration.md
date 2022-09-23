@@ -118,7 +118,6 @@ If you have a strong, immediate use case, open an issue describing the removed c
 -   --slider-value-percent
 -   --slider-top
 -   --slider-track-height
--   --slider-track-before-thumb-height
 -   --switch-background-color
 -   --switch-hover-on-color
 -   --switch-hover-off-color

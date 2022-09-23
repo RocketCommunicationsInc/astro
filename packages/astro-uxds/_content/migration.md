@@ -692,7 +692,6 @@ The default `size` property is now `medium` instead of `small`.
   - --slider-value-percent
   - --slider-top
   - --slider-track-height
-  - --slider-track-before-thumb-height
 
 **Resolution:** View the CSS Custom Properties Migration doc for more details.
 
