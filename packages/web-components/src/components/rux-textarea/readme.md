@@ -50,18 +50,6 @@
 | `"textarea"`   | The textarea element                     |
 
 
-## CSS Custom Properties
-
-| Name                                    | Description                                             |
-| --------------------------------------- | ------------------------------------------------------- |
-| `--textarea-background-color`           | Background color                                        |
-| `--textarea-border-color`               | [DEPRECATED] Border color of the textarea.              |
-| `--textarea-focus-border-color`         | [DEPRECATED] Border color while in a focused state      |
-| `--textarea-invalid-border-color`       | Border color while in an invalid state                  |
-| `--textarea-selection-background-color` | [DEPRECATED] Background color while in a selected state |
-| `--textarea-text-color`                 | [DEPRECATED] Text color                                 |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

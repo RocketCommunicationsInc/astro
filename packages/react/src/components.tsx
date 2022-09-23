@@ -11,6 +11,14 @@ import {
 } from "@astrouxds/astro-web-components/loader";
 
 applyPolyfills().then(() => defineCustomElements());
+export const RuxAccordion = /*@__PURE__*/ createReactComponent<
+  JSX.RuxAccordion,
+  HTMLRuxAccordionElement
+>("rux-accordion");
+export const RuxAccordionItem = /*@__PURE__*/ createReactComponent<
+  JSX.RuxAccordionItem,
+  HTMLRuxAccordionItemElement
+>("rux-accordion-item");
 export const RuxButton = /*@__PURE__*/ createReactComponent<
   JSX.RuxButton,
   HTMLRuxButtonElement
@@ -4323,10 +4331,10 @@ export const RuxOptionGroup = /*@__PURE__*/ createReactComponent<
   JSX.RuxOptionGroup,
   HTMLRuxOptionGroupElement
 >("rux-option-group");
-export const RuxPopUpMenu = /*@__PURE__*/ createReactComponent<
-  JSX.RuxPopUpMenu,
-  HTMLRuxPopUpMenuElement
->("rux-pop-up-menu");
+export const RuxPopUp = /*@__PURE__*/ createReactComponent<
+  JSX.RuxPopUp,
+  HTMLRuxPopUpElement
+>("rux-pop-up");
 export const RuxProgress = /*@__PURE__*/ createReactComponent<
   JSX.RuxProgress,
   HTMLRuxProgressElement

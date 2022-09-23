@@ -95,11 +95,11 @@ Configure the component using native HTML attributes.
 
 ## Events
 
-| Event       | Description                                                                                                                                                                    | Type               |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------ |
-| `ruxblur`   | Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)                                           | `CustomEvent<any>` |
-| `ruxchange` | Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)                                | `CustomEvent<any>` |
-| `ruxinput`  | Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) | `CustomEvent<any>` |
+| Event       | Description                                                                                                                                                                               | Type               |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| `ruxblur`   | Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)                                                      | `CustomEvent<any>` |
+| `ruxchange` | Fired when the value of the input changes and emits that value on the event.detail. - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) | `CustomEvent<any>` |
+| `ruxinput`  | Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)            | `CustomEvent<any>` |
 
 
 ## Slots
@@ -115,17 +115,6 @@ Configure the component using native HTML attributes.
 | ---------- | ----------------------------------------------------------- |
 | `"label"`  | the label of switch                                         |
 | `"switch"` | the track (::before) and the button (::after) on rux-switch |
-
-
-## CSS Custom Properties
-
-| Name                        | Description                              |
-| --------------------------- | ---------------------------------------- |
-| `--switch-background-color` | [DEPRECATED] the Switch off color        |
-| `--switch-hover-off-color`  | [DEPRECATED] the Switch hover off color  |
-| `--switch-hover-on-color`   | [DEPRECATED] the Switch hover on color   |
-| `--switch-off-border-color` | [DEPRECATED] the Switch off border color |
-| `--switch-on-color`         | [DEPRECATED] the Switch on color         |
 
 
 ----------------------------------------------

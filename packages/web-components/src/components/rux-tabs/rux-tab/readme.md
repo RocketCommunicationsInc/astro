@@ -135,6 +135,7 @@ Astro UXDS Tab (child) properties are passed as simple attributes on the individ
 | ---------- | ---------- | -------------------------------------------------------------------------------------------------------------- | --------- | ------- |
 | `disabled` | `disabled` | If present, sets a disabled state on this tab item, indicating it cannot be selected by user action.           | `boolean` | `false` |
 | `selected` | `selected` | If present, overrides which tab is selected on load / mount. By default, the first <rux-tab> item is selected. | `boolean` | `false` |
+| `small`    | `small`    | If passed or set to true, displays the tabs in a smaller style, suitable for limited-space uses.               | `boolean` | `false` |
 
 
 ## Shadow Parts
@@ -142,17 +143,6 @@ Astro UXDS Tab (child) properties are passed as simple attributes on the individ
 | Part          | Description     |
 | ------------- | --------------- |
 | `"container"` | individual tabs |
-
-
-## CSS Custom Properties
-
-| Name                          | Description                          |
-| ----------------------------- | ------------------------------------ |
-| `--tab-border-color`          | [DEPRECATED] Tab border color        |
-| `--tab-hover-text-color`      | [DEPRECATED] Tab hover text color    |
-| `--tab-selected-border-color` | Tab selected border color            |
-| `--tab-selected-text-color`   | [DEPRECATED] Tab selected text color |
-| `--tab-text-color`            | [DEPRECATED] Tab text color          |
 
 
 ----------------------------------------------

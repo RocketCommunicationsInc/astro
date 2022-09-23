@@ -10,10 +10,7 @@ import { defineCustomElements } from '@astrouxds/astro-web-components/loader';
 defineCustomElements(window);
 
 const DECLARATIONS = [
-  // proxies
   ...DIRECTIVES,
-
-  // Value Accessors
   BooleanValueAccessor,
   NumericValueAccessor,
   RadioValueAccessor,

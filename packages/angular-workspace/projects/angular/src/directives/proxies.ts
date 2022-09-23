@@ -8,6 +8,55 @@ import { Components } from '@astrouxds/astro-web-components';
 
 
 
+export declare interface RuxAccordion extends Components.RuxAccordion {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['disabled', 'disallowMultiple']
+})
+@Component({
+  selector: 'rux-accordion',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['disabled', 'disallowMultiple']
+})
+export class RuxAccordion {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface RuxAccordionItem extends Components.RuxAccordionItem {
+  /**
+   * Fired when an element has expanded 
+   */
+  ruxexpanded: EventEmitter<CustomEvent<any>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['disabled', 'expanded']
+})
+@Component({
+  selector: 'rux-accordion-item',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['disabled', 'expanded']
+})
+export class RuxAccordionItem {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['ruxexpanded']);
+  }
+}
+
+
 export declare interface RuxButton extends Components.RuxButton {}
 
 @ProxyCmp({
@@ -87,7 +136,7 @@ export declare interface RuxCheckbox extends Components.RuxCheckbox {
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['checked', 'disabled', 'helpText', 'indeterminate', 'label', 'name', 'required', 'value']
+  inputs: ['checked', 'disabled', 'helpText', 'indeterminate', 'label', 'name', 'value']
 })
 @Component({
   selector: 'rux-checkbox',
@@ -214,7 +263,7 @@ export declare interface RuxDialog extends Components.RuxDialog {
    */
   ruxdialogopened: EventEmitter<CustomEvent<void>>;
   /**
-   * Event that is fired when dialog closes 
+   * Event that is fired when dialog closes. If dialog is closed by clicking on the default confirm or deny buttons (when no footer slot is provided), then true or false will be emitted respectively on the event.detail. 
    */
   ruxdialogclosed: EventEmitter<CustomEvent<boolean | null>>;
 
@@ -222,13 +271,13 @@ export declare interface RuxDialog extends Components.RuxDialog {
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['confirmText', 'denyText', 'modalMessage', 'modalTitle', 'open']
+  inputs: ['clickToClose', 'confirmText', 'denyText', 'header', 'message', 'open']
 })
 @Component({
   selector: 'rux-dialog',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['confirmText', 'denyText', 'modalMessage', 'modalTitle', 'open']
+  inputs: ['clickToClose', 'confirmText', 'denyText', 'header', 'message', 'open']
 })
 export class RuxDialog {
   protected el: HTMLElement;
@@ -265,13 +314,13 @@ export declare interface RuxIcon extends Components.RuxIcon {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['icon', 'label', 'size']
+  inputs: ['icon', 'size']
 })
 @Component({
   selector: 'rux-icon',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['icon', 'label', 'size']
+  inputs: ['icon', 'size']
 })
 export class RuxIcon {
   protected el: HTMLElement;
@@ -22517,7 +22566,13 @@ export class RuxLog {
 }
 
 
-export declare interface RuxMenu extends Components.RuxMenu {}
+export declare interface RuxMenu extends Components.RuxMenu {
+  /**
+   * Emits when a rux-menu-item is selected. Emits the rux-menu-item selected in the event detail. 
+   */
+  ruxmenuselected: EventEmitter<CustomEvent<any>>;
+
+}
 
 @ProxyCmp({
   defineCustomElementFn: undefined
@@ -22532,17 +22587,12 @@ export class RuxMenu {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['ruxmenuselected']);
   }
 }
 
 
-export declare interface RuxMenuItem extends Components.RuxMenuItem {
-  /**
-   * When a rux-menu item is selected, emits the value of that item. 
-   */
-  ruxmenuitemselected: EventEmitter<CustomEvent<object>>;
-
-}
+export declare interface RuxMenuItem extends Components.RuxMenuItem {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
@@ -22559,7 +22609,6 @@ export class RuxMenuItem {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['ruxmenuitemselected']);
   }
 }
 
@@ -22695,11 +22744,15 @@ export class RuxOptionGroup {
 }
 
 
-export declare interface RuxPopUpMenu extends Components.RuxPopUpMenu {
+export declare interface RuxPopUp extends Components.RuxPopUp {
   /**
-   * emits the value of the selected rux-menu-item inside of rux-pop-up-menu 
+   * Emits when the pop up has opened 
    */
-  ruxpopupmenuselected: EventEmitter<CustomEvent<any>>;
+  ruxpopupopened: EventEmitter<CustomEvent<any>>;
+  /**
+   * Emits when the pop up has closed. 
+   */
+  ruxpopupclosed: EventEmitter<CustomEvent<any>>;
 
 }
 
@@ -22709,17 +22762,17 @@ export declare interface RuxPopUpMenu extends Components.RuxPopUpMenu {
   methods: ['show', 'hide']
 })
 @Component({
-  selector: 'rux-pop-up-menu',
+  selector: 'rux-pop-up',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['open', 'placement', 'strategy']
 })
-export class RuxPopUpMenu {
+export class RuxPopUp {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['ruxpopupmenuselected']);
+    proxyOutputs(this, this.el, ['ruxpopupopened', 'ruxpopupclosed']);
   }
 }
 
@@ -22747,7 +22800,7 @@ export class RuxProgress {
 
 export declare interface RuxPushButton extends Components.RuxPushButton {
   /**
-   * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) 
+   * Fired when an alteration to the input's value is committed by the user and emits the value on the event.detail - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) 
    */
   ruxchange: EventEmitter<CustomEvent<any>>;
   /**
@@ -22807,7 +22860,7 @@ export class RuxRadio {
 
 export declare interface RuxRadioGroup extends Components.RuxRadioGroup {
   /**
-   * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) 
+   * Fired when the value of the input changes and emits that value on the event.detail. - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) 
    */
   ruxchange: EventEmitter<CustomEvent<any>>;
 
@@ -22854,7 +22907,7 @@ export class RuxRuler {
 
 export declare interface RuxSegmentedButton extends Components.RuxSegmentedButton {
   /**
-   * Emitted when the value property has changed. 
+   * Fires when the value property has changed and emits that value on the event.detail. 
    */
   ruxchange: EventEmitter<CustomEvent<any>>;
 
@@ -22971,7 +23024,7 @@ export class RuxStatus {
 
 export declare interface RuxSwitch extends Components.RuxSwitch {
   /**
-   * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) 
+   * Fired when the value of the input changes and emits that value on the event.detail. - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event) 
    */
   ruxchange: EventEmitter<CustomEvent<any>>;
   /**
@@ -23009,13 +23062,13 @@ export declare interface RuxTab extends Components.RuxTab {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['disabled', 'selected']
+  inputs: ['disabled', 'selected', 'small']
 })
 @Component({
   selector: 'rux-tab',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'selected']
+  inputs: ['disabled', 'selected', 'small']
 })
 export class RuxTab {
   protected el: HTMLElement;
@@ -23047,7 +23100,7 @@ export class RuxTabPanel {
 
 export declare interface RuxTabPanels extends Components.RuxTabPanels {
   /**
-   * Emits a list of the Tab Panels that have been passed in 
+   * Emits a list of the Tab Panels on the event.detail which have been passed in 
    */
   ruxregisterpanels: EventEmitter<CustomEvent<HTMLRuxTabPanelsElement[]>>;
 
@@ -23208,7 +23261,7 @@ export class RuxTableRow {
 
 export declare interface RuxTabs extends Components.RuxTabs {
   /**
-   * Fires whenever a new tab is selected, and emits the selected tab. 
+   * Fires whenever a new tab is selected, and emits the selected tab on the event.detail. 
    */
   ruxselected: EventEmitter<CustomEvent<any>>;
 
@@ -23295,7 +23348,7 @@ export declare interface RuxTimeRegion extends Components.RuxTimeRegion {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['end', 'hideTimestamp', 'selected', 'start', 'status']
+  inputs: ['end', 'hideTimestamp', 'partial', 'selected', 'start', 'status']
 })
 @Component({
   selector: 'rux-time-region',
@@ -23373,15 +23426,15 @@ export class RuxTree {
 
 export declare interface RuxTreeNode extends Components.RuxTreeNode {
   /**
-   * Emit when user selects a tree node 
+   * Fires when the user selects a tree node and emits the node's id on the event.detail. 
    */
   ruxtreenodeselected: EventEmitter<CustomEvent<string>>;
   /**
-   * Emit when user expands a tree node 
+   * Fires when the user expands a tree node and emits the node's id on the event.detail. 
    */
   ruxtreenodeexpanded: EventEmitter<CustomEvent<string>>;
   /**
-   * Emit when user collapses a tree node 
+   * Fires when the user collapses a tree node and emits the node's id on the event.detail. 
    */
   ruxtreenodecollapsed: EventEmitter<CustomEvent<string>>;
 
