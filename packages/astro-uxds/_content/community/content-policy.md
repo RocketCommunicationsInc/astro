@@ -22,7 +22,7 @@ Ultimately, all Astro UXDS documentation content exists in one of 4 states:
 
 1.  **Current** (canonical, effective, supported), 'master' branch
 2.  **Draft** (proposed, open for comment, alpha, beta). e.g., 'compliance' and 'next' branches
-3.  **Deprecated** (archived, renamed, obsolete, no longer recommended or supported )
+3.  **Deprecated** (archived, renamed, obsolete, no longer recommended or supported ) e.g., Spectrum Analyzer
 4.  **Deleted** (hidden, moved, no longer available, published in error, redacted)
 
 Further distinctions are unhelpful noise to the customer seeking to build Astro UXDS-based applications. Additional commentary regarding the program's state and pipeline is far more effectively communicated through official channels to the directly responsible points of contact at EGS and not to be published on [AstroUXDS.com](http://astrouxds.com). However, there is an opportunity in future program increments to explore opportunities to publicize what's coming in future Astro UXDS releases given additional development resources.
