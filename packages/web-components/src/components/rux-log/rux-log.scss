@@ -18,11 +18,16 @@
 
 .rux-log__filter {
     margin-left: auto;
+    width: 170px;
 }
 
 rux-datetime {
-    min-width: 4.875rem; //78px;
+    min-width: calc(var(--spacing-20) - var(--spacing-050)); //78px;
     display: inline-block;
+}
+
+rux-status {
+    margin: var(--spacing-0) var(--spacing-1);
 }
 
 rux-table-header-cell {
@@ -45,6 +50,6 @@ rux-table-cell {
     width: 2000%;
     align-content: center;
     color: var(--color-text-inverse);
-    background-color: #3a87cf;
-    padding: 0.5rem;
+    background-color: var(--color-background-interactive-default);
+    padding: var(--spacing-2); //8
 }
