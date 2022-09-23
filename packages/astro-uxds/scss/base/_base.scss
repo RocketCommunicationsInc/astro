@@ -87,7 +87,32 @@ blockquote {
 }
 
 .page-migration {
+  sl-details {
+    margin-bottom: 1rem;
+  }
+
   pre > code {
     white-space: pre;
+  }
+  .breaking-change {
+    h3 {
+      border-bottom: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      padding-bottom: 0.075rem;
+      border-bottom: 1px solid #eee;
+      sl-badge {
+        margin-left: auto;
+      }
+    }
+
+    .breaking-change__content {
+      padding: 1rem;
+    }
   }
 }

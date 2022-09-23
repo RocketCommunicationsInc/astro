@@ -76,6 +76,41 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("fonts");
 
+  eleventyConfig.addPairedNunjucksShortcode(
+    "breaking",
+    function (content, title, impact) {
+      const badgeVariant = {
+        Low: "neutral",
+        Medium: "warning",
+        High: "danger",
+      };
+
+      return `
+      <div class="breaking-change">
+        <header>
+          <h3>${title}</h3>
+          <sl-badge variant="${badgeVariant[impact]}">${impact} Impact</sl-badge>
+        </header>
+        <div class="breaking-change__content">
+          ${content}
+        </div>
+      </div>
+      `;
+    }
+  );
+
+  eleventyConfig.addPairedNunjucksShortcode(
+    "component",
+    function (content, name) {
+      return `
+      <sl-details>
+        <summary slot="summary">${name}</summary>
+        ${content}
+      </sl-details>
+      `;
+    }
+  );
+
   //
   eleventyConfig.setBrowserSyncConfig({
     callbacks: {

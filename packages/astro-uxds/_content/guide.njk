@@ -1,0 +1,1204 @@
+---
+path: /guide
+date: Last Modified
+layout: interior.template.njk
+title: "guide"
+class: "page-migration"
+---
+
+<style>
+	.impact { 
+		font-size: 0.825rem;
+	}
+	h3 {
+		margin: 0;
+	}
+</style>
+
+<h1>7.0 Migration Guide</h1>
+
+<p>
+	Astro 7.0 introduces a number of breaking changes that require developers to update their application code.
+	We've compiled a list of every breaking change below. Since the migration process will vary on an 
+	application-by-application basis, we've broken down changes per component based on the likelihood of impact. 
+
+	<ul>
+		<li><sl-badge variant="danger">High Impact</sl-badge> If you're using this component, this change is required.</li>
+		<li><sl-badge variant="warning">Medium Impact</sl-badge> Evaluate your application's usage.</li>
+		<li><sl-badge variant="neutral">Low Impact</sl-badge> You will most likely not be impacted by this change. </li>
+	</ul>
+</p>
+
+<h2>Steps:</h2>
+
+<ol>
+	<li>
+		Update your package.json
+		<ul>
+			<li>For React: `"@astrouxds/react": "^7.0.0"`</li>
+			<li>For Angular: `"@astrouxds/angular": "^7.0.0"`</li>
+			<li>For Web Components: "@astrouxds/astro-web-components": "^7.0.0"`</li>
+		</ul>
+	</li>
+	<li>Audit your code to find which Astro components you're currently using.</li>
+	<li>Review each component below and make the necessary changes.</li>
+</ol>
+
+
+
+
+{% component "General" %}
+	{% breaking "Remove Custom Elements Bundle", "Medium" %}
+		<p>
+			Our <code>dist/custom-elements</code> build has been removed in favor of
+			a more lightweight and better tree-shakeable
+			<code>dist/components</code> build. Search your project for any
+			reference to <code>dist/custom-elements</code> and replace it with
+			<code>dist/components</code>.
+		</p>
+	{% endbreaking %}
+{% endcomponent %}
+
+{% component "Angular" %}
+	{% breaking "Drop Support for v11", "High" %}
+		<p>
+			Our Angular wrapper has dropped support for Angular versions &lt;= 11.
+			This aligns with
+			<a href="https://angular.io/guide/releases">Angular&#39;s own support policy</a>.
+		</p>
+		<p class="resolution">
+			<strong>Resolution:</strong> Upgrade your application to Angular v12+.
+		</p>
+	{% endbreaking %}
+{% endcomponent %}
+
+{% component "Button" %}
+	{% breaking "Remove Deprecated CSS Custom Properties", "Low" %}
+	<ul>
+        <li>
+            The following deprecated CSS Custom Properties have been removed:
+            <ul>
+                <li>--button-active-background-color</li>
+                <li>--button-active-border-color</li>
+                <li>--button-background-color</li>
+                <li>--button-border-color</li>
+                <li>--button-borderless-hover-color</li>
+                <li>--button-borderless-text-color</li>
+                <li>--button-secondary-background-color</li>
+                <li>--button-secondary-border-color</li>
+                <li>--button-secondary-hover-background-color</li>
+                <li>--button-secondary-hover-border-color</li>
+                <li>--button-secondary-hover-text-color</li>
+                <li>--button-secondary-text-color</li>
+            </ul>
+        </li>
+    </ul>
+    <p class="resolution">
+        <strong>Resolution:</strong> 
+		<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">
+			View the CSS Custom Properties Migration document for more details.
+		</a>
+    </p>
+	{% endbreaking %}
+{% endcomponent %}
+
+{% component "Clock" %}
+	{% breaking "Remove Deprecated CSS Custom Properties", "Low" %}
+		<ul>
+			<li>
+				The following deprecated CSS Custom Properties have been removed:
+				<ul>
+					<li>--clock-background-color</li>
+					<li>--clock-border-color</li>
+					<li>--clock-label-color</li>
+					<li>--clock-text-color</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<strong>Resolution:</strong> 
+			<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">
+				View the CSS Custom Properties Migration document for more details.
+			</a>	
+		</p>
+	{% endbreaking %}
+
+	{% breaking "Host Style Changes", "Low" %}
+		<p>
+			Previously it was possible to change the <code>color</code> by targeting
+			the <code>rux-clock</code> element instead of using the available CSS
+			Shadow Parts.
+		</p>
+		<pre>
+			<code class="lang-css">
+				rux-clock {
+					color: red;
+				}
+			</code>
+		</pre>
+		<p>
+			These styles have now been properly moved to the shadow dom and require
+			the use of CSS Shadow Parts.
+		</p>
+		<pre>
+			<code class="lang-css">
+				rux-clock::part(container) {
+					color: red;
+				}
+			</code>
+		</pre>
+		<p>
+			<strong>Resolution:</strong> Search your application&#39;s CSS for
+			anything that may be targeting <code>rux-clock</code> directly and
+			replace with the appropriate CSS Shadow Part.
+		</p>
+	{% endbreaking %}
+
+	{% breaking "Host Display Default Changed", "Low" %}
+		<p>
+			Clock&#39;s default <code>display</code> property has been changed from
+			<code>flex</code> to <code>inline-block</code>.
+		</p>
+		<p>
+			<strong>Resolution:</strong> If you were relying on the element to be
+			<code>display: flex</code>, you can change the
+			<code>display</code> yourself on the root.
+		</p>
+		<pre>
+			<code>
+				rux-clock {
+					display: flex;
+				}
+			</code>
+		</pre>
+	{% endbreaking %}
+{% endcomponent %}
+
+{% component "Checkbox" %}
+	{% breaking "Remove Deprecated CSS Custom Properties", "Low" %}
+		<ul>
+			<li>
+				The following deprecated CSS Custom Properties have been removed:
+				<ul>
+					<li>--checkbox-label-color</li>
+					<li>--checkbox-background-color</li>
+					<li>--checkbox-border-color</li>
+					<li>--checkbox-checked-color</li>
+					<li>--checkbox-hover-border-color</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<strong>Resolution:</strong>
+			<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">
+				View the CSS Custom Properties Migration document for more details.
+			</a>
+		</p>
+	{% endbreaking %}
+{% endcomponent %}
+
+{% component "Checkbox Group" %}
+		{% breaking "Remove Deprecated CSS Custom Properties", "Low" %}
+			<ul>
+				<li>
+					The following deprecated CSS Custom Properties have been removed:
+					<ul>
+						<li>--checkboxgroup-border-color</li>
+					</ul>
+				</li>
+			</ul>
+			<p>
+				<strong>Resolution:</strong> 
+				<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">
+					View the CSS Custom Properties Migration document for more details.
+				</a>
+			</p>
+		{% endbreaking %}
+
+		{% breaking "Host Style Changes", "Low" %}
+			<p>
+				Previously it was possible to change the following CSS properties by
+				targeting the <code>rux-checkbox-group</code> element instead of using
+				the available CSS Shadow Parts: <code>color</code>,
+				<code>font-family</code>, <code>font-size</code>,
+				<code>font-weight</code>, <code>line-height</code>,
+				<code>letter-spacing</code>.
+			</p>
+
+			<pre>
+				<code>
+				rux-checkbox-group {
+					color: red;
+					font-family: Arial;
+					font-size: 2rem;
+					font-weight: 800;
+					line-height: 1;
+					letter-spacing: 0.3em;
+				}
+				</code>
+			</pre>
+			<p>
+				These styles have now been properly moved to the shadow dom and require
+				the use of CSS Shadow Parts.
+			</p>
+			<pre>
+				<code>
+					rux-checkbox-group::part(container) {
+					color: red;
+					font-family: Arial;
+					font-size: 2rem;
+					font-weight: 800;
+					line-height: 1;
+					letter-spacing: 0.3em;
+					}
+				</code>
+			</pre>
+		
+			<p>
+				<strong>Resolution:</strong> Search your application&#39;s CSS for
+				anything that may be targeting <code>rux-checkbox-group</code> directly
+				and replace with the appropriate CSS Shadow Part.
+			</p>
+		{% endbreaking %}
+{% endcomponent %}
+
+
+
+{% component "Classification Marking" %}
+	{% breaking "Remove Deprecated CSS Custom Properties", "Low" %}
+		<ul>
+			<li>
+				The following deprecated CSS Custom Properties have been removed:
+				<ul>
+					<li>--color-classification-text-light</li>
+					<li>--color-classification-text-dark</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<strong>Resolution:</strong> 
+			<a href="https://github.com/RocketCommunicationsInc/astro/blob/main/CSS-Prop-Migration.md">
+				View the CSS Custom Properties Migration document for more details.
+			</a>
+		</p>
+	{% endbreaking %}
+
+	{% breaking "Remove Deprecated Part", "Low" %}
+		<p>
+			The deprecated <code>footer-banner</code> CSS Shadow Part has been
+			removed
+		</p>
+		<p>
+			<strong>Resolution:</strong> Search your application&#39;s CSS for
+			anything targeting <code>::part(footer-banner)</code> and replace with
+			<code>::part(footer)</code>
+		</p>
+	{% endbreaking %}
+{% endcomponent %}
+
+{% component "Dialog" %}
+	{% breaking "Prop Rename", "High" %}
+    <p>
+        The <code>dialog-title</code> (<code>modal-title</code>) property has
+        been renamed to <code>header</code>.
+    </p>
+    <p>
+        The <code>dialog-message</code> (<code>modal-message</code>) property
+        has been renamed to <code>message</code>.
+    </p>
+	{% endbreaking %}
+
+	{% breaking "Click To Close", "Low" %}
+		<p>
+			Dialog will no longer close when clicking outside by default to align
+			with Astro UXDS compliance requirements 4.3.3: &quot;Dialog Boxes shall
+			be closed only with confirm or cancel Buttons.&quot;
+		</p>
+		<p>
+			<strong>Resolution:</strong> If you need to restore this functionality,
+			you may use the new <code>click-to-close</code>property.
+		</p>
+		<pre>
+			<code class="lang-html">
+				<rux-dialog click-to-close></rux-dialog>
+			</code>
+		</pre>
+	{% endbreaking %}
+{% endcomponent %}
+
+{% component "Global Status Bar" %}
+    {% breaking "Host Style Changes", "Low" %}
+		<p>
+			Previously it was possible to change the following CSS properties by
+			targeting the <code>rux-global-status-bar</code> element instead of
+			using the available CSS Shadow Parts: <code>font-family</code>,
+			<code>line-height</code>, <code>letter-spacing</code>.
+		</p>
+		<pre><code class="lang-css"><span class="hljs-selector-tag">rux-global-status-bar</span> {
+		<span class="hljs-attribute">font-family</span>: Arial;
+		<span class="hljs-attribute">line-height</span>: <span class="hljs-number">1</span>;
+		<span class="hljs-attribute">letter-spacing</span>: <span class="hljs-number">0.3em</span>;
+		}
+		</code></pre>
+		<p>
+			These styles have now been properly moved to the shadow dom and require
+			the use of CSS Shadow Parts.
+		</p>
+		<pre><code class="lang-css"><span class="hljs-selector-tag">rux-global-status-bar</span><span class="hljs-selector-pseudo">::part(container)</span> {
+		<span class="hljs-attribute">font-family</span>: Arial;
+		<span class="hljs-attribute">line-height</span>: <span class="hljs-number">1</span>;
+		<span class="hljs-attribute">letter-spacing</span>: <span class="hljs-number">0.3em</span>;
+		}
+		</code></pre>
+		<p>
+			<strong>Resolution:</strong> Search your application&#39;s CSS for
+			anything that may be targeting
+			<code>rux-global-status-bar</code> directly and replace with the
+			appropriate CSS Shadow Part.
+		</p>
+	{% endbreaking %}
+
+	{% breaking "Text Case", "Low" %}
+		<p>
+			The <code>app-domain</code> and <code>app-name</code> properties are no
+			longer uppercase by default.
+		</p>
+		<p>
+			<strong>Resolution:</strong> Add your own style via the
+			<code>container</code> CSS Shadow Part
+		</p>
+		<pre><code class="lang-css"><span class="hljs-selector-tag">rux-global-status-bar</span><span class="hljs-selector-pseudo">::part(container)</span> {
+		<span class="hljs-attribute">text-transform</span>: uppercase;
+		}
+		</code></pre>
+	{% endbreaking %}
+{% endcomponent %}
+
+{% component "Icon" %}
+	{% breaking "Remove Deprecated CSS Custom Properties", "Low" %}
+		<ul>
+			<li>
+				The deprecated <code>--icon-default-color</code> CSS Custom Property
+				has been removed.
+			</li>
+		</ul>
+		<p>
+			<strong>Resolution:</strong> View the CSS Custom Properties Migration
+			doc for more sl-details.
+		</p>
+	{% endbreaking %}
+	{% breaking "Label Removal", "Low" %}
+		<p>
+			The <code>label</code> attribute has been removed and the
+			<code>title</code> for our icons no longer defaults to the icon name.
+			This was causing confusion because the browser would display the title
+			as a tooltip when an icon was used inside a button. Because
+			accessibility for svgs can be complicated and heavily dependent on
+			context, we&#39;ve decided to remove this feature for now.
+		</p>
+		<p>
+			<strong>Resolution:</strong> If you need more control over the
+			<code>title</code> and aria attributes of our icons, it is recommended
+			that you instead
+			<a
+				href="https://github.com/RocketCommunicationsInc/astro/tree/main/packages/web-components/src/icons"
+				>import and use our svg assets</a
+			>
+			directly.
+		</p>
+	{% endbreaking %}
+{% endcomponent %}
+
+{% component "Input" %}
+{% breaking "Remove Deprecated CSS Custom Properties", "Low" %}
+    <ul>
+        <li>
+            The following deprecated CSS Custom Properties have been removed:
+            <ul>
+                <li>--input-background-color</li>
+                <li>--input-text-color</li>
+                <li>--input-focus-border-color</li>
+                <li>--input-selection-background-color</li>
+                <li>--input-invalid-border-color</li>
+            </ul>
+        </li>
+    </ul>
+    <p>
+        <strong>Resolution:</strong> View the CSS Custom Properties Migration
+        doc for more sl-details.
+    </p>
+	{% endbreaking %}
+{% endcomponent %}
+
+{% component "Log" %}
+	{% breaking "Remove Deprecated CSS Custom Properties", "Low" %}
+	<ul>
+        <li>
+            The following deprecated CSS Custom Properties have been removed:
+            <ul>
+                <li>--log-header-background-color</li>
+                <li>--log-filter-background-color</li>
+                <li>--log-filter-text-color</li>
+            </ul>
+        </li>
+    </ul>
+    <p>
+        <strong>Resolution:</strong> View the CSS Custom Properties Migration
+        doc for more sl-details.
+    </p>
+	{% endbreaking %}
+{% endcomponent %}
+
+{% component "Modal" %}
+	 {% breaking "Remove Deprecated CSS Custom Properties", "Low" %}
+        <ul>
+            <li>
+                The following deprecated CSS Custom Properties have been
+                removed:
+                <ul>
+                    <li>--modal-title-color</li>
+                    <li>--modal-background-color</li>
+                    <li>--modal-border-color</li>
+                </ul>
+            </li>
+        </ul>
+        <p>
+            <strong>Resolution:</strong> View the CSS Custom Properties
+            Migration doc for more sl-details.
+        </p>
+		{% endbreaking %}
+
+		{% breaking "Component Renamed", "High" %}
+        <p>
+            Modal has been renamed to Dialog. The new Dialog component has the
+            same API as Modal.
+        </p>
+        <p>
+            <strong>Resolution:</strong> Search your application for any
+            instances of <code>&lt;rux-modal&gt;</code> and replace them with
+            <code>&lt;rux-dialog&gt;</code>.
+        </p>
+		{% endbreaking %}
+    {% endcomponent %}
+
+{% component "Monitoring Progress Icon" %}
+	{% breaking "Host Style Changes", "Low" %}
+        <p>
+            Previously it was possible to change the <code>color</code> CSS
+            properties by targeting the
+            <code>rux-monitoring-progress-icon</code> element instead of using
+            the available CSS Shadow Parts.
+        </p>
+        <pre><code class="lang-css"><span class="hljs-selector-tag">rux-monitoring-progress-icon</span> {
+  <span class="hljs-attribute">color</span>: red;
+}
+</code></pre>
+        <p>
+            These styles have now been properly moved to the shadow dom and
+            require the use of CSS Shadow Parts.
+        </p>
+        <pre><code class="lang-css"><span class="hljs-selector-tag">rux-monitoring-progress-icon</span><span class="hljs-selector-pseudo">::part(container)</span> {
+  <span class="hljs-attribute">color</span>: red;
+}
+</code></pre>
+        <p>
+            <strong>Resolution:</strong> Search your application&#39;s CSS for
+            anything that may be targeting
+            <code>rux-monitoring-progress-icon</code> directly and replace with
+            the appropriate CSS Shadow Part.
+        </p>
+		{% endbreaking %}
+    {% endcomponent %}
+
+	{% component "Notification" %}
+		{% breaking "Remove Parent Styling", "High" %}
+			<p>
+				Notifications no longer require a parent element with
+				<code>position: relative</code> and
+				<code>overflow: hidden</code> applied.
+			</p>
+			<p>
+				<strong>Resolution:</strong> Check your implementation of
+				<code>rux-notification</code> and remove the
+				<code>position: relative</code> and
+				<code>overflow: hidden</code> styles.
+			</p>
+	{% endbreaking %}
+
+	{% breaking "Multiple Notification Stacking", "High" %}
+		<p>
+			Multiple sibling notifications will no longer stack by default.
+			Previously, you could have multiple notifications and they would stack
+			on top of each other. Because only one notification should be visible at
+			a time, you should only need one element in the DOM.
+		</p>
+		<p>
+			<strong>Resolution:</strong> You&#39;ll need to add some of your own
+			custom logic to manage which notification should be presented.
+			<a
+				href="https://astro-components.netlify.app/?path=/docs/components-notification--default-story#multiple-notifications"
+				>Consult the documentation for more sl-details</a
+			>
+		</p>
+	{% endbreaking %}
+	{% breaking "Remove Deprecated CSS Custom Properties", "Low" %}
+		<ul>
+			<li>
+				The following deprecated CSS Custom Properties have been removed:
+				<ul>
+					<li>--notification-icon-color</li>
+					<li>--notification-text-color</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<strong>Resolution:</strong> View the CSS Custom Properties Migration
+			doc for more sl-details.
+		</p>
+	{% endbreaking %}
+
+	{% breaking "Host Style Changes", "Low" %}
+		<p>
+			Previously it was possible to change the following CSS properties by
+			targeting the <code>rux-notification</code> element instead of using the
+			available CSS Shadow Parts: <code>color</code>,
+			<code>font-family</code>, <code>font-size</code>,
+			<code>font-weight</code>, <code>line-height</code>,
+			<code>letter-spacing</code>, <code>padding</code>.
+		</p>
+		<pre><code class="lang-css"><span class="hljs-selector-tag">rux-notification</span> {
+	<span class="hljs-attribute">color</span>: red;
+	<span class="hljs-attribute">padding</span>: <span class="hljs-number">1rem</span>;
+	<span class="hljs-attribute">font-family</span>: Arial;
+	<span class="hljs-attribute">font-size</span>: <span class="hljs-number">2rem</span>;
+	<span class="hljs-attribute">font-weight</span>: <span class="hljs-number">800</span>;
+	<span class="hljs-attribute">line-height</span>: <span class="hljs-number">1</span>;
+	<span class="hljs-attribute">letter-spacing</span>: <span class="hljs-number">0.3em</span>;
+	}
+	</code></pre>
+		<p>
+			These styles have now been properly moved to the shadow dom and require
+			the use of CSS Shadow Parts.
+		</p>
+		<pre><code class="lang-css"><span class="hljs-selector-tag">rux-notification</span><span class="hljs-selector-pseudo">::part(container)</span> {
+	<span class="hljs-attribute">color</span>: red;
+	<span class="hljs-attribute">padding</span>: <span class="hljs-number">1rem</span>;
+	<span class="hljs-attribute">font-family</span>: Arial;
+	<span class="hljs-attribute">font-size</span>: <span class="hljs-number">2rem</span>;
+	<span class="hljs-attribute">font-weight</span>: <span class="hljs-number">800</span>;
+	<span class="hljs-attribute">line-height</span>: <span class="hljs-number">1</span>;
+	<span class="hljs-attribute">letter-spacing</span>: <span class="hljs-number">0.3em</span>;
+	}
+	</code></pre>
+		<p>
+			<strong>Resolution:</strong> Search your application&#39;s CSS for
+			anything that may be targeting <code>rux-notification</code> directly
+			and replace with the appropriate CSS Shadow Part.
+		</p>
+	{% endbreaking %}
+
+{% endcomponent %}
+
+{% component "Pop Up [New]" %}
+	{% breaking "Rewrite", "High" %}
+			<p>
+				Pop Up Menu has been rewritten entirely and now uses
+				<a href="https://floating-ui.com/">Floating UI</a> under the hood to
+				provide greater flexibility for positioning.
+			</p>
+			<pre><code class="lang-html">&lt;rux-icon icon=<span class="hljs-string">"apps"</span> aria-controls=<span class="hljs-string">"popup-menu-1"</span>&gt;&lt;/rux-icon&gt;
+		&lt;rux-<span class="hljs-keyword">pop</span>-<span class="hljs-keyword">up</span>-<span class="hljs-keyword">menu</span> id=<span class="hljs-string">"popup-menu-1"</span>&gt;
+		<span class="hljs-symbol">&lt;rux-menu-item&gt;</span>Item <span class="hljs-number">1</span>&lt;/rux-<span class="hljs-keyword">menu</span>-item&gt;
+		<span class="hljs-symbol">&lt;rux-menu-item-divider&gt;</span>&lt;/rux-<span class="hljs-keyword">menu</span>-item-divider&gt;
+		&lt;rux-<span class="hljs-keyword">menu</span>-item value=<span class="hljs-string">"2"</span> style=<span class="hljs-string">"max-width: 344px"</span>&gt;Item <span class="hljs-number">2</span>&lt;/rux-<span class="hljs-keyword">menu</span>-item&gt;
+		&lt;rux-<span class="hljs-keyword">menu</span>-item disabled=<span class="hljs-string">""</span>&gt;Item <span class="hljs-number">3</span> <span class="hljs-keyword">is</span> disabled&lt;/rux-<span class="hljs-keyword">menu</span>-item&gt;
+		&lt;rux-<span class="hljs-keyword">menu</span>-item value=<span class="hljs-string">"Item 4"</span>&gt;Item <span class="hljs-number">4</span> <span class="hljs-built_in">has</span> <span class="hljs-keyword">a</span> <span class="hljs-built_in">string</span> value&lt;/rux-<span class="hljs-keyword">menu</span>-item&gt;
+		&lt;rux-<span class="hljs-keyword">menu</span>-item href=<span class="hljs-string">"https://www.astrouxds.com"</span>
+			&gt;Item <span class="hljs-number">5</span> <span class="hljs-keyword">is</span> <span class="hljs-keyword">an</span> anchor/action item...&lt;/rux-<span class="hljs-keyword">menu</span>-item
+		&gt;
+		&lt;/rux-<span class="hljs-keyword">pop</span>-<span class="hljs-keyword">up</span>-<span class="hljs-keyword">menu</span>&gt;
+		</code></pre>
+			<p>New:</p>
+			<pre><code class="lang-html">&lt;rux-<span class="hljs-keyword">pop</span>-<span class="hljs-keyword">up</span> <span class="hljs-keyword">open</span> placement=<span class="hljs-string">"right"</span>&gt;
+		&lt;rux-icon icon=<span class="hljs-string">"apps"</span> slot=<span class="hljs-string">"trigger"</span>&gt;&lt;/rux-icon&gt;
+		<span class="hljs-symbol">&lt;rux-menu&gt;</span>
+			&lt;rux-<span class="hljs-keyword">menu</span>-item value=<span class="hljs-string">"1"</span>&gt;Menu Item <span class="hljs-number">1</span>&lt;/rux-<span class="hljs-keyword">menu</span>-item&gt;
+			&lt;rux-<span class="hljs-keyword">menu</span>-item value=<span class="hljs-string">"2"</span>&gt;Menu Item <span class="hljs-number">2</span>&lt;/rux-<span class="hljs-keyword">menu</span>-item&gt;
+			&lt;rux-<span class="hljs-keyword">menu</span>-item value=<span class="hljs-string">"3"</span>&gt;Menu Item <span class="hljs-number">3</span>&lt;/rux-<span class="hljs-keyword">menu</span>-item&gt;
+		&lt;/rux-<span class="hljs-keyword">menu</span>&gt;
+		&lt;/rux-<span class="hljs-keyword">pop</span>-<span class="hljs-keyword">up</span>&gt;
+		</code></pre>
+	{% endbreaking %}
+	{% breaking "Event Changes", "High" %}
+		<p>
+			The following events have been removed: <code>ruxmenuwillclose</code>,
+			<code>ruxmenuwillopen</code>. The <code>ruxmenudidclose</code> event has
+			been renamed to <code>ruxpopupclosed</code>. The
+			<code>ruxmenudidopen</code> event has been renamed to
+			<code>ruxpopupopened</code>.
+		</p>
+		<h3 id="method-changes">Method Changes</h3>
+		<p><strong>Likelihood of Impact:</strong> High</p>
+		<ul>
+			<li>
+				The <code>close</code> method has been removed. Use
+				<code>hide</code> instead.
+			</li>
+			<li>
+				The <code>isOpen</code> method has been removed. Use the
+				<code>open</code> property to check if the menu is open.
+			</li>
+			<li>
+				The <code>toggle</code> method has been removed. Use the
+				<code>show</code> or <code>hide</code> methods where appropriate.
+			</li>
+		</ul>
+	{% endbreaking %}
+
+	{% breaking "Slot Removal", "High" %}
+		<p>
+			The <code>menu-end</code> slot has been removed. Use a regular
+			<code>rux-menu-item</code> and style it accordingly.
+		</p>
+	{% endbreaking %}
+
+	{% breaking "Remove Deprecated CSS Custom Properties", "Low" %}
+		<ul>
+			<li>
+				The following deprecated CSS Custom Properties have been removed:
+				<ul>
+					<li>--popup-menu-background-color</li>
+					<li>--popup-menu-border-color</li>
+					<li>--popup-menu-caret-background-color</li>
+					<li>--popup-menu-caret-left</li>
+					<li>--menu-item-divider-border-color</li>
+					<li>--popup-menu-caret-size</li>
+					<li>--popup-menu-transition-speed</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<strong>Resolution:</strong> View the CSS Custom Properties Migration
+			doc for more sl-details.
+		</p>
+	{% endbreaking %}
+{% endcomponent %}
+
+{% component "Pop Up Menu" %}
+	{% breaking "Component Renamed", "High" %}
+		<p>
+			Pop Up Menu has been removed and has been split into separate
+			<strong>Pop Up</strong> and <strong>Menu</strong> components.
+		</p>
+	{% endbreaking %}
+{% endcomponent %}
+
+{% component "Progress" %}
+	{% breaking "Remove Deprecated CSS Custom Properties", "Low" %}
+		<ul>
+			<li>
+				The following deprecated CSS Custom Properties have been removed:
+				<ul>
+					<li>--progress-padding</li>
+					<li>--progress-radius</li>
+					<li>--progress-height</li>
+					<li>--progress-width</li>
+					<li>--progress-determinate-bar-background-color</li>
+					<li>--progress-determinate-track-background-color</li>
+					<li>--progress-determinate-track-border-color</li>
+					<li>--progress-label-color</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<strong>Resolution:</strong> View the CSS Custom Properties Migration
+			doc for more sl-details.
+		</p>
+	{% endbreaking %}
+
+	{% breaking "Indeterminate Progress Component", "Medium" %}
+		<p>
+			The indeterminate spinner functionality of <code>rux-progress</code> has
+			been removed and is now it&#39;s own separate
+			<code>&lt;rux-indeterminate-progress&gt;</code> component.
+		</p>
+		<p>
+			<strong>Resolution:</strong>
+		</p>
+		<p>
+			Search your application for any usage of
+			<code>&lt;rux-progress&gt;</code> in it&#39;s indeterminate state.
+			<code>rux-progress</code> is considered indeterminate if no
+			<code>value</code> property is present. Replace
+			<code>&lt;rux-progress&gt;</code> with
+			<code>&lt;rux-indeterminate-progress&gt;</code>.
+		</p>
+	{% endbreaking %}
+
+	{% breaking "Host Style Changes", "Low" %}
+			<p>
+				Previously it was possible to change the following CSS properties by
+				targeting the <code>rux-progress</code> element instead of using the
+				available CSS Shadow Parts: <code>color</code>,
+				<code>font-family</code>, <code>font-size</code>,
+				<code>font-weight</code>, <code>line-height</code>,
+				<code>letter-spacing</code>.
+			</p>
+			<pre><code class="lang-css"><span class="hljs-selector-tag">rux-progress</span> {
+		<span class="hljs-attribute">color</span>: red;
+		<span class="hljs-attribute">font-family</span>: Arial;
+		<span class="hljs-attribute">font-size</span>: <span class="hljs-number">2rem</span>;
+		<span class="hljs-attribute">font-weight</span>: <span class="hljs-number">800</span>;
+		<span class="hljs-attribute">line-height</span>: <span class="hljs-number">1</span>;
+		<span class="hljs-attribute">letter-spacing</span>: <span class="hljs-number">0.3em</span>;
+		}
+		</code></pre>
+			<p>
+				These styles have now been properly moved to the shadow dom and require
+				the use of CSS Shadow Parts.
+			</p>
+			<pre><code class="lang-css"><span class="hljs-selector-tag">rux-progress</span><span class="hljs-selector-pseudo">::part(output)</span>,
+		<span class="hljs-selector-tag">rux-progress</span><span class="hljs-selector-pseudo">::part(progress)</span> {
+		<span class="hljs-attribute">color</span>: red;
+		<span class="hljs-attribute">font-family</span>: Arial;
+		<span class="hljs-attribute">font-size</span>: <span class="hljs-number">2rem</span>;
+		<span class="hljs-attribute">font-weight</span>: <span class="hljs-number">800</span>;
+		<span class="hljs-attribute">line-height</span>: <span class="hljs-number">1</span>;
+		<span class="hljs-attribute">letter-spacing</span>: <span class="hljs-number">0.3em</span>;
+		}
+		</code></pre>
+			<p>
+				<strong>Resolution:</strong> Search your application&#39;s CSS for
+				anything that may be targeting <code>rux-progress</code> directly and
+				replace with the appropriate CSS Shadow Part.
+			</p>
+	{% endbreaking %}
+{% endcomponent %}
+
+{% component "Push Button" %}
+		{% breaking "Remove Deprecated CSS Custom Properties", "Low" %}
+			<ul>
+				<li>
+					The following deprecated CSS Custom Properties have been removed:
+					<ul>
+						<li>--pushbutton-background-color</li>
+						<li>--pushbutton-border-color</li>
+						<li>--pushbutton-text-color</li>
+						<li>--pushbutton-selected-background-color</li>
+						<li>--pushbutton-selected-border-color</li>
+						<li>--pushbutton-selected-text-color</li>
+						<li>--pushbutton-selected-hover-text-color</li>
+					</ul>
+				</li>
+			</ul>
+			<p>
+				<strong>Resolution:</strong> View the CSS Custom Properties Migration
+				doc for more sl-details.
+			</p>
+	{% endbreaking %}
+
+	{% breaking "Part Rename", "Low" %}
+		<p>
+			The <code>label</code> CSS Shadow Part has been renamed to
+			<code>container</code>to be more consistent with other components.
+			<strong>Resolution:</strong> Search your application for any usage of
+			<code>rux-push-button::part(label)</code> and replace it with
+			<code>rux-push-button::part(container)</code>.
+		</p>
+	{% endbreaking %}
+{% endcomponent %}
+
+{% component "Radio" %}
+	{% breaking "Remove Deprecated CSS Custom Properties", "Low" %}
+		<ul>
+			<li>
+				The following deprecated CSS Custom Properties have been removed:
+				<ul>
+					<li>--radio-hover-border-color</li>
+					<li>--radio-border-color</li>
+					<li>--radio-label-color</li>
+					<li>--radio-background-color</li>
+					<li>--radio-selected-color</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<strong>Resolution:</strong> View the CSS Custom Properties Migration
+			doc for more sl-details.
+		</p>
+	{% endbreaking %}
+{% endcomponent %}
+
+{% component "Radio Group" %}
+	{% breaking "Remove Deprecated CSS Custom Properties", "Low" %}
+		<ul>
+			<li>
+				The deprecated <code>--radiogroup-border-color</code> CSS Custom
+				Property has been removed.
+			</li>
+		</ul>
+		<p>
+			<strong>Resolution:</strong> View the CSS Custom Properties Migration
+			doc for more sl-details.
+		</p>
+	{% endbreaking %}
+{% endcomponent %}
+
+{% component "Segmented Button" %}
+	{% breaking "Remove Deprecated CSS Custom Properties", "Low" %}
+    <ul>
+        <li>
+            The following deprecated CSS Custom Properties have been removed: -
+            --segmented-button-background-color - --segmented-button-text-color
+            - --segmented-button-border-color -
+            --segmented-button-hover-background-color -
+            --segmented-button-hover-text-color -
+            --segmented-button-hover-border-color -
+            --segmented-button-selected-background-color
+            <strong>Resolution:</strong> View the CSS Custom Properties
+            Migration doc for more sl-details.
+        </li>
+    </ul>
+	{% endbreaking %}
+
+	{% breaking "Medium Default Size", "Low" %}
+		<p>
+			The default <code>size</code> property is now
+			<code>medium</code> instead of <code>small</code>.
+			<strong>Resolution:</strong> Search your app for
+			<code>rux-segmented-button</code> and manually add set the
+			<code>size</code> property to <code>small</code> where desired.
+		</p>
+	{% endbreaking %}
+{% endcomponent %}
+
+{% component "Select" %}
+	{% breaking "Remove Deprecated CSS Custom Properties", "Low" %}
+		<ul>
+			<li>
+				The following deprecated CSS Custom Properties have been removed:
+				<ul>
+					<li>--select-menu-border-radius</li>
+					<li>--select-menu-border-hover-color</li>
+					<li>--select-menu-border-focus-color</li>
+					<li>--select-menu-invalid-border-color</li>
+					<li>--select-menu-text-color</li>
+					<li>--select-menu-label-color</li>
+					<li>--select-menu-border-color</li>
+					<li>--select-menu-option-text-hover-color</li>
+					<li>--select-menu-option-selected-background-color</li>
+					<li>--select-menu-option-selected-text-color</li>
+					<li>--select-menu-inactive-caret</li>
+					<li>--select-menu-active-caret</li>
+					<li>--select-menu-background-color</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<strong>Resolution:</strong> View the CSS Custom Properties Migration
+			doc for more sl-details.
+		</p>
+	{% endbreaking %}
+{% endcomponent %}
+
+{% component "Slider" %}
+	{% breaking "Remove Deprecated CSS Custom Properties", "Low" %}
+		<ul>
+			<li>
+				The following deprecated CSS Custom Properties have been removed:
+				<ul>
+					<li>--slider-thumb-background-color</li>
+					<li>--slider-thumb-border-color</li>
+					<li>--slider-hover-thumb-background-color</li>
+					<li>--slider-hover-thumb-border-color</li>
+					<li>--slider-track-background-color</li>
+					<li>--slider-selected-thumb-border-color</li>
+					<li>--slider-thumb-size</li>
+					<li>--slider-thumb-border-size</li>
+					<li>--slider-tick-padding-top</li>
+					<li>--slider-selected-track-background-color</li>
+					<li>--slider-value-percent</li>
+					<li>--slider-top</li>
+					<li>--slider-track-height</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<strong>Resolution:</strong> View the CSS Custom Properties Migration
+			doc for more sl-details.
+		</p>
+	{% endbreaking %}
+{% endcomponent %}
+
+{% component "Switch" %}
+	{% breaking "Remove Deprecated CSS Custom Properties", "Low" %}
+		<ul>
+			<li>
+				The following deprecated CSS Custom Properties have been removed:
+				<ul>
+					<li>--switch-background-color</li>
+					<li>--switch-hover-on-color</li>
+					<li>--switch-hover-off-color</li>
+					<li>--switch-on-color</li>
+					<li>--switch-off-border-color</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<strong>Resolution:</strong> View the CSS Custom Properties Migration
+			doc for more sl-details.
+		</p>
+	{% endbreaking %}
+	{% breaking "Host Style Changs", "Low" %}
+			<p>
+				Previously it was possible to change the following CSS properties by
+				targeting the <code>rux-switch</code> element instead of using the
+				available CSS Shadow Parts: <code>color</code>,
+				<code>font-family</code>, <code>font-size</code>,
+				<code>font-weight</code>, <code>line-height</code>,
+				<code>letter-spacing</code>.
+			</p>
+			<pre><code class="lang-css"><span class="hljs-selector-tag">rux-switch</span> {
+		<span class="hljs-attribute">color</span>: red;
+		<span class="hljs-attribute">font-family</span>: Arial;
+		<span class="hljs-attribute">font-size</span>: <span class="hljs-number">2rem</span>;
+		<span class="hljs-attribute">font-weight</span>: <span class="hljs-number">800</span>;
+		<span class="hljs-attribute">line-height</span>: <span class="hljs-number">1</span>;
+		<span class="hljs-attribute">letter-spacing</span>: <span class="hljs-number">0.3em</span>;
+		}
+		</code></pre>
+			<p>
+				These styles have now been properly moved to the shadow dom and require
+				the use of CSS Shadow Parts.
+			</p>
+			<pre><code class="lang-css"><span class="hljs-selector-tag">rux-switch</span><span class="hljs-selector-pseudo">::part(label)</span>,
+		<span class="hljs-selector-tag">rux-switch</span><span class="hljs-selector-pseudo">::part(switch)</span> {
+		<span class="hljs-attribute">color</span>: red;
+		<span class="hljs-attribute">font-family</span>: Arial;
+		<span class="hljs-attribute">font-size</span>: <span class="hljs-number">2rem</span>;
+		<span class="hljs-attribute">font-weight</span>: <span class="hljs-number">800</span>;
+		<span class="hljs-attribute">line-height</span>: <span class="hljs-number">1</span>;
+		<span class="hljs-attribute">letter-spacing</span>: <span class="hljs-number">0.3em</span>;
+		}
+		</code></pre>
+			<p>
+				<strong>Resolution:</strong> Search your application&#39;s CSS for
+				anything that may be targeting <code>rux-switch</code> directly and
+				replace with the appropriate CSS Shadow Part.
+			</p>
+	{% endbreaking %}
+{% endcomponent %}
+
+{% component "Tab" %}
+	{% breaking "Remove Deprecated CSS Custom Properties", "Low" %}
+		<ul>
+			<li>
+				The following deprecated CSS Custom Properties have been removed:
+				<ul>
+					<li>--tab-text-color</li>
+					<li>--tab-border-color</li>
+					<li>--tab-hover-text-color</li>
+					<li>--tab-selected-text-color</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<strong>Resolution:</strong> View the CSS Custom Properties Migration
+			doc for more sl-details.
+		</p>
+	{% endbreaking %}
+
+	{% breaking "Host Style Changes", "Low" %}
+		<p>
+			Previously it was possible to change the following CSS properties by
+			targeting the <code>rux-tab</code> element instead of using the
+			available CSS Shadow Parts: <code>border-color</code>,
+			<code>border-bottom</code>, <code>min-width</code>,
+			<code>padding</code> ,<code>font-family</code>, <code>font-size</code>,
+			<code>font-weight</code>, <code>letter-spacing</code>.
+		</p>
+		<pre><code class="lang-css"><span class="hljs-selector-tag">rux-tab</span> {
+	<span class="hljs-attribute">color</span>: red;
+	<span class="hljs-attribute">min-width</span>: <span class="hljs-number">3rem</span>;
+	<span class="hljs-attribute">padding</span>: <span class="hljs-number">1rem</span>;
+	<span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">2px</span> solid red;
+	<span class="hljs-attribute">border-color</span>: red;
+	<span class="hljs-attribute">font-family</span>: Arial;
+	<span class="hljs-attribute">font-size</span>: <span class="hljs-number">2rem</span>;
+	<span class="hljs-attribute">font-weight</span>: <span class="hljs-number">800</span>;
+	<span class="hljs-attribute">letter-spacing</span>: <span class="hljs-number">0.3em</span>;
+	}
+	</code></pre>
+		<p>
+			These styles have now been properly moved to the shadow dom and require
+			the use of CSS Shadow Parts.
+		</p>
+		<pre><code class="lang-css"><span class="hljs-selector-tag">rux-tab</span><span class="hljs-selector-pseudo">::part(container)</span> {
+	<span class="hljs-attribute">color</span>: red;
+	<span class="hljs-attribute">min-width</span>: <span class="hljs-number">3rem</span>;
+	<span class="hljs-attribute">padding</span>: <span class="hljs-number">1rem</span>;
+	<span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">2px</span> solid red;
+	<span class="hljs-attribute">border-color</span>: red;
+	<span class="hljs-attribute">font-family</span>: Arial;
+	<span class="hljs-attribute">font-size</span>: <span class="hljs-number">2rem</span>;
+	<span class="hljs-attribute">font-weight</span>: <span class="hljs-number">800</span>;
+	<span class="hljs-attribute">letter-spacing</span>: <span class="hljs-number">0.3em</span>;
+	}
+	</code></pre>
+		<p>
+			<strong>Resolution:</strong> Search your application&#39;s CSS for
+			anything that may be targeting <code>rux-tab</code> directly and replace
+			with the appropriate CSS Shadow Part.
+		</p>
+	{% endbreaking %}
+{% endcomponent %}
+
+{% component "Table" %}
+	{% breaking "Remove Deprecated CSS Custom Properties", "Low" %}
+		<ul>
+			<li>
+				The following deprecated CSS Custom Properties have been removed:
+				<ul>
+					<li>--table-border-color</li>
+					<li>--table-row-hover-text-color</li>
+					<li>--table-row-hover-background-color</li>
+					<li>--table-row-border-color</li>
+					<li>--table-row-text-color</li>
+					<li>--table-row-background-color</li>
+					<li>--table-header-border-color</li>
+					<li>--table-header-background-color</li>
+					<li>--table-header-text-color</li>
+					<li>--table-header-box-shadow</li>
+					<li>--table-row-selected-background-color</li>
+					<li>--table-row-selected-border-color</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<strong>Resolution:</strong> View the CSS Custom Properties Migration
+			doc for more sl-details.
+		</p>
+	{% endbreaking %}
+	{% breaking "Borders Removed", "Medium" %}
+		<p>
+			The right and left borders have been removed by default to make them
+			easier to use within Cards and Containers.
+		</p>
+		<p>
+			<strong>Resolution:</strong> You can manually reapply the left and right
+			borders by targeting the host element itself:
+		</p>
+		<pre>
+			<code class="lang-css"><span class="hljs-selector-tag">rux-table</span> {
+	<span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-built_in">var</span>(--color-background-base-default);
+	}
+	</code></pre>
+{% endbreaking %}
+{% endcomponent %}
+
+{% component "Textarea" %}
+	{% breaking "Remove Deprecated CSS Custom Properties", "Low" %}
+		<ul>
+			<li>
+				The following deprecated CSS Custom Properties have been removed:
+				<ul>
+					<li>--textarea-border-color</li>
+					<li>--textarea-text-color</li>
+					<li>--textarea-focus-border-color</li>
+					<li>--textarea-selection-background-color</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<strong>Resolution:</strong> View the CSS Custom Properties Migration
+			doc for more sl-details.
+		</p>
+	{% endbreaking %}
+{% endcomponent %}
+
+{% component "Tree" %}
+	{% breaking "Remove Deprecated CSS Custom Properties", "Low" %}
+		<ul>
+			<li>
+				The following deprecated CSS Custom Properties have been removed:
+				<ul>
+					<li>--tree-text-color</li>
+					<li>--tree-border-color</li>
+					<li>--tree-accent-color</li>
+					<li>--tree-hover-background-color</li>
+					<li>--tree-hover-text-color</li>
+					<li>--tree-selected-border-color</li>
+					<li>--tree-selected-accent-color</li>
+					<li>--tree-expanded-border-color</li>
+					<li>--tree-background-color</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<strong>Resolution:</strong> View the CSS Custom Properties Migration
+			doc for more sl-details.
+		</p>
+	{% endbreaking %}
+{% endcomponent %}
+
+{% component "Tree Node" %}
+	{% breaking "Icons Prefix Slot", "Medium" %}
+		<p>
+			The default display for content inside Tree Nodes and may break your
+			application if you are using the Tree Node with icons or status symbols.
+		</p>
+		<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">rux-tree-node</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">rux-status</span> <span class="hljs-attr">status</span>=<span class="hljs-string">"critical"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">rux-status</span>&gt;</span>
+	Tree Node 1.1
+	<span class="hljs-tag">&lt;/<span class="hljs-name">rux-tree-node</span>&gt;</span>
+	</code></pre>
+		<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">rux-tree-node</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">rux-status</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"prefix"</span> <span class="hljs-attr">status</span>=<span class="hljs-string">"critical"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">rux-status</span>&gt;</span>
+	Tree Node 1.1
+	<span class="hljs-tag">&lt;/<span class="hljs-name">rux-tree-node</span>&gt;</span>
+	</code></pre>
+		<p>
+			<strong>Resolution:</strong> Add <code>slot=&quot;prefix&quot;</code> to
+			any icons or status symbols.
+		</p>
+	{% endbreaking %}
+
+	{% breaking "Host Style Changes", "Low" %}
+    <p>
+        Previously it was possible to change the following CSS properties by
+        targeting the <code>rux-tree-node</code> element instead of using the
+        available CSS Shadow Parts: <code>color</code>,
+        <code>font-family</code>, <code>font-size</code>,
+        <code>font-weight</code>, <code>line-height</code>,
+        <code>letter-spacing</code>.
+    </p>
+    <pre><code class="lang-css"><span class="hljs-selector-tag">rux-tree-node</span> {
+  <span class="hljs-attribute">color</span>: red;
+  <span class="hljs-attribute">font-family</span>: Arial;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">2rem</span>;
+  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">800</span>;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1</span>;
+  <span class="hljs-attribute">letter-spacing</span>: <span class="hljs-number">0.3em</span>;
+}
+</code></pre>
+    <p>
+        These styles have now been properly moved to the shadow dom and require
+        the use of CSS Shadow Parts.
+    </p>
+    <pre><code class="lang-css"><span class="hljs-selector-tag">rux-tree-node</span><span class="hljs-selector-pseudo">::part(node)</span> {
+  <span class="hljs-attribute">color</span>: red;
+  <span class="hljs-attribute">font-family</span>: Arial;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">2rem</span>;
+  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">800</span>;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1</span>;
+  <span class="hljs-attribute">letter-spacing</span>: <span class="hljs-number">0.3em</span>;
+}
+</code></pre>
+    <p>
+        <strong>Resolution:</strong> Search your application&#39;s CSS for
+        anything that may be targeting <code>rux-tree-node</code> directly and
+        replace with the appropriate CSS Shadow Part.
+    </p>
+	{% endbreaking %}
+{% endcomponent %}
+
