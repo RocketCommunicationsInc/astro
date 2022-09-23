@@ -110,9 +110,9 @@ Astro UXDS Tab (child) properties are passed as simple attributes on the individ
 
 ## Events
 
-| Event         | Description                                                       | Type               |
-| ------------- | ----------------------------------------------------------------- | ------------------ |
-| `ruxselected` | Fires whenever a new tab is selected, and emits the selected tab. | `CustomEvent<any>` |
+| Event         | Description                                                                           | Type               |
+| ------------- | ------------------------------------------------------------------------------------- | ------------------ |
+| `ruxselected` | Fires whenever a new tab is selected, and emits the selected tab on the event.detail. | `CustomEvent<any>` |
 
 
 ## Slots
@@ -120,13 +120,6 @@ Astro UXDS Tab (child) properties are passed as simple attributes on the individ
 | Slot          | Description                   |
 | ------------- | ----------------------------- |
 | `"(default)"` | Used for instances of rux-tab |
-
-
-## CSS Custom Properties
-
-| Name                 | Description                   |
-| -------------------- | ----------------------------- |
-| `--tab-border-color` | [DEPRECATED] Tab border color |
 
 
 ----------------------------------------------

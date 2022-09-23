@@ -208,7 +208,6 @@ Our /dist/custom-elements build has been removed in favor of a faster treeshakea
     -   --slider-value-percent
     -   --slider-top
     -   --slider-track-height
-    -   --slider-track-before-thumb-height
 
 ### Switch
 
@@ -276,6 +275,10 @@ Our /dist/custom-elements build has been removed in favor of a faster treeshakea
 -   New typography utility classes have been added to `astro-web-components.css`.
 
 -   Links no longer change color on hover.
+
+### Accordion [New]
+
+-   Adds new Accordion component.
 
 ### Angular
 
@@ -346,6 +349,10 @@ Our /dist/custom-elements build has been removed in favor of a faster treeshakea
 
 -   Internal styles have been refactored to use spacing design tokens.
 
+### Dialog
+
+-   Internal styles have been refactored to use spacing design tokens.
+
 ### Indeterminate Progress
 
 -   Internal styles have been refactored to use spacing design tokens.
@@ -354,6 +361,10 @@ Our /dist/custom-elements build has been removed in favor of a faster treeshakea
 
 -   Internal styles have been refactored to use spacing design tokens.
 -   Type=password now uses a native `button` element rather than `rux-button`.
+
+### Log
+
+-   Internal styles have been refactored to use spacing design tokens.
 
 ### Radio
 

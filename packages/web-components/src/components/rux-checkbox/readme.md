@@ -74,17 +74,6 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
 | `"label"`      | the label of rux-checkbox        |
 
 
-## CSS Custom Properties
-
-| Name                            | Description                               |
-| ------------------------------- | ----------------------------------------- |
-| `--checkbox-background-color`   | [DEPRECATED] Checkbox background color    |
-| `--checkbox-border-color`       | [DEPRECATED] Checkbox border color        |
-| `--checkbox-checked-color`      | [DEPRECATED] Checkmark color when checked |
-| `--checkbox-hover-border-color` | [DEPRECATED] Hover border color           |
-| `--checkbox-label-color`        | [DEPRECATED] Label text color             |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
