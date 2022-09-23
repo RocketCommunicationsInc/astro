@@ -355,6 +355,10 @@ Our /dist/custom-elements build has been removed in favor of a faster treeshakea
 -   Internal styles have been refactored to use spacing design tokens.
 -   Type=password now uses a native `button` element rather than `rux-button`.
 
+### Log
+
+-   Internal styles have been refactored to use spacing design tokens.
+
 ### Radio
 
 -   Internal styles have been refactored to use spacing design tokens.
