@@ -25,239 +25,36 @@
     </head>
 
     <body class="dark-theme">
-        <!-- <h2>Figma spacing test</h2>
-        <ftl-belt access-token="" file-id="">
-            <style>
-                #ruxInputSizingLEFT::part(help-text), #ruxInputSizingLEFT::part(error-text){
-                    display:flex;
-                    justify-content: right;
-                }
-            </style>
-            
-
-        <ftl-holster name="help and error text" node="995:2547" style="position:relative;">
-            <div style="position: absolute; top: 182px; left: 302px;">
+        <!--<h2>Figma spacing test</h2>
+        <ftl-belt access-token="" file-id="SNsCCfIiWdfvZbBilZXTbW">
+         <ftl-holster name="search small" node="41357:132326" style="position:relative;">
+            <div style="width: 170px">
                 <rux-input
-                    id="ruxInputSizing"
-                    name="ruxInput"
-                    value="Input test"
-                    size="medium"
-                    label="medium"
-                    error-text="Error text"
-                    invalid
-                ></rux-input>
-            </div>
-            <div style="position: absolute; top: 182px; left: 30px;">
-                <rux-input
-                    id="ruxInputSizing"
-                    name="ruxInput"
-                    value="Input test"
-                    label="medium"
-                    help-text="Help test"
-                ></rux-input>
-            </div>
-            <div style="position: absolute;top: 272px;left: 30px;width: 212px;">
-                <rux-input
-                    id="ruxInputSizingLEFT"
-                    name="ruxInput"
-                    value="Input test"
-                    label="medium"
-                    help-text="Help test"
-                ></rux-input>
-            </div>
-            <div style="position: absolute;top: 272px;left: 302px;width: 212px;">
-                <rux-input
-                    id="ruxInputSizingLEFT"
-                    name="ruxInput"
-                    value="Input test"
-                    label="medium"
-                    error-text="Error text"
-                    invalid
+                    type="search"
+                    size="small"
+                    placeholder="Search..."
                 ></rux-input>
             </div>
         </ftl-holster>
 
+        <ftl-holster name="search medium" node="26010:126254" style="position:relative;">
+            <div style="width: 170px">
+                <rux-input
+                    type="search"
+                    placeholder="Search..."
+                ></rux-input>
+            </div>
+        </ftl-holster>
 
-            
-            <h3>Password</h3>
-            <ftl-holster name="Small" node="26010:126009">
-                <div style="width: 170px">
-                    <rux-input
-                        type="password"
-                        placeholder="Password input"
-                        size="small"
-                    ></rux-input>
-                </div>
-            </ftl-holster>
-
-            <ftl-holster name="Medium" node="26010:126001">
-                <div style="width: 170px">
-                    <rux-input
-                        type="password"
-                        placeholder="Password input"
-                        value="Password input"
-                        size="medium"
-                    ></rux-input>
-                </div>
-            </ftl-holster>
-            <ftl-holster name="Medium Masked" node="26010:126025">
-                <div style="width: 167px">
-                    <rux-input
-                        type="password"
-                        placeholder="Reindeer Flotilla"
-                        size="medium"
-                    ></rux-input>
-                </div>
-            </ftl-holster>
-
-            <ftl-holster name="Large" node="26010:126017">
-                <div style="width: 167px">
-                    <rux-input
-                        type="password"
-                        placeholder="Reindeer Flotilla"
-                        size="large"
-                    ></rux-input>
-                </div>
-            </ftl-holster>
-        </ftl-belt>
-        <p>Small</p>
-
-        <rux-input
-            id="ruxInputSizing"
-            name="ruxInput"
-            value="Input test"
-            size="small"
-        ></rux-input>
-
-        <p>medium</p>
-
-        <rux-input
-            id="ruxInputSizing"
-            name="ruxInput"
-            value="Input test"
-            size="medium"
-        ></rux-input>
-
-        <p>large</p>
-
-        <rux-input
-            id="ruxInputSizing"
-            name="ruxInput"
-            value="Input test"
-            size="large"
-        ></rux-input>
-
-        <h3>With Icon</h3>
-        <p>small</p>
-
-        <div style="width: 200px">
-            <rux-input
-                id="ruxInputSizing"
-                name="ruxInput"
-                value="Input test"
-                size="small"
-                ><rux-icon slot="prefix" size="20px" icon="star"></rux-icon
-            ></rux-input>
-        </div>
-
-        <p>medium</p>
-
-        <div style="width: 200px">
-            <rux-input
-                id="ruxInputSizing"
-                name="ruxInput"
-                value="Input test"
-                size="medium"
-                ><rux-icon slot="prefix" size="20px" icon="star"></rux-icon
-            ></rux-input>
-        </div>
-
-        <p>large</p>
-
-        <div style="width: 194px">
-            <rux-input
-                id="ruxInputSizing"
-                name="ruxInput"
-                value="Input test"
-                size="large"
-                ><rux-icon slot="prefix" size="20px" icon="star"></rux-icon
-            ></rux-input>
-        </div>
-
-        <h3>With Icons</h3>
-        <p>small</p>
-
-        <div style="width: 200px">
-            <rux-input
-                id="ruxInputSizing"
-                name="ruxInput"
-                value="Input test"
-                size="small"
-            >
-                <rux-icon slot="prefix" size="20px" icon="star"></rux-icon>
-                <rux-icon slot="suffix" size="20px" icon="star"></rux-icon>
-            </rux-input>
-        </div>
-
-        <p>medium</p>
-
-        <div style="width: 200px">
-            <rux-input
-                id="ruxInputSizing"
-                name="ruxInput"
-                value="Input test"
-                size="medium"
-            >
-                <rux-icon slot="prefix" size="20px" icon="star"></rux-icon>
-                <rux-icon slot="suffix" size="20px" icon="star"></rux-icon>
-            </rux-input>
-        </div>
-
-        <div style="width: 200px">
-            <rux-input
-                id="ruxInputSizing"
-                name="ruxInput"
-                value="Input test"
-                size="small"
-            >
-                <rux-icon slot="suffix" size="20px" icon="star"></rux-icon>
-            </rux-input>
-        </div>
-
-        <p>large</p>
-
-        <div style="width: 194px">
-            <rux-input
-                id="ruxInputSizing"
-                name="ruxInput"
-                value="Input test"
-                size="large"
-            >
-                <rux-icon slot="prefix" size="20px" icon="star"></rux-icon>
-                <rux-icon slot="suffix" size="20px" icon="star"></rux-icon>
-            </rux-input>
-        </div>
-
-        <h3>Search</h3>
-
-        <div style="width: 200px">
-            <rux-input
-                type="search"
-                placeholder="Enter search term"
-            ></rux-input>
-        </div>
-
-        <h3>Date</h3>
-
-        <div style="width: 200px">
-            <rux-input type="date"></rux-input>
-        </div>
-
-        <h3>Time</h3>
-
-        <div style="width: 200px">
-            <rux-input type="time"></rux-input>
-        </div> -->
+        <ftl-holster name="search large" node="41357:132341" style="position:relative;">
+            <div style="width: 170px">
+                <rux-input
+                    type="search"
+                    size="large"
+                    placeholder="Search..."
+                ></rux-input>
+            </div>
+        </ftl-holster> -->
 
         <h1>Previous Tests</h1>
         <!--
