@@ -81,12 +81,6 @@ label {
             var(--color-background-surface-selected) var(--spacing-8),
             var(--color-background-base-default) var(--spacing-8)
         );
-    // background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%234dacff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E'),
-    //     linear-gradient(
-    //         to left,
-    //         var(--color-background-surface-selected) var(--spacing-8),
-    //         var(--color-background-base-default) var(--spacing-8)
-    //     );
     background-position: center right var(--spacing-025),
         center left var(--spacing-0);
     background-repeat: no-repeat;

@@ -12018,6 +12018,28 @@ export namespace Components {
     }
     interface RuxMenuItemDivider {
     }
+    interface RuxModal {
+        /**
+          * Text for confirmation button
+         */
+        "confirmText": string;
+        /**
+          * Text for close button
+         */
+        "denyText": string;
+        /**
+          * Modal body message
+         */
+        "modalMessage"?: string;
+        /**
+          * Modal header title
+         */
+        "modalTitle"?: string;
+        /**
+          * Shows and hides modal
+         */
+        "open": boolean;
+    }
     interface RuxMonitoringIcon {
         /**
           * Displays an Astro icon matching this string. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols)
@@ -12137,6 +12159,36 @@ export namespace Components {
           * The position strategy of the popup, either absolute or fixed.
          */
         "strategy": 'absolute' | 'fixed';
+    }
+    interface RuxPopUpMenu {
+        /**
+          * Element to anchor the menu to. If none is given the menu will anchor to the trigger element where aria-controls === menu id
+         */
+        "anchorEl"?: HTMLElement;
+        /**
+          * Closes the menu. If the menu is already closed it returns 'false'.
+         */
+        "close": () => Promise<boolean>;
+        /**
+          * Returns 'true' if the menu is open, 'false' if it is not.
+         */
+        "isOpen": () => Promise<boolean>;
+        /**
+          * Boolean which controls when to show the menu
+         */
+        "open": boolean;
+        /**
+          * Opens the menu. If the menu is already open it returns 'false'.
+         */
+        "show": () => Promise<boolean>;
+        /**
+          * Toggles the menu open or close. Will return 'true' on menu open and 'false' on menu close
+         */
+        "toggle": () => Promise<boolean>;
+        /**
+          * Optional element to trigger opening and closing of the menu. If none is supplied the element where aria-controls === menu id will be assigned
+         */
+        "triggerEl"?: HTMLElement;
     }
     interface RuxProgress {
         /**
@@ -12592,6 +12644,10 @@ export interface RuxMenuCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxMenuElement;
 }
+export interface RuxModalCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxModalElement;
+}
 export interface RuxNotificationCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxNotificationElement;
@@ -12607,6 +12663,10 @@ export interface RuxOptionGroupCustomEvent<T> extends CustomEvent<T> {
 export interface RuxPopUpCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxPopUpElement;
+}
+export interface RuxPopUpMenuCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxPopUpMenuElement;
 }
 export interface RuxPushButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -19107,6 +19167,12 @@ declare global {
         prototype: HTMLRuxMenuItemDividerElement;
         new (): HTMLRuxMenuItemDividerElement;
     };
+    interface HTMLRuxModalElement extends Components.RuxModal, HTMLStencilElement {
+    }
+    var HTMLRuxModalElement: {
+        prototype: HTMLRuxModalElement;
+        new (): HTMLRuxModalElement;
+    };
     interface HTMLRuxMonitoringIconElement extends Components.RuxMonitoringIcon, HTMLStencilElement {
     }
     var HTMLRuxMonitoringIconElement: {
@@ -19142,6 +19208,12 @@ declare global {
     var HTMLRuxPopUpElement: {
         prototype: HTMLRuxPopUpElement;
         new (): HTMLRuxPopUpElement;
+    };
+    interface HTMLRuxPopUpMenuElement extends Components.RuxPopUpMenu, HTMLStencilElement {
+    }
+    var HTMLRuxPopUpMenuElement: {
+        prototype: HTMLRuxPopUpMenuElement;
+        new (): HTMLRuxPopUpMenuElement;
     };
     interface HTMLRuxProgressElement extends Components.RuxProgress, HTMLStencilElement {
     }
@@ -20387,12 +20459,14 @@ declare global {
         "rux-menu": HTMLRuxMenuElement;
         "rux-menu-item": HTMLRuxMenuItemElement;
         "rux-menu-item-divider": HTMLRuxMenuItemDividerElement;
+        "rux-modal": HTMLRuxModalElement;
         "rux-monitoring-icon": HTMLRuxMonitoringIconElement;
         "rux-monitoring-progress-icon": HTMLRuxMonitoringProgressIconElement;
         "rux-notification": HTMLRuxNotificationElement;
         "rux-option": HTMLRuxOptionElement;
         "rux-option-group": HTMLRuxOptionGroupElement;
         "rux-pop-up": HTMLRuxPopUpElement;
+        "rux-pop-up-menu": HTMLRuxPopUpMenuElement;
         "rux-progress": HTMLRuxProgressElement;
         "rux-push-button": HTMLRuxPushButtonElement;
         "rux-radio": HTMLRuxRadioElement;
@@ -32475,6 +32549,36 @@ declare namespace LocalJSX {
     }
     interface RuxMenuItemDivider {
     }
+    interface RuxModal {
+        /**
+          * Text for confirmation button
+         */
+        "confirmText"?: string;
+        /**
+          * Text for close button
+         */
+        "denyText"?: string;
+        /**
+          * Modal body message
+         */
+        "modalMessage"?: string;
+        /**
+          * Modal header title
+         */
+        "modalTitle"?: string;
+        /**
+          * Event that is fired when modal closes. If modal is closed by clicking on the default confirm or deny buttons (when no footer slot is provided), then true or false will be emitted respectively on the event.detail.
+         */
+        "onRuxmodalclosed"?: (event: RuxModalCustomEvent<boolean | null>) => void;
+        /**
+          * Event that is fired when modal opens
+         */
+        "onRuxmodalopened"?: (event: RuxModalCustomEvent<void>) => void;
+        /**
+          * Shows and hides modal
+         */
+        "open"?: boolean;
+    }
     interface RuxMonitoringIcon {
         /**
           * Displays an Astro icon matching this string. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols)
@@ -32600,6 +32704,36 @@ declare namespace LocalJSX {
           * The position strategy of the popup, either absolute or fixed.
          */
         "strategy"?: 'absolute' | 'fixed';
+    }
+    interface RuxPopUpMenu {
+        /**
+          * Element to anchor the menu to. If none is given the menu will anchor to the trigger element where aria-controls === menu id
+         */
+        "anchorEl"?: HTMLElement;
+        /**
+          * Emitted when the menu is closed.
+         */
+        "onRuxmenudidclose"?: (event: RuxPopUpMenuCustomEvent<void>) => void;
+        /**
+          * Emitted when the menu is open.
+         */
+        "onRuxmenudidopen"?: (event: RuxPopUpMenuCustomEvent<void>) => void;
+        /**
+          * Emitted when the menu is about to close
+         */
+        "onRuxmenuwillclose"?: (event: RuxPopUpMenuCustomEvent<void>) => void;
+        /**
+          * Emitted when the menu is about to open.
+         */
+        "onRuxmenuwillopen"?: (event: RuxPopUpMenuCustomEvent<void>) => void;
+        /**
+          * Boolean which controls when to show the menu
+         */
+        "open"?: boolean;
+        /**
+          * Optional element to trigger opening and closing of the menu. If none is supplied the element where aria-controls === menu id will be assigned
+         */
+        "triggerEl"?: HTMLElement;
     }
     interface RuxProgress {
         /**
@@ -34185,12 +34319,14 @@ declare namespace LocalJSX {
         "rux-menu": RuxMenu;
         "rux-menu-item": RuxMenuItem;
         "rux-menu-item-divider": RuxMenuItemDivider;
+        "rux-modal": RuxModal;
         "rux-monitoring-icon": RuxMonitoringIcon;
         "rux-monitoring-progress-icon": RuxMonitoringProgressIcon;
         "rux-notification": RuxNotification;
         "rux-option": RuxOption;
         "rux-option-group": RuxOptionGroup;
         "rux-pop-up": RuxPopUp;
+        "rux-pop-up-menu": RuxPopUpMenu;
         "rux-progress": RuxProgress;
         "rux-push-button": RuxPushButton;
         "rux-radio": RuxRadio;
@@ -35300,12 +35436,14 @@ declare module "@stencil/core" {
             "rux-menu": LocalJSX.RuxMenu & JSXBase.HTMLAttributes<HTMLRuxMenuElement>;
             "rux-menu-item": LocalJSX.RuxMenuItem & JSXBase.HTMLAttributes<HTMLRuxMenuItemElement>;
             "rux-menu-item-divider": LocalJSX.RuxMenuItemDivider & JSXBase.HTMLAttributes<HTMLRuxMenuItemDividerElement>;
+            "rux-modal": LocalJSX.RuxModal & JSXBase.HTMLAttributes<HTMLRuxModalElement>;
             "rux-monitoring-icon": LocalJSX.RuxMonitoringIcon & JSXBase.HTMLAttributes<HTMLRuxMonitoringIconElement>;
             "rux-monitoring-progress-icon": LocalJSX.RuxMonitoringProgressIcon & JSXBase.HTMLAttributes<HTMLRuxMonitoringProgressIconElement>;
             "rux-notification": LocalJSX.RuxNotification & JSXBase.HTMLAttributes<HTMLRuxNotificationElement>;
             "rux-option": LocalJSX.RuxOption & JSXBase.HTMLAttributes<HTMLRuxOptionElement>;
             "rux-option-group": LocalJSX.RuxOptionGroup & JSXBase.HTMLAttributes<HTMLRuxOptionGroupElement>;
             "rux-pop-up": LocalJSX.RuxPopUp & JSXBase.HTMLAttributes<HTMLRuxPopUpElement>;
+            "rux-pop-up-menu": LocalJSX.RuxPopUpMenu & JSXBase.HTMLAttributes<HTMLRuxPopUpMenuElement>;
             "rux-progress": LocalJSX.RuxProgress & JSXBase.HTMLAttributes<HTMLRuxProgressElement>;
             "rux-push-button": LocalJSX.RuxPushButton & JSXBase.HTMLAttributes<HTMLRuxPushButtonElement>;
             "rux-radio": LocalJSX.RuxRadio & JSXBase.HTMLAttributes<HTMLRuxRadioElement>;
