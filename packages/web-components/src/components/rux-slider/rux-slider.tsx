@@ -279,8 +279,8 @@ export class RuxSlider implements FormFieldInterface {
                             class="rux-range"
                             min={min}
                             max={max}
-                            value={value}
                             step={step}
+                            value={value}
                             disabled={disabled}
                             aria-label="slider"
                             aria-disabled={disabled ? 'true' : 'false'}
