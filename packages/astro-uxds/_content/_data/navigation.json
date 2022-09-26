@@ -94,10 +94,6 @@
         "url": "/patterns/modeless-panes"
       },
       {
-        "label": "Sample App",
-        "url": "/patterns/sample-app"
-      },
-      {
         "label": "Table",
         "url": "/patterns/table"
       },
