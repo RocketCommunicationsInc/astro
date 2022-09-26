@@ -8,7 +8,7 @@ title: Link
 
 # Link
 
-A Link (also known as a Hyperlink) is a clickable text element. It may be used for navigation and to trigger an event. Links are visualized to stand out from standard (non-clickable) text.
+A Link (also known as a hyperlink) is a clickable text element. It may be used for navigation and to trigger an event. Links are visualized to stand out from standard (non-clickable) text.
 
 ## Rules of Thumb
 
@@ -16,9 +16,15 @@ A Link (also known as a Hyperlink) is a clickable text element. It may be used f
   - Tell the user what will happen when clicking the Link.
   - Hint at the deeper content the Link will reveal.
 - Keep the text for Links short. Short Links are more visually scannable.
+- Links are to be styled in the Astro-defined primary interactive color.
+- Hovered links are to be styled in the same primary interactive color accompanied by an underline.
+- Un-clicked or un-hovered links have no underline.
+- Inline and standalone links are to be styled the same way.
+- Underlines for hover state are not needed for other elements like tabs, buttons, and pop up menus. However the link hover pattern with underlines are present on hovered pagination.
+- Link-styled icons do not have the underline unless they’re part of an inline text link. Without text, follow button guidance (no underline on hover).
 
 ::: note
-Avoid using "Click Here," or "Link."
+Avoid using “Click Here” or “Link” for the link text.
 :::
 
 ## Appearance and Behavior
@@ -32,12 +38,12 @@ Underlines can be applied by detaching the text style and selecting the three do
 ## Examples
 
 :::two-col
-![Do: Use Astro defined color for Links ](/img/components/links-do-1.png "Do: Use Astro defined color for Links ")
+![Do: Use the Astro-defined primary interactive color for links.](/img/components/links-do-1.png "Do: Use the Astro-defined primary interactive color for links.")
 
-![Don’t: Change text color on hover](/img/components/links-dont-1.png "Don’t: Change text color on hover")
+![Don’t: Style links with non-link colors.](/img/components/links-dont-1.png "Don’t: Style links with non-link colors.")
 
-![Do: Add an underline when hovering over a link.](/img/components/links-do-2.png "Do: Add an underline when hovering over a link.")
+![Do: Style hovered links with an underline without any color change.](/img/components/links-do-2.png "Do: Style hovered links with an underline without any color change.")
 
-![Don't: Forget to change to a hand cursor when hovering over a link or add additional decoration to links.](/img/components/links-dont-2.png "Don't: Forget to change to a hand cursor when hovering over a link or add additional decoration to links.")
+![Don’t: Add underlines on non-hovered links.](/img/components/links-dont-2.png "Don’t: Add underlines on non-hovered links.")
 
 :::
