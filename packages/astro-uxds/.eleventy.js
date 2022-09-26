@@ -4,6 +4,7 @@ module.exports = function (eleventyConfig) {
   const markdownItAnchor = require("markdown-it-anchor");
   const implicitFigures = require("markdown-it-implicit-figures");
   const markdownItFigure = require("./js/markdown-figure-it.js");
+  const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
   const fs = require("fs");
 
   // console.log(markdownIt.escapeHtml);
@@ -76,6 +77,42 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("fonts");
 
+  eleventyConfig.addPairedNunjucksShortcode(
+    "breaking",
+    function (content, title, impact) {
+      const badgeVariant = {
+        Low: "neutral",
+        Medium: "warning",
+        High: "danger",
+      };
+
+      return `
+      <div class="breaking-change">
+        <header>
+          <h3 style="color: var(--sl-color-${badgeVariant[impact]}-500);">${title}</h3>
+          <sl-badge variant="${badgeVariant[impact]}">${impact} Impact</sl-badge>
+        </header>
+        <div class="breaking-change__content">
+          ${content}
+        </div>
+      </div>
+      `;
+    }
+  );
+
+  eleventyConfig.addPairedNunjucksShortcode(
+    "component",
+    function (content, name) {
+      return `
+      <sl-details>
+        <summary slot="summary">${name}</summary>
+        ${content}
+      </sl-details>
+      `;
+    }
+  );
+
+  eleventyConfig.addPlugin(syntaxHighlight);
   //
   eleventyConfig.setBrowserSyncConfig({
     callbacks: {
