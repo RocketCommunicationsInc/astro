@@ -108,7 +108,7 @@ Bubble charts are used to visualize a data set with two to four dimensions. The 
 #### Histogram
 
 ![Histogram](/img/patterns/data-viz-histogram.png)
-Conveys an accurate representation of the distribution of numerical data. It is an estimate of the probability distribution of a continuous variable (e.g. Spectrum analyzer).
+Conveys an accurate representation of the distribution of numerical data. It is an estimate of the probability distribution of a continuous variable.
 
 :::
 

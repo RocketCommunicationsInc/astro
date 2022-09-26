@@ -91,7 +91,6 @@ title: Glossary
 - [Select Menu](/components/select) - A UI control that allows users to select a value from a list of values.
 - [Sign In](/patterns/sign-in) - A form input in which a user enters authenticating information to gain access to specific information or usage of an application.
 - [Slider](/components/slider) - A graphical control element that allows users to choose from a range of continuous and discrete values.
-- [Spectrum Analyzer](/components/spectrum-analyzer) - Often called “Spec-A”, Spectrum Analysis diagrams display power levels over a specific band.
 - [Status Indicator](/components/status-symbol) - Indicates the state of a device or feature in a standard and consistent way using color, shapes, labeling, and badging.
 - [Status System](/patterns/status-system) - A combination of colors and symbols to convey the status of a system.
 - Status Tags - A version of tags using colors and keywords to denote critical system information.

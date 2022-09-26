@@ -117,3 +117,9 @@ command = "npm run build"
 	to = "/patterns/forms-and-validation"
 	status = 301
 	force = true
+
+[[redirects]]
+from = "/components/spectrum-analyzer"
+to = "/"
+status = 301
+force = true
