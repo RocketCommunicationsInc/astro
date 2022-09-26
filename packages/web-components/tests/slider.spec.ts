@@ -58,9 +58,7 @@ test.describe('Slider', () => {
         // waitForTimeout here to ensure that the waitForEvent has started listening
         await Promise.all([
             page.waitForEvent('console', { timeout: 5000 }),
-            page
-                .waitForTimeout(500)
-                .then(() => el.click({ position: { x: 10, y: 10 } })),
+            el.click({ position: { x: 10, y: 10 } }),
         ])
     })
     test('should hear the ruxinput event', async ({ page }) => {
@@ -84,9 +82,7 @@ test.describe('Slider', () => {
 
         await Promise.all([
             page.waitForEvent('console', { timeout: 5000 }),
-            page
-                .waitForTimeout(500)
-                .then(() => el.click({ position: { x: 10, y: 10 } })),
+            el.click({ position: { x: 10, y: 10 } }),
         ])
     })
     test('should hear the ruxblur event', async ({ page }) => {
@@ -113,13 +109,7 @@ test.describe('Slider', () => {
 
         await Promise.all([
             page.waitForEvent('console', { timeout: 5000 }),
-            page
-                .waitForTimeout(500)
-                .then(() =>
-                    el
-                        .click({ position: { x: 10, y: 10 } })
-                        .then(() => btn.click())
-                ),
+            el.click({ position: { x: 10, y: 10 } }).then(() => btn.click()),
         ])
     })
 })

@@ -12572,6 +12572,90 @@ export namespace Components {
         "setSelected": (value: boolean) => Promise<void>;
     }
 }
+export interface RuxAccordionItemCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxAccordionItemElement;
+}
+export interface RuxCheckboxCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxCheckboxElement;
+}
+export interface RuxDialogCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxDialogElement;
+}
+export interface RuxInputCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxInputElement;
+}
+export interface RuxMenuCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxMenuElement;
+}
+export interface RuxNotificationCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxNotificationElement;
+}
+export interface RuxOptionCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxOptionElement;
+}
+export interface RuxOptionGroupCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxOptionGroupElement;
+}
+export interface RuxPopUpCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxPopUpElement;
+}
+export interface RuxPushButtonCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxPushButtonElement;
+}
+export interface RuxRadioCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxRadioElement;
+}
+export interface RuxRadioGroupCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxRadioGroupElement;
+}
+export interface RuxSegmentedButtonCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxSegmentedButtonElement;
+}
+export interface RuxSelectCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxSelectElement;
+}
+export interface RuxSliderCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxSliderElement;
+}
+export interface RuxSwitchCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxSwitchElement;
+}
+export interface RuxTabPanelsCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxTabPanelsElement;
+}
+export interface RuxTabsCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxTabsElement;
+}
+export interface RuxTextareaCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxTextareaElement;
+}
+export interface RuxTimeRegionCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxTimeRegionElement;
+}
+export interface RuxTreeNodeCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxTreeNodeElement;
+}
 declare global {
     interface HTMLRuxAccordionElement extends Components.RuxAccordion, HTMLStencilElement {
     }
@@ -20362,7 +20446,7 @@ declare namespace LocalJSX {
         /**
           * Fired when an element has expanded
          */
-        "onRuxexpanded"?: (event: CustomEvent<any>) => void;
+        "onRuxexpanded"?: (event: RuxAccordionItemCustomEvent<any>) => void;
     }
     interface RuxButton {
         /**
@@ -20430,15 +20514,15 @@ declare namespace LocalJSX {
         /**
           * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
          */
-        "onRuxblur"?: (event: CustomEvent<any>) => void;
+        "onRuxblur"?: (event: RuxCheckboxCustomEvent<any>) => void;
         /**
           * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */
-        "onRuxchange"?: (event: CustomEvent<any>) => void;
+        "onRuxchange"?: (event: RuxCheckboxCustomEvent<any>) => void;
         /**
           * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
          */
-        "onRuxinput"?: (event: CustomEvent<any>) => void;
+        "onRuxinput"?: (event: RuxCheckboxCustomEvent<any>) => void;
         /**
           * The checkbox value
          */
@@ -20594,11 +20678,11 @@ declare namespace LocalJSX {
         /**
           * Event that is fired when dialog closes. If dialog is closed by clicking on the default confirm or deny buttons (when no footer slot is provided), then true or false will be emitted respectively on the event.detail.
          */
-        "onRuxdialogclosed"?: (event: CustomEvent<boolean | null>) => void;
+        "onRuxdialogclosed"?: (event: RuxDialogCustomEvent<boolean | null>) => void;
         /**
           * Event that is fired when dialog opens
          */
-        "onRuxdialogopened"?: (event: CustomEvent<void>) => void;
+        "onRuxdialogopened"?: (event: RuxDialogCustomEvent<void>) => void;
         /**
           * Shows and hides dialog
          */
@@ -32300,19 +32384,19 @@ declare namespace LocalJSX {
         /**
           * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
          */
-        "onRuxblur"?: (event: CustomEvent<any>) => void;
+        "onRuxblur"?: (event: RuxInputCustomEvent<any>) => void;
         /**
           * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */
-        "onRuxchange"?: (event: CustomEvent<any>) => void;
+        "onRuxchange"?: (event: RuxInputCustomEvent<any>) => void;
         /**
           * Fired when an element has gained focus - [HTMLElement/focus_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event)
          */
-        "onRuxfocus"?: (event: CustomEvent<any>) => void;
+        "onRuxfocus"?: (event: RuxInputCustomEvent<any>) => void;
         /**
           * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
          */
-        "onRuxinput"?: (event: CustomEvent<any>) => void;
+        "onRuxinput"?: (event: RuxInputCustomEvent<any>) => void;
         /**
           * The input placeholder text
          */
@@ -32373,7 +32457,7 @@ declare namespace LocalJSX {
         /**
           * Emits when a rux-menu-item is selected. Emits the rux-menu-item selected in the event detail.
          */
-        "onRuxmenuselected"?: (event: CustomEvent<any>) => void;
+        "onRuxmenuselected"?: (event: RuxMenuCustomEvent<any>) => void;
     }
     interface RuxMenuItem {
         /**
@@ -32459,7 +32543,7 @@ declare namespace LocalJSX {
         /**
           * Fires when the notification banner is closed
          */
-        "onRuxclosed"?: (event: CustomEvent<boolean>) => void;
+        "onRuxclosed"?: (event: RuxNotificationCustomEvent<boolean>) => void;
         /**
           * Set to true to display the Banner and begin countdown to close (if a close-after Number value is provided).
          */
@@ -32482,7 +32566,7 @@ declare namespace LocalJSX {
           * The option label
          */
         "label": string;
-        "onRux-option-changed"?: (event: CustomEvent<void>) => void;
+        "onRux-option-changed"?: (event: RuxOptionCustomEvent<void>) => void;
         /**
           * The option value
          */
@@ -32493,17 +32577,17 @@ declare namespace LocalJSX {
           * The option group label
          */
         "label"?: string;
-        "onRux-option-group-changed"?: (event: CustomEvent<void>) => void;
+        "onRux-option-group-changed"?: (event: RuxOptionGroupCustomEvent<void>) => void;
     }
     interface RuxPopUp {
         /**
           * Emits when the pop up has closed.
          */
-        "onRuxpopupclosed"?: (event: CustomEvent<any>) => void;
+        "onRuxpopupclosed"?: (event: RuxPopUpCustomEvent<any>) => void;
         /**
           * Emits when the pop up has opened
          */
-        "onRuxpopupopened"?: (event: CustomEvent<any>) => void;
+        "onRuxpopupopened"?: (event: RuxPopUpCustomEvent<any>) => void;
         /**
           * Determines if the pop up is open or closed
          */
@@ -32559,11 +32643,11 @@ declare namespace LocalJSX {
         /**
           * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
          */
-        "onRuxblur"?: (event: CustomEvent<any>) => void;
+        "onRuxblur"?: (event: RuxPushButtonCustomEvent<any>) => void;
         /**
           * Fired when an alteration to the input's value is committed by the user and emits the value on the event.detail - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
          */
-        "onRuxchange"?: (event: CustomEvent<any>) => void;
+        "onRuxchange"?: (event: RuxPushButtonCustomEvent<any>) => void;
         /**
           * Changes size of a push button from medium to small or large by setting sizing classes rux-button--small rux-button--large
          */
@@ -32593,7 +32677,7 @@ declare namespace LocalJSX {
         /**
           * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
          */
-        "onRuxblur"?: (event: CustomEvent<any>) => void;
+        "onRuxblur"?: (event: RuxRadioCustomEvent<any>) => void;
         /**
           * The radio value
          */
@@ -32623,7 +32707,7 @@ declare namespace LocalJSX {
         /**
           * Fired when the value of the input changes and emits that value on the event.detail. - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */
-        "onRuxchange"?: (event: CustomEvent<any>) => void;
+        "onRuxchange"?: (event: RuxRadioGroupCustomEvent<any>) => void;
         /**
           * Marks that a selection from the radio-group is requried.
          */
@@ -32651,7 +32735,7 @@ declare namespace LocalJSX {
         /**
           * Fires when the value property has changed and emits that value on the event.detail.
          */
-        "onRuxchange"?: (event: CustomEvent<any>) => void;
+        "onRuxchange"?: (event: RuxSegmentedButtonCustomEvent<any>) => void;
         /**
           * When passed in on load, this selects the first button segment with a matching label. When the selected segment changes, this property updates with the currently selected value, which reflects back to the component attribute. If no button segment label matches this string, then no segment is selected. This value takes priority over setting selected boolean property on the items in the data array.
          */
@@ -32701,11 +32785,11 @@ declare namespace LocalJSX {
         /**
           * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
          */
-        "onRuxblur"?: (event: CustomEvent<any>) => void;
+        "onRuxblur"?: (event: RuxSelectCustomEvent<any>) => void;
         /**
           * Event Emitted when the Value of the Select is Changed
          */
-        "onRuxchange"?: (event: CustomEvent<void>) => void;
+        "onRuxchange"?: (event: RuxSelectCustomEvent<void>) => void;
         /**
           * Sets the field as required
          */
@@ -32755,15 +32839,15 @@ declare namespace LocalJSX {
         /**
           * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
          */
-        "onRuxblur"?: (event: CustomEvent<any>) => void;
+        "onRuxblur"?: (event: RuxSliderCustomEvent<any>) => void;
         /**
           * Fired when the element's value is altered by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
          */
-        "onRuxchange"?: (event: CustomEvent<any>) => void;
+        "onRuxchange"?: (event: RuxSliderCustomEvent<any>) => void;
         /**
           * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */
-        "onRuxinput"?: (event: CustomEvent<any>) => void;
+        "onRuxinput"?: (event: RuxSliderCustomEvent<any>) => void;
         /**
           * Step amount of slider value.
          */
@@ -32803,15 +32887,15 @@ declare namespace LocalJSX {
         /**
           * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
          */
-        "onRuxblur"?: (event: CustomEvent<any>) => void;
+        "onRuxblur"?: (event: RuxSwitchCustomEvent<any>) => void;
         /**
           * Fired when the value of the input changes and emits that value on the event.detail. - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */
-        "onRuxchange"?: (event: CustomEvent<any>) => void;
+        "onRuxchange"?: (event: RuxSwitchCustomEvent<any>) => void;
         /**
           * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
          */
-        "onRuxinput"?: (event: CustomEvent<any>) => void;
+        "onRuxinput"?: (event: RuxSwitchCustomEvent<any>) => void;
         /**
           * The switch value
          */
@@ -32837,7 +32921,7 @@ declare namespace LocalJSX {
         /**
           * Emits a list of the Tab Panels on the event.detail which have been passed in
          */
-        "onRuxregisterpanels"?: (event: CustomEvent<HTMLRuxTabPanelsElement[]>) => void;
+        "onRuxregisterpanels"?: (event: RuxTabPanelsCustomEvent<HTMLRuxTabPanelsElement[]>) => void;
     }
     interface RuxTable {
     }
@@ -32861,7 +32945,7 @@ declare namespace LocalJSX {
         /**
           * Fires whenever a new tab is selected, and emits the selected tab on the event.detail.
          */
-        "onRuxselected"?: (event: CustomEvent<any>) => void;
+        "onRuxselected"?: (event: RuxTabsCustomEvent<any>) => void;
         /**
           * If passed or set to true, displays the tabs in a smaller style, suitable for limited-space uses.
          */
@@ -32909,15 +32993,15 @@ declare namespace LocalJSX {
         /**
           * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
          */
-        "onRuxblur"?: (event: CustomEvent<any>) => void;
+        "onRuxblur"?: (event: RuxTextareaCustomEvent<any>) => void;
         /**
           * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */
-        "onRuxchange"?: (event: CustomEvent<any>) => void;
+        "onRuxchange"?: (event: RuxTextareaCustomEvent<any>) => void;
         /**
           * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
          */
-        "onRuxinput"?: (event: CustomEvent<any>) => void;
+        "onRuxinput"?: (event: RuxTextareaCustomEvent<any>) => void;
         /**
           * The textarea placeholder text
          */
@@ -32948,7 +33032,7 @@ declare namespace LocalJSX {
           * Optionally hide the bottom right timestamp.
          */
         "hideTimestamp"?: boolean;
-        "onRuxtimeregionchange"?: (event: CustomEvent<any>) => void;
+        "onRuxtimeregionchange"?: (event: RuxTimeRegionCustomEvent<any>) => void;
         /**
           * Visually indicates a partial time regions. Partial time regions are time regions that start or end outside of the current range of the timeline.
          */
@@ -33011,15 +33095,15 @@ declare namespace LocalJSX {
         /**
           * Fires when the user collapses a tree node and emits the node's id on the event.detail.
          */
-        "onRuxtreenodecollapsed"?: (event: CustomEvent<string>) => void;
+        "onRuxtreenodecollapsed"?: (event: RuxTreeNodeCustomEvent<string>) => void;
         /**
           * Fires when the user expands a tree node and emits the node's id on the event.detail.
          */
-        "onRuxtreenodeexpanded"?: (event: CustomEvent<string>) => void;
+        "onRuxtreenodeexpanded"?: (event: RuxTreeNodeCustomEvent<string>) => void;
         /**
           * Fires when the user selects a tree node and emits the node's id on the event.detail.
          */
-        "onRuxtreenodeselected"?: (event: CustomEvent<string>) => void;
+        "onRuxtreenodeselected"?: (event: RuxTreeNodeCustomEvent<string>) => void;
         /**
           * Sets the selected state
          */
