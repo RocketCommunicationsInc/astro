@@ -1,5 +1,5 @@
-const tokens = require("@astrouxds/design-tokens/dist/json/docs.json");
-const lightTokens = require("@astrouxds/design-tokens/dist/json/docs-light.json");
+const tokens = require("@astrouxds/tokens/dist/json/docs.json");
+const lightTokens = require("@astrouxds/tokens/dist/json/docs-light.json");
 
 module.exports = {
   reference: (theme, category) => {
@@ -42,7 +42,7 @@ module.exports = {
     });
   },
   findByName: (name) => {
-    return tokens.find(token => token.name === name)
+    return tokens.find((token) => token.name === name);
   },
   lookupProperty: (category, property = null) => {
     if (category === "boxShadow") {

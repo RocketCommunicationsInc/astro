@@ -43,11 +43,11 @@
     }
 
     ::-webkit-scrollbar-track:vertical {
-        box-shadow: var(--shadow-inner-scrollbar-vertical);
+        box-shadow: var(--scrollbar-shadow-inner-vertical);
     }
 
     ::-webkit-scrollbar-track:horizontal {
-        box-shadow: var(--shadow-inner-scrollbar-horizontal);
+        box-shadow: var(--scrollbar-shadow-inner-horizontal);
     }
 }
 
