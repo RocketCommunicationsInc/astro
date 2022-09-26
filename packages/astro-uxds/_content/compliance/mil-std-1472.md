@@ -1,5 +1,5 @@
 ---
-path: /milstd1472h-compliance
+path: /compliance/mil-std-1472
 date: Last Modified
 layout: interior.template.njk
 title: foo
