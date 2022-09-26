@@ -8,7 +8,6 @@ test.describe('Accordion', () => {
         await setBodyContent(
             page,
             `
-            <body>
             <div style="width: 300px;">
             <rux-accordion id="accordion-collapsed">
             <rux-accordion-item>
@@ -184,7 +183,6 @@ test.describe('Accordion', () => {
                 </rux-accordion-item>
             </rux-accordion>
              </div>
-             </body>
              `
         )
     })
