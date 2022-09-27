@@ -184,8 +184,8 @@
         "url": "/components/pagination"
       },
       {
-        "label": "Pop Up",
-        "url": "/components/pop-up"
+        "label": "Pop Up Menu",
+        "url": "/components/pop-up-menu"
       },
       {
         "label": "Progress",
@@ -343,6 +343,10 @@
     "label": "Compliance",
     "url": "/compliance",
     "items": [
+      {
+        "label": "EGS Design Compliance",
+        "url": "/compliance/egs-design-compliance"
+      },
       {
         "label": "MIL-STD 1472H",
         "url": "/compliance/mil-std-1472"
