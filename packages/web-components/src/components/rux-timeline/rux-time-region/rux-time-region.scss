@@ -44,19 +44,19 @@
 }
 
 .rux-time-region--normal:not(.rux-time-region--selected) {
-    border-color: var(--status-symbol-color-fill-normal);
+    border-color: var(--status-symbol-color-fill-normal-on-dark);
 }
 
 .rux-time-region--critical:not(.rux-time-region--selected) {
-    border-color: var(--status-symbol-color-fill-critical);
+    border-color: var(--status-symbol-color-fill-critical-on-dark);
 }
 
 .rux-time-region--caution:not(.rux-time-region--selected) {
-    border-color: var(--status-symbol-color-fill-caution);
+    border-color: var(--status-symbol-color-fill-caution-on-dark);
 }
 
 .rux-time-region--standby:not(.rux-time-region--selected) {
-    border-color: var(--status-symbol-color-fill-standby);
+    border-color: var(--status-symbol-color-fill-standby-on-dark);
 }
 
 .hidden {
