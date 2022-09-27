@@ -34,6 +34,9 @@
         cursor: pointer;
         background-position: center;
     }
+    input::placeholder {
+        color: var(--color-text-placeholder);
+    }
     .rux-input {
         input {
             border: none;
@@ -118,9 +121,6 @@
         }
         &--invalid:hover {
             box-shadow: var(--color-border-error) 0 0 0 1px inset;
-        }
-        &::placeholder {
-            color: var(--color-text-placeholder);
         }
         .rux-input-prefix,
         .rux-input-suffix {

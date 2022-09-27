@@ -341,7 +341,13 @@
   },
   {
     "label": "Compliance",
-    "url": "/compliance"
+    "url": "/compliance",
+    "items": [
+      {
+        "label": "MIL-STD 1472H",
+        "url": "/compliance/mil-std-1472"
+      }
+    ]
   },
   {
     "label": "Releases",
