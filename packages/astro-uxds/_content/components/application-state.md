@@ -78,7 +78,7 @@ Only use Tag colors when necessary as overuse of colors may reduce efficacy of m
 
 ![Don’t: Implement state switching in the UI without confirming that this functionality is approved by your client or security expert.](/img/components/app-state-dont-4.png "Don’t: Implement state switching in the UI without confirming that this functionality is approved by your client or security expert.")
 
-![Do: Change text color to <span style="color:#fff;background-color:#182635;font-family:monospace;padding:0 0.25rem;">--colorTertiaryDarken4</span> if the background color makes the original text color hard to read.](/img/components/app-state-do-5.png "Do: Change text color to --colorTertiaryDarken4 if the background color makes the original text color hard to read.")
+![Do: Change text color to <span style="color:#fff;background-color:#182635;font-family:monospace;padding:0 0.25rem;">--color-palette-grey-800</span> if the background color makes the original text color hard to read.](/img/components/app-state-do-5.png "Do: Change text color to --color-palette-grey-800 if the background color makes the original text color hard to read.")
 
 ![Don’t: Use non-default or non-tag colors for background colors.](/img/components/app-state-dont-5.png "Don’t: Use non-default or non-tag colors for background colors.")
 :::

@@ -267,7 +267,7 @@
             {
               "numeral": 2,
               "rule": "Checkboxes shall act independently of others in a group.",
-              "status": "curent",
+              "status": "current",
               "tier": 3
             },
             {
@@ -912,7 +912,7 @@
             {
               "numeral": 3,
               "rule": "Only government-approved control or classification text shall be included in Overall Marking banners and Portion Markings.",
-              "status": "curent",
+              "status": "current",
               "tier": 1
             },
             {
