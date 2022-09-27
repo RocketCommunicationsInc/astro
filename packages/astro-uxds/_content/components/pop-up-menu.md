@@ -13,7 +13,7 @@ theme: true
 
 # Pop Up Menu
 
-A Pop Up provides users with a quick way to access common actions for a highlighted item.
+A Pop Up Menu provides users with a quick way to access common actions for a highlighted item.
 
 ## Rules of Thumb
 
@@ -27,17 +27,17 @@ A Pop Up provides users with a quick way to access common actions for a highligh
 ## Examples
 
 :::two-col
-![Do: Position Pop Ups to avoid obscuring vital screen elements like Classification Banners](/img/components/popup-do-1.png "Do: Position Pop Ups to avoid obscuring vital screen elements like Classification Banners")
+![Do: Position Pop Up Menus to avoid obscuring vital screen elements like Classification Banners](/img/components/popup-do-1.png "Do: Position Pop Up Menus to avoid obscuring vital screen elements like Classification Banners")
 
 ![Don't: Cover vital screen elements like Classification Markings](/img/components/popup-dont-1.png "Cover vital screen elements like Classification Markings")
 
-![Do: Position a Pop Up so it stays within the edges of the frame](/img/components/popup-do-2.png "Position a Pop Up so it stays within the edges of the frame")
+![Do: Position a Pop Up Menu so it stays within the edges of the frame](/img/components/popup-do-2.png "Position a Pop Up Menu so it stays within the edges of the frame")
 
-![Don't: Position Pop Up so it exceeds the limits of the frame](/img/components/popup-dont-2.png "Don't: Position Pop Up so it exceeds the limits of the frame")
+![Don't: Position Pop Up Menu so it exceeds the limits of the frame](/img/components/popup-dont-2.png "Don't: Position Pop Up Menu so it exceeds the limits of the frame")
 
-![Do: Originate Pop Up from obvious, interactable triggers](/img/components/popup-do-3.png "Do: Originate Pop Up from obvious, interactable triggers")
+![Do: Originate Pop Up Menu from obvious, interactable triggers](/img/components/popup-do-3.png "Do: Originate Pop Up Menu from obvious, interactable triggers")
 
-![Don't: Trigger Pop Up from items that don’t appear to be interactable](/img/components/popup-dont-3.png "Don't: Trigger Pop Up from items that don’t appear to be interactable")
+![Don't: Trigger Pop Up Menu from items that don’t appear to be interactable](/img/components/popup-dont-3.png "Don't: Trigger Pop Up Menu from items that don’t appear to be interactable")
 
 ![Do: Use ellipses to indicate when further action will be required for that item](/img/components/popup-do-4.png "Do: Use ellipses to indicate when further action will be required for that item")
 
