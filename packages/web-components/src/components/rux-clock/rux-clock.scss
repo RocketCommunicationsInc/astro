@@ -1,6 +1,6 @@
 :host {
     display: flex;
-    margin: 0;
+    margin: var(--spacing-0);
     color: var(--color-palette-neutral-000);
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -40,15 +40,15 @@
     overflow-y: hidden;
     text-overflow: ellipsis;
     height: var(--spacing-10);
-    padding: 0px var(--spacing-3);
+    padding: var(--spacing-0) var(--spacing-3);
 }
 
 :host([small]) .rux-clock__segment__value {
     height: var(--spacing-10);
-    padding: 0px var(--spacing-3);
+    padding: var(--spacing-0) var(--spacing-3);
     padding: var(--spacing-1) var(--spacing-3);
     font-size: 1.15rem;
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
 }
 
 .rux-clock__segment__label {
@@ -58,7 +58,7 @@
     letter-spacing: var(--font-body-2-letter-spacing);
     color: var(--color-palette-neutral-000);
     background: var(--gsb-color-background);
-    padding: 0px var(--spacing-3) 0px var(--spacing-3);
+    padding: var(--spacing-0) var(--spacing-3) var(--spacing-0) var(--spacing-3);
     line-height: var(--font-body-3-line-height);
     width: -moz-available;
     width: -webkit-fill-available;
@@ -71,5 +71,5 @@
 }
 
 .rux-clock__aos {
-    margin-left: 1rem;
+    margin-left: var(--spacing-4);
 }
