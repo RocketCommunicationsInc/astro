@@ -123,3 +123,9 @@ command = "npm run build"
 	to = "/"
 	status = 301
 	force = true
+
+[[redirects]]
+	from = "/compliance"
+	to = "/compliance/egs-design-compliance"
+	status = 301
+	force = true

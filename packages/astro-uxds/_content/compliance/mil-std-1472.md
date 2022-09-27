@@ -7,7 +7,7 @@ title: MIL-STD-1472H Compliance
 
 # MIL-STD-1472H Compliance
 
-The Astro Space UX Design System is designed to support the development of custom space applications with established interaction patterns and best practices. To this end, Astro UXDS strives to achieve compliance with applicable DOD design standards. Astro 7 was audited to determine its level of compliance with relevant items in Section 5.17 (Information Systems) of MIL-STD-1472H, and as of September 29, 2022 this is our assessment of Astro UXDS compliance.
+The Astro Space UX Design System is designed to support the development of custom space applications with established interaction patterns and best practices. To this end, Astro UXDS strives to achieve compliance with applicable DOD design standards. Astro 7 was audited to determine its level of compliance with relevant items in Section 5.17 (Information Systems) of <a href="https://quicksearch.dla.mil/qsdocdetails.aspx?ident_number=36903" target="_blank">MIL-STD-1472H</a>, and as of September 29, 2022 this is our assessment of Astro UXDS compliance.
 
 For the items determined to be Non-Compliant, we are looking at the level of effort to achieve compliance.
 
