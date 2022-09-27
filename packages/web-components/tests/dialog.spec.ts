@@ -274,6 +274,41 @@ test.describe(
                     expect(e).toBeFalsy()
                 })
         })
+        test('it resets detail.value after event is emitted', async ({
+            page,
+        }) => {
+            //* The _useInput of rux-dialog.tsx would not be resetted to default value after a choice was
+            //* made that closed the dialog. Therefore, if the same dialog opened again and was clicked off of to close,
+            //* it would emit the previous value in e.detail rather than null, the default value.
+            await page.addScriptTag({
+                content: `
+            document.addEventListener('ruxdialogclosed', (e) => {
+                console.log(e.detail)
+            `,
+            })
+            // Using a counter here to get around the first console log of 'false' when dialog is closed the first time.
+            let counter = 1
+            page.on('console', async (msg) => {
+                if (counter === 2) {
+                    expect(msg.text()).toBe('null')
+                }
+                counter++
+            })
+            await page.locator('#true').click()
+            const ctcTrueModal = page.locator('#ctc-true')
+
+            await ctcTrueModal.locator('rux-button').first().click()
+
+            // open it again, close it by click off
+            await page.locator('#true').click()
+
+            await Promise.all([
+                page.waitForEvent('console', { timeout: 5000 }),
+                await page
+                    .locator('body')
+                    .click({ position: { x: 10, y: 10 } }),
+            ])
+        })
         /*
         Need to test: 
         - With slots? Not sure if that's acutally beneficial. 

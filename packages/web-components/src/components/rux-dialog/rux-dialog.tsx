@@ -137,6 +137,8 @@ export class RuxDialog {
         this.open
             ? this.ruxDialogOpened.emit()
             : this.ruxDialogClosed.emit(this._userInput)
+        //reset userInput after it's emitted
+        this._userInput = null
     }
 
     private _handleDialogChoice(e: MouseEvent) {
