@@ -30,14 +30,14 @@ Each Status Symbol is a combination of a Status Color and a shape. The shapes ar
 
 ## Status Colors
 
-|                                                              | Hex     | RGB         | CSS                                           | Synonyms                                        |
-| ------------------------------------------------------------ | ------- | ----------- | --------------------------------------------- | ----------------------------------------------- |
-| ![Status Color: Critical ](/img/swatches/critical__dark.svg) | #ff3838 | 255,56,56   | `--status-symbol-color-fill-critical-on-dark` | Critical, alert, form, error, emergency, urgent |
-| ![Status Color: Serious ](/img/swatches/serious__dark.svg)   | #ffb302 | 255,179,2   | `--status-symbol-color-fill-serious-on-dark`  | Serious, error, warning, needs attention        |
-| ![Status Color: Caution ](/img/swatches/caution__dark.svg)   | #fce83a | 252,232,58  | `--status-symbol-color-fill-caution-on-dark`  | Caution, unstable, unsatisfactory               |
-| ![Status Color: Normal ](/img/swatches/normal__dark.svg)     | #56f000 | 86,240,0    | `--status-symbol-color-fill-normal-on-dark`   | Normal, on, ok, fine, go, satisfactory          |
-| ![Status Color: Standby ](/img/swatches/standby__dark.svg)   | #2dccff | 45,204,255  | `--status-symbol-color-fill-standby-on-dark`  | Standby, available, enabled                     |
-| ![Status Color: Off ](/img/swatches/off__dark.svg)           | #9ea7ad | 158,167,173 | `--status-symbol-color-fill-off-on-dark`      | Off, unavailable, disabled                      |
+|                                                              | Hex     | RGB         | CSS                       | Synonyms                                        |
+| ------------------------------------------------------------ | ------- | ----------- | ------------------------- | ----------------------------------------------- |
+| ![Status Color: Critical ](/img/swatches/critical__dark.svg) | #ff3838 | 255,56,56   | `--color-status-critical` | Critical, alert, form, error, emergency, urgent |
+| ![Status Color: Serious ](/img/swatches/serious__dark.svg)   | #ffb302 | 255,179,2   | `--color-status-serious`  | Serious, error, warning, needs attention        |
+| ![Status Color: Caution ](/img/swatches/caution__dark.svg)   | #fce83a | 252,232,58  | `--color-status-caution`  | Caution, unstable, unsatisfactory               |
+| ![Status Color: Normal ](/img/swatches/normal__dark.svg)     | #56f000 | 86,240,0    | `--color-status-normal`   | Normal, on, ok, fine, go, satisfactory          |
+| ![Status Color: Standby ](/img/swatches/standby__dark.svg)   | #2dccff | 45,204,255  | `--color-status-standby`  | Standby, available, enabled                     |
+| ![Status Color: Off ](/img/swatches/off__dark.svg)           | #9ea7ad | 158,167,173 | `--color-status-off`      | Off, unavailable, disabled                      |
 
 ## Status Colors-Light Background
 
