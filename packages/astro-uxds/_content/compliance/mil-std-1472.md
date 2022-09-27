@@ -13,7 +13,7 @@ For the items determined to be Non-Compliant, we are looking at the level of eff
 
 For the items determined to be Not Applicable to Astro UXDS, many times the onus is on the application developer to ensure compliance for those items is met. Astro UXDS often offers guidance or components that can help achieve compliance, but cannot do so directly.
 
-If you have input or would like to give feedback, please submit your input here <span style="color:red;">[link to GitHub discussion]</span>.
+If you have input or would like to give feedback, please submit your input [here](https://github.com/RocketCommunicationsInc/astro/discussions/766).
 
 <div class="release-table">
 
