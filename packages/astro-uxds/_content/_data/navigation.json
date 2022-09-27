@@ -344,6 +344,10 @@
     "url": "/compliance",
     "items": [
       {
+        "label": "EGS Design Compliance",
+        "url": "/compliance/egs-design-compliance"
+      },
+      {
         "label": "MIL-STD 1472H",
         "url": "/compliance/mil-std-1472"
       }
