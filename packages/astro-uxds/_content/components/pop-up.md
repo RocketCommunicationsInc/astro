@@ -1,9 +1,9 @@
 ---
 tags: components
-path: /components/pop-up
+path: /components/pop-up-menu
 date: Last Modified
 layout: components.template.njk
-title: Pop Up
+title: Pop Up Menu
 demo: components-pop-up--default-story
 storybook: components-pop-up--default-story
 git: rux-pop-up
@@ -11,7 +11,7 @@ height: 250px
 theme: true
 ---
 
-# Pop Up
+# Pop Up Menu
 
 A Pop Up provides users with a quick way to access common actions for a highlighted item.
 

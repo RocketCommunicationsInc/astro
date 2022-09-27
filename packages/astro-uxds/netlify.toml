@@ -123,3 +123,9 @@ command = "npm run build"
 	to = "/"
 	status = 301
 	force = true
+
+[[redirects]]
+	from = "/components/pop-up"
+	to = "/components/pop-up-menu"
+	status = 301
+	force = true
