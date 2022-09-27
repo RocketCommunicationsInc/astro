@@ -1,6 +1,6 @@
 # Menu Item Divider
 
-A Menu Item divider component for use in dividing items in Pop-up, Select, and Multi-Select menus.
+A Menu Item divider component for use in dividing items in Pop Up, Select, and Multi-Select menus.
 
 ## Guidelines
 

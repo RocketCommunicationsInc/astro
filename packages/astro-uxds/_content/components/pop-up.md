@@ -13,7 +13,7 @@ theme: true
 
 # Pop Up
 
-A Pop-Up provides users with a quick way to access common actions for a highlighted item.
+A Pop Up provides users with a quick way to access common actions for a highlighted item.
 
 ## Rules of Thumb
 
