@@ -13,8 +13,8 @@ exports[`rux-monitoring-icon renders 1`] = `
           10K
         </div>
       </div>
-      <div class="rux-advanced-status__label">
-        <span part="monitoring-label">
+      <div class="rux-advanced-status__label" part="monitoring-label">
+        <span>
           Altitude for satellite X
         </span>
         <span class="rux-advanced-status__sublabel" part="monitoring-sublabel">
