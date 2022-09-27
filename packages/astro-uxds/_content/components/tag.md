@@ -42,16 +42,16 @@ Tags are most commonly used in large data sets, such as tables, to help filter a
 ## Examples
 
 :::two-col
-![Do: Use Status Tags to show system status.](/img/components/tag-do-1.png "Do: Use Status Tags to show system status.")
+![Do: Use Status Tags to show system status.](/img/components/tags-do-1.png "Do: Use Status Tags to show system status.")
 
-![Don’t: Don’t mix interactive and static tags. Tags that are being used to filter or organize data should have consistent behavior.](/img/components/tag-dont-1.png "Don’t: Don’t mix interactive and static tags. Tags that are being used to filter or organize data should have consistent behavior.")
+![Don’t: Don’t mix interactive and static tags. Tags that are being used to filter or organize data should have consistent behavior.](/img/components/tags-dont-1.png "Don’t: Don’t mix interactive and static tags. Tags that are being used to filter or organize data should have consistent behavior.")
 
-![Do: Use tags when items are mapped to multiple categories and you need to differentiate between them.](/img/components/tag-do-2.png "Do: Use tags when items are mapped to multiple categories and you need to differentiate between them.")
+![Do: Use tags when items are mapped to multiple categories and you need to differentiate between them.](/img/components/tags-do-2.png "Do: Use tags when items are mapped to multiple categories and you need to differentiate between them.")
 
-![Don’t: When writing tags, avoid line-wrapping and utilize short keywords when possible.](/img/components/tag-dont-2.png "Don’t: When writing tags, avoid line-wrapping and utilize short keywords when possible.")
+![Don’t: When writing tags, avoid line-wrapping and utilize short keywords when possible.](/img/components/tags-dont-2.png "Don’t: When writing tags, avoid line-wrapping and utilize short keywords when possible.")
 
-![Do: Use text colors in tags that pass WCAG AA contrast tests compared to the tags' background colors.](/img/components/tag-do-3.png "Do: Use text colors in tags that pass WCAG AA contrast tests compared to the tags' background colors.")
+![Do: Use text colors in tags that pass WCAG AA contrast tests compared to the tags' background colors.](/img/components/tags-do-3.png "Do: Use text colors in tags that pass WCAG AA contrast tests compared to the tags' background colors.")
 
-![Don’t: Use too many colors for tags. If you need to use multiple colors, ensure that the colors are meaningful or differentiated enough to your users to help recall and recognition.](/img/components/tag-dont-3.png "Don’t: Use too many colors for tags. If you need to use multiple colors, ensure that the colors are meaningful or differentiated enough to your users to help recall and recognition.")
+![Don’t: Use too many colors for tags. If you need to use multiple colors, ensure that the colors are meaningful or differentiated enough to your users to help recall and recognition.](/img/components/tags-dont-3.png "Don’t: Use too many colors for tags. If you need to use multiple colors, ensure that the colors are meaningful or differentiated enough to your users to help recall and recognition.")
 
 :::
