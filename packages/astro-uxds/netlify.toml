@@ -125,6 +125,12 @@ command = "npm run build"
 	force = true
 
 [[redirects]]
+	from = "/components/pop-up"
+	to = "/components/pop-up-menu"
+  status = 301
+	force = true
+
+[[redirects]]
 	from = "/compliance"
 	to = "/compliance/egs-design-compliance"
 	status = 301

@@ -610,9 +610,9 @@
           ]
         },
         {
-          "name": "Pop Up",
+          "name": "Pop Up Menu",
           "numeral": 11,
-          "link": "/components/pop-up/",
+          "link": "/components/pop-up-menu/",
           "rules": [
             {
               "numeral": 1,
@@ -634,7 +634,7 @@
             },
             {
               "numeral": 4,
-              "rule": "Pop Ups shall not exceed 25 menu items.",
+              "rule": "Pop Up Menus shall not exceed 25 menu items.",
               "status": "current",
               "tier": 3
             }
