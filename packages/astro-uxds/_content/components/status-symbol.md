@@ -24,6 +24,12 @@ The Status Symbol combines color and shape to create a standard and consistent w
 - Only use the provided colors for status.
 - Use the highest color possible if multiple statuses are consolidated. For example, if the statuses of underlying components are green, yellow, and red, the consolidated indicator is red.
 
+::: note
+Adding a title attribute to status elements can improve accessibility by offering additional information about the status when the user hovers over the element or when used in conjunction with a screen reader.
+
+Place your cursor over any Status Symbol above to see an example.
+:::
+
 ## Related Pages
 
 - For a detailed description of how Status Symbols are used within Monitoring Icons, see [Icons and Symbols](/components/icons-and-symbols).

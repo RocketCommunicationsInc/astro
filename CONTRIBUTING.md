@@ -143,3 +143,30 @@ This command takes each .svg file in `src/icons` and creates Stencil components 
 ### Adding a new Icon or updating an existing Icon
 
 The `src/icons` folder is the single source of truth for Astro icons. To add a new icon, simply add the SVG file to the directory and run `npm run build`. To update an icon, the process is the same--simply copy the new SVG to the `src/icons` folder and run the build step again.
+
+## Testing the framework wrappers with live reload
+
+### React
+
+Prerequisites:
+In the Astro repo make sure to run
+`npx lerna link`
+`npm run build`
+
+Create a fresh CRA in a separate directory and [setup Astro](https://astro-components.netlify.app/?path=/docs/astro-uxds-welcome-react--page).
+
+> NOTE: Make sure that you are importing astro-web-components.css from index.js and not index.css if you are getting an error about importing stuff from outside /src.
+
+In /packages/web-components, start the stencil server in build watch mode:
+`node_modules/.bin/stencil build --watch --serve -p 3333`
+
+Setup your npm links
+`cd packages/web-components' `npm link` `cd packages/react` `npm link`
+
+In your CRA:
+`npm link @astrouxds/react @astrouxds/astro-web-components`
+NOTE: you need to symlink both `react` and `astro-web-components`.
+
+> VOLTA USERS: might need to do `VOLTA_UNSAFE_GLOBAL=1 npm link @astrouxds/astro-web-components @astrouxds/react` if it's not properly symlinking both. You can verify
+> with `ls -la node_modules/@astrouxds` it should show both directories pointing to the
+> local root.

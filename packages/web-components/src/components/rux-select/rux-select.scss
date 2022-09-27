@@ -81,12 +81,6 @@ label {
             var(--color-background-surface-selected) var(--spacing-8),
             var(--color-background-base-default) var(--spacing-8)
         );
-    // background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%234dacff%22%20d%3D%22M0%200h10L5%205z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E'),
-    //     linear-gradient(
-    //         to left,
-    //         var(--color-background-surface-selected) var(--spacing-8),
-    //         var(--color-background-base-default) var(--spacing-8)
-    //     );
     background-position: center right var(--spacing-025),
         center left var(--spacing-0);
     background-repeat: no-repeat;
@@ -111,8 +105,7 @@ label {
     -webkit-appearance: none;
     -moz-appearance: none;
     width: 100%;
-    box-shadow: var(--color-border-interactive-muted) 0 0 0 1px inset; //replaces border so the border width does not count towards overall component height
-    border: none;
+    border: 1px solid var(--color-border-interactive-muted);
     border-radius: var(--radius-base);
     color: var(--color-background-interactive-default);
     font-family: var(--font-control-body-1-font-family);
@@ -162,27 +155,23 @@ label {
         }
     }
     &--invalid {
-        box-shadow: var(--color-text-error) 0 0 0 1px inset; //replaces border so the border width does not count towards overall component height
-        border: none;
+        border: 1px solid var(--color-text-error);
     }
 
     &:hover {
-        box-shadow: var(--color-background-interactive-hover) 0 0 0 1px inset; //replaces border so the border width does not count towards overall component height
-        border: none;
+        border: 1px solid var(--color-background-interactive-hover);
     }
 
     &:focus {
         outline: none;
-        box-shadow: var(--color-background-interactive-hover) 0 0 0 1px inset; //replaces border so the border width does not count towards overall component height
-        border: none;
+        border: 1px solid var(--color-background-interactive-default);
     }
 
     &:disabled {
         opacity: 0.4;
         cursor: not-allowed;
         &:hover {
-            box-shadow: var(--color-border-interactive-muted) 0 0 0 1px inset; //replaces border so the border width does not count towards overall component height
-            border: none;
+            border: 1px solid var(--color-border-interactive-muted);
         }
     }
 
@@ -210,7 +199,6 @@ label {
         }
         &:disabled {
             cursor: not-allowed;
-            //var(--select-menu-text-color) with 0.4 opacity
             color: #4dacff66;
         }
     }
