@@ -26,6 +26,13 @@ dark: true
 
 		<h2> Font Size </h2>
 
+		<p>
+			Astro UXDS font size tokens define the font size of text styles and elements. The design tokens are based on a t-shirt 
+			sizing system where the `font-size-base` token equals 1 rem (16 px by default), and font sizes are either smaller (sm, xs) 
+			or larger (lg, xl, 2xl, 3xl, 4xl, 5xl, 6xl) than the base. For reference, the P body text style uses the `font-size-base` 
+			token to set the font size.
+		</p>
+
 		{% for token in tokens.reference('dark', 'fontSizes') %}
 			<rux-design-token-preview
 				name="{{ token.name }}"
@@ -110,6 +117,15 @@ dark: true
 		<hr/>
 
 		<h2>Spacing</h2>
+		<p>
+			Astro UXDS spacing tokens use increments of four to define all dimensions, padding, and margins for components, containers, grids, and other UI elements. 
+			The design tokens are based on a 4 px system where 1 token step equals .25 rem, which equals 4 px by default. 
+			For example, the spacing-4 token equals 1 rem (16 px by default).
+		</p>
+
+		<p class="note">
+			When building components, Astro UXDS uses the border-collapse method for sizing. In this method the borders overlap the padding within a component, as opposed to the box model method where the borders are added in addition to the padding. So in Astro UXDS, a component with 8 px padding and 2 px border would only have 8 px of spacing.
+		</p>
 
 		{% for token in tokens.reference('dark', 'spacing') %}
 			<rux-design-token-preview
@@ -124,6 +140,12 @@ dark: true
 		<hr/>
 
 		<h2>Line Height</h2>
+		<p>
+			Astro UXDS line height tokens use increments of four to define the spacing and line height of text styles and elements. 
+			The design tokens are based on a t-shirt sizing system where the `line-height-base` token equals 1.5 rem (24 px by default), 
+			and line heights are either smaller (sm, xs, 2xs) or larger (lg, xl, 2xl, 3xl, 4xl) than the base. For reference, the 
+			P body text style uses the `line-height-base` token to set the line height.
+		</p>
 
 		{% for token in tokens.reference('dark', 'lineHeights') %}
 			<rux-design-token-preview
