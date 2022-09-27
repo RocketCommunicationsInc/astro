@@ -2,7 +2,7 @@
 path: /compliance/mil-std-1472
 date: Last Modified
 layout: interior.template.njk
-title: foo
+title: MIL-STD-1472H Compliance
 ---
 
 # MIL-STD-1472H Compliance
