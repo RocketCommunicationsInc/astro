@@ -1,12 +1,4 @@
 :host {
-    /**
-     * @prop --color-classification-text-light: [DEPRECATED] the color of light text in the classification marking
-     */
-
-    /**
-     * @prop --color-classification-text-dark: [DEPRECATED] the color of dark text in the classification marking
-     */
-
     display: block;
 }
 
@@ -31,7 +23,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 26px;
+    min-height: var(--spacing-6);
     transition: top 10.5s ease;
     overflow-wrap: anywhere;
     color: var(--color-text-white);
@@ -53,7 +45,10 @@
 
 .rux-classification--tag {
     width: fit-content;
-    padding: 0.1875rem 0.625rem;
+    display: inline-flex;
+    align-items: center;
+    padding: var(--spacing-1) var(--spacing-3);
+    line-height: var(--font-body-2-bold-line-height);
     border-radius: var(--radius-base);
     font-family: var(--font-body-2-bold-font-family);
     font-size: var(--font-body-2-bold-font-size);

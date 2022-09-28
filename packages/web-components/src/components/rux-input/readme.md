@@ -61,18 +61,6 @@
 | `"suffix"`      | The container of the suffix slot                    |
 
 
-## CSS Custom Properties
-
-| Name                                 | Description                                           |
-| ------------------------------------ | ----------------------------------------------------- |
-| `--input-background-color`           | [DEPRECATED] the input background color               |
-| `--input-border-color`               | [DEPRECATED] the input border color                   |
-| `--input-focus-border-color`         | [DEPRECATED] the input focus border color             |
-| `--input-invalid-border-color`       | [DEPRECATED] the input invalid border color           |
-| `--input-selection-background-color` | [DEPRECATED] the background color of highlighted text |
-| `--input-text-color`                 | [DEPRECATED] the input text color                     |
-
-
 ## Dependencies
 
 ### Used by
@@ -81,15 +69,12 @@
 
 ### Depends on
 
-- [rux-button](../rux-button)
 - [rux-icon](../rux-icon)
 
 ### Graph
 ```mermaid
 graph TD;
-  rux-input --> rux-button
   rux-input --> rux-icon
-  rux-button --> rux-icon
   rux-log --> rux-input
   style rux-input fill:#f9f,stroke:#333,stroke-width:4px
 ```

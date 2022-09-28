@@ -1,58 +1,15 @@
 :host {
-    /**
-    * @prop --tree-accent-color: [DEPRECATED] tree accent color
-    */
-    --tree-accent-color: var(--color-background-interactive-default);
-
-    /**
-    * @prop --tree-hover-background-color: [DEPRECATED] tree hover background color
-    */
-    --tree-hover-background-color: var(--color-background-interactive-hover);
-
-    /**
-    * @prop --tree-hover-text-color: [DEPRECATED] tree hover text color
-    */
-    --tree-hover-text-color: var(--color-text-inverse);
-
-    /**
-    * @prop --tree-selected-border-color: [DEPRECATED] tree selected border color
-    */
-    --tree-selected-border-color: var(--color-border-interactive-muted);
-
-    /**
-    * @prop --tree-selected-accent-color: [DEPRECATED] tree selected accent color
-    */
-    --tree-selected-accent-color: var(--color-background-interactive-default);
-
-    /**
-    * @prop --tree-expanded-border-color: [DEPRECATED] tree expanded border color
-    */
-    --tree-expanded-border-color: var(--color-background-base-default);
-
-    position: relative;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    font-family: var(--font-body-1-font-family);
-    font-size: var(--font-body-1-font-size);
-    font-weight: var(--font-body-1-font-weight);
-    letter-spacing: var(--font-body-1-letter-spacing);
-    color: var(--tree-text-color);
-    user-select: none;
     display: block;
 }
 
 .tree-node {
-    border-top: 1px solid var(--color-border-interactive-muted);
-    .parent {
-        border-left: 1px solid var(--color-border-interactive-muted);
-        border-right: 1px solid var(--color-border-interactive-muted);
-    }
-    .children {
-        border-left: none;
-        border-right: none;
-    }
+    color: var(--color-text-primary);
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    font-weight: var(--font-control-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    line-height: var(--font-control-body-1-line-height);
+    padding-top: var(--spacing-050);
 }
 
 :host([hidden]) {
@@ -60,90 +17,83 @@
 }
 
 :host([aria-selected='true']) {
-    background-image: var(--tree-node-border-left-selected);
-    background-repeat: no-repeat;
     .parent {
-        &::after {
-            content: '';
-            height: 30px;
-            width: 100%;
-            left: 0;
-            z-index: 0;
-            position: absolute;
-            transition: background-color 0.0967s ease-in 0s;
-        }
+        background-color: var(--color-background-surface-selected);
     }
 }
 
 :host([aria-level='1']) {
-    .parent {
-        font-weight: bold;
-        padding: 0;
-        &::after {
-            content: '';
-            height: 31px;
-            width: 100%;
-            left: 0;
-            z-index: 0;
-            position: absolute;
-            transition: background-color 0.0967s ease-in 0s;
-        }
-        .selected {
-            margin-right: -5px;
-        }
-    }
     .tree-node:not(.tree-node--has-children) {
         .parent {
-            padding-left: 2rem;
+            padding-left: var(--spacing-8);
         }
     }
 }
 
 :host([aria-level='2']) {
+    .parent {
+        padding-left: var(--spacing-8);
+    }
     .tree-node:not(.tree-node--has-children) {
         .parent {
-            padding-left: 3.5rem;
+            padding-left: var(--spacing-14);
         }
-    }
-    .selected {
-        margin-right: -10px;
     }
 }
 
 :host([aria-level='3']) {
+    .parent {
+        padding-left: var(--spacing-14);
+    }
     .tree-node:not(.tree-node--has-children) {
         .parent {
-            padding-left: 5rem;
+            padding-left: var(--spacing-20);
         }
-    }
-    .parent {
-        padding-left: 3.5rem;
     }
 }
 
 :host([aria-level='4']) {
+    .parent {
+        padding-left: var(--spacing-20);
+    }
     .tree-node:not(.tree-node--has-children) {
         .parent {
-            padding-left: 6.5rem;
+            padding-left: calc(var(--spacing-14) + var(--spacing-12));
         }
-    }
-    .parent {
-        padding-left: 5rem;
     }
 }
 
 .parent {
-    height: 2rem;
-    padding: 0 0.5rem 0 2rem;
+    padding: var(--spacing-1) var(--spacing-2);
     display: flex;
-    align-items: center;
-    white-space: nowrap;
-    overflow: hidden;
+    gap: var(--spacing-050);
+
     &:hover {
-        color: var(--tree-hover-text-color);
-        background: var(--tree-hover-background-color);
-        --tree-accent-color: var(--tree-node-arrow-color-fill-hover);
+        background-color: var(--color-background-surface-hover);
     }
+}
+
+.arrow {
+    cursor: pointer;
+    min-width: 20px;
+    min-height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.74167 13.2333L10.975 10L7.74167 6.76668C7.41667 6.44168 7.41667 5.91668 7.74167 5.59168C8.06667 5.26668 8.59167 5.26668 8.91667 5.59168L12.7417 9.41668C13.0667 9.74168 13.0667 10.2667 12.7417 10.5917L8.91667 14.4167C8.59167 14.7417 8.06667 14.7417 7.74167 14.4167C7.42501 14.0917 7.41667 13.5583 7.74167 13.2333Z' fill='%234DACFF'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+
+    &:hover {
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.74167 13.2333L10.975 10L7.74167 6.76668C7.41667 6.44168 7.41667 5.91668 7.74167 5.59168C8.06667 5.26668 8.59167 5.26668 8.91667 5.59168L12.7417 9.41668C13.0667 9.74168 13.0667 10.2667 12.7417 10.5917L8.91667 14.4167C8.59167 14.7417 8.06667 14.7417 7.74167 14.4167C7.42501 14.0917 7.41667 13.5583 7.74167 13.2333Z' fill='%2392CBFF'/%3E%3C/svg%3E");
+    }
+}
+
+.prefix {
+    display: flex;
+    align-self: center;
+    margin: var(--spacing-0) var(--spacing-1);
+}
+
+.suffix {
+    margin-left: auto;
+    display: flex;
 }
 
 .children {
@@ -154,64 +104,18 @@
     > .children {
         display: block !important;
     }
+
     .arrow {
-        transform: rotate(90deg);
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.76668 7.74167L10 10.975L13.2333 7.74167C13.5583 7.41667 14.0833 7.41667 14.4083 7.74167C14.7333 8.06667 14.7333 8.59167 14.4083 8.91667L10.5833 12.7417C10.2583 13.0667 9.73335 13.0667 9.40835 12.7417L5.58335 8.91667C5.25835 8.59167 5.25835 8.06667 5.58335 7.74167C5.90835 7.42501 6.44168 7.41667 6.76668 7.74167Z' fill='%234DACFF'/%3E%3C/svg%3E");
+
+        &:hover {
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.76665 7.74167L9.99999 10.975L13.2333 7.74167C13.5583 7.41667 14.0833 7.41667 14.4083 7.74167C14.7333 8.06667 14.7333 8.59167 14.4083 8.91667L10.5833 12.7417C10.2583 13.0667 9.73332 13.0667 9.40832 12.7417L5.58332 8.91667C5.25832 8.59167 5.25832 8.06667 5.58332 7.74167C5.90832 7.42501 6.44165 7.41667 6.76665 7.74167Z' fill='%2392CBFF'/%3E%3C/svg%3E");
+        }
     }
 }
 
-.arrow {
-    position: relative;
-    cursor: pointer;
-    width: 0.35rem;
-    margin: 0 13px;
-    background-color: transparent;
-    transition: transform 0.167s ease-in-out 0s;
-    z-index: 11;
-    &::before {
-        content: '';
-        display: block;
-        height: 1.5rem;
-        width: 1.5rem;
-        top: -0.15rem;
-        left: -0.65rem;
-        position: absolute;
-    }
-    &::after {
-        content: '';
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 0.35rem 0 0.35rem 0.35rem;
-        border-color: transparent transparent transparent
-            var(--tree-accent-color);
-        display: inline-block;
-    }
-}
-
-::slotted(rux-status) {
-    margin: 0 0.625rem;
-}
-
-::slotted(rux-tree-node) {
-    position: relative;
-    &::before {
-        content: '';
-        order: 1;
-        position: absolute;
-        top: 0;
-        cursor: pointer;
-        width: 20px;
-        height: 20px;
-        margin-right: 1rem;
-        margin-left: 0.15rem;
-        left: -40px;
-        background-color: transparent;
-        transition: transform 0.167s ease-in-out 0s;
-        z-index: 11;
-    }
-}
-.selected {
-    width: 5px;
-    height: 100%;
-    background-color: var(--color-interactive-default);
+:host::part(text) {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }

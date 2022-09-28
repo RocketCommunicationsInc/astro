@@ -49,18 +49,6 @@ Percentage Monitoring Icons depict a value between 0 and 100 as an arc and a num
 
 ![Anatomy of the Monitoring Progress Icon](/img/components/percentage-monitoring-graphic.png "Anatomy of the Monitoring Progress Icon")
 
-### Action Icons
-
-Action Icons initiate actions or state changes to objects or processes.
-
-![Examples of Astro Action Icons](/img/components/icons-action.png "Examples of Astro Action Icons")
-
-### Utility Icons
-
-Utility Icons represent access to tools used to modify the settings for a component, object, or globally. Utility Icons are also accompanied by a descriptive name.
-
-![Examples of Astro Utility Icons](/img/components/icons-utility.png "Examples of Astro Utility Icons")
-
 ### Notification Symbols
 
 Events that require some user attention, but no immediate response, may be indicated by changes to a Notification Symbol.

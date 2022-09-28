@@ -13,11 +13,11 @@
 
 ## Events
 
-| Event                  | Description                          | Type                  |
-| ---------------------- | ------------------------------------ | --------------------- |
-| `ruxtreenodecollapsed` | Emit when user collapses a tree node | `CustomEvent<string>` |
-| `ruxtreenodeexpanded`  | Emit when user expands a tree node   | `CustomEvent<string>` |
-| `ruxtreenodeselected`  | Emit when user selects a tree node   | `CustomEvent<string>` |
+| Event                  | Description                                                                            | Type                  |
+| ---------------------- | -------------------------------------------------------------------------------------- | --------------------- |
+| `ruxtreenodecollapsed` | Fires when the user collapses a tree node and emits the node's id on the event.detail. | `CustomEvent<string>` |
+| `ruxtreenodeexpanded`  | Fires when the user expands a tree node and emits the node's id on the event.detail.   | `CustomEvent<string>` |
+| `ruxtreenodeselected`  | Fires when the user selects a tree node and emits the node's id on the event.detail.   | `CustomEvent<string>` |
 
 
 ## Methods
@@ -45,22 +45,11 @@ Type: `Promise<void>`
 
 ## Shadow Parts
 
-| Part     | Description |
-| -------- | ----------- |
-| `"icon"` |             |
-| `"node"` |             |
-
-
-## CSS Custom Properties
-
-| Name                            | Description                              |
-| ------------------------------- | ---------------------------------------- |
-| `--tree-accent-color`           | [DEPRECATED] tree accent color           |
-| `--tree-expanded-border-color`  | [DEPRECATED] tree expanded border color  |
-| `--tree-hover-background-color` | [DEPRECATED] tree hover background color |
-| `--tree-hover-text-color`       | [DEPRECATED] tree hover text color       |
-| `--tree-selected-accent-color`  | [DEPRECATED] tree selected accent color  |
-| `--tree-selected-border-color`  | [DEPRECATED] tree selected border color  |
+| Part          | Description |
+| ------------- | ----------- |
+| `"indicator"` |             |
+| `"node"`      |             |
+| `"text"`      |             |
 
 
 ----------------------------------------------

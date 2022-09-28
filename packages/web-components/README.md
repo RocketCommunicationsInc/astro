@@ -7,7 +7,7 @@ To get up and running quickly, Astro web components are available via a CDN. Add
 ```html
 <link rel="preconnect" href="https://fonts.gstatic.com" />
 <link
-    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&family=Roboto:wght@200;300;400;500;600;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
     rel="stylesheet"
 />
 <link
@@ -38,7 +38,7 @@ Astro components are now available anywhere in your app.
 ```html
 <link rel="preconnect" href="https://fonts.gstatic.com" />
 <link
-    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&family=Roboto:wght@200;300;400;500;600;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
     rel="stylesheet"
 />
 ```
@@ -107,25 +107,25 @@ new Vue({
 
 #### Angular
 
-1. Include `CUSTOM_ELEMENTS_SCHEMA` in any module that uses an Astro component.
+1. Include the `AstroComponentsModule` in any module that uses an Astro component.
 
 ```js
 import { BrowserModule } from '@angular/platform-browser'
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core'
+import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
+import { AstroComponentsModule } from '@astrouxds/angular'
 
 import { AppComponent } from './app.component'
 
 @NgModule({
     declarations: [AppComponent],
-    imports: [BrowserModule, FormsModule],
+    imports: [BrowserModule, FormsModule, AstroComponentsModule],
     bootstrap: [AppComponent],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}
 ```
 
-2. Define your Custom Elements in main.ts
+Or, Define your Custom Elements in main.ts
 
 ```js
 import { enableProdMode } from '@angular/core'

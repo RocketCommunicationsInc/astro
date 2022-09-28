@@ -1,4 +1,5 @@
-@use '../../global/tokens/colors-dark' as variables;
+@use '../../../node_modules/@astrouxds/tokens/dist/scss/base.system.scss' as system;
+@use 'sass:meta';
 
 :host {
     display: block;
@@ -6,11 +7,11 @@
     z-index: 50;
     top: 0;
     left: 0;
-    height: 100px;
+    height: var(--spacing-24);
     width: -webkit-fill-available;
     width: -moz-available;
     width: stretch;
-    padding: 0 1.875rem;
+    padding: 0 var(--spacing-6);
     box-sizing: border-box;
     background-color: var(--gsb-color-background);
     -webkit-user-select: none;
@@ -36,25 +37,33 @@ header {
 
 slot[name='left-side'] > *,
 ::slotted(*[slot='left-side']) {
-    margin-right: 10px;
+    margin-right: var(--spacing-2);
 }
 
 slot[name='left-side'] > rux-icon,
 ::slotted(rux-icon[slot='left-side']) {
-    height: 34px;
+    height: calc(var(--spacing-8) + var(--spacing-050)); //38px
 }
 
 slot[name='left-side'] > .shifted-up,
 ::slotted(.shifted-up[slot='left-side']) {
-    height: 54px;
+    height: calc(var(--spacing-14) + var(--spacing-050)); //58px
+}
+
+slot[name='right-side'] > rux-monitoring-icon,
+::slotted(rux-monitoring-icon[slot='right-side']) {
+    display: flex;
+    align-items: center;
+    padding-right: calc(var(--spacing-4) + var(--spacing-2)); //24px
+    padding-top: var(--spacing-2);
 }
 
 .app-meta,
 ::slotted(*[slot='app-meta']) {
     display: inline-flex;
     flex-wrap: wrap;
-    padding: 0;
-    margin: 0 auto 0 0;
+    padding: var(--spacing-0);
+    margin: var(--spacing-0) auto var(--spacing-0) var(--spacing-0);
     color: var(--color-palette-neutral-000);
     white-space: nowrap;
 }
@@ -63,36 +72,41 @@ slot[name='left-side'] > .shifted-up,
     flex-basis: 100%;
     display: flex;
     align-items: baseline;
-    margin-bottom: 6px;
-    min-width: 170px;
+    min-height: var(--spacing-10); //40px
+    padding-bottom: var(--spacing-1);
+    min-width: 10.625rem;
 }
 
 .app-meta h1 {
-    margin-bottom: 0;
-    margin-top: 0;
-    height: 32px;
+    margin-bottom: var(--spacing-0);
+    margin-top: var(--spacing-0);
     font-family: var(--font-heading-1-font-family);
     font-size: var(--font-heading-1-font-size);
     font-weight: var(--font-heading-1-font-weight);
     letter-spacing: var(--font-heading-1-letter-spacing);
+    line-height: var(--font-heading-1-line-height);
 }
 
 .app-meta h1.app-domain {
-    margin-right: 13px;
+    margin-right: var(--spacing-2);
     font-family: var(--font-heading-1-bold-font-family);
     font-size: var(--font-heading-1-bold-font-size);
     font-weight: var(--font-heading-1-bold-font-weight);
     letter-spacing: var(--font-heading-1-bold-letter-spacing);
+    line-height: var(--font-heading-1-line-height);
 }
 
 .app-name {
-    margin-right: 0.3em;
+    margin-right: var(--spacing-2); //8px
 }
 
 .app-version {
     display: inline-block;
+    font-family: var(--font-heading-6-font-family);
     font-size: var(--font-heading-6-font-size);
     font-weight: var(--font-heading-6-font-weight);
+    letter-spacing: var(--font-heading-6-letter-spacing);
+    line-height: var(--font-heading-6-line-height);
 }
 
 .app-state-wrapper {
@@ -109,10 +123,9 @@ slot[name='left-side'] > .shifted-up,
     font-size: var(--font-body-2-font-size);
     font-weight: var(--font-body-2-font-weight);
     letter-spacing: var(--font-body-2-letter-spacing);
-    padding: 2px 6px;
+    padding: calc(var(--spacing-050) + var(--spacing-025)) var(--spacing-2); //3px 8px
     text-align: center;
-    height: 22px;
-    margin-right: 6px;
+    margin-right: var(--spacing-2); //6px
     white-space: nowrap;
 }
 
@@ -123,8 +136,8 @@ slot[name='left-side'] > .shifted-up,
     font-size: var(--font-body-2-font-size);
     font-weight: var(--font-body-2-font-weight);
     letter-spacing: var(--font-body-2-letter-spacing);
-    padding: 2px 0;
-    height: 22px;
+    padding: calc(var(--spacing-050) + var(--spacing-025)) var(--spacing-0); //3px 0
+    height: calc(var(--spacing-6) - var(--spacing-050)); //22px
 }
 
 .slotted-content {
@@ -135,5 +148,7 @@ slot[name='left-side'] > .shifted-up,
 
 //Preserves dark theme defaults for slotted elements in GSB since content must always be rendered in dark theme.
 ::slotted(*) {
-    @include variables.root-variables;
+    @each $name, $value in meta.module-variables(system) {
+        --#{$name}: #{$value};
+    }
 }

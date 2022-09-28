@@ -1,32 +1,6 @@
 @use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
 
 :host {
-    /**
-     * @prop --textarea-border-color: [DEPRECATED] Border color of the textarea.
-    */
-    --textarea-border-color: var(--color-border-interactive-muted);
-
-    /**
-     * @prop --textarea-text-color: [DEPRECATED] Text color
-    */
-    --textarea-text-color: var(--color-text-primary);
-
-    /** @prop --textarea-background-color: Background color */
-    --textarea-background-color: var(--color-background-base-default);
-
-    /** @prop --textarea-invalid-border-color: Border color while in an invalid state */
-    --textarea-invalid-border-color: var(--color-border-error);
-
-    /**
-     * @prop --textarea-focus-border-color: [DEPRECATED] Border color while in a focused state
-    */
-    --textarea-focus-border-color: var(--color-background-interactive-hover);
-
-    /**
-     * @prop --textarea-selection-background-color: [DEPRECATED] Background color while in a selected state
-    */
-    --textarea-selection-background-color: var(--color-palette-brightblue-400);
-
     display: block;
 }
 
@@ -36,51 +10,69 @@
 }
 
 .rux-textarea {
+    display: inline-block;
     box-sizing: border-box;
-    -webkit-order: 2;
-    order: 2;
-    min-height: 4.25rem;
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
+    font-weight: var(--font-control-body-1-font-weight);
+    line-height: var(--font-control-body-1-line-height);
+    color: var(--color-text-primary);
+    background-color: transparent;
     width: 100%;
-    padding: 0.469rem 0.5rem; //7.5px 8px
-    border: 1px solid var(--textarea-border-color);
+    height: 100%;
+    border: 0;
+    padding: var(--spacing-0);
+    margin: var(--spacing-0);
+    resize: none;
+    outline: none;
+}
+
+.rux-textarea-wrapper {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    min-height: var(--spacing-16); //64
+    width: 100%;
+    padding: var(--spacing-2);
+    margin: var(--spacing-0);
+    border: 1px solid var(--color-border-interactive-muted);
     border-radius: var(--radius-base);
-    font-family: var(--font-body-1-font-family);
-    font-size: var(--font-body-1-font-size);
-    letter-spacing: var(--font-body-1-letter-spacing);
-    font-weight: var(--font-body-1-font-weight);
-    color: var(--textarea-text-color);
-    background-color: var(--textarea-background-color);
+    background-color: var(--color-background-base-default);
+    resize: both;
+    overflow-y: auto;
+
     &--invalid {
-        border: 1px solid var(--textarea-invalid-border-color);
+        border: 1px solid var(--color-text-error);
     }
     &--disabled {
         opacity: 0.4;
-        opacity: var(--disabled-opacity);
+        opacity: var(--opacity-disabled);
         cursor: not-allowed;
     }
     &--small {
-        padding: 0.219rem 0.5rem; //3.5px 8px
-        min-height: 3.25rem; //52px
+        padding: var(--spacing-1) var(--spacing-2); //4px 8px
+        min-height: var(--spacing-14); //56px
     }
     &--large {
-        min-height: 5.75rem; //92px
-        padding: 0.844rem 0.5rem; //13.5px 8px
+        min-height: calc(var(--spacing-16) + var(--spacing-2)); //72px
+        padding: var(--spacing-3) var(--spacing-2); //12px 8px
     }
 
     &:focus {
-        border-color: var(--textarea-focus-border-color);
+        border-color: var(--color-background-interactive-hover);
         outline: none;
     }
     &:hover {
-        border-color: var(--textarea-focus-border-color);
+        border-color: var(--color-background-interactive-hover);
         outline: none;
     }
     &--disabled:hover {
-        border: 1px solid var(--textarea-border-color);
-        color: var(--textarea-text-color);
+        border: 1px solid var(--color-border-interactive-muted);
+        color: var(--color-text-primary);
     }
     &--invalid:hover {
-        border: 1px solid var(--textarea-invalid-border-color);
+        border: 1px solid var(--color-text-error);
     }
     &::placeholder {
         color: var(--color-text-placeholder);
@@ -94,16 +86,16 @@
 }
 
 .rux-textarea-label {
-    font-family: var(--font-body-1-font-family);
-    font-size: var(--font-body-1-font-size);
-    font-weight: var(--font-body-1-font-weight);
-    letter-spacing: var(--font-body-1-letter-spacing);
-    margin-bottom: var(--spacing-input-label-top);
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    font-weight: var(--font-control-body-1-font-weight);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
+    margin-bottom: var(--spacing-2);
     &__asterisk {
-        margin-left: 4px;
+        margin-left: var(--spacing-1);
     }
 }
 
 ::selection {
-    background-color: var(--textarea-selection-background-color);
+    background-color: var(--color-palette-brightblue-400);
 }

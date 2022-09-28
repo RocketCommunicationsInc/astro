@@ -10,8 +10,9 @@ import {
 import { renderHiddenInput } from '../../utils/utils'
 
 /**
- * @part label - the label of rux-push-button
+ * @part container - the label of rux-push-button
  * @part icon - the optional rux-icon
+
  */
 @Component({
     tag: 'rux-push-button',
@@ -128,6 +129,7 @@ export class RuxPushButton {
                     value={value}
                 />
                 <label
+                    part="container"
                     class={{
                         'rux-push-button__button': true,
                         'rux-push-button__button--small': size === 'small',
@@ -135,11 +137,10 @@ export class RuxPushButton {
                         'rux-push-button__button--icon-only': iconOnly,
                     }}
                     htmlFor={this.pushButtonId}
-                    part="label"
                 >
                     {icon ? (
                         <rux-icon
-                            size="extra-small"
+                            size="auto"
                             exportparts="icon"
                             icon={icon}
                         ></rux-icon>

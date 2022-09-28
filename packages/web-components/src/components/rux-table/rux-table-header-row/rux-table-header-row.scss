@@ -1,18 +1,7 @@
 :host {
-    /** @prop() --table-header-background-color: the table header background color */
-    --table-header-background-color: var(--color-background-surface-header);
-
     display: table-row;
-    background-color: var(--table-header-background-color);
 }
 
 :host([hidden]) {
     display: none;
-}
-
-::slotted(rux-table-header-cell:first-child) {
-    padding-left: 1.875rem;
-}
-::slotted(rux-table-header-cell:last-child) {
-    padding-right: 1.875rem;
 }

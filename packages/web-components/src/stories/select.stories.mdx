@@ -509,7 +509,7 @@ export const Multiple = (args) => {
         label-id="${args.labelId}"
         .error-text="${args.errorText}"
         help-text="${args.helpText}"
-        .multiple="${args.multiple}"
+        ?multiple="${args.multiple}"
         size="${args.size}"
     >
         <rux-option value="1.1" label="Option 1.1"></rux-option>
@@ -560,7 +560,7 @@ export const MultipleWithOptionGroups = (args) => {
         label-id="${args.labelId}"
         .error-text="${args.errorText}"
         help-text="${args.helpText}"
-        .multiple="${args.multiple}"
+        ?multiple="${args.multiple}"
         size="${args.size}"
     >
         <rux-option value="" label="Select Option"></rux-option>

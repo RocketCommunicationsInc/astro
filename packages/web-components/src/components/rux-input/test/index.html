@@ -21,16 +21,52 @@
             }
         </style>
         <link rel="stylesheet" href="/build/astro-web-components.css" />
+        <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
     </head>
 
     <body class="dark-theme">
+        <!--<h2>Figma spacing test</h2>
+        <ftl-belt access-token="" file-id="SNsCCfIiWdfvZbBilZXTbW">
+         <ftl-holster name="search small" node="41357:132326" style="position:relative;">
+            <div style="width: 170px">
+                <rux-input
+                    type="search"
+                    size="small"
+                    placeholder="Search..."
+                ></rux-input>
+            </div>
+        </ftl-holster>
+
+        <ftl-holster name="search medium" node="26010:126254" style="position:relative;">
+            <div style="width: 170px">
+                <rux-input
+                    type="search"
+                    placeholder="Search..."
+                ></rux-input>
+            </div>
+        </ftl-holster>
+
+        <ftl-holster name="search large" node="41357:132341" style="position:relative;">
+            <div style="width: 170px">
+                <rux-input
+                    type="search"
+                    size="large"
+                    placeholder="Search..."
+                ></rux-input>
+            </div>
+        </ftl-holster> -->
+
+        <h1>Previous Tests</h1>
+        <!--
+                        IMPORTANT FOR CYPRESS TESTING | DO NOT MODIFY | DO NOT USE THESE IDs ELSEWHERE
+                    -->
         <div style="padding: 10%; display: flex; justify-content: center">
             <form id="form">
                 <div>
                     <rux-input
-                        label="Input Field"
                         id="ruxInput"
                         name="ruxInput"
+                        label="Input Field"
                     >
                     </rux-input>
                     <input type="text" id="nativeInput" name="nativeInput" />
@@ -183,5 +219,6 @@
                 })
             </script>
         </div>
+        <!-- END CYPRESS TESTING BLOCK -->
     </body>
 </html>

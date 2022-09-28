@@ -31,11 +31,9 @@ The Application State component indicates the state the entire application is in
 
 ### Background
 
-- The background rectangle for the component is 22 px/1.375 rem in height with 2 px/0.125 rem corner radii.
-
 - The background rectangle does not change height, but will change width with longer text content.
 
-- The default color for the background rectangle uses the `--colorTertiaryDarken4` variable, but can be changed to any of the Tag-approved colors in the Astro palette when more user attention to the component is required.
+- It is suggested that the background color for the application state component uses Astro 7.0 palettes Purple, Hot Orange, Pink, and Teal (commonly used for Tags).
 
 ::: caution
 Only use Tag colors when necessary as overuse of colors may reduce efficacy of monitoring icon, classification marking, and notification banner component colors.
@@ -43,23 +41,21 @@ Only use Tag colors when necessary as overuse of colors may reduce efficacy of m
 
 ### Text
 
-- Text within the component uses the Medium body text size (14 px/0.875 rem) and sentence casing.
+- Text within the component uses the Body 2 style and sentence casing.
 
-- The default font color is the Dark Theme’s default body text color (#FFFFFF) for use with the default, dark background color.
+- The default font color is the Dark Theme’s default body text color (`--color-palette-neutral-000`) for use with the default, dark background color.
 
-- When a lighter Tag background color is used, the font color changes to `--colorTertiaryDarken4` for better color contrast and legibility.
+- When a lighter Tag background color is used, the font color changes to `--color-palette-darkblue-950` for better color contrast and legibility.
 
 - Text does not wrap within the component in order to keep the height of the Global Status Bar consistent across application states which improves muscle memory and faster recognition time.
 
-- Padding to the left and right of the text is 6 px/0.375 rem within the background shape.
-
 ### Location
 
-- The App State component is placed around 6 px/0.375 rem below the application title text bottom in the [Global Status Bar](https://astrouxds.com/components/global-status-bar/).
+- The App State component is placed below the application title text in the [Global Status Bar](https://astrouxds.com/components/global-status-bar/).
 
 - The App State should be left-aligned to the application title text, not the menu.
 
-- If a left-aligned username is present, add 12 px/0.75 rem of spacing between the App State and the username for better legibility of both elements.
+- If a left-aligned username is present, add space between the App State and the username to ensure legibility of both elements.
 
 - When the App State is present, the application title, menu, state, and username section should be vertically centered in the allotted space within the [Global Status Bar](https://astrouxds.com/components/global-status-bar/).
 
@@ -82,7 +78,7 @@ Only use Tag colors when necessary as overuse of colors may reduce efficacy of m
 
 ![Don’t: Implement state switching in the UI without confirming that this functionality is approved by your client or security expert.](/img/components/app-state-dont-4.png "Don’t: Implement state switching in the UI without confirming that this functionality is approved by your client or security expert.")
 
-![Do: Change text color to <span style="color:#fff;background-color:#182635;font-family:monospace;padding:0 0.25rem;">--colorTertiaryDarken4</span> if the background color makes the original text color hard to read.](/img/components/app-state-do-5.png "Do: Change text color to --colorTertiaryDarken4 if the background color makes the original text color hard to read.")
+![Do: Change text color to `--color-palette-grey-800` if the background color makes the original text color hard to read.](/img/components/app-state-do-5.png "Do: Change text color to --color-palette-grey-800 if the background color makes the original text color hard to read.")
 
 ![Don’t: Use non-default or non-tag colors for background colors.](/img/components/app-state-dont-5.png "Don’t: Use non-default or non-tag colors for background colors.")
 :::

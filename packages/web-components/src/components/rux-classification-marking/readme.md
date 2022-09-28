@@ -107,20 +107,11 @@ Applying the `label` property attribute to the classification custom element add
 
 ## Shadow Parts
 
-| Part              | Description                                         |
-| ----------------- | --------------------------------------------------- |
-| `"footer"`        | the footer banner                                   |
-| `"footer-banner"` | the footer banner ! DEPRECATED IN FAVOR OF FOOTER ! |
-| `"header"`        | the container for the header banner                 |
-| `"tag"`           | the container for the tag                           |
-
-
-## CSS Custom Properties
-
-| Name                                | Description                                                        |
-| ----------------------------------- | ------------------------------------------------------------------ |
-| `--color-classification-text-dark`  | [DEPRECATED] the color of dark text in the classification marking  |
-| `--color-classification-text-light` | [DEPRECATED] the color of light text in the classification marking |
+| Part       | Description                         |
+| ---------- | ----------------------------------- |
+| `"footer"` | the footer banner                   |
+| `"header"` | the container for the header banner |
+| `"tag"`    | the container for the tag           |
 
 
 ----------------------------------------------

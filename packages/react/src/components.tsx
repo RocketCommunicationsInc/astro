@@ -11,6 +11,14 @@ import {
 } from "@astrouxds/astro-web-components/loader";
 
 applyPolyfills().then(() => defineCustomElements());
+export const RuxAccordion = /*@__PURE__*/ createReactComponent<
+  JSX.RuxAccordion,
+  HTMLRuxAccordionElement
+>("rux-accordion");
+export const RuxAccordionItem = /*@__PURE__*/ createReactComponent<
+  JSX.RuxAccordionItem,
+  HTMLRuxAccordionItemElement
+>("rux-accordion-item");
 export const RuxButton = /*@__PURE__*/ createReactComponent<
   JSX.RuxButton,
   HTMLRuxButtonElement
@@ -19,6 +27,10 @@ export const RuxButtonGroup = /*@__PURE__*/ createReactComponent<
   JSX.RuxButtonGroup,
   HTMLRuxButtonGroupElement
 >("rux-button-group");
+export const RuxCard = /*@__PURE__*/ createReactComponent<
+  JSX.RuxCard,
+  HTMLRuxCardElement
+>("rux-card");
 export const RuxCheckbox = /*@__PURE__*/ createReactComponent<
   JSX.RuxCheckbox,
   HTMLRuxCheckboxElement
@@ -35,6 +47,10 @@ export const RuxClock = /*@__PURE__*/ createReactComponent<
   JSX.RuxClock,
   HTMLRuxClockElement
 >("rux-clock");
+export const RuxContainer = /*@__PURE__*/ createReactComponent<
+  JSX.RuxContainer,
+  HTMLRuxContainerElement
+>("rux-container");
 export const RuxDatetime = /*@__PURE__*/ createReactComponent<
   JSX.RuxDatetime,
   HTMLRuxDatetimeElement
@@ -4271,6 +4287,10 @@ export const RuxIconZoomOutMap = /*@__PURE__*/ createReactComponent<
   JSX.RuxIconZoomOutMap,
   HTMLRuxIconZoomOutMapElement
 >("rux-icon-zoom-out-map");
+export const RuxIndeterminateProgress = /*@__PURE__*/ createReactComponent<
+  JSX.RuxIndeterminateProgress,
+  HTMLRuxIndeterminateProgressElement
+>("rux-indeterminate-progress");
 export const RuxInput = /*@__PURE__*/ createReactComponent<
   JSX.RuxInput,
   HTMLRuxInputElement
@@ -4279,6 +4299,10 @@ export const RuxLog = /*@__PURE__*/ createReactComponent<
   JSX.RuxLog,
   HTMLRuxLogElement
 >("rux-log");
+export const RuxMenu = /*@__PURE__*/ createReactComponent<
+  JSX.RuxMenu,
+  HTMLRuxMenuElement
+>("rux-menu");
 export const RuxMenuItem = /*@__PURE__*/ createReactComponent<
   JSX.RuxMenuItem,
   HTMLRuxMenuItemElement
@@ -4287,10 +4311,6 @@ export const RuxMenuItemDivider = /*@__PURE__*/ createReactComponent<
   JSX.RuxMenuItemDivider,
   HTMLRuxMenuItemDividerElement
 >("rux-menu-item-divider");
-export const RuxModal = /*@__PURE__*/ createReactComponent<
-  JSX.RuxModal,
-  HTMLRuxModalElement
->("rux-modal");
 export const RuxMonitoringIcon = /*@__PURE__*/ createReactComponent<
   JSX.RuxMonitoringIcon,
   HTMLRuxMonitoringIconElement
@@ -4311,10 +4331,10 @@ export const RuxOptionGroup = /*@__PURE__*/ createReactComponent<
   JSX.RuxOptionGroup,
   HTMLRuxOptionGroupElement
 >("rux-option-group");
-export const RuxPopUpMenu = /*@__PURE__*/ createReactComponent<
-  JSX.RuxPopUpMenu,
-  HTMLRuxPopUpMenuElement
->("rux-pop-up-menu");
+export const RuxPopUp = /*@__PURE__*/ createReactComponent<
+  JSX.RuxPopUp,
+  HTMLRuxPopUpElement
+>("rux-pop-up");
 export const RuxProgress = /*@__PURE__*/ createReactComponent<
   JSX.RuxProgress,
   HTMLRuxProgressElement

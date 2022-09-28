@@ -9,7 +9,7 @@ title: GRM Dashboard
 # GRM Dashboard
 
 :::note
-The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 5 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
+The images depicted on this page use the color palette and fonts from Astro 4. All new projects should use Astro 7 colors and fonts to be considered an Astro application. Refer to this section for general user experience guidance only, _not_ visual design guidance.
 :::
 [Launch GRM Dashboard Sample App](https://grm-dashboard.astrouxds.com/) | [Design Materials and Source Code](/grm-service-ux-design/grm-dashboard#contentBottom)
 

@@ -1,37 +1,6 @@
 @use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
 
 :host {
-    /**
-  * @prop --input-background-color: [DEPRECATED] the input background color
-  */
-    --input-background-color: var(--color-background-base-default);
-
-    /**
-    * @prop --input-border-color: [DEPRECATED] the input border color
-    */
-    --input-border-color: var(--color-border-interactive-muted);
-
-    /**
-    * @prop --input-text-color: [DEPRECATED] the input text color
-    */
-    --input-text-color: var(--color-text-primary);
-
-    /**
-    * @prop --input-focus-border-color: [DEPRECATED] the input focus border color
-    */
-
-    --input-focus-border-color: var(--color-background-interactive-hover);
-
-    /**
-    * @prop --input-selection-background-color: [DEPRECATED] the background color of highlighted text
-    */
-    --input-selection-background-color: var(--color-palette-brightblue-400);
-
-    /**
-    * @prop --input-invalid-border-color: [DEPRECATED] the input invalid border color
-    */
-    --input-invalid-border-color: var(--color-border-error);
-
     display: block;
 
     .rux-form-field {
@@ -48,19 +17,19 @@
     input[type='date' i]::-webkit-calendar-picker-indicator {
         cursor: pointer;
         --webkit-appearance: none;
-        background: var(--input-background-color)
+        background: var(--color-background-base-default)
             url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M19 4H18V3C18 2.45 17.55 2 17 2C16.45 2 16 2.45 16 3V4H8V3C8 2.45 7.55 2 7 2C6.45 2 6 2.45 6 3V4H5C3.89 4 3.01 4.9 3.01 6L3 20C3 21.1 3.89 22 5 22H19C20.1 22 21 21.1 21 20V6C21 4.9 20.1 4 19 4ZM19 19C19 19.55 18.55 20 18 20H6C5.45 20 5 19.55 5 19V9H19V19ZM9 13V11H7V13H9ZM11 11H13V13H11V11ZM17 13V11H15V13H17Z' fill='%234dacff'/%3E%3C/svg%3E%0A");
         background-position: center;
     }
     input[type='datetime-local' i]::-webkit-calendar-picker-indicator {
         cursor: pointer;
         --webkit-appearance: none;
-        background: var(--input-background-color)
+        background: var(--color-background-base-default)
             url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M19 4H18V3C18 2.45 17.55 2 17 2C16.45 2 16 2.45 16 3V4H8V3C8 2.45 7.55 2 7 2C6.45 2 6 2.45 6 3V4H5C3.89 4 3.01 4.9 3.01 6L3 20C3 21.1 3.89 22 5 22H19C20.1 22 21 21.1 21 20V6C21 4.9 20.1 4 19 4ZM19 19C19 19.55 18.55 20 18 20H6C5.45 20 5 19.55 5 19V9H19V19ZM9 13V11H7V13H9ZM11 11H13V13H11V11ZM17 13V11H15V13H17Z' fill='%234dacff'/%3E%3C/svg%3E%0A");
         background-position: center;
     }
     input[type='time' i]::-webkit-calendar-picker-indicator {
-        background: var(--input-background-color)
+        background: var(--color-background-base-default)
             url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM11.72 7H11.78C12.18 7 12.5 7.32 12.5 7.72V12.26L16.37 14.56C16.72 14.76 16.83 15.21 16.62 15.55C16.42 15.89 15.98 15.99 15.64 15.79L11.49 13.3C11.18 13.12 11 12.79 11 12.44V7.72C11 7.32 11.32 7 11.72 7Z' fill='%234dacff'/%3E%3C/svg%3E");
         cursor: pointer;
         background-position: center;
@@ -73,13 +42,15 @@
             border: none;
             background: none;
             box-shadow: none;
-            padding: 0;
-            margin: 0;
+            padding: var(--spacing-0);
+            margin: var(--spacing-0);
             color: inherit;
             font-family: inherit;
             font-size: inherit;
             font-weight: inherit;
             -webkit-appearance: none;
+            //Sets input area input area to correct height
+            height: var(--line-height-sm);
             appearance: none;
             outline: none;
             width: 100%;
@@ -96,57 +67,59 @@
         position: relative;
         box-sizing: border-box;
         order: 2;
-        border: 1px solid var(--input-border-color);
+        // use box shadow instead of border to create borders
+        box-shadow: var(--color-border-interactive-muted) 0 0 0 1px inset;
         border-radius: var(--radius-base);
-        font-family: var(--font-body-1-font-family);
-        font-size: var(--font-body-1-font-size);
-        font-weight: var(--font-body-1-font-weight);
-        letter-spacing: var(--font-body-1-letter-spacing);
-        color: var(--input-text-color);
-        background-color: var(--input-background-color);
+        font-family: var(--font-control-body-1-font-family);
+        font-size: var(--font-control-body-1-font-size);
+        font-weight: var(--font-control-body-1-font-weight);
+        line-height: var(--font-control-body-1-line-height);
+        letter-spacing: var(--font-control-body-1-letter-spacing);
+        color: var(--color-text-primary);
+        background-color: var(--color-background-base-default);
 
         &--invalid {
-            border: 1px solid var(--input-invalid-border-color);
+            box-shadow: var(--color-border-error) 0 0 0 1px inset;
         }
         &--disabled {
-            opacity: 0.4;
-            opacity: var(--disabled-opacity);
+            opacity: var(--opacity-disabled);
             cursor: not-allowed;
         }
         &--small {
-            padding: 0.219rem 0.5rem; // 3.5px 8px;
-            min-height: 1.625rem; //26px
+            padding: var(--spacing-1) var(--spacing-2); // 4px 8px
         }
         &--medium {
-            padding: 0.469rem 0.5rem; // 7.5px 8px;
-            min-height: 2.25rem; //36px
+            padding: var(--spacing-2); //8px
         }
         &--large {
-            padding: 0.844rem 0.5rem; //13.5px 8px;
-            min-height: 2.875rem; //46px
+            padding: var(--spacing-3) var(--spacing-2); //12px 8px
         }
         &--search {
             -webkit-appearance: none;
             -moz-appearance: none;
-            padding-left: 2.25rem; //36px
-            background: var(--input-background-color)
-                url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.37 26.457a15.282 15.282 0 000-21.918c-6.176-6.052-16.187-6.052-22.361 0a15.274 15.274 0 00-1.541 20.166c-.367.147-.713.37-1.014.665L.926 34.709a3.056 3.056 0 000 4.383 3.208 3.208 0 004.472 0l9.528-9.339c.352-.345.604-.753.756-1.186 6.137 3.831 14.347 3.124 19.687-2.11zM24.193 4.043c6.454 0 11.686 5.129 11.686 11.455 0 6.326-5.232 11.455-11.686 11.455-6.455 0-11.687-5.129-11.687-11.455 0-6.326 5.232-11.455 11.687-11.455z' fill='%234dacff' fill-rule='evenodd'/%3E%3C/svg%3E")
-                10px/0.975rem no-repeat;
+            padding-left: var(--spacing-8); //32px
+            background-color: var(--color-background-base-default);
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.71 14H15.5L19.74 18.26C20.15 18.67 20.15 19.34 19.74 19.75C19.33 20.16 18.66 20.16 18.25 19.75L14 15.5V14.71L13.73 14.43C12.33 15.63 10.42 16.25 8.39002 15.91C5.61002 15.44 3.39002 13.12 3.05002 10.32C2.53002 6.09 6.09002 2.53 10.32 3.05C13.12 3.39 15.44 5.61 15.91 8.39C16.25 10.42 15.63 12.33 14.43 13.73L14.71 14ZM5.00002 9.5C5.00002 11.99 7.01002 14 9.50002 14C11.99 14 14 11.99 14 9.5C14 7.01 11.99 5 9.50002 5C7.01002 5 5.00002 7.01 5.00002 9.5Z' fill='%234dacff' fill-rule='evenodd'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: 8px center;
+            background-size: 1.05rem;
         }
         &--focused {
-            border-color: var(--input-focus-border-color);
+            box-shadow: var(--color-background-interactive-hover) 0 0 0 1px
+                inset;
             outline: none;
         }
         &:hover {
-            border-color: var(--input-focus-border-color);
+            box-shadow: var(--color-background-interactive-hover) 0 0 0 1px
+                inset;
             outline: none;
         }
         &--disabled:hover {
-            border: 1px solid var(--input-border-color);
-            color: var(--input-text-color);
+            box-shadow: var(--color-border-interactive-muted) 0 0 0 1px inset;
+            color: var(--color-text-primary);
         }
         &--invalid:hover {
-            border: 1px solid var(--input-invalid-border-color);
+            box-shadow: var(--color-border-error) 0 0 0 1px inset;
         }
         .rux-input-prefix,
         .rux-input-suffix {
@@ -157,40 +130,50 @@
         }
         .rux-input-prefix {
             ::slotted(*) {
-                padding-right: 10px;
+                padding-right: var(--spacing-1);
             }
         }
         .rux-input-suffix {
             ::slotted(*) {
-                padding-left: 10px;
+                padding-left: var(--spacing-1);
             }
         }
     }
-
     .rux-input-label {
-        font-family: var(--font-body-1-font-family);
-        font-size: var(--font-body-1-font-size);
-        font-weight: var(--font-body-1-font-weight);
-        letter-spacing: var(--font-body-1-letter-spacing);
-        margin-bottom: var(--spacing-input-label-top);
+        font-family: var(--font-control-body-1-font-family);
+        font-size: var(--font-control-body-1-font-size);
+        font-weight: var(--font-control-body-1-font-weight);
+        letter-spacing: var(--font-control-body-1-letter-spacing);
+        margin-bottom: var(--spacing-2);
         &__asterisk {
-            margin-left: 4px;
+            margin-left: var(--spacing-1);
         }
     }
 
     ::selection {
-        background-color: var(--input-selection-background-color);
+        background-color: var(--color-palette-brightblue-400);
     }
 }
-.pw-button {
-    padding-top: 1px; //icon looked like half a px off from being centered.
-}
+
 .pw-button::part(container) {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
-    height: 1rem;
+}
+
+.pw-button {
+    border: none;
+    background: transparent;
+    height: calc(var(--spacing-6) - var(--spacing-1)); //20px
+    width: var(--spacing-4);
+    padding: var(--spacing-0);
+    line-height: var(--line-height-sm);
+    width: calc(var(--spacing-6) - var(--spacing-1));
+}
+.pw-button:active,
+.pw-button:focus {
+    outline: none;
 }
 
 .hidden,

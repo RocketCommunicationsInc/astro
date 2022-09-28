@@ -4,7 +4,7 @@ A Rux dialog interrupts the app experience to prompt a user to confirm an action
 
 ## Guidelines
 
--   [Astro UXDS: Rux Dialog](https://astrouxds.com/ui-components/dialog-box)
+-   [Astro UXDS: Dialog](https://astrouxds.com/ui-components/dialog)
 
 ## Web Components Usage
 
@@ -60,21 +60,22 @@ Or use slots to render the header, content and footer.
 
 ## Properties
 
-| Property       | Attribute       | Description                  | Type                  | Default     |
-| -------------- | --------------- | ---------------------------- | --------------------- | ----------- |
-| `confirmText`  | `confirm-text`  | Text for confirmation button | `string`              | `'Confirm'` |
-| `denyText`     | `deny-text`     | Text for close button        | `string`              | `'Cancel'`  |
-| `modalMessage` | `modal-message` | Dialog body message          | `string \| undefined` | `undefined` |
-| `modalTitle`   | `modal-title`   | Dialog header title          | `string \| undefined` | `undefined` |
-| `open`         | `open`          | Shows and hides dialog       | `boolean`             | `false`     |
+| Property       | Attribute        | Description                                 | Type                  | Default     |
+| -------------- | ---------------- | ------------------------------------------- | --------------------- | ----------- |
+| `clickToClose` | `click-to-close` | Allows dialog to close when clicking off it | `boolean`             | `false`     |
+| `confirmText`  | `confirm-text`   | Text for confirmation button                | `string`              | `'Confirm'` |
+| `denyText`     | `deny-text`      | Text for close button                       | `string`              | `'Cancel'`  |
+| `header`       | `header`         | Dialog header title                         | `string \| undefined` | `undefined` |
+| `message`      | `message`        | Dialog body message                         | `string \| undefined` | `undefined` |
+| `open`         | `open`           | Shows and hides dialog                      | `boolean`             | `false`     |
 
 
 ## Events
 
-| Event             | Description                                                                                                                                                                                        | Type                           |
-| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
-| `ruxdialogclosed` | Event that is fired when dialog closes. If dialog is closed by clicking on the default confirm or deny buttons (when no footer slot is provided), then true or false will be emitted respectively. | `CustomEvent<boolean \| null>` |
-| `ruxdialogopened` | Event that is fired when dialog opens                                                                                                                                                              | `CustomEvent<void>`            |
+| Event             | Description                                                                                                                                                                                                            | Type                           |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
+| `ruxdialogclosed` | Event that is fired when dialog closes. If dialog is closed by clicking on the default confirm or deny buttons (when no footer slot is provided), then true or false will be emitted respectively on the event.detail. | `CustomEvent<boolean \| null>` |
+| `ruxdialogopened` | Event that is fired when dialog opens                                                                                                                                                                                  | `CustomEvent<void>`            |
 
 
 ## Slots

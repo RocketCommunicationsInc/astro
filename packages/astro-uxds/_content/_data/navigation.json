@@ -94,16 +94,16 @@
         "url": "/patterns/modeless-panes"
       },
       {
-        "label": "Sample App",
-        "url": "/patterns/sample-app"
-      },
-      {
         "label": "Table",
         "url": "/patterns/table"
       },
       {
         "label": "Forms and Validation",
         "url": "/patterns/forms-and-validation"
+      },
+      {
+        "label": "Sign In",
+        "url": "/patterns/sign-in"
       }
     ]
   },
@@ -132,6 +132,10 @@
         "url": "/components/button"
       },
       {
+        "label": "Card",
+        "url": "/components/card"
+      },
+      {
         "label": "Checkbox",
         "url": "/components/checkbox"
       },
@@ -144,8 +148,12 @@
         "url": "/components/clock"
       },
       {
-        "label": "Dialog Box",
-        "url": "/components/dialog-box"
+        "label": "Container",
+        "url": "/components/container"
+      },
+      {
+        "label": "Dialog",
+        "url": "/components/dialog"
       },
       {
         "label": "Global Status Bar",
@@ -176,8 +184,8 @@
         "url": "/components/pagination"
       },
       {
-        "label": "Pop Up",
-        "url": "/components/pop-up"
+        "label": "Pop Up Menu",
+        "url": "/components/pop-up-menu"
       },
       {
         "label": "Progress",
@@ -200,20 +208,12 @@
         "url": "/components/segmented-button"
       },
       {
-        "label": "Sign In",
-        "url": "/components/sign-in"
-      },
-      {
         "label": "Select Menu",
         "url": "/components/select"
       },
       {
         "label": "Slider",
         "url": "/components/slider"
-      },
-      {
-        "label": "Spectrum Analyzer",
-        "url": "/components/spectrum-analyzer"
       },
       {
         "label": "Status Symbol",
@@ -226,6 +226,14 @@
       {
         "label": "Tabs",
         "url": "/components/tabs"
+      },
+      {
+        "label": "Tag",
+        "url": "/components/tag"
+      },
+      {
+        "label": "Textarea",
+        "url": "/components/textarea"
       },
       {
         "label": "Timeline",
@@ -292,6 +300,32 @@
     "class": "section-end"
   },
   {
+    "label": "Design Tokens",
+    "url": "/design-tokens",
+    "items": [
+      {
+        "label": "Getting Started",
+        "url": "/design-tokens/getting-started"
+      },
+      {
+        "label": "Installation",
+        "url": "/design-tokens/installation"
+      },
+      {
+        "label": "Reference",
+        "url": "/design-tokens/reference"
+      },
+      {
+        "label": "System",
+        "url": "/design-tokens/system"
+      },
+      {
+        "label": "Component",
+        "url": "/design-tokens/component"
+      }
+    ]
+  },
+  {
     "label": "Community",
     "url": "/community",
     "items": [
@@ -307,11 +341,25 @@
   },
   {
     "label": "Compliance",
-    "url": "/compliance"
+    "url": "/compliance",
+    "items": [
+      {
+        "label": "EGS Design Compliance",
+        "url": "/compliance/egs-design-compliance"
+      },
+      {
+        "label": "MIL-STD 1472H",
+        "url": "/compliance/mil-std-1472"
+      }
+    ]
   },
   {
     "label": "Releases",
     "url": "/releases"
+  },
+  {
+    "label": "Migration",
+    "url": "/migration"
   },
   {
     "label": "Downloads",

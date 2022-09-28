@@ -185,7 +185,6 @@ export class RuxTrack {
             } else {
                 if (!isHidden) {
                     el.style.display = 'none'
-                    console.log(isValid.error)
                 }
             }
         })

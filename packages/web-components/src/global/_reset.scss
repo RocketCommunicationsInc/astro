@@ -39,7 +39,6 @@ body {
     }
     a:hover {
         text-decoration: underline;
-        color: var(--color-background-interactive-hover);
     }
 }
 
@@ -60,10 +59,7 @@ label {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(
-        --color-background-interactive-muted,
-        rgb(43, 101, 155)
-    );
+    background-color: var(--color-border-interactive-muted, rgb(43, 101, 155));
     border-radius: 8px;
     border: 3px solid transparent;
     background-clip: padding-box;
@@ -92,9 +88,9 @@ label {
 }
 
 ::-webkit-scrollbar-track:vertical {
-    box-shadow: var(--shadow-inner-scrollbar-vertical);
+    box-shadow: var(--scrollbar-shadow-inner-vertical);
 }
 
 ::-webkit-scrollbar-track:horizontal {
-    box-shadow: var(--shadow-inner-scrollbar-horizontal);
+    box-shadow: var(--scrollbar-shadow-inner-horizontal);
 }

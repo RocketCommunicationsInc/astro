@@ -5,7 +5,15 @@ exports[`rux-tree-node renders 1`] = `
   <mock:shadow-root>
     <div class="tree-node" id="node-1">
       <div class="parent" part="node" tabindex="0">
-        <slot></slot>
+        <span>
+          <slot name="prefix"></slot>
+        </span>
+        <span part="text">
+          <slot></slot>
+        </span>
+        <span>
+          <slot name="suffix"></slot>
+        </span>
       </div>
       <div class="children">
         <slot name="node"></slot>
@@ -20,8 +28,16 @@ exports[`rux-tree-node renders children 1`] = `
   <mock:shadow-root>
     <div class="tree-node tree-node--has-children" id="node-2">
       <div class="parent" part="node" tabindex="0">
-        <i class="arrow" part="icon"></i>
-        <slot></slot>
+        <i class="arrow" part="indicator"></i>
+        <span>
+          <slot name="prefix"></slot>
+        </span>
+        <span part="text">
+          <slot></slot>
+        </span>
+        <span>
+          <slot name="suffix"></slot>
+        </span>
       </div>
       <div class="children" role="group">
         <slot name="node"></slot>
@@ -33,7 +49,15 @@ exports[`rux-tree-node renders children 1`] = `
     <mock:shadow-root>
       <div class="tree-node" id="node-3">
         <div class="parent" part="node" tabindex="0">
-          <slot></slot>
+          <span>
+            <slot name="prefix"></slot>
+          </span>
+          <span part="text">
+            <slot></slot>
+          </span>
+          <span>
+            <slot name="suffix"></slot>
+          </span>
         </div>
         <div class="children">
           <slot name="node"></slot>

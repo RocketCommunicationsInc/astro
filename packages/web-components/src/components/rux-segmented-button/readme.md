@@ -56,9 +56,9 @@ document.addEventListener('change', (e) =>
 
 ## Events
 
-| Event       | Description                                  | Type               |
-| ----------- | -------------------------------------------- | ------------------ |
-| `ruxchange` | Emitted when the value property has changed. | `CustomEvent<any>` |
+| Event       | Description                                                                         | Type               |
+| ----------- | ----------------------------------------------------------------------------------- | ------------------ |
+| `ruxchange` | Fires when the value property has changed and emits that value on the event.detail. | `CustomEvent<any>` |
 
 
 ## Shadow Parts
@@ -66,24 +66,6 @@ document.addEventListener('change', (e) =>
 | Part      | Description                       |
 | --------- | --------------------------------- |
 | `"label"` | the label of rux-segmented-button |
-
-
-## CSS Custom Properties
-
-| Name                                                 | Description                                                   |
-| ---------------------------------------------------- | ------------------------------------------------------------- |
-| `--segmented-button-background-color`                | [DEPRECATED] Segmented button background color                |
-| `--segmented-button-border-color`                    | [DEPRECATED] Segmented button border color                    |
-| `--segmented-button-border-radius`                   | [DEPRECATED] Segmented button border radius                   |
-| `--segmented-button-hover-background-color`          | [DEPRECATED] Segmented button hover background color          |
-| `--segmented-button-hover-border-color`              | [DEPRECATED] Segmented button hover border color              |
-| `--segmented-button-hover-text-color`                | [DEPRECATED] Segmented button hover text color                |
-| `--segmented-button-selected-background-color`       | [DEPRECATED] Segmented button selected background color       |
-| `--segmented-button-selected-hover-background-color` | [DEPRECATED] Segmented button selected hover background color |
-| `--segmented-button-selected-hover-border-color`     | [DEPRECATED] Segmented button selected hover border color     |
-| `--segmented-button-selected-hover-text-color`       | [DEPRECATED] Segmented button selected hover text color       |
-| `--segmented-button-selected-text-color`             | [DEPRECATED] Segmented button selected text color             |
-| `--segmented-button-text-color`                      | [DEPRECATED] Segmented button text color                      |
 
 
 ----------------------------------------------

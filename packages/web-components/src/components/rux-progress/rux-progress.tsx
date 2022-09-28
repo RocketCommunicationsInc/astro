@@ -13,7 +13,7 @@ export class RuxProgress {
     /**
      * Current progress value between 0 and 100 (or the max, if defined below).
      */
-    @Prop() value?: number
+    @Prop() value?: number = 0
     /**
      * For progress bars where progress bars have a maximum value greater or less than 100
      */
@@ -62,26 +62,19 @@ export class RuxProgress {
     render() {
         return (
             <Host>
-                {this.value != undefined ? (
-                    [
-                        <progress
-                            class="rux-progress"
-                            value={this.value}
-                            max={this.max}
-                            part="progress"
-                        ></progress>,
-                        <output
-                            class="rux-progress__value"
-                            hidden={this.hideLabel}
-                            part="output"
-                        >
-                            {this._getProgressAsString()}
-                        </output>,
-                    ]
-                ) : (
-                    <progress class="rux-progress"></progress>
-                )}
-
+                <progress
+                    class="rux-progress"
+                    value={this.value}
+                    max={this.max}
+                    part="progress"
+                ></progress>
+                <output
+                    class="rux-progress__value"
+                    hidden={this.hideLabel}
+                    part="output"
+                >
+                    {this._getProgressAsString()}
+                </output>
                 <slot></slot>
             </Host>
         )

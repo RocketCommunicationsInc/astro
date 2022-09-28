@@ -196,10 +196,12 @@ export const status = (args) => {
             children: [
                 {
                     label: 'Tree item 1.1',
+                    status: 'normal'
                 },
-                { label: 'Tree item 1.2' },
+                { label: 'Tree item 1.2', status: 'normal' },
                 {
                     label: 'Tree item 1.3',
+                    status: 'normal'
                 },
             ],
         },
@@ -209,6 +211,7 @@ export const status = (args) => {
         },
         {
             label: 'Tree item 3',
+            status: 'normal',
             children: [
                 { label: 'Tree item 3.1', status: 'off' },
                 { label: 'Tree item 3.2', status: 'critical' },
@@ -241,7 +244,7 @@ export const status = (args) => {
         ${treeData.map(
             (node) => html`
                 <rux-tree-node>
-                    <rux-status status="${node.status}"></rux-status>
+                    <rux-status slot="prefix" status="${node.status}"></rux-status>
                     ${node.label} ${node.children?.map(
                         (child) => html`
                             <rux-tree-node
@@ -250,6 +253,7 @@ export const status = (args) => {
                                 slot="node"
                             >
                                 <rux-status
+                                slot="prefix"
                                     status="${child.status}"
                                 ></rux-status>
                                 ${child.label} ${child.children?.map(
@@ -260,6 +264,7 @@ export const status = (args) => {
                                             slot="node"
                                         >
                                             <rux-status
+                                                slot="prefix"
                                                 status="${grandchild.status}"
                                             ></rux-status>
                                             ${grandchild.label} ${grandchild.children?.map(
@@ -271,6 +276,7 @@ export const status = (args) => {
                                                     >
                                                         <rux-status
                                                             status="${grandchild.status}"
+                                                            slot="prefix"
                                                         ></rux-status>
                                                         ${grandchild.label}
                                                     </rux-tree-node>
@@ -292,6 +298,67 @@ export const status = (args) => {
 
 <Canvas>
     <Story name="With Status">{status.bind()}</Story>
+</Canvas>
+
+## Wrapped Text
+
+The text within Tree Nodes truncate by default, but if you need to support wrapped text, you can make use of the `text` CSS Shadow Part and override the white-space property:
+
+```
+rux-tree-node::part(text) {
+    white-space: normal;
+}
+```
+
+export const WrapText = (args) => {
+    return html`
+<style>
+    .container {
+        padding: 1rem 10%;
+        display: flex;
+        justify-content: center;
+    }
+    rux-tree {
+        width: 15rem;
+        margin: 1rem;
+    }
+    rux-tree-node::part(text) {
+        white-space: normal;
+    }
+</style>
+<div class="container">
+    <rux-tree>
+        <rux-tree-node>
+            The first item has a long line of text
+            <rux-tree-node slot="node">One</rux-tree-node>
+            <rux-tree-node slot="node">Two</rux-tree-node>
+            <rux-tree-node slot="node">Three</rux-tree-node>
+        </rux-tree-node>
+        <rux-tree-node>
+            Two
+            <rux-tree-node slot="node">One</rux-tree-node>
+            <rux-tree-node slot="node">Two</rux-tree-node>
+            <rux-tree-node slot="node">Three</rux-tree-node>
+        </rux-tree-node>
+        <rux-tree-node>
+            Three
+            <rux-tree-node slot="node">One</rux-tree-node>
+            <rux-tree-node slot="node">Two</rux-tree-node>
+            <rux-tree-node slot="node">Three</rux-tree-node>
+        </rux-tree-node>
+        <rux-tree-node>
+            Four score and seven years ago 
+            <rux-tree-node slot="node">One</rux-tree-node>
+            <rux-tree-node slot="node">Two</rux-tree-node>
+            <rux-tree-node slot="node">Three</rux-tree-node>
+        </rux-tree-node>
+    </rux-tree>
+</div>
+    `
+}
+
+<Canvas>
+    <Story name="With Wrapped Text">{WrapText.bind()}</Story>
 </Canvas>
 
 ## Cherry Picking

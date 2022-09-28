@@ -12,7 +12,6 @@ test.describe('Notification', () => {
     `
         )
         const el = page.locator('rux-notification').first()
-        await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })
     test('closes when close icon is clicked', async ({ page }) => {

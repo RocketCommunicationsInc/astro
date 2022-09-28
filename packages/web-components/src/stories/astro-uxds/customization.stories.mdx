@@ -18,17 +18,9 @@ to this problem: CSS Custom Properties and CSS Shadow Parts.
 
 ## Using CSS Custom Properties
 
-Each component API has a set of CSS Custom Properties defined. These are variables that you can set externally that will reflect inside the Shadow DOM.
+Some components may have CSS Custom Properties defined as part of their styling API. These are variables that you can set externally that will reflect inside the Shadow DOM.
 CSS Custom Properties are a lot like SASS variables, with one significant difference--they can be swapped at run time and do not require any build process.
 These CSS Custom Properties will usually be mapped to some CSS property (color, font-size, border-radius, etc).
-
-If you wanted to change the Button background, you could use the `--button-background-color` custom property like so:
-
-```css
-rux-button {
-    --button-background-color: red;
-}
-```
 
 ## Using CSS Shadow Parts
 

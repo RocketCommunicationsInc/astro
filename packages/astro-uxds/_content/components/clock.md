@@ -13,7 +13,7 @@ theme: true
 
 # Clock
 
-Clock shows the current time and, optionally, Julian date, AOS, and LOS timers. It will typically be positioned on the Global Status Bar.
+Clock shows the current time and optional date, AOS, and LOS timers. It will typically be positioned on the Global Status Bar.
 
 ## Appearance and Behavior
 

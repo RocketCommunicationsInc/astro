@@ -1,4 +1,4 @@
 {
-  "packages": ["packages/*"],
-  "version": "6.0.5"
+  "packages": ["packages/*", "packages/angular-workspace/projects/angular"],
+  "version": "6.1.0"
 }

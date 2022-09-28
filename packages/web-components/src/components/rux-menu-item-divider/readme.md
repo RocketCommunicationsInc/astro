@@ -1,6 +1,6 @@
 # Menu Item Divider
 
-A Menu Item divider component for use in dividing items in Pop-up, Select, and Multi-Select menus.
+A Menu Item divider component for use in dividing items in Pop Up, Select, and Multi-Select menus.
 
 ## Guidelines
 
@@ -59,13 +59,6 @@ Pass properties as slotted components in the Astro Pop Up Menu or Astro Select M
 | Part          | Description                                |
 | ------------- | ------------------------------------------ |
 | `"container"` | the container of the rux-menu-item-divider |
-
-
-## CSS Custom Properties
-
-| Name                               | Description                                 |
-| ---------------------------------- | ------------------------------------------- |
-| `--menu-item-divider-border-color` | [DEPRECATED] Menu Item Divider Border Color |
 
 
 ----------------------------------------------

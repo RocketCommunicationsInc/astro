@@ -188,7 +188,7 @@ export class RuxSlider implements FormFieldInterface {
     //Sets the --slider-value-percent CSS var
     private _setValuePercent() {
         const dif = ((this.value! - this.min!) / (this.max! - this.min!)) * 100
-        this.el.style.setProperty('--slider-value-percent', `${dif}%`)
+        this.el.style.setProperty('--_slider-value-percent', `${dif}%`)
     }
 
     private _onInput(e: Event) {
@@ -210,7 +210,7 @@ export class RuxSlider implements FormFieldInterface {
         //Safari needs 0px top for the thumb to look normal.
         //Safari needs differnet padding on ticks.
         if (ua.indexOf('safari') > -1 && ua.indexOf('chrome') == -1) {
-            this.el.style.setProperty('--slider-top', '0px')
+            this.el.style.setProperty('--_slider-top', '0px')
             this.el.style.setProperty('--slider-tick-padding-top', '7px')
         }
         //firefox - thumb too large, tick padding not enough
@@ -279,8 +279,8 @@ export class RuxSlider implements FormFieldInterface {
                             class="rux-range"
                             min={min}
                             max={max}
-                            value={value}
                             step={step}
+                            value={value}
                             disabled={disabled}
                             aria-label="slider"
                             aria-disabled={disabled ? 'true' : 'false'}
@@ -327,3 +327,13 @@ export class RuxSlider implements FormFieldInterface {
         )
     }
 }
+
+/*
+                                return (
+                                    <div class="tick-label">
+                                        <div class="tick"></div>
+                                        <option>{label}</option>
+                                    </div>
+                                )
+
+*/

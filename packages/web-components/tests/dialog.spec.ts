@@ -1,5 +1,9 @@
 import { test, expect } from '@playwright/test'
-import { startTestEnv, setBodyContent } from './utils/_startTestEnv'
+import {
+    startTestEnv,
+    setBodyContent,
+    startTestInBefore,
+} from './utils/_startTestEnv'
 
 test.describe('Dialog', () => {
     startTestEnv()
@@ -18,19 +22,18 @@ test.describe('Dialog', () => {
         await setBodyContent(
             page,
             `
-        <rux-dialog modal-title="Title" modal-message="Message"></rux-dialog>
+        <rux-dialog header="Title" message="Message"></rux-dialog>
     `
         )
         const el = page.locator('rux-dialog')
-        //! These will need to change to dialog-message and dialog-title in the future.
-        await expect(el).toHaveAttribute('modal-message', 'Message')
-        await expect(el).toHaveAttribute('modal-title', 'Title')
+        await expect(el).toHaveAttribute('message', 'Message')
+        await expect(el).toHaveAttribute('header', 'Title')
     })
     test('it opens and closes', async ({ page }) => {
         await setBodyContent(
             page,
             `
-        <rux-dialog modal-title="Title" modal-message="Message"></rux-dialog>
+        <rux-dialog header="Title" message="Message" click-to-close></rux-dialog>
         <rux-button id="toggle">Open/Close</rux-button>
     `
         )
@@ -66,7 +69,7 @@ test.describe('Dialog', () => {
         await setBodyContent(
             page,
             `
-        <rux-dialog open modal-title="Title" modal-message="Message"></rux-dialog>
+        <rux-dialog open header="Title" message="Message"></rux-dialog>
         <rux-button id="toggle">Open/Close</rux-button>
     `
         )
@@ -90,7 +93,7 @@ test.describe('Dialog', () => {
         await setBodyContent(
             page,
             `
-        <rux-dialog open modal-title="Title" modal-message="Message"></rux-dialog>
+        <rux-dialog open header="Title" message="Message"></rux-dialog>
         <rux-button id="toggle">Open/Close</rux-button>
     `
         )
@@ -116,7 +119,7 @@ test.describe('Dialog', () => {
         await setBodyContent(
             page,
             `
-        <rux-dialog open modal-title="Title" modal-message="Message"></rux-dialog>
+        <rux-dialog open header="Title" message="Message"></rux-dialog>
         <rux-button id="toggle">Open/Close</rux-button>
     `
         )
@@ -139,7 +142,7 @@ test.describe('Dialog', () => {
         await setBodyContent(
             page,
             `
-        <rux-dialog open modal-title="Title" modal-message="Message"></rux-dialog>
+        <rux-dialog open header="Title" message="Message"></rux-dialog>
         <rux-button id="toggle">Open/Close</rux-button>
     `
         )
@@ -162,7 +165,7 @@ test.describe('Dialog', () => {
         await setBodyContent(
             page,
             `
-        <rux-dialog open modal-title="Title" modal-message="Message"></rux-dialog>
+        <rux-dialog open header="Title" message="Message"></rux-dialog>
     `
         )
         page.addScriptTag({
@@ -185,7 +188,7 @@ test.describe('Dialog', () => {
         await setBodyContent(
             page,
             `
-        <rux-dialog open modal-title="Title" modal-message="Message"></rux-dialog>
+        <rux-dialog open header="Title" message="Message"></rux-dialog>
     `
         )
         page.addScriptTag({
@@ -202,10 +205,115 @@ test.describe('Dialog', () => {
             page.waitForTimeout(1000).then(() => page.keyboard.press('Escape')),
         ])
     })
-    /*
+})
+test.describe(
+    'Dialog does not close on an off click unless click-to-close is true',
+    () => {
+        test.beforeEach(async ({ page }) => {
+            await startTestInBefore(page)
+            await setBodyContent(
+                page,
+                `   <rux-dialog id="ctc-false" header="Click to close = False" message="world"></rux-dialog>
+                <rux-dialog id="ctc-true" header="Click to close = True" message="world" click-to-close></rux-dialog>
+                <rux-button id="true">Open click-to-close true</rux-button>
+                <rux-button id="false">Open click-to-close false</rux-button>
+            `
+            )
+            await page.addScriptTag({
+                content: `
+            document.addEventListener('ruxdialogclosed', (e) => console.log(e.detail))
+            const openTrue = document.getElementById('true');
+            const openFalse = document.getElementById('false');
+            const ctcTrueModal = document.getElementById('ctc-true')
+            const ctcFalseModal = document.getElementById('ctc-false')
+    
+            openTrue.addEventListener('click', () => {
+                ctcTrueModal.open = true
+            })
+            openFalse.addEventListener('click', () => {
+                ctcFalseModal.open = true
+            })
+        `,
+            })
+        })
+        test('it reamins open when click-to-close is false', async ({
+            page,
+        }) => {
+            await page.locator('#false').click()
+            const ctcFalseModal = page.locator('#ctc-false')
+            await ctcFalseModal
+                .evaluate((e) => e.hasAttribute('open'))
+                .then((e) => {
+                    expect(e).toBeTruthy()
+                })
+            //click off, it should remain open.
+            await page.locator('body').click({ position: { x: 10, y: 10 } })
+            //ctcFalseModal should still be open
+            await ctcFalseModal
+                .evaluate((e) => e.hasAttribute('open'))
+                .then((e) => {
+                    expect(e).toBeTruthy()
+                })
+        })
+        test('it closes on an off click when click-to-close is true', async ({
+            page,
+        }) => {
+            await page.locator('#true').click()
+            const ctcTrueModal = page.locator('#ctc-true')
+            await ctcTrueModal
+                .evaluate((e) => e.hasAttribute('open'))
+                .then((e) => {
+                    expect(e).toBeTruthy()
+                })
+            //click off, it should remain open.
+            await page.locator('body').click({ position: { x: 10, y: 10 } })
+            //ctcFalseModal should still be open
+            await ctcTrueModal
+                .evaluate((e) => e.hasAttribute('open'))
+                .then((e) => {
+                    expect(e).toBeFalsy()
+                })
+        })
+        test('it resets detail.value after event is emitted', async ({
+            page,
+        }) => {
+            //* The _useInput of rux-dialog.tsx would not be resetted to default value after a choice was
+            //* made that closed the dialog. Therefore, if the same dialog opened again and was clicked off of to close,
+            //* it would emit the previous value in e.detail rather than null, the default value.
+            await page.addScriptTag({
+                content: `
+            document.addEventListener('ruxdialogclosed', (e) => {
+                console.log(e.detail)
+            `,
+            })
+            // Using a counter here to get around the first console log of 'false' when dialog is closed the first time.
+            let counter = 1
+            page.on('console', async (msg) => {
+                if (counter === 2) {
+                    expect(msg.text()).toBe('null')
+                }
+                counter++
+            })
+            await page.locator('#true').click()
+            const ctcTrueModal = page.locator('#ctc-true')
+
+            await ctcTrueModal.locator('rux-button').first().click()
+
+            // open it again, close it by click off
+            await page.locator('#true').click()
+
+            await Promise.all([
+                page.waitForEvent('console', { timeout: 5000 }),
+                await page
+                    .locator('body')
+                    .click({ position: { x: 10, y: 10 } }),
+            ])
+        })
+        /*
         Need to test: 
         - With slots? Not sure if that's acutally beneficial. 
         - Better way to test events rather than console? 
         - current e2e has tests for dialog props changing - I don't think these are helpful. Thoughts? 
     */
-})
+    }
+)

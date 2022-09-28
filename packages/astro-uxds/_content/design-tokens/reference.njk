@@ -1,0 +1,578 @@
+---
+tags: resources
+path: /design-tokens/reference
+date: Last Modified
+layout: interior.template.njk
+title: Dark Theme Reference Tokens
+dark: true
+---
+
+
+<h1>Reference Tokens</h1>
+		<h2>Colors</h2>
+		{% for token in tokens.reference('dark', 'color') %}
+			<rux-design-token-preview
+				name="{{ token.name }}"
+				value="{{ token.value }}"
+				alias="{{ token.referenceToken }}"
+				{% if token.description !== 'Protected' %}
+					description="{{ token.description }}"
+				{% endif %}
+				type="background"
+			></rux-design-token-preview>
+		{% endfor %}
+
+		<hr/>
+
+		<h2> Font Size </h2>
+
+		<p>
+			Astro UXDS font size tokens define the font size of text styles and elements. The design tokens are based on a t-shirt 
+			sizing system where the <code>font-size-base</code> token equals 1 rem (16 px by default), and font sizes are either smaller (sm, xs) 
+			or larger (lg, xl, 2xl, 3xl, 4xl, 5xl, 6xl) than the base. For reference, the P body text style uses the <code>font-size-base</code> 
+			token to set the font size.
+		</p>
+
+		{% for token in tokens.reference('dark', 'fontSizes') %}
+			<rux-design-token-preview
+				name="{{ token.name }}"
+				value="{{ token.value }}"
+				alias="{{ token.referenceToken }}"
+				description="{{ token.description }}"
+				type="font-size"
+			></rux-design-token-preview>
+		{% endfor %}
+
+		<hr/>
+
+
+		<h2> Font Family </h2>
+
+		{% for token in tokens.reference('dark', 'fontFamilies') %}
+			<rux-design-token-preview
+				name="{{ token.name }}"
+				value="{{ token.value }}"
+				alias="{{ token.referenceToken }}"
+				description="{{ token.description }}"
+				type="font-size"
+			></rux-design-token-preview>
+		{% endfor %}
+
+		<hr/>
+
+		<h2>Font Weight</h2>
+
+		{% for token in tokens.reference('dark', 'fontWeight') %}
+			<rux-design-token-preview
+				name="{{ token.name }}"
+				value="{{ token.value }}"
+				alias="{{ token.referenceToken }}"
+				description="{{ token.description }}"
+				type="font-weight"
+			></rux-design-token-preview>
+		{% endfor %}
+
+		<hr/>
+
+		<h2>Radii</h2>
+
+		{% for token in tokens.reference('dark', 'borderRadius') %}
+			<rux-design-token-preview
+				name="{{ token.name }}"
+				value="{{ token.value }}"
+				alias="{{ token.referenceToken }}"
+				description="{{ token.description }}"
+				type="radius"
+			></rux-design-token-preview>
+		{% endfor %}
+
+		<hr/>
+
+		<h2>Opacity</h2>
+
+		{% for token in tokens.reference('dark', 'opacity') %}
+			<rux-design-token-preview
+				name="{{ token.name }}"
+				value="{{ token.value }}"
+				alias="{{ token.referenceToken }}"
+				description="{{ token.description }}"
+				type="opacity"
+			></rux-design-token-preview>
+		{% endfor %}
+
+		<hr/>
+
+		<h2>Border Width</h2>
+
+		{% for token in tokens.reference('dark', 'borderWidth') %}
+			<rux-design-token-preview
+				name="{{ token.name }}"
+				value="{{ token.value }}"
+				alias="{{ token.referenceToken }}"
+				description="{{ token.description }}"
+				type="border-width"
+			></rux-design-token-preview>
+		{% endfor %}
+
+		<hr/>
+
+		<h2>Spacing</h2>
+		<p>
+			Astro UXDS spacing tokens use increments of four to define all dimensions, padding, and margins for components, containers, grids, and other UI elements. The design tokens are based on a 4 px system where 1 token step equals .25 rem, which equals 4 px by default. For example, the <code>spacing-4</code> token equals 1 rem (16 px by default).
+		</p>
+
+		<p class="note">
+			When building components, Astro UXDS uses the border-collapse method for sizing. In this method the borders overlap the padding within a component, as opposed to the box model method where the borders are added in addition to the padding. So in Astro UXDS, a component with 8 px padding and 2 px border would only have 8 px of spacing.
+		</p>
+
+		{% for token in tokens.reference('dark', 'spacing') %}
+			<rux-design-token-preview
+				name="{{ token.name }}"
+				value="{{ token.value }}"
+				alias="{{ token.referenceToken }}"
+				description="{{ token.description }}"
+				type="spacing"
+			></rux-design-token-preview>
+		{% endfor %}
+
+		<hr/>
+
+		<h2>Line Height</h2>
+		<p>
+			Astro UXDS line height tokens use increments of four to define the spacing and line height of text styles and elements. The design tokens are based on a t-shirt sizing system where the <code>line-height-base</code> token equals 1.5 rem (24 px by default), and line heights are either smaller (sm, xs, 2xs) or larger (lg, xl, 2xl, 3xl, 4xl) than the base. For reference, the P body text style uses the <code>line-height-base</code> token to set the line height.
+		</p>
+
+		{% for token in tokens.reference('dark', 'lineHeights') %}
+			<rux-design-token-preview
+				name="{{ token.name }}"
+				value="{{ token.value }}"
+				alias="{{ token.referenceToken }}"
+				description="{{ token.description }}"
+				type="line-height"
+			></rux-design-token-preview>
+		{% endfor %}
+
+
+	<h2>Typography</h2>
+
+	<div class="note">
+		<p>The following typography tokens are mostly for reference. We recommend that developers use our typography utility classes instead</p>
+	</div>
+
+	<h3>Monospace-1</h3>
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-monospace-1-font-family').name }}"
+		value="{{ tokens.findByName('font-monospace-1-font-family').value }}"
+		alias="{{ tokens.findByName('font-monospace-1-font-family').referenceToken }}"
+		description="{{ tokens.findByName('font-monospace-1-font-family').description }}"
+		type="font-family"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-monospace-1-font-size').name }}"
+		value="{{ tokens.findByName('font-monospace-1-font-size').value }}"
+		alias="{{ tokens.findByName('font-monospace-1-font-size').referenceToken }}"
+		description="{{ tokens.findByName('font-monospace-1-font-size').description }}"
+		type="font-size"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-monospace-1-font-weight').name }}"
+		value="{{ tokens.findByName('font-monospace-1-font-weight').value }}"
+		alias="{{ tokens.findByName('font-monospace-1-font-weight').referenceToken }}"
+		description="{{ tokens.findByName('font-monospace-1-font-weight').description }}"
+		type="font-weight"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-monospace-1-line-height').name }}"
+		value="{{ tokens.findByName('font-monospace-1-line-height').value }}"
+		alias="{{ tokens.findByName('font-monospace-1-line-height').referenceToken }}"
+		description="{{ tokens.findByName('font-monospace-1-line-height').description }}"
+		type="line-height"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-monospace-1-letter-spacing').name }}"
+		value="{{ tokens.findByName('font-monospace-1-letter-spacing').value }}"
+		alias="{{ tokens.findByName('font-monospace-1-letter-spacing').referenceToken }}"
+		description="{{ tokens.findByName('font-monospace-1-letter-spacing').description }}"
+		type="letter-spacing"
+	></rux-design-token-preview>
+
+	<h3>Display 1</h3>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-display-1-font-family').name }}"
+		value="{{ tokens.findByName('font-display-1-font-family').value }}"
+		alias="{{ tokens.findByName('font-display-1-font-family').referenceToken }}"
+		description="{{ tokens.findByName('font-display-1-font-family').description }}"
+		type="font-family"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-display-1-font-size').name }}"
+		value="{{ tokens.findByName('font-display-1-font-size').value }}"
+		alias="{{ tokens.findByName('font-display-1-font-size').referenceToken }}"
+		description="{{ tokens.findByName('font-display-1-font-size').description }}"
+		type="font-size"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-display-1-font-weight').name }}"
+		value="{{ tokens.findByName('font-display-1-font-weight').value }}"
+		alias="{{ tokens.findByName('font-display-1-font-weight').referenceToken }}"
+		description="{{ tokens.findByName('font-display-1-font-weight').description }}"
+		type="font-weight"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-display-1-line-height').name }}"
+		value="{{ tokens.findByName('font-display-1-line-height').value }}"
+		alias="{{ tokens.findByName('font-display-1-line-height').referenceToken }}"
+		description="{{ tokens.findByName('font-display-1-line-height').description }}"
+		type="line-height"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-display-1-letter-spacing').name }}"
+		value="{{ tokens.findByName('font-display-1-letter-spacing').value }}"
+		alias="{{ tokens.findByName('font-display-1-letter-spacing').referenceToken }}"
+		description="{{ tokens.findByName('font-display-1-letter-spacing').description }}"
+		type="letter-spacing"
+	></rux-design-token-preview>
+
+	<h3>Display 2</h3>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-display-2-font-family').name }}"
+		value="{{ tokens.findByName('font-display-2-font-family').value }}"
+		alias="{{ tokens.findByName('font-display-2-font-family').referenceToken }}"
+		description="{{ tokens.findByName('font-display-2-font-family').description }}"
+		type="font-family"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-display-2-font-size').name }}"
+		value="{{ tokens.findByName('font-display-2-font-size').value }}"
+		alias="{{ tokens.findByName('font-display-2-font-size').referenceToken }}"
+		description="{{ tokens.findByName('font-display-2-font-size').description }}"
+		type="font-size"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-display-2-font-weight').name }}"
+		value="{{ tokens.findByName('font-display-2-font-weight').value }}"
+		alias="{{ tokens.findByName('font-display-2-font-weight').referenceToken }}"
+		description="{{ tokens.findByName('font-display-2-font-weight').description }}"
+		type="font-weight"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-display-2-line-height').name }}"
+		value="{{ tokens.findByName('font-display-2-line-height').value }}"
+		alias="{{ tokens.findByName('font-display-2-line-height').referenceToken }}"
+		description="{{ tokens.findByName('font-display-2-line-height').description }}"
+		type="line-height"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-display-2-letter-spacing').name }}"
+		value="{{ tokens.findByName('font-display-2-letter-spacing').value }}"
+		alias="{{ tokens.findByName('font-display-2-letter-spacing').referenceToken }}"
+		description="{{ tokens.findByName('font-display-2-letter-spacing').description }}"
+		type="letter-spacing"
+	></rux-design-token-preview>
+
+		<h3>Heading 1</h3>
+
+		<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-1-font-family').name }}"
+		value="{{ tokens.findByName('font-heading-1-font-family').value }}"
+		alias="{{ tokens.findByName('font-heading-1-font-family').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-1-font-family').description }}"
+		type="font-family"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-1-font-size').name }}"
+		value="{{ tokens.findByName('font-heading-1-font-size').value }}"
+		alias="{{ tokens.findByName('font-heading-1-font-size').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-1-font-size').description }}"
+		type="font-size"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-1-font-weight').name }}"
+		value="{{ tokens.findByName('font-heading-1-font-weight').value }}"
+		alias="{{ tokens.findByName('font-heading-1-font-weight').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-1-font-weight').description }}"
+		type="font-weight"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-1-line-height').name }}"
+		value="{{ tokens.findByName('font-heading-1-line-height').value }}"
+		alias="{{ tokens.findByName('font-heading-1-line-height').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-1-line-height').description }}"
+		type="line-height"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-1-letter-spacing').name }}"
+		value="{{ tokens.findByName('font-heading-1-letter-spacing').value }}"
+		alias="{{ tokens.findByName('font-heading-1-letter-spacing').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-1-letter-spacing').description }}"
+		type="letter-spacing"
+	></rux-design-token-preview>
+
+	<h3>Heading 1 Bold</h3>
+
+		<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-1-bold-font-family').name }}"
+		value="{{ tokens.findByName('font-heading-1-bold-font-family').value }}"
+		alias="{{ tokens.findByName('font-heading-1-bold-font-family').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-1-bold-font-family').description }}"
+		type="font-family"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-1-bold-font-size').name }}"
+		value="{{ tokens.findByName('font-heading-1-bold-font-size').value }}"
+		alias="{{ tokens.findByName('font-heading-1-bold-font-size').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-1-bold-font-size').description }}"
+		type="font-size"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-1-bold-font-weight').name }}"
+		value="{{ tokens.findByName('font-heading-1-bold-font-weight').value }}"
+		alias="{{ tokens.findByName('font-heading-1-bold-font-weight').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-1-bold-font-weight').description }}"
+		type="font-weight"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-1-bold-line-height').name }}"
+		value="{{ tokens.findByName('font-heading-1-bold-line-height').value }}"
+		alias="{{ tokens.findByName('font-heading-1-bold-line-height').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-1-bold-line-height').description }}"
+		type="line-height"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-1-bold-letter-spacing').name }}"
+		value="{{ tokens.findByName('font-heading-1-bold-letter-spacing').value }}"
+		alias="{{ tokens.findByName('font-heading-1-bold-letter-spacing').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-1-bold-letter-spacing').description }}"
+		type="letter-spacing"
+	></rux-design-token-preview>
+
+	<h3>Heading 2</h3>
+
+		<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-2-font-family').name }}"
+		value="{{ tokens.findByName('font-heading-2-font-family').value }}"
+		alias="{{ tokens.findByName('font-heading-2-font-family').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-2-font-family').description }}"
+		type="font-family"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-2-font-size').name }}"
+		value="{{ tokens.findByName('font-heading-2-font-size').value }}"
+		alias="{{ tokens.findByName('font-heading-2-font-size').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-2-font-size').description }}"
+		type="font-size"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-2-font-weight').name }}"
+		value="{{ tokens.findByName('font-heading-2-font-weight').value }}"
+		alias="{{ tokens.findByName('font-heading-2-font-weight').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-2-font-weight').description }}"
+		type="font-weight"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-2-line-height').name }}"
+		value="{{ tokens.findByName('font-heading-2-line-height').value }}"
+		alias="{{ tokens.findByName('font-heading-2-line-height').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-2-line-height').description }}"
+		type="line-height"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-2-letter-spacing').name }}"
+		value="{{ tokens.findByName('font-heading-2-letter-spacing').value }}"
+		alias="{{ tokens.findByName('font-heading-2-letter-spacing').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-2-letter-spacing').description }}"
+		type="letter-spacing"
+	></rux-design-token-preview>
+
+	<h3>Heading 3</h3>
+
+		<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-3-font-family').name }}"
+		value="{{ tokens.findByName('font-heading-3-font-family').value }}"
+		alias="{{ tokens.findByName('font-heading-3-font-family').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-3-font-family').description }}"
+		type="font-family"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-3-font-size').name }}"
+		value="{{ tokens.findByName('font-heading-3-font-size').value }}"
+		alias="{{ tokens.findByName('font-heading-3-font-size').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-3-font-size').description }}"
+		type="font-size"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-3-font-weight').name }}"
+		value="{{ tokens.findByName('font-heading-3-font-weight').value }}"
+		alias="{{ tokens.findByName('font-heading-3-font-weight').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-3-font-weight').description }}"
+		type="font-weight"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-3-line-height').name }}"
+		value="{{ tokens.findByName('font-heading-3-line-height').value }}"
+		alias="{{ tokens.findByName('font-heading-3-line-height').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-3-line-height').description }}"
+		type="line-height"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-3-letter-spacing').name }}"
+		value="{{ tokens.findByName('font-heading-3-letter-spacing').value }}"
+		alias="{{ tokens.findByName('font-heading-3-letter-spacing').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-3-letter-spacing').description }}"
+		type="letter-spacing"
+	></rux-design-token-preview>
+
+	<h3>Heading 4</h3>
+
+		<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-4-font-family').name }}"
+		value="{{ tokens.findByName('font-heading-4-font-family').value }}"
+		alias="{{ tokens.findByName('font-heading-4-font-family').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-4-font-family').description }}"
+		type="font-family"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-4-font-size').name }}"
+		value="{{ tokens.findByName('font-heading-4-font-size').value }}"
+		alias="{{ tokens.findByName('font-heading-4-font-size').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-4-font-size').description }}"
+		type="font-size"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-4-font-weight').name }}"
+		value="{{ tokens.findByName('font-heading-4-font-weight').value }}"
+		alias="{{ tokens.findByName('font-heading-4-font-weight').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-4-font-weight').description }}"
+		type="font-weight"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-4-line-height').name }}"
+		value="{{ tokens.findByName('font-heading-4-line-height').value }}"
+		alias="{{ tokens.findByName('font-heading-4-line-height').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-4-line-height').description }}"
+		type="line-height"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-4-letter-spacing').name }}"
+		value="{{ tokens.findByName('font-heading-4-letter-spacing').value }}"
+		alias="{{ tokens.findByName('font-heading-4-letter-spacing').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-4-letter-spacing').description }}"
+		type="letter-spacing"
+	></rux-design-token-preview>
+
+	<h3>Heading 5</h3>
+		<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-5-font-family').name }}"
+		value="{{ tokens.findByName('font-heading-5-font-family').value }}"
+		alias="{{ tokens.findByName('font-heading-5-font-family').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-5-font-family').description }}"
+		type="font-family"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-5-font-size').name }}"
+		value="{{ tokens.findByName('font-heading-5-font-size').value }}"
+		alias="{{ tokens.findByName('font-heading-5-font-size').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-5-font-size').description }}"
+		type="font-size"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-5-font-weight').name }}"
+		value="{{ tokens.findByName('font-heading-5-font-weight').value }}"
+		alias="{{ tokens.findByName('font-heading-5-font-weight').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-5-font-weight').description }}"
+		type="font-weight"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-5-line-height').name }}"
+		value="{{ tokens.findByName('font-heading-5-line-height').value }}"
+		alias="{{ tokens.findByName('font-heading-5-line-height').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-5-line-height').description }}"
+		type="line-height"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-5-letter-spacing').name }}"
+		value="{{ tokens.findByName('font-heading-5-letter-spacing').value }}"
+		alias="{{ tokens.findByName('font-heading-5-letter-spacing').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-5-letter-spacing').description }}"
+		type="letter-spacing"
+	></rux-design-token-preview>
+
+	<h3>Heading 6</h3>
+
+		<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-6-font-family').name }}"
+		value="{{ tokens.findByName('font-heading-6-font-family').value }}"
+		alias="{{ tokens.findByName('font-heading-6-font-family').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-6-font-family').description }}"
+		type="font-family"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-6-font-size').name }}"
+		value="{{ tokens.findByName('font-heading-6-font-size').value }}"
+		alias="{{ tokens.findByName('font-heading-6-font-size').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-6-font-size').description }}"
+		type="font-size"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-6-font-weight').name }}"
+		value="{{ tokens.findByName('font-heading-6-font-weight').value }}"
+		alias="{{ tokens.findByName('font-heading-6-font-weight').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-6-font-weight').description }}"
+		type="font-weight"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-6-line-height').name }}"
+		value="{{ tokens.findByName('font-heading-6-line-height').value }}"
+		alias="{{ tokens.findByName('font-heading-6-line-height').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-6-line-height').description }}"
+		type="line-height"
+	></rux-design-token-preview>
+
+	<rux-design-token-preview
+		name="{{ tokens.findByName('font-heading-6-letter-spacing').name }}"
+		value="{{ tokens.findByName('font-heading-6-letter-spacing').value }}"
+		alias="{{ tokens.findByName('font-heading-6-letter-spacing').referenceToken }}"
+		description="{{ tokens.findByName('font-heading-6-letter-spacing').description }}"
+		type="letter-spacing"
+	></rux-design-token-preview>

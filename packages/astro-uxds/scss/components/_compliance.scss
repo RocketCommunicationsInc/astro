@@ -151,34 +151,30 @@ aside footer {
 }
 
 .compliance .rule-text[data-status="under-review"] .rule-status {
-  color: #c8102e;
+  color: #c8102e; // palette/red/700
 }
 
 .compliance .rule-text[data-status="updated"] .rule-status {
-  color: #786dd3;
+  color: #786dd3; // palette/purple/500
 }
 
 .compliance .rule-text[data-status="deprecated"] .rule-status {
-  color: #51555b;
+  color: #51555b; // palette/grey/700
 }
 
 .compliance .rule-text[data-status="new"] .rule-status {
-  color: var(--ds-text-success, #006644);
+  color: #007a33; // palette/green/800
 }
 
 .compliance .rule-status {
-  white-space: nowrap;
-  height: 100%;
-  border-radius: 3px;
   font-style: normal;
   font-weight: 700;
-  font-size: 0.75em; //12px
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
   text-align: center;
-  letter-spacing: 0.005em;
-  line-height: 16px;
-  color: #ffffff;
-  margin-right: 1rem;
   text-transform: uppercase;
+  margin-top: 0.025rem;
 }
 
 .compliance .numeral {
@@ -194,24 +190,24 @@ aside footer {
   padding: 0.125rem 0.75rem;
   font-style: normal;
   font-weight: 700;
-  font-size: 0.75em;
+  font-size: 0.75em; //12px
   text-align: center;
   letter-spacing: 0.005em;
   line-height: 16px;
-  color: #fff;
+  color: #ffffff;
   margin-right: 1rem;
 }
 
 .compliance .tier.tier--1 {
-  background: #009fa3;
+  background: #009fa3; // color/palette/teal/600
 }
 
 .compliance .tier.tier--2 {
-  background: #3a87cf;
+  background: #3a87cf; // color/palette/brigthblue/600
 }
 
 .compliance .tier.tier--3 {
-  background: #81009a;
+  background: #81009a; // color/pink/brigthblue/600
 }
 
 .compliance .rule-figure {

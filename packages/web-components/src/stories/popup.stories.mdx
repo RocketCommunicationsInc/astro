@@ -3,64 +3,52 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 
 <Meta
-    title="Components/Pop Up Menu"
-    component="rux-pop-up-menu"
-    argTypes={extractArgTypes('rux-pop-up-menu')}
+    title="Components/Pop Up"
+    component="rux-pop-up"
+    argTypes={extractArgTypes('rux-pop-up')}
     subcomponents={{
+        RuxMenu: 'rux-menu',
         RuxMenuItem: 'rux-menu-item',
         RuxMenuItemDivider: 'rux-menu-item-divider',
     }}
     parameters={{
         actions: {
             handles: [
-                'ruxmenudidclose rux-pop-up-menu',
-                'ruxmenudidopen rux-pop-up-menu',
-                'ruxmenuwillclose rux-pop-up-menu',
-                'ruxmenuwillopen rux-pop-up-menu',
+                'ruxpopupopened rux-pop-up',
+                'ruxpopupclosed rux-pop-up'
             ],
-        },
-        docs: {
-            inlineStories: false,
         },
     }}
 />
 
 # Pop Up
 
-A Pop-Up Menu provides users with a quick way to access common actions for a highlighted item.
+A Pop Up provides users with a quick way to access common actions for a highlighted item.
 
 ## Guidelines
 
--   [Astro UXDS: Pop Up Menu](http://www.astrouxds.com/library/pop-up-menu)
+-   [Astro UXDS: Pop Up](http://www.astrouxds.com/library/pop-up)
 
 export const Default = (args) => {
     return html`
-<div style="display: flex; align-items: center;">
-    <rux-icon icon="apps" aria-controls="popup-menu-1"></rux-icon>
-    <span style="margin-left: 10px;">Click icon to see pop up</span>
+<div style="display: flex; width: 100%; justify-content: center; margin-top: 10%;">
+    <rux-pop-up open=${args.open}>
+        <rux-icon icon="apps" slot="trigger"></rux-icon>
+        <rux-menu>
+            <rux-menu-item value="1">Menu Item 1</rux-menu-item>
+            <rux-menu-item value="2">Menu Item 2</rux-menu-item>
+            <rux-menu-item value="3">Menu Item 3</rux-menu-item>
+        </rux-menu>
+    </rux-pop-up>
 </div>
-<rux-pop-up-menu id="popup-menu-1" ?open="${args.open}">
-    <rux-menu-item>Item 1</rux-menu-item>
-    <rux-menu-item-divider></rux-menu-item-divider>
-    <rux-menu-item value="2" style="max-width: 344px"
-        >Item 2</rux-menu-item
-    >
-    <rux-menu-item disabled>Item 3 is disabled</rux-menu-item>
-    <rux-menu-item value="Item 4"
-        >Item 4 has a string value</rux-menu-item
-    >
-    <rux-menu-item href="https://www.astrouxds.com"
-        >Item 5 is an anchor/action item...</rux-menu-item
-    >
-</rux-pop-up-menu>
-    `
+`
 }
 
 <Canvas>
     <Story
-        height="400px"
         args={{
-            open: false,
+            open: true,
+            placement: 'auto'
         }}
         name="Default"
     >
@@ -70,237 +58,72 @@ export const Default = (args) => {
 
 ## API
 
-<ArgsTable of="rux-pop-up-menu" />
+<ArgsTable of="rux-pop-up" />
 
 ## Usage
 
-Make use of [Menu Item](?path=/docs/components-pop-up-menu-menu-item--default-story) and [Menu Item Divider](?path=/docs/components-pop-up-menu-menu-item-divider--default-story) to compose your own Pop Up Menus.
+Make use of [Menu](?path=/docs/components-pop-up-menu--default-story), [Menu Item](?path=/docs/components-pop-up-menu-item--default-story), and [Menu Item Divider](?path=/docs/components-pop-up-menu-item-divider--default-story) to compose your own Pop Up.
+Every `rux-pop-up` should use the named `trigger` slot to render the trigger element for the pop up menu.
+The menu will attempt to position according to the `placement` prop if provided, or will use auto-placement if not.
 
 ## Variants
 
-### With Anchors
+### Placements
 
-export const WithAnchors = (args) => {
+export const Placements = (args) => {
     return html`
-<style>
-    #demo {
-        padding: 5%;
-        display: flex;
-        justify-content: center;
-    }
-    #pop-demo {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-    }
-    .button {
-        display: inline-block;
-        position: absolute;
-    }
-    #tl {
-        top: 2rem;
-        left: 2rem;
-    }
-    #tr {
-        top: 2rem;
-        right: 2rem;
-    }
-    #bl {
-        bottom: 2rem;
-        left: 2rem;
-    }
-    #br {
-        bottom: 2rem;
-        right: 2rem;
-    }
-    #tc {
-        top: 2rem;
-        right: 50vw;
-    }
-    #bc {
-        bottom: 2rem;
-        right: 50vw;
-    }
-    #static {
-        top: 20rem;
-        left: 50rem;
-    }
-</style>
-<div class="demo">
-    <div id="pop-demo">
-        <button
-            aria-controls="popup-menu-1"
-            aria-haspopup="true"
-            class="button"
-            id="tl"
-        >
-            tl
-        </button>
-        <button
-            aria-controls="popup-menu-2"
-            aria-haspopup="true"
-            class="button"
-            id="tr"
-        >
-            tr
-        </button>
-        <button
-            aria-controls="popup-menu-3"
-            aria-haspopup="true"
-            class="button"
-            id="bl"
-        >
-            bl
-        </button>
-        <button
-            aria-controls="popup-menu-4"
-            aria-haspopup="true"
-            class="button"
-            id="br"
-        >
-            br
-        </button>
-        <button
-            aria-controls="popup-menu-5"
-            aria-haspopup="true"
-            class="button"
-            id="tc"
-        >
-            tv
-        </button>
-        <button
-            aria-controls="popup-menu-6"
-            aria-haspopup="true"
-            class="button"
-            id="bc"
-        >
-            bc
-        </button>
-        <button
-            aria-controls="popup-menu-7"
-            aria-haspopup="true"
-            class="button"
-            id="static"
-        >
-            bc
-        </button>
-    </div>
-    <rux-pop-up-menu id="popup-menu-1">
-        <rux-menu-item>Item 1</rux-menu-item>
-        <rux-menu-item-divider></rux-menu-item-divider>
-        <rux-menu-item value="2" style="max-width: 344px"
-            >Item 2</rux-menu-item
-        >
-        <rux-menu-item disabled>Item 3 is disabled</rux-menu-item>
-        <rux-menu-item value="Item 4"
-            >Item 4 has a string value</rux-menu-item
-        >
-        <rux-menu-item href="https://www.astrouxds.com"
-            >Item 5 is an anchor/action item...</rux-menu-item
-        >
-    </rux-pop-up-menu>
-    <rux-pop-up-menu id="popup-menu-2">
-        <rux-menu-item>Item 1</rux-menu-item>
-        <rux-menu-item-divider></rux-menu-item-divider>
-        <rux-menu-item value="2" style="max-width: 344px"
-            >Item 2</rux-menu-item
-        >
-        <rux-menu-item disabled>Item 3 is disabled</rux-menu-item>
-        <rux-menu-item value="Item 4"
-            >Item 4 has a string value</rux-menu-item
-        >
-        <rux-menu-item href="https://www.astrouxds.com"
-            >Item 5 is an anchor/action item...</rux-menu-item
-        >
-    </rux-pop-up-menu>
-    <rux-pop-up-menu id="popup-menu-3">
-        <rux-menu-item>Item 1</rux-menu-item>
-        <rux-menu-item-divider></rux-menu-item-divider>
-        <rux-menu-item value="2" style="max-width: 344px"
-            >Item 2</rux-menu-item
-        >
-        <rux-menu-item disabled>Item 3 is disabled</rux-menu-item>
-        <rux-menu-item value="Item 4"
-            >Item 4 has a string value</rux-menu-item
-        >
-        <rux-menu-item href="https://www.astrouxds.com"
-            >Item 5 is an anchor/action item...</rux-menu-item
-        >
-    </rux-pop-up-menu>
-    <rux-pop-up-menu id="popup-menu-4">
-        <rux-menu-item>Item 1</rux-menu-item>
-        <rux-menu-item-divider></rux-menu-item-divider>
-        <rux-menu-item value="2" style="max-width: 344px"
-            >Item 2</rux-menu-item
-        >
-        <rux-menu-item disabled>Item 3 is disabled</rux-menu-item>
-        <rux-menu-item value="Item 4"
-            >Item 4 has a string value</rux-menu-item
-        >
-        <rux-menu-item href="https://www.astrouxds.com"
-            >Item 5 is an anchor/action item...</rux-menu-item
-        >
-    </rux-pop-up-menu>
-    <rux-pop-up-menu id="popup-menu-5">
-        <rux-menu-item>Item 1</rux-menu-item>
-        <rux-menu-item-divider></rux-menu-item-divider>
-        <rux-menu-item value="2" style="max-width: 344px"
-            >Item 2</rux-menu-item
-        >
-        <rux-menu-item disabled>Item 3 is disabled</rux-menu-item>
-        <rux-menu-item value="Item 4"
-            >Item 4 has a string value</rux-menu-item
-        >
-        <rux-menu-item href="https://www.astrouxds.com"
-            >Item 5 is an anchor/action item...</rux-menu-item
-        >
-    </rux-pop-up-menu>
-    <rux-pop-up-menu id="popup-menu-6">
-        <rux-menu-item>Item 1</rux-menu-item>
-        <rux-menu-item-divider></rux-menu-item-divider>
-        <rux-menu-item value="2" style="max-width: 344px"
-            >Item 2</rux-menu-item
-        >
-        <rux-menu-item disabled>Item 3 is disabled</rux-menu-item>
-        <rux-menu-item value="Item 4"
-            >Item 4 has a string value</rux-menu-item
-        >
-        <rux-menu-item href="https://www.astrouxds.com"
-            >Item 5 is an anchor/action item...</rux-menu-item
-        >
-    </rux-pop-up-menu>
-    <rux-pop-up-menu id="popup-menu-7">
-        <rux-menu-item>Item 1</rux-menu-item>
-        <rux-menu-item-divider></rux-menu-item-divider>
-        <rux-menu-item value="2" style="max-width: 344px"
-            >Item 2</rux-menu-item
-        >
-        <rux-menu-item disabled>Item 3 is disabled</rux-menu-item>
-        <rux-menu-item value="Item 4"
-            >Item 4 has a string value</rux-menu-item
-        >
-        <rux-menu-item href="https://www.astrouxds.com"
-            >Item 5 is an anchor/action item...</rux-menu-item
-        >
-    </rux-pop-up-menu>
+<div style="display: flex; width: 100%; justify-content: center; margin-bottom: 10%; margin-top: 10%;">
+    <rux-pop-up placement="top" open>
+        <rux-button slot="trigger">Top</rux-button>
+        <rux-menu>
+            <rux-menu-item value="1">Menu Item 1</rux-menu-item>
+            <rux-menu-item value="2">Menu Item 2</rux-menu-item>
+            <rux-menu-item value="3">Menu Item 3</rux-menu-item>
+        </rux-menu>
+    </rux-pop-up>
 </div>
-    `
+<div style="display: flex; width: 100%; justify-content: center; margin-bottom: 10%">
+    <rux-pop-up placement="right" open>
+        <rux-button slot="trigger">Right</rux-button>
+        <rux-menu>
+            <rux-menu-item value="1">Menu Item 1</rux-menu-item>
+            <rux-menu-item value="2">Menu Item 2</rux-menu-item>
+            <rux-menu-item value="3">Menu Item 3</rux-menu-item>
+        </rux-menu>
+    </rux-pop-up>
+</div>
+<div style="display: flex; width: 100%; justify-content: center; margin-bottom: 15%">
+    <rux-pop-up placement="bottom" open>
+        <rux-button slot="trigger">Bottom</rux-button>
+        <rux-menu>
+            <rux-menu-item value="1">Menu Item 1</rux-menu-item>
+            <rux-menu-item value="2">Menu Item 2</rux-menu-item>
+            <rux-menu-item value="3">Menu Item 3</rux-menu-item>
+        </rux-menu>
+    </rux-pop-up>
+</div>
+<div style="display: flex; width: 100%; justify-content: center; margin-bottom: 10%">
+    <rux-pop-up placement="left" open>
+        <rux-button slot="trigger">Left</rux-button>
+        <rux-menu>
+            <rux-menu-item value="1">Menu Item 1</rux-menu-item>
+            <rux-menu-item value="2">Menu Item 2</rux-menu-item>
+            <rux-menu-item value="3">Menu Item 3</rux-menu-item>
+        </rux-menu>
+    </rux-pop-up>
+</div>
+`
 }
 
 <Canvas>
-    <Story 
-        name="With Anchors"
-        height="900px"
+    <Story
+        name="Placements"
         argTypes={{
-            open: { table: { disable: true } },
-            anchorEl: { table: { disable: true } },
-            triggerEl: { table: { disable: true } }
+            placement: { table: {disable: true}},
+            open: { table: {disable: true }},
         }}
-        
     >
-        {WithAnchors.bind()}
+        {Placements.bind()}
     </Story>
 </Canvas>
 
@@ -309,6 +132,13 @@ export const WithAnchors = (args) => {
 If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
 
 ```js
-import RuxPopUpMenu from '@astrouxds/astro-web-components/dist/components/rux-pop-up-menu.js'
-customElements.define('rux-pop-up-menu', RuxPopUpMenu)
+import RuxPopUp from '@astrouxds/astro-web-components/dist/components/rux-pop-up.js'
+import RuxMenu from '@astrouxds/astro-web-components/dist/components/rux-menu.js'
+import RuxMenuItem from '@astrouxds/astro-web-components/dist/components/rux-menu-item.js'
+import RuxMenuItemDivider from '@astrouxds/astro-web-components/dist/components/rux-menu-item-divider.js'
+
+customElements.define('rux-pop-up', RuxPopUp)
+customElements.define('rux-menu', RuxMenu)
+customElements.define('rux-menu-item', RuxMenuItem)
+customElements.define('rux-menu-item-divider', RuxMenuItemDivider)
 ```

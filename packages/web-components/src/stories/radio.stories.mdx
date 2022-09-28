@@ -29,14 +29,15 @@ The Radio Group component is responsible for checking and unchecking individual 
 
 export const Default = (args) => {
     return html`
-<rux-radio
-    name="${args.name}"
-    ?checked=${args.checked}
-    ?disabled=${args.disabled}
-    .value="${args.value}"
-    label="${args.label}"
-    >${args.label}</rux-radio
->
+    <rux-radio
+        name="${args.name}"
+        ?checked=${args.checked}
+        ?disabled=${args.disabled}
+        .value="${args.value}"
+        label="${args.label}"
+    >
+        ${args.label}
+    </rux-radio>
     `
 }
 

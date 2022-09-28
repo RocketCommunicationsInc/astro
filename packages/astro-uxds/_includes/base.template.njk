@@ -25,6 +25,7 @@
 		should preload critical css via http2, but it‘s not loading and throwing an error in chrome
 		<link rel="preload" href="/css/variables.css" as="style"> 
 		//-->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
 		<link rel="stylesheet" href="/css/reset.css">
 		<link rel="stylesheet" href="/css/variables.css">
 		<link rel="stylesheet" href="/css/core.css">
@@ -38,14 +39,33 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.5/fuse.min.js"></script>
 		<script src="/js/mobile.js"></script>
 		<script src="/js/site.js"></script>
+		<script type="module" src="https://unpkg.com/@astrouxds/documentation-components?module"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.75/dist/themes/light.css" />
+		<script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.75/dist/shoelace.js"></script>
+		 <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+		
 
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-3VZ2K59EBP"></script> 
+		<script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-3VZ2K59EBP'); </script>
+
+		<!-- Google Tag Manager -->
+			<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-P7SNZC9');</script>
+		<!-- End Google Tag Manager -->
 	</head>
 	<body class="{{ class }}">
+		<!-- Google Tag Manager (noscript) -->
+			<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7SNZC9"
+			height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
 		<div class="container">
 			{% include "_nav.njk" %}
 			<div class="content">
 
-				<main>
+				<main class="DocSearch-content">
 
 					{% block content %}
 						<h1>Default Content</h1>
@@ -57,5 +77,14 @@
 				{% include "_footer.njk" %}
 			</div>
 		</div>
+		<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+		<script>
+			docsearch({
+  appId: 'EQEH1X5N4X',
+  indexName: 'astrouxds',
+  apiKey: 'a402f3cc6d8965606af2d7235ba75700',
+  container: '#docsearch'
+});
+		</script>
 	</body>
 </html>

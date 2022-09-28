@@ -1,0 +1,230 @@
+---
+path: /design-tokens/getting-started
+date: Last Modified
+layout: interior.template.njk
+title: Getting Started
+---
+<style>
+  .font-bold {
+    font-weight: bold;
+  }
+
+  .text-green-500 {}
+  .text-blue-600 {
+    color: rgb(37, 99, 235);
+  }
+  .text-blue-800 {
+    color: rgb(30, 64, 175);
+  }
+  .text-green-500 {
+    color: rgb(34, 197, 94);
+  }
+  .text-blue-400 {
+    color: rgb(96, 165, 250);
+  }
+  .text-red-400 {
+    color: rgb(248, 113, 113);
+  }
+  h3 {
+    display: flex;
+    align-items: center;
+  }
+  h3 .token {
+    margin-left: 0.5rem;
+  }
+  .token {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 400;
+  }
+  .token__reference {
+    background: rgb(167, 139, 250);
+  }
+  .token__system {
+    background: rgb(124, 58, 237);
+  }
+  .token__component {
+    background: rgb(76, 29, 149);
+  }
+</style>
+
+<h1> Astro Design Tokens </h1>
+
+<h2> What are Design Tokens? </h2>
+
+<p>Design Tokens empower designer and developer workflows by providing answers to common questions like "what color should I use for XYZ?" They enable you to make consistent design decisions that define the UI elements of a Design System and are your single source of truth. They can describe everything from color to border radii to typography and follow a consistent naming convention. Most importantly, they are platform-agnostic.</p>
+
+<table>
+  <tr>
+    <th>Design Specifications</th>
+    <th>Translated into Design Tokens</th>
+  </tr>
+  <tbody>
+    <tr>
+      <td> The <span class="font-bold text-blue-600">text</span>
+        <span class="font-bold text-blue-800">color</span> of a <span class="font-bold text-green-500">button</span> is #fffff. </td>
+      <td>
+        <span class="font-bold text-green-500">button</span>-<span class="font-bold text-blue-800">color</span>-<span class="font-bold text-blue-600">text</span></td>
+    </tr>
+    <tr>
+      <td>
+          The <span class="font-bold text-blue-600">background</span>
+        <span class="font-bold text-blue-800">color</span> for all <span class="font-bold text-blue-400">surface elements</span> is #fff.
+        </td>
+      <td>
+        <span class="font-bold text-blue-800">color</span>-<span class="font-bold text-blue-600">background</span>-<span class="font-bold text-blue-400">surface</span>
+      </td>
+    </tr>
+    <tr>
+      <td>Our <span class="font-bold text-blue-400">base</span>
+        <span class="font-bold text-blue-800">border radii</span> is 3px. </td>
+      <td>
+        <span class="font-bold text-blue-800">radius</span>-<span class="font-bold text-blue-400">base</span></td>
+
+    </tr>
+    <tr>
+      <td>The <span class="font-bold text-blue-600">border</span>
+        <span class="font-bold text-blue-800">color</span> for a <span class="font-bold text-green-500">text input </span>when it is <span class="font-bold text-red-400">invalid</span> is #fff.</td>
+      <td>
+        <span class="font-bold text-green-500">input</span>-<span class="font-bold text-blue-800">color</span>-<span class="font-bold text-blue-600">border</span>-<span class="font-bold text-red-400">invalid</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2> Types of Design Tokens </h2>
+
+<p>Astro Design Tokens are broken down into three tiers based on their usage:</p>
+
+<span class="token token__reference">Reference</span> -> <span class="token token__system">System</span> -> <span class="token token__component">Component</span>
+
+<h3> Reference Tokens </h3>
+
+<pre>color.palette.brightblue.500</pre>
+
+<p>Reference Tokens represent the complete palette and include all possible values that are available to use. They do not convey any intent or meaning.</p>
+
+<p> You should avoid creating your own colors or values if you want to be Astro-compliant. Our color values are very carefully chosen to meet WCAG accessibility compliance standards among others.</p>
+
+<h3> System Tokens (Preferred) </h3>
+
+<pre>color.background.interactive</pre>
+
+<p>Reference Tokens help enforce consistency; however, the sheer number of them can be overwhelming. To help determine which tokens to use, Astro recommends System Tokens to better convey intent, usage, patterns and concepts (like `interactive` or `surface`). All System Tokens refer to our Reference Tokens.</p>
+
+<h3> Component Tokens </h3>
+
+<pre>status-symbol-color-fill-critical</pre>
+
+<p>Component Tokens describe all the properties of individual components. They should only be used in scenarios where you are rebuilding existing Astro components, such as:</p>
+
+<ol>
+  <li>If you are unable to use our Figma and Web Component libraries. For example, developing a native Windows application, designing in Adobe XD, etc.</li>
+  <li>If you are theming an existing component library or design system. For example, Bootstrap or Material.</li>
+</ol>
+
+<p>Component Tokens are scoped to individual components and should not be used outside of the component. Instead, use the token that is being referenced directly. For example, in a list component, don't use <code>button-color-background-hover</code> instead, note that <code>button-color-background-hover</code> references <code>color.background.interactive.default</code> and use the System Token instead. Note that Component Tokens may change in upcoming releases and may break the visual design of your custom component if you use them.</p>
+
+<h2>Common Use Cases</h2>
+
+<h3> 
+    I'm a designer creating a new component or piece of UI 
+    <span class="token token__system">System (Preferred)</span>
+  <span class="token token__reference">Reference</span>
+</h3>
+
+<p>Start with System Tokens wherever possible. If you can't find what you're looking for, drop down and use the Reference Tokens.</p>
+
+<p> If you find yourself wanting to copy an existing Component's Token value for your new component, look up what that component token is referencing and use that instead.</p>
+
+<h3> I'm a designer working in something that isn't Figma <span class="token token__component">Component</span>
+</h3>
+
+<p> Since you won't have access to our Figma component library, you'll need to create your own Astro components. You can do this using just our Component Tokens: <code>button-color-background</code>, <code>button-color-text</code>. </p>
+
+<h3> 
+    I'm a single developer working on some new UI 
+    <span class="token token__system">System (Preferred)</span>
+  <span class="token token__reference">Reference</span>
+</h3>
+
+<p> Start with System Tokens wherever possible. If you can't find what you're looking for, drop down and use the Reference Tokens. </p>
+
+<p> If you find yourself wanting to copy an existing component's token value for your new component, look up what that Component Token is referencing and use that instead. </p>
+
+<h3> 
+  I'm a developer who can't use Astro Web Components 
+  <span class="token token__component">Component</span>
+</h3>
+
+<p> Since you won't have access to our web component library, you'll need to create your own Astro components. You can do this using just our Component Tokens: <code>button-color-background</code>, <code>button-color-text</code>. </p>
+
+<h3> Naming Convention </h3>
+
+<p>Our design tokens follow a consistent naming convention:</p>
+
+  <ol>
+    <li>Group</li>
+    <li>Component</li>
+    <li>Element</li>
+    <li>Category</li>
+    <li>Property</li>
+    <li>Concept</li>
+    <li>Variant</li>
+    <li>State</li>
+    <li>Scale</li>
+  </ol>
+
+<ul>
+  <li>Group
+  <ul>
+      <li>Represents concepts that span across multiple components  </li>
+      <li>Example: forms </li>
+    </ul>
+  <li>Component
+  <ul>
+      <li>Component-specific values that can override other token values </li>
+      <li>Example: our global status bar uses the same colors for both light and dark themes </li>
+    </ul>
+  <li>Element
+  <ul>
+      <li>Sometimes components need to override other components or elements within them </li>
+      <li>Example: <code>notification-banner-icon-fill-critical</code> Notification Banner overrides the icon fill color </li>
+    </ul>
+  <li>Category
+  <ul>
+      <li>The backbone of all tokens. Describes what kind of value it is </li>
+      <li>Example:  color, size, radii, opacity </li>
+    </ul>
+  <li>Property
+  <ul>
+      <li>Describes a particular type of category </li>
+      <li>Example: background(color), text(color), border(color), inner(shadow), outer(shadow) </li>
+    </ul>
+  <li>Concept
+  <ul>
+      <li>Describes a general, related idea </li>
+      <li>Example: surface, status </li>
+    </ul>
+  <li>Variant
+  <ul>
+      <li>Describes different variants of a value </li>
+      <li>Example: (button) secondary </li>
+    </ul>
+  <li>State
+  <ul>
+      <li>Describes a particular state </li>
+      <li>Example: hover, focus, selected </li>
+    </ul>
+  <li>Scale
+  <ul>
+      <li>Describes a hierarchy between values </li>
+      <li>Example: (color)100-900, (fontSize)sm-lg </li>
+    </ul>
+</ul>
+
+<p> A token may have only some of these levels and do not need to include all of them. </p>
+
+<p> Astro components offer off the shelf solutions for common UI patterns, but they do not encompass the whole picture. While it is possible to build an application using nothing but Astro components, you will still need Design Tokens for things like spacing between the components themselves. In most cases, you will also need to create your own custom components. Design Tokens can help there as well.</p>

@@ -1,17 +1,7 @@
 :host {
-    /**
-    *   @prop --tab-border-color: [DEPRECATED] Tab border color
-    */
-    --tab-border-color: transparent;
-
     box-sizing: border-box;
     display: flex;
     justify-content: flex-start;
-    font-family: var(--font-heading-2-font-family);
-    font-size: var(--font-heading-2-font-size);
-    letter-spacing: var(--font-heading-2-letter-spacing);
-    font-weight: var(--font-heading-2-font-weight);
-    min-height: 5.625rem;
     height: 100%;
     width: auto;
     margin: 0;
@@ -25,12 +15,4 @@
 }
 :host([hidden]) {
     display: none;
-}
-
-:host([small]) {
-    font-family: var(--font-heading-5-font-family);
-    font-size: var(--font-heading-5-font-size);
-    letter-spacing: var(--font-heading-5-letter-spacing);
-    font-weight: var(--font-heading-5-font-weight);
-    min-height: 4.125rem; //66px
 }

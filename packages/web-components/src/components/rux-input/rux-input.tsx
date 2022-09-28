@@ -340,10 +340,7 @@ export class RuxInput implements FormFieldInterface {
                             part="input"
                         ></input>
                         {this.togglePassword ? (
-                            <rux-button
-                                borderless
-                                iconOnly
-                                size="small"
+                            <button
                                 onClick={_handleTogglePassword}
                                 class="pw-button"
                             >
@@ -354,9 +351,9 @@ export class RuxInput implements FormFieldInterface {
                                             ? 'visibility-off'
                                             : 'visibility'
                                     }
-                                    size="extra-small"
+                                    size="22px"
                                 />
-                            </rux-button>
+                            </button>
                         ) : null}
                         <span part="suffix" class="rux-input-suffix">
                             <slot name="suffix"></slot>

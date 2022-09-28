@@ -38,14 +38,14 @@ The guidance on this page is focused on the use of, and rules for, Classificatio
 
 ### Banner Examples
 
-|                                                                              | State            | Hex Value | RGB Value      | Custom Property Name           | Font Color |
-| ---------------------------------------------------------------------------- | ---------------- | --------- | -------------- | ------------------------------ | ---------- |
-| ![Marking Unclassified Swatch](/img/swatches/marking__unclassified.svg)      | Unclassified     | `#007a33` | `0, 122, 51`   | `--classificationUnclassified` | `white`    |
-| ![Marking Controlled Swatch](/img/swatches/marking__controlled.svg)          | Controlled (CUI) | `#502b85` | `80, 43, 133`  | `--classificationControlled`   | `white`    |
-| ![Marking Confidential Swatch](/img/swatches/marking__confidential.svg)      | Confidential     | `#0033a0` | `0, 51, 160`   | `--classificationConfidential` | `white`    |
-| ![Marking Secret Swatch](/img/swatches/marking__secret.svg)                  | Secret           | `#c8102e` | `200, 16, 46`  | `--classificationSecret`       | `white`    |
-| ![Marking Top Secret Swatch](/img/swatches/marking__top-secret.svg)          | Top Secret       | `#ff8c00` | `255, 140, 0`  | `--classificationTopSecret`    | `black`    |
-| ![Marking Top Secret//SCI Swatch](/img/swatches/marking__top-secret-sci.svg) | Top Secret//SCI  | `#fce83a` | `252, 232, 58` | `--classificationTopSecretSCI` | `black`    |
+|                                                                              | State            | Hex Value | RGB Value    | CSS                                                     | Font Color |
+| ---------------------------------------------------------------------------- | ---------------- | --------- | ------------ | ------------------------------------------------------- | ---------- |
+| ![Marking Unclassified Swatch](/img/swatches/marking__unclassified.svg)      | Unclassified     | #007a33   | 0, 122, 51   | `--classification-banner-color-background-unclassified` | white      |
+| ![Marking Controlled Swatch](/img/swatches/marking__controlled.svg)          | Controlled (CUI) | #502b85   | 80, 43, 133  | `--classification-banner-color-background-cui`          | white      |
+| ![Marking Confidential Swatch](/img/swatches/marking__confidential.svg)      | Confidential     | #0033a0   | 0, 51, 160   | `--classification-banner-color-background-confidential` | white      |
+| ![Marking Secret Swatch](/img/swatches/marking__secret.svg)                  | Secret           | #c8102e   | 200, 16, 46  | `--classification-banner-color-background-secret`       | white      |
+| ![Marking Top Secret Swatch](/img/swatches/marking__top-secret.svg)          | Top Secret       | #ff8c00   | 255, 140, 0  | `--classification-banner-color-background-topsecret`    | black      |
+| ![Marking Top Secret//SCI Swatch](/img/swatches/marking__top-secret-sci.svg) | Top Secret//SCI  | #fce83a   | 252, 232, 58 | `--classification-banner-color-background-topsecretsci` | black      |
 
 ### Overall Marking Background Information
 

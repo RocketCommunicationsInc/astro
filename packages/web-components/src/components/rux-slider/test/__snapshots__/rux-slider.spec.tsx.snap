@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`rux-slider renders 1`] = `
-<rux-slider style="--slider-value-percent: 50%;">
+<rux-slider style="--_slider-value-percent: 50%;">
   <mock:shadow-root>
     <div class="rux-form-field" part="form-field">
       <div class="rux-slider">
@@ -14,7 +14,7 @@ exports[`rux-slider renders 1`] = `
 `;
 
 exports[`rux-slider renders label prop 1`] = `
-<rux-slider label="hello" style="--slider-value-percent: 50%;">
+<rux-slider label="hello" style="--_slider-value-percent: 50%;">
   <mock:shadow-root>
     <div class="rux-form-field" part="form-field">
       <label aria-hidden="false" class="rux-input-label" htmlfor="rux-slider-2" part="label">
@@ -32,7 +32,7 @@ exports[`rux-slider renders label prop 1`] = `
 `;
 
 exports[`rux-slider renders label slot 1`] = `
-<rux-slider style="--slider-value-percent: 50%;">
+<rux-slider style="--_slider-value-percent: 50%;">
   <mock:shadow-root>
     <div class="rux-form-field" part="form-field">
       <label aria-hidden="false" class="rux-input-label" htmlfor="rux-slider-3" part="label">

@@ -99,9 +99,39 @@ command = "npm run build"
 	to = "/compliance"
 	status = 301
 	force = true
+	
+[[redirects]]
+	from = "/components/dialog-box"
+	to = "/components/dialog"
+	status = 301
+	force = true
+
+[[redirects]]
+	from = "/components/sign-in"
+	to = "/patterns/sign-in"
+	status = 301
+	force = true
 
 [[redirects]]
 	from = "/patterns/validation"
 	to = "/patterns/forms-and-validation"
+	status = 301
+	force = true
+
+[[redirects]]
+	from = "/components/spectrum-analyzer"
+	to = "/"
+	status = 301
+	force = true
+
+[[redirects]]
+	from = "/components/pop-up"
+	to = "/components/pop-up-menu"
+  status = 301
+	force = true
+
+[[redirects]]
+	from = "/compliance"
+	to = "/compliance/egs-design-compliance"
 	status = 301
 	force = true

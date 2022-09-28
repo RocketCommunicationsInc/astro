@@ -57,17 +57,6 @@ Radio Buttons allow users to mutually select an option from a predefined set of 
 | `"label"`      | the label of the radio      |
 
 
-## CSS Custom Properties
-
-| Name                         | Description                              |
-| ---------------------------- | ---------------------------------------- |
-| `--radio-background-color`   | [DEPRECATED] the radio background color  |
-| `--radio-border-color`       | [DEPRECATED] Selected radio border color |
-| `--radio-hover-border-color` | [DEPRECATED] Radio border color on hover |
-| `--radio-label-color`        | [DEPRECATED] label text color            |
-| `--radio-selected-color`     | [DEPRECATED] the radio selected color    |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

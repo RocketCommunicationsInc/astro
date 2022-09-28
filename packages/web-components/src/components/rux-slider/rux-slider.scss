@@ -1,54 +1,14 @@
 @use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
 
 :host {
-    /** @prop --slider-thumb-background-color: [DEPRECATED] Background color of the slider's thumb. */
-    --slider-thumb-background-color: var(--color-background-base-default);
+    /**
+     * @prop --slider-track-before-thumb-height: the height of the track before the thumb
+     */
+    --slider-track-before-thumb-height: var(--spacing-1); //4
 
-    /** @prop --slider-thumb-border-color: [DEPRECATED] Border color of the slider's thumb. */
-    --slider-thumb-border-color: var(--color-background-interactive-default);
-
-    /** @prop --slider-hover-thumb-background-color: [DEPRECATED] Background color of the slider's thumb in a hover state. */
-    --slider-hover-thumb-background-color: var(--color-background-base-default);
-
-    /** @prop --slider-hover-thumb-border-color: [DEPRECATED] Border color of the slider's thumb in a hover state. */
-    --slider-hover-thumb-border-color: var(
-        --color-background-interactive-hover
-    );
-
-    /** @prop --slider-track-background-color: [DEPRECATED] Background color of the slider's track. */
-    --slider-track-background-color: var(
-        --color-background-interactive-default
-    );
-
-    /** @prop --slider-selected-track-background-color: [DEPRECATED] Background color of the slider's thumb in a selected state. */
-    --slider-selected-track-background-color: var(
-        --color-background-interactive-default
-    );
-
-    /** @prop --slider-selected-thumb-border-color: [DEPRECATED] Border color of the slider's thumb in a selected state. */
-    --slider-selected-thumb-border-color: var(
-        --color-background-interactive-hover
-    );
-
-    /** @prop --slider-thumb-size: [DEPRECATED] Size of the slider's thumb, both width and height. */
-    --slider-thumb-size: 19px;
-
-    /** @prop --slider-thumb-border-size: [DEPRECATED] Size of slider's thumb border. */
-    --slider-thumb-border-size: 2px;
-
-    /** @prop --slider-value-percent: [DEPRECATED] The current value of the slider in a percent. */
-    --slider-value-percent: 50%;
-
-    /** @prop --slider-top: [DEPRECATED] Determines the top value of the slider thumb. */
-    --slider-top: calc(var(--slider-thumb-size) / -2.7);
-
-    /** @prop --slider-track-height: [DEPRECATED] the slider track height */
-    --slider-track-height: 1px;
-
-    /** @prop --slider-track-before-thumb-height: [DEPRECATED] the slider track before thumb height */
-    --slider-track-before-thumb-height: 5px;
-
-    --slider-tick-padding-top: 0px;
+    --_slider-thumb-size: calc(var(--spacing-4) + var(--spacing-1)); //20
+    --_slider-value-percent: 50%;
+    --_slider-top: calc(var(--_slider-thumb-size) / -2.4);
 
     display: flex;
     flex-grow: 1;
@@ -61,19 +21,19 @@
 }
 
 .rux-form-field {
-    display: flex;
     flex-direction: column;
     label {
-        margin-bottom: var(--spacing-input-label-top);
+        margin-bottom: var(--spacing-2);
     }
 }
 
 .with-axis-labels {
-    padding-bottom: 2rem;
+    padding-bottom: var(--spacing-8);
 }
 
 .rux-slider {
-    height: 1.25rem;
+    height: calc(var(--spacing-4) + var(--spacing-1)); //20
+    position: relative;
     :hover {
         cursor: pointer;
     }
@@ -81,7 +41,7 @@
         cursor: not-allowed;
     }
     .rux-range:disabled + #steplist {
-        opacity: var(--disabled-opacity);
+        opacity: var(--opacity-disabled);
         cursor: not-allowed;
         .tick {
             cursor: not-allowed;
@@ -95,7 +55,7 @@
 
     #steplist {
         display: grid;
-        padding: var(--slider-tick-padding-top) 0.594rem; //9.5px
+        padding: var(--spacing-0) calc(var(--_slider-thumb-size) / 2); //center first and last dot on thumb at start and end
         cursor: default;
 
         .tick-label {
@@ -104,23 +64,29 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            font-family: var(--font-body-3-font-family);
+            font-size: var(--font-body-3-font-size);
+            line-height: var(--font-body-3-line-height);
+            letter-spacing: var(--font-body-3-letter-spacing);
+            font-weight: var(--font-body-3-font-weight);
+
             .axis-label {
-                padding-top: 0.25rem; //4px
+                padding-top: var(--spacing-1); //4px
                 cursor: default;
             }
         }
         .tick {
             background: var(--color-background-interactive-default);
-            height: 0.25rem; //4px
-            width: 0.25rem;
-            border-radius: 2px;
+            height: var(--spacing-1); //4px
+            width: var(--spacing-1);
+            border-radius: var(--radius-circle);
             cursor: default;
         }
         .tick-label:not(:first-child):not(:last-child) {
             padding: 0;
         }
         :disabled {
-            opacity: var(--disabled-opacity);
+            opacity: var(--opacity-disabled);
         }
     }
 }
@@ -132,8 +98,11 @@
     appearance: none;
     background: none;
     width: 100%;
-    margin: 0;
+    height: calc(var(--spacing-4) + var(--spacing-1));
+    margin: var(--spacing-0);
     color: transparent;
+    position: relative;
+    z-index: 1;
 }
 input[type='range']:focus {
     outline: none;
@@ -149,25 +118,36 @@ input[type='range']:focus {
 
     /* width: 100%; */
     cursor: pointer;
-    border-radius: 2.5px;
-    min-height: var(--slider-track-height);
+    min-height: var(--spacing-050);
     max-height: var(--slider-track-before-thumb-height);
     background-image: linear-gradient(
-            var(--slider-track-background-color),
-            var(--slider-track-background-color)
+            var(--color-background-interactive-default),
+            var(--color-background-interactive-default)
         ),
         linear-gradient(
-            var(--slider-track-background-color),
-            var(--slider-track-background-color)
+            var(--color-background-interactive-default),
+            var(--color-background-interactive-default)
+        ),
+        radial-gradient(
+            circle,
+            var(--color-background-interactive-default) 70%,
+            var(--color-background-interactive-default) 70%,
+            transparent 70%,
+            transparent 100%
         );
-    background-size: var(--slider-value-percent)
+    background-size: calc(
+                var(--_slider-value-percent) - (var(--_slider-thumb-size) / 2)
+            )
             var(--slider-track-before-thumb-height),
-        100% var(--slider-track-height);
+        calc(100% - var(--_slider-thumb-size)) 1px,
+        var(--spacing-1) var(--spacing-1);
     background-repeat: no-repeat no-repeat;
-    background-position: left, right;
+    background-position: calc(var(--_slider-thumb-size) / 2),
+        calc(100% - (var(--_slider-thumb-size) / 2)),
+        calc((var(--_slider-thumb-size) / 2) - var(--spacing-050));
 }
 .rux-range:disabled::-webkit-slider-runnable-track {
-    opacity: var(--disabled-opacity, 0.4);
+    opacity: var(--opacity-disabled);
     cursor: not-allowed;
 }
 
@@ -179,33 +159,42 @@ input[type='range']:focus {
 
     /* width: 100%; */
     cursor: pointer;
-    border-radius: 2.5px;
-    min-height: var(--slider-track-height);
+    min-height: var(--spacing-1);
     max-height: var(--slider-track-before-thumb-height);
     background-image: linear-gradient(
-            var(--slider-track-background-color),
-            var(--slider-track-background-color)
+            var(--color-background-interactive-default),
+            var(--color-background-interactive-default)
         ),
         linear-gradient(
-            var(--slider-track-background-color),
-            var(--slider-track-background-color)
+            var(--color-background-interactive-default),
+            var(--color-background-interactive-default)
+        ),
+        radial-gradient(
+            circle,
+            var(--color-background-interactive-default) 70%,
+            var(--color-background-interactive-default) 70%,
+            transparent 70%,
+            transparent 100%
         );
-    background-size: calc(1 * var(--slider-value-percent))
+    background-size: calc(
+                var(--_slider-value-percent) - (var(--_slider-thumb-size) / 2)
+            )
             var(--slider-track-before-thumb-height),
-        100% var(--slider-track-height);
+        calc(100% - var(--_slider-thumb-size)) 1px,
+        var(--spacing-1) var(--spacing-1);
     background-repeat: no-repeat no-repeat;
-    background-position: left, right;
+    background-position: calc(var(--_slider-thumb-size) / 2),
+        calc(100% - (var(--_slider-thumb-size) / 2)),
+        calc((var(--_slider-thumb-size) / 2) - var(--spacing-050));
 }
 .rux-range:disabled::-moz-range-track,
 .rux-range:disabled::-moz-range-progress {
-    opacity: var(--disabled-opacity, 0.4);
+    opacity: var(--opacity-disabled);
     cursor: not-allowed;
 }
-.rux-range::-moz-range-progress {
-    background-color: var(--slider-selected-track-background-color);
-}
+
 .rux-input:disabled {
-    opacity: var(--disabled-opacity, 0.4);
+    opacity: var(--opacity-disabled);
     cursor: not-allowed;
 }
 
@@ -217,30 +206,30 @@ input[type='range']:focus {
 
     /* width: 100%; */
     cursor: pointer;
-    border-radius: 2.5px;
-    min-height: var(--slider-track-height);
-    max-height: 5px;
+    border-radius: var(--radius-circle);
+    min-height: var(--spacing-025);
+    max-height: var(--spacing-1);
     background-image: linear-gradient(
-            var(--slider-track-background-color),
-            var(--slider-track-background-color)
+            var(--color-background-interactive-default),
+            var(--color-background-interactive-default)
         ),
         linear-gradient(
-            var(--slider-track-background-color),
-            var(--slider-track-background-color)
+            var(--color-background-interactive-default),
+            var(--color-background-interactive-default)
         );
-    background-size: var(--slider-value-percent)
+    background-size: var(--_slider-value-percent)
             var(--slider-track-before-thumb-height),
-        100% var(--slider-track-height);
+        100% 1px;
     background-repeat: no-repeat no-repeat;
     background-position: left, right;
 }
 .rux-range::-ms-fill-lower {
-    height: 2px;
-    background-color: rgb(77, 172, 255);
+    height: var(--spacing-050);
+    background-color: var(--color-background-interactive-default);
 }
 .rux-range::-ms-fill-upper {
-    height: 2px;
-    background-color: var(--slider-track-background-color);
+    height: var(--spacing-050);
+    background-color: var(--color-background-interactive-default);
 }
 
 /*****  Thumb ******/
@@ -248,21 +237,21 @@ input[type='range']:focus {
 /* Thumb -> Webkit */
 .rux-range::-webkit-slider-thumb {
     -webkit-appearance: none;
+    box-sizing: border-box;
     position: relative;
-    top: var(--slider-top);
-    height: var(--slider-thumb-size);
-    width: var(--slider-thumb-size);
+    top: var(--_slider-top);
+    height: var(--_slider-thumb-size);
+    width: var(--_slider-thumb-size);
     border-radius: 100%;
-    border: var(--slider-thumb-border-size) solid
-        var(--slider-thumb-border-color);
-    background-color: var(--slider-thumb-background-color);
+    border: 2px solid var(--color-background-interactive-default);
+    background-color: var(--color-background-base-default);
     cursor: pointer;
     z-index: 6;
 }
 
 .rux-range::-webkit-slider-thumb:hover {
-    border-color: var(--slider-hover-thumb-border-color);
-    background-color: var(--slider-hover-thumb-background-color);
+    border-color: var(--color-background-interactive-hover);
+    background-color: var(--color-background-base-default);
 }
 
 .rux-range:disabled::-webkit-slider-thumb {
@@ -270,57 +259,57 @@ input[type='range']:focus {
 }
 
 .rux-range:disabled::-webkit-slider-thumb:hover {
-    border-color: var(--slider-thumb-border-color);
+    border-color: var(--color-background-interactive-default);
 }
 
 .rux-range:not(:disabled)::-webkit-slider-thumb:active {
-    border-color: var(--slider-selected-thumb-border-color);
+    border-color: var(--color-background-interactive-default);
     background-color: var(--color-background-base-default);
 }
 
 .rux-range:not(:disabled)::-webkit-slider-thumb:focus,
 .rux-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active) {
-    background-color: var(--slider-hover-thumb-background-color);
+    background-color: var(--color-background-base-default);
 }
 
 /* Thumb -> Moz */
 .rux-range::-moz-range-thumb {
     -moz-appearance: none;
     position: relative;
-    top: var(--slider-top);
-    height: calc(var(--slider-thumb-size) - 4px);
-    width: calc(var(--slider-thumb-size) - 4px);
+    box-sizing: border-box;
+    top: var(--_slider-top);
+    height: var(--_slider-thumb-size);
+    width: var(--_slider-thumb-size);
     border-radius: 100%;
-    border: var(--slider-thumb-border-size) solid
-        var(--slider-thumb-border-color);
-    background-color: var(--slider-thumb-background-color);
+    border: 2px solid var(--color-background-interactive-default);
+    background-color: var(--color-background-base-default);
     cursor: pointer;
+    z-index: 6;
 }
 .rux-range:not(:disabled)::-moz-range-thumb:active {
-    border-color: var(--slider-selected-thumb-border-color);
+    border-color: var(--color-background-interactive-default);
     background-color: var(--color-background-base-default);
 }
 .rux-range::-moz-range-thumb:hover {
-    border-color: var(--slider-hover-thumb-border-color);
+    border-color: var(--color-background-interactive-hover);
 }
 input:-moz-focusring {
     outline: none;
 }
 .rux-range:disabled::-moz-range-thumb {
-    opacity: var(--disabled-opacity, 0.4);
+    opacity: var(--opacity-disabled);
     cursor: not-allowed;
 }
 
 /* Thumb -> Ms */
 .rux-range::-ms-thumb {
     position: relative;
-    top: var(--slider-top);
-    height: var(--slider-thumb-size);
-    width: var(--slider-thumb-size);
+    top: var(--_slider-top);
+    height: var(--_slider-thumb-size);
+    width: var(--_slider-thumb-size);
     border-radius: 100%;
-    border: var(--slider-thumb-border-size) solid
-        var(--slider-thumb-border-color);
-    background-color: var(--slider-thumb-background-color);
+    border: 2px solid var(--color-background-interactive-default);
+    background-color: var(--color-background-base-default);
     cursor: pointer;
     z-index: 6;
 }

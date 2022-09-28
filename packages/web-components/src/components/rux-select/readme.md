@@ -93,25 +93,6 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 | `"select"`     | The select element                 |
 
 
-## CSS Custom Properties
-
-| Name                                             | Description                                              |
-| ------------------------------------------------ | -------------------------------------------------------- |
-| `--select-menu-active-caret`                     | [DEPRECATED] Caret Shown When the Select Menu is Open    |
-| `--select-menu-background-color`                 | [DEPRECATED] Background Color of the Select Input        |
-| `--select-menu-border-color`                     | [DEPRECATED] Border Color of the Select Input            |
-| `--select-menu-border-focus-color`               | [DEPRECATED] Border Focus Color of the Select Input      |
-| `--select-menu-border-hover-color`               | [DEPRECATED] Border Hover Color of the Select Input      |
-| `--select-menu-border-radius`                    | [DEPRECATED] Border radius for Select Menu               |
-| `--select-menu-inactive-caret`                   | [DEPRECATED] Caret Shown When the Select Menu is Closed  |
-| `--select-menu-invalid-border-color`             | [DEPRECATED] Border Color of the Invalid Select Input    |
-| `--select-menu-label-color`                      | [DEPRECATED] Text Color of the Label                     |
-| `--select-menu-option-selected-background-color` | [DEPRECATED] Background Color of the Selected Option     |
-| `--select-menu-option-selected-text-color`       | [DEPRECATED] Text Color of the Selected Option           |
-| `--select-menu-option-text-hover-color`          | [DEPRECATED] Text Hover Color of the Select Menu Options |
-| `--select-menu-text-color`                       | [DEPRECATED] Text Color of the Select Input              |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

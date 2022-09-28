@@ -1,80 +1,31 @@
 :host {
-    /**
-      * @prop --popup-menu-text-color: [DEPRECATED] Menu Text Color
-    */
-    --popup-menu-text-color: var(--color-background-interactive-default);
-
-    /**
-      * @prop --popup-menu-item-background-color: [DEPRECATED] Menu Item Background Color
-    */
-    --popup-menu-item-background-color: var(--color-background-base-default);
-
-    /**
-      * @prop --popup-menu-item-hover-background-color: [DEPRECATED] Menu Item Hover Background Color
-    */
-    --popup-menu-item-hover-background-color: var(
-        --color-background-surface-hover
-    );
-
-    /**
-      * @prop --popup-menu-item-hover-background-color: [DEPRECATED] Menu Item Hover Text Color
-    */
-    --popup-menu-item-hover-text-color: var(
-        --color-background-interactive-hover
-    );
-
     display: block;
+}
 
-    li {
-        list-style: none;
-        padding: 0.15rem 0.75rem;
-        overflow: hidden;
-        font-family: var(--font-body-1-font-family);
-        font-size: var(--font-body-1-font-size);
-        font-weight: var(--font-body-1-font-weight);
-        letter-spacing: var(--font-body-1-letter-spacing);
-        background-color: var(--popup-menu-item-background-color);
-        color: var(--popup-menu-text-color);
-        &:hover {
-            background-color: var(--popup-menu-item-hover-background-color);
-        }
-
-        a,
-        div {
-            text-overflow: ellipsis;
-            text-decoration: none;
-            color: var(--popup-menu-text-color);
-            word-wrap: none;
-            white-space: nowrap;
-            overflow: hidden;
-            &:hover {
-                color: var(--popup-menu-item-hover-text-color);
-            }
-        }
-
-        a {
-            display: block;
-            padding: 0;
-            width: 100%;
-        }
+.rux-menu-item {
+    position: relative;
+    padding: var(--spacing-2); //8
+    color: var(--color-text-interactive-default);
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    font-weight: var(--font-control-body-1-font-weight);
+    line-height: var(--font-control-body-1-line-height);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
+    cursor: pointer;
+    &:hover {
+        color: var(--color-text-interactive-hover);
+        background: var(--color-background-base-hover);
     }
-}
-
-:host([hidden]) {
-    display: none;
-}
-
-:host([disabled]) {
-    cursor: not-allowed;
-
-    li {
-        &:hover {
-            background-color: transparent;
-        }
-
-        a,
-        div {
-            opacity: var(--disabled-opacity);
-        }
+    &--selected {
+        background: var(--color-background-base-selected);
+        color: var(--color-text-primary);
+    }
+    &--disabled {
+        opacity: var(--opacity-disabled);
+        cursor: not-allowed;
+    }
+    &--disabled:hover {
+        background: var(--color-background-base-default);
+        color: var(--color-text-interactive-default);
     }
 }

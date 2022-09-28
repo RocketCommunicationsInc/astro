@@ -7,30 +7,15 @@
 
     display: inline-block;
     box-sizing: border-box;
-
-    /** @prop --radio-hover-border-color: [DEPRECATED] Radio border color on hover */
-    --radio-hover-border-color: var(--color-background-interactive-hover);
-
-    /** @prop --radio-border-color: [DEPRECATED] Selected radio border color */
-    --radio-border-color: var(--color-border-interactive-muted);
-
-    /** @prop --radio-label-color: [DEPRECATED] label text color */
-    --radio-label-color: var(--color-text-primary);
-
-    /** @prop --radio-background-color: [DEPRECATED] the radio background color */
-    --radio-background-color: var(--color-background-base-default);
-
-    /** @prop --radio-selected-color: [DEPRECATED] the radio selected color */
-    --radio-selected-color: var(--color-background-interactive-default);
 }
 
 .rux-form-field {
     display: flex;
     flex-direction: column;
-    font-family: var(--font-body-1-font-family);
-    font-size: var(--font-body-1-font-size);
-    letter-spacing: var(--font-body-1-letter-spacing);
-    font-weight: var(--font-body-1-font-weight);
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
+    font-weight: var(--font-control-body-1-font-weight);
     color: var(--color-text-primary);
 }
 
@@ -42,15 +27,14 @@
     input[type='radio'] {
         -webkit-appearance: none;
         appearance: none;
+        margin: 0;
 
         + label {
             position: relative;
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            margin-left: -8px;
-            color: var(--radio-label-color);
-            letter-spacing: 0.5px;
+            color: var(--color-text-primary);
             cursor: pointer;
 
             &::before {
@@ -60,12 +44,15 @@
                 flex-grow: 0;
                 content: '';
                 align-self: start;
-                height: 1.125rem;
-                width: 1.125rem;
-                margin: 0 0.625rem 0 0;
-                border: 1px solid var(--radio-border-color);
+                height: calc(var(--spacing-4) + var(--spacing-1));
+                width: calc(var(--spacing-4) + var(--spacing-1));
+                margin: calc(var(--spacing-1) / 2); //2
+                margin-right: calc(
+                    var(--spacing-2) + (var(--spacing-1) / 2)
+                ); //2 + 8 margin for label
+                border: 1px solid var(--color-border-interactive-muted);
                 border-radius: var(--radius-circle);
-                background-color: var(--radio-background-color);
+                background-color: var(--color-background-base-default);
             }
 
             &::after {
@@ -78,25 +65,25 @@
         //If no label is passed in we don't want the margin
         + .rux-radio--no-label {
             &::before {
-                margin: 0;
+                margin-right: calc(var(--spacing-1) / 2); //2;
             }
         }
 
         &:checked {
             + label {
                 &::before {
-                    background-color: var(--radio-background-color);
-                    border-color: var(--radio-border-color);
+                    background-color: var(--color-background-base-default);
+                    border-color: var(--color-border-interactive-muted);
                 }
 
                 &::after {
                     position: absolute;
-                    top: 5px;
+                    top: var(--spacing-2);
                     display: flex;
                     content: '';
-                    left: 5px;
-                    height: 8px;
-                    width: 8px;
+                    left: var(--spacing-2);
+                    height: var(--spacing-2);
+                    width: var(--spacing-2);
                     border-radius: var(--radius-circle);
 
                     /* box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9); */
@@ -111,7 +98,7 @@
         &:disabled {
             + label {
                 cursor: not-allowed;
-                opacity: var(--disabled-opacity);
+                opacity: var(--opacity-disabled);
             }
         }
 
@@ -120,10 +107,12 @@
             &:checked:hover {
                 + label {
                     &::before {
-                        border-color: var(--radio-hover-border-color);
+                        border-color: var(--color-background-interactive-hover);
                     }
                     &::after {
-                        background-color: var(--radio-selected-color);
+                        background-color: var(
+                            --color-background-interactive-default
+                        );
                     }
                 }
             }

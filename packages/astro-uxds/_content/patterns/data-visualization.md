@@ -108,7 +108,7 @@ Bubble charts are used to visualize a data set with two to four dimensions. The 
 #### Histogram
 
 ![Histogram](/img/patterns/data-viz-histogram.png)
-Conveys an accurate representation of the distribution of numerical data. It is an estimate of the probability distribution of a continuous variable (e.g. Spectrum analyzer).
+Conveys an accurate representation of the distribution of numerical data. It is an estimate of the probability distribution of a continuous variable.
 
 :::
 
@@ -156,11 +156,11 @@ Legends should be arranged as per the order of appearance of the data plot (e.g.
 
 **Type**: Astro guidelines dictate a minimum type size of 14pt for axes and data points to maximize legibility. Roboto or Roboto Mono, sans-serif typefaces, are required for optimum legibility. See [Typography](/design-guidelines/typography) for additional information.
 
-**Color and Contrast**: Use colors that have sufficient contrast for the appropriate theme. If necessary, complement the use of color with a pattern or texture to convey different types of information. The non-status palette provided in the [Color](/design-guidelines/color) guidelines is applicable to both themes and is contrast compliant.
+**Color and Contrast**: Use colors that have sufficient contrast for the appropriate theme. If necessary, complement the use of color with a pattern or texture to convey different types of information. The non-status palettes provided in the [Color](/design-guidelines/color) guidelines are applicable to both themes and are contrast compliant.
 
 #### Mixed Accessible Visualization Palette
 
-The following sample color set are provided for the specified number of data points. Astro dictates 8 or less colors per data set to reduce cognitive load. The mixed accessible palette was designed to meet a colorblind accessibility requirement. The vast majority of colorblind users are able to detect contrast variance as demonstrated in the following simulations.
+The following sample color set is provided for the specified number of data points. Astro dictates 8 or less colors per data set to reduce cognitive load. The mixed accessible palette was designed to meet a colorblind accessibility requirement. The vast majority of colorblind users are able to detect contrast variance as demonstrated in the following simulations.
 
 ![Mixed accessible color palette](/img/patterns/mixed-accessible.png)
 ![Deuternopia accessible color palette](/img/patterns/deuternopia.png)
@@ -169,7 +169,7 @@ The following sample color set are provided for the specified number of data poi
 
 #### Gradual Visualization Palettes
 
-The following sample color sets were created from the non-status color palette:
+The following sample color sets were created from the non-status color palettes:
 
 ::: caution
 Status colors are reserved for their respected statuses. Do not apply them to Visualizations unless they reflect the defined status, e.g. Critical.
@@ -188,7 +188,7 @@ Astro provides guidance, components and code for creating a light and dark theme
 ![Sample line chart](/img/patterns/line.png)
 
 ::: note
-Line charts and similar visualizations may require higher contrast than a filled graphic, e.g. Donut chart. Higher contrast colors are provided in the [Astro Color Guidelines](/design-guidelines/color).
+Line charts and similar visualizations may require higher contrast than a filled graphic, e.g. Donut chart.
 :::
 
 ![Sample histogram chart](/img/patterns/histogram.png)

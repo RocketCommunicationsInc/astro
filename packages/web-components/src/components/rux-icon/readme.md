@@ -116,11 +116,10 @@ In Astro 4.0, these groups have been flattened, and each icon is now imported di
 
 ## Properties
 
-| Property            | Attribute | Description                                                                                                                    | Type                  | Default     |
-| ------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------ | --------------------- | ----------- |
-| `icon` _(required)_ | `icon`    | The icon name                                                                                                                  | `string`              | `undefined` |
-| `label`             | `label`   | The icon SVG's title attribute. Used for accessibility. If none is provided, the icon name will be used.                       | `string \| undefined` | `undefined` |
-| `size`              | `size`    | The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em') | `string`              | `'normal'`  |
+| Property            | Attribute | Description                                                                                                                    | Type     | Default     |
+| ------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------ | -------- | ----------- |
+| `icon` _(required)_ | `icon`    | The icon name                                                                                                                  | `string` | `undefined` |
+| `size`              | `size`    | The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em') | `string` | `'normal'`  |
 
 
 ## Shadow Parts
@@ -128,13 +127,6 @@ In Astro 4.0, these groups have been flattened, and each icon is now imported di
 | Part     | Description          |
 | -------- | -------------------- |
 | `"icon"` | the icon in rux-icon |
-
-
-## CSS Custom Properties
-
-| Name                   | Description                                |
-| ---------------------- | ------------------------------------------ |
-| `--icon-default-color` | [DEPRECATED] the default color of the icon |
 
 
 ## Dependencies

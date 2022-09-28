@@ -1,0 +1,712 @@
+# @astrouxds/angular
+
+## 7.0.0-beta.4
+
+### Major Changes
+
+- e6ab50e2: Updating card spacing to match Figma with design tokens
+- cd0b73be: WHAT: The props of modal-title and modal-message on rux-dialog have been renamed header and message.
+  WHY: Prop names are more accurate and less-verbose now.
+  HOW TO MIGRATE: Change all instances of modal-title or modal-message props to header and message.
+- 350070d5: menu item - removes --popup-menu-text-color, --popup-menu-item-background-color, --popup-menu-item-hover-background-color, --popup-menu-item-hover-text-color css custom properties
+- 60be422d: What: Removed the title attribute from rux-icon. Why: The global HTML title attribute is not recommended for use, and was an oversight when added to rux-icon.
+- 16011b5f: WHAT: Renamed rux-pop-up-menu to rux-pop-up.
+  WHY: This naming convention was confusing with the addition of rux-menu.
+  HOW TO MIGRATE: Find and replace all instances of rux-pop-up-menu with rux-pop-up.
+- d344013a: Removes the animation on notification and makes the notification take up space in the DOM
+- a97a688f: Fixing tab heights so they do not expand to the height of a direct container.
+- 8bd85d35: patch: fixing bug where no value on the component would cause the progress bar to be too small.
+- 8adb2313: Modifying dialog component to match spacing changes in Figma.
+- efed8d01: Updating container spacing to match Figma design, using design tokens to achieve this.
+- 4ef29bc7: Tabs - Fixed an issue where light dom styles could override the shadow dom. Check to make sure you aren't explicitly styling `rux-tab` elements. If you are, use parts instead
+- 72617a88: WHAT: Global status bar no longer automaticall uppercases the app domain and name.
+  WHY: This was changed in order to match design.
+  HOW TO MIGRATE: If you are reliant on the app state and domain being in all caps, simply pass the `app-domain` and `app-state` an all uppercase version.
+- acdb9fa3: The default display for content inside Tree Nodes and may break your application if you are using the Tree Node with icons or status symbols.
+
+  ```
+  <rux-tree-node>
+     <rux-status status="critical"></rux-status>
+     Tree Node 1.1
+  </rux-tree-node>
+  ```
+
+  ```
+  <rux-tree-node>
+     <rux-status slot="prefix" status="critical"></rux-status>
+     Tree Node 1.1
+  </rux-tree-node>
+  ```
+
+  **Resolution:** Add `slot="prefix"` to any icons or status symbols.
+
+- 350070d5: classification marking - what: remove footer-banner part. why? deprecated migration: use footer instead
+- fb6c03ad: feat(rux-push-button)
+  WHAT: part 'label' has been renamed to 'container'
+  WHY: to bring consistency between styling push buttons and standard buttons
+  HOW TO MIGRATE: If you were previously using ::part(label) to style your push button please change to ::part(container)
+- 1f75e0f6: WHAT: rux-segmented-button: change default size from small to medium
+  WHY: to align with other Astro inputs/buttons which default to medium
+  HOW TO MIGRATTE: Add size="small" to segmented buttons you wish to remain small sized.
+- d701180b: Converting stylesheet values to design tokens for spacing and correcting spacing issues for rux-select component.
+- 16011b5f: WHAT: Removed the `ruxmenuitemselected` event from `rux-menu-item`.
+  WHY: This event was being emitted for it's parent to hear and was not intended for use. This has been refactored to no longer be needed.
+  HOW TO MIGRATE: If you have instaces of listeners listening for the `ruxmenuitemselected` event, those can be replaced with the new `ruxmenuselected` event. The `e.detail` that the `ruxmenuselected` event returns is the equivalent of `ruxmenuitemselected`.
+- 6885b525: Creation of Accordion component (rux-accordion) and child component (rux-accordion-item).
+- 4ef29bc7: Tabs - Individual tab components are now large by default. If you are using rux-tab outside the tabs component, you may need to manually add the new `small` attribute
+- 16011b5f: WHAT: Removed the `ruxpopupselected` event on rux-pop-up. Added two new events to `rux-pop-up`, `ruxpopupopened` and `ruxpopupclosed`.
+  WHY: The `ruxpopupselected` event has been replaced with the `ruxmenuselected` event on `rux-menu`. `rux-pop-up` was missing opened and closed events as well.
+  HOW TO MIGRATE: Replace all listeners using `ruxpopupselected` with `ruxmenuselected`. For any listeners that are listening for the opening or closing of the `rux-pop-up`, you can now use `ruxpopupopened` and `ruxpopupclosed`.
+
+### Minor Changes
+
+- dd787288: Added support for scrollbars in dialog.
+- 645bcecd: Adds typography utility classes
+- acdb9fa3: rux-tree-node - add a prefix and suffix slot so content can be added right before and after the default slot
+- 4ef29bc7: Tab - Added new explicit `small` attribute
+- acdb9fa3: rux-tree-node - add indicator, node, and text parts
+- 44bc076a: Links no longer change color on hover.
+- acdb9fa3: rux-tree-node - update styles - remove border, change indicator, change hover and select background-color, add truncate text as default
+
+### Patch Changes
+
+- fb5c444d: rux-log - add spacing tokens and adjust for astro 7.0 design
+- 5ae326fc: Updating clock spacing so it is in line with Figma and uses design tokens.
+- 3d16d6fb: Changing border to box-shadow, cleaning up commented out code, changing heights and widths to design tokens.
+- 24a2cb69: rux-segemented-button add spacing tokens and align to Astro 7.0 design
+- e83ac3d0: rux-input - updated spacing to align with design using design tokens
+- 245f6764: Updating checkbox to match Figma
+- a97a688f: Removing Figma access token
+- 7032b2da: rux-pop-up-menu add design spacing tokens
+- 00853fd5: rux-switch - updated spacing with design tokens to align with design
+- 0617987f: rux-progress / rux-indeterminate-progress spacing and design token updates
+- 20de6be3: Removing script for testing holster.
+- 313563e4: rux-classification-marking updated spacing to align with design.
+- a08419c0: functional-components add spacing tokens to FormFieldMessages and align to astro design
+- f4041a4e: rux-textarea - add spacing tokens and adjust code to fix firefox issue with resize
+- 37d67cfd: rux-table add spacing tokens and align to astro 7.0 design
+- fddd718d: rux-slider added design tokens to the slider and adjusted the background
+- 70354c26: rux-input - refactored type=password to use button rather than rux-button and aligned to Astro design specs
+- bf083308: rux-notification - add spacing tokens and align to astro 7.0 design
+- a97a688f: fix: adding styling to tab component to specifiy height of tabs.
+- 6d0f0b89: Modifying checkbox group to match Figma, Fixing border hover in checkbox
+- dab3a7f0: Modifying styling of .rux-classification-marking tag
+- a3822386: rux-tabs - set up design tokens and matched rux-tabs to astro design spacing standards
+- a410d159: rux-radio / rux-radio-group - update spacing using design tokens and figma
+- 516d772d: rux-button - implementt spacing design tokens and align to Astro design
+- b994030f: rux-push-button add spacing tokens and align to Astro design specs
+- 2ba8e9f4: replaces --disabled-opacity with --opacity-disabled design token
+- f8a8a586: Fixing display and width so tag obeys content width.
+- 4bf40336: rux-tab add shadow part for styling tab colors to replace deprecated custom properties
+- Updated dependencies [e6ab50e2]
+- Updated dependencies [fb5c444d]
+- Updated dependencies [cd0b73be]
+- Updated dependencies [5ae326fc]
+- Updated dependencies [3d16d6fb]
+- Updated dependencies [24a2cb69]
+- Updated dependencies [e83ac3d0]
+- Updated dependencies [245f6764]
+- Updated dependencies [350070d5]
+- Updated dependencies [dd787288]
+- Updated dependencies [a97a688f]
+- Updated dependencies [60be422d]
+- Updated dependencies [7032b2da]
+- Updated dependencies [00853fd5]
+- Updated dependencies [16011b5f]
+- Updated dependencies [d344013a]
+- Updated dependencies [a97a688f]
+- Updated dependencies [0617987f]
+- Updated dependencies [20de6be3]
+- Updated dependencies [8bd85d35]
+- Updated dependencies [645bcecd]
+- Updated dependencies [acdb9fa3]
+- Updated dependencies [4ef29bc7]
+- Updated dependencies [313563e4]
+- Updated dependencies [a08419c0]
+- Updated dependencies [acdb9fa3]
+- Updated dependencies [8adb2313]
+- Updated dependencies [efed8d01]
+- Updated dependencies [f4041a4e]
+- Updated dependencies [4ef29bc7]
+- Updated dependencies [44bc076a]
+- Updated dependencies [acdb9fa3]
+- Updated dependencies [72617a88]
+- Updated dependencies [acdb9fa3]
+- Updated dependencies [37d67cfd]
+- Updated dependencies [350070d5]
+- Updated dependencies [fddd718d]
+- Updated dependencies [5e2608d1]
+- Updated dependencies [70354c26]
+- Updated dependencies [54364f1b]
+- Updated dependencies [fb6c03ad]
+- Updated dependencies [1f75e0f6]
+- Updated dependencies [bf083308]
+- Updated dependencies [d701180b]
+- Updated dependencies [a97a688f]
+- Updated dependencies [6d0f0b89]
+- Updated dependencies [16011b5f]
+- Updated dependencies [dab3a7f0]
+- Updated dependencies [a3822386]
+- Updated dependencies [5e2608d1]
+- Updated dependencies [5e2608d1]
+- Updated dependencies [0270d0a6]
+- Updated dependencies [a410d159]
+- Updated dependencies [6885b525]
+- Updated dependencies [516d772d]
+- Updated dependencies [b994030f]
+- Updated dependencies [4ef29bc7]
+- Updated dependencies [2ba8e9f4]
+- Updated dependencies [f8a8a586]
+- Updated dependencies [4bf40336]
+- Updated dependencies [16011b5f]
+  - @astrouxds/astro-web-components@7.0.0-beta.4
+
+## 7.0.0-beta.3
+
+### Major Changes
+
+- a7296b6b: Our /dist/custom-elements build has been removed in favor of a faster treeshakeable /dist/components build. We anticipate very few people are using this build. To check if your project is affected, you can do a global find for 'astro-web-components/dist/custom-elements' in your project. If you are using this build, switch to 'astro-web-components/dist/loader' instead.
+- 27b72893: Modal has been removed. It has been renamed to Dialog to align with our Design System naming and shares the exact same API as Modal.
+
+  Migration: You can do a global find/replace on your project for:
+
+## 6.13.1
+
+### Patch Changes
+
+#### Tab
+
+- Added `container` CSS Shadow Part.
+- Fixed an issue where multiple tabs on the same page would hide each others content when selected.
+
+#### Checkbox
+
+- Fixed an issue where the label was disappearing when checked.
+
+## 6.13.0
+
+### Minor Changes
+
+#### Timeline
+
+- support for partial time regions
+
+#### Dialog
+
+- Added better keyboard support for tabbing between confirm and deny buttons, and triggers deny on an escape key press.
+
+### Patch Changes
+
+#### Progress
+
+- Visual fix for Firefox to properly align progress indicator
+
+## 6.12.1
+
+### Patch Changes
+
+- e00a744a: timeline - fixed an issue where time regions were not updating when their ranges were edited
+- Updated dependencies [e00a744a]
+  - @astrouxds/astro-web-components@6.12.1
+
+## 6.12.0
+
+### Minor Changes
+
+#### Slider
+
+- Added `ruxchange` event
+
+## 6.11.0
+
+### Minor Changes
+
+#### Tree
+
+- Added two new events to rux-tree-node: ruxtreenodeexpanded and ruxtreenodecollapsed.
+
+## 6.10.0
+
+### Minor Changes
+
+#### Modal
+
+- Modal is now deprecated and will be removed in 7.0. It is being renamed to Dialog to align with our Design System naming and which shares the exact same API as Modal. It is recommended that you migrate to Dialog before 7.0. You can do a global find/replace on your project for:
+
+  `rux-modal` -> `rux-dialog`
+  `ruxmodalclosed` -> `ruxdialogclosed`
+  `ruxmodalopened` -> `ruxdialogopened`
+
+### Patch Changes
+
+- Updated dependencies [a7296b6b]
+- Updated dependencies [f9b842f7]
+- Updated dependencies [3c0cd2b8]
+- Updated dependencies [f9b842f7]
+- Updated dependencies [f9b842f7]
+- Updated dependencies [27b72893]
+  - @astrouxds/astro-web-components@7.0.0-beta.3
+
+## 7.0.0-beta.2
+
+### Major Changes
+
+#### CSS Custom Properties
+
+The majority of our CSS Custom Properties have been removed. See the MIGRATION.md file for more information.
+
+#### Angular
+
+The angular wrapper has been updated and will no longer be compatible with Angular versions less than 12.
+
+#### Pop Up Menu
+
+Pop Up Menu has been re-written to take a slotted trigger element and slotted content. Now changes placement based on available space. Replaces all methods with two new methods, show and hide.
+
+#### Clock
+
+- The following styles have been removed from the :host element:
+
+  `margin: 0 1rem`
+
+  You may need to apply this to your element directly:
+
+  ```
+    rux-clock {
+      margin: 0 1rem;
+    }
+  ```
+
+  `user-select: none`
+
+  If you wish to override this, use the new `container` CSS Shadow Part.
+
+  `height: 3.938rem`
+
+  If you wish to override this, use the new `container` CSS Shadow Part.
+
+  `display: flex`
+
+  The default `display` has been changed to `inline-block`. This can be overwritten by targeting the `rux-clock` host element.
+
+#### Notification
+
+- Host styles have been moved to the shadow dom. If you were previously styling the <rux-notification> element, use shadow parts instead
+
+### Minor Changes
+
+#### Notification
+
+- add `--height` css custom property
+- add prefix, default, and actions slots
+
+#### Clock
+
+- add `container` CSS Shadow Part
+
+## 7.0.0-beta.0
+
+### Major Changes
+
+#### Modal
+
+- Modal will no longer close when clicking outside by default.
+
+  - Why: To align with Astro UXDS compliance requirements 4.3.3: "Dialog Boxes shall be closed only with confirm or cancel Buttons."
+
+  - Migration: If you still require this functionality, a new `clickToClose` property has been added. It defaults to `false` so this will be a breaking change.
+
+- The following properties and attributes have been removed: `modalMessage`, `modalTitle`, `confirmText`, `denyText`.
+  - Why: These have been replaced in favor of slots to provide greater flexibility.
+  - Migration: Use the new `header`, `message`, and `footer` slots instead.
+
+#### Progress
+
+- Removed the indeterminate functionality from Progress
+  - Why: this functionality has been moved to its own component, rux-indeterminate-progress.
+
+### Minor Changes
+
+#### Card
+
+- New component
+
+#### Indeterminate Progress
+
+- New component
+
+#### Container
+
+- New component
+
+#### GSB
+
+- Fixed layout bug when used with classification marking
+
+#### Modal / Dialog
+
+- Fixed an issue with modal emitting an extra 'ruxmodalclosed' event when closed by an off click.
+
+#### Tabs
+
+- Fixed a styling bug with `small` variant
+
+## 6.9.1
+
+### Patch Changes
+
+- Updates Angular dependencies and documentation
+
+## 6.9.0
+
+### Minor Changes
+
+- !!! Deprecates CSS Custom Properties. See MIGRATION.md for more information !!!
+
+#### Input
+
+- Added support for `time` type
+
+### Patch Changes
+
+#### Modal
+
+- Fixed issue with emitting a detail value when using default confirm/deny buttons.
+
+#### Pop Up Menu
+
+- Pop-up-menu will now position correctly if the anchor element is beyond a horizontal scrollbar.
+
+## 6.8.0
+
+### Minor Changes
+
+#### Modal
+
+- Added in slots for message, title and footer to allow for more customization.
+
+#### Clock
+
+- Added a 'date-in' prop that allows the clock to be set to increment from a specific date.
+
+### Patch Changes
+
+#### Switch
+
+- Fixed issue where label was breaking out of the container
+
+#### Select
+
+- Updated styles for better use on Windows OS and Firefox browsers
+
+## 6.7.0
+
+### Minor Changes
+
+#### Tree Node
+
+- added nowrap/overflow hidden to prevent overflow with long names
+
+#### Modal
+
+- Added a new `dialog` shadow part attached to the native dialog element.
+
+### Patch Changes
+
+#### Tabs
+
+- fixed issue where styles were not properly shadow dom encapsulated
+
+#### Modal
+
+- Removed the fix height on the dialog element that was preventing a long modal message.
+
+#### Tree
+
+- fixed regression where border styles were not being applied
+
+#### Push Button
+
+- fixed the hover styling
+
+## 6.6.0
+
+### Minor Changes
+
+#### Timeline
+
+- Added `timezone` property
+
+### Patch Changes
+
+#### Segmented Button
+
+- fixed issue where the bottom border was being clipped when inside a container element.
+
+#### Slider
+
+- hides label if none is present
+
+#### Form Elements
+
+- Removed extra margin on form elements (checkbox, radio, slider, select, input, textarea) that didn't have a label.
+
+## 6.5.1
+
+### Patch Changes
+
+#### Tag
+
+- Added shadows to align with design.
+
+#### Table
+
+- Updated selected row styling to align with design.
+
+#### Tree / Tree Node
+
+- Updated styling to align with design.
+- Added hover state.
+
+## 6.5.0
+
+> NOTE: This release renames many of our internal private CSS Custom Properties (--color-background). If you are using these to build your own UIs, this may be a breaking change for you.
+
+### Minor Changes
+
+#### Select
+
+- Added `size` property.
+
+#### Option
+
+- Added a `disabled` property.
+
+#### Input
+
+- Added `date` and `datetime-local` types.
+- Added a `prefix` and `suffix` named slots.
+
+#### Tag
+
+- Created a new Tag component.
+
+### Patch Changes
+
+- Updated components to use the new beta design tokens
+
+#### Button
+
+- Moved `width` attribute out of shadow dom, can now be styled without CSS parts.
+
+#### Notification
+
+- Watch closeAfter to close when updated
+
+#### Slider
+
+- Updated to accept float values.
+
+## 6.4.0
+
+### Minor Changes
+
+- Added text underline to link hover states globally.
+
+#### Select
+
+- Added `multiple` support
+
+#### Timeline [Beta]
+
+- New beta component Timeline is now available
+
+#### Slider
+
+- Added `axis-labels` and `ticks-only` properties, providing tick mark and label support.
+
+#### Textarea
+
+- Added a `size` property. Removed unused `small` property. (This property had no effect so this is not a breaking change)
+
+### Patch Changes
+
+#### Switch
+
+- Updated thumb hover state color to align with design.
+
+#### Clock
+
+- Updated the clock labels to align with design.
+
+#### Tabs
+
+- Updated to align with design
+
+## 6.3.0
+
+### Minor Changes
+
+#### Notification
+
+- Added a `small` prop allowing for a smaller variant.
+
+#### Segmented Button
+
+- Added `size` prop which accepts small, medium or large.
+
+### Patch Changes
+
+#### Notification
+
+- Updated the padding around message and icon to match design.
+
+#### Segmented Button
+
+- Updated hover state styling to match design.
+
+#### Push Button
+
+- Added hover state styling to match design.
+
+#### Monitoring Icon
+
+- Updated the min height and width to match design.
+
+#### Status
+
+- Changed the overall size to be 12px to match design.
+
+## 6.2.0
+
+### Minor Changes
+
+#### Button
+
+- Adds a borderless prop to rux-button, enabling borderless styling.
+
+#### Checkbox Group/Radio Group/Select/Textarea
+
+- Adds required props and functionality to checkbox group, radio group, select and textarea.
+
+### Patch Changes
+
+#### Clock
+
+- Updated margin-left on AOS from 16px to 17px.
+
+#### Classification Marking
+
+- Updated the overall height of classification-tags to match Figma designs. Overall height has gone from 20px -> 22px
+
+#### Button
+
+- Secondary button now has the correct text color on hover.
+
+## 6.1.0
+
+### Minor Changes
+
+#### Icon
+
+- Added new CSS Shadow Part `icon`
+- Moved the `icon` shadow part in `rux-icon` to be on the SVG element.
+
+#### Global Status Bar
+
+- Added new CSS Shadow Parts: `icon`, `container`, `username`, and `app-state`
+
+#### Pop Up Menu
+
+- Added new CSS Shadow Part `container`
+
+#### Clock
+
+- Added new CSS Shadow Parts `date`, `date-label`, `time`, `time-label`, `aos`, `aos-label`, `los`, `los-label`.
+- Clock now displays the julien date as always 3 digits
+
+#### Button Group
+
+- Added new CSS Shadow Part `container`
+
+#### Button
+
+- Added new CSS Shadow Part `container`
+
+#### Monitoring Progress Icon
+
+- Added new CSS Shadow Parts: `icon`, `monitoring-badge`, `monitoring-label`, `monitoring-sublabel`, `container`, `icon-group`, `progress-display`, `radial-progress`, `status-icon`.
+
+#### Monitoring Icon
+
+- Added new CSS Shadow Parts: `monitoring-badge`, `monitoring-label`, `monitoring-sublabel`.
+
+#### Input
+
+- Added `readonly`, `spellcheck`, and `autocomplete` attributes.
+- Added new CSS Shadow Parts: `input`, `form-field`, `error-text`, and `help-text`.
+
+#### Checkbox Group
+
+- Added new CSS Shadow Parts: `error-text` and `help-text`.
+
+#### Radio Group
+
+- Added new CSS Shadow Parts: `error-text` and `help-text`.
+
+#### Slider
+
+- Added new CSS Shadow Parts: `input`, `error-text` and `help-text`.
+
+#### Select
+
+- Added new CSS Shadow Parts: `label`, `select`, `error-text` and `help-text`.
+
+#### Textarea
+
+- Added new CSS Shadow Parts: `textarea`, `error-text` and `help-text`.
+
+#### Push Button
+
+- Added new CSS Shadow Parts: `label` and `icon`.
+
+#### Checkbox
+
+- Added new CSS Shadow Parts: `form-field` and `label`.
+
+#### Radio
+
+- Added new CSS Shadow Parts: `form-field` and `label`.
+
+#### Progress
+
+- Added new CSS Shadow Parts: `progress` and `output`.
+
+#### Modal
+
+- Added new CSS Shadow Parts: `confirm-button` and `deny-button`.
+
+#### Segmented Button
+
+- Added new CSS Shadow Part `label`.
+
+#### Switch
+
+- Added new CSS Shadow Part `switch`. The pseudo selectors ::before select the track, ::after selects the button.
+
+#### Menu Item
+
+- Added new CSS Shadow Part `container`.
+
+#### Menu Item Divider
+
+- Added new CSS Shadow Part `container`.
+
+#### Classification Marking
+
+- Added new CSS Shadow Parts: `footer`, `tag`, and `header`.
+- Deprecated CSS Shadow Part `footer-header`. Use `footer` instead.
+
+### Patch Changes
+
+- Fixes issue [#121](https://github.com/RocketCommunicationsInc/astro/issues/121) where boolean attributes in React were not behaving as intended.

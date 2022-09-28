@@ -1,3 +1,0 @@
-@import '../../node_modules/@astrouxds/design-tokens/dist/internal/css/_colors-light.css';
-
-/* the import has to be from the perspective of global.scss, so it's up a higher level. */

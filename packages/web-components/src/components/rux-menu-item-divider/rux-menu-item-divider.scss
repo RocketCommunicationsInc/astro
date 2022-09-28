@@ -1,23 +1,17 @@
 :host {
-    /**
-      * @prop --menu-item-divider-border-color: [DEPRECATED] Menu Item Divider Border Color
-    */
-
-    --menu-item-divider-border-color: var(
-        --color-background-interactive-default
-    );
-
     display: block;
-
-    li {
-        list-style: none;
-        pointer-events: none;
-        height: 6px;
-        border-top: 1px dashed var(--menu-item-divider-border-color);
-        margin: 6px 0.5rem 0 0.5rem;
-    }
 }
 
 :host([hidden]) {
     display: none;
+}
+
+li {
+    list-style: none;
+    pointer-events: none;
+    border-top: 1px solid var(--menu-divider-color-fill);
+}
+
+.wrapper {
+    padding: var(--spacing-1) var(--spacing-2); // 4px 8px
 }

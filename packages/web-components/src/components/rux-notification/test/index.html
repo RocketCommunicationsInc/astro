@@ -17,7 +17,10 @@
         <script nomodule src="/build/astro-web-components.js"></script>
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
+        <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
+        <style></style>
     </head>
+
     <body>
         <section>
             <h2>Default</h2>
@@ -39,8 +42,265 @@
                     close-after="100"
                     status="caution"
                     message="testing time"
-                ></rux-notification>
+                >
+                </rux-notification>
             </div>
+        </section>
+
+        <section>
+            <div class="wrapper">
+                <rux-notification open status="normal">
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper wrapper--small">
+                <rux-notification open small status="normal">
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open status="caution">
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper wrapper--small">
+                <rux-notification open small status="caution">
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+
+            <div class="wrapper">
+                <rux-notification open status="serious">
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper wrapper--small">
+                <rux-notification open small status="serious">
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open status="critical">
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper wrapper--small">
+                <rux-notification open small status="critical">
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open status="standby">
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper wrapper--small">
+                <rux-notification open small status="standby">
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open status="off">
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper wrapper--small">
+                <rux-notification open small status="off">
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open>
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper wrapper--small">
+                <rux-notification open small>
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+        </section>
+
+        <section>
+            <div class="wrapper">
+                <rux-notification open status="caution">
+                    <rux-classification-marking
+                        marking="secret"
+                        tag
+                        slot="prefix"
+                    ></rux-classification-marking>
+                    Notification banner
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </rux-notification>
+            </div>
+        </section>
+
+        <section>
+            <h2>With Actions Slot</h2>
+            <div
+                style="
+                    position: relative;
+                    overflow: hidden;
+                    width: 800px;
+                    height: 90px;
+                "
+            >
+                <rux-notification open status="critical">
+                    Notification banner
+                    <rux-button slot="actions">Close</rux-button>
+                </rux-notification>
+            </div>
+        </section>
+
+        <section>
+            <div
+                style="
+                    position: relative;
+                    overflow: hidden;
+                    width: 800px;
+                    height: 80px;
+                "
+            >
+                <rux-notification open status="off">
+                    Notification banner
+                    <rux-button slot="actions">Acknowledge</rux-button>
+                </rux-notification>
+            </div>
+        </section>
+
+        <!-- <ftl-belt access-token="" file-id="">
+            <section>
+                <h2>Figma Testing</h2>
+                <ftl-holster name="Notification Large" node="23160:125943">
+                    <div class="wrapper">
+                        <rux-notification open status="serious">
+                            Notification banner<a href="#" style="margin-left: 8px">Link</a>
+                        </rux-notification>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Notification Small" node="23160:125937">
+                    <div class="wrapper wrapper--small">
+                        <rux-notification open small status="serious">
+                            Notification banner<a href="#" style="margin-left: 8px">Link</a>
+                        </rux-notification>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Notification Large with Prefix" node="21955:118694">
+                    <div class="wrapper">
+                        <rux-notification open status="normal">
+                            Notification banner<a href="#" style="margin-left: 8px">Link</a>
+                            <rux-icon size="small"icon="error-outline" slot="prefix"></rux-icon>
+                        </rux-notification>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Notification Small with Prefix icon" node="21648:121738">
+                    <div class="wrapper wrapper--small">
+                            <rux-notification open small status="caution">
+                                Notification banner<a href="#" style="margin-left: 8px">Link</a>
+                                <rux-icon size="24px"icon="error-outline" slot="prefix"></rux-icon>
+                            </rux-notification>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Notification Large with Prefix and action button" node="22002:117917">
+                    <div class="wrapper">
+                        <rux-notification open status="critical">
+                            Notification banner<a href="#" style="margin-left: 8px">Link</a>
+                            <rux-classification-marking tag classification="secret" slot="prefix"></rux-classification-marking>
+                            <rux-button slot="actions">Acknowledge</rux-button>
+                        </rux-notification>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Notification Small with Prefix and actions button" node="22002:117918">
+                    <div class="wrapper wrapper--small">
+                        <rux-notification open small status="critical">
+                            Notification banner<a href="#" style="margin-left: 8px">Link</a>
+                            <rux-classification-marking tag classification="secret" slot="prefix"></rux-classification-marking>
+                            <rux-button size="small" slot="actions">Acknowledge</rux-button>
+                        </rux-notification>
+                    </div>
+                </ftl-holster>
+            </section>
+        </ftl-belt> -->
+        <section>
+            <h1>Notification testing</h1>
+            <rux-notification open status="normal">
+                Notification banner
+                <a href="#" style="margin-left: 8px">Link</a>
+            </rux-notification>
+            <h2>This should be below the notification</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                molestiae et maxime recusandae provident magni perspiciatis fuga
+                in voluptatem ea dolor quas, distinctio nobis esse praesentium
+                necessitatibus minus cumque corporis?
+            </p>
+            <rux-notification open status="normal" small id="animated">
+                Notification banner
+                <a href="#" style="margin-left: 8px">Link</a>
+            </rux-notification>
+            <h2>This should be below the notification</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                molestiae et maxime recusandae provident magni perspiciatis fuga
+                in voluptatem ea dolor quas, distinctio nobis esse praesentium
+                necessitatibus minus cumque corporis?
+            </p>
+            <rux-notification open status="critical">
+                <p>
+                    Notification banner Lorem ipsum dolor sit amet consectetur,
+                    adipisicing elit. Voluptas velit incidunt inventore numquam
+                    voluptates debitis neque perferendis, maxime exercitationem
+                    eligendi possimus ipsa labore aperiam eveniet. Accusantium
+                    nisi autem eligendi quos?
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </p>
+            </rux-notification>
+            <h2>This should be below the notification</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                molestiae et maxime recusandae provident magni perspiciatis fuga
+                in voluptatem ea dolor quas, distinctio nobis esse praesentium
+                necessitatibus minus cumque corporis?
+            </p>
+            <rux-notification open status="critical" small>
+                Notification banner Lorem ipsum dolor sit amet consectetur,
+                adipisicing elit. Voluptas velit incidunt inventore numquam
+                voluptates debitis neque perferendis, maxime exercitationem
+                eligendi possimus ipsa labore aperiam eveniet. Accusantium nisi
+                autem eligendi quos?
+                <a href="#" style="margin-left: 8px">Link</a>
+            </rux-notification>
+            <h2>This should be below the notification</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                molestiae et maxime recusandae provident magni perspiciatis fuga
+                in voluptatem ea dolor quas, distinctio nobis esse praesentium
+                necessitatibus minus cumque corporis?
+            </p>
+            <rux-notification open status="critical" small>
+                <p>
+                    Notification banner Lorem ipsum dolor sit amet consectetur,
+                    adipisicing elit. Voluptas velit incidunt inventore numquam
+                    voluptates debitis neque perferendis, maxime exercitationem
+                    eligendi possimus ipsa labore aperiam eveniet. Accusantium
+                    nisi autem eligendi quos?
+                    <a href="#" style="margin-left: 8px">Link</a>
+                </p>
+            </rux-notification>
         </section>
     </body>
 </html>

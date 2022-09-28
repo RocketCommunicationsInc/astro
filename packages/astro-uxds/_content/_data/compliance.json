@@ -267,7 +267,7 @@
             {
               "numeral": 2,
               "rule": "Checkboxes shall act independently of others in a group.",
-              "status": "curent",
+              "status": "current",
               "tier": 3
             },
             {
@@ -534,7 +534,7 @@
             },
             {
               "numeral": 2,
-              "rule": "Links shall not use underlined text.",
+              "rule": "Hovered links shall be styled with an underline.",
               "status": "under-review",
               "tier": 2
             },
@@ -610,9 +610,9 @@
           ]
         },
         {
-          "name": "Pop Up",
+          "name": "Pop Up Menu",
           "numeral": 11,
-          "link": "/components/pop-up/",
+          "link": "/components/pop-up-menu/",
           "rules": [
             {
               "numeral": 1,
@@ -634,7 +634,7 @@
             },
             {
               "numeral": 4,
-              "rule": "Pop Ups shall not exceed 25 menu items.",
+              "rule": "Pop Up Menus shall not exceed 25 menu items.",
               "status": "current",
               "tier": 3
             }
@@ -814,12 +814,6 @@
               "rule": "Status Symbols shall be displayed with the [specified colors](/components/status-symbol/#status-colors).",
               "status": "current",
               "tier": 1
-            },
-            {
-              "numeral": 3,
-              "rule": "Switch labels shall use sentence case capitalization.",
-              "status": "under-review",
-              "tier": 3
             }
           ]
         },
@@ -918,7 +912,7 @@
             {
               "numeral": 3,
               "rule": "Only government-approved control or classification text shall be included in Overall Marking banners and Portion Markings.",
-              "status": "curent",
+              "status": "current",
               "tier": 1
             },
             {
