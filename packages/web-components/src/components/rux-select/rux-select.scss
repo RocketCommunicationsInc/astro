@@ -15,7 +15,7 @@
             --color-border-interactive-muted,
             rgb(43, 101, 155)
         );
-        border-radius: var(--progress-radius-inner);
+        border-radius: var(--spacing-2); //8
         border: 3px solid transparent;
         background-clip: padding-box;
     }
@@ -144,6 +144,7 @@ label {
                 cursor: not-allowed;
                 &:hover {
                     color: var(--color-background-interactive-default);
+                    opacity: var(--opacity-disabled);
                     background-color: linear-gradient(
                         to left,
                         var(--color-background-surface-selected)
@@ -190,7 +191,7 @@ label {
 
         &:hover {
             color: var(--color-background-interactive-hover);
-            background-color: var(--select-menu-option-hover-background-color);
+            background-color: var(--color-background-surface-hover);
         }
 
         &:focus {

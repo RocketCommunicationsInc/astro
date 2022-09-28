@@ -19,8 +19,8 @@ exports[`rux-monitoring-progress-icon renders 1`] = `
           345K
         </div>
       </div>
-      <div class="rux-advanced-status__label">
-        <span part="monitoring-label">
+      <div class="rux-advanced-status__label" part="monitoring-label">
+        <span>
           Label
         </span>
         <span class="rux-advanced-status__sublabel" part="monitoring-sublabel">
