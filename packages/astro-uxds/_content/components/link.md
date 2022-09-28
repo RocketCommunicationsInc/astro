@@ -31,7 +31,7 @@ Avoid using “Click Here” or “Link” for the link text.
 
 ### Links
 
-Inline and standalone links are to be styled the same way, with the primary blue (#4DACFF) for normal links and hover (#92CBFF) accompanied by an underline for links in hover state.
+Inline and standalone links are to be styled the same way, with the primary blue (`--color-palette-brightblue-500`) for normal links and hover (`--color-palette-brightblue-400`) accompanied by an underline for links in hover state.
 
 Underlines can be applied by detaching the text style and selecting the three dots to access further text options, and selecting the underline setting within. This is a less than satisfactory but temporary fix.
 
