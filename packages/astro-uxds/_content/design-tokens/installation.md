@@ -16,7 +16,7 @@ If you're using our Web Components, our Design Tokens are already accessible to 
 If you'd like more control over what you import and are not using our web components, you can install our design tokens separately:
 
 ```bash
-npm i @astrouxds/astro-design-tokens@beta
+npm i @astrouxds/tokens
 ```
 
 ### Structure
