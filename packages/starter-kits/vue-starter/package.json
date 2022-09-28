@@ -8,7 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@astrouxds/astro-web-components": "^6.11.0",
+    "@astrouxds/astro-web-components": "^7.0.0",
     "core-js": "^3.6.5",
     "vue": "^3.0.0"
   },

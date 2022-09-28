@@ -351,7 +351,7 @@ export class RuxInput implements FormFieldInterface {
                                             ? 'visibility-off'
                                             : 'visibility'
                                     }
-                                    size="20px"
+                                    size="22px"
                                 />
                             </button>
                         ) : null}

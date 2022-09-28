@@ -21,9 +21,6 @@ module.exports = {
   component: (theme, componentName) => {
     let themeTokens = tokens;
     if (theme === "light") {
-      if (componentName === "status-symbol") {
-        console.log("whatup", componentName);
-      }
       themeTokens = lightTokens;
     }
     return themeTokens.filter((token) => token.component === componentName);

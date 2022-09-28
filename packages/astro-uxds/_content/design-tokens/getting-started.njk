@@ -110,7 +110,7 @@ title: Getting Started
 
 <h3> System Tokens (Preferred) </h3>
 
-`color.background.interactive`
+<pre>color.background.interactive</pre>
 
 <p>Reference Tokens help enforce consistency; however, the sheer number of them can be overwhelming. To help determine which tokens to use, Astro recommends System Tokens to better convey intent, usage, patterns and concepts (like `interactive` or `surface`). All System Tokens refer to our Reference Tokens.</p>
 
@@ -125,7 +125,7 @@ title: Getting Started
   <li>If you are theming an existing component library or design system. For example, Bootstrap or Material.</li>
 </ol>
 
-<p>Component Tokens are scoped to individual components and should not be used outside of the component. Instead, use the token that is being referenced directly. For example, in a list component, don't use `button-color-background-hover` instead, note that `button-color-background-hover` references `color.background.interactive.default` and use the System Token instead. Note that Component Tokens may change in upcoming releases and may break the visual design of your custom component if you use them.</p>
+<p>Component Tokens are scoped to individual components and should not be used outside of the component. Instead, use the token that is being referenced directly. For example, in a list component, don't use <code>button-color-background-hover</code> instead, note that <code>button-color-background-hover</code> references <code>color.background.interactive.default</code> and use the System Token instead. Note that Component Tokens may change in upcoming releases and may break the visual design of your custom component if you use them.</p>
 
 <h2>Common Use Cases</h2>
 
@@ -142,7 +142,7 @@ title: Getting Started
 <h3> I'm a designer working in something that isn't Figma <span class="token token__component">Component</span>
 </h3>
 
-<p> Since you won't have access to our Figma component library, you'll need to create your own Astro components. You can do this using just our Component Tokens: `button-color-background`, `button-color-text`. </p>
+<p> Since you won't have access to our Figma component library, you'll need to create your own Astro components. You can do this using just our Component Tokens: <code>button-color-background</code>, <code>button-color-text</code>. </p>
 
 <h3> 
     I'm a single developer working on some new UI 
@@ -159,7 +159,7 @@ title: Getting Started
   <span class="token token__component">Component</span>
 </h3>
 
-<p> Since you won't have access to our web component library, you'll need to create your own Astro components. You can do this using just our Component Tokens: `button-color-background`, `button-color-text`. </p>
+<p> Since you won't have access to our web component library, you'll need to create your own Astro components. You can do this using just our Component Tokens: <code>button-color-background</code>, <code>button-color-text</code>. </p>
 
 <h3> Naming Convention </h3>
 

@@ -64,4 +64,8 @@
     color: var(--color-text-interactive-default);
     opacity: var(--opacity-disabled);
     cursor: not-allowed;
+    &:hover {
+        color: var(--color-text-interactive-default);
+        opacity: var(--opacity-disabled);
+    }
 }
