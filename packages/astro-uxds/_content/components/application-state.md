@@ -43,9 +43,9 @@ Only use Tag colors when necessary as overuse of colors may reduce efficacy of m
 
 - Text within the component uses the Body 2 style and sentence casing.
 
-- The default font color is the Dark Theme’s default body text color (#FFFFFF) for use with the default, dark background color.
+- The default font color is the Dark Theme’s default body text color (`--color-palette-neutral-000`) for use with the default, dark background color.
 
-- When a lighter Tag background color is used, the font color changes to `--color.palette.darkblue.950` for better color contrast and legibility.
+- When a lighter Tag background color is used, the font color changes to `--color-palette-darkblue-950` for better color contrast and legibility.
 
 - Text does not wrap within the component in order to keep the height of the Global Status Bar consistent across application states which improves muscle memory and faster recognition time.
 
@@ -78,7 +78,7 @@ Only use Tag colors when necessary as overuse of colors may reduce efficacy of m
 
 ![Don’t: Implement state switching in the UI without confirming that this functionality is approved by your client or security expert.](/img/components/app-state-dont-4.png "Don’t: Implement state switching in the UI without confirming that this functionality is approved by your client or security expert.")
 
-![Do: Change text color to <span style="color:#fff;background-color:#182635;font-family:monospace;padding:0 0.25rem;">--color-palette-grey-800</span> if the background color makes the original text color hard to read.](/img/components/app-state-do-5.png "Do: Change text color to --color-palette-grey-800 if the background color makes the original text color hard to read.")
+![Do: Change text color to `--color-palette-grey-800` if the background color makes the original text color hard to read.](/img/components/app-state-do-5.png "Do: Change text color to --color-palette-grey-800 if the background color makes the original text color hard to read.")
 
 ![Don’t: Use non-default or non-tag colors for background colors.](/img/components/app-state-dont-5.png "Don’t: Use non-default or non-tag colors for background colors.")
 :::
