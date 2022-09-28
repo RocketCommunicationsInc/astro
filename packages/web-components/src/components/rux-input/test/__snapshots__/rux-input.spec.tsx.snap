@@ -82,7 +82,7 @@ exports[`rux-input renders rux-icon if type is password 1`] = `
         </span>
         <input aria-invalid="false" autocomplete="off" class="native-input" id="rux-input-4" part="input" type="password" value="">
         <button class="pw-button">
-          <rux-icon exportparts="icon" icon="visibility" size="20px"></rux-icon>
+          <rux-icon exportparts="icon" icon="visibility" size="22px"></rux-icon>
         </button>
         <span class="rux-input-suffix" part="suffix">
           <slot name="suffix"></slot>
