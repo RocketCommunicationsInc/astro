@@ -7,7 +7,7 @@ To get up and running quickly, Astro web components are available via a CDN. Add
 ```html
 <link rel="preconnect" href="https://fonts.gstatic.com" />
 <link
-    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&family=Roboto:wght@200;300;400;500;600;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
     rel="stylesheet"
 />
 <link
@@ -38,7 +38,7 @@ Astro components are now available anywhere in your app.
 ```html
 <link rel="preconnect" href="https://fonts.gstatic.com" />
 <link
-    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&family=Roboto:wght@200;300;400;500;600;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
     rel="stylesheet"
 />
 ```

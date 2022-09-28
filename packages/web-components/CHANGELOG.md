@@ -10,6 +10,10 @@ Our /dist/custom-elements build has been removed in favor of a faster treeshakea
 
 -   Angular versions <= 12 are no longer supported.
 
+### Typography
+
+-   Roboto Mono has been removed from the font stack.
+
 ## Button
 
 -   The following deprecated CSS Custom Properties have been removed:

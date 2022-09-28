@@ -2,7 +2,7 @@
 path: /migration
 date: Last Modified
 layout: interior.template.njk
-title: "guide"
+title: "7.0 Migration Guide"
 class: "page-migration"
 ---
 
@@ -60,6 +60,41 @@ class: "page-migration"
 		<p class="resolution">
 			<strong>Resolution:</strong> Upgrade your application to Angular v12+.
 		</p>
+	{% endbreaking %}
+{% endcomponent %}
+
+{% component "Typography" %}
+	{% breaking "Roboto Mono Removed", "High" %}
+		<p>
+			Roboto Mono has been removed from our font stack in favor of Roboto's tabular figures 
+			when displaying numbers within components such as Clock.
+		</p>
+		<p>
+			<strong>Resolution:</strong> Remove any import of Roboto Mono from your application.
+		</p>
+		<p>
+			<div class="breaking-change__code">
+				<div class="breaking-change__code__block">
+					<div class="breaking-change__code__title">v6</div>
+						{% highlight "html" %}
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&family=Roboto:wght@300;400;500;700&display=swap"
+	rel="stylesheet"
+/>
+						{% endhighlight %}
+						
+				</div>
+				<div class="breaking-change__code__block"> 
+					<div class="breaking-change__code__title">v7</div>
+						{% highlight "html" %}
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+	rel="stylesheet"
+/>
+						{% endhighlight %}
+					</div>
+			</div>
+			</p>
 	{% endbreaking %}
 {% endcomponent %}
 
