@@ -92,12 +92,6 @@ export class RuxPopUp {
         }
     }
 
-    @Watch('placement')
-    handlePlacement(oldValue: string, newValue: string) {
-        console.log('Watch Placement!')
-        console.log(`Changing from ${oldValue} to ${newValue}`)
-    }
-
     /**
      * Opens the pop up and returns true.
      */
