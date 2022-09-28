@@ -62,7 +62,7 @@ export const Default = (args) => {
 
 ## Usage
 
-Make use of [Menu](?path=/docs/components-pop-up-menu--default-story) [Menu Item](?path=/docs/components-pop-up-menu-item--default-story) and [Menu Item Divider](?path=/docs/components-pop-up-menu-item-divider--default-story) to compose your own Pop Up.
+Make use of [Menu](?path=/docs/components-pop-up-menu--default-story), [Menu Item](?path=/docs/components-pop-up-menu-item--default-story), and [Menu Item Divider](?path=/docs/components-pop-up-menu-item-divider--default-story) to compose your own Pop Up.
 Every `rux-pop-up` should use the named `trigger` slot to render the trigger element for the pop up menu.
 The menu will attempt to position according to the `placement` prop if provided, or will use auto-placement if not.
 
@@ -133,5 +133,12 @@ If you're already utilizing a build system that supports tree shaking and want t
 
 ```js
 import RuxPopUp from '@astrouxds/astro-web-components/dist/components/rux-pop-up.js'
+import RuxMenu from '@astrouxds/astro-web-components/dist/components/rux-menu.js'
+import RuxMenuItem from '@astrouxds/astro-web-components/dist/components/rux-menu-item.js'
+import RuxMenuItemDivider from '@astrouxds/astro-web-components/dist/components/rux-menu-item-divider.js'
+
 customElements.define('rux-pop-up', RuxPopUp)
+customElements.define('rux-menu', RuxMenu)
+customElements.define('rux-menu-item', RuxMenuItem)
+customElements.define('rux-menu-item-divider', RuxMenuItemDivider)
 ```
