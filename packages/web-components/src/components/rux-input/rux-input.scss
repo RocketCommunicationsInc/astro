@@ -42,8 +42,8 @@
             border: none;
             background: none;
             box-shadow: none;
-            padding: 0;
-            margin: 0;
+            padding: var(--spacing-0);
+            margin: var(--spacing-0);
             color: inherit;
             font-family: inherit;
             font-size: inherit;
@@ -82,7 +82,6 @@
             box-shadow: var(--color-border-error) 0 0 0 1px inset;
         }
         &--disabled {
-            opacity: 0.4;
             opacity: var(--opacity-disabled);
             cursor: not-allowed;
         }
@@ -166,11 +165,11 @@
 .pw-button {
     border: none;
     background: transparent;
-    height: var(--spacing-4);
+    height: calc(var(--spacing-6) - var(--spacing-1)); //20px
     width: var(--spacing-4);
-    padding: 0;
-    height: var(--line-height-sm);
-    width: 1.25rem;
+    padding: var(--spacing-0);
+    line-height: var(--line-height-sm);
+    width: calc(var(--spacing-6) - var(--spacing-1));
 }
 .pw-button:active,
 .pw-button:focus {
