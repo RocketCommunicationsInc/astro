@@ -24,11 +24,8 @@ Learn more about the software design process with Astro:
 - Follow established [EGS Compliance Guidance](/design-guidelines/compliance/) required for EGS applications
 
 **Design Assets**
-:::note
-Sketch is being deprecated in favor of Figma. [Astro UXDS Figma Page](https://www.figma.com/community/file/1014254163928270411)
-:::
 
-Astro UX design assets include files for creating Astro application wireframes and high-fidelity mockups in Sketch and Adobe XD.
+Astro UXDS design assets include files for creating Astro application wireframes and high-fidelity mockups in Figma. Visit the [Astro UXDS Figma community page.](https://www.figma.com/@astrouxds)
 
 Learn more about designing with Astro design assets with Astro's guide to getting started [For Designers](/getting-started/designers).
 
