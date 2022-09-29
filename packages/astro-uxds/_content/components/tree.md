@@ -35,7 +35,7 @@ Accordions are closely related to Trees, but are specialized to automatically di
 ### Appearance
 
 :::two-col
-Items in the Tree that have children display a turn-down arrow. Items without children, even if they represent empty containers, do not display a turn-down arrow. Items are indented according to their depth.
+The Tree component has a transparent background, allowing it to be placed on different background colors. Items in the Tree that have children display a turn-down arrow. A child branch can have its own child branches, indicated by a turn-down arrow. Items without children, even if they represent empty containers, do not display a turn-down arrow. Items are indented according to their depth.
 
 ![Astro Tree Component with no status symbols.](/img/components/tree-no-status.png "Astro Tree Component with no status symbols.")
 
@@ -46,6 +46,8 @@ The Tree may optionally show a [Status Symbol](/components/status-symbol) alongs
 
 ### Behavior
 
+The default state of each Tree branch is closed. Clicking on a turn-down arrow opens the branch to reveal child branches. If multiple child branches are open and then the top branch is closed, all child branches will be hidden. The child branches will be restored to their previous open or closed state when the top branch is reopened.
+
 Clicking on an item (in any area other than the turn-down arrow) selects that item. Only one item at a time may be selected.
 
-Clicking on a turn-down arrow opens or closes that branch. This does not change the selected item unless the selected item is within the branch being closed. If the branch is closed, the selection becomes null — a Tree’s selection and revealed branches are almost entirely independent of each other.
+Opening or closing the branch does not change the selected item unless the selected item is within the branch being closed. If the branch is closed, the selection becomes null — a Tree’s selection and revealed branches are almost entirely independent of each other.

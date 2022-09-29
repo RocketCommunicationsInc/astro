@@ -7,7 +7,7 @@ title: Card
 demo: components-card--full-example
 storybook: components-card--full-example
 git: rux-card
-height: 330
+height: 560px
 theme: true
 ---
 
