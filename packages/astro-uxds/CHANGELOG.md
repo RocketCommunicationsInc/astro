@@ -1,5 +1,425 @@
 # @astrouxds/astrouxds
 
+# 7.0 Changes
+
+## Major
+
+Our /dist/custom-elements build has been removed in favor of a faster treeshakeable /dist/components build.
+
+### Angular
+
+- Angular versions <= 12 are no longer supported.
+
+### Typography
+
+- Roboto Mono has been removed from the font stack.
+
+## Button
+
+- The following deprecated CSS Custom Properties have been removed:
+  - --button-active-background-color
+  - --button-active-border-color
+  - --button-background-color
+  - --button-border-color
+  - --button-borderless-hover-color
+  - --button-borderless-text-color
+  - --button-secondary-background-color
+  - --button-secondary-border-color
+  - --button-secondary-hover-background-color
+  - --button-secondary-hover-border-color
+  - --button-secondary-hover-text-color
+  - --button-secondary-text-color
+
+### Clock
+
+- The `color` CSS property can no longer be styled from the :host element.
+- The default `display` css property is now `inline-block` rather than `flex`.
+- The following deprecated CSS Custom Properties have been removed:
+  - --clock-background-color
+  - --clock-border-color
+  - --clock-label-color
+  - --clock-text-color
+
+### Checkbox
+
+- The following deprecated CSS Custom Properties have been removed:
+- --checkbox-label-color
+- --checkbox-background-color
+- --checkbox-border-color
+- --checkbox-checked-color
+- --checkbox-hover-border-color
+
+### Checkbox Group
+
+- `color`, `font-family`, `font-size`, `font-weight`, `letter-spacing`, and `line-height` CSS properties can no longer be styled from the :host element.
+- The following deprecated CSS Custom Properties have been removed:
+  - --checkboxgroup-border-color
+
+### Classification Marking
+
+- `footer-banner` CSS Shadow Part has been removed.
+- The following deprecated CSS Custom Properties have been removed:
+- --color-classification-text-light
+- --color-classification-text-dark
+
+### Dialog
+
+- Dialog will no longer close when clicking outside by default.
+- The `dialog-title` and `dialog-message` properties have been removed in favor of `header` and `messsage`.
+
+### Global Status Bar
+
+- `appdomain` and `appname` are no longer uppercase.
+- `font-family`, `letter-spacing`, `line-height` CSS properties can no longer be styled from the :host element.
+
+### Icon
+
+- `label` attribute has been removed.
+- The deprecated `--icon-default-color` CSS Custom Property has been removed.
+
+### Input
+
+- The following deprecated CSS Custom Properties have been removed:
+  - --input-background-color
+  - --input-text-color
+  - --input-focus-border-color
+  - --input-selection-background-color
+  - --input-invalid-border-color
+
+### Log
+
+- The following deprecated CSS Custom Properties have been removed:
+  - --log-header-background-color
+  - --log-filter-background-color
+  - --log-filter-text-color
+
+### Modal
+
+- Modal has been removed and renamed to `<rux-dialog>`.
+- The following deprecated CSS Custom Properties have been removed:
+  - --modal-title-color
+  - --modal-background-color
+  - --modal-border-color
+
+### Monitoring Progress Icon
+
+- The `color` CSS property can no longer be styled from the :host element.
+
+### Notification
+
+- Notification no longer requires a parent element with `position: relative` and `overflow: hidden` applied.
+- Multiple sibling notifications are no longer stacked by default.
+- Notification no longer overlays content. Instead, when a notification becomes visible, it will shift content up or down accordingly.
+- The slide in/out animation has been removed for better performance.
+- The `color`, `font-family`, `font-weight`, `font-size`, `letter-spacing`, `line-height`, and `padding` CSS properties can no longer be styled from the :host element.
+- The following deprecated CSS Custom Properties have been removed:
+  - --notification-icon-color
+  - --notification-text-color
+
+### Pop Up
+
+- `anchorEl` and `triggerEl` properties have been removed.
+- `ruxmenudidclose` , `ruxmenudidopen`, `ruxmenuwillclose`, `ruxmenuwillopen` events have been removed.
+- `close`, `isOpen`, `show`, `toggle` methods have been removed.
+- `menu-end` slot has been removed.
+
+### Pop Up Menu
+
+- Pop Up Menu has been removed and renamed to `<rux-pop-up>`.
+- The deprecated `--menu-item-divider-border-color` CSS Custom Property has been removed.
+
+### Progress
+
+- Indeterminate functionality has been removed and is now a separate `<rux-indeterminate-progress>` component.
+- The `color`, `font-family`, `font-size`, `font-weight`, `letter-spacing`, and `line-height` CSS properties can no longer be styled from the :host element.
+- The following deprecated CSS Custom Properties have been removed:
+  - --progress-padding
+  - --progress-radius
+  - --progress-height
+  - --progress-width
+  - --progress-determinate-bar-background-color
+  - --progress-determinate-track-background-color
+  - --progress-determinate-track-border-color
+  - --progress-label-color
+
+### Push Button
+
+- `label` CSS Shadow Part has been renamed to `container`.
+- The following deprecated CSS Custom Properties have been removed:
+  - --pushbutton-background-color
+  - --pushbutton-border-color
+  - --pushbutton-text-color
+  - --pushbutton-selected-background-color
+  - --pushbutton-selected-border-color
+  - --pushbutton-selected-text-color
+  - --pushbutton-selected-hover-text-color
+
+### Radio
+
+- The following deprecated CSS Custom Properties have been removed:
+  - --radio-hover-border-color
+  - --radio-border-color
+  - --radio-label-color
+  - --radio-background-color
+  - --radio-selected-color
+
+### Radio Group
+
+- The deprecated `--radiogroup-border-color` CSS Custom Property has been removed.
+
+### Segmented Button
+
+- The default `size` property is now `medium` rather than `small`.
+- The following deprecated CSS Custom Properties have been removed:
+  - --segmented-button-background-color
+  - --segmented-button-text-color
+  - --segmented-button-border-color
+  - --segmented-button-hover-background-color
+  - --segmented-button-hover-text-color
+  - --segmented-button-hover-border-color
+  - --segmented-button-selected-background-color
+
+### Select
+
+- The following deprecated CSS Custom Properties have been removed:
+  - --select-menu-border-radius
+  - --select-menu-border-hover-color
+  - --select-menu-border-focus-color
+  - --select-menu-invalid-border-color
+  - --select-menu-text-color
+  - --select-menu-label-color
+  - --select-menu-border-color
+  - --select-menu-option-text-hover-color
+  - --select-menu-option-selected-background-color
+  - --select-menu-option-selected-text-color
+  - --select-menu-inactive-caret
+  - --select-menu-active-caret
+  - --select-menu-background-color
+
+### Slider
+
+- The following deprecated CSS Custom Properties have been removed:
+  - --slider-thumb-background-color
+  - --slider-thumb-border-color
+  - --slider-hover-thumb-background-color
+  - --slider-hover-thumb-border-color
+  - --slider-track-background-color
+  - --slider-selected-thumb-border-color
+  - --slider-thumb-size
+  - --slider-thumb-border-size
+  - --slider-tick-padding-top
+  - --slider-selected-track-background-color
+  - --slider-value-percent
+  - --slider-top
+  - --slider-track-height
+
+### Switch
+
+- The `color`, `font-family`, `font-size`, `font-weight`, `letter-spacing`, and `line-height` CSS properties can no longer be styled from the :host element.
+- The following deprecated CSS Custom Properties have been removed:
+  - --switch-background-color
+  - --switch-hover-on-color
+  - --switch-hover-off-color
+  - --switch-on-color
+  - --switch-off-border-color
+
+### Tab
+
+- `font-family`, `font-size`, `letter-spacing`, `font-weight`, `border-color`, `border-bottom`, `min-width`, and `padding` can no longer be styled from the :host element.
+- The following deprecated CSS Custom Properties have been removed:
+  - --tab-text-color
+  - --tab-border-color
+  - --tab-hover-text-color
+  - --tab-selected-text-color
+
+### Table
+
+- Right and left border styles have been removed by default.
+- The following deprecated CSS Custom Properties have been removed:
+  - --table-border-color
+  - --table-row-hover-text-color
+  - --table-row-hover-background-color
+  - --table-row-border-color
+  - --table-row-text-color
+  - --table-row-background-color
+  - --table-header-border-color
+  - --table-header-background-color
+  - --table-header-text-color
+  - --table-header-box-shadow
+  - --table-row-selected-background-color
+  - --table-row-selected-border-color
+
+### Textarea
+
+- The following deprecated CSS Custom Properties have been removed:
+  - --textarea-border-color
+  - --textarea-text-color
+  - --textarea-focus-border-color
+  - --textarea-selection-background-color
+
+### Tree
+
+- The following deprecated CSS Custom Properties have been removed:
+  - --tree-text-color
+  - --tree-border-color
+  - --tree-accent-color
+  - --tree-hover-background-color
+  - --tree-hover-text-color
+  - --tree-selected-border-color
+  - --tree-selected-accent-color
+  - --tree-expanded-border-color
+  - --tree-background-color
+
+### Tree Node
+
+- The `color`, `font-family`, `font-size`, `font-weight`, `letter-spacing`, and `line-height` CSS properties can no longer be styled from the :host element.
+
+## Minor
+
+- New typography utility classes have been added to `astro-web-components.css`.
+
+- Links no longer change color on hover.
+
+### Accordion [New]
+
+- Adds new Accordion component.
+
+### Angular
+
+- Angular no longer requires CUSTOM_ELEMENTS_SCHEMA on your app module.
+
+### Clock
+
+- Adds `container` CSS Shadow Part.
+
+### Container [New]
+
+- Adds new Container component.
+
+### Card [New]
+
+- Adds new card component.
+
+### Dialog
+
+- Adds support for scrollbars in dialog.
+
+### Form Elements
+
+- Help text now uses our `--color-text-secondary` design token.
+
+### Indeterminate Progress [New]
+
+- Adds new Interdeterminate Progress component.
+
+### Menu [New]
+
+- Adds new Menu component for use within Pop Up.
+
+### Pop Up
+
+- Adds `ruxpopupopened` and `ruxpopupclosed` events.
+
+### Tab
+
+- Adds `small` attribute.
+- Adds `container` CSS Shadow Part.
+
+### Notification
+
+- Adds `--height` CSS Custom Property
+
+- Adds `prefix`, `default`, and `actions` slots
+
+## Patch
+
+### Button
+
+- Internal styles have been refactored to use spacing design tokens.
+
+### Clock
+
+- Internal styles have been refactored to use spacing design tokens.
+
+### Checkbox
+
+- Internal styles have been refactored to use spacing design tokens.
+
+### Checkbox Group
+
+- Internal styles have been refactored to use spacing design tokens.
+
+### Classification Marking
+
+- Internal styles have been refactored to use spacing design tokens.
+
+### Dialog
+
+- Internal styles have been refactored to use spacing design tokens.
+
+### Indeterminate Progress
+
+- Internal styles have been refactored to use spacing design tokens.
+
+### Input
+
+- Internal styles have been refactored to use spacing design tokens.
+- Type=password now uses a native `button` element rather than `rux-button`.
+
+### Log
+
+- Internal styles have been refactored to use spacing design tokens.
+
+### Radio
+
+- Internal styles have been refactored to use spacing design tokens.
+
+### Radio Group
+
+- Internal styles have been refactored to use spacing design tokens.
+
+### Pop Up Menu
+
+- Internal styles have been refactored to use spacing design tokens.
+
+### Push Button
+
+- Internal styles have been refactored to use spacing design tokens.
+
+### Switch
+
+- Internal styles have been refactored to use spacing design tokens.
+
+### Notification
+
+- Internal styles have been refactored to use spacing design tokens.
+
+### Progress
+
+- Internal styles have been refactored to use spacing design tokens.
+- Fixed visual regression when progress was not given a `value` attribute.
+
+### Segmented Button
+
+- Internal styles have been refactored to use spacing design tokens.
+
+### Slider
+
+- Internal styles have been refactored to use spacing design tokens.
+
+### Tabs
+
+- Tab heights no longer expand to the height of a direct container.
+
+### Tab
+
+- Tab border color can now be properly styled when `size` is set to `small`.
+
+### Textarea
+
+- Internal styles have been refactored to use spacing design tokens.
+- Textarea can now be properly resized in Firefox
+
 ## 7.0.0-beta.4
 
 ### Major Changes

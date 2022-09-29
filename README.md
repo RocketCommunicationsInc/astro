@@ -25,11 +25,6 @@ During 2022, Astro will publish minor and patch updates on a bi-weekly basis on 
 
 For more information, see https://www.astrouxds.com/releases/
 
-## Deprecations
-
-Most of our component's CSS Custom Properties are now deprecated and will be removed in 7.0. Please see our [migration guide](./MIGRATION.md) for more information on how you can prepare for this change.
-
-
 ## Contributing
 
 Interested in submitting a new PR? Check out our [contributing guide](./CONTRIBUTING.md) for more information.
