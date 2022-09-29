@@ -1,5 +1,35 @@
 # @astrouxds/react
 
+## 7.0.0-beta.3
+
+### Major Changes
+
+- a0536351: Updating design tokens to current CSS custom properties.
+- 9cf6ad00: Adding in text changes to the Link page on the AstroUXDS website.
+- 70bb93a2: Updating the **Status Symbol** page on the Astro UXDS website. This page had text changes to be made referring to light theme, sections that were no longer relevant needed to be removed, color swatches for status symbol needed to be updated with the appropriate hex, RGB, and CSS values for light, dark, and light border. Compliance Rules needed to be updated.
+
+### Minor Changes
+
+- f1d93ff5: Updated light theme styles
+
+### Patch Changes
+
+- e706cd54: astrousdx.com - remove spectrum analyzer page, references, and redirect url to home page
+- f1d93ff5: Fixes the text color of rux-input's placeholder text.
+- 0fe7fc51: Fixed an issue where the event detail on dialog would not reset to default value after it emitted once.
+- 55e684a7: rux-iunput search - turn the magnifying glass around
+- 991f5d66: Moved the `monitoring-label` part to the parent div of its previous location in order to provide more customizability.
+- Updated dependencies [e706cd54]
+- Updated dependencies [f1d93ff5]
+- Updated dependencies [a0536351]
+- Updated dependencies [0fe7fc51]
+- Updated dependencies [9cf6ad00]
+- Updated dependencies [55e684a7]
+- Updated dependencies [991f5d66]
+- Updated dependencies [70bb93a2]
+- Updated dependencies [f1d93ff5]
+  - @astrouxds/astro-web-components@7.0.0-beta.3
+
 ## 7.0.0-beta.4
 
 ### Major Changes
