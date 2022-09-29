@@ -9,98 +9,135 @@ title: "Releases"
 
 Astro represents a collection of artifacts including, but not limited to, guidance, compliance, design assets/tools, coded components, third-party themes, and related samples. The major version of Astro as indicated in the website footer and below is the version that should be included in contracts. The associated asset versions should not be referenced in contract language.
 
-## Current Version
+## Current Version ({{meta.version}})
 
 <table class="release-table release-table--current-version">
-<thead>
-<tr>
-<th colspan="3">Astro {{ meta.version }} - Updated <time>September 15, 2022</time></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Design Language</td>
-<td class="tabular"><b>{{ meta.version }}</b></td>
-<td>No changes this release</td>
-</tr>
-<tr>
-<td>Figma Dark Theme Library</td>
-<td class="tabular">6.1.6 -&gt; <b>6.1.7</b></td>
-<td><a href="https://www.figma.com/community/file/1014254163928270411">Release Notes</a></td>
-</tr>
-<tr>
-<td>Figma Wireframe Theme Library</td>
-<td class="tabular">6.0.1</b></td>
-<td>No changes this release</td>
-</tr>
-<tr>
-<td>Web Components</td>
-<td class="tabular">6.13.0 -&gt; <b>6.13.1</b></td>
-<td><a href="https://github.com/RocketCommunicationsInc/astro/releases/tag/v6.13.1">Release Notes</a></td>
-</tr>
-<tr>
-<td>EGS Design Compliance</td>
-<td class="tabular"><b>3.1.0</b></td>
-<td>No changes this release</td>
-</tr>
-</tbody>
+	<thead>
+		<tr>
+			<th colspan="3">Astro {{ meta.version }} - Updated <time>September 29, 2022</time></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Design Language</td>
+			<td class="tabular"><b>{{ meta.version }}</b></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Figma Dark Theme Library</td>
+			<td class="tabular">6.2.0 -&gt; <b>7.0.0</b></td>
+			<td><a href="https://www.figma.com/community/file/1014254163928270411">Release Notes</a></td>
+		</tr>
+		<tr>
+			<td>Web Components</td>
+			<td class="tabular">6.14.0 -&gt; <b>7.0.0</b></td>
+			<td><a href="https://github.com/RocketCommunicationsInc/astro/releases/tag/v7.0.0">Release Notes</a></td>
+		</tr>
+		<tr>
+			<td>EGS Design Compliance</td>
+			<td class="tabular">6.1.0 -&gt; <b>6.2.0</b></td>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
+
+## v6
+
+<table class="release-table release-table--current-version">
+	<thead>
+		<tr>
+			<th colspan="3">Astro 6 - Updated <time>September 29, 2022</time></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Design Language</td>
+			<td class="tabular"><b>6.0</b></td>
+			<td>No changes this release</td>
+		</tr>
+		<tr>
+			<td>Figma Dark Theme Library</td>
+			<td class="tabular">6.1.7 -&gt; <b>6.2.0</b></td>
+			<td><a href="https://www.figma.com/community/file/1014254163928270411">Release Notes</a></td>
+		</tr>
+		<tr>
+			<td>Figma Light Theme Library</td>
+			<td class="tabular">6.0.0</td>
+			<td><a href="https://www.figma.com/community/file/1157352889822768689">Release Notes</a></td>
+		</tr>
+		<tr>
+			<td>Figma Wireframe Theme Library</td>
+			<td class="tabular">6.0.1 -&gt; <b>6.1.0</b></td>
+			<td><a href="https://www.figma.com/community/file/1101538528179386032">Release Notes</a></td>
+		</tr>
+		<tr>
+			<td>Web Components</td>
+			<td class="tabular">6.13.1 -&gt; <b>6.14.0</b></td>
+			<td><a href="https://github.com/RocketCommunicationsInc/astro/releases/tag/v6.14.0">Release Notes</a></td>
+		</tr>
+		<tr>
+			<td>EGS Design Compliance</td>
+			<td class="tabular"><b>3.1.0</b></td>
+			<td>No changes this release</td>
+		</tr>
+	</tbody>
 </table>
 
 ## Previous Major Versions
 
 <table class="release-table releast-table--previous-versions">
-<thead>
-<tr>
-<th class="release-table__version">Version</th>
-<th>Status</th>
-<th>Released</th>
-<th>End of Support</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1.0</td>
-<td>Unsupported</td>
-<td>Sep 1, 2015</td>
-<td>Dec 15, 2016</td>
-</tr>
-<tr>
-<td>2.0</td>
-<td>Unsupported</td>
-<td>Dec 15, 2016</td>
-<td>April 16, 2018</td>
-</tr>
-<tr>
-<td>3.0</td>
-<td>Unsupported</td>
-<td>Apr 16, 2018</td>
-<td>Apr 8, 2019</td>
-</tr>
-<tr>
-<td>4.0</td>
-<td>Unsupported</td>
-<td>Apr 8, 2019</td>
-<td>Jan 27, 2021</td>
-</tr>
-<tr>
-<td><a href="https://github.com/RocketCommunicationsInc/astro-uxds/tree/v5.0">5.0</a></td>
-<td>Deprecated</td>
-<td>Jan 27, 2021</td>
-<td>Jul 7, 2022</td>
-</tr>
-<tr>
-<td><a href="https://github.com/RocketCommunicationsInc/astro/tree/v6.0.0">6.0</a></td>
-<td>Supported</td>
-<td>Oct 27, 2021</td>
-<td>Jan 12, 2023</td>
-</tr>
-<tr>
-<td>7.0</td>
-<td>Scheduled</td>
-<td>Q3 2022</td>
-<td>TBD</td>
-</tr>
-</tbody>
+	<thead>
+	<tr>
+		<th class="release-table__version">Version</th>
+		<th>Status</th>
+		<th>Released</th>
+		<th>End of Support</th>
+	</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1.0</td>
+			<td>Unsupported</td>
+			<td>Sep 1, 2015</td>
+			<td>Dec 15, 2016</td>
+		</tr>
+		<tr>
+			<td>2.0</td>
+			<td>Unsupported</td>
+			<td>Dec 15, 2016</td>
+			<td>April 16, 2018</td>
+		</tr>
+		<tr>
+			<td>3.0</td>
+			<td>Unsupported</td>
+			<td>Apr 16, 2018</td>
+			<td>Apr 8, 2019</td>
+		</tr>
+		<tr>
+			<td>4.0</td>
+			<td>Unsupported</td>
+			<td>Apr 8, 2019</td>
+			<td>Jan 27, 2021</td>
+		</tr>
+		<tr>
+			<td><a href="https://github.com/RocketCommunicationsInc/astro-uxds/tree/v5.0">5.0</a></td>
+			<td>Unsupported</td>
+			<td>Jan 27, 2021</td>
+			<td>Jul 7, 2022</td>
+		</tr>
+		<tr>
+			<td><a href="https://github.com/RocketCommunicationsInc/astro/tree/v6.0.0">6.0</a></td>
+			<td>Supported</td>
+			<td>Oct 27, 2021</td>
+			<td>Jan 12, 2023</td>
+		</tr>
+		<tr>
+			<td><a href="https://github.com/RocketCommunicationsInc/astro/tree/v7.0.0">7.0</a></td>
+			<td>Supported</td>
+			<td>September 29, 2022</td>
+			<td>TBD</td>
+		</tr>
+	</tbody>
 </table>
 
 ## Release Schedule
