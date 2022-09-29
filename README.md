@@ -4,10 +4,14 @@
 
 The Astro UXDS Web Component and CSS libraries provide a starting point to build in-browser space app experiences and custom applications following today’s web development best practices. The Astro UXDS Web Components are designed to be as platform and implementation-agnostic as possible, easy to implement or extend in existing projects, and generic by default.
 
+## 7.0 Migration
+
+Check out our [Migration Guide](https://www.astrouxds.com/migration/) to see how to upgrade your Astro 6.0 applications.
+
 ## Documentation
 
-**Current documentation**: [astro-components.netlify.app](https://astro-components.netlify.app/)
-Beta documentation: [beta-astro-components.netlify.app](https://beta-astro-components.netlify.app/)
+- **Current documentation**: [astro-components.netlify.app](https://astro-components.netlify.app/)
+- Beta documentation: [beta-astro-components.netlify.app](https://beta-astro-components.netlify.app/)
 
 ### Packages
 
