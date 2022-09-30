@@ -1,5 +1,6 @@
 :host {
     display: block;
+    font-size: var(--font-body-2-bold-font-size); /*This is here to fix the issue of setting font-size on parent and having it override the component styling*/
 }
 
 :host([hidden]) {
