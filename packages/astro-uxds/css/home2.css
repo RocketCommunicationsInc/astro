@@ -320,11 +320,12 @@
   --color-text-inverse: #080c11;
   --color-background-interactive: #4dacff;
   --color-background-surface-selected: #1c3f5e;
+  --color-background-base-default: #101923;
   --color-background-interactive-hover: #92cbff;
   --primary-color: #ff8b26;
 }
 
-.home {
+.home .container {
   background-color: #000;
   background-image: url("/img/_site/home-bg-img.jpg"), url("/img/_site/home-bg-bottom.png");
   background-position: top center, bottom center;
@@ -689,4 +690,25 @@ a.button-secondary.title-button {
   .benefit:first-child {
     margin-top: 0;
   }
+}
+/**************FOOTER****************/
+.site-footer {
+  background-color: var(--color-background-base-default);
+  padding: 30px 40px;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.designed-by {
+  display: flex;
+}
+
+.site-footer__rocket-logo {
+  margin-right: 1rem;
+}
+
+.site-footer__meta {
+  text-align: right;
 }
