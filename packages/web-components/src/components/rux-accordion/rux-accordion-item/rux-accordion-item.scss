@@ -17,6 +17,7 @@ summary {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
+    text-align: left; /*needed to fix problem where parent will override text-align*/
     align-items: center;
     border-radius: var(--radius-base);
     background-color: var(--color-background-surface-header);
