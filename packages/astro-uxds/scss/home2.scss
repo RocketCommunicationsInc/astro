@@ -28,6 +28,10 @@
   width: 1200px;
   max-width: 100%;
 }
+
+.home .mobile-nav {
+  background: var(--color-background-surface-header);
+}
 /*header*/
 .version {
   text-align: right;
