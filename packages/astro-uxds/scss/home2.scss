@@ -23,8 +23,8 @@
 }
 
 .home-container .home__body-material {
+  width: auto;
   max-width: 100%;
-  width: 1400px;
 }
 /*header*/
 .version {
@@ -44,6 +44,7 @@
 
 .community {
   display: flex;
+  flex-direction: column;
   gap: max(2.75rem);
   & h4 {
     margin-top: 0;
@@ -59,6 +60,7 @@
 }
 .p-community-links {
   flex-basis: 37.5%;
+  font-size: 1rem;
 }
 
 .p-community-events {
@@ -384,7 +386,7 @@ a.button-secondary.title-button {
     }
   }
 
-  @media #{$tablet} {
+  @media only screen and (max-width: 969px) {
     .mc-field-layout {
       flex-direction: column;
     }
@@ -394,7 +396,16 @@ a.button-secondary.title-button {
   }
 }
 
-@media screen and (max-width: 1300px) {
+/**********************RESPONSIVE*****************/
+@media only screen and (max-width: 969px) {
+  .p-community-event {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1279px) {
   .home__benefits .row {
     flex-direction: column;
   }
@@ -403,6 +414,11 @@ a.button-secondary.title-button {
   }
   .benefit:first-child {
     margin-top: 0;
+  }
+}
+@media #{$desktop-xl} {
+  .community {
+    flex-direction: row;
   }
 }
 
@@ -414,14 +430,72 @@ a.button-secondary.title-button {
   line-height: 1.5rem;
   display: flex;
   justify-content: space-between;
-}
-.designed-by {
-  display: flex;
-}
-.site-footer__rocket-logo {
-  margin-right: 1rem;
+
+  &__meta {
+    text-align: right;
+    order: 3;
+  }
+
+  &__rocket-logo {
+    margin-right: 1rem;
+  }
+
+  &__designed-by {
+    display: flex;
+    order: 1;
+  }
+
+  &__social {
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 2rem;
+    }
+    li {
+      display: flex;
+      justify-content: center;
+      width: 2.5rem;
+      margin-left: 2rem;
+    }
+    img {
+      height: 2.5rem;
+    }
+  }
 }
 
-.site-footer__meta {
-  text-align: right;
+.sitemap {
+  flex-grow: 1;
+  padding: 0 0 0 2.5rem;
+  order: 2;
+  &-title {
+    margin-top: 0;
+  }
+  &-nav {
+    display: flex;
+
+    ul {
+      flex-grow: 1;
+      padding: 0 2rem 0 0;
+    }
+
+    a {
+      color: #fff;
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .site-footer__designed-by {
+    order: 2;
+  }
+
+  .sitemap {
+    order: 1;
+    padding-left: 0;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .site-footer {
+    flex-wrap: wrap;
+  }
 }

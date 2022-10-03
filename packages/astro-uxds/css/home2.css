@@ -338,8 +338,8 @@
 }
 
 .home-container .home__body-material {
+  width: auto;
   max-width: 100%;
-  width: 1400px;
 }
 
 /*header*/
@@ -359,6 +359,7 @@
 /*community events*/
 .community {
   display: flex;
+  flex-direction: column;
   gap: 2.75rem;
 }
 .community h4 {
@@ -375,6 +376,7 @@
 
 .p-community-links {
   flex-basis: 37.5%;
+  font-size: 1rem;
 }
 
 .p-community-events-content {
@@ -671,7 +673,7 @@ a.button-secondary.title-button {
 .home__email-signup #mc_embed_signup #mce-error-response {
   color: #fff;
 }
-@media only screen and (max-width:767px) {
+@media only screen and (max-width: 969px) {
   .home__email-signup .mc-field-layout {
     flex-direction: column;
   }
@@ -680,7 +682,15 @@ a.button-secondary.title-button {
   }
 }
 
-@media screen and (max-width: 1300px) {
+/**********************RESPONSIVE*****************/
+@media only screen and (max-width: 969px) {
+  .p-community-event {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 1279px) {
   .home__benefits .row {
     flex-direction: column;
   }
@@ -689,6 +699,11 @@ a.button-secondary.title-button {
   }
   .benefit:first-child {
     margin-top: 0;
+  }
+}
+@media only screen and (min-width:1280px) {
+  .community {
+    flex-direction: row;
   }
 }
 /**************FOOTER****************/
@@ -700,15 +715,62 @@ a.button-secondary.title-button {
   display: flex;
   justify-content: space-between;
 }
-
-.designed-by {
-  display: flex;
+.site-footer__meta {
+  text-align: right;
+  order: 3;
 }
-
 .site-footer__rocket-logo {
   margin-right: 1rem;
 }
+.site-footer__designed-by {
+  display: flex;
+  order: 1;
+}
+.site-footer__social ul {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+.site-footer__social li {
+  display: flex;
+  justify-content: center;
+  width: 2.5rem;
+  margin-left: 2rem;
+}
+.site-footer__social img {
+  height: 2.5rem;
+}
 
-.site-footer__meta {
-  text-align: right;
+.sitemap {
+  flex-grow: 1;
+  padding: 0 0 0 2.5rem;
+  order: 2;
+}
+.sitemap-title {
+  margin-top: 0;
+}
+.sitemap-nav {
+  display: flex;
+}
+.sitemap-nav ul {
+  flex-grow: 1;
+  padding: 0 2rem 0 0;
+}
+.sitemap-nav a {
+  color: #fff;
+}
+
+@media screen and (max-width: 1300px) {
+  .site-footer__designed-by {
+    order: 2;
+  }
+  .sitemap {
+    order: 1;
+    padding-left: 0;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .site-footer {
+    flex-wrap: wrap;
+  }
 }

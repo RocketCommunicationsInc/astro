@@ -1,12 +1,65 @@
 <link rel="stylesheet" href="/css/home2.css">
 <footer class="site-footer">
-	<div class="designed-by">
+
+	<div class="sitemap">
+		<h4 class="sitemap-title">Sitemap</h4>
+		<div class="sitemap-nav">
+			<ul>
+				<li><a href="" style="color:red;">Community</a></li>
+				<li><a href="/releases/">Releases</a></li>
+				<li><a href="/downloads/">Downloads</a></li>
+				<li><a href="/support/">Support</a></li>
+			</ul>
+			<ul>
+				<li><a href="/getting-started/readme/">Getting Started with ASTRO</a></li>
+				<li><a href="/getting-started/designers/">Designers</a></li>
+				<li><a href="/getting-started/developers/">Developers</a></li>
+				<li><a href="#" style="color:red;">Product Owners</a></li>
+			</ul>
+			<ul>
+				<li><a href="/support/">Contact Us</a></li>
+				<li><a href="#" style="color:red;">Articles</a></li>
+				<li><a href="/design-tokens/getting-started/">Design Tokens</a></li>
+				<li><a href="/design-process/visual-design/">Design Guidelines</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="site-footer__designed-by">
 		<a href="https://www.rocketcom.com"><img src="/img/_site/rocket-logo.svg" class="site-footer__rocket-logo"></a>
 		<p>Designed and Stewarded by<br />Rocket Communications.</p>
 	</div>
 	<div class="site-footer__meta">
-			<b><time class="meta-updated-on" datetime="{{ page.date.toISOString() }}">Updated {{ page.date.toDateString() }}</time></b>
-			<p class="site-footer__provided-by"><b>Provided by:</b> Provided by: United States Space Force | SSC | ECX | EGS | SY | SATOPS</p>
+		<nav class="site-footer__social" aria-label="social map">
+			<ul>
+				<li>
+					<a href="/" aria-label="Astro">
+						<img src="/img/_site/astro-icon.svg" alt="Astro" class="social-icon">
+					</a>
+				</li>
+				<li>
+					<a href="https://www.figma.com/@astrouxds" aria-label="Figma" target="_blank">
+						<img src="/img/_site/figma-icon.svg" alt="Figma" class="social-icon">
+					</a>
+				</li>
+				<li>
+					<a href="https://github.com/RocketCommunicationsInc/astro" aria-label="GitHub" target="_blank">
+						<img src="/img/_site/github-icon.svg" alt="Github" class="social-icon">
+					</a>
+				</li>
+				<li>
+					<a href="https://astrouxds.slack.com/" aria-label="Slack" target="_blank">
+						<img src="/img/_site/slack-icon.svg" alt="Slack" class="social-icon">
+					</a>
+				</li>
+				<li>
+					<a href="https://www.youtube.com/channel/UCZzNMe3vyEOlMSaW6Z3C9wQ" aria-label="YouTube" target="_blank">
+						<img src="/img/_site/youtube-icon.svg" alt="Youtubem" class="social-icon">
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<b><time class="meta-updated-on" datetime="{{ page.date.toISOString() }}">Updated {{ page.date.toDateString() }}</time></b>
+		<p class="site-footer__provided-by"><b>Provided by:</b> United States Space Force | SSC | ECX | EGS | SY | SATOPS</p>
 	</div>
 </div>
 
