@@ -30,11 +30,14 @@
     letter-spacing: var(--font-heading-3-letter-spacing);
     line-height: var(--font-heading-3-line-height);
     box-sizing: border-box;
+    text-align: left; // Solves the issue of a parent element with a different text-align overriding.
 }
 
 .rux-card__body {
     padding: var(--body-padding);
     box-sizing: border-box;
+    font-size: var(--font-size-base); // Solves the issue of a parent element with a larger font-size causing extra space to be taken up on some elements.
+    text-align: left; // Solves the issue of a parent element with a different text-align overriding.
 }
 
 .rux-card__footer {
@@ -43,4 +46,8 @@
     padding-top: var(--card-footer-padding);
     padding-bottom: var(--card-footer-padding);
     box-sizing: border-box;
+    font-size: var(--font-size-base); // Solves the issue of a parent element with a larger font-size causing extra space to be taken up on some elements.
+    text-align: left; // Solves the issue of a parent element with a different text-align overriding.
 }
+
+
