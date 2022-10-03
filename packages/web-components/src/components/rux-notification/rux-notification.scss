@@ -32,6 +32,7 @@
     width: 100%;
     box-sizing: border-box;
     min-height: var(--height);
+    font-size: var(--font-size-base); // fix for parent font-size causing icon shift.
 }
 
 .rux-notification-banner__inner {
