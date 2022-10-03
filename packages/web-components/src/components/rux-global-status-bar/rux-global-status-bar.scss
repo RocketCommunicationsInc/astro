@@ -43,6 +43,7 @@ slot[name='left-side'] > *,
 slot[name='left-side'] > rux-icon,
 ::slotted(rux-icon[slot='left-side']) {
     height: calc(var(--spacing-8) + var(--spacing-050)); //38px
+    font-size:var(--spacing-8); //32px to prevent icon moving if larger font-size set on parents.
 }
 
 slot[name='left-side'] > .shifted-up,
