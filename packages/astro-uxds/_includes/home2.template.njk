@@ -40,6 +40,9 @@
 		<script src="/js/mobile.js"></script>
 		<script src="/js/site.js"></script>
 
+		<!--carousel-->
+		<script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
+
 	</head>
 
 	
@@ -85,7 +88,7 @@
 				</section>
 		<!--COMMUNITY SECTION-->
 				<section>
-					<h2 class="section-title">ASTRO Community</h2>
+					<h2 class="section-title">ASTRO Community <span style="color:red;">These all need links / Real Content</span></h2>
 					<div class="section-container community">
 
 
@@ -185,67 +188,93 @@
 				</section>
 		<!--ARTICLES SECTION-->
 				<section>
-				<div class="title-block"><h2 class="section-title">Articles</h2><a href="#" class="button-secondary title-button">View all articles</a></div>
-				<div class="articles">
-					<article class="article-card">
-						<div class="article-image">
-							<img src="/img/_site/article-design-tokens.jpg" alt="Design Tokens" />
+				<div class="title-block"><h2 class="section-title">Articles</h2><a href="https://medium.com/astrouxds" class="button-secondary title-button" target="_blank">View all articles</a></div>
+				<!--Carousel-->
+				<div class="embla">
+					<div class="embla__viewport">
+						<div class="embla__container articles">
+							<article class="article-card embla__slide">
+								<div class="article-image">
+									<img src="/img/_site/articles/beyond-web.jpg" alt="Astro beyond the web" />
+								</div>
+								<div class="article-content">
+									<span class="article-tags">
+										<ul>
+											<li>AstroUXDS</li>
+										</ul>
+									</span>
+									<h4>Astro Beyond the Web</h4>
+									<p>Transforming a web design system for new platforms is, unsurprisingly, an exercise in making tradeoffs...</p>
+									<a href="https://medium.com/astrouxds/astro-beyond-the-web-d97eb4e6938f" class="button" target="_blank">Start reading</a>
+								</div>
+							</article>
+							<article class="article-card embla__slide">
+								<div class="article-image">
+									<img src="/img/_site/articles/light-to-dark.jpg" alt="How to Implement a Light to Dark Theme Switch Using Astro UXDS" />
+								</div>
+								<div class="article-content">
+									<span class="article-tags">
+										<ul>
+											<li>Development</li>
+										</ul>
+									</span>
+									<h4>Implement a Light to Dark Theme Switch...</h4>
+									<p>This quick four-step tutorial will show you how to implement a light to dark theme Switch without losing the user’s preferred state.</p>
+									<a href="https://medium.com/astrouxds/how-to-implement-a-light-to-dark-theme-switch-using-astro-uxds-af6fcdc4cb3c" class="button" target="_blank">Start reading</a>
+								</div>
+							</article>
+							<article class="article-card embla__slide">
+								<div class="article-image">
+									<img src="/img/_site/articles/color-system.jpg" alt="Reworking a Color System for Flexibility and Growth" />
+								</div>
+								<div class="article-content">
+									<span class="article-tags">
+										<ul>
+											<li>Design Systems</li>
+										</ul>
+									</span>
+									<h4>Reworking a Color System...</h4>
+									<p>When your color system gets ugly, how do you make it pretty again, and keep it that way?</p>
+									<a href="https://medium.com/astrouxds/reworking-a-color-system-for-flexibility-and-growth-35e950091a2a" class="button">Start reading</a>
+								</div>
+							</article>
+							<article class="article-card embla__slide">
+								<div class="article-image">
+									<img src="/img/_site/articles/slider.jpg" alt="Styling an input range to have different track heights before and after the thumb" />
+								</div>
+								<div class="article-content">
+									<span class="article-tags">
+										<ul>
+											<li>CSS</li>
+										</ul>
+									</span>
+									<h4>Styling an Input Range...</h4>
+									<p>Styling native HTML elements can be tricky, and the range input is certainly no different.</p>
+									<a href="https://medium.com/astrouxds/styling-an-input-range-to-have-different-track-heights-before-and-after-the-thumb-a03975d15bd0" class="button" target="_blank">Start reading</a>
+								</div>
+							</article>
 						</div>
-						<div class="article-content">
-							<span class="article-tags">
-								<ul>
-									<li><a href="">Design</a></li>
-									<li><a href="">Development</a></li>
-								</ul>
-							</span>
-							<p>Design token is a hot cake topic for designers and frontend dev. We will have a clear understanding of design tokens and how to build one for your next project.</p>
-							<a href="#" class="button">Start reading</a>
-						</div>
-					</article>
-					<article class="article-card">
-						<div class="article-image">
-							<img src="/img/_site/article-token-thinking.jpg" alt="Token Thinking" />
-						</div>
-						<div class="article-content">
-							<span class="article-tags">
-								<ul>
-									<li><a href="">Development</a></li>
-								</ul>
-							</span>
-							<p>Everybody’s talking about design tokens — how to name them, how to organize them, how to use them, but design tokens aren’t just something that you can easily retrofit...</p>
-							<a href="#" class="button">Start reading</a>
-						</div>
-					</article>
-					<article class="article-card">
-						<div class="article-image">
-							<img src="/img/_site/article-visual-testing.jpg" alt="Visual Testing" />
-						</div>
-						<div class="article-content">
-							<span class="article-tags">
-								<ul>
-									<li><a href="">Development</a></li>
-								</ul>
-							</span>
-							<p>How to confidently chane your Design System. – Full disclosure: This article mentions a plugin that I wrote myself. How can we actually manage design systems at scale?</p>
-							<a href="#" class="button">Start reading</a>
-						</div>
-					</article>
-					<article class="article-card">
-						<div class="article-image">
-							<img src="/img/_site/article-ux-maturity.jpg" alt="UX Maturity" />
-						</div>
-						<div class="article-content">
-							<span class="article-tags">
-								<ul>
-									<li><a href="">Design</a></li>
-								</ul>
-							</span>
-							<p>How good is your Organization practicing UX? There are tons of companies who practive UX design. In this article we will shed some light on the stages...</p>
-							<a href="#" class="button">Start reading</a>
-						</div>
-					</article>
+						      <!-- Buttons -->
+						<button class="embla__button embla__button--prev" type="button">
+							<svg
+							class="embla__button__svg"
+							viewBox="137.718 -1.001 366.563 643.999"
+							>
+							<path
+								d="M428.36 12.5c16.67-16.67 43.76-16.67 60.42 0 16.67 16.67 16.67 43.76 0 60.42L241.7 320c148.25 148.24 230.61 230.6 247.08 247.08 16.67 16.66 16.67 43.75 0 60.42-16.67 16.66-43.76 16.67-60.42 0-27.72-27.71-249.45-249.37-277.16-277.08a42.308 42.308 0 0 1-12.48-30.34c0-11.1 4.1-22.05 12.48-30.42C206.63 234.23 400.64 40.21 428.36 12.5z"
+							></path>
+							</svg>
+						</button>
+						<button class="embla__button embla__button--next" type="button">
+							<svg class="embla__button__svg" viewBox="0 0 238.003 238.003">
+							<path
+								d="M181.776 107.719L78.705 4.648c-6.198-6.198-16.273-6.198-22.47 0s-6.198 16.273 0 22.47l91.883 91.883-91.883 91.883c-6.198 6.198-6.198 16.273 0 22.47s16.273 6.198 22.47 0l103.071-103.039a15.741 15.741 0 0 0 4.64-11.283c0-4.13-1.526-8.199-4.64-11.313z"
+							></path>
+							</svg>
+						</button>
+					</div>
 				</div>
-				</section>
+			</section>
 
 		<!--EMAIL SIGNUP SECTION-->
 				<section id="email-signup" class="section-container home__email-signup">
@@ -322,6 +351,32 @@
   apiKey: 'a402f3cc6d8965606af2d7235ba75700',
   container: '#docsearch'
 });
+		</script>
+		<script type="text/javascript">
+		const wrap = document.querySelector(".embla");
+		const viewPort = wrap.querySelector(".embla__viewport");
+		const prevBtn = wrap.querySelector(".embla__button--prev");
+		const nextBtn = wrap.querySelector(".embla__button--next");
+		const dots = document.querySelector(".embla__dots");
+		const embla = EmblaCarousel(viewPort, { loop: false, skipSnaps: false, containScroll: 'trimSnaps', align: 'start', });
+		const disablePrevNextBtns = (prevBtn, nextBtn, embla) => {
+			return () => {
+				if (embla.canScrollPrev()) prevBtn.removeAttribute('disabled');
+				else prevBtn.setAttribute('disabled', 'disabled');
+
+				if (embla.canScrollNext()) nextBtn.removeAttribute('disabled');
+				else nextBtn.setAttribute('disabled', 'disabled');
+			};
+		};
+		const setupPrevNextBtns = (prevBtn, nextBtn, embla) => {
+			prevBtn.addEventListener('click', embla.scrollPrev, false);
+			nextBtn.addEventListener('click', embla.scrollNext, false);
+			};
+			const disable = disablePrevNextBtns(prevBtn, nextBtn, embla);
+
+			setupPrevNextBtns(prevBtn, nextBtn, embla);
+			embla.on("select", disable);
+			embla.on("init", disable);
 		</script>
 	</body>
 </html>

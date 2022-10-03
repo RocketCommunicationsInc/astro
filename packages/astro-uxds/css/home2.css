@@ -335,10 +335,12 @@
 
 .home-container {
   padding: 1.5rem 0;
+  width: 100%;
+  overflow: hidden;
 }
 
 .home-container .home__body-material {
-  width: auto;
+  width: 1200px;
   max-width: 100%;
 }
 
@@ -447,25 +449,26 @@
 .articles {
   display: flex;
   justify-content: space-between;
-  margin: 0 0.5rem;
 }
 
 .article-card {
-  background: var(--color-background-surface-selected);
-  border-radius: 3px;
-  width: 298px;
-  margin: 0 0.5rem;
   max-width: 100%;
   display: flex;
   flex-direction: column;
 }
 .article-content {
+  background: var(--color-background-surface-selected);
+  border-radius: 0 0 3px 3px;
   align-self: stretch;
   flex-grow: 1;
   padding: 1.375rem;
   padding-top: 0.625rem;
+  font-size: 1rem;
   display: flex;
   flex-direction: column;
+}
+.article-content h4 {
+  margin-top: 1rem;
 }
 .article-content .button {
   margin-top: auto;
@@ -475,6 +478,7 @@
 }
 .article-image img {
   border-radius: 3px 3px 0 0;
+  width: 100%;
 }
 .article-tags {
   background: var(--color-background-surface-header);
@@ -482,6 +486,7 @@
   font-size: 0.9rem;
   line-height: 1.5rem;
   border-radius: 3px;
+  color: var(--primary-color);
 }
 .article-tags li {
   display: inline-block;
@@ -682,6 +687,67 @@ a.button-secondary.title-button {
   }
 }
 
+/************Carousel***************/
+.embla {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+.embla__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.embla__slide {
+  flex: 0 0 23%;
+}
+
+.embla__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.embla__button {
+  outline: 0;
+  cursor: pointer;
+  background-color: transparent;
+  touch-action: manipulation;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  fill: var(--color-background-interactive);
+  padding: 0;
+}
+
+.embla__button:hover {
+  fill: var(--color-background-interactive-hover);
+}
+
+.embla__button:disabled {
+  cursor: default;
+  opacity: 0.3;
+}
+
+.embla__button__svg {
+  width: 100%;
+  height: 100%;
+}
+
+.embla__button--prev {
+  left: -2rem;
+}
+
+.embla__button--next {
+  right: -2rem;
+}
+
 /**********************RESPONSIVE*****************/
 @media only screen and (max-width: 969px) {
   .p-community-event {
@@ -699,6 +765,10 @@ a.button-secondary.title-button {
   }
   .benefit:first-child {
     margin-top: 0;
+  }
+  .embla__slide {
+    flex: 0 0 50%;
+    padding: 0 1%;
   }
 }
 @media only screen and (min-width:1280px) {
