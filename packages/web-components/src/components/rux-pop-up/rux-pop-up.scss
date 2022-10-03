@@ -1,6 +1,7 @@
 :host {
     display: block;
     width: min-content;
+    font-size: var(--font-size-base); //prevents icon shift from font-size declaration on parent.
 }
 
 .hidden,
