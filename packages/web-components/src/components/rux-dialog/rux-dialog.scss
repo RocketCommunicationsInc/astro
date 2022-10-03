@@ -148,6 +148,8 @@ rux-button-group {
     &__message {
         padding: var(--spacing-4) var(--spacing-4) var(--spacing-0)
             var(--spacing-4); //spacing 0 on bottom so there isn't double padding when footer is showing. Developer can add back padding if not footer using part.
+        font-size: var(--font-body-1-font-size);
+        text-align: left;
     }
     .rux-button {
         box-shadow: none !important;
