@@ -40,6 +40,7 @@ summary:hover .rux-accordion-item--title {
     font-weight: var(--font-control-body-1-font-weight);
     line-height: var(--font-control-body-1-line-height);
     letter-spacing: var(--font-control-body-1-letter-spacing);
+    text-align: left; /*needed to fix problem where parent will override text-align*/
     color: var(--color-text-primary);
     padding: var(--spacing-050) var(--spacing-1);
 
