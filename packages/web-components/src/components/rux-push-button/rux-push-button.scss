@@ -6,6 +6,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    font-size: var(--font-size-base); // fixes a parent element with a larger font-size causing layout shift from inheritance.
 
     &[disabled] {
         opacity: var(--opacity-disabled);
