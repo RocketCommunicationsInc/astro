@@ -13,8 +13,12 @@
     display: flex;
     flex-grow: 1;
     flex-flow: column;
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-base);
+    font-size: var(
+        --font-size-base
+    ); // Solves the issue of a parent element with a larger font-size causing extra space to be taken up on some elements.
+    line-height: var(
+        --line-height-base
+    ); // Solves the issue of a parent element with a larger line-height causing extra space to be taken up on some elements.
 }
 
 .hidden,
