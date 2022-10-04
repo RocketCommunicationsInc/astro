@@ -34,10 +34,18 @@
         <h1>Chaos Testing</h1>
         <div class="chaos">
             <!--put your component here-->
-            <rux-global-status-bar include-icon="true" app-state="Production" app-state-color="tag1" username="Joan Smith" app-domain="Astro" app-name="Dashboard" app-version="4.0 Alpha" menu-icon="apps">
-                <rux-clock></rux-clock>
-                <rux-button slot="right-side">Emergency shut off</rux-button>
-            </rux-global-status-bar>
+            <rux-dialog open id="slots">
+                <span slot="header">Slot Header</span>
+                <div slot="message">
+                    HELLO
+                </div>
+                <div slot="footer">
+                    <rux-button-group h-align="right">
+                        <rux-button secondary>Slot Cancel</rux-button>
+                        <rux-button id="slotconfirm">Slot Confirm</rux-button>
+                    </rux-button-group>
+                </div>
+            </rux-dialog>
         </div>
     </body>
 </html>
