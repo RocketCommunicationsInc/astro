@@ -13,6 +13,8 @@
     display: flex;
     flex-grow: 1;
     flex-flow: column;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
 }
 
 .hidden,
@@ -27,6 +29,14 @@
     }
 }
 
+.rux-input-label {
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
+    font-weight: var(--font-control-body-1-font-weight);
+    line-height: var(--font-control-body-1-line-height);
+}
+
 .with-axis-labels {
     padding-bottom: var(--spacing-8);
 }
@@ -34,7 +44,9 @@
 .rux-slider {
     height: calc(var(--spacing-4) + var(--spacing-1)); //20
     position: relative;
-    font-size: var(--font-size-base); //fixes issue where parent element with larger font-size causes layout shift.
+    font-size: var(
+        --font-size-base
+    ); //fixes issue where parent element with larger font-size causes layout shift.
     :hover {
         cursor: pointer;
     }
