@@ -1,5 +1,17 @@
 # @astrouxds/angular
 
+## 7.0.1
+
+### Patch Changes
+
+- b8d6b8dc: Removed the `title` attribute from rux-monitoring-icon and rux-monitoring-progress-icon.
+- 599c6a74: Removed unnecessary type definitions
+- a83029cf: Fixes an issue in the typography utility classes
+- Updated dependencies [b8d6b8dc]
+- Updated dependencies [599c6a74]
+- Updated dependencies [a83029cf]
+  - @astrouxds/astro-web-components@7.0.1
+
 # 7.0 Changes
 
 ## Major
