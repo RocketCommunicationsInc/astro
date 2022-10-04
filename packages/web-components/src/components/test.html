@@ -35,48 +35,25 @@
         <div class="chaos">
             <!--put your component here-->
 
-            <rux-select
-                label="Select Menu"
-                input-id="1"
-                label-id="1"
-                name="default"
-                size="medium"
+            <rux-radio-group
+                name="radios"
+                label="Radio group"
+                error-text="Error text"
+                required
             >
-                <rux-option
-                    value=""
-                    selected=""
-                    label="Select an option"
-                ></rux-option>
-                <rux-option value="1.1" label="Option 1.1"></rux-option>
-                <rux-option value="1.2" label="Option 1.2"></rux-option>
-                <rux-option value="1.3" label="Option 1.3"></rux-option>
-                <rux-option
-                    value="1.4"
-                    disabled=""
-                    label="Option 1.4 (disabled)"
-                ></rux-option>
-            </rux-select>
+                <rux-radio value="one" name="radios">One</rux-radio>
+                <rux-radio value="two" name="radios">Two</rux-radio>
+                <rux-radio value="three" name="radios">Three</rux-radio>
+            </rux-radio-group>
         </div>
-        <rux-select
-            label="Select Menu"
-            input-id="1"
-            label-id="1"
-            name="default"
-            size="medium"
+        <rux-radio-group
+            name="radios"
+            label="Radio group"
+            error-text="Error text"
         >
-            <rux-option
-                value=""
-                selected=""
-                label="Select an option"
-            ></rux-option>
-            <rux-option value="1.1" label="Option 1.1"></rux-option>
-            <rux-option value="1.2" label="Option 1.2"></rux-option>
-            <rux-option value="1.3" label="Option 1.3"></rux-option>
-            <rux-option
-                value="1.4"
-                disabled=""
-                label="Option 1.4 (disabled)"
-            ></rux-option>
-        </rux-select>
+            <rux-radio value="one" name="radios">One</rux-radio>
+            <rux-radio value="two" name="radios">Two</rux-radio>
+            <rux-radio value="three" name="radios">Three</rux-radio>
+        </rux-radio-group>
     </body>
 </html>
