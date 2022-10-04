@@ -24,6 +24,7 @@
                 line-height: 70px;
                 color: orange;
                 background: green;
+                text-align: right;
             }
         </style>
     </head>
@@ -33,26 +34,49 @@
         <h1>Chaos Testing</h1>
         <div class="chaos">
             <!--put your component here-->
-            <rux-slider
-                max="100"
-                min="0"
-                step="1"
-                value="50"
-                help-text=""
-                error-text="this is error text"
-                label="what's up?"
-                name=""
-            ></rux-slider>
+
+            <rux-select
+                label="Select Menu"
+                input-id="1"
+                label-id="1"
+                name="default"
+                size="medium"
+            >
+                <rux-option
+                    value=""
+                    selected=""
+                    label="Select an option"
+                ></rux-option>
+                <rux-option value="1.1" label="Option 1.1"></rux-option>
+                <rux-option value="1.2" label="Option 1.2"></rux-option>
+                <rux-option value="1.3" label="Option 1.3"></rux-option>
+                <rux-option
+                    value="1.4"
+                    disabled=""
+                    label="Option 1.4 (disabled)"
+                ></rux-option>
+            </rux-select>
         </div>
-        <rux-slider
-            max="100"
-            min="0"
-            step="1"
-            value="50"
-            help-text="this is help text"
-            error-text="this is error text"
-            label="what's up?"
-            name=""
-        ></rux-slider>
+        <rux-select
+            label="Select Menu"
+            input-id="1"
+            label-id="1"
+            name="default"
+            size="medium"
+        >
+            <rux-option
+                value=""
+                selected=""
+                label="Select an option"
+            ></rux-option>
+            <rux-option value="1.1" label="Option 1.1"></rux-option>
+            <rux-option value="1.2" label="Option 1.2"></rux-option>
+            <rux-option value="1.3" label="Option 1.3"></rux-option>
+            <rux-option
+                value="1.4"
+                disabled=""
+                label="Option 1.4 (disabled)"
+            ></rux-option>
+        </rux-select>
     </body>
 </html>

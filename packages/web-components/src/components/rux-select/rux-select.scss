@@ -2,6 +2,13 @@
 
 :host {
     display: block;
+    font-size: var(
+        --font-size-base
+    ); // Solves the issue of a parent element with a larger font-size causing extra space to be taken up on some elements.
+    line-height: var(
+        --line-height-base
+    ); // Solves the issue of a parent element with a larger line-height causing extra space to be taken up on some elements.
+    text-align: left; // Solves the issue of a parent element with a different text-align overriding.
     scrollbar-color: var(--color-border-interactive-muted)
         var(--color-background-surface-default);
     ::-webkit-scrollbar {
@@ -69,6 +76,7 @@ label {
     font-size: var(--font-control-body-1-font-size);
     font-weight: var(--font-control-body-1-font-weight);
     letter-spacing: var(--font-control-body-1-letter-spacing);
+    line-height: var(--font-control-body-1-line-height);
     .rux-label__asterisk {
         margin-left: var(--spacing-1); //4px
     }
