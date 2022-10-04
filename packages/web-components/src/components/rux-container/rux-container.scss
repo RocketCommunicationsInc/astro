@@ -52,5 +52,6 @@
     background: var(--color-background-surface-default);
     padding: var(--container-footer-padding);
     font-size: var(--font-size-base); // Solves the issue of a parent element with a larger font-size causing extra space to be taken up on some elements.
+    line-height: var(--line-height-base); //fixes issue where parent element with larger line-height causes layout shift.
     text-align: left; // Solves the issue of a parent element with a different text-align overriding.
 }
