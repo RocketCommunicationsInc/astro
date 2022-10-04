@@ -19,6 +19,8 @@
     -ms-user-select: none;
     user-select: none;
     contain: layout; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
+    font-size: var(--font-size-base); //fixes issue where parent element with larger font-size causes layout shift.
+    line-height: var(--line-height-base); //fixes issue where parent element with larger line-height causes layout shift.
 }
 
 :host([hidden]) {
@@ -124,6 +126,7 @@ slot[name='right-side'] > rux-monitoring-icon,
     font-size: var(--font-body-2-font-size);
     font-weight: var(--font-body-2-font-weight);
     letter-spacing: var(--font-body-2-letter-spacing);
+    line-height: var(--line-height-xs);
     padding: calc(var(--spacing-050) + var(--spacing-025)) var(--spacing-2); //3px 8px
     text-align: center;
     margin-right: var(--spacing-2); //6px
@@ -137,6 +140,7 @@ slot[name='right-side'] > rux-monitoring-icon,
     font-size: var(--font-body-2-font-size);
     font-weight: var(--font-body-2-font-weight);
     letter-spacing: var(--font-body-2-letter-spacing);
+    line-height: var(--line-height-xs);
     padding: calc(var(--spacing-050) + var(--spacing-025)) var(--spacing-0); //3px 0
     height: calc(var(--spacing-6) - var(--spacing-050)); //22px
 }

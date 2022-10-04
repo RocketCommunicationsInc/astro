@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
         <style>
             .chaos {
-                font-size: 200px;
+                font-size: 50px;
                 font-weight: bold;
                 line-height: 70px;
                 color: orange;
@@ -34,7 +34,10 @@
         <h1>Chaos Testing</h1>
         <div class="chaos">
             <!--put your component here-->
-            <rux-notification open status="normal" message="This is a notification"></rux-notification>
+            <rux-global-status-bar include-icon="true" app-state="Production" app-state-color="tag1" username="Joan Smith" app-domain="Astro" app-name="Dashboard" app-version="4.0 Alpha" menu-icon="apps">
+                <rux-clock></rux-clock>
+                <rux-button slot="right-side">Emergency shut off</rux-button>
+            </rux-global-status-bar>
         </div>
     </body>
 </html>
