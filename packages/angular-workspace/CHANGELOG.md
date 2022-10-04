@@ -1,5 +1,25 @@
 # @astrouxds/angular
 
+## 7.0.1
+
+### Patch Changes
+
+#### Monitoring Icon
+
+- Removed the `title` attribute.
+
+#### Monitoring Progress Icon
+
+- Removed the `title` attribute.
+
+#### Build
+
+- Removed unnecessary type definitions in dist/types
+
+#### Tokens
+
+- Fixes an issue in the typography utility class calcs that was throwing errors in some build environments.
+
 ## 7.0.0
 
 ### Major Changes
