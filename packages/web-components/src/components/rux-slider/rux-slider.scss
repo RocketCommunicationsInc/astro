@@ -33,8 +33,8 @@
 
 .rux-slider {
     height: calc(var(--spacing-4) + var(--spacing-1)); //20
-    display: flex;
     position: relative;
+    font-size: var(--font-size-base); //fixes issue where parent element with larger font-size causes layout shift.
     :hover {
         cursor: pointer;
     }
