@@ -1,12 +1,7 @@
 @import "./abstracts/vars";
 @import "./layouts/home";
+
 :root {
-  --color-background-surface-header: #172635;
-  --color-text-inverse: #080c11;
-  --color-background-interactive: #4dacff;
-  --color-background-surface-selected: #1c3f5e;
-  --color-background-base-default: #101923;
-  --color-background-interactive-hover: #92cbff;
   --primary-color: #ff8b26;
 }
 
@@ -35,15 +30,9 @@
 /*header*/
 .version {
   text-align: right;
-  padding: 0;
+  padding: 0 1rem 0 0;
   margin: 0;
-  font-size: 0.75rem;
-}
-
-/*sidebar*/
-.home .sidebar {
-  background: var(--color-background-surface-header);
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 /*community events*/
@@ -497,7 +486,7 @@ a.button-secondary.title-button {
 /**************FOOTER****************/
 .site-footer {
   background-color: var(--color-background-base-default);
-  padding: 30px 40px;
+  padding: 2rem 2.5rem;
   font-size: 0.9rem;
   line-height: 1.5rem;
   display: flex;
