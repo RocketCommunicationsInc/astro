@@ -1,9 +1,6 @@
 :host {
     display: block;
     width: min-content;
-    font-size: var(--font-size-base); //prevents icon shift from font-size declaration on parent.
-    line-height: var(--line-height-base); //fixes issue where parent element with larger line-height causes layout shift.
-    text-align: left;
 }
 
 .hidden,
@@ -16,6 +13,16 @@
 
 ::slotted(*[slot='trigger']) {
     cursor: pointer;
+}
+
+.rux-popup {
+    font-size: var(
+        --font-size-base
+    ); //prevents icon shift from font-size declaration on parent.
+    line-height: var(
+        --line-height-base
+    ); //fixes issue where parent element with larger line-height causes layout shift.
+    text-align: left;
 }
 
 .rux-popup__content {
