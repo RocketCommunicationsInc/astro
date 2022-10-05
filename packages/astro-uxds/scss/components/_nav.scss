@@ -137,8 +137,7 @@
   left: 0;
   width: 100%;
   height: 60px;
-  background: #000 url(/img/_site/astro-mobile-bkgnd.jpg) center bottom
-    no-repeat;
+  // background: #000 url(/img/_site/astro-mobile-bkgnd.jpg) center bottom no-repeat;
 
   .menu-container {
     position: absolute;
@@ -184,7 +183,7 @@
     display: block;
     width: 30px;
     height: 30px;
-    background: #000 url(/img/_site/close.svg) center bottom no-repeat;
+    background: transparent url(/img/_site/close.svg) center bottom no-repeat;
     background-size: contain;
     opacity: 0.8;
     transition: all 0.3s;
