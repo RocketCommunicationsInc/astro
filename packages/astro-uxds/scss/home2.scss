@@ -2,7 +2,7 @@
 @import "./layouts/home";
 
 :root {
-  --primary-color: #ff8b26;
+  --primary-color: #ffa301;
 }
 
 .home .container {
@@ -17,10 +17,11 @@
   padding: 1.5rem 0;
   width: 100%;
   overflow: hidden;
+  font-size: 1rem;
 }
 
 .home-container .home__body-material {
-  width: 1200px;
+  width: 1400px;
   max-width: 100%;
 }
 
@@ -74,6 +75,13 @@
   padding-inline: max(1.25rem);
   background: var(--color-background-surface-selected);
   border-radius: 3px;
+  color: var(--color-text-primary);
+  border: 1px solid var(--card-color-border);
+  &:hover {
+    text-decoration: none;
+    color: var(--color-text-primary);
+    background: var(--color-background-interactive-muted);
+  }
 }
 .p-community-event {
   display: flex;
@@ -82,8 +90,17 @@
   &-heading {
     flex-grow: 1;
   }
-  & .-date {
+
+  & .-date,
+  h5 {
     font-size: 1.25rem;
+  }
+
+  & .-time,
+  & .p-community-event-subheading {
+    font-size: 0.9rem;
+    line-height: 1rem;
+    color: var(--color-text-secondary);
   }
   &-actions a {
     display: block;
@@ -92,7 +109,13 @@
   }
 }
 
-.p-community-link {
+.event-link {
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+.p-community-link,
+a.p-community-link {
   --gap: max(1rem);
   --image-size: max(5rem);
   --padding-inline: max(1rem);
@@ -101,12 +124,22 @@
   padding-inline: var(--padding-inline);
   background: var(--color-background-surface-selected);
   border-radius: 3px;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  border: 1px solid var(--card-color-border);
+
+  &:hover {
+    background: var(--color-background-interactive-muted);
+  }
 
   &-heading {
     display: block;
     font-size: 1.25rem;
+    margin-bottom: 0.5rem;
     font-weight: bold;
-    margin-bottom: 0.25rem;
+    color: var(--color-text-primary);
   }
   &-image {
     display: flex;
@@ -127,15 +160,38 @@
 .articles {
   display: flex;
   justify-content: space-between;
+
+  &-more {
+    display: block;
+    margin-top: 1rem;
+    color: var(--primary-color);
+    opacity: 0.9;
+    text-align: right;
+    text-decoration: none;
+    &:hover {
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
 }
 
-.article {
+.article,
+a.article {
   &-card {
-    max-width: 100%;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+
+    &:hover .article-content {
+      background: var(--color-background-interactive-muted);
+    }
   }
   &-content {
+    border-width: 0 1px 1px 1px;
+    border-style: solid;
+    border-color: var(--card-color-border);
     background: var(--color-background-surface-selected);
     border-radius: 0 0 3px 3px;
     align-self: stretch;
@@ -145,18 +201,26 @@
     font-size: 1rem;
     display: flex;
     flex-direction: column;
+    width: 350px;
     h4 {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
       margin-top: 1rem;
-    }
-
-    .button {
-      margin-top: auto;
+      color: var(--color-text-primary);
     }
   }
   &-image {
-    border-radius: 3px 3px 0 0;
+    border-radius: 4px 4px 0 0;
+    border-width: 1px 1px 0 1px;
+    border-style: solid;
+    border-color: var(--card-color-border);
+
+    width: 350px;
+    line-height: 0;
     img {
-      border-radius: 3px 3px 0 0;
+      //border-radius: 3px 3px 0 0;
       width: 100%;
     }
   }
@@ -223,6 +287,15 @@ a.button:active {
   color: var(--color-background-interactive-hover);
 }
 
+.link-arrow:after {
+  content: url("/img/_site/link-arrow.svg");
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-left: 0.5em;
+  white-space: nowrap;
+}
+
 .section-container {
   background-color: var(--color-background-surface-header);
   padding: 2.25rem;
@@ -253,20 +326,26 @@ a.button-secondary.title-button {
   padding: 20px 40px;
   display: flex;
   flex-direction: column;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  border: 1px solid var(--card-color-border);
 }
 
-.benefit svg {
+.benefit h2 {
+  color: var(--color-text-primary);
+  text-align: left;
+  margin: 1.5rem 0 0 0;
+}
+
+.benefit svg,
+.benefit img {
   display: block;
   margin: 0 auto;
 }
-.benefit svg + h2 {
-  margin-top: 1.5rem;
-}
 
-.benefit .button {
-  display: inline-flex;
-  justify-self: center;
-  margin-top: auto;
+.benefit:hover,
+.benefit:active {
+  background: var(--color-background-interactive-muted);
 }
 
 /*email-signup*/
@@ -310,7 +389,7 @@ a.button-secondary.title-button {
         border-radius: 2px;
         margin-bottom: 12px;
         background-color: transparent;
-        color: #fff;
+        color: var(--color-text-primary);
       }
     }
   }
@@ -380,7 +459,7 @@ a.button-secondary.title-button {
     }
     #mce-success-response,
     #mce-error-response {
-      color: #fff;
+      color: var(--color-text-primary);
     }
   }
 
@@ -395,16 +474,17 @@ a.button-secondary.title-button {
 }
 /************Carousel***************/
 .embla {
-  width: 100%;
+  width: 1140px;
   max-width: 100%;
   position: relative;
+  margin: 0 auto;
 }
 .embla__container {
   display: flex;
   justify-content: space-between;
 }
 .embla__slide {
-  flex: 0 0 25%;
+  flex: 0 0 33%;
   padding: 0 1%;
 }
 .embla__viewport {
@@ -452,14 +532,16 @@ a.button-secondary.title-button {
 }
 
 /**********************RESPONSIVE*****************/
-@media only screen and (max-width: 969px) {
-  .p-community-event {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
+
+@media screen and (max-width: 1400px) {
+  .embla {
+    width: 800px;
+  }
+  .embla__slide {
+    flex: 0 0 50%;
+    padding: 0 1%;
   }
 }
-
 @media screen and (max-width: 1279px) {
   .home__benefits .row {
     flex-direction: column;
@@ -470,9 +552,18 @@ a.button-secondary.title-button {
   .benefit:first-child {
     margin-top: 0;
   }
-
+}
+@media only screen and (max-width: 969px) {
+  .p-community-event {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  .embla {
+    width: 380px;
+  }
   .embla__slide {
-    flex: 0 0 50%;
+    flex: 0 0 100%;
     padding: 0 1%;
   }
 }
