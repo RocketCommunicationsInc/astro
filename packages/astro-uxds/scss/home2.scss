@@ -21,7 +21,7 @@
 }
 
 .home-container .home__body-material {
-  width: 1400px;
+  width: 1600px;
   max-width: 100%;
 }
 
@@ -169,6 +169,7 @@ a.p-community-link {
     opacity: 0.9;
     text-align: right;
     text-decoration: none;
+    margin-right: -1.25rem;
     &:hover {
       opacity: 1;
       text-decoration: none;
@@ -326,6 +327,7 @@ a.button-secondary.title-button {
   border-radius: 3px;
   padding: 20px 40px;
   display: flex;
+  flex: 1 1 0;
   flex-direction: column;
   color: var(--color-text-secondary);
   text-decoration: none;
