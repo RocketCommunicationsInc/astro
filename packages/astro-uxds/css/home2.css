@@ -384,7 +384,8 @@
   margin-top: 1rem;
 }
 
-.p-community-event {
+.p-community-event,
+a.p-community-event {
   padding-block: 0.75rem;
   padding-inline: 1.25rem;
   background: var(--color-background-surface-selected);
@@ -392,7 +393,8 @@
   color: var(--color-text-primary);
   border: 1px solid var(--card-color-border);
 }
-.p-community-event:hover {
+.p-community-event:hover,
+a.p-community-event:hover {
   text-decoration: none;
   color: var(--color-text-primary);
   background: var(--color-background-interactive-muted);

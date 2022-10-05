@@ -70,7 +70,8 @@
     margin-top: 1rem;
   }
 }
-.p-community-event {
+.p-community-event,
+a.p-community-event {
   padding-block: max(0.75rem);
   padding-inline: max(1.25rem);
   background: var(--color-background-surface-selected);
