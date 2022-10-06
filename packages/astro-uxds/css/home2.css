@@ -334,6 +334,10 @@
   font-size: 1rem;
 }
 
+.home button.print-button {
+  display: none;
+}
+
 .home-container .home__body-material {
   width: 1600px;
   max-width: 100%;
