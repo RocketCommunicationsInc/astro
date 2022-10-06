@@ -431,6 +431,7 @@ a.p-community-event:hover {
 .event-link {
   color: var(--primary-color);
   font-size: 1rem;
+  white-space: nowrap;
 }
 
 .p-community-link,
@@ -732,7 +733,8 @@ a.button-secondary.title-button {
 .home__email-signup #mc-embedded-subscribe {
   border: 1px solid var(--color-background-interactive);
   font-size: 1rem;
-  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-left: auto;
   margin-top: 0;
 }
 .home__email-signup #mc-embedded-subscribe:hover {
