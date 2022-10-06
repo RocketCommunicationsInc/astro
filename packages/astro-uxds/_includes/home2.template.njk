@@ -85,7 +85,7 @@
 				</section>
 		<!--COMMUNITY SECTION-->
 				<section>
-					<h2 class="section-title">ASTRO Community <span style="color:red;">These all need links / Real Content</span></h2>
+					<h2 class="section-title">ASTRO Community</h2>
 					<div class="section-container community">
 
 
@@ -93,7 +93,7 @@
 							<h4>Upcoming Events</h4>
 							<div class="p-community-events-content">
 								<!--event-->
-								<a href="#" class="p-community-event">
+								<a href="mailto:support@astrouxds.com" class="p-community-event">
 									<span class="p-community-event-date">
 										<span class="-date">10/10/2022</span><br />
 										<span class="-time">11:00 AM PST</span>
@@ -103,11 +103,11 @@
 										<span class="p-community-event-subheading">Request an invite by email: support@astrouxds.com</span>
 									</hgroup>
 									<small class="p-community-event-actions">
-										<span class="link-arrow event-link" href="#">Add to Calendar</span>
+										<span class="link-arrow event-link">Contact Support</span>
 									</small>
 								</a>
 								<!--event-->
-								<a href="#" class="p-community-event">
+								<a href="mailto:dnutter@rocketcom.com" class="p-community-event">
 									<span class="p-community-event-date">
 										<span class="-date">10/12/2022</span><br />
 										<span class="-time">8:00 AM MDT</span>
@@ -117,11 +117,11 @@
 										<span class="p-community-event-subheading">Canopy IceHouse, 422 E Vermijo Ave, Colorado Springs, CO 80903</span>
 									</hgroup>
 									<small class="p-community-event-actions">
-										<span class="link-arrow event-link" href="#">Add to Calendar</span>
+										<span class="link-arrow event-link">Contact Us</span>
 									</small>
 								</a>
 								<!--event-->
-								<a href="#" class="p-community-event">
+								<a href="mailto:dnutter@rocketcom.com" class="p-community-event">
 									<span class="p-community-event-date">
 										<span class="-date">10/19/2022</span><br />
 										<span class="-time">8:00 AM MDT</span>
@@ -131,11 +131,11 @@
 										<span class="p-community-event-subheading">Canopy IceHouse, 422 E Vermijo Ave, Colorado Springs, CO 80903</span>
 									</hgroup>
 									<small class="p-community-event-actions">
-										<span class="link-arrow event-link" href="#">Add to Calendar</span>
+										<span class="link-arrow event-link">Contact Us</span>
 									</small>
 								</a>
 								<!--event-->
-								<a href="#" class="p-community-event">
+								<a href="mailto:support@astrouxds.com" class="p-community-event">
 									<span class="p-community-event-date">
 										<span class="-date">10/24/2022</span><br />
 										<span class="-time">11:00 AM PST</span>
@@ -145,11 +145,11 @@
 										<span class="p-community-event-subheading">Request an invite by email: support@astrouxds.com</span>
 									</hgroup>
 									<small class="p-community-event-actions">
-										<span class="link-arrow event-link" href="#">Add to Calendar</span>
+										<span class="link-arrow event-link" href="#">Contact Support</span>
 									</small>
 								</a>
 								<!--event-->
-								<a href="#" class="p-community-event">
+								<a href="mailto:dnutter@rocketcom.com" class="p-community-event">
 									<span class="p-community-event-date">
 										<span class="-date">10/26/2022</span><br />
 										<span class="-time">8:00 AM MDT</span>
@@ -159,11 +159,11 @@
 										<span class="p-community-event-subheading">Canopy IceHouse, 422 E Vermijo Ave, Colorado Springs, CO 80903</span>
 									</hgroup>
 									<small class="p-community-event-actions">
-										<span class="link-arrow event-link" href="#">Add to Calendar</span>
+										<span class="link-arrow event-link">Contact Us</span>
 									</small>
 								</a>
 								<!--event-->
-								<a href="#" class="p-community-event">
+								<a href="mailto:dnutter@rocketcom.com" class="p-community-event">
 									<span class="p-community-event-date">
 										<span class="-date">11/02/2022</span><br />
 										<span class="-time">8:00 AM MDT</span>
@@ -173,7 +173,7 @@
 										<span class="p-community-event-subheading">Canopy IceHouse, 422 E Vermijo Ave, Colorado Springs, CO 80903</span>
 									</hgroup>
 									<small class="p-community-event-actions">
-										<span class="link-arrow event-link" href="#">Add to Calendar</span>
+										<span class="link-arrow event-link">Contact Us</span>
 									</small>
 								</a>
 								
@@ -229,7 +229,7 @@
 									</div>
 									<div class="article-content">
 										<h4>Astro Beyond the Web</h4>
-										<p class="link-arrow">Transforming a web design system for new platforms is, unsurprisingly, an exercise in making tradeoffs...</p>
+										<p class="link-arrow">Transforming a web design system for new platforms is, unsurprisingly, an exercise in making tradeoffs.</p>
 									</div>
 								</a>
 								<!--article-->
@@ -364,31 +364,6 @@
   container: '#docsearch'
 });
 		</script>
-		<script type="text/javascript">
-		const wrap = document.querySelector(".embla");
-		const viewPort = wrap.querySelector(".embla__viewport");
-		const prevBtn = wrap.querySelector(".embla__button--prev");
-		const nextBtn = wrap.querySelector(".embla__button--next");
-		const dots = document.querySelector(".embla__dots");
-		const embla = EmblaCarousel(viewPort, { loop: false, skipSnaps: false, containScroll: 'trimSnaps', align: 'start', });
-		const disablePrevNextBtns = (prevBtn, nextBtn, embla) => {
-			return () => {
-				if (embla.canScrollPrev()) prevBtn.removeAttribute('disabled');
-				else prevBtn.setAttribute('disabled', 'disabled');
-
-				if (embla.canScrollNext()) nextBtn.removeAttribute('disabled');
-				else nextBtn.setAttribute('disabled', 'disabled');
-			};
-		};
-		const setupPrevNextBtns = (prevBtn, nextBtn, embla) => {
-			prevBtn.addEventListener('click', embla.scrollPrev, false);
-			nextBtn.addEventListener('click', embla.scrollNext, false);
-			};
-			const disable = disablePrevNextBtns(prevBtn, nextBtn, embla);
-
-			setupPrevNextBtns(prevBtn, nextBtn, embla);
-			embla.on("select", disable);
-			embla.on("init", disable);
-		</script>
+		<script src="/js/embla-custom.js"></script>
 	</body>
 </html>

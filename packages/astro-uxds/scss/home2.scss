@@ -500,6 +500,7 @@ a.button-secondary.title-button {
 
 .embla__slide:last-child {
   padding-right: 0;
+  flex-basis: 300px;
 }
 .embla__viewport {
   overflow: hidden;
@@ -538,11 +539,11 @@ a.button-secondary.title-button {
 }
 
 .embla__button--prev {
-  left: -2rem;
+  left: -3rem;
 }
 
 .embla__button--next {
-  right: -2rem;
+  right: -3rem;
 }
 
 //3 panel
