@@ -17,10 +17,11 @@
         <script nomodule src="/build/astro-web-components.esm.js"></script>
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
+
         <!-- <script
             type="module"
             src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"
-        ></script> -->
+        ></script>-->
     </head>
 
     <body class="dark-theme">
@@ -50,6 +51,12 @@
                 <rux-textarea id="helpText" name="helpText" help-text="HELP">
                 </rux-textarea>
                 <br />
+                <style>
+                    #bothText::part(textarea) {
+                        resize: none;
+                        height: 200px;
+                    }
+                </style>
                 <rux-textarea
                     id="bothText"
                     name="bothText"
@@ -89,63 +96,68 @@ Native Text Area</textarea
                 })
             </script>
         </div>
-        <!-- <ftl-belt access-token="" file-id="">
-        <section>
-            <h2>Figma Testing</h2>
-            <ftl-holster name="Small text area" node="1043:6671">
-                <div style="width: 170px">
-                    <rux-textarea
-                        id="figmatextarea1"
-                        name="figmatest1"
-                        placeholder="Small textarea"
-                        size="small"rux
-                </div>
-            </ftl-holster>
 
-            <ftl-holster name="Medium text area" node="1043:6665">
-                <div style="width: 170px">
-                    <rux-textarea
-                        id="figmatextarea1"
-                        name="figmatest1"
-                        placeholder="Medium textarea"
-                    ></rux-textarea>
-                </div>
-            </ftl-holster>
+        <!--<ftl-belt
+            access-token=""
+            file-id=""
+        >
+            <section>
+                <h2>Figma Testing</h2>
+                <ftl-holster name="Small text area" node="1043:6671">
+                    <div style="width: 170px">
+                        <rux-textarea
+                            id="figmatextarea1"
+                            name="figmatest1"
+                            placeholder="Small textarea"
+                            size="small"
+                        ></rux-textarea>
+                    </div>
+                </ftl-holster>
 
-            <ftl-holster name="Large text area" node="1043:6689">
-                <div style="width: 170px">
-                    <rux-textarea
-                        id="figmatextarea1"
-                        name="figmatest1"
-                        placeholder="Large textarea"
-                        size="large"
-                    ></rux-textarea>
-                </div>
-            </ftl-holster>
+                <ftl-holster name="Medium text area" node="1043:6665">
+                    <div style="width: 170px">
+                        <rux-textarea
+                            id="figmatextarea1"
+                            name="figmatest1"
+                            placeholder="Medium textarea"
+                        ></rux-textarea>
+                    </div>
+                </ftl-holster>
 
-            <ftl-holster name="With Help Text" node="1043:6604">
-                <div style="width: 170px">
-                    <rux-textarea
-                        id="figmatextarea1"
-                        name="figmatest1"
-                        value="Textarea"
-                        help-text="help"
-                    ></rux-textarea>
-                </div>
-            </ftl-holster>
+                <ftl-holster name="Large text area" node="1043:6689">
+                    <div style="width: 170px">
+                        <rux-textarea
+                            id="figmatextarea1"
+                            name="figmatest1"
+                            placeholder="Large textarea"
+                            size="large"
+                        ></rux-textarea>
+                    </div>
+                </ftl-holster>
 
-            <ftl-holster name="With Error Text" node="1057:3759">
-                <div style="min-width: 170px">
-                    <rux-textarea
-                        invalid
-                        id="figmatextarea1"
-                        name="figmatest1"
-                        placeholder="Textarea"
-                        error-text="error"
-                    ></rux-textarea>
-                </div>
-            </ftl-holster>
-        </section>
-        </ftl-belt> -->
+                <ftl-holster name="With Help Text" node="1043:6604">
+                    <div style="width: 170px">
+                        <rux-textarea
+                            id="figmatextarea1"
+                            name="figmatest1"
+                            value="Textarea"
+                            help-text="help"
+                        ></rux-textarea>
+                    </div>
+                </ftl-holster>
+
+                <ftl-holster name="With Error Text" node="1057:3759">
+                    <div style="min-width: 170px">
+                        <rux-textarea
+                            invalid
+                            id="figmatextarea1"
+                            name="figmatest1"
+                            placeholder="Textarea"
+                            error-text="error"
+                        ></rux-textarea>
+                    </div>
+                </ftl-holster>
+            </section>
+        </ftl-belt>-->
     </body>
 </html>
