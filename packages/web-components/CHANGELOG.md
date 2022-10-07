@@ -1,5 +1,13 @@
 # @astrouxds/astro-web-components
 
+## 7.0.2
+
+### Patch Changes
+
+-   e8dc7f7c: rux-checkbox: change --disabled-opacity to correct --opacity-disabled design token
+-   d9cf395d: fix(rux-pop-up) allow it to overlay components that are below it in code
+-   2a8762ad: fix(rux-textarea) revert code format to remove wrapper and return functionality control to developers
+
 ## 7.0.1
 
 ### Patch Changes
