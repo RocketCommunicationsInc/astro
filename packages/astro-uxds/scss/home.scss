@@ -582,6 +582,13 @@ a.button-secondary.title-button {
   .embla__slide {
     flex: 0 0 100%;
   }
+  .embla__button--prev {
+    left: -1.5rem;
+  }
+
+  .embla__button--next {
+    right: -1.5rem;
+  }
 }
 
 /**********************RESPONSIVE*****************/
