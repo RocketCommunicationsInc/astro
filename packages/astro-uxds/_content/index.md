@@ -1,7 +1,7 @@
 ---
 path: /
 date: Last Modified
-layout: home2.template.njk
+layout: home.template.njk
 title: "Astro: Space UX Design System"
 ---
 

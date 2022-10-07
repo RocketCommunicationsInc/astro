@@ -1,7 +1,7 @@
 ---
 path: /xindex
 date: Last Modified
-layout: home.template.njk
+layout: xhome.template.njk
 title: "Astro: Space UX Design System"
 ---
 
