@@ -1,5 +1,21 @@
 # @astrouxds/astrouxds
 
+## 7.0.2
+
+### Patch Changes
+
+#### Checkbox
+
+- Fixed visual regression on disabled state
+
+#### Pop Up
+
+- Fixed an issue where Pop Ups would not overlay correctly.
+
+#### Text Area
+
+- Reverted a 7.0 change to the component's internals that prevented users from being able to control the height of the element or disable resizing.
+
 ## 7.0.1
 
 ### Patch Changes
