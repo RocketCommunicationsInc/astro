@@ -618,6 +618,15 @@ a.button-secondary.title-button {
   }
 }
 
+@media #{$tablet} {
+  .home__body-material {
+    padding: 0 1rem;
+  }
+  .section-container {
+    padding: 2rem;
+  }
+}
+
 /**************FOOTER****************/
 .site-footer {
   background-color: var(--color-background-base-default);
