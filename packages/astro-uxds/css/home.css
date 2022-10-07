@@ -868,6 +868,12 @@ a.button-secondary.title-button {
   .embla__slide {
     flex: 0 0 100%;
   }
+  .embla__button--prev {
+    left: -2rem;
+  }
+  .embla__button--next {
+    right: -2rem;
+  }
 }
 /**********************RESPONSIVE*****************/
 @media screen and (max-width: 1279px) {
