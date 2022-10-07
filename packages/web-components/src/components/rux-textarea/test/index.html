@@ -17,12 +17,11 @@
         <script nomodule src="/build/astro-web-components.esm.js"></script>
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
-        {#
-        <script
+
+        <!-- <script
             type="module"
             src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"
-        ></script>
-        #}
+        ></script>-->
     </head>
 
     <body class="dark-theme">
@@ -52,13 +51,11 @@
                 <rux-textarea id="helpText" name="helpText" help-text="HELP">
                 </rux-textarea>
                 <br />
-                {#
-                <style>
+                <!--<style>
                     #bothText::part(textarea) {
                         height: 400px;
                     }
-                </style>
-                #}
+                </style>-->
                 <rux-textarea
                     id="bothText"
                     name="bothText"
@@ -98,8 +95,11 @@ Native Text Area</textarea
                 })
             </script>
         </div>
-        {#
-        <ftl-belt access-token="" file-id="">
+
+        <!--<ftl-belt
+            access-token=""
+            file-id=""
+        >
             <section>
                 <h2>Figma Testing</h2>
                 <ftl-holster name="Small text area" node="1043:6671">
@@ -157,7 +157,6 @@ Native Text Area</textarea
                     </div>
                 </ftl-holster>
             </section>
-        </ftl-belt>
-        #}
+        </ftl-belt>-->
     </body>
 </html>
