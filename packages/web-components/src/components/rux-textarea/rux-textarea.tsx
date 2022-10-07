@@ -191,37 +191,29 @@ export class RuxTextarea implements FormFieldInterface {
                             </span>
                         </label>
                     ) : null}
-                    <div
+                    <textarea
+                        name={this.name}
+                        disabled={this.disabled}
+                        aria-invalid={this.invalid ? 'true' : 'false'}
+                        placeholder={this.placeholder}
+                        required={this.required}
+                        minlength={this.minLength}
+                        maxlength={this.maxLength}
+                        value={this.value}
                         class={{
-                            'rux-textarea-wrapper': true,
-                            'rux-textarea-wrapper--disabled': this.disabled,
-                            'rux-textarea-wrapper--invalid': this.invalid,
-                            'rux-textarea-wrapper--small':
-                                this.size === 'small',
-                            'rux-textarea-wrapper--large':
-                                this.size === 'large',
+                            'rux-textarea': true,
+                            'rux-textarea--disabled': this.disabled,
+                            'rux-textarea--invalid': this.invalid,
+                            'rux-textarea--small': this.size === 'small',
+                            'rux-textarea--large': this.size === 'large',
                         }}
-                    >
-                        <textarea
-                            name={this.name}
-                            disabled={this.disabled}
-                            aria-invalid={this.invalid ? 'true' : 'false'}
-                            placeholder={this.placeholder}
-                            required={this.required}
-                            minlength={this.minLength}
-                            maxlength={this.maxLength}
-                            value={this.value}
-                            class={{
-                                'rux-textarea': true,
-                            }}
-                            id={this.inputId}
-                            rows={this.rows}
-                            onChange={this._onChange}
-                            onInput={this._onInput}
-                            onBlur={this._onBlur}
-                            part="textarea"
-                        ></textarea>
-                    </div>
+                        id={this.inputId}
+                        rows={this.rows}
+                        onChange={this._onChange}
+                        onInput={this._onInput}
+                        onBlur={this._onBlur}
+                        part="textarea"
+                    ></textarea>
                 </div>
                 <FormFieldMessage
                     helpText={this.helpText}
