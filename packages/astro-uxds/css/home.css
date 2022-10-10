@@ -343,10 +343,6 @@
   max-width: 100%;
 }
 
-.home .mobile-nav {
-  background: var(--color-background-surface-header);
-}
-
 .home__intro {
   text-align: center;
   max-width: 50rem;
@@ -863,7 +859,7 @@ a.button-secondary.title-button {
 }
 @media screen and (max-width: 1080px) {
   .embla {
-    width: 300px;
+    width: 302px;
   }
   .embla__slide {
     flex: 0 0 100%;
@@ -1000,6 +996,9 @@ a.button-secondary.title-button {
   }
   .site-footer__social ul {
     justify-content: center;
+  }
+  .site-footer__social ul li {
+    margin: 0 auto;
   }
   .sitemap {
     margin-bottom: 3rem;
