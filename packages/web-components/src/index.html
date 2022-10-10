@@ -19,5 +19,41 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body></body>
+    <body>
+        <rux-tabs id="tab-set-id-1">
+            <rux-tab id="tab-id-1">Tab 1 title</rux-tab>
+            <rux-tab id="tab-id-2">Tab 2 title</rux-tab>
+            <rux-tab id="tab-id-3">Tab 3 title</rux-tab>
+        </rux-tabs>
+
+        <rux-tab-panels aria-labelledby="tab-set-id-1">
+            <rux-tab-panel aria-labelledby="tab-id-1"
+                >Tab 1 HTML content</rux-tab-panel
+            >
+            <rux-tab-panel aria-labelledby="tab-id-2"
+                >Tab 2 HTML content</rux-tab-panel
+            >
+            <rux-tab-panel aria-labelledby="tab-id-3"
+                >Tab 3 HTML content</rux-tab-panel
+            >
+        </rux-tab-panels>
+        <rux-button id="add">Add Tab</rux-button>
+        <script>
+            let tabs = document.querySelector('rux-tabs')
+            let panels = document.querySelector('rux-tab-panels')
+            let btn = document.getElementById('add')
+            let count = document.querySelectorAll('rux-tab').length
+            btn.addEventListener('click', () => {
+                let newTab = document.createElement('rux-tab')
+                count++
+                newTab.id = `tab-id-${count}`
+                newTab.textContent = `Tab ${count} title`
+                let newPanel = document.createElement('rux-tab-panel')
+                newPanel.setAttribute('aria-labelledby', `tab-id-${count}`)
+                newPanel.textContent = `Tab ${count} HTML content`
+                tabs.appendChild(newTab)
+                panels.appendChild(newPanel)
+            })
+        </script>
+    </body>
 </html>
