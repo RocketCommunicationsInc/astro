@@ -16,10 +16,6 @@ export class RuxTabPanels {
         this._getSlottedChildren = this._getSlottedChildren.bind(this)
     }
 
-    componentDidLoad() {
-        this._registerTabPanels(this._getSlottedChildren())
-    }
-
     private _getSlottedChildren() {
         const slot = this.el?.shadowRoot?.querySelector('slot')
 
@@ -43,6 +39,8 @@ export class RuxTabPanels {
     @Event({ eventName: 'ruxregisterpanels' })
     ruxRegisterPanels!: EventEmitter<HTMLRuxTabPanelsElement[]>
     private _registerTabPanels(children: HTMLRuxTabPanelsElement[]) {
+        console.log('running registerTabPanels')
+
         this.ruxRegisterPanels.emit(children)
     }
 
