@@ -12134,6 +12134,10 @@ export namespace Components {
          */
         "show": () => Promise<true>;
         /**
+          * When provided, will close the pop-up when a single selection is made.
+         */
+        "singleSelect": boolean;
+        /**
           * The position strategy of the popup, either absolute or fixed.
          */
         "strategy": 'absolute' | 'fixed';
@@ -32596,6 +32600,10 @@ declare namespace LocalJSX {
           * The placement of the pop up relative to it's slotted trigger element. Defaults to auto.
          */
         "placement"?: ExtendedPlacement;
+        /**
+          * When provided, will close the pop-up when a single selection is made.
+         */
+        "singleSelect"?: boolean;
         /**
           * The position strategy of the popup, either absolute or fixed.
          */
