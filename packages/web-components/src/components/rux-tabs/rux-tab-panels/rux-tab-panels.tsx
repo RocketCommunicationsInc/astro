@@ -13,20 +13,20 @@ export class RuxTabPanels {
 
     connectedCallback() {
         this.el.setAttribute('style', 'position: relative; width: 100%;')
-    }
-
-    componentDidLoad() {
-        this._registerTabPanels(this._getSlottedChildren())
+        this._getSlottedChildren = this._getSlottedChildren.bind(this)
     }
 
     private _getSlottedChildren() {
         const slot = this.el?.shadowRoot?.querySelector('slot')
+
         if (slot) {
             const childNodes = slot.assignedNodes({ flatten: true })
             const children = Array.prototype.filter.call(
                 childNodes,
                 (node) => node.nodeType == Node.ELEMENT_NODE
             )
+
+            this._registerTabPanels(children)
             return children
         } else {
             return []
@@ -45,7 +45,7 @@ export class RuxTabPanels {
     render() {
         return (
             <Host>
-                <slot></slot>
+                <slot onSlotchange={this._getSlottedChildren}></slot>
             </Host>
         )
     }
