@@ -88,20 +88,8 @@ test.describe('Switch', () => {
         const nativeCheckbox = page.locator('#nativeCheckbox').first()
 
         //Assert
-        await ruxSwitchInput
-            .evaluate((e) => {
-                return e.hasAttribute('checked')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
-        await nativeCheckbox
-            .evaluate((e) => {
-                return e.hasAttribute('checked')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
+        await expect(ruxSwitchInput).not.toHaveAttribute('checked', '')
+        await expect(nativeCheckbox).not.toHaveAttribute('checked', '')
     })
     test('does not submit any value if not checked', async ({ page }) => {
         //Arrange
@@ -150,13 +138,7 @@ test.describe('Switch', () => {
         await ruxSwitchDisabled.click({ position: { x: 5, y: 5 } })
 
         //Assert
-        await ruxSwitchInputDisabled
-            .evaluate((e) => {
-                return e.hasAttribute('checked')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
+        await expect(ruxSwitchInputDisabled).not.toHaveAttribute('checked', '')
 
         //Act
         await nativeCheckbox2.check()

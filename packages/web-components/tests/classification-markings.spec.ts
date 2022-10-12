@@ -50,7 +50,6 @@ test.describe('Classification marking banners', () => {
 
         const topBanner = page.locator('.rux-classification--banner').first()
         const footerBanner = page.locator('.rux-classification--banner__footer')
-        await topBanner.evaluate((e) => console.log(e, 'here'))
         expect(topBanner).toBeDefined()
         expect(footerBanner).toBeDefined()
         await expect(topBanner).toBeVisible()

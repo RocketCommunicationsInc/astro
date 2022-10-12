@@ -64,7 +64,7 @@ export class RuxPopUp {
     /**
      * When provided, will close the pop-up when a single selection is made.
      */
-    @Prop({ attribute: 'single-select' }) singleSelect: boolean = false
+    @Prop({ attribute: 'close-on-select' }) closeOnSelect: boolean = false
 
     @State() arrowPosition?: string
 
@@ -246,7 +246,7 @@ export class RuxPopUp {
 
     @Listen('ruxmenuselected')
     handleSelection() {
-        if (this.singleSelect) {
+        if (this.closeOnSelect) {
             this.open = false
         }
     }

@@ -12118,6 +12118,10 @@ export namespace Components {
     }
     interface RuxPopUp {
         /**
+          * When provided, will close the pop-up when a single selection is made.
+         */
+        "closeOnSelect": boolean;
+        /**
           * Closes the pop up and returns false.
          */
         "hide": () => Promise<false>;
@@ -12133,10 +12137,6 @@ export namespace Components {
           * Opens the pop up and returns true.
          */
         "show": () => Promise<true>;
-        /**
-          * When provided, will close the pop-up when a single selection is made.
-         */
-        "singleSelect": boolean;
         /**
           * The position strategy of the popup, either absolute or fixed.
          */
@@ -32585,6 +32585,10 @@ declare namespace LocalJSX {
     }
     interface RuxPopUp {
         /**
+          * When provided, will close the pop-up when a single selection is made.
+         */
+        "closeOnSelect"?: boolean;
+        /**
           * Emits when the pop up has closed.
          */
         "onRuxpopupclosed"?: (event: RuxPopUpCustomEvent<any>) => void;
@@ -32600,10 +32604,6 @@ declare namespace LocalJSX {
           * The placement of the pop up relative to it's slotted trigger element. Defaults to auto.
          */
         "placement"?: ExtendedPlacement;
-        /**
-          * When provided, will close the pop-up when a single selection is made.
-         */
-        "singleSelect"?: boolean;
         /**
           * The position strategy of the popup, either absolute or fixed.
          */

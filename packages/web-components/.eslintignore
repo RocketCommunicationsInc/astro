@@ -1,3 +1,4 @@
 src/stories
 *.spec.tsx
 *.spec.ts
+src/tests

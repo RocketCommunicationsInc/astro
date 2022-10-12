@@ -66,13 +66,7 @@ test.describe('Tabs', () => {
 
         // Assert
         await expect(tab1).toHaveAttribute('selected', '')
-        await tab2
-            .evaluate((e) => {
-                return e.hasAttribute('selected')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
+        await expect(tab2).not.toHaveAttribute('selected', '')
     })
     test('selects tab when user clicks', async ({ page }) => {
         //Arrange
@@ -86,13 +80,7 @@ test.describe('Tabs', () => {
 
         //Assert
         await expect(tab2).toHaveAttribute('selected', '')
-        await tab1
-            .evaluate((e) => {
-                return e.hasAttribute('selected')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
+        await expect(tab1).not.toHaveAttribute('selected', '')
 
         //Act
         await tab1Child.click({ force: true })
