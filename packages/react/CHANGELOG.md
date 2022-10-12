@@ -1,5 +1,20 @@
 # @astrouxds/react
 
+## 7.1.0
+
+### Minor Changes
+
+- 66fe8eed: Added a `close-on-select` property to `rux-pop-up` that will close the pop-up when a user selects something from the menu.
+
+### Patch Changes
+
+- b30ae94c: Updated scrollbar styles in firefox
+- 08efa7c0: Fixed an issue in rux-tabs where dynamically adding a tab would result in unexpected behavior.
+- Updated dependencies [b30ae94c]
+- Updated dependencies [08efa7c0]
+- Updated dependencies [66fe8eed]
+  - @astrouxds/astro-web-components@7.1.0
+
 ## 7.0.2
 
 ### Patch Changes
