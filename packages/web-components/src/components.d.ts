@@ -12118,6 +12118,10 @@ export namespace Components {
     }
     interface RuxPopUp {
         /**
+          * When provided, will close the pop-up when a single selection is made.
+         */
+        "closeOnSelect": boolean;
+        /**
           * Closes the pop up and returns false.
          */
         "hide": () => Promise<false>;
@@ -32580,6 +32584,10 @@ declare namespace LocalJSX {
         "onRux-option-group-changed"?: (event: RuxOptionGroupCustomEvent<void>) => void;
     }
     interface RuxPopUp {
+        /**
+          * When provided, will close the pop-up when a single selection is made.
+         */
+        "closeOnSelect"?: boolean;
         /**
           * Emits when the pop up has closed.
          */

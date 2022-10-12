@@ -62,31 +62,15 @@ test.describe('Menu', async () => {
         )
         const first = page.locator('rux-menu-item').first()
         const last = page.locator('rux-menu-item').last()
-        //! Replace with .not.toHaveAttribute when playwright issue is fixed
-        await first
-            .evaluate((e) => {
-                return e.hasAttribute('selected')
-            })
-            .then((e) => {
-                expect(e).not.toBeTruthy()
-            })
+
+        await expect(first).not.toHaveAttribute('selected', '')
         await first.click()
-        await first
-            .evaluate((e) => {
-                return e.hasAttribute('selected')
-            })
-            .then((e) => expect(e).toBeTruthy())
+
+        await expect(first).toHaveAttribute('selected', '')
         //this timeout prevents flake from the next function running too fast
         await last.click().then(() => page.waitForTimeout(500))
-        await last
-            .evaluate((e) => {
-                return e.hasAttribute('selected')
-            })
-            .then((e) => expect(e).toBeTruthy())
-        await first
-            .evaluate((e) => {
-                return e.hasAttribute('selected')
-            })
-            .then((e) => expect(e).not.toBeTruthy())
+
+        await expect(last).toHaveAttribute('selected', '')
+        await expect(first).not.toHaveAttribute('selected', '')
     })
 })

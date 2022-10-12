@@ -9,6 +9,7 @@ import {
     Event,
     EventEmitter,
     Method,
+    Listen,
 } from '@stencil/core'
 import {
     Placement,
@@ -59,6 +60,11 @@ export class RuxPopUp {
      * The position strategy of the popup, either absolute or fixed.
      */
     @Prop() strategy: 'absolute' | 'fixed' = 'absolute'
+
+    /**
+     * When provided, will close the pop-up when a single selection is made.
+     */
+    @Prop({ attribute: 'close-on-select' }) closeOnSelect: boolean = false
 
     @State() arrowPosition?: string
 
@@ -234,6 +240,13 @@ export class RuxPopUp {
         const triggerClick = e.composedPath().includes(this.triggerSlot)
         const popUpClick = e.composedPath().includes(this.el)
         if (!menuClick && !triggerClick && !popUpClick) {
+            this.open = false
+        }
+    }
+
+    @Listen('ruxmenuselected')
+    handleSelection() {
+        if (this.closeOnSelect) {
             this.open = false
         }
     }

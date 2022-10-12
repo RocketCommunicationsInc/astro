@@ -324,33 +324,27 @@ test.describe('Tree', () => {
     test('allows keyboard controls', async ({ page }) => {
         //Arrange
         const treeNode = page.locator('rux-tree-node').first()
-        const parent = treeNode.locator('.parent').first()
-        const treeNodeNested = treeNode.locator('rux-tree-node').first()
-        const treeNodeNestedParent = treeNodeNested.locator('.parent').first()
+        const firstTreeNodeParentDiv = treeNode.locator('.parent').first()
+        const secondNode = treeNode.locator('rux-tree-node').first()
+        // const parent = treeNode.locator('.tree-node').first()
+        // const treeNodeNested = treeNode.locator('rux-tree-node').first()
+        // const treeNodeNestedParent = treeNodeNested.locator('.parent').first()
 
         //Act
-        await parent.focus()
-
+        await firstTreeNodeParentDiv.focus()
         //Assert
-        await expect(parent).toHaveAttribute('expanded', '')
+        await expect(treeNode).toHaveAttribute('expanded', '')
 
         //Act
         await page.keyboard.press('ArrowDown')
 
         //Assert
-        await expect(treeNodeNestedParent).toHaveAttribute('expanded', '')
+        await expect(secondNode).toHaveAttribute('expanded', '')
 
         //Act
         await page.keyboard.press('ArrowLeft')
 
-        //Assert
-        await treeNodeNestedParent
-            .evaluate((e) => {
-                return e.hasAttribute('expanded')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
+        await expect(secondNode).not.toHaveAttribute('expanded', '')
     })
     test('emits ruxtreenodeselected event', async ({ page }) => {
         //TODO need to check that event only fires once
