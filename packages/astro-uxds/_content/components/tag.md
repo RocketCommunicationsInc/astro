@@ -44,11 +44,11 @@ Tags are most commonly used in large data sets, such as tables, to help filter a
 :::two-col
 ![Do: Use Status Tags to show system status.](/img/components/tags-do-1.png "Do: Use Status Tags to show system status.")
 
-![Don’t: Don’t mix interactive and static tags. Tags that are being used to filter or organize data should have consistent behavior.](/img/components/tags-dont-1.png "Don’t: Don’t mix interactive and static tags. Tags that are being used to filter or organize data should have consistent behavior.")
+![Don’t: When writing tags, avoid line-wrapping and utilize short keywords when possible.](/img/components/tags-dont-1.png "Don’t: When writing tags, avoid line-wrapping and utilize short keywords when possible.")
 
 ![Do: Use tags when items are mapped to multiple categories and you need to differentiate between them.](/img/components/tags-do-2.png "Do: Use tags when items are mapped to multiple categories and you need to differentiate between them.")
 
-![Don’t: When writing tags, avoid line-wrapping and utilize short keywords when possible.](/img/components/tags-dont-2.png "Don’t: When writing tags, avoid line-wrapping and utilize short keywords when possible.")
+![Don’t: Don't edit the text on Status Tags.](/img/components/tags-dont-2.png "Don’t: Don't edit the text on Status Tags.")
 
 ![Do: Use text colors in tags that pass WCAG AA contrast tests compared to the tags' background colors.](/img/components/tags-do-3.png "Do: Use text colors in tags that pass WCAG AA contrast tests compared to the tags' background colors.")
 
