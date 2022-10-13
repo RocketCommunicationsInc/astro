@@ -1,5 +1,23 @@
 # @astrouxds/angular
 
+## 7.1.0
+
+### Minor Changes
+
+#### Pop Up
+
+- Added a `close-on-select` property that will close the pop-up when a user selects something from the menu.
+
+### Patch Changes
+
+#### Scrollbars
+
+- Updated styles in Firefox
+
+#### Tabs
+
+- Fixed an issue where dynamically adding a tab would result in unexpected behavior.
+
 ## 7.0.2
 
 ### Patch Changes
