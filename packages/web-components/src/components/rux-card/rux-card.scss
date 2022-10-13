@@ -36,12 +36,11 @@
 .rux-card__body {
     padding: var(--body-padding);
     box-sizing: border-box;
-    font-size: var(
-        --font-size-base
-    ); // Solves the issue of a parent element with a larger font-size causing extra space to be taken up on some elements.
-    line-height: var(
-        --line-height-base
-    ); // Solves the issue of a parent element with a larger line-height causing extra space to be taken up on some elements.
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    line-height: var(--font-body-1-line-height);
+    letter-spacing: var(--font-body-1-letter-spacing);
     text-align: left; // Solves the issue of a parent element with a different text-align overriding.
 }
 
@@ -51,11 +50,10 @@
     padding-top: var(--card-footer-padding);
     padding-bottom: var(--card-footer-padding);
     box-sizing: border-box;
-    font-size: var(
-        --font-size-base
-    ); // Solves the issue of a parent element with a larger font-size causing extra space to be taken up on some elements.
-    line-height: var(
-        --line-height-base
-    ); // Solves the issue of a parent element with a larger line-height causing extra space to be taken up on some elements.
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    line-height: var(--font-body-1-line-height);
+    letter-spacing: var(--font-body-1-letter-spacing);
     text-align: left; // Solves the issue of a parent element with a different text-align overriding.
 }

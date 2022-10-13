@@ -32,8 +32,13 @@
     width: 100%;
     box-sizing: border-box;
     min-height: var(--height);
-    font-size: var(--font-size-base); // fix for parent font-size causing icon shift.
-    line-height: var(--line-height-base); //fixes issue where parent element with larger line-height causes layout shift.
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    line-height: var(
+        --line-height-base
+    ); //fixes issue where parent element with larger line-height causes layout shift.
 }
 
 .rux-notification-banner__inner {

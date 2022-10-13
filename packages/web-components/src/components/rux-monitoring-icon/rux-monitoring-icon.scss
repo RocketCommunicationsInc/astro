@@ -22,9 +22,10 @@
     position: relative;
     margin: var(--spacing-0);
     line-height: 0;
-    font-size: var(
-        --font-size-base
-    ); //needed to prevent icon shift by font on parent.
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;

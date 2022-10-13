@@ -1,9 +1,10 @@
 :host {
     display: block;
     box-sizing: border-box;
-    font-size: var(
-        --font-size-base
-    ); //fixes issue where parent element with larger font-size causes layout shift.
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
     line-height: var(
         --line-height-base
     ); //fixes issue where parent element with larger line-height causes layout shift.

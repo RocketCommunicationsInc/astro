@@ -2,9 +2,10 @@
 
 :host {
     display: block;
-    font-size: var(
-        --font-size-base
-    ); // Solves the issue of a parent element with a larger font-size causing extra space to be taken up on some elements.
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
     line-height: var(
         --line-height-base
     ); // Solves the issue of a parent element with a larger line-height causing extra space to be taken up on some elements.

@@ -19,8 +19,13 @@
     -ms-user-select: none;
     user-select: none;
     contain: layout; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
-    font-size: var(--font-size-base); //fixes issue where parent element with larger font-size causes layout shift.
-    line-height: var(--line-height-base); //fixes issue where parent element with larger line-height causes layout shift.
+    line-height: var(
+        --line-height-base
+    ); //fixes issue where parent element with larger line-height causes layout shift.
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
 }
 
 :host([hidden]) {
@@ -45,7 +50,9 @@ slot[name='left-side'] > *,
 slot[name='left-side'] > rux-icon,
 ::slotted(rux-icon[slot='left-side']) {
     height: calc(var(--spacing-8) + var(--spacing-050)); //38px
-    font-size:var(--spacing-8); //32px to prevent icon moving if larger font-size set on parents.
+    font-size: var(
+        --spacing-8
+    ); //32px to prevent icon moving if larger font-size set on parents.
 }
 
 slot[name='left-side'] > .shifted-up,
