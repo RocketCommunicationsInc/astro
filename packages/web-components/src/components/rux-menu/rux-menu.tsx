@@ -11,26 +11,28 @@ export class RuxMenu {
     /**
      * Emits when a rux-menu-item is selected. Emits the rux-menu-item selected in the event detail.
      */
-    @Event({ eventName: 'ruxmenuselected' })
+    @Event({ eventName: 'ruxmenuselected', bubbles: true })
     ruxMenuSelected!: EventEmitter
 
     connectedCallback() {
         this.el.addEventListener('click', (e) => {
-            this._handleSelected(e.target as HTMLRuxMenuItemElement)
+            this._handleSelected(e.target as HTMLElement)
         })
     }
 
-    private _handleSelected(item: HTMLRuxMenuItemElement) {
+    private _handleSelected(item: HTMLElement) {
         //prevent code from running if the clicked element was disabled
-        if (item.disabled) return
-        const menuItems = Array.from(this.el.querySelectorAll('rux-menu-item'))
-        menuItems.forEach((el) => {
-            el.selected = false
-            if (el === item && !el.disabled) {
-                item.selected = true
-                this.ruxMenuSelected.emit(item)
-            }
-        })
+        if (item.hasAttribute('disabled')) return
+        //prevent items that are nested in a disabled rux-menu-item from emitting
+        if (item.closest('rux-menu-item')?.hasAttribute('disabled')) return
+        const menuItems = Array.from(this.el.children)
+        if (menuItems.length > 1) {
+            menuItems.forEach((el) => {
+                el.removeAttribute('selected')
+            })
+            item.closest('rux-menu-item')?.setAttribute('selected', '')
+        }
+        this.ruxMenuSelected.emit(item)
     }
 
     render() {
