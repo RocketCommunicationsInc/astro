@@ -11,7 +11,7 @@ export class RuxMenu {
     /**
      * Emits when a rux-menu-item is selected. Emits the rux-menu-item selected in the event detail.
      */
-    @Event({ eventName: 'ruxmenuselected', bubbles: true })
+    @Event({ eventName: 'ruxmenuselected' })
     ruxMenuSelected!: EventEmitter
 
     connectedCallback() {
@@ -32,7 +32,9 @@ export class RuxMenu {
             })
             item.closest('rux-menu-item')?.setAttribute('selected', '')
         }
-        this.ruxMenuSelected.emit(item)
+        if (item.closest('rux-menu-item')) {
+            this.ruxMenuSelected.emit(item)
+        }
     }
 
     render() {
