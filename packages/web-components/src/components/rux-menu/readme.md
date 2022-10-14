@@ -7,9 +7,9 @@
 
 ## Events
 
-| Event             | Description                                                                                   | Type               |
-| ----------------- | --------------------------------------------------------------------------------------------- | ------------------ |
-| `ruxmenuselected` | Emits when a rux-menu-item is selected. Emits the rux-menu-item selected in the event detail. | `CustomEvent<any>` |
+| Event             | Description                                                                             | Type               |
+| ----------------- | --------------------------------------------------------------------------------------- | ------------------ |
+| `ruxmenuselected` | Emits when a rux-menu-item is selected. Emits the selected element in the event detail. | `CustomEvent<any>` |
 
 
 ----------------------------------------------

@@ -9,7 +9,7 @@ export class RuxMenu {
     @Element() el!: HTMLRuxMenuElement
 
     /**
-     * Emits when a rux-menu-item is selected. Emits the rux-menu-item selected in the event detail.
+     * Emits when a rux-menu-item is selected. Emits the selected element in the event detail.
      */
     @Event({ eventName: 'ruxmenuselected' })
     ruxMenuSelected!: EventEmitter
