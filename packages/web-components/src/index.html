@@ -19,37 +19,5 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body>
-        <rux-pop-up close-on-select>
-            <rux-icon icon="apps" slot="trigger"></rux-icon>
-            <rux-menu>
-                <rux-menu-item>
-                    <div style="padding: 2rem">
-                        <rux-button secondary style="margin-right: 1rem"
-                            >Fire Missles</rux-button
-                        >
-                        <rux-button>Don't fire</rux-button>
-                    </div>
-                </rux-menu-item>
-            </rux-menu>
-        </rux-pop-up>
-        <rux-pop-up>
-            <rux-icon icon="altitude" slot="trigger"></rux-icon>
-            <rux-menu>
-                <rux-input placeholder="placeholder"></rux-input>
-                <rux-input placeholder="placeholder"></rux-input>
-                <rux-input placeholder="placeholder"></rux-input>
-                <div>
-                    <rux-button secondary>Cancel</rux-button>
-                    <rux-button>Confrim</rux-button>
-                </div>
-            </rux-menu>
-        </rux-pop-up>
-        <script>
-            document.addEventListener('ruxmenuselected', (e) => {
-                console.log('heard ruxmenuselected!')
-                console.log(e.detail)
-            })
-        </script>
-    </body>
+    <body></body>
 </html>
