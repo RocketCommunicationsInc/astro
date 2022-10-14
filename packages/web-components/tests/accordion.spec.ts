@@ -203,37 +203,10 @@ test.describe('Accordion', () => {
         const details1 = child1.locator('details').first()
 
         //Assert
-        await child1
-            .evaluate((e) => {
-                return e.hasAttribute('expanded')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
-
-        await details1
-            .evaluate((e) => {
-                return e.hasAttribute('open')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
-
-        await child2
-            .evaluate((e) => {
-                return e.hasAttribute('expanded')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
-
-        await child3
-            .evaluate((e) => {
-                return e.hasAttribute('expanded')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
+        await expect(child1).not.toHaveAttribute('expanded', '')
+        await expect(details1).not.toHaveAttribute('open', '')
+        await expect(child2).not.toHaveAttribute('expanded', '')
+        await expect(child3).not.toHaveAttribute('expanded', '')
     })
 
     //when you click one, it expands, it gets the attribute open and expanded, if there is content, the content is visible
@@ -246,14 +219,8 @@ test.describe('Accordion', () => {
             .first()
 
         //assert - in the beginning the item should not have expanded attribut
-        await accordionItem
-            .evaluate((e) => {
-                return e.hasAttribute('expanded')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
 
+        await expect(accordionItem).not.toHaveAttribute('expanded', '')
         //act
         await accordionItem.click()
 
@@ -307,21 +274,8 @@ test.describe('Accordion', () => {
         await accordionItem.click()
 
         //assert
-        await accordionItem
-            .evaluate((e) => {
-                return e.hasAttribute('expanded')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
-
-        await accordionDetails
-            .evaluate((e) => {
-                return e.hasAttribute('open')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
+        await expect(accordionItem).not.toHaveAttribute('expanded', '')
+        await expect(accordionDetails).not.toHaveAttribute('open', '')
     })
 
     //Testing for presence of prefix slot content
@@ -352,16 +306,12 @@ test.describe('Accordion', () => {
         await expect(accordionChild).toHaveAttribute('disabled', '')
 
         //Act
+        await page.waitForTimeout(300)
+
         await accordionChild.click({ force: true })
 
         //Assert
-        await accordionChild
-            .evaluate((e) => {
-                return e.hasAttribute('expanded')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
+        await expect(accordionChild).not.toHaveAttribute('expanded', '')
     })
 
     //If attribute disabled is on rux-accordion then child items cannot be interacted with
@@ -375,21 +325,16 @@ test.describe('Accordion', () => {
 
         //Assert
         await expect(accordion).toHaveAttribute('disabled', '')
+        //remove flake from force clicks
+        await page.waitForTimeout(300)
 
         //Act
         await accordionChild1.click({ force: true })
         await accordionChild2.click({ force: true })
 
         //Assert
-        await accordionChild1
-            .evaluate((e) => {
-                return e.hasAttribute('expanded')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
-
-        await expect(accordionChild2).toHaveAttribute('expanded', '')
+        await expect(accordionChild1).not.toHaveAttribute('expanded', '')
+        await expect(accordionChild2).not.toHaveAttribute('expanded', '')
     })
 
     //If rux-accordion has attribute disallow-multiple, only one child can open at a time. Child will receive expanded, all other children will lose expanded.
@@ -412,21 +357,8 @@ test.describe('Accordion', () => {
 
         //Assert
         //When one child item is clicked, they should both close
-        await accordionChild1
-            .evaluate((e) => {
-                return e.hasAttribute('expanded')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
-
-        await accordionChild2
-            .evaluate((e) => {
-                return e.hasAttribute('expanded')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
+        await expect(accordionChild1).not.toHaveAttribute('expanded', '')
+        await expect(accordionChild2).not.toHaveAttribute('expanded', '')
 
         //Now all children should be closed
 
@@ -443,12 +375,6 @@ test.describe('Accordion', () => {
         //Assert
         //clicking on child two should open child 2 and close child 1
         await expect(accordionChild2).toHaveAttribute('expanded', '')
-        await accordionChild1
-            .evaluate((e) => {
-                return e.hasAttribute('expanded')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
+        await expect(accordionChild1).not.toHaveAttribute('expanded', '')
     })
 })

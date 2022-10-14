@@ -9,7 +9,7 @@ title: Color
 
 # Color
 
-Maintaining color consistency across applications is an essential part of what makes an application an Astro Application. Astro uses [Design Tokens](/design-tokens/getting-started/), which answers questions like “what color should be used for XYZ”? They define UI elements and their states states within the Astro Design System. There are three types of Design Tokens based on how the color will be used: [Reference Tokens](/design-tokens/reference/), [System Tokens](/design-tokens/system), and [Component Tokens](/design-tokens/component).
+Maintaining color consistency across applications is an essential part of what makes an application an Astro Application. Astro uses [Design Tokens](/design-tokens/getting-started/), which answers questions like “what color should be used for XYZ”? They define UI elements and their states within the Astro Design System. There are three types of Design Tokens based on how the color will be used: [Reference Tokens](/design-tokens/reference/), [System Tokens](/design-tokens/system), and [Component Tokens](/design-tokens/component).
 
 [Reference Tokens](/design-tokens/reference) are all the possible colors within the Astro Design System. There is no specific meaning attached to these colors, and they are organized according to thematic palettes. An example of a reference token is: "color.palette.brightblue.500".
 

@@ -1,6 +1,6 @@
 {
     "name": "@astrouxds/astro-web-components",
-    "version": "7.0.0",
+    "version": "7.1.0",
     "description": "Astro Web Components",
     "main": "dist/index.cjs.js",
     "module": "dist/index.js",
@@ -50,9 +50,9 @@
     "devDependencies": {
         "@astrouxds/astro-figma-export": "~1.0.1",
         "@astrouxds/storybook-addon-docs-stencil": "~1.0.10",
-        "@astrouxds/tokens": "^1.0.0",
+        "@astrouxds/tokens": "^1.0.2",
         "@babel/core": "~7.13.16",
-        "@playwright/test": "~1.25.2",
+        "@playwright/test": "~1.27.1",
         "@stencil/angular-output-target": "~0.4.0",
         "@stencil/eslint-plugin": "~0.4.0",
         "@stencil/react-output-target": "~0.3.1",

@@ -14,7 +14,7 @@ Astro represents a collection of artifacts including, but not limited to, guidan
 <table class="release-table release-table--current-version">
 	<thead>
 		<tr>
-			<th colspan="3">Astro {{ meta.version }} - Updated <time>September 29, 2022</time></th>
+			<th colspan="3">Astro {{ meta.version }} - Updated <time>October 13, 2022</time></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -25,65 +25,25 @@ Astro represents a collection of artifacts including, but not limited to, guidan
 		</tr>
 		<tr>
 			<td>Figma Dark Theme Library</td>
-			<td class="tabular">6.2.0 -&gt; <b>7.0.0</b></td>
-			<td><a href="https://www.figma.com/community/file/1014254163928270411">Release Notes</a></td>
+			<td class="tabular">7.0.1</td>
+			<td><a href="https://www.figma.com/community/file/1157371532469023309">Release Notes</a></td>
 		</tr>
 		<tr>
 			<td>Web Components</td>
-			<td class="tabular">6.14.0 -&gt; <b>7.0.0</b></td>
-			<td><a href="https://github.com/RocketCommunicationsInc/astro/releases/tag/v7.0.0">Release Notes</a></td>
+			<td class="tabular">7.0.2 -&gt; <b>7.1.0</b></td>
+			<td><a href="https://github.com/RocketCommunicationsInc/astro/releases/tag/v7.1.0">Release Notes</a></td>
 		</tr>
 		<tr>
 			<td>EGS Design Compliance</td>
-			<td class="tabular">6.1.0 -&gt; <b>6.2.0</b></td>
-			<td></td>
-		</tr>
-	</tbody>
-</table>
-
-## v6
-
-<table class="release-table release-table--current-version">
-	<thead>
-		<tr>
-			<th colspan="3">Astro 6 - Updated <time>September 29, 2022</time></th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Design Language</td>
-			<td class="tabular"><b>6.0</b></td>
-			<td>No changes this release</td>
-		</tr>
-		<tr>
-			<td>Figma Dark Theme Library</td>
-			<td class="tabular">6.1.7 -&gt; <b>6.2.0</b></td>
-			<td><a href="https://www.figma.com/community/file/1014254163928270411">Release Notes</a></td>
-		</tr>
-		<tr>
-			<td>Figma Light Theme Library</td>
-			<td class="tabular">6.0.0</td>
-			<td><a href="https://www.figma.com/community/file/1157352889822768689">Release Notes</a></td>
-		</tr>
-		<tr>
-			<td>Figma Wireframe Theme Library</td>
-			<td class="tabular">6.0.1 -&gt; <b>6.1.0</b></td>
-			<td><a href="https://www.figma.com/community/file/1101538528179386032">Release Notes</a></td>
-		</tr>
-		<tr>
-			<td>Web Components</td>
-			<td class="tabular">6.13.1 -&gt; <b>6.14.0</b></td>
-			<td><a href="https://github.com/RocketCommunicationsInc/astro/releases/tag/v6.14.0">Release Notes</a></td>
-		</tr>
-		<tr>
-			<td>EGS Design Compliance</td>
-			<td class="tabular"><b>3.1.0</b></td>
-			<td>No changes this release</td>
+			<td class="tabular">6.2.0</td>
+			<td>No Changes</td>
 		</tr>
 	</tbody>
 </table>
 
 ## Previous Major Versions
+
+Visit our [Legacy Documentation](https://v6.astrouxds.com/) for more information about Astro V6.
 
 <table class="release-table releast-table--previous-versions">
 	<thead>

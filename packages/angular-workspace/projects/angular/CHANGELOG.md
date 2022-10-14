@@ -1,5 +1,51 @@
 # @astrouxds/angular
 
+## 7.1.0
+
+### Minor Changes
+
+#### Pop Up
+
+- Added a `close-on-select` property that will close the pop-up when a user selects something from the menu.
+
+### Patch Changes
+
+#### Scrollbars
+
+- Updated styles in Firefox
+
+#### Tabs
+
+- Fixed an issue where dynamically adding a tab would result in unexpected behavior.
+
+## 7.0.2
+
+### Patch Changes
+
+#### Checkbox
+
+- Fixed visual regression on disabled state
+
+#### Pop Up
+
+- Fixed an issue where Pop Ups would not overlay correctly.
+
+#### Text Area
+
+- Reverted a 7.0 change to the component's internals that prevented users from being able to control the height of the element or disable resizing.
+
+## 7.0.1
+
+### Patch Changes
+
+- b8d6b8dc: Removed the `title` attribute from rux-monitoring-icon and rux-monitoring-progress-icon.
+- 599c6a74: Removed unnecessary type definitions
+- a83029cf: Fixes an issue in the typography utility classes
+- Updated dependencies [b8d6b8dc]
+- Updated dependencies [599c6a74]
+- Updated dependencies [a83029cf]
+  - @astrouxds/astro-web-components@7.0.1
+
 # 7.0 Changes
 
 ## Major

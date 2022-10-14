@@ -31,9 +31,7 @@ test.describe('Notification', () => {
 
         await icon.click()
         await page.waitForTimeout(100)
-        await el
-            .evaluate((e) => e.hasAttribute('open'))
-            .then((e) => expect(e).toBeFalsy())
+        await expect(el).not.toHaveAttribute('open', '')
     })
     test('closes when closeAfter is up', async ({ page }) => {
         await setBodyContent(
@@ -48,9 +46,7 @@ test.describe('Notification', () => {
         )
         const el = page.locator('rux-notification')
         await page.waitForTimeout(2100)
-        await el
-            .evaluate((e) => e.hasAttribute('open'))
-            .then((e) => expect(e).toBeFalsy())
+        await expect(el).not.toHaveAttribute('open', '')
     })
 })
 /*

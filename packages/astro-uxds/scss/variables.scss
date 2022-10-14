@@ -41,6 +41,17 @@
 
   // --docsearch-highlight-color: var(--primary-color);
   --docsearch-primary-color: var(--primary-color);
+
+  --color-background-surface-header: #172635;
+  --color-text-inverse: #080c11;
+  --color-text-secondary: #d4d8dd;
+  --color-text-primary: #fff;
+  --color-background-interactive: #4dacff;
+  --color-background-surface-selected: #1c3f5e;
+  --color-background-base-default: #101923;
+  --color-background-interactive-hover: #92cbff;
+  --color-background-interactive-muted: #004872; //not the same as astro token
+  --card-color-border: #51555b;
 }
 
 .light-theme {
