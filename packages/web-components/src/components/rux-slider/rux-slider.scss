@@ -13,6 +13,13 @@
     display: flex;
     flex-grow: 1;
     flex-flow: column;
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    line-height: var(
+        --line-height-base
+    ); // Solves the issue of a parent element with a larger line-height causing extra space to be taken up on some elements.
 }
 
 .hidden,
@@ -27,6 +34,14 @@
     }
 }
 
+.rux-input-label {
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
+    font-weight: var(--font-control-body-1-font-weight);
+    line-height: var(--font-control-body-1-line-height);
+}
+
 .with-axis-labels {
     padding-bottom: var(--spacing-8);
 }
@@ -34,6 +49,10 @@
 .rux-slider {
     height: calc(var(--spacing-4) + var(--spacing-1)); //20
     position: relative;
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
     :hover {
         cursor: pointer;
     }

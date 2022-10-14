@@ -15,6 +15,17 @@
     cursor: pointer;
 }
 
+.rux-popup {
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    line-height: var(
+        --line-height-base
+    ); //fixes issue where parent element with larger line-height causes layout shift.
+    text-align: left;
+}
+
 .rux-popup__content {
     position: absolute;
     padding: var(--spacing-0); //no spacing, slotted content handles padding

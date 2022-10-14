@@ -24,13 +24,13 @@
         ></script> -->
     </head>
     <body>
-        <!-- <ftl-belt access-token="ACCESS_TOKEN" file-id="oj8NRemkyC8dBRHHpo95f3">
+        <!-- <ftl-belt file-id="xn47jC9ZYiOita8mXjmghp">
             <ftl-holster
                 name="Classification Marking - Unclassified"
-                node="I6943:146913;6943:146908;4275:35678"
+                node='6943:146912'
             >
                 <rux-classification-marking
-                    tag
+                tag
                     classification="unclassified"
                 ></rux-classification-marking>
             </ftl-holster>
@@ -80,9 +80,17 @@
                 ></rux-classification-marking>
             </ftl-holster>
         </ftl-belt> -->
-        <rux-classification-marking
+        <div>
+            <rux-classification-marking
+            ></rux-classification-marking>
+            <rux-classification-marking
             tag
-            classification="cui"
-        ></rux-classification-marking>
+                classification="cui"
+            ></rux-classification-marking>
+            <rux-classification-marking
+            tag
+                classification="secret"
+            ></rux-classification-marking>
+        </div>
     </body>
 </html>

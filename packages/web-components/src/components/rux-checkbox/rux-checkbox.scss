@@ -12,10 +12,11 @@
 
 .rux-form-field {
     display: flex;
-    font-family: var(--font-body-1-font-family);
-    font-size: var(--font-body-1-font-size);
-    letter-spacing: var(--font-body-1-letter-spacing);
-    font-weight: var(--font-body-1-font-weight);
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
+    font-weight: var(--font-control-body-1-font-weight);
+    line-height: var(--font-control-body-1-line-height);
     color: var(--color-text-primary);
 }
 
@@ -73,4 +74,6 @@ label {
     font-family: var(--font-body-2-font-family);
     font-weight: var(--font-body-2-font-weight);
     letter-spacing: var(--font-body-2-letter-spacing);
+    line-height: var(--font-body-2-line-height);
+    text-align: left; // Solves the issue of a parent element with a different text-align overriding.
 }
