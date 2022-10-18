@@ -65,24 +65,20 @@
             </ftl-holster>
         </ftl-belt>
         <section>
-            <rux-dialog
-                open
-                dialog-title="hello"
-                dialog-message="world"
-            ></rux-dialog>
+            <rux-dialog open header="hello" message="world"></rux-dialog>
         </section>
         <section>
             <rux-dialog
                 id="props"
-                dialog-message="Props Message"
-                dialog-title="Props Title"
+                message="Props Message"
+                header="Props Title"
             ></rux-dialog>
             <rux-button id="openprops">Open Props Version</rux-button>
         </section>
         <section>
             <rux-dialog id="slots">
                 <span slot="header">Slot Header</span>
-                <div slot="message">
+                <div>
                     <span>Slot Message</span>
                     <rux-input placeholder="input time"></rux-input>
                 </div>
@@ -98,12 +94,8 @@
             >
         </section>
         <section>
-            <rux-dialog
-                id="mix"
-                dialog-title="Mixed"
-                deny-text="Custom Deny Text"
-            >
-                <div slot="message">
+            <rux-dialog id="mix" header="Mixed" deny-text="Custom Deny Text">
+                <div>
                     <span>Slot Message</span>
                     <rux-input placeholder="input time"></rux-input>
                 </div>

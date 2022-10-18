@@ -18,6 +18,47 @@ test.describe('Dialog', () => {
         const el = page.locator('rux-dialog')
         await expect(el).toHaveClass('hydrated')
     })
+    test('it renders with slots', async ({ page }) => {
+        await setBodyContent(
+            page,
+            `
+            <rux-dialog open>
+                <span slot="header">Header</span>
+                <div>Message</div>
+                <div slot="footer">Footer</div>
+            </rux-dialog>
+            `
+        )
+        const ruxDialog = page.locator('rux-dialog')
+        const header = ruxDialog.locator('.rux-dialog__header')
+        const content = ruxDialog.locator('.rux-dialog__content')
+        const footer = ruxDialog.locator('.rux-dialog__footer')
+
+        await expect(ruxDialog).toHaveClass('hydrated')
+        await expect(header).toHaveClass('rux-dialog__header')
+        await expect(content).toHaveClass('rux-dialog__content')
+        await expect(footer).toHaveClass('rux-dialog__footer')
+    })
+    test('it renders with a mix of slots and props', async ({ page }) => {
+        await setBodyContent(
+            page,
+            `
+            <rux-dialog open header="Title">
+                <div>Message</div>
+                <div slot="footer">Footer</div>
+            </rux-dialog>
+            `
+        )
+        const ruxDialog = page.locator('rux-dialog')
+        const header = ruxDialog.locator('.rux-dialog__header')
+        const content = ruxDialog.locator('.rux-dialog__content')
+        const footer = ruxDialog.locator('.rux-dialog__footer')
+
+        await expect(ruxDialog).toHaveClass('hydrated')
+        await expect(header).toHaveClass('rux-dialog__header')
+        await expect(content).toHaveClass('rux-dialog__content')
+        await expect(footer).toHaveClass('rux-dialog__footer')
+    })
     test('it handles attributes', async ({ page }) => {
         await setBodyContent(
             page,
@@ -311,7 +352,6 @@ test.describe(
         })
         /*
         Need to test: 
-        - With slots? Not sure if that's acutally beneficial. 
         - Better way to test events rather than console? 
         - current e2e has tests for dialog props changing - I don't think these are helpful. Thoughts? 
     */
