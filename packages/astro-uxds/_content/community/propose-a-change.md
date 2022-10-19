@@ -15,7 +15,7 @@ If you are new to Git and Git fork workflows the easiest way to edit Astro conte
 
 ## Step 1 - Navigate to the page you want to edit
 
-At the bottom of each page on [AstroUXDS.com](https://astrouxds.com) you will find a link titled **Propose a change or fix to this page**. Follw the link to propose your change on GitHub. If you are not an authorized Astro contributor you will be asked to create a fork of the repository, this is a safe operation. You cannot break Astro proposing a change.
+At the bottom of each page on [AstroUXDS.com](https://astrouxds.com) you will find a link titled **Propose a change or fix to this page**. Follow the link to propose your change on GitHub. If you are not an authorized Astro contributor you will be asked to create a fork of the repository, this is a safe operation. You cannot break Astro proposing a change.
 
 ## Step 2 - Fork the Astro repository
 
