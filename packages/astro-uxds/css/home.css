@@ -925,12 +925,12 @@ a.button-secondary.title-button {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 2rem;
+  gap: 1.5rem;
 }
 .site-footer__social li {
   display: flex;
   justify-content: center;
   width: 2.5rem;
-  margin-left: 1.5rem;
 }
 .site-footer__social img {
   height: 2.5rem;
@@ -1010,4 +1010,12 @@ a.button-secondary.title-button {
     grid-template-rows: repeat(5, 1fr);
     grid-auto-flow: column;
   }
+}
+
+@media screen and (max-width: 500px){
+  .site-footer__social ul {
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+
 }
