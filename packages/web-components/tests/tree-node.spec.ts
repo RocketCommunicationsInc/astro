@@ -5,13 +5,29 @@ test.describe('Tree Node', () => {
     test.beforeEach(async ({ page }) => {
         await startTestInBefore(page)
 
-        await setBodyContent(page, `<rux-tree-node>Node</rux-tree-node>`)
+        await setBodyContent(
+            page,
+            `
+        <rux-tree-node>Node</rux-tree-node>
+        <div class="parent-child">
+            <rux-tree-node>
+            Parent
+            <rux-tree-node slot="node">Child</rux-tree-node>
+            </rux-tree-node>
+        </div>
+        `
+        )
     })
 
     test('it renders', async ({ page }) => {
         const el = page.locator('rux-tree-node').first()
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
+    })
+    test('it renders children', async ({ page }) => {
+        const el = page.locator('.parent-child rux-tree-node').first()
+        const childDiv = el.locator('.tree-node').first()
+        await expect(childDiv).toHaveClass('tree-node tree-node--has-children')
     })
 
     test('handles prefix slot change', async ({ page }) => {

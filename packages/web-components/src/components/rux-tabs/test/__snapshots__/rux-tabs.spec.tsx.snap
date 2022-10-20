@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`rux-tabs renders 1`] = `
-<rux-tabs>
-  <mock:shadow-root>
-    <slot></slot>
-  </mock:shadow-root>
-</rux-tabs>
-`;

@@ -99,6 +99,30 @@ test.describe('Textarea in a form', () => {
         await submit.click()
         await expect(log).not.toContainText('Disabled')
     })
+    test('it renders label prop', async ({ page }) => {
+        await setBodyContent(
+            page,
+            `
+            <rux-textarea label="hello"></rux-textarea>
+        `
+        )
+        const el = page.locator('rux-textarea')
+        const label = el.locator('label')
+
+        await expect(label).toHaveClass('rux-textarea-label')
+    })
+    test('it renders label slot', async ({ page }) => {
+        await setBodyContent(
+            page,
+            `
+            <rux-textarea><div slot="label">hello</div></rux-textarea>
+        `
+        )
+        const el = page.locator('rux-textarea')
+        const label = el.locator('label')
+
+        await expect(label).toHaveClass('rux-textarea-label')
+    })
 })
 
 /**

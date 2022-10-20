@@ -41,8 +41,12 @@ test.describe('Push-button', () => {
                     </form>
                 </div>
                 <div style="width: 30%">
-            <ul id="log"></ul>
-        </div>
+                    <ul id="log"></ul>
+                </div>
+                <div class="auto-increment-id">
+                    <rux-push-button></rux-push-button> 
+                    <rux-push-button></rux-push-button>
+                </div>
         `
         )
 
@@ -143,6 +147,24 @@ test.describe('Push-button', () => {
 
         //Assert
         await expect(log).toContainText('ruxPushButtonNoVal:on')
+    })
+    test('should auto increments its own unique id', async ({ page }) => {
+        //Arrange
+        const section = page.locator('.auto-increment-id')
+        const pushButton1 = section.locator('rux-push-button').first()
+        const pushButtonInput1 = pushButton1.locator('input')
+        const pushButton2 = section.locator('rux-push-button').nth(1)
+        const pushButtonInput2 = pushButton2.locator('input')
+
+        //Assert
+        await expect(pushButtonInput1).toHaveAttribute(
+            'id',
+            'rux-push-button-0'
+        )
+        await expect(pushButtonInput2).toHaveAttribute(
+            'id',
+            'rux-push-button-2'
+        )
     })
 })
 /*

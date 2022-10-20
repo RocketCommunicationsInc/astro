@@ -301,7 +301,7 @@ test.describe('Tree', () => {
             </rux-tree>
         `
         )
-        page.addScriptTag({
+        await page.addScriptTag({
             content: `
         document.addEventListener('ruxtreenodeexpanded', function (event) {
             console.log('rux-tree-node-expanded', event.detail)

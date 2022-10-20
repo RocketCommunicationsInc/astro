@@ -97,5 +97,7 @@ test.describe('Pop up', async () => {
     /**
      * Need to test:
      *  - Open and close?
+     *  - Closes on an off click
+     *  - should be able to contain a form
      */
 })

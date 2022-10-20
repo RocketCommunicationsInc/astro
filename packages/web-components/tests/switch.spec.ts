@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+import { id } from 'date-fns/locale'
 import { startTestInBefore, setBodyContent } from './utils/_startTestEnv'
 
 test.describe('Switch', () => {
@@ -49,6 +50,10 @@ test.describe('Switch', () => {
                 <ul id="log"></ul>
             </div>
         </div>
+        <div class="second-test">
+            <rux-switch class="first" label="hello"></rux-switch>
+            <rux-switch class="second"><div slot="label">hello</div></rux-switch>
+        </div>
         `
         )
 
@@ -61,6 +66,40 @@ test.describe('Switch', () => {
         const el = page.locator('rux-switch').first()
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('rux-form-field hydrated')
+    })
+    test('it renders label prop', async ({ page }) => {
+        const el = page.locator('.second-test rux-switch').first()
+        const label = el.locator('label')
+
+        await expect(label).toHaveClass('rux-switch__button')
+    })
+    test('it renders label slot', async ({ page }) => {
+        const el = page.locator('.second-test rux-switch').nth(1)
+        const label = el.locator('label')
+
+        await expect(label).toHaveClass('rux-switch__button')
+    })
+    test('switches have unique ids', async ({ page }) => {
+        const switch1 = page.locator('.second-test rux-switch input').first()
+        const switch2 = page.locator('.second-test rux-switch input').nth(1)
+
+        await switch1.evaluate((e) => {
+            const switch1Id = e.id
+            const idStorage = document.createElement('div')
+            idStorage.classList.add(switch1Id)
+            e.appendChild(idStorage)
+        })
+
+        await switch2.evaluate((e) => {
+            const switch2Id = e.id
+            const idStorage = document.createElement('div')
+            idStorage.classList.add(switch2Id)
+            e.appendChild(idStorage)
+        })
+        const switch1IdClass = switch1.locator('div')
+        const switch2IdClass = switch2.locator('div')
+
+        await expect(switch1IdClass).not.toBe(switch2IdClass)
     })
     test('submits the correct select value when using a form', async ({
         page,
