@@ -17,9 +17,7 @@ test.describe('Classification Marking', () => {
             await expect(el).toHaveText('u')
         })
 
-        test('displays the correct label for Controlled', async ({
-            astroPage,
-        }) => {
+        test('displays the correct label for Controlled', async ({ astroPage }) => {
             const template = `<rux-classification-marking tag classification="controlled"></rux-classification-marking>`
 
             const el = await astroPage.load(template)
