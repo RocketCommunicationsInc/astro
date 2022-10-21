@@ -1,19 +1,9 @@
-import { test, expect } from '@playwright/test'
-import { startTestInBefore, setBodyContent } from './utils/_startTestEnv'
+import { test, expect } from './utils/_astro-fixtures'
 
 test.describe('Track', () => {
-    test.beforeEach(async ({ page }) => {
-        await startTestInBefore(page)
-
-        await setBodyContent(
-            page,
-            `
-            <rux-track></rux-track>
-        `
-        )
-    })
-    test('it renders', async ({ page }) => {
-        const el = page.locator('rux-track').first()
+    test('it renders', async ({ astroPage }) => {
+        const template = `<rux-track></rux-track>`
+        const el = await astroPage.load(template)
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })

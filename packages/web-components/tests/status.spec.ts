@@ -1,19 +1,14 @@
-import { test, expect } from '@playwright/test'
-import { startTestEnv, setBodyContent } from './utils/_startTestEnv'
+import { test, expect } from './utils/_astro-fixtures'
 
 test.describe('Status', () => {
-    startTestEnv()
 
-    test('it renders', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `
-        <rux-status status="standby"></rux-status>
-    `
-        )
-        const el = page.locator('rux-status').first()
+    test('it renders', async ({ astroPage }) => {
+        const template = `
+            <rux-status status="standby"></rux-status>
+        `
+        const el = await astroPage.load(template)
+        
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
-        await expect(el).toHaveAttribute('status', 'standby')
     })
 })

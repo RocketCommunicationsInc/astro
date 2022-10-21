@@ -1,14 +1,8 @@
-import { test, expect } from '@playwright/test'
-import { startTestInBefore, setBodyContent } from './utils/_startTestEnv'
+import { test, expect } from './utils/_astro-fixtures'
 
 test.describe('Timeline', () => {
-    test.beforeEach(async ({ page }) => {
-        await startTestInBefore(page)
-
-        await setBodyContent(
-            page,
-            `
-            <div style="width: 1050px; margin: auto">
+    test.beforeEach(async ({ astroPage, page }) => {
+        const template = `
             <rux-timeline
                 data-test-id="timeline"
                 start="2021-02-01T00:00:00Z"
@@ -71,9 +65,10 @@ test.describe('Timeline', () => {
             >
                 Edit Partial Ongoing Event
             </button>
-        </div>
         `
-        )
+
+         await astroPage.load(template)
+     
         await page.addScriptTag({
             content: `
             globalThis.addEvent = (start, end) => {
@@ -93,15 +88,14 @@ test.describe('Timeline', () => {
         })
     })
 
-    test('it renders', async ({ page }) => {
-        const el = page.locator('rux-timeline').first()
+    test('it renders', async ({ astroPage }) => {
+        const el = astroPage.firstChild
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })
-    test('when an event is currently in the timelines range if the timelines range is changed so that the event becomes out of range should not display as partial and be hidden', async ({
-        page,
-    }) => {
-        const el = page.locator('rux-timeline[data-test-id="timeline"]').first()
+
+    test('when an event is currently in the timelines range if the timelines range is changed so that the event becomes out of range should not display as partial and be hidden', async ({ astroPage }) => {
+        const el = astroPage.firstChild
 
         await el.evaluate((e) => {
             e.setAttribute('end', '2022-02-30')
@@ -116,10 +110,8 @@ test.describe('Timeline', () => {
             .evaluate((e) => e.hasAttribute('partial'))
             .then((e) => expect(e).toBeFalsy())
     })
-    test('if new event start date is before the timeline start date it should display as a partial start event', async ({
-        page,
-    }) => {
-        const el = page
+    test('if new event start date is before the timeline start date it should display as a partial start event', async ({ astroPage, page }) => {
+        const el = astroPage.firstChild
             .locator('rux-time-region[data-test-id="addEvent"] div')
             .first()
         const button = page.locator('#add-partial-start-button')
@@ -130,9 +122,7 @@ test.describe('Timeline', () => {
             'rux-time-region rux-time-region--partial-start'
         )
     })
-    test('if new event start date is after the timeline end date it should display as a partial end event', async ({
-        page,
-    }) => {
+    test('if new event start date is after the timeline end date it should display as a partial end event', async ({ astroPage, page }) => {
         const el = page
             .locator('rux-time-region[data-test-id="addEvent"] div')
             .first()
@@ -144,9 +134,7 @@ test.describe('Timeline', () => {
             'rux-time-region rux-time-region--partial-end'
         )
     })
-    test('if new event start date is before the timeline start date and the end date is after the timelines start date it should display an ongoing partial event', async ({
-        page,
-    }) => {
+    test('if new event start date is before the timeline start date and the end date is after the timelines start date it should display an ongoing partial event', async ({ astroPage, page }) => {
         const el = page
             .locator('rux-time-region[data-test-id="addEvent"] div')
             .first()
@@ -158,9 +146,7 @@ test.describe('Timeline', () => {
             'rux-time-region rux-time-region--partial-start rux-time-region--partial-end'
         )
     })
-    test('existing in-range event is edited, if the event start date is before the timeline start date it should display as a partial start event', async ({
-        page,
-    }) => {
+    test('existing in-range event is edited, if the event start date is before the timeline start date it should display as a partial start event', async ({ astroPage, page }) => {
         const el = page
             .locator('rux-time-region[data-test-id="editEvent"] div')
             .first()
@@ -186,9 +172,7 @@ test.describe('Timeline', () => {
             'rux-time-region rux-time-region--partial-end'
         )
     })
-    test('existing in-range event is edited, if the event start date is before the timeline start date and the end date is after the timelines start date it should display as a partial ongoing event', async ({
-        page,
-    }) => {
+    test('existing in-range event is edited, if the event start date is before the timeline start date and the end date is after the timelines start date it should display as a partial ongoing event', async ({ page }) => {
         const el = page
             .locator('rux-time-region[data-test-id="editEvent"] div')
             .first()

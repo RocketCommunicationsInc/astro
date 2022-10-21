@@ -1,19 +1,10 @@
-import { test, expect } from '@playwright/test'
-import { startTestInBefore, setBodyContent } from './utils/_startTestEnv'
-
+import { test, expect } from './utils/_astro-fixtures'
 test.describe('Indeterminate Progress', () => {
-    test.beforeEach(async ({ page }) => {
-        await startTestInBefore(page)
-
-        await setBodyContent(
-            page,
-            `
+    test('it renders', async ({ astroPage }) => {
+        const template = `
             <rux-indeterminate-progress></rux-indeterminate-progress>
-            `
-        )
-    })
-    test('it renders', async ({ page }) => {
-        const el = page.locator('rux-indeterminate-progress').first()
+        `
+        const el = await astroPage.load(template)
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })

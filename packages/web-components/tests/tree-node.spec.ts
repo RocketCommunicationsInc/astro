@@ -1,37 +1,30 @@
-import { test, expect } from '@playwright/test'
-import { startTestInBefore, setBodyContent } from './utils/_startTestEnv'
+import { test, expect } from './utils/_astro-fixtures'
 
 test.describe('Tree Node', () => {
-    test.beforeEach(async ({ page }) => {
-        await startTestInBefore(page)
 
-        await setBodyContent(
-            page,
-            `
-        <rux-tree-node>Node</rux-tree-node>
-        <div class="parent-child">
-            <rux-tree-node>
-            Parent
-            <rux-tree-node slot="node">Child</rux-tree-node>
-            </rux-tree-node>
-        </div>
-        `
-        )
-    })
-
-    test('it renders', async ({ page }) => {
-        const el = page.locator('rux-tree-node').first()
+    test('it renders', async ({ astroPage }) => {
+        const template = `<rux-tree-node>Node</rux-tree-node>`
+        const el = await astroPage.load(template)
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })
-    test('it renders children', async ({ page }) => {
-        const el = page.locator('.parent-child rux-tree-node').first()
+    test('it renders children', async ({ astroPage }) => {
+        const template = `
+            <rux-tree-node>
+                Item 1
+                <rux-tree-node slot="node">
+                    Item 1.1
+                </rux-tree-node>
+            </rux-tree-node>
+        `
+        const el = await astroPage.load(template)
         const childDiv = el.locator('.tree-node').first()
         await expect(childDiv).toHaveClass('tree-node tree-node--has-children')
     })
 
-    test('handles prefix slot change', async ({ page }) => {
-        const el = page.locator('rux-tree-node').first()
+    test('handles prefix slot change', async ({ astroPage }) => {
+        const template = `<rux-tree-node>Node</rux-tree-node>`
+        const el = await astroPage.load(template)
 
         await el.evaluate((e) => {
             const slot = document.createElement('rux-icon')
@@ -46,8 +39,9 @@ test.describe('Tree Node', () => {
         )
     })
 
-    test('handles suffix slot change', async ({ page }) => {
-        const el = page.locator('rux-tree-node').first()
+    test('handles suffix slot change', async ({ astroPage }) => {
+        const template = `<rux-tree-node>Node</rux-tree-node>`
+        const el = await astroPage.load(template)
 
         await el.evaluate((e) => {
             const slot = document.createElement('rux-icon')

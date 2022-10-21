@@ -1,19 +1,9 @@
-import { test, expect } from '@playwright/test'
-import { startTestInBefore, setBodyContent } from './utils/_startTestEnv'
+import { test, expect } from './utils/_astro-fixtures'
 
 test.describe('Time-region', () => {
-    test.beforeEach(async ({ page }) => {
-        await startTestInBefore(page)
-
-        await setBodyContent(
-            page,
-            `
-            <rux-time-region></rux-time-region>
-        `
-        )
-    })
-    test('it renders', async ({ page }) => {
-        const el = page.locator('rux-time-region').first()
+    test('it renders', async ({ astroPage }) => {
+        const template = `<rux-time-region></rux-time-region>`
+        const el = await astroPage.load(template)
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })

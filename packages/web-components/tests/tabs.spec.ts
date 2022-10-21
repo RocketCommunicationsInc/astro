@@ -1,13 +1,8 @@
-import { test, expect } from '@playwright/test'
-import { startTestInBefore, setBodyContent } from './utils/_startTestEnv'
+import { test, expect } from './utils/_astro-fixtures'
 
 test.describe('Tabs', () => {
-    test.beforeEach(async ({ page }) => {
-        await startTestInBefore(page)
-
-        await setBodyContent(
-            page,
-            `
+    test.beforeEach(async ({ astroPage }) => {
+        const template = `
             <div style="display: flex; flex-flow: column">
                 <rux-tabs id="tab-set-id-1">
                     <rux-tab id="tab-id-1">Tab 1</rux-tab>
@@ -16,42 +11,19 @@ test.describe('Tabs', () => {
                 </rux-tabs>
                 <rux-tab-panels aria-labelledby="tab-set-id-1">
                     <rux-tab-panel aria-labelledby="tab-id-1">
-                        <div
-                            style="
-                                padding: 1vw;
-                                border: rgba(255, 255, 255, 0.15) dashed 1px;
-                                font-family: monospace;
-                            "
-                        >
-                            <pre><<span>!-- Tab 1 HTML content --</span>></pre>
-                        </div>
+                    Content 1 
                     </rux-tab-panel>
                     <rux-tab-panel aria-labelledby="tab-id-2">
-                        <div
-                            style="
-                                padding: 1vw;
-                                border: rgba(255, 255, 255, 0.15) dashed 1px;
-                                font-family: monospace;
-                            "
-                        >
-                            <pre><<span>!-- Tab 2 HTML content --</span>></pre>
-                        </div>
+                    Content 2 
                     </rux-tab-panel>
                     <rux-tab-panel aria-labelledby="tab-id-3">
-                        <div
-                            style="
-                                padding: 1vw;
-                                border: rgba(255, 255, 255, 0.15) dashed 1px;
-                                font-family: monospace;
-                            "
-                        >
-                            <pre><<span>!-- Tab 3 HTML content --</span>></pre>
-                        </div>
+                    Content 3 
                     </rux-tab-panel>
                 </rux-tab-panels>
             </div>
         `
-        )
+
+        await astroPage.load(template)
     })
 
     test('it renders', async ({ page }) => {
@@ -123,54 +95,50 @@ test.describe('Tabs', () => {
     })
 })
 test.describe('Multiple tabs on same page', () => {
-    test.beforeEach(async ({ page }) => {
-        await startTestInBefore(page)
+    test.beforeEach(async ({ astroPage }) => {
+        const template = `
+            <div class="mydiv">
+                <rux-tabs id="tab-set-id-1">
+                    <rux-tab id="tab-id-1">Top 1 title</rux-tab>
+                    <rux-tab id="tab-id-2">Top 2 title</rux-tab>
+                    <rux-tab id="tab-id-3">Top 3 title</rux-tab>
+                </rux-tabs>
 
-        await setBodyContent(
-            page,
-            `
-        <div class="mydiv">
-        <rux-tabs id="tab-set-id-1">
-            <rux-tab id="tab-id-1">Top 1 title</rux-tab>
-            <rux-tab id="tab-id-2">Top 2 title</rux-tab>
-            <rux-tab id="tab-id-3">Top 3 title</rux-tab>
-        </rux-tabs>
+                <rux-tab-panels aria-labelledby="tab-set-id-1">
+                    <rux-tab-panel id="t1content" aria-labelledby="tab-id-1">Top Tab 1 content</rux-tab-panel>
+                    <rux-tab-panel id="t2content" aria-labelledby="tab-id-2">Top Tab 2 content</rux-tab-panel>
+                    <rux-tab-panel id="t3content" aria-labelledby="tab-id-3">Top Tab 3 content</rux-tab-panel>
+                </rux-tab-panels>
+            </div>
 
-        <rux-tab-panels aria-labelledby="tab-set-id-1">
-            <rux-tab-panel id="t1content" aria-labelledby="tab-id-1">Top Tab 1 content</rux-tab-panel>
-            <rux-tab-panel id="t2content" aria-labelledby="tab-id-2">Top Tab 2 content</rux-tab-panel>
-            <rux-tab-panel id="t3content" aria-labelledby="tab-id-3">Top Tab 3 content</rux-tab-panel>
-        </rux-tab-panels>
-    </div>
+            <div class="mydiv">
+                <rux-tabs id="tab-set-id-2">
+                    <rux-tab id="tab-id-11">Middle 1 title</rux-tab>
+                    <rux-tab id="tab-id-22">Middle 2 title</rux-tab>
+                    <rux-tab id="tab-id-33">Middle 3 title</rux-tab>
+                </rux-tabs>
 
-    <div class="mydiv">
-        <rux-tabs id="tab-set-id-2">
-            <rux-tab id="tab-id-11">Middle 1 title</rux-tab>
-            <rux-tab id="tab-id-22">Middle 2 title</rux-tab>
-            <rux-tab id="tab-id-33">Middle 3 title</rux-tab>
-        </rux-tabs>
+                <rux-tab-panels aria-labelledby="tab-set-id-2">
+                    <rux-tab-panel id="b1content" aria-labelledby="tab-id-11">Middle Tab 1 content</rux-tab-panel>
+                    <rux-tab-panel id="b2content" aria-labelledby="tab-id-22">Middle Tab 2 content</rux-tab-panel>
+                    <rux-tab-panel id="b3content" aria-labelledby="tab-id-33">Middle Tab 3 content</rux-tab-panel>
+                </rux-tab-panels>
+            </div>
+            <div class="mydiv">
+                <rux-tabs id="tab-set-id-3">
+                    <rux-tab id="tab-id-111">Bottom 1 title</rux-tab>
+                    <rux-tab id="tab-id-222">Bottom 2 title</rux-tab>
+                    <rux-tab id="tab-id-333">Bottom 3 title</rux-tab>
+                </rux-tabs>
 
-        <rux-tab-panels aria-labelledby="tab-set-id-2">
-            <rux-tab-panel id="b1content" aria-labelledby="tab-id-11">Middle Tab 1 content</rux-tab-panel>
-            <rux-tab-panel id="b2content" aria-labelledby="tab-id-22">Middle Tab 2 content</rux-tab-panel>
-            <rux-tab-panel id="b3content" aria-labelledby="tab-id-33">Middle Tab 3 content</rux-tab-panel>
-        </rux-tab-panels>
-    </div>
-    <div class="mydiv">
-        <rux-tabs id="tab-set-id-3">
-            <rux-tab id="tab-id-111">Bottom 1 title</rux-tab>
-            <rux-tab id="tab-id-222">Bottom 2 title</rux-tab>
-            <rux-tab id="tab-id-333">Bottom 3 title</rux-tab>
-        </rux-tabs>
-
-        <rux-tab-panels aria-labelledby="tab-set-id-3">
-            <rux-tab-panel id="b1content" aria-labelledby="tab-id-111">Bottom Tab 1 content</rux-tab-panel>
-            <rux-tab-panel id="b2content" aria-labelledby="tab-id-222">Bottom Tab 2 content</rux-tab-panel>
-            <rux-tab-panel id="b3content" aria-labelledby="tab-id-333">Bottom Tab 3 content</rux-tab-panel>
-        </rux-tab-panels>
-    </div>
+                <rux-tab-panels aria-labelledby="tab-set-id-3">
+                    <rux-tab-panel id="b1content" aria-labelledby="tab-id-111">Bottom Tab 1 content</rux-tab-panel>
+                    <rux-tab-panel id="b2content" aria-labelledby="tab-id-222">Bottom Tab 2 content</rux-tab-panel>
+                    <rux-tab-panel id="b3content" aria-labelledby="tab-id-333">Bottom Tab 3 content</rux-tab-panel>
+                </rux-tab-panels>
+            </div>
         `
-        )
+        await astroPage.load(template)
     })
 
     test('it should have the first tab of each rux-tabs visible', async ({
