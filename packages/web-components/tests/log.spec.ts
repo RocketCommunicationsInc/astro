@@ -118,10 +118,8 @@ test.describe('Log', () => {
             `,
         })
 
-        const input = page.locator('rux-input')
-        //Specific positioning is required for the switch click due to the nature of the element
-        await input.click()
-        //await input.click({ position: { x: 10, y: 10 } })
+        const input = await page.waitForSelector('rux-input')
+        await input.click({ force: true })
         await input.type('USA')
         await page.keyboard.press('Enter')
 

@@ -100,7 +100,7 @@ test.describe('Segmented-button', () => {
             page,
             `
         <div style="padding: 2.5% 5%">
-            <rux-segmented-button selected="Third segment"></rux-segmented-button>
+            <rux-segmented-button selected="First segment"></rux-segmented-button>
         </div>
         `
         )
@@ -123,7 +123,7 @@ test.describe('Segmented-button', () => {
         `,
         })
         const el = page.locator('rux-segmented-button').first()
-        await expect(el).toHaveAttribute('selected', 'Third segment')
+        await expect(el).toHaveAttribute('selected', 'First segment')
     })
 })
 /*
