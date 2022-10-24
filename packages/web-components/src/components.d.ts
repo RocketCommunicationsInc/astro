@@ -12080,10 +12080,6 @@ export namespace Components {
          */
         "hideClose": boolean;
         /**
-          * Message for the notification banner.
-         */
-        "message": string;
-        /**
           * Set to true to display the Banner and begin countdown to close (if a close-after Number value is provided).
          */
         "open": boolean;
@@ -32540,10 +32536,6 @@ declare namespace LocalJSX {
           * Prevents the user from dismissing the notification. Hides the `actions` slot.
          */
         "hideClose"?: boolean;
-        /**
-          * Message for the notification banner.
-         */
-        "message"?: string;
         /**
           * Fires when the notification banner is closed
          */

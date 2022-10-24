@@ -36,11 +36,6 @@ export class RuxNotification {
      *  Set to true to display the Banner and begin countdown to close (if a close-after Number value is provided).
      */
     @Prop({ reflect: true, mutable: true }) open: boolean = false
-
-    /**
-     *  Message for the notification banner.
-     */
-    @Prop() message: string = ''
     /**
      *  The background color. Possible values include 'off', 'standby', 'normal', 'caution', 'serious' and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).
      */
@@ -121,6 +116,7 @@ export class RuxNotification {
     }
 
     render() {
+        console.log()
         return (
             <Host>
                 <div
@@ -176,7 +172,7 @@ export class RuxNotification {
                             }}
                             part="message"
                         >
-                            <slot>{this.message}</slot>
+                            <slot></slot>
                         </div>
 
                         {!this.hideClose ? (
