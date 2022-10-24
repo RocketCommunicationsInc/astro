@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`rux-notification renders 1`] = `
-<rux-notification message="hello there" open="">
+<rux-notification open="">
   <mock:shadow-root>
     <div class="rux-notification-banner rux-notification-banner--large rux-notification-banner--open">
       <div class="rux-notification-banner__inner" part="container">
@@ -9,9 +9,7 @@ exports[`rux-notification renders 1`] = `
           <slot name="prefix"></slot>
         </div>
         <div class="rux-notification-banner__content" part="message">
-          <slot>
-            hello there
-          </slot>
+          <slot></slot>
         </div>
         <div class="rux-notification-banner__actions">
           <slot name="actions">
@@ -21,5 +19,6 @@ exports[`rux-notification renders 1`] = `
       </div>
     </div>
   </mock:shadow-root>
+  hello there
 </rux-notification>
 `;

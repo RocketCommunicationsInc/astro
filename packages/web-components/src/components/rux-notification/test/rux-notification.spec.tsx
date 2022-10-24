@@ -8,14 +8,14 @@ describe('rux-notification', () => {
     it('renders', async () => {
         const page = await newSpecPage({
             components: [RuxNotification],
-            html: `<rux-notification open message="hello there"></rux-notification>`,
+            html: `<rux-notification open>hello there</rux-notification>`,
         })
         expect(page.root).toMatchSnapshot()
     })
     it('sets open to false after the closeAfter time has been met', async () => {
         const ruxNotif = new RuxNotification()
         ruxNotif.open = true
-        ruxNotif.message = 'Hey, Listen!'
+        ruxNotif.innerHTML = 'Hey, Listen!'
         ruxNotif.status = 'critical'
         ruxNotif.closeAfter = 3000
         ruxNotif._updated()
@@ -25,7 +25,7 @@ describe('rux-notification', () => {
     it('changes open to false with the _onClick method', async () => {
         const ruxNotif = new RuxNotification()
         ruxNotif.open = true
-        ruxNotif.message = 'The Light provides'
+        ruxNotif.innerHTML = 'The Light provides'
         ruxNotif.status = 'normal'
         ruxNotif._onClick()
         expect(ruxNotif.open).toBe(false)
@@ -33,7 +33,7 @@ describe('rux-notification', () => {
     it('returns the correct value using the get _closeAfter method', async () => {
         const ruxNotif = new RuxNotification()
         ruxNotif.open = true
-        ruxNotif.message = 'SEVENTH COLUMN'
+        ruxNotif.innerHTML = 'SEVENTH COLUMN'
         ruxNotif.status = 'critical'
         ruxNotif.closeAfter = 3000
         ruxNotif._closeAfter
@@ -42,7 +42,7 @@ describe('rux-notification', () => {
     it('can accept milisecond values for closeAfter and closes notification', async () => {
         const ruxNotif = new RuxNotification()
         ruxNotif.open = true
-        ruxNotif.message = 'The Duality of RuxNotification'
+        ruxNotif.innerHTML = 'The Duality of RuxNotification'
         ruxNotif.status = 'caution'
         ruxNotif.closeAfter = 3000
         ruxNotif._updated()
@@ -53,7 +53,7 @@ describe('rux-notification', () => {
     it('can accept second values for closeAfter and closes notification', async () => {
         const ruxNotif = new RuxNotification()
         ruxNotif.open = true
-        ruxNotif.message = 'The Duality of RuxNotification'
+        ruxNotif.innerHTML = 'The Duality of RuxNotification'
         ruxNotif.status = 'caution'
         ruxNotif.closeAfter = 3
         ruxNotif._updated()
@@ -62,7 +62,7 @@ describe('rux-notification', () => {
     it('get _closeAfter returns 2000 if closeAfter is > 10s or < 2s', async () => {
         const ruxNotif = new RuxNotification()
         ruxNotif.open = true
-        ruxNotif.message = 'Drums, drums in the deep'
+        ruxNotif.innerHTML = 'Drums, drums in the deep'
         ruxNotif.status = 'critical'
         ruxNotif.closeAfter = 1
         ruxNotif._closeAfter
