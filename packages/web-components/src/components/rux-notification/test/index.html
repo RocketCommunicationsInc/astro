@@ -22,6 +22,38 @@
     </head>
 
     <body>
+        <rux-notification open id="notification" status="caution"
+            >Something caution has happened!</rux-notification
+        >
+        <script>
+            const eventSequence = [
+                {
+                    status: 'critical',
+                    message: '1 - something critical',
+                },
+                {
+                    status: 'normal',
+                    message: '2 - something normal',
+                },
+                {
+                    status: 'normal',
+                    message: '3 - something normal again',
+                },
+            ]
+            const notification = document.querySelector('#notification')
+            notification.addEventListener('ruxclosed', () => {
+                if (eventSequence.length > 0) {
+                    // Grab the first notification data
+                    notification.textContent = eventSequence[0].message
+                    notification.status = eventSequence[0].status
+                    // Remove the notification from the stack
+                    eventSequence.shift()
+                    // Reopen the notification
+                    notification.open = true
+                }
+            })
+        </script>
+
         <rux-notification open status="standby">
             <rux-icon icon="apps" slot="prefix"></rux-icon>
             Insert better example here
@@ -29,11 +61,9 @@
         <section>
             <h2>Default</h2>
             <div style="position: relative; overflow: hidden; height: 200px">
-                <rux-notification
-                    open
-                    data-test-id="default"
-                    message="testing time"
-                ></rux-notification>
+                <rux-notification open data-test-id="default"
+                    >testing time</rux-notification
+                >
             </div>
         </section>
 

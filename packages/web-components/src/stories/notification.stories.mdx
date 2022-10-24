@@ -3,8 +3,6 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
 const args = extractArgTypes('rux-notification')
 args.open.defaultValue = true
-args.message.defaultValue =
-    'This is a notification banner. It won’t disappear until the user dismisses it.'
 args.status.defaultValue = 'standby'
 
 <Meta
@@ -39,8 +37,7 @@ export const Default = (args) => {
         .closeAfter="${args.closeAfter}"
         .hideClose="${args.hideClose}"
         status="${args.status}"
-        message="${args.message}"
-    ></rux-notification>
+    >Notification Banner</rux-notification>
 </div>
     `
 }
@@ -52,7 +49,6 @@ export const Default = (args) => {
         args={{
             open: true,
             closeAfter: null,
-            message: "This is a notification banner. It won’t disappear until the user dismisses it.",
             status: "standby"
         }}
     >
@@ -90,7 +86,7 @@ A very basic pattern would look like:
     notification.addEventListener('ruxclosed', () => {
         if (eventSequence.length > 0) {
             // Grab the first notification data
-            notification.message = eventSequence[0].message
+            notification.textContent = eventSequence[0].message
             notification.status = eventSequence[0].status
             // Remove the notification from the stack
             eventSequence.shift()
@@ -119,8 +115,7 @@ export const NotificationAutoClose = (args) => {
         ?small="${args.small}"
         .closeAfter="${args.closeAfter}"
         .status="${args.status}"
-        message="This is a notification banner. It will disappear in 2000 ms."
-    ></rux-notification>
+    >Notification banner</rux-notification>
 </div>
     `
 }
@@ -152,8 +147,7 @@ export const HideClose = (args) => {
         .closeAfter="${args.closeAfter}"
         .status="${args.status}"
         .hideClose="${args.hideClose}"
-        message="This is a notification banner. It will disappear in 2000 ms."
-    ></rux-notification>
+    >Notification banner</rux-notification>
 </div>
     `
 }
@@ -182,8 +176,7 @@ export const Small = (args) => {
         ?small="${args.small}"
         .closeAfter="${args.closeAfter}"
         status="${args.status}"
-        message="${args.message}"
-    ></rux-notification>
+    >Notification banner</rux-notification>
 </div>
     `
 }
@@ -203,7 +196,6 @@ export const PrefixSlot = (args) => {
         ?open="${args.open}"
         .closeAfter="${args.closeAfter}"
         status="${args.status}"
-        message="${args.message}"
     >
     <rux-classification-marking classification="unclassified" tag slot="prefix"></rux-classification-marking>
     Notification banner
@@ -220,10 +212,8 @@ export const PrefixSlot = (args) => {
 
 ### Default Slot
 
-Use the default slot for more control over the content inside your Notification, for example, adding a link
+Use the default slot for control over the content inside your Notification, for example, adding a link
 within your message. 
-
-> NOTE: Content placed inside the default slot will override the `message` attribute.
 
 export const DefaultSlot = (args) => {
     return html`
@@ -282,8 +272,7 @@ export const WithSlottedContent = (args) => {
         ?small="${args.small}"
         .closeAfter="${args.closeAfter}"
         status="${args.status}"
-        message="${args.message}"
-    ></rux-notification>
+    >Notification banner</rux-notification>
 </div>
     `
 }
@@ -438,7 +427,6 @@ export const AllVariants = () => html`
         name="All Variants"
         argTypes={{
             closeAfter: { table: { disable: true } },
-            message: { table: { disable: true } },
             open: { table: { disable: true } },
             status: { table: { disable: true } }
         }}
