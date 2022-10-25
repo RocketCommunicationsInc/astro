@@ -91,20 +91,9 @@ test.describe('Dialog', () => {
         const el = page.locator('rux-dialog')
         const btn = page.locator('#toggle')
         await btn.click()
-        //! The toHaveAttribute way is better but is broken right now. Should be fixed by Playwright soon. See: https://github.com/microsoft/playwright/pull/16767
-        // await expect(el).toHaveAttribute('open', '')
-        await el
-            .evaluate((e) => e.hasAttribute('open'))
-            .then((e) => expect(e).toBeTruthy())
-        // click off to close dialog
+        await expect(el).toHaveAttribute('open', '')
         await page.mouse.click(10, 10)
-        //? This timeout is helping the mouse click complete before evaluating hasAttribute. Probably won't need this when toHaveAttribute is fixed.
-        await page.waitForTimeout(100)
-        //! Uncomment when toHaveAttribute is fixed
-        // await expect(el).not.toHaveAttribute('open', '')
-        await el
-            .evaluate((e) => e.hasAttribute('open'))
-            .then((e) => expect(e).toBeFalsy())
+        await expect(el).not.toHaveAttribute('open', '')
     })
     test('it closes the modal on deny click', async ({ page }) => {
         await setBodyContent(
@@ -116,19 +105,9 @@ test.describe('Dialog', () => {
         )
         const el = page.locator('rux-dialog')
         const denyBtn = el.locator('rux-button').first()
-        await el
-            .evaluate((e) => e.hasAttribute('open'))
-            .then((e) => {
-                expect(e).toBeTruthy()
-            })
+        await expect(el).toHaveAttribute('open', '')
         await denyBtn.click()
-        await el
-            .evaluate((e) => {
-                e.hasAttribute('open')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
+        await expect(el).not.toHaveAttribute('open', '')
     })
     test('it closes the modal on confirm click', async ({ page }) => {
         await setBodyContent(
@@ -140,19 +119,9 @@ test.describe('Dialog', () => {
         )
         const el = page.locator('rux-dialog')
         const confirmBtn = el.locator('rux-button').last()
-        await el
-            .evaluate((e) => e.hasAttribute('open'))
-            .then((e) => {
-                expect(e).toBeTruthy()
-            })
+        await expect(el).toHaveAttribute('open', '')
         await confirmBtn.click()
-        await el
-            .evaluate((e) => {
-                e.hasAttribute('open')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
+        await expect(el).not.toHaveAttribute('open', '')
     })
     test('it emits ruxdialogclosed event with detail of false when deny button is clicked', async ({
         page,
@@ -282,38 +251,22 @@ test.describe(
         }) => {
             await page.locator('#false').click()
             const ctcFalseModal = page.locator('#ctc-false')
-            await ctcFalseModal
-                .evaluate((e) => e.hasAttribute('open'))
-                .then((e) => {
-                    expect(e).toBeTruthy()
-                })
+            await expect(ctcFalseModal).toHaveAttribute('open', '')
             //click off, it should remain open.
             await page.locator('body').click({ position: { x: 10, y: 10 } })
             //ctcFalseModal should still be open
-            await ctcFalseModal
-                .evaluate((e) => e.hasAttribute('open'))
-                .then((e) => {
-                    expect(e).toBeTruthy()
-                })
+            await expect(ctcFalseModal).toHaveAttribute('open', '')
         })
         test('it closes on an off click when click-to-close is true', async ({
             page,
         }) => {
             await page.locator('#true').click()
             const ctcTrueModal = page.locator('#ctc-true')
-            await ctcTrueModal
-                .evaluate((e) => e.hasAttribute('open'))
-                .then((e) => {
-                    expect(e).toBeTruthy()
-                })
+            await expect(ctcTrueModal).toHaveAttribute('open', '')
             //click off, it should remain open.
             await page.locator('body').click({ position: { x: 10, y: 10 } })
             //ctcFalseModal should still be open
-            await ctcTrueModal
-                .evaluate((e) => e.hasAttribute('open'))
-                .then((e) => {
-                    expect(e).toBeFalsy()
-                })
+            await expect(ctcTrueModal).not.toHaveAttribute('open', '')
         })
         test('it resets detail.value after event is emitted', async ({
             page,

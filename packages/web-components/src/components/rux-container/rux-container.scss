@@ -29,6 +29,7 @@
     font-weight: var(--font-heading-2-font-weight);
     letter-spacing: var(--font-heading-2-letter-spacing);
     line-height: var(--font-heading-2-line-height);
+    text-align: left; // Solves the issue of a parent element with a different text-align overriding.
 }
 
 .rux-container__tab-bar {
@@ -43,9 +44,21 @@
 
 .rux-container__body {
     padding: var(--body-padding);
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    line-height: var(--font-body-1-line-height);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    text-align: left; // Solves the issue of a parent element with a different text-align overriding.
 }
 
 .rux-container__footer {
     background: var(--color-background-surface-default);
     padding: var(--container-footer-padding);
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    line-height: var(--font-body-1-line-height);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    text-align: left; // Solves the issue of a parent element with a different text-align overriding.
 }

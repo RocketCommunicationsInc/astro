@@ -1,5 +1,23 @@
 :host {
     display: block;
+    font-size: var(
+        --font-body-1-bold-font-size
+    ); /*This is here to fix the issue of setting font-size on parent and having it override the component styling*/
+    line-height: var(
+        --line-height-base
+    ); /*This is here to fix the issue of setting line-height on parent and having it override the component styling*/
+    text-align: center;
+}
+
+:host([tag]) {
+    display: inline-block;
+    font-size: var(
+        --font-body-2-bold-font-size
+    ); /*This is here to fix the issue of setting font-size on parent and having it override the component styling*/
+    line-height: var(
+        --line-height-base
+    ); /*This is here to fix the issue of setting line-height on parent and having it override the component styling*/
+    text-align: left;
 }
 
 :host([hidden]) {
@@ -11,6 +29,7 @@
     font-size: var(--font-body-1-bold-font-size);
     font-weight: var(--font-body-1-bold-font-weight);
     letter-spacing: var(--font-body-1-bold-letter-spacing);
+    line-height: var(--font-body-1-bold-line-height);
     color: var(--color-text-white);
     background-color: var(
         --classification-banner-color-background-unclassified

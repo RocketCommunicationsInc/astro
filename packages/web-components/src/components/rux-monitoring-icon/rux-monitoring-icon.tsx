@@ -65,7 +65,6 @@ export class RuxMonitoringIcon {
             <div
                 id="rux-advanced-status__icon"
                 class="rux-advanced-status"
-                title={`${this.notifications} ${this.label} ${this.sublabel}`}
                 part="container"
             >
                 <div class="rux-advanced-status__icon-group">

@@ -144,8 +144,7 @@ test.describe('Tree', () => {
         const treeNodeNested = treeNode.locator('rux-tree-node').first()
 
         //Act
-        await parent.focus()
-
+        await firstTreeNodeParentDiv.focus()
         //Assert
         await expect(treeNode).toHaveAttribute('expanded', '')
 

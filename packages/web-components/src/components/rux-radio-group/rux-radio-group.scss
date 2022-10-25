@@ -39,4 +39,5 @@
     &__asterisk {
         margin-left: var(--spacing-1);
     }
+    text-align: left; // Solves the issue of a parent element with a different text-align overriding.
 }

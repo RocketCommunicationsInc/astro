@@ -22,6 +22,10 @@
     position: relative;
     margin: var(--spacing-0);
     line-height: 0;
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -90,6 +94,10 @@ rux-icon {
     letter-spacing: var(--font-body-3-letter-spacing);
     color: var(--gsb-color-text);
     display: block;
+}
+
+.rux-advanced-status__status rux-status::part(status) {
+    line-height: 0;
 }
 
 .rux-advanced-status__hidden {

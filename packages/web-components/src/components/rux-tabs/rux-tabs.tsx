@@ -72,6 +72,8 @@ export class RuxTabs {
         e.detail.forEach((panel: HTMLRuxTabPanelElement) => {
             this._panels.push(panel)
         })
+        // run addTabs if this event was heard.
+        this._addTabs()
 
         // Default to first tab if none are selected
         const selectedTab =
@@ -93,6 +95,7 @@ export class RuxTabs {
     private _reset() {
         // hide everything
         // Only reset the tabs and panels that are part of this instance of rux-tabs
+
         this._tabs.forEach((tab) => {
             if (tab.parentElement === this.el) tab.selected = false
         })
