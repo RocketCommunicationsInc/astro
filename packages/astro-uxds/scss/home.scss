@@ -746,3 +746,14 @@ a.button-secondary.title-button {
     }
   }
 }
+
+@media screen and (max-width: 500px) {
+  .site-footer__social ul {
+    gap: 1rem 2.5rem;
+    flex-wrap: wrap;
+
+    & li {
+      margin: 0;
+    }
+  }
+}
