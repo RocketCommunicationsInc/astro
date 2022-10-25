@@ -1011,3 +1011,12 @@ a.button-secondary.title-button {
     grid-auto-flow: column;
   }
 }
+@media screen and (max-width: 500px) {
+  .site-footer__social ul {
+    gap: 1rem 2.5rem;
+    flex-wrap: wrap;
+  }
+  .site-footer__social ul li {
+    margin: 0;
+  }
+}

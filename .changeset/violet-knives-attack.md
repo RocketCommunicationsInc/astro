@@ -1,9 +1,9 @@
 ---
-"angular-workspace": major
-"@astrouxds/angular": major
-"astro-website": major
-"@astrouxds/react": major
-"@astrouxds/astro-web-components": major
+"angular-workspace": patch
+"@astrouxds/angular": patch
+"astro-website": patch
+"@astrouxds/react": patch
+"@astrouxds/astro-web-components": patch
 ---
 
 This fix addresses a bug where adding certain CSS styles to a parent element wrapping an Astro web component would cause certain parts of some components to inherit that styling. The major affectors were font-size, line-height, and text-align.
