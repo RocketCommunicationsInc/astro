@@ -14,3 +14,5 @@ src/globals.d.ts
 
 # Ignore Astro-uxds css files
 packages/astro-uxds/css
+
+packages/web-components/tests

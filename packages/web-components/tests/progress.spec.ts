@@ -133,9 +133,9 @@ test.describe('Progress', () => {
         </body>
     `
         )
-        const progress = page.locator('.rux-progress').first()
+        const progress = page.locator('rux-progress').first()
 
-        await expect(progress).toHaveAttribute('max', '')
+        await expect(progress).toHaveAttribute('max', "")
         await expect(progress).toHaveAttribute('value', '20')
     })
 })
