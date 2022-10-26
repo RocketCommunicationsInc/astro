@@ -61,7 +61,7 @@ exports[`rux-classification-marking rux-classification-marking banners renders t
     <div class="rux-classification rux-classification--banner" part="tag header">
       unclassified
     </div>
-  <slot></slot>
+    <slot></slot>
   </mock:shadow-root>
 </rux-classification-marking>
 `;
