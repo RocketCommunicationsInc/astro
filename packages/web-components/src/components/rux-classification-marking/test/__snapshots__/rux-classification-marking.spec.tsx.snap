@@ -57,8 +57,11 @@ exports[`rux-classification-marking rux-classification-marking banners renders s
 
 exports[`rux-classification-marking rux-classification-marking banners renders tincorrect option banner 1`] = `
 <rux-classification-marking classification="notapprovedoption">
-  <mock:shadow-root>
-    <div class="rux-classification rux-classification--banner" part="tag header"></div>
+   <mock:shadow-root>
+      <div class="rux-classification rux-classification--banner" part="tag header"></div>
+      <div class="rux-classification rux-classification--banner" part="tag header">
+        unclassified
+      </div>
     <slot></slot>
   </mock:shadow-root>
 </rux-classification-marking>
