@@ -72,7 +72,16 @@ export class RuxClassificationMarking {
             },
         }
 
-        const text = markings[this.type][this.classification]
+        let text
+
+        this.type === 'tag'
+            ? (text = markings[this.type][this.classification]
+                  ? markings[this.type][this.classification]
+                  : 'u')
+            : (text = markings[this.type][this.classification]
+                  ? markings[this.type][this.classification]
+                  : 'unclassified')
+
         return text
     }
 
