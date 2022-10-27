@@ -1,5 +1,17 @@
 # @astrouxds/astrouxds
 
+## 7.1.1
+
+### Patch Changes
+
+#### Classification Marking
+
+- An invalid `classification` now correctly displays "Unclassified".
+
+#### Web Components
+
+- Fixed an issue where `font-size`, `line-height`, and `text-align` properties when set on parent elements would incorrectly override component styles.
+
 ## 7.1.0
 
 ### Minor Changes
