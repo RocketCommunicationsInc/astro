@@ -12118,6 +12118,10 @@ export namespace Components {
     }
     interface RuxPopUp {
         /**
+          * Turns autoUpdate on or off which makes the pop-up move to stay in view based on scroll. Defaults to false.
+         */
+        "autoUpdatePosition": boolean;
+        /**
           * Closes the pop up and returns false.
          */
         "hide": () => Promise<false>;
@@ -32580,6 +32584,10 @@ declare namespace LocalJSX {
         "onRux-option-group-changed"?: (event: RuxOptionGroupCustomEvent<void>) => void;
     }
     interface RuxPopUp {
+        /**
+          * Turns autoUpdate on or off which makes the pop-up move to stay in view based on scroll. Defaults to false.
+         */
+        "autoUpdatePosition"?: boolean;
         /**
           * Emits when the pop up has closed.
          */
