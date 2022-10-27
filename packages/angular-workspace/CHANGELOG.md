@@ -1,5 +1,16 @@
 # @astrouxds/angular
 
+## 7.1.1
+
+### Patch Changes
+
+- b8b9be34: Fixing classification marking for when a non-standard classification is put in Something besides cui, controlled, confidential, secret, top secret, top secret//sci or unclassified. The marking would appear blank in this scenario, now it will show up as 'unclassified'.
+- a6b7e0e9: This fix addresses a bug where adding certain CSS styles to a parent element wrapping an Astro web component would cause certain parts of some components to inherit that styling. The major affectors were font-size, line-height, and text-align.
+  This fix affects the styling of most of the Astro web components. Specific font-size, line-height, or text-align attributes were added to the affected components to ensure that no parental inheritance affected styles that are dictated specifically in Figma.
+- Updated dependencies [b8b9be34]
+- Updated dependencies [a6b7e0e9]
+  - @astrouxds/astro-web-components@7.1.1
+
 ## 7.1.0
 
 ### Minor Changes
