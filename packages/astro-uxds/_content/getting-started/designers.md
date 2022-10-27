@@ -7,9 +7,9 @@ title: "Getting Started for Designers"
 
 # Getting Started For Designers
 
-Astro UX design assets include files for creating Astro application wireframes and mockups in Sketch and Adobe XD.
+Astro UXDS design assets include files for creating Astro application mockups and wireframes in Figma.
 
-Before reading any further, we recommend you take a look at a live [Astro Sample Application](https://sample-app.astrouxds.com/) and review available Astro components on the [Astro Storybook](https://astro-components.netlify.app/?path=/story/astro-uxds-welcome--start-here) site. Examples of Astro in-use can be seen within the Astro Service [Specific Design](/service-specific-ux-design/) pages.
+Before reading any further, we recommend you review available Astro components on the [Astro Storybook](https://astro-components.netlify.app/?path=/story/astro-uxds-welcome-start-here--page) site. Examples of Astro in-use can be seen within the Astro [Service Specific](/service-specific-ux-design/) Design pages.
 
 ## Design Guidance
 
@@ -18,12 +18,13 @@ Before reading any further, we recommend you take a look at a live [Astro Sample
 [Theme](/design-guidelines/theme/)
 [Grid](/design-guidelines/grid/)
 [Glossary](/design-guidelines/glossary/)
-[Compliance](/design-guidelines/compliance/)
 
 ## Figma
 
-[Astro UXDS Figma Library 6.0 - Dark Theme](https://www.figma.com/community/file/1014254163928270411)
-[Astro UXDS Figma Library 6.0 - Wireframe Theme](https://www.figma.com/community/file/1101538528179386032)
+[Astro 7 UXDS - Dark Theme](https://www.figma.com/community/file/1157371532469023309)
+[Astro UXDS 6.0 - Dark Theme](https://www.figma.com/community/file/1014254163928270411)
+[Astro UXDS 6.0 - Light Theme](https://www.figma.com/community/file/1157352889822768689)
+[Astro UXDS 6.0 - Wireframe Theme](https://www.figma.com/community/file/1101538528179386032)
 [Astro UXDS Icon Library](https://www.figma.com/community/file/1022883566772542677)
 
 ## Astro & EGS Design Compliance
