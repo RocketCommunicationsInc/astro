@@ -18,6 +18,30 @@ test.describe('Slider', () => {
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })
+    test('it renders label prop', async ({ page }) => {
+        await setBodyContent(
+            page,
+            `
+            <rux-slider label="hello"></rux-slider>
+        `
+        )
+        const el = page.locator('rux-slider')
+        const label = el.locator('label')
+
+        await expect(label).toHaveClass('rux-input-label')
+    })
+    test('it renders label slot', async ({ page }) => {
+        await setBodyContent(
+            page,
+            `
+            <rux-slider><div slot="label">hello</div></rux-slider>
+        `
+        )
+        const el = page.locator('rux-slider')
+        const label = el.locator('label')
+
+        await expect(label).toHaveClass('rux-input-label')
+    })
     test('should render the datalist when axis-labels is provided', async ({
         page,
     }) => {

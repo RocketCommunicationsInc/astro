@@ -208,6 +208,30 @@ test.describe('Radio-group-with-form', () => {
         await expect(log).not.toContainText('ruxColor:red')
     })
 })
+test.describe('Radio-group', () => {
+    test.beforeEach(async ({ page }) => {
+        await startTestInBefore(page)
+
+        await setBodyContent(
+            page,
+            `
+            <rux-radio-group label="hello"></rux-radio-group>
+            <rux-radio-group><div slot="label">hello</div></rux-radio-group>
+        `
+        )
+    })
+    test('renders label prop and slot', async ({ page }) => {
+        //Arrange
+        const ruxRadioProp = page.locator('rux-radio-group').first()
+        const labelProp = ruxRadioProp.locator('.rux-label')
+        const ruxRadioSlot = page.locator('rux-radio-group').nth(1)
+        const labelSlot = ruxRadioSlot.locator('.rux-label')
+
+        //Assert
+        await expect(labelSlot).toHaveClass('rux-label')
+        await expect(labelProp).toHaveClass('rux-label')
+    })
+})
 /*
     Need to test: 
     

@@ -41,8 +41,12 @@ test.describe('Push-button', () => {
                     </form>
                 </div>
                 <div style="width: 30%">
-            <ul id="log"></ul>
-        </div>
+                    <ul id="log"></ul>
+                </div>
+                <div class="auto-increment-id">
+                    <rux-push-button></rux-push-button> 
+                    <rux-push-button></rux-push-button>
+                </div>
         `
         )
 
@@ -136,6 +140,32 @@ test.describe('Push-button', () => {
 
         //Assert
         await expect(log).toContainText('ruxPushButtonNoVal:on')
+    })
+    test('should have unique ids', async ({ page }) => {
+        //Arrange
+        const section = page.locator('.auto-increment-id')
+        const pushButton1 = section.locator('rux-push-button').first()
+        const pushButtonInput1 = pushButton1.locator('input')
+        const pushButton2 = section.locator('rux-push-button').nth(1)
+        const pushButtonInput2 = pushButton2.locator('input')
+
+        await pushButtonInput1.evaluate((e) => {
+            const switch1Id = e.id
+            const idStorage = document.createElement('div')
+            idStorage.classList.add(switch1Id)
+            e.appendChild(idStorage)
+        })
+
+        await pushButtonInput2.evaluate((e) => {
+            const switch2Id = e.id
+            const idStorage = document.createElement('div')
+            idStorage.classList.add(switch2Id)
+            e.appendChild(idStorage)
+        })
+        const button1IdClass = pushButtonInput1.locator('div')
+        const button2IdClass = pushButtonInput2.locator('div')
+
+        await expect(button1IdClass).not.toBe(button2IdClass)
     })
 })
 /*

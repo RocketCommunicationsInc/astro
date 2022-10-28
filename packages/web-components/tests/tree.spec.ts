@@ -1,337 +1,151 @@
-import { test, expect } from '@playwright/test'
-import { startTestInBefore, setBodyContent } from './utils/_startTestEnv'
+import { test, expect } from './utils/_astro-fixtures'
 
 test.describe('Tree', () => {
-    test.beforeEach(async ({ page }) => {
-        await startTestInBefore(page)
-
-        await setBodyContent(
-            page,
-            `
-            <rux-tree role="tree" class="hydrated">
-                <rux-tree-node
-                    role="treeitem"
-                    aria-expanded="true"
-                    aria-selected="false"
-                    expanded=""
-                    aria-level="1"
-                    class="hydrated"
-                >
+    test.beforeEach(async ({ astroPage }) => {
+        const template = `
+            <rux-tree>
+                <rux-tree-node expanded>
                     Tree item 1
+
                     <rux-tree-node
                         slot="node"
-                        role="treeitem"
-                        aria-expanded="true"
-                        aria-selected="false"
-                        expanded=""
-                        aria-level="2"
-                        class="hydrated"
+                        expanded
                     >
                         Tree item 1.1
-                        <rux-tree-node
-                            slot="node"
-                            role="treeitem"
-                            aria-expanded="false"
-                            aria-selected="false"
-                            class="hydrated"
-                            aria-level="3"
-                        >
+
+                        <rux-tree-node slot="node">
                             Tree item 1.1.1
                         </rux-tree-node>
-                        <rux-tree-node
-                            slot="node"
-                            role="treeitem"
-                            aria-expanded="false"
-                            aria-selected="true"
-                            selected=""
-                            class="hydrated"
-                            aria-level="3"
-                        >
+
+                        <rux-tree-node slot="node">
                             Tree item 1.1.2
                         </rux-tree-node>
-                        <rux-tree-node
-                            slot="node"
-                            role="treeitem"
-                            aria-expanded="false"
-                            aria-selected="false"
-                            class="hydrated"
-                            aria-level="3"
-                        >
+
+                        <rux-tree-node slot="node">
                             Tree item 1.1.3
                         </rux-tree-node>
+
                     </rux-tree-node>
-                    <rux-tree-node
-                        slot="node"
-                        role="treeitem"
-                        aria-expanded="false"
-                        aria-selected="false"
-                        class="hydrated"
-                        aria-level="2"
-                    >
+
+                    <rux-tree-node slot="node">
                         Tree item 1.2
                     </rux-tree-node>
-                    <rux-tree-node
-                        slot="node"
-                        role="treeitem"
-                        aria-expanded="false"
-                        aria-selected="false"
-                        aria-level="2"
-                        class="hydrated"
-                    >
+
+                    <rux-tree-node slot="node">
                         Tree item 1.3
-                        <rux-tree-node
-                            slot="node"
-                            role="treeitem"
-                            aria-expanded="false"
-                            aria-selected="false"
-                            aria-level="3"
-                            class="hydrated"
-                        >
+
+                        <rux-tree-node slot="node">
                             Tree item 1.3.1
-                            <rux-tree-node
-                                slot="node"
-                                role="treeitem"
-                                aria-expanded="false"
-                                aria-selected="false"
-                                class="hydrated"
-                                aria-level="4"
-                            >
+                            <rux-tree-node slot="node">
                                 Tree item 1.1.1
                             </rux-tree-node>
-                            <rux-tree-node
-                                slot="node"
-                                role="treeitem"
-                                aria-expanded="false"
-                                aria-selected="false"
-                                class="hydrated"
-                                aria-level="4"
-                            >
+
+                            <rux-tree-node slot="node">
                                 Tree item 1.1.2
                             </rux-tree-node>
-                            <rux-tree-node
-                                slot="node"
-                                role="treeitem"
-                                aria-expanded="false"
-                                aria-selected="false"
-                                class="hydrated"
-                                aria-level="4"
-                            >
+
+                            <rux-tree-node slot="node">
                                 Tree item 1.1.3
                             </rux-tree-node>
                         </rux-tree-node>
-                        <rux-tree-node
-                            slot="node"
-                            role="treeitem"
-                            aria-expanded="false"
-                            aria-selected="false"
-                            aria-level="3"
-                            class="hydrated"
-                        >
+
+                        <rux-tree-node slot="node">
                             Tree item 1.3.2
-                            <rux-tree-node
-                                slot="node"
-                                role="treeitem"
-                                aria-expanded="false"
-                                aria-selected="false"
-                                class="hydrated"
-                                aria-level="4"
-                            >
+
+                            <rux-tree-node slot="node">
                                 Tree item 1.1.1
                             </rux-tree-node>
-                            <rux-tree-node
-                                slot="node"
-                                role="treeitem"
-                                aria-expanded="false"
-                                aria-selected="false"
-                                class="hydrated"
-                                aria-level="4"
-                            >
+
+                            <rux-tree-node slot="node">
                                 Tree item 1.1.2
                             </rux-tree-node>
-                            <rux-tree-node
-                                slot="node"
-                                role="treeitem"
-                                aria-expanded="false"
-                                aria-selected="false"
-                                class="hydrated"
-                                aria-level="4"
-                            >
+
+                            <rux-tree-node slot="node">
                                 Tree item 1.1.3
                             </rux-tree-node>
                         </rux-tree-node>
-                        <rux-tree-node
-                            slot="node"
-                            role="treeitem"
-                            aria-expanded="true"
-                            aria-selected="false"
-                            expanded=""
-                            aria-level="3"
-                            class="hydrated"
-                        >
+                        <rux-tree-node slot="node">
                             Tree item 1.3.3
-                            <rux-tree-node
-                                slot="node"
-                                role="treeitem"
-                                aria-expanded="false"
-                                aria-selected="false"
-                                class="hydrated"
-                                aria-level="4"
-                            >
+                            <rux-tree-node slot="node">
                                 Tree item 1.3.3.1
                             </rux-tree-node>
-                            <rux-tree-node
-                                slot="node"
-                                role="treeitem"
-                                aria-expanded="false"
-                                aria-selected="false"
-                                class="hydrated"
-                                aria-level="4"
-                            >
+                            <rux-tree-node slot="node">
                                 Tree item 1.3.3.2
                             </rux-tree-node>
-                            <rux-tree-node
-                                slot="node"
-                                role="treeitem"
-                                aria-expanded="false"
-                                aria-selected="false"
-                                class="hydrated"
-                                aria-level="4"
-                            >
+                            <rux-tree-node slot="node">
                                 Tree item 1.3.3.3
                             </rux-tree-node>
                         </rux-tree-node>
+                        
                     </rux-tree-node>
-                    <rux-tree-node
-                        slot="node"
-                        role="treeitem"
-                        aria-expanded="false"
-                        aria-selected="false"
-                        aria-level="2"
-                        class="hydrated"
-                    >
+                    <rux-tree-node slot="node">
                         Tree item 1.4
-                        <rux-tree-node
-                            slot="node"
-                            role="treeitem"
-                            aria-expanded="false"
-                            aria-selected="false"
-                            class="hydrated"
-                            aria-level="3"
-                        >
+                        <rux-tree-node slot="node">
                             Tree item 1.4.1
                         </rux-tree-node>
-                        <rux-tree-node
-                            slot="node"
-                            role="treeitem"
-                            aria-expanded="false"
-                            aria-selected="false"
-                            class="hydrated"
-                            aria-level="3"
-                        >
+                        <rux-tree-node slot="node">
                             Tree item 1.4.2
                         </rux-tree-node>
-                        <rux-tree-node
-                            slot="node"
-                            role="treeitem"
-                            aria-expanded="false"
-                            aria-selected="false"
-                            class="hydrated"
-                            aria-level="3"
-                        >
+                        <rux-tree-node slot="node">
                             Tree item 1.4.3
                         </rux-tree-node>
                     </rux-tree-node>
-                    <rux-tree-node
-                        slot="node"
-                        role="treeitem"
-                        aria-expanded="false"
-                        aria-selected="false"
-                        class="hydrated"
-                        aria-level="2"
-                        >Tree item 1.5
+                    <rux-tree-node slot="node">
+                        Tree item 1.5
                     </rux-tree-node>
                 </rux-tree-node>
-                <rux-tree-node
-                    id="test-expanded"
-                    role="treeitem"
-                    aria-expanded="false"
-                    aria-selected="false"
-                    aria-level="1"
-                    class="hydrated"
-                    >Tree item 2
-                    <rux-tree-node
-                        slot="node"
-                        role="treeitem"
-                        aria-expanded="false"
-                        aria-selected="false"
-                        class="hydrated"
-                        aria-level="2"
-                        >Tree item 2.1
+                <rux-tree-node id="test-expanded">
+                    Tree item 2
+                    <rux-tree-node slot="node">
+                        Tree item 2.1
                     </rux-tree-node>
-                    <rux-tree-node
-                        slot="node"
-                        role="treeitem"
-                        aria-expanded="false"
-                        aria-selected="false"
-                        class="hydrated"
-                        aria-level="2"
-                    >
+                    <rux-tree-node slot="node">
                         Tree item 2.2
                     </rux-tree-node>
-                    <rux-tree-node
-                        slot="node"
-                        role="treeitem"
-                        aria-expanded="false"
-                        aria-selected="false"
-                        class="hydrated"
-                        aria-level="2"
-                    >
+                    <rux-tree-node slot="node">
                         Tree item 2.3
                     </rux-tree-node>
                 </rux-tree-node>
-                <rux-tree-node
-                    role="treeitem"
-                    aria-expanded="false"
-                    aria-selected="false"
-                    class="hydrated"
-                    aria-level="1"
-                >
+                <rux-tree-node>
                     Tree item 3
                 </rux-tree-node>
             </rux-tree>
         `
-        )
-        page.addScriptTag({
-            content: `
-        document.addEventListener('ruxtreenodeexpanded', function (event) {
-            console.log('rux-tree-node-expanded', event.detail)
-        })
-        document.addEventListener('ruxtreenodecollapsed', function (event) {
-            console.log('rux-tree-node-collapsed', event.detail)
-        })
-        document.addEventListener('ruxtreenodeselected', function (event) {
-            console.log('rux-tree-node-selected', event.detail)
-        })
-        `,
-        })
+        
+        await astroPage.load(template)
+        await astroPage.addListener('ruxtreenodeexpanded')
+        await astroPage.addListener('ruxtreenodecollapsed')
+        await astroPage.addListener('ruxtreenodeselected')
+   
+        // await page.addScriptTag({
+        //     content: `
+        // document.addEventListener('ruxtreenodeexpanded', function (event) {
+        //     console.log('rux-tree-node-expanded', event.detail)
+        // })
+        // document.addEventListener('ruxtreenodecollapsed', function (event) {
+        //     console.log('rux-tree-node-collapsed', event.detail)
+        // })
+        // document.addEventListener('ruxtreenodeselected', function (event) {
+        //     console.log('rux-tree-node-selected', event.detail)
+        // })
+        // `,
+        // })
     })
 
-    test('it renders', async ({ page }) => {
-        const el = page.locator('rux-tree').first()
+    test('it renders', async ({ astroPage }) => {
+        const el = astroPage.firstChild
         await expect(el).toBeVisible()
-        await expect(el).toHaveClass('hydrated rux-tree')
+        await expect(el).toHaveClass('rux-tree hydrated')
     })
-    test('allows keyboard controls', async ({ page }) => {
+    test('allows keyboard controls', async ({ astroPage, page }) => {
         //Arrange
-        const treeNode = page.locator('rux-tree-node').first()
-        const firstTreeNodeParentDiv = treeNode.locator('.parent').first()
-        const secondNode = treeNode.locator('rux-tree-node').first()
-        // const parent = treeNode.locator('.tree-node').first()
-        // const treeNodeNested = treeNode.locator('rux-tree-node').first()
-        // const treeNodeNestedParent = treeNodeNested.locator('.parent').first()
+        const treeNode = astroPage.firstChild.locator('rux-tree-node').first()
+        const parent = treeNode.locator('.parent').first()
+        const treeNodeNested = treeNode.locator('rux-tree-node').first()
 
         //Act
-        await firstTreeNodeParentDiv.focus()
+        await parent.focus()
+
         //Assert
         await expect(treeNode).toHaveAttribute('expanded', '')
 
@@ -339,22 +153,23 @@ test.describe('Tree', () => {
         await page.keyboard.press('ArrowDown')
 
         //Assert
-        await expect(secondNode).toHaveAttribute('expanded', '')
+        await expect(treeNodeNested).toHaveAttribute('expanded', '')
 
         //Act
         await page.keyboard.press('ArrowLeft')
 
-        await expect(secondNode).not.toHaveAttribute('expanded', '')
+        await expect(treeNodeNested).not.toHaveAttribute('expanded', '')
+        //Assert
     })
-    test('emits ruxtreenodeselected event', async ({ page }) => {
+    test('emits ruxtreenodeselected event', async ({ astroPage, page }) => {
         //TODO need to check that event only fires once
         //Arrange
-        const ruxTreeNode = page.locator('rux-tree-node').first()
+        const ruxTreeNode = astroPage.firstChild.locator('rux-tree-node').first()
         const parent = ruxTreeNode.locator('.parent').first()
 
         //Assert
         page.on('console', (msg) => {
-            expect(msg.text()).toContain('rux-tree-node-selected')
+            expect(msg.text()).toContain('ruxtreenodeselected')
         })
 
         //Act
@@ -363,16 +178,17 @@ test.describe('Tree', () => {
             parent.click(),
         ])
     })
-    test('emits ruxtreenodeexpanded', async ({ page }) => {
+
+    test('emits ruxtreenodeexpanded', async ({ astroPage, page }) => {
         //TODO need to check that event only fires once
         //Arrange
-        const testExpanded = page.locator('#test-expanded').first()
+        const testExpanded = astroPage.firstChild.locator('#test-expanded').first()
         const parent = testExpanded.locator('.parent').first()
         const arrow = parent.locator('.arrow').first()
 
         //Assert
         page.on('console', (msg) => {
-            expect(msg.text()).toContain('rux-tree-node-expanded node')
+            expect(msg.text()).toContain('ruxtreenodeexpanded node')
         })
 
         //Act
@@ -381,10 +197,10 @@ test.describe('Tree', () => {
             arrow.click(),
         ])
     })
-    test('emits ruxtreenodecollapsed', async ({ page }) => {
+    test('emits ruxtreenodecollapsed', async ({ astroPage, page }) => {
         //TODO need to check that event only fires once
         //Arrange
-        const testExpanded = page.locator('#test-expanded').first()
+        const testExpanded = astroPage.firstChild.locator('#test-expanded').first()
         const parent = testExpanded.locator('.parent').first()
         const arrow = parent.locator('.arrow').first()
 
@@ -393,7 +209,7 @@ test.describe('Tree', () => {
 
         //Assert
         page.on('console', (msg) => {
-            expect(msg.text()).toContain('rux-tree-node-collapsed node')
+            expect(msg.text()).toContain('ruxtreenodecollapsed node')
         })
 
         //Act

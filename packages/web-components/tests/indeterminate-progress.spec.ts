@@ -1,12 +1,11 @@
 import { test, expect } from './utils/_astro-fixtures'
-
-test.describe('Button', () => {
+test.describe('Indeterminate Progress', () => {
     test('it renders', async ({ astroPage }) => {
-        const template = `<rux-button>Hello</rux-button>`
+        const template = `
+            <rux-indeterminate-progress></rux-indeterminate-progress>
+        `
         const el = await astroPage.load(template)
-
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })
-
 })
