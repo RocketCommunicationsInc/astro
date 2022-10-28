@@ -193,25 +193,24 @@ test.describe('Multiple tabs on same page', () => {
         await expect(bottomContent).toBeVisible()
     })
     test('it can dynamically add tabs that behave correctly', async ({
-        page,
+        astroPage, page,
     }) => {
-        await setBodyContent(
-            page,
-            `
-        <rux-tabs id="tab-set-id-1">
-        <rux-tab id="tab-id-1">Tab 1 title</rux-tab>
-        <rux-tab id="tab-id-2">Tab 2 title</rux-tab>
-        <rux-tab id="tab-id-3">Tab 3 title</rux-tab>
-    </rux-tabs>
+        const template = `
+            <rux-tabs id="tab-set-id-1">
+                <rux-tab id="tab-id-1">Tab 1 title</rux-tab>
+                <rux-tab id="tab-id-2">Tab 2 title</rux-tab>
+                <rux-tab id="tab-id-3">Tab 3 title</rux-tab>
+            </rux-tabs>
 
-    <rux-tab-panels aria-labelledby="tab-set-id-1">
-        <rux-tab-panel aria-labelledby="tab-id-1">Tab 1 HTML content</rux-tab-panel>
-        <rux-tab-panel aria-labelledby="tab-id-2">Tab 2 HTML content</rux-tab-panel>
-        <rux-tab-panel aria-labelledby="tab-id-3">Tab 3 HTML content</rux-tab-panel>
-    </rux-tab-panels>
-    <rux-button id="add">Add Tab</rux-button>
+            <rux-tab-panels aria-labelledby="tab-set-id-1">
+                <rux-tab-panel aria-labelledby="tab-id-1">Tab 1 HTML content</rux-tab-panel>
+                <rux-tab-panel aria-labelledby="tab-id-2">Tab 2 HTML content</rux-tab-panel>
+                <rux-tab-panel aria-labelledby="tab-id-3">Tab 3 HTML content</rux-tab-panel>
+            </rux-tab-panels>
+            <rux-button id="add">Add Tab</rux-button>
         `
-        )
+      
+        await astroPage.load(template)
         await page.addScriptTag({
             content: `
     let tabs = document.querySelector('rux-tabs')
