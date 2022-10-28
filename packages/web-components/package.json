@@ -29,7 +29,7 @@
         "test": "start-server-and-test ci.server 3333 test.all",
         "test.e2e": "npx playwright test",
         "test.wk": "npx playwright test --project=webkit",
-        "test.cr": "npx playwright test --project=chromium",
+        "test.cr": "npx playwright test --project=chromium --workers=5",
         "test.ff": "npx playwright test --project=firefox",
         "ci.server": "http-server www -p 3333 -c-1 --silent",
         "test.unit.watch": "TZ=UTC stencil test --spec --watchAll",
