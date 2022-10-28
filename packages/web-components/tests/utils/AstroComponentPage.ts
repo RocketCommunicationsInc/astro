@@ -14,8 +14,15 @@ export class AstroComponentPage {
     }
 
     async load(content: string, script?: string) {
-        await this.page.setContent(content)
-		await this.page.addStyleTag({url: '/build/astro-web-components.css'})
+        await this.page.evaluate(
+            ([content]) => {
+                document.body.innerHTML = content
+            },
+            [content]
+        )
+
+        // await this.page.setContent(content)
+		// await this.page.addStyleTag({url: '/build/astro-web-components.css'})
 		if (script) {
 			await this.page.addScriptTag({path: script})
 		}
