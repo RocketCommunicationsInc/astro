@@ -27,7 +27,7 @@ Before reading any further, we recommend you review available Astro components o
 [Astro UXDS 6.0 - Wireframe Theme](https://www.figma.com/community/file/1101538528179386032)
 [Astro UXDS Icon Library](https://www.figma.com/community/file/1022883566772542677)
 
-## Astro & EGS Design Compliance
+## Astro and EGS Design Compliance
 
 The Astro team has worked with EGS to establish the EGS Design Compliance requirements for developers targeting the EGS Platform. These requirements are specific to EGS development; these requirements are based on common best practices and accessibility guidelines and it is highly recommended for all users to incorporate them into their applications.
 
