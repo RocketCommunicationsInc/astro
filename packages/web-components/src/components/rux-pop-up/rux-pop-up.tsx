@@ -16,6 +16,7 @@ import {
     arrow,
     offset,
     flip,
+    shift,
     autoUpdate,
     autoPlacement,
 } from '@floating-ui/dom'
@@ -138,17 +139,30 @@ export class RuxPopUp {
         if (!this.open || !this.triggerSlot || !this.content) {
             return
         }
+        const placementCheck = () => {
+            if (this.autoUpdatePosition) {
+                return [
+                    offset(12),
+                    this.placement === 'auto'
+                        ? autoPlacement({ alignment: 'start' })
+                        : flip(),
+                    arrow({ element: this.arrowEl }),
+                ]
+            } else if (this.placement === 'auto') {
+                return [
+                    offset(12),
+                    autoPlacement({ alignment: 'start' }),
+                    arrow({ element: this.arrowEl }),
+                ]
+            } else {
+                return [offset(12), arrow({ element: this.arrowEl })]
+            }
+        }
         computePosition(this.triggerSlot, this.content, {
             //@ts-ignore
             placement: this.placement,
             strategy: this.strategy,
-            middleware: [
-                offset(12),
-                this.placement === 'auto'
-                    ? autoPlacement({ alignment: 'start' })
-                    : flip(),
-                arrow({ element: this.arrowEl }),
-            ],
+            middleware: placementCheck(),
         }).then(({ x, y, placement, middlewareData }) => {
             Object.assign(this.content.style, {
                 left: `${x}px`,
