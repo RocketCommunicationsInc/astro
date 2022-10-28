@@ -63,7 +63,7 @@ Import [Roboto](https://fonts.google.com/specimen/Roboto) in your index.html. We
 ```html
 <link rel="preconnect" href="https://fonts.gstatic.com" />
 <link
-    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&family=Roboto:wght@200;300;400;500;600;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
     rel="stylesheet"
 />
 ```
@@ -122,6 +122,20 @@ module.exports = {
 
   </rux-tab-panel>
 </rux-tab-panels>
+
+### Disable eslint rule
+Be aware that if you try to pass in any native HTML elements as slots using the `slot` attribute, as of Vue 2.6.0+, Vue's eslint config will throw a [no-deprecated-slot-attribute](https://eslint.vuejs.org/rules/no-deprecated-slot-attribute.html) error at you. 
+This is because Vue 3 removed the `slot` attribute in favor of `v-slot`, but the `slot` attribute is still part of the [HTML Standard](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/slot).
+
+As a workaround, you can disable this eslint rule. 
+
+In your package.json, under `eslintConfig`, add to your rules:
+
+```
+    "rules": {
+      "vue/no-deprecated-slot-attribute": "off"
+    }
+```
 
 ## Using our CSS Variables (Design Tokens).
 

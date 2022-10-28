@@ -88,6 +88,10 @@ rux-status {
     display: block;
 }
 
+.rux-advanced-status__status rux-status::part(status) {
+    line-height: 0;
+}
+
 .rux-advanced-status__hidden {
     display: none;
 }

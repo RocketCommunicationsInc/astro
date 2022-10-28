@@ -38,13 +38,7 @@ test.describe('Tabs', () => {
 
         // Assert
         await expect(tab1).toHaveAttribute('selected', '')
-        await tab2
-            .evaluate((e) => {
-                return e.hasAttribute('selected')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
+        await expect(tab2).not.toHaveAttribute('selected', '')
     })
     test('selects tab when user clicks', async ({ page }) => {
         //Arrange
@@ -58,13 +52,7 @@ test.describe('Tabs', () => {
 
         //Assert
         await expect(tab2).toHaveAttribute('selected', '')
-        await tab1
-            .evaluate((e) => {
-                return e.hasAttribute('selected')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
+        await expect(tab1).not.toHaveAttribute('selected', '')
 
         //Act
         await tab1Child.click({ force: true })
@@ -203,6 +191,86 @@ test.describe('Multiple tabs on same page', () => {
         //That tab should be visible now, and the other tabs that were visible should still be visible.
         await expect(topContent2).toBeVisible()
         await expect(bottomContent).toBeVisible()
+    })
+    test('it can dynamically add tabs that behave correctly', async ({
+        page,
+    }) => {
+        await setBodyContent(
+            page,
+            `
+        <rux-tabs id="tab-set-id-1">
+        <rux-tab id="tab-id-1">Tab 1 title</rux-tab>
+        <rux-tab id="tab-id-2">Tab 2 title</rux-tab>
+        <rux-tab id="tab-id-3">Tab 3 title</rux-tab>
+    </rux-tabs>
+
+    <rux-tab-panels aria-labelledby="tab-set-id-1">
+        <rux-tab-panel aria-labelledby="tab-id-1">Tab 1 HTML content</rux-tab-panel>
+        <rux-tab-panel aria-labelledby="tab-id-2">Tab 2 HTML content</rux-tab-panel>
+        <rux-tab-panel aria-labelledby="tab-id-3">Tab 3 HTML content</rux-tab-panel>
+    </rux-tab-panels>
+    <rux-button id="add">Add Tab</rux-button>
+        `
+        )
+        await page.addScriptTag({
+            content: `
+    let tabs = document.querySelector('rux-tabs')
+    let panels = document.querySelector('rux-tab-panels')
+    let btn = document.getElementById('add')
+    let count = document.querySelectorAll('rux-tab').length
+    btn.addEventListener('click', () => {
+        let newTab = document.createElement('rux-tab')
+        count++
+        newTab.id = 'tab-id-' + count
+        newTab.textContent = 'Tab' + count + ' title'
+        let newPanel = document.createElement('rux-tab-panel')
+        let str = 'tab-id-' + count
+        newPanel.setAttribute('aria-labelledby', str)
+        newPanel.textContent = 'Tab ' + count + ' HTML content'
+        tabs.appendChild(newTab)
+        panels.appendChild(newPanel)
+    })
+    `,
+        })
+
+        //Add new tab by pressing button, select new tab, select diff tab. Check selected at each stage
+        const btn = page.locator('#add')
+        await btn.click()
+        const newTab = page.locator('#tab-id-4')
+        await newTab
+            .evaluate((e) => {
+                return e.hasAttribute('selected')
+            })
+            .then((e) => {
+                expect(e).toBeFalsy()
+            })
+        await newTab.click()
+        await page.waitForTimeout(100)
+        await newTab
+            .evaluate((e) => {
+                return e.hasAttribute('selected')
+            })
+            .then((e) => {
+                expect(e).toBeTruthy()
+            })
+        // click again on first tab, make sure newTab becomes un-selected
+        const firstTab = page.locator('#tab-id-1')
+        await firstTab.click()
+        await page.waitForTimeout(100)
+        await firstTab
+            .evaluate((e) => {
+                return e.hasAttribute('selected')
+            })
+            .then((e) => {
+                expect(e).toBeTruthy
+            })
+        await newTab
+            .evaluate((e) => {
+                return e.hasAttribute('selected')
+            })
+            .then((e) => {
+                expect(e).toBeFalsy()
+            })
     })
 })
 /*

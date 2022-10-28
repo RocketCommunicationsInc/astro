@@ -120,14 +120,7 @@ test.describe('Push-button', () => {
         await disabledButton.click()
 
         //Assert
-        await disabledInput
-            .evaluate((e) => {
-                return e.hasAttribute('checked')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
-
+        await expect(disabledInput).not.toHaveAttribute('checked', '')
         //Act
         await pushButton.click()
         await submitButton.click()

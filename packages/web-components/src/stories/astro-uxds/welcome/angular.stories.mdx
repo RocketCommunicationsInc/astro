@@ -148,7 +148,7 @@ onInputChange(e: CustomEvent<HTMLRuxInputFieldElement>){
 ## Methods
 
 Some components offer public methods that can be executed. These methods are async and can be executed by setting a ViewChild decorator on the element.
-The Angular docs for setting and using `ViewChaild` decorator can be found [here](https://angular.io/api/core/ViewChild).
+The Angular docs for setting and using `ViewChild` decorator can be found [here](https://angular.io/api/core/ViewChild).
 
 ```html
 <rux-pop-up-menu #myPopUpMenu id="pop-up-menu">
@@ -159,7 +159,7 @@ The Angular docs for setting and using `ViewChaild` decorator can be found [here
 ```
 
 ```js
-import { Component } from '@angular/core'
+import { Component, ViewChild } from '@angular/core'
 
 @Component({
     selector: 'app-example',

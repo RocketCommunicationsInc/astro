@@ -13,42 +13,40 @@ theme: true
 
 # Tag
 
-Tags help users quickly identify important information related to an item and categorize items by keywords.
+A Tag is a component made up of a text label, container, and color. Tags help users quickly identify important information related to an item and categorize items by keywords. Tags can be static, used to provide additional information on an item, or interactive, with the abilities such as editing or clearing them from data sets or linking to other similarly tagged elements.
 
 ## Appearance & Behavior
 
-Tags are a distinct component that are useful for identifying important information at a glance as well as filtering and categorizing items by keywords. Other visual indicators such as color help to draw users' attention and assist in categorization of like items.
+Tags are useful for identifying important information at a glance as well as filtering and categorizing items by keywords. Other visual indicators, such as color, help to draw users' attention and assist in categorization of like items.
 
 ## Tags in Astro
 
-A Tag is a component made up of a text label, container, and color. Tags can be interactive, with the ability to edit or clear them from a data set, or static used as additional information or a link to other similarly tagged elements.
-
-In code, Astro provides Status Tags. A Status Tag is system generated and typically has three states (Pass, Fail, and Unknown). A Status Tag cannot be removed or cleared from the interface. The color style assigned to the Status Tag cannot be changed, though the text label of the tag can be. Status Tags should not be interactive. To use other colors or make a tag interactive, custom coding can be added on top of the provided Status Tag code.
+In code, Astro provides Status Tags. A Status Tag is system generated and typically has three states (Pass, Fail, and Unknown), though Astro provides tags outside of this scope as well. A Status Tag cannot be removed or cleared from the interface. There are two kinds of status tags: Pass/Fail/Unknown tags that are fixed in both text and color, and customizable tags correlating with status symbol colors that are text responsive. Status Tags should not be interactive. To use other colors or make a tag interactive, custom coding can be added on top of the provided Status Tag code.
 
 ## Use Cases
 
-Status Tags are commonly used to show the status of a system such as an antennae or another communication device. Status Tags add important information to the status of a system and can use domain and system-specific terminology such as Offline, Online, and Connecting or Under Maintenance.
+Status Tags are commonly used to show the status of a system such as an antennae or another communication device. Status Tags add important information to the status of a system and can use domain and system-specific terminology such as Offline, Online, Connecting, or Under Maintenance.
 
-Tags are most commonly used in large data sets, such as tables, to help filter and organize information. Tags are especially useful for scanning and comparing data sets for meaningful information and relationships. Users are allowed to create, edit and delete tags which help manage their large, dynamic data sets.
+Tags are most commonly used in large data sets, such as tables, to help filter and organize information. Tags are especially useful for scanning and comparing data sets for meaningful information and relationships. Users are allowed to create, edit, and delete tags which help manage their large, dynamic data sets.
 
 ## Common Mistakes
 
 - Users may confuse tags with buttons, so it is important to distinguish the shape and interaction of tags from button components.
 
-- When using tags, colors should not overlap status or classification colors. We recommend using standard tag colors. For further color guidance, please refer to the usage documentation (Color).
+- When using tags, colors should not overlap status or classification colors. We recommend using standard tag colors. For further color guidance, please refer to the usage documentation [Color](/design-guidelines/color/).
 
 - Keep in mind that using tags adds to the visual noise of an interface, so use tags in moderation.
 
 ## Examples
 
 :::two-col
-![Do: Use Status Tags to show system status.](/img/components/tags-do-1.png "Do: Use Status Tags to show system status.")
+![Do: Use tags when items are mapped to multiple categories and you need to differentiate between them.](/img/components/tags-do-1.png "Do: Use tags when items are mapped to multiple categories and you need to differentiate between them.")
 
-![Don’t: Don’t mix interactive and static tags. Tags that are being used to filter or organize data should have consistent behavior.](/img/components/tags-dont-1.png "Don’t: Don’t mix interactive and static tags. Tags that are being used to filter or organize data should have consistent behavior.")
+![Don’t: When writing tags, avoid line-wrapping and utilize short keywords when possible.](/img/components/tags-dont-1.png "When writing tags, avoid line-wrapping and utilize short keywords when possible.")
 
-![Do: Use tags when items are mapped to multiple categories and you need to differentiate between them.](/img/components/tags-do-2.png "Do: Use tags when items are mapped to multiple categories and you need to differentiate between them.")
+![Do: Use Status Tags to show system status.](/img/components/tags-do-2.png "Do: Use Status Tags to show system status.")
 
-![Don’t: When writing tags, avoid line-wrapping and utilize short keywords when possible.](/img/components/tags-dont-2.png "Don’t: When writing tags, avoid line-wrapping and utilize short keywords when possible.")
+![Don’t: Don't edit the text on Status Tags.](/img/components/tags-dont-2.png "Don’t: Don't edit the text on Status Tags.")
 
 ![Do: Use text colors in tags that pass WCAG AA contrast tests compared to the tags' background colors.](/img/components/tags-do-3.png "Do: Use text colors in tags that pass WCAG AA contrast tests compared to the tags' background colors.")
 

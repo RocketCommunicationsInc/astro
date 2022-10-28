@@ -22758,14 +22758,14 @@ export declare interface RuxPopUp extends Components.RuxPopUp {
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['open', 'placement', 'strategy'],
+  inputs: ['closeOnSelect', 'open', 'placement', 'strategy'],
   methods: ['show', 'hide']
 })
 @Component({
   selector: 'rux-pop-up',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['open', 'placement', 'strategy']
+  inputs: ['closeOnSelect', 'open', 'placement', 'strategy']
 })
 export class RuxPopUp {
   protected el: HTMLElement;

@@ -65,7 +65,12 @@ rux-button-group {
         color: var(--color-text-primary);
         user-select: none;
         font-family: var(--font-heading-2-font-family);
-        font-size: var(--font-heading-2-font-size);
+        font-size: var(
+            --font-heading-2-font-size
+        ); //fixes issue where parent element with larger font-size causes layout shift.
+        line-height: var(
+            --font-heading-2-line-height
+        ); //fixes issue where parent element with larger line-height causes layout shift.
         font-weight: var(--font-heading-2-font-weight);
         letter-spacing: var(--font-heading-2-letter-spacing);
         ::slotted(h6),
@@ -147,7 +152,14 @@ rux-button-group {
 
     &__message {
         padding: var(--spacing-4) var(--spacing-4) var(--spacing-0)
-            var(--spacing-4); //spacing 0 on bottom so there isn't double padding when footer is showing. Developer can add back padding if not footer using part.
+            var(--spacing-4); //spacing 0 on bottom so there isn't double padding when footer is showing. Developer can add back padding if no footer using part.
+        font-size: var(
+            --font-body-1-font-size
+        ); //fixes issue where parent element with larger font-size causes layout shift.
+        line-height: var(
+            --font-body-1-line-height
+        ); //fixes issue where parent element with larger line-height causes layout shift.
+        text-align: left; //fixes issue where parent element with different text-align causes text-shift shift.
     }
     .rux-button {
         box-shadow: none !important;

@@ -20,7 +20,7 @@ The Global Status Bar has four main parts: App Icon, App Title, App State, and L
 
 ![Simplest Global Status Bar - Only include the App Title.](/img/components/global-status-simple.png "Simplest Global Status Bar - Only include the App Title.")
 
-![Standard Global Status Bar - App Icon, App Title, App State, and Logged-in Username](/img/components/global-status-very.png "Standard Global Status Bar - App Icon, App Title, App State, and Logged-in Username")
+![Standard Global Status Bar - App Icon, App Title, App State, and Logged-in Username](/img/components/global-status-standard.png "Standard Global Status Bar - App Icon, App Title, App State, and Logged-in Username")
 
 ![Complex Global Status Bar - App Icon, App Title, App State, Logged-in Username, Clock, and Monitoring Icons.](/img/components/global-status-complex.png "Complex Global Status Bar - App Icon, App Title, App State, Logged-in Username, Clock, and Monitoring Icons.")
 

@@ -1,5 +1,278 @@
 # @astrouxds/angular
 
+## 7.1.1
+
+### Patch Changes
+
+#### Classification Marking
+
+- An invalid `classification` now correctly displays "Unclassified".
+
+#### Web Components
+
+- Fixed an issue where `font-size`, `line-height`, and `text-align` properties when set on parent elements would incorrectly override component styles.
+
+## 7.1.0
+
+### Minor Changes
+
+- 66fe8eed: Added a `close-on-select` property to `rux-pop-up` that will close the pop-up when a user selects something from the menu.
+
+### Patch Changes
+
+- b30ae94c: Updated scrollbar styles in firefox
+- 08efa7c0: Fixed an issue in rux-tabs where dynamically adding a tab would result in unexpected behavior.
+- Updated dependencies [b30ae94c]
+- Updated dependencies [08efa7c0]
+- Updated dependencies [66fe8eed]
+  - @astrouxds/astro-web-components@7.1.0
+
+## 7.0.1
+
+### Patch Changes
+
+#### Monitoring Icon
+
+- Removed the `title` attribute.
+
+#### Monitoring Progress Icon
+
+- Removed the `title` attribute.
+
+#### Build
+
+- Removed unnecessary type definitions in dist/types
+
+#### Tokens
+
+- Fixes an issue in the typography utility class calcs that was throwing errors in some build environments.
+
+## 7.0.0
+
+### Major Changes
+
+- e6ab50e2: Updating card spacing to match Figma with design tokens
+- cd0b73be: WHAT: The props of modal-title and modal-message on rux-dialog have been renamed header and message.
+  WHY: Prop names are more accurate and less-verbose now.
+  HOW TO MIGRATE: Change all instances of modal-title or modal-message props to header and message.
+- 350070d5: menu item - removes --popup-menu-text-color, --popup-menu-item-background-color, --popup-menu-item-hover-background-color, --popup-menu-item-hover-text-color css custom properties
+- 60be422d: What: Removed the title attribute from rux-icon. Why: The global HTML title attribute is not recommended for use, and was an oversight when added to rux-icon.
+- 16011b5f: WHAT: Renamed rux-pop-up-menu to rux-pop-up.
+  WHY: This naming convention was confusing with the addition of rux-menu.
+  HOW TO MIGRATE: Find and replace all instances of rux-pop-up-menu with rux-pop-up.
+- d344013a: Removes the animation on notification and makes the notification take up space in the DOM
+- a7296b6b: Our /dist/custom-elements build has been removed in favor of a faster treeshakeable /dist/components build. We anticipate very few people are using this build. To check if your project is affected, you can do a global find for 'astro-web-components/dist/custom-elements' in your project. If you are using this build, switch to 'astro-web-components/dist/loader' instead.
+- a97a688f: Fixing tab heights so they do not expand to the height of a direct container.
+- 14961eb5: The angular wrapper has been updated and will no longer be compatible with Angular versions less than 12.
+- 8bd85d35: patch: fixing bug where no value on the component would cause the progress bar to be too small.
+- a0536351: Updating design tokens to current CSS custom properties.
+- 8adb2313: Modifying dialog component to match spacing changes in Figma.
+- efed8d01: Updating container spacing to match Figma design, using design tokens to achieve this.
+- 9cf6ad00: Adding in text changes to the Link page on the AstroUXDS website.
+- 4ef29bc7: Tabs - Fixed an issue where light dom styles could override the shadow dom. Check to make sure you aren't explicitly styling `rux-tab` elements. If you are, use parts instead
+- 72617a88: WHAT: Global status bar no longer automaticall uppercases the app domain and name.
+  WHY: This was changed in order to match design.
+  HOW TO MIGRATE: If you are reliant on the app state and domain being in all caps, simply pass the `app-domain` and `app-state` an all uppercase version.
+- acdb9fa3: The default display for content inside Tree Nodes and may break your application if you are using the Tree Node with icons or status symbols.
+
+  ```
+  <rux-tree-node>
+     <rux-status status="critical"></rux-status>
+     Tree Node 1.1
+  </rux-tree-node>
+  ```
+
+  ```
+  <rux-tree-node>
+     <rux-status slot="prefix" status="critical"></rux-status>
+     Tree Node 1.1
+  </rux-tree-node>
+  ```
+
+  **Resolution:** Add `slot="prefix"` to any icons or status symbols.
+
+- 350070d5: classification marking - what: remove footer-banner part. why? deprecated migration: use footer instead
+- 70bb93a2: Updating the **Status Symbol** page on the Astro UXDS website. This page had text changes to be made referring to light theme, sections that were no longer relevant needed to be removed, color swatches for status symbol needed to be updated with the appropriate hex, RGB, and CSS values for light, dark, and light border. Compliance Rules needed to be updated.
+- fb6c03ad: feat(rux-push-button)
+  WHAT: part 'label' has been renamed to 'container'
+  WHY: to bring consistency between styling push buttons and standard buttons
+  HOW TO MIGRATE: If you were previously using ::part(label) to style your push button please change to ::part(container)
+- 1f75e0f6: WHAT: rux-segmented-button: change default size from small to medium
+  WHY: to align with other Astro inputs/buttons which default to medium
+  HOW TO MIGRATTE: Add size="small" to segmented buttons you wish to remain small sized.
+- d701180b: Converting stylesheet values to design tokens for spacing and correcting spacing issues for rux-select component.
+- 16011b5f: WHAT: Removed the `ruxmenuitemselected` event from `rux-menu-item`.
+  WHY: This event was being emitted for it's parent to hear and was not intended for use. This has been refactored to no longer be needed.
+  HOW TO MIGRATE: If you have instaces of listeners listening for the `ruxmenuitemselected` event, those can be replaced with the new `ruxmenuselected` event. The `e.detail` that the `ruxmenuselected` event returns is the equivalent of `ruxmenuitemselected`.
+- 6885b525: Creation of Accordion component (rux-accordion) and child component (rux-accordion-item).
+- 4ef29bc7: Tabs - Individual tab components are now large by default. If you are using rux-tab outside the tabs component, you may need to manually add the new `small` attribute
+- 16011b5f: WHAT: Removed the `ruxpopupselected` event on rux-pop-up. Added two new events to `rux-pop-up`, `ruxpopupopened` and `ruxpopupclosed`.
+  WHY: The `ruxpopupselected` event has been replaced with the `ruxmenuselected` event on `rux-menu`. `rux-pop-up` was missing opened and closed events as well.
+  HOW TO MIGRATE: Replace all listeners using `ruxpopupselected` with `ruxmenuselected`. For any listeners that are listening for the opening or closing of the `rux-pop-up`, you can now use `ruxpopupopened` and `ruxpopupclosed`.
+- 27b72893: Modal has been removed. It has been renamed to Dialog to align with our Design System naming and shares the exact same API as Modal.
+
+  Migration: You can do a global find/replace on your project for:
+
+  `rux-modal` -> `rux-dialog`
+  `ruxmodalclosed` -> `ruxdialogclosed`
+  `ruxmodalopened` -> `ruxdialogopened`
+
+### Minor Changes
+
+- dd787288: Added support for scrollbars in dialog.
+- 645bcecd: Adds typography utility classes
+- acdb9fa3: rux-tree-node - add a prefix and suffix slot so content can be added right before and after the default slot
+- 4ef29bc7: Tab - Added new explicit `small` attribute
+- acdb9fa3: rux-tree-node - add indicator, node, and text parts
+- 44bc076a: Links no longer change color on hover.
+- acdb9fa3: rux-tree-node - update styles - remove border, change indicator, change hover and select background-color, add truncate text as default
+
+### Patch Changes
+
+- fb5c444d: rux-log - add spacing tokens and adjust for astro 7.0 design
+- 5ae326fc: Updating clock spacing so it is in line with Figma and uses design tokens.
+- 3d16d6fb: Changing border to box-shadow, cleaning up commented out code, changing heights and widths to design tokens.
+- 24a2cb69: rux-segemented-button add spacing tokens and align to Astro 7.0 design
+- e83ac3d0: rux-input - updated spacing to align with design using design tokens
+- e706cd54: astrousdx.com - remove spectrum analyzer page, references, and redirect url to home page
+- 245f6764: Updating checkbox to match Figma
+- a97a688f: Removing Figma access token
+- 7032b2da: rux-pop-up-menu add design spacing tokens
+- 00853fd5: rux-switch - updated spacing with design tokens to align with design
+- 0617987f: rux-progress / rux-indeterminate-progress spacing and design token updates
+- 20de6be3: Removing script for testing holster.
+- 313563e4: rux-classification-marking updated spacing to align with design.
+- a08419c0: functional-components add spacing tokens to FormFieldMessages and align to astro design
+- 0fe7fc51: Fixed an issue where the event detail on dialog would not reset to default value after it emitted once.
+- f4041a4e: rux-textarea - add spacing tokens and adjust code to fix firefox issue with resize
+- 55e684a7: rux-iunput search - turn the magnifying glass around
+- 37d67cfd: rux-table add spacing tokens and align to astro 7.0 design
+- fddd718d: rux-slider added design tokens to the slider and adjusted the background
+- 991f5d66: Moved the `monitoring-label` part to the parent div of its previous location in order to provide more customizability.
+- 70354c26: rux-input - refactored type=password to use button rather than rux-button and aligned to Astro design specs
+- bf083308: rux-notification - add spacing tokens and align to astro 7.0 design
+- a97a688f: fix: adding styling to tab component to specifiy height of tabs.
+- 6d0f0b89: Modifying checkbox group to match Figma, Fixing border hover in checkbox
+- dab3a7f0: Modifying styling of .rux-classification-marking tag
+- a3822386: rux-tabs - set up design tokens and matched rux-tabs to astro design spacing standards
+- a410d159: rux-radio / rux-radio-group - update spacing using design tokens and figma
+- 516d772d: rux-button - implementt spacing design tokens and align to Astro design
+- b994030f: rux-push-button add spacing tokens and align to Astro design specs
+- 2ba8e9f4: replaces --disabled-opacity with --opacity-disabled design token
+- f8a8a586: Fixing display and width so tag obeys content width.
+- 4bf40336: rux-tab add shadow part for styling tab colors to replace deprecated custom properties
+- Updated dependencies [d89430ef]
+- Updated dependencies [e6ab50e2]
+- Updated dependencies [fb5c444d]
+- Updated dependencies [84e89afc]
+- Updated dependencies [d89430ef]
+- Updated dependencies [2a7e22c1]
+- Updated dependencies [e171cbe1]
+- Updated dependencies [cd0b73be]
+- Updated dependencies [f94be0fc]
+- Updated dependencies [5ae326fc]
+- Updated dependencies [3d16d6fb]
+- Updated dependencies [541523ab]
+- Updated dependencies [010907c4]
+- Updated dependencies [24a2cb69]
+- Updated dependencies [e83ac3d0]
+- Updated dependencies [e706cd54]
+- Updated dependencies [245f6764]
+- Updated dependencies [350070d5]
+- Updated dependencies [1d4926c4]
+- Updated dependencies [dd787288]
+- Updated dependencies [4c701386]
+- Updated dependencies [a97a688f]
+- Updated dependencies [84e89afc]
+- Updated dependencies [60be422d]
+- Updated dependencies [7032b2da]
+- Updated dependencies [d89430ef]
+- Updated dependencies [00853fd5]
+- Updated dependencies [16011b5f]
+- Updated dependencies [809eb56c]
+- Updated dependencies [d344013a]
+- Updated dependencies [a7296b6b]
+- Updated dependencies [a97a688f]
+- Updated dependencies [0617987f]
+- Updated dependencies [14961eb5]
+- Updated dependencies [20de6be3]
+- Updated dependencies [f1d93ff5]
+- Updated dependencies [8bd85d35]
+- Updated dependencies [f73e2219]
+- Updated dependencies [645bcecd]
+- Updated dependencies [acdb9fa3]
+- Updated dependencies [d89430ef]
+- Updated dependencies [1c49914c]
+- Updated dependencies [4ef29bc7]
+- Updated dependencies [853eead3]
+- Updated dependencies [313563e4]
+- Updated dependencies [a0536351]
+- Updated dependencies [a08419c0]
+- Updated dependencies [acdb9fa3]
+- Updated dependencies [0fe7fc51]
+- Updated dependencies [8adb2313]
+- Updated dependencies [541523ab]
+- Updated dependencies [d89430ef]
+- Updated dependencies [14961eb5]
+- Updated dependencies [efed8d01]
+- Updated dependencies [f4041a4e]
+- Updated dependencies [9cf6ad00]
+- Updated dependencies [8d885e14]
+- Updated dependencies [4ef29bc7]
+- Updated dependencies [1482d397]
+- Updated dependencies [f9b842f7]
+- Updated dependencies [55e684a7]
+- Updated dependencies [44bc076a]
+- Updated dependencies [f73e2219]
+- Updated dependencies [acdb9fa3]
+- Updated dependencies [d89430ef]
+- Updated dependencies [14961eb5]
+- Updated dependencies [72617a88]
+- Updated dependencies [acdb9fa3]
+- Updated dependencies [541523ab]
+- Updated dependencies [37d67cfd]
+- Updated dependencies [d89430ef]
+- Updated dependencies [350070d5]
+- Updated dependencies [fddd718d]
+- Updated dependencies [991f5d66]
+- Updated dependencies [5e2608d1]
+- Updated dependencies [70354c26]
+- Updated dependencies [3c0cd2b8]
+- Updated dependencies [70bb93a2]
+- Updated dependencies [54364f1b]
+- Updated dependencies [8d885e14]
+- Updated dependencies [fb6c03ad]
+- Updated dependencies [1f75e0f6]
+- Updated dependencies [f9b842f7]
+- Updated dependencies [bf083308]
+- Updated dependencies [d701180b]
+- Updated dependencies [a97a688f]
+- Updated dependencies [6d0f0b89]
+- Updated dependencies [16011b5f]
+- Updated dependencies [d89430ef]
+- Updated dependencies [dab3a7f0]
+- Updated dependencies [f9b842f7]
+- Updated dependencies [a3822386]
+- Updated dependencies [84e89afc]
+- Updated dependencies [5e2608d1]
+- Updated dependencies [5e2608d1]
+- Updated dependencies [0270d0a6]
+- Updated dependencies [a410d159]
+- Updated dependencies [6885b525]
+- Updated dependencies [516d772d]
+- Updated dependencies [f1d93ff5]
+- Updated dependencies [b994030f]
+- Updated dependencies [4ef29bc7]
+- Updated dependencies [2ba8e9f4]
+- Updated dependencies [f8a8a586]
+- Updated dependencies [4bf40336]
+- Updated dependencies [d89430ef]
+- Updated dependencies [c9b10b83]
+- Updated dependencies [d89430ef]
+- Updated dependencies [16011b5f]
+- Updated dependencies [27b72893]
+  - @astrouxds/astro-web-components@7.0.0
+
 ## 7.0.0-beta.4
 
 ### Major Changes
