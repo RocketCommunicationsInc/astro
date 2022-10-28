@@ -16,7 +16,6 @@ import {
     arrow,
     offset,
     flip,
-    shift,
     autoUpdate,
     autoPlacement,
 } from '@floating-ui/dom'
