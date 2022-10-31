@@ -58,7 +58,7 @@ export class RuxPopUp {
     /**
      * Turns autoUpdate on or off which makes the pop-up move to stay in view based on scroll. Defaults to false.
      */
-    @Prop({ mutable: true, reflect: true }) autoUpdatePosition: boolean = false
+    @Prop({ mutable: true, reflect: true }) disableAutoUpdate: boolean = false
 
     /**
      * The position strategy of the popup, either absolute or fixed.
@@ -139,7 +139,7 @@ export class RuxPopUp {
             return
         }
         const placementCheck = () => {
-            if (this.autoUpdatePosition) {
+            if (!this.disableAutoUpdate) {
                 return [
                     offset(12),
                     this.placement === 'auto'
@@ -193,7 +193,7 @@ export class RuxPopUp {
         this._stopPositioner()
         if (this.open) {
             this._position()
-            if (this.autoUpdatePosition) {
+            if (!this.disableAutoUpdate) {
                 this._positionerCleanup = autoUpdate(
                     this.triggerSlot,
                     this.content,

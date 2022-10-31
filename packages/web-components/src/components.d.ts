@@ -12120,7 +12120,7 @@ export namespace Components {
         /**
           * Turns autoUpdate on or off which makes the pop-up move to stay in view based on scroll. Defaults to false.
          */
-        "autoUpdatePosition": boolean;
+        "disableAutoUpdate": boolean;
         /**
           * Closes the pop up and returns false.
          */
@@ -32587,7 +32587,7 @@ declare namespace LocalJSX {
         /**
           * Turns autoUpdate on or off which makes the pop-up move to stay in view based on scroll. Defaults to false.
          */
-        "autoUpdatePosition"?: boolean;
+        "disableAutoUpdate"?: boolean;
         /**
           * Emits when the pop up has closed.
          */
