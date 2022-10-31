@@ -9,7 +9,7 @@ import {
     Host,
     State,
 } from '@stencil/core'
-import FormFieldMessage from '../../common/functional-components/FormFieldMessage/FormFieldMessage'
+import FormFieldMessage from '../../common/functional-components/FormFieldMessage2/FormFieldMessage'
 
 import { FormFieldInterface } from '../../common/interfaces.module'
 import { renderHiddenInput, hasSlot } from '../../utils/utils'
@@ -289,7 +289,10 @@ export class RuxCheckbox implements FormFieldInterface {
                         </div>
                     </label>
                 </div>
-                <FormFieldMessage helpText={helpText} />
+                <FormFieldMessage helpText={helpText}>
+                    <slot name="oneslot"></slot>
+                    <slot name="twoslot"></slot>
+                </FormFieldMessage>
             </Host>
         )
     }
