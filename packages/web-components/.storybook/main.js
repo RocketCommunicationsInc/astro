@@ -10,7 +10,6 @@ module.exports = {
         '@storybook/addon-a11y',
         'storybook-addon-themes',
         '@astrouxds/storybook-addon-docs-stencil',
-        '@storybook/addon-google-analytics',
     ],
     staticDirs: ['../dist'],
 }
