@@ -41,7 +41,6 @@ This will spin up a stencil dev server for rapid prototyping at [localhost:3333]
 
 - `packages`
   - `angular` - Our sibling Angular wrapper library.
-  - `astro-uxds` - Our design system documentation site, [astrouxds.com](https://astrouxds.com). Built with 11ty.
   - `react` - Our sibling React wrapper library
   - `starter-kits` - A collection of minimal starter kit environments for various frameworks.
   - **`web-components`** - The meat and potatoes. Our web component library.
