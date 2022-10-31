@@ -24,14 +24,64 @@
     </head>
 
     <body class="dark-theme">
-        <rux-checkbox><div slot="oneslot">stuff only one</div></rux-checkbox
+        <rux-checkbox help-text="Help Prop" error-text="snuts">
+            <div slot="help-text">Help Slot</div> </rux-checkbox
         ><br />
         <rux-checkbox
-            ><div slot="twoslot">other stuff only two</div></rux-checkbox
+            ><div slot="help-text">other stuff only two</div></rux-checkbox
         ><br />
         <rux-checkbox
-            ><div slot="oneslot">This has both</div>
-            <div slot="twoslot">this is the second</div></rux-checkbox
+            ><div slot="help-text">This has both</div>
+            <span slot="error-text">this is the second</span></rux-checkbox
         >
+
+        <section>
+            <rux-checkbox
+                id="test-this"
+                label="this my label, frances"
+            ></rux-checkbox
+            ><br />
+            <rux-button id="addHelpSlot">Add Help Slot</rux-button><br />
+            <rux-button id="removeHelpSlot">Remove Help Slot</rux-button><br />
+            <rux-button id="addErrorSlot">Add Error Slot</rux-button><br />
+            <rux-button id="removeErrorSlot">Remove Error Slot</rux-button
+            ><br />
+        </section>
+        <script>
+            const helpSlotButton = document.getElementById('addHelpSlot')
+            const removeHelpSlotButton = document.getElementById(
+                'removeHelpSlot'
+            )
+            const helpPropButton = document.getElementById('addHelpProp')
+            const errorSlotButton = document.getElementById('addErrorSlot')
+            const removeErrorSlotButton = document.getElementById(
+                'removeErrorSlot'
+            )
+            const errorPropButton = document.getElementById('addErrorProp')
+            const checkBox = document.getElementById('test-this')
+
+            helpSlotButton.addEventListener('click', () => {
+                checkBox.innerHTML += `
+                    <div slot="help-text">HELP SLOT</div>
+                `
+            })
+            removeHelpSlotButton.addEventListener('click', () => {
+                const helpTextSlot = checkBox.querySelector(
+                    `[slot='help-text']`
+                )
+                helpTextSlot.remove()
+            })
+            errorSlotButton.addEventListener('click', () => {
+                checkBox.innerHTML += `
+                    <div slot="error-text">ERROR SLOT</div>
+                `
+            })
+            removeErrorSlotButton.addEventListener('click', () => {
+                const errorTextSlot = checkBox.querySelector(
+                    `[slot='error-text']`
+                )
+                errorTextSlot.remove()
+            })
+        </script>
     </body>
 </html>

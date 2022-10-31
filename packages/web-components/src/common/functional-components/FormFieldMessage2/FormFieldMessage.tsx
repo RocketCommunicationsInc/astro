@@ -15,7 +15,6 @@ const FormFieldMessage: FunctionalComponent<FormFieldMessageProps> = (
     children
 ) => {
     const { helpText, errorText } = props
-    console.log(children)
 
     if (errorText) {
         return (
@@ -48,8 +47,8 @@ const FormFieldMessage: FunctionalComponent<FormFieldMessageProps> = (
             </div>
         )
     }
-    const newStuff = children.map((child) => <p>{child}</p>)
-    return newStuff
+
+    return null
 }
 
 export default FormFieldMessage

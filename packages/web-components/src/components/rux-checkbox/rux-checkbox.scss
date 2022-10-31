@@ -1,3 +1,5 @@
+@use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
+
 :host {
     display: inline-block;
     --_checkbox-checkmark-color-fill: var(--color-border-interactive-default);
@@ -76,4 +78,8 @@ label {
     letter-spacing: var(--font-body-2-letter-spacing);
     line-height: var(--font-body-2-line-height);
     text-align: left; // Solves the issue of a parent element with a different text-align overriding.
+}
+
+.hide {
+    display: none;
 }
