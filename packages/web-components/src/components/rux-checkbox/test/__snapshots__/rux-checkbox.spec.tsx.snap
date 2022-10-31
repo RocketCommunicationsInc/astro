@@ -17,6 +17,12 @@ exports[`rux-checkbox renders 1`] = `
         </div>
       </label>
     </div>
+    <p>
+      <slot name="oneslot"></slot>
+    </p>
+    <p>
+      <slot name="twoslot"></slot>
+    </p>
   </mock:shadow-root>
 </rux-checkbox>
 `;
