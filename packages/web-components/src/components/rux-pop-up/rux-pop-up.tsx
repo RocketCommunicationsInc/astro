@@ -57,6 +57,11 @@ export class RuxPopUp {
     @Prop() placement: ExtendedPlacement = 'auto'
 
     /**
+     * Turns autoUpdate on or off which makes the pop-up move to stay in view based on scroll. Defaults to false.
+     */
+    @Prop({ reflect: true }) disableAutoUpdate: boolean = false
+
+    /**
      * The position strategy of the popup, either absolute or fixed.
      */
     @Prop() strategy: 'absolute' | 'fixed' = 'absolute'
@@ -139,17 +144,30 @@ export class RuxPopUp {
         if (!this.open || !this.triggerSlot || !this.content) {
             return
         }
+        const placementCheck = () => {
+            if (!this.disableAutoUpdate) {
+                return [
+                    offset(12),
+                    this.placement === 'auto'
+                        ? autoPlacement({ alignment: 'start' })
+                        : flip(),
+                    arrow({ element: this.arrowEl }),
+                ]
+            } else if (this.placement === 'auto') {
+                return [
+                    offset(12),
+                    autoPlacement({ alignment: 'start' }),
+                    arrow({ element: this.arrowEl }),
+                ]
+            } else {
+                return [offset(12), arrow({ element: this.arrowEl })]
+            }
+        }
         computePosition(this.triggerSlot, this.content, {
             //@ts-ignore
             placement: this.placement,
             strategy: this.strategy,
-            middleware: [
-                offset(12),
-                this.placement === 'auto'
-                    ? autoPlacement({ alignment: 'start' })
-                    : flip(),
-                arrow({ element: this.arrowEl }),
-            ],
+            middleware: placementCheck(),
         }).then(({ x, y, placement, middlewareData }) => {
             Object.assign(this.content.style, {
                 left: `${x}px`,
@@ -181,11 +199,13 @@ export class RuxPopUp {
         this._stopPositioner()
         if (this.open) {
             this._position()
-            this._positionerCleanup = autoUpdate(
-                this.triggerSlot,
-                this.content,
-                this._position.bind(this)
-            )
+            if (!this.disableAutoUpdate) {
+                this._positionerCleanup = autoUpdate(
+                    this.triggerSlot,
+                    this.content,
+                    this._position.bind(this)
+                )
+            }
         }
     }
 
