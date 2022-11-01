@@ -12,7 +12,4 @@ src/globals.d.ts
 *proxies.ts
 *attachProps.ts
 
-# Ignore Astro-uxds css files
-packages/astro-uxds/css
-
 packages/web-components/tests
