@@ -68,18 +68,3 @@ label {
 .rux-checkbox__label {
     margin-left: var(--spacing-2);
 }
-
-.rux-help-text {
-    margin-top: calc(var(--spacing-2) + var(--spacing-050));
-    color: var(--color-text-primary);
-    font-size: var(--font-body-2-font-size);
-    font-family: var(--font-body-2-font-family);
-    font-weight: var(--font-body-2-font-weight);
-    letter-spacing: var(--font-body-2-letter-spacing);
-    line-height: var(--font-body-2-line-height);
-    text-align: left; // Solves the issue of a parent element with a different text-align overriding.
-}
-
-.hide {
-    display: none;
-}
