@@ -9,7 +9,6 @@ import {
     Host,
     State,
 } from '@stencil/core'
-import FormFieldMessage from '../../common/functional-components/FormFieldMessage2/FormFieldMessage'
 
 import { FormFieldInterface } from '../../common/interfaces.module'
 import { renderHiddenInput, hasSlot } from '../../utils/utils'
@@ -18,11 +17,11 @@ let id = 0
 
 /**
  * @slot (default) - the label of the checkbox.
- * @slot help-text -  Add help text with html
- * @slot error-text -  Add error text with html
+ * @slot help-text -  the help text
+ * @slot error-text -  the error text
  * @part form-field - the form field wrapper container
- * @part help-text - The help text element
- * @part error-text - The error text element
+ * @part help-text - the help text element
+ * @part error-text - the error text element
  * @part label - the label of rux-checkbox
  */
 @Component({
@@ -165,7 +164,9 @@ export class RuxCheckbox implements FormFieldInterface {
             disabled,
             el,
             helpText,
+            hasHelpSlot,
             errorText,
+            hasErrorSlot,
             name,
             value,
             indeterminate,
@@ -174,11 +175,11 @@ export class RuxCheckbox implements FormFieldInterface {
             hasLabelSlot,
         } = this
 
-        console.log('help:', this.hasHelpSlot, 'error:', this.hasErrorSlot)
-
         if (!indeterminate) {
             renderHiddenInput(true, el, name, value || 'on', disabled, checked)
         }
+
+        console.log('error slot:', this.hasErrorSlot)
 
         return (
             <Host>
@@ -304,26 +305,47 @@ export class RuxCheckbox implements FormFieldInterface {
                         </div>
                     </label>
                 </div>
-                <FormFieldMessage helpText={helpText} errorText={errorText}>
-                    <span class={!this.hasErrorSlot ? 'hide' : 'show'}>
-                        <slot
-                            name="error-text"
-                            onSlotchange={_checkForSlots}
-                        ></slot>
-                    </span>
-                    <span
-                        class={
-                            !this.hasHelpSlot || this.hasErrorSlot
-                                ? 'hide'
-                                : 'show'
-                        }
+                <div
+                    class={{
+                        'rux-error-text': !!errorText || this.hasErrorSlot,
+                        hidden: !errorText && !this.hasErrorSlot,
+                    }}
+                    part="error-text"
+                >
+                    <svg
+                        fill="none"
+                        width="14"
+                        height="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 14 14"
                     >
-                        <slot
-                            name="help-text"
-                            onSlotchange={_checkForSlots}
-                        ></slot>
-                    </span>
-                </FormFieldMessage>
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M11.393 12.25c.898 0 1.458-.974 1.009-1.75L8.009 2.91a1.166 1.166 0 0 0-2.018 0L1.598 10.5c-.449.776.111 1.75 1.01 1.75h8.784ZM7 8.167a.585.585 0 0 1-.583-.584V6.417c0-.321.262-.584.583-.584.32 0 .583.263.583.584v1.166c0 .321-.262.584-.583.584Zm-.583 1.166V10.5h1.166V9.333H6.417Z"
+                            fill="currentColor"
+                        />
+                    </svg>
+                    <slot name="error-text" onSlotchange={_checkForSlots}>
+                        {errorText}
+                    </slot>
+                </div>
+                <div
+                    class={{
+                        'rux-help-text':
+                            (!!helpText || hasHelpSlot) &&
+                            (!errorText || !hasErrorSlot),
+                        hidden:
+                            (!helpText && !hasHelpSlot) ||
+                            !!errorText ||
+                            hasErrorSlot,
+                    }}
+                    part="help-text"
+                >
+                    <slot name="help-text" onSlotchange={_checkForSlots}>
+                        {helpText}
+                    </slot>
+                </div>
             </Host>
         )
     }
