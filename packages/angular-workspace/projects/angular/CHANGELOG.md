@@ -1,5 +1,16 @@
 # @astrouxds/angular
 
+## 7.2.0
+
+### Minor Changes
+
+- b5eaacba: This change allows the developer to set whether or not pop-up will move around the trigger based on scroll position or available space around the trigger. The developer will set a prop to turn this feature that was previously on by default, on or off. The default behavior is still on to prevent a breaking change.
+
+### Patch Changes
+
+- Updated dependencies [b5eaacba]
+  - @astrouxds/astro-web-components@7.2.0
+
 ## 7.1.1
 
 ### Patch Changes
