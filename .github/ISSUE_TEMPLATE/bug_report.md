@@ -17,22 +17,23 @@ Steps to reproduce the behavior:
 3. Scroll down to '....'
 4. See error
 
+**Current behavior**
+A clear and concise description of what is currently happening.
+
 **Expected behavior**
 A clear and concise description of what you expected to happen.
 
 **Screenshots**
 If applicable, add screenshots to help explain your problem.
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+**CodeSandbox** 
+If applicable, please provide a CodeSandbox or other online code editor tool link that contains an example of the bug. 
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+**Environment (please complete the following information):**
+ - Browser [e.g. chrome, safari]
+ - @astrouxds/astro-web-components version [e.g. 7.0.0]
+ - Framework, if applicable (React, Angular, Vue, Svelte, ect) 
+ - Framework wrapper version, if applicable (@astrouxds/react or @astrouxds/angular) 
 
 **Additional context**
 Add any other context about the problem here.
