@@ -58,7 +58,7 @@ export class RuxPopUp {
     /**
      * Turns autoUpdate on or off which makes the pop-up move to stay in view based on scroll. Defaults to false.
      */
-    @Prop({ mutable: true, reflect: true }) disableAutoUpdate: boolean = false
+    @Prop({ reflect: true }) disableAutoUpdate: boolean = false
 
     /**
      * The position strategy of the popup, either absolute or fixed.
