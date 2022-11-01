@@ -19,6 +19,13 @@
     -ms-user-select: none;
     user-select: none;
     contain: layout; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
+    line-height: var(
+        --line-height-base
+    ); //fixes issue where parent element with larger line-height causes layout shift.
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
 }
 
 :host([hidden]) {
@@ -43,6 +50,9 @@ slot[name='left-side'] > *,
 slot[name='left-side'] > rux-icon,
 ::slotted(rux-icon[slot='left-side']) {
     height: calc(var(--spacing-8) + var(--spacing-050)); //38px
+    font-size: var(
+        --spacing-8
+    ); //32px to prevent icon moving if larger font-size set on parents.
 }
 
 slot[name='left-side'] > .shifted-up,
@@ -123,6 +133,7 @@ slot[name='right-side'] > rux-monitoring-icon,
     font-size: var(--font-body-2-font-size);
     font-weight: var(--font-body-2-font-weight);
     letter-spacing: var(--font-body-2-letter-spacing);
+    line-height: var(--line-height-xs);
     padding: calc(var(--spacing-050) + var(--spacing-025)) var(--spacing-2); //3px 8px
     text-align: center;
     margin-right: var(--spacing-2); //6px
@@ -136,6 +147,7 @@ slot[name='right-side'] > rux-monitoring-icon,
     font-size: var(--font-body-2-font-size);
     font-weight: var(--font-body-2-font-weight);
     letter-spacing: var(--font-body-2-letter-spacing);
+    line-height: var(--line-height-xs);
     padding: calc(var(--spacing-050) + var(--spacing-025)) var(--spacing-0); //3px 0
     height: calc(var(--spacing-6) - var(--spacing-050)); //22px
 }

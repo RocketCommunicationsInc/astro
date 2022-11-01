@@ -1,7 +1,11 @@
 import { test, expect } from '@playwright/test'
-import { startTestInBefore, setBodyContent } from './utils/_startTestEnv'
+import {
+    startTestInBefore,
+    setBodyContent,
+    startTestEnv,
+} from './utils/_startTestEnv'
 
-test.describe('Input', () => {
+test.describe('Input with form', () => {
     const testString = 'Hello World'
 
     test.beforeEach(async ({ page }) => {
@@ -235,7 +239,7 @@ test.describe('Input', () => {
         //Assert
         await expect(ruxInputLabel).toContainText('Input Field')
     })
-    test('prepends aesthetics to lable if required', async ({ page }) => {
+    test('prepends aesthetics to label if required', async ({ page }) => {
         //Arrange
         const ruxInputComponent = page.locator('#ruxInput3').first()
         const ruxInputAesthetics = ruxInputComponent.locator(
@@ -356,6 +360,30 @@ test.describe('Input', () => {
 
         //Assert
         await expect(log).toContainText('time:01:25:00')
+    })
+})
+test.describe('Input with slots and props', () => {
+    startTestEnv()
+
+    test('it renders label prop', async ({ page }) => {
+        await setBodyContent(
+            page,
+            `
+            <rux-input label="hello"></rux-input>
+            `
+        )
+        const el = page.locator('rux-input')
+        await expect(el).toHaveClass('hydrated')
+    })
+    test('it renders label slot', async ({ page }) => {
+        await setBodyContent(
+            page,
+            `
+            <rux-input><div slot="label">hello</div></rux-input>
+            `
+        )
+        const el = page.locator('rux-input')
+        await expect(el).toHaveClass('hydrated')
     })
 })
 /*

@@ -12122,6 +12122,10 @@ export namespace Components {
          */
         "disableAutoUpdate": boolean;
         /**
+          * When provided, will close the pop-up when a single selection is made.
+         */
+        "closeOnSelect": boolean;
+        /**
           * Closes the pop up and returns false.
          */
         "hide": () => Promise<false>;
@@ -32588,6 +32592,10 @@ declare namespace LocalJSX {
           * Turns autoUpdate on or off which makes the pop-up move to stay in view based on scroll. Defaults to false.
          */
         "disableAutoUpdate"?: boolean;
+        /**
+          * When provided, will close the pop-up when a single selection is made.
+         */
+        "closeOnSelect"?: boolean;
         /**
           * Emits when the pop up has closed.
          */
