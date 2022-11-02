@@ -129,11 +129,6 @@ export class RuxInput implements FormFieldInterface {
     @Prop() step?: string
 
     /**
-     * The input's autocomplete attribute
-     */
-    @Prop() autocomplete?: string
-
-    /**
      * The input's spellcheck attribute
      */
     @Prop() spellcheck = false
@@ -255,7 +250,6 @@ export class RuxInput implements FormFieldInterface {
             value,
             hasLabel,
             size,
-            autocomplete,
             spellcheck,
             readonly,
             togglePassword,
@@ -331,7 +325,6 @@ export class RuxInput implements FormFieldInterface {
                             class="native-input"
                             id={this.inputId}
                             spellcheck={spellcheck}
-                            autocomplete={togglePassword ? 'off' : autocomplete}
                             readonly={readonly}
                             onChange={_onChange}
                             onInput={_onInput}
