@@ -21,6 +21,74 @@
     </head>
 
     <body class="dark-theme">
+        <h2>Prop/Slot Testing</h2>
+        <rux-slider id="test-this" label="this the input label"></rux-slider>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem">
+            <rux-button id="addHelpSlot">Add Help Slot</rux-button>
+            <rux-button id="removeHelpSlot">Remove Help Slot</rux-button>
+            <rux-button id="addErrorSlot">Add Error Slot</rux-button>
+            <rux-button id="removeErrorSlot">Remove Error Slot</rux-button>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem">
+            <rux-button id="addHelpProp">Add Help Prop</rux-button>
+            <rux-button id="removeHelpProp">Remove Help Prop</rux-button>
+            <rux-button id="addErrorProp">Add Error Prop</rux-button>
+            <rux-button id="removeErrorProp">Remove Error Prop</rux-button>
+        </div>
+        <script>
+            const helpSlotButton = document.getElementById('addHelpSlot')
+            const removeHelpSlotButton = document.getElementById(
+                'removeHelpSlot'
+            )
+            const helpPropButton = document.getElementById('addHelpProp')
+            const removeHelpPropButton = document.getElementById(
+                'removeHelpProp'
+            )
+            const errorSlotButton = document.getElementById('addErrorSlot')
+            const removeErrorSlotButton = document.getElementById(
+                'removeErrorSlot'
+            )
+            const errorPropButton = document.getElementById('addErrorProp')
+            const removeErrorPropButton = document.getElementById(
+                'removeErrorProp'
+            )
+            const input = document.getElementById('test-this')
+
+            /**add/remove slots**/
+
+            helpSlotButton.addEventListener('click', () => {
+                input.innerHTML += `
+                  <div slot="help-text">HELP SLOT <a href="http://www.google.com">Link</a></div>
+              `
+            })
+            removeHelpSlotButton.addEventListener('click', () => {
+                const helpTextSlot = input.querySelector(`[slot='help-text']`)
+                helpTextSlot.remove()
+            })
+            errorSlotButton.addEventListener('click', () => {
+                input.innerHTML += `
+                  <div slot="error-text">ERROR SLOT <a href="http://www.google.com">Link</a></div>
+              `
+            })
+            removeErrorSlotButton.addEventListener('click', () => {
+                const errorTextSlot = input.querySelector(`[slot='error-text']`)
+                errorTextSlot.remove()
+            })
+
+            /**add/remove props**/
+            helpPropButton.addEventListener('click', () => {
+                input.setAttribute('help-text', 'Help text PROP')
+            })
+            removeHelpPropButton.addEventListener('click', () => {
+                input.removeAttribute('help-text')
+            })
+            errorPropButton.addEventListener('click', () => {
+                input.setAttribute('error-text', 'Error text PROP')
+            })
+            removeErrorPropButton.addEventListener('click', () => {
+                input.removeAttribute('error-text')
+            })
+        </script>
         <div style="padding: 10%; display: flex; justify-content: center">
             <form id="form">
                 <rux-slider name="ruxSlider" id="ruxSlider"></rux-slider>
