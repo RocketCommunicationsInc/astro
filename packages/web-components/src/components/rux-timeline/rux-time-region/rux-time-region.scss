@@ -59,6 +59,10 @@
     border-color: var(--status-symbol-color-fill-standby-on-dark);
 }
 
+.rux-time-region--serious:not(.rux-time-region--selected) {
+    border-color: var(--status-symbol-color-fill-serious-on-dark);
+}
+
 .hidden {
     visibility: hidden;
 }
