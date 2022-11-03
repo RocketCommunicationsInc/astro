@@ -9,7 +9,6 @@ import {
     State,
     Watch,
 } from '@stencil/core'
-import FormFieldMessage from '../../common/functional-components/FormFieldMessage/FormFieldMessage'
 import { FormFieldInterface } from '../../common/interfaces.module'
 import { hasSlot, renderHiddenInput } from '../../utils/utils'
 
@@ -19,6 +18,8 @@ let id = 0
  * @slot label - The input label
  * @slot prefix - Left side input icon
  * @slot suffix - Right side input icon
+ * @slot help-text -  the help text
+ * @slot error-text -  the error text
  * @part error-text - The error text element
  * @part form-field - The form-field wrapper container
  * @part help-text - The help text element
@@ -42,6 +43,8 @@ export class RuxInput implements FormFieldInterface {
     @Element() el!: HTMLRuxInputElement
 
     @State() hasLabelSlot = false
+    @State() hasHelpSlot = false
+    @State() hasErrorSlot = false
 
     @State() togglePassword = false
 
@@ -190,10 +193,17 @@ export class RuxInput implements FormFieldInterface {
     componentWillLoad() {
         this._handleSlotChange()
         this._setTogglePassword()
+        this._checkForSlots()
     }
 
     get hasLabel() {
         return this.label ? true : this.hasLabelSlot
+    }
+
+    private _checkForSlots() {
+        this.hasLabelSlot = hasSlot(this.el)
+        this.hasErrorSlot = hasSlot(this.el, 'error-text')
+        this.hasHelpSlot = hasSlot(this.el, 'help-text')
     }
 
     private _onChange(e: Event) {
@@ -236,6 +246,8 @@ export class RuxInput implements FormFieldInterface {
             el,
             errorText,
             helpText,
+            hasHelpSlot,
+            hasErrorSlot,
             inputId,
             invalid,
             label,
@@ -248,6 +260,7 @@ export class RuxInput implements FormFieldInterface {
             _onFocus,
             _handleSlotChange,
             _handleTogglePassword,
+            _checkForSlots,
             placeholder,
             required,
             step,
@@ -361,10 +374,47 @@ export class RuxInput implements FormFieldInterface {
                     </div>
                 </div>
 
-                <FormFieldMessage
-                    errorText={errorText}
-                    helpText={helpText}
-                ></FormFieldMessage>
+                <div
+                    class={{
+                        'rux-error-text': !!errorText || this.hasErrorSlot,
+                        hidden: !errorText && !this.hasErrorSlot,
+                    }}
+                    part="error-text"
+                >
+                    <svg
+                        fill="none"
+                        width="14"
+                        height="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 14 14"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M11.393 12.25c.898 0 1.458-.974 1.009-1.75L8.009 2.91a1.166 1.166 0 0 0-2.018 0L1.598 10.5c-.449.776.111 1.75 1.01 1.75h8.784ZM7 8.167a.585.585 0 0 1-.583-.584V6.417c0-.321.262-.584.583-.584.32 0 .583.263.583.584v1.166c0 .321-.262.584-.583.584Zm-.583 1.166V10.5h1.166V9.333H6.417Z"
+                            fill="currentColor"
+                        />
+                    </svg>
+                    <slot name="error-text" onSlotchange={_checkForSlots}>
+                        {errorText}
+                    </slot>
+                </div>
+                <div
+                    class={{
+                        'rux-help-text':
+                            (!!helpText || hasHelpSlot) &&
+                            (!errorText || !hasErrorSlot),
+                        hidden:
+                            (!helpText && !hasHelpSlot) ||
+                            !!errorText ||
+                            hasErrorSlot,
+                    }}
+                    part="help-text"
+                >
+                    <slot name="help-text" onSlotchange={_checkForSlots}>
+                        {helpText}
+                    </slot>
+                </div>
             </Host>
         )
     }
