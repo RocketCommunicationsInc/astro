@@ -18,10 +18,8 @@ let id = 0
 /**
  * @slot (default) - the label of the checkbox.
  * @slot help-text -  the help text
- * @slot error-text -  the error text
  * @part form-field - the form field wrapper container
  * @part help-text - the help text element
- * @part error-text - the error text element
  * @part label - the label of rux-checkbox
  */
 @Component({
@@ -37,17 +35,11 @@ export class RuxCheckbox implements FormFieldInterface {
 
     @State() hasLabelSlot = false
     @State() hasHelpSlot = false
-    @State() hasErrorSlot = false
 
     /**
      * The help or explanation text
      */
     @Prop({ attribute: 'help-text' }) helpText?: string
-
-    /**
-     * The error explanation text
-     */
-    @Prop({ attribute: 'error-text' }) errorText?: string
 
     /**
      * The checkbox name
@@ -130,7 +122,6 @@ export class RuxCheckbox implements FormFieldInterface {
 
     private _checkForSlots() {
         this.hasLabelSlot = hasSlot(this.el)
-        this.hasErrorSlot = hasSlot(this.el, 'error-text')
         this.hasHelpSlot = hasSlot(this.el, 'help-text')
     }
 
@@ -165,8 +156,6 @@ export class RuxCheckbox implements FormFieldInterface {
             el,
             helpText,
             hasHelpSlot,
-            errorText,
-            hasErrorSlot,
             name,
             value,
             indeterminate,
@@ -178,8 +167,6 @@ export class RuxCheckbox implements FormFieldInterface {
         if (!indeterminate) {
             renderHiddenInput(true, el, name, value || 'on', disabled, checked)
         }
-
-        console.log('error slot:', this.hasErrorSlot)
 
         return (
             <Host>
@@ -307,38 +294,8 @@ export class RuxCheckbox implements FormFieldInterface {
                 </div>
                 <div
                     class={{
-                        'rux-error-text': !!errorText || this.hasErrorSlot,
-                        hidden: !errorText && !this.hasErrorSlot,
-                    }}
-                    part="error-text"
-                >
-                    <svg
-                        fill="none"
-                        width="14"
-                        height="14"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 14 14"
-                    >
-                        <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M11.393 12.25c.898 0 1.458-.974 1.009-1.75L8.009 2.91a1.166 1.166 0 0 0-2.018 0L1.598 10.5c-.449.776.111 1.75 1.01 1.75h8.784ZM7 8.167a.585.585 0 0 1-.583-.584V6.417c0-.321.262-.584.583-.584.32 0 .583.263.583.584v1.166c0 .321-.262.584-.583.584Zm-.583 1.166V10.5h1.166V9.333H6.417Z"
-                            fill="currentColor"
-                        />
-                    </svg>
-                    <slot name="error-text" onSlotchange={_checkForSlots}>
-                        {errorText}
-                    </slot>
-                </div>
-                <div
-                    class={{
-                        'rux-help-text':
-                            (!!helpText || hasHelpSlot) &&
-                            (!errorText || !hasErrorSlot),
-                        hidden:
-                            (!helpText && !hasHelpSlot) ||
-                            !!errorText ||
-                            hasErrorSlot,
+                        'rux-help-text': !!helpText || hasHelpSlot,
+                        hidden: !helpText && !hasHelpSlot,
                     }}
                     part="help-text"
                 >

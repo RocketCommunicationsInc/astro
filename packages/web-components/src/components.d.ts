@@ -79,10 +79,6 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * The error explanation text
-         */
-        "errorText"?: string;
-        /**
           * The help or explanation text
          */
         "helpText"?: string;
@@ -20503,10 +20499,6 @@ declare namespace LocalJSX {
           * Disables the checkbox via HTML disabled attribute. Checkbox takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
          */
         "disabled"?: boolean;
-        /**
-          * The error explanation text
-         */
-        "errorText"?: string;
         /**
           * The help or explanation text
          */

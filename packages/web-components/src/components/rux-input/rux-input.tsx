@@ -181,6 +181,7 @@ export class RuxInput implements FormFieldInterface {
         this._onInput = this._onInput.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._handleTogglePassword = this._handleTogglePassword.bind(this)
+        this._checkForSlots = this._checkForSlots.bind(this)
     }
 
     disconnectedCallback() {
@@ -201,7 +202,6 @@ export class RuxInput implements FormFieldInterface {
     }
 
     private _checkForSlots() {
-        this.hasLabelSlot = hasSlot(this.el)
         this.hasErrorSlot = hasSlot(this.el, 'error-text')
         this.hasHelpSlot = hasSlot(this.el, 'help-text')
     }
@@ -376,8 +376,8 @@ export class RuxInput implements FormFieldInterface {
 
                 <div
                     class={{
-                        'rux-error-text': !!errorText || this.hasErrorSlot,
-                        hidden: !errorText && !this.hasErrorSlot,
+                        'rux-error-text': !!errorText || hasErrorSlot,
+                        hidden: !errorText && !hasErrorSlot,
                     }}
                     part="error-text"
                 >

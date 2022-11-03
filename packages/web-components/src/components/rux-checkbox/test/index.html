@@ -164,16 +164,12 @@
             >
                 <rux-button id="addHelpSlot">Add Help Slot</rux-button>
                 <rux-button id="removeHelpSlot">Remove Help Slot</rux-button>
-                <rux-button id="addErrorSlot">Add Error Slot</rux-button>
-                <rux-button id="removeErrorSlot">Remove Error Slot</rux-button>
             </div>
             <div
                 style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem"
             >
                 <rux-button id="addHelpProp">Add Help Prop</rux-button>
                 <rux-button id="removeHelpProp">Remove Help Prop</rux-button>
-                <rux-button id="addErrorProp">Add Error Prop</rux-button>
-                <rux-button id="removeErrorProp">Remove Error Prop</rux-button>
             </div>
         </section>
         <script>
@@ -184,14 +180,6 @@
             const helpPropButton = document.getElementById('addHelpProp')
             const removeHelpPropButton = document.getElementById(
                 'removeHelpProp'
-            )
-            const errorSlotButton = document.getElementById('addErrorSlot')
-            const removeErrorSlotButton = document.getElementById(
-                'removeErrorSlot'
-            )
-            const errorPropButton = document.getElementById('addErrorProp')
-            const removeErrorPropButton = document.getElementById(
-                'removeErrorProp'
             )
             const checkBox = document.getElementById('test-this')
 
@@ -208,17 +196,6 @@
                 )
                 helpTextSlot.remove()
             })
-            errorSlotButton.addEventListener('click', () => {
-                checkBox.innerHTML += `
-                    <div slot="error-text">ERROR SLOT <a href="http://www.google.com">Link</a></div>
-                `
-            })
-            removeErrorSlotButton.addEventListener('click', () => {
-                const errorTextSlot = checkBox.querySelector(
-                    `[slot='error-text']`
-                )
-                errorTextSlot.remove()
-            })
 
             /**add/remove props**/
             helpPropButton.addEventListener('click', () => {
@@ -226,12 +203,6 @@
             })
             removeHelpPropButton.addEventListener('click', () => {
                 checkBox.removeAttribute('help-text')
-            })
-            errorPropButton.addEventListener('click', () => {
-                checkBox.setAttribute('error-text', 'Error text PROP')
-            })
-            removeErrorPropButton.addEventListener('click', () => {
-                checkBox.removeAttribute('error-text')
             })
         </script>
     </body>
