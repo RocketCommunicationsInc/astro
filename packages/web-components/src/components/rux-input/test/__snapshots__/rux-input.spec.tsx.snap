@@ -67,6 +67,11 @@ exports[`rux-input renders label slot 1`] = `
 <rux-input value="">
   <mock:shadow-root>
     <div class="rux-form-field" part="form-field">
+      <label aria-hidden="false" class="rux-input-label" htmlfor="rux-input-3" part="label">
+        <span>
+          <slot name="label"></slot>
+        </span>
+      </label>
       <div class="rux-input rux-input--medium" part="input-field">
         <span class="rux-input-prefix" part="prefix">
           <slot name="prefix"></slot>
