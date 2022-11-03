@@ -253,6 +253,7 @@ export class RuxInput implements FormFieldInterface {
             spellcheck,
             readonly,
             togglePassword,
+            isPasswordVisible,
         } = this
 
         renderHiddenInput(true, el, name, value, disabled)
@@ -323,7 +324,7 @@ export class RuxInput implements FormFieldInterface {
                             max={max}
                             value={value}
                             class="native-input"
-                            id={this.inputId}
+                            id={inputId}
                             spellcheck={spellcheck}
                             readonly={readonly}
                             onChange={_onChange}
@@ -332,7 +333,7 @@ export class RuxInput implements FormFieldInterface {
                             onFocus={_onFocus}
                             part="input"
                         ></input>
-                        {this.togglePassword ? (
+                        {togglePassword ? (
                             <button
                                 onClick={_handleTogglePassword}
                                 class="pw-button"
@@ -340,7 +341,7 @@ export class RuxInput implements FormFieldInterface {
                                 <rux-icon
                                     exportparts="icon"
                                     icon={
-                                        this.isPasswordVisible
+                                        isPasswordVisible
                                             ? 'visibility-off'
                                             : 'visibility'
                                     }
