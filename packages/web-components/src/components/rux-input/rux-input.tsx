@@ -181,7 +181,6 @@ export class RuxInput implements FormFieldInterface {
         this._onInput = this._onInput.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._handleTogglePassword = this._handleTogglePassword.bind(this)
-        this._checkForSlots = this._checkForSlots.bind(this)
     }
 
     disconnectedCallback() {
@@ -194,16 +193,10 @@ export class RuxInput implements FormFieldInterface {
     componentWillLoad() {
         this._handleSlotChange()
         this._setTogglePassword()
-        this._checkForSlots()
     }
 
     get hasLabel() {
         return this.label ? true : this.hasLabelSlot
-    }
-
-    private _checkForSlots() {
-        this.hasErrorSlot = hasSlot(this.el, 'error-text')
-        this.hasHelpSlot = hasSlot(this.el, 'help-text')
     }
 
     private _onChange(e: Event) {
@@ -230,6 +223,8 @@ export class RuxInput implements FormFieldInterface {
 
     private _handleSlotChange() {
         this.hasLabelSlot = hasSlot(this.el, 'label')
+        this.hasErrorSlot = hasSlot(this.el, 'error-text')
+        this.hasHelpSlot = hasSlot(this.el, 'help-text')
     }
 
     private _setTogglePassword() {
@@ -260,7 +255,6 @@ export class RuxInput implements FormFieldInterface {
             _onFocus,
             _handleSlotChange,
             _handleTogglePassword,
-            _checkForSlots,
             placeholder,
             required,
             step,
@@ -395,7 +389,7 @@ export class RuxInput implements FormFieldInterface {
                             fill="currentColor"
                         />
                     </svg>
-                    <slot name="error-text" onSlotchange={_checkForSlots}>
+                    <slot name="error-text" onSlotchange={_handleSlotChange}>
                         {errorText}
                     </slot>
                 </div>
@@ -411,7 +405,7 @@ export class RuxInput implements FormFieldInterface {
                     }}
                     part="help-text"
                 >
-                    <slot name="help-text" onSlotchange={_checkForSlots}>
+                    <slot name="help-text" onSlotchange={_handleSlotChange}>
                         {helpText}
                     </slot>
                 </div>

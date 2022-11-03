@@ -102,11 +102,11 @@ export class RuxCheckbox implements FormFieldInterface {
     connectedCallback() {
         this._onClick = this._onClick.bind(this)
         this._onInput = this._onInput.bind(this)
-        this._checkForSlots = this._checkForSlots.bind(this)
+        this._handleSlotChange = this._handleSlotChange.bind(this)
     }
 
     componentWillLoad() {
-        this._checkForSlots()
+        this._handleSlotChange()
     }
 
     componentDidLoad() {
@@ -120,7 +120,7 @@ export class RuxCheckbox implements FormFieldInterface {
         return this.label ? true : this.hasLabelSlot
     }
 
-    private _checkForSlots() {
+    private _handleSlotChange() {
         this.hasLabelSlot = hasSlot(this.el)
         this.hasHelpSlot = hasSlot(this.el, 'help-text')
     }
@@ -146,7 +146,7 @@ export class RuxCheckbox implements FormFieldInterface {
 
     render() {
         const {
-            _checkForSlots,
+            _handleSlotChange,
             _onBlur,
             _onClick,
             _onInput,
@@ -288,7 +288,7 @@ export class RuxCheckbox implements FormFieldInterface {
                             }}
                         >
                             {hasLabelSlot ? null : label}
-                            <slot onSlotchange={_checkForSlots} />
+                            <slot onSlotchange={_handleSlotChange} />
                         </div>
                     </label>
                 </div>
@@ -299,7 +299,7 @@ export class RuxCheckbox implements FormFieldInterface {
                     }}
                     part="help-text"
                 >
-                    <slot name="help-text" onSlotchange={_checkForSlots}>
+                    <slot name="help-text" onSlotchange={_handleSlotChange}>
                         {helpText}
                     </slot>
                 </div>
