@@ -332,7 +332,7 @@ export class RuxInput implements FormFieldInterface {
                             onFocus={_onFocus}
                             part="input"
                         ></input>
-                        {this.togglePassword ? (
+                        {togglePassword ? (
                             <button
                                 onClick={_handleTogglePassword}
                                 class="pw-button"
