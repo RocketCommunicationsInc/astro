@@ -2,6 +2,7 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import { html, render } from 'lit-html'
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
 import { styled } from '@storybook/theming'
+
 export const StyledDiv = styled.div`
     position: relative;
     margin: 1rem 0;
@@ -124,7 +125,7 @@ export const Default = (args) => {
         end = new Date(args.end).toISOString()
     }
     return html`
-	<rux-time-region start="${start}" ?hide-timestamp="${args.hideTimestamp}" end="${end}" selected="${args.selected}">
+	<rux-time-region start="${start}" status="${args.status}" ?hide-timestamp="${args.hideTimestamp}" end="${end}" selected="${args.selected}">
 		Cras vestibulum orci sed nisl
 	</rux-time-region>
     `
@@ -137,7 +138,8 @@ export const Default = (args) => {
 		start: '2021-01-01T00:00',
 		end: '2021-01-02T00:00',
 		selected: false,
-		hideTimestamp: false
+		hideTimestamp: false,
+        status: 'standby'
 	}}
     >
         {Default.bind()}
