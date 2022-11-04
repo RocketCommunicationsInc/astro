@@ -2,6 +2,10 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import { html, render } from 'lit-html'
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
 import { styled } from '@storybook/theming'
+const args = extractArgTypes('rux-time-region')
+args.status.defaultValue = 'standby'
+
+
 export const StyledDiv = styled.div`
     position: relative;
     margin: 1rem 0;
@@ -35,67 +39,7 @@ export const BetaTag = styled.div`
 <Meta
     title="Beta/Timeline [BETA]/Time Region"
     component="rux-time-region"
-    argTypes={{
-	        "end": {
-        "name": "end",
-        "description": "The end time",
-        "type": {
-            "name": "any",
-            "required": false
-        },
-        "control": {
-            "type": "date"
-        },
-        "table": {
-            "category": "props",
-            "type": {
-                "summary": "any"
-            },
-            "defaultValue": {}
-        },
-        "options": []
-    },
-    "hideTimestamp": {
-        "name": "hide-timestamp",
-        "description": "Optionally hide the bottom right timestamp.",
-        "type": {
-            "name": "boolean",
-            "required": false
-        },
-        "control": {
-            "type": "boolean"
-        },
-        "table": {
-            "category": "props",
-            "type": {
-                "summary": "boolean"
-            },
-            "defaultValue": {
-                "summary": "false"
-            }
-        },
-        "options": []
-    },
-    "start": {
-        "name": "start",
-        "description": "The start time",
-        "type": {
-            "name": "any",
-            "required": false
-        },
-        "control": {
-            "type": "date"
-        },
-        "table": {
-            "category": "props",
-            "type": {
-                "summary": "any"
-            },
-            "defaultValue": {}
-        },
-        "options": []
-    }
-    }}
+    argTypes={args}
 />
 
 # Time Region <BetaTag>BETA</BetaTag>
@@ -124,7 +68,7 @@ export const Default = (args) => {
         end = new Date(args.end).toISOString()
     }
     return html`
-	<rux-time-region start="${start}" ?hide-timestamp="${args.hideTimestamp}" end="${end}" selected="${args.selected}">
+	<rux-time-region start="${start}" status="${args.status}" ?hide-timestamp="${args.hideTimestamp}" end="${end}" selected="${args.selected}"  partial="${args.partial}">
 		Cras vestibulum orci sed nisl
 	</rux-time-region>
     `
@@ -137,7 +81,9 @@ export const Default = (args) => {
 		start: '2021-01-01T00:00',
 		end: '2021-01-02T00:00',
 		selected: false,
-		hideTimestamp: false
+		hideTimestamp: false,
+        status: 'standby',
+        partial: ''
 	}}
     >
         {Default.bind()}
@@ -146,7 +92,7 @@ export const Default = (args) => {
 
 export const Selected = (args) => {
     return html`
-	<rux-time-region start="2021-01-01T00:00" end="2021-01-02T00:00" selected="${args.selected}">
+	<rux-time-region start="2021-01-01T00:00" end="2021-01-02T00:00" selected="${args.selected}" status="${args.status}" partial="${args.partial}">
 		Cras vestibulum orci sed nisl
 	</rux-time-region>
     `
@@ -156,7 +102,9 @@ export const Selected = (args) => {
     <Story
         name="Selected"
 	args={{
-		selected: true
+		selected: true,
+        status: '',
+        partial: ''
 	}}
     >
         {Selected.bind()}
@@ -171,7 +119,7 @@ the "partial" appearance indicates that the Time Region's start date falls outsi
 
 export const Partial = (args) => {
     return html`
-	<rux-time-region partial="ongoing" start="2020-01-01T00:00" end="2020-01-02T00:00">
+	<rux-time-region partial="${args.partial}" start="2020-01-01T00:00" end="2020-01-02T00:00" status="${args.status}" selected="${args.selected}">
 		Cras vestibulum orci sed nisl
 	</rux-time-region>
     `
@@ -180,6 +128,11 @@ export const Partial = (args) => {
 <Canvas>
     <Story
         name="Partial"
+        args={{
+            selected: false,
+            status: '',
+            partial: 'ongoing'
+	}}
     >
         {Partial.bind()}
     </Story>
