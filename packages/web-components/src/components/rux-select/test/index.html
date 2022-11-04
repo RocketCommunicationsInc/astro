@@ -62,12 +62,29 @@
         <section>
             <h2>Single Select</h2>
 
-            <form id="form" method="POST" action="/form">
-                <rux-select id="ruxSelect" label="Best Thing?" name="bestThing">
-                    <rux-option label="Select an option" value=""></rux-option>
-                    <rux-option label="Red" value="red"></rux-option>
-                    <rux-option value="blue" label="Blue"></rux-option>
-                    <rux-option value="green" label="Green"></rux-option>
+            <form id="form" method="POST" action="/form" style="width: 200px">
+                <rux-select
+                    id="ruxSelect"
+                    label="Best Thing?"
+                    name="bestThing"
+                    size="large"
+                >
+                    <rux-option
+                        label="Select an option that is the best thing"
+                        value=""
+                    ></rux-option>
+                    <rux-option
+                        label="Red is definitely the best for sure forever"
+                        value="red"
+                    ></rux-option>
+                    <rux-option
+                        value="blue"
+                        label="Blue is clearly supperior to all others"
+                    ></rux-option>
+                    <rux-option
+                        value="green"
+                        label="green is fine"
+                    ></rux-option>
                 </rux-select>
                 <button id="formSubmitBtn" type="submit">submit</button>
             </form>
