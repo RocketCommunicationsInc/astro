@@ -62,6 +62,9 @@
 .rux-time-region--serious:not(.rux-time-region--selected) {
     border-color: var(--status-symbol-color-fill-serious-on-dark);
 }
+.rux-time-region--off:not(.rux-time-region--selected) {
+    border-color: var(--status-symbol-color-fill-off-on-dark);
+}
 
 .hidden {
     visibility: hidden;
