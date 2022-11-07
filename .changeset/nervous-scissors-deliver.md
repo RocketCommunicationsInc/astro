@@ -1,6 +1,6 @@
 ---
-"astro-website": patch
-"@astrouxds/astro-web-components": patch
+"astro-website": minor
+"@astrouxds/astro-web-components": minor
 ---
 
 feat(help/error text) add slot for help-text and error-text on relevant form field components
