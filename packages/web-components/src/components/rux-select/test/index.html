@@ -43,6 +43,87 @@
     </head>
 
     <body class="dark-theme">
+        <section>
+            <h2>Prop/Slot Testing</h2>
+            <rux-select id="test-this" label="this the select label">
+                <rux-option label="Select an option" value=""></rux-option>
+                <rux-option label="Redddd" value="redddd"></rux-option>
+                <rux-option value="blueeee" label="Blueeee"></rux-option>
+                <rux-option value="greennnn" label="Greennnn"></rux-option>
+            </rux-select>
+            <div
+                style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem"
+            >
+                <rux-button id="addHelpSlot">Add Help Slot</rux-button>
+                <rux-button id="removeHelpSlot">Remove Help Slot</rux-button>
+                <rux-button id="addErrorSlot">Add Error Slot</rux-button>
+                <rux-button id="removeErrorSlot">Remove Error Slot</rux-button>
+            </div>
+            <div
+                style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem"
+            >
+                <rux-button id="addHelpProp">Add Help Prop</rux-button>
+                <rux-button id="removeHelpProp">Remove Help Prop</rux-button>
+                <rux-button id="addErrorProp">Add Error Prop</rux-button>
+                <rux-button id="removeErrorProp">Remove Error Prop</rux-button>
+            </div>
+        </section>
+        <script>
+            const helpSlotButton = document.getElementById('addHelpSlot')
+            const removeHelpSlotButton = document.getElementById(
+                'removeHelpSlot'
+            )
+            const helpPropButton = document.getElementById('addHelpProp')
+            const removeHelpPropButton = document.getElementById(
+                'removeHelpProp'
+            )
+            const errorSlotButton = document.getElementById('addErrorSlot')
+            const removeErrorSlotButton = document.getElementById(
+                'removeErrorSlot'
+            )
+            const errorPropButton = document.getElementById('addErrorProp')
+            const removeErrorPropButton = document.getElementById(
+                'removeErrorProp'
+            )
+            const select = document.getElementById('test-this')
+
+            /**add/remove slots**/
+
+            helpSlotButton.addEventListener('click', () => {
+                select.innerHTML += `
+              <div slot="help-text">HELP SLOT <a href="http://www.google.com">Link</a></div>
+          `
+            })
+            removeHelpSlotButton.addEventListener('click', () => {
+                const helpTextSlot = select.querySelector(`[slot='help-text']`)
+                helpTextSlot.remove()
+            })
+            errorSlotButton.addEventListener('click', () => {
+                select.innerHTML += `
+              <div slot="error-text">ERROR SLOT <a href="http://www.google.com">Link</a></div>
+          `
+            })
+            removeErrorSlotButton.addEventListener('click', () => {
+                const errorTextSlot = select.querySelector(
+                    `[slot='error-text']`
+                )
+                errorTextSlot.remove()
+            })
+
+            /**add/remove props**/
+            helpPropButton.addEventListener('click', () => {
+                select.setAttribute('help-text', 'Help text PROP')
+            })
+            removeHelpPropButton.addEventListener('click', () => {
+                select.removeAttribute('help-text')
+            })
+            errorPropButton.addEventListener('click', () => {
+                select.setAttribute('error-text', 'Error text PROP')
+            })
+            removeErrorPropButton.addEventListener('click', () => {
+                select.removeAttribute('error-text')
+            })
+        </script>
         <!-- <ftl-belt file-id="7tni7pdpLodbs6dGiKwGMz">
             <ftl-holster name="Select Menu" node="25921:122587">
                 <rux-select

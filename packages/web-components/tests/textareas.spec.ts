@@ -21,8 +21,6 @@ test.describe('Textarea', () => {
         const template = `<rux-textarea help-text="Help Text" error-text="Error Text"></rux-textarea>`
         const el = await astroPage.load(template)
         await expect(el.locator('.rux-error-text')).toHaveText('Error Text')
-        await expect(el.locator('div').last()).toHaveClass('rux-error-text')
-        await expect(el).not.toHaveClass('rux-help-text')
     })
 })
 test.describe('Textarea in a form', () => {

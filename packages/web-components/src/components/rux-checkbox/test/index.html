@@ -24,7 +24,7 @@
     </head>
 
     <body class="dark-theme">
-        <ftl-belt access-token="" file-id="3tYLyBkvKYOdUysPk6Fu60">
+        <!-- <ftl-belt access-token="" file-id="3tYLyBkvKYOdUysPk6Fu60">
             <ftl-holster name="Test 1 Name" node="25916:114906">
                 <form id="form" style="width: 100%">
                     <rux-checkbox
@@ -36,7 +36,7 @@
                     </rux-checkbox>
                 </form>
             </ftl-holster>
-        </ftl-belt>
+        </ftl-belt> -->
         <div>
             <rux-checkbox></rux-checkbox>
             <rux-checkbox></rux-checkbox>
@@ -153,5 +153,57 @@
                 })
             </script>
         </div>
+        <section>
+            <h2>Prop Testing</h2>
+            <rux-checkbox
+                id="test-this"
+                label="this the checkbox label"
+            ></rux-checkbox>
+            <div
+                style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem"
+            >
+                <rux-button id="addHelpSlot">Add Help Slot</rux-button>
+                <rux-button id="removeHelpSlot">Remove Help Slot</rux-button>
+            </div>
+            <div
+                style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem"
+            >
+                <rux-button id="addHelpProp">Add Help Prop</rux-button>
+                <rux-button id="removeHelpProp">Remove Help Prop</rux-button>
+            </div>
+        </section>
+        <script>
+            const helpSlotButton = document.getElementById('addHelpSlot')
+            const removeHelpSlotButton = document.getElementById(
+                'removeHelpSlot'
+            )
+            const helpPropButton = document.getElementById('addHelpProp')
+            const removeHelpPropButton = document.getElementById(
+                'removeHelpProp'
+            )
+            const checkBox = document.getElementById('test-this')
+
+            /**add/remove slots**/
+
+            helpSlotButton.addEventListener('click', () => {
+                checkBox.innerHTML += `
+                    <div slot="help-text">HELP SLOT <a href="http://www.google.com">Link</a></div>
+                `
+            })
+            removeHelpSlotButton.addEventListener('click', () => {
+                const helpTextSlot = checkBox.querySelector(
+                    `[slot='help-text']`
+                )
+                helpTextSlot.remove()
+            })
+
+            /**add/remove props**/
+            helpPropButton.addEventListener('click', () => {
+                checkBox.setAttribute('help-text', 'Help text PROP')
+            })
+            removeHelpPropButton.addEventListener('click', () => {
+                checkBox.removeAttribute('help-text')
+            })
+        </script>
     </body>
 </html>
