@@ -9,6 +9,7 @@ import {
     h,
 } from '@stencil/core'
 import { formatInTimeZone } from 'date-fns-tz'
+import { Status } from '../../../common/commonTypes.module'
 
 /**
  * @slot (default) - The content of the Time Region
@@ -38,7 +39,7 @@ export class RuxTimeRegion {
     /**
      * Short hand attribute for displaying a Status icon and appropriate border color.
      */
-    @Prop() status?: 'normal' | 'critical' | 'serious' | 'caution' | 'standby'
+    @Prop() status?: Status
 
     /**
      * Visually indicates a partial time regions. Partial time regions are time regions that start or end outside of the current range of the timeline.
@@ -100,6 +101,7 @@ export class RuxTimeRegion {
                         'rux-time-region--serious': this.status === 'serious',
                         'rux-time-region--caution': this.status === 'caution',
                         'rux-time-region--standby': this.status === 'standby',
+                        'rux-time-region--off': this.status === 'off',
                         'rux-time-region--selected': this.selected,
                         'rux-time-region--partial-start':
                             this.partial === 'start' ||

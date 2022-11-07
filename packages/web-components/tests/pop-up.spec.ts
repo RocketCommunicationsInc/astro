@@ -94,25 +94,10 @@ test.describe('Pop up', async () => {
             toggleBtn.click(),
         ])
     })
-    test('it closes on selection when close-on-select is true', async ({
-        page,
-    }) => {
-        await setBodyContent(
-            page,
-            `
-            <rux-pop-up close-on-select open>
-                <rux-icon icon="apps" slot="trigger"></rux-icon>
-                <rux-menu>
-                    <rux-menu-item>Item 1</rux-menu-item>
-                    <rux-menu-item>Item 2</rux-menu-item>
-                </rux-menu>
-            </rux-pop-up>
-        `
-        )
-        const popup = page.locator('rux-pop-up')
-        expect(popup).toHaveAttribute('open', '')
-        const menuItem = page.locator('rux-menu-item').nth(0)
-        await menuItem.click()
-        await expect(popup).not.toHaveAttribute('open', '')
-    })
+    /**
+     * Need to test:
+     *  - Open and close?
+     *  - Closes on an off click
+     *  - should be able to contain a form
+     */
 })

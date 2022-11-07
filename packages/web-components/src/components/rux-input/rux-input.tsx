@@ -132,11 +132,6 @@ export class RuxInput implements FormFieldInterface {
     @Prop() step?: string
 
     /**
-     * The input's autocomplete attribute
-     */
-    @Prop() autocomplete?: string
-
-    /**
      * The input's spellcheck attribute
      */
     @Prop() spellcheck = false
@@ -262,10 +257,10 @@ export class RuxInput implements FormFieldInterface {
             value,
             hasLabel,
             size,
-            autocomplete,
             spellcheck,
             readonly,
             togglePassword,
+            isPasswordVisible,
         } = this
 
         renderHiddenInput(true, el, name, value, disabled)
@@ -336,9 +331,8 @@ export class RuxInput implements FormFieldInterface {
                             max={max}
                             value={value}
                             class="native-input"
-                            id={this.inputId}
+                            id={inputId}
                             spellcheck={spellcheck}
-                            autocomplete={togglePassword ? 'off' : autocomplete}
                             readonly={readonly}
                             onChange={_onChange}
                             onInput={_onInput}
@@ -346,7 +340,7 @@ export class RuxInput implements FormFieldInterface {
                             onFocus={_onFocus}
                             part="input"
                         ></input>
-                        {this.togglePassword ? (
+                        {togglePassword ? (
                             <button
                                 onClick={_handleTogglePassword}
                                 class="pw-button"
@@ -354,7 +348,7 @@ export class RuxInput implements FormFieldInterface {
                                 <rux-icon
                                     exportparts="icon"
                                     icon={
-                                        this.isPasswordVisible
+                                        isPasswordVisible
                                             ? 'visibility-off'
                                             : 'visibility'
                                     }

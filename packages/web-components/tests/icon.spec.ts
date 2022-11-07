@@ -1,17 +1,12 @@
-import { test, expect } from '@playwright/test'
-import { startTestEnv, setBodyContent } from './utils/_startTestEnv'
+import { test, expect } from './utils/_astro-fixtures'
 
 test.describe('Icon', () => {
-    startTestEnv()
 
-    test('it renders', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `
-        <rux-icon icon="altitude"></rux-icon>
-    `
-        )
-        const el = page.locator('rux-icon').first()
+    test('it renders', async ({ astroPage }) => {
+        const template = `
+            <rux-icon icon="altitude"></rux-icon>
+        `
+        const el = await astroPage.load(template)
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })

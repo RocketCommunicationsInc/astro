@@ -2,7 +2,11 @@
     display: block;
 }
 
+a.rux-menu-item {
+    text-decoration: none;
+}
 .rux-menu-item {
+    display: block;
     position: relative;
     padding: var(--spacing-2); //8
     color: var(--color-text-interactive-default);

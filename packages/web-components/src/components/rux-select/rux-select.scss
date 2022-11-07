@@ -124,14 +124,18 @@ label {
     letter-spacing: var(--font-control-body-1-letter-spacing);
     user-select: none;
 
+    //In the following, the right padding accounts for normal padding + size of drop down arrow
     &--small {
         padding: var(--spacing-1) var(--spacing-2); //4px 8px
+        padding-right: calc(var(--spacing-2) + var(--spacing-8));
     }
     &--medium {
         padding: var(--spacing-2); //8px
+        padding-right: calc(var(--spacing-2) + var(--spacing-8));
     }
     &--large {
         padding: var(--spacing-3) var(--spacing-2); //12px 8px
+        padding-right: calc(var(--spacing-2) + var(--spacing-8));
     }
     &--multiple {
         background: var(--color-background-base-default);
