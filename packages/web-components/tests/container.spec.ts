@@ -10,4 +10,9 @@ test.describe('Container', () => {
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })
+
+    test('has no visual regression', async ({page}) => {
+        await page.goto('/components/rux-container/test/basic')
+        await expect(page).toHaveScreenshot()
+    })
 })

@@ -6,7 +6,7 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
         />
-        <title>Test - Button</title>
+        <title>Test - Checkbox</title>
 
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
@@ -18,9 +18,41 @@
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
         <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
+        <style>
+            body {
+                padding: 1rem;
+            }
+            .grid,
+            section {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                display: grid;
+                gap: 2rem;
+            }
+            .grid h2,
+            section h2 {
+                grid-column: 1 / 4;
+            }
+        </style>
     </head>
 
     <body>
         <rux-checkbox></rux-checkbox>
+
+        <section>
+            <h2>State</h2>
+            <rux-checkbox checked></rux-checkbox>
+            <rux-checkbox disabled></rux-checkbox>
+            <rux-checkbox indeterminate></rux-checkbox>
+        </section>
+
+        <section>
+            <h2>Help Text</h2>
+            <rux-checkbox help-text="help text"></rux-checkbox>
+        </section>
+
+        <section>
+            <h2>With Label</h2>
+            <rux-checkbox label="label"></rux-checkbox>
+        </section>
     </body>
 </html>

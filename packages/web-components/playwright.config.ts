@@ -12,7 +12,8 @@ import { devices } from '@playwright/test'
  */
 const config: PlaywrightTestConfig = {
     // testDir: './src/components/**/test/basic/*.vrt.ts',
-    testMatch: '*.vrt.ts',
+    // testMatch: '*.vrt.ts',
+    testDir: './tests',
     /* Maximum time one test can run for. */
     timeout: 30 * 1000,
     expect: {
