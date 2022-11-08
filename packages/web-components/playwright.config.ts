@@ -11,7 +11,8 @@ import { devices } from '@playwright/test'
  * See https://playwright.dev/docs/test-configuration.
  */
 const config: PlaywrightTestConfig = {
-    testDir: './tests',
+    // testDir: './src/components/**/test/basic/*.vrt.ts',
+    testMatch: '*.vrt.ts',
     /* Maximum time one test can run for. */
     timeout: 30 * 1000,
     expect: {
@@ -26,7 +27,7 @@ const config: PlaywrightTestConfig = {
     /* Fail the build on CI if you accidentally left test.only in the source code. */
     forbidOnly: !!process.env.CI,
     /* Retry on CI only */
-    retries: 4,
+    retries: 0,
     /* Opt out of parallel tests on CI. */
     workers: process.env.CI ? 1 : undefined,
     /* Reporter to use. See https://playwright.dev/docs/test-reporters */
@@ -49,21 +50,22 @@ const config: PlaywrightTestConfig = {
             use: {
                 ...devices['Desktop Chrome'],
             },
+            snapshotDir: 'vrt-snaps',
         },
 
-        {
-            name: 'firefox',
-            use: {
-                ...devices['Desktop Firefox'],
-            },
-        },
+        // {
+        //     name: 'firefox',
+        //     use: {
+        //         ...devices['Desktop Firefox'],
+        //     },
+        // },
 
-        {
-            name: 'webkit',
-            use: {
-                ...devices['Desktop Safari'],
-            },
-        },
+        // {
+        //     name: 'webkit',
+        //     use: {
+        //         ...devices['Desktop Safari'],
+        //     },
+        // },
 
         /* Test against mobile viewports. */
         // {
