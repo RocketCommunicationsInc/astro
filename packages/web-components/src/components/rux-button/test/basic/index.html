@@ -17,26 +17,18 @@
         <script nomodule src="/build/astro-web-components.esm.js"></script>
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
+        <link rel="stylesheet" href="/global/test.css" />
+
         <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
-        <style>
-            body {
-                padding: 1rem;
-            }
-            .grid,
-            section {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                display: grid;
-                gap: 2rem;
-            }
-            .grid h2,
-            section h2 {
-                grid-column: 1 / 4;
-            }
-        </style>
     </head>
 
     <body>
-        <section class="grid">
+        <section>
+            <h2>Primary</h2>
+            <rux-button>Button</rux-button>
+        </section>
+
+        <section>
             <h2>Kinds</h2>
             <rux-button>Submit</rux-button>
             <rux-button secondary>Submit</rux-button>
