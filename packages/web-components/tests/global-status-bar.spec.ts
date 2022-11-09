@@ -3,7 +3,10 @@ import { test, expect } from './utils/_astro-fixtures'
 test.describe('Global status bar', () => {
 
     test('has no visual regression @vrt', async ({page}) => {
-        await page.goto('/components/rux-global-status-bar/test/basic')
+        await page.goto('/components/rux-global-status-bar/test/basic', {
+            waitUntil: "networkidle"
+        })
+        await page.waitForFunction(() => document.fonts.check("1em Roboto"))
         await expect(page).toHaveScreenshot()
     })
     test('it renders', async ({ astroPage }) => {
