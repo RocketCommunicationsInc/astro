@@ -5,8 +5,18 @@ import {
     startTestEnv,
 } from './utils/_startTestEnv'
 
+
+test.describe('vrt', () => {
+    test('has no visual regression @vrt', async ({page}) => {
+        await page.goto('/components/rux-input/test/basic')
+        await expect(page).toHaveScreenshot()
+    })
+})
+
 test.describe('Input with form', () => {
     const testString = 'Hello World'
+
+
 
     test.beforeEach(async ({ page }) => {
         await startTestInBefore(page)

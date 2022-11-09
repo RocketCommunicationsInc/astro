@@ -6,6 +6,11 @@ import { startTestEnv, setBodyContent } from './utils/_startTestEnv'
 test.describe('Log', () => {
     startTestEnv()
 
+    test('has no visual regression @vrt', async ({page}) => {
+        await page.goto('/components/rux-log/test/basic')
+        await expect(page).toHaveScreenshot()
+    })
+    
     test('it renders', async ({ page }) => {
         await setBodyContent(
             page,

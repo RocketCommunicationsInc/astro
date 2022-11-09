@@ -2,7 +2,15 @@ import { test, expect } from '@playwright/test'
 import { id } from 'date-fns/locale'
 import { startTestInBefore, setBodyContent } from './utils/_startTestEnv'
 
+
+test.describe('switch vrt', () => {
+    test('has no visual regression @vrt', async ({page}) => {
+        await page.goto('/components/rux-switch/test/basic')
+        await expect(page).toHaveScreenshot()
+    })
+})
 test.describe('Switch', () => {
+
     test.beforeEach(async ({ page }) => {
         await startTestInBefore(page)
 

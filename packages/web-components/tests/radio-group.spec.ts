@@ -1,6 +1,13 @@
 import { test, expect } from '@playwright/test'
 import { startTestInBefore, setBodyContent } from './utils/_startTestEnv'
 
+test.describe('vrt', () => {
+
+    test('has no visual regression @vrt', async ({page}) => {
+        await page.goto('/components/rux-radio-group/test/basic')
+        await expect(page).toHaveScreenshot()
+    })
+})
 test.describe('Radio-group-with-form', () => {
     test.beforeEach(async ({ page }) => {
         await startTestInBefore(page)

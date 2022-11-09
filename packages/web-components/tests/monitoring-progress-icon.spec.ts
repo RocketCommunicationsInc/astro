@@ -2,6 +2,10 @@ import { test, expect } from '@playwright/test'
 import { setBodyContent, startTestEnv } from './utils/_startTestEnv'
 
 test.describe('Monitoring Progress Icon', () => {
+    test('has no visual regression @vrt', async ({page}) => {
+        await page.goto('/components/rux-monitoring-progress-icon/test/basic')
+        await expect(page).toHaveScreenshot()
+    })
     startTestEnv()
 
     test('it renders', async ({ page }) => {

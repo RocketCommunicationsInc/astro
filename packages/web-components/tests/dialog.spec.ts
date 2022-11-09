@@ -8,6 +8,11 @@ import {
 test.describe('Dialog', () => {
     startTestEnv()
 
+    test('has no visual regression @vrt', async ({page}) => {
+        await page.goto('/components/rux-dialog/test/basic')
+        await expect(page).toHaveScreenshot()
+    })
+
     test('it renders', async ({ page }) => {
         await setBodyContent(
             page,

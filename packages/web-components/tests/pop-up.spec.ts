@@ -2,6 +2,10 @@ import { test, expect } from '@playwright/test'
 import { startTestEnv, setBodyContent } from './utils/_startTestEnv'
 
 test.describe('Pop up', async () => {
+    test('has no visual regression @vrt', async ({page}) => {
+        await page.goto('/components/rux-pop-up/test/basic')
+        await expect(page).toHaveScreenshot()
+    })
     startTestEnv()
 
     test('it renders', async ({ page }) => {
