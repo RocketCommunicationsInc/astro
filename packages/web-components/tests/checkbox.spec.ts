@@ -18,8 +18,8 @@ test.describe('Checkbox', () => {
         await expect(el).toHaveText('label')
     })
     
-    test('has no visual regression @vrt', async ({page}) => {
-        await page.goto('/components/rux-checkbox/test/basic')
+    test('has no visual regression @vrt', async ({astroVRTPage, page}) => {
+        await astroVRTPage.goto('components/rux-checkbox/test/basic')
         await expect(page).toHaveScreenshot()
     })
 })

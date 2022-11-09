@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+import { test, expect } from './utils/_astro-fixtures'
 import { id } from 'date-fns/locale'
 import { startTestInBefore, setBodyContent } from './utils/_startTestEnv'
 

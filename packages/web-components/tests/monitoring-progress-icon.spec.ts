@@ -1,9 +1,9 @@
-import { test, expect } from '@playwright/test'
+import { test, expect } from './utils/_astro-fixtures'
 import { setBodyContent, startTestEnv } from './utils/_startTestEnv'
 
 test.describe('Monitoring Progress Icon', () => {
-    test('has no visual regression @vrt', async ({page}) => {
-        await page.goto('/components/rux-monitoring-progress-icon/test/basic')
+    test('has no visual regression @vrt', async ({astroVRTPage, page}) => {
+        await astroVRTPage.goto('components/rux-monitoring-progress-icon/test/basic')
         await expect(page).toHaveScreenshot()
     })
     startTestEnv()

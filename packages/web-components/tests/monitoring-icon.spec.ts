@@ -1,11 +1,11 @@
-import { test, expect } from '@playwright/test'
+import { test, expect } from './utils/_astro-fixtures'
 import { startTestEnv, setBodyContent } from './utils/_startTestEnv'
 //import { RuxMonitoringIcon } from '../src/components/rux-monitoring-icon/rux-monitoring-icon'
 
 
 test.describe('Monitoring-icon', () => {
-    test('has no visual regression @vrt', async ({page}) => {
-        await page.goto('/components/rux-monitoring-icon/test/basic')
+    test('has no visual regression @vrt', async ({astroVRTPage, page}) => {
+        await astroVRTPage.goto('components/rux-monitoring-icon/test/basic')
         await expect(page).toHaveScreenshot()
     })
 

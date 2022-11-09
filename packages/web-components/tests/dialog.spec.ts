@@ -1,4 +1,5 @@
-import { test, expect } from '@playwright/test'
+import { test, expect } from './utils/_astro-fixtures'
+
 import {
     startTestEnv,
     setBodyContent,
@@ -6,12 +7,13 @@ import {
 } from './utils/_startTestEnv'
 
 test.describe('Dialog', () => {
+    // test('has no visual regression @vrt', async ({astroVRTPage, page}) => {
+    //     await astroVRTPage.goto('components/rux-dialog/test/basic')
+    //     await expect(page).toHaveScreenshot()
+    // })
     startTestEnv()
 
-    test('has no visual regression @vrt', async ({page}) => {
-        await page.goto('/components/rux-dialog/test/basic')
-        await expect(page).toHaveScreenshot()
-    })
+  
 
     test('it renders', async ({ page }) => {
         await setBodyContent(

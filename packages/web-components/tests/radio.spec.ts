@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+import { test, expect } from './utils/_astro-fixtures'
 import { startTestInBefore, setBodyContent } from './utils/_startTestEnv'
 
 test.describe('Radio', () => {

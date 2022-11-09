@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+import { test, expect } from './utils/_astro-fixtures'
 import {
     startTestInBefore,
     setBodyContent,
@@ -7,8 +7,8 @@ import {
 
 
 test.describe('vrt', () => {
-    test('has no visual regression @vrt', async ({page}) => {
-        await page.goto('/components/rux-input/test/basic')
+    test('has no visual regression @vrt', async ({astroVRTPage, page}) => {
+        await astroVRTPage.goto('components/rux-input/test/basic')
         await expect(page).toHaveScreenshot()
     })
 })

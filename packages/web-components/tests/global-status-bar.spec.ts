@@ -2,13 +2,11 @@ import { test, expect } from './utils/_astro-fixtures'
 
 test.describe('Global status bar', () => {
 
-    test('has no visual regression @vrt', async ({page}) => {
-        await page.goto('/components/rux-global-status-bar/test/basic', {
-            waitUntil: "networkidle"
-        })
-        await page.waitForFunction(() => document.fonts.check("1em Roboto"))
+    test('has no visual regression @vrt', async ({astroVRTPage, page}) => {
+        await astroVRTPage.goto('components/rux-global-status-bar/test/basic')
         await expect(page).toHaveScreenshot()
     })
+
     test('it renders', async ({ astroPage }) => {
         const template = `<rux-global-status-bar></rux-global-status-bar>`
         const el = await astroPage.load(template)

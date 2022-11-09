@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+import { test, expect } from './utils/_astro-fixtures'
 import { startTestEnv, setBodyContent } from './utils/_startTestEnv'
 //import { RuxLog } from '../src/components/rux-log/rux-log'
 //import { LogRow } from '../src/components/rux-log/rux-log.model'
@@ -6,8 +6,8 @@ import { startTestEnv, setBodyContent } from './utils/_startTestEnv'
 test.describe('Log', () => {
     startTestEnv()
 
-    test('has no visual regression @vrt', async ({page}) => {
-        await page.goto('/components/rux-log/test/basic')
+    test('has no visual regression @vrt', async ({astroVRTPage, page}) => {
+        await astroVRTPage.goto('components/rux-log/test/basic')
         await expect(page).toHaveScreenshot()
     })
     

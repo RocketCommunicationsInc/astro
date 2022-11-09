@@ -1,3 +1,15 @@
 body {
-    background: red;
+    padding: 1rem;
+}
+
+.grid,
+section {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: grid;
+    gap: 2rem;
+}
+
+.grid h2,
+section h2 {
+    grid-column: 1 / 4;
 }

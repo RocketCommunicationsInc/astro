@@ -9,8 +9,13 @@ export class AstroComponentPage {
         this.firstChild = page.locator('body > :first-child')
     }
 
-    async goto() {
-        await this.page.goto('http://localhost:3333')
+    async goto(url?: string) {
+        await this.page.goto(`http://localhost:3333/${url}`, 
+		{
+            waitUntil: "networkidle"
+        }
+		)
+		await this.page.waitForFunction(() => document.fonts.check("1em Roboto"))
     }
 
     async load(content: string, script?: string) {

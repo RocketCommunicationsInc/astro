@@ -1,9 +1,9 @@
-import { test, expect } from '@playwright/test'
+import { test, expect } from './utils/_astro-fixtures'
 import { startTestEnv, setBodyContent } from './utils/_startTestEnv'
 
 test.describe('Notification', () => {
-    test('has no visual regression @vrt', async ({page}) => {
-        await page.goto('/components/rux-notification/test/basic')
+    test('has no visual regression @vrt', async ({astroVRTPage, page}) => {
+        await astroVRTPage.goto('components/rux-notification/test/basic')
         await expect(page).toHaveScreenshot()
     })
     startTestEnv()

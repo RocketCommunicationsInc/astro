@@ -34,8 +34,8 @@ test.describe('Checkbox-group', () => {
         await expect(el).toContainText('Help text!')
     })
 
-    test('has no visual regression @vrt', async ({page}) => {
-        await page.goto('/components/rux-checkbox-group/test/basic')
+    test('has no visual regression @vrt', async ({astroVRTPage, page}) => {
+        await astroVRTPage.goto('components/rux-checkbox-group/test/basic')
         await expect(page).toHaveScreenshot()
     })
 })
