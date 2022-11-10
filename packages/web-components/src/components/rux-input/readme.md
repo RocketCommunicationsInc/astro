@@ -37,11 +37,13 @@
 
 ## Slots
 
-| Slot       | Description           |
-| ---------- | --------------------- |
-| `"label"`  | The input label       |
-| `"prefix"` | Left side input icon  |
-| `"suffix"` | Right side input icon |
+| Slot           | Description           |
+| -------------- | --------------------- |
+| `"error-text"` | the error text        |
+| `"help-text"`  | the help text         |
+| `"label"`      | The input label       |
+| `"prefix"`     | Left side input icon  |
+| `"suffix"`     | Right side input icon |
 
 
 ## Shadow Parts

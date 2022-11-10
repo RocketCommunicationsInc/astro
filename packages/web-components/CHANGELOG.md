@@ -1,5 +1,39 @@
 # @astrouxds/astro-web-components
 
+## 7.2.0
+
+### Minor Changes
+
+#### Pop Up
+
+-   Added new `disableAutoUpdate` prop to lock the pop up's position on scroll.
+
+#### Input
+
+-   The `autocomplete` attribute has been removed due to a limitation with Shadow Dom encapsulation not allowing the attribute to be applied correctly.
+
+#### Form Elements
+
+-   Added new slots for `help-text` and `error-text`.
+
+#### Time Region
+
+-   Added the 'off' status as a status option.
+
+### Patch Changes
+
+#### Menu Item
+
+-   Restored `href`, `target`, `rel` and `download` attributes
+
+#### Select
+
+-   Long options no longer fall over the drop down indicator
+
+#### Time Region
+
+-   Fixed an issue where `serious` status was not correctly styling the border.
+
 ## 7.1.1
 
 ### Patch Changes

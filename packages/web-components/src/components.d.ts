@@ -12532,7 +12532,7 @@ export namespace Components {
         /**
           * Short hand attribute for displaying a Status icon and appropriate border color.
          */
-        "status"?: 'normal' | 'critical' | 'serious' | 'caution' | 'standby';
+        "status"?: Status;
         "timezone": string;
     }
     interface RuxTimeline {
@@ -33088,7 +33088,7 @@ declare namespace LocalJSX {
         /**
           * Short hand attribute for displaying a Status icon and appropriate border color.
          */
-        "status"?: 'normal' | 'critical' | 'serious' | 'caution' | 'standby';
+        "status"?: Status;
         "timezone"?: string;
     }
     interface RuxTimeline {
