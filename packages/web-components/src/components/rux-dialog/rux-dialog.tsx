@@ -236,9 +236,15 @@ export class RuxDialog {
                                     }}
                                     part="message"
                                 >
-                                    <slot onSlotchange={this._handleSlotChange}>
-                                        {message}
-                                    </slot>
+                                    {this.hasMessage ? (
+                                        <slot
+                                            onSlotchange={
+                                                this._handleSlotChange
+                                            }
+                                        ></slot>
+                                    ) : (
+                                        <div>{message}</div>
+                                    )}
                                 </div>
                             </div>
                             <footer
