@@ -75,10 +75,12 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 
 ## Slots
 
-| Slot          | Description        |
-| ------------- | ------------------ |
-| `"(default)"` | The select options |
-| `"label"`     | The select label   |
+| Slot           | Description        |
+| -------------- | ------------------ |
+| `"(default)"`  | The select options |
+| `"error-text"` | the error text     |
+| `"help-text"`  | the help text      |
+| `"label"`      | The select label   |
 
 
 ## Shadow Parts

@@ -25,9 +25,11 @@
 
 ## Slots
 
-| Slot      | Description           |
-| --------- | --------------------- |
-| `"label"` | The radio group label |
+| Slot           | Description           |
+| -------------- | --------------------- |
+| `"error-text"` | the error text        |
+| `"help-text"`  | the help text         |
+| `"label"`      | The radio group label |
 
 
 ## Shadow Parts

@@ -16,10 +16,12 @@
 
 ## Slots
 
-| Slot          | Description              |
-| ------------- | ------------------------ |
-| `"(default)"` | The checkbox elements    |
-| `"label"`     | The checkbox group label |
+| Slot           | Description              |
+| -------------- | ------------------------ |
+| `"(default)"`  | The checkbox elements    |
+| `"error-text"` | the error text           |
+| `"help-text"`  | the help text            |
+| `"label"`      | The checkbox group label |
 
 
 ## Shadow Parts

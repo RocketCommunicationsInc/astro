@@ -33,9 +33,11 @@
 
 ## Slots
 
-| Slot      | Description        |
-| --------- | ------------------ |
-| `"label"` | The textarea label |
+| Slot           | Description        |
+| -------------- | ------------------ |
+| `"error-text"` | the error text     |
+| `"help-text"`  | the help text      |
+| `"label"`      | The textarea label |
 
 
 ## Shadow Parts
