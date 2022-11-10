@@ -178,6 +178,7 @@ export class RuxDialog {
     connectedCallback() {
         this._handleDialogChoice = this._handleDialogChoice.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
+        this.hasMessage = hasSlot(this.element)
     }
 
     componentDidRender() {
@@ -186,9 +187,14 @@ export class RuxDialog {
     }
 
     private _handleSlotChange() {
+        console.log('handle slot change trigger')
         this.hasHeader = hasSlot(this.element, 'header')
         this.hasMessage = hasSlot(this.element)
         this.hasFooter = hasSlot(this.element, 'footer')
+        console.log(
+            this.hasMessage,
+            'hasMessage after code has run in slot change method'
+        )
     }
 
     render() {
@@ -236,15 +242,12 @@ export class RuxDialog {
                                     }}
                                     part="message"
                                 >
-                                    {this.hasMessage ? (
-                                        <slot
-                                            onSlotchange={
-                                                this._handleSlotChange
-                                            }
-                                        ></slot>
-                                    ) : (
+                                    <slot
+                                        onSlotchange={this._handleSlotChange}
+                                    ></slot>
+                                    {!this.hasMessage && message ? (
                                         <div>{message}</div>
-                                    )}
+                                    ) : null}
                                 </div>
                             </div>
                             <footer
