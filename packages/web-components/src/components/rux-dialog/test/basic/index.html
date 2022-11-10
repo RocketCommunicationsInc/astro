@@ -51,17 +51,39 @@
             #slot-message::part(container) {
                 top: 600px;
             }
+
+            #slot-header::part(container) {
+                top: 600px;
+                left: 500px;
+            }
+
+            #slot-footer::part(container) {
+                top: 600px;
+                left: 1000px;
+            }
+
+            #slot-msg-header::part(container) {
+                top: 900px;
+            }
+
+            #slot-footer-header::part(container) {
+                top: 900px;
+                left: 500px;
+            }
+
+            #slot-msg-footer::part(container) {
+                top: 900px;
+                left: 1000px;
+            }
         </style>
         <section>
-            <h2>Default</h2>
             <rux-dialog
-                message="Dialog message"
-                header="Dialog header"
+                message="Default message"
+                header="Default header"
                 open
             ></rux-dialog>
         </section>
         <section>
-            <h2>Scrollbars</h2>
             <rux-dialog
                 open
                 id="dialog-vert-scrollbars"
@@ -124,7 +146,7 @@
             </rux-dialog>
         </section>
         <section>
-            <h2>Mix and Match Slots and Props</h2>
+            <!-- slotted message -->
             <rux-dialog
                 id="slot-message"
                 open
@@ -134,14 +156,57 @@
             >
                 <div>Slotted Message</div>
             </rux-dialog>
+            <!-- slotted header -->
+            <rux-dialog
+                id="slot-header"
+                open
+                message="Prop Message"
+                confirm-text="Prop Confirm"
+                deny-text="Prop Deny"
+            >
+                <div slot="header">Slotted Header</div>
+            </rux-dialog>
+            <!-- slotted footer -->
+            <rux-dialog
+                id="slot-footer"
+                open
+                header="Prop Header"
+                message="Prop Message"
+            >
+                <div slot="footer">
+                    <rux-button-group h-align="right">
+                        <rux-button secondary>Slotted Deny</rux-button>
+                        <rux-button>Slotted Confirm</rux-button>
+                    </rux-button-group>
+                </div>
+            </rux-dialog>
         </section>
         <section>
-            <h2></h2>
+            <!-- slotted header and message -->
+            <rux-dialog id="slot-msg-header" open>
+                <span slot="header">Slot Header</span>
+                <div>Slot Message</div>
+            </rux-dialog>
+            <!-- slotted header and footer -->
+            <rux-dialog id="slot-footer-header" message="Prop Message" open>
+                <span slot="header">Slot Header</span>
+                <div slot="footer">
+                    <rux-button-group h-align="right">
+                        <rux-button secondary>Slotted Deny</rux-button>
+                        <rux-button>Slotted Confirm</rux-button>
+                    </rux-button-group>
+                </div>
+            </rux-dialog>
+            <!-- slotted message and footer -->
+            <rux-dialog id="slot-msg-footer" header="Prop Header" open>
+                <div>Slot Message</div>
+                <div slot="footer">
+                    <rux-button-group h-align="right">
+                        <rux-button secondary>Slotted Deny</rux-button>
+                        <rux-button>Slotted Confirm</rux-button>
+                    </rux-button-group>
+                </div>
+            </rux-dialog>
         </section>
     </body>
 </html>
-
-<!-- 
-    Scrollbar (long content)
-    Header on
--->
