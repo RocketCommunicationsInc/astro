@@ -308,6 +308,20 @@ test.describe(
                     .click({ position: { x: 10, y: 10 } }),
             ])
         })
+        test('it renders the message prop text when used with slots', async ({
+            page,
+        }) => {
+            await setBodyContent(
+                page,
+                `
+                <rux-dialog open message="Message Prop">
+                    <span slot="header">Slot Header</span>
+                </rux-dialog>
+            `
+            )
+            const messageContainer = page.locator('.rux-dialog__message')
+            await expect(messageContainer).toContainText('Message Prop')
+        })
         /*
         Need to test: 
         - Better way to test events rather than console? 

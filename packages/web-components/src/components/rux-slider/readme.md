@@ -83,9 +83,11 @@ Pass properties via attributes similar to the native [HTML Input Range](https://
 
 ## Slots
 
-| Slot      | Description      |
-| --------- | ---------------- |
-| `"label"` | The slider label |
+| Slot           | Description      |
+| -------------- | ---------------- |
+| `"error-text"` | the error text   |
+| `"help-text"`  | the help text    |
+| `"label"`      | The slider label |
 
 
 ## Shadow Parts

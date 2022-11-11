@@ -172,6 +172,7 @@ export class RuxPopUp {
             Object.assign(this.content.style, {
                 left: `${x}px`,
                 top: `${y}px`,
+                position: `${this.strategy}`,
             })
 
             //@ts-ignore

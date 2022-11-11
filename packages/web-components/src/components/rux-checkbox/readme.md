@@ -63,6 +63,7 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
 | Slot          | Description                |
 | ------------- | -------------------------- |
 | `"(default)"` | the label of the checkbox. |
+| `"help-text"` | the help text              |
 
 
 ## Shadow Parts
@@ -70,7 +71,7 @@ git clone https://github.com/RocketCommunicationsInc/astro-components.git
 | Part           | Description                      |
 | -------------- | -------------------------------- |
 | `"form-field"` | the form field wrapper container |
-| `"help-text"`  | The help text element            |
+| `"help-text"`  | the help text element            |
 | `"label"`      | the label of rux-checkbox        |
 
 
