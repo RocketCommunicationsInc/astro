@@ -129,6 +129,21 @@ test.describe('Notification', () => {
             closeBtn.click(),
         ])
     })
+
+    test('it renders the message prop text when used with slots', async ({
+        page,
+    }) => {
+        await setBodyContent(
+            page,
+            `
+            <rux-notification open message="Message Prop">
+                <span slot="prefix">Slot Prefix</span>
+            </rux-notification>
+        `
+        )
+        const messageContainer = page.locator('.rux-notification-banner__content')
+        await expect(messageContainer).toContainText('Message Prop')
+    })
 })
 /*
     Need to test: 
