@@ -19,42 +19,5 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body>
-        <rux-button id="open">Open Other one</rux-button>
-        <rux-dialog id="dia" message="Message Prop">
-            <span slot="header">Header Slot</span>
-        </rux-dialog>
-        <rux-dialog
-            click-to-close
-            open
-            header="hello"
-            message="This is a message prop"
-            id="testone"
-        >
-            <div slot="footer">
-                <p>
-                    Clicking the following button will prepend a div with some
-                    wording into rux-dialog (can be seen in the console). It
-                    would be expected (I think) to take over for the message
-                    prop since there is now actual content and the slot has
-                    changed.. but it won't.
-                </p>
-                <rux-button id="testbtn">Click to add!</rux-button>
-            </div>
-        </rux-dialog>
-        <script>
-            const dialog = document.getElementById('testone')
-            const button = document.getElementById('testbtn')
-            button.addEventListener('click', () => {
-                const newSlot = document.createElement('slot')
-                newSlot.innerHTML = `This is a default slot that shows up later!`
-                dialog.prepend(newSlot)
-            })
-            const dia = document.getElementById('dia')
-            const btn = document.getElementById('open')
-            btn.addEventListener('click', () => {
-                dia.open = !dia.open
-            })
-        </script>
-    </body>
+    <body></body>
 </html>

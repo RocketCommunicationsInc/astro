@@ -187,14 +187,9 @@ export class RuxDialog {
     }
 
     private _handleSlotChange() {
-        console.log('handle slot change trigger')
         this.hasHeader = hasSlot(this.element, 'header')
         this.hasMessage = hasSlot(this.element)
         this.hasFooter = hasSlot(this.element, 'footer')
-        console.log(
-            this.hasMessage,
-            'hasMessage after code has run in slot change method'
-        )
     }
 
     render() {
