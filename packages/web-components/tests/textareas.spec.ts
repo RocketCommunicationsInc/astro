@@ -1,10 +1,6 @@
 import { test, expect } from './utils/_astro-fixtures'
 
 test.describe('Textarea', () => {
-    test('has no visual regression @vrt', async ({page}) => {
-        await page.goto('/components/rux-textarea/test/basic')
-        await expect(page).toHaveScreenshot()
-    })
     test('it renders', async ({ astroPage }) => {
         const template = `<rux-textarea></rux-textarea>`
         const el = await astroPage.load(template)

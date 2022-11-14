@@ -11,8 +11,5 @@ test.describe('Container', () => {
         await expect(el).toHaveClass('hydrated')
     })
 
-    test('has no visual regression @vrt', async ({astroVRTPage, page}) => {
-        await astroVRTPage.goto('components/rux-container/test/basic')
-        await expect(page).toHaveScreenshot()
-    })
+ 
 })

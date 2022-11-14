@@ -5,11 +5,6 @@ import { startTestEnv, setBodyContent } from './utils/_startTestEnv'
 
 test.describe('Log', () => {
     startTestEnv()
-
-    test('has no visual regression @vrt', async ({astroVRTPage, page}) => {
-        await astroVRTPage.goto('components/rux-log/test/basic')
-        await expect(page).toHaveScreenshot()
-    })
     
     test('it renders', async ({ page }) => {
         await setBodyContent(

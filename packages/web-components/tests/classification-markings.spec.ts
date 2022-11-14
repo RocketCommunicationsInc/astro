@@ -1,10 +1,6 @@
 import { test, expect } from './utils/_astro-fixtures'
 
 test.describe('Classification Marking', () => {
-    test('has no visual regression @vrt', async ({astroVRTPage, page}) => {
-        await astroVRTPage.goto('components/rux-classification-marking/test/basic')
-        await expect(page).toHaveScreenshot()
-    })
 
     test.describe('Tags', () => {
         test('displays correct label for Unclassified', async ({ astroPage }) => {

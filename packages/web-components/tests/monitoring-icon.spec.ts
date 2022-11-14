@@ -4,11 +4,6 @@ import { startTestEnv, setBodyContent } from './utils/_startTestEnv'
 
 
 test.describe('Monitoring-icon', () => {
-    test('has no visual regression @vrt', async ({astroVRTPage, page}) => {
-        await astroVRTPage.goto('components/rux-monitoring-icon/test/basic')
-        await expect(page).toHaveScreenshot()
-    })
-
     startTestEnv()
 
     

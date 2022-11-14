@@ -1,13 +1,6 @@
 import { test, expect } from './utils/_astro-fixtures'
 import { startTestInBefore, setBodyContent } from './utils/_startTestEnv'
 
-test.describe('vrt', () => {
-    test('has no visual regression @vrt', async ({page}) => {
-        await page.goto('/components/rux-push-button/test/basic')
-        await expect(page).toHaveScreenshot()
-    })
-
-})
 test.describe('Push-button', () => {
     test.beforeEach(async ({ page }) => {
         await startTestInBefore(page)

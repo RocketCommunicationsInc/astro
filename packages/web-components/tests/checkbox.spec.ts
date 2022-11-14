@@ -18,10 +18,6 @@ test.describe('Checkbox', () => {
         await expect(el).toHaveText('label')
     })
     
-    test('has no visual regression @vrt', async ({astroVRTPage, page}) => {
-        await astroVRTPage.goto('components/rux-checkbox/test/basic')
-        await expect(page).toHaveScreenshot()
-    })
 })
 test.describe('Checkbox in a form', () => {
     test.beforeEach(async ({ astroPage }) => {

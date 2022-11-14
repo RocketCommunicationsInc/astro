@@ -6,13 +6,6 @@ import {
 } from './utils/_startTestEnv'
 
 
-test.describe('vrt', () => {
-    test('has no visual regression @vrt', async ({astroVRTPage, page}) => {
-        await astroVRTPage.goto('components/rux-input/test/basic')
-        await expect(page).toHaveScreenshot()
-    })
-})
-
 test.describe('Input with form', () => {
     const testString = 'Hello World'
 
