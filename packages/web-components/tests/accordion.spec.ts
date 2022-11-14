@@ -154,6 +154,10 @@ test.describe('Accordion', () => {
             `
 
             const accordionEl = await astroPage.load(template)
+            await accordionEl.evaluate( async (el) => {
+                //@ts-ignore
+                await el.componentOnReady()
+            })
             const accordionItemEl = accordionEl.locator('rux-accordion-item');
             await accordionItemEl.click({force: true})
             await expect(accordionItemEl).not.toHaveAttribute('expanded', '')
