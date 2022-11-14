@@ -18,24 +18,57 @@
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
         <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
-        <style>
-            body {
-                padding: 1rem;
-            }
-            .grid {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                display: grid;
-                gap: 2rem;
-            }
-            .grid h2 {
-                grid-column: 1 / 4;
-            }
-        </style>
+        <link rel="stylesheet" href="/global/test.css" />
     </head>
 
     <body>
-        <div style="padding: 10%; display: flex; justify-content: center">
-            <rux-push-button label="Push Button"></rux-push-button>
-        </div>
+        <section>
+            <h2>Default</h2>
+            <rux-textarea></rux-textarea>
+        </section>
+        <section>
+            <h2>Sizes</h2>
+            <rux-textarea size="small"></rux-textarea>
+            <rux-textarea size="medium"></rux-textarea>
+            <rux-textarea size="large"></rux-textarea>
+        </section>
+        <section>
+            <h2>Types</h2>
+            <rux-textarea disabled></rux-textarea>
+            <rux-textarea required></rux-textarea>
+            <rux-textarea invalid></rux-textarea>
+            <rux-textarea placeholder="Placeholder Text"></rux-textarea>
+            <rux-textarea
+                placeholder="Placeholder Text"
+                disabled
+            ></rux-textarea>
+            <rux-textarea disabled invalid></rux-textarea>
+            <rux-textarea label="With Label"></rux-textarea>
+            <rux-textarea
+                label="With Label, placeholder"
+                placeholder="Placeholder Text"
+            ></rux-textarea>
+            <rux-textarea label="With Label, disabled" disabled></rux-textarea>
+            <rux-textarea label="With Label, invalid" invalid></rux-textarea>
+            <rux-textarea label="With Label, required" required></rux-textarea>
+            <rux-textarea
+                label="With Label, help text"
+                help-text="Help text here!"
+            ></rux-textarea>
+            <rux-textarea
+                label="With Label, error text"
+                error-text="Error text here!"
+            ></rux-textarea>
+            <rux-textarea
+                label="With Label, help text, disabeld"
+                disabled
+                help-text="Help text here!"
+            ></rux-textarea>
+            <rux-textarea
+                label="With Label, error text, disabled"
+                disabled
+                error-text="Error text here!"
+            ></rux-textarea>
+        </section>
     </body>
 </html>

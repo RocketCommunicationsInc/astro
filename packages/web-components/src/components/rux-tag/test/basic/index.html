@@ -18,24 +18,27 @@
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
         <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
-        <style>
-            body {
-                padding: 1rem;
-            }
-            .grid {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                display: grid;
-                gap: 2rem;
-            }
-            .grid h2 {
-                grid-column: 1 / 4;
-            }
-        </style>
+        <link rel="stylesheet" href="/global/test.css" />
     </head>
+    <style>
+        #custom {
+            width: 100px;
+            background: #003655;
+            border-color: #2b659b;
+        }
+    </style>
 
     <body>
-        <div style="padding: 10%; display: flex; justify-content: center">
-            <rux-push-button label="Push Button"></rux-push-button>
-        </div>
+        <section>
+            <h2>Default</h2>
+            <rux-tag></rux-tag>
+        </section>
+        <section>
+            <h2>Status's</h2>
+            <rux-tag status="fail"></rux-tag>
+            <rux-tag status="pass"></rux-tag>
+            <rux-tag status="unkown"></rux-tag>
+            <rux-tag id="custom">Custom</rux-tag>
+        </section>
     </body>
 </html>

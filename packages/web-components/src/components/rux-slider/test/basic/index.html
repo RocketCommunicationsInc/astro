@@ -18,24 +18,90 @@
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
         <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
-        <style>
-            body {
-                padding: 1rem;
-            }
-            .grid {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                display: grid;
-                gap: 2rem;
-            }
-            .grid h2 {
-                grid-column: 1 / 4;
-            }
-        </style>
+        <link rel="stylesheet" href="/global/test.css" />
     </head>
 
     <body>
-        <div style="padding: 10%; display: flex; justify-content: center">
-            <rux-push-button label="Push Button"></rux-push-button>
-        </div>
+        <section>
+            <h2>Default</h2>
+            <rux-slider></rux-slider>
+        </section>
+        <section>
+            <h2>Types</h2>
+            <rux-slider disabled></rux-slider>
+            <rux-slider label="With Label"></rux-slider>
+            <rux-slider label="Disabled" disabled></rux-slider>
+            <rux-slider
+                label="With help text"
+                help-text="Help text here!"
+            ></rux-slider>
+            <rux-slider
+                label="With error text"
+                error-text="Error text here!"
+            ></rux-slider>
+            <rux-slider
+                label="With help text, disabled"
+                disabled
+                help-text="Help text here!"
+            ></rux-slider>
+            <rux-slider
+                label="With error text, disabled"
+                disabled
+                error-text="Error text here!"
+            ></rux-slider>
+        </section>
+        <section>
+            <h2>Axis Labels and Ticks</h2>
+            <rux-slider id="axis1"></rux-slider>
+            <rux-slider id="axis2" ticks-only></rux-slider>
+            <rux-slider id="axis3" disabled></rux-slider>
+            <rux-slider
+                label="Axis lables, default label"
+                id="axis4"
+            ></rux-slider>
+            <rux-slider
+                label="Axis lables, disabled, ticks only"
+                ticks-only
+                id="axis5"
+                disabled
+            ></rux-slider>
+        </section>
+        <script>
+            document.getElementById('axis1').axisLabels = [
+                '0',
+                '25',
+                '50',
+                '75',
+                '100',
+            ]
+            document.getElementById('axis2').axisLabels = [
+                '0',
+                '25',
+                '50',
+                '75',
+                '100',
+            ]
+            document.getElementById('axis3').axisLabels = [
+                '0',
+                '25',
+                '50',
+                '75',
+                '100',
+            ]
+            document.getElementById('axis4').axisLabels = [
+                '0',
+                '25',
+                '50',
+                '75',
+                '100',
+            ]
+            document.getElementById('axis5').axisLabels = [
+                '0',
+                '25',
+                '50',
+                '75',
+                '100',
+            ]
+        </script>
     </body>
 </html>
