@@ -32,6 +32,7 @@ export class RuxNotification {
     @Element() el!: HTMLRuxNotificationElement
 
     @State() hasPrefixSlot = false
+    @State() hasMessageSlot = false
     /**
      *  Set to true to display the Banner and begin countdown to close (if a close-after Number value is provided).
      */
@@ -81,6 +82,7 @@ export class RuxNotification {
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._updated()
+        this.hasMessageSlot = hasSlot(this.el)
     }
 
     private _updated() {
@@ -118,6 +120,7 @@ export class RuxNotification {
 
     private _handleSlotChange() {
         this.hasPrefixSlot = hasSlot(this.el, 'prefix')
+        this.hasMessageSlot = hasSlot(this.el)
     }
 
     render() {
@@ -176,7 +179,10 @@ export class RuxNotification {
                             }}
                             part="message"
                         >
-                            <slot>{this.message}</slot>
+                            <slot onSlotchange={this._handleSlotChange}></slot>
+                            {!this.hasMessageSlot && this.message ? (
+                                <span>{this.message}</span>
+                            ) : null}
                         </div>
 
                         {!this.hideClose ? (

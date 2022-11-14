@@ -5,4 +5,4 @@
 "@astrouxds/react": patch
 ---
 
-Fixed an issue where rux-time-region with a `serious` status was not correctly styling the border.
+Fixed an issue where the `strategy` prop of `rux-pop-up` was not applying correctly.
