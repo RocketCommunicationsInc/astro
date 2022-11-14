@@ -39,7 +39,9 @@ export class RuxStatus {
     }
 
     connectedCallback() {
-        if (this.status) this.validateStatus(this.status)
+        this.status
+            ? this.validateStatus(this.status)
+            : (this.status = 'normal')
     }
 
     render() {
