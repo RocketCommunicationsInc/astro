@@ -18,24 +18,81 @@
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
         <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
-        <style>
-            body {
-                padding: 1rem;
-            }
-            .grid {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                display: grid;
-                gap: 2rem;
-            }
-            .grid h2 {
-                grid-column: 1 / 4;
-            }
-        </style>
+        <link rel="stylesheet" href="/global/test.css" />
     </head>
+    <style>
+        .tabs-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
 
     <body>
-        <div style="padding: 10%; display: flex; justify-content: center">
-            <rux-push-button label="Push Button"></rux-push-button>
-        </div>
+        <section>
+            <h2>Default</h2>
+            <div class="tabs-wrapper">
+                <rux-tabs id="tab-set-id-1">
+                    <rux-tab id="tab-id-1">Tab 1 title</rux-tab>
+                    <rux-tab id="tab-id-2">Tab 2 title</rux-tab>
+                    <rux-tab id="tab-id-3">Tab 3 title</rux-tab>
+                </rux-tabs>
+
+                <rux-tab-panels aria-labelledby="tab-set-id-1">
+                    <rux-tab-panel aria-labelledby="tab-id-1"
+                        >Tab 1 HTML content</rux-tab-panel
+                    >
+                    <rux-tab-panel aria-labelledby="tab-id-2"
+                        >Tab 2 HTML content</rux-tab-panel
+                    >
+                    <rux-tab-panel aria-labelledby="tab-id-3"
+                        >Tab 3 HTML content</rux-tab-panel
+                    >
+                </rux-tab-panels>
+            </div>
+        </section>
+        <section>
+            <h2>Small</h2>
+            <div class="tabs-wrapper">
+                <rux-tabs id="tab-set-id-11" small>
+                    <rux-tab id="tab-id-11">Tab 1 title</rux-tab>
+                    <rux-tab id="tab-id-21">Tab 2 title</rux-tab>
+                    <rux-tab id="tab-id-31">Tab 3 title</rux-tab>
+                </rux-tabs>
+
+                <rux-tab-panels aria-labelledby="tab-set-id-11">
+                    <rux-tab-panel aria-labelledby="tab-id-11"
+                        >Tab 1 HTML content</rux-tab-panel
+                    >
+                    <rux-tab-panel aria-labelledby="tab-id-21"
+                        >Tab 2 HTML content</rux-tab-panel
+                    >
+                    <rux-tab-panel aria-labelledby="tab-id-31"
+                        >Tab 3 HTML content</rux-tab-panel
+                    >
+                </rux-tab-panels>
+            </div>
+        </section>
+        <section>
+            <h2>Disabled Tab</h2>
+            <div class="tabs-wrapper">
+                <rux-tabs id="tab-set-id-12">
+                    <rux-tab id="tab-id-12">Tab 1 title</rux-tab>
+                    <rux-tab id="tab-id-22" disabled>Tab 2 title</rux-tab>
+                    <rux-tab id="tab-id-32" disabled>Tab 3 title</rux-tab>
+                </rux-tabs>
+
+                <rux-tab-panels aria-labelledby="tab-set-id-12">
+                    <rux-tab-panel aria-labelledby="tab-id-12"
+                        >Tab 1 HTML content</rux-tab-panel
+                    >
+                    <rux-tab-panel aria-labelledby="tab-id-22"
+                        >Tab 2 HTML content</rux-tab-panel
+                    >
+                    <rux-tab-panel aria-labelledby="tab-id-32"
+                        >Tab 3 HTML content</rux-tab-panel
+                    >
+                </rux-tab-panels>
+            </div>
+        </section>
     </body>
 </html>

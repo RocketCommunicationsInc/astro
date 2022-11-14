@@ -18,24 +18,151 @@
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
         <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
-        <style>
-            body {
-                padding: 1rem;
-            }
-            .grid {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                display: grid;
-                gap: 2rem;
-            }
-            .grid h2 {
-                grid-column: 1 / 4;
-            }
-        </style>
+        <link rel="stylesheet" href="/global/test.css" />
     </head>
 
+    <style>
+        .wrap::part(text) {
+            white-space: normal;
+        }
+    </style>
+
     <body>
-        <div style="padding: 10%; display: flex; justify-content: center">
-            <rux-push-button label="Push Button"></rux-push-button>
-        </div>
+        <section>
+            <h2>Default</h2>
+            <rux-tree>
+                <rux-tree-node
+                    >Node
+                    <rux-tree-node slot="node">Node</rux-tree-node>
+                </rux-tree-node>
+                <rux-tree-node>Node</rux-tree-node>
+                <rux-tree-node>Node</rux-tree-node>
+            </rux-tree>
+        </section>
+        <section>
+            <h2>With Status</h2>
+            <rux-tree>
+                <rux-tree-node>
+                    Normal
+                    <rux-status status="normal" slot="prefix"></rux-status>
+                    <rux-tree-node slot="node">
+                        <rux-status status="normal" slot="prefix"></rux-status>
+                        Node
+                    </rux-tree-node>
+                </rux-tree-node>
+                <rux-tree-node>
+                    Standby
+                    <rux-status status="standby" slot="prefix"></rux-status>
+                    <rux-tree-node slot="node">Node</rux-tree-node>
+                </rux-tree-node>
+                <rux-tree-node>
+                    Caution
+                    <rux-status status="caution" slot="prefix"></rux-status>
+                    <rux-tree-node slot="node">Node</rux-tree-node>
+                </rux-tree-node>
+                <rux-tree-node>
+                    Serious
+                    <rux-status status="serious" slot="prefix"></rux-status>
+                    <rux-tree-node slot="node">Node</rux-tree-node>
+                </rux-tree-node>
+                <rux-tree-node>
+                    Critical
+                    <rux-status status="critical" slot="prefix"></rux-status>
+                    <rux-tree-node slot="node">Node</rux-tree-node>
+                </rux-tree-node>
+                <rux-tree-node>
+                    Off
+                    <rux-status status="off" slot="prefix"></rux-status>
+                    <rux-tree-node slot="node">Node</rux-tree-node>
+                </rux-tree-node>
+            </rux-tree>
+        </section>
+        <section>
+            <h2>Nested</h2>
+            <rux-tree>
+                <rux-tree-node expanded>
+                    First
+                    <rux-tree-node slot="node" expanded
+                        >Second
+                        <rux-tree-node slot="node" expanded
+                            >Third
+                            <rux-tree-node slot="node">Fourth</rux-tree-node>
+                        </rux-tree-node>
+                    </rux-tree-node>
+                </rux-tree-node>
+            </rux-tree>
+        </section>
+        <section>
+            <h2>Selected Node</h2>
+            <rux-tree>
+                <rux-tree-node>First</rux-tree-node>
+                <rux-tree-node expanded
+                    >First <rux-tree-node slot="node" selected
+                </rux-tree-node>
+                <rux-tree-node>Second</rux-tree-node>
+            </rux-tree>
+        </section>
+        <section>
+            <h2>With Truncated Text</h2>
+            <div style="width: 280px">
+                <rux-tree>
+                    <rux-tree-node>
+                        The first item has a long line of text
+                        <rux-tree-node slot="node">One</rux-tree-node>
+                        <rux-tree-node slot="node">Two</rux-tree-node>
+                        <rux-tree-node slot="node">Three</rux-tree-node>
+                    </rux-tree-node>
+                    <rux-tree-node>
+                        Two
+                        <rux-tree-node slot="node">One</rux-tree-node>
+                        <rux-tree-node slot="node">Two</rux-tree-node>
+                        <rux-tree-node slot="node">Three</rux-tree-node>
+                    </rux-tree-node>
+                    <rux-tree-node>
+                        Three
+                        <rux-tree-node slot="node">One</rux-tree-node>
+                        <rux-tree-node slot="node">Two</rux-tree-node>
+                        <rux-tree-node slot="node">Three</rux-tree-node>
+                    </rux-tree-node>
+                    <rux-tree-node>
+                        Four score and seven years ago
+                        <rux-tree-node slot="node">One</rux-tree-node>
+                        <rux-tree-node slot="node">Two</rux-tree-node>
+                        <rux-tree-node slot="node">Three</rux-tree-node>
+                    </rux-tree-node>
+                </rux-tree>
+            </div>
+        </section>
+        <section>
+            <h2>With Wrapped Text</h2>
+            <div style="width: 280px">
+                <rux-tree>
+                    <rux-tree-node class="wrap">
+                        The first item has a long line of text
+                        <rux-tree-node slot="node">One</rux-tree-node>
+                        <rux-tree-node slot="node">Two</rux-tree-node>
+                        <rux-tree-node slot="node">Three</rux-tree-node>
+                    </rux-tree-node>
+                    <rux-tree-node>
+                        Two
+                        <rux-tree-node slot="node">One</rux-tree-node>
+                        <rux-tree-node slot="node">Two</rux-tree-node>
+                        <rux-tree-node slot="node">Three</rux-tree-node>
+                    </rux-tree-node>
+                    <rux-tree-node>
+                        Three
+                        <rux-tree-node slot="node">One</rux-tree-node>
+                        <rux-tree-node slot="node">Two</rux-tree-node>
+                        <rux-tree-node slot="node">Three</rux-tree-node>
+                    </rux-tree-node>
+                    <rux-tree-node>
+                        Four score and seven years ago
+                        <rux-tree-node slot="node">One</rux-tree-node>
+                        <rux-tree-node slot="node">Two</rux-tree-node>
+                        <rux-tree-node slot="node">Three</rux-tree-node>
+                    </rux-tree-node>
+                </rux-tree>
+            </div>
+        </section>
     </body>
 </html>

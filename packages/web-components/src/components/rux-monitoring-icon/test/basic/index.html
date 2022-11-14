@@ -18,38 +18,104 @@
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
         <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
-        <style>
-            body {
-                padding: 1rem;
-            }
-            .grid {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                display: grid;
-                gap: 2rem;
-            }
-            .grid h2 {
-                grid-column: 1 / 4;
-            }
-        </style>
+        <link rel="stylesheet" href="/global/test.css" />
     </head>
 
     <body>
-        <div style="margin: 3rem auto; max-width: 5rem; text-align: center">
+        <section style="width: fit-content">
+            <h2>Default</h2>
+            <rux-monitoring-icon
+                icon="altitude"
+                label="Monitoring"
+                notifications="1"
+                sublabel="Sub Label"
+            >
+            </rux-monitoring-icon>
+        </section>
+        <section style="width: fit-content">
+            <h2>Variants</h2>
+            <rux-monitoring-icon
+                icon="altitude"
+                label="Monitoring"
+                status="normal"
+                notifications="9999999999999"
+                sublabel="Sub Label"
+            >
+            </rux-monitoring-icon>
+            <rux-monitoring-icon
+                icon="satellite-transmit"
+                label="Monitoring"
+                status="normal"
+                notifications="999"
+            >
+            </rux-monitoring-icon>
+            <rux-monitoring-icon
+                icon="satellite-transmit"
+                label="Monitoring"
+                status="normal"
+                notifications="9999"
+            >
+            </rux-monitoring-icon>
+            <rux-monitoring-icon
+                icon="satellite-transmit"
+                label="Monitoring"
+                status="normal"
+                notifications="9999999"
+            >
+            </rux-monitoring-icon>
+            <rux-monitoring-icon icon="apps" status="normal" notifications="8">
+            </rux-monitoring-icon>
+        </section>
+        <section style="width: fit-content">
+            <h2>Status Changes</h2>
             <rux-monitoring-icon
                 icon="altitude"
                 label="Monitoring"
                 status="normal"
                 notifications="1"
-                sublabel=""
-            ></rux-monitoring-icon>
-        </div>
-        <div style="margin: 3rem auto; max-width: 5rem; text-align: center">
+                sublabel="Sub Label"
+            >
+            </rux-monitoring-icon>
             <rux-monitoring-icon
-                icon="widgets"
-                label="Widgets icon"
-                status="normal"
+                icon="altitude"
+                label="Monitoring"
+                status="standby"
                 notifications="1"
-            ></rux-monitoring-icon>
-        </div>
+                sublabel="Sub Label"
+            >
+            </rux-monitoring-icon>
+            <rux-monitoring-icon
+                icon="altitude"
+                label="Monitoring"
+                status="caution"
+                notifications="1"
+                sublabel="Sub Label"
+            >
+            </rux-monitoring-icon>
+            <rux-monitoring-icon
+                icon="altitude"
+                label="Monitoring"
+                status="serious"
+                notifications="1"
+                sublabel="Sub Label"
+            >
+            </rux-monitoring-icon>
+            <rux-monitoring-icon
+                icon="altitude"
+                label="Monitoring"
+                status="off"
+                notifications="1"
+                sublabel="Sub Label"
+            >
+            </rux-monitoring-icon>
+            <rux-monitoring-icon
+                icon="altitude"
+                label="Monitoring"
+                status="critical"
+                notifications="1"
+                sublabel="Sub Label"
+            >
+            </rux-monitoring-icon>
+        </section>
     </body>
 </html>

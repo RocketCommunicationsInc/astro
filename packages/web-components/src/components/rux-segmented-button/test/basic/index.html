@@ -18,24 +18,112 @@
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
         <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
-        <style>
-            body {
-                padding: 1rem;
-            }
-            .grid {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                display: grid;
-                gap: 2rem;
-            }
-            .grid h2 {
-                grid-column: 1 / 4;
-            }
-        </style>
+        <link rel="stylesheet" href="/global/test.css" />
     </head>
 
     <body>
-        <div style="padding: 10%; display: flex; justify-content: center">
-            <rux-push-button label="Push Button"></rux-push-button>
+        <section>
+            <h2>Default</h2>
+            <rux-segmented-button></rux-segmented-button>
+        </section>
+        <section>
+            <h2>Sizes</h2>
+            <rux-segmented-button size="small"></rux-segmented-button>
+            <rux-segmented-button size="medium"></rux-segmented-button>
+            <rux-segmented-button size="large"></rux-segmented-button>
+        </section>
+        <section>
+            <h2>Types</h2>
+            <rux-segmented-button disabled></rux-segmented-button>
+        </section>
+        <section>
+            <h2>Button Amounts</h2>
+            <rux-segmented-button id="four"></rux-segmented-button>
+            <rux-segmented-button id="five"></rux-segmented-button>
+        </section>
+        <div style="margin: 3rem auto">
+            <rux-segmented-button id="eight"></rux-segmented-button>
         </div>
+
+        <script>
+            let data = [
+                {
+                    label: 'First item',
+                },
+                {
+                    label: 'Second item',
+                    selected: true,
+                },
+                {
+                    label: 'Third item',
+                },
+            ]
+            let fourData = [
+                {
+                    label: 'First item',
+                },
+                {
+                    label: 'Second item',
+                    selected: true,
+                },
+                {
+                    label: 'Third item',
+                },
+                {
+                    label: 'Fourth item',
+                },
+            ]
+            let fiveData = [
+                {
+                    label: 'First item',
+                },
+                {
+                    label: 'Second item',
+                },
+                {
+                    label: 'Third item',
+                },
+                {
+                    label: 'Fourth item',
+                },
+                {
+                    label: 'Fifth item',
+                    selected: true,
+                },
+            ]
+            let eightData = [
+                {
+                    label: 'First item',
+                },
+                {
+                    label: 'Second item',
+                },
+                {
+                    label: 'Third item',
+                },
+                {
+                    label: 'Fourth item',
+                },
+                {
+                    label: 'Fifth item',
+                    selected: true,
+                },
+                {
+                    label: 'Sixth item',
+                },
+                {
+                    label: 'Seventh item',
+                },
+                {
+                    label: 'Eigth item',
+                },
+            ]
+            document
+                .querySelectorAll('rux-segmented-button')
+                .forEach((btn) => (btn.data = data))
+            document.getElementById('four').data = fourData
+            document.getElementById('five').data = fiveData
+            document.getElementById('eight').data = eightData
+        </script>
     </body>
 </html>

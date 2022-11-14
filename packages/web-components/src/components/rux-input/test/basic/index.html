@@ -18,22 +18,77 @@
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
         <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
-        <style>
-            body {
-                padding: 1rem;
-            }
-            .grid {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                display: grid;
-                gap: 2rem;
-            }
-            .grid h2 {
-                grid-column: 1 / 4;
-            }
-        </style>
+        <link rel="stylesheet" href="/global/test.css" />
     </head>
 
     <body>
-        <rux-input type="text"></rux-input>
+        <section>
+            <h2>Default</h2>
+            <rux-input></rux-input>
+        </section>
+        <section>
+            <h2>Sizes</h2>
+            <rux-input size="small"></rux-input>
+            <rux-input size="medium"></rux-input>
+            <rux-input size="large"></rux-input>
+        </section>
+        <section>
+            <h2>Types</h2>
+            <rux-input disabled></rux-input>
+            <rux-input required label="Required"></rux-input>
+            <rux-input invalid></rux-input>
+            <rux-input placeholder="Placeholder"></rux-input>
+            <rux-input label="With label (non-required)"></rux-input>
+        </section>
+        <section>
+            <h2>Input Types</h2>
+            <rux-input type="text" label="Text"></rux-input>
+            <rux-input type="password" label="Password"></rux-input>
+            <rux-input type="number" label="Number"></rux-input>
+            <rux-input type="email" label="Email"></rux-input>
+            <rux-input type="url" label="URL"></rux-input>
+            <rux-input type="search" label="Search"></rux-input>
+            <rux-input type="date" label="Date"></rux-input>
+            <rux-input type="datetime-local" label="Datetime-local"></rux-input>
+            <rux-input type="time" label="Time"></rux-input>
+            <rux-input type="tel" label="Tel"></rux-input>
+        </section>
+        <section>
+            <h2>Prefix and Suffix</h2>
+            <rux-input label="Prefix">
+                <rux-icon
+                    icon="apps"
+                    slot="prefix"
+                    size="extra-small"
+                ></rux-icon>
+            </rux-input>
+            <rux-input label="Suffix">
+                <rux-icon
+                    icon="apps"
+                    slot="suffix"
+                    size="extra-small"
+                ></rux-icon>
+            </rux-input>
+            <rux-input label="Prefix and Suffix">
+                <rux-icon
+                    icon="apps"
+                    slot="suffix"
+                    size="extra-small"
+                ></rux-icon>
+                <rux-icon
+                    icon="apps"
+                    slot="prefix"
+                    size="extra-small"
+                ></rux-icon>
+            </rux-input>
+        </section>
+        <section>
+            <h2>Error and Help Text</h2>
+            <rux-input label="Help Text" help-text="Help Text Here"></rux-input>
+            <rux-input
+                label="Error Text"
+                error-text="Error Text Here"
+            ></rux-input>
+        </section>
     </body>
 </html>
