@@ -1,5 +1,4 @@
 :host {
-    cursor: pointer;
     display: block;
     margin: (--spacing-0) (--spacing-050);
     -webkit-user-select: none;
@@ -28,6 +27,7 @@
 
     .rux-push-button {
         &__button {
+            cursor: pointer;
             font-family: var(--font-control-body-1-font-family);
             font-size: var(--font-control-body-1-font-size);
             font-weight: var(--font-control-body-1-font-weight);
