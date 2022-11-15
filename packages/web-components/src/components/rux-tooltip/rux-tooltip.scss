@@ -1,0 +1,15 @@
+:host {
+}
+
+.hidden {
+    display: none;
+}
+.tooltip {
+    background: #efefef;
+    padding: 4px;
+    color: black;
+    width: fit-content;
+    border-radius: 4px;
+    position: absolute;
+    top: -1rem;
+}
