@@ -68,6 +68,10 @@ test.describe('Tabs', () => {
         const tabId2 = page.locator('#tab-id-2')
         const tab2Child = tabId2.locator('.rux-tab')
 
+        await ruxTabPanel1.evaluate(async (el) => {
+            //@ts-ignore
+            await el.componentOnReady()
+        })
         //Assert
         await expect(ruxTabPanel1).not.toHaveClass('hydrated hidden')
         await expect(ruxTabPanel2).toHaveClass('hydrated hidden')

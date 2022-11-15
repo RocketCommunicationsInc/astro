@@ -10,6 +10,10 @@ test.describe('Accordion', () => {
         `
 
         const el = await astroPage.load(template)
+        await el.evaluate(async (el) => {
+            //@ts-ignore
+            await el.componentOnReady()
+        })
         await expect(el).not.toHaveAttribute('expanded', '')
 
         const details = el.locator('details')
