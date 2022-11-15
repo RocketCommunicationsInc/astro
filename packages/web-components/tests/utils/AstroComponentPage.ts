@@ -9,8 +9,8 @@ export class AstroComponentPage {
         this.firstChild = page.locator('body > :first-child')
     }
 
-    async goto(url?: string) {
-        await this.page.goto(`http://localhost:3333/${url}`, 
+    async goto() {
+        await this.page.goto(`http://localhost:3333/`, 
 		{
             waitUntil: "networkidle"
         }
