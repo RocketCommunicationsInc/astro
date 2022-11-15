@@ -16,7 +16,7 @@ export class RuxStatus {
     /**
      * Sets the status symbol, valid options are critical, serious, caution, normal, standby and off
      */
-    @Prop({ reflect: true }) status?: Status
+    @Prop({ reflect: true }) status?: Status = 'normal'
 
     @Element() el!: HTMLRuxStatusElement
 
@@ -39,9 +39,7 @@ export class RuxStatus {
     }
 
     connectedCallback() {
-        this.status
-            ? this.validateStatus(this.status)
-            : (this.status = 'normal')
+        if (this.status) this.validateStatus(this.status)
     }
 
     render() {
