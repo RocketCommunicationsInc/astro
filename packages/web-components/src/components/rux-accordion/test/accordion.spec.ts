@@ -1,24 +1,24 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Accordion', () => {
-    // test('items are collapsed by default', async ({ astroPage }) => {
-    //     const template = `
-    //         <rux-accordion-item>
-    //             <div slot="label">Label</div>
-    //             Content
-    //         </rux-accordion-item>
-    //     `
+    test('items are collapsed by default', async ({ astroPage }) => {
+        const template = `
+            <rux-accordion-item>
+                <div slot="label">Label</div>
+                Content
+            </rux-accordion-item>
+        `
 
-    //     const el = await astroPage.load(template)
-    //     await el.evaluate(async (el) => {
-    //         //@ts-ignore
-    //         await el.componentOnReady()
-    //     })
-    //     await expect(el).not.toHaveAttribute('expanded', '')
+        const el = await astroPage.load(template)
+        await el.evaluate(async (el) => {
+            //@ts-ignore
+            await el.componentOnReady()
+        })
+        await expect(el).not.toHaveAttribute('expanded', '')
 
-    //     const details = el.locator('details')
-    //     await expect(details).not.toHaveAttribute('open', '')
-    // })
+        const details = el.locator('details')
+        await expect(details).not.toHaveAttribute('open', '')
+    })
 
     test('expands on click', async ({ astroPage }) => {
         const template = `
