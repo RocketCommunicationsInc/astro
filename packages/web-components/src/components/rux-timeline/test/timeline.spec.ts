@@ -158,7 +158,6 @@ test.describe('Timeline', () => {
         )
     })
     test('existing in-range event is edited, if the event start date is before the timeline start date it should display as a partial start event', async ({
-        astroPage,
         page,
     }) => {
         const el = page
@@ -168,9 +167,16 @@ test.describe('Timeline', () => {
 
         await button.click()
 
-        await expect(el).toHaveClass(
-            'rux-time-region rux-time-region--partial-start'
-        )
+        await el.evaluate((page) => {
+            return (
+                page.classList.contains('rux-time-region') &&
+                page.classList.contains('rux-time-region--partial-start')
+            )
+        })
+
+        // await expect(el).toHaveClass(
+        //     'rux-time-region rux-time-region--partial-start'
+        // )
     })
     test('existing in-range event is edited, if the event end date is after the timeline end date it should display as a partial end event', async ({
         page,
