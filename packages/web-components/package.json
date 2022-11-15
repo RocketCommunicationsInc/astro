@@ -15,7 +15,7 @@
         "loader/"
     ],
     "scripts": {
-        "test.docker": "docker run -it --rm --ipc=host -v \"${PWD}:/var/app/\" mcr.microsoft.com/playwright:focal /bin/bash -c 'cd /var/app; npx playwright install; npx playwright test --grep @vrt'",
+        "test.docker": "docker run -it --rm --ipc=host -v \"${PWD}:/var/app/\" mcr.microsoft.com/playwright:focal /bin/bash -c 'cd /var/app; npx playwright install; npx playwright test'",
         "build.stencil": "stencil build --docs",
         "build.storybook": "build-storybook",
         "build": "npm run build.stencil",
