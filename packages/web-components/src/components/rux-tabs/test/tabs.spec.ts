@@ -73,17 +73,53 @@ test.describe('Tabs', () => {
             await el.componentOnReady()
         })
         //Assert
+
         await expect(ruxTabPanel1).not.toHaveClass('hydrated hidden')
-        await expect(ruxTabPanel2).toHaveClass('hydrated hidden')
-        await expect(ruxTabPanel3).toHaveClass('hydrated hidden')
+        // await expect(ruxTabPanel2).toHaveClass('hydrated hidden')
+        await ruxTabPanel2.evaluate((page) => {
+            return (
+                page.classList.contains('hydrated') &&
+                page.classList.contains('hidden')
+            )
+        })
+
+        await ruxTabPanel3.evaluate((page) => {
+            return (
+                page.classList.contains('hydrated') &&
+                page.classList.contains('hidden')
+            )
+        })
 
         //Act
         await tab2Child.click({ force: true })
 
         //Assert
+        await ruxTabPanel3.evaluate((page) => {
+            return (
+                page.classList.contains('hydrated') &&
+                page.classList.contains('hidden')
+            )
+        })
+
+        // await expect(ruxTabPanel3).toHaveClass('hydrated hidden')
+
+        await ruxTabPanel1.evaluate((page) => {
+            return (
+                page.classList.contains('hydrated') &&
+                page.classList.contains('hidden')
+            )
+        })
         await expect(ruxTabPanel1).toHaveClass('hydrated hidden')
-        await expect(ruxTabPanel2).not.toHaveClass('hydrated hidden')
-        await expect(ruxTabPanel3).toHaveClass('hydrated hidden')
+
+        // await expect(ruxTabPanel2).not.toHaveClass('hydrated hidden')
+
+        await ruxTabPanel3.evaluate((page) => {
+            return (
+                page.classList.contains('hydrated') &&
+                page.classList.contains('hidden')
+            )
+        })
+        // await expect(ruxTabPanel3).toHaveClass('hydrated hidden')
     })
 })
 test.describe('Multiple tabs on same page', () => {
