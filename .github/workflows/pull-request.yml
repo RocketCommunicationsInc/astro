@@ -13,11 +13,11 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         id: cache-node-modules
         with:
           path: |
@@ -36,13 +36,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 16
       - name: Get Node Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ./packages/web-components/node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
@@ -51,7 +51,7 @@ jobs:
         run: cd ./packages/web-components && npm ci && npx playwright install --with-deps
       - name: Run Tests
         run: cd ./packages/web-components && npm run test.cr
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         if: always()
         with:
           name: playwright-report
