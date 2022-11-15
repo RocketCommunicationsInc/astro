@@ -23,7 +23,7 @@ jobs:
           path: |
             ./packages/web-components/node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
-      - uses: tj-actions/changed-files@v11
+      - uses: tj-actions/changed-files@v34
         id: changed-files
         with:
           files: |
