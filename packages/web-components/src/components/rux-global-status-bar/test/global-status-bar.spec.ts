@@ -1,16 +1,18 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Global status bar', () => {
-    test('it renders', async ({ astroPage }) => {
+    test('it renders', async ({ page }) => {
         const template = `<rux-global-status-bar></rux-global-status-bar>`
-        const el = await astroPage.load(template)
+        await page.setContent(template)
+        const el = await page.locator('rux-global-status-bar')
         await expect(el).toHaveClass('hydrated')
     })
-    test('it renders app meta', async ({ astroPage }) => {
+    test('it renders app meta', async ({ page }) => {
         const template = `
             <rux-global-status-bar app-state="App State" username="Username" app-domain="ASTRO" app-name="Test App Name" app-version="test v1.0"></rux-global-status-bar>
         `
-        const el = await astroPage.load(template)
+        await page.setContent(template)
+        const el = await page.locator('rux-global-status-bar')
         await expect(el).toContainText('App State')
         await expect(el).toContainText('Username')
         await expect(el).toContainText('ASTRO')
@@ -18,7 +20,7 @@ test.describe('Global status bar', () => {
         await expect(el).toContainText('test v1.0')
     })
     test('it renders with icon, app meta and slotted content', async ({
-        astroPage,
+        page,
     }) => {
         const template = `
             <rux-global-status-bar include-icon app-state="App State" username="Username" app-domain="ASTRO" app-name="Test App Name" app-version="test v1.0">
@@ -26,7 +28,8 @@ test.describe('Global status bar', () => {
                 <button slot="right-side">Emergency shut off</button>
             </rux-global-status-bar>
         `
-        const el = await astroPage.load(template)
+        await page.setContent(template)
+        const el = await page.locator('rux-global-status-bar')
         const slottedButton = el.locator('button')
 
         await expect(el).toHaveClass('hydrated')

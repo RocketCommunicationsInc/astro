@@ -1,39 +1,20 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
-import {
-    startTestEnv,
-    setBodyContent,
-    startTestInBefore,
-} from '../../../../tests/utils/_startTestEnv'
-
 test.describe('Dialog', () => {
-    // test('has no visual regression @vrt', async ({astroVRTPage, page}) => {
-    //     await astroVRTPage.goto('components/rux-dialog/test/basic')
-    //     await expect(page).toHaveScreenshot()
-    // })
-    startTestEnv()
-
     test('it renders', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `
-            <rux-dialog open></rux-dialog>
-        `
-        )
+        await page.setContent('<rux-dialog open></rux-dialog>')
         const el = page.locator('rux-dialog')
         await expect(el).toHaveClass('hydrated')
     })
     test('it renders with slots', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `
+        const template = `
             <rux-dialog open>
                 <span slot="header">Header</span>
                 <div>Message</div>
                 <div slot="footer">Footer</div>
             </rux-dialog>
-            `
-        )
+        `
+        await page.setContent(template)
         const ruxDialog = page.locator('rux-dialog')
         const header = ruxDialog.locator('.rux-dialog__header')
         const content = ruxDialog.locator('.rux-dialog__content')
@@ -45,15 +26,13 @@ test.describe('Dialog', () => {
         await expect(footer).toHaveClass('rux-dialog__footer')
     })
     test('it renders with a mix of slots and props', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `
+        const template = `
             <rux-dialog open header="Title">
                 <div>Message</div>
                 <div slot="footer">Footer</div>
             </rux-dialog>
-            `
-        )
+        `
+        await page.setContent(template)
         const ruxDialog = page.locator('rux-dialog')
         const header = ruxDialog.locator('.rux-dialog__header')
         const content = ruxDialog.locator('.rux-dialog__content')
@@ -65,65 +44,57 @@ test.describe('Dialog', () => {
         await expect(footer).toHaveClass('rux-dialog__footer')
     })
     test('it handles attributes', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `
-        <rux-dialog header="Title" message="Message"></rux-dialog>
-    `
-        )
+        const template = `
+            <rux-dialog header="Title" message="Message"></rux-dialog>
+        `
+        await page.setContent(template)
         const el = page.locator('rux-dialog')
         await expect(el).toHaveAttribute('message', 'Message')
         await expect(el).toHaveAttribute('header', 'Title')
     })
     test('it opens and closes', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `
+        const template = `
         <rux-dialog header="Title" message="Message" click-to-close></rux-dialog>
         <rux-button id="toggle">Open/Close</rux-button>
     `
-        )
+        await page.setContent(template)
         page.addScriptTag({
             content: `
-        const toggleBtn = document.getElementById('toggle')
-        const testDialog = document.querySelector('rux-dialog')
+                const toggleBtn = document.getElementById('toggle')
+                const testDialog = document.querySelector('rux-dialog')
 
-        toggleBtn.addEventListener('click', () => {
-            testDialog.open = !testDialog.open
+                toggleBtn.addEventListener('click', () => {
+                    testDialog.open = !testDialog.open
+                })
+            `,
         })
-        `,
-        })
-        const el = page.locator('rux-dialog')
-        const btn = page.locator('#toggle')
+        const el = await page.locator('rux-dialog')
+        const btn = await page.locator('#toggle')
         await btn.click()
         await expect(el).toHaveAttribute('open', '')
         await page.mouse.click(10, 10)
         await expect(el).not.toHaveAttribute('open', '')
     })
     test('it closes the modal on deny click', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `
-        <rux-dialog open header="Title" message="Message"></rux-dialog>
-        <rux-button id="toggle">Open/Close</rux-button>
-    `
-        )
-        const el = page.locator('rux-dialog')
-        const denyBtn = el.locator('rux-button').first()
+        const template = `
+            <rux-dialog open header="Title" message="Message"></rux-dialog>
+            <rux-button id="toggle">Open/Close</rux-button>
+        `
+        await page.setContent(template)
+        const el = await page.locator('rux-dialog')
+        const denyBtn = await el.locator('rux-button').first()
         await expect(el).toHaveAttribute('open', '')
         await denyBtn.click()
         await expect(el).not.toHaveAttribute('open', '')
     })
     test('it closes the modal on confirm click', async ({ page }) => {
-        await setBodyContent(
-            page,
+        const template = `
+                <rux-dialog open header="Title" message="Message"></rux-dialog>
+                <rux-button id="toggle">Open/Close</rux-button>
             `
-        <rux-dialog open header="Title" message="Message"></rux-dialog>
-        <rux-button id="toggle">Open/Close</rux-button>
-    `
-        )
-        const el = page.locator('rux-dialog')
-        const confirmBtn = el.locator('rux-button').last()
+        await page.setContent(template)
+        const el = await page.locator('rux-dialog')
+        const confirmBtn = await el.locator('rux-button').last()
         await expect(el).toHaveAttribute('open', '')
         await confirmBtn.click()
         await expect(el).not.toHaveAttribute('open', '')
@@ -131,21 +102,20 @@ test.describe('Dialog', () => {
     test('it emits ruxdialogclosed event with detail of false when deny button is clicked', async ({
         page,
     }) => {
-        await setBodyContent(
-            page,
+        const template = `
+                <rux-dialog open header="Title" message="Message"></rux-dialog>
+                <rux-button id="toggle">Open/Close</rux-button>
             `
-        <rux-dialog open header="Title" message="Message"></rux-dialog>
-        <rux-button id="toggle">Open/Close</rux-button>
-    `
-        )
+        await page.setContent(template)
+
         page.addScriptTag({
             content: `
-            document.addEventListener('ruxdialogclosed', (e) => {
-            console.log(e.detail)
-        })`,
+                document.addEventListener('ruxdialogclosed', (e) => {
+                console.log(e.detail)
+            })`,
         })
-        const el = page.locator('rux-dialog')
-        const denyBtn = el.locator('rux-button').first()
+        const el = await page.locator('rux-dialog')
+        const denyBtn = await el.locator('rux-button').first()
         page.on('console', (msg) => {
             expect(msg.text()).toBe('false')
         })
@@ -154,21 +124,19 @@ test.describe('Dialog', () => {
     test('it emits ruxdialogclosed event with detail of true when confrim button is clicked', async ({
         page,
     }) => {
-        await setBodyContent(
-            page,
+        const template = `
+                <rux-dialog open header="Title" message="Message"></rux-dialog>
+                <rux-button id="toggle">Open/Close</rux-button>
             `
-        <rux-dialog open header="Title" message="Message"></rux-dialog>
-        <rux-button id="toggle">Open/Close</rux-button>
-    `
-        )
+        await page.setContent(template)
         page.addScriptTag({
             content: `
             document.addEventListener('ruxdialogclosed', (e) => {
             console.log(e.detail)
         })`,
         })
-        const el = page.locator('rux-dialog')
-        const confirmBtn = el.locator('rux-button').last()
+        const el = await page.locator('rux-dialog')
+        const confirmBtn = await el.locator('rux-button').last()
         page.on('console', (msg) => {
             expect(msg.text()).toBe('true')
         })
@@ -177,12 +145,10 @@ test.describe('Dialog', () => {
     test('it should trigger confirm button when enter is clicked', async ({
         page,
     }) => {
-        await setBodyContent(
-            page,
+        const template = `
+                <rux-dialog open header="Title" message="Message"></rux-dialog>
             `
-        <rux-dialog open header="Title" message="Message"></rux-dialog>
-    `
-        )
+        await page.setContent(template)
         page.addScriptTag({
             content: `
             document.addEventListener('ruxdialogclosed', (e) => {
@@ -200,17 +166,15 @@ test.describe('Dialog', () => {
     test('it should trigger deny button when escape is pressed and emit false', async ({
         page,
     }) => {
-        await setBodyContent(
-            page,
-            `
+        const template = `
         <rux-dialog open header="Title" message="Message"></rux-dialog>
     `
-        )
+        await page.setContent(template)
         page.addScriptTag({
             content: `
             document.addEventListener('ruxdialogclosed', (e) => {
-            console.log(e.detail)
-        })`,
+                console.log(e.detail)
+            })`,
         })
         page.on('console', (msg) => {
             expect(msg.text()).toBe('false')
@@ -225,15 +189,12 @@ test.describe(
     'Dialog does not close on an off click unless click-to-close is true',
     () => {
         test.beforeEach(async ({ page }) => {
-            await startTestInBefore(page)
-            await setBodyContent(
-                page,
-                `   <rux-dialog id="ctc-false" header="Click to close = False" message="world"></rux-dialog>
+            const template = `   <rux-dialog id="ctc-false" header="Click to close = False" message="world"></rux-dialog>
                 <rux-dialog id="ctc-true" header="Click to close = True" message="world" click-to-close></rux-dialog>
                 <rux-button id="true">Open click-to-close true</rux-button>
                 <rux-button id="false">Open click-to-close false</rux-button>
             `
-            )
+            await page.setContent(template)
             await page.addScriptTag({
                 content: `
             document.addEventListener('ruxdialogclosed', (e) => console.log(e.detail))
@@ -311,15 +272,13 @@ test.describe(
         test('it renders the message prop text when used with slots', async ({
             page,
         }) => {
-            await setBodyContent(
-                page,
-                `
+            const template = `
                 <rux-dialog open message="Message Prop">
                     <span slot="header">Slot Header</span>
                 </rux-dialog>
             `
-            )
-            const messageContainer = page.locator('.rux-dialog__message')
+            await page.setContent(template)
+            const messageContainer = await page.locator('.rux-dialog__message')
             await expect(messageContainer).toContainText('Message Prop')
         })
         /*

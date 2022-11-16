@@ -1,16 +1,8 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
-import {
-    startTestInBefore,
-    setBodyContent,
-} from '../../../../tests/utils/_startTestEnv'
 
 test.describe('Radio-group-with-form', () => {
     test.beforeEach(async ({ page }) => {
-        await startTestInBefore(page)
-
-        await setBodyContent(
-            page,
-            `
+        const template = `
             <div style="padding: 10%; display: flex; justify-content: center">
                 <div style="width: 60%">
                     <form id="form-default">
@@ -124,20 +116,20 @@ test.describe('Radio-group-with-form', () => {
                 </div>
             </div>
         `
-        )
-        page.addScriptTag({
+        await page.setContent(template)
+        await page.addScriptTag({
             path: './tests/utils/formScript.js',
         })
     })
 
     test('it renders', async ({ page }) => {
-        const el = page.locator('rux-radio-group').first()
+        const el = await page.locator('rux-radio-group').first()
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })
     test('first radio is slected by default', async ({ page }) => {
         //Arrange
-        const ruxRadio = page.locator('#ruxRadioDefaultOne').first()
+        const ruxRadio = await page.locator('#ruxRadioDefaultOne').first()
         const ruxRadioInput = ruxRadio.locator('input')
 
         //Assert
@@ -145,11 +137,11 @@ test.describe('Radio-group-with-form', () => {
     })
     test('submits the correct value when using a form', async ({ page }) => {
         //Arrange
-        const ruxRadio = page.locator('#ruxRadioBlue').first()
-        const nativeRadio = page.locator('#nativeRadioBlue')
-        const form = page.locator('#form')
+        const ruxRadio = await page.locator('#ruxRadioBlue').first()
+        const nativeRadio = await page.locator('#nativeRadioBlue')
+        const form = await page.locator('#form')
         const formButton = form.locator('button[type="submit"]')
-        const log = page.locator('#log')
+        const log = await page.locator('#log')
 
         //Act
         await ruxRadio.click({
@@ -168,11 +160,11 @@ test.describe('Radio-group-with-form', () => {
     })
     test('does not allow input if disabled', async ({ page }) => {
         //Arrange
-        const ruxRadio = page.locator('#ruxRadioPurpleDisabled').first()
+        const ruxRadio = await page.locator('#ruxRadioPurpleDisabled').first()
         const ruxRadioInput = ruxRadio.locator('input')
-        const form = page.locator('#form')
+        const form = await page.locator('#form')
         const formButton = form.locator('button[type="submit"]')
-        const log = page.locator('#log')
+        const log = await page.locator('#log')
 
         //Assert
         await expect(ruxRadioInput).toBeDisabled()
@@ -194,11 +186,11 @@ test.describe('Radio-group-with-form', () => {
     })
     test('does not submit value if disabled', async ({ page }) => {
         //Arrange
-        const ruxRadio = page.locator('#ruxRadioRed2').first()
+        const ruxRadio = await page.locator('#ruxRadioRed2').first()
         const ruxRadioInput = ruxRadio.locator('input')
-        const form = page.locator('#form-checked-disabled')
+        const form = await page.locator('#form-checked-disabled')
         const formButton = form.locator('button[type="submit"]')
-        const log = page.locator('#log')
+        const log = await page.locator('#log')
 
         //Assert
         await expect(ruxRadioInput).toBeDisabled()
@@ -213,21 +205,17 @@ test.describe('Radio-group-with-form', () => {
 })
 test.describe('Radio-group', () => {
     test.beforeEach(async ({ page }) => {
-        await startTestInBefore(page)
-
-        await setBodyContent(
-            page,
-            `
+        const template = `
             <rux-radio-group label="hello"></rux-radio-group>
             <rux-radio-group><div slot="label">hello</div></rux-radio-group>
         `
-        )
+        await page.setContent(template)
     })
     test('renders label prop and slot', async ({ page }) => {
         //Arrange
-        const ruxRadioProp = page.locator('rux-radio-group').first()
+        const ruxRadioProp = await page.locator('rux-radio-group').first()
         const labelProp = ruxRadioProp.locator('.rux-label')
-        const ruxRadioSlot = page.locator('rux-radio-group').nth(1)
+        const ruxRadioSlot = await page.locator('rux-radio-group').nth(1)
         const labelSlot = ruxRadioSlot.locator('.rux-label')
 
         //Assert

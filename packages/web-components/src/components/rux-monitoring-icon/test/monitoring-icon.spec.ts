@@ -1,20 +1,11 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
-import {
-    startTestEnv,
-    setBodyContent,
-} from '../../../../tests/utils/_startTestEnv'
-//import { RuxMonitoringIcon } from '../src/components/rux-monitoring-icon/rux-monitoring-icon'
 
 test.describe('Monitoring-icon', () => {
-    startTestEnv()
-
     test('it renders', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `
+        const template = `
         <rux-monitoring-icon></rux-monitoring-icon>
     `
-        )
+        await page.setContent(template)
         const el = page.locator('rux-monitoring-icon').first()
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')

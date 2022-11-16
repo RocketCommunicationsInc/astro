@@ -1,27 +1,17 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
-import {
-    startTestEnv,
-    startTestInBefore,
-    setBodyContent,
-} from '../../../../tests/utils/_startTestEnv'
 
 test.describe('Select', () => {
-    startTestEnv()
     test('it renders', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `
+        const template = `
             <rux-select></rux-select>
         `
-        )
-        const el = page.locator('rux-select')
+        await page.setContent(template)
+        const el = await page.locator('rux-select')
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })
     test('it renders option group', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `
+        const template = `
             <rux-select>
               <rux-option label="outside option"></rux-option>
               <rux-option-group label="Group one">
@@ -30,15 +20,13 @@ test.describe('Select', () => {
               <rux-option label="outside option"></rux-option>
             </rux-select>
         `
-        )
-        const el = page.locator('rux-select')
+        await page.setContent(template)
+        const el = await page.locator('rux-select')
         const optionGroup = el.locator('rux-option-group')
         await expect(optionGroup).toHaveClass('hydrated')
     })
     test('it syncs value to select element', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `
+        const template = `
         <rux-select id="ruxSelect" label="Best Thing?" name="bestThing">
             <rux-option label="Select an option" value=""></rux-option>
             <rux-option label="Red" value="red"></rux-option>
@@ -46,15 +34,13 @@ test.describe('Select', () => {
             <rux-option value="green" label="Green"></rux-option>
         </rux-select>
         `
-        )
-        const el = page.locator('rux-select')
+        await page.setContent(template)
+        const el = await page.locator('rux-select')
         await el.evaluate((e) => e.setAttribute('value', 'blue'))
         await expect(el.locator('select')).toHaveValue('blue')
     })
     test('it syncs value from select element', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `
+        const template = `
         <rux-select id="ruxSelect" label="Best Thing?" name="bestThing">
             <rux-option label="Select an option" value=""></rux-option>
             <rux-option label="Red" value="red"></rux-option>
@@ -62,18 +48,15 @@ test.describe('Select', () => {
             <rux-option value="green" label="Green"></rux-option>
         </rux-select>
         `
-        )
-        const el = page.locator('rux-select')
+        await page.setContent(template)
+        const el = await page.locator('rux-select')
         await el.locator('select').selectOption('green')
         await expect(el.locator('select')).toHaveValue('green')
     })
 })
 test.describe('Select in a form', () => {
     test.beforeEach(async ({ page }) => {
-        await startTestInBefore(page)
-        await setBodyContent(
-            page,
-            `
+        const template = `
         <form id="form" method="POST" action="/form">
             <rux-select id="ruxSelect" label="Best Thing?" name="bestThing">
                 <rux-option label="Select an option" value=""></rux-option>
@@ -104,26 +87,26 @@ test.describe('Select in a form', () => {
         </form>
         <ul id="log"></ul>
         `
-        )
+        await page.setContent(template)
         await page.addScriptTag({
             path: './tests/utils/formScript.js',
         })
     })
     test('it should not submit a value if disabled', async ({ page }) => {
-        const log = page.locator('#log')
-        const submit = page.locator('button')
+        const log = await page.locator('#log')
+        const submit = await page.locator('button')
         await submit.click()
         await expect(log).not.toContainText('disabled')
     })
     test('it should defalut to the option with no value', async ({ page }) => {
-        const el = page.locator('#ruxSelect')
+        const el = await page.locator('#ruxSelect')
         await expect(el.locator('select')).toHaveValue('')
     })
     // Single Select in a form
     test('it should submit the correct value in a form', async ({ page }) => {
-        const el = page.locator('#ruxSelect')
-        const log = page.locator('#log')
-        const submit = page.locator('button')
+        const el = await page.locator('#ruxSelect')
+        const log = await page.locator('#log')
+        const submit = await page.locator('button')
         await el.locator('select').selectOption('red')
         await submit.click()
         await expect(log).toContainText('bestThing:red')
@@ -131,9 +114,9 @@ test.describe('Select in a form', () => {
     test('it should submit correct value when typing an option after focus', async ({
         page,
     }) => {
-        const el = page.locator('#ruxSelect')
-        const log = page.locator('#log')
-        const submit = page.locator('button')
+        const el = await page.locator('#ruxSelect')
+        const log = await page.locator('#log')
+        const submit = await page.locator('button')
         await el.locator('select').press('Tab')
         await el.locator('select').type('r')
         await submit.click()
@@ -142,9 +125,9 @@ test.describe('Select in a form', () => {
     test('it should submit the correct value when selecting by arrow keys after focus', async ({
         page,
     }) => {
-        const el = page.locator('#ruxSelect')
-        const log = page.locator('#log')
-        const submit = page.locator('button')
+        const el = await page.locator('#ruxSelect')
+        const log = await page.locator('#log')
+        const submit = await page.locator('button')
         await el.locator('select').press('Tab')
         await el.locator('select').press('ArrowDown', { delay: 200 })
         await el.locator('select').type('b')
@@ -153,21 +136,21 @@ test.describe('Select in a form', () => {
     })
     // Multi Select
     test('it syncs multiple values from select element', async ({ page }) => {
-        const multi = page.locator('#ruxMultiSelect')
+        const multi = await page.locator('#ruxMultiSelect')
         await multi.locator('select').selectOption(['red', 'green'])
         await expect(multi.locator('select')).toHaveValues(['red', 'green'])
     })
     test('it syncs multiple values to select element', async ({ page }) => {
-        const multi = page.locator('#ruxMultiSelect')
+        const multi = await page.locator('#ruxMultiSelect')
         await multi.locator('select').selectOption(['red', 'blue'])
         await expect(multi.locator('select')).toHaveValues(['red', 'blue'])
     })
     test('it should submit correct values when selecting multiple options', async ({
         page,
     }) => {
-        const multi = page.locator('#ruxMultiSelect')
-        const submit = page.locator('button')
-        const log = page.locator('#log')
+        const multi = await page.locator('#ruxMultiSelect')
+        const submit = await page.locator('button')
+        const log = await page.locator('#log')
 
         await multi.locator('select').selectOption(['red', 'blue'])
         await submit.click()

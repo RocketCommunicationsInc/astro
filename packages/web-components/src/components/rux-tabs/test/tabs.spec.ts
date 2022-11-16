@@ -1,7 +1,7 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Tabs', () => {
-    test.beforeEach(async ({ astroPage }) => {
+    test.beforeEach(async ({ page }) => {
         const template = `
             <div style="display: flex; flex-flow: column">
                 <rux-tabs id="tab-set-id-1">
@@ -23,18 +23,18 @@ test.describe('Tabs', () => {
             </div>
         `
 
-        await astroPage.load(template)
+        await page.setContent(template)
     })
 
     test('it renders', async ({ page }) => {
-        const el = page.locator('rux-tabs').first()
+        const el = await page.locator('rux-tabs').first()
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })
     test('first tab is selected by default', async ({ page }) => {
         //Arrange
-        const tab1 = page.locator('#tab-id-1')
-        const tab2 = page.locator('#tab-id-2')
+        const tab1 = await page.locator('#tab-id-1')
+        const tab2 = await page.locator('#tab-id-2')
 
         // Assert
         await expect(tab1).toHaveAttribute('selected', '')
@@ -42,8 +42,8 @@ test.describe('Tabs', () => {
     })
     test('selects tab when user clicks', async ({ page }) => {
         //Arrange
-        const tab1 = page.locator('#tab-id-1')
-        const tab2 = page.locator('#tab-id-2')
+        const tab1 = await page.locator('#tab-id-1')
+        const tab2 = await page.locator('#tab-id-2')
         const tab1Child = tab1.locator('.rux-tab')
         const tab2Child = tab2.locator('.rux-tab')
 
@@ -62,10 +62,10 @@ test.describe('Tabs', () => {
     })
     test('shows correct panel when its tab is clicked', async ({ page }) => {
         //Arrange
-        const ruxTabPanel1 = page.locator('rux-tab-panel').nth(0)
-        const ruxTabPanel2 = page.locator('rux-tab-panel').nth(1)
-        const ruxTabPanel3 = page.locator('rux-tab-panel').nth(2)
-        const tabId2 = page.locator('#tab-id-2')
+        const ruxTabPanel1 = await page.locator('rux-tab-panel').nth(0)
+        const ruxTabPanel2 = await page.locator('rux-tab-panel').nth(1)
+        const ruxTabPanel3 = await page.locator('rux-tab-panel').nth(2)
+        const tabId2 = await page.locator('#tab-id-2')
         const tab2Child = tabId2.locator('.rux-tab')
 
         await ruxTabPanel1.evaluate(async (el) => {
@@ -123,7 +123,7 @@ test.describe('Tabs', () => {
     })
 })
 test.describe('Multiple tabs on same page', () => {
-    test.beforeEach(async ({ astroPage }) => {
+    test.beforeEach(async ({ page }) => {
         const template = `
             <div class="mydiv">
                 <rux-tabs id="tab-set-id-1">
@@ -166,7 +166,7 @@ test.describe('Multiple tabs on same page', () => {
                 </rux-tab-panels>
             </div>
         `
-        await astroPage.load(template)
+        await page.setContent(template)
     })
 
     test('it should have the first tab of each rux-tabs visible', async ({
@@ -233,7 +233,7 @@ test.describe('Multiple tabs on same page', () => {
         await expect(bottomContent).toBeVisible()
     })
     test('it can dynamically add tabs that behave correctly', async ({
-        astroPage,
+        page,
         page,
     }) => {
         const template = `
@@ -251,7 +251,7 @@ test.describe('Multiple tabs on same page', () => {
             <rux-button id="add">Add Tab</rux-button>
         `
 
-        await astroPage.load(template)
+        await page.setContent(template)
         await page.addScriptTag({
             content: `
     let tabs = document.querySelector('rux-tabs')
@@ -274,9 +274,9 @@ test.describe('Multiple tabs on same page', () => {
         })
 
         //Add new tab by pressing button, select new tab, select diff tab. Check selected at each stage
-        const btn = page.locator('#add')
+        const btn = await page.locator('#add')
         await btn.click()
-        const newTab = page.locator('#tab-id-4')
+        const newTab = await page.locator('#tab-id-4')
         await newTab
             .evaluate((e) => {
                 return e.hasAttribute('selected')
@@ -294,7 +294,7 @@ test.describe('Multiple tabs on same page', () => {
                 expect(e).toBeTruthy()
             })
         // click again on first tab, make sure newTab becomes un-selected
-        const firstTab = page.locator('#tab-id-1')
+        const firstTab = await page.locator('#tab-id-1')
         await firstTab.click()
         await page.waitForTimeout(100)
         await firstTab

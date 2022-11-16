@@ -1,7 +1,7 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Accordion', () => {
-    test('items are collapsed by default', async ({ astroPage }) => {
+    test('items are collapsed by default', async ({ page }) => {
         const template = `
             <rux-accordion-item>
                 <div slot="label">Label</div>
@@ -9,18 +9,15 @@ test.describe('Accordion', () => {
             </rux-accordion-item>
         `
 
-        const el = await astroPage.load(template)
-        await el.evaluate(async (el) => {
-            //@ts-ignore
-            await el.componentOnReady()
-        })
+        await page.setContent(template)
+        const el = await page.locator('rux-accordion-item')
         await expect(el).not.toHaveAttribute('expanded', '')
 
         const details = el.locator('details')
         await expect(details).not.toHaveAttribute('open', '')
     })
 
-    test('expands on click', async ({ astroPage }) => {
+    test('expands on click', async ({ page }) => {
         const template = `
             <rux-accordion-item>
                 <div slot="label">Label</div>
@@ -28,20 +25,21 @@ test.describe('Accordion', () => {
             </rux-accordion-item>
         `
 
-        const accordionItem = await astroPage.load(template)
+        await page.setContent(template)
+        const accordionItem = await page.locator('rux-accordion-item')
 
         await accordionItem.click()
 
         //assert - once clicked, the item gains expanded which causes details to gain open and the content to be visible
-        const accordionDetails = accordionItem.locator('details')
-        const accordionParagraph = accordionItem.locator('p')
+        const accordionDetails = await accordionItem.locator('details')
+        const accordionParagraph = await accordionItem.locator('p')
         await expect(accordionItem).toHaveAttribute('expanded', '')
         await expect(accordionDetails).toHaveAttribute('open', '')
         await expect(accordionParagraph).toBeVisible()
     })
 
     test('indicator toggles class open on expand/collapse', async ({
-        astroPage,
+        page,
     }) => {
         const template = `
                 <rux-accordion-item>
@@ -49,11 +47,14 @@ test.describe('Accordion', () => {
                     <p>Content</p>
                 </rux-accordion-item>
             `
-        const accordionItem = await astroPage.load(template)
+        await page.setContent(template)
+        const accordionItem = await page.locator('rux-accordion-item')
         //arrange
-        // const accordionItem = astroPage.firstChild.locator('rux-accordion-item').first()
-        const accordionSummary = accordionItem.locator('summary')
-        const accordionIndicator = accordionItem.locator('.indicator--icon')
+        // const accordionItem = page.firstChild.locator('rux-accordion-item').first()
+        const accordionSummary = await accordionItem.locator('summary')
+        const accordionIndicator = await accordionItem.locator(
+            '.indicator--icon'
+        )
 
         //assert
         await expect(accordionIndicator).toHaveClass('indicator--icon')
@@ -72,7 +73,7 @@ test.describe('Accordion', () => {
     })
 
     test('expanded item loses expanded and open attribute on click', async ({
-        astroPage,
+        page,
     }) => {
         const template = `
             <rux-accordion-item expanded>
@@ -81,7 +82,8 @@ test.describe('Accordion', () => {
             </rux-accordion-item>
         `
 
-        const accordionItem = await astroPage.load(template)
+        await page.setContent(template)
+        const accordionItem = await page.locator('rux-accordion-item')
         //assert
         await expect(accordionItem).toHaveAttribute('expanded', '')
 
@@ -99,7 +101,7 @@ test.describe('Accordion', () => {
     })
 
     test('when there is no content provided, the prefix slot is hidden', async ({
-        astroPage,
+        page,
     }) => {
         const template = `
                 <rux-accordion-item>
@@ -107,12 +109,13 @@ test.describe('Accordion', () => {
                     <p>Content</p>
                 </rux-accordion-item>
             `
-        const el = await astroPage.load(template)
+        await page.setContent(template)
+        const el = await page.locator('rux-accordion-item')
         await expect(el.locator('span').first()).toHaveClass('prefix--hidden')
     })
 
     test('when there content is provided, the prefix slot is shown', async ({
-        astroPage,
+        page,
     }) => {
         const template = `
                 <rux-accordion-item>
@@ -121,14 +124,15 @@ test.describe('Accordion', () => {
                     <p>Content</p>
                 </rux-accordion-item>
             `
-        const el = await astroPage.load(template)
+        await page.setContent(template)
+        const el = await page.locator('rux-accordion-item')
         await expect(el.locator('span').first()).not.toHaveClass(
             'prefix--hidden'
         )
     })
 
     test('if rux-accordion-item is disabled it cannot be interacted with', async ({
-        astroPage,
+        page,
     }) => {
         const template = `
                 <rux-accordion-item disabled>
@@ -137,11 +141,8 @@ test.describe('Accordion', () => {
                 </rux-accordion-item>
             `
 
-        const el = await astroPage.load(template)
-        await el.evaluate(async (el) => {
-            //@ts-ignore
-            await el.componentOnReady()
-        })
+        await page.setContent(template)
+        const el = await page.locator('rux-accordion-item')
         //Act
         await el.click({ force: true })
 
@@ -150,7 +151,7 @@ test.describe('Accordion', () => {
     })
 
     test('if rux-accordion is disabled, all rux-accordion-items are also disabled', async ({
-        astroPage,
+        page,
     }) => {
         const template = `
                 <rux-accordion disabled>
@@ -161,18 +162,15 @@ test.describe('Accordion', () => {
                 </rux-accordion>
             `
 
-        const accordionEl = await astroPage.load(template)
-        await accordionEl.evaluate(async (el) => {
-            //@ts-ignore
-            await el.componentOnReady()
-        })
-        const accordionItemEl = accordionEl.locator('rux-accordion-item')
+        await page.setContent(template)
+        const accordionEl = await page.locator('rux-accordion')
+        const accordionItemEl = await accordionEl.locator('rux-accordion-item')
         await accordionItemEl.click({ force: true })
         await expect(accordionItemEl).not.toHaveAttribute('expanded', '')
     })
 
     test('if disallow-mutiple on parent, only one child item open at a time', async ({
-        astroPage,
+        page,
     }) => {
         const template = `
                 <rux-accordion disallow-multiple>
@@ -188,7 +186,8 @@ test.describe('Accordion', () => {
 
                 </rux-accordion>
             `
-        const accordionEl = await astroPage.load(template)
+        await page.setContent(template)
+        const accordionEl = await page.locator('rux-accordion')
         const firstAccordionItem = accordionEl.locator(
             "rux-accordion-item[data-id='first']"
         )

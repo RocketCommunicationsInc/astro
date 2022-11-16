@@ -1,21 +1,13 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
-import {
-    startTestEnv,
-    setBodyContent,
-} from '../../../../tests/utils/_startTestEnv'
 //import { RuxLog } from '../src/components/rux-log/rux-log'
 //import { LogRow } from '../src/components/rux-log/rux-log.model'
 
 test.describe('Log', () => {
-    startTestEnv()
-
     test('it renders', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `
+        const template = `
             <rux-log id="testing"></rux-log>
             `
-        )
+        await page.setContent(template)
         await page.addScriptTag({
             content: `
             const log = document.getElementById('testing')
@@ -82,20 +74,18 @@ test.describe('Log', () => {
             `,
         })
 
-        const el = page.locator('rux-log').first()
+        const el = await page.locator('rux-log').first()
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
-        const tableBody = el.locator('rux-table-body')
+        const tableBody = await el.locator('rux-table-body')
         await expect(el).toHaveClass('hydrated')
         await expect(tableBody).toHaveClass('hydrated')
     })
     test('it sets filter', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `
+        const template = `
             <rux-log id="testing"></rux-log>
             `
-        )
+        await page.setContent(template)
         await page.addScriptTag({
             content: `
             const log = document.getElementById('testing')

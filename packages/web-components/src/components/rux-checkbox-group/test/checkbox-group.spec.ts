@@ -1,7 +1,7 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Checkbox-group', () => {
-    test('it renders', async ({ astroPage }) => {
+    test('it renders', async ({ page }) => {
         const template = `
             <rux-checkbox-group>
                 <rux-checkbox>one</rux-checkbox>
@@ -9,27 +9,30 @@ test.describe('Checkbox-group', () => {
                 <rux-checkbox>three</rux-checkbox>
             </rux-checkbox-group>
         `
-        const el = await astroPage.load(template)
+        await page.setContent(template)
+        const el = await page.locator('rux-checkbox-group')
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })
 
-    test('it sets label', async ({ astroPage }) => {
+    test('it sets label', async ({ page }) => {
         const template = `
             <rux-checkbox-group label="hello"></rux-checkbox-group>
         `
-        const el = await astroPage.load(template)
+        await page.setContent(template)
+        const el = await page.locator('rux-checkbox-group')
 
         await expect(el).toBeVisible()
         await expect(el).toHaveText('hello')
     })
 
-    test('it renders help text', async ({ astroPage }) => {
+    test('it renders help text', async ({ page }) => {
         const template = `
             <rux-checkbox-group help-text="Help text!"></rux-checkbox-group>
         `
 
-        const el = await astroPage.load(template)
+        await page.setContent(template)
+        const el = await page.locator('rux-checkbox-group')
         await expect(el).toContainText('Help text!')
     })
 })

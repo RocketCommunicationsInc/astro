@@ -1,17 +1,8 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
-import { id } from 'date-fns/locale'
-import {
-    startTestInBefore,
-    setBodyContent,
-} from '../../../../tests/utils/_startTestEnv'
 
 test.describe('Switch', () => {
     test.beforeEach(async ({ page }) => {
-        await startTestInBefore(page)
-
-        await setBodyContent(
-            page,
-            `
+        const template = `
         <div style="padding: 10%; display: flex; justify-content: center">
             <div>
                 <form id="form" style="width: 100%">
@@ -58,7 +49,7 @@ test.describe('Switch', () => {
             <rux-switch class="second"><div slot="label">hello</div></rux-switch>
         </div>
         `
-        )
+        await page.setContent(template)
 
         page.addScriptTag({
             path: './tests/utils/formScript.js',
@@ -66,25 +57,29 @@ test.describe('Switch', () => {
     })
 
     test('it renders', async ({ page }) => {
-        const el = page.locator('rux-switch').first()
+        const el = await page.locator('rux-switch').first()
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('rux-form-field hydrated')
     })
     test('it renders label prop', async ({ page }) => {
-        const el = page.locator('.second-test rux-switch').first()
+        const el = await page.locator('.second-test rux-switch').first()
         const label = el.locator('label')
 
         await expect(label).toHaveClass('rux-switch__button')
     })
     test('it renders label slot', async ({ page }) => {
-        const el = page.locator('.second-test rux-switch').nth(1)
+        const el = await page.locator('.second-test rux-switch').nth(1)
         const label = el.locator('label')
 
         await expect(label).toHaveClass('rux-switch__button')
     })
     test('switches have unique ids', async ({ page }) => {
-        const switch1 = page.locator('.second-test rux-switch input').first()
-        const switch2 = page.locator('.second-test rux-switch input').nth(1)
+        const switch1 = await page
+            .locator('.second-test rux-switch input')
+            .first()
+        const switch2 = await page
+            .locator('.second-test rux-switch input')
+            .nth(1)
 
         await switch1.evaluate((e) => {
             const switch1Id = e.id
@@ -108,10 +103,10 @@ test.describe('Switch', () => {
         page,
     }) => {
         //Arrange
-        const ruxSwitch = page.locator('#ruxSwitch').first()
-        const nativeCheckbox = page.locator('#nativeCheckbox').first()
-        const submitButton = page.locator('button[type="submit"]').first()
-        const log = page.locator('#log')
+        const ruxSwitch = await page.locator('#ruxSwitch').first()
+        const nativeCheckbox = await page.locator('#nativeCheckbox').first()
+        const submitButton = await page.locator('button[type="submit"]').first()
+        const log = await page.locator('#log')
 
         //Act
         //Specific positioning is required for the switch click due to the nature of the element
@@ -125,9 +120,9 @@ test.describe('Switch', () => {
     })
     test('defaults to unchecked', async ({ page }) => {
         //Arrange
-        const ruxSwitch = page.locator('#ruxSwitch').first()
+        const ruxSwitch = await page.locator('#ruxSwitch').first()
         const ruxSwitchInput = ruxSwitch.locator('input')
-        const nativeCheckbox = page.locator('#nativeCheckbox').first()
+        const nativeCheckbox = await page.locator('#nativeCheckbox').first()
 
         //Assert
         await expect(ruxSwitchInput).not.toHaveAttribute('checked', '')
@@ -135,8 +130,8 @@ test.describe('Switch', () => {
     })
     test('does not submit any value if not checked', async ({ page }) => {
         //Arrange
-        const submitButton = page.locator('button[type="submit"]').first()
-        const log = page.locator('#log')
+        const submitButton = await page.locator('button[type="submit"]').first()
+        const log = await page.locator('#log')
 
         //Act
         await submitButton.click()
@@ -149,10 +144,10 @@ test.describe('Switch', () => {
         page,
     }) => {
         //Arrange
-        const ruxSwitch2 = page.locator('#ruxSwitch2').first()
-        const nativeCheckbox2 = page.locator('#nativeCheckbox2').first()
-        const submitButton2 = page.locator('button[type="submit"]').nth(1)
-        const log = page.locator('#log')
+        const ruxSwitch2 = await page.locator('#ruxSwitch2').first()
+        const nativeCheckbox2 = await page.locator('#nativeCheckbox2').first()
+        const submitButton2 = await page.locator('button[type="submit"]').nth(1)
+        const log = await page.locator('#log')
 
         //Act
         //Specific positioning is required for the switch click due to the nature of the element
@@ -166,11 +161,13 @@ test.describe('Switch', () => {
     })
     test('does not allow input if disabled', async ({ page }) => {
         //Arrange
-        const ruxSwitchDisabled = page.locator('#ruxSwitchDisabled').first()
+        const ruxSwitchDisabled = await page
+            .locator('#ruxSwitchDisabled')
+            .first()
         const ruxSwitchInputDisabled = ruxSwitchDisabled.locator('input')
-        const nativeCheckbox2 = page.locator('#nativeCheckbox2').first()
-        const submitButton2 = page.locator('button[type="submit"]').nth(1)
-        const log = page.locator('#log')
+        const nativeCheckbox2 = await page.locator('#nativeCheckbox2').first()
+        const submitButton2 = await page.locator('button[type="submit"]').nth(1)
+        const log = await page.locator('#log')
 
         //Assert
         await expect(ruxSwitchDisabled).toHaveAttribute('disabled', '')
@@ -193,9 +190,9 @@ test.describe('Switch', () => {
         page,
     }) => {
         //Arrange
-        const ruxSwitch = page.locator('#ruxSwitch').first()
-        const submitButton = page.locator('button[type="submit"]').first()
-        const log = page.locator('#log')
+        const ruxSwitch = await page.locator('#ruxSwitch').first()
+        const submitButton = await page.locator('button[type="submit"]').first()
+        const log = await page.locator('#log')
 
         //Act
         //Specific positioning is required for the switch click due to the nature of the element

@@ -1,13 +1,14 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Tree Node', () => {
-    test('it renders', async ({ astroPage }) => {
+    test('it renders', async ({ page }) => {
         const template = `<rux-tree-node>Node</rux-tree-node>`
-        const el = await astroPage.load(template)
+        await page.setContent(template)
+        const el = await page.locator('rux-tree-node')
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })
-    test('it renders children', async ({ astroPage }) => {
+    test('it renders children', async ({ page }) => {
         const template = `
             <rux-tree-node>
                 Item 1
@@ -16,14 +17,17 @@ test.describe('Tree Node', () => {
                 </rux-tree-node>
             </rux-tree-node>
         `
-        const el = await astroPage.load(template)
+
+        await page.setContent(template)
+        const el = await page.locator('rux-tree-node')
         const childDiv = el.locator('.tree-node').first()
         await expect(childDiv).toHaveClass('tree-node tree-node--has-children')
     })
 
-    test('handles prefix slot change', async ({ astroPage }) => {
+    test('handles prefix slot change', async ({ page }) => {
         const template = `<rux-tree-node>Node</rux-tree-node>`
-        const el = await astroPage.load(template)
+        await page.setContent(template)
+        const el = await page.locator('rux-tree-node')
 
         await el.evaluate((e) => {
             const slot = document.createElement('rux-icon')
@@ -38,9 +42,10 @@ test.describe('Tree Node', () => {
         )
     })
 
-    test('handles suffix slot change', async ({ astroPage }) => {
+    test('handles suffix slot change', async ({ page }) => {
         const template = `<rux-tree-node>Node</rux-tree-node>`
-        const el = await astroPage.load(template)
+        await page.setContent(template)
+        const el = await page.locator('rux-tree-node')
 
         await el.evaluate((e) => {
             const slot = document.createElement('rux-icon')

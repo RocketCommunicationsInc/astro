@@ -1,19 +1,10 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
-import {
-    startTestInBefore,
-    setBodyContent,
-    startTestEnv,
-} from '../../../../tests/utils/_startTestEnv'
 
 test.describe('Input with form', () => {
     const testString = 'Hello World'
 
     test.beforeEach(async ({ page }) => {
-        await startTestInBefore(page)
-
-        await setBodyContent(
-            page,
-            `
+        const template = `
         <body class="dark-theme">
             <div style="padding: 10%; display: flex; justify-content: center">
                 <form id="form">
@@ -156,7 +147,8 @@ test.describe('Input with form', () => {
             </div>
         </body>
         `
-        )
+
+        await page.setContent(template)
         page.addScriptTag({
             path: './tests/utils/formScript.js',
         })
@@ -364,26 +356,20 @@ test.describe('Input with form', () => {
     })
 })
 test.describe('Input with slots and props', () => {
-    startTestEnv()
-
     test('it renders label prop', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `
+        const template = `
             <rux-input label="hello"></rux-input>
             `
-        )
-        const el = page.locator('rux-input')
+        await page.setContent(template)
+        const el = await page.locator('rux-input')
         await expect(el).toHaveClass('hydrated')
     })
     test('it renders label slot', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `
+        const template = `
             <rux-input><div slot="label">hello</div></rux-input>
             `
-        )
-        const el = page.locator('rux-input')
+        await page.setContent(template)
+        const el = await page.locator('rux-input')
         await expect(el).toHaveClass('hydrated')
     })
 })

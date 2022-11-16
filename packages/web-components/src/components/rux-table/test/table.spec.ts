@@ -1,7 +1,7 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Table', () => {
-    test('it renders', async ({ astroPage }) => {
+    test('it renders', async ({ page }) => {
         const template = `
             <rux-table>
                 <rux-table-header>
@@ -26,7 +26,8 @@ test.describe('Table', () => {
                 </rux-table-body>
             </rux-table>
         `
-        const el = await astroPage.load(template)
+        await page.setContent(template)
+        const el = await page.locator('rux-table')
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })

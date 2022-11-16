@@ -5,12 +5,8 @@ import {
 } from '../../../../tests/utils/_startTestEnv'
 
 test.describe('Monitoring Progress Icon', () => {
-    startTestEnv()
-
     test('it renders', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `
+        const template = `
             <rux-monitoring-progress-icon
             progress=70
             max="100"
@@ -19,14 +15,12 @@ test.describe('Monitoring Progress Icon', () => {
             notifications="345678"
             ></rux-monitoring-progress-icon>
             `
-        )
+        await page.setContent(template)
         const el = page.locator('rux-monitoring-progress-icon')
         await expect(el).toHaveClass('hydrated')
     })
     test('it applies custom range arrays properly', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `
+        const template = `
             <rux-monitoring-progress-icon
             progress=675
             min="100"
@@ -36,7 +30,7 @@ test.describe('Monitoring Progress Icon', () => {
             notifications="345678"
             ></rux-monitoring-progress-icon>
             `
-        )
+        await page.setContent(template)
         await page.addScriptTag({
             content: `
             const monitoringProgressIcon = document.querySelector('rux-monitoring-progress-icon');
@@ -64,12 +58,10 @@ test.describe('Monitoring Progress Icon', () => {
         await expect(statusIcon).toHaveAttribute('status', 'serious')
     })
     test('it works with empty range array', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `
+        const template = `
             <rux-monitoring-progress-icon></rux-monitoring-progress-icon>
             `
-        )
+        await page.setContent(template)
         await page.addScriptTag({
             content: `
             const monitoringProgressIcon = document.querySelector('rux-monitoring-progress-icon');
@@ -79,22 +71,18 @@ test.describe('Monitoring Progress Icon', () => {
 
             `,
         })
-        const el = page.locator('rux-monitoring-progress-icon')
-        const statusIcon = el.locator('rux-status').first()
-        await expect(statusIcon).toHaveAttribute('status', 'caution')
+        const el = await page.locator('rux-monitoring-progress-icon')
+        const statusIcon = await el.locator('rux-status').first()
+        await expect(statusIcon).toHaveAttribute('status', 'off')
     })
     test('changes progress value to equal max if passed in progress is greater', async ({
         page,
     }) => {
-        await setBodyContent(
-            page,
-            `
+        const template = `
             <rux-monitoring-progress-icon min="0" max="100" progress="101"></rux-monitoring-progress-icon>
             `
-        )
-        //Timeout needed so page can render and swap out over-large progress value for the max
-        await page.waitForTimeout(1100)
-        const el = page.locator('rux-monitoring-progress-icon')
+        await page.setContent(template)
+        const el = await page.locator('rux-monitoring-progress-icon')
         const max = await el.getAttribute('max')
         const prog = await el.getAttribute('progress')
         expect(max).toEqual(prog)
@@ -102,14 +90,10 @@ test.describe('Monitoring Progress Icon', () => {
     test('changes progress value to equal min if passed in progress is less', async ({
         page,
     }) => {
-        await setBodyContent(
-            page,
-            `
+        const template = `
             <rux-monitoring-progress-icon min="0" max="100" progress="-10"></rux-monitoring-progress-icon>
             `
-        )
-        //Timeout needed so page can render and swap out over-large progress value for the max
-        await page.waitForTimeout(1100)
+        await page.setContent(template)
         const el = page.locator('rux-monitoring-progress-icon')
         const min = await el.getAttribute('min')
         const prog = await el.getAttribute('progress')

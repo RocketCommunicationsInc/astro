@@ -1,25 +1,27 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Checkbox', () => {
-    test('it renders', async ({ astroPage }) => {
+    test('it renders', async ({ page }) => {
         const template = `
             <rux-checkbox></rux-checkbox>
         `
-        const el = await astroPage.load(template)
+        await page.setContent(template)
+        const el = await page.locator('rux-checkbox')
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })
 
-    test('it displays label', async ({ astroPage }) => {
+    test('it displays label', async ({ page }) => {
         const template = `
             <rux-checkbox label="label"></rux-checkbox>
         `
-        const el = await astroPage.load(template)
+        await page.setContent(template)
+        const el = await page.locator('rux-checkbox')
         await expect(el).toHaveText('label')
     })
 })
 test.describe('Checkbox in a form', () => {
-    test.beforeEach(async ({ astroPage }) => {
+    test.beforeEach(async ({ page }) => {
         const template = `
             <div style="padding: 10%; display: flex; justify-content: center">
                 <div style="width: 60%">
@@ -66,16 +68,15 @@ test.describe('Checkbox in a form', () => {
                     <ul id="log"></ul>
                 </div>
         `
-        await astroPage.load(template, './tests/utils/formScript.js')
+        await page.setContent(template)
+        await page.addScriptTag({ path: './tests/utils/formScript.js' })
     })
-    test('submits the correct value when using a form', async ({
-        astroPage,
-    }) => {
+    test('submits the correct value when using a form', async ({ page }) => {
         // Arrange
-        const el = await astroPage.firstChild.locator('rux-checkbox').first()
-        const submitBtnEl = await astroPage.firstChild.locator('button').first()
+        const el = await page.locator('rux-checkbox').first()
+        const submitBtnEl = await page.locator('button').first()
 
-        const log = await astroPage.firstChild.locator('#log')
+        const log = await page.locator('#log')
 
         // Act
         await el.click()
@@ -85,21 +86,19 @@ test.describe('Checkbox in a form', () => {
         await expect(log).toContainText('ruxCheckbox:foo')
     })
 
-    test('it defaults to unchecked', async ({ astroPage }) => {
+    test('it defaults to unchecked', async ({ page }) => {
         // Arrange
-        const el = await astroPage.firstChild.locator('rux-checkbox').first()
+        const el = await page.locator('rux-checkbox').first()
         const shadowInputEl = el.locator('input')
 
         // Assert
         await expect(shadowInputEl).not.toBeChecked()
     })
 
-    test('does not submit any value if not checked', async ({ astroPage }) => {
+    test('does not submit any value if not checked', async ({ page }) => {
         // Arrange
-        const submitButtonEl = await astroPage.firstChild
-            .locator('button')
-            .first()
-        const log = await astroPage.firstChild.locator('#log')
+        const submitButtonEl = await page.locator('button').first()
+        const log = await page.locator('#log')
 
         // Act
         await submitButtonEl.click()
@@ -109,12 +108,12 @@ test.describe('Checkbox in a form', () => {
     })
 
     test('submits a value of "on" if no value is provided', async ({
-        astroPage,
+        page,
     }) => {
         // Arrange
-        const el = astroPage.firstChild.locator('#ruxCheckbox2')
-        const submitBtnEl = await astroPage.firstChild.locator('button').nth(1)
-        const log = await astroPage.firstChild.locator('#log')
+        const el = await page.locator('#ruxCheckbox2')
+        const submitBtnEl = await page.locator('button').nth(1)
+        const log = await page.locator('#log')
 
         // Act
         await el.click()
@@ -124,32 +123,30 @@ test.describe('Checkbox in a form', () => {
         await expect(log).toContainText('ruxCheckbox:on')
     })
 
-    test('it does not allow input if disabled', async ({ astroPage }) => {
+    test('it does not allow input if disabled', async ({ page }) => {
         // Arrange
-        const el = await astroPage.firstChild.locator('#ruxCheckboxDisabled')
-        const submitBtnEl = await astroPage.firstChild.locator('button').first()
-        const log = await astroPage.firstChild.locator('#log')
+        const el = await page.locator('#ruxCheckboxDisabled')
+        const submitBtnEl = await page.locator('button').first()
+        const log = await page.locator('#log')
 
         // Act
         await el.click()
         await submitBtnEl.click()
 
         // Assert
+        await expect(page.locator('#ruxCheckboxDisabled input')).toBeDisabled()
         await expect(
-            astroPage.firstChild.locator('#ruxCheckboxDisabled input')
-        ).toBeDisabled()
-        await expect(
-            astroPage.firstChild.locator('#ruxCheckboxDisabled input')
+            page.locator('#ruxCheckboxDisabled input')
         ).not.toBeChecked()
         await expect(log).not.toContainText('ruxCheckboxDisabled')
     })
 
     test('does not submit a value if checked and then unchecked', async ({
-        astroPage,
+        page,
     }) => {
         // Arrange
-        const el = await astroPage.firstChild.locator('rux-checkbox').first()
-        const log = await astroPage.firstChild.locator('#log')
+        const el = await page.locator('rux-checkbox').first()
+        const log = await page.locator('#log')
 
         // Act
         await el.click()
@@ -159,13 +156,11 @@ test.describe('Checkbox in a form', () => {
         await expect(log).not.toContainText('ruxCheckbox')
     })
 
-    test('does not submit any value if indeterminate', async ({
-        astroPage,
-    }) => {
+    test('does not submit any value if indeterminate', async ({ page }) => {
         // Arrange
-        const el = await astroPage.firstChild.locator('#ruxCheckbox')
-        const submitBtnEl = await astroPage.firstChild.locator('button').first()
-        const log = await astroPage.firstChild.locator('#log')
+        const el = await page.locator('#ruxCheckbox')
+        const submitBtnEl = await page.locator('button').first()
+        const log = await page.locator('#log')
 
         // Act
         await el.evaluate((e) => ((e as HTMLInputElement).checked = true))
@@ -178,10 +173,10 @@ test.describe('Checkbox in a form', () => {
     })
 
     test('should be checked when clicking an unchecked indeterminate checkbox', async ({
-        astroPage,
+        page,
     }) => {
         // Arrange
-        const el = await astroPage.firstChild.locator('#ruxCheckbox')
+        const el = await page.locator('#ruxCheckbox')
 
         // Act
         await el.evaluate((e) => ((e as HTMLInputElement).indeterminate = true))

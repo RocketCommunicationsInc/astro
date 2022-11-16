@@ -1,7 +1,7 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Tree', () => {
-    test.beforeEach(async ({ astroPage }) => {
+    test.beforeEach(async ({ page }) => {
         const template = `
             <rux-tree>
                 <rux-tree-node expanded>
@@ -112,34 +112,31 @@ test.describe('Tree', () => {
             </rux-tree>
         `
 
-        await astroPage.load(template)
-        await astroPage.addListener('ruxtreenodeexpanded')
-        await astroPage.addListener('ruxtreenodecollapsed')
-        await astroPage.addListener('ruxtreenodeselected')
+        await page.setContent(template)
 
-        // await page.addScriptTag({
-        //     content: `
-        // document.addEventListener('ruxtreenodeexpanded', function (event) {
-        //     console.log('rux-tree-node-expanded', event.detail)
-        // })
-        // document.addEventListener('ruxtreenodecollapsed', function (event) {
-        //     console.log('rux-tree-node-collapsed', event.detail)
-        // })
-        // document.addEventListener('ruxtreenodeselected', function (event) {
-        //     console.log('rux-tree-node-selected', event.detail)
-        // })
-        // `,
-        // })
+        await page.addScriptTag({
+            content: `
+        document.addEventListener('ruxtreenodeexpanded', function (event) {
+            console.log('rux-tree-node-expanded', event.detail)
+        })
+        document.addEventListener('ruxtreenodecollapsed', function (event) {
+            console.log('rux-tree-node-collapsed', event.detail)
+        })
+        document.addEventListener('ruxtreenodeselected', function (event) {
+            console.log('rux-tree-node-selected', event.detail)
+        })
+        `,
+        })
     })
 
-    test('it renders', async ({ astroPage }) => {
-        const el = astroPage.firstChild
+    test('it renders', async ({ page }) => {
+        const el = await page.locator('rux-tree')
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('rux-tree hydrated')
     })
-    test('allows keyboard controls', async ({ astroPage, page }) => {
+    test('allows keyboard controls', async ({ page }) => {
         //Arrange
-        const treeNode = astroPage.firstChild.locator('rux-tree-node').first()
+        const treeNode = await page.locator('rux-tree-node').first()
         const parent = treeNode.locator('.parent').first()
         const treeNodeNested = treeNode.locator('rux-tree-node').first()
 
@@ -161,12 +158,10 @@ test.describe('Tree', () => {
         await expect(treeNodeNested).not.toHaveAttribute('expanded', '')
         //Assert
     })
-    test('emits ruxtreenodeselected event', async ({ astroPage, page }) => {
+    test('emits ruxtreenodeselected event', async ({ page }) => {
         //TODO need to check that event only fires once
         //Arrange
-        const ruxTreeNode = astroPage.firstChild
-            .locator('rux-tree-node')
-            .first()
+        const ruxTreeNode = await page.locator('rux-tree-node').first()
         const parent = ruxTreeNode.locator('.parent').first()
 
         //Assert
@@ -181,12 +176,10 @@ test.describe('Tree', () => {
         ])
     })
 
-    test('emits ruxtreenodeexpanded', async ({ astroPage, page }) => {
+    test('emits ruxtreenodeexpanded', async ({ page }) => {
         //TODO need to check that event only fires once
         //Arrange
-        const testExpanded = astroPage.firstChild
-            .locator('#test-expanded')
-            .first()
+        const testExpanded = await page.locator('#test-expanded').first()
         const parent = testExpanded.locator('.parent').first()
         const arrow = parent.locator('.arrow').first()
 
@@ -201,14 +194,12 @@ test.describe('Tree', () => {
             arrow.click(),
         ])
     })
-    test('emits ruxtreenodecollapsed', async ({ astroPage, page }) => {
+    test('emits ruxtreenodecollapsed', async ({ page }) => {
         //TODO need to check that event only fires once
         //Arrange
-        const testExpanded = astroPage.firstChild
-            .locator('#test-expanded')
-            .first()
-        const parent = testExpanded.locator('.parent').first()
-        const arrow = parent.locator('.arrow').first()
+        const testExpanded = await page.locator('#test-expanded').first()
+        const parent = await testExpanded.locator('.parent').first()
+        const arrow = await parent.locator('.arrow').first()
 
         //Act
         await arrow.click()

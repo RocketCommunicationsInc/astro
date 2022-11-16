@@ -1,21 +1,13 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
-import {
-    startTestEnv,
-    setBodyContent,
-} from '../../../../tests/utils/_startTestEnv'
 
 test.describe('Segmented-button', () => {
-    startTestEnv()
-
     test('it renders', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `
+        const template = `
         <div style="padding: 2.5% 5%">
             <rux-segmented-button></rux-segmented-button>
         </div>
         `
-        )
+        await page.setContent(template)
         await page.addScriptTag({
             content: `
             const segmented = document.querySelector('rux-segmented-button')
@@ -34,19 +26,17 @@ test.describe('Segmented-button', () => {
 
         `,
         })
-        const el = page.locator('rux-segmented-button').first()
+        const el = await page.locator('rux-segmented-button').first()
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })
     test('it selects first item by default', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `
+        const template = `
         <div style="padding: 2.5% 5%">
             <rux-segmented-button></rux-segmented-button>
         </div>
         `
-        )
+        await page.setContent(template)
         await page.addScriptTag({
             content: `
             const segmented = document.querySelector('rux-segmented-button')
@@ -65,18 +55,16 @@ test.describe('Segmented-button', () => {
 
         `,
         })
-        const el = page.locator('rux-segmented-button').first()
+        const el = await page.locator('rux-segmented-button').first()
         await expect(el).toHaveAttribute('selected', 'First segment')
     })
     test('it selects item from data array', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `
+        const template = `
         <div style="padding: 2.5% 5%">
             <rux-segmented-button></rux-segmented-button>
         </div>
         `
-        )
+        await page.setContent(template)
         await page.addScriptTag({
             content: `
             const segmented = document.querySelector('rux-segmented-button')
@@ -95,18 +83,16 @@ test.describe('Segmented-button', () => {
 
         `,
         })
-        const el = page.locator('rux-segmented-button').first()
+        const el = await page.locator('rux-segmented-button').first()
         await expect(el).toHaveAttribute('selected', 'Second segment')
     })
     test('selects item from selected attribute', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `
+        const template = `
         <div style="padding: 2.5% 5%">
             <rux-segmented-button selected="First segment"></rux-segmented-button>
         </div>
         `
-        )
+        await page.setContent(template)
         await page.addScriptTag({
             content: `
             const segmented = document.querySelector('rux-segmented-button')
@@ -125,7 +111,7 @@ test.describe('Segmented-button', () => {
 
         `,
         })
-        const el = page.locator('rux-segmented-button').first()
+        const el = await page.locator('rux-segmented-button').first()
         await expect(el).toHaveAttribute('selected', 'First segment')
     })
 })

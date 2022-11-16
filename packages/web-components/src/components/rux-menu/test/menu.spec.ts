@@ -1,21 +1,14 @@
-import { test, expect } from '@playwright/test'
-import {
-    startTestEnv,
-    setBodyContent,
-} from '../../../../tests/utils/_startTestEnv'
+import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Menu', async () => {
-    startTestEnv()
     test('it renders', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `
+        const template = `
             <rux-menu>
                 <rux-menu-item>Item</rux-menu-item>
             </rux-menu>
         `
-        )
-        const menu = page.locator('rux-menu')
+        await page.setContent(template)
+        const menu = await page.locator('rux-menu')
         await expect(menu).toBeVisible()
         await expect(menu).toHaveClass('hydrated')
     })
@@ -23,16 +16,14 @@ test.describe('Menu', async () => {
     test('it emits ruxmenuselected event with correct detail', async ({
         page,
     }) => {
-        await setBodyContent(
-            page,
-            `
+        const template = `
         <rux-menu style="width: 300px;">
             <rux-menu-item>One</rux-menu-item>
             <rux-menu-item>Two</rux-menu-item>
             <rux-menu-item>Three</rux-menu-item>
         </rux-menu>
         `
-        )
+        await page.setContent(template)
         page.addScriptTag({
             content: `
         document.addEventListener('ruxmenuselected', (e) => {
@@ -40,7 +31,7 @@ test.describe('Menu', async () => {
         })
         `,
         })
-        const menuItem = page.locator('rux-menu-item').first()
+        const menuItem = await page.locator('rux-menu-item').first()
         page.on('console', (msg) => {
             expect(msg.text()).toBe('One')
         })
@@ -53,16 +44,14 @@ test.describe('Menu', async () => {
     test('it only has one rux-menu-item selected at a time', async ({
         page,
     }) => {
-        await setBodyContent(
-            page,
-            `
+        const template = `
         <rux-menu style="width: 300px;">
             <rux-menu-item>One</rux-menu-item>
             <rux-menu-item>Two</rux-menu-item>
             <rux-menu-item>Three</rux-menu-item>
         </rux-menu>
         `
-        )
+        await page.setContent(template)
         const first = page.locator('rux-menu-item').first()
         const last = page.locator('rux-menu-item').last()
 

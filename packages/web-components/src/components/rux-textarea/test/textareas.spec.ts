@@ -1,32 +1,36 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Textarea', () => {
-    test('it renders', async ({ astroPage }) => {
+    test('it renders', async ({ page }) => {
         const template = `<rux-textarea></rux-textarea>`
-        const el = await astroPage.load(template)
+        await page.setContent(template)
+        const el = await page.locator('rux-textarea')
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })
-    test('it renders error text', async ({ astroPage }) => {
+    test('it renders error text', async ({ page }) => {
         const template = `<rux-textarea error-text="Error Text"></rux-textarea>`
-        const el = await astroPage.load(template)
+        await page.setContent(template)
+        const el = await page.locator('rux-textarea')
         await expect(el).toHaveAttribute('error-text', 'Error Text')
     })
-    test('it renders help text', async ({ astroPage }) => {
+    test('it renders help text', async ({ page }) => {
         const template = `<rux-textarea help-text="Help Text"></rux-textarea>`
-        const el = await astroPage.load(template)
+        await page.setContent(template)
+        const el = await page.locator('rux-textarea')
         await expect(el).toHaveAttribute('help-text', 'Help Text')
     })
     test('it renders error text over help text if both are provided', async ({
-        astroPage,
+        page,
     }) => {
         const template = `<rux-textarea help-text="Help Text" error-text="Error Text"></rux-textarea>`
-        const el = await astroPage.load(template)
+        await page.setContent(template)
+        const el = await page.locator('rux-textarea')
         await expect(el.locator('.rux-error-text')).toHaveText('Error Text')
     })
 })
 test.describe('Textarea in a form', () => {
-    test.beforeEach(async ({ astroPage }) => {
+    test.beforeEach(async ({ page }) => {
         const template = `
             <div>
                 <form id="form">
@@ -47,7 +51,8 @@ test.describe('Textarea in a form', () => {
                 <ul id="log"></ul>
             </div>
         `
-        await astroPage.load(template, './tests/utils/formScript.js')
+        await page.setContent(template)
+        await page.addScriptTag({ path: './tests/utils/formScript.js' })
     })
     test('it submits the correct value', async ({ page }) => {
         const el = page.locator('form > #textarea1')
@@ -66,20 +71,22 @@ test.describe('Textarea in a form', () => {
         await submit.click()
         await expect(log).not.toContainText('Disabled')
     })
-    test('it renders label prop', async ({ astroPage }) => {
+    test('it renders label prop', async ({ page }) => {
         const template = `
             <rux-textarea label="hello"></rux-textarea>
         `
-        const el = await astroPage.load(template)
+        await page.setContent(template)
+        const el = await page.locator('rux-textarea')
         const label = el.locator('label')
 
         await expect(label).toHaveClass('rux-textarea-label')
     })
-    test('it renders label slot', async ({ astroPage }) => {
+    test('it renders label slot', async ({ page }) => {
         const template = `
             <rux-textarea><div slot="label">hello</div></rux-textarea>
         `
-        const el = await astroPage.load(template)
+        await page.setContent(template)
+        const el = await page.locator('rux-textarea')
         const label = el.locator('label')
 
         await expect(label).toHaveClass('rux-textarea-label')

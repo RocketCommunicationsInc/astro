@@ -1,23 +1,15 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
-import {
-    startTestInBefore,
-    setBodyContent,
-} from '../../../../tests/utils/_startTestEnv'
 
 test.describe('Radio', () => {
     test.beforeEach(async ({ page }) => {
-        await startTestInBefore(page)
-
-        await setBodyContent(
-            page,
-            `
+        const template = `
             <rux-radio>hello</rux-radio>
         `
-        )
+        await page.setContent(template)
     })
 
     test('it renders', async ({ page }) => {
-        const el = page.locator('rux-radio').first()
+        const el = await page.locator('rux-radio').first()
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })

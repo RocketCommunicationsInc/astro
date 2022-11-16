@@ -1,16 +1,8 @@
-import { test, expect } from '@playwright/test'
-import {
-    startTestEnv,
-    setBodyContent,
-} from '../../../../tests/utils/_startTestEnv'
+import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Pop up', async () => {
-    startTestEnv()
-
     test('it renders', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `
+        const template = `
         <rux-pop-up id="popup-1" open>
         <rux-menu-item>Item 1</rux-menu-item>
         <rux-menu-item-divider></rux-menu-item-divider>
@@ -29,24 +21,22 @@ test.describe('Pop up', async () => {
         >
     </rux-pop-up>
         `
-        )
-        const el = page.locator('rux-pop-up')
+        await page.setContent(template)
+        const el = await page.locator('rux-pop-up')
         await expect(el).toHaveClass('hydrated')
     })
     test('it emits ruxpopupopened event', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `    
-        <rux-pop-up placement="top-start" id="top">
-        <rux-button slot="trigger" id="toggle-btn">Top</rux-button>
-        <rux-menu>
-            <rux-menu-item value="1" selected>Pop up menu option test</rux-menu-item>
-            <rux-menu-item-divider></rux-menu-item-divider>
-            <rux-menu-item value="2">Pop up menu option test</rux-menu-item>
-            <rux-menu-item value="3">Pop up menu option test</rux-menu-item>
-        </rux-menu>
-    </rux-pop-up>`
-        )
+        const template = `    
+                <rux-pop-up placement="top-start" id="top">
+                <rux-button slot="trigger" id="toggle-btn">Top</rux-button>
+                <rux-menu>
+                    <rux-menu-item value="1" selected>Pop up menu option test</rux-menu-item>
+                    <rux-menu-item-divider></rux-menu-item-divider>
+                    <rux-menu-item value="2">Pop up menu option test</rux-menu-item>
+                    <rux-menu-item value="3">Pop up menu option test</rux-menu-item>
+                </rux-menu>
+            </rux-pop-up>`
+        await page.setContent(template)
         page.addScriptTag({
             content: `
         document.addEventListener('ruxpopupopened', () => {
@@ -56,7 +46,7 @@ test.describe('Pop up', async () => {
             console.log('closed');
         })`,
         })
-        const toggleBtn = page.locator('#toggle-btn')
+        const toggleBtn = await page.locator('#toggle-btn')
         page.on('console', (msg) => {
             expect(msg.text()).toBe('opened')
         })
@@ -66,9 +56,7 @@ test.describe('Pop up', async () => {
         ])
     })
     test('it emits ruxpopupclosed event', async ({ page }) => {
-        await setBodyContent(
-            page,
-            `    
+        const template = `    
         <rux-pop-up placement="top-start" id="top" open>
         <rux-button slot="trigger" id="toggle-btn">Top</rux-button>
         <rux-menu>
@@ -78,7 +66,7 @@ test.describe('Pop up', async () => {
             <rux-menu-item value="3">Pop up menu option test</rux-menu-item>
         </rux-menu>
         </rux-pop-up>`
-        )
+        await page.setContent(template)
         page.addScriptTag({
             content: `
         document.addEventListener('ruxpopupopened', () => {
@@ -88,7 +76,7 @@ test.describe('Pop up', async () => {
             console.log('closed');
         })`,
         })
-        const toggleBtn = page.locator('#toggle-btn')
+        const toggleBtn = await page.locator('#toggle-btn')
         page.on('console', (msg) => {
             expect(msg.text()).toBe('closed')
         })

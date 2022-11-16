@@ -1,16 +1,8 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
-import {
-    startTestInBefore,
-    setBodyContent,
-} from '../../../../tests/utils/_startTestEnv'
 
 test.describe('Push-button', () => {
     test.beforeEach(async ({ page }) => {
-        await startTestInBefore(page)
-
-        await setBodyContent(
-            page,
-            `
+        const template = `
                 <div style="padding: 10%; display: flex; justify-content: center">
                     <form id="form">
                         <rux-push-button
@@ -51,7 +43,7 @@ test.describe('Push-button', () => {
                     <rux-push-button></rux-push-button>
                 </div>
         `
-        )
+        await page.setContent(template)
 
         page.addScriptTag({
             path: './tests/utils/formScript.js',
@@ -59,16 +51,16 @@ test.describe('Push-button', () => {
     })
 
     test('it renders', async ({ page }) => {
-        const el = page.locator('rux-push-button').first()
+        const el = await page.locator('rux-push-button').first()
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })
     test('submits the correct value when using a form', async ({ page }) => {
         //Arrange
-        const pushButton = page.locator('#ruxPushButton').first()
-        const nativeCheckbox = page.locator('#nativeCheckbox')
-        const submitButton = page.locator('button[type="submit"]')
-        const log = page.locator('#log')
+        const pushButton = await page.locator('#ruxPushButton').first()
+        const nativeCheckbox = await page.locator('#nativeCheckbox')
+        const submitButton = await page.locator('button[type="submit"]')
+        const log = await page.locator('#log')
 
         //Act
         await pushButton.click()
@@ -81,8 +73,8 @@ test.describe('Push-button', () => {
     })
     test('does not submit any value if not checked', async ({ page }) => {
         //Arrange
-        const submitButton = page.locator('button[type="submit"]')
-        const log = page.locator('#log')
+        const submitButton = await page.locator('button[type="submit"]')
+        const log = await page.locator('#log')
 
         //Act
         await submitButton.click()
@@ -94,10 +86,10 @@ test.describe('Push-button', () => {
         page,
     }) => {
         //Arrange
-        const pushButton = page.locator('#ruxPushButton').first()
-        const nativeCheckbox = page.locator('#nativeCheckbox')
-        const submitButton = page.locator('button[type="submit"]')
-        const log = page.locator('#log')
+        const pushButton = await page.locator('#ruxPushButton').first()
+        const nativeCheckbox = await page.locator('#nativeCheckbox')
+        const submitButton = await page.locator('button[type="submit"]')
+        const log = await page.locator('#log')
 
         //Act
         await nativeCheckbox.check()
@@ -110,11 +102,11 @@ test.describe('Push-button', () => {
     })
     test('does not allow input if disabled', async ({ page }) => {
         //Arrange
-        const pushButton = page.locator('#ruxPushButton').first()
-        const submitButton = page.locator('button[type="submit"]')
-        const disabledButton = page.locator('#ruxPushButtonDisabled')
+        const pushButton = await page.locator('#ruxPushButton').first()
+        const submitButton = await page.locator('button[type="submit"]')
+        const disabledButton = await page.locator('#ruxPushButtonDisabled')
         const disabledInput = disabledButton.locator('input')
-        const log = page.locator('#log')
+        const log = await page.locator('#log')
 
         //Assert
         await expect(disabledButton).toHaveAttribute('disabled', '')
@@ -133,9 +125,9 @@ test.describe('Push-button', () => {
     })
     test('submits a value of on if no value was given', async ({ page }) => {
         //Arrange
-        const pushdButtonNoVal = page.locator('#ruxPushButtonNoVal')
-        const submitButton = page.locator('button[type="submit"]')
-        const log = page.locator('#log')
+        const pushdButtonNoVal = await page.locator('#ruxPushButtonNoVal')
+        const submitButton = await page.locator('button[type="submit"]')
+        const log = await page.locator('#log')
 
         //Act
         await pushdButtonNoVal.click()
@@ -146,7 +138,7 @@ test.describe('Push-button', () => {
     })
     test('should have unique ids', async ({ page }) => {
         //Arrange
-        const section = page.locator('.auto-increment-id')
+        const section = await page.locator('.auto-increment-id')
         const pushButton1 = section.locator('rux-push-button').first()
         const pushButtonInput1 = pushButton1.locator('input')
         const pushButton2 = section.locator('rux-push-button').nth(1)
