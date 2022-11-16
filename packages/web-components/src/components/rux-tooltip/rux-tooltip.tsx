@@ -113,7 +113,6 @@ export class RuxTooltip {
         const { _handleSlotChange } = this
         return (
             <Host>
-                {/* <div class="rux-tooltip"> */}
                 <span
                     aria-hidden={this.open ? 'false' : 'true'}
                     class={{
@@ -127,7 +126,6 @@ export class RuxTooltip {
                     </slot>
                 </span>
                 <slot />
-                {/* </div> */}
             </Host>
         )
     }
