@@ -14,9 +14,9 @@ import { hasSlot } from '../../utils/utils'
 
 /**
  * @slot (default) - The trigger for the rux-tooltip
- * @slot (message) - The message for the rux-tooltip
+ * @slot message - The message for the rux-tooltip
  * @part container - The container of the rux-tooltip text
- * @prop (message) - The message for the rux-tooltip
+ * @prop message - The message for the rux-tooltip
  */
 
 @Component({

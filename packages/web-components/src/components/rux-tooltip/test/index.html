@@ -44,5 +44,14 @@
                 ><rux-button>Button 3</rux-button>
             </rux-tooltip>
         </section>
+
+        <script>
+            document.addEventListener('ruxtooltipopened', () =>
+                console.log(`I see you opener`)
+            )
+            document.addEventListener('ruxtooltipclosed', () =>
+                console.log(`I see you closer`)
+            )
+        </script>
     </body>
 </html>
