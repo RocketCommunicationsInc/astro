@@ -201,6 +201,7 @@ test.describe('Timeline', () => {
         const button = page.locator('#edit-partial-ongoing-button')
 
         await button.click()
+        await page.waitForChanges()
 
         await expect(el).toHaveClass(
             'rux-time-region rux-time-region--partial-end rux-time-region--partial-start'

@@ -104,11 +104,16 @@ const config: PlaywrightTestConfig = {
     // outputDir: 'test-results/',
 
     /* Run your local dev server before starting the tests */
+    // webServer: {
+    //     command: 'npm run start.stencil',
+    //     url: 'http://localhost:3333/',
+    //     reuseExistingServer: true,
+    //     timeout: 90000,
+    // },
     webServer: {
-        command: 'npm run start.stencil',
-        url: 'http://localhost:3333/',
-        reuseExistingServer: true,
-        timeout: 90000,
+        command: 'serve -p 3333',
+        port: 3333,
+        reuseExistingServer: !process.env.CI,
     },
 }
 

@@ -1,4 +1,5 @@
-import { test as base } from '@playwright/test'
+// import { test as base } from '@playwright/test'
+import { test as base } from "stencil-playwright";
 import { AstroComponentPage } from './AstroComponentPage'
 import { AstroFormPage } from './AstroFormPage'
 import { AstroVRTPage } from './AstroVRTPage'
