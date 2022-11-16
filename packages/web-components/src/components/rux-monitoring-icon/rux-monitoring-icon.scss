@@ -1,8 +1,9 @@
 :host {
     display: inline-flex;
     padding: 0;
-    min-height: 5.188rem; //83px;
-    min-width: 4.938rem; //79px;
+    min-width: calc(
+        var(--spacing-20) + 4px
+    ); //84px to account for 3 digits in the notification banner;
 }
 
 :host([hidden]) {

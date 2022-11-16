@@ -36,7 +36,7 @@ export class RuxMonitoringIcon {
      * Displays an Astro icon matching this string. For a [full list of available icons,
      * see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols)
      */
-    @Prop() icon!: string
+    @Prop() icon: string = 'antenna-transmit'
 
     /**
      * If provided and greater than `0`, displays an outlined number badge at the bottom right of the icon.
