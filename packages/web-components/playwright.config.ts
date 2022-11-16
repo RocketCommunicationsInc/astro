@@ -1,5 +1,8 @@
-import type { PlaywrightTestConfig } from '@playwright/test'
+import { expect, PlaywrightTestConfig } from '@playwright/test'
 import { devices } from '@playwright/test'
+import { matchers } from 'stencil-playwright'
+
+expect.extend(matchers)
 
 /**
  * Read environment variables from file.

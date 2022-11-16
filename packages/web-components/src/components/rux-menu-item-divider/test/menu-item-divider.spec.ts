@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Menu Item Divider', async () => {
     test('it renders', async ({ page }) => {

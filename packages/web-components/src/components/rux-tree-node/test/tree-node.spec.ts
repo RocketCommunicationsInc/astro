@@ -1,13 +1,6 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Tree Node', () => {
-    test('it renders', async ({ page }) => {
-        const template = `<rux-tree-node>Node</rux-tree-node>`
-        await page.setContent(template)
-        const el = await page.locator('rux-tree-node')
-        await expect(el).toBeVisible()
-        await expect(el).toHaveClass('hydrated')
-    })
     test('it renders children', async ({ page }) => {
         const template = `
             <rux-tree-node>
@@ -58,5 +51,51 @@ test.describe('Tree Node', () => {
         await expect(el.locator('.parent span:last-child')).toHaveClass(
             'suffix'
         )
+    })
+
+    test('emits ruxtreenodecollapsed', async ({ page }) => {
+        const template = `
+                <rux-tree-node data-test-id="parent" expanded>
+                    Parent
+                    <rux-tree-node slot="node" data-test-id="child">
+                        Child
+                    </rux-tree-node>
+                </rux-tree-node>
+        `
+        await page.setContent(template)
+        const arrow = await page.locator('[data-test-id="parent"] .arrow')
+        const eventSpy = await page.spyOnEvent('ruxtreenodecollapsed')
+
+        await arrow.click()
+
+        expect(eventSpy).toHaveReceivedEventTimes(1)
+    })
+
+    test('emits ruxtreenodeselected event', async ({ page }) => {
+        const template = `<rux-tree-node>Node</rux-tree-node>`
+        await page.setContent(template)
+        const el = await page.locator('rux-tree-node')
+        const eventSpy = await page.spyOnEvent('ruxtreenodeselected')
+
+        await el.click()
+        expect(eventSpy).toHaveReceivedEventTimes(1)
+    })
+
+    test('emits ruxtreenodeexpanded', async ({ page }) => {
+        const template = `
+                <rux-tree-node data-test-id="parent">
+                    Parent
+                    <rux-tree-node slot="node" data-test-id="child">
+                        Child
+                    </rux-tree-node>
+                </rux-tree-node>
+        `
+        await page.setContent(template)
+
+        const arrow = await page.locator('[data-test-id="parent"] .arrow')
+        const eventSpy = await page.spyOnEvent('ruxtreenodeexpanded')
+
+        await arrow.click()
+        expect(eventSpy).toHaveReceivedEventTimes(1)
     })
 })

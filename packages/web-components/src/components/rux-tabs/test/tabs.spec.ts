@@ -234,7 +234,6 @@ test.describe('Multiple tabs on same page', () => {
     })
     test('it can dynamically add tabs that behave correctly', async ({
         page,
-        page,
     }) => {
         const template = `
             <rux-tabs id="tab-set-id-1">

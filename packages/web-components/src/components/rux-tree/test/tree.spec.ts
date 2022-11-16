@@ -1,7 +1,7 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Tree', () => {
-    test.beforeEach(async ({ page }) => {
+    test('allows keyboard controls', async ({ page }) => {
         const template = `
             <rux-tree>
                 <rux-tree-node expanded>
@@ -111,30 +111,7 @@ test.describe('Tree', () => {
                 </rux-tree-node>
             </rux-tree>
         `
-
         await page.setContent(template)
-
-        await page.addScriptTag({
-            content: `
-        document.addEventListener('ruxtreenodeexpanded', function (event) {
-            console.log('rux-tree-node-expanded', event.detail)
-        })
-        document.addEventListener('ruxtreenodecollapsed', function (event) {
-            console.log('rux-tree-node-collapsed', event.detail)
-        })
-        document.addEventListener('ruxtreenodeselected', function (event) {
-            console.log('rux-tree-node-selected', event.detail)
-        })
-        `,
-        })
-    })
-
-    test('it renders', async ({ page }) => {
-        const el = await page.locator('rux-tree')
-        await expect(el).toBeVisible()
-        await expect(el).toHaveClass('rux-tree hydrated')
-    })
-    test('allows keyboard controls', async ({ page }) => {
         //Arrange
         const treeNode = await page.locator('rux-tree-node').first()
         const parent = treeNode.locator('.parent').first()
@@ -158,65 +135,4 @@ test.describe('Tree', () => {
         await expect(treeNodeNested).not.toHaveAttribute('expanded', '')
         //Assert
     })
-    test('emits ruxtreenodeselected event', async ({ page }) => {
-        //TODO need to check that event only fires once
-        //Arrange
-        const ruxTreeNode = await page.locator('rux-tree-node').first()
-        const parent = ruxTreeNode.locator('.parent').first()
-
-        //Assert
-        page.on('console', (msg) => {
-            expect(msg.text()).toContain('ruxtreenodeselected')
-        })
-
-        //Act
-        await Promise.all([
-            page.waitForEvent('console', { timeout: 500 }),
-            parent.click(),
-        ])
-    })
-
-    test('emits ruxtreenodeexpanded', async ({ page }) => {
-        //TODO need to check that event only fires once
-        //Arrange
-        const testExpanded = await page.locator('#test-expanded').first()
-        const parent = testExpanded.locator('.parent').first()
-        const arrow = parent.locator('.arrow').first()
-
-        //Assert
-        page.on('console', (msg) => {
-            expect(msg.text()).toContain('ruxtreenodeexpanded node')
-        })
-
-        //Act
-        await Promise.all([
-            page.waitForEvent('console', { timeout: 500 }),
-            arrow.click(),
-        ])
-    })
-    test('emits ruxtreenodecollapsed', async ({ page }) => {
-        //TODO need to check that event only fires once
-        //Arrange
-        const testExpanded = await page.locator('#test-expanded').first()
-        const parent = await testExpanded.locator('.parent').first()
-        const arrow = await parent.locator('.arrow').first()
-
-        //Act
-        await arrow.click()
-
-        //Assert
-        page.on('console', (msg) => {
-            expect(msg.text()).toContain('ruxtreenodecollapsed node')
-        })
-
-        //Act
-        await Promise.all([
-            page.waitForEvent('console', { timeout: 500 }),
-            arrow.click(),
-        ])
-    })
 })
-/*
-    Need to test: 
-    - Event only fires once
-*/
