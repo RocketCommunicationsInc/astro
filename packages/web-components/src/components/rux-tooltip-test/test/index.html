@@ -17,6 +17,11 @@
         <script nomodule src="/build/astro-web-components.esm.js"></script>
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
+        <style>
+            .triggers > * {
+                margin: 1.5rem;
+            }
+        </style>
     </head>
 
     <body class="dark-theme">
@@ -27,6 +32,12 @@
                 ><br />
                 <rux-icon tooltip="woohoo" icon="star"></rux-icon><br />
                 <button tooltip="woohoo">Awesome totally normal button</button>
+                <p tooltip="blah">Can even work on paragraph of text</p>
+                <!-- <rux-input
+                    ><span slot="help-text" tooltip="tooltip2"
+                        >Helpful info!</span
+                    ></rux-input
+                > -->
             </div>
             <rux-tooltip-test id="tooltip1"
                 >Button Triggered: This tooltip can have
@@ -36,6 +47,10 @@
                 >Icon Triggered: Also a tooltip!</rux-tooltip-test
             >
             <rux-tooltip-test id="woohoo"
+                >Can be triggered by multiple things this is where it
+                lives</rux-tooltip-test
+            >
+            <rux-tooltip-test id="blah"
                 >this is where it lives</rux-tooltip-test
             >
         </section>

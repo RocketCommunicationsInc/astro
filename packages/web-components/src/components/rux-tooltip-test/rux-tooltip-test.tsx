@@ -73,32 +73,42 @@ export class RuxTooltip2 {
     }
 
     connectedCallback() {
+        this._handleMouseIn = this._handleMouseIn.bind(this)
+        this._handleMouseOut = this._handleMouseOut.bind(this)
         const triggers = document.querySelectorAll(`[tooltip="${this.el.id}"]`)
         for (const trigger of triggers) {
             trigger.setAttribute('aria-describedBy', this.el.id)
-            trigger.addEventListener('pointerenter', () => (this.open = true))
-            trigger.addEventListener('pointerleave', () => (this.open = false))
+            trigger.addEventListener('pointerenter', this._handleMouseIn)
+            trigger.addEventListener('pointerleave', this._handleMouseOut)
         }
     }
+
     disconnectedCallback() {
-        // const trigger = document.querySelector(
-        //     `[tooltip="${this.el.id}"]`
-        // ) as HTMLElement
-        // trigger.removeEventListener('pointerenter', () => {
-        //     this.open = true
-        //     console.log('removed!')
-        // })
-        // trigger.removeEventListener('pointerleave', this._handleMouseout)
+        const triggers = document.querySelectorAll(`[tooltip="${this.el.id}"]`)
+        console.log('disconnected', triggers)
+        if (triggers.length > 0) {
+            for (const trigger of triggers) {
+                console.log('removing stuff on', trigger)
+                trigger.removeAttribute('aria-describedBy')
+                trigger.removeEventListener('pointerenter', this._handleMouseIn)
+                trigger.removeEventListener(
+                    'pointerleave',
+                    this._handleMouseOut
+                )
+            }
+        }
     }
     componentWillLoad() {}
 
-    private async _handleMouseIn() {
+    private _handleMouseIn() {
         this.open = true
     }
 
-    private async _handleMouseOut() {
+    private _handleMouseOut() {
         this.open = false
     }
+
+    private _position() {}
 
     render() {
         return (
