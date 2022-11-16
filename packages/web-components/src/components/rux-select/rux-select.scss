@@ -2,6 +2,14 @@
 
 :host {
     display: block;
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    line-height: var(
+        --line-height-base
+    ); // Solves the issue of a parent element with a larger line-height causing extra space to be taken up on some elements.
+    text-align: left; // Solves the issue of a parent element with a different text-align overriding.
     scrollbar-color: var(--color-border-interactive-muted)
         var(--color-background-surface-default);
     ::-webkit-scrollbar {
@@ -69,6 +77,7 @@ label {
     font-size: var(--font-control-body-1-font-size);
     font-weight: var(--font-control-body-1-font-weight);
     letter-spacing: var(--font-control-body-1-letter-spacing);
+    line-height: var(--font-control-body-1-line-height);
     .rux-label__asterisk {
         margin-left: var(--spacing-1); //4px
     }
@@ -115,14 +124,18 @@ label {
     letter-spacing: var(--font-control-body-1-letter-spacing);
     user-select: none;
 
+    //In the following, the right padding accounts for normal padding + size of drop down arrow
     &--small {
         padding: var(--spacing-1) var(--spacing-2); //4px 8px
+        padding-right: calc(var(--spacing-2) + var(--spacing-8));
     }
     &--medium {
         padding: var(--spacing-2); //8px
+        padding-right: calc(var(--spacing-2) + var(--spacing-8));
     }
     &--large {
         padding: var(--spacing-3) var(--spacing-2); //12px 8px
+        padding-right: calc(var(--spacing-2) + var(--spacing-8));
     }
     &--multiple {
         background: var(--color-background-base-default);

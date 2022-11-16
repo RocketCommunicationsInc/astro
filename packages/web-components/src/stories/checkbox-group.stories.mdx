@@ -252,8 +252,8 @@ export const HorizontalLabel = (args) => {
 If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
 
 ```js
-import RuxCheckbox from '@astrouxds/astro-web-components/dist/components/rux-checkbox.js'
-import RuxCheckboxGroup from '@astrouxds/astro-web-components/dist/components/rux-checkbox-group.js'
+import { RuxCheckbox } from '@astrouxds/astro-web-components/dist/components/rux-checkbox.js'
+import { RuxCheckboxGroup } from '@astrouxds/astro-web-components/dist/components/rux-checkbox-group.js'
 customElements.define('rux-checkbox', RuxCheckbox)
 customElements.define('rux-checkbox-group', RuxCheckboxGroup)
 ```

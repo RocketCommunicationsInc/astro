@@ -48,7 +48,8 @@ export const Default = (args) => {
     <Story
         args={{
             open: true,
-            placement: 'auto'
+            placement: 'auto',
+            closeOnSelect: false
         }}
         name="Default"
     >
@@ -121,6 +122,7 @@ export const Placements = (args) => {
         argTypes={{
             placement: { table: {disable: true}},
             open: { table: {disable: true }},
+            closeOnSelect: { table: {disable: true }},
         }}
     >
         {Placements.bind()}
@@ -132,10 +134,10 @@ export const Placements = (args) => {
 If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
 
 ```js
-import RuxPopUp from '@astrouxds/astro-web-components/dist/components/rux-pop-up.js'
-import RuxMenu from '@astrouxds/astro-web-components/dist/components/rux-menu.js'
-import RuxMenuItem from '@astrouxds/astro-web-components/dist/components/rux-menu-item.js'
-import RuxMenuItemDivider from '@astrouxds/astro-web-components/dist/components/rux-menu-item-divider.js'
+import { RuxPopUp } from '@astrouxds/astro-web-components/dist/components/rux-pop-up.js'
+import { RuxMenu } from '@astrouxds/astro-web-components/dist/components/rux-menu.js'
+import { RuxMenuItem } from '@astrouxds/astro-web-components/dist/components/rux-menu-item.js'
+import { RuxMenuItemDivider } from '@astrouxds/astro-web-components/dist/components/rux-menu-item-divider.js'
 
 customElements.define('rux-pop-up', RuxPopUp)
 customElements.define('rux-menu', RuxMenu)

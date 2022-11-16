@@ -1,3 +1,5 @@
+@use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
+
 :host {
     display: inline-block;
     --_checkbox-checkmark-color-fill: var(--color-border-interactive-default);
@@ -12,10 +14,11 @@
 
 .rux-form-field {
     display: flex;
-    font-family: var(--font-body-1-font-family);
-    font-size: var(--font-body-1-font-size);
-    letter-spacing: var(--font-body-1-letter-spacing);
-    font-weight: var(--font-body-1-font-weight);
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
+    font-weight: var(--font-control-body-1-font-weight);
+    line-height: var(--font-control-body-1-line-height);
     color: var(--color-text-primary);
 }
 
@@ -29,7 +32,7 @@ label {
     cursor: pointer;
 
     &--disabled {
-        opacity: var(--disabled-opacity);
+        opacity: var(--opacity-disabled);
         cursor: not-allowed;
     }
 
@@ -64,13 +67,4 @@ label {
 
 .rux-checkbox__label {
     margin-left: var(--spacing-2);
-}
-
-.rux-help-text {
-    margin-top: calc(var(--spacing-2) + var(--spacing-050));
-    color: var(--color-text-primary);
-    font-size: var(--font-body-2-font-size);
-    font-family: var(--font-body-2-font-family);
-    font-weight: var(--font-body-2-font-weight);
-    letter-spacing: var(--font-body-2-letter-spacing);
 }

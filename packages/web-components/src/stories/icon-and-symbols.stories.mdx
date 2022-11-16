@@ -19,7 +19,6 @@ export const Default = (args) => {
         <rux-icon
             icon="${args.icon}"
             size="${args.size}"
-            label="${args.label}"
         ></rux-icon>
     `
 }
@@ -28,8 +27,7 @@ export const Default = (args) => {
     <Story
         args={{
             icon: 'satellite-transmit',
-            size: 'normal',
-            label: ""
+            size: 'normal'
         }}
         parameters={{
             docs: {
@@ -188,8 +186,7 @@ export const AllIcons = (args) => {
         }}
         argTypes={{
             size: { table: { disable: true } },
-            icon: { table: { disable: true } },
-            label: { table: { disable: true } }
+            icon: { table: { disable: true } }
         }}
         name="All Icons"
     >

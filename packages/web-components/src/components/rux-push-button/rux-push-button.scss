@@ -1,11 +1,18 @@
 :host {
-    cursor: pointer;
     display: block;
     margin: (--spacing-0) (--spacing-050);
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    line-height: var(
+        --line-height-base
+    ); //fixes issue where parent element with larger line-height causes layout shift.
+    text-align: left;
 
     &[disabled] {
         opacity: var(--opacity-disabled);
@@ -20,6 +27,7 @@
 
     .rux-push-button {
         &__button {
+            cursor: pointer;
             font-family: var(--font-control-body-1-font-family);
             font-size: var(--font-control-body-1-font-size);
             font-weight: var(--font-control-body-1-font-weight);

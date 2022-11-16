@@ -9,7 +9,6 @@ import {
     Watch,
     State,
 } from '@stencil/core'
-import FormFieldMessage from '../../common/functional-components/FormFieldMessage/FormFieldMessage'
 import { FormFieldInterface } from '../../common/interfaces.module'
 import { hasSlot, renderHiddenInput } from '../../utils/utils'
 
@@ -17,6 +16,8 @@ let id = 0
 
 /**
  * @slot label - The textarea label
+ * @slot help-text -  the help text
+ * @slot error-text -  the error text
  * @part error-text - The error text element
  * @part form-field - The form-field wrapper container
  * @part help-text - The help text element
@@ -32,6 +33,8 @@ let id = 0
 export class RuxTextarea implements FormFieldInterface {
     private inputId = `rux-textarea-${++id}`
     @State() hasLabelSlot = false
+    @State() hasHelpSlot = false
+    @State() hasErrorSlot = false
 
     /**
      * The textarea label text. For HTML content, use the `label` slot instead.
@@ -141,6 +144,8 @@ export class RuxTextarea implements FormFieldInterface {
 
     private _handleSlotChange() {
         this.hasLabelSlot = hasSlot(this.el, 'label')
+        this.hasErrorSlot = hasSlot(this.el, 'error-text')
+        this.hasHelpSlot = hasSlot(this.el, 'help-text')
     }
 
     private _onChange(e: Event) {
@@ -191,42 +196,77 @@ export class RuxTextarea implements FormFieldInterface {
                             </span>
                         </label>
                     ) : null}
-                    <div
+                    <textarea
+                        name={this.name}
+                        disabled={this.disabled}
+                        aria-invalid={this.invalid ? 'true' : 'false'}
+                        placeholder={this.placeholder}
+                        required={this.required}
+                        minlength={this.minLength}
+                        maxlength={this.maxLength}
+                        value={this.value}
                         class={{
-                            'rux-textarea-wrapper': true,
-                            'rux-textarea-wrapper--disabled': this.disabled,
-                            'rux-textarea-wrapper--invalid': this.invalid,
-                            'rux-textarea-wrapper--small':
-                                this.size === 'small',
-                            'rux-textarea-wrapper--large':
-                                this.size === 'large',
+                            'rux-textarea': true,
+                            'rux-textarea--disabled': this.disabled,
+                            'rux-textarea--invalid': this.invalid,
+                            'rux-textarea--small': this.size === 'small',
+                            'rux-textarea--large': this.size === 'large',
                         }}
-                    >
-                        <textarea
-                            name={this.name}
-                            disabled={this.disabled}
-                            aria-invalid={this.invalid ? 'true' : 'false'}
-                            placeholder={this.placeholder}
-                            required={this.required}
-                            minlength={this.minLength}
-                            maxlength={this.maxLength}
-                            value={this.value}
-                            class={{
-                                'rux-textarea': true,
-                            }}
-                            id={this.inputId}
-                            rows={this.rows}
-                            onChange={this._onChange}
-                            onInput={this._onInput}
-                            onBlur={this._onBlur}
-                            part="textarea"
-                        ></textarea>
-                    </div>
+                        id={this.inputId}
+                        rows={this.rows}
+                        onChange={this._onChange}
+                        onInput={this._onInput}
+                        onBlur={this._onBlur}
+                        part="textarea"
+                    ></textarea>
                 </div>
-                <FormFieldMessage
-                    helpText={this.helpText}
-                    errorText={this.errorText}
-                ></FormFieldMessage>
+                <div
+                    class={{
+                        'rux-error-text': !!this.errorText || this.hasErrorSlot,
+                        hidden: !this.errorText && !this.hasErrorSlot,
+                    }}
+                    part="error-text"
+                >
+                    <svg
+                        fill="none"
+                        width="14"
+                        height="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 14 14"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M11.393 12.25c.898 0 1.458-.974 1.009-1.75L8.009 2.91a1.166 1.166 0 0 0-2.018 0L1.598 10.5c-.449.776.111 1.75 1.01 1.75h8.784ZM7 8.167a.585.585 0 0 1-.583-.584V6.417c0-.321.262-.584.583-.584.32 0 .583.263.583.584v1.166c0 .321-.262.584-.583.584Zm-.583 1.166V10.5h1.166V9.333H6.417Z"
+                            fill="currentColor"
+                        />
+                    </svg>
+                    <slot
+                        name="error-text"
+                        onSlotchange={this._handleSlotChange}
+                    >
+                        {this.errorText}
+                    </slot>
+                </div>
+                <div
+                    class={{
+                        'rux-help-text':
+                            (!!this.helpText || this.hasHelpSlot) &&
+                            (!this.errorText || !this.hasErrorSlot),
+                        hidden:
+                            (!this.helpText && !this.hasHelpSlot) ||
+                            !!this.errorText ||
+                            this.hasErrorSlot,
+                    }}
+                    part="help-text"
+                >
+                    <slot
+                        name="help-text"
+                        onSlotchange={this._handleSlotChange}
+                    >
+                        {this.helpText}
+                    </slot>
+                </div>
             </Host>
         )
     }

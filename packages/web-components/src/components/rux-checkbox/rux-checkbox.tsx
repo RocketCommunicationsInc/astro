@@ -9,7 +9,6 @@ import {
     Host,
     State,
 } from '@stencil/core'
-import FormFieldMessage from '../../common/functional-components/FormFieldMessage/FormFieldMessage'
 
 import { FormFieldInterface } from '../../common/interfaces.module'
 import { renderHiddenInput, hasSlot } from '../../utils/utils'
@@ -18,8 +17,9 @@ let id = 0
 
 /**
  * @slot (default) - the label of the checkbox.
+ * @slot help-text -  the help text
  * @part form-field - the form field wrapper container
- * @part help-text - The help text element
+ * @part help-text - the help text element
  * @part label - the label of rux-checkbox
  */
 @Component({
@@ -34,6 +34,7 @@ export class RuxCheckbox implements FormFieldInterface {
     @Element() el!: HTMLRuxCheckboxElement
 
     @State() hasLabelSlot = false
+    @State() hasHelpSlot = false
 
     /**
      * The help or explanation text
@@ -101,11 +102,11 @@ export class RuxCheckbox implements FormFieldInterface {
     connectedCallback() {
         this._onClick = this._onClick.bind(this)
         this._onInput = this._onInput.bind(this)
-        this._checkForLabelSlot = this._checkForLabelSlot.bind(this)
+        this._handleSlotChange = this._handleSlotChange.bind(this)
     }
 
     componentWillLoad() {
-        this._checkForLabelSlot()
+        this._handleSlotChange()
     }
 
     componentDidLoad() {
@@ -119,8 +120,9 @@ export class RuxCheckbox implements FormFieldInterface {
         return this.label ? true : this.hasLabelSlot
     }
 
-    private _checkForLabelSlot() {
+    private _handleSlotChange() {
         this.hasLabelSlot = hasSlot(this.el)
+        this.hasHelpSlot = hasSlot(this.el, 'help-text')
     }
 
     private _onClick(e: Event): void {
@@ -144,7 +146,7 @@ export class RuxCheckbox implements FormFieldInterface {
 
     render() {
         const {
-            _checkForLabelSlot,
+            _handleSlotChange,
             _onBlur,
             _onClick,
             _onInput,
@@ -153,6 +155,7 @@ export class RuxCheckbox implements FormFieldInterface {
             disabled,
             el,
             helpText,
+            hasHelpSlot,
             name,
             value,
             indeterminate,
@@ -285,11 +288,21 @@ export class RuxCheckbox implements FormFieldInterface {
                             }}
                         >
                             {hasLabelSlot ? null : label}
-                            <slot onSlotchange={_checkForLabelSlot} />
+                            <slot onSlotchange={_handleSlotChange} />
                         </div>
                     </label>
                 </div>
-                <FormFieldMessage helpText={helpText} />
+                <div
+                    class={{
+                        'rux-help-text': !!helpText || hasHelpSlot,
+                        hidden: !helpText && !hasHelpSlot,
+                    }}
+                    part="help-text"
+                >
+                    <slot name="help-text" onSlotchange={_handleSlotChange}>
+                        {helpText}
+                    </slot>
+                </div>
             </Host>
         )
     }

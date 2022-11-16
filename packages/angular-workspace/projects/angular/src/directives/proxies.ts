@@ -22527,13 +22527,13 @@ export declare interface RuxInput extends Components.RuxInput {
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['autocomplete', 'disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'min', 'name', 'placeholder', 'readonly', 'required', 'size', 'spellcheck', 'step', 'type', 'value']
+  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'min', 'name', 'placeholder', 'readonly', 'required', 'size', 'spellcheck', 'step', 'type', 'value']
 })
 @Component({
   selector: 'rux-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['autocomplete', 'disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'min', 'name', 'placeholder', 'readonly', 'required', 'size', 'spellcheck', 'step', 'type', 'value']
+  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'min', 'name', 'placeholder', 'readonly', 'required', 'size', 'spellcheck', 'step', 'type', 'value']
 })
 export class RuxInput {
   protected el: HTMLElement;
@@ -22596,13 +22596,13 @@ export declare interface RuxMenuItem extends Components.RuxMenuItem {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['disabled', 'selected', 'value']
+  inputs: ['disabled', 'download', 'href', 'rel', 'selected', 'target', 'value']
 })
 @Component({
   selector: 'rux-menu-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'selected', 'value']
+  inputs: ['disabled', 'download', 'href', 'rel', 'selected', 'target', 'value']
 })
 export class RuxMenuItem {
   protected el: HTMLElement;
@@ -22758,14 +22758,14 @@ export declare interface RuxPopUp extends Components.RuxPopUp {
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['open', 'placement', 'strategy'],
+  inputs: ['closeOnSelect', 'disableAutoUpdate', 'open', 'placement', 'strategy'],
   methods: ['show', 'hide']
 })
 @Component({
   selector: 'rux-pop-up',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['open', 'placement', 'strategy']
+  inputs: ['closeOnSelect', 'disableAutoUpdate', 'open', 'placement', 'strategy']
 })
 export class RuxPopUp {
   protected el: HTMLElement;

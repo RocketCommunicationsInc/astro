@@ -1,5 +1,105 @@
 # @astrouxds/astro-web-components
 
+## 7.2.0
+
+### Minor Changes
+
+#### Pop Up
+
+-   Added new `disableAutoUpdate` prop to lock the pop up's position on scroll.
+
+#### Input
+
+-   The `autocomplete` attribute has been removed due to a limitation with Shadow Dom encapsulation not allowing the attribute to be applied correctly.
+
+#### Form Elements
+
+-   Added new slots for `help-text` and `error-text`.
+
+#### Time Region
+
+-   Added the 'off' status as a status option.
+
+### Patch Changes
+
+#### Menu Item
+
+-   Restored `href`, `target`, `rel` and `download` attributes
+
+#### Select
+
+-   Long options no longer fall over the drop down indicator
+
+#### Time Region
+
+-   Fixed an issue where `serious` status was not correctly styling the border.
+
+## 7.1.1
+
+### Patch Changes
+
+#### Classification Marking
+
+-   An invalid `classification` now correctly displays "Unclassified".
+
+#### Web Components
+
+-   Fixed an issue where `font-size`, `line-height`, and `text-align` properties when set on parent elements would incorrectly override component styles.
+
+## 7.1.0
+
+### Minor Changes
+
+#### Pop Up
+
+-   Added a `close-on-select` property that will close the pop-up when a user selects something from the menu.
+
+### Patch Changes
+
+#### Scrollbars
+
+-   Updated styles in Firefox
+
+#### Tabs
+
+-   Fixed an issue where dynamically adding a tab would result in unexpected behavior.
+
+## 7.0.2
+
+### Patch Changes
+
+#### Checkbox
+
+-   Fixed visual regression on disabled state
+
+#### Pop Up
+
+-   Fixed an issue where Pop Ups would not overlay correctly.
+
+#### Text Area
+
+-   Reverted a 7.0 change to the component's internals that prevented users from being able to control the height of the element or disable resizing.
+
+## 7.0.1
+
+### Patch Changes
+
+#### Monitoring Icon
+
+-   Removed the `title` attribute.
+
+#### Monitoring Progress Icon
+
+-   Removed the `title` attribute.
+
+#### Build
+
+-   Removed unnecessary type definitions in dist/types
+
+#### Tokens
+
+-   Fixes an issue in the typography utility class calcs that was throwing errors in some build environments.
+
 # 7.0 Changes
 
 ## Major

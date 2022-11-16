@@ -18,6 +18,23 @@ test.describe('Select', () => {
         await expect(el).toBeVisible()
         await expect(el).toHaveClass('hydrated')
     })
+    test('it renders option group', async ({ page }) => {
+        await setBodyContent(
+            page,
+            `
+            <rux-select>
+              <rux-option label="outside option"></rux-option>
+              <rux-option-group label="Group one">
+                <rux-option label="inside option"></rux-option>
+              </rux-option-group>
+              <rux-option label="outside option"></rux-option>
+            </rux-select>
+        `
+        )
+        const el = page.locator('rux-select')
+        const optionGroup = el.locator('rux-option-group')
+        await expect(optionGroup).toHaveClass('hydrated')
+    })
     test('it syncs value to select element', async ({ page }) => {
         await setBodyContent(
             page,

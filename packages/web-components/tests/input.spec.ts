@@ -1,7 +1,11 @@
 import { test, expect } from '@playwright/test'
-import { startTestInBefore, setBodyContent } from './utils/_startTestEnv'
+import {
+    startTestInBefore,
+    setBodyContent,
+    startTestEnv,
+} from './utils/_startTestEnv'
 
-test.describe('Input', () => {
+test.describe('Input with form', () => {
     const testString = 'Hello World'
 
     test.beforeEach(async ({ page }) => {
@@ -235,7 +239,7 @@ test.describe('Input', () => {
         //Assert
         await expect(ruxInputLabel).toContainText('Input Field')
     })
-    test('prepends aesthetics to lable if required', async ({ page }) => {
+    test('prepends aesthetics to label if required', async ({ page }) => {
         //Arrange
         const ruxInputComponent = page.locator('#ruxInput3').first()
         const ruxInputAesthetics = ruxInputComponent.locator(
@@ -295,24 +299,25 @@ test.describe('Input', () => {
         //Assert
         await expect(spellCheckInput).toHaveAttribute('spellcheck', 'true')
     })
-    test('applies autocomplete prop to shadow input', async ({ page }) => {
-        //Arrange
-        const autocomplete = page.locator('#autocomplete')
-        const autocompleteInput = autocomplete.locator('input').nth(1)
+    //! Uncomment autocomplete tests when the attribute is added back in and working.
+    // test('applies autocomplete prop to shadow input', async ({ page }) => {
+    //     //Arrange
+    //     const autocomplete = page.locator('#autocomplete')
+    //     const autocompleteInput = autocomplete.locator('input').nth(1)
 
-        //Assert
-        await expect(autocompleteInput).toHaveAttribute('autocomplete', 'on')
-    })
-    test('changes autocomplete to false if type is password', async ({
-        page,
-    }) => {
-        //Arrange
-        const autocomplete = page.locator('#autocomplete-to-off')
-        const autocompleteInput = autocomplete.locator('input').nth(1)
+    //     //Assert
+    //     await expect(autocompleteInput).toHaveAttribute('autocomplete', 'on')
+    // })
+    // test('changes autocomplete to false if type is password', async ({
+    //     page,
+    // }) => {
+    //     //Arrange
+    //     const autocomplete = page.locator('#autocomplete-to-off')
+    //     const autocompleteInput = autocomplete.locator('input').nth(1)
 
-        //Assert
-        await expect(autocompleteInput).toHaveAttribute('autocomplete', 'off')
-    })
+    //     //Assert
+    //     await expect(autocompleteInput).toHaveAttribute('autocomplete', 'off')
+    // })
     test('submits the correct value in type date', async ({ page }) => {
         //Arrange
         const dateType = page.locator('#date-type')
@@ -356,6 +361,30 @@ test.describe('Input', () => {
 
         //Assert
         await expect(log).toContainText('time:01:25:00')
+    })
+})
+test.describe('Input with slots and props', () => {
+    startTestEnv()
+
+    test('it renders label prop', async ({ page }) => {
+        await setBodyContent(
+            page,
+            `
+            <rux-input label="hello"></rux-input>
+            `
+        )
+        const el = page.locator('rux-input')
+        await expect(el).toHaveClass('hydrated')
+    })
+    test('it renders label slot', async ({ page }) => {
+        await setBodyContent(
+            page,
+            `
+            <rux-input><div slot="label">hello</div></rux-input>
+            `
+        )
+        const el = page.locator('rux-input')
+        await expect(el).toHaveClass('hydrated')
     })
 })
 /*

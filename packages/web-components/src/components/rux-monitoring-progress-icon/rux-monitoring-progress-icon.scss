@@ -1,5 +1,5 @@
 :host {
-    display: inline-block;
+    display: inline-flex;
     padding: 0;
 }
 
@@ -86,6 +86,10 @@ rux-status {
     color: var(--color-text-primary);
     opacity: 0.6;
     display: block;
+}
+
+.rux-advanced-status__status rux-status::part(status) {
+    line-height: 0;
 }
 
 .rux-advanced-status__hidden {
