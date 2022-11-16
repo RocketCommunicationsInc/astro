@@ -21,28 +21,23 @@
 
     <body class="dark-theme">
         <section style="margin: 3rem">
-            <rux-tooltip open message="this is the tooltip!"
-                ><button>yay button</button>
-                <div slot="message">
-                    oh no this the message now
-                </div></rux-tooltip
+            <div class="triggers">
+                <rux-button tooltip="tooltip1"
+                    >This is a trigger for one tooltip</rux-button
+                ><br />
+                <rux-icon tooltip="woohoo" icon="star"></rux-icon><br />
+                <button tooltip="woohoo">Awesome totally normal button</button>
+            </div>
+            <rux-tooltip-test id="tooltip1"
+                >Button Triggered: This tooltip can have
+                <strong>anything</strong> in it</rux-tooltip-test
             >
-
-            <p>
-                Lorem Ipsum
-                <rux-tooltip open message="this is the tooltip!">
-                    Also a tooltip!
-                </rux-tooltip>
-            </p>
-
-            <rux-tooltip message="this is the tooltip!">
-                <rux-button>Button</rux-button>
-            </rux-tooltip>
-
-            <rux-tooltip message="this is a worse one tooltip!">
-                <rux-button>Button</rux-button><rux-button>Button 2</rux-button
-                ><rux-button>Button 3</rux-button>
-            </rux-tooltip>
+            <rux-tooltip-test id="tooltip2"
+                >Icon Triggered: Also a tooltip!</rux-tooltip-test
+            >
+            <rux-tooltip-test id="woohoo"
+                >this is where it lives</rux-tooltip-test
+            >
         </section>
     </body>
 </html>

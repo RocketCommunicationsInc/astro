@@ -12559,6 +12559,20 @@ export namespace Components {
          */
         "show": () => Promise<true>;
     }
+    interface RuxTooltipTest {
+        /**
+          * Closes the tooltip and returns false.
+         */
+        "hide": () => Promise<false>;
+        /**
+          * Whether or not the tooltip is open
+         */
+        "open": boolean;
+        /**
+          * Opens the tooltip and returns true.
+         */
+        "show": () => Promise<true>;
+    }
     interface RuxTrack {
         "columns": number;
         "end": string;
@@ -12673,6 +12687,10 @@ export interface RuxTimeRegionCustomEvent<T> extends CustomEvent<T> {
 export interface RuxTooltipCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxTooltipElement;
+}
+export interface RuxTooltipTestCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxTooltipTestElement;
 }
 export interface RuxTreeNodeCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -19321,6 +19339,12 @@ declare global {
         prototype: HTMLRuxTooltipElement;
         new (): HTMLRuxTooltipElement;
     };
+    interface HTMLRuxTooltipTestElement extends Components.RuxTooltipTest, HTMLStencilElement {
+    }
+    var HTMLRuxTooltipTestElement: {
+        prototype: HTMLRuxTooltipTestElement;
+        new (): HTMLRuxTooltipTestElement;
+    };
     interface HTMLRuxTrackElement extends Components.RuxTrack, HTMLStencilElement {
     }
     var HTMLRuxTrackElement: {
@@ -20447,6 +20471,7 @@ declare global {
         "rux-time-region": HTMLRuxTimeRegionElement;
         "rux-timeline": HTMLRuxTimelineElement;
         "rux-tooltip": HTMLRuxTooltipElement;
+        "rux-tooltip-test": HTMLRuxTooltipTestElement;
         "rux-track": HTMLRuxTrackElement;
         "rux-tree": HTMLRuxTreeElement;
         "rux-tree-node": HTMLRuxTreeNodeElement;
@@ -33124,6 +33149,20 @@ declare namespace LocalJSX {
          */
         "open"?: boolean;
     }
+    interface RuxTooltipTest {
+        /**
+          * Emits when the tooltip has closed.
+         */
+        "onRuxtooltipclosed"?: (event: RuxTooltipTestCustomEvent<any>) => void;
+        /**
+          * Emits when the tooltip has opened
+         */
+        "onRuxtooltipopened"?: (event: RuxTooltipTestCustomEvent<any>) => void;
+        /**
+          * Whether or not the tooltip is open
+         */
+        "open"?: boolean;
+    }
     interface RuxTrack {
         "columns"?: number;
         "end"?: string;
@@ -34264,6 +34303,7 @@ declare namespace LocalJSX {
         "rux-time-region": RuxTimeRegion;
         "rux-timeline": RuxTimeline;
         "rux-tooltip": RuxTooltip;
+        "rux-tooltip-test": RuxTooltipTest;
         "rux-track": RuxTrack;
         "rux-tree": RuxTree;
         "rux-tree-node": RuxTreeNode;
@@ -35380,6 +35420,7 @@ declare module "@stencil/core" {
             "rux-time-region": LocalJSX.RuxTimeRegion & JSXBase.HTMLAttributes<HTMLRuxTimeRegionElement>;
             "rux-timeline": LocalJSX.RuxTimeline & JSXBase.HTMLAttributes<HTMLRuxTimelineElement>;
             "rux-tooltip": LocalJSX.RuxTooltip & JSXBase.HTMLAttributes<HTMLRuxTooltipElement>;
+            "rux-tooltip-test": LocalJSX.RuxTooltipTest & JSXBase.HTMLAttributes<HTMLRuxTooltipTestElement>;
             "rux-track": LocalJSX.RuxTrack & JSXBase.HTMLAttributes<HTMLRuxTrackElement>;
             "rux-tree": LocalJSX.RuxTree & JSXBase.HTMLAttributes<HTMLRuxTreeElement>;
             "rux-tree-node": LocalJSX.RuxTreeNode & JSXBase.HTMLAttributes<HTMLRuxTreeNodeElement>;
