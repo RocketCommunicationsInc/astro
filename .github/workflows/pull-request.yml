@@ -47,7 +47,7 @@ jobs:
           path: ./packages/web-components/node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
       - name: Run Tests
-        run: cd ./packages/web-components && npm run test.docker
+        run: cd ./packages/web-components && npm run start.test
       - uses: actions/upload-artifact@v2
         if: always()
         with:
