@@ -10,12 +10,12 @@ import {
     Method,
     State,
 } from '@stencil/core'
-import { hasSlot } from '../../utils/utils'
+// import { hasSlot } from '../../utils/utils'
 
 /**
  * @slot (default) - The trigger for the rux-tooltip
- * @slot message - The message for the rux-tooltip
  * @part container - The container of the rux-tooltip text
+ * @part trigger-container - the container of the tooltip trigger
  * @prop message - The message for the rux-tooltip
  */
 
@@ -35,9 +35,9 @@ export class RuxTooltip {
      */
     @Prop({ mutable: true, reflect: true }) open: boolean = false
 
-    @State() hasMessageSlot: boolean = false
-
     @Element() el!: HTMLRuxTooltipElement
+
+    @State() currentSlotted: any
 
     /**
      * Emits when the tooltip has opened
@@ -76,41 +76,50 @@ export class RuxTooltip {
     @Method()
     async hide() {
         if (!this.open) {
-            return this.open
+            return !this.open
         } else this.open = false
-        return this.open
+        return !this.open
     }
 
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
-        this.el.addEventListener('mouseover', this._handleMouseIn)
-        this.el.addEventListener('mouseout', this._handleMouseOut)
+        this._handleTooltipShow = this._handleTooltipShow.bind(this)
+        this._handleTooltipHide = this._handleTooltipHide.bind(this)
     }
     disconnectedCallback() {
         this.el!.shadowRoot!.removeEventListener(
             'slotchange',
             this._handleSlotChange
         )
-        this.el.removeEventListener('mouseover', this._handleMouseIn)
-        this.el.removeEventListener('mouseout', this._handleMouseOut)
     }
     componentWillLoad() {
         this._handleSlotChange()
     }
 
     private _handleSlotChange() {
-        this.hasMessageSlot = hasSlot(this.el, 'message')
-    }
-    private async _handleMouseIn() {
-        this.open = true
+        // this.el.querySelector( 'slot' )?.assignedNodes()
+        //console.log('assigned nodes',  console.log(this.el.shadowRoot?.querySelector('default-one')));
     }
 
-    private async _handleMouseOut() {
+    private async _handleTooltipShow() {
+        this.open = true
+        // If the trigger is comprised of an HTML element, get it and delegate focus to it, else it is text and don't
+        const firstChild = this.el.firstElementChild as HTMLElement
+        if (firstChild) {
+            firstChild.focus()
+        }
+    }
+
+    private async _handleTooltipHide() {
         this.open = false
     }
 
     render() {
-        const { _handleSlotChange } = this
+        const {
+            _handleSlotChange,
+            _handleTooltipShow,
+            _handleTooltipHide,
+        } = this
         return (
             <Host>
                 <span
@@ -119,13 +128,24 @@ export class RuxTooltip {
                         tooltip: true,
                         hidden: !this.open,
                     }}
+                    id="tooltip"
+                    role="tooltip"
                     part="container"
                 >
-                    <slot name="message" onSlotchange={_handleSlotChange}>
-                        {this.message}
-                    </slot>
+                    {this.message}
                 </span>
-                <slot />
+                <span
+                    onMouseEnter={_handleTooltipShow}
+                    onMouseLeave={_handleTooltipHide}
+                    onFocusin={_handleTooltipShow}
+                    onFocusout={_handleTooltipHide}
+                    class="rux-tooltip__trigger"
+                    part="trigger-container"
+                    tabIndex={0}
+                    aria-describedby="tooltip"
+                >
+                    <slot onSlotchange={_handleSlotChange} />
+                </span>
             </Host>
         )
     }

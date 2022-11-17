@@ -12565,7 +12565,7 @@ export namespace Components {
         /**
           * Closes the tooltip and returns false.
          */
-        "hide": () => Promise<false>;
+        "hide": () => Promise<boolean>;
         /**
           * Enter a string to be used as the tooltip on this element
          */

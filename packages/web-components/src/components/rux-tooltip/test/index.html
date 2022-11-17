@@ -21,13 +21,13 @@
 
     <body class="dark-theme">
         <section style="margin: 3rem">
-            <rux-tooltip open message="this is the tooltip!">
-                <button>yay button</button>
-                <div slot="message">
-                    oh no this the message now
-                </div></rux-tooltip
-            >
-
+            <rux-tooltip message="this is the tooltip!">
+                Text Trigger
+            </rux-tooltip>
+            <rux-tooltip message="this is the tooltip!">
+                <rux-button>Button Trigger</rux-button>
+            </rux-tooltip>
+            <!--
             <p>
                 Lorem Ipsum
                 <rux-tooltip open message="this is the tooltip!">
@@ -43,6 +43,10 @@
                 <rux-button>Button</rux-button><rux-button>Button 2</rux-button
                 ><rux-button>Button 3</rux-button>
             </rux-tooltip>
+
+            <rux-tooltip message="this is a worse one tooltip!">
+                <rux-icon icon="star"></rux-icon>
+            </rux-tooltip> -->
         </section>
 
         <script>
@@ -52,6 +56,11 @@
             document.addEventListener('ruxtooltipclosed', () =>
                 console.log(`I see you closer`)
             )
+            document
+                .querySelector('rux-button')
+                .addEventListener('click', () => {
+                    console.log('I was clicked')
+                })
         </script>
     </body>
 </html>
