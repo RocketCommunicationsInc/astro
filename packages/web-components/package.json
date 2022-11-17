@@ -25,7 +25,7 @@
         "lint.js": "eslint src/**/*{.ts,.tsx}",
         "lint.css": "stylelint \"src/components/**/*.scss\" --fix",
         "prettier": "prettier --write --loglevel warn .",
-        "start.test": "concurrently npm:test.serve npm:build.watch",
+        "start.test": "concurrently 'npm run test.serve' '$(npm bin)/wait-on http://localhost:3333 && npm run test.docker'",
         "test.serve": "serve -p 3333",
         "build.watch": "stencil build --dev --watch --serve",
         "start.stencil": "stencil build --dev --watch --serve",
