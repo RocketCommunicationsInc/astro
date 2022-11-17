@@ -68,7 +68,7 @@ const config: PlaywrightTestConfig = {
                 ...devices['Desktop Chrome'],
                 viewport: {
                     width: 1920,
-                    height: 1080,
+                    height: 2080,
                 },
             },
             snapshotDir: 'vrt-snaps',
