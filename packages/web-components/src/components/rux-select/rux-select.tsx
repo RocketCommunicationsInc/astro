@@ -188,7 +188,8 @@ export class RuxSelect implements FormFieldInterface {
                         option.label,
                         option.value,
                         option.disabled,
-                        this.selectEl
+                        this.selectEl,
+                        option.title
                     )
                 }
 
@@ -231,12 +232,14 @@ export class RuxSelect implements FormFieldInterface {
         label: string,
         value: string,
         disabled: boolean,
-        target: HTMLSelectElement | HTMLOptGroupElement
+        target: HTMLSelectElement | HTMLOptGroupElement,
+        title?: string
     ) {
         const item = Object.assign(document.createElement('option'), {
             innerHTML: label ? label : '',
             value: value,
             disabled: disabled,
+            title: title,
         })
         target.appendChild(item)
     }
