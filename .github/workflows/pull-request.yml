@@ -30,7 +30,7 @@ jobs:
         run: npm run build.stencil
         working-directory: ./packages/web-components
       - name: Run Tests
-        run: npm run start.test
+        run: npx playwright test --grep @vrt
         working-directory: ./packages/web-components
       - uses: actions/upload-artifact@v3
         if: always()
