@@ -13,17 +13,17 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         id: cache-node-modules
         with:
           path: |
             ./packages/web-components/node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
-      - uses: tj-actions/changed-files@v11
+      - uses: tj-actions/changed-files@v34
         id: changed-files
         with:
           files: |
@@ -36,13 +36,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 16
       - name: Get Node Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ./packages/web-components/node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
