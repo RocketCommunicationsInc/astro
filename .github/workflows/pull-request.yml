@@ -20,11 +20,18 @@ jobs:
         with:
           node-version: 16
       - name: Install
-        run: cd ./packages/web-components && npm ci
+        run: npm ci
+        working-directory: ./packages/web-components
+      - name: Install Playwright Dependencies
+        run: npx playwright install && npx playwright install-deps
+        shell: bash
+        working-directory: ./packages/web-components
       - name: Build
-        run: cd ./packages/web-components && npm run build.stencil
+        run: npm run build.stencil
+        working-directory: ./packages/web-components
       - name: Run Tests
-        run: cd ./packages/web-components && npm run start.test
+        run: npm run start.test
+        working-directory: ./packages/web-components
       - uses: actions/upload-artifact@v3
         if: always()
         with:
