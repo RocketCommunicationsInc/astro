@@ -1,9 +1,9 @@
 import { test, expect } from '../../../../../tests/utils/_astro-fixtures'
 
 test.describe('Classification Marking', () => {
-    test('has no visual regression @vrt', async ({ astroVRTPage, page }) => {
-        await astroVRTPage.goto(
-            'components/rux-classification-marking/test/basic'
+    test('has no visual regression @vrt', async ({ page }) => {
+        await page.goto(
+            `/src/components/rux-classification-marking/test/basic/index.html`
         )
         await expect(page).toHaveScreenshot()
     })

@@ -15,7 +15,7 @@
         "loader/"
     ],
     "scripts": {
-        "test.docker": "docker run -it --rm --ipc=host -v \"${PWD}:/var/app/\" mcr.microsoft.com/playwright:focal /bin/bash -c 'cd /var/app; npx playwright install; npx playwright test'",
+        "test.docker": "docker run -it --rm --ipc=host -v \"${PWD}:/var/app/\" mcr.microsoft.com/playwright:focal /bin/bash -c 'cd /var/app; npx playwright install; npx playwright test --grep @vrt'",
         "test.docker.enter": "docker run -it --rm --ipc=host -v \"${PWD}:/var/app/\" mcr.microsoft.com/playwright:focal /bin/bash",
         "build.stencil": "stencil build --docs",
         "build.storybook": "build-storybook",
@@ -25,9 +25,11 @@
         "lint.js": "eslint src/**/*{.ts,.tsx}",
         "lint.css": "stylelint \"src/components/**/*.scss\" --fix",
         "prettier": "prettier --write --loglevel warn .",
-        "start": "stencil build --dev --watch --serve",
+        "start.test": "concurrently npm:test.serve npm:build.watch",
+        "test.serve": "serve -p 3333",
+        "build.watch": "stencil build --dev --watch --serve",
         "start.stencil": "stencil build --dev --watch --serve",
-        "start.storybook": "start-storybook -p 6006",
+        "start.sr/torybook": "start-storybook -p 6006",
         "test": "start-server-and-test ci.server 3333 test.all",
         "test.e2e": "npx playwright test",
         "test.wk": "npx playwright test --project=webkit",

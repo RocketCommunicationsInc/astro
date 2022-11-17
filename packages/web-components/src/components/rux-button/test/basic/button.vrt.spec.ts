@@ -1,8 +1,8 @@
 import { test, expect } from '../../../../../tests/utils/_astro-fixtures'
 
 test.describe('Button', () => {
-    test('has no visual regression @vrt', async ({ astroVRTPage, page }) => {
-        await astroVRTPage.goto('components/rux-button/test/basic')
+    test('has no visual regression @vrt', async ({ page }) => {
+        await page.goto(`/src/components/rux-button/test/basic/index.html`)
         await expect(page).toHaveScreenshot()
     })
 })
