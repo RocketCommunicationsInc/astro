@@ -25,6 +25,16 @@ const config: PlaywrightTestConfig = {
          * For example in `await expect(locator).toHaveText();`
          */
         timeout: 5000,
+        toMatchSnapshot: {
+            /**
+             * Increases the maximum allowed pixel difference to account
+             * for slight browser rendering inconsistencies.
+             */
+            maxDiffPixelRatio: 0.01,
+        },
+        toHaveScreenshot: {
+            maxDiffPixelRatio: 0.01,
+        },
     },
     /* Run tests in files in parallel */
     fullyParallel: true,
@@ -56,6 +66,10 @@ const config: PlaywrightTestConfig = {
             name: 'chromium',
             use: {
                 ...devices['Desktop Chrome'],
+                viewport: {
+                    width: 1920,
+                    height: 1080,
+                },
             },
             snapshotDir: 'vrt-snaps',
         },
