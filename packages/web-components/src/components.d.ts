@@ -10,6 +10,7 @@ import { LogRow } from "./components/rux-log/rux-log.model";
 import { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
 import { ExtendedPlacement } from "./components/rux-pop-up/rux-pop-up";
 import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
+import { ExtendedPlacement as ExtendedPlacement1 } from "./components/rux-tooltip/rux-tooltip";
 export namespace Components {
     interface RuxAccordion {
         /**
@@ -12563,6 +12564,10 @@ export namespace Components {
     }
     interface RuxTooltip {
         /**
+          * Turns disableAutoUpdate on or off which makes the tooltip move to stay in view based on scroll. Defaults to false.
+         */
+        "disableAutoUpdate": boolean;
+        /**
           * Closes the tooltip and returns false.
          */
         "hide": () => Promise<boolean>;
@@ -12575,9 +12580,17 @@ export namespace Components {
          */
         "open": boolean;
         /**
+          * The placement of the tooltip relative to it's slotted trigger element. Defaults to auto.
+         */
+        "placement": ExtendedPlacement;
+        /**
           * Opens the tooltip and returns true.
          */
         "show": () => Promise<true>;
+        /**
+          * The position strategy of the popup, either absolute or fixed.
+         */
+        "strategy": 'absolute' | 'fixed';
     }
     interface RuxTrack {
         "columns": number;
@@ -33148,6 +33161,10 @@ declare namespace LocalJSX {
     }
     interface RuxTooltip {
         /**
+          * Turns disableAutoUpdate on or off which makes the tooltip move to stay in view based on scroll. Defaults to false.
+         */
+        "disableAutoUpdate"?: boolean;
+        /**
           * Enter a string to be used as the tooltip on this element
          */
         "message"?: string;
@@ -33163,6 +33180,14 @@ declare namespace LocalJSX {
           * Whether or not the tooltip is open
          */
         "open"?: boolean;
+        /**
+          * The placement of the tooltip relative to it's slotted trigger element. Defaults to auto.
+         */
+        "placement"?: ExtendedPlacement;
+        /**
+          * The position strategy of the popup, either absolute or fixed.
+         */
+        "strategy"?: 'absolute' | 'fixed';
     }
     interface RuxTrack {
         "columns"?: number;
