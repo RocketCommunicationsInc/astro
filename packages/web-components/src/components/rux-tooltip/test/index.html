@@ -27,6 +27,11 @@
             <rux-tooltip placement="top" message="this is the tooltip!">
                 <rux-button>Button Trigger</rux-button>
             </rux-tooltip>
+            <rux-tooltip message="this is a worse one tooltip!">
+                <rux-button>Button</rux-button
+                ><rux-button id="button-2">Button 2</rux-button
+                ><rux-button>Button 3</rux-button>
+            </rux-tooltip>
             <!--
             <p>
                 Lorem Ipsum
@@ -57,7 +62,7 @@
                 console.log(`I see you closer`)
             )
             document
-                .querySelector('rux-button')
+                .querySelector('#button-2')
                 .addEventListener('click', () => {
                     console.log('I was clicked')
                 })

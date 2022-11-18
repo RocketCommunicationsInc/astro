@@ -200,10 +200,9 @@ export class RuxTooltip {
         //console.log('assigned nodes',  console.log(this.el.shadowRoot?.querySelector('default-one')));
     }
 
-    //TODO this still breaks if the trigger is more than one element on focus
     private async _handleTooltipShow() {
         this.open = true
-        // If the trigger is comprised of an HTML element, get it and delegate focus to it, else it is text and don't
+        // If the trigger is comprised of ONE HTML element, get it and delegate focus to it, else it is text OR multiple HTML elements and then we want focus to be handled normally.
         if (this.el.childElementCount === 1) {
             const firstChild = this.el.firstElementChild as HTMLElement
             firstChild.focus()
