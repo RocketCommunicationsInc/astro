@@ -1,5 +1,4 @@
 :host {
-    position: relative; //remove later
 }
 
 .hidden {
@@ -11,8 +10,11 @@
     color: black;
     width: fit-content;
     border-radius: 4px;
+    z-index: 100; // overlays every component except for rux-dialog and rux-classification-marking
+    width: max-content;
     position: absolute;
-    z-index: 3;
+    top: 0;
+    left: 0;
     //remove eventually in favor of floating-ui
     // top: calc(-100% - var(--spacing-3));
     // left: auto;

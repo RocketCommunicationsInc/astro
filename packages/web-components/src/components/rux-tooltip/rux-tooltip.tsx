@@ -59,7 +59,7 @@ export class RuxTooltip {
     @Prop({ reflect: true }) disableAutoUpdate: boolean = false
 
     /**
-     * The position strategy of the popup, either absolute or fixed.
+     * The position strategy of the tooltip, either absolute or fixed.
      */
     @Prop() strategy: 'absolute' | 'fixed' = 'absolute'
 
@@ -81,10 +81,12 @@ export class RuxTooltip {
     @Watch('open')
     handleOpen() {
         if (this.open) {
-            this._position()
+            this.content.style.display = 'block'
+            this._startPositioner()
             this.ruxTooltipOpened.emit()
         } else {
-            //this._stopPositioner()
+            this.content.style.display = ''
+            this._stopPositioner()
             this.ruxTooltipClosed.emit()
         }
     }
@@ -127,59 +129,36 @@ export class RuxTooltip {
     }
 
     private _position() {
-        if (!this.open || !this.trigger || !this.content) {
+        if (!this.open || !this.triggerSlot || !this.content) {
             return
         }
-
-        console.log(this.trigger)
-        // const placementCheck = () => {
-        //     if (!this.disableAutoUpdate) {
-        //         return [
-        //             offset(5),
-        //             this.placement === 'auto'
-        //                 ? autoPlacement({ alignment: 'start' })
-        //                 : flip(),
-        //         ]
-        //     } else if (this.placement === 'auto') {
-        //         return [
-        //             offset(5),
-        //             autoPlacement({ alignment: 'start' }),
-        //         ]
-        //     } else {
-        //         return [offset(5)]
-        //     }
-        // }
-        computePosition(this.trigger, this.content, {
+        console.log(this.triggerSlot)
+        const placementCheck = () => {
+            if (!this.disableAutoUpdate) {
+                return [
+                    offset(4),
+                    this.placement === 'auto'
+                        ? autoPlacement({ alignment: 'start' })
+                        : flip(),
+                ]
+            } else if (this.placement === 'auto') {
+                return [offset(4), autoPlacement({ alignment: 'start' })]
+            } else {
+                return [offset(4)]
+            }
+        }
+        computePosition(this.triggerSlot, this.content, {
             //@ts-ignore
-            placement: 'right',
-            // strategy: this.strategy,
-            middleware: [flip(), offset(4)],
+            placement: this.placement,
+            strategy: this.strategy,
+            middleware: placementCheck(),
         }).then(({ x, y }) => {
             Object.assign(this.content.style, {
                 left: `${x}px`,
                 top: `${y}px`,
-                //position: `${this.strategy}`,
+                position: `${this.strategy}`,
             })
-
-            //@ts-ignore
-            // const { x: arrowX, y: arrowY } = middlewareData.arrow
-
-            // const staticSide = {
-            //     top: 'bottom',
-            //     right: 'left',
-            //     bottom: 'top',
-            //     left: 'right',
-            // }[placement.split('-')[0]]
-            // Object.assign(this.arrowEl!.style, {
-            //     left: arrowX != null ? `${arrowX}px` : '',
-            //     top: arrowY != null ? `${arrowY}px` : '',
-            //     right: '',
-            //     bottom: '',
-            //     //@ts-ignore
-            //     [staticSide]: '-6px',
-            // })
         })
-        //this._setArrowPosition()
     }
 
     private _startPositioner() {
@@ -188,7 +167,7 @@ export class RuxTooltip {
             this._position()
             if (!this.disableAutoUpdate) {
                 this._positionerCleanup = autoUpdate(
-                    this.trigger,
+                    this.triggerSlot,
                     this.content,
                     this._position.bind(this)
                 )
@@ -203,28 +182,30 @@ export class RuxTooltip {
         }
     }
 
-    // get contentSlot() {
-    //   return this.content
-    //       ?.querySelector('slot')!
-    //       .assignedElements({ flatten: true })[0]
-    // }
-
-    // get triggerSlot() {
-    //     return this.trigger
-    //         ?.querySelector('slot')!
-    //         .assignedElements({ flatten: true })[0]
-    // }
+    get triggerSlot() {
+        if (
+            this.trigger
+                ?.querySelector('slot')!
+                .assignedElements({ flatten: true })[0] !== undefined
+        ) {
+            return this.trigger
+                ?.querySelector('slot')!
+                .assignedElements({ flatten: true })[0]
+        }
+        return this.trigger
+    }
 
     private _handleSlotChange() {
         // this.el.querySelector( 'slot' )?.assignedNodes()
         //console.log('assigned nodes',  console.log(this.el.shadowRoot?.querySelector('default-one')));
     }
 
+    //TODO this still breaks if the trigger is more than one element on focus
     private async _handleTooltipShow() {
         this.open = true
         // If the trigger is comprised of an HTML element, get it and delegate focus to it, else it is text and don't
-        const firstChild = this.el.firstElementChild as HTMLElement
-        if (firstChild) {
+        if (this.el.childElementCount === 1) {
+            const firstChild = this.el.firstElementChild as HTMLElement
             firstChild.focus()
         }
     }
@@ -242,30 +223,33 @@ export class RuxTooltip {
         return (
             <Host>
                 <span
-                    aria-hidden={this.open ? 'false' : 'true'}
-                    class={{
-                        tooltip: true,
-                        hidden: !this.open,
-                    }}
-                    id="tooltip"
-                    role="tooltip"
-                    part="container"
-                    ref={(el) => (this.content = el!)}
-                >
-                    {this.message}
-                </span>
-                <span
                     onMouseEnter={_handleTooltipShow}
                     onMouseLeave={_handleTooltipHide}
                     onFocusin={_handleTooltipShow}
                     onFocusout={_handleTooltipHide}
-                    class="rux-tooltip__trigger"
-                    part="trigger-container"
-                    ref={(el) => (this.trigger = el!)}
-                    tabIndex={0}
-                    aria-describedby="tooltip"
                 >
-                    <slot onSlotchange={_handleSlotChange} />
+                    <span
+                        aria-hidden={this.open ? 'false' : 'true'}
+                        class={{
+                            tooltip: true,
+                            hidden: !this.open,
+                        }}
+                        id="tooltip"
+                        role="tooltip"
+                        part="container"
+                        ref={(el) => (this.content = el!)}
+                    >
+                        {this.message}
+                    </span>
+                    <span
+                        class="rux-tooltip__trigger"
+                        part="trigger-container"
+                        ref={(el) => (this.trigger = el!)}
+                        tabIndex={0}
+                        aria-describedby="tooltip"
+                    >
+                        <slot onSlotchange={_handleSlotChange} />
+                    </span>
                 </span>
             </Host>
         )

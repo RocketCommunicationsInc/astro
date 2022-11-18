@@ -12588,7 +12588,7 @@ export namespace Components {
          */
         "show": () => Promise<true>;
         /**
-          * The position strategy of the popup, either absolute or fixed.
+          * The position strategy of the tooltip, either absolute or fixed.
          */
         "strategy": 'absolute' | 'fixed';
     }
@@ -33185,7 +33185,7 @@ declare namespace LocalJSX {
          */
         "placement"?: ExtendedPlacement;
         /**
-          * The position strategy of the popup, either absolute or fixed.
+          * The position strategy of the tooltip, either absolute or fixed.
          */
         "strategy"?: 'absolute' | 'fixed';
     }
