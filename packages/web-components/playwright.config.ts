@@ -1,6 +1,6 @@
 import { expect, PlaywrightTestConfig } from '@playwright/test'
 import { devices } from '@playwright/test'
-import { matchers } from 'stencil-playwright'
+import { matchers } from '@astrouxds/stencil-playwright'
 
 expect.extend(matchers)
 
@@ -54,7 +54,7 @@ const config: PlaywrightTestConfig = {
         /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
         actionTimeout: 0,
         /* Base URL to use in actions like `await page.goto('/')`. */
-        baseURL: 'http://localhost:3333',
+        baseURL: 'http://localhost:3334',
 
         /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
         trace: 'on-first-retry',
@@ -128,8 +128,8 @@ const config: PlaywrightTestConfig = {
     //     timeout: 90000,
     // },
     webServer: {
-        command: 'serve -p 3333',
-        port: 3333,
+        command: 'serve -p 3334',
+        port: 3334,
         reuseExistingServer: !process.env.CI,
     },
 }
