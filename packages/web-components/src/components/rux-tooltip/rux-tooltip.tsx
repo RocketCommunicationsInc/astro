@@ -38,6 +38,12 @@ export class RuxTooltip {
     private trigger!: HTMLElement
     private content!: HTMLElement
     private _positionerCleanup: ReturnType<typeof autoUpdate> | undefined
+
+    @Element() el!: HTMLRuxTooltipElement
+
+    @State() currentSlotted: any
+    @State() hasTriggerSlot = false
+
     /**
      *  Enter a string to be used as the tooltip on this element
      */
@@ -63,17 +69,12 @@ export class RuxTooltip {
      */
     @Prop() strategy: 'absolute' | 'fixed' = 'absolute'
 
-    @Element() el!: HTMLRuxTooltipElement
-
-    @State() currentSlotted: any
-
-    @State() hasTriggerSlot = false
-
     /**
      * Emits when the tooltip has opened
      */
     @Event({ eventName: 'ruxtooltipopened' })
     ruxTooltipOpened!: EventEmitter
+
     /**
      * Emits when the tooltip has closed.
      */
