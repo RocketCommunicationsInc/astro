@@ -1,5 +1,26 @@
 # @astrouxds/react
 
+## 7.2.1
+
+### Patch Changes
+
+- 10a8706f: Added `cursor: pointer` to enabled rux-tabs.
+- 750b1789: `rux-option` and `rux-option-group` now reflect the `title` attribute if it is provided.
+- 5750787f: Fixed an issue where the `strategy` prop of `rux-pop-up` was not applying correctly.
+- 54b043dd: Fixed an issue where the `message` prop of `rux-dialog` would not appear if being used with slots for header or footer.
+- 431bd04c: Fixed some styling issues on rux-select where the border color would still change on hover when rux-select was disabled. Added correct curors to rux-select.
+- 6dc8afb2: Added a `cursor: pointer` to an enabled rux-segmented-button.
+- Updated dependencies [10a8706f]
+- Updated dependencies [750b1789]
+- Updated dependencies [66c249e8]
+- Updated dependencies [5750787f]
+- Updated dependencies [0b177cf2]
+- Updated dependencies [54b043dd]
+- Updated dependencies [431bd04c]
+- Updated dependencies [7f99ed0f]
+- Updated dependencies [6dc8afb2]
+  - @astrouxds/astro-web-components@7.3.0
+
 ## 7.2.0
 
 ### Minor Changes

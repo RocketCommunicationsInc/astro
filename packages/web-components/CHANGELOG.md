@@ -1,5 +1,22 @@
 # @astrouxds/astro-web-components
 
+## 7.3.0
+
+### Minor Changes
+
+-   66c249e8: Fixing an issue where wrapping rux-monitoring-icon and rux-monitoring-progress-icon in display: grid was causing layout shift, along with an issue where the cursor: pointer attribute on rux-push-button was misplaced."
+-   7f99ed0f: Rux-status when no default status was supplied showed up as blank, now if no status is supplied it will default to 'normal'
+
+### Patch Changes
+
+-   10a8706f: Added `cursor: pointer` to enabled rux-tabs.
+-   750b1789: `rux-option` and `rux-option-group` now reflect the `title` attribute if it is provided.
+-   5750787f: Fixed an issue where the `strategy` prop of `rux-pop-up` was not applying correctly.
+-   0b177cf2: rux-notification: fix a bug where message prop was not showing if another slot was slotted in the component
+-   54b043dd: Fixed an issue where the `message` prop of `rux-dialog` would not appear if being used with slots for header or footer.
+-   431bd04c: Fixed some styling issues on rux-select where the border color would still change on hover when rux-select was disabled. Added correct curors to rux-select.
+-   6dc8afb2: Added a `cursor: pointer` to an enabled rux-segmented-button.
+
 ## 7.2.0
 
 ### Minor Changes
