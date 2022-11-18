@@ -18,13 +18,13 @@ import {
     autoUpdate,
     autoPlacement,
 } from '@floating-ui/dom'
+import { hasSlot } from '../../utils/utils'
 // import { hasSlot } from '../../utils/utils'
 
 /**
  * @slot (default) - The trigger for the rux-tooltip
  * @part container - The container of the rux-tooltip text
  * @part trigger-container - the container of the tooltip trigger
- * @prop message - The message for the rux-tooltip
  */
 
 export declare type ExtendedPlacement = Placement | 'auto'
@@ -66,6 +66,8 @@ export class RuxTooltip {
     @Element() el!: HTMLRuxTooltipElement
 
     @State() currentSlotted: any
+
+    @State() hasTriggerSlot = false
 
     /**
      * Emits when the tooltip has opened
@@ -195,9 +197,12 @@ export class RuxTooltip {
         return this.trigger
     }
 
+    get hasTrigger() {
+        return this.trigger ? true : this.hasTriggerSlot
+    }
+
     private _handleSlotChange() {
-        // this.el.querySelector( 'slot' )?.assignedNodes()
-        //console.log('assigned nodes',  console.log(this.el.shadowRoot?.querySelector('default-one')));
+        this.hasTriggerSlot = hasSlot(this.el)
     }
 
     private async _handleTooltipShow() {
