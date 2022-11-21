@@ -30,10 +30,10 @@ const config: PlaywrightTestConfig = {
              * Increases the maximum allowed pixel difference to account
              * for slight browser rendering inconsistencies.
              */
-            maxDiffPixelRatio: 0.01,
+            // maxDiffPixelRatio: 0.01,
         },
         toHaveScreenshot: {
-            maxDiffPixelRatio: 0.01,
+            // maxDiffPixelRatio: 0.01,
         },
     },
     /* Run tests in files in parallel */
