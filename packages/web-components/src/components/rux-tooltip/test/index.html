@@ -21,7 +21,7 @@
 
     <body class="dark-theme">
         <section style="margin: 3rem">
-            <rux-tooltip placement="top" message="Print ⌘ + P">
+            <rux-tooltip placement="top" message="Print ⌘ + P" delay="2000">
                 Text Trigger
             </rux-tooltip>
             <rux-tooltip placement="top" message="this is the tooltip!">
@@ -33,34 +33,39 @@
             <rux-tooltip
                 message="this is a worse one tooltip!"
                 placement="bottom"
+                delay="hello!"
             >
                 <rux-button>Button</rux-button
                 ><rux-button id="button-2">Button 2</rux-button
                 ><rux-button>Button 3</rux-button>
             </rux-tooltip>
-            <!--
             <p>
-                Lorem Ipsum
-                <rux-tooltip open message="this is the tooltip!">
-                    Also a tooltip!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+                incidunt minima maxime nam nostrum ab ducimus nobis asperiores
+                voluptas nihil provident, ad consequuntur itaque sunt
+                exercitationem, ipsum inventore?
+                <rux-tooltip message="tooltip message!" delay="0">
+                    <rux-button>Button Here</rux-button>
                 </rux-tooltip>
             </p>
-
-            <rux-tooltip message="this is the tooltip!">
-                <rux-button>Button</rux-button>
-            </rux-tooltip>
-
-            <rux-tooltip message="this is a worse one tooltip!">
-                <rux-button>Button</rux-button><rux-button>Button 2</rux-button
-                ><rux-button>Button 3</rux-button>
-            </rux-tooltip>
-
-            <rux-tooltip message="this is a worse one tooltip!">
-                <rux-icon icon="star"></rux-icon>
-            </rux-tooltip> -->
+            <p>
+                Aut ea ab est asperiores cupiditate placeat fugit expedita
+                eligendi delectus corrupti perspiciatis sed, officiis laborum,
+                laudantium reprehenderit
+                <rux-tooltip message="tooltip message!" delay="3000"
+                    >quo quod</rux-tooltip
+                >
+                recusandae dolorum impedit illum quisquam ex eaque. Rem veniam
+                modi voluptatem harum cum perspiciatis, in saepe itaque, vitae
+                odit obcaecati, magni ipsa!<rux-tooltip
+                    message="tooltip message!"
+                >
+                    <rux-icon icon="star"></rux-icon>
+                </rux-tooltip>
+            </p>
         </section>
 
-        <script>
+        <!-- <script>
             document.addEventListener('ruxtooltipopened', () =>
                 console.log(`I see you opener`)
             )
@@ -72,6 +77,6 @@
                 .addEventListener('click', () => {
                     console.log('I was clicked')
                 })
-        </script>
+        </script> -->
     </body>
 </html>

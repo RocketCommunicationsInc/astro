@@ -12564,6 +12564,10 @@ export namespace Components {
     }
     interface RuxTooltip {
         /**
+          * How long it takes the tooltip to appear in milliseconds, default = 800
+         */
+        "delay": string | number;
+        /**
           * Turns disableAutoUpdate on or off which makes the tooltip move to stay in view based on scroll. Defaults to false.
          */
         "disableAutoUpdate": boolean;
@@ -33160,6 +33164,10 @@ declare namespace LocalJSX {
         "zoom"?: number;
     }
     interface RuxTooltip {
+        /**
+          * How long it takes the tooltip to appear in milliseconds, default = 800
+         */
+        "delay"?: string | number;
         /**
           * Turns disableAutoUpdate on or off which makes the tooltip move to stay in view based on scroll. Defaults to false.
          */

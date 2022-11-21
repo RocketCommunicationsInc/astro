@@ -44,6 +44,7 @@ export class RuxTooltip {
     @State() currentSlotted: any
     @State() hasTriggerSlot = false
     @State() delegatedFocus = false //Keeps track of whether the element in trigger slot is focusable
+    @State() timeoutID: any = undefined // Keeps track of the timeout so _handleCloseTooltip can cancel it if needed
 
     /**
      *  Enter a string to be used as the tooltip on this element
@@ -54,6 +55,12 @@ export class RuxTooltip {
      *  Whether or not the tooltip is open
      */
     @Prop({ mutable: true, reflect: true }) open: boolean = false
+
+    /**
+     *  How long it takes the tooltip to appear in milliseconds, default = 800
+     */
+
+    @Prop({ reflect: true }) delay: string | number = 800
 
     /**
      * The placement of the tooltip relative to it's slotted trigger element. Defaults to auto.
@@ -136,7 +143,6 @@ export class RuxTooltip {
         if (!this.open || !this.triggerSlot || !this.content) {
             return
         }
-        console.log(this.triggerSlot)
         const placementCheck = () => {
             if (!this.disableAutoUpdate) {
                 return [
@@ -207,8 +213,15 @@ export class RuxTooltip {
         this.hasTriggerSlot = hasSlot(this.el)
     }
 
-    private async _handleTooltipShow() {
-        this.open = true
+    private _handleTooltipShow() {
+        console.log(`mousein!`)
+        //delay the opening
+        //check to see if the delay prop can be converted to a number. If not, revert to default time.
+        const delayTime = isNaN(Number(this.delay)) ? 800 : Number(this.delay)
+        this.timeoutID = setTimeout(() => {
+            console.log(`Delayed for ${delayTime}.`)
+            this.open = true
+        }, delayTime)
         // If the trigger is comprised of ONE HTML element, get it and delegate focus to it, else it is text OR multiple HTML elements and then we want focus to be handled normally.
         if (this.el.childElementCount === 1) {
             this.delegatedFocus = true
@@ -217,7 +230,9 @@ export class RuxTooltip {
         }
     }
 
-    private async _handleTooltipHide() {
+    private _handleTooltipHide() {
+        console.log(`mouseout!`)
+        clearTimeout(this.timeoutID)
         this.open = false
     }
 
@@ -230,8 +245,8 @@ export class RuxTooltip {
         return (
             <Host>
                 <span
-                    onMouseEnter={_handleTooltipShow}
-                    onMouseLeave={_handleTooltipHide}
+                    onMouseOver={_handleTooltipShow}
+                    onMouseOut={_handleTooltipHide}
                     onFocusin={_handleTooltipShow}
                     onFocusout={_handleTooltipHide}
                 >
