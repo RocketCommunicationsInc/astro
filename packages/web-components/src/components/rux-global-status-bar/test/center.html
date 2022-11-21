@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script type="module" src="/build/astro-web-components.esm.js"></script>
+        <script nomodule src="/build/astro-web-components.js"></script>
+        <link rel="stylesheet" href="/build/astro-web-components.css" />
+        <style>
+            section {
+                text-align: left;
+                margin: 2rem;
+            }
+            #center-line {
+                position: fixed;
+                top: 0;
+                left: 50%;
+                right: 50%;
+                margin-left: auto;
+                margin-right: auto;
+                width: 3px;
+                height: 100vh;
+                background-color: orange;
+                opacity: 0.8;
+                z-index: 3000;
+            }
+
+            rux-global-status-bar::part(app-meta) {
+                margin: 0;
+                width: calc(33% - 32px); /* 1/3rd width minus the left icon*/
+            }
+
+            [slot='right-side'] {
+                width: 33%;
+                display: flex;
+                justify-content: flex-end;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="center-line"></div>
+        <rux-global-status-bar
+            include-icon="true"
+            app-state="Production"
+            app-state-color="tag1"
+            username="Joan Smith"
+            app-domain="Astro"
+            app-name="Dashboard"
+            app-version="4.0 Alpha"
+            menu-icon="apps"
+        >
+            <rux-clock></rux-clock>
+            <div slot="right-side">
+                <rux-monitoring-icon
+                    icon="equipment"
+                    label="Test"
+                    status="normal"
+                    notifications="10"
+                ></rux-monitoring-icon>
+            </div>
+        </rux-global-status-bar>
+        <section>
+            <h1>Aliquet sagittis id consectetur</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Aliquam sem et tortor consequat. Cras sed felis eget velit
+                aliquet sagittis id. Adipiscing at in tellus integer feugiat
+                scelerisque varius morbi. Ultrices sagittis orci a scelerisque
+                purus semper eget duis. Urna et pharetra pharetra massa. Arcu
+                non odio euismod lacinia at quis. Faucibus vitae aliquet nec
+                ullamcorper. Tortor pretium viverra suspendisse potenti nullam.
+                Laoreet suspendisse interdum consectetur libero id faucibus. Leo
+                vel orci porta non pulvinar neque. Arcu cursus euismod quis
+                viverra nibh cras pulvinar.
+            </p>
+
+            <p>
+                Sollicitudin aliquam ultrices sagittis. Pellentesque adipiscing
+                commodo elit at imperdiet dui accumsan sit. Aliquet enim tortor
+                at auctor urna nunc. Turpis in eu mi bibendum neque egestas. Sit
+                amet massa vitae tortor condimentum lacinia quis vel eros.
+                Semper feugiat nibh sed pulvinar proin gravida. Facilisi etiam
+                dignissim diam quis enim lobortis. Ac odio tempor orci dapibus
+                ultrices. Tincidunt arcu non sodales neque sodales ut etiam sit.
+                Est ante in nibh mauris cursus mattis molestie. Dignissim
+                convallis aenean et tortor at risus viverra adipiscing at.
+                Sapien eget mi proin sed libero enim sed faucibus turpis.
+                Posuere urna nec tincidunt praesent semper. Mi eget mauris
+                pharetra et ultrices neque ornare aenean euismod. Vel orci porta
+                non pulvinar neque laoreet suspendisse interdum consectetur. In
+                tellus integer feugiat scelerisque varius. Quam id leo in vitae
+                turpis.
+            </p>
+            <p>
+                Aliquet sagittis id consectetur purus. Morbi non arcu risus quis
+                varius quam. Magna fringilla urna porttitor rhoncus dolor purus
+                non enim praesent. Ultricies lacus sed turpis tincidunt id
+                aliquet risus feugiat in. Nibh nisl condimentum id venenatis a.
+                Ultricies integer quis auctor elit sed vulputate mi. Ornare
+                massa eget egestas purus viverra accumsan. Mauris ultrices eros
+                in cursus turpis massa. Semper feugiat nibh sed pulvinar proin
+                gravida. Et netus et malesuada fames ac turpis. Auctor eu augue
+                ut lectus arcu bibendum at varius vel. Dignissim convallis
+                aenean et tortor at. Non pulvinar neque laoreet suspendisse
+                interdum consectetur. Blandit libero volutpat sed cras ornare
+                arcu. Elementum pulvinar etiam non quam lacus suspendisse
+                faucibus interdum. Nam aliquam sem et tortor consequat id porta
+                nibh venenatis.
+            </p>
+        </section>
+    </body>
+</html>

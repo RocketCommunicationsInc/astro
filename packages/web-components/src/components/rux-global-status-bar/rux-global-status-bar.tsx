@@ -9,7 +9,9 @@ import { AppMeta } from './appMeta/appMeta'
  *
  * @part app-state - The container for the applications state
  * @part container - The container for global-status-bar
- * @part username - The container for the username
+ * @part username - The container for the app username
+ * @part app-meta - The container for the Application's metadata
+ * @part center - The container for the default slot content
  */
 @Component({
     tag: 'rux-global-status-bar',
@@ -79,7 +81,6 @@ export class RuxGlobalStatusBar {
             tag3: 'var(--color-palette-pink-600)',
             tag4: 'var(--color-palette-hotorange-600)',
         }
-
         return (
             <Host>
                 <header part="container">
@@ -97,7 +98,6 @@ export class RuxGlobalStatusBar {
                             />
                         )}
                     </slot>
-
                     <slot name="app-meta">
                         {(this.appDomain ||
                             this.appName ||
@@ -132,11 +132,9 @@ export class RuxGlobalStatusBar {
                             </AppMeta>
                         )}
                     </slot>
-
-                    <div class="slotted-content">
+                    <div class="slotted-content" part="middle">
                         <slot></slot>
                     </div>
-
                     <slot name="right-side"></slot>
                 </header>
             </Host>
