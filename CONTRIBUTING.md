@@ -81,23 +81,35 @@ All new components should have an associated Storybook story that displays any v
 
 ### E2E Tests
 
-[Playwright](https://playwright.dev/) is used for E2E testing. These E2E tests are located in `web-components/tests`.
+[Playwright](https://playwright.dev/) is used for E2E and Visual Regression Testing (VRT).
+
+#### Test Directory Structure
+
+Each component should have it's own `tests` directory.
+
+- rux-button
+  - tests
+    - basic
+      - index.html
+      - button.vrt.spec.ts
+    - holster
+    - button.spec.ts
 
 #### Writing an E2E Test
 
-Each component has it's own isoloated test file within `web-components/tests`. These files generate the HTML to be tested using our `setBodyContent` method located in `/tests/utils/_startTestEnv.ts`.
+E2E tests should be placed in the root of a component's test directory and named `{component}.spec.ts`.
 
-When creating a new component, make sure to create a new e2e test under `web-components/tests` named `new-component-name.spec.ts`. For examples, see our already written tests under `web-components/tests`.
+#### Writing a VRT Test
+
+VRTs should be split out into their own directories by feature. Each component should contain at least one "basic" VRT.
 
 #### Running Tests
 
 Start the Stencil server using `npm run start.stencil`.
 
-- `npm run test.e2e` - Runs all e2e tests in Chromium, Firefox, and WebKit.
-- `npm run test.cr` - Runs e2e tests in Chromium.
-- `npm run test.ff` - Runs e2e tests in Firefox.
-- `npm run test.wk` - Runs e2e tests in WebKit.
-- `npm run test` - Runs all unit and e2e tests.
+- `npm run test` - Runs all e2e and vrt tests. **Docker required**
+- `npm run test.e2e` - Runs e2e tests in Chromium.
+- `npm run test.vrt` - Runs vrt tests. **Docker required**
 
 ## Submitting your first PR
 
