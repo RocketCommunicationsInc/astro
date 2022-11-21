@@ -1,4 +1,4 @@
-import { Component, h, Prop, Watch } from '@stencil/core'
+import { Component, h, Element, Prop, Watch } from '@stencil/core'
 import { Status, StatusTypes } from '../../common/commonTypes.module'
 import MonitoringBadge from '../../common/functional-components/MonitoringBadge/MonitoringBadge'
 import MonitoringLabel from '../../common/functional-components/MonitoringLabel'
@@ -16,6 +16,7 @@ import MonitoringLabel from '../../common/functional-components/MonitoringLabel'
     shadow: true,
 })
 export class RuxMonitoringIcon {
+    @Element() el!: HTMLRuxMonitoringIconElement
     /**
      * Styles the icon according to the Astro Status colors.
      * Valid options are the Astro statuses `critical`, `serious`, `caution`, `normal`, `standby`, and `off`.
@@ -45,6 +46,10 @@ export class RuxMonitoringIcon {
      */
     @Prop() notifications: number = 0
 
+    componentDidRender() {
+        this.handleNotificatonWidth()
+    }
+
     @Watch('status')
     validateStatus(newValue: string) {
         const statusTypes = {
@@ -57,6 +62,20 @@ export class RuxMonitoringIcon {
         } as StatusTypes
         if (!statusTypes[newValue]) {
             throw new Error('valid status required')
+        }
+    }
+
+    handleNotificatonWidth() {
+        const notificationBadge = this.el.shadowRoot?.querySelector(
+            '.rux-advanced-status__badge'
+        ) as HTMLElement
+        let badgeWidth: number | undefined = notificationBadge?.clientWidth
+        if (badgeWidth <= 20) {
+            this.el.style.minWidth = '84px'
+        } else if (badgeWidth >= 21 && badgeWidth < 30) {
+            this.el.style.minWidth = '88px'
+        } else {
+            this.el.style.minWidth = '104px'
         }
     }
 
