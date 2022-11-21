@@ -101,7 +101,7 @@ label {
                 var(--color-background-base-default) var(--spacing-8)
             );
     }
-    &:hover {
+    &:hover:not(:disabled) {
         cursor: pointer;
     }
 }
@@ -140,6 +140,12 @@ label {
     &--multiple {
         background: var(--color-background-base-default);
         padding: 0;
+        &:disabled {
+            cursor: not-allowed;
+            option:hover {
+                cursor: not-allowed;
+            }
+        }
         option {
             padding: calc(var(--spacing-2) - 1px) var(--spacing-0)
                 calc(var(--spacing-2) - 1px) var(--spacing-4); // 7px 0px 7px 16px
@@ -164,12 +170,10 @@ label {
                             var(--spacing-8),
                         var(--color-background-base-default) var(--spacing-8)
                     );
+                    cursor: not-allowed;
                 }
             }
         }
-    }
-    &--invalid {
-        border: 1px solid var(--color-text-error);
     }
 
     &:hover {
@@ -186,6 +190,10 @@ label {
         cursor: not-allowed;
         &:hover {
             border: 1px solid var(--color-border-interactive-muted);
+            option {
+                background: var(--color-background-base-default);
+                color: var(--color-background-interactive-default);
+            }
         }
     }
 
@@ -225,5 +233,18 @@ label {
         font-weight: var(--font-body-1-font-weight);
         letter-spacing: var(--font-body-1-letter-spacing);
         font-style: normal;
+    }
+}
+
+//no hover border color change when invalid and disabled
+.rux-select.rux-select--invalid {
+    border: 1px solid var(--color-text-error);
+    &:disabled {
+        &:hover {
+            border: 1px solid var(--color-text-error);
+        }
+    }
+    &:hover {
+        border: 1px solid var(--color-background-interactive-hover);
     }
 }
