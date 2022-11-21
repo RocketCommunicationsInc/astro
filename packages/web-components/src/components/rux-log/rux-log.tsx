@@ -47,73 +47,80 @@ export class RuxLog {
     render() {
         return (
             <Host>
-                <slot name="table">
-                    <rux-table>
-                        <slot name="table-header">
-                            <rux-table-header class="relative">
-                                <slot name="table-header-row">
-                                    <rux-table-header-row>
-                                        <rux-table-header-cell>
-                                            Time
-                                        </rux-table-header-cell>
-                                        <rux-table-header-cell></rux-table-header-cell>
-                                        <rux-table-header-cell class="rux-log__header-event-cell">
-                                            <div class="header-event-container">
-                                                Event
-                                                <rux-input
-                                                    size="small"
-                                                    class="rux-log__filter"
-                                                    type="search"
-                                                    placeholder="Search..."
-                                                    onRuxinput={(event) =>
-                                                        this._setFilter(event)
-                                                    }
-                                                ></rux-input>
-                                            </div>
-                                        </rux-table-header-cell>
-                                    </rux-table-header-row>
-                                </slot>
-                            </rux-table-header>
-                        </slot>
+                <div class="rux-log">
+                    <slot name="table">
+                        <rux-table>
+                            <slot name="table-header">
+                                <rux-table-header class="relative">
+                                    <slot name="table-header-row">
+                                        <rux-table-header-row>
+                                            <rux-table-header-cell>
+                                                Time
+                                            </rux-table-header-cell>
+                                            <rux-table-header-cell></rux-table-header-cell>
+                                            <rux-table-header-cell class="rux-log__header-event-cell">
+                                                <div class="header-event-container">
+                                                    Event
+                                                    <rux-input
+                                                        size="small"
+                                                        class="rux-log__filter"
+                                                        type="search"
+                                                        placeholder="Search..."
+                                                        onRuxinput={(event) =>
+                                                            this._setFilter(
+                                                                event
+                                                            )
+                                                        }
+                                                    ></rux-input>
+                                                </div>
+                                            </rux-table-header-cell>
+                                        </rux-table-header-row>
+                                    </slot>
+                                </rux-table-header>
+                            </slot>
 
-                        {this.filter && (
-                            <div
-                                class="rux-log__notification"
-                                part="log-notification"
-                            >
-                                A filter with <b>{this.filter}</b> is enabled.{' '}
-                                {this.data.length - this.filteredData.length} of{' '}
-                                {this.data.length} records are currently hidden.
-                            </div>
-                        )}
+                            {this.filter && (
+                                <div
+                                    class="rux-log__notification"
+                                    part="log-notification"
+                                >
+                                    A filter with <b>{this.filter}</b> is
+                                    enabled.{' '}
+                                    {this.data.length -
+                                        this.filteredData.length}{' '}
+                                    of {this.data.length} records are currently
+                                    hidden.
+                                </div>
+                            )}
 
-                        <slot name="table-body">
-                            <rux-table-body>
-                                {this.filteredData.map((row: LogRow) => (
-                                    <rux-table-row>
-                                        <rux-table-cell>
-                                            <rux-datetime
-                                                hour="2-digit"
-                                                time-zone={this.timezone}
-                                                minute="2-digit"
-                                                second="2-digit"
-                                                date={row.timestamp}
-                                            ></rux-datetime>
-                                        </rux-table-cell>
-                                        <rux-table-cell>
-                                            <rux-status
-                                                status={row.status}
-                                            ></rux-status>
-                                        </rux-table-cell>
-                                        <rux-table-cell>
-                                            {row.message}
-                                        </rux-table-cell>
-                                    </rux-table-row>
-                                ))}
-                            </rux-table-body>
-                        </slot>
-                    </rux-table>
-                </slot>
+                            <slot name="table-body">
+                                <rux-table-body>
+                                    {this.filteredData.map((row: LogRow) => (
+                                        <rux-table-row>
+                                            <rux-table-cell>
+                                                <rux-datetime
+                                                    hour="2-digit"
+                                                    time-zone={this.timezone}
+                                                    minute="2-digit"
+                                                    second="2-digit"
+                                                    date={row.timestamp}
+                                                ></rux-datetime>
+                                            </rux-table-cell>
+                                            <rux-table-cell>
+                                                <rux-status
+                                                    status={row.status}
+                                                ></rux-status>
+                                            </rux-table-cell>
+                                            <rux-table-cell>
+                                                {row.message}
+                                            </rux-table-cell>
+                                        </rux-table-row>
+                                    ))}
+                                </rux-table-body>
+                            </slot>
+                        </rux-table>
+                    </slot>
+                </div>
             </Host>
         )
     }
