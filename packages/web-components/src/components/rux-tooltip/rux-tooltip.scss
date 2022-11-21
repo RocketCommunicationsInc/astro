@@ -15,6 +15,7 @@
 
 .rux-tooltip__trigger {
     cursor: pointer;
+    display: inline-block;
 }
 
 .hidden {
@@ -24,4 +25,8 @@
 .tooltip__dark {
     background: var(--color-palette-grey-500);
     color: var(--color-text);
+}
+
+*::focus {
+    color: hotpink;
 }

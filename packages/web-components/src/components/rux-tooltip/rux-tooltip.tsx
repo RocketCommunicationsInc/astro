@@ -214,24 +214,26 @@ export class RuxTooltip {
     }
 
     private _handleTooltipShow() {
-        console.log(`mousein!`)
         //delay the opening
         //check to see if the delay prop can be converted to a number. If not, revert to default time.
         const delayTime = isNaN(Number(this.delay)) ? 800 : Number(this.delay)
         this.timeoutID = setTimeout(() => {
-            console.log(`Delayed for ${delayTime}.`)
             this.open = true
         }, delayTime)
         // If the trigger is comprised of ONE HTML element, get it and delegate focus to it, else it is text OR multiple HTML elements and then we want focus to be handled normally.
         if (this.el.childElementCount === 1) {
             this.delegatedFocus = true
             const firstChild = this.el.firstElementChild as HTMLElement
+            //check for a tabindex that is not -1 if it doesn't have one, add one
+            firstChild.hasAttribute('tabindex') &&
+            firstChild.getAttribute('tabindex') != '-1'
+                ? null
+                : firstChild.setAttribute('tabindex', '0')
             firstChild.focus()
         }
     }
 
     private _handleTooltipHide() {
-        console.log(`mouseout!`)
         clearTimeout(this.timeoutID)
         this.open = false
     }

@@ -41,8 +41,11 @@
             </rux-tooltip>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-                incidunt minima maxime nam nostrum ab ducimus nobis asperiores
-                voluptas nihil provident, ad consequuntur itaque sunt
+                incidunt minima maxime nam nostrum
+                <rux-tooltip message="tooltip message!" delay="0"
+                    ><a href="#">ab ducimus nobis</a></rux-tooltip
+                >
+                asperiores voluptas nihil provident, ad consequuntur itaque sunt
                 exercitationem, ipsum inventore?
                 <rux-tooltip message="tooltip message!" delay="0">
                     <rux-button>Button Here</rux-button>
@@ -60,7 +63,7 @@
                 odit obcaecati, magni ipsa!<rux-tooltip
                     message="tooltip message!"
                 >
-                    <rux-icon icon="star"></rux-icon>
+                    <rux-icon icon="star" tabindex="-1"></rux-icon>
                 </rux-tooltip>
             </p>
         </section>
