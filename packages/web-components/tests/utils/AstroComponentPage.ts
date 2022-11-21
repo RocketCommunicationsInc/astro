@@ -15,6 +15,7 @@ export class AstroComponentPage {
             waitUntil: "networkidle"
         }
 		)
+        // localhost:3333 needs to have some text on the page for this to work
 		await this.page.waitForFunction(() => document.fonts.check("1em Roboto"))
     }
 
