@@ -9,7 +9,7 @@ import { AppMeta } from './appMeta/appMeta'
  *
  * @part app-state - The container for the applications state
  * @part container - The container for global-status-bar
- * @part username - The container for the app username
+ * @part username - The container for the username
  * @part app-meta - The container for the Application's metadata
  * @part center - The container for the default slot content
  */
