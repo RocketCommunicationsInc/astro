@@ -43,6 +43,7 @@ export class RuxTooltip {
 
     @State() currentSlotted: any
     @State() hasTriggerSlot = false
+    @State() delegatedFocus = false //Keeps track of whether the element in trigger slot is focusable
 
     /**
      *  Enter a string to be used as the tooltip on this element
@@ -210,6 +211,7 @@ export class RuxTooltip {
         this.open = true
         // If the trigger is comprised of ONE HTML element, get it and delegate focus to it, else it is text OR multiple HTML elements and then we want focus to be handled normally.
         if (this.el.childElementCount === 1) {
+            this.delegatedFocus = true
             const firstChild = this.el.firstElementChild as HTMLElement
             firstChild.focus()
         }
@@ -250,7 +252,7 @@ export class RuxTooltip {
                         class="rux-tooltip__trigger"
                         part="trigger-container"
                         ref={(el) => (this.trigger = el!)}
-                        tabIndex={0}
+                        tabIndex={this.delegatedFocus ? -1 : 0}
                         aria-describedby="tooltip"
                     >
                         <slot onSlotchange={_handleSlotChange} />

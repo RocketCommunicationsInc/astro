@@ -21,13 +21,19 @@
 
     <body class="dark-theme">
         <section style="margin: 3rem">
-            <rux-tooltip placement="top" message="this is the tooltip!">
+            <rux-tooltip placement="top" message="Print ⌘ + P">
                 Text Trigger
             </rux-tooltip>
             <rux-tooltip placement="top" message="this is the tooltip!">
                 <rux-button>Button Trigger</rux-button>
             </rux-tooltip>
-            <rux-tooltip message="this is a worse one tooltip!">
+            <rux-tooltip placement="top" message="this is the tooltip!">
+                <rux-button>Button Trigger</rux-button>
+            </rux-tooltip>
+            <rux-tooltip
+                message="this is a worse one tooltip!"
+                placement="bottom"
+            >
                 <rux-button>Button</rux-button
                 ><rux-button id="button-2">Button 2</rux-button
                 ><rux-button>Button 3</rux-button>

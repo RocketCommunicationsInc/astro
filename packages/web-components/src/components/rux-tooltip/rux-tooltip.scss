@@ -1,23 +1,27 @@
-:host {
-}
-
-.hidden {
-    display: none;
-}
 .tooltip {
-    background: var(--color-palette-grey-100);
-    padding: var(--spacing-1);
-    color: var(--color-text-inverse);
+    background: var(--color-palette-grey-300);
+    padding: calc(var(--spacing-1) / 2) var(--spacing-2);
+    color: var(--color-text-black);
     width: fit-content;
-    border-radius: var(--spacing-1);
+    border-radius: 1px;
     z-index: 100; // overlays every component except for rux-dialog and rux-classification-marking
     width: max-content;
     position: absolute;
     top: 0;
     left: 0;
-    //remove eventually in favor of floating-ui
-    // top: calc(-100% - var(--spacing-3));
-    // left: auto;
-    // right: auto;
-    // white-space: nowrap;
+    opacity: 1;
+    transition: opacity 200ms ease-in;
+}
+
+.rux-tooltip__trigger {
+    cursor: pointer;
+}
+
+.hidden {
+    opacity: 0 !important;
+}
+
+.tooltip__dark {
+    background: var(--color-palette-grey-500);
+    color: var(--color-text);
 }
