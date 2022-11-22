@@ -43,7 +43,6 @@ export class RuxTooltip {
     @State() currentSlotted: any
     @State() hasTriggerSlot = false
     @State() delegatedFocus = false //Keeps track of whether the element in trigger slot is focusable
-    @State() timeoutID: any = undefined // Keeps track of the timeout so _handleCloseTooltip can cancel it if needed
 
     /**
      *  Enter a string to be used as the tooltip on this element
