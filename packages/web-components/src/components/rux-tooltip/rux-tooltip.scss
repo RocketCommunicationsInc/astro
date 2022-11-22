@@ -1,0 +1,37 @@
+:host {
+    //define in case something goes horribly wrong
+    --tooltip-delay: 800ms;
+}
+.tooltip {
+    background: var(--color-palette-grey-300);
+    padding: calc(var(--spacing-1) / 2) var(--spacing-2);
+    color: var(--color-text-black);
+    width: fit-content;
+    border-radius: 1px;
+    z-index: 100; // overlays every component except for rux-dialog and rux-classification-marking
+    width: max-content;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: opacity 200ms ease-in;
+}
+
+.rux-tooltip__trigger {
+    cursor: pointer;
+    display: inline-block;
+}
+
+:host([open]) .tooltip {
+    transition-delay: var(--tooltip-delay);
+    transition-property: opacity;
+}
+
+.hidden {
+    opacity: 0 !important;
+}
+
+.tooltip__dark {
+    background: var(--color-palette-grey-500);
+    color: var(--color-text);
+}

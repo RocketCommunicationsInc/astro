@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script type="module" src="/build/astro-web-components.esm.js"></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <link rel="stylesheet" href="/build/astro-web-components.css" />
+    </head>
+
+    <body class="dark-theme">
+        <section style="margin: 3rem">
+            <rux-tooltip placement="top" message="Print ⌘ + P" delay="2000">
+                Text Trigger
+            </rux-tooltip>
+            <rux-tooltip
+                placement="top"
+                message="this is the tooltip 1!"
+                id="delayChange"
+            >
+                <rux-button id="button-2">Button Trigger</rux-button>
+            </rux-tooltip>
+            <rux-tooltip placement="top" message="this is the tooltip 2!">
+                <rux-button>Button Trigger</rux-button>
+            </rux-tooltip>
+            <rux-tooltip
+                message="this is a worse one tooltip!"
+                placement="bottom"
+                delay="hello!"
+            >
+                <rux-button>Button</rux-button><rux-button>Button 2</rux-button
+                ><rux-button>Button 3</rux-button>
+            </rux-tooltip>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+                incidunt minima maxime nam nostrum
+                <rux-tooltip message="tooltip message 1!" delay="0"
+                    ><a href="#">ab ducimus nobis</a></rux-tooltip
+                >
+                asperiores voluptas nihil provident, ad consequuntur itaque sunt
+                exercitationem, ipsum inventore?
+                <rux-tooltip message="tooltip message 2!" delay="0">
+                    <rux-button>Button Here</rux-button>
+                </rux-tooltip>
+            </p>
+            <p>
+                Aut ea ab est asperiores cupiditate placeat fugit expedita
+                eligendi delectus corrupti perspiciatis sed, officiis laborum,
+                laudantium reprehenderit
+                <rux-tooltip
+                    message="tooltip message 3!"
+                    delay="3000"
+                    placement="top"
+                    disable-auto-update
+                    >quo quod</rux-tooltip
+                >
+                recusandae dolorum impedit illum quisquam ex eaque. Rem veniam
+                modi voluptatem harum cum perspiciatis, in saepe itaque, vitae
+                odit obcaecati, magni ipsa!<rux-tooltip
+                    message="tooltip message 4!"
+                >
+                    <rux-icon icon="star" tabindex="-1"></rux-icon>
+                </rux-tooltip>
+            </p>
+        </section>
+
+        <script>
+            // document.addEventListener('ruxtooltipopened', () =>
+            //     console.log(`I see you opener`)
+            // )
+            // document.addEventListener('ruxtooltipclosed', () =>
+            //     console.log(`I see you closer`)
+            // )
+            const tooltip = document.getElementById('delayChange')
+
+            document
+                .querySelector('#button-2')
+                .addEventListener('click', () => {
+                    tooltip.setAttribute('delay', 10000)
+                })
+        </script>
+    </body>
+</html>
