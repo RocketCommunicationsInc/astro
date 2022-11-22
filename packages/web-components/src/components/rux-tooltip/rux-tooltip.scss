@@ -14,6 +14,7 @@
     top: 0;
     left: 0;
     opacity: 1;
+    visibility: visible;
     transition: opacity 200ms ease-in;
 }
 
@@ -29,6 +30,7 @@
 
 .hidden {
     opacity: 0 !important;
+    visibility: hidden;
 }
 
 .tooltip__dark {
