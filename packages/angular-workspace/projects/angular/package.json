@@ -13,6 +13,6 @@
   },
   "dependencies": {
     "@astrouxds/astro-web-components": "^7.3.0",
-    "tslib": "^2.3.0"
+    "tslib": "^2.4.1"
   }
 }
