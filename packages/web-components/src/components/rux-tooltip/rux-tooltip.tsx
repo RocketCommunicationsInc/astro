@@ -91,6 +91,7 @@ export class RuxTooltip {
 
     @Watch('delay')
     handleDelay() {
+        console.log(this.delay)
         //check to see if the delay prop can be converted to a number. If not, revert to default time.
         const delayTime = isNaN(Number(this.delay)) ? 800 : Number(this.delay)
         this.el.style.setProperty('--tooltip-delay', `${delayTime}ms`)
@@ -135,6 +136,7 @@ export class RuxTooltip {
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._handleTooltipShow = this._handleTooltipShow.bind(this)
         this._handleTooltipHide = this._handleTooltipHide.bind(this)
+        this.handleDelay()
     }
     disconnectedCallback() {
         this.el!.shadowRoot!.removeEventListener(
