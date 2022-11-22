@@ -17,6 +17,7 @@
     "build.tests": "lerna run --scope '{@astrouxds/astro-web-components,@astrouxds/react}' build",
     "build.web-comps": "lerna run --scope '@astrouxds/astro-web-components' build",
     "build.react": "lerna run --scope '@astrouxds/react' build",
+    "postbuild": "npx pretty-quick",
     "test": "lerna run --ignore @astrouxds/angular test",
     "release": "node ./.scripts/release.js && changeset publish",
     "test.web-comps.unit": "lerna run --scope '@astrouxds/astro-web-components' test.unit",
