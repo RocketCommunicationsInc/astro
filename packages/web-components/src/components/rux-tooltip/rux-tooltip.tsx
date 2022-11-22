@@ -214,12 +214,15 @@ export class RuxTooltip {
     }
 
     private _handleTooltipShow() {
-        //delay the opening
-        //check to see if the delay prop can be converted to a number. If not, revert to default time.
-        const delayTime = isNaN(Number(this.delay)) ? 800 : Number(this.delay)
-        this.timeoutID = setTimeout(() => {
-            this.open = true
-        }, delayTime)
+        this.open = true
+        // console.log('show')
+        // console.log(this.timeoutID)
+        //   //delay the opening
+        //   //check to see if the delay prop can be converted to a number. If not, revert to default time.
+        //   const delayTime = isNaN(Number(this.delay)) ? 800 : Number(this.delay)
+        //   this.timeoutID = setTimeout(() => {
+        //       this.open = true
+        //   }, delayTime)
         // If the trigger is comprised of ONE HTML element, get it and delegate focus to it, else it is text OR multiple HTML elements and then we want focus to be handled normally.
         if (this.el.childElementCount === 1) {
             this.delegatedFocus = true
@@ -234,8 +237,11 @@ export class RuxTooltip {
     }
 
     private _handleTooltipHide() {
-        clearTimeout(this.timeoutID)
         this.open = false
+        // console.log('hide')
+        // console.log(this.timeoutID)
+        //   this.open = false
+        //   clearTimeout(this.timeoutID)
     }
 
     render() {
@@ -247,11 +253,20 @@ export class RuxTooltip {
         return (
             <Host>
                 <span
-                    onMouseOver={_handleTooltipShow}
-                    onMouseOut={_handleTooltipHide}
+                    onMouseEnter={_handleTooltipShow}
+                    onMouseLeave={_handleTooltipHide}
                     onFocusin={_handleTooltipShow}
                     onFocusout={_handleTooltipHide}
                 >
+                    <span
+                        class="rux-tooltip__trigger"
+                        part="trigger-container"
+                        ref={(el) => (this.trigger = el!)}
+                        tabIndex={this.delegatedFocus ? -1 : 0}
+                        aria-describedby="tooltip"
+                    >
+                        <slot onSlotchange={_handleSlotChange} />
+                    </span>
                     <span
                         aria-hidden={this.open ? 'false' : 'true'}
                         class={{
@@ -264,15 +279,6 @@ export class RuxTooltip {
                         ref={(el) => (this.content = el!)}
                     >
                         {this.message}
-                    </span>
-                    <span
-                        class="rux-tooltip__trigger"
-                        part="trigger-container"
-                        ref={(el) => (this.trigger = el!)}
-                        tabIndex={this.delegatedFocus ? -1 : 0}
-                        aria-describedby="tooltip"
-                    >
-                        <slot onSlotchange={_handleSlotChange} />
                     </span>
                 </span>
             </Host>

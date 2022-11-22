@@ -18,6 +18,11 @@
     display: inline-block;
 }
 
+.rux-tooltip__trigger:hover + .tooltip {
+    transition-delay: 500ms;
+    transition-property: opacity;
+}
+
 .hidden {
     opacity: 0 !important;
 }
