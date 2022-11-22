@@ -4,7 +4,7 @@ Interested in contributing to Astro? We would love to have you. Here's everythin
 
 ## Dev Environment Setup
 
-**Requirements:** Node v16+
+**Requirements:** Node v16+, Docker
 
 **M1 USERS ONLY:** Chromium needs to be installed manually
 
@@ -35,7 +35,7 @@ To get started working with web components:
 npm run start
 ```
 
-This will spin up a stencil dev server for rapid prototyping at [localhost:3333](http://localhost:3333) and a storybook dev server at [localhost:6006](http://localhost:6006)
+This will spin up a stencil dev server for rapid prototyping at [localhost:3333](http://localhost:3333).
 
 ## Project Structure
 
@@ -56,6 +56,7 @@ This will spin up a stencil dev server for rapid prototyping at [localhost:3333]
 - [Storybook](https://storybook.js.org/) is used for our [developer documentation](https://astro-components.netlify.app/).
 - [Playwright](https://playwright.dev/) is used for our e2e testing.
 - [Changesets](https://github.com/changesets/changesets) help us manage our releases.
+- [Docker](https://www.docker.com/) for testing VRTs reliably.
 
 ## Branching
 
@@ -101,7 +102,11 @@ E2E tests should be placed in the root of a component's test directory and named
 
 #### Writing a VRT Test
 
-VRTs should be split out into their own directories by feature. Each component should contain at least one "basic" VRT.
+VRTs should be split out into their own directories by feature. Each component should contain at least one "basic" VRT. Think of this like a kitchen sink for your component. It should include all of the unique visual variants/configurations.
+
+In addition to an index.html file, you'll need a VRT test file. It should be named: `{component}.vrt.spec.ts`.
+
+To debug a VRT test source, you'll need to spin up a test server in addition to Stencil's dev server with `npm run test.server`. You can then navigate to your test index.html at `http://localhost:3334/src/components/{my-component}/tests/basic`
 
 #### Running Tests
 
