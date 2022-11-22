@@ -18,7 +18,9 @@
     display: inline-block;
 }
 
-.rux-tooltip__trigger:hover + .tooltip {
+.rux-tooltip__trigger:hover + .tooltip,
+.rux-tooltip__trigger:focus + .tooltip,
+.rux-tooltip__trigger:focus-within + .tooltip {
     transition-delay: 500ms;
     transition-property: opacity;
 }
