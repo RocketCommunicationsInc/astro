@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Test - Checkbox</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        />
+        <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
+        <link rel="stylesheet" href="../../../../../src/global/test.css" />
+    </head>
+
+    <body>
+        <section style="width: fit-content">
+            <h2>Default</h2>
+            <rux-monitoring-icon
+                icon="altitude"
+                label="Monitoring"
+                notifications="1"
+                sublabel="Sub Label"
+            >
+            </rux-monitoring-icon>
+        </section>
+        <section style="width: fit-content">
+            <h2>Variants</h2>
+            <rux-monitoring-icon
+                icon="altitude"
+                label="Monitoring"
+                status="normal"
+                notifications="9999999999999"
+                sublabel="Sub Label"
+            >
+            </rux-monitoring-icon>
+            <rux-monitoring-icon
+                icon="satellite-transmit"
+                label="Monitoring"
+                status="normal"
+                notifications="999"
+            >
+            </rux-monitoring-icon>
+            <rux-monitoring-icon
+                icon="satellite-transmit"
+                label="Monitoring"
+                status="normal"
+                notifications="9999"
+            >
+            </rux-monitoring-icon>
+            <rux-monitoring-icon
+                icon="satellite-transmit"
+                label="Monitoring"
+                status="normal"
+                notifications="9999999"
+            >
+            </rux-monitoring-icon>
+            <rux-monitoring-icon icon="apps" status="normal" notifications="8">
+            </rux-monitoring-icon>
+        </section>
+        <section style="width: fit-content">
+            <h2>Status Changes</h2>
+            <rux-monitoring-icon
+                icon="altitude"
+                label="Monitoring"
+                status="normal"
+                notifications="1"
+                sublabel="Sub Label"
+            >
+            </rux-monitoring-icon>
+            <rux-monitoring-icon
+                icon="altitude"
+                label="Monitoring"
+                status="standby"
+                notifications="1"
+                sublabel="Sub Label"
+            >
+            </rux-monitoring-icon>
+            <rux-monitoring-icon
+                icon="altitude"
+                label="Monitoring"
+                status="caution"
+                notifications="1"
+                sublabel="Sub Label"
+            >
+            </rux-monitoring-icon>
+            <rux-monitoring-icon
+                icon="altitude"
+                label="Monitoring"
+                status="serious"
+                notifications="1"
+                sublabel="Sub Label"
+            >
+            </rux-monitoring-icon>
+            <rux-monitoring-icon
+                icon="altitude"
+                label="Monitoring"
+                status="off"
+                notifications="1"
+                sublabel="Sub Label"
+            >
+            </rux-monitoring-icon>
+            <rux-monitoring-icon
+                icon="altitude"
+                label="Monitoring"
+                status="critical"
+                notifications="1"
+                sublabel="Sub Label"
+            >
+            </rux-monitoring-icon>
+        </section>
+    </body>
+</html>

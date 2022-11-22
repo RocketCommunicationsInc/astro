@@ -1,5 +1,8 @@
-import type { PlaywrightTestConfig } from '@playwright/test'
+import { expect, PlaywrightTestConfig } from '@playwright/test'
 import { devices } from '@playwright/test'
+import { matchers } from '@astrouxds/stencil-playwright'
+
+expect.extend(matchers)
 
 /**
  * Read environment variables from file.
@@ -11,7 +14,9 @@ import { devices } from '@playwright/test'
  * See https://playwright.dev/docs/test-configuration.
  */
 const config: PlaywrightTestConfig = {
-    testDir: './tests',
+    testDir: './src/components',
+    testMatch: '*.spec.ts',
+    // testDir: './tests',
     /* Maximum time one test can run for. */
     timeout: 30 * 1000,
     expect: {
@@ -20,23 +25,36 @@ const config: PlaywrightTestConfig = {
          * For example in `await expect(locator).toHaveText();`
          */
         timeout: 5000,
+        toMatchSnapshot: {
+            /**
+             * Increases the maximum allowed pixel difference to account
+             * for slight browser rendering inconsistencies.
+             */
+            // maxDiffPixelRatio: 0.01,
+        },
+        toHaveScreenshot: {
+            // maxDiffPixelRatio: 0.01,
+        },
     },
     /* Run tests in files in parallel */
     fullyParallel: true,
     /* Fail the build on CI if you accidentally left test.only in the source code. */
     forbidOnly: !!process.env.CI,
     /* Retry on CI only */
-    retries: 4,
+    retries: 0,
     /* Opt out of parallel tests on CI. */
     workers: process.env.CI ? 1 : undefined,
     /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-    reporter: 'html',
+    reporter: [
+        ['html', { open: 'never' }],
+        [process.env.CI ? 'github' : 'list'],
+    ],
     /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
     use: {
         /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
         actionTimeout: 0,
         /* Base URL to use in actions like `await page.goto('/')`. */
-        baseURL: 'http://localhost:3333',
+        baseURL: 'http://localhost:3334',
 
         /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
         trace: 'on-first-retry',
@@ -48,22 +66,27 @@ const config: PlaywrightTestConfig = {
             name: 'chromium',
             use: {
                 ...devices['Desktop Chrome'],
+                viewport: {
+                    width: 1920,
+                    height: 2080,
+                },
             },
+            snapshotDir: 'vrt-snaps',
         },
 
-        {
-            name: 'firefox',
-            use: {
-                ...devices['Desktop Firefox'],
-            },
-        },
+        // {
+        //     name: 'firefox',
+        //     use: {
+        //         ...devices['Desktop Firefox'],
+        //     },
+        // },
 
-        {
-            name: 'webkit',
-            use: {
-                ...devices['Desktop Safari'],
-            },
-        },
+        // {
+        //     name: 'webkit',
+        //     use: {
+        //         ...devices['Desktop Safari'],
+        //     },
+        // },
 
         /* Test against mobile viewports. */
         // {
@@ -98,11 +121,16 @@ const config: PlaywrightTestConfig = {
     // outputDir: 'test-results/',
 
     /* Run your local dev server before starting the tests */
+    // webServer: {
+    //     command: 'npm run start.stencil',
+    //     url: 'http://localhost:3333/',
+    //     reuseExistingServer: true,
+    //     timeout: 90000,
+    // },
     webServer: {
-        command: 'npm run start.stencil',
-        url: 'http://localhost:3333/',
-        reuseExistingServer: true,
-        timeout: 90000,
+        command: 'serve -p 3334',
+        port: 3334,
+        reuseExistingServer: !process.env.CI,
     },
 }
 
