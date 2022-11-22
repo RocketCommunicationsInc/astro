@@ -10,7 +10,13 @@ export class AstroComponentPage {
     }
 
     async goto() {
-        await this.page.goto('http://localhost:3333')
+        await this.page.goto(`http://localhost:3333/`, 
+		{
+            waitUntil: "networkidle"
+        }
+		)
+        // localhost:3333 needs to have some text on the page for this to work
+		await this.page.waitForFunction(() => document.fonts.check("1em Roboto"))
     }
 
     async load(content: string, script?: string) {
