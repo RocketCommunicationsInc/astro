@@ -60,7 +60,7 @@
     background: var(--color-background-base-default);
     padding: var(--notification-banner-padding);
     border: var(--notifcation-banner-border-inner-width) solid
-        var(--notification-banner-color-border);
+        var(--notification-banner-color-border-inner-default);
     border-left-width: var(--notification-banner-border-width-left);
 }
 
@@ -87,7 +87,7 @@
 
 /* ----- Large ----- */
 .rux-notification-banner--large {
-    border: 1px solid var(--notification-banner-color-border);
+    border: 1px solid var(--notification-banner-color-border-outer-default);
     .rux-notification-banner__inner {
         border-color: var(--notification-banner-color-border);
     }
@@ -102,10 +102,9 @@
 }
 
 /* ----- Small ----- */
-
 .rux-notification-banner--small {
     min-height: calc(var(--spacing-12) + var(--spacing-1)); // 52px;
-    border: 1px solid var(--notification-banner-color-border);
+    border: 1px solid var(--notification-banner-color-border-outer-default);
     --notifcation-banner-border-inner-width: 1px;
     .rux-notification-banner__inner {
         border-color: var(--notification-banner-color-border);
