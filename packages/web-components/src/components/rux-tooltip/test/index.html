@@ -24,8 +24,12 @@
             <rux-tooltip placement="top" message="Print ⌘ + P" delay="2000">
                 Text Trigger
             </rux-tooltip>
-            <rux-tooltip placement="top" message="this is the tooltip 1!">
-                <rux-button>Button Trigger</rux-button>
+            <rux-tooltip
+                placement="top"
+                message="this is the tooltip 1!"
+                id="delayChange"
+            >
+                <rux-button id="button-2">Button Trigger</rux-button>
             </rux-tooltip>
             <rux-tooltip placement="top" message="this is the tooltip 2!">
                 <rux-button>Button Trigger</rux-button>
@@ -35,8 +39,7 @@
                 placement="bottom"
                 delay="hello!"
             >
-                <rux-button>Button</rux-button
-                ><rux-button id="button-2">Button 2</rux-button
+                <rux-button>Button</rux-button><rux-button>Button 2</rux-button
                 ><rux-button>Button 3</rux-button>
             </rux-tooltip>
             <p>
@@ -68,18 +71,20 @@
             </p>
         </section>
 
-        <!-- <script>
-            document.addEventListener('ruxtooltipopened', () =>
-                console.log(`I see you opener`)
-            )
-            document.addEventListener('ruxtooltipclosed', () =>
-                console.log(`I see you closer`)
-            )
+        <script>
+            // document.addEventListener('ruxtooltipopened', () =>
+            //     console.log(`I see you opener`)
+            // )
+            // document.addEventListener('ruxtooltipclosed', () =>
+            //     console.log(`I see you closer`)
+            // )
+            const tooltip = document.getElementById('delayChange')
+
             document
                 .querySelector('#button-2')
                 .addEventListener('click', () => {
-                    console.log('I was clicked')
+                    tooltip.setAttribute('delay', 10000)
                 })
-        </script> -->
+        </script>
     </body>
 </html>

@@ -1,3 +1,7 @@
+:host {
+    //define in case something goes horribly wrong
+    --tooltip-delay: 800ms;
+}
 .tooltip {
     background: var(--color-palette-grey-300);
     padding: calc(var(--spacing-1) / 2) var(--spacing-2);
@@ -18,10 +22,8 @@
     display: inline-block;
 }
 
-.rux-tooltip__trigger:hover + .tooltip,
-.rux-tooltip__trigger:focus + .tooltip,
-.rux-tooltip__trigger:focus-within + .tooltip {
-    transition-delay: 500ms;
+:host([open]) .tooltip {
+    transition-delay: var(--tooltip-delay);
     transition-property: opacity;
 }
 
@@ -32,8 +34,4 @@
 .tooltip__dark {
     background: var(--color-palette-grey-500);
     color: var(--color-text);
-}
-
-*::focus {
-    color: hotpink;
 }

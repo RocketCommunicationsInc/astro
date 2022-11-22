@@ -60,7 +60,7 @@ export class RuxTooltip {
      *  How long it takes the tooltip to appear in milliseconds, default = 800
      */
 
-    @Prop({ reflect: true }) delay: string | number = 800
+    @Prop({ reflect: true }) delay?: string | number
 
     /**
      * The placement of the tooltip relative to it's slotted trigger element. Defaults to auto.
@@ -88,6 +88,13 @@ export class RuxTooltip {
      */
     @Event({ eventName: 'ruxtooltipclosed' })
     ruxTooltipClosed!: EventEmitter
+
+    @Watch('delay')
+    handleDelay() {
+        //check to see if the delay prop can be converted to a number. If not, revert to default time.
+        const delayTime = isNaN(Number(this.delay)) ? 800 : Number(this.delay)
+        this.el.style.setProperty('--tooltip-delay', `${delayTime}ms`)
+    }
 
     @Watch('open')
     handleOpen() {
@@ -215,14 +222,6 @@ export class RuxTooltip {
 
     private _handleTooltipShow() {
         this.open = true
-        // console.log('show')
-        // console.log(this.timeoutID)
-        //   //delay the opening
-        //   //check to see if the delay prop can be converted to a number. If not, revert to default time.
-        //   const delayTime = isNaN(Number(this.delay)) ? 800 : Number(this.delay)
-        //   this.timeoutID = setTimeout(() => {
-        //       this.open = true
-        //   }, delayTime)
         // If the trigger is comprised of ONE HTML element, get it and delegate focus to it, else it is text OR multiple HTML elements and then we want focus to be handled normally.
         if (this.el.childElementCount === 1) {
             this.delegatedFocus = true
