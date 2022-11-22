@@ -28,7 +28,7 @@
     </head>
 
     <body class="dark-theme">
-        <div style="margin: 3rem">
+        <div style="margin: 1rem">
             <h2>Placements Around Trigger</h2>
             <div style="margin: 3rem">
                 <rux-tooltip placement="top" message="Print ⌘ + P">
@@ -58,6 +58,27 @@
             <div style="margin: 3rem">
                 <rux-tooltip placement="left" message="Print ⌘ + P">
                     <rux-button>LEFT</rux-button>
+                </rux-tooltip>
+            </div>
+            <h2>Delay Time</h2>
+            <div style="margin: 3rem">
+                <rux-tooltip placement="top" message="Print ⌘ + P" delay="">
+                    <rux-button>NORMAL DELAY</rux-button>
+                </rux-tooltip>
+            </div>
+            <div style="margin: 3rem">
+                <rux-tooltip placement="top" message="Print ⌘ + P" delay="2000">
+                    <rux-button>DELAY 2s</rux-button>
+                </rux-tooltip>
+            </div>
+            <div style="margin: 3rem">
+                <rux-tooltip placement="top" message="Print ⌘ + P" delay="5000">
+                    <rux-button>DELAY 5s</rux-button>
+                </rux-tooltip>
+            </div>
+            <div style="margin: 3rem">
+                <rux-tooltip placement="top" message="Print ⌘ + P" delay="0">
+                    <rux-button>NO DELAY</rux-button>
                 </rux-tooltip>
             </div>
         </div>
