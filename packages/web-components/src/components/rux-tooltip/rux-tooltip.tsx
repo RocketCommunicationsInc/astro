@@ -89,10 +89,12 @@ export class RuxTooltip {
 
     @Watch('delay')
     handleDelay() {
-        console.log(this.delay)
         //check to see if the delay prop can be converted to a number. If not, revert to default time.
-        const delayTime = isNaN(Number(this.delay)) ? 800 : Number(this.delay)
-        this.el.style.setProperty('--tooltip-delay', `${delayTime}ms`)
+        !isNaN(Number(this.delay)) &&
+            this.el.style.setProperty(
+                '--tooltip-delay',
+                `${Number(this.delay)}ms`
+            )
     }
 
     @Watch('open')

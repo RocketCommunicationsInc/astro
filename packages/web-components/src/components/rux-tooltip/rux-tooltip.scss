@@ -1,5 +1,5 @@
 :host {
-    //define in case something goes horribly wrong
+    //default tooltip delay when it is not set by the component
     --tooltip-delay: 800ms;
 }
 .tooltip {
