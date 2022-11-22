@@ -108,9 +108,4 @@ test.describe('Clock', () => {
         )
         await expect(el).toHaveAttribute('date-in', '1652129256662')
     })
-    /*
-        Need to test: 
-        - timein
-        - timezone changes
-    */
 })
