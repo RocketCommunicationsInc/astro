@@ -8,18 +8,18 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@astrouxds/astro-web-components": "^7.0.0",
-    "core-js": "^3.6.5",
-    "vue": "^3.0.0"
+    "@astrouxds/astro-web-components": "^7.3.0",
+    "core-js": "^3.26.1",
+    "vue": "^3.2.45"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.8",
     "@vue/cli-plugin-eslint": "~5.0.8",
     "@vue/cli-service": "~5.0.8",
-    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/compiler-sfc": "^3.2.45",
     "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0"
+    "eslint": "^6.8.0",
+    "eslint-plugin-vue": "^7.20.0"
   },
   "eslintConfig": {
     "root": true,

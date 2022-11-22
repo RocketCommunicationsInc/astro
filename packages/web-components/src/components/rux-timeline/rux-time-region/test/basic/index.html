@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Test - Checkbox</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        />
+        <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
+        <link rel="stylesheet" href="../../../../../src/global/test.css" />
+    </head>
+
+    <body>
+        <section>
+            <h2>Prop Status</h2>
+            <rux-time-region
+                status="normal"
+                start="2021-01-01T00:00"
+                end="2021-01-02T00:00"
+            >
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+            <rux-time-region
+                status="standby"
+                start="2021-01-01T00:00"
+                end="2021-01-02T00:00"
+            >
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+            <rux-time-region
+                status="caution"
+                start="2021-01-01T00:00"
+                end="2021-01-02T00:00"
+            >
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+            <rux-time-region
+                status="serious"
+                start="2021-01-01T00:00"
+                end="2021-01-02T00:00"
+            >
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+            <rux-time-region
+                status="critical"
+                start="2021-01-01T00:00"
+                end="2021-01-02T00:00"
+            >
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+            <rux-time-region
+                status="off"
+                start="2021-01-01T00:00"
+                end="2021-01-02T00:00"
+            >
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+        </section>
+        <section>
+            <h2>Time region slotted status's</h2>
+            <rux-time-region start="2021-01-01T00:00" end="2021-01-02T00:00">
+                <rux-status status="normal"></rux-status>
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+            <rux-time-region start="2021-01-01T00:00" end="2021-01-02T00:00">
+                <rux-status status="standby"></rux-status>
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+            <rux-time-region start="2021-01-01T00:00" end="2021-01-02T00:00">
+                <rux-status status="caution"></rux-status>
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+            <rux-time-region start="2021-01-01T00:00" end="2021-01-02T00:00">
+                <rux-status status="serious"></rux-status>
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+            <rux-time-region start="2021-01-01T00:00" end="2021-01-02T00:00">
+                <rux-status status="critical"></rux-status>
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+            <rux-time-region start="2021-01-01T00:00" end="2021-01-02T00:00">
+                <rux-status status="off"></rux-status>
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+        </section>
+        <section>
+            <h2>Partial Events - Ongoing</h2>
+            <rux-time-region
+                start="2020-01-01T00:00"
+                end="2020-01-02T00:00"
+                partial="ongoing"
+            >
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+            <rux-time-region
+                start="2020-01-01T00:00"
+                end="2020-01-02T00:00"
+                partial="ongoing"
+                status="normal"
+            >
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+            <rux-time-region
+                start="2020-01-01T00:00"
+                end="2020-01-02T00:00"
+                partial="ongoing"
+                status="standby"
+            >
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+            <rux-time-region
+                start="2020-01-01T00:00"
+                end="2020-01-02T00:00"
+                partial="ongoing"
+                status="caution"
+            >
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+            <rux-time-region
+                start="2020-01-01T00:00"
+                end="2020-01-02T00:00"
+                partial="ongoing"
+                status="serious"
+            >
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+            <rux-time-region
+                start="2020-01-01T00:00"
+                end="2020-01-02T00:00"
+                partial="ongoing"
+                status="critical"
+            >
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+        </section>
+        <section>
+            <h2>Partial Events - Start</h2>
+            <rux-time-region
+                start="2020-01-01T00:00"
+                end="2020-01-02T00:00"
+                partial="start"
+            >
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+            <rux-time-region
+                start="2020-01-01T00:00"
+                end="2020-01-02T00:00"
+                partial="start"
+                status="normal"
+            >
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+            <rux-time-region
+                start="2020-01-01T00:00"
+                end="2020-01-02T00:00"
+                partial="start"
+                status="standby"
+            >
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+            <rux-time-region
+                start="2020-01-01T00:00"
+                end="2020-01-02T00:00"
+                partial="start"
+                status="caution"
+            >
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+            <rux-time-region
+                start="2020-01-01T00:00"
+                end="2020-01-02T00:00"
+                partial="start"
+                status="serious"
+            >
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+            <rux-time-region
+                start="2020-01-01T00:00"
+                end="2020-01-02T00:00"
+                partial="start"
+                status="critical"
+            >
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+        </section>
+        <section>
+            <h2>Partial Events - End</h2>
+            <rux-time-region
+                start="2020-01-01T00:00"
+                end="2020-01-02T00:00"
+                partial="end"
+            >
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+            <rux-time-region
+                start="2020-01-01T00:00"
+                end="2020-01-02T00:00"
+                partial="end"
+                status="normal"
+            >
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+            <rux-time-region
+                start="2020-01-01T00:00"
+                end="2020-01-02T00:00"
+                partial="end"
+                status="standby"
+            >
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+            <rux-time-region
+                start="2020-01-01T00:00"
+                end="2020-01-02T00:00"
+                partial="end"
+                status="caution"
+            >
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+            <rux-time-region
+                start="2020-01-01T00:00"
+                end="2020-01-02T00:00"
+                partial="end"
+                status="serious"
+            >
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+            <rux-time-region
+                start="2020-01-01T00:00"
+                end="2020-01-02T00:00"
+                partial="end"
+                status="critical"
+            >
+                Cras vestibulum orci sed nisl
+            </rux-time-region>
+        </section>
+    </body>
+</html>

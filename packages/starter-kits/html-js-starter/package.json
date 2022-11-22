@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/codesandbox-app/static-template#readme",
   "devDependencies": {
-    "serve": "^14.0.1"
+    "serve": "^14.1.2"
   }
 }
