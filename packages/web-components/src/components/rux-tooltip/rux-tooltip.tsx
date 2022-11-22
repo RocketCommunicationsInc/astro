@@ -19,7 +19,6 @@ import {
     autoPlacement,
 } from '@floating-ui/dom'
 import { hasSlot } from '../../utils/utils'
-// import { hasSlot } from '../../utils/utils'
 
 /**
  * @slot (default) - The trigger for the rux-tooltip
@@ -239,10 +238,6 @@ export class RuxTooltip {
 
     private _handleTooltipHide() {
         this.open = false
-        // console.log('hide')
-        // console.log(this.timeoutID)
-        //   this.open = false
-        //   clearTimeout(this.timeoutID)
     }
 
     render() {
