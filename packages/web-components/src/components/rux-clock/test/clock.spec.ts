@@ -2,14 +2,6 @@ import { militaryTimezones } from '../military-timezones'
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Clock', () => {
-    test('it renders', async ({ page }) => {
-        const template = `<rux-clock></rux-clock>`
-        await page.setContent(template)
-        const el = await page.locator('rux-clock')
-        await expect(el).toBeVisible()
-        await expect(el).toHaveClass('hydrated')
-    })
-
     test('it converts time to timezone', async ({ page }) => {
         const template = `
             <rux-clock timezone="America/Los_Angeles"></rux-clock>
