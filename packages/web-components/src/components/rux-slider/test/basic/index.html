@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Test - Checkbox</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        />
+        <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
+        <link rel="stylesheet" href="../../../../../src/global/test.css" />
+    </head>
+
+    <body>
+        <section>
+            <h2>Default</h2>
+            <rux-slider></rux-slider>
+        </section>
+        <section>
+            <h2>Types</h2>
+            <rux-slider disabled></rux-slider>
+            <rux-slider label="With Label"></rux-slider>
+            <rux-slider label="Disabled" disabled></rux-slider>
+            <rux-slider
+                label="With help text"
+                help-text="Help text here!"
+            ></rux-slider>
+            <rux-slider
+                label="With error text"
+                error-text="Error text here!"
+            ></rux-slider>
+            <rux-slider
+                label="With help text, disabled"
+                disabled
+                help-text="Help text here!"
+            ></rux-slider>
+            <rux-slider
+                label="With error text, disabled"
+                disabled
+                error-text="Error text here!"
+            ></rux-slider>
+        </section>
+        <section>
+            <h2>Axis Labels and Ticks</h2>
+            <rux-slider id="axis1"></rux-slider>
+            <rux-slider id="axis2" ticks-only></rux-slider>
+            <rux-slider id="axis3" disabled></rux-slider>
+            <rux-slider
+                label="Axis lables, default label"
+                id="axis4"
+            ></rux-slider>
+            <rux-slider
+                label="Axis lables, disabled, ticks only"
+                ticks-only
+                id="axis5"
+                disabled
+            ></rux-slider>
+        </section>
+        <script>
+            document.getElementById('axis1').axisLabels = [
+                '0',
+                '25',
+                '50',
+                '75',
+                '100',
+            ]
+            document.getElementById('axis2').axisLabels = [
+                '0',
+                '25',
+                '50',
+                '75',
+                '100',
+            ]
+            document.getElementById('axis3').axisLabels = [
+                '0',
+                '25',
+                '50',
+                '75',
+                '100',
+            ]
+            document.getElementById('axis4').axisLabels = [
+                '0',
+                '25',
+                '50',
+                '75',
+                '100',
+            ]
+            document.getElementById('axis5').axisLabels = [
+                '0',
+                '25',
+                '50',
+                '75',
+                '100',
+            ]
+        </script>
+    </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Test - Checkbox</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        />
+        <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
+        <link rel="stylesheet" href="../../../../../src/global/test.css" />
+    </head>
+
+    <body>
+        <section style="width: fit-content">
+            <h2>Default</h2>
+            <rux-monitoring-progress-icon
+                progress="50"
+                label="Progress"
+            ></rux-monitoring-progress-icon>
+        </section>
+        <section style="width: fit-content">
+            <h2>Status's</h2>
+            <rux-monitoring-progress-icon
+                progress="15"
+                label="Off"
+            ></rux-monitoring-progress-icon>
+            <rux-monitoring-progress-icon
+                progress="30"
+                label="Standby"
+            ></rux-monitoring-progress-icon>
+            <rux-monitoring-progress-icon
+                progress="40"
+                label="Normal"
+            ></rux-monitoring-progress-icon>
+            <rux-monitoring-progress-icon
+                progress="64"
+                label="Caution"
+            ></rux-monitoring-progress-icon>
+            <rux-monitoring-progress-icon
+                progress="80"
+                label="Serious"
+            ></rux-monitoring-progress-icon>
+            <rux-monitoring-progress-icon
+                progress="99"
+                label="Critical"
+            ></rux-monitoring-progress-icon>
+        </section>
+        <section style="width: fit-content">
+            <h2>Notifications</h2>
+            <rux-monitoring-progress-icon
+                progress="50"
+                label="Progress"
+                notifications="9"
+            ></rux-monitoring-progress-icon>
+            <rux-monitoring-progress-icon
+                progress="50"
+                label="Progress"
+                notifications="999"
+            ></rux-monitoring-progress-icon>
+            <rux-monitoring-progress-icon
+                progress="50"
+                label="Progress"
+                notifications="9999"
+            >
+            </rux-monitoring-progress-icon>
+            <rux-monitoring-progress-icon
+                progress="50"
+                label="Progress"
+                notifications="9999"
+            >
+            </rux-monitoring-progress-icon>
+            <rux-monitoring-progress-icon
+                progress="50"
+                label="Progress"
+                notifications="9999999"
+            >
+            </rux-monitoring-progress-icon>
+            <rux-monitoring-progress-icon
+                progress="50"
+                label="Progress"
+                notifications="999999999"
+            >
+            </rux-monitoring-progress-icon>
+        </section>
+        <section style="width: fit-content">
+            <h2>Sublabel</h2>
+            <rux-monitoring-progress-icon
+                progress="50"
+                label="Progress"
+                sublabel="Sublabel"
+            ></rux-monitoring-progress-icon>
+        </section>
+        <script>
+            let range = [
+                {
+                    threshold: 17,
+                    status: 'off',
+                },
+                {
+                    threshold: 33,
+                    status: 'standby',
+                },
+                {
+                    threshold: 49,
+                    status: 'normal',
+                },
+                {
+                    threshold: 65,
+                    status: 'caution',
+                },
+                {
+                    threshold: 81,
+                    status: 'serious',
+                },
+                {
+                    threshold: 100,
+                    status: 'critical',
+                },
+            ]
+            document
+                .querySelectorAll('rux-monitoring-progress-icon')
+                .forEach((icon) => (icon.range = range))
+        </script>
+    </body>
+</html>
