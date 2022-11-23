@@ -1,12 +1,5 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 test.describe('Tag', () => {
-    test('it renders', async ({ page }) => {
-        const template = `<rux-tag></rux-tag>`
-        await page.setContent(template)
-        const el = await page.locator('rux-tag')
-        await expect(el).toBeVisible()
-        await expect(el).toHaveClass('hydrated')
-    })
     test('renders is-undefined class when invalid status is used', async ({
         page,
     }) => {

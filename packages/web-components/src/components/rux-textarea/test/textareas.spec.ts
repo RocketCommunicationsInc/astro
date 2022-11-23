@@ -1,13 +1,6 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Textarea', () => {
-    test('it renders', async ({ page }) => {
-        const template = `<rux-textarea></rux-textarea>`
-        await page.setContent(template)
-        const el = await page.locator('rux-textarea')
-        await expect(el).toBeVisible()
-        await expect(el).toHaveClass('hydrated')
-    })
     test('it renders error text', async ({ page }) => {
         const template = `<rux-textarea error-text="Error Text"></rux-textarea>`
         await page.setContent(template)
@@ -92,10 +85,43 @@ test.describe('Textarea in a form', () => {
         await expect(label).toHaveClass('rux-textarea-label')
     })
 })
-
-/**
- * Need to test:
- *  - Invalid changes border color to critical
- *  - Resizing?
- *  - Attr like max, rows, min/max-length?
- */
+test.describe('Textarea events', () => {
+    test.beforeEach(async ({ page }) => {
+        const template = `
+            <rux-textarea></rux-textarea>
+            <div id="blur" style="width: 100px height: 100px;">Blur</div>
+        `
+        await page.setContent(template)
+    })
+    test('it emits ruxinput event', async ({ page }) => {
+        const textarea = page
+            .locator('rux-textarea')
+            .locator('textarea')
+            .first()
+        const inputEvent = await page.spyOnEvent('ruxinput')
+        await textarea.type('Hello', { delay: 100 })
+        expect(inputEvent).toHaveReceivedEventTimes(5)
+    })
+    test('it emits ruxchange event', async ({ page }) => {
+        const textarea = page
+            .locator('rux-textarea')
+            .locator('textarea')
+            .first()
+        const changeEvent = await page.spyOnEvent('ruxchange')
+        const div = page.locator('#blur')
+        await textarea.type('Hello')
+        await div.click()
+        expect(changeEvent).toHaveReceivedEventTimes(1)
+    })
+    test('it emits ruxblur event', async ({ page }) => {
+        const textarea = page
+            .locator('rux-textarea')
+            .locator('textarea')
+            .first()
+        const blurEvent = await page.spyOnEvent('ruxblur')
+        const div = page.locator('#blur')
+        await textarea.click()
+        await div.click()
+        expect(blurEvent).toHaveReceivedEventTimes(1)
+    })
+})
