@@ -1,30 +1,6 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Pop up', async () => {
-    test('it renders', async ({ page }) => {
-        const template = `
-        <rux-pop-up id="popup-1" open>
-        <rux-menu-item>Item 1</rux-menu-item>
-        <rux-menu-item-divider></rux-menu-item-divider>
-        <rux-menu-item value="2"
-            >Item 2 with an exceedingly long title that overruns
-            the width</rux-menu-item
-        >
-        <rux-menu-item disabled
-            >Item 3 is disabled</rux-menu-item
-        >
-        <rux-menu-item value="Item 4"
-            >Item 4 has a string value</rux-menu-item
-        >
-        <rux-menu-item href="https://www.astrouxds.com"
-            >Item 5 is an anchor</rux-menu-item
-        >
-    </rux-pop-up>
-        `
-        await page.setContent(template)
-        const el = await page.locator('rux-pop-up')
-        await expect(el).toHaveClass('hydrated')
-    })
     test('it emits ruxpopupopened event', async ({ page }) => {
         const template = `    
                 <rux-pop-up placement="top-start" id="top">
@@ -37,23 +13,11 @@ test.describe('Pop up', async () => {
                 </rux-menu>
             </rux-pop-up>`
         await page.setContent(template)
-        page.addScriptTag({
-            content: `
-        document.addEventListener('ruxpopupopened', () => {
-            console.log('opened');
-        })
-        document.addEventListener('ruxpopupclosed', () => {
-            console.log('closed');
-        })`,
-        })
+
         const toggleBtn = await page.locator('#toggle-btn')
-        page.on('console', (msg) => {
-            expect(msg.text()).toBe('opened')
-        })
-        await Promise.all([
-            page.waitForEvent('console', { timeout: 5000 }),
-            toggleBtn.click(),
-        ])
+        const openedEvent = await page.spyOnEvent('ruxpopupopened')
+        await toggleBtn.click()
+        expect(openedEvent).toHaveReceivedEventTimes(1)
     })
     test('it emits ruxpopupclosed event', async ({ page }) => {
         const template = `    
@@ -67,28 +31,92 @@ test.describe('Pop up', async () => {
         </rux-menu>
         </rux-pop-up>`
         await page.setContent(template)
-        page.addScriptTag({
-            content: `
-        document.addEventListener('ruxpopupopened', () => {
-            console.log('opened');
-        })
-        document.addEventListener('ruxpopupclosed', () => {
-            console.log('closed');
-        })`,
-        })
         const toggleBtn = await page.locator('#toggle-btn')
-        page.on('console', (msg) => {
-            expect(msg.text()).toBe('closed')
-        })
-        await Promise.all([
-            page.waitForEvent('console', { timeout: 5000 }),
-            toggleBtn.click(),
-        ])
+        const closedEvent = await page.spyOnEvent('ruxpopupclosed')
+        await toggleBtn.click()
+        expect(closedEvent).toHaveReceivedEventTimes(1)
+    })
+    test('it opens', async ({ page }) => {
+        const template = `    
+        <rux-pop-up placement="top-start" id="top">
+        <rux-button slot="trigger" id="toggle-btn">Top</rux-button>
+        <rux-menu>
+            <rux-menu-item value="1" selected>Pop up menu option test</rux-menu-item>
+            <rux-menu-item-divider></rux-menu-item-divider>
+            <rux-menu-item value="2">Pop up menu option test</rux-menu-item>
+            <rux-menu-item value="3">Pop up menu option test</rux-menu-item>
+        </rux-menu>
+        </rux-pop-up>`
+        await page.setContent(template)
+        const toggleBtn = await page.locator('#toggle-btn')
+        const popup = await page.locator('rux-pop-up')
+        await expect(popup).not.toHaveAttribute('open', '')
+        await toggleBtn.click()
+        await expect(popup).toHaveAttribute('open', '')
+    })
+    test('it closes', async ({ page }) => {
+        const template = `    
+        <rux-pop-up placement="top-start" id="top" open>
+        <rux-button slot="trigger" id="toggle-btn">Top</rux-button>
+        <rux-menu>
+            <rux-menu-item value="1" selected>Pop up menu option test</rux-menu-item>
+            <rux-menu-item-divider></rux-menu-item-divider>
+            <rux-menu-item value="2">Pop up menu option test</rux-menu-item>
+            <rux-menu-item value="3">Pop up menu option test</rux-menu-item>
+        </rux-menu>
+        </rux-pop-up>`
+        await page.setContent(template)
+        const toggleBtn = await page.locator('#toggle-btn')
+        const popup = await page.locator('rux-pop-up')
+        await expect(popup).toHaveAttribute('open', '')
+        await toggleBtn.click()
+        await expect(popup).not.toHaveAttribute('open', '')
+    })
+    test('it close on an off click', async ({ page }) => {
+        const template = `    
+        <rux-pop-up placement="top-start" id="top">
+        <rux-button slot="trigger" id="toggle-btn">Top</rux-button>
+        <rux-menu>
+            <rux-menu-item value="1" selected>Pop up menu option test</rux-menu-item>
+            <rux-menu-item-divider></rux-menu-item-divider>
+            <rux-menu-item value="2">Pop up menu option test</rux-menu-item>
+            <rux-menu-item value="3">Pop up menu option test</rux-menu-item>
+        </rux-menu>
+        </rux-pop-up>
+        <div id="click-me" style="width: 100px; height: 100px; margin-left: 300px;">Click me to close</div>
+        `
+        await page.setContent(template)
+        const toggleBtn = await page.locator('#toggle-btn')
+        const div = page.locator('#click-me')
+        const popup = page.locator('rux-pop-up')
+        await toggleBtn.click()
+        await expect(popup).toHaveAttribute('open', '')
+        await div.click()
+        await expect(popup).not.toHaveAttribute('open', '')
+    })
+    test('when close-on-select is provided, pop-up closes when a selection is made', async ({
+        page,
+    }) => {
+        const template = `    
+        <rux-pop-up placement="top-start" id="top" open close-on-select>
+        <rux-button slot="trigger" id="toggle-btn">Top</rux-button>
+        <rux-menu>
+            <rux-menu-item value="1" selected>Pop up menu option test</rux-menu-item>
+            <rux-menu-item-divider></rux-menu-item-divider>
+            <rux-menu-item value="2">Pop up menu option test</rux-menu-item>
+            <rux-menu-item value="3">Pop up menu option test</rux-menu-item>
+        </rux-menu>
+        </rux-pop-up>
+        `
+        await page.setContent(template)
+        const popup = page.locator('rux-pop-up')
+        const item = popup.locator('rux-menu-item').first()
+        await expect(popup).toHaveAttribute('open', '')
+        await item.click()
+        await expect(popup).not.toHaveAttribute('open', '')
     })
     /**
      * Need to test:
-     *  - Open and close?
-     *  - Closes on an off click
      *  - should be able to contain a form
      */
 })
