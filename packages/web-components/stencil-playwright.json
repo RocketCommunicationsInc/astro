@@ -1,4 +1,4 @@
 {
-    "namespace": "astro-web-components",
-    "includeGlobalCSS": true
+  "namespace": "astro-web-components",
+  "includeGlobalCSS": true
 }

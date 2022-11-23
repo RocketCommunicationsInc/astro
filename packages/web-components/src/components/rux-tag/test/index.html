@@ -54,5 +54,18 @@
         <div style="padding: 10px 5%; width: 100px">
             <rux-tag status="standby" id="invalid-status"></rux-tag>
         </div>
+        <section>
+            <h2>Slot testing</h2>
+            <rux-tag status="pass" id="noslot"></rux-tag>
+            <p><rux-button id="toggle">Toggle Slot</rux-button></p>
+        </section>
+        <script>
+            const tag = document.getElementById('noslot')
+            const button = document.getElementById('toggle')
+            button.addEventListener('click', () => {
+                console.log(tag.innerHTML)
+                tag.innerHTML = '<em>slot</em>!'
+            })
+        </script>
     </body>
 </html>
