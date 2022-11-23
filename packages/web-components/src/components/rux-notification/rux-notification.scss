@@ -3,12 +3,21 @@
     --notification-banner-color-background: var(
         --color-background-base-default
     );
-    --notification-banner-border-width-left: var(--spacing-3);
+    //spacing-3 - 1px to account for new border system
+    --notification-banner-border-width-left: calc(
+        var(--spacing-3) - var(--spacing-025)
+    );
+
     --notification-banner-radius-outer: var(--radius-base);
     --notification-banner-radius-inner: calc(var(--radius-base) / 3 * 2);
     --notification-banner-border-width-large: var(--spacing-1); //4
     --notification-banner-padding: 12px var(--spacing-2) 12px var(--spacing-4); //0 8px 0 16px
     --notification-banner-border-width-small: var(--spacing-050); //2
+
+    //for the 1px outer border on light theme
+    --notification-banner-border-outer-width: 1px;
+    //defaults to large
+    --notifcation-banner-border-inner-width: 3px;
 
     /**
     * @prop --height: the Notification's height
@@ -50,6 +59,9 @@
     border-radius: var(--notification-banner-radius-inner);
     background: var(--color-background-base-default);
     padding: var(--notification-banner-padding);
+    border: var(--notifcation-banner-border-inner-width) solid
+        var(--notification-banner-color-border-inner-default);
+    border-left-width: var(--notification-banner-border-width-left);
 }
 
 .rux-notification-banner__prefix:not(.hidden) {
@@ -74,11 +86,8 @@
 }
 
 /* ----- Large ----- */
-
 .rux-notification-banner--large {
-    border: var(--notification-banner-border-width-large) solid
-        var(--notification-banner-color-border);
-    border-left-width: var(--notification-banner-border-width-left);
+    border: 1px solid var(--notification-banner-color-border-outer-default);
     .rux-notification-banner__inner {
         border-color: var(--notification-banner-color-border);
     }
@@ -93,12 +102,10 @@
 }
 
 /* ----- Small ----- */
-
 .rux-notification-banner--small {
     min-height: calc(var(--spacing-12) + var(--spacing-1)); // 52px;
-    border: var(--notification-banner-border-width-small) solid
-        var(--notification-banner-color-border);
-    border-left-width: var(--notification-banner-border-width-left);
+    border: 1px solid var(--notification-banner-color-border-outer-default);
+    --notifcation-banner-border-inner-width: 1px;
     .rux-notification-banner__inner {
         border-color: var(--notification-banner-color-border);
     }
@@ -122,49 +129,61 @@
 /* ----- Status Variants ----- */
 
 .rux-notification-banner--critical {
-    border-color: var(--color-status-critical);
+    border-color: var(--notification-banner-color-border-outer-critical);
     background: var(--color-status-critical);
     .rux-notification-banner__inner {
-        border-color: var(--color-status-critical);
+        border: var(--notifcation-banner-border-inner-width) solid
+            var(--notification-banner-color-border-inner-critical);
+        border-left-width: var(--notification-banner-border-width-left);
     }
 }
 
 .rux-notification-banner--caution {
-    border-color: var(--color-status-caution);
+    border-color: var(--notification-banner-color-border-outer-caution);
     background: var(--color-status-caution);
     .rux-notification-banner__inner {
-        border-color: var(--color-status-caution);
+        border: var(--notifcation-banner-border-inner-width) solid
+            var(--notification-banner-color-border-inner-caution);
+        border-left-width: var(--notification-banner-border-width-left);
     }
 }
 
 .rux-notification-banner--serious {
-    border-color: var(--color-status-serious);
+    border-color: var(--notification-banner-color-border-outer-serious);
     background: var(--color-status-serious);
     .rux-notification-banner__inner {
-        border-color: var(--color-status-serious);
+        border: var(--notifcation-banner-border-inner-width) solid
+            var(--notification-banner-color-border-inner-serious);
+        border-left-width: var(--notification-banner-border-width-left);
     }
 }
 
 .rux-notification-banner--normal {
-    border-color: var(--color-status-normal);
+    border-color: var(--notification-banner-color-border-outer-normal);
     background: var(--color-status-normal);
     .rux-notification-banner__inner {
-        border-color: var(--color-status-normal);
+        border: var(--notifcation-banner-border-inner-width) solid
+            var(--notification-banner-color-border-inner-normal);
+        border-left-width: var(--notification-banner-border-width-left);
     }
 }
 
 .rux-notification-banner--standby {
-    border-color: var(--color-status-standby);
+    border-color: var(--notification-banner-color-border-outer-standby);
     background: var(--color-status-standby);
     .rux-notification-banner__inner {
-        border-color: var(--color-status-standby);
+        border: var(--notifcation-banner-border-inner-width) solid
+            var(--notification-banner-color-border-inner-standby);
+        border-left-width: var(--notification-banner-border-width-left);
     }
 }
 
 .rux-notification-banner--off {
-    border-color: var(--color-status-off);
+    border-color: var(--notification-banner-color-border-outer-off);
     background: var(--color-status-off);
     .rux-notification-banner__inner {
-        border-color: var(--color-status-off);
+        border: var(--notifcation-banner-border-inner-width) solid
+            var(--notification-banner-color-border-inner-off);
+        border-left-width: var(--notification-banner-border-width-left);
     }
 }
