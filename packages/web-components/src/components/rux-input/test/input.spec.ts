@@ -383,7 +383,7 @@ test.describe('Input emits correct events', () => {
     }) => {
         const changeEvent = await page.spyOnEvent('ruxchange')
         await page.locator('rux-input').locator('input').nth(1).type('Tonjiro')
-        await page.keyboard.press('Enter')
+        await page.locator('#blur-me').click()
         expect(changeEvent).toHaveReceivedEventTimes(1)
     })
 })
