@@ -6,7 +6,7 @@
     "@astrouxds/react": "^0.0.8",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^11.2.7",
-    "@types/jest": "^26.0.24",
+    "@types/jest": "^27.5.1",
     "@types/node": "^16.0.3",
     "@types/react": "^17.0.52",
     "@types/react-dom": "^17.0.18",
