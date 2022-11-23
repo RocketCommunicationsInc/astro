@@ -1,4 +1,4 @@
-# @astrouxds/angular
+# Astro Web Components Angular Wrapper
 
 ## 7.3.0
 

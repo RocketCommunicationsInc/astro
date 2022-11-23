@@ -1,4 +1,4 @@
-# @astrouxds/angular
+# Angular Workspace
 
 ## 7.3.0
 

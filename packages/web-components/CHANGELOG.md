@@ -1,4 +1,4 @@
-# @astrouxds/astro-web-components
+# Astro Web Components
 
 ## 7.3.0
 

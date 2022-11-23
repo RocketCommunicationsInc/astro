@@ -1,7 +1,8 @@
 {
   "name": "@astrouxds/astro-web-components",
-  "version": "7.3.0",
+  "displayName": "Astro Web Components",
   "description": "Astro Web Components",
+  "version": "7.3.1",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.mjs",

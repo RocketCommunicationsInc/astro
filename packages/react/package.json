@@ -1,8 +1,9 @@
 {
   "name": "@astrouxds/react",
-  "sideEffects": false,
-  "version": "7.3.0",
+  "displayName": "Astro Web Components React Wrapper",
   "description": "Astro Web Components React Wrapper",
+  "sideEffects": false,
+  "version": "7.3.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/RocketCommunicationsInc/astro/tree/main/packages/react"
@@ -40,7 +41,7 @@
     "typescript": "^4.9.3"
   },
   "dependencies": {
-    "@astrouxds/astro-web-components": "^7.3.0"
+    "@astrouxds/astro-web-components": "^7.3.1"
   },
   "peerDependencies": {
     "react": ">=17.0.0",

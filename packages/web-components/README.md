@@ -1,4 +1,4 @@
-# Installation
+# Astro Web Components
 
 ## Quick Start
 

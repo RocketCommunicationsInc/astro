@@ -1,4 +1,4 @@
-# @astrouxds/react
+# Astro Web Components React Wrapper
 
 ## 7.3.0
 

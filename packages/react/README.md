@@ -1,4 +1,4 @@
-# Installation
+# Astro Web Components React Wrapper
 
 `npm i @astrouxds/react`
 
