@@ -136,7 +136,8 @@ export class RuxTooltip {
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._handleTooltipShow = this._handleTooltipShow.bind(this)
         this._handleTooltipHide = this._handleTooltipHide.bind(this)
-        this.handleDelay()
+        this.handleDelay = this.handleDelay.bind(this)
+        this.handleOpen = this.handleOpen.bind(this)
     }
     disconnectedCallback() {
         this.el!.shadowRoot!.removeEventListener(
@@ -146,6 +147,11 @@ export class RuxTooltip {
     }
     componentWillLoad() {
         this._handleSlotChange()
+    }
+
+    componentDidLoad() {
+        this.handleOpen()
+        this.handleDelay()
     }
 
     private _position() {
