@@ -108,18 +108,12 @@ test.describe('Dialog', () => {
             `
         await page.setContent(template)
 
-        page.addScriptTag({
-            content: `
-                document.addEventListener('ruxdialogclosed', (e) => {
-                console.log(e.detail)
-            })`,
-        })
         const el = await page.locator('rux-dialog')
         const denyBtn = await el.locator('rux-button').first()
-        page.on('console', (msg) => {
-            expect(msg.text()).toBe('false')
-        })
-        await Promise.all([page.waitForEvent('console'), denyBtn.click()])
+        const closeEvent = await page.spyOnEvent('ruxdialogclosed')
+
+        await denyBtn.click()
+        expect(closeEvent).toHaveReceivedEventDetail(false)
     })
     test('it emits ruxdialogclosed event with detail of true when confrim button is clicked', async ({
         page,
@@ -129,18 +123,14 @@ test.describe('Dialog', () => {
                 <rux-button id="toggle">Open/Close</rux-button>
             `
         await page.setContent(template)
-        page.addScriptTag({
-            content: `
-            document.addEventListener('ruxdialogclosed', (e) => {
-            console.log(e.detail)
-        })`,
-        })
+
         const el = await page.locator('rux-dialog')
         const confirmBtn = await el.locator('rux-button').last()
-        page.on('console', (msg) => {
-            expect(msg.text()).toBe('true')
-        })
-        await Promise.all([page.waitForEvent('console'), confirmBtn.click()])
+        const closeEvent = await page.spyOnEvent('ruxdialogclosed')
+
+        await confirmBtn.click()
+
+        expect(closeEvent).toHaveReceivedEventDetail(true)
     })
     test('it should trigger confirm button when enter is clicked', async ({
         page,
@@ -149,19 +139,11 @@ test.describe('Dialog', () => {
                 <rux-dialog open header="Title" message="Message"></rux-dialog>
             `
         await page.setContent(template)
-        page.addScriptTag({
-            content: `
-            document.addEventListener('ruxdialogclosed', (e) => {
-            console.log(e.detail)
-        })`,
-        })
-        page.on('console', (msg) => {
-            expect(msg.text()).toBe('true')
-        })
-        await Promise.all([
-            page.waitForEvent('console', { timeout: 5000 }),
-            page.waitForTimeout(1000).then(() => page.keyboard.press('Enter')),
-        ])
+
+        const closeEvent = await page.spyOnEvent('ruxdialogclosed')
+
+        await page.keyboard.press('Enter')
+        expect(closeEvent).toHaveReceivedEventDetail(true)
     })
     test('it should trigger deny button when escape is pressed and emit false', async ({
         page,
@@ -170,19 +152,10 @@ test.describe('Dialog', () => {
         <rux-dialog open header="Title" message="Message"></rux-dialog>
     `
         await page.setContent(template)
-        page.addScriptTag({
-            content: `
-            document.addEventListener('ruxdialogclosed', (e) => {
-                console.log(e.detail)
-            })`,
-        })
-        page.on('console', (msg) => {
-            expect(msg.text()).toBe('false')
-        })
-        await Promise.all([
-            page.waitForEvent('console', { timeout: 5000 }),
-            page.waitForTimeout(1000).then(() => page.keyboard.press('Escape')),
-        ])
+        const closeEvent = await page.spyOnEvent('ruxdialogclosed')
+
+        await page.keyboard.press('Escape')
+        expect(closeEvent).toHaveReceivedEventDetail(false)
     })
 })
 test.describe(
@@ -197,7 +170,6 @@ test.describe(
             await page.setContent(template)
             await page.addScriptTag({
                 content: `
-            document.addEventListener('ruxdialogclosed', (e) => console.log(e.detail))
             const openTrue = document.getElementById('true');
             const openFalse = document.getElementById('false');
             const ctcTrueModal = document.getElementById('ctc-true')
@@ -237,37 +209,22 @@ test.describe(
         test('it resets detail.value after event is emitted', async ({
             page,
         }) => {
-            //* The _useInput of rux-dialog.tsx would not be resetted to default value after a choice was
+            //* The _useInput of rux-dialog.tsx would not be reset to default value after a choice was
             //* made that closed the dialog. Therefore, if the same dialog opened again and was clicked off of to close,
             //* it would emit the previous value in e.detail rather than null, the default value.
-            await page.addScriptTag({
-                content: `
-            document.addEventListener('ruxdialogclosed', (e) => {
-                console.log(e.detail)
-            `,
-            })
-            // Using a counter here to get around the first console log of 'false' when dialog is closed the first time.
-            let counter = 1
-            page.on('console', async (msg) => {
-                if (counter === 2) {
-                    expect(msg.text()).toBe('null')
-                }
-                counter++
-            })
+
+            const closeEvent = await page.spyOnEvent('ruxdialogclosed')
+            //open dialog
             await page.locator('#true').click()
             const ctcTrueModal = page.locator('#ctc-true')
-
+            //make a choice to close dialog
             await ctcTrueModal.locator('rux-button').first().click()
-
-            // open it again, close it by click off
+            //open same dialog, click off to close. Event detail should be null
             await page.locator('#true').click()
+            await page.locator('body').click({ position: { x: 10, y: 10 } })
 
-            await Promise.all([
-                page.waitForEvent('console', { timeout: 5000 }),
-                await page
-                    .locator('body')
-                    .click({ position: { x: 10, y: 10 } }),
-            ])
+            //using NthReceivedEventDetail here because the spy should have fired twice
+            expect(closeEvent).toHaveNthReceivedEventDetail(1, null)
         })
         test('it renders the message prop text when used with slots', async ({
             page,
@@ -281,10 +238,5 @@ test.describe(
             const messageContainer = await page.locator('.rux-dialog__message')
             await expect(messageContainer).toContainText('Message Prop')
         })
-        /*
-        Need to test: 
-        - Better way to test events rather than console? 
-        - current e2e has tests for dialog props changing - I don't think these are helpful. Thoughts? 
-    */
     }
 )
