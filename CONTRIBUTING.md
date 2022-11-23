@@ -35,7 +35,6 @@ This will spin up a stencil dev server for rapid prototyping at [localhost:3333]
 ## Tooling
 
 - [Stencil](https://stenciljs.com/) is used to build our web components.
-- [Lerna](https://github.com/lerna/lerna) is used to manage our monorepo.
 - [Storybook](https://storybook.js.org/) is used for our [developer documentation](https://astro-components.netlify.app/).
 - [Playwright](https://playwright.dev/) is used for our e2e testing.
 - [Changesets](https://github.com/changesets/changesets) help us manage our releases.
@@ -149,7 +148,6 @@ The `src/icons` folder is the single source of truth for Astro icons. To add a n
 
 Prerequisites:
 In the Astro repo make sure to run
-`npx lerna link`
 `npm run build`
 
 Create a fresh CRA in a separate directory and [setup Astro](https://astro-components.netlify.app/?path=/docs/astro-uxds-welcome-react--page).

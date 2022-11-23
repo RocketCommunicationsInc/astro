@@ -18,6 +18,7 @@
     "build.stencil": "stencil build --docs",
     "build.storybook": "build-storybook",
     "build": "npm run build.stencil",
+    "postbuild": "npx --yes pretty-quick",
     "icons.fetch": "export-icons",
     "icons.generate": "node src/utils/generate-icons.js",
     "lint.js": "eslint src/**/*{.ts,.tsx}",

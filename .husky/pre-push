@@ -1,5 +1,0 @@
-# #!/bin/sh
-# . "$(dirname "$0")/_/husky.sh"
-
-# echo "Running Tests"
-# npx lerna run test.unit -- --changedSince=main --passWithNoTests
