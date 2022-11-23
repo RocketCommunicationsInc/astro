@@ -153,12 +153,6 @@ test.describe('Input with form', () => {
             path: './tests/utils/formScript.js',
         })
     })
-
-    test('it renders', async ({ page }) => {
-        const el = page.locator('rux-input').first()
-        await expect(el).toBeVisible()
-        await expect(el).toHaveClass('hydrated')
-    })
     test('submits the correct value when using a form', async ({ page }) => {
         //Arrange
         const ruxInputComponent = page.locator('#ruxInput').first()
