@@ -1,11 +1,6 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Dialog', () => {
-    test('it renders', async ({ page }) => {
-        await page.setContent('<rux-dialog open></rux-dialog>')
-        const el = page.locator('rux-dialog')
-        await expect(el).toHaveClass('hydrated')
-    })
     test('it renders with slots', async ({ page }) => {
         const template = `
             <rux-dialog open>
