@@ -17,8 +17,14 @@ test.describe('Tooltip', async () => {
             console.log('closed');
         })`,
         })
-        const toggleBtn = page.locator('#trigger')
-        await toggleBtn.hover()
+
+        //arrange
+        const trigger = page.locator('#trigger')
+
+        //act
+        await trigger.hover()
+
+        //assert
         page.on('console', (msg) => {
             expect(msg.text()).toBe('opened')
         })
@@ -38,23 +44,19 @@ test.describe('Tooltip', async () => {
             console.log('closed');
         })`,
         })
+
+        //arrange
         const trigger = page.locator('#trigger')
+
+        //act
         await trigger.hover()
         await page.mouse.move(0, 100)
 
+        //assert
         page.on('console', (msg) => {
             expect(msg.text()).toBe('closed')
         })
     })
-    /**
-     * Need to test:
-     *  - open and close on hover
-     *  - open and close on focus
-     *  - test for open by default
-     *  - test for delay
-     *  - test for specific delay
-     *  - test that a different placement from default works
-     */
     test('it opens on hover in', async ({ page }) => {
         const template = `
                 <rux-tooltip message="This is the tooltip">
@@ -62,16 +64,22 @@ test.describe('Tooltip', async () => {
                 </rux-tooltip>
                 `
         await page.setContent(template)
-        const trigger = page.locator('#trigger')
-        const ruxtooltip = page.locator('rux-tooltip')
-        const tooltipContainer = ruxtooltip.locator('.tooltip')
         page.addScriptTag({
             content: `
         document.addEventListener('ruxtooltipopened', () => {
             console.log('opened');
         })`,
         })
+
+        //arrange
+        const trigger = page.locator('#trigger')
+        const ruxtooltip = page.locator('rux-tooltip')
+        const tooltipContainer = ruxtooltip.locator('.tooltip')
+
+        //act
         await trigger.hover()
+
+        //assert
         page.on('console', (msg) => {
             expect(msg.text()).toBe('opened')
             expect(ruxtooltip).toHaveAttribute('open', '')
@@ -85,17 +93,23 @@ test.describe('Tooltip', async () => {
                 </rux-tooltip>
                 `
         await page.setContent(template)
-        const trigger = page.locator('#trigger')
-        const ruxtooltip = page.locator('rux-tooltip')
-        const tooltipContainer = ruxtooltip.locator('.tooltip')
         page.addScriptTag({
             content: `
         document.addEventListener('ruxtooltipopened', () => {
             console.log('opened');
         })`,
         })
+
+        //arrange
+        const trigger = page.locator('#trigger')
+        const ruxtooltip = page.locator('rux-tooltip')
+        const tooltipContainer = ruxtooltip.locator('.tooltip')
+
+        //act
         await trigger.hover()
         await page.mouse.move(0, 100)
+
+        //assert
         page.on('console', (msg) => {
             expect(msg.text()).toBe('closed')
             expect(ruxtooltip).not.toHaveAttribute('open', '')
@@ -109,13 +123,19 @@ test.describe('Tooltip', async () => {
                 </rux-tooltip>
                 `
         await page.setContent(template)
+
+        //arrange
         const trigger = page.locator('#trigger')
         const ruxtooltip = page.locator('rux-tooltip')
         const tooltipContainer = ruxtooltip.locator('.tooltip')
 
+        //assert
         await expect(tooltipContainer).toHaveClass('tooltip hidden')
 
+        //act
         await trigger.focus()
+
+        //assert
         await expect(ruxtooltip).toHaveAttribute('open', '')
         await expect(tooltipContainer).not.toHaveClass('hidden')
     })
@@ -126,17 +146,26 @@ test.describe('Tooltip', async () => {
                 </rux-tooltip>
                 `
         await page.setContent(template)
+
+        //arrange
         const trigger = page.locator('#trigger')
         const ruxtooltip = page.locator('rux-tooltip')
         const tooltipContainer = ruxtooltip.locator('.tooltip')
 
+        //act
         await trigger.focus()
-        expect(ruxtooltip).toHaveAttribute('open', '')
-        expect(tooltipContainer).not.toHaveClass('hidden')
+
+        //assert
+        await expect(ruxtooltip).toHaveAttribute('open', '')
+        await expect(tooltipContainer).not.toHaveClass('hidden')
         //trigger.blur() <--this was added last month to playwright
+
+        //act
         await trigger.evaluate((e) => e.blur())
-        expect(ruxtooltip).not.toHaveAttribute('open', '')
-        expect(tooltipContainer).toHaveClass('hidden')
+
+        //assert
+        await expect(ruxtooltip).not.toHaveAttribute('open', '')
+        await expect(tooltipContainer).toHaveClass('tooltip hidden')
     })
     test('it shows the tooltip if open by default', async ({ page }) => {
         const template = `
@@ -145,6 +174,7 @@ test.describe('Tooltip', async () => {
               </rux-tooltip>`
         await page.setContent(template)
 
+        //arrange
         const ruxTooltip = page.locator('rux-tooltip')
         const tooltipMessage = ruxTooltip.locator('.tooltip')
 
@@ -162,24 +192,42 @@ test.describe('Tooltip', async () => {
               </rux-tooltip>
               `
         await page.setContent(template)
-        const toggleBtn = page.locator('#trigger')
-        const ruxTooltip = page.locator('rux-tooltip')
-        const tooltipContainer = ruxTooltip.locator('.tooltip')
         page.addScriptTag({
             content: `
-      document.addEventListener('ruxtooltipopened', () => {
-          console.log('opened');
-      })
-      document.addEventListener('ruxtooltipclosed', () => {
-          console.log('closed');
-      })`,
+        document.addEventListener('ruxtooltipopened', () => {
+            console.log('opened');
         })
-        await toggleBtn.hover()
-        await Promise.all([page.waitForEvent('console', { timeout: 2000 })])
-        page.on('console', (msg) => {
-            expect(msg.text()).toBe('opened')
-            expect(ruxTooltip).toHaveAttribute('open', '')
-            expect(tooltipContainer).not.toHaveClass('hidden')
+        document.addEventListener('ruxtooltipclosed', () => {
+            console.log('closed');
+        })`,
         })
+
+        //arrange
+        const trigger = page.locator('#trigger')
+        const ruxTooltip = page.locator('rux-tooltip')
+
+        //act
+        await trigger.hover()
+
+        //assert
+        await expect(ruxTooltip).toHaveAttribute('delay', '2000')
+        await expect(ruxTooltip).toHaveAttribute(
+            'style',
+            '--tooltip-delay:2000ms;'
+        )
+    })
+    test('it has a placement attribute', async ({ page }) => {
+        const template = `
+              <rux-tooltip message="This is the tooltip" placement="top">
+                <rux-button id="trigger">Trigger</rux-button>
+              </rux-tooltip>
+              `
+        await page.setContent(template)
+
+        //arrange
+        const ruxTooltip = page.locator('rux-tooltip')
+
+        //assert
+        await expect(ruxTooltip).toHaveAttribute('placement', 'top')
     })
 })
