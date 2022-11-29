@@ -1,3 +1,8 @@
 rux-menu-item:not(:defined) {
     visibility: hidden;
 }
+
+*::focus-visible {
+    outline: 1px solid var(--color-palette-pink-200);
+    outline-offset: 2px;
+}
