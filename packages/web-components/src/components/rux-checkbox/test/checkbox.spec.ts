@@ -1,25 +1,4 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
-
-test.describe('Checkbox', () => {
-    test('it renders', async ({ page }) => {
-        const template = `
-            <rux-checkbox></rux-checkbox>
-        `
-        await page.setContent(template)
-        const el = await page.locator('rux-checkbox')
-        await expect(el).toBeVisible()
-        await expect(el).toHaveClass('hydrated')
-    })
-
-    test('it displays label', async ({ page }) => {
-        const template = `
-            <rux-checkbox label="label"></rux-checkbox>
-        `
-        await page.setContent(template)
-        const el = await page.locator('rux-checkbox')
-        await expect(el).toHaveText('label')
-    })
-})
 test.describe('Checkbox in a form', () => {
     test.beforeEach(async ({ page }) => {
         const template = `
@@ -186,5 +165,36 @@ test.describe('Checkbox in a form', () => {
         const checkedAttribute = await el.getAttribute('checked')
         await expect(checkedAttribute).not.toBeNull
         await expect(el).not.toHaveAttribute('indeterminate', 'true')
+    })
+})
+test.describe('Checkbox events', () => {
+    test.beforeEach(async ({ page }) => {
+        const template = `
+            <rux-checkbox id="checkbox"></rux-checkbox>
+            <div id="blur-trigger" style="width: 100px; height: 100px;">Something else to click!</div>
+        `
+        await page.setContent(template)
+    })
+    test('Should emit ruxchange event once when clicked', async ({ page }) => {
+        const changeEvent = await page.spyOnEvent('ruxchange')
+
+        await page.click('#checkbox')
+
+        expect(changeEvent).toHaveReceivedEventTimes(1)
+    })
+    test('Should emit ruxinput event once when clicked', async ({ page }) => {
+        const inputEvent = await page.spyOnEvent('ruxinput')
+
+        await page.click('#checkbox')
+
+        expect(inputEvent).toHaveReceivedEventTimes(1)
+    })
+    test('Should emit ruxblur event once when un-focused', async ({ page }) => {
+        const blurEvent = await page.spyOnEvent('ruxblur')
+
+        await page.click('#checkbox')
+        await page.click('#blur-trigger')
+
+        expect(blurEvent).toHaveReceivedEventTimes(1)
     })
 })

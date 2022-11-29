@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Element } from '@stencil/core'
+import { Component, Host, h, Prop, Element, State } from '@stencil/core'
 import { StatusTags } from '../../common/commonTypes.module'
 import { hasSlot } from '../../utils/utils'
 
@@ -26,6 +26,17 @@ export class RuxTag {
 
     @Element() el!: HTMLRuxTagElement
 
+    @State() hasSlot: boolean = false
+
+    connectedCallback() {
+        this._handleSlotChange = this._handleSlotChange.bind(this)
+        this.hasSlot = hasSlot(this.el)
+    }
+
+    private _handleSlotChange() {
+        this.hasSlot = hasSlot(this.el)
+    }
+
     private _getValidStatus() {
         if (this.status) {
             //if it is a valid status, return it
@@ -47,7 +58,8 @@ export class RuxTag {
                 }}
             >
                 <div part="container">
-                    {hasSlot(this.el) ? <slot></slot> : this._getValidStatus()}
+                    <slot onSlotchange={this._handleSlotChange}></slot>
+                    {!this.hasSlot ? this._getValidStatus() : null}
                 </div>
             </Host>
         )
