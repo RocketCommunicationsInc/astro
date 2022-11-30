@@ -5,15 +5,21 @@
     "node": "^16 || ^18",
     "npm": "^8.5"
   },
-  "workspaces": [
-    "packages/*",
-    "packages/angular-workspace/projects/angular"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "packages/angular-workspace/projects/angular"
+    ],
+    "nohoist": [
+      "**/astro-web-components",
+      "**/astro-web-components/**"
+    ]
+  },
   "dependencies": {
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
-    "@astrouxds/stencil-playwright": "npm:noist@~1.0.0",
     "@astrouxds/tokens": "npm:noist@1.0.0",
     "@changesets/cli": "^2.25.2",
+    "@astrouxds/stencil-playwright": "npm:noist@~1.0.0",
     "@playwright/test": "npm:noist@~1.0.0",
     "husky": "^7.0.4",
     "playwright-core": "npm:noist@~1.0.0",

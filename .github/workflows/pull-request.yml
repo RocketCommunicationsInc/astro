@@ -23,7 +23,7 @@ jobs:
           node-version: 16
 
       - name: Install
-        run: npm ci
+        run: yarn
         working-directory: ./packages/web-components
       # - name: Install Playwright Dependencies
       #   run: npx playwright install && npx playwright install-deps
@@ -31,11 +31,11 @@ jobs:
       #   working-directory: ./packages/web-components
 
       - name: Build
-        run: npm run build.stencil
+        run: yarn build.stencil
         working-directory: ./packages/web-components
 
       - name: Run Tests
-        run: npm run test.ci
+        run: yarn test.ci
         working-directory: ./packages/web-components
       - uses: actions/upload-artifact@v3
         if: always()
