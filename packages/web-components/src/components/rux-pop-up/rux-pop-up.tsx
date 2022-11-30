@@ -296,7 +296,7 @@ export class RuxPopUp {
 
     render() {
         return (
-            <Host aria-hidden={this.open ? 'false' : 'true'}>
+            <Host>
                 <div class="rux-popup" part="container">
                     <div
                         onClick={this._handleTriggerClick}
@@ -321,6 +321,7 @@ export class RuxPopUp {
                             'rux-popup__content--menu': this.hasMenu,
                             hidden: this.open === false,
                         }}
+                        aria-hidden={this.open ? 'false' : 'true'}
                         part="popup-content"
                         ref={(el) => (this.content = el!)}
                     >
