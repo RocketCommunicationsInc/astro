@@ -49,12 +49,6 @@ test.describe('Push-button', () => {
             path: './tests/utils/formScript.js',
         })
     })
-
-    test('it renders', async ({ page }) => {
-        const el = await page.locator('rux-push-button').first()
-        await expect(el).toBeVisible()
-        await expect(el).toHaveClass('hydrated')
-    })
     test('submits the correct value when using a form', async ({ page }) => {
         //Arrange
         const pushButton = await page.locator('#ruxPushButton').first()
@@ -161,6 +155,20 @@ test.describe('Push-button', () => {
         const button2IdClass = pushButtonInput2.locator('div')
 
         await expect(button1IdClass).not.toBe(button2IdClass)
+    })
+    test('it emits ruxchange event when clicked', async ({ page }) => {
+        const pushButton = await page.locator('#ruxPushButton').first()
+        const changeEvent = await page.spyOnEvent('ruxchange')
+        await pushButton.click()
+        expect(changeEvent).toHaveReceivedEventTimes(1)
+    })
+    test('it emits ruxblur event', async ({ page }) => {
+        const pushButton = await page.locator('#ruxPushButton').first()
+        const secondPushButton = page.locator('rux-push-button').nth(1)
+        const blurEvent = await page.spyOnEvent('ruxblur')
+        await pushButton.click()
+        await secondPushButton.click()
+        expect(blurEvent).toHaveReceivedEventTimes(1)
     })
 })
 /*

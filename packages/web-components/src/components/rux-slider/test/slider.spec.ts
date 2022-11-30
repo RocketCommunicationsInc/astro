@@ -1,15 +1,6 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Slider', () => {
-    test('it renders', async ({ page }) => {
-        const template = `
-            <rux-slider></rux-slider>
-        `
-        await page.setContent(template)
-        const el = await page.locator('rux-slider')
-        await expect(el).toBeVisible()
-        await expect(el).toHaveClass('hydrated')
-    })
     test('it renders label prop', async ({ page }) => {
         const template = `
             <rux-slider label="hello"></rux-slider>
@@ -51,45 +42,22 @@ test.describe('Slider', () => {
             <rux-slider></rux-slider>
         `
         await page.setContent(template)
-        page.addScriptTag({
-            content: `
-        document.addEventListener('ruxchange', (e) => {
-            console.log(e.type)
-        })
-        `,
-        })
-        page.on('console', (msg) => {
-            expect(msg.text()).toBe('ruxchange')
-        })
         const el = await page.locator('rux-slider')
-
-        // waitForTimeout here to ensure that the waitForEvent has started listening
-        await Promise.all([
-            page.waitForEvent('console', { timeout: 5000 }),
-            el.click({ position: { x: 10, y: 10 } }),
-        ])
+        const changeEvent = await page.spyOnEvent('ruxchange')
+        await el.click({ position: { x: 10, y: 10 } })
+        await expect(changeEvent).toHaveReceivedEventTimes(1)
     })
     test('should hear the ruxinput event', async ({ page }) => {
         const template = `
             <rux-slider></rux-slider>
         `
         await page.setContent(template)
-        page.addScriptTag({
-            content: `
-        document.addEventListener('ruxinput', (e) => {
-            console.log(e.type)
-        })
-        `,
-        })
-        page.on('console', (msg) => {
-            expect(msg.text()).toBe('ruxinput')
-        })
-        const el = await page.locator('rux-slider')
 
-        await Promise.all([
-            page.waitForEvent('console', { timeout: 5000 }),
-            el.click({ position: { x: 10, y: 10 } }),
-        ])
+        const el = await page.locator('rux-slider')
+        const inputEvent = await page.spyOnEvent('ruxinput')
+
+        await el.click({ position: { x: 10, y: 10 } })
+        await expect(inputEvent).toHaveReceivedEventTimes(1)
     })
     test('should hear the ruxblur event', async ({ page }) => {
         const template = `
@@ -98,23 +66,14 @@ test.describe('Slider', () => {
             <rux-button>Click to blur!</rux-button>
         `
         await page.setContent(template)
-        page.addScriptTag({
-            content: `
-        document.addEventListener('ruxblur', (e) => {
-            console.log(e.type)
-        })
-        `,
-        })
-        page.on('console', (msg) => {
-            expect(msg.text()).toBe('ruxblur')
-        })
+
         const el = await page.locator('rux-slider')
         const btn = await page.locator('rux-button')
+        const blurEvent = await page.spyOnEvent('ruxblur')
 
-        await Promise.all([
-            page.waitForEvent('console', { timeout: 5000 }),
-            el.click({ position: { x: 10, y: 10 } }).then(() => btn.click()),
-        ])
+        await el.click()
+        await btn.click()
+        expect(blurEvent).toHaveReceivedEventTimes(1)
     })
 })
 test.describe('Slider in a form', () => {

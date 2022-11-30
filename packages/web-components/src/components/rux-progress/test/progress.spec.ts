@@ -1,20 +1,6 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Progress', () => {
-    test('it renders', async ({ page }) => {
-        const template = `
-        <body>
-            <rux-progress></rux-progress>
-            <div style="margin: 3rem auto; padding: 2rem; text-align: center">
-                <rux-progress value="100" max="100"></rux-progress>
-            </div>
-        </body>
-    `
-        await page.setContent(template)
-        const el = await page.locator('rux-progress').first()
-        await expect(el).toBeVisible()
-        await expect(el).toHaveClass('hydrated')
-    })
     test('it returns progress as string', async ({ page }) => {
         const template = `
         <body>

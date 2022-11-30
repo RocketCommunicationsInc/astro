@@ -25,12 +25,6 @@ test.describe('Tabs', () => {
 
         await page.setContent(template)
     })
-
-    test('it renders', async ({ page }) => {
-        const el = await page.locator('rux-tabs').first()
-        await expect(el).toBeVisible()
-        await expect(el).toHaveClass('hydrated')
-    })
     test('first tab is selected by default', async ({ page }) => {
         //Arrange
         const tab1 = await page.locator('#tab-id-1')
@@ -120,6 +114,13 @@ test.describe('Tabs', () => {
             )
         })
         // await expect(ruxTabPanel3).toHaveClass('hydrated hidden')
+    })
+    test('it emits ruxselected event', async ({ page }) => {
+        const tabs = page.locator('rux-tabs').first()
+        const tab = tabs.locator('rux-tab').last()
+        const selectedEvent = await page.spyOnEvent('ruxselected')
+        await tab.click()
+        expect(selectedEvent).toHaveReceivedEventTimes(1)
     })
 })
 test.describe('Multiple tabs on same page', () => {
@@ -232,6 +233,7 @@ test.describe('Multiple tabs on same page', () => {
         await expect(topContent2).toBeVisible()
         await expect(bottomContent).toBeVisible()
     })
+    //TODO: Replace instances of e.evaulate here with the .hasAttribute
     test('it can dynamically add tabs that behave correctly', async ({
         page,
     }) => {
