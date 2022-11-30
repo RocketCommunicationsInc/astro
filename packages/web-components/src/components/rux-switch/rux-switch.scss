@@ -72,7 +72,7 @@
 
         //focus styling
         &:focus-visible + .rux-switch__button {
-            border-radius: var(--spacing-1);
+            border-radius: var(--focus-radius);
             outline: var(--focus-outline);
             outline-offset: var(--focus-offset);
         }

@@ -15,7 +15,7 @@
         color: var(--color-background-interactive-hover);
     }
     &:focus-visible {
-        border-radius: var(--spacing-1);
+        border-radius: var(--focus-radius);
         outline: var(--focus-outline);
         outline-offset: var(--focus-offset);
     }
