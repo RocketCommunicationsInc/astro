@@ -48,6 +48,12 @@ label {
             margin-right: var(--spacing-0);
         }
     }
+
+    &:focus-within {
+        border-radius: var(--focus-radius);
+        outline: var(--focus-outline);
+        outline-offset: var(--focus-offset);
+    }
 }
 
 .rux-checkbox__control {
