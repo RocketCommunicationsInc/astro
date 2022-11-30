@@ -121,13 +121,7 @@ test.describe('Radio-group-with-form', () => {
             path: './tests/utils/formScript.js',
         })
     })
-
-    test('it renders', async ({ page }) => {
-        const el = await page.locator('rux-radio-group').first()
-        await expect(el).toBeVisible()
-        await expect(el).toHaveClass('hydrated')
-    })
-    test('first radio is slected by default', async ({ page }) => {
+    test('first radio is selected by default', async ({ page }) => {
         //Arrange
         const ruxRadio = await page.locator('#ruxRadioDefaultOne').first()
         const ruxRadioInput = ruxRadio.locator('input')
@@ -143,18 +137,11 @@ test.describe('Radio-group-with-form', () => {
         const formButton = form.locator('button[type="submit"]')
         const log = await page.locator('#log')
 
-        //Act
         await ruxRadio.click({
             position: { x: 5, y: 5 },
         })
         await nativeRadio.click()
         await formButton.click()
-
-        //Arrange
-        //const logChildren = log.locator
-
-        //Assert
-        //await expect(log).toBeLessThanOrEqual(2)
         await expect(log).toContainText('ruxColor:blue')
         await expect(log).toContainText('nativeColor:blue')
     })
@@ -170,9 +157,7 @@ test.describe('Radio-group-with-form', () => {
         await expect(ruxRadioInput).toBeDisabled()
 
         //Act
-        await ruxRadio.click({
-            position: { x: 5, y: 5 },
-        })
+        await ruxRadio.click()
 
         //Assert
         await expect(ruxRadioInput).not.toBeChecked()
@@ -206,8 +191,11 @@ test.describe('Radio-group-with-form', () => {
 test.describe('Radio-group', () => {
     test.beforeEach(async ({ page }) => {
         const template = `
-            <rux-radio-group label="hello"></rux-radio-group>
-            <rux-radio-group><div slot="label">hello</div></rux-radio-group>
+        <rux-radio-group label="hello">
+            <rux-radio label="first" value="first"></rux-radio>
+            <rux-radio label="second" value="second"></rux-radio>
+        </rux-radio-group>
+        <rux-radio-group><div slot="label">hello</div></rux-radio-group>
         `
         await page.setContent(template)
     })
@@ -222,8 +210,14 @@ test.describe('Radio-group', () => {
         await expect(labelSlot).toHaveClass('rux-label')
         await expect(labelProp).toHaveClass('rux-label')
     })
+    test('it emits ruxchange event', async ({ page }) => {
+        const secondRadio = page
+            .locator('rux-radio-group')
+            .locator('rux-radio')
+            .nth(1)
+        const changeEvent = await page.spyOnEvent('ruxchange')
+        await secondRadio.click()
+        await expect(changeEvent).toHaveReceivedEventTimes(1)
+        await expect(changeEvent).toHaveReceivedEventDetail('second')
+    })
 })
-/*
-    Need to test: 
-    
-*/
