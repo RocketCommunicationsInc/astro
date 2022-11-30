@@ -66,16 +66,20 @@ export class RuxMonitoringIcon {
     }
 
     handleNotificatonWidth() {
-        const notificationBadge = this.el.shadowRoot?.querySelector(
+        const badge = this.el.shadowRoot!.querySelector(
             '.rux-advanced-status__badge'
-        ) as HTMLElement
-        let badgeWidth: number | undefined = notificationBadge?.clientWidth
-        if (badgeWidth <= 20) {
-            this.el.style.minWidth = '84px'
-        } else if (badgeWidth >= 21 && badgeWidth < 30) {
-            this.el.style.minWidth = '88px'
-        } else {
-            this.el.style.minWidth = '104px'
+        )
+        if (badge) {
+            /** Size and position of the icon. */
+            const iconRect = this.el.getBoundingClientRect()
+            /** Size and position of the badge. */
+            const badgeRect = badge.getBoundingClientRect()
+            /** Offset between the right-edge of the badge and the right-edge of the icon. */
+            const offset = badgeRect.right - iconRect.right
+            // if the offset is greater than zero, increase the minimum width of the badge
+            if (offset > 0) {
+                this.el.style.minWidth = iconRect.width + offset + 'px'
+            }
         }
     }
 
