@@ -11,6 +11,8 @@
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+:host(:not(:focus-within)) {
     contain: content; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
 }
 :host([hidden]) {
