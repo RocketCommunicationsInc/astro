@@ -1,24 +1,6 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
-import {
-    setBodyContent,
-    startTestEnv,
-} from '../../../../tests/utils/_startTestEnv'
 
 test.describe('Monitoring Progress Icon', () => {
-    test('it renders', async ({ page }) => {
-        const template = `
-            <rux-monitoring-progress-icon
-            progress=70
-            max="100"
-            label="Label"
-            sublabel="sublabel"
-            notifications="345678"
-            ></rux-monitoring-progress-icon>
-            `
-        await page.setContent(template)
-        const el = page.locator('rux-monitoring-progress-icon')
-        await expect(el).toHaveClass('hydrated')
-    })
     test('it applies custom range arrays properly', async ({ page }) => {
         const template = `
             <rux-monitoring-progress-icon
