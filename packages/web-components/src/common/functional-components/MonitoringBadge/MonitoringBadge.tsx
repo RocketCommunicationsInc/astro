@@ -41,7 +41,7 @@ const MonitoringBadge: FunctionalComponent<MonitoringBadgeProps> = ({
 }) => (
     <div
         class={`rux-advanced-status__badge ${
-            !notifications ? 'rux-advanced-status__hidden' : ''
+            notifications! > 0 ? '' : 'rux-advanced-status__hidden'
         }`}
         part="monitoring-badge"
     >
