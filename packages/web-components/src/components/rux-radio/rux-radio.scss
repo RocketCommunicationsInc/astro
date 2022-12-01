@@ -25,8 +25,12 @@
     line-height: 1.2;
 
     input[type='radio'] {
-        -webkit-appearance: none;
-        appearance: none;
+        // -webkit-appearance: none;
+        // appearance: none;
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
         margin: 0;
 
         + label {

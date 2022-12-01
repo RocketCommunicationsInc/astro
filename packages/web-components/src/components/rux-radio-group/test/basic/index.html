@@ -39,19 +39,27 @@
 
     <body>
         <section>
+            <h2>Plain</h2>
+            <div role="radiogroup">
+                <input type="radio" name="thing1" value="1" />
+                <input type="radio" name="thing1" value="2" />
+                <input type="radio" name="thing1" value="3" />
+            </div>
+        </section>
+        <section>
             <h2>Default</h2>
             <rux-radio-group>
-                <rux-radio name="radio1" value="1"></rux-radio>
-                <rux-radio name="radio1" value="2"></rux-radio>
-                <rux-radio name="radio1" value="3"></rux-radio>
+                <rux-radio name="radio1" role="radio" value="1"></rux-radio>
+                <rux-radio name="radio1" role="radio" value="2"></rux-radio>
+                <rux-radio name="radio1" role="radio" value="3"></rux-radio>
             </rux-radio-group>
         </section>
         <section>
             <h2>Types</h2>
-            <rux-radio-group label="Label Here">
-                <rux-radio label="Label Here"></rux-radio>
-                <rux-radio label="Label Here"></rux-radio>
-                <rux-radio label="Label Here"></rux-radio>
+            <rux-radio-group label="Label Here" name="radio2">
+                <rux-radio label="Label Here" value="1"></rux-radio>
+                <rux-radio label="Label Here" value="2"></rux-radio>
+                <rux-radio label="Label Here" value="3"></rux-radio>
             </rux-radio-group>
             <rux-radio-group label="Required" required>
                 <rux-radio label="Label Here"></rux-radio>
