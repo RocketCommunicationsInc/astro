@@ -42,9 +42,9 @@
         padding: var(--spacing-3) var(--spacing-2); //12px 8px
     }
 
-    &:focus {
-        border-color: var(--color-background-interactive-hover);
-        outline: none;
+    &:focus-visible {
+        outline: var(--focus-outline);
+        outline-offset: var(--focus-offset);
     }
     &:hover {
         border-color: var(--color-background-interactive-hover);

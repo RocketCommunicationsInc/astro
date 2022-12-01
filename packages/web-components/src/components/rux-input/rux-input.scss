@@ -112,8 +112,6 @@
             background-size: 1.05rem;
         }
         &--focused {
-            box-shadow: var(--color-background-interactive-hover) 0 0 0 1px
-                inset;
             outline: var(--focus-outline);
             outline-offset: var(--focus-offset);
         }
