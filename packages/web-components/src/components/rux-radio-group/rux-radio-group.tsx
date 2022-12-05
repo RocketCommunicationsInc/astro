@@ -87,6 +87,7 @@ export class RuxRadioGroup implements FormFieldInterface {
     connectedCallback() {
         this._handleClick = this._handleClick.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
+        this._handleKeyDown = this._handleKeyDown.bind(this)
     }
 
     disconnectedCallback() {
@@ -106,6 +107,7 @@ export class RuxRadioGroup implements FormFieldInterface {
         }
 
         this._handleSlotChange()
+        this.el.addEventListener('keydown', this._handleKeyDown)
     }
 
     get hasLabel() {
@@ -135,6 +137,47 @@ export class RuxRadioGroup implements FormFieldInterface {
         this.hasLabelSlot = hasSlot(this.el, 'label')
         this.hasErrorSlot = hasSlot(this.el, 'error-text')
         this.hasHelpSlot = hasSlot(this.el, 'help-text')
+    }
+
+    private _handleKeyDown(event: KeyboardEvent) {
+        if (
+            !['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', ' '].includes(
+                event.key
+            )
+        ) {
+            return
+        }
+
+        //const radios = this.getAllRadios().filter(radio => !radio.disabled);
+        const radios = Array.from(
+            this.el.querySelectorAll('rux-radio')
+        ) as HTMLRuxRadioElement[]
+        const checkedRadio = radios.find((radio) => radio.checked) ?? radios[0]
+        const incr =
+            event.key === ' '
+                ? 0
+                : ['ArrowUp', 'ArrowLeft'].includes(event.key)
+                ? -1
+                : 1
+        let index = radios.indexOf(checkedRadio) + incr
+        if (index < 0) {
+            index = radios.length - 1
+        }
+        if (index > radios.length - 1) {
+            index = 0
+        }
+
+        radios.forEach((radio) => {
+            radio.checked = false
+            radio.tabIndex = -1
+        })
+
+        this.value = radios[index].value
+        radios[index].checked = true
+        radios[index].tabIndex = 0
+        radios[index].focus()
+
+        event.preventDefault()
     }
 
     render() {

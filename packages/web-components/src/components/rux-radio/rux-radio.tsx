@@ -59,6 +59,13 @@ export class RuxRadio {
     handleLabelChange() {
         this._handleSlotChange()
     }
+
+    @Watch('checked')
+    handleCheckedChange() {
+        this.el.setAttribute('aria-checked', this.checked ? 'true' : 'false')
+        this.el.setAttribute('tabindex', this.checked ? '0' : '-1')
+    }
+
     /**
      * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
      */
@@ -73,6 +80,7 @@ export class RuxRadio {
             this._syncFromGroup()
             this.radioGroup.addEventListener('ruxchange', this._syncFromGroup)
         }
+        this._setInitialAttributes()
     }
 
     componentWillLoad() {
@@ -114,6 +122,12 @@ export class RuxRadio {
         return this.label ? true : this.hasLabelSlot
     }
 
+    private _setInitialAttributes() {
+        this.el.setAttribute('role', 'radio')
+        this.el.setAttribute('tabindex', '-1')
+        this.el.setAttribute('aria-disabled', this.disabled ? 'true' : 'false')
+    }
+
     render() {
         const {
             label,
@@ -121,15 +135,37 @@ export class RuxRadio {
             checked,
             disabled,
             name,
-            value,
             _onChange,
             _onBlur,
             hasLabel,
         } = this
 
         return (
-            <Host role="radio" value={value} name={name}>
-                <div class="rux-form-field" part="form-field">
+            <Host>
+                {/* <div class="rux-form-field" part="form-field"> */}
+                <span class="rux-radio">
+                    <input
+                        type="radio"
+                        id={radioId}
+                        disabled={disabled}
+                        checked={checked}
+                        onChange={_onChange}
+                        onBlur={_onBlur}
+                        name={name}
+                    ></input>
+                    <label
+                        htmlFor={radioId}
+                        part="label"
+                        class={{
+                            'rux-radio--no-label': !hasLabel,
+                        }}
+                    >
+                        <slot>{label}</slot>
+                    </label>
+                </span>
+                {/* </div> */}
+
+                {/* <div class="rux-form-field" part="form-field">
                     <div class="rux-radio">
                         <input
                             type="radio"
@@ -149,7 +185,7 @@ export class RuxRadio {
                             <slot>{label}</slot>
                         </label>
                     </div>
-                </div>
+                </div> */}
             </Host>
         )
     }
