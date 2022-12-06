@@ -81,8 +81,14 @@ export class RuxTabs {
         this._setTab(selectedTab)
     }
 
-    private _onClick(e: MouseEvent) {
-        const tab = e.target as HTMLRuxTabElement
+    private _onPress(e: KeyboardEvent) {
+        e.key === 'Enter' ? this._onClick(e) : null
+    }
+
+    private _onClick(e: KeyboardEvent | MouseEvent) {
+        const target = e.target as HTMLElement
+        //get the tab in case complex html is nested inside rux-tab
+        const tab = target.closest('rux-tab') as HTMLRuxTabElement
         this.ruxSelected.emit(tab)
         if (
             tab.getAttribute('role') === 'tab' &&
@@ -123,7 +129,11 @@ export class RuxTabs {
 
     render() {
         return (
-            <Host onClick={(e: MouseEvent) => this._onClick(e)}>
+            <Host
+                onClick={(e: MouseEvent) => this._onClick(e)}
+                onKeyPress={(e: KeyboardEvent) => this._onPress(e)}
+                role="tablist"
+            >
                 <slot></slot>
             </Host>
         )
