@@ -142,28 +142,28 @@ export class RuxRadio {
 
         return (
             <Host>
-                {/* <div class="rux-form-field" part="form-field"> */}
-                <span class="rux-radio">
-                    <input
-                        type="radio"
-                        id={radioId}
-                        disabled={disabled}
-                        checked={checked}
-                        onChange={_onChange}
-                        onBlur={_onBlur}
-                        name={name}
-                    ></input>
-                    <label
-                        htmlFor={radioId}
-                        part="label"
-                        class={{
-                            'rux-radio--no-label': !hasLabel,
-                        }}
-                    >
-                        <slot>{label}</slot>
-                    </label>
-                </span>
-                {/* </div> */}
+                <div class="rux-form-field" part="form-field">
+                    <span class="rux-radio">
+                        <input
+                            type="radio"
+                            id={radioId}
+                            disabled={disabled}
+                            checked={checked}
+                            onChange={_onChange}
+                            onBlur={_onBlur}
+                            name={name}
+                        ></input>
+                        <label
+                            htmlFor={radioId}
+                            part="label"
+                            class={{
+                                'rux-radio--no-label': !hasLabel,
+                            }}
+                        >
+                            <slot>{label}</slot>
+                        </label>
+                    </span>
+                </div>
 
                 {/* <div class="rux-form-field" part="form-field">
                     <div class="rux-radio">

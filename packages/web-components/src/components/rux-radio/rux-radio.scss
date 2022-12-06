@@ -7,6 +7,11 @@
 
     display: inline-block;
     box-sizing: border-box;
+    &:focus-within {
+        border-radius: var(--focus-radius);
+        outline: var(--focus-outline);
+        outline-offset: var(--focus-offset);
+    }
 }
 
 .rux-form-field {
