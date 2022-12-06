@@ -15,7 +15,8 @@ let id = 0
 
 /**
  * @slot (default) - The radio label
- * @part form-field - the form field of the radio
+ * @part field - the field of the radio
+ * @part control - the control of the radio
  * @part label - the label of the radio
  */
 
@@ -25,7 +26,7 @@ let id = 0
     shadow: true,
 })
 export class RuxRadio {
-    private radioId = `rux-radio-${++id}`
+    //private radioId = `rux-radio-${++id}`
     private radioGroup: HTMLRuxRadioGroupElement | null = null
 
     @Element() el!: HTMLRuxRadioElement
@@ -71,17 +72,17 @@ export class RuxRadio {
      */
     @Event({ eventName: 'ruxblur' }) ruxBlur!: EventEmitter
 
-    connectedCallback() {
-        this._onChange = this._onChange.bind(this)
-        this._handleSlotChange = this._handleSlotChange.bind(this)
-        this.radioGroup = this.el.closest('rux-radio-group')
-        this._syncFromGroup = this._syncFromGroup.bind(this)
-        if (this.radioGroup) {
-            this._syncFromGroup()
-            this.radioGroup.addEventListener('ruxchange', this._syncFromGroup)
-        }
-        this._setInitialAttributes()
-    }
+    // connectedCallback() {
+    //     //this._onChange = this._onChange.bind(this)
+    //     this._handleSlotChange = this._handleSlotChange.bind(this)
+    //     this.radioGroup = this.el.closest('rux-radio-group')
+    //     this._syncFromGroup = this._syncFromGroup.bind(this)
+    //     if (this.radioGroup) {
+    //         this._syncFromGroup()
+    //         this.radioGroup.addEventListener('ruxchange', this._syncFromGroup)
+    //     }
+    //     this._setInitialAttributes()
+    // }
 
     componentWillLoad() {
         this._handleSlotChange()
@@ -109,83 +110,43 @@ export class RuxRadio {
         }
     }
 
-    private _onChange(e: Event): void {
-        const target = e.target as HTMLInputElement
-        this.checked = target.checked
-    }
+    // private _onChange(e: Event): void {
+    //     const target = e.target as HTMLInputElement
+    //     this.checked = target.checked
+    // }
 
-    private _onBlur = () => {
-        this.ruxBlur.emit()
-    }
+    // private _onBlur = () => {
+    //     this.ruxBlur.emit()
+    // }
 
     get hasLabel() {
         return this.label ? true : this.hasLabelSlot
     }
 
-    private _setInitialAttributes() {
-        this.el.setAttribute('role', 'radio')
-        this.el.setAttribute('tabindex', '-1')
-        this.el.setAttribute('aria-disabled', this.disabled ? 'true' : 'false')
-    }
+    // private _setInitialAttributes() {
+    //     this.el.setAttribute('role', 'radio')
+    //     this.el.setAttribute('tabindex', '-1')
+    //     this.el.setAttribute('aria-disabled', this.disabled ? 'true' : 'false')
+    // }
 
     render() {
-        const {
-            label,
-            radioId,
-            checked,
-            disabled,
-            name,
-            _onChange,
-            _onBlur,
-            hasLabel,
-        } = this
+        const { label, hasLabel } = this
 
         return (
             <Host>
-                <div class="rux-form-field" part="form-field">
-                    <span class="rux-radio">
-                        <input
-                            type="radio"
-                            id={radioId}
-                            disabled={disabled}
-                            checked={checked}
-                            onChange={_onChange}
-                            onBlur={_onBlur}
-                            name={name}
-                        ></input>
-                        <label
-                            htmlFor={radioId}
-                            part="label"
-                            class={{
-                                'rux-radio--no-label': !hasLabel,
-                            }}
-                        >
-                            <slot>{label}</slot>
-                        </label>
+                <span part="field" role="radio">
+                    <span part="control">
+                        <span part="tick"></span>
                     </span>
-                </div>
-
-                {/* <div class="rux-form-field" part="form-field">
-                    <div class="rux-radio">
-                        <input
-                            type="radio"
-                            id={radioId}
-                            disabled={disabled}
-                            checked={checked}
-                            onChange={_onChange}
-                            onBlur={_onBlur}
-                        />
-                        <label
-                            htmlFor={radioId}
-                            part="label"
-                            class={{
-                                'rux-radio--no-label': !hasLabel,
-                            }}
-                        >
-                            <slot>{label}</slot>
-                        </label>
-                    </div>
-                </div> */}
+                    <span
+                        part="label"
+                        class={{
+                            'rux-radio--no-label': !hasLabel,
+                        }}
+                    >
+                        <slot>{label}</slot>
+                    </span>
+                </span>
             </Host>
         )
     }

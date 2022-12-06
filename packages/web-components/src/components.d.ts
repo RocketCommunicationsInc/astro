@@ -12258,6 +12258,28 @@ export namespace Components {
          */
         "value"?: any | null;
     }
+    interface RuxRadioOld {
+        /**
+          * Toggles checked state of a radio
+         */
+        "checked": boolean;
+        /**
+          * Disables the radio via HTML disabled attribute. Radio takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
+         */
+        "disabled": boolean;
+        /**
+          * The radio label text. For HTML content, use the default slot instead.
+         */
+        "label"?: string;
+        /**
+          * The radio name
+         */
+        "name": string;
+        /**
+          * The radio value
+         */
+        "value": string;
+    }
     interface RuxRuler {
         "end": string;
         "interval": any;
@@ -12639,6 +12661,10 @@ export interface RuxRadioCustomEvent<T> extends CustomEvent<T> {
 export interface RuxRadioGroupCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxRadioGroupElement;
+}
+export interface RuxRadioOldCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxRadioOldElement;
 }
 export interface RuxSegmentedButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -19187,6 +19213,12 @@ declare global {
         prototype: HTMLRuxRadioGroupElement;
         new (): HTMLRuxRadioGroupElement;
     };
+    interface HTMLRuxRadioOldElement extends Components.RuxRadioOld, HTMLStencilElement {
+    }
+    var HTMLRuxRadioOldElement: {
+        prototype: HTMLRuxRadioOldElement;
+        new (): HTMLRuxRadioOldElement;
+    };
     interface HTMLRuxRulerElement extends Components.RuxRuler, HTMLStencilElement {
     }
     var HTMLRuxRulerElement: {
@@ -20417,6 +20449,7 @@ declare global {
         "rux-push-button": HTMLRuxPushButtonElement;
         "rux-radio": HTMLRuxRadioElement;
         "rux-radio-group": HTMLRuxRadioGroupElement;
+        "rux-radio-old": HTMLRuxRadioOldElement;
         "rux-ruler": HTMLRuxRulerElement;
         "rux-segmented-button": HTMLRuxSegmentedButtonElement;
         "rux-select": HTMLRuxSelectElement;
@@ -32757,6 +32790,32 @@ declare namespace LocalJSX {
          */
         "value"?: any | null;
     }
+    interface RuxRadioOld {
+        /**
+          * Toggles checked state of a radio
+         */
+        "checked"?: boolean;
+        /**
+          * Disables the radio via HTML disabled attribute. Radio takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
+         */
+        "disabled"?: boolean;
+        /**
+          * The radio label text. For HTML content, use the default slot instead.
+         */
+        "label"?: string;
+        /**
+          * The radio name
+         */
+        "name"?: string;
+        /**
+          * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
+         */
+        "onRuxblur"?: (event: RuxRadioOldCustomEvent<any>) => void;
+        /**
+          * The radio value
+         */
+        "value"?: string;
+    }
     interface RuxRuler {
         "end"?: string;
         "interval"?: any;
@@ -34235,6 +34294,7 @@ declare namespace LocalJSX {
         "rux-push-button": RuxPushButton;
         "rux-radio": RuxRadio;
         "rux-radio-group": RuxRadioGroup;
+        "rux-radio-old": RuxRadioOld;
         "rux-ruler": RuxRuler;
         "rux-segmented-button": RuxSegmentedButton;
         "rux-select": RuxSelect;
@@ -35350,6 +35410,7 @@ declare module "@stencil/core" {
             "rux-push-button": LocalJSX.RuxPushButton & JSXBase.HTMLAttributes<HTMLRuxPushButtonElement>;
             "rux-radio": LocalJSX.RuxRadio & JSXBase.HTMLAttributes<HTMLRuxRadioElement>;
             "rux-radio-group": LocalJSX.RuxRadioGroup & JSXBase.HTMLAttributes<HTMLRuxRadioGroupElement>;
+            "rux-radio-old": LocalJSX.RuxRadioOld & JSXBase.HTMLAttributes<HTMLRuxRadioOldElement>;
             "rux-ruler": LocalJSX.RuxRuler & JSXBase.HTMLAttributes<HTMLRuxRulerElement>;
             "rux-segmented-button": LocalJSX.RuxSegmentedButton & JSXBase.HTMLAttributes<HTMLRuxSegmentedButtonElement>;
             "rux-select": LocalJSX.RuxSelect & JSXBase.HTMLAttributes<HTMLRuxSelectElement>;

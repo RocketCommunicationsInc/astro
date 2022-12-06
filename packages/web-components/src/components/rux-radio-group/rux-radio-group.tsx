@@ -115,9 +115,19 @@ export class RuxRadioGroup implements FormFieldInterface {
     }
 
     private _handleClick(e: MouseEvent) {
+        const radios = Array.from(
+            this.el.querySelectorAll('rux-radio')
+        ) as HTMLRuxRadioElement[]
         const selectedRadio =
             e.target && (e.target as HTMLElement).closest('rux-radio')
+        if (selectedRadio?.hasAttribute('checked')) return
+
+        radios.forEach((radio) => {
+            radio.removeAttribute('checked')
+        })
+
         if (selectedRadio && !selectedRadio.disabled) {
+            selectedRadio.setAttribute('checked', '')
             const oldValue = this.value
             const newValue = selectedRadio.value
             if (newValue !== oldValue) {

@@ -1,12 +1,18 @@
-:host {
-    *,
-    *::before,
-    *::after {
-        box-sizing: inherit;
-    }
-
-    display: inline-block;
+*,
+*::before,
+*::after {
     box-sizing: border-box;
+}
+
+:host {
+    display: inline-flex;
+    flex-direction: column;
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
+    font-weight: var(--font-control-body-1-font-weight);
+    color: var(--color-text-primary);
+
     &:focus-within {
         border-radius: var(--focus-radius);
         outline: var(--focus-outline);
@@ -14,15 +20,42 @@
     }
 }
 
-.rux-form-field {
+:host::part(field) {
     display: flex;
-    flex-direction: column;
-    font-family: var(--font-control-body-1-font-family);
-    font-size: var(--font-control-body-1-font-size);
-    letter-spacing: var(--font-control-body-1-letter-spacing);
-    font-weight: var(--font-control-body-1-font-weight);
-    color: var(--color-text-primary);
+    gap: calc(2.5 * var(--spacing-1));
+    align-items: center;
 }
+
+:host::part(control) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--size);
+    width: var(--size);
+    border: 1px solid var(--color-border-interactive-muted);
+    border-radius: var(--radius-circle);
+    background-color: var(--color-background-base-default);
+    cursor: pointer;
+
+    --size: calc(5 * var(--spacing-1));
+    --gap: calc(2.5 * var(--spacing-1));
+}
+
+:host::part(tick) {
+    border-color: var(--color-border-interactive-muted);
+    height: var(--spacing-2);
+    width: var(--spacing-2);
+    border-radius: var(--radius-circle);
+}
+
+:host([checked])::part(tick) {
+    background-color: var(--color-background-interactive-default);
+}
+
+:host::part(label) {
+    cursor: pointer;
+}
+//THIS DOES NOTHING!!!
 
 .rux-radio {
     display: flex;
