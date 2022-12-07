@@ -90,6 +90,10 @@ export class RuxRadioGroup implements FormFieldInterface {
         this._handleSlotChange = this._handleSlotChange.bind(this)
     }
 
+    componentDidLoad() {
+        this.setRadioTabindex(this.value)
+    }
+
     disconnectedCallback() {
         this.el!.shadowRoot!.removeEventListener(
             'slotchange',
@@ -140,6 +144,29 @@ export class RuxRadioGroup implements FormFieldInterface {
 
     private getRadios(): HTMLRuxRadioElement[] {
         return Array.from(this.el.querySelectorAll('rux-radio'))
+    }
+
+    private setRadioTabindex = (value: any | undefined) => {
+        const radios = this.getRadios()
+
+        // Get the first radio that is not disabled and the checked one
+        const first = radios.find((radio) => !radio.disabled)
+        const checked = radios.find(
+            (radio) => radio.value === value && !radio.disabled
+        )
+
+        if (!first && !checked) {
+            return
+        }
+
+        // If an enabled checked radio exists, set it to be the focusable radio
+        // otherwise we default to focus the first radio
+        const focusable = checked || first
+
+        for (const radio of radios) {
+            const tabindex = radio === focusable ? 0 : -1
+            radio.setButtonTabindex(tabindex)
+        }
     }
 
     @Listen('keydown', { target: 'document' })

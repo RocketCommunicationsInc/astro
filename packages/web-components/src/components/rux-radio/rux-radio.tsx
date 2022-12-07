@@ -34,6 +34,12 @@ export class RuxRadio {
     @State() hasLabelSlot = false
 
     /**
+     * The tabindex of the radio button.
+     * @internal
+     */
+    @State() buttonTabindex = -1
+
+    /**
      * The radio name
      */
     @Prop() name = ''
@@ -72,6 +78,12 @@ export class RuxRadio {
         ev.preventDefault()
 
         this.inputEl?.focus()
+    }
+
+    /** @internal */
+    @Method()
+    async setButtonTabindex(value: number) {
+        this.buttonTabindex = value
     }
 
     connectedCallback() {
@@ -135,6 +147,7 @@ export class RuxRadio {
             _onChange,
             _onBlur,
             hasLabel,
+            buttonTabindex,
         } = this
 
         return (
@@ -147,6 +160,7 @@ export class RuxRadio {
                         disabled={disabled}
                         checked={checked}
                         value={value}
+                        tabindex={buttonTabindex}
                         onChange={_onChange}
                         onBlur={_onBlur}
                         ref={(el) => (this.inputEl = el)}
