@@ -55,6 +55,44 @@ export class RuxTabs {
         }
     }
 
+    @Listen('keydown', { target: 'document' })
+    onKeydown(e: any) {
+        if (e.target && !this.el.contains(e.target)) {
+            return
+        }
+
+        // Get all tabs inside of the radio group and then
+        // filter out disabled radios since we need to skip those
+        const tabs = this._tabs.filter((tab) => !tab.disabled)
+
+        // Only move the radio if the current focus is in the radio group
+        if (e.target && tabs.includes(e.target)) {
+            const index = tabs.findIndex((tab) => tab === e.target)
+
+            let next
+
+            // If hitting arrow down or arrow right, move to the next radio
+            // If we're on the last radio, move to the first radio
+            if (['ArrowDown', 'ArrowRight'].includes(e.code)) {
+                next = index === tabs.length - 1 ? tabs[0] : tabs[index + 1]
+            }
+
+            // If hitting arrow up or arrow left, move to the previous radio
+            // If we're on the first radio, move to the last radio
+            if (['ArrowUp', 'ArrowLeft'].includes(e.code)) {
+                next = index === 0 ? tabs[tabs.length - 1] : tabs[index - 1]
+            }
+
+            if (next && tabs.includes(next)) {
+                console.log(next)
+                const nextFocus = next.shadowRoot?.querySelector(
+                    '.rux-tab'
+                ) as HTMLElement
+                nextFocus.focus()
+            }
+        }
+    }
+
     /**
      * Fires whenever a new tab is selected, and emits the selected tab on the event.detail.
      */
@@ -66,6 +104,7 @@ export class RuxTabs {
 
     private _addTabs() {
         this._tabs = Array.from(this.el.querySelectorAll('rux-tab'))
+        console.log(this._tabs)
     }
 
     private _registerPanels(e: CustomEvent) {
