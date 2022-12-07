@@ -71,7 +71,7 @@ export class RuxRadioGroup implements FormFieldInterface {
      * The <rux-radio> elements contained by the <rux-radio-group> element.
      */
     @Prop({ mutable: true }) options: HTMLRuxRadioElement[] = [
-        ...this.el.querySelectorAll<HTMLRuxRadioElement>('rux-radio-input'),
+        ...this.el.querySelectorAll<HTMLRuxRadioElement>('rux-radio'),
     ]
 
     /**
@@ -119,8 +119,9 @@ export class RuxRadioGroup implements FormFieldInterface {
     }
 
     connectedCallback() {
-        this._handleClick = this._handleClick.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
+        //     this._getRadioOptions = this._getRadioOptions.bind(this)
+        //     this.options = this._getRadioOptions()
     }
 
     disconnectedCallback() {
@@ -137,6 +138,10 @@ export class RuxRadioGroup implements FormFieldInterface {
 
         const target = this.el
 
+        this.options = this._getRadioOptions()
+
+        //console.log(this.options)
+
         /** Listen to clicks on `<rux-radio>` to handle selection changes. */
         const onClick = (event: PointerEvent) => {
             const currentOption = this.selectedOption
@@ -144,13 +149,15 @@ export class RuxRadioGroup implements FormFieldInterface {
 
             // do not continue if the current option is nominated
             if (currentOption === nomineeOption) return
+            if (nomineeOption.hasAttribute('disabled')) return
 
             // set the selected option to be the candidate
             this.selectedOption = nomineeOption
         }
 
         const onMutation = () => {
-            this.options = [...target.querySelectorAll('rux-radio')]
+            // this.options = [...target.querySelectorAll('rux-radio')]
+            this.options = this._getRadioOptions()
 
             this.selectedOption = this.options.find(isChecked) || null
 
@@ -178,26 +185,11 @@ export class RuxRadioGroup implements FormFieldInterface {
         return this.label ? true : this.hasLabelSlot
     }
 
-    private _handleClick(e: MouseEvent) {
-        const radios = Array.from(
-            this.el.querySelectorAll('rux-radio')
-        ) as HTMLRuxRadioElement[]
-        const selectedRadio =
-            e.target && (e.target as HTMLElement).closest('rux-radio')
-        if (selectedRadio?.getAttribute('aria-checked') === 'true') return
-
-        radios.forEach((radio) => {
-            radio.setAttribute('aria-checked', 'false')
-        })
-
-        if (selectedRadio && !selectedRadio.disabled) {
-            selectedRadio.setAttribute('aria-checked', 'true')
-            const oldValue = this.value
-            const newValue = selectedRadio.value
-            if (newValue !== oldValue) {
-                this.value = newValue
-            }
-        }
+    //removes options from the list that have a disabled state
+    private _getRadioOptions() {
+        const radios = this.options
+        const options = radios.filter((radio) => radio.disabled === false)
+        return options
     }
 
     private _selectedRadioIsDisabled(): boolean {
@@ -249,13 +241,19 @@ export class RuxRadioGroup implements FormFieldInterface {
         // do nothing if any modifier keys are pressed
         if (event.altKey || event.ctrlKey || event.metaKey) return
 
-        // do nothing if the key is not an arrow
-        if (!event.key.startsWith('Arrow')) return
-
         const currentRadio = event.target.closest('rux-radio')
 
         // do nothing if the target is not a radio
         if (!currentRadio) return
+
+        if (event.key === ' ') {
+            if (currentRadio.hasAttribute('checked')) return
+            currentRadio.setAttribute('checked', '')
+            this.selectedOption = currentRadio
+        }
+
+        // do nothing if the key is not an arrow
+        if (!event.key.startsWith('Arrow')) return
 
         event.preventDefault()
 
@@ -264,59 +262,21 @@ export class RuxRadioGroup implements FormFieldInterface {
 
         const barrierIndex = this.options.length - 1
         const currentIndex = this.options.indexOf(currentRadio)
-        const nomineeIndex = focusPreviousRadio
-            ? currentIndex === 0
-                ? barrierIndex
-                : currentIndex - 1
-            : currentIndex === barrierIndex
-            ? 0
-            : currentIndex + 1
+        let nomineeIndex
+        if (focusPreviousRadio) {
+            nomineeIndex = currentIndex === 0 ? barrierIndex : currentIndex - 1
+        } else {
+            nomineeIndex = currentIndex === barrierIndex ? 0 : currentIndex + 1
+        }
 
         const nomineeRadio = this.options[nomineeIndex]
+
+        if (nomineeRadio.hasAttribute('disabled')) return
 
         nomineeRadio.focus()
 
         // set the selected option to be the nominated radio
         this.selectedOption = nomineeRadio
-
-        // if (
-        //     !['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', ' '].includes(
-        //         event.key
-        //     )
-        // ) {
-        //     return
-        // }
-
-        // //const radios = this.getAllRadios().filter(radio => !radio.disabled);
-        // const radios = Array.from(
-        //     this.el.querySelectorAll('rux-radio')
-        // ) as HTMLRuxRadioElement[]
-        // const checkedRadio = radios.find((radio) => radio.checked) ?? radios[0]
-        // const incr =
-        //     event.key === ' '
-        //         ? 0
-        //         : ['ArrowUp', 'ArrowLeft'].includes(event.key)
-        //         ? -1
-        //         : 1
-        // let index = radios.indexOf(checkedRadio) + incr
-        // if (index < 0) {
-        //     index = radios.length - 1
-        // }
-        // if (index > radios.length - 1) {
-        //     index = 0
-        // }
-
-        // radios.forEach((radio) => {
-        //     radio.checked = false
-        //     radio.tabIndex = -1
-        // })
-
-        // this.value = radios[index].value
-        // radios[index].checked = true
-        // radios[index].tabIndex = 0
-        // radios[index].focus()
-
-        // event.preventDefault()
     }
 
     render() {

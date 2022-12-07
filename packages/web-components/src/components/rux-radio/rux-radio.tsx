@@ -70,17 +70,16 @@ export class RuxRadio {
      */
     @Event({ eventName: 'ruxblur' }) ruxBlur!: EventEmitter
 
-    // connectedCallback() {
-    //     //this._onChange = this._onChange.bind(this)
-    //     this._handleSlotChange = this._handleSlotChange.bind(this)
-    //     this.radioGroup = this.el.closest('rux-radio-group')
-    //     this._syncFromGroup = this._syncFromGroup.bind(this)
-    //     if (this.radioGroup) {
-    //         this._syncFromGroup()
-    //         this.radioGroup.addEventListener('ruxchange', this._syncFromGroup)
-    //     }
-    //     this._setInitialAttributes()
-    // }
+    connectedCallback() {
+        //this._onChange = this._onChange.bind(this)
+        this._handleSlotChange = this._handleSlotChange.bind(this)
+        this.radioGroup = this.el.closest('rux-radio-group')
+        this._syncFromGroup = this._syncFromGroup.bind(this)
+        if (this.radioGroup) {
+            this._syncFromGroup()
+            this.radioGroup.addEventListener('ruxchange', this._syncFromGroup)
+        }
+    }
 
     componentWillLoad() {
         this._handleSlotChange()
@@ -108,24 +107,9 @@ export class RuxRadio {
         }
     }
 
-    // private _onChange(e: Event): void {
-    //     const target = e.target as HTMLInputElement
-    //     this.checked = target.checked
-    // }
-
-    // private _onBlur = () => {
-    //     this.ruxBlur.emit()
-    // }
-
     get hasLabel() {
         return this.label ? true : this.hasLabelSlot
     }
-
-    // private _setInitialAttributes() {
-    //     this.el.setAttribute('role', 'radio')
-    //     this.el.setAttribute('tabindex', '-1')
-    //     this.el.setAttribute('aria-disabled', this.disabled ? 'true' : 'false')
-    // }
 
     render() {
         const { label, hasLabel } = this

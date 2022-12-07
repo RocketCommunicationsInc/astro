@@ -23,7 +23,10 @@
             rel="stylesheet"
             href="../../../../../dist/astro-web-components/astro-web-components.css"
         />
-        <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
+        <script
+            type="module"
+            src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"
+        ></script>
         <link rel="stylesheet" href="../../../../../src/global/test.css" />
     </head>
     <style>
@@ -49,9 +52,9 @@
         <section>
             <h2>Default</h2>
             <rux-radio-group>
-                <rux-radio value="1"></rux-radio>
+                <rux-radio value="1" disabled></rux-radio>
                 <rux-radio value="2"></rux-radio>
-                <rux-radio value="3"></rux-radio>
+                <rux-radio value="3" disabled></rux-radio>
             </rux-radio-group>
         </section>
         <section>
@@ -62,7 +65,7 @@
                 <rux-radio label="Label Here" value="3"></rux-radio>
             </rux-radio-group>
             <rux-radio-group label="Required" required>
-                <rux-radio label="Label Here"></rux-radio>
+                <rux-radio label="Label Here" disabled></rux-radio>
                 <rux-radio label="Label Here"></rux-radio>
                 <rux-radio label="Label Here"></rux-radio>
             </rux-radio-group>
@@ -93,6 +96,22 @@
                 <rux-radio value="2">two</rux-radio>
                 <rux-radio value="3">three</rux-radio>
             </rux-radio-group>
+        </section>
+        <section>
+            <h2>Figma Testing</h2>
+            <ftl-belt
+                access-token="figd_d3En6fwBtgfNaac5s9sWQd_cXerUZBChhG2lY4CR"
+                file-id="Uc7TgjqqYKwCU72jt4pa3X"
+            >
+                <ftl-holster name="Test 1 Name" node="24750:114773">
+                    <rux-radio-group name="figmaRadio">
+                        <rux-radio label="Radio button" value="1"></rux-radio>
+                        <rux-radio label="Radio button" value="2"></rux-radio>
+                        <rux-radio label="Radio button" value="3"></rux-radio>
+                        <rux-radio label="Radio button" value="4"></rux-radio>
+                    </rux-radio-group>
+                </ftl-holster>
+            </ftl-belt>
         </section>
     </body>
 </html>

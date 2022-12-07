@@ -5,11 +5,11 @@
 }
 
 :host {
-    display: inline-flex;
+    display: flex;
 
     align-items: center;
-    flex-direction: column;
-    gap: calc(2.5 * var(--spacing-1));
+    flex-direction: row;
+    gap: calc(2 * var(--spacing-1));
 
     font-family: var(--font-control-body-1-font-family);
     font-size: var(--font-control-body-1-font-size);
@@ -24,7 +24,18 @@
     --tick-color: var(--color-background-interactive-default);
 }
 
-:host(:focus) {
+:host([disabled]) {
+    cursor: not-allowed;
+    opacity: var(--opacity-disabled);
+    & span {
+        pointer-events: none;
+    }
+    &::part(label) {
+        cursor: not-allowed;
+    }
+}
+
+:host(:focus-visible) {
     border-radius: var(--focus-radius);
     outline: var(--focus-outline);
     outline-offset: var(--focus-offset);
@@ -49,9 +60,10 @@
     background-color: var(--color-background-base-default);
     border-radius: var(--radius-circle);
     box-shadow: var(--border-color) 0 0 0 1px;
+    margin: calc(3 * var(--spacing-025));
     cursor: pointer;
 
-    --size: calc(5 * var(--spacing-1));
+    --size: calc(4.5 * var(--spacing-1));
     --border-color: var(--control-border-color);
 }
 
@@ -155,28 +167,6 @@
 //                 }
 //             }
 //         }
-
-//         &:disabled {
-//             + label {
-//                 cursor: not-allowed;
-//                 opacity: var(--opacity-disabled);
-//             }
-//         }
-
-//         &:not(:disabled) {
-//             &:hover,
-//             &:checked:hover {
-//                 + label {
-//                     &::before {
-//                         border-color: var(--color-background-interactive-hover);
-//                     }
-//                     &::after {
-//                         background-color: var(
-//                             --color-background-interactive-default
-//                         );
-//                     }
-//                 }
-//             }
 //             &:focus-visible,
 //             &:checked:focus-visible {
 //                 + label {
