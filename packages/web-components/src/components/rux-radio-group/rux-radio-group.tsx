@@ -5,6 +5,7 @@ import {
     Event,
     EventEmitter,
     Component,
+    Listen,
     State,
     Host,
     h,
@@ -135,6 +136,46 @@ export class RuxRadioGroup implements FormFieldInterface {
         this.hasLabelSlot = hasSlot(this.el, 'label')
         this.hasErrorSlot = hasSlot(this.el, 'error-text')
         this.hasHelpSlot = hasSlot(this.el, 'help-text')
+    }
+
+    private getRadios(): HTMLRuxRadioElement[] {
+        return Array.from(this.el.querySelectorAll('rux-radio'))
+    }
+
+    @Listen('keydown', { target: 'document' })
+    onKeydown(ev: any) {
+        if (ev.target && !this.el.contains(ev.target)) {
+            return
+        }
+
+        // Get all radios inside of the radio group and then
+        // filter out disabled radios since we need to skip those
+        const radios = this.getRadios().filter((radio) => !radio.disabled)
+
+        // Only move the radio if the current focus is in the radio group
+        if (ev.target && radios.includes(ev.target)) {
+            const index = radios.findIndex((radio) => radio === ev.target)
+
+            let next
+
+            // If hitting arrow down or arrow right, move to the next radio
+            // If we're on the last radio, move to the first radio
+            if (['ArrowDown', 'ArrowRight'].includes(ev.code)) {
+                next =
+                    index === radios.length - 1 ? radios[0] : radios[index + 1]
+            }
+
+            // If hitting arrow up or arrow left, move to the previous radio
+            // If we're on the first radio, move to the last radio
+            if (['ArrowUp', 'ArrowLeft'].includes(ev.code)) {
+                next =
+                    index === 0 ? radios[radios.length - 1] : radios[index - 1]
+            }
+
+            if (next && radios.includes(next)) {
+                next.setFocus(ev)
+            }
+        }
     }
 
     render() {
