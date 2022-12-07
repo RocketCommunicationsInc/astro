@@ -84,7 +84,6 @@ export class RuxTabs {
             }
 
             if (next && tabs.includes(next)) {
-                console.log(next)
                 const nextFocus = next.shadowRoot?.querySelector(
                     '.rux-tab'
                 ) as HTMLElement
