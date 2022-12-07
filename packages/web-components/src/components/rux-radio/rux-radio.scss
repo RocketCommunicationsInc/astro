@@ -6,170 +6,189 @@
 
 :host {
     display: inline-flex;
+
+    align-items: center;
     flex-direction: column;
+    gap: calc(2.5 * var(--spacing-1));
+
     font-family: var(--font-control-body-1-font-family);
     font-size: var(--font-control-body-1-font-size);
-    letter-spacing: var(--font-control-body-1-letter-spacing);
     font-weight: var(--font-control-body-1-font-weight);
-    color: var(--color-text-primary);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
 
-    &:focus-within {
-        border-radius: var(--focus-radius);
-        outline: var(--focus-outline);
-        outline-offset: var(--focus-offset);
-    }
+    color: var(--color-text-primary);
+    cursor: pointer;
+
+    --control-border-color: var(--color-border-interactive-muted);
+    --control-border-color-hover: var(--color-background-interactive-hover);
+    --tick-color: var(--color-background-interactive-default);
+}
+
+:host(:focus) {
+    border-radius: var(--focus-radius);
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-offset);
 }
 
 :host::part(field) {
-    display: flex;
-    gap: calc(2.5 * var(--spacing-1));
-    align-items: center;
+    display: contents;
+}
+
+:host::part(field):hover :host::part(control) {
+    border-color: var(--color-background-interactive-hover);
 }
 
 :host::part(control) {
     display: inline-flex;
+
     align-items: center;
-    justify-content: center;
     height: var(--size);
+    justify-content: center;
     width: var(--size);
-    border: 1px solid var(--color-border-interactive-muted);
-    border-radius: var(--radius-circle);
+
     background-color: var(--color-background-base-default);
+    border-radius: var(--radius-circle);
+    box-shadow: var(--border-color) 0 0 0 1px;
     cursor: pointer;
 
     --size: calc(5 * var(--spacing-1));
-    --gap: calc(2.5 * var(--spacing-1));
+    --border-color: var(--control-border-color);
+}
+
+:host::part(control):hover {
+    --border-color: var(--control-border-color-hover);
 }
 
 :host::part(tick) {
-    border-color: var(--color-border-interactive-muted);
     height: var(--spacing-2);
     width: var(--spacing-2);
+
     border-radius: var(--radius-circle);
 }
 
-:host([checked])::part(tick) {
+:host([aria-checked='true' i])::part(tick) {
     background-color: var(--color-background-interactive-default);
 }
 
 :host::part(label) {
     cursor: pointer;
 }
-//THIS DOES NOTHING!!!
 
-.rux-radio {
-    display: flex;
-    position: relative;
-    line-height: 1.2;
+// THIS DOES NOTHING!!!
 
-    input[type='radio'] {
-        // -webkit-appearance: none;
-        // appearance: none;
-        position: absolute;
-        opacity: 0;
-        width: 0;
-        height: 0;
-        margin: 0;
+// .rux-radio {
+//     display: flex;
+//     position: relative;
+//     line-height: 1.2;
 
-        + label {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            color: var(--color-text-primary);
-            cursor: pointer;
+//     input[type='radio'] {
+//         // -webkit-appearance: none;
+//         // appearance: none;
+//         position: absolute;
+//         opacity: 0;
+//         width: 0;
+//         height: 0;
+//         margin: 0;
 
-            &::before {
-                box-sizing: border-box;
-                display: flex;
-                flex-shrink: 0;
-                flex-grow: 0;
-                content: '';
-                align-self: start;
-                height: calc(var(--spacing-4) + var(--spacing-1));
-                width: calc(var(--spacing-4) + var(--spacing-1));
-                margin: calc(var(--spacing-1) / 2); //2
-                margin-right: calc(
-                    var(--spacing-2) + (var(--spacing-1) / 2)
-                ); //2 + 8 margin for label
-                border: 1px solid var(--color-border-interactive-muted);
-                border-radius: var(--radius-circle);
-                background-color: var(--color-background-base-default);
-            }
+//         + label {
+//             position: relative;
+//             display: flex;
+//             align-items: center;
+//             justify-content: flex-start;
+//             color: var(--color-text-primary);
+//             cursor: pointer;
 
-            &::after {
-                position: absolute;
-                top: 5px;
-                display: flex;
-                content: '';
-            }
-        }
-        //If no label is passed in we don't want the margin
-        + .rux-radio--no-label {
-            &::before {
-                margin-right: calc(var(--spacing-1) / 2); //2;
-            }
-        }
+//             &::before {
+//                 box-sizing: border-box;
+//                 display: flex;
+//                 flex-shrink: 0;
+//                 flex-grow: 0;
+//                 content: '';
+//                 align-self: start;
+//                 height: calc(var(--spacing-4) + var(--spacing-1));
+//                 width: calc(var(--spacing-4) + var(--spacing-1));
+//                 margin: calc(var(--spacing-1) / 2); //2
+//                 margin-right: calc(
+//                     var(--spacing-2) + (var(--spacing-1) / 2)
+//                 ); //2 + 8 margin for label
+//                 border: 1px solid var(--color-border-interactive-muted);
+//                 border-radius: var(--radius-circle);
+//                 background-color: var(--color-background-base-default);
+//             }
 
-        &:checked {
-            + label {
-                &::before {
-                    background-color: var(--color-background-base-default);
-                    border-color: var(--color-border-interactive-muted);
-                }
+//             &::after {
+//                 position: absolute;
+//                 top: 5px;
+//                 display: flex;
+//                 content: '';
+//             }
+//         }
+//         //If no label is passed in we don't want the margin
+//         + .rux-radio--no-label {
+//             &::before {
+//                 margin-right: calc(var(--spacing-1) / 2); //2;
+//             }
+//         }
 
-                &::after {
-                    position: absolute;
-                    top: var(--spacing-2);
-                    display: flex;
-                    content: '';
-                    left: var(--spacing-2);
-                    height: var(--spacing-2);
-                    width: var(--spacing-2);
-                    border-radius: var(--radius-circle);
+//         &:checked {
+//             + label {
+//                 &::before {
+//                     background-color: var(--color-background-base-default);
+//                     border-color: var(--color-border-interactive-muted);
+//                 }
 
-                    /* box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9); */
+//                 &::after {
+//                     position: absolute;
+//                     top: var(--spacing-2);
+//                     display: flex;
+//                     content: '';
+//                     left: var(--spacing-2);
+//                     height: var(--spacing-2);
+//                     width: var(--spacing-2);
+//                     border-radius: var(--radius-circle);
 
-                    background-color: var(
-                        --color-background-interactive-default
-                    );
-                }
-            }
-        }
+//                     /* box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9); */
 
-        &:disabled {
-            + label {
-                cursor: not-allowed;
-                opacity: var(--opacity-disabled);
-            }
-        }
+//                     background-color: var(
+//                         --color-background-interactive-default
+//                     );
+//                 }
+//             }
+//         }
 
-        &:not(:disabled) {
-            &:hover,
-            &:checked:hover {
-                + label {
-                    &::before {
-                        border-color: var(--color-background-interactive-hover);
-                    }
-                    &::after {
-                        background-color: var(
-                            --color-background-interactive-default
-                        );
-                    }
-                }
-            }
-            &:focus-visible,
-            &:checked:focus-visible {
-                + label {
-                    border-radius: var(--focus-radius);
-                    outline: var(--focus-outline);
-                    outline-offset: var(--focus-offset);
-                }
-            }
-        }
-    }
-}
+//         &:disabled {
+//             + label {
+//                 cursor: not-allowed;
+//                 opacity: var(--opacity-disabled);
+//             }
+//         }
 
-:host([hidden]) {
-    display: none;
-}
+//         &:not(:disabled) {
+//             &:hover,
+//             &:checked:hover {
+//                 + label {
+//                     &::before {
+//                         border-color: var(--color-background-interactive-hover);
+//                     }
+//                     &::after {
+//                         background-color: var(
+//                             --color-background-interactive-default
+//                         );
+//                     }
+//                 }
+//             }
+//             &:focus-visible,
+//             &:checked:focus-visible {
+//                 + label {
+//                     border-radius: var(--focus-radius);
+//                     outline: var(--focus-outline);
+//                     outline-offset: var(--focus-offset);
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// :host([hidden]) {
+//     display: none;
+// }

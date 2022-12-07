@@ -9,9 +9,8 @@ import {
     Watch,
     Host,
 } from '@stencil/core'
-import { hasSlot } from '../../utils/utils'
 
-let id = 0
+import { hasSlot } from '../../utils/utils'
 
 /**
  * @slot (default) - The radio label
@@ -45,7 +44,11 @@ export class RuxRadio {
     /**
      * Toggles checked state of a radio
      */
-    @Prop({ reflect: true, mutable: true }) checked: boolean = false
+    @Prop({ mutable: true }) checked: boolean = false
+
+    @Watch('checked') handleCheckedChange() {
+        this.el.setAttribute('aria-checked', this.checked ? 'true' : 'false')
+    }
 
     /**
      * Disables the radio via HTML disabled attribute. Radio takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
@@ -56,15 +59,10 @@ export class RuxRadio {
      * The radio label text. For HTML content, use the default slot instead.
      */
     @Prop() label?: string
+
     @Watch('label')
     handleLabelChange() {
         this._handleSlotChange()
-    }
-
-    @Watch('checked')
-    handleCheckedChange() {
-        this.el.setAttribute('aria-checked', this.checked ? 'true' : 'false')
-        this.el.setAttribute('tabindex', this.checked ? '0' : '-1')
     }
 
     /**
@@ -133,8 +131,12 @@ export class RuxRadio {
         const { label, hasLabel } = this
 
         return (
-            <Host>
-                <span part="field" role="radio">
+            <Host
+                role="radio"
+                aria-checked={String(this.checked)}
+                tabindex="-1"
+            >
+                <span part="field">
                     <span part="control">
                         <span part="tick"></span>
                     </span>

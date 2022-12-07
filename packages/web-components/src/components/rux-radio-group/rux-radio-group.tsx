@@ -12,6 +12,10 @@ import {
 import { FormFieldInterface } from '../../common/interfaces.module'
 import { hasSlot, renderHiddenInput } from '../../utils/utils'
 
+/** Returns whether the current element is checked. */
+const isChecked = (element: HTMLElement) =>
+    element.matches('[aria-checked="true" i]')
+
 /**
  * @slot label - The radio group label
  * @slot help-text -  the help text
@@ -59,6 +63,41 @@ export class RuxRadioGroup implements FormFieldInterface {
      */
     @Prop({ mutable: true, reflect: true }) value?: any | null
 
+    @Watch('value') valueWatchHandler() {
+        this.ruxChange.emit(this.value)
+    }
+
+    /**
+     * The <rux-radio> elements contained by the <rux-radio-group> element.
+     */
+    @Prop({ mutable: true }) options: HTMLRuxRadioElement[] = [
+        ...this.el.querySelectorAll<HTMLRuxRadioElement>('rux-radio-input'),
+    ]
+
+    /**
+     * The selected <rux-radio> element contained by the <rux-radio-group> element.
+     */
+    @Prop({ mutable: true }) selectedOption?: HTMLRuxRadioElement | null = null
+
+    @Watch('selectedOption') selectedOptionWatchHandler(
+        newSelectedOption: HTMLRuxRadioElement | null = null,
+        oldSelectedOption: HTMLRuxRadioElement | null = null
+    ) {
+        // uncheck the old option (if it exists)
+        if (oldSelectedOption) {
+            oldSelectedOption.checked = false
+        }
+
+        // check the new option (if it exists) and use its value
+        if (newSelectedOption) {
+            newSelectedOption.checked = true
+
+            this.value = newSelectedOption.value
+        } else {
+            this.value = ''
+        }
+    }
+
     /**
      * The help or explanation text
      */
@@ -74,11 +113,6 @@ export class RuxRadioGroup implements FormFieldInterface {
      */
     @Event({ eventName: 'ruxchange' }) ruxChange!: EventEmitter<any>
 
-    @Watch('value')
-    emitChange() {
-        this.ruxChange.emit(this.value)
-    }
-
     @Watch('label')
     handleLabelChange() {
         this._handleSlotChange()
@@ -87,7 +121,6 @@ export class RuxRadioGroup implements FormFieldInterface {
     connectedCallback() {
         this._handleClick = this._handleClick.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
-        this._handleKeyDown = this._handleKeyDown.bind(this)
     }
 
     disconnectedCallback() {
@@ -98,16 +131,47 @@ export class RuxRadioGroup implements FormFieldInterface {
     }
 
     componentWillLoad() {
-        const radios = Array.from(
-            this.el.querySelectorAll('rux-radio')
-        ) as HTMLRuxRadioElement[]
+        this._handleFocus = this._handleFocus.bind(this)
+        this._handleFocusOut = this._handleFocusOut.bind(this)
+        this._handleKeyDown = this._handleKeyDown.bind(this)
 
-        if (radios.length > 1 && !this.value) {
-            this.value = radios[0].getAttribute('value')
+        const target = this.el
+
+        /** Listen to clicks on `<rux-radio>` to handle selection changes. */
+        const onClick = (event: PointerEvent) => {
+            const currentOption = this.selectedOption
+            const nomineeOption = event.currentTarget as HTMLRuxRadioElement
+
+            // do not continue if the current option is nominated
+            if (currentOption === nomineeOption) return
+
+            // set the selected option to be the candidate
+            this.selectedOption = nomineeOption
         }
 
+        const onMutation = () => {
+            this.options = [...target.querySelectorAll('rux-radio')]
+
+            this.selectedOption = this.options.find(isChecked) || null
+
+            for (let option of this.options) {
+                option.addEventListener('click', onClick as any)
+            }
+        }
+
+        new MutationObserver(onMutation).observe(target, {
+            childList: true,
+            subtree: true,
+        })
+
+        onMutation()
+
+        target.addEventListener('keydown', this._handleKeyDown as any)
+
         this._handleSlotChange()
-        this.el.addEventListener('keydown', this._handleKeyDown)
+
+        target.addEventListener('focus', this._handleFocus as any)
+        target.addEventListener('focusout', this._handleFocusOut as any)
     }
 
     get hasLabel() {
@@ -120,14 +184,14 @@ export class RuxRadioGroup implements FormFieldInterface {
         ) as HTMLRuxRadioElement[]
         const selectedRadio =
             e.target && (e.target as HTMLElement).closest('rux-radio')
-        if (selectedRadio?.hasAttribute('checked')) return
+        if (selectedRadio?.getAttribute('aria-checked') === 'true') return
 
         radios.forEach((radio) => {
-            radio.removeAttribute('checked')
+            radio.setAttribute('aria-checked', 'false')
         })
 
         if (selectedRadio && !selectedRadio.disabled) {
-            selectedRadio.setAttribute('checked', '')
+            selectedRadio.setAttribute('aria-checked', 'true')
             const oldValue = this.value
             const newValue = selectedRadio.value
             if (newValue !== oldValue) {
@@ -149,45 +213,110 @@ export class RuxRadioGroup implements FormFieldInterface {
         this.hasHelpSlot = hasSlot(this.el, 'help-text')
     }
 
-    private _handleKeyDown(event: KeyboardEvent) {
-        if (
-            !['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', ' '].includes(
-                event.key
-            )
-        ) {
-            return
-        }
-
-        //const radios = this.getAllRadios().filter(radio => !radio.disabled);
-        const radios = Array.from(
-            this.el.querySelectorAll('rux-radio')
-        ) as HTMLRuxRadioElement[]
-        const checkedRadio = radios.find((radio) => radio.checked) ?? radios[0]
-        const incr =
-            event.key === ' '
+    private _handleFocus(event: FocusEvent & { relatedTarget: Node }) {
+        if (this.selectedOption) {
+            this.selectedOption.focus()
+        } else if (this.options.length) {
+            const related =
+                event.relatedTarget ||
+                getSelection()!.getRangeAt(0).commonAncestorContainer
+            const position = this.options[0].compareDocumentPosition(related)
+            const shouldFocusFirstRadio =
+                position <= Node.DOCUMENT_POSITION_PRECEDING ||
+                position >= Node.DOCUMENT_POSITION_CONTAINS
+            const optionIndex = shouldFocusFirstRadio
                 ? 0
-                : ['ArrowUp', 'ArrowLeft'].includes(event.key)
-                ? -1
-                : 1
-        let index = radios.indexOf(checkedRadio) + incr
-        if (index < 0) {
-            index = radios.length - 1
-        }
-        if (index > radios.length - 1) {
-            index = 0
+                : this.options.length - 1
+
+            this.options[optionIndex].focus({ focusVisible: true } as any)
         }
 
-        radios.forEach((radio) => {
-            radio.checked = false
-            radio.tabIndex = -1
-        })
+        // remove focusability on focus of the radio group
+        this.el.removeAttribute('tabindex')
+    }
 
-        this.value = radios[index].value
-        radios[index].checked = true
-        radios[index].tabIndex = 0
-        radios[index].focus()
+    private _handleFocusOut(
+        event: FocusEvent & { relatedTarget: HTMLElement | null }
+    ) {
+        // do nothing if the focus is still within the element
+        if (event.relatedTarget && this.el.contains(event.relatedTarget)) return
+
+        // remove focusability on focusout from the radio group
+        this.el.setAttribute('tabindex', '0')
+    }
+
+    private _handleKeyDown(event: KeyboardEvent & { target: HTMLElement }) {
+        // do nothing if any modifier keys are pressed
+        if (event.altKey || event.ctrlKey || event.metaKey) return
+
+        // do nothing if the key is not an arrow
+        if (!event.key.startsWith('Arrow')) return
+
+        const currentRadio = event.target.closest('rux-radio')
+
+        // do nothing if the target is not a radio
+        if (!currentRadio) return
 
         event.preventDefault()
+
+        const focusPreviousRadio =
+            event.key === 'ArrowLeft' || event.key === 'ArrowUp'
+
+        const barrierIndex = this.options.length - 1
+        const currentIndex = this.options.indexOf(currentRadio)
+        const nomineeIndex = focusPreviousRadio
+            ? currentIndex === 0
+                ? barrierIndex
+                : currentIndex - 1
+            : currentIndex === barrierIndex
+            ? 0
+            : currentIndex + 1
+
+        const nomineeRadio = this.options[nomineeIndex]
+
+        nomineeRadio.focus()
+
+        // set the selected option to be the nominated radio
+        this.selectedOption = nomineeRadio
+
+        // if (
+        //     !['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', ' '].includes(
+        //         event.key
+        //     )
+        // ) {
+        //     return
+        // }
+
+        // //const radios = this.getAllRadios().filter(radio => !radio.disabled);
+        // const radios = Array.from(
+        //     this.el.querySelectorAll('rux-radio')
+        // ) as HTMLRuxRadioElement[]
+        // const checkedRadio = radios.find((radio) => radio.checked) ?? radios[0]
+        // const incr =
+        //     event.key === ' '
+        //         ? 0
+        //         : ['ArrowUp', 'ArrowLeft'].includes(event.key)
+        //         ? -1
+        //         : 1
+        // let index = radios.indexOf(checkedRadio) + incr
+        // if (index < 0) {
+        //     index = radios.length - 1
+        // }
+        // if (index > radios.length - 1) {
+        //     index = 0
+        // }
+
+        // radios.forEach((radio) => {
+        //     radio.checked = false
+        //     radio.tabIndex = -1
+        // })
+
+        // this.value = radios[index].value
+        // radios[index].checked = true
+        // radios[index].tabIndex = 0
+        // radios[index].focus()
+
+        // event.preventDefault()
     }
 
     render() {
@@ -208,7 +337,7 @@ export class RuxRadioGroup implements FormFieldInterface {
             )
         }
         return (
-            <Host onClick={this._handleClick}>
+            <Host tabindex="0">
                 <div class="rux-form-field" part="form-field">
                     <div
                         class={{

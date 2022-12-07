@@ -12250,9 +12250,17 @@ export namespace Components {
          */
         "name": string;
         /**
+          * The <rux-radio> elements contained by the <rux-radio-group> element.
+         */
+        "options": HTMLRuxRadioElement[];
+        /**
           * Marks that a selection from the radio-group is requried.
          */
         "required": boolean;
+        /**
+          * The selected <rux-radio> element contained by the <rux-radio-group> element.
+         */
+        "selectedOption"?: HTMLRuxRadioElement | null;
         /**
           * The value of the current selected radio in the group. Changing this will also mark that radio as checked in the UI.
          */
@@ -32782,9 +32790,17 @@ declare namespace LocalJSX {
          */
         "onRuxchange"?: (event: RuxRadioGroupCustomEvent<any>) => void;
         /**
+          * The <rux-radio> elements contained by the <rux-radio-group> element.
+         */
+        "options"?: HTMLRuxRadioElement[];
+        /**
           * Marks that a selection from the radio-group is requried.
          */
         "required"?: boolean;
+        /**
+          * The selected <rux-radio> element contained by the <rux-radio-group> element.
+         */
+        "selectedOption"?: HTMLRuxRadioElement | null;
         /**
           * The value of the current selected radio in the group. Changing this will also mark that radio as checked in the UI.
          */

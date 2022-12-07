@@ -4,6 +4,10 @@
     display: block;
 }
 
+:host(:focus) {
+    outline: none;
+}
+
 .hidden,
 :host([hidden]) {
     display: none;
