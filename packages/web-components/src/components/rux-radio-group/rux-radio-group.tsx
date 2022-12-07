@@ -76,7 +76,8 @@ export class RuxRadioGroup implements FormFieldInterface {
     @Event({ eventName: 'ruxchange' }) ruxChange!: EventEmitter<any>
 
     @Watch('value')
-    emitChange() {
+    emitChange(value: any) {
+        this.setRadioTabindex(value)
         this.ruxChange.emit(this.value)
     }
 
@@ -201,6 +202,7 @@ export class RuxRadioGroup implements FormFieldInterface {
 
             if (next && radios.includes(next)) {
                 next.setFocus(ev)
+                this.value = next.value
             }
         }
     }
