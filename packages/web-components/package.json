@@ -46,7 +46,7 @@
     "@astrouxds/astro-figma-export": "~1.0.1",
     "@astrouxds/stencil-playwright": "~0.0.1",
     "@astrouxds/storybook-addon-docs-stencil": "~1.0.10",
-    "@astrouxds/tokens": "~1.1.0",
+    "@astrouxds/tokens": "~1.2.0",
     "@babel/core": "~7.13.16",
     "@playwright/test": "~1.27.1",
     "@stencil/angular-output-target": "~0.4.0",
