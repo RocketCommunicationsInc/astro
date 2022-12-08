@@ -1,5 +1,19 @@
 # @astrouxds/react
 
+## 7.3.1
+
+### Patch Changes
+
+- 28a9b386: Updates design tokens@1.2.0
+- dc912d14: Updated border styles for light theme version of rux-notification.
+- Updated dependencies [b2207457]
+- Updated dependencies [9229a74b]
+- Updated dependencies [2999f861]
+- Updated dependencies [28a9b386]
+- Updated dependencies [914c2672]
+- Updated dependencies [dc912d14]
+  - @astrouxds/astro-web-components@7.4.0
+
 ## 7.3.0
 
 ### Minor Changes

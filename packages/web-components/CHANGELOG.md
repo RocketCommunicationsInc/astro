@@ -1,5 +1,19 @@
 # @astrouxds/astro-web-components
 
+## 7.4.0
+
+### Minor Changes
+
+-   9229a74b: Removing min-height, and widening min-width slightly on monitoring-icon. This accounts for monitoring icon taking up space when no labels were used, and increases the space available for notifications. Global Status Bar also had the overflow: hidden property removed from the header element for the use case of a monitoring icon with a very large amount of notifications being able to show those notifications and not be cut-off.
+
+### Patch Changes
+
+-   b2207457: rux-global-status-bar add parts for app-meta and default slot styling
+-   2999f861: rux-tag fixed an issue with default slot and conditional rendering
+-   28a9b386: Updates design tokens@1.2.0
+-   914c2672: fix(rux-pop-up) move aria-hidden to describe the pop up itself rather than the whole web component
+-   dc912d14: Updated border styles for light theme version of rux-notification.
+
 ## 7.3.0
 
 ### Minor Changes
