@@ -55,7 +55,7 @@ export class RuxTab {
                         'rux-tab--large': !this.small,
                         'rux-tab--disabled': this.disabled,
                     }}
-                    tabindex={this.disabled ? '-1' : '0'}
+                    tabindex={this.disabled || !this.selected ? '-1' : '0'}
                 >
                     <slot></slot>
                 </div>

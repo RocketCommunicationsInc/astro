@@ -103,7 +103,6 @@ export class RuxTabs {
 
     private _addTabs() {
         this._tabs = Array.from(this.el.querySelectorAll('rux-tab'))
-        console.log(this._tabs)
     }
 
     private _registerPanels(e: CustomEvent) {
