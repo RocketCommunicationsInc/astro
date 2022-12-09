@@ -69,6 +69,7 @@ export class RuxTabs {
     }
 
     private _registerPanels(e: CustomEvent) {
+        this._panels = []
         e.detail.forEach((panel: HTMLRuxTabPanelElement) => {
             this._panels.push(panel)
         })
