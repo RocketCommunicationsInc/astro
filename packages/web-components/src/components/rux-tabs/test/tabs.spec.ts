@@ -52,6 +52,7 @@ test.describe('Tabs', () => {
 
         const newTabPanel = page.locator('#tab-panel-4')
         await expect(newTabPanel).not.toHaveClass('hidden hydrated')
+        await expect(newTabPanel).toBeVisible()
 
         // Remove Panel
         await page.evaluate(() => {
@@ -84,7 +85,7 @@ test.describe('Tabs', () => {
         await newTabEl2.click()
 
         const newTabPanel2 = page.locator('#tab-panel-4')
-        await expect(newTabPanel2).not.toHaveClass('hidden hydrated')
+        await expect(newTabPanel2).toBeVisible()
     })
 
     test('first tab is selected by default', async ({ page }) => {

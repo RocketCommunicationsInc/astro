@@ -38,7 +38,20 @@ export class RuxTabs {
 
     @Listen('ruxregisterpanels', { target: 'window' })
     handleListen(e: CustomEvent) {
-        this._registerPanels(e)
+        const sourcePanel = e.target as HTMLRuxTabPanelElement
+        const sourcePanelLabelId = sourcePanel.getAttribute('aria-labelledby')
+
+        /**
+         * The registerPanel event will be emitted from any Tab Panel,
+         * not just the Panels associated with this component.
+         * In scenarios where there could be multiple tab panels,
+         * we want to filter out and only add the panels that belong
+         * to this specific Tab group.
+         */
+
+        if (sourcePanelLabelId === this.el.id) {
+            this._registerPanels(e)
+        }
     }
 
     @Watch('small')
