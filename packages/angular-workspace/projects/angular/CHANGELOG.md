@@ -1,5 +1,39 @@
 # @astrouxds/angular
 
+## 7.4.0
+
+### Minor Changes
+
+#### GSB
+
+- Added new CSS Shadow Parts: `app-meta` and `center`.
+
+### Patch Changes
+
+#### Core
+
+- Updated design tokens@1.2.0.
+
+#### Monitoring Icon
+
+- Removed `min-height` and increased `min-width` to fix an issue when used in GSB.
+
+#### GSB
+
+- Removed `overflow: hidden` to fix issue with Monitoring Icon notifications being cut off.
+
+#### Tag
+
+- Fixed an issue with default slot and conditional rendering
+
+#### Pop Up
+
+- Moved `aria-hidden` to describe the pop up itself rather than the whole web component
+
+#### Notification
+
+- Updated border styles for light theme.
+
 ## 7.3.0
 
 ### Minor Changes
