@@ -370,7 +370,6 @@ test.describe('Tab Keyboard Navigation', () => {
         const tab1Child = tab1.locator('.rux-tab')
         const tab2Child = tab2.locator('.rux-tab')
         const tab3Child = tab3.locator('.rux-tab')
-        const button = page.locator('#button')
 
         //Act
         await tab1Child.focus()
@@ -396,12 +395,6 @@ test.describe('Tab Keyboard Navigation', () => {
 
         //Assert
         await expect(tab1Child).toBeFocused()
-
-        //Act
-        page.keyboard.press('Tab')
-
-        //Assert
-        await expect(button).toBeFocused()
     })
     test('tabs to next focusable element on Tab key', async ({ page }) => {
         //Arrange
