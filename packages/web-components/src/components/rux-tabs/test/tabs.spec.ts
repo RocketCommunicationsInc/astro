@@ -60,28 +60,6 @@ test.describe('Tabs', () => {
         //Assert
         await expect(tab1).toHaveAttribute('selected', '')
     })
-    test('selects tab when user hits enter', async ({ page }) => {
-        //Arrange
-        const tab1 = await page.locator('#tab-id-1')
-        const tab2 = await page.locator('#tab-id-2')
-        const tab1Child = tab1.locator('.rux-tab')
-        const tab2Child = tab2.locator('.rux-tab')
-
-        //Act
-        await tab2Child.focus()
-        await page.keyboard.press('Enter')
-
-        //Assert
-        await expect(tab2).toHaveAttribute('selected', '')
-        await expect(tab1).not.toHaveAttribute('selected', '')
-
-        //Act
-        await tab1Child.focus()
-        await page.keyboard.press('Enter')
-
-        //Assert
-        await expect(tab1).toHaveAttribute('selected', '')
-    })
     test('shows correct panel when its tab is clicked', async ({ page }) => {
         //Arrange
         const ruxTabPanel1 = await page.locator('rux-tab-panel').nth(0)
