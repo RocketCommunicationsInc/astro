@@ -60,6 +60,28 @@ test.describe('Tabs', () => {
         //Assert
         await expect(tab1).toHaveAttribute('selected', '')
     })
+    test('selects tab when user hits enter', async ({ page }) => {
+        //Arrange
+        const tab1 = await page.locator('#tab-id-1')
+        const tab2 = await page.locator('#tab-id-2')
+        const tab1Child = tab1.locator('.rux-tab')
+        const tab2Child = tab2.locator('.rux-tab')
+
+        //Act
+        await tab2Child.focus()
+        await page.keyboard.press('Enter')
+
+        //Assert
+        await expect(tab2).toHaveAttribute('selected', '')
+        await expect(tab1).not.toHaveAttribute('selected', '')
+
+        //Act
+        await tab1Child.focus()
+        await page.keyboard.press('Enter')
+
+        //Assert
+        await expect(tab1).toHaveAttribute('selected', '')
+    })
     test('shows correct panel when its tab is clicked', async ({ page }) => {
         //Arrange
         const ruxTabPanel1 = await page.locator('rux-tab-panel').nth(0)
@@ -310,6 +332,111 @@ test.describe('Multiple tabs on same page', () => {
             .then((e) => {
                 expect(e).toBeFalsy()
             })
+    })
+})
+
+test.describe('Tab Keyboard Navigation', () => {
+    test.beforeEach(async ({ page }) => {
+        const template = `
+            <div style="display: flex; flex-flow: column">
+                <rux-tabs id="tab-set-id-1">
+                    <rux-tab id="tab-id-1">Tab 1</rux-tab>
+                    <rux-tab id="tab-id-2">Tab 2</rux-tab>
+                    <rux-tab id="tab-id-3">Tab 3</rux-tab>
+                </rux-tabs>
+                <rux-tab-panels aria-labelledby="tab-set-id-1">
+                    <rux-tab-panel aria-labelledby="tab-id-1">
+                    Content 1 
+                    </rux-tab-panel>
+                    <rux-tab-panel aria-labelledby="tab-id-2">
+                    Content 2 
+                    </rux-tab-panel>
+                    <rux-tab-panel aria-labelledby="tab-id-3">
+                    Content 3 
+                    </rux-tab-panel>
+                </rux-tab-panels>
+            </div>
+            <button id="button">Hi!</button>
+        `
+
+        await page.setContent(template)
+    })
+
+    test('selects tab when user hits enter', async ({ page }) => {
+        //Arrange
+        const tab1 = await page.locator('#tab-id-1')
+        const tab2 = await page.locator('#tab-id-2')
+        const tab1Child = tab1.locator('.rux-tab')
+        const tab2Child = tab2.locator('.rux-tab')
+
+        //Act
+        await tab2Child.focus()
+        await page.keyboard.press('Enter')
+
+        //Assert
+        await expect(tab2).toHaveAttribute('selected', '')
+        await expect(tab1).not.toHaveAttribute('selected', '')
+
+        //Act
+        await tab1Child.focus()
+        await page.keyboard.press('Enter')
+
+        //Assert
+        await expect(tab1).toHaveAttribute('selected', '')
+    })
+    test('moves between tabs with arrow keys', async ({ page }) => {
+        //Arrange
+        const tab1 = await page.locator('#tab-id-1')
+        const tab2 = await page.locator('#tab-id-2')
+        const tab3 = await page.locator('#tab-id-3')
+        const tab1Child = tab1.locator('.rux-tab')
+        const tab2Child = tab2.locator('.rux-tab')
+        const tab3Child = tab3.locator('.rux-tab')
+        const button = page.locator('#button')
+
+        //Act
+        await tab1Child.focus()
+        page.keyboard.press('ArrowRight')
+
+        //Assert
+        await expect(tab2Child).toBeFocused()
+
+        //Act
+        page.keyboard.press('ArrowRight')
+
+        //Assert
+        await expect(tab3Child).toBeFocused()
+
+        //Act
+        page.keyboard.press('ArrowLeft')
+
+        //Assert
+        await expect(tab2Child).toBeFocused()
+
+        //Act
+        page.keyboard.press('ArrowLeft')
+
+        //Assert
+        await expect(tab1Child).toBeFocused()
+
+        //Act
+        page.keyboard.press('Tab')
+
+        //Assert
+        await expect(button).toBeFocused()
+    })
+    test('tabs to next focusable element on Tab key', async ({ page }) => {
+        //Arrange
+        const tab1 = await page.locator('#tab-id-1')
+        const tab1Child = tab1.locator('.rux-tab')
+        const button = page.locator('#button')
+
+        //Act
+        await tab1Child.focus()
+        page.keyboard.press('Tab')
+
+        //Assert
+        await expect(button).toBeFocused()
     })
 })
 /*
