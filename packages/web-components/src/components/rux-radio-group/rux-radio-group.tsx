@@ -77,7 +77,7 @@ export class RuxRadioGroup implements FormFieldInterface {
 
     @Watch('value')
     emitChange(value: any) {
-        this.setRadioTabindex(value)
+        this._setRadioTabindex(value)
         this.ruxChange.emit(this.value)
     }
 
@@ -92,7 +92,7 @@ export class RuxRadioGroup implements FormFieldInterface {
     }
 
     componentDidLoad() {
-        this.setRadioTabindex(this.value)
+        this._setRadioTabindex(this.value)
     }
 
     disconnectedCallback() {
@@ -110,6 +110,8 @@ export class RuxRadioGroup implements FormFieldInterface {
         if (radios.length > 1 && !this.value) {
             this.value = radios[0].getAttribute('value')
         }
+
+        this._setRadioValueIfNone()
 
         this._handleSlotChange()
     }
@@ -143,12 +145,20 @@ export class RuxRadioGroup implements FormFieldInterface {
         this.hasHelpSlot = hasSlot(this.el, 'help-text')
     }
 
-    private getRadios(): HTMLRuxRadioElement[] {
+    private _getRadios(): HTMLRuxRadioElement[] {
         return Array.from(this.el.querySelectorAll('rux-radio'))
     }
 
-    private setRadioTabindex = (value: any | undefined) => {
-        const radios = this.getRadios()
+    private _setRadioValueIfNone() {
+        const radios = this._getRadios()
+
+        radios.forEach((radio, index) => {
+            if (!radio.value) radio.value = (index + 1).toString()
+        })
+    }
+
+    private _setRadioTabindex = (value: any | undefined) => {
+        const radios = this._getRadios()
 
         // Get the first radio that is not disabled and the checked one
         const first = radios.find((radio) => !radio.disabled)
@@ -178,7 +188,7 @@ export class RuxRadioGroup implements FormFieldInterface {
 
         // Get all radios inside of the radio group and then
         // filter out disabled radios since we need to skip those
-        const radios = this.getRadios().filter((radio) => !radio.disabled)
+        const radios = this._getRadios().filter((radio) => !radio.disabled)
 
         // Only move the radio if the current focus is in the radio group
         if (ev.target && radios.includes(ev.target)) {
@@ -201,8 +211,16 @@ export class RuxRadioGroup implements FormFieldInterface {
             }
 
             if (next && radios.includes(next)) {
+                // set all radio checked states to false to accept new checked state.
+                radios.forEach((radio) => {
+                    radio.checked = false
+                })
+
+                console.log(next.shadowRoot?.querySelector('input'))
+
                 next.setFocus(ev)
                 this.value = next.value
+                next.checked = true
             }
         }
     }
