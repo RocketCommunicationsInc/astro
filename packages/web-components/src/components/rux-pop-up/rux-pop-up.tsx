@@ -86,7 +86,6 @@ export class RuxPopUp {
 
     @Watch('open')
     handleOpen() {
-        console.log('handled')
         if (this.open) {
             this.content.style.display = 'block'
             this._startPositioner()
