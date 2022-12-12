@@ -55,17 +55,13 @@ export class RuxTabs {
         }
     }
 
-    @Listen('keydown', { target: 'document' })
+    @Listen('keydown')
     onKeydown(e: any) {
-        if (e.target && !this.el.contains(e.target)) {
-            return
-        }
-
-        // Get all tabs inside of the radio group and then
-        // filter out disabled radios since we need to skip those
+        // Get all tabs inside of the tab group and then
+        // filter out disabled tabs since we need to skip those
         const tabs = this._tabs.filter((tab) => !tab.disabled)
 
-        // Only move the radio if the current focus is in the radio group
+        // Only move the tab if the current focus is in the tab group
         if (e.target && tabs.includes(e.target)) {
             const index = tabs.findIndex((tab) => tab === e.target)
 
@@ -127,10 +123,7 @@ export class RuxTabs {
         //get the tab in case complex html is nested inside rux-tab
         const tab = target.closest('rux-tab') as HTMLRuxTabElement
         this.ruxSelected.emit(tab)
-        if (
-            tab.getAttribute('role') === 'tab' &&
-            tab.getAttribute('disabled') === null
-        ) {
+        if (tab.getAttribute('disabled') === null) {
             this._setTab(tab)
         }
     }
