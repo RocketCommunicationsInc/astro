@@ -30,6 +30,7 @@
     "test.server": "serve -p 3334",
     "test.e2e": "npx playwright test --grep-invert @vrt",
     "test.vrt": "docker run -it --rm --ipc=host -v \"${PWD}:/var/app/\" mcr.microsoft.com/playwright:focal /bin/bash -c 'cd /var/app; npx playwright install; npx playwright test --grep @vrt'",
+    "test.vrt.update": "docker run -it --rm --ipc=host -v \"${PWD}:/var/app/\" mcr.microsoft.com/playwright:focal /bin/bash -c 'cd /var/app; npx playwright install; npx playwright test --grep @vrt --update-snapshots'",
     "test.ci": "docker run -i --rm --ipc=host -v \"${PWD}:/var/app/\" mcr.microsoft.com/playwright:focal /bin/bash -c 'cd /var/app; npx playwright install; npx playwright test --grep-invert @vrt'",
     "test.wk": "npx playwright test --project=webkit --grep-invert @vrt",
     "test.cr": "npx playwright test --project=chromium --grep-invert @vrt",
