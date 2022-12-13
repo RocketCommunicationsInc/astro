@@ -1,4 +1,5 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
+import { RuxAccordion } from '../../rux-accordion/rux-accordion'
 
 test.describe('Radio-group-with-form', () => {
     test.beforeEach(async ({ page }) => {
@@ -222,7 +223,7 @@ test.describe('Radio-group', () => {
               <rux-radio value="three">Three</rux-radio>
             </rux-radio-group>
             <rux-radio-group name="radios-check-two" id="focus-check-two">
-              <rux-radio value="one">One</rux-radio>
+              <rux-radio value="one" id="group2-radio1">One</rux-radio>
               <rux-radio value="two" checked>Two</rux-radio>
               <rux-radio value="three">Three</rux-radio>
             </rux-radio-group>
@@ -277,8 +278,7 @@ test.describe('Radio-group', () => {
         const title = page.locator('#focus-title')
         const ruxRadioGroupOne = page.locator('#focus-check-one').first()
         const secondRadio = ruxRadioGroupOne.locator('rux-radio').nth(1)
-        const ruxRadioGroupTwo = page.locator('#focus-check-one').first()
-        const firstRadio = ruxRadioGroupTwo.locator('rux-radio').nth(1)
+        const firstRadio = page.locator('#group2-radio1')
 
         //Act
         await title.click({ force: true })
@@ -293,6 +293,7 @@ test.describe('Radio-group', () => {
         await page.keyboard.press('Tab')
 
         //Assert
+
         await expect(firstRadio).toBeFocused()
         await expect(firstRadio).toHaveAttribute('checked', '')
 
