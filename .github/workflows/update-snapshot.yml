@@ -71,4 +71,5 @@ jobs:
       # Commit the changes to the pull request branch
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
+          file_pattern: "*.png"
           commit_message: "[CI] Update Snapshots"
