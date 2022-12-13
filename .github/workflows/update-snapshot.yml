@@ -58,6 +58,9 @@ jobs:
       - name: Install dependencies
         run: npm install
         working-directory: ./packages/web-components
+      - name: build
+        run: npm run build
+        working-directory: ./packages/web-components
       # - name: Install Playwright browsers
       #   run: npx playwright install --with-deps chromium
 
@@ -65,6 +68,13 @@ jobs:
       - name: Update snapshots
         run: npm run test.vrt.update
         working-directory: ./packages/web-components
+      - name: Prettify code
+        uses: creyD/prettier_action@v4.2
+        with:
+          prettier_options: --write **/*.{js,tsx,ts,scss}
+          only_changed: True
+          # Set your custom token
+          github_token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
       # Commit the changes to the pull request branch
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
