@@ -1,5 +1,4 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
-import { RuxAccordion } from '../../rux-accordion/rux-accordion'
 
 test.describe('Radio-group-with-form', () => {
     test.beforeEach(async ({ page }) => {
@@ -219,12 +218,12 @@ test.describe('Radio-group', () => {
             <h2 id="focus-title">Focus Testing</h2>
             <rux-radio-group name="radios-check-one" id="focus-check-one">
               <rux-radio value="one">One</rux-radio>
-              <rux-radio value="two" checked>Two</rux-radio>
-              <rux-radio value="three">Three</rux-radio>
+              <rux-radio value="two">Two</rux-radio>
+              <rux-radio value="three" disabled id="disabled-radio">Three</rux-radio>
             </rux-radio-group>
             <rux-radio-group name="radios-check-two" id="focus-check-two">
               <rux-radio value="one" id="group2-radio1">One</rux-radio>
-              <rux-radio value="two" checked>Two</rux-radio>
+              <rux-radio value="two">Two</rux-radio>
               <rux-radio value="three">Three</rux-radio>
             </rux-radio-group>
         `
@@ -256,6 +255,29 @@ test.describe('Radio-group', () => {
         await expect(radio2Input).toHaveAttribute('value', '2')
         await expect(radio3Input).toHaveAttribute('value', '3')
     })
+    test('Tab swaps focus between radio groups (not radios)', async ({
+        page,
+    }) => {
+        //Arrange
+        const title = page.locator('#focus-title')
+        const ruxRadioGroupOne = page.locator('#focus-check-one').first()
+        const firstRadio = ruxRadioGroupOne.locator('rux-radio').first()
+        const secondRadio = page.locator('#group2-radio1')
+
+        //Act
+        await title.click({ force: true })
+        await page.keyboard.press('Tab')
+
+        //Assert
+        await expect(firstRadio).toBeFocused()
+
+        //Act
+        await page.keyboard.press('Tab')
+
+        //Assert
+
+        await expect(secondRadio).toBeFocused()
+    })
     test('Arrow keys change focus and checked state', async ({ page }) => {
         //Arrange
         const title = page.locator('#focus-title')
@@ -270,6 +292,39 @@ test.describe('Radio-group', () => {
         //Assert
         await expect(secondRadio).toBeFocused()
         await expect(secondRadio).toHaveAttribute('checked', '')
+    })
+    test('Arrow keys do not focus disabled radio', async ({ page }) => {
+        //Arrange
+        const title = page.locator('#focus-title')
+        const disabledRadio = page.locator('#disabled-radio')
+
+        //Assert
+        await expect(disabledRadio).toHaveAttribute('disabled', '')
+
+        //Act
+        await title.click({ force: true })
+        await page.keyboard.press('Tab')
+        await page.keyboard.press('ArrowDown')
+        await page.keyboard.press('ArrowDown')
+        await page.keyboard.press('ArrowDown')
+
+        //Assert
+        await expect(disabledRadio).not.toBeFocused()
+    })
+    test('When focused, first radio of radio group with no default value receives checked state on Space keypress', async ({
+        page,
+    }) => {
+        //Arrange
+        const ruxRadioGroupNoValue = page.locator('#no-value')
+        const radio = ruxRadioGroupNoValue.locator('rux-radio').first()
+
+        //Act
+        await page.keyboard.press('Tab')
+        await page.keyboard.press('Space')
+
+        //Assert
+        await expect(radio).toBeFocused()
+        await expect(radio).toHaveAttribute('checked', '')
     })
     test('Shift Tab puts focus on checked radio of previous group', async ({
         page,
