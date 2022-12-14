@@ -33,20 +33,7 @@ export class RuxBreadcrumb {
             <Host>
                 <nav>
                     <ol>
-                        {this.crumbs.map((crumb, index) => {
-                            if (index === this.crumbs.length - 1) {
-                                return h(<li>{crumb}</li>)
-                            }
-                            return h(
-                                <Fragment>
-                                    <li>{crumb}</li>
-                                    <li
-                                        class="separator"
-                                        aria-hidden="true"
-                                    ></li>
-                                </Fragment>
-                            )
-                        })}
+                        <slot onSlotchange={this._handleSlotChange}></slot>
                     </ol>
                 </nav>
             </Host>
