@@ -422,6 +422,10 @@ test.describe('Clock', () => {
         await expect(segment).toContainText('20:02:03')
         await delay(2000)
         await expect(segment).toContainText('20:02:03')
+        await el.evaluate((node) => {
+            node.setAttribute('date-in', '1988-04-22T12:12:12.000Z')
+        })
+        await expect(segment).toContainText('12:12:12')
     })
 
     test('can display a static datetime with datein', async ({ page }) => {
