@@ -39,6 +39,20 @@
                     ><rux-icon icon="star"></rux-icon>Third</rux-breadcrumb-item
                 >
             </rux-breadcrumb>
+            <button>click me!</button>
         </section>
+        <script>
+            const breadcrumb = document.querySelector('rux-breadcrumb')
+            const addCrumb = document.querySelector('button')
+            let number = 4
+
+            addCrumb.addEventListener('click', (e) => {
+                const newItem = document.createElement('rux-breadcrumb-item')
+                newItem.href = '#'
+                newItem.textContent = `${number} Crumb`
+                breadcrumb.appendChild(newItem)
+                number += 1
+            })
+        </script>
     </body>
 </html>

@@ -4,10 +4,10 @@ import {
     Host,
     Prop,
     Element,
-    Watch,
-    Event,
-    EventEmitter,
-    State,
+    // Watch,
+    // Event,
+    // EventEmitter,
+    // State,
 } from '@stencil/core'
 
 // import { hasSlot } from '../../../utils/utils'
@@ -21,13 +21,14 @@ import {
     styleUrl: 'rux-breadcrumb-item.scss',
     shadow: true,
 })
-export class RuxAccordionItem {
+export class RuxBreadcrumbItem {
+    // private breadcrumbParent: HTMLRuxBreadcrumbElement | null = null
     @Element() el!: HTMLRuxBreadcrumbItemElement
 
     /**
      * The link property of the breadcrumb item
      */
-    @Prop() href?: string
+    @Prop({ reflect: true }) href?: string
 
     render() {
         return (

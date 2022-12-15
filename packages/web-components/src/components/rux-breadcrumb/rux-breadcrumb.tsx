@@ -1,13 +1,4 @@
-import {
-    Component,
-    h,
-    Host,
-    Prop,
-    Listen,
-    Element,
-    State,
-    Fragment,
-} from '@stencil/core'
+import { Component, Element } from '@stencil/core'
 
 @Component({
     tag: 'rux-breadcrumb',
@@ -16,27 +7,42 @@ import {
 })
 export class RuxBreadcrumb {
     @Element() el!: HTMLRuxBreadcrumbElement
-    @State() crumbs: HTMLElement[] = []
 
+    // observe changes to LightDOM children
     componentWillLoad() {
-        this._getAllCrumbs()
+        new MutationObserver(() => this._updateShadowRoot()).observe(this.el, {
+            childList: true,
+        })
+
+        this._updateShadowRoot()
     }
 
-    private _getAllCrumbs() {
-        this.crumbs = Array.from(
-            this.el.querySelectorAll('rux-breadcrumb-item')
-        )
-    }
+    private _updateShadowRoot() {
+        const navEl = document.createElement('nav')
+        const listEl = document.createElement('ol')
 
-    render() {
-        return (
-            <Host>
-                <nav>
-                    <ol>
-                        <slot onSlotchange={this._handleSlotChange}></slot>
-                    </ol>
-                </nav>
-            </Host>
-        )
+        let slotIndex = 0
+
+        for (const childEl of this.el.children) {
+            const listItemEl = document.createElement('li')
+            const slotEl = document.createElement('slot')
+
+            childEl.slot = slotEl.name = `slot-${++slotIndex}`
+
+            listItemEl.append(slotEl)
+            listEl.append(listItemEl)
+        }
+
+        navEl.append(listEl)
+
+        if (this.el.shadowRoot) {
+            const existingNavEl = this.el.shadowRoot.querySelector('nav')
+
+            if (existingNavEl) {
+                existingNavEl.replaceWith(navEl)
+            } else {
+                this.el.shadowRoot.append(navEl)
+            }
+        }
     }
 }
