@@ -1,5 +1,11 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
+function delay(time: any) {
+    return new Promise(function (resolve) {
+        setTimeout(resolve, time)
+    })
+}
+
 test.describe('Clock', () => {
     /**
      * Create a fake for Date. We use Dec 31, 2020 because
@@ -404,6 +410,30 @@ test.describe('Clock', () => {
             node.setAttribute('date-in', '1652129256662')
         )
         await expect(segment).toContainText('20:47')
+    })
+
+    test('can display a static datetime', async ({ page }) => {
+        const template = `<rux-clock static></rux-clock>`
+
+        await page.setContent(template)
+        const el = await page.locator('rux-clock')
+        const segment = await el.locator('.rux-clock__segment__value').nth(1)
+
+        await expect(segment).toContainText('20:02:03')
+        await delay(2000)
+        await expect(segment).toContainText('20:02:03')
+    })
+
+    test('can display a static datetime with datein', async ({ page }) => {
+        const template = `<rux-clock static date-in="1988-04-22T12:12:12.000Z"></rux-clock>`
+
+        await page.setContent(template)
+        const el = await page.locator('rux-clock')
+        const segment = await el.locator('.rux-clock__segment__value').nth(1)
+
+        await expect(segment).toContainText('12:12:12')
+        await delay(2000)
+        await expect(segment).toContainText('12:12:12')
     })
 
     /*
