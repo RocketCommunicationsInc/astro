@@ -67,14 +67,14 @@ export class RuxTabs {
 
             let next
 
-            // If hitting arrow down or arrow right, move to the next radio
-            // If we're on the last radio, move to the first radio
+            // If hitting arrow down or arrow right, move to the next tab
+            // If we're on the last tab, move to the first tab
             if (['ArrowDown', 'ArrowRight'].includes(e.code)) {
                 next = index === tabs.length - 1 ? tabs[0] : tabs[index + 1]
             }
 
-            // If hitting arrow up or arrow left, move to the previous radio
-            // If we're on the first radio, move to the last radio
+            // If hitting arrow up or arrow left, move to the previous tab
+            // If we're on the first tab, move to the last tab
             if (['ArrowUp', 'ArrowLeft'].includes(e.code)) {
                 next = index === 0 ? tabs[tabs.length - 1] : tabs[index - 1]
             }

@@ -410,6 +410,59 @@ test.describe('Tab Keyboard Navigation', () => {
         await expect(button).toBeFocused()
     })
 })
+
+test.describe('Tab Keyboard Disabled Navigation', () => {
+    test.beforeEach(async ({ page }) => {
+        const template = `
+            <div style="display: flex; flex-flow: column">
+                <rux-tabs id="tab-set-id-1">
+                    <rux-tab id="tab-id-1">Tab 1</rux-tab>
+                    <rux-tab id="tab-id-2" disabled >Tab 2</rux-tab>
+                    <rux-tab id="tab-id-3">Tab 3</rux-tab>
+                </rux-tabs>
+                <rux-tab-panels aria-labelledby="tab-set-id-1">
+                    <rux-tab-panel aria-labelledby="tab-id-1">
+                    Content 1 
+                    </rux-tab-panel>
+                    <rux-tab-panel aria-labelledby="tab-id-2">
+                    Content 2 
+                    </rux-tab-panel>
+                    <rux-tab-panel aria-labelledby="tab-id-3">
+                    Content 3 
+                    </rux-tab-panel>
+                </rux-tab-panels>
+            </div>
+            <button id="button">Hi!</button>
+        `
+
+        await page.setContent(template)
+    })
+
+    test('skips disabled tab(s)', async ({ page }) => {
+        //Arrange
+        const tab1 = await page.locator('#tab-id-1')
+        const tab2 = await page.locator('#tab-id-2')
+        const tab3 = await page.locator('#tab-id-3')
+        const tab1Child = tab1.locator('.rux-tab')
+        const tab2Child = tab2.locator('.rux-tab')
+        const tab3Child = tab3.locator('.rux-tab')
+
+        //Act
+        await tab1Child.focus()
+        page.keyboard.press('ArrowRight')
+
+        //Assert
+        await expect(tab2Child).not.toBeFocused()
+        await expect(tab3Child).toBeFocused()
+
+        //Act
+        page.keyboard.press('ArrowLeft')
+
+        //Assert
+        await expect(tab2Child).not.toBeFocused()
+        await expect(tab1Child).toBeFocused()
+    })
+})
 /*
     Need to test: 
     
