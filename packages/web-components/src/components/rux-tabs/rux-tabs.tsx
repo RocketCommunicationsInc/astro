@@ -55,6 +55,39 @@ export class RuxTabs {
         }
     }
 
+    @Listen('keydown')
+    onKeydown(e: any) {
+        // Get all tabs inside of the tab group and then
+        // filter out disabled tabs since we need to skip those
+        const tabs = this._tabs.filter((tab) => !tab.disabled)
+
+        // Only move the tab if the current focus is in the tab group
+        if (e.target && tabs.includes(e.target)) {
+            const index = tabs.findIndex((tab) => tab === e.target)
+
+            let next
+
+            // If hitting arrow down or arrow right, move to the next tab
+            // If we're on the last tab, move to the first tab
+            if (['ArrowDown', 'ArrowRight'].includes(e.code)) {
+                next = index === tabs.length - 1 ? tabs[0] : tabs[index + 1]
+            }
+
+            // If hitting arrow up or arrow left, move to the previous tab
+            // If we're on the first tab, move to the last tab
+            if (['ArrowUp', 'ArrowLeft'].includes(e.code)) {
+                next = index === 0 ? tabs[tabs.length - 1] : tabs[index - 1]
+            }
+
+            if (next && tabs.includes(next)) {
+                const nextFocus = next.shadowRoot?.querySelector(
+                    '.rux-tab'
+                ) as HTMLElement
+                nextFocus.focus()
+            }
+        }
+    }
+
     /**
      * Fires whenever a new tab is selected, and emits the selected tab on the event.detail.
      */
@@ -81,13 +114,16 @@ export class RuxTabs {
         this._setTab(selectedTab)
     }
 
-    private _onClick(e: MouseEvent) {
-        const tab = e.target as HTMLRuxTabElement
+    private _onPress(e: KeyboardEvent) {
+        e.key === 'Enter' ? this._onClick(e) : null
+    }
+
+    private _onClick(e: KeyboardEvent | MouseEvent) {
+        const target = e.target as HTMLElement
+        //get the tab in case complex html is nested inside rux-tab
+        const tab = target.closest('rux-tab') as HTMLRuxTabElement
         this.ruxSelected.emit(tab)
-        if (
-            tab.getAttribute('role') === 'tab' &&
-            tab.getAttribute('disabled') === null
-        ) {
+        if (tab.getAttribute('disabled') === null) {
             this._setTab(tab)
         }
     }
@@ -123,7 +159,11 @@ export class RuxTabs {
 
     render() {
         return (
-            <Host onClick={(e: MouseEvent) => this._onClick(e)}>
+            <Host
+                onClick={(e: MouseEvent) => this._onClick(e)}
+                onKeyPress={(e: KeyboardEvent) => this._onPress(e)}
+                role="tablist"
+            >
                 <slot></slot>
             </Host>
         )
