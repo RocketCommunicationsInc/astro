@@ -208,22 +208,161 @@ test.describe('Radio-group', () => {
         const template = `
             <rux-radio-group label="hello"></rux-radio-group>
             <rux-radio-group><div slot="label">hello</div></rux-radio-group>
+
+            <rux-radio-group name="radios" id="no-value">
+              <rux-radio>One</rux-radio>
+              <rux-radio>Two</rux-radio>
+              <rux-radio>Three</rux-radio>
+            </rux-radio-group>
+
+            <h2 id="focus-title">Focus Testing</h2>
+            <rux-radio-group name="radios-check-one" id="focus-check-one">
+              <rux-radio value="one">One</rux-radio>
+              <rux-radio value="two">Two</rux-radio>
+              <rux-radio value="three" disabled id="disabled-radio">Three</rux-radio>
+            </rux-radio-group>
+            <rux-radio-group name="radios-check-two" id="focus-check-two">
+              <rux-radio value="one" id="group2-radio1">One</rux-radio>
+              <rux-radio value="two">Two</rux-radio>
+              <rux-radio value="three">Three</rux-radio>
+            </rux-radio-group>
         `
         await page.setContent(template)
     })
     test('renders label prop and slot', async ({ page }) => {
         //Arrange
-        const ruxRadioProp = await page.locator('rux-radio-group').first()
+        const ruxRadioProp = page.locator('rux-radio-group').first()
         const labelProp = ruxRadioProp.locator('.rux-label')
-        const ruxRadioSlot = await page.locator('rux-radio-group').nth(1)
+        const ruxRadioSlot = page.locator('rux-radio-group').nth(1)
         const labelSlot = ruxRadioSlot.locator('.rux-label')
 
         //Assert
         await expect(labelSlot).toHaveClass('rux-label')
         await expect(labelProp).toHaveClass('rux-label')
     })
+    test('sets own value if none given', async ({ page }) => {
+        //Arrange
+        const ruxRadioGroup = page.locator('#no-value').first()
+        const radio1 = ruxRadioGroup.locator('rux-radio').first()
+        const radio1Input = radio1.locator('input').first()
+        const radio2 = ruxRadioGroup.locator('rux-radio').nth(1)
+        const radio2Input = radio2.locator('input').first()
+        const radio3 = ruxRadioGroup.locator('rux-radio').nth(2)
+        const radio3Input = radio3.locator('input').first()
+
+        //Assert
+        await expect(radio1Input).toHaveAttribute('value', '1')
+        await expect(radio2Input).toHaveAttribute('value', '2')
+        await expect(radio3Input).toHaveAttribute('value', '3')
+    })
+    test('Tab swaps focus between radio groups (not radios)', async ({
+        page,
+    }) => {
+        //Arrange
+        const title = page.locator('#focus-title')
+        const ruxRadioGroupOne = page.locator('#focus-check-one').first()
+        const firstRadio = ruxRadioGroupOne.locator('rux-radio').first()
+        const secondRadio = page.locator('#group2-radio1')
+
+        //Act
+        await title.click({ force: true })
+        await page.keyboard.press('Tab')
+
+        //Assert
+        await expect(firstRadio).toBeFocused()
+
+        //Act
+        await page.keyboard.press('Tab')
+
+        //Assert
+
+        await expect(secondRadio).toBeFocused()
+    })
+    test('Arrow keys change focus and checked state', async ({ page }) => {
+        //Arrange
+        const title = page.locator('#focus-title')
+        const ruxRadioGroupOne = page.locator('#focus-check-one').first()
+        const secondRadio = ruxRadioGroupOne.locator('rux-radio').nth(1)
+
+        //Act
+        await title.click({ force: true })
+        await page.keyboard.press('Tab')
+        await page.keyboard.press('ArrowDown')
+
+        //Assert
+        await expect(secondRadio).toBeFocused()
+        await expect(secondRadio).toHaveAttribute('checked', '')
+    })
+    test('Arrow keys do not focus disabled radio', async ({ page }) => {
+        //Arrange
+        const title = page.locator('#focus-title')
+        const disabledRadio = page.locator('#disabled-radio')
+
+        //Assert
+        await expect(disabledRadio).toHaveAttribute('disabled', '')
+
+        //Act
+        await title.click({ force: true })
+        await page.keyboard.press('Tab')
+        await page.keyboard.press('ArrowDown')
+        await page.keyboard.press('ArrowDown')
+        await page.keyboard.press('ArrowDown')
+
+        //Assert
+        await expect(disabledRadio).not.toBeFocused()
+    })
+    test('When focused, first radio of radio group with no default value receives checked state on Space keypress', async ({
+        page,
+    }) => {
+        //Arrange
+        const ruxRadioGroupNoValue = page.locator('#no-value')
+        const radio = ruxRadioGroupNoValue.locator('rux-radio').first()
+
+        //Act
+        await page.keyboard.press('Tab')
+        await page.keyboard.press('Space')
+
+        //Assert
+        await expect(radio).toBeFocused()
+        await expect(radio).toHaveAttribute('checked', '')
+    })
+    test('Shift Tab puts focus on checked radio of previous group', async ({
+        page,
+    }) => {
+        //Arrange
+        const title = page.locator('#focus-title')
+        const ruxRadioGroupOne = page.locator('#focus-check-one').first()
+        const secondRadio = ruxRadioGroupOne.locator('rux-radio').nth(1)
+        const firstRadio = page.locator('#group2-radio1')
+
+        //Act
+        await title.click({ force: true })
+        await page.keyboard.press('Tab')
+        await page.keyboard.press('ArrowDown')
+
+        //Assert
+        await expect(secondRadio).toBeFocused()
+        await expect(secondRadio).toHaveAttribute('checked', '')
+
+        //Act
+        await page.keyboard.press('Tab')
+
+        //Assert
+
+        await expect(firstRadio).toBeFocused()
+        await expect(firstRadio).toHaveAttribute('checked', '')
+
+        //Act
+        await page.keyboard.down('Shift')
+        await page.keyboard.press('Tab')
+        await page.keyboard.up('Shift')
+
+        //Assert
+        await expect(secondRadio).toBeFocused()
+        await expect(secondRadio).toHaveAttribute('checked', '')
+    })
 })
 /*
-    Need to test: 
-    
+    Need to test:
+
 */
