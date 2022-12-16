@@ -26,11 +26,68 @@ test.describe('Tabs', () => {
         await page.setContent(template)
     })
 
-    test('it renders', async ({ page }) => {
-        const el = await page.locator('rux-tabs').first()
-        await expect(el).toBeVisible()
-        await expect(el).toHaveClass('hydrated')
+    test('it can properly show tab content after being removed/added', async ({
+        page,
+    }) => {
+        // Add New Panel
+        await page.evaluate(() => {
+            const newTabEl = document.createElement('rux-tab')
+            newTabEl.innerHTML = 'Tab 4 Title'
+            newTabEl.setAttribute('id', 'tab-id-4')
+
+            const newTabPanel = document.createElement('rux-tab-panel')
+            newTabPanel.innerHTML = 'New Panel Content'
+            newTabPanel.setAttribute('aria-labelledby', 'tab-id-4')
+            newTabPanel.setAttribute('id', 'tab-panel-4')
+
+            const tabsEl = document.querySelector('rux-tabs')
+            const tabPanelsEl = document.querySelector('rux-tab-panels')
+
+            tabsEl?.appendChild(newTabEl)
+            tabPanelsEl?.appendChild(newTabPanel)
+        })
+
+        const newTabEl = page.locator('#tab-id-4')
+        await newTabEl.click()
+
+        const newTabPanel = page.locator('#tab-panel-4')
+        await expect(newTabPanel).not.toHaveClass('hidden hydrated')
+        await expect(newTabPanel).toBeVisible()
+
+        // Remove Panel
+        await page.evaluate(() => {
+            const newTabEl = document.getElementById('tab-id-4')
+            newTabEl?.remove()
+
+            const newTabPanel = document.getElementById('tab-panel-4')
+            newTabPanel?.remove()
+        })
+
+        // Add Panel Back
+        await page.evaluate(() => {
+            const newTabEl = document.createElement('rux-tab')
+            newTabEl.innerHTML = 'Tab 4 Title'
+            newTabEl.setAttribute('id', 'tab-id-4')
+
+            const newTabPanel = document.createElement('rux-tab-panel')
+            newTabPanel.innerHTML = 'New Panel Content'
+            newTabPanel.setAttribute('aria-labelledby', 'tab-id-4')
+            newTabPanel.setAttribute('id', 'tab-panel-4')
+
+            const tabsEl = document.querySelector('rux-tabs')
+            const tabPanelsEl = document.querySelector('rux-tab-panels')
+
+            tabsEl?.appendChild(newTabEl)
+            tabPanelsEl?.appendChild(newTabPanel)
+        })
+
+        const newTabEl2 = page.locator('#tab-id-4')
+        await newTabEl2.click()
+
+        const newTabPanel2 = page.locator('#tab-panel-4')
+        await expect(newTabPanel2).toBeVisible()
     })
+
     test('first tab is selected by default', async ({ page }) => {
         //Arrange
         const tab1 = await page.locator('#tab-id-1')
@@ -40,6 +97,7 @@ test.describe('Tabs', () => {
         await expect(tab1).toHaveAttribute('selected', '')
         await expect(tab2).not.toHaveAttribute('selected', '')
     })
+
     test('selects tab when user clicks', async ({ page }) => {
         //Arrange
         const tab1 = await page.locator('#tab-id-1')
@@ -120,6 +178,13 @@ test.describe('Tabs', () => {
             )
         })
         // await expect(ruxTabPanel3).toHaveClass('hydrated hidden')
+    })
+    test('it emits ruxselected event', async ({ page }) => {
+        const tabs = page.locator('rux-tabs').first()
+        const tab = tabs.locator('rux-tab').last()
+        const selectedEvent = await page.spyOnEvent('ruxselected')
+        await tab.click()
+        expect(selectedEvent).toHaveReceivedEventTimes(1)
     })
 })
 test.describe('Multiple tabs on same page', () => {
@@ -232,6 +297,7 @@ test.describe('Multiple tabs on same page', () => {
         await expect(topContent2).toBeVisible()
         await expect(bottomContent).toBeVisible()
     })
+    //TODO: Replace instances of e.evaulate here with the .hasAttribute
     test('it can dynamically add tabs that behave correctly', async ({
         page,
     }) => {

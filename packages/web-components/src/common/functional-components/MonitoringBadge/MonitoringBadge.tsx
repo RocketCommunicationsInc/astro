@@ -14,15 +14,19 @@ export const collapseNotifications = (value: number) => {
 
     // set the display to its original state
     let _shorthand = n.toString()
-
-    if (trillion >= 1) {
+    //If the value is more than a trillion, show infinite. Prevents an issue where certain, very large amounts are being shown incorrectly.
+    if (value > 1000000000000) {
         _shorthand = '∞'
-    } else if (billion >= 1) {
-        _shorthand = `${billion.toFixed(1).toString()}B`
-    } else if (million >= 1) {
-        _shorthand = `${million.toFixed(1).toString()}M`
-    } else if (thousand >= 1) {
-        _shorthand = `${thousand}K`
+    } else {
+        if (trillion >= 1) {
+            _shorthand = '∞'
+        } else if (billion >= 1) {
+            _shorthand = `${billion.toFixed(1).toString()}B`
+        } else if (million >= 1) {
+            _shorthand = `${million.toFixed(1).toString()}M`
+        } else if (thousand >= 1) {
+            _shorthand = `${thousand}K`
+        }
     }
 
     return _shorthand
@@ -37,7 +41,7 @@ const MonitoringBadge: FunctionalComponent<MonitoringBadgeProps> = ({
 }) => (
     <div
         class={`rux-advanced-status__badge ${
-            !notifications ? 'rux-advanced-status__hidden' : ''
+            notifications! > 0 ? '' : 'rux-advanced-status__hidden'
         }`}
         part="monitoring-badge"
     >

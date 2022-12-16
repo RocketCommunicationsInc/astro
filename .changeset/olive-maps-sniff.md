@@ -5,4 +5,4 @@
 "@astrouxds/react": patch
 ---
 
-Updated border styles for light theme version of rux-notification.
+Tabs - Fixed issue where tabs were not displaying correctly when being dynamically added and removed

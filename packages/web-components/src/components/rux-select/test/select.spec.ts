@@ -157,3 +157,25 @@ test.describe('Select in a form', () => {
         await expect(log).toContainText('multBestThing:redmultBestThing:blue')
     })
 })
+test.describe('Emits events', () => {
+    test.beforeEach(async ({ page }) => {
+        const template = `
+        <rux-select id="ruxSelect" label="Best Thing?" name="bestThing">
+            <rux-option label="Select an option" value=""></rux-option>
+            <rux-option label="Red" value="red"></rux-option>
+            <rux-option value="blue" label="Blue"></rux-option>
+            <rux-option value="green" label="Green"></rux-option>
+        </rux-select>
+        `
+        await page.setContent(template)
+    })
+    //TODO: Get this working
+    // test('it emits change event', async ({ page }) => {
+    //     const select = page.locator('rux-select')
+    //     const option = select.locator('rux-option').nth(1)
+    //     const changeEvent = await page.spyOnEvent('ruxchange')
+    //     await select.click()
+    //     await option.click({ force: true })
+    //     await expect(changeEvent).toHaveReceivedEventTimes(1)
+    // })
+})

@@ -32513,7 +32513,7 @@ declare namespace LocalJSX {
         /**
           * Displays an Astro icon matching this string. For a [full list of available icons, see the Icons section in Astro UXDS Guidelines](https://astrouxds.com/ui-components/icons-and-symbols)
          */
-        "icon": string;
+        "icon"?: string;
         /**
           * Displays a label below the icon
          */
