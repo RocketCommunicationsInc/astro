@@ -26,8 +26,28 @@
     </head>
 
     <body>
-        <rux-progress max="100" min="0" value="50"></rux-progress>
-        <rux-progress></rux-progress>
+        <style>
+            rux-progress {
+                margin: 2rem;
+            }
+            section {
+                width: 400px;
+                margin: 0 auto;
+            }
+        </style>
+        <section>
+            <rux-progress max="100" min="0" value="1"></rux-progress>
+            <rux-progress max="100" min="0" value="2"></rux-progress>
+            <rux-progress max="100" min="0" value="3"></rux-progress>
+            <rux-progress max="100" min="0" value="4"></rux-progress>
+            <rux-progress max="100" min="0" value="5"></rux-progress>
+            <rux-progress max="100" min="0" value="10"></rux-progress>
+            <rux-progress max="100" min="0" value="50"></rux-progress>
+            <rux-progress max="100" min="0" value="98"></rux-progress>
+            <rux-progress max="100" min="0" value="99"></rux-progress>
+            <rux-progress max="100" min="0" value="100"></rux-progress>
+            <rux-progress></rux-progress>
+        </section>
         <!-- <ftl-belt access-token="" file-id="">
             <ftl-holster name="Progress Empty" node="24958:114399">
                 <div style="width: 381px">
