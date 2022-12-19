@@ -29,8 +29,6 @@ export class RuxTab {
     @Element() el!: HTMLRuxTabElement
 
     connectedCallback() {
-        this.el.setAttribute('role', 'tab')
-
         //handle small on init
         if (this.el?.parentElement?.getAttributeNode('small')) {
             this.el.setAttribute('small', '')
@@ -55,7 +53,8 @@ export class RuxTab {
                         'rux-tab--large': !this.small,
                         'rux-tab--disabled': this.disabled,
                     }}
-                    tabindex={this.disabled ? '-1' : '0'}
+                    role="tab"
+                    tabindex={this.disabled || !this.selected ? '-1' : '0'}
                 >
                     <slot></slot>
                 </div>
