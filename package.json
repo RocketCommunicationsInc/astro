@@ -2,12 +2,12 @@
   "name": "root",
   "private": true,
   "devDependencies": {
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
-    "@changesets/cli": "^2.19.0",
-    "husky": "^7.0.2",
-    "lerna": "^5.5.4",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
+    "@changesets/cli": "^2.25.2",
+    "husky": "^7.0.4",
+    "lerna": "^5.6.2",
     "prettier": "~2.2.1",
-    "pretty-quick": "~3.1.0"
+    "pretty-quick": "~3.1.3"
   },
   "scripts": {
     "prepare": "husky install",
@@ -17,6 +17,7 @@
     "build.tests": "lerna run --scope '{@astrouxds/astro-web-components,@astrouxds/react}' build",
     "build.web-comps": "lerna run --scope '@astrouxds/astro-web-components' build",
     "build.react": "lerna run --scope '@astrouxds/react' build",
+    "postbuild": "npx pretty-quick",
     "test": "lerna run --ignore @astrouxds/angular test",
     "release": "node ./.scripts/release.js && changeset publish",
     "test.web-comps.unit": "lerna run --scope '@astrouxds/astro-web-components' test.unit",
@@ -26,7 +27,7 @@
     "test.react": "lerna run --scope '@astrouxds/react' test"
   },
   "engines": {
-    "node": "^16",
-    "npm": "~8.5"
+    "node": "^16 || ^18",
+    "npm": "^8.5"
   }
 }

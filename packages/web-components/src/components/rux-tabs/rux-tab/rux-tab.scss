@@ -14,6 +14,7 @@
     &:hover {
         color: var(--color-background-interactive-hover);
     }
+    cursor: pointer;
 }
 
 :host([hidden]) {

@@ -4,24 +4,7 @@ Interested in contributing to Astro? We would love to have you. Here's everythin
 
 ## Dev Environment Setup
 
-**Requirements:** Node v16+
-
-**M1 USERS ONLY:** Chromium needs to be installed manually
-
-1. Install chromium with Homebrew
-
-```bash
-brew install chromium --no-quarantine
-```
-
-2. Modify your .zshrc file and add the following 2 lines of code at the bottom:
-
-```bash
-export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-export PUPPETEER_EXECUTABLE_PATH=`which chromium`
-```
-
-3. Restart your terminal and proceed to the next step.
+**Requirements:** Node v16+, Docker
 
 Clone this repo and run
 
@@ -35,7 +18,7 @@ To get started working with web components:
 npm run start
 ```
 
-This will spin up a stencil dev server for rapid prototyping at [localhost:3333](http://localhost:3333) and a storybook dev server at [localhost:6006](http://localhost:6006)
+This will spin up a stencil dev server for rapid prototyping at [localhost:3333](http://localhost:3333).
 
 ## Project Structure
 
@@ -56,6 +39,7 @@ This will spin up a stencil dev server for rapid prototyping at [localhost:3333]
 - [Storybook](https://storybook.js.org/) is used for our [developer documentation](https://astro-components.netlify.app/).
 - [Playwright](https://playwright.dev/) is used for our e2e testing.
 - [Changesets](https://github.com/changesets/changesets) help us manage our releases.
+- [Docker](https://www.docker.com/) for testing VRTs reliably.
 
 ## Branching
 
@@ -81,23 +65,39 @@ All new components should have an associated Storybook story that displays any v
 
 ### E2E Tests
 
-[Playwright](https://playwright.dev/) is used for E2E testing. These E2E tests are located in `web-components/tests`.
+[Playwright](https://playwright.dev/) is used for E2E and Visual Regression Testing (VRT).
+
+#### Test Directory Structure
+
+Each component should have it's own `tests` directory.
+
+- rux-button
+  - tests
+    - basic
+      - index.html
+      - button.vrt.spec.ts
+    - holster
+    - button.spec.ts
 
 #### Writing an E2E Test
 
-Each component has it's own isoloated test file within `web-components/tests`. These files generate the HTML to be tested using our `setBodyContent` method located in `/tests/utils/_startTestEnv.ts`.
+E2E tests should be placed in the root of a component's test directory and named `{component}.spec.ts`.
 
-When creating a new component, make sure to create a new e2e test under `web-components/tests` named `new-component-name.spec.ts`. For examples, see our already written tests under `web-components/tests`.
+#### Writing a VRT Test
+
+VRTs should be split out into their own directories by feature. Each component should contain at least one "basic" VRT. Think of this like a kitchen sink for your component. It should include all of the unique visual variants/configurations.
+
+In addition to an index.html file, you'll need a VRT test file. It should be named: `{component}.vrt.spec.ts`.
+
+To debug a VRT test source, you'll need to spin up a test server in addition to Stencil's dev server with `npm run test.server`. You can then navigate to your test index.html at `http://localhost:3334/src/components/{my-component}/tests/basic`
 
 #### Running Tests
 
 Start the Stencil server using `npm run start.stencil`.
 
-- `npm run test.e2e` - Runs all e2e tests in Chromium, Firefox, and WebKit.
-- `npm run test.cr` - Runs e2e tests in Chromium.
-- `npm run test.ff` - Runs e2e tests in Firefox.
-- `npm run test.wk` - Runs e2e tests in WebKit.
-- `npm run test` - Runs all unit and e2e tests.
+- `npm run test` - Runs all e2e and vrt tests. **Docker required**
+- `npm run test.e2e` - Runs e2e tests in Chromium.
+- `npm run test.vrt` - Runs vrt tests. **Docker required**
 
 ## Submitting your first PR
 

@@ -1,5 +1,95 @@
 # @astrouxds/angular
 
+## 7.4.0
+
+### Minor Changes
+
+#### GSB
+
+- Added new CSS Shadow Parts: `app-meta` and `center`.
+
+### Patch Changes
+
+#### Core
+
+- Updated design tokens@1.2.0.
+
+#### Monitoring Icon
+
+- Removed `min-height` and increased `min-width` to fix an issue when used in GSB.
+
+#### GSB
+
+- Removed `overflow: hidden` to fix issue with Monitoring Icon notifications being cut off.
+
+#### Tag
+
+- Fixed an issue with default slot and conditional rendering
+
+#### Pop Up
+
+- Moved `aria-hidden` to describe the pop up itself rather than the whole web component
+
+#### Notification
+
+- Updated border styles for light theme.
+
+## 7.3.0
+
+### Minor Changes
+
+#### Option
+
+- The `title` attribute will now reflect to the Shadow DOM
+
+#### Option Group
+
+- The `title` attribute will now reflect to the Shadow DOM
+
+#### Status
+
+- The `status` property now defaults to `normal`.
+
+#### Tabs
+
+- Added `cursor: pointer` style.
+
+### Patch Changes
+
+#### Monitoring Icon
+
+- Fixed layout shift when using `display: grid`
+
+#### Monitoring Progress Icon
+
+- Fixed layout shift when using `display: grid`
+
+#### Push Button
+
+- Fixed issue with `cursor: pointer`
+
+#### Pop Up
+
+- Fixed an issue where the `strategy` prop of `rux-pop-up` was not applying correctly.
+
+#### Notification
+
+- Fixed a bug where message prop was not showing if another slot was slotted in the component.
+
+#### Dialog
+
+- Fixed an issue where the `message` prop would not appear if being used with slots for header or footer.
+
+#### Select
+
+- Fixed some styling issues on where the border color would still change on hover when disabled.
+
+- Added correct cursors.
+
+#### Segmented Button
+
+- Added a `cursor: pointer` when enabled.
+
 ## 7.2.0
 
 ### Minor Changes

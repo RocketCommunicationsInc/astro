@@ -13,10 +13,16 @@
             href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
             rel="stylesheet"
         />
-        <script type="module" src="/build/astro-web-components.esm.js"></script>
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
         <script nomodule src="/build/astro-web-components.js"></script>
 
-        <link rel="stylesheet" href="/build/astro-web-components.css" />
+        <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        />
     </head>
 
     <body>
@@ -48,5 +54,18 @@
         <div style="padding: 10px 5%; width: 100px">
             <rux-tag status="standby" id="invalid-status"></rux-tag>
         </div>
+        <section>
+            <h2>Slot testing</h2>
+            <rux-tag status="pass" id="noslot"></rux-tag>
+            <p><rux-button id="toggle">Toggle Slot</rux-button></p>
+        </section>
+        <script>
+            const tag = document.getElementById('noslot')
+            const button = document.getElementById('toggle')
+            button.addEventListener('click', () => {
+                console.log(tag.innerHTML)
+                tag.innerHTML = '<em>slot</em>!'
+            })
+        </script>
     </body>
 </html>

@@ -188,7 +188,8 @@ export class RuxSelect implements FormFieldInterface {
                         option.label,
                         option.value,
                         option.disabled,
-                        this.selectEl
+                        this.selectEl,
+                        option.title
                     )
                 }
 
@@ -198,7 +199,8 @@ export class RuxSelect implements FormFieldInterface {
                     ] as HTMLRuxOptionElement[]
                     this._appendOptGroupToNativeSelect(
                         option.label ? option.label : 'Group',
-                        children
+                        children,
+                        option.title
                     )
                 }
             })
@@ -208,10 +210,12 @@ export class RuxSelect implements FormFieldInterface {
 
     private _appendOptGroupToNativeSelect(
         groupName: string,
-        children: HTMLRuxOptionElement[]
+        children: HTMLRuxOptionElement[],
+        title?: string
     ) {
         const group = Object.assign(document.createElement('optgroup'), {
             label: groupName,
+            title: title,
         })
 
         children.map((option: any) => {
@@ -219,7 +223,8 @@ export class RuxSelect implements FormFieldInterface {
                 option.label,
                 option.value,
                 option.disabled,
-                group
+                group,
+                option.title
             )
             this.selectEl.appendChild(group)
         })
@@ -231,12 +236,14 @@ export class RuxSelect implements FormFieldInterface {
         label: string,
         value: string,
         disabled: boolean,
-        target: HTMLSelectElement | HTMLOptGroupElement
+        target: HTMLSelectElement | HTMLOptGroupElement,
+        title?: string
     ) {
         const item = Object.assign(document.createElement('option'), {
             innerHTML: label ? label : '',
             value: value,
             disabled: disabled,
+            title: title,
         })
         target.appendChild(item)
     }
