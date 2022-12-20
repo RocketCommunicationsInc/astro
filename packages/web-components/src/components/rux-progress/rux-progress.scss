@@ -27,7 +27,7 @@
     &::-webkit-progress-value {
         border-radius: 0 var(--spacing-4) var(--spacing-4) 0;
         height: var(--spacing-4); //16
-        max-width: calc(100% - var(--spacing-050)); //respect margin spacing
+        max-width: 100%;
         background: var(--color-background-interactive-default);
         transition: width 0.3s ease;
         -moz-transition: width 0.3s ease;
@@ -38,13 +38,13 @@
         border-radius: 0 var(--spacing-4) var(--spacing-4) 0;
         border: none;
         height: var(--spacing-4); //16
-        max-width: calc(100% - var(--spacing-050));
+        max-width: 100%;
         background-color: var(--color-background-interactive-default);
     }
     &::-moz-progress-bar {
         border-radius: 0 var(--spacing-4) var(--spacing-4) 0;
         height: var(--spacing-4); //16
-        max-width: calc(100% - var(--spacing-050));
+        max-width: 100%;
         background: var(--color-background-interactive-default);
     }
 }
