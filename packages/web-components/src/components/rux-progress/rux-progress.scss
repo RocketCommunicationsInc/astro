@@ -10,18 +10,6 @@
 :host([hidden]) {
     display: none;
 }
-
-progress:after {
-    content: '';
-    position: absolute;
-    border: 1px solid hotpink;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
 .rux-progress[value] {
     appearance: none;
     background-color: var(--color-background-surface-default);
