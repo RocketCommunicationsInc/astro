@@ -96,14 +96,14 @@ export class RuxTooltip {
     ruxTooltipClosed!: EventEmitter
 
     @Watch('delay')
-    watchDelay() {
+    handleDelay() {
         //check to see if the delay prop can be converted to a number. If not, revert to default time.
         const delayTime = isNaN(Number(this.delay)) ? 800 : Number(this.delay)
         this.el.style.setProperty('--tooltip-delay', `${delayTime}ms`)
     }
 
     @Watch('open')
-    watchOpen() {
+    handleOpen() {
         if (this.open) {
             this.content.style.display = 'block'
             this._startPositioner()
@@ -141,7 +141,6 @@ export class RuxTooltip {
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._handleTooltipShow = this._handleTooltipShow.bind(this)
         this._handleTooltipHide = this._handleTooltipHide.bind(this)
-        this._handleDelay = this._handleDelay.bind(this)
     }
     disconnectedCallback() {
         this.el!.shadowRoot!.removeEventListener(
@@ -151,7 +150,11 @@ export class RuxTooltip {
     }
     componentWillLoad() {
         this._handleSlotChange()
-        this._handleDelay()
+    }
+
+    componentDidLoad() {
+        this.handleOpen()
+        this.handleDelay()
     }
 
     private _position() {
@@ -232,6 +235,7 @@ export class RuxTooltip {
     }
 
     private _handleTooltipShow() {
+        if (this.open) return
         this.open = true
         // If the trigger is comprised of ONE HTML element, get it and delegate focus to it, else it is text OR multiple HTML elements and then we want focus to be handled normally.
         if (this.el.childElementCount === 1) {
@@ -247,13 +251,8 @@ export class RuxTooltip {
     }
 
     private _handleTooltipHide() {
+        if (!this.open) return
         this.open = false
-    }
-
-    private _handleDelay() {
-        //check to see if the delay prop can be converted to a number. If not, revert to default time.
-        const delayTime = isNaN(Number(this.delay)) ? 800 : Number(this.delay)
-        this.el.style.setProperty('--tooltip-delay', `${delayTime}ms`)
     }
 
     render() {
@@ -264,18 +263,17 @@ export class RuxTooltip {
         } = this
         return (
             <Host>
-                <span
-                    onMouseEnter={_handleTooltipShow}
-                    onMouseLeave={_handleTooltipHide}
-                    onFocusin={_handleTooltipShow}
-                    onFocusout={_handleTooltipHide}
-                >
+                <span>
                     <span
                         class="rux-tooltip__trigger"
                         part="trigger-container"
                         ref={(el) => (this.trigger = el!)}
                         tabIndex={this.delegatedFocus ? -1 : 0}
                         aria-describedby="tooltip"
+                        onMouseEnter={_handleTooltipShow}
+                        onMouseLeave={_handleTooltipHide}
+                        onFocusin={_handleTooltipShow}
+                        onFocusout={_handleTooltipHide}
                     >
                         <slot onSlotchange={_handleSlotChange} />
                     </span>

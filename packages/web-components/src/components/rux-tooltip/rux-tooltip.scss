@@ -8,12 +8,12 @@
     color: var(--tooltip-text-color);
     border-radius: 1px;
     z-index: 100; // overlays every component except for rux-dialog and rux-classification-marking
-    cursor: pointer;
     width: max-content;
     position: absolute;
     top: 0;
     left: 0;
     opacity: 1;
+    visibility: visible;
     transition: opacity 200ms ease-in;
 }
 
@@ -28,4 +28,5 @@
 
 .hidden {
     opacity: 0 !important;
+    visibility: hidden;
 }
