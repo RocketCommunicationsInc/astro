@@ -1,5 +1,16 @@
 # @astrouxds/astro-web-components
 
+## 7.5.0
+
+### Minor Changes
+
+-   701a06a4: clock - add static property to disable ticking
+
+### Patch Changes
+
+-   0bf4ad8b: Tabs - Fixed issue where tabs were not displaying correctly when being dynamically added and removed
+-   6a7ff6b6: fix(rux-textarea) add astro scrollbar styles to textarea
+
 ## 7.4.0
 
 ### Minor Changes

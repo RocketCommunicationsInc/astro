@@ -1,5 +1,19 @@
 # @astrouxds/react
 
+## 7.5.0
+
+### Minor Changes
+
+- 701a06a4: clock - add static property to disable ticking
+
+### Patch Changes
+
+- 0bf4ad8b: Tabs - Fixed issue where tabs were not displaying correctly when being dynamically added and removed
+- Updated dependencies [701a06a4]
+- Updated dependencies [0bf4ad8b]
+- Updated dependencies [6a7ff6b6]
+  - @astrouxds/astro-web-components@7.5.0
+
 ## 7.4.0
 
 ### Minor Changes
