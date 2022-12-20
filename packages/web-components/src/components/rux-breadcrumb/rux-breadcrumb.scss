@@ -1,3 +1,14 @@
 :host {
-    color: hotpink;
+}
+
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+}
+
+ol li {
 }

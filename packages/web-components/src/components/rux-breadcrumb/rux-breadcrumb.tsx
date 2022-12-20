@@ -1,5 +1,9 @@
 import { Component, Element } from '@stencil/core'
 
+/**
+ * @part container - the nav element containing the breadcrumb list
+ * @part base - the ordered list containing the breadcrumb-items
+ */
 @Component({
     tag: 'rux-breadcrumb',
     styleUrl: 'rux-breadcrumb.scss',
@@ -19,7 +23,9 @@ export class RuxBreadcrumb {
 
     private _updateShadowRoot() {
         const navEl = document.createElement('nav')
+        navEl.setAttribute('part', 'container')
         const listEl = document.createElement('ol')
+        listEl.setAttribute('part', 'base')
 
         let slotIndex = 0
 

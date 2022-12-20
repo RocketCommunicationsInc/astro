@@ -16,6 +16,11 @@ import {
  *slots and parts
  */
 
+/**
+ * @part container - the li containing the link element
+ * @part link - the link element
+ */
+
 @Component({
     tag: 'rux-breadcrumb-item',
     styleUrl: 'rux-breadcrumb-item.scss',
@@ -24,6 +29,7 @@ import {
 export class RuxBreadcrumbItem {
     // private breadcrumbParent: HTMLRuxBreadcrumbElement | null = null
     @Element() el!: HTMLRuxBreadcrumbItemElement
+    // childEls: HTMLElement[]
 
     /**
      * The link property of the breadcrumb item
@@ -33,7 +39,7 @@ export class RuxBreadcrumbItem {
     render() {
         return (
             <Host>
-                <a href={this.href}>
+                <a href={this.href} part="link">
                     <slot></slot>
                 </a>
             </Host>
