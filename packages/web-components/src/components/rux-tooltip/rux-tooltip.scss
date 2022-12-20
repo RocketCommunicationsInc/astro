@@ -3,12 +3,12 @@
     --tooltip-delay: 800ms;
 }
 .tooltip {
-    background: var(--color-palette-grey-300);
+    background: var(--tooltip-background-color);
     padding: calc(var(--spacing-1) / 2) var(--spacing-2);
-    color: var(--color-text-black);
-    width: fit-content;
+    color: var(--tooltip-text-color);
     border-radius: 1px;
     z-index: 100; // overlays every component except for rux-dialog and rux-classification-marking
+    cursor: pointer;
     width: max-content;
     position: absolute;
     top: 0;
@@ -28,9 +28,4 @@
 
 .hidden {
     opacity: 0 !important;
-}
-
-.tooltip__dark {
-    background: var(--color-palette-grey-500);
-    color: var(--color-text);
 }

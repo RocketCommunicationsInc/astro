@@ -63,6 +63,12 @@ export class RuxTooltip {
     @Prop({ reflect: true }) delay?: string | number
 
     /**
+     *  Pixel offset from trigger, default = 8
+     */
+
+    @Prop({ mutable: true }) offset: number = 8
+
+    /**
      * The placement of the tooltip relative to it's slotted trigger element. Defaults to auto.
      */
     @Prop() placement: ExtendedPlacement = 'auto'
@@ -90,14 +96,14 @@ export class RuxTooltip {
     ruxTooltipClosed!: EventEmitter
 
     @Watch('delay')
-    handleDelay() {
+    watchDelay() {
         //check to see if the delay prop can be converted to a number. If not, revert to default time.
         const delayTime = isNaN(Number(this.delay)) ? 800 : Number(this.delay)
         this.el.style.setProperty('--tooltip-delay', `${delayTime}ms`)
     }
 
     @Watch('open')
-    handleOpen() {
+    watchOpen() {
         if (this.open) {
             this.content.style.display = 'block'
             this._startPositioner()
@@ -135,6 +141,7 @@ export class RuxTooltip {
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._handleTooltipShow = this._handleTooltipShow.bind(this)
         this._handleTooltipHide = this._handleTooltipHide.bind(this)
+        this._handleDelay = this._handleDelay.bind(this)
     }
     disconnectedCallback() {
         this.el!.shadowRoot!.removeEventListener(
@@ -144,6 +151,7 @@ export class RuxTooltip {
     }
     componentWillLoad() {
         this._handleSlotChange()
+        this._handleDelay()
     }
 
     private _position() {
@@ -153,15 +161,18 @@ export class RuxTooltip {
         const placementCheck = () => {
             if (!this.disableAutoUpdate) {
                 return [
-                    offset(4),
+                    offset(this.offset),
                     this.placement === 'auto'
                         ? autoPlacement({ alignment: 'start' })
                         : flip(),
                 ]
             } else if (this.placement === 'auto') {
-                return [offset(4), autoPlacement({ alignment: 'start' })]
+                return [
+                    offset(this.offset),
+                    autoPlacement({ alignment: 'start' }),
+                ]
             } else {
-                return [offset(4)]
+                return [offset(this.offset)]
             }
         }
         computePosition(this.triggerSlot, this.content, {
@@ -237,10 +248,12 @@ export class RuxTooltip {
 
     private _handleTooltipHide() {
         this.open = false
-        // console.log('hide')
-        // console.log(this.timeoutID)
-        //   this.open = false
-        //   clearTimeout(this.timeoutID)
+    }
+
+    private _handleDelay() {
+        //check to see if the delay prop can be converted to a number. If not, revert to default time.
+        const delayTime = isNaN(Number(this.delay)) ? 800 : Number(this.delay)
+        this.el.style.setProperty('--tooltip-delay', `${delayTime}ms`)
     }
 
     render() {
