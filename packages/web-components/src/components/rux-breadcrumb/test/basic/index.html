@@ -24,22 +24,79 @@
         />
         <link rel="stylesheet" href="../../../../../src/global/test.css" />
 
-        <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
+        <script
+            type="module"
+            src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"
+        ></script>
     </head>
 
     <body>
         <section>
             <h2>Default</h2>
-            <rux-breadcrumb>
-                <rux-breadcrumb-item href="https://google.com"
-                    >First</rux-breadcrumb-item
-                >
-                <rux-breadcrumb-item href="#">Second</rux-breadcrumb-item>
-                <rux-breadcrumb-item
-                    ><rux-icon icon="star"></rux-icon>Third</rux-breadcrumb-item
-                >
+            <div style="width: 200px">
+                <rux-breadcrumb wrap>
+                    <rux-breadcrumb-item href="https://google.com"
+                        >First</rux-breadcrumb-item
+                    >
+                    <rux-breadcrumb-item href="#">Second</rux-breadcrumb-item>
+                    <rux-breadcrumb-item href="#"
+                        ><rux-icon size="20px" icon="border-clear"></rux-icon
+                        >Third</rux-breadcrumb-item
+                    >
+                    <rux-breadcrumb-item href="#"
+                        ><rux-icon icon="border-clear"></rux-icon>Forth<rux-icon
+                            icon="border-clear"
+                        ></rux-icon
+                    ></rux-breadcrumb-item>
+                    <rux-breadcrumb-item href="#"
+                        ><rux-icon icon="border-clear"></rux-icon
+                    ></rux-breadcrumb-item>
+                </rux-breadcrumb>
+            </div>
+            <br />
+
+            <rux-breadcrumb wrap>
+                <rux-breadcrumb-item href="#"
+                    ><rux-icon icon="border-clear"></rux-icon
+                ></rux-breadcrumb-item>
+                <rux-breadcrumb-item href="#"
+                    ><rux-icon icon="border-clear"></rux-icon
+                ></rux-breadcrumb-item>
+                <rux-breadcrumb-item href="#"
+                    ><rux-icon icon="border-clear"></rux-icon
+                ></rux-breadcrumb-item>
+                <rux-breadcrumb-item href="#"
+                    ><rux-icon icon="border-clear"></rux-icon
+                ></rux-breadcrumb-item>
             </rux-breadcrumb>
-            <button>click me!</button>
+            <!-- <button>click me!</button> -->
+        </section>
+        <section style="display: block; padding: 3rem">
+            <h1>Figma</h1>
+            <ftl-belt access-token="" file-id="Wynj11cqgW7VSQLYZJcBPz">
+                <ftl-holster name="Breadcrumb Test" node="60622:156220">
+                    <div style="padding-top: 6px">
+                        <rux-breadcrumb>
+                            <rux-breadcrumb-item href="https://google.com"
+                                ><rux-icon icon="border-clear"></rux-icon
+                                >Home</rux-breadcrumb-item
+                            >
+                            <rux-breadcrumb-item href="#"
+                                ><rux-icon icon="border-clear"></rux-icon>Page
+                                2</rux-breadcrumb-item
+                            >
+                            <rux-breadcrumb-item href="#"
+                                ><rux-icon icon="border-clear"></rux-icon>Page
+                                3</rux-breadcrumb-item
+                            >
+                            <rux-breadcrumb-item
+                                ><rux-icon icon="border-clear"></rux-icon
+                                >Current Page</rux-breadcrumb-item
+                            >
+                        </rux-breadcrumb>
+                    </div>
+                </ftl-holster>
+            </ftl-belt>
         </section>
         <script>
             const breadcrumb = document.querySelector('rux-breadcrumb')
@@ -49,7 +106,7 @@
             addCrumb.addEventListener('click', (e) => {
                 const newItem = document.createElement('rux-breadcrumb-item')
                 newItem.href = '#'
-                newItem.textContent = `${number} Crumb`
+                newItem.innerHTML = `<span>${number} Crumb</span>`
                 breadcrumb.appendChild(newItem)
                 number += 1
             })

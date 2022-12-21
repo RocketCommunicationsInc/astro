@@ -1,22 +1,29 @@
 :host {
-    display: contents;
+    display: flex;
 }
 
 ::slotted(rux-icon) {
     color: inherit;
 }
-
+a {
+    color: var(--color-text-interactive-default);
+    &:hover {
+        color: var(--color-text-interactive-hover);
+    }
+}
+span {
+    color: inherit;
+}
 [part='link'] {
     font-family: var(--font-control-body-1-font-family);
     font-size: var(--font-control-body-1-font-size);
     font-weight: var(--font-control-body-1-font-weight);
     line-height: var(--font-control-body-1-line-height);
     letter-spacing: var(--font-control-body-1-letter-spacing);
-    color: var(--color-text-interactive-default);
-    display: inline-flex;
-    align-items: center;
 
-    &:hover {
-        color: var(--color-text-interactive-hover);
-    }
+    display: inline-flex;
+    gap: var(--spacing-2);
+    align-items: center;
+    text-decoration: none;
+    white-space: nowrap;
 }
