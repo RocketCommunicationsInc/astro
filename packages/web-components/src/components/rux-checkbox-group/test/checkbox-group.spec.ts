@@ -1,20 +1,6 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Checkbox-group', () => {
-    test('it renders', async ({ page }) => {
-        const template = `
-            <rux-checkbox-group>
-                <rux-checkbox>one</rux-checkbox>
-                <rux-checkbox>two</rux-checkbox>
-                <rux-checkbox>three</rux-checkbox>
-            </rux-checkbox-group>
-        `
-        await page.setContent(template)
-        const el = await page.locator('rux-checkbox-group')
-        await expect(el).toBeVisible()
-        await expect(el).toHaveClass('hydrated')
-    })
-
     test('it sets label', async ({ page }) => {
         const template = `
             <rux-checkbox-group label="hello"></rux-checkbox-group>

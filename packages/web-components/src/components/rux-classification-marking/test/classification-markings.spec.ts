@@ -159,14 +159,15 @@ test.describe('Classification Marking', () => {
             await expect(el).toHaveText('unclassified')
         })
 
-        // @TODO - Implement ASTRO-4783
-        // test('it defaults to unclassified if an invalid classification is provided', async ({ page }) => {
-        //     const template = `<rux-classification-marking classification="farts"></rux-classification-marking>`
+        test('it defaults to unclassified if an invalid classification is provided', async ({
+            page,
+        }) => {
+            const template = `<rux-classification-marking classification="farts"></rux-classification-marking>`
 
-        //  await page.setContent(template)
-        // const el = await page.locator('rux-classification-marking')
-        //     await expect(el).toHaveText('unclassified')
-        // })
+            await page.setContent(template)
+            const el = await page.locator('rux-classification-marking')
+            await expect(el).toHaveText('unclassified')
+        })
     })
 
     // @TODO - Implement in VRT

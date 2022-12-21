@@ -40,6 +40,7 @@ export class RuxClock {
         this.convertedAos = this._formatLosAosDateIn(newValue)
     }
 
+    @Prop() static = false
     /**
      * When supplied with a valid [date string or value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#syntax), displays a timestamp labeled "LOS" next to the standard clock.
      */
@@ -112,9 +113,11 @@ export class RuxClock {
         if (this.dateIn) {
             this._handleDateIn()
         } else {
-            this._timer = window.setInterval(() => {
-                this._updateTime()
-            }, 1000)
+            if (!this.static) {
+                this._timer = window.setInterval(() => {
+                    this._updateTime()
+                }, 1000)
+            }
         }
 
         if (this.aos) this.convertedAos = this._formatLosAosDateIn(this.aos)
@@ -144,9 +147,11 @@ export class RuxClock {
         this._time = this.dateIn!
         if (!this._rawTime) this._rawTime = new Date(this.dateIn!)
         if (this._validateDateIn(this._rawTime)) {
-            this._timer = window.setInterval(() => {
-                this._updateTime()
-            }, 1000)
+            if (!this.static) {
+                this._timer = window.setInterval(() => {
+                    this._updateTime()
+                }, 1000)
+            }
         } else {
             console.warn(
                 `The date-in value of ${this.dateIn} is not a valid date.`

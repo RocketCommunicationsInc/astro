@@ -55,12 +55,6 @@ test.describe('Switch', () => {
             path: './tests/utils/formScript.js',
         })
     })
-
-    test('it renders', async ({ page }) => {
-        const el = await page.locator('rux-switch').first()
-        await expect(el).toBeVisible()
-        await expect(el).toHaveClass('rux-form-field hydrated')
-    })
     test('it renders label prop', async ({ page }) => {
         const el = await page.locator('.second-test rux-switch').first()
         const label = el.locator('label')
@@ -99,9 +93,7 @@ test.describe('Switch', () => {
 
         await expect(switch1IdClass).not.toBe(switch2IdClass)
     })
-    test('submits the correct select value when using a form', async ({
-        page,
-    }) => {
+    test('submits the correct value when using a form', async ({ page }) => {
         //Arrange
         const ruxSwitch = await page.locator('#ruxSwitch').first()
         const nativeCheckbox = await page.locator('#nativeCheckbox').first()
@@ -203,8 +195,24 @@ test.describe('Switch', () => {
         //Assert
         await expect(log).not.toContainText('ruxSwitch')
     })
+    test('it emits ruxinput event', async ({ page }) => {
+        const ruxSwitch = await page.locator('#ruxSwitch').first()
+        const inputEvent = await page.spyOnEvent('ruxinput')
+        await ruxSwitch.click()
+        expect(inputEvent).toHaveReceivedEventTimes(1)
+    })
+    test('it emits ruxchange event', async ({ page }) => {
+        const ruxSwitch = await page.locator('#ruxSwitch').first()
+        const changeEvent = await page.spyOnEvent('ruxchange')
+        await ruxSwitch.click()
+        expect(changeEvent).toHaveReceivedEventTimes(1)
+    })
+    test('it emits ruxblur event', async ({ page }) => {
+        const ruxSwitch = await page.locator('#ruxSwitch').first()
+        const secondSwitch = await page.locator('rux-switch').nth(1)
+        const blurEvent = await page.spyOnEvent('ruxblur')
+        await ruxSwitch.click()
+        await secondSwitch.click()
+        expect(blurEvent).toHaveReceivedEventTimes(1)
+    })
 })
-/*
-    Need to test: 
-    
-*/

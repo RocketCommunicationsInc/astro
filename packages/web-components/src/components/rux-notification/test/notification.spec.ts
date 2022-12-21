@@ -36,6 +36,8 @@ test.describe('Notification', () => {
         `
         await page.setContent(template)
         const el = await page.locator('rux-notification')
+        await expect(el).toHaveAttribute('open', '')
+        await page.waitForTimeout(2001)
         await expect(el).not.toHaveAttribute('open', '')
     })
     test('it accepts second values for closeAfter', async ({ page }) => {
@@ -94,22 +96,13 @@ test.describe('Notification', () => {
             ></rux-notification>
             `
         await page.setContent(template)
-        await page.addScriptTag({
-            content: `
-        document.addEventListener('ruxclosed', () => {
-            console.log('notification closed');
-        })
-        `,
-        })
+
         const el = await page.locator('rux-notification')
         const closeBtn = await el.locator('rux-icon')
-        page.on('console', (msg) => {
-            expect(msg.text()).toBe('notification closed')
-        })
-        await Promise.all([
-            page.waitForEvent('console', { timeout: 5000 }),
-            closeBtn.click(),
-        ])
+        const closeEvent = await page.spyOnEvent('ruxclosed')
+
+        await closeBtn.click()
+        expect(closeEvent).toHaveReceivedEventTimes(1)
     })
 
     test('it renders the message prop text when used with slots', async ({
@@ -127,8 +120,3 @@ test.describe('Notification', () => {
         await expect(messageContainer).toContainText('Message Prop')
     })
 })
-/*
-    Need to test: 
-        small prop - could probably test the size of the notification 
-        
-*/

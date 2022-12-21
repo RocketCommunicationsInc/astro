@@ -153,12 +153,6 @@ test.describe('Input with form', () => {
             path: './tests/utils/formScript.js',
         })
     })
-
-    test('it renders', async ({ page }) => {
-        const el = page.locator('rux-input').first()
-        await expect(el).toBeVisible()
-        await expect(el).toHaveClass('hydrated')
-    })
     test('submits the correct value when using a form', async ({ page }) => {
         //Arrange
         const ruxInputComponent = page.locator('#ruxInput').first()
@@ -355,25 +349,41 @@ test.describe('Input with form', () => {
         await expect(log).toContainText('time:01:25:00')
     })
 })
-test.describe('Input with slots and props', () => {
-    test('it renders label prop', async ({ page }) => {
+test.describe('Input emits correct events', () => {
+    test.beforeEach(async ({ page }) => {
         const template = `
-            <rux-input label="hello"></rux-input>
-            `
+            <rux-input type="text"></rux-input>
+            <div id="blur-me" style="width: 100px; height: 100px; margin-top: 5rem;">Click to blur</div>
+        `
         await page.setContent(template)
-        const el = await page.locator('rux-input')
-        await expect(el).toHaveClass('hydrated')
     })
-    test('it renders label slot', async ({ page }) => {
-        const template = `
-            <rux-input><div slot="label">hello</div></rux-input>
-            `
-        await page.setContent(template)
-        const el = await page.locator('rux-input')
-        await expect(el).toHaveClass('hydrated')
+    test('it emits ruxfocus event', async ({ page }) => {
+        const focusEvent = await page.spyOnEvent('ruxfocus')
+        await page.locator('rux-input').click()
+        expect(focusEvent).toHaveReceivedEventTimes(1)
+    })
+    test('it emits ruxblur event', async ({ page }) => {
+        const blurEvent = await page.spyOnEvent('ruxblur')
+        await page.locator('rux-input').click()
+        await page.locator('#blur-me').click()
+        expect(blurEvent).toHaveReceivedEventTimes(1)
+    })
+    test('it emits ruxinput event on each key press', async ({ page }) => {
+        const inputEvent = await page.spyOnEvent('ruxinput')
+        //delay types it slower, like a user. This should fire the input event 5 times.
+        await page
+            .locator('rux-input')
+            .locator('input')
+            .nth(1)
+            .type('Hello', { delay: 100 })
+        expect(inputEvent).toHaveReceivedEventTimes(5)
+    })
+    test('it emits ruxchange event when input is committed', async ({
+        page,
+    }) => {
+        const changeEvent = await page.spyOnEvent('ruxchange')
+        await page.locator('rux-input').locator('input').nth(1).type('Tonjiro')
+        await page.locator('#blur-me').click()
+        expect(changeEvent).toHaveReceivedEventTimes(1)
     })
 })
-/*
-    Need to test: 
-    
-*/
