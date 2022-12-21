@@ -3,11 +3,13 @@
     --tooltip-delay: 800ms;
 }
 .tooltip {
-    background: var(--color-palette-grey-300);
+    background: #3c3e42; //TODO replace with tooltip design token once merged in
     padding: calc(var(--spacing-1) / 2) var(--spacing-2);
-    color: var(--color-text-black);
+    color: var(
+        --color-text-primary
+    ); //TODO replace with tooltip design token once merged in
     width: fit-content;
-    border-radius: 1px;
+    border-radius: 1px; //TODO replace with tooltip design token once merged in
     z-index: 100; // overlays every component except for rux-dialog and rux-classification-marking
     width: max-content;
     position: absolute;
@@ -16,10 +18,11 @@
     opacity: 1;
     visibility: visible;
     transition: opacity 200ms ease-in;
+    font-size: var(--font-body-2-font-size);
+    line-height: var(--font-body-2-line-height);
 }
 
 .rux-tooltip__trigger {
-    cursor: pointer;
     display: inline-block;
 }
 
@@ -31,9 +34,4 @@
 .hidden {
     opacity: 0 !important;
     visibility: hidden;
-}
-
-.tooltip__dark {
-    background: var(--color-palette-grey-500);
-    color: var(--color-text);
 }

@@ -12580,6 +12580,10 @@ export namespace Components {
          */
         "message": string;
         /**
+          * Pixel offset from trigger, default = 8
+         */
+        "offset": number;
+        /**
           * Whether or not the tooltip is open
          */
         "open": boolean;
@@ -33176,6 +33180,10 @@ declare namespace LocalJSX {
           * Enter a string to be used as the tooltip on this element
          */
         "message"?: string;
+        /**
+          * Pixel offset from trigger, default = 8
+         */
+        "offset"?: number;
         /**
           * Emits when the tooltip has closed.
          */

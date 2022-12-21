@@ -61,6 +61,11 @@ export class RuxTooltip {
     @Prop({ reflect: true }) delay?: string | number
 
     /**
+     *  Pixel offset from trigger, default = 8
+     */
+    @Prop({ mutable: true }) offset: number = 8
+
+    /**
      * The placement of the tooltip relative to it's slotted trigger element. Defaults to auto.
      */
     @Prop() placement: ExtendedPlacement = 'auto'
@@ -161,15 +166,18 @@ export class RuxTooltip {
         const placementCheck = () => {
             if (!this.disableAutoUpdate) {
                 return [
-                    offset(4),
+                    offset(this.offset),
                     this.placement === 'auto'
                         ? autoPlacement({ alignment: 'start' })
                         : flip(),
                 ]
             } else if (this.placement === 'auto') {
-                return [offset(4), autoPlacement({ alignment: 'start' })]
+                return [
+                    offset(this.offset),
+                    autoPlacement({ alignment: 'start' }),
+                ]
             } else {
-                return [offset(4)]
+                return [offset(this.offset)]
             }
         }
         computePosition(this.triggerSlot, this.content, {
@@ -229,6 +237,7 @@ export class RuxTooltip {
     }
 
     private _handleTooltipShow() {
+        if (this.open) return
         this.open = true
         // If the trigger is comprised of ONE HTML element, get it and delegate focus to it, else it is text OR multiple HTML elements and then we want focus to be handled normally.
         if (this.el.childElementCount === 1) {
@@ -244,6 +253,7 @@ export class RuxTooltip {
     }
 
     private _handleTooltipHide() {
+        if (!this.open) return
         this.open = false
     }
 
