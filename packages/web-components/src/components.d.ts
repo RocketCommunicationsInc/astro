@@ -36,10 +36,6 @@ export namespace Components {
           * determines whether the breadcrumb gets truncated in the middle
          */
         "truncate"?: boolean;
-        /**
-          * determines whether the breadcrumb is allowed to wrap too the next line or not
-         */
-        "wrap"?: boolean;
     }
     interface RuxBreadcrumbItem {
         /**
@@ -20503,10 +20499,6 @@ declare namespace LocalJSX {
           * determines whether the breadcrumb gets truncated in the middle
          */
         "truncate"?: boolean;
-        /**
-          * determines whether the breadcrumb is allowed to wrap too the next line or not
-         */
-        "wrap"?: boolean;
     }
     interface RuxBreadcrumbItem {
         /**

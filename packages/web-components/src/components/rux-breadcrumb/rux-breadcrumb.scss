@@ -12,10 +12,7 @@ ol {
     display: flex;
     align-items: center;
     gap: var(--spacing-2);
-
-    &.wrap {
-        flex-wrap: wrap;
-    }
+    flex-wrap: wrap;
 
     & li {
         display: flex;
