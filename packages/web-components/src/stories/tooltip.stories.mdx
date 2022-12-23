@@ -18,7 +18,7 @@ import { html, render } from 'lit-html'
 
 # Tooltip
 
-A Tooltip is a message box that provides a concise amount of relevant contextual information about an associated UI element. Tooltips are activated by hovering over, focusing on, or tapping an element.
+A Tooltip is a message box that provides a concise amount of relevant contextual information about an associated UI element. Tooltips are activated by hovering over, or focusing on an element.
 
 export const Default = (args) => {
     return html`
@@ -26,6 +26,7 @@ export const Default = (args) => {
     <rux-tooltip
         message="${args.message}"
         placement="${args.placement}"
+        delay="${args.delay}"
         open="${args.open}"
     >
         <rux-button>Trigger</rux-button>
@@ -40,6 +41,7 @@ export const Default = (args) => {
             open: true,
             message: 'Tooltip',
             placement: 'top-center',
+            delay: 800,
         }}
         name="Default"
         >
