@@ -84,6 +84,13 @@
     margin-left: auto;
     display: flex;
 }
+.rux-notification-banner__close {
+    &:focus-visible {
+        border-radius: var(--focus-radius);
+        outline: var(--focus-outline);
+        outline-offset: var(--focus-offset);
+    }
+}
 
 /* ----- Large ----- */
 .rux-notification-banner--large {
@@ -121,7 +128,7 @@
 
 /* ---- truncated/wrapped --- */
 .rux-notification-banner__content {
-    overflow: hidden;
+    overflow-x: hidden; //because of this focus doesn't show. need refactor.
     white-space: nowrap;
     text-overflow: ellipsis;
 }
