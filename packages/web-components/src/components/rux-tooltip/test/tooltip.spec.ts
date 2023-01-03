@@ -1,6 +1,29 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Tooltip', async () => {
+    // emits opened event on hover in
+    // emits closed event on hover out
+    // emits opened event on focus in
+    // emits closed event on focus out
+
+    // --> emits open event when open attr is true
+    // --> emits closed event when closed attr is false
+    // --> on hover in, open = true
+    // --> on hover out, open = false
+    // --> on focus in, open = true
+    // --> on focus out, open = false
+
+    // visually places correct placement
+
+    // responds to open default
+    // responds to open attr changed after render
+
+    // reponds to method
+    // responds to delay
+    // offset
+
+    // open attribute reflects
+
     test('it emits ruxtooltipopened event', async ({ page }) => {
         const template = `
                 <rux-tooltip message="This is the tooltip">
