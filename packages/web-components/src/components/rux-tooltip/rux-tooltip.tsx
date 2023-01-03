@@ -45,7 +45,7 @@ export class RuxTooltip {
     @State() delegatedFocus = false //Keeps track of whether the element in trigger slot is focusable
 
     /**
-     *  Enter a string to be used as the tooltip on this element
+     *  The tooltip's content.
      */
     @Prop({ reflect: true }) message: string = ''
 
@@ -55,15 +55,14 @@ export class RuxTooltip {
     @Prop({ mutable: true, reflect: true }) open: boolean = false
 
     /**
-     *  How long it takes the tooltip to appear in milliseconds, default = 800
+     *  How long it takes the tooltip to appear in milliseconds, default = 800, Overrides the css custom property --delay.
      */
-
     @Prop({ reflect: true }) delay?: string | number
 
     /**
      *  Pixel offset from trigger, default = 8
      */
-    @Prop({ mutable: true }) offset: number = 8
+    @Prop() offset: number = 8
 
     /**
      * The placement of the tooltip relative to it's slotted trigger element. Defaults to auto.
@@ -96,10 +95,7 @@ export class RuxTooltip {
     handleDelay() {
         //check to see if the delay prop can be converted to a number. If not, revert to default time.
         !isNaN(Number(this.delay)) &&
-            this.el.style.setProperty(
-                '--tooltip-delay',
-                `${Number(this.delay)}ms`
-            )
+            this.el.style.setProperty('--delay', `${Number(this.delay)}ms`)
     }
 
     @Watch('open')

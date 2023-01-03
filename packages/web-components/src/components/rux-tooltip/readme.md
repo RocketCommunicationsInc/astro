@@ -9,9 +9,9 @@
 
 | Property            | Attribute             | Description                                                                                                        | Type                                                                                                                                                                           | Default      |
 | ------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ |
-| `delay`             | `delay`               | How long it takes the tooltip to appear in milliseconds, default = 800                                             | `number \| string`                                                                                                                                                             | `800`        |
+| `delay`             | `delay`               | How long it takes the tooltip to appear in milliseconds, default = 800, Overrides the css custom property --delay. | `number \| string \| undefined`                                                                                                                                                | `undefined`  |
 | `disableAutoUpdate` | `disable-auto-update` | Turns disableAutoUpdate on or off which makes the tooltip move to stay in view based on scroll. Defaults to false. | `boolean`                                                                                                                                                                      | `false`      |
-| `message`           | `message`             | Enter a string to be used as the tooltip on this element                                                           | `string`                                                                                                                                                                       | `''`         |
+| `message`           | `message`             | The tooltip's content.                                                                                             | `string`                                                                                                                                                                       | `''`         |
 | `offset`            | `offset`              | Pixel offset from trigger, default = 8                                                                             | `number`                                                                                                                                                                       | `8`          |
 | `open`              | `open`                | Whether or not the tooltip is open                                                                                 | `boolean`                                                                                                                                                                      | `false`      |
 | `placement`         | `placement`           | The placement of the tooltip relative to it's slotted trigger element. Defaults to auto.                           | `"auto" \| "bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'auto'`     |
@@ -55,6 +55,13 @@ Type: `Promise<true>`
 | --------------------- | ----------- |
 | `"container"`         |             |
 | `"trigger-container"` |             |
+
+
+## CSS Custom Properties
+
+| Name      | Description                      |
+| --------- | -------------------------------- |
+| `--delay` | how long until the tooltip shows |
 
 
 ----------------------------------------------

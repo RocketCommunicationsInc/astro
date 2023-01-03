@@ -12565,7 +12565,7 @@ export namespace Components {
     }
     interface RuxTooltip {
         /**
-          * How long it takes the tooltip to appear in milliseconds, default = 800
+          * How long it takes the tooltip to appear in milliseconds, default = 800, Overrides the css custom property --delay.
          */
         "delay"?: string | number;
         /**
@@ -12577,7 +12577,7 @@ export namespace Components {
          */
         "hide": () => Promise<boolean>;
         /**
-          * Enter a string to be used as the tooltip on this element
+          * The tooltip's content.
          */
         "message": string;
         /**
@@ -33171,7 +33171,7 @@ declare namespace LocalJSX {
     }
     interface RuxTooltip {
         /**
-          * How long it takes the tooltip to appear in milliseconds, default = 800
+          * How long it takes the tooltip to appear in milliseconds, default = 800, Overrides the css custom property --delay.
          */
         "delay"?: string | number;
         /**
@@ -33179,7 +33179,7 @@ declare namespace LocalJSX {
          */
         "disableAutoUpdate"?: boolean;
         /**
-          * Enter a string to be used as the tooltip on this element
+          * The tooltip's content.
          */
         "message"?: string;
         /**
