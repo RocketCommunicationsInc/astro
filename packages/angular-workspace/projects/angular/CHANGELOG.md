@@ -1,5 +1,23 @@
 # @astrouxds/angular
 
+## 7.5.0
+
+### Minor Changes
+
+#### Clock
+
+- Added `static` property to disable ticking
+
+### Patch Changes
+
+#### Tabs
+
+- Fixed issue where tabs were not displaying correctly when being dynamically added and removed
+
+#### Textarea
+
+- Added scrollbar styles
+
 ## 7.4.0
 
 ### Minor Changes
