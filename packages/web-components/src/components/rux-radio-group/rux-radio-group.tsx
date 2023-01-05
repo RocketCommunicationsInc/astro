@@ -216,8 +216,6 @@ export class RuxRadioGroup implements FormFieldInterface {
                     radio.checked = false
                 })
 
-                console.log(next.shadowRoot?.querySelector('input'))
-
                 next.setFocus(ev)
                 this.value = next.value
                 next.checked = true
