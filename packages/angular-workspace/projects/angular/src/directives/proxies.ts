@@ -200,13 +200,13 @@ export declare interface RuxClock extends Components.RuxClock {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['aos', 'dateIn', 'hideDate', 'hideLabels', 'hideTimezone', 'los', 'small', 'timezone']
+  inputs: ['aos', 'dateIn', 'hideDate', 'hideLabels', 'hideTimezone', 'los', 'small', 'static', 'timezone']
 })
 @Component({
   selector: 'rux-clock',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['aos', 'dateIn', 'hideDate', 'hideLabels', 'hideTimezone', 'los', 'small', 'timezone']
+  inputs: ['aos', 'dateIn', 'hideDate', 'hideLabels', 'hideTimezone', 'los', 'small', 'static', 'timezone']
 })
 export class RuxClock {
   protected el: HTMLElement;
