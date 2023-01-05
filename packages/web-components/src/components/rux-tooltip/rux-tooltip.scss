@@ -6,7 +6,17 @@
      */
     --delay: 800ms;
 }
+
+* {
+    box-sizing: border-box;
+}
+
+span {
+    display: contents;
+}
+
 .tooltip {
+    display: inline-block;
     background: #3c3e42; //TODO replace with tooltip design token once merged in
     padding: calc(var(--spacing-1) / 2) var(--spacing-2);
     color: var(
@@ -27,7 +37,7 @@
 }
 
 .rux-tooltip__trigger {
-    display: inline-block;
+    display: inline;
 }
 
 :host([open]) .tooltip {

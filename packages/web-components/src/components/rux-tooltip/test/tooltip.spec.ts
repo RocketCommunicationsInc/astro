@@ -24,61 +24,54 @@ test.describe('Tooltip', async () => {
 
     // open attribute reflects
 
-    test('it emits ruxtooltipopened event', async ({ page }) => {
+    test('it emits ruxtooltipopened event when open attribute is true', async ({
+        page,
+    }) => {
         const template = `
                 <rux-tooltip message="This is the tooltip">
                   <rux-button id="trigger">Trigger</rux-button>
                 </rux-tooltip>
                 `
         await page.setContent(template)
-        page.addScriptTag({
-            content: `
-        document.addEventListener('ruxtooltipopened', () => {
-            console.log('opened');
-        })
-        document.addEventListener('ruxtooltipclosed', () => {
-            console.log('closed');
-        })`,
-        })
 
         //arrange
+        const ruxtooltip = page.locator('rux-tooltip')
         const trigger = page.locator('#trigger')
+        const eventSpy = await page.spyOnEvent('ruxtooltipopened')
 
         //act
         await trigger.hover()
 
         //assert
-        page.on('console', (msg) => {
-            expect(msg.text()).toBe('opened')
-        })
+        expect(ruxtooltip).toHaveAttribute('open', '')
+        expect(eventSpy).toHaveReceivedEventTimes(1)
     })
-    test('it emits ruxtooltipclosed event', async ({ page }) => {
+    test('it emits ruxtooltipclosed event when open attribute is removed', async ({
+        page,
+    }) => {
         const template = `
                 <rux-tooltip message="This is the tooltip">
                   <rux-button id="trigger">Trigger</rux-button>
                 </rux-tooltip>`
         await page.setContent(template)
-        page.addScriptTag({
-            content: `
-        document.addEventListener('ruxtooltipopened', () => {
-            console.log('opened');
-        })
-        document.addEventListener('ruxtooltipclosed', () => {
-            console.log('closed');
-        })`,
-        })
 
         //arrange
+        const ruxtooltip = page.locator('rux-tooltip')
         const trigger = page.locator('#trigger')
+        const eventSpy = await page.spyOnEvent('ruxtooltipclosed')
 
         //act
         await trigger.hover()
+
+        //assert
+        expect(ruxtooltip).toHaveAttribute('open', '')
+
+        //act
         await page.mouse.move(0, 100)
 
         //assert
-        page.on('console', (msg) => {
-            expect(msg.text()).toBe('closed')
-        })
+        expect(ruxtooltip).not.toHaveAttribute('open', '')
+        expect(eventSpy).toHaveReceivedEventTimes(1)
     })
     test('it opens on hover in', async ({ page }) => {
         const template = `
