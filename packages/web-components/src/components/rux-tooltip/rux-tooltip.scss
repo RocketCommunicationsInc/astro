@@ -7,13 +7,11 @@
     --delay: 800ms;
 }
 .tooltip {
-    background: #3c3e42; //TODO replace with tooltip design token once merged in
+    background: var(--tooltip-color-background);
     padding: calc(var(--spacing-1) / 2) var(--spacing-2);
-    color: var(
-        --color-text-primary
-    ); //TODO replace with tooltip design token once merged in
+    color: var(--tooltip-color-text);
     width: fit-content;
-    border-radius: 1px; //TODO replace with tooltip design token once merged in
+    border-radius: var(--tooltip-radius);
     z-index: 100; // overlays every component except for rux-dialog and rux-classification-marking
     width: max-content;
     position: absolute;
