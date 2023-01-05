@@ -19,5 +19,23 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body></body>
+    <body>
+        <rux-bread-crumb>
+            <rux-bread-crumb-item href="#">One!</rux-bread-crumb-item>
+            <rux-bread-crumb-item href="#">Two!</rux-bread-crumb-item>
+            <rux-bread-crumb-item href="#">Three!</rux-bread-crumb-item>
+        </rux-bread-crumb>
+        <rux-button>Add</rux-button>
+        <script>
+            const bread = document.querySelector('rux-bread-crumb')
+            const btn = document
+                .querySelector('rux-button')
+                .addEventListener('click', () => {
+                    let newItem = document.createElement('rux-bread-crumb-item')
+                    newItem.setAttribute('href', '#')
+                    newItem.innerText = 'Four!'
+                    bread.appendChild(newItem)
+                })
+        </script>
+    </body>
 </html>
