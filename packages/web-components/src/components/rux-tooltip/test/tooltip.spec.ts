@@ -5,11 +5,16 @@ test.describe('Tooltip', async () => {
     // emits closed event on hover out
     // emits opened event on focus in
     // emits closed event on focus out
+    // emits open event when show() method is used
+    // emits closed event when closed() method is used
+    // emits event when the attribute is changed
 
     // --> emits open event when open attr is true
     // --> emits closed event when closed attr is false
+
     // --> on hover in, open = true
     // --> on hover out, open = false
+
     // --> on focus in, open = true
     // --> on focus out, open = false
 
@@ -19,8 +24,11 @@ test.describe('Tooltip', async () => {
     // responds to open attr changed after render
 
     // reponds to method
+    // el.show(), it sets open to true
+    // el.hide(), sets open to false
+
     // responds to delay
-    // offset
+    // offset - vrt
 
     // open attribute reflects
 
