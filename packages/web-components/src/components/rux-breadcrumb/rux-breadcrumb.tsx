@@ -24,6 +24,7 @@ export class RuxBreadcrumb {
     private _updateShadowRoot() {
         const navEl = document.createElement('nav')
         navEl.setAttribute('part', 'container')
+        navEl.setAttribute('aria-label', 'Breadcrumb')
         const listEl = document.createElement('ol')
         listEl.setAttribute('part', 'base')
 

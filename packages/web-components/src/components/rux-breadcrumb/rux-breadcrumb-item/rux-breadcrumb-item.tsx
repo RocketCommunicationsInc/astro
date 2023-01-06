@@ -64,7 +64,7 @@ export class RuxBreadcrumbItem {
             <Host>
                 <a
                     href={this.href}
-                    aria-current={this.current ? 'true' : null}
+                    aria-current={this.current ? 'location' : null}
                     part="link"
                 >
                     <slot onSlotchange={this._handleSlotChange} />
