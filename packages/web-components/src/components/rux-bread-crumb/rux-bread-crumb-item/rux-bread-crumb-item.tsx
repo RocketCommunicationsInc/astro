@@ -10,19 +10,20 @@ export class RuxBreadCrumb {
 
     @Prop() href?: string
 
+    @Prop({ reflect: true }) current?: string
+
+    // aria-current should go on <a> or <Host>?
     render() {
         return (
-            <Host>
+            <Host /*aria-current={this.current ? this.current : null} */>
                 <li class="rux-bread-crumb-item">
-                    {this.href ? (
-                        <a href={this.href} part="link">
-                            <slot></slot>
-                        </a>
-                    ) : (
-                        <span>
-                            <slot></slot>
-                        </span>
-                    )}
+                    <a
+                        href={this.href}
+                        part="link"
+                        aria-current={this.current ? this.current : null}
+                    >
+                        <slot></slot>
+                    </a>
                 </li>
             </Host>
         )

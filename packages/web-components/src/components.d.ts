@@ -34,6 +34,7 @@ export namespace Components {
     interface RuxBreadCrumb {
     }
     interface RuxBreadCrumbItem {
+        "current"?: string;
         "href"?: string;
     }
     interface RuxButton {
@@ -20491,6 +20492,7 @@ declare namespace LocalJSX {
     interface RuxBreadCrumb {
     }
     interface RuxBreadCrumbItem {
+        "current"?: string;
         "href"?: string;
     }
     interface RuxButton {

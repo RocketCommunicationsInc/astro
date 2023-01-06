@@ -23,18 +23,35 @@
         <rux-bread-crumb>
             <rux-bread-crumb-item href="#">One!</rux-bread-crumb-item>
             <rux-bread-crumb-item href="#">Two!</rux-bread-crumb-item>
-            <rux-bread-crumb-item href="#">Three!</rux-bread-crumb-item>
+            <rux-bread-crumb-item href="#" current="page"
+                >Three!<rux-icon icon="apps" size="small"></rux-icon
+            ></rux-bread-crumb-item>
         </rux-bread-crumb>
         <rux-button>Add</rux-button>
         <script>
+            let count = 0
             const bread = document.querySelector('rux-bread-crumb')
             const btn = document
                 .querySelector('rux-button')
                 .addEventListener('click', () => {
                     let newItem = document.createElement('rux-bread-crumb-item')
                     newItem.setAttribute('href', '#')
-                    newItem.innerText = 'Four!'
+                    if (count === 0) {
+                        newItem.innerText = 'Four!'
+                        count++
+                    } else if (count === 1) {
+                        newItem.innerText = 'Five'
+                        count = 0
+                    }
                     bread.appendChild(newItem)
+                    let crumbs = document.querySelectorAll(
+                        'rux-bread-crumb-item'
+                    )
+                    console.log(crumbs, 'all crumbs')
+                    crumbs.forEach((crumb) => {
+                        crumb.removeAttribute('current')
+                    })
+                    crumbs[crumbs.length - 1].current = 'page'
                 })
         </script>
     </body>
