@@ -1,16 +1,4 @@
-import {
-    Component,
-    h,
-    Host,
-    Prop,
-    Element,
-    // Watch,
-    // Event,
-    // EventEmitter,
-    // State,
-} from '@stencil/core'
-
-// import { hasSlot } from '../../../utils/utils'
+import { Component, h, Host, Prop, Element } from '@stencil/core'
 
 /**
  *slots and parts
@@ -60,13 +48,14 @@ export class RuxBreadcrumbItem {
                 //give rux-icons the correct size
                 childEls.map((el) => {
                     if (el.nodeName === 'RUX-ICON')
-                        el.setAttribute('size', fontSize) //need to change this to a more variable size
+                        el.setAttribute('size', fontSize)
                 })
             }
         }
     }
 
     render() {
+        //if the item has an href tag then it is a link, otherwise it is a span
         const TagType = this.href ? 'a' : 'span'
         return (
             <Host>

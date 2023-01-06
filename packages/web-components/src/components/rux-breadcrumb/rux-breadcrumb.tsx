@@ -12,12 +12,6 @@ import { Component, Element, Prop } from '@stencil/core'
 export class RuxBreadcrumb {
     @Element() el!: HTMLRuxBreadcrumbElement
 
-    //to do
-    /**
-     * determines whether the breadcrumb gets truncated in the middle
-     */
-    @Prop({ reflect: true }) truncate?: boolean = false
-
     // observe changes to LightDOM children
     componentWillLoad() {
         new MutationObserver(() => this._updateShadowRoot()).observe(this.el, {

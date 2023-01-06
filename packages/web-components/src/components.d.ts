@@ -32,10 +32,6 @@ export namespace Components {
         "expanded": boolean;
     }
     interface RuxBreadcrumb {
-        /**
-          * determines whether the breadcrumb gets truncated in the middle
-         */
-        "truncate"?: boolean;
     }
     interface RuxBreadcrumbItem {
         /**
@@ -20495,10 +20491,6 @@ declare namespace LocalJSX {
         "onRuxexpanded"?: (event: RuxAccordionItemCustomEvent<any>) => void;
     }
     interface RuxBreadcrumb {
-        /**
-          * determines whether the breadcrumb gets truncated in the middle
-         */
-        "truncate"?: boolean;
     }
     interface RuxBreadcrumbItem {
         /**
