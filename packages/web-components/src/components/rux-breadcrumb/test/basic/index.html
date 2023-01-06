@@ -70,18 +70,5 @@
                 ></rux-breadcrumb-item>
             </rux-breadcrumb>
         </section>
-        <script>
-            const breadcrumb = document.querySelector('rux-breadcrumb')
-            const addCrumb = document.querySelector('button')
-            let number = 4
-
-            addCrumb.addEventListener('click', (e) => {
-                const newItem = document.createElement('rux-breadcrumb-item')
-                newItem.href = '#'
-                newItem.innerHTML = `<span>${number} Crumb</span>`
-                breadcrumb.appendChild(newItem)
-                number += 1
-            })
-        </script>
     </body>
 </html>

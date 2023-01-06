@@ -35,7 +35,11 @@ export namespace Components {
     }
     interface RuxBreadcrumbItem {
         /**
-          * The link property of the breadcrumb item
+          * The current item in the breadcrumb trail
+         */
+        "current"?: boolean;
+        /**
+          * The href property of the breadcrumb item link
          */
         "href"?: string;
     }
@@ -20494,7 +20498,11 @@ declare namespace LocalJSX {
     }
     interface RuxBreadcrumbItem {
         /**
-          * The link property of the breadcrumb item
+          * The current item in the breadcrumb trail
+         */
+        "current"?: boolean;
+        /**
+          * The href property of the breadcrumb item link
          */
         "href"?: string;
     }

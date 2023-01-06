@@ -1,4 +1,4 @@
-import { Component, Element, Prop } from '@stencil/core'
+import { Component, Element } from '@stencil/core'
 
 /**
  * @part container - the nav element containing the breadcrumb list

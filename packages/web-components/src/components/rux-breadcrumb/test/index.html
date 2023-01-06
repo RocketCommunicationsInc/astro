@@ -28,7 +28,7 @@
         <section>
             <h2>Default</h2>
             <div style="width: 50%; margin: 2rem">
-                <rux-breadcrumb>
+                <rux-breadcrumb id="testCrumb">
                     <rux-breadcrumb-item href="https://google.com"
                         >First</rux-breadcrumb-item
                     >
@@ -42,31 +42,7 @@
                             icon="border-clear"
                         ></rux-icon
                     ></rux-breadcrumb-item>
-                    <rux-breadcrumb-item
-                        ><rux-icon icon="border-clear"></rux-icon
-                        >Last</rux-breadcrumb-item
-                    >
-                </rux-breadcrumb>
-            </div>
-            <h2>Wrapping</h2>
-            <div style="margin: 2rem">
-                <rux-breadcrumb>
-                    <rux-breadcrumb-item href="https://google.com"
-                        >First</rux-breadcrumb-item
-                    >
-                    <rux-breadcrumb-item href="#">
-                        and this is super de duper long</rux-breadcrumb-item
-                    >
-                    <rux-breadcrumb-item href="#"
-                        ><rux-icon size="20px" icon="border-clear"></rux-icon
-                        >Third</rux-breadcrumb-item
-                    >
-                    <rux-breadcrumb-item href="#"
-                        ><rux-icon icon="border-clear"></rux-icon>Forth<rux-icon
-                            icon="border-clear"
-                        ></rux-icon
-                    ></rux-breadcrumb-item>
-                    <rux-breadcrumb-item
+                    <rux-breadcrumb-item current
                         ><rux-icon icon="border-clear"></rux-icon
                         >Last</rux-breadcrumb-item
                     >
@@ -121,13 +97,16 @@
             </div>
         </section>
         <script>
-            const breadcrumb = document.querySelector('rux-breadcrumb')
+            const breadcrumb = document.querySelector('#testCrumb')
             const addCrumb = document.querySelector('button')
             let number = 4
 
             addCrumb.addEventListener('click', (e) => {
                 const newItem = document.createElement('rux-breadcrumb-item')
-                newItem.href = '#'
+                const crumbs = breadcrumb.querySelectorAll(
+                    'rux-breadcrumb-item'
+                )
+                crumbs[crumbs.length - 1].href = '#'
                 newItem.innerHTML = `<span>${number} Crumb</span>`
                 breadcrumb.appendChild(newItem)
                 number += 1

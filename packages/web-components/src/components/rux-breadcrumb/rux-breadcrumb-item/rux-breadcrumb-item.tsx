@@ -18,9 +18,14 @@ export class RuxBreadcrumbItem {
     // private breadcrumbParent: HTMLRuxBreadcrumbElement | null = null
     @Element() el!: HTMLRuxBreadcrumbItemElement
     /**
-     * The link property of the breadcrumb item
+     * The href property of the breadcrumb item link
      */
     @Prop({ reflect: true }) href?: string
+
+    /**
+     * The current item in the breadcrumb trail
+     */
+    @Prop({ reflect: true }) current?: boolean
 
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
@@ -55,13 +60,15 @@ export class RuxBreadcrumbItem {
     }
 
     render() {
-        //if the item has an href tag then it is a link, otherwise it is a span
-        const TagType = this.href ? 'a' : 'span'
         return (
             <Host>
-                <TagType href={this.href} part="link">
-                    <slot onSlotchange={this._handleSlotChange}></slot>
-                </TagType>
+                <a
+                    href={this.href}
+                    aria-current={this.current ? 'true' : null}
+                    part="link"
+                >
+                    <slot onSlotchange={this._handleSlotChange} />
+                </a>
             </Host>
         )
     }

@@ -5,16 +5,8 @@
 ::slotted(rux-icon) {
     color: inherit;
 }
+
 a {
-    color: var(--color-text-interactive-default);
-    &:hover {
-        color: var(--color-text-interactive-hover);
-    }
-}
-span {
-    color: inherit;
-}
-[part='link'] {
     font-family: var(--font-control-body-1-font-family);
     font-size: var(--font-control-body-1-font-size);
     font-weight: var(--font-control-body-1-font-weight);
@@ -26,4 +18,15 @@ span {
     align-items: center;
     text-decoration: none;
     white-space: nowrap;
+
+    &[href] {
+        color: var(--color-text-interactive-default);
+        &:hover {
+            color: var(--color-text-interactive-hover);
+        }
+    }
+
+    &:not([href]) {
+        color: inherit;
+    }
 }
