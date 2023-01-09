@@ -2,19 +2,10 @@
     //default tooltip delay when it is not set by the component
 
     /**
-     * @prop --delay: how long until the tooltip shows
-     */
+   * @prop --delay: how long until the tooltip shows
+   */
     --delay: 800ms;
 }
-
-* {
-    box-sizing: border-box;
-}
-
-span {
-    display: contents;
-}
-
 .tooltip {
     background: var(--tooltip-color-background);
     padding: calc(var(--spacing-1) / 2) var(--spacing-2);
@@ -34,7 +25,7 @@ span {
 }
 
 .rux-tooltip__trigger {
-    display: inline;
+    display: inline-block;
 }
 
 :host([open]) .tooltip {
