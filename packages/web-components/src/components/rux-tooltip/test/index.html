@@ -46,75 +46,114 @@
     </head>
 
     <body class="dark-theme">
-        <section style="margin: 3rem">
-            <rux-tooltip placement="top" message="Print ⌘ + P" delay="2000">
-                Text Trigger
+        <div
+            style="
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 1rem;
+                padding: 1rem;
+            "
+        >
+            <rux-tooltip message="content Area" open>
+                <div style="border: 2px solid red; padding: 1rem">
+                    I am a test Trigger 1
+                </div>
             </rux-tooltip>
-            <rux-tooltip
-                placement="top"
-                message="this is the tooltip 1!"
-                id="delayChange"
-            >
-                <rux-button id="button-2">Button Trigger</rux-button>
-            </rux-tooltip>
-            <rux-tooltip placement="top" message="this is the tooltip 2!">
-                <rux-button>Button Trigger</rux-button>
-            </rux-tooltip>
-            <rux-tooltip
-                message="this is a worse one tooltip!"
-                placement="bottom"
-                delay="hello!"
-            >
-                <rux-button>Button</rux-button><rux-button>Button 2</rux-button
-                ><rux-button>Button 3</rux-button>
-            </rux-tooltip>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-                incidunt minima maxime nam nostrum
-                <rux-tooltip message="tooltip message 1!" delay="0"
-                    ><a href="#">ab ducimus nobis</a></rux-tooltip
-                >
-                asperiores voluptas nihil provident, ad consequuntur itaque sunt
-                exercitationem, ipsum inventore?
-                <rux-tooltip message="tooltip message 2!" delay="0">
-                    <rux-button>Button Here</rux-button>
+            <div style="border: 2px solid red; padding: 1rem">Trigger 2</div>
+            <div style="border: 2px solid red; padding: 1rem">Trigger 3</div>
+        </div>
+        <div style="margin: 1rem">
+            <h2>Placements Around Trigger</h2>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip placement="top" message="Print ⌘ + P">
+                    <rux-button>TOP</rux-button>
                 </rux-tooltip>
-            </p>
-            <p>
-                Aut ea ab est asperiores cupiditate placeat fugit expedita
-                eligendi delectus corrupti perspiciatis sed, officiis laborum,
-                laudantium reprehenderit
+            </div>
+            <div style="margin: 3rem 7rem">
                 <rux-tooltip
-                    message="tooltip message 3!"
-                    delay="3000"
-                    placement="top"
-                    disable-auto-update
-                    >quo quod</rux-tooltip
+                    placement="top-start"
+                    message="Print ⌘ + P"
+                    delay="0"
                 >
-                recusandae dolorum impedit illum quisquam ex eaque. Rem veniam
-                modi voluptatem harum cum perspiciatis, in saepe itaque, vitae
-                odit obcaecati, magni ipsa!<rux-tooltip
-                    message="tooltip message 4!"
-                >
-                    <rux-icon icon="star" tabindex="-1"></rux-icon>
+                    <rux-button>TOP START LONG BUTTON</rux-button>
                 </rux-tooltip>
-            </p>
-        </section>
-
-        <script>
-            // document.addEventListener('ruxtooltipopened', () =>
-            //     console.log(`I see you opener`)
-            // )
-            // document.addEventListener('ruxtooltipclosed', () =>
-            //     console.log(`I see you closer`)
-            // )
-            const tooltip = document.getElementById('delayChange')
-
-            document
-                .querySelector('#button-2')
-                .addEventListener('click', () => {
-                    tooltip.setAttribute('delay', 10000)
-                })
-        </script>
+            </div>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip placement="top-end" message="Print ⌘ + P">
+                    <rux-button>TOP END LONG BUTTON</rux-button>
+                </rux-tooltip>
+            </div>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip placement="right" message="Print ⌘ + P">
+                    <rux-button>RIGHT</rux-button>
+                </rux-tooltip>
+            </div>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip placement="bottom" message="Print ⌘ + P">
+                    <rux-button>BOTTOM</rux-button>
+                </rux-tooltip>
+            </div>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip placement="bottom-start" message="Print ⌘ + P">
+                    <rux-button>BOTTOM START LONG BUTTON</rux-button>
+                </rux-tooltip>
+            </div>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip placement="bottom-end" message="Print ⌘ + P">
+                    <rux-button>BOTTOM END LONG BUTTON</rux-button>
+                </rux-tooltip>
+            </div>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip placement="left" message="Print ⌘ + P">
+                    <rux-button>LEFT</rux-button>
+                </rux-tooltip>
+            </div>
+            <h2>Delay Time</h2>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip placement="top" message="Print ⌘ + P" delay="">
+                    <rux-button>NORMAL DELAY</rux-button>
+                </rux-tooltip>
+            </div>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip placement="top" message="Print ⌘ + P" delay="2000">
+                    <rux-button>DELAY 2s</rux-button>
+                </rux-tooltip>
+            </div>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip placement="top" message="Print ⌘ + P" delay="5000">
+                    <rux-button>DELAY 5s</rux-button>
+                </rux-tooltip>
+            </div>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip placement="top" message="Print ⌘ + P" delay="0">
+                    <rux-button>NO DELAY</rux-button>
+                </rux-tooltip>
+            </div>
+            <h2>Various Triggers</h2>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip placement="top" message="Print ⌘ + P" delay="">
+                    I am a text trigger
+                </rux-tooltip>
+            </div>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip message="I am an icon!">
+                    <rux-icon icon="star"></rux-icon>
+                </rux-tooltip>
+            </div>
+            <div style="margin: 3rem 7rem">
+                <h4>A group of buttons</h4>
+                <rux-tooltip placement="top" message="Print ⌘ + P" delay="">
+                    <rux-button>FIRST BUTTON</rux-button>
+                    <rux-button>SECOND BUTTON</rux-button>
+                    <rux-button>THIRD BUTTON</rux-button>
+                </rux-tooltip>
+            </div>
+            <h2>Misc States</h2>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip open message="Print ⌘ + P">
+                    <rux-button>DEFAULT OPEN</rux-button>
+                </rux-tooltip>
+            </div>
+        </div>
     </body>
 </html>
