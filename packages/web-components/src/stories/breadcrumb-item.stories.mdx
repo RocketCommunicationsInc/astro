@@ -11,8 +11,7 @@ import { html, render } from 'lit-html'
 
 # Breadcrumb Item
 
-Breadcrumb Item belongs to the Breadcrumb Component
-
+Breadcrumb Item belongs to the Breadcrumb Component. When used in conjunction with Breadcrumd, each Breadcrumb Item except the last will have a chevron-right separator icon after it for separation.
 
 ## Guidelines
 
@@ -21,7 +20,7 @@ Breadcrumb Item belongs to the Breadcrumb Component
 export const Default = (args) => {
     return html`
 <div style="padding: 5%;">
-<rux-breadcrumb-item href="#">Breadcrumb Item</rux-breadcrumb-item>
+    <rux-breadcrumb-item href=${args.href} current=${args.current}>Breadcrumb Item</rux-breadcrumb-item>
 </div>
     `
 }
@@ -44,7 +43,71 @@ export const Default = (args) => {
 
 ## Variants
 
+### Without Href
 
+export const NoLink = (args) => {
+    return html`
+    <div style="padding: 5%;">
+        <rux-breadcrumb-item current=${args.current}>Breadcrumb Item</rux-breadcrumb-item>
+    </div>
+        `
+}
+
+<Canvas>
+    <Story
+        name="Without HREF"
+        args={{
+            href: null,
+            current: false,
+        }}
+    >
+        {NoLink.bind()}
+    </Story>
+</Canvas>
+
+### With Icon
+
+export const Icon = (args) => {
+    return html`
+    <div style="padding: 5%;">
+        <rux-breadcrumb-item href=${args.href} current=${args.current}><rux-icon icon="border-clear"></rux-icon> Breadcrumb Item</rux-breadcrumb-item>
+    </div>
+        `
+}
+
+<Canvas>
+    <Story
+        name="With Icon"
+        args={{
+            href: '#',
+            current: false,
+        }}
+    >
+        {Icon.bind()}
+    </Story>
+</Canvas>
+
+### Icon Only
+
+export const IconOnly = (args) => {
+    return html`
+    <div style="padding: 5%;">
+        <rux-breadcrumb-item href=${args.href} current=${args.current}><rux-icon icon="border-clear"></rux-icon></rux-breadcrumb-item>
+    </div>
+        `
+}
+
+<Canvas>
+    <Story
+        name="Icon Only"
+        args={{
+            href: '#',
+            current: false,
+        }}
+    >
+        {IconOnly.bind()}
+    </Story>
+</Canvas>
 
 
 

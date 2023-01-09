@@ -25,7 +25,7 @@ export class RuxBreadcrumbItem {
     /**
      * The current item in the breadcrumb trail
      */
-    @Prop({ reflect: true }) current?: boolean
+    @Prop({ reflect: true }) current?: boolean = false
 
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
