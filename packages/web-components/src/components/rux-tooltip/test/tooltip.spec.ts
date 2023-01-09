@@ -52,7 +52,7 @@ test.describe('Tooltip', async () => {
         })
 
         //assert
-        expect(ruxtooltip).toHaveAttribute('open', '')
+        await expect(ruxtooltip).toHaveAttribute('open', '')
         expect(eventSpy).toHaveReceivedEventTimes(1)
     })
     test('it emits ruxtooltipclosed event when open is removed', async ({
@@ -74,7 +74,7 @@ test.describe('Tooltip', async () => {
         })
 
         //assert
-        expect(ruxtooltip).not.toHaveAttribute('open', '')
+        await expect(ruxtooltip).not.toHaveAttribute('open', '')
         expect(eventSpy).toHaveReceivedEventTimes(1)
     })
     test('on hover in, open is true', async ({ page }) => {
@@ -93,7 +93,7 @@ test.describe('Tooltip', async () => {
         await trigger.hover()
 
         //assert
-        expect(ruxtooltip).toHaveAttribute('open', '')
+        await expect(ruxtooltip).toHaveAttribute('open', '')
     })
     test('on hover out, open is false (removed)', async ({ page }) => {
         const template = `
@@ -109,16 +109,15 @@ test.describe('Tooltip', async () => {
 
         //act
         await trigger.hover()
-        await page.mouse.move(0, 100)
 
         //assert
-        expect(ruxtooltip).toHaveAttribute('open', '')
+        await expect(ruxtooltip).toHaveAttribute('open', '')
 
         //act
         await page.mouse.move(0, 100)
 
         //assert
-        expect(ruxtooltip).not.toHaveAttribute('open', '')
+        await expect(ruxtooltip).not.toHaveAttribute('open', '')
     })
     test('on focus in, open is true', async ({ page }) => {
         const template = `
