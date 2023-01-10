@@ -9,7 +9,7 @@
 
 | Property  | Attribute | Description                                   | Type                   | Default     |
 | --------- | --------- | --------------------------------------------- | ---------------------- | ----------- |
-| `current` | `current` | The current item in the breadcrumb trail      | `boolean \| undefined` | `undefined` |
+| `current` | `current` | The current item in the breadcrumb trail      | `boolean \| undefined` | `false`     |
 | `href`    | `href`    | The href property of the breadcrumb item link | `string \| undefined`  | `undefined` |
 
 

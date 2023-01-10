@@ -5,6 +5,13 @@
 <!-- Auto Generated Below -->
 
 
+## Slots
+
+| Slot          | Description                                |
+| ------------- | ------------------------------------------ |
+| `"(default)"` | place breadcrumb-items in the default slot |
+
+
 ## Shadow Parts
 
 | Part          | Description                                      |
