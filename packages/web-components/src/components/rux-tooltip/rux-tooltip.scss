@@ -5,6 +5,7 @@
    * @prop --delay: how long until the tooltip shows
    */
     --delay: 800ms;
+    display: inline-flex; // This is necessary so that the whitespace that exists between the trigger and the tooltip does not wrap to a new line
 }
 * {
     box-sizing: border-box;
@@ -33,6 +34,7 @@ span {
 
 .rux-tooltip__trigger {
     display: inline;
+    flex-basis: 100%; // Necessary so that it takes up 100% of its container
 }
 
 :host([open]) .tooltip {

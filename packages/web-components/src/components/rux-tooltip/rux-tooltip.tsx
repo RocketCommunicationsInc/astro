@@ -236,17 +236,6 @@ export class RuxTooltip {
     private _handleTooltipShow() {
         if (this.open) return
         this.open = true
-        // If the trigger is comprised of ONE HTML element, get it and delegate focus to it, else it is text OR multiple HTML elements and then we want focus to be handled normally.
-        // if (this.el.childElementCount === 1) {
-        //     this.delegatedFocus = true
-        //     const firstChild = this.el.firstElementChild as HTMLElement
-        //     //check for a tabindex that is not -1 if it doesn't have one, add one
-        //     firstChild.hasAttribute('tabindex') &&
-        //     firstChild.getAttribute('tabindex') != '-1'
-        //         ? null
-        //         : firstChild.setAttribute('tabindex', '0')
-        //     firstChild.focus()
-        // }
     }
 
     private _handleTooltipHide() {
@@ -272,7 +261,6 @@ export class RuxTooltip {
                         class="rux-tooltip__trigger"
                         part="trigger-container"
                         ref={(el) => (this.trigger = el!)}
-                        // tabIndex={this.delegatedFocus ? -1 : 0}
                         aria-describedby="tooltip"
                     >
                         <slot onSlotchange={_handleSlotChange} />
