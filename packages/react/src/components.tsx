@@ -4435,6 +4435,10 @@ export const RuxTimeline = /*@__PURE__*/ createReactComponent<
   JSX.RuxTimeline,
   HTMLRuxTimelineElement
 >("rux-timeline");
+export const RuxTooltip = /*@__PURE__*/ createReactComponent<
+  JSX.RuxTooltip,
+  HTMLRuxTooltipElement
+>("rux-tooltip");
 export const RuxTrack = /*@__PURE__*/ createReactComponent<
   JSX.RuxTrack,
   HTMLRuxTrackElement
