@@ -27,6 +27,9 @@ export const Default = (args) => {
         message="${args.message}"
         placement="${args.placement}"
         delay="${args.delay}"
+        strategy="${args.strategy}"
+        offset="${args.offset}"
+        disable-auto-update="${args.disableAutoUpdate}"
         open="${args.open}"
     >
         <rux-button>Trigger</rux-button>
@@ -42,6 +45,9 @@ export const Default = (args) => {
             message: 'Tooltip',
             placement: 'top-center',
             delay: 800,
+            strategy: 'absolute',
+            offset: 8,
+            disableAutoUpdate: false,
         }}
         name="Default"
         >
