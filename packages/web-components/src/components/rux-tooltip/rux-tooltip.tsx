@@ -58,7 +58,7 @@ export class RuxTooltip {
     /**
      *  How long it takes the tooltip to appear in milliseconds, default = 800, Overrides the css custom property --delay.
      */
-    @Prop({ reflect: true }) delay?: number
+    @Prop({ reflect: true }) delay?: number = 800
 
     /**
      *  Pixel offset from trigger, default = 8
@@ -149,11 +149,6 @@ export class RuxTooltip {
     }
     componentWillLoad() {
         this._handleSlotChange()
-    }
-
-    componentDidLoad() {
-        this.handleOpen()
-        this.handleDelay()
     }
 
     private _position() {
