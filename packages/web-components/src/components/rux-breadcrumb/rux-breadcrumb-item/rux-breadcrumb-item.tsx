@@ -22,11 +22,6 @@ export class RuxBreadcrumbItem {
      */
     @Prop({ reflect: true }) href?: string
 
-    /**
-     * The current item in the breadcrumb trail
-     */
-    @Prop({ reflect: true }) current?: boolean = false
-
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
     }
@@ -62,11 +57,7 @@ export class RuxBreadcrumbItem {
     render() {
         return (
             <Host>
-                <a
-                    href={this.href}
-                    aria-current={this.current ? 'location' : null}
-                    part="link"
-                >
+                <a href={this.href} part="link">
                     <slot onSlotchange={this._handleSlotChange} />
                 </a>
             </Host>

@@ -38,6 +38,10 @@ export class RuxBreadcrumb {
             const listItemEl = document.createElement('li')
             const slotEl = document.createElement('slot')
             childEl.slot = slotEl.name = `slot-${++slotIndex}`
+            //set current item - if index(+1) = length of all children that's the last(so current) item.
+            slotIndex === children.length
+                ? childEl.setAttribute('aria-current', 'location')
+                : childEl.removeAttribute('aria-current')
             listItemEl.append(slotEl)
             listEl.append(listItemEl)
         }
