@@ -6,18 +6,20 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    height: calc(var(--spacing-8) * 2); //64px
 }
 
 :host([hidden]) {
     display: none;
 }
 
+:host(:not([hide-labels])) {
+    height: calc(var(--spacing-8) * 2); //64px
+}
+
 .rux-clock {
     display: flex;
     user-select: none;
     color: var(--clock-text-color);
-    height: calc(var(--spacing-8) * 2); //64px
 }
 
 .rux-clock__segment {
@@ -45,7 +47,6 @@
 
 :host([small]) .rux-clock__segment__value {
     height: var(--spacing-10);
-    padding: var(--spacing-0) var(--spacing-3);
     padding: var(--spacing-1) var(--spacing-3);
     font-size: 1.15rem;
     font-weight: var(--font-weight-medium);
