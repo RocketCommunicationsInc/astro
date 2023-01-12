@@ -46,22 +46,6 @@
     </head>
 
     <body class="dark-theme">
-        <div
-            style="
-                display: grid;
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                gap: 1rem;
-                padding: 1rem;
-            "
-        >
-            <rux-tooltip message="content Area">
-                <div style="border: 2px solid red; padding: 1rem">
-                    I am a test Trigger 1
-                </div>
-            </rux-tooltip>
-            <div style="border: 2px solid red; padding: 1rem">Trigger 2</div>
-            <div style="border: 2px solid red; padding: 1rem">Trigger 3</div>
-        </div>
         <div style="margin: 1rem">
             <h2>Placements Around Trigger</h2>
             <div style="margin: 3rem 7rem">
@@ -70,9 +54,6 @@
                 </rux-tooltip>
             </div>
             <div style="margin: 3rem 7rem">
-                <rux-tooltip delay="0" message="Hey there">
-                    <rux-icon icon="apps"></rux-icon>
-                </rux-tooltip>
                 <rux-tooltip
                     placement="top-start"
                     message="Print ⌘ + P"
