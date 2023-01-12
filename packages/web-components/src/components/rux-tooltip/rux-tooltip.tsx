@@ -58,7 +58,7 @@ export class RuxTooltip {
     /**
      *  How long it takes the tooltip to appear in milliseconds, default = 800, Overrides the css custom property --delay.
      */
-    @Prop({ reflect: true }) delay?: number = 800
+    @Prop({ reflect: true }) delay: number = 800
 
     /**
      *  Pixel offset from trigger, default = 8
@@ -94,7 +94,6 @@ export class RuxTooltip {
 
     @Watch('delay')
     handleDelay() {
-        console.log('delay time function is running')
         //check to see if the delay prop can be converted to a number. If not, revert to default time.
         !isNaN(Number(this.delay)) &&
             this.el.style.setProperty('--delay', `${Number(this.delay)}ms`)
@@ -139,8 +138,6 @@ export class RuxTooltip {
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._handleTooltipShow = this._handleTooltipShow.bind(this)
         this._handleTooltipHide = this._handleTooltipHide.bind(this)
-        this.handleDelay = this.handleDelay.bind(this)
-        this.handleOpen = this.handleOpen.bind(this)
     }
     disconnectedCallback() {
         this.el!.shadowRoot!.removeEventListener(
@@ -150,6 +147,11 @@ export class RuxTooltip {
     }
     componentWillLoad() {
         this._handleSlotChange()
+    }
+
+    componentDidLoad() {
+        this.handleDelay()
+        this.handleOpen()
     }
 
     private _position() {

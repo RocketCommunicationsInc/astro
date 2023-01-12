@@ -12567,7 +12567,7 @@ export namespace Components {
         /**
           * How long it takes the tooltip to appear in milliseconds, default = 800, Overrides the css custom property --delay.
          */
-        "delay"?: number;
+        "delay": number;
         /**
           * Turns disableAutoUpdate on or off which makes the tooltip move to stay in view based on scroll. Defaults to false.
          */
