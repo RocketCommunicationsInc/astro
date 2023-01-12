@@ -12,7 +12,6 @@ import {
     Fragment,
 } from '@stencil/core'
 import {
-    Placement,
     computePosition,
     offset,
     flip,

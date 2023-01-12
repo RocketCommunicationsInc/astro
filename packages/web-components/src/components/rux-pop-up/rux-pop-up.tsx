@@ -12,7 +12,6 @@ import {
     Listen,
 } from '@stencil/core'
 import {
-    Placement,
     computePosition,
     arrow,
     offset,
