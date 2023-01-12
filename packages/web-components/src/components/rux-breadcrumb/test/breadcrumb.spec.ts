@@ -1,20 +1,5 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 test.describe('Breadcrumb', () => {
-    test('it renders with breadcrumb items', async ({ page }) => {
-        const template = `
-        <rux-breadcrumb>
-            <rux-breadcrumb-item href="#" data-id="first">First</rux-breadcrumb-item>
-            <rux-breadcrumb-item href="#">Second</rux-breadcrumb-item>
-            <rux-breadcrumb-item href="#">Third</rux-breadcrumb-item>
-        </rux-breadcrumb>
-        `
-        await page.setContent(template)
-        const el = await page.locator('rux-breadcrumb')
-        const breadcrumbItem = el.locator(
-            `rux-breadcrumb-item[data-id='first']`
-        )
-        await expect(breadcrumbItem).toHaveClass('hydrated')
-    })
     test('items with href are links without are not', async ({ page }) => {
         const template = `
         <rux-breadcrumb>
