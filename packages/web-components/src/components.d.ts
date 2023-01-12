@@ -5,12 +5,10 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { Classification, Status, StatusTags } from "./common/commonTypes.module";
+import { Classification, ExtendedPlacement, Status, StatusTags } from "./common/commonTypes.module";
 import { LogRow } from "./components/rux-log/rux-log.model";
 import { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
-import { ExtendedPlacement } from "./components/rux-pop-up/rux-pop-up";
 import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
-import { ExtendedPlacement as ExtendedPlacement1 } from "./components/rux-tooltip/rux-tooltip";
 export namespace Components {
     interface RuxAccordion {
         /**

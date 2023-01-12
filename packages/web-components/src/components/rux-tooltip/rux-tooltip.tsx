@@ -19,6 +19,7 @@ import {
     autoUpdate,
     autoPlacement,
 } from '@floating-ui/dom'
+import { ExtendedPlacement } from '../../common/commonTypes.module'
 import { hasSlot } from '../../utils/utils'
 
 /**
@@ -26,8 +27,6 @@ import { hasSlot } from '../../utils/utils'
  * @part container - The container of the rux-tooltip text
  * @part trigger-container - the container of the tooltip trigger
  */
-
-export declare type ExtendedPlacement = Placement | 'auto'
 
 @Component({
     tag: 'rux-tooltip',
