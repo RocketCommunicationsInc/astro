@@ -18,6 +18,402 @@
 
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
+    <style>
+        rux-global-status-bar rux-button {
+            margin-right: 3px;
+        }
+        rux-global-status-bar rux-pop-up {
+            margin-left: 3px;
+        }
+        section {
+            margin-inline: 2rem;
+            margin-block: 1rem;
+        }
+        rux-container {
+            margin-top: 0.25rem;
+        }
+        rux-radio-group::part(label) {
+            font-family: var(--font-body-1-font-family);
+            font-size: var(--font-body-1-font-size);
+            font-weight: var(--font-body-1-font-weight);
+            letter-spacing: var(--font-body-1-letter-spacing);
+            line-height: var(--font-body-1-line-height);
+        }
+        rux-checkbox-group::part(container) {
+            width: 95%;
+        }
+        .two-col {
+            display: flex;
+            width: 100%;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .two-col > * {
+            flex: 1;
+        }
+    </style>
 
-    <body></body>
+    <body>
+        <rux-global-status-bar
+            include-icon="true"
+            app-state="Production"
+            app-state-color="tag1"
+            username="Joan Smith"
+            app-domain="Astro"
+            app-name="Dashboard"
+            app-version="4.0 Alpha"
+            menu-icon="apps"
+        >
+            <rux-clock></rux-clock>
+            <rux-button slot="right-side">Emergency shut off</rux-button>
+            <rux-pop-up slot="left-side" placement="bottom-end">
+                <rux-icon icon="apps" slot="trigger"></rux-icon>
+                <rux-menu>
+                    <rux-menu-item href="#">Menu Item 1</rux-menu-item>
+                    <rux-menu-item href="#">Menu Item 2</rux-menu-item>
+                    <rux-menu-item href="#">Menu Item 3</rux-menu-item>
+                </rux-menu>
+            </rux-pop-up>
+        </rux-global-status-bar>
+        <section>
+            <rux-tabs id="tab-set-id-1" small>
+                <rux-tab id="tab-id-1">Form</rux-tab>
+                <rux-tab id="tab-id-2">Tree</rux-tab>
+                <rux-tab id="tab-id-3">Other Cool Stuff</rux-tab>
+            </rux-tabs>
+            <rux-tab-panels aria-labelledby="tab-set-id-1">
+                <rux-tab-panel aria-labelledby="tab-id-1">
+                    <rux-container>
+                        <form>
+                            <h2>Ice Cream to Your Door!</h2>
+                            <div class="two-col">
+                                <rux-input
+                                    label="Name"
+                                    type="text"
+                                    placeholder="Text input"
+                                ></rux-input>
+
+                                <rux-input
+                                    label="Email"
+                                    type="email"
+                                    placeholder="user@example.com"
+                                ></rux-input>
+                                <rux-input
+                                    label="Phone"
+                                    type="tel"
+                                    placeholder="(999) 999-9999"
+                                ></rux-input>
+                            </div>
+                            <div class="two-col">
+                                <rux-checkbox-group
+                                    name="checkboxes"
+                                    label="Types"
+                                >
+                                    <rux-checkbox value="one" name="checkboxes"
+                                        >Chocolate</rux-checkbox
+                                    >
+                                    <rux-checkbox value="two" name="checkboxes"
+                                        >Vanilla</rux-checkbox
+                                    >
+                                    <rux-checkbox
+                                        value="three"
+                                        name="checkboxes"
+                                        >Strawberry</rux-checkbox
+                                    >
+                                </rux-checkbox-group>
+                                <rux-radio-group
+                                    name="radios"
+                                    label="Number of Scoops"
+                                >
+                                    <rux-radio value="one" name="radios"
+                                        >One</rux-radio
+                                    >
+                                    <rux-radio value="two" name="radios"
+                                        >Two</rux-radio
+                                    >
+                                    <rux-radio value="three" name="radios"
+                                        >Three</rux-radio
+                                    >
+                                </rux-radio-group>
+                            </div>
+                            <div class="two-col">
+                                <rux-slider
+                                    max="100"
+                                    min="0"
+                                    step="1"
+                                    value="50"
+                                    help-text=""
+                                    error-text=""
+                                    label="Nothing Clever here"
+                                    name=""
+                                ></rux-slider>
+                            </div>
+                            <div class="two-col">
+                                <rux-textarea
+                                    label="Questions?"
+                                    error-text=""
+                                    help-text=""
+                                    max-length=""
+                                    min-length=""
+                                    rows=""
+                                    value=""
+                                    type=""
+                                ></rux-textarea>
+                            </div>
+                            <div class="two-col">
+                                <rux-switch label="Awesome Opt In"></rux-switch>
+                            </div>
+
+                            <rux-button>Submit</rux-button>
+                        </form>
+                    </rux-container>
+                </rux-tab-panel>
+                <rux-tab-panel aria-labelledby="tab-id-2">
+                    <rux-container>
+                        <style>
+                            .container {
+                                padding: 1rem 10%;
+                                display: flex;
+                                justify-content: center;
+                            }
+                            rux-tree {
+                                width: 18rem;
+                                margin: 1rem;
+                            }
+                        </style>
+                        <div class="container">
+                            <rux-tree>
+                                <rux-tree-node>
+                                    Tree item 1
+                                    <rux-tree-node slot="node">
+                                        Tree item 1.1
+                                        <rux-tree-node slot="node">
+                                            Tree item 1.1.1
+                                        </rux-tree-node>
+
+                                        <rux-tree-node slot="node">
+                                            Tree item 1.1.2
+                                        </rux-tree-node>
+
+                                        <rux-tree-node slot="node">
+                                            Tree item 1.1.3
+                                        </rux-tree-node>
+                                    </rux-tree-node>
+
+                                    <rux-tree-node slot="node">
+                                        Tree item 1.2
+                                    </rux-tree-node>
+
+                                    <rux-tree-node slot="node">
+                                        Tree item 1.3
+                                        <rux-tree-node slot="node">
+                                            Tree item 1.3.1
+                                            <rux-tree-node slot="node">
+                                                Tree item 1.1.1
+                                            </rux-tree-node>
+
+                                            <rux-tree-node slot="node">
+                                                Tree item 1.1.2
+                                            </rux-tree-node>
+
+                                            <rux-tree-node slot="node">
+                                                Tree item 1.1.3
+                                            </rux-tree-node>
+                                        </rux-tree-node>
+
+                                        <rux-tree-node slot="node">
+                                            Tree item 1.3.2
+                                            <rux-tree-node slot="node">
+                                                Tree item 1.1.1
+                                            </rux-tree-node>
+
+                                            <rux-tree-node slot="node">
+                                                Tree item 1.1.2
+                                            </rux-tree-node>
+
+                                            <rux-tree-node slot="node">
+                                                Tree item 1.1.3
+                                            </rux-tree-node>
+                                        </rux-tree-node>
+
+                                        <rux-tree-node slot="node">
+                                            Tree item 1.3.3
+                                            <rux-tree-node slot="node">
+                                                Tree item 1.3.3.1
+                                            </rux-tree-node>
+
+                                            <rux-tree-node slot="node">
+                                                Tree item 1.3.3.2
+                                            </rux-tree-node>
+
+                                            <rux-tree-node slot="node">
+                                                Tree item 1.3.3.3
+                                            </rux-tree-node>
+                                        </rux-tree-node>
+                                    </rux-tree-node>
+
+                                    <rux-tree-node slot="node">
+                                        Tree item 1.4
+                                        <rux-tree-node slot="node">
+                                            Tree item 1.4.1
+                                        </rux-tree-node>
+
+                                        <rux-tree-node slot="node">
+                                            Tree item 1.4.2
+                                        </rux-tree-node>
+
+                                        <rux-tree-node slot="node">
+                                            Tree item 1.4.3
+                                        </rux-tree-node>
+                                    </rux-tree-node>
+
+                                    <rux-tree-node slot="node">
+                                        Tree item 1.5
+                                    </rux-tree-node>
+                                </rux-tree-node>
+
+                                <rux-tree-node>
+                                    Tree item 2
+
+                                    <rux-tree-node slot="node">
+                                        Tree item 2.1
+                                    </rux-tree-node>
+
+                                    <rux-tree-node slot="node">
+                                        Tree item 2.2
+                                    </rux-tree-node>
+                                    <rux-tree-node slot="node">
+                                        Tree item 2.3
+                                    </rux-tree-node>
+                                </rux-tree-node>
+                                <rux-tree-node> Tree item 3 </rux-tree-node>
+                            </rux-tree>
+                        </div>
+                    </rux-container>
+                </rux-tab-panel>
+                <rux-tab-panel aria-labelledby="tab-id-3">
+                    <rux-container>
+                        <h3>Segmented button</h3>
+                        <div class="two-col">
+                            <rux-segmented-button></rux-segmented-button>
+                            <script>
+                                const buttons = document.querySelectorAll(
+                                    'rux-segmented-button'
+                                )
+                                const options = [
+                                    { label: 'Segment One', selected: true },
+                                    { label: 'Segment Two' },
+                                    { label: 'Segment Three' },
+                                ]
+
+                                for (let buttonSet of buttons) {
+                                    buttonSet.data = options
+                                }
+                            </script>
+                        </div>
+                        <h3>Notification Banner</h3>
+                        <div class="two-col">
+                            <rux-notification open="">
+                                Notification banner
+                                <a href="#" style="margin-left: 8px">Link</a>
+                            </rux-notification>
+                        </div>
+                        <h3>Card</h3>
+                        <div class="two-col">
+                            <rux-card style="width: 300px; flex: initial">
+                                <div
+                                    slot="header"
+                                    style="display: flex; align-items: center"
+                                >
+                                    <rux-icon
+                                        icon="star"
+                                        size="26px"
+                                        style="margin-right: 10px"
+                                    ></rux-icon>
+                                    Card Title
+                                    <rux-pop-up
+                                        placement="bottom"
+                                        style="margin-left: auto"
+                                    >
+                                        <rux-icon
+                                            icon="menu"
+                                            slot="trigger"
+                                            size="26px"
+                                        ></rux-icon>
+                                        <rux-menu>
+                                            <rux-menu-item href="#"
+                                                >Menu Item 1</rux-menu-item
+                                            >
+                                            <rux-menu-item href="#"
+                                                >Menu Item 2</rux-menu-item
+                                            >
+                                            <rux-menu-item href="#"
+                                                >Menu Item 3</rux-menu-item
+                                            >
+                                        </rux-menu>
+                                    </rux-pop-up>
+                                </div>
+                                <div
+                                    style="
+                                        padding-top: 20px;
+                                        padding-bottom: 20px;
+                                        display: flex;
+                                        justify-content: center;
+                                    "
+                                >
+                                    <svg
+                                        width="140"
+                                        height="140"
+                                        viewBox="0 0 140 140"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M139.65 70C139.65 108.467 108.467 139.65 70 139.65C31.5334 139.65 0.35 108.467 0.35 70C0.35 31.5334 31.5334 0.35 70 0.35C108.467 0.35 139.65 31.5334 139.65 70Z"
+                                            stroke="black"
+                                            stroke-width="0.7"
+                                        ></path>
+                                        <circle
+                                            cx="70"
+                                            cy="70"
+                                            r="41.65"
+                                            stroke="black"
+                                            stroke-width="0.7"
+                                        ></circle>
+                                        <path
+                                            d="M69.3044 28L69.3044 0.700024C109.605 0.700026 139.3 32.2 139.3 70.7L112.002 70.7C112.002 45.5 92.4029 28 69.3044 28Z"
+                                            fill="#AEA8E5"
+                                        ></path>
+                                        <path
+                                            d="M69.3044 112L69.3044 139.3C109.605 139.3 139.3 107.45 139.3 70.7L112.002 70.7C111.302 93.45 92.7529 112 69.3044 112Z"
+                                            fill="#938BDB"
+                                        ></path>
+                                        <path
+                                            d="M69.3044 28L69.3044 0.702855C30.8085 0.349326 0.00881784 33.6 0.711748 70.7L27.9982 70.7C27.9982 45.85 47.597 28.35 69.3044 28Z"
+                                            fill="#302C54"
+                                        ></path>
+                                        <path
+                                            d="M69.3044 112L69.3044 139.3C30.1086 139.3 0.361846 106.75 0.711796 70.7L27.9982 70.7C28.6963 94.15 47.247 111.65 69.3044 112Z"
+                                            fill="#6058A8"
+                                        ></path>
+                                    </svg>
+                                </div>
+                                <div
+                                    slot="footer"
+                                    style="
+                                        justify-content: center;
+                                        display: flex;
+                                    "
+                                >
+                                    <rux-button size="small"
+                                        >Primary button</rux-button
+                                    >
+                                </div>
+                            </rux-card>
+                        </div>
+                    </rux-container>
+                </rux-tab-panel>
+            </rux-tab-panels>
+        </section>
+    </body>
 </html>
