@@ -7,9 +7,17 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                  | Default     |
-| -------- | --------- | ----------- | --------------------- | ----------- |
-| `href`   | `href`    |             | `string \| undefined` | `undefined` |
+| Property  | Attribute | Description | Type                  | Default     |
+| --------- | --------- | ----------- | --------------------- | ----------- |
+| `current` | `current` |             | `string \| undefined` | `undefined` |
+| `href`    | `href`    |             | `string \| undefined` | `undefined` |
+
+
+## Shadow Parts
+
+| Part     | Description |
+| -------- | ----------- |
+| `"link"` |             |
 
 
 ----------------------------------------------
