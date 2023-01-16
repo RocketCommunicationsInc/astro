@@ -194,6 +194,7 @@ export class RuxNotification {
                                         icon="clear"
                                         size={this.small ? '24px' : '32px'}
                                         exportparts="icon"
+                                        class="rux-notification-banner__close"
                                     ></rux-icon>
                                 </slot>
                             </div>
