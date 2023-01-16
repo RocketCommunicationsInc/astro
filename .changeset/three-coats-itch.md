@@ -1,7 +1,7 @@
 ---
-"@astrouxds/angular": major
-"@astrouxds/react": major
-"@astrouxds/astro-web-components": major
+"@astrouxds/angular": minor
+"@astrouxds/react": minor
+"@astrouxds/astro-web-components": minor
 ---
 
 This PR adds a new component, rux-tooltip. This new Tooltip component offers a solution for developers to display incidental, text-based information based on a set trigger. Guidance is provided to address what sorts of elements should be tooltip triggers, but it is up to the developer to decide ultimately. Tooltips display on hover over, or focus in. Tooltip provides modification options for display and functionality in the form of props:
