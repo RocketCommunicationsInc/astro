@@ -23386,6 +23386,39 @@ export class RuxTimeline {
 }
 
 
+export declare interface RuxTooltip extends Components.RuxTooltip {
+  /**
+   * Emits when the tooltip has opened 
+   */
+  ruxtooltipopened: EventEmitter<CustomEvent<any>>;
+  /**
+   * Emits when the tooltip has closed. 
+   */
+  ruxtooltipclosed: EventEmitter<CustomEvent<any>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['delay', 'disableAutoUpdate', 'message', 'offset', 'open', 'placement', 'strategy'],
+  methods: ['show', 'hide']
+})
+@Component({
+  selector: 'rux-tooltip',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['delay', 'disableAutoUpdate', 'message', 'offset', 'open', 'placement', 'strategy']
+})
+export class RuxTooltip {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['ruxtooltipopened', 'ruxtooltipclosed']);
+  }
+}
+
+
 export declare interface RuxTrack extends Components.RuxTrack {}
 
 @ProxyCmp({

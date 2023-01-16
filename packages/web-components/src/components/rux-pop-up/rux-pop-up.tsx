@@ -12,7 +12,6 @@ import {
     Listen,
 } from '@stencil/core'
 import {
-    Placement,
     computePosition,
     arrow,
     offset,
@@ -20,6 +19,7 @@ import {
     autoUpdate,
     autoPlacement,
 } from '@floating-ui/dom'
+import { ExtendedPlacement } from '../../common/commonTypes.module'
 
 /**
  * @slot (default) - The contents for rux-pop-up
@@ -30,8 +30,6 @@ import {
  * @part popup-content - the content that is shown when rux-pop-up is opened
  * @part arrow - the arrow pointing to the trigger of rux-pop-up
  */
-
-export declare type ExtendedPlacement = Placement | 'auto'
 
 @Component({
     tag: 'rux-pop-up',
