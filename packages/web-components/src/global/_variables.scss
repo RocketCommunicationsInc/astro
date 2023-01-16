@@ -28,6 +28,14 @@
     --normal-border: #56f000;
     --off-fill: #a4abb6;
     --off-border: #a4abb6;
+
+    //focus variables
+    --focus-ring-color: var(--color-palette-pink-200);
+    --focus-ring-width: var(--spacing-025);
+    --focus-offset: var(--spacing-050);
+    --focus-radius: 3px;
+    --focus-outline: var(--focus-ring-width) solid var(--focus-ring-color);
+    --focus-shadow: 0px 0px 0px 3px rgba(218, 156, 231, 0.5); //Cannot use design token because opacity is needed.. not currently in use
 }
 
 .light-theme {

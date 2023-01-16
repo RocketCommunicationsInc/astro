@@ -1,125 +1,184 @@
-:host {
-    *,
-    *::before,
-    *::after {
-        box-sizing: inherit;
-    }
-
-    display: inline-block;
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
-.rux-form-field {
+:host {
     display: flex;
-    flex-direction: column;
+
+    align-items: center;
+    flex-direction: row;
+    gap: calc(2 * var(--spacing-1));
+
     font-family: var(--font-control-body-1-font-family);
     font-size: var(--font-control-body-1-font-size);
-    letter-spacing: var(--font-control-body-1-letter-spacing);
     font-weight: var(--font-control-body-1-font-weight);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
+
     color: var(--color-text-primary);
+    cursor: pointer;
+
+    --control-border-color: var(--color-border-interactive-muted);
+    --control-border-color-hover: var(--color-background-interactive-hover);
+    --tick-color: var(--color-background-interactive-default);
 }
 
-.rux-radio {
-    display: flex;
-    position: relative;
-    line-height: 1.2;
-
-    input[type='radio'] {
-        -webkit-appearance: none;
-        appearance: none;
-        margin: 0;
-
-        + label {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            color: var(--color-text-primary);
-            cursor: pointer;
-
-            &::before {
-                box-sizing: border-box;
-                display: flex;
-                flex-shrink: 0;
-                flex-grow: 0;
-                content: '';
-                align-self: start;
-                height: calc(var(--spacing-4) + var(--spacing-1));
-                width: calc(var(--spacing-4) + var(--spacing-1));
-                margin: calc(var(--spacing-1) / 2); //2
-                margin-right: calc(
-                    var(--spacing-2) + (var(--spacing-1) / 2)
-                ); //2 + 8 margin for label
-                border: 1px solid var(--color-border-interactive-muted);
-                border-radius: var(--radius-circle);
-                background-color: var(--color-background-base-default);
-            }
-
-            &::after {
-                position: absolute;
-                top: 5px;
-                display: flex;
-                content: '';
-            }
-        }
-        //If no label is passed in we don't want the margin
-        + .rux-radio--no-label {
-            &::before {
-                margin-right: calc(var(--spacing-1) / 2); //2;
-            }
-        }
-
-        &:checked {
-            + label {
-                &::before {
-                    background-color: var(--color-background-base-default);
-                    border-color: var(--color-border-interactive-muted);
-                }
-
-                &::after {
-                    position: absolute;
-                    top: var(--spacing-2);
-                    display: flex;
-                    content: '';
-                    left: var(--spacing-2);
-                    height: var(--spacing-2);
-                    width: var(--spacing-2);
-                    border-radius: var(--radius-circle);
-
-                    /* box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9); */
-
-                    background-color: var(
-                        --color-background-interactive-default
-                    );
-                }
-            }
-        }
-
-        &:disabled {
-            + label {
-                cursor: not-allowed;
-                opacity: var(--opacity-disabled);
-            }
-        }
-
-        &:not(:disabled) {
-            &:hover,
-            &:checked:hover {
-                + label {
-                    &::before {
-                        border-color: var(--color-background-interactive-hover);
-                    }
-                    &::after {
-                        background-color: var(
-                            --color-background-interactive-default
-                        );
-                    }
-                }
-            }
-        }
+:host([disabled]) {
+    cursor: not-allowed;
+    opacity: var(--opacity-disabled);
+    & span {
+        pointer-events: none;
+    }
+    &::part(label) {
+        cursor: not-allowed;
     }
 }
 
-:host([hidden]) {
-    display: none;
+:host(:focus-visible) {
+    border-radius: var(--focus-radius);
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-offset);
 }
+
+:host::part(field) {
+    display: contents;
+}
+
+:host::part(field):hover :host::part(control) {
+    border-color: var(--color-background-interactive-hover);
+}
+
+:host::part(control) {
+    display: inline-flex;
+
+    align-items: center;
+    height: var(--size);
+    justify-content: center;
+    width: var(--size);
+
+    background-color: var(--color-background-base-default);
+    border-radius: var(--radius-circle);
+    box-shadow: var(--border-color) 0 0 0 1px;
+    margin: calc(3 * var(--spacing-025));
+    cursor: pointer;
+
+    --size: calc(4.5 * var(--spacing-1));
+    --border-color: var(--control-border-color);
+}
+
+:host::part(control):hover {
+    --border-color: var(--control-border-color-hover);
+}
+
+:host::part(tick) {
+    height: var(--spacing-2);
+    width: var(--spacing-2);
+
+    border-radius: var(--radius-circle);
+}
+
+:host([aria-checked='true' i])::part(tick) {
+    background-color: var(--color-background-interactive-default);
+}
+
+:host::part(label) {
+    cursor: pointer;
+}
+
+// THIS DOES NOTHING!!!
+
+// .rux-radio {
+//     display: flex;
+//     position: relative;
+//     line-height: 1.2;
+
+//     input[type='radio'] {
+//         // -webkit-appearance: none;
+//         // appearance: none;
+//         position: absolute;
+//         opacity: 0;
+//         width: 0;
+//         height: 0;
+//         margin: 0;
+
+//         + label {
+//             position: relative;
+//             display: flex;
+//             align-items: center;
+//             justify-content: flex-start;
+//             color: var(--color-text-primary);
+//             cursor: pointer;
+
+//             &::before {
+//                 box-sizing: border-box;
+//                 display: flex;
+//                 flex-shrink: 0;
+//                 flex-grow: 0;
+//                 content: '';
+//                 align-self: start;
+//                 height: calc(var(--spacing-4) + var(--spacing-1));
+//                 width: calc(var(--spacing-4) + var(--spacing-1));
+//                 margin: calc(var(--spacing-1) / 2); //2
+//                 margin-right: calc(
+//                     var(--spacing-2) + (var(--spacing-1) / 2)
+//                 ); //2 + 8 margin for label
+//                 border: 1px solid var(--color-border-interactive-muted);
+//                 border-radius: var(--radius-circle);
+//                 background-color: var(--color-background-base-default);
+//             }
+
+//             &::after {
+//                 position: absolute;
+//                 top: 5px;
+//                 display: flex;
+//                 content: '';
+//             }
+//         }
+//         //If no label is passed in we don't want the margin
+//         + .rux-radio--no-label {
+//             &::before {
+//                 margin-right: calc(var(--spacing-1) / 2); //2;
+//             }
+//         }
+
+//         &:checked {
+//             + label {
+//                 &::before {
+//                     background-color: var(--color-background-base-default);
+//                     border-color: var(--color-border-interactive-muted);
+//                 }
+
+//                 &::after {
+//                     position: absolute;
+//                     top: var(--spacing-2);
+//                     display: flex;
+//                     content: '';
+//                     left: var(--spacing-2);
+//                     height: var(--spacing-2);
+//                     width: var(--spacing-2);
+//                     border-radius: var(--radius-circle);
+
+//                     /* box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9); */
+
+//                     background-color: var(
+//                         --color-background-interactive-default
+//                     );
+//                 }
+//             }
+//         }
+//             &:focus-visible,
+//             &:checked:focus-visible {
+//                 + label {
+//                     border-radius: var(--focus-radius);
+//                     outline: var(--focus-outline);
+//                     outline-offset: var(--focus-offset);
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// :host([hidden]) {
+//     display: none;
+// }

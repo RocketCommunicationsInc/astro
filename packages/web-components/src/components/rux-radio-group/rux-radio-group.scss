@@ -4,13 +4,17 @@
     display: block;
 }
 
+:host(:focus) {
+    outline: none;
+}
+
 .hidden,
 :host([hidden]) {
     display: none;
 }
 
 ::slotted(rux-radio) {
-    display: block;
+    // display: block;
     margin-bottom: var(--spacing-2); //8
 }
 
