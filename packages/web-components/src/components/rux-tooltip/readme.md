@@ -9,7 +9,7 @@
 
 | Property            | Attribute             | Description                                                                                                        | Type                                                                                                                                                                           | Default      |
 | ------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ |
-| `delay`             | `delay`               | How long it takes the tooltip to appear in milliseconds, default = 800, Overrides the css custom property --delay. | `number \| undefined`                                                                                                                                                          | `undefined`  |
+| `delay`             | `delay`               | How long it takes the tooltip to appear in milliseconds, default = 800, Overrides the css custom property --delay. | `number`                                                                                                                                                                       | `800`        |
 | `disableAutoUpdate` | `disable-auto-update` | Turns disableAutoUpdate on or off which makes the tooltip move to stay in view based on scroll. Defaults to false. | `boolean`                                                                                                                                                                      | `false`      |
 | `message`           | `message`             | The tooltip's content.                                                                                             | `string`                                                                                                                                                                       | `''`         |
 | `offset`            | `offset`              | Pixel offset from trigger, default = 8                                                                             | `number`                                                                                                                                                                       | `8`          |
@@ -49,12 +49,19 @@ Type: `Promise<true>`
 
 
 
+## Slots
+
+| Slot          | Description                     |
+| ------------- | ------------------------------- |
+| `"(default)"` | The trigger for the rux-tooltip |
+
+
 ## Shadow Parts
 
-| Part                  | Description |
-| --------------------- | ----------- |
-| `"container"`         |             |
-| `"trigger-container"` |             |
+| Part                  | Description                           |
+| --------------------- | ------------------------------------- |
+| `"container"`         | The container of the rux-tooltip text |
+| `"trigger-container"` | the container of the tooltip trigger  |
 
 
 ## CSS Custom Properties
