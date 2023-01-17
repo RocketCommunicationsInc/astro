@@ -71,6 +71,12 @@
     &:hover {
         background-color: var(--color-background-surface-hover);
     }
+
+    &:focus-visible {
+        border-radius: var(--focus-radius);
+        outline: var(--focus-outline);
+        outline-offset: var(--focus-offset);
+    }
 }
 
 .arrow {

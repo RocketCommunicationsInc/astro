@@ -11,7 +11,7 @@
     --notification-banner-radius-outer: var(--radius-base);
     --notification-banner-radius-inner: calc(var(--radius-base) / 3 * 2);
     --notification-banner-border-width-large: var(--spacing-1); //4
-    --notification-banner-padding: 12px var(--spacing-2) 12px var(--spacing-4); //0 8px 0 16px
+    --notification-banner-padding: 0 var(--spacing-2) 0 var(--spacing-4); //0 8px 0 16px
     --notification-banner-border-width-small: var(--spacing-050); //2
 
     //for the 1px outer border on light theme
@@ -84,6 +84,17 @@
     margin-left: auto;
     display: flex;
 }
+.rux-notification-banner__close {
+    &:focus-visible {
+        border-radius: var(--focus-radius);
+        outline: var(--focus-outline);
+        outline-offset: var(--focus-offset);
+    }
+}
+
+.rux-notification-banner__close {
+    cursor: pointer;
+}
 
 /* ----- Large ----- */
 .rux-notification-banner--large {
@@ -93,6 +104,9 @@
     }
 }
 
+.rux-notification-banner__content {
+    padding: 2px 3px 2px 0px;
+}
 .rux-notification-banner--large .rux-notification-banner__content {
     font-family: var(--font-heading-5-font-family);
     font-size: var(--font-heading-5-font-size);
@@ -121,7 +135,7 @@
 
 /* ---- truncated/wrapped --- */
 .rux-notification-banner__content {
-    overflow: hidden;
+    overflow-x: hidden; //because of this focus doesn't show. need refactor.
     white-space: nowrap;
     text-overflow: ellipsis;
 }

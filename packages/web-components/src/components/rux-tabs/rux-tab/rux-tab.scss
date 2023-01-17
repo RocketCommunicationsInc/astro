@@ -15,6 +15,11 @@
         color: var(--color-background-interactive-hover);
     }
     cursor: pointer;
+    &:focus-visible {
+        outline: var(--focus-outline);
+        outline-offset: var(--focus-offset);
+        border-radius: var(--focus-radius);
+    }
 }
 
 :host([hidden]) {
