@@ -85,6 +85,10 @@
     display: flex;
 }
 
+.rux-notification-banner__close {
+    cursor: pointer;
+}
+
 /* ----- Large ----- */
 .rux-notification-banner--large {
     border: 1px solid var(--notification-banner-color-border-outer-default);
