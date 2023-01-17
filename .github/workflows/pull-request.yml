@@ -19,22 +19,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-      - uses: actions/cache@v2
-        id: cache-node-modules
-        with:
-          path: |
-            ./packages/web-components/node_modules
-          key: node-modules-${{ hashFiles('package-lock.json') }}
-      - uses: tj-actions/changed-files@v11
-        id: changed-files
-        with:
-          files: |
-            **/package.json
       - run: npm ci
-        if: steps.cache-node-modules.outputs.cache-hit != 'true' || steps.changed-files.outputs.any_changed == 'true'
         working-directory: ./packages/web-components
       - run: npm run build.stencil
-        if: steps.cache-node-modules.outputs.cache-hit != 'true' || steps.changed-files.outputs.any_changed == 'true'
         working-directory: ./packages/web-components
       # - name: Install
       #   run: npm ci
@@ -48,10 +35,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - uses: actions/cache@v2
-        with:
-          path: ./packages/web-components/node_modules
-          key: node-modules-${{ hashFiles('package-lock.json') }}
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
@@ -71,10 +54,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - uses: actions/cache@v2
-        with:
-          path: ./packages/web-components/node_modules
-          key: node-modules-${{ hashFiles('package-lock.json') }}
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
