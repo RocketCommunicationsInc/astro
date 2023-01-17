@@ -14,6 +14,11 @@
 ::slotted(*[slot='trigger']) {
     cursor: pointer;
 }
+::slotted(*[slot='trigger']:focus-visible) {
+    border-radius: var(--focus-radius);
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-offset);
+}
 
 .rux-popup {
     font-family: var(--font-body-1-font-family);

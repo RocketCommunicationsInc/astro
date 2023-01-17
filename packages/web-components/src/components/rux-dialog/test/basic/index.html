@@ -88,6 +88,18 @@
                 header="Default header"
                 open
             ></rux-dialog>
+            <rux-dialog open>
+                <span slot="header">Slot Header</span>
+                <div>
+                    <rux-input placeholder="input time"></rux-input>
+                </div>
+                <div slot="footer">
+                    <rux-button-group h-align="right">
+                        <rux-button secondary>Slot Cancel</rux-button>
+                        <rux-button id="slotconfirm">Slot Confirm</rux-button>
+                    </rux-button-group>
+                </div>
+            </rux-dialog>
         </section>
         <section>
             <rux-dialog

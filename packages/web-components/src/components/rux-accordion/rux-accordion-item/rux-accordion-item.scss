@@ -11,6 +11,10 @@ summary {
 /*remove default marker in safari*/
 details > summary::-webkit-details-marker {
     display: none;
+    width: 0;
+    height: 0;
+    position: absolute;
+    visibility: hidden;
 }
 
 summary {
@@ -25,6 +29,10 @@ summary {
     padding: var(--spacing-1) var(--spacing-2);
     box-shadow: 0 -1px 0 0 var(--color-background-base-default) inset;
     cursor: pointer;
+    &:focus-visible {
+        outline: var(--focus-outline);
+        outline-offset: var(--focus-offset);
+    }
 }
 
 summary:hover slot[name='prefix']::slotted(*),

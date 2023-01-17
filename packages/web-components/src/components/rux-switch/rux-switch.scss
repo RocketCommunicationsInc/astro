@@ -70,6 +70,13 @@
             }
         }
 
+        //focus styling
+        &:focus-visible + .rux-switch__button {
+            border-radius: var(--focus-radius);
+            outline: var(--focus-outline);
+            outline-offset: var(--focus-offset);
+        }
+
         // Disabled
         &:disabled {
             + .rux-switch__button {

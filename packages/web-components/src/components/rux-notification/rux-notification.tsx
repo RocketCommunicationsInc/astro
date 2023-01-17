@@ -100,6 +100,12 @@ export class RuxNotification {
         this.open = false
     }
 
+    private _onKeyPress(e: KeyboardEvent) {
+        if (e.key === 'Enter') {
+            this._onClick()
+        }
+    }
+
     get _closeAfter() {
         //* as long as it's less than 1000, they put in seconds. Convert that here.
         if (this.closeAfter && this.closeAfter <= 999) {
@@ -190,10 +196,14 @@ export class RuxNotification {
                                 <slot name="actions">
                                     <rux-icon
                                         role="button"
+                                        tabindex="1"
+                                        class="rux-notification-banner__close"
                                         onClick={() => this._onClick()}
+                                        onKeyDown={(e) => this._onKeyPress(e)}
                                         icon="clear"
                                         size={this.small ? '24px' : '32px'}
                                         exportparts="icon"
+                                        class="rux-notification-banner__close"
                                     ></rux-icon>
                                 </slot>
                             </div>
