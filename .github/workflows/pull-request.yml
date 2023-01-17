@@ -30,16 +30,18 @@ jobs:
         with:
           files: |
             **/package.json
-      - run: npm run web-comps.install
+      - run: npm run ci
         if: steps.cache-node-modules.outputs.cache-hit != 'true' || steps.changed-files.outputs.any_changed == 'true'
-      - run: npm run build.web-comps
+        working-directory: ./packages/web-components
+      - run: npm run build.stencil
         if: steps.cache-node-modules.outputs.cache-hit != 'true' || steps.changed-files.outputs.any_changed == 'true'
-      - name: Install
-        run: npm ci
         working-directory: ./packages/web-components
-      - name: Build
-        run: npm run build.stencil
-        working-directory: ./packages/web-components
+      # - name: Install
+      #   run: npm ci
+      #   working-directory: ./packages/web-components
+      # - name: Build
+      #   run: npm run build.stencil
+      #   working-directory: ./packages/web-components
   VRTs:
     needs: setup
     runs-on: ubuntu-latest
