@@ -2,6 +2,9 @@
     display: block;
 }
 
+::slotted(*:focus-visible) {
+    outline: 2px solid transparent;
+}
 a.rux-menu-item {
     text-decoration: none;
 }
@@ -19,6 +22,11 @@ a.rux-menu-item {
     &:hover {
         color: var(--color-text-interactive-hover);
         background: var(--color-background-base-hover);
+    }
+    &:focus-within {
+        border-radius: var(--focus-radius);
+        outline: var(--focus-outline);
+        outline-offset: var(--focus-offset);
     }
     &--selected {
         background: var(--color-background-base-selected);

@@ -12223,6 +12223,8 @@ export namespace Components {
           * The radio name
          */
         "name": string;
+        "setButtonTabindex": (value: number) => Promise<void>;
+        "setFocus": (ev: any) => Promise<void>;
         /**
           * The radio value
          */
