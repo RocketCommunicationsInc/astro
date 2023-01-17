@@ -30,7 +30,7 @@ jobs:
         with:
           files: |
             **/package.json
-      - run: npm run ci
+      - run: npm ci
         if: steps.cache-node-modules.outputs.cache-hit != 'true' || steps.changed-files.outputs.any_changed == 'true'
         working-directory: ./packages/web-components
       - run: npm run build.stencil
