@@ -47,14 +47,22 @@ Type: `Promise<true>`
 
 
 
+## Slots
+
+| Slot          | Description                        |
+| ------------- | ---------------------------------- |
+| `"(default)"` | The contents for rux-pop-up        |
+| `"trigger"`   | The trigger element for rux-pop-up |
+
+
 ## Shadow Parts
 
-| Part                  | Description |
-| --------------------- | ----------- |
-| `"arrow"`             |             |
-| `"container"`         |             |
-| `"popup-content"`     |             |
-| `"trigger-container"` |             |
+| Part                  | Description                                         |
+| --------------------- | --------------------------------------------------- |
+| `"arrow"`             | the arrow pointing to the trigger of rux-pop-up     |
+| `"container"`         | the container of rux-pop-up                         |
+| `"popup-content"`     | the content that is shown when rux-pop-up is opened |
+| `"trigger-container"` | the container of the pop-up trigger                 |
 
 
 ----------------------------------------------

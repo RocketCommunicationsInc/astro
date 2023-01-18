@@ -20,6 +20,7 @@
     font-weight: var(--font-control-body-1-font-weight);
     line-height: var(--font-control-body-1-line-height);
     color: var(--color-text-primary);
+    position: relative; //contain the absolutely positioned <input> element so that it does not go rogue. added to a shadow part so that it can be reverted by dev if required.
 }
 
 label {
@@ -47,6 +48,12 @@ label {
         &--no-label {
             margin-right: var(--spacing-0);
         }
+    }
+
+    &:focus-within {
+        border-radius: var(--focus-radius);
+        outline: var(--focus-outline);
+        outline-offset: var(--focus-offset);
     }
 }
 

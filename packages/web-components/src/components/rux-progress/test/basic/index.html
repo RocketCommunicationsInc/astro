@@ -25,12 +25,35 @@
         />
         <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
         <link rel="stylesheet" href="../../../../../src/global/test.css" />
+        <style>
+            .custom-size rux-progress {
+                width: 100px;
+            }
+        </style>
     </head>
 
     <body>
         <section>
             <h2>Default</h2>
             <rux-progress></rux-progress>
+        </section>
+        <section>
+            <h2>Values</h2>
+            <rux-progress value="1" max="50"></rux-progress>
+            <rux-progress value="10" max="50"></rux-progress>
+            <rux-progress value="20" max="50"></rux-progress>
+            <rux-progress value="30" max="50"></rux-progress>
+            <rux-progress value="40" max="50"></rux-progress>
+            <rux-progress value="50" max="50"></rux-progress>
+        </section>
+        <section class="custom-size">
+            <h2>With Custom Size</h2>
+            <rux-progress value="1" max="50"></rux-progress>
+            <rux-progress value="10" max="50"></rux-progress>
+            <rux-progress value="20" max="50"></rux-progress>
+            <rux-progress value="30" max="50"></rux-progress>
+            <rux-progress value="40" max="50"></rux-progress>
+            <rux-progress value="50" max="50"></rux-progress>
         </section>
         <section>
             <h2>Types</h2>

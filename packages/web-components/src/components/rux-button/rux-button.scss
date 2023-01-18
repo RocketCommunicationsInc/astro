@@ -25,7 +25,6 @@
     line-height: var(--font-control-body-1-line-height);
     letter-spacing: var(--font-control-body-1-letter-spacing);
     white-space: nowrap;
-    overflow: hidden;
     text-overflow: ellipsis;
     justify-content: center;
     align-items: center;
@@ -45,8 +44,9 @@
         pointer-events: none;
     }
 
-    &:focus {
-        outline: none;
+    &:focus-visible {
+        outline: var(--focus-outline);
+        outline-offset: var(--focus-offset);
     }
 
     &:hover:not([disabled]) {

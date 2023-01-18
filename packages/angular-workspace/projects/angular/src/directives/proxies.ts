@@ -200,13 +200,13 @@ export declare interface RuxClock extends Components.RuxClock {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['aos', 'dateIn', 'hideDate', 'hideLabels', 'hideTimezone', 'los', 'small', 'timezone']
+  inputs: ['aos', 'dateIn', 'hideDate', 'hideLabels', 'hideTimezone', 'los', 'small', 'static', 'timezone']
 })
 @Component({
   selector: 'rux-clock',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['aos', 'dateIn', 'hideDate', 'hideLabels', 'hideTimezone', 'los', 'small', 'timezone']
+  inputs: ['aos', 'dateIn', 'hideDate', 'hideLabels', 'hideTimezone', 'los', 'small', 'static', 'timezone']
 })
 export class RuxClock {
   protected el: HTMLElement;
@@ -23382,6 +23382,39 @@ export class RuxTimeline {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface RuxTooltip extends Components.RuxTooltip {
+  /**
+   * Emits when the tooltip has opened 
+   */
+  ruxtooltipopened: EventEmitter<CustomEvent<any>>;
+  /**
+   * Emits when the tooltip has closed. 
+   */
+  ruxtooltipclosed: EventEmitter<CustomEvent<any>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['delay', 'disableAutoUpdate', 'message', 'offset', 'open', 'placement', 'strategy'],
+  methods: ['show', 'hide']
+})
+@Component({
+  selector: 'rux-tooltip',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['delay', 'disableAutoUpdate', 'message', 'offset', 'open', 'placement', 'strategy']
+})
+export class RuxTooltip {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['ruxtooltipopened', 'ruxtooltipclosed']);
   }
 }
 

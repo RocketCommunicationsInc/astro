@@ -5,10 +5,9 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { Classification, Status, StatusTags } from "./common/commonTypes.module";
+import { Classification, ExtendedPlacement, Status, StatusTags } from "./common/commonTypes.module";
 import { LogRow } from "./components/rux-log/rux-log.model";
 import { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
-import { ExtendedPlacement } from "./components/rux-pop-up/rux-pop-up";
 import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
 export namespace Components {
     interface RuxAccordion {
@@ -164,6 +163,7 @@ export namespace Components {
           * Applies a smaller clock style.
          */
         "small": boolean;
+        "static": boolean;
         /**
           * Accepts the [IANA timezone string format](https://www.iana.org/time-zones) such as `'America/Los_Angeles'` or any single-character designation for a [military timezones](https://en.wikipedia.org/wiki/List_of_military_time_zones) (`'A'` through `'Z'`, excluding `'J'`), both case-insensitive. If no value for timezone is provided, the clock will use `'UTC'`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.
          */
@@ -12223,6 +12223,8 @@ export namespace Components {
           * The radio name
          */
         "name": string;
+        "setButtonTabindex": (value: number) => Promise<void>;
+        "setFocus": (ev: any) => Promise<void>;
         /**
           * The radio value
          */
@@ -12561,6 +12563,44 @@ export namespace Components {
          */
         "zoom": number;
     }
+    interface RuxTooltip {
+        /**
+          * How long it takes the tooltip to appear in milliseconds, default = 800, Overrides the css custom property --delay.
+         */
+        "delay": number;
+        /**
+          * Turns disableAutoUpdate on or off which makes the tooltip move to stay in view based on scroll. Defaults to false.
+         */
+        "disableAutoUpdate": boolean;
+        /**
+          * Closes the tooltip and returns false.
+         */
+        "hide": () => Promise<boolean>;
+        /**
+          * The tooltip's content.
+         */
+        "message": string;
+        /**
+          * Pixel offset from trigger, default = 8
+         */
+        "offset": number;
+        /**
+          * Whether or not the tooltip is open
+         */
+        "open": boolean;
+        /**
+          * The placement of the tooltip relative to it's slotted trigger element. Defaults to auto.
+         */
+        "placement": ExtendedPlacement;
+        /**
+          * Opens the tooltip and returns true.
+         */
+        "show": () => Promise<true>;
+        /**
+          * The position strategy of the tooltip, either absolute or fixed.
+         */
+        "strategy": 'absolute' | 'fixed';
+    }
     interface RuxTrack {
         "columns": number;
         "end": string;
@@ -12671,6 +12711,10 @@ export interface RuxTextareaCustomEvent<T> extends CustomEvent<T> {
 export interface RuxTimeRegionCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxTimeRegionElement;
+}
+export interface RuxTooltipCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxTooltipElement;
 }
 export interface RuxTreeNodeCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -19313,6 +19357,12 @@ declare global {
         prototype: HTMLRuxTimelineElement;
         new (): HTMLRuxTimelineElement;
     };
+    interface HTMLRuxTooltipElement extends Components.RuxTooltip, HTMLStencilElement {
+    }
+    var HTMLRuxTooltipElement: {
+        prototype: HTMLRuxTooltipElement;
+        new (): HTMLRuxTooltipElement;
+    };
     interface HTMLRuxTrackElement extends Components.RuxTrack, HTMLStencilElement {
     }
     var HTMLRuxTrackElement: {
@@ -20438,6 +20488,7 @@ declare global {
         "rux-textarea": HTMLRuxTextareaElement;
         "rux-time-region": HTMLRuxTimeRegionElement;
         "rux-timeline": HTMLRuxTimelineElement;
+        "rux-tooltip": HTMLRuxTooltipElement;
         "rux-track": HTMLRuxTrackElement;
         "rux-tree": HTMLRuxTreeElement;
         "rux-tree-node": HTMLRuxTreeNodeElement;
@@ -20613,6 +20664,7 @@ declare namespace LocalJSX {
           * Applies a smaller clock style.
          */
         "small"?: boolean;
+        "static"?: boolean;
         /**
           * Accepts the [IANA timezone string format](https://www.iana.org/time-zones) such as `'America/Los_Angeles'` or any single-character designation for a [military timezones](https://en.wikipedia.org/wiki/List_of_military_time_zones) (`'A'` through `'Z'`, excluding `'J'`), both case-insensitive. If no value for timezone is provided, the clock will use `'UTC'`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.
          */
@@ -33117,6 +33169,44 @@ declare namespace LocalJSX {
          */
         "zoom"?: number;
     }
+    interface RuxTooltip {
+        /**
+          * How long it takes the tooltip to appear in milliseconds, default = 800, Overrides the css custom property --delay.
+         */
+        "delay"?: number;
+        /**
+          * Turns disableAutoUpdate on or off which makes the tooltip move to stay in view based on scroll. Defaults to false.
+         */
+        "disableAutoUpdate"?: boolean;
+        /**
+          * The tooltip's content.
+         */
+        "message"?: string;
+        /**
+          * Pixel offset from trigger, default = 8
+         */
+        "offset"?: number;
+        /**
+          * Emits when the tooltip has closed.
+         */
+        "onRuxtooltipclosed"?: (event: RuxTooltipCustomEvent<any>) => void;
+        /**
+          * Emits when the tooltip has opened
+         */
+        "onRuxtooltipopened"?: (event: RuxTooltipCustomEvent<any>) => void;
+        /**
+          * Whether or not the tooltip is open
+         */
+        "open"?: boolean;
+        /**
+          * The placement of the tooltip relative to it's slotted trigger element. Defaults to auto.
+         */
+        "placement"?: ExtendedPlacement;
+        /**
+          * The position strategy of the tooltip, either absolute or fixed.
+         */
+        "strategy"?: 'absolute' | 'fixed';
+    }
     interface RuxTrack {
         "columns"?: number;
         "end"?: string;
@@ -34256,6 +34346,7 @@ declare namespace LocalJSX {
         "rux-textarea": RuxTextarea;
         "rux-time-region": RuxTimeRegion;
         "rux-timeline": RuxTimeline;
+        "rux-tooltip": RuxTooltip;
         "rux-track": RuxTrack;
         "rux-tree": RuxTree;
         "rux-tree-node": RuxTreeNode;
@@ -35371,6 +35462,7 @@ declare module "@stencil/core" {
             "rux-textarea": LocalJSX.RuxTextarea & JSXBase.HTMLAttributes<HTMLRuxTextareaElement>;
             "rux-time-region": LocalJSX.RuxTimeRegion & JSXBase.HTMLAttributes<HTMLRuxTimeRegionElement>;
             "rux-timeline": LocalJSX.RuxTimeline & JSXBase.HTMLAttributes<HTMLRuxTimelineElement>;
+            "rux-tooltip": LocalJSX.RuxTooltip & JSXBase.HTMLAttributes<HTMLRuxTooltipElement>;
             "rux-track": LocalJSX.RuxTrack & JSXBase.HTMLAttributes<HTMLRuxTrackElement>;
             "rux-tree": LocalJSX.RuxTree & JSXBase.HTMLAttributes<HTMLRuxTreeElement>;
             "rux-tree-node": LocalJSX.RuxTreeNode & JSXBase.HTMLAttributes<HTMLRuxTreeNodeElement>;
