@@ -24,16 +24,13 @@ a.rux-menu-item:hover {
         color: var(--color-text-interactive-hover);
         background: var(--color-background-base-hover);
     }
-    &:has(a:focus-visible) {
+
+    &:focus-visible {
         border-radius: var(--focus-radius);
         outline: var(--focus-outline);
         outline-offset: var(--focus-offset);
     }
-    // &:focus-within {
-    //     border-radius: var(--focus-radius);
-    //     outline: var(--focus-outline);
-    //     outline-offset: var(--focus-offset);
-    // }
+
     &--selected {
         background: var(--color-background-base-selected);
         color: var(--color-text-primary);
