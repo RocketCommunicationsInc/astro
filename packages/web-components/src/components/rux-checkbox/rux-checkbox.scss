@@ -49,8 +49,7 @@ label {
             margin-right: var(--spacing-0);
         }
     }
-
-    &:focus-within {
+    &:has(input:focus-visible) {
         border-radius: var(--focus-radius);
         outline: var(--focus-outline);
         outline-offset: var(--focus-offset);
