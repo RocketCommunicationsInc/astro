@@ -10,7 +10,7 @@ on:
 env:
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 jobs:
-  setup:
+  e2e-tests:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,38 +19,18 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-      - uses: actions/cache@v2
-        id: cache-node-modules
-        with:
-          path: |
-            ./packages/web-components/node_modules
-          key: node-modules-${{ hashFiles('package-lock.json') }}
-      - run: npm ci
+      - name: Install
+        run: npm ci
         working-directory: ./packages/web-components
-      - run: npm run build.stencil
+      # - name: Install Playwright Dependencies
+      #   run: npx playwright install && npx playwright install-deps
+      #   shell: bash
+      #   working-directory: ./packages/web-components
+      - name: Build
+        run: npm run build.stencil
         working-directory: ./packages/web-components
-      # - name: Install
-      #   run: npm ci
-      #   working-directory: ./packages/web-components
-      # - name: Build
-      #   run: npm run build.stencil
-      #   working-directory: ./packages/web-components
-  VRTs:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - uses: actions/cache@v2
-        with:
-          path: ./packages/web-components/node_modules
-          key: node-modules-${{ hashFiles('package-lock.json') }}
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - name: Run VRTs
-        run: npm run test.vrt
+      - name: Run Tests
+        run: npm run test.ci
         working-directory: ./packages/web-components
       - uses: actions/upload-artifact@v3
         if: always()
@@ -58,22 +38,23 @@ jobs:
           name: playwright-report
           path: packages/web-components/playwright-report/
           retention-days: 30
-  e2e-tests:
-    needs: setup
+  VRTs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - uses: actions/cache@v2
-        with:
-          path: ./packages/web-components/node_modules
-          key: node-modules-${{ hashFiles('package-lock.json') }}
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Run e2e Tests
-        run: npm run test.ci
+      - name: Install
+        run: npm ci
+        working-directory: ./packages/web-components
+      - name: Build
+        run: npm run build.stencil
+        working-directory: ./packages/web-components
+      - name: Run VRT's
+        run: npm run test.vrt
         working-directory: ./packages/web-components
       - uses: actions/upload-artifact@v3
         if: always()
