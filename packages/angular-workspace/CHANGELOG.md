@@ -1,5 +1,44 @@
 # @astrouxds/angular
 
+## 7.6.0
+
+### Minor Changes
+
+- 0e1d37cb: added new Astro icons: set power, hardware, release
+- c22ccefd: Clock: Removed the fixed height on a hide-labels version of clock
+
+### Patch Changes
+
+- Updated dependencies [0e1d37cb]
+- Updated dependencies [680c1fa3]
+- Updated dependencies [680c1fa3]
+- Updated dependencies [680c1fa3]
+- Updated dependencies [680c1fa3]
+- Updated dependencies [680c1fa3]
+- Updated dependencies [cdec7b61]
+- Updated dependencies [011125f9]
+- Updated dependencies [680c1fa3]
+- Updated dependencies [680c1fa3]
+- Updated dependencies [680c1fa3]
+- Updated dependencies [680c1fa3]
+- Updated dependencies [680c1fa3]
+- Updated dependencies [680c1fa3]
+- Updated dependencies [680c1fa3]
+- Updated dependencies [680c1fa3]
+- Updated dependencies [680c1fa3]
+- Updated dependencies [bbf05d55]
+- Updated dependencies [680c1fa3]
+- Updated dependencies [680c1fa3]
+- Updated dependencies [56d82e69]
+- Updated dependencies [680c1fa3]
+- Updated dependencies [680c1fa3]
+- Updated dependencies [680c1fa3]
+- Updated dependencies [680c1fa3]
+- Updated dependencies [c22ccefd]
+- Updated dependencies [680c1fa3]
+- Updated dependencies [680c1fa3]
+  - @astrouxds/astro-web-components@7.6.0
+
 ## 7.5.0
 
 ### Minor Changes

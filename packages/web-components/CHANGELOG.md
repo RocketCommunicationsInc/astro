@@ -1,5 +1,50 @@
 # @astrouxds/astro-web-components
 
+## 7.6.0
+
+### Minor Changes
+
+-   0e1d37cb: added new Astro icons: set power, hardware, release
+-   680c1fa3: feat(rux-tree-node) add Astro design system focus state
+-   680c1fa3: feat(rux-accordion) add Astro design system focus state
+-   680c1fa3: feat(rux-notification) add keyboard controls/tab index
+-   680c1fa3: feat(rux-menu-item) add Astro design system focus state
+-   680c1fa3: feat(rux-dialog) change margin on bottom to padding in service of showing focus state outline in entirely
+-   680c1fa3: feat(rux-slider) add Astro design system focus state
+-   680c1fa3: feat(rux-button) add Astro design system focus state
+-   680c1fa3: feat(rux-radio-group) add keyboard controls for radio group
+-   680c1fa3: feat(rux-switch) add Astro design system focus state
+-   680c1fa3: feat(rux-input) add Astro design system focus state
+-   680c1fa3: feat(rux-notification) add Astro design system focus state
+-   680c1fa3: feat(rux-pop-up) add keyboard controls for pop up trigger
+-   680c1fa3: feat(rux-textarea) add Astro design system focus state
+-   680c1fa3: feat(rux-radio) add Astro design system focus state
+-   680c1fa3: feat(rux-push-button) add Astro design system focus state
+-   680c1fa3: feat(rux-tab) add Astro design system focus state
+-   56d82e69: This PR adds a new component, rux-tooltip. This new Tooltip component offers a solution for developers to display incidental, text-based information based on a set trigger. Guidance is provided to address what sorts of elements should be tooltip triggers, but it is up to the developer to decide ultimately. Tooltips display on hover over, or focus in. Tooltip provides modification options for display and functionality in the form of props:
+
+    open: toggles the tooltip's visibility
+    message: the tooltip's content
+    placement: set via use of floating-ui, placement around the trigger
+    delay: set to 800ms default, the delay from when the trigger is hovered over or focused in and when the tooltip appears, can be set via prop or CSS custom property.
+    offset: distance from the trigger to the tooltip, set to 8px by default
+    disable-auto-update: disables the collision detection's flip method which bumps the tooltip to the opposite axis if there is not sufficient room for display within the viewport, happens on render and scroll.
+    strategy: positioning strategy for tooltip placement, can be absolute or fixed, set to absolute as default
+
+-   680c1fa3: feat(rux-pop-up) add Astro design system focus state
+-   680c1fa3: add global focus state style for a tags
+-   680c1fa3: feat(rux-tabs) add keyboard controls for tabs
+-   680c1fa3: feat(rux-checkbox) add Astro design system focus state
+-   c22ccefd: Clock: Removed the fixed height on a hide-labels version of clock
+-   680c1fa3: feat(rux-segmented-button) add Astro design system focus state
+-   680c1fa3: feat(rux-select) add Astro design system focus state
+
+### Patch Changes
+
+-   cdec7b61: fix(rux-notification) add cursor:pointer to default close icon
+-   011125f9: fix(rux-checkbox) add position relative to label to contain input element
+-   bbf05d55: fix(rux-monitoring-icon) fix border being cut off by the gsb when positioned at the edge of visible gsb
+
 ## 7.5.0
 
 ### Minor Changes
