@@ -1,6 +1,7 @@
 import { expect, PlaywrightTestConfig } from '@playwright/test'
 import { devices } from '@playwright/test'
 import { matchers } from '@astrouxds/stencil-playwright'
+import { TestOptions } from './tests/utils/_astro-fixtures'
 
 expect.extend(matchers)
 
@@ -13,7 +14,7 @@ expect.extend(matchers)
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
-const config: PlaywrightTestConfig = {
+const config: PlaywrightTestConfig<TestOptions> = {
     testDir: './src/components',
     testMatch: '*.spec.ts',
     // testDir: './tests',
@@ -63,13 +64,26 @@ const config: PlaywrightTestConfig = {
     /* Configure projects for major browsers */
     projects: [
         {
-            name: 'chromium',
+            name: 'chromium-dark',
             use: {
                 ...devices['Desktop Chrome'],
                 viewport: {
                     width: 1920,
                     height: 2080,
                 },
+                theme: 'dark',
+            },
+            snapshotDir: 'vrt-snaps',
+        },
+        {
+            name: 'chromium-light',
+            use: {
+                ...devices['Desktop Chrome'],
+                viewport: {
+                    width: 1920,
+                    height: 2080,
+                },
+                theme: 'light',
             },
             snapshotDir: 'vrt-snaps',
         },
