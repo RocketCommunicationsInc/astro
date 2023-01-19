@@ -83,25 +83,37 @@
                 top: 3rem;
             }
         </style>
-        <div style="position: relative; padding: 3rem" class="absolute">
-            <rux-monitoring-icon
-                icon="antenna-receive"
-                label="Label"
-                sublabel="Sub"
-                notifications="10"
-                status="caution"
-            >
-            </rux-monitoring-icon>
-            <rux-monitoring-progress-icon
-                progress="64"
-                label="Label"
-                sublabel="Sub"
-            ></rux-monitoring-progress-icon>
-        </div>
-
-        <div style="width: 40%; margin: 50px auto 0 auto; text-align: center">
-            <h1>Monitoring Icon vs Progress Monitoring Icon</h1>
-        </div>
+        <section style="padding: 3rem">
+            <h2>Overlap Test</h2>
+            <p>
+                This is like a figma visual test except figma doesn't have
+                rux-monitoring-progress-icon yet so I just wanted to make sure
+                that the wording, badge, and status icon have the same
+                positioning.
+            </p>
+            <div style="position: relative; padding: 3rem" class="absolute">
+                <rux-monitoring-icon
+                    icon="antenna-receive"
+                    label="Label"
+                    sublabel="Sub"
+                    notifications="10"
+                    status="caution"
+                >
+                </rux-monitoring-icon>
+                <rux-monitoring-progress-icon
+                    progress="64"
+                    label="Label"
+                    sublabel="Sub"
+                    notifications="10"
+                ></rux-monitoring-progress-icon>
+            </div>
+        </section>
+        <rux-monitoring-progress-icon
+            progress="64"
+            label="Label"
+            sublabel="Sub"
+            notifications="10"
+        ></rux-monitoring-progress-icon>
         <rux-monitoring-progress-icon></rux-monitoring-progress-icon>
     </body>
 </html>
