@@ -177,7 +177,7 @@
     line-height: var(--line-height-sm);
     width: calc(var(--spacing-6) - var(--spacing-1));
 }
-.pw-button:active,
+
 .pw-button:focus-visible {
     outline: var(--focus-outline);
     outline-offset: var(--focus-offset);
