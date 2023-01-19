@@ -50,7 +50,7 @@ jobs:
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: cd ./packages/web-components && npm ci && npx playwright install --with-deps
       - name: Run Tests
-        run: cd ./packages/web-components && npm run test.cr
+        run: cd ./packages/web-components && npm run test.ci
       - uses: actions/upload-artifact@v2
         if: always()
         with:
