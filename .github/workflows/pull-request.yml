@@ -13,10 +13,8 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
           node-version: 16
       - uses: actions/cache@v2
@@ -24,13 +22,15 @@ jobs:
         with:
           path: |
             ./packages/web-components/node_modules
-          key: modules-${{ hashFiles('package-lock.json') }}
-      - name: Install
-        run: npm ci
-        working-directory: ./packages/web-components
-      - name: Build
-        run: npm run build.stencil
-        working-directory: ./packages/web-components
+          key: node-modules-${{ hashFiles('package-lock.json') }}
+      - uses: tj-actions/changed-files@v11
+        id: changed-files
+        with:
+          files: |
+            **/package.json
+      - run: npm run web-comps.install
+        if: steps.cache-node-modules.outputs.cache-hit != 'true' || steps.changed-files.outputs.any_changed == 'true'
+      - run: npm run build.web-comps
   e2e-tests:
     needs: setup
     runs-on: ubuntu-latest
@@ -45,38 +45,12 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ./packages/web-components/node_modules
-          key: modules-${{ hashFiles('package-lock.json') }}
+          key: node-modules-${{ hashFiles('package-lock.json') }}
       - name: Install Deps
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: cd ./packages/web-components && npm ci && npx playwright install --with-deps
       - name: Run Tests
-        run: cd ./packages/web-components && npm run test.ci
-      - uses: actions/upload-artifact@v2
-        if: always()
-        with:
-          name: playwright-report
-          path: packages/web-components/playwright-report/
-          retention-days: 30
-  VRTs:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16
-      - name: Get Node Cache
-        uses: actions/cache@v2
-        with:
-          path: ./packages/web-components/node_modules
-          key: modules-${{ hashFiles('package-lock.json') }}
-      - name: Install Deps
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
-        run: cd ./packages/web-components && npm ci && npx playwright install --with-deps
-      - name: Run Tests
-        run: cd ./packages/web-components && npm run test.vrt
+        run: cd ./packages/web-components && npm run test.cr
       - uses: actions/upload-artifact@v2
         if: always()
         with:
