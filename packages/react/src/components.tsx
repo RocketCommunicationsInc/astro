@@ -1815,6 +1815,10 @@ export const RuxIconGroupWork = /*@__PURE__*/ createReactComponent<
   JSX.RuxIconGroupWork,
   HTMLRuxIconGroupWorkElement
 >("rux-icon-group-work");
+export const RuxIconHardware = /*@__PURE__*/ createReactComponent<
+  JSX.RuxIconHardware,
+  HTMLRuxIconHardwareElement
+>("rux-icon-hardware");
 export const RuxIconHd = /*@__PURE__*/ createReactComponent<
   JSX.RuxIconHd,
   HTMLRuxIconHdElement
@@ -3075,6 +3079,10 @@ export const RuxIconRefresh = /*@__PURE__*/ createReactComponent<
   JSX.RuxIconRefresh,
   HTMLRuxIconRefreshElement
 >("rux-icon-refresh");
+export const RuxIconRelease = /*@__PURE__*/ createReactComponent<
+  JSX.RuxIconRelease,
+  HTMLRuxIconReleaseElement
+>("rux-icon-release");
 export const RuxIconRemove = /*@__PURE__*/ createReactComponent<
   JSX.RuxIconRemove,
   HTMLRuxIconRemoveElement
@@ -3323,6 +3331,10 @@ export const RuxIconSentimentVerySatisfied = /*@__PURE__*/ createReactComponent<
   JSX.RuxIconSentimentVerySatisfied,
   HTMLRuxIconSentimentVerySatisfiedElement
 >("rux-icon-sentiment-very-satisfied");
+export const RuxIconSetPower = /*@__PURE__*/ createReactComponent<
+  JSX.RuxIconSetPower,
+  HTMLRuxIconSetPowerElement
+>("rux-icon-set-power");
 export const RuxIconSettings = /*@__PURE__*/ createReactComponent<
   JSX.RuxIconSettings,
   HTMLRuxIconSettingsElement
