@@ -1,5 +1,113 @@
 # @astrouxds/react
 
+## 7.6.0
+
+### Minor Changes
+
+#### Accordion
+
+- Added focus state styles
+
+#### Button
+
+- Added focus state styles
+
+#### Checkbox
+
+- Added focus state styles
+
+#### Dialog
+
+- Added focus state styles
+
+#### General
+
+- Added focus state styles for `a` tags.
+
+#### Icon
+
+- Added new Astro icons: `set-power`, `hardware`, `release`
+
+#### Input
+
+- Added focus state styles
+
+#### Menu Item
+
+- Added focus state styles
+
+#### Notification
+
+- Added focus state styles
+
+#### Pop Up
+
+- Added keyboard controls for pop up trigger.
+- Added focus state styles
+
+#### Push Button
+
+- Added focus state styles
+
+#### Radio
+
+- Added focus state styles
+
+#### Radio Group
+
+- Added keyboard controls for navigation
+
+#### Segmented Button
+
+- Added focus state styles
+
+#### Select
+
+- Added focus state styles
+
+#### Slider
+
+- Added focus state styles
+
+#### Switch
+
+- Added focus state styles
+
+#### Tab
+
+- Added focus state styles
+- Added keyboard controls for navigation
+
+#### Textarea
+
+- Added focus state styles
+
+#### Tooltip
+
+- Added new Tooltip component
+
+#### Tree Node
+
+- Added focus state styles
+
+### Patch Changes
+
+#### Clock
+
+- Removed the fixed height on a hide-labels version of clock
+
+#### Checkbox
+
+- Added `position: relative` to label to contain input element
+
+#### Monitoring Icon
+
+- Fixed border being cut off by the Global Status Bar
+
+#### Notification
+
+- Added `cursor: pointer` to default close icon
+
 ## 7.5.0
 
 ### Minor Changes
