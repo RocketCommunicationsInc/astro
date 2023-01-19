@@ -23,13 +23,7 @@ jobs:
           path: |
             ./packages/web-components/node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
-      - uses: tj-actions/changed-files@v11
-        id: changed-files
-        with:
-          files: |
-            **/package.json
       - run: npm run web-comps.install
-        if: steps.cache-node-modules.outputs.cache-hit != 'true' || steps.changed-files.outputs.any_changed == 'true'
       - run: npm run build.web-comps
   e2e-tests:
     needs: setup
@@ -48,9 +42,11 @@ jobs:
           key: node-modules-${{ hashFiles('package-lock.json') }}
       - name: Install Deps
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
-        run: cd ./packages/web-components && npm ci && npx playwright install --with-deps
+        run: npx playwright install --with-deps
+        working-directory: ./packages/web-components
       - name: Run Tests
-        run: cd ./packages/web-components && npm run test.ci
+        run: npm run test.ci
+        working-directory: ./packages/web-components
       - uses: actions/upload-artifact@v2
         if: always()
         with:
