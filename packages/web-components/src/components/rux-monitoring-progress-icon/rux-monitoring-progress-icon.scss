@@ -35,8 +35,6 @@
 
 rux-status {
     position: absolute;
-    top: -0.25rem;
-    left: -0.25rem;
     margin: 0;
 }
 
@@ -68,12 +66,12 @@ rux-status {
     font-size: var(--font-body-2-font-size);
     font-weight: var(--font-body-2-font-weight);
     letter-spacing: var(--font-body-2-letter-spacing);
+    line-height: var(--line-height-sm);
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
-    line-height: 1.2;
     overflow: hidden;
-    margin-top: 1rem;
+    margin-top: 0;
     width: 100%;
     max-width: 6.25rem;
 }
@@ -84,11 +82,10 @@ rux-status {
     font-weight: var(--font-body-3-font-weight);
     letter-spacing: var(--font-body-3-letter-spacing);
     color: var(--color-text-primary);
-    opacity: 0.6;
     display: block;
 }
 
-.rux-advanced-status__status rux-status::part(status) {
+.rux-advanced-status__icon-group rux-status::part(status) {
     line-height: 0;
 }
 
@@ -98,8 +95,8 @@ rux-status {
 
 svg {
     margin: 0 auto;
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem; //40px
+    height: 2.5rem; //40px
 }
 svg.rux-status--off {
     stroke: var(--status-symbol-color-fill-off-on-dark, rgb(158, 167, 173));
