@@ -20,7 +20,7 @@ jobs:
           path: ./packages/web-components/node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
       - name: Install
-        run: npm ci
+        run: npm i
         working-directory: ./packages/web-components
       - name: Build
         run: npm run build.stencil
