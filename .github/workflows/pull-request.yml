@@ -22,6 +22,10 @@ jobs:
       - name: Install
         run: npm ci
         working-directory: ./packages/web-components
+      # - name: Install Playwright Dependencies
+      #   run: npx playwright install && npx playwright install-deps
+      #   shell: bash
+      #   working-directory: ./packages/web-components
       - name: Build
         run: npm run build.stencil
         working-directory: ./packages/web-components
