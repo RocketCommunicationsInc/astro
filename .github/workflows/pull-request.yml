@@ -31,7 +31,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
-      - uses: actions/cache/restore@v3
+      - uses: actions/cache@v3
         id: cached-deps-on-e2e
         with:
           path: ./packages/components/node_modules
