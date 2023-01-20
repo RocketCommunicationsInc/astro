@@ -24,9 +24,6 @@ jobs:
       - name: Install
         run: npm ci
         working-directory: ./packages/web-components
-      - name: Build
-        run: npm run build.stencil
-        working-directory: ./packages/web-components
       - name: Run Tests
         run: npm run test.ci
         working-directory: ./packages/web-components
