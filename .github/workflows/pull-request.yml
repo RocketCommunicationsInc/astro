@@ -10,7 +10,23 @@ on:
 env:
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cache
+        uses: actions/cache@v3
+        id: cache-modules
+        with:
+          path: ./packages/web-components/node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
+      - name: Install
+        run: npm ci
+        working-directory: ./packages/web-components
+      - name: Build
+        run: npm run build.stencil
+        working-directory: ./packages/web-components
   e2e-tests:
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,15 +35,18 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
+      - name: Get Cached Modules
+        uses: actions/cache@v3
+        with:
+          path: ./packages/web-components/node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
       - name: Install
         run: npm ci
+        if: steps.cache-modules.outputs.cache-hit != 'true'
         working-directory: ./packages/web-components
-      # - name: Install Playwright Dependencies
-      #   run: npx playwright install && npx playwright install-deps
-      #   shell: bash
-      #   working-directory: ./packages/web-components
       - name: Build
         run: npm run build.stencil
+        if: steps.cache-modules.outputs.cache-hit != 'true'
         working-directory: ./packages/web-components
       - name: Run Tests
         run: npm run test.ci
@@ -39,6 +58,7 @@ jobs:
           path: packages/web-components/playwright-report/
           retention-days: 30
   VRTs:
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
