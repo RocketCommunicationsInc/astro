@@ -10,16 +10,32 @@ on:
 env:
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 jobs:
+  setup:
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v3
+        id: cache-deps
+        with:
+          path: |
+            ./packages/web-components/node_modules
+          key: ${{ runner.os }}-modules
+      - run: cd ./packages/web-components && npm run build.stencil
+      - run: cd ./packages/web-components && npm ci
+        if: steps.cache-deps.outputs.cache-hit != 'true'
   e2e:
     name: Run end-to-end tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
+      - name: Get Cache
+        uses: actions/cache@v2
+        with:
+          path: ./packages/web-components/node_modules
+          key: ${{ runner.os }}-modules
       - name: Install dependencies
+        if: steps.cache-deps.outputs.cache-hit != 'true'
         run: cd ./packages/web-components && npm ci
-      - name: Build
-        run: cd ./packages/web-components && npm run build.stencil
       - name: Run tests
         run: cd ./packages/web-components && npm run test.ci
       - uses: actions/upload-artifact@v3
