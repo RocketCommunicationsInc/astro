@@ -36,9 +36,11 @@ jobs:
         with:
           path: ./packages/web-components/node_modules
           key: ${{ runner.os }}-modules
-      - name: Install dependencies
-        if: steps.cached-deps-on-e2e.outputs.cache-hit != 'true'
-        run: cd ./packages/web-components && npm ci
+      # - name: Install dependencies
+      #   if: steps.cached-deps-on-e2e.outputs.cache-hit != 'true'
+      #   run: cd ./packages/web-components && npm ci
+      - name: Build
+        run: cd ./packages/web-components && npm run build.stencil
       - name: Install Playwright
         run: cd ./packages/web-components && npx playwright install --with-deps
       - name: Run tests
