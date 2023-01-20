@@ -37,7 +37,6 @@ jobs:
           path: ./packages/web-components/node_modules
           key: ${{ runner.os }}-modules
       - name: Install dependencies
-        if: steps.cached-deps-on-e2e.outputs.cache-hit != 'true'
         run: cd ./packages/web-components && npm ci
       - name: Run tests
         run: cd ./packages/web-components && npm run test.ci
