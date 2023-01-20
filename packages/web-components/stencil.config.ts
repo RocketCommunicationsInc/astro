@@ -6,7 +6,10 @@ import { angularValueAccessorBindings } from './wrapper-bindings/angular.binding
 import { angularProxiesListIgnore } from './wrapper-bindings/angular-proxies-list-ignore'
 import { reactOutputTarget } from '@stencil/react-output-target'
 import { reactBooleanFix } from './wrapper-bindings/react-boolean-fix'
+import { postcss } from '@stencil/postcss'
+import fallback from './postcss-css-fallback'
 
+import autoprefixer from 'autoprefixer'
 export const config: Config = {
     namespace: 'astro-web-components',
     globalStyle: 'src/global/global.scss',
@@ -61,7 +64,13 @@ export const config: Config = {
             ],
         },
     ],
-    plugins: [sass(), svgOptimizerPlugin()],
+    plugins: [
+        sass(),
+        svgOptimizerPlugin(),
+        postcss({
+            plugins: [fallback()],
+        }),
+    ],
     enableCache: true,
     extras: {
         appendChildSlotFix: true,
