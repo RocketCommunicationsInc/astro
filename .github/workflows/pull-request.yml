@@ -10,52 +10,41 @@ on:
 env:
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 jobs:
-  e2e-tests:
+  setup:
+    name: Install & Build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v3
+        id: cache-deps
         with:
-          node-version: 16
-      - name: Install
-        run: npm ci
-        working-directory: ./packages/web-components
-      # - name: Install Playwright Dependencies
-      #   run: npx playwright install && npx playwright install-deps
-      #   shell: bash
-      #   working-directory: ./packages/web-components
-      - name: Build
-        run: npm run build.stencil
-        working-directory: ./packages/web-components
-      - name: Run Tests
-        run: npm run test.ci
-        working-directory: ./packages/web-components
-      - uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: playwright-report
-          path: packages/web-components/playwright-report/
-          retention-days: 30
-  VRTs:
+          path: |
+            ./packages/web-components/node_modules
+          key: ${{ runner.os }}-modules
+      - run: cd ./packages/web-components && npm ci
+        if: steps.cache-deps.outputs.cache-hit != 'true'
+      - run: cd ./packages/web-components && npm run build.stencil
+  e2e:
+    name: Run end-to-end tests
     runs-on: ubuntu-latest
+    needs: setup
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - uses: actions/cache/restore@v3
+        id: cached-deps-on-e2e
         with:
-          node-version: 16
-      - name: Install
-        run: npm ci
-        working-directory: ./packages/web-components
+          path: ./packages/web-components/node_modules
+          key: ${{ runner.os }}-modules
+      # - name: Install dependencies
+      #   if: steps.cached-deps-on-e2e.outputs.cache-hit != 'true'
+      #   run: cd ./packages/web-components && npm ci
       - name: Build
-        run: npm run build.stencil
-        working-directory: ./packages/web-components
-      - name: Run VRT's
-        run: npm run test.vrt
-        working-directory: ./packages/web-components
+        run: cd ./packages/web-components && npm run build.stencil
+      - name: Install Playwright
+        run: cd ./packages/web-components && npx playwright install --with-deps
+      - name: Run tests
+        run: cd ./packages/web-components && npm run test.cr
       - uses: actions/upload-artifact@v3
         if: always()
         with:
