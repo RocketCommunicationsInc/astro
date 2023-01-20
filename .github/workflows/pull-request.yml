@@ -2,9 +2,8 @@ name: Pull Request Actions
 on:
   push:
     branches: [main, next]
-  types: [review_requested, ready_for_review]
   pull_request:
-    branches: [main, next]
+    types: [review_requested, ready_for_review]
   workflow_dispatch:
     permissions:
 
