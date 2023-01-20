@@ -35,13 +35,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/cache@v3
+      - name: Get Cache
+        uses: actions/cache@v3
         with:
           path: ./packages/web-components/node_modules
           key: ${{ runner.os }}-setup-cache-node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
-        run: npm install -D @playwright/test
+        if: steps.get-cache.outputs.cache-hit != 'true'
+        run: npm ci
         working-directory: ./packages/web-components
 
       - name: e2e Tests
