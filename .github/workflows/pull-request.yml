@@ -39,10 +39,8 @@ jobs:
       - name: Install dependencies
         if: steps.cached-deps-on-e2e.outputs.cache-hit != 'true'
         run: cd ./packages/web-components && npm ci
-      - name: Install Playwright
-        run: cd ./packages/web-components && npx playwright install --with-deps
       - name: Run tests
-        run: cd ./packages/web-components && npm run test.cr
+        run: cd ./packages/web-components && npm run test.ci
       - uses: actions/upload-artifact@v3
         if: always()
         with:
