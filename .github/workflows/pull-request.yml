@@ -10,50 +10,35 @@ on:
 env:
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 jobs:
-  e2e-tests:
+  setup:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v2
+      - name: Cache node modules
+        id: cache-nodemodules
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
         with:
-          node-version: 16
-          cache: "npm"
-          cache-dependency-path: ./packages/web-components/package-lock.json
-      - name: Install
-        run: npm ci
-        working-directory: ./packages/web-components
-      - name: Run Tests
-        run: npm run test.ci
-        working-directory: ./packages/web-components
-      - uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: playwright-report
-          path: packages/web-components/playwright-report/
-          retention-days: 30
-  VRTs:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - name: Install
+          # caching node_modules
+          path: ./packages/web-components/node_modules
+          key: ${{ runner.os }}-setup-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+      - name: Install Dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm ci
         working-directory: ./packages/web-components
       - name: Build
         run: npm run build.stencil
         working-directory: ./packages/web-components
-      - name: Run VRT's
-        run: npm run test.vrt
-        working-directory: ./packages/web-components
-      - uses: actions/upload-artifact@v3
-        if: always()
+  e2e:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v3
         with:
-          name: playwright-report
-          path: packages/web-components/playwright-report/
-          retention-days: 30
+          path: ./packages/web-components/node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+      - name: e2e Tests
+        run: npm run test.cr
+        working-directory: ./packages/web-components
