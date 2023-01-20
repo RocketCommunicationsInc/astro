@@ -11,7 +11,6 @@ env:
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 jobs:
   e2e-tests:
-    needs: setup
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
