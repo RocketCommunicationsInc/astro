@@ -4,6 +4,7 @@ on:
     branches: [main, next]
   pull_request:
     branches: [main, next]
+    types: [review_requested, ready_for_review]
   workflow_dispatch:
     permissions:
 
@@ -37,8 +38,14 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/cache@v3
         with:
+          id: get-cache
           path: ./packages/web-components/node_modules
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+      - name: Install
+        if: steps.get-cache.outputs.cache-hit != 'true'
+        run: npm install -D @playwright/test
+        working-directory: ./packages/web-components
+
       - name: e2e Tests
         run: npm run test.cr
         working-directory: ./packages/web-components
