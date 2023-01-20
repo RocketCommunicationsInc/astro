@@ -135,12 +135,11 @@ svg.rux-status--critical {
 
 .rux-advanced-status__progress {
     color: var(--color-text-primary);
-    font-family: var(--font-monospace-1-font-family);
+    font-family: var(--font-body-3-font-family);
     font-size: var(--font-body-3-font-size);
-    font-weight: var(--font-monospace-1-font-weight);
-    letter-spacing: var(--font-monospace-1-letter-spacing);
-    margin-top: -0.125rem;
-    margin-left: -0.125rem;
+    font-weight: var(--font-body-3-font-weight);
+    letter-spacing: var(--font-body-3-letter-spacing);
+    line-height: var(--font-body-3-line-height);
     position: absolute;
     display: flex;
     justify-content: center;
