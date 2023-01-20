@@ -17,15 +17,12 @@ jobs:
       - name: Cache node modules
         id: cache-node-modules
         uses: actions/cache@v3
-        env:
-          cache-name: cache-node-modules
         with:
-          # caching node_modules
           path: ./packages/web-components/node_modules
-          key: ${{ runner.os }}-setup-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-setup-${{ hashFiles('./packages/web-components/package-lock.json') }}
       - name: Install Dependencies
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm ci
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
         working-directory: ./packages/web-components
       - name: Build
         run: npm run build.stencil
@@ -33,18 +30,18 @@ jobs:
   e2e:
     needs: setup
     runs-on: ubuntu-latest
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v2
       - name: Get Cache
         uses: actions/cache@v3
         with:
           path: ./packages/web-components/node_modules
-          key: ${{ runner.os }}-setup-cache-node-modules-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-setup-${{ hashFiles('./packages/web-components/package-lock.json') }}
       - name: Install
-        if: steps.get-cache.outputs.cache-hit != 'true'
         run: npm ci
+        if: steps.get-cache.outputs.cache-hit != 'true'
         working-directory: ./packages/web-components
-
       - name: e2e Tests
-        run: npm run test.cr
+        run: npm run test.ci
         working-directory: ./packages/web-components
