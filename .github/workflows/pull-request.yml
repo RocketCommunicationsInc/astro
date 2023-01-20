@@ -20,8 +20,6 @@ jobs:
         run: cd ./packages/web-components && npm ci
       - name: Build
         run: cd ./packages/web-components && npm run build.stencil
-      - name: Install playwright browsers
-        run: cd ./packages/web-components && npx playwright install --with-deps
       - name: Run tests
         run: cd ./packages/web-components && npm run test.ci
       - uses: actions/upload-artifact@v3
