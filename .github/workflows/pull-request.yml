@@ -20,6 +20,7 @@ jobs:
         with:
           node-version: 16
           cache: "npm"
+          cache-dependency-path: ./packages/web-components/package-lock.json
       - name: Install
         run: npm ci
         working-directory: ./packages/web-components
