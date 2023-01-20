@@ -10,41 +10,17 @@ on:
 env:
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 jobs:
-  setup:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 16
-      - uses: actions/cache@v2
-        id: cache-node-modules
-        with:
-          path: |
-            ./packages/web-components/node_modules
-          key: node-modules-${{ hashFiles('package-lock.json') }}
-      - run: npm run web-comps.install
-      - run: npm run build.web-comps
   e2e-tests:
     needs: setup
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16
-      - name: Get Node Cache
-        uses: actions/cache@v2
-        with:
-          path: ./packages/web-components/node_modules
-          key: node-modules-${{ hashFiles('package-lock.json') }}
-      - name: Install Deps
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: Install dependencies
+        run: npm ci
+      - name: Install playwright browsers
         run: npx playwright install --with-deps
-        working-directory: ./packages/web-components
-      - name: Run Tests
+      - name: Run tests
         run: npm run test.ci
         working-directory: ./packages/web-components
       - uses: actions/upload-artifact@v2
