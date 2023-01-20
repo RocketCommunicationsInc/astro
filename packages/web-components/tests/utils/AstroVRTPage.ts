@@ -9,15 +9,17 @@ export class AstroVRTPage {
         this.firstChild = page.locator('body > :first-child')
     }
 
-    async goto(url: string) {
+    // async goto(url: string) {
+    //     console.log('url',url);
+        
 		
-        await this.page.goto(`http://localhost:3333/${url}`, 
-		{
-            waitUntil: "networkidle"
-        }
-		)
-		await this.page.waitForFunction(() => document.fonts.check("1em Roboto"))
-    }
+    //     await this.page.goto(`http://localhost:3333${url}`, 
+	// 	// {
+    //     //     waitUntil: "networkidle"
+    //     // }
+	// 	)
+	// 	// await this.page.waitForFunction(() => document.fonts.check("1em Roboto"))
+    // }
 
  
 }

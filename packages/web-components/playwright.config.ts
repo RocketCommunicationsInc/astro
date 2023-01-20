@@ -64,7 +64,7 @@ const config: PlaywrightTestConfig<TestOptions> = {
     /* Configure projects for major browsers */
     projects: [
         {
-            name: 'chromium-dark',
+            name: 'chromium-vrt-dark',
             use: {
                 ...devices['Desktop Chrome'],
                 viewport: {
@@ -73,10 +73,12 @@ const config: PlaywrightTestConfig<TestOptions> = {
                 },
                 theme: 'dark',
             },
+            grep: /@vrt/,
             snapshotDir: 'vrt-snaps',
         },
         {
-            name: 'chromium-light',
+            name: 'chromium-vrt-light',
+            grep: /@vrt/,
             use: {
                 ...devices['Desktop Chrome'],
                 viewport: {
@@ -86,6 +88,17 @@ const config: PlaywrightTestConfig<TestOptions> = {
                 theme: 'light',
             },
             snapshotDir: 'vrt-snaps',
+        },
+        {
+            name: 'chromium-e2e',
+            grepInvert: /@vrt/,
+            use: {
+                ...devices['Desktop Chrome'],
+                viewport: {
+                    width: 1920,
+                    height: 2080,
+                },
+            },
         },
 
         // {
