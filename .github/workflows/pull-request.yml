@@ -31,14 +31,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
-      - name: Get Cache
-        uses: actions/cache@v2
+      - uses: actions/cache/restore@v3
+        id: cached-deps-on-e2e
         with:
-          path: ./packages/web-components/node_modules
+          path: ./packages/components/node_modules
           key: ${{ runner.os }}-modules
       - name: Install dependencies
-        if: steps.cache-deps.outputs.cache-hit != 'true'
+        if: steps.cached-deps-on-e2e.outputs.cache-hit != 'true'
         run: cd ./packages/web-components && npm ci
+      - name: Install Playwright
+        run: cd ./packages/web-components && npx playwright install --with-deps
       - name: Run tests
         run: cd ./packages/web-components && npm run test.ci
       - uses: actions/upload-artifact@v3
