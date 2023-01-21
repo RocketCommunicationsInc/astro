@@ -53,5 +53,5 @@ jobs:
 
       - name: e2e Tests
         if: steps.get-cache.outputs.cache-hit == 'true'
-        run: npm run test.cr
+        run: npm run test.ci
         working-directory: ./packages/web-components
