@@ -25,7 +25,6 @@ jobs:
         working-directory: ./packages/web-components
       - name: Build
         run: npm run build.stencil
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
         working-directory: ./packages/web-components
   e2e:
     needs: setup
