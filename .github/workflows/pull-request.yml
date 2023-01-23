@@ -21,8 +21,7 @@ jobs:
           path: ./packages/web-components/node_modules
           key: ${{ runner.os }}-setup-${{ hashFiles('./packages/web-components/package-lock.json') }}
       - name: Install Dependencies
-        run: npm ci && npx playwright install --with-deps
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: npm ci && npx playwright install --with-deps chromium
         working-directory: ./packages/web-components
       - name: Build
         run: npm run build.stencil
@@ -47,9 +46,9 @@ jobs:
       #     script: |
       #       core.setFailed('Cache not found - tests will fail')
 
-      - name: Install Playwright
-        run: npx playwright install --with-deps chromium
-        working-directory: ./packages/web-components
+      # - name: Install Playwright
+      #   run: npx playwright install --with-deps chromium
+      #   working-directory: ./packages/web-components
 
       - name: e2e Tests
         if: steps.get-cache.outputs.cache-hit == 'true'
