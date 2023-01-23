@@ -45,7 +45,7 @@ jobs:
             ./packages/web-components/dist
           key: ${{ runner.os }}-setup-${{ hashFiles('./packages/web-components/package-lock.json') }}
       - name: e2e Tests
-        run: npm run test.cr
+        run: npm run test.ci
         working-directory: ./packages/web-components
   VRTs:
     needs: setup
