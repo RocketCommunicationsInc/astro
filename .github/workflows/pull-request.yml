@@ -48,7 +48,7 @@ jobs:
       #       core.setFailed('Cache not found - tests will fail')
 
       - name: Install Playwright
-        run: npx playwright install
+        run: npx playwright install --with-deps chromium
         working-directory: ./packages/web-components
 
       - name: e2e Tests
