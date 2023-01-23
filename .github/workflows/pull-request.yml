@@ -44,9 +44,9 @@ jobs:
             ./packages/web-components/node_modules
             ./packages/web-components/dist
           key: ${{ runner.os }}-setup-${{ hashFiles('./packages/web-components/package-lock.json') }}
-      # - name: Build
-      #   run: npm run build.stencil
-      #   working-directory: ./packages/web-components
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+        working-directory: ./packages/web-components
       - name: e2e Tests
         run: npm run test.cr
         working-directory: ./packages/web-components
@@ -64,9 +64,6 @@ jobs:
             ./packages/web-components/node_modules
             ./packages/web-components/dist
           key: ${{ runner.os }}-setup-${{ hashFiles('./packages/web-components/package-lock.json') }}
-      # - name: Build
-      #   run: npm run build.stencil
-      #   working-directory: ./packages/web-components
-      - name: e2e Tests
+      - name: Run VRTs
         run: npm run test.vrt
         working-directory: ./packages/web-components
