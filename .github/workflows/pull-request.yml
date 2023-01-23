@@ -26,8 +26,7 @@ jobs:
         name: Install Dependencies
         run: npm ci && npx playwright install --with-deps
         working-directory: ./packages/web-components
-      - if: ${{ steps.cache-node-modules.outputs.cache-hit != 'true' }}
-        name: Build
+      - name: Build
         run: npm run build.stencil
         working-directory: ./packages/web-components
   e2e:
