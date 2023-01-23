@@ -33,7 +33,7 @@ jobs:
   e2e:
     needs: setup
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 7
     steps:
       - uses: actions/checkout@v2
       - name: Get Cache
