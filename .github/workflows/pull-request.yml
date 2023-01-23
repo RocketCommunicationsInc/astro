@@ -27,8 +27,7 @@ jobs:
         run: npm ci && npx playwright install --with-deps
         working-directory: ./packages/web-components
       - name: Build
-        run: npm run build.stencil
-        working-directory: ./packages/web-components
+        run: npm run build
   e2e:
     needs: setup
     runs-on: ubuntu-latest
