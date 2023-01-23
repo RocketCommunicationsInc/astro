@@ -24,8 +24,7 @@ jobs:
           key: ${{ runner.os }}-setup-${{ hashFiles('./packages/web-components/package-lock.json') }}
       - if: ${{ steps.cache-node-modules.outputs.cache-hit != 'true' }}
         name: Install Dependencies
-        run: npm ci && npx playwright install --with-deps
-        working-directory: ./packages/web-components
+        run: npm ci && cd .packages/web-components && npx playwright install --with-deps
       - name: Build
         run: npm run build
   e2e:
