@@ -46,7 +46,7 @@ jobs:
       #   run: npm run build.stencil
       #   working-directory: ./packages/web-components
       - name: e2e Tests
-        run: npm run test.ci
+        run: npm run test.cr
         working-directory: ./packages/web-components
   VRTs:
     needs: setup
