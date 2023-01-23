@@ -23,39 +23,28 @@ jobs:
       - name: Install Dependencies
         run: npm ci
         working-directory: ./packages/web-components
-      - name: Build
-        run: npm run build.stencil
-        working-directory: ./packages/web-components
+      # - name: Build
+      #   run: npm run build.stencil
+      #   working-directory: ./packages/web-components
   e2e:
     needs: setup
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
       - uses: actions/checkout@v2
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16
-      - name: Get Cache
-        uses: actions/cache@v3
-        id: get-cache
-        with:
-          path: ./packages/web-components/node_modules
-          key: ${{ runner.os }}-setup-${{ hashFiles('./packages/web-components/package-lock.json') }}
-      # - if: steps.get-cache.outputs.cache-hit != 'true'
-      #   uses: actions/github-script@v3
-      #   id: no-cache
+      # - name: Setup Node
+      #   uses: actions/setup-node@v2
       #   with:
-      #     script: |
-      #       core.setFailed('Cache not found - tests will fail')
-
-      # - name: Install Playwright
-      #   run: npx playwright install --with-deps chromium
-      #   working-directory: ./packages/web-components
+      #     node-version: 16
+      # - name: Get Cache
+      #   uses: actions/cache@v3
+      #   id: get-cache
+      #   with:
+      #     path: ./packages/web-components/node_modules
+      #     key: ${{ runner.os }}-setup-${{ hashFiles('./packages/web-components/package-lock.json') }}
       - name: Build
         run: npm run build.stencil
         working-directory: ./packages/web-components
       - name: e2e Tests
-        if: steps.get-cache.outputs.cache-hit == 'true'
         run: npm run test.ci
         working-directory: ./packages/web-components
