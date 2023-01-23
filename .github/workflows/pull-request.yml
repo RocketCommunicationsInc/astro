@@ -41,7 +41,6 @@ jobs:
       - name: e2e Tests
         run: npm run test.ci
         working-directory: ./packages/web-components
-        working-directory: ./packages/web-components
   VRTs:
     needs: setup
     runs-on: ubuntu-latest
