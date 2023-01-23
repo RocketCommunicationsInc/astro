@@ -40,16 +40,16 @@ jobs:
         with:
           path: ./packages/web-components/node_modules
           key: ${{ runner.os }}-setup-${{ hashFiles('./packages/web-components/package-lock.json') }}
-      - if: steps.get-cache.outputs.cache-hit != 'true'
-        uses: actions/github-script@v3
-        id: no-cache
-        with:
-          script: |
-            core.setFailed('Cache not found - tests will fail')
-      # - name: Install Playwright
-      # run: npx playwright install --with-deps
-      # if: steps.get-cache.outputs.cache-hit != 'true'
-      # working-directory: ./packages/web-components
+      # - if: steps.get-cache.outputs.cache-hit != 'true'
+      #   uses: actions/github-script@v3
+      #   id: no-cache
+      #   with:
+      #     script: |
+      #       core.setFailed('Cache not found - tests will fail')
+
+      - name: Install Playwright
+        run: npx playwright install
+        working-directory: ./packages/web-components
 
       - name: e2e Tests
         if: steps.get-cache.outputs.cache-hit == 'true'
