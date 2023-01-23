@@ -40,7 +40,9 @@ jobs:
         uses: actions/cache@v3
         id: get-cache
         with:
-          path: ./packages/web-components/node_modules
+          path: |
+            ./packages/web-components/node_modules
+            ./packages/web-components/dist
           key: ${{ runner.os }}-setup-${{ hashFiles('./packages/web-components/package-lock.json') }}
       # - name: Build
       #   run: npm run build.stencil
@@ -58,7 +60,9 @@ jobs:
         uses: actions/cache@v3
         id: get-cache
         with:
-          path: ./packages/web-components/node_modules
+          path: |
+            ./packages/web-components/node_modules
+            ./packages/web-components/dist
           key: ${{ runner.os }}-setup-${{ hashFiles('./packages/web-components/package-lock.json') }}
       # - name: Build
       #   run: npm run build.stencil
