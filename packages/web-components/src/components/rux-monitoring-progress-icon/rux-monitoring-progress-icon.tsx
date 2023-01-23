@@ -1,4 +1,4 @@
-import { Component, h, Prop, State, Watch } from '@stencil/core'
+import { Component, h, Prop, State, Watch, Element } from '@stencil/core'
 import { Status } from '../../common/commonTypes.module'
 import MonitoringBadge from '../../common/functional-components/MonitoringBadge/MonitoringBadge'
 import MonitoringLabel from '../../common/functional-components/MonitoringLabel'
@@ -24,6 +24,7 @@ export interface RangeItem {
     shadow: true,
 })
 export class RuxMonitoringProgressIcon {
+    @Element() el!: HTMLRuxMonitoringProgressIconElement
     private _circumference = 56 * 2 * Math.PI
     private _defaultRangeList = [
         {
@@ -136,6 +137,10 @@ export class RuxMonitoringProgressIcon {
         }
     }
 
+    componentDidRender() {
+        this.handleNotificatonWidth()
+    }
+
     get status(): string {
         return this._status
     }
@@ -156,6 +161,24 @@ export class RuxMonitoringProgressIcon {
             this._circumference -
             ((this.progress - this.min) / (this.max - this.min)) *
                 this._circumference
+    }
+
+    handleNotificatonWidth() {
+        const badge = this.el.shadowRoot!.querySelector(
+            '.rux-advanced-status__badge'
+        )
+        if (badge) {
+            /** Size and position of the icon. */
+            const iconRect = this.el.getBoundingClientRect()
+            /** Size and position of the badge. */
+            const badgeRect = badge.getBoundingClientRect()
+            /** Offset between the right-edge of the badge and the right-edge of the icon. */
+            const offset = badgeRect.right - iconRect.right
+            // if the offset is greater than zero, increase the minimum width of the badge
+            if (offset > 0) {
+                this.el.style.minWidth = iconRect.width + offset + 'px'
+            }
+        }
     }
 
     render() {
