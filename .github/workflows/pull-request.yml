@@ -52,7 +52,9 @@ jobs:
       # - name: Install Playwright
       #   run: npx playwright install --with-deps chromium
       #   working-directory: ./packages/web-components
-
+      - name: Build
+        run: npm run build.stencil
+        working-directory: ./packages/web-components
       - name: e2e Tests
         if: steps.get-cache.outputs.cache-hit == 'true'
         run: npm run test.ci
