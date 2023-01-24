@@ -33,8 +33,9 @@
 .rux-advanced-status__icon-group {
     display: flex;
     position: relative;
-    margin: var(--spacing-0) auto;
-    width: calc(var(--spacing-16) + var(--spacing-2)); //4.5rem
+    margin: var(--spacing-0) auto var(--spacing-025);
+    width: calc(var(--spacing-16) + var(--spacing-4)); //5rem
+    padding-top: var(--spacing-1);
 }
 
 rux-icon {
@@ -44,7 +45,8 @@ rux-icon {
 
 .rux-advanced-status__status {
     position: absolute;
-    margin: 0;
+    top: 0;
+    margin: var(--spacing-050) var(--spacing-2);
 }
 
 .rux-advanced-status__badge {
@@ -52,8 +54,8 @@ rux-icon {
     z-index: 2;
     order: 3;
     position: absolute;
-    left: calc(var(--spacing-14) - var(--spacing-050)); //54
-    top: calc(var(--spacing-025) * -5);
+    right: 0;
+    top: 0;
     box-shadow: inset 0 0 0 1px var(--color-text-secondary);
     border-radius: var(--radius-base);
     padding: var(--spacing-2) var(--spacing-1); //8px 4px
@@ -75,10 +77,10 @@ rux-icon {
     font-size: var(--font-body-2-font-size);
     font-weight: var(--font-body-2-font-weight);
     letter-spacing: var(--font-body-2-letter-spacing);
+    line-height: var(--font-body-3-line-height);
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
-    line-height: var(--line-height-sm);
     overflow: hidden;
     width: 100%;
     max-width: calc(var(--spacing-24) + var(--spacing-2)); //6.5rem
@@ -89,6 +91,7 @@ rux-icon {
     font-size: var(--font-body-3-font-size);
     font-weight: var(--font-body-3-font-weight);
     letter-spacing: var(--font-body-3-letter-spacing);
+    line-height: var(--font-body-3-line-height);
     color: var(--gsb-color-text);
     display: block;
 }

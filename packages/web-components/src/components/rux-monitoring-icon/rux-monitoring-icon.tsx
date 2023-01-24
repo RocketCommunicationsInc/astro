@@ -46,10 +46,6 @@ export class RuxMonitoringIcon {
      */
     @Prop() notifications: number = 0
 
-    componentDidRender() {
-        this.handleNotificatonWidth()
-    }
-
     @Watch('status')
     validateStatus(newValue: string) {
         const statusTypes = {
@@ -62,24 +58,6 @@ export class RuxMonitoringIcon {
         } as StatusTypes
         if (!statusTypes[newValue]) {
             throw new Error('valid status required')
-        }
-    }
-
-    handleNotificatonWidth() {
-        const badge = this.el.shadowRoot!.querySelector(
-            '.rux-advanced-status__badge'
-        )
-        if (badge) {
-            /** Size and position of the icon. */
-            const iconRect = this.el.getBoundingClientRect()
-            /** Size and position of the badge. */
-            const badgeRect = badge.getBoundingClientRect()
-            /** Offset between the right-edge of the badge and the right-edge of the icon. */
-            const offset = badgeRect.right - iconRect.right
-            // if the offset is greater than zero, increase the minimum width of the badge
-            if (offset > 0) {
-                this.el.style.minWidth = iconRect.width + offset + 'px'
-            }
         }
     }
 
