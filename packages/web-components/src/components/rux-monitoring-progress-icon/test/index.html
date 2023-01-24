@@ -25,6 +25,117 @@
         />
     </head>
     <body>
+        <rux-global-status-bar
+            include-icon
+            app-domain="GSB"
+            app-state="App State"
+            app-name="Demo"
+            username="Kiley"
+        >
+            <div
+                style="
+                    display: flex;
+                    justify-content: center;
+                    align-items: top;
+                    gap: 0.5rem;
+                "
+                slot="right-side"
+            >
+                <rux-monitoring-icon
+                    icon="antenna-receive"
+                    label="Label"
+                    notifications="10"
+                    status="normal"
+                >
+                </rux-monitoring-icon>
+                <rux-monitoring-progress-icon
+                    progress="0"
+                    label="Styled"
+                    sublabel="Sub"
+                    id="styled"
+                ></rux-monitoring-progress-icon>
+                <rux-monitoring-progress-icon
+                    progress="20"
+                    label="Styled"
+                    sublabel="Sub"
+                    id="styled"
+                ></rux-monitoring-progress-icon>
+                <rux-monitoring-progress-icon
+                    progress="40"
+                    label="Styled"
+                    sublabel="Sub"
+                    id="styled"
+                ></rux-monitoring-progress-icon>
+                <rux-monitoring-progress-icon
+                    progress="60"
+                    label="Styled"
+                    sublabel="Sub"
+                    id="styled"
+                ></rux-monitoring-progress-icon>
+                <rux-monitoring-progress-icon
+                    progress="80"
+                    label="Styled"
+                    sublabel="Sub"
+                    id="styled"
+                ></rux-monitoring-progress-icon>
+                <rux-monitoring-progress-icon
+                    progress="100"
+                    label="Styled"
+                    sublabel="Sub"
+                    id="styled"
+                ></rux-monitoring-progress-icon>
+                <rux-monitoring-icon
+                    label="Label"
+                    sublabel="Sub"
+                    icon="antenna-transmit"
+                    notifications="999"
+                    status="critical"
+                ></rux-monitoring-icon>
+                <rux-monitoring-progress-icon
+                    progress="80"
+                    label="Styled"
+                    sublabel="Sub"
+                    notifications="3"
+                ></rux-monitoring-progress-icon>
+            </div>
+        </rux-global-status-bar>
+        <style>
+            .absolute > * {
+                position: absolute;
+                top: 3rem;
+            }
+        </style>
+        <section style="padding: 3rem">
+            <h2>Overlap Test</h2>
+            <p>
+                This is like a figma visual test except figma doesn't have
+                rux-monitoring-progress-icon yet so I just wanted to make sure
+                that the wording, badge, and status icon have the same
+                positioning.
+            </p>
+            <div style="position: relative; padding: 3rem" class="absolute">
+                <rux-monitoring-icon
+                    icon="antenna-receive"
+                    label="Label"
+                    sublabel="Sub"
+                    notifications="10"
+                    status="caution"
+                >
+                </rux-monitoring-icon>
+                <rux-monitoring-progress-icon
+                    progress="64"
+                    label="Label"
+                    sublabel="Sub"
+                    notifications="10"
+                ></rux-monitoring-progress-icon>
+            </div>
+        </section>
+        <rux-monitoring-progress-icon
+            progress="64"
+            label="Label"
+            sublabel="Sub"
+            notifications="10"
+        ></rux-monitoring-progress-icon>
         <rux-monitoring-progress-icon></rux-monitoring-progress-icon>
     </body>
 </html>
