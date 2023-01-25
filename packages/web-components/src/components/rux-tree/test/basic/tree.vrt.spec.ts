@@ -6,4 +6,9 @@ test.describe('Tree', () => {
     test('has no visual regression @vrt', async ({ astroVRTPage }) => {
         await expect(astroVRTPage).toHaveScreenshot()
     })
+    test('hover has no visual regression @vrt', async ({ astroVRTPage }) => {
+        const el = astroVRTPage.locator('rux-tree-node[data-test-id="default"]')
+        await el.hover()
+        await expect(astroVRTPage).toHaveScreenshot()
+    })
 })
