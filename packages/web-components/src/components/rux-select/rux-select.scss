@@ -180,8 +180,9 @@ label {
         border: 1px solid var(--color-background-interactive-hover);
     }
 
-    &:focus {
-        outline: none;
+    &:focus-visible {
+        outline: var(--focus-outline);
+        outline-offset: var(--focus-offset);
         border: 1px solid var(--color-background-interactive-default);
     }
 

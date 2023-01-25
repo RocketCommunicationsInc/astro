@@ -115,6 +115,61 @@ test.describe('Pop up', async () => {
         await item.click()
         await expect(popup).not.toHaveAttribute('open', '')
     })
+    //keyboard tests
+    test('it opens/closes on Enter', async ({ page }) => {
+        const template = `    
+        <rux-pop-up placement="top-start" id="top">
+        <rux-button slot="trigger" id="toggle-btn">Top</rux-button>
+        <rux-menu>
+            <rux-menu-item value="1" selected>Pop up menu option test</rux-menu-item>
+            <rux-menu-item-divider></rux-menu-item-divider>
+            <rux-menu-item value="2">Pop up menu option test</rux-menu-item>
+            <rux-menu-item value="3">Pop up menu option test</rux-menu-item>
+        </rux-menu>
+        </rux-pop-up>`
+        await page.setContent(template)
+        const toggleBtn = await page.locator('#toggle-btn')
+        const popUp = await page.locator('rux-pop-up')
+
+        //Assert
+        await expect(popUp).not.toHaveAttribute('open', '')
+
+        //Act
+        await toggleBtn.focus()
+        await page.keyboard.press('Enter')
+
+        //Assert
+        await expect(popUp).toHaveAttribute('open', '')
+
+        //Act
+        await toggleBtn.focus()
+        await page.keyboard.press('Enter')
+
+        //Assert
+        await expect(popUp).not.toHaveAttribute('open', '')
+    })
+    test('icon trigger can have focus', async ({ page }) => {
+        const template = `    
+        <rux-pop-up placement="top-start" id="top">
+        <rux-icon slot="trigger" icon="star" id="toggle-btn"></rux-icon>
+        <rux-menu>
+            <rux-menu-item value="1" selected>Pop up menu option test</rux-menu-item>
+            <rux-menu-item-divider></rux-menu-item-divider>
+            <rux-menu-item value="2">Pop up menu option test</rux-menu-item>
+            <rux-menu-item value="3">Pop up menu option test</rux-menu-item>
+        </rux-menu>
+        </rux-pop-up>`
+        await page.setContent(template)
+        const toggleBtn = await page.locator('#toggle-btn')
+        const popUp = await page.locator('rux-pop-up')
+
+        //Assert
+        await expect(popUp).not.toHaveAttribute('open', '')
+
+        //Act
+        await page.keyboard.press('Tab')
+        await expect(toggleBtn).toBeFocused()
+    })
     /**
      * Need to test:
      *  - should be able to contain a form

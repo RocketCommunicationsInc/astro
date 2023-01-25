@@ -9508,6 +9508,27 @@ export class RuxIconGroupWork {
 }
 
 
+export declare interface RuxIconHardware extends Components.RuxIconHardware {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['size']
+})
+@Component({
+  selector: 'rux-icon-hardware',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['size']
+})
+export class RuxIconHardware {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface RuxIconHd extends Components.RuxIconHd {}
 
 @ProxyCmp({
@@ -16123,6 +16144,27 @@ export class RuxIconRefresh {
 }
 
 
+export declare interface RuxIconRelease extends Components.RuxIconRelease {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['size']
+})
+@Component({
+  selector: 'rux-icon-release',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['size']
+})
+export class RuxIconRelease {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface RuxIconRemove extends Components.RuxIconRemove {}
 
 @ProxyCmp({
@@ -17417,6 +17459,27 @@ export declare interface RuxIconSentimentVerySatisfied extends Components.RuxIco
   inputs: ['size']
 })
 export class RuxIconSentimentVerySatisfied {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface RuxIconSetPower extends Components.RuxIconSetPower {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['size']
+})
+@Component({
+  selector: 'rux-icon-set-power',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['size']
+})
+export class RuxIconSetPower {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -23382,6 +23445,39 @@ export class RuxTimeline {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface RuxTooltip extends Components.RuxTooltip {
+  /**
+   * Emits when the tooltip has opened 
+   */
+  ruxtooltipopened: EventEmitter<CustomEvent<any>>;
+  /**
+   * Emits when the tooltip has closed. 
+   */
+  ruxtooltipclosed: EventEmitter<CustomEvent<any>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['delay', 'disableAutoUpdate', 'message', 'offset', 'open', 'placement', 'strategy'],
+  methods: ['show', 'hide']
+})
+@Component({
+  selector: 'rux-tooltip',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['delay', 'disableAutoUpdate', 'message', 'offset', 'open', 'placement', 'strategy']
+})
+export class RuxTooltip {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['ruxtooltipopened', 'ruxtooltipclosed']);
   }
 }
 
