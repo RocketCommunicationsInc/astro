@@ -183,13 +183,19 @@ export class RuxSelect implements FormFieldInterface {
 
             assignedElements.map((item: any) => {
                 const option = item
+                console.log(option.innerHTML, 'no shadow')
+                let slottedContent = option.innerHTML
+                if (option.innerHTML === option.label) {
+                    slottedContent = option.label
+                }
                 if (option.tagName.toLowerCase() === 'rux-option') {
                     this._appendOptionToNativeSelect(
                         option.label,
                         option.value,
                         option.disabled,
                         this.selectEl,
-                        option.title
+                        option.title,
+                        slottedContent
                     )
                 }
 
@@ -237,10 +243,11 @@ export class RuxSelect implements FormFieldInterface {
         value: string,
         disabled: boolean,
         target: HTMLSelectElement | HTMLOptGroupElement,
-        title?: string
+        title?: string,
+        slottedContent?: string
     ) {
         const item = Object.assign(document.createElement('option'), {
-            innerHTML: label ? label : '',
+            innerHTML: label ? label : slottedContent,
             value: value,
             disabled: disabled,
             title: title,

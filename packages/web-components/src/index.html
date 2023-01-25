@@ -22,9 +22,23 @@
     <body>
         <div style="width: 300px; margin: 4rem">
             <rux-select>
-                <rux-option label="With Label"></rux-option>
-                <rux-option>In line</rux-option>
+                <rux-option value="1" label="With Label"></rux-option>
+                <rux-option value="2">In line</rux-option>
+                <rux-option value="3">In line numba 2</rux-option>
             </rux-select>
         </div>
+        <rux-button>Add Option</rux-button>
+        <script>
+            const btn = document.querySelector('rux-button')
+            const select = document.querySelector('rux-select')
+            let count = 3
+            btn.addEventListener('click', () => {
+                let newOpt = document.createElement('rux-option')
+                newOpt.innerHTML = `In line numba ${count}`
+                newOpt.value = count
+                count++
+                select.appendChild(newOpt)
+            })
+        </script>
     </body>
 </html>

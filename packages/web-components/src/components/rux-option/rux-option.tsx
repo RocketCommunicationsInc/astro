@@ -56,7 +56,8 @@ export class RuxOption {
     render() {
         return (
             <Host class="rux-option" disabled={this.disabled}>
-                {this.label ? this.label : ''}
+                {this.label ? this.label : null}
+                <slot></slot>
             </Host>
         )
     }
