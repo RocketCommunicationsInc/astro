@@ -20,40 +20,11 @@
     </head>
 
     <body>
-        <rux-bread-crumb>
-            <rux-bread-crumb-item href="#">One!</rux-bread-crumb-item>
-            <rux-bread-crumb-item href="#">Two!</rux-bread-crumb-item>
-            <rux-bread-crumb-item href="#" current="page"
-                >Three!<rux-icon icon="apps" size="small"></rux-icon
-            ></rux-bread-crumb-item>
-        </rux-bread-crumb>
-        <div>New thing to test</div>
-        <rux-button>Add</rux-button>
-        <script>
-            let count = 0
-            const bread = document.querySelector('rux-bread-crumb')
-            const btn = document
-                .querySelector('rux-button')
-                .addEventListener('click', () => {
-                    let newItem = document.createElement('rux-bread-crumb-item')
-                    newItem.setAttribute('href', '#')
-                    if (count === 0) {
-                        newItem.innerText = 'Four!'
-                        count++
-                    } else if (count === 1) {
-                        newItem.innerText = 'Five'
-                        count = 0
-                    }
-                    bread.appendChild(newItem)
-                    let crumbs = document.querySelectorAll(
-                        'rux-bread-crumb-item'
-                    )
-                    console.log(crumbs, 'all crumbs')
-                    crumbs.forEach((crumb) => {
-                        crumb.removeAttribute('current')
-                    })
-                    crumbs[crumbs.length - 1].current = 'page'
-                })
-        </script>
+        <div style="width: 300px; margin: 3rem">
+            <rux-select>
+                <rux-option label="With Label"></rux-option>
+                <rux-option>Inner text</rux-option>
+            </rux-select>
+        </div>
     </body>
 </html>
