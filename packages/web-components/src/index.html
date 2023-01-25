@@ -24,7 +24,15 @@
             <rux-select>
                 <rux-option value="1" label="With Label"></rux-option>
                 <rux-option value="2">In line</rux-option>
-                <rux-option value="3">In line numba 2</rux-option>
+                <rux-option-group label="Group w/ Label">
+                    <rux-option value="3">In line numba 2</rux-option>
+                </rux-option-group>
+                <rux-option-group>
+                    In line rux-option-group
+                    <rux-option value="4">
+                        Inline option inside inline group</rux-option
+                    >
+                </rux-option-group>
             </rux-select>
         </div>
         <rux-button>Add Option</rux-button>

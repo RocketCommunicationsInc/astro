@@ -183,7 +183,7 @@ export class RuxSelect implements FormFieldInterface {
 
             assignedElements.map((item: any) => {
                 const option = item
-                console.log(option.innerHTML, 'no shadow')
+                console.log(option, 'Option. IS there a group?')
                 let slottedContent = option.innerHTML
                 if (option.innerHTML === option.label) {
                     slottedContent = option.label
@@ -204,7 +204,7 @@ export class RuxSelect implements FormFieldInterface {
                         ...Array.from(option.querySelectorAll('rux-option')),
                     ] as HTMLRuxOptionElement[]
                     this._appendOptGroupToNativeSelect(
-                        option.label ? option.label : 'Group',
+                        option.label ? option.label : slottedContent,
                         children,
                         option.title
                     )
@@ -217,11 +217,13 @@ export class RuxSelect implements FormFieldInterface {
     private _appendOptGroupToNativeSelect(
         groupName: string,
         children: HTMLRuxOptionElement[],
-        title?: string
+        title?: string,
+        slottedContent?: string
     ) {
         const group = Object.assign(document.createElement('optgroup'), {
             label: groupName,
             title: title,
+            innerHTML: groupName ? groupName : slottedContent,
         })
 
         children.map((option: any) => {
