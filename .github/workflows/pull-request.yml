@@ -3,6 +3,7 @@ on:
   push:
     branches: [main, next]
   pull_request:
+    types: [ready_for_review, opened, synchronize]
     branches: [main, next]
   workflow_dispatch:
     permissions:
@@ -11,6 +12,7 @@ env:
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 jobs:
   setup:
+    if: "! github.event.pull_request.draft"
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
@@ -42,7 +44,7 @@ jobs:
             ./packages/web-components/dist
           key: ${{ runner.os }}-setup-${{ hashFiles('./packages/web-components/package-lock.json') }}
       - name: e2e Tests
-        run: npm run test.ci
+        run: npm run test.e2e.ci
         working-directory: ./packages/web-components
   VRTs:
     needs: setup
