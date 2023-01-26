@@ -27,4 +27,18 @@ test.describe('Button', () => {
         await el.hover()
         await expect(astroVRTPage).toHaveScreenshot()
     })
+    test('primary button focus state has no visual regression @vrt', async ({
+        astroVRTPage,
+    }) => {
+        await astroVRTPage.keyboard.press('Tab')
+        await expect(astroVRTPage).toHaveScreenshot()
+    })
+    test('secondary button focus state has no visual regression @vrt', async ({
+        astroVRTPage,
+    }) => {
+        await astroVRTPage.keyboard.press('Tab')
+        await astroVRTPage.keyboard.press('Tab')
+        await astroVRTPage.keyboard.press('Tab') //3 tabs takes you to the secondary button
+        await expect(astroVRTPage).toHaveScreenshot()
+    })
 })
