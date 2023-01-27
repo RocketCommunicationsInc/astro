@@ -45,6 +45,14 @@
     margin: var(--spacing-0);
     padding: var(--spacing-0);
 
+    //mimic the border radius of the interior button
+    &:first-child {
+        border-radius: var(--radius-base) 0 0 var(--radius-base);
+    }
+    &:last-child {
+        border-radius: 0 var(--radius-base) var(--radius-base) 0;
+    }
+
     //omit the right border on next sibling to avoid double borders
     + .rux-segmented-button__segment {
         label {
@@ -59,6 +67,12 @@
                 border-left-color: var(--color-background-interactive-hover);
             }
         }
+    }
+    //apply focus state when input within in selected and raise so that full outline is visible
+    &:has(input:focus-visible) {
+        outline: var(--focus-outline);
+        outline-offset: var(--focus-offset);
+        z-index: 1;
     }
 
     label {
@@ -107,7 +121,9 @@
     }
 
     input {
-        display: none !important;
+        //allow normal radio keyboard functionality while hiding the input from view
+        position: absolute;
+        opacity: 0;
 
         &:checked + label {
             background-color: var(--color-background-surface-selected);
@@ -136,5 +152,13 @@
         &:hover {
             border-right-color: var(--color-background-interactive-hover);
         }
+    }
+}
+//firefox does not support :has selector so :focus-within instead
+@supports (-moz-appearance: none) {
+    .rux-segmented-button__segment:focus-within {
+        outline: var(--focus-outline);
+        outline-offset: var(--focus-offset);
+        z-index: 1;
     }
 }

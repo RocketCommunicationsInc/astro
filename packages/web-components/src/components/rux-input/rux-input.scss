@@ -112,14 +112,13 @@
             background-size: 1.05rem;
         }
         &--focused {
-            box-shadow: var(--color-background-interactive-hover) 0 0 0 1px
-                inset;
-            outline: none;
+            outline: var(--focus-outline);
+            outline-offset: var(--focus-offset);
         }
         &:hover {
             box-shadow: var(--color-background-interactive-hover) 0 0 0 1px
                 inset;
-            outline: none;
+            outline: 2px solid transparent;
         }
         &--disabled:hover {
             box-shadow: var(--color-border-interactive-muted) 0 0 0 1px inset;
@@ -178,9 +177,10 @@
     line-height: var(--line-height-sm);
     width: calc(var(--spacing-6) - var(--spacing-1));
 }
-.pw-button:active,
-.pw-button:focus {
-    outline: none;
+
+.pw-button:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-offset);
 }
 
 .hidden,

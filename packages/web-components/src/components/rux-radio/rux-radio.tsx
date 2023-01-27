@@ -1,6 +1,7 @@
 import {
     Component,
     h,
+    Method,
     Prop,
     Element,
     Event,
@@ -26,10 +27,17 @@ let id = 0
 export class RuxRadio {
     private radioId = `rux-radio-${++id}`
     private radioGroup: HTMLRuxRadioGroupElement | null = null
+    private inputEl?: HTMLElement
 
     @Element() el!: HTMLRuxRadioElement
 
     @State() hasLabelSlot = false
+
+    /**
+     * The tabindex of the radio button.
+     * @internal
+     */
+    @State() buttonTabindex = -1
 
     /**
      * The radio name
@@ -62,6 +70,21 @@ export class RuxRadio {
      * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
      */
     @Event({ eventName: 'ruxblur' }) ruxBlur!: EventEmitter
+
+    /** @internal */
+    @Method()
+    async setFocus(ev: any) {
+        ev.stopPropagation()
+        ev.preventDefault()
+
+        this.inputEl?.focus()
+    }
+
+    /** @internal */
+    @Method()
+    async setButtonTabindex(value: number) {
+        this.buttonTabindex = value
+    }
 
     connectedCallback() {
         this._onChange = this._onChange.bind(this)
@@ -124,6 +147,7 @@ export class RuxRadio {
             _onChange,
             _onBlur,
             hasLabel,
+            buttonTabindex,
         } = this
 
         return (
@@ -136,8 +160,10 @@ export class RuxRadio {
                         disabled={disabled}
                         checked={checked}
                         value={value}
+                        tabindex={buttonTabindex}
                         onChange={_onChange}
                         onBlur={_onBlur}
+                        ref={(el) => (this.inputEl = el)}
                     />
                     <label
                         htmlFor={radioId}

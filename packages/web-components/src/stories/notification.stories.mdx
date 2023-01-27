@@ -66,7 +66,7 @@ export const Default = (args) => {
 
 To show multiple notifications, you'll need to create and manage a notification stack within your application code.
 Instead of using multiple `rux-notification` elements, you can listen on `ruxclosed` and update a single `rux-notification`
-element as the user dismisses the current visible notification. 
+element as the user dismisses the current visible notification.
 
 A very basic pattern would look like:
 
@@ -183,6 +183,7 @@ export const Small = (args) => {
         .closeAfter="${args.closeAfter}"
         status="${args.status}"
         message="${args.message}"
+        .hideClose="${args.hideClose}"
     ></rux-notification>
 </div>
     `
@@ -201,9 +202,11 @@ export const PrefixSlot = (args) => {
 <div style="display: flex; flex-flow: column; justify-content: center;">
     <rux-notification
         ?open="${args.open}"
+        ?small="${args.small}"
         .closeAfter="${args.closeAfter}"
         status="${args.status}"
         message="${args.message}"
+        .hideClose="${args.hideClose}"
     >
     <rux-classification-marking classification="unclassified" tag slot="prefix"></rux-classification-marking>
     Notification banner
@@ -213,7 +216,7 @@ export const PrefixSlot = (args) => {
 }
 
 <Canvas>
-    <Story name="Prefix Slot" height="100px">
+    <Story name="Prefix Slot" height="100px" args={{ open: true}}>
         {PrefixSlot.bind()}
     </Story>
 </Canvas>
@@ -221,14 +224,21 @@ export const PrefixSlot = (args) => {
 ### Default Slot
 
 Use the default slot for more control over the content inside your Notification, for example, adding a link
-within your message. 
+within your message.
 
 > NOTE: Content placed inside the default slot will override the `message` attribute.
 
 export const DefaultSlot = (args) => {
     return html`
 <div style="display: flex; flex-flow: column; justify-content: center;">
-    <rux-notification open>
+    <rux-notification
+        ?open="${args.open}"
+        ?small="${args.small}"
+        .closeAfter="${args.closeAfter}"
+        status="${args.status}"
+        message="${args.message}"
+        .hideClose="${args.hideClose}"
+    >
     Notification banner
     <a href="#" style="margin-left: 8px">Link</a>
     </rux-notification>
@@ -237,7 +247,7 @@ export const DefaultSlot = (args) => {
 }
 
 <Canvas>
-    <Story name="Default Slot" height="100px">
+    <Story name="Default Slot" height="100px" args={{ open: true}}>
         {DefaultSlot.bind()}
     </Story>
 </Canvas>
@@ -245,17 +255,22 @@ export const DefaultSlot = (args) => {
 
 ### Actions Slot
 
-The `actions` slot can be used to customize the close icon or to allow additional actions. For example, 
+The `actions` slot can be used to customize the close icon or to allow additional actions. For example,
 instead of using an icon, you may instead pass in a `rux-button`
 
-> NOTE: By default, this slot will contain a `rux-icon` that automatically closes the modal. 
+> NOTE: By default, this slot will contain a `rux-icon` that automatically closes the modal.
 > You will be responsible for closing the Notification yourself if you chose to use this slot.
 
 export const ActionsSlot = (args) => {
     return html`
 <div style="display: flex; flex-flow: column; justify-content: center;">
     <rux-notification
-        open
+        ?open="${args.open}"
+        ?small="${args.small}"
+        .closeAfter="${args.closeAfter}"
+        status="${args.status}"
+        message="${args.message}"
+        .hideClose="${args.hideClose}"
     >
     Notification banner
     <rux-button slot="actions">Acknowledge</rux-button>
@@ -265,7 +280,7 @@ export const ActionsSlot = (args) => {
 }
 
 <Canvas>
-    <Story name="Actions Slot" height="100px">
+    <Story name="Actions Slot" height="100px" args={{ open: true}}>
         {ActionsSlot.bind()}
     </Story>
 </Canvas>
@@ -283,20 +298,28 @@ export const WithSlottedContent = (args) => {
         .closeAfter="${args.closeAfter}"
         status="${args.status}"
         message="${args.message}"
-    ></rux-notification>
+        .hideClose="${args.hideClose}"
+    >
+    <rux-classification-marking classification="unclassified" tag slot="prefix"></rux-classification-marking>
+    <div>
+      Slotted Content
+      <a href="#" style="margin-left: 8px">Link</a>
+    </div>
+    <rux-button slot="actions">Acknowledge</rux-button>
+    </rux-notification>
 </div>
     `
 }
 
 <Canvas>
-    <Story name="With Slotted Content" height="100px" args={{ small: true}}>
+    <Story name="With Slotted Content" height="100px" args={{ open: true}}>
         {WithSlottedContent.bind()}
     </Story>
 </Canvas>
 
 ### With Wrapped Text
 
-Text within Notifications is truncated by default. If you need to have text wrap, you can make use 
+Text within Notifications is truncated by default. If you need to have text wrap, you can make use
 of the `message` CSS Shadow Part to override the following properties:
 
 ```
@@ -318,12 +341,16 @@ export const WithWrappedText = (args) => {
     </style>
 <div style="display: flex; flex-flow: column; justify-content: center;">
     <rux-notification
-        open
-        status="normal"
+        ?open="${args.open}"
+        ?small="${args.small}"
+        .closeAfter="${args.closeAfter}"
+        status="${args.status}"
+        message="${args.message}"
+        .hideClose="${args.hideClose}"
     >
-        In my younger and more vulnerable years my father gave me some advice that I’ve been 
-        turning over in my mind ever since. “Whenever you feel like criticizing any one,” 
-        he told me, “just remember that all the people in this world haven’t had the advantages 
+        In my younger and more vulnerable years my father gave me some advice that I’ve been
+        turning over in my mind ever since. “Whenever you feel like criticizing any one,”
+        he told me, “just remember that all the people in this world haven’t had the advantages
         that you’ve had.”
     </rux-notification>
 </div>
@@ -331,7 +358,7 @@ export const WithWrappedText = (args) => {
 }
 
 <Canvas>
-    <Story name="With Wrapped Content" height="100px">
+    <Story name="With Wrapped Content" height="100px" args={{ open: true, status: 'normal'}}>
         {WithWrappedText.bind()}
     </Story>
 </Canvas>

@@ -12,7 +12,6 @@ import {
     Listen,
 } from '@stencil/core'
 import {
-    Placement,
     computePosition,
     arrow,
     offset,
@@ -20,6 +19,7 @@ import {
     autoUpdate,
     autoPlacement,
 } from '@floating-ui/dom'
+import { ExtendedPlacement } from '../../common/commonTypes.module'
 
 /**
  * @slot (default) - The contents for rux-pop-up
@@ -30,8 +30,6 @@ import {
  * @part popup-content - the content that is shown when rux-pop-up is opened
  * @part arrow - the arrow pointing to the trigger of rux-pop-up
  */
-
-export declare type ExtendedPlacement = Placement | 'auto'
 
 @Component({
     tag: 'rux-pop-up',
@@ -127,7 +125,13 @@ export class RuxPopUp {
 
     connectedCallback() {
         this._handleTriggerClick = this._handleTriggerClick.bind(this)
+        this._handleTriggerKeyPress = this._handleTriggerKeyPress.bind(this)
         this._handleOutsideClick = this._handleOutsideClick.bind(this)
+        this._setTriggerTabIndex = this._setTriggerTabIndex.bind(this)
+    }
+
+    componentWillLoad() {
+        this._setTriggerTabIndex()
     }
 
     componentDidRender() {
@@ -136,8 +140,18 @@ export class RuxPopUp {
         }
     }
 
-    private async _handleTriggerClick() {
-        this.open = !this.open
+    private async _handleTriggerClick(event: MouseEvent) {
+        //excludes synthetic keyboard events such as Enter on a button behaving as a click
+        if (event.detail > 0) {
+            this.open = !this.open
+        }
+    }
+
+    //part of focus + accessible keyboard events
+    private async _handleTriggerKeyPress(event: KeyboardEvent) {
+        if (event.key === 'Enter') {
+            this.open = !this.open
+        }
     }
 
     private _position() {
@@ -194,6 +208,16 @@ export class RuxPopUp {
             })
         })
         this._setArrowPosition()
+    }
+
+    //set a tabindex if the trigger element does not have one, necessary for items that can not natively receive focus
+    private _setTriggerTabIndex() {
+        const triggerEl = this.el.querySelector(
+            `[slot='trigger']`
+        ) as HTMLElement
+        triggerEl.hasAttribute('tabindex')
+            ? null
+            : triggerEl.setAttribute('tabindex', '0')
     }
 
     private _startPositioner() {
@@ -300,6 +324,7 @@ export class RuxPopUp {
                 <div class="rux-popup" part="container">
                     <div
                         onClick={this._handleTriggerClick}
+                        onKeyPress={this._handleTriggerKeyPress}
                         class="rux-popup__trigger"
                         ref={(el) => (this.trigger = el!)}
                         part="trigger-container"
