@@ -13,4 +13,24 @@ test.describe('Segmented-button', () => {
         await el.hover()
         await expect(astroVRTPage).toHaveScreenshot()
     })
+    test('focus state middle has no visual regression @vrt', async ({
+        astroVRTPage,
+    }) => {
+        await astroVRTPage.keyboard.press('Tab')
+        await expect(astroVRTPage).toHaveScreenshot()
+    })
+    test('focus state left has no visual regression @vrt', async ({
+        astroVRTPage,
+    }) => {
+        await astroVRTPage.keyboard.press('Tab')
+        await astroVRTPage.keyboard.press('ArrowLeft')
+        await expect(astroVRTPage).toHaveScreenshot()
+    })
+    test('focus state right has no visual regression @vrt', async ({
+        astroVRTPage,
+    }) => {
+        await astroVRTPage.keyboard.press('Tab')
+        await astroVRTPage.keyboard.press('ArrowRight')
+        await expect(astroVRTPage).toHaveScreenshot()
+    })
 })
