@@ -13,4 +13,10 @@ test.describe('Accordion', () => {
         await el.hover()
         await expect(astroVRTPage).toHaveScreenshot()
     })
+    test('focus state has no visual regression @vrt', async ({
+        astroVRTPage,
+    }) => {
+        await astroVRTPage.keyboard.press('Tab')
+        await expect(astroVRTPage).toHaveScreenshot()
+    })
 })

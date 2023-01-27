@@ -3,7 +3,7 @@ on:
   push:
     branches: [main, next]
   pull_request:
-    types: [ready_for_review, opened]
+    types: [ready_for_review, opened, synchronize]
     branches: [main, next]
   workflow_dispatch:
     permissions:
