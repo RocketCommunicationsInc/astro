@@ -5107,6 +5107,17 @@ export namespace Components {
         | 'auto'
         | string;
     }
+    interface RuxIconHardware {
+        /**
+          * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
+         */
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
+    }
     interface RuxIconHd {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
@@ -8572,6 +8583,17 @@ export namespace Components {
         | 'auto'
         | string;
     }
+    interface RuxIconRelease {
+        /**
+          * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
+         */
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
+    }
     interface RuxIconRemove {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
@@ -9244,6 +9266,17 @@ export namespace Components {
         | string;
     }
     interface RuxIconSentimentVerySatisfied {
+        /**
+          * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
+         */
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
+    }
+    interface RuxIconSetPower {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -15427,6 +15460,12 @@ declare global {
         prototype: HTMLRuxIconGroupWorkElement;
         new (): HTMLRuxIconGroupWorkElement;
     };
+    interface HTMLRuxIconHardwareElement extends Components.RuxIconHardware, HTMLStencilElement {
+    }
+    var HTMLRuxIconHardwareElement: {
+        prototype: HTMLRuxIconHardwareElement;
+        new (): HTMLRuxIconHardwareElement;
+    };
     interface HTMLRuxIconHdElement extends Components.RuxIconHd, HTMLStencilElement {
     }
     var HTMLRuxIconHdElement: {
@@ -17317,6 +17356,12 @@ declare global {
         prototype: HTMLRuxIconRefreshElement;
         new (): HTMLRuxIconRefreshElement;
     };
+    interface HTMLRuxIconReleaseElement extends Components.RuxIconRelease, HTMLStencilElement {
+    }
+    var HTMLRuxIconReleaseElement: {
+        prototype: HTMLRuxIconReleaseElement;
+        new (): HTMLRuxIconReleaseElement;
+    };
     interface HTMLRuxIconRemoveElement extends Components.RuxIconRemove, HTMLStencilElement {
     }
     var HTMLRuxIconRemoveElement: {
@@ -17688,6 +17733,12 @@ declare global {
     var HTMLRuxIconSentimentVerySatisfiedElement: {
         prototype: HTMLRuxIconSentimentVerySatisfiedElement;
         new (): HTMLRuxIconSentimentVerySatisfiedElement;
+    };
+    interface HTMLRuxIconSetPowerElement extends Components.RuxIconSetPower, HTMLStencilElement {
+    }
+    var HTMLRuxIconSetPowerElement: {
+        prototype: HTMLRuxIconSetPowerElement;
+        new (): HTMLRuxIconSetPowerElement;
     };
     interface HTMLRuxIconSettingsElement extends Components.RuxIconSettings, HTMLStencilElement {
     }
@@ -19833,6 +19884,7 @@ declare global {
         "rux-icon-group": HTMLRuxIconGroupElement;
         "rux-icon-group-add": HTMLRuxIconGroupAddElement;
         "rux-icon-group-work": HTMLRuxIconGroupWorkElement;
+        "rux-icon-hardware": HTMLRuxIconHardwareElement;
         "rux-icon-hd": HTMLRuxIconHdElement;
         "rux-icon-hdr-off": HTMLRuxIconHdrOffElement;
         "rux-icon-hdr-on": HTMLRuxIconHdrOnElement;
@@ -20148,6 +20200,7 @@ declare global {
         "rux-icon-redeem": HTMLRuxIconRedeemElement;
         "rux-icon-redo": HTMLRuxIconRedoElement;
         "rux-icon-refresh": HTMLRuxIconRefreshElement;
+        "rux-icon-release": HTMLRuxIconReleaseElement;
         "rux-icon-remove": HTMLRuxIconRemoveElement;
         "rux-icon-remove-circle": HTMLRuxIconRemoveCircleElement;
         "rux-icon-remove-circle-outline": HTMLRuxIconRemoveCircleOutlineElement;
@@ -20210,6 +20263,7 @@ declare global {
         "rux-icon-sentiment-satisfied-alt": HTMLRuxIconSentimentSatisfiedAltElement;
         "rux-icon-sentiment-very-dissatisfied": HTMLRuxIconSentimentVeryDissatisfiedElement;
         "rux-icon-sentiment-very-satisfied": HTMLRuxIconSentimentVerySatisfiedElement;
+        "rux-icon-set-power": HTMLRuxIconSetPowerElement;
         "rux-icon-settings": HTMLRuxIconSettingsElement;
         "rux-icon-settings-applications": HTMLRuxIconSettingsApplicationsElement;
         "rux-icon-settings-backup-restore": HTMLRuxIconSettingsBackupRestoreElement;
@@ -25616,6 +25670,17 @@ declare namespace LocalJSX {
         | 'auto'
         | string;
     }
+    interface RuxIconHardware {
+        /**
+          * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
+         */
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
+    }
     interface RuxIconHd {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
@@ -29081,6 +29146,17 @@ declare namespace LocalJSX {
         | 'auto'
         | string;
     }
+    interface RuxIconRelease {
+        /**
+          * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
+         */
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
+    }
     interface RuxIconRemove {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
@@ -29753,6 +29829,17 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSentimentVerySatisfied {
+        /**
+          * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
+         */
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
+    }
+    interface RuxIconSetPower {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33691,6 +33778,7 @@ declare namespace LocalJSX {
         "rux-icon-group": RuxIconGroup;
         "rux-icon-group-add": RuxIconGroupAdd;
         "rux-icon-group-work": RuxIconGroupWork;
+        "rux-icon-hardware": RuxIconHardware;
         "rux-icon-hd": RuxIconHd;
         "rux-icon-hdr-off": RuxIconHdrOff;
         "rux-icon-hdr-on": RuxIconHdrOn;
@@ -34006,6 +34094,7 @@ declare namespace LocalJSX {
         "rux-icon-redeem": RuxIconRedeem;
         "rux-icon-redo": RuxIconRedo;
         "rux-icon-refresh": RuxIconRefresh;
+        "rux-icon-release": RuxIconRelease;
         "rux-icon-remove": RuxIconRemove;
         "rux-icon-remove-circle": RuxIconRemoveCircle;
         "rux-icon-remove-circle-outline": RuxIconRemoveCircleOutline;
@@ -34068,6 +34157,7 @@ declare namespace LocalJSX {
         "rux-icon-sentiment-satisfied-alt": RuxIconSentimentSatisfiedAlt;
         "rux-icon-sentiment-very-dissatisfied": RuxIconSentimentVeryDissatisfied;
         "rux-icon-sentiment-very-satisfied": RuxIconSentimentVerySatisfied;
+        "rux-icon-set-power": RuxIconSetPower;
         "rux-icon-settings": RuxIconSettings;
         "rux-icon-settings-applications": RuxIconSettingsApplications;
         "rux-icon-settings-backup-restore": RuxIconSettingsBackupRestore;
@@ -34807,6 +34897,7 @@ declare module "@stencil/core" {
             "rux-icon-group": LocalJSX.RuxIconGroup & JSXBase.HTMLAttributes<HTMLRuxIconGroupElement>;
             "rux-icon-group-add": LocalJSX.RuxIconGroupAdd & JSXBase.HTMLAttributes<HTMLRuxIconGroupAddElement>;
             "rux-icon-group-work": LocalJSX.RuxIconGroupWork & JSXBase.HTMLAttributes<HTMLRuxIconGroupWorkElement>;
+            "rux-icon-hardware": LocalJSX.RuxIconHardware & JSXBase.HTMLAttributes<HTMLRuxIconHardwareElement>;
             "rux-icon-hd": LocalJSX.RuxIconHd & JSXBase.HTMLAttributes<HTMLRuxIconHdElement>;
             "rux-icon-hdr-off": LocalJSX.RuxIconHdrOff & JSXBase.HTMLAttributes<HTMLRuxIconHdrOffElement>;
             "rux-icon-hdr-on": LocalJSX.RuxIconHdrOn & JSXBase.HTMLAttributes<HTMLRuxIconHdrOnElement>;
@@ -35122,6 +35213,7 @@ declare module "@stencil/core" {
             "rux-icon-redeem": LocalJSX.RuxIconRedeem & JSXBase.HTMLAttributes<HTMLRuxIconRedeemElement>;
             "rux-icon-redo": LocalJSX.RuxIconRedo & JSXBase.HTMLAttributes<HTMLRuxIconRedoElement>;
             "rux-icon-refresh": LocalJSX.RuxIconRefresh & JSXBase.HTMLAttributes<HTMLRuxIconRefreshElement>;
+            "rux-icon-release": LocalJSX.RuxIconRelease & JSXBase.HTMLAttributes<HTMLRuxIconReleaseElement>;
             "rux-icon-remove": LocalJSX.RuxIconRemove & JSXBase.HTMLAttributes<HTMLRuxIconRemoveElement>;
             "rux-icon-remove-circle": LocalJSX.RuxIconRemoveCircle & JSXBase.HTMLAttributes<HTMLRuxIconRemoveCircleElement>;
             "rux-icon-remove-circle-outline": LocalJSX.RuxIconRemoveCircleOutline & JSXBase.HTMLAttributes<HTMLRuxIconRemoveCircleOutlineElement>;
@@ -35184,6 +35276,7 @@ declare module "@stencil/core" {
             "rux-icon-sentiment-satisfied-alt": LocalJSX.RuxIconSentimentSatisfiedAlt & JSXBase.HTMLAttributes<HTMLRuxIconSentimentSatisfiedAltElement>;
             "rux-icon-sentiment-very-dissatisfied": LocalJSX.RuxIconSentimentVeryDissatisfied & JSXBase.HTMLAttributes<HTMLRuxIconSentimentVeryDissatisfiedElement>;
             "rux-icon-sentiment-very-satisfied": LocalJSX.RuxIconSentimentVerySatisfied & JSXBase.HTMLAttributes<HTMLRuxIconSentimentVerySatisfiedElement>;
+            "rux-icon-set-power": LocalJSX.RuxIconSetPower & JSXBase.HTMLAttributes<HTMLRuxIconSetPowerElement>;
             "rux-icon-settings": LocalJSX.RuxIconSettings & JSXBase.HTMLAttributes<HTMLRuxIconSettingsElement>;
             "rux-icon-settings-applications": LocalJSX.RuxIconSettingsApplications & JSXBase.HTMLAttributes<HTMLRuxIconSettingsApplicationsElement>;
             "rux-icon-settings-backup-restore": LocalJSX.RuxIconSettingsBackupRestore & JSXBase.HTMLAttributes<HTMLRuxIconSettingsBackupRestoreElement>;

@@ -1,16 +1,15 @@
 import { test, expect } from '../../../../../tests/utils/_astro-fixtures'
 
 test.describe('vrt', () => {
-    test('has no visual regression @vrt @dark', async ({ page }) => {
-        await page.goto(`/src/components/rux-radio-group/test/basic/index.html`)
-        await expect(page).toHaveScreenshot()
-    })
+    test.use({ component: 'rux-radio-group' })
 
-    test('has no visual regression @vrt @light', async ({ page }) => {
-        await page.goto(`/src/components/rux-radio-group/test/basic/index.html`)
-        await page.evaluate(() => {
-            document.body.classList.add('light-theme')
-        })
-        await expect(page).toHaveScreenshot()
+    test('has no visual regression @vrt', async ({ astroVRTPage }) => {
+        await expect(astroVRTPage).toHaveScreenshot()
+    })
+    test('focus state has no visual regression @vrt', async ({
+        astroVRTPage,
+    }) => {
+        await astroVRTPage.keyboard.press('Tab')
+        await expect(astroVRTPage).toHaveScreenshot()
     })
 })

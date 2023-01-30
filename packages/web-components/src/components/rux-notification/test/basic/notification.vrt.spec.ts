@@ -1,21 +1,15 @@
 import { test, expect } from '../../../../../tests/utils/_astro-fixtures'
 
 test.describe('Notification', () => {
-    test('has no visual regression @vrt @dark', async ({ page }) => {
-        await page.goto(
-            `/src/components/rux-notification/test/basic/index.html`
-        )
+    test.use({ component: 'rux-notification' })
 
-        await expect(page).toHaveScreenshot()
+    test('has no visual regression @vrt', async ({ astroVRTPage }) => {
+        await expect(astroVRTPage).toHaveScreenshot()
     })
-
-    test('has no visual regression @vrt @light', async ({ page }) => {
-        await page.goto(
-            `/src/components/rux-notification/test/basic/index.html`
-        )
-        await page.evaluate(() => {
-            document.body.classList.add('light-theme')
-        })
-        await expect(page).toHaveScreenshot()
+    test('focus state has no visual regression @vrt', async ({
+        astroVRTPage,
+    }) => {
+        await astroVRTPage.keyboard.press('Tab')
+        await expect(astroVRTPage).toHaveScreenshot()
     })
 })
