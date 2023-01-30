@@ -223,7 +223,6 @@ export class RuxPopUp {
     }
 
     private _startPositioner() {
-        console.log('I am the start positioner')
         this._stopPositioner()
         if (this.open) {
             this._position()
@@ -293,8 +292,12 @@ export class RuxPopUp {
     }
 
     private async _handleTriggerMovement() {
+        // get the trigger element and it's position
         const trigger = this.triggerSlot
         const triggerElRect = await this.getTriggerRect()
+
+        // Set the margin values to create a box that perfectly encapsulates the trigger
+        // Math.floor ensures values are not floats
         const marginTop = -1 * Math.floor(triggerElRect.top)
         const marginRight =
             -1 * Math.floor(visualViewport!.width - triggerElRect.right)
@@ -302,16 +305,16 @@ export class RuxPopUp {
             -1 * Math.floor(visualViewport!.height - triggerElRect.bottom)
         const marginLeft = -1 * Math.floor(triggerElRect.left)
 
+        // options to set box around trigger for interecting, threshold value set to trigger intersection as soon as the trigger is even slightly outside of the root box.
         let options = {
             rootMargin: `${marginTop}px ${marginRight}px ${marginBottom}px ${marginLeft}px`,
             threshold: 1,
         }
 
+        // create intersection observer, trigger floating-ui positioner if trigger moves, then disconnect and rebuild trigger to run on the new position.
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 const intersecting = entry.isIntersecting
-                const target = entry.target as HTMLElement
-                target.style.backgroundColor = intersecting ? 'blue' : 'orange'
                 if (!intersecting) {
                     this._startPositioner()
                     observer.disconnect()
