@@ -295,21 +295,27 @@ export class RuxPopUp {
     private async _handleTriggerMovement() {
         const trigger = this.triggerSlot
         const triggerElRect = await this.getTriggerRect()
-        console.log(trigger)
-        console.log(triggerElRect)
+        const marginTop = -1 * Math.floor(triggerElRect.top)
+        const marginRight =
+            -1 * (visualViewport.width - Math.floor(triggerElRect.right))
+        const marginBottom =
+            -1 * (visualViewport.height - Math.floor(triggerElRect.bottom))
+        const marginLeft = -1 * Math.floor(triggerElRect.left)
 
         let options = {
-            rootMargin: `-${triggerElRect.top}px ${
-                -1 * (visualViewport.width - triggerElRect.right)
-            }px ${-1 * (visualViewport.height - triggerElRect.bottom)}px -${
-                triggerElRect.left
-            }px`,
+            rootMargin: `
+            ${marginTop}px
+            ${marginRight}px
+            ${marginBottom}px
+            ${marginLeft}px`,
             threshold: 0.975,
         }
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 const intersecting = entry.isIntersecting
+                const target = entry.target as HTMLElement
+                target.style.backgroundColor = intersecting ? 'blue' : 'orange'
                 if (!intersecting) this._startPositioner()
             })
         }, options)
