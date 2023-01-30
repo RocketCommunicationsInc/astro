@@ -1,0 +1,60 @@
+{
+  "name": "@astrouxds/react",
+  "sideEffects": false,
+  "version": "7.6.0",
+  "description": "Astro Web Components React Wrapper",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RocketCommunicationsInc/astro/tree/main/packages/react"
+  },
+  "scripts": {
+    "build": "npm run clean && npm run compile",
+    "clean": "rm -rf dist",
+    "compile": "npm run tsc",
+    "tsc": "tsc -p .",
+    "rollup": "rollup -c",
+    "test": "jest ./__tests__",
+    "test.watch": "jest --watchAll"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^12.1.5",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.0.3",
+    "@types/react": "^17.0.52",
+    "@types/react-dom": "^17.0.18",
+    "@types/react-test-renderer": "^17.0.2",
+    "babel-jest": "^27.5.1",
+    "jest": "^27.5.1",
+    "jest-dom": "^3.0.2",
+    "np": "^3.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "ts-jest": "^27.1.5",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "@astrouxds/astro-web-components": "^7.6.0"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest.setup.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "node_modules",
+      "dist",
+      "common"
+    ]
+  }
+}
