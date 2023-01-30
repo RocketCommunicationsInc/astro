@@ -1,5 +1,5 @@
 {
-  "name": "@micahjones13/react",
+  "name": "@astrouxds/react",
   "sideEffects": false,
   "version": "7.6.0",
   "description": "Astro Web Components React Wrapper",
