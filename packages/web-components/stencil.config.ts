@@ -5,7 +5,7 @@ import { angularOutputTarget } from '@stencil/angular-output-target'
 import { angularValueAccessorBindings } from './wrapper-bindings/angular.bindings'
 import { angularProxiesListIgnore } from './wrapper-bindings/angular-proxies-list-ignore'
 import { reactOutputTarget } from '@stencil/react-output-target'
-import { reactBooleanFix } from './wrapper-bindings/react-boolean-fix'
+// import { reactBooleanFix } from './wrapper-bindings/react-boolean-fix'
 
 export const config: Config = {
     namespace: 'astro-web-components',
@@ -13,14 +13,16 @@ export const config: Config = {
     outputTargets: [
         reactOutputTarget({
             componentCorePackage: '@astrouxds/astro-web-components',
-            proxiesFile: '../react/src/components.tsx',
+            proxiesFile: '../react/src/components/stencil-generated/index.tsx',
             includePolyfills: true,
-            includeDefineCustomElements: true,
+            includeDefineCustomElements: false,
+            includeImportCustomElements: true,
+            customElementsDir: '../react/src/components/',
         }),
-        reactBooleanFix({
-            attatchPropsFile:
-                '../../react/src/react-component-lib/utils/attachProps.ts',
-        }),
+        // reactBooleanFix({
+        //     attatchPropsFile:
+        //         '../../react/src/react-component-lib/utils/attachProps.ts',
+        // }),
         angularOutputTarget({
             componentCorePackage: '@astrouxds/astro-web-components',
             directivesProxyFile:
