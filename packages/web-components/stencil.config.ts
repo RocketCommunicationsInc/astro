@@ -13,11 +13,12 @@ export const config: Config = {
     outputTargets: [
         reactOutputTarget({
             componentCorePackage: '@astrouxds/astro-web-components',
-            proxiesFile: '../react/src/components/stencil-generated/index.tsx',
-            includePolyfills: true,
+            proxiesFile: '../react/src/components.tsx',
+            //polyfills & defineCustomElements cannot be included at the same time as importCustomElements
+            includePolyfills: false,
             includeDefineCustomElements: false,
             includeImportCustomElements: true,
-            customElementsDir: '../react/src/components/',
+            customElementsDir: 'dist/components',
         }),
         // reactBooleanFix({
         //     attatchPropsFile:
