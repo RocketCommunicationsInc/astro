@@ -7,6 +7,7 @@ import { hasSlot } from '../../utils/utils'
  * @slot tab-bar - The container's tab bar
  * @slot toolbar - The container's toolbar
  * @slot footer - The container's footer
+ * @part container - The container's outermost element
  * @part header - The container's outside header element
  * @part tab-bar - The container's outside tab bar element
  * @part toolbar - The container's outside toolbar element
@@ -42,7 +43,7 @@ export class RuxContainer {
     render() {
         return (
             <Host>
-                <div class="rux-container">
+                <div class="rux-container" part="container">
                     <div
                         class={{
                             'rux-container__header': true,

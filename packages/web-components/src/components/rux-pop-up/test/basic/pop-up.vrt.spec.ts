@@ -1,8 +1,15 @@
-import { test, expect } from '@playwright/test'
+import { test, expect } from '../../../../../tests/utils/_astro-fixtures'
 
 test.describe('Pop up', async () => {
-    test('has no visual regression @vrt', async ({ page }) => {
-        await page.goto(`/src/components/rux-pop-up/test/basic/index.html`)
-        await expect(page).toHaveScreenshot()
+    test.use({ component: 'rux-pop-up' })
+
+    test('has no visual regression @vrt', async ({ astroVRTPage }) => {
+        await expect(astroVRTPage).toHaveScreenshot()
+    })
+    test('focus state has no visual regression @vrt', async ({
+        astroVRTPage,
+    }) => {
+        await astroVRTPage.keyboard.press('Tab')
+        await expect(astroVRTPage).toHaveScreenshot()
     })
 })

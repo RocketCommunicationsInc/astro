@@ -5,10 +5,9 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { Classification, Status, StatusTags } from "./common/commonTypes.module";
+import { Classification, ExtendedPlacement, Status, StatusTags } from "./common/commonTypes.module";
 import { LogRow } from "./components/rux-log/rux-log.model";
 import { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
-import { ExtendedPlacement } from "./components/rux-pop-up/rux-pop-up";
 import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
 export namespace Components {
     interface RuxAccordion {
@@ -172,6 +171,7 @@ export namespace Components {
           * Applies a smaller clock style.
          */
         "small": boolean;
+        "static": boolean;
         /**
           * Accepts the [IANA timezone string format](https://www.iana.org/time-zones) such as `'America/Los_Angeles'` or any single-character designation for a [military timezones](https://en.wikipedia.org/wiki/List_of_military_time_zones) (`'A'` through `'Z'`, excluding `'J'`), both case-insensitive. If no value for timezone is provided, the clock will use `'UTC'`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.
          */
@@ -5115,6 +5115,17 @@ export namespace Components {
         | 'auto'
         | string;
     }
+    interface RuxIconHardware {
+        /**
+          * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
+         */
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
+    }
     interface RuxIconHd {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
@@ -8580,6 +8591,17 @@ export namespace Components {
         | 'auto'
         | string;
     }
+    interface RuxIconRelease {
+        /**
+          * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
+         */
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
+    }
     interface RuxIconRemove {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
@@ -9252,6 +9274,17 @@ export namespace Components {
         | string;
     }
     interface RuxIconSentimentVerySatisfied {
+        /**
+          * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
+         */
+        "size": | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
+    }
+    interface RuxIconSetPower {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -12231,6 +12264,8 @@ export namespace Components {
           * The radio name
          */
         "name": string;
+        "setButtonTabindex": (value: number) => Promise<void>;
+        "setFocus": (ev: any) => Promise<void>;
         /**
           * The radio value
          */
@@ -12569,6 +12604,44 @@ export namespace Components {
          */
         "zoom": number;
     }
+    interface RuxTooltip {
+        /**
+          * How long it takes the tooltip to appear in milliseconds, default = 800, Overrides the css custom property --delay.
+         */
+        "delay": number;
+        /**
+          * Turns disableAutoUpdate on or off which makes the tooltip move to stay in view based on scroll. Defaults to false.
+         */
+        "disableAutoUpdate": boolean;
+        /**
+          * Closes the tooltip and returns false.
+         */
+        "hide": () => Promise<boolean>;
+        /**
+          * The tooltip's content.
+         */
+        "message": string;
+        /**
+          * Pixel offset from trigger, default = 8
+         */
+        "offset": number;
+        /**
+          * Whether or not the tooltip is open
+         */
+        "open": boolean;
+        /**
+          * The placement of the tooltip relative to it's slotted trigger element. Defaults to auto.
+         */
+        "placement": ExtendedPlacement;
+        /**
+          * Opens the tooltip and returns true.
+         */
+        "show": () => Promise<true>;
+        /**
+          * The position strategy of the tooltip, either absolute or fixed.
+         */
+        "strategy": 'absolute' | 'fixed';
+    }
     interface RuxTrack {
         "columns": number;
         "end": string;
@@ -12679,6 +12752,10 @@ export interface RuxTextareaCustomEvent<T> extends CustomEvent<T> {
 export interface RuxTimeRegionCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxTimeRegionElement;
+}
+export interface RuxTooltipCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxTooltipElement;
 }
 export interface RuxTreeNodeCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -15403,6 +15480,12 @@ declare global {
         prototype: HTMLRuxIconGroupWorkElement;
         new (): HTMLRuxIconGroupWorkElement;
     };
+    interface HTMLRuxIconHardwareElement extends Components.RuxIconHardware, HTMLStencilElement {
+    }
+    var HTMLRuxIconHardwareElement: {
+        prototype: HTMLRuxIconHardwareElement;
+        new (): HTMLRuxIconHardwareElement;
+    };
     interface HTMLRuxIconHdElement extends Components.RuxIconHd, HTMLStencilElement {
     }
     var HTMLRuxIconHdElement: {
@@ -17293,6 +17376,12 @@ declare global {
         prototype: HTMLRuxIconRefreshElement;
         new (): HTMLRuxIconRefreshElement;
     };
+    interface HTMLRuxIconReleaseElement extends Components.RuxIconRelease, HTMLStencilElement {
+    }
+    var HTMLRuxIconReleaseElement: {
+        prototype: HTMLRuxIconReleaseElement;
+        new (): HTMLRuxIconReleaseElement;
+    };
     interface HTMLRuxIconRemoveElement extends Components.RuxIconRemove, HTMLStencilElement {
     }
     var HTMLRuxIconRemoveElement: {
@@ -17664,6 +17753,12 @@ declare global {
     var HTMLRuxIconSentimentVerySatisfiedElement: {
         prototype: HTMLRuxIconSentimentVerySatisfiedElement;
         new (): HTMLRuxIconSentimentVerySatisfiedElement;
+    };
+    interface HTMLRuxIconSetPowerElement extends Components.RuxIconSetPower, HTMLStencilElement {
+    }
+    var HTMLRuxIconSetPowerElement: {
+        prototype: HTMLRuxIconSetPowerElement;
+        new (): HTMLRuxIconSetPowerElement;
     };
     interface HTMLRuxIconSettingsElement extends Components.RuxIconSettings, HTMLStencilElement {
     }
@@ -19333,6 +19428,12 @@ declare global {
         prototype: HTMLRuxTimelineElement;
         new (): HTMLRuxTimelineElement;
     };
+    interface HTMLRuxTooltipElement extends Components.RuxTooltip, HTMLStencilElement {
+    }
+    var HTMLRuxTooltipElement: {
+        prototype: HTMLRuxTooltipElement;
+        new (): HTMLRuxTooltipElement;
+    };
     interface HTMLRuxTrackElement extends Components.RuxTrack, HTMLStencilElement {
     }
     var HTMLRuxTrackElement: {
@@ -19805,6 +19906,7 @@ declare global {
         "rux-icon-group": HTMLRuxIconGroupElement;
         "rux-icon-group-add": HTMLRuxIconGroupAddElement;
         "rux-icon-group-work": HTMLRuxIconGroupWorkElement;
+        "rux-icon-hardware": HTMLRuxIconHardwareElement;
         "rux-icon-hd": HTMLRuxIconHdElement;
         "rux-icon-hdr-off": HTMLRuxIconHdrOffElement;
         "rux-icon-hdr-on": HTMLRuxIconHdrOnElement;
@@ -20120,6 +20222,7 @@ declare global {
         "rux-icon-redeem": HTMLRuxIconRedeemElement;
         "rux-icon-redo": HTMLRuxIconRedoElement;
         "rux-icon-refresh": HTMLRuxIconRefreshElement;
+        "rux-icon-release": HTMLRuxIconReleaseElement;
         "rux-icon-remove": HTMLRuxIconRemoveElement;
         "rux-icon-remove-circle": HTMLRuxIconRemoveCircleElement;
         "rux-icon-remove-circle-outline": HTMLRuxIconRemoveCircleOutlineElement;
@@ -20182,6 +20285,7 @@ declare global {
         "rux-icon-sentiment-satisfied-alt": HTMLRuxIconSentimentSatisfiedAltElement;
         "rux-icon-sentiment-very-dissatisfied": HTMLRuxIconSentimentVeryDissatisfiedElement;
         "rux-icon-sentiment-very-satisfied": HTMLRuxIconSentimentVerySatisfiedElement;
+        "rux-icon-set-power": HTMLRuxIconSetPowerElement;
         "rux-icon-settings": HTMLRuxIconSettingsElement;
         "rux-icon-settings-applications": HTMLRuxIconSettingsApplicationsElement;
         "rux-icon-settings-backup-restore": HTMLRuxIconSettingsBackupRestoreElement;
@@ -20460,6 +20564,7 @@ declare global {
         "rux-textarea": HTMLRuxTextareaElement;
         "rux-time-region": HTMLRuxTimeRegionElement;
         "rux-timeline": HTMLRuxTimelineElement;
+        "rux-tooltip": HTMLRuxTooltipElement;
         "rux-track": HTMLRuxTrackElement;
         "rux-tree": HTMLRuxTreeElement;
         "rux-tree-node": HTMLRuxTreeNodeElement;
@@ -20643,6 +20748,7 @@ declare namespace LocalJSX {
           * Applies a smaller clock style.
          */
         "small"?: boolean;
+        "static"?: boolean;
         /**
           * Accepts the [IANA timezone string format](https://www.iana.org/time-zones) such as `'America/Los_Angeles'` or any single-character designation for a [military timezones](https://en.wikipedia.org/wiki/List_of_military_time_zones) (`'A'` through `'Z'`, excluding `'J'`), both case-insensitive. If no value for timezone is provided, the clock will use `'UTC'`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.
          */
@@ -25594,6 +25700,17 @@ declare namespace LocalJSX {
         | 'auto'
         | string;
     }
+    interface RuxIconHardware {
+        /**
+          * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
+         */
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
+    }
     interface RuxIconHd {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
@@ -29059,6 +29176,17 @@ declare namespace LocalJSX {
         | 'auto'
         | string;
     }
+    interface RuxIconRelease {
+        /**
+          * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
+         */
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
+    }
     interface RuxIconRemove {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
@@ -29731,6 +29859,17 @@ declare namespace LocalJSX {
         | string;
     }
     interface RuxIconSentimentVerySatisfied {
+        /**
+          * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
+         */
+        "size"?: | 'extra-small'
+        | 'small'
+        | 'normal'
+        | 'large'
+        | 'auto'
+        | string;
+    }
+    interface RuxIconSetPower {
         /**
           * The size of the icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
          */
@@ -33147,6 +33286,44 @@ declare namespace LocalJSX {
          */
         "zoom"?: number;
     }
+    interface RuxTooltip {
+        /**
+          * How long it takes the tooltip to appear in milliseconds, default = 800, Overrides the css custom property --delay.
+         */
+        "delay"?: number;
+        /**
+          * Turns disableAutoUpdate on or off which makes the tooltip move to stay in view based on scroll. Defaults to false.
+         */
+        "disableAutoUpdate"?: boolean;
+        /**
+          * The tooltip's content.
+         */
+        "message"?: string;
+        /**
+          * Pixel offset from trigger, default = 8
+         */
+        "offset"?: number;
+        /**
+          * Emits when the tooltip has closed.
+         */
+        "onRuxtooltipclosed"?: (event: RuxTooltipCustomEvent<any>) => void;
+        /**
+          * Emits when the tooltip has opened
+         */
+        "onRuxtooltipopened"?: (event: RuxTooltipCustomEvent<any>) => void;
+        /**
+          * Whether or not the tooltip is open
+         */
+        "open"?: boolean;
+        /**
+          * The placement of the tooltip relative to it's slotted trigger element. Defaults to auto.
+         */
+        "placement"?: ExtendedPlacement;
+        /**
+          * The position strategy of the tooltip, either absolute or fixed.
+         */
+        "strategy"?: 'absolute' | 'fixed';
+    }
     interface RuxTrack {
         "columns"?: number;
         "end"?: string;
@@ -33633,6 +33810,7 @@ declare namespace LocalJSX {
         "rux-icon-group": RuxIconGroup;
         "rux-icon-group-add": RuxIconGroupAdd;
         "rux-icon-group-work": RuxIconGroupWork;
+        "rux-icon-hardware": RuxIconHardware;
         "rux-icon-hd": RuxIconHd;
         "rux-icon-hdr-off": RuxIconHdrOff;
         "rux-icon-hdr-on": RuxIconHdrOn;
@@ -33948,6 +34126,7 @@ declare namespace LocalJSX {
         "rux-icon-redeem": RuxIconRedeem;
         "rux-icon-redo": RuxIconRedo;
         "rux-icon-refresh": RuxIconRefresh;
+        "rux-icon-release": RuxIconRelease;
         "rux-icon-remove": RuxIconRemove;
         "rux-icon-remove-circle": RuxIconRemoveCircle;
         "rux-icon-remove-circle-outline": RuxIconRemoveCircleOutline;
@@ -34010,6 +34189,7 @@ declare namespace LocalJSX {
         "rux-icon-sentiment-satisfied-alt": RuxIconSentimentSatisfiedAlt;
         "rux-icon-sentiment-very-dissatisfied": RuxIconSentimentVeryDissatisfied;
         "rux-icon-sentiment-very-satisfied": RuxIconSentimentVerySatisfied;
+        "rux-icon-set-power": RuxIconSetPower;
         "rux-icon-settings": RuxIconSettings;
         "rux-icon-settings-applications": RuxIconSettingsApplications;
         "rux-icon-settings-backup-restore": RuxIconSettingsBackupRestore;
@@ -34288,6 +34468,7 @@ declare namespace LocalJSX {
         "rux-textarea": RuxTextarea;
         "rux-time-region": RuxTimeRegion;
         "rux-timeline": RuxTimeline;
+        "rux-tooltip": RuxTooltip;
         "rux-track": RuxTrack;
         "rux-tree": RuxTree;
         "rux-tree-node": RuxTreeNode;
@@ -34750,6 +34931,7 @@ declare module "@stencil/core" {
             "rux-icon-group": LocalJSX.RuxIconGroup & JSXBase.HTMLAttributes<HTMLRuxIconGroupElement>;
             "rux-icon-group-add": LocalJSX.RuxIconGroupAdd & JSXBase.HTMLAttributes<HTMLRuxIconGroupAddElement>;
             "rux-icon-group-work": LocalJSX.RuxIconGroupWork & JSXBase.HTMLAttributes<HTMLRuxIconGroupWorkElement>;
+            "rux-icon-hardware": LocalJSX.RuxIconHardware & JSXBase.HTMLAttributes<HTMLRuxIconHardwareElement>;
             "rux-icon-hd": LocalJSX.RuxIconHd & JSXBase.HTMLAttributes<HTMLRuxIconHdElement>;
             "rux-icon-hdr-off": LocalJSX.RuxIconHdrOff & JSXBase.HTMLAttributes<HTMLRuxIconHdrOffElement>;
             "rux-icon-hdr-on": LocalJSX.RuxIconHdrOn & JSXBase.HTMLAttributes<HTMLRuxIconHdrOnElement>;
@@ -35065,6 +35247,7 @@ declare module "@stencil/core" {
             "rux-icon-redeem": LocalJSX.RuxIconRedeem & JSXBase.HTMLAttributes<HTMLRuxIconRedeemElement>;
             "rux-icon-redo": LocalJSX.RuxIconRedo & JSXBase.HTMLAttributes<HTMLRuxIconRedoElement>;
             "rux-icon-refresh": LocalJSX.RuxIconRefresh & JSXBase.HTMLAttributes<HTMLRuxIconRefreshElement>;
+            "rux-icon-release": LocalJSX.RuxIconRelease & JSXBase.HTMLAttributes<HTMLRuxIconReleaseElement>;
             "rux-icon-remove": LocalJSX.RuxIconRemove & JSXBase.HTMLAttributes<HTMLRuxIconRemoveElement>;
             "rux-icon-remove-circle": LocalJSX.RuxIconRemoveCircle & JSXBase.HTMLAttributes<HTMLRuxIconRemoveCircleElement>;
             "rux-icon-remove-circle-outline": LocalJSX.RuxIconRemoveCircleOutline & JSXBase.HTMLAttributes<HTMLRuxIconRemoveCircleOutlineElement>;
@@ -35127,6 +35310,7 @@ declare module "@stencil/core" {
             "rux-icon-sentiment-satisfied-alt": LocalJSX.RuxIconSentimentSatisfiedAlt & JSXBase.HTMLAttributes<HTMLRuxIconSentimentSatisfiedAltElement>;
             "rux-icon-sentiment-very-dissatisfied": LocalJSX.RuxIconSentimentVeryDissatisfied & JSXBase.HTMLAttributes<HTMLRuxIconSentimentVeryDissatisfiedElement>;
             "rux-icon-sentiment-very-satisfied": LocalJSX.RuxIconSentimentVerySatisfied & JSXBase.HTMLAttributes<HTMLRuxIconSentimentVerySatisfiedElement>;
+            "rux-icon-set-power": LocalJSX.RuxIconSetPower & JSXBase.HTMLAttributes<HTMLRuxIconSetPowerElement>;
             "rux-icon-settings": LocalJSX.RuxIconSettings & JSXBase.HTMLAttributes<HTMLRuxIconSettingsElement>;
             "rux-icon-settings-applications": LocalJSX.RuxIconSettingsApplications & JSXBase.HTMLAttributes<HTMLRuxIconSettingsApplicationsElement>;
             "rux-icon-settings-backup-restore": LocalJSX.RuxIconSettingsBackupRestore & JSXBase.HTMLAttributes<HTMLRuxIconSettingsBackupRestoreElement>;
@@ -35405,6 +35589,7 @@ declare module "@stencil/core" {
             "rux-textarea": LocalJSX.RuxTextarea & JSXBase.HTMLAttributes<HTMLRuxTextareaElement>;
             "rux-time-region": LocalJSX.RuxTimeRegion & JSXBase.HTMLAttributes<HTMLRuxTimeRegionElement>;
             "rux-timeline": LocalJSX.RuxTimeline & JSXBase.HTMLAttributes<HTMLRuxTimelineElement>;
+            "rux-tooltip": LocalJSX.RuxTooltip & JSXBase.HTMLAttributes<HTMLRuxTooltipElement>;
             "rux-track": LocalJSX.RuxTrack & JSXBase.HTMLAttributes<HTMLRuxTrackElement>;
             "rux-tree": LocalJSX.RuxTree & JSXBase.HTMLAttributes<HTMLRuxTreeElement>;
             "rux-tree-node": LocalJSX.RuxTreeNode & JSXBase.HTMLAttributes<HTMLRuxTreeNodeElement>;

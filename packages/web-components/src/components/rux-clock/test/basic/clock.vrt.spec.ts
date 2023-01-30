@@ -22,8 +22,9 @@ test.describe('Clock', () => {
         }`)
     })
 
-    test('has no visual regression @vrt', async ({ page }) => {
-        await page.goto(`/src/components/rux-clock/test/basic/index.html`)
-        await expect(page).toHaveScreenshot()
+    test.use({ component: 'rux-clock' })
+
+    test('has no visual regression @vrt', async ({ astroVRTPage }) => {
+        await expect(astroVRTPage).toHaveScreenshot()
     })
 })

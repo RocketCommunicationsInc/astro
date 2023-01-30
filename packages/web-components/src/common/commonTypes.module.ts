@@ -1,3 +1,5 @@
+import { Placement } from '@floating-ui/dom'
+
 export type Status =
     | 'off'
     | 'standby'
@@ -29,3 +31,5 @@ export enum StatusSymbol {
     STANDBY = 'standby',
     OFF = 'off',
 }
+
+export declare type ExtendedPlacement = Placement | 'auto'

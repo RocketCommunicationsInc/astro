@@ -1,4 +1,0 @@
-[build]
-
-publish = "storybook-static/"
-command = "npm run build.stencil && npm run build.storybook"
