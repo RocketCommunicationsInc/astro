@@ -35,27 +35,36 @@
     <body>
         <section>
             <h2>Default</h2>
-            <rux-pop-up open="true">
-                <rux-icon icon="apps" slot="trigger"></rux-icon>
-                <rux-menu>
-                    <rux-menu-item value="1"
-                        ><a href="https://google.com"
-                            >Pop up menu option test with link</a
-                        ></rux-menu-item
-                    >
-                    <rux-menu-item value="2"
-                        ><a href="https://google.com"
-                            >Pop up menu option test with link</a
-                        ></rux-menu-item
-                    >
-                    <rux-menu-item-divider></rux-menu-item-divider>
-                    <rux-menu-item value="3"
-                        ><a href="https://google.com"
-                            >Pop up menu option test with link</a
-                        ></rux-menu-item
-                    >
-                </rux-menu>
-            </rux-pop-up>
+            <div>
+                <div id="default"></div>
+                <rux-pop-up open="true">
+                    <rux-icon
+                        icon="apps"
+                        slot="trigger"
+                        id="move-trigger"
+                    ></rux-icon>
+                    <rux-menu>
+                        <rux-menu-item value="1"
+                            ><a href="https://google.com"
+                                >Pop up menu option test with link</a
+                            ></rux-menu-item
+                        >
+                        <rux-menu-item value="2"
+                            ><a href="https://google.com"
+                                >Pop up menu option test with link</a
+                            ></rux-menu-item
+                        >
+                        <rux-menu-item-divider></rux-menu-item-divider>
+                        <rux-menu-item value="3"
+                            ><a href="https://google.com"
+                                >Pop up menu option test with link</a
+                            ></rux-menu-item
+                        >
+                    </rux-menu>
+                </rux-pop-up>
+            </div>
+
+            <rux-button id="move-button">MOVE</rux-button>
         </section>
         <section>
             <h2>Placements</h2>
@@ -168,5 +177,14 @@
                 </rux-menu>
             </rux-pop-up>
         </section>
+        <script>
+            const temp = document.querySelector('#default')
+            const button = document.querySelector('#move-button')
+            const trigger = document.querySelector('#move-trigger')
+
+            button.addEventListener('click', () => {
+                temp.style.marginBottom = '30px'
+            })
+        </script>
     </body>
 </html>

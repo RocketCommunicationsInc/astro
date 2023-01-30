@@ -128,6 +128,7 @@ export class RuxPopUp {
         this._handleTriggerKeyPress = this._handleTriggerKeyPress.bind(this)
         this._handleOutsideClick = this._handleOutsideClick.bind(this)
         this._setTriggerTabIndex = this._setTriggerTabIndex.bind(this)
+        this._handleTriggerMovement = this._handleTriggerMovement.bind(this)
     }
 
     componentWillLoad() {
@@ -138,6 +139,7 @@ export class RuxPopUp {
         if (this.open) {
             this._startPositioner()
         }
+        this._handleTriggerMovement()
     }
 
     private async _handleTriggerClick(event: MouseEvent) {
@@ -221,6 +223,7 @@ export class RuxPopUp {
     }
 
     private _startPositioner() {
+        console.log('I am the start positioner')
         this._stopPositioner()
         if (this.open) {
             this._position()
@@ -287,6 +290,31 @@ export class RuxPopUp {
         if (!menuClick && !triggerClick && !popUpClick) {
             this.open = false
         }
+    }
+
+    private async _handleTriggerMovement() {
+        const trigger = this.triggerSlot
+        const triggerElRect = await this.getTriggerRect()
+        console.log(trigger)
+        console.log(triggerElRect)
+
+        let options = {
+            rootMargin: `-${triggerElRect.top}px ${
+                -1 * (visualViewport.width - triggerElRect.right)
+            }px ${-1 * (visualViewport.height - triggerElRect.bottom)}px -${
+                triggerElRect.left
+            }px`,
+            threshold: 0.975,
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                const intersecting = entry.isIntersecting
+                if (!intersecting) this._startPositioner()
+            })
+        }, options)
+
+        observer.observe(trigger)
     }
 
     @Listen('ruxmenuselected')
