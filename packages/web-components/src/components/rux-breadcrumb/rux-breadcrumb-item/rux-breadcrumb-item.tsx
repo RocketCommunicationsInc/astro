@@ -1,10 +1,7 @@
 import { Component, h, Host, Prop, Element } from '@stencil/core'
 
 /**
- *slots and parts
- */
-
-/**
+ * @slot (default) - The breadcrumb item content
  * @part container - the li containing the link element
  * @part link - the link element
  */

@@ -19,6 +19,14 @@ export const RuxAccordionItem = /*@__PURE__*/ createReactComponent<
   JSX.RuxAccordionItem,
   HTMLRuxAccordionItemElement
 >("rux-accordion-item");
+export const RuxBreadcrumb = /*@__PURE__*/ createReactComponent<
+  JSX.RuxBreadcrumb,
+  HTMLRuxBreadcrumbElement
+>("rux-breadcrumb");
+export const RuxBreadcrumbItem = /*@__PURE__*/ createReactComponent<
+  JSX.RuxBreadcrumbItem,
+  HTMLRuxBreadcrumbItemElement
+>("rux-breadcrumb-item");
 export const RuxButton = /*@__PURE__*/ createReactComponent<
   JSX.RuxButton,
   HTMLRuxButtonElement
