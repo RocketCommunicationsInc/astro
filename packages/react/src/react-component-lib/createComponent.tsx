@@ -62,14 +62,8 @@ export const createReactComponent = <
     }
 
     render() {
-      const {
-        children,
-        forwardedRef,
-        style,
-        className,
-        ref,
-        ...cProps
-      } = this.props;
+      const { children, forwardedRef, style, className, ref, ...cProps } =
+        this.props;
 
       let propsToPass = Object.keys(cProps).reduce((acc: any, name) => {
         const value = (cProps as any)[name];
