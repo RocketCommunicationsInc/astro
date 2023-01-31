@@ -311,7 +311,7 @@ export class RuxPopUp {
             threshold: 1,
         }
 
-        // create intersection observer, trigger floating-ui positioner if trigger moves, then disconnect and rebuild trigger to run on the new position.
+        // create intersection observer, trigger floating-ui positioner if trigger moves, then disconnect and rebuild observer to run on the new position.
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 const intersecting = entry.isIntersecting
