@@ -5,6 +5,7 @@ import {
   camelToDashCase,
   createForwardRef,
   dashToPascalCase,
+  defineCustomElement,
   isCoveredByReact,
   mergeRefs,
 } from "./utils";
@@ -31,12 +32,13 @@ export const createReactComponent = <
     originalProps: StencilReactInternalProps<ElementType>,
     propsToPass: any
   ) => ExpandedPropsTypes,
-  defineCustomElement?: () => void
+  customElement?: any,
+  defineCustomElementDeps?: any
 ) => {
-  if (defineCustomElement !== undefined) {
-    defineCustomElement();
-  }
+  defineCustomElement(tagName, customElement);
 
+  // define custom elements for dependent components
+  if (defineCustomElementDeps) defineCustomElementDeps();
   const displayName = dashToPascalCase(tagName);
   const ReactComponent = class extends React.Component<
     StencilReactInternalProps<ElementType>

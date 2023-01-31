@@ -4,8 +4,11 @@ import { svgOptimizerPlugin } from './src/utils/rollup-svg'
 import { angularOutputTarget } from '@stencil/angular-output-target'
 import { angularValueAccessorBindings } from './wrapper-bindings/angular.bindings'
 import { angularProxiesListIgnore } from './wrapper-bindings/angular-proxies-list-ignore'
-import { reactOutputTarget } from '@stencil/react-output-target'
-// import { reactBooleanFix } from './wrapper-bindings/react-boolean-fix'
+// import { reactOutputTarget } from '@stencil/react-output-target'
+//* Custom react-output-target that allows for treeshaking.
+//* Once https://github.com/ionic-team/stencil-ds-output-targets/issues/255 is fixed, we can go back to stencils.
+import { reactOutputTarget } from 'react-output-target'
+import { reactBooleanFix } from './wrapper-bindings/react-boolean-fix'
 
 export const config: Config = {
     namespace: 'astro-web-components',
@@ -20,10 +23,10 @@ export const config: Config = {
             includeImportCustomElements: true,
             customElementsDir: 'dist/components',
         }),
-        // reactBooleanFix({
-        //     attatchPropsFile:
-        //         '../../react/src/react-component-lib/utils/attachProps.ts',
-        // }),
+        reactBooleanFix({
+            attatchPropsFile:
+                '../../react/src/react-component-lib/utils/attachProps.ts',
+        }),
         angularOutputTarget({
             componentCorePackage: '@astrouxds/astro-web-components',
             directivesProxyFile:
