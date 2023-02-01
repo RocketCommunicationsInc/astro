@@ -17,6 +17,15 @@ jobs:
     timeout-minutes: 8
     steps:
       - uses: actions/checkout@v2
+      - name: Get branch name
+        id: get-branch
+        run: |
+          branch=$(\
+            curl \
+              -H 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+              https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.issue.number }} \
+            | jq -r '.head.sha," ",.head.ref');
+          echo "::set-output name=sha::$(echo $branch | cut -d " " -f 1)";
       - name: Cache node modules
         id: cache-node-modules
         uses: actions/cache@v3
@@ -24,7 +33,7 @@ jobs:
           path: |
             ./packages/web-components/node_modules
             ./packages/web-components/dist
-          key: ${{ runner.os }}-setup-${{ hashFiles('./packages/web-components/package-lock.json') }}-{{ GITHUB_REF }}
+          key: ${{ runner.os }}-setup-${{ hashFiles('./packages/web-components/package-lock.json')}}-{{ steps.get-branch.outputs.branch}}
       - name: Install Dependencies
         run: npm ci && cd ./packages/web-components && npx playwright install --with-deps
       - name: Build
@@ -42,7 +51,7 @@ jobs:
           path: |
             ./packages/web-components/node_modules
             ./packages/web-components/dist
-          key: ${{ runner.os }}-setup-${{ hashFiles('./packages/web-components/package-lock.json') }}-{{ GITHUB_REF }}
+          key: ${{ runner.os }}-setup-${{ hashFiles('./packages/web-components/package-lock.json') }}
       - name: e2e Tests
         run: npm run test.e2e.ci
         working-directory: ./packages/web-components
@@ -59,7 +68,7 @@ jobs:
           path: |
             ./packages/web-components/node_modules
             ./packages/web-components/dist
-          key: ${{ runner.os }}-setup-${{ hashFiles('./packages/web-components/package-lock.json') }}-{{ GITHUB_REF }}
+          key: ${{ runner.os }}-setup-${{ hashFiles('./packages/web-components/package-lock.json') }}
       - name: Run VRTs
         run: npm run test.vrt
         working-directory: ./packages/web-components
