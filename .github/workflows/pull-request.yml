@@ -42,7 +42,7 @@ jobs:
           path: |
             ./packages/web-components/node_modules
             ./packages/web-components/dist
-          key: ${{ runner.os }}-setup-${{ hashFiles('./packages/web-components/package-lock.json') }}
+          key: ${{ runner.os }}-setup-${{ hashFiles('./packages/web-components/package-lock.json') }}-{{ GITHUB_REF }}
       - name: e2e Tests
         run: npm run test.e2e.ci
         working-directory: ./packages/web-components
