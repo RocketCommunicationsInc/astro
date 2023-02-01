@@ -40,6 +40,9 @@ jobs:
     timeout-minutes: 7
     steps:
       - uses: actions/checkout@v2
+      - name: Get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v6
       - name: Get Cache
         uses: actions/cache@v3
         id: get-cache
@@ -57,6 +60,9 @@ jobs:
     timeout-minutes: 7
     steps:
       - uses: actions/checkout@v2
+      - name: Get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v6
       - name: Get Cache
         uses: actions/cache@v3
         id: get-cache
