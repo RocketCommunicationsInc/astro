@@ -30,6 +30,14 @@ export namespace Components {
          */
         "expanded": boolean;
     }
+    interface RuxBreadcrumb {
+    }
+    interface RuxBreadcrumbItem {
+        /**
+          * The href property of the breadcrumb item link
+         */
+        "href"?: string;
+    }
     interface RuxButton {
         /**
           * Changes button style from solid to borderless by setting the rux-button--borderless class
@@ -12766,6 +12774,18 @@ declare global {
         prototype: HTMLRuxAccordionItemElement;
         new (): HTMLRuxAccordionItemElement;
     };
+    interface HTMLRuxBreadcrumbElement extends Components.RuxBreadcrumb, HTMLStencilElement {
+    }
+    var HTMLRuxBreadcrumbElement: {
+        prototype: HTMLRuxBreadcrumbElement;
+        new (): HTMLRuxBreadcrumbElement;
+    };
+    interface HTMLRuxBreadcrumbItemElement extends Components.RuxBreadcrumbItem, HTMLStencilElement {
+    }
+    var HTMLRuxBreadcrumbItemElement: {
+        prototype: HTMLRuxBreadcrumbItemElement;
+        new (): HTMLRuxBreadcrumbItemElement;
+    };
     interface HTMLRuxButtonElement extends Components.RuxButton, HTMLStencilElement {
     }
     var HTMLRuxButtonElement: {
@@ -19435,6 +19455,8 @@ declare global {
     interface HTMLElementTagNameMap {
         "rux-accordion": HTMLRuxAccordionElement;
         "rux-accordion-item": HTMLRuxAccordionItemElement;
+        "rux-breadcrumb": HTMLRuxBreadcrumbElement;
+        "rux-breadcrumb-item": HTMLRuxBreadcrumbItemElement;
         "rux-button": HTMLRuxButtonElement;
         "rux-button-group": HTMLRuxButtonGroupElement;
         "rux-card": HTMLRuxCardElement;
@@ -20572,6 +20594,14 @@ declare namespace LocalJSX {
           * Fired when an element has expanded
          */
         "onRuxexpanded"?: (event: RuxAccordionItemCustomEvent<any>) => void;
+    }
+    interface RuxBreadcrumb {
+    }
+    interface RuxBreadcrumbItem {
+        /**
+          * The href property of the breadcrumb item link
+         */
+        "href"?: string;
     }
     interface RuxButton {
         /**
@@ -33329,6 +33359,8 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "rux-accordion": RuxAccordion;
         "rux-accordion-item": RuxAccordionItem;
+        "rux-breadcrumb": RuxBreadcrumb;
+        "rux-breadcrumb-item": RuxBreadcrumbItem;
         "rux-button": RuxButton;
         "rux-button-group": RuxButtonGroup;
         "rux-card": RuxCard;
@@ -34448,6 +34480,8 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "rux-accordion": LocalJSX.RuxAccordion & JSXBase.HTMLAttributes<HTMLRuxAccordionElement>;
             "rux-accordion-item": LocalJSX.RuxAccordionItem & JSXBase.HTMLAttributes<HTMLRuxAccordionItemElement>;
+            "rux-breadcrumb": LocalJSX.RuxBreadcrumb & JSXBase.HTMLAttributes<HTMLRuxBreadcrumbElement>;
+            "rux-breadcrumb-item": LocalJSX.RuxBreadcrumbItem & JSXBase.HTMLAttributes<HTMLRuxBreadcrumbItemElement>;
             "rux-button": LocalJSX.RuxButton & JSXBase.HTMLAttributes<HTMLRuxButtonElement>;
             "rux-button-group": LocalJSX.RuxButtonGroup & JSXBase.HTMLAttributes<HTMLRuxButtonGroupElement>;
             "rux-card": LocalJSX.RuxCard & JSXBase.HTMLAttributes<HTMLRuxCardElement>;
