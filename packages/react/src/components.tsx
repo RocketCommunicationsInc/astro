@@ -7,6 +7,8 @@ import type { JSX } from '@astrouxds/astro-web-components/dist/components';
 
 import { defineCustomElement as defineRuxAccordion } from '@astrouxds/astro-web-components/dist/components/rux-accordion.js';
 import { defineCustomElement as defineRuxAccordionItem } from '@astrouxds/astro-web-components/dist/components/rux-accordion-item.js';
+import { defineCustomElement as defineRuxBreadcrumb } from '@astrouxds/astro-web-components/dist/components/rux-breadcrumb.js';
+import { defineCustomElement as defineRuxBreadcrumbItem } from '@astrouxds/astro-web-components/dist/components/rux-breadcrumb-item.js';
 import { defineCustomElement as defineRuxButton } from '@astrouxds/astro-web-components/dist/components/rux-button.js';
 import { defineCustomElement as defineRuxButtonGroup } from '@astrouxds/astro-web-components/dist/components/rux-button-group.js';
 import { defineCustomElement as defineRuxCard } from '@astrouxds/astro-web-components/dist/components/rux-card.js';
@@ -1121,6 +1123,8 @@ import { defineCustomElement as defineRuxTreeNode } from '@astrouxds/astro-web-c
 
 export const RuxAccordion = /*@__PURE__*/createReactComponent<JSX.RuxAccordion, HTMLRuxAccordionElement>('rux-accordion', undefined, undefined, defineRuxAccordion);
 export const RuxAccordionItem = /*@__PURE__*/createReactComponent<JSX.RuxAccordionItem, HTMLRuxAccordionItemElement>('rux-accordion-item', undefined, undefined, defineRuxAccordionItem);
+export const RuxBreadcrumb = /*@__PURE__*/createReactComponent<JSX.RuxBreadcrumb, HTMLRuxBreadcrumbElement>('rux-breadcrumb', undefined, undefined, defineRuxBreadcrumb);
+export const RuxBreadcrumbItem = /*@__PURE__*/createReactComponent<JSX.RuxBreadcrumbItem, HTMLRuxBreadcrumbItemElement>('rux-breadcrumb-item', undefined, undefined, defineRuxBreadcrumbItem);
 export const RuxButton = /*@__PURE__*/createReactComponent<JSX.RuxButton, HTMLRuxButtonElement>('rux-button', undefined, undefined, defineRuxButton);
 export const RuxButtonGroup = /*@__PURE__*/createReactComponent<JSX.RuxButtonGroup, HTMLRuxButtonGroupElement>('rux-button-group', undefined, undefined, defineRuxButtonGroup);
 export const RuxCard = /*@__PURE__*/createReactComponent<JSX.RuxCard, HTMLRuxCardElement>('rux-card', undefined, undefined, defineRuxCard);
