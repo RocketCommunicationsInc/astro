@@ -31,35 +31,54 @@
             margin-bottom: 12rem;
         }
     </style>
+    <script>
+        setTimeout(() => {
+            const notification = document.querySelector('rux-notification')
+            notification.setAttribute('open', '')
+        }, 3000)
+    </script>
 
     <body>
-        <section>
+        <section style="display: block">
             <h2>Default</h2>
-            <rux-pop-up open="true">
-                <rux-icon icon="apps" slot="trigger"></rux-icon>
-                <rux-menu>
-                    <rux-menu-item value="1"
-                        ><a href="https://google.com"
-                            >Pop up menu option test with link</a
-                        ></rux-menu-item
-                    >
-                    <rux-menu-item value="2"
-                        ><a href="https://google.com"
-                            >Pop up menu option test with link</a
-                        ></rux-menu-item
-                    >
-                    <rux-menu-item-divider></rux-menu-item-divider>
-                    <rux-menu-item value="3"
-                        ><a href="https://google.com"
-                            >Pop up menu option test with link</a
-                        ></rux-menu-item
-                    >
-                </rux-menu>
-            </rux-pop-up>
+            <rux-notification
+                status="standby"
+                message="Hilo"
+            ></rux-notification>
+            <div>
+                <div id="default"></div>
+                <rux-pop-up open="true">
+                    <rux-icon
+                        icon="apps"
+                        slot="trigger"
+                        id="move-trigger"
+                    ></rux-icon>
+                    <rux-menu>
+                        <rux-menu-item value="1"
+                            ><a href="https://google.com"
+                                >Pop up menu option test with link</a
+                            ></rux-menu-item
+                        >
+                        <rux-menu-item value="2"
+                            ><a href="https://google.com"
+                                >Pop up menu option test with link</a
+                            ></rux-menu-item
+                        >
+                        <rux-menu-item-divider></rux-menu-item-divider>
+                        <rux-menu-item value="3"
+                            ><a href="https://google.com"
+                                >Pop up menu option test with link</a
+                            ></rux-menu-item
+                        >
+                    </rux-menu>
+                </rux-pop-up>
+            </div>
+
+            <rux-button id="move-button">MOVE</rux-button>
         </section>
         <section>
             <h2>Placements</h2>
-            <rux-pop-up open="true" placement="top-start">
+            <rux-pop-up open="true" placement="top-start" disable-auto-update>
                 <rux-icon icon="apps" slot="trigger"></rux-icon>
                 <rux-menu>
                     <rux-menu-item value="1">Menu Item 1</rux-menu-item>
@@ -68,7 +87,7 @@
                     <rux-menu-item value="3">Menu Item 3</rux-menu-item>
                 </rux-menu>
             </rux-pop-up>
-            <rux-pop-up open="true" placement="top">
+            <rux-pop-up open="true" placement="auto" disable-auto-update>
                 <rux-icon icon="apps" slot="trigger"></rux-icon>
                 <rux-menu>
                     <rux-menu-item value="1">Menu Item 1</rux-menu-item>
@@ -86,7 +105,7 @@
                     <rux-menu-item value="3">Menu Item 3</rux-menu-item>
                 </rux-menu>
             </rux-pop-up>
-            <rux-pop-up open="true" placement="right-start">
+            <rux-pop-up open="true" placement="right-start" disable-auto-update>
                 <rux-icon icon="apps" slot="trigger"></rux-icon>
                 <rux-menu>
                     <rux-menu-item value="1">Menu Item 1</rux-menu-item>
@@ -95,7 +114,7 @@
                     <rux-menu-item value="3">Menu Item 3</rux-menu-item>
                 </rux-menu>
             </rux-pop-up>
-            <rux-pop-up open="true" placement="right">
+            <rux-pop-up open="true" disable-auto-update>
                 <rux-icon icon="apps" slot="trigger"></rux-icon>
                 <rux-menu>
                     <rux-menu-item value="1">Menu Item 1</rux-menu-item>
@@ -168,5 +187,14 @@
                 </rux-menu>
             </rux-pop-up>
         </section>
+        <script>
+            const temp = document.querySelector('#default')
+            const button = document.querySelector('#move-button')
+            const trigger = document.querySelector('#move-trigger')
+
+            button.addEventListener('click', () => {
+                temp.style.marginBottom = '10px'
+            })
+        </script>
     </body>
 </html>

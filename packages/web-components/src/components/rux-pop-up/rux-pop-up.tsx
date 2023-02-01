@@ -128,7 +128,6 @@ export class RuxPopUp {
         this._handleTriggerKeyPress = this._handleTriggerKeyPress.bind(this)
         this._handleOutsideClick = this._handleOutsideClick.bind(this)
         this._setTriggerTabIndex = this._setTriggerTabIndex.bind(this)
-        this._handleTriggerMovement = this._handleTriggerMovement.bind(this)
     }
 
     componentWillLoad() {
@@ -137,9 +136,8 @@ export class RuxPopUp {
 
     componentDidRender() {
         if (this.open) {
-            this._startPositioner()
+            this.handleOpen()
         }
-        this._handleTriggerMovement()
     }
 
     private async _handleTriggerClick(event: MouseEvent) {
@@ -161,6 +159,7 @@ export class RuxPopUp {
             return
         }
         const placementCheck = () => {
+            //disable auto update = false, placement is anything
             if (!this.disableAutoUpdate) {
                 return [
                     offset(12),
@@ -169,12 +168,14 @@ export class RuxPopUp {
                         : flip(),
                     arrow({ element: this.arrowEl }),
                 ]
-            } else if (this.placement === 'auto') {
-                return [
-                    offset(12),
-                    autoPlacement({ alignment: 'start' }),
-                    arrow({ element: this.arrowEl }),
-                ]
+            }
+            // disableAutoUpdate = true, placement=auto
+            else if (this.placement === 'auto') {
+                /* we need to set a starting placement for the user because 'auto' is only understood by floating-ui as something means,
+            'pick whatever side fits best', and in this case we don't want any automatic setting of placements */
+                this.placement = 'top'
+                return [offset(12), arrow({ element: this.arrowEl })]
+                // disableAutoUpdate = true, placement != auto
             } else {
                 return [offset(12), arrow({ element: this.arrowEl })]
             }
@@ -226,13 +227,12 @@ export class RuxPopUp {
         this._stopPositioner()
         if (this.open) {
             this._position()
-            if (!this.disableAutoUpdate) {
-                this._positionerCleanup = autoUpdate(
-                    this.triggerSlot,
-                    this.content,
-                    this._position.bind(this)
-                )
-            }
+            this._positionerCleanup = autoUpdate(
+                this.triggerSlot,
+                this.content,
+                this._position.bind(this),
+                { animationFrame: true }
+            )
         }
     }
 
@@ -291,40 +291,89 @@ export class RuxPopUp {
         }
     }
 
-    private async _handleTriggerMovement() {
-        // get the trigger element and it's position
-        const trigger = this.triggerSlot
-        const triggerElRect = await this.getTriggerRect()
+    // private async _handleTriggerMovement() {
+    //     // get the trigger element and it's position
+    //     let count = 0
+    //     const trigger = this.triggerSlot
+    //     const triggerElRect = await this.getTriggerRect()
 
-        // Set the margin values to create a box that perfectly encapsulates the trigger
-        // Math.floor ensures values are not floats
-        const marginTop = -1 * Math.floor(triggerElRect.top)
-        const marginRight =
-            -1 * Math.floor(visualViewport!.width - triggerElRect.right)
-        const marginBottom =
-            -1 * Math.floor(visualViewport!.height - triggerElRect.bottom)
-        const marginLeft = -1 * Math.floor(triggerElRect.left)
+    //     // Set the margin values to create a box that perfectly encapsulates the trigger
+    //     // Math.floor ensures values are not floats
+    //     const marginTop = -1 * Math.floor(triggerElRect.top)
+    //     const marginRight =
+    //         -1 * Math.floor(visualViewport!.width - triggerElRect.right)
+    //     const marginBottom =
+    //         -1 * Math.floor(visualViewport!.height - triggerElRect.bottom)
+    //     const marginLeft = -1 * Math.floor(triggerElRect.left)
 
-        // options to set box around trigger for interecting, threshold value set to trigger intersection as soon as the trigger is even slightly outside of the root box.
-        let options = {
-            rootMargin: `${marginTop}px ${marginRight}px ${marginBottom}px ${marginLeft}px`,
-            threshold: 1,
-        }
+    //     // options to set box around trigger for interecting, threshold value set to trigger intersection as soon as the trigger is even slightly outside of the root box.
+    //     let options = {
+    //         rootMargin: `${marginTop}px ${marginRight}px ${marginBottom}px ${marginLeft}px`,
+    //         threshold: 1,
+    //     }
 
-        // create intersection observer, trigger floating-ui positioner if trigger moves, then disconnect and rebuild observer to run on the new position.
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                const intersecting = entry.isIntersecting
-                if (!intersecting) {
-                    this._startPositioner()
-                    observer.disconnect()
-                    this._handleTriggerMovement()
-                }
-            })
-        }, options)
+    //     // create intersection observer, trigger floating-ui positioner if trigger moves, then disconnect and rebuild observer to run on the new position.
+    //     const observer = new IntersectionObserver((entries) => {
+    //         entries.forEach((entry) => {
+    //             const intersecting = entry.isIntersecting
+    //             if (!intersecting) {
+    //                 //console.log(entry)
+    //                 count = count++
+    //                 this._startPositioner()
+    //                 observer.disconnect()
+    //                 this._handleTriggerMovement()
+    //             }
+    //         })
+    //     }, options)
 
-        observer.observe(trigger)
-    }
+    //     console.log(count)
+    //     observer.observe(trigger)
+    // }
+
+    // private async _handleTriggerMovement() {
+    //   if (!this.open) return
+    //   // get the trigger element and it's position
+    //   const trigger = this.triggerSlot
+    //   const triggerElRect = await this.getTriggerRect()
+    //   console.log(triggerElRect)
+    //   const sensorElement = document.createElement('DIV')
+
+    //   //element.style.position = "relative"
+    //   sensorElement.style.width = `${triggerElRect.width}px`
+    //   sensorElement.style.height = `${triggerElRect.height}px`
+    //   sensorElement.style.backgroundColor = "orange"
+    //   sensorElement.style.position = "absolute"
+    //   // sensorElement.style.top = "0"
+    //   // sensorElement.style.left = "0"
+    //   sensorElement.classList.add('sensor')
+
+    //   const shadow =  trigger.shadowRoot
+
+    //   shadow?.appendChild(sensorElement)
+
+    //   //console.log(document)
+
+    //   // options to set box around trigger for interecting, threshold value set to trigger intersection as soon as the trigger is even slightly outside of the root box.
+    //   let options = {
+    //   //rootMargin: `${marginTop}px ${marginRight}px ${marginBottom}px ${marginLeft}px`,
+    //   threshold: 1,
+    //   }
+
+    //   // create intersection observer, trigger floating-ui positioner if trigger moves, then disconnect and rebuild observer to run on the new position.
+    //   const observer = new IntersectionObserver((entries) => {
+    //       entries.forEach((entry) => {
+    //           const intersecting = entry.isIntersecting
+    //           if (!intersecting) {
+    //               this._startPositioner()
+    //               observer.disconnect()
+    //               this._handleTriggerMovement()
+    //           }
+    //       })
+    //   }, options)
+
+    //   //console.log(observer)
+    //   //observer.observe(trigger)
+    // }
 
     @Listen('ruxmenuselected')
     handleSelection() {
