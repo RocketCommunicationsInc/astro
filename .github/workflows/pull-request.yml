@@ -17,6 +17,9 @@ jobs:
     timeout-minutes: 8
     steps:
       - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Get SHA and branch name
         id: get-branch-and-sha
         run: |
