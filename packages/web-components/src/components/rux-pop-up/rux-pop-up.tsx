@@ -60,6 +60,11 @@ export class RuxPopUp {
     @Prop({ reflect: true }) disableAutoUpdate: boolean = false
 
     /**
+     * Turns on floatin-ui's autoUpdate animationFrame option to watch for trigger movements and replace the popup if movement is detected. Defaults to false.
+     */
+    @Prop({ reflect: true }) enableAnimationFrame: boolean = false
+
+    /**
      * The position strategy of the popup, either absolute or fixed.
      */
     @Prop() strategy: 'absolute' | 'fixed' = 'absolute'
@@ -159,7 +164,7 @@ export class RuxPopUp {
             return
         }
         const placementCheck = () => {
-            //disable auto update = false, placement is anything
+            // disable auto update = false, placement is anything
             if (!this.disableAutoUpdate) {
                 return [
                     offset(12),
@@ -231,7 +236,7 @@ export class RuxPopUp {
                 this.triggerSlot,
                 this.content,
                 this._position.bind(this),
-                { animationFrame: true }
+                { animationFrame: this.enableAnimationFrame }
             )
         }
     }
