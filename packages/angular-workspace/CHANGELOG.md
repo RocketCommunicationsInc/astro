@@ -1,5 +1,24 @@
 # @astrouxds/angular
 
+## 7.7.0
+
+### Minor Changes
+
+- 11a158d7: feat(rux-container) add container part to the encompassing div to allow for extra styling and add scrollbar styling to accomodate scrolling body
+
+### Patch Changes
+
+- ba2ca136: - updates @astrouxds/tokens to 1.4.1
+  - added light theme value for `container.color.border`
+  - fixed incorrect value on `color-status-standby`. changed `#64d9ff` to `#2dccff`
+  - improve contrast in light theme values for `container-color-border`, `log-color-border`
+  - Added timeline-header-color-background and timeline-cell-color-background tokens
+- Updated dependencies [ba2ca136]
+- Updated dependencies [11a158d7]
+- Updated dependencies [845955d5]
+- Updated dependencies [bd6aec48]
+  - @astrouxds/astro-web-components@7.7.0
+
 ## 7.6.0
 
 ### Minor Changes
