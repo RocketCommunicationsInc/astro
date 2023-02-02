@@ -31,20 +31,9 @@
             margin-bottom: 12rem;
         }
     </style>
-    <script>
-        setTimeout(() => {
-            const notification = document.querySelector('rux-notification')
-            notification.setAttribute('open', '')
-        }, 3000)
-    </script>
-
     <body>
         <section style="display: block">
             <h2>Default</h2>
-            <rux-notification
-                status="standby"
-                message="Hilo"
-            ></rux-notification>
             <div>
                 <div id="default"></div>
                 <rux-pop-up open="true">
@@ -159,7 +148,7 @@
                     <rux-menu-item value="3">Menu Item 3</rux-menu-item>
                 </rux-menu>
             </rux-pop-up>
-            <rux-pop-up open="true" placement="left-start">
+            <rux-pop-up open="true">
                 <rux-icon icon="apps" slot="trigger"></rux-icon>
                 <rux-menu>
                     <rux-menu-item value="1">Menu Item 1</rux-menu-item>
@@ -168,7 +157,7 @@
                     <rux-menu-item value="3">Menu Item 3</rux-menu-item>
                 </rux-menu>
             </rux-pop-up>
-            <rux-pop-up open="true" placement="left">
+            <rux-pop-up open="true">
                 <rux-icon icon="apps" slot="trigger"></rux-icon>
                 <rux-menu>
                     <rux-menu-item value="1">Menu Item 1</rux-menu-item>
@@ -177,7 +166,7 @@
                     <rux-menu-item value="3">Menu Item 3</rux-menu-item>
                 </rux-menu>
             </rux-pop-up>
-            <rux-pop-up open="true" placement="left-end">
+            <rux-pop-up open="true">
                 <rux-icon icon="apps" slot="trigger"></rux-icon>
                 <rux-menu>
                     <rux-menu-item value="1">Menu Item 1</rux-menu-item>
