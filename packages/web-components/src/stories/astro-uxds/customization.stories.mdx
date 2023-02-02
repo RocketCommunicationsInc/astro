@@ -24,11 +24,15 @@ These CSS Custom Properties will usually be mapped to some CSS property (color, 
 
 ## Using CSS Shadow Parts
 
+> CAUTION: In most cases, overriding Astro's default styling will eject your application from the design system. If a component isn't flexible enough for your needs, consider submitting a feature request instead. 
+
 Because defining CSS Custom Properties for every possible CSS property is incredibly verbose and cumbersome, the recommended way for styling components is
 to make use of [CSS Shadow Parts](https://css-tricks.com/styling-in-the-shadow-dom-with-css-shadow-parts/). CSS Shadow Parts give you full control over
 the styling of a component's underlying Shadow DOM parts.
 
 If a component has any available Shadow Parts, they will be documented under their API section.
+
+> NOTE: We may change the internal CSS properties of elements that are exposed as Shadow Parts in minor releases. 
 
 To style a Shadow Part, use the [::part` pseudo-element](https://developer.mozilla.org/en-US/docs/Web/CSS/::part).
 For example, if you wanted a horizontal label, you could style the `form-field` and `label` Shadow Parts:
