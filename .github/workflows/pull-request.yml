@@ -14,7 +14,7 @@ jobs:
   setup:
     if: "! github.event.pull_request.draft"
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v2
       - name: Cache node modules
@@ -35,6 +35,12 @@ jobs:
       - name: VRTs
         run: npm run test.vrt
         working-directory: ./packages/web-components
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: playwright-report
+          path: packages/web-components/playwright-report/
+          retention-days: 30
   # e2e:
   #   needs: setup
   #   runs-on: ubuntu-latest
