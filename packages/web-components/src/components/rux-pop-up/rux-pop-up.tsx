@@ -60,7 +60,7 @@ export class RuxPopUp {
     @Prop({ reflect: true }) disableAutoUpdate: boolean = false
 
     /**
-     * Turns on floatin-ui's autoUpdate animationFrame option to watch for trigger movements and replace the popup if movement is detected. Defaults to false.
+     * watches for trigger movements and replace the popup if movement is detected. 
      */
     @Prop({ reflect: true }) enableAnimationFrame: boolean = false
 
