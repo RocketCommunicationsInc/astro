@@ -47,7 +47,7 @@ export const angularProxiesListIgnore = (
             compilerCtx.events.on('buildLog', (log) => {
                 if (
                     log.messages.findIndex((elm) =>
-                        elm.includes('generate react-library finished')
+                        elm.includes('generate react-boolean-fix finished')
                     ) !== -1
                 ) {
                     resolve()
