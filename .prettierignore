@@ -11,7 +11,7 @@ src/globals.d.ts
 # Ignore Wrapper Build files
 *proxies.ts
 *attachProps.ts
-packages/angular-workspace/projects/angular
+packages/angular-workspace/
 
 packages/react/src
 
