@@ -57,6 +57,46 @@ export class RuxAccordionItem {
 }
 
 
+export declare interface RuxBreadcrumb extends Components.RuxBreadcrumb {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined
+})
+@Component({
+  selector: 'rux-breadcrumb',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class RuxBreadcrumb {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface RuxBreadcrumbItem extends Components.RuxBreadcrumbItem {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['href']
+})
+@Component({
+  selector: 'rux-breadcrumb-item',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['href']
+})
+export class RuxBreadcrumbItem {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface RuxButton extends Components.RuxButton {}
 
 @ProxyCmp({

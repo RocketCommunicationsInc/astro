@@ -1,5 +1,37 @@
 # @astrouxds/react
 
+## 7.7.0
+
+### Minor Changes
+
+#### Breadcrumb
+
+- Added new `rux-breadcrumb` component
+
+#### Breadcrumb Item
+
+- Added new `rux-breadcrumb-item` component
+
+#### Container
+
+- Added a container CSS shadow part
+
+#### Progress
+
+- Fixed a visual issue on lower percentages. This change alters the way border visuals are configured
+  - What: Changed internal progress part to use box-shadow instead of border for border effect.
+  - Migration: If you are using the progress css shadow part to override border color, you'll need to use box shadow to override border color instead
+
+### Patch Changes
+
+#### Core
+
+- Updated design tokens@1.4.1
+  - Added light theme value for `container.color.border`
+  - Fixed incorrect value on `color-status-standby`. changed `#64d9ff` to `#2dccff`
+  - Improve contrast in light theme values for `container-color-border`, `log-color-border`
+  - Added `timeline-header-color-background` and `timeline-cell-color-background` tokens
+
 ## 7.6.0
 
 ### Minor Changes
