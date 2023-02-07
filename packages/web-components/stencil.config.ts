@@ -14,8 +14,11 @@ export const config: Config = {
         reactOutputTarget({
             componentCorePackage: '@astrouxds/astro-web-components',
             proxiesFile: '../react/src/components.tsx',
-            includePolyfills: true,
-            includeDefineCustomElements: true,
+            //polyfills & defineCustomElements cannot be included at the same time as importCustomElements
+            includePolyfills: false,
+            includeDefineCustomElements: false,
+            includeImportCustomElements: true,
+            customElementsDir: 'dist/components',
         }),
         reactBooleanFix({
             attatchPropsFile:
