@@ -88,7 +88,6 @@ export class RuxPopUp {
     @Event({ eventName: 'ruxpopupclosed' })
     ruxPopUpClosed!: EventEmitter
 
-    //? Could be that we need to check prevState against newState?
     @Watch('open')
     handleOpen() {
         if (this.open) {
