@@ -41,6 +41,7 @@ export class RuxPopUp {
     private content!: HTMLElement
     private arrowEl!: HTMLElement
     private _positionerCleanup: ReturnType<typeof autoUpdate> | undefined
+    private _assignedOutsideClickEvent: boolean = false
 
     @Element() el!: HTMLRuxPopUpElement
 
@@ -87,22 +88,28 @@ export class RuxPopUp {
     @Event({ eventName: 'ruxpopupclosed' })
     ruxPopUpClosed!: EventEmitter
 
+    //? Could be that we need to check prevState against newState?
     @Watch('open')
     handleOpen() {
         if (this.open) {
             this.content.style.display = 'block'
             this._startPositioner()
             this.ruxPopUpOpened.emit()
-            window.addEventListener('mousedown', (e: MouseEvent) =>
-                this._handleOutsideClick(e)
-            )
+            if (!this._assignedOutsideClickEvent) {
+                window.addEventListener('mousedown', this._handleOutsideClick)
+                this._assignedOutsideClickEvent = true
+            }
         } else {
             this.content.style.display = ''
             this._stopPositioner()
             this.ruxPopUpClosed.emit()
-            window.removeEventListener('mousedown', (e: MouseEvent) =>
-                this._handleOutsideClick(e)
-            )
+            if (this._assignedOutsideClickEvent) {
+                window.removeEventListener(
+                    'mousedown',
+                    this._handleOutsideClick
+                )
+                this._assignedOutsideClickEvent = false
+            }
         }
     }
 
@@ -133,6 +140,10 @@ export class RuxPopUp {
         this._handleTriggerKeyPress = this._handleTriggerKeyPress.bind(this)
         this._handleOutsideClick = this._handleOutsideClick.bind(this)
         this._setTriggerTabIndex = this._setTriggerTabIndex.bind(this)
+        if (this.open && !this._assignedOutsideClickEvent) {
+            window.addEventListener('mousedown', this._handleOutsideClick)
+            this._assignedOutsideClickEvent = true
+        }
     }
 
     componentWillLoad() {
@@ -141,7 +152,7 @@ export class RuxPopUp {
 
     componentDidRender() {
         if (this.open) {
-            this.handleOpen()
+            this._startPositioner()
         }
     }
 
