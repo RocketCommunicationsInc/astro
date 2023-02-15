@@ -178,7 +178,7 @@ test.describe('Accordion', () => {
                         <div slot="label">Label</div>
                         <p>Content</p>
                     </rux-accordion-item>
-                    
+
                     <rux-accordion-item expanded data-id="second">
                         <div slot="label">Label</div>
                         <p>Content</p>
@@ -198,5 +198,42 @@ test.describe('Accordion', () => {
         await firstAccordionItem.locator('summary').click({ force: true })
         await expect(firstAccordionItem).toHaveAttribute('expanded', '')
         await expect(secondAccordionItem).not.toHaveAttribute('expanded', '')
+    })
+})
+test.describe('Accordion Events', () => {
+    test.beforeEach(async ({ page }) => {
+        const template = `
+    <rux-accordion>
+      <rux-accordion-item id="first-item">
+        <div slot="label" id="label">Title 1</div>
+        <p>Content 1</p>
+      </rux-accordion-item>
+      <rux-accordion-item>
+        <div slot="label">Title 2</div>
+        <p>Content 2</p>
+      </rux-accordion-item>
+      <rux-accordion-item>
+        <div slot="label">Title 3</div>
+        <p>Content 3</p>
+      </rux-accordion-item>
+  </rux-accordion>
+  `
+        await page.setContent(template)
+    })
+    test('Should emit ruxexpanded event once when accordion-item is opened', async ({
+        page,
+    }) => {
+        const expandedEvent = await page.spyOnEvent('ruxexpanded')
+        await page.click('#first-item')
+        expect(expandedEvent).toHaveReceivedEventTimes(1)
+    })
+    test('Should emit ruxcollapsed event once when accordion-item is closed', async ({
+        page,
+    }) => {
+        const collapsedEvent = await page.spyOnEvent('ruxcollapsed')
+        await page.click('#first-item')
+        await page.click('#label')
+
+        expect(collapsedEvent).toHaveReceivedEventTimes(1)
     })
 })
