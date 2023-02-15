@@ -12179,7 +12179,7 @@ export namespace Components {
          */
         "disableAutoUpdate": boolean;
         /**
-          * Turns on floatin-ui's autoUpdate animationFrame option to watch for trigger movements and replace the popup if movement is detected. Defaults to false.
+          * watches for trigger movements and replace the popup if movement is detected.
          */
         "enableAnimationFrame": boolean;
         /**
@@ -32794,7 +32794,7 @@ declare namespace LocalJSX {
          */
         "disableAutoUpdate"?: boolean;
         /**
-          * Turns on floatin-ui's autoUpdate animationFrame option to watch for trigger movements and replace the popup if movement is detected. Defaults to false.
+          * watches for trigger movements and replace the popup if movement is detected.
          */
         "enableAnimationFrame"?: boolean;
         /**
