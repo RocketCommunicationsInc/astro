@@ -1,5 +1,16 @@
 # @astrouxds/astro-web-components
 
+## 7.8.0
+
+### Minor Changes
+
+-   b97baf84: Adds `enableAnimationFrame` prop to watch when the trigger moves
+-   c4119111: Added new ruxcollapsed event that emits when accordion-item closes
+
+### Patch Changes
+
+-   3d0d7cda: Added vite support and tree-shaking capability to @astrouxds/react.
+
 ## 7.7.0
 
 ### Minor Changes

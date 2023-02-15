@@ -1,5 +1,19 @@
 # @astrouxds/angular
 
+## 7.8.0
+
+### Minor Changes
+
+- c4119111: Added new ruxcollapsed event that emits when accordion-item closes
+
+### Patch Changes
+
+- 3d0d7cda: Added vite support and tree-shaking capability to @astrouxds/react.
+- Updated dependencies [3d0d7cda]
+- Updated dependencies [b97baf84]
+- Updated dependencies [c4119111]
+  - @astrouxds/astro-web-components@7.8.0
+
 ## 7.7.0
 
 ### Minor Changes
