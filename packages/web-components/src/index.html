@@ -19,5 +19,23 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body></body>
+    <body>
+        <div style="width: 300px; margin: 2rem">
+            <rux-select>
+                <rux-option label="option 1" value="opt1"></rux-option>
+                <rux-option label="option 2" value="opt2"></rux-option>
+                <rux-option label="option 3" value="opt3" id="3"></rux-option>
+            </rux-select>
+        </div>
+        <rux-button style="margin: 2rem">Disable Option 3</rux-button>
+
+        <script>
+            const opt3 = document.getElementById('3')
+            const btn = document.querySelector('rux-button')
+
+            btn.addEventListener('click', () => {
+                opt3.disabled = !opt3.disabled
+            })
+        </script>
+    </body>
 </html>

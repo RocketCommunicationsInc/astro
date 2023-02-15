@@ -41,6 +41,7 @@ export class RuxOption {
 
     @Watch('value')
     @Watch('label')
+    @Watch('disabled')
     handleValueChange() {
         this.optionChanged.emit()
     }
