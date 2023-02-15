@@ -21,16 +21,17 @@
 
     <body>
         <div style="width: 300px; margin: 2rem">
-            <rux-select>
-                <rux-option label="option 1" value="opt1"></rux-option>
-                <rux-option label="option 2" value="opt2"></rux-option>
-                <rux-option label="option 3" value="opt3" id="3"></rux-option>
+            <rux-select id="ruxSelect" label="Best Thing?" name="bestThing">
+                <rux-option label="Select an option" value=""></rux-option>
+                <rux-option label="Red" value="red"></rux-option>
+                <rux-option value="blue" label="Blue"></rux-option>
+                <rux-option value="green" label="Green" id="green"></rux-option>
             </rux-select>
         </div>
-        <rux-button style="margin: 2rem">Disable Option 3</rux-button>
+        <rux-button id="dis-green">Disabled Green Option</rux-button>
 
         <script>
-            const opt3 = document.getElementById('3')
+            const opt3 = document.getElementById('green')
             const btn = document.querySelector('rux-button')
 
             btn.addEventListener('click', () => {
