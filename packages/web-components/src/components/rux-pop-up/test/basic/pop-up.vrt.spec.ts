@@ -12,4 +12,14 @@ test.describe('Pop up', async () => {
         await astroVRTPage.keyboard.press('Tab')
         await expect(astroVRTPage).toHaveScreenshot()
     })
+    test('trigger movement has no visual regression @vrt', async ({
+        astroVRTPage,
+    }) => {
+        const emptyDiv = astroVRTPage.locator('#default')
+
+        await emptyDiv.evaluate((el) => {
+            el.style.marginBottom = '80px'
+        })
+        await expect(astroVRTPage).toHaveScreenshot()
+    })
 })

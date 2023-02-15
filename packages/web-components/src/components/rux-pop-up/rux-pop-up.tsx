@@ -60,6 +60,11 @@ export class RuxPopUp {
     @Prop({ reflect: true }) disableAutoUpdate: boolean = false
 
     /**
+     * watches for trigger movements and replace the popup if movement is detected.
+     */
+    @Prop({ reflect: true }) enableAnimationFrame: boolean = false
+
+    /**
      * The position strategy of the popup, either absolute or fixed.
      */
     @Prop() strategy: 'absolute' | 'fixed' = 'absolute'
@@ -136,7 +141,7 @@ export class RuxPopUp {
 
     componentDidRender() {
         if (this.open) {
-            this._startPositioner()
+            this.handleOpen()
         }
     }
 
@@ -159,6 +164,7 @@ export class RuxPopUp {
             return
         }
         const placementCheck = () => {
+            // disable auto update = false, placement is anything
             if (!this.disableAutoUpdate) {
                 return [
                     offset(12),
@@ -167,12 +173,14 @@ export class RuxPopUp {
                         : flip(),
                     arrow({ element: this.arrowEl }),
                 ]
-            } else if (this.placement === 'auto') {
-                return [
-                    offset(12),
-                    autoPlacement({ alignment: 'start' }),
-                    arrow({ element: this.arrowEl }),
-                ]
+            }
+            // disableAutoUpdate = true, placement=auto
+            else if (this.placement === 'auto') {
+                /* we need to set a starting placement for the user because 'auto' is only understood by floating-ui as something means,
+            'pick whatever side fits best', and in this case we don't want any automatic setting of placements */
+                this.placement = 'top'
+                return [offset(12), arrow({ element: this.arrowEl })]
+                // disableAutoUpdate = true, placement != auto
             } else {
                 return [offset(12), arrow({ element: this.arrowEl })]
             }
@@ -224,13 +232,12 @@ export class RuxPopUp {
         this._stopPositioner()
         if (this.open) {
             this._position()
-            if (!this.disableAutoUpdate) {
-                this._positionerCleanup = autoUpdate(
-                    this.triggerSlot,
-                    this.content,
-                    this._position.bind(this)
-                )
-            }
+            this._positionerCleanup = autoUpdate(
+                this.triggerSlot,
+                this.content,
+                this._position.bind(this),
+                { animationFrame: this.enableAnimationFrame }
+            )
         }
     }
 

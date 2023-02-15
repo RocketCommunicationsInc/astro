@@ -12179,6 +12179,10 @@ export namespace Components {
          */
         "disableAutoUpdate": boolean;
         /**
+          * Turns on floatin-ui's autoUpdate animationFrame option to watch for trigger movements and replace the popup if movement is detected. Defaults to false.
+         */
+        "enableAnimationFrame": boolean;
+        /**
           * Closes the pop up and returns false.
          */
         "hide": () => Promise<false>;
@@ -32789,6 +32793,10 @@ declare namespace LocalJSX {
           * Turns autoUpdate on or off which makes the pop-up move to stay in view based on scroll. Defaults to false.
          */
         "disableAutoUpdate"?: boolean;
+        /**
+          * Turns on floatin-ui's autoUpdate animationFrame option to watch for trigger movements and replace the popup if movement is detected. Defaults to false.
+         */
+        "enableAnimationFrame"?: boolean;
         /**
           * Emits when the pop up has closed.
          */
