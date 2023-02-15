@@ -48,12 +48,12 @@ export class RuxAccordionItem {
     @Prop({ reflect: true }) disabled: boolean = false
 
     /**
-     * Fired when an element has expanded
+     * Fired when an accordion-item has expanded
      */
     @Event({ eventName: 'ruxexpanded' }) ruxExpanded!: EventEmitter
 
     /**
-     * Fired when an element has collapsed
+     * Fired when an accordion-item has collapsed
      */
     @Event({ eventName: 'ruxcollapsed' }) ruxCollapsed!: EventEmitter
 
