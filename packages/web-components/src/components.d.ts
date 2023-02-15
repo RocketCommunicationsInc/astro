@@ -20595,6 +20595,10 @@ declare namespace LocalJSX {
          */
         "expanded"?: boolean;
         /**
+          * Fired when an element has collapsed
+         */
+        "onRuxcollapsed"?: (event: RuxAccordionItemCustomEvent<any>) => void;
+        /**
           * Fired when an element has expanded
          */
         "onRuxexpanded"?: (event: RuxAccordionItemCustomEvent<any>) => void;
