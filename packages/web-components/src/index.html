@@ -20,22 +20,33 @@
     </head>
 
     <body>
-        <div style="width: 300px; margin: 2rem">
-            <rux-select id="ruxSelect" label="Best Thing?" name="bestThing">
-                <rux-option label="Select an option" value=""></rux-option>
-                <rux-option label="Red" value="red"></rux-option>
-                <rux-option value="blue" label="Blue"></rux-option>
-                <rux-option value="green" label="Green" id="green"></rux-option>
-            </rux-select>
-        </div>
+        <rux-select id="ruxSelect" label="Best Thing?" name="bestThing">
+            <rux-option label="Select an option" value=""></rux-option>
+            <rux-option label="Red" value="red" id="red"></rux-option>
+            <rux-option value="blue" label="Blue" id="blue"></rux-option>
+            <rux-option value="green" label="Green" id="green"></rux-option>
+        </rux-select>
         <rux-button id="dis-green">Disabled Green Option</rux-button>
-
+        <rux-button id="change-label">Change Label</rux-button>
+        <rux-button id="change-value">Change Value</rux-button>
         <script>
-            const opt3 = document.getElementById('green')
-            const btn = document.querySelector('rux-button')
+            const green = document.getElementById('green')
+            const blue = document.getElementById('blue')
+            const red = document.getElementById('red')
 
-            btn.addEventListener('click', () => {
-                opt3.disabled = !opt3.disabled
+            const disGreen = document.getElementById('dis-green')
+            const changeLabel = document.getElementById('change-label')
+            const changeValue = document.getElementById('change-value')
+
+            disGreen.addEventListener('click', () => {
+                green.disabled = !green.disabled
+            })
+            changeLabel.addEventListener('click', () => {
+                blue.label = 'new label'
+            })
+            changeValue.addEventListener('click', () => {
+                console.log(red.value)
+                red.value = 'new value'
             })
         </script>
     </body>

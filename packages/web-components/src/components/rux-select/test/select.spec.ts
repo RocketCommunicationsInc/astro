@@ -162,20 +162,69 @@ test.describe('Options can dynamically add/remove props', () => {
         const template = `
         <rux-select id="ruxSelect" label="Best Thing?" name="bestThing">
             <rux-option label="Select an option" value=""></rux-option>
-            <rux-option label="Red" value="red"></rux-option>
-            <rux-option value="blue" label="Blue"></rux-option>
+            <rux-option label="Red" value="red" id="red"></rux-option>
+            <rux-option value="blue" label="Blue" id="blue"></rux-option>
             <rux-option value="green" label="Green" id="green"></rux-option>
         </rux-select>
         <rux-button id="dis-green">Disabled Green Option</rux-button>
+        <rux-button id="change-label">Change Label</rux-button>
+        <rux-button id="change-value">Change Value</rux-button>
+        <script>
+          const green = document.getElementById('green')
+          const blue = document.getElementById('blue')
+          const red = document.getElementById('red')
+
+          const disGreen = document.getElementById('dis-green')
+          const changeLabel = document.getElementById('change-label')
+          const changeValue = document.getElementById('change-value')
+
+          disGreen.addEventListener('click', () => {
+              green.disabled = !green.disabled
+          })
+          changeLabel.addEventListener('click', () => {
+            blue.label = "new label"
+          })
+          changeValue.addEventListener('click', () => {
+            red.value = "new value"
+          })
+        </script>
       `
         await page.setContent(template)
     })
-    test('it should dynamically disable an option', async ({ page }) => {
-        const disGreen = await page.locator('#dis-green')
-        const select = await page.locator('#ruxSelect')
-        const greenOption = await page.locator('#green')
+    test('it should be abel to dynamically disable an option', async ({
+        page,
+    }) => {
+        const disGreen = page.locator('#dis-green')
+        const shadowSelect = page.locator('#ruxSelect').locator('select')
+        const greenOption = shadowSelect.locator('option').last()
 
-        // await page.click(greenOption)
+        await page.click('#ruxSelect')
+        await shadowSelect.selectOption('green')
+        await expect(shadowSelect).toHaveValue('green')
+        await disGreen.click()
+        await expect(greenOption).toBeDisabled()
+    })
+    test('it should be able to dynamically change option label', async ({
+        page,
+    }) => {
+        const changeLabel = page.locator('#change-label')
+        const shadowSelect = page.locator('#ruxSelect').locator('select')
+        const blueOption = shadowSelect.locator('option').nth(2)
+
+        await expect(blueOption).toHaveText('Blue')
+        await changeLabel.click()
+        await expect(blueOption).toHaveText('new label')
+    })
+    test('it should be able to dynamically change option value', async ({
+        page,
+    }) => {
+        const changeValue = page.locator('#change-value')
+        const shadowSelect = page.locator('#ruxSelect').locator('select')
+        const redOption = shadowSelect.locator('option').nth(1)
+
+        await expect(redOption).toHaveAttribute('value', 'red')
+        await changeValue.click()
+        await expect(redOption).toHaveAttribute('value', 'new value')
     })
 })
 // test.describe('Emits events', () => {
