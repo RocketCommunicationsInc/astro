@@ -31,9 +31,13 @@ export class RuxAccordion {
 
 export declare interface RuxAccordionItem extends Components.RuxAccordionItem {
   /**
-   * Fired when an element has expanded 
+   * Fired when an accordion-item has expanded 
    */
   ruxexpanded: EventEmitter<CustomEvent<any>>;
+  /**
+   * Fired when an accordion-item has collapsed 
+   */
+  ruxcollapsed: EventEmitter<CustomEvent<any>>;
 
 }
 
@@ -52,7 +56,7 @@ export class RuxAccordionItem {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['ruxexpanded']);
+    proxyOutputs(this, this.el, ['ruxexpanded', 'ruxcollapsed']);
   }
 }
 
@@ -22861,14 +22865,14 @@ export declare interface RuxPopUp extends Components.RuxPopUp {
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['closeOnSelect', 'disableAutoUpdate', 'open', 'placement', 'strategy'],
+  inputs: ['closeOnSelect', 'disableAutoUpdate', 'enableAnimationFrame', 'open', 'placement', 'strategy'],
   methods: ['show', 'hide']
 })
 @Component({
   selector: 'rux-pop-up',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['closeOnSelect', 'disableAutoUpdate', 'open', 'placement', 'strategy']
+  inputs: ['closeOnSelect', 'disableAutoUpdate', 'enableAnimationFrame', 'open', 'placement', 'strategy']
 })
 export class RuxPopUp {
   protected el: HTMLElement;
