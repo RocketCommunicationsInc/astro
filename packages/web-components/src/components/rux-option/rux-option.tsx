@@ -27,10 +27,10 @@ export class RuxOption {
     /**
      * The option value
      */
-    @Prop() value!: string
+    @Prop({ reflect: true }) value!: string
 
     /** The option label */
-    @Prop() label!: string
+    @Prop({ reflect: true }) label!: string
 
     /** Sets the option as disabled */
     @Prop() disabled: boolean = false
@@ -41,6 +41,7 @@ export class RuxOption {
 
     @Watch('value')
     @Watch('label')
+    @Watch('disabled')
     handleValueChange() {
         this.optionChanged.emit()
     }
