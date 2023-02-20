@@ -154,11 +154,3 @@
         }
     }
 }
-//firefox does not support :has selector so :focus-within instead
-@supports (-moz-appearance: none) {
-    .rux-segmented-button__segment:focus-within {
-        outline: var(--focus-outline);
-        outline-offset: var(--focus-offset);
-        z-index: 1;
-    }
-}
