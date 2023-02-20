@@ -69,7 +69,7 @@
         }
     }
     //apply focus state when input within in selected and raise so that full outline is visible
-    &:has(input:focus-visible) {
+    &.--focused {
         outline: var(--focus-outline);
         outline-offset: var(--focus-offset);
         z-index: 1;
