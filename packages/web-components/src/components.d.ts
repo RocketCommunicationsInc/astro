@@ -179,6 +179,13 @@ export namespace Components {
     }
     interface RuxContainer {
     }
+    interface RuxDatepicker {
+        "julian": boolean;
+        "max"?: number;
+        "min"?: number;
+        "open": boolean;
+        "standard": boolean;
+    }
     interface RuxDatetime {
         /**
           * The date time to be formatted
@@ -12838,6 +12845,12 @@ declare global {
         prototype: HTMLRuxContainerElement;
         new (): HTMLRuxContainerElement;
     };
+    interface HTMLRuxDatepickerElement extends Components.RuxDatepicker, HTMLStencilElement {
+    }
+    var HTMLRuxDatepickerElement: {
+        prototype: HTMLRuxDatepickerElement;
+        new (): HTMLRuxDatepickerElement;
+    };
     interface HTMLRuxDatetimeElement extends Components.RuxDatetime, HTMLStencilElement {
     }
     var HTMLRuxDatetimeElement: {
@@ -19469,6 +19482,7 @@ declare global {
         "rux-classification-marking": HTMLRuxClassificationMarkingElement;
         "rux-clock": HTMLRuxClockElement;
         "rux-container": HTMLRuxContainerElement;
+        "rux-datepicker": HTMLRuxDatepickerElement;
         "rux-datetime": HTMLRuxDatetimeElement;
         "rux-dialog": HTMLRuxDialogElement;
         "rux-global-status-bar": HTMLRuxGlobalStatusBarElement;
@@ -20763,6 +20777,13 @@ declare namespace LocalJSX {
         "timezone"?: string;
     }
     interface RuxContainer {
+    }
+    interface RuxDatepicker {
+        "julian"?: boolean;
+        "max"?: number;
+        "min"?: number;
+        "open"?: boolean;
+        "standard"?: boolean;
     }
     interface RuxDatetime {
         /**
@@ -33381,6 +33402,7 @@ declare namespace LocalJSX {
         "rux-classification-marking": RuxClassificationMarking;
         "rux-clock": RuxClock;
         "rux-container": RuxContainer;
+        "rux-datepicker": RuxDatepicker;
         "rux-datetime": RuxDatetime;
         "rux-dialog": RuxDialog;
         "rux-global-status-bar": RuxGlobalStatusBar;
@@ -34502,6 +34524,7 @@ declare module "@stencil/core" {
             "rux-classification-marking": LocalJSX.RuxClassificationMarking & JSXBase.HTMLAttributes<HTMLRuxClassificationMarkingElement>;
             "rux-clock": LocalJSX.RuxClock & JSXBase.HTMLAttributes<HTMLRuxClockElement>;
             "rux-container": LocalJSX.RuxContainer & JSXBase.HTMLAttributes<HTMLRuxContainerElement>;
+            "rux-datepicker": LocalJSX.RuxDatepicker & JSXBase.HTMLAttributes<HTMLRuxDatepickerElement>;
             "rux-datetime": LocalJSX.RuxDatetime & JSXBase.HTMLAttributes<HTMLRuxDatetimeElement>;
             "rux-dialog": LocalJSX.RuxDialog & JSXBase.HTMLAttributes<HTMLRuxDialogElement>;
             "rux-global-status-bar": LocalJSX.RuxGlobalStatusBar & JSXBase.HTMLAttributes<HTMLRuxGlobalStatusBarElement>;
