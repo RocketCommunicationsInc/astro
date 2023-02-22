@@ -96,7 +96,7 @@ export class RuxCheckbox implements FormFieldInterface {
     @Event({ eventName: 'ruxinput' }) ruxInput!: EventEmitter
 
     /**
-     * Fired when an element has gained focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
+     * Fired when an element has gained focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event)
      */
     @Event({ eventName: 'ruxfocus' }) ruxFocus!: EventEmitter
 
@@ -209,7 +209,7 @@ export class RuxCheckbox implements FormFieldInterface {
                             onChange={_onClick}
                             onInput={_onInput}
                             onBlur={_onBlur}
-                            onFocusin={_onFocus}
+                            onFocus={_onFocus}
                             ref={(el) => (this._inputEl = el)}
                         />
                         <div class="rux-checkbox__control">
