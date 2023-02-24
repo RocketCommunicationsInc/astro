@@ -74,6 +74,12 @@ export namespace Components {
          */
         "hAlign": 'left' | 'center' | 'right';
     }
+    interface RuxCalendar {
+        /**
+          * Option to give the calendar a specfic month/year
+         */
+        "dateIn"?: string;
+    }
     interface RuxCard {
     }
     interface RuxCheckbox {
@@ -12692,6 +12698,10 @@ export interface RuxCheckboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxCheckboxElement;
 }
+export interface RuxDatepickerCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxDatepickerElement;
+}
 export interface RuxDialogCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxDialogElement;
@@ -12808,6 +12818,12 @@ declare global {
     var HTMLRuxButtonGroupElement: {
         prototype: HTMLRuxButtonGroupElement;
         new (): HTMLRuxButtonGroupElement;
+    };
+    interface HTMLRuxCalendarElement extends Components.RuxCalendar, HTMLStencilElement {
+    }
+    var HTMLRuxCalendarElement: {
+        prototype: HTMLRuxCalendarElement;
+        new (): HTMLRuxCalendarElement;
     };
     interface HTMLRuxCardElement extends Components.RuxCard, HTMLStencilElement {
     }
@@ -19476,6 +19492,7 @@ declare global {
         "rux-breadcrumb-item": HTMLRuxBreadcrumbItemElement;
         "rux-button": HTMLRuxButtonElement;
         "rux-button-group": HTMLRuxButtonGroupElement;
+        "rux-calendar": HTMLRuxCalendarElement;
         "rux-card": HTMLRuxCardElement;
         "rux-checkbox": HTMLRuxCheckboxElement;
         "rux-checkbox-group": HTMLRuxCheckboxGroupElement;
@@ -20661,6 +20678,12 @@ declare namespace LocalJSX {
          */
         "hAlign"?: 'left' | 'center' | 'right';
     }
+    interface RuxCalendar {
+        /**
+          * Option to give the calendar a specfic month/year
+         */
+        "dateIn"?: string;
+    }
     interface RuxCard {
     }
     interface RuxCheckbox {
@@ -20782,6 +20805,8 @@ declare namespace LocalJSX {
         "julian"?: boolean;
         "max"?: number;
         "min"?: number;
+        "onRuxcollapsed"?: (event: RuxDatepickerCustomEvent<any>) => void;
+        "onRuxexpanded"?: (event: RuxDatepickerCustomEvent<any>) => void;
         "open"?: boolean;
         "standard"?: boolean;
     }
@@ -33396,6 +33421,7 @@ declare namespace LocalJSX {
         "rux-breadcrumb-item": RuxBreadcrumbItem;
         "rux-button": RuxButton;
         "rux-button-group": RuxButtonGroup;
+        "rux-calendar": RuxCalendar;
         "rux-card": RuxCard;
         "rux-checkbox": RuxCheckbox;
         "rux-checkbox-group": RuxCheckboxGroup;
@@ -34518,6 +34544,7 @@ declare module "@stencil/core" {
             "rux-breadcrumb-item": LocalJSX.RuxBreadcrumbItem & JSXBase.HTMLAttributes<HTMLRuxBreadcrumbItemElement>;
             "rux-button": LocalJSX.RuxButton & JSXBase.HTMLAttributes<HTMLRuxButtonElement>;
             "rux-button-group": LocalJSX.RuxButtonGroup & JSXBase.HTMLAttributes<HTMLRuxButtonGroupElement>;
+            "rux-calendar": LocalJSX.RuxCalendar & JSXBase.HTMLAttributes<HTMLRuxCalendarElement>;
             "rux-card": LocalJSX.RuxCard & JSXBase.HTMLAttributes<HTMLRuxCardElement>;
             "rux-checkbox": LocalJSX.RuxCheckbox & JSXBase.HTMLAttributes<HTMLRuxCheckboxElement>;
             "rux-checkbox-group": LocalJSX.RuxCheckboxGroup & JSXBase.HTMLAttributes<HTMLRuxCheckboxGroupElement>;

@@ -66,6 +66,19 @@ Type: `Promise<true>`
 | `"trigger-container"` | the container of the pop-up trigger                 |
 
 
+## Dependencies
+
+### Used by
+
+ - [rux-datepicker](../rux-datepicker)
+
+### Graph
+```mermaid
+graph TD;
+  rux-datepicker --> rux-pop-up
+  style rux-pop-up fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

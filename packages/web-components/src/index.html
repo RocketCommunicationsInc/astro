@@ -22,10 +22,16 @@
     <body>
         <br />
         <div style="width: 200px; margin: auto">
-            <rux-datepicker open></rux-datepicker>
-            <br />
-            <rux-input></rux-input>
+            <rux-calendar>
+                <rux-button-group slot="footer">
+                    <rux-button secondary>Cancel</rux-button>
+                    <rux-button>Submit</rux-button>
+                </rux-button-group>
+            </rux-calendar>
         </div>
         <br />
+        <div style="width: 200px; margin: auto">
+            <rux-datepicker> </rux-datepicker>
+        </div>
     </body>
 </html>

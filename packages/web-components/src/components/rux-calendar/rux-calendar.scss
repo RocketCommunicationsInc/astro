@@ -1,0 +1,47 @@
+:host {
+    display: block;
+}
+.rux-calendar {
+    background-color: var(--color-background-base-default);
+    border: 2px solid var(--color-border-interactive-muted);
+    height: 350px;
+    width: 400px;
+    .calendar-header {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .calendar-footer {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: var(--spacing-2);
+    }
+    .month-picker {
+        display: flex;
+        align-items: center;
+    }
+    .year-picker {
+        display: flex;
+        align-items: center;
+    }
+    .calendar-body {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: var(--spacing-1);
+        row-gap: var(--spacing-2);
+        column-gap: var(--spacing-2);
+        text-align: center;
+        padding: var(--spacing-4) var(--spacing-2);
+        .calendar-day {
+            border: 1px solid var(--color-border-interactive-default);
+            height: 24px;
+            padding: var(--spacing-2);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: var(--radius-base);
+        }
+    }
+}

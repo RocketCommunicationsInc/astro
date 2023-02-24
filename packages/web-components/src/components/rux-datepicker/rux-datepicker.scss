@@ -28,14 +28,12 @@
         }
         .editable-input {
             width: 100%;
-            padding: var(--spacing-1);
+            padding: var(--spacing-2);
             white-space: nowrap;
             overflow: hidden;
         }
     }
     rux-menu {
-        // width: 300px;
-        // height: 300px;
         padding: var(--spacing-2);
     }
 }
