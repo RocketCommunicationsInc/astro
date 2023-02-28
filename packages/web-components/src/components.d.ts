@@ -11994,6 +11994,10 @@ export namespace Components {
          */
         "required": boolean;
         /**
+          * Sets element as focused
+         */
+        "setFocus": (options?: FocusOptions) => Promise<void>;
+        /**
           * Control the padding around the input field
          */
         "size": 'small' | 'medium' | 'large';
@@ -20682,6 +20686,10 @@ declare namespace LocalJSX {
           * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */
         "onRuxchange"?: (event: RuxCheckboxCustomEvent<any>) => void;
+        /**
+          * Fired when an element has gained focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event)
+         */
+        "onRuxfocus"?: (event: RuxCheckboxCustomEvent<any>) => void;
         /**
           * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
          */
