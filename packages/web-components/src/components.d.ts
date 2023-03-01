@@ -20683,6 +20683,10 @@ declare namespace LocalJSX {
          */
         "onRuxchange"?: (event: RuxCheckboxCustomEvent<any>) => void;
         /**
+          * Fired when an element has gained focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event)
+         */
+        "onRuxfocus"?: (event: RuxCheckboxCustomEvent<any>) => void;
+        /**
           * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
          */
         "onRuxinput"?: (event: RuxCheckboxCustomEvent<any>) => void;
