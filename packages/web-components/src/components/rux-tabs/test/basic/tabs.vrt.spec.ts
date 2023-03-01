@@ -13,8 +13,10 @@ test.describe('tabs vrt', () => {
     })
     test('focus state has no visual regression @vrt', async ({
         astroVRTPage,
+        page,
     }) => {
         await astroVRTPage.keyboard.press('Tab')
+        await page.waitForChanges()
         await expect(astroVRTPage).toHaveScreenshot()
     })
 })
