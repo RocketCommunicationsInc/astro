@@ -11994,6 +11994,10 @@ export namespace Components {
          */
         "required": boolean;
         /**
+          * Sets element as focused
+         */
+        "setFocus": (options?: FocusOptions) => Promise<void>;
+        /**
           * Control the padding around the input field
          */
         "size": 'small' | 'medium' | 'large';

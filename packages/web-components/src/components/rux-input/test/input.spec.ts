@@ -387,3 +387,22 @@ test.describe('Input emits correct events', () => {
         expect(changeEvent).toHaveReceivedEventTimes(1)
     })
 })
+
+test.describe('Input', () => {
+    test('it can be focused programatically', async ({ page }) => {
+        const template = `<rux-input type="text"></rux-input>`
+        await page.setContent(template)
+
+        const el = await page.locator('rux-input')
+
+        let isFocused = await el.evaluate((el) => el === document.activeElement)
+        expect(isFocused).toBeFalsy()
+
+        await el.evaluate(async (e) => {
+            await (e as HTMLRuxInputElement).setFocus()
+        })
+
+        isFocused = await el.evaluate((el) => el === document.activeElement)
+        expect(isFocused).toBeTruthy()
+    })
+})
