@@ -21,6 +21,21 @@ test.describe('Textarea', () => {
         const el = await page.locator('rux-textarea')
         await expect(el.locator('.rux-error-text')).toHaveText('Error Text')
     })
+    test('it can be focused programatically', async ({ page }) => {
+        const template = `<rux-textarea></rux-textarea>`
+        await page.setContent(template)
+        const el = await page.locator('rux-textarea')
+
+        let isFocused = await el.evaluate((el) => el === document.activeElement)
+        expect(isFocused).toBeFalsy()
+
+        await el.evaluate(async (e) => {
+            await (e as HTMLRuxTextareaElement).setFocus()
+        })
+
+        isFocused = await el.evaluate((el) => el === document.activeElement)
+        expect(isFocused).toBeTruthy()
+    })
 })
 test.describe('Textarea in a form', () => {
     test.beforeEach(async ({ page }) => {

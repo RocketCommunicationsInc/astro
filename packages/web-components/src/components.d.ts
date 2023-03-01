@@ -12375,6 +12375,10 @@ export namespace Components {
          */
         "required": boolean;
         /**
+          * Sets element as focused
+         */
+        "setFocus": (options?: FocusOptions) => Promise<void>;
+        /**
           * The size of rux-select
          */
         "size"?: 'small' | 'medium' | 'large';
@@ -12550,6 +12554,10 @@ export namespace Components {
           * The input rows attribute
          */
         "rows"?: number;
+        /**
+          * Sets element as focused
+         */
+        "setFocus": (options?: FocusOptions) => Promise<void>;
         /**
           * Styles the input element size between small, medium and large. The default styling is medium.
          */
