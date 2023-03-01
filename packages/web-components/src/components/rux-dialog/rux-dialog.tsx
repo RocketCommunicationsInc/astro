@@ -77,11 +77,11 @@ export class RuxDialog {
     })
     ruxDialogClosed!: EventEmitter<boolean | null>
 
-    @Element() element!: HTMLRuxDialogElement
+    @Element() el!: HTMLRuxDialogElement
 
-    @State() hasFooter = hasSlot(this.element, 'footer')
-    @State() hasHeader = hasSlot(this.element, 'header')
-    @State() hasMessage = hasSlot(this.element)
+    @State() hasFooter = hasSlot(this.el, 'footer')
+    @State() hasHeader = hasSlot(this.el, 'header')
+    @State() hasMessage = hasSlot(this.el)
     private _userInput: boolean | null = null
 
     // confirm dialog if Enter key is pressed
@@ -89,12 +89,12 @@ export class RuxDialog {
     handleKeyDown(ev: KeyboardEvent) {
         // prevent this from running if the slots version is being used
         if (this.open && !this.hasFooter) {
-            const btns: NodeListOf<HTMLRuxButtonElement> = this.element.shadowRoot!.querySelectorAll(
+            const btns: NodeListOf<HTMLRuxButtonElement> = this.el.shadowRoot!.querySelectorAll(
                 'rux-button'
             )
             if (ev.key === 'Enter') {
                 //If enter is hit but the cancel/deny button is focused, we want to click that instead.
-                let activeEl: any = this.element.shadowRoot?.activeElement
+                let activeEl: any = this.el.shadowRoot?.activeElement
                 if (activeEl && activeEl === btns[0]) {
                     this._userInput = false
                     btns[0].click()
@@ -154,7 +154,7 @@ export class RuxDialog {
     }
 
     private _getDefaultButton(): HTMLElement | null {
-        const buttonSet = this.element?.shadowRoot?.querySelectorAll(
+        const buttonSet = this.el?.shadowRoot?.querySelectorAll(
             'rux-button:not([hidden])'
         ) as NodeListOf<HTMLElement>
 
@@ -169,7 +169,7 @@ export class RuxDialog {
     }
 
     private _getWrapper(): HTMLElement | null {
-        const wrapper = this.element?.shadowRoot?.querySelector(
+        const wrapper = this.el?.shadowRoot?.querySelector(
             '.rux-dialog__wrapper'
         ) as HTMLElement
 
@@ -182,7 +182,7 @@ export class RuxDialog {
     connectedCallback() {
         this._handleDialogChoice = this._handleDialogChoice.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
-        this.hasMessage = hasSlot(this.element)
+        this.hasMessage = hasSlot(this.el)
     }
 
     componentDidRender() {
@@ -191,9 +191,9 @@ export class RuxDialog {
     }
 
     private _handleSlotChange() {
-        this.hasHeader = hasSlot(this.element, 'header')
-        this.hasMessage = hasSlot(this.element)
-        this.hasFooter = hasSlot(this.element, 'footer')
+        this.hasHeader = hasSlot(this.el, 'header')
+        this.hasMessage = hasSlot(this.el)
+        this.hasFooter = hasSlot(this.el, 'footer')
     }
 
     render() {
