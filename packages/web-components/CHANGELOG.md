@@ -1,5 +1,12 @@
 # @astrouxds/astro-web-components
 
+## 7.10.0
+
+### Minor Changes
+
+-   853a3c10: select - adds setFocus method
+-   853a3c10: textarea - adds setFocus method
+
 ## 7.9.0
 
 ### Minor Changes

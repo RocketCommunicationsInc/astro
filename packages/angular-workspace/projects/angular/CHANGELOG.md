@@ -1,5 +1,18 @@
 # @astrouxds/angular
 
+## 7.10.0
+
+### Minor Changes
+
+- 853a3c10: select - adds setFocus method
+- 853a3c10: textarea - adds setFocus method
+
+### Patch Changes
+
+- Updated dependencies [853a3c10]
+- Updated dependencies [853a3c10]
+  - @astrouxds/astro-web-components@7.10.0
+
 ## 7.9.0
 
 ### Minor Changes
@@ -29,7 +42,6 @@
 #### Dialog
 
 - `ruxDialogOpened` will now fire after everything has finished loading on open
-
 
 ## 7.8.0
 
