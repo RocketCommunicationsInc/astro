@@ -1,33 +1,63 @@
 # @astrouxds/react
 
+## 7.9.0
+
+### Minor Changes
+
+#### Breadcrumb Item
+
+- Added focus state
+
+#### Checkbox
+
+- Added `ruxfocus` event on focus
+
+#### Input
+
+- added `setFocus` method to programmatically set focus
+
+#### Select
+
+- added `setFocus` method to programmatically set focus
+
+#### Textarea
+
+- added `setFocus` method to programmatically set focus
+
+### Patch Changes
+
+#### Dialog
+
+- `ruxDialogOpened` will now fire after everything has finished loading on open
+
 ## 7.8.0
 
 ### Minor Changes
 
 #### Accordion
 
--   Added new `ruxcollapsed` event that emits when accordion-item closes
+- Added new `ruxcollapsed` event that emits when accordion-item closes
 
 #### Core
 
--   Design tokens
-    -   Added `color-background-interactive-muted`
-    -   Added light theme token for `color-background-interactive-muted`
-    -   Added light theme tokens for `color-status-off`, `color-status-standby`, `color-status-normal`, `color-status-serious`, `color-status-critical`
+- Design tokens
+  - Added `color-background-interactive-muted`
+  - Added light theme token for `color-background-interactive-muted`
+  - Added light theme tokens for `color-status-off`, `color-status-standby`, `color-status-normal`, `color-status-serious`, `color-status-critical`
 
 #### Pop Up
 
--   Adds `enableAnimationFrame` prop to watch when the trigger moves in order to more accurately place the pop-up.
+- Adds `enableAnimationFrame` prop to watch when the trigger moves in order to more accurately place the pop-up.
 
 ### Patch Changes
 
 #### React
 
--   Added vite support and tree-shaking capability to `@astrouxds/react`.
+- Added vite support and tree-shaking capability to `@astrouxds/react`.
 
 #### Select
 
--   Fixed an issue where rux-option couldn't have it's props dynamically changed
+- Fixed an issue where rux-option couldn't have it's props dynamically changed
 
 ## 7.7.0
 

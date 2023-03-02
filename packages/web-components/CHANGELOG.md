@@ -1,5 +1,35 @@
 # @astrouxds/astro-web-components
 
+## 7.9.0
+
+### Minor Changes
+
+#### Breadcrumb Item
+
+-   Added focus state
+
+#### Checkbox
+
+-   Added `ruxfocus` event on focus
+
+#### Input
+
+-   added `setFocus` method to programmatically set focus
+
+#### Select
+
+-   added `setFocus` method to programmatically set focus
+
+#### Textarea
+
+-   added `setFocus` method to programmatically set focus
+
+### Patch Changes
+
+#### Dialog
+
+-   `ruxDialogOpened` will now fire after everything has finished loading on open
+
 ## 7.8.0
 
 ### Minor Changes
